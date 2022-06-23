@@ -28,7 +28,8 @@ AppInfoItem::AppInfoItem() :
     m_reportUrlHasBeenSet(false),
     m_reportTitleHasBeenSet(false),
     m_behaviorUrlHasBeenSet(false),
-    m_behaviorTitleHasBeenSet(false)
+    m_behaviorTitleHasBeenSet(false),
+    m_highRiskCountHasBeenSet(false)
 {
 }
 
@@ -117,6 +118,16 @@ CoreInternalOutcome AppInfoItem::Deserialize(const rapidjson::Value &value)
         m_behaviorTitleHasBeenSet = true;
     }
 
+    if (value.HasMember("HighRiskCount") && !value["HighRiskCount"].IsNull())
+    {
+        if (!value["HighRiskCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AppInfoItem.HighRiskCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_highRiskCount = value["HighRiskCount"].GetInt64();
+        m_highRiskCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -186,6 +197,14 @@ void AppInfoItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "BehaviorTitle";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_behaviorTitle.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_highRiskCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HighRiskCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_highRiskCount, allocator);
     }
 
 }
@@ -317,5 +336,21 @@ void AppInfoItem::SetBehaviorTitle(const string& _behaviorTitle)
 bool AppInfoItem::BehaviorTitleHasBeenSet() const
 {
     return m_behaviorTitleHasBeenSet;
+}
+
+int64_t AppInfoItem::GetHighRiskCount() const
+{
+    return m_highRiskCount;
+}
+
+void AppInfoItem::SetHighRiskCount(const int64_t& _highRiskCount)
+{
+    m_highRiskCount = _highRiskCount;
+    m_highRiskCountHasBeenSet = true;
+}
+
+bool AppInfoItem::HighRiskCountHasBeenSet() const
+{
+    return m_highRiskCountHasBeenSet;
 }
 

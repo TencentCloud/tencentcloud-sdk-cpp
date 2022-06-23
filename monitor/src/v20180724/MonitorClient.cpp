@@ -40,6 +40,49 @@ MonitorClient::MonitorClient(const Credential &credential, const string &region,
 }
 
 
+MonitorClient::BindPrometheusManagedGrafanaOutcome MonitorClient::BindPrometheusManagedGrafana(const BindPrometheusManagedGrafanaRequest &request)
+{
+    auto outcome = MakeRequest(request, "BindPrometheusManagedGrafana");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        BindPrometheusManagedGrafanaResponse rsp = BindPrometheusManagedGrafanaResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return BindPrometheusManagedGrafanaOutcome(rsp);
+        else
+            return BindPrometheusManagedGrafanaOutcome(o.GetError());
+    }
+    else
+    {
+        return BindPrometheusManagedGrafanaOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::BindPrometheusManagedGrafanaAsync(const BindPrometheusManagedGrafanaRequest& request, const BindPrometheusManagedGrafanaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->BindPrometheusManagedGrafana(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::BindPrometheusManagedGrafanaOutcomeCallable MonitorClient::BindPrometheusManagedGrafanaCallable(const BindPrometheusManagedGrafanaRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<BindPrometheusManagedGrafanaOutcome()>>(
+        [this, request]()
+        {
+            return this->BindPrometheusManagedGrafana(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MonitorClient::BindingPolicyObjectOutcome MonitorClient::BindingPolicyObject(const BindingPolicyObjectRequest &request)
 {
     auto outcome = MakeRequest(request, "BindingPolicyObject");
@@ -255,6 +298,49 @@ MonitorClient::CreateAlertRuleOutcomeCallable MonitorClient::CreateAlertRuleCall
     return task->get_future();
 }
 
+MonitorClient::CreateExporterIntegrationOutcome MonitorClient::CreateExporterIntegration(const CreateExporterIntegrationRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateExporterIntegration");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateExporterIntegrationResponse rsp = CreateExporterIntegrationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateExporterIntegrationOutcome(rsp);
+        else
+            return CreateExporterIntegrationOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateExporterIntegrationOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::CreateExporterIntegrationAsync(const CreateExporterIntegrationRequest& request, const CreateExporterIntegrationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateExporterIntegration(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::CreateExporterIntegrationOutcomeCallable MonitorClient::CreateExporterIntegrationCallable(const CreateExporterIntegrationRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateExporterIntegrationOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateExporterIntegration(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MonitorClient::CreatePolicyGroupOutcome MonitorClient::CreatePolicyGroup(const CreatePolicyGroupRequest &request)
 {
     auto outcome = MakeRequest(request, "CreatePolicyGroup");
@@ -291,6 +377,92 @@ MonitorClient::CreatePolicyGroupOutcomeCallable MonitorClient::CreatePolicyGroup
         [this, request]()
         {
             return this->CreatePolicyGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MonitorClient::CreatePrometheusAgentOutcome MonitorClient::CreatePrometheusAgent(const CreatePrometheusAgentRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreatePrometheusAgent");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreatePrometheusAgentResponse rsp = CreatePrometheusAgentResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreatePrometheusAgentOutcome(rsp);
+        else
+            return CreatePrometheusAgentOutcome(o.GetError());
+    }
+    else
+    {
+        return CreatePrometheusAgentOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::CreatePrometheusAgentAsync(const CreatePrometheusAgentRequest& request, const CreatePrometheusAgentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreatePrometheusAgent(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::CreatePrometheusAgentOutcomeCallable MonitorClient::CreatePrometheusAgentCallable(const CreatePrometheusAgentRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreatePrometheusAgentOutcome()>>(
+        [this, request]()
+        {
+            return this->CreatePrometheusAgent(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MonitorClient::CreatePrometheusScrapeJobOutcome MonitorClient::CreatePrometheusScrapeJob(const CreatePrometheusScrapeJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreatePrometheusScrapeJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreatePrometheusScrapeJobResponse rsp = CreatePrometheusScrapeJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreatePrometheusScrapeJobOutcome(rsp);
+        else
+            return CreatePrometheusScrapeJobOutcome(o.GetError());
+    }
+    else
+    {
+        return CreatePrometheusScrapeJobOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::CreatePrometheusScrapeJobAsync(const CreatePrometheusScrapeJobRequest& request, const CreatePrometheusScrapeJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreatePrometheusScrapeJob(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::CreatePrometheusScrapeJobOutcomeCallable MonitorClient::CreatePrometheusScrapeJobCallable(const CreatePrometheusScrapeJobRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreatePrometheusScrapeJobOutcome()>>(
+        [this, request]()
+        {
+            return this->CreatePrometheusScrapeJob(request);
         }
     );
 
@@ -470,6 +642,49 @@ MonitorClient::DeleteAlertRulesOutcomeCallable MonitorClient::DeleteAlertRulesCa
     return task->get_future();
 }
 
+MonitorClient::DeleteExporterIntegrationOutcome MonitorClient::DeleteExporterIntegration(const DeleteExporterIntegrationRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteExporterIntegration");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteExporterIntegrationResponse rsp = DeleteExporterIntegrationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteExporterIntegrationOutcome(rsp);
+        else
+            return DeleteExporterIntegrationOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteExporterIntegrationOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::DeleteExporterIntegrationAsync(const DeleteExporterIntegrationRequest& request, const DeleteExporterIntegrationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteExporterIntegration(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::DeleteExporterIntegrationOutcomeCallable MonitorClient::DeleteExporterIntegrationCallable(const DeleteExporterIntegrationRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteExporterIntegrationOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteExporterIntegration(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MonitorClient::DeletePolicyGroupOutcome MonitorClient::DeletePolicyGroup(const DeletePolicyGroupRequest &request)
 {
     auto outcome = MakeRequest(request, "DeletePolicyGroup");
@@ -506,6 +721,49 @@ MonitorClient::DeletePolicyGroupOutcomeCallable MonitorClient::DeletePolicyGroup
         [this, request]()
         {
             return this->DeletePolicyGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MonitorClient::DeletePrometheusScrapeJobsOutcome MonitorClient::DeletePrometheusScrapeJobs(const DeletePrometheusScrapeJobsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeletePrometheusScrapeJobs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeletePrometheusScrapeJobsResponse rsp = DeletePrometheusScrapeJobsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeletePrometheusScrapeJobsOutcome(rsp);
+        else
+            return DeletePrometheusScrapeJobsOutcome(o.GetError());
+    }
+    else
+    {
+        return DeletePrometheusScrapeJobsOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::DeletePrometheusScrapeJobsAsync(const DeletePrometheusScrapeJobsRequest& request, const DeletePrometheusScrapeJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeletePrometheusScrapeJobs(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::DeletePrometheusScrapeJobsOutcomeCallable MonitorClient::DeletePrometheusScrapeJobsCallable(const DeletePrometheusScrapeJobsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeletePrometheusScrapeJobsOutcome()>>(
+        [this, request]()
+        {
+            return this->DeletePrometheusScrapeJobs(request);
         }
     );
 
@@ -1201,6 +1459,49 @@ MonitorClient::DescribeConditionsTemplateListOutcomeCallable MonitorClient::Desc
     return task->get_future();
 }
 
+MonitorClient::DescribeExporterIntegrationsOutcome MonitorClient::DescribeExporterIntegrations(const DescribeExporterIntegrationsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeExporterIntegrations");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeExporterIntegrationsResponse rsp = DescribeExporterIntegrationsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeExporterIntegrationsOutcome(rsp);
+        else
+            return DescribeExporterIntegrationsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeExporterIntegrationsOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::DescribeExporterIntegrationsAsync(const DescribeExporterIntegrationsRequest& request, const DescribeExporterIntegrationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeExporterIntegrations(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::DescribeExporterIntegrationsOutcomeCallable MonitorClient::DescribeExporterIntegrationsCallable(const DescribeExporterIntegrationsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeExporterIntegrationsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeExporterIntegrations(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MonitorClient::DescribeMonitorTypesOutcome MonitorClient::DescribeMonitorTypes(const DescribeMonitorTypesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeMonitorTypes");
@@ -1459,6 +1760,49 @@ MonitorClient::DescribeProductListOutcomeCallable MonitorClient::DescribeProduct
     return task->get_future();
 }
 
+MonitorClient::DescribePrometheusAgentsOutcome MonitorClient::DescribePrometheusAgents(const DescribePrometheusAgentsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePrometheusAgents");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePrometheusAgentsResponse rsp = DescribePrometheusAgentsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePrometheusAgentsOutcome(rsp);
+        else
+            return DescribePrometheusAgentsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePrometheusAgentsOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::DescribePrometheusAgentsAsync(const DescribePrometheusAgentsRequest& request, const DescribePrometheusAgentsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePrometheusAgents(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::DescribePrometheusAgentsOutcomeCallable MonitorClient::DescribePrometheusAgentsCallable(const DescribePrometheusAgentsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePrometheusAgentsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePrometheusAgents(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MonitorClient::DescribePrometheusInstancesOutcome MonitorClient::DescribePrometheusInstances(const DescribePrometheusInstancesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribePrometheusInstances");
@@ -1495,6 +1839,49 @@ MonitorClient::DescribePrometheusInstancesOutcomeCallable MonitorClient::Describ
         [this, request]()
         {
             return this->DescribePrometheusInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MonitorClient::DescribePrometheusScrapeJobsOutcome MonitorClient::DescribePrometheusScrapeJobs(const DescribePrometheusScrapeJobsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePrometheusScrapeJobs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePrometheusScrapeJobsResponse rsp = DescribePrometheusScrapeJobsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePrometheusScrapeJobsOutcome(rsp);
+        else
+            return DescribePrometheusScrapeJobsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePrometheusScrapeJobsOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::DescribePrometheusScrapeJobsAsync(const DescribePrometheusScrapeJobsRequest& request, const DescribePrometheusScrapeJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePrometheusScrapeJobs(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::DescribePrometheusScrapeJobsOutcomeCallable MonitorClient::DescribePrometheusScrapeJobsCallable(const DescribePrometheusScrapeJobsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePrometheusScrapeJobsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePrometheusScrapeJobs(request);
         }
     );
 
@@ -1588,6 +1975,49 @@ MonitorClient::DescribeStatisticDataOutcomeCallable MonitorClient::DescribeStati
     return task->get_future();
 }
 
+MonitorClient::DestroyPrometheusInstanceOutcome MonitorClient::DestroyPrometheusInstance(const DestroyPrometheusInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "DestroyPrometheusInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DestroyPrometheusInstanceResponse rsp = DestroyPrometheusInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DestroyPrometheusInstanceOutcome(rsp);
+        else
+            return DestroyPrometheusInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return DestroyPrometheusInstanceOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::DestroyPrometheusInstanceAsync(const DestroyPrometheusInstanceRequest& request, const DestroyPrometheusInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DestroyPrometheusInstance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::DestroyPrometheusInstanceOutcomeCallable MonitorClient::DestroyPrometheusInstanceCallable(const DestroyPrometheusInstanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DestroyPrometheusInstanceOutcome()>>(
+        [this, request]()
+        {
+            return this->DestroyPrometheusInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MonitorClient::GetMonitorDataOutcome MonitorClient::GetMonitorData(const GetMonitorDataRequest &request)
 {
     auto outcome = MakeRequest(request, "GetMonitorData");
@@ -1624,6 +2054,49 @@ MonitorClient::GetMonitorDataOutcomeCallable MonitorClient::GetMonitorDataCallab
         [this, request]()
         {
             return this->GetMonitorData(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MonitorClient::GetPrometheusAgentManagementCommandOutcome MonitorClient::GetPrometheusAgentManagementCommand(const GetPrometheusAgentManagementCommandRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetPrometheusAgentManagementCommand");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetPrometheusAgentManagementCommandResponse rsp = GetPrometheusAgentManagementCommandResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetPrometheusAgentManagementCommandOutcome(rsp);
+        else
+            return GetPrometheusAgentManagementCommandOutcome(o.GetError());
+    }
+    else
+    {
+        return GetPrometheusAgentManagementCommandOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::GetPrometheusAgentManagementCommandAsync(const GetPrometheusAgentManagementCommandRequest& request, const GetPrometheusAgentManagementCommandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetPrometheusAgentManagementCommand(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::GetPrometheusAgentManagementCommandOutcomeCallable MonitorClient::GetPrometheusAgentManagementCommandCallable(const GetPrometheusAgentManagementCommandRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetPrometheusAgentManagementCommandOutcome()>>(
+        [this, request]()
+        {
+            return this->GetPrometheusAgentManagementCommand(request);
         }
     );
 
@@ -1975,6 +2448,49 @@ MonitorClient::ModifyPolicyGroupOutcomeCallable MonitorClient::ModifyPolicyGroup
     return task->get_future();
 }
 
+MonitorClient::ModifyPrometheusInstanceAttributesOutcome MonitorClient::ModifyPrometheusInstanceAttributes(const ModifyPrometheusInstanceAttributesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyPrometheusInstanceAttributes");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyPrometheusInstanceAttributesResponse rsp = ModifyPrometheusInstanceAttributesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyPrometheusInstanceAttributesOutcome(rsp);
+        else
+            return ModifyPrometheusInstanceAttributesOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyPrometheusInstanceAttributesOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::ModifyPrometheusInstanceAttributesAsync(const ModifyPrometheusInstanceAttributesRequest& request, const ModifyPrometheusInstanceAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyPrometheusInstanceAttributes(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::ModifyPrometheusInstanceAttributesOutcomeCallable MonitorClient::ModifyPrometheusInstanceAttributesCallable(const ModifyPrometheusInstanceAttributesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyPrometheusInstanceAttributesOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyPrometheusInstanceAttributes(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MonitorClient::PutMonitorDataOutcome MonitorClient::PutMonitorData(const PutMonitorDataRequest &request)
 {
     auto outcome = MakeRequest(request, "PutMonitorData");
@@ -2104,6 +2620,49 @@ MonitorClient::SetDefaultAlarmPolicyOutcomeCallable MonitorClient::SetDefaultAla
     return task->get_future();
 }
 
+MonitorClient::TerminatePrometheusInstancesOutcome MonitorClient::TerminatePrometheusInstances(const TerminatePrometheusInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "TerminatePrometheusInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        TerminatePrometheusInstancesResponse rsp = TerminatePrometheusInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return TerminatePrometheusInstancesOutcome(rsp);
+        else
+            return TerminatePrometheusInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return TerminatePrometheusInstancesOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::TerminatePrometheusInstancesAsync(const TerminatePrometheusInstancesRequest& request, const TerminatePrometheusInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->TerminatePrometheusInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::TerminatePrometheusInstancesOutcomeCallable MonitorClient::TerminatePrometheusInstancesCallable(const TerminatePrometheusInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<TerminatePrometheusInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->TerminatePrometheusInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MonitorClient::UnBindingAllPolicyObjectOutcome MonitorClient::UnBindingAllPolicyObject(const UnBindingAllPolicyObjectRequest &request)
 {
     auto outcome = MakeRequest(request, "UnBindingAllPolicyObject");
@@ -2183,6 +2742,92 @@ MonitorClient::UnBindingPolicyObjectOutcomeCallable MonitorClient::UnBindingPoli
         [this, request]()
         {
             return this->UnBindingPolicyObject(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MonitorClient::UnbindPrometheusManagedGrafanaOutcome MonitorClient::UnbindPrometheusManagedGrafana(const UnbindPrometheusManagedGrafanaRequest &request)
+{
+    auto outcome = MakeRequest(request, "UnbindPrometheusManagedGrafana");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UnbindPrometheusManagedGrafanaResponse rsp = UnbindPrometheusManagedGrafanaResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UnbindPrometheusManagedGrafanaOutcome(rsp);
+        else
+            return UnbindPrometheusManagedGrafanaOutcome(o.GetError());
+    }
+    else
+    {
+        return UnbindPrometheusManagedGrafanaOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::UnbindPrometheusManagedGrafanaAsync(const UnbindPrometheusManagedGrafanaRequest& request, const UnbindPrometheusManagedGrafanaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UnbindPrometheusManagedGrafana(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::UnbindPrometheusManagedGrafanaOutcomeCallable MonitorClient::UnbindPrometheusManagedGrafanaCallable(const UnbindPrometheusManagedGrafanaRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UnbindPrometheusManagedGrafanaOutcome()>>(
+        [this, request]()
+        {
+            return this->UnbindPrometheusManagedGrafana(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MonitorClient::UninstallGrafanaDashboardOutcome MonitorClient::UninstallGrafanaDashboard(const UninstallGrafanaDashboardRequest &request)
+{
+    auto outcome = MakeRequest(request, "UninstallGrafanaDashboard");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UninstallGrafanaDashboardResponse rsp = UninstallGrafanaDashboardResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UninstallGrafanaDashboardOutcome(rsp);
+        else
+            return UninstallGrafanaDashboardOutcome(o.GetError());
+    }
+    else
+    {
+        return UninstallGrafanaDashboardOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::UninstallGrafanaDashboardAsync(const UninstallGrafanaDashboardRequest& request, const UninstallGrafanaDashboardAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UninstallGrafanaDashboard(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::UninstallGrafanaDashboardOutcomeCallable MonitorClient::UninstallGrafanaDashboardCallable(const UninstallGrafanaDashboardRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UninstallGrafanaDashboardOutcome()>>(
+        [this, request]()
+        {
+            return this->UninstallGrafanaDashboard(request);
         }
     );
 
@@ -2276,6 +2921,135 @@ MonitorClient::UpdateAlertRuleStateOutcomeCallable MonitorClient::UpdateAlertRul
     return task->get_future();
 }
 
+MonitorClient::UpdateExporterIntegrationOutcome MonitorClient::UpdateExporterIntegration(const UpdateExporterIntegrationRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateExporterIntegration");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateExporterIntegrationResponse rsp = UpdateExporterIntegrationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateExporterIntegrationOutcome(rsp);
+        else
+            return UpdateExporterIntegrationOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateExporterIntegrationOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::UpdateExporterIntegrationAsync(const UpdateExporterIntegrationRequest& request, const UpdateExporterIntegrationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateExporterIntegration(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::UpdateExporterIntegrationOutcomeCallable MonitorClient::UpdateExporterIntegrationCallable(const UpdateExporterIntegrationRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateExporterIntegrationOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateExporterIntegration(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MonitorClient::UpdatePrometheusAgentStatusOutcome MonitorClient::UpdatePrometheusAgentStatus(const UpdatePrometheusAgentStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdatePrometheusAgentStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdatePrometheusAgentStatusResponse rsp = UpdatePrometheusAgentStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdatePrometheusAgentStatusOutcome(rsp);
+        else
+            return UpdatePrometheusAgentStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdatePrometheusAgentStatusOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::UpdatePrometheusAgentStatusAsync(const UpdatePrometheusAgentStatusRequest& request, const UpdatePrometheusAgentStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdatePrometheusAgentStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::UpdatePrometheusAgentStatusOutcomeCallable MonitorClient::UpdatePrometheusAgentStatusCallable(const UpdatePrometheusAgentStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdatePrometheusAgentStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdatePrometheusAgentStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MonitorClient::UpdatePrometheusScrapeJobOutcome MonitorClient::UpdatePrometheusScrapeJob(const UpdatePrometheusScrapeJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdatePrometheusScrapeJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdatePrometheusScrapeJobResponse rsp = UpdatePrometheusScrapeJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdatePrometheusScrapeJobOutcome(rsp);
+        else
+            return UpdatePrometheusScrapeJobOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdatePrometheusScrapeJobOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::UpdatePrometheusScrapeJobAsync(const UpdatePrometheusScrapeJobRequest& request, const UpdatePrometheusScrapeJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdatePrometheusScrapeJob(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::UpdatePrometheusScrapeJobOutcomeCallable MonitorClient::UpdatePrometheusScrapeJobCallable(const UpdatePrometheusScrapeJobRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdatePrometheusScrapeJobOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdatePrometheusScrapeJob(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MonitorClient::UpdateServiceDiscoveryOutcome MonitorClient::UpdateServiceDiscovery(const UpdateServiceDiscoveryRequest &request)
 {
     auto outcome = MakeRequest(request, "UpdateServiceDiscovery");
@@ -2312,6 +3086,49 @@ MonitorClient::UpdateServiceDiscoveryOutcomeCallable MonitorClient::UpdateServic
         [this, request]()
         {
             return this->UpdateServiceDiscovery(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MonitorClient::UpgradeGrafanaDashboardOutcome MonitorClient::UpgradeGrafanaDashboard(const UpgradeGrafanaDashboardRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpgradeGrafanaDashboard");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpgradeGrafanaDashboardResponse rsp = UpgradeGrafanaDashboardResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpgradeGrafanaDashboardOutcome(rsp);
+        else
+            return UpgradeGrafanaDashboardOutcome(o.GetError());
+    }
+    else
+    {
+        return UpgradeGrafanaDashboardOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::UpgradeGrafanaDashboardAsync(const UpgradeGrafanaDashboardRequest& request, const UpgradeGrafanaDashboardAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpgradeGrafanaDashboard(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::UpgradeGrafanaDashboardOutcomeCallable MonitorClient::UpgradeGrafanaDashboardCallable(const UpgradeGrafanaDashboardRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpgradeGrafanaDashboardOutcome()>>(
+        [this, request]()
+        {
+            return this->UpgradeGrafanaDashboard(request);
         }
     );
 

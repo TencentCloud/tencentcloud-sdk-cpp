@@ -60,8 +60,8 @@ namespace TencentCloud
                     bool AddressesHasBeenSet() const;
 
                     /**
-                     * 获取集群的认证信息
-                     * @return Credential 集群的认证信息
+                     * 获取集群的认证信息（token只有请求是主账号才返回，子账户请使用返回的kubeconfig）
+                     * @return Credential 集群的认证信息（token只有请求是主账号才返回，子账户请使用返回的kubeconfig）
                      */
                     ClusterCredential GetCredential() const;
 
@@ -128,7 +128,7 @@ namespace TencentCloud
                     bool m_addressesHasBeenSet;
 
                     /**
-                     * 集群的认证信息
+                     * 集群的认证信息（token只有请求是主账号才返回，子账户请使用返回的kubeconfig）
                      */
                     ClusterCredential m_credential;
                     bool m_credentialHasBeenSet;

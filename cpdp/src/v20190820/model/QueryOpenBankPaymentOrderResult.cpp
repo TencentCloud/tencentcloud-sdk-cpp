@@ -34,7 +34,9 @@ QueryOpenBankPaymentOrderResult::QueryOpenBankPaymentOrderResult() :
     m_attachmentHasBeenSet(false),
     m_redirectInfoHasBeenSet(false),
     m_externalReturnDataHasBeenSet(false),
-    m_bankApprovalGuideInfoHasBeenSet(false)
+    m_bankApprovalGuideInfoHasBeenSet(false),
+    m_feeAmountHasBeenSet(false),
+    m_feeRateHasBeenSet(false)
 {
 }
 
@@ -197,6 +199,26 @@ CoreInternalOutcome QueryOpenBankPaymentOrderResult::Deserialize(const rapidjson
         m_bankApprovalGuideInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("FeeAmount") && !value["FeeAmount"].IsNull())
+    {
+        if (!value["FeeAmount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `QueryOpenBankPaymentOrderResult.FeeAmount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_feeAmount = value["FeeAmount"].GetInt64();
+        m_feeAmountHasBeenSet = true;
+    }
+
+    if (value.HasMember("FeeRate") && !value["FeeRate"].IsNull())
+    {
+        if (!value["FeeRate"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `QueryOpenBankPaymentOrderResult.FeeRate` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_feeRate = value["FeeRate"].GetInt64();
+        m_feeRateHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -316,6 +338,22 @@ void QueryOpenBankPaymentOrderResult::ToJsonObject(rapidjson::Value &value, rapi
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_bankApprovalGuideInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_feeAmountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FeeAmount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_feeAmount, allocator);
+    }
+
+    if (m_feeRateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FeeRate";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_feeRate, allocator);
     }
 
 }
@@ -543,5 +581,37 @@ void QueryOpenBankPaymentOrderResult::SetBankApprovalGuideInfo(const OpenBankApp
 bool QueryOpenBankPaymentOrderResult::BankApprovalGuideInfoHasBeenSet() const
 {
     return m_bankApprovalGuideInfoHasBeenSet;
+}
+
+int64_t QueryOpenBankPaymentOrderResult::GetFeeAmount() const
+{
+    return m_feeAmount;
+}
+
+void QueryOpenBankPaymentOrderResult::SetFeeAmount(const int64_t& _feeAmount)
+{
+    m_feeAmount = _feeAmount;
+    m_feeAmountHasBeenSet = true;
+}
+
+bool QueryOpenBankPaymentOrderResult::FeeAmountHasBeenSet() const
+{
+    return m_feeAmountHasBeenSet;
+}
+
+int64_t QueryOpenBankPaymentOrderResult::GetFeeRate() const
+{
+    return m_feeRate;
+}
+
+void QueryOpenBankPaymentOrderResult::SetFeeRate(const int64_t& _feeRate)
+{
+    m_feeRate = _feeRate;
+    m_feeRateHasBeenSet = true;
+}
+
+bool QueryOpenBankPaymentOrderResult::FeeRateHasBeenSet() const
+{
+    return m_feeRateHasBeenSet;
 }
 

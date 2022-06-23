@@ -121,17 +121,17 @@ namespace TencentCloud
                     bool ThirdPayOrderIdHasBeenSet() const;
 
                     /**
-                     * 获取INIT：初始化
+                     * 获取订单状态。
+INIT：初始化
 PAYING：支付中
-DEDUCTED：扣款成功
 ACCEPTED：支付受理成功
 SUCCESS：支付成功
 CLOSED：关单
 PAY_FAIL：支付失败
 REVOKE：退票
-                     * @return OrderStatus INIT：初始化
+                     * @return OrderStatus 订单状态。
+INIT：初始化
 PAYING：支付中
-DEDUCTED：扣款成功
 ACCEPTED：支付受理成功
 SUCCESS：支付成功
 CLOSED：关单
@@ -141,17 +141,17 @@ REVOKE：退票
                     std::string GetOrderStatus() const;
 
                     /**
-                     * 设置INIT：初始化
+                     * 设置订单状态。
+INIT：初始化
 PAYING：支付中
-DEDUCTED：扣款成功
 ACCEPTED：支付受理成功
 SUCCESS：支付成功
 CLOSED：关单
 PAY_FAIL：支付失败
 REVOKE：退票
-                     * @param OrderStatus INIT：初始化
+                     * @param OrderStatus 订单状态。
+INIT：初始化
 PAYING：支付中
-DEDUCTED：扣款成功
 ACCEPTED：支付受理成功
 SUCCESS：支付成功
 CLOSED：关单
@@ -356,6 +356,50 @@ OPENBANK_PAYMENT
                      */
                     bool BankApprovalGuideInfoHasBeenSet() const;
 
+                    /**
+                     * 获取手续费金额
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FeeAmount 手续费金额
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetFeeAmount() const;
+
+                    /**
+                     * 设置手续费金额
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param FeeAmount 手续费金额
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetFeeAmount(const int64_t& _feeAmount);
+
+                    /**
+                     * 判断参数 FeeAmount 是否已赋值
+                     * @return FeeAmount 是否已赋值
+                     */
+                    bool FeeAmountHasBeenSet() const;
+
+                    /**
+                     * 获取手续费费率
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FeeRate 手续费费率
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetFeeRate() const;
+
+                    /**
+                     * 设置手续费费率
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param FeeRate 手续费费率
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetFeeRate(const int64_t& _feeRate);
+
+                    /**
+                     * 判断参数 FeeRate 是否已赋值
+                     * @return FeeRate 是否已赋值
+                     */
+                    bool FeeRateHasBeenSet() const;
+
                 private:
 
                     /**
@@ -383,9 +427,9 @@ OPENBANK_PAYMENT
                     bool m_thirdPayOrderIdHasBeenSet;
 
                     /**
-                     * INIT：初始化
+                     * 订单状态。
+INIT：初始化
 PAYING：支付中
-DEDUCTED：扣款成功
 ACCEPTED：支付受理成功
 SUCCESS：支付成功
 CLOSED：关单
@@ -455,6 +499,20 @@ OPENBANK_PAYMENT
                      */
                     OpenBankApprovalGuideInfo m_bankApprovalGuideInfo;
                     bool m_bankApprovalGuideInfoHasBeenSet;
+
+                    /**
+                     * 手续费金额
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_feeAmount;
+                    bool m_feeAmountHasBeenSet;
+
+                    /**
+                     * 手续费费率
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_feeRate;
+                    bool m_feeRateHasBeenSet;
 
                 };
             }

@@ -35,6 +35,8 @@
 #include <tencentcloud/tcbr/v20220217/model/DescribeCloudRunServersResponse.h>
 #include <tencentcloud/tcbr/v20220217/model/DescribeEnvBaseInfoRequest.h>
 #include <tencentcloud/tcbr/v20220217/model/DescribeEnvBaseInfoResponse.h>
+#include <tencentcloud/tcbr/v20220217/model/DescribeServerManageTaskRequest.h>
+#include <tencentcloud/tcbr/v20220217/model/DescribeServerManageTaskResponse.h>
 #include <tencentcloud/tcbr/v20220217/model/OperateServerManageRequest.h>
 #include <tencentcloud/tcbr/v20220217/model/OperateServerManageResponse.h>
 #include <tencentcloud/tcbr/v20220217/model/ReleaseGrayRequest.h>
@@ -73,6 +75,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeEnvBaseInfoResponse> DescribeEnvBaseInfoOutcome;
                 typedef std::future<DescribeEnvBaseInfoOutcome> DescribeEnvBaseInfoOutcomeCallable;
                 typedef std::function<void(const TcbrClient*, const Model::DescribeEnvBaseInfoRequest&, DescribeEnvBaseInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEnvBaseInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeServerManageTaskResponse> DescribeServerManageTaskOutcome;
+                typedef std::future<DescribeServerManageTaskOutcome> DescribeServerManageTaskOutcomeCallable;
+                typedef std::function<void(const TcbrClient*, const Model::DescribeServerManageTaskRequest&, DescribeServerManageTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeServerManageTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::OperateServerManageResponse> OperateServerManageOutcome;
                 typedef std::future<OperateServerManageOutcome> OperateServerManageOutcomeCallable;
                 typedef std::function<void(const TcbrClient*, const Model::OperateServerManageRequest&, OperateServerManageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> OperateServerManageAsyncHandler;
@@ -138,6 +143,15 @@ namespace TencentCloud
                 DescribeEnvBaseInfoOutcome DescribeEnvBaseInfo(const Model::DescribeEnvBaseInfoRequest &request);
                 void DescribeEnvBaseInfoAsync(const Model::DescribeEnvBaseInfoRequest& request, const DescribeEnvBaseInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeEnvBaseInfoOutcomeCallable DescribeEnvBaseInfoCallable(const Model::DescribeEnvBaseInfoRequest& request);
+
+                /**
+                 *查询服务管理任务信息
+                 * @param req DescribeServerManageTaskRequest
+                 * @return DescribeServerManageTaskOutcome
+                 */
+                DescribeServerManageTaskOutcome DescribeServerManageTask(const Model::DescribeServerManageTaskRequest &request);
+                void DescribeServerManageTaskAsync(const Model::DescribeServerManageTaskRequest& request, const DescribeServerManageTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeServerManageTaskOutcomeCallable DescribeServerManageTaskCallable(const Model::DescribeServerManageTaskRequest& request);
 
                 /**
                  *操作发布单

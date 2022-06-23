@@ -24,7 +24,8 @@ using namespace TencentCloud::Cme::V20191029::Model;
 using namespace std;
 
 HandleStreamConnectProjectResponse::HandleStreamConnectProjectResponse() :
-    m_streamInputRtmpPushUrlHasBeenSet(false)
+    m_streamInputRtmpPushUrlHasBeenSet(false),
+    m_vodPullInputPlayInfoHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,23 @@ CoreInternalOutcome HandleStreamConnectProjectResponse::Deserialize(const string
         m_streamInputRtmpPushUrlHasBeenSet = true;
     }
 
+    if (rsp.HasMember("VodPullInputPlayInfo") && !rsp["VodPullInputPlayInfo"].IsNull())
+    {
+        if (!rsp["VodPullInputPlayInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `VodPullInputPlayInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_vodPullInputPlayInfo.Deserialize(rsp["VodPullInputPlayInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_vodPullInputPlayInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -88,6 +106,15 @@ string HandleStreamConnectProjectResponse::ToJsonString() const
         string key = "StreamInputRtmpPushUrl";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_streamInputRtmpPushUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_vodPullInputPlayInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VodPullInputPlayInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_vodPullInputPlayInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -110,6 +137,16 @@ string HandleStreamConnectProjectResponse::GetStreamInputRtmpPushUrl() const
 bool HandleStreamConnectProjectResponse::StreamInputRtmpPushUrlHasBeenSet() const
 {
     return m_streamInputRtmpPushUrlHasBeenSet;
+}
+
+VodPullInputPlayInfo HandleStreamConnectProjectResponse::GetVodPullInputPlayInfo() const
+{
+    return m_vodPullInputPlayInfo;
+}
+
+bool HandleStreamConnectProjectResponse::VodPullInputPlayInfoHasBeenSet() const
+{
+    return m_vodPullInputPlayInfoHasBeenSet;
 }
 
 

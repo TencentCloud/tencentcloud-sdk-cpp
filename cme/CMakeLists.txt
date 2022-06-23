@@ -46,6 +46,7 @@ set(cme_public_header_model
   include/tencentcloud/cme/v20191029/model/StreamConnectOutput.h
   include/tencentcloud/cme/v20191029/model/CopyProjectRequest.h
   include/tencentcloud/cme/v20191029/model/SearchScope.h
+  include/tencentcloud/cme/v20191029/model/VodPullInputPlayInfo.h
   include/tencentcloud/cme/v20191029/model/RevokeResourceAuthorizationResponse.h
   include/tencentcloud/cme/v20191029/model/DescribeTasksResponse.h
   include/tencentcloud/cme/v20191029/model/ProjectInfo.h
@@ -240,6 +241,7 @@ set(cme_src
   src/v20191029/model/StreamConnectOutput.cpp
   src/v20191029/model/CopyProjectRequest.cpp
   src/v20191029/model/SearchScope.cpp
+  src/v20191029/model/VodPullInputPlayInfo.cpp
   src/v20191029/model/RevokeResourceAuthorizationResponse.cpp
   src/v20191029/model/DescribeTasksResponse.cpp
   src/v20191029/model/ProjectInfo.cpp

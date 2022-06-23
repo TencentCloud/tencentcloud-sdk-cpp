@@ -214,6 +214,28 @@ namespace TencentCloud
                      */
                     bool BehaviorTitleHasBeenSet() const;
 
+                    /**
+                     * 获取诊断风险项数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return HighRiskCount 诊断风险项数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetHighRiskCount() const;
+
+                    /**
+                     * 设置诊断风险项数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param HighRiskCount 诊断风险项数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetHighRiskCount(const int64_t& _highRiskCount);
+
+                    /**
+                     * 判断参数 HighRiskCount 是否已赋值
+                     * @return HighRiskCount 是否已赋值
+                     */
+                    bool HighRiskCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -269,6 +291,13 @@ namespace TencentCloud
                      */
                     std::string m_behaviorTitle;
                     bool m_behaviorTitleHasBeenSet;
+
+                    /**
+                     * 诊断风险项数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_highRiskCount;
+                    bool m_highRiskCountHasBeenSet;
 
                 };
             }

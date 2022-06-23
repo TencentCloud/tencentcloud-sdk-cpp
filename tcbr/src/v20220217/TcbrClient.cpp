@@ -298,6 +298,49 @@ TcbrClient::DescribeEnvBaseInfoOutcomeCallable TcbrClient::DescribeEnvBaseInfoCa
     return task->get_future();
 }
 
+TcbrClient::DescribeServerManageTaskOutcome TcbrClient::DescribeServerManageTask(const DescribeServerManageTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeServerManageTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeServerManageTaskResponse rsp = DescribeServerManageTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeServerManageTaskOutcome(rsp);
+        else
+            return DescribeServerManageTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeServerManageTaskOutcome(outcome.GetError());
+    }
+}
+
+void TcbrClient::DescribeServerManageTaskAsync(const DescribeServerManageTaskRequest& request, const DescribeServerManageTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeServerManageTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcbrClient::DescribeServerManageTaskOutcomeCallable TcbrClient::DescribeServerManageTaskCallable(const DescribeServerManageTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeServerManageTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeServerManageTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcbrClient::OperateServerManageOutcome TcbrClient::OperateServerManage(const OperateServerManageRequest &request)
 {
     auto outcome = MakeRequest(request, "OperateServerManage");

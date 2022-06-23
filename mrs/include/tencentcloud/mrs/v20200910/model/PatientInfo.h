@@ -508,6 +508,28 @@ namespace TencentCloud
                      */
                     bool MedicalInsuranceTypeCodeHasBeenSet() const;
 
+                    /**
+                     * 获取床号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BedNo 床号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetBedNo() const;
+
+                    /**
+                     * 设置床号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param BedNo 床号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetBedNo(const std::string& _bedNo);
+
+                    /**
+                     * 判断参数 BedNo 是否已赋值
+                     * @return BedNo 是否已赋值
+                     */
+                    bool BedNoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -656,6 +678,13 @@ namespace TencentCloud
                      */
                     std::string m_medicalInsuranceTypeCode;
                     bool m_medicalInsuranceTypeCodeHasBeenSet;
+
+                    /**
+                     * 床号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_bedNo;
+                    bool m_bedNoHasBeenSet;
 
                 };
             }

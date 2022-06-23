@@ -63,6 +63,7 @@ set(mrs_public_header_model
   include/tencentcloud/mrs/v20200910/model/DiseaseMedicalHistory.h
   include/tencentcloud/mrs/v20200910/model/PathologyReport.h
   include/tencentcloud/mrs/v20200910/model/TextToClassResponse.h
+  include/tencentcloud/mrs/v20200910/model/Time.h
   include/tencentcloud/mrs/v20200910/model/HistologyType.h
   include/tencentcloud/mrs/v20200910/model/BlockInfo.h
   include/tencentcloud/mrs/v20200910/model/SurgeryAttr.h
@@ -133,6 +134,7 @@ set(mrs_src
   src/v20200910/model/DiseaseMedicalHistory.cpp
   src/v20200910/model/PathologyReport.cpp
   src/v20200910/model/TextToClassResponse.cpp
+  src/v20200910/model/Time.cpp
   src/v20200910/model/HistologyType.cpp
   src/v20200910/model/BlockInfo.cpp
   src/v20200910/model/SurgeryAttr.cpp

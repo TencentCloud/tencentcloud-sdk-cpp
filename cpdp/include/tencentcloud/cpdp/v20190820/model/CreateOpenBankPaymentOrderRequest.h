@@ -66,12 +66,12 @@ namespace TencentCloud
                     bool ChannelMerchantIdHasBeenSet() const;
 
                     /**
-                     * 获取渠道名称。
+                     * 获取渠道名称。详见附录-云企付枚举类说明-ChannelName。
 __TENPAY__: 商企付
 __WECHAT__: 微信支付
 __ALIPAY__: 支付宝
 __WECHAT__: 微信支付
-                     * @return ChannelName 渠道名称。
+                     * @return ChannelName 渠道名称。详见附录-云企付枚举类说明-ChannelName。
 __TENPAY__: 商企付
 __WECHAT__: 微信支付
 __ALIPAY__: 支付宝
@@ -80,12 +80,12 @@ __WECHAT__: 微信支付
                     std::string GetChannelName() const;
 
                     /**
-                     * 设置渠道名称。
+                     * 设置渠道名称。详见附录-云企付枚举类说明-ChannelName。
 __TENPAY__: 商企付
 __WECHAT__: 微信支付
 __ALIPAY__: 支付宝
 __WECHAT__: 微信支付
-                     * @param ChannelName 渠道名称。
+                     * @param ChannelName 渠道名称。详见附录-云企付枚举类说明-ChannelName。
 __TENPAY__: 商企付
 __WECHAT__: 微信支付
 __ALIPAY__: 支付宝
@@ -100,12 +100,12 @@ __WECHAT__: 微信支付
                     bool ChannelNameHasBeenSet() const;
 
                     /**
-                     * 获取付款方式。如
+                     * 获取付款方式。详见附录-云企付枚举类说明-PaymentMethod。
 __EBANK_PAYMENT__:B2B EBank付款
 __OPENBANK_PAYMENT__:B2C  openbank付款
 __SAFT_ISV__:支付宝安心发
 __TRANS_TO_CHANGE__: 微信支付转账到零钱v2
-                     * @return PaymentMethod 付款方式。如
+                     * @return PaymentMethod 付款方式。详见附录-云企付枚举类说明-PaymentMethod。
 __EBANK_PAYMENT__:B2B EBank付款
 __OPENBANK_PAYMENT__:B2C  openbank付款
 __SAFT_ISV__:支付宝安心发
@@ -114,12 +114,12 @@ __TRANS_TO_CHANGE__: 微信支付转账到零钱v2
                     std::string GetPaymentMethod() const;
 
                     /**
-                     * 设置付款方式。如
+                     * 设置付款方式。详见附录-云企付枚举类说明-PaymentMethod。
 __EBANK_PAYMENT__:B2B EBank付款
 __OPENBANK_PAYMENT__:B2C  openbank付款
 __SAFT_ISV__:支付宝安心发
 __TRANS_TO_CHANGE__: 微信支付转账到零钱v2
-                     * @param PaymentMethod 付款方式。如
+                     * @param PaymentMethod 付款方式。详见附录-云企付枚举类说明-PaymentMethod。
 __EBANK_PAYMENT__:B2B EBank付款
 __OPENBANK_PAYMENT__:B2C  openbank付款
 __SAFT_ISV__:支付宝安心发
@@ -480,7 +480,7 @@ __sandbox__:沙箱环境
                     bool m_channelMerchantIdHasBeenSet;
 
                     /**
-                     * 渠道名称。
+                     * 渠道名称。详见附录-云企付枚举类说明-ChannelName。
 __TENPAY__: 商企付
 __WECHAT__: 微信支付
 __ALIPAY__: 支付宝
@@ -490,7 +490,7 @@ __WECHAT__: 微信支付
                     bool m_channelNameHasBeenSet;
 
                     /**
-                     * 付款方式。如
+                     * 付款方式。详见附录-云企付枚举类说明-PaymentMethod。
 __EBANK_PAYMENT__:B2B EBank付款
 __OPENBANK_PAYMENT__:B2C  openbank付款
 __SAFT_ISV__:支付宝安心发

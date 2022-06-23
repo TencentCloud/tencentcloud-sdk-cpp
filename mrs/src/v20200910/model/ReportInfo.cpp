@@ -38,7 +38,14 @@ ReportInfo::ReportInfo() :
     m_medicalRecordNumHasBeenSet(false),
     m_reportNameHasBeenSet(false),
     m_ultraNumHasBeenSet(false),
-    m_diagnoseHasBeenSet(false)
+    m_diagnoseHasBeenSet(false),
+    m_checkItemHasBeenSet(false),
+    m_checkMethodHasBeenSet(false),
+    m_diagnoseTimeHasBeenSet(false),
+    m_healthCheckupNumHasBeenSet(false),
+    m_otherTimeHasBeenSet(false),
+    m_printTimeHasBeenSet(false),
+    m_timesHasBeenSet(false)
 {
 }
 
@@ -227,6 +234,86 @@ CoreInternalOutcome ReportInfo::Deserialize(const rapidjson::Value &value)
         m_diagnoseHasBeenSet = true;
     }
 
+    if (value.HasMember("CheckItem") && !value["CheckItem"].IsNull())
+    {
+        if (!value["CheckItem"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ReportInfo.CheckItem` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_checkItem = string(value["CheckItem"].GetString());
+        m_checkItemHasBeenSet = true;
+    }
+
+    if (value.HasMember("CheckMethod") && !value["CheckMethod"].IsNull())
+    {
+        if (!value["CheckMethod"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ReportInfo.CheckMethod` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_checkMethod = string(value["CheckMethod"].GetString());
+        m_checkMethodHasBeenSet = true;
+    }
+
+    if (value.HasMember("DiagnoseTime") && !value["DiagnoseTime"].IsNull())
+    {
+        if (!value["DiagnoseTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ReportInfo.DiagnoseTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_diagnoseTime = string(value["DiagnoseTime"].GetString());
+        m_diagnoseTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("HealthCheckupNum") && !value["HealthCheckupNum"].IsNull())
+    {
+        if (!value["HealthCheckupNum"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ReportInfo.HealthCheckupNum` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_healthCheckupNum = string(value["HealthCheckupNum"].GetString());
+        m_healthCheckupNumHasBeenSet = true;
+    }
+
+    if (value.HasMember("OtherTime") && !value["OtherTime"].IsNull())
+    {
+        if (!value["OtherTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ReportInfo.OtherTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_otherTime = string(value["OtherTime"].GetString());
+        m_otherTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("PrintTime") && !value["PrintTime"].IsNull())
+    {
+        if (!value["PrintTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ReportInfo.PrintTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_printTime = string(value["PrintTime"].GetString());
+        m_printTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("Times") && !value["Times"].IsNull())
+    {
+        if (!value["Times"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ReportInfo.Times` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Times"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Time item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_times.push_back(item);
+        }
+        m_timesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -376,6 +463,69 @@ void ReportInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "Diagnose";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_diagnose.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_checkItemHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CheckItem";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_checkItem.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_checkMethodHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CheckMethod";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_checkMethod.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_diagnoseTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DiagnoseTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_diagnoseTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_healthCheckupNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HealthCheckupNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_healthCheckupNum.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_otherTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OtherTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_otherTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_printTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PrintTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_printTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_timesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Times";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_times.begin(); itr != m_times.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -667,5 +817,117 @@ void ReportInfo::SetDiagnose(const string& _diagnose)
 bool ReportInfo::DiagnoseHasBeenSet() const
 {
     return m_diagnoseHasBeenSet;
+}
+
+string ReportInfo::GetCheckItem() const
+{
+    return m_checkItem;
+}
+
+void ReportInfo::SetCheckItem(const string& _checkItem)
+{
+    m_checkItem = _checkItem;
+    m_checkItemHasBeenSet = true;
+}
+
+bool ReportInfo::CheckItemHasBeenSet() const
+{
+    return m_checkItemHasBeenSet;
+}
+
+string ReportInfo::GetCheckMethod() const
+{
+    return m_checkMethod;
+}
+
+void ReportInfo::SetCheckMethod(const string& _checkMethod)
+{
+    m_checkMethod = _checkMethod;
+    m_checkMethodHasBeenSet = true;
+}
+
+bool ReportInfo::CheckMethodHasBeenSet() const
+{
+    return m_checkMethodHasBeenSet;
+}
+
+string ReportInfo::GetDiagnoseTime() const
+{
+    return m_diagnoseTime;
+}
+
+void ReportInfo::SetDiagnoseTime(const string& _diagnoseTime)
+{
+    m_diagnoseTime = _diagnoseTime;
+    m_diagnoseTimeHasBeenSet = true;
+}
+
+bool ReportInfo::DiagnoseTimeHasBeenSet() const
+{
+    return m_diagnoseTimeHasBeenSet;
+}
+
+string ReportInfo::GetHealthCheckupNum() const
+{
+    return m_healthCheckupNum;
+}
+
+void ReportInfo::SetHealthCheckupNum(const string& _healthCheckupNum)
+{
+    m_healthCheckupNum = _healthCheckupNum;
+    m_healthCheckupNumHasBeenSet = true;
+}
+
+bool ReportInfo::HealthCheckupNumHasBeenSet() const
+{
+    return m_healthCheckupNumHasBeenSet;
+}
+
+string ReportInfo::GetOtherTime() const
+{
+    return m_otherTime;
+}
+
+void ReportInfo::SetOtherTime(const string& _otherTime)
+{
+    m_otherTime = _otherTime;
+    m_otherTimeHasBeenSet = true;
+}
+
+bool ReportInfo::OtherTimeHasBeenSet() const
+{
+    return m_otherTimeHasBeenSet;
+}
+
+string ReportInfo::GetPrintTime() const
+{
+    return m_printTime;
+}
+
+void ReportInfo::SetPrintTime(const string& _printTime)
+{
+    m_printTime = _printTime;
+    m_printTimeHasBeenSet = true;
+}
+
+bool ReportInfo::PrintTimeHasBeenSet() const
+{
+    return m_printTimeHasBeenSet;
+}
+
+vector<Time> ReportInfo::GetTimes() const
+{
+    return m_times;
+}
+
+void ReportInfo::SetTimes(const vector<Time>& _times)
+{
+    m_times = _times;
+    m_timesHasBeenSet = true;
+}
+
+bool ReportInfo::TimesHasBeenSet() const
+{
+    return m_timesHasBeenSet;
 }
 

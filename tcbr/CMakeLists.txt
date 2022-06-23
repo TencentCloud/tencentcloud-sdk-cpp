@@ -26,6 +26,8 @@ set(tcbr_public_header_model
   include/tencentcloud/tcbr/v20220217/model/DescribeEnvBaseInfoResponse.h
   include/tencentcloud/tcbr/v20220217/model/CreateCloudRunServerRequest.h
   include/tencentcloud/tcbr/v20220217/model/FunctionInfo.h
+  include/tencentcloud/tcbr/v20220217/model/DescribeServerManageTaskResponse.h
+  include/tencentcloud/tcbr/v20220217/model/TaskStepInfo.h
   include/tencentcloud/tcbr/v20220217/model/DescribeCloudRunEnvsResponse.h
   include/tencentcloud/tcbr/v20220217/model/DescribeCloudRunEnvsRequest.h
   include/tencentcloud/tcbr/v20220217/model/ReleaseGrayResponse.h
@@ -39,8 +41,9 @@ set(tcbr_public_header_model
   include/tencentcloud/tcbr/v20220217/model/DatabasesInfo.h
   include/tencentcloud/tcbr/v20220217/model/DescribeCloudRunServersRequest.h
   include/tencentcloud/tcbr/v20220217/model/ClsInfo.h
-  include/tencentcloud/tcbr/v20220217/model/ServerBaseConfig.h
+  include/tencentcloud/tcbr/v20220217/model/DescribeServerManageTaskRequest.h
   include/tencentcloud/tcbr/v20220217/model/HpaPolicy.h
+  include/tencentcloud/tcbr/v20220217/model/ServerBaseConfig.h
   include/tencentcloud/tcbr/v20220217/model/DescribeCloudRunServerDetailResponse.h
   include/tencentcloud/tcbr/v20220217/model/CreateCloudRunEnvResponse.h
   include/tencentcloud/tcbr/v20220217/model/EnvBaseInfo.h
@@ -54,6 +57,7 @@ set(tcbr_public_header_model
   include/tencentcloud/tcbr/v20220217/model/ObjectKV.h
   include/tencentcloud/tcbr/v20220217/model/BuildPacksInfo.h
   include/tencentcloud/tcbr/v20220217/model/CreateCloudRunEnvRequest.h
+  include/tencentcloud/tcbr/v20220217/model/ServerManageTaskInfo.h
   )
 
 set(tcbr_src
@@ -65,6 +69,8 @@ set(tcbr_src
   src/v20220217/model/DescribeEnvBaseInfoResponse.cpp
   src/v20220217/model/CreateCloudRunServerRequest.cpp
   src/v20220217/model/FunctionInfo.cpp
+  src/v20220217/model/DescribeServerManageTaskResponse.cpp
+  src/v20220217/model/TaskStepInfo.cpp
   src/v20220217/model/DescribeCloudRunEnvsResponse.cpp
   src/v20220217/model/DescribeCloudRunEnvsRequest.cpp
   src/v20220217/model/ReleaseGrayResponse.cpp
@@ -78,8 +84,9 @@ set(tcbr_src
   src/v20220217/model/DatabasesInfo.cpp
   src/v20220217/model/DescribeCloudRunServersRequest.cpp
   src/v20220217/model/ClsInfo.cpp
-  src/v20220217/model/ServerBaseConfig.cpp
+  src/v20220217/model/DescribeServerManageTaskRequest.cpp
   src/v20220217/model/HpaPolicy.cpp
+  src/v20220217/model/ServerBaseConfig.cpp
   src/v20220217/model/DescribeCloudRunServerDetailResponse.cpp
   src/v20220217/model/CreateCloudRunEnvResponse.cpp
   src/v20220217/model/EnvBaseInfo.cpp
@@ -93,6 +100,7 @@ set(tcbr_src
   src/v20220217/model/ObjectKV.cpp
   src/v20220217/model/BuildPacksInfo.cpp
   src/v20220217/model/CreateCloudRunEnvRequest.cpp
+  src/v20220217/model/ServerManageTaskInfo.cpp
   )
 
 set(tcbr_include
