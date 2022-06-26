@@ -119,6 +119,24 @@ namespace TencentCloud
                      */
                     bool LocationHasBeenSet() const;
 
+                    /**
+                     * 获取字段名
+                     * @return Field 字段名
+                     */
+                    std::string GetField() const;
+
+                    /**
+                     * 设置字段名
+                     * @param Field 字段名
+                     */
+                    void SetField(const std::string& _field);
+
+                    /**
+                     * 判断参数 Field 是否已赋值
+                     * @return Field 是否已赋值
+                     */
+                    bool FieldHasBeenSet() const;
+
                 private:
 
                     /**
@@ -144,6 +162,12 @@ namespace TencentCloud
                      */
                     Location m_location;
                     bool m_locationHasBeenSet;
+
+                    /**
+                     * 字段名
+                     */
+                    std::string m_field;
+                    bool m_fieldHasBeenSet;
 
                 };
             }

@@ -470,6 +470,49 @@ MonitorClient::CreatePrometheusScrapeJobOutcomeCallable MonitorClient::CreatePro
     return task->get_future();
 }
 
+MonitorClient::CreateRecordingRuleOutcome MonitorClient::CreateRecordingRule(const CreateRecordingRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateRecordingRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateRecordingRuleResponse rsp = CreateRecordingRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateRecordingRuleOutcome(rsp);
+        else
+            return CreateRecordingRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateRecordingRuleOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::CreateRecordingRuleAsync(const CreateRecordingRuleRequest& request, const CreateRecordingRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateRecordingRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::CreateRecordingRuleOutcomeCallable MonitorClient::CreateRecordingRuleCallable(const CreateRecordingRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateRecordingRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateRecordingRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MonitorClient::CreateServiceDiscoveryOutcome MonitorClient::CreateServiceDiscovery(const CreateServiceDiscoveryRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateServiceDiscovery");
@@ -764,6 +807,49 @@ MonitorClient::DeletePrometheusScrapeJobsOutcomeCallable MonitorClient::DeletePr
         [this, request]()
         {
             return this->DeletePrometheusScrapeJobs(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MonitorClient::DeleteRecordingRulesOutcome MonitorClient::DeleteRecordingRules(const DeleteRecordingRulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteRecordingRules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteRecordingRulesResponse rsp = DeleteRecordingRulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteRecordingRulesOutcome(rsp);
+        else
+            return DeleteRecordingRulesOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteRecordingRulesOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::DeleteRecordingRulesAsync(const DeleteRecordingRulesRequest& request, const DeleteRecordingRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteRecordingRules(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::DeleteRecordingRulesOutcomeCallable MonitorClient::DeleteRecordingRulesCallable(const DeleteRecordingRulesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteRecordingRulesOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteRecordingRules(request);
         }
     );
 
@@ -1882,6 +1968,49 @@ MonitorClient::DescribePrometheusScrapeJobsOutcomeCallable MonitorClient::Descri
         [this, request]()
         {
             return this->DescribePrometheusScrapeJobs(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MonitorClient::DescribeRecordingRulesOutcome MonitorClient::DescribeRecordingRules(const DescribeRecordingRulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRecordingRules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRecordingRulesResponse rsp = DescribeRecordingRulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRecordingRulesOutcome(rsp);
+        else
+            return DescribeRecordingRulesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRecordingRulesOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::DescribeRecordingRulesAsync(const DescribeRecordingRulesRequest& request, const DescribeRecordingRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRecordingRules(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::DescribeRecordingRulesOutcomeCallable MonitorClient::DescribeRecordingRulesCallable(const DescribeRecordingRulesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRecordingRulesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRecordingRules(request);
         }
     );
 
@@ -3043,6 +3172,49 @@ MonitorClient::UpdatePrometheusScrapeJobOutcomeCallable MonitorClient::UpdatePro
         [this, request]()
         {
             return this->UpdatePrometheusScrapeJob(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MonitorClient::UpdateRecordingRuleOutcome MonitorClient::UpdateRecordingRule(const UpdateRecordingRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateRecordingRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateRecordingRuleResponse rsp = UpdateRecordingRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateRecordingRuleOutcome(rsp);
+        else
+            return UpdateRecordingRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateRecordingRuleOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::UpdateRecordingRuleAsync(const UpdateRecordingRuleRequest& request, const UpdateRecordingRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateRecordingRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::UpdateRecordingRuleOutcomeCallable MonitorClient::UpdateRecordingRuleCallable(const UpdateRecordingRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateRecordingRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateRecordingRule(request);
         }
     );
 

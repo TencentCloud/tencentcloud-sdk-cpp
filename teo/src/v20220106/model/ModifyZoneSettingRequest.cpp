@@ -37,7 +37,8 @@ ModifyZoneSettingRequest::ModifyZoneSettingRequest() :
     m_originHasBeenSet(false),
     m_smartRoutingHasBeenSet(false),
     m_webSocketHasBeenSet(false),
-    m_clientIpHeaderHasBeenSet(false)
+    m_clientIpHeaderHasBeenSet(false),
+    m_cachePrefreshHasBeenSet(false)
 {
 }
 
@@ -180,6 +181,15 @@ string ModifyZoneSettingRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_clientIpHeader.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_cachePrefreshHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CachePrefresh";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_cachePrefresh.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -428,6 +438,22 @@ void ModifyZoneSettingRequest::SetClientIpHeader(const ClientIp& _clientIpHeader
 bool ModifyZoneSettingRequest::ClientIpHeaderHasBeenSet() const
 {
     return m_clientIpHeaderHasBeenSet;
+}
+
+CachePrefresh ModifyZoneSettingRequest::GetCachePrefresh() const
+{
+    return m_cachePrefresh;
+}
+
+void ModifyZoneSettingRequest::SetCachePrefresh(const CachePrefresh& _cachePrefresh)
+{
+    m_cachePrefresh = _cachePrefresh;
+    m_cachePrefreshHasBeenSet = true;
+}
+
+bool ModifyZoneSettingRequest::CachePrefreshHasBeenSet() const
+{
+    return m_cachePrefreshHasBeenSet;
 }
 
 

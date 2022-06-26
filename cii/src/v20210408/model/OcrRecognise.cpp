@@ -24,7 +24,8 @@ OcrRecognise::OcrRecognise() :
     m_originalFieldHasBeenSet(false),
     m_valueHasBeenSet(false),
     m_confidenceHasBeenSet(false),
-    m_locationHasBeenSet(false)
+    m_locationHasBeenSet(false),
+    m_fieldHasBeenSet(false)
 {
 }
 
@@ -80,6 +81,16 @@ CoreInternalOutcome OcrRecognise::Deserialize(const rapidjson::Value &value)
         m_locationHasBeenSet = true;
     }
 
+    if (value.HasMember("Field") && !value["Field"].IsNull())
+    {
+        if (!value["Field"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `OcrRecognise.Field` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_field = string(value["Field"].GetString());
+        m_fieldHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -118,6 +129,14 @@ void OcrRecognise::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_location.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_fieldHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Field";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_field.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -185,5 +204,21 @@ void OcrRecognise::SetLocation(const Location& _location)
 bool OcrRecognise::LocationHasBeenSet() const
 {
     return m_locationHasBeenSet;
+}
+
+string OcrRecognise::GetField() const
+{
+    return m_field;
+}
+
+void OcrRecognise::SetField(const string& _field)
+{
+    m_field = _field;
+    m_fieldHasBeenSet = true;
+}
+
+bool OcrRecognise::FieldHasBeenSet() const
+{
+    return m_fieldHasBeenSet;
 }
 

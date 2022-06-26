@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取总费用，打折前的
-                     * @return OriginalPrice 总费用，打折前的
+                     * 获取刊例价费用
+                     * @return OriginalPrice 刊例价费用
                      */
                     int64_t GetOriginalPrice() const;
 
@@ -56,8 +56,8 @@ namespace TencentCloud
                     bool OriginalPriceHasBeenSet() const;
 
                     /**
-                     * 获取实际需要付款金额
-                     * @return Price 实际需要付款金额
+                     * 获取折后实际付款金额
+                     * @return Price 折后实际付款金额
                      */
                     int64_t GetPrice() const;
 
@@ -82,13 +82,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 总费用，打折前的
+                     * 刊例价费用
                      */
                     int64_t m_originalPrice;
                     bool m_originalPriceHasBeenSet;
 
                     /**
-                     * 实际需要付款金额
+                     * 折后实际付款金额
                      */
                     int64_t m_price;
                     bool m_priceHasBeenSet;

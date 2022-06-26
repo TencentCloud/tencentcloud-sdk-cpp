@@ -209,7 +209,7 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/CreateClusterInstancesResponse.h
   include/tencentcloud/tke/v20180525/model/InstanceUpgradeClusterStatus.h
   include/tencentcloud/tke/v20180525/model/DescribeClusterRoutesRequest.h
-  include/tencentcloud/tke/v20180525/model/DeleteECMInstancesRequest.h
+  include/tencentcloud/tke/v20180525/model/ForwardTKEEdgeApplicationRequestV3Request.h
   include/tencentcloud/tke/v20180525/model/ClusterLevelAttribute.h
   include/tencentcloud/tke/v20180525/model/RemoveNodeFromNodePoolResponse.h
   include/tencentcloud/tke/v20180525/model/SetNodePoolNodeProtectionRequest.h
@@ -247,6 +247,7 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/AddNodeToNodePoolRequest.h
   include/tencentcloud/tke/v20180525/model/DescribeExternalClusterSpecRequest.h
   include/tencentcloud/tke/v20180525/model/ModifyPrometheusGlobalNotificationResponse.h
+  include/tencentcloud/tke/v20180525/model/ForwardTKEEdgeApplicationRequestV3Response.h
   include/tencentcloud/tke/v20180525/model/AutoScalingGroupRange.h
   include/tencentcloud/tke/v20180525/model/DescribePrometheusGlobalNotificationRequest.h
   include/tencentcloud/tke/v20180525/model/ClusterPublicLB.h
@@ -322,6 +323,7 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/ECMRunSecurityServiceEnabled.h
   include/tencentcloud/tke/v20180525/model/SyncPrometheusTemplateResponse.h
   include/tencentcloud/tke/v20180525/model/ClusterAsGroupAttribute.h
+  include/tencentcloud/tke/v20180525/model/DeleteECMInstancesRequest.h
   include/tencentcloud/tke/v20180525/model/DisableEventPersistenceRequest.h
   include/tencentcloud/tke/v20180525/model/RunMonitorServiceEnabled.h
   include/tencentcloud/tke/v20180525/model/CreateEKSContainerInstancesRequest.h
@@ -638,7 +640,7 @@ set(tke_src
   src/v20180525/model/CreateClusterInstancesResponse.cpp
   src/v20180525/model/InstanceUpgradeClusterStatus.cpp
   src/v20180525/model/DescribeClusterRoutesRequest.cpp
-  src/v20180525/model/DeleteECMInstancesRequest.cpp
+  src/v20180525/model/ForwardTKEEdgeApplicationRequestV3Request.cpp
   src/v20180525/model/ClusterLevelAttribute.cpp
   src/v20180525/model/RemoveNodeFromNodePoolResponse.cpp
   src/v20180525/model/SetNodePoolNodeProtectionRequest.cpp
@@ -676,6 +678,7 @@ set(tke_src
   src/v20180525/model/AddNodeToNodePoolRequest.cpp
   src/v20180525/model/DescribeExternalClusterSpecRequest.cpp
   src/v20180525/model/ModifyPrometheusGlobalNotificationResponse.cpp
+  src/v20180525/model/ForwardTKEEdgeApplicationRequestV3Response.cpp
   src/v20180525/model/AutoScalingGroupRange.cpp
   src/v20180525/model/DescribePrometheusGlobalNotificationRequest.cpp
   src/v20180525/model/ClusterPublicLB.cpp
@@ -751,6 +754,7 @@ set(tke_src
   src/v20180525/model/ECMRunSecurityServiceEnabled.cpp
   src/v20180525/model/SyncPrometheusTemplateResponse.cpp
   src/v20180525/model/ClusterAsGroupAttribute.cpp
+  src/v20180525/model/DeleteECMInstancesRequest.cpp
   src/v20180525/model/DisableEventPersistenceRequest.cpp
   src/v20180525/model/RunMonitorServiceEnabled.cpp
   src/v20180525/model/CreateEKSContainerInstancesRequest.cpp

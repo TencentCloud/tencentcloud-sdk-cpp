@@ -43,6 +43,8 @@
 #include <tencentcloud/monitor/v20180724/model/CreatePrometheusAgentResponse.h>
 #include <tencentcloud/monitor/v20180724/model/CreatePrometheusScrapeJobRequest.h>
 #include <tencentcloud/monitor/v20180724/model/CreatePrometheusScrapeJobResponse.h>
+#include <tencentcloud/monitor/v20180724/model/CreateRecordingRuleRequest.h>
+#include <tencentcloud/monitor/v20180724/model/CreateRecordingRuleResponse.h>
 #include <tencentcloud/monitor/v20180724/model/CreateServiceDiscoveryRequest.h>
 #include <tencentcloud/monitor/v20180724/model/CreateServiceDiscoveryResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DeleteAlarmNoticesRequest.h>
@@ -57,6 +59,8 @@
 #include <tencentcloud/monitor/v20180724/model/DeletePolicyGroupResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DeletePrometheusScrapeJobsRequest.h>
 #include <tencentcloud/monitor/v20180724/model/DeletePrometheusScrapeJobsResponse.h>
+#include <tencentcloud/monitor/v20180724/model/DeleteRecordingRulesRequest.h>
+#include <tencentcloud/monitor/v20180724/model/DeleteRecordingRulesResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DeleteServiceDiscoveryRequest.h>
 #include <tencentcloud/monitor/v20180724/model/DeleteServiceDiscoveryResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DescribeAccidentEventListRequest.h>
@@ -109,6 +113,8 @@
 #include <tencentcloud/monitor/v20180724/model/DescribePrometheusInstancesResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DescribePrometheusScrapeJobsRequest.h>
 #include <tencentcloud/monitor/v20180724/model/DescribePrometheusScrapeJobsResponse.h>
+#include <tencentcloud/monitor/v20180724/model/DescribeRecordingRulesRequest.h>
+#include <tencentcloud/monitor/v20180724/model/DescribeRecordingRulesResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DescribeServiceDiscoveryRequest.h>
 #include <tencentcloud/monitor/v20180724/model/DescribeServiceDiscoveryResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DescribeStatisticDataRequest.h>
@@ -163,6 +169,8 @@
 #include <tencentcloud/monitor/v20180724/model/UpdatePrometheusAgentStatusResponse.h>
 #include <tencentcloud/monitor/v20180724/model/UpdatePrometheusScrapeJobRequest.h>
 #include <tencentcloud/monitor/v20180724/model/UpdatePrometheusScrapeJobResponse.h>
+#include <tencentcloud/monitor/v20180724/model/UpdateRecordingRuleRequest.h>
+#include <tencentcloud/monitor/v20180724/model/UpdateRecordingRuleResponse.h>
 #include <tencentcloud/monitor/v20180724/model/UpdateServiceDiscoveryRequest.h>
 #include <tencentcloud/monitor/v20180724/model/UpdateServiceDiscoveryResponse.h>
 #include <tencentcloud/monitor/v20180724/model/UpgradeGrafanaDashboardRequest.h>
@@ -211,6 +219,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreatePrometheusScrapeJobResponse> CreatePrometheusScrapeJobOutcome;
                 typedef std::future<CreatePrometheusScrapeJobOutcome> CreatePrometheusScrapeJobOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::CreatePrometheusScrapeJobRequest&, CreatePrometheusScrapeJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePrometheusScrapeJobAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateRecordingRuleResponse> CreateRecordingRuleOutcome;
+                typedef std::future<CreateRecordingRuleOutcome> CreateRecordingRuleOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::CreateRecordingRuleRequest&, CreateRecordingRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRecordingRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateServiceDiscoveryResponse> CreateServiceDiscoveryOutcome;
                 typedef std::future<CreateServiceDiscoveryOutcome> CreateServiceDiscoveryOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::CreateServiceDiscoveryRequest&, CreateServiceDiscoveryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateServiceDiscoveryAsyncHandler;
@@ -232,6 +243,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeletePrometheusScrapeJobsResponse> DeletePrometheusScrapeJobsOutcome;
                 typedef std::future<DeletePrometheusScrapeJobsOutcome> DeletePrometheusScrapeJobsOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::DeletePrometheusScrapeJobsRequest&, DeletePrometheusScrapeJobsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeletePrometheusScrapeJobsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteRecordingRulesResponse> DeleteRecordingRulesOutcome;
+                typedef std::future<DeleteRecordingRulesOutcome> DeleteRecordingRulesOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::DeleteRecordingRulesRequest&, DeleteRecordingRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRecordingRulesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteServiceDiscoveryResponse> DeleteServiceDiscoveryOutcome;
                 typedef std::future<DeleteServiceDiscoveryOutcome> DeleteServiceDiscoveryOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::DeleteServiceDiscoveryRequest&, DeleteServiceDiscoveryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteServiceDiscoveryAsyncHandler;
@@ -310,6 +324,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribePrometheusScrapeJobsResponse> DescribePrometheusScrapeJobsOutcome;
                 typedef std::future<DescribePrometheusScrapeJobsOutcome> DescribePrometheusScrapeJobsOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::DescribePrometheusScrapeJobsRequest&, DescribePrometheusScrapeJobsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePrometheusScrapeJobsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRecordingRulesResponse> DescribeRecordingRulesOutcome;
+                typedef std::future<DescribeRecordingRulesOutcome> DescribeRecordingRulesOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::DescribeRecordingRulesRequest&, DescribeRecordingRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRecordingRulesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeServiceDiscoveryResponse> DescribeServiceDiscoveryOutcome;
                 typedef std::future<DescribeServiceDiscoveryOutcome> DescribeServiceDiscoveryOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::DescribeServiceDiscoveryRequest&, DescribeServiceDiscoveryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeServiceDiscoveryAsyncHandler;
@@ -391,6 +408,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UpdatePrometheusScrapeJobResponse> UpdatePrometheusScrapeJobOutcome;
                 typedef std::future<UpdatePrometheusScrapeJobOutcome> UpdatePrometheusScrapeJobOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::UpdatePrometheusScrapeJobRequest&, UpdatePrometheusScrapeJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdatePrometheusScrapeJobAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateRecordingRuleResponse> UpdateRecordingRuleOutcome;
+                typedef std::future<UpdateRecordingRuleOutcome> UpdateRecordingRuleOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::UpdateRecordingRuleRequest&, UpdateRecordingRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateRecordingRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpdateServiceDiscoveryResponse> UpdateServiceDiscoveryOutcome;
                 typedef std::future<UpdateServiceDiscoveryOutcome> UpdateServiceDiscoveryOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::UpdateServiceDiscoveryRequest&, UpdateServiceDiscoveryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateServiceDiscoveryAsyncHandler;
@@ -493,6 +513,15 @@ namespace TencentCloud
                 CreatePrometheusScrapeJobOutcomeCallable CreatePrometheusScrapeJobCallable(const Model::CreatePrometheusScrapeJobRequest& request);
 
                 /**
+                 *创建 Prometheus 的预聚合规则
+                 * @param req CreateRecordingRuleRequest
+                 * @return CreateRecordingRuleOutcome
+                 */
+                CreateRecordingRuleOutcome CreateRecordingRule(const Model::CreateRecordingRuleRequest &request);
+                void CreateRecordingRuleAsync(const Model::CreateRecordingRuleRequest& request, const CreateRecordingRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateRecordingRuleOutcomeCallable CreateRecordingRuleCallable(const Model::CreateRecordingRuleRequest& request);
+
+                /**
                  *在腾讯云容器服务下创建 Prometheus 服务发现。
 <p>注意：前提条件，已经通过 Prometheus 控制台集成了对应的腾讯云容器服务，具体请参考
 <a href="https://cloud.tencent.com/document/product/248/48859" target="_blank">Agent 安装</a>。</p>
@@ -556,6 +585,15 @@ namespace TencentCloud
                 DeletePrometheusScrapeJobsOutcome DeletePrometheusScrapeJobs(const Model::DeletePrometheusScrapeJobsRequest &request);
                 void DeletePrometheusScrapeJobsAsync(const Model::DeletePrometheusScrapeJobsRequest& request, const DeletePrometheusScrapeJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeletePrometheusScrapeJobsOutcomeCallable DeletePrometheusScrapeJobsCallable(const Model::DeletePrometheusScrapeJobsRequest& request);
+
+                /**
+                 *批量删除 Prometheus 预聚合规则
+                 * @param req DeleteRecordingRulesRequest
+                 * @return DeleteRecordingRulesOutcome
+                 */
+                DeleteRecordingRulesOutcome DeleteRecordingRules(const Model::DeleteRecordingRulesRequest &request);
+                void DeleteRecordingRulesAsync(const Model::DeleteRecordingRulesRequest& request, const DeleteRecordingRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteRecordingRulesOutcomeCallable DeleteRecordingRulesCallable(const Model::DeleteRecordingRulesRequest& request);
 
                 /**
                  *删除在腾讯云容器服务下创建的 Prometheus 服务发现。
@@ -798,6 +836,15 @@ namespace TencentCloud
                 DescribePrometheusScrapeJobsOutcome DescribePrometheusScrapeJobs(const Model::DescribePrometheusScrapeJobsRequest &request);
                 void DescribePrometheusScrapeJobsAsync(const Model::DescribePrometheusScrapeJobsRequest& request, const DescribePrometheusScrapeJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribePrometheusScrapeJobsOutcomeCallable DescribePrometheusScrapeJobsCallable(const Model::DescribePrometheusScrapeJobsRequest& request);
+
+                /**
+                 *根据条件查询 Prometheus 预聚合规则
+                 * @param req DescribeRecordingRulesRequest
+                 * @return DescribeRecordingRulesOutcome
+                 */
+                DescribeRecordingRulesOutcome DescribeRecordingRules(const Model::DescribeRecordingRulesRequest &request);
+                void DescribeRecordingRulesAsync(const Model::DescribeRecordingRulesRequest& request, const DescribeRecordingRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRecordingRulesOutcomeCallable DescribeRecordingRulesCallable(const Model::DescribeRecordingRulesRequest& request);
 
                 /**
                  *列出在腾讯云容器服务下创建的 Prometheus 服务发现。
@@ -1055,6 +1102,15 @@ namespace TencentCloud
                 UpdatePrometheusScrapeJobOutcome UpdatePrometheusScrapeJob(const Model::UpdatePrometheusScrapeJobRequest &request);
                 void UpdatePrometheusScrapeJobAsync(const Model::UpdatePrometheusScrapeJobRequest& request, const UpdatePrometheusScrapeJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UpdatePrometheusScrapeJobOutcomeCallable UpdatePrometheusScrapeJobCallable(const Model::UpdatePrometheusScrapeJobRequest& request);
+
+                /**
+                 *更新 Prometheus 的预聚合规则
+                 * @param req UpdateRecordingRuleRequest
+                 * @return UpdateRecordingRuleOutcome
+                 */
+                UpdateRecordingRuleOutcome UpdateRecordingRule(const Model::UpdateRecordingRuleRequest &request);
+                void UpdateRecordingRuleAsync(const Model::UpdateRecordingRuleRequest& request, const UpdateRecordingRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateRecordingRuleOutcomeCallable UpdateRecordingRuleCallable(const Model::UpdateRecordingRuleRequest& request);
 
                 /**
                  *在腾讯云容器服务下更新 Prometheus 服务发现。

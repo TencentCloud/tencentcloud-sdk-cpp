@@ -259,6 +259,8 @@
 #include <tencentcloud/tke/v20180525/model/EnableVpcCniNetworkTypeResponse.h>
 #include <tencentcloud/tke/v20180525/model/ForwardApplicationRequestV3Request.h>
 #include <tencentcloud/tke/v20180525/model/ForwardApplicationRequestV3Response.h>
+#include <tencentcloud/tke/v20180525/model/ForwardTKEEdgeApplicationRequestV3Request.h>
+#include <tencentcloud/tke/v20180525/model/ForwardTKEEdgeApplicationRequestV3Response.h>
 #include <tencentcloud/tke/v20180525/model/GetClusterLevelPriceRequest.h>
 #include <tencentcloud/tke/v20180525/model/GetClusterLevelPriceResponse.h>
 #include <tencentcloud/tke/v20180525/model/GetMostSuitableImageCacheRequest.h>
@@ -691,6 +693,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ForwardApplicationRequestV3Response> ForwardApplicationRequestV3Outcome;
                 typedef std::future<ForwardApplicationRequestV3Outcome> ForwardApplicationRequestV3OutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::ForwardApplicationRequestV3Request&, ForwardApplicationRequestV3Outcome, const std::shared_ptr<const AsyncCallerContext>&)> ForwardApplicationRequestV3AsyncHandler;
+                typedef Outcome<Core::Error, Model::ForwardTKEEdgeApplicationRequestV3Response> ForwardTKEEdgeApplicationRequestV3Outcome;
+                typedef std::future<ForwardTKEEdgeApplicationRequestV3Outcome> ForwardTKEEdgeApplicationRequestV3OutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::ForwardTKEEdgeApplicationRequestV3Request&, ForwardTKEEdgeApplicationRequestV3Outcome, const std::shared_ptr<const AsyncCallerContext>&)> ForwardTKEEdgeApplicationRequestV3AsyncHandler;
                 typedef Outcome<Core::Error, Model::GetClusterLevelPriceResponse> GetClusterLevelPriceOutcome;
                 typedef std::future<GetClusterLevelPriceOutcome> GetClusterLevelPriceOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::GetClusterLevelPriceRequest&, GetClusterLevelPriceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetClusterLevelPriceAsyncHandler;
@@ -1851,6 +1856,15 @@ namespace TencentCloud
                 ForwardApplicationRequestV3Outcome ForwardApplicationRequestV3(const Model::ForwardApplicationRequestV3Request &request);
                 void ForwardApplicationRequestV3Async(const Model::ForwardApplicationRequestV3Request& request, const ForwardApplicationRequestV3AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ForwardApplicationRequestV3OutcomeCallable ForwardApplicationRequestV3Callable(const Model::ForwardApplicationRequestV3Request& request);
+
+                /**
+                 *操作TKEEdge集群的addon
+                 * @param req ForwardTKEEdgeApplicationRequestV3Request
+                 * @return ForwardTKEEdgeApplicationRequestV3Outcome
+                 */
+                ForwardTKEEdgeApplicationRequestV3Outcome ForwardTKEEdgeApplicationRequestV3(const Model::ForwardTKEEdgeApplicationRequestV3Request &request);
+                void ForwardTKEEdgeApplicationRequestV3Async(const Model::ForwardTKEEdgeApplicationRequestV3Request& request, const ForwardTKEEdgeApplicationRequestV3AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ForwardTKEEdgeApplicationRequestV3OutcomeCallable ForwardTKEEdgeApplicationRequestV3Callable(const Model::ForwardTKEEdgeApplicationRequestV3Request& request);
 
                 /**
                  *获取集群规模价格

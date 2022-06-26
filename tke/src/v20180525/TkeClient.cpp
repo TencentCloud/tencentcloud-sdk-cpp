@@ -5114,6 +5114,49 @@ TkeClient::ForwardApplicationRequestV3OutcomeCallable TkeClient::ForwardApplicat
     return task->get_future();
 }
 
+TkeClient::ForwardTKEEdgeApplicationRequestV3Outcome TkeClient::ForwardTKEEdgeApplicationRequestV3(const ForwardTKEEdgeApplicationRequestV3Request &request)
+{
+    auto outcome = MakeRequest(request, "ForwardTKEEdgeApplicationRequestV3");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ForwardTKEEdgeApplicationRequestV3Response rsp = ForwardTKEEdgeApplicationRequestV3Response();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ForwardTKEEdgeApplicationRequestV3Outcome(rsp);
+        else
+            return ForwardTKEEdgeApplicationRequestV3Outcome(o.GetError());
+    }
+    else
+    {
+        return ForwardTKEEdgeApplicationRequestV3Outcome(outcome.GetError());
+    }
+}
+
+void TkeClient::ForwardTKEEdgeApplicationRequestV3Async(const ForwardTKEEdgeApplicationRequestV3Request& request, const ForwardTKEEdgeApplicationRequestV3AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ForwardTKEEdgeApplicationRequestV3(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::ForwardTKEEdgeApplicationRequestV3OutcomeCallable TkeClient::ForwardTKEEdgeApplicationRequestV3Callable(const ForwardTKEEdgeApplicationRequestV3Request &request)
+{
+    auto task = std::make_shared<std::packaged_task<ForwardTKEEdgeApplicationRequestV3Outcome()>>(
+        [this, request]()
+        {
+            return this->ForwardTKEEdgeApplicationRequestV3(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TkeClient::GetClusterLevelPriceOutcome TkeClient::GetClusterLevelPrice(const GetClusterLevelPriceRequest &request)
 {
     auto outcome = MakeRequest(request, "GetClusterLevelPrice");

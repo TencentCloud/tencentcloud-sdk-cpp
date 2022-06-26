@@ -39,7 +39,8 @@ DescribeZoneSettingResponse::DescribeZoneSettingResponse() :
     m_zoneIdHasBeenSet(false),
     m_zoneHasBeenSet(false),
     m_webSocketHasBeenSet(false),
-    m_clientIpHeaderHasBeenSet(false)
+    m_clientIpHeaderHasBeenSet(false),
+    m_cachePrefreshHasBeenSet(false)
 {
 }
 
@@ -335,6 +336,23 @@ CoreInternalOutcome DescribeZoneSettingResponse::Deserialize(const string &paylo
         m_clientIpHeaderHasBeenSet = true;
     }
 
+    if (rsp.HasMember("CachePrefresh") && !rsp["CachePrefresh"].IsNull())
+    {
+        if (!rsp["CachePrefresh"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `CachePrefresh` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_cachePrefresh.Deserialize(rsp["CachePrefresh"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_cachePrefreshHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -485,6 +503,15 @@ string DescribeZoneSettingResponse::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_clientIpHeader.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_cachePrefreshHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CachePrefresh";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_cachePrefresh.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -657,6 +684,16 @@ ClientIp DescribeZoneSettingResponse::GetClientIpHeader() const
 bool DescribeZoneSettingResponse::ClientIpHeaderHasBeenSet() const
 {
     return m_clientIpHeaderHasBeenSet;
+}
+
+CachePrefresh DescribeZoneSettingResponse::GetCachePrefresh() const
+{
+    return m_cachePrefresh;
+}
+
+bool DescribeZoneSettingResponse::CachePrefreshHasBeenSet() const
+{
+    return m_cachePrefreshHasBeenSet;
 }
 
 

@@ -35,6 +35,7 @@
 #include <tencentcloud/teo/v20220106/model/SmartRouting.h>
 #include <tencentcloud/teo/v20220106/model/WebSocket.h>
 #include <tencentcloud/teo/v20220106/model/ClientIp.h>
+#include <tencentcloud/teo/v20220106/model/CachePrefresh.h>
 
 
 namespace TencentCloud
@@ -326,6 +327,24 @@ namespace TencentCloud
                      */
                     bool ClientIpHeaderHasBeenSet() const;
 
+                    /**
+                     * 获取缓存预刷新配置
+                     * @return CachePrefresh 缓存预刷新配置
+                     */
+                    CachePrefresh GetCachePrefresh() const;
+
+                    /**
+                     * 设置缓存预刷新配置
+                     * @param CachePrefresh 缓存预刷新配置
+                     */
+                    void SetCachePrefresh(const CachePrefresh& _cachePrefresh);
+
+                    /**
+                     * 判断参数 CachePrefresh 是否已赋值
+                     * @return CachePrefresh 是否已赋值
+                     */
+                    bool CachePrefreshHasBeenSet() const;
+
                 private:
 
                     /**
@@ -417,6 +436,12 @@ namespace TencentCloud
                      */
                     ClientIp m_clientIpHeader;
                     bool m_clientIpHeaderHasBeenSet;
+
+                    /**
+                     * 缓存预刷新配置
+                     */
+                    CachePrefresh m_cachePrefresh;
+                    bool m_cachePrefreshHasBeenSet;
 
                 };
             }

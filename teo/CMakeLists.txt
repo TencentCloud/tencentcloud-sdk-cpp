@@ -99,7 +99,6 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220106/model/ModifyLoadBalancingStatusRequest.h
   include/tencentcloud/teo/v20220106/model/DescribeDDosAttackTopDataResponse.h
   include/tencentcloud/teo/v20220106/model/DescribeCnameStatusResponse.h
-  include/tencentcloud/teo/v20220106/model/DeleteDnsRecordsResponse.h
   include/tencentcloud/teo/v20220106/model/DescribeLoadBalancingRequest.h
   include/tencentcloud/teo/v20220106/model/CCInterceptEvent.h
   include/tencentcloud/teo/v20220106/model/DDoSStatusInfo.h
@@ -175,6 +174,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220106/model/DetailHost.h
   include/tencentcloud/teo/v20220106/model/DescribeDnsRecordsResponse.h
   include/tencentcloud/teo/v20220106/model/DescribeDefaultCertificatesResponse.h
+  include/tencentcloud/teo/v20220106/model/CachePrefresh.h
   include/tencentcloud/teo/v20220106/model/DescribeTimingL7AnalysisDataResponse.h
   include/tencentcloud/teo/v20220106/model/BotPortraitRule.h
   include/tencentcloud/teo/v20220106/model/DescribeWebProtectionAttackEventsRequest.h
@@ -186,6 +186,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220106/model/TopNEntryValue.h
   include/tencentcloud/teo/v20220106/model/ModifyDDoSPolicyHostResponse.h
   include/tencentcloud/teo/v20220106/model/ModifyApplicationProxyRuleStatusRequest.h
+  include/tencentcloud/teo/v20220106/model/ModifyLoadBalancingResponse.h
   include/tencentcloud/teo/v20220106/model/WebAttackEvent.h
   include/tencentcloud/teo/v20220106/model/DescribeDDosAttackTopDataRequest.h
   include/tencentcloud/teo/v20220106/model/CreateApplicationProxyRuleResponse.h
@@ -265,7 +266,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220106/model/DDoSFeaturesFilter.h
   include/tencentcloud/teo/v20220106/model/DescribeWebProtectionAttackEventsResponse.h
   include/tencentcloud/teo/v20220106/model/CreatePurgeTaskRequest.h
-  include/tencentcloud/teo/v20220106/model/DescribeApplicationProxyDetailResponse.h
+  include/tencentcloud/teo/v20220106/model/DeleteDnsRecordsResponse.h
   include/tencentcloud/teo/v20220106/model/DescribeBotLogRequest.h
   include/tencentcloud/teo/v20220106/model/DownloadL7LogsResponse.h
   include/tencentcloud/teo/v20220106/model/DDosAttackEventDetailData.h
@@ -280,7 +281,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220106/model/DescribeIdentificationResponse.h
   include/tencentcloud/teo/v20220106/model/DDosMajorAttackEvent.h
   include/tencentcloud/teo/v20220106/model/ModifyZoneCnameSpeedUpRequest.h
-  include/tencentcloud/teo/v20220106/model/ModifyLoadBalancingResponse.h
+  include/tencentcloud/teo/v20220106/model/DescribeApplicationProxyDetailResponse.h
   include/tencentcloud/teo/v20220106/model/DDoSUserAllowBlockIP.h
   include/tencentcloud/teo/v20220106/model/DescribeBotLogResponse.h
   include/tencentcloud/teo/v20220106/model/DescribeLoadBalancingResponse.h
@@ -386,7 +387,6 @@ set(teo_src
   src/v20220106/model/ModifyLoadBalancingStatusRequest.cpp
   src/v20220106/model/DescribeDDosAttackTopDataResponse.cpp
   src/v20220106/model/DescribeCnameStatusResponse.cpp
-  src/v20220106/model/DeleteDnsRecordsResponse.cpp
   src/v20220106/model/DescribeLoadBalancingRequest.cpp
   src/v20220106/model/CCInterceptEvent.cpp
   src/v20220106/model/DDoSStatusInfo.cpp
@@ -462,6 +462,7 @@ set(teo_src
   src/v20220106/model/DetailHost.cpp
   src/v20220106/model/DescribeDnsRecordsResponse.cpp
   src/v20220106/model/DescribeDefaultCertificatesResponse.cpp
+  src/v20220106/model/CachePrefresh.cpp
   src/v20220106/model/DescribeTimingL7AnalysisDataResponse.cpp
   src/v20220106/model/BotPortraitRule.cpp
   src/v20220106/model/DescribeWebProtectionAttackEventsRequest.cpp
@@ -473,6 +474,7 @@ set(teo_src
   src/v20220106/model/TopNEntryValue.cpp
   src/v20220106/model/ModifyDDoSPolicyHostResponse.cpp
   src/v20220106/model/ModifyApplicationProxyRuleStatusRequest.cpp
+  src/v20220106/model/ModifyLoadBalancingResponse.cpp
   src/v20220106/model/WebAttackEvent.cpp
   src/v20220106/model/DescribeDDosAttackTopDataRequest.cpp
   src/v20220106/model/CreateApplicationProxyRuleResponse.cpp
@@ -552,7 +554,7 @@ set(teo_src
   src/v20220106/model/DDoSFeaturesFilter.cpp
   src/v20220106/model/DescribeWebProtectionAttackEventsResponse.cpp
   src/v20220106/model/CreatePurgeTaskRequest.cpp
-  src/v20220106/model/DescribeApplicationProxyDetailResponse.cpp
+  src/v20220106/model/DeleteDnsRecordsResponse.cpp
   src/v20220106/model/DescribeBotLogRequest.cpp
   src/v20220106/model/DownloadL7LogsResponse.cpp
   src/v20220106/model/DDosAttackEventDetailData.cpp
@@ -567,7 +569,7 @@ set(teo_src
   src/v20220106/model/DescribeIdentificationResponse.cpp
   src/v20220106/model/DDosMajorAttackEvent.cpp
   src/v20220106/model/ModifyZoneCnameSpeedUpRequest.cpp
-  src/v20220106/model/ModifyLoadBalancingResponse.cpp
+  src/v20220106/model/DescribeApplicationProxyDetailResponse.cpp
   src/v20220106/model/DDoSUserAllowBlockIP.cpp
   src/v20220106/model/DescribeBotLogResponse.cpp
   src/v20220106/model/DescribeLoadBalancingResponse.cpp
