@@ -298,6 +298,49 @@ MmpsClient::DescribeFlySecMiniAppReportUrlOutcomeCallable MmpsClient::DescribeFl
     return task->get_future();
 }
 
+MmpsClient::DescribeFlySecMiniAppScanReportListOutcome MmpsClient::DescribeFlySecMiniAppScanReportList(const DescribeFlySecMiniAppScanReportListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeFlySecMiniAppScanReportList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeFlySecMiniAppScanReportListResponse rsp = DescribeFlySecMiniAppScanReportListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeFlySecMiniAppScanReportListOutcome(rsp);
+        else
+            return DescribeFlySecMiniAppScanReportListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeFlySecMiniAppScanReportListOutcome(outcome.GetError());
+    }
+}
+
+void MmpsClient::DescribeFlySecMiniAppScanReportListAsync(const DescribeFlySecMiniAppScanReportListRequest& request, const DescribeFlySecMiniAppScanReportListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeFlySecMiniAppScanReportList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MmpsClient::DescribeFlySecMiniAppScanReportListOutcomeCallable MmpsClient::DescribeFlySecMiniAppScanReportListCallable(const DescribeFlySecMiniAppScanReportListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeFlySecMiniAppScanReportListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeFlySecMiniAppScanReportList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MmpsClient::DescribeFlySecMiniAppScanTaskListOutcome MmpsClient::DescribeFlySecMiniAppScanTaskList(const DescribeFlySecMiniAppScanTaskListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeFlySecMiniAppScanTaskList");

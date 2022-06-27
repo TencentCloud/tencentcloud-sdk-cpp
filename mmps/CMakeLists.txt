@@ -24,6 +24,7 @@ set(mmps_public_header_model
   include/tencentcloud/mmps/v20200710/model/DescribeFlySecMiniAppScanTaskParamRequest.h
   include/tencentcloud/mmps/v20200710/model/ResourceUsageInfoData.h
   include/tencentcloud/mmps/v20200710/model/CreateAppScanTaskRequest.h
+  include/tencentcloud/mmps/v20200710/model/FlySecMiniAppRiskItems.h
   include/tencentcloud/mmps/v20200710/model/DescribeScanTaskStatusRequest.h
   include/tencentcloud/mmps/v20200710/model/DescribeBasicDiagnosisResourceUsageInfoResponse.h
   include/tencentcloud/mmps/v20200710/model/CreateAppScanTaskRepeatResponse.h
@@ -34,6 +35,7 @@ set(mmps_public_header_model
   include/tencentcloud/mmps/v20200710/model/CreateFlySecMiniAppScanTaskResponse.h
   include/tencentcloud/mmps/v20200710/model/CreateFlySecMiniAppScanTaskRequest.h
   include/tencentcloud/mmps/v20200710/model/DescribeFlySecMiniAppScanTaskListRequest.h
+  include/tencentcloud/mmps/v20200710/model/DescribeFlySecMiniAppScanReportListRequest.h
   include/tencentcloud/mmps/v20200710/model/DescribeFlySecMiniAppScanTaskParamResponse.h
   include/tencentcloud/mmps/v20200710/model/CreateFlySecMiniAppScanTaskRepeatRequest.h
   include/tencentcloud/mmps/v20200710/model/CreateAppScanTaskRepeatRequest.h
@@ -46,9 +48,11 @@ set(mmps_public_header_model
   include/tencentcloud/mmps/v20200710/model/DescribeScanTaskListResponse.h
   include/tencentcloud/mmps/v20200710/model/AppInfoItem.h
   include/tencentcloud/mmps/v20200710/model/DescribeFlySecMiniAppScanTaskStatusResponse.h
+  include/tencentcloud/mmps/v20200710/model/DescribeFlySecMiniAppScanReportListResponse.h
   include/tencentcloud/mmps/v20200710/model/CreateFlySecMiniAppScanTaskRepeatResponse.h
   include/tencentcloud/mmps/v20200710/model/DescribeScanTaskStatusResponse.h
   include/tencentcloud/mmps/v20200710/model/AppTaskData.h
+  include/tencentcloud/mmps/v20200710/model/FlySecMiniAppReportData.h
   include/tencentcloud/mmps/v20200710/model/DescribeResourceUsageInfoRequest.h
   )
 
@@ -59,6 +63,7 @@ set(mmps_src
   src/v20200710/model/DescribeFlySecMiniAppScanTaskParamRequest.cpp
   src/v20200710/model/ResourceUsageInfoData.cpp
   src/v20200710/model/CreateAppScanTaskRequest.cpp
+  src/v20200710/model/FlySecMiniAppRiskItems.cpp
   src/v20200710/model/DescribeScanTaskStatusRequest.cpp
   src/v20200710/model/DescribeBasicDiagnosisResourceUsageInfoResponse.cpp
   src/v20200710/model/CreateAppScanTaskRepeatResponse.cpp
@@ -69,6 +74,7 @@ set(mmps_src
   src/v20200710/model/CreateFlySecMiniAppScanTaskResponse.cpp
   src/v20200710/model/CreateFlySecMiniAppScanTaskRequest.cpp
   src/v20200710/model/DescribeFlySecMiniAppScanTaskListRequest.cpp
+  src/v20200710/model/DescribeFlySecMiniAppScanReportListRequest.cpp
   src/v20200710/model/DescribeFlySecMiniAppScanTaskParamResponse.cpp
   src/v20200710/model/CreateFlySecMiniAppScanTaskRepeatRequest.cpp
   src/v20200710/model/CreateAppScanTaskRepeatRequest.cpp
@@ -81,9 +87,11 @@ set(mmps_src
   src/v20200710/model/DescribeScanTaskListResponse.cpp
   src/v20200710/model/AppInfoItem.cpp
   src/v20200710/model/DescribeFlySecMiniAppScanTaskStatusResponse.cpp
+  src/v20200710/model/DescribeFlySecMiniAppScanReportListResponse.cpp
   src/v20200710/model/CreateFlySecMiniAppScanTaskRepeatResponse.cpp
   src/v20200710/model/DescribeScanTaskStatusResponse.cpp
   src/v20200710/model/AppTaskData.cpp
+  src/v20200710/model/FlySecMiniAppReportData.cpp
   src/v20200710/model/DescribeResourceUsageInfoRequest.cpp
   )
 

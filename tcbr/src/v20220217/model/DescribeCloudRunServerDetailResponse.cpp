@@ -25,7 +25,8 @@ using namespace std;
 
 DescribeCloudRunServerDetailResponse::DescribeCloudRunServerDetailResponse() :
     m_baseInfoHasBeenSet(false),
-    m_serverConfigHasBeenSet(false)
+    m_serverConfigHasBeenSet(false),
+    m_onlineVersionInfosHasBeenSet(false)
 {
 }
 
@@ -97,6 +98,26 @@ CoreInternalOutcome DescribeCloudRunServerDetailResponse::Deserialize(const stri
         m_serverConfigHasBeenSet = true;
     }
 
+    if (rsp.HasMember("OnlineVersionInfos") && !rsp["OnlineVersionInfos"].IsNull())
+    {
+        if (!rsp["OnlineVersionInfos"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `OnlineVersionInfos` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["OnlineVersionInfos"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            OnlineVersionInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_onlineVersionInfos.push_back(item);
+        }
+        m_onlineVersionInfosHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -123,6 +144,21 @@ string DescribeCloudRunServerDetailResponse::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_serverConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_onlineVersionInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OnlineVersionInfos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_onlineVersionInfos.begin(); itr != m_onlineVersionInfos.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -155,6 +191,16 @@ ServerBaseConfig DescribeCloudRunServerDetailResponse::GetServerConfig() const
 bool DescribeCloudRunServerDetailResponse::ServerConfigHasBeenSet() const
 {
     return m_serverConfigHasBeenSet;
+}
+
+vector<OnlineVersionInfo> DescribeCloudRunServerDetailResponse::GetOnlineVersionInfos() const
+{
+    return m_onlineVersionInfos;
+}
+
+bool DescribeCloudRunServerDetailResponse::OnlineVersionInfosHasBeenSet() const
+{
+    return m_onlineVersionInfosHasBeenSet;
 }
 
 

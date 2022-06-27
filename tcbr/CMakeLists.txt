@@ -43,6 +43,7 @@ set(tcbr_public_header_model
   include/tencentcloud/tcbr/v20220217/model/ClsInfo.h
   include/tencentcloud/tcbr/v20220217/model/DescribeServerManageTaskRequest.h
   include/tencentcloud/tcbr/v20220217/model/HpaPolicy.h
+  include/tencentcloud/tcbr/v20220217/model/OnlineVersionInfo.h
   include/tencentcloud/tcbr/v20220217/model/ServerBaseConfig.h
   include/tencentcloud/tcbr/v20220217/model/DescribeCloudRunServerDetailResponse.h
   include/tencentcloud/tcbr/v20220217/model/CreateCloudRunEnvResponse.h
@@ -86,6 +87,7 @@ set(tcbr_src
   src/v20220217/model/ClsInfo.cpp
   src/v20220217/model/DescribeServerManageTaskRequest.cpp
   src/v20220217/model/HpaPolicy.cpp
+  src/v20220217/model/OnlineVersionInfo.cpp
   src/v20220217/model/ServerBaseConfig.cpp
   src/v20220217/model/DescribeCloudRunServerDetailResponse.cpp
   src/v20220217/model/CreateCloudRunEnvResponse.cpp

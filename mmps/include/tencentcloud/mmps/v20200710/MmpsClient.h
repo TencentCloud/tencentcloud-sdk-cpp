@@ -35,6 +35,8 @@
 #include <tencentcloud/mmps/v20200710/model/DescribeBasicDiagnosisResourceUsageInfoResponse.h>
 #include <tencentcloud/mmps/v20200710/model/DescribeFlySecMiniAppReportUrlRequest.h>
 #include <tencentcloud/mmps/v20200710/model/DescribeFlySecMiniAppReportUrlResponse.h>
+#include <tencentcloud/mmps/v20200710/model/DescribeFlySecMiniAppScanReportListRequest.h>
+#include <tencentcloud/mmps/v20200710/model/DescribeFlySecMiniAppScanReportListResponse.h>
 #include <tencentcloud/mmps/v20200710/model/DescribeFlySecMiniAppScanTaskListRequest.h>
 #include <tencentcloud/mmps/v20200710/model/DescribeFlySecMiniAppScanTaskListResponse.h>
 #include <tencentcloud/mmps/v20200710/model/DescribeFlySecMiniAppScanTaskParamRequest.h>
@@ -81,6 +83,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeFlySecMiniAppReportUrlResponse> DescribeFlySecMiniAppReportUrlOutcome;
                 typedef std::future<DescribeFlySecMiniAppReportUrlOutcome> DescribeFlySecMiniAppReportUrlOutcomeCallable;
                 typedef std::function<void(const MmpsClient*, const Model::DescribeFlySecMiniAppReportUrlRequest&, DescribeFlySecMiniAppReportUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFlySecMiniAppReportUrlAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeFlySecMiniAppScanReportListResponse> DescribeFlySecMiniAppScanReportListOutcome;
+                typedef std::future<DescribeFlySecMiniAppScanReportListOutcome> DescribeFlySecMiniAppScanReportListOutcomeCallable;
+                typedef std::function<void(const MmpsClient*, const Model::DescribeFlySecMiniAppScanReportListRequest&, DescribeFlySecMiniAppScanReportListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFlySecMiniAppScanReportListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeFlySecMiniAppScanTaskListResponse> DescribeFlySecMiniAppScanTaskListOutcome;
                 typedef std::future<DescribeFlySecMiniAppScanTaskListOutcome> DescribeFlySecMiniAppScanTaskListOutcomeCallable;
                 typedef std::function<void(const MmpsClient*, const Model::DescribeFlySecMiniAppScanTaskListRequest&, DescribeFlySecMiniAppScanTaskListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFlySecMiniAppScanTaskListAsyncHandler;
@@ -158,6 +163,15 @@ namespace TencentCloud
                 DescribeFlySecMiniAppReportUrlOutcome DescribeFlySecMiniAppReportUrl(const Model::DescribeFlySecMiniAppReportUrlRequest &request);
                 void DescribeFlySecMiniAppReportUrlAsync(const Model::DescribeFlySecMiniAppReportUrlRequest& request, const DescribeFlySecMiniAppReportUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeFlySecMiniAppReportUrlOutcomeCallable DescribeFlySecMiniAppReportUrlCallable(const Model::DescribeFlySecMiniAppReportUrlRequest& request);
+
+                /**
+                 *查询指定小程序版本的翼扬诊断安全得分
+                 * @param req DescribeFlySecMiniAppScanReportListRequest
+                 * @return DescribeFlySecMiniAppScanReportListOutcome
+                 */
+                DescribeFlySecMiniAppScanReportListOutcome DescribeFlySecMiniAppScanReportList(const Model::DescribeFlySecMiniAppScanReportListRequest &request);
+                void DescribeFlySecMiniAppScanReportListAsync(const Model::DescribeFlySecMiniAppScanReportListRequest& request, const DescribeFlySecMiniAppScanReportListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeFlySecMiniAppScanReportListOutcomeCallable DescribeFlySecMiniAppScanReportListCallable(const Model::DescribeFlySecMiniAppScanReportListRequest& request);
 
                 /**
                  *获取翼扬安全诊断任务列表

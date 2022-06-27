@@ -427,6 +427,49 @@ MonitorClient::CreatePrometheusAgentOutcomeCallable MonitorClient::CreatePrometh
     return task->get_future();
 }
 
+MonitorClient::CreatePrometheusMultiTenantInstancePostPayModeOutcome MonitorClient::CreatePrometheusMultiTenantInstancePostPayMode(const CreatePrometheusMultiTenantInstancePostPayModeRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreatePrometheusMultiTenantInstancePostPayMode");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreatePrometheusMultiTenantInstancePostPayModeResponse rsp = CreatePrometheusMultiTenantInstancePostPayModeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreatePrometheusMultiTenantInstancePostPayModeOutcome(rsp);
+        else
+            return CreatePrometheusMultiTenantInstancePostPayModeOutcome(o.GetError());
+    }
+    else
+    {
+        return CreatePrometheusMultiTenantInstancePostPayModeOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::CreatePrometheusMultiTenantInstancePostPayModeAsync(const CreatePrometheusMultiTenantInstancePostPayModeRequest& request, const CreatePrometheusMultiTenantInstancePostPayModeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreatePrometheusMultiTenantInstancePostPayMode(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::CreatePrometheusMultiTenantInstancePostPayModeOutcomeCallable MonitorClient::CreatePrometheusMultiTenantInstancePostPayModeCallable(const CreatePrometheusMultiTenantInstancePostPayModeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreatePrometheusMultiTenantInstancePostPayModeOutcome()>>(
+        [this, request]()
+        {
+            return this->CreatePrometheusMultiTenantInstancePostPayMode(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MonitorClient::CreatePrometheusScrapeJobOutcome MonitorClient::CreatePrometheusScrapeJob(const CreatePrometheusScrapeJobRequest &request)
 {
     auto outcome = MakeRequest(request, "CreatePrometheusScrapeJob");

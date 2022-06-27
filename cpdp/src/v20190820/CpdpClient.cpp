@@ -1631,6 +1631,49 @@ CpdpClient::CreateMerchantOutcomeCallable CpdpClient::CreateMerchantCallable(con
     return task->get_future();
 }
 
+CpdpClient::CreateOpenBankAggregatedSubMerchantRegistrationOutcome CpdpClient::CreateOpenBankAggregatedSubMerchantRegistration(const CreateOpenBankAggregatedSubMerchantRegistrationRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateOpenBankAggregatedSubMerchantRegistration");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateOpenBankAggregatedSubMerchantRegistrationResponse rsp = CreateOpenBankAggregatedSubMerchantRegistrationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateOpenBankAggregatedSubMerchantRegistrationOutcome(rsp);
+        else
+            return CreateOpenBankAggregatedSubMerchantRegistrationOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateOpenBankAggregatedSubMerchantRegistrationOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::CreateOpenBankAggregatedSubMerchantRegistrationAsync(const CreateOpenBankAggregatedSubMerchantRegistrationRequest& request, const CreateOpenBankAggregatedSubMerchantRegistrationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateOpenBankAggregatedSubMerchantRegistration(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::CreateOpenBankAggregatedSubMerchantRegistrationOutcomeCallable CpdpClient::CreateOpenBankAggregatedSubMerchantRegistrationCallable(const CreateOpenBankAggregatedSubMerchantRegistrationRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateOpenBankAggregatedSubMerchantRegistrationOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateOpenBankAggregatedSubMerchantRegistration(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CpdpClient::CreateOpenBankExternalSubMerchantAccountBookOutcome CpdpClient::CreateOpenBankExternalSubMerchantAccountBook(const CreateOpenBankExternalSubMerchantAccountBookRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateOpenBankExternalSubMerchantAccountBook");
@@ -1839,6 +1882,92 @@ CpdpClient::CreateOpenBankRechargeOrderOutcomeCallable CpdpClient::CreateOpenBan
         [this, request]()
         {
             return this->CreateOpenBankRechargeOrder(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CpdpClient::CreateOpenBankSubMerchantRateConfigureOutcome CpdpClient::CreateOpenBankSubMerchantRateConfigure(const CreateOpenBankSubMerchantRateConfigureRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateOpenBankSubMerchantRateConfigure");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateOpenBankSubMerchantRateConfigureResponse rsp = CreateOpenBankSubMerchantRateConfigureResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateOpenBankSubMerchantRateConfigureOutcome(rsp);
+        else
+            return CreateOpenBankSubMerchantRateConfigureOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateOpenBankSubMerchantRateConfigureOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::CreateOpenBankSubMerchantRateConfigureAsync(const CreateOpenBankSubMerchantRateConfigureRequest& request, const CreateOpenBankSubMerchantRateConfigureAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateOpenBankSubMerchantRateConfigure(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::CreateOpenBankSubMerchantRateConfigureOutcomeCallable CpdpClient::CreateOpenBankSubMerchantRateConfigureCallable(const CreateOpenBankSubMerchantRateConfigureRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateOpenBankSubMerchantRateConfigureOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateOpenBankSubMerchantRateConfigure(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CpdpClient::CreateOpenBankUnifiedOrderOutcome CpdpClient::CreateOpenBankUnifiedOrder(const CreateOpenBankUnifiedOrderRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateOpenBankUnifiedOrder");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateOpenBankUnifiedOrderResponse rsp = CreateOpenBankUnifiedOrderResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateOpenBankUnifiedOrderOutcome(rsp);
+        else
+            return CreateOpenBankUnifiedOrderOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateOpenBankUnifiedOrderOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::CreateOpenBankUnifiedOrderAsync(const CreateOpenBankUnifiedOrderRequest& request, const CreateOpenBankUnifiedOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateOpenBankUnifiedOrder(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::CreateOpenBankUnifiedOrderOutcomeCallable CpdpClient::CreateOpenBankUnifiedOrderCallable(const CreateOpenBankUnifiedOrderRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateOpenBankUnifiedOrderOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateOpenBankUnifiedOrder(request);
         }
     );
 
@@ -5759,6 +5888,49 @@ CpdpClient::QueryOpenBankBankBranchListOutcomeCallable CpdpClient::QueryOpenBank
     return task->get_future();
 }
 
+CpdpClient::QueryOpenBankBillDataPageOutcome CpdpClient::QueryOpenBankBillDataPage(const QueryOpenBankBillDataPageRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryOpenBankBillDataPage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryOpenBankBillDataPageResponse rsp = QueryOpenBankBillDataPageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryOpenBankBillDataPageOutcome(rsp);
+        else
+            return QueryOpenBankBillDataPageOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryOpenBankBillDataPageOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::QueryOpenBankBillDataPageAsync(const QueryOpenBankBillDataPageRequest& request, const QueryOpenBankBillDataPageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->QueryOpenBankBillDataPage(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::QueryOpenBankBillDataPageOutcomeCallable CpdpClient::QueryOpenBankBillDataPageCallable(const QueryOpenBankBillDataPageRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<QueryOpenBankBillDataPageOutcome()>>(
+        [this, request]()
+        {
+            return this->QueryOpenBankBillDataPage(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CpdpClient::QueryOpenBankBindExternalSubMerchantBankAccountOutcome CpdpClient::QueryOpenBankBindExternalSubMerchantBankAccount(const QueryOpenBankBindExternalSubMerchantBankAccountRequest &request)
 {
     auto outcome = MakeRequest(request, "QueryOpenBankBindExternalSubMerchantBankAccount");
@@ -6096,6 +6268,135 @@ CpdpClient::QueryOpenBankPaymentOrderOutcomeCallable CpdpClient::QueryOpenBankPa
         [this, request]()
         {
             return this->QueryOpenBankPaymentOrder(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CpdpClient::QueryOpenBankRefundOrderOutcome CpdpClient::QueryOpenBankRefundOrder(const QueryOpenBankRefundOrderRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryOpenBankRefundOrder");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryOpenBankRefundOrderResponse rsp = QueryOpenBankRefundOrderResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryOpenBankRefundOrderOutcome(rsp);
+        else
+            return QueryOpenBankRefundOrderOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryOpenBankRefundOrderOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::QueryOpenBankRefundOrderAsync(const QueryOpenBankRefundOrderRequest& request, const QueryOpenBankRefundOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->QueryOpenBankRefundOrder(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::QueryOpenBankRefundOrderOutcomeCallable CpdpClient::QueryOpenBankRefundOrderCallable(const QueryOpenBankRefundOrderRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<QueryOpenBankRefundOrderOutcome()>>(
+        [this, request]()
+        {
+            return this->QueryOpenBankRefundOrder(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CpdpClient::QueryOpenBankSubMerchantCredentialOutcome CpdpClient::QueryOpenBankSubMerchantCredential(const QueryOpenBankSubMerchantCredentialRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryOpenBankSubMerchantCredential");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryOpenBankSubMerchantCredentialResponse rsp = QueryOpenBankSubMerchantCredentialResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryOpenBankSubMerchantCredentialOutcome(rsp);
+        else
+            return QueryOpenBankSubMerchantCredentialOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryOpenBankSubMerchantCredentialOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::QueryOpenBankSubMerchantCredentialAsync(const QueryOpenBankSubMerchantCredentialRequest& request, const QueryOpenBankSubMerchantCredentialAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->QueryOpenBankSubMerchantCredential(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::QueryOpenBankSubMerchantCredentialOutcomeCallable CpdpClient::QueryOpenBankSubMerchantCredentialCallable(const QueryOpenBankSubMerchantCredentialRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<QueryOpenBankSubMerchantCredentialOutcome()>>(
+        [this, request]()
+        {
+            return this->QueryOpenBankSubMerchantCredential(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CpdpClient::QueryOpenBankSubMerchantRateConfigureOutcome CpdpClient::QueryOpenBankSubMerchantRateConfigure(const QueryOpenBankSubMerchantRateConfigureRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryOpenBankSubMerchantRateConfigure");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryOpenBankSubMerchantRateConfigureResponse rsp = QueryOpenBankSubMerchantRateConfigureResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryOpenBankSubMerchantRateConfigureOutcome(rsp);
+        else
+            return QueryOpenBankSubMerchantRateConfigureOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryOpenBankSubMerchantRateConfigureOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::QueryOpenBankSubMerchantRateConfigureAsync(const QueryOpenBankSubMerchantRateConfigureRequest& request, const QueryOpenBankSubMerchantRateConfigureAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->QueryOpenBankSubMerchantRateConfigure(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::QueryOpenBankSubMerchantRateConfigureOutcomeCallable CpdpClient::QueryOpenBankSubMerchantRateConfigureCallable(const QueryOpenBankSubMerchantRateConfigureRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<QueryOpenBankSubMerchantRateConfigureOutcome()>>(
+        [this, request]()
+        {
+            return this->QueryOpenBankSubMerchantRateConfigure(request);
         }
     );
 
@@ -7092,6 +7393,49 @@ CpdpClient::RefundMemberTransactionOutcomeCallable CpdpClient::RefundMemberTrans
     return task->get_future();
 }
 
+CpdpClient::RefundOpenBankOrderOutcome CpdpClient::RefundOpenBankOrder(const RefundOpenBankOrderRequest &request)
+{
+    auto outcome = MakeRequest(request, "RefundOpenBankOrder");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RefundOpenBankOrderResponse rsp = RefundOpenBankOrderResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RefundOpenBankOrderOutcome(rsp);
+        else
+            return RefundOpenBankOrderOutcome(o.GetError());
+    }
+    else
+    {
+        return RefundOpenBankOrderOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::RefundOpenBankOrderAsync(const RefundOpenBankOrderRequest& request, const RefundOpenBankOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RefundOpenBankOrder(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::RefundOpenBankOrderOutcomeCallable CpdpClient::RefundOpenBankOrderCallable(const RefundOpenBankOrderRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RefundOpenBankOrderOutcome()>>(
+        [this, request]()
+        {
+            return this->RefundOpenBankOrder(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CpdpClient::RefundOrderOutcome CpdpClient::RefundOrder(const RefundOrderRequest &request)
 {
     auto outcome = MakeRequest(request, "RefundOrder");
@@ -7945,6 +8289,49 @@ CpdpClient::UploadFileOutcomeCallable CpdpClient::UploadFileCallable(const Uploa
         [this, request]()
         {
             return this->UploadFile(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CpdpClient::UploadOpenBankSubMerchantCredentialOutcome CpdpClient::UploadOpenBankSubMerchantCredential(const UploadOpenBankSubMerchantCredentialRequest &request)
+{
+    auto outcome = MakeRequest(request, "UploadOpenBankSubMerchantCredential");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UploadOpenBankSubMerchantCredentialResponse rsp = UploadOpenBankSubMerchantCredentialResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UploadOpenBankSubMerchantCredentialOutcome(rsp);
+        else
+            return UploadOpenBankSubMerchantCredentialOutcome(o.GetError());
+    }
+    else
+    {
+        return UploadOpenBankSubMerchantCredentialOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::UploadOpenBankSubMerchantCredentialAsync(const UploadOpenBankSubMerchantCredentialRequest& request, const UploadOpenBankSubMerchantCredentialAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UploadOpenBankSubMerchantCredential(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::UploadOpenBankSubMerchantCredentialOutcomeCallable CpdpClient::UploadOpenBankSubMerchantCredentialCallable(const UploadOpenBankSubMerchantCredentialRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UploadOpenBankSubMerchantCredentialOutcome()>>(
+        [this, request]()
+        {
+            return this->UploadOpenBankSubMerchantCredential(request);
         }
     );
 

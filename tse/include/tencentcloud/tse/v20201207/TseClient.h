@@ -27,10 +27,18 @@
 #include <tencentcloud/tse/v20201207/model/CreateEngineResponse.h>
 #include <tencentcloud/tse/v20201207/model/DeleteEngineRequest.h>
 #include <tencentcloud/tse/v20201207/model/DeleteEngineResponse.h>
+#include <tencentcloud/tse/v20201207/model/DescribeNacosReplicasRequest.h>
+#include <tencentcloud/tse/v20201207/model/DescribeNacosReplicasResponse.h>
+#include <tencentcloud/tse/v20201207/model/DescribeNacosServerInterfacesRequest.h>
+#include <tencentcloud/tse/v20201207/model/DescribeNacosServerInterfacesResponse.h>
 #include <tencentcloud/tse/v20201207/model/DescribeSREInstanceAccessAddressRequest.h>
 #include <tencentcloud/tse/v20201207/model/DescribeSREInstanceAccessAddressResponse.h>
 #include <tencentcloud/tse/v20201207/model/DescribeSREInstancesRequest.h>
 #include <tencentcloud/tse/v20201207/model/DescribeSREInstancesResponse.h>
+#include <tencentcloud/tse/v20201207/model/DescribeZookeeperReplicasRequest.h>
+#include <tencentcloud/tse/v20201207/model/DescribeZookeeperReplicasResponse.h>
+#include <tencentcloud/tse/v20201207/model/DescribeZookeeperServerInterfacesRequest.h>
+#include <tencentcloud/tse/v20201207/model/DescribeZookeeperServerInterfacesResponse.h>
 
 
 namespace TencentCloud
@@ -51,12 +59,24 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteEngineResponse> DeleteEngineOutcome;
                 typedef std::future<DeleteEngineOutcome> DeleteEngineOutcomeCallable;
                 typedef std::function<void(const TseClient*, const Model::DeleteEngineRequest&, DeleteEngineOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteEngineAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeNacosReplicasResponse> DescribeNacosReplicasOutcome;
+                typedef std::future<DescribeNacosReplicasOutcome> DescribeNacosReplicasOutcomeCallable;
+                typedef std::function<void(const TseClient*, const Model::DescribeNacosReplicasRequest&, DescribeNacosReplicasOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNacosReplicasAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeNacosServerInterfacesResponse> DescribeNacosServerInterfacesOutcome;
+                typedef std::future<DescribeNacosServerInterfacesOutcome> DescribeNacosServerInterfacesOutcomeCallable;
+                typedef std::function<void(const TseClient*, const Model::DescribeNacosServerInterfacesRequest&, DescribeNacosServerInterfacesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNacosServerInterfacesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSREInstanceAccessAddressResponse> DescribeSREInstanceAccessAddressOutcome;
                 typedef std::future<DescribeSREInstanceAccessAddressOutcome> DescribeSREInstanceAccessAddressOutcomeCallable;
                 typedef std::function<void(const TseClient*, const Model::DescribeSREInstanceAccessAddressRequest&, DescribeSREInstanceAccessAddressOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSREInstanceAccessAddressAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSREInstancesResponse> DescribeSREInstancesOutcome;
                 typedef std::future<DescribeSREInstancesOutcome> DescribeSREInstancesOutcomeCallable;
                 typedef std::function<void(const TseClient*, const Model::DescribeSREInstancesRequest&, DescribeSREInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSREInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeZookeeperReplicasResponse> DescribeZookeeperReplicasOutcome;
+                typedef std::future<DescribeZookeeperReplicasOutcome> DescribeZookeeperReplicasOutcomeCallable;
+                typedef std::function<void(const TseClient*, const Model::DescribeZookeeperReplicasRequest&, DescribeZookeeperReplicasOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeZookeeperReplicasAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeZookeeperServerInterfacesResponse> DescribeZookeeperServerInterfacesOutcome;
+                typedef std::future<DescribeZookeeperServerInterfacesOutcome> DescribeZookeeperServerInterfacesOutcomeCallable;
+                typedef std::function<void(const TseClient*, const Model::DescribeZookeeperServerInterfacesRequest&, DescribeZookeeperServerInterfacesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeZookeeperServerInterfacesAsyncHandler;
 
 
 
@@ -79,6 +99,24 @@ namespace TencentCloud
                 DeleteEngineOutcomeCallable DeleteEngineCallable(const Model::DeleteEngineRequest& request);
 
                 /**
+                 *查询Nacos类型引擎实例副本信息
+                 * @param req DescribeNacosReplicasRequest
+                 * @return DescribeNacosReplicasOutcome
+                 */
+                DescribeNacosReplicasOutcome DescribeNacosReplicas(const Model::DescribeNacosReplicasRequest &request);
+                void DescribeNacosReplicasAsync(const Model::DescribeNacosReplicasRequest& request, const DescribeNacosReplicasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeNacosReplicasOutcomeCallable DescribeNacosReplicasCallable(const Model::DescribeNacosReplicasRequest& request);
+
+                /**
+                 *查询nacos服务接口列表
+                 * @param req DescribeNacosServerInterfacesRequest
+                 * @return DescribeNacosServerInterfacesOutcome
+                 */
+                DescribeNacosServerInterfacesOutcome DescribeNacosServerInterfaces(const Model::DescribeNacosServerInterfacesRequest &request);
+                void DescribeNacosServerInterfacesAsync(const Model::DescribeNacosServerInterfacesRequest& request, const DescribeNacosServerInterfacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeNacosServerInterfacesOutcomeCallable DescribeNacosServerInterfacesCallable(const Model::DescribeNacosServerInterfacesRequest& request);
+
+                /**
                  *查询引擎实例访问地址
                  * @param req DescribeSREInstanceAccessAddressRequest
                  * @return DescribeSREInstanceAccessAddressOutcome
@@ -95,6 +133,24 @@ namespace TencentCloud
                 DescribeSREInstancesOutcome DescribeSREInstances(const Model::DescribeSREInstancesRequest &request);
                 void DescribeSREInstancesAsync(const Model::DescribeSREInstancesRequest& request, const DescribeSREInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeSREInstancesOutcomeCallable DescribeSREInstancesCallable(const Model::DescribeSREInstancesRequest& request);
+
+                /**
+                 *查询Zookeeper类型注册引擎实例副本信息
+                 * @param req DescribeZookeeperReplicasRequest
+                 * @return DescribeZookeeperReplicasOutcome
+                 */
+                DescribeZookeeperReplicasOutcome DescribeZookeeperReplicas(const Model::DescribeZookeeperReplicasRequest &request);
+                void DescribeZookeeperReplicasAsync(const Model::DescribeZookeeperReplicasRequest& request, const DescribeZookeeperReplicasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeZookeeperReplicasOutcomeCallable DescribeZookeeperReplicasCallable(const Model::DescribeZookeeperReplicasRequest& request);
+
+                /**
+                 *查询zookeeper服务接口列表
+                 * @param req DescribeZookeeperServerInterfacesRequest
+                 * @return DescribeZookeeperServerInterfacesOutcome
+                 */
+                DescribeZookeeperServerInterfacesOutcome DescribeZookeeperServerInterfaces(const Model::DescribeZookeeperServerInterfacesRequest &request);
+                void DescribeZookeeperServerInterfacesAsync(const Model::DescribeZookeeperServerInterfacesRequest& request, const DescribeZookeeperServerInterfacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeZookeeperServerInterfacesOutcomeCallable DescribeZookeeperServerInterfacesCallable(const Model::DescribeZookeeperServerInterfacesRequest& request);
 
             };
         }

@@ -51,7 +51,6 @@ set(monitor_public_header_model
   include/tencentcloud/monitor/v20180724/model/DescribeProductEventListDimensions.h
   include/tencentcloud/monitor/v20180724/model/DescribePolicyGroupInfoResponse.h
   include/tencentcloud/monitor/v20180724/model/PrometheusAgent.h
-  include/tencentcloud/monitor/v20180724/model/DeleteExporterIntegrationRequest.h
   include/tencentcloud/monitor/v20180724/model/ModifyAlarmPolicyNoticeRequest.h
   include/tencentcloud/monitor/v20180724/model/DeleteAlarmPolicyRequest.h
   include/tencentcloud/monitor/v20180724/model/PolicyTag.h
@@ -64,7 +63,7 @@ set(monitor_public_header_model
   include/tencentcloud/monitor/v20180724/model/ModifyAlarmPolicyTasksResponse.h
   include/tencentcloud/monitor/v20180724/model/DescribeBaseMetricsResponse.h
   include/tencentcloud/monitor/v20180724/model/PrometheusScrapeJob.h
-  include/tencentcloud/monitor/v20180724/model/ModifyPrometheusInstanceAttributesResponse.h
+  include/tencentcloud/monitor/v20180724/model/CreatePrometheusMultiTenantInstancePostPayModeRequest.h
   include/tencentcloud/monitor/v20180724/model/MetricDataPoint.h
   include/tencentcloud/monitor/v20180724/model/DescribePolicyConditionListConfigManualContinueTime.h
   include/tencentcloud/monitor/v20180724/model/DeleteAlertRulesResponse.h
@@ -88,28 +87,31 @@ set(monitor_public_header_model
   include/tencentcloud/monitor/v20180724/model/ModifyAlarmPolicyTasksRequest.h
   include/tencentcloud/monitor/v20180724/model/DimensionsDesc.h
   include/tencentcloud/monitor/v20180724/model/ModifyAlarmPolicyStatusRequest.h
+  include/tencentcloud/monitor/v20180724/model/CreatePrometheusMultiTenantInstancePostPayModeResponse.h
   include/tencentcloud/monitor/v20180724/model/UpdatePrometheusAgentStatusResponse.h
   include/tencentcloud/monitor/v20180724/model/ServiceDiscoveryItem.h
   include/tencentcloud/monitor/v20180724/model/SetDefaultAlarmPolicyRequest.h
   include/tencentcloud/monitor/v20180724/model/ModifyAlarmNoticeRequest.h
   include/tencentcloud/monitor/v20180724/model/CreateServiceDiscoveryRequest.h
   include/tencentcloud/monitor/v20180724/model/DescribeAlertRulesResponse.h
+  include/tencentcloud/monitor/v20180724/model/DescribeBasicAlarmListResponse.h
   include/tencentcloud/monitor/v20180724/model/DescribeProductListRequest.h
   include/tencentcloud/monitor/v20180724/model/PeriodsSt.h
   include/tencentcloud/monitor/v20180724/model/BindPrometheusManagedGrafanaResponse.h
   include/tencentcloud/monitor/v20180724/model/AlarmPolicy.h
-  include/tencentcloud/monitor/v20180724/model/CreateAlarmPolicyResponse.h
+  include/tencentcloud/monitor/v20180724/model/DeleteExporterIntegrationRequest.h
   include/tencentcloud/monitor/v20180724/model/ModifyAlarmReceiversResponse.h
   include/tencentcloud/monitor/v20180724/model/ManagementCommand.h
   include/tencentcloud/monitor/v20180724/model/DescribePolicyConditionListResponse.h
   include/tencentcloud/monitor/v20180724/model/PrometheusRuleSet.h
   include/tencentcloud/monitor/v20180724/model/DescribeAllNamespacesResponse.h
   include/tencentcloud/monitor/v20180724/model/GetPrometheusAgentManagementCommandRequest.h
+  include/tencentcloud/monitor/v20180724/model/ModifyPrometheusInstanceAttributesResponse.h
   include/tencentcloud/monitor/v20180724/model/DeleteAlarmNoticesResponse.h
   include/tencentcloud/monitor/v20180724/model/TerminatePrometheusInstancesRequest.h
   include/tencentcloud/monitor/v20180724/model/UnbindPrometheusManagedGrafanaResponse.h
   include/tencentcloud/monitor/v20180724/model/UpdatePrometheusAgentStatusRequest.h
-  include/tencentcloud/monitor/v20180724/model/DescribeBasicAlarmListResponse.h
+  include/tencentcloud/monitor/v20180724/model/CreateAlarmPolicyResponse.h
   include/tencentcloud/monitor/v20180724/model/ProductSimple.h
   include/tencentcloud/monitor/v20180724/model/ModifyAlarmReceiversRequest.h
   include/tencentcloud/monitor/v20180724/model/AlarmPolicyRule.h
@@ -291,7 +293,6 @@ set(monitor_src
   src/v20180724/model/DescribeProductEventListDimensions.cpp
   src/v20180724/model/DescribePolicyGroupInfoResponse.cpp
   src/v20180724/model/PrometheusAgent.cpp
-  src/v20180724/model/DeleteExporterIntegrationRequest.cpp
   src/v20180724/model/ModifyAlarmPolicyNoticeRequest.cpp
   src/v20180724/model/DeleteAlarmPolicyRequest.cpp
   src/v20180724/model/PolicyTag.cpp
@@ -304,7 +305,7 @@ set(monitor_src
   src/v20180724/model/ModifyAlarmPolicyTasksResponse.cpp
   src/v20180724/model/DescribeBaseMetricsResponse.cpp
   src/v20180724/model/PrometheusScrapeJob.cpp
-  src/v20180724/model/ModifyPrometheusInstanceAttributesResponse.cpp
+  src/v20180724/model/CreatePrometheusMultiTenantInstancePostPayModeRequest.cpp
   src/v20180724/model/MetricDataPoint.cpp
   src/v20180724/model/DescribePolicyConditionListConfigManualContinueTime.cpp
   src/v20180724/model/DeleteAlertRulesResponse.cpp
@@ -328,28 +329,31 @@ set(monitor_src
   src/v20180724/model/ModifyAlarmPolicyTasksRequest.cpp
   src/v20180724/model/DimensionsDesc.cpp
   src/v20180724/model/ModifyAlarmPolicyStatusRequest.cpp
+  src/v20180724/model/CreatePrometheusMultiTenantInstancePostPayModeResponse.cpp
   src/v20180724/model/UpdatePrometheusAgentStatusResponse.cpp
   src/v20180724/model/ServiceDiscoveryItem.cpp
   src/v20180724/model/SetDefaultAlarmPolicyRequest.cpp
   src/v20180724/model/ModifyAlarmNoticeRequest.cpp
   src/v20180724/model/CreateServiceDiscoveryRequest.cpp
   src/v20180724/model/DescribeAlertRulesResponse.cpp
+  src/v20180724/model/DescribeBasicAlarmListResponse.cpp
   src/v20180724/model/DescribeProductListRequest.cpp
   src/v20180724/model/PeriodsSt.cpp
   src/v20180724/model/BindPrometheusManagedGrafanaResponse.cpp
   src/v20180724/model/AlarmPolicy.cpp
-  src/v20180724/model/CreateAlarmPolicyResponse.cpp
+  src/v20180724/model/DeleteExporterIntegrationRequest.cpp
   src/v20180724/model/ModifyAlarmReceiversResponse.cpp
   src/v20180724/model/ManagementCommand.cpp
   src/v20180724/model/DescribePolicyConditionListResponse.cpp
   src/v20180724/model/PrometheusRuleSet.cpp
   src/v20180724/model/DescribeAllNamespacesResponse.cpp
   src/v20180724/model/GetPrometheusAgentManagementCommandRequest.cpp
+  src/v20180724/model/ModifyPrometheusInstanceAttributesResponse.cpp
   src/v20180724/model/DeleteAlarmNoticesResponse.cpp
   src/v20180724/model/TerminatePrometheusInstancesRequest.cpp
   src/v20180724/model/UnbindPrometheusManagedGrafanaResponse.cpp
   src/v20180724/model/UpdatePrometheusAgentStatusRequest.cpp
-  src/v20180724/model/DescribeBasicAlarmListResponse.cpp
+  src/v20180724/model/CreateAlarmPolicyResponse.cpp
   src/v20180724/model/ProductSimple.cpp
   src/v20180724/model/ModifyAlarmReceiversRequest.cpp
   src/v20180724/model/AlarmPolicyRule.cpp

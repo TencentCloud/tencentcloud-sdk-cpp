@@ -30,7 +30,9 @@ IndicatorItem::IndicatorItem() :
     m_rangeHasBeenSet(false),
     m_arrowHasBeenSet(false),
     m_normalHasBeenSet(false),
-    m_itemStringHasBeenSet(false)
+    m_itemStringHasBeenSet(false),
+    m_idHasBeenSet(false),
+    m_coordsHasBeenSet(false)
 {
 }
 
@@ -139,6 +141,33 @@ CoreInternalOutcome IndicatorItem::Deserialize(const rapidjson::Value &value)
         m_itemStringHasBeenSet = true;
     }
 
+    if (value.HasMember("Id") && !value["Id"].IsNull())
+    {
+        if (!value["Id"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `IndicatorItem.Id` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_id = value["Id"].GetInt64();
+        m_idHasBeenSet = true;
+    }
+
+    if (value.HasMember("Coords") && !value["Coords"].IsNull())
+    {
+        if (!value["Coords"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `IndicatorItem.Coords` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_coords.Deserialize(value["Coords"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_coordsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -224,6 +253,23 @@ void IndicatorItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "ItemString";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_itemString.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_idHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Id";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_id, allocator);
+    }
+
+    if (m_coordsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Coords";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_coords.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -387,5 +433,37 @@ void IndicatorItem::SetItemString(const string& _itemString)
 bool IndicatorItem::ItemStringHasBeenSet() const
 {
     return m_itemStringHasBeenSet;
+}
+
+int64_t IndicatorItem::GetId() const
+{
+    return m_id;
+}
+
+void IndicatorItem::SetId(const int64_t& _id)
+{
+    m_id = _id;
+    m_idHasBeenSet = true;
+}
+
+bool IndicatorItem::IdHasBeenSet() const
+{
+    return m_idHasBeenSet;
+}
+
+Coordinate IndicatorItem::GetCoords() const
+{
+    return m_coords;
+}
+
+void IndicatorItem::SetCoords(const Coordinate& _coords)
+{
+    m_coords = _coords;
+    m_coordsHasBeenSet = true;
+}
+
+bool IndicatorItem::CoordsHasBeenSet() const
+{
+    return m_coordsHasBeenSet;
 }
 

@@ -23,9 +23,9 @@ using namespace TencentCloud::Eb::V20210416::Model;
 using namespace std;
 
 ListTargetsRequest::ListTargetsRequest() :
-    m_ruleIdHasBeenSet(false),
     m_eventBusIdHasBeenSet(false),
     m_orderByHasBeenSet(false),
+    m_ruleIdHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_orderHasBeenSet(false)
@@ -38,14 +38,6 @@ string ListTargetsRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
-
-    if (m_ruleIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "RuleId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_ruleId.c_str(), allocator).Move(), allocator);
-    }
 
     if (m_eventBusIdHasBeenSet)
     {
@@ -61,6 +53,14 @@ string ListTargetsRequest::ToJsonString() const
         string key = "OrderBy";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_orderBy.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ruleIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RuleId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_ruleId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_limitHasBeenSet)
@@ -95,22 +95,6 @@ string ListTargetsRequest::ToJsonString() const
 }
 
 
-string ListTargetsRequest::GetRuleId() const
-{
-    return m_ruleId;
-}
-
-void ListTargetsRequest::SetRuleId(const string& _ruleId)
-{
-    m_ruleId = _ruleId;
-    m_ruleIdHasBeenSet = true;
-}
-
-bool ListTargetsRequest::RuleIdHasBeenSet() const
-{
-    return m_ruleIdHasBeenSet;
-}
-
 string ListTargetsRequest::GetEventBusId() const
 {
     return m_eventBusId;
@@ -141,6 +125,22 @@ void ListTargetsRequest::SetOrderBy(const string& _orderBy)
 bool ListTargetsRequest::OrderByHasBeenSet() const
 {
     return m_orderByHasBeenSet;
+}
+
+string ListTargetsRequest::GetRuleId() const
+{
+    return m_ruleId;
+}
+
+void ListTargetsRequest::SetRuleId(const string& _ruleId)
+{
+    m_ruleId = _ruleId;
+    m_ruleIdHasBeenSet = true;
+}
+
+bool ListTargetsRequest::RuleIdHasBeenSet() const
+{
+    return m_ruleIdHasBeenSet;
 }
 
 int64_t ListTargetsRequest::GetLimit() const

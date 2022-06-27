@@ -154,6 +154,28 @@ namespace TencentCloud
                      */
                     bool ContinentInnerCodeHasBeenSet() const;
 
+                    /**
+                     * 获取标注信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Remark 标注信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetRemark() const;
+
+                    /**
+                     * 设置标注信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Remark 标注信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRemark(const std::string& _remark);
+
+                    /**
+                     * 判断参数 Remark 是否已赋值
+                     * @return Remark 是否已赋值
+                     */
+                    bool RemarkHasBeenSet() const;
+
                 private:
 
                     /**
@@ -191,6 +213,13 @@ namespace TencentCloud
                      */
                     std::string m_continentInnerCode;
                     bool m_continentInnerCodeHasBeenSet;
+
+                    /**
+                     * 标注信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_remark;
+                    bool m_remarkHasBeenSet;
 
                 };
             }

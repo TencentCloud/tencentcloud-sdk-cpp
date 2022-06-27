@@ -23,6 +23,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tcbr/v20220217/model/ServerBaseInfo.h>
 #include <tencentcloud/tcbr/v20220217/model/ServerBaseConfig.h>
+#include <tencentcloud/tcbr/v20220217/model/OnlineVersionInfo.h>
 
 
 namespace TencentCloud
@@ -73,6 +74,20 @@ namespace TencentCloud
                      */
                     bool ServerConfigHasBeenSet() const;
 
+                    /**
+                     * 获取在线版本信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OnlineVersionInfos 在线版本信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<OnlineVersionInfo> GetOnlineVersionInfos() const;
+
+                    /**
+                     * 判断参数 OnlineVersionInfos 是否已赋值
+                     * @return OnlineVersionInfos 是否已赋值
+                     */
+                    bool OnlineVersionInfosHasBeenSet() const;
+
                 private:
 
                     /**
@@ -88,6 +103,13 @@ namespace TencentCloud
                      */
                     ServerBaseConfig m_serverConfig;
                     bool m_serverConfigHasBeenSet;
+
+                    /**
+                     * 在线版本信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<OnlineVersionInfo> m_onlineVersionInfos;
+                    bool m_onlineVersionInfosHasBeenSet;
 
                 };
             }
