@@ -68,8 +68,8 @@ namespace TencentCloud
                     bool TopicNameHasBeenSet() const;
 
                     /**
-                     * 获取0：非分区topic，无分区；非0：具体分区topic的分区数。
-                     * @return Partitions 0：非分区topic，无分区；非0：具体分区topic的分区数。
+                     * 获取0或1：非分区topic，无分区；大于1：具体分区topic的分区数。（存量非分区主题返回0，增量非分区主题返回1）
+                     * @return Partitions 0或1：非分区topic，无分区；大于1：具体分区topic的分区数。（存量非分区主题返回0，增量非分区主题返回1）
                      */
                     uint64_t GetPartitions() const;
 
@@ -99,14 +99,12 @@ namespace TencentCloud
 2 ：局部顺序消息；
 3 ：重试队列；
 4 ：死信队列；
-5 ：事务消息。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TopicType 0： 普通消息；
 1 ：全局顺序消息；
 2 ：局部顺序消息；
 3 ：重试队列；
 4 ：死信队列；
-5 ：事务消息。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetTopicType() const;
@@ -132,7 +130,7 @@ namespace TencentCloud
                     bool m_topicNameHasBeenSet;
 
                     /**
-                     * 0：非分区topic，无分区；非0：具体分区topic的分区数。
+                     * 0或1：非分区topic，无分区；大于1：具体分区topic的分区数。（存量非分区主题返回0，增量非分区主题返回1）
                      */
                     uint64_t m_partitions;
                     bool m_partitionsHasBeenSet;
@@ -150,7 +148,6 @@ namespace TencentCloud
 2 ：局部顺序消息；
 3 ：重试队列；
 4 ：死信队列；
-5 ：事务消息。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_topicType;

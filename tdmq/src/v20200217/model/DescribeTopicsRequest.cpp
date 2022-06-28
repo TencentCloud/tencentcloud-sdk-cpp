@@ -29,7 +29,8 @@ DescribeTopicsRequest::DescribeTopicsRequest() :
     m_limitHasBeenSet(false),
     m_topicTypeHasBeenSet(false),
     m_clusterIdHasBeenSet(false),
-    m_filtersHasBeenSet(false)
+    m_filtersHasBeenSet(false),
+    m_topicCreatorHasBeenSet(false)
 {
 }
 
@@ -101,6 +102,14 @@ string DescribeTopicsRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_topicCreatorHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TopicCreator";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_topicCreator, allocator);
     }
 
 
@@ -221,6 +230,22 @@ void DescribeTopicsRequest::SetFilters(const vector<Filter>& _filters)
 bool DescribeTopicsRequest::FiltersHasBeenSet() const
 {
     return m_filtersHasBeenSet;
+}
+
+uint64_t DescribeTopicsRequest::GetTopicCreator() const
+{
+    return m_topicCreator;
+}
+
+void DescribeTopicsRequest::SetTopicCreator(const uint64_t& _topicCreator)
+{
+    m_topicCreator = _topicCreator;
+    m_topicCreatorHasBeenSet = true;
+}
+
+bool DescribeTopicsRequest::TopicCreatorHasBeenSet() const
+{
+    return m_topicCreatorHasBeenSet;
 }
 
 

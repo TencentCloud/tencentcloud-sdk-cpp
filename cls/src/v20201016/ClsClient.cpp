@@ -341,49 +341,6 @@ ClsClient::CreateConsumerOutcomeCallable ClsClient::CreateConsumerCallable(const
     return task->get_future();
 }
 
-ClsClient::CreateDataTransformOutcome ClsClient::CreateDataTransform(const CreateDataTransformRequest &request)
-{
-    auto outcome = MakeRequest(request, "CreateDataTransform");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        CreateDataTransformResponse rsp = CreateDataTransformResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return CreateDataTransformOutcome(rsp);
-        else
-            return CreateDataTransformOutcome(o.GetError());
-    }
-    else
-    {
-        return CreateDataTransformOutcome(outcome.GetError());
-    }
-}
-
-void ClsClient::CreateDataTransformAsync(const CreateDataTransformRequest& request, const CreateDataTransformAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateDataTransform(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-ClsClient::CreateDataTransformOutcomeCallable ClsClient::CreateDataTransformCallable(const CreateDataTransformRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<CreateDataTransformOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateDataTransform(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 ClsClient::CreateExportOutcome ClsClient::CreateExport(const CreateExportRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateExport");
@@ -900,49 +857,6 @@ ClsClient::DeleteConsumerOutcomeCallable ClsClient::DeleteConsumerCallable(const
     return task->get_future();
 }
 
-ClsClient::DeleteDataTransformOutcome ClsClient::DeleteDataTransform(const DeleteDataTransformRequest &request)
-{
-    auto outcome = MakeRequest(request, "DeleteDataTransform");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DeleteDataTransformResponse rsp = DeleteDataTransformResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DeleteDataTransformOutcome(rsp);
-        else
-            return DeleteDataTransformOutcome(o.GetError());
-    }
-    else
-    {
-        return DeleteDataTransformOutcome(outcome.GetError());
-    }
-}
-
-void ClsClient::DeleteDataTransformAsync(const DeleteDataTransformRequest& request, const DeleteDataTransformAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteDataTransform(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-ClsClient::DeleteDataTransformOutcomeCallable ClsClient::DeleteDataTransformCallable(const DeleteDataTransformRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DeleteDataTransformOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteDataTransform(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 ClsClient::DeleteExportOutcome ClsClient::DeleteExport(const DeleteExportRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteExport");
@@ -1452,49 +1366,6 @@ ClsClient::DescribeConsumerOutcomeCallable ClsClient::DescribeConsumerCallable(c
         [this, request]()
         {
             return this->DescribeConsumer(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-ClsClient::DescribeDataTransformInfoOutcome ClsClient::DescribeDataTransformInfo(const DescribeDataTransformInfoRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeDataTransformInfo");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeDataTransformInfoResponse rsp = DescribeDataTransformInfoResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeDataTransformInfoOutcome(rsp);
-        else
-            return DescribeDataTransformInfoOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeDataTransformInfoOutcome(outcome.GetError());
-    }
-}
-
-void ClsClient::DescribeDataTransformInfoAsync(const DescribeDataTransformInfoRequest& request, const DescribeDataTransformInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDataTransformInfo(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-ClsClient::DescribeDataTransformInfoOutcomeCallable ClsClient::DescribeDataTransformInfoCallable(const DescribeDataTransformInfoRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeDataTransformInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDataTransformInfo(request);
         }
     );
 
@@ -2312,49 +2183,6 @@ ClsClient::ModifyConsumerOutcomeCallable ClsClient::ModifyConsumerCallable(const
         [this, request]()
         {
             return this->ModifyConsumer(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-ClsClient::ModifyDataTransformOutcome ClsClient::ModifyDataTransform(const ModifyDataTransformRequest &request)
-{
-    auto outcome = MakeRequest(request, "ModifyDataTransform");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        ModifyDataTransformResponse rsp = ModifyDataTransformResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return ModifyDataTransformOutcome(rsp);
-        else
-            return ModifyDataTransformOutcome(o.GetError());
-    }
-    else
-    {
-        return ModifyDataTransformOutcome(outcome.GetError());
-    }
-}
-
-void ClsClient::ModifyDataTransformAsync(const ModifyDataTransformRequest& request, const ModifyDataTransformAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyDataTransform(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-ClsClient::ModifyDataTransformOutcomeCallable ClsClient::ModifyDataTransformCallable(const ModifyDataTransformRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<ModifyDataTransformOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyDataTransform(request);
         }
     );
 

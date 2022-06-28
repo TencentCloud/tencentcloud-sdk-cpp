@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务id
-                     * @return MiniAppID 任务id
+                     * 获取小程序AppID
+                     * @return MiniAppID 小程序AppID
                      */
                     std::string GetMiniAppID() const;
 
                     /**
-                     * 设置任务id
-                     * @param MiniAppID 任务id
+                     * 设置小程序AppID
+                     * @param MiniAppID 小程序AppID
                      */
                     void SetMiniAppID(const std::string& _miniAppID);
 
@@ -135,7 +135,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 任务id
+                     * 小程序AppID
                      */
                     std::string m_miniAppID;
                     bool m_miniAppIDHasBeenSet;

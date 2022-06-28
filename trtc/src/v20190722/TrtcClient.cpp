@@ -40,49 +40,6 @@ TrtcClient::TrtcClient(const Credential &credential, const string &region, const
 }
 
 
-TrtcClient::CreateCloudRecordingOutcome TrtcClient::CreateCloudRecording(const CreateCloudRecordingRequest &request)
-{
-    auto outcome = MakeRequest(request, "CreateCloudRecording");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        CreateCloudRecordingResponse rsp = CreateCloudRecordingResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return CreateCloudRecordingOutcome(rsp);
-        else
-            return CreateCloudRecordingOutcome(o.GetError());
-    }
-    else
-    {
-        return CreateCloudRecordingOutcome(outcome.GetError());
-    }
-}
-
-void TrtcClient::CreateCloudRecordingAsync(const CreateCloudRecordingRequest& request, const CreateCloudRecordingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateCloudRecording(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-TrtcClient::CreateCloudRecordingOutcomeCallable TrtcClient::CreateCloudRecordingCallable(const CreateCloudRecordingRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<CreateCloudRecordingOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateCloudRecording(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 TrtcClient::CreatePictureOutcome TrtcClient::CreatePicture(const CreatePictureRequest &request)
 {
     auto outcome = MakeRequest(request, "CreatePicture");
@@ -162,49 +119,6 @@ TrtcClient::CreateTroubleInfoOutcomeCallable TrtcClient::CreateTroubleInfoCallab
         [this, request]()
         {
             return this->CreateTroubleInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-TrtcClient::DeleteCloudRecordingOutcome TrtcClient::DeleteCloudRecording(const DeleteCloudRecordingRequest &request)
-{
-    auto outcome = MakeRequest(request, "DeleteCloudRecording");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DeleteCloudRecordingResponse rsp = DeleteCloudRecordingResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DeleteCloudRecordingOutcome(rsp);
-        else
-            return DeleteCloudRecordingOutcome(o.GetError());
-    }
-    else
-    {
-        return DeleteCloudRecordingOutcome(outcome.GetError());
-    }
-}
-
-void TrtcClient::DeleteCloudRecordingAsync(const DeleteCloudRecordingRequest& request, const DeleteCloudRecordingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteCloudRecording(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-TrtcClient::DeleteCloudRecordingOutcomeCallable TrtcClient::DeleteCloudRecordingCallable(const DeleteCloudRecordingRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DeleteCloudRecordingOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteCloudRecording(request);
         }
     );
 
@@ -334,49 +248,6 @@ TrtcClient::DescribeCallDetailOutcomeCallable TrtcClient::DescribeCallDetailCall
         [this, request]()
         {
             return this->DescribeCallDetail(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-TrtcClient::DescribeCloudRecordingOutcome TrtcClient::DescribeCloudRecording(const DescribeCloudRecordingRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeCloudRecording");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeCloudRecordingResponse rsp = DescribeCloudRecordingResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeCloudRecordingOutcome(rsp);
-        else
-            return DescribeCloudRecordingOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeCloudRecordingOutcome(outcome.GetError());
-    }
-}
-
-void TrtcClient::DescribeCloudRecordingAsync(const DescribeCloudRecordingRequest& request, const DescribeCloudRecordingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCloudRecording(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-TrtcClient::DescribeCloudRecordingOutcomeCallable TrtcClient::DescribeCloudRecordingCallable(const DescribeCloudRecordingRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeCloudRecordingOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCloudRecording(request);
         }
     );
 
@@ -807,49 +678,6 @@ TrtcClient::DismissRoomByStrRoomIdOutcomeCallable TrtcClient::DismissRoomByStrRo
         [this, request]()
         {
             return this->DismissRoomByStrRoomId(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-TrtcClient::ModifyCloudRecordingOutcome TrtcClient::ModifyCloudRecording(const ModifyCloudRecordingRequest &request)
-{
-    auto outcome = MakeRequest(request, "ModifyCloudRecording");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        ModifyCloudRecordingResponse rsp = ModifyCloudRecordingResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return ModifyCloudRecordingOutcome(rsp);
-        else
-            return ModifyCloudRecordingOutcome(o.GetError());
-    }
-    else
-    {
-        return ModifyCloudRecordingOutcome(outcome.GetError());
-    }
-}
-
-void TrtcClient::ModifyCloudRecordingAsync(const ModifyCloudRecordingRequest& request, const ModifyCloudRecordingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyCloudRecording(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-TrtcClient::ModifyCloudRecordingOutcomeCallable TrtcClient::ModifyCloudRecordingCallable(const ModifyCloudRecordingRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<ModifyCloudRecordingOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyCloudRecording(request);
         }
     );
 

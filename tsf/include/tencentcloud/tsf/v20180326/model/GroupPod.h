@@ -91,17 +91,17 @@ namespace TencentCloud
                     bool PodIdHasBeenSet() const;
 
                     /**
-                     * 获取实例状态，请参考后面的实例以及容器的状态定义
+                     * 获取实例状态，请参考后面的实例以及容器的状态定义。启动中（pod 未 ready）：Starting；运行中：Running；异常：Abnormal；停止：Stopped；
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Status 实例状态，请参考后面的实例以及容器的状态定义
+                     * @return Status 实例状态，请参考后面的实例以及容器的状态定义。启动中（pod 未 ready）：Starting；运行中：Running；异常：Abnormal；停止：Stopped；
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置实例状态，请参考后面的实例以及容器的状态定义
+                     * 设置实例状态，请参考后面的实例以及容器的状态定义。启动中（pod 未 ready）：Starting；运行中：Running；异常：Abnormal；停止：Stopped；
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Status 实例状态，请参考后面的实例以及容器的状态定义
+                     * @param Status 实例状态，请参考后面的实例以及容器的状态定义。启动中（pod 未 ready）：Starting；运行中：Running；异常：Abnormal；停止：Stopped；
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetStatus(const std::string& _status);
@@ -371,7 +371,7 @@ namespace TencentCloud
                     bool m_podIdHasBeenSet;
 
                     /**
-                     * 实例状态，请参考后面的实例以及容器的状态定义
+                     * 实例状态，请参考后面的实例以及容器的状态定义。启动中（pod 未 ready）：Starting；运行中：Running；异常：Abnormal；停止：Stopped；
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_status;

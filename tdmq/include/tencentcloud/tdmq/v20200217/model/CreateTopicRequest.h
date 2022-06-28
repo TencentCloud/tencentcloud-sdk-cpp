@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool TopicNameHasBeenSet() const;
 
                     /**
-                     * 获取0：非分区topic，无分区；非0：具体分区topic的分区数，最大不允许超过128。
-                     * @return Partitions 0：非分区topic，无分区；非0：具体分区topic的分区数，最大不允许超过128。
+                     * 获取入参为1，即是创建非分区topic，无分区；入参大于1，表示分区topic的分区数，最大不允许超过128。
+                     * @return Partitions 入参为1，即是创建非分区topic，无分区；入参大于1，表示分区topic的分区数，最大不允许超过128。
                      */
                     uint64_t GetPartitions() const;
 
                     /**
-                     * 设置0：非分区topic，无分区；非0：具体分区topic的分区数，最大不允许超过128。
-                     * @param Partitions 0：非分区topic，无分区；非0：具体分区topic的分区数，最大不允许超过128。
+                     * 设置入参为1，即是创建非分区topic，无分区；入参大于1，表示分区topic的分区数，最大不允许超过128。
+                     * @param Partitions 入参为1，即是创建非分区topic，无分区；入参大于1，表示分区topic的分区数，最大不允许超过128。
                      */
                     void SetPartitions(const uint64_t& _partitions);
 
@@ -115,12 +115,14 @@ namespace TencentCloud
                     bool RemarkHasBeenSet() const;
 
                     /**
-                     * 获取0： 普通消息；
+                     * 获取该入参将逐步弃用，可切换至PulsarTopicType参数
+0： 普通消息；
 1 ：全局顺序消息；
 2 ：局部顺序消息；
 3 ：重试队列；
 4 ：死信队列。
-                     * @return TopicType 0： 普通消息；
+                     * @return TopicType 该入参将逐步弃用，可切换至PulsarTopicType参数
+0： 普通消息；
 1 ：全局顺序消息；
 2 ：局部顺序消息；
 3 ：重试队列；
@@ -129,12 +131,14 @@ namespace TencentCloud
                     uint64_t GetTopicType() const;
 
                     /**
-                     * 设置0： 普通消息；
+                     * 设置该入参将逐步弃用，可切换至PulsarTopicType参数
+0： 普通消息；
 1 ：全局顺序消息；
 2 ：局部顺序消息；
 3 ：重试队列；
 4 ：死信队列。
-                     * @param TopicType 0： 普通消息；
+                     * @param TopicType 该入参将逐步弃用，可切换至PulsarTopicType参数
+0： 普通消息；
 1 ：全局顺序消息；
 2 ：局部顺序消息；
 3 ：重试队列；
@@ -215,7 +219,7 @@ namespace TencentCloud
                     bool m_topicNameHasBeenSet;
 
                     /**
-                     * 0：非分区topic，无分区；非0：具体分区topic的分区数，最大不允许超过128。
+                     * 入参为1，即是创建非分区topic，无分区；入参大于1，表示分区topic的分区数，最大不允许超过128。
                      */
                     uint64_t m_partitions;
                     bool m_partitionsHasBeenSet;
@@ -227,7 +231,8 @@ namespace TencentCloud
                     bool m_remarkHasBeenSet;
 
                     /**
-                     * 0： 普通消息；
+                     * 该入参将逐步弃用，可切换至PulsarTopicType参数
+0： 普通消息；
 1 ：全局顺序消息；
 2 ：局部顺序消息；
 3 ：重试队列；

@@ -117,37 +117,29 @@ namespace TencentCloud
 
                     /**
                      * 获取topic类型描述：
-0：普通消息；
-1：全局顺序消息；
-2：局部顺序消息；
-3：重试队列；
-4：死信队列；
-5：事务消息。
+0：非持久非分区主题类型；
+1：非持久分区主题类型；
+2：持久非分区主题类型；
+3：持久分区主题类型；
                      * @return TopicType topic类型描述：
-0：普通消息；
-1：全局顺序消息；
-2：局部顺序消息；
-3：重试队列；
-4：死信队列；
-5：事务消息。
+0：非持久非分区主题类型；
+1：非持久分区主题类型；
+2：持久非分区主题类型；
+3：持久分区主题类型；
                      */
                     uint64_t GetTopicType() const;
 
                     /**
                      * 设置topic类型描述：
-0：普通消息；
-1：全局顺序消息；
-2：局部顺序消息；
-3：重试队列；
-4：死信队列；
-5：事务消息。
+0：非持久非分区主题类型；
+1：非持久分区主题类型；
+2：持久非分区主题类型；
+3：持久分区主题类型；
                      * @param TopicType topic类型描述：
-0：普通消息；
-1：全局顺序消息；
-2：局部顺序消息；
-3：重试队列；
-4：死信队列；
-5：事务消息。
+0：非持久非分区主题类型；
+1：非持久分区主题类型；
+2：持久非分区主题类型；
+3：持久分区主题类型；
                      */
                     void SetTopicType(const uint64_t& _topicType);
 
@@ -205,6 +197,32 @@ namespace TencentCloud
                      */
                     bool FiltersHasBeenSet() const;
 
+                    /**
+                     * 获取创建来源：
+1：用户创建
+2：系统创建
+                     * @return TopicCreator 创建来源：
+1：用户创建
+2：系统创建
+                     */
+                    uint64_t GetTopicCreator() const;
+
+                    /**
+                     * 设置创建来源：
+1：用户创建
+2：系统创建
+                     * @param TopicCreator 创建来源：
+1：用户创建
+2：系统创建
+                     */
+                    void SetTopicCreator(const uint64_t& _topicCreator);
+
+                    /**
+                     * 判断参数 TopicCreator 是否已赋值
+                     * @return TopicCreator 是否已赋值
+                     */
+                    bool TopicCreatorHasBeenSet() const;
+
                 private:
 
                     /**
@@ -233,12 +251,10 @@ namespace TencentCloud
 
                     /**
                      * topic类型描述：
-0：普通消息；
-1：全局顺序消息；
-2：局部顺序消息；
-3：重试队列；
-4：死信队列；
-5：事务消息。
+0：非持久非分区主题类型；
+1：非持久分区主题类型；
+2：持久非分区主题类型；
+3：持久分区主题类型；
                      */
                     uint64_t m_topicType;
                     bool m_topicTypeHasBeenSet;
@@ -257,6 +273,14 @@ namespace TencentCloud
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;
+
+                    /**
+                     * 创建来源：
+1：用户创建
+2：系统创建
+                     */
+                    uint64_t m_topicCreator;
+                    bool m_topicCreatorHasBeenSet;
 
                 };
             }

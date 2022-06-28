@@ -38,7 +38,8 @@ Listener::Listener() :
     m_sessionTypeHasBeenSet(false),
     m_keepaliveEnableHasBeenSet(false),
     m_toaHasBeenSet(false),
-    m_deregisterTargetRstHasBeenSet(false)
+    m_deregisterTargetRstHasBeenSet(false),
+    m_attrFlagsHasBeenSet(false)
 {
 }
 
@@ -258,6 +259,19 @@ CoreInternalOutcome Listener::Deserialize(const rapidjson::Value &value)
         m_deregisterTargetRstHasBeenSet = true;
     }
 
+    if (value.HasMember("AttrFlags") && !value["AttrFlags"].IsNull())
+    {
+        if (!value["AttrFlags"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Listener.AttrFlags` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["AttrFlags"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_attrFlags.push_back((*itr).GetString());
+        }
+        m_attrFlagsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -417,6 +431,19 @@ void Listener::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "DeregisterTargetRst";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_deregisterTargetRst, allocator);
+    }
+
+    if (m_attrFlagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AttrFlags";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_attrFlags.begin(); itr != m_attrFlags.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -708,5 +735,21 @@ void Listener::SetDeregisterTargetRst(const bool& _deregisterTargetRst)
 bool Listener::DeregisterTargetRstHasBeenSet() const
 {
     return m_deregisterTargetRstHasBeenSet;
+}
+
+vector<string> Listener::GetAttrFlags() const
+{
+    return m_attrFlags;
+}
+
+void Listener::SetAttrFlags(const vector<string>& _attrFlags)
+{
+    m_attrFlags = _attrFlags;
+    m_attrFlagsHasBeenSet = true;
+}
+
+bool Listener::AttrFlagsHasBeenSet() const
+{
+    return m_attrFlagsHasBeenSet;
 }
 

@@ -442,6 +442,28 @@ namespace TencentCloud
                      */
                     bool LocationHasBeenSet() const;
 
+                    /**
+                     * 获取主机quuid
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Quuid 主机quuid
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetQuuid() const;
+
+                    /**
+                     * 设置主机quuid
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Quuid 主机quuid
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetQuuid(const std::string& _quuid);
+
+                    /**
+                     * 判断参数 Quuid 是否已赋值
+                     * @return Quuid 是否已赋值
+                     */
+                    bool QuuidHasBeenSet() const;
+
                 private:
 
                     /**
@@ -569,6 +591,13 @@ namespace TencentCloud
                      */
                     std::string m_location;
                     bool m_locationHasBeenSet;
+
+                    /**
+                     * 主机quuid
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_quuid;
+                    bool m_quuidHasBeenSet;
 
                 };
             }
