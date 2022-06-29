@@ -69,17 +69,17 @@ namespace TencentCloud
                     bool EnableTagHasBeenSet() const;
 
                     /**
-                     * 获取需要投递的元数据列表，目前仅支持：__SOURCE__，__FILENAME__和__TIMESTAMP__
+                     * 获取需要投递的元数据列表，目前仅支持：\_\_SOURCE\_\_，\_\_FILENAME\_\_和\_\_TIMESTAMP\_\_
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MetaFields 需要投递的元数据列表，目前仅支持：__SOURCE__，__FILENAME__和__TIMESTAMP__
+                     * @return MetaFields 需要投递的元数据列表，目前仅支持：\_\_SOURCE\_\_，\_\_FILENAME\_\_和\_\_TIMESTAMP\_\_
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> GetMetaFields() const;
 
                     /**
-                     * 设置需要投递的元数据列表，目前仅支持：__SOURCE__，__FILENAME__和__TIMESTAMP__
+                     * 设置需要投递的元数据列表，目前仅支持：\_\_SOURCE\_\_，\_\_FILENAME\_\_和\_\_TIMESTAMP\_\_
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MetaFields 需要投递的元数据列表，目前仅支持：__SOURCE__，__FILENAME__和__TIMESTAMP__
+                     * @param MetaFields 需要投递的元数据列表，目前仅支持：\_\_SOURCE\_\_，\_\_FILENAME\_\_和\_\_TIMESTAMP\_\_
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetMetaFields(const std::vector<std::string>& _metaFields);
@@ -89,6 +89,50 @@ namespace TencentCloud
                      * @return MetaFields 是否已赋值
                      */
                     bool MetaFieldsHasBeenSet() const;
+
+                    /**
+                     * 获取当EnableTag为true时，必须填写TagJsonNotTiled字段，TagJsonNotTiled用于标识tag信息是否json平铺，TagJsonNotTiled为true时不平铺，false时平铺
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TagJsonNotTiled 当EnableTag为true时，必须填写TagJsonNotTiled字段，TagJsonNotTiled用于标识tag信息是否json平铺，TagJsonNotTiled为true时不平铺，false时平铺
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetTagJsonNotTiled() const;
+
+                    /**
+                     * 设置当EnableTag为true时，必须填写TagJsonNotTiled字段，TagJsonNotTiled用于标识tag信息是否json平铺，TagJsonNotTiled为true时不平铺，false时平铺
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TagJsonNotTiled 当EnableTag为true时，必须填写TagJsonNotTiled字段，TagJsonNotTiled用于标识tag信息是否json平铺，TagJsonNotTiled为true时不平铺，false时平铺
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTagJsonNotTiled(const bool& _tagJsonNotTiled);
+
+                    /**
+                     * 判断参数 TagJsonNotTiled 是否已赋值
+                     * @return TagJsonNotTiled 是否已赋值
+                     */
+                    bool TagJsonNotTiledHasBeenSet() const;
+
+                    /**
+                     * 获取投递时间戳精度，可选项 [1:秒；2:毫秒] ，默认是秒
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TimestampAccuracy 投递时间戳精度，可选项 [1:秒；2:毫秒] ，默认是秒
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetTimestampAccuracy() const;
+
+                    /**
+                     * 设置投递时间戳精度，可选项 [1:秒；2:毫秒] ，默认是秒
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TimestampAccuracy 投递时间戳精度，可选项 [1:秒；2:毫秒] ，默认是秒
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTimestampAccuracy(const int64_t& _timestampAccuracy);
+
+                    /**
+                     * 判断参数 TimestampAccuracy 是否已赋值
+                     * @return TimestampAccuracy 是否已赋值
+                     */
+                    bool TimestampAccuracyHasBeenSet() const;
 
                 private:
 
@@ -100,11 +144,25 @@ namespace TencentCloud
                     bool m_enableTagHasBeenSet;
 
                     /**
-                     * 需要投递的元数据列表，目前仅支持：__SOURCE__，__FILENAME__和__TIMESTAMP__
+                     * 需要投递的元数据列表，目前仅支持：\_\_SOURCE\_\_，\_\_FILENAME\_\_和\_\_TIMESTAMP\_\_
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_metaFields;
                     bool m_metaFieldsHasBeenSet;
+
+                    /**
+                     * 当EnableTag为true时，必须填写TagJsonNotTiled字段，TagJsonNotTiled用于标识tag信息是否json平铺，TagJsonNotTiled为true时不平铺，false时平铺
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_tagJsonNotTiled;
+                    bool m_tagJsonNotTiledHasBeenSet;
+
+                    /**
+                     * 投递时间戳精度，可选项 [1:秒；2:毫秒] ，默认是秒
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_timestampAccuracy;
+                    bool m_timestampAccuracyHasBeenSet;
 
                 };
             }

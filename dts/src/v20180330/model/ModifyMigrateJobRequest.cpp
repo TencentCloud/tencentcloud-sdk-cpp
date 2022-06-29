@@ -30,7 +30,9 @@ ModifyMigrateJobRequest::ModifyMigrateJobRequest() :
     m_srcInfoHasBeenSet(false),
     m_dstAccessTypeHasBeenSet(false),
     m_dstInfoHasBeenSet(false),
-    m_databaseInfoHasBeenSet(false)
+    m_databaseInfoHasBeenSet(false),
+    m_srcNodeTypeHasBeenSet(false),
+    m_srcInfoMultiHasBeenSet(false)
 {
 }
 
@@ -106,6 +108,29 @@ string ModifyMigrateJobRequest::ToJsonString() const
         string key = "DatabaseInfo";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_databaseInfo.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_srcNodeTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SrcNodeType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_srcNodeType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_srcInfoMultiHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SrcInfoMulti";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_srcInfoMulti.begin(); itr != m_srcInfoMulti.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -242,6 +267,38 @@ void ModifyMigrateJobRequest::SetDatabaseInfo(const string& _databaseInfo)
 bool ModifyMigrateJobRequest::DatabaseInfoHasBeenSet() const
 {
     return m_databaseInfoHasBeenSet;
+}
+
+string ModifyMigrateJobRequest::GetSrcNodeType() const
+{
+    return m_srcNodeType;
+}
+
+void ModifyMigrateJobRequest::SetSrcNodeType(const string& _srcNodeType)
+{
+    m_srcNodeType = _srcNodeType;
+    m_srcNodeTypeHasBeenSet = true;
+}
+
+bool ModifyMigrateJobRequest::SrcNodeTypeHasBeenSet() const
+{
+    return m_srcNodeTypeHasBeenSet;
+}
+
+vector<SrcInfo> ModifyMigrateJobRequest::GetSrcInfoMulti() const
+{
+    return m_srcInfoMulti;
+}
+
+void ModifyMigrateJobRequest::SetSrcInfoMulti(const vector<SrcInfo>& _srcInfoMulti)
+{
+    m_srcInfoMulti = _srcInfoMulti;
+    m_srcInfoMultiHasBeenSet = true;
+}
+
+bool ModifyMigrateJobRequest::SrcInfoMultiHasBeenSet() const
+{
+    return m_srcInfoMultiHasBeenSet;
 }
 
 

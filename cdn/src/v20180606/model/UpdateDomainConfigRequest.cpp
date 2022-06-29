@@ -48,8 +48,8 @@ UpdateDomainConfigRequest::UpdateDomainConfigRequest() :
     m_forceRedirectHasBeenSet(false),
     m_refererHasBeenSet(false),
     m_maxAgeHasBeenSet(false),
-    m_serviceTypeHasBeenSet(false),
     m_specificConfigHasBeenSet(false),
+    m_serviceTypeHasBeenSet(false),
     m_areaHasBeenSet(false),
     m_originPullTimeoutHasBeenSet(false),
     m_awsPrivateAccessHasBeenSet(false),
@@ -62,11 +62,14 @@ UpdateDomainConfigRequest::UpdateDomainConfigRequest() :
     m_ipv6AccessHasBeenSet(false),
     m_offlineCacheHasBeenSet(false),
     m_originCombineHasBeenSet(false),
+    m_postMaxSizeHasBeenSet(false),
     m_quicHasBeenSet(false),
     m_ossPrivateAccessHasBeenSet(false),
     m_webSocketHasBeenSet(false),
     m_remoteAuthenticationHasBeenSet(false),
-    m_shareCnameHasBeenSet(false)
+    m_shareCnameHasBeenSet(false),
+    m_hwPrivateAccessHasBeenSet(false),
+    m_qnPrivateAccessHasBeenSet(false)
 {
 }
 
@@ -300,14 +303,6 @@ string UpdateDomainConfigRequest::ToJsonString() const
         m_maxAge.ToJsonObject(d[key.c_str()], allocator);
     }
 
-    if (m_serviceTypeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ServiceType";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_serviceType.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_specificConfigHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -315,6 +310,14 @@ string UpdateDomainConfigRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_specificConfig.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_serviceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServiceType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_serviceType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_areaHasBeenSet)
@@ -428,6 +431,15 @@ string UpdateDomainConfigRequest::ToJsonString() const
         m_originCombine.ToJsonObject(d[key.c_str()], allocator);
     }
 
+    if (m_postMaxSizeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PostMaxSize";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_postMaxSize.ToJsonObject(d[key.c_str()], allocator);
+    }
+
     if (m_quicHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -471,6 +483,24 @@ string UpdateDomainConfigRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_shareCname.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_hwPrivateAccessHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HwPrivateAccess";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_hwPrivateAccess.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_qnPrivateAccessHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QnPrivateAccess";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_qnPrivateAccess.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -881,22 +911,6 @@ bool UpdateDomainConfigRequest::MaxAgeHasBeenSet() const
     return m_maxAgeHasBeenSet;
 }
 
-string UpdateDomainConfigRequest::GetServiceType() const
-{
-    return m_serviceType;
-}
-
-void UpdateDomainConfigRequest::SetServiceType(const string& _serviceType)
-{
-    m_serviceType = _serviceType;
-    m_serviceTypeHasBeenSet = true;
-}
-
-bool UpdateDomainConfigRequest::ServiceTypeHasBeenSet() const
-{
-    return m_serviceTypeHasBeenSet;
-}
-
 SpecificConfig UpdateDomainConfigRequest::GetSpecificConfig() const
 {
     return m_specificConfig;
@@ -911,6 +925,22 @@ void UpdateDomainConfigRequest::SetSpecificConfig(const SpecificConfig& _specifi
 bool UpdateDomainConfigRequest::SpecificConfigHasBeenSet() const
 {
     return m_specificConfigHasBeenSet;
+}
+
+string UpdateDomainConfigRequest::GetServiceType() const
+{
+    return m_serviceType;
+}
+
+void UpdateDomainConfigRequest::SetServiceType(const string& _serviceType)
+{
+    m_serviceType = _serviceType;
+    m_serviceTypeHasBeenSet = true;
+}
+
+bool UpdateDomainConfigRequest::ServiceTypeHasBeenSet() const
+{
+    return m_serviceTypeHasBeenSet;
 }
 
 string UpdateDomainConfigRequest::GetArea() const
@@ -1105,6 +1135,22 @@ bool UpdateDomainConfigRequest::OriginCombineHasBeenSet() const
     return m_originCombineHasBeenSet;
 }
 
+PostSize UpdateDomainConfigRequest::GetPostMaxSize() const
+{
+    return m_postMaxSize;
+}
+
+void UpdateDomainConfigRequest::SetPostMaxSize(const PostSize& _postMaxSize)
+{
+    m_postMaxSize = _postMaxSize;
+    m_postMaxSizeHasBeenSet = true;
+}
+
+bool UpdateDomainConfigRequest::PostMaxSizeHasBeenSet() const
+{
+    return m_postMaxSizeHasBeenSet;
+}
+
 Quic UpdateDomainConfigRequest::GetQuic() const
 {
     return m_quic;
@@ -1183,6 +1229,38 @@ void UpdateDomainConfigRequest::SetShareCname(const ShareCname& _shareCname)
 bool UpdateDomainConfigRequest::ShareCnameHasBeenSet() const
 {
     return m_shareCnameHasBeenSet;
+}
+
+HwPrivateAccess UpdateDomainConfigRequest::GetHwPrivateAccess() const
+{
+    return m_hwPrivateAccess;
+}
+
+void UpdateDomainConfigRequest::SetHwPrivateAccess(const HwPrivateAccess& _hwPrivateAccess)
+{
+    m_hwPrivateAccess = _hwPrivateAccess;
+    m_hwPrivateAccessHasBeenSet = true;
+}
+
+bool UpdateDomainConfigRequest::HwPrivateAccessHasBeenSet() const
+{
+    return m_hwPrivateAccessHasBeenSet;
+}
+
+QnPrivateAccess UpdateDomainConfigRequest::GetQnPrivateAccess() const
+{
+    return m_qnPrivateAccess;
+}
+
+void UpdateDomainConfigRequest::SetQnPrivateAccess(const QnPrivateAccess& _qnPrivateAccess)
+{
+    m_qnPrivateAccess = _qnPrivateAccess;
+    m_qnPrivateAccessHasBeenSet = true;
+}
+
+bool UpdateDomainConfigRequest::QnPrivateAccessHasBeenSet() const
+{
+    return m_qnPrivateAccessHasBeenSet;
 }
 
 

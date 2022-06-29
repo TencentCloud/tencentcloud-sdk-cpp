@@ -28,7 +28,8 @@ DescribeJobConfigsRequest::DescribeJobConfigsRequest() :
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_filtersHasBeenSet(false),
-    m_onlyDraftHasBeenSet(false)
+    m_onlyDraftHasBeenSet(false),
+    m_workSpaceIdHasBeenSet(false)
 {
 }
 
@@ -97,6 +98,14 @@ string DescribeJobConfigsRequest::ToJsonString() const
         string key = "OnlyDraft";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_onlyDraft, allocator);
+    }
+
+    if (m_workSpaceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WorkSpaceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_workSpaceId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -201,6 +210,22 @@ void DescribeJobConfigsRequest::SetOnlyDraft(const bool& _onlyDraft)
 bool DescribeJobConfigsRequest::OnlyDraftHasBeenSet() const
 {
     return m_onlyDraftHasBeenSet;
+}
+
+string DescribeJobConfigsRequest::GetWorkSpaceId() const
+{
+    return m_workSpaceId;
+}
+
+void DescribeJobConfigsRequest::SetWorkSpaceId(const string& _workSpaceId)
+{
+    m_workSpaceId = _workSpaceId;
+    m_workSpaceIdHasBeenSet = true;
+}
+
+bool DescribeJobConfigsRequest::WorkSpaceIdHasBeenSet() const
+{
+    return m_workSpaceIdHasBeenSet;
 }
 
 

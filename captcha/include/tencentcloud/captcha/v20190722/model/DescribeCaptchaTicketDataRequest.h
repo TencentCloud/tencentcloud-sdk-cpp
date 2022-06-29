@@ -78,6 +78,24 @@ namespace TencentCloud
                      */
                     bool StartHasBeenSet() const;
 
+                    /**
+                     * 获取查询结束时间 例如：20220314
+                     * @return End 查询结束时间 例如：20220314
+                     */
+                    int64_t GetEnd() const;
+
+                    /**
+                     * 设置查询结束时间 例如：20220314
+                     * @param End 查询结束时间 例如：20220314
+                     */
+                    void SetEnd(const int64_t& _end);
+
+                    /**
+                     * 判断参数 End 是否已赋值
+                     * @return End 是否已赋值
+                     */
+                    bool EndHasBeenSet() const;
+
                 private:
 
                     /**
@@ -91,6 +109,12 @@ namespace TencentCloud
                      */
                     int64_t m_start;
                     bool m_startHasBeenSet;
+
+                    /**
+                     * 查询结束时间 例如：20220314
+                     */
+                    int64_t m_end;
+                    bool m_endHasBeenSet;
 
                 };
             }

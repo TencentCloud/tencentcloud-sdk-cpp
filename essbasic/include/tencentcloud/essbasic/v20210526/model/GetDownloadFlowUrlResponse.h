@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取进入合同（流程）下载确认页面链接
-                     * @return DownLoadUrl 进入合同（流程）下载确认页面链接
+                     * 获取合同（流程）下载地址
+                     * @return DownLoadUrl 合同（流程）下载地址
                      */
                     std::string GetDownLoadUrl() const;
 
@@ -58,7 +58,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 进入合同（流程）下载确认页面链接
+                     * 合同（流程）下载地址
                      */
                     std::string m_downLoadUrl;
                     bool m_downLoadUrlHasBeenSet;

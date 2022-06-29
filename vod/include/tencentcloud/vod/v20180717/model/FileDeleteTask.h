@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/vod/v20180717/model/FileDeleteResultItem.h>
 
 
 namespace TencentCloud
@@ -64,6 +65,24 @@ namespace TencentCloud
                      */
                     bool FileIdSetHasBeenSet() const;
 
+                    /**
+                     * 获取删除文件结果信息列表。
+                     * @return FileDeleteResultInfo 删除文件结果信息列表。
+                     */
+                    std::vector<FileDeleteResultItem> GetFileDeleteResultInfo() const;
+
+                    /**
+                     * 设置删除文件结果信息列表。
+                     * @param FileDeleteResultInfo 删除文件结果信息列表。
+                     */
+                    void SetFileDeleteResultInfo(const std::vector<FileDeleteResultItem>& _fileDeleteResultInfo);
+
+                    /**
+                     * 判断参数 FileDeleteResultInfo 是否已赋值
+                     * @return FileDeleteResultInfo 是否已赋值
+                     */
+                    bool FileDeleteResultInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -71,6 +90,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_fileIdSet;
                     bool m_fileIdSetHasBeenSet;
+
+                    /**
+                     * 删除文件结果信息列表。
+                     */
+                    std::vector<FileDeleteResultItem> m_fileDeleteResultInfo;
+                    bool m_fileDeleteResultInfoHasBeenSet;
 
                 };
             }

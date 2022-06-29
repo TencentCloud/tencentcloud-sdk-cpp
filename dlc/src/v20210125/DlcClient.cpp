@@ -298,6 +298,92 @@ DlcClient::CreateDatabaseOutcomeCallable DlcClient::CreateDatabaseCallable(const
     return task->get_future();
 }
 
+DlcClient::CreateExportTaskOutcome DlcClient::CreateExportTask(const CreateExportTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateExportTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateExportTaskResponse rsp = CreateExportTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateExportTaskOutcome(rsp);
+        else
+            return CreateExportTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateExportTaskOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::CreateExportTaskAsync(const CreateExportTaskRequest& request, const CreateExportTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateExportTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DlcClient::CreateExportTaskOutcomeCallable DlcClient::CreateExportTaskCallable(const CreateExportTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateExportTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateExportTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DlcClient::CreateImportTaskOutcome DlcClient::CreateImportTask(const CreateImportTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateImportTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateImportTaskResponse rsp = CreateImportTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateImportTaskOutcome(rsp);
+        else
+            return CreateImportTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateImportTaskOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::CreateImportTaskAsync(const CreateImportTaskRequest& request, const CreateImportTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateImportTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DlcClient::CreateImportTaskOutcomeCallable DlcClient::CreateImportTaskCallable(const CreateImportTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateImportTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateImportTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DlcClient::CreateScriptOutcome DlcClient::CreateScript(const CreateScriptRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateScript");
@@ -334,6 +420,92 @@ DlcClient::CreateScriptOutcomeCallable DlcClient::CreateScriptCallable(const Cre
         [this, request]()
         {
             return this->CreateScript(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DlcClient::CreateSparkAppOutcome DlcClient::CreateSparkApp(const CreateSparkAppRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateSparkApp");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateSparkAppResponse rsp = CreateSparkAppResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateSparkAppOutcome(rsp);
+        else
+            return CreateSparkAppOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateSparkAppOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::CreateSparkAppAsync(const CreateSparkAppRequest& request, const CreateSparkAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateSparkApp(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DlcClient::CreateSparkAppOutcomeCallable DlcClient::CreateSparkAppCallable(const CreateSparkAppRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateSparkAppOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateSparkApp(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DlcClient::CreateSparkAppTaskOutcome DlcClient::CreateSparkAppTask(const CreateSparkAppTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateSparkAppTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateSparkAppTaskResponse rsp = CreateSparkAppTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateSparkAppTaskOutcome(rsp);
+        else
+            return CreateSparkAppTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateSparkAppTaskOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::CreateSparkAppTaskAsync(const CreateSparkAppTaskRequest& request, const CreateSparkAppTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateSparkAppTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DlcClient::CreateSparkAppTaskOutcomeCallable DlcClient::CreateSparkAppTaskCallable(const CreateSparkAppTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateSparkAppTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateSparkAppTask(request);
         }
     );
 
@@ -685,6 +857,49 @@ DlcClient::DeleteScriptOutcomeCallable DlcClient::DeleteScriptCallable(const Del
     return task->get_future();
 }
 
+DlcClient::DeleteSparkAppOutcome DlcClient::DeleteSparkApp(const DeleteSparkAppRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteSparkApp");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteSparkAppResponse rsp = DeleteSparkAppResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteSparkAppOutcome(rsp);
+        else
+            return DeleteSparkAppOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteSparkAppOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::DeleteSparkAppAsync(const DeleteSparkAppRequest& request, const DeleteSparkAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteSparkApp(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DlcClient::DeleteSparkAppOutcomeCallable DlcClient::DeleteSparkAppCallable(const DeleteSparkAppRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteSparkAppOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteSparkApp(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DlcClient::DeleteUserOutcome DlcClient::DeleteUser(const DeleteUserRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteUser");
@@ -893,6 +1108,135 @@ DlcClient::DescribeScriptsOutcomeCallable DlcClient::DescribeScriptsCallable(con
         [this, request]()
         {
             return this->DescribeScripts(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DlcClient::DescribeSparkAppJobOutcome DlcClient::DescribeSparkAppJob(const DescribeSparkAppJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSparkAppJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSparkAppJobResponse rsp = DescribeSparkAppJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSparkAppJobOutcome(rsp);
+        else
+            return DescribeSparkAppJobOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSparkAppJobOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::DescribeSparkAppJobAsync(const DescribeSparkAppJobRequest& request, const DescribeSparkAppJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSparkAppJob(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DlcClient::DescribeSparkAppJobOutcomeCallable DlcClient::DescribeSparkAppJobCallable(const DescribeSparkAppJobRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSparkAppJobOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSparkAppJob(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DlcClient::DescribeSparkAppJobsOutcome DlcClient::DescribeSparkAppJobs(const DescribeSparkAppJobsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSparkAppJobs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSparkAppJobsResponse rsp = DescribeSparkAppJobsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSparkAppJobsOutcome(rsp);
+        else
+            return DescribeSparkAppJobsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSparkAppJobsOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::DescribeSparkAppJobsAsync(const DescribeSparkAppJobsRequest& request, const DescribeSparkAppJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSparkAppJobs(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DlcClient::DescribeSparkAppJobsOutcomeCallable DlcClient::DescribeSparkAppJobsCallable(const DescribeSparkAppJobsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSparkAppJobsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSparkAppJobs(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DlcClient::DescribeSparkAppTasksOutcome DlcClient::DescribeSparkAppTasks(const DescribeSparkAppTasksRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSparkAppTasks");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSparkAppTasksResponse rsp = DescribeSparkAppTasksResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSparkAppTasksOutcome(rsp);
+        else
+            return DescribeSparkAppTasksOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSparkAppTasksOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::DescribeSparkAppTasksAsync(const DescribeSparkAppTasksRequest& request, const DescribeSparkAppTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSparkAppTasks(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DlcClient::DescribeSparkAppTasksOutcomeCallable DlcClient::DescribeSparkAppTasksCallable(const DescribeSparkAppTasksRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSparkAppTasksOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSparkAppTasks(request);
         }
     );
 
@@ -1323,6 +1667,92 @@ DlcClient::DetachWorkGroupPolicyOutcomeCallable DlcClient::DetachWorkGroupPolicy
         [this, request]()
         {
             return this->DetachWorkGroupPolicy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DlcClient::ListTaskJobLogDetailOutcome DlcClient::ListTaskJobLogDetail(const ListTaskJobLogDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListTaskJobLogDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListTaskJobLogDetailResponse rsp = ListTaskJobLogDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListTaskJobLogDetailOutcome(rsp);
+        else
+            return ListTaskJobLogDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return ListTaskJobLogDetailOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::ListTaskJobLogDetailAsync(const ListTaskJobLogDetailRequest& request, const ListTaskJobLogDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ListTaskJobLogDetail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DlcClient::ListTaskJobLogDetailOutcomeCallable DlcClient::ListTaskJobLogDetailCallable(const ListTaskJobLogDetailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ListTaskJobLogDetailOutcome()>>(
+        [this, request]()
+        {
+            return this->ListTaskJobLogDetail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DlcClient::ModifySparkAppOutcome DlcClient::ModifySparkApp(const ModifySparkAppRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifySparkApp");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifySparkAppResponse rsp = ModifySparkAppResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifySparkAppOutcome(rsp);
+        else
+            return ModifySparkAppOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifySparkAppOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::ModifySparkAppAsync(const ModifySparkAppRequest& request, const ModifySparkAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifySparkApp(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DlcClient::ModifySparkAppOutcomeCallable DlcClient::ModifySparkAppCallable(const ModifySparkAppRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifySparkAppOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifySparkApp(request);
         }
     );
 

@@ -56,7 +56,9 @@ Disk::Disk() :
     m_returnFailCodeHasBeenSet(false),
     m_shareableHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_deleteSnapshotHasBeenSet(false)
+    m_deleteSnapshotHasBeenSet(false),
+    m_diskBackupCountHasBeenSet(false),
+    m_instanceTypeHasBeenSet(false)
 {
 }
 
@@ -448,6 +450,26 @@ CoreInternalOutcome Disk::Deserialize(const rapidjson::Value &value)
         m_deleteSnapshotHasBeenSet = true;
     }
 
+    if (value.HasMember("DiskBackupCount") && !value["DiskBackupCount"].IsNull())
+    {
+        if (!value["DiskBackupCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Disk.DiskBackupCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_diskBackupCount = value["DiskBackupCount"].GetUint64();
+        m_diskBackupCountHasBeenSet = true;
+    }
+
+    if (value.HasMember("InstanceType") && !value["InstanceType"].IsNull())
+    {
+        if (!value["InstanceType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Disk.InstanceType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceType = string(value["InstanceType"].GetString());
+        m_instanceTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -759,6 +781,22 @@ void Disk::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorT
         string key = "DeleteSnapshot";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_deleteSnapshot, allocator);
+    }
+
+    if (m_diskBackupCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DiskBackupCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_diskBackupCount, allocator);
+    }
+
+    if (m_instanceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1338,5 +1376,37 @@ void Disk::SetDeleteSnapshot(const int64_t& _deleteSnapshot)
 bool Disk::DeleteSnapshotHasBeenSet() const
 {
     return m_deleteSnapshotHasBeenSet;
+}
+
+uint64_t Disk::GetDiskBackupCount() const
+{
+    return m_diskBackupCount;
+}
+
+void Disk::SetDiskBackupCount(const uint64_t& _diskBackupCount)
+{
+    m_diskBackupCount = _diskBackupCount;
+    m_diskBackupCountHasBeenSet = true;
+}
+
+bool Disk::DiskBackupCountHasBeenSet() const
+{
+    return m_diskBackupCountHasBeenSet;
+}
+
+string Disk::GetInstanceType() const
+{
+    return m_instanceType;
+}
+
+void Disk::SetInstanceType(const string& _instanceType)
+{
+    m_instanceType = _instanceType;
+    m_instanceTypeHasBeenSet = true;
+}
+
+bool Disk::InstanceTypeHasBeenSet() const
+{
+    return m_instanceTypeHasBeenSet;
 }
 

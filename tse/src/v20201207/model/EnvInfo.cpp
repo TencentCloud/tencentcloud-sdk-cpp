@@ -28,7 +28,11 @@ EnvInfo::EnvInfo() :
     m_adminServiceIpHasBeenSet(false),
     m_configServiceIpHasBeenSet(false),
     m_enableConfigInternetHasBeenSet(false),
-    m_configInternetServiceIpHasBeenSet(false)
+    m_configInternetServiceIpHasBeenSet(false),
+    m_specIdHasBeenSet(false),
+    m_envReplicaHasBeenSet(false),
+    m_runningCountHasBeenSet(false),
+    m_aliasEnvNameHasBeenSet(false)
 {
 }
 
@@ -127,6 +131,46 @@ CoreInternalOutcome EnvInfo::Deserialize(const rapidjson::Value &value)
         m_configInternetServiceIpHasBeenSet = true;
     }
 
+    if (value.HasMember("SpecId") && !value["SpecId"].IsNull())
+    {
+        if (!value["SpecId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EnvInfo.SpecId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_specId = string(value["SpecId"].GetString());
+        m_specIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("EnvReplica") && !value["EnvReplica"].IsNull())
+    {
+        if (!value["EnvReplica"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `EnvInfo.EnvReplica` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_envReplica = value["EnvReplica"].GetInt64();
+        m_envReplicaHasBeenSet = true;
+    }
+
+    if (value.HasMember("RunningCount") && !value["RunningCount"].IsNull())
+    {
+        if (!value["RunningCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `EnvInfo.RunningCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_runningCount = value["RunningCount"].GetInt64();
+        m_runningCountHasBeenSet = true;
+    }
+
+    if (value.HasMember("AliasEnvName") && !value["AliasEnvName"].IsNull())
+    {
+        if (!value["AliasEnvName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EnvInfo.AliasEnvName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_aliasEnvName = string(value["AliasEnvName"].GetString());
+        m_aliasEnvNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -203,6 +247,38 @@ void EnvInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "ConfigInternetServiceIp";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_configInternetServiceIp.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_specIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SpecId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_specId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_envReplicaHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnvReplica";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_envReplica, allocator);
+    }
+
+    if (m_runningCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RunningCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_runningCount, allocator);
+    }
+
+    if (m_aliasEnvNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AliasEnvName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_aliasEnvName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -334,5 +410,69 @@ void EnvInfo::SetConfigInternetServiceIp(const string& _configInternetServiceIp)
 bool EnvInfo::ConfigInternetServiceIpHasBeenSet() const
 {
     return m_configInternetServiceIpHasBeenSet;
+}
+
+string EnvInfo::GetSpecId() const
+{
+    return m_specId;
+}
+
+void EnvInfo::SetSpecId(const string& _specId)
+{
+    m_specId = _specId;
+    m_specIdHasBeenSet = true;
+}
+
+bool EnvInfo::SpecIdHasBeenSet() const
+{
+    return m_specIdHasBeenSet;
+}
+
+int64_t EnvInfo::GetEnvReplica() const
+{
+    return m_envReplica;
+}
+
+void EnvInfo::SetEnvReplica(const int64_t& _envReplica)
+{
+    m_envReplica = _envReplica;
+    m_envReplicaHasBeenSet = true;
+}
+
+bool EnvInfo::EnvReplicaHasBeenSet() const
+{
+    return m_envReplicaHasBeenSet;
+}
+
+int64_t EnvInfo::GetRunningCount() const
+{
+    return m_runningCount;
+}
+
+void EnvInfo::SetRunningCount(const int64_t& _runningCount)
+{
+    m_runningCount = _runningCount;
+    m_runningCountHasBeenSet = true;
+}
+
+bool EnvInfo::RunningCountHasBeenSet() const
+{
+    return m_runningCountHasBeenSet;
+}
+
+string EnvInfo::GetAliasEnvName() const
+{
+    return m_aliasEnvName;
+}
+
+void EnvInfo::SetAliasEnvName(const string& _aliasEnvName)
+{
+    m_aliasEnvName = _aliasEnvName;
+    m_aliasEnvNameHasBeenSet = true;
+}
+
+bool EnvInfo::AliasEnvNameHasBeenSet() const
+{
+    return m_aliasEnvNameHasBeenSet;
 }
 

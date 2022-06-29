@@ -24,7 +24,9 @@ using namespace std;
 
 ModifyDesiredCapacityRequest::ModifyDesiredCapacityRequest() :
     m_autoScalingGroupIdHasBeenSet(false),
-    m_desiredCapacityHasBeenSet(false)
+    m_desiredCapacityHasBeenSet(false),
+    m_minSizeHasBeenSet(false),
+    m_maxSizeHasBeenSet(false)
 {
 }
 
@@ -49,6 +51,22 @@ string ModifyDesiredCapacityRequest::ToJsonString() const
         string key = "DesiredCapacity";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_desiredCapacity, allocator);
+    }
+
+    if (m_minSizeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MinSize";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_minSize, allocator);
+    }
+
+    if (m_maxSizeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxSize";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_maxSize, allocator);
     }
 
 
@@ -89,6 +107,38 @@ void ModifyDesiredCapacityRequest::SetDesiredCapacity(const uint64_t& _desiredCa
 bool ModifyDesiredCapacityRequest::DesiredCapacityHasBeenSet() const
 {
     return m_desiredCapacityHasBeenSet;
+}
+
+uint64_t ModifyDesiredCapacityRequest::GetMinSize() const
+{
+    return m_minSize;
+}
+
+void ModifyDesiredCapacityRequest::SetMinSize(const uint64_t& _minSize)
+{
+    m_minSize = _minSize;
+    m_minSizeHasBeenSet = true;
+}
+
+bool ModifyDesiredCapacityRequest::MinSizeHasBeenSet() const
+{
+    return m_minSizeHasBeenSet;
+}
+
+uint64_t ModifyDesiredCapacityRequest::GetMaxSize() const
+{
+    return m_maxSize;
+}
+
+void ModifyDesiredCapacityRequest::SetMaxSize(const uint64_t& _maxSize)
+{
+    m_maxSize = _maxSize;
+    m_maxSizeHasBeenSet = true;
+}
+
+bool ModifyDesiredCapacityRequest::MaxSizeHasBeenSet() const
+{
+    return m_maxSizeHasBeenSet;
 }
 
 

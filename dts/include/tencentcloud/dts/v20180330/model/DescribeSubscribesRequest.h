@@ -188,14 +188,14 @@ namespace TencentCloud
                     bool SubsStatusHasBeenSet() const;
 
                     /**
-                     * 获取返回记录的起始偏移量
-                     * @return Offset 返回记录的起始偏移量
+                     * 获取返回记录的起始偏移量，默认为0。请输入非负整数
+                     * @return Offset 返回记录的起始偏移量，默认为0。请输入非负整数
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置返回记录的起始偏移量
-                     * @param Offset 返回记录的起始偏移量
+                     * 设置返回记录的起始偏移量，默认为0。请输入非负整数
+                     * @param Offset 返回记录的起始偏移量，默认为0。请输入非负整数
                      */
                     void SetOffset(const int64_t& _offset);
 
@@ -206,14 +206,14 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取单次返回的记录数量
-                     * @return Limit 单次返回的记录数量
+                     * 获取单次返回的记录数量，默认20。请输入1到100的整数
+                     * @return Limit 单次返回的记录数量，默认20。请输入1到100的整数
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置单次返回的记录数量
-                     * @param Limit 单次返回的记录数量
+                     * 设置单次返回的记录数量，默认20。请输入1到100的整数
+                     * @param Limit 单次返回的记录数量，默认20。请输入1到100的整数
                      */
                     void SetLimit(const int64_t& _limit);
 
@@ -328,13 +328,13 @@ namespace TencentCloud
                     bool m_subsStatusHasBeenSet;
 
                     /**
-                     * 返回记录的起始偏移量
+                     * 返回记录的起始偏移量，默认为0。请输入非负整数
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 单次返回的记录数量
+                     * 单次返回的记录数量，默认20。请输入1到100的整数
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;

@@ -25,7 +25,8 @@ using namespace std;
 DescribeContentReviewTemplatesRequest::DescribeContentReviewTemplatesRequest() :
     m_definitionsHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_limitHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_typeHasBeenSet(false)
 {
 }
 
@@ -63,6 +64,14 @@ string DescribeContentReviewTemplatesRequest::ToJsonString() const
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_typeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Type";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -119,6 +128,22 @@ void DescribeContentReviewTemplatesRequest::SetLimit(const uint64_t& _limit)
 bool DescribeContentReviewTemplatesRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+string DescribeContentReviewTemplatesRequest::GetType() const
+{
+    return m_type;
+}
+
+void DescribeContentReviewTemplatesRequest::SetType(const string& _type)
+{
+    m_type = _type;
+    m_typeHasBeenSet = true;
+}
+
+bool DescribeContentReviewTemplatesRequest::TypeHasBeenSet() const
+{
+    return m_typeHasBeenSet;
 }
 
 

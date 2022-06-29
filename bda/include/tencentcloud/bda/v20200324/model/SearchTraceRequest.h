@@ -62,14 +62,14 @@ namespace TencentCloud
                     bool GroupIdHasBeenSet() const;
 
                     /**
-                     * 获取人体轨迹信息。
-                     * @return Trace 人体轨迹信息。
+                     * 获取人体动作轨迹信息。
+                     * @return Trace 人体动作轨迹信息。
                      */
                     Trace GetTrace() const;
 
                     /**
-                     * 设置人体轨迹信息。
-                     * @param Trace 人体轨迹信息。
+                     * 设置人体动作轨迹信息。
+                     * @param Trace 人体动作轨迹信息。
                      */
                     void SetTrace(const Trace& _trace);
 
@@ -80,20 +80,20 @@ namespace TencentCloud
                     bool TraceHasBeenSet() const;
 
                     /**
-                     * 获取单张被识别的人体轨迹返回的最相似人员数量。
+                     * 获取单张被识别的人体动作轨迹返回的最相似人员数量。
 默认值为5，最大值为100。
  例，设MaxPersonNum为8，则返回Top8相似的人员信息。 值越大，需要处理的时间越长。建议不要超过10。
-                     * @return MaxPersonNum 单张被识别的人体轨迹返回的最相似人员数量。
+                     * @return MaxPersonNum 单张被识别的人体动作轨迹返回的最相似人员数量。
 默认值为5，最大值为100。
  例，设MaxPersonNum为8，则返回Top8相似的人员信息。 值越大，需要处理的时间越长。建议不要超过10。
                      */
                     uint64_t GetMaxPersonNum() const;
 
                     /**
-                     * 设置单张被识别的人体轨迹返回的最相似人员数量。
+                     * 设置单张被识别的人体动作轨迹返回的最相似人员数量。
 默认值为5，最大值为100。
  例，设MaxPersonNum为8，则返回Top8相似的人员信息。 值越大，需要处理的时间越长。建议不要超过10。
-                     * @param MaxPersonNum 单张被识别的人体轨迹返回的最相似人员数量。
+                     * @param MaxPersonNum 单张被识别的人体动作轨迹返回的最相似人员数量。
 默认值为5，最大值为100。
  例，设MaxPersonNum为8，则返回Top8相似的人员信息。 值越大，需要处理的时间越长。建议不要超过10。
                      */
@@ -136,13 +136,13 @@ namespace TencentCloud
                     bool m_groupIdHasBeenSet;
 
                     /**
-                     * 人体轨迹信息。
+                     * 人体动作轨迹信息。
                      */
                     Trace m_trace;
                     bool m_traceHasBeenSet;
 
                     /**
-                     * 单张被识别的人体轨迹返回的最相似人员数量。
+                     * 单张被识别的人体动作轨迹返回的最相似人员数量。
 默认值为5，最大值为100。
  例，设MaxPersonNum为8，则返回Top8相似的人员信息。 值越大，需要处理的时间越长。建议不要超过10。
                      */

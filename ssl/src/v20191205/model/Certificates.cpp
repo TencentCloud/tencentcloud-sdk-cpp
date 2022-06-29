@@ -50,7 +50,8 @@ Certificates::Certificates() :
     m_projectInfoHasBeenSet(false),
     m_boundResourceHasBeenSet(false),
     m_deployableHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_isIgnoreHasBeenSet(false)
 {
 }
 
@@ -389,6 +390,16 @@ CoreInternalOutcome Certificates::Deserialize(const rapidjson::Value &value)
         m_tagsHasBeenSet = true;
     }
 
+    if (value.HasMember("IsIgnore") && !value["IsIgnore"].IsNull())
+    {
+        if (!value["IsIgnore"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `Certificates.IsIgnore` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isIgnore = value["IsIgnore"].GetBool();
+        m_isIgnoreHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -653,6 +664,14 @@ void Certificates::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_isIgnoreHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsIgnore";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isIgnore, allocator);
     }
 
 }
@@ -1136,5 +1155,21 @@ void Certificates::SetTags(const vector<Tags>& _tags)
 bool Certificates::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+bool Certificates::GetIsIgnore() const
+{
+    return m_isIgnore;
+}
+
+void Certificates::SetIsIgnore(const bool& _isIgnore)
+{
+    m_isIgnore = _isIgnore;
+    m_isIgnoreHasBeenSet = true;
+}
+
+bool Certificates::IsIgnoreHasBeenSet() const
+{
+    return m_isIgnoreHasBeenSet;
 }
 

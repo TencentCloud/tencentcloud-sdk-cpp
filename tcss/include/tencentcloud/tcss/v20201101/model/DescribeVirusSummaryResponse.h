@@ -125,6 +125,34 @@ namespace TencentCloud
                      */
                     bool RiskIncreaseHasBeenSet() const;
 
+                    /**
+                     * 获取隔离事件个数较昨日新增
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsolateIncrease 隔离事件个数较昨日新增
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetIsolateIncrease() const;
+
+                    /**
+                     * 判断参数 IsolateIncrease 是否已赋值
+                     * @return IsolateIncrease 是否已赋值
+                     */
+                    bool IsolateIncreaseHasBeenSet() const;
+
+                    /**
+                     * 获取隔离事件总数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsolateCnt 隔离事件总数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetIsolateCnt() const;
+
+                    /**
+                     * 判断参数 IsolateCnt 是否已赋值
+                     * @return IsolateCnt 是否已赋值
+                     */
+                    bool IsolateCntHasBeenSet() const;
+
                 private:
 
                     /**
@@ -167,6 +195,20 @@ namespace TencentCloud
                      */
                     int64_t m_riskIncrease;
                     bool m_riskIncreaseHasBeenSet;
+
+                    /**
+                     * 隔离事件个数较昨日新增
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_isolateIncrease;
+                    bool m_isolateIncreaseHasBeenSet;
+
+                    /**
+                     * 隔离事件总数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_isolateCnt;
+                    bool m_isolateCntHasBeenSet;
 
                 };
             }

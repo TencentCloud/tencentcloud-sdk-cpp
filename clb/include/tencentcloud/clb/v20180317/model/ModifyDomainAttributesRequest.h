@@ -80,14 +80,14 @@ namespace TencentCloud
                     bool ListenerIdHasBeenSet() const;
 
                     /**
-                     * 获取域名（必须是已经创建的转发规则下的域名）。
-                     * @return Domain 域名（必须是已经创建的转发规则下的域名）。
+                     * 获取域名（必须是已经创建的转发规则下的域名），如果是多域名，可以指定多域名列表中的任意一个。
+                     * @return Domain 域名（必须是已经创建的转发规则下的域名），如果是多域名，可以指定多域名列表中的任意一个。
                      */
                     std::string GetDomain() const;
 
                     /**
-                     * 设置域名（必须是已经创建的转发规则下的域名）。
-                     * @param Domain 域名（必须是已经创建的转发规则下的域名）。
+                     * 设置域名（必须是已经创建的转发规则下的域名），如果是多域名，可以指定多域名列表中的任意一个。
+                     * @param Domain 域名（必须是已经创建的转发规则下的域名），如果是多域名，可以指定多域名列表中的任意一个。
                      */
                     void SetDomain(const std::string& _domain);
 
@@ -98,14 +98,14 @@ namespace TencentCloud
                     bool DomainHasBeenSet() const;
 
                     /**
-                     * 获取要修改的新域名。
-                     * @return NewDomain 要修改的新域名。
+                     * 获取要修改的新域名。NewDomain和NewDomains只能传一个。
+                     * @return NewDomain 要修改的新域名。NewDomain和NewDomains只能传一个。
                      */
                     std::string GetNewDomain() const;
 
                     /**
-                     * 设置要修改的新域名。
-                     * @param NewDomain 要修改的新域名。
+                     * 设置要修改的新域名。NewDomain和NewDomains只能传一个。
+                     * @param NewDomain 要修改的新域名。NewDomain和NewDomains只能传一个。
                      */
                     void SetNewDomain(const std::string& _newDomain);
 
@@ -170,14 +170,14 @@ namespace TencentCloud
                     bool DefaultServerHasBeenSet() const;
 
                     /**
-                     * 获取监听器下必须配置一个默认域名，若要关闭原默认域名，必须同时指定另一个域名作为新的默认域名。
-                     * @return NewDefaultServerDomain 监听器下必须配置一个默认域名，若要关闭原默认域名，必须同时指定另一个域名作为新的默认域名。
+                     * 获取监听器下必须配置一个默认域名，若要关闭原默认域名，必须同时指定另一个域名作为新的默认域名，如果新的默认域名是多域名，可以指定多域名列表中的任意一个。
+                     * @return NewDefaultServerDomain 监听器下必须配置一个默认域名，若要关闭原默认域名，必须同时指定另一个域名作为新的默认域名，如果新的默认域名是多域名，可以指定多域名列表中的任意一个。
                      */
                     std::string GetNewDefaultServerDomain() const;
 
                     /**
-                     * 设置监听器下必须配置一个默认域名，若要关闭原默认域名，必须同时指定另一个域名作为新的默认域名。
-                     * @param NewDefaultServerDomain 监听器下必须配置一个默认域名，若要关闭原默认域名，必须同时指定另一个域名作为新的默认域名。
+                     * 设置监听器下必须配置一个默认域名，若要关闭原默认域名，必须同时指定另一个域名作为新的默认域名，如果新的默认域名是多域名，可以指定多域名列表中的任意一个。
+                     * @param NewDefaultServerDomain 监听器下必须配置一个默认域名，若要关闭原默认域名，必须同时指定另一个域名作为新的默认域名，如果新的默认域名是多域名，可以指定多域名列表中的任意一个。
                      */
                     void SetNewDefaultServerDomain(const std::string& _newDefaultServerDomain);
 
@@ -186,6 +186,24 @@ namespace TencentCloud
                      * @return NewDefaultServerDomain 是否已赋值
                      */
                     bool NewDefaultServerDomainHasBeenSet() const;
+
+                    /**
+                     * 获取要修改的新域名列表。NewDomain和NewDomains只能传一个。
+                     * @return NewDomains 要修改的新域名列表。NewDomain和NewDomains只能传一个。
+                     */
+                    std::vector<std::string> GetNewDomains() const;
+
+                    /**
+                     * 设置要修改的新域名列表。NewDomain和NewDomains只能传一个。
+                     * @param NewDomains 要修改的新域名列表。NewDomain和NewDomains只能传一个。
+                     */
+                    void SetNewDomains(const std::vector<std::string>& _newDomains);
+
+                    /**
+                     * 判断参数 NewDomains 是否已赋值
+                     * @return NewDomains 是否已赋值
+                     */
+                    bool NewDomainsHasBeenSet() const;
 
                 private:
 
@@ -202,13 +220,13 @@ namespace TencentCloud
                     bool m_listenerIdHasBeenSet;
 
                     /**
-                     * 域名（必须是已经创建的转发规则下的域名）。
+                     * 域名（必须是已经创建的转发规则下的域名），如果是多域名，可以指定多域名列表中的任意一个。
                      */
                     std::string m_domain;
                     bool m_domainHasBeenSet;
 
                     /**
-                     * 要修改的新域名。
+                     * 要修改的新域名。NewDomain和NewDomains只能传一个。
                      */
                     std::string m_newDomain;
                     bool m_newDomainHasBeenSet;
@@ -232,10 +250,16 @@ namespace TencentCloud
                     bool m_defaultServerHasBeenSet;
 
                     /**
-                     * 监听器下必须配置一个默认域名，若要关闭原默认域名，必须同时指定另一个域名作为新的默认域名。
+                     * 监听器下必须配置一个默认域名，若要关闭原默认域名，必须同时指定另一个域名作为新的默认域名，如果新的默认域名是多域名，可以指定多域名列表中的任意一个。
                      */
                     std::string m_newDefaultServerDomain;
                     bool m_newDefaultServerDomainHasBeenSet;
+
+                    /**
+                     * 要修改的新域名列表。NewDomain和NewDomains只能传一个。
+                     */
+                    std::vector<std::string> m_newDomains;
+                    bool m_newDomainsHasBeenSet;
 
                 };
             }

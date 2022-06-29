@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取收单系统分配的开放ID
-                     * @return OpenId 收单系统分配的开放ID
+                     * 获取使用门店OpenId
+                     * @return OpenId 使用门店OpenId
                      */
                     std::string GetOpenId() const;
 
                     /**
-                     * 设置收单系统分配的开放ID
-                     * @param OpenId 收单系统分配的开放ID
+                     * 设置使用门店OpenId
+                     * @param OpenId 使用门店OpenId
                      */
                     void SetOpenId(const std::string& _openId);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool OpenIdHasBeenSet() const;
 
                     /**
-                     * 获取收单系统分配的密钥
-                     * @return OpenKey 收单系统分配的密钥
+                     * 获取使用门店OpenKey
+                     * @return OpenKey 使用门店OpenKey
                      */
                     std::string GetOpenKey() const;
 
                     /**
-                     * 设置收单系统分配的密钥
-                     * @param OpenKey 收单系统分配的密钥
+                     * 设置使用门店OpenKey
+                     * @param OpenKey 使用门店OpenKey
                      */
                     void SetOpenKey(const std::string& _openKey);
 
@@ -151,14 +151,14 @@ namespace TencentCloud
                     bool RefundAmountHasBeenSet() const;
 
                     /**
-                     * 获取主管密码，对密码进行sha1加密，默认为123456
-                     * @return ShopPassword 主管密码，对密码进行sha1加密，默认为123456
+                     * 获取主管密码，对密码进行SHA-1加密，默认为123456
+                     * @return ShopPassword 主管密码，对密码进行SHA-1加密，默认为123456
                      */
                     std::string GetShopPassword() const;
 
                     /**
-                     * 设置主管密码，对密码进行sha1加密，默认为123456
-                     * @param ShopPassword 主管密码，对密码进行sha1加密，默认为123456
+                     * 设置主管密码，对密码进行SHA-1加密，默认为123456
+                     * @param ShopPassword 主管密码，对密码进行SHA-1加密，默认为123456
                      */
                     void SetShopPassword(const std::string& _shopPassword);
 
@@ -207,13 +207,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 收单系统分配的开放ID
+                     * 使用门店OpenId
                      */
                     std::string m_openId;
                     bool m_openIdHasBeenSet;
 
                     /**
-                     * 收单系统分配的密钥
+                     * 使用门店OpenKey
                      */
                     std::string m_openKey;
                     bool m_openKeyHasBeenSet;
@@ -243,7 +243,7 @@ namespace TencentCloud
                     bool m_refundAmountHasBeenSet;
 
                     /**
-                     * 主管密码，对密码进行sha1加密，默认为123456
+                     * 主管密码，对密码进行SHA-1加密，默认为123456
                      */
                     std::string m_shopPassword;
                     bool m_shopPasswordHasBeenSet;

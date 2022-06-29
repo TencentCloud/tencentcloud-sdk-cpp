@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 直播 AI 内容审核图片鉴恐结果
+                * 直播 AI 内容审核图片涉敏结果
                 */
                 class LiveStreamAiReviewImageTerrorismResult : public AbstractModel
                 {
@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool EndPtsTimeHasBeenSet() const;
 
                     /**
-                     * 获取嫌疑片段涉恐分数。
-                     * @return Confidence 嫌疑片段涉恐分数。
+                     * 获取嫌疑片段涉敏分数。
+                     * @return Confidence 嫌疑片段涉敏分数。
                      */
                     double GetConfidence() const;
 
                     /**
-                     * 设置嫌疑片段涉恐分数。
-                     * @param Confidence 嫌疑片段涉恐分数。
+                     * 设置嫌疑片段涉敏分数。
+                     * @param Confidence 嫌疑片段涉敏分数。
                      */
                     void SetConfidence(const double& _confidence);
 
@@ -101,11 +101,11 @@ namespace TencentCloud
                     bool ConfidenceHasBeenSet() const;
 
                     /**
-                     * 获取嫌疑片段鉴恐结果建议，取值范围：
+                     * 获取嫌疑片段涉敏结果建议，取值范围：
 <li>pass</li>
 <li>review</li>
 <li>block</li>
-                     * @return Suggestion 嫌疑片段鉴恐结果建议，取值范围：
+                     * @return Suggestion 嫌疑片段涉敏结果建议，取值范围：
 <li>pass</li>
 <li>review</li>
 <li>block</li>
@@ -113,11 +113,11 @@ namespace TencentCloud
                     std::string GetSuggestion() const;
 
                     /**
-                     * 设置嫌疑片段鉴恐结果建议，取值范围：
+                     * 设置嫌疑片段涉敏结果建议，取值范围：
 <li>pass</li>
 <li>review</li>
 <li>block</li>
-                     * @param Suggestion 嫌疑片段鉴恐结果建议，取值范围：
+                     * @param Suggestion 嫌疑片段涉敏结果建议，取值范围：
 <li>pass</li>
 <li>review</li>
 <li>block</li>
@@ -131,46 +131,46 @@ namespace TencentCloud
                     bool SuggestionHasBeenSet() const;
 
                     /**
-                     * 获取视频暴恐结果标签，取值范围：
+                     * 获取视频涉敏结果标签，取值范围：
 <li>guns：武器枪支。</li>
 <li>crowd：人群聚集。</li>
 <li>police：警察部队。</li>
 <li>bloody：血腥画面。</li>
-<li>banners：暴恐旗帜。</li>
+<li>banners：涉敏旗帜。</li>
 <li>militant：武装分子。</li>
 <li>explosion：爆炸火灾。</li>
-<li>terrorists：暴恐人物。</li>
-                     * @return Label 视频暴恐结果标签，取值范围：
+<li>terrorists：涉敏人物。</li>
+                     * @return Label 视频涉敏结果标签，取值范围：
 <li>guns：武器枪支。</li>
 <li>crowd：人群聚集。</li>
 <li>police：警察部队。</li>
 <li>bloody：血腥画面。</li>
-<li>banners：暴恐旗帜。</li>
+<li>banners：涉敏旗帜。</li>
 <li>militant：武装分子。</li>
 <li>explosion：爆炸火灾。</li>
-<li>terrorists：暴恐人物。</li>
+<li>terrorists：涉敏人物。</li>
                      */
                     std::string GetLabel() const;
 
                     /**
-                     * 设置视频暴恐结果标签，取值范围：
+                     * 设置视频涉敏结果标签，取值范围：
 <li>guns：武器枪支。</li>
 <li>crowd：人群聚集。</li>
 <li>police：警察部队。</li>
 <li>bloody：血腥画面。</li>
-<li>banners：暴恐旗帜。</li>
+<li>banners：涉敏旗帜。</li>
 <li>militant：武装分子。</li>
 <li>explosion：爆炸火灾。</li>
-<li>terrorists：暴恐人物。</li>
-                     * @param Label 视频暴恐结果标签，取值范围：
+<li>terrorists：涉敏人物。</li>
+                     * @param Label 视频涉敏结果标签，取值范围：
 <li>guns：武器枪支。</li>
 <li>crowd：人群聚集。</li>
 <li>police：警察部队。</li>
 <li>bloody：血腥画面。</li>
-<li>banners：暴恐旗帜。</li>
+<li>banners：涉敏旗帜。</li>
 <li>militant：武装分子。</li>
 <li>explosion：爆炸火灾。</li>
-<li>terrorists：暴恐人物。</li>
+<li>terrorists：涉敏人物。</li>
                      */
                     void SetLabel(const std::string& _label);
 
@@ -235,13 +235,13 @@ PicUrlExpireTime 时间点后图片将被删除）。
                     bool m_endPtsTimeHasBeenSet;
 
                     /**
-                     * 嫌疑片段涉恐分数。
+                     * 嫌疑片段涉敏分数。
                      */
                     double m_confidence;
                     bool m_confidenceHasBeenSet;
 
                     /**
-                     * 嫌疑片段鉴恐结果建议，取值范围：
+                     * 嫌疑片段涉敏结果建议，取值范围：
 <li>pass</li>
 <li>review</li>
 <li>block</li>
@@ -250,15 +250,15 @@ PicUrlExpireTime 时间点后图片将被删除）。
                     bool m_suggestionHasBeenSet;
 
                     /**
-                     * 视频暴恐结果标签，取值范围：
+                     * 视频涉敏结果标签，取值范围：
 <li>guns：武器枪支。</li>
 <li>crowd：人群聚集。</li>
 <li>police：警察部队。</li>
 <li>bloody：血腥画面。</li>
-<li>banners：暴恐旗帜。</li>
+<li>banners：涉敏旗帜。</li>
 <li>militant：武装分子。</li>
 <li>explosion：爆炸火灾。</li>
-<li>terrorists：暴恐人物。</li>
+<li>terrorists：涉敏人物。</li>
                      */
                     std::string m_label;
                     bool m_labelHasBeenSet;

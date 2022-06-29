@@ -35,7 +35,11 @@ VirusInfo::VirusInfo() :
     m_idHasBeenSet(false),
     m_harmDescribeHasBeenSet(false),
     m_suggestSchemeHasBeenSet(false),
-    m_subStatusHasBeenSet(false)
+    m_subStatusHasBeenSet(false),
+    m_containerNetStatusHasBeenSet(false),
+    m_containerNetSubStatusHasBeenSet(false),
+    m_containerIsolateOperationSrcHasBeenSet(false),
+    m_mD5HasBeenSet(false)
 {
 }
 
@@ -194,6 +198,46 @@ CoreInternalOutcome VirusInfo::Deserialize(const rapidjson::Value &value)
         m_subStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("ContainerNetStatus") && !value["ContainerNetStatus"].IsNull())
+    {
+        if (!value["ContainerNetStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VirusInfo.ContainerNetStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_containerNetStatus = string(value["ContainerNetStatus"].GetString());
+        m_containerNetStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("ContainerNetSubStatus") && !value["ContainerNetSubStatus"].IsNull())
+    {
+        if (!value["ContainerNetSubStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VirusInfo.ContainerNetSubStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_containerNetSubStatus = string(value["ContainerNetSubStatus"].GetString());
+        m_containerNetSubStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("ContainerIsolateOperationSrc") && !value["ContainerIsolateOperationSrc"].IsNull())
+    {
+        if (!value["ContainerIsolateOperationSrc"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VirusInfo.ContainerIsolateOperationSrc` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_containerIsolateOperationSrc = string(value["ContainerIsolateOperationSrc"].GetString());
+        m_containerIsolateOperationSrcHasBeenSet = true;
+    }
+
+    if (value.HasMember("MD5") && !value["MD5"].IsNull())
+    {
+        if (!value["MD5"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VirusInfo.MD5` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_mD5 = string(value["MD5"].GetString());
+        m_mD5HasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -319,6 +363,38 @@ void VirusInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "SubStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_subStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_containerNetStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ContainerNetStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_containerNetStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_containerNetSubStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ContainerNetSubStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_containerNetSubStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_containerIsolateOperationSrcHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ContainerIsolateOperationSrc";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_containerIsolateOperationSrc.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_mD5HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MD5";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_mD5.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -562,5 +638,69 @@ void VirusInfo::SetSubStatus(const string& _subStatus)
 bool VirusInfo::SubStatusHasBeenSet() const
 {
     return m_subStatusHasBeenSet;
+}
+
+string VirusInfo::GetContainerNetStatus() const
+{
+    return m_containerNetStatus;
+}
+
+void VirusInfo::SetContainerNetStatus(const string& _containerNetStatus)
+{
+    m_containerNetStatus = _containerNetStatus;
+    m_containerNetStatusHasBeenSet = true;
+}
+
+bool VirusInfo::ContainerNetStatusHasBeenSet() const
+{
+    return m_containerNetStatusHasBeenSet;
+}
+
+string VirusInfo::GetContainerNetSubStatus() const
+{
+    return m_containerNetSubStatus;
+}
+
+void VirusInfo::SetContainerNetSubStatus(const string& _containerNetSubStatus)
+{
+    m_containerNetSubStatus = _containerNetSubStatus;
+    m_containerNetSubStatusHasBeenSet = true;
+}
+
+bool VirusInfo::ContainerNetSubStatusHasBeenSet() const
+{
+    return m_containerNetSubStatusHasBeenSet;
+}
+
+string VirusInfo::GetContainerIsolateOperationSrc() const
+{
+    return m_containerIsolateOperationSrc;
+}
+
+void VirusInfo::SetContainerIsolateOperationSrc(const string& _containerIsolateOperationSrc)
+{
+    m_containerIsolateOperationSrc = _containerIsolateOperationSrc;
+    m_containerIsolateOperationSrcHasBeenSet = true;
+}
+
+bool VirusInfo::ContainerIsolateOperationSrcHasBeenSet() const
+{
+    return m_containerIsolateOperationSrcHasBeenSet;
+}
+
+string VirusInfo::GetMD5() const
+{
+    return m_mD5;
+}
+
+void VirusInfo::SetMD5(const string& _mD5)
+{
+    m_mD5 = _mD5;
+    m_mD5HasBeenSet = true;
+}
+
+bool VirusInfo::MD5HasBeenSet() const
+{
+    return m_mD5HasBeenSet;
 }
 

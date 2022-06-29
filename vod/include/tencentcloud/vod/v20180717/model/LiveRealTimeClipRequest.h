@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取推流[直播码](https://cloud.tencent.com/document/product/267/5959)。
-                     * @return StreamId 推流[直播码](https://cloud.tencent.com/document/product/267/5959)。
+                     * 获取推流直播码。
+                     * @return StreamId 推流直播码。
                      */
                     std::string GetStreamId() const;
 
                     /**
-                     * 设置推流[直播码](https://cloud.tencent.com/document/product/267/5959)。
-                     * @param StreamId 推流[直播码](https://cloud.tencent.com/document/product/267/5959)。
+                     * 设置推流直播码。
+                     * @param StreamId 推流直播码。
                      */
                     void SetStreamId(const std::string& _streamId);
 
@@ -95,6 +95,24 @@ namespace TencentCloud
                      * @return EndTime 是否已赋值
                      */
                     bool EndTimeHasBeenSet() const;
+
+                    /**
+                     * 获取<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
+                     * @return SubAppId <b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
+                     */
+                    uint64_t GetSubAppId() const;
+
+                    /**
+                     * 设置<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
+                     * @param SubAppId <b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
+                     */
+                    void SetSubAppId(const uint64_t& _subAppId);
+
+                    /**
+                     * 判断参数 SubAppId 是否已赋值
+                     * @return SubAppId 是否已赋值
+                     */
+                    bool SubAppIdHasBeenSet() const;
 
                     /**
                      * 获取是否固化。0 不固化，1 固化。默认不固化。
@@ -204,28 +222,10 @@ namespace TencentCloud
                      */
                     bool ExtInfoHasBeenSet() const;
 
-                    /**
-                     * 获取点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。
-                     * @return SubAppId 点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。
-                     */
-                    uint64_t GetSubAppId() const;
-
-                    /**
-                     * 设置点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。
-                     * @param SubAppId 点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。
-                     */
-                    void SetSubAppId(const uint64_t& _subAppId);
-
-                    /**
-                     * 判断参数 SubAppId 是否已赋值
-                     * @return SubAppId 是否已赋值
-                     */
-                    bool SubAppIdHasBeenSet() const;
-
                 private:
 
                     /**
-                     * 推流[直播码](https://cloud.tencent.com/document/product/267/5959)。
+                     * 推流直播码。
                      */
                     std::string m_streamId;
                     bool m_streamIdHasBeenSet;
@@ -241,6 +241,12 @@ namespace TencentCloud
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
+
+                    /**
+                     * <b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
+                     */
+                    uint64_t m_subAppId;
+                    bool m_subAppIdHasBeenSet;
 
                     /**
                      * 是否固化。0 不固化，1 固化。默认不固化。
@@ -277,12 +283,6 @@ namespace TencentCloud
                      */
                     std::string m_extInfo;
                     bool m_extInfoHasBeenSet;
-
-                    /**
-                     * 点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。
-                     */
-                    uint64_t m_subAppId;
-                    bool m_subAppIdHasBeenSet;
 
                 };
             }

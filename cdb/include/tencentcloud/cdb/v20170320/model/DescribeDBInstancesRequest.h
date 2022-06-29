@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cdb/v20170320/model/Tag.h>
 
 
 namespace TencentCloud
@@ -295,14 +296,14 @@ namespace TencentCloud
                     bool SubnetIdsHasBeenSet() const;
 
                     /**
-                     * 获取是否锁定标记。
-                     * @return CdbErrors 是否锁定标记。
+                     * 获取是否锁定标记，可选值：0 - 不锁定，1 - 锁定，默认为0。
+                     * @return CdbErrors 是否锁定标记，可选值：0 - 不锁定，1 - 锁定，默认为0。
                      */
                     std::vector<int64_t> GetCdbErrors() const;
 
                     /**
-                     * 设置是否锁定标记。
-                     * @param CdbErrors 是否锁定标记。
+                     * 设置是否锁定标记，可选值：0 - 不锁定，1 - 锁定，默认为0。
+                     * @param CdbErrors 是否锁定标记，可选值：0 - 不锁定，1 - 锁定，默认为0。
                      */
                     void SetCdbErrors(const std::vector<int64_t>& _cdbErrors);
 
@@ -546,6 +547,78 @@ namespace TencentCloud
                      */
                     bool CageIdsHasBeenSet() const;
 
+                    /**
+                     * 获取标签值
+                     * @return TagValues 标签值
+                     */
+                    std::vector<std::string> GetTagValues() const;
+
+                    /**
+                     * 设置标签值
+                     * @param TagValues 标签值
+                     */
+                    void SetTagValues(const std::vector<std::string>& _tagValues);
+
+                    /**
+                     * 判断参数 TagValues 是否已赋值
+                     * @return TagValues 是否已赋值
+                     */
+                    bool TagValuesHasBeenSet() const;
+
+                    /**
+                     * 获取私有网络字符型vpcId
+                     * @return UniqueVpcIds 私有网络字符型vpcId
+                     */
+                    std::vector<std::string> GetUniqueVpcIds() const;
+
+                    /**
+                     * 设置私有网络字符型vpcId
+                     * @param UniqueVpcIds 私有网络字符型vpcId
+                     */
+                    void SetUniqueVpcIds(const std::vector<std::string>& _uniqueVpcIds);
+
+                    /**
+                     * 判断参数 UniqueVpcIds 是否已赋值
+                     * @return UniqueVpcIds 是否已赋值
+                     */
+                    bool UniqueVpcIdsHasBeenSet() const;
+
+                    /**
+                     * 获取私有网络字符型subnetId
+                     * @return UniqSubnetIds 私有网络字符型subnetId
+                     */
+                    std::vector<std::string> GetUniqSubnetIds() const;
+
+                    /**
+                     * 设置私有网络字符型subnetId
+                     * @param UniqSubnetIds 私有网络字符型subnetId
+                     */
+                    void SetUniqSubnetIds(const std::vector<std::string>& _uniqSubnetIds);
+
+                    /**
+                     * 判断参数 UniqSubnetIds 是否已赋值
+                     * @return UniqSubnetIds 是否已赋值
+                     */
+                    bool UniqSubnetIdsHasBeenSet() const;
+
+                    /**
+                     * 获取标签键值
+                     * @return Tags 标签键值
+                     */
+                    std::vector<Tag> GetTags() const;
+
+                    /**
+                     * 设置标签键值
+                     * @param Tags 标签键值
+                     */
+                    void SetTags(const std::vector<Tag>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     */
+                    bool TagsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -633,7 +706,7 @@ namespace TencentCloud
                     bool m_subnetIdsHasBeenSet;
 
                     /**
-                     * 是否锁定标记。
+                     * 是否锁定标记，可选值：0 - 不锁定，1 - 锁定，默认为0。
                      */
                     std::vector<int64_t> m_cdbErrors;
                     bool m_cdbErrorsHasBeenSet;
@@ -715,6 +788,30 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_cageIds;
                     bool m_cageIdsHasBeenSet;
+
+                    /**
+                     * 标签值
+                     */
+                    std::vector<std::string> m_tagValues;
+                    bool m_tagValuesHasBeenSet;
+
+                    /**
+                     * 私有网络字符型vpcId
+                     */
+                    std::vector<std::string> m_uniqueVpcIds;
+                    bool m_uniqueVpcIdsHasBeenSet;
+
+                    /**
+                     * 私有网络字符型subnetId
+                     */
+                    std::vector<std::string> m_uniqSubnetIds;
+                    bool m_uniqSubnetIdsHasBeenSet;
+
+                    /**
+                     * 标签键值
+                     */
+                    std::vector<Tag> m_tags;
+                    bool m_tagsHasBeenSet;
 
                 };
             }

@@ -23,7 +23,8 @@ using namespace std;
 MediaFilter::MediaFilter() :
     m_mediaNameSetHasBeenSet(false),
     m_statusSetHasBeenSet(false),
-    m_mediaIdSetHasBeenSet(false)
+    m_mediaIdSetHasBeenSet(false),
+    m_labelSetHasBeenSet(false)
 {
 }
 
@@ -71,6 +72,19 @@ CoreInternalOutcome MediaFilter::Deserialize(const rapidjson::Value &value)
         m_mediaIdSetHasBeenSet = true;
     }
 
+    if (value.HasMember("LabelSet") && !value["LabelSet"].IsNull())
+    {
+        if (!value["LabelSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `MediaFilter.LabelSet` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["LabelSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_labelSet.push_back((*itr).GetString());
+        }
+        m_labelSetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -112,6 +126,19 @@ void MediaFilter::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_mediaIdSet.begin(); itr != m_mediaIdSet.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_labelSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LabelSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_labelSet.begin(); itr != m_labelSet.end(); ++itr)
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
@@ -166,5 +193,21 @@ void MediaFilter::SetMediaIdSet(const vector<string>& _mediaIdSet)
 bool MediaFilter::MediaIdSetHasBeenSet() const
 {
     return m_mediaIdSetHasBeenSet;
+}
+
+vector<string> MediaFilter::GetLabelSet() const
+{
+    return m_labelSet;
+}
+
+void MediaFilter::SetLabelSet(const vector<string>& _labelSet)
+{
+    m_labelSet = _labelSet;
+    m_labelSetHasBeenSet = true;
+}
+
+bool MediaFilter::LabelSetHasBeenSet() const
+{
+    return m_labelSetHasBeenSet;
 }
 

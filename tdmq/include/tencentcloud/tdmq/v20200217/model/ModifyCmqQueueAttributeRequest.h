@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool VisibilityTimeoutHasBeenSet() const;
 
                     /**
-                     * 获取消息最大长度。取值范围 1024-65536 Byte（即1-64K），默认值 65536。
-                     * @return MaxMsgSize 消息最大长度。取值范围 1024-65536 Byte（即1-64K），默认值 65536。
+                     * 获取消息最大长度，新版CMQ新建的队列默认1024KB，不支持修改
+                     * @return MaxMsgSize 消息最大长度，新版CMQ新建的队列默认1024KB，不支持修改
                      */
                     uint64_t GetMaxMsgSize() const;
 
                     /**
-                     * 设置消息最大长度。取值范围 1024-65536 Byte（即1-64K），默认值 65536。
-                     * @param MaxMsgSize 消息最大长度。取值范围 1024-65536 Byte（即1-64K），默认值 65536。
+                     * 设置消息最大长度，新版CMQ新建的队列默认1024KB，不支持修改
+                     * @param MaxMsgSize 消息最大长度，新版CMQ新建的队列默认1024KB，不支持修改
                      */
                     void SetMaxMsgSize(const uint64_t& _maxMsgSize);
 
@@ -133,14 +133,14 @@ namespace TencentCloud
                     bool MaxMsgSizeHasBeenSet() const;
 
                     /**
-                     * 获取消息保留周期。取值范围 60-1296000 秒（1min-15天），默认值 345600 (4 天)。
-                     * @return MsgRetentionSeconds 消息保留周期。取值范围 60-1296000 秒（1min-15天），默认值 345600 (4 天)。
+                     * 获取消息最长未确认时间。取值范围 30-43200 秒（30秒~12小时），默认值 3600 (1 小时)。
+                     * @return MsgRetentionSeconds 消息最长未确认时间。取值范围 30-43200 秒（30秒~12小时），默认值 3600 (1 小时)。
                      */
                     uint64_t GetMsgRetentionSeconds() const;
 
                     /**
-                     * 设置消息保留周期。取值范围 60-1296000 秒（1min-15天），默认值 345600 (4 天)。
-                     * @param MsgRetentionSeconds 消息保留周期。取值范围 60-1296000 秒（1min-15天），默认值 345600 (4 天)。
+                     * 设置消息最长未确认时间。取值范围 30-43200 秒（30秒~12小时），默认值 3600 (1 小时)。
+                     * @param MsgRetentionSeconds 消息最长未确认时间。取值范围 30-43200 秒（30秒~12小时），默认值 3600 (1 小时)。
                      */
                     void SetMsgRetentionSeconds(const uint64_t& _msgRetentionSeconds);
 
@@ -151,14 +151,14 @@ namespace TencentCloud
                     bool MsgRetentionSecondsHasBeenSet() const;
 
                     /**
-                     * 获取消息最长回溯时间，取值范围0-msgRetentionSeconds，消息的最大回溯之间为消息在队列中的保存周期，0表示不开启消息回溯。
-                     * @return RewindSeconds 消息最长回溯时间，取值范围0-msgRetentionSeconds，消息的最大回溯之间为消息在队列中的保存周期，0表示不开启消息回溯。
+                     * 获取队列是否开启回溯消息能力，该参数取值范围0-1296000，0表示不开启。
+                     * @return RewindSeconds 队列是否开启回溯消息能力，该参数取值范围0-1296000，0表示不开启。
                      */
                     uint64_t GetRewindSeconds() const;
 
                     /**
-                     * 设置消息最长回溯时间，取值范围0-msgRetentionSeconds，消息的最大回溯之间为消息在队列中的保存周期，0表示不开启消息回溯。
-                     * @param RewindSeconds 消息最长回溯时间，取值范围0-msgRetentionSeconds，消息的最大回溯之间为消息在队列中的保存周期，0表示不开启消息回溯。
+                     * 设置队列是否开启回溯消息能力，该参数取值范围0-1296000，0表示不开启。
+                     * @param RewindSeconds 队列是否开启回溯消息能力，该参数取值范围0-1296000，0表示不开启。
                      */
                     void SetRewindSeconds(const uint64_t& _rewindSeconds);
 
@@ -312,6 +312,24 @@ namespace TencentCloud
                      */
                     bool TransactionHasBeenSet() const;
 
+                    /**
+                     * 获取队列可回溯存储空间：若开启消息回溯，取值范围：10240MB - 512000MB，若不开启消息回溯，取值：0
+                     * @return RetentionSizeInMB 队列可回溯存储空间：若开启消息回溯，取值范围：10240MB - 512000MB，若不开启消息回溯，取值：0
+                     */
+                    uint64_t GetRetentionSizeInMB() const;
+
+                    /**
+                     * 设置队列可回溯存储空间：若开启消息回溯，取值范围：10240MB - 512000MB，若不开启消息回溯，取值：0
+                     * @param RetentionSizeInMB 队列可回溯存储空间：若开启消息回溯，取值范围：10240MB - 512000MB，若不开启消息回溯，取值：0
+                     */
+                    void SetRetentionSizeInMB(const uint64_t& _retentionSizeInMB);
+
+                    /**
+                     * 判断参数 RetentionSizeInMB 是否已赋值
+                     * @return RetentionSizeInMB 是否已赋值
+                     */
+                    bool RetentionSizeInMBHasBeenSet() const;
+
                 private:
 
                     /**
@@ -339,19 +357,19 @@ namespace TencentCloud
                     bool m_visibilityTimeoutHasBeenSet;
 
                     /**
-                     * 消息最大长度。取值范围 1024-65536 Byte（即1-64K），默认值 65536。
+                     * 消息最大长度，新版CMQ新建的队列默认1024KB，不支持修改
                      */
                     uint64_t m_maxMsgSize;
                     bool m_maxMsgSizeHasBeenSet;
 
                     /**
-                     * 消息保留周期。取值范围 60-1296000 秒（1min-15天），默认值 345600 (4 天)。
+                     * 消息最长未确认时间。取值范围 30-43200 秒（30秒~12小时），默认值 3600 (1 小时)。
                      */
                     uint64_t m_msgRetentionSeconds;
                     bool m_msgRetentionSecondsHasBeenSet;
 
                     /**
-                     * 消息最长回溯时间，取值范围0-msgRetentionSeconds，消息的最大回溯之间为消息在队列中的保存周期，0表示不开启消息回溯。
+                     * 队列是否开启回溯消息能力，该参数取值范围0-1296000，0表示不开启。
                      */
                     uint64_t m_rewindSeconds;
                     bool m_rewindSecondsHasBeenSet;
@@ -403,6 +421,12 @@ namespace TencentCloud
                      */
                     uint64_t m_transaction;
                     bool m_transactionHasBeenSet;
+
+                    /**
+                     * 队列可回溯存储空间：若开启消息回溯，取值范围：10240MB - 512000MB，若不开启消息回溯，取值：0
+                     */
+                    uint64_t m_retentionSizeInMB;
+                    bool m_retentionSizeInMBHasBeenSet;
 
                 };
             }

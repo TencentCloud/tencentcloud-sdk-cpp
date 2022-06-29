@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/vod/v20180717/model/WatermarkInput.h>
+#include <tencentcloud/vod/v20180717/model/TraceWatermarkInput.h>
 
 
 namespace TencentCloud
@@ -84,6 +85,24 @@ namespace TencentCloud
                     bool WatermarkSetHasBeenSet() const;
 
                     /**
+                     * 获取溯源水印。
+                     * @return TraceWatermark 溯源水印。
+                     */
+                    TraceWatermarkInput GetTraceWatermark() const;
+
+                    /**
+                     * 设置溯源水印。
+                     * @param TraceWatermark 溯源水印。
+                     */
+                    void SetTraceWatermark(const TraceWatermarkInput& _traceWatermark);
+
+                    /**
+                     * 判断参数 TraceWatermark 是否已赋值
+                     * @return TraceWatermark 是否已赋值
+                     */
+                    bool TraceWatermarkHasBeenSet() const;
+
+                    /**
                      * 获取字幕列表，元素为字幕 ID，支持多个字幕，最大可支持16个。
                      * @return SubtitleSet 字幕列表，元素为字幕 ID，支持多个字幕，最大可支持16个。
                      */
@@ -114,6 +133,12 @@ namespace TencentCloud
                      */
                     std::vector<WatermarkInput> m_watermarkSet;
                     bool m_watermarkSetHasBeenSet;
+
+                    /**
+                     * 溯源水印。
+                     */
+                    TraceWatermarkInput m_traceWatermark;
+                    bool m_traceWatermarkHasBeenSet;
 
                     /**
                      * 字幕列表，元素为字幕 ID，支持多个字幕，最大可支持16个。

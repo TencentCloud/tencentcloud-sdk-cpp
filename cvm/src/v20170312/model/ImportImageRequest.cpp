@@ -30,7 +30,8 @@ ImportImageRequest::ImportImageRequest() :
     m_imageNameHasBeenSet(false),
     m_imageDescriptionHasBeenSet(false),
     m_dryRunHasBeenSet(false),
-    m_forceHasBeenSet(false)
+    m_forceHasBeenSet(false),
+    m_tagSpecificationHasBeenSet(false)
 {
 }
 
@@ -103,6 +104,21 @@ string ImportImageRequest::ToJsonString() const
         string key = "Force";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_force, allocator);
+    }
+
+    if (m_tagSpecificationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TagSpecification";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tagSpecification.begin(); itr != m_tagSpecification.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -239,6 +255,22 @@ void ImportImageRequest::SetForce(const bool& _force)
 bool ImportImageRequest::ForceHasBeenSet() const
 {
     return m_forceHasBeenSet;
+}
+
+vector<TagSpecification> ImportImageRequest::GetTagSpecification() const
+{
+    return m_tagSpecification;
+}
+
+void ImportImageRequest::SetTagSpecification(const vector<TagSpecification>& _tagSpecification)
+{
+    m_tagSpecification = _tagSpecification;
+    m_tagSpecificationHasBeenSet = true;
+}
+
+bool ImportImageRequest::TagSpecificationHasBeenSet() const
+{
+    return m_tagSpecificationHasBeenSet;
 }
 
 

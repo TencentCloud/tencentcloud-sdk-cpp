@@ -40,7 +40,9 @@ PushQualityData::PushQualityData() :
     m_metaVideoRateHasBeenSet(false),
     m_metaAudioRateHasBeenSet(false),
     m_mateFpsHasBeenSet(false),
-    m_streamParamHasBeenSet(false)
+    m_streamParamHasBeenSet(false),
+    m_bandwidthHasBeenSet(false),
+    m_fluxHasBeenSet(false)
 {
 }
 
@@ -249,6 +251,26 @@ CoreInternalOutcome PushQualityData::Deserialize(const rapidjson::Value &value)
         m_streamParamHasBeenSet = true;
     }
 
+    if (value.HasMember("Bandwidth") && !value["Bandwidth"].IsNull())
+    {
+        if (!value["Bandwidth"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `PushQualityData.Bandwidth` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_bandwidth = value["Bandwidth"].GetDouble();
+        m_bandwidthHasBeenSet = true;
+    }
+
+    if (value.HasMember("Flux") && !value["Flux"].IsNull())
+    {
+        if (!value["Flux"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `PushQualityData.Flux` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_flux = value["Flux"].GetDouble();
+        m_fluxHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -414,6 +436,22 @@ void PushQualityData::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "StreamParam";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_streamParam.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_bandwidthHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Bandwidth";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_bandwidth, allocator);
+    }
+
+    if (m_fluxHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Flux";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_flux, allocator);
     }
 
 }
@@ -737,5 +775,37 @@ void PushQualityData::SetStreamParam(const string& _streamParam)
 bool PushQualityData::StreamParamHasBeenSet() const
 {
     return m_streamParamHasBeenSet;
+}
+
+double PushQualityData::GetBandwidth() const
+{
+    return m_bandwidth;
+}
+
+void PushQualityData::SetBandwidth(const double& _bandwidth)
+{
+    m_bandwidth = _bandwidth;
+    m_bandwidthHasBeenSet = true;
+}
+
+bool PushQualityData::BandwidthHasBeenSet() const
+{
+    return m_bandwidthHasBeenSet;
+}
+
+double PushQualityData::GetFlux() const
+{
+    return m_flux;
+}
+
+void PushQualityData::SetFlux(const double& _flux)
+{
+    m_flux = _flux;
+    m_fluxHasBeenSet = true;
+}
+
+bool PushQualityData::FluxHasBeenSet() const
+{
+    return m_fluxHasBeenSet;
 }
 

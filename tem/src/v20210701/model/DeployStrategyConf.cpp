@@ -25,7 +25,8 @@ DeployStrategyConf::DeployStrategyConf() :
     m_betaBatchNumHasBeenSet(false),
     m_deployStrategyTypeHasBeenSet(false),
     m_batchIntervalHasBeenSet(false),
-    m_minAvailableHasBeenSet(false)
+    m_minAvailableHasBeenSet(false),
+    m_forceHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,16 @@ CoreInternalOutcome DeployStrategyConf::Deserialize(const rapidjson::Value &valu
         m_minAvailableHasBeenSet = true;
     }
 
+    if (value.HasMember("Force") && !value["Force"].IsNull())
+    {
+        if (!value["Force"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `DeployStrategyConf.Force` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_force = value["Force"].GetBool();
+        m_forceHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +140,14 @@ void DeployStrategyConf::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "MinAvailable";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_minAvailable, allocator);
+    }
+
+    if (m_forceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Force";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_force, allocator);
     }
 
 }
@@ -212,5 +231,21 @@ void DeployStrategyConf::SetMinAvailable(const int64_t& _minAvailable)
 bool DeployStrategyConf::MinAvailableHasBeenSet() const
 {
     return m_minAvailableHasBeenSet;
+}
+
+bool DeployStrategyConf::GetForce() const
+{
+    return m_force;
+}
+
+void DeployStrategyConf::SetForce(const bool& _force)
+{
+    m_force = _force;
+    m_forceHasBeenSet = true;
+}
+
+bool DeployStrategyConf::ForceHasBeenSet() const
+{
+    return m_forceHasBeenSet;
 }
 

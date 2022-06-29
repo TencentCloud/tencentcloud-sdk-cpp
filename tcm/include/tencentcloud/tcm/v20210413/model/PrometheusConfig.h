@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tcm/v20210413/model/CustomPromConfig.h>
 
 
 namespace TencentCloud
@@ -118,6 +119,28 @@ namespace TencentCloud
                      */
                     bool InstanceIdHasBeenSet() const;
 
+                    /**
+                     * 获取第三方 Prometheus
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CustomProm 第三方 Prometheus
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    CustomPromConfig GetCustomProm() const;
+
+                    /**
+                     * 设置第三方 Prometheus
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param CustomProm 第三方 Prometheus
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCustomProm(const CustomPromConfig& _customProm);
+
+                    /**
+                     * 判断参数 CustomProm 是否已赋值
+                     * @return CustomProm 是否已赋值
+                     */
+                    bool CustomPromHasBeenSet() const;
+
                 private:
 
                     /**
@@ -143,6 +166,13 @@ namespace TencentCloud
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
+
+                    /**
+                     * 第三方 Prometheus
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    CustomPromConfig m_customProm;
+                    bool m_customPromHasBeenSet;
 
                 };
             }

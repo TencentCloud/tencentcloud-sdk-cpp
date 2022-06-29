@@ -26,7 +26,8 @@ CreateTaskFlowRequest::CreateTaskFlowRequest() :
     m_flowNameHasBeenSet(false),
     m_triggerRuleHasBeenSet(false),
     m_flowEdgesHasBeenSet(false),
-    m_timeOutHasBeenSet(false)
+    m_timeOutHasBeenSet(false),
+    m_programIdListHasBeenSet(false)
 {
 }
 
@@ -75,6 +76,19 @@ string CreateTaskFlowRequest::ToJsonString() const
         string key = "TimeOut";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_timeOut, allocator);
+    }
+
+    if (m_programIdListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProgramIdList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_programIdList.begin(); itr != m_programIdList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -147,6 +161,22 @@ void CreateTaskFlowRequest::SetTimeOut(const uint64_t& _timeOut)
 bool CreateTaskFlowRequest::TimeOutHasBeenSet() const
 {
     return m_timeOutHasBeenSet;
+}
+
+vector<string> CreateTaskFlowRequest::GetProgramIdList() const
+{
+    return m_programIdList;
+}
+
+void CreateTaskFlowRequest::SetProgramIdList(const vector<string>& _programIdList)
+{
+    m_programIdList = _programIdList;
+    m_programIdListHasBeenSet = true;
+}
+
+bool CreateTaskFlowRequest::ProgramIdListHasBeenSet() const
+{
+    return m_programIdListHasBeenSet;
 }
 
 

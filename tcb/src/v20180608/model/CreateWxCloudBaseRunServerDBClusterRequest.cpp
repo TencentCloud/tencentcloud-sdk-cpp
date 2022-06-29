@@ -25,7 +25,8 @@ using namespace std;
 CreateWxCloudBaseRunServerDBClusterRequest::CreateWxCloudBaseRunServerDBClusterRequest() :
     m_accountPasswordHasBeenSet(false),
     m_envIdHasBeenSet(false),
-    m_wxAppIdHasBeenSet(false)
+    m_wxAppIdHasBeenSet(false),
+    m_dbVersionHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,14 @@ string CreateWxCloudBaseRunServerDBClusterRequest::ToJsonString() const
         string key = "WxAppId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_wxAppId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dbVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DbVersion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_dbVersion.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -114,6 +123,22 @@ void CreateWxCloudBaseRunServerDBClusterRequest::SetWxAppId(const string& _wxApp
 bool CreateWxCloudBaseRunServerDBClusterRequest::WxAppIdHasBeenSet() const
 {
     return m_wxAppIdHasBeenSet;
+}
+
+string CreateWxCloudBaseRunServerDBClusterRequest::GetDbVersion() const
+{
+    return m_dbVersion;
+}
+
+void CreateWxCloudBaseRunServerDBClusterRequest::SetDbVersion(const string& _dbVersion)
+{
+    m_dbVersion = _dbVersion;
+    m_dbVersionHasBeenSet = true;
+}
+
+bool CreateWxCloudBaseRunServerDBClusterRequest::DbVersionHasBeenSet() const
+{
+    return m_dbVersionHasBeenSet;
 }
 
 

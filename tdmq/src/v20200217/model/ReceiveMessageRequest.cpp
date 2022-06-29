@@ -26,7 +26,10 @@ ReceiveMessageRequest::ReceiveMessageRequest() :
     m_topicHasBeenSet(false),
     m_subscriptionNameHasBeenSet(false),
     m_receiverQueueSizeHasBeenSet(false),
-    m_subInitialPositionHasBeenSet(false)
+    m_subInitialPositionHasBeenSet(false),
+    m_maxNumMessagesHasBeenSet(false),
+    m_maxNumBytesHasBeenSet(false),
+    m_timeoutHasBeenSet(false)
 {
 }
 
@@ -67,6 +70,30 @@ string ReceiveMessageRequest::ToJsonString() const
         string key = "SubInitialPosition";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_subInitialPosition.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_maxNumMessagesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxNumMessages";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_maxNumMessages, allocator);
+    }
+
+    if (m_maxNumBytesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxNumBytes";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_maxNumBytes, allocator);
+    }
+
+    if (m_timeoutHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Timeout";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_timeout, allocator);
     }
 
 
@@ -139,6 +166,54 @@ void ReceiveMessageRequest::SetSubInitialPosition(const string& _subInitialPosit
 bool ReceiveMessageRequest::SubInitialPositionHasBeenSet() const
 {
     return m_subInitialPositionHasBeenSet;
+}
+
+int64_t ReceiveMessageRequest::GetMaxNumMessages() const
+{
+    return m_maxNumMessages;
+}
+
+void ReceiveMessageRequest::SetMaxNumMessages(const int64_t& _maxNumMessages)
+{
+    m_maxNumMessages = _maxNumMessages;
+    m_maxNumMessagesHasBeenSet = true;
+}
+
+bool ReceiveMessageRequest::MaxNumMessagesHasBeenSet() const
+{
+    return m_maxNumMessagesHasBeenSet;
+}
+
+int64_t ReceiveMessageRequest::GetMaxNumBytes() const
+{
+    return m_maxNumBytes;
+}
+
+void ReceiveMessageRequest::SetMaxNumBytes(const int64_t& _maxNumBytes)
+{
+    m_maxNumBytes = _maxNumBytes;
+    m_maxNumBytesHasBeenSet = true;
+}
+
+bool ReceiveMessageRequest::MaxNumBytesHasBeenSet() const
+{
+    return m_maxNumBytesHasBeenSet;
+}
+
+int64_t ReceiveMessageRequest::GetTimeout() const
+{
+    return m_timeout;
+}
+
+void ReceiveMessageRequest::SetTimeout(const int64_t& _timeout)
+{
+    m_timeout = _timeout;
+    m_timeoutHasBeenSet = true;
+}
+
+bool ReceiveMessageRequest::TimeoutHasBeenSet() const
+{
+    return m_timeoutHasBeenSet;
 }
 
 

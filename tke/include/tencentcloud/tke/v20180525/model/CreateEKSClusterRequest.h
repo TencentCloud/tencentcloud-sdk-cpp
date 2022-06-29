@@ -23,6 +23,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tke/v20180525/model/DnsServerConf.h>
 #include <tencentcloud/tke/v20180525/model/TagSpecification.h>
+#include <tencentcloud/tke/v20180525/model/SubnetInfos.h>
 
 
 namespace TencentCloud
@@ -224,6 +225,24 @@ namespace TencentCloud
                      */
                     bool TagSpecificationHasBeenSet() const;
 
+                    /**
+                     * 获取子网信息列表
+                     * @return SubnetInfos 子网信息列表
+                     */
+                    std::vector<SubnetInfos> GetSubnetInfos() const;
+
+                    /**
+                     * 设置子网信息列表
+                     * @param SubnetInfos 子网信息列表
+                     */
+                    void SetSubnetInfos(const std::vector<SubnetInfos>& _subnetInfos);
+
+                    /**
+                     * 判断参数 SubnetInfos 是否已赋值
+                     * @return SubnetInfos 是否已赋值
+                     */
+                    bool SubnetInfosHasBeenSet() const;
+
                 private:
 
                     /**
@@ -285,6 +304,12 @@ namespace TencentCloud
                      */
                     std::vector<TagSpecification> m_tagSpecification;
                     bool m_tagSpecificationHasBeenSet;
+
+                    /**
+                     * 子网信息列表
+                     */
+                    std::vector<SubnetInfos> m_subnetInfos;
+                    bool m_subnetInfosHasBeenSet;
 
                 };
             }

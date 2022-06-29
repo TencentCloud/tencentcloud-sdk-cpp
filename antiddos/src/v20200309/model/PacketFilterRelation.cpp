@@ -22,7 +22,8 @@ using namespace std;
 
 PacketFilterRelation::PacketFilterRelation() :
     m_packetFilterConfigHasBeenSet(false),
-    m_instanceDetailListHasBeenSet(false)
+    m_instanceDetailListHasBeenSet(false),
+    m_modifyTimeHasBeenSet(false)
 {
 }
 
@@ -68,6 +69,16 @@ CoreInternalOutcome PacketFilterRelation::Deserialize(const rapidjson::Value &va
         m_instanceDetailListHasBeenSet = true;
     }
 
+    if (value.HasMember("ModifyTime") && !value["ModifyTime"].IsNull())
+    {
+        if (!value["ModifyTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PacketFilterRelation.ModifyTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_modifyTime = string(value["ModifyTime"].GetString());
+        m_modifyTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -97,6 +108,14 @@ void PacketFilterRelation::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_modifyTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModifyTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_modifyTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -132,5 +151,21 @@ void PacketFilterRelation::SetInstanceDetailList(const vector<InstanceRelation>&
 bool PacketFilterRelation::InstanceDetailListHasBeenSet() const
 {
     return m_instanceDetailListHasBeenSet;
+}
+
+string PacketFilterRelation::GetModifyTime() const
+{
+    return m_modifyTime;
+}
+
+void PacketFilterRelation::SetModifyTime(const string& _modifyTime)
+{
+    m_modifyTime = _modifyTime;
+    m_modifyTimeHasBeenSet = true;
+}
+
+bool PacketFilterRelation::ModifyTimeHasBeenSet() const
+{
+    return m_modifyTimeHasBeenSet;
 }
 

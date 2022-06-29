@@ -159,6 +159,28 @@ namespace TencentCloud
                      */
                     bool HaveSetValueHasBeenSet() const;
 
+                    /**
+                     * 获取是否需要重启生效，false:不需要重启，
+true:需要重启
+                     * @return NeedRestart 是否需要重启生效，false:不需要重启，
+true:需要重启
+                     */
+                    bool GetNeedRestart() const;
+
+                    /**
+                     * 设置是否需要重启生效，false:不需要重启，
+true:需要重启
+                     * @param NeedRestart 是否需要重启生效，false:不需要重启，
+true:需要重启
+                     */
+                    void SetNeedRestart(const bool& _needRestart);
+
+                    /**
+                     * 判断参数 NeedRestart 是否已赋值
+                     * @return NeedRestart 是否已赋值
+                     */
+                    bool NeedRestartHasBeenSet() const;
+
                 private:
 
                     /**
@@ -197,6 +219,13 @@ namespace TencentCloud
                      */
                     bool m_haveSetValue;
                     bool m_haveSetValueHasBeenSet;
+
+                    /**
+                     * 是否需要重启生效，false:不需要重启，
+true:需要重启
+                     */
+                    bool m_needRestart;
+                    bool m_needRestartHasBeenSet;
 
                 };
             }

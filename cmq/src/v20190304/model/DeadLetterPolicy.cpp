@@ -21,10 +21,10 @@ using namespace TencentCloud::Cmq::V20190304::Model;
 using namespace std;
 
 DeadLetterPolicy::DeadLetterPolicy() :
-    m_deadLetterQueueNameHasBeenSet(false),
     m_deadLetterQueueHasBeenSet(false),
-    m_policyHasBeenSet(false),
+    m_deadLetterQueueNameHasBeenSet(false),
     m_maxTimeToLiveHasBeenSet(false),
+    m_policyHasBeenSet(false),
     m_maxReceiveCountHasBeenSet(false)
 {
 }
@@ -33,16 +33,6 @@ CoreInternalOutcome DeadLetterPolicy::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
-
-    if (value.HasMember("DeadLetterQueueName") && !value["DeadLetterQueueName"].IsNull())
-    {
-        if (!value["DeadLetterQueueName"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `DeadLetterPolicy.DeadLetterQueueName` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_deadLetterQueueName = string(value["DeadLetterQueueName"].GetString());
-        m_deadLetterQueueNameHasBeenSet = true;
-    }
 
     if (value.HasMember("DeadLetterQueue") && !value["DeadLetterQueue"].IsNull())
     {
@@ -54,14 +44,14 @@ CoreInternalOutcome DeadLetterPolicy::Deserialize(const rapidjson::Value &value)
         m_deadLetterQueueHasBeenSet = true;
     }
 
-    if (value.HasMember("Policy") && !value["Policy"].IsNull())
+    if (value.HasMember("DeadLetterQueueName") && !value["DeadLetterQueueName"].IsNull())
     {
-        if (!value["Policy"].IsUint64())
+        if (!value["DeadLetterQueueName"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `DeadLetterPolicy.Policy` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DeadLetterPolicy.DeadLetterQueueName` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_policy = value["Policy"].GetUint64();
-        m_policyHasBeenSet = true;
+        m_deadLetterQueueName = string(value["DeadLetterQueueName"].GetString());
+        m_deadLetterQueueNameHasBeenSet = true;
     }
 
     if (value.HasMember("MaxTimeToLive") && !value["MaxTimeToLive"].IsNull())
@@ -72,6 +62,16 @@ CoreInternalOutcome DeadLetterPolicy::Deserialize(const rapidjson::Value &value)
         }
         m_maxTimeToLive = value["MaxTimeToLive"].GetUint64();
         m_maxTimeToLiveHasBeenSet = true;
+    }
+
+    if (value.HasMember("Policy") && !value["Policy"].IsNull())
+    {
+        if (!value["Policy"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DeadLetterPolicy.Policy` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_policy = value["Policy"].GetUint64();
+        m_policyHasBeenSet = true;
     }
 
     if (value.HasMember("MaxReceiveCount") && !value["MaxReceiveCount"].IsNull())
@@ -91,14 +91,6 @@ CoreInternalOutcome DeadLetterPolicy::Deserialize(const rapidjson::Value &value)
 void DeadLetterPolicy::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
-    if (m_deadLetterQueueNameHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "DeadLetterQueueName";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_deadLetterQueueName.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_deadLetterQueueHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -107,12 +99,12 @@ void DeadLetterPolicy::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         value.AddMember(iKey, rapidjson::Value(m_deadLetterQueue.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_policyHasBeenSet)
+    if (m_deadLetterQueueNameHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Policy";
+        string key = "DeadLetterQueueName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_policy, allocator);
+        value.AddMember(iKey, rapidjson::Value(m_deadLetterQueueName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_maxTimeToLiveHasBeenSet)
@@ -121,6 +113,14 @@ void DeadLetterPolicy::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "MaxTimeToLive";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxTimeToLive, allocator);
+    }
+
+    if (m_policyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Policy";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_policy, allocator);
     }
 
     if (m_maxReceiveCountHasBeenSet)
@@ -133,22 +133,6 @@ void DeadLetterPolicy::ToJsonObject(rapidjson::Value &value, rapidjson::Document
 
 }
 
-
-string DeadLetterPolicy::GetDeadLetterQueueName() const
-{
-    return m_deadLetterQueueName;
-}
-
-void DeadLetterPolicy::SetDeadLetterQueueName(const string& _deadLetterQueueName)
-{
-    m_deadLetterQueueName = _deadLetterQueueName;
-    m_deadLetterQueueNameHasBeenSet = true;
-}
-
-bool DeadLetterPolicy::DeadLetterQueueNameHasBeenSet() const
-{
-    return m_deadLetterQueueNameHasBeenSet;
-}
 
 string DeadLetterPolicy::GetDeadLetterQueue() const
 {
@@ -166,20 +150,20 @@ bool DeadLetterPolicy::DeadLetterQueueHasBeenSet() const
     return m_deadLetterQueueHasBeenSet;
 }
 
-uint64_t DeadLetterPolicy::GetPolicy() const
+string DeadLetterPolicy::GetDeadLetterQueueName() const
 {
-    return m_policy;
+    return m_deadLetterQueueName;
 }
 
-void DeadLetterPolicy::SetPolicy(const uint64_t& _policy)
+void DeadLetterPolicy::SetDeadLetterQueueName(const string& _deadLetterQueueName)
 {
-    m_policy = _policy;
-    m_policyHasBeenSet = true;
+    m_deadLetterQueueName = _deadLetterQueueName;
+    m_deadLetterQueueNameHasBeenSet = true;
 }
 
-bool DeadLetterPolicy::PolicyHasBeenSet() const
+bool DeadLetterPolicy::DeadLetterQueueNameHasBeenSet() const
 {
-    return m_policyHasBeenSet;
+    return m_deadLetterQueueNameHasBeenSet;
 }
 
 uint64_t DeadLetterPolicy::GetMaxTimeToLive() const
@@ -196,6 +180,22 @@ void DeadLetterPolicy::SetMaxTimeToLive(const uint64_t& _maxTimeToLive)
 bool DeadLetterPolicy::MaxTimeToLiveHasBeenSet() const
 {
     return m_maxTimeToLiveHasBeenSet;
+}
+
+uint64_t DeadLetterPolicy::GetPolicy() const
+{
+    return m_policy;
+}
+
+void DeadLetterPolicy::SetPolicy(const uint64_t& _policy)
+{
+    m_policy = _policy;
+    m_policyHasBeenSet = true;
+}
+
+bool DeadLetterPolicy::PolicyHasBeenSet() const
+{
+    return m_policyHasBeenSet;
 }
 
 uint64_t DeadLetterPolicy::GetMaxReceiveCount() const

@@ -28,7 +28,8 @@ DescribeAssetImageRegistryListExportRequest::DescribeAssetImageRegistryListExpor
     m_offsetHasBeenSet(false),
     m_filtersHasBeenSet(false),
     m_byHasBeenSet(false),
-    m_orderHasBeenSet(false)
+    m_orderHasBeenSet(false),
+    m_onlyShowLatestHasBeenSet(false)
 {
 }
 
@@ -97,6 +98,14 @@ string DescribeAssetImageRegistryListExportRequest::ToJsonString() const
         string key = "Order";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_order.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_onlyShowLatestHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OnlyShowLatest";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_onlyShowLatest, allocator);
     }
 
 
@@ -201,6 +210,22 @@ void DescribeAssetImageRegistryListExportRequest::SetOrder(const string& _order)
 bool DescribeAssetImageRegistryListExportRequest::OrderHasBeenSet() const
 {
     return m_orderHasBeenSet;
+}
+
+bool DescribeAssetImageRegistryListExportRequest::GetOnlyShowLatest() const
+{
+    return m_onlyShowLatest;
+}
+
+void DescribeAssetImageRegistryListExportRequest::SetOnlyShowLatest(const bool& _onlyShowLatest)
+{
+    m_onlyShowLatest = _onlyShowLatest;
+    m_onlyShowLatestHasBeenSet = true;
+}
+
+bool DescribeAssetImageRegistryListExportRequest::OnlyShowLatestHasBeenSet() const
+{
+    return m_onlyShowLatestHasBeenSet;
 }
 
 

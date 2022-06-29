@@ -41,18 +41,30 @@
 #include <tencentcloud/wav/v20210129/model/QueryChatArchivingListResponse.h>
 #include <tencentcloud/wav/v20210129/model/QueryClueInfoListRequest.h>
 #include <tencentcloud/wav/v20210129/model/QueryClueInfoListResponse.h>
+#include <tencentcloud/wav/v20210129/model/QueryCrmStatisticsRequest.h>
+#include <tencentcloud/wav/v20210129/model/QueryCrmStatisticsResponse.h>
+#include <tencentcloud/wav/v20210129/model/QueryCustomerEventDetailStatisticsRequest.h>
+#include <tencentcloud/wav/v20210129/model/QueryCustomerEventDetailStatisticsResponse.h>
 #include <tencentcloud/wav/v20210129/model/QueryDealerInfoListRequest.h>
 #include <tencentcloud/wav/v20210129/model/QueryDealerInfoListResponse.h>
 #include <tencentcloud/wav/v20210129/model/QueryExternalContactDetailRequest.h>
 #include <tencentcloud/wav/v20210129/model/QueryExternalContactDetailResponse.h>
 #include <tencentcloud/wav/v20210129/model/QueryExternalContactListRequest.h>
 #include <tencentcloud/wav/v20210129/model/QueryExternalContactListResponse.h>
+#include <tencentcloud/wav/v20210129/model/QueryExternalUserEventListRequest.h>
+#include <tencentcloud/wav/v20210129/model/QueryExternalUserEventListResponse.h>
 #include <tencentcloud/wav/v20210129/model/QueryExternalUserMappingInfoRequest.h>
 #include <tencentcloud/wav/v20210129/model/QueryExternalUserMappingInfoResponse.h>
 #include <tencentcloud/wav/v20210129/model/QueryLicenseInfoRequest.h>
 #include <tencentcloud/wav/v20210129/model/QueryLicenseInfoResponse.h>
+#include <tencentcloud/wav/v20210129/model/QueryMaterialListRequest.h>
+#include <tencentcloud/wav/v20210129/model/QueryMaterialListResponse.h>
 #include <tencentcloud/wav/v20210129/model/QueryMiniAppCodeListRequest.h>
 #include <tencentcloud/wav/v20210129/model/QueryMiniAppCodeListResponse.h>
+#include <tencentcloud/wav/v20210129/model/QueryStaffEventDetailStatisticsRequest.h>
+#include <tencentcloud/wav/v20210129/model/QueryStaffEventDetailStatisticsResponse.h>
+#include <tencentcloud/wav/v20210129/model/QueryUserInfoListRequest.h>
+#include <tencentcloud/wav/v20210129/model/QueryUserInfoListResponse.h>
 #include <tencentcloud/wav/v20210129/model/QueryVehicleInfoListRequest.h>
 #include <tencentcloud/wav/v20210129/model/QueryVehicleInfoListResponse.h>
 
@@ -96,6 +108,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::QueryClueInfoListResponse> QueryClueInfoListOutcome;
                 typedef std::future<QueryClueInfoListOutcome> QueryClueInfoListOutcomeCallable;
                 typedef std::function<void(const WavClient*, const Model::QueryClueInfoListRequest&, QueryClueInfoListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryClueInfoListAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryCrmStatisticsResponse> QueryCrmStatisticsOutcome;
+                typedef std::future<QueryCrmStatisticsOutcome> QueryCrmStatisticsOutcomeCallable;
+                typedef std::function<void(const WavClient*, const Model::QueryCrmStatisticsRequest&, QueryCrmStatisticsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryCrmStatisticsAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryCustomerEventDetailStatisticsResponse> QueryCustomerEventDetailStatisticsOutcome;
+                typedef std::future<QueryCustomerEventDetailStatisticsOutcome> QueryCustomerEventDetailStatisticsOutcomeCallable;
+                typedef std::function<void(const WavClient*, const Model::QueryCustomerEventDetailStatisticsRequest&, QueryCustomerEventDetailStatisticsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryCustomerEventDetailStatisticsAsyncHandler;
                 typedef Outcome<Core::Error, Model::QueryDealerInfoListResponse> QueryDealerInfoListOutcome;
                 typedef std::future<QueryDealerInfoListOutcome> QueryDealerInfoListOutcomeCallable;
                 typedef std::function<void(const WavClient*, const Model::QueryDealerInfoListRequest&, QueryDealerInfoListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryDealerInfoListAsyncHandler;
@@ -105,15 +123,27 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::QueryExternalContactListResponse> QueryExternalContactListOutcome;
                 typedef std::future<QueryExternalContactListOutcome> QueryExternalContactListOutcomeCallable;
                 typedef std::function<void(const WavClient*, const Model::QueryExternalContactListRequest&, QueryExternalContactListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryExternalContactListAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryExternalUserEventListResponse> QueryExternalUserEventListOutcome;
+                typedef std::future<QueryExternalUserEventListOutcome> QueryExternalUserEventListOutcomeCallable;
+                typedef std::function<void(const WavClient*, const Model::QueryExternalUserEventListRequest&, QueryExternalUserEventListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryExternalUserEventListAsyncHandler;
                 typedef Outcome<Core::Error, Model::QueryExternalUserMappingInfoResponse> QueryExternalUserMappingInfoOutcome;
                 typedef std::future<QueryExternalUserMappingInfoOutcome> QueryExternalUserMappingInfoOutcomeCallable;
                 typedef std::function<void(const WavClient*, const Model::QueryExternalUserMappingInfoRequest&, QueryExternalUserMappingInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryExternalUserMappingInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::QueryLicenseInfoResponse> QueryLicenseInfoOutcome;
                 typedef std::future<QueryLicenseInfoOutcome> QueryLicenseInfoOutcomeCallable;
                 typedef std::function<void(const WavClient*, const Model::QueryLicenseInfoRequest&, QueryLicenseInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryLicenseInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryMaterialListResponse> QueryMaterialListOutcome;
+                typedef std::future<QueryMaterialListOutcome> QueryMaterialListOutcomeCallable;
+                typedef std::function<void(const WavClient*, const Model::QueryMaterialListRequest&, QueryMaterialListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryMaterialListAsyncHandler;
                 typedef Outcome<Core::Error, Model::QueryMiniAppCodeListResponse> QueryMiniAppCodeListOutcome;
                 typedef std::future<QueryMiniAppCodeListOutcome> QueryMiniAppCodeListOutcomeCallable;
                 typedef std::function<void(const WavClient*, const Model::QueryMiniAppCodeListRequest&, QueryMiniAppCodeListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryMiniAppCodeListAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryStaffEventDetailStatisticsResponse> QueryStaffEventDetailStatisticsOutcome;
+                typedef std::future<QueryStaffEventDetailStatisticsOutcome> QueryStaffEventDetailStatisticsOutcomeCallable;
+                typedef std::function<void(const WavClient*, const Model::QueryStaffEventDetailStatisticsRequest&, QueryStaffEventDetailStatisticsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryStaffEventDetailStatisticsAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryUserInfoListResponse> QueryUserInfoListOutcome;
+                typedef std::future<QueryUserInfoListOutcome> QueryUserInfoListOutcomeCallable;
+                typedef std::function<void(const WavClient*, const Model::QueryUserInfoListRequest&, QueryUserInfoListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryUserInfoListAsyncHandler;
                 typedef Outcome<Core::Error, Model::QueryVehicleInfoListResponse> QueryVehicleInfoListOutcome;
                 typedef std::future<QueryVehicleInfoListOutcome> QueryVehicleInfoListOutcomeCallable;
                 typedef std::function<void(const WavClient*, const Model::QueryVehicleInfoListRequest&, QueryVehicleInfoListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryVehicleInfoListAsyncHandler;
@@ -202,6 +232,24 @@ namespace TencentCloud
                 QueryClueInfoListOutcomeCallable QueryClueInfoListCallable(const Model::QueryClueInfoListRequest& request);
 
                 /**
+                 *通过接口拉取租户/指定成员/部门在指定日期范围内的CRM跟进统计数据
+                 * @param req QueryCrmStatisticsRequest
+                 * @return QueryCrmStatisticsOutcome
+                 */
+                QueryCrmStatisticsOutcome QueryCrmStatistics(const Model::QueryCrmStatisticsRequest &request);
+                void QueryCrmStatisticsAsync(const Model::QueryCrmStatisticsRequest& request, const QueryCrmStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryCrmStatisticsOutcomeCallable QueryCrmStatisticsCallable(const Model::QueryCrmStatisticsRequest& request);
+
+                /**
+                 *通过接口拉取SaaS内C端外部联系人在指定时间范围内的行为事件明细。此接口提供的数据以天为维度，查询的时间范围为[start_time,end_time]，即前后均为闭区间，支持的最大查询跨度为365天。
+                 * @param req QueryCustomerEventDetailStatisticsRequest
+                 * @return QueryCustomerEventDetailStatisticsOutcome
+                 */
+                QueryCustomerEventDetailStatisticsOutcome QueryCustomerEventDetailStatistics(const Model::QueryCustomerEventDetailStatisticsRequest &request);
+                void QueryCustomerEventDetailStatisticsAsync(const Model::QueryCustomerEventDetailStatisticsRequest& request, const QueryCustomerEventDetailStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryCustomerEventDetailStatisticsOutcomeCallable QueryCustomerEventDetailStatisticsCallable(const Model::QueryCustomerEventDetailStatisticsRequest& request);
+
+                /**
                  *企业可通过此接口获取录入在企微SaaS平台上的经销商信息。
                  * @param req QueryDealerInfoListRequest
                  * @return QueryDealerInfoListOutcome
@@ -229,6 +277,15 @@ namespace TencentCloud
                 QueryExternalContactListOutcomeCallable QueryExternalContactListCallable(const Model::QueryExternalContactListRequest& request);
 
                 /**
+                 *通过接口拉取租户在指定时间范围内的外部联系人添加/删除明细，此接口提供的数据以天为维度，查询的时间范围为[StarTime, EndTime]，即前后均为闭区间，支持的最大查询跨度为365天；
+                 * @param req QueryExternalUserEventListRequest
+                 * @return QueryExternalUserEventListOutcome
+                 */
+                QueryExternalUserEventListOutcome QueryExternalUserEventList(const Model::QueryExternalUserEventListRequest &request);
+                void QueryExternalUserEventListAsync(const Model::QueryExternalUserEventListRequest& request, const QueryExternalUserEventListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryExternalUserEventListOutcomeCallable QueryExternalUserEventListCallable(const Model::QueryExternalUserEventListRequest& request);
+
+                /**
                  *企业可通过此接口将企业主体对应的外部联系人id转换为乐销车应用主体对应的外部联系人。
                  * @param req QueryExternalUserMappingInfoRequest
                  * @return QueryExternalUserMappingInfoOutcome
@@ -247,6 +304,15 @@ namespace TencentCloud
                 QueryLicenseInfoOutcomeCallable QueryLicenseInfoCallable(const Model::QueryLicenseInfoRequest& request);
 
                 /**
+                 *通过接口按类型拉取租户当前的素材列表及关键信息
+                 * @param req QueryMaterialListRequest
+                 * @return QueryMaterialListOutcome
+                 */
+                QueryMaterialListOutcome QueryMaterialList(const Model::QueryMaterialListRequest &request);
+                void QueryMaterialListAsync(const Model::QueryMaterialListRequest& request, const QueryMaterialListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryMaterialListOutcomeCallable QueryMaterialListCallable(const Model::QueryMaterialListRequest& request);
+
+                /**
                  *查询小程序码列表接口
                  * @param req QueryMiniAppCodeListRequest
                  * @return QueryMiniAppCodeListOutcome
@@ -254,6 +320,24 @@ namespace TencentCloud
                 QueryMiniAppCodeListOutcome QueryMiniAppCodeList(const Model::QueryMiniAppCodeListRequest &request);
                 void QueryMiniAppCodeListAsync(const Model::QueryMiniAppCodeListRequest& request, const QueryMiniAppCodeListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 QueryMiniAppCodeListOutcomeCallable QueryMiniAppCodeListCallable(const Model::QueryMiniAppCodeListRequest& request);
+
+                /**
+                 *通过接口拉取SaaS内企业成员在指定时间范围内的行为事件明细。此接口提供的数据以天为维度，查询的时间范围为[start_time,end_time]，即前后均为闭区间，支持的最大查询跨度为365天。
+                 * @param req QueryStaffEventDetailStatisticsRequest
+                 * @return QueryStaffEventDetailStatisticsOutcome
+                 */
+                QueryStaffEventDetailStatisticsOutcome QueryStaffEventDetailStatistics(const Model::QueryStaffEventDetailStatisticsRequest &request);
+                void QueryStaffEventDetailStatisticsAsync(const Model::QueryStaffEventDetailStatisticsRequest& request, const QueryStaffEventDetailStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryStaffEventDetailStatisticsOutcomeCallable QueryStaffEventDetailStatisticsCallable(const Model::QueryStaffEventDetailStatisticsRequest& request);
+
+                /**
+                 *查询企业成员信息列表接口
+                 * @param req QueryUserInfoListRequest
+                 * @return QueryUserInfoListOutcome
+                 */
+                QueryUserInfoListOutcome QueryUserInfoList(const Model::QueryUserInfoListRequest &request);
+                void QueryUserInfoListAsync(const Model::QueryUserInfoListRequest& request, const QueryUserInfoListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryUserInfoListOutcomeCallable QueryUserInfoListCallable(const Model::QueryUserInfoListRequest& request);
 
                 /**
                  *企业可通过此接口获取企微SaaS平台上的车系车型信息。

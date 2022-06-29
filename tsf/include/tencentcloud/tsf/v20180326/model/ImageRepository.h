@@ -357,17 +357,17 @@ namespace TencentCloud
                     bool ApplicationIdHasBeenSet() const;
 
                     /**
-                     * 获取ApplicationName值
+                     * 获取ApplicationName值（废弃）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ApplicationName ApplicationName值
+                     * @return ApplicationName ApplicationName值（废弃）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ScalableRule GetApplicationName() const;
 
                     /**
-                     * 设置ApplicationName值
+                     * 设置ApplicationName值（废弃）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ApplicationName ApplicationName值
+                     * @param ApplicationName ApplicationName值（废弃）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetApplicationName(const ScalableRule& _applicationName);
@@ -377,6 +377,28 @@ namespace TencentCloud
                      * @return ApplicationName 是否已赋值
                      */
                     bool ApplicationNameHasBeenSet() const;
+
+                    /**
+                     * 获取ApplicationName值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ApplicationNameReal ApplicationName值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetApplicationNameReal() const;
+
+                    /**
+                     * 设置ApplicationName值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ApplicationNameReal ApplicationName值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetApplicationNameReal(const std::string& _applicationNameReal);
+
+                    /**
+                     * 判断参数 ApplicationNameReal 是否已赋值
+                     * @return ApplicationNameReal 是否已赋值
+                     */
+                    bool ApplicationNameRealHasBeenSet() const;
 
                 private:
 
@@ -479,11 +501,18 @@ namespace TencentCloud
                     bool m_applicationIdHasBeenSet;
 
                     /**
-                     * ApplicationName值
+                     * ApplicationName值（废弃）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ScalableRule m_applicationName;
                     bool m_applicationNameHasBeenSet;
+
+                    /**
+                     * ApplicationName值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_applicationNameReal;
+                    bool m_applicationNameRealHasBeenSet;
 
                 };
             }

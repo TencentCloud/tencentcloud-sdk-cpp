@@ -40,6 +40,135 @@ EssbasicClient::EssbasicClient(const Credential &credential, const string &regio
 }
 
 
+EssbasicClient::ChannelCancelMultiFlowSignQRCodeOutcome EssbasicClient::ChannelCancelMultiFlowSignQRCode(const ChannelCancelMultiFlowSignQRCodeRequest &request)
+{
+    auto outcome = MakeRequest(request, "ChannelCancelMultiFlowSignQRCode");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ChannelCancelMultiFlowSignQRCodeResponse rsp = ChannelCancelMultiFlowSignQRCodeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ChannelCancelMultiFlowSignQRCodeOutcome(rsp);
+        else
+            return ChannelCancelMultiFlowSignQRCodeOutcome(o.GetError());
+    }
+    else
+    {
+        return ChannelCancelMultiFlowSignQRCodeOutcome(outcome.GetError());
+    }
+}
+
+void EssbasicClient::ChannelCancelMultiFlowSignQRCodeAsync(const ChannelCancelMultiFlowSignQRCodeRequest& request, const ChannelCancelMultiFlowSignQRCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ChannelCancelMultiFlowSignQRCode(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssbasicClient::ChannelCancelMultiFlowSignQRCodeOutcomeCallable EssbasicClient::ChannelCancelMultiFlowSignQRCodeCallable(const ChannelCancelMultiFlowSignQRCodeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ChannelCancelMultiFlowSignQRCodeOutcome()>>(
+        [this, request]()
+        {
+            return this->ChannelCancelMultiFlowSignQRCode(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EssbasicClient::ChannelCreateFlowByFilesOutcome EssbasicClient::ChannelCreateFlowByFiles(const ChannelCreateFlowByFilesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ChannelCreateFlowByFiles");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ChannelCreateFlowByFilesResponse rsp = ChannelCreateFlowByFilesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ChannelCreateFlowByFilesOutcome(rsp);
+        else
+            return ChannelCreateFlowByFilesOutcome(o.GetError());
+    }
+    else
+    {
+        return ChannelCreateFlowByFilesOutcome(outcome.GetError());
+    }
+}
+
+void EssbasicClient::ChannelCreateFlowByFilesAsync(const ChannelCreateFlowByFilesRequest& request, const ChannelCreateFlowByFilesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ChannelCreateFlowByFiles(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssbasicClient::ChannelCreateFlowByFilesOutcomeCallable EssbasicClient::ChannelCreateFlowByFilesCallable(const ChannelCreateFlowByFilesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ChannelCreateFlowByFilesOutcome()>>(
+        [this, request]()
+        {
+            return this->ChannelCreateFlowByFiles(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EssbasicClient::ChannelCreateMultiFlowSignQRCodeOutcome EssbasicClient::ChannelCreateMultiFlowSignQRCode(const ChannelCreateMultiFlowSignQRCodeRequest &request)
+{
+    auto outcome = MakeRequest(request, "ChannelCreateMultiFlowSignQRCode");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ChannelCreateMultiFlowSignQRCodeResponse rsp = ChannelCreateMultiFlowSignQRCodeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ChannelCreateMultiFlowSignQRCodeOutcome(rsp);
+        else
+            return ChannelCreateMultiFlowSignQRCodeOutcome(o.GetError());
+    }
+    else
+    {
+        return ChannelCreateMultiFlowSignQRCodeOutcome(outcome.GetError());
+    }
+}
+
+void EssbasicClient::ChannelCreateMultiFlowSignQRCodeAsync(const ChannelCreateMultiFlowSignQRCodeRequest& request, const ChannelCreateMultiFlowSignQRCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ChannelCreateMultiFlowSignQRCode(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssbasicClient::ChannelCreateMultiFlowSignQRCodeOutcomeCallable EssbasicClient::ChannelCreateMultiFlowSignQRCodeCallable(const ChannelCreateMultiFlowSignQRCodeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ChannelCreateMultiFlowSignQRCodeOutcome()>>(
+        [this, request]()
+        {
+            return this->ChannelCreateMultiFlowSignQRCode(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssbasicClient::CreateConsoleLoginUrlOutcome EssbasicClient::CreateConsoleLoginUrl(const CreateConsoleLoginUrlRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateConsoleLoginUrl");
@@ -119,6 +248,49 @@ EssbasicClient::CreateFlowsByTemplatesOutcomeCallable EssbasicClient::CreateFlow
         [this, request]()
         {
             return this->CreateFlowsByTemplates(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EssbasicClient::CreateSealByImageOutcome EssbasicClient::CreateSealByImage(const CreateSealByImageRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateSealByImage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateSealByImageResponse rsp = CreateSealByImageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateSealByImageOutcome(rsp);
+        else
+            return CreateSealByImageOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateSealByImageOutcome(outcome.GetError());
+    }
+}
+
+void EssbasicClient::CreateSealByImageAsync(const CreateSealByImageRequest& request, const CreateSealByImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateSealByImage(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssbasicClient::CreateSealByImageOutcomeCallable EssbasicClient::CreateSealByImageCallable(const CreateSealByImageRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateSealByImageOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateSealByImage(request);
         }
     );
 
@@ -549,6 +721,49 @@ EssbasicClient::SyncProxyOrganizationOperatorsOutcomeCallable EssbasicClient::Sy
         [this, request]()
         {
             return this->SyncProxyOrganizationOperators(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EssbasicClient::UploadFilesOutcome EssbasicClient::UploadFiles(const UploadFilesRequest &request)
+{
+    auto outcome = MakeRequest(request, "UploadFiles");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UploadFilesResponse rsp = UploadFilesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UploadFilesOutcome(rsp);
+        else
+            return UploadFilesOutcome(o.GetError());
+    }
+    else
+    {
+        return UploadFilesOutcome(outcome.GetError());
+    }
+}
+
+void EssbasicClient::UploadFilesAsync(const UploadFilesRequest& request, const UploadFilesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UploadFiles(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssbasicClient::UploadFilesOutcomeCallable EssbasicClient::UploadFilesCallable(const UploadFilesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UploadFilesOutcome()>>(
+        [this, request]()
+        {
+            return this->UploadFiles(request);
         }
     );
 

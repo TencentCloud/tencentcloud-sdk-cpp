@@ -45,14 +45,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取该字段表示待检测对象的文本内容，文本需要按utf-8格式编码，长度不能超过10000（按unicode编码计算），并进行 Base64加密
-                     * @return Content 该字段表示待检测对象的文本内容，文本需要按utf-8格式编码，长度不能超过10000（按unicode编码计算），并进行 Base64加密
+                     * 获取该字段表示待检测对象的文本内容，文本需要按utf-8格式编码，长度不能超过10000个字符（按unicode编码计算），并进行 Base64加密
+                     * @return Content 该字段表示待检测对象的文本内容，文本需要按utf-8格式编码，长度不能超过10000个字符（按unicode编码计算），并进行 Base64加密
                      */
                     std::string GetContent() const;
 
                     /**
-                     * 设置该字段表示待检测对象的文本内容，文本需要按utf-8格式编码，长度不能超过10000（按unicode编码计算），并进行 Base64加密
-                     * @param Content 该字段表示待检测对象的文本内容，文本需要按utf-8格式编码，长度不能超过10000（按unicode编码计算），并进行 Base64加密
+                     * 设置该字段表示待检测对象的文本内容，文本需要按utf-8格式编码，长度不能超过10000个字符（按unicode编码计算），并进行 Base64加密
+                     * @param Content 该字段表示待检测对象的文本内容，文本需要按utf-8格式编码，长度不能超过10000个字符（按unicode编码计算），并进行 Base64加密
                      */
                     void SetContent(const std::string& _content);
 
@@ -137,7 +137,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 该字段表示待检测对象的文本内容，文本需要按utf-8格式编码，长度不能超过10000（按unicode编码计算），并进行 Base64加密
+                     * 该字段表示待检测对象的文本内容，文本需要按utf-8格式编码，长度不能超过10000个字符（按unicode编码计算），并进行 Base64加密
                      */
                     std::string m_content;
                     bool m_contentHasBeenSet;

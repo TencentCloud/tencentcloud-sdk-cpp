@@ -87,6 +87,7 @@ namespace TencentCloud
 <li>ImageName- String - 是否必填：否 - 镜像名称搜索</li>
 <li>HostIP- string - 是否必填：否 - 主机ip搜索</li>
 <li>OrderBy - String 是否必填：否 -排序字段，支持：cpu_usage, mem_usage的动态排序 ["cpu_usage","+"]  '+'升序、'-'降序</li>
+<li>NetStatus - String -是否必填: 否 -  容器网络状态筛选 normal isolated isolating isolate_failed restoring restore_failed</li>
                      * @return Filters 过滤条件。
 <li>ContainerName - String - 是否必填：否 - 容器名称模糊搜索</li>
 <li>Status - String - 是否必填：否 - 容器运行状态筛选，0："created",1："running", 2："paused", 3："restarting", 4："removing", 5："exited", 6："dead" </li>
@@ -94,6 +95,7 @@ namespace TencentCloud
 <li>ImageName- String - 是否必填：否 - 镜像名称搜索</li>
 <li>HostIP- string - 是否必填：否 - 主机ip搜索</li>
 <li>OrderBy - String 是否必填：否 -排序字段，支持：cpu_usage, mem_usage的动态排序 ["cpu_usage","+"]  '+'升序、'-'降序</li>
+<li>NetStatus - String -是否必填: 否 -  容器网络状态筛选 normal isolated isolating isolate_failed restoring restore_failed</li>
                      */
                     std::vector<AssetFilters> GetFilters() const;
 
@@ -105,6 +107,7 @@ namespace TencentCloud
 <li>ImageName- String - 是否必填：否 - 镜像名称搜索</li>
 <li>HostIP- string - 是否必填：否 - 主机ip搜索</li>
 <li>OrderBy - String 是否必填：否 -排序字段，支持：cpu_usage, mem_usage的动态排序 ["cpu_usage","+"]  '+'升序、'-'降序</li>
+<li>NetStatus - String -是否必填: 否 -  容器网络状态筛选 normal isolated isolating isolate_failed restoring restore_failed</li>
                      * @param Filters 过滤条件。
 <li>ContainerName - String - 是否必填：否 - 容器名称模糊搜索</li>
 <li>Status - String - 是否必填：否 - 容器运行状态筛选，0："created",1："running", 2："paused", 3："restarting", 4："removing", 5："exited", 6："dead" </li>
@@ -112,6 +115,7 @@ namespace TencentCloud
 <li>ImageName- String - 是否必填：否 - 镜像名称搜索</li>
 <li>HostIP- string - 是否必填：否 - 主机ip搜索</li>
 <li>OrderBy - String 是否必填：否 -排序字段，支持：cpu_usage, mem_usage的动态排序 ["cpu_usage","+"]  '+'升序、'-'降序</li>
+<li>NetStatus - String -是否必填: 否 -  容器网络状态筛选 normal isolated isolating isolate_failed restoring restore_failed</li>
                      */
                     void SetFilters(const std::vector<AssetFilters>& _filters);
 
@@ -179,6 +183,7 @@ namespace TencentCloud
 <li>ImageName- String - 是否必填：否 - 镜像名称搜索</li>
 <li>HostIP- string - 是否必填：否 - 主机ip搜索</li>
 <li>OrderBy - String 是否必填：否 -排序字段，支持：cpu_usage, mem_usage的动态排序 ["cpu_usage","+"]  '+'升序、'-'降序</li>
+<li>NetStatus - String -是否必填: 否 -  容器网络状态筛选 normal isolated isolating isolate_failed restoring restore_failed</li>
                      */
                     std::vector<AssetFilters> m_filters;
                     bool m_filtersHasBeenSet;

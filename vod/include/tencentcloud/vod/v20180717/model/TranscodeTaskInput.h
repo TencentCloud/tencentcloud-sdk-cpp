@@ -25,8 +25,9 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/vod/v20180717/model/WatermarkInput.h>
-#include <tencentcloud/vod/v20180717/model/MosaicInput.h>
+#include <tencentcloud/vod/v20180717/model/TraceWatermarkInput.h>
 #include <tencentcloud/vod/v20180717/model/HeadTailTaskInput.h>
+#include <tencentcloud/vod/v20180717/model/MosaicInput.h>
 
 
 namespace TencentCloud
@@ -86,22 +87,22 @@ namespace TencentCloud
                     bool WatermarkSetHasBeenSet() const;
 
                     /**
-                     * 获取马赛克列表，最大可支持 10 张。
-                     * @return MosaicSet 马赛克列表，最大可支持 10 张。
+                     * 获取溯源水印。
+                     * @return TraceWatermark 溯源水印。
                      */
-                    std::vector<MosaicInput> GetMosaicSet() const;
+                    TraceWatermarkInput GetTraceWatermark() const;
 
                     /**
-                     * 设置马赛克列表，最大可支持 10 张。
-                     * @param MosaicSet 马赛克列表，最大可支持 10 张。
+                     * 设置溯源水印。
+                     * @param TraceWatermark 溯源水印。
                      */
-                    void SetMosaicSet(const std::vector<MosaicInput>& _mosaicSet);
+                    void SetTraceWatermark(const TraceWatermarkInput& _traceWatermark);
 
                     /**
-                     * 判断参数 MosaicSet 是否已赋值
-                     * @return MosaicSet 是否已赋值
+                     * 判断参数 TraceWatermark 是否已赋值
+                     * @return TraceWatermark 是否已赋值
                      */
-                    bool MosaicSetHasBeenSet() const;
+                    bool TraceWatermarkHasBeenSet() const;
 
                     /**
                      * 获取片头片尾列表，支持多片头片尾，最大可支持 10 个。
@@ -122,34 +123,22 @@ namespace TencentCloud
                     bool HeadTailSetHasBeenSet() const;
 
                     /**
-                     * 获取转码后的视频的起始时间偏移，单位：秒。
-<li>不填或填0，表示转码后的视频从原始视频的起始位置开始；</li>
-<li>当数值大于0时（假设为 n），表示转码后的视频从原始视频的第 n 秒位置开始；</li>
-<li>当数值小于0时（假设为 -n），表示转码后的视频从原始视频结束 n 秒前的位置开始。</li>
-                     * @return StartTimeOffset 转码后的视频的起始时间偏移，单位：秒。
-<li>不填或填0，表示转码后的视频从原始视频的起始位置开始；</li>
-<li>当数值大于0时（假设为 n），表示转码后的视频从原始视频的第 n 秒位置开始；</li>
-<li>当数值小于0时（假设为 -n），表示转码后的视频从原始视频结束 n 秒前的位置开始。</li>
+                     * 获取马赛克列表，最大可支持 10 张。
+                     * @return MosaicSet 马赛克列表，最大可支持 10 张。
                      */
-                    double GetStartTimeOffset() const;
+                    std::vector<MosaicInput> GetMosaicSet() const;
 
                     /**
-                     * 设置转码后的视频的起始时间偏移，单位：秒。
-<li>不填或填0，表示转码后的视频从原始视频的起始位置开始；</li>
-<li>当数值大于0时（假设为 n），表示转码后的视频从原始视频的第 n 秒位置开始；</li>
-<li>当数值小于0时（假设为 -n），表示转码后的视频从原始视频结束 n 秒前的位置开始。</li>
-                     * @param StartTimeOffset 转码后的视频的起始时间偏移，单位：秒。
-<li>不填或填0，表示转码后的视频从原始视频的起始位置开始；</li>
-<li>当数值大于0时（假设为 n），表示转码后的视频从原始视频的第 n 秒位置开始；</li>
-<li>当数值小于0时（假设为 -n），表示转码后的视频从原始视频结束 n 秒前的位置开始。</li>
+                     * 设置马赛克列表，最大可支持 10 张。
+                     * @param MosaicSet 马赛克列表，最大可支持 10 张。
                      */
-                    void SetStartTimeOffset(const double& _startTimeOffset);
+                    void SetMosaicSet(const std::vector<MosaicInput>& _mosaicSet);
 
                     /**
-                     * 判断参数 StartTimeOffset 是否已赋值
-                     * @return StartTimeOffset 是否已赋值
+                     * 判断参数 MosaicSet 是否已赋值
+                     * @return MosaicSet 是否已赋值
                      */
-                    bool StartTimeOffsetHasBeenSet() const;
+                    bool MosaicSetHasBeenSet() const;
 
                     /**
                      * 获取转码后视频的终止时间偏移，单位：秒。
@@ -181,6 +170,36 @@ namespace TencentCloud
                      */
                     bool EndTimeOffsetHasBeenSet() const;
 
+                    /**
+                     * 获取转码后的视频的起始时间偏移，单位：秒。
+<li>不填或填0，表示转码后的视频从原始视频的起始位置开始；</li>
+<li>当数值大于0时（假设为 n），表示转码后的视频从原始视频的第 n 秒位置开始；</li>
+<li>当数值小于0时（假设为 -n），表示转码后的视频从原始视频结束 n 秒前的位置开始。</li>
+                     * @return StartTimeOffset 转码后的视频的起始时间偏移，单位：秒。
+<li>不填或填0，表示转码后的视频从原始视频的起始位置开始；</li>
+<li>当数值大于0时（假设为 n），表示转码后的视频从原始视频的第 n 秒位置开始；</li>
+<li>当数值小于0时（假设为 -n），表示转码后的视频从原始视频结束 n 秒前的位置开始。</li>
+                     */
+                    double GetStartTimeOffset() const;
+
+                    /**
+                     * 设置转码后的视频的起始时间偏移，单位：秒。
+<li>不填或填0，表示转码后的视频从原始视频的起始位置开始；</li>
+<li>当数值大于0时（假设为 n），表示转码后的视频从原始视频的第 n 秒位置开始；</li>
+<li>当数值小于0时（假设为 -n），表示转码后的视频从原始视频结束 n 秒前的位置开始。</li>
+                     * @param StartTimeOffset 转码后的视频的起始时间偏移，单位：秒。
+<li>不填或填0，表示转码后的视频从原始视频的起始位置开始；</li>
+<li>当数值大于0时（假设为 n），表示转码后的视频从原始视频的第 n 秒位置开始；</li>
+<li>当数值小于0时（假设为 -n），表示转码后的视频从原始视频结束 n 秒前的位置开始。</li>
+                     */
+                    void SetStartTimeOffset(const double& _startTimeOffset);
+
+                    /**
+                     * 判断参数 StartTimeOffset 是否已赋值
+                     * @return StartTimeOffset 是否已赋值
+                     */
+                    bool StartTimeOffsetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -196,10 +215,10 @@ namespace TencentCloud
                     bool m_watermarkSetHasBeenSet;
 
                     /**
-                     * 马赛克列表，最大可支持 10 张。
+                     * 溯源水印。
                      */
-                    std::vector<MosaicInput> m_mosaicSet;
-                    bool m_mosaicSetHasBeenSet;
+                    TraceWatermarkInput m_traceWatermark;
+                    bool m_traceWatermarkHasBeenSet;
 
                     /**
                      * 片头片尾列表，支持多片头片尾，最大可支持 10 个。
@@ -208,13 +227,10 @@ namespace TencentCloud
                     bool m_headTailSetHasBeenSet;
 
                     /**
-                     * 转码后的视频的起始时间偏移，单位：秒。
-<li>不填或填0，表示转码后的视频从原始视频的起始位置开始；</li>
-<li>当数值大于0时（假设为 n），表示转码后的视频从原始视频的第 n 秒位置开始；</li>
-<li>当数值小于0时（假设为 -n），表示转码后的视频从原始视频结束 n 秒前的位置开始。</li>
+                     * 马赛克列表，最大可支持 10 张。
                      */
-                    double m_startTimeOffset;
-                    bool m_startTimeOffsetHasBeenSet;
+                    std::vector<MosaicInput> m_mosaicSet;
+                    bool m_mosaicSetHasBeenSet;
 
                     /**
                      * 转码后视频的终止时间偏移，单位：秒。
@@ -224,6 +240,15 @@ namespace TencentCloud
                      */
                     double m_endTimeOffset;
                     bool m_endTimeOffsetHasBeenSet;
+
+                    /**
+                     * 转码后的视频的起始时间偏移，单位：秒。
+<li>不填或填0，表示转码后的视频从原始视频的起始位置开始；</li>
+<li>当数值大于0时（假设为 n），表示转码后的视频从原始视频的第 n 秒位置开始；</li>
+<li>当数值小于0时（假设为 -n），表示转码后的视频从原始视频结束 n 秒前的位置开始。</li>
+                     */
+                    double m_startTimeOffset;
+                    bool m_startTimeOffsetHasBeenSet;
 
                 };
             }

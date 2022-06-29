@@ -24,9 +24,9 @@ using namespace std;
 
 ModifyWordSampleRequest::ModifyWordSampleRequest() :
     m_keywordHasBeenSet(false),
+    m_subAppIdHasBeenSet(false),
     m_usagesHasBeenSet(false),
-    m_tagOperationInfoHasBeenSet(false),
-    m_subAppIdHasBeenSet(false)
+    m_tagOperationInfoHasBeenSet(false)
 {
 }
 
@@ -43,6 +43,14 @@ string ModifyWordSampleRequest::ToJsonString() const
         string key = "Keyword";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_keyword.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subAppIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubAppId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_subAppId, allocator);
     }
 
     if (m_usagesHasBeenSet)
@@ -67,14 +75,6 @@ string ModifyWordSampleRequest::ToJsonString() const
         m_tagOperationInfo.ToJsonObject(d[key.c_str()], allocator);
     }
 
-    if (m_subAppIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SubAppId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_subAppId, allocator);
-    }
-
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -97,6 +97,22 @@ void ModifyWordSampleRequest::SetKeyword(const string& _keyword)
 bool ModifyWordSampleRequest::KeywordHasBeenSet() const
 {
     return m_keywordHasBeenSet;
+}
+
+uint64_t ModifyWordSampleRequest::GetSubAppId() const
+{
+    return m_subAppId;
+}
+
+void ModifyWordSampleRequest::SetSubAppId(const uint64_t& _subAppId)
+{
+    m_subAppId = _subAppId;
+    m_subAppIdHasBeenSet = true;
+}
+
+bool ModifyWordSampleRequest::SubAppIdHasBeenSet() const
+{
+    return m_subAppIdHasBeenSet;
 }
 
 vector<string> ModifyWordSampleRequest::GetUsages() const
@@ -129,22 +145,6 @@ void ModifyWordSampleRequest::SetTagOperationInfo(const AiSampleTagOperation& _t
 bool ModifyWordSampleRequest::TagOperationInfoHasBeenSet() const
 {
     return m_tagOperationInfoHasBeenSet;
-}
-
-uint64_t ModifyWordSampleRequest::GetSubAppId() const
-{
-    return m_subAppId;
-}
-
-void ModifyWordSampleRequest::SetSubAppId(const uint64_t& _subAppId)
-{
-    m_subAppId = _subAppId;
-    m_subAppIdHasBeenSet = true;
-}
-
-bool ModifyWordSampleRequest::SubAppIdHasBeenSet() const
-{
-    return m_subAppIdHasBeenSet;
 }
 
 

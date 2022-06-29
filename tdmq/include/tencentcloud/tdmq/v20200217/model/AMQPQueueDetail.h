@@ -284,6 +284,28 @@ namespace TencentCloud
                      */
                     bool DeadLetterRoutingKeyHasBeenSet() const;
 
+                    /**
+                     * 获取Queue对应的Topic名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TopicName Queue对应的Topic名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetTopicName() const;
+
+                    /**
+                     * 设置Queue对应的Topic名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TopicName Queue对应的Topic名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTopicName(const std::string& _topicName);
+
+                    /**
+                     * 判断参数 TopicName 是否已赋值
+                     * @return TopicName 是否已赋值
+                     */
+                    bool TopicNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -361,6 +383,13 @@ namespace TencentCloud
                      */
                     std::string m_deadLetterRoutingKey;
                     bool m_deadLetterRoutingKeyHasBeenSet;
+
+                    /**
+                     * Queue对应的Topic名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_topicName;
+                    bool m_topicNameHasBeenSet;
 
                 };
             }

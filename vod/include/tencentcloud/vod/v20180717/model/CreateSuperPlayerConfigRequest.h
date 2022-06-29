@@ -63,14 +63,68 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
+                     * 获取<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
+                     * @return SubAppId <b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
+                     */
+                    uint64_t GetSubAppId() const;
+
+                    /**
+                     * 设置<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
+                     * @param SubAppId <b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
+                     */
+                    void SetSubAppId(const uint64_t& _subAppId);
+
+                    /**
+                     * 判断参数 SubAppId 是否已赋值
+                     * @return SubAppId 是否已赋值
+                     */
+                    bool SubAppIdHasBeenSet() const;
+
+                    /**
+                     * 获取播放的音视频类型，可选值：
+<li>AdaptiveDynamicStream：自适应码流输出；</li>
+<li>Transcode：转码输出；</li>
+<li>Original：原始音视频。</li>
+默认为 AdaptiveDynamicStream。
+                     * @return AudioVideoType 播放的音视频类型，可选值：
+<li>AdaptiveDynamicStream：自适应码流输出；</li>
+<li>Transcode：转码输出；</li>
+<li>Original：原始音视频。</li>
+默认为 AdaptiveDynamicStream。
+                     */
+                    std::string GetAudioVideoType() const;
+
+                    /**
+                     * 设置播放的音视频类型，可选值：
+<li>AdaptiveDynamicStream：自适应码流输出；</li>
+<li>Transcode：转码输出；</li>
+<li>Original：原始音视频。</li>
+默认为 AdaptiveDynamicStream。
+                     * @param AudioVideoType 播放的音视频类型，可选值：
+<li>AdaptiveDynamicStream：自适应码流输出；</li>
+<li>Transcode：转码输出；</li>
+<li>Original：原始音视频。</li>
+默认为 AdaptiveDynamicStream。
+                     */
+                    void SetAudioVideoType(const std::string& _audioVideoType);
+
+                    /**
+                     * 判断参数 AudioVideoType 是否已赋值
+                     * @return AudioVideoType 是否已赋值
+                     */
+                    bool AudioVideoTypeHasBeenSet() const;
+
+                    /**
                      * 获取播放 DRM 保护的自适应码流开关：
 <li>ON：开启，表示仅播放 DRM  保护的自适应码流输出；</li>
 <li>OFF：关闭，表示播放未加密的自适应码流输出。</li>
 默认为 OFF。
+当 AudioVideoType 为 AdaptiveDynamicStream 时，此参数有效。
                      * @return DrmSwitch 播放 DRM 保护的自适应码流开关：
 <li>ON：开启，表示仅播放 DRM  保护的自适应码流输出；</li>
 <li>OFF：关闭，表示播放未加密的自适应码流输出。</li>
 默认为 OFF。
+当 AudioVideoType 为 AdaptiveDynamicStream 时，此参数有效。
                      */
                     std::string GetDrmSwitch() const;
 
@@ -79,10 +133,12 @@ namespace TencentCloud
 <li>ON：开启，表示仅播放 DRM  保护的自适应码流输出；</li>
 <li>OFF：关闭，表示播放未加密的自适应码流输出。</li>
 默认为 OFF。
+当 AudioVideoType 为 AdaptiveDynamicStream 时，此参数有效。
                      * @param DrmSwitch 播放 DRM 保护的自适应码流开关：
 <li>ON：开启，表示仅播放 DRM  保护的自适应码流输出；</li>
 <li>OFF：关闭，表示播放未加密的自适应码流输出。</li>
 默认为 OFF。
+当 AudioVideoType 为 AdaptiveDynamicStream 时，此参数有效。
                      */
                     void SetDrmSwitch(const std::string& _drmSwitch);
 
@@ -93,14 +149,22 @@ namespace TencentCloud
                     bool DrmSwitchHasBeenSet() const;
 
                     /**
-                     * 获取允许输出的未加密的自适应码流模板 ID，当 DrmSwitch 为 OFF 时必填。
-                     * @return AdaptiveDynamicStreamingDefinition 允许输出的未加密的自适应码流模板 ID，当 DrmSwitch 为 OFF 时必填。
+                     * 获取允许输出的未加密的自适应码流模板 ID。
+
+当 AudioVideoType 为 AdaptiveDynamicStream 并且 DrmSwitch 为 OFF 时，此参数为必填。
+                     * @return AdaptiveDynamicStreamingDefinition 允许输出的未加密的自适应码流模板 ID。
+
+当 AudioVideoType 为 AdaptiveDynamicStream 并且 DrmSwitch 为 OFF 时，此参数为必填。
                      */
                     uint64_t GetAdaptiveDynamicStreamingDefinition() const;
 
                     /**
-                     * 设置允许输出的未加密的自适应码流模板 ID，当 DrmSwitch 为 OFF 时必填。
-                     * @param AdaptiveDynamicStreamingDefinition 允许输出的未加密的自适应码流模板 ID，当 DrmSwitch 为 OFF 时必填。
+                     * 设置允许输出的未加密的自适应码流模板 ID。
+
+当 AudioVideoType 为 AdaptiveDynamicStream 并且 DrmSwitch 为 OFF 时，此参数为必填。
+                     * @param AdaptiveDynamicStreamingDefinition 允许输出的未加密的自适应码流模板 ID。
+
+当 AudioVideoType 为 AdaptiveDynamicStream 并且 DrmSwitch 为 OFF 时，此参数为必填。
                      */
                     void SetAdaptiveDynamicStreamingDefinition(const uint64_t& _adaptiveDynamicStreamingDefinition);
 
@@ -111,14 +175,22 @@ namespace TencentCloud
                     bool AdaptiveDynamicStreamingDefinitionHasBeenSet() const;
 
                     /**
-                     * 获取允许输出的 DRM 自适应码流模板内容，当 DrmSwitch 为 ON 时必填。
-                     * @return DrmStreamingsInfo 允许输出的 DRM 自适应码流模板内容，当 DrmSwitch 为 ON 时必填。
+                     * 获取允许输出的 DRM 自适应码流模板内容。
+
+当 AudioVideoType 为 AdaptiveDynamicStream 并且 DrmSwitch 为 ON 时，此参数为必填。
+                     * @return DrmStreamingsInfo 允许输出的 DRM 自适应码流模板内容。
+
+当 AudioVideoType 为 AdaptiveDynamicStream 并且 DrmSwitch 为 ON 时，此参数为必填。
                      */
                     DrmStreamingsInfo GetDrmStreamingsInfo() const;
 
                     /**
-                     * 设置允许输出的 DRM 自适应码流模板内容，当 DrmSwitch 为 ON 时必填。
-                     * @param DrmStreamingsInfo 允许输出的 DRM 自适应码流模板内容，当 DrmSwitch 为 ON 时必填。
+                     * 设置允许输出的 DRM 自适应码流模板内容。
+
+当 AudioVideoType 为 AdaptiveDynamicStream 并且 DrmSwitch 为 ON 时，此参数为必填。
+                     * @param DrmStreamingsInfo 允许输出的 DRM 自适应码流模板内容。
+
+当 AudioVideoType 为 AdaptiveDynamicStream 并且 DrmSwitch 为 ON 时，此参数为必填。
                      */
                     void SetDrmStreamingsInfo(const DrmStreamingsInfo& _drmStreamingsInfo);
 
@@ -127,6 +199,32 @@ namespace TencentCloud
                      * @return DrmStreamingsInfo 是否已赋值
                      */
                     bool DrmStreamingsInfoHasBeenSet() const;
+
+                    /**
+                     * 获取允许输出的转码模板 ID。
+
+当 AudioVideoType 为 Transcode 时必填。
+                     * @return TranscodeDefinition 允许输出的转码模板 ID。
+
+当 AudioVideoType 为 Transcode 时必填。
+                     */
+                    uint64_t GetTranscodeDefinition() const;
+
+                    /**
+                     * 设置允许输出的转码模板 ID。
+
+当 AudioVideoType 为 Transcode 时必填。
+                     * @param TranscodeDefinition 允许输出的转码模板 ID。
+
+当 AudioVideoType 为 Transcode 时必填。
+                     */
+                    void SetTranscodeDefinition(const uint64_t& _transcodeDefinition);
+
+                    /**
+                     * 判断参数 TranscodeDefinition 是否已赋值
+                     * @return TranscodeDefinition 是否已赋值
+                     */
+                    bool TranscodeDefinitionHasBeenSet() const;
 
                     /**
                      * 获取允许输出的雪碧图模板 ID。
@@ -254,24 +352,6 @@ namespace TencentCloud
                      */
                     bool CommentHasBeenSet() const;
 
-                    /**
-                     * 获取点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。
-                     * @return SubAppId 点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。
-                     */
-                    uint64_t GetSubAppId() const;
-
-                    /**
-                     * 设置点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。
-                     * @param SubAppId 点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。
-                     */
-                    void SetSubAppId(const uint64_t& _subAppId);
-
-                    /**
-                     * 判断参数 SubAppId 是否已赋值
-                     * @return SubAppId 是否已赋值
-                     */
-                    bool SubAppIdHasBeenSet() const;
-
                 private:
 
                     /**
@@ -281,25 +361,54 @@ namespace TencentCloud
                     bool m_nameHasBeenSet;
 
                     /**
+                     * <b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
+                     */
+                    uint64_t m_subAppId;
+                    bool m_subAppIdHasBeenSet;
+
+                    /**
+                     * 播放的音视频类型，可选值：
+<li>AdaptiveDynamicStream：自适应码流输出；</li>
+<li>Transcode：转码输出；</li>
+<li>Original：原始音视频。</li>
+默认为 AdaptiveDynamicStream。
+                     */
+                    std::string m_audioVideoType;
+                    bool m_audioVideoTypeHasBeenSet;
+
+                    /**
                      * 播放 DRM 保护的自适应码流开关：
 <li>ON：开启，表示仅播放 DRM  保护的自适应码流输出；</li>
 <li>OFF：关闭，表示播放未加密的自适应码流输出。</li>
 默认为 OFF。
+当 AudioVideoType 为 AdaptiveDynamicStream 时，此参数有效。
                      */
                     std::string m_drmSwitch;
                     bool m_drmSwitchHasBeenSet;
 
                     /**
-                     * 允许输出的未加密的自适应码流模板 ID，当 DrmSwitch 为 OFF 时必填。
+                     * 允许输出的未加密的自适应码流模板 ID。
+
+当 AudioVideoType 为 AdaptiveDynamicStream 并且 DrmSwitch 为 OFF 时，此参数为必填。
                      */
                     uint64_t m_adaptiveDynamicStreamingDefinition;
                     bool m_adaptiveDynamicStreamingDefinitionHasBeenSet;
 
                     /**
-                     * 允许输出的 DRM 自适应码流模板内容，当 DrmSwitch 为 ON 时必填。
+                     * 允许输出的 DRM 自适应码流模板内容。
+
+当 AudioVideoType 为 AdaptiveDynamicStream 并且 DrmSwitch 为 ON 时，此参数为必填。
                      */
                     DrmStreamingsInfo m_drmStreamingsInfo;
                     bool m_drmStreamingsInfoHasBeenSet;
+
+                    /**
+                     * 允许输出的转码模板 ID。
+
+当 AudioVideoType 为 Transcode 时必填。
+                     */
+                    uint64_t m_transcodeDefinition;
+                    bool m_transcodeDefinitionHasBeenSet;
 
                     /**
                      * 允许输出的雪碧图模板 ID。
@@ -339,12 +448,6 @@ namespace TencentCloud
                      */
                     std::string m_comment;
                     bool m_commentHasBeenSet;
-
-                    /**
-                     * 点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。
-                     */
-                    uint64_t m_subAppId;
-                    bool m_subAppIdHasBeenSet;
 
                 };
             }

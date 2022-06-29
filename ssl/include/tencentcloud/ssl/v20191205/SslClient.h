@@ -55,6 +55,8 @@
 #include <tencentcloud/ssl/v20191205/model/DescribeManagersResponse.h>
 #include <tencentcloud/ssl/v20191205/model/DownloadCertificateRequest.h>
 #include <tencentcloud/ssl/v20191205/model/DownloadCertificateResponse.h>
+#include <tencentcloud/ssl/v20191205/model/HostCertificateRequest.h>
+#include <tencentcloud/ssl/v20191205/model/HostCertificateResponse.h>
 #include <tencentcloud/ssl/v20191205/model/ModifyCertificateAliasRequest.h>
 #include <tencentcloud/ssl/v20191205/model/ModifyCertificateAliasResponse.h>
 #include <tencentcloud/ssl/v20191205/model/ModifyCertificateProjectRequest.h>
@@ -137,6 +139,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DownloadCertificateResponse> DownloadCertificateOutcome;
                 typedef std::future<DownloadCertificateOutcome> DownloadCertificateOutcomeCallable;
                 typedef std::function<void(const SslClient*, const Model::DownloadCertificateRequest&, DownloadCertificateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DownloadCertificateAsyncHandler;
+                typedef Outcome<Core::Error, Model::HostCertificateResponse> HostCertificateOutcome;
+                typedef std::future<HostCertificateOutcome> HostCertificateOutcomeCallable;
+                typedef std::function<void(const SslClient*, const Model::HostCertificateRequest&, HostCertificateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> HostCertificateAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyCertificateAliasResponse> ModifyCertificateAliasOutcome;
                 typedef std::future<ModifyCertificateAliasOutcome> ModifyCertificateAliasOutcomeCallable;
                 typedef std::function<void(const SslClient*, const Model::ModifyCertificateAliasRequest&, ModifyCertificateAliasOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCertificateAliasAsyncHandler;
@@ -313,6 +318,15 @@ namespace TencentCloud
                 DownloadCertificateOutcome DownloadCertificate(const Model::DownloadCertificateRequest &request);
                 void DownloadCertificateAsync(const Model::DownloadCertificateRequest& request, const DownloadCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DownloadCertificateOutcomeCallable DownloadCertificateCallable(const Model::DownloadCertificateRequest& request);
+
+                /**
+                 *云资源托管
+                 * @param req HostCertificateRequest
+                 * @return HostCertificateOutcome
+                 */
+                HostCertificateOutcome HostCertificate(const Model::HostCertificateRequest &request);
+                void HostCertificateAsync(const Model::HostCertificateRequest& request, const HostCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                HostCertificateOutcomeCallable HostCertificateCallable(const Model::HostCertificateRequest& request);
 
                 /**
                  *用户传入证书id和备注来修改证书备注。

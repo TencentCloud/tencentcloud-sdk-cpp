@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/cdn/v20180606/model/AddCLSTopicDomainsRequest.h>
+#include <tencentcloud/cdn/v20180606/model/AddCLSTopicDomainsResponse.h>
 #include <tencentcloud/cdn/v20180606/model/AddCdnDomainRequest.h>
 #include <tencentcloud/cdn/v20180606/model/AddCdnDomainResponse.h>
 #include <tencentcloud/cdn/v20180606/model/CreateClsLogTopicRequest.h>
@@ -191,6 +193,9 @@ namespace TencentCloud
                 CdnClient(const Credential &credential, const std::string &region);
                 CdnClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::AddCLSTopicDomainsResponse> AddCLSTopicDomainsOutcome;
+                typedef std::future<AddCLSTopicDomainsOutcome> AddCLSTopicDomainsOutcomeCallable;
+                typedef std::function<void(const CdnClient*, const Model::AddCLSTopicDomainsRequest&, AddCLSTopicDomainsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddCLSTopicDomainsAsyncHandler;
                 typedef Outcome<Core::Error, Model::AddCdnDomainResponse> AddCdnDomainOutcome;
                 typedef std::future<AddCdnDomainOutcome> AddCdnDomainOutcomeCallable;
                 typedef std::function<void(const CdnClient*, const Model::AddCdnDomainRequest&, AddCdnDomainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddCdnDomainAsyncHandler;
@@ -426,7 +431,16 @@ namespace TencentCloud
 
 
                 /**
-                 *AddCdnDomain 用于新增内容分发网络加速域名。
+                 *AddCLSTopicDomains 用于新增域名到某日志主题下
+                 * @param req AddCLSTopicDomainsRequest
+                 * @return AddCLSTopicDomainsOutcome
+                 */
+                AddCLSTopicDomainsOutcome AddCLSTopicDomains(const Model::AddCLSTopicDomainsRequest &request);
+                void AddCLSTopicDomainsAsync(const Model::AddCLSTopicDomainsRequest& request, const AddCLSTopicDomainsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AddCLSTopicDomainsOutcomeCallable AddCLSTopicDomainsCallable(const Model::AddCLSTopicDomainsRequest& request);
+
+                /**
+                 *AddCdnDomain 用于新增内容分发网络加速域名。1分钟内最多可新增100个域名。
                  * @param req AddCdnDomainRequest
                  * @return AddCdnDomainOutcome
                  */
@@ -665,7 +679,9 @@ namespace TencentCloud
                 DescribeImageConfigOutcomeCallable DescribeImageConfigCallable(const Model::DescribeImageConfigRequest& request);
 
                 /**
-                 *DescribeIpStatus 用于查询域名所在加速平台的边缘节点、回源节点明细。注意事项：边缘节点（edge）尚未全量开放，未在内测名单中的账号不支持调用
+                 *DescribeIpStatus 用于查询域名所在加速平台的边缘节点、回源节点明细。注意事项：边缘节点（edge）尚未全量开放，未在内测名单中的账号不支持调用。
+
+>?  若您的业务已迁移至 CDN 控制台，请参考<a href="https://cloud.tencent.com/document/api/228/41954"> CDN 接口文档</a>，使用  CDN 相关API 进行操作。
                  * @param req DescribeIpStatusRequest
                  * @return DescribeIpStatusOutcome
                  */
@@ -751,7 +767,6 @@ namespace TencentCloud
 
                 /**
                  *DescribePushTasks  用于查询预热任务提交历史记录及执行进度。
-接口灰度中，暂未全量开放，敬请期待。
                  * @param req DescribePushTasksRequest
                  * @return DescribePushTasksOutcome
                  */
@@ -834,7 +849,7 @@ namespace TencentCloud
                 DescribeTopDataOutcomeCallable DescribeTopDataCallable(const Model::DescribeTopDataRequest& request);
 
                 /**
-                 *DescribeTrafficPackages 用于查询中国境内 CDN 流量包详情。
+                 *DescribeTrafficPackages 用于查询 CDN 流量包详情。
                  * @param req DescribeTrafficPackagesRequest
                  * @return DescribeTrafficPackagesOutcome
                  */
@@ -1052,7 +1067,7 @@ namespace TencentCloud
 
                 /**
                  *PurgePathCache 用于批量提交目录刷新，根据域名的加速区域进行对应区域的刷新。
-默认情况下境内、境外加速区域每日目录刷新额度为各 100 条，每次最多可提交 20 条。
+默认情况下境内、境外加速区域每日目录刷新额度为各 100 条，每次最多可提交 500 条。
                  * @param req PurgePathCacheRequest
                  * @return PurgePathCacheOutcome
                  */
@@ -1072,7 +1087,7 @@ namespace TencentCloud
 
                 /**
                  *PushUrlsCache 用于将指定 URL 资源列表加载至 CDN 节点，支持指定加速区域预热。
-默认情况下境内、境外每日预热 URL 限额为各 1000 条，每次最多可提交 20 条。注意：中国境外区域预热，资源默认加载至中国境外边缘节点，所产生的边缘层流量会计入计费流量。
+默认情况下境内、境外每日预热 URL 限额为各 1000 条，每次最多可提交 500 条。注意：中国境外区域预热，资源默认加载至中国境外边缘节点，所产生的边缘层流量会计入计费流量。
                  * @param req PushUrlsCacheRequest
                  * @return PushUrlsCacheOutcome
                  */

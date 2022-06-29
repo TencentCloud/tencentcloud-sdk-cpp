@@ -32,7 +32,8 @@ DescribeDomainsRequest::DescribeDomainsRequest() :
     m_codeHasBeenSet(false),
     m_hashHasBeenSet(false),
     m_itemHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_domainHasBeenSet(false)
 {
 }
 
@@ -121,6 +122,14 @@ string DescribeDomainsRequest::ToJsonString() const
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_domainHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Domain";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_domain.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -289,6 +298,22 @@ void DescribeDomainsRequest::SetStatus(const string& _status)
 bool DescribeDomainsRequest::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+string DescribeDomainsRequest::GetDomain() const
+{
+    return m_domain;
+}
+
+void DescribeDomainsRequest::SetDomain(const string& _domain)
+{
+    m_domain = _domain;
+    m_domainHasBeenSet = true;
+}
+
+bool DescribeDomainsRequest::DomainHasBeenSet() const
+{
+    return m_domainHasBeenSet;
 }
 
 

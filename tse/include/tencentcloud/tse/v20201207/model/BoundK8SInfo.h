@@ -86,6 +86,28 @@ namespace TencentCloud
                      */
                     bool BoundClusterTypeHasBeenSet() const;
 
+                    /**
+                     * 获取服务同步模式，all为全量同步，demand为按需同步
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SyncMode 服务同步模式，all为全量同步，demand为按需同步
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetSyncMode() const;
+
+                    /**
+                     * 设置服务同步模式，all为全量同步，demand为按需同步
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SyncMode 服务同步模式，all为全量同步，demand为按需同步
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSyncMode(const std::string& _syncMode);
+
+                    /**
+                     * 判断参数 SyncMode 是否已赋值
+                     * @return SyncMode 是否已赋值
+                     */
+                    bool SyncModeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -100,6 +122,13 @@ namespace TencentCloud
                      */
                     std::string m_boundClusterType;
                     bool m_boundClusterTypeHasBeenSet;
+
+                    /**
+                     * 服务同步模式，all为全量同步，demand为按需同步
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_syncMode;
+                    bool m_syncModeHasBeenSet;
 
                 };
             }

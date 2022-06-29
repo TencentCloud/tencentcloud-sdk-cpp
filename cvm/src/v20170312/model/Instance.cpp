@@ -54,7 +54,9 @@ Instance::Instance() :
     m_camRoleNameHasBeenSet(false),
     m_hpcClusterIdHasBeenSet(false),
     m_rdmaIpAddressesHasBeenSet(false),
-    m_isolatedSourceHasBeenSet(false)
+    m_isolatedSourceHasBeenSet(false),
+    m_gPUInfoHasBeenSet(false),
+    m_licenseTypeHasBeenSet(false)
 {
 }
 
@@ -473,6 +475,33 @@ CoreInternalOutcome Instance::Deserialize(const rapidjson::Value &value)
         m_isolatedSourceHasBeenSet = true;
     }
 
+    if (value.HasMember("GPUInfo") && !value["GPUInfo"].IsNull())
+    {
+        if (!value["GPUInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Instance.GPUInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_gPUInfo.Deserialize(value["GPUInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_gPUInfoHasBeenSet = true;
+    }
+
+    if (value.HasMember("LicenseType") && !value["LicenseType"].IsNull())
+    {
+        if (!value["LicenseType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Instance.LicenseType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_licenseType = string(value["LicenseType"].GetString());
+        m_licenseTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -794,6 +823,23 @@ void Instance::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "IsolatedSource";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_isolatedSource.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_gPUInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GPUInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_gPUInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_licenseTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LicenseType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_licenseType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1341,5 +1387,37 @@ void Instance::SetIsolatedSource(const string& _isolatedSource)
 bool Instance::IsolatedSourceHasBeenSet() const
 {
     return m_isolatedSourceHasBeenSet;
+}
+
+GPUInfo Instance::GetGPUInfo() const
+{
+    return m_gPUInfo;
+}
+
+void Instance::SetGPUInfo(const GPUInfo& _gPUInfo)
+{
+    m_gPUInfo = _gPUInfo;
+    m_gPUInfoHasBeenSet = true;
+}
+
+bool Instance::GPUInfoHasBeenSet() const
+{
+    return m_gPUInfoHasBeenSet;
+}
+
+string Instance::GetLicenseType() const
+{
+    return m_licenseType;
+}
+
+void Instance::SetLicenseType(const string& _licenseType)
+{
+    m_licenseType = _licenseType;
+    m_licenseTypeHasBeenSet = true;
+}
+
+bool Instance::LicenseTypeHasBeenSet() const
+{
+    return m_licenseTypeHasBeenSet;
 }
 

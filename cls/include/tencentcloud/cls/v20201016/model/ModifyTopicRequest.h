@@ -152,14 +152,14 @@ namespace TencentCloud
                     bool MaxSplitPartitionsHasBeenSet() const;
 
                     /**
-                     * 获取生命周期，单位天；可取值范围1~366
-                     * @return Period 生命周期，单位天；可取值范围1~366
+                     * 获取生命周期，单位天，可取值范围1~3600。取值为3640时代表永久保存
+                     * @return Period 生命周期，单位天，可取值范围1~3600。取值为3640时代表永久保存
                      */
                     int64_t GetPeriod() const;
 
                     /**
-                     * 设置生命周期，单位天；可取值范围1~366
-                     * @param Period 生命周期，单位天；可取值范围1~366
+                     * 设置生命周期，单位天，可取值范围1~3600。取值为3640时代表永久保存
+                     * @param Period 生命周期，单位天，可取值范围1~3600。取值为3640时代表永久保存
                      */
                     void SetPeriod(const int64_t& _period);
 
@@ -208,7 +208,7 @@ namespace TencentCloud
                     bool m_maxSplitPartitionsHasBeenSet;
 
                     /**
-                     * 生命周期，单位天；可取值范围1~366
+                     * 生命周期，单位天，可取值范围1~3600。取值为3640时代表永久保存
                      */
                     int64_t m_period;
                     bool m_periodHasBeenSet;

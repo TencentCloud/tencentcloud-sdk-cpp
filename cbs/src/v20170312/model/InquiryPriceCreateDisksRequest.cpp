@@ -23,13 +23,14 @@ using namespace TencentCloud::Cbs::V20170312::Model;
 using namespace std;
 
 InquiryPriceCreateDisksRequest::InquiryPriceCreateDisksRequest() :
+    m_diskChargeTypeHasBeenSet(false),
     m_diskTypeHasBeenSet(false),
     m_diskSizeHasBeenSet(false),
-    m_diskChargeTypeHasBeenSet(false),
-    m_diskChargePrepaidHasBeenSet(false),
-    m_diskCountHasBeenSet(false),
     m_projectIdHasBeenSet(false),
-    m_throughputPerformanceHasBeenSet(false)
+    m_diskCountHasBeenSet(false),
+    m_throughputPerformanceHasBeenSet(false),
+    m_diskChargePrepaidHasBeenSet(false),
+    m_diskBackupQuotaHasBeenSet(false)
 {
 }
 
@@ -39,6 +40,14 @@ string InquiryPriceCreateDisksRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
+
+    if (m_diskChargeTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DiskChargeType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_diskChargeType.c_str(), allocator).Move(), allocator);
+    }
 
     if (m_diskTypeHasBeenSet)
     {
@@ -56,12 +65,28 @@ string InquiryPriceCreateDisksRequest::ToJsonString() const
         d.AddMember(iKey, m_diskSize, allocator);
     }
 
-    if (m_diskChargeTypeHasBeenSet)
+    if (m_projectIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "DiskChargeType";
+        string key = "ProjectId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_diskChargeType.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, m_projectId, allocator);
+    }
+
+    if (m_diskCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DiskCount";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_diskCount, allocator);
+    }
+
+    if (m_throughputPerformanceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ThroughputPerformance";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_throughputPerformance, allocator);
     }
 
     if (m_diskChargePrepaidHasBeenSet)
@@ -73,28 +98,12 @@ string InquiryPriceCreateDisksRequest::ToJsonString() const
         m_diskChargePrepaid.ToJsonObject(d[key.c_str()], allocator);
     }
 
-    if (m_diskCountHasBeenSet)
+    if (m_diskBackupQuotaHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "DiskCount";
+        string key = "DiskBackupQuota";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_diskCount, allocator);
-    }
-
-    if (m_projectIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ProjectId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_projectId, allocator);
-    }
-
-    if (m_throughputPerformanceHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ThroughputPerformance";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_throughputPerformance, allocator);
+        d.AddMember(iKey, m_diskBackupQuota, allocator);
     }
 
 
@@ -104,6 +113,22 @@ string InquiryPriceCreateDisksRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string InquiryPriceCreateDisksRequest::GetDiskChargeType() const
+{
+    return m_diskChargeType;
+}
+
+void InquiryPriceCreateDisksRequest::SetDiskChargeType(const string& _diskChargeType)
+{
+    m_diskChargeType = _diskChargeType;
+    m_diskChargeTypeHasBeenSet = true;
+}
+
+bool InquiryPriceCreateDisksRequest::DiskChargeTypeHasBeenSet() const
+{
+    return m_diskChargeTypeHasBeenSet;
+}
 
 string InquiryPriceCreateDisksRequest::GetDiskType() const
 {
@@ -137,36 +162,20 @@ bool InquiryPriceCreateDisksRequest::DiskSizeHasBeenSet() const
     return m_diskSizeHasBeenSet;
 }
 
-string InquiryPriceCreateDisksRequest::GetDiskChargeType() const
+uint64_t InquiryPriceCreateDisksRequest::GetProjectId() const
 {
-    return m_diskChargeType;
+    return m_projectId;
 }
 
-void InquiryPriceCreateDisksRequest::SetDiskChargeType(const string& _diskChargeType)
+void InquiryPriceCreateDisksRequest::SetProjectId(const uint64_t& _projectId)
 {
-    m_diskChargeType = _diskChargeType;
-    m_diskChargeTypeHasBeenSet = true;
+    m_projectId = _projectId;
+    m_projectIdHasBeenSet = true;
 }
 
-bool InquiryPriceCreateDisksRequest::DiskChargeTypeHasBeenSet() const
+bool InquiryPriceCreateDisksRequest::ProjectIdHasBeenSet() const
 {
-    return m_diskChargeTypeHasBeenSet;
-}
-
-DiskChargePrepaid InquiryPriceCreateDisksRequest::GetDiskChargePrepaid() const
-{
-    return m_diskChargePrepaid;
-}
-
-void InquiryPriceCreateDisksRequest::SetDiskChargePrepaid(const DiskChargePrepaid& _diskChargePrepaid)
-{
-    m_diskChargePrepaid = _diskChargePrepaid;
-    m_diskChargePrepaidHasBeenSet = true;
-}
-
-bool InquiryPriceCreateDisksRequest::DiskChargePrepaidHasBeenSet() const
-{
-    return m_diskChargePrepaidHasBeenSet;
+    return m_projectIdHasBeenSet;
 }
 
 uint64_t InquiryPriceCreateDisksRequest::GetDiskCount() const
@@ -185,22 +194,6 @@ bool InquiryPriceCreateDisksRequest::DiskCountHasBeenSet() const
     return m_diskCountHasBeenSet;
 }
 
-uint64_t InquiryPriceCreateDisksRequest::GetProjectId() const
-{
-    return m_projectId;
-}
-
-void InquiryPriceCreateDisksRequest::SetProjectId(const uint64_t& _projectId)
-{
-    m_projectId = _projectId;
-    m_projectIdHasBeenSet = true;
-}
-
-bool InquiryPriceCreateDisksRequest::ProjectIdHasBeenSet() const
-{
-    return m_projectIdHasBeenSet;
-}
-
 uint64_t InquiryPriceCreateDisksRequest::GetThroughputPerformance() const
 {
     return m_throughputPerformance;
@@ -215,6 +208,38 @@ void InquiryPriceCreateDisksRequest::SetThroughputPerformance(const uint64_t& _t
 bool InquiryPriceCreateDisksRequest::ThroughputPerformanceHasBeenSet() const
 {
     return m_throughputPerformanceHasBeenSet;
+}
+
+DiskChargePrepaid InquiryPriceCreateDisksRequest::GetDiskChargePrepaid() const
+{
+    return m_diskChargePrepaid;
+}
+
+void InquiryPriceCreateDisksRequest::SetDiskChargePrepaid(const DiskChargePrepaid& _diskChargePrepaid)
+{
+    m_diskChargePrepaid = _diskChargePrepaid;
+    m_diskChargePrepaidHasBeenSet = true;
+}
+
+bool InquiryPriceCreateDisksRequest::DiskChargePrepaidHasBeenSet() const
+{
+    return m_diskChargePrepaidHasBeenSet;
+}
+
+uint64_t InquiryPriceCreateDisksRequest::GetDiskBackupQuota() const
+{
+    return m_diskBackupQuota;
+}
+
+void InquiryPriceCreateDisksRequest::SetDiskBackupQuota(const uint64_t& _diskBackupQuota)
+{
+    m_diskBackupQuota = _diskBackupQuota;
+    m_diskBackupQuotaHasBeenSet = true;
+}
+
+bool InquiryPriceCreateDisksRequest::DiskBackupQuotaHasBeenSet() const
+{
+    return m_diskBackupQuotaHasBeenSet;
 }
 
 

@@ -49,7 +49,9 @@ DescribeSubscribeConfResponse::DescribeSubscribeConfResponse() :
     m_modifyTimeHasBeenSet(false),
     m_regionHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_autoRenewFlagHasBeenSet(false)
+    m_autoRenewFlagHasBeenSet(false),
+    m_subscribeVersionHasBeenSet(false),
+    m_errorsHasBeenSet(false)
 {
 }
 
@@ -367,6 +369,36 @@ CoreInternalOutcome DescribeSubscribeConfResponse::Deserialize(const string &pay
         m_autoRenewFlagHasBeenSet = true;
     }
 
+    if (rsp.HasMember("SubscribeVersion") && !rsp["SubscribeVersion"].IsNull())
+    {
+        if (!rsp["SubscribeVersion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SubscribeVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subscribeVersion = string(rsp["SubscribeVersion"].GetString());
+        m_subscribeVersionHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Errors") && !rsp["Errors"].IsNull())
+    {
+        if (!rsp["Errors"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Errors` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["Errors"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            SubsErr item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_errors.push_back(item);
+        }
+        m_errorsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -597,6 +629,29 @@ string DescribeSubscribeConfResponse::ToJsonString() const
         string key = "AutoRenewFlag";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_autoRenewFlag, allocator);
+    }
+
+    if (m_subscribeVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubscribeVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subscribeVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_errorsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Errors";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_errors.begin(); itr != m_errors.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -869,6 +924,26 @@ int64_t DescribeSubscribeConfResponse::GetAutoRenewFlag() const
 bool DescribeSubscribeConfResponse::AutoRenewFlagHasBeenSet() const
 {
     return m_autoRenewFlagHasBeenSet;
+}
+
+string DescribeSubscribeConfResponse::GetSubscribeVersion() const
+{
+    return m_subscribeVersion;
+}
+
+bool DescribeSubscribeConfResponse::SubscribeVersionHasBeenSet() const
+{
+    return m_subscribeVersionHasBeenSet;
+}
+
+vector<SubsErr> DescribeSubscribeConfResponse::GetErrors() const
+{
+    return m_errors;
+}
+
+bool DescribeSubscribeConfResponse::ErrorsHasBeenSet() const
+{
+    return m_errorsHasBeenSet;
 }
 
 

@@ -24,7 +24,12 @@ ConcernInfo::ConcernInfo() :
     m_concernTypeHasBeenSet(false),
     m_entityTypeHasBeenSet(false),
     m_concernHasBeenSet(false),
-    m_statisticsCountHasBeenSet(false)
+    m_statisticsCountHasBeenSet(false),
+    m_searchDataHasBeenSet(false),
+    m_ipCountryIsoHasBeenSet(false),
+    m_ipProvinceIsoHasBeenSet(false),
+    m_ipCityHasBeenSet(false),
+    m_eventSubTypeHasBeenSet(false)
 {
 }
 
@@ -73,6 +78,56 @@ CoreInternalOutcome ConcernInfo::Deserialize(const rapidjson::Value &value)
         m_statisticsCountHasBeenSet = true;
     }
 
+    if (value.HasMember("SearchData") && !value["SearchData"].IsNull())
+    {
+        if (!value["SearchData"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ConcernInfo.SearchData` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_searchData = string(value["SearchData"].GetString());
+        m_searchDataHasBeenSet = true;
+    }
+
+    if (value.HasMember("IpCountryIso") && !value["IpCountryIso"].IsNull())
+    {
+        if (!value["IpCountryIso"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ConcernInfo.IpCountryIso` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ipCountryIso = string(value["IpCountryIso"].GetString());
+        m_ipCountryIsoHasBeenSet = true;
+    }
+
+    if (value.HasMember("IpProvinceIso") && !value["IpProvinceIso"].IsNull())
+    {
+        if (!value["IpProvinceIso"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ConcernInfo.IpProvinceIso` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ipProvinceIso = string(value["IpProvinceIso"].GetString());
+        m_ipProvinceIsoHasBeenSet = true;
+    }
+
+    if (value.HasMember("IpCity") && !value["IpCity"].IsNull())
+    {
+        if (!value["IpCity"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ConcernInfo.IpCity` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ipCity = string(value["IpCity"].GetString());
+        m_ipCityHasBeenSet = true;
+    }
+
+    if (value.HasMember("EventSubType") && !value["EventSubType"].IsNull())
+    {
+        if (!value["EventSubType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ConcernInfo.EventSubType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_eventSubType = string(value["EventSubType"].GetString());
+        m_eventSubTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +165,46 @@ void ConcernInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "StatisticsCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_statisticsCount, allocator);
+    }
+
+    if (m_searchDataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SearchData";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_searchData.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ipCountryIsoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IpCountryIso";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ipCountryIso.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ipProvinceIsoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IpProvinceIso";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ipProvinceIso.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ipCityHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IpCity";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ipCity.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_eventSubTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EventSubType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_eventSubType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -177,5 +272,85 @@ void ConcernInfo::SetStatisticsCount(const int64_t& _statisticsCount)
 bool ConcernInfo::StatisticsCountHasBeenSet() const
 {
     return m_statisticsCountHasBeenSet;
+}
+
+string ConcernInfo::GetSearchData() const
+{
+    return m_searchData;
+}
+
+void ConcernInfo::SetSearchData(const string& _searchData)
+{
+    m_searchData = _searchData;
+    m_searchDataHasBeenSet = true;
+}
+
+bool ConcernInfo::SearchDataHasBeenSet() const
+{
+    return m_searchDataHasBeenSet;
+}
+
+string ConcernInfo::GetIpCountryIso() const
+{
+    return m_ipCountryIso;
+}
+
+void ConcernInfo::SetIpCountryIso(const string& _ipCountryIso)
+{
+    m_ipCountryIso = _ipCountryIso;
+    m_ipCountryIsoHasBeenSet = true;
+}
+
+bool ConcernInfo::IpCountryIsoHasBeenSet() const
+{
+    return m_ipCountryIsoHasBeenSet;
+}
+
+string ConcernInfo::GetIpProvinceIso() const
+{
+    return m_ipProvinceIso;
+}
+
+void ConcernInfo::SetIpProvinceIso(const string& _ipProvinceIso)
+{
+    m_ipProvinceIso = _ipProvinceIso;
+    m_ipProvinceIsoHasBeenSet = true;
+}
+
+bool ConcernInfo::IpProvinceIsoHasBeenSet() const
+{
+    return m_ipProvinceIsoHasBeenSet;
+}
+
+string ConcernInfo::GetIpCity() const
+{
+    return m_ipCity;
+}
+
+void ConcernInfo::SetIpCity(const string& _ipCity)
+{
+    m_ipCity = _ipCity;
+    m_ipCityHasBeenSet = true;
+}
+
+bool ConcernInfo::IpCityHasBeenSet() const
+{
+    return m_ipCityHasBeenSet;
+}
+
+string ConcernInfo::GetEventSubType() const
+{
+    return m_eventSubType;
+}
+
+void ConcernInfo::SetEventSubType(const string& _eventSubType)
+{
+    m_eventSubType = _eventSubType;
+    m_eventSubTypeHasBeenSet = true;
+}
+
+bool ConcernInfo::EventSubTypeHasBeenSet() const
+{
+    return m_eventSubTypeHasBeenSet;
 }
 

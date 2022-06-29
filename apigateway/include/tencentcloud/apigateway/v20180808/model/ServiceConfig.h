@@ -48,14 +48,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取后端类型。启用vpc时生效，目前支持的类型为clb和vpc通道
-                     * @return Product 后端类型。启用vpc时生效，目前支持的类型为clb和vpc通道
+                     * 获取后端类型。启用vpc时生效，目前支持的类型为clb, cvm和upstream
+                     * @return Product 后端类型。启用vpc时生效，目前支持的类型为clb, cvm和upstream
                      */
                     std::string GetProduct() const;
 
                     /**
-                     * 设置后端类型。启用vpc时生效，目前支持的类型为clb和vpc通道
-                     * @param Product 后端类型。启用vpc时生效，目前支持的类型为clb和vpc通道
+                     * 设置后端类型。启用vpc时生效，目前支持的类型为clb, cvm和upstream
+                     * @param Product 后端类型。启用vpc时生效，目前支持的类型为clb, cvm和upstream
                      */
                     void SetProduct(const std::string& _product);
 
@@ -138,6 +138,28 @@ namespace TencentCloud
                     bool MethodHasBeenSet() const;
 
                     /**
+                     * 获取当绑定vpc通道才需要
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UpstreamId 当绑定vpc通道才需要
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetUpstreamId() const;
+
+                    /**
+                     * 设置当绑定vpc通道才需要
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param UpstreamId 当绑定vpc通道才需要
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetUpstreamId(const std::string& _upstreamId);
+
+                    /**
+                     * 判断参数 UpstreamId 是否已赋值
+                     * @return UpstreamId 是否已赋值
+                     */
+                    bool UpstreamIdHasBeenSet() const;
+
+                    /**
                      * 获取API后端COS配置。如果 ServiceType 是 COS，则此参数必传。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CosConfig API后端COS配置。如果 ServiceType 是 COS，则此参数必传。
@@ -162,7 +184,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 后端类型。启用vpc时生效，目前支持的类型为clb和vpc通道
+                     * 后端类型。启用vpc时生效，目前支持的类型为clb, cvm和upstream
                      */
                     std::string m_product;
                     bool m_productHasBeenSet;
@@ -190,6 +212,13 @@ namespace TencentCloud
                      */
                     std::string m_method;
                     bool m_methodHasBeenSet;
+
+                    /**
+                     * 当绑定vpc通道才需要
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_upstreamId;
+                    bool m_upstreamIdHasBeenSet;
 
                     /**
                      * API后端COS配置。如果 ServiceType 是 COS，则此参数必传。

@@ -65,14 +65,22 @@ namespace TencentCloud
                     bool CaseSensitiveHasBeenSet() const;
 
                     /**
-                     * 获取全文索引的分词符，字符串中每个字符代表一个分词符
-                     * @return Tokenizer 全文索引的分词符，字符串中每个字符代表一个分词符
+                     * 获取全文索引的分词符，其中的每个字符代表一个分词符；
+仅支持英文符号及\n\t\r；
+推荐使用 @&?|#()='",;:<>[]{}/ \n\t\r\ 作为分词符；
+                     * @return Tokenizer 全文索引的分词符，其中的每个字符代表一个分词符；
+仅支持英文符号及\n\t\r；
+推荐使用 @&?|#()='",;:<>[]{}/ \n\t\r\ 作为分词符；
                      */
                     std::string GetTokenizer() const;
 
                     /**
-                     * 设置全文索引的分词符，字符串中每个字符代表一个分词符
-                     * @param Tokenizer 全文索引的分词符，字符串中每个字符代表一个分词符
+                     * 设置全文索引的分词符，其中的每个字符代表一个分词符；
+仅支持英文符号及\n\t\r；
+推荐使用 @&?|#()='",;:<>[]{}/ \n\t\r\ 作为分词符；
+                     * @param Tokenizer 全文索引的分词符，其中的每个字符代表一个分词符；
+仅支持英文符号及\n\t\r；
+推荐使用 @&?|#()='",;:<>[]{}/ \n\t\r\ 作为分词符；
                      */
                     void SetTokenizer(const std::string& _tokenizer);
 
@@ -113,7 +121,9 @@ namespace TencentCloud
                     bool m_caseSensitiveHasBeenSet;
 
                     /**
-                     * 全文索引的分词符，字符串中每个字符代表一个分词符
+                     * 全文索引的分词符，其中的每个字符代表一个分词符；
+仅支持英文符号及\n\t\r；
+推荐使用 @&?|#()='",;:<>[]{}/ \n\t\r\ 作为分词符；
                      */
                     std::string m_tokenizer;
                     bool m_tokenizerHasBeenSet;

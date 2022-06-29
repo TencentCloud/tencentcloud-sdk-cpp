@@ -32,7 +32,8 @@ CreateServiceRequest::CreateServiceRequest() :
     m_setServerNameHasBeenSet(false),
     m_appIdTypeHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_instanceIdHasBeenSet(false)
+    m_instanceIdHasBeenSet(false),
+    m_uniqVpcIdHasBeenSet(false)
 {
 }
 
@@ -133,6 +134,14 @@ string CreateServiceRequest::ToJsonString() const
         string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_uniqVpcIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UniqVpcId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_uniqVpcId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -301,6 +310,22 @@ void CreateServiceRequest::SetInstanceId(const string& _instanceId)
 bool CreateServiceRequest::InstanceIdHasBeenSet() const
 {
     return m_instanceIdHasBeenSet;
+}
+
+string CreateServiceRequest::GetUniqVpcId() const
+{
+    return m_uniqVpcId;
+}
+
+void CreateServiceRequest::SetUniqVpcId(const string& _uniqVpcId)
+{
+    m_uniqVpcId = _uniqVpcId;
+    m_uniqVpcIdHasBeenSet = true;
+}
+
+bool CreateServiceRequest::UniqVpcIdHasBeenSet() const
+{
+    return m_uniqVpcIdHasBeenSet;
 }
 
 

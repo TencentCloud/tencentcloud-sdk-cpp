@@ -119,6 +119,24 @@ namespace TencentCloud
                      */
                     bool ConfigHasBeenSet() const;
 
+                    /**
+                     * 获取任务的用户自定义参数信息
+                     * @return Params 任务的用户自定义参数信息
+                     */
+                    std::vector<KVPair> GetParams() const;
+
+                    /**
+                     * 设置任务的用户自定义参数信息
+                     * @param Params 任务的用户自定义参数信息
+                     */
+                    void SetParams(const std::vector<KVPair>& _params);
+
+                    /**
+                     * 判断参数 Params 是否已赋值
+                     * @return Params 是否已赋值
+                     */
+                    bool ParamsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -144,6 +162,12 @@ namespace TencentCloud
                      */
                     std::vector<KVPair> m_config;
                     bool m_configHasBeenSet;
+
+                    /**
+                     * 任务的用户自定义参数信息
+                     */
+                    std::vector<KVPair> m_params;
+                    bool m_paramsHasBeenSet;
 
                 };
             }

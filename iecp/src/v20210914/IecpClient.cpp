@@ -83,6 +83,49 @@ IecpClient::ApplyMarketComponentOutcomeCallable IecpClient::ApplyMarketComponent
     return task->get_future();
 }
 
+IecpClient::BuildMessageRouteOutcome IecpClient::BuildMessageRoute(const BuildMessageRouteRequest &request)
+{
+    auto outcome = MakeRequest(request, "BuildMessageRoute");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        BuildMessageRouteResponse rsp = BuildMessageRouteResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return BuildMessageRouteOutcome(rsp);
+        else
+            return BuildMessageRouteOutcome(o.GetError());
+    }
+    else
+    {
+        return BuildMessageRouteOutcome(outcome.GetError());
+    }
+}
+
+void IecpClient::BuildMessageRouteAsync(const BuildMessageRouteRequest& request, const BuildMessageRouteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->BuildMessageRoute(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IecpClient::BuildMessageRouteOutcomeCallable IecpClient::BuildMessageRouteCallable(const BuildMessageRouteRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<BuildMessageRouteOutcome()>>(
+        [this, request]()
+        {
+            return this->BuildMessageRoute(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IecpClient::CreateApplicationVisualizationOutcome IecpClient::CreateApplicationVisualization(const CreateApplicationVisualizationRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateApplicationVisualization");
@@ -205,6 +248,49 @@ IecpClient::CreateEdgeNodeOutcomeCallable IecpClient::CreateEdgeNodeCallable(con
         [this, request]()
         {
             return this->CreateEdgeNode(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IecpClient::CreateEdgeNodeBatchOutcome IecpClient::CreateEdgeNodeBatch(const CreateEdgeNodeBatchRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateEdgeNodeBatch");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateEdgeNodeBatchResponse rsp = CreateEdgeNodeBatchResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateEdgeNodeBatchOutcome(rsp);
+        else
+            return CreateEdgeNodeBatchOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateEdgeNodeBatchOutcome(outcome.GetError());
+    }
+}
+
+void IecpClient::CreateEdgeNodeBatchAsync(const CreateEdgeNodeBatchRequest& request, const CreateEdgeNodeBatchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateEdgeNodeBatch(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IecpClient::CreateEdgeNodeBatchOutcomeCallable IecpClient::CreateEdgeNodeBatchCallable(const CreateEdgeNodeBatchRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateEdgeNodeBatchOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateEdgeNodeBatch(request);
         }
     );
 
@@ -427,6 +513,135 @@ IecpClient::CreateEdgeUnitCloudOutcomeCallable IecpClient::CreateEdgeUnitCloudCa
     return task->get_future();
 }
 
+IecpClient::CreateEdgeUnitDevicesOutcome IecpClient::CreateEdgeUnitDevices(const CreateEdgeUnitDevicesRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateEdgeUnitDevices");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateEdgeUnitDevicesResponse rsp = CreateEdgeUnitDevicesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateEdgeUnitDevicesOutcome(rsp);
+        else
+            return CreateEdgeUnitDevicesOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateEdgeUnitDevicesOutcome(outcome.GetError());
+    }
+}
+
+void IecpClient::CreateEdgeUnitDevicesAsync(const CreateEdgeUnitDevicesRequest& request, const CreateEdgeUnitDevicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateEdgeUnitDevices(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IecpClient::CreateEdgeUnitDevicesOutcomeCallable IecpClient::CreateEdgeUnitDevicesCallable(const CreateEdgeUnitDevicesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateEdgeUnitDevicesOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateEdgeUnitDevices(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IecpClient::CreateIotDeviceOutcome IecpClient::CreateIotDevice(const CreateIotDeviceRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateIotDevice");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateIotDeviceResponse rsp = CreateIotDeviceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateIotDeviceOutcome(rsp);
+        else
+            return CreateIotDeviceOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateIotDeviceOutcome(outcome.GetError());
+    }
+}
+
+void IecpClient::CreateIotDeviceAsync(const CreateIotDeviceRequest& request, const CreateIotDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateIotDevice(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IecpClient::CreateIotDeviceOutcomeCallable IecpClient::CreateIotDeviceCallable(const CreateIotDeviceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateIotDeviceOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateIotDevice(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IecpClient::CreateMessageRouteOutcome IecpClient::CreateMessageRoute(const CreateMessageRouteRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateMessageRoute");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateMessageRouteResponse rsp = CreateMessageRouteResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateMessageRouteOutcome(rsp);
+        else
+            return CreateMessageRouteOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateMessageRouteOutcome(outcome.GetError());
+    }
+}
+
+void IecpClient::CreateMessageRouteAsync(const CreateMessageRouteRequest& request, const CreateMessageRouteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateMessageRoute(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IecpClient::CreateMessageRouteOutcomeCallable IecpClient::CreateMessageRouteCallable(const CreateMessageRouteRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateMessageRouteOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateMessageRoute(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IecpClient::CreateNamespaceOutcome IecpClient::CreateNamespace(const CreateNamespaceRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateNamespace");
@@ -549,6 +764,49 @@ IecpClient::CreateUpdateNodeUnitOutcomeCallable IecpClient::CreateUpdateNodeUnit
         [this, request]()
         {
             return this->CreateUpdateNodeUnit(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IecpClient::CreateUserTokenOutcome IecpClient::CreateUserToken(const CreateUserTokenRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateUserToken");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateUserTokenResponse rsp = CreateUserTokenResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateUserTokenOutcome(rsp);
+        else
+            return CreateUserTokenOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateUserTokenOutcome(outcome.GetError());
+    }
+}
+
+void IecpClient::CreateUserTokenAsync(const CreateUserTokenRequest& request, const CreateUserTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateUserToken(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IecpClient::CreateUserTokenOutcomeCallable IecpClient::CreateUserTokenCallable(const CreateUserTokenRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateUserTokenOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateUserToken(request);
         }
     );
 
@@ -900,6 +1158,49 @@ IecpClient::DeleteEdgeUnitDeployGridItemOutcomeCallable IecpClient::DeleteEdgeUn
     return task->get_future();
 }
 
+IecpClient::DeleteEdgeUnitDevicesOutcome IecpClient::DeleteEdgeUnitDevices(const DeleteEdgeUnitDevicesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteEdgeUnitDevices");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteEdgeUnitDevicesResponse rsp = DeleteEdgeUnitDevicesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteEdgeUnitDevicesOutcome(rsp);
+        else
+            return DeleteEdgeUnitDevicesOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteEdgeUnitDevicesOutcome(outcome.GetError());
+    }
+}
+
+void IecpClient::DeleteEdgeUnitDevicesAsync(const DeleteEdgeUnitDevicesRequest& request, const DeleteEdgeUnitDevicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteEdgeUnitDevices(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IecpClient::DeleteEdgeUnitDevicesOutcomeCallable IecpClient::DeleteEdgeUnitDevicesCallable(const DeleteEdgeUnitDevicesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteEdgeUnitDevicesOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteEdgeUnitDevices(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IecpClient::DeleteEdgeUnitPodOutcome IecpClient::DeleteEdgeUnitPod(const DeleteEdgeUnitPodRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteEdgeUnitPod");
@@ -936,6 +1237,135 @@ IecpClient::DeleteEdgeUnitPodOutcomeCallable IecpClient::DeleteEdgeUnitPodCallab
         [this, request]()
         {
             return this->DeleteEdgeUnitPod(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IecpClient::DeleteIotDeviceOutcome IecpClient::DeleteIotDevice(const DeleteIotDeviceRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteIotDevice");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteIotDeviceResponse rsp = DeleteIotDeviceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteIotDeviceOutcome(rsp);
+        else
+            return DeleteIotDeviceOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteIotDeviceOutcome(outcome.GetError());
+    }
+}
+
+void IecpClient::DeleteIotDeviceAsync(const DeleteIotDeviceRequest& request, const DeleteIotDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteIotDevice(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IecpClient::DeleteIotDeviceOutcomeCallable IecpClient::DeleteIotDeviceCallable(const DeleteIotDeviceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteIotDeviceOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteIotDevice(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IecpClient::DeleteIotDeviceBatchOutcome IecpClient::DeleteIotDeviceBatch(const DeleteIotDeviceBatchRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteIotDeviceBatch");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteIotDeviceBatchResponse rsp = DeleteIotDeviceBatchResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteIotDeviceBatchOutcome(rsp);
+        else
+            return DeleteIotDeviceBatchOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteIotDeviceBatchOutcome(outcome.GetError());
+    }
+}
+
+void IecpClient::DeleteIotDeviceBatchAsync(const DeleteIotDeviceBatchRequest& request, const DeleteIotDeviceBatchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteIotDeviceBatch(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IecpClient::DeleteIotDeviceBatchOutcomeCallable IecpClient::DeleteIotDeviceBatchCallable(const DeleteIotDeviceBatchRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteIotDeviceBatchOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteIotDeviceBatch(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IecpClient::DeleteMessageRouteOutcome IecpClient::DeleteMessageRoute(const DeleteMessageRouteRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteMessageRoute");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteMessageRouteResponse rsp = DeleteMessageRouteResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteMessageRouteOutcome(rsp);
+        else
+            return DeleteMessageRouteOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteMessageRouteOutcome(outcome.GetError());
+    }
+}
+
+void IecpClient::DeleteMessageRouteAsync(const DeleteMessageRouteRequest& request, const DeleteMessageRouteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteMessageRoute(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IecpClient::DeleteMessageRouteOutcomeCallable IecpClient::DeleteMessageRouteCallable(const DeleteMessageRouteRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteMessageRouteOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteMessageRoute(request);
         }
     );
 
@@ -1373,6 +1803,49 @@ IecpClient::DescribeConfigMapsOutcomeCallable IecpClient::DescribeConfigMapsCall
     return task->get_future();
 }
 
+IecpClient::DescribeDracoEdgeNodeInstallerOutcome IecpClient::DescribeDracoEdgeNodeInstaller(const DescribeDracoEdgeNodeInstallerRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDracoEdgeNodeInstaller");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDracoEdgeNodeInstallerResponse rsp = DescribeDracoEdgeNodeInstallerResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDracoEdgeNodeInstallerOutcome(rsp);
+        else
+            return DescribeDracoEdgeNodeInstallerOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDracoEdgeNodeInstallerOutcome(outcome.GetError());
+    }
+}
+
+void IecpClient::DescribeDracoEdgeNodeInstallerAsync(const DescribeDracoEdgeNodeInstallerRequest& request, const DescribeDracoEdgeNodeInstallerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDracoEdgeNodeInstaller(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IecpClient::DescribeDracoEdgeNodeInstallerOutcomeCallable IecpClient::DescribeDracoEdgeNodeInstallerCallable(const DescribeDracoEdgeNodeInstallerRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDracoEdgeNodeInstallerOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDracoEdgeNodeInstaller(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IecpClient::DescribeEdgeAgentNodeInstallerOutcome IecpClient::DescribeEdgeAgentNodeInstaller(const DescribeEdgeAgentNodeInstallerRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeEdgeAgentNodeInstaller");
@@ -1588,6 +2061,49 @@ IecpClient::DescribeEdgeNodePodsOutcomeCallable IecpClient::DescribeEdgeNodePods
     return task->get_future();
 }
 
+IecpClient::DescribeEdgeNodeRemarkListOutcome IecpClient::DescribeEdgeNodeRemarkList(const DescribeEdgeNodeRemarkListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeEdgeNodeRemarkList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeEdgeNodeRemarkListResponse rsp = DescribeEdgeNodeRemarkListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeEdgeNodeRemarkListOutcome(rsp);
+        else
+            return DescribeEdgeNodeRemarkListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeEdgeNodeRemarkListOutcome(outcome.GetError());
+    }
+}
+
+void IecpClient::DescribeEdgeNodeRemarkListAsync(const DescribeEdgeNodeRemarkListRequest& request, const DescribeEdgeNodeRemarkListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeEdgeNodeRemarkList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IecpClient::DescribeEdgeNodeRemarkListOutcomeCallable IecpClient::DescribeEdgeNodeRemarkListCallable(const DescribeEdgeNodeRemarkListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeEdgeNodeRemarkListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeEdgeNodeRemarkList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IecpClient::DescribeEdgeNodesOutcome IecpClient::DescribeEdgeNodes(const DescribeEdgeNodesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeEdgeNodes");
@@ -1710,6 +2226,49 @@ IecpClient::DescribeEdgePodOutcomeCallable IecpClient::DescribeEdgePodCallable(c
         [this, request]()
         {
             return this->DescribeEdgePod(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IecpClient::DescribeEdgeSnNodesOutcome IecpClient::DescribeEdgeSnNodes(const DescribeEdgeSnNodesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeEdgeSnNodes");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeEdgeSnNodesResponse rsp = DescribeEdgeSnNodesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeEdgeSnNodesOutcome(rsp);
+        else
+            return DescribeEdgeSnNodesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeEdgeSnNodesOutcome(outcome.GetError());
+    }
+}
+
+void IecpClient::DescribeEdgeSnNodesAsync(const DescribeEdgeSnNodesRequest& request, const DescribeEdgeSnNodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeEdgeSnNodes(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IecpClient::DescribeEdgeSnNodesOutcomeCallable IecpClient::DescribeEdgeSnNodesCallable(const DescribeEdgeSnNodesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeEdgeSnNodesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeEdgeSnNodes(request);
         }
     );
 
@@ -2534,6 +3093,135 @@ IecpClient::DescribeEdgeUnitsCloudOutcomeCallable IecpClient::DescribeEdgeUnitsC
     return task->get_future();
 }
 
+IecpClient::DescribeIotDeviceOutcome IecpClient::DescribeIotDevice(const DescribeIotDeviceRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeIotDevice");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeIotDeviceResponse rsp = DescribeIotDeviceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeIotDeviceOutcome(rsp);
+        else
+            return DescribeIotDeviceOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeIotDeviceOutcome(outcome.GetError());
+    }
+}
+
+void IecpClient::DescribeIotDeviceAsync(const DescribeIotDeviceRequest& request, const DescribeIotDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeIotDevice(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IecpClient::DescribeIotDeviceOutcomeCallable IecpClient::DescribeIotDeviceCallable(const DescribeIotDeviceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeIotDeviceOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeIotDevice(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IecpClient::DescribeIotDevicesOutcome IecpClient::DescribeIotDevices(const DescribeIotDevicesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeIotDevices");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeIotDevicesResponse rsp = DescribeIotDevicesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeIotDevicesOutcome(rsp);
+        else
+            return DescribeIotDevicesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeIotDevicesOutcome(outcome.GetError());
+    }
+}
+
+void IecpClient::DescribeIotDevicesAsync(const DescribeIotDevicesRequest& request, const DescribeIotDevicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeIotDevices(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IecpClient::DescribeIotDevicesOutcomeCallable IecpClient::DescribeIotDevicesCallable(const DescribeIotDevicesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeIotDevicesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeIotDevices(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IecpClient::DescribeMessageRouteListOutcome IecpClient::DescribeMessageRouteList(const DescribeMessageRouteListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMessageRouteList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMessageRouteListResponse rsp = DescribeMessageRouteListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMessageRouteListOutcome(rsp);
+        else
+            return DescribeMessageRouteListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMessageRouteListOutcome(outcome.GetError());
+    }
+}
+
+void IecpClient::DescribeMessageRouteListAsync(const DescribeMessageRouteListRequest& request, const DescribeMessageRouteListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeMessageRouteList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IecpClient::DescribeMessageRouteListOutcomeCallable IecpClient::DescribeMessageRouteListCallable(const DescribeMessageRouteListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeMessageRouteListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeMessageRouteList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IecpClient::DescribeMonitorMetricsOutcome IecpClient::DescribeMonitorMetrics(const DescribeMonitorMetricsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeMonitorMetrics");
@@ -2921,6 +3609,49 @@ IecpClient::DescribeSecretsOutcomeCallable IecpClient::DescribeSecretsCallable(c
     return task->get_future();
 }
 
+IecpClient::DescribeYeheResourceLimitOutcome IecpClient::DescribeYeheResourceLimit(const DescribeYeheResourceLimitRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeYeheResourceLimit");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeYeheResourceLimitResponse rsp = DescribeYeheResourceLimitResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeYeheResourceLimitOutcome(rsp);
+        else
+            return DescribeYeheResourceLimitOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeYeheResourceLimitOutcome(outcome.GetError());
+    }
+}
+
+void IecpClient::DescribeYeheResourceLimitAsync(const DescribeYeheResourceLimitRequest& request, const DescribeYeheResourceLimitAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeYeheResourceLimit(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IecpClient::DescribeYeheResourceLimitOutcomeCallable IecpClient::DescribeYeheResourceLimitCallable(const DescribeYeheResourceLimitRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeYeheResourceLimitOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeYeheResourceLimit(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IecpClient::GetMarketComponentOutcome IecpClient::GetMarketComponent(const GetMarketComponentRequest &request)
 {
     auto outcome = MakeRequest(request, "GetMarketComponent");
@@ -3129,6 +3860,49 @@ IecpClient::ModifyConfigMapOutcomeCallable IecpClient::ModifyConfigMapCallable(c
         [this, request]()
         {
             return this->ModifyConfigMap(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IecpClient::ModifyEdgeDracoNodeOutcome IecpClient::ModifyEdgeDracoNode(const ModifyEdgeDracoNodeRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyEdgeDracoNode");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyEdgeDracoNodeResponse rsp = ModifyEdgeDracoNodeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyEdgeDracoNodeOutcome(rsp);
+        else
+            return ModifyEdgeDracoNodeOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyEdgeDracoNodeOutcome(outcome.GetError());
+    }
+}
+
+void IecpClient::ModifyEdgeDracoNodeAsync(const ModifyEdgeDracoNodeRequest& request, const ModifyEdgeDracoNodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyEdgeDracoNode(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IecpClient::ModifyEdgeDracoNodeOutcomeCallable IecpClient::ModifyEdgeDracoNodeCallable(const ModifyEdgeDracoNodeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyEdgeDracoNodeOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyEdgeDracoNode(request);
         }
     );
 
@@ -3351,6 +4125,49 @@ IecpClient::ModifyEdgeUnitApplicationYamlOutcomeCallable IecpClient::ModifyEdgeU
     return task->get_future();
 }
 
+IecpClient::ModifyEdgeUnitCloudApiOutcome IecpClient::ModifyEdgeUnitCloudApi(const ModifyEdgeUnitCloudApiRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyEdgeUnitCloudApi");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyEdgeUnitCloudApiResponse rsp = ModifyEdgeUnitCloudApiResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyEdgeUnitCloudApiOutcome(rsp);
+        else
+            return ModifyEdgeUnitCloudApiOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyEdgeUnitCloudApiOutcome(outcome.GetError());
+    }
+}
+
+void IecpClient::ModifyEdgeUnitCloudApiAsync(const ModifyEdgeUnitCloudApiRequest& request, const ModifyEdgeUnitCloudApiAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyEdgeUnitCloudApi(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IecpClient::ModifyEdgeUnitCloudApiOutcomeCallable IecpClient::ModifyEdgeUnitCloudApiCallable(const ModifyEdgeUnitCloudApiRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyEdgeUnitCloudApiOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyEdgeUnitCloudApi(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IecpClient::ModifyEdgeUnitDeployGridItemOutcome IecpClient::ModifyEdgeUnitDeployGridItem(const ModifyEdgeUnitDeployGridItemRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyEdgeUnitDeployGridItem");
@@ -3387,6 +4204,49 @@ IecpClient::ModifyEdgeUnitDeployGridItemOutcomeCallable IecpClient::ModifyEdgeUn
         [this, request]()
         {
             return this->ModifyEdgeUnitDeployGridItem(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IecpClient::ModifyIotDeviceOutcome IecpClient::ModifyIotDevice(const ModifyIotDeviceRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyIotDevice");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyIotDeviceResponse rsp = ModifyIotDeviceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyIotDeviceOutcome(rsp);
+        else
+            return ModifyIotDeviceOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyIotDeviceOutcome(outcome.GetError());
+    }
+}
+
+void IecpClient::ModifyIotDeviceAsync(const ModifyIotDeviceRequest& request, const ModifyIotDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyIotDevice(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IecpClient::ModifyIotDeviceOutcomeCallable IecpClient::ModifyIotDeviceCallable(const ModifyIotDeviceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyIotDeviceOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyIotDevice(request);
         }
     );
 
@@ -3516,6 +4376,49 @@ IecpClient::RedeployEdgeUnitApplicationOutcomeCallable IecpClient::RedeployEdgeU
         [this, request]()
         {
             return this->RedeployEdgeUnitApplication(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IecpClient::SetRouteOnOffOutcome IecpClient::SetRouteOnOff(const SetRouteOnOffRequest &request)
+{
+    auto outcome = MakeRequest(request, "SetRouteOnOff");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SetRouteOnOffResponse rsp = SetRouteOnOffResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SetRouteOnOffOutcome(rsp);
+        else
+            return SetRouteOnOffOutcome(o.GetError());
+    }
+    else
+    {
+        return SetRouteOnOffOutcome(outcome.GetError());
+    }
+}
+
+void IecpClient::SetRouteOnOffAsync(const SetRouteOnOffRequest& request, const SetRouteOnOffAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SetRouteOnOff(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IecpClient::SetRouteOnOffOutcomeCallable IecpClient::SetRouteOnOffCallable(const SetRouteOnOffRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SetRouteOnOffOutcome()>>(
+        [this, request]()
+        {
+            return this->SetRouteOnOff(request);
         }
     );
 

@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool PolicyIdHasBeenSet() const;
 
                     /**
-                     * 获取策略版本号
-                     * @return VersionId 策略版本号
+                     * 获取策略版本号，可由ListPolicyVersions获取
+                     * @return VersionId 策略版本号，可由ListPolicyVersions获取
                      */
                     uint64_t GetVersionId() const;
 
                     /**
-                     * 设置策略版本号
-                     * @param VersionId 策略版本号
+                     * 设置策略版本号，可由ListPolicyVersions获取
+                     * @param VersionId 策略版本号，可由ListPolicyVersions获取
                      */
                     void SetVersionId(const uint64_t& _versionId);
 
@@ -87,7 +87,7 @@ namespace TencentCloud
                     bool m_policyIdHasBeenSet;
 
                     /**
-                     * 策略版本号
+                     * 策略版本号，可由ListPolicyVersions获取
                      */
                     uint64_t m_versionId;
                     bool m_versionIdHasBeenSet;

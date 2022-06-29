@@ -66,6 +66,7 @@ set(tcss_public_header_model
   include/tencentcloud/tcss/v20201101/model/ComplianceK8SDetailInfo.h
   include/tencentcloud/tcss/v20201101/model/AccessControlEventDescription.h
   include/tencentcloud/tcss/v20201101/model/DescribeAccessControlEventsResponse.h
+  include/tencentcloud/tcss/v20201101/model/ProcessBaseInfo.h
   include/tencentcloud/tcss/v20201101/model/ComplianceAssetDetailInfo.h
   include/tencentcloud/tcss/v20201101/model/DescribeRiskSyscallEventsResponse.h
   include/tencentcloud/tcss/v20201101/model/DescribeAssetImageRiskListResponse.h
@@ -193,6 +194,7 @@ set(tcss_public_header_model
   include/tencentcloud/tcss/v20201101/model/ReverseShellWhiteListBaseInfo.h
   include/tencentcloud/tcss/v20201101/model/AccessControlRuleInfo.h
   include/tencentcloud/tcss/v20201101/model/DescribeAssetHostListResponse.h
+  include/tencentcloud/tcss/v20201101/model/ImageRepoInfo.h
   include/tencentcloud/tcss/v20201101/model/CreateAssetImageRegistryScanTaskResponse.h
   include/tencentcloud/tcss/v20201101/model/PortInfo.h
   include/tencentcloud/tcss/v20201101/model/DescribeAssetImageRegistrySummaryRequest.h
@@ -485,6 +487,7 @@ set(tcss_src
   src/v20201101/model/ComplianceK8SDetailInfo.cpp
   src/v20201101/model/AccessControlEventDescription.cpp
   src/v20201101/model/DescribeAccessControlEventsResponse.cpp
+  src/v20201101/model/ProcessBaseInfo.cpp
   src/v20201101/model/ComplianceAssetDetailInfo.cpp
   src/v20201101/model/DescribeRiskSyscallEventsResponse.cpp
   src/v20201101/model/DescribeAssetImageRiskListResponse.cpp
@@ -612,6 +615,7 @@ set(tcss_src
   src/v20201101/model/ReverseShellWhiteListBaseInfo.cpp
   src/v20201101/model/AccessControlRuleInfo.cpp
   src/v20201101/model/DescribeAssetHostListResponse.cpp
+  src/v20201101/model/ImageRepoInfo.cpp
   src/v20201101/model/CreateAssetImageRegistryScanTaskResponse.cpp
   src/v20201101/model/PortInfo.cpp
   src/v20201101/model/DescribeAssetImageRegistrySummaryRequest.cpp

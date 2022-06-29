@@ -25,7 +25,10 @@ using namespace std;
 ImportMediaRequest::ImportMediaRequest() :
     m_uRLHasBeenSet(false),
     m_mD5HasBeenSet(false),
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_writeBackCosPathHasBeenSet(false),
+    m_labelHasBeenSet(false),
+    m_callbackURLHasBeenSet(false)
 {
 }
 
@@ -58,6 +61,30 @@ string ImportMediaRequest::ToJsonString() const
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_writeBackCosPathHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WriteBackCosPath";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_writeBackCosPath.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_labelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Label";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_label.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_callbackURLHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CallbackURL";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_callbackURL.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -114,6 +141,54 @@ void ImportMediaRequest::SetName(const string& _name)
 bool ImportMediaRequest::NameHasBeenSet() const
 {
     return m_nameHasBeenSet;
+}
+
+string ImportMediaRequest::GetWriteBackCosPath() const
+{
+    return m_writeBackCosPath;
+}
+
+void ImportMediaRequest::SetWriteBackCosPath(const string& _writeBackCosPath)
+{
+    m_writeBackCosPath = _writeBackCosPath;
+    m_writeBackCosPathHasBeenSet = true;
+}
+
+bool ImportMediaRequest::WriteBackCosPathHasBeenSet() const
+{
+    return m_writeBackCosPathHasBeenSet;
+}
+
+string ImportMediaRequest::GetLabel() const
+{
+    return m_label;
+}
+
+void ImportMediaRequest::SetLabel(const string& _label)
+{
+    m_label = _label;
+    m_labelHasBeenSet = true;
+}
+
+bool ImportMediaRequest::LabelHasBeenSet() const
+{
+    return m_labelHasBeenSet;
+}
+
+string ImportMediaRequest::GetCallbackURL() const
+{
+    return m_callbackURL;
+}
+
+void ImportMediaRequest::SetCallbackURL(const string& _callbackURL)
+{
+    m_callbackURL = _callbackURL;
+    m_callbackURLHasBeenSet = true;
+}
+
+bool ImportMediaRequest::CallbackURLHasBeenSet() const
+{
+    return m_callbackURLHasBeenSet;
 }
 
 

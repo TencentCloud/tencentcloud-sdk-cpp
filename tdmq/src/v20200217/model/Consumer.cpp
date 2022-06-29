@@ -24,7 +24,8 @@ Consumer::Consumer() :
     m_connectedSinceHasBeenSet(false),
     m_consumerAddrHasBeenSet(false),
     m_consumerNameHasBeenSet(false),
-    m_clientVersionHasBeenSet(false)
+    m_clientVersionHasBeenSet(false),
+    m_partitionHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome Consumer::Deserialize(const rapidjson::Value &value)
         m_clientVersionHasBeenSet = true;
     }
 
+    if (value.HasMember("Partition") && !value["Partition"].IsNull())
+    {
+        if (!value["Partition"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Consumer.Partition` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_partition = value["Partition"].GetInt64();
+        m_partitionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +121,14 @@ void Consumer::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "ClientVersion";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_clientVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_partitionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Partition";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_partition, allocator);
     }
 
 }
@@ -177,5 +196,21 @@ void Consumer::SetClientVersion(const string& _clientVersion)
 bool Consumer::ClientVersionHasBeenSet() const
 {
     return m_clientVersionHasBeenSet;
+}
+
+int64_t Consumer::GetPartition() const
+{
+    return m_partition;
+}
+
+void Consumer::SetPartition(const int64_t& _partition)
+{
+    m_partition = _partition;
+    m_partitionHasBeenSet = true;
+}
+
+bool Consumer::PartitionHasBeenSet() const
+{
+    return m_partitionHasBeenSet;
 }
 

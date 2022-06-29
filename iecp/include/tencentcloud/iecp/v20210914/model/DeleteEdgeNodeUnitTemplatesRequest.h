@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool EdgeUnitIdHasBeenSet() const;
 
                     /**
-                     * 获取删除的NodeUnit模版ID列表
-                     * @return NodeUnitTemplateIDs 删除的NodeUnit模版ID列表
+                     * 获取删除的NodeUnit模板ID列表
+                     * @return NodeUnitTemplateIDs 删除的NodeUnit模板ID列表
                      */
                     std::vector<uint64_t> GetNodeUnitTemplateIDs() const;
 
                     /**
-                     * 设置删除的NodeUnit模版ID列表
-                     * @param NodeUnitTemplateIDs 删除的NodeUnit模版ID列表
+                     * 设置删除的NodeUnit模板ID列表
+                     * @param NodeUnitTemplateIDs 删除的NodeUnit模板ID列表
                      */
                     void SetNodeUnitTemplateIDs(const std::vector<uint64_t>& _nodeUnitTemplateIDs);
 
@@ -87,7 +87,7 @@ namespace TencentCloud
                     bool m_edgeUnitIdHasBeenSet;
 
                     /**
-                     * 删除的NodeUnit模版ID列表
+                     * 删除的NodeUnit模板ID列表
                      */
                     std::vector<uint64_t> m_nodeUnitTemplateIDs;
                     bool m_nodeUnitTemplateIDsHasBeenSet;

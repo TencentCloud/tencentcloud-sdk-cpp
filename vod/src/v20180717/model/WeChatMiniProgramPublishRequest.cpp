@@ -24,8 +24,8 @@ using namespace std;
 
 WeChatMiniProgramPublishRequest::WeChatMiniProgramPublishRequest() :
     m_fileIdHasBeenSet(false),
-    m_sourceDefinitionHasBeenSet(false),
-    m_subAppIdHasBeenSet(false)
+    m_subAppIdHasBeenSet(false),
+    m_sourceDefinitionHasBeenSet(false)
 {
 }
 
@@ -44,20 +44,20 @@ string WeChatMiniProgramPublishRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_fileId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_sourceDefinitionHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SourceDefinition";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_sourceDefinition, allocator);
-    }
-
     if (m_subAppIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SubAppId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_subAppId, allocator);
+    }
+
+    if (m_sourceDefinitionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SourceDefinition";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_sourceDefinition, allocator);
     }
 
 
@@ -84,22 +84,6 @@ bool WeChatMiniProgramPublishRequest::FileIdHasBeenSet() const
     return m_fileIdHasBeenSet;
 }
 
-int64_t WeChatMiniProgramPublishRequest::GetSourceDefinition() const
-{
-    return m_sourceDefinition;
-}
-
-void WeChatMiniProgramPublishRequest::SetSourceDefinition(const int64_t& _sourceDefinition)
-{
-    m_sourceDefinition = _sourceDefinition;
-    m_sourceDefinitionHasBeenSet = true;
-}
-
-bool WeChatMiniProgramPublishRequest::SourceDefinitionHasBeenSet() const
-{
-    return m_sourceDefinitionHasBeenSet;
-}
-
 uint64_t WeChatMiniProgramPublishRequest::GetSubAppId() const
 {
     return m_subAppId;
@@ -114,6 +98,22 @@ void WeChatMiniProgramPublishRequest::SetSubAppId(const uint64_t& _subAppId)
 bool WeChatMiniProgramPublishRequest::SubAppIdHasBeenSet() const
 {
     return m_subAppIdHasBeenSet;
+}
+
+int64_t WeChatMiniProgramPublishRequest::GetSourceDefinition() const
+{
+    return m_sourceDefinition;
+}
+
+void WeChatMiniProgramPublishRequest::SetSourceDefinition(const int64_t& _sourceDefinition)
+{
+    m_sourceDefinition = _sourceDefinition;
+    m_sourceDefinitionHasBeenSet = true;
+}
+
+bool WeChatMiniProgramPublishRequest::SourceDefinitionHasBeenSet() const
+{
+    return m_sourceDefinitionHasBeenSet;
 }
 
 

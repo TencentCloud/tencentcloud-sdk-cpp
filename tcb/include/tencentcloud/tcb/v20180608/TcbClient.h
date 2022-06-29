@@ -153,6 +153,8 @@
 #include <tencentcloud/tcb/v20180608/model/EstablishCloudBaseRunServerResponse.h>
 #include <tencentcloud/tcb/v20180608/model/EstablishWxGatewayRouteRequest.h>
 #include <tencentcloud/tcb/v20180608/model/EstablishWxGatewayRouteResponse.h>
+#include <tencentcloud/tcb/v20180608/model/FreezeCloudBaseRunServersRequest.h>
+#include <tencentcloud/tcb/v20180608/model/FreezeCloudBaseRunServersResponse.h>
 #include <tencentcloud/tcb/v20180608/model/ModifyCloudBaseRunServerFlowConfRequest.h>
 #include <tencentcloud/tcb/v20180608/model/ModifyCloudBaseRunServerFlowConfResponse.h>
 #include <tencentcloud/tcb/v20180608/model/ModifyCloudBaseRunServerVersionRequest.h>
@@ -169,10 +171,14 @@
 #include <tencentcloud/tcb/v20180608/model/ReplaceActivityRecordResponse.h>
 #include <tencentcloud/tcb/v20180608/model/RollUpdateCloudBaseRunServerVersionRequest.h>
 #include <tencentcloud/tcb/v20180608/model/RollUpdateCloudBaseRunServerVersionResponse.h>
+#include <tencentcloud/tcb/v20180608/model/SearchClsLogRequest.h>
+#include <tencentcloud/tcb/v20180608/model/SearchClsLogResponse.h>
 #include <tencentcloud/tcb/v20180608/model/TurnOffStandaloneGatewayRequest.h>
 #include <tencentcloud/tcb/v20180608/model/TurnOffStandaloneGatewayResponse.h>
 #include <tencentcloud/tcb/v20180608/model/TurnOnStandaloneGatewayRequest.h>
 #include <tencentcloud/tcb/v20180608/model/TurnOnStandaloneGatewayResponse.h>
+#include <tencentcloud/tcb/v20180608/model/UnfreezeCloudBaseRunServersRequest.h>
+#include <tencentcloud/tcb/v20180608/model/UnfreezeCloudBaseRunServersResponse.h>
 
 
 namespace TencentCloud
@@ -382,6 +388,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::EstablishWxGatewayRouteResponse> EstablishWxGatewayRouteOutcome;
                 typedef std::future<EstablishWxGatewayRouteOutcome> EstablishWxGatewayRouteOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::EstablishWxGatewayRouteRequest&, EstablishWxGatewayRouteOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EstablishWxGatewayRouteAsyncHandler;
+                typedef Outcome<Core::Error, Model::FreezeCloudBaseRunServersResponse> FreezeCloudBaseRunServersOutcome;
+                typedef std::future<FreezeCloudBaseRunServersOutcome> FreezeCloudBaseRunServersOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::FreezeCloudBaseRunServersRequest&, FreezeCloudBaseRunServersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> FreezeCloudBaseRunServersAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyCloudBaseRunServerFlowConfResponse> ModifyCloudBaseRunServerFlowConfOutcome;
                 typedef std::future<ModifyCloudBaseRunServerFlowConfOutcome> ModifyCloudBaseRunServerFlowConfOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::ModifyCloudBaseRunServerFlowConfRequest&, ModifyCloudBaseRunServerFlowConfOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCloudBaseRunServerFlowConfAsyncHandler;
@@ -406,12 +415,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RollUpdateCloudBaseRunServerVersionResponse> RollUpdateCloudBaseRunServerVersionOutcome;
                 typedef std::future<RollUpdateCloudBaseRunServerVersionOutcome> RollUpdateCloudBaseRunServerVersionOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::RollUpdateCloudBaseRunServerVersionRequest&, RollUpdateCloudBaseRunServerVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RollUpdateCloudBaseRunServerVersionAsyncHandler;
+                typedef Outcome<Core::Error, Model::SearchClsLogResponse> SearchClsLogOutcome;
+                typedef std::future<SearchClsLogOutcome> SearchClsLogOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::SearchClsLogRequest&, SearchClsLogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SearchClsLogAsyncHandler;
                 typedef Outcome<Core::Error, Model::TurnOffStandaloneGatewayResponse> TurnOffStandaloneGatewayOutcome;
                 typedef std::future<TurnOffStandaloneGatewayOutcome> TurnOffStandaloneGatewayOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::TurnOffStandaloneGatewayRequest&, TurnOffStandaloneGatewayOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TurnOffStandaloneGatewayAsyncHandler;
                 typedef Outcome<Core::Error, Model::TurnOnStandaloneGatewayResponse> TurnOnStandaloneGatewayOutcome;
                 typedef std::future<TurnOnStandaloneGatewayOutcome> TurnOnStandaloneGatewayOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::TurnOnStandaloneGatewayRequest&, TurnOnStandaloneGatewayOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TurnOnStandaloneGatewayAsyncHandler;
+                typedef Outcome<Core::Error, Model::UnfreezeCloudBaseRunServersResponse> UnfreezeCloudBaseRunServersOutcome;
+                typedef std::future<UnfreezeCloudBaseRunServersOutcome> UnfreezeCloudBaseRunServersOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::UnfreezeCloudBaseRunServersRequest&, UnfreezeCloudBaseRunServersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UnfreezeCloudBaseRunServersAsyncHandler;
 
 
 
@@ -1004,6 +1019,15 @@ namespace TencentCloud
                 EstablishWxGatewayRouteOutcomeCallable EstablishWxGatewayRouteCallable(const Model::EstablishWxGatewayRouteRequest& request);
 
                 /**
+                 *批量冻结
+                 * @param req FreezeCloudBaseRunServersRequest
+                 * @return FreezeCloudBaseRunServersOutcome
+                 */
+                FreezeCloudBaseRunServersOutcome FreezeCloudBaseRunServers(const Model::FreezeCloudBaseRunServersRequest &request);
+                void FreezeCloudBaseRunServersAsync(const Model::FreezeCloudBaseRunServersRequest& request, const FreezeCloudBaseRunServersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                FreezeCloudBaseRunServersOutcomeCallable FreezeCloudBaseRunServersCallable(const Model::FreezeCloudBaseRunServersRequest& request);
+
+                /**
                  *修改容器内的版本流量配置
                  * @param req ModifyCloudBaseRunServerFlowConfRequest
                  * @return ModifyCloudBaseRunServerFlowConfOutcome
@@ -1076,6 +1100,15 @@ namespace TencentCloud
                 RollUpdateCloudBaseRunServerVersionOutcomeCallable RollUpdateCloudBaseRunServerVersionCallable(const Model::RollUpdateCloudBaseRunServerVersionRequest& request);
 
                 /**
+                 *搜索CLS日志，TCB角色秘钥访问
+                 * @param req SearchClsLogRequest
+                 * @return SearchClsLogOutcome
+                 */
+                SearchClsLogOutcome SearchClsLog(const Model::SearchClsLogRequest &request);
+                void SearchClsLogAsync(const Model::SearchClsLogRequest& request, const SearchClsLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SearchClsLogOutcomeCallable SearchClsLogCallable(const Model::SearchClsLogRequest& request);
+
+                /**
                  *本接口（TurnOffStandaloneGateway）用于关闭小租户网关。
                  * @param req TurnOffStandaloneGatewayRequest
                  * @return TurnOffStandaloneGatewayOutcome
@@ -1092,6 +1125,15 @@ namespace TencentCloud
                 TurnOnStandaloneGatewayOutcome TurnOnStandaloneGateway(const Model::TurnOnStandaloneGatewayRequest &request);
                 void TurnOnStandaloneGatewayAsync(const Model::TurnOnStandaloneGatewayRequest& request, const TurnOnStandaloneGatewayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 TurnOnStandaloneGatewayOutcomeCallable TurnOnStandaloneGatewayCallable(const Model::TurnOnStandaloneGatewayRequest& request);
+
+                /**
+                 *批量解冻服务
+                 * @param req UnfreezeCloudBaseRunServersRequest
+                 * @return UnfreezeCloudBaseRunServersOutcome
+                 */
+                UnfreezeCloudBaseRunServersOutcome UnfreezeCloudBaseRunServers(const Model::UnfreezeCloudBaseRunServersRequest &request);
+                void UnfreezeCloudBaseRunServersAsync(const Model::UnfreezeCloudBaseRunServersRequest& request, const UnfreezeCloudBaseRunServersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UnfreezeCloudBaseRunServersOutcomeCallable UnfreezeCloudBaseRunServersCallable(const Model::UnfreezeCloudBaseRunServersRequest& request);
 
             };
         }

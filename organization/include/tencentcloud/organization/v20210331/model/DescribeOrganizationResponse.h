@@ -212,6 +212,48 @@ namespace TencentCloud
                      */
                     bool IsAllowQuitHasBeenSet() const;
 
+                    /**
+                     * 获取代付者Uin
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PayUin 代付者Uin
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetPayUin() const;
+
+                    /**
+                     * 判断参数 PayUin 是否已赋值
+                     * @return PayUin 是否已赋值
+                     */
+                    bool PayUinHasBeenSet() const;
+
+                    /**
+                     * 获取代付者名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PayName 代付者名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetPayName() const;
+
+                    /**
+                     * 判断参数 PayName 是否已赋值
+                     * @return PayName 是否已赋值
+                     */
+                    bool PayNameHasBeenSet() const;
+
+                    /**
+                     * 获取是否集团服务委派管理员 true-是、false-否
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsAssignManager 是否集团服务委派管理员 true-是、false-否
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetIsAssignManager() const;
+
+                    /**
+                     * 判断参数 IsAssignManager 是否已赋值
+                     * @return IsAssignManager 是否已赋值
+                     */
+                    bool IsAssignManagerHasBeenSet() const;
+
                 private:
 
                     /**
@@ -297,6 +339,27 @@ namespace TencentCloud
                      */
                     std::string m_isAllowQuit;
                     bool m_isAllowQuitHasBeenSet;
+
+                    /**
+                     * 代付者Uin
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_payUin;
+                    bool m_payUinHasBeenSet;
+
+                    /**
+                     * 代付者名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_payName;
+                    bool m_payNameHasBeenSet;
+
+                    /**
+                     * 是否集团服务委派管理员 true-是、false-否
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_isAssignManager;
+                    bool m_isAssignManagerHasBeenSet;
 
                 };
             }

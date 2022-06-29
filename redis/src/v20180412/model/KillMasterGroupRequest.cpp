@@ -24,7 +24,8 @@ using namespace std;
 
 KillMasterGroupRequest::KillMasterGroupRequest() :
     m_instanceIdHasBeenSet(false),
-    m_passwordHasBeenSet(false)
+    m_passwordHasBeenSet(false),
+    m_shardIdsHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,19 @@ string KillMasterGroupRequest::ToJsonString() const
         string key = "Password";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_password.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_shardIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ShardIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_shardIds.begin(); itr != m_shardIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
     }
 
 
@@ -89,6 +103,22 @@ void KillMasterGroupRequest::SetPassword(const string& _password)
 bool KillMasterGroupRequest::PasswordHasBeenSet() const
 {
     return m_passwordHasBeenSet;
+}
+
+vector<int64_t> KillMasterGroupRequest::GetShardIds() const
+{
+    return m_shardIds;
+}
+
+void KillMasterGroupRequest::SetShardIds(const vector<int64_t>& _shardIds)
+{
+    m_shardIds = _shardIds;
+    m_shardIdsHasBeenSet = true;
+}
+
+bool KillMasterGroupRequest::ShardIdsHasBeenSet() const
+{
+    return m_shardIdsHasBeenSet;
 }
 
 

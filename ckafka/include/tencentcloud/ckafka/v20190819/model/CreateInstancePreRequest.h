@@ -98,14 +98,18 @@ namespace TencentCloud
                     bool PeriodHasBeenSet() const;
 
                     /**
-                     * 获取实例规格，专业版默认填写1。1：入门型 ，2： 标准型，3 ：进阶型，4 ：容量型，5： 高阶型1，6：高阶性2, 7： 高阶型3,8： 高阶型4， 9 ：独占型。
-                     * @return InstanceType 实例规格，专业版默认填写1。1：入门型 ，2： 标准型，3 ：进阶型，4 ：容量型，5： 高阶型1，6：高阶性2, 7： 高阶型3,8： 高阶型4， 9 ：独占型。
+                     * 获取实例规格说明 专业版实例[所有规格]填写1.
+标准版实例 ([入门型]填写1，[标准型]填写2，[进阶型]填写3，[容量型]填写4，[高阶型1]填写5，[高阶性2]填写6,[高阶型3]填写7,[高阶型4]填写8，[独占型]填写9。
+                     * @return InstanceType 实例规格说明 专业版实例[所有规格]填写1.
+标准版实例 ([入门型]填写1，[标准型]填写2，[进阶型]填写3，[容量型]填写4，[高阶型1]填写5，[高阶性2]填写6,[高阶型3]填写7,[高阶型4]填写8，[独占型]填写9。
                      */
                     int64_t GetInstanceType() const;
 
                     /**
-                     * 设置实例规格，专业版默认填写1。1：入门型 ，2： 标准型，3 ：进阶型，4 ：容量型，5： 高阶型1，6：高阶性2, 7： 高阶型3,8： 高阶型4， 9 ：独占型。
-                     * @param InstanceType 实例规格，专业版默认填写1。1：入门型 ，2： 标准型，3 ：进阶型，4 ：容量型，5： 高阶型1，6：高阶性2, 7： 高阶型3,8： 高阶型4， 9 ：独占型。
+                     * 设置实例规格说明 专业版实例[所有规格]填写1.
+标准版实例 ([入门型]填写1，[标准型]填写2，[进阶型]填写3，[容量型]填写4，[高阶型1]填写5，[高阶性2]填写6,[高阶型3]填写7,[高阶型4]填写8，[独占型]填写9。
+                     * @param InstanceType 实例规格说明 专业版实例[所有规格]填写1.
+标准版实例 ([入门型]填写1，[标准型]填写2，[进阶型]填写3，[容量型]填写4，[高阶型1]填写5，[高阶性2]填写6,[高阶型3]填写7,[高阶型4]填写8，[独占型]填写9。
                      */
                     void SetInstanceType(const int64_t& _instanceType);
 
@@ -206,14 +210,14 @@ namespace TencentCloud
                     bool RenewFlagHasBeenSet() const;
 
                     /**
-                     * 获取支持指定版本Kafka版本（0.10.2/1.1.1/2.4.1） 。指定专业版参数specificationsType=pro
-                     * @return KafkaVersion 支持指定版本Kafka版本（0.10.2/1.1.1/2.4.1） 。指定专业版参数specificationsType=pro
+                     * 获取CKafka版本号[0.10.2、1.1.1、2.4.1], 默认是1.1.1
+                     * @return KafkaVersion CKafka版本号[0.10.2、1.1.1、2.4.1], 默认是1.1.1
                      */
                     std::string GetKafkaVersion() const;
 
                     /**
-                     * 设置支持指定版本Kafka版本（0.10.2/1.1.1/2.4.1） 。指定专业版参数specificationsType=pro
-                     * @param KafkaVersion 支持指定版本Kafka版本（0.10.2/1.1.1/2.4.1） 。指定专业版参数specificationsType=pro
+                     * 设置CKafka版本号[0.10.2、1.1.1、2.4.1], 默认是1.1.1
+                     * @param KafkaVersion CKafka版本号[0.10.2、1.1.1、2.4.1], 默认是1.1.1
                      */
                     void SetKafkaVersion(const std::string& _kafkaVersion);
 
@@ -224,14 +228,14 @@ namespace TencentCloud
                     bool KafkaVersionHasBeenSet() const;
 
                     /**
-                     * 获取专业版必须填写 （专业版：profession、标准版：standard） 默认是standard。专业版填profession
-                     * @return SpecificationsType 专业版必须填写 （专业版：profession、标准版：standard） 默认是standard。专业版填profession
+                     * 获取实例类型: [标准版实例]填写 standard(默认), [专业版实例]填写 profession
+                     * @return SpecificationsType 实例类型: [标准版实例]填写 standard(默认), [专业版实例]填写 profession
                      */
                     std::string GetSpecificationsType() const;
 
                     /**
-                     * 设置专业版必须填写 （专业版：profession、标准版：standard） 默认是standard。专业版填profession
-                     * @param SpecificationsType 专业版必须填写 （专业版：profession、标准版：standard） 默认是standard。专业版填profession
+                     * 设置实例类型: [标准版实例]填写 standard(默认), [专业版实例]填写 profession
+                     * @param SpecificationsType 实例类型: [标准版实例]填写 standard(默认), [专业版实例]填写 profession
                      */
                     void SetSpecificationsType(const std::string& _specificationsType);
 
@@ -331,6 +335,42 @@ namespace TencentCloud
                      */
                     bool DiskTypeHasBeenSet() const;
 
+                    /**
+                     * 获取跨可用区，zoneIds必填
+                     * @return MultiZoneFlag 跨可用区，zoneIds必填
+                     */
+                    bool GetMultiZoneFlag() const;
+
+                    /**
+                     * 设置跨可用区，zoneIds必填
+                     * @param MultiZoneFlag 跨可用区，zoneIds必填
+                     */
+                    void SetMultiZoneFlag(const bool& _multiZoneFlag);
+
+                    /**
+                     * 判断参数 MultiZoneFlag 是否已赋值
+                     * @return MultiZoneFlag 是否已赋值
+                     */
+                    bool MultiZoneFlagHasBeenSet() const;
+
+                    /**
+                     * 获取可用区列表
+                     * @return ZoneIds 可用区列表
+                     */
+                    std::vector<int64_t> GetZoneIds() const;
+
+                    /**
+                     * 设置可用区列表
+                     * @param ZoneIds 可用区列表
+                     */
+                    void SetZoneIds(const std::vector<int64_t>& _zoneIds);
+
+                    /**
+                     * 判断参数 ZoneIds 是否已赋值
+                     * @return ZoneIds 是否已赋值
+                     */
+                    bool ZoneIdsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -352,7 +392,8 @@ namespace TencentCloud
                     bool m_periodHasBeenSet;
 
                     /**
-                     * 实例规格，专业版默认填写1。1：入门型 ，2： 标准型，3 ：进阶型，4 ：容量型，5： 高阶型1，6：高阶性2, 7： 高阶型3,8： 高阶型4， 9 ：独占型。
+                     * 实例规格说明 专业版实例[所有规格]填写1.
+标准版实例 ([入门型]填写1，[标准型]填写2，[进阶型]填写3，[容量型]填写4，[高阶型1]填写5，[高阶性2]填写6,[高阶型3]填写7,[高阶型4]填写8，[独占型]填写9。
                      */
                     int64_t m_instanceType;
                     bool m_instanceTypeHasBeenSet;
@@ -388,13 +429,13 @@ namespace TencentCloud
                     bool m_renewFlagHasBeenSet;
 
                     /**
-                     * 支持指定版本Kafka版本（0.10.2/1.1.1/2.4.1） 。指定专业版参数specificationsType=pro
+                     * CKafka版本号[0.10.2、1.1.1、2.4.1], 默认是1.1.1
                      */
                     std::string m_kafkaVersion;
                     bool m_kafkaVersionHasBeenSet;
 
                     /**
-                     * 专业版必须填写 （专业版：profession、标准版：standard） 默认是standard。专业版填profession
+                     * 实例类型: [标准版实例]填写 standard(默认), [专业版实例]填写 profession
                      */
                     std::string m_specificationsType;
                     bool m_specificationsTypeHasBeenSet;
@@ -428,6 +469,18 @@ namespace TencentCloud
                      */
                     std::string m_diskType;
                     bool m_diskTypeHasBeenSet;
+
+                    /**
+                     * 跨可用区，zoneIds必填
+                     */
+                    bool m_multiZoneFlag;
+                    bool m_multiZoneFlagHasBeenSet;
+
+                    /**
+                     * 可用区列表
+                     */
+                    std::vector<int64_t> m_zoneIds;
+                    bool m_zoneIdsHasBeenSet;
 
                 };
             }

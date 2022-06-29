@@ -298,6 +298,49 @@ TrtcClient::DescribeDetailEventOutcomeCallable TrtcClient::DescribeDetailEventCa
     return task->get_future();
 }
 
+TrtcClient::DescribeExternalTrtcMeasureOutcome TrtcClient::DescribeExternalTrtcMeasure(const DescribeExternalTrtcMeasureRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeExternalTrtcMeasure");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeExternalTrtcMeasureResponse rsp = DescribeExternalTrtcMeasureResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeExternalTrtcMeasureOutcome(rsp);
+        else
+            return DescribeExternalTrtcMeasureOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeExternalTrtcMeasureOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::DescribeExternalTrtcMeasureAsync(const DescribeExternalTrtcMeasureRequest& request, const DescribeExternalTrtcMeasureAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeExternalTrtcMeasure(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrtcClient::DescribeExternalTrtcMeasureOutcomeCallable TrtcClient::DescribeExternalTrtcMeasureCallable(const DescribeExternalTrtcMeasureRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeExternalTrtcMeasureOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeExternalTrtcMeasure(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TrtcClient::DescribeHistoryScaleOutcome TrtcClient::DescribeHistoryScale(const DescribeHistoryScaleRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeHistoryScale");
@@ -463,49 +506,6 @@ TrtcClient::DescribeRoomInformationOutcomeCallable TrtcClient::DescribeRoomInfor
         [this, request]()
         {
             return this->DescribeRoomInformation(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-TrtcClient::DescribeTrtcInteractiveTimeOutcome TrtcClient::DescribeTrtcInteractiveTime(const DescribeTrtcInteractiveTimeRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeTrtcInteractiveTime");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeTrtcInteractiveTimeResponse rsp = DescribeTrtcInteractiveTimeResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeTrtcInteractiveTimeOutcome(rsp);
-        else
-            return DescribeTrtcInteractiveTimeOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeTrtcInteractiveTimeOutcome(outcome.GetError());
-    }
-}
-
-void TrtcClient::DescribeTrtcInteractiveTimeAsync(const DescribeTrtcInteractiveTimeRequest& request, const DescribeTrtcInteractiveTimeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeTrtcInteractiveTime(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-TrtcClient::DescribeTrtcInteractiveTimeOutcomeCallable TrtcClient::DescribeTrtcInteractiveTimeCallable(const DescribeTrtcInteractiveTimeRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeTrtcInteractiveTimeOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeTrtcInteractiveTime(request);
         }
     );
 

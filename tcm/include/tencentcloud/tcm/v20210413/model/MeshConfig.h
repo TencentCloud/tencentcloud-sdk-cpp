@@ -28,6 +28,8 @@
 #include <tencentcloud/tcm/v20210413/model/AccessLogConfig.h>
 #include <tencentcloud/tcm/v20210413/model/PrometheusConfig.h>
 #include <tencentcloud/tcm/v20210413/model/InjectConfig.h>
+#include <tencentcloud/tcm/v20210413/model/TracingConfig.h>
+#include <tencentcloud/tcm/v20210413/model/ResourceRequirements.h>
 
 
 namespace TencentCloud
@@ -126,6 +128,50 @@ namespace TencentCloud
                      */
                     bool InjectHasBeenSet() const;
 
+                    /**
+                     * 获取调用跟踪配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Tracing 调用跟踪配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    TracingConfig GetTracing() const;
+
+                    /**
+                     * 设置调用跟踪配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Tracing 调用跟踪配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTracing(const TracingConfig& _tracing);
+
+                    /**
+                     * 判断参数 Tracing 是否已赋值
+                     * @return Tracing 是否已赋值
+                     */
+                    bool TracingHasBeenSet() const;
+
+                    /**
+                     * 获取Sidecar自定义资源
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SidecarResources Sidecar自定义资源
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ResourceRequirements GetSidecarResources() const;
+
+                    /**
+                     * 设置Sidecar自定义资源
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SidecarResources Sidecar自定义资源
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSidecarResources(const ResourceRequirements& _sidecarResources);
+
+                    /**
+                     * 判断参数 SidecarResources 是否已赋值
+                     * @return SidecarResources 是否已赋值
+                     */
+                    bool SidecarResourcesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -152,6 +198,20 @@ namespace TencentCloud
                      */
                     InjectConfig m_inject;
                     bool m_injectHasBeenSet;
+
+                    /**
+                     * 调用跟踪配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    TracingConfig m_tracing;
+                    bool m_tracingHasBeenSet;
+
+                    /**
+                     * Sidecar自定义资源
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ResourceRequirements m_sidecarResources;
+                    bool m_sidecarResourcesHasBeenSet;
 
                 };
             }

@@ -25,7 +25,9 @@ using namespace std;
 CreateSnapshotRequest::CreateSnapshotRequest() :
     m_diskIdHasBeenSet(false),
     m_snapshotNameHasBeenSet(false),
-    m_deadlineHasBeenSet(false)
+    m_deadlineHasBeenSet(false),
+    m_diskBackupIdHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -58,6 +60,29 @@ string CreateSnapshotRequest::ToJsonString() const
         string key = "Deadline";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_deadline.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_diskBackupIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DiskBackupId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_diskBackupId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -114,6 +139,38 @@ void CreateSnapshotRequest::SetDeadline(const string& _deadline)
 bool CreateSnapshotRequest::DeadlineHasBeenSet() const
 {
     return m_deadlineHasBeenSet;
+}
+
+string CreateSnapshotRequest::GetDiskBackupId() const
+{
+    return m_diskBackupId;
+}
+
+void CreateSnapshotRequest::SetDiskBackupId(const string& _diskBackupId)
+{
+    m_diskBackupId = _diskBackupId;
+    m_diskBackupIdHasBeenSet = true;
+}
+
+bool CreateSnapshotRequest::DiskBackupIdHasBeenSet() const
+{
+    return m_diskBackupIdHasBeenSet;
+}
+
+vector<Tag> CreateSnapshotRequest::GetTags() const
+{
+    return m_tags;
+}
+
+void CreateSnapshotRequest::SetTags(const vector<Tag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool CreateSnapshotRequest::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 
 

@@ -24,7 +24,8 @@ using namespace std;
 
 DescribeRoomInfoRequest::DescribeRoomInfoRequest() :
     m_sdkAppIdHasBeenSet(false),
-    m_roomIdsHasBeenSet(false)
+    m_roomIdsHasBeenSet(false),
+    m_strRoomIdsHasBeenSet(false)
 {
 }
 
@@ -53,6 +54,19 @@ string DescribeRoomInfoRequest::ToJsonString() const
         for (auto itr = m_roomIds.begin(); itr != m_roomIds.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
+        }
+    }
+
+    if (m_strRoomIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StrRoomIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_strRoomIds.begin(); itr != m_strRoomIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
@@ -94,6 +108,22 @@ void DescribeRoomInfoRequest::SetRoomIds(const vector<uint64_t>& _roomIds)
 bool DescribeRoomInfoRequest::RoomIdsHasBeenSet() const
 {
     return m_roomIdsHasBeenSet;
+}
+
+vector<string> DescribeRoomInfoRequest::GetStrRoomIds() const
+{
+    return m_strRoomIds;
+}
+
+void DescribeRoomInfoRequest::SetStrRoomIds(const vector<string>& _strRoomIds)
+{
+    m_strRoomIds = _strRoomIds;
+    m_strRoomIdsHasBeenSet = true;
+}
+
+bool DescribeRoomInfoRequest::StrRoomIdsHasBeenSet() const
+{
+    return m_strRoomIdsHasBeenSet;
 }
 
 

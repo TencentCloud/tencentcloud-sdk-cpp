@@ -31,7 +31,9 @@ DescribeTaskListRequest::DescribeTaskListRequest() :
     m_taskTypesHasBeenSet(false),
     m_beginTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
-    m_taskStatusHasBeenSet(false)
+    m_taskStatusHasBeenSet(false),
+    m_resultHasBeenSet(false),
+    m_operatorUinHasBeenSet(false)
 {
 }
 
@@ -124,6 +126,32 @@ string DescribeTaskListRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_taskStatus.begin(); itr != m_taskStatus.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
+    }
+
+    if (m_resultHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Result";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_result.begin(); itr != m_result.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
+    }
+
+    if (m_operatorUinHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OperatorUin";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_operatorUin.begin(); itr != m_operatorUin.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
@@ -279,6 +307,38 @@ void DescribeTaskListRequest::SetTaskStatus(const vector<int64_t>& _taskStatus)
 bool DescribeTaskListRequest::TaskStatusHasBeenSet() const
 {
     return m_taskStatusHasBeenSet;
+}
+
+vector<int64_t> DescribeTaskListRequest::GetResult() const
+{
+    return m_result;
+}
+
+void DescribeTaskListRequest::SetResult(const vector<int64_t>& _result)
+{
+    m_result = _result;
+    m_resultHasBeenSet = true;
+}
+
+bool DescribeTaskListRequest::ResultHasBeenSet() const
+{
+    return m_resultHasBeenSet;
+}
+
+vector<int64_t> DescribeTaskListRequest::GetOperatorUin() const
+{
+    return m_operatorUin;
+}
+
+void DescribeTaskListRequest::SetOperatorUin(const vector<int64_t>& _operatorUin)
+{
+    m_operatorUin = _operatorUin;
+    m_operatorUinHasBeenSet = true;
+}
+
+bool DescribeTaskListRequest::OperatorUinHasBeenSet() const
+{
+    return m_operatorUinHasBeenSet;
 }
 
 

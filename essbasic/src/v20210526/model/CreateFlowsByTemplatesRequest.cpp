@@ -25,7 +25,8 @@ using namespace std;
 CreateFlowsByTemplatesRequest::CreateFlowsByTemplatesRequest() :
     m_agentHasBeenSet(false),
     m_flowInfosHasBeenSet(false),
-    m_operatorHasBeenSet(false)
+    m_operatorHasBeenSet(false),
+    m_needPreviewHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,14 @@ string CreateFlowsByTemplatesRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_operator.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_needPreviewHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NeedPreview";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_needPreview, allocator);
     }
 
 
@@ -123,6 +132,22 @@ void CreateFlowsByTemplatesRequest::SetOperator(const UserInfo& _operator)
 bool CreateFlowsByTemplatesRequest::OperatorHasBeenSet() const
 {
     return m_operatorHasBeenSet;
+}
+
+bool CreateFlowsByTemplatesRequest::GetNeedPreview() const
+{
+    return m_needPreview;
+}
+
+void CreateFlowsByTemplatesRequest::SetNeedPreview(const bool& _needPreview)
+{
+    m_needPreview = _needPreview;
+    m_needPreviewHasBeenSet = true;
+}
+
+bool CreateFlowsByTemplatesRequest::NeedPreviewHasBeenSet() const
+{
+    return m_needPreviewHasBeenSet;
 }
 
 

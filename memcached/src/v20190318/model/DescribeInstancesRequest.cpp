@@ -23,17 +23,17 @@ using namespace TencentCloud::Memcached::V20190318::Model;
 using namespace std;
 
 DescribeInstancesRequest::DescribeInstancesRequest() :
-    m_instanceIdsHasBeenSet(false),
-    m_instanceNamesHasBeenSet(false),
-    m_limitHasBeenSet(false),
-    m_offsetHasBeenSet(false),
     m_orderByHasBeenSet(false),
-    m_orderTypeHasBeenSet(false),
-    m_projectIdsHasBeenSet(false),
     m_searchKeysHasBeenSet(false),
     m_uniqSubnetIdsHasBeenSet(false),
+    m_vipsHasBeenSet(false),
+    m_orderTypeHasBeenSet(false),
+    m_instanceNamesHasBeenSet(false),
     m_uniqVpcIdsHasBeenSet(false),
-    m_vipsHasBeenSet(false)
+    m_projectIdsHasBeenSet(false),
+    m_offsetHasBeenSet(false),
+    m_limitHasBeenSet(false),
+    m_instanceIdsHasBeenSet(false)
 {
 }
 
@@ -44,75 +44,12 @@ string DescribeInstancesRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_instanceIdsHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "InstanceIds";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        for (auto itr = m_instanceIds.begin(); itr != m_instanceIds.end(); ++itr)
-        {
-            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
-        }
-    }
-
-    if (m_instanceNamesHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "InstanceNames";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        for (auto itr = m_instanceNames.begin(); itr != m_instanceNames.end(); ++itr)
-        {
-            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
-        }
-    }
-
-    if (m_limitHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Limit";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_limit, allocator);
-    }
-
-    if (m_offsetHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Offset";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_offset, allocator);
-    }
-
     if (m_orderByHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OrderBy";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_orderBy.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_orderTypeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "OrderType";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_orderType, allocator);
-    }
-
-    if (m_projectIdsHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ProjectIds";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        for (auto itr = m_projectIds.begin(); itr != m_projectIds.end(); ++itr)
-        {
-            d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
-        }
     }
 
     if (m_searchKeysHasBeenSet)
@@ -141,19 +78,6 @@ string DescribeInstancesRequest::ToJsonString() const
         }
     }
 
-    if (m_uniqVpcIdsHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "UniqVpcIds";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        for (auto itr = m_uniqVpcIds.begin(); itr != m_uniqVpcIds.end(); ++itr)
-        {
-            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
-        }
-    }
-
     if (m_vipsHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -167,6 +91,82 @@ string DescribeInstancesRequest::ToJsonString() const
         }
     }
 
+    if (m_orderTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OrderType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_orderType, allocator);
+    }
+
+    if (m_instanceNamesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceNames";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_instanceNames.begin(); itr != m_instanceNames.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_uniqVpcIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UniqVpcIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_uniqVpcIds.begin(); itr != m_uniqVpcIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_projectIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProjectIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_projectIds.begin(); itr != m_projectIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
+    }
+
+    if (m_offsetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Offset";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_limitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Limit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_instanceIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_instanceIds.begin(); itr != m_instanceIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -174,70 +174,6 @@ string DescribeInstancesRequest::ToJsonString() const
     return buffer.GetString();
 }
 
-
-vector<string> DescribeInstancesRequest::GetInstanceIds() const
-{
-    return m_instanceIds;
-}
-
-void DescribeInstancesRequest::SetInstanceIds(const vector<string>& _instanceIds)
-{
-    m_instanceIds = _instanceIds;
-    m_instanceIdsHasBeenSet = true;
-}
-
-bool DescribeInstancesRequest::InstanceIdsHasBeenSet() const
-{
-    return m_instanceIdsHasBeenSet;
-}
-
-vector<string> DescribeInstancesRequest::GetInstanceNames() const
-{
-    return m_instanceNames;
-}
-
-void DescribeInstancesRequest::SetInstanceNames(const vector<string>& _instanceNames)
-{
-    m_instanceNames = _instanceNames;
-    m_instanceNamesHasBeenSet = true;
-}
-
-bool DescribeInstancesRequest::InstanceNamesHasBeenSet() const
-{
-    return m_instanceNamesHasBeenSet;
-}
-
-uint64_t DescribeInstancesRequest::GetLimit() const
-{
-    return m_limit;
-}
-
-void DescribeInstancesRequest::SetLimit(const uint64_t& _limit)
-{
-    m_limit = _limit;
-    m_limitHasBeenSet = true;
-}
-
-bool DescribeInstancesRequest::LimitHasBeenSet() const
-{
-    return m_limitHasBeenSet;
-}
-
-uint64_t DescribeInstancesRequest::GetOffset() const
-{
-    return m_offset;
-}
-
-void DescribeInstancesRequest::SetOffset(const uint64_t& _offset)
-{
-    m_offset = _offset;
-    m_offsetHasBeenSet = true;
-}
-
-bool DescribeInstancesRequest::OffsetHasBeenSet() const
-{
-    return m_offsetHasBeenSet;
-}
 
 string DescribeInstancesRequest::GetOrderBy() const
 {
@@ -253,38 +189,6 @@ void DescribeInstancesRequest::SetOrderBy(const string& _orderBy)
 bool DescribeInstancesRequest::OrderByHasBeenSet() const
 {
     return m_orderByHasBeenSet;
-}
-
-int64_t DescribeInstancesRequest::GetOrderType() const
-{
-    return m_orderType;
-}
-
-void DescribeInstancesRequest::SetOrderType(const int64_t& _orderType)
-{
-    m_orderType = _orderType;
-    m_orderTypeHasBeenSet = true;
-}
-
-bool DescribeInstancesRequest::OrderTypeHasBeenSet() const
-{
-    return m_orderTypeHasBeenSet;
-}
-
-vector<int64_t> DescribeInstancesRequest::GetProjectIds() const
-{
-    return m_projectIds;
-}
-
-void DescribeInstancesRequest::SetProjectIds(const vector<int64_t>& _projectIds)
-{
-    m_projectIds = _projectIds;
-    m_projectIdsHasBeenSet = true;
-}
-
-bool DescribeInstancesRequest::ProjectIdsHasBeenSet() const
-{
-    return m_projectIdsHasBeenSet;
 }
 
 vector<string> DescribeInstancesRequest::GetSearchKeys() const
@@ -319,6 +223,54 @@ bool DescribeInstancesRequest::UniqSubnetIdsHasBeenSet() const
     return m_uniqSubnetIdsHasBeenSet;
 }
 
+vector<string> DescribeInstancesRequest::GetVips() const
+{
+    return m_vips;
+}
+
+void DescribeInstancesRequest::SetVips(const vector<string>& _vips)
+{
+    m_vips = _vips;
+    m_vipsHasBeenSet = true;
+}
+
+bool DescribeInstancesRequest::VipsHasBeenSet() const
+{
+    return m_vipsHasBeenSet;
+}
+
+int64_t DescribeInstancesRequest::GetOrderType() const
+{
+    return m_orderType;
+}
+
+void DescribeInstancesRequest::SetOrderType(const int64_t& _orderType)
+{
+    m_orderType = _orderType;
+    m_orderTypeHasBeenSet = true;
+}
+
+bool DescribeInstancesRequest::OrderTypeHasBeenSet() const
+{
+    return m_orderTypeHasBeenSet;
+}
+
+vector<string> DescribeInstancesRequest::GetInstanceNames() const
+{
+    return m_instanceNames;
+}
+
+void DescribeInstancesRequest::SetInstanceNames(const vector<string>& _instanceNames)
+{
+    m_instanceNames = _instanceNames;
+    m_instanceNamesHasBeenSet = true;
+}
+
+bool DescribeInstancesRequest::InstanceNamesHasBeenSet() const
+{
+    return m_instanceNamesHasBeenSet;
+}
+
 vector<string> DescribeInstancesRequest::GetUniqVpcIds() const
 {
     return m_uniqVpcIds;
@@ -335,20 +287,68 @@ bool DescribeInstancesRequest::UniqVpcIdsHasBeenSet() const
     return m_uniqVpcIdsHasBeenSet;
 }
 
-vector<string> DescribeInstancesRequest::GetVips() const
+vector<int64_t> DescribeInstancesRequest::GetProjectIds() const
 {
-    return m_vips;
+    return m_projectIds;
 }
 
-void DescribeInstancesRequest::SetVips(const vector<string>& _vips)
+void DescribeInstancesRequest::SetProjectIds(const vector<int64_t>& _projectIds)
 {
-    m_vips = _vips;
-    m_vipsHasBeenSet = true;
+    m_projectIds = _projectIds;
+    m_projectIdsHasBeenSet = true;
 }
 
-bool DescribeInstancesRequest::VipsHasBeenSet() const
+bool DescribeInstancesRequest::ProjectIdsHasBeenSet() const
 {
-    return m_vipsHasBeenSet;
+    return m_projectIdsHasBeenSet;
+}
+
+uint64_t DescribeInstancesRequest::GetOffset() const
+{
+    return m_offset;
+}
+
+void DescribeInstancesRequest::SetOffset(const uint64_t& _offset)
+{
+    m_offset = _offset;
+    m_offsetHasBeenSet = true;
+}
+
+bool DescribeInstancesRequest::OffsetHasBeenSet() const
+{
+    return m_offsetHasBeenSet;
+}
+
+uint64_t DescribeInstancesRequest::GetLimit() const
+{
+    return m_limit;
+}
+
+void DescribeInstancesRequest::SetLimit(const uint64_t& _limit)
+{
+    m_limit = _limit;
+    m_limitHasBeenSet = true;
+}
+
+bool DescribeInstancesRequest::LimitHasBeenSet() const
+{
+    return m_limitHasBeenSet;
+}
+
+vector<string> DescribeInstancesRequest::GetInstanceIds() const
+{
+    return m_instanceIds;
+}
+
+void DescribeInstancesRequest::SetInstanceIds(const vector<string>& _instanceIds)
+{
+    m_instanceIds = _instanceIds;
+    m_instanceIdsHasBeenSet = true;
+}
+
+bool DescribeInstancesRequest::InstanceIdsHasBeenSet() const
+{
+    return m_instanceIdsHasBeenSet;
 }
 
 

@@ -134,6 +134,24 @@ namespace TencentCloud
                      */
                     bool SorterHasBeenSet() const;
 
+                    /**
+                     * 获取是否导出
+                     * @return ExportFlag 是否导出
+                     */
+                    bool GetExportFlag() const;
+
+                    /**
+                     * 设置是否导出
+                     * @param ExportFlag 是否导出
+                     */
+                    void SetExportFlag(const bool& _exportFlag);
+
+                    /**
+                     * 判断参数 ExportFlag 是否已赋值
+                     * @return ExportFlag 是否已赋值
+                     */
+                    bool ExportFlagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -165,6 +183,12 @@ namespace TencentCloud
                      */
                     std::vector<QuerySort> m_sorter;
                     bool m_sorterHasBeenSet;
+
+                    /**
+                     * 是否导出
+                     */
+                    bool m_exportFlag;
+                    bool m_exportFlagHasBeenSet;
 
                 };
             }

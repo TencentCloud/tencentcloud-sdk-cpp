@@ -47,42 +47,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取准确度
-                     * @return Accuracy 准确度
-                     */
-                    double GetAccuracy() const;
-
-                    /**
-                     * 设置准确度
-                     * @param Accuracy 准确度
-                     */
-                    void SetAccuracy(const double& _accuracy);
-
-                    /**
-                     * 判断参数 Accuracy 是否已赋值
-                     * @return Accuracy 是否已赋值
-                     */
-                    bool AccuracyHasBeenSet() const;
-
-                    /**
-                     * 获取海拔
-                     * @return Altitude 海拔
-                     */
-                    double GetAltitude() const;
-
-                    /**
-                     * 设置海拔
-                     * @param Altitude 海拔
-                     */
-                    void SetAltitude(const double& _altitude);
-
-                    /**
-                     * 判断参数 Altitude 是否已赋值
-                     * @return Altitude 是否已赋值
-                     */
-                    bool AltitudeHasBeenSet() const;
-
-                    /**
                      * 获取纬度
                      * @return Latitude 纬度
                      */
@@ -118,19 +82,43 @@ namespace TencentCloud
                      */
                     bool LongitudeHasBeenSet() const;
 
+                    /**
+                     * 获取准确度
+                     * @return Accuracy 准确度
+                     */
+                    double GetAccuracy() const;
+
+                    /**
+                     * 设置准确度
+                     * @param Accuracy 准确度
+                     */
+                    void SetAccuracy(const double& _accuracy);
+
+                    /**
+                     * 判断参数 Accuracy 是否已赋值
+                     * @return Accuracy 是否已赋值
+                     */
+                    bool AccuracyHasBeenSet() const;
+
+                    /**
+                     * 获取海拔
+                     * @return Altitude 海拔
+                     */
+                    double GetAltitude() const;
+
+                    /**
+                     * 设置海拔
+                     * @param Altitude 海拔
+                     */
+                    void SetAltitude(const double& _altitude);
+
+                    /**
+                     * 判断参数 Altitude 是否已赋值
+                     * @return Altitude 是否已赋值
+                     */
+                    bool AltitudeHasBeenSet() const;
+
                 private:
-
-                    /**
-                     * 准确度
-                     */
-                    double m_accuracy;
-                    bool m_accuracyHasBeenSet;
-
-                    /**
-                     * 海拔
-                     */
-                    double m_altitude;
-                    bool m_altitudeHasBeenSet;
 
                     /**
                      * 纬度
@@ -143,6 +131,18 @@ namespace TencentCloud
                      */
                     double m_longitude;
                     bool m_longitudeHasBeenSet;
+
+                    /**
+                     * 准确度
+                     */
+                    double m_accuracy;
+                    bool m_accuracyHasBeenSet;
+
+                    /**
+                     * 海拔
+                     */
+                    double m_altitude;
+                    bool m_altitudeHasBeenSet;
 
                 };
             }

@@ -114,6 +114,24 @@ namespace TencentCloud
                      */
                     bool LanguageEnvironmentHasBeenSet() const;
 
+                    /**
+                     * 获取上报方式
+                     * @return ReportMethod 上报方式
+                     */
+                    std::string GetReportMethod() const;
+
+                    /**
+                     * 设置上报方式
+                     * @param ReportMethod 上报方式
+                     */
+                    void SetReportMethod(const std::string& _reportMethod);
+
+                    /**
+                     * 判断参数 ReportMethod 是否已赋值
+                     * @return ReportMethod 是否已赋值
+                     */
+                    bool ReportMethodHasBeenSet() const;
+
                 private:
 
                     /**
@@ -139,6 +157,12 @@ namespace TencentCloud
                      */
                     std::string m_languageEnvironment;
                     bool m_languageEnvironmentHasBeenSet;
+
+                    /**
+                     * 上报方式
+                     */
+                    std::string m_reportMethod;
+                    bool m_reportMethodHasBeenSet;
 
                 };
             }

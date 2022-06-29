@@ -154,6 +154,28 @@ ABNORMAL_CHILD_PROC: 敏感服务异常子进程启动
                      */
                     bool RuleTypeHasBeenSet() const;
 
+                    /**
+                     * 获取威胁等级，HIGH:高，MIDDLE:中，LOW:低
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RuleLevel 威胁等级，HIGH:高，MIDDLE:中，LOW:低
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetRuleLevel() const;
+
+                    /**
+                     * 设置威胁等级，HIGH:高，MIDDLE:中，LOW:低
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RuleLevel 威胁等级，HIGH:高，MIDDLE:中，LOW:低
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRuleLevel(const std::string& _ruleLevel);
+
+                    /**
+                     * 判断参数 RuleLevel 是否已赋值
+                     * @return RuleLevel 是否已赋值
+                     */
+                    bool RuleLevelHasBeenSet() const;
+
                 private:
 
                     /**
@@ -188,6 +210,13 @@ ABNORMAL_CHILD_PROC: 敏感服务异常子进程启动
                      */
                     std::string m_ruleType;
                     bool m_ruleTypeHasBeenSet;
+
+                    /**
+                     * 威胁等级，HIGH:高，MIDDLE:中，LOW:低
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_ruleLevel;
+                    bool m_ruleLevelHasBeenSet;
 
                 };
             }

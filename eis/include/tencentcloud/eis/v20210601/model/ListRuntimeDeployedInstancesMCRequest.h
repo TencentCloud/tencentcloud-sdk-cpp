@@ -150,6 +150,24 @@ namespace TencentCloud
                      */
                     bool ZoneHasBeenSet() const;
 
+                    /**
+                     * 获取1:3.0版本新控制台传1；否则传0
+                     * @return ApiVersion 1:3.0版本新控制台传1；否则传0
+                     */
+                    int64_t GetApiVersion() const;
+
+                    /**
+                     * 设置1:3.0版本新控制台传1；否则传0
+                     * @param ApiVersion 1:3.0版本新控制台传1；否则传0
+                     */
+                    void SetApiVersion(const int64_t& _apiVersion);
+
+                    /**
+                     * 判断参数 ApiVersion 是否已赋值
+                     * @return ApiVersion 是否已赋值
+                     */
+                    bool ApiVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -187,6 +205,12 @@ namespace TencentCloud
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
+
+                    /**
+                     * 1:3.0版本新控制台传1；否则传0
+                     */
+                    int64_t m_apiVersion;
+                    bool m_apiVersionHasBeenSet;
 
                 };
             }

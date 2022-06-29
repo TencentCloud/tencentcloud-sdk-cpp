@@ -209,6 +209,42 @@ namespace TencentCloud
                      */
                     bool IsAdminHasBeenSet() const;
 
+                    /**
+                     * 获取win-windows鉴权,sql-sqlserver鉴权
+                     * @return Authentication win-windows鉴权,sql-sqlserver鉴权
+                     */
+                    std::string GetAuthentication() const;
+
+                    /**
+                     * 设置win-windows鉴权,sql-sqlserver鉴权
+                     * @param Authentication win-windows鉴权,sql-sqlserver鉴权
+                     */
+                    void SetAuthentication(const std::string& _authentication);
+
+                    /**
+                     * 判断参数 Authentication 是否已赋值
+                     * @return Authentication 是否已赋值
+                     */
+                    bool AuthenticationHasBeenSet() const;
+
+                    /**
+                     * 获取win-windows鉴权账户需要host
+                     * @return Host win-windows鉴权账户需要host
+                     */
+                    std::string GetHost() const;
+
+                    /**
+                     * 设置win-windows鉴权账户需要host
+                     * @param Host win-windows鉴权账户需要host
+                     */
+                    void SetHost(const std::string& _host);
+
+                    /**
+                     * 判断参数 Host 是否已赋值
+                     * @return Host 是否已赋值
+                     */
+                    bool HostHasBeenSet() const;
+
                 private:
 
                     /**
@@ -264,6 +300,18 @@ namespace TencentCloud
                      */
                     bool m_isAdmin;
                     bool m_isAdminHasBeenSet;
+
+                    /**
+                     * win-windows鉴权,sql-sqlserver鉴权
+                     */
+                    std::string m_authentication;
+                    bool m_authenticationHasBeenSet;
+
+                    /**
+                     * win-windows鉴权账户需要host
+                     */
+                    std::string m_host;
+                    bool m_hostHasBeenSet;
 
                 };
             }

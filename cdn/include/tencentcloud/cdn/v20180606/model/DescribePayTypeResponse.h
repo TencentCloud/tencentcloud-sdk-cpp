@@ -48,11 +48,15 @@ namespace TencentCloud
 flux：流量计费
 bandwidth：带宽计费
 request：请求数计费
+flux_sep：动静分离流量计费
+bandwidth_sep：动静分离带宽计费
 日结计费方式切换时，若当日产生消耗，则此字段表示第二天即将生效的计费方式，若未产生消耗，则表示已经生效的计费方式。
                      * @return PayType 计费类型：
 flux：流量计费
 bandwidth：带宽计费
 request：请求数计费
+flux_sep：动静分离流量计费
+bandwidth_sep：动静分离带宽计费
 日结计费方式切换时，若当日产生消耗，则此字段表示第二天即将生效的计费方式，若未产生消耗，则表示已经生效的计费方式。
                      */
                     std::string GetPayType() const;
@@ -67,9 +71,11 @@ request：请求数计费
                      * 获取计费周期：
 day：日结计费
 month：月结计费
+hour：小时结计费
                      * @return BillingCycle 计费周期：
 day：日结计费
 month：月结计费
+hour：小时结计费
                      */
                     std::string GetBillingCycle() const;
 
@@ -120,10 +126,14 @@ multiple：分地区计费
 flux：流量计费
 bandwidth：带宽计费
 request：请求数计费
+flux_sep：动静分离流量计费
+bandwidth_sep：动静分离带宽计费
                      * @return CurrentPayType 当前生效计费类型：
 flux：流量计费
 bandwidth：带宽计费
 request：请求数计费
+flux_sep：动静分离流量计费
+bandwidth_sep：动静分离带宽计费
                      */
                     std::string GetCurrentPayType() const;
 
@@ -140,6 +150,8 @@ request：请求数计费
 flux：流量计费
 bandwidth：带宽计费
 request：请求数计费
+flux_sep：动静分离流量计费
+bandwidth_sep：动静分离带宽计费
 日结计费方式切换时，若当日产生消耗，则此字段表示第二天即将生效的计费方式，若未产生消耗，则表示已经生效的计费方式。
                      */
                     std::string m_payType;
@@ -149,6 +161,7 @@ request：请求数计费
                      * 计费周期：
 day：日结计费
 month：月结计费
+hour：小时结计费
                      */
                     std::string m_billingCycle;
                     bool m_billingCycleHasBeenSet;
@@ -176,6 +189,8 @@ multiple：分地区计费
 flux：流量计费
 bandwidth：带宽计费
 request：请求数计费
+flux_sep：动静分离流量计费
+bandwidth_sep：动静分离带宽计费
                      */
                     std::string m_currentPayType;
                     bool m_currentPayTypeHasBeenSet;

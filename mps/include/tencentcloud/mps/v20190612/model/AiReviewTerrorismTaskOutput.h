@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 暴恐信息
+                * 涉敏信息
                 */
                 class AiReviewTerrorismTaskOutput : public AbstractModel
                 {
@@ -48,14 +48,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取视频暴恐评分，分值为0到100。
-                     * @return Confidence 视频暴恐评分，分值为0到100。
+                     * 获取视频涉敏评分，分值为0到100。
+                     * @return Confidence 视频涉敏评分，分值为0到100。
                      */
                     double GetConfidence() const;
 
                     /**
-                     * 设置视频暴恐评分，分值为0到100。
-                     * @param Confidence 视频暴恐评分，分值为0到100。
+                     * 设置视频涉敏评分，分值为0到100。
+                     * @param Confidence 视频涉敏评分，分值为0到100。
                      */
                     void SetConfidence(const double& _confidence);
 
@@ -66,11 +66,11 @@ namespace TencentCloud
                     bool ConfidenceHasBeenSet() const;
 
                     /**
-                     * 获取暴恐结果建议，取值范围：
+                     * 获取涉敏结果建议，取值范围：
 <li>pass。</li>
 <li>review。</li>
 <li>block。</li>
-                     * @return Suggestion 暴恐结果建议，取值范围：
+                     * @return Suggestion 涉敏结果建议，取值范围：
 <li>pass。</li>
 <li>review。</li>
 <li>block。</li>
@@ -78,11 +78,11 @@ namespace TencentCloud
                     std::string GetSuggestion() const;
 
                     /**
-                     * 设置暴恐结果建议，取值范围：
+                     * 设置涉敏结果建议，取值范围：
 <li>pass。</li>
 <li>review。</li>
 <li>block。</li>
-                     * @param Suggestion 暴恐结果建议，取值范围：
+                     * @param Suggestion 涉敏结果建议，取值范围：
 <li>pass。</li>
 <li>review。</li>
 <li>block。</li>
@@ -96,50 +96,50 @@ namespace TencentCloud
                     bool SuggestionHasBeenSet() const;
 
                     /**
-                     * 获取视频暴恐结果标签，取值范围：
+                     * 获取视频涉敏结果标签，取值范围：
 <li>guns：武器枪支。</li>
 <li>crowd：人群聚集。</li>
 <li>police：警察部队。</li>
 <li>bloody：血腥画面。</li>
-<li>banners：暴恐旗帜。</li>
+<li>banners：涉敏旗帜。</li>
 <li>militant：武装分子。</li>
 <li>explosion：爆炸火灾。</li>
-<li>terrorists：暴恐人物。</li>
-<li>scenario：暴恐画面。</li>
-                     * @return Label 视频暴恐结果标签，取值范围：
+<li>terrorists：涉敏人物。</li>
+<li>scenario：涉敏画面。</li>
+                     * @return Label 视频涉敏结果标签，取值范围：
 <li>guns：武器枪支。</li>
 <li>crowd：人群聚集。</li>
 <li>police：警察部队。</li>
 <li>bloody：血腥画面。</li>
-<li>banners：暴恐旗帜。</li>
+<li>banners：涉敏旗帜。</li>
 <li>militant：武装分子。</li>
 <li>explosion：爆炸火灾。</li>
-<li>terrorists：暴恐人物。</li>
-<li>scenario：暴恐画面。</li>
+<li>terrorists：涉敏人物。</li>
+<li>scenario：涉敏画面。</li>
                      */
                     std::string GetLabel() const;
 
                     /**
-                     * 设置视频暴恐结果标签，取值范围：
+                     * 设置视频涉敏结果标签，取值范围：
 <li>guns：武器枪支。</li>
 <li>crowd：人群聚集。</li>
 <li>police：警察部队。</li>
 <li>bloody：血腥画面。</li>
-<li>banners：暴恐旗帜。</li>
+<li>banners：涉敏旗帜。</li>
 <li>militant：武装分子。</li>
 <li>explosion：爆炸火灾。</li>
-<li>terrorists：暴恐人物。</li>
-<li>scenario：暴恐画面。</li>
-                     * @param Label 视频暴恐结果标签，取值范围：
+<li>terrorists：涉敏人物。</li>
+<li>scenario：涉敏画面。</li>
+                     * @param Label 视频涉敏结果标签，取值范围：
 <li>guns：武器枪支。</li>
 <li>crowd：人群聚集。</li>
 <li>police：警察部队。</li>
 <li>bloody：血腥画面。</li>
-<li>banners：暴恐旗帜。</li>
+<li>banners：涉敏旗帜。</li>
 <li>militant：武装分子。</li>
 <li>explosion：爆炸火灾。</li>
-<li>terrorists：暴恐人物。</li>
-<li>scenario：暴恐画面。</li>
+<li>terrorists：涉敏人物。</li>
+<li>scenario：涉敏画面。</li>
                      */
                     void SetLabel(const std::string& _label);
 
@@ -150,14 +150,14 @@ namespace TencentCloud
                     bool LabelHasBeenSet() const;
 
                     /**
-                     * 获取有暴恐嫌疑的视频片段列表。
-                     * @return SegmentSet 有暴恐嫌疑的视频片段列表。
+                     * 获取有涉敏嫌疑的视频片段列表。
+                     * @return SegmentSet 有涉敏嫌疑的视频片段列表。
                      */
                     std::vector<MediaContentReviewSegmentItem> GetSegmentSet() const;
 
                     /**
-                     * 设置有暴恐嫌疑的视频片段列表。
-                     * @param SegmentSet 有暴恐嫌疑的视频片段列表。
+                     * 设置有涉敏嫌疑的视频片段列表。
+                     * @param SegmentSet 有涉敏嫌疑的视频片段列表。
                      */
                     void SetSegmentSet(const std::vector<MediaContentReviewSegmentItem>& _segmentSet);
 
@@ -170,13 +170,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 视频暴恐评分，分值为0到100。
+                     * 视频涉敏评分，分值为0到100。
                      */
                     double m_confidence;
                     bool m_confidenceHasBeenSet;
 
                     /**
-                     * 暴恐结果建议，取值范围：
+                     * 涉敏结果建议，取值范围：
 <li>pass。</li>
 <li>review。</li>
 <li>block。</li>
@@ -185,22 +185,22 @@ namespace TencentCloud
                     bool m_suggestionHasBeenSet;
 
                     /**
-                     * 视频暴恐结果标签，取值范围：
+                     * 视频涉敏结果标签，取值范围：
 <li>guns：武器枪支。</li>
 <li>crowd：人群聚集。</li>
 <li>police：警察部队。</li>
 <li>bloody：血腥画面。</li>
-<li>banners：暴恐旗帜。</li>
+<li>banners：涉敏旗帜。</li>
 <li>militant：武装分子。</li>
 <li>explosion：爆炸火灾。</li>
-<li>terrorists：暴恐人物。</li>
-<li>scenario：暴恐画面。</li>
+<li>terrorists：涉敏人物。</li>
+<li>scenario：涉敏画面。</li>
                      */
                     std::string m_label;
                     bool m_labelHasBeenSet;
 
                     /**
-                     * 有暴恐嫌疑的视频片段列表。
+                     * 有涉敏嫌疑的视频片段列表。
                      */
                     std::vector<MediaContentReviewSegmentItem> m_segmentSet;
                     bool m_segmentSetHasBeenSet;

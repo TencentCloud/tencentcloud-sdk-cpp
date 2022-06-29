@@ -296,6 +296,60 @@ namespace TencentCloud
                      */
                     bool ClsTopicIdHasBeenSet() const;
 
+                    /**
+                     * 获取日志采集类型 2：CLS；3：COS
+                     * @return LogCollectType 日志采集类型 2：CLS；3：COS
+                     */
+                    int64_t GetLogCollectType() const;
+
+                    /**
+                     * 设置日志采集类型 2：CLS；3：COS
+                     * @param LogCollectType 日志采集类型 2：CLS；3：COS
+                     */
+                    void SetLogCollectType(const int64_t& _logCollectType);
+
+                    /**
+                     * 判断参数 LogCollectType 是否已赋值
+                     * @return LogCollectType 是否已赋值
+                     */
+                    bool LogCollectTypeHasBeenSet() const;
+
+                    /**
+                     * 获取pyflink作业运行时使用的python版本
+                     * @return PythonVersion pyflink作业运行时使用的python版本
+                     */
+                    std::string GetPythonVersion() const;
+
+                    /**
+                     * 设置pyflink作业运行时使用的python版本
+                     * @param PythonVersion pyflink作业运行时使用的python版本
+                     */
+                    void SetPythonVersion(const std::string& _pythonVersion);
+
+                    /**
+                     * 判断参数 PythonVersion 是否已赋值
+                     * @return PythonVersion 是否已赋值
+                     */
+                    bool PythonVersionHasBeenSet() const;
+
+                    /**
+                     * 获取工作空间 SerialId
+                     * @return WorkSpaceId 工作空间 SerialId
+                     */
+                    std::string GetWorkSpaceId() const;
+
+                    /**
+                     * 设置工作空间 SerialId
+                     * @param WorkSpaceId 工作空间 SerialId
+                     */
+                    void SetWorkSpaceId(const std::string& _workSpaceId);
+
+                    /**
+                     * 判断参数 WorkSpaceId 是否已赋值
+                     * @return WorkSpaceId 是否已赋值
+                     */
+                    bool WorkSpaceIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -381,6 +435,24 @@ namespace TencentCloud
                      */
                     std::string m_clsTopicId;
                     bool m_clsTopicIdHasBeenSet;
+
+                    /**
+                     * 日志采集类型 2：CLS；3：COS
+                     */
+                    int64_t m_logCollectType;
+                    bool m_logCollectTypeHasBeenSet;
+
+                    /**
+                     * pyflink作业运行时使用的python版本
+                     */
+                    std::string m_pythonVersion;
+                    bool m_pythonVersionHasBeenSet;
+
+                    /**
+                     * 工作空间 SerialId
+                     */
+                    std::string m_workSpaceId;
+                    bool m_workSpaceIdHasBeenSet;
 
                 };
             }

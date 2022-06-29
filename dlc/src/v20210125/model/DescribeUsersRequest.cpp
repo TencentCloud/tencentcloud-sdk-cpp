@@ -27,7 +27,8 @@ DescribeUsersRequest::DescribeUsersRequest() :
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_sortByHasBeenSet(false),
-    m_sortingHasBeenSet(false)
+    m_sortingHasBeenSet(false),
+    m_filtersHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,21 @@ string DescribeUsersRequest::ToJsonString() const
         string key = "Sorting";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_sorting.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_filtersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Filters";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_filters.begin(); itr != m_filters.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -164,6 +180,22 @@ void DescribeUsersRequest::SetSorting(const string& _sorting)
 bool DescribeUsersRequest::SortingHasBeenSet() const
 {
     return m_sortingHasBeenSet;
+}
+
+vector<Filter> DescribeUsersRequest::GetFilters() const
+{
+    return m_filters;
+}
+
+void DescribeUsersRequest::SetFilters(const vector<Filter>& _filters)
+{
+    m_filters = _filters;
+    m_filtersHasBeenSet = true;
+}
+
+bool DescribeUsersRequest::FiltersHasBeenSet() const
+{
+    return m_filtersHasBeenSet;
 }
 
 

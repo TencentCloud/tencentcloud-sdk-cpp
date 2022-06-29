@@ -24,7 +24,8 @@ AdaptiveStreamTemplate::AdaptiveStreamTemplate() :
     m_videoHasBeenSet(false),
     m_audioHasBeenSet(false),
     m_removeAudioHasBeenSet(false),
-    m_removeVideoHasBeenSet(false)
+    m_removeVideoHasBeenSet(false),
+    m_tEHDConfigHasBeenSet(false)
 {
 }
 
@@ -87,6 +88,23 @@ CoreInternalOutcome AdaptiveStreamTemplate::Deserialize(const rapidjson::Value &
         m_removeVideoHasBeenSet = true;
     }
 
+    if (value.HasMember("TEHDConfig") && !value["TEHDConfig"].IsNull())
+    {
+        if (!value["TEHDConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AdaptiveStreamTemplate.TEHDConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_tEHDConfig.Deserialize(value["TEHDConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_tEHDConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -126,6 +144,15 @@ void AdaptiveStreamTemplate::ToJsonObject(rapidjson::Value &value, rapidjson::Do
         string key = "RemoveVideo";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_removeVideo, allocator);
+    }
+
+    if (m_tEHDConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TEHDConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_tEHDConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -193,5 +220,21 @@ void AdaptiveStreamTemplate::SetRemoveVideo(const uint64_t& _removeVideo)
 bool AdaptiveStreamTemplate::RemoveVideoHasBeenSet() const
 {
     return m_removeVideoHasBeenSet;
+}
+
+TEHDConfig AdaptiveStreamTemplate::GetTEHDConfig() const
+{
+    return m_tEHDConfig;
+}
+
+void AdaptiveStreamTemplate::SetTEHDConfig(const TEHDConfig& _tEHDConfig)
+{
+    m_tEHDConfig = _tEHDConfig;
+    m_tEHDConfigHasBeenSet = true;
+}
+
+bool AdaptiveStreamTemplate::TEHDConfigHasBeenSet() const
+{
+    return m_tEHDConfigHasBeenSet;
 }
 

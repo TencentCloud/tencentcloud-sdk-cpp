@@ -35,7 +35,12 @@ EscapeEventInfo::EscapeEventInfo() :
     m_solutionHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_eventCountHasBeenSet(false),
-    m_latestFoundTimeHasBeenSet(false)
+    m_latestFoundTimeHasBeenSet(false),
+    m_nodeIPHasBeenSet(false),
+    m_hostIDHasBeenSet(false),
+    m_containerNetStatusHasBeenSet(false),
+    m_containerNetSubStatusHasBeenSet(false),
+    m_containerIsolateOperationSrcHasBeenSet(false)
 {
 }
 
@@ -194,6 +199,56 @@ CoreInternalOutcome EscapeEventInfo::Deserialize(const rapidjson::Value &value)
         m_latestFoundTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("NodeIP") && !value["NodeIP"].IsNull())
+    {
+        if (!value["NodeIP"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EscapeEventInfo.NodeIP` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_nodeIP = string(value["NodeIP"].GetString());
+        m_nodeIPHasBeenSet = true;
+    }
+
+    if (value.HasMember("HostID") && !value["HostID"].IsNull())
+    {
+        if (!value["HostID"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EscapeEventInfo.HostID` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_hostID = string(value["HostID"].GetString());
+        m_hostIDHasBeenSet = true;
+    }
+
+    if (value.HasMember("ContainerNetStatus") && !value["ContainerNetStatus"].IsNull())
+    {
+        if (!value["ContainerNetStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EscapeEventInfo.ContainerNetStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_containerNetStatus = string(value["ContainerNetStatus"].GetString());
+        m_containerNetStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("ContainerNetSubStatus") && !value["ContainerNetSubStatus"].IsNull())
+    {
+        if (!value["ContainerNetSubStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EscapeEventInfo.ContainerNetSubStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_containerNetSubStatus = string(value["ContainerNetSubStatus"].GetString());
+        m_containerNetSubStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("ContainerIsolateOperationSrc") && !value["ContainerIsolateOperationSrc"].IsNull())
+    {
+        if (!value["ContainerIsolateOperationSrc"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EscapeEventInfo.ContainerIsolateOperationSrc` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_containerIsolateOperationSrc = string(value["ContainerIsolateOperationSrc"].GetString());
+        m_containerIsolateOperationSrcHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -319,6 +374,46 @@ void EscapeEventInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "LatestFoundTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_latestFoundTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_nodeIPHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NodeIP";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_nodeIP.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_hostIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HostID";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_hostID.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_containerNetStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ContainerNetStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_containerNetStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_containerNetSubStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ContainerNetSubStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_containerNetSubStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_containerIsolateOperationSrcHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ContainerIsolateOperationSrc";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_containerIsolateOperationSrc.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -562,5 +657,85 @@ void EscapeEventInfo::SetLatestFoundTime(const string& _latestFoundTime)
 bool EscapeEventInfo::LatestFoundTimeHasBeenSet() const
 {
     return m_latestFoundTimeHasBeenSet;
+}
+
+string EscapeEventInfo::GetNodeIP() const
+{
+    return m_nodeIP;
+}
+
+void EscapeEventInfo::SetNodeIP(const string& _nodeIP)
+{
+    m_nodeIP = _nodeIP;
+    m_nodeIPHasBeenSet = true;
+}
+
+bool EscapeEventInfo::NodeIPHasBeenSet() const
+{
+    return m_nodeIPHasBeenSet;
+}
+
+string EscapeEventInfo::GetHostID() const
+{
+    return m_hostID;
+}
+
+void EscapeEventInfo::SetHostID(const string& _hostID)
+{
+    m_hostID = _hostID;
+    m_hostIDHasBeenSet = true;
+}
+
+bool EscapeEventInfo::HostIDHasBeenSet() const
+{
+    return m_hostIDHasBeenSet;
+}
+
+string EscapeEventInfo::GetContainerNetStatus() const
+{
+    return m_containerNetStatus;
+}
+
+void EscapeEventInfo::SetContainerNetStatus(const string& _containerNetStatus)
+{
+    m_containerNetStatus = _containerNetStatus;
+    m_containerNetStatusHasBeenSet = true;
+}
+
+bool EscapeEventInfo::ContainerNetStatusHasBeenSet() const
+{
+    return m_containerNetStatusHasBeenSet;
+}
+
+string EscapeEventInfo::GetContainerNetSubStatus() const
+{
+    return m_containerNetSubStatus;
+}
+
+void EscapeEventInfo::SetContainerNetSubStatus(const string& _containerNetSubStatus)
+{
+    m_containerNetSubStatus = _containerNetSubStatus;
+    m_containerNetSubStatusHasBeenSet = true;
+}
+
+bool EscapeEventInfo::ContainerNetSubStatusHasBeenSet() const
+{
+    return m_containerNetSubStatusHasBeenSet;
+}
+
+string EscapeEventInfo::GetContainerIsolateOperationSrc() const
+{
+    return m_containerIsolateOperationSrc;
+}
+
+void EscapeEventInfo::SetContainerIsolateOperationSrc(const string& _containerIsolateOperationSrc)
+{
+    m_containerIsolateOperationSrc = _containerIsolateOperationSrc;
+    m_containerIsolateOperationSrcHasBeenSet = true;
+}
+
+bool EscapeEventInfo::ContainerIsolateOperationSrcHasBeenSet() const
+{
+    return m_containerIsolateOperationSrcHasBeenSet;
 }
 

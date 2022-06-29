@@ -24,6 +24,7 @@ using namespace std;
 
 ModifyAIRecognitionTemplateRequest::ModifyAIRecognitionTemplateRequest() :
     m_definitionHasBeenSet(false),
+    m_subAppIdHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_commentHasBeenSet(false),
     m_headTailConfigureHasBeenSet(false),
@@ -34,8 +35,7 @@ ModifyAIRecognitionTemplateRequest::ModifyAIRecognitionTemplateRequest() :
     m_asrFullTextConfigureHasBeenSet(false),
     m_asrWordsConfigureHasBeenSet(false),
     m_objectConfigureHasBeenSet(false),
-    m_screenshotIntervalHasBeenSet(false),
-    m_subAppIdHasBeenSet(false)
+    m_screenshotIntervalHasBeenSet(false)
 {
 }
 
@@ -52,6 +52,14 @@ string ModifyAIRecognitionTemplateRequest::ToJsonString() const
         string key = "Definition";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_definition, allocator);
+    }
+
+    if (m_subAppIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubAppId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_subAppId, allocator);
     }
 
     if (m_nameHasBeenSet)
@@ -150,14 +158,6 @@ string ModifyAIRecognitionTemplateRequest::ToJsonString() const
         d.AddMember(iKey, m_screenshotInterval, allocator);
     }
 
-    if (m_subAppIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SubAppId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_subAppId, allocator);
-    }
-
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -180,6 +180,22 @@ void ModifyAIRecognitionTemplateRequest::SetDefinition(const int64_t& _definitio
 bool ModifyAIRecognitionTemplateRequest::DefinitionHasBeenSet() const
 {
     return m_definitionHasBeenSet;
+}
+
+uint64_t ModifyAIRecognitionTemplateRequest::GetSubAppId() const
+{
+    return m_subAppId;
+}
+
+void ModifyAIRecognitionTemplateRequest::SetSubAppId(const uint64_t& _subAppId)
+{
+    m_subAppId = _subAppId;
+    m_subAppIdHasBeenSet = true;
+}
+
+bool ModifyAIRecognitionTemplateRequest::SubAppIdHasBeenSet() const
+{
+    return m_subAppIdHasBeenSet;
 }
 
 string ModifyAIRecognitionTemplateRequest::GetName() const
@@ -356,22 +372,6 @@ void ModifyAIRecognitionTemplateRequest::SetScreenshotInterval(const double& _sc
 bool ModifyAIRecognitionTemplateRequest::ScreenshotIntervalHasBeenSet() const
 {
     return m_screenshotIntervalHasBeenSet;
-}
-
-uint64_t ModifyAIRecognitionTemplateRequest::GetSubAppId() const
-{
-    return m_subAppId;
-}
-
-void ModifyAIRecognitionTemplateRequest::SetSubAppId(const uint64_t& _subAppId)
-{
-    m_subAppId = _subAppId;
-    m_subAppIdHasBeenSet = true;
-}
-
-bool ModifyAIRecognitionTemplateRequest::SubAppIdHasBeenSet() const
-{
-    return m_subAppIdHasBeenSet;
 }
 
 

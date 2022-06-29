@@ -32,7 +32,8 @@ DescribeInstancesRequest::DescribeInstancesRequest() :
     m_orderByTypeHasBeenSet(false),
     m_tagListHasBeenSet(false),
     m_ipListHasBeenSet(false),
-    m_zoneListHasBeenSet(false)
+    m_zoneListHasBeenSet(false),
+    m_healthStatusHasBeenSet(false)
 {
 }
 
@@ -147,6 +148,19 @@ string DescribeInstancesRequest::ToJsonString() const
         for (auto itr = m_zoneList.begin(); itr != m_zoneList.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_healthStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HealthStatus";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_healthStatus.begin(); itr != m_healthStatus.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
     }
 
@@ -316,6 +330,22 @@ void DescribeInstancesRequest::SetZoneList(const vector<string>& _zoneList)
 bool DescribeInstancesRequest::ZoneListHasBeenSet() const
 {
     return m_zoneListHasBeenSet;
+}
+
+vector<int64_t> DescribeInstancesRequest::GetHealthStatus() const
+{
+    return m_healthStatus;
+}
+
+void DescribeInstancesRequest::SetHealthStatus(const vector<int64_t>& _healthStatus)
+{
+    m_healthStatus = _healthStatus;
+    m_healthStatusHasBeenSet = true;
+}
+
+bool DescribeInstancesRequest::HealthStatusHasBeenSet() const
+{
+    return m_healthStatusHasBeenSet;
 }
 
 

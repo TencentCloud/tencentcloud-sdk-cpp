@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取控制台url
-                     * @return ConsoleUrl 控制台url
+                     * 获取控制台url，此链接5分钟内有效，且只能访问一次
+                     * @return ConsoleUrl 控制台url，此链接5分钟内有效，且只能访问一次
                      */
                     std::string GetConsoleUrl() const;
 
@@ -72,7 +72,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 控制台url
+                     * 控制台url，此链接5分钟内有效，且只能访问一次
                      */
                     std::string m_consoleUrl;
                     bool m_consoleUrlHasBeenSet;

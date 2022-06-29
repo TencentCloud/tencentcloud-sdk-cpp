@@ -25,7 +25,8 @@ using namespace std;
 CreateWorkGroupRequest::CreateWorkGroupRequest() :
     m_workGroupNameHasBeenSet(false),
     m_workGroupDescriptionHasBeenSet(false),
-    m_policySetHasBeenSet(false)
+    m_policySetHasBeenSet(false),
+    m_userIdsHasBeenSet(false)
 {
 }
 
@@ -64,6 +65,19 @@ string CreateWorkGroupRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_userIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_userIds.begin(); itr != m_userIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
@@ -121,6 +135,22 @@ void CreateWorkGroupRequest::SetPolicySet(const vector<Policy>& _policySet)
 bool CreateWorkGroupRequest::PolicySetHasBeenSet() const
 {
     return m_policySetHasBeenSet;
+}
+
+vector<string> CreateWorkGroupRequest::GetUserIds() const
+{
+    return m_userIds;
+}
+
+void CreateWorkGroupRequest::SetUserIds(const vector<string>& _userIds)
+{
+    m_userIds = _userIds;
+    m_userIdsHasBeenSet = true;
+}
+
+bool CreateWorkGroupRequest::UserIdsHasBeenSet() const
+{
+    return m_userIdsHasBeenSet;
 }
 
 

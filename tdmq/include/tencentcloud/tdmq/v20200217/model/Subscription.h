@@ -414,6 +414,72 @@ namespace TencentCloud
                      */
                     bool UpdateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取订阅类型，Exclusive，Shared，Failover， Key_Shared，空或NULL表示未知，
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SubType 订阅类型，Exclusive，Shared，Failover， Key_Shared，空或NULL表示未知，
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetSubType() const;
+
+                    /**
+                     * 设置订阅类型，Exclusive，Shared，Failover， Key_Shared，空或NULL表示未知，
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SubType 订阅类型，Exclusive，Shared，Failover， Key_Shared，空或NULL表示未知，
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSubType(const std::string& _subType);
+
+                    /**
+                     * 判断参数 SubType 是否已赋值
+                     * @return SubType 是否已赋值
+                     */
+                    bool SubTypeHasBeenSet() const;
+
+                    /**
+                     * 获取是否由于未 ack 数到达上限而被 block
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BlockedSubscriptionOnUnackedMsgs 是否由于未 ack 数到达上限而被 block
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetBlockedSubscriptionOnUnackedMsgs() const;
+
+                    /**
+                     * 设置是否由于未 ack 数到达上限而被 block
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param BlockedSubscriptionOnUnackedMsgs 是否由于未 ack 数到达上限而被 block
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetBlockedSubscriptionOnUnackedMsgs(const bool& _blockedSubscriptionOnUnackedMsgs);
+
+                    /**
+                     * 判断参数 BlockedSubscriptionOnUnackedMsgs 是否已赋值
+                     * @return BlockedSubscriptionOnUnackedMsgs 是否已赋值
+                     */
+                    bool BlockedSubscriptionOnUnackedMsgsHasBeenSet() const;
+
+                    /**
+                     * 获取未 ack 消息数上限
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MaxUnackedMsgNum 未 ack 消息数上限
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetMaxUnackedMsgNum() const;
+
+                    /**
+                     * 设置未 ack 消息数上限
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param MaxUnackedMsgNum 未 ack 消息数上限
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMaxUnackedMsgNum(const int64_t& _maxUnackedMsgNum);
+
+                    /**
+                     * 判断参数 MaxUnackedMsgNum 是否已赋值
+                     * @return MaxUnackedMsgNum 是否已赋值
+                     */
+                    bool MaxUnackedMsgNumHasBeenSet() const;
+
                 private:
 
                     /**
@@ -532,6 +598,27 @@ namespace TencentCloud
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
+
+                    /**
+                     * 订阅类型，Exclusive，Shared，Failover， Key_Shared，空或NULL表示未知，
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_subType;
+                    bool m_subTypeHasBeenSet;
+
+                    /**
+                     * 是否由于未 ack 数到达上限而被 block
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_blockedSubscriptionOnUnackedMsgs;
+                    bool m_blockedSubscriptionOnUnackedMsgsHasBeenSet;
+
+                    /**
+                     * 未 ack 消息数上限
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_maxUnackedMsgNum;
+                    bool m_maxUnackedMsgNumHasBeenSet;
 
                 };
             }

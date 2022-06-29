@@ -96,6 +96,24 @@ namespace TencentCloud
                      */
                     bool ReplicationRegionNameHasBeenSet() const;
 
+                    /**
+                     * 获取是否同步TCR云标签至生成的COS Bucket
+                     * @return SyncTag 是否同步TCR云标签至生成的COS Bucket
+                     */
+                    bool GetSyncTag() const;
+
+                    /**
+                     * 设置是否同步TCR云标签至生成的COS Bucket
+                     * @param SyncTag 是否同步TCR云标签至生成的COS Bucket
+                     */
+                    void SetSyncTag(const bool& _syncTag);
+
+                    /**
+                     * 判断参数 SyncTag 是否已赋值
+                     * @return SyncTag 是否已赋值
+                     */
+                    bool SyncTagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -115,6 +133,12 @@ namespace TencentCloud
                      */
                     std::string m_replicationRegionName;
                     bool m_replicationRegionNameHasBeenSet;
+
+                    /**
+                     * 是否同步TCR云标签至生成的COS Bucket
+                     */
+                    bool m_syncTag;
+                    bool m_syncTagHasBeenSet;
 
                 };
             }

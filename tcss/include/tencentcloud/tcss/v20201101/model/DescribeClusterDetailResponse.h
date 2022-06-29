@@ -235,6 +235,102 @@ namespace TencentCloud
                      */
                     bool TaskCreateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取网络类型.PublicNetwork为公网类型,VPCNetwork为VPC网络
+                     * @return NetworkType 网络类型.PublicNetwork为公网类型,VPCNetwork为VPC网络
+                     */
+                    std::string GetNetworkType() const;
+
+                    /**
+                     * 判断参数 NetworkType 是否已赋值
+                     * @return NetworkType 是否已赋值
+                     */
+                    bool NetworkTypeHasBeenSet() const;
+
+                    /**
+                     * 获取API Server地址
+                     * @return ApiServerAddress API Server地址
+                     */
+                    std::string GetApiServerAddress() const;
+
+                    /**
+                     * 判断参数 ApiServerAddress 是否已赋值
+                     * @return ApiServerAddress 是否已赋值
+                     */
+                    bool ApiServerAddressHasBeenSet() const;
+
+                    /**
+                     * 获取节点数
+                     * @return NodeCount 节点数
+                     */
+                    uint64_t GetNodeCount() const;
+
+                    /**
+                     * 判断参数 NodeCount 是否已赋值
+                     * @return NodeCount 是否已赋值
+                     */
+                    bool NodeCountHasBeenSet() const;
+
+                    /**
+                     * 获取命名空间数
+                     * @return NamespaceCount 命名空间数
+                     */
+                    uint64_t GetNamespaceCount() const;
+
+                    /**
+                     * 判断参数 NamespaceCount 是否已赋值
+                     * @return NamespaceCount 是否已赋值
+                     */
+                    bool NamespaceCountHasBeenSet() const;
+
+                    /**
+                     * 获取工作负载数
+                     * @return WorkloadCount 工作负载数
+                     */
+                    uint64_t GetWorkloadCount() const;
+
+                    /**
+                     * 判断参数 WorkloadCount 是否已赋值
+                     * @return WorkloadCount 是否已赋值
+                     */
+                    bool WorkloadCountHasBeenSet() const;
+
+                    /**
+                     * 获取Pod数量
+                     * @return PodCount Pod数量
+                     */
+                    uint64_t GetPodCount() const;
+
+                    /**
+                     * 判断参数 PodCount 是否已赋值
+                     * @return PodCount 是否已赋值
+                     */
+                    bool PodCountHasBeenSet() const;
+
+                    /**
+                     * 获取Service数量
+                     * @return ServiceCount Service数量
+                     */
+                    uint64_t GetServiceCount() const;
+
+                    /**
+                     * 判断参数 ServiceCount 是否已赋值
+                     * @return ServiceCount 是否已赋值
+                     */
+                    bool ServiceCountHasBeenSet() const;
+
+                    /**
+                     * 获取Ingress数量
+                     * @return IngressCount Ingress数量
+                     */
+                    uint64_t GetIngressCount() const;
+
+                    /**
+                     * 判断参数 IngressCount 是否已赋值
+                     * @return IngressCount 是否已赋值
+                     */
+                    bool IngressCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -332,6 +428,54 @@ namespace TencentCloud
                      */
                     std::string m_taskCreateTime;
                     bool m_taskCreateTimeHasBeenSet;
+
+                    /**
+                     * 网络类型.PublicNetwork为公网类型,VPCNetwork为VPC网络
+                     */
+                    std::string m_networkType;
+                    bool m_networkTypeHasBeenSet;
+
+                    /**
+                     * API Server地址
+                     */
+                    std::string m_apiServerAddress;
+                    bool m_apiServerAddressHasBeenSet;
+
+                    /**
+                     * 节点数
+                     */
+                    uint64_t m_nodeCount;
+                    bool m_nodeCountHasBeenSet;
+
+                    /**
+                     * 命名空间数
+                     */
+                    uint64_t m_namespaceCount;
+                    bool m_namespaceCountHasBeenSet;
+
+                    /**
+                     * 工作负载数
+                     */
+                    uint64_t m_workloadCount;
+                    bool m_workloadCountHasBeenSet;
+
+                    /**
+                     * Pod数量
+                     */
+                    uint64_t m_podCount;
+                    bool m_podCountHasBeenSet;
+
+                    /**
+                     * Service数量
+                     */
+                    uint64_t m_serviceCount;
+                    bool m_serviceCountHasBeenSet;
+
+                    /**
+                     * Ingress数量
+                     */
+                    uint64_t m_ingressCount;
+                    bool m_ingressCountHasBeenSet;
 
                 };
             }

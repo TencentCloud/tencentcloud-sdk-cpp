@@ -168,6 +168,24 @@ namespace TencentCloud
                      */
                     bool ExecuteTypeHasBeenSet() const;
 
+                    /**
+                     * 获取无
+                     * @return Ids 无
+                     */
+                    std::vector<std::string> GetIds() const;
+
+                    /**
+                     * 设置无
+                     * @param Ids 无
+                     */
+                    void SetIds(const std::vector<std::string>& _ids);
+
+                    /**
+                     * 判断参数 Ids 是否已赋值
+                     * @return Ids 是否已赋值
+                     */
+                    bool IdsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -211,6 +229,12 @@ namespace TencentCloud
                      */
                     std::string m_executeType;
                     bool m_executeTypeHasBeenSet;
+
+                    /**
+                     * 无
+                     */
+                    std::vector<std::string> m_ids;
+                    bool m_idsHasBeenSet;
 
                 };
             }

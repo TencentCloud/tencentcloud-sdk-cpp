@@ -166,9 +166,11 @@ namespace TencentCloud
                     /**
                      * 获取Code 告警码列表和释义：
 -20001 非营业执照
+-9102 黑白复印件告警
 注：告警码可以同时存在多个
                      * @return RecognizeWarnCode Code 告警码列表和释义：
 -20001 非营业执照
+-9102 黑白复印件告警
 注：告警码可以同时存在多个
                      */
                     std::vector<int64_t> GetRecognizeWarnCode() const;
@@ -182,9 +184,11 @@ namespace TencentCloud
                     /**
                      * 获取告警码说明：
 OCR_WARNING_TPYE_NOT_MATCH 非营业执照
+WARN_COPY_CARD 黑白复印件告警
 注：告警信息可以同时存在多个
                      * @return RecognizeWarnMsg 告警码说明：
 OCR_WARNING_TPYE_NOT_MATCH 非营业执照
+WARN_COPY_CARD 黑白复印件告警
 注：告警信息可以同时存在多个
                      */
                     std::vector<std::string> GetRecognizeWarnMsg() const;
@@ -260,6 +264,7 @@ OCR_WARNING_TPYE_NOT_MATCH 非营业执照
                     /**
                      * Code 告警码列表和释义：
 -20001 非营业执照
+-9102 黑白复印件告警
 注：告警码可以同时存在多个
                      */
                     std::vector<int64_t> m_recognizeWarnCode;
@@ -268,6 +273,7 @@ OCR_WARNING_TPYE_NOT_MATCH 非营业执照
                     /**
                      * 告警码说明：
 OCR_WARNING_TPYE_NOT_MATCH 非营业执照
+WARN_COPY_CARD 黑白复印件告警
 注：告警信息可以同时存在多个
                      */
                     std::vector<std::string> m_recognizeWarnMsg;

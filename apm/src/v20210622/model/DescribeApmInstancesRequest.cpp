@@ -25,7 +25,8 @@ using namespace std;
 DescribeApmInstancesRequest::DescribeApmInstancesRequest() :
     m_tagsHasBeenSet(false),
     m_instanceNameHasBeenSet(false),
-    m_instanceIdsHasBeenSet(false)
+    m_instanceIdsHasBeenSet(false),
+    m_demoInstanceFlagHasBeenSet(false)
 {
 }
 
@@ -70,6 +71,14 @@ string DescribeApmInstancesRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_demoInstanceFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DemoInstanceFlag";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_demoInstanceFlag, allocator);
     }
 
 
@@ -126,6 +135,22 @@ void DescribeApmInstancesRequest::SetInstanceIds(const vector<string>& _instance
 bool DescribeApmInstancesRequest::InstanceIdsHasBeenSet() const
 {
     return m_instanceIdsHasBeenSet;
+}
+
+int64_t DescribeApmInstancesRequest::GetDemoInstanceFlag() const
+{
+    return m_demoInstanceFlag;
+}
+
+void DescribeApmInstancesRequest::SetDemoInstanceFlag(const int64_t& _demoInstanceFlag)
+{
+    m_demoInstanceFlag = _demoInstanceFlag;
+    m_demoInstanceFlagHasBeenSet = true;
+}
+
+bool DescribeApmInstancesRequest::DemoInstanceFlagHasBeenSet() const
+{
+    return m_demoInstanceFlagHasBeenSet;
 }
 
 

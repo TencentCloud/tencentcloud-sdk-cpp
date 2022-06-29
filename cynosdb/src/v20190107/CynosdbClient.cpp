@@ -40,6 +40,49 @@ CynosdbClient::CynosdbClient(const Credential &credential, const string &region,
 }
 
 
+CynosdbClient::ActivateInstanceOutcome CynosdbClient::ActivateInstance(const ActivateInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "ActivateInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ActivateInstanceResponse rsp = ActivateInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ActivateInstanceOutcome(rsp);
+        else
+            return ActivateInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return ActivateInstanceOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::ActivateInstanceAsync(const ActivateInstanceRequest& request, const ActivateInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ActivateInstance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CynosdbClient::ActivateInstanceOutcomeCallable CynosdbClient::ActivateInstanceCallable(const ActivateInstanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ActivateInstanceOutcome()>>(
+        [this, request]()
+        {
+            return this->ActivateInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CynosdbClient::AddInstancesOutcome CynosdbClient::AddInstances(const AddInstancesRequest &request)
 {
     auto outcome = MakeRequest(request, "AddInstances");
@@ -83,6 +126,92 @@ CynosdbClient::AddInstancesOutcomeCallable CynosdbClient::AddInstancesCallable(c
     return task->get_future();
 }
 
+CynosdbClient::AssociateSecurityGroupsOutcome CynosdbClient::AssociateSecurityGroups(const AssociateSecurityGroupsRequest &request)
+{
+    auto outcome = MakeRequest(request, "AssociateSecurityGroups");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AssociateSecurityGroupsResponse rsp = AssociateSecurityGroupsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AssociateSecurityGroupsOutcome(rsp);
+        else
+            return AssociateSecurityGroupsOutcome(o.GetError());
+    }
+    else
+    {
+        return AssociateSecurityGroupsOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::AssociateSecurityGroupsAsync(const AssociateSecurityGroupsRequest& request, const AssociateSecurityGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AssociateSecurityGroups(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CynosdbClient::AssociateSecurityGroupsOutcomeCallable CynosdbClient::AssociateSecurityGroupsCallable(const AssociateSecurityGroupsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AssociateSecurityGroupsOutcome()>>(
+        [this, request]()
+        {
+            return this->AssociateSecurityGroups(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CynosdbClient::CreateAccountsOutcome CynosdbClient::CreateAccounts(const CreateAccountsRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAccounts");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAccountsResponse rsp = CreateAccountsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAccountsOutcome(rsp);
+        else
+            return CreateAccountsOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAccountsOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::CreateAccountsAsync(const CreateAccountsRequest& request, const CreateAccountsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateAccounts(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CynosdbClient::CreateAccountsOutcomeCallable CynosdbClient::CreateAccountsCallable(const CreateAccountsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateAccountsOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateAccounts(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CynosdbClient::CreateClustersOutcome CynosdbClient::CreateClusters(const CreateClustersRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateClusters");
@@ -119,6 +248,49 @@ CynosdbClient::CreateClustersOutcomeCallable CynosdbClient::CreateClustersCallab
         [this, request]()
         {
             return this->CreateClusters(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CynosdbClient::DescribeAccountAllGrantPrivilegesOutcome CynosdbClient::DescribeAccountAllGrantPrivileges(const DescribeAccountAllGrantPrivilegesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAccountAllGrantPrivileges");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAccountAllGrantPrivilegesResponse rsp = DescribeAccountAllGrantPrivilegesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAccountAllGrantPrivilegesOutcome(rsp);
+        else
+            return DescribeAccountAllGrantPrivilegesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAccountAllGrantPrivilegesOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::DescribeAccountAllGrantPrivilegesAsync(const DescribeAccountAllGrantPrivilegesRequest& request, const DescribeAccountAllGrantPrivilegesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAccountAllGrantPrivileges(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CynosdbClient::DescribeAccountAllGrantPrivilegesOutcomeCallable CynosdbClient::DescribeAccountAllGrantPrivilegesCallable(const DescribeAccountAllGrantPrivilegesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAccountAllGrantPrivilegesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAccountAllGrantPrivileges(request);
         }
     );
 
@@ -334,6 +506,49 @@ CynosdbClient::DescribeClusterInstanceGrpsOutcomeCallable CynosdbClient::Describ
         [this, request]()
         {
             return this->DescribeClusterInstanceGrps(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CynosdbClient::DescribeClusterParamLogsOutcome CynosdbClient::DescribeClusterParamLogs(const DescribeClusterParamLogsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeClusterParamLogs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeClusterParamLogsResponse rsp = DescribeClusterParamLogsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeClusterParamLogsOutcome(rsp);
+        else
+            return DescribeClusterParamLogsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeClusterParamLogsOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::DescribeClusterParamLogsAsync(const DescribeClusterParamLogsRequest& request, const DescribeClusterParamLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeClusterParamLogs(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CynosdbClient::DescribeClusterParamLogsOutcomeCallable CynosdbClient::DescribeClusterParamLogsCallable(const DescribeClusterParamLogsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeClusterParamLogsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeClusterParamLogs(request);
         }
     );
 
@@ -771,6 +986,92 @@ CynosdbClient::DescribeRollbackTimeValidityOutcomeCallable CynosdbClient::Descri
     return task->get_future();
 }
 
+CynosdbClient::DisassociateSecurityGroupsOutcome CynosdbClient::DisassociateSecurityGroups(const DisassociateSecurityGroupsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DisassociateSecurityGroups");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DisassociateSecurityGroupsResponse rsp = DisassociateSecurityGroupsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DisassociateSecurityGroupsOutcome(rsp);
+        else
+            return DisassociateSecurityGroupsOutcome(o.GetError());
+    }
+    else
+    {
+        return DisassociateSecurityGroupsOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::DisassociateSecurityGroupsAsync(const DisassociateSecurityGroupsRequest& request, const DisassociateSecurityGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DisassociateSecurityGroups(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CynosdbClient::DisassociateSecurityGroupsOutcomeCallable CynosdbClient::DisassociateSecurityGroupsCallable(const DisassociateSecurityGroupsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DisassociateSecurityGroupsOutcome()>>(
+        [this, request]()
+        {
+            return this->DisassociateSecurityGroups(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CynosdbClient::GrantAccountPrivilegesOutcome CynosdbClient::GrantAccountPrivileges(const GrantAccountPrivilegesRequest &request)
+{
+    auto outcome = MakeRequest(request, "GrantAccountPrivileges");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GrantAccountPrivilegesResponse rsp = GrantAccountPrivilegesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GrantAccountPrivilegesOutcome(rsp);
+        else
+            return GrantAccountPrivilegesOutcome(o.GetError());
+    }
+    else
+    {
+        return GrantAccountPrivilegesOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::GrantAccountPrivilegesAsync(const GrantAccountPrivilegesRequest& request, const GrantAccountPrivilegesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GrantAccountPrivileges(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CynosdbClient::GrantAccountPrivilegesOutcomeCallable CynosdbClient::GrantAccountPrivilegesCallable(const GrantAccountPrivilegesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GrantAccountPrivilegesOutcome()>>(
+        [this, request]()
+        {
+            return this->GrantAccountPrivileges(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CynosdbClient::IsolateClusterOutcome CynosdbClient::IsolateCluster(const IsolateClusterRequest &request)
 {
     auto outcome = MakeRequest(request, "IsolateCluster");
@@ -857,6 +1158,49 @@ CynosdbClient::IsolateInstanceOutcomeCallable CynosdbClient::IsolateInstanceCall
     return task->get_future();
 }
 
+CynosdbClient::ModifyAccountParamsOutcome CynosdbClient::ModifyAccountParams(const ModifyAccountParamsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyAccountParams");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyAccountParamsResponse rsp = ModifyAccountParamsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyAccountParamsOutcome(rsp);
+        else
+            return ModifyAccountParamsOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyAccountParamsOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::ModifyAccountParamsAsync(const ModifyAccountParamsRequest& request, const ModifyAccountParamsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyAccountParams(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CynosdbClient::ModifyAccountParamsOutcomeCallable CynosdbClient::ModifyAccountParamsCallable(const ModifyAccountParamsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyAccountParamsOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyAccountParams(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CynosdbClient::ModifyBackupConfigOutcome CynosdbClient::ModifyBackupConfig(const ModifyBackupConfigRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyBackupConfig");
@@ -893,6 +1237,49 @@ CynosdbClient::ModifyBackupConfigOutcomeCallable CynosdbClient::ModifyBackupConf
         [this, request]()
         {
             return this->ModifyBackupConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CynosdbClient::ModifyClusterNameOutcome CynosdbClient::ModifyClusterName(const ModifyClusterNameRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyClusterName");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyClusterNameResponse rsp = ModifyClusterNameResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyClusterNameOutcome(rsp);
+        else
+            return ModifyClusterNameOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyClusterNameOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::ModifyClusterNameAsync(const ModifyClusterNameRequest& request, const ModifyClusterNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyClusterName(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CynosdbClient::ModifyClusterNameOutcomeCallable CynosdbClient::ModifyClusterNameCallable(const ModifyClusterNameRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyClusterNameOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyClusterName(request);
         }
     );
 
@@ -979,6 +1366,49 @@ CynosdbClient::ModifyDBInstanceSecurityGroupsOutcomeCallable CynosdbClient::Modi
         [this, request]()
         {
             return this->ModifyDBInstanceSecurityGroups(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CynosdbClient::ModifyInstanceNameOutcome CynosdbClient::ModifyInstanceName(const ModifyInstanceNameRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyInstanceName");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyInstanceNameResponse rsp = ModifyInstanceNameResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyInstanceNameOutcome(rsp);
+        else
+            return ModifyInstanceNameOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyInstanceNameOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::ModifyInstanceNameAsync(const ModifyInstanceNameRequest& request, const ModifyInstanceNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyInstanceName(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CynosdbClient::ModifyInstanceNameOutcomeCallable CynosdbClient::ModifyInstanceNameCallable(const ModifyInstanceNameRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyInstanceNameOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyInstanceName(request);
         }
     );
 
@@ -1108,6 +1538,178 @@ CynosdbClient::OfflineInstanceOutcomeCallable CynosdbClient::OfflineInstanceCall
         [this, request]()
         {
             return this->OfflineInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CynosdbClient::PauseServerlessOutcome CynosdbClient::PauseServerless(const PauseServerlessRequest &request)
+{
+    auto outcome = MakeRequest(request, "PauseServerless");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        PauseServerlessResponse rsp = PauseServerlessResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return PauseServerlessOutcome(rsp);
+        else
+            return PauseServerlessOutcome(o.GetError());
+    }
+    else
+    {
+        return PauseServerlessOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::PauseServerlessAsync(const PauseServerlessRequest& request, const PauseServerlessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->PauseServerless(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CynosdbClient::PauseServerlessOutcomeCallable CynosdbClient::PauseServerlessCallable(const PauseServerlessRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<PauseServerlessOutcome()>>(
+        [this, request]()
+        {
+            return this->PauseServerless(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CynosdbClient::ResumeServerlessOutcome CynosdbClient::ResumeServerless(const ResumeServerlessRequest &request)
+{
+    auto outcome = MakeRequest(request, "ResumeServerless");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ResumeServerlessResponse rsp = ResumeServerlessResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ResumeServerlessOutcome(rsp);
+        else
+            return ResumeServerlessOutcome(o.GetError());
+    }
+    else
+    {
+        return ResumeServerlessOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::ResumeServerlessAsync(const ResumeServerlessRequest& request, const ResumeServerlessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ResumeServerless(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CynosdbClient::ResumeServerlessOutcomeCallable CynosdbClient::ResumeServerlessCallable(const ResumeServerlessRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ResumeServerlessOutcome()>>(
+        [this, request]()
+        {
+            return this->ResumeServerless(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CynosdbClient::RevokeAccountPrivilegesOutcome CynosdbClient::RevokeAccountPrivileges(const RevokeAccountPrivilegesRequest &request)
+{
+    auto outcome = MakeRequest(request, "RevokeAccountPrivileges");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RevokeAccountPrivilegesResponse rsp = RevokeAccountPrivilegesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RevokeAccountPrivilegesOutcome(rsp);
+        else
+            return RevokeAccountPrivilegesOutcome(o.GetError());
+    }
+    else
+    {
+        return RevokeAccountPrivilegesOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::RevokeAccountPrivilegesAsync(const RevokeAccountPrivilegesRequest& request, const RevokeAccountPrivilegesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RevokeAccountPrivileges(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CynosdbClient::RevokeAccountPrivilegesOutcomeCallable CynosdbClient::RevokeAccountPrivilegesCallable(const RevokeAccountPrivilegesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RevokeAccountPrivilegesOutcome()>>(
+        [this, request]()
+        {
+            return this->RevokeAccountPrivileges(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CynosdbClient::RollBackClusterOutcome CynosdbClient::RollBackCluster(const RollBackClusterRequest &request)
+{
+    auto outcome = MakeRequest(request, "RollBackCluster");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RollBackClusterResponse rsp = RollBackClusterResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RollBackClusterOutcome(rsp);
+        else
+            return RollBackClusterOutcome(o.GetError());
+    }
+    else
+    {
+        return RollBackClusterOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::RollBackClusterAsync(const RollBackClusterRequest& request, const RollBackClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RollBackCluster(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CynosdbClient::RollBackClusterOutcomeCallable CynosdbClient::RollBackClusterCallable(const RollBackClusterRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RollBackClusterOutcome()>>(
+        [this, request]()
+        {
+            return this->RollBackCluster(request);
         }
     );
 

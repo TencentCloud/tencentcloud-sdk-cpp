@@ -21,7 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/eiam/v20210420/model/AuthorizationResouceEntityInfo.h>
+#include <tencentcloud/eiam/v20210420/model/AuthorizationResourceEntityInfo.h>
 
 
 namespace TencentCloud
@@ -92,7 +92,7 @@ namespace TencentCloud
                      * @return AuthorizationUserGroupResourceList 资源列表
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::vector<AuthorizationResouceEntityInfo> GetAuthorizationUserGroupResourceList() const;
+                    std::vector<AuthorizationResourceEntityInfo> GetAuthorizationUserGroupResourceList() const;
 
                     /**
                      * 判断参数 AuthorizationUserGroupResourceList 是否已赋值
@@ -127,7 +127,7 @@ namespace TencentCloud
                      * 资源列表
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::vector<AuthorizationResouceEntityInfo> m_authorizationUserGroupResourceList;
+                    std::vector<AuthorizationResourceEntityInfo> m_authorizationUserGroupResourceList;
                     bool m_authorizationUserGroupResourceListHasBeenSet;
 
                 };

@@ -50,6 +50,7 @@ set(eiam_public_header_model
   include/tencentcloud/eiam/v20210420/model/DescribeUserGroupRequest.h
   include/tencentcloud/eiam/v20210420/model/CreateOrgNodeResponse.h
   include/tencentcloud/eiam/v20210420/model/UserGroupInformationSearchCriteria.h
+  include/tencentcloud/eiam/v20210420/model/AuthorizationResourceEntityInfo.h
   include/tencentcloud/eiam/v20210420/model/AccountGroupSearchCriteria.h
   include/tencentcloud/eiam/v20210420/model/CreateUserResponse.h
   include/tencentcloud/eiam/v20210420/model/ThirdPartyAccountInfo.h
@@ -93,7 +94,6 @@ set(eiam_public_header_model
   include/tencentcloud/eiam/v20210420/model/ListUserGroupsRequest.h
   include/tencentcloud/eiam/v20210420/model/UpdateOrgNodeResponse.h
   include/tencentcloud/eiam/v20210420/model/ListAuthorizedApplicationsToUserResponse.h
-  include/tencentcloud/eiam/v20210420/model/AuthorizationResouceEntityInfo.h
   include/tencentcloud/eiam/v20210420/model/ModifyApplicationRequest.h
   include/tencentcloud/eiam/v20210420/model/CreateUserRequest.h
   include/tencentcloud/eiam/v20210420/model/DescribePublicKeyRequest.h
@@ -163,6 +163,7 @@ set(eiam_src
   src/v20210420/model/DescribeUserGroupRequest.cpp
   src/v20210420/model/CreateOrgNodeResponse.cpp
   src/v20210420/model/UserGroupInformationSearchCriteria.cpp
+  src/v20210420/model/AuthorizationResourceEntityInfo.cpp
   src/v20210420/model/AccountGroupSearchCriteria.cpp
   src/v20210420/model/CreateUserResponse.cpp
   src/v20210420/model/ThirdPartyAccountInfo.cpp
@@ -206,7 +207,6 @@ set(eiam_src
   src/v20210420/model/ListUserGroupsRequest.cpp
   src/v20210420/model/UpdateOrgNodeResponse.cpp
   src/v20210420/model/ListAuthorizedApplicationsToUserResponse.cpp
-  src/v20210420/model/AuthorizationResouceEntityInfo.cpp
   src/v20210420/model/ModifyApplicationRequest.cpp
   src/v20210420/model/CreateUserRequest.cpp
   src/v20210420/model/DescribePublicKeyRequest.cpp

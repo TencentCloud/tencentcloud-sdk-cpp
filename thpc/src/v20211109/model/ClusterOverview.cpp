@@ -30,7 +30,9 @@ ClusterOverview::ClusterOverview() :
     m_computeNodeCountHasBeenSet(false),
     m_computeNodeSetHasBeenSet(false),
     m_managerNodeCountHasBeenSet(false),
-    m_managerNodeSetHasBeenSet(false)
+    m_managerNodeSetHasBeenSet(false),
+    m_loginNodeSetHasBeenSet(false),
+    m_loginNodeCountHasBeenSet(false)
 {
 }
 
@@ -166,6 +168,36 @@ CoreInternalOutcome ClusterOverview::Deserialize(const rapidjson::Value &value)
         m_managerNodeSetHasBeenSet = true;
     }
 
+    if (value.HasMember("LoginNodeSet") && !value["LoginNodeSet"].IsNull())
+    {
+        if (!value["LoginNodeSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ClusterOverview.LoginNodeSet` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["LoginNodeSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            LoginNodeOverview item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_loginNodeSet.push_back(item);
+        }
+        m_loginNodeSetHasBeenSet = true;
+    }
+
+    if (value.HasMember("LoginNodeCount") && !value["LoginNodeCount"].IsNull())
+    {
+        if (!value["LoginNodeCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterOverview.LoginNodeCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_loginNodeCount = value["LoginNodeCount"].GetInt64();
+        m_loginNodeCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -266,6 +298,29 @@ void ClusterOverview::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_loginNodeSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LoginNodeSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_loginNodeSet.begin(); itr != m_loginNodeSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_loginNodeCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LoginNodeCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_loginNodeCount, allocator);
     }
 
 }
@@ -429,5 +484,37 @@ void ClusterOverview::SetManagerNodeSet(const vector<ManagerNodeOverview>& _mana
 bool ClusterOverview::ManagerNodeSetHasBeenSet() const
 {
     return m_managerNodeSetHasBeenSet;
+}
+
+vector<LoginNodeOverview> ClusterOverview::GetLoginNodeSet() const
+{
+    return m_loginNodeSet;
+}
+
+void ClusterOverview::SetLoginNodeSet(const vector<LoginNodeOverview>& _loginNodeSet)
+{
+    m_loginNodeSet = _loginNodeSet;
+    m_loginNodeSetHasBeenSet = true;
+}
+
+bool ClusterOverview::LoginNodeSetHasBeenSet() const
+{
+    return m_loginNodeSetHasBeenSet;
+}
+
+int64_t ClusterOverview::GetLoginNodeCount() const
+{
+    return m_loginNodeCount;
+}
+
+void ClusterOverview::SetLoginNodeCount(const int64_t& _loginNodeCount)
+{
+    m_loginNodeCount = _loginNodeCount;
+    m_loginNodeCountHasBeenSet = true;
+}
+
+bool ClusterOverview::LoginNodeCountHasBeenSet() const
+{
+    return m_loginNodeCountHasBeenSet;
 }
 

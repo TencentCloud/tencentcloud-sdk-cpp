@@ -208,6 +208,42 @@ namespace TencentCloud
                      */
                     bool WorkloadVisualConfigHasBeenSet() const;
 
+                    /**
+                     * 获取无
+                     * @return DetailUrl 无
+                     */
+                    std::string GetDetailUrl() const;
+
+                    /**
+                     * 设置无
+                     * @param DetailUrl 无
+                     */
+                    void SetDetailUrl(const std::string& _detailUrl);
+
+                    /**
+                     * 判断参数 DetailUrl 是否已赋值
+                     * @return DetailUrl 是否已赋值
+                     */
+                    bool DetailUrlHasBeenSet() const;
+
+                    /**
+                     * 获取无
+                     * @return Installed 无
+                     */
+                    bool GetInstalled() const;
+
+                    /**
+                     * 设置无
+                     * @param Installed 无
+                     */
+                    void SetInstalled(const bool& _installed);
+
+                    /**
+                     * 判断参数 Installed 是否已赋值
+                     * @return Installed 是否已赋值
+                     */
+                    bool InstalledHasBeenSet() const;
+
                 private:
 
                     /**
@@ -263,6 +299,18 @@ namespace TencentCloud
                      */
                     std::string m_workloadVisualConfig;
                     bool m_workloadVisualConfigHasBeenSet;
+
+                    /**
+                     * 无
+                     */
+                    std::string m_detailUrl;
+                    bool m_detailUrlHasBeenSet;
+
+                    /**
+                     * 无
+                     */
+                    bool m_installed;
+                    bool m_installedHasBeenSet;
 
                 };
             }

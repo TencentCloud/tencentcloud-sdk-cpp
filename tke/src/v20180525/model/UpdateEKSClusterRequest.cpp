@@ -33,7 +33,8 @@ UpdateEKSClusterRequest::UpdateEKSClusterRequest() :
     m_dnsServersHasBeenSet(false),
     m_clearDnsServerHasBeenSet(false),
     m_needDeleteCbsHasBeenSet(false),
-    m_proxyLBHasBeenSet(false)
+    m_proxyLBHasBeenSet(false),
+    m_extraParamHasBeenSet(false)
 {
 }
 
@@ -144,6 +145,14 @@ string UpdateEKSClusterRequest::ToJsonString() const
         string key = "ProxyLB";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_proxyLB, allocator);
+    }
+
+    if (m_extraParamHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExtraParam";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_extraParam.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -328,6 +337,22 @@ void UpdateEKSClusterRequest::SetProxyLB(const bool& _proxyLB)
 bool UpdateEKSClusterRequest::ProxyLBHasBeenSet() const
 {
     return m_proxyLBHasBeenSet;
+}
+
+string UpdateEKSClusterRequest::GetExtraParam() const
+{
+    return m_extraParam;
+}
+
+void UpdateEKSClusterRequest::SetExtraParam(const string& _extraParam)
+{
+    m_extraParam = _extraParam;
+    m_extraParamHasBeenSet = true;
+}
+
+bool UpdateEKSClusterRequest::ExtraParamHasBeenSet() const
+{
+    return m_extraParamHasBeenSet;
 }
 
 

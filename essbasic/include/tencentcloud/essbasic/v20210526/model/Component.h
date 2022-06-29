@@ -450,6 +450,42 @@ TEXT控件可以指定字体
                      */
                     bool ComponentDescriptionHasBeenSet() const;
 
+                    /**
+                     * 获取指定关键字时横坐标偏移量
+                     * @return OffsetX 指定关键字时横坐标偏移量
+                     */
+                    double GetOffsetX() const;
+
+                    /**
+                     * 设置指定关键字时横坐标偏移量
+                     * @param OffsetX 指定关键字时横坐标偏移量
+                     */
+                    void SetOffsetX(const double& _offsetX);
+
+                    /**
+                     * 判断参数 OffsetX 是否已赋值
+                     * @return OffsetX 是否已赋值
+                     */
+                    bool OffsetXHasBeenSet() const;
+
+                    /**
+                     * 获取指定关键字时纵坐标偏移量
+                     * @return OffsetY 指定关键字时纵坐标偏移量
+                     */
+                    double GetOffsetY() const;
+
+                    /**
+                     * 设置指定关键字时纵坐标偏移量
+                     * @param OffsetY 指定关键字时纵坐标偏移量
+                     */
+                    void SetOffsetY(const double& _offsetY);
+
+                    /**
+                     * 判断参数 OffsetY 是否已赋值
+                     * @return OffsetY 是否已赋值
+                     */
+                    bool OffsetYHasBeenSet() const;
+
                 private:
 
                     /**
@@ -576,6 +612,18 @@ TEXT控件可以指定字体
                      */
                     std::string m_componentDescription;
                     bool m_componentDescriptionHasBeenSet;
+
+                    /**
+                     * 指定关键字时横坐标偏移量
+                     */
+                    double m_offsetX;
+                    bool m_offsetXHasBeenSet;
+
+                    /**
+                     * 指定关键字时纵坐标偏移量
+                     */
+                    double m_offsetY;
+                    bool m_offsetYHasBeenSet;
 
                 };
             }

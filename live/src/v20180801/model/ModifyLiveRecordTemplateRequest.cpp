@@ -31,7 +31,9 @@ ModifyLiveRecordTemplateRequest::ModifyLiveRecordTemplateRequest() :
     m_mp4ParamHasBeenSet(false),
     m_aacParamHasBeenSet(false),
     m_hlsSpecialParamHasBeenSet(false),
-    m_mp3ParamHasBeenSet(false)
+    m_mp3ParamHasBeenSet(false),
+    m_removeWatermarkHasBeenSet(false),
+    m_flvSpecialParamHasBeenSet(false)
 {
 }
 
@@ -118,6 +120,23 @@ string ModifyLiveRecordTemplateRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_mp3Param.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_removeWatermarkHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RemoveWatermark";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_removeWatermark, allocator);
+    }
+
+    if (m_flvSpecialParamHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FlvSpecialParam";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_flvSpecialParam.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -270,6 +289,38 @@ void ModifyLiveRecordTemplateRequest::SetMp3Param(const RecordParam& _mp3Param)
 bool ModifyLiveRecordTemplateRequest::Mp3ParamHasBeenSet() const
 {
     return m_mp3ParamHasBeenSet;
+}
+
+bool ModifyLiveRecordTemplateRequest::GetRemoveWatermark() const
+{
+    return m_removeWatermark;
+}
+
+void ModifyLiveRecordTemplateRequest::SetRemoveWatermark(const bool& _removeWatermark)
+{
+    m_removeWatermark = _removeWatermark;
+    m_removeWatermarkHasBeenSet = true;
+}
+
+bool ModifyLiveRecordTemplateRequest::RemoveWatermarkHasBeenSet() const
+{
+    return m_removeWatermarkHasBeenSet;
+}
+
+FlvSpecialParam ModifyLiveRecordTemplateRequest::GetFlvSpecialParam() const
+{
+    return m_flvSpecialParam;
+}
+
+void ModifyLiveRecordTemplateRequest::SetFlvSpecialParam(const FlvSpecialParam& _flvSpecialParam)
+{
+    m_flvSpecialParam = _flvSpecialParam;
+    m_flvSpecialParamHasBeenSet = true;
+}
+
+bool ModifyLiveRecordTemplateRequest::FlvSpecialParamHasBeenSet() const
+{
+    return m_flvSpecialParamHasBeenSet;
 }
 
 

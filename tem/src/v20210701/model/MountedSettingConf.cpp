@@ -23,7 +23,8 @@ using namespace std;
 MountedSettingConf::MountedSettingConf() :
     m_configDataNameHasBeenSet(false),
     m_mountedPathHasBeenSet(false),
-    m_dataHasBeenSet(false)
+    m_dataHasBeenSet(false),
+    m_secretDataNameHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,16 @@ CoreInternalOutcome MountedSettingConf::Deserialize(const rapidjson::Value &valu
         m_dataHasBeenSet = true;
     }
 
+    if (value.HasMember("SecretDataName") && !value["SecretDataName"].IsNull())
+    {
+        if (!value["SecretDataName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MountedSettingConf.SecretDataName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_secretDataName = string(value["SecretDataName"].GetString());
+        m_secretDataNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -108,6 +119,14 @@ void MountedSettingConf::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_secretDataNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SecretDataName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_secretDataName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -159,5 +178,21 @@ void MountedSettingConf::SetData(const vector<Pair>& _data)
 bool MountedSettingConf::DataHasBeenSet() const
 {
     return m_dataHasBeenSet;
+}
+
+string MountedSettingConf::GetSecretDataName() const
+{
+    return m_secretDataName;
+}
+
+void MountedSettingConf::SetSecretDataName(const string& _secretDataName)
+{
+    m_secretDataName = _secretDataName;
+    m_secretDataNameHasBeenSet = true;
+}
+
+bool MountedSettingConf::SecretDataNameHasBeenSet() const
+{
+    return m_secretDataNameHasBeenSet;
 }
 

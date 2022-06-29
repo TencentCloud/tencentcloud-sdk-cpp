@@ -41,7 +41,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 视频处理任务类型
+                * 媒体处理任务类型
                 */
                 class MediaProcessTaskInput : public AbstractModel
                 {

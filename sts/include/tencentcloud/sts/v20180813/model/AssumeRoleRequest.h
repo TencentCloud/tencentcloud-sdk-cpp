@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/sts/v20180813/model/Tag.h>
 
 
 namespace TencentCloud
@@ -172,6 +173,24 @@ qcs::cam::uin/12345678:role/tencentcloudServiceRole/4611686018427397920、qcs::c
                      */
                     bool ExternalIdHasBeenSet() const;
 
+                    /**
+                     * 获取会话标签列表。最多可以传递 50 个会话标签，不支持包含相同标签键。
+                     * @return Tags 会话标签列表。最多可以传递 50 个会话标签，不支持包含相同标签键。
+                     */
+                    std::vector<Tag> GetTags() const;
+
+                    /**
+                     * 设置会话标签列表。最多可以传递 50 个会话标签，不支持包含相同标签键。
+                     * @param Tags 会话标签列表。最多可以传递 50 个会话标签，不支持包含相同标签键。
+                     */
+                    void SetTags(const std::vector<Tag>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     */
+                    bool TagsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -213,6 +232,12 @@ qcs::cam::uin/12345678:role/tencentcloudServiceRole/4611686018427397920、qcs::c
                      */
                     std::string m_externalId;
                     bool m_externalIdHasBeenSet;
+
+                    /**
+                     * 会话标签列表。最多可以传递 50 个会话标签，不支持包含相同标签键。
+                     */
+                    std::vector<Tag> m_tags;
+                    bool m_tagsHasBeenSet;
 
                 };
             }

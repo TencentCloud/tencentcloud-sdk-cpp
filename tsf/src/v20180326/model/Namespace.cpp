@@ -34,7 +34,8 @@ Namespace::Namespace() :
     m_clusterIdHasBeenSet(false),
     m_namespaceResourceTypeHasBeenSet(false),
     m_namespaceTypeHasBeenSet(false),
-    m_isHaEnableHasBeenSet(false)
+    m_isHaEnableHasBeenSet(false),
+    m_kubeInjectEnableHasBeenSet(false)
 {
 }
 
@@ -193,6 +194,16 @@ CoreInternalOutcome Namespace::Deserialize(const rapidjson::Value &value)
         m_isHaEnableHasBeenSet = true;
     }
 
+    if (value.HasMember("KubeInjectEnable") && !value["KubeInjectEnable"].IsNull())
+    {
+        if (!value["KubeInjectEnable"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `Namespace.KubeInjectEnable` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_kubeInjectEnable = value["KubeInjectEnable"].GetBool();
+        m_kubeInjectEnableHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -317,6 +328,14 @@ void Namespace::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "IsHaEnable";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_isHaEnable.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_kubeInjectEnableHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KubeInjectEnable";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_kubeInjectEnable, allocator);
     }
 
 }
@@ -544,5 +563,21 @@ void Namespace::SetIsHaEnable(const string& _isHaEnable)
 bool Namespace::IsHaEnableHasBeenSet() const
 {
     return m_isHaEnableHasBeenSet;
+}
+
+bool Namespace::GetKubeInjectEnable() const
+{
+    return m_kubeInjectEnable;
+}
+
+void Namespace::SetKubeInjectEnable(const bool& _kubeInjectEnable)
+{
+    m_kubeInjectEnable = _kubeInjectEnable;
+    m_kubeInjectEnableHasBeenSet = true;
+}
+
+bool Namespace::KubeInjectEnableHasBeenSet() const
+{
+    return m_kubeInjectEnableHasBeenSet;
 }
 

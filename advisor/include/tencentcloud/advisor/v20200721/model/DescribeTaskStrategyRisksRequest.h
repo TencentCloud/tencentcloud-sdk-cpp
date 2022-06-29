@@ -96,6 +96,42 @@ namespace TencentCloud
                      */
                     bool OffsetHasBeenSet() const;
 
+                    /**
+                     * 获取环境
+                     * @return Env 环境
+                     */
+                    std::string GetEnv() const;
+
+                    /**
+                     * 设置环境
+                     * @param Env 环境
+                     */
+                    void SetEnv(const std::string& _env);
+
+                    /**
+                     * 判断参数 Env 是否已赋值
+                     * @return Env 是否已赋值
+                     */
+                    bool EnvHasBeenSet() const;
+
+                    /**
+                     * 获取任务类型
+                     * @return TaskType 任务类型
+                     */
+                    std::string GetTaskType() const;
+
+                    /**
+                     * 设置任务类型
+                     * @param TaskType 任务类型
+                     */
+                    void SetTaskType(const std::string& _taskType);
+
+                    /**
+                     * 判断参数 TaskType 是否已赋值
+                     * @return TaskType 是否已赋值
+                     */
+                    bool TaskTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -115,6 +151,18 @@ namespace TencentCloud
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
+
+                    /**
+                     * 环境
+                     */
+                    std::string m_env;
+                    bool m_envHasBeenSet;
+
+                    /**
+                     * 任务类型
+                     */
+                    std::string m_taskType;
+                    bool m_taskTypeHasBeenSet;
 
                 };
             }

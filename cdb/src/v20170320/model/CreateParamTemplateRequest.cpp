@@ -27,7 +27,8 @@ CreateParamTemplateRequest::CreateParamTemplateRequest() :
     m_descriptionHasBeenSet(false),
     m_engineVersionHasBeenSet(false),
     m_templateIdHasBeenSet(false),
-    m_paramListHasBeenSet(false)
+    m_paramListHasBeenSet(false),
+    m_templateTypeHasBeenSet(false)
 {
 }
 
@@ -83,6 +84,14 @@ string CreateParamTemplateRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_templateTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TemplateType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_templateType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -171,6 +180,22 @@ void CreateParamTemplateRequest::SetParamList(const vector<Parameter>& _paramLis
 bool CreateParamTemplateRequest::ParamListHasBeenSet() const
 {
     return m_paramListHasBeenSet;
+}
+
+string CreateParamTemplateRequest::GetTemplateType() const
+{
+    return m_templateType;
+}
+
+void CreateParamTemplateRequest::SetTemplateType(const string& _templateType)
+{
+    m_templateType = _templateType;
+    m_templateTypeHasBeenSet = true;
+}
+
+bool CreateParamTemplateRequest::TemplateTypeHasBeenSet() const
+{
+    return m_templateTypeHasBeenSet;
 }
 
 

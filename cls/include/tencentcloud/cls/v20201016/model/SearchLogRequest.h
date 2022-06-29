@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取要查询的日志主题ID
-                     * @return TopicId 要查询的日志主题ID
+                     * 获取要检索分析的日志主题ID
+                     * @return TopicId 要检索分析的日志主题ID
                      */
                     std::string GetTopicId() const;
 
                     /**
-                     * 设置要查询的日志主题ID
-                     * @param TopicId 要查询的日志主题ID
+                     * 设置要检索分析的日志主题ID
+                     * @param TopicId 要检索分析的日志主题ID
                      */
                     void SetTopicId(const std::string& _topicId);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool TopicIdHasBeenSet() const;
 
                     /**
-                     * 获取要查询的日志的起始时间，Unix时间戳，单位ms
-                     * @return From 要查询的日志的起始时间，Unix时间戳，单位ms
+                     * 获取要检索分析的日志的起始时间，Unix时间戳（毫秒）
+                     * @return From 要检索分析的日志的起始时间，Unix时间戳（毫秒）
                      */
                     int64_t GetFrom() const;
 
                     /**
-                     * 设置要查询的日志的起始时间，Unix时间戳，单位ms
-                     * @param From 要查询的日志的起始时间，Unix时间戳，单位ms
+                     * 设置要检索分析的日志的起始时间，Unix时间戳（毫秒）
+                     * @param From 要检索分析的日志的起始时间，Unix时间戳（毫秒）
                      */
                     void SetFrom(const int64_t& _from);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool FromHasBeenSet() const;
 
                     /**
-                     * 获取要查询的日志的结束时间，Unix时间戳，单位ms
-                     * @return To 要查询的日志的结束时间，Unix时间戳，单位ms
+                     * 获取要检索分析的日志的结束时间，Unix时间戳（毫秒）
+                     * @return To 要检索分析的日志的结束时间，Unix时间戳（毫秒）
                      */
                     int64_t GetTo() const;
 
                     /**
-                     * 设置要查询的日志的结束时间，Unix时间戳，单位ms
-                     * @param To 要查询的日志的结束时间，Unix时间戳，单位ms
+                     * 设置要检索分析的日志的结束时间，Unix时间戳（毫秒）
+                     * @param To 要检索分析的日志的结束时间，Unix时间戳（毫秒）
                      */
                     void SetTo(const int64_t& _to);
 
@@ -97,14 +97,18 @@ namespace TencentCloud
                     bool ToHasBeenSet() const;
 
                     /**
-                     * 获取查询语句，语句长度最大为4096
-                     * @return Query 查询语句，语句长度最大为4096
+                     * 获取检索分析语句，最大长度为12KB
+语句由 <a href="https://cloud.tencent.com/document/product/614/47044" target="_blank">[检索条件]</a> | <a href="https://cloud.tencent.com/document/product/614/44061" target="_blank">[SQL语句]</a>构成，无需对日志进行统计分析时，可省略其中的管道符<code> | </code>及SQL语句
+                     * @return Query 检索分析语句，最大长度为12KB
+语句由 <a href="https://cloud.tencent.com/document/product/614/47044" target="_blank">[检索条件]</a> | <a href="https://cloud.tencent.com/document/product/614/44061" target="_blank">[SQL语句]</a>构成，无需对日志进行统计分析时，可省略其中的管道符<code> | </code>及SQL语句
                      */
                     std::string GetQuery() const;
 
                     /**
-                     * 设置查询语句，语句长度最大为4096
-                     * @param Query 查询语句，语句长度最大为4096
+                     * 设置检索分析语句，最大长度为12KB
+语句由 <a href="https://cloud.tencent.com/document/product/614/47044" target="_blank">[检索条件]</a> | <a href="https://cloud.tencent.com/document/product/614/44061" target="_blank">[SQL语句]</a>构成，无需对日志进行统计分析时，可省略其中的管道符<code> | </code>及SQL语句
+                     * @param Query 检索分析语句，最大长度为12KB
+语句由 <a href="https://cloud.tencent.com/document/product/614/47044" target="_blank">[检索条件]</a> | <a href="https://cloud.tencent.com/document/product/614/44061" target="_blank">[SQL语句]</a>构成，无需对日志进行统计分析时，可省略其中的管道符<code> | </code>及SQL语句
                      */
                     void SetQuery(const std::string& _query);
 
@@ -115,14 +119,26 @@ namespace TencentCloud
                     bool QueryHasBeenSet() const;
 
                     /**
-                     * 获取单次查询返回的原始日志条数，最大值为100。查询语句(Query)包含SQL时，针对SQL的结果条数需在Query中指定，参考https://cloud.tencent.com/document/product/614/58977
-                     * @return Limit 单次查询返回的原始日志条数，最大值为100。查询语句(Query)包含SQL时，针对SQL的结果条数需在Query中指定，参考https://cloud.tencent.com/document/product/614/58977
+                     * 获取表示单次查询返回的原始日志条数，最大值为1000，获取后续日志需使用Context参数
+注意：
+* 仅当检索分析语句(Query)不包含SQL时有效
+* SQL结果条数指定方式参考<a href="https://cloud.tencent.com/document/product/614/58977" target="_blank">SQL LIMIT语法</a>
+                     * @return Limit 表示单次查询返回的原始日志条数，最大值为1000，获取后续日志需使用Context参数
+注意：
+* 仅当检索分析语句(Query)不包含SQL时有效
+* SQL结果条数指定方式参考<a href="https://cloud.tencent.com/document/product/614/58977" target="_blank">SQL LIMIT语法</a>
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置单次查询返回的原始日志条数，最大值为100。查询语句(Query)包含SQL时，针对SQL的结果条数需在Query中指定，参考https://cloud.tencent.com/document/product/614/58977
-                     * @param Limit 单次查询返回的原始日志条数，最大值为100。查询语句(Query)包含SQL时，针对SQL的结果条数需在Query中指定，参考https://cloud.tencent.com/document/product/614/58977
+                     * 设置表示单次查询返回的原始日志条数，最大值为1000，获取后续日志需使用Context参数
+注意：
+* 仅当检索分析语句(Query)不包含SQL时有效
+* SQL结果条数指定方式参考<a href="https://cloud.tencent.com/document/product/614/58977" target="_blank">SQL LIMIT语法</a>
+                     * @param Limit 表示单次查询返回的原始日志条数，最大值为1000，获取后续日志需使用Context参数
+注意：
+* 仅当检索分析语句(Query)不包含SQL时有效
+* SQL结果条数指定方式参考<a href="https://cloud.tencent.com/document/product/614/58977" target="_blank">SQL LIMIT语法</a>
                      */
                     void SetLimit(const int64_t& _limit);
 
@@ -133,14 +149,30 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取加载更多日志时使用，透传上次返回的Context值，获取后续的日志内容，总计最多可获取1万条原始日志。过期时间1小时
-                     * @return Context 加载更多日志时使用，透传上次返回的Context值，获取后续的日志内容，总计最多可获取1万条原始日志。过期时间1小时
+                     * 获取透传上次接口返回的Context值，可获取后续更多日志，总计最多可获取1万条原始日志，过期时间1小时
+注意：
+* 透传该参数时，请勿修改除该参数外的其它参数
+* 仅当检索分析语句(Query)不包含SQL时有效
+* SQL获取后续结果参考<a href="https://cloud.tencent.com/document/product/614/58977" target="_blank">SQL LIMIT语法</a>
+                     * @return Context 透传上次接口返回的Context值，可获取后续更多日志，总计最多可获取1万条原始日志，过期时间1小时
+注意：
+* 透传该参数时，请勿修改除该参数外的其它参数
+* 仅当检索分析语句(Query)不包含SQL时有效
+* SQL获取后续结果参考<a href="https://cloud.tencent.com/document/product/614/58977" target="_blank">SQL LIMIT语法</a>
                      */
                     std::string GetContext() const;
 
                     /**
-                     * 设置加载更多日志时使用，透传上次返回的Context值，获取后续的日志内容，总计最多可获取1万条原始日志。过期时间1小时
-                     * @param Context 加载更多日志时使用，透传上次返回的Context值，获取后续的日志内容，总计最多可获取1万条原始日志。过期时间1小时
+                     * 设置透传上次接口返回的Context值，可获取后续更多日志，总计最多可获取1万条原始日志，过期时间1小时
+注意：
+* 透传该参数时，请勿修改除该参数外的其它参数
+* 仅当检索分析语句(Query)不包含SQL时有效
+* SQL获取后续结果参考<a href="https://cloud.tencent.com/document/product/614/58977" target="_blank">SQL LIMIT语法</a>
+                     * @param Context 透传上次接口返回的Context值，可获取后续更多日志，总计最多可获取1万条原始日志，过期时间1小时
+注意：
+* 透传该参数时，请勿修改除该参数外的其它参数
+* 仅当检索分析语句(Query)不包含SQL时有效
+* SQL获取后续结果参考<a href="https://cloud.tencent.com/document/product/614/58977" target="_blank">SQL LIMIT语法</a>
                      */
                     void SetContext(const std::string& _context);
 
@@ -151,14 +183,26 @@ namespace TencentCloud
                     bool ContextHasBeenSet() const;
 
                     /**
-                     * 获取日志接口是否按时间排序返回；可选值：asc(升序)、desc(降序)，默认为 desc
-                     * @return Sort 日志接口是否按时间排序返回；可选值：asc(升序)、desc(降序)，默认为 desc
+                     * 获取原始日志是否按时间排序返回；可选值：asc(升序)、desc(降序)，默认为 desc
+注意：
+* 仅当检索分析语句(Query)不包含SQL时有效
+* SQL结果排序方式参考<a href="https://cloud.tencent.com/document/product/614/58978" target="_blank">SQL ORDER BY语法</a>
+                     * @return Sort 原始日志是否按时间排序返回；可选值：asc(升序)、desc(降序)，默认为 desc
+注意：
+* 仅当检索分析语句(Query)不包含SQL时有效
+* SQL结果排序方式参考<a href="https://cloud.tencent.com/document/product/614/58978" target="_blank">SQL ORDER BY语法</a>
                      */
                     std::string GetSort() const;
 
                     /**
-                     * 设置日志接口是否按时间排序返回；可选值：asc(升序)、desc(降序)，默认为 desc
-                     * @param Sort 日志接口是否按时间排序返回；可选值：asc(升序)、desc(降序)，默认为 desc
+                     * 设置原始日志是否按时间排序返回；可选值：asc(升序)、desc(降序)，默认为 desc
+注意：
+* 仅当检索分析语句(Query)不包含SQL时有效
+* SQL结果排序方式参考<a href="https://cloud.tencent.com/document/product/614/58978" target="_blank">SQL ORDER BY语法</a>
+                     * @param Sort 原始日志是否按时间排序返回；可选值：asc(升序)、desc(降序)，默认为 desc
+注意：
+* 仅当检索分析语句(Query)不包含SQL时有效
+* SQL结果排序方式参考<a href="https://cloud.tencent.com/document/product/614/58978" target="_blank">SQL ORDER BY语法</a>
                      */
                     void SetSort(const std::string& _sort);
 
@@ -169,14 +213,22 @@ namespace TencentCloud
                     bool SortHasBeenSet() const;
 
                     /**
-                     * 获取为true代表使用新检索,响应参数AnalysisRecords和Columns有效， 为false时代表使用老检索方式, AnalysisResults和ColNames有效
-                     * @return UseNewAnalysis 为true代表使用新检索,响应参数AnalysisRecords和Columns有效， 为false时代表使用老检索方式, AnalysisResults和ColNames有效
+                     * 获取为true代表使用新的检索结果返回方式，输出参数AnalysisRecords和Columns有效
+为false时代表使用老的检索结果返回方式, 输出AnalysisResults和ColNames有效
+两种返回方式在编码格式上有少量区别，建议使用true
+                     * @return UseNewAnalysis 为true代表使用新的检索结果返回方式，输出参数AnalysisRecords和Columns有效
+为false时代表使用老的检索结果返回方式, 输出AnalysisResults和ColNames有效
+两种返回方式在编码格式上有少量区别，建议使用true
                      */
                     bool GetUseNewAnalysis() const;
 
                     /**
-                     * 设置为true代表使用新检索,响应参数AnalysisRecords和Columns有效， 为false时代表使用老检索方式, AnalysisResults和ColNames有效
-                     * @param UseNewAnalysis 为true代表使用新检索,响应参数AnalysisRecords和Columns有效， 为false时代表使用老检索方式, AnalysisResults和ColNames有效
+                     * 设置为true代表使用新的检索结果返回方式，输出参数AnalysisRecords和Columns有效
+为false时代表使用老的检索结果返回方式, 输出AnalysisResults和ColNames有效
+两种返回方式在编码格式上有少量区别，建议使用true
+                     * @param UseNewAnalysis 为true代表使用新的检索结果返回方式，输出参数AnalysisRecords和Columns有效
+为false时代表使用老的检索结果返回方式, 输出AnalysisResults和ColNames有效
+两种返回方式在编码格式上有少量区别，建议使用true
                      */
                     void SetUseNewAnalysis(const bool& _useNewAnalysis);
 
@@ -189,49 +241,62 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 要查询的日志主题ID
+                     * 要检索分析的日志主题ID
                      */
                     std::string m_topicId;
                     bool m_topicIdHasBeenSet;
 
                     /**
-                     * 要查询的日志的起始时间，Unix时间戳，单位ms
+                     * 要检索分析的日志的起始时间，Unix时间戳（毫秒）
                      */
                     int64_t m_from;
                     bool m_fromHasBeenSet;
 
                     /**
-                     * 要查询的日志的结束时间，Unix时间戳，单位ms
+                     * 要检索分析的日志的结束时间，Unix时间戳（毫秒）
                      */
                     int64_t m_to;
                     bool m_toHasBeenSet;
 
                     /**
-                     * 查询语句，语句长度最大为4096
+                     * 检索分析语句，最大长度为12KB
+语句由 <a href="https://cloud.tencent.com/document/product/614/47044" target="_blank">[检索条件]</a> | <a href="https://cloud.tencent.com/document/product/614/44061" target="_blank">[SQL语句]</a>构成，无需对日志进行统计分析时，可省略其中的管道符<code> | </code>及SQL语句
                      */
                     std::string m_query;
                     bool m_queryHasBeenSet;
 
                     /**
-                     * 单次查询返回的原始日志条数，最大值为100。查询语句(Query)包含SQL时，针对SQL的结果条数需在Query中指定，参考https://cloud.tencent.com/document/product/614/58977
+                     * 表示单次查询返回的原始日志条数，最大值为1000，获取后续日志需使用Context参数
+注意：
+* 仅当检索分析语句(Query)不包含SQL时有效
+* SQL结果条数指定方式参考<a href="https://cloud.tencent.com/document/product/614/58977" target="_blank">SQL LIMIT语法</a>
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 加载更多日志时使用，透传上次返回的Context值，获取后续的日志内容，总计最多可获取1万条原始日志。过期时间1小时
+                     * 透传上次接口返回的Context值，可获取后续更多日志，总计最多可获取1万条原始日志，过期时间1小时
+注意：
+* 透传该参数时，请勿修改除该参数外的其它参数
+* 仅当检索分析语句(Query)不包含SQL时有效
+* SQL获取后续结果参考<a href="https://cloud.tencent.com/document/product/614/58977" target="_blank">SQL LIMIT语法</a>
                      */
                     std::string m_context;
                     bool m_contextHasBeenSet;
 
                     /**
-                     * 日志接口是否按时间排序返回；可选值：asc(升序)、desc(降序)，默认为 desc
+                     * 原始日志是否按时间排序返回；可选值：asc(升序)、desc(降序)，默认为 desc
+注意：
+* 仅当检索分析语句(Query)不包含SQL时有效
+* SQL结果排序方式参考<a href="https://cloud.tencent.com/document/product/614/58978" target="_blank">SQL ORDER BY语法</a>
                      */
                     std::string m_sort;
                     bool m_sortHasBeenSet;
 
                     /**
-                     * 为true代表使用新检索,响应参数AnalysisRecords和Columns有效， 为false时代表使用老检索方式, AnalysisResults和ColNames有效
+                     * 为true代表使用新的检索结果返回方式，输出参数AnalysisRecords和Columns有效
+为false时代表使用老的检索结果返回方式, 输出AnalysisResults和ColNames有效
+两种返回方式在编码格式上有少量区别，建议使用true
                      */
                     bool m_useNewAnalysis;
                     bool m_useNewAnalysisHasBeenSet;

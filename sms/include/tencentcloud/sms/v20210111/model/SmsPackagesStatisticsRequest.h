@@ -120,17 +120,17 @@ namespace TencentCloud
 
                     /**
                      * 获取结束时间，格式为yyyymmddhh，精确到小时，例如2021050118，表示2021年5月1号18时。
-注：EndTime 必须大于 BeginTime，拉取套餐包的创建时间不大于结束时间。
+注：EndTime 必须大于 BeginTime且小于当前时间，拉取套餐包的创建时间不大于结束时间。
                      * @return EndTime 结束时间，格式为yyyymmddhh，精确到小时，例如2021050118，表示2021年5月1号18时。
-注：EndTime 必须大于 BeginTime，拉取套餐包的创建时间不大于结束时间。
+注：EndTime 必须大于 BeginTime且小于当前时间，拉取套餐包的创建时间不大于结束时间。
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置结束时间，格式为yyyymmddhh，精确到小时，例如2021050118，表示2021年5月1号18时。
-注：EndTime 必须大于 BeginTime，拉取套餐包的创建时间不大于结束时间。
+注：EndTime 必须大于 BeginTime且小于当前时间，拉取套餐包的创建时间不大于结束时间。
                      * @param EndTime 结束时间，格式为yyyymmddhh，精确到小时，例如2021050118，表示2021年5月1号18时。
-注：EndTime 必须大于 BeginTime，拉取套餐包的创建时间不大于结束时间。
+注：EndTime 必须大于 BeginTime且小于当前时间，拉取套餐包的创建时间不大于结束时间。
                      */
                     void SetEndTime(const std::string& _endTime);
 
@@ -169,7 +169,7 @@ namespace TencentCloud
 
                     /**
                      * 结束时间，格式为yyyymmddhh，精确到小时，例如2021050118，表示2021年5月1号18时。
-注：EndTime 必须大于 BeginTime，拉取套餐包的创建时间不大于结束时间。
+注：EndTime 必须大于 BeginTime且小于当前时间，拉取套餐包的创建时间不大于结束时间。
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;

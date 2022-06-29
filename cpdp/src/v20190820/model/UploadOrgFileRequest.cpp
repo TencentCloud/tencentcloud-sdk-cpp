@@ -24,11 +24,11 @@ using namespace std;
 
 UploadOrgFileRequest::UploadOrgFileRequest() :
     m_openIdHasBeenSet(false),
+    m_openKeyHasBeenSet(false),
     m_storageHasBeenSet(false),
     m_fileMd5HasBeenSet(false),
     m_fileContentHasBeenSet(false),
     m_fileExtensionHasBeenSet(false),
-    m_openKeyHasBeenSet(false),
     m_profileHasBeenSet(false)
 {
 }
@@ -46,6 +46,14 @@ string UploadOrgFileRequest::ToJsonString() const
         string key = "OpenId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_openId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_openKeyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OpenKey";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_openKey.c_str(), allocator).Move(), allocator);
     }
 
     if (m_storageHasBeenSet)
@@ -80,14 +88,6 @@ string UploadOrgFileRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_fileExtension.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_openKeyHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "OpenKey";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_openKey.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_profileHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -118,6 +118,22 @@ void UploadOrgFileRequest::SetOpenId(const string& _openId)
 bool UploadOrgFileRequest::OpenIdHasBeenSet() const
 {
     return m_openIdHasBeenSet;
+}
+
+string UploadOrgFileRequest::GetOpenKey() const
+{
+    return m_openKey;
+}
+
+void UploadOrgFileRequest::SetOpenKey(const string& _openKey)
+{
+    m_openKey = _openKey;
+    m_openKeyHasBeenSet = true;
+}
+
+bool UploadOrgFileRequest::OpenKeyHasBeenSet() const
+{
+    return m_openKeyHasBeenSet;
 }
 
 string UploadOrgFileRequest::GetStorage() const
@@ -182,22 +198,6 @@ void UploadOrgFileRequest::SetFileExtension(const string& _fileExtension)
 bool UploadOrgFileRequest::FileExtensionHasBeenSet() const
 {
     return m_fileExtensionHasBeenSet;
-}
-
-string UploadOrgFileRequest::GetOpenKey() const
-{
-    return m_openKey;
-}
-
-void UploadOrgFileRequest::SetOpenKey(const string& _openKey)
-{
-    m_openKey = _openKey;
-    m_openKeyHasBeenSet = true;
-}
-
-bool UploadOrgFileRequest::OpenKeyHasBeenSet() const
-{
-    return m_openKeyHasBeenSet;
 }
 
 string UploadOrgFileRequest::GetProfile() const

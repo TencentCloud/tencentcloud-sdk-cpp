@@ -44,14 +44,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取IP地址模版名称
-                     * @return AddressTemplateName IP地址模版名称
+                     * 获取IP地址模板名称。
+                     * @return AddressTemplateName IP地址模板名称。
                      */
                     std::string GetAddressTemplateName() const;
 
                     /**
-                     * 设置IP地址模版名称
-                     * @param AddressTemplateName IP地址模版名称
+                     * 设置IP地址模板名称。
+                     * @param AddressTemplateName IP地址模板名称。
                      */
                     void SetAddressTemplateName(const std::string& _addressTemplateName);
 
@@ -100,7 +100,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * IP地址模版名称
+                     * IP地址模板名称。
                      */
                     std::string m_addressTemplateName;
                     bool m_addressTemplateNameHasBeenSet;

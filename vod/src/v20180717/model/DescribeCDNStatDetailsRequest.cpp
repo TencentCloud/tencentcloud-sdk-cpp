@@ -26,12 +26,12 @@ DescribeCDNStatDetailsRequest::DescribeCDNStatDetailsRequest() :
     m_metricHasBeenSet(false),
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
+    m_subAppIdHasBeenSet(false),
     m_domainNamesHasBeenSet(false),
     m_areaHasBeenSet(false),
     m_districtsHasBeenSet(false),
     m_ispsHasBeenSet(false),
-    m_dataIntervalHasBeenSet(false),
-    m_subAppIdHasBeenSet(false)
+    m_dataIntervalHasBeenSet(false)
 {
 }
 
@@ -64,6 +64,14 @@ string DescribeCDNStatDetailsRequest::ToJsonString() const
         string key = "EndTime";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_endTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subAppIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubAppId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_subAppId, allocator);
     }
 
     if (m_domainNamesHasBeenSet)
@@ -121,14 +129,6 @@ string DescribeCDNStatDetailsRequest::ToJsonString() const
         d.AddMember(iKey, m_dataInterval, allocator);
     }
 
-    if (m_subAppIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SubAppId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_subAppId, allocator);
-    }
-
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -183,6 +183,22 @@ void DescribeCDNStatDetailsRequest::SetEndTime(const string& _endTime)
 bool DescribeCDNStatDetailsRequest::EndTimeHasBeenSet() const
 {
     return m_endTimeHasBeenSet;
+}
+
+uint64_t DescribeCDNStatDetailsRequest::GetSubAppId() const
+{
+    return m_subAppId;
+}
+
+void DescribeCDNStatDetailsRequest::SetSubAppId(const uint64_t& _subAppId)
+{
+    m_subAppId = _subAppId;
+    m_subAppIdHasBeenSet = true;
+}
+
+bool DescribeCDNStatDetailsRequest::SubAppIdHasBeenSet() const
+{
+    return m_subAppIdHasBeenSet;
 }
 
 vector<string> DescribeCDNStatDetailsRequest::GetDomainNames() const
@@ -263,22 +279,6 @@ void DescribeCDNStatDetailsRequest::SetDataInterval(const uint64_t& _dataInterva
 bool DescribeCDNStatDetailsRequest::DataIntervalHasBeenSet() const
 {
     return m_dataIntervalHasBeenSet;
-}
-
-uint64_t DescribeCDNStatDetailsRequest::GetSubAppId() const
-{
-    return m_subAppId;
-}
-
-void DescribeCDNStatDetailsRequest::SetSubAppId(const uint64_t& _subAppId)
-{
-    m_subAppId = _subAppId;
-    m_subAppIdHasBeenSet = true;
-}
-
-bool DescribeCDNStatDetailsRequest::SubAppIdHasBeenSet() const
-{
-    return m_subAppIdHasBeenSet;
 }
 
 

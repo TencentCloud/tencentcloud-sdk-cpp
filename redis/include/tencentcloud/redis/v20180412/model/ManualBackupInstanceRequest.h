@@ -78,6 +78,24 @@ namespace TencentCloud
                      */
                     bool RemarkHasBeenSet() const;
 
+                    /**
+                     * 获取保存天数。0代表指定默认保留时间
+                     * @return StorageDays 保存天数。0代表指定默认保留时间
+                     */
+                    int64_t GetStorageDays() const;
+
+                    /**
+                     * 设置保存天数。0代表指定默认保留时间
+                     * @param StorageDays 保存天数。0代表指定默认保留时间
+                     */
+                    void SetStorageDays(const int64_t& _storageDays);
+
+                    /**
+                     * 判断参数 StorageDays 是否已赋值
+                     * @return StorageDays 是否已赋值
+                     */
+                    bool StorageDaysHasBeenSet() const;
+
                 private:
 
                     /**
@@ -91,6 +109,12 @@ namespace TencentCloud
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
+
+                    /**
+                     * 保存天数。0代表指定默认保留时间
+                     */
+                    int64_t m_storageDays;
+                    bool m_storageDaysHasBeenSet;
 
                 };
             }

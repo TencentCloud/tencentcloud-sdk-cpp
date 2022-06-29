@@ -26,9 +26,9 @@ DistributeCancelRequest::DistributeCancelRequest() :
     m_openIdHasBeenSet(false),
     m_openKeyHasBeenSet(false),
     m_orderNoHasBeenSet(false),
-    m_profileHasBeenSet(false),
+    m_outDistributeNoHasBeenSet(false),
     m_distributeNoHasBeenSet(false),
-    m_outDistributeNoHasBeenSet(false)
+    m_profileHasBeenSet(false)
 {
 }
 
@@ -63,12 +63,12 @@ string DistributeCancelRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_orderNo.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_profileHasBeenSet)
+    if (m_outDistributeNoHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Profile";
+        string key = "OutDistributeNo";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_profile.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_outDistributeNo.c_str(), allocator).Move(), allocator);
     }
 
     if (m_distributeNoHasBeenSet)
@@ -79,12 +79,12 @@ string DistributeCancelRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_distributeNo.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_outDistributeNoHasBeenSet)
+    if (m_profileHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "OutDistributeNo";
+        string key = "Profile";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_outDistributeNo.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_profile.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -143,20 +143,20 @@ bool DistributeCancelRequest::OrderNoHasBeenSet() const
     return m_orderNoHasBeenSet;
 }
 
-string DistributeCancelRequest::GetProfile() const
+string DistributeCancelRequest::GetOutDistributeNo() const
 {
-    return m_profile;
+    return m_outDistributeNo;
 }
 
-void DistributeCancelRequest::SetProfile(const string& _profile)
+void DistributeCancelRequest::SetOutDistributeNo(const string& _outDistributeNo)
 {
-    m_profile = _profile;
-    m_profileHasBeenSet = true;
+    m_outDistributeNo = _outDistributeNo;
+    m_outDistributeNoHasBeenSet = true;
 }
 
-bool DistributeCancelRequest::ProfileHasBeenSet() const
+bool DistributeCancelRequest::OutDistributeNoHasBeenSet() const
 {
-    return m_profileHasBeenSet;
+    return m_outDistributeNoHasBeenSet;
 }
 
 string DistributeCancelRequest::GetDistributeNo() const
@@ -175,20 +175,20 @@ bool DistributeCancelRequest::DistributeNoHasBeenSet() const
     return m_distributeNoHasBeenSet;
 }
 
-string DistributeCancelRequest::GetOutDistributeNo() const
+string DistributeCancelRequest::GetProfile() const
 {
-    return m_outDistributeNo;
+    return m_profile;
 }
 
-void DistributeCancelRequest::SetOutDistributeNo(const string& _outDistributeNo)
+void DistributeCancelRequest::SetProfile(const string& _profile)
 {
-    m_outDistributeNo = _outDistributeNo;
-    m_outDistributeNoHasBeenSet = true;
+    m_profile = _profile;
+    m_profileHasBeenSet = true;
 }
 
-bool DistributeCancelRequest::OutDistributeNoHasBeenSet() const
+bool DistributeCancelRequest::ProfileHasBeenSet() const
 {
-    return m_outDistributeNoHasBeenSet;
+    return m_profileHasBeenSet;
 }
 
 

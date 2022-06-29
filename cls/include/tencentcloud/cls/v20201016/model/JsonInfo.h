@@ -65,17 +65,17 @@ namespace TencentCloud
                     bool EnableTagHasBeenSet() const;
 
                     /**
-                     * 获取元数据信息列表
+                     * 获取元数据信息列表, 可选值为 __SOURCE__、__FILENAME__、__TIMESTAMP__。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MetaFields 元数据信息列表
+                     * @return MetaFields 元数据信息列表, 可选值为 __SOURCE__、__FILENAME__、__TIMESTAMP__。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> GetMetaFields() const;
 
                     /**
-                     * 设置元数据信息列表
+                     * 设置元数据信息列表, 可选值为 __SOURCE__、__FILENAME__、__TIMESTAMP__。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MetaFields 元数据信息列表
+                     * @param MetaFields 元数据信息列表, 可选值为 __SOURCE__、__FILENAME__、__TIMESTAMP__。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetMetaFields(const std::vector<std::string>& _metaFields);
@@ -95,7 +95,7 @@ namespace TencentCloud
                     bool m_enableTagHasBeenSet;
 
                     /**
-                     * 元数据信息列表
+                     * 元数据信息列表, 可选值为 __SOURCE__、__FILENAME__、__TIMESTAMP__。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_metaFields;

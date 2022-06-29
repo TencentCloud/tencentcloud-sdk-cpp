@@ -80,6 +80,18 @@ namespace TencentCloud
                      */
                     bool RectHasBeenSet() const;
 
+                    /**
+                     * 获取识别出的车牌颜色，目前支持颜色包括 “白”、“黑”、“蓝”、“绿“、“黄”、“黄绿”、“临牌”。
+                     * @return Color 识别出的车牌颜色，目前支持颜色包括 “白”、“黑”、“蓝”、“绿“、“黄”、“黄绿”、“临牌”。
+                     */
+                    std::string GetColor() const;
+
+                    /**
+                     * 判断参数 Color 是否已赋值
+                     * @return Color 是否已赋值
+                     */
+                    bool ColorHasBeenSet() const;
+
                 private:
 
                     /**
@@ -99,6 +111,12 @@ namespace TencentCloud
                      */
                     Rect m_rect;
                     bool m_rectHasBeenSet;
+
+                    /**
+                     * 识别出的车牌颜色，目前支持颜色包括 “白”、“黑”、“蓝”、“绿“、“黄”、“黄绿”、“临牌”。
+                     */
+                    std::string m_color;
+                    bool m_colorHasBeenSet;
 
                 };
             }

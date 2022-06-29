@@ -21,30 +21,32 @@ using namespace TencentCloud::Antiddos::V20200309::Model;
 using namespace std;
 
 NewL7RuleEntry::NewL7RuleEntry() :
-    m_keepTimeHasBeenSet(false),
-    m_lbTypeHasBeenSet(false),
-    m_sourceListHasBeenSet(false),
-    m_keepEnableHasBeenSet(false),
-    m_domainHasBeenSet(false),
     m_protocolHasBeenSet(false),
+    m_domainHasBeenSet(false),
+    m_lbTypeHasBeenSet(false),
+    m_keepEnableHasBeenSet(false),
+    m_keepTimeHasBeenSet(false),
     m_sourceTypeHasBeenSet(false),
-    m_httpsToHttpEnableHasBeenSet(false),
+    m_sourceListHasBeenSet(false),
+    m_regionHasBeenSet(false),
+    m_idHasBeenSet(false),
+    m_ipHasBeenSet(false),
+    m_ruleIdHasBeenSet(false),
+    m_ruleNameHasBeenSet(false),
+    m_certTypeHasBeenSet(false),
+    m_sSLIdHasBeenSet(false),
+    m_certHasBeenSet(false),
+    m_privateKeyHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_cCLevelHasBeenSet(false),
+    m_cCStatusHasBeenSet(false),
     m_cCEnableHasBeenSet(false),
     m_cCThresholdHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_ruleNameHasBeenSet(false),
-    m_certHasBeenSet(false),
+    m_cCLevelHasBeenSet(false),
     m_modifyTimeHasBeenSet(false),
-    m_ruleIdHasBeenSet(false),
-    m_ipHasBeenSet(false),
-    m_privateKeyHasBeenSet(false),
-    m_certTypeHasBeenSet(false),
+    m_httpsToHttpEnableHasBeenSet(false),
     m_virtualPortHasBeenSet(false),
-    m_cCStatusHasBeenSet(false),
-    m_sSLIdHasBeenSet(false),
-    m_idHasBeenSet(false)
+    m_rewriteHttpsHasBeenSet(false),
+    m_errCodeHasBeenSet(false)
 {
 }
 
@@ -52,6 +54,46 @@ CoreInternalOutcome NewL7RuleEntry::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
+
+    if (value.HasMember("Protocol") && !value["Protocol"].IsNull())
+    {
+        if (!value["Protocol"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NewL7RuleEntry.Protocol` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_protocol = string(value["Protocol"].GetString());
+        m_protocolHasBeenSet = true;
+    }
+
+    if (value.HasMember("Domain") && !value["Domain"].IsNull())
+    {
+        if (!value["Domain"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NewL7RuleEntry.Domain` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_domain = string(value["Domain"].GetString());
+        m_domainHasBeenSet = true;
+    }
+
+    if (value.HasMember("LbType") && !value["LbType"].IsNull())
+    {
+        if (!value["LbType"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `NewL7RuleEntry.LbType` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_lbType = value["LbType"].GetUint64();
+        m_lbTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("KeepEnable") && !value["KeepEnable"].IsNull())
+    {
+        if (!value["KeepEnable"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `NewL7RuleEntry.KeepEnable` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_keepEnable = value["KeepEnable"].GetUint64();
+        m_keepEnableHasBeenSet = true;
+    }
 
     if (value.HasMember("KeepTime") && !value["KeepTime"].IsNull())
     {
@@ -63,14 +105,14 @@ CoreInternalOutcome NewL7RuleEntry::Deserialize(const rapidjson::Value &value)
         m_keepTimeHasBeenSet = true;
     }
 
-    if (value.HasMember("LbType") && !value["LbType"].IsNull())
+    if (value.HasMember("SourceType") && !value["SourceType"].IsNull())
     {
-        if (!value["LbType"].IsUint64())
+        if (!value["SourceType"].IsUint64())
         {
-            return CoreInternalOutcome(Core::Error("response `NewL7RuleEntry.LbType` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NewL7RuleEntry.SourceType` IsUint64=false incorrectly").SetRequestId(requestId));
         }
-        m_lbType = value["LbType"].GetUint64();
-        m_lbTypeHasBeenSet = true;
+        m_sourceType = value["SourceType"].GetUint64();
+        m_sourceTypeHasBeenSet = true;
     }
 
     if (value.HasMember("SourceList") && !value["SourceList"].IsNull())
@@ -93,54 +135,94 @@ CoreInternalOutcome NewL7RuleEntry::Deserialize(const rapidjson::Value &value)
         m_sourceListHasBeenSet = true;
     }
 
-    if (value.HasMember("KeepEnable") && !value["KeepEnable"].IsNull())
+    if (value.HasMember("Region") && !value["Region"].IsNull())
     {
-        if (!value["KeepEnable"].IsUint64())
+        if (!value["Region"].IsUint64())
         {
-            return CoreInternalOutcome(Core::Error("response `NewL7RuleEntry.KeepEnable` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NewL7RuleEntry.Region` IsUint64=false incorrectly").SetRequestId(requestId));
         }
-        m_keepEnable = value["KeepEnable"].GetUint64();
-        m_keepEnableHasBeenSet = true;
+        m_region = value["Region"].GetUint64();
+        m_regionHasBeenSet = true;
     }
 
-    if (value.HasMember("Domain") && !value["Domain"].IsNull())
+    if (value.HasMember("Id") && !value["Id"].IsNull())
     {
-        if (!value["Domain"].IsString())
+        if (!value["Id"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `NewL7RuleEntry.Domain` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NewL7RuleEntry.Id` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_domain = string(value["Domain"].GetString());
-        m_domainHasBeenSet = true;
+        m_id = string(value["Id"].GetString());
+        m_idHasBeenSet = true;
     }
 
-    if (value.HasMember("Protocol") && !value["Protocol"].IsNull())
+    if (value.HasMember("Ip") && !value["Ip"].IsNull())
     {
-        if (!value["Protocol"].IsString())
+        if (!value["Ip"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `NewL7RuleEntry.Protocol` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NewL7RuleEntry.Ip` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_protocol = string(value["Protocol"].GetString());
-        m_protocolHasBeenSet = true;
+        m_ip = string(value["Ip"].GetString());
+        m_ipHasBeenSet = true;
     }
 
-    if (value.HasMember("SourceType") && !value["SourceType"].IsNull())
+    if (value.HasMember("RuleId") && !value["RuleId"].IsNull())
     {
-        if (!value["SourceType"].IsUint64())
+        if (!value["RuleId"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `NewL7RuleEntry.SourceType` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NewL7RuleEntry.RuleId` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_sourceType = value["SourceType"].GetUint64();
-        m_sourceTypeHasBeenSet = true;
+        m_ruleId = string(value["RuleId"].GetString());
+        m_ruleIdHasBeenSet = true;
     }
 
-    if (value.HasMember("HttpsToHttpEnable") && !value["HttpsToHttpEnable"].IsNull())
+    if (value.HasMember("RuleName") && !value["RuleName"].IsNull())
     {
-        if (!value["HttpsToHttpEnable"].IsUint64())
+        if (!value["RuleName"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `NewL7RuleEntry.HttpsToHttpEnable` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NewL7RuleEntry.RuleName` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_httpsToHttpEnable = value["HttpsToHttpEnable"].GetUint64();
-        m_httpsToHttpEnableHasBeenSet = true;
+        m_ruleName = string(value["RuleName"].GetString());
+        m_ruleNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("CertType") && !value["CertType"].IsNull())
+    {
+        if (!value["CertType"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `NewL7RuleEntry.CertType` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_certType = value["CertType"].GetUint64();
+        m_certTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("SSLId") && !value["SSLId"].IsNull())
+    {
+        if (!value["SSLId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NewL7RuleEntry.SSLId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sSLId = string(value["SSLId"].GetString());
+        m_sSLIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("Cert") && !value["Cert"].IsNull())
+    {
+        if (!value["Cert"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NewL7RuleEntry.Cert` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cert = string(value["Cert"].GetString());
+        m_certHasBeenSet = true;
+    }
+
+    if (value.HasMember("PrivateKey") && !value["PrivateKey"].IsNull())
+    {
+        if (!value["PrivateKey"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NewL7RuleEntry.PrivateKey` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_privateKey = string(value["PrivateKey"].GetString());
+        m_privateKeyHasBeenSet = true;
     }
 
     if (value.HasMember("Status") && !value["Status"].IsNull())
@@ -153,14 +235,14 @@ CoreInternalOutcome NewL7RuleEntry::Deserialize(const rapidjson::Value &value)
         m_statusHasBeenSet = true;
     }
 
-    if (value.HasMember("CCLevel") && !value["CCLevel"].IsNull())
+    if (value.HasMember("CCStatus") && !value["CCStatus"].IsNull())
     {
-        if (!value["CCLevel"].IsString())
+        if (!value["CCStatus"].IsUint64())
         {
-            return CoreInternalOutcome(Core::Error("response `NewL7RuleEntry.CCLevel` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NewL7RuleEntry.CCStatus` IsUint64=false incorrectly").SetRequestId(requestId));
         }
-        m_cCLevel = string(value["CCLevel"].GetString());
-        m_cCLevelHasBeenSet = true;
+        m_cCStatus = value["CCStatus"].GetUint64();
+        m_cCStatusHasBeenSet = true;
     }
 
     if (value.HasMember("CCEnable") && !value["CCEnable"].IsNull())
@@ -183,34 +265,14 @@ CoreInternalOutcome NewL7RuleEntry::Deserialize(const rapidjson::Value &value)
         m_cCThresholdHasBeenSet = true;
     }
 
-    if (value.HasMember("Region") && !value["Region"].IsNull())
+    if (value.HasMember("CCLevel") && !value["CCLevel"].IsNull())
     {
-        if (!value["Region"].IsUint64())
+        if (!value["CCLevel"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `NewL7RuleEntry.Region` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NewL7RuleEntry.CCLevel` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_region = value["Region"].GetUint64();
-        m_regionHasBeenSet = true;
-    }
-
-    if (value.HasMember("RuleName") && !value["RuleName"].IsNull())
-    {
-        if (!value["RuleName"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `NewL7RuleEntry.RuleName` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_ruleName = string(value["RuleName"].GetString());
-        m_ruleNameHasBeenSet = true;
-    }
-
-    if (value.HasMember("Cert") && !value["Cert"].IsNull())
-    {
-        if (!value["Cert"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `NewL7RuleEntry.Cert` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_cert = string(value["Cert"].GetString());
-        m_certHasBeenSet = true;
+        m_cCLevel = string(value["CCLevel"].GetString());
+        m_cCLevelHasBeenSet = true;
     }
 
     if (value.HasMember("ModifyTime") && !value["ModifyTime"].IsNull())
@@ -223,44 +285,14 @@ CoreInternalOutcome NewL7RuleEntry::Deserialize(const rapidjson::Value &value)
         m_modifyTimeHasBeenSet = true;
     }
 
-    if (value.HasMember("RuleId") && !value["RuleId"].IsNull())
+    if (value.HasMember("HttpsToHttpEnable") && !value["HttpsToHttpEnable"].IsNull())
     {
-        if (!value["RuleId"].IsString())
+        if (!value["HttpsToHttpEnable"].IsUint64())
         {
-            return CoreInternalOutcome(Core::Error("response `NewL7RuleEntry.RuleId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NewL7RuleEntry.HttpsToHttpEnable` IsUint64=false incorrectly").SetRequestId(requestId));
         }
-        m_ruleId = string(value["RuleId"].GetString());
-        m_ruleIdHasBeenSet = true;
-    }
-
-    if (value.HasMember("Ip") && !value["Ip"].IsNull())
-    {
-        if (!value["Ip"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `NewL7RuleEntry.Ip` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_ip = string(value["Ip"].GetString());
-        m_ipHasBeenSet = true;
-    }
-
-    if (value.HasMember("PrivateKey") && !value["PrivateKey"].IsNull())
-    {
-        if (!value["PrivateKey"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `NewL7RuleEntry.PrivateKey` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_privateKey = string(value["PrivateKey"].GetString());
-        m_privateKeyHasBeenSet = true;
-    }
-
-    if (value.HasMember("CertType") && !value["CertType"].IsNull())
-    {
-        if (!value["CertType"].IsUint64())
-        {
-            return CoreInternalOutcome(Core::Error("response `NewL7RuleEntry.CertType` IsUint64=false incorrectly").SetRequestId(requestId));
-        }
-        m_certType = value["CertType"].GetUint64();
-        m_certTypeHasBeenSet = true;
+        m_httpsToHttpEnable = value["HttpsToHttpEnable"].GetUint64();
+        m_httpsToHttpEnableHasBeenSet = true;
     }
 
     if (value.HasMember("VirtualPort") && !value["VirtualPort"].IsNull())
@@ -273,34 +305,24 @@ CoreInternalOutcome NewL7RuleEntry::Deserialize(const rapidjson::Value &value)
         m_virtualPortHasBeenSet = true;
     }
 
-    if (value.HasMember("CCStatus") && !value["CCStatus"].IsNull())
+    if (value.HasMember("RewriteHttps") && !value["RewriteHttps"].IsNull())
     {
-        if (!value["CCStatus"].IsUint64())
+        if (!value["RewriteHttps"].IsUint64())
         {
-            return CoreInternalOutcome(Core::Error("response `NewL7RuleEntry.CCStatus` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NewL7RuleEntry.RewriteHttps` IsUint64=false incorrectly").SetRequestId(requestId));
         }
-        m_cCStatus = value["CCStatus"].GetUint64();
-        m_cCStatusHasBeenSet = true;
+        m_rewriteHttps = value["RewriteHttps"].GetUint64();
+        m_rewriteHttpsHasBeenSet = true;
     }
 
-    if (value.HasMember("SSLId") && !value["SSLId"].IsNull())
+    if (value.HasMember("ErrCode") && !value["ErrCode"].IsNull())
     {
-        if (!value["SSLId"].IsString())
+        if (!value["ErrCode"].IsUint64())
         {
-            return CoreInternalOutcome(Core::Error("response `NewL7RuleEntry.SSLId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `NewL7RuleEntry.ErrCode` IsUint64=false incorrectly").SetRequestId(requestId));
         }
-        m_sSLId = string(value["SSLId"].GetString());
-        m_sSLIdHasBeenSet = true;
-    }
-
-    if (value.HasMember("Id") && !value["Id"].IsNull())
-    {
-        if (!value["Id"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `NewL7RuleEntry.Id` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_id = string(value["Id"].GetString());
-        m_idHasBeenSet = true;
+        m_errCode = value["ErrCode"].GetUint64();
+        m_errCodeHasBeenSet = true;
     }
 
 
@@ -310,12 +332,20 @@ CoreInternalOutcome NewL7RuleEntry::Deserialize(const rapidjson::Value &value)
 void NewL7RuleEntry::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
-    if (m_keepTimeHasBeenSet)
+    if (m_protocolHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "KeepTime";
+        string key = "Protocol";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_keepTime, allocator);
+        value.AddMember(iKey, rapidjson::Value(m_protocol.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_domainHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Domain";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_domain.c_str(), allocator).Move(), allocator);
     }
 
     if (m_lbTypeHasBeenSet)
@@ -324,6 +354,30 @@ void NewL7RuleEntry::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "LbType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_lbType, allocator);
+    }
+
+    if (m_keepEnableHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KeepEnable";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_keepEnable, allocator);
+    }
+
+    if (m_keepTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KeepTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_keepTime, allocator);
+    }
+
+    if (m_sourceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SourceType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_sourceType, allocator);
     }
 
     if (m_sourceListHasBeenSet)
@@ -341,44 +395,76 @@ void NewL7RuleEntry::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         }
     }
 
-    if (m_keepEnableHasBeenSet)
+    if (m_regionHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "KeepEnable";
+        string key = "Region";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_keepEnable, allocator);
+        value.AddMember(iKey, m_region, allocator);
     }
 
-    if (m_domainHasBeenSet)
+    if (m_idHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Domain";
+        string key = "Id";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_domain.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_id.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_protocolHasBeenSet)
+    if (m_ipHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Protocol";
+        string key = "Ip";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_protocol.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ip.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_sourceTypeHasBeenSet)
+    if (m_ruleIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SourceType";
+        string key = "RuleId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_sourceType, allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ruleId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_httpsToHttpEnableHasBeenSet)
+    if (m_ruleNameHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "HttpsToHttpEnable";
+        string key = "RuleName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_httpsToHttpEnable, allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ruleName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_certTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CertType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_certType, allocator);
+    }
+
+    if (m_sSLIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SSLId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sSLId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_certHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Cert";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cert.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_privateKeyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PrivateKey";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_privateKey.c_str(), allocator).Move(), allocator);
     }
 
     if (m_statusHasBeenSet)
@@ -389,12 +475,12 @@ void NewL7RuleEntry::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         value.AddMember(iKey, m_status, allocator);
     }
 
-    if (m_cCLevelHasBeenSet)
+    if (m_cCStatusHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "CCLevel";
+        string key = "CCStatus";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_cCLevel.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, m_cCStatus, allocator);
     }
 
     if (m_cCEnableHasBeenSet)
@@ -413,28 +499,12 @@ void NewL7RuleEntry::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         value.AddMember(iKey, m_cCThreshold, allocator);
     }
 
-    if (m_regionHasBeenSet)
+    if (m_cCLevelHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Region";
+        string key = "CCLevel";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_region, allocator);
-    }
-
-    if (m_ruleNameHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "RuleName";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_ruleName.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_certHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Cert";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_cert.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cCLevel.c_str(), allocator).Move(), allocator);
     }
 
     if (m_modifyTimeHasBeenSet)
@@ -445,36 +515,12 @@ void NewL7RuleEntry::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         value.AddMember(iKey, rapidjson::Value(m_modifyTime.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_ruleIdHasBeenSet)
+    if (m_httpsToHttpEnableHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "RuleId";
+        string key = "HttpsToHttpEnable";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_ruleId.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_ipHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Ip";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_ip.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_privateKeyHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "PrivateKey";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_privateKey.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_certTypeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "CertType";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_certType, allocator);
+        value.AddMember(iKey, m_httpsToHttpEnable, allocator);
     }
 
     if (m_virtualPortHasBeenSet)
@@ -485,95 +531,39 @@ void NewL7RuleEntry::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         value.AddMember(iKey, m_virtualPort, allocator);
     }
 
-    if (m_cCStatusHasBeenSet)
+    if (m_rewriteHttpsHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "CCStatus";
+        string key = "RewriteHttps";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_cCStatus, allocator);
+        value.AddMember(iKey, m_rewriteHttps, allocator);
     }
 
-    if (m_sSLIdHasBeenSet)
+    if (m_errCodeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SSLId";
+        string key = "ErrCode";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_sSLId.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_idHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Id";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_id.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, m_errCode, allocator);
     }
 
 }
 
 
-uint64_t NewL7RuleEntry::GetKeepTime() const
+string NewL7RuleEntry::GetProtocol() const
 {
-    return m_keepTime;
+    return m_protocol;
 }
 
-void NewL7RuleEntry::SetKeepTime(const uint64_t& _keepTime)
+void NewL7RuleEntry::SetProtocol(const string& _protocol)
 {
-    m_keepTime = _keepTime;
-    m_keepTimeHasBeenSet = true;
+    m_protocol = _protocol;
+    m_protocolHasBeenSet = true;
 }
 
-bool NewL7RuleEntry::KeepTimeHasBeenSet() const
+bool NewL7RuleEntry::ProtocolHasBeenSet() const
 {
-    return m_keepTimeHasBeenSet;
-}
-
-uint64_t NewL7RuleEntry::GetLbType() const
-{
-    return m_lbType;
-}
-
-void NewL7RuleEntry::SetLbType(const uint64_t& _lbType)
-{
-    m_lbType = _lbType;
-    m_lbTypeHasBeenSet = true;
-}
-
-bool NewL7RuleEntry::LbTypeHasBeenSet() const
-{
-    return m_lbTypeHasBeenSet;
-}
-
-vector<L4RuleSource> NewL7RuleEntry::GetSourceList() const
-{
-    return m_sourceList;
-}
-
-void NewL7RuleEntry::SetSourceList(const vector<L4RuleSource>& _sourceList)
-{
-    m_sourceList = _sourceList;
-    m_sourceListHasBeenSet = true;
-}
-
-bool NewL7RuleEntry::SourceListHasBeenSet() const
-{
-    return m_sourceListHasBeenSet;
-}
-
-uint64_t NewL7RuleEntry::GetKeepEnable() const
-{
-    return m_keepEnable;
-}
-
-void NewL7RuleEntry::SetKeepEnable(const uint64_t& _keepEnable)
-{
-    m_keepEnable = _keepEnable;
-    m_keepEnableHasBeenSet = true;
-}
-
-bool NewL7RuleEntry::KeepEnableHasBeenSet() const
-{
-    return m_keepEnableHasBeenSet;
+    return m_protocolHasBeenSet;
 }
 
 string NewL7RuleEntry::GetDomain() const
@@ -592,20 +582,52 @@ bool NewL7RuleEntry::DomainHasBeenSet() const
     return m_domainHasBeenSet;
 }
 
-string NewL7RuleEntry::GetProtocol() const
+uint64_t NewL7RuleEntry::GetLbType() const
 {
-    return m_protocol;
+    return m_lbType;
 }
 
-void NewL7RuleEntry::SetProtocol(const string& _protocol)
+void NewL7RuleEntry::SetLbType(const uint64_t& _lbType)
 {
-    m_protocol = _protocol;
-    m_protocolHasBeenSet = true;
+    m_lbType = _lbType;
+    m_lbTypeHasBeenSet = true;
 }
 
-bool NewL7RuleEntry::ProtocolHasBeenSet() const
+bool NewL7RuleEntry::LbTypeHasBeenSet() const
 {
-    return m_protocolHasBeenSet;
+    return m_lbTypeHasBeenSet;
+}
+
+uint64_t NewL7RuleEntry::GetKeepEnable() const
+{
+    return m_keepEnable;
+}
+
+void NewL7RuleEntry::SetKeepEnable(const uint64_t& _keepEnable)
+{
+    m_keepEnable = _keepEnable;
+    m_keepEnableHasBeenSet = true;
+}
+
+bool NewL7RuleEntry::KeepEnableHasBeenSet() const
+{
+    return m_keepEnableHasBeenSet;
+}
+
+uint64_t NewL7RuleEntry::GetKeepTime() const
+{
+    return m_keepTime;
+}
+
+void NewL7RuleEntry::SetKeepTime(const uint64_t& _keepTime)
+{
+    m_keepTime = _keepTime;
+    m_keepTimeHasBeenSet = true;
+}
+
+bool NewL7RuleEntry::KeepTimeHasBeenSet() const
+{
+    return m_keepTimeHasBeenSet;
 }
 
 uint64_t NewL7RuleEntry::GetSourceType() const
@@ -624,20 +646,164 @@ bool NewL7RuleEntry::SourceTypeHasBeenSet() const
     return m_sourceTypeHasBeenSet;
 }
 
-uint64_t NewL7RuleEntry::GetHttpsToHttpEnable() const
+vector<L4RuleSource> NewL7RuleEntry::GetSourceList() const
 {
-    return m_httpsToHttpEnable;
+    return m_sourceList;
 }
 
-void NewL7RuleEntry::SetHttpsToHttpEnable(const uint64_t& _httpsToHttpEnable)
+void NewL7RuleEntry::SetSourceList(const vector<L4RuleSource>& _sourceList)
 {
-    m_httpsToHttpEnable = _httpsToHttpEnable;
-    m_httpsToHttpEnableHasBeenSet = true;
+    m_sourceList = _sourceList;
+    m_sourceListHasBeenSet = true;
 }
 
-bool NewL7RuleEntry::HttpsToHttpEnableHasBeenSet() const
+bool NewL7RuleEntry::SourceListHasBeenSet() const
 {
-    return m_httpsToHttpEnableHasBeenSet;
+    return m_sourceListHasBeenSet;
+}
+
+uint64_t NewL7RuleEntry::GetRegion() const
+{
+    return m_region;
+}
+
+void NewL7RuleEntry::SetRegion(const uint64_t& _region)
+{
+    m_region = _region;
+    m_regionHasBeenSet = true;
+}
+
+bool NewL7RuleEntry::RegionHasBeenSet() const
+{
+    return m_regionHasBeenSet;
+}
+
+string NewL7RuleEntry::GetId() const
+{
+    return m_id;
+}
+
+void NewL7RuleEntry::SetId(const string& _id)
+{
+    m_id = _id;
+    m_idHasBeenSet = true;
+}
+
+bool NewL7RuleEntry::IdHasBeenSet() const
+{
+    return m_idHasBeenSet;
+}
+
+string NewL7RuleEntry::GetIp() const
+{
+    return m_ip;
+}
+
+void NewL7RuleEntry::SetIp(const string& _ip)
+{
+    m_ip = _ip;
+    m_ipHasBeenSet = true;
+}
+
+bool NewL7RuleEntry::IpHasBeenSet() const
+{
+    return m_ipHasBeenSet;
+}
+
+string NewL7RuleEntry::GetRuleId() const
+{
+    return m_ruleId;
+}
+
+void NewL7RuleEntry::SetRuleId(const string& _ruleId)
+{
+    m_ruleId = _ruleId;
+    m_ruleIdHasBeenSet = true;
+}
+
+bool NewL7RuleEntry::RuleIdHasBeenSet() const
+{
+    return m_ruleIdHasBeenSet;
+}
+
+string NewL7RuleEntry::GetRuleName() const
+{
+    return m_ruleName;
+}
+
+void NewL7RuleEntry::SetRuleName(const string& _ruleName)
+{
+    m_ruleName = _ruleName;
+    m_ruleNameHasBeenSet = true;
+}
+
+bool NewL7RuleEntry::RuleNameHasBeenSet() const
+{
+    return m_ruleNameHasBeenSet;
+}
+
+uint64_t NewL7RuleEntry::GetCertType() const
+{
+    return m_certType;
+}
+
+void NewL7RuleEntry::SetCertType(const uint64_t& _certType)
+{
+    m_certType = _certType;
+    m_certTypeHasBeenSet = true;
+}
+
+bool NewL7RuleEntry::CertTypeHasBeenSet() const
+{
+    return m_certTypeHasBeenSet;
+}
+
+string NewL7RuleEntry::GetSSLId() const
+{
+    return m_sSLId;
+}
+
+void NewL7RuleEntry::SetSSLId(const string& _sSLId)
+{
+    m_sSLId = _sSLId;
+    m_sSLIdHasBeenSet = true;
+}
+
+bool NewL7RuleEntry::SSLIdHasBeenSet() const
+{
+    return m_sSLIdHasBeenSet;
+}
+
+string NewL7RuleEntry::GetCert() const
+{
+    return m_cert;
+}
+
+void NewL7RuleEntry::SetCert(const string& _cert)
+{
+    m_cert = _cert;
+    m_certHasBeenSet = true;
+}
+
+bool NewL7RuleEntry::CertHasBeenSet() const
+{
+    return m_certHasBeenSet;
+}
+
+string NewL7RuleEntry::GetPrivateKey() const
+{
+    return m_privateKey;
+}
+
+void NewL7RuleEntry::SetPrivateKey(const string& _privateKey)
+{
+    m_privateKey = _privateKey;
+    m_privateKeyHasBeenSet = true;
+}
+
+bool NewL7RuleEntry::PrivateKeyHasBeenSet() const
+{
+    return m_privateKeyHasBeenSet;
 }
 
 uint64_t NewL7RuleEntry::GetStatus() const
@@ -656,20 +822,20 @@ bool NewL7RuleEntry::StatusHasBeenSet() const
     return m_statusHasBeenSet;
 }
 
-string NewL7RuleEntry::GetCCLevel() const
+uint64_t NewL7RuleEntry::GetCCStatus() const
 {
-    return m_cCLevel;
+    return m_cCStatus;
 }
 
-void NewL7RuleEntry::SetCCLevel(const string& _cCLevel)
+void NewL7RuleEntry::SetCCStatus(const uint64_t& _cCStatus)
 {
-    m_cCLevel = _cCLevel;
-    m_cCLevelHasBeenSet = true;
+    m_cCStatus = _cCStatus;
+    m_cCStatusHasBeenSet = true;
 }
 
-bool NewL7RuleEntry::CCLevelHasBeenSet() const
+bool NewL7RuleEntry::CCStatusHasBeenSet() const
 {
-    return m_cCLevelHasBeenSet;
+    return m_cCStatusHasBeenSet;
 }
 
 uint64_t NewL7RuleEntry::GetCCEnable() const
@@ -704,52 +870,20 @@ bool NewL7RuleEntry::CCThresholdHasBeenSet() const
     return m_cCThresholdHasBeenSet;
 }
 
-uint64_t NewL7RuleEntry::GetRegion() const
+string NewL7RuleEntry::GetCCLevel() const
 {
-    return m_region;
+    return m_cCLevel;
 }
 
-void NewL7RuleEntry::SetRegion(const uint64_t& _region)
+void NewL7RuleEntry::SetCCLevel(const string& _cCLevel)
 {
-    m_region = _region;
-    m_regionHasBeenSet = true;
+    m_cCLevel = _cCLevel;
+    m_cCLevelHasBeenSet = true;
 }
 
-bool NewL7RuleEntry::RegionHasBeenSet() const
+bool NewL7RuleEntry::CCLevelHasBeenSet() const
 {
-    return m_regionHasBeenSet;
-}
-
-string NewL7RuleEntry::GetRuleName() const
-{
-    return m_ruleName;
-}
-
-void NewL7RuleEntry::SetRuleName(const string& _ruleName)
-{
-    m_ruleName = _ruleName;
-    m_ruleNameHasBeenSet = true;
-}
-
-bool NewL7RuleEntry::RuleNameHasBeenSet() const
-{
-    return m_ruleNameHasBeenSet;
-}
-
-string NewL7RuleEntry::GetCert() const
-{
-    return m_cert;
-}
-
-void NewL7RuleEntry::SetCert(const string& _cert)
-{
-    m_cert = _cert;
-    m_certHasBeenSet = true;
-}
-
-bool NewL7RuleEntry::CertHasBeenSet() const
-{
-    return m_certHasBeenSet;
+    return m_cCLevelHasBeenSet;
 }
 
 string NewL7RuleEntry::GetModifyTime() const
@@ -768,68 +902,20 @@ bool NewL7RuleEntry::ModifyTimeHasBeenSet() const
     return m_modifyTimeHasBeenSet;
 }
 
-string NewL7RuleEntry::GetRuleId() const
+uint64_t NewL7RuleEntry::GetHttpsToHttpEnable() const
 {
-    return m_ruleId;
+    return m_httpsToHttpEnable;
 }
 
-void NewL7RuleEntry::SetRuleId(const string& _ruleId)
+void NewL7RuleEntry::SetHttpsToHttpEnable(const uint64_t& _httpsToHttpEnable)
 {
-    m_ruleId = _ruleId;
-    m_ruleIdHasBeenSet = true;
+    m_httpsToHttpEnable = _httpsToHttpEnable;
+    m_httpsToHttpEnableHasBeenSet = true;
 }
 
-bool NewL7RuleEntry::RuleIdHasBeenSet() const
+bool NewL7RuleEntry::HttpsToHttpEnableHasBeenSet() const
 {
-    return m_ruleIdHasBeenSet;
-}
-
-string NewL7RuleEntry::GetIp() const
-{
-    return m_ip;
-}
-
-void NewL7RuleEntry::SetIp(const string& _ip)
-{
-    m_ip = _ip;
-    m_ipHasBeenSet = true;
-}
-
-bool NewL7RuleEntry::IpHasBeenSet() const
-{
-    return m_ipHasBeenSet;
-}
-
-string NewL7RuleEntry::GetPrivateKey() const
-{
-    return m_privateKey;
-}
-
-void NewL7RuleEntry::SetPrivateKey(const string& _privateKey)
-{
-    m_privateKey = _privateKey;
-    m_privateKeyHasBeenSet = true;
-}
-
-bool NewL7RuleEntry::PrivateKeyHasBeenSet() const
-{
-    return m_privateKeyHasBeenSet;
-}
-
-uint64_t NewL7RuleEntry::GetCertType() const
-{
-    return m_certType;
-}
-
-void NewL7RuleEntry::SetCertType(const uint64_t& _certType)
-{
-    m_certType = _certType;
-    m_certTypeHasBeenSet = true;
-}
-
-bool NewL7RuleEntry::CertTypeHasBeenSet() const
-{
-    return m_certTypeHasBeenSet;
+    return m_httpsToHttpEnableHasBeenSet;
 }
 
 uint64_t NewL7RuleEntry::GetVirtualPort() const
@@ -848,51 +934,35 @@ bool NewL7RuleEntry::VirtualPortHasBeenSet() const
     return m_virtualPortHasBeenSet;
 }
 
-uint64_t NewL7RuleEntry::GetCCStatus() const
+uint64_t NewL7RuleEntry::GetRewriteHttps() const
 {
-    return m_cCStatus;
+    return m_rewriteHttps;
 }
 
-void NewL7RuleEntry::SetCCStatus(const uint64_t& _cCStatus)
+void NewL7RuleEntry::SetRewriteHttps(const uint64_t& _rewriteHttps)
 {
-    m_cCStatus = _cCStatus;
-    m_cCStatusHasBeenSet = true;
+    m_rewriteHttps = _rewriteHttps;
+    m_rewriteHttpsHasBeenSet = true;
 }
 
-bool NewL7RuleEntry::CCStatusHasBeenSet() const
+bool NewL7RuleEntry::RewriteHttpsHasBeenSet() const
 {
-    return m_cCStatusHasBeenSet;
+    return m_rewriteHttpsHasBeenSet;
 }
 
-string NewL7RuleEntry::GetSSLId() const
+uint64_t NewL7RuleEntry::GetErrCode() const
 {
-    return m_sSLId;
+    return m_errCode;
 }
 
-void NewL7RuleEntry::SetSSLId(const string& _sSLId)
+void NewL7RuleEntry::SetErrCode(const uint64_t& _errCode)
 {
-    m_sSLId = _sSLId;
-    m_sSLIdHasBeenSet = true;
+    m_errCode = _errCode;
+    m_errCodeHasBeenSet = true;
 }
 
-bool NewL7RuleEntry::SSLIdHasBeenSet() const
+bool NewL7RuleEntry::ErrCodeHasBeenSet() const
 {
-    return m_sSLIdHasBeenSet;
-}
-
-string NewL7RuleEntry::GetId() const
-{
-    return m_id;
-}
-
-void NewL7RuleEntry::SetId(const string& _id)
-{
-    m_id = _id;
-    m_idHasBeenSet = true;
-}
-
-bool NewL7RuleEntry::IdHasBeenSet() const
-{
-    return m_idHasBeenSet;
+    return m_errCodeHasBeenSet;
 }
 

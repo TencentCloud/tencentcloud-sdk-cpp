@@ -37,7 +37,8 @@ NetworkInterface::NetworkInterface() :
     m_ipv6AddressSetHasBeenSet(false),
     m_tagSetHasBeenSet(false),
     m_eniTypeHasBeenSet(false),
-    m_ecmRegionHasBeenSet(false)
+    m_ecmRegionHasBeenSet(false),
+    m_businessHasBeenSet(false)
 {
 }
 
@@ -256,6 +257,16 @@ CoreInternalOutcome NetworkInterface::Deserialize(const rapidjson::Value &value)
         m_ecmRegionHasBeenSet = true;
     }
 
+    if (value.HasMember("Business") && !value["Business"].IsNull())
+    {
+        if (!value["Business"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NetworkInterface.Business` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_business = string(value["Business"].GetString());
+        m_businessHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -424,6 +435,14 @@ void NetworkInterface::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "EcmRegion";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_ecmRegion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_businessHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Business";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_business.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -699,5 +718,21 @@ void NetworkInterface::SetEcmRegion(const string& _ecmRegion)
 bool NetworkInterface::EcmRegionHasBeenSet() const
 {
     return m_ecmRegionHasBeenSet;
+}
+
+string NetworkInterface::GetBusiness() const
+{
+    return m_business;
+}
+
+void NetworkInterface::SetBusiness(const string& _business)
+{
+    m_business = _business;
+    m_businessHasBeenSet = true;
+}
+
+bool NetworkInterface::BusinessHasBeenSet() const
+{
+    return m_businessHasBeenSet;
 }
 

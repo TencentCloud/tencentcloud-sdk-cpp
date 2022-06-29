@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/monitor/v20180724/model/AlarmPolicyTriggerTask.h>
 
 
 namespace TencentCloud
@@ -160,11 +161,15 @@ namespace TencentCloud
 具体也可以参考下方的示例 2。
 
 不同云产品参数示例详见 [维度信息Dimensions列表](https://cloud.tencent.com/document/product/248/50397)
+
+注意：如果NeedCorrespondence传入1，即需要返回策略与实例对应关系，请传入不多于20个告警对象维度，否则容易请求超时
                      * @return Dimensions 告警对象列表，JSON 字符串。外层数组，对应多个实例，内层为对象的维度。例如“云服务器-基础监控”可写为：
 `[ {"Dimensions": {"unInstanceId": "ins-qr8d555g"}}, {"Dimensions": {"unInstanceId": "ins-qr8d555h"}} ]`
 具体也可以参考下方的示例 2。
 
 不同云产品参数示例详见 [维度信息Dimensions列表](https://cloud.tencent.com/document/product/248/50397)
+
+注意：如果NeedCorrespondence传入1，即需要返回策略与实例对应关系，请传入不多于20个告警对象维度，否则容易请求超时
                      */
                     std::string GetDimensions() const;
 
@@ -174,11 +179,15 @@ namespace TencentCloud
 具体也可以参考下方的示例 2。
 
 不同云产品参数示例详见 [维度信息Dimensions列表](https://cloud.tencent.com/document/product/248/50397)
+
+注意：如果NeedCorrespondence传入1，即需要返回策略与实例对应关系，请传入不多于20个告警对象维度，否则容易请求超时
                      * @param Dimensions 告警对象列表，JSON 字符串。外层数组，对应多个实例，内层为对象的维度。例如“云服务器-基础监控”可写为：
 `[ {"Dimensions": {"unInstanceId": "ins-qr8d555g"}}, {"Dimensions": {"unInstanceId": "ins-qr8d555h"}} ]`
 具体也可以参考下方的示例 2。
 
 不同云产品参数示例详见 [维度信息Dimensions列表](https://cloud.tencent.com/document/product/248/50397)
+
+注意：如果NeedCorrespondence传入1，即需要返回策略与实例对应关系，请传入不多于20个告警对象维度，否则容易请求超时
                      */
                     void SetDimensions(const std::string& _dimensions);
 
@@ -394,6 +403,60 @@ namespace TencentCloud
                      */
                     bool InstanceGroupIdHasBeenSet() const;
 
+                    /**
+                     * 获取是否需要策略与入参过滤维度参数的对应关系，1：是  0：否，默认为0
+                     * @return NeedCorrespondence 是否需要策略与入参过滤维度参数的对应关系，1：是  0：否，默认为0
+                     */
+                    int64_t GetNeedCorrespondence() const;
+
+                    /**
+                     * 设置是否需要策略与入参过滤维度参数的对应关系，1：是  0：否，默认为0
+                     * @param NeedCorrespondence 是否需要策略与入参过滤维度参数的对应关系，1：是  0：否，默认为0
+                     */
+                    void SetNeedCorrespondence(const int64_t& _needCorrespondence);
+
+                    /**
+                     * 判断参数 NeedCorrespondence 是否已赋值
+                     * @return NeedCorrespondence 是否已赋值
+                     */
+                    bool NeedCorrespondenceHasBeenSet() const;
+
+                    /**
+                     * 获取按照触发任务（例如弹性伸缩）过滤策略。最多10个
+                     * @return TriggerTasks 按照触发任务（例如弹性伸缩）过滤策略。最多10个
+                     */
+                    std::vector<AlarmPolicyTriggerTask> GetTriggerTasks() const;
+
+                    /**
+                     * 设置按照触发任务（例如弹性伸缩）过滤策略。最多10个
+                     * @param TriggerTasks 按照触发任务（例如弹性伸缩）过滤策略。最多10个
+                     */
+                    void SetTriggerTasks(const std::vector<AlarmPolicyTriggerTask>& _triggerTasks);
+
+                    /**
+                     * 判断参数 TriggerTasks 是否已赋值
+                     * @return TriggerTasks 是否已赋值
+                     */
+                    bool TriggerTasksHasBeenSet() const;
+
+                    /**
+                     * 获取根据一键告警策略筛选 不传展示全部策略 ONECLICK=展示一键告警策略 NOT_ONECLICK=展示非一键告警策略
+                     * @return OneClickPolicyType 根据一键告警策略筛选 不传展示全部策略 ONECLICK=展示一键告警策略 NOT_ONECLICK=展示非一键告警策略
+                     */
+                    std::vector<std::string> GetOneClickPolicyType() const;
+
+                    /**
+                     * 设置根据一键告警策略筛选 不传展示全部策略 ONECLICK=展示一键告警策略 NOT_ONECLICK=展示非一键告警策略
+                     * @param OneClickPolicyType 根据一键告警策略筛选 不传展示全部策略 ONECLICK=展示一键告警策略 NOT_ONECLICK=展示非一键告警策略
+                     */
+                    void SetOneClickPolicyType(const std::vector<std::string>& _oneClickPolicyType);
+
+                    /**
+                     * 判断参数 OneClickPolicyType 是否已赋值
+                     * @return OneClickPolicyType 是否已赋值
+                     */
+                    bool OneClickPolicyTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -439,6 +502,8 @@ namespace TencentCloud
 具体也可以参考下方的示例 2。
 
 不同云产品参数示例详见 [维度信息Dimensions列表](https://cloud.tencent.com/document/product/248/50397)
+
+注意：如果NeedCorrespondence传入1，即需要返回策略与实例对应关系，请传入不多于20个告警对象维度，否则容易请求超时
                      */
                     std::string m_dimensions;
                     bool m_dimensionsHasBeenSet;
@@ -510,6 +575,24 @@ namespace TencentCloud
                      */
                     int64_t m_instanceGroupId;
                     bool m_instanceGroupIdHasBeenSet;
+
+                    /**
+                     * 是否需要策略与入参过滤维度参数的对应关系，1：是  0：否，默认为0
+                     */
+                    int64_t m_needCorrespondence;
+                    bool m_needCorrespondenceHasBeenSet;
+
+                    /**
+                     * 按照触发任务（例如弹性伸缩）过滤策略。最多10个
+                     */
+                    std::vector<AlarmPolicyTriggerTask> m_triggerTasks;
+                    bool m_triggerTasksHasBeenSet;
+
+                    /**
+                     * 根据一键告警策略筛选 不传展示全部策略 ONECLICK=展示一键告警策略 NOT_ONECLICK=展示非一键告警策略
+                     */
+                    std::vector<std::string> m_oneClickPolicyType;
+                    bool m_oneClickPolicyTypeHasBeenSet;
 
                 };
             }

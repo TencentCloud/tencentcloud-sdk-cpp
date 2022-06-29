@@ -133,6 +133,24 @@ namespace TencentCloud
                      */
                     bool ManufacturerHasBeenSet() const;
 
+                    /**
+                     * 获取Hsm服务类型，可选virtualization、physical、GHSM、EHSM、SHSM、all
+                     * @return HsmType Hsm服务类型，可选virtualization、physical、GHSM、EHSM、SHSM、all
+                     */
+                    std::string GetHsmType() const;
+
+                    /**
+                     * 设置Hsm服务类型，可选virtualization、physical、GHSM、EHSM、SHSM、all
+                     * @param HsmType Hsm服务类型，可选virtualization、physical、GHSM、EHSM、SHSM、all
+                     */
+                    void SetHsmType(const std::string& _hsmType);
+
+                    /**
+                     * 判断参数 HsmType 是否已赋值
+                     * @return HsmType 是否已赋值
+                     */
+                    bool HsmTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -164,6 +182,12 @@ namespace TencentCloud
                      */
                     std::string m_manufacturer;
                     bool m_manufacturerHasBeenSet;
+
+                    /**
+                     * Hsm服务类型，可选virtualization、physical、GHSM、EHSM、SHSM、all
+                     */
+                    std::string m_hsmType;
+                    bool m_hsmTypeHasBeenSet;
 
                 };
             }

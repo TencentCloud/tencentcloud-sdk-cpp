@@ -22,25 +22,33 @@ set(tiia_public_header_model
   include/tencentcloud/tiia/v20190529/model/DetectProductBetaResponse.h
   include/tencentcloud/tiia/v20190529/model/DetectDisgustRequest.h
   include/tencentcloud/tiia/v20190529/model/SearchImageResponse.h
+  include/tencentcloud/tiia/v20190529/model/RecognizeCarProRequest.h
+  include/tencentcloud/tiia/v20190529/model/RecognizeCarProResponse.h
   include/tencentcloud/tiia/v20190529/model/CreateImageRequest.h
+  include/tencentcloud/tiia/v20190529/model/DetectLabelBetaRequest.h
   include/tencentcloud/tiia/v20190529/model/DeleteImagesResponse.h
   include/tencentcloud/tiia/v20190529/model/CropImageRequest.h
   include/tencentcloud/tiia/v20190529/model/DetectProductRequest.h
+  include/tencentcloud/tiia/v20190529/model/DetectLabelResponse.h
+  include/tencentcloud/tiia/v20190529/model/RegionDetected.h
   include/tencentcloud/tiia/v20190529/model/DescribeGroupsRequest.h
+  include/tencentcloud/tiia/v20190529/model/DetectMisbehaviorResponse.h
   include/tencentcloud/tiia/v20190529/model/AssessQualityResponse.h
   include/tencentcloud/tiia/v20190529/model/DetectDisgustResponse.h
+  include/tencentcloud/tiia/v20190529/model/ObjectInfo.h
   include/tencentcloud/tiia/v20190529/model/SearchImageRequest.h
   include/tencentcloud/tiia/v20190529/model/RecognizeCarResponse.h
   include/tencentcloud/tiia/v20190529/model/DetectLabelRequest.h
-  include/tencentcloud/tiia/v20190529/model/DetectLabelResponse.h
+  include/tencentcloud/tiia/v20190529/model/DetectLabelProResponse.h
   include/tencentcloud/tiia/v20190529/model/EnhanceImageResponse.h
   include/tencentcloud/tiia/v20190529/model/ProductInfo.h
   include/tencentcloud/tiia/v20190529/model/AssessQualityRequest.h
   include/tencentcloud/tiia/v20190529/model/DeleteImagesRequest.h
   include/tencentcloud/tiia/v20190529/model/CreateGroupRequest.h
   include/tencentcloud/tiia/v20190529/model/DescribeImagesRequest.h
+  include/tencentcloud/tiia/v20190529/model/Rect.h
   include/tencentcloud/tiia/v20190529/model/DetectProductBetaRequest.h
-  include/tencentcloud/tiia/v20190529/model/DetectMisbehaviorResponse.h
+  include/tencentcloud/tiia/v20190529/model/Box.h
   include/tencentcloud/tiia/v20190529/model/RecognizeCarRequest.h
   include/tencentcloud/tiia/v20190529/model/EnhanceImageRequest.h
   include/tencentcloud/tiia/v20190529/model/GroupInfo.h
@@ -48,16 +56,20 @@ set(tiia_public_header_model
   include/tencentcloud/tiia/v20190529/model/DetectCelebrityRequest.h
   include/tencentcloud/tiia/v20190529/model/Coord.h
   include/tencentcloud/tiia/v20190529/model/Face.h
+  include/tencentcloud/tiia/v20190529/model/DetectEnvelopeRequest.h
   include/tencentcloud/tiia/v20190529/model/DetectProductResponse.h
-  include/tencentcloud/tiia/v20190529/model/DetectLabelBetaRequest.h
+  include/tencentcloud/tiia/v20190529/model/ColorInfo.h
   include/tencentcloud/tiia/v20190529/model/ImageRect.h
   include/tencentcloud/tiia/v20190529/model/CreateImageResponse.h
   include/tencentcloud/tiia/v20190529/model/DetectLabelItem.h
   include/tencentcloud/tiia/v20190529/model/Location.h
   include/tencentcloud/tiia/v20190529/model/CarPlateContent.h
+  include/tencentcloud/tiia/v20190529/model/DetectLabelProRequest.h
   include/tencentcloud/tiia/v20190529/model/DetectLabelBetaResponse.h
+  include/tencentcloud/tiia/v20190529/model/DetectEnvelopeResponse.h
+  include/tencentcloud/tiia/v20190529/model/ImageTag.h
+  include/tencentcloud/tiia/v20190529/model/Attribute.h
   include/tencentcloud/tiia/v20190529/model/ImageInfo.h
-  include/tencentcloud/tiia/v20190529/model/RegionDetected.h
   include/tencentcloud/tiia/v20190529/model/Labels.h
   include/tencentcloud/tiia/v20190529/model/DetectCelebrityResponse.h
   include/tencentcloud/tiia/v20190529/model/Product.h
@@ -75,25 +87,33 @@ set(tiia_src
   src/v20190529/model/DetectProductBetaResponse.cpp
   src/v20190529/model/DetectDisgustRequest.cpp
   src/v20190529/model/SearchImageResponse.cpp
+  src/v20190529/model/RecognizeCarProRequest.cpp
+  src/v20190529/model/RecognizeCarProResponse.cpp
   src/v20190529/model/CreateImageRequest.cpp
+  src/v20190529/model/DetectLabelBetaRequest.cpp
   src/v20190529/model/DeleteImagesResponse.cpp
   src/v20190529/model/CropImageRequest.cpp
   src/v20190529/model/DetectProductRequest.cpp
+  src/v20190529/model/DetectLabelResponse.cpp
+  src/v20190529/model/RegionDetected.cpp
   src/v20190529/model/DescribeGroupsRequest.cpp
+  src/v20190529/model/DetectMisbehaviorResponse.cpp
   src/v20190529/model/AssessQualityResponse.cpp
   src/v20190529/model/DetectDisgustResponse.cpp
+  src/v20190529/model/ObjectInfo.cpp
   src/v20190529/model/SearchImageRequest.cpp
   src/v20190529/model/RecognizeCarResponse.cpp
   src/v20190529/model/DetectLabelRequest.cpp
-  src/v20190529/model/DetectLabelResponse.cpp
+  src/v20190529/model/DetectLabelProResponse.cpp
   src/v20190529/model/EnhanceImageResponse.cpp
   src/v20190529/model/ProductInfo.cpp
   src/v20190529/model/AssessQualityRequest.cpp
   src/v20190529/model/DeleteImagesRequest.cpp
   src/v20190529/model/CreateGroupRequest.cpp
   src/v20190529/model/DescribeImagesRequest.cpp
+  src/v20190529/model/Rect.cpp
   src/v20190529/model/DetectProductBetaRequest.cpp
-  src/v20190529/model/DetectMisbehaviorResponse.cpp
+  src/v20190529/model/Box.cpp
   src/v20190529/model/RecognizeCarRequest.cpp
   src/v20190529/model/EnhanceImageRequest.cpp
   src/v20190529/model/GroupInfo.cpp
@@ -101,16 +121,20 @@ set(tiia_src
   src/v20190529/model/DetectCelebrityRequest.cpp
   src/v20190529/model/Coord.cpp
   src/v20190529/model/Face.cpp
+  src/v20190529/model/DetectEnvelopeRequest.cpp
   src/v20190529/model/DetectProductResponse.cpp
-  src/v20190529/model/DetectLabelBetaRequest.cpp
+  src/v20190529/model/ColorInfo.cpp
   src/v20190529/model/ImageRect.cpp
   src/v20190529/model/CreateImageResponse.cpp
   src/v20190529/model/DetectLabelItem.cpp
   src/v20190529/model/Location.cpp
   src/v20190529/model/CarPlateContent.cpp
+  src/v20190529/model/DetectLabelProRequest.cpp
   src/v20190529/model/DetectLabelBetaResponse.cpp
+  src/v20190529/model/DetectEnvelopeResponse.cpp
+  src/v20190529/model/ImageTag.cpp
+  src/v20190529/model/Attribute.cpp
   src/v20190529/model/ImageInfo.cpp
-  src/v20190529/model/RegionDetected.cpp
   src/v20190529/model/Labels.cpp
   src/v20190529/model/DetectCelebrityResponse.cpp
   src/v20190529/model/Product.cpp

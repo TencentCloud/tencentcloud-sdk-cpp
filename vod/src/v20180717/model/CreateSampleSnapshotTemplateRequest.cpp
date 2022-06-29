@@ -25,13 +25,13 @@ using namespace std;
 CreateSampleSnapshotTemplateRequest::CreateSampleSnapshotTemplateRequest() :
     m_sampleTypeHasBeenSet(false),
     m_sampleIntervalHasBeenSet(false),
+    m_subAppIdHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_widthHasBeenSet(false),
     m_heightHasBeenSet(false),
     m_resolutionAdaptiveHasBeenSet(false),
     m_formatHasBeenSet(false),
     m_commentHasBeenSet(false),
-    m_subAppIdHasBeenSet(false),
     m_fillTypeHasBeenSet(false)
 {
 }
@@ -57,6 +57,14 @@ string CreateSampleSnapshotTemplateRequest::ToJsonString() const
         string key = "SampleInterval";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_sampleInterval, allocator);
+    }
+
+    if (m_subAppIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubAppId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_subAppId, allocator);
     }
 
     if (m_nameHasBeenSet)
@@ -107,14 +115,6 @@ string CreateSampleSnapshotTemplateRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_comment.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_subAppIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SubAppId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_subAppId, allocator);
-    }
-
     if (m_fillTypeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -161,6 +161,22 @@ void CreateSampleSnapshotTemplateRequest::SetSampleInterval(const uint64_t& _sam
 bool CreateSampleSnapshotTemplateRequest::SampleIntervalHasBeenSet() const
 {
     return m_sampleIntervalHasBeenSet;
+}
+
+uint64_t CreateSampleSnapshotTemplateRequest::GetSubAppId() const
+{
+    return m_subAppId;
+}
+
+void CreateSampleSnapshotTemplateRequest::SetSubAppId(const uint64_t& _subAppId)
+{
+    m_subAppId = _subAppId;
+    m_subAppIdHasBeenSet = true;
+}
+
+bool CreateSampleSnapshotTemplateRequest::SubAppIdHasBeenSet() const
+{
+    return m_subAppIdHasBeenSet;
 }
 
 string CreateSampleSnapshotTemplateRequest::GetName() const
@@ -257,22 +273,6 @@ void CreateSampleSnapshotTemplateRequest::SetComment(const string& _comment)
 bool CreateSampleSnapshotTemplateRequest::CommentHasBeenSet() const
 {
     return m_commentHasBeenSet;
-}
-
-uint64_t CreateSampleSnapshotTemplateRequest::GetSubAppId() const
-{
-    return m_subAppId;
-}
-
-void CreateSampleSnapshotTemplateRequest::SetSubAppId(const uint64_t& _subAppId)
-{
-    m_subAppId = _subAppId;
-    m_subAppIdHasBeenSet = true;
-}
-
-bool CreateSampleSnapshotTemplateRequest::SubAppIdHasBeenSet() const
-{
-    return m_subAppIdHasBeenSet;
 }
 
 string CreateSampleSnapshotTemplateRequest::GetFillType() const

@@ -29,7 +29,8 @@ InstanceAdvancedSettings::InstanceAdvancedSettings() :
     m_dataDisksHasBeenSet(false),
     m_extraArgsHasBeenSet(false),
     m_desiredPodNumberHasBeenSet(false),
-    m_preStartUserScriptHasBeenSet(false)
+    m_preStartUserScriptHasBeenSet(false),
+    m_taintsHasBeenSet(false)
 {
 }
 
@@ -155,6 +156,26 @@ CoreInternalOutcome InstanceAdvancedSettings::Deserialize(const rapidjson::Value
         m_preStartUserScriptHasBeenSet = true;
     }
 
+    if (value.HasMember("Taints") && !value["Taints"].IsNull())
+    {
+        if (!value["Taints"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `InstanceAdvancedSettings.Taints` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Taints"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Taint item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_taints.push_back(item);
+        }
+        m_taintsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -247,6 +268,21 @@ void InstanceAdvancedSettings::ToJsonObject(rapidjson::Value &value, rapidjson::
         string key = "PreStartUserScript";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_preStartUserScript.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_taintsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Taints";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_taints.begin(); itr != m_taints.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -394,5 +430,21 @@ void InstanceAdvancedSettings::SetPreStartUserScript(const string& _preStartUser
 bool InstanceAdvancedSettings::PreStartUserScriptHasBeenSet() const
 {
     return m_preStartUserScriptHasBeenSet;
+}
+
+vector<Taint> InstanceAdvancedSettings::GetTaints() const
+{
+    return m_taints;
+}
+
+void InstanceAdvancedSettings::SetTaints(const vector<Taint>& _taints)
+{
+    m_taints = _taints;
+    m_taintsHasBeenSet = true;
+}
+
+bool InstanceAdvancedSettings::TaintsHasBeenSet() const
+{
+    return m_taintsHasBeenSet;
 }
 

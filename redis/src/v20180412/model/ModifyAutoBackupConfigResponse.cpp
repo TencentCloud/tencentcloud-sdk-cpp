@@ -26,7 +26,8 @@ using namespace std;
 ModifyAutoBackupConfigResponse::ModifyAutoBackupConfigResponse() :
     m_autoBackupTypeHasBeenSet(false),
     m_weekDaysHasBeenSet(false),
-    m_timePeriodHasBeenSet(false)
+    m_timePeriodHasBeenSet(false),
+    m_backupStorageDaysHasBeenSet(false)
 {
 }
 
@@ -97,6 +98,16 @@ CoreInternalOutcome ModifyAutoBackupConfigResponse::Deserialize(const string &pa
         m_timePeriodHasBeenSet = true;
     }
 
+    if (rsp.HasMember("BackupStorageDays") && !rsp["BackupStorageDays"].IsNull())
+    {
+        if (!rsp["BackupStorageDays"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `BackupStorageDays` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_backupStorageDays = rsp["BackupStorageDays"].GetInt64();
+        m_backupStorageDaysHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -134,6 +145,14 @@ string ModifyAutoBackupConfigResponse::ToJsonString() const
         string key = "TimePeriod";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_timePeriod.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_backupStorageDaysHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BackupStorageDays";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_backupStorageDays, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -176,6 +195,16 @@ string ModifyAutoBackupConfigResponse::GetTimePeriod() const
 bool ModifyAutoBackupConfigResponse::TimePeriodHasBeenSet() const
 {
     return m_timePeriodHasBeenSet;
+}
+
+int64_t ModifyAutoBackupConfigResponse::GetBackupStorageDays() const
+{
+    return m_backupStorageDays;
+}
+
+bool ModifyAutoBackupConfigResponse::BackupStorageDaysHasBeenSet() const
+{
+    return m_backupStorageDaysHasBeenSet;
 }
 
 

@@ -25,7 +25,8 @@ using namespace std;
 DescribeUserSqlAdviceRequest::DescribeUserSqlAdviceRequest() :
     m_instanceIdHasBeenSet(false),
     m_sqlTextHasBeenSet(false),
-    m_schemaHasBeenSet(false)
+    m_schemaHasBeenSet(false),
+    m_productHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,14 @@ string DescribeUserSqlAdviceRequest::ToJsonString() const
         string key = "Schema";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_schema.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_productHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Product";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_product.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -114,6 +123,22 @@ void DescribeUserSqlAdviceRequest::SetSchema(const string& _schema)
 bool DescribeUserSqlAdviceRequest::SchemaHasBeenSet() const
 {
     return m_schemaHasBeenSet;
+}
+
+string DescribeUserSqlAdviceRequest::GetProduct() const
+{
+    return m_product;
+}
+
+void DescribeUserSqlAdviceRequest::SetProduct(const string& _product)
+{
+    m_product = _product;
+    m_productHasBeenSet = true;
+}
+
+bool DescribeUserSqlAdviceRequest::ProductHasBeenSet() const
+{
+    return m_productHasBeenSet;
 }
 
 

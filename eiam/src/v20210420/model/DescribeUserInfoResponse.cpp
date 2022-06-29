@@ -37,7 +37,8 @@ DescribeUserInfoResponse::DescribeUserInfoResponse() :
     m_expirationTimeHasBeenSet(false),
     m_activationTimeHasBeenSet(false),
     m_pwdNeedResetHasBeenSet(false),
-    m_secondaryOrgNodeIdListHasBeenSet(false)
+    m_secondaryOrgNodeIdListHasBeenSet(false),
+    m_adminFlagHasBeenSet(false)
 {
 }
 
@@ -221,6 +222,16 @@ CoreInternalOutcome DescribeUserInfoResponse::Deserialize(const string &payload)
         m_secondaryOrgNodeIdListHasBeenSet = true;
     }
 
+    if (rsp.HasMember("AdminFlag") && !rsp["AdminFlag"].IsNull())
+    {
+        if (!rsp["AdminFlag"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AdminFlag` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_adminFlag = rsp["AdminFlag"].GetInt64();
+        m_adminFlagHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -351,6 +362,14 @@ string DescribeUserInfoResponse::ToJsonString() const
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_adminFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AdminFlag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_adminFlag, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -503,6 +522,16 @@ vector<string> DescribeUserInfoResponse::GetSecondaryOrgNodeIdList() const
 bool DescribeUserInfoResponse::SecondaryOrgNodeIdListHasBeenSet() const
 {
     return m_secondaryOrgNodeIdListHasBeenSet;
+}
+
+int64_t DescribeUserInfoResponse::GetAdminFlag() const
+{
+    return m_adminFlag;
+}
+
+bool DescribeUserInfoResponse::AdminFlagHasBeenSet() const
+{
+    return m_adminFlagHasBeenSet;
 }
 
 

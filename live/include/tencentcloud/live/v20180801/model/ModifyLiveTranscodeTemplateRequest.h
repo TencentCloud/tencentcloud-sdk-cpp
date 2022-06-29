@@ -468,6 +468,50 @@ baseline/main/high。
                      */
                     bool ShortEdgeAsHeightHasBeenSet() const;
 
+                    /**
+                     * 获取DRM 加密类型，可选值：fairplay、normalaes、widevine。
+不传递或着为空字符串，清空之前的DRM配置。
+                     * @return DRMType DRM 加密类型，可选值：fairplay、normalaes、widevine。
+不传递或着为空字符串，清空之前的DRM配置。
+                     */
+                    std::string GetDRMType() const;
+
+                    /**
+                     * 设置DRM 加密类型，可选值：fairplay、normalaes、widevine。
+不传递或着为空字符串，清空之前的DRM配置。
+                     * @param DRMType DRM 加密类型，可选值：fairplay、normalaes、widevine。
+不传递或着为空字符串，清空之前的DRM配置。
+                     */
+                    void SetDRMType(const std::string& _dRMType);
+
+                    /**
+                     * 判断参数 DRMType 是否已赋值
+                     * @return DRMType 是否已赋值
+                     */
+                    bool DRMTypeHasBeenSet() const;
+
+                    /**
+                     * 获取DRM 加密项，可选值：AUDIO、SD、HD、UHD1、UHD2，后四个为一组，同组中的内容只能选一个。
+不传递或着为空字符串，清空之前的DRM配置。
+                     * @return DRMTracks DRM 加密项，可选值：AUDIO、SD、HD、UHD1、UHD2，后四个为一组，同组中的内容只能选一个。
+不传递或着为空字符串，清空之前的DRM配置。
+                     */
+                    std::string GetDRMTracks() const;
+
+                    /**
+                     * 设置DRM 加密项，可选值：AUDIO、SD、HD、UHD1、UHD2，后四个为一组，同组中的内容只能选一个。
+不传递或着为空字符串，清空之前的DRM配置。
+                     * @param DRMTracks DRM 加密项，可选值：AUDIO、SD、HD、UHD1、UHD2，后四个为一组，同组中的内容只能选一个。
+不传递或着为空字符串，清空之前的DRM配置。
+                     */
+                    void SetDRMTracks(const std::string& _dRMTracks);
+
+                    /**
+                     * 判断参数 DRMTracks 是否已赋值
+                     * @return DRMTracks 是否已赋值
+                     */
+                    bool DRMTracksHasBeenSet() const;
+
                 private:
 
                     /**
@@ -604,6 +648,20 @@ baseline/main/high。
                      */
                     int64_t m_shortEdgeAsHeight;
                     bool m_shortEdgeAsHeightHasBeenSet;
+
+                    /**
+                     * DRM 加密类型，可选值：fairplay、normalaes、widevine。
+不传递或着为空字符串，清空之前的DRM配置。
+                     */
+                    std::string m_dRMType;
+                    bool m_dRMTypeHasBeenSet;
+
+                    /**
+                     * DRM 加密项，可选值：AUDIO、SD、HD、UHD1、UHD2，后四个为一组，同组中的内容只能选一个。
+不传递或着为空字符串，清空之前的DRM配置。
+                     */
+                    std::string m_dRMTracks;
+                    bool m_dRMTracksHasBeenSet;
 
                 };
             }

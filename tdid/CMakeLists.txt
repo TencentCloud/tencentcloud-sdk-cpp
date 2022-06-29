@@ -23,12 +23,21 @@ set(tdid_public_header_model
   include/tencentcloud/tdid/v20210519/model/CreateCredentialRequest.h
   include/tencentcloud/tdid/v20210519/model/TransactionArg.h
   include/tencentcloud/tdid/v20210519/model/CreateTDidRequest.h
-  include/tencentcloud/tdid/v20210519/model/FunctionArg.h
+  include/tencentcloud/tdid/v20210519/model/GetAuthorityIssuerResponse.h
+  include/tencentcloud/tdid/v20210519/model/CredentialStatus.h
   include/tencentcloud/tdid/v20210519/model/CreateSelectiveCredentialRequest.h
+  include/tencentcloud/tdid/v20210519/model/GetDidDocumentRequest.h
+  include/tencentcloud/tdid/v20210519/model/FunctionArg.h
   include/tencentcloud/tdid/v20210519/model/CreateTDidResponse.h
   include/tencentcloud/tdid/v20210519/model/CreateSelectiveCredentialResponse.h
-  include/tencentcloud/tdid/v20210519/model/VerifyCredentialResponse.h
+  include/tencentcloud/tdid/v20210519/model/SetCredentialStatusRequest.h
+  include/tencentcloud/tdid/v20210519/model/CreateTDidByPublicKeyRequest.h
+  include/tencentcloud/tdid/v20210519/model/CreateTDidByPublicKeyResponse.h
   include/tencentcloud/tdid/v20210519/model/CreateCredentialResponse.h
+  include/tencentcloud/tdid/v20210519/model/GetAuthorityIssuerRequest.h
+  include/tencentcloud/tdid/v20210519/model/GetDidDocumentResponse.h
+  include/tencentcloud/tdid/v20210519/model/VerifyCredentialResponse.h
+  include/tencentcloud/tdid/v20210519/model/SetCredentialStatusResponse.h
   include/tencentcloud/tdid/v20210519/model/VerifyCredentialRequest.h
   include/tencentcloud/tdid/v20210519/model/Proof.h
   )
@@ -39,12 +48,21 @@ set(tdid_src
   src/v20210519/model/CreateCredentialRequest.cpp
   src/v20210519/model/TransactionArg.cpp
   src/v20210519/model/CreateTDidRequest.cpp
-  src/v20210519/model/FunctionArg.cpp
+  src/v20210519/model/GetAuthorityIssuerResponse.cpp
+  src/v20210519/model/CredentialStatus.cpp
   src/v20210519/model/CreateSelectiveCredentialRequest.cpp
+  src/v20210519/model/GetDidDocumentRequest.cpp
+  src/v20210519/model/FunctionArg.cpp
   src/v20210519/model/CreateTDidResponse.cpp
   src/v20210519/model/CreateSelectiveCredentialResponse.cpp
-  src/v20210519/model/VerifyCredentialResponse.cpp
+  src/v20210519/model/SetCredentialStatusRequest.cpp
+  src/v20210519/model/CreateTDidByPublicKeyRequest.cpp
+  src/v20210519/model/CreateTDidByPublicKeyResponse.cpp
   src/v20210519/model/CreateCredentialResponse.cpp
+  src/v20210519/model/GetAuthorityIssuerRequest.cpp
+  src/v20210519/model/GetDidDocumentResponse.cpp
+  src/v20210519/model/VerifyCredentialResponse.cpp
+  src/v20210519/model/SetCredentialStatusResponse.cpp
   src/v20210519/model/VerifyCredentialRequest.cpp
   src/v20210519/model/Proof.cpp
   )

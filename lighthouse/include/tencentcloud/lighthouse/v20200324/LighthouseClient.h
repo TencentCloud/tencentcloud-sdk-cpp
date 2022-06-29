@@ -37,6 +37,8 @@
 #include <tencentcloud/lighthouse/v20200324/model/CreateFirewallRulesResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/CreateInstanceSnapshotRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/CreateInstanceSnapshotResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/CreateInstancesRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/CreateInstancesResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/CreateKeyPairRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/CreateKeyPairResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/DeleteBlueprintsRequest.h>
@@ -119,6 +121,8 @@
 #include <tencentcloud/lighthouse/v20200324/model/InquirePriceRenewDisksResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/InquirePriceRenewInstancesRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/InquirePriceRenewInstancesResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/IsolateInstancesRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/IsolateInstancesResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/ModifyBlueprintAttributeRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/ModifyBlueprintAttributeResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/ModifyDisksAttributeRequest.h>
@@ -139,6 +143,8 @@
 #include <tencentcloud/lighthouse/v20200324/model/ModifySnapshotAttributeResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/RebootInstancesRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/RebootInstancesResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/RenewInstancesRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/RenewInstancesResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/ResetAttachCcnRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/ResetAttachCcnResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/ResetInstanceRequest.h>
@@ -188,6 +194,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateInstanceSnapshotResponse> CreateInstanceSnapshotOutcome;
                 typedef std::future<CreateInstanceSnapshotOutcome> CreateInstanceSnapshotOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::CreateInstanceSnapshotRequest&, CreateInstanceSnapshotOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateInstanceSnapshotAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateInstancesResponse> CreateInstancesOutcome;
+                typedef std::future<CreateInstancesOutcome> CreateInstancesOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::CreateInstancesRequest&, CreateInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateInstancesAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateKeyPairResponse> CreateKeyPairOutcome;
                 typedef std::future<CreateKeyPairOutcome> CreateKeyPairOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::CreateKeyPairRequest&, CreateKeyPairOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateKeyPairAsyncHandler;
@@ -311,6 +320,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::InquirePriceRenewInstancesResponse> InquirePriceRenewInstancesOutcome;
                 typedef std::future<InquirePriceRenewInstancesOutcome> InquirePriceRenewInstancesOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::InquirePriceRenewInstancesRequest&, InquirePriceRenewInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InquirePriceRenewInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::IsolateInstancesResponse> IsolateInstancesOutcome;
+                typedef std::future<IsolateInstancesOutcome> IsolateInstancesOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::IsolateInstancesRequest&, IsolateInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> IsolateInstancesAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyBlueprintAttributeResponse> ModifyBlueprintAttributeOutcome;
                 typedef std::future<ModifyBlueprintAttributeOutcome> ModifyBlueprintAttributeOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::ModifyBlueprintAttributeRequest&, ModifyBlueprintAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBlueprintAttributeAsyncHandler;
@@ -341,6 +353,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RebootInstancesResponse> RebootInstancesOutcome;
                 typedef std::future<RebootInstancesOutcome> RebootInstancesOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::RebootInstancesRequest&, RebootInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RebootInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::RenewInstancesResponse> RenewInstancesOutcome;
+                typedef std::future<RenewInstancesOutcome> RenewInstancesOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::RenewInstancesRequest&, RenewInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RenewInstancesAsyncHandler;
                 typedef Outcome<Core::Error, Model::ResetAttachCcnResponse> ResetAttachCcnOutcome;
                 typedef std::future<ResetAttachCcnOutcome> ResetAttachCcnOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::ResetAttachCcnRequest&, ResetAttachCcnOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetAttachCcnAsyncHandler;
@@ -446,6 +461,15 @@ namespace TencentCloud
                 CreateInstanceSnapshotOutcome CreateInstanceSnapshot(const Model::CreateInstanceSnapshotRequest &request);
                 void CreateInstanceSnapshotAsync(const Model::CreateInstanceSnapshotRequest& request, const CreateInstanceSnapshotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateInstanceSnapshotOutcomeCallable CreateInstanceSnapshotCallable(const Model::CreateInstanceSnapshotRequest& request);
+
+                /**
+                 *本接口(CreateInstances)用于创建一个或多个指定套餐的轻量应用服务器实例。
+                 * @param req CreateInstancesRequest
+                 * @return CreateInstancesOutcome
+                 */
+                CreateInstancesOutcome CreateInstances(const Model::CreateInstancesRequest &request);
+                void CreateInstancesAsync(const Model::CreateInstancesRequest& request, const CreateInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateInstancesOutcomeCallable CreateInstancesCallable(const Model::CreateInstancesRequest& request);
 
                 /**
                  *本接口（CreateKeyPair）用于创建一个密钥对。
@@ -602,7 +626,7 @@ namespace TencentCloud
                 DescribeFirewallRulesOutcomeCallable DescribeFirewallRulesCallable(const Model::DescribeFirewallRulesRequest& request);
 
                 /**
-                 *本接口（DescribeFirewallRulesTemplate）用于查询防火墙规则模版。
+                 *本接口（DescribeFirewallRulesTemplate）用于查询防火墙规则模板。
                  * @param req DescribeFirewallRulesTemplateRequest
                  * @return DescribeFirewallRulesTemplateOutcome
                  */
@@ -629,12 +653,20 @@ namespace TencentCloud
                 DescribeInstanceLoginKeyPairAttributeOutcomeCallable DescribeInstanceLoginKeyPairAttributeCallable(const Model::DescribeInstanceLoginKeyPairAttributeRequest& request);
 
                 /**
-                 *本接口（DescribeInstanceVncUrl）用于查询实例管理终端地址，获取的地址可用于实例的 VNC 登录。
+                 *本接口 ( DescribeInstanceVncUrl ) 用于查询实例管理终端地址，获取的地址可用于实例的 VNC 登录。
 
-* 处于 RUNNING 状态的机器可使用此功能。
+* 处于 `STOPPED` 状态的机器无法使用此功能。
 * 管理终端地址的有效期为 15 秒，调用接口成功后如果 15 秒内不使用该链接进行访问，管理终端地址自动失效，您需要重新查询。
 * 管理终端地址一旦被访问，将自动失效，您需要重新查询。
 * 如果连接断开，每分钟内重新连接的次数不能超过 30 次。
+* 参数 `InstanceVncUrl` ：调用接口成功后会返回的 `InstanceVncUrl` 的值。
+获取到 `InstanceVncUrl` 后，您需要在链接 `https://img.qcloud.com/qcloud/app/active_vnc/index.html?` 末尾加上参数 `InstanceVncUrl=xxxx`。
+ 最后组成的 URL 格式如下：
+
+```
+https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F%2Fbjvnc.qcloud.com%3A26789%2Fvnc%3Fs%3DaHpjWnRVMFNhYmxKdDM5MjRHNlVTSVQwajNUSW0wb2tBbmFtREFCTmFrcy8vUUNPMG0wSHZNOUUxRm5PMmUzWmFDcWlOdDJIbUJxSTZDL0RXcHZxYnZZMmRkWWZWcEZia2lyb09XMzdKNmM9
+```
+
                  * @param req DescribeInstanceVncUrlRequest
                  * @return DescribeInstanceVncUrlOutcome
                  */
@@ -834,13 +866,26 @@ namespace TencentCloud
                 InquirePriceRenewDisksOutcomeCallable InquirePriceRenewDisksCallable(const Model::InquirePriceRenewDisksRequest& request);
 
                 /**
-                 *本接口（InquirePriceCreateInstances）用于续费实例询价。
+                 *本接口（InquirePriceRenewInstances）用于续费实例询价。
                  * @param req InquirePriceRenewInstancesRequest
                  * @return InquirePriceRenewInstancesOutcome
                  */
                 InquirePriceRenewInstancesOutcome InquirePriceRenewInstances(const Model::InquirePriceRenewInstancesRequest &request);
                 void InquirePriceRenewInstancesAsync(const Model::InquirePriceRenewInstancesRequest& request, const InquirePriceRenewInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 InquirePriceRenewInstancesOutcomeCallable InquirePriceRenewInstancesCallable(const Model::InquirePriceRenewInstancesRequest& request);
+
+                /**
+                 *本接口(IsolateInstances)用于退还一个或多个轻量应用服务器实例。
+* 只有状态为 RUNNING 或 STOPPED 的实例才可以进行此操作。
+* 接口调用成功后，实例会进入SHUTDOWN 状态。
+* 支持批量操作。每次请求批量资源（包括实例与数据盘）的上限为 20。
+* 本接口为异步接口，请求发送成功后会返回一个 RequestId，此时操作并未立即完成。实例操作结果可以通过调用 DescribeInstances 接口查询，如果实例的最新操作状态（LatestOperationState）为“SUCCESS”，则代表操作成功。
+                 * @param req IsolateInstancesRequest
+                 * @return IsolateInstancesOutcome
+                 */
+                IsolateInstancesOutcome IsolateInstances(const Model::IsolateInstancesRequest &request);
+                void IsolateInstancesAsync(const Model::IsolateInstancesRequest& request, const IsolateInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                IsolateInstancesOutcomeCallable IsolateInstancesCallable(const Model::IsolateInstancesRequest& request);
 
                 /**
                  *本接口 (ModifyBlueprintAttribute) 用于修改镜像属性。
@@ -966,6 +1011,18 @@ namespace TencentCloud
                 RebootInstancesOutcome RebootInstances(const Model::RebootInstancesRequest &request);
                 void RebootInstancesAsync(const Model::RebootInstancesRequest& request, const RebootInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RebootInstancesOutcomeCallable RebootInstancesCallable(const Model::RebootInstancesRequest& request);
+
+                /**
+                 *本接口(RenewInstances)用于续费一个或多个轻量应用服务器实例。
+* 只有状态为 RUNNING，STOPPED 或 SHUTDOWN 的实例才可以进行此操作。
+* 支持批量操作。每次请求批量实例的上限为 100。
+* 本接口为异步接口，请求发送成功后会返回一个 RequestId，此时操作并未立即完成。实例操作结果可以通过调用 DescribeInstances 接口查询，如果实例的最新操作状态（LatestOperationState）为“SUCCESS”，则代表操作成功。
+                 * @param req RenewInstancesRequest
+                 * @return RenewInstancesOutcome
+                 */
+                RenewInstancesOutcome RenewInstances(const Model::RenewInstancesRequest &request);
+                void RenewInstancesAsync(const Model::RenewInstancesRequest& request, const RenewInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RenewInstancesOutcomeCallable RenewInstancesCallable(const Model::RenewInstancesRequest& request);
 
                 /**
                  *本接口 (ResetAttachCcn) 用于关联云联网实例申请过期时，重新申请关联操作。

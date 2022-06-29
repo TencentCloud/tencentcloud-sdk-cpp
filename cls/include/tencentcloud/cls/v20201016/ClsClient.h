@@ -25,12 +25,16 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/cls/v20201016/model/ApplyConfigToMachineGroupRequest.h>
 #include <tencentcloud/cls/v20201016/model/ApplyConfigToMachineGroupResponse.h>
+#include <tencentcloud/cls/v20201016/model/CloseKafkaConsumerRequest.h>
+#include <tencentcloud/cls/v20201016/model/CloseKafkaConsumerResponse.h>
 #include <tencentcloud/cls/v20201016/model/CreateAlarmRequest.h>
 #include <tencentcloud/cls/v20201016/model/CreateAlarmResponse.h>
 #include <tencentcloud/cls/v20201016/model/CreateAlarmNoticeRequest.h>
 #include <tencentcloud/cls/v20201016/model/CreateAlarmNoticeResponse.h>
 #include <tencentcloud/cls/v20201016/model/CreateConfigRequest.h>
 #include <tencentcloud/cls/v20201016/model/CreateConfigResponse.h>
+#include <tencentcloud/cls/v20201016/model/CreateConfigExtraRequest.h>
+#include <tencentcloud/cls/v20201016/model/CreateConfigExtraResponse.h>
 #include <tencentcloud/cls/v20201016/model/CreateConsumerRequest.h>
 #include <tencentcloud/cls/v20201016/model/CreateConsumerResponse.h>
 #include <tencentcloud/cls/v20201016/model/CreateExportRequest.h>
@@ -51,6 +55,8 @@
 #include <tencentcloud/cls/v20201016/model/DeleteAlarmNoticeResponse.h>
 #include <tencentcloud/cls/v20201016/model/DeleteConfigRequest.h>
 #include <tencentcloud/cls/v20201016/model/DeleteConfigResponse.h>
+#include <tencentcloud/cls/v20201016/model/DeleteConfigExtraRequest.h>
+#include <tencentcloud/cls/v20201016/model/DeleteConfigExtraResponse.h>
 #include <tencentcloud/cls/v20201016/model/DeleteConfigFromMachineGroupRequest.h>
 #include <tencentcloud/cls/v20201016/model/DeleteConfigFromMachineGroupResponse.h>
 #include <tencentcloud/cls/v20201016/model/DeleteConsumerRequest.h>
@@ -71,6 +77,8 @@
 #include <tencentcloud/cls/v20201016/model/DescribeAlarmNoticesResponse.h>
 #include <tencentcloud/cls/v20201016/model/DescribeAlarmsRequest.h>
 #include <tencentcloud/cls/v20201016/model/DescribeAlarmsResponse.h>
+#include <tencentcloud/cls/v20201016/model/DescribeConfigExtrasRequest.h>
+#include <tencentcloud/cls/v20201016/model/DescribeConfigExtrasResponse.h>
 #include <tencentcloud/cls/v20201016/model/DescribeConfigMachineGroupsRequest.h>
 #include <tencentcloud/cls/v20201016/model/DescribeConfigMachineGroupsResponse.h>
 #include <tencentcloud/cls/v20201016/model/DescribeConfigsRequest.h>
@@ -83,6 +91,8 @@
 #include <tencentcloud/cls/v20201016/model/DescribeIndexResponse.h>
 #include <tencentcloud/cls/v20201016/model/DescribeLogContextRequest.h>
 #include <tencentcloud/cls/v20201016/model/DescribeLogContextResponse.h>
+#include <tencentcloud/cls/v20201016/model/DescribeLogHistogramRequest.h>
+#include <tencentcloud/cls/v20201016/model/DescribeLogHistogramResponse.h>
 #include <tencentcloud/cls/v20201016/model/DescribeLogsetsRequest.h>
 #include <tencentcloud/cls/v20201016/model/DescribeLogsetsResponse.h>
 #include <tencentcloud/cls/v20201016/model/DescribeMachineGroupConfigsRequest.h>
@@ -109,6 +119,8 @@
 #include <tencentcloud/cls/v20201016/model/ModifyAlarmNoticeResponse.h>
 #include <tencentcloud/cls/v20201016/model/ModifyConfigRequest.h>
 #include <tencentcloud/cls/v20201016/model/ModifyConfigResponse.h>
+#include <tencentcloud/cls/v20201016/model/ModifyConfigExtraRequest.h>
+#include <tencentcloud/cls/v20201016/model/ModifyConfigExtraResponse.h>
 #include <tencentcloud/cls/v20201016/model/ModifyConsumerRequest.h>
 #include <tencentcloud/cls/v20201016/model/ModifyConsumerResponse.h>
 #include <tencentcloud/cls/v20201016/model/ModifyIndexRequest.h>
@@ -121,6 +133,8 @@
 #include <tencentcloud/cls/v20201016/model/ModifyShipperResponse.h>
 #include <tencentcloud/cls/v20201016/model/ModifyTopicRequest.h>
 #include <tencentcloud/cls/v20201016/model/ModifyTopicResponse.h>
+#include <tencentcloud/cls/v20201016/model/OpenKafkaConsumerRequest.h>
+#include <tencentcloud/cls/v20201016/model/OpenKafkaConsumerResponse.h>
 #include <tencentcloud/cls/v20201016/model/RetryShipperTaskRequest.h>
 #include <tencentcloud/cls/v20201016/model/RetryShipperTaskResponse.h>
 #include <tencentcloud/cls/v20201016/model/SearchLogRequest.h>
@@ -146,6 +160,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ApplyConfigToMachineGroupResponse> ApplyConfigToMachineGroupOutcome;
                 typedef std::future<ApplyConfigToMachineGroupOutcome> ApplyConfigToMachineGroupOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::ApplyConfigToMachineGroupRequest&, ApplyConfigToMachineGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ApplyConfigToMachineGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::CloseKafkaConsumerResponse> CloseKafkaConsumerOutcome;
+                typedef std::future<CloseKafkaConsumerOutcome> CloseKafkaConsumerOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::CloseKafkaConsumerRequest&, CloseKafkaConsumerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CloseKafkaConsumerAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateAlarmResponse> CreateAlarmOutcome;
                 typedef std::future<CreateAlarmOutcome> CreateAlarmOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::CreateAlarmRequest&, CreateAlarmOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAlarmAsyncHandler;
@@ -155,6 +172,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateConfigResponse> CreateConfigOutcome;
                 typedef std::future<CreateConfigOutcome> CreateConfigOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::CreateConfigRequest&, CreateConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateConfigAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateConfigExtraResponse> CreateConfigExtraOutcome;
+                typedef std::future<CreateConfigExtraOutcome> CreateConfigExtraOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::CreateConfigExtraRequest&, CreateConfigExtraOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateConfigExtraAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateConsumerResponse> CreateConsumerOutcome;
                 typedef std::future<CreateConsumerOutcome> CreateConsumerOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::CreateConsumerRequest&, CreateConsumerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateConsumerAsyncHandler;
@@ -185,6 +205,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteConfigResponse> DeleteConfigOutcome;
                 typedef std::future<DeleteConfigOutcome> DeleteConfigOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::DeleteConfigRequest&, DeleteConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteConfigAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteConfigExtraResponse> DeleteConfigExtraOutcome;
+                typedef std::future<DeleteConfigExtraOutcome> DeleteConfigExtraOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::DeleteConfigExtraRequest&, DeleteConfigExtraOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteConfigExtraAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteConfigFromMachineGroupResponse> DeleteConfigFromMachineGroupOutcome;
                 typedef std::future<DeleteConfigFromMachineGroupOutcome> DeleteConfigFromMachineGroupOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::DeleteConfigFromMachineGroupRequest&, DeleteConfigFromMachineGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteConfigFromMachineGroupAsyncHandler;
@@ -215,6 +238,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAlarmsResponse> DescribeAlarmsOutcome;
                 typedef std::future<DescribeAlarmsOutcome> DescribeAlarmsOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::DescribeAlarmsRequest&, DescribeAlarmsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAlarmsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeConfigExtrasResponse> DescribeConfigExtrasOutcome;
+                typedef std::future<DescribeConfigExtrasOutcome> DescribeConfigExtrasOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::DescribeConfigExtrasRequest&, DescribeConfigExtrasOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeConfigExtrasAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeConfigMachineGroupsResponse> DescribeConfigMachineGroupsOutcome;
                 typedef std::future<DescribeConfigMachineGroupsOutcome> DescribeConfigMachineGroupsOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::DescribeConfigMachineGroupsRequest&, DescribeConfigMachineGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeConfigMachineGroupsAsyncHandler;
@@ -233,6 +259,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeLogContextResponse> DescribeLogContextOutcome;
                 typedef std::future<DescribeLogContextOutcome> DescribeLogContextOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::DescribeLogContextRequest&, DescribeLogContextOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLogContextAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeLogHistogramResponse> DescribeLogHistogramOutcome;
+                typedef std::future<DescribeLogHistogramOutcome> DescribeLogHistogramOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::DescribeLogHistogramRequest&, DescribeLogHistogramOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLogHistogramAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeLogsetsResponse> DescribeLogsetsOutcome;
                 typedef std::future<DescribeLogsetsOutcome> DescribeLogsetsOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::DescribeLogsetsRequest&, DescribeLogsetsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLogsetsAsyncHandler;
@@ -272,6 +301,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyConfigResponse> ModifyConfigOutcome;
                 typedef std::future<ModifyConfigOutcome> ModifyConfigOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::ModifyConfigRequest&, ModifyConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyConfigAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyConfigExtraResponse> ModifyConfigExtraOutcome;
+                typedef std::future<ModifyConfigExtraOutcome> ModifyConfigExtraOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::ModifyConfigExtraRequest&, ModifyConfigExtraOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyConfigExtraAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyConsumerResponse> ModifyConsumerOutcome;
                 typedef std::future<ModifyConsumerOutcome> ModifyConsumerOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::ModifyConsumerRequest&, ModifyConsumerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyConsumerAsyncHandler;
@@ -290,6 +322,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyTopicResponse> ModifyTopicOutcome;
                 typedef std::future<ModifyTopicOutcome> ModifyTopicOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::ModifyTopicRequest&, ModifyTopicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTopicAsyncHandler;
+                typedef Outcome<Core::Error, Model::OpenKafkaConsumerResponse> OpenKafkaConsumerOutcome;
+                typedef std::future<OpenKafkaConsumerOutcome> OpenKafkaConsumerOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::OpenKafkaConsumerRequest&, OpenKafkaConsumerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> OpenKafkaConsumerAsyncHandler;
                 typedef Outcome<Core::Error, Model::RetryShipperTaskResponse> RetryShipperTaskOutcome;
                 typedef std::future<RetryShipperTaskOutcome> RetryShipperTaskOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::RetryShipperTaskRequest&, RetryShipperTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RetryShipperTaskAsyncHandler;
@@ -315,6 +350,15 @@ namespace TencentCloud
                 ApplyConfigToMachineGroupOutcomeCallable ApplyConfigToMachineGroupCallable(const Model::ApplyConfigToMachineGroupRequest& request);
 
                 /**
+                 *关闭Kafka协议消费
+                 * @param req CloseKafkaConsumerRequest
+                 * @return CloseKafkaConsumerOutcome
+                 */
+                CloseKafkaConsumerOutcome CloseKafkaConsumer(const Model::CloseKafkaConsumerRequest &request);
+                void CloseKafkaConsumerAsync(const Model::CloseKafkaConsumerRequest& request, const CloseKafkaConsumerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CloseKafkaConsumerOutcomeCallable CloseKafkaConsumerCallable(const Model::CloseKafkaConsumerRequest& request);
+
+                /**
                  *本接口用于创建告警策略。
                  * @param req CreateAlarmRequest
                  * @return CreateAlarmOutcome
@@ -324,7 +368,7 @@ namespace TencentCloud
                 CreateAlarmOutcomeCallable CreateAlarmCallable(const Model::CreateAlarmRequest& request);
 
                 /**
-                 *该接口用户创建通知渠道组。
+                 *该接口用于创建通知渠道组。
                  * @param req CreateAlarmNoticeRequest
                  * @return CreateAlarmNoticeOutcome
                  */
@@ -342,6 +386,15 @@ namespace TencentCloud
                 CreateConfigOutcomeCallable CreateConfigCallable(const Model::CreateConfigRequest& request);
 
                 /**
+                 *本接口用于创建特殊采集配置任务
+                 * @param req CreateConfigExtraRequest
+                 * @return CreateConfigExtraOutcome
+                 */
+                CreateConfigExtraOutcome CreateConfigExtra(const Model::CreateConfigExtraRequest &request);
+                void CreateConfigExtraAsync(const Model::CreateConfigExtraRequest& request, const CreateConfigExtraAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateConfigExtraOutcomeCallable CreateConfigExtraCallable(const Model::CreateConfigExtraRequest& request);
+
+                /**
                  *本接口用于创建投递任务
                  * @param req CreateConsumerRequest
                  * @return CreateConsumerOutcome
@@ -351,7 +404,7 @@ namespace TencentCloud
                 CreateConsumerOutcomeCallable CreateConsumerCallable(const Model::CreateConsumerRequest& request);
 
                 /**
-                 *本接口用于创建日志下载任务
+                 *本接口仅创建下载任务，任务返回的下载地址，请用户调用DescribeExports查看任务列表。其中有下载地址CosPath参数。参考文档https://cloud.tencent.com/document/product/614/56449
                  * @param req CreateExportRequest
                  * @return CreateExportOutcome
                  */
@@ -387,7 +440,7 @@ namespace TencentCloud
                 CreateMachineGroupOutcomeCallable CreateMachineGroupCallable(const Model::CreateMachineGroupRequest& request);
 
                 /**
-                 *创建新的投递规则，客户如果使用此接口，需要自行处理CLS对指定bucket的写权限。
+                 *创建新的投递规则，【！！！注意】使用此接口，需要检查是否配置了投递COS的角色和权限。如果没有配置，请参考文档投递权限查看和配置https://cloud.tencent.com/document/product/614/71623。
                  * @param req CreateShipperRequest
                  * @return CreateShipperOutcome
                  */
@@ -432,6 +485,15 @@ namespace TencentCloud
                 DeleteConfigOutcomeCallable DeleteConfigCallable(const Model::DeleteConfigRequest& request);
 
                 /**
+                 *本接口用于删除特殊采集规则配置
+                 * @param req DeleteConfigExtraRequest
+                 * @return DeleteConfigExtraOutcome
+                 */
+                DeleteConfigExtraOutcome DeleteConfigExtra(const Model::DeleteConfigExtraRequest &request);
+                void DeleteConfigExtraAsync(const Model::DeleteConfigExtraRequest& request, const DeleteConfigExtraAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteConfigExtraOutcomeCallable DeleteConfigExtraCallable(const Model::DeleteConfigExtraRequest& request);
+
+                /**
                  *删除应用到机器组的采集配置
                  * @param req DeleteConfigFromMachineGroupRequest
                  * @return DeleteConfigFromMachineGroupOutcome
@@ -459,7 +521,7 @@ namespace TencentCloud
                 DeleteExportOutcomeCallable DeleteExportCallable(const Model::DeleteExportRequest& request);
 
                 /**
-                 *本接口用于日志主题的索引配置
+                 *本接口用于删除日志主题的索引配置，删除索引配置后将无法检索和查询采集到的日志。
                  * @param req DeleteIndexRequest
                  * @return DeleteIndexOutcome
                  */
@@ -522,6 +584,15 @@ namespace TencentCloud
                 DescribeAlarmsOutcomeCallable DescribeAlarmsCallable(const Model::DescribeAlarmsRequest& request);
 
                 /**
+                 *本接口用于获取特殊采集配置
+                 * @param req DescribeConfigExtrasRequest
+                 * @return DescribeConfigExtrasOutcome
+                 */
+                DescribeConfigExtrasOutcome DescribeConfigExtras(const Model::DescribeConfigExtrasRequest &request);
+                void DescribeConfigExtrasAsync(const Model::DescribeConfigExtrasRequest& request, const DescribeConfigExtrasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeConfigExtrasOutcomeCallable DescribeConfigExtrasCallable(const Model::DescribeConfigExtrasRequest& request);
+
+                /**
                  *获取采集规则配置所绑定的机器组
                  * @param req DescribeConfigMachineGroupsRequest
                  * @return DescribeConfigMachineGroupsOutcome
@@ -574,6 +645,15 @@ namespace TencentCloud
                 DescribeLogContextOutcome DescribeLogContext(const Model::DescribeLogContextRequest &request);
                 void DescribeLogContextAsync(const Model::DescribeLogContextRequest& request, const DescribeLogContextAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeLogContextOutcomeCallable DescribeLogContextCallable(const Model::DescribeLogContextRequest& request);
+
+                /**
+                 *本接口用于构建直方图
+                 * @param req DescribeLogHistogramRequest
+                 * @return DescribeLogHistogramOutcome
+                 */
+                DescribeLogHistogramOutcome DescribeLogHistogram(const Model::DescribeLogHistogramRequest &request);
+                void DescribeLogHistogramAsync(const Model::DescribeLogHistogramRequest& request, const DescribeLogHistogramAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLogHistogramOutcomeCallable DescribeLogHistogramCallable(const Model::DescribeLogHistogramRequest& request);
 
                 /**
                  *本接口用于获取日志集信息列表。
@@ -693,6 +773,15 @@ namespace TencentCloud
                 ModifyConfigOutcomeCallable ModifyConfigCallable(const Model::ModifyConfigRequest& request);
 
                 /**
+                 *本接口用于修改特殊采集配置任务
+                 * @param req ModifyConfigExtraRequest
+                 * @return ModifyConfigExtraOutcome
+                 */
+                ModifyConfigExtraOutcome ModifyConfigExtra(const Model::ModifyConfigExtraRequest &request);
+                void ModifyConfigExtraAsync(const Model::ModifyConfigExtraRequest& request, const ModifyConfigExtraAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyConfigExtraOutcomeCallable ModifyConfigExtraCallable(const Model::ModifyConfigExtraRequest& request);
+
+                /**
                  *本接口用于修改投递任务
                  * @param req ModifyConsumerRequest
                  * @return ModifyConsumerOutcome
@@ -748,6 +837,15 @@ namespace TencentCloud
                 ModifyTopicOutcomeCallable ModifyTopicCallable(const Model::ModifyTopicRequest& request);
 
                 /**
+                 *打开Kafka协议消费功能
+                 * @param req OpenKafkaConsumerRequest
+                 * @return OpenKafkaConsumerOutcome
+                 */
+                OpenKafkaConsumerOutcome OpenKafkaConsumer(const Model::OpenKafkaConsumerRequest &request);
+                void OpenKafkaConsumerAsync(const Model::OpenKafkaConsumerRequest& request, const OpenKafkaConsumerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                OpenKafkaConsumerOutcomeCallable OpenKafkaConsumerCallable(const Model::OpenKafkaConsumerRequest& request);
+
+                /**
                  *重试失败的投递任务
                  * @param req RetryShipperTaskRequest
                  * @return RetryShipperTaskOutcome
@@ -757,7 +855,7 @@ namespace TencentCloud
                 RetryShipperTaskOutcomeCallable RetryShipperTaskCallable(const Model::RetryShipperTaskRequest& request);
 
                 /**
-                 *本接口用于搜索日志, 该接口除受默认接口请求频率限制外，针对单个日志主题，并发数不能超过15
+                 *本接口用于检索分析日志, 该接口除受默认接口请求频率限制外，针对单个日志主题，查询并发数不能超过15。
                  * @param req SearchLogRequest
                  * @return SearchLogOutcome
                  */
@@ -775,7 +873,14 @@ namespace TencentCloud
                 SplitPartitionOutcomeCallable SplitPartitionCallable(const Model::SplitPartitionRequest& request);
 
                 /**
-                 *## 功能描述
+                 *## 提示
+为了保障您日志数据的可靠性以及更高效地使用日志服务，建议您使用CLS优化后的接口[上传结构化日志](https://cloud.tencent.com/document/api/614/16873)上传日志。
+
+同时我们给此接口专门优化定制了多个语言版本的SDK供您选择，SDK提供统一的异步发送、资源控制、自动重试、优雅关闭、感知上报等功能，使上报日志功能更完善，详情请参考[SDK采集](https://cloud.tencent.com/document/product/614/67157)。
+
+同时云API上传日志接口也支持同步上传日志数据，如果您选继续使用此接口请参考下文。
+
+## 功能描述
 
 本接口用于将日志写入到指定的日志主题。
 
@@ -789,7 +894,6 @@ namespace TencentCloud
 
 系统根据携带的哈希值（X-CLS-HashKey）将数据写入到符合范围要求的目标分区。例如，可以将某个日志源端通过 hashkey 与某个主题分区强绑定，这样可以保证数据在该分区上写入和消费是严格保序的。
 
-此外日志服务还为用户提供以下两种不同的日志上传模式：
                  
 
 #### 输入参数(pb二进制流，位于body中)

@@ -29,8 +29,6 @@
 #include <tencentcloud/cwp/v20180228/model/ChangeRuleEventsIgnoreStatusResponse.h>
 #include <tencentcloud/cwp/v20180228/model/CheckBashRuleParamsRequest.h>
 #include <tencentcloud/cwp/v20180228/model/CheckBashRuleParamsResponse.h>
-#include <tencentcloud/cwp/v20180228/model/CloseProVersionRequest.h>
-#include <tencentcloud/cwp/v20180228/model/CloseProVersionResponse.h>
 #include <tencentcloud/cwp/v20180228/model/CreateBaselineStrategyRequest.h>
 #include <tencentcloud/cwp/v20180228/model/CreateBaselineStrategyResponse.h>
 #include <tencentcloud/cwp/v20180228/model/CreateEmergencyVulScanRequest.h>
@@ -295,6 +293,8 @@
 #include <tencentcloud/cwp/v20180228/model/DescribeSearchTemplatesResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeSecurityDynamicsRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeSecurityDynamicsResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeSecurityEventStatRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeSecurityEventStatResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeSecurityEventsCntRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeSecurityEventsCntResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeSecurityTrendsRequest.h>
@@ -393,8 +393,6 @@
 #include <tencentcloud/cwp/v20180228/model/ExportWebPageEventListResponse.h>
 #include <tencentcloud/cwp/v20180228/model/IgnoreImpactedHostsRequest.h>
 #include <tencentcloud/cwp/v20180228/model/IgnoreImpactedHostsResponse.h>
-#include <tencentcloud/cwp/v20180228/model/InquiryPriceOpenProVersionPrepaidRequest.h>
-#include <tencentcloud/cwp/v20180228/model/InquiryPriceOpenProVersionPrepaidResponse.h>
 #include <tencentcloud/cwp/v20180228/model/ModifyAutoOpenProVersionConfigRequest.h>
 #include <tencentcloud/cwp/v20180228/model/ModifyAutoOpenProVersionConfigResponse.h>
 #include <tencentcloud/cwp/v20180228/model/ModifyBanModeRequest.h>
@@ -405,8 +403,6 @@
 #include <tencentcloud/cwp/v20180228/model/ModifyBruteAttackRulesResponse.h>
 #include <tencentcloud/cwp/v20180228/model/ModifyMalwareTimingScanSettingsRequest.h>
 #include <tencentcloud/cwp/v20180228/model/ModifyMalwareTimingScanSettingsResponse.h>
-#include <tencentcloud/cwp/v20180228/model/ModifyProVersionRenewFlagRequest.h>
-#include <tencentcloud/cwp/v20180228/model/ModifyProVersionRenewFlagResponse.h>
 #include <tencentcloud/cwp/v20180228/model/ModifyWarningSettingRequest.h>
 #include <tencentcloud/cwp/v20180228/model/ModifyWarningSettingResponse.h>
 #include <tencentcloud/cwp/v20180228/model/ModifyWebPageProtectDirRequest.h>
@@ -415,14 +411,8 @@
 #include <tencentcloud/cwp/v20180228/model/ModifyWebPageProtectSettingResponse.h>
 #include <tencentcloud/cwp/v20180228/model/ModifyWebPageProtectSwitchRequest.h>
 #include <tencentcloud/cwp/v20180228/model/ModifyWebPageProtectSwitchResponse.h>
-#include <tencentcloud/cwp/v20180228/model/OpenProVersionRequest.h>
-#include <tencentcloud/cwp/v20180228/model/OpenProVersionResponse.h>
-#include <tencentcloud/cwp/v20180228/model/OpenProVersionPrepaidRequest.h>
-#include <tencentcloud/cwp/v20180228/model/OpenProVersionPrepaidResponse.h>
 #include <tencentcloud/cwp/v20180228/model/RecoverMalwaresRequest.h>
 #include <tencentcloud/cwp/v20180228/model/RecoverMalwaresResponse.h>
-#include <tencentcloud/cwp/v20180228/model/RenewProVersionRequest.h>
-#include <tencentcloud/cwp/v20180228/model/RenewProVersionResponse.h>
 #include <tencentcloud/cwp/v20180228/model/ScanAssetRequest.h>
 #include <tencentcloud/cwp/v20180228/model/ScanAssetResponse.h>
 #include <tencentcloud/cwp/v20180228/model/ScanVulRequest.h>
@@ -472,9 +462,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CheckBashRuleParamsResponse> CheckBashRuleParamsOutcome;
                 typedef std::future<CheckBashRuleParamsOutcome> CheckBashRuleParamsOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::CheckBashRuleParamsRequest&, CheckBashRuleParamsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckBashRuleParamsAsyncHandler;
-                typedef Outcome<Core::Error, Model::CloseProVersionResponse> CloseProVersionOutcome;
-                typedef std::future<CloseProVersionOutcome> CloseProVersionOutcomeCallable;
-                typedef std::function<void(const CwpClient*, const Model::CloseProVersionRequest&, CloseProVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CloseProVersionAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateBaselineStrategyResponse> CreateBaselineStrategyOutcome;
                 typedef std::future<CreateBaselineStrategyOutcome> CreateBaselineStrategyOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::CreateBaselineStrategyRequest&, CreateBaselineStrategyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateBaselineStrategyAsyncHandler;
@@ -871,6 +858,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeSecurityDynamicsResponse> DescribeSecurityDynamicsOutcome;
                 typedef std::future<DescribeSecurityDynamicsOutcome> DescribeSecurityDynamicsOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeSecurityDynamicsRequest&, DescribeSecurityDynamicsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSecurityDynamicsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSecurityEventStatResponse> DescribeSecurityEventStatOutcome;
+                typedef std::future<DescribeSecurityEventStatOutcome> DescribeSecurityEventStatOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeSecurityEventStatRequest&, DescribeSecurityEventStatOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSecurityEventStatAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSecurityEventsCntResponse> DescribeSecurityEventsCntOutcome;
                 typedef std::future<DescribeSecurityEventsCntOutcome> DescribeSecurityEventsCntOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeSecurityEventsCntRequest&, DescribeSecurityEventsCntOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSecurityEventsCntAsyncHandler;
@@ -1018,9 +1008,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::IgnoreImpactedHostsResponse> IgnoreImpactedHostsOutcome;
                 typedef std::future<IgnoreImpactedHostsOutcome> IgnoreImpactedHostsOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::IgnoreImpactedHostsRequest&, IgnoreImpactedHostsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> IgnoreImpactedHostsAsyncHandler;
-                typedef Outcome<Core::Error, Model::InquiryPriceOpenProVersionPrepaidResponse> InquiryPriceOpenProVersionPrepaidOutcome;
-                typedef std::future<InquiryPriceOpenProVersionPrepaidOutcome> InquiryPriceOpenProVersionPrepaidOutcomeCallable;
-                typedef std::function<void(const CwpClient*, const Model::InquiryPriceOpenProVersionPrepaidRequest&, InquiryPriceOpenProVersionPrepaidOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InquiryPriceOpenProVersionPrepaidAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyAutoOpenProVersionConfigResponse> ModifyAutoOpenProVersionConfigOutcome;
                 typedef std::future<ModifyAutoOpenProVersionConfigOutcome> ModifyAutoOpenProVersionConfigOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::ModifyAutoOpenProVersionConfigRequest&, ModifyAutoOpenProVersionConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAutoOpenProVersionConfigAsyncHandler;
@@ -1036,9 +1023,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyMalwareTimingScanSettingsResponse> ModifyMalwareTimingScanSettingsOutcome;
                 typedef std::future<ModifyMalwareTimingScanSettingsOutcome> ModifyMalwareTimingScanSettingsOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::ModifyMalwareTimingScanSettingsRequest&, ModifyMalwareTimingScanSettingsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyMalwareTimingScanSettingsAsyncHandler;
-                typedef Outcome<Core::Error, Model::ModifyProVersionRenewFlagResponse> ModifyProVersionRenewFlagOutcome;
-                typedef std::future<ModifyProVersionRenewFlagOutcome> ModifyProVersionRenewFlagOutcomeCallable;
-                typedef std::function<void(const CwpClient*, const Model::ModifyProVersionRenewFlagRequest&, ModifyProVersionRenewFlagOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyProVersionRenewFlagAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyWarningSettingResponse> ModifyWarningSettingOutcome;
                 typedef std::future<ModifyWarningSettingOutcome> ModifyWarningSettingOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::ModifyWarningSettingRequest&, ModifyWarningSettingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyWarningSettingAsyncHandler;
@@ -1051,18 +1035,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyWebPageProtectSwitchResponse> ModifyWebPageProtectSwitchOutcome;
                 typedef std::future<ModifyWebPageProtectSwitchOutcome> ModifyWebPageProtectSwitchOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::ModifyWebPageProtectSwitchRequest&, ModifyWebPageProtectSwitchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyWebPageProtectSwitchAsyncHandler;
-                typedef Outcome<Core::Error, Model::OpenProVersionResponse> OpenProVersionOutcome;
-                typedef std::future<OpenProVersionOutcome> OpenProVersionOutcomeCallable;
-                typedef std::function<void(const CwpClient*, const Model::OpenProVersionRequest&, OpenProVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> OpenProVersionAsyncHandler;
-                typedef Outcome<Core::Error, Model::OpenProVersionPrepaidResponse> OpenProVersionPrepaidOutcome;
-                typedef std::future<OpenProVersionPrepaidOutcome> OpenProVersionPrepaidOutcomeCallable;
-                typedef std::function<void(const CwpClient*, const Model::OpenProVersionPrepaidRequest&, OpenProVersionPrepaidOutcome, const std::shared_ptr<const AsyncCallerContext>&)> OpenProVersionPrepaidAsyncHandler;
                 typedef Outcome<Core::Error, Model::RecoverMalwaresResponse> RecoverMalwaresOutcome;
                 typedef std::future<RecoverMalwaresOutcome> RecoverMalwaresOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::RecoverMalwaresRequest&, RecoverMalwaresOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecoverMalwaresAsyncHandler;
-                typedef Outcome<Core::Error, Model::RenewProVersionResponse> RenewProVersionOutcome;
-                typedef std::future<RenewProVersionOutcome> RenewProVersionOutcomeCallable;
-                typedef std::function<void(const CwpClient*, const Model::RenewProVersionRequest&, RenewProVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RenewProVersionAsyncHandler;
                 typedef Outcome<Core::Error, Model::ScanAssetResponse> ScanAssetOutcome;
                 typedef std::future<ScanAssetOutcome> ScanAssetOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::ScanAssetRequest&, ScanAssetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ScanAssetAsyncHandler;
@@ -1131,15 +1106,6 @@ namespace TencentCloud
                 CheckBashRuleParamsOutcome CheckBashRuleParams(const Model::CheckBashRuleParamsRequest &request);
                 void CheckBashRuleParamsAsync(const Model::CheckBashRuleParamsRequest& request, const CheckBashRuleParamsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CheckBashRuleParamsOutcomeCallable CheckBashRuleParamsCallable(const Model::CheckBashRuleParamsRequest& request);
-
-                /**
-                 *本接口 (CloseProVersion) 用于关闭专业版。
-                 * @param req CloseProVersionRequest
-                 * @return CloseProVersionOutcome
-                 */
-                CloseProVersionOutcome CloseProVersion(const Model::CloseProVersionRequest &request);
-                void CloseProVersionAsync(const Model::CloseProVersionRequest& request, const CloseProVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                CloseProVersionOutcomeCallable CloseProVersionCallable(const Model::CloseProVersionRequest& request);
 
                 /**
                  *根据策略信息创建基线策略
@@ -2195,7 +2161,7 @@ namespace TencentCloud
                 DescribeProtectDirRelatedServerOutcomeCallable DescribeProtectDirRelatedServerCallable(const Model::DescribeProtectDirRelatedServerRequest& request);
 
                 /**
-                 *专家服务-旗舰护网列表
+                 *专家服务-旗舰重保列表
                  * @param req DescribeProtectNetListRequest
                  * @return DescribeProtectNetListOutcome
                  */
@@ -2328,6 +2294,15 @@ namespace TencentCloud
                 DescribeSecurityDynamicsOutcome DescribeSecurityDynamics(const Model::DescribeSecurityDynamicsRequest &request);
                 void DescribeSecurityDynamicsAsync(const Model::DescribeSecurityDynamicsRequest& request, const DescribeSecurityDynamicsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeSecurityDynamicsOutcomeCallable DescribeSecurityDynamicsCallable(const Model::DescribeSecurityDynamicsRequest& request);
+
+                /**
+                 *获取安全事件统计
+                 * @param req DescribeSecurityEventStatRequest
+                 * @return DescribeSecurityEventStatOutcome
+                 */
+                DescribeSecurityEventStatOutcome DescribeSecurityEventStat(const Model::DescribeSecurityEventStatRequest &request);
+                void DescribeSecurityEventStatAsync(const Model::DescribeSecurityEventStatRequest& request, const DescribeSecurityEventStatAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSecurityEventStatOutcomeCallable DescribeSecurityEventStatCallable(const Model::DescribeSecurityEventStatRequest& request);
 
                 /**
                  *获取安全概览相关事件统计数据接口
@@ -2771,15 +2746,6 @@ namespace TencentCloud
                 IgnoreImpactedHostsOutcomeCallable IgnoreImpactedHostsCallable(const Model::IgnoreImpactedHostsRequest& request);
 
                 /**
-                 *本接口 (InquiryPriceOpenProVersionPrepaid) 用于开通专业版询价(预付费)。
-                 * @param req InquiryPriceOpenProVersionPrepaidRequest
-                 * @return InquiryPriceOpenProVersionPrepaidOutcome
-                 */
-                InquiryPriceOpenProVersionPrepaidOutcome InquiryPriceOpenProVersionPrepaid(const Model::InquiryPriceOpenProVersionPrepaidRequest &request);
-                void InquiryPriceOpenProVersionPrepaidAsync(const Model::InquiryPriceOpenProVersionPrepaidRequest& request, const InquiryPriceOpenProVersionPrepaidAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                InquiryPriceOpenProVersionPrepaidOutcomeCallable InquiryPriceOpenProVersionPrepaidCallable(const Model::InquiryPriceOpenProVersionPrepaidRequest& request);
-
-                /**
                  * 用于设置新增主机自动开通专业防护配置。
                  * @param req ModifyAutoOpenProVersionConfigRequest
                  * @return ModifyAutoOpenProVersionConfigOutcome
@@ -2825,15 +2791,6 @@ namespace TencentCloud
                 ModifyMalwareTimingScanSettingsOutcomeCallable ModifyMalwareTimingScanSettingsCallable(const Model::ModifyMalwareTimingScanSettingsRequest& request);
 
                 /**
-                 *本接口 (ModifyProVersionRenewFlag) 用于修改专业版包年包月续费标识。
-                 * @param req ModifyProVersionRenewFlagRequest
-                 * @return ModifyProVersionRenewFlagOutcome
-                 */
-                ModifyProVersionRenewFlagOutcome ModifyProVersionRenewFlag(const Model::ModifyProVersionRenewFlagRequest &request);
-                void ModifyProVersionRenewFlagAsync(const Model::ModifyProVersionRenewFlagRequest& request, const ModifyProVersionRenewFlagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                ModifyProVersionRenewFlagOutcomeCallable ModifyProVersionRenewFlagCallable(const Model::ModifyProVersionRenewFlagRequest& request);
-
-                /**
                  *修改告警设置
                  * @param req ModifyWarningSettingRequest
                  * @return ModifyWarningSettingOutcome
@@ -2870,24 +2827,6 @@ namespace TencentCloud
                 ModifyWebPageProtectSwitchOutcomeCallable ModifyWebPageProtectSwitchCallable(const Model::ModifyWebPageProtectSwitchRequest& request);
 
                 /**
-                 *本接口 (OpenProVersion) 用于开通专业版。
-                 * @param req OpenProVersionRequest
-                 * @return OpenProVersionOutcome
-                 */
-                OpenProVersionOutcome OpenProVersion(const Model::OpenProVersionRequest &request);
-                void OpenProVersionAsync(const Model::OpenProVersionRequest& request, const OpenProVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                OpenProVersionOutcomeCallable OpenProVersionCallable(const Model::OpenProVersionRequest& request);
-
-                /**
-                 *本接口 (OpenProVersionPrepaid) 用于开通专业版(包年包月)。
-                 * @param req OpenProVersionPrepaidRequest
-                 * @return OpenProVersionPrepaidOutcome
-                 */
-                OpenProVersionPrepaidOutcome OpenProVersionPrepaid(const Model::OpenProVersionPrepaidRequest &request);
-                void OpenProVersionPrepaidAsync(const Model::OpenProVersionPrepaidRequest& request, const OpenProVersionPrepaidAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                OpenProVersionPrepaidOutcomeCallable OpenProVersionPrepaidCallable(const Model::OpenProVersionPrepaidRequest& request);
-
-                /**
                  *本接口（RecoverMalwares）用于批量恢复已经被隔离的木马文件。
                  * @param req RecoverMalwaresRequest
                  * @return RecoverMalwaresOutcome
@@ -2895,15 +2834,6 @@ namespace TencentCloud
                 RecoverMalwaresOutcome RecoverMalwares(const Model::RecoverMalwaresRequest &request);
                 void RecoverMalwaresAsync(const Model::RecoverMalwaresRequest& request, const RecoverMalwaresAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RecoverMalwaresOutcomeCallable RecoverMalwaresCallable(const Model::RecoverMalwaresRequest& request);
-
-                /**
-                 *本接口 (RenewProVersion) 用于续费专业版(包年包月)。
-                 * @param req RenewProVersionRequest
-                 * @return RenewProVersionOutcome
-                 */
-                RenewProVersionOutcome RenewProVersion(const Model::RenewProVersionRequest &request);
-                void RenewProVersionAsync(const Model::RenewProVersionRequest& request, const RenewProVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                RenewProVersionOutcomeCallable RenewProVersionCallable(const Model::RenewProVersionRequest& request);
 
                 /**
                  *资产指纹启动扫描

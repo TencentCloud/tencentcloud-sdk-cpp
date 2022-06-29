@@ -51,7 +51,8 @@ UpdateInstanceRequest::UpdateInstanceRequest() :
     m_switchPrivateLinkHasBeenSet(false),
     m_enableCerebroHasBeenSet(false),
     m_cerebroPublicAccessHasBeenSet(false),
-    m_cerebroPrivateAccessHasBeenSet(false)
+    m_cerebroPrivateAccessHasBeenSet(false),
+    m_esConfigSetHasBeenSet(false)
 {
 }
 
@@ -310,6 +311,15 @@ string UpdateInstanceRequest::ToJsonString() const
         string key = "CerebroPrivateAccess";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_cerebroPrivateAccess.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_esConfigSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EsConfigSet";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_esConfigSet.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -782,6 +792,22 @@ void UpdateInstanceRequest::SetCerebroPrivateAccess(const string& _cerebroPrivat
 bool UpdateInstanceRequest::CerebroPrivateAccessHasBeenSet() const
 {
     return m_cerebroPrivateAccessHasBeenSet;
+}
+
+EsConfigSetInfo UpdateInstanceRequest::GetEsConfigSet() const
+{
+    return m_esConfigSet;
+}
+
+void UpdateInstanceRequest::SetEsConfigSet(const EsConfigSetInfo& _esConfigSet)
+{
+    m_esConfigSet = _esConfigSet;
+    m_esConfigSetHasBeenSet = true;
+}
+
+bool UpdateInstanceRequest::EsConfigSetHasBeenSet() const
+{
+    return m_esConfigSetHasBeenSet;
 }
 
 

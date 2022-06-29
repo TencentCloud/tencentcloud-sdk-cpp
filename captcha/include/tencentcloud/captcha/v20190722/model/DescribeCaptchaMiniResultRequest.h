@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool UserIpHasBeenSet() const;
 
                     /**
-                     * 获取验证码应用APPID
-                     * @return CaptchaAppId 验证码应用APPID
+                     * 获取验证码应用ID。登录 [验证码控制台](https://console.cloud.tencent.com/captcha/graphical)，在验证列表的【密钥】列，即可查看到CaptchaAppId。
+                     * @return CaptchaAppId 验证码应用ID。登录 [验证码控制台](https://console.cloud.tencent.com/captcha/graphical)，在验证列表的【密钥】列，即可查看到CaptchaAppId。
                      */
                     uint64_t GetCaptchaAppId() const;
 
                     /**
-                     * 设置验证码应用APPID
-                     * @param CaptchaAppId 验证码应用APPID
+                     * 设置验证码应用ID。登录 [验证码控制台](https://console.cloud.tencent.com/captcha/graphical)，在验证列表的【密钥】列，即可查看到CaptchaAppId。
+                     * @param CaptchaAppId 验证码应用ID。登录 [验证码控制台](https://console.cloud.tencent.com/captcha/graphical)，在验证列表的【密钥】列，即可查看到CaptchaAppId。
                      */
                     void SetCaptchaAppId(const uint64_t& _captchaAppId);
 
@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool CaptchaAppIdHasBeenSet() const;
 
                     /**
-                     * 获取用于服务器端校验验证码票据的验证密钥，请妥善保密，请勿泄露给第三方
-                     * @return AppSecretKey 用于服务器端校验验证码票据的验证密钥，请妥善保密，请勿泄露给第三方
+                     * 获取验证码应用密钥。登录 [验证码控制台](https://console.cloud.tencent.com/captcha/graphical)，在验证列表的【密钥】列，即可查看到AppSecretKey。AppSecretKey属于服务器端校验验证码票据的密钥，请妥善保密，请勿泄露给第三方。
+                     * @return AppSecretKey 验证码应用密钥。登录 [验证码控制台](https://console.cloud.tencent.com/captcha/graphical)，在验证列表的【密钥】列，即可查看到AppSecretKey。AppSecretKey属于服务器端校验验证码票据的密钥，请妥善保密，请勿泄露给第三方。
                      */
                     std::string GetAppSecretKey() const;
 
                     /**
-                     * 设置用于服务器端校验验证码票据的验证密钥，请妥善保密，请勿泄露给第三方
-                     * @param AppSecretKey 用于服务器端校验验证码票据的验证密钥，请妥善保密，请勿泄露给第三方
+                     * 设置验证码应用密钥。登录 [验证码控制台](https://console.cloud.tencent.com/captcha/graphical)，在验证列表的【密钥】列，即可查看到AppSecretKey。AppSecretKey属于服务器端校验验证码票据的密钥，请妥善保密，请勿泄露给第三方。
+                     * @param AppSecretKey 验证码应用密钥。登录 [验证码控制台](https://console.cloud.tencent.com/captcha/graphical)，在验证列表的【密钥】列，即可查看到AppSecretKey。AppSecretKey属于服务器端校验验证码票据的密钥，请妥善保密，请勿泄露给第三方。
                      */
                     void SetAppSecretKey(const std::string& _appSecretKey);
 
@@ -225,13 +225,13 @@ namespace TencentCloud
                     bool m_userIpHasBeenSet;
 
                     /**
-                     * 验证码应用APPID
+                     * 验证码应用ID。登录 [验证码控制台](https://console.cloud.tencent.com/captcha/graphical)，在验证列表的【密钥】列，即可查看到CaptchaAppId。
                      */
                     uint64_t m_captchaAppId;
                     bool m_captchaAppIdHasBeenSet;
 
                     /**
-                     * 用于服务器端校验验证码票据的验证密钥，请妥善保密，请勿泄露给第三方
+                     * 验证码应用密钥。登录 [验证码控制台](https://console.cloud.tencent.com/captcha/graphical)，在验证列表的【密钥】列，即可查看到AppSecretKey。AppSecretKey属于服务器端校验验证码票据的密钥，请妥善保密，请勿泄露给第三方。
                      */
                     std::string m_appSecretKey;
                     bool m_appSecretKeyHasBeenSet;

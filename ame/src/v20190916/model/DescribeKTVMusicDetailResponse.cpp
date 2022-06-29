@@ -27,7 +27,10 @@ DescribeKTVMusicDetailResponse::DescribeKTVMusicDetailResponse() :
     m_kTVMusicBaseInfoHasBeenSet(false),
     m_playTokenHasBeenSet(false),
     m_lyricsUrlHasBeenSet(false),
-    m_definitionInfoSetHasBeenSet(false)
+    m_definitionInfoSetHasBeenSet(false),
+    m_midiJsonUrlHasBeenSet(false),
+    m_chorusClipSetHasBeenSet(false),
+    m_preludeIntervalHasBeenSet(false)
 {
 }
 
@@ -122,6 +125,46 @@ CoreInternalOutcome DescribeKTVMusicDetailResponse::Deserialize(const string &pa
         m_definitionInfoSetHasBeenSet = true;
     }
 
+    if (rsp.HasMember("MidiJsonUrl") && !rsp["MidiJsonUrl"].IsNull())
+    {
+        if (!rsp["MidiJsonUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MidiJsonUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_midiJsonUrl = string(rsp["MidiJsonUrl"].GetString());
+        m_midiJsonUrlHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ChorusClipSet") && !rsp["ChorusClipSet"].IsNull())
+    {
+        if (!rsp["ChorusClipSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ChorusClipSet` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["ChorusClipSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ChorusClip item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_chorusClipSet.push_back(item);
+        }
+        m_chorusClipSetHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("PreludeInterval") && !rsp["PreludeInterval"].IsNull())
+    {
+        if (!rsp["PreludeInterval"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `PreludeInterval` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_preludeInterval = rsp["PreludeInterval"].GetInt64();
+        m_preludeIntervalHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -170,6 +213,37 @@ string DescribeKTVMusicDetailResponse::ToJsonString() const
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_midiJsonUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MidiJsonUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_midiJsonUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_chorusClipSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ChorusClipSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_chorusClipSet.begin(); itr != m_chorusClipSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_preludeIntervalHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PreludeInterval";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_preludeInterval, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -222,6 +296,36 @@ vector<KTVMusicDefinitionInfo> DescribeKTVMusicDetailResponse::GetDefinitionInfo
 bool DescribeKTVMusicDetailResponse::DefinitionInfoSetHasBeenSet() const
 {
     return m_definitionInfoSetHasBeenSet;
+}
+
+string DescribeKTVMusicDetailResponse::GetMidiJsonUrl() const
+{
+    return m_midiJsonUrl;
+}
+
+bool DescribeKTVMusicDetailResponse::MidiJsonUrlHasBeenSet() const
+{
+    return m_midiJsonUrlHasBeenSet;
+}
+
+vector<ChorusClip> DescribeKTVMusicDetailResponse::GetChorusClipSet() const
+{
+    return m_chorusClipSet;
+}
+
+bool DescribeKTVMusicDetailResponse::ChorusClipSetHasBeenSet() const
+{
+    return m_chorusClipSetHasBeenSet;
+}
+
+int64_t DescribeKTVMusicDetailResponse::GetPreludeInterval() const
+{
+    return m_preludeInterval;
+}
+
+bool DescribeKTVMusicDetailResponse::PreludeIntervalHasBeenSet() const
+{
+    return m_preludeIntervalHasBeenSet;
 }
 
 

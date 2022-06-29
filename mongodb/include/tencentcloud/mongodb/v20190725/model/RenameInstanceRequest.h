@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取实例名称
-                     * @return NewName 实例名称
+                     * 获取自定义实例名称，名称只支持长度为60个字符的中文、英文、数字、下划线_、分隔符 -
+                     * @return NewName 自定义实例名称，名称只支持长度为60个字符的中文、英文、数字、下划线_、分隔符 -
                      */
                     std::string GetNewName() const;
 
                     /**
-                     * 设置实例名称
-                     * @param NewName 实例名称
+                     * 设置自定义实例名称，名称只支持长度为60个字符的中文、英文、数字、下划线_、分隔符 -
+                     * @param NewName 自定义实例名称，名称只支持长度为60个字符的中文、英文、数字、下划线_、分隔符 -
                      */
                     void SetNewName(const std::string& _newName);
 
@@ -87,7 +87,7 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 实例名称
+                     * 自定义实例名称，名称只支持长度为60个字符的中文、英文、数字、下划线_、分隔符 -
                      */
                     std::string m_newName;
                     bool m_newNameHasBeenSet;

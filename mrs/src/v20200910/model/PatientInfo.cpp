@@ -41,7 +41,8 @@ PatientInfo::PatientInfo() :
     m_nationHasBeenSet(false),
     m_marriedCodeHasBeenSet(false),
     m_professionCodeHasBeenSet(false),
-    m_medicalInsuranceTypeCodeHasBeenSet(false)
+    m_medicalInsuranceTypeCodeHasBeenSet(false),
+    m_bedNoHasBeenSet(false)
 {
 }
 
@@ -260,6 +261,16 @@ CoreInternalOutcome PatientInfo::Deserialize(const rapidjson::Value &value)
         m_medicalInsuranceTypeCodeHasBeenSet = true;
     }
 
+    if (value.HasMember("BedNo") && !value["BedNo"].IsNull())
+    {
+        if (!value["BedNo"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PatientInfo.BedNo` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_bedNo = string(value["BedNo"].GetString());
+        m_bedNoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -433,6 +444,14 @@ void PatientInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "MedicalInsuranceTypeCode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_medicalInsuranceTypeCode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_bedNoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BedNo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_bedNo.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -772,5 +791,21 @@ void PatientInfo::SetMedicalInsuranceTypeCode(const string& _medicalInsuranceTyp
 bool PatientInfo::MedicalInsuranceTypeCodeHasBeenSet() const
 {
     return m_medicalInsuranceTypeCodeHasBeenSet;
+}
+
+string PatientInfo::GetBedNo() const
+{
+    return m_bedNo;
+}
+
+void PatientInfo::SetBedNo(const string& _bedNo)
+{
+    m_bedNo = _bedNo;
+    m_bedNoHasBeenSet = true;
+}
+
+bool PatientInfo::BedNoHasBeenSet() const
+{
+    return m_bedNoHasBeenSet;
 }
 

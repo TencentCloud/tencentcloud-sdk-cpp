@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tem/v20210701/model/UseDefaultRepoParameters.h>
 
 
 namespace TencentCloud
@@ -261,14 +262,14 @@ namespace TencentCloud
                     bool DeployModeHasBeenSet() const;
 
                     /**
-                     * 获取是否启用调用链功能
-                     * @return EnableTracing 是否启用调用链功能
+                     * 获取是否开启 Java 应用的 APM 自动上报功能，1 表示启用；0 表示关闭
+                     * @return EnableTracing 是否开启 Java 应用的 APM 自动上报功能，1 表示启用；0 表示关闭
                      */
                     int64_t GetEnableTracing() const;
 
                     /**
-                     * 设置是否启用调用链功能
-                     * @param EnableTracing 是否启用调用链功能
+                     * 设置是否开启 Java 应用的 APM 自动上报功能，1 表示启用；0 表示关闭
+                     * @param EnableTracing 是否开启 Java 应用的 APM 自动上报功能，1 表示启用；0 表示关闭
                      */
                     void SetEnableTracing(const int64_t& _enableTracing);
 
@@ -277,6 +278,24 @@ namespace TencentCloud
                      * @return EnableTracing 是否已赋值
                      */
                     bool EnableTracingHasBeenSet() const;
+
+                    /**
+                     * 获取使用默认镜像服务额外参数
+                     * @return UseDefaultImageServiceParameters 使用默认镜像服务额外参数
+                     */
+                    UseDefaultRepoParameters GetUseDefaultImageServiceParameters() const;
+
+                    /**
+                     * 设置使用默认镜像服务额外参数
+                     * @param UseDefaultImageServiceParameters 使用默认镜像服务额外参数
+                     */
+                    void SetUseDefaultImageServiceParameters(const UseDefaultRepoParameters& _useDefaultImageServiceParameters);
+
+                    /**
+                     * 判断参数 UseDefaultImageServiceParameters 是否已赋值
+                     * @return UseDefaultImageServiceParameters 是否已赋值
+                     */
+                    bool UseDefaultImageServiceParametersHasBeenSet() const;
 
                 private:
 
@@ -352,10 +371,16 @@ namespace TencentCloud
                     bool m_deployModeHasBeenSet;
 
                     /**
-                     * 是否启用调用链功能
+                     * 是否开启 Java 应用的 APM 自动上报功能，1 表示启用；0 表示关闭
                      */
                     int64_t m_enableTracing;
                     bool m_enableTracingHasBeenSet;
+
+                    /**
+                     * 使用默认镜像服务额外参数
+                     */
+                    UseDefaultRepoParameters m_useDefaultImageServiceParameters;
+                    bool m_useDefaultImageServiceParametersHasBeenSet;
 
                 };
             }

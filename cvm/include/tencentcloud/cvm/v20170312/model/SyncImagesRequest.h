@@ -78,6 +78,24 @@ namespace TencentCloud
                      */
                     bool DestinationRegionsHasBeenSet() const;
 
+                    /**
+                     * 获取检测是否支持发起同步镜像
+                     * @return DryRun 检测是否支持发起同步镜像
+                     */
+                    bool GetDryRun() const;
+
+                    /**
+                     * 设置检测是否支持发起同步镜像
+                     * @param DryRun 检测是否支持发起同步镜像
+                     */
+                    void SetDryRun(const bool& _dryRun);
+
+                    /**
+                     * 判断参数 DryRun 是否已赋值
+                     * @return DryRun 是否已赋值
+                     */
+                    bool DryRunHasBeenSet() const;
+
                 private:
 
                     /**
@@ -91,6 +109,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_destinationRegions;
                     bool m_destinationRegionsHasBeenSet;
+
+                    /**
+                     * 检测是否支持发起同步镜像
+                     */
+                    bool m_dryRun;
+                    bool m_dryRunHasBeenSet;
 
                 };
             }

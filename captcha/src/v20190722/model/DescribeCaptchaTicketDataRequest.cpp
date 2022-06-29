@@ -24,7 +24,8 @@ using namespace std;
 
 DescribeCaptchaTicketDataRequest::DescribeCaptchaTicketDataRequest() :
     m_captchaAppIdHasBeenSet(false),
-    m_startHasBeenSet(false)
+    m_startHasBeenSet(false),
+    m_endHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string DescribeCaptchaTicketDataRequest::ToJsonString() const
         string key = "Start";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_start, allocator);
+    }
+
+    if (m_endHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "End";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_end, allocator);
     }
 
 
@@ -89,6 +98,22 @@ void DescribeCaptchaTicketDataRequest::SetStart(const int64_t& _start)
 bool DescribeCaptchaTicketDataRequest::StartHasBeenSet() const
 {
     return m_startHasBeenSet;
+}
+
+int64_t DescribeCaptchaTicketDataRequest::GetEnd() const
+{
+    return m_end;
+}
+
+void DescribeCaptchaTicketDataRequest::SetEnd(const int64_t& _end)
+{
+    m_end = _end;
+    m_endHasBeenSet = true;
+}
+
+bool DescribeCaptchaTicketDataRequest::EndHasBeenSet() const
+{
+    return m_endHasBeenSet;
 }
 
 

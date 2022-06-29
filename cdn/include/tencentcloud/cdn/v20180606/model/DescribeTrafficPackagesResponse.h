@@ -92,6 +92,18 @@ namespace TencentCloud
                      */
                     bool EnabledCountHasBeenSet() const;
 
+                    /**
+                     * 获取付费流量包个数
+                     * @return PaidCount 付费流量包个数
+                     */
+                    int64_t GetPaidCount() const;
+
+                    /**
+                     * 判断参数 PaidCount 是否已赋值
+                     * @return PaidCount 是否已赋值
+                     */
+                    bool PaidCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -117,6 +129,12 @@ namespace TencentCloud
                      */
                     int64_t m_enabledCount;
                     bool m_enabledCountHasBeenSet;
+
+                    /**
+                     * 付费流量包个数
+                     */
+                    int64_t m_paidCount;
+                    bool m_paidCountHasBeenSet;
 
                 };
             }

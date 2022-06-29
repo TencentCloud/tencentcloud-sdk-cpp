@@ -61,6 +61,24 @@ namespace TencentCloud
                     bool OpenIdHasBeenSet() const;
 
                     /**
+                     * 获取收单系统分配的密钥
+                     * @return OpenKey 收单系统分配的密钥
+                     */
+                    std::string GetOpenKey() const;
+
+                    /**
+                     * 设置收单系统分配的密钥
+                     * @param OpenKey 收单系统分配的密钥
+                     */
+                    void SetOpenKey(const std::string& _openKey);
+
+                    /**
+                     * 判断参数 OpenKey 是否已赋值
+                     * @return OpenKey 是否已赋值
+                     */
+                    bool OpenKeyHasBeenSet() const;
+
+                    /**
                      * 获取存储区域（0私密区，1公共区），请严格按文件要求，上传到不同的区域
                      * @return Storage 存储区域（0私密区，1公共区），请严格按文件要求，上传到不同的区域
                      */
@@ -133,24 +151,6 @@ namespace TencentCloud
                     bool FileExtensionHasBeenSet() const;
 
                     /**
-                     * 获取收单系统分配的密钥
-                     * @return OpenKey 收单系统分配的密钥
-                     */
-                    std::string GetOpenKey() const;
-
-                    /**
-                     * 设置收单系统分配的密钥
-                     * @param OpenKey 收单系统分配的密钥
-                     */
-                    void SetOpenKey(const std::string& _openKey);
-
-                    /**
-                     * 判断参数 OpenKey 是否已赋值
-                     * @return OpenKey 是否已赋值
-                     */
-                    bool OpenKeyHasBeenSet() const;
-
-                    /**
                      * 获取沙箱环境填sandbox，正式环境不填
                      * @return Profile 沙箱环境填sandbox，正式环境不填
                      */
@@ -177,6 +177,12 @@ namespace TencentCloud
                     bool m_openIdHasBeenSet;
 
                     /**
+                     * 收单系统分配的密钥
+                     */
+                    std::string m_openKey;
+                    bool m_openKeyHasBeenSet;
+
+                    /**
                      * 存储区域（0私密区，1公共区），请严格按文件要求，上传到不同的区域
                      */
                     std::string m_storage;
@@ -199,12 +205,6 @@ namespace TencentCloud
                      */
                     std::string m_fileExtension;
                     bool m_fileExtensionHasBeenSet;
-
-                    /**
-                     * 收单系统分配的密钥
-                     */
-                    std::string m_openKey;
-                    bool m_openKeyHasBeenSet;
 
                     /**
                      * 沙箱环境填sandbox，正式环境不填

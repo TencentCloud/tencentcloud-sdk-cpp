@@ -124,14 +124,14 @@ namespace TencentCloud
                     bool MatchRuleHasBeenSet() const;
 
                     /**
-                     * 获取命中规则名字
-                     * @return RuleName 命中规则名字
+                     * 获取命中规则名称，PROXY_TOOL：代理软件，TRANSFER_CONTROL：横向渗透，ATTACK_CMD：恶意命令，REVERSE_SHELL：反弹shell，FILELESS：无文件程序执行，RISK_CMD：高危命令，ABNORMAL_CHILD_PROC：敏感服务异常子进程启动，USER_DEFINED_RULE：用户自定义规则
+                     * @return RuleName 命中规则名称，PROXY_TOOL：代理软件，TRANSFER_CONTROL：横向渗透，ATTACK_CMD：恶意命令，REVERSE_SHELL：反弹shell，FILELESS：无文件程序执行，RISK_CMD：高危命令，ABNORMAL_CHILD_PROC：敏感服务异常子进程启动，USER_DEFINED_RULE：用户自定义规则
                      */
                     std::string GetRuleName() const;
 
                     /**
-                     * 设置命中规则名字
-                     * @param RuleName 命中规则名字
+                     * 设置命中规则名称，PROXY_TOOL：代理软件，TRANSFER_CONTROL：横向渗透，ATTACK_CMD：恶意命令，REVERSE_SHELL：反弹shell，FILELESS：无文件程序执行，RISK_CMD：高危命令，ABNORMAL_CHILD_PROC：敏感服务异常子进程启动，USER_DEFINED_RULE：用户自定义规则
+                     * @param RuleName 命中规则名称，PROXY_TOOL：代理软件，TRANSFER_CONTROL：横向渗透，ATTACK_CMD：恶意命令，REVERSE_SHELL：反弹shell，FILELESS：无文件程序执行，RISK_CMD：高危命令，ABNORMAL_CHILD_PROC：敏感服务异常子进程启动，USER_DEFINED_RULE：用户自定义规则
                      */
                     void SetRuleName(const std::string& _ruleName);
 
@@ -158,6 +158,50 @@ namespace TencentCloud
                      * @return RuleId 是否已赋值
                      */
                     bool RuleIdHasBeenSet() const;
+
+                    /**
+                     * 获取事件最后一次处理的时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OperationTime 事件最后一次处理的时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetOperationTime() const;
+
+                    /**
+                     * 设置事件最后一次处理的时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param OperationTime 事件最后一次处理的时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetOperationTime(const std::string& _operationTime);
+
+                    /**
+                     * 判断参数 OperationTime 是否已赋值
+                     * @return OperationTime 是否已赋值
+                     */
+                    bool OperationTimeHasBeenSet() const;
+
+                    /**
+                     * 获取命中策略名称：SYSTEM_DEFINED_RULE （系统策略）或  用户自定义的策略名字
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return GroupName 命中策略名称：SYSTEM_DEFINED_RULE （系统策略）或  用户自定义的策略名字
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetGroupName() const;
+
+                    /**
+                     * 设置命中策略名称：SYSTEM_DEFINED_RULE （系统策略）或  用户自定义的策略名字
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param GroupName 命中策略名称：SYSTEM_DEFINED_RULE （系统策略）或  用户自定义的策略名字
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetGroupName(const std::string& _groupName);
+
+                    /**
+                     * 判断参数 GroupName 是否已赋值
+                     * @return GroupName 是否已赋值
+                     */
+                    bool GroupNameHasBeenSet() const;
 
                 private:
 
@@ -187,7 +231,7 @@ namespace TencentCloud
                     bool m_matchRuleHasBeenSet;
 
                     /**
-                     * 命中规则名字
+                     * 命中规则名称，PROXY_TOOL：代理软件，TRANSFER_CONTROL：横向渗透，ATTACK_CMD：恶意命令，REVERSE_SHELL：反弹shell，FILELESS：无文件程序执行，RISK_CMD：高危命令，ABNORMAL_CHILD_PROC：敏感服务异常子进程启动，USER_DEFINED_RULE：用户自定义规则
                      */
                     std::string m_ruleName;
                     bool m_ruleNameHasBeenSet;
@@ -197,6 +241,20 @@ namespace TencentCloud
                      */
                     std::string m_ruleId;
                     bool m_ruleIdHasBeenSet;
+
+                    /**
+                     * 事件最后一次处理的时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_operationTime;
+                    bool m_operationTimeHasBeenSet;
+
+                    /**
+                     * 命中策略名称：SYSTEM_DEFINED_RULE （系统策略）或  用户自定义的策略名字
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_groupName;
+                    bool m_groupNameHasBeenSet;
 
                 };
             }

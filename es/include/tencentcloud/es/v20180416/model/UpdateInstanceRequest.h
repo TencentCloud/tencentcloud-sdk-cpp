@@ -27,6 +27,7 @@
 #include <tencentcloud/es/v20180416/model/EsPublicAcl.h>
 #include <tencentcloud/es/v20180416/model/ZoneDetail.h>
 #include <tencentcloud/es/v20180416/model/WebNodeTypeInfo.h>
+#include <tencentcloud/es/v20180416/model/EsConfigSetInfo.h>
 
 
 namespace TencentCloud
@@ -594,6 +595,24 @@ namespace TencentCloud
                      */
                     bool CerebroPrivateAccessHasBeenSet() const;
 
+                    /**
+                     * 获取新增或修改的配置组信息
+                     * @return EsConfigSet 新增或修改的配置组信息
+                     */
+                    EsConfigSetInfo GetEsConfigSet() const;
+
+                    /**
+                     * 设置新增或修改的配置组信息
+                     * @param EsConfigSet 新增或修改的配置组信息
+                     */
+                    void SetEsConfigSet(const EsConfigSetInfo& _esConfigSet);
+
+                    /**
+                     * 判断参数 EsConfigSet 是否已赋值
+                     * @return EsConfigSet 是否已赋值
+                     */
+                    bool EsConfigSetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -775,6 +794,12 @@ namespace TencentCloud
                      */
                     std::string m_cerebroPrivateAccess;
                     bool m_cerebroPrivateAccessHasBeenSet;
+
+                    /**
+                     * 新增或修改的配置组信息
+                     */
+                    EsConfigSetInfo m_esConfigSet;
+                    bool m_esConfigSetHasBeenSet;
 
                 };
             }

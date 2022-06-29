@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/mrs/v20200910/model/Time.h>
 
 
 namespace TencentCloud
@@ -442,6 +443,160 @@ namespace TencentCloud
                      */
                     bool DiagnoseHasBeenSet() const;
 
+                    /**
+                     * 获取检查项目
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CheckItem 检查项目
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetCheckItem() const;
+
+                    /**
+                     * 设置检查项目
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param CheckItem 检查项目
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCheckItem(const std::string& _checkItem);
+
+                    /**
+                     * 判断参数 CheckItem 是否已赋值
+                     * @return CheckItem 是否已赋值
+                     */
+                    bool CheckItemHasBeenSet() const;
+
+                    /**
+                     * 获取检查方法
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CheckMethod 检查方法
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetCheckMethod() const;
+
+                    /**
+                     * 设置检查方法
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param CheckMethod 检查方法
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCheckMethod(const std::string& _checkMethod);
+
+                    /**
+                     * 判断参数 CheckMethod 是否已赋值
+                     * @return CheckMethod 是否已赋值
+                     */
+                    bool CheckMethodHasBeenSet() const;
+
+                    /**
+                     * 获取诊断时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DiagnoseTime 诊断时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetDiagnoseTime() const;
+
+                    /**
+                     * 设置诊断时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DiagnoseTime 诊断时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDiagnoseTime(const std::string& _diagnoseTime);
+
+                    /**
+                     * 判断参数 DiagnoseTime 是否已赋值
+                     * @return DiagnoseTime 是否已赋值
+                     */
+                    bool DiagnoseTimeHasBeenSet() const;
+
+                    /**
+                     * 获取体检号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return HealthCheckupNum 体检号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetHealthCheckupNum() const;
+
+                    /**
+                     * 设置体检号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param HealthCheckupNum 体检号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetHealthCheckupNum(const std::string& _healthCheckupNum);
+
+                    /**
+                     * 判断参数 HealthCheckupNum 是否已赋值
+                     * @return HealthCheckupNum 是否已赋值
+                     */
+                    bool HealthCheckupNumHasBeenSet() const;
+
+                    /**
+                     * 获取其它时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OtherTime 其它时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetOtherTime() const;
+
+                    /**
+                     * 设置其它时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param OtherTime 其它时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetOtherTime(const std::string& _otherTime);
+
+                    /**
+                     * 判断参数 OtherTime 是否已赋值
+                     * @return OtherTime 是否已赋值
+                     */
+                    bool OtherTimeHasBeenSet() const;
+
+                    /**
+                     * 获取打印时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PrintTime 打印时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetPrintTime() const;
+
+                    /**
+                     * 设置打印时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param PrintTime 打印时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPrintTime(const std::string& _printTime);
+
+                    /**
+                     * 判断参数 PrintTime 是否已赋值
+                     * @return PrintTime 是否已赋值
+                     */
+                    bool PrintTimeHasBeenSet() const;
+
+                    /**
+                     * 获取未归类时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Times 未归类时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Time> GetTimes() const;
+
+                    /**
+                     * 设置未归类时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Times 未归类时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTimes(const std::vector<Time>& _times);
+
+                    /**
+                     * 判断参数 Times 是否已赋值
+                     * @return Times 是否已赋值
+                     */
+                    bool TimesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -569,6 +724,55 @@ namespace TencentCloud
                      */
                     std::string m_diagnose;
                     bool m_diagnoseHasBeenSet;
+
+                    /**
+                     * 检查项目
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_checkItem;
+                    bool m_checkItemHasBeenSet;
+
+                    /**
+                     * 检查方法
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_checkMethod;
+                    bool m_checkMethodHasBeenSet;
+
+                    /**
+                     * 诊断时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_diagnoseTime;
+                    bool m_diagnoseTimeHasBeenSet;
+
+                    /**
+                     * 体检号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_healthCheckupNum;
+                    bool m_healthCheckupNumHasBeenSet;
+
+                    /**
+                     * 其它时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_otherTime;
+                    bool m_otherTimeHasBeenSet;
+
+                    /**
+                     * 打印时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_printTime;
+                    bool m_printTimeHasBeenSet;
+
+                    /**
+                     * 未归类时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Time> m_times;
+                    bool m_timesHasBeenSet;
 
                 };
             }

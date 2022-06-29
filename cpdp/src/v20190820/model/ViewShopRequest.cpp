@@ -25,9 +25,9 @@ using namespace std;
 ViewShopRequest::ViewShopRequest() :
     m_openIdHasBeenSet(false),
     m_openKeyHasBeenSet(false),
-    m_profileHasBeenSet(false),
     m_outShopIdHasBeenSet(false),
-    m_shopNoHasBeenSet(false)
+    m_shopNoHasBeenSet(false),
+    m_profileHasBeenSet(false)
 {
 }
 
@@ -54,14 +54,6 @@ string ViewShopRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_openKey.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_profileHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Profile";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_profile.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_outShopIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -76,6 +68,14 @@ string ViewShopRequest::ToJsonString() const
         string key = "ShopNo";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_shopNo.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_profileHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Profile";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_profile.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -118,22 +118,6 @@ bool ViewShopRequest::OpenKeyHasBeenSet() const
     return m_openKeyHasBeenSet;
 }
 
-string ViewShopRequest::GetProfile() const
-{
-    return m_profile;
-}
-
-void ViewShopRequest::SetProfile(const string& _profile)
-{
-    m_profile = _profile;
-    m_profileHasBeenSet = true;
-}
-
-bool ViewShopRequest::ProfileHasBeenSet() const
-{
-    return m_profileHasBeenSet;
-}
-
 string ViewShopRequest::GetOutShopId() const
 {
     return m_outShopId;
@@ -164,6 +148,22 @@ void ViewShopRequest::SetShopNo(const string& _shopNo)
 bool ViewShopRequest::ShopNoHasBeenSet() const
 {
     return m_shopNoHasBeenSet;
+}
+
+string ViewShopRequest::GetProfile() const
+{
+    return m_profile;
+}
+
+void ViewShopRequest::SetProfile(const string& _profile)
+{
+    m_profile = _profile;
+    m_profileHasBeenSet = true;
+}
+
+bool ViewShopRequest::ProfileHasBeenSet() const
+{
+    return m_profileHasBeenSet;
 }
 
 

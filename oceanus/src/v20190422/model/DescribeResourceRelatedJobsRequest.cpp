@@ -27,7 +27,8 @@ DescribeResourceRelatedJobsRequest::DescribeResourceRelatedJobsRequest() :
     m_dESCByJobConfigCreateTimeHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_resourceConfigVersionHasBeenSet(false)
+    m_resourceConfigVersionHasBeenSet(false),
+    m_workSpaceIdHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,14 @@ string DescribeResourceRelatedJobsRequest::ToJsonString() const
         string key = "ResourceConfigVersion";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_resourceConfigVersion, allocator);
+    }
+
+    if (m_workSpaceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WorkSpaceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_workSpaceId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -164,6 +173,22 @@ void DescribeResourceRelatedJobsRequest::SetResourceConfigVersion(const int64_t&
 bool DescribeResourceRelatedJobsRequest::ResourceConfigVersionHasBeenSet() const
 {
     return m_resourceConfigVersionHasBeenSet;
+}
+
+string DescribeResourceRelatedJobsRequest::GetWorkSpaceId() const
+{
+    return m_workSpaceId;
+}
+
+void DescribeResourceRelatedJobsRequest::SetWorkSpaceId(const string& _workSpaceId)
+{
+    m_workSpaceId = _workSpaceId;
+    m_workSpaceIdHasBeenSet = true;
+}
+
+bool DescribeResourceRelatedJobsRequest::WorkSpaceIdHasBeenSet() const
+{
+    return m_workSpaceIdHasBeenSet;
 }
 
 

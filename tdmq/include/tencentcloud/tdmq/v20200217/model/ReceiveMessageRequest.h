@@ -114,6 +114,60 @@ namespace TencentCloud
                      */
                     bool SubInitialPositionHasBeenSet() const;
 
+                    /**
+                     * 获取用于设置BatchReceivePolicy，指在一次batch中最多接收多少条消息，默认是 0。即不开启BatchReceivePolicy
+                     * @return MaxNumMessages 用于设置BatchReceivePolicy，指在一次batch中最多接收多少条消息，默认是 0。即不开启BatchReceivePolicy
+                     */
+                    int64_t GetMaxNumMessages() const;
+
+                    /**
+                     * 设置用于设置BatchReceivePolicy，指在一次batch中最多接收多少条消息，默认是 0。即不开启BatchReceivePolicy
+                     * @param MaxNumMessages 用于设置BatchReceivePolicy，指在一次batch中最多接收多少条消息，默认是 0。即不开启BatchReceivePolicy
+                     */
+                    void SetMaxNumMessages(const int64_t& _maxNumMessages);
+
+                    /**
+                     * 判断参数 MaxNumMessages 是否已赋值
+                     * @return MaxNumMessages 是否已赋值
+                     */
+                    bool MaxNumMessagesHasBeenSet() const;
+
+                    /**
+                     * 获取用于设置BatchReceivePolicy，指在一次batch中最多接收的消息体有多大，单位是 bytes。默认是 0，即不开启BatchReceivePolicy
+                     * @return MaxNumBytes 用于设置BatchReceivePolicy，指在一次batch中最多接收的消息体有多大，单位是 bytes。默认是 0，即不开启BatchReceivePolicy
+                     */
+                    int64_t GetMaxNumBytes() const;
+
+                    /**
+                     * 设置用于设置BatchReceivePolicy，指在一次batch中最多接收的消息体有多大，单位是 bytes。默认是 0，即不开启BatchReceivePolicy
+                     * @param MaxNumBytes 用于设置BatchReceivePolicy，指在一次batch中最多接收的消息体有多大，单位是 bytes。默认是 0，即不开启BatchReceivePolicy
+                     */
+                    void SetMaxNumBytes(const int64_t& _maxNumBytes);
+
+                    /**
+                     * 判断参数 MaxNumBytes 是否已赋值
+                     * @return MaxNumBytes 是否已赋值
+                     */
+                    bool MaxNumBytesHasBeenSet() const;
+
+                    /**
+                     * 获取用于设置BatchReceivePolicy，指在一次batch消息的接收z中最多等待的超时时间，单位是毫秒。默认是 0，即不开启BatchReceivePolicy
+                     * @return Timeout 用于设置BatchReceivePolicy，指在一次batch消息的接收z中最多等待的超时时间，单位是毫秒。默认是 0，即不开启BatchReceivePolicy
+                     */
+                    int64_t GetTimeout() const;
+
+                    /**
+                     * 设置用于设置BatchReceivePolicy，指在一次batch消息的接收z中最多等待的超时时间，单位是毫秒。默认是 0，即不开启BatchReceivePolicy
+                     * @param Timeout 用于设置BatchReceivePolicy，指在一次batch消息的接收z中最多等待的超时时间，单位是毫秒。默认是 0，即不开启BatchReceivePolicy
+                     */
+                    void SetTimeout(const int64_t& _timeout);
+
+                    /**
+                     * 判断参数 Timeout 是否已赋值
+                     * @return Timeout 是否已赋值
+                     */
+                    bool TimeoutHasBeenSet() const;
+
                 private:
 
                     /**
@@ -139,6 +193,24 @@ namespace TencentCloud
                      */
                     std::string m_subInitialPosition;
                     bool m_subInitialPositionHasBeenSet;
+
+                    /**
+                     * 用于设置BatchReceivePolicy，指在一次batch中最多接收多少条消息，默认是 0。即不开启BatchReceivePolicy
+                     */
+                    int64_t m_maxNumMessages;
+                    bool m_maxNumMessagesHasBeenSet;
+
+                    /**
+                     * 用于设置BatchReceivePolicy，指在一次batch中最多接收的消息体有多大，单位是 bytes。默认是 0，即不开启BatchReceivePolicy
+                     */
+                    int64_t m_maxNumBytes;
+                    bool m_maxNumBytesHasBeenSet;
+
+                    /**
+                     * 用于设置BatchReceivePolicy，指在一次batch消息的接收z中最多等待的超时时间，单位是毫秒。默认是 0，即不开启BatchReceivePolicy
+                     */
+                    int64_t m_timeout;
+                    bool m_timeoutHasBeenSet;
 
                 };
             }

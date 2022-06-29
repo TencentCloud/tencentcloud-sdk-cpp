@@ -45,14 +45,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取渠道应用相关信息
-                     * @return Agent 渠道应用相关信息
+                     * 获取渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
+                     * @return Agent 渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
                      */
                     Agent GetAgent() const;
 
                     /**
-                     * 设置渠道应用相关信息
-                     * @param Agent 渠道应用相关信息
+                     * 设置渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
+                     * @param Agent 渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
                      */
                     void SetAgent(const Agent& _agent);
 
@@ -117,14 +117,14 @@ namespace TencentCloud
                     bool EndpointHasBeenSet() const;
 
                     /**
-                     * 获取签署完成后H5引导页跳转URL
-                     * @return JumpUrl 签署完成后H5引导页跳转URL
+                     * 获取签署完之后的H5页面的跳转链接，针对Endpoint为CHANNEL时有效
+                     * @return JumpUrl 签署完之后的H5页面的跳转链接，针对Endpoint为CHANNEL时有效
                      */
                     std::string GetJumpUrl() const;
 
                     /**
-                     * 设置签署完成后H5引导页跳转URL
-                     * @param JumpUrl 签署完成后H5引导页跳转URL
+                     * 设置签署完之后的H5页面的跳转链接，针对Endpoint为CHANNEL时有效
+                     * @param JumpUrl 签署完之后的H5页面的跳转链接，针对Endpoint为CHANNEL时有效
                      */
                     void SetJumpUrl(const std::string& _jumpUrl);
 
@@ -134,10 +134,28 @@ namespace TencentCloud
                      */
                     bool JumpUrlHasBeenSet() const;
 
+                    /**
+                     * 获取Endpoint为"APP" 类型的签署链接，可以设置此值；支持调用方小程序打开签署链接，在电子签小程序完成签署后自动回跳至调用方小程序
+                     * @return AutoJumpBack Endpoint为"APP" 类型的签署链接，可以设置此值；支持调用方小程序打开签署链接，在电子签小程序完成签署后自动回跳至调用方小程序
+                     */
+                    bool GetAutoJumpBack() const;
+
+                    /**
+                     * 设置Endpoint为"APP" 类型的签署链接，可以设置此值；支持调用方小程序打开签署链接，在电子签小程序完成签署后自动回跳至调用方小程序
+                     * @param AutoJumpBack Endpoint为"APP" 类型的签署链接，可以设置此值；支持调用方小程序打开签署链接，在电子签小程序完成签署后自动回跳至调用方小程序
+                     */
+                    void SetAutoJumpBack(const bool& _autoJumpBack);
+
+                    /**
+                     * 判断参数 AutoJumpBack 是否已赋值
+                     * @return AutoJumpBack 是否已赋值
+                     */
+                    bool AutoJumpBackHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 渠道应用相关信息
+                     * 渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
                      */
                     Agent m_agent;
                     bool m_agentHasBeenSet;
@@ -161,10 +179,16 @@ namespace TencentCloud
                     bool m_endpointHasBeenSet;
 
                     /**
-                     * 签署完成后H5引导页跳转URL
+                     * 签署完之后的H5页面的跳转链接，针对Endpoint为CHANNEL时有效
                      */
                     std::string m_jumpUrl;
                     bool m_jumpUrlHasBeenSet;
+
+                    /**
+                     * Endpoint为"APP" 类型的签署链接，可以设置此值；支持调用方小程序打开签署链接，在电子签小程序完成签署后自动回跳至调用方小程序
+                     */
+                    bool m_autoJumpBack;
+                    bool m_autoJumpBackHasBeenSet;
 
                 };
             }

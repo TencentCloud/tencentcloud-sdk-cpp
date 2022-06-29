@@ -47,7 +47,10 @@ RunInstancesRequest::RunInstancesRequest() :
     m_dryRunHasBeenSet(false),
     m_camRoleNameHasBeenSet(false),
     m_hpcClusterIdHasBeenSet(false),
-    m_launchTemplateHasBeenSet(false)
+    m_launchTemplateHasBeenSet(false),
+    m_dedicatedClusterIdHasBeenSet(false),
+    m_chcIdsHasBeenSet(false),
+    m_disableApiTerminationHasBeenSet(false)
 {
 }
 
@@ -290,6 +293,35 @@ string RunInstancesRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_launchTemplate.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_dedicatedClusterIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DedicatedClusterId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_dedicatedClusterId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_chcIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ChcIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_chcIds.begin(); itr != m_chcIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_disableApiTerminationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DisableApiTermination";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_disableApiTermination, allocator);
     }
 
 
@@ -698,6 +730,54 @@ void RunInstancesRequest::SetLaunchTemplate(const LaunchTemplate& _launchTemplat
 bool RunInstancesRequest::LaunchTemplateHasBeenSet() const
 {
     return m_launchTemplateHasBeenSet;
+}
+
+string RunInstancesRequest::GetDedicatedClusterId() const
+{
+    return m_dedicatedClusterId;
+}
+
+void RunInstancesRequest::SetDedicatedClusterId(const string& _dedicatedClusterId)
+{
+    m_dedicatedClusterId = _dedicatedClusterId;
+    m_dedicatedClusterIdHasBeenSet = true;
+}
+
+bool RunInstancesRequest::DedicatedClusterIdHasBeenSet() const
+{
+    return m_dedicatedClusterIdHasBeenSet;
+}
+
+vector<string> RunInstancesRequest::GetChcIds() const
+{
+    return m_chcIds;
+}
+
+void RunInstancesRequest::SetChcIds(const vector<string>& _chcIds)
+{
+    m_chcIds = _chcIds;
+    m_chcIdsHasBeenSet = true;
+}
+
+bool RunInstancesRequest::ChcIdsHasBeenSet() const
+{
+    return m_chcIdsHasBeenSet;
+}
+
+bool RunInstancesRequest::GetDisableApiTermination() const
+{
+    return m_disableApiTermination;
+}
+
+void RunInstancesRequest::SetDisableApiTermination(const bool& _disableApiTermination)
+{
+    m_disableApiTermination = _disableApiTermination;
+    m_disableApiTerminationHasBeenSet = true;
+}
+
+bool RunInstancesRequest::DisableApiTerminationHasBeenSet() const
+{
+    return m_disableApiTerminationHasBeenSet;
 }
 
 

@@ -30,7 +30,8 @@ DescribeTimeWindowResponse::DescribeTimeWindowResponse() :
     m_thursdayHasBeenSet(false),
     m_fridayHasBeenSet(false),
     m_saturdayHasBeenSet(false),
-    m_sundayHasBeenSet(false)
+    m_sundayHasBeenSet(false),
+    m_maxDelayTimeHasBeenSet(false)
 {
 }
 
@@ -159,6 +160,16 @@ CoreInternalOutcome DescribeTimeWindowResponse::Deserialize(const string &payloa
         m_sundayHasBeenSet = true;
     }
 
+    if (rsp.HasMember("MaxDelayTime") && !rsp["MaxDelayTime"].IsNull())
+    {
+        if (!rsp["MaxDelayTime"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `MaxDelayTime` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_maxDelayTime = rsp["MaxDelayTime"].GetUint64();
+        m_maxDelayTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -260,6 +271,14 @@ string DescribeTimeWindowResponse::ToJsonString() const
         }
     }
 
+    if (m_maxDelayTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxDelayTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_maxDelayTime, allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -340,6 +359,16 @@ vector<string> DescribeTimeWindowResponse::GetSunday() const
 bool DescribeTimeWindowResponse::SundayHasBeenSet() const
 {
     return m_sundayHasBeenSet;
+}
+
+uint64_t DescribeTimeWindowResponse::GetMaxDelayTime() const
+{
+    return m_maxDelayTime;
+}
+
+bool DescribeTimeWindowResponse::MaxDelayTimeHasBeenSet() const
+{
+    return m_maxDelayTimeHasBeenSet;
 }
 
 

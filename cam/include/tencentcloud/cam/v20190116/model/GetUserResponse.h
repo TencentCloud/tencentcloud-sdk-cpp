@@ -81,7 +81,9 @@ namespace TencentCloud
 
                     /**
                      * 获取子用户备注
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Remark 子用户备注
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetRemark() const;
 
@@ -92,8 +94,8 @@ namespace TencentCloud
                     bool RemarkHasBeenSet() const;
 
                     /**
-                     * 获取子用户能否登录控制台
-                     * @return ConsoleLogin 子用户能否登录控制台
+                     * 获取子用户能否登录控制台 0-无法登录控制台，1-可以登录控制台
+                     * @return ConsoleLogin 子用户能否登录控制台 0-无法登录控制台，1-可以登录控制台
                      */
                     uint64_t GetConsoleLogin() const;
 
@@ -161,12 +163,13 @@ namespace TencentCloud
 
                     /**
                      * 子用户备注
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
 
                     /**
-                     * 子用户能否登录控制台
+                     * 子用户能否登录控制台 0-无法登录控制台，1-可以登录控制台
                      */
                     uint64_t m_consoleLogin;
                     bool m_consoleLoginHasBeenSet;

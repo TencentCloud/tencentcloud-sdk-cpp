@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取电话呼出统计分钟数
-                     * @return TelCallOutCount 电话呼出统计分钟数
+                     * 获取呼出套餐包消耗分钟数
+                     * @return TelCallOutCount 呼出套餐包消耗分钟数
                      */
                     int64_t GetTelCallOutCount() const;
 
@@ -56,8 +56,8 @@ namespace TencentCloud
                     bool TelCallOutCountHasBeenSet() const;
 
                     /**
-                     * 获取电话呼入统计分钟数
-                     * @return TelCallInCount 电话呼入统计分钟数
+                     * 获取呼入套餐包消耗分钟数
+                     * @return TelCallInCount 呼入套餐包消耗分钟数
                      */
                     int64_t GetTelCallInCount() const;
 
@@ -82,13 +82,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 电话呼出统计分钟数
+                     * 呼出套餐包消耗分钟数
                      */
                     int64_t m_telCallOutCount;
                     bool m_telCallOutCountHasBeenSet;
 
                     /**
-                     * 电话呼入统计分钟数
+                     * 呼入套餐包消耗分钟数
                      */
                     int64_t m_telCallInCount;
                     bool m_telCallInCountHasBeenSet;

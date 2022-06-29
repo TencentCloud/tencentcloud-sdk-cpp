@@ -27,9 +27,11 @@ set(ocr_public_header_model
   include/tencentcloud/ocr/v20181119/model/HKIDCardOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/CarInvoiceOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/MixedInvoiceItem.h
+  include/tencentcloud/ocr/v20181119/model/RecognizeTravelCardOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/TrainTicketOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/EstateCertOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/FlightInvoiceOCRRequest.h
+  include/tencentcloud/ocr/v20181119/model/RecognizePhilippinesDrivingLicenseOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/MLIDPassportOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/TextDetectResponse.h
   include/tencentcloud/ocr/v20181119/model/TollInvoiceOCRResponse.h
@@ -50,6 +52,8 @@ set(ocr_public_header_model
   include/tencentcloud/ocr/v20181119/model/VehicleRegCertInfo.h
   include/tencentcloud/ocr/v20181119/model/VehicleLicenseOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/EnterpriseLicenseOCRResponse.h
+  include/tencentcloud/ocr/v20181119/model/SealInfo.h
+  include/tencentcloud/ocr/v20181119/model/RecognizePhilippinesVoteIDOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/InvoiceGeneralInfo.h
   include/tencentcloud/ocr/v20181119/model/WordCoordPoint.h
   include/tencentcloud/ocr/v20181119/model/InstitutionOCRResponse.h
@@ -80,6 +84,7 @@ set(ocr_public_header_model
   include/tencentcloud/ocr/v20181119/model/GeneralHandwritingOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/BizLicenseOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/MixedInvoiceDetectResponse.h
+  include/tencentcloud/ocr/v20181119/model/RideHailingDriverLicenseOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/VatInvoiceUserInfo.h
   include/tencentcloud/ocr/v20181119/model/InsuranceBillOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/GeneralAccurateOCRResponse.h
@@ -89,8 +94,10 @@ set(ocr_public_header_model
   include/tencentcloud/ocr/v20181119/model/GeneralBasicOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/RecognizeThaiIDCardOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/CellContent.h
+  include/tencentcloud/ocr/v20181119/model/RecognizePhilippinesDrivingLicenseOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/MixedInvoiceOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/ClassifyDetectOCRResponse.h
+  include/tencentcloud/ocr/v20181119/model/VatInvoiceVerifyNewRequest.h
   include/tencentcloud/ocr/v20181119/model/VehicleLicenseOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/VatInvoiceOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/IDCardOCRResponse.h
@@ -102,6 +109,7 @@ set(ocr_public_header_model
   include/tencentcloud/ocr/v20181119/model/VatInvoiceGoodsInfo.h
   include/tencentcloud/ocr/v20181119/model/PermitOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/InvoiceGeneralOCRResponse.h
+  include/tencentcloud/ocr/v20181119/model/VatInvoiceVerifyNewResponse.h
   include/tencentcloud/ocr/v20181119/model/TaxiInvoiceOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/PropOwnerCertOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/RecognizeContainerOCRRequest.h
@@ -118,11 +126,12 @@ set(ocr_public_header_model
   include/tencentcloud/ocr/v20181119/model/PassportOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/VerifyBasicBizLicenseResponse.h
   include/tencentcloud/ocr/v20181119/model/VehicleRegCertOCRRequest.h
-  include/tencentcloud/ocr/v20181119/model/WaybillOCRRequest.h
+  include/tencentcloud/ocr/v20181119/model/RecognizeTravelCardOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/ProductDataRecord.h
   include/tencentcloud/ocr/v20181119/model/LicensePlateOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/GeneralBasicOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/TextVehicleBack.h
+  include/tencentcloud/ocr/v20181119/model/RecognizeIndonesiaIDCardOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/GeneralEfficientOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/AdvertiseOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/RideHailingDriverLicenseOCRResponse.h
@@ -132,10 +141,12 @@ set(ocr_public_header_model
   include/tencentcloud/ocr/v20181119/model/SmartStructuralOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/DetectedWords.h
   include/tencentcloud/ocr/v20181119/model/VerifyEnterpriseFourFactorsRequest.h
+  include/tencentcloud/ocr/v20181119/model/RecognizeIndonesiaIDCardOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/ShipInvoiceInfo.h
   include/tencentcloud/ocr/v20181119/model/GeneralAccurateOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/OrgCodeCertOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/FlightInvoiceOCRResponse.h
+  include/tencentcloud/ocr/v20181119/model/TextDetectionResult.h
   include/tencentcloud/ocr/v20181119/model/InstitutionOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/CarInvoiceInfo.h
   include/tencentcloud/ocr/v20181119/model/FlightInvoiceInfo.h
@@ -153,15 +164,17 @@ set(ocr_public_header_model
   include/tencentcloud/ocr/v20181119/model/SealOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/DutyPaidProofInfo.h
   include/tencentcloud/ocr/v20181119/model/FinanBillOCRResponse.h
-  include/tencentcloud/ocr/v20181119/model/ShipInvoiceOCRRequest.h
+  include/tencentcloud/ocr/v20181119/model/RecognizeHealthCodeOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/BankSlipOCRResponse.h
+  include/tencentcloud/ocr/v20181119/model/PassInvoiceInfo.h
   include/tencentcloud/ocr/v20181119/model/QuestionObj.h
   include/tencentcloud/ocr/v20181119/model/VinOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/EduPaperOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/FormulaOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/PassportOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/DutyPaidProofOCRRequest.h
-  include/tencentcloud/ocr/v20181119/model/RideHailingDriverLicenseOCRRequest.h
+  include/tencentcloud/ocr/v20181119/model/RecognizeHealthCodeOCRResponse.h
+  include/tencentcloud/ocr/v20181119/model/RecognizePhilippinesVoteIDOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/QueryBarCodeRequest.h
   include/tencentcloud/ocr/v20181119/model/ItemCoord.h
   include/tencentcloud/ocr/v20181119/model/OrgCodeCertOCRResponse.h
@@ -176,6 +189,7 @@ set(ocr_public_header_model
   include/tencentcloud/ocr/v20181119/model/VehicleRegCertOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/ClassifyDetectInfo.h
   include/tencentcloud/ocr/v20181119/model/GeneralEfficientOCRResponse.h
+  include/tencentcloud/ocr/v20181119/model/ShipInvoiceOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/SealOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/VerifyOfdVatInvoiceOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/TextTable.h
@@ -203,6 +217,7 @@ set(ocr_public_header_model
   include/tencentcloud/ocr/v20181119/model/RecognizeOnlineTaxiItineraryOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/IDCardOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/MixedInvoiceDetectRequest.h
+  include/tencentcloud/ocr/v20181119/model/WaybillOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/VinOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/RideHailingTransportLicenseOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/MLIDCardOCRResponse.h
@@ -230,9 +245,11 @@ set(ocr_src
   src/v20181119/model/HKIDCardOCRRequest.cpp
   src/v20181119/model/CarInvoiceOCRRequest.cpp
   src/v20181119/model/MixedInvoiceItem.cpp
+  src/v20181119/model/RecognizeTravelCardOCRRequest.cpp
   src/v20181119/model/TrainTicketOCRRequest.cpp
   src/v20181119/model/EstateCertOCRResponse.cpp
   src/v20181119/model/FlightInvoiceOCRRequest.cpp
+  src/v20181119/model/RecognizePhilippinesDrivingLicenseOCRRequest.cpp
   src/v20181119/model/MLIDPassportOCRRequest.cpp
   src/v20181119/model/TextDetectResponse.cpp
   src/v20181119/model/TollInvoiceOCRResponse.cpp
@@ -253,6 +270,8 @@ set(ocr_src
   src/v20181119/model/VehicleRegCertInfo.cpp
   src/v20181119/model/VehicleLicenseOCRRequest.cpp
   src/v20181119/model/EnterpriseLicenseOCRResponse.cpp
+  src/v20181119/model/SealInfo.cpp
+  src/v20181119/model/RecognizePhilippinesVoteIDOCRRequest.cpp
   src/v20181119/model/InvoiceGeneralInfo.cpp
   src/v20181119/model/WordCoordPoint.cpp
   src/v20181119/model/InstitutionOCRResponse.cpp
@@ -283,6 +302,7 @@ set(ocr_src
   src/v20181119/model/GeneralHandwritingOCRRequest.cpp
   src/v20181119/model/BizLicenseOCRRequest.cpp
   src/v20181119/model/MixedInvoiceDetectResponse.cpp
+  src/v20181119/model/RideHailingDriverLicenseOCRRequest.cpp
   src/v20181119/model/VatInvoiceUserInfo.cpp
   src/v20181119/model/InsuranceBillOCRResponse.cpp
   src/v20181119/model/GeneralAccurateOCRResponse.cpp
@@ -292,8 +312,10 @@ set(ocr_src
   src/v20181119/model/GeneralBasicOCRResponse.cpp
   src/v20181119/model/RecognizeThaiIDCardOCRResponse.cpp
   src/v20181119/model/CellContent.cpp
+  src/v20181119/model/RecognizePhilippinesDrivingLicenseOCRResponse.cpp
   src/v20181119/model/MixedInvoiceOCRResponse.cpp
   src/v20181119/model/ClassifyDetectOCRResponse.cpp
+  src/v20181119/model/VatInvoiceVerifyNewRequest.cpp
   src/v20181119/model/VehicleLicenseOCRResponse.cpp
   src/v20181119/model/VatInvoiceOCRRequest.cpp
   src/v20181119/model/IDCardOCRResponse.cpp
@@ -305,6 +327,7 @@ set(ocr_src
   src/v20181119/model/VatInvoiceGoodsInfo.cpp
   src/v20181119/model/PermitOCRRequest.cpp
   src/v20181119/model/InvoiceGeneralOCRResponse.cpp
+  src/v20181119/model/VatInvoiceVerifyNewResponse.cpp
   src/v20181119/model/TaxiInvoiceOCRRequest.cpp
   src/v20181119/model/PropOwnerCertOCRRequest.cpp
   src/v20181119/model/RecognizeContainerOCRRequest.cpp
@@ -321,11 +344,12 @@ set(ocr_src
   src/v20181119/model/PassportOCRResponse.cpp
   src/v20181119/model/VerifyBasicBizLicenseResponse.cpp
   src/v20181119/model/VehicleRegCertOCRRequest.cpp
-  src/v20181119/model/WaybillOCRRequest.cpp
+  src/v20181119/model/RecognizeTravelCardOCRResponse.cpp
   src/v20181119/model/ProductDataRecord.cpp
   src/v20181119/model/LicensePlateOCRRequest.cpp
   src/v20181119/model/GeneralBasicOCRRequest.cpp
   src/v20181119/model/TextVehicleBack.cpp
+  src/v20181119/model/RecognizeIndonesiaIDCardOCRResponse.cpp
   src/v20181119/model/GeneralEfficientOCRRequest.cpp
   src/v20181119/model/AdvertiseOCRRequest.cpp
   src/v20181119/model/RideHailingDriverLicenseOCRResponse.cpp
@@ -335,10 +359,12 @@ set(ocr_src
   src/v20181119/model/SmartStructuralOCRResponse.cpp
   src/v20181119/model/DetectedWords.cpp
   src/v20181119/model/VerifyEnterpriseFourFactorsRequest.cpp
+  src/v20181119/model/RecognizeIndonesiaIDCardOCRRequest.cpp
   src/v20181119/model/ShipInvoiceInfo.cpp
   src/v20181119/model/GeneralAccurateOCRRequest.cpp
   src/v20181119/model/OrgCodeCertOCRRequest.cpp
   src/v20181119/model/FlightInvoiceOCRResponse.cpp
+  src/v20181119/model/TextDetectionResult.cpp
   src/v20181119/model/InstitutionOCRRequest.cpp
   src/v20181119/model/CarInvoiceInfo.cpp
   src/v20181119/model/FlightInvoiceInfo.cpp
@@ -356,15 +382,17 @@ set(ocr_src
   src/v20181119/model/SealOCRResponse.cpp
   src/v20181119/model/DutyPaidProofInfo.cpp
   src/v20181119/model/FinanBillOCRResponse.cpp
-  src/v20181119/model/ShipInvoiceOCRRequest.cpp
+  src/v20181119/model/RecognizeHealthCodeOCRRequest.cpp
   src/v20181119/model/BankSlipOCRResponse.cpp
+  src/v20181119/model/PassInvoiceInfo.cpp
   src/v20181119/model/QuestionObj.cpp
   src/v20181119/model/VinOCRResponse.cpp
   src/v20181119/model/EduPaperOCRRequest.cpp
   src/v20181119/model/FormulaOCRRequest.cpp
   src/v20181119/model/PassportOCRRequest.cpp
   src/v20181119/model/DutyPaidProofOCRRequest.cpp
-  src/v20181119/model/RideHailingDriverLicenseOCRRequest.cpp
+  src/v20181119/model/RecognizeHealthCodeOCRResponse.cpp
+  src/v20181119/model/RecognizePhilippinesVoteIDOCRResponse.cpp
   src/v20181119/model/QueryBarCodeRequest.cpp
   src/v20181119/model/ItemCoord.cpp
   src/v20181119/model/OrgCodeCertOCRResponse.cpp
@@ -379,6 +407,7 @@ set(ocr_src
   src/v20181119/model/VehicleRegCertOCRResponse.cpp
   src/v20181119/model/ClassifyDetectInfo.cpp
   src/v20181119/model/GeneralEfficientOCRResponse.cpp
+  src/v20181119/model/ShipInvoiceOCRRequest.cpp
   src/v20181119/model/SealOCRRequest.cpp
   src/v20181119/model/VerifyOfdVatInvoiceOCRResponse.cpp
   src/v20181119/model/TextTable.cpp
@@ -406,6 +435,7 @@ set(ocr_src
   src/v20181119/model/RecognizeOnlineTaxiItineraryOCRRequest.cpp
   src/v20181119/model/IDCardOCRRequest.cpp
   src/v20181119/model/MixedInvoiceDetectRequest.cpp
+  src/v20181119/model/WaybillOCRRequest.cpp
   src/v20181119/model/VinOCRRequest.cpp
   src/v20181119/model/RideHailingTransportLicenseOCRRequest.cpp
   src/v20181119/model/MLIDCardOCRResponse.cpp

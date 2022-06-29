@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool BetaBatchNumHasBeenSet() const;
 
                     /**
-                     * 获取分批策略：0-全自动，1-全手动，2-beta分批，beta批一定是手动的
-                     * @return DeployStrategyType 分批策略：0-全自动，1-全手动，2-beta分批，beta批一定是手动的
+                     * 获取分批策略：0-全自动，1-全手动，2-beta分批，beta批一定是手动的，3-首次发布
+                     * @return DeployStrategyType 分批策略：0-全自动，1-全手动，2-beta分批，beta批一定是手动的，3-首次发布
                      */
                     int64_t GetDeployStrategyType() const;
 
                     /**
-                     * 设置分批策略：0-全自动，1-全手动，2-beta分批，beta批一定是手动的
-                     * @param DeployStrategyType 分批策略：0-全自动，1-全手动，2-beta分批，beta批一定是手动的
+                     * 设置分批策略：0-全自动，1-全手动，2-beta分批，beta批一定是手动的，3-首次发布
+                     * @param DeployStrategyType 分批策略：0-全自动，1-全手动，2-beta分批，beta批一定是手动的，3-首次发布
                      */
                     void SetDeployStrategyType(const int64_t& _deployStrategyType);
 
@@ -136,6 +136,24 @@ namespace TencentCloud
                      */
                     bool MinAvailableHasBeenSet() const;
 
+                    /**
+                     * 获取是否强制发布
+                     * @return Force 是否强制发布
+                     */
+                    bool GetForce() const;
+
+                    /**
+                     * 设置是否强制发布
+                     * @param Force 是否强制发布
+                     */
+                    void SetForce(const bool& _force);
+
+                    /**
+                     * 判断参数 Force 是否已赋值
+                     * @return Force 是否已赋值
+                     */
+                    bool ForceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -151,7 +169,7 @@ namespace TencentCloud
                     bool m_betaBatchNumHasBeenSet;
 
                     /**
-                     * 分批策略：0-全自动，1-全手动，2-beta分批，beta批一定是手动的
+                     * 分批策略：0-全自动，1-全手动，2-beta分批，beta批一定是手动的，3-首次发布
                      */
                     int64_t m_deployStrategyType;
                     bool m_deployStrategyTypeHasBeenSet;
@@ -167,6 +185,12 @@ namespace TencentCloud
                      */
                     int64_t m_minAvailable;
                     bool m_minAvailableHasBeenSet;
+
+                    /**
+                     * 是否强制发布
+                     */
+                    bool m_force;
+                    bool m_forceHasBeenSet;
 
                 };
             }

@@ -24,7 +24,9 @@ StructureResultObject::StructureResultObject() :
     m_codeHasBeenSet(false),
     m_taskTypeHasBeenSet(false),
     m_structureResultHasBeenSet(false),
-    m_subTaskIdHasBeenSet(false)
+    m_subTaskIdHasBeenSet(false),
+    m_taskFilesHasBeenSet(false),
+    m_resultFieldsHasBeenSet(false)
 {
 }
 
@@ -73,6 +75,39 @@ CoreInternalOutcome StructureResultObject::Deserialize(const rapidjson::Value &v
         m_subTaskIdHasBeenSet = true;
     }
 
+    if (value.HasMember("TaskFiles") && !value["TaskFiles"].IsNull())
+    {
+        if (!value["TaskFiles"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `StructureResultObject.TaskFiles` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["TaskFiles"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_taskFiles.push_back((*itr).GetString());
+        }
+        m_taskFilesHasBeenSet = true;
+    }
+
+    if (value.HasMember("ResultFields") && !value["ResultFields"].IsNull())
+    {
+        if (!value["ResultFields"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `StructureResultObject.ResultFields` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ResultFields"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            OcrRecognise item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_resultFields.push_back(item);
+        }
+        m_resultFieldsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +145,34 @@ void StructureResultObject::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "SubTaskId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_subTaskId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_taskFilesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskFiles";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_taskFiles.begin(); itr != m_taskFiles.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_resultFieldsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResultFields";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_resultFields.begin(); itr != m_resultFields.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -177,5 +240,37 @@ void StructureResultObject::SetSubTaskId(const string& _subTaskId)
 bool StructureResultObject::SubTaskIdHasBeenSet() const
 {
     return m_subTaskIdHasBeenSet;
+}
+
+vector<string> StructureResultObject::GetTaskFiles() const
+{
+    return m_taskFiles;
+}
+
+void StructureResultObject::SetTaskFiles(const vector<string>& _taskFiles)
+{
+    m_taskFiles = _taskFiles;
+    m_taskFilesHasBeenSet = true;
+}
+
+bool StructureResultObject::TaskFilesHasBeenSet() const
+{
+    return m_taskFilesHasBeenSet;
+}
+
+vector<OcrRecognise> StructureResultObject::GetResultFields() const
+{
+    return m_resultFields;
+}
+
+void StructureResultObject::SetResultFields(const vector<OcrRecognise>& _resultFields)
+{
+    m_resultFields = _resultFields;
+    m_resultFieldsHasBeenSet = true;
+}
+
+bool StructureResultObject::ResultFieldsHasBeenSet() const
+{
+    return m_resultFieldsHasBeenSet;
 }
 

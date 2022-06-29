@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 视频处理 COS 对象信息。
+                * 媒体处理 COS 对象信息。
                 */
                 class CosInputInfo : public AbstractModel
                 {
@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取视频处理对象文件所在的 COS Bucket 名，如 TopRankVideo-125xxx88。
-                     * @return Bucket 视频处理对象文件所在的 COS Bucket 名，如 TopRankVideo-125xxx88。
+                     * 获取媒体处理对象文件所在的 COS Bucket 名，如 TopRankVideo-125xxx88。
+                     * @return Bucket 媒体处理对象文件所在的 COS Bucket 名，如 TopRankVideo-125xxx88。
                      */
                     std::string GetBucket() const;
 
                     /**
-                     * 设置视频处理对象文件所在的 COS Bucket 名，如 TopRankVideo-125xxx88。
-                     * @param Bucket 视频处理对象文件所在的 COS Bucket 名，如 TopRankVideo-125xxx88。
+                     * 设置媒体处理对象文件所在的 COS Bucket 名，如 TopRankVideo-125xxx88。
+                     * @param Bucket 媒体处理对象文件所在的 COS Bucket 名，如 TopRankVideo-125xxx88。
                      */
                     void SetBucket(const std::string& _bucket);
 
@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool BucketHasBeenSet() const;
 
                     /**
-                     * 获取视频处理对象文件所在的 COS Bucket 所属园区，如 ap-chongqing。
-                     * @return Region 视频处理对象文件所在的 COS Bucket 所属园区，如 ap-chongqing。
+                     * 获取媒体处理对象文件所在的 COS Bucket 所属园区，如 ap-chongqing。
+                     * @return Region 媒体处理对象文件所在的 COS Bucket 所属园区，如 ap-chongqing。
                      */
                     std::string GetRegion() const;
 
                     /**
-                     * 设置视频处理对象文件所在的 COS Bucket 所属园区，如 ap-chongqing。
-                     * @param Region 视频处理对象文件所在的 COS Bucket 所属园区，如 ap-chongqing。
+                     * 设置媒体处理对象文件所在的 COS Bucket 所属园区，如 ap-chongqing。
+                     * @param Region 媒体处理对象文件所在的 COS Bucket 所属园区，如 ap-chongqing。
                      */
                     void SetRegion(const std::string& _region);
 
@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool RegionHasBeenSet() const;
 
                     /**
-                     * 获取视频处理对象文件的输入路径，如`/movie/201907/WildAnimal.mov`。
-                     * @return Object 视频处理对象文件的输入路径，如`/movie/201907/WildAnimal.mov`。
+                     * 获取媒体处理对象文件的输入路径，如`/movie/201907/WildAnimal.mov`。
+                     * @return Object 媒体处理对象文件的输入路径，如`/movie/201907/WildAnimal.mov`。
                      */
                     std::string GetObject() const;
 
                     /**
-                     * 设置视频处理对象文件的输入路径，如`/movie/201907/WildAnimal.mov`。
-                     * @param Object 视频处理对象文件的输入路径，如`/movie/201907/WildAnimal.mov`。
+                     * 设置媒体处理对象文件的输入路径，如`/movie/201907/WildAnimal.mov`。
+                     * @param Object 媒体处理对象文件的输入路径，如`/movie/201907/WildAnimal.mov`。
                      */
                     void SetObject(const std::string& _object);
 
@@ -103,19 +103,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 视频处理对象文件所在的 COS Bucket 名，如 TopRankVideo-125xxx88。
+                     * 媒体处理对象文件所在的 COS Bucket 名，如 TopRankVideo-125xxx88。
                      */
                     std::string m_bucket;
                     bool m_bucketHasBeenSet;
 
                     /**
-                     * 视频处理对象文件所在的 COS Bucket 所属园区，如 ap-chongqing。
+                     * 媒体处理对象文件所在的 COS Bucket 所属园区，如 ap-chongqing。
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
 
                     /**
-                     * 视频处理对象文件的输入路径，如`/movie/201907/WildAnimal.mov`。
+                     * 媒体处理对象文件的输入路径，如`/movie/201907/WildAnimal.mov`。
                      */
                     std::string m_object;
                     bool m_objectHasBeenSet;

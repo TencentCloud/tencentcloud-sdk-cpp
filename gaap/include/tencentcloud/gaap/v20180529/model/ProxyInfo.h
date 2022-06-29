@@ -208,7 +208,9 @@ CLOSED表示已关闭；
 ADJUSTING表示配置变更中；
 ISOLATING表示隔离中；
 ISOLATED表示已隔离；
-CLONING表示复制中。
+CLONING表示复制中；
+RECOVERING表示通道维护中；
+MOVING表示迁移中。
                      * @return Status 通道状态。其中：
 RUNNING表示运行中；
 CREATING表示创建中；
@@ -219,7 +221,9 @@ CLOSED表示已关闭；
 ADJUSTING表示配置变更中；
 ISOLATING表示隔离中；
 ISOLATED表示已隔离；
-CLONING表示复制中。
+CLONING表示复制中；
+RECOVERING表示通道维护中；
+MOVING表示迁移中。
                      */
                     std::string GetStatus() const;
 
@@ -234,7 +238,9 @@ CLOSED表示已关闭；
 ADJUSTING表示配置变更中；
 ISOLATING表示隔离中；
 ISOLATED表示已隔离；
-CLONING表示复制中。
+CLONING表示复制中；
+RECOVERING表示通道维护中；
+MOVING表示迁移中。
                      * @param Status 通道状态。其中：
 RUNNING表示运行中；
 CREATING表示创建中；
@@ -245,7 +251,9 @@ CLOSED表示已关闭；
 ADJUSTING表示配置变更中；
 ISOLATING表示隔离中；
 ISOLATED表示已隔离；
-CLONING表示复制中。
+CLONING表示复制中；
+RECOVERING表示通道维护中；
+MOVING表示迁移中。
                      */
                     void SetStatus(const std::string& _status);
 
@@ -650,17 +658,17 @@ CLONING表示复制中。
                     bool IPAddressVersionHasBeenSet() const;
 
                     /**
-                     * 获取网络类型：normal表示常规BGP，cn2表示精品BGP，triple表示三网
+                     * 获取网络类型：normal表示常规BGP，cn2表示精品BGP，triple表示三网，secure_eip表示定制安全EIP
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return NetworkType 网络类型：normal表示常规BGP，cn2表示精品BGP，triple表示三网
+                     * @return NetworkType 网络类型：normal表示常规BGP，cn2表示精品BGP，triple表示三网，secure_eip表示定制安全EIP
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetNetworkType() const;
 
                     /**
-                     * 设置网络类型：normal表示常规BGP，cn2表示精品BGP，triple表示三网
+                     * 设置网络类型：normal表示常规BGP，cn2表示精品BGP，triple表示三网，secure_eip表示定制安全EIP
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NetworkType 网络类型：normal表示常规BGP，cn2表示精品BGP，triple表示三网
+                     * @param NetworkType 网络类型：normal表示常规BGP，cn2表示精品BGP，triple表示三网，secure_eip表示定制安全EIP
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetNetworkType(const std::string& _networkType);
@@ -672,20 +680,20 @@ CLONING表示复制中。
                     bool NetworkTypeHasBeenSet() const;
 
                     /**
-                     * 获取通道套餐类型：Thunder表示标准通道，Accelerator表示游戏加速器通道，
+                     * 获取通道套餐类型：Thunder表示标准通道，Accelerator表示银牌加速通道，
 CrossBorder表示跨境通道。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PackageType 通道套餐类型：Thunder表示标准通道，Accelerator表示游戏加速器通道，
+                     * @return PackageType 通道套餐类型：Thunder表示标准通道，Accelerator表示银牌加速通道，
 CrossBorder表示跨境通道。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetPackageType() const;
 
                     /**
-                     * 设置通道套餐类型：Thunder表示标准通道，Accelerator表示游戏加速器通道，
+                     * 设置通道套餐类型：Thunder表示标准通道，Accelerator表示银牌加速通道，
 CrossBorder表示跨境通道。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PackageType 通道套餐类型：Thunder表示标准通道，Accelerator表示游戏加速器通道，
+                     * @param PackageType 通道套餐类型：Thunder表示标准通道，Accelerator表示银牌加速通道，
 CrossBorder表示跨境通道。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
@@ -771,6 +779,28 @@ CrossBorder表示跨境通道。
                      */
                     bool Http3SupportedHasBeenSet() const;
 
+                    /**
+                     * 获取是否在封禁黑名单中，其中：0表示不在黑名单中，1表示在黑名单中。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InBanBlacklist 是否在封禁黑名单中，其中：0表示不在黑名单中，1表示在黑名单中。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetInBanBlacklist() const;
+
+                    /**
+                     * 设置是否在封禁黑名单中，其中：0表示不在黑名单中，1表示在黑名单中。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param InBanBlacklist 是否在封禁黑名单中，其中：0表示不在黑名单中，1表示在黑名单中。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetInBanBlacklist(const int64_t& _inBanBlacklist);
+
+                    /**
+                     * 判断参数 InBanBlacklist 是否已赋值
+                     * @return InBanBlacklist 是否已赋值
+                     */
+                    bool InBanBlacklistHasBeenSet() const;
+
                 private:
 
                     /**
@@ -833,7 +863,9 @@ CLOSED表示已关闭；
 ADJUSTING表示配置变更中；
 ISOLATING表示隔离中；
 ISOLATED表示已隔离；
-CLONING表示复制中。
+CLONING表示复制中；
+RECOVERING表示通道维护中；
+MOVING表示迁移中。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
@@ -966,14 +998,14 @@ CLONING表示复制中。
                     bool m_iPAddressVersionHasBeenSet;
 
                     /**
-                     * 网络类型：normal表示常规BGP，cn2表示精品BGP，triple表示三网
+                     * 网络类型：normal表示常规BGP，cn2表示精品BGP，triple表示三网，secure_eip表示定制安全EIP
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_networkType;
                     bool m_networkTypeHasBeenSet;
 
                     /**
-                     * 通道套餐类型：Thunder表示标准通道，Accelerator表示游戏加速器通道，
+                     * 通道套餐类型：Thunder表示标准通道，Accelerator表示银牌加速通道，
 CrossBorder表示跨境通道。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
@@ -1002,6 +1034,13 @@ CrossBorder表示跨境通道。
                      */
                     int64_t m_http3Supported;
                     bool m_http3SupportedHasBeenSet;
+
+                    /**
+                     * 是否在封禁黑名单中，其中：0表示不在黑名单中，1表示在黑名单中。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_inBanBlacklist;
+                    bool m_inBanBlacklistHasBeenSet;
 
                 };
             }

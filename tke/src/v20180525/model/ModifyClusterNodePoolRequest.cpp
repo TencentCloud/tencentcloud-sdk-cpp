@@ -34,7 +34,8 @@ ModifyClusterNodePoolRequest::ModifyClusterNodePoolRequest() :
     m_osNameHasBeenSet(false),
     m_osCustomizeTypeHasBeenSet(false),
     m_extraArgsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_unschedulableHasBeenSet(false)
 {
 }
 
@@ -161,6 +162,14 @@ string ModifyClusterNodePoolRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_unschedulableHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Unschedulable";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_unschedulable, allocator);
     }
 
 
@@ -361,6 +370,22 @@ void ModifyClusterNodePoolRequest::SetTags(const vector<Tag>& _tags)
 bool ModifyClusterNodePoolRequest::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+int64_t ModifyClusterNodePoolRequest::GetUnschedulable() const
+{
+    return m_unschedulable;
+}
+
+void ModifyClusterNodePoolRequest::SetUnschedulable(const int64_t& _unschedulable)
+{
+    m_unschedulable = _unschedulable;
+    m_unschedulableHasBeenSet = true;
+}
+
+bool ModifyClusterNodePoolRequest::UnschedulableHasBeenSet() const
+{
+    return m_unschedulableHasBeenSet;
 }
 
 

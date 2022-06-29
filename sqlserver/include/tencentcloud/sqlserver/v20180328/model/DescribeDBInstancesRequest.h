@@ -360,6 +360,24 @@ namespace TencentCloud
                      */
                     bool UidSetHasBeenSet() const;
 
+                    /**
+                     * 获取实例类型 HA-高可用 RO-只读实例 SI-基础版 BI-商业智能服务
+                     * @return InstanceType 实例类型 HA-高可用 RO-只读实例 SI-基础版 BI-商业智能服务
+                     */
+                    std::string GetInstanceType() const;
+
+                    /**
+                     * 设置实例类型 HA-高可用 RO-只读实例 SI-基础版 BI-商业智能服务
+                     * @param InstanceType 实例类型 HA-高可用 RO-只读实例 SI-基础版 BI-商业智能服务
+                     */
+                    void SetInstanceType(const std::string& _instanceType);
+
+                    /**
+                     * 判断参数 InstanceType 是否已赋值
+                     * @return InstanceType 是否已赋值
+                     */
+                    bool InstanceTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -463,6 +481,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_uidSet;
                     bool m_uidSetHasBeenSet;
+
+                    /**
+                     * 实例类型 HA-高可用 RO-只读实例 SI-基础版 BI-商业智能服务
+                     */
+                    std::string m_instanceType;
+                    bool m_instanceTypeHasBeenSet;
 
                 };
             }

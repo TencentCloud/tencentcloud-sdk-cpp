@@ -96,6 +96,42 @@ namespace TencentCloud
                      */
                     bool VolumeHasBeenSet() const;
 
+                    /**
+                     * 获取实例变更后的节点数，取值范围具体参照查询云数据库的售卖规格返回参数。默认为不变更节点数
+                     * @return NodeNum 实例变更后的节点数，取值范围具体参照查询云数据库的售卖规格返回参数。默认为不变更节点数
+                     */
+                    int64_t GetNodeNum() const;
+
+                    /**
+                     * 设置实例变更后的节点数，取值范围具体参照查询云数据库的售卖规格返回参数。默认为不变更节点数
+                     * @param NodeNum 实例变更后的节点数，取值范围具体参照查询云数据库的售卖规格返回参数。默认为不变更节点数
+                     */
+                    void SetNodeNum(const int64_t& _nodeNum);
+
+                    /**
+                     * 判断参数 NodeNum 是否已赋值
+                     * @return NodeNum 是否已赋值
+                     */
+                    bool NodeNumHasBeenSet() const;
+
+                    /**
+                     * 获取实例变更后的分片数，取值范围具体参照查询云数据库的售卖规格返回参数。只能增加不能减少，默认为不变更分片数
+                     * @return ReplicateSetNum 实例变更后的分片数，取值范围具体参照查询云数据库的售卖规格返回参数。只能增加不能减少，默认为不变更分片数
+                     */
+                    int64_t GetReplicateSetNum() const;
+
+                    /**
+                     * 设置实例变更后的分片数，取值范围具体参照查询云数据库的售卖规格返回参数。只能增加不能减少，默认为不变更分片数
+                     * @param ReplicateSetNum 实例变更后的分片数，取值范围具体参照查询云数据库的售卖规格返回参数。只能增加不能减少，默认为不变更分片数
+                     */
+                    void SetReplicateSetNum(const int64_t& _replicateSetNum);
+
+                    /**
+                     * 判断参数 ReplicateSetNum 是否已赋值
+                     * @return ReplicateSetNum 是否已赋值
+                     */
+                    bool ReplicateSetNumHasBeenSet() const;
+
                 private:
 
                     /**
@@ -115,6 +151,18 @@ namespace TencentCloud
                      */
                     int64_t m_volume;
                     bool m_volumeHasBeenSet;
+
+                    /**
+                     * 实例变更后的节点数，取值范围具体参照查询云数据库的售卖规格返回参数。默认为不变更节点数
+                     */
+                    int64_t m_nodeNum;
+                    bool m_nodeNumHasBeenSet;
+
+                    /**
+                     * 实例变更后的分片数，取值范围具体参照查询云数据库的售卖规格返回参数。只能增加不能减少，默认为不变更分片数
+                     */
+                    int64_t m_replicateSetNum;
+                    bool m_replicateSetNumHasBeenSet;
 
                 };
             }

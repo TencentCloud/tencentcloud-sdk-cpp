@@ -173,14 +173,14 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取RO实例状态，可能返回值：0-创建中，1-运行中，4-删除中
-                     * @return Status RO实例状态，可能返回值：0-创建中，1-运行中，4-删除中
+                     * 获取RO实例状态，可能返回值：0-创建中，1-运行中，3-异地RO（仅在使用DescribeDBInstances查询主实例信息时，返回值中异地RO的状态恒等于3，其他场景下无此值），4-删除中
+                     * @return Status RO实例状态，可能返回值：0-创建中，1-运行中，3-异地RO（仅在使用DescribeDBInstances查询主实例信息时，返回值中异地RO的状态恒等于3，其他场景下无此值），4-删除中
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置RO实例状态，可能返回值：0-创建中，1-运行中，4-删除中
-                     * @param Status RO实例状态，可能返回值：0-创建中，1-运行中，4-删除中
+                     * 设置RO实例状态，可能返回值：0-创建中，1-运行中，3-异地RO（仅在使用DescribeDBInstances查询主实例信息时，返回值中异地RO的状态恒等于3，其他场景下无此值），4-删除中
+                     * @param Status RO实例状态，可能返回值：0-创建中，1-运行中，3-异地RO（仅在使用DescribeDBInstances查询主实例信息时，返回值中异地RO的状态恒等于3，其他场景下无此值），4-删除中
                      */
                     void SetStatus(const int64_t& _status);
 
@@ -505,7 +505,7 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * RO实例状态，可能返回值：0-创建中，1-运行中，4-删除中
+                     * RO实例状态，可能返回值：0-创建中，1-运行中，3-异地RO（仅在使用DescribeDBInstances查询主实例信息时，返回值中异地RO的状态恒等于3，其他场景下无此值），4-删除中
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;

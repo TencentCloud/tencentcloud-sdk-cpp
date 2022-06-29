@@ -127,6 +127,228 @@ namespace TencentCloud
                      */
                     bool SegmentSetHasBeenSet() const;
 
+                    /**
+                     * 获取人物性别：
+<li>Male：男性；</li>
+<li>Female：女性。</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Gender 人物性别：
+<li>Male：男性；</li>
+<li>Female：女性。</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetGender() const;
+
+                    /**
+                     * 设置人物性别：
+<li>Male：男性；</li>
+<li>Female：女性。</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Gender 人物性别：
+<li>Male：男性；</li>
+<li>Female：女性。</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetGender(const std::string& _gender);
+
+                    /**
+                     * 判断参数 Gender 是否已赋值
+                     * @return Gender 是否已赋值
+                     */
+                    bool GenderHasBeenSet() const;
+
+                    /**
+                     * 获取人物出生日期。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Birthday 人物出生日期。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetBirthday() const;
+
+                    /**
+                     * 设置人物出生日期。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Birthday 人物出生日期。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetBirthday(const std::string& _birthday);
+
+                    /**
+                     * 判断参数 Birthday 是否已赋值
+                     * @return Birthday 是否已赋值
+                     */
+                    bool BirthdayHasBeenSet() const;
+
+                    /**
+                     * 获取人物职业或者职务。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Profession 人物职业或者职务。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetProfession() const;
+
+                    /**
+                     * 设置人物职业或者职务。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Profession 人物职业或者职务。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetProfession(const std::string& _profession);
+
+                    /**
+                     * 判断参数 Profession 是否已赋值
+                     * @return Profession 是否已赋值
+                     */
+                    bool ProfessionHasBeenSet() const;
+
+                    /**
+                     * 获取人物毕业院校。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SchoolOfGraduation 人物毕业院校。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetSchoolOfGraduation() const;
+
+                    /**
+                     * 设置人物毕业院校。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SchoolOfGraduation 人物毕业院校。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSchoolOfGraduation(const std::string& _schoolOfGraduation);
+
+                    /**
+                     * 判断参数 SchoolOfGraduation 是否已赋值
+                     * @return SchoolOfGraduation 是否已赋值
+                     */
+                    bool SchoolOfGraduationHasBeenSet() const;
+
+                    /**
+                     * 获取人物简介。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Abstract 人物简介。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetAbstract() const;
+
+                    /**
+                     * 设置人物简介。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Abstract 人物简介。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAbstract(const std::string& _abstract);
+
+                    /**
+                     * 判断参数 Abstract 是否已赋值
+                     * @return Abstract 是否已赋值
+                     */
+                    bool AbstractHasBeenSet() const;
+
+                    /**
+                     * 获取人物出生地或者籍贯。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PlaceOfBirth 人物出生地或者籍贯。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetPlaceOfBirth() const;
+
+                    /**
+                     * 设置人物出生地或者籍贯。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param PlaceOfBirth 人物出生地或者籍贯。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPlaceOfBirth(const std::string& _placeOfBirth);
+
+                    /**
+                     * 判断参数 PlaceOfBirth 是否已赋值
+                     * @return PlaceOfBirth 是否已赋值
+                     */
+                    bool PlaceOfBirthHasBeenSet() const;
+
+                    /**
+                     * 获取人物类型：
+<li>Politician：官员；</li>
+<li>Artist：艺人。</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PersonType 人物类型：
+<li>Politician：官员；</li>
+<li>Artist：艺人。</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetPersonType() const;
+
+                    /**
+                     * 设置人物类型：
+<li>Politician：官员；</li>
+<li>Artist：艺人。</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param PersonType 人物类型：
+<li>Politician：官员；</li>
+<li>Artist：艺人。</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPersonType(const std::string& _personType);
+
+                    /**
+                     * 判断参数 PersonType 是否已赋值
+                     * @return PersonType 是否已赋值
+                     */
+                    bool PersonTypeHasBeenSet() const;
+
+                    /**
+                     * 获取敏感度标注：
+<li>Normal：正常；</li>
+<li>Sensitive：敏感。</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Remark 敏感度标注：
+<li>Normal：正常；</li>
+<li>Sensitive：敏感。</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetRemark() const;
+
+                    /**
+                     * 设置敏感度标注：
+<li>Normal：正常；</li>
+<li>Sensitive：敏感。</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Remark 敏感度标注：
+<li>Normal：正常；</li>
+<li>Sensitive：敏感。</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRemark(const std::string& _remark);
+
+                    /**
+                     * 判断参数 Remark 是否已赋值
+                     * @return Remark 是否已赋值
+                     */
+                    bool RemarkHasBeenSet() const;
+
+                    /**
+                     * 获取截图链接
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Url 截图链接
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetUrl() const;
+
+                    /**
+                     * 设置截图链接
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Url 截图链接
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetUrl(const std::string& _url);
+
+                    /**
+                     * 判断参数 Url 是否已赋值
+                     * @return Url 是否已赋值
+                     */
+                    bool UrlHasBeenSet() const;
+
                 private:
 
                     /**
@@ -154,6 +376,75 @@ namespace TencentCloud
                      */
                     std::vector<AiRecognitionTaskFaceSegmentItem> m_segmentSet;
                     bool m_segmentSetHasBeenSet;
+
+                    /**
+                     * 人物性别：
+<li>Male：男性；</li>
+<li>Female：女性。</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_gender;
+                    bool m_genderHasBeenSet;
+
+                    /**
+                     * 人物出生日期。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_birthday;
+                    bool m_birthdayHasBeenSet;
+
+                    /**
+                     * 人物职业或者职务。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_profession;
+                    bool m_professionHasBeenSet;
+
+                    /**
+                     * 人物毕业院校。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_schoolOfGraduation;
+                    bool m_schoolOfGraduationHasBeenSet;
+
+                    /**
+                     * 人物简介。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_abstract;
+                    bool m_abstractHasBeenSet;
+
+                    /**
+                     * 人物出生地或者籍贯。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_placeOfBirth;
+                    bool m_placeOfBirthHasBeenSet;
+
+                    /**
+                     * 人物类型：
+<li>Politician：官员；</li>
+<li>Artist：艺人。</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_personType;
+                    bool m_personTypeHasBeenSet;
+
+                    /**
+                     * 敏感度标注：
+<li>Normal：正常；</li>
+<li>Sensitive：敏感。</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_remark;
+                    bool m_remarkHasBeenSet;
+
+                    /**
+                     * 截图链接
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_url;
+                    bool m_urlHasBeenSet;
 
                 };
             }

@@ -24,10 +24,10 @@ using namespace std;
 
 SimpleHlsClipRequest::SimpleHlsClipRequest() :
     m_urlHasBeenSet(false),
+    m_subAppIdHasBeenSet(false),
     m_startTimeOffsetHasBeenSet(false),
     m_endTimeOffsetHasBeenSet(false),
-    m_isPersistenceHasBeenSet(false),
-    m_subAppIdHasBeenSet(false)
+    m_isPersistenceHasBeenSet(false)
 {
 }
 
@@ -44,6 +44,14 @@ string SimpleHlsClipRequest::ToJsonString() const
         string key = "Url";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_url.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subAppIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubAppId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_subAppId, allocator);
     }
 
     if (m_startTimeOffsetHasBeenSet)
@@ -70,14 +78,6 @@ string SimpleHlsClipRequest::ToJsonString() const
         d.AddMember(iKey, m_isPersistence, allocator);
     }
 
-    if (m_subAppIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SubAppId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_subAppId, allocator);
-    }
-
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -100,6 +100,22 @@ void SimpleHlsClipRequest::SetUrl(const string& _url)
 bool SimpleHlsClipRequest::UrlHasBeenSet() const
 {
     return m_urlHasBeenSet;
+}
+
+uint64_t SimpleHlsClipRequest::GetSubAppId() const
+{
+    return m_subAppId;
+}
+
+void SimpleHlsClipRequest::SetSubAppId(const uint64_t& _subAppId)
+{
+    m_subAppId = _subAppId;
+    m_subAppIdHasBeenSet = true;
+}
+
+bool SimpleHlsClipRequest::SubAppIdHasBeenSet() const
+{
+    return m_subAppIdHasBeenSet;
 }
 
 double SimpleHlsClipRequest::GetStartTimeOffset() const
@@ -148,22 +164,6 @@ void SimpleHlsClipRequest::SetIsPersistence(const int64_t& _isPersistence)
 bool SimpleHlsClipRequest::IsPersistenceHasBeenSet() const
 {
     return m_isPersistenceHasBeenSet;
-}
-
-uint64_t SimpleHlsClipRequest::GetSubAppId() const
-{
-    return m_subAppId;
-}
-
-void SimpleHlsClipRequest::SetSubAppId(const uint64_t& _subAppId)
-{
-    m_subAppId = _subAppId;
-    m_subAppIdHasBeenSet = true;
-}
-
-bool SimpleHlsClipRequest::SubAppIdHasBeenSet() const
-{
-    return m_subAppIdHasBeenSet;
 }
 
 

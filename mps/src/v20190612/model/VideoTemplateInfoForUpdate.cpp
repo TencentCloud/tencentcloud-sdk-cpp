@@ -29,7 +29,8 @@ VideoTemplateInfoForUpdate::VideoTemplateInfoForUpdate() :
     m_heightHasBeenSet(false),
     m_gopHasBeenSet(false),
     m_fillTypeHasBeenSet(false),
-    m_vcrfHasBeenSet(false)
+    m_vcrfHasBeenSet(false),
+    m_contentAdaptStreamHasBeenSet(false)
 {
 }
 
@@ -128,6 +129,16 @@ CoreInternalOutcome VideoTemplateInfoForUpdate::Deserialize(const rapidjson::Val
         m_vcrfHasBeenSet = true;
     }
 
+    if (value.HasMember("ContentAdaptStream") && !value["ContentAdaptStream"].IsNull())
+    {
+        if (!value["ContentAdaptStream"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `VideoTemplateInfoForUpdate.ContentAdaptStream` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_contentAdaptStream = value["ContentAdaptStream"].GetUint64();
+        m_contentAdaptStreamHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -205,6 +216,14 @@ void VideoTemplateInfoForUpdate::ToJsonObject(rapidjson::Value &value, rapidjson
         string key = "Vcrf";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_vcrf, allocator);
+    }
+
+    if (m_contentAdaptStreamHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ContentAdaptStream";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_contentAdaptStream, allocator);
     }
 
 }
@@ -352,5 +371,21 @@ void VideoTemplateInfoForUpdate::SetVcrf(const uint64_t& _vcrf)
 bool VideoTemplateInfoForUpdate::VcrfHasBeenSet() const
 {
     return m_vcrfHasBeenSet;
+}
+
+uint64_t VideoTemplateInfoForUpdate::GetContentAdaptStream() const
+{
+    return m_contentAdaptStream;
+}
+
+void VideoTemplateInfoForUpdate::SetContentAdaptStream(const uint64_t& _contentAdaptStream)
+{
+    m_contentAdaptStream = _contentAdaptStream;
+    m_contentAdaptStreamHasBeenSet = true;
+}
+
+bool VideoTemplateInfoForUpdate::ContentAdaptStreamHasBeenSet() const
+{
+    return m_contentAdaptStreamHasBeenSet;
 }
 

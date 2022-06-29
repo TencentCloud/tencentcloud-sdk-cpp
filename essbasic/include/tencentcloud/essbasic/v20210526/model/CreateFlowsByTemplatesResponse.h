@@ -81,6 +81,18 @@ namespace TencentCloud
                      */
                     bool ErrorMessagesHasBeenSet() const;
 
+                    /**
+                     * 获取预览模式下返回的预览文件url数组
+                     * @return PreviewUrls 预览模式下返回的预览文件url数组
+                     */
+                    std::vector<std::string> GetPreviewUrls() const;
+
+                    /**
+                     * 判断参数 PreviewUrls 是否已赋值
+                     * @return PreviewUrls 是否已赋值
+                     */
+                    bool PreviewUrlsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -101,6 +113,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_errorMessages;
                     bool m_errorMessagesHasBeenSet;
+
+                    /**
+                     * 预览模式下返回的预览文件url数组
+                     */
+                    std::vector<std::string> m_previewUrls;
+                    bool m_previewUrlsHasBeenSet;
 
                 };
             }

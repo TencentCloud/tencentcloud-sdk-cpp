@@ -49,14 +49,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取可用区状态。可能的返回值为：0-未上线；1-上线；2-开放；3-停售；4-不展示
-                     * @return Status 可用区状态。可能的返回值为：0-未上线；1-上线；2-开放；3-停售；4-不展示
+                     * 获取可用区状态。可能的返回值为：1-上线；3-停售；4-不展示
+                     * @return Status 可用区状态。可能的返回值为：1-上线；3-停售；4-不展示
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置可用区状态。可能的返回值为：0-未上线；1-上线；2-开放；3-停售；4-不展示
-                     * @param Status 可用区状态。可能的返回值为：0-未上线；1-上线；2-开放；3-停售；4-不展示
+                     * 设置可用区状态。可能的返回值为：1-上线；3-停售；4-不展示
+                     * @param Status 可用区状态。可能的返回值为：1-上线；3-停售；4-不展示
                      */
                     void SetStatus(const int64_t& _status);
 
@@ -340,10 +340,72 @@ namespace TencentCloud
                      */
                     bool RemoteRoZoneHasBeenSet() const;
 
+                    /**
+                     * 获取独享型可用区状态。可能的返回值为：1-上线；3-停售；4-不展示
+                     * @return ExClusterStatus 独享型可用区状态。可能的返回值为：1-上线；3-停售；4-不展示
+                     */
+                    int64_t GetExClusterStatus() const;
+
+                    /**
+                     * 设置独享型可用区状态。可能的返回值为：1-上线；3-停售；4-不展示
+                     * @param ExClusterStatus 独享型可用区状态。可能的返回值为：1-上线；3-停售；4-不展示
+                     */
+                    void SetExClusterStatus(const int64_t& _exClusterStatus);
+
+                    /**
+                     * 判断参数 ExClusterStatus 是否已赋值
+                     * @return ExClusterStatus 是否已赋值
+                     */
+                    bool ExClusterStatusHasBeenSet() const;
+
+                    /**
+                     * 获取独享型可支持的跨可用区只读区信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ExClusterRemoteRoZone 独享型可支持的跨可用区只读区信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> GetExClusterRemoteRoZone() const;
+
+                    /**
+                     * 设置独享型可支持的跨可用区只读区信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ExClusterRemoteRoZone 独享型可支持的跨可用区只读区信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetExClusterRemoteRoZone(const std::vector<std::string>& _exClusterRemoteRoZone);
+
+                    /**
+                     * 判断参数 ExClusterRemoteRoZone 是否已赋值
+                     * @return ExClusterRemoteRoZone 是否已赋值
+                     */
+                    bool ExClusterRemoteRoZoneHasBeenSet() const;
+
+                    /**
+                     * 获取独享型多可用区信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ExClusterZoneConf 独享型多可用区信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ZoneConf GetExClusterZoneConf() const;
+
+                    /**
+                     * 设置独享型多可用区信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ExClusterZoneConf 独享型多可用区信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetExClusterZoneConf(const ZoneConf& _exClusterZoneConf);
+
+                    /**
+                     * 判断参数 ExClusterZoneConf 是否已赋值
+                     * @return ExClusterZoneConf 是否已赋值
+                     */
+                    bool ExClusterZoneConfHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 可用区状态。可能的返回值为：0-未上线；1-上线；2-开放；3-停售；4-不展示
+                     * 可用区状态。可能的返回值为：1-上线；3-停售；4-不展示
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
@@ -438,6 +500,26 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_remoteRoZone;
                     bool m_remoteRoZoneHasBeenSet;
+
+                    /**
+                     * 独享型可用区状态。可能的返回值为：1-上线；3-停售；4-不展示
+                     */
+                    int64_t m_exClusterStatus;
+                    bool m_exClusterStatusHasBeenSet;
+
+                    /**
+                     * 独享型可支持的跨可用区只读区信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_exClusterRemoteRoZone;
+                    bool m_exClusterRemoteRoZoneHasBeenSet;
+
+                    /**
+                     * 独享型多可用区信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ZoneConf m_exClusterZoneConf;
+                    bool m_exClusterZoneConfHasBeenSet;
 
                 };
             }

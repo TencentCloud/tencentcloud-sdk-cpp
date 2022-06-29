@@ -98,14 +98,14 @@ namespace TencentCloud
                     bool SortByHasBeenSet() const;
 
                     /**
-                     * 获取排序方式，desc表示正序，asc表示反序
-                     * @return Sorting 排序方式，desc表示正序，asc表示反序
+                     * 获取排序方式，desc表示正序，asc表示反序，默认asc
+                     * @return Sorting 排序方式，desc表示正序，asc表示反序，默认asc
                      */
                     std::string GetSorting() const;
 
                     /**
-                     * 设置排序方式，desc表示正序，asc表示反序
-                     * @param Sorting 排序方式，desc表示正序，asc表示反序
+                     * 设置排序方式，desc表示正序，asc表示反序，默认asc
+                     * @param Sorting 排序方式，desc表示正序，asc表示反序，默认asc
                      */
                     void SetSorting(const std::string& _sorting);
 
@@ -162,7 +162,7 @@ script-name-keyword - String - （过滤条件）数据表名称,形如：script
                     bool m_sortByHasBeenSet;
 
                     /**
-                     * 排序方式，desc表示正序，asc表示反序
+                     * 排序方式，desc表示正序，asc表示反序，默认asc
                      */
                     std::string m_sorting;
                     bool m_sortingHasBeenSet;

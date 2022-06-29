@@ -26,7 +26,8 @@ AccessControlEventDescription::AccessControlEventDescription() :
     m_remarkHasBeenSet(false),
     m_matchRuleHasBeenSet(false),
     m_ruleNameHasBeenSet(false),
-    m_ruleIdHasBeenSet(false)
+    m_ruleIdHasBeenSet(false),
+    m_operationTimeHasBeenSet(false)
 {
 }
 
@@ -102,6 +103,16 @@ CoreInternalOutcome AccessControlEventDescription::Deserialize(const rapidjson::
         m_ruleIdHasBeenSet = true;
     }
 
+    if (value.HasMember("OperationTime") && !value["OperationTime"].IsNull())
+    {
+        if (!value["OperationTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AccessControlEventDescription.OperationTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_operationTime = string(value["OperationTime"].GetString());
+        m_operationTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -156,6 +167,14 @@ void AccessControlEventDescription::ToJsonObject(rapidjson::Value &value, rapidj
         string key = "RuleId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_ruleId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_operationTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OperationTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_operationTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -255,5 +274,21 @@ void AccessControlEventDescription::SetRuleId(const string& _ruleId)
 bool AccessControlEventDescription::RuleIdHasBeenSet() const
 {
     return m_ruleIdHasBeenSet;
+}
+
+string AccessControlEventDescription::GetOperationTime() const
+{
+    return m_operationTime;
+}
+
+void AccessControlEventDescription::SetOperationTime(const string& _operationTime)
+{
+    m_operationTime = _operationTime;
+    m_operationTimeHasBeenSet = true;
+}
+
+bool AccessControlEventDescription::OperationTimeHasBeenSet() const
+{
+    return m_operationTimeHasBeenSet;
 }
 

@@ -24,6 +24,8 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cme/v20191029/model/StreamConnectInputInterruptInfo.h>
+#include <tencentcloud/cme/v20191029/model/StreamConnectOutputInterruptInfo.h>
 
 
 namespace TencentCloud
@@ -67,20 +69,28 @@ namespace TencentCloud
                     /**
                      * 获取项目状态，取值有：
 <li>Working：云转推推流开始；</li>
-<li>Stopped：云转推推流结束。</li>
+<li>Stopped：云转推推流结束；</li>
+<li>InputInterrupted：云转推输入断流；</li>
+<li>OutputInterrupted：云转推输出断流。</li>
                      * @return Status 项目状态，取值有：
 <li>Working：云转推推流开始；</li>
-<li>Stopped：云转推推流结束。</li>
+<li>Stopped：云转推推流结束；</li>
+<li>InputInterrupted：云转推输入断流；</li>
+<li>OutputInterrupted：云转推输出断流。</li>
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置项目状态，取值有：
 <li>Working：云转推推流开始；</li>
-<li>Stopped：云转推推流结束。</li>
+<li>Stopped：云转推推流结束；</li>
+<li>InputInterrupted：云转推输入断流；</li>
+<li>OutputInterrupted：云转推输出断流。</li>
                      * @param Status 项目状态，取值有：
 <li>Working：云转推推流开始；</li>
-<li>Stopped：云转推推流结束。</li>
+<li>Stopped：云转推推流结束；</li>
+<li>InputInterrupted：云转推输入断流；</li>
+<li>OutputInterrupted：云转推输出断流。</li>
                      */
                     void SetStatus(const std::string& _status);
 
@@ -89,6 +99,50 @@ namespace TencentCloud
                      * @return Status 是否已赋值
                      */
                     bool StatusHasBeenSet() const;
+
+                    /**
+                     * 获取云转推输入断流信息，仅当 Status 取值 InputInterrupted 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InputInterruptInfo 云转推输入断流信息，仅当 Status 取值 InputInterrupted 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    StreamConnectInputInterruptInfo GetInputInterruptInfo() const;
+
+                    /**
+                     * 设置云转推输入断流信息，仅当 Status 取值 InputInterrupted 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param InputInterruptInfo 云转推输入断流信息，仅当 Status 取值 InputInterrupted 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetInputInterruptInfo(const StreamConnectInputInterruptInfo& _inputInterruptInfo);
+
+                    /**
+                     * 判断参数 InputInterruptInfo 是否已赋值
+                     * @return InputInterruptInfo 是否已赋值
+                     */
+                    bool InputInterruptInfoHasBeenSet() const;
+
+                    /**
+                     * 获取云转推输出断流信息，仅当 Status 取值 OutputInterrupted 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OutputInterruptInfo 云转推输出断流信息，仅当 Status 取值 OutputInterrupted 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    StreamConnectOutputInterruptInfo GetOutputInterruptInfo() const;
+
+                    /**
+                     * 设置云转推输出断流信息，仅当 Status 取值 OutputInterrupted 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param OutputInterruptInfo 云转推输出断流信息，仅当 Status 取值 OutputInterrupted 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetOutputInterruptInfo(const StreamConnectOutputInterruptInfo& _outputInterruptInfo);
+
+                    /**
+                     * 判断参数 OutputInterruptInfo 是否已赋值
+                     * @return OutputInterruptInfo 是否已赋值
+                     */
+                    bool OutputInterruptInfoHasBeenSet() const;
 
                 private:
 
@@ -101,10 +155,26 @@ namespace TencentCloud
                     /**
                      * 项目状态，取值有：
 <li>Working：云转推推流开始；</li>
-<li>Stopped：云转推推流结束。</li>
+<li>Stopped：云转推推流结束；</li>
+<li>InputInterrupted：云转推输入断流；</li>
+<li>OutputInterrupted：云转推输出断流。</li>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * 云转推输入断流信息，仅当 Status 取值 InputInterrupted 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    StreamConnectInputInterruptInfo m_inputInterruptInfo;
+                    bool m_inputInterruptInfoHasBeenSet;
+
+                    /**
+                     * 云转推输出断流信息，仅当 Status 取值 OutputInterrupted 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    StreamConnectOutputInterruptInfo m_outputInterruptInfo;
+                    bool m_outputInterruptInfoHasBeenSet;
 
                 };
             }

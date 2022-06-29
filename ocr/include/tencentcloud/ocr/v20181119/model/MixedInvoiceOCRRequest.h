@@ -119,6 +119,8 @@ namespace TencentCloud
 11：增值税发票（卷票 ）
 12：购车发票
 13：过路过桥费发票
+15：非税发票
+16：全电发票
                      * @return Types 需要识别的票据类型列表，为空或不填表示识别全部类型。
 0：出租车发票
 1：定额发票
@@ -131,6 +133,8 @@ namespace TencentCloud
 11：增值税发票（卷票 ）
 12：购车发票
 13：过路过桥费发票
+15：非税发票
+16：全电发票
                      */
                     std::vector<int64_t> GetTypes() const;
 
@@ -147,6 +151,8 @@ namespace TencentCloud
 11：增值税发票（卷票 ）
 12：购车发票
 13：过路过桥费发票
+15：非税发票
+16：全电发票
                      * @param Types 需要识别的票据类型列表，为空或不填表示识别全部类型。
 0：出租车发票
 1：定额发票
@@ -159,6 +165,8 @@ namespace TencentCloud
 11：增值税发票（卷票 ）
 12：购车发票
 13：过路过桥费发票
+15：非税发票
+16：全电发票
                      */
                     void SetTypes(const std::vector<int64_t>& _types);
 
@@ -167,6 +175,32 @@ namespace TencentCloud
                      * @return Types 是否已赋值
                      */
                     bool TypesHasBeenSet() const;
+
+                    /**
+                     * 获取是否识别其他类型发票，默认为Yes
+Yes：识别其他类型发票
+No：不识别其他类型发票
+                     * @return ReturnOther 是否识别其他类型发票，默认为Yes
+Yes：识别其他类型发票
+No：不识别其他类型发票
+                     */
+                    std::string GetReturnOther() const;
+
+                    /**
+                     * 设置是否识别其他类型发票，默认为Yes
+Yes：识别其他类型发票
+No：不识别其他类型发票
+                     * @param ReturnOther 是否识别其他类型发票，默认为Yes
+Yes：识别其他类型发票
+No：不识别其他类型发票
+                     */
+                    void SetReturnOther(const std::string& _returnOther);
+
+                    /**
+                     * 判断参数 ReturnOther 是否已赋值
+                     * @return ReturnOther 是否已赋值
+                     */
+                    bool ReturnOtherHasBeenSet() const;
 
                 private:
 
@@ -202,9 +236,19 @@ namespace TencentCloud
 11：增值税发票（卷票 ）
 12：购车发票
 13：过路过桥费发票
+15：非税发票
+16：全电发票
                      */
                     std::vector<int64_t> m_types;
                     bool m_typesHasBeenSet;
+
+                    /**
+                     * 是否识别其他类型发票，默认为Yes
+Yes：识别其他类型发票
+No：不识别其他类型发票
+                     */
+                    std::string m_returnOther;
+                    bool m_returnOtherHasBeenSet;
 
                 };
             }

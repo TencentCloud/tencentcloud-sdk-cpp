@@ -29,7 +29,8 @@ Column::Column() :
     m_nullableHasBeenSet(false),
     m_positionHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_modifiedTimeHasBeenSet(false)
+    m_modifiedTimeHasBeenSet(false),
+    m_isPartitionHasBeenSet(false)
 {
 }
 
@@ -128,6 +129,16 @@ CoreInternalOutcome Column::Deserialize(const rapidjson::Value &value)
         m_modifiedTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("IsPartition") && !value["IsPartition"].IsNull())
+    {
+        if (!value["IsPartition"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `Column.IsPartition` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isPartition = value["IsPartition"].GetBool();
+        m_isPartitionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -205,6 +216,14 @@ void Column::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocato
         string key = "ModifiedTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_modifiedTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isPartitionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsPartition";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isPartition, allocator);
     }
 
 }
@@ -352,5 +371,21 @@ void Column::SetModifiedTime(const string& _modifiedTime)
 bool Column::ModifiedTimeHasBeenSet() const
 {
     return m_modifiedTimeHasBeenSet;
+}
+
+bool Column::GetIsPartition() const
+{
+    return m_isPartition;
+}
+
+void Column::SetIsPartition(const bool& _isPartition)
+{
+    m_isPartition = _isPartition;
+    m_isPartitionHasBeenSet = true;
+}
+
+bool Column::IsPartitionHasBeenSet() const
+{
+    return m_isPartitionHasBeenSet;
 }
 

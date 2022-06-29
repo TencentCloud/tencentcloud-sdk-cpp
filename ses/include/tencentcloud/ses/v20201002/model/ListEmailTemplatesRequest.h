@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取获取模版数据量，用于分页
-                     * @return Limit 获取模版数据量，用于分页
+                     * 获取获取模板数据量，用于分页
+                     * @return Limit 获取模板数据量，用于分页
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置获取模版数据量，用于分页
-                     * @param Limit 获取模版数据量，用于分页
+                     * 设置获取模板数据量，用于分页
+                     * @param Limit 获取模板数据量，用于分页
                      */
                     void SetLimit(const uint64_t& _limit);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取获取模版偏移值，用于分页
-                     * @return Offset 获取模版偏移值，用于分页
+                     * 获取获取模板偏移值，用于分页
+                     * @return Offset 获取模板偏移值，用于分页
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置获取模版偏移值，用于分页
-                     * @param Offset 获取模版偏移值，用于分页
+                     * 设置获取模板偏移值，用于分页
+                     * @param Offset 获取模板偏移值，用于分页
                      */
                     void SetOffset(const uint64_t& _offset);
 
@@ -81,13 +81,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 获取模版数据量，用于分页
+                     * 获取模板数据量，用于分页
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 获取模版偏移值，用于分页
+                     * 获取模板偏移值，用于分页
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;

@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool EventTypeHasBeenSet() const;
 
                     /**
-                     * 获取命中规则
-                     * @return MatchRuleName 命中规则
+                     * 获取命中规则名称，PROXY_TOOL：代理软件，TRANSFER_CONTROL：横向渗透，ATTACK_CMD：恶意命令，REVERSE_SHELL：反弹shell，FILELESS：无文件程序执行，RISK_CMD：高危命令，ABNORMAL_CHILD_PROC：敏感服务异常子进程启动，USER_DEFINED_RULE：用户自定义规则
+                     * @return MatchRuleName 命中规则名称，PROXY_TOOL：代理软件，TRANSFER_CONTROL：横向渗透，ATTACK_CMD：恶意命令，REVERSE_SHELL：反弹shell，FILELESS：无文件程序执行，RISK_CMD：高危命令，ABNORMAL_CHILD_PROC：敏感服务异常子进程启动，USER_DEFINED_RULE：用户自定义规则
                      */
                     std::string GetMatchRuleName() const;
 
                     /**
-                     * 设置命中规则
-                     * @param MatchRuleName 命中规则
+                     * 设置命中规则名称，PROXY_TOOL：代理软件，TRANSFER_CONTROL：横向渗透，ATTACK_CMD：恶意命令，REVERSE_SHELL：反弹shell，FILELESS：无文件程序执行，RISK_CMD：高危命令，ABNORMAL_CHILD_PROC：敏感服务异常子进程启动，USER_DEFINED_RULE：用户自定义规则
+                     * @param MatchRuleName 命中规则名称，PROXY_TOOL：代理软件，TRANSFER_CONTROL：横向渗透，ATTACK_CMD：恶意命令，REVERSE_SHELL：反弹shell，FILELESS：无文件程序执行，RISK_CMD：高危命令，ABNORMAL_CHILD_PROC：敏感服务异常子进程启动，USER_DEFINED_RULE：用户自定义规则
                      */
                     void SetMatchRuleName(const std::string& _matchRuleName);
 
@@ -442,6 +442,160 @@ RULE_MODE_HOLDUP 拦截
                      */
                     bool RuleIdHasBeenSet() const;
 
+                    /**
+                     * 获取命中策略名称：SYSTEM_DEFINED_RULE （系统策略）或  用户自定义的策略名字
+                     * @return MatchGroupName 命中策略名称：SYSTEM_DEFINED_RULE （系统策略）或  用户自定义的策略名字
+                     */
+                    std::string GetMatchGroupName() const;
+
+                    /**
+                     * 设置命中策略名称：SYSTEM_DEFINED_RULE （系统策略）或  用户自定义的策略名字
+                     * @param MatchGroupName 命中策略名称：SYSTEM_DEFINED_RULE （系统策略）或  用户自定义的策略名字
+                     */
+                    void SetMatchGroupName(const std::string& _matchGroupName);
+
+                    /**
+                     * 判断参数 MatchGroupName 是否已赋值
+                     * @return MatchGroupName 是否已赋值
+                     */
+                    bool MatchGroupNameHasBeenSet() const;
+
+                    /**
+                     * 获取命中规则等级，HIGH：高危，MIDDLE：中危，LOW：低危。
+                     * @return MatchRuleLevel 命中规则等级，HIGH：高危，MIDDLE：中危，LOW：低危。
+                     */
+                    std::string GetMatchRuleLevel() const;
+
+                    /**
+                     * 设置命中规则等级，HIGH：高危，MIDDLE：中危，LOW：低危。
+                     * @param MatchRuleLevel 命中规则等级，HIGH：高危，MIDDLE：中危，LOW：低危。
+                     */
+                    void SetMatchRuleLevel(const std::string& _matchRuleLevel);
+
+                    /**
+                     * 判断参数 MatchRuleLevel 是否已赋值
+                     * @return MatchRuleLevel 是否已赋值
+                     */
+                    bool MatchRuleLevelHasBeenSet() const;
+
+                    /**
+                     * 获取网络状态
+未隔离  	NORMAL
+已隔离		ISOLATED
+隔离中		ISOLATING
+隔离失败	ISOLATE_FAILED
+解除隔离中  RESTORING
+解除隔离失败 RESTORE_FAILED
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ContainerNetStatus 网络状态
+未隔离  	NORMAL
+已隔离		ISOLATED
+隔离中		ISOLATING
+隔离失败	ISOLATE_FAILED
+解除隔离中  RESTORING
+解除隔离失败 RESTORE_FAILED
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetContainerNetStatus() const;
+
+                    /**
+                     * 设置网络状态
+未隔离  	NORMAL
+已隔离		ISOLATED
+隔离中		ISOLATING
+隔离失败	ISOLATE_FAILED
+解除隔离中  RESTORING
+解除隔离失败 RESTORE_FAILED
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ContainerNetStatus 网络状态
+未隔离  	NORMAL
+已隔离		ISOLATED
+隔离中		ISOLATING
+隔离失败	ISOLATE_FAILED
+解除隔离中  RESTORING
+解除隔离失败 RESTORE_FAILED
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetContainerNetStatus(const std::string& _containerNetStatus);
+
+                    /**
+                     * 判断参数 ContainerNetStatus 是否已赋值
+                     * @return ContainerNetStatus 是否已赋值
+                     */
+                    bool ContainerNetStatusHasBeenSet() const;
+
+                    /**
+                     * 获取容器子状态
+"AGENT_OFFLINE"       //Agent离线
+"NODE_DESTROYED"      //节点已销毁
+"CONTAINER_EXITED"    //容器已退出
+"CONTAINER_DESTROYED" //容器已销毁
+"SHARED_HOST"         // 容器与主机共享网络
+"RESOURCE_LIMIT"      //隔离操作资源超限
+"UNKNOW"              // 原因未知
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ContainerNetSubStatus 容器子状态
+"AGENT_OFFLINE"       //Agent离线
+"NODE_DESTROYED"      //节点已销毁
+"CONTAINER_EXITED"    //容器已退出
+"CONTAINER_DESTROYED" //容器已销毁
+"SHARED_HOST"         // 容器与主机共享网络
+"RESOURCE_LIMIT"      //隔离操作资源超限
+"UNKNOW"              // 原因未知
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetContainerNetSubStatus() const;
+
+                    /**
+                     * 设置容器子状态
+"AGENT_OFFLINE"       //Agent离线
+"NODE_DESTROYED"      //节点已销毁
+"CONTAINER_EXITED"    //容器已退出
+"CONTAINER_DESTROYED" //容器已销毁
+"SHARED_HOST"         // 容器与主机共享网络
+"RESOURCE_LIMIT"      //隔离操作资源超限
+"UNKNOW"              // 原因未知
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ContainerNetSubStatus 容器子状态
+"AGENT_OFFLINE"       //Agent离线
+"NODE_DESTROYED"      //节点已销毁
+"CONTAINER_EXITED"    //容器已退出
+"CONTAINER_DESTROYED" //容器已销毁
+"SHARED_HOST"         // 容器与主机共享网络
+"RESOURCE_LIMIT"      //隔离操作资源超限
+"UNKNOW"              // 原因未知
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetContainerNetSubStatus(const std::string& _containerNetSubStatus);
+
+                    /**
+                     * 判断参数 ContainerNetSubStatus 是否已赋值
+                     * @return ContainerNetSubStatus 是否已赋值
+                     */
+                    bool ContainerNetSubStatusHasBeenSet() const;
+
+                    /**
+                     * 获取容器隔离操作来源
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ContainerIsolateOperationSrc 容器隔离操作来源
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetContainerIsolateOperationSrc() const;
+
+                    /**
+                     * 设置容器隔离操作来源
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ContainerIsolateOperationSrc 容器隔离操作来源
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetContainerIsolateOperationSrc(const std::string& _containerIsolateOperationSrc);
+
+                    /**
+                     * 判断参数 ContainerIsolateOperationSrc 是否已赋值
+                     * @return ContainerIsolateOperationSrc 是否已赋值
+                     */
+                    bool ContainerIsolateOperationSrcHasBeenSet() const;
+
                 private:
 
                     /**
@@ -457,7 +611,7 @@ RULE_MODE_HOLDUP 拦截
                     bool m_eventTypeHasBeenSet;
 
                     /**
-                     * 命中规则
+                     * 命中规则名称，PROXY_TOOL：代理软件，TRANSFER_CONTROL：横向渗透，ATTACK_CMD：恶意命令，REVERSE_SHELL：反弹shell，FILELESS：无文件程序执行，RISK_CMD：高危命令，ABNORMAL_CHILD_PROC：敏感服务异常子进程启动，USER_DEFINED_RULE：用户自定义规则
                      */
                     std::string m_matchRuleName;
                     bool m_matchRuleNameHasBeenSet;
@@ -572,6 +726,52 @@ RULE_MODE_HOLDUP 拦截
                      */
                     std::string m_ruleId;
                     bool m_ruleIdHasBeenSet;
+
+                    /**
+                     * 命中策略名称：SYSTEM_DEFINED_RULE （系统策略）或  用户自定义的策略名字
+                     */
+                    std::string m_matchGroupName;
+                    bool m_matchGroupNameHasBeenSet;
+
+                    /**
+                     * 命中规则等级，HIGH：高危，MIDDLE：中危，LOW：低危。
+                     */
+                    std::string m_matchRuleLevel;
+                    bool m_matchRuleLevelHasBeenSet;
+
+                    /**
+                     * 网络状态
+未隔离  	NORMAL
+已隔离		ISOLATED
+隔离中		ISOLATING
+隔离失败	ISOLATE_FAILED
+解除隔离中  RESTORING
+解除隔离失败 RESTORE_FAILED
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_containerNetStatus;
+                    bool m_containerNetStatusHasBeenSet;
+
+                    /**
+                     * 容器子状态
+"AGENT_OFFLINE"       //Agent离线
+"NODE_DESTROYED"      //节点已销毁
+"CONTAINER_EXITED"    //容器已退出
+"CONTAINER_DESTROYED" //容器已销毁
+"SHARED_HOST"         // 容器与主机共享网络
+"RESOURCE_LIMIT"      //隔离操作资源超限
+"UNKNOW"              // 原因未知
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_containerNetSubStatus;
+                    bool m_containerNetSubStatusHasBeenSet;
+
+                    /**
+                     * 容器隔离操作来源
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_containerIsolateOperationSrc;
+                    bool m_containerIsolateOperationSrcHasBeenSet;
 
                 };
             }

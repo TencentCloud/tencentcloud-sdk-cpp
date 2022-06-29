@@ -36,7 +36,8 @@ SellConfig::SellConfig() :
     m_statusHasBeenSet(false),
     m_tagHasBeenSet(false),
     m_deviceTypeHasBeenSet(false),
-    m_deviceTypeNameHasBeenSet(false)
+    m_deviceTypeNameHasBeenSet(false),
+    m_engineTypeHasBeenSet(false)
 {
 }
 
@@ -205,6 +206,16 @@ CoreInternalOutcome SellConfig::Deserialize(const rapidjson::Value &value)
         m_deviceTypeNameHasBeenSet = true;
     }
 
+    if (value.HasMember("EngineType") && !value["EngineType"].IsNull())
+    {
+        if (!value["EngineType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SellConfig.EngineType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_engineType = string(value["EngineType"].GetString());
+        m_engineTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -338,6 +349,14 @@ void SellConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "DeviceTypeName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_deviceTypeName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_engineTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EngineType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_engineType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -597,5 +616,21 @@ void SellConfig::SetDeviceTypeName(const string& _deviceTypeName)
 bool SellConfig::DeviceTypeNameHasBeenSet() const
 {
     return m_deviceTypeNameHasBeenSet;
+}
+
+string SellConfig::GetEngineType() const
+{
+    return m_engineType;
+}
+
+void SellConfig::SetEngineType(const string& _engineType)
+{
+    m_engineType = _engineType;
+    m_engineTypeHasBeenSet = true;
+}
+
+bool SellConfig::EngineTypeHasBeenSet() const
+{
+    return m_engineTypeHasBeenSet;
 }
 

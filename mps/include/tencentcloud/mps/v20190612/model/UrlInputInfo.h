@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 视频处理 URL 对象信息。
+                * 媒体处理 URL 对象信息。
                 */
                 class UrlInputInfo : public AbstractModel
                 {

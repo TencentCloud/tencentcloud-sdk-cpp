@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool FileInfosHasBeenSet() const;
 
                     /**
-                     * 获取视频处理输出文件的目标存储。
-                     * @return OutputStorage 视频处理输出文件的目标存储。
+                     * 获取媒体处理输出文件的目标存储。
+                     * @return OutputStorage 媒体处理输出文件的目标存储。
                      */
                     TaskOutputStorage GetOutputStorage() const;
 
                     /**
-                     * 设置视频处理输出文件的目标存储。
-                     * @param OutputStorage 视频处理输出文件的目标存储。
+                     * 设置媒体处理输出文件的目标存储。
+                     * @param OutputStorage 媒体处理输出文件的目标存储。
                      */
                     void SetOutputStorage(const TaskOutputStorage& _outputStorage);
 
@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool OutputStorageHasBeenSet() const;
 
                     /**
-                     * 获取视频处理输出文件的目标路径。
-                     * @return OutputObjectPath 视频处理输出文件的目标路径。
+                     * 获取媒体处理输出文件的目标路径。
+                     * @return OutputObjectPath 媒体处理输出文件的目标路径。
                      */
                     std::string GetOutputObjectPath() const;
 
                     /**
-                     * 设置视频处理输出文件的目标路径。
-                     * @param OutputObjectPath 视频处理输出文件的目标路径。
+                     * 设置媒体处理输出文件的目标路径。
+                     * @param OutputObjectPath 媒体处理输出文件的目标路径。
                      */
                     void SetOutputObjectPath(const std::string& _outputObjectPath);
 
@@ -199,13 +199,13 @@ namespace TencentCloud
                     bool m_fileInfosHasBeenSet;
 
                     /**
-                     * 视频处理输出文件的目标存储。
+                     * 媒体处理输出文件的目标存储。
                      */
                     TaskOutputStorage m_outputStorage;
                     bool m_outputStorageHasBeenSet;
 
                     /**
-                     * 视频处理输出文件的目标路径。
+                     * 媒体处理输出文件的目标路径。
                      */
                     std::string m_outputObjectPath;
                     bool m_outputObjectPathHasBeenSet;

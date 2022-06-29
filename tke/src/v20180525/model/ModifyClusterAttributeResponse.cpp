@@ -26,7 +26,9 @@ using namespace std;
 ModifyClusterAttributeResponse::ModifyClusterAttributeResponse() :
     m_projectIdHasBeenSet(false),
     m_clusterNameHasBeenSet(false),
-    m_clusterDescHasBeenSet(false)
+    m_clusterDescHasBeenSet(false),
+    m_clusterLevelHasBeenSet(false),
+    m_autoUpgradeClusterLevelHasBeenSet(false)
 {
 }
 
@@ -94,6 +96,33 @@ CoreInternalOutcome ModifyClusterAttributeResponse::Deserialize(const string &pa
         m_clusterDescHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ClusterLevel") && !rsp["ClusterLevel"].IsNull())
+    {
+        if (!rsp["ClusterLevel"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterLevel` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clusterLevel = string(rsp["ClusterLevel"].GetString());
+        m_clusterLevelHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("AutoUpgradeClusterLevel") && !rsp["AutoUpgradeClusterLevel"].IsNull())
+    {
+        if (!rsp["AutoUpgradeClusterLevel"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AutoUpgradeClusterLevel` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_autoUpgradeClusterLevel.Deserialize(rsp["AutoUpgradeClusterLevel"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_autoUpgradeClusterLevelHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -126,6 +155,23 @@ string ModifyClusterAttributeResponse::ToJsonString() const
         string key = "ClusterDesc";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_clusterDesc.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clusterLevelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterLevel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clusterLevel.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_autoUpgradeClusterLevelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoUpgradeClusterLevel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_autoUpgradeClusterLevel.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -168,6 +214,26 @@ string ModifyClusterAttributeResponse::GetClusterDesc() const
 bool ModifyClusterAttributeResponse::ClusterDescHasBeenSet() const
 {
     return m_clusterDescHasBeenSet;
+}
+
+string ModifyClusterAttributeResponse::GetClusterLevel() const
+{
+    return m_clusterLevel;
+}
+
+bool ModifyClusterAttributeResponse::ClusterLevelHasBeenSet() const
+{
+    return m_clusterLevelHasBeenSet;
+}
+
+AutoUpgradeClusterLevel ModifyClusterAttributeResponse::GetAutoUpgradeClusterLevel() const
+{
+    return m_autoUpgradeClusterLevel;
+}
+
+bool ModifyClusterAttributeResponse::AutoUpgradeClusterLevelHasBeenSet() const
+{
+    return m_autoUpgradeClusterLevelHasBeenSet;
 }
 
 

@@ -79,6 +79,30 @@ namespace TencentCloud
                      */
                     bool TimePeriodHasBeenSet() const;
 
+                    /**
+                     * 获取全量备份文件保存天数
+                     * @return BackupStorageDays 全量备份文件保存天数
+                     */
+                    int64_t GetBackupStorageDays() const;
+
+                    /**
+                     * 判断参数 BackupStorageDays 是否已赋值
+                     * @return BackupStorageDays 是否已赋值
+                     */
+                    bool BackupStorageDaysHasBeenSet() const;
+
+                    /**
+                     * 获取tendis binlog备份文件保存天数
+                     * @return BinlogStorageDays tendis binlog备份文件保存天数
+                     */
+                    int64_t GetBinlogStorageDays() const;
+
+                    /**
+                     * 判断参数 BinlogStorageDays 是否已赋值
+                     * @return BinlogStorageDays 是否已赋值
+                     */
+                    bool BinlogStorageDaysHasBeenSet() const;
+
                 private:
 
                     /**
@@ -98,6 +122,18 @@ namespace TencentCloud
                      */
                     std::string m_timePeriod;
                     bool m_timePeriodHasBeenSet;
+
+                    /**
+                     * 全量备份文件保存天数
+                     */
+                    int64_t m_backupStorageDays;
+                    bool m_backupStorageDaysHasBeenSet;
+
+                    /**
+                     * tendis binlog备份文件保存天数
+                     */
+                    int64_t m_binlogStorageDays;
+                    bool m_binlogStorageDaysHasBeenSet;
 
                 };
             }

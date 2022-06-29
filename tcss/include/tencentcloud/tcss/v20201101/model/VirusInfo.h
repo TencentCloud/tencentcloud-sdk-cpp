@@ -342,6 +342,11 @@ FILE_ABNORMAL_DEAL_RECOVER:恢复文件时，文件异常
 BACKUP_FILE_NOT_FOUND:备份文件不存在
 CONTAINER_NOT_FOUND_DEAL_ISOLATE:隔离时，容器不存在
 CONTAINER_NOT_FOUND_DEAL_RECOVER:恢复时，容器不存在
+TIMEOUT: 超时
+TOO_MANY: 任务过多
+OFFLINE: 离线
+INTERNAL: 服务内部错误
+VALIDATION: 参数非法
                      * @return SubStatus 失败子状态:
 FILE_NOT_FOUND:文件不存在
 FILE_ABNORMAL:文件异常
@@ -349,6 +354,11 @@ FILE_ABNORMAL_DEAL_RECOVER:恢复文件时，文件异常
 BACKUP_FILE_NOT_FOUND:备份文件不存在
 CONTAINER_NOT_FOUND_DEAL_ISOLATE:隔离时，容器不存在
 CONTAINER_NOT_FOUND_DEAL_RECOVER:恢复时，容器不存在
+TIMEOUT: 超时
+TOO_MANY: 任务过多
+OFFLINE: 离线
+INTERNAL: 服务内部错误
+VALIDATION: 参数非法
                      */
                     std::string GetSubStatus() const;
 
@@ -360,6 +370,11 @@ FILE_ABNORMAL_DEAL_RECOVER:恢复文件时，文件异常
 BACKUP_FILE_NOT_FOUND:备份文件不存在
 CONTAINER_NOT_FOUND_DEAL_ISOLATE:隔离时，容器不存在
 CONTAINER_NOT_FOUND_DEAL_RECOVER:恢复时，容器不存在
+TIMEOUT: 超时
+TOO_MANY: 任务过多
+OFFLINE: 离线
+INTERNAL: 服务内部错误
+VALIDATION: 参数非法
                      * @param SubStatus 失败子状态:
 FILE_NOT_FOUND:文件不存在
 FILE_ABNORMAL:文件异常
@@ -367,6 +382,11 @@ FILE_ABNORMAL_DEAL_RECOVER:恢复文件时，文件异常
 BACKUP_FILE_NOT_FOUND:备份文件不存在
 CONTAINER_NOT_FOUND_DEAL_ISOLATE:隔离时，容器不存在
 CONTAINER_NOT_FOUND_DEAL_RECOVER:恢复时，容器不存在
+TIMEOUT: 超时
+TOO_MANY: 任务过多
+OFFLINE: 离线
+INTERNAL: 服务内部错误
+VALIDATION: 参数非法
                      */
                     void SetSubStatus(const std::string& _subStatus);
 
@@ -375,6 +395,134 @@ CONTAINER_NOT_FOUND_DEAL_RECOVER:恢复时，容器不存在
                      * @return SubStatus 是否已赋值
                      */
                     bool SubStatusHasBeenSet() const;
+
+                    /**
+                     * 获取网络状态
+未隔离  	NORMAL
+已隔离		ISOLATED
+隔离中		ISOLATING
+隔离失败	ISOLATE_FAILED
+解除隔离中  RESTORING
+解除隔离失败 RESTORE_FAILED
+                     * @return ContainerNetStatus 网络状态
+未隔离  	NORMAL
+已隔离		ISOLATED
+隔离中		ISOLATING
+隔离失败	ISOLATE_FAILED
+解除隔离中  RESTORING
+解除隔离失败 RESTORE_FAILED
+                     */
+                    std::string GetContainerNetStatus() const;
+
+                    /**
+                     * 设置网络状态
+未隔离  	NORMAL
+已隔离		ISOLATED
+隔离中		ISOLATING
+隔离失败	ISOLATE_FAILED
+解除隔离中  RESTORING
+解除隔离失败 RESTORE_FAILED
+                     * @param ContainerNetStatus 网络状态
+未隔离  	NORMAL
+已隔离		ISOLATED
+隔离中		ISOLATING
+隔离失败	ISOLATE_FAILED
+解除隔离中  RESTORING
+解除隔离失败 RESTORE_FAILED
+                     */
+                    void SetContainerNetStatus(const std::string& _containerNetStatus);
+
+                    /**
+                     * 判断参数 ContainerNetStatus 是否已赋值
+                     * @return ContainerNetStatus 是否已赋值
+                     */
+                    bool ContainerNetStatusHasBeenSet() const;
+
+                    /**
+                     * 获取容器子状态
+"AGENT_OFFLINE"       //Agent离线
+	"NODE_DESTROYED"      //节点已销毁
+	"CONTAINER_EXITED"    //容器已退出
+	"CONTAINER_DESTROYED" //容器已销毁
+	"SHARED_HOST"         // 容器与主机共享网络
+	"RESOURCE_LIMIT"      //隔离操作资源超限
+	"UNKNOW"              // 原因未知
+                     * @return ContainerNetSubStatus 容器子状态
+"AGENT_OFFLINE"       //Agent离线
+	"NODE_DESTROYED"      //节点已销毁
+	"CONTAINER_EXITED"    //容器已退出
+	"CONTAINER_DESTROYED" //容器已销毁
+	"SHARED_HOST"         // 容器与主机共享网络
+	"RESOURCE_LIMIT"      //隔离操作资源超限
+	"UNKNOW"              // 原因未知
+                     */
+                    std::string GetContainerNetSubStatus() const;
+
+                    /**
+                     * 设置容器子状态
+"AGENT_OFFLINE"       //Agent离线
+	"NODE_DESTROYED"      //节点已销毁
+	"CONTAINER_EXITED"    //容器已退出
+	"CONTAINER_DESTROYED" //容器已销毁
+	"SHARED_HOST"         // 容器与主机共享网络
+	"RESOURCE_LIMIT"      //隔离操作资源超限
+	"UNKNOW"              // 原因未知
+                     * @param ContainerNetSubStatus 容器子状态
+"AGENT_OFFLINE"       //Agent离线
+	"NODE_DESTROYED"      //节点已销毁
+	"CONTAINER_EXITED"    //容器已退出
+	"CONTAINER_DESTROYED" //容器已销毁
+	"SHARED_HOST"         // 容器与主机共享网络
+	"RESOURCE_LIMIT"      //隔离操作资源超限
+	"UNKNOW"              // 原因未知
+                     */
+                    void SetContainerNetSubStatus(const std::string& _containerNetSubStatus);
+
+                    /**
+                     * 判断参数 ContainerNetSubStatus 是否已赋值
+                     * @return ContainerNetSubStatus 是否已赋值
+                     */
+                    bool ContainerNetSubStatusHasBeenSet() const;
+
+                    /**
+                     * 获取容器隔离操作来源
+                     * @return ContainerIsolateOperationSrc 容器隔离操作来源
+                     */
+                    std::string GetContainerIsolateOperationSrc() const;
+
+                    /**
+                     * 设置容器隔离操作来源
+                     * @param ContainerIsolateOperationSrc 容器隔离操作来源
+                     */
+                    void SetContainerIsolateOperationSrc(const std::string& _containerIsolateOperationSrc);
+
+                    /**
+                     * 判断参数 ContainerIsolateOperationSrc 是否已赋值
+                     * @return ContainerIsolateOperationSrc 是否已赋值
+                     */
+                    bool ContainerIsolateOperationSrcHasBeenSet() const;
+
+                    /**
+                     * 获取md5值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MD5 md5值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetMD5() const;
+
+                    /**
+                     * 设置md5值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param MD5 md5值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMD5(const std::string& _mD5);
+
+                    /**
+                     * 判断参数 MD5 是否已赋值
+                     * @return MD5 是否已赋值
+                     */
+                    bool MD5HasBeenSet() const;
 
                 private:
 
@@ -479,9 +627,52 @@ FILE_ABNORMAL_DEAL_RECOVER:恢复文件时，文件异常
 BACKUP_FILE_NOT_FOUND:备份文件不存在
 CONTAINER_NOT_FOUND_DEAL_ISOLATE:隔离时，容器不存在
 CONTAINER_NOT_FOUND_DEAL_RECOVER:恢复时，容器不存在
+TIMEOUT: 超时
+TOO_MANY: 任务过多
+OFFLINE: 离线
+INTERNAL: 服务内部错误
+VALIDATION: 参数非法
                      */
                     std::string m_subStatus;
                     bool m_subStatusHasBeenSet;
+
+                    /**
+                     * 网络状态
+未隔离  	NORMAL
+已隔离		ISOLATED
+隔离中		ISOLATING
+隔离失败	ISOLATE_FAILED
+解除隔离中  RESTORING
+解除隔离失败 RESTORE_FAILED
+                     */
+                    std::string m_containerNetStatus;
+                    bool m_containerNetStatusHasBeenSet;
+
+                    /**
+                     * 容器子状态
+"AGENT_OFFLINE"       //Agent离线
+	"NODE_DESTROYED"      //节点已销毁
+	"CONTAINER_EXITED"    //容器已退出
+	"CONTAINER_DESTROYED" //容器已销毁
+	"SHARED_HOST"         // 容器与主机共享网络
+	"RESOURCE_LIMIT"      //隔离操作资源超限
+	"UNKNOW"              // 原因未知
+                     */
+                    std::string m_containerNetSubStatus;
+                    bool m_containerNetSubStatusHasBeenSet;
+
+                    /**
+                     * 容器隔离操作来源
+                     */
+                    std::string m_containerIsolateOperationSrc;
+                    bool m_containerIsolateOperationSrcHasBeenSet;
+
+                    /**
+                     * md5值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_mD5;
+                    bool m_mD5HasBeenSet;
 
                 };
             }

@@ -31,7 +31,8 @@ AMQPQueueDetail::AMQPQueueDetail() :
     m_accumulativeMsgNumHasBeenSet(false),
     m_autoDeleteHasBeenSet(false),
     m_deadLetterExchangeHasBeenSet(false),
-    m_deadLetterRoutingKeyHasBeenSet(false)
+    m_deadLetterRoutingKeyHasBeenSet(false),
+    m_topicNameHasBeenSet(false)
 {
 }
 
@@ -150,6 +151,16 @@ CoreInternalOutcome AMQPQueueDetail::Deserialize(const rapidjson::Value &value)
         m_deadLetterRoutingKeyHasBeenSet = true;
     }
 
+    if (value.HasMember("TopicName") && !value["TopicName"].IsNull())
+    {
+        if (!value["TopicName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AMQPQueueDetail.TopicName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_topicName = string(value["TopicName"].GetString());
+        m_topicNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -243,6 +254,14 @@ void AMQPQueueDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "DeadLetterRoutingKey";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_deadLetterRoutingKey.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_topicNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TopicName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_topicName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -422,5 +441,21 @@ void AMQPQueueDetail::SetDeadLetterRoutingKey(const string& _deadLetterRoutingKe
 bool AMQPQueueDetail::DeadLetterRoutingKeyHasBeenSet() const
 {
     return m_deadLetterRoutingKeyHasBeenSet;
+}
+
+string AMQPQueueDetail::GetTopicName() const
+{
+    return m_topicName;
+}
+
+void AMQPQueueDetail::SetTopicName(const string& _topicName)
+{
+    m_topicName = _topicName;
+    m_topicNameHasBeenSet = true;
+}
+
+bool AMQPQueueDetail::TopicNameHasBeenSet() const
+{
+    return m_topicNameHasBeenSet;
 }
 

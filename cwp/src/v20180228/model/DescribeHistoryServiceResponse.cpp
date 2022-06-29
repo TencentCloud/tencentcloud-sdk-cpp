@@ -29,7 +29,8 @@ DescribeHistoryServiceResponse::DescribeHistoryServiceResponse() :
     m_endTimeHasBeenSet(false),
     m_isAutoOpenRenewHasBeenSet(false),
     m_resourceIdHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_startTimeHasBeenSet(false)
 {
 }
 
@@ -127,6 +128,16 @@ CoreInternalOutcome DescribeHistoryServiceResponse::Deserialize(const string &pa
         m_statusHasBeenSet = true;
     }
 
+    if (rsp.HasMember("StartTime") && !rsp["StartTime"].IsNull())
+    {
+        if (!rsp["StartTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `StartTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_startTime = string(rsp["StartTime"].GetString());
+        m_startTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -183,6 +194,14 @@ string DescribeHistoryServiceResponse::ToJsonString() const
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_status, allocator);
+    }
+
+    if (m_startTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StartTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_startTime.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -255,6 +274,16 @@ uint64_t DescribeHistoryServiceResponse::GetStatus() const
 bool DescribeHistoryServiceResponse::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+string DescribeHistoryServiceResponse::GetStartTime() const
+{
+    return m_startTime;
+}
+
+bool DescribeHistoryServiceResponse::StartTimeHasBeenSet() const
+{
+    return m_startTimeHasBeenSet;
 }
 
 

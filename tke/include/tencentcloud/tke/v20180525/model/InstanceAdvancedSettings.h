@@ -27,6 +27,7 @@
 #include <tencentcloud/tke/v20180525/model/Label.h>
 #include <tencentcloud/tke/v20180525/model/DataDisk.h>
 #include <tencentcloud/tke/v20180525/model/InstanceExtraArgs.h>
+#include <tencentcloud/tke/v20180525/model/Taint.h>
 
 
 namespace TencentCloud
@@ -247,6 +248,28 @@ namespace TencentCloud
                      */
                     bool PreStartUserScriptHasBeenSet() const;
 
+                    /**
+                     * 获取节点污点
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Taints 节点污点
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Taint> GetTaints() const;
+
+                    /**
+                     * 设置节点污点
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Taints 节点污点
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTaints(const std::vector<Taint>& _taints);
+
+                    /**
+                     * 判断参数 Taints 是否已赋值
+                     * @return Taints 是否已赋值
+                     */
+                    bool TaintsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -311,6 +334,13 @@ namespace TencentCloud
                      */
                     std::string m_preStartUserScript;
                     bool m_preStartUserScriptHasBeenSet;
+
+                    /**
+                     * 节点污点
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Taint> m_taints;
+                    bool m_taintsHasBeenSet;
 
                 };
             }

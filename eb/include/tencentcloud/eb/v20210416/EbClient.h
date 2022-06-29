@@ -63,6 +63,8 @@
 #include <tencentcloud/eb/v20210416/model/ListTargetsResponse.h>
 #include <tencentcloud/eb/v20210416/model/PublishEventRequest.h>
 #include <tencentcloud/eb/v20210416/model/PublishEventResponse.h>
+#include <tencentcloud/eb/v20210416/model/PutEventsRequest.h>
+#include <tencentcloud/eb/v20210416/model/PutEventsResponse.h>
 #include <tencentcloud/eb/v20210416/model/UpdateConnectionRequest.h>
 #include <tencentcloud/eb/v20210416/model/UpdateConnectionResponse.h>
 #include <tencentcloud/eb/v20210416/model/UpdateEventBusRequest.h>
@@ -147,6 +149,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::PublishEventResponse> PublishEventOutcome;
                 typedef std::future<PublishEventOutcome> PublishEventOutcomeCallable;
                 typedef std::function<void(const EbClient*, const Model::PublishEventRequest&, PublishEventOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PublishEventAsyncHandler;
+                typedef Outcome<Core::Error, Model::PutEventsResponse> PutEventsOutcome;
+                typedef std::future<PutEventsOutcome> PutEventsOutcomeCallable;
+                typedef std::function<void(const EbClient*, const Model::PutEventsRequest&, PutEventsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PutEventsAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpdateConnectionResponse> UpdateConnectionOutcome;
                 typedef std::future<UpdateConnectionOutcome> UpdateConnectionOutcomeCallable;
                 typedef std::function<void(const EbClient*, const Model::UpdateConnectionRequest&, UpdateConnectionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateConnectionAsyncHandler;
@@ -166,7 +171,7 @@ namespace TencentCloud
 
 
                 /**
-                 *规则检验
+                 *检验规则
                  * @param req CheckRuleRequest
                  * @return CheckRuleOutcome
                  */
@@ -337,13 +342,22 @@ namespace TencentCloud
                 ListTargetsOutcomeCallable ListTargetsCallable(const Model::ListTargetsRequest& request);
 
                 /**
-                 *用于Event事件投递
+                 *（已废弃）用于Event事件投递
                  * @param req PublishEventRequest
                  * @return PublishEventOutcome
                  */
                 PublishEventOutcome PublishEvent(const Model::PublishEventRequest &request);
                 void PublishEventAsync(const Model::PublishEventRequest& request, const PublishEventAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 PublishEventOutcomeCallable PublishEventCallable(const Model::PublishEventRequest& request);
+
+                /**
+                 *用于Event事件投递
+                 * @param req PutEventsRequest
+                 * @return PutEventsOutcome
+                 */
+                PutEventsOutcome PutEvents(const Model::PutEventsRequest &request);
+                void PutEventsAsync(const Model::PutEventsRequest& request, const PutEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                PutEventsOutcomeCallable PutEventsCallable(const Model::PutEventsRequest& request);
 
                 /**
                  *更新事件连接器

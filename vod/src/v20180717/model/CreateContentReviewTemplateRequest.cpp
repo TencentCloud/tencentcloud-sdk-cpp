@@ -24,6 +24,7 @@ using namespace std;
 
 CreateContentReviewTemplateRequest::CreateContentReviewTemplateRequest() :
     m_reviewWallSwitchHasBeenSet(false),
+    m_subAppIdHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_commentHasBeenSet(false),
     m_pornConfigureHasBeenSet(false),
@@ -31,8 +32,7 @@ CreateContentReviewTemplateRequest::CreateContentReviewTemplateRequest() :
     m_politicalConfigureHasBeenSet(false),
     m_prohibitedConfigureHasBeenSet(false),
     m_userDefineConfigureHasBeenSet(false),
-    m_screenshotIntervalHasBeenSet(false),
-    m_subAppIdHasBeenSet(false)
+    m_screenshotIntervalHasBeenSet(false)
 {
 }
 
@@ -49,6 +49,14 @@ string CreateContentReviewTemplateRequest::ToJsonString() const
         string key = "ReviewWallSwitch";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_reviewWallSwitch.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subAppIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubAppId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_subAppId, allocator);
     }
 
     if (m_nameHasBeenSet)
@@ -120,14 +128,6 @@ string CreateContentReviewTemplateRequest::ToJsonString() const
         d.AddMember(iKey, m_screenshotInterval, allocator);
     }
 
-    if (m_subAppIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SubAppId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_subAppId, allocator);
-    }
-
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -150,6 +150,22 @@ void CreateContentReviewTemplateRequest::SetReviewWallSwitch(const string& _revi
 bool CreateContentReviewTemplateRequest::ReviewWallSwitchHasBeenSet() const
 {
     return m_reviewWallSwitchHasBeenSet;
+}
+
+uint64_t CreateContentReviewTemplateRequest::GetSubAppId() const
+{
+    return m_subAppId;
+}
+
+void CreateContentReviewTemplateRequest::SetSubAppId(const uint64_t& _subAppId)
+{
+    m_subAppId = _subAppId;
+    m_subAppIdHasBeenSet = true;
+}
+
+bool CreateContentReviewTemplateRequest::SubAppIdHasBeenSet() const
+{
+    return m_subAppIdHasBeenSet;
 }
 
 string CreateContentReviewTemplateRequest::GetName() const
@@ -278,22 +294,6 @@ void CreateContentReviewTemplateRequest::SetScreenshotInterval(const double& _sc
 bool CreateContentReviewTemplateRequest::ScreenshotIntervalHasBeenSet() const
 {
     return m_screenshotIntervalHasBeenSet;
-}
-
-uint64_t CreateContentReviewTemplateRequest::GetSubAppId() const
-{
-    return m_subAppId;
-}
-
-void CreateContentReviewTemplateRequest::SetSubAppId(const uint64_t& _subAppId)
-{
-    m_subAppId = _subAppId;
-    m_subAppIdHasBeenSet = true;
-}
-
-bool CreateContentReviewTemplateRequest::SubAppIdHasBeenSet() const
-{
-    return m_subAppIdHasBeenSet;
 }
 
 

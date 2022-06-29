@@ -28,7 +28,8 @@ UpgradeInstanceRequest::UpgradeInstanceRequest() :
     m_checkOnlyHasBeenSet(false),
     m_licenseTypeHasBeenSet(false),
     m_basicSecurityTypeHasBeenSet(false),
-    m_upgradeModeHasBeenSet(false)
+    m_upgradeModeHasBeenSet(false),
+    m_cosBackupHasBeenSet(false)
 {
 }
 
@@ -85,6 +86,14 @@ string UpgradeInstanceRequest::ToJsonString() const
         string key = "UpgradeMode";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_upgradeMode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cosBackupHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CosBackup";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_cosBackup, allocator);
     }
 
 
@@ -189,6 +198,22 @@ void UpgradeInstanceRequest::SetUpgradeMode(const string& _upgradeMode)
 bool UpgradeInstanceRequest::UpgradeModeHasBeenSet() const
 {
     return m_upgradeModeHasBeenSet;
+}
+
+bool UpgradeInstanceRequest::GetCosBackup() const
+{
+    return m_cosBackup;
+}
+
+void UpgradeInstanceRequest::SetCosBackup(const bool& _cosBackup)
+{
+    m_cosBackup = _cosBackup;
+    m_cosBackupHasBeenSet = true;
+}
+
+bool UpgradeInstanceRequest::CosBackupHasBeenSet() const
+{
+    return m_cosBackupHasBeenSet;
 }
 
 

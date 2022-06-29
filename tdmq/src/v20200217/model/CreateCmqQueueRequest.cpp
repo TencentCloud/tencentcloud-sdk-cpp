@@ -37,7 +37,9 @@ CreateCmqQueueRequest::CreateCmqQueueRequest() :
     m_policyHasBeenSet(false),
     m_maxReceiveCountHasBeenSet(false),
     m_maxTimeToLiveHasBeenSet(false),
-    m_traceHasBeenSet(false)
+    m_traceHasBeenSet(false),
+    m_tagsHasBeenSet(false),
+    m_retentionSizeInMBHasBeenSet(false)
 {
 }
 
@@ -166,6 +168,29 @@ string CreateCmqQueueRequest::ToJsonString() const
         string key = "Trace";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_trace, allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_retentionSizeInMBHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RetentionSizeInMB";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_retentionSizeInMB, allocator);
     }
 
 
@@ -414,6 +439,38 @@ void CreateCmqQueueRequest::SetTrace(const bool& _trace)
 bool CreateCmqQueueRequest::TraceHasBeenSet() const
 {
     return m_traceHasBeenSet;
+}
+
+vector<Tag> CreateCmqQueueRequest::GetTags() const
+{
+    return m_tags;
+}
+
+void CreateCmqQueueRequest::SetTags(const vector<Tag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool CreateCmqQueueRequest::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
+}
+
+uint64_t CreateCmqQueueRequest::GetRetentionSizeInMB() const
+{
+    return m_retentionSizeInMB;
+}
+
+void CreateCmqQueueRequest::SetRetentionSizeInMB(const uint64_t& _retentionSizeInMB)
+{
+    m_retentionSizeInMB = _retentionSizeInMB;
+    m_retentionSizeInMBHasBeenSet = true;
+}
+
+bool CreateCmqQueueRequest::RetentionSizeInMBHasBeenSet() const
+{
+    return m_retentionSizeInMBHasBeenSet;
 }
 
 

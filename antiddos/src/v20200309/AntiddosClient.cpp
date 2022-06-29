@@ -212,6 +212,178 @@ AntiddosClient::CreateBoundIPOutcomeCallable AntiddosClient::CreateBoundIPCallab
     return task->get_future();
 }
 
+AntiddosClient::CreateCCPrecisionPolicyOutcome AntiddosClient::CreateCCPrecisionPolicy(const CreateCCPrecisionPolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateCCPrecisionPolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateCCPrecisionPolicyResponse rsp = CreateCCPrecisionPolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateCCPrecisionPolicyOutcome(rsp);
+        else
+            return CreateCCPrecisionPolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateCCPrecisionPolicyOutcome(outcome.GetError());
+    }
+}
+
+void AntiddosClient::CreateCCPrecisionPolicyAsync(const CreateCCPrecisionPolicyRequest& request, const CreateCCPrecisionPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateCCPrecisionPolicy(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AntiddosClient::CreateCCPrecisionPolicyOutcomeCallable AntiddosClient::CreateCCPrecisionPolicyCallable(const CreateCCPrecisionPolicyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateCCPrecisionPolicyOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateCCPrecisionPolicy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+AntiddosClient::CreateCCReqLimitPolicyOutcome AntiddosClient::CreateCCReqLimitPolicy(const CreateCCReqLimitPolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateCCReqLimitPolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateCCReqLimitPolicyResponse rsp = CreateCCReqLimitPolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateCCReqLimitPolicyOutcome(rsp);
+        else
+            return CreateCCReqLimitPolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateCCReqLimitPolicyOutcome(outcome.GetError());
+    }
+}
+
+void AntiddosClient::CreateCCReqLimitPolicyAsync(const CreateCCReqLimitPolicyRequest& request, const CreateCCReqLimitPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateCCReqLimitPolicy(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AntiddosClient::CreateCCReqLimitPolicyOutcomeCallable AntiddosClient::CreateCCReqLimitPolicyCallable(const CreateCCReqLimitPolicyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateCCReqLimitPolicyOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateCCReqLimitPolicy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+AntiddosClient::CreateCcBlackWhiteIpListOutcome AntiddosClient::CreateCcBlackWhiteIpList(const CreateCcBlackWhiteIpListRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateCcBlackWhiteIpList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateCcBlackWhiteIpListResponse rsp = CreateCcBlackWhiteIpListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateCcBlackWhiteIpListOutcome(rsp);
+        else
+            return CreateCcBlackWhiteIpListOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateCcBlackWhiteIpListOutcome(outcome.GetError());
+    }
+}
+
+void AntiddosClient::CreateCcBlackWhiteIpListAsync(const CreateCcBlackWhiteIpListRequest& request, const CreateCcBlackWhiteIpListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateCcBlackWhiteIpList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AntiddosClient::CreateCcBlackWhiteIpListOutcomeCallable AntiddosClient::CreateCcBlackWhiteIpListCallable(const CreateCcBlackWhiteIpListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateCcBlackWhiteIpListOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateCcBlackWhiteIpList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+AntiddosClient::CreateCcGeoIPBlockConfigOutcome AntiddosClient::CreateCcGeoIPBlockConfig(const CreateCcGeoIPBlockConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateCcGeoIPBlockConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateCcGeoIPBlockConfigResponse rsp = CreateCcGeoIPBlockConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateCcGeoIPBlockConfigOutcome(rsp);
+        else
+            return CreateCcGeoIPBlockConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateCcGeoIPBlockConfigOutcome(outcome.GetError());
+    }
+}
+
+void AntiddosClient::CreateCcGeoIPBlockConfigAsync(const CreateCcGeoIPBlockConfigRequest& request, const CreateCcGeoIPBlockConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateCcGeoIPBlockConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AntiddosClient::CreateCcGeoIPBlockConfigOutcomeCallable AntiddosClient::CreateCcGeoIPBlockConfigCallable(const CreateCcGeoIPBlockConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateCcGeoIPBlockConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateCcGeoIPBlockConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 AntiddosClient::CreateDDoSAIOutcome AntiddosClient::CreateDDoSAI(const CreateDDoSAIRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateDDoSAI");
@@ -291,6 +463,49 @@ AntiddosClient::CreateDDoSBlackWhiteIpListOutcomeCallable AntiddosClient::Create
         [this, request]()
         {
             return this->CreateDDoSBlackWhiteIpList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+AntiddosClient::CreateDDoSConnectLimitOutcome AntiddosClient::CreateDDoSConnectLimit(const CreateDDoSConnectLimitRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateDDoSConnectLimit");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateDDoSConnectLimitResponse rsp = CreateDDoSConnectLimitResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateDDoSConnectLimitOutcome(rsp);
+        else
+            return CreateDDoSConnectLimitOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateDDoSConnectLimitOutcome(outcome.GetError());
+    }
+}
+
+void AntiddosClient::CreateDDoSConnectLimitAsync(const CreateDDoSConnectLimitRequest& request, const CreateDDoSConnectLimitAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateDDoSConnectLimit(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AntiddosClient::CreateDDoSConnectLimitOutcomeCallable AntiddosClient::CreateDDoSConnectLimitCallable(const CreateDDoSConnectLimitRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateDDoSConnectLimitOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateDDoSConnectLimit(request);
         }
     );
 
@@ -556,6 +771,92 @@ AntiddosClient::CreatePacketFilterConfigOutcomeCallable AntiddosClient::CreatePa
     return task->get_future();
 }
 
+AntiddosClient::CreatePortAclConfigOutcome AntiddosClient::CreatePortAclConfig(const CreatePortAclConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreatePortAclConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreatePortAclConfigResponse rsp = CreatePortAclConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreatePortAclConfigOutcome(rsp);
+        else
+            return CreatePortAclConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return CreatePortAclConfigOutcome(outcome.GetError());
+    }
+}
+
+void AntiddosClient::CreatePortAclConfigAsync(const CreatePortAclConfigRequest& request, const CreatePortAclConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreatePortAclConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AntiddosClient::CreatePortAclConfigOutcomeCallable AntiddosClient::CreatePortAclConfigCallable(const CreatePortAclConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreatePortAclConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->CreatePortAclConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+AntiddosClient::CreatePortAclConfigListOutcome AntiddosClient::CreatePortAclConfigList(const CreatePortAclConfigListRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreatePortAclConfigList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreatePortAclConfigListResponse rsp = CreatePortAclConfigListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreatePortAclConfigListOutcome(rsp);
+        else
+            return CreatePortAclConfigListOutcome(o.GetError());
+    }
+    else
+    {
+        return CreatePortAclConfigListOutcome(outcome.GetError());
+    }
+}
+
+void AntiddosClient::CreatePortAclConfigListAsync(const CreatePortAclConfigListRequest& request, const CreatePortAclConfigListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreatePortAclConfigList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AntiddosClient::CreatePortAclConfigListOutcomeCallable AntiddosClient::CreatePortAclConfigListCallable(const CreatePortAclConfigListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreatePortAclConfigListOutcome()>>(
+        [this, request]()
+        {
+            return this->CreatePortAclConfigList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 AntiddosClient::CreateProtocolBlockConfigOutcome AntiddosClient::CreateProtocolBlockConfig(const CreateProtocolBlockConfigRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateProtocolBlockConfig");
@@ -771,6 +1072,264 @@ AntiddosClient::DeleteBlackWhiteIpListOutcomeCallable AntiddosClient::DeleteBlac
     return task->get_future();
 }
 
+AntiddosClient::DeleteCCLevelPolicyOutcome AntiddosClient::DeleteCCLevelPolicy(const DeleteCCLevelPolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteCCLevelPolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteCCLevelPolicyResponse rsp = DeleteCCLevelPolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteCCLevelPolicyOutcome(rsp);
+        else
+            return DeleteCCLevelPolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteCCLevelPolicyOutcome(outcome.GetError());
+    }
+}
+
+void AntiddosClient::DeleteCCLevelPolicyAsync(const DeleteCCLevelPolicyRequest& request, const DeleteCCLevelPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteCCLevelPolicy(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AntiddosClient::DeleteCCLevelPolicyOutcomeCallable AntiddosClient::DeleteCCLevelPolicyCallable(const DeleteCCLevelPolicyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteCCLevelPolicyOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteCCLevelPolicy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+AntiddosClient::DeleteCCPrecisionPolicyOutcome AntiddosClient::DeleteCCPrecisionPolicy(const DeleteCCPrecisionPolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteCCPrecisionPolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteCCPrecisionPolicyResponse rsp = DeleteCCPrecisionPolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteCCPrecisionPolicyOutcome(rsp);
+        else
+            return DeleteCCPrecisionPolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteCCPrecisionPolicyOutcome(outcome.GetError());
+    }
+}
+
+void AntiddosClient::DeleteCCPrecisionPolicyAsync(const DeleteCCPrecisionPolicyRequest& request, const DeleteCCPrecisionPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteCCPrecisionPolicy(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AntiddosClient::DeleteCCPrecisionPolicyOutcomeCallable AntiddosClient::DeleteCCPrecisionPolicyCallable(const DeleteCCPrecisionPolicyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteCCPrecisionPolicyOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteCCPrecisionPolicy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+AntiddosClient::DeleteCCRequestLimitPolicyOutcome AntiddosClient::DeleteCCRequestLimitPolicy(const DeleteCCRequestLimitPolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteCCRequestLimitPolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteCCRequestLimitPolicyResponse rsp = DeleteCCRequestLimitPolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteCCRequestLimitPolicyOutcome(rsp);
+        else
+            return DeleteCCRequestLimitPolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteCCRequestLimitPolicyOutcome(outcome.GetError());
+    }
+}
+
+void AntiddosClient::DeleteCCRequestLimitPolicyAsync(const DeleteCCRequestLimitPolicyRequest& request, const DeleteCCRequestLimitPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteCCRequestLimitPolicy(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AntiddosClient::DeleteCCRequestLimitPolicyOutcomeCallable AntiddosClient::DeleteCCRequestLimitPolicyCallable(const DeleteCCRequestLimitPolicyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteCCRequestLimitPolicyOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteCCRequestLimitPolicy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+AntiddosClient::DeleteCCThresholdPolicyOutcome AntiddosClient::DeleteCCThresholdPolicy(const DeleteCCThresholdPolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteCCThresholdPolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteCCThresholdPolicyResponse rsp = DeleteCCThresholdPolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteCCThresholdPolicyOutcome(rsp);
+        else
+            return DeleteCCThresholdPolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteCCThresholdPolicyOutcome(outcome.GetError());
+    }
+}
+
+void AntiddosClient::DeleteCCThresholdPolicyAsync(const DeleteCCThresholdPolicyRequest& request, const DeleteCCThresholdPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteCCThresholdPolicy(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AntiddosClient::DeleteCCThresholdPolicyOutcomeCallable AntiddosClient::DeleteCCThresholdPolicyCallable(const DeleteCCThresholdPolicyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteCCThresholdPolicyOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteCCThresholdPolicy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+AntiddosClient::DeleteCcBlackWhiteIpListOutcome AntiddosClient::DeleteCcBlackWhiteIpList(const DeleteCcBlackWhiteIpListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteCcBlackWhiteIpList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteCcBlackWhiteIpListResponse rsp = DeleteCcBlackWhiteIpListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteCcBlackWhiteIpListOutcome(rsp);
+        else
+            return DeleteCcBlackWhiteIpListOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteCcBlackWhiteIpListOutcome(outcome.GetError());
+    }
+}
+
+void AntiddosClient::DeleteCcBlackWhiteIpListAsync(const DeleteCcBlackWhiteIpListRequest& request, const DeleteCcBlackWhiteIpListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteCcBlackWhiteIpList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AntiddosClient::DeleteCcBlackWhiteIpListOutcomeCallable AntiddosClient::DeleteCcBlackWhiteIpListCallable(const DeleteCcBlackWhiteIpListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteCcBlackWhiteIpListOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteCcBlackWhiteIpList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+AntiddosClient::DeleteCcGeoIPBlockConfigOutcome AntiddosClient::DeleteCcGeoIPBlockConfig(const DeleteCcGeoIPBlockConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteCcGeoIPBlockConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteCcGeoIPBlockConfigResponse rsp = DeleteCcGeoIPBlockConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteCcGeoIPBlockConfigOutcome(rsp);
+        else
+            return DeleteCcGeoIPBlockConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteCcGeoIPBlockConfigOutcome(outcome.GetError());
+    }
+}
+
+void AntiddosClient::DeleteCcGeoIPBlockConfigAsync(const DeleteCcGeoIPBlockConfigRequest& request, const DeleteCcGeoIPBlockConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteCcGeoIPBlockConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AntiddosClient::DeleteCcGeoIPBlockConfigOutcomeCallable AntiddosClient::DeleteCcGeoIPBlockConfigCallable(const DeleteCcGeoIPBlockConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteCcGeoIPBlockConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteCcGeoIPBlockConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 AntiddosClient::DeleteDDoSBlackWhiteIpListOutcome AntiddosClient::DeleteDDoSBlackWhiteIpList(const DeleteDDoSBlackWhiteIpListRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteDDoSBlackWhiteIpList");
@@ -936,6 +1495,49 @@ AntiddosClient::DeletePacketFilterConfigOutcomeCallable AntiddosClient::DeletePa
         [this, request]()
         {
             return this->DeletePacketFilterConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+AntiddosClient::DeletePortAclConfigOutcome AntiddosClient::DeletePortAclConfig(const DeletePortAclConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeletePortAclConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeletePortAclConfigResponse rsp = DeletePortAclConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeletePortAclConfigOutcome(rsp);
+        else
+            return DeletePortAclConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return DeletePortAclConfigOutcome(outcome.GetError());
+    }
+}
+
+void AntiddosClient::DeletePortAclConfigAsync(const DeletePortAclConfigRequest& request, const DeletePortAclConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeletePortAclConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AntiddosClient::DeletePortAclConfigOutcomeCallable AntiddosClient::DeletePortAclConfigCallable(const DeletePortAclConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeletePortAclConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->DeletePortAclConfig(request);
         }
     );
 
@@ -1158,6 +1760,221 @@ AntiddosClient::DescribeBlackWhiteIpListOutcomeCallable AntiddosClient::Describe
     return task->get_future();
 }
 
+AntiddosClient::DescribeCCLevelListOutcome AntiddosClient::DescribeCCLevelList(const DescribeCCLevelListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCCLevelList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCCLevelListResponse rsp = DescribeCCLevelListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCCLevelListOutcome(rsp);
+        else
+            return DescribeCCLevelListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCCLevelListOutcome(outcome.GetError());
+    }
+}
+
+void AntiddosClient::DescribeCCLevelListAsync(const DescribeCCLevelListRequest& request, const DescribeCCLevelListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCCLevelList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AntiddosClient::DescribeCCLevelListOutcomeCallable AntiddosClient::DescribeCCLevelListCallable(const DescribeCCLevelListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCCLevelListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCCLevelList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+AntiddosClient::DescribeCCLevelPolicyOutcome AntiddosClient::DescribeCCLevelPolicy(const DescribeCCLevelPolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCCLevelPolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCCLevelPolicyResponse rsp = DescribeCCLevelPolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCCLevelPolicyOutcome(rsp);
+        else
+            return DescribeCCLevelPolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCCLevelPolicyOutcome(outcome.GetError());
+    }
+}
+
+void AntiddosClient::DescribeCCLevelPolicyAsync(const DescribeCCLevelPolicyRequest& request, const DescribeCCLevelPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCCLevelPolicy(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AntiddosClient::DescribeCCLevelPolicyOutcomeCallable AntiddosClient::DescribeCCLevelPolicyCallable(const DescribeCCLevelPolicyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCCLevelPolicyOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCCLevelPolicy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+AntiddosClient::DescribeCCPrecisionPlyListOutcome AntiddosClient::DescribeCCPrecisionPlyList(const DescribeCCPrecisionPlyListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCCPrecisionPlyList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCCPrecisionPlyListResponse rsp = DescribeCCPrecisionPlyListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCCPrecisionPlyListOutcome(rsp);
+        else
+            return DescribeCCPrecisionPlyListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCCPrecisionPlyListOutcome(outcome.GetError());
+    }
+}
+
+void AntiddosClient::DescribeCCPrecisionPlyListAsync(const DescribeCCPrecisionPlyListRequest& request, const DescribeCCPrecisionPlyListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCCPrecisionPlyList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AntiddosClient::DescribeCCPrecisionPlyListOutcomeCallable AntiddosClient::DescribeCCPrecisionPlyListCallable(const DescribeCCPrecisionPlyListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCCPrecisionPlyListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCCPrecisionPlyList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+AntiddosClient::DescribeCCReqLimitPolicyListOutcome AntiddosClient::DescribeCCReqLimitPolicyList(const DescribeCCReqLimitPolicyListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCCReqLimitPolicyList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCCReqLimitPolicyListResponse rsp = DescribeCCReqLimitPolicyListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCCReqLimitPolicyListOutcome(rsp);
+        else
+            return DescribeCCReqLimitPolicyListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCCReqLimitPolicyListOutcome(outcome.GetError());
+    }
+}
+
+void AntiddosClient::DescribeCCReqLimitPolicyListAsync(const DescribeCCReqLimitPolicyListRequest& request, const DescribeCCReqLimitPolicyListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCCReqLimitPolicyList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AntiddosClient::DescribeCCReqLimitPolicyListOutcomeCallable AntiddosClient::DescribeCCReqLimitPolicyListCallable(const DescribeCCReqLimitPolicyListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCCReqLimitPolicyListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCCReqLimitPolicyList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+AntiddosClient::DescribeCCThresholdListOutcome AntiddosClient::DescribeCCThresholdList(const DescribeCCThresholdListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCCThresholdList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCCThresholdListResponse rsp = DescribeCCThresholdListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCCThresholdListOutcome(rsp);
+        else
+            return DescribeCCThresholdListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCCThresholdListOutcome(outcome.GetError());
+    }
+}
+
+void AntiddosClient::DescribeCCThresholdListAsync(const DescribeCCThresholdListRequest& request, const DescribeCCThresholdListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCCThresholdList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AntiddosClient::DescribeCCThresholdListOutcomeCallable AntiddosClient::DescribeCCThresholdListCallable(const DescribeCCThresholdListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCCThresholdListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCCThresholdList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 AntiddosClient::DescribeCCTrendOutcome AntiddosClient::DescribeCCTrend(const DescribeCCTrendRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeCCTrend");
@@ -1201,6 +2018,92 @@ AntiddosClient::DescribeCCTrendOutcomeCallable AntiddosClient::DescribeCCTrendCa
     return task->get_future();
 }
 
+AntiddosClient::DescribeCcBlackWhiteIpListOutcome AntiddosClient::DescribeCcBlackWhiteIpList(const DescribeCcBlackWhiteIpListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCcBlackWhiteIpList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCcBlackWhiteIpListResponse rsp = DescribeCcBlackWhiteIpListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCcBlackWhiteIpListOutcome(rsp);
+        else
+            return DescribeCcBlackWhiteIpListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCcBlackWhiteIpListOutcome(outcome.GetError());
+    }
+}
+
+void AntiddosClient::DescribeCcBlackWhiteIpListAsync(const DescribeCcBlackWhiteIpListRequest& request, const DescribeCcBlackWhiteIpListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCcBlackWhiteIpList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AntiddosClient::DescribeCcBlackWhiteIpListOutcomeCallable AntiddosClient::DescribeCcBlackWhiteIpListCallable(const DescribeCcBlackWhiteIpListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCcBlackWhiteIpListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCcBlackWhiteIpList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+AntiddosClient::DescribeCcGeoIPBlockConfigListOutcome AntiddosClient::DescribeCcGeoIPBlockConfigList(const DescribeCcGeoIPBlockConfigListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCcGeoIPBlockConfigList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCcGeoIPBlockConfigListResponse rsp = DescribeCcGeoIPBlockConfigListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCcGeoIPBlockConfigListOutcome(rsp);
+        else
+            return DescribeCcGeoIPBlockConfigListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCcGeoIPBlockConfigListOutcome(outcome.GetError());
+    }
+}
+
+void AntiddosClient::DescribeCcGeoIPBlockConfigListAsync(const DescribeCcGeoIPBlockConfigListRequest& request, const DescribeCcGeoIPBlockConfigListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCcGeoIPBlockConfigList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AntiddosClient::DescribeCcGeoIPBlockConfigListOutcomeCallable AntiddosClient::DescribeCcGeoIPBlockConfigListCallable(const DescribeCcGeoIPBlockConfigListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCcGeoIPBlockConfigListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCcGeoIPBlockConfigList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 AntiddosClient::DescribeDDoSBlackWhiteIpListOutcome AntiddosClient::DescribeDDoSBlackWhiteIpList(const DescribeDDoSBlackWhiteIpListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDDoSBlackWhiteIpList");
@@ -1237,6 +2140,49 @@ AntiddosClient::DescribeDDoSBlackWhiteIpListOutcomeCallable AntiddosClient::Desc
         [this, request]()
         {
             return this->DescribeDDoSBlackWhiteIpList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+AntiddosClient::DescribeDDoSConnectLimitListOutcome AntiddosClient::DescribeDDoSConnectLimitList(const DescribeDDoSConnectLimitListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDDoSConnectLimitList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDDoSConnectLimitListResponse rsp = DescribeDDoSConnectLimitListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDDoSConnectLimitListOutcome(rsp);
+        else
+            return DescribeDDoSConnectLimitListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDDoSConnectLimitListOutcome(outcome.GetError());
+    }
+}
+
+void AntiddosClient::DescribeDDoSConnectLimitListAsync(const DescribeDDoSConnectLimitListRequest& request, const DescribeDDoSConnectLimitListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDDoSConnectLimitList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AntiddosClient::DescribeDDoSConnectLimitListOutcomeCallable AntiddosClient::DescribeDDoSConnectLimitListCallable(const DescribeDDoSConnectLimitListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDDoSConnectLimitListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDDoSConnectLimitList(request);
         }
     );
 
@@ -1760,6 +2706,49 @@ AntiddosClient::DescribeListPacketFilterConfigOutcomeCallable AntiddosClient::De
     return task->get_future();
 }
 
+AntiddosClient::DescribeListPortAclListOutcome AntiddosClient::DescribeListPortAclList(const DescribeListPortAclListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeListPortAclList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeListPortAclListResponse rsp = DescribeListPortAclListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeListPortAclListOutcome(rsp);
+        else
+            return DescribeListPortAclListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeListPortAclListOutcome(outcome.GetError());
+    }
+}
+
+void AntiddosClient::DescribeListPortAclListAsync(const DescribeListPortAclListRequest& request, const DescribeListPortAclListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeListPortAclList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AntiddosClient::DescribeListPortAclListOutcomeCallable AntiddosClient::DescribeListPortAclListCallable(const DescribeListPortAclListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeListPortAclListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeListPortAclList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 AntiddosClient::DescribeListProtectThresholdConfigOutcome AntiddosClient::DescribeListProtectThresholdConfig(const DescribeListProtectThresholdConfigRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeListProtectThresholdConfig");
@@ -1932,6 +2921,221 @@ AntiddosClient::DescribeListWaterPrintConfigOutcomeCallable AntiddosClient::Desc
     return task->get_future();
 }
 
+AntiddosClient::DescribeOverviewAttackTrendOutcome AntiddosClient::DescribeOverviewAttackTrend(const DescribeOverviewAttackTrendRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeOverviewAttackTrend");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeOverviewAttackTrendResponse rsp = DescribeOverviewAttackTrendResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeOverviewAttackTrendOutcome(rsp);
+        else
+            return DescribeOverviewAttackTrendOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeOverviewAttackTrendOutcome(outcome.GetError());
+    }
+}
+
+void AntiddosClient::DescribeOverviewAttackTrendAsync(const DescribeOverviewAttackTrendRequest& request, const DescribeOverviewAttackTrendAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeOverviewAttackTrend(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AntiddosClient::DescribeOverviewAttackTrendOutcomeCallable AntiddosClient::DescribeOverviewAttackTrendCallable(const DescribeOverviewAttackTrendRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeOverviewAttackTrendOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeOverviewAttackTrend(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+AntiddosClient::DescribeOverviewCCTrendOutcome AntiddosClient::DescribeOverviewCCTrend(const DescribeOverviewCCTrendRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeOverviewCCTrend");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeOverviewCCTrendResponse rsp = DescribeOverviewCCTrendResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeOverviewCCTrendOutcome(rsp);
+        else
+            return DescribeOverviewCCTrendOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeOverviewCCTrendOutcome(outcome.GetError());
+    }
+}
+
+void AntiddosClient::DescribeOverviewCCTrendAsync(const DescribeOverviewCCTrendRequest& request, const DescribeOverviewCCTrendAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeOverviewCCTrend(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AntiddosClient::DescribeOverviewCCTrendOutcomeCallable AntiddosClient::DescribeOverviewCCTrendCallable(const DescribeOverviewCCTrendRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeOverviewCCTrendOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeOverviewCCTrend(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+AntiddosClient::DescribeOverviewDDoSEventListOutcome AntiddosClient::DescribeOverviewDDoSEventList(const DescribeOverviewDDoSEventListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeOverviewDDoSEventList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeOverviewDDoSEventListResponse rsp = DescribeOverviewDDoSEventListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeOverviewDDoSEventListOutcome(rsp);
+        else
+            return DescribeOverviewDDoSEventListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeOverviewDDoSEventListOutcome(outcome.GetError());
+    }
+}
+
+void AntiddosClient::DescribeOverviewDDoSEventListAsync(const DescribeOverviewDDoSEventListRequest& request, const DescribeOverviewDDoSEventListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeOverviewDDoSEventList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AntiddosClient::DescribeOverviewDDoSEventListOutcomeCallable AntiddosClient::DescribeOverviewDDoSEventListCallable(const DescribeOverviewDDoSEventListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeOverviewDDoSEventListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeOverviewDDoSEventList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+AntiddosClient::DescribeOverviewDDoSTrendOutcome AntiddosClient::DescribeOverviewDDoSTrend(const DescribeOverviewDDoSTrendRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeOverviewDDoSTrend");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeOverviewDDoSTrendResponse rsp = DescribeOverviewDDoSTrendResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeOverviewDDoSTrendOutcome(rsp);
+        else
+            return DescribeOverviewDDoSTrendOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeOverviewDDoSTrendOutcome(outcome.GetError());
+    }
+}
+
+void AntiddosClient::DescribeOverviewDDoSTrendAsync(const DescribeOverviewDDoSTrendRequest& request, const DescribeOverviewDDoSTrendAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeOverviewDDoSTrend(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AntiddosClient::DescribeOverviewDDoSTrendOutcomeCallable AntiddosClient::DescribeOverviewDDoSTrendCallable(const DescribeOverviewDDoSTrendRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeOverviewDDoSTrendOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeOverviewDDoSTrend(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+AntiddosClient::DescribeOverviewIndexOutcome AntiddosClient::DescribeOverviewIndex(const DescribeOverviewIndexRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeOverviewIndex");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeOverviewIndexResponse rsp = DescribeOverviewIndexResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeOverviewIndexOutcome(rsp);
+        else
+            return DescribeOverviewIndexOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeOverviewIndexOutcome(outcome.GetError());
+    }
+}
+
+void AntiddosClient::DescribeOverviewIndexAsync(const DescribeOverviewIndexRequest& request, const DescribeOverviewIndexAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeOverviewIndex(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AntiddosClient::DescribeOverviewIndexOutcomeCallable AntiddosClient::DescribeOverviewIndexCallable(const DescribeOverviewIndexRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeOverviewIndexOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeOverviewIndex(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 AntiddosClient::DisassociateDDoSEipAddressOutcome AntiddosClient::DisassociateDDoSEipAddress(const DisassociateDDoSEipAddressRequest &request)
 {
     auto outcome = MakeRequest(request, "DisassociateDDoSEipAddress");
@@ -1968,6 +3172,264 @@ AntiddosClient::DisassociateDDoSEipAddressOutcomeCallable AntiddosClient::Disass
         [this, request]()
         {
             return this->DisassociateDDoSEipAddress(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+AntiddosClient::ModifyCCLevelPolicyOutcome AntiddosClient::ModifyCCLevelPolicy(const ModifyCCLevelPolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyCCLevelPolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyCCLevelPolicyResponse rsp = ModifyCCLevelPolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyCCLevelPolicyOutcome(rsp);
+        else
+            return ModifyCCLevelPolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyCCLevelPolicyOutcome(outcome.GetError());
+    }
+}
+
+void AntiddosClient::ModifyCCLevelPolicyAsync(const ModifyCCLevelPolicyRequest& request, const ModifyCCLevelPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyCCLevelPolicy(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AntiddosClient::ModifyCCLevelPolicyOutcomeCallable AntiddosClient::ModifyCCLevelPolicyCallable(const ModifyCCLevelPolicyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyCCLevelPolicyOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyCCLevelPolicy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+AntiddosClient::ModifyCCPrecisionPolicyOutcome AntiddosClient::ModifyCCPrecisionPolicy(const ModifyCCPrecisionPolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyCCPrecisionPolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyCCPrecisionPolicyResponse rsp = ModifyCCPrecisionPolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyCCPrecisionPolicyOutcome(rsp);
+        else
+            return ModifyCCPrecisionPolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyCCPrecisionPolicyOutcome(outcome.GetError());
+    }
+}
+
+void AntiddosClient::ModifyCCPrecisionPolicyAsync(const ModifyCCPrecisionPolicyRequest& request, const ModifyCCPrecisionPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyCCPrecisionPolicy(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AntiddosClient::ModifyCCPrecisionPolicyOutcomeCallable AntiddosClient::ModifyCCPrecisionPolicyCallable(const ModifyCCPrecisionPolicyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyCCPrecisionPolicyOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyCCPrecisionPolicy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+AntiddosClient::ModifyCCReqLimitPolicyOutcome AntiddosClient::ModifyCCReqLimitPolicy(const ModifyCCReqLimitPolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyCCReqLimitPolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyCCReqLimitPolicyResponse rsp = ModifyCCReqLimitPolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyCCReqLimitPolicyOutcome(rsp);
+        else
+            return ModifyCCReqLimitPolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyCCReqLimitPolicyOutcome(outcome.GetError());
+    }
+}
+
+void AntiddosClient::ModifyCCReqLimitPolicyAsync(const ModifyCCReqLimitPolicyRequest& request, const ModifyCCReqLimitPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyCCReqLimitPolicy(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AntiddosClient::ModifyCCReqLimitPolicyOutcomeCallable AntiddosClient::ModifyCCReqLimitPolicyCallable(const ModifyCCReqLimitPolicyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyCCReqLimitPolicyOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyCCReqLimitPolicy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+AntiddosClient::ModifyCCThresholdPolicyOutcome AntiddosClient::ModifyCCThresholdPolicy(const ModifyCCThresholdPolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyCCThresholdPolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyCCThresholdPolicyResponse rsp = ModifyCCThresholdPolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyCCThresholdPolicyOutcome(rsp);
+        else
+            return ModifyCCThresholdPolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyCCThresholdPolicyOutcome(outcome.GetError());
+    }
+}
+
+void AntiddosClient::ModifyCCThresholdPolicyAsync(const ModifyCCThresholdPolicyRequest& request, const ModifyCCThresholdPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyCCThresholdPolicy(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AntiddosClient::ModifyCCThresholdPolicyOutcomeCallable AntiddosClient::ModifyCCThresholdPolicyCallable(const ModifyCCThresholdPolicyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyCCThresholdPolicyOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyCCThresholdPolicy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+AntiddosClient::ModifyCcBlackWhiteIpListOutcome AntiddosClient::ModifyCcBlackWhiteIpList(const ModifyCcBlackWhiteIpListRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyCcBlackWhiteIpList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyCcBlackWhiteIpListResponse rsp = ModifyCcBlackWhiteIpListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyCcBlackWhiteIpListOutcome(rsp);
+        else
+            return ModifyCcBlackWhiteIpListOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyCcBlackWhiteIpListOutcome(outcome.GetError());
+    }
+}
+
+void AntiddosClient::ModifyCcBlackWhiteIpListAsync(const ModifyCcBlackWhiteIpListRequest& request, const ModifyCcBlackWhiteIpListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyCcBlackWhiteIpList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AntiddosClient::ModifyCcBlackWhiteIpListOutcomeCallable AntiddosClient::ModifyCcBlackWhiteIpListCallable(const ModifyCcBlackWhiteIpListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyCcBlackWhiteIpListOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyCcBlackWhiteIpList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+AntiddosClient::ModifyDDoSBlackWhiteIpListOutcome AntiddosClient::ModifyDDoSBlackWhiteIpList(const ModifyDDoSBlackWhiteIpListRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyDDoSBlackWhiteIpList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyDDoSBlackWhiteIpListResponse rsp = ModifyDDoSBlackWhiteIpListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyDDoSBlackWhiteIpListOutcome(rsp);
+        else
+            return ModifyDDoSBlackWhiteIpListOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyDDoSBlackWhiteIpListOutcome(outcome.GetError());
+    }
+}
+
+void AntiddosClient::ModifyDDoSBlackWhiteIpListAsync(const ModifyDDoSBlackWhiteIpListRequest& request, const ModifyDDoSBlackWhiteIpListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyDDoSBlackWhiteIpList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AntiddosClient::ModifyDDoSBlackWhiteIpListOutcomeCallable AntiddosClient::ModifyDDoSBlackWhiteIpListCallable(const ModifyDDoSBlackWhiteIpListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyDDoSBlackWhiteIpListOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyDDoSBlackWhiteIpList(request);
         }
     );
 
@@ -2018,6 +3480,49 @@ AntiddosClient::ModifyDDoSGeoIPBlockConfigOutcomeCallable AntiddosClient::Modify
     return task->get_future();
 }
 
+AntiddosClient::ModifyDDoSLevelOutcome AntiddosClient::ModifyDDoSLevel(const ModifyDDoSLevelRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyDDoSLevel");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyDDoSLevelResponse rsp = ModifyDDoSLevelResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyDDoSLevelOutcome(rsp);
+        else
+            return ModifyDDoSLevelOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyDDoSLevelOutcome(outcome.GetError());
+    }
+}
+
+void AntiddosClient::ModifyDDoSLevelAsync(const ModifyDDoSLevelRequest& request, const ModifyDDoSLevelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyDDoSLevel(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AntiddosClient::ModifyDDoSLevelOutcomeCallable AntiddosClient::ModifyDDoSLevelCallable(const ModifyDDoSLevelRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyDDoSLevelOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyDDoSLevel(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 AntiddosClient::ModifyDDoSSpeedLimitConfigOutcome AntiddosClient::ModifyDDoSSpeedLimitConfig(const ModifyDDoSSpeedLimitConfigRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyDDoSSpeedLimitConfig");
@@ -2054,6 +3559,49 @@ AntiddosClient::ModifyDDoSSpeedLimitConfigOutcomeCallable AntiddosClient::Modify
         [this, request]()
         {
             return this->ModifyDDoSSpeedLimitConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+AntiddosClient::ModifyDDoSThresholdOutcome AntiddosClient::ModifyDDoSThreshold(const ModifyDDoSThresholdRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyDDoSThreshold");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyDDoSThresholdResponse rsp = ModifyDDoSThresholdResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyDDoSThresholdOutcome(rsp);
+        else
+            return ModifyDDoSThresholdOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyDDoSThresholdOutcome(outcome.GetError());
+    }
+}
+
+void AntiddosClient::ModifyDDoSThresholdAsync(const ModifyDDoSThresholdRequest& request, const ModifyDDoSThresholdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyDDoSThreshold(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AntiddosClient::ModifyDDoSThresholdOutcomeCallable AntiddosClient::ModifyDDoSThresholdCallable(const ModifyDDoSThresholdRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyDDoSThresholdOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyDDoSThreshold(request);
         }
     );
 
@@ -2226,6 +3774,49 @@ AntiddosClient::ModifyPacketFilterConfigOutcomeCallable AntiddosClient::ModifyPa
         [this, request]()
         {
             return this->ModifyPacketFilterConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+AntiddosClient::ModifyPortAclConfigOutcome AntiddosClient::ModifyPortAclConfig(const ModifyPortAclConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyPortAclConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyPortAclConfigResponse rsp = ModifyPortAclConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyPortAclConfigOutcome(rsp);
+        else
+            return ModifyPortAclConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyPortAclConfigOutcome(outcome.GetError());
+    }
+}
+
+void AntiddosClient::ModifyPortAclConfigAsync(const ModifyPortAclConfigRequest& request, const ModifyPortAclConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyPortAclConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AntiddosClient::ModifyPortAclConfigOutcomeCallable AntiddosClient::ModifyPortAclConfigCallable(const ModifyPortAclConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyPortAclConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyPortAclConfig(request);
         }
     );
 

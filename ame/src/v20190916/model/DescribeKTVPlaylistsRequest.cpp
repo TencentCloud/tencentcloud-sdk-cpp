@@ -23,6 +23,7 @@ using namespace TencentCloud::Ame::V20190916::Model;
 using namespace std;
 
 DescribeKTVPlaylistsRequest::DescribeKTVPlaylistsRequest() :
+    m_typeHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false)
 {
@@ -34,6 +35,14 @@ string DescribeKTVPlaylistsRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
+
+    if (m_typeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Type";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
+    }
 
     if (m_offsetHasBeenSet)
     {
@@ -58,6 +67,22 @@ string DescribeKTVPlaylistsRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string DescribeKTVPlaylistsRequest::GetType() const
+{
+    return m_type;
+}
+
+void DescribeKTVPlaylistsRequest::SetType(const string& _type)
+{
+    m_type = _type;
+    m_typeHasBeenSet = true;
+}
+
+bool DescribeKTVPlaylistsRequest::TypeHasBeenSet() const
+{
+    return m_typeHasBeenSet;
+}
 
 int64_t DescribeKTVPlaylistsRequest::GetOffset() const
 {

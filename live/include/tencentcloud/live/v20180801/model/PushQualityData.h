@@ -406,6 +406,42 @@ namespace TencentCloud
                      */
                     bool StreamParamHasBeenSet() const;
 
+                    /**
+                     * 获取带宽，单位Mbps。
+                     * @return Bandwidth 带宽，单位Mbps。
+                     */
+                    double GetBandwidth() const;
+
+                    /**
+                     * 设置带宽，单位Mbps。
+                     * @param Bandwidth 带宽，单位Mbps。
+                     */
+                    void SetBandwidth(const double& _bandwidth);
+
+                    /**
+                     * 判断参数 Bandwidth 是否已赋值
+                     * @return Bandwidth 是否已赋值
+                     */
+                    bool BandwidthHasBeenSet() const;
+
+                    /**
+                     * 获取流量，单位MB。
+                     * @return Flux 流量，单位MB。
+                     */
+                    double GetFlux() const;
+
+                    /**
+                     * 设置流量，单位MB。
+                     * @param Flux 流量，单位MB。
+                     */
+                    void SetFlux(const double& _flux);
+
+                    /**
+                     * 判断参数 Flux 是否已赋值
+                     * @return Flux 是否已赋值
+                     */
+                    bool FluxHasBeenSet() const;
+
                 private:
 
                     /**
@@ -527,6 +563,18 @@ namespace TencentCloud
                      */
                     std::string m_streamParam;
                     bool m_streamParamHasBeenSet;
+
+                    /**
+                     * 带宽，单位Mbps。
+                     */
+                    double m_bandwidth;
+                    bool m_bandwidthHasBeenSet;
+
+                    /**
+                     * 流量，单位MB。
+                     */
+                    double m_flux;
+                    bool m_fluxHasBeenSet;
 
                 };
             }

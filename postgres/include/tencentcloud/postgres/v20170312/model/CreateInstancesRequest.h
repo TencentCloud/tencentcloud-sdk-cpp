@@ -207,14 +207,14 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取PostgreSQL版本。当输入该参数时，会基于此版本创建对应的最新内核版本号实例
-                     * @return DBVersion PostgreSQL版本。当输入该参数时，会基于此版本创建对应的最新内核版本号实例
+                     * 获取PostgreSQL版本。当输入该参数时，会基于此版本创建对应的最新内核版本号实例。该参数和DBMajorVersion、DBKernelVersion至少需要传递一个。
+                     * @return DBVersion PostgreSQL版本。当输入该参数时，会基于此版本创建对应的最新内核版本号实例。该参数和DBMajorVersion、DBKernelVersion至少需要传递一个。
                      */
                     std::string GetDBVersion() const;
 
                     /**
-                     * 设置PostgreSQL版本。当输入该参数时，会基于此版本创建对应的最新内核版本号实例
-                     * @param DBVersion PostgreSQL版本。当输入该参数时，会基于此版本创建对应的最新内核版本号实例
+                     * 设置PostgreSQL版本。当输入该参数时，会基于此版本创建对应的最新内核版本号实例。该参数和DBMajorVersion、DBKernelVersion至少需要传递一个。
+                     * @param DBVersion PostgreSQL版本。当输入该参数时，会基于此版本创建对应的最新内核版本号实例。该参数和DBMajorVersion、DBKernelVersion至少需要传递一个。
                      */
                     void SetDBVersion(const std::string& _dBVersion);
 
@@ -423,14 +423,14 @@ namespace TencentCloud
                     bool SecurityGroupIdsHasBeenSet() const;
 
                     /**
-                     * 获取PostgreSQL主要版本。目前支持10，11，12，13这几个版本。当输入该参数时，会基于此版本创建对应的最新内核版本号实例
-                     * @return DBMajorVersion PostgreSQL主要版本。目前支持10，11，12，13这几个版本。当输入该参数时，会基于此版本创建对应的最新内核版本号实例
+                     * 获取PostgreSQL主要版本。目前支持10，11，12，13这几个版本。当输入该参数时，会基于此版本创建对应的最新内核版本号实例。该参数和DBVersion、DBKernelVersion至少需要传递一个。
+                     * @return DBMajorVersion PostgreSQL主要版本。目前支持10，11，12，13这几个版本。当输入该参数时，会基于此版本创建对应的最新内核版本号实例。该参数和DBVersion、DBKernelVersion至少需要传递一个。
                      */
                     std::string GetDBMajorVersion() const;
 
                     /**
-                     * 设置PostgreSQL主要版本。目前支持10，11，12，13这几个版本。当输入该参数时，会基于此版本创建对应的最新内核版本号实例
-                     * @param DBMajorVersion PostgreSQL主要版本。目前支持10，11，12，13这几个版本。当输入该参数时，会基于此版本创建对应的最新内核版本号实例
+                     * 设置PostgreSQL主要版本。目前支持10，11，12，13这几个版本。当输入该参数时，会基于此版本创建对应的最新内核版本号实例。该参数和DBVersion、DBKernelVersion至少需要传递一个。
+                     * @param DBMajorVersion PostgreSQL主要版本。目前支持10，11，12，13这几个版本。当输入该参数时，会基于此版本创建对应的最新内核版本号实例。该参数和DBVersion、DBKernelVersion至少需要传递一个。
                      */
                     void SetDBMajorVersion(const std::string& _dBMajorVersion);
 
@@ -441,14 +441,14 @@ namespace TencentCloud
                     bool DBMajorVersionHasBeenSet() const;
 
                     /**
-                     * 获取PostgreSQL内核版本。当输入该参数时，会创建该内核版本号实例
-                     * @return DBKernelVersion PostgreSQL内核版本。当输入该参数时，会创建该内核版本号实例
+                     * 获取PostgreSQL内核版本。当输入该参数时，会创建该内核版本号实例。该参数和DBVersion、DBMajorVersion至少需要传递一个。
+                     * @return DBKernelVersion PostgreSQL内核版本。当输入该参数时，会创建该内核版本号实例。该参数和DBVersion、DBMajorVersion至少需要传递一个。
                      */
                     std::string GetDBKernelVersion() const;
 
                     /**
-                     * 设置PostgreSQL内核版本。当输入该参数时，会创建该内核版本号实例
-                     * @param DBKernelVersion PostgreSQL内核版本。当输入该参数时，会创建该内核版本号实例
+                     * 设置PostgreSQL内核版本。当输入该参数时，会创建该内核版本号实例。该参数和DBVersion、DBMajorVersion至少需要传递一个。
+                     * @param DBKernelVersion PostgreSQL内核版本。当输入该参数时，会创建该内核版本号实例。该参数和DBVersion、DBMajorVersion至少需要传递一个。
                      */
                     void SetDBKernelVersion(const std::string& _dBKernelVersion);
 
@@ -475,6 +475,60 @@ namespace TencentCloud
                      * @return DBNodeSet 是否已赋值
                      */
                     bool DBNodeSetHasBeenSet() const;
+
+                    /**
+                     * 获取是否需要支持数据透明加密，1：是，0：否（默认）。
+                     * @return NeedSupportTDE 是否需要支持数据透明加密，1：是，0：否（默认）。
+                     */
+                    uint64_t GetNeedSupportTDE() const;
+
+                    /**
+                     * 设置是否需要支持数据透明加密，1：是，0：否（默认）。
+                     * @param NeedSupportTDE 是否需要支持数据透明加密，1：是，0：否（默认）。
+                     */
+                    void SetNeedSupportTDE(const uint64_t& _needSupportTDE);
+
+                    /**
+                     * 判断参数 NeedSupportTDE 是否已赋值
+                     * @return NeedSupportTDE 是否已赋值
+                     */
+                    bool NeedSupportTDEHasBeenSet() const;
+
+                    /**
+                     * 获取自定义密钥的KeyId，若选择自定义密匙加密，则需要传入自定义密匙的KeyId，KeyId是CMK的唯一标识。
+                     * @return KMSKeyId 自定义密钥的KeyId，若选择自定义密匙加密，则需要传入自定义密匙的KeyId，KeyId是CMK的唯一标识。
+                     */
+                    std::string GetKMSKeyId() const;
+
+                    /**
+                     * 设置自定义密钥的KeyId，若选择自定义密匙加密，则需要传入自定义密匙的KeyId，KeyId是CMK的唯一标识。
+                     * @param KMSKeyId 自定义密钥的KeyId，若选择自定义密匙加密，则需要传入自定义密匙的KeyId，KeyId是CMK的唯一标识。
+                     */
+                    void SetKMSKeyId(const std::string& _kMSKeyId);
+
+                    /**
+                     * 判断参数 KMSKeyId 是否已赋值
+                     * @return KMSKeyId 是否已赋值
+                     */
+                    bool KMSKeyIdHasBeenSet() const;
+
+                    /**
+                     * 获取使用KMS服务的地域，KMSRegion为空默认使用本地域的KMS，本地域不支持的情况下需自选其他KMS支持的地域。
+                     * @return KMSRegion 使用KMS服务的地域，KMSRegion为空默认使用本地域的KMS，本地域不支持的情况下需自选其他KMS支持的地域。
+                     */
+                    std::string GetKMSRegion() const;
+
+                    /**
+                     * 设置使用KMS服务的地域，KMSRegion为空默认使用本地域的KMS，本地域不支持的情况下需自选其他KMS支持的地域。
+                     * @param KMSRegion 使用KMS服务的地域，KMSRegion为空默认使用本地域的KMS，本地域不支持的情况下需自选其他KMS支持的地域。
+                     */
+                    void SetKMSRegion(const std::string& _kMSRegion);
+
+                    /**
+                     * 判断参数 KMSRegion 是否已赋值
+                     * @return KMSRegion 是否已赋值
+                     */
+                    bool KMSRegionHasBeenSet() const;
 
                 private:
 
@@ -533,7 +587,7 @@ namespace TencentCloud
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * PostgreSQL版本。当输入该参数时，会基于此版本创建对应的最新内核版本号实例
+                     * PostgreSQL版本。当输入该参数时，会基于此版本创建对应的最新内核版本号实例。该参数和DBMajorVersion、DBKernelVersion至少需要传递一个。
                      */
                     std::string m_dBVersion;
                     bool m_dBVersionHasBeenSet;
@@ -605,13 +659,13 @@ namespace TencentCloud
                     bool m_securityGroupIdsHasBeenSet;
 
                     /**
-                     * PostgreSQL主要版本。目前支持10，11，12，13这几个版本。当输入该参数时，会基于此版本创建对应的最新内核版本号实例
+                     * PostgreSQL主要版本。目前支持10，11，12，13这几个版本。当输入该参数时，会基于此版本创建对应的最新内核版本号实例。该参数和DBVersion、DBKernelVersion至少需要传递一个。
                      */
                     std::string m_dBMajorVersion;
                     bool m_dBMajorVersionHasBeenSet;
 
                     /**
-                     * PostgreSQL内核版本。当输入该参数时，会创建该内核版本号实例
+                     * PostgreSQL内核版本。当输入该参数时，会创建该内核版本号实例。该参数和DBVersion、DBMajorVersion至少需要传递一个。
                      */
                     std::string m_dBKernelVersion;
                     bool m_dBKernelVersionHasBeenSet;
@@ -621,6 +675,24 @@ namespace TencentCloud
                      */
                     std::vector<DBNode> m_dBNodeSet;
                     bool m_dBNodeSetHasBeenSet;
+
+                    /**
+                     * 是否需要支持数据透明加密，1：是，0：否（默认）。
+                     */
+                    uint64_t m_needSupportTDE;
+                    bool m_needSupportTDEHasBeenSet;
+
+                    /**
+                     * 自定义密钥的KeyId，若选择自定义密匙加密，则需要传入自定义密匙的KeyId，KeyId是CMK的唯一标识。
+                     */
+                    std::string m_kMSKeyId;
+                    bool m_kMSKeyIdHasBeenSet;
+
+                    /**
+                     * 使用KMS服务的地域，KMSRegion为空默认使用本地域的KMS，本地域不支持的情况下需自选其他KMS支持的地域。
+                     */
+                    std::string m_kMSRegion;
+                    bool m_kMSRegionHasBeenSet;
 
                 };
             }

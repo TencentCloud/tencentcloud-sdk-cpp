@@ -19,6 +19,7 @@ set(privatedns_public_header
   )
 
 set(privatedns_public_header_model
+  include/tencentcloud/privatedns/v20201028/model/DescribeQuotaUsageResponse.h
   include/tencentcloud/privatedns/v20201028/model/ModifyPrivateZoneVpcRequest.h
   include/tencentcloud/privatedns/v20201028/model/DescribeAuditLogResponse.h
   include/tencentcloud/privatedns/v20201028/model/DescribePrivateDNSAccountListResponse.h
@@ -39,6 +40,7 @@ set(privatedns_public_header_model
   include/tencentcloud/privatedns/v20201028/model/DescribeRequestDataResponse.h
   include/tencentcloud/privatedns/v20201028/model/ModifyPrivateZoneRequest.h
   include/tencentcloud/privatedns/v20201028/model/TagInfo.h
+  include/tencentcloud/privatedns/v20201028/model/TldQuota.h
   include/tencentcloud/privatedns/v20201028/model/CreatePrivateZoneRequest.h
   include/tencentcloud/privatedns/v20201028/model/VpcInfo.h
   include/tencentcloud/privatedns/v20201028/model/AccountVpcInfoOut.h
@@ -66,6 +68,7 @@ set(privatedns_public_header_model
   include/tencentcloud/privatedns/v20201028/model/DescribePrivateDNSAccountListRequest.h
   include/tencentcloud/privatedns/v20201028/model/PrivateZone.h
   include/tencentcloud/privatedns/v20201028/model/CreatePrivateZoneRecordRequest.h
+  include/tencentcloud/privatedns/v20201028/model/DescribeQuotaUsageRequest.h
   include/tencentcloud/privatedns/v20201028/model/ModifyPrivateZoneRecordRequest.h
   include/tencentcloud/privatedns/v20201028/model/DeletePrivateDNSAccountResponse.h
   include/tencentcloud/privatedns/v20201028/model/FlowUsage.h
@@ -75,6 +78,7 @@ set(privatedns_public_header_model
 
 set(privatedns_src
   src/v20201028/PrivatednsClient.cpp
+  src/v20201028/model/DescribeQuotaUsageResponse.cpp
   src/v20201028/model/ModifyPrivateZoneVpcRequest.cpp
   src/v20201028/model/DescribeAuditLogResponse.cpp
   src/v20201028/model/DescribePrivateDNSAccountListResponse.cpp
@@ -95,6 +99,7 @@ set(privatedns_src
   src/v20201028/model/DescribeRequestDataResponse.cpp
   src/v20201028/model/ModifyPrivateZoneRequest.cpp
   src/v20201028/model/TagInfo.cpp
+  src/v20201028/model/TldQuota.cpp
   src/v20201028/model/CreatePrivateZoneRequest.cpp
   src/v20201028/model/VpcInfo.cpp
   src/v20201028/model/AccountVpcInfoOut.cpp
@@ -122,6 +127,7 @@ set(privatedns_src
   src/v20201028/model/DescribePrivateDNSAccountListRequest.cpp
   src/v20201028/model/PrivateZone.cpp
   src/v20201028/model/CreatePrivateZoneRecordRequest.cpp
+  src/v20201028/model/DescribeQuotaUsageRequest.cpp
   src/v20201028/model/ModifyPrivateZoneRecordRequest.cpp
   src/v20201028/model/DeletePrivateDNSAccountResponse.cpp
   src/v20201028/model/FlowUsage.cpp

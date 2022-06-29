@@ -33,7 +33,9 @@ VulEffectHostList::VulEffectHostList() :
     m_descriptionHasBeenSet(false),
     m_hostVersionHasBeenSet(false),
     m_isSupportAutoFixHasBeenSet(false),
-    m_fixStatusMsgHasBeenSet(false)
+    m_fixStatusMsgHasBeenSet(false),
+    m_firstDiscoveryTimeHasBeenSet(false),
+    m_instanceStateHasBeenSet(false)
 {
 }
 
@@ -175,6 +177,26 @@ CoreInternalOutcome VulEffectHostList::Deserialize(const rapidjson::Value &value
         m_fixStatusMsgHasBeenSet = true;
     }
 
+    if (value.HasMember("FirstDiscoveryTime") && !value["FirstDiscoveryTime"].IsNull())
+    {
+        if (!value["FirstDiscoveryTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VulEffectHostList.FirstDiscoveryTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_firstDiscoveryTime = string(value["FirstDiscoveryTime"].GetString());
+        m_firstDiscoveryTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("InstanceState") && !value["InstanceState"].IsNull())
+    {
+        if (!value["InstanceState"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VulEffectHostList.InstanceState` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceState = string(value["InstanceState"].GetString());
+        m_instanceStateHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -289,6 +311,22 @@ void VulEffectHostList::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "FixStatusMsg";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_fixStatusMsg.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_firstDiscoveryTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FirstDiscoveryTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_firstDiscoveryTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceStateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceState";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceState.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -500,5 +538,37 @@ void VulEffectHostList::SetFixStatusMsg(const string& _fixStatusMsg)
 bool VulEffectHostList::FixStatusMsgHasBeenSet() const
 {
     return m_fixStatusMsgHasBeenSet;
+}
+
+string VulEffectHostList::GetFirstDiscoveryTime() const
+{
+    return m_firstDiscoveryTime;
+}
+
+void VulEffectHostList::SetFirstDiscoveryTime(const string& _firstDiscoveryTime)
+{
+    m_firstDiscoveryTime = _firstDiscoveryTime;
+    m_firstDiscoveryTimeHasBeenSet = true;
+}
+
+bool VulEffectHostList::FirstDiscoveryTimeHasBeenSet() const
+{
+    return m_firstDiscoveryTimeHasBeenSet;
+}
+
+string VulEffectHostList::GetInstanceState() const
+{
+    return m_instanceState;
+}
+
+void VulEffectHostList::SetInstanceState(const string& _instanceState)
+{
+    m_instanceState = _instanceState;
+    m_instanceStateHasBeenSet = true;
+}
+
+bool VulEffectHostList::InstanceStateHasBeenSet() const
+{
+    return m_instanceStateHasBeenSet;
 }
 

@@ -29,6 +29,14 @@
 #include <tencentcloud/tdid/v20210519/model/CreateSelectiveCredentialResponse.h>
 #include <tencentcloud/tdid/v20210519/model/CreateTDidRequest.h>
 #include <tencentcloud/tdid/v20210519/model/CreateTDidResponse.h>
+#include <tencentcloud/tdid/v20210519/model/CreateTDidByPublicKeyRequest.h>
+#include <tencentcloud/tdid/v20210519/model/CreateTDidByPublicKeyResponse.h>
+#include <tencentcloud/tdid/v20210519/model/GetAuthorityIssuerRequest.h>
+#include <tencentcloud/tdid/v20210519/model/GetAuthorityIssuerResponse.h>
+#include <tencentcloud/tdid/v20210519/model/GetDidDocumentRequest.h>
+#include <tencentcloud/tdid/v20210519/model/GetDidDocumentResponse.h>
+#include <tencentcloud/tdid/v20210519/model/SetCredentialStatusRequest.h>
+#include <tencentcloud/tdid/v20210519/model/SetCredentialStatusResponse.h>
 #include <tencentcloud/tdid/v20210519/model/VerifyCredentialRequest.h>
 #include <tencentcloud/tdid/v20210519/model/VerifyCredentialResponse.h>
 
@@ -54,6 +62,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateTDidResponse> CreateTDidOutcome;
                 typedef std::future<CreateTDidOutcome> CreateTDidOutcomeCallable;
                 typedef std::function<void(const TdidClient*, const Model::CreateTDidRequest&, CreateTDidOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTDidAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateTDidByPublicKeyResponse> CreateTDidByPublicKeyOutcome;
+                typedef std::future<CreateTDidByPublicKeyOutcome> CreateTDidByPublicKeyOutcomeCallable;
+                typedef std::function<void(const TdidClient*, const Model::CreateTDidByPublicKeyRequest&, CreateTDidByPublicKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTDidByPublicKeyAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetAuthorityIssuerResponse> GetAuthorityIssuerOutcome;
+                typedef std::future<GetAuthorityIssuerOutcome> GetAuthorityIssuerOutcomeCallable;
+                typedef std::function<void(const TdidClient*, const Model::GetAuthorityIssuerRequest&, GetAuthorityIssuerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetAuthorityIssuerAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetDidDocumentResponse> GetDidDocumentOutcome;
+                typedef std::future<GetDidDocumentOutcome> GetDidDocumentOutcomeCallable;
+                typedef std::function<void(const TdidClient*, const Model::GetDidDocumentRequest&, GetDidDocumentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetDidDocumentAsyncHandler;
+                typedef Outcome<Core::Error, Model::SetCredentialStatusResponse> SetCredentialStatusOutcome;
+                typedef std::future<SetCredentialStatusOutcome> SetCredentialStatusOutcomeCallable;
+                typedef std::function<void(const TdidClient*, const Model::SetCredentialStatusRequest&, SetCredentialStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetCredentialStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::VerifyCredentialResponse> VerifyCredentialOutcome;
                 typedef std::future<VerifyCredentialOutcome> VerifyCredentialOutcomeCallable;
                 typedef std::function<void(const TdidClient*, const Model::VerifyCredentialRequest&, VerifyCredentialOutcome, const std::shared_ptr<const AsyncCallerContext>&)> VerifyCredentialAsyncHandler;
@@ -86,6 +106,43 @@ namespace TencentCloud
                 CreateTDidOutcome CreateTDid(const Model::CreateTDidRequest &request);
                 void CreateTDidAsync(const Model::CreateTDidRequest& request, const CreateTDidAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateTDidOutcomeCallable CreateTDidCallable(const Model::CreateTDidRequest& request);
+
+                /**
+                 * 新建DID根据公钥生成Tdid
+                 * @param req CreateTDidByPublicKeyRequest
+                 * @return CreateTDidByPublicKeyOutcome
+                 */
+                CreateTDidByPublicKeyOutcome CreateTDidByPublicKey(const Model::CreateTDidByPublicKeyRequest &request);
+                void CreateTDidByPublicKeyAsync(const Model::CreateTDidByPublicKeyRequest& request, const CreateTDidByPublicKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateTDidByPublicKeyOutcomeCallable CreateTDidByPublicKeyCallable(const Model::CreateTDidByPublicKeyRequest& request);
+
+                /**
+                 *获取权威机构信息
+                 * @param req GetAuthorityIssuerRequest
+                 * @return GetAuthorityIssuerOutcome
+                 */
+                GetAuthorityIssuerOutcome GetAuthorityIssuer(const Model::GetAuthorityIssuerRequest &request);
+                void GetAuthorityIssuerAsync(const Model::GetAuthorityIssuerRequest& request, const GetAuthorityIssuerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetAuthorityIssuerOutcomeCallable GetAuthorityIssuerCallable(const Model::GetAuthorityIssuerRequest& request);
+
+                /**
+                 *查看DID文档
+
+                 * @param req GetDidDocumentRequest
+                 * @return GetDidDocumentOutcome
+                 */
+                GetDidDocumentOutcome GetDidDocument(const Model::GetDidDocumentRequest &request);
+                void GetDidDocumentAsync(const Model::GetDidDocumentRequest& request, const GetDidDocumentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetDidDocumentOutcomeCallable GetDidDocumentCallable(const Model::GetDidDocumentRequest& request);
+
+                /**
+                 *设置凭证链上状态
+                 * @param req SetCredentialStatusRequest
+                 * @return SetCredentialStatusOutcome
+                 */
+                SetCredentialStatusOutcome SetCredentialStatus(const Model::SetCredentialStatusRequest &request);
+                void SetCredentialStatusAsync(const Model::SetCredentialStatusRequest& request, const SetCredentialStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SetCredentialStatusOutcomeCallable SetCredentialStatusCallable(const Model::SetCredentialStatusRequest& request);
 
                 /**
                  *验证凭证

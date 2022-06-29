@@ -28,7 +28,8 @@ DescribeInstancesRequest::DescribeInstancesRequest() :
     m_statusHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_tagKeyHasBeenSet(false)
+    m_tagKeyHasBeenSet(false),
+    m_vpcIdHasBeenSet(false)
 {
 }
 
@@ -90,6 +91,14 @@ string DescribeInstancesRequest::ToJsonString() const
         string key = "TagKey";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_tagKey.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_vpcIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VpcId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_vpcId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -194,6 +203,22 @@ void DescribeInstancesRequest::SetTagKey(const string& _tagKey)
 bool DescribeInstancesRequest::TagKeyHasBeenSet() const
 {
     return m_tagKeyHasBeenSet;
+}
+
+string DescribeInstancesRequest::GetVpcId() const
+{
+    return m_vpcId;
+}
+
+void DescribeInstancesRequest::SetVpcId(const string& _vpcId)
+{
+    m_vpcId = _vpcId;
+    m_vpcIdHasBeenSet = true;
+}
+
+bool DescribeInstancesRequest::VpcIdHasBeenSet() const
+{
+    return m_vpcIdHasBeenSet;
 }
 
 

@@ -57,8 +57,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取IP地址模版。
-                     * @return AddressTemplateSet IP地址模版。
+                     * 获取IP地址模板。
+                     * @return AddressTemplateSet IP地址模板。
                      */
                     std::vector<AddressTemplate> GetAddressTemplateSet() const;
 
@@ -77,7 +77,7 @@ namespace TencentCloud
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * IP地址模版。
+                     * IP地址模板。
                      */
                     std::vector<AddressTemplate> m_addressTemplateSet;
                     bool m_addressTemplateSetHasBeenSet;

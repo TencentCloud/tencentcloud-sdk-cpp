@@ -25,7 +25,8 @@ Layer4Rule::Layer4Rule() :
     m_frontendPortHasBeenSet(false),
     m_protocolHasBeenSet(false),
     m_realServersHasBeenSet(false),
-    m_instanceDetailsHasBeenSet(false)
+    m_instanceDetailsHasBeenSet(false),
+    m_instanceDetailRuleHasBeenSet(false)
 {
 }
 
@@ -104,6 +105,26 @@ CoreInternalOutcome Layer4Rule::Deserialize(const rapidjson::Value &value)
         m_instanceDetailsHasBeenSet = true;
     }
 
+    if (value.HasMember("InstanceDetailRule") && !value["InstanceDetailRule"].IsNull())
+    {
+        if (!value["InstanceDetailRule"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Layer4Rule.InstanceDetailRule` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["InstanceDetailRule"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            RuleInstanceRelation item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_instanceDetailRule.push_back(item);
+        }
+        m_instanceDetailRuleHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -159,6 +180,21 @@ void Layer4Rule::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
 
         int i=0;
         for (auto itr = m_instanceDetails.begin(); itr != m_instanceDetails.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_instanceDetailRuleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceDetailRule";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_instanceDetailRule.begin(); itr != m_instanceDetailRule.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -246,5 +282,21 @@ void Layer4Rule::SetInstanceDetails(const vector<InstanceRelation>& _instanceDet
 bool Layer4Rule::InstanceDetailsHasBeenSet() const
 {
     return m_instanceDetailsHasBeenSet;
+}
+
+vector<RuleInstanceRelation> Layer4Rule::GetInstanceDetailRule() const
+{
+    return m_instanceDetailRule;
+}
+
+void Layer4Rule::SetInstanceDetailRule(const vector<RuleInstanceRelation>& _instanceDetailRule)
+{
+    m_instanceDetailRule = _instanceDetailRule;
+    m_instanceDetailRuleHasBeenSet = true;
+}
+
+bool Layer4Rule::InstanceDetailRuleHasBeenSet() const
+{
+    return m_instanceDetailRuleHasBeenSet;
 }
 

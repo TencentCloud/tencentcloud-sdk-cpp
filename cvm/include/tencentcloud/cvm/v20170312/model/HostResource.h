@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * cdh实例的资源信息
+                * 专用宿主机实例的资源信息
                 */
                 class HostResource : public AbstractModel
                 {
@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取cdh实例总cpu核数
-                     * @return CpuTotal cdh实例总cpu核数
+                     * 获取专用宿主机实例总cpu核数
+                     * @return CpuTotal 专用宿主机实例总cpu核数
                      */
                     uint64_t GetCpuTotal() const;
 
                     /**
-                     * 设置cdh实例总cpu核数
-                     * @param CpuTotal cdh实例总cpu核数
+                     * 设置专用宿主机实例总cpu核数
+                     * @param CpuTotal 专用宿主机实例总cpu核数
                      */
                     void SetCpuTotal(const uint64_t& _cpuTotal);
 
@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool CpuTotalHasBeenSet() const;
 
                     /**
-                     * 获取cdh实例可用cpu核数
-                     * @return CpuAvailable cdh实例可用cpu核数
+                     * 获取专用宿主机实例可用cpu核数
+                     * @return CpuAvailable 专用宿主机实例可用cpu核数
                      */
                     uint64_t GetCpuAvailable() const;
 
                     /**
-                     * 设置cdh实例可用cpu核数
-                     * @param CpuAvailable cdh实例可用cpu核数
+                     * 设置专用宿主机实例可用cpu核数
+                     * @param CpuAvailable 专用宿主机实例可用cpu核数
                      */
                     void SetCpuAvailable(const uint64_t& _cpuAvailable);
 
@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool CpuAvailableHasBeenSet() const;
 
                     /**
-                     * 获取cdh实例总内存大小（单位为:GiB）
-                     * @return MemTotal cdh实例总内存大小（单位为:GiB）
+                     * 获取专用宿主机实例总内存大小（单位为:GiB）
+                     * @return MemTotal 专用宿主机实例总内存大小（单位为:GiB）
                      */
                     double GetMemTotal() const;
 
                     /**
-                     * 设置cdh实例总内存大小（单位为:GiB）
-                     * @param MemTotal cdh实例总内存大小（单位为:GiB）
+                     * 设置专用宿主机实例总内存大小（单位为:GiB）
+                     * @param MemTotal 专用宿主机实例总内存大小（单位为:GiB）
                      */
                     void SetMemTotal(const double& _memTotal);
 
@@ -101,14 +101,14 @@ namespace TencentCloud
                     bool MemTotalHasBeenSet() const;
 
                     /**
-                     * 获取cdh实例可用内存大小（单位为:GiB）
-                     * @return MemAvailable cdh实例可用内存大小（单位为:GiB）
+                     * 获取专用宿主机实例可用内存大小（单位为:GiB）
+                     * @return MemAvailable 专用宿主机实例可用内存大小（单位为:GiB）
                      */
                     double GetMemAvailable() const;
 
                     /**
-                     * 设置cdh实例可用内存大小（单位为:GiB）
-                     * @param MemAvailable cdh实例可用内存大小（单位为:GiB）
+                     * 设置专用宿主机实例可用内存大小（单位为:GiB）
+                     * @param MemAvailable 专用宿主机实例可用内存大小（单位为:GiB）
                      */
                     void SetMemAvailable(const double& _memAvailable);
 
@@ -119,14 +119,14 @@ namespace TencentCloud
                     bool MemAvailableHasBeenSet() const;
 
                     /**
-                     * 获取cdh实例总磁盘大小（单位为:GiB）
-                     * @return DiskTotal cdh实例总磁盘大小（单位为:GiB）
+                     * 获取专用宿主机实例总磁盘大小（单位为:GiB）
+                     * @return DiskTotal 专用宿主机实例总磁盘大小（单位为:GiB）
                      */
                     uint64_t GetDiskTotal() const;
 
                     /**
-                     * 设置cdh实例总磁盘大小（单位为:GiB）
-                     * @param DiskTotal cdh实例总磁盘大小（单位为:GiB）
+                     * 设置专用宿主机实例总磁盘大小（单位为:GiB）
+                     * @param DiskTotal 专用宿主机实例总磁盘大小（单位为:GiB）
                      */
                     void SetDiskTotal(const uint64_t& _diskTotal);
 
@@ -137,14 +137,14 @@ namespace TencentCloud
                     bool DiskTotalHasBeenSet() const;
 
                     /**
-                     * 获取cdh实例可用磁盘大小（单位为:GiB）
-                     * @return DiskAvailable cdh实例可用磁盘大小（单位为:GiB）
+                     * 获取专用宿主机实例可用磁盘大小（单位为:GiB）
+                     * @return DiskAvailable 专用宿主机实例可用磁盘大小（单位为:GiB）
                      */
                     uint64_t GetDiskAvailable() const;
 
                     /**
-                     * 设置cdh实例可用磁盘大小（单位为:GiB）
-                     * @param DiskAvailable cdh实例可用磁盘大小（单位为:GiB）
+                     * 设置专用宿主机实例可用磁盘大小（单位为:GiB）
+                     * @param DiskAvailable 专用宿主机实例可用磁盘大小（单位为:GiB）
                      */
                     void SetDiskAvailable(const uint64_t& _diskAvailable);
 
@@ -155,14 +155,14 @@ namespace TencentCloud
                     bool DiskAvailableHasBeenSet() const;
 
                     /**
-                     * 获取cdh实例磁盘类型
-                     * @return DiskType cdh实例磁盘类型
+                     * 获取专用宿主机实例磁盘类型
+                     * @return DiskType 专用宿主机实例磁盘类型
                      */
                     std::string GetDiskType() const;
 
                     /**
-                     * 设置cdh实例磁盘类型
-                     * @param DiskType cdh实例磁盘类型
+                     * 设置专用宿主机实例磁盘类型
+                     * @param DiskType 专用宿主机实例磁盘类型
                      */
                     void SetDiskType(const std::string& _diskType);
 
@@ -172,49 +172,97 @@ namespace TencentCloud
                      */
                     bool DiskTypeHasBeenSet() const;
 
+                    /**
+                     * 获取专用宿主机实例总GPU卡数
+                     * @return GpuTotal 专用宿主机实例总GPU卡数
+                     */
+                    uint64_t GetGpuTotal() const;
+
+                    /**
+                     * 设置专用宿主机实例总GPU卡数
+                     * @param GpuTotal 专用宿主机实例总GPU卡数
+                     */
+                    void SetGpuTotal(const uint64_t& _gpuTotal);
+
+                    /**
+                     * 判断参数 GpuTotal 是否已赋值
+                     * @return GpuTotal 是否已赋值
+                     */
+                    bool GpuTotalHasBeenSet() const;
+
+                    /**
+                     * 获取专用宿主机实例可用GPU卡数
+                     * @return GpuAvailable 专用宿主机实例可用GPU卡数
+                     */
+                    uint64_t GetGpuAvailable() const;
+
+                    /**
+                     * 设置专用宿主机实例可用GPU卡数
+                     * @param GpuAvailable 专用宿主机实例可用GPU卡数
+                     */
+                    void SetGpuAvailable(const uint64_t& _gpuAvailable);
+
+                    /**
+                     * 判断参数 GpuAvailable 是否已赋值
+                     * @return GpuAvailable 是否已赋值
+                     */
+                    bool GpuAvailableHasBeenSet() const;
+
                 private:
 
                     /**
-                     * cdh实例总cpu核数
+                     * 专用宿主机实例总cpu核数
                      */
                     uint64_t m_cpuTotal;
                     bool m_cpuTotalHasBeenSet;
 
                     /**
-                     * cdh实例可用cpu核数
+                     * 专用宿主机实例可用cpu核数
                      */
                     uint64_t m_cpuAvailable;
                     bool m_cpuAvailableHasBeenSet;
 
                     /**
-                     * cdh实例总内存大小（单位为:GiB）
+                     * 专用宿主机实例总内存大小（单位为:GiB）
                      */
                     double m_memTotal;
                     bool m_memTotalHasBeenSet;
 
                     /**
-                     * cdh实例可用内存大小（单位为:GiB）
+                     * 专用宿主机实例可用内存大小（单位为:GiB）
                      */
                     double m_memAvailable;
                     bool m_memAvailableHasBeenSet;
 
                     /**
-                     * cdh实例总磁盘大小（单位为:GiB）
+                     * 专用宿主机实例总磁盘大小（单位为:GiB）
                      */
                     uint64_t m_diskTotal;
                     bool m_diskTotalHasBeenSet;
 
                     /**
-                     * cdh实例可用磁盘大小（单位为:GiB）
+                     * 专用宿主机实例可用磁盘大小（单位为:GiB）
                      */
                     uint64_t m_diskAvailable;
                     bool m_diskAvailableHasBeenSet;
 
                     /**
-                     * cdh实例磁盘类型
+                     * 专用宿主机实例磁盘类型
                      */
                     std::string m_diskType;
                     bool m_diskTypeHasBeenSet;
+
+                    /**
+                     * 专用宿主机实例总GPU卡数
+                     */
+                    uint64_t m_gpuTotal;
+                    bool m_gpuTotalHasBeenSet;
+
+                    /**
+                     * 专用宿主机实例可用GPU卡数
+                     */
+                    uint64_t m_gpuAvailable;
+                    bool m_gpuAvailableHasBeenSet;
 
                 };
             }

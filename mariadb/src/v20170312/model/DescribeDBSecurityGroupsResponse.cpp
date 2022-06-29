@@ -96,11 +96,11 @@ CoreInternalOutcome DescribeDBSecurityGroupsResponse::Deserialize(const string &
 
     if (rsp.HasMember("VPort") && !rsp["VPort"].IsNull())
     {
-        if (!rsp["VPort"].IsInt64())
+        if (!rsp["VPort"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `VPort` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VPort` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_vPort = rsp["VPort"].GetInt64();
+        m_vPort = string(rsp["VPort"].GetString());
         m_vPortHasBeenSet = true;
     }
 
@@ -142,7 +142,7 @@ string DescribeDBSecurityGroupsResponse::ToJsonString() const
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "VPort";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_vPort, allocator);
+        value.AddMember(iKey, rapidjson::Value(m_vPort.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -177,7 +177,7 @@ bool DescribeDBSecurityGroupsResponse::VIPHasBeenSet() const
     return m_vIPHasBeenSet;
 }
 
-int64_t DescribeDBSecurityGroupsResponse::GetVPort() const
+string DescribeDBSecurityGroupsResponse::GetVPort() const
 {
     return m_vPort;
 }

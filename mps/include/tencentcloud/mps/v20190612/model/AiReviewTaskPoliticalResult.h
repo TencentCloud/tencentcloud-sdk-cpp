@@ -37,7 +37,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 内容审核鉴政任务结果类型
+                * 内容审核涉敏任务结果类型
                 */
                 class AiReviewTaskPoliticalResult : public AbstractModel
                 {
@@ -67,14 +67,14 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取错误码，空字符串表示成功，其他值表示失败，取值请参考 [视频处理类错误码](https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。
-                     * @return ErrCodeExt 错误码，空字符串表示成功，其他值表示失败，取值请参考 [视频处理类错误码](https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。
+                     * 获取错误码，空字符串表示成功，其他值表示失败，取值请参考 [媒体处理类错误码](https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。
+                     * @return ErrCodeExt 错误码，空字符串表示成功，其他值表示失败，取值请参考 [媒体处理类错误码](https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。
                      */
                     std::string GetErrCodeExt() const;
 
                     /**
-                     * 设置错误码，空字符串表示成功，其他值表示失败，取值请参考 [视频处理类错误码](https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。
-                     * @param ErrCodeExt 错误码，空字符串表示成功，其他值表示失败，取值请参考 [视频处理类错误码](https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。
+                     * 设置错误码，空字符串表示成功，其他值表示失败，取值请参考 [媒体处理类错误码](https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。
+                     * @param ErrCodeExt 错误码，空字符串表示成功，其他值表示失败，取值请参考 [媒体处理类错误码](https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。
                      */
                     void SetErrCodeExt(const std::string& _errCodeExt);
 
@@ -121,14 +121,14 @@ namespace TencentCloud
                     bool MessageHasBeenSet() const;
 
                     /**
-                     * 获取内容审核鉴政任务输入。
-                     * @return Input 内容审核鉴政任务输入。
+                     * 获取内容审核涉敏任务输入。
+                     * @return Input 内容审核涉敏任务输入。
                      */
                     AiReviewPoliticalTaskInput GetInput() const;
 
                     /**
-                     * 设置内容审核鉴政任务输入。
-                     * @param Input 内容审核鉴政任务输入。
+                     * 设置内容审核涉敏任务输入。
+                     * @param Input 内容审核涉敏任务输入。
                      */
                     void SetInput(const AiReviewPoliticalTaskInput& _input);
 
@@ -139,17 +139,17 @@ namespace TencentCloud
                     bool InputHasBeenSet() const;
 
                     /**
-                     * 获取内容审核鉴政任务输出。
+                     * 获取内容审核涉敏任务输出。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Output 内容审核鉴政任务输出。
+                     * @return Output 内容审核涉敏任务输出。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AiReviewPoliticalTaskOutput GetOutput() const;
 
                     /**
-                     * 设置内容审核鉴政任务输出。
+                     * 设置内容审核涉敏任务输出。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Output 内容审核鉴政任务输出。
+                     * @param Output 内容审核涉敏任务输出。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetOutput(const AiReviewPoliticalTaskOutput& _output);
@@ -169,7 +169,7 @@ namespace TencentCloud
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 错误码，空字符串表示成功，其他值表示失败，取值请参考 [视频处理类错误码](https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。
+                     * 错误码，空字符串表示成功，其他值表示失败，取值请参考 [媒体处理类错误码](https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。
                      */
                     std::string m_errCodeExt;
                     bool m_errCodeExtHasBeenSet;
@@ -187,13 +187,13 @@ namespace TencentCloud
                     bool m_messageHasBeenSet;
 
                     /**
-                     * 内容审核鉴政任务输入。
+                     * 内容审核涉敏任务输入。
                      */
                     AiReviewPoliticalTaskInput m_input;
                     bool m_inputHasBeenSet;
 
                     /**
-                     * 内容审核鉴政任务输出。
+                     * 内容审核涉敏任务输出。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AiReviewPoliticalTaskOutput m_output;

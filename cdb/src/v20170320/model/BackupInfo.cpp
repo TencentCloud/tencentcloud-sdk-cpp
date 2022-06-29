@@ -34,7 +34,8 @@ BackupInfo::BackupInfo() :
     m_startTimeHasBeenSet(false),
     m_methodHasBeenSet(false),
     m_wayHasBeenSet(false),
-    m_manualBackupNameHasBeenSet(false)
+    m_manualBackupNameHasBeenSet(false),
+    m_saveModeHasBeenSet(false)
 {
 }
 
@@ -183,6 +184,16 @@ CoreInternalOutcome BackupInfo::Deserialize(const rapidjson::Value &value)
         m_manualBackupNameHasBeenSet = true;
     }
 
+    if (value.HasMember("SaveMode") && !value["SaveMode"].IsNull())
+    {
+        if (!value["SaveMode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BackupInfo.SaveMode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_saveMode = string(value["SaveMode"].GetString());
+        m_saveModeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -300,6 +311,14 @@ void BackupInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "ManualBackupName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_manualBackupName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_saveModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SaveMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_saveMode.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -527,5 +546,21 @@ void BackupInfo::SetManualBackupName(const string& _manualBackupName)
 bool BackupInfo::ManualBackupNameHasBeenSet() const
 {
     return m_manualBackupNameHasBeenSet;
+}
+
+string BackupInfo::GetSaveMode() const
+{
+    return m_saveMode;
+}
+
+void BackupInfo::SetSaveMode(const string& _saveMode)
+{
+    m_saveMode = _saveMode;
+    m_saveModeHasBeenSet = true;
+}
+
+bool BackupInfo::SaveModeHasBeenSet() const
+{
+    return m_saveModeHasBeenSet;
 }
 

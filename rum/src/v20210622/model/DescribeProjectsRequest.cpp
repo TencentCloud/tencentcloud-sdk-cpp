@@ -25,7 +25,8 @@ using namespace std;
 DescribeProjectsRequest::DescribeProjectsRequest() :
     m_limitHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_filtersHasBeenSet(false)
+    m_filtersHasBeenSet(false),
+    m_isDemoHasBeenSet(false)
 {
 }
 
@@ -65,6 +66,14 @@ string DescribeProjectsRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_isDemoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsDemo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isDemo, allocator);
     }
 
 
@@ -121,6 +130,22 @@ void DescribeProjectsRequest::SetFilters(const vector<Filter>& _filters)
 bool DescribeProjectsRequest::FiltersHasBeenSet() const
 {
     return m_filtersHasBeenSet;
+}
+
+int64_t DescribeProjectsRequest::GetIsDemo() const
+{
+    return m_isDemo;
+}
+
+void DescribeProjectsRequest::SetIsDemo(const int64_t& _isDemo)
+{
+    m_isDemo = _isDemo;
+    m_isDemoHasBeenSet = true;
+}
+
+bool DescribeProjectsRequest::IsDemoHasBeenSet() const
+{
+    return m_isDemoHasBeenSet;
 }
 
 

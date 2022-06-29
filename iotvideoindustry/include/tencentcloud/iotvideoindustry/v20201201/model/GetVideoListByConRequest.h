@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool DeviceIdHasBeenSet() const;
 
                     /**
-                     * 获取偏移量，默认0
-                     * @return Offset 偏移量，默认0
+                     * 获取偏移量
+                     * @return Offset 偏移量
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量，默认0
-                     * @param Offset 偏移量，默认0
+                     * 设置偏移量
+                     * @param Offset 偏移量
                      */
                     void SetOffset(const int64_t& _offset);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取限制量，默认200
-                     * @return Limit 限制量，默认200
+                     * 获取限制量
+                     * @return Limit 限制量
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置限制量，默认200
-                     * @param Limit 限制量，默认200
+                     * 设置限制量
+                     * @param Limit 限制量
                      */
                     void SetLimit(const int64_t& _limit);
 
@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取通道唯一标识
-                     * @return ChannelId 通道唯一标识
+                     * 获取通道唯一标识，对于NVR设备，多通道IPC设备，设备编码与通道编码不一致的IPC设备，此字段为必填
+                     * @return ChannelId 通道唯一标识，对于NVR设备，多通道IPC设备，设备编码与通道编码不一致的IPC设备，此字段为必填
                      */
                     std::string GetChannelId() const;
 
                     /**
-                     * 设置通道唯一标识
-                     * @param ChannelId 通道唯一标识
+                     * 设置通道唯一标识，对于NVR设备，多通道IPC设备，设备编码与通道编码不一致的IPC设备，此字段为必填
+                     * @param ChannelId 通道唯一标识，对于NVR设备，多通道IPC设备，设备编码与通道编码不一致的IPC设备，此字段为必填
                      */
                     void SetChannelId(const std::string& _channelId);
 
@@ -181,19 +181,19 @@ namespace TencentCloud
                     bool m_deviceIdHasBeenSet;
 
                     /**
-                     * 偏移量，默认0
+                     * 偏移量
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 限制量，默认200
+                     * 限制量
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 通道唯一标识
+                     * 通道唯一标识，对于NVR设备，多通道IPC设备，设备编码与通道编码不一致的IPC设备，此字段为必填
                      */
                     std::string m_channelId;
                     bool m_channelIdHasBeenSet;

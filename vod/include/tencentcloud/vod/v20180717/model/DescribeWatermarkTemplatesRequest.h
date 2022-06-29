@@ -43,22 +43,22 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取水印模板唯一标识过滤条件，数组长度限制：100。
-                     * @return Definitions 水印模板唯一标识过滤条件，数组长度限制：100。
+                     * 获取<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
+                     * @return SubAppId <b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
                      */
-                    std::vector<int64_t> GetDefinitions() const;
+                    uint64_t GetSubAppId() const;
 
                     /**
-                     * 设置水印模板唯一标识过滤条件，数组长度限制：100。
-                     * @param Definitions 水印模板唯一标识过滤条件，数组长度限制：100。
+                     * 设置<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
+                     * @param SubAppId <b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
                      */
-                    void SetDefinitions(const std::vector<int64_t>& _definitions);
+                    void SetSubAppId(const uint64_t& _subAppId);
 
                     /**
-                     * 判断参数 Definitions 是否已赋值
-                     * @return Definitions 是否已赋值
+                     * 判断参数 SubAppId 是否已赋值
+                     * @return SubAppId 是否已赋值
                      */
-                    bool DefinitionsHasBeenSet() const;
+                    bool SubAppIdHasBeenSet() const;
 
                     /**
                      * 获取水印类型过滤条件，可选值：
@@ -109,6 +109,24 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
+                     * 获取水印模板唯一标识过滤条件，数组长度限制：100。
+                     * @return Definitions 水印模板唯一标识过滤条件，数组长度限制：100。
+                     */
+                    std::vector<int64_t> GetDefinitions() const;
+
+                    /**
+                     * 设置水印模板唯一标识过滤条件，数组长度限制：100。
+                     * @param Definitions 水印模板唯一标识过滤条件，数组长度限制：100。
+                     */
+                    void SetDefinitions(const std::vector<int64_t>& _definitions);
+
+                    /**
+                     * 判断参数 Definitions 是否已赋值
+                     * @return Definitions 是否已赋值
+                     */
+                    bool DefinitionsHasBeenSet() const;
+
+                    /**
                      * 获取返回记录条数
 <li>默认值：10；</li>
 <li>最大值：100。</li>
@@ -134,31 +152,13 @@ namespace TencentCloud
                      */
                     bool LimitHasBeenSet() const;
 
-                    /**
-                     * 获取点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。
-                     * @return SubAppId 点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。
-                     */
-                    uint64_t GetSubAppId() const;
-
-                    /**
-                     * 设置点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。
-                     * @param SubAppId 点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。
-                     */
-                    void SetSubAppId(const uint64_t& _subAppId);
-
-                    /**
-                     * 判断参数 SubAppId 是否已赋值
-                     * @return SubAppId 是否已赋值
-                     */
-                    bool SubAppIdHasBeenSet() const;
-
                 private:
 
                     /**
-                     * 水印模板唯一标识过滤条件，数组长度限制：100。
+                     * <b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
                      */
-                    std::vector<int64_t> m_definitions;
-                    bool m_definitionsHasBeenSet;
+                    uint64_t m_subAppId;
+                    bool m_subAppIdHasBeenSet;
 
                     /**
                      * 水印类型过滤条件，可选值：
@@ -176,18 +176,18 @@ namespace TencentCloud
                     bool m_offsetHasBeenSet;
 
                     /**
+                     * 水印模板唯一标识过滤条件，数组长度限制：100。
+                     */
+                    std::vector<int64_t> m_definitions;
+                    bool m_definitionsHasBeenSet;
+
+                    /**
                      * 返回记录条数
 <li>默认值：10；</li>
 <li>最大值：100。</li>
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
-
-                    /**
-                     * 点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。
-                     */
-                    uint64_t m_subAppId;
-                    bool m_subAppIdHasBeenSet;
 
                 };
             }

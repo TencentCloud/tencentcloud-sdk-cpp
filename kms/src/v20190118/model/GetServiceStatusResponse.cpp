@@ -29,7 +29,9 @@ GetServiceStatusResponse::GetServiceStatusResponse() :
     m_userLevelHasBeenSet(false),
     m_proExpireTimeHasBeenSet(false),
     m_proRenewFlagHasBeenSet(false),
-    m_proResourceIdHasBeenSet(false)
+    m_proResourceIdHasBeenSet(false),
+    m_exclusiveVSMEnabledHasBeenSet(false),
+    m_exclusiveHSMEnabledHasBeenSet(false)
 {
 }
 
@@ -127,6 +129,26 @@ CoreInternalOutcome GetServiceStatusResponse::Deserialize(const string &payload)
         m_proResourceIdHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ExclusiveVSMEnabled") && !rsp["ExclusiveVSMEnabled"].IsNull())
+    {
+        if (!rsp["ExclusiveVSMEnabled"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ExclusiveVSMEnabled` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_exclusiveVSMEnabled = rsp["ExclusiveVSMEnabled"].GetBool();
+        m_exclusiveVSMEnabledHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ExclusiveHSMEnabled") && !rsp["ExclusiveHSMEnabled"].IsNull())
+    {
+        if (!rsp["ExclusiveHSMEnabled"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ExclusiveHSMEnabled` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_exclusiveHSMEnabled = rsp["ExclusiveHSMEnabled"].GetBool();
+        m_exclusiveHSMEnabledHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -183,6 +205,22 @@ string GetServiceStatusResponse::ToJsonString() const
         string key = "ProResourceId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_proResourceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_exclusiveVSMEnabledHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExclusiveVSMEnabled";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_exclusiveVSMEnabled, allocator);
+    }
+
+    if (m_exclusiveHSMEnabledHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExclusiveHSMEnabled";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_exclusiveHSMEnabled, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -255,6 +293,26 @@ string GetServiceStatusResponse::GetProResourceId() const
 bool GetServiceStatusResponse::ProResourceIdHasBeenSet() const
 {
     return m_proResourceIdHasBeenSet;
+}
+
+bool GetServiceStatusResponse::GetExclusiveVSMEnabled() const
+{
+    return m_exclusiveVSMEnabled;
+}
+
+bool GetServiceStatusResponse::ExclusiveVSMEnabledHasBeenSet() const
+{
+    return m_exclusiveVSMEnabledHasBeenSet;
+}
+
+bool GetServiceStatusResponse::GetExclusiveHSMEnabled() const
+{
+    return m_exclusiveHSMEnabled;
+}
+
+bool GetServiceStatusResponse::ExclusiveHSMEnabledHasBeenSet() const
+{
+    return m_exclusiveHSMEnabledHasBeenSet;
 }
 
 

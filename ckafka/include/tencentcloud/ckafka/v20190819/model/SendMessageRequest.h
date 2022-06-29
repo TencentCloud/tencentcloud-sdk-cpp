@@ -62,14 +62,14 @@ namespace TencentCloud
                     bool DataHubIdHasBeenSet() const;
 
                     /**
-                     * 获取发送消息内容
-                     * @return Message 发送消息内容
+                     * 获取发送消息内容(单次请求最多500条)
+                     * @return Message 发送消息内容(单次请求最多500条)
                      */
                     std::vector<BatchContent> GetMessage() const;
 
                     /**
-                     * 设置发送消息内容
-                     * @param Message 发送消息内容
+                     * 设置发送消息内容(单次请求最多500条)
+                     * @param Message 发送消息内容(单次请求最多500条)
                      */
                     void SetMessage(const std::vector<BatchContent>& _message);
 
@@ -88,7 +88,7 @@ namespace TencentCloud
                     bool m_dataHubIdHasBeenSet;
 
                     /**
-                     * 发送消息内容
+                     * 发送消息内容(单次请求最多500条)
                      */
                     std::vector<BatchContent> m_message;
                     bool m_messageHasBeenSet;

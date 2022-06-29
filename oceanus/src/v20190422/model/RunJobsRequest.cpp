@@ -23,7 +23,8 @@ using namespace TencentCloud::Oceanus::V20190422::Model;
 using namespace std;
 
 RunJobsRequest::RunJobsRequest() :
-    m_runJobDescriptionsHasBeenSet(false)
+    m_runJobDescriptionsHasBeenSet(false),
+    m_workSpaceIdHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string RunJobsRequest::ToJsonString() const
         }
     }
 
+    if (m_workSpaceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WorkSpaceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_workSpaceId.c_str(), allocator).Move(), allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -71,6 +80,22 @@ void RunJobsRequest::SetRunJobDescriptions(const vector<RunJobDescription>& _run
 bool RunJobsRequest::RunJobDescriptionsHasBeenSet() const
 {
     return m_runJobDescriptionsHasBeenSet;
+}
+
+string RunJobsRequest::GetWorkSpaceId() const
+{
+    return m_workSpaceId;
+}
+
+void RunJobsRequest::SetWorkSpaceId(const string& _workSpaceId)
+{
+    m_workSpaceId = _workSpaceId;
+    m_workSpaceIdHasBeenSet = true;
+}
+
+bool RunJobsRequest::WorkSpaceIdHasBeenSet() const
+{
+    return m_workSpaceIdHasBeenSet;
 }
 
 

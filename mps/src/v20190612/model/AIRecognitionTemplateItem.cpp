@@ -30,7 +30,8 @@ AIRecognitionTemplateItem::AIRecognitionTemplateItem() :
     m_asrFullTextConfigureHasBeenSet(false),
     m_asrWordsConfigureHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
+    m_updateTimeHasBeenSet(false),
+    m_typeHasBeenSet(false)
 {
 }
 
@@ -174,6 +175,16 @@ CoreInternalOutcome AIRecognitionTemplateItem::Deserialize(const rapidjson::Valu
         m_updateTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("Type") && !value["Type"].IsNull())
+    {
+        if (!value["Type"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AIRecognitionTemplateItem.Type` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_type = string(value["Type"].GetString());
+        m_typeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -264,6 +275,14 @@ void AIRecognitionTemplateItem::ToJsonObject(rapidjson::Value &value, rapidjson:
         string key = "UpdateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_updateTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_typeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Type";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -427,5 +446,21 @@ void AIRecognitionTemplateItem::SetUpdateTime(const string& _updateTime)
 bool AIRecognitionTemplateItem::UpdateTimeHasBeenSet() const
 {
     return m_updateTimeHasBeenSet;
+}
+
+string AIRecognitionTemplateItem::GetType() const
+{
+    return m_type;
+}
+
+void AIRecognitionTemplateItem::SetType(const string& _type)
+{
+    m_type = _type;
+    m_typeHasBeenSet = true;
+}
+
+bool AIRecognitionTemplateItem::TypeHasBeenSet() const
+{
+    return m_typeHasBeenSet;
 }
 

@@ -35,6 +35,8 @@
 #include <tencentcloud/trtc/v20190722/model/DescribeCallDetailResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeDetailEventRequest.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeDetailEventResponse.h>
+#include <tencentcloud/trtc/v20190722/model/DescribeExternalTrtcMeasureRequest.h>
+#include <tencentcloud/trtc/v20190722/model/DescribeExternalTrtcMeasureResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeHistoryScaleRequest.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeHistoryScaleResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DescribePictureRequest.h>
@@ -43,8 +45,6 @@
 #include <tencentcloud/trtc/v20190722/model/DescribeRecordStatisticResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeRoomInformationRequest.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeRoomInformationResponse.h>
-#include <tencentcloud/trtc/v20190722/model/DescribeTrtcInteractiveTimeRequest.h>
-#include <tencentcloud/trtc/v20190722/model/DescribeTrtcInteractiveTimeResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeTrtcMcuTranscodeTimeRequest.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeTrtcMcuTranscodeTimeResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeUserInformationRequest.h>
@@ -99,6 +99,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDetailEventResponse> DescribeDetailEventOutcome;
                 typedef std::future<DescribeDetailEventOutcome> DescribeDetailEventOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::DescribeDetailEventRequest&, DescribeDetailEventOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDetailEventAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeExternalTrtcMeasureResponse> DescribeExternalTrtcMeasureOutcome;
+                typedef std::future<DescribeExternalTrtcMeasureOutcome> DescribeExternalTrtcMeasureOutcomeCallable;
+                typedef std::function<void(const TrtcClient*, const Model::DescribeExternalTrtcMeasureRequest&, DescribeExternalTrtcMeasureOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeExternalTrtcMeasureAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeHistoryScaleResponse> DescribeHistoryScaleOutcome;
                 typedef std::future<DescribeHistoryScaleOutcome> DescribeHistoryScaleOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::DescribeHistoryScaleRequest&, DescribeHistoryScaleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHistoryScaleAsyncHandler;
@@ -111,9 +114,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeRoomInformationResponse> DescribeRoomInformationOutcome;
                 typedef std::future<DescribeRoomInformationOutcome> DescribeRoomInformationOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::DescribeRoomInformationRequest&, DescribeRoomInformationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRoomInformationAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeTrtcInteractiveTimeResponse> DescribeTrtcInteractiveTimeOutcome;
-                typedef std::future<DescribeTrtcInteractiveTimeOutcome> DescribeTrtcInteractiveTimeOutcomeCallable;
-                typedef std::function<void(const TrtcClient*, const Model::DescribeTrtcInteractiveTimeRequest&, DescribeTrtcInteractiveTimeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTrtcInteractiveTimeAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTrtcMcuTranscodeTimeResponse> DescribeTrtcMcuTranscodeTimeOutcome;
                 typedef std::future<DescribeTrtcMcuTranscodeTimeOutcome> DescribeTrtcMcuTranscodeTimeOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::DescribeTrtcMcuTranscodeTimeRequest&, DescribeTrtcMcuTranscodeTimeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTrtcMcuTranscodeTimeAsyncHandler;
@@ -206,6 +206,15 @@ namespace TencentCloud
                 DescribeDetailEventOutcomeCallable DescribeDetailEventCallable(const Model::DescribeDetailEventRequest& request);
 
                 /**
+                 *获取Trtc的用量统计数据。走计费渠道二期 只允许查两天的数据
+                 * @param req DescribeExternalTrtcMeasureRequest
+                 * @return DescribeExternalTrtcMeasureOutcome
+                 */
+                DescribeExternalTrtcMeasureOutcome DescribeExternalTrtcMeasure(const Model::DescribeExternalTrtcMeasureRequest &request);
+                void DescribeExternalTrtcMeasureAsync(const Model::DescribeExternalTrtcMeasureRequest& request, const DescribeExternalTrtcMeasureAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeExternalTrtcMeasureOutcomeCallable DescribeExternalTrtcMeasureCallable(const Model::DescribeExternalTrtcMeasureRequest& request);
+
+                /**
                  *可查询sdkqppid 每天的房间数和用户数，每分钟1次，可查询最近14天的数据。当天未结束，无法查到当天的房间数与用户数。 
                  * @param req DescribeHistoryScaleRequest
                  * @return DescribeHistoryScaleOutcome
@@ -246,19 +255,6 @@ namespace TencentCloud
                 DescribeRoomInformationOutcome DescribeRoomInformation(const Model::DescribeRoomInformationRequest &request);
                 void DescribeRoomInformationAsync(const Model::DescribeRoomInformationRequest& request, const DescribeRoomInformationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeRoomInformationOutcomeCallable DescribeRoomInformationCallable(const Model::DescribeRoomInformationRequest& request);
-
-                /**
-                 *查询音视频互动计费时长。
-- 查询时间小于等于1天时，返回每5分钟粒度的数据；查询时间大于1天时，返回按天汇总的数据。
-- 单次查询统计区间最多不能超过31天。
-- 若查询当天用量，由于统计延迟等原因，返回数据可能不够准确。
-- 日结后付费将于次日上午推送账单，建议次日上午9点以后再来查询前一天的用量。
-                 * @param req DescribeTrtcInteractiveTimeRequest
-                 * @return DescribeTrtcInteractiveTimeOutcome
-                 */
-                DescribeTrtcInteractiveTimeOutcome DescribeTrtcInteractiveTime(const Model::DescribeTrtcInteractiveTimeRequest &request);
-                void DescribeTrtcInteractiveTimeAsync(const Model::DescribeTrtcInteractiveTimeRequest& request, const DescribeTrtcInteractiveTimeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeTrtcInteractiveTimeOutcomeCallable DescribeTrtcInteractiveTimeCallable(const Model::DescribeTrtcInteractiveTimeRequest& request);
 
                 /**
                  *查询旁路转码计费时长。

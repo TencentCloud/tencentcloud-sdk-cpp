@@ -28,10 +28,10 @@ MediaTranscodeItem::MediaTranscodeItem() :
     m_widthHasBeenSet(false),
     m_sizeHasBeenSet(false),
     m_durationHasBeenSet(false),
-    m_containerHasBeenSet(false),
     m_md5HasBeenSet(false),
-    m_audioStreamSetHasBeenSet(false),
-    m_videoStreamSetHasBeenSet(false)
+    m_containerHasBeenSet(false),
+    m_videoStreamSetHasBeenSet(false),
+    m_audioStreamSetHasBeenSet(false)
 {
 }
 
@@ -110,16 +110,6 @@ CoreInternalOutcome MediaTranscodeItem::Deserialize(const rapidjson::Value &valu
         m_durationHasBeenSet = true;
     }
 
-    if (value.HasMember("Container") && !value["Container"].IsNull())
-    {
-        if (!value["Container"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `MediaTranscodeItem.Container` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_container = string(value["Container"].GetString());
-        m_containerHasBeenSet = true;
-    }
-
     if (value.HasMember("Md5") && !value["Md5"].IsNull())
     {
         if (!value["Md5"].IsString())
@@ -130,24 +120,14 @@ CoreInternalOutcome MediaTranscodeItem::Deserialize(const rapidjson::Value &valu
         m_md5HasBeenSet = true;
     }
 
-    if (value.HasMember("AudioStreamSet") && !value["AudioStreamSet"].IsNull())
+    if (value.HasMember("Container") && !value["Container"].IsNull())
     {
-        if (!value["AudioStreamSet"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `MediaTranscodeItem.AudioStreamSet` is not array type"));
-
-        const rapidjson::Value &tmpValue = value["AudioStreamSet"];
-        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        if (!value["Container"].IsString())
         {
-            MediaAudioStreamItem item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
-            if (!outcome.IsSuccess())
-            {
-                outcome.GetError().SetRequestId(requestId);
-                return outcome;
-            }
-            m_audioStreamSet.push_back(item);
+            return CoreInternalOutcome(Core::Error("response `MediaTranscodeItem.Container` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_audioStreamSetHasBeenSet = true;
+        m_container = string(value["Container"].GetString());
+        m_containerHasBeenSet = true;
     }
 
     if (value.HasMember("VideoStreamSet") && !value["VideoStreamSet"].IsNull())
@@ -168,6 +148,26 @@ CoreInternalOutcome MediaTranscodeItem::Deserialize(const rapidjson::Value &valu
             m_videoStreamSet.push_back(item);
         }
         m_videoStreamSetHasBeenSet = true;
+    }
+
+    if (value.HasMember("AudioStreamSet") && !value["AudioStreamSet"].IsNull())
+    {
+        if (!value["AudioStreamSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `MediaTranscodeItem.AudioStreamSet` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["AudioStreamSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            MediaAudioStreamItem item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_audioStreamSet.push_back(item);
+        }
+        m_audioStreamSetHasBeenSet = true;
     }
 
 
@@ -233,14 +233,6 @@ void MediaTranscodeItem::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         value.AddMember(iKey, m_duration, allocator);
     }
 
-    if (m_containerHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Container";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_container.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_md5HasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -249,19 +241,12 @@ void MediaTranscodeItem::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         value.AddMember(iKey, rapidjson::Value(m_md5.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_audioStreamSetHasBeenSet)
+    if (m_containerHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "AudioStreamSet";
+        string key = "Container";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        int i=0;
-        for (auto itr = m_audioStreamSet.begin(); itr != m_audioStreamSet.end(); ++itr, ++i)
-        {
-            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
-        }
+        value.AddMember(iKey, rapidjson::Value(m_container.c_str(), allocator).Move(), allocator);
     }
 
     if (m_videoStreamSetHasBeenSet)
@@ -273,6 +258,21 @@ void MediaTranscodeItem::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
 
         int i=0;
         for (auto itr = m_videoStreamSet.begin(); itr != m_videoStreamSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_audioStreamSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AudioStreamSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_audioStreamSet.begin(); itr != m_audioStreamSet.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -394,22 +394,6 @@ bool MediaTranscodeItem::DurationHasBeenSet() const
     return m_durationHasBeenSet;
 }
 
-string MediaTranscodeItem::GetContainer() const
-{
-    return m_container;
-}
-
-void MediaTranscodeItem::SetContainer(const string& _container)
-{
-    m_container = _container;
-    m_containerHasBeenSet = true;
-}
-
-bool MediaTranscodeItem::ContainerHasBeenSet() const
-{
-    return m_containerHasBeenSet;
-}
-
 string MediaTranscodeItem::GetMd5() const
 {
     return m_md5;
@@ -426,20 +410,20 @@ bool MediaTranscodeItem::Md5HasBeenSet() const
     return m_md5HasBeenSet;
 }
 
-vector<MediaAudioStreamItem> MediaTranscodeItem::GetAudioStreamSet() const
+string MediaTranscodeItem::GetContainer() const
 {
-    return m_audioStreamSet;
+    return m_container;
 }
 
-void MediaTranscodeItem::SetAudioStreamSet(const vector<MediaAudioStreamItem>& _audioStreamSet)
+void MediaTranscodeItem::SetContainer(const string& _container)
 {
-    m_audioStreamSet = _audioStreamSet;
-    m_audioStreamSetHasBeenSet = true;
+    m_container = _container;
+    m_containerHasBeenSet = true;
 }
 
-bool MediaTranscodeItem::AudioStreamSetHasBeenSet() const
+bool MediaTranscodeItem::ContainerHasBeenSet() const
 {
-    return m_audioStreamSetHasBeenSet;
+    return m_containerHasBeenSet;
 }
 
 vector<MediaVideoStreamItem> MediaTranscodeItem::GetVideoStreamSet() const
@@ -456,5 +440,21 @@ void MediaTranscodeItem::SetVideoStreamSet(const vector<MediaVideoStreamItem>& _
 bool MediaTranscodeItem::VideoStreamSetHasBeenSet() const
 {
     return m_videoStreamSetHasBeenSet;
+}
+
+vector<MediaAudioStreamItem> MediaTranscodeItem::GetAudioStreamSet() const
+{
+    return m_audioStreamSet;
+}
+
+void MediaTranscodeItem::SetAudioStreamSet(const vector<MediaAudioStreamItem>& _audioStreamSet)
+{
+    m_audioStreamSet = _audioStreamSet;
+    m_audioStreamSetHasBeenSet = true;
+}
+
+bool MediaTranscodeItem::AudioStreamSetHasBeenSet() const
+{
+    return m_audioStreamSetHasBeenSet;
 }
 

@@ -116,6 +116,24 @@ namespace TencentCloud
                      */
                     bool TimeOutHasBeenSet() const;
 
+                    /**
+                     * 获取无
+                     * @return ProgramIdList 无
+                     */
+                    std::vector<std::string> GetProgramIdList() const;
+
+                    /**
+                     * 设置无
+                     * @param ProgramIdList 无
+                     */
+                    void SetProgramIdList(const std::vector<std::string>& _programIdList);
+
+                    /**
+                     * 判断参数 ProgramIdList 是否已赋值
+                     * @return ProgramIdList 是否已赋值
+                     */
+                    bool ProgramIdListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -141,6 +159,12 @@ namespace TencentCloud
                      */
                     uint64_t m_timeOut;
                     bool m_timeOutHasBeenSet;
+
+                    /**
+                     * 无
+                     */
+                    std::vector<std::string> m_programIdList;
+                    bool m_programIdListHasBeenSet;
 
                 };
             }

@@ -101,14 +101,14 @@ namespace TencentCloud
                     bool EnumValueHasBeenSet() const;
 
                     /**
-                     * 获取是否需要重启后生效，"1"需要，"0"无需重启
-                     * @return NeedRestart 是否需要重启后生效，"1"需要，"0"无需重启
+                     * 获取是否需要重启生效 1:需要重启后生效；0：无需重启，设置成功即可生效；
+                     * @return NeedRestart 是否需要重启生效 1:需要重启后生效；0：无需重启，设置成功即可生效；
                      */
                     std::string GetNeedRestart() const;
 
                     /**
-                     * 设置是否需要重启后生效，"1"需要，"0"无需重启
-                     * @param NeedRestart 是否需要重启后生效，"1"需要，"0"无需重启
+                     * 设置是否需要重启生效 1:需要重启后生效；0：无需重启，设置成功即可生效；
+                     * @param NeedRestart 是否需要重启生效 1:需要重启后生效；0：无需重启，设置成功即可生效；
                      */
                     void SetNeedRestart(const std::string& _needRestart);
 
@@ -173,14 +173,14 @@ namespace TencentCloud
                     bool ValueTypeHasBeenSet() const;
 
                     /**
-                     * 获取是否获取到参数，1为获取，前端正常显示，0:前段显示loading
-                     * @return Status 是否获取到参数，1为获取，前端正常显示，0:前段显示loading
+                     * 获取是否为运行中参数值 1:运行中参数值；0：非运行中参数值；
+                     * @return Status 是否为运行中参数值 1:运行中参数值；0：非运行中参数值；
                      */
                     uint64_t GetStatus() const;
 
                     /**
-                     * 设置是否获取到参数，1为获取，前端正常显示，0:前段显示loading
-                     * @param Status 是否获取到参数，1为获取，前端正常显示，0:前段显示loading
+                     * 设置是否为运行中参数值 1:运行中参数值；0：非运行中参数值；
+                     * @param Status 是否为运行中参数值 1:运行中参数值；0：非运行中参数值；
                      */
                     void SetStatus(const uint64_t& _status);
 
@@ -211,7 +211,7 @@ namespace TencentCloud
                     bool m_enumValueHasBeenSet;
 
                     /**
-                     * 是否需要重启后生效，"1"需要，"0"无需重启
+                     * 是否需要重启生效 1:需要重启后生效；0：无需重启，设置成功即可生效；
                      */
                     std::string m_needRestart;
                     bool m_needRestartHasBeenSet;
@@ -235,7 +235,7 @@ namespace TencentCloud
                     bool m_valueTypeHasBeenSet;
 
                     /**
-                     * 是否获取到参数，1为获取，前端正常显示，0:前段显示loading
+                     * 是否为运行中参数值 1:运行中参数值；0：非运行中参数值；
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;

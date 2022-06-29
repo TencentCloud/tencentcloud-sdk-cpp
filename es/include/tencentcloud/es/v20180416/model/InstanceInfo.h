@@ -33,6 +33,7 @@
 #include <tencentcloud/es/v20180416/model/ZoneDetail.h>
 #include <tencentcloud/es/v20180416/model/KibanaNodeInfo.h>
 #include <tencentcloud/es/v20180416/model/WebNodeTypeInfo.h>
+#include <tencentcloud/es/v20180416/model/EsConfigSetInfo.h>
 
 
 namespace TencentCloud
@@ -218,6 +219,44 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
+                     * 获取自动续费标识。取值范围：
+RENEW_FLAG_AUTO：自动续费  
+RENEW_FLAG_MANUAL：不自动续费
+默认取值：
+RENEW_FLAG_DEFAULT：不自动续费
+若该参数指定为 RENEW_FLAG_AUTO，在账户余额充足的情况下，实例到期后将按月自动续费。
+                     * @return RenewFlag 自动续费标识。取值范围：
+RENEW_FLAG_AUTO：自动续费  
+RENEW_FLAG_MANUAL：不自动续费
+默认取值：
+RENEW_FLAG_DEFAULT：不自动续费
+若该参数指定为 RENEW_FLAG_AUTO，在账户余额充足的情况下，实例到期后将按月自动续费。
+                     */
+                    std::string GetRenewFlag() const;
+
+                    /**
+                     * 设置自动续费标识。取值范围：
+RENEW_FLAG_AUTO：自动续费  
+RENEW_FLAG_MANUAL：不自动续费
+默认取值：
+RENEW_FLAG_DEFAULT：不自动续费
+若该参数指定为 RENEW_FLAG_AUTO，在账户余额充足的情况下，实例到期后将按月自动续费。
+                     * @param RenewFlag 自动续费标识。取值范围：
+RENEW_FLAG_AUTO：自动续费  
+RENEW_FLAG_MANUAL：不自动续费
+默认取值：
+RENEW_FLAG_DEFAULT：不自动续费
+若该参数指定为 RENEW_FLAG_AUTO，在账户余额充足的情况下，实例到期后将按月自动续费。
+                     */
+                    void SetRenewFlag(const std::string& _renewFlag);
+
+                    /**
+                     * 判断参数 RenewFlag 是否已赋值
+                     * @return RenewFlag 是否已赋值
+                     */
+                    bool RenewFlagHasBeenSet() const;
+
+                    /**
                      * 获取实例计费模式。取值范围：  PREPAID：表示预付费，即包年包月  POSTPAID_BY_HOUR：表示后付费，即按量计费  CDHPAID：CDH付费，即只对CDH计费，不对CDH上的实例计费。
                      * @return ChargeType 实例计费模式。取值范围：  PREPAID：表示预付费，即包年包月  POSTPAID_BY_HOUR：表示后付费，即按量计费  CDHPAID：CDH付费，即只对CDH计费，不对CDH上的实例计费。
                      */
@@ -252,24 +291,6 @@ namespace TencentCloud
                      * @return ChargePeriod 是否已赋值
                      */
                     bool ChargePeriodHasBeenSet() const;
-
-                    /**
-                     * 获取自动续费标识。取值范围：  NOTIFY_AND_AUTO_RENEW：通知过期且自动续费  NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费  DISABLE_NOTIFY_AND_MANUAL_RENEW：不通知过期不自动续费  默认取值：NOTIFY_AND_AUTO_RENEW。若该参数指定为NOTIFY_AND_AUTO_RENEW，在账户余额充足的情况下，实例到期后将按月自动续费。
-                     * @return RenewFlag 自动续费标识。取值范围：  NOTIFY_AND_AUTO_RENEW：通知过期且自动续费  NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费  DISABLE_NOTIFY_AND_MANUAL_RENEW：不通知过期不自动续费  默认取值：NOTIFY_AND_AUTO_RENEW。若该参数指定为NOTIFY_AND_AUTO_RENEW，在账户余额充足的情况下，实例到期后将按月自动续费。
-                     */
-                    std::string GetRenewFlag() const;
-
-                    /**
-                     * 设置自动续费标识。取值范围：  NOTIFY_AND_AUTO_RENEW：通知过期且自动续费  NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费  DISABLE_NOTIFY_AND_MANUAL_RENEW：不通知过期不自动续费  默认取值：NOTIFY_AND_AUTO_RENEW。若该参数指定为NOTIFY_AND_AUTO_RENEW，在账户余额充足的情况下，实例到期后将按月自动续费。
-                     * @param RenewFlag 自动续费标识。取值范围：  NOTIFY_AND_AUTO_RENEW：通知过期且自动续费  NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费  DISABLE_NOTIFY_AND_MANUAL_RENEW：不通知过期不自动续费  默认取值：NOTIFY_AND_AUTO_RENEW。若该参数指定为NOTIFY_AND_AUTO_RENEW，在账户余额充足的情况下，实例到期后将按月自动续费。
-                     */
-                    void SetRenewFlag(const std::string& _renewFlag);
-
-                    /**
-                     * 判断参数 RenewFlag 是否已赋值
-                     * @return RenewFlag 是否已赋值
-                     */
-                    bool RenewFlagHasBeenSet() const;
 
                     /**
                      * 获取节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>
@@ -1473,6 +1494,94 @@ namespace TencentCloud
                      */
                     bool FrozenDiskSizeHasBeenSet() const;
 
+                    /**
+                     * 获取集群健康状态 -1 未知；0 Green; 1 Yellow; 2 Red
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return HealthStatus 集群健康状态 -1 未知；0 Green; 1 Yellow; 2 Red
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetHealthStatus() const;
+
+                    /**
+                     * 设置集群健康状态 -1 未知；0 Green; 1 Yellow; 2 Red
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param HealthStatus 集群健康状态 -1 未知；0 Green; 1 Yellow; 2 Red
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetHealthStatus(const int64_t& _healthStatus);
+
+                    /**
+                     * 判断参数 HealthStatus 是否已赋值
+                     * @return HealthStatus 是否已赋值
+                     */
+                    bool HealthStatusHasBeenSet() const;
+
+                    /**
+                     * 获取https集群内网url
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EsPrivateUrl https集群内网url
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetEsPrivateUrl() const;
+
+                    /**
+                     * 设置https集群内网url
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param EsPrivateUrl https集群内网url
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetEsPrivateUrl(const std::string& _esPrivateUrl);
+
+                    /**
+                     * 判断参数 EsPrivateUrl 是否已赋值
+                     * @return EsPrivateUrl 是否已赋值
+                     */
+                    bool EsPrivateUrlHasBeenSet() const;
+
+                    /**
+                     * 获取https集群内网域名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EsPrivateDomain https集群内网域名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetEsPrivateDomain() const;
+
+                    /**
+                     * 设置https集群内网域名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param EsPrivateDomain https集群内网域名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetEsPrivateDomain(const std::string& _esPrivateDomain);
+
+                    /**
+                     * 判断参数 EsPrivateDomain 是否已赋值
+                     * @return EsPrivateDomain 是否已赋值
+                     */
+                    bool EsPrivateDomainHasBeenSet() const;
+
+                    /**
+                     * 获取集群的配置组信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EsConfigSets 集群的配置组信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<EsConfigSetInfo> GetEsConfigSets() const;
+
+                    /**
+                     * 设置集群的配置组信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param EsConfigSets 集群的配置组信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetEsConfigSets(const std::vector<EsConfigSetInfo>& _esConfigSets);
+
+                    /**
+                     * 判断参数 EsConfigSets 是否已赋值
+                     * @return EsConfigSets 是否已赋值
+                     */
+                    bool EsConfigSetsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1530,6 +1639,17 @@ namespace TencentCloud
                     bool m_statusHasBeenSet;
 
                     /**
+                     * 自动续费标识。取值范围：
+RENEW_FLAG_AUTO：自动续费  
+RENEW_FLAG_MANUAL：不自动续费
+默认取值：
+RENEW_FLAG_DEFAULT：不自动续费
+若该参数指定为 RENEW_FLAG_AUTO，在账户余额充足的情况下，实例到期后将按月自动续费。
+                     */
+                    std::string m_renewFlag;
+                    bool m_renewFlagHasBeenSet;
+
+                    /**
                      * 实例计费模式。取值范围：  PREPAID：表示预付费，即包年包月  POSTPAID_BY_HOUR：表示后付费，即按量计费  CDHPAID：CDH付费，即只对CDH计费，不对CDH上的实例计费。
                      */
                     std::string m_chargeType;
@@ -1540,12 +1660,6 @@ namespace TencentCloud
                      */
                     uint64_t m_chargePeriod;
                     bool m_chargePeriodHasBeenSet;
-
-                    /**
-                     * 自动续费标识。取值范围：  NOTIFY_AND_AUTO_RENEW：通知过期且自动续费  NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费  DISABLE_NOTIFY_AND_MANUAL_RENEW：不通知过期不自动续费  默认取值：NOTIFY_AND_AUTO_RENEW。若该参数指定为NOTIFY_AND_AUTO_RENEW，在账户余额充足的情况下，实例到期后将按月自动续费。
-                     */
-                    std::string m_renewFlag;
-                    bool m_renewFlagHasBeenSet;
 
                     /**
                      * 节点规格<li>ES.S1.SMALL2：1核2G</li><li>ES.S1.MEDIUM4：2核4G</li><li>ES.S1.MEDIUM8：2核8G</li><li>ES.S1.LARGE16：4核16G</li><li>ES.S1.2XLARGE32：8核32G</li><li>ES.S1.4XLARGE32：16核32G</li><li>ES.S1.4XLARGE64：16核64G</li>
@@ -1935,6 +2049,34 @@ namespace TencentCloud
                      */
                     uint64_t m_frozenDiskSize;
                     bool m_frozenDiskSizeHasBeenSet;
+
+                    /**
+                     * 集群健康状态 -1 未知；0 Green; 1 Yellow; 2 Red
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_healthStatus;
+                    bool m_healthStatusHasBeenSet;
+
+                    /**
+                     * https集群内网url
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_esPrivateUrl;
+                    bool m_esPrivateUrlHasBeenSet;
+
+                    /**
+                     * https集群内网域名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_esPrivateDomain;
+                    bool m_esPrivateDomainHasBeenSet;
+
+                    /**
+                     * 集群的配置组信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<EsConfigSetInfo> m_esConfigSets;
+                    bool m_esConfigSetsHasBeenSet;
 
                 };
             }

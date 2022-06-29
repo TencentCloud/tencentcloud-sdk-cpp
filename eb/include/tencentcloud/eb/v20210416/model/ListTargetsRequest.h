@@ -43,24 +43,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取事件规则ID
-                     * @return RuleId 事件规则ID
-                     */
-                    std::string GetRuleId() const;
-
-                    /**
-                     * 设置事件规则ID
-                     * @param RuleId 事件规则ID
-                     */
-                    void SetRuleId(const std::string& _ruleId);
-
-                    /**
-                     * 判断参数 RuleId 是否已赋值
-                     * @return RuleId 是否已赋值
-                     */
-                    bool RuleIdHasBeenSet() const;
-
-                    /**
                      * 获取事件集ID
                      * @return EventBusId 事件集ID
                      */
@@ -95,6 +77,24 @@ namespace TencentCloud
                      * @return OrderBy 是否已赋值
                      */
                     bool OrderByHasBeenSet() const;
+
+                    /**
+                     * 获取事件规则ID
+                     * @return RuleId 事件规则ID
+                     */
+                    std::string GetRuleId() const;
+
+                    /**
+                     * 设置事件规则ID
+                     * @param RuleId 事件规则ID
+                     */
+                    void SetRuleId(const std::string& _ruleId);
+
+                    /**
+                     * 判断参数 RuleId 是否已赋值
+                     * @return RuleId 是否已赋值
+                     */
+                    bool RuleIdHasBeenSet() const;
 
                     /**
                      * 获取返回数量，默认为20，最大值为100。
@@ -153,12 +153,6 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 事件规则ID
-                     */
-                    std::string m_ruleId;
-                    bool m_ruleIdHasBeenSet;
-
-                    /**
                      * 事件集ID
                      */
                     std::string m_eventBusId;
@@ -169,6 +163,12 @@ namespace TencentCloud
                      */
                     std::string m_orderBy;
                     bool m_orderByHasBeenSet;
+
+                    /**
+                     * 事件规则ID
+                     */
+                    std::string m_ruleId;
+                    bool m_ruleIdHasBeenSet;
 
                     /**
                      * 返回数量，默认为20，最大值为100。

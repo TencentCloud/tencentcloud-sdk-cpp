@@ -45,12 +45,18 @@
 #include <tencentcloud/ssa/v20180608/model/DescribeEventDetailResponse.h>
 #include <tencentcloud/ssa/v20180608/model/DescribeLeakDetectionListRequest.h>
 #include <tencentcloud/ssa/v20180608/model/DescribeLeakDetectionListResponse.h>
+#include <tencentcloud/ssa/v20180608/model/DescribeMappingResultsRequest.h>
+#include <tencentcloud/ssa/v20180608/model/DescribeMappingResultsResponse.h>
 #include <tencentcloud/ssa/v20180608/model/DescribeSafetyEventListRequest.h>
 #include <tencentcloud/ssa/v20180608/model/DescribeSafetyEventListResponse.h>
 #include <tencentcloud/ssa/v20180608/model/DescribeSocAlertDetailsRequest.h>
 #include <tencentcloud/ssa/v20180608/model/DescribeSocAlertDetailsResponse.h>
 #include <tencentcloud/ssa/v20180608/model/DescribeSocAlertListRequest.h>
 #include <tencentcloud/ssa/v20180608/model/DescribeSocAlertListResponse.h>
+#include <tencentcloud/ssa/v20180608/model/DescribeSocCheckItemListRequest.h>
+#include <tencentcloud/ssa/v20180608/model/DescribeSocCheckItemListResponse.h>
+#include <tencentcloud/ssa/v20180608/model/DescribeSocCheckResultListRequest.h>
+#include <tencentcloud/ssa/v20180608/model/DescribeSocCheckResultListResponse.h>
 #include <tencentcloud/ssa/v20180608/model/DescribeSocCspmComplianceRequest.h>
 #include <tencentcloud/ssa/v20180608/model/DescribeSocCspmComplianceResponse.h>
 #include <tencentcloud/ssa/v20180608/model/DescribeVulDetailRequest.h>
@@ -106,6 +112,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeLeakDetectionListResponse> DescribeLeakDetectionListOutcome;
                 typedef std::future<DescribeLeakDetectionListOutcome> DescribeLeakDetectionListOutcomeCallable;
                 typedef std::function<void(const SsaClient*, const Model::DescribeLeakDetectionListRequest&, DescribeLeakDetectionListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLeakDetectionListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeMappingResultsResponse> DescribeMappingResultsOutcome;
+                typedef std::future<DescribeMappingResultsOutcome> DescribeMappingResultsOutcomeCallable;
+                typedef std::function<void(const SsaClient*, const Model::DescribeMappingResultsRequest&, DescribeMappingResultsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMappingResultsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSafetyEventListResponse> DescribeSafetyEventListOutcome;
                 typedef std::future<DescribeSafetyEventListOutcome> DescribeSafetyEventListOutcomeCallable;
                 typedef std::function<void(const SsaClient*, const Model::DescribeSafetyEventListRequest&, DescribeSafetyEventListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSafetyEventListAsyncHandler;
@@ -115,6 +124,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeSocAlertListResponse> DescribeSocAlertListOutcome;
                 typedef std::future<DescribeSocAlertListOutcome> DescribeSocAlertListOutcomeCallable;
                 typedef std::function<void(const SsaClient*, const Model::DescribeSocAlertListRequest&, DescribeSocAlertListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSocAlertListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSocCheckItemListResponse> DescribeSocCheckItemListOutcome;
+                typedef std::future<DescribeSocCheckItemListOutcome> DescribeSocCheckItemListOutcomeCallable;
+                typedef std::function<void(const SsaClient*, const Model::DescribeSocCheckItemListRequest&, DescribeSocCheckItemListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSocCheckItemListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSocCheckResultListResponse> DescribeSocCheckResultListOutcome;
+                typedef std::future<DescribeSocCheckResultListOutcome> DescribeSocCheckResultListOutcomeCallable;
+                typedef std::function<void(const SsaClient*, const Model::DescribeSocCheckResultListRequest&, DescribeSocCheckResultListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSocCheckResultListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSocCspmComplianceResponse> DescribeSocCspmComplianceOutcome;
                 typedef std::future<DescribeSocCspmComplianceOutcome> DescribeSocCspmComplianceOutcomeCallable;
                 typedef std::function<void(const SsaClient*, const Model::DescribeSocCspmComplianceRequest&, DescribeSocCspmComplianceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSocCspmComplianceAsyncHandler;
@@ -230,6 +245,15 @@ namespace TencentCloud
                 DescribeLeakDetectionListOutcomeCallable DescribeLeakDetectionListCallable(const Model::DescribeLeakDetectionListRequest& request);
 
                 /**
+                 *获取测绘列表
+                 * @param req DescribeMappingResultsRequest
+                 * @return DescribeMappingResultsOutcome
+                 */
+                DescribeMappingResultsOutcome DescribeMappingResults(const Model::DescribeMappingResultsRequest &request);
+                void DescribeMappingResultsAsync(const Model::DescribeMappingResultsRequest& request, const DescribeMappingResultsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeMappingResultsOutcomeCallable DescribeMappingResultsCallable(const Model::DescribeMappingResultsRequest& request);
+
+                /**
                  *获取安全事件列表
                  * @param req DescribeSafetyEventListRequest
                  * @return DescribeSafetyEventListOutcome
@@ -255,6 +279,24 @@ namespace TencentCloud
                 DescribeSocAlertListOutcome DescribeSocAlertList(const Model::DescribeSocAlertListRequest &request);
                 void DescribeSocAlertListAsync(const Model::DescribeSocAlertListRequest& request, const DescribeSocAlertListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeSocAlertListOutcomeCallable DescribeSocAlertListCallable(const Model::DescribeSocAlertListRequest& request);
+
+                /**
+                 *云安全配置检查项列表
+                 * @param req DescribeSocCheckItemListRequest
+                 * @return DescribeSocCheckItemListOutcome
+                 */
+                DescribeSocCheckItemListOutcome DescribeSocCheckItemList(const Model::DescribeSocCheckItemListRequest &request);
+                void DescribeSocCheckItemListAsync(const Model::DescribeSocCheckItemListRequest& request, const DescribeSocCheckItemListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSocCheckItemListOutcomeCallable DescribeSocCheckItemListCallable(const Model::DescribeSocCheckItemListRequest& request);
+
+                /**
+                 *云安全配置检查项结果列表
+                 * @param req DescribeSocCheckResultListRequest
+                 * @return DescribeSocCheckResultListOutcome
+                 */
+                DescribeSocCheckResultListOutcome DescribeSocCheckResultList(const Model::DescribeSocCheckResultListRequest &request);
+                void DescribeSocCheckResultListAsync(const Model::DescribeSocCheckResultListRequest& request, const DescribeSocCheckResultListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSocCheckResultListOutcomeCallable DescribeSocCheckResultListCallable(const Model::DescribeSocCheckResultListRequest& request);
 
                 /**
                  *合规详情项

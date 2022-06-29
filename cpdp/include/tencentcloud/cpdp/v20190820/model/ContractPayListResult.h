@@ -47,6 +47,50 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取支付方式编号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PaymentId 支付方式编号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetPaymentId() const;
+
+                    /**
+                     * 设置支付方式编号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param PaymentId 支付方式编号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPaymentId(const std::string& _paymentId);
+
+                    /**
+                     * 判断参数 PaymentId 是否已赋值
+                     * @return PaymentId 是否已赋值
+                     */
+                    bool PaymentIdHasBeenSet() const;
+
+                    /**
+                     * 获取支持的交易类型（多个以小写逗号分开，0现金，1刷卡，2主扫，3被扫，4JSPAY，5预授权）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PaymentType 支持的交易类型（多个以小写逗号分开，0现金，1刷卡，2主扫，3被扫，4JSPAY，5预授权）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetPaymentType() const;
+
+                    /**
+                     * 设置支持的交易类型（多个以小写逗号分开，0现金，1刷卡，2主扫，3被扫，4JSPAY，5预授权）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param PaymentType 支持的交易类型（多个以小写逗号分开，0现金，1刷卡，2主扫，3被扫，4JSPAY，5预授权）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPaymentType(const std::string& _paymentType);
+
+                    /**
+                     * 判断参数 PaymentType 是否已赋值
+                     * @return PaymentType 是否已赋值
+                     */
+                    bool PaymentTypeHasBeenSet() const;
+
+                    /**
                      * 获取支付标签
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PaymentTag 支付标签
@@ -91,28 +135,6 @@ namespace TencentCloud
                     bool PaymentIconHasBeenSet() const;
 
                     /**
-                     * 获取支付方式
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PaymentOptionSix 支付方式
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string GetPaymentOptionSix() const;
-
-                    /**
-                     * 设置支付方式
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PaymentOptionSix 支付方式
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    void SetPaymentOptionSix(const std::string& _paymentOptionSix);
-
-                    /**
-                     * 判断参数 PaymentOptionSix 是否已赋值
-                     * @return PaymentOptionSix 是否已赋值
-                     */
-                    bool PaymentOptionSixHasBeenSet() const;
-
-                    /**
                      * 获取付款方式名称
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PaymentName 付款方式名称
@@ -133,204 +155,6 @@ namespace TencentCloud
                      * @return PaymentName 是否已赋值
                      */
                     bool PaymentNameHasBeenSet() const;
-
-                    /**
-                     * 获取支付方式
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PaymentOptionSeven 支付方式
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string GetPaymentOptionSeven() const;
-
-                    /**
-                     * 设置支付方式
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PaymentOptionSeven 支付方式
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    void SetPaymentOptionSeven(const std::string& _paymentOptionSeven);
-
-                    /**
-                     * 判断参数 PaymentOptionSeven 是否已赋值
-                     * @return PaymentOptionSeven 是否已赋值
-                     */
-                    bool PaymentOptionSevenHasBeenSet() const;
-
-                    /**
-                     * 获取支付方式
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PaymentOptionTwo 支付方式
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string GetPaymentOptionTwo() const;
-
-                    /**
-                     * 设置支付方式
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PaymentOptionTwo 支付方式
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    void SetPaymentOptionTwo(const std::string& _paymentOptionTwo);
-
-                    /**
-                     * 判断参数 PaymentOptionTwo 是否已赋值
-                     * @return PaymentOptionTwo 是否已赋值
-                     */
-                    bool PaymentOptionTwoHasBeenSet() const;
-
-                    /**
-                     * 获取支付方式
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PaymentOptionOne 支付方式
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string GetPaymentOptionOne() const;
-
-                    /**
-                     * 设置支付方式
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PaymentOptionOne 支付方式
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    void SetPaymentOptionOne(const std::string& _paymentOptionOne);
-
-                    /**
-                     * 判断参数 PaymentOptionOne 是否已赋值
-                     * @return PaymentOptionOne 是否已赋值
-                     */
-                    bool PaymentOptionOneHasBeenSet() const;
-
-                    /**
-                     * 获取支付方式
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PaymentOptionOther 支付方式
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string GetPaymentOptionOther() const;
-
-                    /**
-                     * 设置支付方式
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PaymentOptionOther 支付方式
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    void SetPaymentOptionOther(const std::string& _paymentOptionOther);
-
-                    /**
-                     * 判断参数 PaymentOptionOther 是否已赋值
-                     * @return PaymentOptionOther 是否已赋值
-                     */
-                    bool PaymentOptionOtherHasBeenSet() const;
-
-                    /**
-                     * 获取支持的交易类型（多个以小写逗号分开，0现金，1刷卡，2主扫，3被扫，4JSPAY，5预授权）
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PaymentType 支持的交易类型（多个以小写逗号分开，0现金，1刷卡，2主扫，3被扫，4JSPAY，5预授权）
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string GetPaymentType() const;
-
-                    /**
-                     * 设置支持的交易类型（多个以小写逗号分开，0现金，1刷卡，2主扫，3被扫，4JSPAY，5预授权）
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PaymentType 支持的交易类型（多个以小写逗号分开，0现金，1刷卡，2主扫，3被扫，4JSPAY，5预授权）
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    void SetPaymentType(const std::string& _paymentType);
-
-                    /**
-                     * 判断参数 PaymentType 是否已赋值
-                     * @return PaymentType 是否已赋值
-                     */
-                    bool PaymentTypeHasBeenSet() const;
-
-                    /**
-                     * 获取支付方式
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PaymentOptionFive 支付方式
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string GetPaymentOptionFive() const;
-
-                    /**
-                     * 设置支付方式
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PaymentOptionFive 支付方式
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    void SetPaymentOptionFive(const std::string& _paymentOptionFive);
-
-                    /**
-                     * 判断参数 PaymentOptionFive 是否已赋值
-                     * @return PaymentOptionFive 是否已赋值
-                     */
-                    bool PaymentOptionFiveHasBeenSet() const;
-
-                    /**
-                     * 获取支付方式
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PaymentOptionNine 支付方式
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string GetPaymentOptionNine() const;
-
-                    /**
-                     * 设置支付方式
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PaymentOptionNine 支付方式
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    void SetPaymentOptionNine(const std::string& _paymentOptionNine);
-
-                    /**
-                     * 判断参数 PaymentOptionNine 是否已赋值
-                     * @return PaymentOptionNine 是否已赋值
-                     */
-                    bool PaymentOptionNineHasBeenSet() const;
-
-                    /**
-                     * 获取支付方式编号
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PaymentId 支付方式编号
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string GetPaymentId() const;
-
-                    /**
-                     * 设置支付方式编号
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PaymentId 支付方式编号
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    void SetPaymentId(const std::string& _paymentId);
-
-                    /**
-                     * 判断参数 PaymentId 是否已赋值
-                     * @return PaymentId 是否已赋值
-                     */
-                    bool PaymentIdHasBeenSet() const;
-
-                    /**
-                     * 获取支付方式
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PaymentOptionThree 支付方式
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string GetPaymentOptionThree() const;
-
-                    /**
-                     * 设置支付方式
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PaymentOptionThree 支付方式
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    void SetPaymentOptionThree(const std::string& _paymentOptionThree);
-
-                    /**
-                     * 判断参数 PaymentOptionThree 是否已赋值
-                     * @return PaymentOptionThree 是否已赋值
-                     */
-                    bool PaymentOptionThreeHasBeenSet() const;
 
                     /**
                      * 获取付款方式名称（内部名称）
@@ -357,6 +181,72 @@ namespace TencentCloud
                     /**
                      * 获取支付方式
 注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PaymentOptionOne 支付方式
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetPaymentOptionOne() const;
+
+                    /**
+                     * 设置支付方式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param PaymentOptionOne 支付方式
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPaymentOptionOne(const std::string& _paymentOptionOne);
+
+                    /**
+                     * 判断参数 PaymentOptionOne 是否已赋值
+                     * @return PaymentOptionOne 是否已赋值
+                     */
+                    bool PaymentOptionOneHasBeenSet() const;
+
+                    /**
+                     * 获取支付方式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PaymentOptionTwo 支付方式
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetPaymentOptionTwo() const;
+
+                    /**
+                     * 设置支付方式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param PaymentOptionTwo 支付方式
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPaymentOptionTwo(const std::string& _paymentOptionTwo);
+
+                    /**
+                     * 判断参数 PaymentOptionTwo 是否已赋值
+                     * @return PaymentOptionTwo 是否已赋值
+                     */
+                    bool PaymentOptionTwoHasBeenSet() const;
+
+                    /**
+                     * 获取支付方式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PaymentOptionThree 支付方式
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetPaymentOptionThree() const;
+
+                    /**
+                     * 设置支付方式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param PaymentOptionThree 支付方式
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPaymentOptionThree(const std::string& _paymentOptionThree);
+
+                    /**
+                     * 判断参数 PaymentOptionThree 是否已赋值
+                     * @return PaymentOptionThree 是否已赋值
+                     */
+                    bool PaymentOptionThreeHasBeenSet() const;
+
+                    /**
+                     * 获取支付方式
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return PaymentOptionFour 支付方式
 注意：此字段可能返回 null，表示取不到有效值。
                      */
@@ -375,6 +265,116 @@ namespace TencentCloud
                      * @return PaymentOptionFour 是否已赋值
                      */
                     bool PaymentOptionFourHasBeenSet() const;
+
+                    /**
+                     * 获取支付方式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PaymentOptionFive 支付方式
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetPaymentOptionFive() const;
+
+                    /**
+                     * 设置支付方式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param PaymentOptionFive 支付方式
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPaymentOptionFive(const std::string& _paymentOptionFive);
+
+                    /**
+                     * 判断参数 PaymentOptionFive 是否已赋值
+                     * @return PaymentOptionFive 是否已赋值
+                     */
+                    bool PaymentOptionFiveHasBeenSet() const;
+
+                    /**
+                     * 获取支付方式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PaymentOptionSix 支付方式
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetPaymentOptionSix() const;
+
+                    /**
+                     * 设置支付方式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param PaymentOptionSix 支付方式
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPaymentOptionSix(const std::string& _paymentOptionSix);
+
+                    /**
+                     * 判断参数 PaymentOptionSix 是否已赋值
+                     * @return PaymentOptionSix 是否已赋值
+                     */
+                    bool PaymentOptionSixHasBeenSet() const;
+
+                    /**
+                     * 获取支付方式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PaymentOptionSeven 支付方式
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetPaymentOptionSeven() const;
+
+                    /**
+                     * 设置支付方式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param PaymentOptionSeven 支付方式
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPaymentOptionSeven(const std::string& _paymentOptionSeven);
+
+                    /**
+                     * 判断参数 PaymentOptionSeven 是否已赋值
+                     * @return PaymentOptionSeven 是否已赋值
+                     */
+                    bool PaymentOptionSevenHasBeenSet() const;
+
+                    /**
+                     * 获取支付方式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PaymentOptionOther 支付方式
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetPaymentOptionOther() const;
+
+                    /**
+                     * 设置支付方式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param PaymentOptionOther 支付方式
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPaymentOptionOther(const std::string& _paymentOptionOther);
+
+                    /**
+                     * 判断参数 PaymentOptionOther 是否已赋值
+                     * @return PaymentOptionOther 是否已赋值
+                     */
+                    bool PaymentOptionOtherHasBeenSet() const;
+
+                    /**
+                     * 获取支付方式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PaymentOptionNine 支付方式
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetPaymentOptionNine() const;
+
+                    /**
+                     * 设置支付方式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param PaymentOptionNine 支付方式
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPaymentOptionNine(const std::string& _paymentOptionNine);
+
+                    /**
+                     * 判断参数 PaymentOptionNine 是否已赋值
+                     * @return PaymentOptionNine 是否已赋值
+                     */
+                    bool PaymentOptionNineHasBeenSet() const;
 
                     /**
                      * 获取支付方式
@@ -401,6 +401,20 @@ namespace TencentCloud
                 private:
 
                     /**
+                     * 支付方式编号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_paymentId;
+                    bool m_paymentIdHasBeenSet;
+
+                    /**
+                     * 支持的交易类型（多个以小写逗号分开，0现金，1刷卡，2主扫，3被扫，4JSPAY，5预授权）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_paymentType;
+                    bool m_paymentTypeHasBeenSet;
+
+                    /**
                      * 支付标签
 注意：此字段可能返回 null，表示取不到有效值。
                      */
@@ -415,81 +429,11 @@ namespace TencentCloud
                     bool m_paymentIconHasBeenSet;
 
                     /**
-                     * 支付方式
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string m_paymentOptionSix;
-                    bool m_paymentOptionSixHasBeenSet;
-
-                    /**
                      * 付款方式名称
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_paymentName;
                     bool m_paymentNameHasBeenSet;
-
-                    /**
-                     * 支付方式
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string m_paymentOptionSeven;
-                    bool m_paymentOptionSevenHasBeenSet;
-
-                    /**
-                     * 支付方式
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string m_paymentOptionTwo;
-                    bool m_paymentOptionTwoHasBeenSet;
-
-                    /**
-                     * 支付方式
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string m_paymentOptionOne;
-                    bool m_paymentOptionOneHasBeenSet;
-
-                    /**
-                     * 支付方式
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string m_paymentOptionOther;
-                    bool m_paymentOptionOtherHasBeenSet;
-
-                    /**
-                     * 支持的交易类型（多个以小写逗号分开，0现金，1刷卡，2主扫，3被扫，4JSPAY，5预授权）
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string m_paymentType;
-                    bool m_paymentTypeHasBeenSet;
-
-                    /**
-                     * 支付方式
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string m_paymentOptionFive;
-                    bool m_paymentOptionFiveHasBeenSet;
-
-                    /**
-                     * 支付方式
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string m_paymentOptionNine;
-                    bool m_paymentOptionNineHasBeenSet;
-
-                    /**
-                     * 支付方式编号
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string m_paymentId;
-                    bool m_paymentIdHasBeenSet;
-
-                    /**
-                     * 支付方式
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string m_paymentOptionThree;
-                    bool m_paymentOptionThreeHasBeenSet;
 
                     /**
                      * 付款方式名称（内部名称）
@@ -502,8 +446,64 @@ namespace TencentCloud
                      * 支付方式
 注意：此字段可能返回 null，表示取不到有效值。
                      */
+                    std::string m_paymentOptionOne;
+                    bool m_paymentOptionOneHasBeenSet;
+
+                    /**
+                     * 支付方式
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_paymentOptionTwo;
+                    bool m_paymentOptionTwoHasBeenSet;
+
+                    /**
+                     * 支付方式
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_paymentOptionThree;
+                    bool m_paymentOptionThreeHasBeenSet;
+
+                    /**
+                     * 支付方式
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
                     std::string m_paymentOptionFour;
                     bool m_paymentOptionFourHasBeenSet;
+
+                    /**
+                     * 支付方式
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_paymentOptionFive;
+                    bool m_paymentOptionFiveHasBeenSet;
+
+                    /**
+                     * 支付方式
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_paymentOptionSix;
+                    bool m_paymentOptionSixHasBeenSet;
+
+                    /**
+                     * 支付方式
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_paymentOptionSeven;
+                    bool m_paymentOptionSevenHasBeenSet;
+
+                    /**
+                     * 支付方式
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_paymentOptionOther;
+                    bool m_paymentOptionOtherHasBeenSet;
+
+                    /**
+                     * 支付方式
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_paymentOptionNine;
+                    bool m_paymentOptionNineHasBeenSet;
 
                     /**
                      * 支付方式

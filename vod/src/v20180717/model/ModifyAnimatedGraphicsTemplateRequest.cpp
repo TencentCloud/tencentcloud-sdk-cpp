@@ -24,6 +24,7 @@ using namespace std;
 
 ModifyAnimatedGraphicsTemplateRequest::ModifyAnimatedGraphicsTemplateRequest() :
     m_definitionHasBeenSet(false),
+    m_subAppIdHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_widthHasBeenSet(false),
     m_heightHasBeenSet(false),
@@ -31,8 +32,7 @@ ModifyAnimatedGraphicsTemplateRequest::ModifyAnimatedGraphicsTemplateRequest() :
     m_formatHasBeenSet(false),
     m_fpsHasBeenSet(false),
     m_qualityHasBeenSet(false),
-    m_commentHasBeenSet(false),
-    m_subAppIdHasBeenSet(false)
+    m_commentHasBeenSet(false)
 {
 }
 
@@ -49,6 +49,14 @@ string ModifyAnimatedGraphicsTemplateRequest::ToJsonString() const
         string key = "Definition";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_definition, allocator);
+    }
+
+    if (m_subAppIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubAppId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_subAppId, allocator);
     }
 
     if (m_nameHasBeenSet)
@@ -115,14 +123,6 @@ string ModifyAnimatedGraphicsTemplateRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_comment.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_subAppIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SubAppId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_subAppId, allocator);
-    }
-
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -145,6 +145,22 @@ void ModifyAnimatedGraphicsTemplateRequest::SetDefinition(const uint64_t& _defin
 bool ModifyAnimatedGraphicsTemplateRequest::DefinitionHasBeenSet() const
 {
     return m_definitionHasBeenSet;
+}
+
+uint64_t ModifyAnimatedGraphicsTemplateRequest::GetSubAppId() const
+{
+    return m_subAppId;
+}
+
+void ModifyAnimatedGraphicsTemplateRequest::SetSubAppId(const uint64_t& _subAppId)
+{
+    m_subAppId = _subAppId;
+    m_subAppIdHasBeenSet = true;
+}
+
+bool ModifyAnimatedGraphicsTemplateRequest::SubAppIdHasBeenSet() const
+{
+    return m_subAppIdHasBeenSet;
 }
 
 string ModifyAnimatedGraphicsTemplateRequest::GetName() const
@@ -273,22 +289,6 @@ void ModifyAnimatedGraphicsTemplateRequest::SetComment(const string& _comment)
 bool ModifyAnimatedGraphicsTemplateRequest::CommentHasBeenSet() const
 {
     return m_commentHasBeenSet;
-}
-
-uint64_t ModifyAnimatedGraphicsTemplateRequest::GetSubAppId() const
-{
-    return m_subAppId;
-}
-
-void ModifyAnimatedGraphicsTemplateRequest::SetSubAppId(const uint64_t& _subAppId)
-{
-    m_subAppId = _subAppId;
-    m_subAppIdHasBeenSet = true;
-}
-
-bool ModifyAnimatedGraphicsTemplateRequest::SubAppIdHasBeenSet() const
-{
-    return m_subAppIdHasBeenSet;
 }
 
 

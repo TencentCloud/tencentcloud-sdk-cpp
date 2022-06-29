@@ -40,6 +40,49 @@ CdnClient::CdnClient(const Credential &credential, const string &region, const C
 }
 
 
+CdnClient::AddCLSTopicDomainsOutcome CdnClient::AddCLSTopicDomains(const AddCLSTopicDomainsRequest &request)
+{
+    auto outcome = MakeRequest(request, "AddCLSTopicDomains");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AddCLSTopicDomainsResponse rsp = AddCLSTopicDomainsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AddCLSTopicDomainsOutcome(rsp);
+        else
+            return AddCLSTopicDomainsOutcome(o.GetError());
+    }
+    else
+    {
+        return AddCLSTopicDomainsOutcome(outcome.GetError());
+    }
+}
+
+void CdnClient::AddCLSTopicDomainsAsync(const AddCLSTopicDomainsRequest& request, const AddCLSTopicDomainsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AddCLSTopicDomains(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdnClient::AddCLSTopicDomainsOutcomeCallable CdnClient::AddCLSTopicDomainsCallable(const AddCLSTopicDomainsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AddCLSTopicDomainsOutcome()>>(
+        [this, request]()
+        {
+            return this->AddCLSTopicDomains(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdnClient::AddCdnDomainOutcome CdnClient::AddCdnDomain(const AddCdnDomainRequest &request)
 {
     auto outcome = MakeRequest(request, "AddCdnDomain");

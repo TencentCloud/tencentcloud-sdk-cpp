@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Id
-                     * @return Id Id
+                     * 获取Id信息
+                     * @return Id Id信息
                      */
                     std::string GetId() const;
 
                     /**
-                     * 设置Id
-                     * @param Id Id
+                     * 设置Id信息
+                     * @param Id Id信息
                      */
                     void SetId(const std::string& _id);
 
@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取Uin
-                     * @return Uin Uin
+                     * 获取用户Uin
+                     * @return Uin 用户Uin
                      */
                     std::string GetUin() const;
 
                     /**
-                     * 设置Uin
-                     * @param Uin Uin
+                     * 设置用户Uin
+                     * @param Uin 用户Uin
                      */
                     void SetUin(const std::string& _uin);
 
@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool UinHasBeenSet() const;
 
                     /**
-                     * 获取AppId
-                     * @return AppId AppId
+                     * 获取用户AppId
+                     * @return AppId 用户AppId
                      */
                     std::string GetAppId() const;
 
                     /**
-                     * 设置AppId
-                     * @param AppId AppId
+                     * 设置用户AppId
+                     * @param AppId 用户AppId
                      */
                     void SetAppId(const std::string& _appId);
 
@@ -101,14 +101,14 @@ namespace TencentCloud
                     bool AppIdHasBeenSet() const;
 
                     /**
-                     * 获取EventName
-                     * @return EventName EventName
+                     * 获取事件名称
+                     * @return EventName 事件名称
                      */
                     std::string GetEventName() const;
 
                     /**
-                     * 设置EventName
-                     * @param EventName EventName
+                     * 设置事件名称
+                     * @param EventName 事件名称
                      */
                     void SetEventName(const std::string& _eventName);
 
@@ -119,14 +119,14 @@ namespace TencentCloud
                     bool EventNameHasBeenSet() const;
 
                     /**
-                     * 获取DivulgeSoure
-                     * @return DivulgeSoure DivulgeSoure
+                     * 获取监控源 0:全部 1:GitHub 2:暗网 默认值1
+                     * @return DivulgeSoure 监控源 0:全部 1:GitHub 2:暗网 默认值1
                      */
                     std::string GetDivulgeSoure() const;
 
                     /**
-                     * 设置DivulgeSoure
-                     * @param DivulgeSoure DivulgeSoure
+                     * 设置监控源 0:全部 1:GitHub 2:暗网 默认值1
+                     * @param DivulgeSoure 监控源 0:全部 1:GitHub 2:暗网 默认值1
                      */
                     void SetDivulgeSoure(const std::string& _divulgeSoure);
 
@@ -137,14 +137,14 @@ namespace TencentCloud
                     bool DivulgeSoureHasBeenSet() const;
 
                     /**
-                     * 获取Asset
-                     * @return Asset Asset
+                     * 获取受影响资产
+                     * @return Asset 受影响资产
                      */
                     std::string GetAsset() const;
 
                     /**
-                     * 设置Asset
-                     * @param Asset Asset
+                     * 设置受影响资产
+                     * @param Asset 受影响资产
                      */
                     void SetAsset(const std::string& _asset);
 
@@ -155,14 +155,14 @@ namespace TencentCloud
                     bool AssetHasBeenSet() const;
 
                     /**
-                     * 获取RuleName
-                     * @return RuleName RuleName
+                     * 获取命中主题集下的规则topic名称
+                     * @return RuleName 命中主题集下的规则topic名称
                      */
                     std::string GetRuleName() const;
 
                     /**
-                     * 设置RuleName
-                     * @param RuleName RuleName
+                     * 设置命中主题集下的规则topic名称
+                     * @param RuleName 命中主题集下的规则topic名称
                      */
                     void SetRuleName(const std::string& _ruleName);
 
@@ -173,14 +173,14 @@ namespace TencentCloud
                     bool RuleNameHasBeenSet() const;
 
                     /**
-                     * 获取RuleId
-                     * @return RuleId RuleId
+                     * 获取命中主题集下的规则topic唯一id
+                     * @return RuleId 命中主题集下的规则topic唯一id
                      */
                     std::string GetRuleId() const;
 
                     /**
-                     * 设置RuleId
-                     * @param RuleId RuleId
+                     * 设置命中主题集下的规则topic唯一id
+                     * @param RuleId 命中主题集下的规则topic唯一id
                      */
                     void SetRuleId(const std::string& _ruleId);
 
@@ -191,14 +191,14 @@ namespace TencentCloud
                     bool RuleIdHasBeenSet() const;
 
                     /**
-                     * 获取RuleWord
-                     * @return RuleWord RuleWord
+                     * 获取命中主题集下的自定义规则策略
+                     * @return RuleWord 命中主题集下的自定义规则策略
                      */
                     std::string GetRuleWord() const;
 
                     /**
-                     * 设置RuleWord
-                     * @param RuleWord RuleWord
+                     * 设置命中主题集下的自定义规则策略
+                     * @param RuleWord 命中主题集下的自定义规则策略
                      */
                     void SetRuleWord(const std::string& _ruleWord);
 
@@ -209,14 +209,14 @@ namespace TencentCloud
                     bool RuleWordHasBeenSet() const;
 
                     /**
-                     * 获取ScanUrl
-                     * @return ScanUrl ScanUrl
+                     * 获取扫描监测url
+                     * @return ScanUrl 扫描监测url
                      */
                     std::string GetScanUrl() const;
 
                     /**
-                     * 设置ScanUrl
-                     * @param ScanUrl ScanUrl
+                     * 设置扫描监测url
+                     * @param ScanUrl 扫描监测url
                      */
                     void SetScanUrl(const std::string& _scanUrl);
 
@@ -227,14 +227,14 @@ namespace TencentCloud
                     bool ScanUrlHasBeenSet() const;
 
                     /**
-                     * 获取ScanCount
-                     * @return ScanCount ScanCount
+                     * 获取扫描监测命中次数
+                     * @return ScanCount 扫描监测命中次数
                      */
                     std::string GetScanCount() const;
 
                     /**
-                     * 设置ScanCount
-                     * @param ScanCount ScanCount
+                     * 设置扫描监测命中次数
+                     * @param ScanCount 扫描监测命中次数
                      */
                     void SetScanCount(const std::string& _scanCount);
 
@@ -245,14 +245,14 @@ namespace TencentCloud
                     bool ScanCountHasBeenSet() const;
 
                     /**
-                     * 获取Level
-                     * @return Level Level
+                     * 获取风险等级 -1:未知 1:低危 2:中危 3:高危 4:严重
+                     * @return Level 风险等级 -1:未知 1:低危 2:中危 3:高危 4:严重
                      */
                     std::string GetLevel() const;
 
                     /**
-                     * 设置Level
-                     * @param Level Level
+                     * 设置风险等级 -1:未知 1:低危 2:中危 3:高危 4:严重
+                     * @param Level 风险等级 -1:未知 1:低危 2:中危 3:高危 4:严重
                      */
                     void SetLevel(const std::string& _level);
 
@@ -263,14 +263,14 @@ namespace TencentCloud
                     bool LevelHasBeenSet() const;
 
                     /**
-                     * 获取Status
-                     * @return Status Status
+                     * 获取安全事件处理状态 -1:未知 1:待处理 2:已处理 3:误报 4:已忽略 5:已知晓 6:已信任
+                     * @return Status 安全事件处理状态 -1:未知 1:待处理 2:已处理 3:误报 4:已忽略 5:已知晓 6:已信任
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置Status
-                     * @param Status Status
+                     * 设置安全事件处理状态 -1:未知 1:待处理 2:已处理 3:误报 4:已忽略 5:已知晓 6:已信任
+                     * @param Status 安全事件处理状态 -1:未知 1:待处理 2:已处理 3:误报 4:已忽略 5:已知晓 6:已信任
                      */
                     void SetStatus(const std::string& _status);
 
@@ -281,14 +281,14 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取EventTime
-                     * @return EventTime EventTime
+                     * 获取安全事件发生时间
+                     * @return EventTime 安全事件发生时间
                      */
                     std::string GetEventTime() const;
 
                     /**
-                     * 设置EventTime
-                     * @param EventTime EventTime
+                     * 设置安全事件发生时间
+                     * @param EventTime 安全事件发生时间
                      */
                     void SetEventTime(const std::string& _eventTime);
 
@@ -299,14 +299,14 @@ namespace TencentCloud
                     bool EventTimeHasBeenSet() const;
 
                     /**
-                     * 获取InsertTime
-                     * @return InsertTime InsertTime
+                     * 获取事件插入时间
+                     * @return InsertTime 事件插入时间
                      */
                     std::string GetInsertTime() const;
 
                     /**
-                     * 设置InsertTime
-                     * @param InsertTime InsertTime
+                     * 设置事件插入时间
+                     * @param InsertTime 事件插入时间
                      */
                     void SetInsertTime(const std::string& _insertTime);
 
@@ -317,14 +317,14 @@ namespace TencentCloud
                     bool InsertTimeHasBeenSet() const;
 
                     /**
-                     * 获取UpdateTime
-                     * @return UpdateTime UpdateTime
+                     * 获取事件更新时间
+                     * @return UpdateTime 事件更新时间
                      */
                     std::string GetUpdateTime() const;
 
                     /**
-                     * 设置UpdateTime
-                     * @param UpdateTime UpdateTime
+                     * 设置事件更新时间
+                     * @param UpdateTime 事件更新时间
                      */
                     void SetUpdateTime(const std::string& _updateTime);
 
@@ -337,97 +337,97 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Id
+                     * Id信息
                      */
                     std::string m_id;
                     bool m_idHasBeenSet;
 
                     /**
-                     * Uin
+                     * 用户Uin
                      */
                     std::string m_uin;
                     bool m_uinHasBeenSet;
 
                     /**
-                     * AppId
+                     * 用户AppId
                      */
                     std::string m_appId;
                     bool m_appIdHasBeenSet;
 
                     /**
-                     * EventName
+                     * 事件名称
                      */
                     std::string m_eventName;
                     bool m_eventNameHasBeenSet;
 
                     /**
-                     * DivulgeSoure
+                     * 监控源 0:全部 1:GitHub 2:暗网 默认值1
                      */
                     std::string m_divulgeSoure;
                     bool m_divulgeSoureHasBeenSet;
 
                     /**
-                     * Asset
+                     * 受影响资产
                      */
                     std::string m_asset;
                     bool m_assetHasBeenSet;
 
                     /**
-                     * RuleName
+                     * 命中主题集下的规则topic名称
                      */
                     std::string m_ruleName;
                     bool m_ruleNameHasBeenSet;
 
                     /**
-                     * RuleId
+                     * 命中主题集下的规则topic唯一id
                      */
                     std::string m_ruleId;
                     bool m_ruleIdHasBeenSet;
 
                     /**
-                     * RuleWord
+                     * 命中主题集下的自定义规则策略
                      */
                     std::string m_ruleWord;
                     bool m_ruleWordHasBeenSet;
 
                     /**
-                     * ScanUrl
+                     * 扫描监测url
                      */
                     std::string m_scanUrl;
                     bool m_scanUrlHasBeenSet;
 
                     /**
-                     * ScanCount
+                     * 扫描监测命中次数
                      */
                     std::string m_scanCount;
                     bool m_scanCountHasBeenSet;
 
                     /**
-                     * Level
+                     * 风险等级 -1:未知 1:低危 2:中危 3:高危 4:严重
                      */
                     std::string m_level;
                     bool m_levelHasBeenSet;
 
                     /**
-                     * Status
+                     * 安全事件处理状态 -1:未知 1:待处理 2:已处理 3:误报 4:已忽略 5:已知晓 6:已信任
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * EventTime
+                     * 安全事件发生时间
                      */
                     std::string m_eventTime;
                     bool m_eventTimeHasBeenSet;
 
                     /**
-                     * InsertTime
+                     * 事件插入时间
                      */
                     std::string m_insertTime;
                     bool m_insertTimeHasBeenSet;
 
                     /**
-                     * UpdateTime
+                     * 事件更新时间
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;

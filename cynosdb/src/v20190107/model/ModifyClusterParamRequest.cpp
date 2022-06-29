@@ -24,7 +24,8 @@ using namespace std;
 
 ModifyClusterParamRequest::ModifyClusterParamRequest() :
     m_clusterIdHasBeenSet(false),
-    m_paramListHasBeenSet(false)
+    m_paramListHasBeenSet(false),
+    m_isInMaintainPeriodHasBeenSet(false)
 {
 }
 
@@ -56,6 +57,14 @@ string ModifyClusterParamRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_isInMaintainPeriodHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsInMaintainPeriod";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_isInMaintainPeriod.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -96,6 +105,22 @@ void ModifyClusterParamRequest::SetParamList(const vector<ParamItem>& _paramList
 bool ModifyClusterParamRequest::ParamListHasBeenSet() const
 {
     return m_paramListHasBeenSet;
+}
+
+string ModifyClusterParamRequest::GetIsInMaintainPeriod() const
+{
+    return m_isInMaintainPeriod;
+}
+
+void ModifyClusterParamRequest::SetIsInMaintainPeriod(const string& _isInMaintainPeriod)
+{
+    m_isInMaintainPeriod = _isInMaintainPeriod;
+    m_isInMaintainPeriodHasBeenSet = true;
+}
+
+bool ModifyClusterParamRequest::IsInMaintainPeriodHasBeenSet() const
+{
+    return m_isInMaintainPeriodHasBeenSet;
 }
 
 

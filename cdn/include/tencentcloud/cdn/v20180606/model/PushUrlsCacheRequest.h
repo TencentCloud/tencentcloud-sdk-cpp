@@ -117,18 +117,18 @@ global：预热全球节点
                     bool AreaHasBeenSet() const;
 
                     /**
-                     * 获取填写"middle"或不填充时预热至中间层节点。
-注意：中国境外区域预热，资源默认加载至中国境外边缘节点，所产生的边缘层流量会计入计费流量。
-                     * @return Layer 填写"middle"或不填充时预热至中间层节点。
-注意：中国境外区域预热，资源默认加载至中国境外边缘节点，所产生的边缘层流量会计入计费流量。
+                     * 获取中国境内区域默认预热至中间层节点，中国境外区域默认预热至边缘节点。预热至边缘产生的边缘层流量会计入计费流量。
+填写"middle"或不填充时，可指定预热至中间层节点。
+                     * @return Layer 中国境内区域默认预热至中间层节点，中国境外区域默认预热至边缘节点。预热至边缘产生的边缘层流量会计入计费流量。
+填写"middle"或不填充时，可指定预热至中间层节点。
                      */
                     std::string GetLayer() const;
 
                     /**
-                     * 设置填写"middle"或不填充时预热至中间层节点。
-注意：中国境外区域预热，资源默认加载至中国境外边缘节点，所产生的边缘层流量会计入计费流量。
-                     * @param Layer 填写"middle"或不填充时预热至中间层节点。
-注意：中国境外区域预热，资源默认加载至中国境外边缘节点，所产生的边缘层流量会计入计费流量。
+                     * 设置中国境内区域默认预热至中间层节点，中国境外区域默认预热至边缘节点。预热至边缘产生的边缘层流量会计入计费流量。
+填写"middle"或不填充时，可指定预热至中间层节点。
+                     * @param Layer 中国境内区域默认预热至中间层节点，中国境外区域默认预热至边缘节点。预热至边缘产生的边缘层流量会计入计费流量。
+填写"middle"或不填充时，可指定预热至中间层节点。
                      */
                     void SetLayer(const std::string& _layer);
 
@@ -172,6 +172,32 @@ global：预热全球节点
                      */
                     bool ParseM3U8HasBeenSet() const;
 
+                    /**
+                     * 获取是否关闭Range回源
+注意事项：
+此功能灰度发布中，敬请期待
+                     * @return DisableRange 是否关闭Range回源
+注意事项：
+此功能灰度发布中，敬请期待
+                     */
+                    bool GetDisableRange() const;
+
+                    /**
+                     * 设置是否关闭Range回源
+注意事项：
+此功能灰度发布中，敬请期待
+                     * @param DisableRange 是否关闭Range回源
+注意事项：
+此功能灰度发布中，敬请期待
+                     */
+                    void SetDisableRange(const bool& _disableRange);
+
+                    /**
+                     * 判断参数 DisableRange 是否已赋值
+                     * @return DisableRange 是否已赋值
+                     */
+                    bool DisableRangeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -198,8 +224,8 @@ global：预热全球节点
                     bool m_areaHasBeenSet;
 
                     /**
-                     * 填写"middle"或不填充时预热至中间层节点。
-注意：中国境外区域预热，资源默认加载至中国境外边缘节点，所产生的边缘层流量会计入计费流量。
+                     * 中国境内区域默认预热至中间层节点，中国境外区域默认预热至边缘节点。预热至边缘产生的边缘层流量会计入计费流量。
+填写"middle"或不填充时，可指定预热至中间层节点。
                      */
                     std::string m_layer;
                     bool m_layerHasBeenSet;
@@ -213,6 +239,14 @@ global：预热全球节点
                      */
                     bool m_parseM3U8;
                     bool m_parseM3U8HasBeenSet;
+
+                    /**
+                     * 是否关闭Range回源
+注意事项：
+此功能灰度发布中，敬请期待
+                     */
+                    bool m_disableRange;
+                    bool m_disableRangeHasBeenSet;
 
                 };
             }

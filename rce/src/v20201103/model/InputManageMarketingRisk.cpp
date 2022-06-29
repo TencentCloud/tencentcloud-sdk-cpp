@@ -41,7 +41,8 @@ InputManageMarketingRisk::InputManageMarketingRisk() :
     m_deviceTypeHasBeenSet(false),
     m_detailsHasBeenSet(false),
     m_sponsorHasBeenSet(false),
-    m_onlineScamHasBeenSet(false)
+    m_onlineScamHasBeenSet(false),
+    m_platformHasBeenSet(false)
 {
 }
 
@@ -291,6 +292,16 @@ CoreInternalOutcome InputManageMarketingRisk::Deserialize(const rapidjson::Value
         m_onlineScamHasBeenSet = true;
     }
 
+    if (value.HasMember("Platform") && !value["Platform"].IsNull())
+    {
+        if (!value["Platform"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InputManageMarketingRisk.Platform` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_platform = string(value["Platform"].GetString());
+        m_platformHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -474,6 +485,14 @@ void InputManageMarketingRisk::ToJsonObject(rapidjson::Value &value, rapidjson::
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_onlineScam.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_platformHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Platform";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_platform.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -813,5 +832,21 @@ void InputManageMarketingRisk::SetOnlineScam(const OnlineScamInfo& _onlineScam)
 bool InputManageMarketingRisk::OnlineScamHasBeenSet() const
 {
     return m_onlineScamHasBeenSet;
+}
+
+string InputManageMarketingRisk::GetPlatform() const
+{
+    return m_platform;
+}
+
+void InputManageMarketingRisk::SetPlatform(const string& _platform)
+{
+    m_platform = _platform;
+    m_platformHasBeenSet = true;
+}
+
+bool InputManageMarketingRisk::PlatformHasBeenSet() const
+{
+    return m_platformHasBeenSet;
 }
 

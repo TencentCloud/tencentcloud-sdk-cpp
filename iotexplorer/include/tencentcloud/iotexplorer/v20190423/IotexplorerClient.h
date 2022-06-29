@@ -99,6 +99,8 @@
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeFirmwareTaskResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeGatewayBindDevicesRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeGatewayBindDevicesResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeGatewaySubDeviceListRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeGatewaySubDeviceListResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeGatewaySubProductsRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeGatewaySubProductsResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeLoRaFrequencyRequest.h>
@@ -175,6 +177,8 @@
 #include <tencentcloud/iotexplorer/v20190423/model/ModifyTopicPolicyResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ModifyTopicRuleRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ModifyTopicRuleResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/PublishBroadcastMessageRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/PublishBroadcastMessageResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/PublishMessageRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/PublishMessageResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/PublishRRPCMessageRequest.h>
@@ -325,6 +329,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeGatewayBindDevicesResponse> DescribeGatewayBindDevicesOutcome;
                 typedef std::future<DescribeGatewayBindDevicesOutcome> DescribeGatewayBindDevicesOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DescribeGatewayBindDevicesRequest&, DescribeGatewayBindDevicesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGatewayBindDevicesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeGatewaySubDeviceListResponse> DescribeGatewaySubDeviceListOutcome;
+                typedef std::future<DescribeGatewaySubDeviceListOutcome> DescribeGatewaySubDeviceListOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::DescribeGatewaySubDeviceListRequest&, DescribeGatewaySubDeviceListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGatewaySubDeviceListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeGatewaySubProductsResponse> DescribeGatewaySubProductsOutcome;
                 typedef std::future<DescribeGatewaySubProductsOutcome> DescribeGatewaySubProductsOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DescribeGatewaySubProductsRequest&, DescribeGatewaySubProductsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGatewaySubProductsAsyncHandler;
@@ -439,6 +446,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyTopicRuleResponse> ModifyTopicRuleOutcome;
                 typedef std::future<ModifyTopicRuleOutcome> ModifyTopicRuleOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::ModifyTopicRuleRequest&, ModifyTopicRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTopicRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::PublishBroadcastMessageResponse> PublishBroadcastMessageOutcome;
+                typedef std::future<PublishBroadcastMessageOutcome> PublishBroadcastMessageOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::PublishBroadcastMessageRequest&, PublishBroadcastMessageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PublishBroadcastMessageAsyncHandler;
                 typedef Outcome<Core::Error, Model::PublishMessageResponse> PublishMessageOutcome;
                 typedef std::future<PublishMessageOutcome> PublishMessageOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::PublishMessageRequest&, PublishMessageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PublishMessageAsyncHandler;
@@ -818,6 +828,15 @@ namespace TencentCloud
                 DescribeGatewayBindDevicesOutcomeCallable DescribeGatewayBindDevicesCallable(const Model::DescribeGatewayBindDevicesRequest& request);
 
                 /**
+                 *查询绑定到家庭的网关设备的子设备列表
+                 * @param req DescribeGatewaySubDeviceListRequest
+                 * @return DescribeGatewaySubDeviceListOutcome
+                 */
+                DescribeGatewaySubDeviceListOutcome DescribeGatewaySubDeviceList(const Model::DescribeGatewaySubDeviceListRequest &request);
+                void DescribeGatewaySubDeviceListAsync(const Model::DescribeGatewaySubDeviceListRequest& request, const DescribeGatewaySubDeviceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeGatewaySubDeviceListOutcomeCallable DescribeGatewaySubDeviceListCallable(const Model::DescribeGatewaySubDeviceListRequest& request);
+
+                /**
                  *用于获取网关可绑定或解绑的子产品
                  * @param req DescribeGatewaySubProductsRequest
                  * @return DescribeGatewaySubProductsOutcome
@@ -944,7 +963,7 @@ namespace TencentCloud
                 GetBatchProductionsListOutcomeCallable GetBatchProductionsListCallable(const Model::GetBatchProductionsListRequest& request);
 
                 /**
-                 *本接口（GetCOSURL）用于获取固件存储在COS的URL 
+                 *本接口（GetCOSURL）用于获取固件COS存储的上传请求URL地址
                  * @param req GetCOSURLRequest
                  * @return GetCOSURLOutcome
                  */
@@ -1160,6 +1179,15 @@ namespace TencentCloud
                 ModifyTopicRuleOutcomeCallable ModifyTopicRuleCallable(const Model::ModifyTopicRuleRequest& request);
 
                 /**
+                 *发布广播消息
+                 * @param req PublishBroadcastMessageRequest
+                 * @return PublishBroadcastMessageOutcome
+                 */
+                PublishBroadcastMessageOutcome PublishBroadcastMessage(const Model::PublishBroadcastMessageRequest &request);
+                void PublishBroadcastMessageAsync(const Model::PublishBroadcastMessageRequest& request, const PublishBroadcastMessageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                PublishBroadcastMessageOutcomeCallable PublishBroadcastMessageCallable(const Model::PublishBroadcastMessageRequest& request);
+
+                /**
                  *本接口（PublishMessage）用于使用自定义透传协议进行设备远控
                  * @param req PublishMessageRequest
                  * @return PublishMessageOutcome
@@ -1250,7 +1278,7 @@ namespace TencentCloud
                 UpdateFirmwareOutcomeCallable UpdateFirmwareCallable(const Model::UpdateFirmwareRequest& request);
 
                 /**
-                 *本接口（UploadFirmware）用于上传设备固件至平台
+                 *本接口（UploadFirmware）用于创建设备固件版本信息，在平台用于固件版本升级、固件资源下发等。
                  * @param req UploadFirmwareRequest
                  * @return UploadFirmwareOutcome
                  */

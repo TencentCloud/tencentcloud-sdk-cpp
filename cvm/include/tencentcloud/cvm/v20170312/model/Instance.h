@@ -31,6 +31,7 @@
 #include <tencentcloud/cvm/v20170312/model/VirtualPrivateCloud.h>
 #include <tencentcloud/cvm/v20170312/model/LoginSettings.h>
 #include <tencentcloud/cvm/v20170312/model/Tag.h>
+#include <tencentcloud/cvm/v20170312/model/GPUInfo.h>
 
 
 namespace TencentCloud
@@ -180,14 +181,14 @@ namespace TencentCloud
                     bool InstanceNameHasBeenSet() const;
 
                     /**
-                     * 获取实例计费模式。取值范围：<br><li>`PREPAID`：表示预付费，即包年包月<br><li>`POSTPAID_BY_HOUR`：表示后付费，即按量计费<br><li>`CDHPAID`：`CDH`付费，即只对`CDH`计费，不对`CDH`上的实例计费。<br><li>`SPOTPAID`：表示竞价实例付费。
-                     * @return InstanceChargeType 实例计费模式。取值范围：<br><li>`PREPAID`：表示预付费，即包年包月<br><li>`POSTPAID_BY_HOUR`：表示后付费，即按量计费<br><li>`CDHPAID`：`CDH`付费，即只对`CDH`计费，不对`CDH`上的实例计费。<br><li>`SPOTPAID`：表示竞价实例付费。
+                     * 获取实例计费模式。取值范围：<br><li>`PREPAID`：表示预付费，即包年包月<br><li>`POSTPAID_BY_HOUR`：表示后付费，即按量计费<br><li>`CDHPAID`：`专用宿主机`付费，即只对`专用宿主机`计费，不对`专用宿主机`上的实例计费。<br><li>`SPOTPAID`：表示竞价实例付费。
+                     * @return InstanceChargeType 实例计费模式。取值范围：<br><li>`PREPAID`：表示预付费，即包年包月<br><li>`POSTPAID_BY_HOUR`：表示后付费，即按量计费<br><li>`CDHPAID`：`专用宿主机`付费，即只对`专用宿主机`计费，不对`专用宿主机`上的实例计费。<br><li>`SPOTPAID`：表示竞价实例付费。
                      */
                     std::string GetInstanceChargeType() const;
 
                     /**
-                     * 设置实例计费模式。取值范围：<br><li>`PREPAID`：表示预付费，即包年包月<br><li>`POSTPAID_BY_HOUR`：表示后付费，即按量计费<br><li>`CDHPAID`：`CDH`付费，即只对`CDH`计费，不对`CDH`上的实例计费。<br><li>`SPOTPAID`：表示竞价实例付费。
-                     * @param InstanceChargeType 实例计费模式。取值范围：<br><li>`PREPAID`：表示预付费，即包年包月<br><li>`POSTPAID_BY_HOUR`：表示后付费，即按量计费<br><li>`CDHPAID`：`CDH`付费，即只对`CDH`计费，不对`CDH`上的实例计费。<br><li>`SPOTPAID`：表示竞价实例付费。
+                     * 设置实例计费模式。取值范围：<br><li>`PREPAID`：表示预付费，即包年包月<br><li>`POSTPAID_BY_HOUR`：表示后付费，即按量计费<br><li>`CDHPAID`：`专用宿主机`付费，即只对`专用宿主机`计费，不对`专用宿主机`上的实例计费。<br><li>`SPOTPAID`：表示竞价实例付费。
+                     * @param InstanceChargeType 实例计费模式。取值范围：<br><li>`PREPAID`：表示预付费，即包年包月<br><li>`POSTPAID_BY_HOUR`：表示后付费，即按量计费<br><li>`CDHPAID`：`专用宿主机`付费，即只对`专用宿主机`计费，不对`专用宿主机`上的实例计费。<br><li>`SPOTPAID`：表示竞价实例付费。
                      */
                     void SetInstanceChargeType(const std::string& _instanceChargeType);
 
@@ -713,6 +714,46 @@ namespace TencentCloud
                      */
                     bool IsolatedSourceHasBeenSet() const;
 
+                    /**
+                     * 获取GPU信息。如果是gpu类型子机，该值会返回GPU信息，如果是其他类型子机则不返回。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return GPUInfo GPU信息。如果是gpu类型子机，该值会返回GPU信息，如果是其他类型子机则不返回。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    GPUInfo GetGPUInfo() const;
+
+                    /**
+                     * 设置GPU信息。如果是gpu类型子机，该值会返回GPU信息，如果是其他类型子机则不返回。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param GPUInfo GPU信息。如果是gpu类型子机，该值会返回GPU信息，如果是其他类型子机则不返回。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetGPUInfo(const GPUInfo& _gPUInfo);
+
+                    /**
+                     * 判断参数 GPUInfo 是否已赋值
+                     * @return GPUInfo 是否已赋值
+                     */
+                    bool GPUInfoHasBeenSet() const;
+
+                    /**
+                     * 获取实例的操作系统许可类型，默认为TencentCloud
+                     * @return LicenseType 实例的操作系统许可类型，默认为TencentCloud
+                     */
+                    std::string GetLicenseType() const;
+
+                    /**
+                     * 设置实例的操作系统许可类型，默认为TencentCloud
+                     * @param LicenseType 实例的操作系统许可类型，默认为TencentCloud
+                     */
+                    void SetLicenseType(const std::string& _licenseType);
+
+                    /**
+                     * 判断参数 LicenseType 是否已赋值
+                     * @return LicenseType 是否已赋值
+                     */
+                    bool LicenseTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -758,7 +799,7 @@ namespace TencentCloud
                     bool m_instanceNameHasBeenSet;
 
                     /**
-                     * 实例计费模式。取值范围：<br><li>`PREPAID`：表示预付费，即包年包月<br><li>`POSTPAID_BY_HOUR`：表示后付费，即按量计费<br><li>`CDHPAID`：`CDH`付费，即只对`CDH`计费，不对`CDH`上的实例计费。<br><li>`SPOTPAID`：表示竞价实例付费。
+                     * 实例计费模式。取值范围：<br><li>`PREPAID`：表示预付费，即包年包月<br><li>`POSTPAID_BY_HOUR`：表示后付费，即按量计费<br><li>`CDHPAID`：`专用宿主机`付费，即只对`专用宿主机`计费，不对`专用宿主机`上的实例计费。<br><li>`SPOTPAID`：表示竞价实例付费。
                      */
                     std::string m_instanceChargeType;
                     bool m_instanceChargeTypeHasBeenSet;
@@ -930,6 +971,19 @@ namespace TencentCloud
                      */
                     std::string m_isolatedSource;
                     bool m_isolatedSourceHasBeenSet;
+
+                    /**
+                     * GPU信息。如果是gpu类型子机，该值会返回GPU信息，如果是其他类型子机则不返回。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    GPUInfo m_gPUInfo;
+                    bool m_gPUInfoHasBeenSet;
+
+                    /**
+                     * 实例的操作系统许可类型，默认为TencentCloud
+                     */
+                    std::string m_licenseType;
+                    bool m_licenseTypeHasBeenSet;
 
                 };
             }

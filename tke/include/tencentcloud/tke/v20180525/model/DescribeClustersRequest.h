@@ -107,6 +107,16 @@ namespace TencentCloud
     类型：String
     必选：否
 
+·  ClusterType
+    按照【集群类型】进行过滤。
+    类型：String
+    必选：否
+
+·  ClusterStatus
+    按照【集群状态】进行过滤。
+    类型：String
+    必选：否
+
 ·  Tags
     按照【标签键值对】进行过滤。
     类型：String
@@ -133,6 +143,16 @@ namespace TencentCloud
     必选：否
                      * @return Filters ·  ClusterName
     按照【集群名】进行过滤。
+    类型：String
+    必选：否
+
+·  ClusterType
+    按照【集群类型】进行过滤。
+    类型：String
+    必选：否
+
+·  ClusterStatus
+    按照【集群状态】进行过滤。
     类型：String
     必选：否
 
@@ -169,6 +189,16 @@ namespace TencentCloud
     类型：String
     必选：否
 
+·  ClusterType
+    按照【集群类型】进行过滤。
+    类型：String
+    必选：否
+
+·  ClusterStatus
+    按照【集群状态】进行过滤。
+    类型：String
+    必选：否
+
 ·  Tags
     按照【标签键值对】进行过滤。
     类型：String
@@ -195,6 +225,16 @@ namespace TencentCloud
     必选：否
                      * @param Filters ·  ClusterName
     按照【集群名】进行过滤。
+    类型：String
+    必选：否
+
+·  ClusterType
+    按照【集群类型】进行过滤。
+    类型：String
+    必选：否
+
+·  ClusterStatus
+    按照【集群状态】进行过滤。
     类型：String
     必选：否
 
@@ -273,6 +313,16 @@ namespace TencentCloud
                     /**
                      * ·  ClusterName
     按照【集群名】进行过滤。
+    类型：String
+    必选：否
+
+·  ClusterType
+    按照【集群类型】进行过滤。
+    类型：String
+    必选：否
+
+·  ClusterStatus
+    按照【集群状态】进行过滤。
     类型：String
     必选：否
 

@@ -154,6 +154,24 @@ namespace TencentCloud
                      */
                     bool RuleIdHasBeenSet() const;
 
+                    /**
+                     * 获取实例名称
+                     * @return InstanceName 实例名称
+                     */
+                    std::string GetInstanceName() const;
+
+                    /**
+                     * 设置实例名称
+                     * @param InstanceName 实例名称
+                     */
+                    void SetInstanceName(const std::string& _instanceName);
+
+                    /**
+                     * 判断参数 InstanceName 是否已赋值
+                     * @return InstanceName 是否已赋值
+                     */
+                    bool InstanceNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -192,6 +210,12 @@ namespace TencentCloud
                      */
                     std::string m_ruleId;
                     bool m_ruleIdHasBeenSet;
+
+                    /**
+                     * 实例名称
+                     */
+                    std::string m_instanceName;
+                    bool m_instanceNameHasBeenSet;
 
                 };
             }

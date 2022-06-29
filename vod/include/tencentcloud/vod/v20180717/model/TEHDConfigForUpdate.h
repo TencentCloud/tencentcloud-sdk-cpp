@@ -47,22 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取极速高清类型，可选值：
-<li>TEHD-100：极速高清-100。</li>
-不填代表不修改。
-                     * @return Type 极速高清类型，可选值：
-<li>TEHD-100：极速高清-100。</li>
-不填代表不修改。
+                     * 获取极速高清类型，可选值：<li>TEHD-100 表示极速高清-100;</li> <li>OFF 表示关闭极速高清。</li>不填表示不修改。
+                     * @return Type 极速高清类型，可选值：<li>TEHD-100 表示极速高清-100;</li> <li>OFF 表示关闭极速高清。</li>不填表示不修改。
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置极速高清类型，可选值：
-<li>TEHD-100：极速高清-100。</li>
-不填代表不修改。
-                     * @param Type 极速高清类型，可选值：
-<li>TEHD-100：极速高清-100。</li>
-不填代表不修改。
+                     * 设置极速高清类型，可选值：<li>TEHD-100 表示极速高清-100;</li> <li>OFF 表示关闭极速高清。</li>不填表示不修改。
+                     * @param Type 极速高清类型，可选值：<li>TEHD-100 表示极速高清-100;</li> <li>OFF 表示关闭极速高清。</li>不填表示不修改。
                      */
                     void SetType(const std::string& _type);
 
@@ -93,9 +85,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 极速高清类型，可选值：
-<li>TEHD-100：极速高清-100。</li>
-不填代表不修改。
+                     * 极速高清类型，可选值：<li>TEHD-100 表示极速高清-100;</li> <li>OFF 表示关闭极速高清。</li>不填表示不修改。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;

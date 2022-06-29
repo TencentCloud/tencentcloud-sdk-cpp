@@ -114,6 +114,28 @@ namespace TencentCloud
                      */
                     bool MediaIdSetHasBeenSet() const;
 
+                    /**
+                     * 获取媒资自定义标签数组
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LabelSet 媒资自定义标签数组
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> GetLabelSet() const;
+
+                    /**
+                     * 设置媒资自定义标签数组
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param LabelSet 媒资自定义标签数组
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetLabelSet(const std::vector<std::string>& _labelSet);
+
+                    /**
+                     * 判断参数 LabelSet 是否已赋值
+                     * @return LabelSet 是否已赋值
+                     */
+                    bool LabelSetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -136,6 +158,13 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_mediaIdSet;
                     bool m_mediaIdSetHasBeenSet;
+
+                    /**
+                     * 媒资自定义标签数组
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_labelSet;
+                    bool m_labelSetHasBeenSet;
 
                 };
             }

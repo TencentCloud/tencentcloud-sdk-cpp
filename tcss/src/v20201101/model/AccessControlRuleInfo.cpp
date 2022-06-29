@@ -26,7 +26,8 @@ AccessControlRuleInfo::AccessControlRuleInfo() :
     m_childRulesHasBeenSet(false),
     m_ruleNameHasBeenSet(false),
     m_ruleIdHasBeenSet(false),
-    m_systemChildRulesHasBeenSet(false)
+    m_systemChildRulesHasBeenSet(false),
+    m_isDefaultHasBeenSet(false)
 {
 }
 
@@ -118,6 +119,16 @@ CoreInternalOutcome AccessControlRuleInfo::Deserialize(const rapidjson::Value &v
         m_systemChildRulesHasBeenSet = true;
     }
 
+    if (value.HasMember("IsDefault") && !value["IsDefault"].IsNull())
+    {
+        if (!value["IsDefault"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `AccessControlRuleInfo.IsDefault` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isDefault = value["IsDefault"].GetBool();
+        m_isDefaultHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -190,6 +201,14 @@ void AccessControlRuleInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_isDefaultHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsDefault";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isDefault, allocator);
     }
 
 }
@@ -289,5 +308,21 @@ void AccessControlRuleInfo::SetSystemChildRules(const vector<AccessControlSystem
 bool AccessControlRuleInfo::SystemChildRulesHasBeenSet() const
 {
     return m_systemChildRulesHasBeenSet;
+}
+
+bool AccessControlRuleInfo::GetIsDefault() const
+{
+    return m_isDefault;
+}
+
+void AccessControlRuleInfo::SetIsDefault(const bool& _isDefault)
+{
+    m_isDefault = _isDefault;
+    m_isDefaultHasBeenSet = true;
+}
+
+bool AccessControlRuleInfo::IsDefaultHasBeenSet() const
+{
+    return m_isDefaultHasBeenSet;
 }
 

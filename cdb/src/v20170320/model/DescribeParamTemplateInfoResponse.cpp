@@ -29,7 +29,8 @@ DescribeParamTemplateInfoResponse::DescribeParamTemplateInfoResponse() :
     m_engineVersionHasBeenSet(false),
     m_totalCountHasBeenSet(false),
     m_itemsHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_templateTypeHasBeenSet(false)
 {
 }
 
@@ -137,6 +138,16 @@ CoreInternalOutcome DescribeParamTemplateInfoResponse::Deserialize(const string 
         m_descriptionHasBeenSet = true;
     }
 
+    if (rsp.HasMember("TemplateType") && !rsp["TemplateType"].IsNull())
+    {
+        if (!rsp["TemplateType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TemplateType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_templateType = string(rsp["TemplateType"].GetString());
+        m_templateTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -200,6 +211,14 @@ string DescribeParamTemplateInfoResponse::ToJsonString() const
         string key = "Description";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_templateTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TemplateType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_templateType.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -272,6 +291,16 @@ string DescribeParamTemplateInfoResponse::GetDescription() const
 bool DescribeParamTemplateInfoResponse::DescriptionHasBeenSet() const
 {
     return m_descriptionHasBeenSet;
+}
+
+string DescribeParamTemplateInfoResponse::GetTemplateType() const
+{
+    return m_templateType;
+}
+
+bool DescribeParamTemplateInfoResponse::TemplateTypeHasBeenSet() const
+{
+    return m_templateTypeHasBeenSet;
 }
 
 

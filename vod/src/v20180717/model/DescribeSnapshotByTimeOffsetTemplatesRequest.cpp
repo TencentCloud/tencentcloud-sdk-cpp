@@ -23,11 +23,11 @@ using namespace TencentCloud::Vod::V20180717::Model;
 using namespace std;
 
 DescribeSnapshotByTimeOffsetTemplatesRequest::DescribeSnapshotByTimeOffsetTemplatesRequest() :
+    m_subAppIdHasBeenSet(false),
     m_definitionsHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_subAppIdHasBeenSet(false)
+    m_typeHasBeenSet(false)
 {
 }
 
@@ -37,6 +37,14 @@ string DescribeSnapshotByTimeOffsetTemplatesRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
+
+    if (m_subAppIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubAppId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_subAppId, allocator);
+    }
 
     if (m_definitionsHasBeenSet)
     {
@@ -75,14 +83,6 @@ string DescribeSnapshotByTimeOffsetTemplatesRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_subAppIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SubAppId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_subAppId, allocator);
-    }
-
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -90,6 +90,22 @@ string DescribeSnapshotByTimeOffsetTemplatesRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+uint64_t DescribeSnapshotByTimeOffsetTemplatesRequest::GetSubAppId() const
+{
+    return m_subAppId;
+}
+
+void DescribeSnapshotByTimeOffsetTemplatesRequest::SetSubAppId(const uint64_t& _subAppId)
+{
+    m_subAppId = _subAppId;
+    m_subAppIdHasBeenSet = true;
+}
+
+bool DescribeSnapshotByTimeOffsetTemplatesRequest::SubAppIdHasBeenSet() const
+{
+    return m_subAppIdHasBeenSet;
+}
 
 vector<uint64_t> DescribeSnapshotByTimeOffsetTemplatesRequest::GetDefinitions() const
 {
@@ -153,22 +169,6 @@ void DescribeSnapshotByTimeOffsetTemplatesRequest::SetType(const string& _type)
 bool DescribeSnapshotByTimeOffsetTemplatesRequest::TypeHasBeenSet() const
 {
     return m_typeHasBeenSet;
-}
-
-uint64_t DescribeSnapshotByTimeOffsetTemplatesRequest::GetSubAppId() const
-{
-    return m_subAppId;
-}
-
-void DescribeSnapshotByTimeOffsetTemplatesRequest::SetSubAppId(const uint64_t& _subAppId)
-{
-    m_subAppId = _subAppId;
-    m_subAppIdHasBeenSet = true;
-}
-
-bool DescribeSnapshotByTimeOffsetTemplatesRequest::SubAppIdHasBeenSet() const
-{
-    return m_subAppIdHasBeenSet;
 }
 
 

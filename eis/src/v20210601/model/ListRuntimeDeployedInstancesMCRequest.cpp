@@ -28,7 +28,8 @@ ListRuntimeDeployedInstancesMCRequest::ListRuntimeDeployedInstancesMCRequest() :
     m_offsetHasBeenSet(false),
     m_sortTypeHasBeenSet(false),
     m_sortHasBeenSet(false),
-    m_zoneHasBeenSet(false)
+    m_zoneHasBeenSet(false),
+    m_apiVersionHasBeenSet(false)
 {
 }
 
@@ -85,6 +86,14 @@ string ListRuntimeDeployedInstancesMCRequest::ToJsonString() const
         string key = "Zone";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_zone.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_apiVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApiVersion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_apiVersion, allocator);
     }
 
 
@@ -189,6 +198,22 @@ void ListRuntimeDeployedInstancesMCRequest::SetZone(const string& _zone)
 bool ListRuntimeDeployedInstancesMCRequest::ZoneHasBeenSet() const
 {
     return m_zoneHasBeenSet;
+}
+
+int64_t ListRuntimeDeployedInstancesMCRequest::GetApiVersion() const
+{
+    return m_apiVersion;
+}
+
+void ListRuntimeDeployedInstancesMCRequest::SetApiVersion(const int64_t& _apiVersion)
+{
+    m_apiVersion = _apiVersion;
+    m_apiVersionHasBeenSet = true;
+}
+
+bool ListRuntimeDeployedInstancesMCRequest::ApiVersionHasBeenSet() const
+{
+    return m_apiVersionHasBeenSet;
 }
 
 

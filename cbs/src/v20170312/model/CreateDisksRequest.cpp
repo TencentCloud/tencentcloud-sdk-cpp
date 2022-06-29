@@ -37,7 +37,8 @@ CreateDisksRequest::CreateDisksRequest() :
     m_encryptHasBeenSet(false),
     m_diskChargePrepaidHasBeenSet(false),
     m_deleteSnapshotHasBeenSet(false),
-    m_autoMountConfigurationHasBeenSet(false)
+    m_autoMountConfigurationHasBeenSet(false),
+    m_diskBackupQuotaHasBeenSet(false)
 {
 }
 
@@ -176,6 +177,14 @@ string CreateDisksRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_autoMountConfiguration.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_diskBackupQuotaHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DiskBackupQuota";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_diskBackupQuota, allocator);
     }
 
 
@@ -424,6 +433,22 @@ void CreateDisksRequest::SetAutoMountConfiguration(const AutoMountConfiguration&
 bool CreateDisksRequest::AutoMountConfigurationHasBeenSet() const
 {
     return m_autoMountConfigurationHasBeenSet;
+}
+
+uint64_t CreateDisksRequest::GetDiskBackupQuota() const
+{
+    return m_diskBackupQuota;
+}
+
+void CreateDisksRequest::SetDiskBackupQuota(const uint64_t& _diskBackupQuota)
+{
+    m_diskBackupQuota = _diskBackupQuota;
+    m_diskBackupQuotaHasBeenSet = true;
+}
+
+bool CreateDisksRequest::DiskBackupQuotaHasBeenSet() const
+{
+    return m_diskBackupQuotaHasBeenSet;
 }
 
 

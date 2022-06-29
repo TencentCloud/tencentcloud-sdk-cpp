@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cbs/v20170312/model/Placement.h>
 #include <tencentcloud/cbs/v20170312/model/Image.h>
+#include <tencentcloud/cbs/v20170312/model/Tag.h>
 
 
 namespace TencentCloud
@@ -390,6 +391,24 @@ namespace TencentCloud
                      */
                     bool TimeStartShareHasBeenSet() const;
 
+                    /**
+                     * 获取快照绑定的标签列表。
+                     * @return Tags 快照绑定的标签列表。
+                     */
+                    std::vector<Tag> GetTags() const;
+
+                    /**
+                     * 设置快照绑定的标签列表。
+                     * @param Tags 快照绑定的标签列表。
+                     */
+                    void SetTags(const std::vector<Tag>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     */
+                    bool TagsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -505,6 +524,12 @@ namespace TencentCloud
                      */
                     std::string m_timeStartShare;
                     bool m_timeStartShareHasBeenSet;
+
+                    /**
+                     * 快照绑定的标签列表。
+                     */
+                    std::vector<Tag> m_tags;
+                    bool m_tagsHasBeenSet;
 
                 };
             }

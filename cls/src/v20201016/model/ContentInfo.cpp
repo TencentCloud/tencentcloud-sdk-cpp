@@ -23,7 +23,8 @@ using namespace std;
 ContentInfo::ContentInfo() :
     m_formatHasBeenSet(false),
     m_csvHasBeenSet(false),
-    m_jsonHasBeenSet(false)
+    m_jsonHasBeenSet(false),
+    m_parquetHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,23 @@ CoreInternalOutcome ContentInfo::Deserialize(const rapidjson::Value &value)
         m_jsonHasBeenSet = true;
     }
 
+    if (value.HasMember("Parquet") && !value["Parquet"].IsNull())
+    {
+        if (!value["Parquet"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ContentInfo.Parquet` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_parquet.Deserialize(value["Parquet"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_parquetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -107,6 +125,15 @@ void ContentInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_json.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_parquetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Parquet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_parquet.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -158,5 +185,21 @@ void ContentInfo::SetJson(const JsonInfo& _json)
 bool ContentInfo::JsonHasBeenSet() const
 {
     return m_jsonHasBeenSet;
+}
+
+ParquetInfo ContentInfo::GetParquet() const
+{
+    return m_parquet;
+}
+
+void ContentInfo::SetParquet(const ParquetInfo& _parquet)
+{
+    m_parquet = _parquet;
+    m_parquetHasBeenSet = true;
+}
+
+bool ContentInfo::ParquetHasBeenSet() const
+{
+    return m_parquetHasBeenSet;
 }
 

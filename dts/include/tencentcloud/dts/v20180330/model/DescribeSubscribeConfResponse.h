@@ -23,6 +23,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/dts/v20180330/model/SubscribeObject.h>
 #include <tencentcloud/dts/v20180330/model/TagItem.h>
+#include <tencentcloud/dts/v20180330/model/SubsErr.h>
 
 
 namespace TencentCloud
@@ -361,6 +362,32 @@ namespace TencentCloud
                      */
                     bool AutoRenewFlagHasBeenSet() const;
 
+                    /**
+                     * 获取数据订阅版本。老版订阅填txdts，kafka版填kafka
+                     * @return SubscribeVersion 数据订阅版本。老版订阅填txdts，kafka版填kafka
+                     */
+                    std::string GetSubscribeVersion() const;
+
+                    /**
+                     * 判断参数 SubscribeVersion 是否已赋值
+                     * @return SubscribeVersion 是否已赋值
+                     */
+                    bool SubscribeVersionHasBeenSet() const;
+
+                    /**
+                     * 获取错误信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Errors 错误信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<SubsErr> GetErrors() const;
+
+                    /**
+                     * 判断参数 Errors 是否已赋值
+                     * @return Errors 是否已赋值
+                     */
+                    bool ErrorsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -520,6 +547,19 @@ namespace TencentCloud
                      */
                     int64_t m_autoRenewFlag;
                     bool m_autoRenewFlagHasBeenSet;
+
+                    /**
+                     * 数据订阅版本。老版订阅填txdts，kafka版填kafka
+                     */
+                    std::string m_subscribeVersion;
+                    bool m_subscribeVersionHasBeenSet;
+
+                    /**
+                     * 错误信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<SubsErr> m_errors;
+                    bool m_errorsHasBeenSet;
 
                 };
             }

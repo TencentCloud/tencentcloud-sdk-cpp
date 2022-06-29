@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool CpuHasBeenSet() const;
 
                     /**
-                     * 获取内存
-                     * @return Memory 内存
+                     * 获取内存，单位为GB
+                     * @return Memory 内存，单位为GB
                      */
                     int64_t GetMemory() const;
 
                     /**
-                     * 设置内存
-                     * @param Memory 内存
+                     * 设置内存，单位为GB
+                     * @param Memory 内存，单位为GB
                      */
                     void SetMemory(const int64_t& _memory);
 
@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool MemoryHasBeenSet() const;
 
                     /**
-                     * 获取新增只读实例数
-                     * @return ReadOnlyCount 新增只读实例数
+                     * 获取新增只读实例数，取值范围为(0,16]
+                     * @return ReadOnlyCount 新增只读实例数，取值范围为(0,16]
                      */
                     int64_t GetReadOnlyCount() const;
 
                     /**
-                     * 设置新增只读实例数
-                     * @param ReadOnlyCount 新增只读实例数
+                     * 设置新增只读实例数，取值范围为(0,16]
+                     * @param ReadOnlyCount 新增只读实例数，取值范围为(0,16]
                      */
                     void SetReadOnlyCount(const int64_t& _readOnlyCount);
 
@@ -151,14 +151,14 @@ namespace TencentCloud
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取所属子网ID
-                     * @return SubnetId 所属子网ID
+                     * 获取所属子网ID，如果设置了VpcId，则SubnetId必填
+                     * @return SubnetId 所属子网ID，如果设置了VpcId，则SubnetId必填
                      */
                     std::string GetSubnetId() const;
 
                     /**
-                     * 设置所属子网ID
-                     * @param SubnetId 所属子网ID
+                     * 设置所属子网ID，如果设置了VpcId，则SubnetId必填
+                     * @param SubnetId 所属子网ID，如果设置了VpcId，则SubnetId必填
                      */
                     void SetSubnetId(const std::string& _subnetId);
 
@@ -169,14 +169,14 @@ namespace TencentCloud
                     bool SubnetIdHasBeenSet() const;
 
                     /**
-                     * 获取新增RO组时使用的Port
-                     * @return Port 新增RO组时使用的Port
+                     * 获取新增RO组时使用的Port，取值范围为[0,65535)
+                     * @return Port 新增RO组时使用的Port，取值范围为[0,65535)
                      */
                     int64_t GetPort() const;
 
                     /**
-                     * 设置新增RO组时使用的Port
-                     * @param Port 新增RO组时使用的Port
+                     * 设置新增RO组时使用的Port，取值范围为[0,65535)
+                     * @param Port 新增RO组时使用的Port，取值范围为[0,65535)
                      */
                     void SetPort(const int64_t& _port);
 
@@ -187,14 +187,14 @@ namespace TencentCloud
                     bool PortHasBeenSet() const;
 
                     /**
-                     * 获取实例名称
-                     * @return InstanceName 实例名称
+                     * 获取实例名称，字符串长度范围为[0,64)
+                     * @return InstanceName 实例名称，字符串长度范围为[0,64)
                      */
                     std::string GetInstanceName() const;
 
                     /**
-                     * 设置实例名称
-                     * @param InstanceName 实例名称
+                     * 设置实例名称，字符串长度范围为[0,64)
+                     * @param InstanceName 实例名称，字符串长度范围为[0,64)
                      */
                     void SetInstanceName(const std::string& _instanceName);
 
@@ -245,14 +245,14 @@ namespace TencentCloud
                     bool DbTypeHasBeenSet() const;
 
                     /**
-                     * 获取订单来源
-                     * @return OrderSource 订单来源
+                     * 获取订单来源，字符串长度范围为[0,64)
+                     * @return OrderSource 订单来源，字符串长度范围为[0,64)
                      */
                     std::string GetOrderSource() const;
 
                     /**
-                     * 设置订单来源
-                     * @param OrderSource 订单来源
+                     * 设置订单来源，字符串长度范围为[0,64)
+                     * @param OrderSource 订单来源，字符串长度范围为[0,64)
                      */
                     void SetOrderSource(const std::string& _orderSource);
 
@@ -295,13 +295,13 @@ namespace TencentCloud
                     bool m_cpuHasBeenSet;
 
                     /**
-                     * 内存
+                     * 内存，单位为GB
                      */
                     int64_t m_memory;
                     bool m_memoryHasBeenSet;
 
                     /**
-                     * 新增只读实例数
+                     * 新增只读实例数，取值范围为(0,16]
                      */
                     int64_t m_readOnlyCount;
                     bool m_readOnlyCountHasBeenSet;
@@ -319,19 +319,19 @@ namespace TencentCloud
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * 所属子网ID
+                     * 所属子网ID，如果设置了VpcId，则SubnetId必填
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
 
                     /**
-                     * 新增RO组时使用的Port
+                     * 新增RO组时使用的Port，取值范围为[0,65535)
                      */
                     int64_t m_port;
                     bool m_portHasBeenSet;
 
                     /**
-                     * 实例名称
+                     * 实例名称，字符串长度范围为[0,64)
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;
@@ -350,7 +350,7 @@ namespace TencentCloud
                     bool m_dbTypeHasBeenSet;
 
                     /**
-                     * 订单来源
+                     * 订单来源，字符串长度范围为[0,64)
                      */
                     std::string m_orderSource;
                     bool m_orderSourceHasBeenSet;

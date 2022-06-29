@@ -24,6 +24,7 @@ set(iai_public_header_model
   include/tencentcloud/iai/v20200303/model/Candidate.h
   include/tencentcloud/iai/v20200303/model/DetectFaceAttributesResponse.h
   include/tencentcloud/iai/v20200303/model/SearchPersonsReturnsByGroupResponse.h
+  include/tencentcloud/iai/v20200303/model/PersonGroupInfo.h
   include/tencentcloud/iai/v20200303/model/Hat.h
   include/tencentcloud/iai/v20200303/model/CreatePersonRequest.h
   include/tencentcloud/iai/v20200303/model/CreateFaceResponse.h
@@ -32,7 +33,7 @@ set(iai_public_header_model
   include/tencentcloud/iai/v20200303/model/CreateGroupRequest.h
   include/tencentcloud/iai/v20200303/model/GetPersonGroupInfoRequest.h
   include/tencentcloud/iai/v20200303/model/FaceInfo.h
-  include/tencentcloud/iai/v20200303/model/CheckSimilarPersonRequest.h
+  include/tencentcloud/iai/v20200303/model/Eyebrow.h
   include/tencentcloud/iai/v20200303/model/AnalyzeDenseLandmarksRequest.h
   include/tencentcloud/iai/v20200303/model/GetGroupListRequest.h
   include/tencentcloud/iai/v20200303/model/GetUpgradeGroupFaceModelVersionJobListRequest.h
@@ -42,7 +43,6 @@ set(iai_public_header_model
   include/tencentcloud/iai/v20200303/model/CreatePersonResponse.h
   include/tencentcloud/iai/v20200303/model/SearchFacesResponse.h
   include/tencentcloud/iai/v20200303/model/CopyPersonResponse.h
-  include/tencentcloud/iai/v20200303/model/EstimateCheckSimilarPersonCostTimeResponse.h
   include/tencentcloud/iai/v20200303/model/GroupCandidate.h
   include/tencentcloud/iai/v20200303/model/DeleteFaceResponse.h
   include/tencentcloud/iai/v20200303/model/DeletePersonRequest.h
@@ -50,12 +50,9 @@ set(iai_public_header_model
   include/tencentcloud/iai/v20200303/model/DeleteFaceRequest.h
   include/tencentcloud/iai/v20200303/model/ModifyGroupRequest.h
   include/tencentcloud/iai/v20200303/model/DeleteGroupRequest.h
-  include/tencentcloud/iai/v20200303/model/EstimateCheckSimilarPersonCostTimeRequest.h
-  include/tencentcloud/iai/v20200303/model/RevertGroupFaceModelVersionResponse.h
   include/tencentcloud/iai/v20200303/model/UpgradeGroupFaceModelVersionRequest.h
   include/tencentcloud/iai/v20200303/model/DetectLiveFaceRequest.h
   include/tencentcloud/iai/v20200303/model/GetPersonBaseInfoResponse.h
-  include/tencentcloud/iai/v20200303/model/GetSimilarPersonResultRequest.h
   include/tencentcloud/iai/v20200303/model/SearchPersonsResponse.h
   include/tencentcloud/iai/v20200303/model/GetUpgradeGroupFaceModelVersionResultRequest.h
   include/tencentcloud/iai/v20200303/model/GroupInfo.h
@@ -64,7 +61,6 @@ set(iai_public_header_model
   include/tencentcloud/iai/v20200303/model/CopyPersonRequest.h
   include/tencentcloud/iai/v20200303/model/SearchPersonsReturnsByGroupRequest.h
   include/tencentcloud/iai/v20200303/model/DeletePersonFromGroupResponse.h
-  include/tencentcloud/iai/v20200303/model/GetCheckSimilarPersonJobIdListResponse.h
   include/tencentcloud/iai/v20200303/model/DenseFaceShape.h
   include/tencentcloud/iai/v20200303/model/ResultsReturnsByGroup.h
   include/tencentcloud/iai/v20200303/model/Point.h
@@ -73,14 +69,12 @@ set(iai_public_header_model
   include/tencentcloud/iai/v20200303/model/VerifyFaceRequest.h
   include/tencentcloud/iai/v20200303/model/GetPersonListResponse.h
   include/tencentcloud/iai/v20200303/model/Hair.h
-  include/tencentcloud/iai/v20200303/model/CheckSimilarPersonResponse.h
   include/tencentcloud/iai/v20200303/model/Result.h
   include/tencentcloud/iai/v20200303/model/GetPersonGroupInfoResponse.h
   include/tencentcloud/iai/v20200303/model/UpgradeGroupFaceModelVersionResponse.h
   include/tencentcloud/iai/v20200303/model/SearchFacesReturnsByGroupRequest.h
   include/tencentcloud/iai/v20200303/model/AnalyzeDenseLandmarksResponse.h
   include/tencentcloud/iai/v20200303/model/ModifyPersonBaseInfoResponse.h
-  include/tencentcloud/iai/v20200303/model/GetSimilarPersonResultResponse.h
   include/tencentcloud/iai/v20200303/model/ModifyPersonGroupInfoRequest.h
   include/tencentcloud/iai/v20200303/model/RevertGroupFaceModelVersionRequest.h
   include/tencentcloud/iai/v20200303/model/FaceQualityCompleteness.h
@@ -89,10 +83,9 @@ set(iai_public_header_model
   include/tencentcloud/iai/v20200303/model/CompareMaskFaceResponse.h
   include/tencentcloud/iai/v20200303/model/ModifyPersonBaseInfoRequest.h
   include/tencentcloud/iai/v20200303/model/DetectLiveFaceAccurateRequest.h
-  include/tencentcloud/iai/v20200303/model/JobIdInfo.h
+  include/tencentcloud/iai/v20200303/model/VerifyFaceResponse.h
   include/tencentcloud/iai/v20200303/model/FaceDetailInfo.h
   include/tencentcloud/iai/v20200303/model/SearchFacesRequest.h
-  include/tencentcloud/iai/v20200303/model/GetCheckSimilarPersonJobIdListRequest.h
   include/tencentcloud/iai/v20200303/model/SearchPersonsRequest.h
   include/tencentcloud/iai/v20200303/model/PersonInfo.h
   include/tencentcloud/iai/v20200303/model/GroupExDescriptionInfo.h
@@ -109,15 +102,13 @@ set(iai_public_header_model
   include/tencentcloud/iai/v20200303/model/GetGroupInfoResponse.h
   include/tencentcloud/iai/v20200303/model/CompareFaceResponse.h
   include/tencentcloud/iai/v20200303/model/Mouth.h
-  include/tencentcloud/iai/v20200303/model/PersonGroupInfo.h
-  include/tencentcloud/iai/v20200303/model/VerifyFaceResponse.h
+  include/tencentcloud/iai/v20200303/model/RevertGroupFaceModelVersionResponse.h
   include/tencentcloud/iai/v20200303/model/DeleteGroupResponse.h
   include/tencentcloud/iai/v20200303/model/FaceShape.h
   include/tencentcloud/iai/v20200303/model/CompareFaceRequest.h
   include/tencentcloud/iai/v20200303/model/VerifyPersonResponse.h
   include/tencentcloud/iai/v20200303/model/DetectFaceResponse.h
   include/tencentcloud/iai/v20200303/model/GetPersonListNumRequest.h
-  include/tencentcloud/iai/v20200303/model/Eyebrow.h
   include/tencentcloud/iai/v20200303/model/GetGroupInfoRequest.h
   include/tencentcloud/iai/v20200303/model/UpgradeJobInfo.h
   include/tencentcloud/iai/v20200303/model/ModifyGroupResponse.h
@@ -131,6 +122,7 @@ set(iai_public_header_model
   include/tencentcloud/iai/v20180301/model/Candidate.h
   include/tencentcloud/iai/v20180301/model/DetectFaceAttributesResponse.h
   include/tencentcloud/iai/v20180301/model/SearchPersonsReturnsByGroupResponse.h
+  include/tencentcloud/iai/v20180301/model/PersonGroupInfo.h
   include/tencentcloud/iai/v20180301/model/Hat.h
   include/tencentcloud/iai/v20180301/model/CreatePersonRequest.h
   include/tencentcloud/iai/v20180301/model/CreateFaceResponse.h
@@ -139,7 +131,7 @@ set(iai_public_header_model
   include/tencentcloud/iai/v20180301/model/CreateGroupRequest.h
   include/tencentcloud/iai/v20180301/model/GetPersonGroupInfoRequest.h
   include/tencentcloud/iai/v20180301/model/FaceInfo.h
-  include/tencentcloud/iai/v20180301/model/CheckSimilarPersonRequest.h
+  include/tencentcloud/iai/v20180301/model/Eyebrow.h
   include/tencentcloud/iai/v20180301/model/AnalyzeDenseLandmarksRequest.h
   include/tencentcloud/iai/v20180301/model/GetGroupListRequest.h
   include/tencentcloud/iai/v20180301/model/GetUpgradeGroupFaceModelVersionJobListRequest.h
@@ -148,7 +140,6 @@ set(iai_public_header_model
   include/tencentcloud/iai/v20180301/model/CreatePersonResponse.h
   include/tencentcloud/iai/v20180301/model/SearchFacesResponse.h
   include/tencentcloud/iai/v20180301/model/CopyPersonResponse.h
-  include/tencentcloud/iai/v20180301/model/EstimateCheckSimilarPersonCostTimeResponse.h
   include/tencentcloud/iai/v20180301/model/GroupCandidate.h
   include/tencentcloud/iai/v20180301/model/DeleteFaceResponse.h
   include/tencentcloud/iai/v20180301/model/DeletePersonRequest.h
@@ -156,12 +147,9 @@ set(iai_public_header_model
   include/tencentcloud/iai/v20180301/model/DeleteFaceRequest.h
   include/tencentcloud/iai/v20180301/model/ModifyGroupRequest.h
   include/tencentcloud/iai/v20180301/model/DeleteGroupRequest.h
-  include/tencentcloud/iai/v20180301/model/EstimateCheckSimilarPersonCostTimeRequest.h
-  include/tencentcloud/iai/v20180301/model/RevertGroupFaceModelVersionResponse.h
   include/tencentcloud/iai/v20180301/model/UpgradeGroupFaceModelVersionRequest.h
   include/tencentcloud/iai/v20180301/model/DetectLiveFaceRequest.h
   include/tencentcloud/iai/v20180301/model/GetPersonBaseInfoResponse.h
-  include/tencentcloud/iai/v20180301/model/GetSimilarPersonResultRequest.h
   include/tencentcloud/iai/v20180301/model/SearchPersonsResponse.h
   include/tencentcloud/iai/v20180301/model/GetUpgradeGroupFaceModelVersionResultRequest.h
   include/tencentcloud/iai/v20180301/model/GroupInfo.h
@@ -170,7 +158,6 @@ set(iai_public_header_model
   include/tencentcloud/iai/v20180301/model/CopyPersonRequest.h
   include/tencentcloud/iai/v20180301/model/SearchPersonsReturnsByGroupRequest.h
   include/tencentcloud/iai/v20180301/model/DeletePersonFromGroupResponse.h
-  include/tencentcloud/iai/v20180301/model/GetCheckSimilarPersonJobIdListResponse.h
   include/tencentcloud/iai/v20180301/model/DenseFaceShape.h
   include/tencentcloud/iai/v20180301/model/ResultsReturnsByGroup.h
   include/tencentcloud/iai/v20180301/model/Point.h
@@ -179,24 +166,21 @@ set(iai_public_header_model
   include/tencentcloud/iai/v20180301/model/VerifyFaceRequest.h
   include/tencentcloud/iai/v20180301/model/GetPersonListResponse.h
   include/tencentcloud/iai/v20180301/model/Hair.h
-  include/tencentcloud/iai/v20180301/model/GetPersonListNumRequest.h
   include/tencentcloud/iai/v20180301/model/Result.h
   include/tencentcloud/iai/v20180301/model/GetPersonGroupInfoResponse.h
   include/tencentcloud/iai/v20180301/model/UpgradeGroupFaceModelVersionResponse.h
   include/tencentcloud/iai/v20180301/model/SearchFacesReturnsByGroupRequest.h
   include/tencentcloud/iai/v20180301/model/AnalyzeDenseLandmarksResponse.h
   include/tencentcloud/iai/v20180301/model/ModifyPersonBaseInfoResponse.h
-  include/tencentcloud/iai/v20180301/model/GetSimilarPersonResultResponse.h
   include/tencentcloud/iai/v20180301/model/ModifyPersonGroupInfoRequest.h
   include/tencentcloud/iai/v20180301/model/RevertGroupFaceModelVersionRequest.h
   include/tencentcloud/iai/v20180301/model/FaceQualityCompleteness.h
   include/tencentcloud/iai/v20180301/model/FaceAttributesInfo.h
   include/tencentcloud/iai/v20180301/model/VerifyPersonRequest.h
   include/tencentcloud/iai/v20180301/model/ModifyPersonBaseInfoRequest.h
-  include/tencentcloud/iai/v20180301/model/JobIdInfo.h
+  include/tencentcloud/iai/v20180301/model/VerifyFaceResponse.h
   include/tencentcloud/iai/v20180301/model/FaceDetailInfo.h
   include/tencentcloud/iai/v20180301/model/SearchFacesRequest.h
-  include/tencentcloud/iai/v20180301/model/GetCheckSimilarPersonJobIdListRequest.h
   include/tencentcloud/iai/v20180301/model/SearchPersonsRequest.h
   include/tencentcloud/iai/v20180301/model/PersonInfo.h
   include/tencentcloud/iai/v20180301/model/GroupExDescriptionInfo.h
@@ -212,15 +196,13 @@ set(iai_public_header_model
   include/tencentcloud/iai/v20180301/model/GetGroupInfoResponse.h
   include/tencentcloud/iai/v20180301/model/CompareFaceResponse.h
   include/tencentcloud/iai/v20180301/model/Mouth.h
-  include/tencentcloud/iai/v20180301/model/PersonGroupInfo.h
-  include/tencentcloud/iai/v20180301/model/VerifyFaceResponse.h
+  include/tencentcloud/iai/v20180301/model/RevertGroupFaceModelVersionResponse.h
   include/tencentcloud/iai/v20180301/model/DeleteGroupResponse.h
   include/tencentcloud/iai/v20180301/model/FaceShape.h
   include/tencentcloud/iai/v20180301/model/CompareFaceRequest.h
   include/tencentcloud/iai/v20180301/model/VerifyPersonResponse.h
   include/tencentcloud/iai/v20180301/model/DetectFaceResponse.h
-  include/tencentcloud/iai/v20180301/model/CheckSimilarPersonResponse.h
-  include/tencentcloud/iai/v20180301/model/Eyebrow.h
+  include/tencentcloud/iai/v20180301/model/GetPersonListNumRequest.h
   include/tencentcloud/iai/v20180301/model/GetGroupInfoRequest.h
   include/tencentcloud/iai/v20180301/model/UpgradeJobInfo.h
   include/tencentcloud/iai/v20180301/model/ModifyGroupResponse.h
@@ -239,6 +221,7 @@ set(iai_src
   src/v20200303/model/Candidate.cpp
   src/v20200303/model/DetectFaceAttributesResponse.cpp
   src/v20200303/model/SearchPersonsReturnsByGroupResponse.cpp
+  src/v20200303/model/PersonGroupInfo.cpp
   src/v20200303/model/Hat.cpp
   src/v20200303/model/CreatePersonRequest.cpp
   src/v20200303/model/CreateFaceResponse.cpp
@@ -247,7 +230,7 @@ set(iai_src
   src/v20200303/model/CreateGroupRequest.cpp
   src/v20200303/model/GetPersonGroupInfoRequest.cpp
   src/v20200303/model/FaceInfo.cpp
-  src/v20200303/model/CheckSimilarPersonRequest.cpp
+  src/v20200303/model/Eyebrow.cpp
   src/v20200303/model/AnalyzeDenseLandmarksRequest.cpp
   src/v20200303/model/GetGroupListRequest.cpp
   src/v20200303/model/GetUpgradeGroupFaceModelVersionJobListRequest.cpp
@@ -257,7 +240,6 @@ set(iai_src
   src/v20200303/model/CreatePersonResponse.cpp
   src/v20200303/model/SearchFacesResponse.cpp
   src/v20200303/model/CopyPersonResponse.cpp
-  src/v20200303/model/EstimateCheckSimilarPersonCostTimeResponse.cpp
   src/v20200303/model/GroupCandidate.cpp
   src/v20200303/model/DeleteFaceResponse.cpp
   src/v20200303/model/DeletePersonRequest.cpp
@@ -265,12 +247,9 @@ set(iai_src
   src/v20200303/model/DeleteFaceRequest.cpp
   src/v20200303/model/ModifyGroupRequest.cpp
   src/v20200303/model/DeleteGroupRequest.cpp
-  src/v20200303/model/EstimateCheckSimilarPersonCostTimeRequest.cpp
-  src/v20200303/model/RevertGroupFaceModelVersionResponse.cpp
   src/v20200303/model/UpgradeGroupFaceModelVersionRequest.cpp
   src/v20200303/model/DetectLiveFaceRequest.cpp
   src/v20200303/model/GetPersonBaseInfoResponse.cpp
-  src/v20200303/model/GetSimilarPersonResultRequest.cpp
   src/v20200303/model/SearchPersonsResponse.cpp
   src/v20200303/model/GetUpgradeGroupFaceModelVersionResultRequest.cpp
   src/v20200303/model/GroupInfo.cpp
@@ -279,7 +258,6 @@ set(iai_src
   src/v20200303/model/CopyPersonRequest.cpp
   src/v20200303/model/SearchPersonsReturnsByGroupRequest.cpp
   src/v20200303/model/DeletePersonFromGroupResponse.cpp
-  src/v20200303/model/GetCheckSimilarPersonJobIdListResponse.cpp
   src/v20200303/model/DenseFaceShape.cpp
   src/v20200303/model/ResultsReturnsByGroup.cpp
   src/v20200303/model/Point.cpp
@@ -288,14 +266,12 @@ set(iai_src
   src/v20200303/model/VerifyFaceRequest.cpp
   src/v20200303/model/GetPersonListResponse.cpp
   src/v20200303/model/Hair.cpp
-  src/v20200303/model/CheckSimilarPersonResponse.cpp
   src/v20200303/model/Result.cpp
   src/v20200303/model/GetPersonGroupInfoResponse.cpp
   src/v20200303/model/UpgradeGroupFaceModelVersionResponse.cpp
   src/v20200303/model/SearchFacesReturnsByGroupRequest.cpp
   src/v20200303/model/AnalyzeDenseLandmarksResponse.cpp
   src/v20200303/model/ModifyPersonBaseInfoResponse.cpp
-  src/v20200303/model/GetSimilarPersonResultResponse.cpp
   src/v20200303/model/ModifyPersonGroupInfoRequest.cpp
   src/v20200303/model/RevertGroupFaceModelVersionRequest.cpp
   src/v20200303/model/FaceQualityCompleteness.cpp
@@ -304,10 +280,9 @@ set(iai_src
   src/v20200303/model/CompareMaskFaceResponse.cpp
   src/v20200303/model/ModifyPersonBaseInfoRequest.cpp
   src/v20200303/model/DetectLiveFaceAccurateRequest.cpp
-  src/v20200303/model/JobIdInfo.cpp
+  src/v20200303/model/VerifyFaceResponse.cpp
   src/v20200303/model/FaceDetailInfo.cpp
   src/v20200303/model/SearchFacesRequest.cpp
-  src/v20200303/model/GetCheckSimilarPersonJobIdListRequest.cpp
   src/v20200303/model/SearchPersonsRequest.cpp
   src/v20200303/model/PersonInfo.cpp
   src/v20200303/model/GroupExDescriptionInfo.cpp
@@ -324,15 +299,13 @@ set(iai_src
   src/v20200303/model/GetGroupInfoResponse.cpp
   src/v20200303/model/CompareFaceResponse.cpp
   src/v20200303/model/Mouth.cpp
-  src/v20200303/model/PersonGroupInfo.cpp
-  src/v20200303/model/VerifyFaceResponse.cpp
+  src/v20200303/model/RevertGroupFaceModelVersionResponse.cpp
   src/v20200303/model/DeleteGroupResponse.cpp
   src/v20200303/model/FaceShape.cpp
   src/v20200303/model/CompareFaceRequest.cpp
   src/v20200303/model/VerifyPersonResponse.cpp
   src/v20200303/model/DetectFaceResponse.cpp
   src/v20200303/model/GetPersonListNumRequest.cpp
-  src/v20200303/model/Eyebrow.cpp
   src/v20200303/model/GetGroupInfoRequest.cpp
   src/v20200303/model/UpgradeJobInfo.cpp
   src/v20200303/model/ModifyGroupResponse.cpp
@@ -346,6 +319,7 @@ set(iai_src
   src/v20180301/model/Candidate.cpp
   src/v20180301/model/DetectFaceAttributesResponse.cpp
   src/v20180301/model/SearchPersonsReturnsByGroupResponse.cpp
+  src/v20180301/model/PersonGroupInfo.cpp
   src/v20180301/model/Hat.cpp
   src/v20180301/model/CreatePersonRequest.cpp
   src/v20180301/model/CreateFaceResponse.cpp
@@ -354,7 +328,7 @@ set(iai_src
   src/v20180301/model/CreateGroupRequest.cpp
   src/v20180301/model/GetPersonGroupInfoRequest.cpp
   src/v20180301/model/FaceInfo.cpp
-  src/v20180301/model/CheckSimilarPersonRequest.cpp
+  src/v20180301/model/Eyebrow.cpp
   src/v20180301/model/AnalyzeDenseLandmarksRequest.cpp
   src/v20180301/model/GetGroupListRequest.cpp
   src/v20180301/model/GetUpgradeGroupFaceModelVersionJobListRequest.cpp
@@ -363,7 +337,6 @@ set(iai_src
   src/v20180301/model/CreatePersonResponse.cpp
   src/v20180301/model/SearchFacesResponse.cpp
   src/v20180301/model/CopyPersonResponse.cpp
-  src/v20180301/model/EstimateCheckSimilarPersonCostTimeResponse.cpp
   src/v20180301/model/GroupCandidate.cpp
   src/v20180301/model/DeleteFaceResponse.cpp
   src/v20180301/model/DeletePersonRequest.cpp
@@ -371,12 +344,9 @@ set(iai_src
   src/v20180301/model/DeleteFaceRequest.cpp
   src/v20180301/model/ModifyGroupRequest.cpp
   src/v20180301/model/DeleteGroupRequest.cpp
-  src/v20180301/model/EstimateCheckSimilarPersonCostTimeRequest.cpp
-  src/v20180301/model/RevertGroupFaceModelVersionResponse.cpp
   src/v20180301/model/UpgradeGroupFaceModelVersionRequest.cpp
   src/v20180301/model/DetectLiveFaceRequest.cpp
   src/v20180301/model/GetPersonBaseInfoResponse.cpp
-  src/v20180301/model/GetSimilarPersonResultRequest.cpp
   src/v20180301/model/SearchPersonsResponse.cpp
   src/v20180301/model/GetUpgradeGroupFaceModelVersionResultRequest.cpp
   src/v20180301/model/GroupInfo.cpp
@@ -385,7 +355,6 @@ set(iai_src
   src/v20180301/model/CopyPersonRequest.cpp
   src/v20180301/model/SearchPersonsReturnsByGroupRequest.cpp
   src/v20180301/model/DeletePersonFromGroupResponse.cpp
-  src/v20180301/model/GetCheckSimilarPersonJobIdListResponse.cpp
   src/v20180301/model/DenseFaceShape.cpp
   src/v20180301/model/ResultsReturnsByGroup.cpp
   src/v20180301/model/Point.cpp
@@ -394,24 +363,21 @@ set(iai_src
   src/v20180301/model/VerifyFaceRequest.cpp
   src/v20180301/model/GetPersonListResponse.cpp
   src/v20180301/model/Hair.cpp
-  src/v20180301/model/GetPersonListNumRequest.cpp
   src/v20180301/model/Result.cpp
   src/v20180301/model/GetPersonGroupInfoResponse.cpp
   src/v20180301/model/UpgradeGroupFaceModelVersionResponse.cpp
   src/v20180301/model/SearchFacesReturnsByGroupRequest.cpp
   src/v20180301/model/AnalyzeDenseLandmarksResponse.cpp
   src/v20180301/model/ModifyPersonBaseInfoResponse.cpp
-  src/v20180301/model/GetSimilarPersonResultResponse.cpp
   src/v20180301/model/ModifyPersonGroupInfoRequest.cpp
   src/v20180301/model/RevertGroupFaceModelVersionRequest.cpp
   src/v20180301/model/FaceQualityCompleteness.cpp
   src/v20180301/model/FaceAttributesInfo.cpp
   src/v20180301/model/VerifyPersonRequest.cpp
   src/v20180301/model/ModifyPersonBaseInfoRequest.cpp
-  src/v20180301/model/JobIdInfo.cpp
+  src/v20180301/model/VerifyFaceResponse.cpp
   src/v20180301/model/FaceDetailInfo.cpp
   src/v20180301/model/SearchFacesRequest.cpp
-  src/v20180301/model/GetCheckSimilarPersonJobIdListRequest.cpp
   src/v20180301/model/SearchPersonsRequest.cpp
   src/v20180301/model/PersonInfo.cpp
   src/v20180301/model/GroupExDescriptionInfo.cpp
@@ -427,15 +393,13 @@ set(iai_src
   src/v20180301/model/GetGroupInfoResponse.cpp
   src/v20180301/model/CompareFaceResponse.cpp
   src/v20180301/model/Mouth.cpp
-  src/v20180301/model/PersonGroupInfo.cpp
-  src/v20180301/model/VerifyFaceResponse.cpp
+  src/v20180301/model/RevertGroupFaceModelVersionResponse.cpp
   src/v20180301/model/DeleteGroupResponse.cpp
   src/v20180301/model/FaceShape.cpp
   src/v20180301/model/CompareFaceRequest.cpp
   src/v20180301/model/VerifyPersonResponse.cpp
   src/v20180301/model/DetectFaceResponse.cpp
-  src/v20180301/model/CheckSimilarPersonResponse.cpp
-  src/v20180301/model/Eyebrow.cpp
+  src/v20180301/model/GetPersonListNumRequest.cpp
   src/v20180301/model/GetGroupInfoRequest.cpp
   src/v20180301/model/UpgradeJobInfo.cpp
   src/v20180301/model/ModifyGroupResponse.cpp

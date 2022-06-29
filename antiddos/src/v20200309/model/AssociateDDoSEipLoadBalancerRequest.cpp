@@ -26,7 +26,8 @@ AssociateDDoSEipLoadBalancerRequest::AssociateDDoSEipLoadBalancerRequest() :
     m_instanceIdHasBeenSet(false),
     m_eipHasBeenSet(false),
     m_loadBalancerIDHasBeenSet(false),
-    m_loadBalancerRegionHasBeenSet(false)
+    m_loadBalancerRegionHasBeenSet(false),
+    m_vipHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,14 @@ string AssociateDDoSEipLoadBalancerRequest::ToJsonString() const
         string key = "LoadBalancerRegion";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_loadBalancerRegion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_vipHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Vip";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_vip.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -139,6 +148,22 @@ void AssociateDDoSEipLoadBalancerRequest::SetLoadBalancerRegion(const string& _l
 bool AssociateDDoSEipLoadBalancerRequest::LoadBalancerRegionHasBeenSet() const
 {
     return m_loadBalancerRegionHasBeenSet;
+}
+
+string AssociateDDoSEipLoadBalancerRequest::GetVip() const
+{
+    return m_vip;
+}
+
+void AssociateDDoSEipLoadBalancerRequest::SetVip(const string& _vip)
+{
+    m_vip = _vip;
+    m_vipHasBeenSet = true;
+}
+
+bool AssociateDDoSEipLoadBalancerRequest::VipHasBeenSet() const
+{
+    return m_vipHasBeenSet;
 }
 
 

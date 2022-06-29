@@ -23,7 +23,14 @@ using namespace std;
 UnderwriteItem::UnderwriteItem() :
     m_nameHasBeenSet(false),
     m_resultHasBeenSet(false),
-    m_valueHasBeenSet(false)
+    m_valueHasBeenSet(false),
+    m_rangeHasBeenSet(false),
+    m_reportDateHasBeenSet(false),
+    m_fileTypeHasBeenSet(false),
+    m_inspectProjectHasBeenSet(false),
+    m_unitHasBeenSet(false),
+    m_originNameHasBeenSet(false),
+    m_yinYangHasBeenSet(false)
 {
 }
 
@@ -62,6 +69,79 @@ CoreInternalOutcome UnderwriteItem::Deserialize(const rapidjson::Value &value)
         m_valueHasBeenSet = true;
     }
 
+    if (value.HasMember("Range") && !value["Range"].IsNull())
+    {
+        if (!value["Range"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UnderwriteItem.Range` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_range = string(value["Range"].GetString());
+        m_rangeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ReportDate") && !value["ReportDate"].IsNull())
+    {
+        if (!value["ReportDate"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `UnderwriteItem.ReportDate` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ReportDate"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_reportDate.push_back((*itr).GetString());
+        }
+        m_reportDateHasBeenSet = true;
+    }
+
+    if (value.HasMember("FileType") && !value["FileType"].IsNull())
+    {
+        if (!value["FileType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UnderwriteItem.FileType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_fileType = string(value["FileType"].GetString());
+        m_fileTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("InspectProject") && !value["InspectProject"].IsNull())
+    {
+        if (!value["InspectProject"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UnderwriteItem.InspectProject` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_inspectProject = string(value["InspectProject"].GetString());
+        m_inspectProjectHasBeenSet = true;
+    }
+
+    if (value.HasMember("Unit") && !value["Unit"].IsNull())
+    {
+        if (!value["Unit"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UnderwriteItem.Unit` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_unit = string(value["Unit"].GetString());
+        m_unitHasBeenSet = true;
+    }
+
+    if (value.HasMember("OriginName") && !value["OriginName"].IsNull())
+    {
+        if (!value["OriginName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UnderwriteItem.OriginName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_originName = string(value["OriginName"].GetString());
+        m_originNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("YinYang") && !value["YinYang"].IsNull())
+    {
+        if (!value["YinYang"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UnderwriteItem.YinYang` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_yinYang = string(value["YinYang"].GetString());
+        m_yinYangHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +171,67 @@ void UnderwriteItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "Value";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_value.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_rangeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Range";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_range.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_reportDateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReportDate";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_reportDate.begin(); itr != m_reportDate.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_fileTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fileType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_inspectProjectHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InspectProject";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_inspectProject.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_unitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Unit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_unit.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_originNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OriginName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_originName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_yinYangHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "YinYang";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_yinYang.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -142,5 +283,117 @@ void UnderwriteItem::SetValue(const string& _value)
 bool UnderwriteItem::ValueHasBeenSet() const
 {
     return m_valueHasBeenSet;
+}
+
+string UnderwriteItem::GetRange() const
+{
+    return m_range;
+}
+
+void UnderwriteItem::SetRange(const string& _range)
+{
+    m_range = _range;
+    m_rangeHasBeenSet = true;
+}
+
+bool UnderwriteItem::RangeHasBeenSet() const
+{
+    return m_rangeHasBeenSet;
+}
+
+vector<string> UnderwriteItem::GetReportDate() const
+{
+    return m_reportDate;
+}
+
+void UnderwriteItem::SetReportDate(const vector<string>& _reportDate)
+{
+    m_reportDate = _reportDate;
+    m_reportDateHasBeenSet = true;
+}
+
+bool UnderwriteItem::ReportDateHasBeenSet() const
+{
+    return m_reportDateHasBeenSet;
+}
+
+string UnderwriteItem::GetFileType() const
+{
+    return m_fileType;
+}
+
+void UnderwriteItem::SetFileType(const string& _fileType)
+{
+    m_fileType = _fileType;
+    m_fileTypeHasBeenSet = true;
+}
+
+bool UnderwriteItem::FileTypeHasBeenSet() const
+{
+    return m_fileTypeHasBeenSet;
+}
+
+string UnderwriteItem::GetInspectProject() const
+{
+    return m_inspectProject;
+}
+
+void UnderwriteItem::SetInspectProject(const string& _inspectProject)
+{
+    m_inspectProject = _inspectProject;
+    m_inspectProjectHasBeenSet = true;
+}
+
+bool UnderwriteItem::InspectProjectHasBeenSet() const
+{
+    return m_inspectProjectHasBeenSet;
+}
+
+string UnderwriteItem::GetUnit() const
+{
+    return m_unit;
+}
+
+void UnderwriteItem::SetUnit(const string& _unit)
+{
+    m_unit = _unit;
+    m_unitHasBeenSet = true;
+}
+
+bool UnderwriteItem::UnitHasBeenSet() const
+{
+    return m_unitHasBeenSet;
+}
+
+string UnderwriteItem::GetOriginName() const
+{
+    return m_originName;
+}
+
+void UnderwriteItem::SetOriginName(const string& _originName)
+{
+    m_originName = _originName;
+    m_originNameHasBeenSet = true;
+}
+
+bool UnderwriteItem::OriginNameHasBeenSet() const
+{
+    return m_originNameHasBeenSet;
+}
+
+string UnderwriteItem::GetYinYang() const
+{
+    return m_yinYang;
+}
+
+void UnderwriteItem::SetYinYang(const string& _yinYang)
+{
+    m_yinYang = _yinYang;
+    m_yinYangHasBeenSet = true;
+}
+
+bool UnderwriteItem::YinYangHasBeenSet() const
+{
+    return m_yinYangHasBeenSet;
 }
 

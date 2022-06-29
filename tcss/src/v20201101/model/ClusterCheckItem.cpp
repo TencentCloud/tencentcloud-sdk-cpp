@@ -36,7 +36,10 @@ ClusterCheckItem::ClusterCheckItem() :
     m_cVSSScoreHasBeenSet(false),
     m_relateLinkHasBeenSet(false),
     m_affectedTypeHasBeenSet(false),
-    m_affectedVersionHasBeenSet(false)
+    m_affectedVersionHasBeenSet(false),
+    m_ignoredAssetNumHasBeenSet(false),
+    m_isIgnoredHasBeenSet(false),
+    m_riskAssessmentHasBeenSet(false)
 {
 }
 
@@ -205,6 +208,36 @@ CoreInternalOutcome ClusterCheckItem::Deserialize(const rapidjson::Value &value)
         m_affectedVersionHasBeenSet = true;
     }
 
+    if (value.HasMember("IgnoredAssetNum") && !value["IgnoredAssetNum"].IsNull())
+    {
+        if (!value["IgnoredAssetNum"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterCheckItem.IgnoredAssetNum` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_ignoredAssetNum = value["IgnoredAssetNum"].GetInt64();
+        m_ignoredAssetNumHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsIgnored") && !value["IsIgnored"].IsNull())
+    {
+        if (!value["IsIgnored"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterCheckItem.IsIgnored` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isIgnored = value["IsIgnored"].GetBool();
+        m_isIgnoredHasBeenSet = true;
+    }
+
+    if (value.HasMember("RiskAssessment") && !value["RiskAssessment"].IsNull())
+    {
+        if (!value["RiskAssessment"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterCheckItem.RiskAssessment` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_riskAssessment = string(value["RiskAssessment"].GetString());
+        m_riskAssessmentHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -338,6 +371,30 @@ void ClusterCheckItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "AffectedVersion";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_affectedVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ignoredAssetNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IgnoredAssetNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_ignoredAssetNum, allocator);
+    }
+
+    if (m_isIgnoredHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsIgnored";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isIgnored, allocator);
+    }
+
+    if (m_riskAssessmentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RiskAssessment";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_riskAssessment.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -597,5 +654,53 @@ void ClusterCheckItem::SetAffectedVersion(const string& _affectedVersion)
 bool ClusterCheckItem::AffectedVersionHasBeenSet() const
 {
     return m_affectedVersionHasBeenSet;
+}
+
+int64_t ClusterCheckItem::GetIgnoredAssetNum() const
+{
+    return m_ignoredAssetNum;
+}
+
+void ClusterCheckItem::SetIgnoredAssetNum(const int64_t& _ignoredAssetNum)
+{
+    m_ignoredAssetNum = _ignoredAssetNum;
+    m_ignoredAssetNumHasBeenSet = true;
+}
+
+bool ClusterCheckItem::IgnoredAssetNumHasBeenSet() const
+{
+    return m_ignoredAssetNumHasBeenSet;
+}
+
+bool ClusterCheckItem::GetIsIgnored() const
+{
+    return m_isIgnored;
+}
+
+void ClusterCheckItem::SetIsIgnored(const bool& _isIgnored)
+{
+    m_isIgnored = _isIgnored;
+    m_isIgnoredHasBeenSet = true;
+}
+
+bool ClusterCheckItem::IsIgnoredHasBeenSet() const
+{
+    return m_isIgnoredHasBeenSet;
+}
+
+string ClusterCheckItem::GetRiskAssessment() const
+{
+    return m_riskAssessment;
+}
+
+void ClusterCheckItem::SetRiskAssessment(const string& _riskAssessment)
+{
+    m_riskAssessment = _riskAssessment;
+    m_riskAssessmentHasBeenSet = true;
+}
+
+bool ClusterCheckItem::RiskAssessmentHasBeenSet() const
+{
+    return m_riskAssessmentHasBeenSet;
 }
 

@@ -26,7 +26,8 @@ CreateInstanceRequest::CreateInstanceRequest() :
     m_registryNameHasBeenSet(false),
     m_registryTypeHasBeenSet(false),
     m_tagSpecificationHasBeenSet(false),
-    m_registryChargeTypeHasBeenSet(false)
+    m_registryChargeTypeHasBeenSet(false),
+    m_syncTagHasBeenSet(false)
 {
 }
 
@@ -68,6 +69,14 @@ string CreateInstanceRequest::ToJsonString() const
         string key = "RegistryChargeType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_registryChargeType, allocator);
+    }
+
+    if (m_syncTagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SyncTag";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_syncTag, allocator);
     }
 
 
@@ -140,6 +149,22 @@ void CreateInstanceRequest::SetRegistryChargeType(const int64_t& _registryCharge
 bool CreateInstanceRequest::RegistryChargeTypeHasBeenSet() const
 {
     return m_registryChargeTypeHasBeenSet;
+}
+
+bool CreateInstanceRequest::GetSyncTag() const
+{
+    return m_syncTag;
+}
+
+void CreateInstanceRequest::SetSyncTag(const bool& _syncTag)
+{
+    m_syncTag = _syncTag;
+    m_syncTagHasBeenSet = true;
+}
+
+bool CreateInstanceRequest::SyncTagHasBeenSet() const
+{
+    return m_syncTagHasBeenSet;
 }
 
 

@@ -32,7 +32,8 @@ SpecItemInfo::SpecItemInfo() :
     m_pidHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_majorVersionHasBeenSet(false),
-    m_kernelVersionHasBeenSet(false)
+    m_kernelVersionHasBeenSet(false),
+    m_isSupportTDEHasBeenSet(false)
 {
 }
 
@@ -161,6 +162,16 @@ CoreInternalOutcome SpecItemInfo::Deserialize(const rapidjson::Value &value)
         m_kernelVersionHasBeenSet = true;
     }
 
+    if (value.HasMember("IsSupportTDE") && !value["IsSupportTDE"].IsNull())
+    {
+        if (!value["IsSupportTDE"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SpecItemInfo.IsSupportTDE` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isSupportTDE = value["IsSupportTDE"].GetInt64();
+        m_isSupportTDEHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -262,6 +273,14 @@ void SpecItemInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "KernelVersion";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_kernelVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isSupportTDEHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsSupportTDE";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isSupportTDE, allocator);
     }
 
 }
@@ -457,5 +476,21 @@ void SpecItemInfo::SetKernelVersion(const string& _kernelVersion)
 bool SpecItemInfo::KernelVersionHasBeenSet() const
 {
     return m_kernelVersionHasBeenSet;
+}
+
+int64_t SpecItemInfo::GetIsSupportTDE() const
+{
+    return m_isSupportTDE;
+}
+
+void SpecItemInfo::SetIsSupportTDE(const int64_t& _isSupportTDE)
+{
+    m_isSupportTDE = _isSupportTDE;
+    m_isSupportTDEHasBeenSet = true;
+}
+
+bool SpecItemInfo::IsSupportTDEHasBeenSet() const
+{
+    return m_isSupportTDEHasBeenSet;
 }
 

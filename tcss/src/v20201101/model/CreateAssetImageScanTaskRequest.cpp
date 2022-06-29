@@ -27,7 +27,9 @@ CreateAssetImageScanTaskRequest::CreateAssetImageScanTaskRequest() :
     m_imagesHasBeenSet(false),
     m_scanVulHasBeenSet(false),
     m_scanVirusHasBeenSet(false),
-    m_scanRiskHasBeenSet(false)
+    m_scanRiskHasBeenSet(false),
+    m_filtersHasBeenSet(false),
+    m_excludeImageIdsHasBeenSet(false)
 {
 }
 
@@ -81,6 +83,34 @@ string CreateAssetImageScanTaskRequest::ToJsonString() const
         string key = "ScanRisk";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_scanRisk, allocator);
+    }
+
+    if (m_filtersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Filters";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_filters.begin(); itr != m_filters.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_excludeImageIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExcludeImageIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_excludeImageIds.begin(); itr != m_excludeImageIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -169,6 +199,38 @@ void CreateAssetImageScanTaskRequest::SetScanRisk(const bool& _scanRisk)
 bool CreateAssetImageScanTaskRequest::ScanRiskHasBeenSet() const
 {
     return m_scanRiskHasBeenSet;
+}
+
+vector<AssetFilters> CreateAssetImageScanTaskRequest::GetFilters() const
+{
+    return m_filters;
+}
+
+void CreateAssetImageScanTaskRequest::SetFilters(const vector<AssetFilters>& _filters)
+{
+    m_filters = _filters;
+    m_filtersHasBeenSet = true;
+}
+
+bool CreateAssetImageScanTaskRequest::FiltersHasBeenSet() const
+{
+    return m_filtersHasBeenSet;
+}
+
+vector<string> CreateAssetImageScanTaskRequest::GetExcludeImageIds() const
+{
+    return m_excludeImageIds;
+}
+
+void CreateAssetImageScanTaskRequest::SetExcludeImageIds(const vector<string>& _excludeImageIds)
+{
+    m_excludeImageIds = _excludeImageIds;
+    m_excludeImageIdsHasBeenSet = true;
+}
+
+bool CreateAssetImageScanTaskRequest::ExcludeImageIdsHasBeenSet() const
+{
+    return m_excludeImageIdsHasBeenSet;
 }
 
 

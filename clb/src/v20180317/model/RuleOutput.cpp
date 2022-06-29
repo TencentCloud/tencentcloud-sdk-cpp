@@ -41,7 +41,8 @@ RuleOutput::RuleOutput() :
     m_wafDomainIdHasBeenSet(false),
     m_trpcCalleeHasBeenSet(false),
     m_trpcFuncHasBeenSet(false),
-    m_quicStatusHasBeenSet(false)
+    m_quicStatusHasBeenSet(false),
+    m_domainsHasBeenSet(false)
 {
 }
 
@@ -288,6 +289,19 @@ CoreInternalOutcome RuleOutput::Deserialize(const rapidjson::Value &value)
         m_quicStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("Domains") && !value["Domains"].IsNull())
+    {
+        if (!value["Domains"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `RuleOutput.Domains` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Domains"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_domains.push_back((*itr).GetString());
+        }
+        m_domainsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -465,6 +479,19 @@ void RuleOutput::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "QuicStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_quicStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_domainsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Domains";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_domains.begin(); itr != m_domains.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -804,5 +831,21 @@ void RuleOutput::SetQuicStatus(const string& _quicStatus)
 bool RuleOutput::QuicStatusHasBeenSet() const
 {
     return m_quicStatusHasBeenSet;
+}
+
+vector<string> RuleOutput::GetDomains() const
+{
+    return m_domains;
+}
+
+void RuleOutput::SetDomains(const vector<string>& _domains)
+{
+    m_domains = _domains;
+    m_domainsHasBeenSet = true;
+}
+
+bool RuleOutput::DomainsHasBeenSet() const
+{
+    return m_domainsHasBeenSet;
 }
 

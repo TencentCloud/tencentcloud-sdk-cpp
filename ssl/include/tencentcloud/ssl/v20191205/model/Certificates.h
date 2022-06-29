@@ -709,6 +709,28 @@ namespace TencentCloud
                      */
                     bool TagsHasBeenSet() const;
 
+                    /**
+                     * 获取是否已忽略到期通知
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsIgnore 是否已忽略到期通知
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetIsIgnore() const;
+
+                    /**
+                     * 设置是否已忽略到期通知
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param IsIgnore 是否已忽略到期通知
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIsIgnore(const bool& _isIgnore);
+
+                    /**
+                     * 判断参数 IsIgnore 是否已赋值
+                     * @return IsIgnore 是否已赋值
+                     */
+                    bool IsIgnoreHasBeenSet() const;
+
                 private:
 
                     /**
@@ -920,6 +942,13 @@ namespace TencentCloud
                      */
                     std::vector<Tags> m_tags;
                     bool m_tagsHasBeenSet;
+
+                    /**
+                     * 是否已忽略到期通知
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_isIgnore;
+                    bool m_isIgnoreHasBeenSet;
 
                 };
             }

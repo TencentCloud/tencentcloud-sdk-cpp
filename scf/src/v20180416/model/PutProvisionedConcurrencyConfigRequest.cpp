@@ -27,7 +27,11 @@ PutProvisionedConcurrencyConfigRequest::PutProvisionedConcurrencyConfigRequest()
     m_qualifierHasBeenSet(false),
     m_versionProvisionedConcurrencyNumHasBeenSet(false),
     m_namespaceHasBeenSet(false),
-    m_triggerActionsHasBeenSet(false)
+    m_triggerActionsHasBeenSet(false),
+    m_provisionedTypeHasBeenSet(false),
+    m_trackingTargetHasBeenSet(false),
+    m_minCapacityHasBeenSet(false),
+    m_maxCapacityHasBeenSet(false)
 {
 }
 
@@ -83,6 +87,38 @@ string PutProvisionedConcurrencyConfigRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_provisionedTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProvisionedType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_provisionedType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_trackingTargetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TrackingTarget";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_trackingTarget, allocator);
+    }
+
+    if (m_minCapacityHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MinCapacity";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_minCapacity, allocator);
+    }
+
+    if (m_maxCapacityHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxCapacity";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_maxCapacity, allocator);
     }
 
 
@@ -171,6 +207,70 @@ void PutProvisionedConcurrencyConfigRequest::SetTriggerActions(const vector<Trig
 bool PutProvisionedConcurrencyConfigRequest::TriggerActionsHasBeenSet() const
 {
     return m_triggerActionsHasBeenSet;
+}
+
+string PutProvisionedConcurrencyConfigRequest::GetProvisionedType() const
+{
+    return m_provisionedType;
+}
+
+void PutProvisionedConcurrencyConfigRequest::SetProvisionedType(const string& _provisionedType)
+{
+    m_provisionedType = _provisionedType;
+    m_provisionedTypeHasBeenSet = true;
+}
+
+bool PutProvisionedConcurrencyConfigRequest::ProvisionedTypeHasBeenSet() const
+{
+    return m_provisionedTypeHasBeenSet;
+}
+
+double PutProvisionedConcurrencyConfigRequest::GetTrackingTarget() const
+{
+    return m_trackingTarget;
+}
+
+void PutProvisionedConcurrencyConfigRequest::SetTrackingTarget(const double& _trackingTarget)
+{
+    m_trackingTarget = _trackingTarget;
+    m_trackingTargetHasBeenSet = true;
+}
+
+bool PutProvisionedConcurrencyConfigRequest::TrackingTargetHasBeenSet() const
+{
+    return m_trackingTargetHasBeenSet;
+}
+
+uint64_t PutProvisionedConcurrencyConfigRequest::GetMinCapacity() const
+{
+    return m_minCapacity;
+}
+
+void PutProvisionedConcurrencyConfigRequest::SetMinCapacity(const uint64_t& _minCapacity)
+{
+    m_minCapacity = _minCapacity;
+    m_minCapacityHasBeenSet = true;
+}
+
+bool PutProvisionedConcurrencyConfigRequest::MinCapacityHasBeenSet() const
+{
+    return m_minCapacityHasBeenSet;
+}
+
+uint64_t PutProvisionedConcurrencyConfigRequest::GetMaxCapacity() const
+{
+    return m_maxCapacity;
+}
+
+void PutProvisionedConcurrencyConfigRequest::SetMaxCapacity(const uint64_t& _maxCapacity)
+{
+    m_maxCapacity = _maxCapacity;
+    m_maxCapacityHasBeenSet = true;
+}
+
+bool PutProvisionedConcurrencyConfigRequest::MaxCapacityHasBeenSet() const
+{
+    return m_maxCapacityHasBeenSet;
 }
 
 

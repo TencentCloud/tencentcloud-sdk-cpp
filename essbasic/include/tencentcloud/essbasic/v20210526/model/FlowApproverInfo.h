@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/essbasic/v20210526/model/Component.h>
 
 
 namespace TencentCloud
@@ -155,14 +156,22 @@ namespace TencentCloud
                     bool CallbackUrlHasBeenSet() const;
 
                     /**
-                     * 获取签署人类型，PERSON和ORGANIZATION
-                     * @return ApproverType 签署人类型，PERSON和ORGANIZATION
+                     * 获取签署人类型，PERSON-个人；ORGANIZATION-企业；
+ENTERPRISESERVER-企业静默签;
+注：ENTERPRISESERVER 类型仅用于使用文件创建流程（ChannelCreateFlowByFiles）接口；并且仅能指定发起方企业签署方为静默签署；
+                     * @return ApproverType 签署人类型，PERSON-个人；ORGANIZATION-企业；
+ENTERPRISESERVER-企业静默签;
+注：ENTERPRISESERVER 类型仅用于使用文件创建流程（ChannelCreateFlowByFiles）接口；并且仅能指定发起方企业签署方为静默签署；
                      */
                     std::string GetApproverType() const;
 
                     /**
-                     * 设置签署人类型，PERSON和ORGANIZATION
-                     * @param ApproverType 签署人类型，PERSON和ORGANIZATION
+                     * 设置签署人类型，PERSON-个人；ORGANIZATION-企业；
+ENTERPRISESERVER-企业静默签;
+注：ENTERPRISESERVER 类型仅用于使用文件创建流程（ChannelCreateFlowByFiles）接口；并且仅能指定发起方企业签署方为静默签署；
+                     * @param ApproverType 签署人类型，PERSON-个人；ORGANIZATION-企业；
+ENTERPRISESERVER-企业静默签;
+注：ENTERPRISESERVER 类型仅用于使用文件创建流程（ChannelCreateFlowByFiles）接口；并且仅能指定发起方企业签署方为静默签署；
                      */
                     void SetApproverType(const std::string& _approverType);
 
@@ -245,14 +254,14 @@ namespace TencentCloud
                     bool RecipientIdHasBeenSet() const;
 
                     /**
-                     * 获取同一渠道下其他合作企业OpenId，签署人为非发起方企业员工场景下必传；
-                     * @return OrganizationName 同一渠道下其他合作企业OpenId，签署人为非发起方企业员工场景下必传；
+                     * 获取企业签署方工商营业执照上的企业名称，签署方为非发起方企业场景下必传；
+                     * @return OrganizationName 企业签署方工商营业执照上的企业名称，签署方为非发起方企业场景下必传；
                      */
                     std::string GetOrganizationName() const;
 
                     /**
-                     * 设置同一渠道下其他合作企业OpenId，签署人为非发起方企业员工场景下必传；
-                     * @param OrganizationName 同一渠道下其他合作企业OpenId，签署人为非发起方企业员工场景下必传；
+                     * 设置企业签署方工商营业执照上的企业名称，签署方为非发起方企业场景下必传；
+                     * @param OrganizationName 企业签署方工商营业执照上的企业名称，签署方为非发起方企业场景下必传；
                      */
                     void SetOrganizationName(const std::string& _organizationName);
 
@@ -263,14 +272,14 @@ namespace TencentCloud
                     bool OrganizationNameHasBeenSet() const;
 
                     /**
-                     * 获取同一渠道下其他合作企业OpenId，签署人为非发起方企业员工场景下必传；
-                     * @return OrganizationOpenId 同一渠道下其他合作企业OpenId，签署人为非发起方企业员工场景下必传；
+                     * 获取企业签署方在同一渠道下的其他合作企业OpenId，签署方为非发起方企业场景下必传；
+                     * @return OrganizationOpenId 企业签署方在同一渠道下的其他合作企业OpenId，签署方为非发起方企业场景下必传；
                      */
                     std::string GetOrganizationOpenId() const;
 
                     /**
-                     * 设置同一渠道下其他合作企业OpenId，签署人为非发起方企业员工场景下必传；
-                     * @param OrganizationOpenId 同一渠道下其他合作企业OpenId，签署人为非发起方企业员工场景下必传；
+                     * 设置企业签署方在同一渠道下的其他合作企业OpenId，签署方为非发起方企业场景下必传；
+                     * @param OrganizationOpenId 企业签署方在同一渠道下的其他合作企业OpenId，签署方为非发起方企业场景下必传；
                      */
                     void SetOrganizationOpenId(const std::string& _organizationOpenId);
 
@@ -279,6 +288,46 @@ namespace TencentCloud
                      * @return OrganizationOpenId 是否已赋值
                      */
                     bool OrganizationOpenIdHasBeenSet() const;
+
+                    /**
+                     * 获取指定签署人非渠道企业下员工，在ApproverType为ORGANIZATION时指定。
+默认为false，即签署人位于同一个渠道应用号下；
+                     * @return NotChannelOrganization 指定签署人非渠道企业下员工，在ApproverType为ORGANIZATION时指定。
+默认为false，即签署人位于同一个渠道应用号下；
+                     */
+                    bool GetNotChannelOrganization() const;
+
+                    /**
+                     * 设置指定签署人非渠道企业下员工，在ApproverType为ORGANIZATION时指定。
+默认为false，即签署人位于同一个渠道应用号下；
+                     * @param NotChannelOrganization 指定签署人非渠道企业下员工，在ApproverType为ORGANIZATION时指定。
+默认为false，即签署人位于同一个渠道应用号下；
+                     */
+                    void SetNotChannelOrganization(const bool& _notChannelOrganization);
+
+                    /**
+                     * 判断参数 NotChannelOrganization 是否已赋值
+                     * @return NotChannelOrganization 是否已赋值
+                     */
+                    bool NotChannelOrganizationHasBeenSet() const;
+
+                    /**
+                     * 获取使用PDF文件直接发起合同时，签署人指定的签署控件
+                     * @return SignComponents 使用PDF文件直接发起合同时，签署人指定的签署控件
+                     */
+                    std::vector<Component> GetSignComponents() const;
+
+                    /**
+                     * 设置使用PDF文件直接发起合同时，签署人指定的签署控件
+                     * @param SignComponents 使用PDF文件直接发起合同时，签署人指定的签署控件
+                     */
+                    void SetSignComponents(const std::vector<Component>& _signComponents);
+
+                    /**
+                     * 判断参数 SignComponents 是否已赋值
+                     * @return SignComponents 是否已赋值
+                     */
+                    bool SignComponentsHasBeenSet() const;
 
                 private:
 
@@ -319,7 +368,9 @@ namespace TencentCloud
                     bool m_callbackUrlHasBeenSet;
 
                     /**
-                     * 签署人类型，PERSON和ORGANIZATION
+                     * 签署人类型，PERSON-个人；ORGANIZATION-企业；
+ENTERPRISESERVER-企业静默签;
+注：ENTERPRISESERVER 类型仅用于使用文件创建流程（ChannelCreateFlowByFiles）接口；并且仅能指定发起方企业签署方为静默签署；
                      */
                     std::string m_approverType;
                     bool m_approverTypeHasBeenSet;
@@ -349,16 +400,29 @@ namespace TencentCloud
                     bool m_recipientIdHasBeenSet;
 
                     /**
-                     * 同一渠道下其他合作企业OpenId，签署人为非发起方企业员工场景下必传；
+                     * 企业签署方工商营业执照上的企业名称，签署方为非发起方企业场景下必传；
                      */
                     std::string m_organizationName;
                     bool m_organizationNameHasBeenSet;
 
                     /**
-                     * 同一渠道下其他合作企业OpenId，签署人为非发起方企业员工场景下必传；
+                     * 企业签署方在同一渠道下的其他合作企业OpenId，签署方为非发起方企业场景下必传；
                      */
                     std::string m_organizationOpenId;
                     bool m_organizationOpenIdHasBeenSet;
+
+                    /**
+                     * 指定签署人非渠道企业下员工，在ApproverType为ORGANIZATION时指定。
+默认为false，即签署人位于同一个渠道应用号下；
+                     */
+                    bool m_notChannelOrganization;
+                    bool m_notChannelOrganizationHasBeenSet;
+
+                    /**
+                     * 使用PDF文件直接发起合同时，签署人指定的签署控件
+                     */
+                    std::vector<Component> m_signComponents;
+                    bool m_signComponentsHasBeenSet;
 
                 };
             }

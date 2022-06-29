@@ -1158,49 +1158,6 @@ AsClient::DescribeNotificationConfigurationsOutcomeCallable AsClient::DescribeNo
     return task->get_future();
 }
 
-AsClient::DescribePaiInstancesOutcome AsClient::DescribePaiInstances(const DescribePaiInstancesRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribePaiInstances");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribePaiInstancesResponse rsp = DescribePaiInstancesResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribePaiInstancesOutcome(rsp);
-        else
-            return DescribePaiInstancesOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribePaiInstancesOutcome(outcome.GetError());
-    }
-}
-
-void AsClient::DescribePaiInstancesAsync(const DescribePaiInstancesRequest& request, const DescribePaiInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribePaiInstances(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-AsClient::DescribePaiInstancesOutcomeCallable AsClient::DescribePaiInstancesCallable(const DescribePaiInstancesRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribePaiInstancesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribePaiInstances(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 AsClient::DescribeScalingPoliciesOutcome AsClient::DescribeScalingPolicies(const DescribeScalingPoliciesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeScalingPolicies");
@@ -1631,6 +1588,49 @@ AsClient::ModifyLaunchConfigurationAttributesOutcomeCallable AsClient::ModifyLau
     return task->get_future();
 }
 
+AsClient::ModifyLifecycleHookOutcome AsClient::ModifyLifecycleHook(const ModifyLifecycleHookRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyLifecycleHook");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyLifecycleHookResponse rsp = ModifyLifecycleHookResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyLifecycleHookOutcome(rsp);
+        else
+            return ModifyLifecycleHookOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyLifecycleHookOutcome(outcome.GetError());
+    }
+}
+
+void AsClient::ModifyLifecycleHookAsync(const ModifyLifecycleHookRequest& request, const ModifyLifecycleHookAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyLifecycleHook(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AsClient::ModifyLifecycleHookOutcomeCallable AsClient::ModifyLifecycleHookCallable(const ModifyLifecycleHookRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyLifecycleHookOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyLifecycleHook(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 AsClient::ModifyLoadBalancerTargetAttributesOutcome AsClient::ModifyLoadBalancerTargetAttributes(const ModifyLoadBalancerTargetAttributesRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyLoadBalancerTargetAttributes");
@@ -1839,49 +1839,6 @@ AsClient::ModifyScheduledActionOutcomeCallable AsClient::ModifyScheduledActionCa
         [this, request]()
         {
             return this->ModifyScheduledAction(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-AsClient::PreviewPaiDomainNameOutcome AsClient::PreviewPaiDomainName(const PreviewPaiDomainNameRequest &request)
-{
-    auto outcome = MakeRequest(request, "PreviewPaiDomainName");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        PreviewPaiDomainNameResponse rsp = PreviewPaiDomainNameResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return PreviewPaiDomainNameOutcome(rsp);
-        else
-            return PreviewPaiDomainNameOutcome(o.GetError());
-    }
-    else
-    {
-        return PreviewPaiDomainNameOutcome(outcome.GetError());
-    }
-}
-
-void AsClient::PreviewPaiDomainNameAsync(const PreviewPaiDomainNameRequest& request, const PreviewPaiDomainNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->PreviewPaiDomainName(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-AsClient::PreviewPaiDomainNameOutcomeCallable AsClient::PreviewPaiDomainNameCallable(const PreviewPaiDomainNameRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<PreviewPaiDomainNameOutcome()>>(
-        [this, request]()
-        {
-            return this->PreviewPaiDomainName(request);
         }
     );
 

@@ -23,6 +23,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/monitor/v20180724/model/UserNotice.h>
 #include <tencentcloud/monitor/v20180724/model/URLNotice.h>
+#include <tencentcloud/monitor/v20180724/model/CLSNotice.h>
 
 
 namespace TencentCloud
@@ -152,6 +153,24 @@ namespace TencentCloud
                      */
                     bool URLNoticesHasBeenSet() const;
 
+                    /**
+                     * 获取推送CLS日志服务的操作 最多1个
+                     * @return CLSNotices 推送CLS日志服务的操作 最多1个
+                     */
+                    std::vector<CLSNotice> GetCLSNotices() const;
+
+                    /**
+                     * 设置推送CLS日志服务的操作 最多1个
+                     * @param CLSNotices 推送CLS日志服务的操作 最多1个
+                     */
+                    void SetCLSNotices(const std::vector<CLSNotice>& _cLSNotices);
+
+                    /**
+                     * 判断参数 CLSNotices 是否已赋值
+                     * @return CLSNotices 是否已赋值
+                     */
+                    bool CLSNoticesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -189,6 +208,12 @@ namespace TencentCloud
                      */
                     std::vector<URLNotice> m_uRLNotices;
                     bool m_uRLNoticesHasBeenSet;
+
+                    /**
+                     * 推送CLS日志服务的操作 最多1个
+                     */
+                    std::vector<CLSNotice> m_cLSNotices;
+                    bool m_cLSNoticesHasBeenSet;
 
                 };
             }

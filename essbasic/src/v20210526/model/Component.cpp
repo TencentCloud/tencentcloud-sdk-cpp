@@ -36,7 +36,9 @@ Component::Component() :
     m_componentValueHasBeenSet(false),
     m_componentDateFontSizeHasBeenSet(false),
     m_documentIdHasBeenSet(false),
-    m_componentDescriptionHasBeenSet(false)
+    m_componentDescriptionHasBeenSet(false),
+    m_offsetXHasBeenSet(false),
+    m_offsetYHasBeenSet(false)
 {
 }
 
@@ -205,6 +207,26 @@ CoreInternalOutcome Component::Deserialize(const rapidjson::Value &value)
         m_componentDescriptionHasBeenSet = true;
     }
 
+    if (value.HasMember("OffsetX") && !value["OffsetX"].IsNull())
+    {
+        if (!value["OffsetX"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `Component.OffsetX` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_offsetX = value["OffsetX"].GetDouble();
+        m_offsetXHasBeenSet = true;
+    }
+
+    if (value.HasMember("OffsetY") && !value["OffsetY"].IsNull())
+    {
+        if (!value["OffsetY"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `Component.OffsetY` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_offsetY = value["OffsetY"].GetDouble();
+        m_offsetYHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -338,6 +360,22 @@ void Component::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "ComponentDescription";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_componentDescription.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_offsetXHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OffsetX";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_offsetX, allocator);
+    }
+
+    if (m_offsetYHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OffsetY";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_offsetY, allocator);
     }
 
 }
@@ -597,5 +635,37 @@ void Component::SetComponentDescription(const string& _componentDescription)
 bool Component::ComponentDescriptionHasBeenSet() const
 {
     return m_componentDescriptionHasBeenSet;
+}
+
+double Component::GetOffsetX() const
+{
+    return m_offsetX;
+}
+
+void Component::SetOffsetX(const double& _offsetX)
+{
+    m_offsetX = _offsetX;
+    m_offsetXHasBeenSet = true;
+}
+
+bool Component::OffsetXHasBeenSet() const
+{
+    return m_offsetXHasBeenSet;
+}
+
+double Component::GetOffsetY() const
+{
+    return m_offsetY;
+}
+
+void Component::SetOffsetY(const double& _offsetY)
+{
+    m_offsetY = _offsetY;
+    m_offsetYHasBeenSet = true;
+}
+
+bool Component::OffsetYHasBeenSet() const
+{
+    return m_offsetYHasBeenSet;
 }
 

@@ -109,6 +109,8 @@
 #include <tencentcloud/clb/v20180317/model/DescribeLoadBalancersDetailResponse.h>
 #include <tencentcloud/clb/v20180317/model/DescribeQuotaRequest.h>
 #include <tencentcloud/clb/v20180317/model/DescribeQuotaResponse.h>
+#include <tencentcloud/clb/v20180317/model/DescribeResourcesRequest.h>
+#include <tencentcloud/clb/v20180317/model/DescribeResourcesResponse.h>
 #include <tencentcloud/clb/v20180317/model/DescribeRewriteRequest.h>
 #include <tencentcloud/clb/v20180317/model/DescribeRewriteResponse.h>
 #include <tencentcloud/clb/v20180317/model/DescribeTargetGroupInstancesRequest.h>
@@ -139,6 +141,8 @@
 #include <tencentcloud/clb/v20180317/model/ModifyListenerResponse.h>
 #include <tencentcloud/clb/v20180317/model/ModifyLoadBalancerAttributesRequest.h>
 #include <tencentcloud/clb/v20180317/model/ModifyLoadBalancerAttributesResponse.h>
+#include <tencentcloud/clb/v20180317/model/ModifyLoadBalancerMixIpTargetRequest.h>
+#include <tencentcloud/clb/v20180317/model/ModifyLoadBalancerMixIpTargetResponse.h>
 #include <tencentcloud/clb/v20180317/model/ModifyLoadBalancerSlaRequest.h>
 #include <tencentcloud/clb/v20180317/model/ModifyLoadBalancerSlaResponse.h>
 #include <tencentcloud/clb/v20180317/model/ModifyRuleRequest.h>
@@ -312,6 +316,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeQuotaResponse> DescribeQuotaOutcome;
                 typedef std::future<DescribeQuotaOutcome> DescribeQuotaOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::DescribeQuotaRequest&, DescribeQuotaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeQuotaAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeResourcesResponse> DescribeResourcesOutcome;
+                typedef std::future<DescribeResourcesOutcome> DescribeResourcesOutcomeCallable;
+                typedef std::function<void(const ClbClient*, const Model::DescribeResourcesRequest&, DescribeResourcesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeResourcesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRewriteResponse> DescribeRewriteOutcome;
                 typedef std::future<DescribeRewriteOutcome> DescribeRewriteOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::DescribeRewriteRequest&, DescribeRewriteOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRewriteAsyncHandler;
@@ -357,6 +364,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyLoadBalancerAttributesResponse> ModifyLoadBalancerAttributesOutcome;
                 typedef std::future<ModifyLoadBalancerAttributesOutcome> ModifyLoadBalancerAttributesOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::ModifyLoadBalancerAttributesRequest&, ModifyLoadBalancerAttributesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLoadBalancerAttributesAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyLoadBalancerMixIpTargetResponse> ModifyLoadBalancerMixIpTargetOutcome;
+                typedef std::future<ModifyLoadBalancerMixIpTargetOutcome> ModifyLoadBalancerMixIpTargetOutcomeCallable;
+                typedef std::function<void(const ClbClient*, const Model::ModifyLoadBalancerMixIpTargetRequest&, ModifyLoadBalancerMixIpTargetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLoadBalancerMixIpTargetAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyLoadBalancerSlaResponse> ModifyLoadBalancerSlaOutcome;
                 typedef std::future<ModifyLoadBalancerSlaOutcome> ModifyLoadBalancerSlaOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::ModifyLoadBalancerSlaRequest&, ModifyLoadBalancerSlaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLoadBalancerSlaAsyncHandler;
@@ -463,9 +473,6 @@ namespace TencentCloud
 不支持后端类型为 目标组、SCF云函数
 个性化配置、重定向配置、安全组默认放通开关 将不会被克隆，须手工配置
 
-权限说明：
-调用克隆接口用户需要具有：CreateLoadBalancer、CreateLoadBalancerListeners、CreateListenerRules、BatchRegisterTargets、SetLoadBalancerSecurityGroups、ModifyLoadBalancerAttributes、SetLoadBalancerClsLog、DeleteLoadBalancer权限，其中DeleteLoadBalancer用于克隆失败回滚流程，如果没有该接口权限，克隆失败后可能会残留克隆失败的CLB数据。
-
 通过接口调用：
 BGP带宽包必须传带宽包id
 独占集群克隆必须传对应的参数，否则按共享型创建
@@ -509,6 +516,7 @@ BGP带宽包必须传带宽包id
 
                 /**
                  *针对SnatPro负载均衡，这个接口用于添加SnatIp，如果负载均衡没有开启SnatPro，添加SnatIp后会自动开启。
+本接口为异步接口，接口返回成功后，需以得到的 RequestID 为入参，调用 DescribeTaskStatus 接口查询本次任务是否成功。
                  * @param req CreateLoadBalancerSnatIpsRequest
                  * @return CreateLoadBalancerSnatIpsOutcome
                  */
@@ -576,6 +584,7 @@ BGP带宽包必须传带宽包id
 
                 /**
                  *这个接口用于删除SnatPro的负载均衡的SnatIp。
+本接口为异步接口，接口返回成功后，需以得到的 RequestID 为入参，调用 DescribeTaskStatus 接口查询本次任务是否成功。
                  * @param req DeleteLoadBalancerSnatIpsRequest
                  * @return DeleteLoadBalancerSnatIpsOutcome
                  */
@@ -823,6 +832,15 @@ BGP带宽包必须传带宽包id
                 DescribeQuotaOutcomeCallable DescribeQuotaCallable(const Model::DescribeQuotaRequest& request);
 
                 /**
+                 *查询用户在当前地域支持可用区列表和资源列表。
+                 * @param req DescribeResourcesRequest
+                 * @return DescribeResourcesOutcome
+                 */
+                DescribeResourcesOutcome DescribeResources(const Model::DescribeResourcesRequest &request);
+                void DescribeResourcesAsync(const Model::DescribeResourcesRequest& request, const DescribeResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeResourcesOutcomeCallable DescribeResourcesCallable(const Model::DescribeResourcesRequest& request);
+
+                /**
                  *DescribeRewrite 接口可根据负载均衡实例ID，查询一个负载均衡实例下转发规则的重定向关系。如果不指定监听器ID或转发规则ID，则返回该负载均衡实例下的所有重定向关系。
                  * @param req DescribeRewriteRequest
                  * @return DescribeRewriteOutcome
@@ -957,12 +975,22 @@ BGP带宽包必须传带宽包id
 
                 /**
                  *修改负载均衡实例的属性。支持修改负载均衡实例的名称、设置负载均衡的跨域属性。
+本接口为异步接口，接口返回成功后，需以得到的 RequestID 为入参，调用 DescribeTaskStatus 接口查询本次任务是否成功。
                  * @param req ModifyLoadBalancerAttributesRequest
                  * @return ModifyLoadBalancerAttributesOutcome
                  */
                 ModifyLoadBalancerAttributesOutcome ModifyLoadBalancerAttributes(const Model::ModifyLoadBalancerAttributesRequest &request);
                 void ModifyLoadBalancerAttributesAsync(const Model::ModifyLoadBalancerAttributesRequest& request, const ModifyLoadBalancerAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyLoadBalancerAttributesOutcomeCallable ModifyLoadBalancerAttributesCallable(const Model::ModifyLoadBalancerAttributesRequest& request);
+
+                /**
+                 *修改IPv6FullChain负载均衡7层监听器支持混绑IPv4/IPv6目标特性。
+                 * @param req ModifyLoadBalancerMixIpTargetRequest
+                 * @return ModifyLoadBalancerMixIpTargetOutcome
+                 */
+                ModifyLoadBalancerMixIpTargetOutcome ModifyLoadBalancerMixIpTarget(const Model::ModifyLoadBalancerMixIpTargetRequest &request);
+                void ModifyLoadBalancerMixIpTargetAsync(const Model::ModifyLoadBalancerMixIpTargetRequest& request, const ModifyLoadBalancerMixIpTargetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyLoadBalancerMixIpTargetOutcomeCallable ModifyLoadBalancerMixIpTargetCallable(const Model::ModifyLoadBalancerMixIpTargetRequest& request);
 
                 /**
                  *支持共享型clb升级到性能容量型clb（不支持性能保障降级到共享型）。

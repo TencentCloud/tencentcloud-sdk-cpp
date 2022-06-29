@@ -282,6 +282,24 @@ overseas：指定查询中国境外 CDN 数据
                      */
                     bool AreaHasBeenSet() const;
 
+                    /**
+                     * 获取指定查询时间的时区，默认UTC+08:00
+                     * @return TimeZone 指定查询时间的时区，默认UTC+08:00
+                     */
+                    std::string GetTimeZone() const;
+
+                    /**
+                     * 设置指定查询时间的时区，默认UTC+08:00
+                     * @param TimeZone 指定查询时间的时区，默认UTC+08:00
+                     */
+                    void SetTimeZone(const std::string& _timeZone);
+
+                    /**
+                     * 判断参数 TimeZone 是否已赋值
+                     * @return TimeZone 是否已赋值
+                     */
+                    bool TimeZoneHasBeenSet() const;
+
                 private:
 
                     /**
@@ -355,6 +373,12 @@ overseas：指定查询中国境外 CDN 数据
                      */
                     std::string m_area;
                     bool m_areaHasBeenSet;
+
+                    /**
+                     * 指定查询时间的时区，默认UTC+08:00
+                     */
+                    std::string m_timeZone;
+                    bool m_timeZoneHasBeenSet;
 
                 };
             }

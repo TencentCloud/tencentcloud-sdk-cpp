@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool BackupIdHasBeenSet() const;
 
                     /**
-                     * 获取备份类型。 manualBackupInstance：用户发起的手动备份； systemBackupInstance：凌晨系统发起的备份
-                     * @return BackupType 备份类型。 manualBackupInstance：用户发起的手动备份； systemBackupInstance：凌晨系统发起的备份
+                     * 获取备份类型。1：用户发起的手动备份； 0：凌晨系统发起的备份
+                     * @return BackupType 备份类型。1：用户发起的手动备份； 0：凌晨系统发起的备份
                      */
                     std::string GetBackupType() const;
 
                     /**
-                     * 设置备份类型。 manualBackupInstance：用户发起的手动备份； systemBackupInstance：凌晨系统发起的备份
-                     * @param BackupType 备份类型。 manualBackupInstance：用户发起的手动备份； systemBackupInstance：凌晨系统发起的备份
+                     * 设置备份类型。1：用户发起的手动备份； 0：凌晨系统发起的备份
+                     * @param BackupType 备份类型。1：用户发起的手动备份； 0：凌晨系统发起的备份
                      */
                     void SetBackupType(const std::string& _backupType);
 
@@ -154,6 +154,72 @@ namespace TencentCloud
                      */
                     bool LockedHasBeenSet() const;
 
+                    /**
+                     * 获取内部字段，用户可忽略
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BackupSize 内部字段，用户可忽略
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetBackupSize() const;
+
+                    /**
+                     * 设置内部字段，用户可忽略
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param BackupSize 内部字段，用户可忽略
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetBackupSize(const int64_t& _backupSize);
+
+                    /**
+                     * 判断参数 BackupSize 是否已赋值
+                     * @return BackupSize 是否已赋值
+                     */
+                    bool BackupSizeHasBeenSet() const;
+
+                    /**
+                     * 获取内部字段，用户可忽略
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FullBackup 内部字段，用户可忽略
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetFullBackup() const;
+
+                    /**
+                     * 设置内部字段，用户可忽略
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param FullBackup 内部字段，用户可忽略
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetFullBackup(const int64_t& _fullBackup);
+
+                    /**
+                     * 判断参数 FullBackup 是否已赋值
+                     * @return FullBackup 是否已赋值
+                     */
+                    bool FullBackupHasBeenSet() const;
+
+                    /**
+                     * 获取内部字段，用户可忽略
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InstanceType 内部字段，用户可忽略
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetInstanceType() const;
+
+                    /**
+                     * 设置内部字段，用户可忽略
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param InstanceType 内部字段，用户可忽略
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetInstanceType(const int64_t& _instanceType);
+
+                    /**
+                     * 判断参数 InstanceType 是否已赋值
+                     * @return InstanceType 是否已赋值
+                     */
+                    bool InstanceTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -169,7 +235,7 @@ namespace TencentCloud
                     bool m_backupIdHasBeenSet;
 
                     /**
-                     * 备份类型。 manualBackupInstance：用户发起的手动备份； systemBackupInstance：凌晨系统发起的备份
+                     * 备份类型。1：用户发起的手动备份； 0：凌晨系统发起的备份
                      */
                     std::string m_backupType;
                     bool m_backupTypeHasBeenSet;
@@ -191,6 +257,27 @@ namespace TencentCloud
                      */
                     int64_t m_locked;
                     bool m_lockedHasBeenSet;
+
+                    /**
+                     * 内部字段，用户可忽略
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_backupSize;
+                    bool m_backupSizeHasBeenSet;
+
+                    /**
+                     * 内部字段，用户可忽略
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_fullBackup;
+                    bool m_fullBackupHasBeenSet;
+
+                    /**
+                     * 内部字段，用户可忽略
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_instanceType;
+                    bool m_instanceTypeHasBeenSet;
 
                 };
             }

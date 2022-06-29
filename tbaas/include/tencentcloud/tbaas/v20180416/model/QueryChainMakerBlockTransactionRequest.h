@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool ChainIdHasBeenSet() const;
 
                     /**
-                     * 获取区块高度，-1表示最新区块
-                     * @return BlockHeight 区块高度，-1表示最新区块
+                     * 获取区块高度
+                     * @return BlockHeight 区块高度
                      */
                     int64_t GetBlockHeight() const;
 
                     /**
-                     * 设置区块高度，-1表示最新区块
-                     * @param BlockHeight 区块高度，-1表示最新区块
+                     * 设置区块高度
+                     * @param BlockHeight 区块高度
                      */
                     void SetBlockHeight(const int64_t& _blockHeight);
 
@@ -111,7 +111,7 @@ namespace TencentCloud
                     bool m_chainIdHasBeenSet;
 
                     /**
-                     * 区块高度，-1表示最新区块
+                     * 区块高度
                      */
                     int64_t m_blockHeight;
                     bool m_blockHeightHasBeenSet;

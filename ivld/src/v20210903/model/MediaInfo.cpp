@@ -27,7 +27,9 @@ MediaInfo::MediaInfo() :
     m_statusHasBeenSet(false),
     m_failedReasonHasBeenSet(false),
     m_metadataHasBeenSet(false),
-    m_progressHasBeenSet(false)
+    m_progressHasBeenSet(false),
+    m_labelHasBeenSet(false),
+    m_callbackURLHasBeenSet(false)
 {
 }
 
@@ -113,6 +115,26 @@ CoreInternalOutcome MediaInfo::Deserialize(const rapidjson::Value &value)
         m_progressHasBeenSet = true;
     }
 
+    if (value.HasMember("Label") && !value["Label"].IsNull())
+    {
+        if (!value["Label"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MediaInfo.Label` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_label = string(value["Label"].GetString());
+        m_labelHasBeenSet = true;
+    }
+
+    if (value.HasMember("CallbackURL") && !value["CallbackURL"].IsNull())
+    {
+        if (!value["CallbackURL"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MediaInfo.CallbackURL` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_callbackURL = string(value["CallbackURL"].GetString());
+        m_callbackURLHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -175,6 +197,22 @@ void MediaInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "Progress";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_progress, allocator);
+    }
+
+    if (m_labelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Label";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_label.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_callbackURLHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CallbackURL";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_callbackURL.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -290,5 +328,37 @@ void MediaInfo::SetProgress(const double& _progress)
 bool MediaInfo::ProgressHasBeenSet() const
 {
     return m_progressHasBeenSet;
+}
+
+string MediaInfo::GetLabel() const
+{
+    return m_label;
+}
+
+void MediaInfo::SetLabel(const string& _label)
+{
+    m_label = _label;
+    m_labelHasBeenSet = true;
+}
+
+bool MediaInfo::LabelHasBeenSet() const
+{
+    return m_labelHasBeenSet;
+}
+
+string MediaInfo::GetCallbackURL() const
+{
+    return m_callbackURL;
+}
+
+void MediaInfo::SetCallbackURL(const string& _callbackURL)
+{
+    m_callbackURL = _callbackURL;
+    m_callbackURLHasBeenSet = true;
+}
+
+bool MediaInfo::CallbackURLHasBeenSet() const
+{
+    return m_callbackURLHasBeenSet;
 }
 

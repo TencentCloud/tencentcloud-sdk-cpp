@@ -65,14 +65,11 @@ CoreInternalOutcome DescribeOrdersResponse::Deserialize(const string &payload)
 
     if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
     {
-        if (!rsp["TotalCount"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `TotalCount` is not array type"));
-
-        const rapidjson::Value &tmpValue = rsp["TotalCount"];
-        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        if (!rsp["TotalCount"].IsUint64())
         {
-            m_totalCount.push_back((*itr).GetInt64());
+            return CoreInternalOutcome(Core::Error("response `TotalCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
+        m_totalCount = rsp["TotalCount"].GetUint64();
         m_totalCountHasBeenSet = true;
     }
 
@@ -111,12 +108,7 @@ string DescribeOrdersResponse::ToJsonString() const
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TotalCount";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        for (auto itr = m_totalCount.begin(); itr != m_totalCount.end(); ++itr)
-        {
-            value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
-        }
+        value.AddMember(iKey, m_totalCount, allocator);
     }
 
     if (m_dealsHasBeenSet)
@@ -146,7 +138,7 @@ string DescribeOrdersResponse::ToJsonString() const
 }
 
 
-vector<int64_t> DescribeOrdersResponse::GetTotalCount() const
+uint64_t DescribeOrdersResponse::GetTotalCount() const
 {
     return m_totalCount;
 }

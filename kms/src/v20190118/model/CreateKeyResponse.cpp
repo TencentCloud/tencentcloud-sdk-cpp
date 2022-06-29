@@ -31,7 +31,8 @@ CreateKeyResponse::CreateKeyResponse() :
     m_keyStateHasBeenSet(false),
     m_keyUsageHasBeenSet(false),
     m_tagCodeHasBeenSet(false),
-    m_tagMsgHasBeenSet(false)
+    m_tagMsgHasBeenSet(false),
+    m_hsmClusterIdHasBeenSet(false)
 {
 }
 
@@ -149,6 +150,16 @@ CoreInternalOutcome CreateKeyResponse::Deserialize(const string &payload)
         m_tagMsgHasBeenSet = true;
     }
 
+    if (rsp.HasMember("HsmClusterId") && !rsp["HsmClusterId"].IsNull())
+    {
+        if (!rsp["HsmClusterId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `HsmClusterId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_hsmClusterId = string(rsp["HsmClusterId"].GetString());
+        m_hsmClusterIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -221,6 +232,14 @@ string CreateKeyResponse::ToJsonString() const
         string key = "TagMsg";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_tagMsg.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_hsmClusterIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HsmClusterId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_hsmClusterId.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -313,6 +332,16 @@ string CreateKeyResponse::GetTagMsg() const
 bool CreateKeyResponse::TagMsgHasBeenSet() const
 {
     return m_tagMsgHasBeenSet;
+}
+
+string CreateKeyResponse::GetHsmClusterId() const
+{
+    return m_hsmClusterId;
+}
+
+bool CreateKeyResponse::HsmClusterIdHasBeenSet() const
+{
+    return m_hsmClusterIdHasBeenSet;
 }
 
 

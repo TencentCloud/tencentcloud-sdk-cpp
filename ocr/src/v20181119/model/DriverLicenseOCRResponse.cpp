@@ -38,7 +38,9 @@ DriverLicenseOCRResponse::DriverLicenseOCRResponse() :
     m_recordHasBeenSet(false),
     m_recognizeWarnCodeHasBeenSet(false),
     m_recognizeWarnMsgHasBeenSet(false),
-    m_issuingAuthorityHasBeenSet(false)
+    m_issuingAuthorityHasBeenSet(false),
+    m_stateHasBeenSet(false),
+    m_cumulativeScoreHasBeenSet(false)
 {
 }
 
@@ -232,6 +234,26 @@ CoreInternalOutcome DriverLicenseOCRResponse::Deserialize(const string &payload)
         m_issuingAuthorityHasBeenSet = true;
     }
 
+    if (rsp.HasMember("State") && !rsp["State"].IsNull())
+    {
+        if (!rsp["State"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `State` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_state = string(rsp["State"].GetString());
+        m_stateHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("CumulativeScore") && !rsp["CumulativeScore"].IsNull())
+    {
+        if (!rsp["CumulativeScore"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CumulativeScore` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cumulativeScore = string(rsp["CumulativeScore"].GetString());
+        m_cumulativeScoreHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -370,6 +392,22 @@ string DriverLicenseOCRResponse::ToJsonString() const
         string key = "IssuingAuthority";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_issuingAuthority.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_stateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "State";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_state.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cumulativeScoreHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CumulativeScore";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cumulativeScore.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -532,6 +570,26 @@ string DriverLicenseOCRResponse::GetIssuingAuthority() const
 bool DriverLicenseOCRResponse::IssuingAuthorityHasBeenSet() const
 {
     return m_issuingAuthorityHasBeenSet;
+}
+
+string DriverLicenseOCRResponse::GetState() const
+{
+    return m_state;
+}
+
+bool DriverLicenseOCRResponse::StateHasBeenSet() const
+{
+    return m_stateHasBeenSet;
+}
+
+string DriverLicenseOCRResponse::GetCumulativeScore() const
+{
+    return m_cumulativeScore;
+}
+
+bool DriverLicenseOCRResponse::CumulativeScoreHasBeenSet() const
+{
+    return m_cumulativeScoreHasBeenSet;
 }
 
 

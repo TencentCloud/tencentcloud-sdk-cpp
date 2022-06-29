@@ -35,7 +35,8 @@ ContainGroup::ContainGroup() :
     m_cpuLimitHasBeenSet(false),
     m_memRequestHasBeenSet(false),
     m_memLimitHasBeenSet(false),
-    m_aliasHasBeenSet(false)
+    m_aliasHasBeenSet(false),
+    m_kubeInjectEnableHasBeenSet(false)
 {
 }
 
@@ -194,6 +195,16 @@ CoreInternalOutcome ContainGroup::Deserialize(const rapidjson::Value &value)
         m_aliasHasBeenSet = true;
     }
 
+    if (value.HasMember("KubeInjectEnable") && !value["KubeInjectEnable"].IsNull())
+    {
+        if (!value["KubeInjectEnable"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ContainGroup.KubeInjectEnable` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_kubeInjectEnable = value["KubeInjectEnable"].GetBool();
+        m_kubeInjectEnableHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -319,6 +330,14 @@ void ContainGroup::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "Alias";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_alias.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_kubeInjectEnableHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KubeInjectEnable";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_kubeInjectEnable, allocator);
     }
 
 }
@@ -562,5 +581,21 @@ void ContainGroup::SetAlias(const string& _alias)
 bool ContainGroup::AliasHasBeenSet() const
 {
     return m_aliasHasBeenSet;
+}
+
+bool ContainGroup::GetKubeInjectEnable() const
+{
+    return m_kubeInjectEnable;
+}
+
+void ContainGroup::SetKubeInjectEnable(const bool& _kubeInjectEnable)
+{
+    m_kubeInjectEnable = _kubeInjectEnable;
+    m_kubeInjectEnableHasBeenSet = true;
+}
+
+bool ContainGroup::KubeInjectEnableHasBeenSet() const
+{
+    return m_kubeInjectEnableHasBeenSet;
 }
 

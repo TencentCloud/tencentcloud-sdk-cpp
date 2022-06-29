@@ -156,6 +156,28 @@ namespace TencentCloud
                      */
                     bool IntentionVerifyBestFrameHasBeenSet() const;
 
+                    /**
+                     * 获取本次流程用户语音与传入文本比对的相似度分值，取值范围 [0.00, 100.00]。只有配置了相似度阈值后才进行语音校验并返回相似度分值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AsrResultSimilarity 本次流程用户语音与传入文本比对的相似度分值，取值范围 [0.00, 100.00]。只有配置了相似度阈值后才进行语音校验并返回相似度分值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetAsrResultSimilarity() const;
+
+                    /**
+                     * 设置本次流程用户语音与传入文本比对的相似度分值，取值范围 [0.00, 100.00]。只有配置了相似度阈值后才进行语音校验并返回相似度分值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AsrResultSimilarity 本次流程用户语音与传入文本比对的相似度分值，取值范围 [0.00, 100.00]。只有配置了相似度阈值后才进行语音校验并返回相似度分值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAsrResultSimilarity(const std::string& _asrResultSimilarity);
+
+                    /**
+                     * 判断参数 AsrResultSimilarity 是否已赋值
+                     * @return AsrResultSimilarity 是否已赋值
+                     */
+                    bool AsrResultSimilarityHasBeenSet() const;
+
                 private:
 
                     /**
@@ -192,6 +214,13 @@ namespace TencentCloud
                      */
                     std::string m_intentionVerifyBestFrame;
                     bool m_intentionVerifyBestFrameHasBeenSet;
+
+                    /**
+                     * 本次流程用户语音与传入文本比对的相似度分值，取值范围 [0.00, 100.00]。只有配置了相似度阈值后才进行语音校验并返回相似度分值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_asrResultSimilarity;
+                    bool m_asrResultSimilarityHasBeenSet;
 
                 };
             }

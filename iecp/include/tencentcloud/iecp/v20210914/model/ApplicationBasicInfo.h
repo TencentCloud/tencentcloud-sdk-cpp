@@ -118,6 +118,28 @@ namespace TencentCloud
                      */
                     bool CreateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取是否允许可视化修改
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AllowVisualModify 是否允许可视化修改
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetAllowVisualModify() const;
+
+                    /**
+                     * 设置是否允许可视化修改
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AllowVisualModify 是否允许可视化修改
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAllowVisualModify(const bool& _allowVisualModify);
+
+                    /**
+                     * 判断参数 AllowVisualModify 是否已赋值
+                     * @return AllowVisualModify 是否已赋值
+                     */
+                    bool AllowVisualModifyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -143,6 +165,13 @@ namespace TencentCloud
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
+
+                    /**
+                     * 是否允许可视化修改
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_allowVisualModify;
+                    bool m_allowVisualModifyHasBeenSet;
 
                 };
             }

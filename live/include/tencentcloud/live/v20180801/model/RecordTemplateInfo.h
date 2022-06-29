@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/live/v20180801/model/RecordParam.h>
 #include <tencentcloud/live/v20180801/model/HlsSpecialParam.h>
+#include <tencentcloud/live/v20180801/model/FlvSpecialParam.h>
 
 
 namespace TencentCloud
@@ -197,14 +198,14 @@ namespace TencentCloud
                     bool IsDelayLiveHasBeenSet() const;
 
                     /**
-                     * 获取HLS 录制定制参数
-                     * @return HlsSpecialParam HLS 录制定制参数
+                     * 获取HLS 录制定制参数。
+                     * @return HlsSpecialParam HLS 录制定制参数。
                      */
                     HlsSpecialParam GetHlsSpecialParam() const;
 
                     /**
-                     * 设置HLS 录制定制参数
-                     * @param HlsSpecialParam HLS 录制定制参数
+                     * 设置HLS 录制定制参数。
+                     * @param HlsSpecialParam HLS 录制定制参数。
                      */
                     void SetHlsSpecialParam(const HlsSpecialParam& _hlsSpecialParam);
 
@@ -231,6 +232,50 @@ namespace TencentCloud
                      * @return Mp3Param 是否已赋值
                      */
                     bool Mp3ParamHasBeenSet() const;
+
+                    /**
+                     * 获取是否去除水印。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RemoveWatermark 是否去除水印。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetRemoveWatermark() const;
+
+                    /**
+                     * 设置是否去除水印。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RemoveWatermark 是否去除水印。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRemoveWatermark(const bool& _removeWatermark);
+
+                    /**
+                     * 判断参数 RemoveWatermark 是否已赋值
+                     * @return RemoveWatermark 是否已赋值
+                     */
+                    bool RemoveWatermarkHasBeenSet() const;
+
+                    /**
+                     * 获取FLV 录制定制参数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FlvSpecialParam FLV 录制定制参数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    FlvSpecialParam GetFlvSpecialParam() const;
+
+                    /**
+                     * 设置FLV 录制定制参数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param FlvSpecialParam FLV 录制定制参数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetFlvSpecialParam(const FlvSpecialParam& _flvSpecialParam);
+
+                    /**
+                     * 判断参数 FlvSpecialParam 是否已赋值
+                     * @return FlvSpecialParam 是否已赋值
+                     */
+                    bool FlvSpecialParamHasBeenSet() const;
 
                 private:
 
@@ -284,7 +329,7 @@ namespace TencentCloud
                     bool m_isDelayLiveHasBeenSet;
 
                     /**
-                     * HLS 录制定制参数
+                     * HLS 录制定制参数。
                      */
                     HlsSpecialParam m_hlsSpecialParam;
                     bool m_hlsSpecialParamHasBeenSet;
@@ -294,6 +339,20 @@ namespace TencentCloud
                      */
                     RecordParam m_mp3Param;
                     bool m_mp3ParamHasBeenSet;
+
+                    /**
+                     * 是否去除水印。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_removeWatermark;
+                    bool m_removeWatermarkHasBeenSet;
+
+                    /**
+                     * FLV 录制定制参数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    FlvSpecialParam m_flvSpecialParam;
+                    bool m_flvSpecialParamHasBeenSet;
 
                 };
             }

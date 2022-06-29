@@ -75,8 +75,6 @@
 #include <tencentcloud/as/v20180419/model/DescribeLifecycleHooksResponse.h>
 #include <tencentcloud/as/v20180419/model/DescribeNotificationConfigurationsRequest.h>
 #include <tencentcloud/as/v20180419/model/DescribeNotificationConfigurationsResponse.h>
-#include <tencentcloud/as/v20180419/model/DescribePaiInstancesRequest.h>
-#include <tencentcloud/as/v20180419/model/DescribePaiInstancesResponse.h>
 #include <tencentcloud/as/v20180419/model/DescribeScalingPoliciesRequest.h>
 #include <tencentcloud/as/v20180419/model/DescribeScalingPoliciesResponse.h>
 #include <tencentcloud/as/v20180419/model/DescribeScheduledActionsRequest.h>
@@ -97,6 +95,8 @@
 #include <tencentcloud/as/v20180419/model/ModifyDesiredCapacityResponse.h>
 #include <tencentcloud/as/v20180419/model/ModifyLaunchConfigurationAttributesRequest.h>
 #include <tencentcloud/as/v20180419/model/ModifyLaunchConfigurationAttributesResponse.h>
+#include <tencentcloud/as/v20180419/model/ModifyLifecycleHookRequest.h>
+#include <tencentcloud/as/v20180419/model/ModifyLifecycleHookResponse.h>
 #include <tencentcloud/as/v20180419/model/ModifyLoadBalancerTargetAttributesRequest.h>
 #include <tencentcloud/as/v20180419/model/ModifyLoadBalancerTargetAttributesResponse.h>
 #include <tencentcloud/as/v20180419/model/ModifyLoadBalancersRequest.h>
@@ -107,8 +107,6 @@
 #include <tencentcloud/as/v20180419/model/ModifyScalingPolicyResponse.h>
 #include <tencentcloud/as/v20180419/model/ModifyScheduledActionRequest.h>
 #include <tencentcloud/as/v20180419/model/ModifyScheduledActionResponse.h>
-#include <tencentcloud/as/v20180419/model/PreviewPaiDomainNameRequest.h>
-#include <tencentcloud/as/v20180419/model/PreviewPaiDomainNameResponse.h>
 #include <tencentcloud/as/v20180419/model/RemoveInstancesRequest.h>
 #include <tencentcloud/as/v20180419/model/RemoveInstancesResponse.h>
 #include <tencentcloud/as/v20180419/model/ScaleInInstancesRequest.h>
@@ -217,9 +215,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeNotificationConfigurationsResponse> DescribeNotificationConfigurationsOutcome;
                 typedef std::future<DescribeNotificationConfigurationsOutcome> DescribeNotificationConfigurationsOutcomeCallable;
                 typedef std::function<void(const AsClient*, const Model::DescribeNotificationConfigurationsRequest&, DescribeNotificationConfigurationsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNotificationConfigurationsAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribePaiInstancesResponse> DescribePaiInstancesOutcome;
-                typedef std::future<DescribePaiInstancesOutcome> DescribePaiInstancesOutcomeCallable;
-                typedef std::function<void(const AsClient*, const Model::DescribePaiInstancesRequest&, DescribePaiInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePaiInstancesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeScalingPoliciesResponse> DescribeScalingPoliciesOutcome;
                 typedef std::future<DescribeScalingPoliciesOutcome> DescribeScalingPoliciesOutcomeCallable;
                 typedef std::function<void(const AsClient*, const Model::DescribeScalingPoliciesRequest&, DescribeScalingPoliciesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScalingPoliciesAsyncHandler;
@@ -250,6 +245,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyLaunchConfigurationAttributesResponse> ModifyLaunchConfigurationAttributesOutcome;
                 typedef std::future<ModifyLaunchConfigurationAttributesOutcome> ModifyLaunchConfigurationAttributesOutcomeCallable;
                 typedef std::function<void(const AsClient*, const Model::ModifyLaunchConfigurationAttributesRequest&, ModifyLaunchConfigurationAttributesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLaunchConfigurationAttributesAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyLifecycleHookResponse> ModifyLifecycleHookOutcome;
+                typedef std::future<ModifyLifecycleHookOutcome> ModifyLifecycleHookOutcomeCallable;
+                typedef std::function<void(const AsClient*, const Model::ModifyLifecycleHookRequest&, ModifyLifecycleHookOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLifecycleHookAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyLoadBalancerTargetAttributesResponse> ModifyLoadBalancerTargetAttributesOutcome;
                 typedef std::future<ModifyLoadBalancerTargetAttributesOutcome> ModifyLoadBalancerTargetAttributesOutcomeCallable;
                 typedef std::function<void(const AsClient*, const Model::ModifyLoadBalancerTargetAttributesRequest&, ModifyLoadBalancerTargetAttributesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLoadBalancerTargetAttributesAsyncHandler;
@@ -265,9 +263,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyScheduledActionResponse> ModifyScheduledActionOutcome;
                 typedef std::future<ModifyScheduledActionOutcome> ModifyScheduledActionOutcomeCallable;
                 typedef std::function<void(const AsClient*, const Model::ModifyScheduledActionRequest&, ModifyScheduledActionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyScheduledActionAsyncHandler;
-                typedef Outcome<Core::Error, Model::PreviewPaiDomainNameResponse> PreviewPaiDomainNameOutcome;
-                typedef std::future<PreviewPaiDomainNameOutcome> PreviewPaiDomainNameOutcomeCallable;
-                typedef std::function<void(const AsClient*, const Model::PreviewPaiDomainNameRequest&, PreviewPaiDomainNameOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PreviewPaiDomainNameAsyncHandler;
                 typedef Outcome<Core::Error, Model::RemoveInstancesResponse> RemoveInstancesOutcome;
                 typedef std::future<RemoveInstancesOutcome> RemoveInstancesOutcomeCallable;
                 typedef std::function<void(const AsClient*, const Model::RemoveInstancesRequest&, RemoveInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RemoveInstancesAsyncHandler;
@@ -297,6 +292,8 @@ namespace TencentCloud
 
                 /**
                  *本接口（AttachInstances）用于将 CVM 实例添加到伸缩组。
+* 仅支持添加处于`RUNNING`（运行中）或`STOPPED`（已关机）状态的 CVM 实例
+* 添加的 CVM 实例需要和伸缩组 VPC 网络一致
 
                  * @param req AttachInstancesRequest
                  * @return AttachInstancesOutcome
@@ -604,18 +601,6 @@ namespace TencentCloud
                 DescribeNotificationConfigurationsOutcomeCallable DescribeNotificationConfigurationsCallable(const Model::DescribeNotificationConfigurationsRequest& request);
 
                 /**
-                 *本接口（DescribePaiInstances）用于查询PAI实例信息。
-
-* 可以根据实例ID、实例域名等信息来查询PAI实例的详细信息。过滤信息详细请见过滤器`Filter`。
-* 如果参数为空，返回当前用户一定数量（`Limit`所指定的数量，默认为20）的PAI实例。
-                 * @param req DescribePaiInstancesRequest
-                 * @return DescribePaiInstancesOutcome
-                 */
-                DescribePaiInstancesOutcome DescribePaiInstances(const Model::DescribePaiInstancesRequest &request);
-                void DescribePaiInstancesAsync(const Model::DescribePaiInstancesRequest& request, const DescribePaiInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribePaiInstancesOutcomeCallable DescribePaiInstancesCallable(const Model::DescribePaiInstancesRequest& request);
-
-                /**
                  *本接口（DescribeScalingPolicies）用于查询告警触发策略。
                  * @param req DescribeScalingPoliciesRequest
                  * @return DescribeScalingPoliciesOutcome
@@ -659,6 +644,19 @@ namespace TencentCloud
 
                 /**
                  *本接口（DisableAutoScalingGroup）用于停用指定伸缩组。
+* 停用伸缩组后，自动触发的伸缩活动不再进行，包括：
+    - 告警策略触发的伸缩活动
+    - 匹配期望实例数的伸缩活动
+    - 不健康实例替换活动
+    - 定时任务
+* 停用伸缩组后，手动触发的伸缩活动允许进行，包括：
+    - 指定数量扩容实例（ScaleOutInstances）
+    - 指定数量缩容实例（ScaleInInstances）
+    - 从伸缩组中移出 CVM 实例（DetachInstances）
+    - 从伸缩组中删除 CVM 实例（RemoveInstances）
+    - 添加 CVM 实例到伸缩组（AttachInstances）
+    - 关闭伸缩组内 CVM 实例（StopAutoScalingInstances）
+    - 开启伸缩组内 CVM 实例（StartAutoScalingInstances）
                  * @param req DisableAutoScalingGroupRequest
                  * @return DisableAutoScalingGroupOutcome
                  */
@@ -718,6 +716,15 @@ namespace TencentCloud
                 ModifyLaunchConfigurationAttributesOutcomeCallable ModifyLaunchConfigurationAttributesCallable(const Model::ModifyLaunchConfigurationAttributesRequest& request);
 
                 /**
+                 *此接口用于修改生命周期挂钩。
+                 * @param req ModifyLifecycleHookRequest
+                 * @return ModifyLifecycleHookOutcome
+                 */
+                ModifyLifecycleHookOutcome ModifyLifecycleHook(const Model::ModifyLifecycleHookRequest &request);
+                void ModifyLifecycleHookAsync(const Model::ModifyLifecycleHookRequest& request, const ModifyLifecycleHookAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyLifecycleHookOutcomeCallable ModifyLifecycleHookCallable(const Model::ModifyLifecycleHookRequest& request);
+
+                /**
                  *本接口（ModifyLoadBalancerTargetAttributes）用于修改伸缩组内负载均衡器的目标规则属性。
                  * @param req ModifyLoadBalancerTargetAttributesRequest
                  * @return ModifyLoadBalancerTargetAttributesOutcome
@@ -768,16 +775,6 @@ namespace TencentCloud
                 ModifyScheduledActionOutcomeCallable ModifyScheduledActionCallable(const Model::ModifyScheduledActionRequest& request);
 
                 /**
-                 *本接口（PreviewPaiDomainName）用于预览PAI实例域名。
-
-                 * @param req PreviewPaiDomainNameRequest
-                 * @return PreviewPaiDomainNameOutcome
-                 */
-                PreviewPaiDomainNameOutcome PreviewPaiDomainName(const Model::PreviewPaiDomainNameRequest &request);
-                void PreviewPaiDomainNameAsync(const Model::PreviewPaiDomainNameRequest& request, const PreviewPaiDomainNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                PreviewPaiDomainNameOutcomeCallable PreviewPaiDomainNameCallable(const Model::PreviewPaiDomainNameRequest& request);
-
-                /**
                  *本接口（RemoveInstances）用于从伸缩组删除 CVM 实例。根据当前的产品逻辑，如果实例由弹性伸缩自动创建，则实例会被销毁；如果实例系创建后加入伸缩组的，则会从伸缩组中移除，保留实例。
 * 如果删除指定实例后，伸缩组内处于`IN_SERVICE`状态的实例数量小于伸缩组最小值，接口将报错
 * 如果伸缩组处于`DISABLED`状态，删除操作不校验`IN_SERVICE`实例数量和最小值的关系
@@ -792,6 +789,7 @@ namespace TencentCloud
                 /**
                  *为伸缩组指定数量缩容实例，返回缩容活动的 ActivityId。
 * 伸缩组需要未处于活动中
+* 伸缩组处于停用状态时，该接口也会生效，可参考[停用伸缩组](https://cloud.tencent.com/document/api/377/20435)文档查看伸缩组停用状态的影响范围
 * 根据伸缩组的`TerminationPolicies`策略，选择被缩容的实例，可参考[缩容处理](https://cloud.tencent.com/document/product/377/8563)
 * 接口只会选择`IN_SERVICE`实例缩容，如果需要缩容其他状态实例，可以使用 [DetachInstances](https://cloud.tencent.com/document/api/377/20436) 或 [RemoveInstances](https://cloud.tencent.com/document/api/377/20431) 接口
 * 接口会减少期望实例数，新的期望实例数需要大于等于最小实例数
@@ -806,6 +804,7 @@ namespace TencentCloud
                 /**
                  *为伸缩组指定数量扩容实例，返回扩容活动的 ActivityId。
 * 伸缩组需要未处于活动中
+* 伸缩组处于停用状态时，该接口也会生效，可参考[停用伸缩组](https://cloud.tencent.com/document/api/377/20435)文档查看伸缩组停用状态的影响范围
 * 接口会增加期望实例数，新的期望实例数需要小于等于最大实例数
 * 扩容如果失败或者部分成功，最后期望实例数只会增加实际成功的实例数量
                  * @param req ScaleOutInstancesRequest

@@ -427,6 +427,49 @@ TiiaClient::DetectDisgustOutcomeCallable TiiaClient::DetectDisgustCallable(const
     return task->get_future();
 }
 
+TiiaClient::DetectEnvelopeOutcome TiiaClient::DetectEnvelope(const DetectEnvelopeRequest &request)
+{
+    auto outcome = MakeRequest(request, "DetectEnvelope");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DetectEnvelopeResponse rsp = DetectEnvelopeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DetectEnvelopeOutcome(rsp);
+        else
+            return DetectEnvelopeOutcome(o.GetError());
+    }
+    else
+    {
+        return DetectEnvelopeOutcome(outcome.GetError());
+    }
+}
+
+void TiiaClient::DetectEnvelopeAsync(const DetectEnvelopeRequest& request, const DetectEnvelopeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DetectEnvelope(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TiiaClient::DetectEnvelopeOutcomeCallable TiiaClient::DetectEnvelopeCallable(const DetectEnvelopeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DetectEnvelopeOutcome()>>(
+        [this, request]()
+        {
+            return this->DetectEnvelope(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TiiaClient::DetectLabelOutcome TiiaClient::DetectLabel(const DetectLabelRequest &request)
 {
     auto outcome = MakeRequest(request, "DetectLabel");
@@ -506,6 +549,49 @@ TiiaClient::DetectLabelBetaOutcomeCallable TiiaClient::DetectLabelBetaCallable(c
         [this, request]()
         {
             return this->DetectLabelBeta(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TiiaClient::DetectLabelProOutcome TiiaClient::DetectLabelPro(const DetectLabelProRequest &request)
+{
+    auto outcome = MakeRequest(request, "DetectLabelPro");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DetectLabelProResponse rsp = DetectLabelProResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DetectLabelProOutcome(rsp);
+        else
+            return DetectLabelProOutcome(o.GetError());
+    }
+    else
+    {
+        return DetectLabelProOutcome(outcome.GetError());
+    }
+}
+
+void TiiaClient::DetectLabelProAsync(const DetectLabelProRequest& request, const DetectLabelProAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DetectLabelPro(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TiiaClient::DetectLabelProOutcomeCallable TiiaClient::DetectLabelProCallable(const DetectLabelProRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DetectLabelProOutcome()>>(
+        [this, request]()
+        {
+            return this->DetectLabelPro(request);
         }
     );
 
@@ -721,6 +807,49 @@ TiiaClient::RecognizeCarOutcomeCallable TiiaClient::RecognizeCarCallable(const R
         [this, request]()
         {
             return this->RecognizeCar(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TiiaClient::RecognizeCarProOutcome TiiaClient::RecognizeCarPro(const RecognizeCarProRequest &request)
+{
+    auto outcome = MakeRequest(request, "RecognizeCarPro");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RecognizeCarProResponse rsp = RecognizeCarProResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RecognizeCarProOutcome(rsp);
+        else
+            return RecognizeCarProOutcome(o.GetError());
+    }
+    else
+    {
+        return RecognizeCarProOutcome(outcome.GetError());
+    }
+}
+
+void TiiaClient::RecognizeCarProAsync(const RecognizeCarProRequest& request, const RecognizeCarProAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RecognizeCarPro(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TiiaClient::RecognizeCarProOutcomeCallable TiiaClient::RecognizeCarProCallable(const RecognizeCarProRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RecognizeCarProOutcome()>>(
+        [this, request]()
+        {
+            return this->RecognizeCarPro(request);
         }
     );
 

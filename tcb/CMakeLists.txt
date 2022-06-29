@@ -29,6 +29,7 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/DescribeEnvLimitRequest.h
   include/tencentcloud/tcb/v20180608/model/DescribeEnvDealRegionResponse.h
   include/tencentcloud/tcb/v20180608/model/DeleteCloudBaseRunServerVersionResponse.h
+  include/tencentcloud/tcb/v20180608/model/SearchClsLogResponse.h
   include/tencentcloud/tcb/v20180608/model/StandaloneGatewayInfo.h
   include/tencentcloud/tcb/v20180608/model/CloudBaseRunSideSpec.h
   include/tencentcloud/tcb/v20180608/model/CommonServiceAPIResponse.h
@@ -40,6 +41,7 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/DescribeEndUsersRequest.h
   include/tencentcloud/tcb/v20180608/model/DescribeCloudBaseBuildServiceRequest.h
   include/tencentcloud/tcb/v20180608/model/DescribeCloudBaseRunServerDomainNameResponse.h
+  include/tencentcloud/tcb/v20180608/model/LogResObject.h
   include/tencentcloud/tcb/v20180608/model/DestroyStandaloneGatewayRequest.h
   include/tencentcloud/tcb/v20180608/model/CloudRunServiceSimpleVersionSnapshot.h
   include/tencentcloud/tcb/v20180608/model/CreateWxCloudBaseRunServerDBClusterResponse.h
@@ -70,6 +72,7 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/EndUserInfo.h
   include/tencentcloud/tcb/v20180608/model/DeleteEndUserRequest.h
   include/tencentcloud/tcb/v20180608/model/DescribeHostingDomainTaskRequest.h
+  include/tencentcloud/tcb/v20180608/model/FreezeCloudBaseRunServersRequest.h
   include/tencentcloud/tcb/v20180608/model/DescribeQuotaDataResponse.h
   include/tencentcloud/tcb/v20180608/model/ActivityInfoItem.h
   include/tencentcloud/tcb/v20180608/model/KVPair.h
@@ -100,6 +103,7 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/CloudBaseRunImageSecretInfo.h
   include/tencentcloud/tcb/v20180608/model/CreateCloudBaseRunResourceResponse.h
   include/tencentcloud/tcb/v20180608/model/DescribeStandaloneGatewayPackageResponse.h
+  include/tencentcloud/tcb/v20180608/model/LogObject.h
   include/tencentcloud/tcb/v20180608/model/DestroyStaticStoreResponse.h
   include/tencentcloud/tcb/v20180608/model/DeleteEndUserResponse.h
   include/tencentcloud/tcb/v20180608/model/ModifyDatabaseACLResponse.h
@@ -131,6 +135,7 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/ReplaceActivityRecordRequest.h
   include/tencentcloud/tcb/v20180608/model/DeleteWxGatewayRouteResponse.h
   include/tencentcloud/tcb/v20180608/model/CloudBaseRunKVPriority.h
+  include/tencentcloud/tcb/v20180608/model/UnfreezeCloudBaseRunServersRequest.h
   include/tencentcloud/tcb/v20180608/model/EstablishCloudBaseRunServerRequest.h
   include/tencentcloud/tcb/v20180608/model/ReinstateEnvResponse.h
   include/tencentcloud/tcb/v20180608/model/CloudBaseRunServiceVolumeMount.h
@@ -148,6 +153,7 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/CreateAndDeployCloudBaseProjectRequest.h
   include/tencentcloud/tcb/v20180608/model/DescribeCloudBaseRunVersionRequest.h
   include/tencentcloud/tcb/v20180608/model/EstablishWxGatewayRouteRequest.h
+  include/tencentcloud/tcb/v20180608/model/UnfreezeCloudBaseRunServersResponse.h
   include/tencentcloud/tcb/v20180608/model/DescribeCloudBaseRunConfForGateWayResponse.h
   include/tencentcloud/tcb/v20180608/model/DatabasesInfo.h
   include/tencentcloud/tcb/v20180608/model/CloudBaseSecurityContext.h
@@ -194,6 +200,7 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/DescribeCloudBaseRunVersionResponse.h
   include/tencentcloud/tcb/v20180608/model/CreatePostpayPackageRequest.h
   include/tencentcloud/tcb/v20180608/model/DescribeCloudBaseRunPodListResponse.h
+  include/tencentcloud/tcb/v20180608/model/SearchClsLogRequest.h
   include/tencentcloud/tcb/v20180608/model/CloudBaseCodeRepoDetail.h
   include/tencentcloud/tcb/v20180608/model/CheckTcbServiceRequest.h
   include/tencentcloud/tcb/v20180608/model/DescribeCloudBaseRunVersionRsByConditionRequest.h
@@ -204,6 +211,7 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/CreateCloudBaseRunResourceRequest.h
   include/tencentcloud/tcb/v20180608/model/ModifyEndUserResponse.h
   include/tencentcloud/tcb/v20180608/model/DescribeAuthDomainsRequest.h
+  include/tencentcloud/tcb/v20180608/model/FreezeCloudBaseRunServersResponse.h
   include/tencentcloud/tcb/v20180608/model/CloudRunServiceVolume.h
   include/tencentcloud/tcb/v20180608/model/CloudBaseRunForGatewayConf.h
   include/tencentcloud/tcb/v20180608/model/ExtensionFileInfo.h
@@ -236,6 +244,7 @@ set(tcb_src
   src/v20180608/model/DescribeEnvLimitRequest.cpp
   src/v20180608/model/DescribeEnvDealRegionResponse.cpp
   src/v20180608/model/DeleteCloudBaseRunServerVersionResponse.cpp
+  src/v20180608/model/SearchClsLogResponse.cpp
   src/v20180608/model/StandaloneGatewayInfo.cpp
   src/v20180608/model/CloudBaseRunSideSpec.cpp
   src/v20180608/model/CommonServiceAPIResponse.cpp
@@ -247,6 +256,7 @@ set(tcb_src
   src/v20180608/model/DescribeEndUsersRequest.cpp
   src/v20180608/model/DescribeCloudBaseBuildServiceRequest.cpp
   src/v20180608/model/DescribeCloudBaseRunServerDomainNameResponse.cpp
+  src/v20180608/model/LogResObject.cpp
   src/v20180608/model/DestroyStandaloneGatewayRequest.cpp
   src/v20180608/model/CloudRunServiceSimpleVersionSnapshot.cpp
   src/v20180608/model/CreateWxCloudBaseRunServerDBClusterResponse.cpp
@@ -277,6 +287,7 @@ set(tcb_src
   src/v20180608/model/EndUserInfo.cpp
   src/v20180608/model/DeleteEndUserRequest.cpp
   src/v20180608/model/DescribeHostingDomainTaskRequest.cpp
+  src/v20180608/model/FreezeCloudBaseRunServersRequest.cpp
   src/v20180608/model/DescribeQuotaDataResponse.cpp
   src/v20180608/model/ActivityInfoItem.cpp
   src/v20180608/model/KVPair.cpp
@@ -307,6 +318,7 @@ set(tcb_src
   src/v20180608/model/CloudBaseRunImageSecretInfo.cpp
   src/v20180608/model/CreateCloudBaseRunResourceResponse.cpp
   src/v20180608/model/DescribeStandaloneGatewayPackageResponse.cpp
+  src/v20180608/model/LogObject.cpp
   src/v20180608/model/DestroyStaticStoreResponse.cpp
   src/v20180608/model/DeleteEndUserResponse.cpp
   src/v20180608/model/ModifyDatabaseACLResponse.cpp
@@ -338,6 +350,7 @@ set(tcb_src
   src/v20180608/model/ReplaceActivityRecordRequest.cpp
   src/v20180608/model/DeleteWxGatewayRouteResponse.cpp
   src/v20180608/model/CloudBaseRunKVPriority.cpp
+  src/v20180608/model/UnfreezeCloudBaseRunServersRequest.cpp
   src/v20180608/model/EstablishCloudBaseRunServerRequest.cpp
   src/v20180608/model/ReinstateEnvResponse.cpp
   src/v20180608/model/CloudBaseRunServiceVolumeMount.cpp
@@ -355,6 +368,7 @@ set(tcb_src
   src/v20180608/model/CreateAndDeployCloudBaseProjectRequest.cpp
   src/v20180608/model/DescribeCloudBaseRunVersionRequest.cpp
   src/v20180608/model/EstablishWxGatewayRouteRequest.cpp
+  src/v20180608/model/UnfreezeCloudBaseRunServersResponse.cpp
   src/v20180608/model/DescribeCloudBaseRunConfForGateWayResponse.cpp
   src/v20180608/model/DatabasesInfo.cpp
   src/v20180608/model/CloudBaseSecurityContext.cpp
@@ -401,6 +415,7 @@ set(tcb_src
   src/v20180608/model/DescribeCloudBaseRunVersionResponse.cpp
   src/v20180608/model/CreatePostpayPackageRequest.cpp
   src/v20180608/model/DescribeCloudBaseRunPodListResponse.cpp
+  src/v20180608/model/SearchClsLogRequest.cpp
   src/v20180608/model/CloudBaseCodeRepoDetail.cpp
   src/v20180608/model/CheckTcbServiceRequest.cpp
   src/v20180608/model/DescribeCloudBaseRunVersionRsByConditionRequest.cpp
@@ -411,6 +426,7 @@ set(tcb_src
   src/v20180608/model/CreateCloudBaseRunResourceRequest.cpp
   src/v20180608/model/ModifyEndUserResponse.cpp
   src/v20180608/model/DescribeAuthDomainsRequest.cpp
+  src/v20180608/model/FreezeCloudBaseRunServersResponse.cpp
   src/v20180608/model/CloudRunServiceVolume.cpp
   src/v20180608/model/CloudBaseRunForGatewayConf.cpp
   src/v20180608/model/ExtensionFileInfo.cpp

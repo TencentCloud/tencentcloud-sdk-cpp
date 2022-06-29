@@ -273,6 +273,28 @@ namespace TencentCloud
                      */
                     bool AccountVpcSetHasBeenSet() const;
 
+                    /**
+                     * 获取是否自定义TLD
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsCustomTld 是否自定义TLD
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetIsCustomTld() const;
+
+                    /**
+                     * 设置是否自定义TLD
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param IsCustomTld 是否自定义TLD
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIsCustomTld(const bool& _isCustomTld);
+
+                    /**
+                     * 判断参数 IsCustomTld 是否已赋值
+                     * @return IsCustomTld 是否已赋值
+                     */
+                    bool IsCustomTldHasBeenSet() const;
+
                 private:
 
                     /**
@@ -348,6 +370,13 @@ namespace TencentCloud
                      */
                     std::vector<AccountVpcInfoOutput> m_accountVpcSet;
                     bool m_accountVpcSetHasBeenSet;
+
+                    /**
+                     * 是否自定义TLD
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_isCustomTld;
+                    bool m_isCustomTldHasBeenSet;
 
                 };
             }

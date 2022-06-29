@@ -900,6 +900,49 @@ LiveClient::CreateRecordTaskOutcomeCallable LiveClient::CreateRecordTaskCallable
     return task->get_future();
 }
 
+LiveClient::CreateScreenshotTaskOutcome LiveClient::CreateScreenshotTask(const CreateScreenshotTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateScreenshotTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateScreenshotTaskResponse rsp = CreateScreenshotTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateScreenshotTaskOutcome(rsp);
+        else
+            return CreateScreenshotTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateScreenshotTaskOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::CreateScreenshotTaskAsync(const CreateScreenshotTaskRequest& request, const CreateScreenshotTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateScreenshotTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LiveClient::CreateScreenshotTaskOutcomeCallable LiveClient::CreateScreenshotTaskCallable(const CreateScreenshotTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateScreenshotTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateScreenshotTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LiveClient::DeleteLiveCallbackRuleOutcome LiveClient::DeleteLiveCallbackRule(const DeleteLiveCallbackRuleRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteLiveCallbackRule");
@@ -1581,6 +1624,49 @@ LiveClient::DeleteRecordTaskOutcomeCallable LiveClient::DeleteRecordTaskCallable
         [this, request]()
         {
             return this->DeleteRecordTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LiveClient::DeleteScreenshotTaskOutcome LiveClient::DeleteScreenshotTask(const DeleteScreenshotTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteScreenshotTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteScreenshotTaskResponse rsp = DeleteScreenshotTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteScreenshotTaskOutcome(rsp);
+        else
+            return DeleteScreenshotTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteScreenshotTaskOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::DeleteScreenshotTaskAsync(const DeleteScreenshotTaskRequest& request, const DeleteScreenshotTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteScreenshotTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LiveClient::DeleteScreenshotTaskOutcomeCallable LiveClient::DeleteScreenshotTaskCallable(const DeleteScreenshotTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteScreenshotTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteScreenshotTask(request);
         }
     );
 
@@ -3093,6 +3179,49 @@ LiveClient::DescribeLiveStreamStateOutcomeCallable LiveClient::DescribeLiveStrea
     return task->get_future();
 }
 
+LiveClient::DescribeLiveTimeShiftBillInfoListOutcome LiveClient::DescribeLiveTimeShiftBillInfoList(const DescribeLiveTimeShiftBillInfoListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeLiveTimeShiftBillInfoList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeLiveTimeShiftBillInfoListResponse rsp = DescribeLiveTimeShiftBillInfoListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeLiveTimeShiftBillInfoListOutcome(rsp);
+        else
+            return DescribeLiveTimeShiftBillInfoListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeLiveTimeShiftBillInfoListOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::DescribeLiveTimeShiftBillInfoListAsync(const DescribeLiveTimeShiftBillInfoListRequest& request, const DescribeLiveTimeShiftBillInfoListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeLiveTimeShiftBillInfoList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LiveClient::DescribeLiveTimeShiftBillInfoListOutcomeCallable LiveClient::DescribeLiveTimeShiftBillInfoListCallable(const DescribeLiveTimeShiftBillInfoListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeLiveTimeShiftBillInfoListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeLiveTimeShiftBillInfoList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LiveClient::DescribeLiveTranscodeDetailInfoOutcome LiveClient::DescribeLiveTranscodeDetailInfo(const DescribeLiveTranscodeDetailInfoRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeLiveTranscodeDetailInfo");
@@ -3817,6 +3946,49 @@ LiveClient::DescribeScreenShotSheetNumListOutcomeCallable LiveClient::DescribeSc
         [this, request]()
         {
             return this->DescribeScreenShotSheetNumList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LiveClient::DescribeScreenshotTaskOutcome LiveClient::DescribeScreenshotTask(const DescribeScreenshotTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeScreenshotTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeScreenshotTaskResponse rsp = DescribeScreenshotTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeScreenshotTaskOutcome(rsp);
+        else
+            return DescribeScreenshotTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeScreenshotTaskOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::DescribeScreenshotTaskAsync(const DescribeScreenshotTaskRequest& request, const DescribeScreenshotTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeScreenshotTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LiveClient::DescribeScreenshotTaskOutcomeCallable LiveClient::DescribeScreenshotTaskCallable(const DescribeScreenshotTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeScreenshotTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeScreenshotTask(request);
         }
     );
 
@@ -4978,6 +5150,49 @@ LiveClient::StopRecordTaskOutcomeCallable LiveClient::StopRecordTaskCallable(con
         [this, request]()
         {
             return this->StopRecordTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LiveClient::StopScreenshotTaskOutcome LiveClient::StopScreenshotTask(const StopScreenshotTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "StopScreenshotTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        StopScreenshotTaskResponse rsp = StopScreenshotTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return StopScreenshotTaskOutcome(rsp);
+        else
+            return StopScreenshotTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return StopScreenshotTaskOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::StopScreenshotTaskAsync(const StopScreenshotTaskRequest& request, const StopScreenshotTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->StopScreenshotTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LiveClient::StopScreenshotTaskOutcomeCallable LiveClient::StopScreenshotTaskCallable(const StopScreenshotTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<StopScreenshotTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->StopScreenshotTask(request);
         }
     );
 

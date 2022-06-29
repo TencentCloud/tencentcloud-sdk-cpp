@@ -434,6 +434,28 @@ namespace TencentCloud
                      */
                     bool DeregisterTargetRstHasBeenSet() const;
 
+                    /**
+                     * 获取监听器的属性
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AttrFlags 监听器的属性
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> GetAttrFlags() const;
+
+                    /**
+                     * 设置监听器的属性
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AttrFlags 监听器的属性
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAttrFlags(const std::vector<std::string>& _attrFlags);
+
+                    /**
+                     * 判断参数 AttrFlags 是否已赋值
+                     * @return AttrFlags 是否已赋值
+                     */
+                    bool AttrFlagsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -558,6 +580,13 @@ namespace TencentCloud
                      */
                     bool m_deregisterTargetRst;
                     bool m_deregisterTargetRstHasBeenSet;
+
+                    /**
+                     * 监听器的属性
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_attrFlags;
+                    bool m_attrFlagsHasBeenSet;
 
                 };
             }

@@ -28,7 +28,10 @@ AMQPExchange::AMQPExchange() :
     m_destBindedNumHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
-    m_internalHasBeenSet(false)
+    m_internalHasBeenSet(false),
+    m_alternateExchangeHasBeenSet(false),
+    m_alternateExchangeDeleteMarkHasBeenSet(false),
+    m_delayTypeHasBeenSet(false)
 {
 }
 
@@ -117,6 +120,36 @@ CoreInternalOutcome AMQPExchange::Deserialize(const rapidjson::Value &value)
         m_internalHasBeenSet = true;
     }
 
+    if (value.HasMember("AlternateExchange") && !value["AlternateExchange"].IsNull())
+    {
+        if (!value["AlternateExchange"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AMQPExchange.AlternateExchange` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_alternateExchange = string(value["AlternateExchange"].GetString());
+        m_alternateExchangeHasBeenSet = true;
+    }
+
+    if (value.HasMember("AlternateExchangeDeleteMark") && !value["AlternateExchangeDeleteMark"].IsNull())
+    {
+        if (!value["AlternateExchangeDeleteMark"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `AMQPExchange.AlternateExchangeDeleteMark` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_alternateExchangeDeleteMark = value["AlternateExchangeDeleteMark"].GetBool();
+        m_alternateExchangeDeleteMarkHasBeenSet = true;
+    }
+
+    if (value.HasMember("DelayType") && !value["DelayType"].IsNull())
+    {
+        if (!value["DelayType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AMQPExchange.DelayType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_delayType = string(value["DelayType"].GetString());
+        m_delayTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -186,6 +219,30 @@ void AMQPExchange::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "Internal";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_internal, allocator);
+    }
+
+    if (m_alternateExchangeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AlternateExchange";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_alternateExchange.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_alternateExchangeDeleteMarkHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AlternateExchangeDeleteMark";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_alternateExchangeDeleteMark, allocator);
+    }
+
+    if (m_delayTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DelayType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_delayType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -317,5 +374,53 @@ void AMQPExchange::SetInternal(const bool& _internal)
 bool AMQPExchange::InternalHasBeenSet() const
 {
     return m_internalHasBeenSet;
+}
+
+string AMQPExchange::GetAlternateExchange() const
+{
+    return m_alternateExchange;
+}
+
+void AMQPExchange::SetAlternateExchange(const string& _alternateExchange)
+{
+    m_alternateExchange = _alternateExchange;
+    m_alternateExchangeHasBeenSet = true;
+}
+
+bool AMQPExchange::AlternateExchangeHasBeenSet() const
+{
+    return m_alternateExchangeHasBeenSet;
+}
+
+bool AMQPExchange::GetAlternateExchangeDeleteMark() const
+{
+    return m_alternateExchangeDeleteMark;
+}
+
+void AMQPExchange::SetAlternateExchangeDeleteMark(const bool& _alternateExchangeDeleteMark)
+{
+    m_alternateExchangeDeleteMark = _alternateExchangeDeleteMark;
+    m_alternateExchangeDeleteMarkHasBeenSet = true;
+}
+
+bool AMQPExchange::AlternateExchangeDeleteMarkHasBeenSet() const
+{
+    return m_alternateExchangeDeleteMarkHasBeenSet;
+}
+
+string AMQPExchange::GetDelayType() const
+{
+    return m_delayType;
+}
+
+void AMQPExchange::SetDelayType(const string& _delayType)
+{
+    m_delayType = _delayType;
+    m_delayTypeHasBeenSet = true;
+}
+
+bool AMQPExchange::DelayTypeHasBeenSet() const
+{
+    return m_delayTypeHasBeenSet;
 }
 

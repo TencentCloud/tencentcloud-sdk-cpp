@@ -37,7 +37,10 @@ CreateClusterRequest::CreateClusterRequest() :
     m_dryRunHasBeenSet(false),
     m_accountTypeHasBeenSet(false),
     m_clusterNameHasBeenSet(false),
-    m_storageOptionHasBeenSet(false)
+    m_storageOptionHasBeenSet(false),
+    m_loginNodeHasBeenSet(false),
+    m_loginNodeCountHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -177,6 +180,44 @@ string CreateClusterRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_storageOption.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_loginNodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LoginNode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_loginNode.begin(); itr != m_loginNode.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_loginNodeCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LoginNodeCount";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_loginNodeCount, allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -425,6 +466,54 @@ void CreateClusterRequest::SetStorageOption(const StorageOption& _storageOption)
 bool CreateClusterRequest::StorageOptionHasBeenSet() const
 {
     return m_storageOptionHasBeenSet;
+}
+
+vector<LoginNode> CreateClusterRequest::GetLoginNode() const
+{
+    return m_loginNode;
+}
+
+void CreateClusterRequest::SetLoginNode(const vector<LoginNode>& _loginNode)
+{
+    m_loginNode = _loginNode;
+    m_loginNodeHasBeenSet = true;
+}
+
+bool CreateClusterRequest::LoginNodeHasBeenSet() const
+{
+    return m_loginNodeHasBeenSet;
+}
+
+int64_t CreateClusterRequest::GetLoginNodeCount() const
+{
+    return m_loginNodeCount;
+}
+
+void CreateClusterRequest::SetLoginNodeCount(const int64_t& _loginNodeCount)
+{
+    m_loginNodeCount = _loginNodeCount;
+    m_loginNodeCountHasBeenSet = true;
+}
+
+bool CreateClusterRequest::LoginNodeCountHasBeenSet() const
+{
+    return m_loginNodeCountHasBeenSet;
+}
+
+vector<Tag> CreateClusterRequest::GetTags() const
+{
+    return m_tags;
+}
+
+void CreateClusterRequest::SetTags(const vector<Tag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool CreateClusterRequest::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 
 

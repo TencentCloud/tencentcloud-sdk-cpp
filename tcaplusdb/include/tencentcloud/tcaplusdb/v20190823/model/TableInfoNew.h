@@ -642,6 +642,28 @@ namespace TencentCloud
                      */
                     bool DbClusterInfoStructHasBeenSet() const;
 
+                    /**
+                     * 获取表格Txh备份文件多少天后过期删除
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TxhBackupExpireDay 表格Txh备份文件多少天后过期删除
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetTxhBackupExpireDay() const;
+
+                    /**
+                     * 设置表格Txh备份文件多少天后过期删除
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TxhBackupExpireDay 表格Txh备份文件多少天后过期删除
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTxhBackupExpireDay(const uint64_t& _txhBackupExpireDay);
+
+                    /**
+                     * 判断参数 TxhBackupExpireDay 是否已赋值
+                     * @return TxhBackupExpireDay 是否已赋值
+                     */
+                    bool TxhBackupExpireDayHasBeenSet() const;
+
                 private:
 
                     /**
@@ -832,6 +854,13 @@ namespace TencentCloud
                      */
                     std::string m_dbClusterInfoStruct;
                     bool m_dbClusterInfoStructHasBeenSet;
+
+                    /**
+                     * 表格Txh备份文件多少天后过期删除
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_txhBackupExpireDay;
+                    bool m_txhBackupExpireDayHasBeenSet;
 
                 };
             }

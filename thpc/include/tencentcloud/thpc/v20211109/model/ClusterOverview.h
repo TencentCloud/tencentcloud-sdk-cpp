@@ -27,6 +27,7 @@
 #include <tencentcloud/thpc/v20211109/model/Placement.h>
 #include <tencentcloud/thpc/v20211109/model/ComputeNodeOverview.h>
 #include <tencentcloud/thpc/v20211109/model/ManagerNodeOverview.h>
+#include <tencentcloud/thpc/v20211109/model/LoginNodeOverview.h>
 
 
 namespace TencentCloud
@@ -229,6 +230,42 @@ namespace TencentCloud
                      */
                     bool ManagerNodeSetHasBeenSet() const;
 
+                    /**
+                     * 获取登录节点概览。
+                     * @return LoginNodeSet 登录节点概览。
+                     */
+                    std::vector<LoginNodeOverview> GetLoginNodeSet() const;
+
+                    /**
+                     * 设置登录节点概览。
+                     * @param LoginNodeSet 登录节点概览。
+                     */
+                    void SetLoginNodeSet(const std::vector<LoginNodeOverview>& _loginNodeSet);
+
+                    /**
+                     * 判断参数 LoginNodeSet 是否已赋值
+                     * @return LoginNodeSet 是否已赋值
+                     */
+                    bool LoginNodeSetHasBeenSet() const;
+
+                    /**
+                     * 获取登录节点数量。
+                     * @return LoginNodeCount 登录节点数量。
+                     */
+                    int64_t GetLoginNodeCount() const;
+
+                    /**
+                     * 设置登录节点数量。
+                     * @param LoginNodeCount 登录节点数量。
+                     */
+                    void SetLoginNodeCount(const int64_t& _loginNodeCount);
+
+                    /**
+                     * 判断参数 LoginNodeCount 是否已赋值
+                     * @return LoginNodeCount 是否已赋值
+                     */
+                    bool LoginNodeCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -290,6 +327,18 @@ namespace TencentCloud
                      */
                     std::vector<ManagerNodeOverview> m_managerNodeSet;
                     bool m_managerNodeSetHasBeenSet;
+
+                    /**
+                     * 登录节点概览。
+                     */
+                    std::vector<LoginNodeOverview> m_loginNodeSet;
+                    bool m_loginNodeSetHasBeenSet;
+
+                    /**
+                     * 登录节点数量。
+                     */
+                    int64_t m_loginNodeCount;
+                    bool m_loginNodeCountHasBeenSet;
 
                 };
             }

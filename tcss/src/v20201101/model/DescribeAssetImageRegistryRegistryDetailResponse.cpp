@@ -32,7 +32,8 @@ DescribeAssetImageRegistryRegistryDetailResponse::DescribeAssetImageRegistryRegi
     m_registryVersionHasBeenSet(false),
     m_netTypeHasBeenSet(false),
     m_registryRegionHasBeenSet(false),
-    m_speedLimitHasBeenSet(false)
+    m_speedLimitHasBeenSet(false),
+    m_insecureHasBeenSet(false)
 {
 }
 
@@ -160,6 +161,16 @@ CoreInternalOutcome DescribeAssetImageRegistryRegistryDetailResponse::Deserializ
         m_speedLimitHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Insecure") && !rsp["Insecure"].IsNull())
+    {
+        if (!rsp["Insecure"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Insecure` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_insecure = rsp["Insecure"].GetUint64();
+        m_insecureHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -240,6 +251,14 @@ string DescribeAssetImageRegistryRegistryDetailResponse::ToJsonString() const
         string key = "SpeedLimit";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_speedLimit, allocator);
+    }
+
+    if (m_insecureHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Insecure";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_insecure, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -342,6 +361,16 @@ uint64_t DescribeAssetImageRegistryRegistryDetailResponse::GetSpeedLimit() const
 bool DescribeAssetImageRegistryRegistryDetailResponse::SpeedLimitHasBeenSet() const
 {
     return m_speedLimitHasBeenSet;
+}
+
+uint64_t DescribeAssetImageRegistryRegistryDetailResponse::GetInsecure() const
+{
+    return m_insecure;
+}
+
+bool DescribeAssetImageRegistryRegistryDetailResponse::InsecureHasBeenSet() const
+{
+    return m_insecureHasBeenSet;
 }
 
 

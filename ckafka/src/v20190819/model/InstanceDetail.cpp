@@ -47,7 +47,10 @@ InstanceDetail::InstanceDetail() :
     m_diskTypeHasBeenSet(false),
     m_maxTopicNumberHasBeenSet(false),
     m_maxPartitionNumberHasBeenSet(false),
-    m_rebalanceTimeHasBeenSet(false)
+    m_rebalanceTimeHasBeenSet(false),
+    m_partitionNumberHasBeenSet(false),
+    m_publicNetworkChargeTypeHasBeenSet(false),
+    m_publicNetworkHasBeenSet(false)
 {
 }
 
@@ -349,6 +352,36 @@ CoreInternalOutcome InstanceDetail::Deserialize(const rapidjson::Value &value)
         m_rebalanceTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("PartitionNumber") && !value["PartitionNumber"].IsNull())
+    {
+        if (!value["PartitionNumber"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceDetail.PartitionNumber` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_partitionNumber = value["PartitionNumber"].GetUint64();
+        m_partitionNumberHasBeenSet = true;
+    }
+
+    if (value.HasMember("PublicNetworkChargeType") && !value["PublicNetworkChargeType"].IsNull())
+    {
+        if (!value["PublicNetworkChargeType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceDetail.PublicNetworkChargeType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_publicNetworkChargeType = string(value["PublicNetworkChargeType"].GetString());
+        m_publicNetworkChargeTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("PublicNetwork") && !value["PublicNetwork"].IsNull())
+    {
+        if (!value["PublicNetwork"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceDetail.PublicNetwork` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_publicNetwork = value["PublicNetwork"].GetInt64();
+        m_publicNetworkHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -589,6 +622,30 @@ void InstanceDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "RebalanceTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_rebalanceTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_partitionNumberHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PartitionNumber";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_partitionNumber, allocator);
+    }
+
+    if (m_publicNetworkChargeTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PublicNetworkChargeType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_publicNetworkChargeType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_publicNetworkHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PublicNetwork";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_publicNetwork, allocator);
     }
 
 }
@@ -1024,5 +1081,53 @@ void InstanceDetail::SetRebalanceTime(const string& _rebalanceTime)
 bool InstanceDetail::RebalanceTimeHasBeenSet() const
 {
     return m_rebalanceTimeHasBeenSet;
+}
+
+uint64_t InstanceDetail::GetPartitionNumber() const
+{
+    return m_partitionNumber;
+}
+
+void InstanceDetail::SetPartitionNumber(const uint64_t& _partitionNumber)
+{
+    m_partitionNumber = _partitionNumber;
+    m_partitionNumberHasBeenSet = true;
+}
+
+bool InstanceDetail::PartitionNumberHasBeenSet() const
+{
+    return m_partitionNumberHasBeenSet;
+}
+
+string InstanceDetail::GetPublicNetworkChargeType() const
+{
+    return m_publicNetworkChargeType;
+}
+
+void InstanceDetail::SetPublicNetworkChargeType(const string& _publicNetworkChargeType)
+{
+    m_publicNetworkChargeType = _publicNetworkChargeType;
+    m_publicNetworkChargeTypeHasBeenSet = true;
+}
+
+bool InstanceDetail::PublicNetworkChargeTypeHasBeenSet() const
+{
+    return m_publicNetworkChargeTypeHasBeenSet;
+}
+
+int64_t InstanceDetail::GetPublicNetwork() const
+{
+    return m_publicNetwork;
+}
+
+void InstanceDetail::SetPublicNetwork(const int64_t& _publicNetwork)
+{
+    m_publicNetwork = _publicNetwork;
+    m_publicNetworkHasBeenSet = true;
+}
+
+bool InstanceDetail::PublicNetworkHasBeenSet() const
+{
+    return m_publicNetworkHasBeenSet;
 }
 

@@ -23,7 +23,10 @@ using namespace std;
 Partition::Partition() :
     m_nameHasBeenSet(false),
     m_typeHasBeenSet(false),
-    m_commentHasBeenSet(false)
+    m_commentHasBeenSet(false),
+    m_transformHasBeenSet(false),
+    m_transformArgsHasBeenSet(false),
+    m_createTimeHasBeenSet(false)
 {
 }
 
@@ -62,6 +65,39 @@ CoreInternalOutcome Partition::Deserialize(const rapidjson::Value &value)
         m_commentHasBeenSet = true;
     }
 
+    if (value.HasMember("Transform") && !value["Transform"].IsNull())
+    {
+        if (!value["Transform"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Partition.Transform` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_transform = string(value["Transform"].GetString());
+        m_transformHasBeenSet = true;
+    }
+
+    if (value.HasMember("TransformArgs") && !value["TransformArgs"].IsNull())
+    {
+        if (!value["TransformArgs"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Partition.TransformArgs` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["TransformArgs"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_transformArgs.push_back((*itr).GetString());
+        }
+        m_transformArgsHasBeenSet = true;
+    }
+
+    if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
+    {
+        if (!value["CreateTime"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Partition.CreateTime` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_createTime = value["CreateTime"].GetInt64();
+        m_createTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +127,35 @@ void Partition::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "Comment";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_comment.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_transformHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Transform";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_transform.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_transformArgsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TransformArgs";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_transformArgs.begin(); itr != m_transformArgs.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_createTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_createTime, allocator);
     }
 
 }
@@ -142,5 +207,53 @@ void Partition::SetComment(const string& _comment)
 bool Partition::CommentHasBeenSet() const
 {
     return m_commentHasBeenSet;
+}
+
+string Partition::GetTransform() const
+{
+    return m_transform;
+}
+
+void Partition::SetTransform(const string& _transform)
+{
+    m_transform = _transform;
+    m_transformHasBeenSet = true;
+}
+
+bool Partition::TransformHasBeenSet() const
+{
+    return m_transformHasBeenSet;
+}
+
+vector<string> Partition::GetTransformArgs() const
+{
+    return m_transformArgs;
+}
+
+void Partition::SetTransformArgs(const vector<string>& _transformArgs)
+{
+    m_transformArgs = _transformArgs;
+    m_transformArgsHasBeenSet = true;
+}
+
+bool Partition::TransformArgsHasBeenSet() const
+{
+    return m_transformArgsHasBeenSet;
+}
+
+int64_t Partition::GetCreateTime() const
+{
+    return m_createTime;
+}
+
+void Partition::SetCreateTime(const int64_t& _createTime)
+{
+    m_createTime = _createTime;
+    m_createTimeHasBeenSet = true;
+}
+
+bool Partition::CreateTimeHasBeenSet() const
+{
+    return m_createTimeHasBeenSet;
 }
 

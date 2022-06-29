@@ -96,6 +96,24 @@ namespace TencentCloud
                      */
                     bool TableNameHasBeenSet() const;
 
+                    /**
+                     * 获取工作空间 SerialId
+                     * @return WorkSpaceId 工作空间 SerialId
+                     */
+                    std::string GetWorkSpaceId() const;
+
+                    /**
+                     * 设置工作空间 SerialId
+                     * @param WorkSpaceId 工作空间 SerialId
+                     */
+                    void SetWorkSpaceId(const std::string& _workSpaceId);
+
+                    /**
+                     * 判断参数 WorkSpaceId 是否已赋值
+                     * @return WorkSpaceId 是否已赋值
+                     */
+                    bool WorkSpaceIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -115,6 +133,12 @@ namespace TencentCloud
                      */
                     std::string m_tableName;
                     bool m_tableNameHasBeenSet;
+
+                    /**
+                     * 工作空间 SerialId
+                     */
+                    std::string m_workSpaceId;
+                    bool m_workSpaceIdHasBeenSet;
 
                 };
             }

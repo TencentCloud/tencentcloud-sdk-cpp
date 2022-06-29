@@ -76,7 +76,7 @@ namespace TencentCloud
                      * @return VPort 实例端口
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    int64_t GetVPort() const;
+                    std::string GetVPort() const;
 
                     /**
                      * 判断参数 VPort 是否已赋值
@@ -103,7 +103,7 @@ namespace TencentCloud
                      * 实例端口
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    int64_t m_vPort;
+                    std::string m_vPort;
                     bool m_vPortHasBeenSet;
 
                 };

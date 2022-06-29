@@ -100,6 +100,28 @@ namespace TencentCloud
                      */
                     bool TypeHasBeenSet() const;
 
+                    /**
+                     * 获取关联资源ID或关联域名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ResourceIds 关联资源ID或关联域名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> GetResourceIds() const;
+
+                    /**
+                     * 设置关联资源ID或关联域名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ResourceIds 关联资源ID或关联域名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetResourceIds(const std::vector<std::string>& _resourceIds);
+
+                    /**
+                     * 判断参数 ResourceIds 是否已赋值
+                     * @return ResourceIds 是否已赋值
+                     */
+                    bool ResourceIdsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -119,6 +141,13 @@ namespace TencentCloud
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
+
+                    /**
+                     * 关联资源ID或关联域名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_resourceIds;
+                    bool m_resourceIdsHasBeenSet;
 
                 };
             }

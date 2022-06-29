@@ -23,7 +23,9 @@ using namespace TencentCloud::Cvm::V20170312::Model;
 using namespace std;
 
 DeleteImagesRequest::DeleteImagesRequest() :
-    m_imageIdsHasBeenSet(false)
+    m_imageIdsHasBeenSet(false),
+    m_deleteBindedSnapHasBeenSet(false),
+    m_dryRunHasBeenSet(false)
 {
 }
 
@@ -45,6 +47,22 @@ string DeleteImagesRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_deleteBindedSnapHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeleteBindedSnap";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_deleteBindedSnap, allocator);
+    }
+
+    if (m_dryRunHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DryRun";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_dryRun, allocator);
     }
 
 
@@ -69,6 +87,38 @@ void DeleteImagesRequest::SetImageIds(const vector<string>& _imageIds)
 bool DeleteImagesRequest::ImageIdsHasBeenSet() const
 {
     return m_imageIdsHasBeenSet;
+}
+
+bool DeleteImagesRequest::GetDeleteBindedSnap() const
+{
+    return m_deleteBindedSnap;
+}
+
+void DeleteImagesRequest::SetDeleteBindedSnap(const bool& _deleteBindedSnap)
+{
+    m_deleteBindedSnap = _deleteBindedSnap;
+    m_deleteBindedSnapHasBeenSet = true;
+}
+
+bool DeleteImagesRequest::DeleteBindedSnapHasBeenSet() const
+{
+    return m_deleteBindedSnapHasBeenSet;
+}
+
+bool DeleteImagesRequest::GetDryRun() const
+{
+    return m_dryRun;
+}
+
+void DeleteImagesRequest::SetDryRun(const bool& _dryRun)
+{
+    m_dryRun = _dryRun;
+    m_dryRunHasBeenSet = true;
+}
+
+bool DeleteImagesRequest::DryRunHasBeenSet() const
+{
+    return m_dryRunHasBeenSet;
 }
 
 

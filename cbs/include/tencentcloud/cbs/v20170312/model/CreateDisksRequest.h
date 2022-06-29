@@ -316,6 +316,24 @@ namespace TencentCloud
                      */
                     bool AutoMountConfigurationHasBeenSet() const;
 
+                    /**
+                     * 获取指定云硬盘备份点配额。
+                     * @return DiskBackupQuota 指定云硬盘备份点配额。
+                     */
+                    uint64_t GetDiskBackupQuota() const;
+
+                    /**
+                     * 设置指定云硬盘备份点配额。
+                     * @param DiskBackupQuota 指定云硬盘备份点配额。
+                     */
+                    void SetDiskBackupQuota(const uint64_t& _diskBackupQuota);
+
+                    /**
+                     * 判断参数 DiskBackupQuota 是否已赋值
+                     * @return DiskBackupQuota 是否已赋值
+                     */
+                    bool DiskBackupQuotaHasBeenSet() const;
+
                 private:
 
                     /**
@@ -407,6 +425,12 @@ namespace TencentCloud
                      */
                     AutoMountConfiguration m_autoMountConfiguration;
                     bool m_autoMountConfigurationHasBeenSet;
+
+                    /**
+                     * 指定云硬盘备份点配额。
+                     */
+                    uint64_t m_diskBackupQuota;
+                    bool m_diskBackupQuotaHasBeenSet;
 
                 };
             }

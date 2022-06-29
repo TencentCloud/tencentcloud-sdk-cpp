@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tke/v20180525/model/TagSpecification.h>
+#include <tencentcloud/tke/v20180525/model/AutoUpgradeClusterLevel.h>
 
 
 namespace TencentCloud
@@ -48,14 +49,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群系统。centos7.2x86_64 或者 ubuntu16.04.1 LTSx86_64，默认取值为ubuntu16.04.1 LTSx86_64
-                     * @return ClusterOs 集群系统。centos7.2x86_64 或者 ubuntu16.04.1 LTSx86_64，默认取值为ubuntu16.04.1 LTSx86_64
+                     * 获取集群操作系统，支持设置公共镜像(字段传相应镜像ID)和自定义镜像(字段传相应镜像Name)，详情参考：https://cloud.tencent.com/document/product/457/68289
+                     * @return ClusterOs 集群操作系统，支持设置公共镜像(字段传相应镜像ID)和自定义镜像(字段传相应镜像Name)，详情参考：https://cloud.tencent.com/document/product/457/68289
                      */
                     std::string GetClusterOs() const;
 
                     /**
-                     * 设置集群系统。centos7.2x86_64 或者 ubuntu16.04.1 LTSx86_64，默认取值为ubuntu16.04.1 LTSx86_64
-                     * @param ClusterOs 集群系统。centos7.2x86_64 或者 ubuntu16.04.1 LTSx86_64，默认取值为ubuntu16.04.1 LTSx86_64
+                     * 设置集群操作系统，支持设置公共镜像(字段传相应镜像ID)和自定义镜像(字段传相应镜像Name)，详情参考：https://cloud.tencent.com/document/product/457/68289
+                     * @param ClusterOs 集群操作系统，支持设置公共镜像(字段传相应镜像ID)和自定义镜像(字段传相应镜像Name)，详情参考：https://cloud.tencent.com/document/product/457/68289
                      */
                     void SetClusterOs(const std::string& _clusterOs);
 
@@ -192,14 +193,14 @@ namespace TencentCloud
                     bool OsCustomizeTypeHasBeenSet() const;
 
                     /**
-                     * 获取是否开启节点的默认安全组(默认: 否，Aphla特性)
-                     * @return NeedWorkSecurityGroup 是否开启节点的默认安全组(默认: 否，Aphla特性)
+                     * 获取是否开启节点的默认安全组(默认: 否，Alpha特性)
+                     * @return NeedWorkSecurityGroup 是否开启节点的默认安全组(默认: 否，Alpha特性)
                      */
                     bool GetNeedWorkSecurityGroup() const;
 
                     /**
-                     * 设置是否开启节点的默认安全组(默认: 否，Aphla特性)
-                     * @param NeedWorkSecurityGroup 是否开启节点的默认安全组(默认: 否，Aphla特性)
+                     * 设置是否开启节点的默认安全组(默认: 否，Alpha特性)
+                     * @param NeedWorkSecurityGroup 是否开启节点的默认安全组(默认: 否，Alpha特性)
                      */
                     void SetNeedWorkSecurityGroup(const bool& _needWorkSecurityGroup);
 
@@ -227,10 +228,46 @@ namespace TencentCloud
                      */
                     bool SubnetIdHasBeenSet() const;
 
+                    /**
+                     * 获取集群等级，针对托管集群生效
+                     * @return ClusterLevel 集群等级，针对托管集群生效
+                     */
+                    std::string GetClusterLevel() const;
+
+                    /**
+                     * 设置集群等级，针对托管集群生效
+                     * @param ClusterLevel 集群等级，针对托管集群生效
+                     */
+                    void SetClusterLevel(const std::string& _clusterLevel);
+
+                    /**
+                     * 判断参数 ClusterLevel 是否已赋值
+                     * @return ClusterLevel 是否已赋值
+                     */
+                    bool ClusterLevelHasBeenSet() const;
+
+                    /**
+                     * 获取自动变配集群等级，针对托管集群生效
+                     * @return AutoUpgradeClusterLevel 自动变配集群等级，针对托管集群生效
+                     */
+                    AutoUpgradeClusterLevel GetAutoUpgradeClusterLevel() const;
+
+                    /**
+                     * 设置自动变配集群等级，针对托管集群生效
+                     * @param AutoUpgradeClusterLevel 自动变配集群等级，针对托管集群生效
+                     */
+                    void SetAutoUpgradeClusterLevel(const AutoUpgradeClusterLevel& _autoUpgradeClusterLevel);
+
+                    /**
+                     * 判断参数 AutoUpgradeClusterLevel 是否已赋值
+                     * @return AutoUpgradeClusterLevel 是否已赋值
+                     */
+                    bool AutoUpgradeClusterLevelHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 集群系统。centos7.2x86_64 或者 ubuntu16.04.1 LTSx86_64，默认取值为ubuntu16.04.1 LTSx86_64
+                     * 集群操作系统，支持设置公共镜像(字段传相应镜像ID)和自定义镜像(字段传相应镜像Name)，详情参考：https://cloud.tencent.com/document/product/457/68289
                      */
                     std::string m_clusterOs;
                     bool m_clusterOsHasBeenSet;
@@ -278,7 +315,7 @@ namespace TencentCloud
                     bool m_osCustomizeTypeHasBeenSet;
 
                     /**
-                     * 是否开启节点的默认安全组(默认: 否，Aphla特性)
+                     * 是否开启节点的默认安全组(默认: 否，Alpha特性)
                      */
                     bool m_needWorkSecurityGroup;
                     bool m_needWorkSecurityGroupHasBeenSet;
@@ -288,6 +325,18 @@ namespace TencentCloud
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
+
+                    /**
+                     * 集群等级，针对托管集群生效
+                     */
+                    std::string m_clusterLevel;
+                    bool m_clusterLevelHasBeenSet;
+
+                    /**
+                     * 自动变配集群等级，针对托管集群生效
+                     */
+                    AutoUpgradeClusterLevel m_autoUpgradeClusterLevel;
+                    bool m_autoUpgradeClusterLevelHasBeenSet;
 
                 };
             }

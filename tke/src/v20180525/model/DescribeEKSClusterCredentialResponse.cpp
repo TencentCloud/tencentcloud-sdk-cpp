@@ -28,7 +28,8 @@ DescribeEKSClusterCredentialResponse::DescribeEKSClusterCredentialResponse() :
     m_credentialHasBeenSet(false),
     m_publicLBHasBeenSet(false),
     m_internalLBHasBeenSet(false),
-    m_proxyLBHasBeenSet(false)
+    m_proxyLBHasBeenSet(false),
+    m_kubeconfigHasBeenSet(false)
 {
 }
 
@@ -147,6 +148,16 @@ CoreInternalOutcome DescribeEKSClusterCredentialResponse::Deserialize(const stri
         m_proxyLBHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Kubeconfig") && !rsp["Kubeconfig"].IsNull())
+    {
+        if (!rsp["Kubeconfig"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Kubeconfig` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_kubeconfig = string(rsp["Kubeconfig"].GetString());
+        m_kubeconfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -205,6 +216,14 @@ string DescribeEKSClusterCredentialResponse::ToJsonString() const
         string key = "ProxyLB";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_proxyLB, allocator);
+    }
+
+    if (m_kubeconfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Kubeconfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_kubeconfig.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -267,6 +286,16 @@ bool DescribeEKSClusterCredentialResponse::GetProxyLB() const
 bool DescribeEKSClusterCredentialResponse::ProxyLBHasBeenSet() const
 {
     return m_proxyLBHasBeenSet;
+}
+
+string DescribeEKSClusterCredentialResponse::GetKubeconfig() const
+{
+    return m_kubeconfig;
+}
+
+bool DescribeEKSClusterCredentialResponse::KubeconfigHasBeenSet() const
+{
+    return m_kubeconfigHasBeenSet;
 }
 
 

@@ -22,7 +22,8 @@ using namespace std;
 
 RoomUser::RoomUser() :
     m_roomIdHasBeenSet(false),
-    m_uinsHasBeenSet(false)
+    m_uinsHasBeenSet(false),
+    m_strRoomIdHasBeenSet(false)
 {
 }
 
@@ -54,6 +55,16 @@ CoreInternalOutcome RoomUser::Deserialize(const rapidjson::Value &value)
         m_uinsHasBeenSet = true;
     }
 
+    if (value.HasMember("StrRoomId") && !value["StrRoomId"].IsNull())
+    {
+        if (!value["StrRoomId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RoomUser.StrRoomId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_strRoomId = string(value["StrRoomId"].GetString());
+        m_strRoomIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -80,6 +91,14 @@ void RoomUser::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
         }
+    }
+
+    if (m_strRoomIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StrRoomId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_strRoomId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -115,5 +134,21 @@ void RoomUser::SetUins(const vector<uint64_t>& _uins)
 bool RoomUser::UinsHasBeenSet() const
 {
     return m_uinsHasBeenSet;
+}
+
+string RoomUser::GetStrRoomId() const
+{
+    return m_strRoomId;
+}
+
+void RoomUser::SetStrRoomId(const string& _strRoomId)
+{
+    m_strRoomId = _strRoomId;
+    m_strRoomIdHasBeenSet = true;
+}
+
+bool RoomUser::StrRoomIdHasBeenSet() const
+{
+    return m_strRoomIdHasBeenSet;
 }
 

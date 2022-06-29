@@ -270,6 +270,28 @@ namespace TencentCloud
                      */
                     bool KernelVersionHasBeenSet() const;
 
+                    /**
+                     * 获取是否支持TDE数据加密功能，0-不支持，1-支持
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsSupportTDE 是否支持TDE数据加密功能，0-不支持，1-支持
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetIsSupportTDE() const;
+
+                    /**
+                     * 设置是否支持TDE数据加密功能，0-不支持，1-支持
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param IsSupportTDE 是否支持TDE数据加密功能，0-不支持，1-支持
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIsSupportTDE(const int64_t& _isSupportTDE);
+
+                    /**
+                     * 判断参数 IsSupportTDE 是否已赋值
+                     * @return IsSupportTDE 是否已赋值
+                     */
+                    bool IsSupportTDEHasBeenSet() const;
+
                 private:
 
                     /**
@@ -345,6 +367,13 @@ namespace TencentCloud
                      */
                     std::string m_kernelVersion;
                     bool m_kernelVersionHasBeenSet;
+
+                    /**
+                     * 是否支持TDE数据加密功能，0-不支持，1-支持
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_isSupportTDE;
+                    bool m_isSupportTDEHasBeenSet;
 
                 };
             }

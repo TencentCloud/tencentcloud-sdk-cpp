@@ -23,7 +23,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ses::V20201002::Model;
 using namespace std;
 
-CreateEmailTemplateResponse::CreateEmailTemplateResponse()
+CreateEmailTemplateResponse::CreateEmailTemplateResponse() :
+    m_templateIDHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,16 @@ CoreInternalOutcome CreateEmailTemplateResponse::Deserialize(const string &paylo
     }
 
 
+    if (rsp.HasMember("TemplateID") && !rsp["TemplateID"].IsNull())
+    {
+        if (!rsp["TemplateID"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TemplateID` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_templateID = rsp["TemplateID"].GetUint64();
+        m_templateIDHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +81,14 @@ string CreateEmailTemplateResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_templateIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TemplateID";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_templateID, allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +101,15 @@ string CreateEmailTemplateResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+uint64_t CreateEmailTemplateResponse::GetTemplateID() const
+{
+    return m_templateID;
+}
+
+bool CreateEmailTemplateResponse::TemplateIDHasBeenSet() const
+{
+    return m_templateIDHasBeenSet;
+}
 
 

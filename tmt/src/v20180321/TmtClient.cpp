@@ -40,6 +40,92 @@ TmtClient::TmtClient(const Credential &credential, const string &region, const C
 }
 
 
+TmtClient::FileTranslateOutcome TmtClient::FileTranslate(const FileTranslateRequest &request)
+{
+    auto outcome = MakeRequest(request, "FileTranslate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        FileTranslateResponse rsp = FileTranslateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return FileTranslateOutcome(rsp);
+        else
+            return FileTranslateOutcome(o.GetError());
+    }
+    else
+    {
+        return FileTranslateOutcome(outcome.GetError());
+    }
+}
+
+void TmtClient::FileTranslateAsync(const FileTranslateRequest& request, const FileTranslateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->FileTranslate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TmtClient::FileTranslateOutcomeCallable TmtClient::FileTranslateCallable(const FileTranslateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<FileTranslateOutcome()>>(
+        [this, request]()
+        {
+            return this->FileTranslate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TmtClient::GetFileTranslateOutcome TmtClient::GetFileTranslate(const GetFileTranslateRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetFileTranslate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetFileTranslateResponse rsp = GetFileTranslateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetFileTranslateOutcome(rsp);
+        else
+            return GetFileTranslateOutcome(o.GetError());
+    }
+    else
+    {
+        return GetFileTranslateOutcome(outcome.GetError());
+    }
+}
+
+void TmtClient::GetFileTranslateAsync(const GetFileTranslateRequest& request, const GetFileTranslateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetFileTranslate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TmtClient::GetFileTranslateOutcomeCallable TmtClient::GetFileTranslateCallable(const GetFileTranslateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetFileTranslateOutcome()>>(
+        [this, request]()
+        {
+            return this->GetFileTranslate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TmtClient::ImageTranslateOutcome TmtClient::ImageTranslate(const ImageTranslateRequest &request)
 {
     auto outcome = MakeRequest(request, "ImageTranslate");

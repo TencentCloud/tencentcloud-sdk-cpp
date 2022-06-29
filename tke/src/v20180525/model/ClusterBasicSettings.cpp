@@ -30,7 +30,9 @@ ClusterBasicSettings::ClusterBasicSettings() :
     m_tagSpecificationHasBeenSet(false),
     m_osCustomizeTypeHasBeenSet(false),
     m_needWorkSecurityGroupHasBeenSet(false),
-    m_subnetIdHasBeenSet(false)
+    m_subnetIdHasBeenSet(false),
+    m_clusterLevelHasBeenSet(false),
+    m_autoUpgradeClusterLevelHasBeenSet(false)
 {
 }
 
@@ -149,6 +151,33 @@ CoreInternalOutcome ClusterBasicSettings::Deserialize(const rapidjson::Value &va
         m_subnetIdHasBeenSet = true;
     }
 
+    if (value.HasMember("ClusterLevel") && !value["ClusterLevel"].IsNull())
+    {
+        if (!value["ClusterLevel"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterBasicSettings.ClusterLevel` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clusterLevel = string(value["ClusterLevel"].GetString());
+        m_clusterLevelHasBeenSet = true;
+    }
+
+    if (value.HasMember("AutoUpgradeClusterLevel") && !value["AutoUpgradeClusterLevel"].IsNull())
+    {
+        if (!value["AutoUpgradeClusterLevel"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterBasicSettings.AutoUpgradeClusterLevel` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_autoUpgradeClusterLevel.Deserialize(value["AutoUpgradeClusterLevel"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_autoUpgradeClusterLevelHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -241,6 +270,23 @@ void ClusterBasicSettings::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "SubnetId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_subnetId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clusterLevelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterLevel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clusterLevel.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_autoUpgradeClusterLevelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoUpgradeClusterLevel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_autoUpgradeClusterLevel.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -404,5 +450,37 @@ void ClusterBasicSettings::SetSubnetId(const string& _subnetId)
 bool ClusterBasicSettings::SubnetIdHasBeenSet() const
 {
     return m_subnetIdHasBeenSet;
+}
+
+string ClusterBasicSettings::GetClusterLevel() const
+{
+    return m_clusterLevel;
+}
+
+void ClusterBasicSettings::SetClusterLevel(const string& _clusterLevel)
+{
+    m_clusterLevel = _clusterLevel;
+    m_clusterLevelHasBeenSet = true;
+}
+
+bool ClusterBasicSettings::ClusterLevelHasBeenSet() const
+{
+    return m_clusterLevelHasBeenSet;
+}
+
+AutoUpgradeClusterLevel ClusterBasicSettings::GetAutoUpgradeClusterLevel() const
+{
+    return m_autoUpgradeClusterLevel;
+}
+
+void ClusterBasicSettings::SetAutoUpgradeClusterLevel(const AutoUpgradeClusterLevel& _autoUpgradeClusterLevel)
+{
+    m_autoUpgradeClusterLevel = _autoUpgradeClusterLevel;
+    m_autoUpgradeClusterLevelHasBeenSet = true;
+}
+
+bool ClusterBasicSettings::AutoUpgradeClusterLevelHasBeenSet() const
+{
+    return m_autoUpgradeClusterLevelHasBeenSet;
 }
 

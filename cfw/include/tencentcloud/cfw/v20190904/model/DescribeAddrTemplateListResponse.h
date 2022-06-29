@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取模版总数
-                     * @return Total 模版总数
+                     * 获取模板总数
+                     * @return Total 模板总数
                      */
                     int64_t GetTotal() const;
 
@@ -57,8 +57,8 @@ namespace TencentCloud
                     bool TotalHasBeenSet() const;
 
                     /**
-                     * 获取模版列表数据
-                     * @return Data 模版列表数据
+                     * 获取模板列表数据
+                     * @return Data 模板列表数据
                      */
                     std::vector<TemplateListInfo> GetData() const;
 
@@ -69,8 +69,8 @@ namespace TencentCloud
                     bool DataHasBeenSet() const;
 
                     /**
-                     * 获取模版名称列表
-                     * @return NameList 模版名称列表
+                     * 获取模板名称列表
+                     * @return NameList 模板名称列表
                      */
                     std::vector<std::string> GetNameList() const;
 
@@ -83,19 +83,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 模版总数
+                     * 模板总数
                      */
                     int64_t m_total;
                     bool m_totalHasBeenSet;
 
                     /**
-                     * 模版列表数据
+                     * 模板列表数据
                      */
                     std::vector<TemplateListInfo> m_data;
                     bool m_dataHasBeenSet;
 
                     /**
-                     * 模版名称列表
+                     * 模板名称列表
                      */
                     std::vector<std::string> m_nameList;
                     bool m_nameListHasBeenSet;

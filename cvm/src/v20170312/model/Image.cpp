@@ -35,7 +35,9 @@ Image::Image() :
     m_imageSourceHasBeenSet(false),
     m_syncPercentHasBeenSet(false),
     m_isSupportCloudinitHasBeenSet(false),
-    m_snapshotSetHasBeenSet(false)
+    m_snapshotSetHasBeenSet(false),
+    m_tagsHasBeenSet(false),
+    m_licenseTypeHasBeenSet(false)
 {
 }
 
@@ -204,6 +206,36 @@ CoreInternalOutcome Image::Deserialize(const rapidjson::Value &value)
         m_snapshotSetHasBeenSet = true;
     }
 
+    if (value.HasMember("Tags") && !value["Tags"].IsNull())
+    {
+        if (!value["Tags"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Image.Tags` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Tags"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Tag item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tags.push_back(item);
+        }
+        m_tagsHasBeenSet = true;
+    }
+
+    if (value.HasMember("LicenseType") && !value["LicenseType"].IsNull())
+    {
+        if (!value["LicenseType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Image.LicenseType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_licenseType = string(value["LicenseType"].GetString());
+        m_licenseTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -336,6 +368,29 @@ void Image::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocator
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_licenseTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LicenseType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_licenseType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -579,5 +634,37 @@ void Image::SetSnapshotSet(const vector<Snapshot>& _snapshotSet)
 bool Image::SnapshotSetHasBeenSet() const
 {
     return m_snapshotSetHasBeenSet;
+}
+
+vector<Tag> Image::GetTags() const
+{
+    return m_tags;
+}
+
+void Image::SetTags(const vector<Tag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool Image::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
+}
+
+string Image::GetLicenseType() const
+{
+    return m_licenseType;
+}
+
+void Image::SetLicenseType(const string& _licenseType)
+{
+    m_licenseType = _licenseType;
+    m_licenseTypeHasBeenSet = true;
+}
+
+bool Image::LicenseTypeHasBeenSet() const
+{
+    return m_licenseTypeHasBeenSet;
 }
 

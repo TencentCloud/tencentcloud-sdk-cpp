@@ -30,7 +30,8 @@ DescribePrometheusInstancesRequest::DescribePrometheusInstancesRequest() :
     m_tagFiltersHasBeenSet(false),
     m_iPv4AddressHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_offsetHasBeenSet(false)
+    m_offsetHasBeenSet(false),
+    m_instanceChargeTypeHasBeenSet(false)
 {
 }
 
@@ -130,6 +131,14 @@ string DescribePrometheusInstancesRequest::ToJsonString() const
         string key = "Offset";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_instanceChargeTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceChargeType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_instanceChargeType, allocator);
     }
 
 
@@ -266,6 +275,22 @@ void DescribePrometheusInstancesRequest::SetOffset(const int64_t& _offset)
 bool DescribePrometheusInstancesRequest::OffsetHasBeenSet() const
 {
     return m_offsetHasBeenSet;
+}
+
+int64_t DescribePrometheusInstancesRequest::GetInstanceChargeType() const
+{
+    return m_instanceChargeType;
+}
+
+void DescribePrometheusInstancesRequest::SetInstanceChargeType(const int64_t& _instanceChargeType)
+{
+    m_instanceChargeType = _instanceChargeType;
+    m_instanceChargeTypeHasBeenSet = true;
+}
+
+bool DescribePrometheusInstancesRequest::InstanceChargeTypeHasBeenSet() const
+{
+    return m_instanceChargeTypeHasBeenSet;
 }
 
 

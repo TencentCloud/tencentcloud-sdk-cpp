@@ -25,6 +25,7 @@
 #include <tencentcloud/tcss/v20201101/model/ProcessDetailInfo.h>
 #include <tencentcloud/tcss/v20201101/model/ProcessDetailBaseInfo.h>
 #include <tencentcloud/tcss/v20201101/model/AbnormalProcessEventDescription.h>
+#include <tencentcloud/tcss/v20201101/model/ProcessBaseInfo.h>
 
 
 namespace TencentCloud
@@ -95,6 +96,20 @@ namespace TencentCloud
                      */
                     bool EventDetailHasBeenSet() const;
 
+                    /**
+                     * 获取祖先进程信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AncestorProcessInfo 祖先进程信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ProcessBaseInfo GetAncestorProcessInfo() const;
+
+                    /**
+                     * 判断参数 AncestorProcessInfo 是否已赋值
+                     * @return AncestorProcessInfo 是否已赋值
+                     */
+                    bool AncestorProcessInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -120,6 +135,13 @@ namespace TencentCloud
                      */
                     AbnormalProcessEventDescription m_eventDetail;
                     bool m_eventDetailHasBeenSet;
+
+                    /**
+                     * 祖先进程信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ProcessBaseInfo m_ancestorProcessInfo;
+                    bool m_ancestorProcessInfoHasBeenSet;
 
                 };
             }

@@ -25,7 +25,9 @@ using namespace std;
 InquirePriceModifyDBInstanceSpecRequest::InquirePriceModifyDBInstanceSpecRequest() :
     m_instanceIdHasBeenSet(false),
     m_memoryHasBeenSet(false),
-    m_volumeHasBeenSet(false)
+    m_volumeHasBeenSet(false),
+    m_nodeNumHasBeenSet(false),
+    m_replicateSetNumHasBeenSet(false)
 {
 }
 
@@ -58,6 +60,22 @@ string InquirePriceModifyDBInstanceSpecRequest::ToJsonString() const
         string key = "Volume";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_volume, allocator);
+    }
+
+    if (m_nodeNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NodeNum";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_nodeNum, allocator);
+    }
+
+    if (m_replicateSetNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReplicateSetNum";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_replicateSetNum, allocator);
     }
 
 
@@ -114,6 +132,38 @@ void InquirePriceModifyDBInstanceSpecRequest::SetVolume(const int64_t& _volume)
 bool InquirePriceModifyDBInstanceSpecRequest::VolumeHasBeenSet() const
 {
     return m_volumeHasBeenSet;
+}
+
+int64_t InquirePriceModifyDBInstanceSpecRequest::GetNodeNum() const
+{
+    return m_nodeNum;
+}
+
+void InquirePriceModifyDBInstanceSpecRequest::SetNodeNum(const int64_t& _nodeNum)
+{
+    m_nodeNum = _nodeNum;
+    m_nodeNumHasBeenSet = true;
+}
+
+bool InquirePriceModifyDBInstanceSpecRequest::NodeNumHasBeenSet() const
+{
+    return m_nodeNumHasBeenSet;
+}
+
+int64_t InquirePriceModifyDBInstanceSpecRequest::GetReplicateSetNum() const
+{
+    return m_replicateSetNum;
+}
+
+void InquirePriceModifyDBInstanceSpecRequest::SetReplicateSetNum(const int64_t& _replicateSetNum)
+{
+    m_replicateSetNum = _replicateSetNum;
+    m_replicateSetNumHasBeenSet = true;
+}
+
+bool InquirePriceModifyDBInstanceSpecRequest::ReplicateSetNumHasBeenSet() const
+{
+    return m_replicateSetNumHasBeenSet;
 }
 
 

@@ -599,6 +599,49 @@ DomainClient::DescribeDomainPriceListOutcomeCallable DomainClient::DescribeDomai
     return task->get_future();
 }
 
+DomainClient::DescribeDomainSimpleInfoOutcome DomainClient::DescribeDomainSimpleInfo(const DescribeDomainSimpleInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDomainSimpleInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDomainSimpleInfoResponse rsp = DescribeDomainSimpleInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDomainSimpleInfoOutcome(rsp);
+        else
+            return DescribeDomainSimpleInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDomainSimpleInfoOutcome(outcome.GetError());
+    }
+}
+
+void DomainClient::DescribeDomainSimpleInfoAsync(const DescribeDomainSimpleInfoRequest& request, const DescribeDomainSimpleInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDomainSimpleInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DomainClient::DescribeDomainSimpleInfoOutcomeCallable DomainClient::DescribeDomainSimpleInfoCallable(const DescribeDomainSimpleInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDomainSimpleInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDomainSimpleInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DomainClient::DescribePhoneEmailListOutcome DomainClient::DescribePhoneEmailList(const DescribePhoneEmailListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribePhoneEmailList");

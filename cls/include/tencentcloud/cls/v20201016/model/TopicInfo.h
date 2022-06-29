@@ -262,17 +262,17 @@ namespace TencentCloud
                     bool StorageTypeHasBeenSet() const;
 
                     /**
-                     * 获取生命周期，单位为天
+                     * 获取生命周期，单位天，可取值范围1~3600。取值为3640时代表永久保存
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Period 生命周期，单位为天
+                     * @return Period 生命周期，单位天，可取值范围1~3600。取值为3640时代表永久保存
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetPeriod() const;
 
                     /**
-                     * 设置生命周期，单位为天
+                     * 设置生命周期，单位天，可取值范围1~3600。取值为3640时代表永久保存
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Period 生命周期，单位为天
+                     * @param Period 生命周期，单位天，可取值范围1~3600。取值为3640时代表永久保存
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetPeriod(const int64_t& _period);
@@ -356,7 +356,7 @@ namespace TencentCloud
                     bool m_storageTypeHasBeenSet;
 
                     /**
-                     * 生命周期，单位为天
+                     * 生命周期，单位天，可取值范围1~3600。取值为3640时代表永久保存
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_period;

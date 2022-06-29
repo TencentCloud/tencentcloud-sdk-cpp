@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取分片名称
-                     * @return ReplicaSetId 分片名称
+                     * 获取副本集ID
+                     * @return ReplicaSetId 副本集ID
                      */
                     std::string GetReplicaSetId() const;
 
                     /**
-                     * 设置分片名称
-                     * @param ReplicaSetId 分片名称
+                     * 设置副本集ID
+                     * @param ReplicaSetId 副本集ID
                      */
                     void SetReplicaSetId(const std::string& _replicaSetId);
 
@@ -67,7 +67,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 分片名称
+                     * 副本集ID
                      */
                     std::string m_replicaSetId;
                     bool m_replicaSetIdHasBeenSet;

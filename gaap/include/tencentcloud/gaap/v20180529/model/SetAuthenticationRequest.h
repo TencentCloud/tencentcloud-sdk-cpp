@@ -223,14 +223,14 @@ namespace TencentCloud
                     bool RealServerCertificateIdHasBeenSet() const;
 
                     /**
-                     * 获取源站证书域名。
-                     * @return RealServerCertificateDomain 源站证书域名。
+                     * 获取该字段已废弃，请使用创建规则和修改规则中的SNI功能。
+                     * @return RealServerCertificateDomain 该字段已废弃，请使用创建规则和修改规则中的SNI功能。
                      */
                     std::string GetRealServerCertificateDomain() const;
 
                     /**
-                     * 设置源站证书域名。
-                     * @param RealServerCertificateDomain 源站证书域名。
+                     * 设置该字段已废弃，请使用创建规则和修改规则中的SNI功能。
+                     * @param RealServerCertificateDomain 该字段已废弃，请使用创建规则和修改规则中的SNI功能。
                      */
                     void SetRealServerCertificateDomain(const std::string& _realServerCertificateDomain);
 
@@ -318,7 +318,7 @@ namespace TencentCloud
                     bool m_realServerCertificateIdHasBeenSet;
 
                     /**
-                     * 源站证书域名。
+                     * 该字段已废弃，请使用创建规则和修改规则中的SNI功能。
                      */
                     std::string m_realServerCertificateDomain;
                     bool m_realServerCertificateDomainHasBeenSet;

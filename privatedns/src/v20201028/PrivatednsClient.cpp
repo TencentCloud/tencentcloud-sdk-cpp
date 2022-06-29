@@ -642,6 +642,49 @@ PrivatednsClient::DescribePrivateZoneServiceOutcomeCallable PrivatednsClient::De
     return task->get_future();
 }
 
+PrivatednsClient::DescribeQuotaUsageOutcome PrivatednsClient::DescribeQuotaUsage(const DescribeQuotaUsageRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeQuotaUsage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeQuotaUsageResponse rsp = DescribeQuotaUsageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeQuotaUsageOutcome(rsp);
+        else
+            return DescribeQuotaUsageOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeQuotaUsageOutcome(outcome.GetError());
+    }
+}
+
+void PrivatednsClient::DescribeQuotaUsageAsync(const DescribeQuotaUsageRequest& request, const DescribeQuotaUsageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeQuotaUsage(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PrivatednsClient::DescribeQuotaUsageOutcomeCallable PrivatednsClient::DescribeQuotaUsageCallable(const DescribeQuotaUsageRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeQuotaUsageOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeQuotaUsage(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 PrivatednsClient::DescribeRequestDataOutcome PrivatednsClient::DescribeRequestData(const DescribeRequestDataRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeRequestData");

@@ -25,7 +25,9 @@ using namespace std;
 DescribeTaskStrategyRisksRequest::DescribeTaskStrategyRisksRequest() :
     m_strategyIdHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_offsetHasBeenSet(false)
+    m_offsetHasBeenSet(false),
+    m_envHasBeenSet(false),
+    m_taskTypeHasBeenSet(false)
 {
 }
 
@@ -58,6 +60,22 @@ string DescribeTaskStrategyRisksRequest::ToJsonString() const
         string key = "Offset";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_envHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Env";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_env.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_taskTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_taskType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -114,6 +132,38 @@ void DescribeTaskStrategyRisksRequest::SetOffset(const uint64_t& _offset)
 bool DescribeTaskStrategyRisksRequest::OffsetHasBeenSet() const
 {
     return m_offsetHasBeenSet;
+}
+
+string DescribeTaskStrategyRisksRequest::GetEnv() const
+{
+    return m_env;
+}
+
+void DescribeTaskStrategyRisksRequest::SetEnv(const string& _env)
+{
+    m_env = _env;
+    m_envHasBeenSet = true;
+}
+
+bool DescribeTaskStrategyRisksRequest::EnvHasBeenSet() const
+{
+    return m_envHasBeenSet;
+}
+
+string DescribeTaskStrategyRisksRequest::GetTaskType() const
+{
+    return m_taskType;
+}
+
+void DescribeTaskStrategyRisksRequest::SetTaskType(const string& _taskType)
+{
+    m_taskType = _taskType;
+    m_taskTypeHasBeenSet = true;
+}
+
+bool DescribeTaskStrategyRisksRequest::TaskTypeHasBeenSet() const
+{
+    return m_taskTypeHasBeenSet;
 }
 
 

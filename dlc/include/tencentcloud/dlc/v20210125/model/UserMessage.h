@@ -122,6 +122,24 @@ namespace TencentCloud
                      */
                     bool CreateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取用户别名
+                     * @return UserAlias 用户别名
+                     */
+                    std::string GetUserAlias() const;
+
+                    /**
+                     * 设置用户别名
+                     * @param UserAlias 用户别名
+                     */
+                    void SetUserAlias(const std::string& _userAlias);
+
+                    /**
+                     * 判断参数 UserAlias 是否已赋值
+                     * @return UserAlias 是否已赋值
+                     */
+                    bool UserAliasHasBeenSet() const;
+
                 private:
 
                     /**
@@ -148,6 +166,12 @@ namespace TencentCloud
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
+
+                    /**
+                     * 用户别名
+                     */
+                    std::string m_userAlias;
+                    bool m_userAliasHasBeenSet;
 
                 };
             }

@@ -96,6 +96,24 @@ namespace TencentCloud
                      */
                     bool WxAppIdHasBeenSet() const;
 
+                    /**
+                     * 获取mysql内核版本，支持5.7,8.0
+                     * @return DbVersion mysql内核版本，支持5.7,8.0
+                     */
+                    std::string GetDbVersion() const;
+
+                    /**
+                     * 设置mysql内核版本，支持5.7,8.0
+                     * @param DbVersion mysql内核版本，支持5.7,8.0
+                     */
+                    void SetDbVersion(const std::string& _dbVersion);
+
+                    /**
+                     * 判断参数 DbVersion 是否已赋值
+                     * @return DbVersion 是否已赋值
+                     */
+                    bool DbVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -115,6 +133,12 @@ namespace TencentCloud
                      */
                     std::string m_wxAppId;
                     bool m_wxAppIdHasBeenSet;
+
+                    /**
+                     * mysql内核版本，支持5.7,8.0
+                     */
+                    std::string m_dbVersion;
+                    bool m_dbVersionHasBeenSet;
 
                 };
             }

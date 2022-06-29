@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Asr 文字涉政信息
+                * Asr 文字敏感信息
                 */
                 class AiReviewPoliticalAsrTaskOutput : public AbstractModel
                 {
@@ -48,14 +48,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Asr 文字涉政、敏感评分，分值为0到100。
-                     * @return Confidence Asr 文字涉政、敏感评分，分值为0到100。
+                     * 获取Asr 文字敏感评分，分值为0到100。
+                     * @return Confidence Asr 文字敏感评分，分值为0到100。
                      */
                     double GetConfidence() const;
 
                     /**
-                     * 设置Asr 文字涉政、敏感评分，分值为0到100。
-                     * @param Confidence Asr 文字涉政、敏感评分，分值为0到100。
+                     * 设置Asr 文字敏感评分，分值为0到100。
+                     * @param Confidence Asr 文字敏感评分，分值为0到100。
                      */
                     void SetConfidence(const double& _confidence);
 
@@ -66,11 +66,11 @@ namespace TencentCloud
                     bool ConfidenceHasBeenSet() const;
 
                     /**
-                     * 获取Asr 文字涉政、敏感结果建议，取值范围：
+                     * 获取Asr 文字敏感结果建议，取值范围：
 <li>pass。</li>
 <li>review。</li>
 <li>block。</li>
-                     * @return Suggestion Asr 文字涉政、敏感结果建议，取值范围：
+                     * @return Suggestion Asr 文字敏感结果建议，取值范围：
 <li>pass。</li>
 <li>review。</li>
 <li>block。</li>
@@ -78,11 +78,11 @@ namespace TencentCloud
                     std::string GetSuggestion() const;
 
                     /**
-                     * 设置Asr 文字涉政、敏感结果建议，取值范围：
+                     * 设置Asr 文字敏感结果建议，取值范围：
 <li>pass。</li>
 <li>review。</li>
 <li>block。</li>
-                     * @param Suggestion Asr 文字涉政、敏感结果建议，取值范围：
+                     * @param Suggestion Asr 文字敏感结果建议，取值范围：
 <li>pass。</li>
 <li>review。</li>
 <li>block。</li>
@@ -96,14 +96,14 @@ namespace TencentCloud
                     bool SuggestionHasBeenSet() const;
 
                     /**
-                     * 获取Asr 文字有涉政、敏感嫌疑的视频片段列表。
-                     * @return SegmentSet Asr 文字有涉政、敏感嫌疑的视频片段列表。
+                     * 获取Asr 文字敏感嫌疑的视频片段列表。
+                     * @return SegmentSet Asr 文字敏感嫌疑的视频片段列表。
                      */
                     std::vector<MediaContentReviewAsrTextSegmentItem> GetSegmentSet() const;
 
                     /**
-                     * 设置Asr 文字有涉政、敏感嫌疑的视频片段列表。
-                     * @param SegmentSet Asr 文字有涉政、敏感嫌疑的视频片段列表。
+                     * 设置Asr 文字敏感嫌疑的视频片段列表。
+                     * @param SegmentSet Asr 文字敏感嫌疑的视频片段列表。
                      */
                     void SetSegmentSet(const std::vector<MediaContentReviewAsrTextSegmentItem>& _segmentSet);
 
@@ -116,13 +116,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Asr 文字涉政、敏感评分，分值为0到100。
+                     * Asr 文字敏感评分，分值为0到100。
                      */
                     double m_confidence;
                     bool m_confidenceHasBeenSet;
 
                     /**
-                     * Asr 文字涉政、敏感结果建议，取值范围：
+                     * Asr 文字敏感结果建议，取值范围：
 <li>pass。</li>
 <li>review。</li>
 <li>block。</li>
@@ -131,7 +131,7 @@ namespace TencentCloud
                     bool m_suggestionHasBeenSet;
 
                     /**
-                     * Asr 文字有涉政、敏感嫌疑的视频片段列表。
+                     * Asr 文字敏感嫌疑的视频片段列表。
                      */
                     std::vector<MediaContentReviewAsrTextSegmentItem> m_segmentSet;
                     bool m_segmentSetHasBeenSet;

@@ -26,7 +26,9 @@ ServiceSetting::ServiceSetting() :
     m_subnetIdHasBeenSet(false),
     m_disableServiceHasBeenSet(false),
     m_headlessServiceHasBeenSet(false),
-    m_allowDeleteServiceHasBeenSet(false)
+    m_allowDeleteServiceHasBeenSet(false),
+    m_openSessionAffinityHasBeenSet(false),
+    m_sessionAffinityTimeoutSecondsHasBeenSet(false)
 {
 }
 
@@ -105,6 +107,26 @@ CoreInternalOutcome ServiceSetting::Deserialize(const rapidjson::Value &value)
         m_allowDeleteServiceHasBeenSet = true;
     }
 
+    if (value.HasMember("OpenSessionAffinity") && !value["OpenSessionAffinity"].IsNull())
+    {
+        if (!value["OpenSessionAffinity"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceSetting.OpenSessionAffinity` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_openSessionAffinity = value["OpenSessionAffinity"].GetBool();
+        m_openSessionAffinityHasBeenSet = true;
+    }
+
+    if (value.HasMember("SessionAffinityTimeoutSeconds") && !value["SessionAffinityTimeoutSeconds"].IsNull())
+    {
+        if (!value["SessionAffinityTimeoutSeconds"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceSetting.SessionAffinityTimeoutSeconds` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_sessionAffinityTimeoutSeconds = value["SessionAffinityTimeoutSeconds"].GetInt64();
+        m_sessionAffinityTimeoutSecondsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -165,6 +187,22 @@ void ServiceSetting::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "AllowDeleteService";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_allowDeleteService, allocator);
+    }
+
+    if (m_openSessionAffinityHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OpenSessionAffinity";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_openSessionAffinity, allocator);
+    }
+
+    if (m_sessionAffinityTimeoutSecondsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SessionAffinityTimeoutSeconds";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_sessionAffinityTimeoutSeconds, allocator);
     }
 
 }
@@ -264,5 +302,37 @@ void ServiceSetting::SetAllowDeleteService(const bool& _allowDeleteService)
 bool ServiceSetting::AllowDeleteServiceHasBeenSet() const
 {
     return m_allowDeleteServiceHasBeenSet;
+}
+
+bool ServiceSetting::GetOpenSessionAffinity() const
+{
+    return m_openSessionAffinity;
+}
+
+void ServiceSetting::SetOpenSessionAffinity(const bool& _openSessionAffinity)
+{
+    m_openSessionAffinity = _openSessionAffinity;
+    m_openSessionAffinityHasBeenSet = true;
+}
+
+bool ServiceSetting::OpenSessionAffinityHasBeenSet() const
+{
+    return m_openSessionAffinityHasBeenSet;
+}
+
+int64_t ServiceSetting::GetSessionAffinityTimeoutSeconds() const
+{
+    return m_sessionAffinityTimeoutSeconds;
+}
+
+void ServiceSetting::SetSessionAffinityTimeoutSeconds(const int64_t& _sessionAffinityTimeoutSeconds)
+{
+    m_sessionAffinityTimeoutSeconds = _sessionAffinityTimeoutSeconds;
+    m_sessionAffinityTimeoutSecondsHasBeenSet = true;
+}
+
+bool ServiceSetting::SessionAffinityTimeoutSecondsHasBeenSet() const
+{
+    return m_sessionAffinityTimeoutSecondsHasBeenSet;
 }
 

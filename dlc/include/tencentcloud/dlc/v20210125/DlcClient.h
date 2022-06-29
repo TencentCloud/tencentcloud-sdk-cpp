@@ -35,8 +35,16 @@
 #include <tencentcloud/dlc/v20210125/model/CancelTaskResponse.h>
 #include <tencentcloud/dlc/v20210125/model/CreateDatabaseRequest.h>
 #include <tencentcloud/dlc/v20210125/model/CreateDatabaseResponse.h>
+#include <tencentcloud/dlc/v20210125/model/CreateExportTaskRequest.h>
+#include <tencentcloud/dlc/v20210125/model/CreateExportTaskResponse.h>
+#include <tencentcloud/dlc/v20210125/model/CreateImportTaskRequest.h>
+#include <tencentcloud/dlc/v20210125/model/CreateImportTaskResponse.h>
 #include <tencentcloud/dlc/v20210125/model/CreateScriptRequest.h>
 #include <tencentcloud/dlc/v20210125/model/CreateScriptResponse.h>
+#include <tencentcloud/dlc/v20210125/model/CreateSparkAppRequest.h>
+#include <tencentcloud/dlc/v20210125/model/CreateSparkAppResponse.h>
+#include <tencentcloud/dlc/v20210125/model/CreateSparkAppTaskRequest.h>
+#include <tencentcloud/dlc/v20210125/model/CreateSparkAppTaskResponse.h>
 #include <tencentcloud/dlc/v20210125/model/CreateStoreLocationRequest.h>
 #include <tencentcloud/dlc/v20210125/model/CreateStoreLocationResponse.h>
 #include <tencentcloud/dlc/v20210125/model/CreateTableRequest.h>
@@ -53,6 +61,8 @@
 #include <tencentcloud/dlc/v20210125/model/CreateWorkGroupResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DeleteScriptRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DeleteScriptResponse.h>
+#include <tencentcloud/dlc/v20210125/model/DeleteSparkAppRequest.h>
+#include <tencentcloud/dlc/v20210125/model/DeleteSparkAppResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DeleteUserRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DeleteUserResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DeleteUsersFromWorkGroupRequest.h>
@@ -63,6 +73,12 @@
 #include <tencentcloud/dlc/v20210125/model/DescribeDatabasesResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeScriptsRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeScriptsResponse.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeSparkAppJobRequest.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeSparkAppJobResponse.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeSparkAppJobsRequest.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeSparkAppJobsResponse.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeSparkAppTasksRequest.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeSparkAppTasksResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeStoreLocationRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeStoreLocationResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeTableRequest.h>
@@ -83,6 +99,10 @@
 #include <tencentcloud/dlc/v20210125/model/DetachUserPolicyResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DetachWorkGroupPolicyRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DetachWorkGroupPolicyResponse.h>
+#include <tencentcloud/dlc/v20210125/model/ListTaskJobLogDetailRequest.h>
+#include <tencentcloud/dlc/v20210125/model/ListTaskJobLogDetailResponse.h>
+#include <tencentcloud/dlc/v20210125/model/ModifySparkAppRequest.h>
+#include <tencentcloud/dlc/v20210125/model/ModifySparkAppResponse.h>
 #include <tencentcloud/dlc/v20210125/model/ModifyUserRequest.h>
 #include <tencentcloud/dlc/v20210125/model/ModifyUserResponse.h>
 #include <tencentcloud/dlc/v20210125/model/ModifyWorkGroupRequest.h>
@@ -121,9 +141,21 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateDatabaseResponse> CreateDatabaseOutcome;
                 typedef std::future<CreateDatabaseOutcome> CreateDatabaseOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::CreateDatabaseRequest&, CreateDatabaseOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDatabaseAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateExportTaskResponse> CreateExportTaskOutcome;
+                typedef std::future<CreateExportTaskOutcome> CreateExportTaskOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::CreateExportTaskRequest&, CreateExportTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateExportTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateImportTaskResponse> CreateImportTaskOutcome;
+                typedef std::future<CreateImportTaskOutcome> CreateImportTaskOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::CreateImportTaskRequest&, CreateImportTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateImportTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateScriptResponse> CreateScriptOutcome;
                 typedef std::future<CreateScriptOutcome> CreateScriptOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::CreateScriptRequest&, CreateScriptOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateScriptAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateSparkAppResponse> CreateSparkAppOutcome;
+                typedef std::future<CreateSparkAppOutcome> CreateSparkAppOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::CreateSparkAppRequest&, CreateSparkAppOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSparkAppAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateSparkAppTaskResponse> CreateSparkAppTaskOutcome;
+                typedef std::future<CreateSparkAppTaskOutcome> CreateSparkAppTaskOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::CreateSparkAppTaskRequest&, CreateSparkAppTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSparkAppTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateStoreLocationResponse> CreateStoreLocationOutcome;
                 typedef std::future<CreateStoreLocationOutcome> CreateStoreLocationOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::CreateStoreLocationRequest&, CreateStoreLocationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateStoreLocationAsyncHandler;
@@ -148,6 +180,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteScriptResponse> DeleteScriptOutcome;
                 typedef std::future<DeleteScriptOutcome> DeleteScriptOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::DeleteScriptRequest&, DeleteScriptOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteScriptAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteSparkAppResponse> DeleteSparkAppOutcome;
+                typedef std::future<DeleteSparkAppOutcome> DeleteSparkAppOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::DeleteSparkAppRequest&, DeleteSparkAppOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSparkAppAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteUserResponse> DeleteUserOutcome;
                 typedef std::future<DeleteUserOutcome> DeleteUserOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::DeleteUserRequest&, DeleteUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteUserAsyncHandler;
@@ -163,6 +198,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeScriptsResponse> DescribeScriptsOutcome;
                 typedef std::future<DescribeScriptsOutcome> DescribeScriptsOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::DescribeScriptsRequest&, DescribeScriptsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScriptsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSparkAppJobResponse> DescribeSparkAppJobOutcome;
+                typedef std::future<DescribeSparkAppJobOutcome> DescribeSparkAppJobOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::DescribeSparkAppJobRequest&, DescribeSparkAppJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSparkAppJobAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSparkAppJobsResponse> DescribeSparkAppJobsOutcome;
+                typedef std::future<DescribeSparkAppJobsOutcome> DescribeSparkAppJobsOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::DescribeSparkAppJobsRequest&, DescribeSparkAppJobsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSparkAppJobsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSparkAppTasksResponse> DescribeSparkAppTasksOutcome;
+                typedef std::future<DescribeSparkAppTasksOutcome> DescribeSparkAppTasksOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::DescribeSparkAppTasksRequest&, DescribeSparkAppTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSparkAppTasksAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeStoreLocationResponse> DescribeStoreLocationOutcome;
                 typedef std::future<DescribeStoreLocationOutcome> DescribeStoreLocationOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::DescribeStoreLocationRequest&, DescribeStoreLocationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStoreLocationAsyncHandler;
@@ -193,6 +237,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DetachWorkGroupPolicyResponse> DetachWorkGroupPolicyOutcome;
                 typedef std::future<DetachWorkGroupPolicyOutcome> DetachWorkGroupPolicyOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::DetachWorkGroupPolicyRequest&, DetachWorkGroupPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DetachWorkGroupPolicyAsyncHandler;
+                typedef Outcome<Core::Error, Model::ListTaskJobLogDetailResponse> ListTaskJobLogDetailOutcome;
+                typedef std::future<ListTaskJobLogDetailOutcome> ListTaskJobLogDetailOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::ListTaskJobLogDetailRequest&, ListTaskJobLogDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListTaskJobLogDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifySparkAppResponse> ModifySparkAppOutcome;
+                typedef std::future<ModifySparkAppOutcome> ModifySparkAppOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::ModifySparkAppRequest&, ModifySparkAppOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySparkAppAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyUserResponse> ModifyUserOutcome;
                 typedef std::future<ModifyUserOutcome> ModifyUserOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::ModifyUserRequest&, ModifyUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyUserAsyncHandler;
@@ -260,6 +310,24 @@ namespace TencentCloud
                 CreateDatabaseOutcomeCallable CreateDatabaseCallable(const Model::CreateDatabaseRequest& request);
 
                 /**
+                 *该接口（CreateExportTask）用于创建导出任务
+                 * @param req CreateExportTaskRequest
+                 * @return CreateExportTaskOutcome
+                 */
+                CreateExportTaskOutcome CreateExportTask(const Model::CreateExportTaskRequest &request);
+                void CreateExportTaskAsync(const Model::CreateExportTaskRequest& request, const CreateExportTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateExportTaskOutcomeCallable CreateExportTaskCallable(const Model::CreateExportTaskRequest& request);
+
+                /**
+                 *该接口（CreateImportTask）用于创建导入任务
+                 * @param req CreateImportTaskRequest
+                 * @return CreateImportTaskOutcome
+                 */
+                CreateImportTaskOutcome CreateImportTask(const Model::CreateImportTaskRequest &request);
+                void CreateImportTaskAsync(const Model::CreateImportTaskRequest& request, const CreateImportTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateImportTaskOutcomeCallable CreateImportTaskCallable(const Model::CreateImportTaskRequest& request);
+
+                /**
                  *该接口（CreateScript）用于创建sql脚本。
                  * @param req CreateScriptRequest
                  * @return CreateScriptOutcome
@@ -267,6 +335,24 @@ namespace TencentCloud
                 CreateScriptOutcome CreateScript(const Model::CreateScriptRequest &request);
                 void CreateScriptAsync(const Model::CreateScriptRequest& request, const CreateScriptAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateScriptOutcomeCallable CreateScriptCallable(const Model::CreateScriptRequest& request);
+
+                /**
+                 *创建spark应用
+                 * @param req CreateSparkAppRequest
+                 * @return CreateSparkAppOutcome
+                 */
+                CreateSparkAppOutcome CreateSparkApp(const Model::CreateSparkAppRequest &request);
+                void CreateSparkAppAsync(const Model::CreateSparkAppRequest& request, const CreateSparkAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateSparkAppOutcomeCallable CreateSparkAppCallable(const Model::CreateSparkAppRequest& request);
+
+                /**
+                 *创建spark任务
+                 * @param req CreateSparkAppTaskRequest
+                 * @return CreateSparkAppTaskOutcome
+                 */
+                CreateSparkAppTaskOutcome CreateSparkAppTask(const Model::CreateSparkAppTaskRequest &request);
+                void CreateSparkAppTaskAsync(const Model::CreateSparkAppTaskRequest& request, const CreateSparkAppTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateSparkAppTaskOutcomeCallable CreateSparkAppTaskCallable(const Model::CreateSparkAppTaskRequest& request);
 
                 /**
                  *该接口（CreateStoreLocation）新增或覆盖计算结果存储位置。
@@ -341,6 +427,15 @@ namespace TencentCloud
                 DeleteScriptOutcomeCallable DeleteScriptCallable(const Model::DeleteScriptRequest& request);
 
                 /**
+                 *删除spark应用
+                 * @param req DeleteSparkAppRequest
+                 * @return DeleteSparkAppOutcome
+                 */
+                DeleteSparkAppOutcome DeleteSparkApp(const Model::DeleteSparkAppRequest &request);
+                void DeleteSparkAppAsync(const Model::DeleteSparkAppRequest& request, const DeleteSparkAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteSparkAppOutcomeCallable DeleteSparkAppCallable(const Model::DeleteSparkAppRequest& request);
+
+                /**
                  *删除用户
                  * @param req DeleteUserRequest
                  * @return DeleteUserOutcome
@@ -384,6 +479,33 @@ namespace TencentCloud
                 DescribeScriptsOutcome DescribeScripts(const Model::DescribeScriptsRequest &request);
                 void DescribeScriptsAsync(const Model::DescribeScriptsRequest& request, const DescribeScriptsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeScriptsOutcomeCallable DescribeScriptsCallable(const Model::DescribeScriptsRequest& request);
+
+                /**
+                 *查询具体的spark应用
+                 * @param req DescribeSparkAppJobRequest
+                 * @return DescribeSparkAppJobOutcome
+                 */
+                DescribeSparkAppJobOutcome DescribeSparkAppJob(const Model::DescribeSparkAppJobRequest &request);
+                void DescribeSparkAppJobAsync(const Model::DescribeSparkAppJobRequest& request, const DescribeSparkAppJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSparkAppJobOutcomeCallable DescribeSparkAppJobCallable(const Model::DescribeSparkAppJobRequest& request);
+
+                /**
+                 *获取spark应用列表
+                 * @param req DescribeSparkAppJobsRequest
+                 * @return DescribeSparkAppJobsOutcome
+                 */
+                DescribeSparkAppJobsOutcome DescribeSparkAppJobs(const Model::DescribeSparkAppJobsRequest &request);
+                void DescribeSparkAppJobsAsync(const Model::DescribeSparkAppJobsRequest& request, const DescribeSparkAppJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSparkAppJobsOutcomeCallable DescribeSparkAppJobsCallable(const Model::DescribeSparkAppJobsRequest& request);
+
+                /**
+                 *查询spark应用的运行任务实例列表
+                 * @param req DescribeSparkAppTasksRequest
+                 * @return DescribeSparkAppTasksOutcome
+                 */
+                DescribeSparkAppTasksOutcome DescribeSparkAppTasks(const Model::DescribeSparkAppTasksRequest &request);
+                void DescribeSparkAppTasksAsync(const Model::DescribeSparkAppTasksRequest& request, const DescribeSparkAppTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSparkAppTasksOutcomeCallable DescribeSparkAppTasksCallable(const Model::DescribeSparkAppTasksRequest& request);
 
                 /**
                  *查询计算结果存储位置。
@@ -474,6 +596,24 @@ namespace TencentCloud
                 DetachWorkGroupPolicyOutcome DetachWorkGroupPolicy(const Model::DetachWorkGroupPolicyRequest &request);
                 void DetachWorkGroupPolicyAsync(const Model::DetachWorkGroupPolicyRequest& request, const DetachWorkGroupPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DetachWorkGroupPolicyOutcomeCallable DetachWorkGroupPolicyCallable(const Model::DetachWorkGroupPolicyRequest& request);
+
+                /**
+                 *本接口（ListTaskJobLogDetail）用于获取spark-jar日志列表
+                 * @param req ListTaskJobLogDetailRequest
+                 * @return ListTaskJobLogDetailOutcome
+                 */
+                ListTaskJobLogDetailOutcome ListTaskJobLogDetail(const Model::ListTaskJobLogDetailRequest &request);
+                void ListTaskJobLogDetailAsync(const Model::ListTaskJobLogDetailRequest& request, const ListTaskJobLogDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListTaskJobLogDetailOutcomeCallable ListTaskJobLogDetailCallable(const Model::ListTaskJobLogDetailRequest& request);
+
+                /**
+                 *更新spark应用
+                 * @param req ModifySparkAppRequest
+                 * @return ModifySparkAppOutcome
+                 */
+                ModifySparkAppOutcome ModifySparkApp(const Model::ModifySparkAppRequest &request);
+                void ModifySparkAppAsync(const Model::ModifySparkAppRequest& request, const ModifySparkAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifySparkAppOutcomeCallable ModifySparkAppCallable(const Model::ModifySparkAppRequest& request);
 
                 /**
                  *修改用户信息

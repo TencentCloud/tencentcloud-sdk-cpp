@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取IP地址模版集合名称。
-                     * @return AddressTemplateGroupName IP地址模版集合名称。
+                     * 获取IP地址模板集合名称。
+                     * @return AddressTemplateGroupName IP地址模板集合名称。
                      */
                     std::string GetAddressTemplateGroupName() const;
 
                     /**
-                     * 设置IP地址模版集合名称。
-                     * @param AddressTemplateGroupName IP地址模版集合名称。
+                     * 设置IP地址模板集合名称。
+                     * @param AddressTemplateGroupName IP地址模板集合名称。
                      */
                     void SetAddressTemplateGroupName(const std::string& _addressTemplateGroupName);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool AddressTemplateGroupNameHasBeenSet() const;
 
                     /**
-                     * 获取IP地址模版实例ID，例如：ipm-mdunqeb6。
-                     * @return AddressTemplateIds IP地址模版实例ID，例如：ipm-mdunqeb6。
+                     * 获取IP地址模板实例ID，例如：ipm-mdunqeb6。
+                     * @return AddressTemplateIds IP地址模板实例ID，例如：ipm-mdunqeb6。
                      */
                     std::vector<std::string> GetAddressTemplateIds() const;
 
                     /**
-                     * 设置IP地址模版实例ID，例如：ipm-mdunqeb6。
-                     * @param AddressTemplateIds IP地址模版实例ID，例如：ipm-mdunqeb6。
+                     * 设置IP地址模板实例ID，例如：ipm-mdunqeb6。
+                     * @param AddressTemplateIds IP地址模板实例ID，例如：ipm-mdunqeb6。
                      */
                     void SetAddressTemplateIds(const std::vector<std::string>& _addressTemplateIds);
 
@@ -81,13 +81,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * IP地址模版集合名称。
+                     * IP地址模板集合名称。
                      */
                     std::string m_addressTemplateGroupName;
                     bool m_addressTemplateGroupNameHasBeenSet;
 
                     /**
-                     * IP地址模版实例ID，例如：ipm-mdunqeb6。
+                     * IP地址模板实例ID，例如：ipm-mdunqeb6。
                      */
                     std::vector<std::string> m_addressTemplateIds;
                     bool m_addressTemplateIdsHasBeenSet;

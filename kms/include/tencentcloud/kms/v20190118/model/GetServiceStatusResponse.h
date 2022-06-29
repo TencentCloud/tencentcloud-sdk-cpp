@@ -123,6 +123,34 @@ namespace TencentCloud
                      */
                     bool ProResourceIdHasBeenSet() const;
 
+                    /**
+                     * 获取是否开通 KMS 托管版
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ExclusiveVSMEnabled 是否开通 KMS 托管版
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetExclusiveVSMEnabled() const;
+
+                    /**
+                     * 判断参数 ExclusiveVSMEnabled 是否已赋值
+                     * @return ExclusiveVSMEnabled 是否已赋值
+                     */
+                    bool ExclusiveVSMEnabledHasBeenSet() const;
+
+                    /**
+                     * 获取是否开通 KMS 独享版
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ExclusiveHSMEnabled 是否开通 KMS 独享版
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetExclusiveHSMEnabled() const;
+
+                    /**
+                     * 判断参数 ExclusiveHSMEnabled 是否已赋值
+                     * @return ExclusiveHSMEnabled 是否已赋值
+                     */
+                    bool ExclusiveHSMEnabledHasBeenSet() const;
+
                 private:
 
                     /**
@@ -164,6 +192,20 @@ namespace TencentCloud
                      */
                     std::string m_proResourceId;
                     bool m_proResourceIdHasBeenSet;
+
+                    /**
+                     * 是否开通 KMS 托管版
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_exclusiveVSMEnabled;
+                    bool m_exclusiveVSMEnabledHasBeenSet;
+
+                    /**
+                     * 是否开通 KMS 独享版
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_exclusiveHSMEnabled;
+                    bool m_exclusiveHSMEnabledHasBeenSet;
 
                 };
             }

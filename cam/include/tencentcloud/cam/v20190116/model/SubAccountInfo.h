@@ -212,6 +212,28 @@ namespace TencentCloud
                      */
                     bool CreateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取昵称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NickName 昵称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetNickName() const;
+
+                    /**
+                     * 设置昵称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param NickName 昵称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetNickName(const std::string& _nickName);
+
+                    /**
+                     * 判断参数 NickName 是否已赋值
+                     * @return NickName 是否已赋值
+                     */
+                    bool NickNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -268,6 +290,13 @@ namespace TencentCloud
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
+
+                    /**
+                     * 昵称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_nickName;
+                    bool m_nickNameHasBeenSet;
 
                 };
             }

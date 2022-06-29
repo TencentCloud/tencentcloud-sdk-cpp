@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取视频处理任务 ID。
-                     * @return TaskId 视频处理任务 ID。
+                     * 获取媒体处理任务 ID。
+                     * @return TaskId 媒体处理任务 ID。
                      */
                     std::string GetTaskId() const;
 
                     /**
-                     * 设置视频处理任务 ID。
-                     * @param TaskId 视频处理任务 ID。
+                     * 设置媒体处理任务 ID。
+                     * @param TaskId 媒体处理任务 ID。
                      */
                     void SetTaskId(const std::string& _taskId);
 
@@ -147,7 +147,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 视频处理任务 ID。
+                     * 媒体处理任务 ID。
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;

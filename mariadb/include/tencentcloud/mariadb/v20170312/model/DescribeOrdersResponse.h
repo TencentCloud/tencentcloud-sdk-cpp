@@ -48,7 +48,7 @@ namespace TencentCloud
                      * 获取返回的订单数量。
                      * @return TotalCount 返回的订单数量。
                      */
-                    std::vector<int64_t> GetTotalCount() const;
+                    uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
@@ -73,7 +73,7 @@ namespace TencentCloud
                     /**
                      * 返回的订单数量。
                      */
-                    std::vector<int64_t> m_totalCount;
+                    uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**

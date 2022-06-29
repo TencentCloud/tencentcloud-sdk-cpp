@@ -62,14 +62,14 @@ namespace TencentCloud
                     bool TemplateIdHasBeenSet() const;
 
                     /**
-                     * 获取模板名称。
-                     * @return Name 模板名称。
+                     * 获取模板名称，长度不超过64。
+                     * @return Name 模板名称，长度不超过64。
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置模板名称。
-                     * @param Name 模板名称。
+                     * 设置模板名称，长度不超过64。
+                     * @param Name 模板名称，长度不超过64。
                      */
                     void SetName(const std::string& _name);
 
@@ -80,14 +80,14 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取模板描述。
-                     * @return Description 模板描述。
+                     * 获取模板描述，长度不超过255。
+                     * @return Description 模板描述，长度不超过255。
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置模板描述。
-                     * @param Description 模板描述。
+                     * 设置模板描述，长度不超过255。
+                     * @param Description 模板描述，长度不超过255。
                      */
                     void SetDescription(const std::string& _description);
 
@@ -124,13 +124,13 @@ namespace TencentCloud
                     bool m_templateIdHasBeenSet;
 
                     /**
-                     * 模板名称。
+                     * 模板名称，长度不超过64。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 模板描述。
+                     * 模板描述，长度不超过255。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;

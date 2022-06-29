@@ -96,6 +96,60 @@ namespace TencentCloud
                      */
                     bool IsExtranetHasBeenSet() const;
 
+                    /**
+                     * 获取设置域名
+                     * @return Domain 设置域名
+                     */
+                    std::string GetDomain() const;
+
+                    /**
+                     * 设置设置域名
+                     * @param Domain 设置域名
+                     */
+                    void SetDomain(const std::string& _domain);
+
+                    /**
+                     * 判断参数 Domain 是否已赋值
+                     * @return Domain 是否已赋值
+                     */
+                    bool DomainHasBeenSet() const;
+
+                    /**
+                     * 获取使用的安全组，只有外网访问需要传递
+                     * @return SecurityGroup 使用的安全组，只有外网访问需要传递
+                     */
+                    std::string GetSecurityGroup() const;
+
+                    /**
+                     * 设置使用的安全组，只有外网访问需要传递
+                     * @param SecurityGroup 使用的安全组，只有外网访问需要传递
+                     */
+                    void SetSecurityGroup(const std::string& _securityGroup);
+
+                    /**
+                     * 判断参数 SecurityGroup 是否已赋值
+                     * @return SecurityGroup 是否已赋值
+                     */
+                    bool SecurityGroupHasBeenSet() const;
+
+                    /**
+                     * 获取创建lb参数，只有外网访问需要设置
+                     * @return ExtensiveParameters 创建lb参数，只有外网访问需要设置
+                     */
+                    std::string GetExtensiveParameters() const;
+
+                    /**
+                     * 设置创建lb参数，只有外网访问需要设置
+                     * @param ExtensiveParameters 创建lb参数，只有外网访问需要设置
+                     */
+                    void SetExtensiveParameters(const std::string& _extensiveParameters);
+
+                    /**
+                     * 判断参数 ExtensiveParameters 是否已赋值
+                     * @return ExtensiveParameters 是否已赋值
+                     */
+                    bool ExtensiveParametersHasBeenSet() const;
+
                 private:
 
                     /**
@@ -115,6 +169,24 @@ namespace TencentCloud
                      */
                     bool m_isExtranet;
                     bool m_isExtranetHasBeenSet;
+
+                    /**
+                     * 设置域名
+                     */
+                    std::string m_domain;
+                    bool m_domainHasBeenSet;
+
+                    /**
+                     * 使用的安全组，只有外网访问需要传递
+                     */
+                    std::string m_securityGroup;
+                    bool m_securityGroupHasBeenSet;
+
+                    /**
+                     * 创建lb参数，只有外网访问需要设置
+                     */
+                    std::string m_extensiveParameters;
+                    bool m_extensiveParametersHasBeenSet;
 
                 };
             }

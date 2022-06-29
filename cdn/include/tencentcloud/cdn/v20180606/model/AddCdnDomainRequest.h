@@ -53,6 +53,8 @@
 #include <tencentcloud/cdn/v20180606/model/Quic.h>
 #include <tencentcloud/cdn/v20180606/model/AwsPrivateAccess.h>
 #include <tencentcloud/cdn/v20180606/model/OssPrivateAccess.h>
+#include <tencentcloud/cdn/v20180606/model/HwPrivateAccess.h>
+#include <tencentcloud/cdn/v20180606/model/QnPrivateAccess.h>
 
 
 namespace TencentCloud
@@ -94,25 +96,33 @@ namespace TencentCloud
 
                     /**
                      * 获取加速域名业务类型
-web：静态加速
-download：下载加速
-media：流媒体点播加速
+web：网页小文件
+download：下载大文件
+media：音视频点播
+hybrid:  动静加速
+dynamic:  动态加速
                      * @return ServiceType 加速域名业务类型
-web：静态加速
-download：下载加速
-media：流媒体点播加速
+web：网页小文件
+download：下载大文件
+media：音视频点播
+hybrid:  动静加速
+dynamic:  动态加速
                      */
                     std::string GetServiceType() const;
 
                     /**
                      * 设置加速域名业务类型
-web：静态加速
-download：下载加速
-media：流媒体点播加速
+web：网页小文件
+download：下载大文件
+media：音视频点播
+hybrid:  动静加速
+dynamic:  动态加速
                      * @param ServiceType 加速域名业务类型
-web：静态加速
-download：下载加速
-media：流媒体点播加速
+web：网页小文件
+download：下载大文件
+media：音视频点播
+hybrid:  动静加速
+dynamic:  动态加速
                      */
                     void SetServiceType(const std::string& _serviceType);
 
@@ -701,14 +711,14 @@ global：全球加速
                     bool OfflineCacheHasBeenSet() const;
 
                     /**
-                     * 获取QUIC正在内测中，请先提交内测申请，详情请前往QUIC产品文档。
-                     * @return Quic QUIC正在内测中，请先提交内测申请，详情请前往QUIC产品文档。
+                     * 获取Quic访问（收费服务，详见计费说明和产品文档）
+                     * @return Quic Quic访问（收费服务，详见计费说明和产品文档）
                      */
                     Quic GetQuic() const;
 
                     /**
-                     * 设置QUIC正在内测中，请先提交内测申请，详情请前往QUIC产品文档。
-                     * @param Quic QUIC正在内测中，请先提交内测申请，详情请前往QUIC产品文档。
+                     * 设置Quic访问（收费服务，详见计费说明和产品文档）
+                     * @param Quic Quic访问（收费服务，详见计费说明和产品文档）
                      */
                     void SetQuic(const Quic& _quic);
 
@@ -754,6 +764,42 @@ global：全球加速
                      */
                     bool OssPrivateAccessHasBeenSet() const;
 
+                    /**
+                     * 获取华为云对象存储回源鉴权
+                     * @return HwPrivateAccess 华为云对象存储回源鉴权
+                     */
+                    HwPrivateAccess GetHwPrivateAccess() const;
+
+                    /**
+                     * 设置华为云对象存储回源鉴权
+                     * @param HwPrivateAccess 华为云对象存储回源鉴权
+                     */
+                    void SetHwPrivateAccess(const HwPrivateAccess& _hwPrivateAccess);
+
+                    /**
+                     * 判断参数 HwPrivateAccess 是否已赋值
+                     * @return HwPrivateAccess 是否已赋值
+                     */
+                    bool HwPrivateAccessHasBeenSet() const;
+
+                    /**
+                     * 获取七牛云对象存储回源鉴权
+                     * @return QnPrivateAccess 七牛云对象存储回源鉴权
+                     */
+                    QnPrivateAccess GetQnPrivateAccess() const;
+
+                    /**
+                     * 设置七牛云对象存储回源鉴权
+                     * @param QnPrivateAccess 七牛云对象存储回源鉴权
+                     */
+                    void SetQnPrivateAccess(const QnPrivateAccess& _qnPrivateAccess);
+
+                    /**
+                     * 判断参数 QnPrivateAccess 是否已赋值
+                     * @return QnPrivateAccess 是否已赋值
+                     */
+                    bool QnPrivateAccessHasBeenSet() const;
+
                 private:
 
                     /**
@@ -764,9 +810,11 @@ global：全球加速
 
                     /**
                      * 加速域名业务类型
-web：静态加速
-download：下载加速
-media：流媒体点播加速
+web：网页小文件
+download：下载大文件
+media：音视频点播
+hybrid:  动静加速
+dynamic:  动态加速
                      */
                     std::string m_serviceType;
                     bool m_serviceTypeHasBeenSet;
@@ -963,7 +1011,7 @@ global：全球加速
                     bool m_offlineCacheHasBeenSet;
 
                     /**
-                     * QUIC正在内测中，请先提交内测申请，详情请前往QUIC产品文档。
+                     * Quic访问（收费服务，详见计费说明和产品文档）
                      */
                     Quic m_quic;
                     bool m_quicHasBeenSet;
@@ -979,6 +1027,18 @@ global：全球加速
                      */
                     OssPrivateAccess m_ossPrivateAccess;
                     bool m_ossPrivateAccessHasBeenSet;
+
+                    /**
+                     * 华为云对象存储回源鉴权
+                     */
+                    HwPrivateAccess m_hwPrivateAccess;
+                    bool m_hwPrivateAccessHasBeenSet;
+
+                    /**
+                     * 七牛云对象存储回源鉴权
+                     */
+                    QnPrivateAccess m_qnPrivateAccess;
+                    bool m_qnPrivateAccessHasBeenSet;
 
                 };
             }

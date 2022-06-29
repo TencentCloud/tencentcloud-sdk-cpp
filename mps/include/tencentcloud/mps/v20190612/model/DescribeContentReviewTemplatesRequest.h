@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取内容智能识别模板唯一标识过滤条件，数组长度限制：50。
-                     * @return Definitions 内容智能识别模板唯一标识过滤条件，数组长度限制：50。
+                     * 获取智能审核模板唯一标识过滤条件，数组长度限制：50。
+                     * @return Definitions 智能审核模板唯一标识过滤条件，数组长度限制：50。
                      */
                     std::vector<int64_t> GetDefinitions() const;
 
                     /**
-                     * 设置内容智能识别模板唯一标识过滤条件，数组长度限制：50。
-                     * @param Definitions 内容智能识别模板唯一标识过滤条件，数组长度限制：50。
+                     * 设置智能审核模板唯一标识过滤条件，数组长度限制：50。
+                     * @param Definitions 智能审核模板唯一标识过滤条件，数组长度限制：50。
                      */
                     void SetDefinitions(const std::vector<int64_t>& _definitions);
 
@@ -96,10 +96,36 @@ namespace TencentCloud
                      */
                     bool LimitHasBeenSet() const;
 
+                    /**
+                     * 获取模板类型过滤条件，不填则返回所有，可选值：
+* Preset：系统预置模板；
+* Custom：用户自定义模板。
+                     * @return Type 模板类型过滤条件，不填则返回所有，可选值：
+* Preset：系统预置模板；
+* Custom：用户自定义模板。
+                     */
+                    std::string GetType() const;
+
+                    /**
+                     * 设置模板类型过滤条件，不填则返回所有，可选值：
+* Preset：系统预置模板；
+* Custom：用户自定义模板。
+                     * @param Type 模板类型过滤条件，不填则返回所有，可选值：
+* Preset：系统预置模板；
+* Custom：用户自定义模板。
+                     */
+                    void SetType(const std::string& _type);
+
+                    /**
+                     * 判断参数 Type 是否已赋值
+                     * @return Type 是否已赋值
+                     */
+                    bool TypeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 内容智能识别模板唯一标识过滤条件，数组长度限制：50。
+                     * 智能审核模板唯一标识过滤条件，数组长度限制：50。
                      */
                     std::vector<int64_t> m_definitions;
                     bool m_definitionsHasBeenSet;
@@ -115,6 +141,14 @@ namespace TencentCloud
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
+
+                    /**
+                     * 模板类型过滤条件，不填则返回所有，可选值：
+* Preset：系统预置模板；
+* Custom：用户自定义模板。
+                     */
+                    std::string m_type;
+                    bool m_typeHasBeenSet;
 
                 };
             }

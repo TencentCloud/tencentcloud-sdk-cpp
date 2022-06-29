@@ -632,6 +632,94 @@ namespace TencentCloud
                      */
                     bool NamespaceNameHasBeenSet() const;
 
+                    /**
+                     * 获取集群状态，0:创建中，1:正常，2:销毁中，3:已删除，4: 隔离中，5:创建失败，6: 删除失败
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Status 集群状态，0:创建中，1:正常，2:销毁中，3:已删除，4: 隔离中，5:创建失败，6: 删除失败
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetStatus() const;
+
+                    /**
+                     * 设置集群状态，0:创建中，1:正常，2:销毁中，3:已删除，4: 隔离中，5:创建失败，6: 删除失败
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Status 集群状态，0:创建中，1:正常，2:销毁中，3:已删除，4: 隔离中，5:创建失败，6: 删除失败
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetStatus(const int64_t& _status);
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     */
+                    bool StatusHasBeenSet() const;
+
+                    /**
+                     * 获取最大未确认消息数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MaxUnackedMsgNum 最大未确认消息数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetMaxUnackedMsgNum() const;
+
+                    /**
+                     * 设置最大未确认消息数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param MaxUnackedMsgNum 最大未确认消息数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMaxUnackedMsgNum(const int64_t& _maxUnackedMsgNum);
+
+                    /**
+                     * 判断参数 MaxUnackedMsgNum 是否已赋值
+                     * @return MaxUnackedMsgNum 是否已赋值
+                     */
+                    bool MaxUnackedMsgNumHasBeenSet() const;
+
+                    /**
+                     * 获取最大消息堆积大小（字节）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MaxMsgBacklogSize 最大消息堆积大小（字节）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetMaxMsgBacklogSize() const;
+
+                    /**
+                     * 设置最大消息堆积大小（字节）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param MaxMsgBacklogSize 最大消息堆积大小（字节）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMaxMsgBacklogSize(const int64_t& _maxMsgBacklogSize);
+
+                    /**
+                     * 判断参数 MaxMsgBacklogSize 是否已赋值
+                     * @return MaxMsgBacklogSize 是否已赋值
+                     */
+                    bool MaxMsgBacklogSizeHasBeenSet() const;
+
+                    /**
+                     * 获取队列可回溯存储空间，取值范围1024MB - 10240MB，0表示不开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RetentionSizeInMB 队列可回溯存储空间，取值范围1024MB - 10240MB，0表示不开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetRetentionSizeInMB() const;
+
+                    /**
+                     * 设置队列可回溯存储空间，取值范围1024MB - 10240MB，0表示不开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RetentionSizeInMB 队列可回溯存储空间，取值范围1024MB - 10240MB，0表示不开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRetentionSizeInMB(const uint64_t& _retentionSizeInMB);
+
+                    /**
+                     * 判断参数 RetentionSizeInMB 是否已赋值
+                     * @return RetentionSizeInMB 是否已赋值
+                     */
+                    bool RetentionSizeInMBHasBeenSet() const;
+
                 private:
 
                     /**
@@ -819,6 +907,34 @@ namespace TencentCloud
                      */
                     std::string m_namespaceName;
                     bool m_namespaceNameHasBeenSet;
+
+                    /**
+                     * 集群状态，0:创建中，1:正常，2:销毁中，3:已删除，4: 隔离中，5:创建失败，6: 删除失败
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_status;
+                    bool m_statusHasBeenSet;
+
+                    /**
+                     * 最大未确认消息数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_maxUnackedMsgNum;
+                    bool m_maxUnackedMsgNumHasBeenSet;
+
+                    /**
+                     * 最大消息堆积大小（字节）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_maxMsgBacklogSize;
+                    bool m_maxMsgBacklogSizeHasBeenSet;
+
+                    /**
+                     * 队列可回溯存储空间，取值范围1024MB - 10240MB，0表示不开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_retentionSizeInMB;
+                    bool m_retentionSizeInMBHasBeenSet;
 
                 };
             }

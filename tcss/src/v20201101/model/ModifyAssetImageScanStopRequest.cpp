@@ -24,7 +24,9 @@ using namespace std;
 
 ModifyAssetImageScanStopRequest::ModifyAssetImageScanStopRequest() :
     m_taskIDHasBeenSet(false),
-    m_imagesHasBeenSet(false)
+    m_imagesHasBeenSet(false),
+    m_filtersHasBeenSet(false),
+    m_excludeImageIdsHasBeenSet(false)
 {
 }
 
@@ -54,6 +56,29 @@ string ModifyAssetImageScanStopRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_filtersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Filters";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_filters.begin(); itr != m_filters.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_excludeImageIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExcludeImageIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_excludeImageIds.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -94,6 +119,38 @@ void ModifyAssetImageScanStopRequest::SetImages(const vector<string>& _images)
 bool ModifyAssetImageScanStopRequest::ImagesHasBeenSet() const
 {
     return m_imagesHasBeenSet;
+}
+
+vector<AssetFilters> ModifyAssetImageScanStopRequest::GetFilters() const
+{
+    return m_filters;
+}
+
+void ModifyAssetImageScanStopRequest::SetFilters(const vector<AssetFilters>& _filters)
+{
+    m_filters = _filters;
+    m_filtersHasBeenSet = true;
+}
+
+bool ModifyAssetImageScanStopRequest::FiltersHasBeenSet() const
+{
+    return m_filtersHasBeenSet;
+}
+
+string ModifyAssetImageScanStopRequest::GetExcludeImageIds() const
+{
+    return m_excludeImageIds;
+}
+
+void ModifyAssetImageScanStopRequest::SetExcludeImageIds(const string& _excludeImageIds)
+{
+    m_excludeImageIds = _excludeImageIds;
+    m_excludeImageIdsHasBeenSet = true;
+}
+
+bool ModifyAssetImageScanStopRequest::ExcludeImageIdsHasBeenSet() const
+{
+    return m_excludeImageIdsHasBeenSet;
 }
 
 

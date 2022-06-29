@@ -24,6 +24,7 @@ using namespace std;
 
 ModifyContentReviewTemplateRequest::ModifyContentReviewTemplateRequest() :
     m_definitionHasBeenSet(false),
+    m_subAppIdHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_commentHasBeenSet(false),
     m_terrorismConfigureHasBeenSet(false),
@@ -32,8 +33,7 @@ ModifyContentReviewTemplateRequest::ModifyContentReviewTemplateRequest() :
     m_prohibitedConfigureHasBeenSet(false),
     m_userDefineConfigureHasBeenSet(false),
     m_screenshotIntervalHasBeenSet(false),
-    m_reviewWallSwitchHasBeenSet(false),
-    m_subAppIdHasBeenSet(false)
+    m_reviewWallSwitchHasBeenSet(false)
 {
 }
 
@@ -50,6 +50,14 @@ string ModifyContentReviewTemplateRequest::ToJsonString() const
         string key = "Definition";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_definition, allocator);
+    }
+
+    if (m_subAppIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubAppId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_subAppId, allocator);
     }
 
     if (m_nameHasBeenSet)
@@ -129,14 +137,6 @@ string ModifyContentReviewTemplateRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_reviewWallSwitch.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_subAppIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SubAppId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_subAppId, allocator);
-    }
-
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -159,6 +159,22 @@ void ModifyContentReviewTemplateRequest::SetDefinition(const int64_t& _definitio
 bool ModifyContentReviewTemplateRequest::DefinitionHasBeenSet() const
 {
     return m_definitionHasBeenSet;
+}
+
+uint64_t ModifyContentReviewTemplateRequest::GetSubAppId() const
+{
+    return m_subAppId;
+}
+
+void ModifyContentReviewTemplateRequest::SetSubAppId(const uint64_t& _subAppId)
+{
+    m_subAppId = _subAppId;
+    m_subAppIdHasBeenSet = true;
+}
+
+bool ModifyContentReviewTemplateRequest::SubAppIdHasBeenSet() const
+{
+    return m_subAppIdHasBeenSet;
 }
 
 string ModifyContentReviewTemplateRequest::GetName() const
@@ -303,22 +319,6 @@ void ModifyContentReviewTemplateRequest::SetReviewWallSwitch(const string& _revi
 bool ModifyContentReviewTemplateRequest::ReviewWallSwitchHasBeenSet() const
 {
     return m_reviewWallSwitchHasBeenSet;
-}
-
-uint64_t ModifyContentReviewTemplateRequest::GetSubAppId() const
-{
-    return m_subAppId;
-}
-
-void ModifyContentReviewTemplateRequest::SetSubAppId(const uint64_t& _subAppId)
-{
-    m_subAppId = _subAppId;
-    m_subAppIdHasBeenSet = true;
-}
-
-bool ModifyContentReviewTemplateRequest::SubAppIdHasBeenSet() const
-{
-    return m_subAppIdHasBeenSet;
 }
 
 

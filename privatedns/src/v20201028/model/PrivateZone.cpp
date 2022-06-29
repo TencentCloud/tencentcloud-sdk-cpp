@@ -32,7 +32,8 @@ PrivateZone::PrivateZone() :
     m_statusHasBeenSet(false),
     m_dnsForwardStatusHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_accountVpcSetHasBeenSet(false)
+    m_accountVpcSetHasBeenSet(false),
+    m_isCustomTldHasBeenSet(false)
 {
 }
 
@@ -191,6 +192,16 @@ CoreInternalOutcome PrivateZone::Deserialize(const rapidjson::Value &value)
         m_accountVpcSetHasBeenSet = true;
     }
 
+    if (value.HasMember("IsCustomTld") && !value["IsCustomTld"].IsNull())
+    {
+        if (!value["IsCustomTld"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `PrivateZone.IsCustomTld` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isCustomTld = value["IsCustomTld"].GetBool();
+        m_isCustomTldHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -313,6 +324,14 @@ void PrivateZone::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_isCustomTldHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsCustomTld";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isCustomTld, allocator);
     }
 
 }
@@ -508,5 +527,21 @@ void PrivateZone::SetAccountVpcSet(const vector<AccountVpcInfoOutput>& _accountV
 bool PrivateZone::AccountVpcSetHasBeenSet() const
 {
     return m_accountVpcSetHasBeenSet;
+}
+
+bool PrivateZone::GetIsCustomTld() const
+{
+    return m_isCustomTld;
+}
+
+void PrivateZone::SetIsCustomTld(const bool& _isCustomTld)
+{
+    m_isCustomTld = _isCustomTld;
+    m_isCustomTldHasBeenSet = true;
+}
+
+bool PrivateZone::IsCustomTldHasBeenSet() const
+{
+    return m_isCustomTldHasBeenSet;
 }
 

@@ -29,6 +29,8 @@
 #include <tencentcloud/cbs/v20170312/model/AttachDisksResponse.h>
 #include <tencentcloud/cbs/v20170312/model/BindAutoSnapshotPolicyRequest.h>
 #include <tencentcloud/cbs/v20170312/model/BindAutoSnapshotPolicyResponse.h>
+#include <tencentcloud/cbs/v20170312/model/CopySnapshotCrossRegionsRequest.h>
+#include <tencentcloud/cbs/v20170312/model/CopySnapshotCrossRegionsResponse.h>
 #include <tencentcloud/cbs/v20170312/model/CreateAutoSnapshotPolicyRequest.h>
 #include <tencentcloud/cbs/v20170312/model/CreateAutoSnapshotPolicyResponse.h>
 #include <tencentcloud/cbs/v20170312/model/CreateDisksRequest.h>
@@ -63,6 +65,8 @@
 #include <tencentcloud/cbs/v20170312/model/DetachDisksResponse.h>
 #include <tencentcloud/cbs/v20170312/model/GetSnapOverviewRequest.h>
 #include <tencentcloud/cbs/v20170312/model/GetSnapOverviewResponse.h>
+#include <tencentcloud/cbs/v20170312/model/InitializeDisksRequest.h>
+#include <tencentcloud/cbs/v20170312/model/InitializeDisksResponse.h>
 #include <tencentcloud/cbs/v20170312/model/InquirePriceModifyDiskExtraPerformanceRequest.h>
 #include <tencentcloud/cbs/v20170312/model/InquirePriceModifyDiskExtraPerformanceResponse.h>
 #include <tencentcloud/cbs/v20170312/model/InquiryPriceCreateDisksRequest.h>
@@ -116,6 +120,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::BindAutoSnapshotPolicyResponse> BindAutoSnapshotPolicyOutcome;
                 typedef std::future<BindAutoSnapshotPolicyOutcome> BindAutoSnapshotPolicyOutcomeCallable;
                 typedef std::function<void(const CbsClient*, const Model::BindAutoSnapshotPolicyRequest&, BindAutoSnapshotPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BindAutoSnapshotPolicyAsyncHandler;
+                typedef Outcome<Core::Error, Model::CopySnapshotCrossRegionsResponse> CopySnapshotCrossRegionsOutcome;
+                typedef std::future<CopySnapshotCrossRegionsOutcome> CopySnapshotCrossRegionsOutcomeCallable;
+                typedef std::function<void(const CbsClient*, const Model::CopySnapshotCrossRegionsRequest&, CopySnapshotCrossRegionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CopySnapshotCrossRegionsAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateAutoSnapshotPolicyResponse> CreateAutoSnapshotPolicyOutcome;
                 typedef std::future<CreateAutoSnapshotPolicyOutcome> CreateAutoSnapshotPolicyOutcomeCallable;
                 typedef std::function<void(const CbsClient*, const Model::CreateAutoSnapshotPolicyRequest&, CreateAutoSnapshotPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAutoSnapshotPolicyAsyncHandler;
@@ -167,6 +174,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetSnapOverviewResponse> GetSnapOverviewOutcome;
                 typedef std::future<GetSnapOverviewOutcome> GetSnapOverviewOutcomeCallable;
                 typedef std::function<void(const CbsClient*, const Model::GetSnapOverviewRequest&, GetSnapOverviewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetSnapOverviewAsyncHandler;
+                typedef Outcome<Core::Error, Model::InitializeDisksResponse> InitializeDisksOutcome;
+                typedef std::future<InitializeDisksOutcome> InitializeDisksOutcomeCallable;
+                typedef std::function<void(const CbsClient*, const Model::InitializeDisksRequest&, InitializeDisksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InitializeDisksAsyncHandler;
                 typedef Outcome<Core::Error, Model::InquirePriceModifyDiskExtraPerformanceResponse> InquirePriceModifyDiskExtraPerformanceOutcome;
                 typedef std::future<InquirePriceModifyDiskExtraPerformanceOutcome> InquirePriceModifyDiskExtraPerformanceOutcomeCallable;
                 typedef std::function<void(const CbsClient*, const Model::InquirePriceModifyDiskExtraPerformanceRequest&, InquirePriceModifyDiskExtraPerformanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InquirePriceModifyDiskExtraPerformanceAsyncHandler;
@@ -253,6 +263,18 @@ namespace TencentCloud
                 BindAutoSnapshotPolicyOutcomeCallable BindAutoSnapshotPolicyCallable(const Model::BindAutoSnapshotPolicyRequest& request);
 
                 /**
+                 *本接口（CopySnapshotCrossRegions）用于快照跨地域复制。
+
+* 本接口为异步接口，当跨地域复制的请求下发成功后会返回一个新的快照ID，此时快照未立即复制到目标地域，可请求目标地域的[DescribeSnapshots](/document/product/362/15647)接口查询新快照的状态，判断是否复制完成。如果快照的状态为“NORMAL”，表示快照复制完成。
+* 本接口实现的快照跨地域复制操作将产生跨地域流量，预计2022年第三季度会针对此功能进行商业化计费；请留意后续站内信公告，避免产生预期外扣费。
+                 * @param req CopySnapshotCrossRegionsRequest
+                 * @return CopySnapshotCrossRegionsOutcome
+                 */
+                CopySnapshotCrossRegionsOutcome CopySnapshotCrossRegions(const Model::CopySnapshotCrossRegionsRequest &request);
+                void CopySnapshotCrossRegionsAsync(const Model::CopySnapshotCrossRegionsRequest& request, const CopySnapshotCrossRegionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CopySnapshotCrossRegionsOutcomeCallable CopySnapshotCrossRegionsCallable(const Model::CopySnapshotCrossRegionsRequest& request);
+
+                /**
                  *本接口（CreateAutoSnapshotPolicy）用于创建定期快照策略。
 
 * 每个地域可创建的定期快照策略数量限制请参考文档[定期快照](/document/product/362/8191)。
@@ -282,6 +304,7 @@ namespace TencentCloud
 
 * 只有具有快照能力的云硬盘才能创建快照。云硬盘是否具有快照能力可由[DescribeDisks](/document/product/362/16315)接口查询，见SnapshotAbility字段。
 * 可创建快照数量限制见[产品使用限制](https://cloud.tencent.com/doc/product/362/5145)。
+* 当前支持将备份点转化为普通快照，转化之后可能会收取快照使用费用，备份点不保留，其占用的备份点配额也将被释放。
                  * @param req CreateSnapshotRequest
                  * @return CreateSnapshotOutcome
                  */
@@ -355,7 +378,7 @@ namespace TencentCloud
                 /**
                  *本接口（DescribeDiskStoragePool）查询用户的云硬盘独享集群列表。
 
-* 可以根据独享集群ID(CdcId)、集群区域名(zone)类型等信息来查询和过滤云硬盘独享集群详细信息，不同条件之间为与(AND)的关系，过滤信息详细请见过滤器`Filter`。
+* 可以根据独享集群ID(CdcId)、可用区(zone)等信息来查询和过滤云硬盘独享集群详细信息，不同的过滤条件之间为与(AND)的关系，过滤信息详细请见过滤器`Filter`。
 * 如果参数为空，返回当前用户一定数量（`Limit`所指定的数量，默认为20）的云硬盘独享集群列表。
                  * @param req DescribeDiskStoragePoolRequest
                  * @return DescribeDiskStoragePoolOutcome
@@ -440,6 +463,19 @@ namespace TencentCloud
                 GetSnapOverviewOutcome GetSnapOverview(const Model::GetSnapOverviewRequest &request);
                 void GetSnapOverviewAsync(const Model::GetSnapOverviewRequest& request, const GetSnapOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GetSnapOverviewOutcomeCallable GetSnapOverviewCallable(const Model::GetSnapOverviewRequest& request);
+
+                /**
+                 *重新初始化云硬盘至云硬盘初始创建时的状态。使用云硬盘的重新初始化功能时需要注意以下4点：
+1. 如果云硬盘是由快照创建的，则重新初始化会通过此快照重新回滚此云硬盘，即将云硬盘恢复为与快照一致的状态；
+2. 如果云硬盘不是通过快照创建的，则重新初始化会清空此云硬盘的数据；请在重新初始化云硬盘前检查并备份必要的数据；
+3. 当前仅未挂载的、非共享属性的数据盘云硬盘支持重新初始化；
+4. 当创建此云硬盘的原始快照被删除时，不再支持重新初始化此云硬盘。
+                 * @param req InitializeDisksRequest
+                 * @return InitializeDisksOutcome
+                 */
+                InitializeDisksOutcome InitializeDisks(const Model::InitializeDisksRequest &request);
+                void InitializeDisksAsync(const Model::InitializeDisksRequest& request, const InitializeDisksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                InitializeDisksOutcomeCallable InitializeDisksCallable(const Model::InitializeDisksRequest& request);
 
                 /**
                  *本接口（InquirePriceModifyDiskExtraPerformance）用于调整云硬盘额外性能询价。

@@ -28,7 +28,8 @@ AuditPolicy::AuditPolicy() :
     m_modifyTimeHasBeenSet(false),
     m_policyNameHasBeenSet(false),
     m_ruleIdHasBeenSet(false),
-    m_ruleNameHasBeenSet(false)
+    m_ruleNameHasBeenSet(false),
+    m_instanceNameHasBeenSet(false)
 {
 }
 
@@ -117,6 +118,16 @@ CoreInternalOutcome AuditPolicy::Deserialize(const rapidjson::Value &value)
         m_ruleNameHasBeenSet = true;
     }
 
+    if (value.HasMember("InstanceName") && !value["InstanceName"].IsNull())
+    {
+        if (!value["InstanceName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AuditPolicy.InstanceName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceName = string(value["InstanceName"].GetString());
+        m_instanceNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -186,6 +197,14 @@ void AuditPolicy::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "RuleName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_ruleName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -317,5 +336,21 @@ void AuditPolicy::SetRuleName(const string& _ruleName)
 bool AuditPolicy::RuleNameHasBeenSet() const
 {
     return m_ruleNameHasBeenSet;
+}
+
+string AuditPolicy::GetInstanceName() const
+{
+    return m_instanceName;
+}
+
+void AuditPolicy::SetInstanceName(const string& _instanceName)
+{
+    m_instanceName = _instanceName;
+    m_instanceNameHasBeenSet = true;
+}
+
+bool AuditPolicy::InstanceNameHasBeenSet() const
+{
+    return m_instanceNameHasBeenSet;
 }
 

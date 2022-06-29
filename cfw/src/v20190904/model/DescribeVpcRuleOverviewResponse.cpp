@@ -25,7 +25,8 @@ using namespace std;
 
 DescribeVpcRuleOverviewResponse::DescribeVpcRuleOverviewResponse() :
     m_strategyNumHasBeenSet(false),
-    m_startRuleNumHasBeenSet(false)
+    m_startRuleNumHasBeenSet(false),
+    m_totalHasBeenSet(false)
 {
 }
 
@@ -83,6 +84,16 @@ CoreInternalOutcome DescribeVpcRuleOverviewResponse::Deserialize(const string &p
         m_startRuleNumHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Total") && !rsp["Total"].IsNull())
+    {
+        if (!rsp["Total"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Total` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_total = rsp["Total"].GetUint64();
+        m_totalHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -107,6 +118,14 @@ string DescribeVpcRuleOverviewResponse::ToJsonString() const
         string key = "StartRuleNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_startRuleNum, allocator);
+    }
+
+    if (m_totalHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Total";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_total, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -139,6 +158,16 @@ uint64_t DescribeVpcRuleOverviewResponse::GetStartRuleNum() const
 bool DescribeVpcRuleOverviewResponse::StartRuleNumHasBeenSet() const
 {
     return m_startRuleNumHasBeenSet;
+}
+
+uint64_t DescribeVpcRuleOverviewResponse::GetTotal() const
+{
+    return m_total;
+}
+
+bool DescribeVpcRuleOverviewResponse::TotalHasBeenSet() const
+{
+    return m_totalHasBeenSet;
 }
 
 

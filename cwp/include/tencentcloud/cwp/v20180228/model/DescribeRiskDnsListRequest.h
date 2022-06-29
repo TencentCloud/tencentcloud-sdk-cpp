@@ -136,14 +136,14 @@ namespace TencentCloud
                     bool OrderHasBeenSet() const;
 
                     /**
-                     * 获取排序字段：AccessCount-请求次数
-                     * @return By 排序字段：AccessCount-请求次数
+                     * 获取排序字段：AccessCount-请求次数。MergeTime-最近请求时间
+                     * @return By 排序字段：AccessCount-请求次数。MergeTime-最近请求时间
                      */
                     std::string GetBy() const;
 
                     /**
-                     * 设置排序字段：AccessCount-请求次数
-                     * @param By 排序字段：AccessCount-请求次数
+                     * 设置排序字段：AccessCount-请求次数。MergeTime-最近请求时间
+                     * @param By 排序字段：AccessCount-请求次数。MergeTime-最近请求时间
                      */
                     void SetBy(const std::string& _by);
 
@@ -185,7 +185,7 @@ namespace TencentCloud
                     bool m_orderHasBeenSet;
 
                     /**
-                     * 排序字段：AccessCount-请求次数
+                     * 排序字段：AccessCount-请求次数。MergeTime-最近请求时间
                      */
                     std::string m_by;
                     bool m_byHasBeenSet;

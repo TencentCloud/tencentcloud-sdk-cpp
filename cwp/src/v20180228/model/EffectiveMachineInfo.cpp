@@ -28,7 +28,8 @@ EffectiveMachineInfo::EffectiveMachineInfo() :
     m_quuidHasBeenSet(false),
     m_uuidHasBeenSet(false),
     m_kernelVersionHasBeenSet(false),
-    m_machineStatusHasBeenSet(false)
+    m_machineStatusHasBeenSet(false),
+    m_licenseOrderHasBeenSet(false)
 {
 }
 
@@ -127,6 +128,23 @@ CoreInternalOutcome EffectiveMachineInfo::Deserialize(const rapidjson::Value &va
         m_machineStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("LicenseOrder") && !value["LicenseOrder"].IsNull())
+    {
+        if (!value["LicenseOrder"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `EffectiveMachineInfo.LicenseOrder` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_licenseOrder.Deserialize(value["LicenseOrder"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_licenseOrderHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -203,6 +221,15 @@ void EffectiveMachineInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "MachineStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_machineStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_licenseOrderHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LicenseOrder";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_licenseOrder.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -334,5 +361,21 @@ void EffectiveMachineInfo::SetMachineStatus(const string& _machineStatus)
 bool EffectiveMachineInfo::MachineStatusHasBeenSet() const
 {
     return m_machineStatusHasBeenSet;
+}
+
+LicenseOrder EffectiveMachineInfo::GetLicenseOrder() const
+{
+    return m_licenseOrder;
+}
+
+void EffectiveMachineInfo::SetLicenseOrder(const LicenseOrder& _licenseOrder)
+{
+    m_licenseOrder = _licenseOrder;
+    m_licenseOrderHasBeenSet = true;
+}
+
+bool EffectiveMachineInfo::LicenseOrderHasBeenSet() const
+{
+    return m_licenseOrderHasBeenSet;
 }
 

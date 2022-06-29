@@ -69,17 +69,17 @@ namespace TencentCloud
                     bool SignUrlHasBeenSet() const;
 
                     /**
-                     * 获取链接失效时间
+                     * 获取链接失效时间,默认30分钟
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Deadline 链接失效时间
+                     * @return Deadline 链接失效时间,默认30分钟
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetDeadline() const;
 
                     /**
-                     * 设置链接失效时间
+                     * 设置链接失效时间,默认30分钟
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Deadline 链接失效时间
+                     * @param Deadline 链接失效时间,默认30分钟
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetDeadline(const int64_t& _deadline);
@@ -328,7 +328,7 @@ PERSON 自然人
                     bool m_signUrlHasBeenSet;
 
                     /**
-                     * 链接失效时间
+                     * 链接失效时间,默认30分钟
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_deadline;

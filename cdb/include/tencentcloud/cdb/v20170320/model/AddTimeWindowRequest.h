@@ -186,6 +186,24 @@ namespace TencentCloud
                      */
                     bool SundayHasBeenSet() const;
 
+                    /**
+                     * 获取最大延迟阈值，仅对主实例和灾备实例有效
+                     * @return MaxDelayTime 最大延迟阈值，仅对主实例和灾备实例有效
+                     */
+                    uint64_t GetMaxDelayTime() const;
+
+                    /**
+                     * 设置最大延迟阈值，仅对主实例和灾备实例有效
+                     * @param MaxDelayTime 最大延迟阈值，仅对主实例和灾备实例有效
+                     */
+                    void SetMaxDelayTime(const uint64_t& _maxDelayTime);
+
+                    /**
+                     * 判断参数 MaxDelayTime 是否已赋值
+                     * @return MaxDelayTime 是否已赋值
+                     */
+                    bool MaxDelayTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -235,6 +253,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_sunday;
                     bool m_sundayHasBeenSet;
+
+                    /**
+                     * 最大延迟阈值，仅对主实例和灾备实例有效
+                     */
+                    uint64_t m_maxDelayTime;
+                    bool m_maxDelayTimeHasBeenSet;
 
                 };
             }

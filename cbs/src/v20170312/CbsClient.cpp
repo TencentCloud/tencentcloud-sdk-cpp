@@ -169,6 +169,49 @@ CbsClient::BindAutoSnapshotPolicyOutcomeCallable CbsClient::BindAutoSnapshotPoli
     return task->get_future();
 }
 
+CbsClient::CopySnapshotCrossRegionsOutcome CbsClient::CopySnapshotCrossRegions(const CopySnapshotCrossRegionsRequest &request)
+{
+    auto outcome = MakeRequest(request, "CopySnapshotCrossRegions");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CopySnapshotCrossRegionsResponse rsp = CopySnapshotCrossRegionsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CopySnapshotCrossRegionsOutcome(rsp);
+        else
+            return CopySnapshotCrossRegionsOutcome(o.GetError());
+    }
+    else
+    {
+        return CopySnapshotCrossRegionsOutcome(outcome.GetError());
+    }
+}
+
+void CbsClient::CopySnapshotCrossRegionsAsync(const CopySnapshotCrossRegionsRequest& request, const CopySnapshotCrossRegionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CopySnapshotCrossRegions(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CbsClient::CopySnapshotCrossRegionsOutcomeCallable CbsClient::CopySnapshotCrossRegionsCallable(const CopySnapshotCrossRegionsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CopySnapshotCrossRegionsOutcome()>>(
+        [this, request]()
+        {
+            return this->CopySnapshotCrossRegions(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CbsClient::CreateAutoSnapshotPolicyOutcome CbsClient::CreateAutoSnapshotPolicy(const CreateAutoSnapshotPolicyRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateAutoSnapshotPolicy");
@@ -893,6 +936,49 @@ CbsClient::GetSnapOverviewOutcomeCallable CbsClient::GetSnapOverviewCallable(con
         [this, request]()
         {
             return this->GetSnapOverview(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CbsClient::InitializeDisksOutcome CbsClient::InitializeDisks(const InitializeDisksRequest &request)
+{
+    auto outcome = MakeRequest(request, "InitializeDisks");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        InitializeDisksResponse rsp = InitializeDisksResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return InitializeDisksOutcome(rsp);
+        else
+            return InitializeDisksOutcome(o.GetError());
+    }
+    else
+    {
+        return InitializeDisksOutcome(outcome.GetError());
+    }
+}
+
+void CbsClient::InitializeDisksAsync(const InitializeDisksRequest& request, const InitializeDisksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->InitializeDisks(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CbsClient::InitializeDisksOutcomeCallable CbsClient::InitializeDisksCallable(const InitializeDisksRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<InitializeDisksOutcome()>>(
+        [this, request]()
+        {
+            return this->InitializeDisks(request);
         }
     );
 

@@ -384,6 +384,49 @@ TemClient::DescribeApplicationPodsOutcomeCallable TemClient::DescribeApplication
     return task->get_future();
 }
 
+TemClient::DescribeApplicationsStatusOutcome TemClient::DescribeApplicationsStatus(const DescribeApplicationsStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeApplicationsStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeApplicationsStatusResponse rsp = DescribeApplicationsStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeApplicationsStatusOutcome(rsp);
+        else
+            return DescribeApplicationsStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeApplicationsStatusOutcome(outcome.GetError());
+    }
+}
+
+void TemClient::DescribeApplicationsStatusAsync(const DescribeApplicationsStatusRequest& request, const DescribeApplicationsStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeApplicationsStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TemClient::DescribeApplicationsStatusOutcomeCallable TemClient::DescribeApplicationsStatusCallable(const DescribeApplicationsStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeApplicationsStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeApplicationsStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TemClient::DescribeDeployApplicationDetailOutcome TemClient::DescribeDeployApplicationDetail(const DescribeDeployApplicationDetailRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDeployApplicationDetail");

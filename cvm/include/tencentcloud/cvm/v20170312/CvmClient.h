@@ -105,6 +105,8 @@
 #include <tencentcloud/cvm/v20170312/model/DisassociateInstancesKeyPairsResponse.h>
 #include <tencentcloud/cvm/v20170312/model/DisassociateSecurityGroupsRequest.h>
 #include <tencentcloud/cvm/v20170312/model/DisassociateSecurityGroupsResponse.h>
+#include <tencentcloud/cvm/v20170312/model/ExportImagesRequest.h>
+#include <tencentcloud/cvm/v20170312/model/ExportImagesResponse.h>
 #include <tencentcloud/cvm/v20170312/model/ImportImageRequest.h>
 #include <tencentcloud/cvm/v20170312/model/ImportImageResponse.h>
 #include <tencentcloud/cvm/v20170312/model/ImportKeyPairRequest.h>
@@ -151,6 +153,8 @@
 #include <tencentcloud/cvm/v20170312/model/ModifyKeyPairAttributeResponse.h>
 #include <tencentcloud/cvm/v20170312/model/ModifyLaunchTemplateDefaultVersionRequest.h>
 #include <tencentcloud/cvm/v20170312/model/ModifyLaunchTemplateDefaultVersionResponse.h>
+#include <tencentcloud/cvm/v20170312/model/ProgramFpgaImageRequest.h>
+#include <tencentcloud/cvm/v20170312/model/ProgramFpgaImageResponse.h>
 #include <tencentcloud/cvm/v20170312/model/PurchaseReservedInstancesOfferingRequest.h>
 #include <tencentcloud/cvm/v20170312/model/PurchaseReservedInstancesOfferingResponse.h>
 #include <tencentcloud/cvm/v20170312/model/RebootInstancesRequest.h>
@@ -316,6 +320,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DisassociateSecurityGroupsResponse> DisassociateSecurityGroupsOutcome;
                 typedef std::future<DisassociateSecurityGroupsOutcome> DisassociateSecurityGroupsOutcomeCallable;
                 typedef std::function<void(const CvmClient*, const Model::DisassociateSecurityGroupsRequest&, DisassociateSecurityGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisassociateSecurityGroupsAsyncHandler;
+                typedef Outcome<Core::Error, Model::ExportImagesResponse> ExportImagesOutcome;
+                typedef std::future<ExportImagesOutcome> ExportImagesOutcomeCallable;
+                typedef std::function<void(const CvmClient*, const Model::ExportImagesRequest&, ExportImagesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExportImagesAsyncHandler;
                 typedef Outcome<Core::Error, Model::ImportImageResponse> ImportImageOutcome;
                 typedef std::future<ImportImageOutcome> ImportImageOutcomeCallable;
                 typedef std::function<void(const CvmClient*, const Model::ImportImageRequest&, ImportImageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ImportImageAsyncHandler;
@@ -385,6 +392,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyLaunchTemplateDefaultVersionResponse> ModifyLaunchTemplateDefaultVersionOutcome;
                 typedef std::future<ModifyLaunchTemplateDefaultVersionOutcome> ModifyLaunchTemplateDefaultVersionOutcomeCallable;
                 typedef std::function<void(const CvmClient*, const Model::ModifyLaunchTemplateDefaultVersionRequest&, ModifyLaunchTemplateDefaultVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLaunchTemplateDefaultVersionAsyncHandler;
+                typedef Outcome<Core::Error, Model::ProgramFpgaImageResponse> ProgramFpgaImageOutcome;
+                typedef std::future<ProgramFpgaImageOutcome> ProgramFpgaImageOutcomeCallable;
+                typedef std::function<void(const CvmClient*, const Model::ProgramFpgaImageRequest&, ProgramFpgaImageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ProgramFpgaImageAsyncHandler;
                 typedef Outcome<Core::Error, Model::PurchaseReservedInstancesOfferingResponse> PurchaseReservedInstancesOfferingOutcome;
                 typedef std::future<PurchaseReservedInstancesOfferingOutcome> PurchaseReservedInstancesOfferingOutcomeCallable;
                 typedef std::function<void(const CvmClient*, const Model::PurchaseReservedInstancesOfferingRequest&, PurchaseReservedInstancesOfferingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PurchaseReservedInstancesOfferingAsyncHandler;
@@ -685,7 +695,7 @@ namespace TencentCloud
 * 管理终端地址的有效期为 15 秒，调用接口成功后如果 15 秒内不使用该链接进行访问，管理终端地址自动失效，您需要重新查询。
 * 管理终端地址一旦被访问，将自动失效，您需要重新查询。
 * 如果连接断开，每分钟内重新连接的次数不能超过 30 次。
-* 获取到 `InstanceVncUrl` 后，您需要在链接 <https://img.qcloud.com/qcloud/app/active_vnc/index.html?> 末尾加上参数 `InstanceVncUrl=xxxx`  。
+获取到 `InstanceVncUrl` 后，您需要在链接 `https://img.qcloud.com/qcloud/app/active_vnc/index.html?` 末尾加上参数 `InstanceVncUrl=xxxx`。
 
   - 参数 `InstanceVncUrl` ：调用接口成功后会返回的 `InstanceVncUrl` 的值。
 
@@ -862,6 +872,15 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
                 DisassociateSecurityGroupsOutcome DisassociateSecurityGroups(const Model::DisassociateSecurityGroupsRequest &request);
                 void DisassociateSecurityGroupsAsync(const Model::DisassociateSecurityGroupsRequest& request, const DisassociateSecurityGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DisassociateSecurityGroupsOutcomeCallable DisassociateSecurityGroupsCallable(const Model::DisassociateSecurityGroupsRequest& request);
+
+                /**
+                 *提供导出自定义镜像到指定COS存储桶的能力
+                 * @param req ExportImagesRequest
+                 * @return ExportImagesOutcome
+                 */
+                ExportImagesOutcome ExportImages(const Model::ExportImagesRequest &request);
+                void ExportImagesAsync(const Model::ExportImagesRequest& request, const ExportImagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ExportImagesOutcomeCallable ExportImagesCallable(const Model::ExportImagesRequest& request);
 
                 /**
                  *本接口(ImportImage)用于导入镜像，导入后的镜像可用于创建实例。目前支持 RAW、VHD、QCOW2、VMDK 镜像格式。
@@ -1141,6 +1160,17 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
                 ModifyLaunchTemplateDefaultVersionOutcomeCallable ModifyLaunchTemplateDefaultVersionCallable(const Model::ModifyLaunchTemplateDefaultVersionRequest& request);
 
                 /**
+                 *本接口(ProgramFpgaImage)用于在线烧录由客户提供的FPGA镜像文件到指定实例的指定FPGA卡上。
+* 只支持对单个实例发起在线烧录FPGA镜像的操作。
+* 支持对单个实例的多块FPGA卡同时烧录FPGA镜像，DBDFs参数为空时，默认对指定实例的所有FPGA卡进行烧录。
+                 * @param req ProgramFpgaImageRequest
+                 * @return ProgramFpgaImageOutcome
+                 */
+                ProgramFpgaImageOutcome ProgramFpgaImage(const Model::ProgramFpgaImageRequest &request);
+                void ProgramFpgaImageAsync(const Model::ProgramFpgaImageRequest& request, const ProgramFpgaImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ProgramFpgaImageOutcomeCallable ProgramFpgaImageCallable(const Model::ProgramFpgaImageRequest& request);
+
+                /**
                  *本接口(PurchaseReservedInstancesOffering)用于用户购买一个或者多个指定配置的预留实例
                  * @param req PurchaseReservedInstancesOfferingRequest
                  * @return PurchaseReservedInstancesOfferingOutcome
@@ -1253,10 +1283,11 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
                 /**
                  *本接口 (ResizeInstanceDisks) 用于扩容实例的数据盘。
 
-* 目前只支持扩容非弹性数据盘（[`DescribeDisks`](https://cloud.tencent.com/document/api/362/16315)接口返回值中的`Portable`为`false`表示非弹性），且[数据盘类型](https://cloud.tencent.com/document/api/213/15753#DataDisk)为：`CLOUD_BASIC`、`CLOUD_PREMIUM`、`CLOUD_SSD`和[CDH](https://cloud.tencent.com/document/product/416)实例的`LOCAL_BASIC`、`LOCAL_SSD`类型数据盘。
+* 目前只支持扩容非弹性盘（[`DescribeDisks`](https://cloud.tencent.com/document/api/362/16315)接口返回值中的`Portable`为`false`表示非弹性），且[数据盘类型](https://cloud.tencent.com/document/api/213/15753#DataDisk)为：`CLOUD_BASIC`、`CLOUD_PREMIUM`、`CLOUD_SSD`和[CDH](https://cloud.tencent.com/document/product/416)实例的`LOCAL_BASIC`、`LOCAL_SSD`类型数据盘。
 * 对于包年包月实例，使用该接口会涉及扣费，请确保账户余额充足。可通过[`DescribeAccountBalance`](https://cloud.tencent.com/document/product/555/20253)接口查询账户余额。
 * 目前只支持扩容一块数据盘。
 * 实例操作结果可以通过调用 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728#.E7.A4.BA.E4.BE.8B3-.E6.9F.A5.E8.AF.A2.E5.AE.9E.E4.BE.8B.E7.9A.84.E6.9C.80.E6.96.B0.E6.93.8D.E4.BD.9C.E6.83.85.E5.86.B5) 接口查询，如果实例的最新操作状态(LatestOperationState)为“SUCCESS”，则代表操作成功。
+* 如果是系统盘，目前只支持扩容，不支持缩容。
                  * @param req ResizeInstanceDisksRequest
                  * @return ResizeInstanceDisksOutcome
                  */

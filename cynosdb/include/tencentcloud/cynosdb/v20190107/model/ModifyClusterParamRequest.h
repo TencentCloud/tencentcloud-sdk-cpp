@@ -62,14 +62,14 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取修改参数列表
-                     * @return ParamList 修改参数列表
+                     * 获取要修改的参数列表。每一个元素是ParamName、CurrentValue和OldValue的组合。ParamName是参数名称，CurrentValue是当前值，OldValue是之前值
+                     * @return ParamList 要修改的参数列表。每一个元素是ParamName、CurrentValue和OldValue的组合。ParamName是参数名称，CurrentValue是当前值，OldValue是之前值
                      */
                     std::vector<ParamItem> GetParamList() const;
 
                     /**
-                     * 设置修改参数列表
-                     * @param ParamList 修改参数列表
+                     * 设置要修改的参数列表。每一个元素是ParamName、CurrentValue和OldValue的组合。ParamName是参数名称，CurrentValue是当前值，OldValue是之前值
+                     * @param ParamList 要修改的参数列表。每一个元素是ParamName、CurrentValue和OldValue的组合。ParamName是参数名称，CurrentValue是当前值，OldValue是之前值
                      */
                     void SetParamList(const std::vector<ParamItem>& _paramList);
 
@@ -78,6 +78,24 @@ namespace TencentCloud
                      * @return ParamList 是否已赋值
                      */
                     bool ParamListHasBeenSet() const;
+
+                    /**
+                     * 获取维护期间执行-yes,立即执行-no
+                     * @return IsInMaintainPeriod 维护期间执行-yes,立即执行-no
+                     */
+                    std::string GetIsInMaintainPeriod() const;
+
+                    /**
+                     * 设置维护期间执行-yes,立即执行-no
+                     * @param IsInMaintainPeriod 维护期间执行-yes,立即执行-no
+                     */
+                    void SetIsInMaintainPeriod(const std::string& _isInMaintainPeriod);
+
+                    /**
+                     * 判断参数 IsInMaintainPeriod 是否已赋值
+                     * @return IsInMaintainPeriod 是否已赋值
+                     */
+                    bool IsInMaintainPeriodHasBeenSet() const;
 
                 private:
 
@@ -88,10 +106,16 @@ namespace TencentCloud
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * 修改参数列表
+                     * 要修改的参数列表。每一个元素是ParamName、CurrentValue和OldValue的组合。ParamName是参数名称，CurrentValue是当前值，OldValue是之前值
                      */
                     std::vector<ParamItem> m_paramList;
                     bool m_paramListHasBeenSet;
+
+                    /**
+                     * 维护期间执行-yes,立即执行-no
+                     */
+                    std::string m_isInMaintainPeriod;
+                    bool m_isInMaintainPeriodHasBeenSet;
 
                 };
             }

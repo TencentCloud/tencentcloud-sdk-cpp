@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取收单系统分配的开放ID
-                     * @return OpenId 收单系统分配的开放ID
+                     * 获取使用门店OpenId
+                     * @return OpenId 使用门店OpenId
                      */
                     std::string GetOpenId() const;
 
                     /**
-                     * 设置收单系统分配的开放ID
-                     * @param OpenId 收单系统分配的开放ID
+                     * 设置使用门店OpenId
+                     * @param OpenId 使用门店OpenId
                      */
                     void SetOpenId(const std::string& _openId);
 
@@ -59,6 +59,24 @@ namespace TencentCloud
                      * @return OpenId 是否已赋值
                      */
                     bool OpenIdHasBeenSet() const;
+
+                    /**
+                     * 获取使用门店OpenKey
+                     * @return OpenKey 使用门店OpenKey
+                     */
+                    std::string GetOpenKey() const;
+
+                    /**
+                     * 设置使用门店OpenKey
+                     * @param OpenKey 使用门店OpenKey
+                     */
+                    void SetOpenKey(const std::string& _openKey);
+
+                    /**
+                     * 判断参数 OpenKey 是否已赋值
+                     * @return OpenKey 是否已赋值
+                     */
+                    bool OpenKeyHasBeenSet() const;
 
                     /**
                      * 获取验证方式，传1手机验证(验证码时效60S)传2结算卡验证(时效6小时)，多种方式用逗号隔开
@@ -77,42 +95,6 @@ namespace TencentCloud
                      * @return AuthType 是否已赋值
                      */
                     bool AuthTypeHasBeenSet() const;
-
-                    /**
-                     * 获取收单系统分配的密钥
-                     * @return OpenKey 收单系统分配的密钥
-                     */
-                    std::string GetOpenKey() const;
-
-                    /**
-                     * 设置收单系统分配的密钥
-                     * @param OpenKey 收单系统分配的密钥
-                     */
-                    void SetOpenKey(const std::string& _openKey);
-
-                    /**
-                     * 判断参数 OpenKey 是否已赋值
-                     * @return OpenKey 是否已赋值
-                     */
-                    bool OpenKeyHasBeenSet() const;
-
-                    /**
-                     * 获取沙箱环境填sandbox，正式环境不填
-                     * @return Profile 沙箱环境填sandbox，正式环境不填
-                     */
-                    std::string GetProfile() const;
-
-                    /**
-                     * 设置沙箱环境填sandbox，正式环境不填
-                     * @param Profile 沙箱环境填sandbox，正式环境不填
-                     */
-                    void SetProfile(const std::string& _profile);
-
-                    /**
-                     * 判断参数 Profile 是否已赋值
-                     * @return Profile 是否已赋值
-                     */
-                    bool ProfileHasBeenSet() const;
 
                     /**
                      * 获取分账比例（500=5%）不传默认百分之10
@@ -150,31 +132,43 @@ namespace TencentCloud
                      */
                     bool FullNameHasBeenSet() const;
 
+                    /**
+                     * 获取沙箱环境填sandbox，正式环境不填
+                     * @return Profile 沙箱环境填sandbox，正式环境不填
+                     */
+                    std::string GetProfile() const;
+
+                    /**
+                     * 设置沙箱环境填sandbox，正式环境不填
+                     * @param Profile 沙箱环境填sandbox，正式环境不填
+                     */
+                    void SetProfile(const std::string& _profile);
+
+                    /**
+                     * 判断参数 Profile 是否已赋值
+                     * @return Profile 是否已赋值
+                     */
+                    bool ProfileHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 收单系统分配的开放ID
+                     * 使用门店OpenId
                      */
                     std::string m_openId;
                     bool m_openIdHasBeenSet;
+
+                    /**
+                     * 使用门店OpenKey
+                     */
+                    std::string m_openKey;
+                    bool m_openKeyHasBeenSet;
 
                     /**
                      * 验证方式，传1手机验证(验证码时效60S)传2结算卡验证(时效6小时)，多种方式用逗号隔开
                      */
                     std::string m_authType;
                     bool m_authTypeHasBeenSet;
-
-                    /**
-                     * 收单系统分配的密钥
-                     */
-                    std::string m_openKey;
-                    bool m_openKeyHasBeenSet;
-
-                    /**
-                     * 沙箱环境填sandbox，正式环境不填
-                     */
-                    std::string m_profile;
-                    bool m_profileHasBeenSet;
 
                     /**
                      * 分账比例（500=5%）不传默认百分之10
@@ -187,6 +181,12 @@ namespace TencentCloud
                      */
                     std::string m_fullName;
                     bool m_fullNameHasBeenSet;
+
+                    /**
+                     * 沙箱环境填sandbox，正式环境不填
+                     */
+                    std::string m_profile;
+                    bool m_profileHasBeenSet;
 
                 };
             }

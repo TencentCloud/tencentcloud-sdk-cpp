@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取业务系统返回码
-                     * @return ErrCode 业务系统返回码
+                     * 获取业务系统返回码，0表示成功，其他表示失败。
+                     * @return ErrCode 业务系统返回码，0表示成功，其他表示失败。
                      */
                     std::string GetErrCode() const;
 
@@ -87,7 +87,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 业务系统返回码
+                     * 业务系统返回码，0表示成功，其他表示失败。
                      */
                     std::string m_errCode;
                     bool m_errCodeHasBeenSet;

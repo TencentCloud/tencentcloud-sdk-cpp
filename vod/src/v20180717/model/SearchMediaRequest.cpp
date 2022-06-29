@@ -23,6 +23,7 @@ using namespace TencentCloud::Vod::V20180717::Model;
 using namespace std;
 
 SearchMediaRequest::SearchMediaRequest() :
+    m_subAppIdHasBeenSet(false),
     m_fileIdsHasBeenSet(false),
     m_namesHasBeenSet(false),
     m_namePrefixesHasBeenSet(false),
@@ -40,7 +41,6 @@ SearchMediaRequest::SearchMediaRequest() :
     m_limitHasBeenSet(false),
     m_filtersHasBeenSet(false),
     m_storageRegionsHasBeenSet(false),
-    m_subAppIdHasBeenSet(false),
     m_storageClassesHasBeenSet(false),
     m_textHasBeenSet(false),
     m_sourceTypeHasBeenSet(false),
@@ -57,6 +57,14 @@ string SearchMediaRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
+
+    if (m_subAppIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubAppId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_subAppId, allocator);
+    }
 
     if (m_fileIdsHasBeenSet)
     {
@@ -257,14 +265,6 @@ string SearchMediaRequest::ToJsonString() const
         }
     }
 
-    if (m_subAppIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SubAppId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_subAppId, allocator);
-    }
-
     if (m_storageClassesHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -333,6 +333,22 @@ string SearchMediaRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+uint64_t SearchMediaRequest::GetSubAppId() const
+{
+    return m_subAppId;
+}
+
+void SearchMediaRequest::SetSubAppId(const uint64_t& _subAppId)
+{
+    m_subAppId = _subAppId;
+    m_subAppIdHasBeenSet = true;
+}
+
+bool SearchMediaRequest::SubAppIdHasBeenSet() const
+{
+    return m_subAppIdHasBeenSet;
+}
 
 vector<string> SearchMediaRequest::GetFileIds() const
 {
@@ -604,22 +620,6 @@ void SearchMediaRequest::SetStorageRegions(const vector<string>& _storageRegions
 bool SearchMediaRequest::StorageRegionsHasBeenSet() const
 {
     return m_storageRegionsHasBeenSet;
-}
-
-uint64_t SearchMediaRequest::GetSubAppId() const
-{
-    return m_subAppId;
-}
-
-void SearchMediaRequest::SetSubAppId(const uint64_t& _subAppId)
-{
-    m_subAppId = _subAppId;
-    m_subAppIdHasBeenSet = true;
-}
-
-bool SearchMediaRequest::SubAppIdHasBeenSet() const
-{
-    return m_subAppIdHasBeenSet;
 }
 
 vector<string> SearchMediaRequest::GetStorageClasses() const

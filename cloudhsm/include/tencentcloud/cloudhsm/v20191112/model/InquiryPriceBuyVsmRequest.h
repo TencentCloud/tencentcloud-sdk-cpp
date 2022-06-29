@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool PayModeHasBeenSet() const;
 
                     /**
-                     * 获取商品的时间大小
-                     * @return TimeSpan 商品的时间大小
+                     * 获取商品的时间大小，整型参数，举例：当TimeSpan为1，TImeUnit为m时，表示询价购买时长为1个月时的价格
+                     * @return TimeSpan 商品的时间大小，整型参数，举例：当TimeSpan为1，TImeUnit为m时，表示询价购买时长为1个月时的价格
                      */
                     std::string GetTimeSpan() const;
 
                     /**
-                     * 设置商品的时间大小
-                     * @param TimeSpan 商品的时间大小
+                     * 设置商品的时间大小，整型参数，举例：当TimeSpan为1，TImeUnit为m时，表示询价购买时长为1个月时的价格
+                     * @param TimeSpan 商品的时间大小，整型参数，举例：当TimeSpan为1，TImeUnit为m时，表示询价购买时长为1个月时的价格
                      */
                     void SetTimeSpan(const std::string& _timeSpan);
 
@@ -150,6 +150,24 @@ namespace TencentCloud
                      */
                     bool TypeHasBeenSet() const;
 
+                    /**
+                     * 获取Hsm服务类型，可选值virtualization、physical、GHSM、EHSM、SHSM
+                     * @return HsmType Hsm服务类型，可选值virtualization、physical、GHSM、EHSM、SHSM
+                     */
+                    std::string GetHsmType() const;
+
+                    /**
+                     * 设置Hsm服务类型，可选值virtualization、physical、GHSM、EHSM、SHSM
+                     * @param HsmType Hsm服务类型，可选值virtualization、physical、GHSM、EHSM、SHSM
+                     */
+                    void SetHsmType(const std::string& _hsmType);
+
+                    /**
+                     * 判断参数 HsmType 是否已赋值
+                     * @return HsmType 是否已赋值
+                     */
+                    bool HsmTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -165,7 +183,7 @@ namespace TencentCloud
                     bool m_payModeHasBeenSet;
 
                     /**
-                     * 商品的时间大小
+                     * 商品的时间大小，整型参数，举例：当TimeSpan为1，TImeUnit为m时，表示询价购买时长为1个月时的价格
                      */
                     std::string m_timeSpan;
                     bool m_timeSpanHasBeenSet;
@@ -187,6 +205,12 @@ namespace TencentCloud
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
+
+                    /**
+                     * Hsm服务类型，可选值virtualization、physical、GHSM、EHSM、SHSM
+                     */
+                    std::string m_hsmType;
+                    bool m_hsmTypeHasBeenSet;
 
                 };
             }

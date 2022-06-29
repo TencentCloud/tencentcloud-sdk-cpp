@@ -26,7 +26,9 @@ StorageNewFileCreatedEvent::StorageNewFileCreatedEvent() :
     m_operatorHasBeenSet(false),
     m_operationTypeHasBeenSet(false),
     m_ownerHasBeenSet(false),
-    m_classPathHasBeenSet(false)
+    m_classPathHasBeenSet(false),
+    m_taskIdHasBeenSet(false),
+    m_sourceContextHasBeenSet(false)
 {
 }
 
@@ -102,6 +104,26 @@ CoreInternalOutcome StorageNewFileCreatedEvent::Deserialize(const rapidjson::Val
         m_classPathHasBeenSet = true;
     }
 
+    if (value.HasMember("TaskId") && !value["TaskId"].IsNull())
+    {
+        if (!value["TaskId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `StorageNewFileCreatedEvent.TaskId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_taskId = string(value["TaskId"].GetString());
+        m_taskIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("SourceContext") && !value["SourceContext"].IsNull())
+    {
+        if (!value["SourceContext"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `StorageNewFileCreatedEvent.SourceContext` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sourceContext = string(value["SourceContext"].GetString());
+        m_sourceContextHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -156,6 +178,22 @@ void StorageNewFileCreatedEvent::ToJsonObject(rapidjson::Value &value, rapidjson
         string key = "ClassPath";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_classPath.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_taskIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_taskId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sourceContextHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SourceContext";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sourceContext.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -255,5 +293,37 @@ void StorageNewFileCreatedEvent::SetClassPath(const string& _classPath)
 bool StorageNewFileCreatedEvent::ClassPathHasBeenSet() const
 {
     return m_classPathHasBeenSet;
+}
+
+string StorageNewFileCreatedEvent::GetTaskId() const
+{
+    return m_taskId;
+}
+
+void StorageNewFileCreatedEvent::SetTaskId(const string& _taskId)
+{
+    m_taskId = _taskId;
+    m_taskIdHasBeenSet = true;
+}
+
+bool StorageNewFileCreatedEvent::TaskIdHasBeenSet() const
+{
+    return m_taskIdHasBeenSet;
+}
+
+string StorageNewFileCreatedEvent::GetSourceContext() const
+{
+    return m_sourceContext;
+}
+
+void StorageNewFileCreatedEvent::SetSourceContext(const string& _sourceContext)
+{
+    m_sourceContext = _sourceContext;
+    m_sourceContextHasBeenSet = true;
+}
+
+bool StorageNewFileCreatedEvent::SourceContextHasBeenSet() const
+{
+    return m_sourceContextHasBeenSet;
 }
 

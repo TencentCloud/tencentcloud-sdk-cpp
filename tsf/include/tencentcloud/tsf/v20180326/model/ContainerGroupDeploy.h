@@ -800,6 +800,50 @@ namespace TencentCloud
                      */
                     bool VolumeMountInfosHasBeenSet() const;
 
+                    /**
+                     * 获取KubeInjectEnable值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return KubeInjectEnable KubeInjectEnable值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetKubeInjectEnable() const;
+
+                    /**
+                     * 设置KubeInjectEnable值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param KubeInjectEnable KubeInjectEnable值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetKubeInjectEnable(const bool& _kubeInjectEnable);
+
+                    /**
+                     * 判断参数 KubeInjectEnable 是否已赋值
+                     * @return KubeInjectEnable 是否已赋值
+                     */
+                    bool KubeInjectEnableHasBeenSet() const;
+
+                    /**
+                     * 获取仓库类型 (person, tcr)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RepoType 仓库类型 (person, tcr)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetRepoType() const;
+
+                    /**
+                     * 设置仓库类型 (person, tcr)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RepoType 仓库类型 (person, tcr)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRepoType(const std::string& _repoType);
+
+                    /**
+                     * 判断参数 RepoType 是否已赋值
+                     * @return RepoType 是否已赋值
+                     */
+                    bool RepoTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1039,6 +1083,20 @@ namespace TencentCloud
                      */
                     std::vector<VolumeMountInfo> m_volumeMountInfos;
                     bool m_volumeMountInfosHasBeenSet;
+
+                    /**
+                     * KubeInjectEnable值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_kubeInjectEnable;
+                    bool m_kubeInjectEnableHasBeenSet;
+
+                    /**
+                     * 仓库类型 (person, tcr)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_repoType;
+                    bool m_repoTypeHasBeenSet;
 
                 };
             }

@@ -24,7 +24,12 @@ AccessLogConfig::AccessLogConfig() :
     m_enableHasBeenSet(false),
     m_templateHasBeenSet(false),
     m_selectedRangeHasBeenSet(false),
-    m_cLSHasBeenSet(false)
+    m_cLSHasBeenSet(false),
+    m_encodingHasBeenSet(false),
+    m_formatHasBeenSet(false),
+    m_addressHasBeenSet(false),
+    m_enableServerHasBeenSet(false),
+    m_enableStdoutHasBeenSet(false)
 {
 }
 
@@ -87,6 +92,56 @@ CoreInternalOutcome AccessLogConfig::Deserialize(const rapidjson::Value &value)
         m_cLSHasBeenSet = true;
     }
 
+    if (value.HasMember("Encoding") && !value["Encoding"].IsNull())
+    {
+        if (!value["Encoding"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AccessLogConfig.Encoding` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_encoding = string(value["Encoding"].GetString());
+        m_encodingHasBeenSet = true;
+    }
+
+    if (value.HasMember("Format") && !value["Format"].IsNull())
+    {
+        if (!value["Format"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AccessLogConfig.Format` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_format = string(value["Format"].GetString());
+        m_formatHasBeenSet = true;
+    }
+
+    if (value.HasMember("Address") && !value["Address"].IsNull())
+    {
+        if (!value["Address"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AccessLogConfig.Address` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_address = string(value["Address"].GetString());
+        m_addressHasBeenSet = true;
+    }
+
+    if (value.HasMember("EnableServer") && !value["EnableServer"].IsNull())
+    {
+        if (!value["EnableServer"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `AccessLogConfig.EnableServer` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableServer = value["EnableServer"].GetBool();
+        m_enableServerHasBeenSet = true;
+    }
+
+    if (value.HasMember("EnableStdout") && !value["EnableStdout"].IsNull())
+    {
+        if (!value["EnableStdout"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `AccessLogConfig.EnableStdout` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableStdout = value["EnableStdout"].GetBool();
+        m_enableStdoutHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -126,6 +181,46 @@ void AccessLogConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_cLS.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_encodingHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Encoding";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_encoding.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_formatHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Format";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_format.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_addressHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Address";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_address.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_enableServerHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableServer";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableServer, allocator);
+    }
+
+    if (m_enableStdoutHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableStdout";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableStdout, allocator);
     }
 
 }
@@ -193,5 +288,85 @@ void AccessLogConfig::SetCLS(const CLS& _cLS)
 bool AccessLogConfig::CLSHasBeenSet() const
 {
     return m_cLSHasBeenSet;
+}
+
+string AccessLogConfig::GetEncoding() const
+{
+    return m_encoding;
+}
+
+void AccessLogConfig::SetEncoding(const string& _encoding)
+{
+    m_encoding = _encoding;
+    m_encodingHasBeenSet = true;
+}
+
+bool AccessLogConfig::EncodingHasBeenSet() const
+{
+    return m_encodingHasBeenSet;
+}
+
+string AccessLogConfig::GetFormat() const
+{
+    return m_format;
+}
+
+void AccessLogConfig::SetFormat(const string& _format)
+{
+    m_format = _format;
+    m_formatHasBeenSet = true;
+}
+
+bool AccessLogConfig::FormatHasBeenSet() const
+{
+    return m_formatHasBeenSet;
+}
+
+string AccessLogConfig::GetAddress() const
+{
+    return m_address;
+}
+
+void AccessLogConfig::SetAddress(const string& _address)
+{
+    m_address = _address;
+    m_addressHasBeenSet = true;
+}
+
+bool AccessLogConfig::AddressHasBeenSet() const
+{
+    return m_addressHasBeenSet;
+}
+
+bool AccessLogConfig::GetEnableServer() const
+{
+    return m_enableServer;
+}
+
+void AccessLogConfig::SetEnableServer(const bool& _enableServer)
+{
+    m_enableServer = _enableServer;
+    m_enableServerHasBeenSet = true;
+}
+
+bool AccessLogConfig::EnableServerHasBeenSet() const
+{
+    return m_enableServerHasBeenSet;
+}
+
+bool AccessLogConfig::GetEnableStdout() const
+{
+    return m_enableStdout;
+}
+
+void AccessLogConfig::SetEnableStdout(const bool& _enableStdout)
+{
+    m_enableStdout = _enableStdout;
+    m_enableStdoutHasBeenSet = true;
+}
+
+bool AccessLogConfig::EnableStdoutHasBeenSet() const
+{
+    return m_enableStdoutHasBeenSet;
 }
 

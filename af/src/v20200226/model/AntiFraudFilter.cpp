@@ -48,7 +48,8 @@ AntiFraudFilter::AntiFraudFilter() :
     m_businessIdHasBeenSet(false),
     m_idCryptoTypeHasBeenSet(false),
     m_phoneCryptoTypeHasBeenSet(false),
-    m_nameCryptoTypeHasBeenSet(false)
+    m_nameCryptoTypeHasBeenSet(false),
+    m_oldResponseTypeHasBeenSet(false)
 {
 }
 
@@ -337,6 +338,16 @@ CoreInternalOutcome AntiFraudFilter::Deserialize(const rapidjson::Value &value)
         m_nameCryptoTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("OldResponseType") && !value["OldResponseType"].IsNull())
+    {
+        if (!value["OldResponseType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AntiFraudFilter.OldResponseType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_oldResponseType = string(value["OldResponseType"].GetString());
+        m_oldResponseTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -566,6 +577,14 @@ void AntiFraudFilter::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "NameCryptoType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_nameCryptoType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_oldResponseTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OldResponseType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_oldResponseType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1017,5 +1036,21 @@ void AntiFraudFilter::SetNameCryptoType(const string& _nameCryptoType)
 bool AntiFraudFilter::NameCryptoTypeHasBeenSet() const
 {
     return m_nameCryptoTypeHasBeenSet;
+}
+
+string AntiFraudFilter::GetOldResponseType() const
+{
+    return m_oldResponseType;
+}
+
+void AntiFraudFilter::SetOldResponseType(const string& _oldResponseType)
+{
+    m_oldResponseType = _oldResponseType;
+    m_oldResponseTypeHasBeenSet = true;
+}
+
+bool AntiFraudFilter::OldResponseTypeHasBeenSet() const
+{
+    return m_oldResponseTypeHasBeenSet;
 }
 

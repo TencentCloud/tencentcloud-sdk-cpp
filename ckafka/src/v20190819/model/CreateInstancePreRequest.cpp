@@ -38,7 +38,9 @@ CreateInstancePreRequest::CreateInstancePreRequest() :
     m_bandWidthHasBeenSet(false),
     m_partitionHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_diskTypeHasBeenSet(false)
+    m_diskTypeHasBeenSet(false),
+    m_multiZoneFlagHasBeenSet(false),
+    m_zoneIdsHasBeenSet(false)
 {
 }
 
@@ -182,6 +184,27 @@ string CreateInstancePreRequest::ToJsonString() const
         string key = "DiskType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_diskType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_multiZoneFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MultiZoneFlag";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_multiZoneFlag, allocator);
+    }
+
+    if (m_zoneIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ZoneIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_zoneIds.begin(); itr != m_zoneIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
     }
 
 
@@ -446,6 +469,38 @@ void CreateInstancePreRequest::SetDiskType(const string& _diskType)
 bool CreateInstancePreRequest::DiskTypeHasBeenSet() const
 {
     return m_diskTypeHasBeenSet;
+}
+
+bool CreateInstancePreRequest::GetMultiZoneFlag() const
+{
+    return m_multiZoneFlag;
+}
+
+void CreateInstancePreRequest::SetMultiZoneFlag(const bool& _multiZoneFlag)
+{
+    m_multiZoneFlag = _multiZoneFlag;
+    m_multiZoneFlagHasBeenSet = true;
+}
+
+bool CreateInstancePreRequest::MultiZoneFlagHasBeenSet() const
+{
+    return m_multiZoneFlagHasBeenSet;
+}
+
+vector<int64_t> CreateInstancePreRequest::GetZoneIds() const
+{
+    return m_zoneIds;
+}
+
+void CreateInstancePreRequest::SetZoneIds(const vector<int64_t>& _zoneIds)
+{
+    m_zoneIds = _zoneIds;
+    m_zoneIdsHasBeenSet = true;
+}
+
+bool CreateInstancePreRequest::ZoneIdsHasBeenSet() const
+{
+    return m_zoneIdsHasBeenSet;
 }
 
 

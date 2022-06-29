@@ -98,6 +98,24 @@ namespace TencentCloud
                      */
                     bool VersionCredentialHasBeenSet() const;
 
+                    /**
+                     * 获取是否未签名
+                     * @return UnSigned 是否未签名
+                     */
+                    bool GetUnSigned() const;
+
+                    /**
+                     * 设置是否未签名
+                     * @param UnSigned 是否未签名
+                     */
+                    void SetUnSigned(const bool& _unSigned);
+
+                    /**
+                     * 判断参数 UnSigned 是否已赋值
+                     * @return UnSigned 是否已赋值
+                     */
+                    bool UnSignedHasBeenSet() const;
+
                 private:
 
                     /**
@@ -117,6 +135,12 @@ namespace TencentCloud
                      */
                     std::string m_versionCredential;
                     bool m_versionCredentialHasBeenSet;
+
+                    /**
+                     * 是否未签名
+                     */
+                    bool m_unSigned;
+                    bool m_unSignedHasBeenSet;
 
                 };
             }

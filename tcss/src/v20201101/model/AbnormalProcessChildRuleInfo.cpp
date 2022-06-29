@@ -23,7 +23,8 @@ using namespace std;
 AbnormalProcessChildRuleInfo::AbnormalProcessChildRuleInfo() :
     m_ruleModeHasBeenSet(false),
     m_processPathHasBeenSet(false),
-    m_ruleIdHasBeenSet(false)
+    m_ruleIdHasBeenSet(false),
+    m_ruleLevelHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,16 @@ CoreInternalOutcome AbnormalProcessChildRuleInfo::Deserialize(const rapidjson::V
         m_ruleIdHasBeenSet = true;
     }
 
+    if (value.HasMember("RuleLevel") && !value["RuleLevel"].IsNull())
+    {
+        if (!value["RuleLevel"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AbnormalProcessChildRuleInfo.RuleLevel` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ruleLevel = string(value["RuleLevel"].GetString());
+        m_ruleLevelHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +102,14 @@ void AbnormalProcessChildRuleInfo::ToJsonObject(rapidjson::Value &value, rapidjs
         string key = "RuleId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_ruleId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ruleLevelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RuleLevel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ruleLevel.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -142,5 +161,21 @@ void AbnormalProcessChildRuleInfo::SetRuleId(const string& _ruleId)
 bool AbnormalProcessChildRuleInfo::RuleIdHasBeenSet() const
 {
     return m_ruleIdHasBeenSet;
+}
+
+string AbnormalProcessChildRuleInfo::GetRuleLevel() const
+{
+    return m_ruleLevel;
+}
+
+void AbnormalProcessChildRuleInfo::SetRuleLevel(const string& _ruleLevel)
+{
+    m_ruleLevel = _ruleLevel;
+    m_ruleLevelHasBeenSet = true;
+}
+
+bool AbnormalProcessChildRuleInfo::RuleLevelHasBeenSet() const
+{
+    return m_ruleLevelHasBeenSet;
 }
 

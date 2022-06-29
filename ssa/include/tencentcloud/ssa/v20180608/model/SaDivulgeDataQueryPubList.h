@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 查询_通用字段
+                * 自定义泄露事件列表
                 */
                 class SaDivulgeDataQueryPubList : public AbstractModel
                 {
@@ -48,14 +48,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Count
-                     * @return Count Count
+                     * 获取数据条数
+                     * @return Count 数据条数
                      */
                     uint64_t GetCount() const;
 
                     /**
-                     * 设置Count
-                     * @param Count Count
+                     * 设置数据条数
+                     * @param Count 数据条数
                      */
                     void SetCount(const uint64_t& _count);
 
@@ -66,14 +66,14 @@ namespace TencentCloud
                     bool CountHasBeenSet() const;
 
                     /**
-                     * 获取List
-                     * @return List List
+                     * 获取自定义泄露事件列表
+                     * @return List 自定义泄露事件列表
                      */
                     std::vector<SaDivulgeDataQueryPub> GetList() const;
 
                     /**
-                     * 设置List
-                     * @param List List
+                     * 设置自定义泄露事件列表
+                     * @param List 自定义泄露事件列表
                      */
                     void SetList(const std::vector<SaDivulgeDataQueryPub>& _list);
 
@@ -86,13 +86,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Count
+                     * 数据条数
                      */
                     uint64_t m_count;
                     bool m_countHasBeenSet;
 
                     /**
-                     * List
+                     * 自定义泄露事件列表
                      */
                     std::vector<SaDivulgeDataQueryPub> m_list;
                     bool m_listHasBeenSet;

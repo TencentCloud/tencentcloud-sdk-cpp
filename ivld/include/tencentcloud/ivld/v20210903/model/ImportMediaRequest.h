@@ -96,6 +96,64 @@ namespace TencentCloud
                      */
                     bool NameHasBeenSet() const;
 
+                    /**
+                     * 获取当非本人外部视频地址导入时，该字段为转存的cos桶地址且不可为空; 示例：https://${Bucket}-${AppId}.cos.${Region}.myqcloud.com/${PathPrefix}/  (注意，cos路径需要以/分隔符结尾)。
+推荐采用本主帐号COS桶，如果使用其他帐号COS桶，请确保COS桶可写，否则可导致分析失败
+                     * @return WriteBackCosPath 当非本人外部视频地址导入时，该字段为转存的cos桶地址且不可为空; 示例：https://${Bucket}-${AppId}.cos.${Region}.myqcloud.com/${PathPrefix}/  (注意，cos路径需要以/分隔符结尾)。
+推荐采用本主帐号COS桶，如果使用其他帐号COS桶，请确保COS桶可写，否则可导致分析失败
+                     */
+                    std::string GetWriteBackCosPath() const;
+
+                    /**
+                     * 设置当非本人外部视频地址导入时，该字段为转存的cos桶地址且不可为空; 示例：https://${Bucket}-${AppId}.cos.${Region}.myqcloud.com/${PathPrefix}/  (注意，cos路径需要以/分隔符结尾)。
+推荐采用本主帐号COS桶，如果使用其他帐号COS桶，请确保COS桶可写，否则可导致分析失败
+                     * @param WriteBackCosPath 当非本人外部视频地址导入时，该字段为转存的cos桶地址且不可为空; 示例：https://${Bucket}-${AppId}.cos.${Region}.myqcloud.com/${PathPrefix}/  (注意，cos路径需要以/分隔符结尾)。
+推荐采用本主帐号COS桶，如果使用其他帐号COS桶，请确保COS桶可写，否则可导致分析失败
+                     */
+                    void SetWriteBackCosPath(const std::string& _writeBackCosPath);
+
+                    /**
+                     * 判断参数 WriteBackCosPath 是否已赋值
+                     * @return WriteBackCosPath 是否已赋值
+                     */
+                    bool WriteBackCosPathHasBeenSet() const;
+
+                    /**
+                     * 获取自定义标签，可用于查询
+                     * @return Label 自定义标签，可用于查询
+                     */
+                    std::string GetLabel() const;
+
+                    /**
+                     * 设置自定义标签，可用于查询
+                     * @param Label 自定义标签，可用于查询
+                     */
+                    void SetLabel(const std::string& _label);
+
+                    /**
+                     * 判断参数 Label 是否已赋值
+                     * @return Label 是否已赋值
+                     */
+                    bool LabelHasBeenSet() const;
+
+                    /**
+                     * 获取媒资导入完成的回调地址，该设置优先级高于控制台全局的设置；
+                     * @return CallbackURL 媒资导入完成的回调地址，该设置优先级高于控制台全局的设置；
+                     */
+                    std::string GetCallbackURL() const;
+
+                    /**
+                     * 设置媒资导入完成的回调地址，该设置优先级高于控制台全局的设置；
+                     * @param CallbackURL 媒资导入完成的回调地址，该设置优先级高于控制台全局的设置；
+                     */
+                    void SetCallbackURL(const std::string& _callbackURL);
+
+                    /**
+                     * 判断参数 CallbackURL 是否已赋值
+                     * @return CallbackURL 是否已赋值
+                     */
+                    bool CallbackURLHasBeenSet() const;
+
                 private:
 
                     /**
@@ -115,6 +173,25 @@ namespace TencentCloud
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
+
+                    /**
+                     * 当非本人外部视频地址导入时，该字段为转存的cos桶地址且不可为空; 示例：https://${Bucket}-${AppId}.cos.${Region}.myqcloud.com/${PathPrefix}/  (注意，cos路径需要以/分隔符结尾)。
+推荐采用本主帐号COS桶，如果使用其他帐号COS桶，请确保COS桶可写，否则可导致分析失败
+                     */
+                    std::string m_writeBackCosPath;
+                    bool m_writeBackCosPathHasBeenSet;
+
+                    /**
+                     * 自定义标签，可用于查询
+                     */
+                    std::string m_label;
+                    bool m_labelHasBeenSet;
+
+                    /**
+                     * 媒资导入完成的回调地址，该设置优先级高于控制台全局的设置；
+                     */
+                    std::string m_callbackURL;
+                    bool m_callbackURLHasBeenSet;
 
                 };
             }

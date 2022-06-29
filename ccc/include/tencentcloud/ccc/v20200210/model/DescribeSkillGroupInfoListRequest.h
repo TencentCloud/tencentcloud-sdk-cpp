@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取应用ID
-                     * @return SdkAppId 应用ID
+                     * 获取应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc
+                     * @return SdkAppId 应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc
                      */
                     int64_t GetSdkAppId() const;
 
                     /**
-                     * 设置应用ID
-                     * @param SdkAppId 应用ID
+                     * 设置应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc
+                     * @param SdkAppId 应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc
                      */
                     void SetSdkAppId(const int64_t& _sdkAppId);
 
@@ -135,7 +135,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 应用ID
+                     * 应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc
                      */
                     int64_t m_sdkAppId;
                     bool m_sdkAppIdHasBeenSet;

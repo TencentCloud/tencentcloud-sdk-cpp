@@ -25,10 +25,10 @@ using namespace std;
 SplitMediaRequest::SplitMediaRequest() :
     m_fileIdHasBeenSet(false),
     m_segmentsHasBeenSet(false),
+    m_subAppIdHasBeenSet(false),
     m_sessionContextHasBeenSet(false),
     m_sessionIdHasBeenSet(false),
-    m_tasksPriorityHasBeenSet(false),
-    m_subAppIdHasBeenSet(false)
+    m_tasksPriorityHasBeenSet(false)
 {
 }
 
@@ -62,6 +62,14 @@ string SplitMediaRequest::ToJsonString() const
         }
     }
 
+    if (m_subAppIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubAppId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_subAppId, allocator);
+    }
+
     if (m_sessionContextHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -84,14 +92,6 @@ string SplitMediaRequest::ToJsonString() const
         string key = "TasksPriority";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_tasksPriority, allocator);
-    }
-
-    if (m_subAppIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SubAppId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_subAppId, allocator);
     }
 
 
@@ -132,6 +132,22 @@ void SplitMediaRequest::SetSegments(const vector<SplitMediaTaskConfig>& _segment
 bool SplitMediaRequest::SegmentsHasBeenSet() const
 {
     return m_segmentsHasBeenSet;
+}
+
+uint64_t SplitMediaRequest::GetSubAppId() const
+{
+    return m_subAppId;
+}
+
+void SplitMediaRequest::SetSubAppId(const uint64_t& _subAppId)
+{
+    m_subAppId = _subAppId;
+    m_subAppIdHasBeenSet = true;
+}
+
+bool SplitMediaRequest::SubAppIdHasBeenSet() const
+{
+    return m_subAppIdHasBeenSet;
 }
 
 string SplitMediaRequest::GetSessionContext() const
@@ -180,22 +196,6 @@ void SplitMediaRequest::SetTasksPriority(const int64_t& _tasksPriority)
 bool SplitMediaRequest::TasksPriorityHasBeenSet() const
 {
     return m_tasksPriorityHasBeenSet;
-}
-
-uint64_t SplitMediaRequest::GetSubAppId() const
-{
-    return m_subAppId;
-}
-
-void SplitMediaRequest::SetSubAppId(const uint64_t& _subAppId)
-{
-    m_subAppId = _subAppId;
-    m_subAppIdHasBeenSet = true;
-}
-
-bool SplitMediaRequest::SubAppIdHasBeenSet() const
-{
-    return m_subAppIdHasBeenSet;
 }
 
 

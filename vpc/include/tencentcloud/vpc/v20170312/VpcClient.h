@@ -31,6 +31,8 @@
 #include <tencentcloud/vpc/v20170312/model/AddIp6RulesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/AddTemplateMemberRequest.h>
 #include <tencentcloud/vpc/v20170312/model/AddTemplateMemberResponse.h>
+#include <tencentcloud/vpc/v20170312/model/AdjustPublicAddressRequest.h>
+#include <tencentcloud/vpc/v20170312/model/AdjustPublicAddressResponse.h>
 #include <tencentcloud/vpc/v20170312/model/AllocateAddressesRequest.h>
 #include <tencentcloud/vpc/v20170312/model/AllocateAddressesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/AllocateIp6AddressesBandwidthRequest.h>
@@ -147,6 +149,10 @@
 #include <tencentcloud/vpc/v20170312/model/CreateVpnGatewayResponse.h>
 #include <tencentcloud/vpc/v20170312/model/CreateVpnGatewayRoutesRequest.h>
 #include <tencentcloud/vpc/v20170312/model/CreateVpnGatewayRoutesResponse.h>
+#include <tencentcloud/vpc/v20170312/model/CreateVpnGatewaySslClientRequest.h>
+#include <tencentcloud/vpc/v20170312/model/CreateVpnGatewaySslClientResponse.h>
+#include <tencentcloud/vpc/v20170312/model/CreateVpnGatewaySslServerRequest.h>
+#include <tencentcloud/vpc/v20170312/model/CreateVpnGatewaySslServerResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DeleteAddressTemplateRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DeleteAddressTemplateResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DeleteAddressTemplateGroupRequest.h>
@@ -215,6 +221,10 @@
 #include <tencentcloud/vpc/v20170312/model/DeleteVpnGatewayResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DeleteVpnGatewayRoutesRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DeleteVpnGatewayRoutesResponse.h>
+#include <tencentcloud/vpc/v20170312/model/DeleteVpnGatewaySslClientRequest.h>
+#include <tencentcloud/vpc/v20170312/model/DeleteVpnGatewaySslClientResponse.h>
+#include <tencentcloud/vpc/v20170312/model/DeleteVpnGatewaySslServerRequest.h>
+#include <tencentcloud/vpc/v20170312/model/DeleteVpnGatewaySslServerResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeAccountAttributesRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeAccountAttributesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeAddressQuotaRequest.h>
@@ -245,6 +255,8 @@
 #include <tencentcloud/vpc/v20170312/model/DescribeCcnsResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeClassicLinkInstancesRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeClassicLinkInstancesResponse.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeCrossBorderCcnRegionBandwidthLimitsRequest.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeCrossBorderCcnRegionBandwidthLimitsResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeCrossBorderComplianceRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeCrossBorderComplianceResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeCustomerGatewayVendorsRequest.h>
@@ -323,6 +335,8 @@
 #include <tencentcloud/vpc/v20170312/model/DescribeTaskResultResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeTemplateLimitsRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeTemplateLimitsResponse.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeTenantCcnsRequest.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeTenantCcnsResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeVpcEndPointRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeVpcEndPointResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeVpcEndPointServiceRequest.h>
@@ -349,6 +363,10 @@
 #include <tencentcloud/vpc/v20170312/model/DescribeVpnGatewayCcnRoutesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeVpnGatewayRoutesRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeVpnGatewayRoutesResponse.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeVpnGatewaySslClientsRequest.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeVpnGatewaySslClientsResponse.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeVpnGatewaySslServersRequest.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeVpnGatewaySslServersResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeVpnGatewaysRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeVpnGatewaysResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DetachCcnInstancesRequest.h>
@@ -359,10 +377,14 @@
 #include <tencentcloud/vpc/v20170312/model/DetachNetworkInterfaceResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DisableCcnRoutesRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DisableCcnRoutesResponse.h>
+#include <tencentcloud/vpc/v20170312/model/DisableFlowLogsRequest.h>
+#include <tencentcloud/vpc/v20170312/model/DisableFlowLogsResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DisableGatewayFlowMonitorRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DisableGatewayFlowMonitorResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DisableRoutesRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DisableRoutesResponse.h>
+#include <tencentcloud/vpc/v20170312/model/DisableVpnGatewaySslClientCertRequest.h>
+#include <tencentcloud/vpc/v20170312/model/DisableVpnGatewaySslClientCertResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DisassociateAddressRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DisassociateAddressResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DisassociateDhcpIpWithAddressIpRequest.h>
@@ -379,14 +401,20 @@
 #include <tencentcloud/vpc/v20170312/model/DisassociateVpcEndPointSecurityGroupsResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DownloadCustomerGatewayConfigurationRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DownloadCustomerGatewayConfigurationResponse.h>
+#include <tencentcloud/vpc/v20170312/model/DownloadVpnGatewaySslClientCertRequest.h>
+#include <tencentcloud/vpc/v20170312/model/DownloadVpnGatewaySslClientCertResponse.h>
 #include <tencentcloud/vpc/v20170312/model/EnableCcnRoutesRequest.h>
 #include <tencentcloud/vpc/v20170312/model/EnableCcnRoutesResponse.h>
+#include <tencentcloud/vpc/v20170312/model/EnableFlowLogsRequest.h>
+#include <tencentcloud/vpc/v20170312/model/EnableFlowLogsResponse.h>
 #include <tencentcloud/vpc/v20170312/model/EnableGatewayFlowMonitorRequest.h>
 #include <tencentcloud/vpc/v20170312/model/EnableGatewayFlowMonitorResponse.h>
 #include <tencentcloud/vpc/v20170312/model/EnableRoutesRequest.h>
 #include <tencentcloud/vpc/v20170312/model/EnableRoutesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/EnableVpcEndPointConnectRequest.h>
 #include <tencentcloud/vpc/v20170312/model/EnableVpcEndPointConnectResponse.h>
+#include <tencentcloud/vpc/v20170312/model/EnableVpnGatewaySslClientCertRequest.h>
+#include <tencentcloud/vpc/v20170312/model/EnableVpnGatewaySslClientCertResponse.h>
 #include <tencentcloud/vpc/v20170312/model/GetCcnRegionBandwidthLimitsRequest.h>
 #include <tencentcloud/vpc/v20170312/model/GetCcnRegionBandwidthLimitsResponse.h>
 #include <tencentcloud/vpc/v20170312/model/HaVipAssociateAddressIpRequest.h>
@@ -401,6 +429,10 @@
 #include <tencentcloud/vpc/v20170312/model/InquiryPriceRenewVpnGatewayResponse.h>
 #include <tencentcloud/vpc/v20170312/model/InquiryPriceResetVpnGatewayInternetMaxBandwidthRequest.h>
 #include <tencentcloud/vpc/v20170312/model/InquiryPriceResetVpnGatewayInternetMaxBandwidthResponse.h>
+#include <tencentcloud/vpc/v20170312/model/LockCcnBandwidthsRequest.h>
+#include <tencentcloud/vpc/v20170312/model/LockCcnBandwidthsResponse.h>
+#include <tencentcloud/vpc/v20170312/model/LockCcnsRequest.h>
+#include <tencentcloud/vpc/v20170312/model/LockCcnsResponse.h>
 #include <tencentcloud/vpc/v20170312/model/MigrateNetworkInterfaceRequest.h>
 #include <tencentcloud/vpc/v20170312/model/MigrateNetworkInterfaceResponse.h>
 #include <tencentcloud/vpc/v20170312/model/MigratePrivateIpAddressRequest.h>
@@ -543,6 +575,10 @@
 #include <tencentcloud/vpc/v20170312/model/UnassignIpv6SubnetCidrBlockResponse.h>
 #include <tencentcloud/vpc/v20170312/model/UnassignPrivateIpAddressesRequest.h>
 #include <tencentcloud/vpc/v20170312/model/UnassignPrivateIpAddressesResponse.h>
+#include <tencentcloud/vpc/v20170312/model/UnlockCcnBandwidthsRequest.h>
+#include <tencentcloud/vpc/v20170312/model/UnlockCcnBandwidthsResponse.h>
+#include <tencentcloud/vpc/v20170312/model/UnlockCcnsRequest.h>
+#include <tencentcloud/vpc/v20170312/model/UnlockCcnsResponse.h>
 #include <tencentcloud/vpc/v20170312/model/WithdrawNotifyRoutesRequest.h>
 #include <tencentcloud/vpc/v20170312/model/WithdrawNotifyRoutesResponse.h>
 
@@ -571,6 +607,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::AddTemplateMemberResponse> AddTemplateMemberOutcome;
                 typedef std::future<AddTemplateMemberOutcome> AddTemplateMemberOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::AddTemplateMemberRequest&, AddTemplateMemberOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddTemplateMemberAsyncHandler;
+                typedef Outcome<Core::Error, Model::AdjustPublicAddressResponse> AdjustPublicAddressOutcome;
+                typedef std::future<AdjustPublicAddressOutcome> AdjustPublicAddressOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::AdjustPublicAddressRequest&, AdjustPublicAddressOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AdjustPublicAddressAsyncHandler;
                 typedef Outcome<Core::Error, Model::AllocateAddressesResponse> AllocateAddressesOutcome;
                 typedef std::future<AllocateAddressesOutcome> AllocateAddressesOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::AllocateAddressesRequest&, AllocateAddressesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AllocateAddressesAsyncHandler;
@@ -745,6 +784,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateVpnGatewayRoutesResponse> CreateVpnGatewayRoutesOutcome;
                 typedef std::future<CreateVpnGatewayRoutesOutcome> CreateVpnGatewayRoutesOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::CreateVpnGatewayRoutesRequest&, CreateVpnGatewayRoutesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateVpnGatewayRoutesAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateVpnGatewaySslClientResponse> CreateVpnGatewaySslClientOutcome;
+                typedef std::future<CreateVpnGatewaySslClientOutcome> CreateVpnGatewaySslClientOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::CreateVpnGatewaySslClientRequest&, CreateVpnGatewaySslClientOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateVpnGatewaySslClientAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateVpnGatewaySslServerResponse> CreateVpnGatewaySslServerOutcome;
+                typedef std::future<CreateVpnGatewaySslServerOutcome> CreateVpnGatewaySslServerOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::CreateVpnGatewaySslServerRequest&, CreateVpnGatewaySslServerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateVpnGatewaySslServerAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteAddressTemplateResponse> DeleteAddressTemplateOutcome;
                 typedef std::future<DeleteAddressTemplateOutcome> DeleteAddressTemplateOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DeleteAddressTemplateRequest&, DeleteAddressTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAddressTemplateAsyncHandler;
@@ -847,6 +892,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteVpnGatewayRoutesResponse> DeleteVpnGatewayRoutesOutcome;
                 typedef std::future<DeleteVpnGatewayRoutesOutcome> DeleteVpnGatewayRoutesOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DeleteVpnGatewayRoutesRequest&, DeleteVpnGatewayRoutesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteVpnGatewayRoutesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteVpnGatewaySslClientResponse> DeleteVpnGatewaySslClientOutcome;
+                typedef std::future<DeleteVpnGatewaySslClientOutcome> DeleteVpnGatewaySslClientOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::DeleteVpnGatewaySslClientRequest&, DeleteVpnGatewaySslClientOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteVpnGatewaySslClientAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteVpnGatewaySslServerResponse> DeleteVpnGatewaySslServerOutcome;
+                typedef std::future<DeleteVpnGatewaySslServerOutcome> DeleteVpnGatewaySslServerOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::DeleteVpnGatewaySslServerRequest&, DeleteVpnGatewaySslServerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteVpnGatewaySslServerAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAccountAttributesResponse> DescribeAccountAttributesOutcome;
                 typedef std::future<DescribeAccountAttributesOutcome> DescribeAccountAttributesOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DescribeAccountAttributesRequest&, DescribeAccountAttributesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccountAttributesAsyncHandler;
@@ -892,6 +943,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeClassicLinkInstancesResponse> DescribeClassicLinkInstancesOutcome;
                 typedef std::future<DescribeClassicLinkInstancesOutcome> DescribeClassicLinkInstancesOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DescribeClassicLinkInstancesRequest&, DescribeClassicLinkInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClassicLinkInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCrossBorderCcnRegionBandwidthLimitsResponse> DescribeCrossBorderCcnRegionBandwidthLimitsOutcome;
+                typedef std::future<DescribeCrossBorderCcnRegionBandwidthLimitsOutcome> DescribeCrossBorderCcnRegionBandwidthLimitsOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::DescribeCrossBorderCcnRegionBandwidthLimitsRequest&, DescribeCrossBorderCcnRegionBandwidthLimitsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCrossBorderCcnRegionBandwidthLimitsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCrossBorderComplianceResponse> DescribeCrossBorderComplianceOutcome;
                 typedef std::future<DescribeCrossBorderComplianceOutcome> DescribeCrossBorderComplianceOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DescribeCrossBorderComplianceRequest&, DescribeCrossBorderComplianceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCrossBorderComplianceAsyncHandler;
@@ -1009,6 +1063,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeTemplateLimitsResponse> DescribeTemplateLimitsOutcome;
                 typedef std::future<DescribeTemplateLimitsOutcome> DescribeTemplateLimitsOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DescribeTemplateLimitsRequest&, DescribeTemplateLimitsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTemplateLimitsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTenantCcnsResponse> DescribeTenantCcnsOutcome;
+                typedef std::future<DescribeTenantCcnsOutcome> DescribeTenantCcnsOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::DescribeTenantCcnsRequest&, DescribeTenantCcnsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTenantCcnsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeVpcEndPointResponse> DescribeVpcEndPointOutcome;
                 typedef std::future<DescribeVpcEndPointOutcome> DescribeVpcEndPointOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DescribeVpcEndPointRequest&, DescribeVpcEndPointOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVpcEndPointAsyncHandler;
@@ -1048,6 +1105,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeVpnGatewayRoutesResponse> DescribeVpnGatewayRoutesOutcome;
                 typedef std::future<DescribeVpnGatewayRoutesOutcome> DescribeVpnGatewayRoutesOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DescribeVpnGatewayRoutesRequest&, DescribeVpnGatewayRoutesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVpnGatewayRoutesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeVpnGatewaySslClientsResponse> DescribeVpnGatewaySslClientsOutcome;
+                typedef std::future<DescribeVpnGatewaySslClientsOutcome> DescribeVpnGatewaySslClientsOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::DescribeVpnGatewaySslClientsRequest&, DescribeVpnGatewaySslClientsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVpnGatewaySslClientsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeVpnGatewaySslServersResponse> DescribeVpnGatewaySslServersOutcome;
+                typedef std::future<DescribeVpnGatewaySslServersOutcome> DescribeVpnGatewaySslServersOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::DescribeVpnGatewaySslServersRequest&, DescribeVpnGatewaySslServersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVpnGatewaySslServersAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeVpnGatewaysResponse> DescribeVpnGatewaysOutcome;
                 typedef std::future<DescribeVpnGatewaysOutcome> DescribeVpnGatewaysOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DescribeVpnGatewaysRequest&, DescribeVpnGatewaysOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVpnGatewaysAsyncHandler;
@@ -1063,12 +1126,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DisableCcnRoutesResponse> DisableCcnRoutesOutcome;
                 typedef std::future<DisableCcnRoutesOutcome> DisableCcnRoutesOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DisableCcnRoutesRequest&, DisableCcnRoutesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisableCcnRoutesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DisableFlowLogsResponse> DisableFlowLogsOutcome;
+                typedef std::future<DisableFlowLogsOutcome> DisableFlowLogsOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::DisableFlowLogsRequest&, DisableFlowLogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisableFlowLogsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DisableGatewayFlowMonitorResponse> DisableGatewayFlowMonitorOutcome;
                 typedef std::future<DisableGatewayFlowMonitorOutcome> DisableGatewayFlowMonitorOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DisableGatewayFlowMonitorRequest&, DisableGatewayFlowMonitorOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisableGatewayFlowMonitorAsyncHandler;
                 typedef Outcome<Core::Error, Model::DisableRoutesResponse> DisableRoutesOutcome;
                 typedef std::future<DisableRoutesOutcome> DisableRoutesOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DisableRoutesRequest&, DisableRoutesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisableRoutesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DisableVpnGatewaySslClientCertResponse> DisableVpnGatewaySslClientCertOutcome;
+                typedef std::future<DisableVpnGatewaySslClientCertOutcome> DisableVpnGatewaySslClientCertOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::DisableVpnGatewaySslClientCertRequest&, DisableVpnGatewaySslClientCertOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisableVpnGatewaySslClientCertAsyncHandler;
                 typedef Outcome<Core::Error, Model::DisassociateAddressResponse> DisassociateAddressOutcome;
                 typedef std::future<DisassociateAddressOutcome> DisassociateAddressOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DisassociateAddressRequest&, DisassociateAddressOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisassociateAddressAsyncHandler;
@@ -1093,9 +1162,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DownloadCustomerGatewayConfigurationResponse> DownloadCustomerGatewayConfigurationOutcome;
                 typedef std::future<DownloadCustomerGatewayConfigurationOutcome> DownloadCustomerGatewayConfigurationOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DownloadCustomerGatewayConfigurationRequest&, DownloadCustomerGatewayConfigurationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DownloadCustomerGatewayConfigurationAsyncHandler;
+                typedef Outcome<Core::Error, Model::DownloadVpnGatewaySslClientCertResponse> DownloadVpnGatewaySslClientCertOutcome;
+                typedef std::future<DownloadVpnGatewaySslClientCertOutcome> DownloadVpnGatewaySslClientCertOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::DownloadVpnGatewaySslClientCertRequest&, DownloadVpnGatewaySslClientCertOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DownloadVpnGatewaySslClientCertAsyncHandler;
                 typedef Outcome<Core::Error, Model::EnableCcnRoutesResponse> EnableCcnRoutesOutcome;
                 typedef std::future<EnableCcnRoutesOutcome> EnableCcnRoutesOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::EnableCcnRoutesRequest&, EnableCcnRoutesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnableCcnRoutesAsyncHandler;
+                typedef Outcome<Core::Error, Model::EnableFlowLogsResponse> EnableFlowLogsOutcome;
+                typedef std::future<EnableFlowLogsOutcome> EnableFlowLogsOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::EnableFlowLogsRequest&, EnableFlowLogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnableFlowLogsAsyncHandler;
                 typedef Outcome<Core::Error, Model::EnableGatewayFlowMonitorResponse> EnableGatewayFlowMonitorOutcome;
                 typedef std::future<EnableGatewayFlowMonitorOutcome> EnableGatewayFlowMonitorOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::EnableGatewayFlowMonitorRequest&, EnableGatewayFlowMonitorOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnableGatewayFlowMonitorAsyncHandler;
@@ -1105,6 +1180,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::EnableVpcEndPointConnectResponse> EnableVpcEndPointConnectOutcome;
                 typedef std::future<EnableVpcEndPointConnectOutcome> EnableVpcEndPointConnectOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::EnableVpcEndPointConnectRequest&, EnableVpcEndPointConnectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnableVpcEndPointConnectAsyncHandler;
+                typedef Outcome<Core::Error, Model::EnableVpnGatewaySslClientCertResponse> EnableVpnGatewaySslClientCertOutcome;
+                typedef std::future<EnableVpnGatewaySslClientCertOutcome> EnableVpnGatewaySslClientCertOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::EnableVpnGatewaySslClientCertRequest&, EnableVpnGatewaySslClientCertOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnableVpnGatewaySslClientCertAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetCcnRegionBandwidthLimitsResponse> GetCcnRegionBandwidthLimitsOutcome;
                 typedef std::future<GetCcnRegionBandwidthLimitsOutcome> GetCcnRegionBandwidthLimitsOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::GetCcnRegionBandwidthLimitsRequest&, GetCcnRegionBandwidthLimitsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetCcnRegionBandwidthLimitsAsyncHandler;
@@ -1126,6 +1204,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::InquiryPriceResetVpnGatewayInternetMaxBandwidthResponse> InquiryPriceResetVpnGatewayInternetMaxBandwidthOutcome;
                 typedef std::future<InquiryPriceResetVpnGatewayInternetMaxBandwidthOutcome> InquiryPriceResetVpnGatewayInternetMaxBandwidthOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::InquiryPriceResetVpnGatewayInternetMaxBandwidthRequest&, InquiryPriceResetVpnGatewayInternetMaxBandwidthOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InquiryPriceResetVpnGatewayInternetMaxBandwidthAsyncHandler;
+                typedef Outcome<Core::Error, Model::LockCcnBandwidthsResponse> LockCcnBandwidthsOutcome;
+                typedef std::future<LockCcnBandwidthsOutcome> LockCcnBandwidthsOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::LockCcnBandwidthsRequest&, LockCcnBandwidthsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> LockCcnBandwidthsAsyncHandler;
+                typedef Outcome<Core::Error, Model::LockCcnsResponse> LockCcnsOutcome;
+                typedef std::future<LockCcnsOutcome> LockCcnsOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::LockCcnsRequest&, LockCcnsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> LockCcnsAsyncHandler;
                 typedef Outcome<Core::Error, Model::MigrateNetworkInterfaceResponse> MigrateNetworkInterfaceOutcome;
                 typedef std::future<MigrateNetworkInterfaceOutcome> MigrateNetworkInterfaceOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::MigrateNetworkInterfaceRequest&, MigrateNetworkInterfaceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> MigrateNetworkInterfaceAsyncHandler;
@@ -1339,6 +1423,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UnassignPrivateIpAddressesResponse> UnassignPrivateIpAddressesOutcome;
                 typedef std::future<UnassignPrivateIpAddressesOutcome> UnassignPrivateIpAddressesOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::UnassignPrivateIpAddressesRequest&, UnassignPrivateIpAddressesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UnassignPrivateIpAddressesAsyncHandler;
+                typedef Outcome<Core::Error, Model::UnlockCcnBandwidthsResponse> UnlockCcnBandwidthsOutcome;
+                typedef std::future<UnlockCcnBandwidthsOutcome> UnlockCcnBandwidthsOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::UnlockCcnBandwidthsRequest&, UnlockCcnBandwidthsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UnlockCcnBandwidthsAsyncHandler;
+                typedef Outcome<Core::Error, Model::UnlockCcnsResponse> UnlockCcnsOutcome;
+                typedef std::future<UnlockCcnsOutcome> UnlockCcnsOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::UnlockCcnsRequest&, UnlockCcnsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UnlockCcnsAsyncHandler;
                 typedef Outcome<Core::Error, Model::WithdrawNotifyRoutesResponse> WithdrawNotifyRoutesOutcome;
                 typedef std::future<WithdrawNotifyRoutesOutcome> WithdrawNotifyRoutesOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::WithdrawNotifyRoutesRequest&, WithdrawNotifyRoutesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> WithdrawNotifyRoutesAsyncHandler;
@@ -1375,13 +1465,23 @@ namespace TencentCloud
                 AddIp6RulesOutcomeCallable AddIp6RulesCallable(const Model::AddIp6RulesRequest& request);
 
                 /**
-                 *增加模版对象中的IP地址、协议端口、IP地址组、协议端口组。当前仅支持北京、泰国、北美地域请求。
+                 *增加模板对象中的IP地址、协议端口、IP地址组、协议端口组。当前仅支持北京、泰国、北美地域请求。
                  * @param req AddTemplateMemberRequest
                  * @return AddTemplateMemberOutcome
                  */
                 AddTemplateMemberOutcome AddTemplateMember(const Model::AddTemplateMemberRequest &request);
                 void AddTemplateMemberAsync(const Model::AddTemplateMemberRequest& request, const AddTemplateMemberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 AddTemplateMemberOutcomeCallable AddTemplateMemberCallable(const Model::AddTemplateMemberRequest& request);
+
+                /**
+                 *本接口 (AdjustPublicAddress) 用于更换IP地址，支持更换CVM实例的普通公网IP和包月带宽的EIP。
+
+                 * @param req AdjustPublicAddressRequest
+                 * @return AdjustPublicAddressOutcome
+                 */
+                AdjustPublicAddressOutcome AdjustPublicAddress(const Model::AdjustPublicAddressRequest &request);
+                void AdjustPublicAddressAsync(const Model::AdjustPublicAddressRequest& request, const AdjustPublicAddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AdjustPublicAddressOutcomeCallable AdjustPublicAddressCallable(const Model::AdjustPublicAddressRequest& request);
 
                 /**
                  *本接口 (AllocateAddresses) 用于申请一个或多个[弹性公网IP](https://cloud.tencent.com/document/product/213/1941)（简称 EIP）。
@@ -1541,6 +1641,7 @@ namespace TencentCloud
 
                 /**
                  *本接口（AttachNetworkInterface）用于弹性网卡绑定云服务器。
+* 一个弹性网卡请至少绑定一个安全组，如需绑定请参见<a href="https://cloud.tencent.com/document/product/215/43132">弹性网卡绑定安全组</a>。
 * 一个云服务器可以绑定多个弹性网卡，但只能绑定一个主网卡。更多限制信息详见<a href="https://cloud.tencent.com/document/product/576/18527">弹性网卡使用限制</a>。
 * 一个弹性网卡只能同时绑定一个云服务器。
 * 只有运行中或者已关机状态的云服务器才能绑定弹性网卡，查看云服务器状态详见<a href="https://cloud.tencent.com/document/api/213/9452#InstanceStatus">腾讯云服务器信息</a>。
@@ -1605,7 +1706,7 @@ namespace TencentCloud
                 CloneSecurityGroupOutcomeCallable CloneSecurityGroupCallable(const Model::CloneSecurityGroupRequest& request);
 
                 /**
-                 *本接口（CreateAddressTemplate）用于创建IP地址模版
+                 *本接口（CreateAddressTemplate）用于创建IP地址模板。
                  * @param req CreateAddressTemplateRequest
                  * @return CreateAddressTemplateOutcome
                  */
@@ -1614,7 +1715,7 @@ namespace TencentCloud
                 CreateAddressTemplateOutcomeCallable CreateAddressTemplateCallable(const Model::CreateAddressTemplateRequest& request);
 
                 /**
-                 *本接口（CreateAddressTemplateGroup）用于创建IP地址模版集合
+                 *本接口（CreateAddressTemplateGroup）用于创建IP地址模板集合
                  * @param req CreateAddressTemplateGroupRequest
                  * @return CreateAddressTemplateGroupOutcome
                  */
@@ -1879,7 +1980,7 @@ namespace TencentCloud
 <li>Port 字段允许输入一个单独端口号，或者用减号分隔的两个端口号代表端口范围，例如80或8000-8010。只有当 Protocol 字段是 TCP 或 UDP 时，Port 字段才被接受，即 Protocol 字段不是 TCP 或 UDP 时，Protocol 和 Port 排他关系，不允许同时输入，否则会接口报错。</li>
 <li>Action 字段只允许输入 ACCEPT 或 DROP。</li>
 <li>CidrBlock, Ipv6CidrBlock, SecurityGroupId, AddressTemplate 四者是排他关系，不允许同时输入，Protocol + Port 和 ServiceTemplate 二者是排他关系，不允许同时输入。</li>
-<li>一次请求中只能创建单个方向的规则, 如果需要指定索引（PolicyIndex）参数, 多条规则的索引必须一致。</li>
+<li>一次请求中只能创建单个方向的规则, 如果需要指定索引（PolicyIndex）参数, 多条规则的索引必须一致。如想在规则最前面插入一条，则填0即可，如果想在最后追加，该字段可不填。</li>
 </ul></li></ul>
                  * @param req CreateSecurityGroupPoliciesRequest
                  * @return CreateSecurityGroupPoliciesOutcome
@@ -1980,7 +2081,7 @@ namespace TencentCloud
                 CreateVpcEndPointOutcomeCallable CreateVpcEndPointCallable(const Model::CreateVpcEndPointRequest& request);
 
                 /**
-                 *创建终端节点服务。
+                 *本接口(CreateVpcEndPointService)用于创建终端节点服务。
                  * @param req CreateVpcEndPointServiceRequest
                  * @return CreateVpcEndPointServiceOutcome
                  */
@@ -2025,6 +2126,24 @@ namespace TencentCloud
                 CreateVpnGatewayRoutesOutcome CreateVpnGatewayRoutes(const Model::CreateVpnGatewayRoutesRequest &request);
                 void CreateVpnGatewayRoutesAsync(const Model::CreateVpnGatewayRoutesRequest& request, const CreateVpnGatewayRoutesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateVpnGatewayRoutesOutcomeCallable CreateVpnGatewayRoutesCallable(const Model::CreateVpnGatewayRoutesRequest& request);
+
+                /**
+                 *创建SSL-VPN-CLIENT
+                 * @param req CreateVpnGatewaySslClientRequest
+                 * @return CreateVpnGatewaySslClientOutcome
+                 */
+                CreateVpnGatewaySslClientOutcome CreateVpnGatewaySslClient(const Model::CreateVpnGatewaySslClientRequest &request);
+                void CreateVpnGatewaySslClientAsync(const Model::CreateVpnGatewaySslClientRequest& request, const CreateVpnGatewaySslClientAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateVpnGatewaySslClientOutcomeCallable CreateVpnGatewaySslClientCallable(const Model::CreateVpnGatewaySslClientRequest& request);
+
+                /**
+                 *创建 Server端
+                 * @param req CreateVpnGatewaySslServerRequest
+                 * @return CreateVpnGatewaySslServerOutcome
+                 */
+                CreateVpnGatewaySslServerOutcome CreateVpnGatewaySslServer(const Model::CreateVpnGatewaySslServerRequest &request);
+                void CreateVpnGatewaySslServerAsync(const Model::CreateVpnGatewaySslServerRequest& request, const CreateVpnGatewaySslServerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateVpnGatewaySslServerOutcomeCallable CreateVpnGatewaySslServerCallable(const Model::CreateVpnGatewaySslServerRequest& request);
 
                 /**
                  *本接口（DeleteAddressTemplate）用于删除IP地址模板
@@ -2281,7 +2400,7 @@ namespace TencentCloud
                 DeleteSubnetOutcomeCallable DeleteSubnetCallable(const Model::DeleteSubnetRequest& request);
 
                 /**
-                 *删除模版对象中的IP地址、协议端口、IP地址组、协议端口组。当前仅支持北京、泰国、北美地域请求。
+                 *删除模板对象中的IP地址、协议端口、IP地址组、协议端口组。当前仅支持北京、泰国、北美地域请求。
                  * @param req DeleteTemplateMemberRequest
                  * @return DeleteTemplateMemberOutcome
                  */
@@ -2355,6 +2474,24 @@ namespace TencentCloud
                 DeleteVpnGatewayRoutesOutcome DeleteVpnGatewayRoutes(const Model::DeleteVpnGatewayRoutesRequest &request);
                 void DeleteVpnGatewayRoutesAsync(const Model::DeleteVpnGatewayRoutesRequest& request, const DeleteVpnGatewayRoutesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteVpnGatewayRoutesOutcomeCallable DeleteVpnGatewayRoutesCallable(const Model::DeleteVpnGatewayRoutesRequest& request);
+
+                /**
+                 *删除SSL-VPN-CLIENT
+                 * @param req DeleteVpnGatewaySslClientRequest
+                 * @return DeleteVpnGatewaySslClientOutcome
+                 */
+                DeleteVpnGatewaySslClientOutcome DeleteVpnGatewaySslClient(const Model::DeleteVpnGatewaySslClientRequest &request);
+                void DeleteVpnGatewaySslClientAsync(const Model::DeleteVpnGatewaySslClientRequest& request, const DeleteVpnGatewaySslClientAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteVpnGatewaySslClientOutcomeCallable DeleteVpnGatewaySslClientCallable(const Model::DeleteVpnGatewaySslClientRequest& request);
+
+                /**
+                 *删除SSL-VPN-SERVER 实例
+                 * @param req DeleteVpnGatewaySslServerRequest
+                 * @return DeleteVpnGatewaySslServerOutcome
+                 */
+                DeleteVpnGatewaySslServerOutcome DeleteVpnGatewaySslServer(const Model::DeleteVpnGatewaySslServerRequest &request);
+                void DeleteVpnGatewaySslServerAsync(const Model::DeleteVpnGatewaySslServerRequest& request, const DeleteVpnGatewaySslServerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteVpnGatewaySslServerOutcomeCallable DeleteVpnGatewaySslServerCallable(const Model::DeleteVpnGatewaySslServerRequest& request);
 
                 /**
                  *本接口（DescribeAccountAttributes）用于查询用户账号私有属性。
@@ -2492,6 +2629,18 @@ namespace TencentCloud
                 DescribeClassicLinkInstancesOutcome DescribeClassicLinkInstances(const Model::DescribeClassicLinkInstancesRequest &request);
                 void DescribeClassicLinkInstancesAsync(const Model::DescribeClassicLinkInstancesRequest& request, const DescribeClassicLinkInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeClassicLinkInstancesOutcomeCallable DescribeClassicLinkInstancesCallable(const Model::DescribeClassicLinkInstancesRequest& request);
+
+                /**
+                 *本接口（DescribeCrossBorderCcnRegionBandwidthLimits）用于获取要锁定的限速实例列表。
+该接口一般用来封禁地域间限速的云联网实例下的限速实例, 目前联通内部运营系统通过云API调用, 如果是出口限速, 一般使用更粗的云联网实例粒度封禁（DescribeTenantCcns）
+如有需要, 可以封禁任意限速实例, 可接入到内部运营系统
+
+                 * @param req DescribeCrossBorderCcnRegionBandwidthLimitsRequest
+                 * @return DescribeCrossBorderCcnRegionBandwidthLimitsOutcome
+                 */
+                DescribeCrossBorderCcnRegionBandwidthLimitsOutcome DescribeCrossBorderCcnRegionBandwidthLimits(const Model::DescribeCrossBorderCcnRegionBandwidthLimitsRequest &request);
+                void DescribeCrossBorderCcnRegionBandwidthLimitsAsync(const Model::DescribeCrossBorderCcnRegionBandwidthLimitsRequest& request, const DescribeCrossBorderCcnRegionBandwidthLimitsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCrossBorderCcnRegionBandwidthLimitsOutcomeCallable DescribeCrossBorderCcnRegionBandwidthLimitsCallable(const Model::DescribeCrossBorderCcnRegionBandwidthLimitsRequest& request);
 
                 /**
                  *本接口（DescribeCrossBorderCompliance）用于查询用户创建的合规化资质审批单。
@@ -2850,6 +2999,17 @@ namespace TencentCloud
                 DescribeTemplateLimitsOutcomeCallable DescribeTemplateLimitsCallable(const Model::DescribeTemplateLimitsRequest& request);
 
                 /**
+                 *本接口（DescribeTenantCcns）用于获取要锁定的云联网实例列表。
+该接口一般用来封禁出口限速的云联网实例, 目前联通内部运营系统通过云API调用, 因为出口限速无法按地域间封禁, 只能按更粗的云联网实例粒度封禁, 如果是地域间限速, 一般可以通过更细的限速实例粒度封禁（DescribeCrossBorderCcnRegionBandwidthLimits）
+如有需要, 可以封禁任意云联网实例, 可接入到内部运营系统
+                 * @param req DescribeTenantCcnsRequest
+                 * @return DescribeTenantCcnsOutcome
+                 */
+                DescribeTenantCcnsOutcome DescribeTenantCcns(const Model::DescribeTenantCcnsRequest &request);
+                void DescribeTenantCcnsAsync(const Model::DescribeTenantCcnsRequest& request, const DescribeTenantCcnsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTenantCcnsOutcomeCallable DescribeTenantCcnsCallable(const Model::DescribeTenantCcnsRequest& request);
+
+                /**
                  *查询终端节点列表。
                  * @param req DescribeVpcEndPointRequest
                  * @return DescribeVpcEndPointOutcome
@@ -2998,6 +3158,24 @@ LimitTypes取值范围：
                 DescribeVpnGatewayRoutesOutcomeCallable DescribeVpnGatewayRoutesCallable(const Model::DescribeVpnGatewayRoutesRequest& request);
 
                 /**
+                 *查询SSL-VPN-CLIENT 列表
+                 * @param req DescribeVpnGatewaySslClientsRequest
+                 * @return DescribeVpnGatewaySslClientsOutcome
+                 */
+                DescribeVpnGatewaySslClientsOutcome DescribeVpnGatewaySslClients(const Model::DescribeVpnGatewaySslClientsRequest &request);
+                void DescribeVpnGatewaySslClientsAsync(const Model::DescribeVpnGatewaySslClientsRequest& request, const DescribeVpnGatewaySslClientsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeVpnGatewaySslClientsOutcomeCallable DescribeVpnGatewaySslClientsCallable(const Model::DescribeVpnGatewaySslClientsRequest& request);
+
+                /**
+                 *查询SSL-VPN SERVER 列表信息
+                 * @param req DescribeVpnGatewaySslServersRequest
+                 * @return DescribeVpnGatewaySslServersOutcome
+                 */
+                DescribeVpnGatewaySslServersOutcome DescribeVpnGatewaySslServers(const Model::DescribeVpnGatewaySslServersRequest &request);
+                void DescribeVpnGatewaySslServersAsync(const Model::DescribeVpnGatewaySslServersRequest& request, const DescribeVpnGatewaySslServersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeVpnGatewaySslServersOutcomeCallable DescribeVpnGatewaySslServersCallable(const Model::DescribeVpnGatewaySslServersRequest& request);
+
+                /**
                  *本接口（DescribeVpnGateways）用于查询VPN网关列表。
                  * @param req DescribeVpnGatewaysRequest
                  * @return DescribeVpnGatewaysOutcome
@@ -3047,6 +3225,15 @@ LimitTypes取值范围：
                 DisableCcnRoutesOutcomeCallable DisableCcnRoutesCallable(const Model::DisableCcnRoutesRequest& request);
 
                 /**
+                 *本接口（DisableFlowLogs）用于停止流日志。
+                 * @param req DisableFlowLogsRequest
+                 * @return DisableFlowLogsOutcome
+                 */
+                DisableFlowLogsOutcome DisableFlowLogs(const Model::DisableFlowLogsRequest &request);
+                void DisableFlowLogsAsync(const Model::DisableFlowLogsRequest& request, const DisableFlowLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DisableFlowLogsOutcomeCallable DisableFlowLogsCallable(const Model::DisableFlowLogsRequest& request);
+
+                /**
                  *本接口（DisableGatewayFlowMonitor）用于关闭网关流量监控。
                  * @param req DisableGatewayFlowMonitorRequest
                  * @return DisableGatewayFlowMonitorOutcome
@@ -3063,6 +3250,15 @@ LimitTypes取值范围：
                 DisableRoutesOutcome DisableRoutes(const Model::DisableRoutesRequest &request);
                 void DisableRoutesAsync(const Model::DisableRoutesRequest& request, const DisableRoutesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DisableRoutesOutcomeCallable DisableRoutesCallable(const Model::DisableRoutesRequest& request);
+
+                /**
+                 *禁用SSL-VPN-CLIENT 证书
+                 * @param req DisableVpnGatewaySslClientCertRequest
+                 * @return DisableVpnGatewaySslClientCertOutcome
+                 */
+                DisableVpnGatewaySslClientCertOutcome DisableVpnGatewaySslClientCert(const Model::DisableVpnGatewaySslClientCertRequest &request);
+                void DisableVpnGatewaySslClientCertAsync(const Model::DisableVpnGatewaySslClientCertRequest& request, const DisableVpnGatewaySslClientCertAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DisableVpnGatewaySslClientCertOutcomeCallable DisableVpnGatewaySslClientCertCallable(const Model::DisableVpnGatewaySslClientCertRequest& request);
 
                 /**
                  *本接口 (DisassociateAddress) 用于解绑[弹性公网IP](https://cloud.tencent.com/document/product/213/1941)（简称 EIP）。
@@ -3143,6 +3339,15 @@ LimitTypes取值范围：
                 DownloadCustomerGatewayConfigurationOutcomeCallable DownloadCustomerGatewayConfigurationCallable(const Model::DownloadCustomerGatewayConfigurationRequest& request);
 
                 /**
+                 *下载SSL-VPN-CLIENT 客户端证书
+                 * @param req DownloadVpnGatewaySslClientCertRequest
+                 * @return DownloadVpnGatewaySslClientCertOutcome
+                 */
+                DownloadVpnGatewaySslClientCertOutcome DownloadVpnGatewaySslClientCert(const Model::DownloadVpnGatewaySslClientCertRequest &request);
+                void DownloadVpnGatewaySslClientCertAsync(const Model::DownloadVpnGatewaySslClientCertRequest& request, const DownloadVpnGatewaySslClientCertAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DownloadVpnGatewaySslClientCertOutcomeCallable DownloadVpnGatewaySslClientCertCallable(const Model::DownloadVpnGatewaySslClientCertRequest& request);
+
+                /**
                  *本接口（EnableCcnRoutes）用于启用已经加入云联网（CCN）的路由。<br />
 本接口会校验启用后，是否与已有路由冲突，如果冲突，则无法启用，失败处理。路由冲突时，需要先禁用与之冲突的路由，才能启用该路由。
                  * @param req EnableCcnRoutesRequest
@@ -3151,6 +3356,15 @@ LimitTypes取值范围：
                 EnableCcnRoutesOutcome EnableCcnRoutes(const Model::EnableCcnRoutesRequest &request);
                 void EnableCcnRoutesAsync(const Model::EnableCcnRoutesRequest& request, const EnableCcnRoutesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 EnableCcnRoutesOutcomeCallable EnableCcnRoutesCallable(const Model::EnableCcnRoutesRequest& request);
+
+                /**
+                 *本接口（EnableFlowLogs）用于启动流日志。
+                 * @param req EnableFlowLogsRequest
+                 * @return EnableFlowLogsOutcome
+                 */
+                EnableFlowLogsOutcome EnableFlowLogs(const Model::EnableFlowLogsRequest &request);
+                void EnableFlowLogsAsync(const Model::EnableFlowLogsRequest& request, const EnableFlowLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                EnableFlowLogsOutcomeCallable EnableFlowLogsCallable(const Model::EnableFlowLogsRequest& request);
 
                 /**
                  *本接口（EnableGatewayFlowMonitor）用于开启网关流量监控。
@@ -3179,6 +3393,15 @@ LimitTypes取值范围：
                 EnableVpcEndPointConnectOutcome EnableVpcEndPointConnect(const Model::EnableVpcEndPointConnectRequest &request);
                 void EnableVpcEndPointConnectAsync(const Model::EnableVpcEndPointConnectRequest& request, const EnableVpcEndPointConnectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 EnableVpcEndPointConnectOutcomeCallable EnableVpcEndPointConnectCallable(const Model::EnableVpcEndPointConnectRequest& request);
+
+                /**
+                 *启用SSL-VPN-CLIENT 证书
+                 * @param req EnableVpnGatewaySslClientCertRequest
+                 * @return EnableVpnGatewaySslClientCertOutcome
+                 */
+                EnableVpnGatewaySslClientCertOutcome EnableVpnGatewaySslClientCert(const Model::EnableVpnGatewaySslClientCertRequest &request);
+                void EnableVpnGatewaySslClientCertAsync(const Model::EnableVpnGatewaySslClientCertRequest& request, const EnableVpnGatewaySslClientCertAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                EnableVpnGatewaySslClientCertOutcomeCallable EnableVpnGatewaySslClientCertCallable(const Model::EnableVpnGatewaySslClientCertRequest& request);
 
                 /**
                  *本接口（GetCcnRegionBandwidthLimits）用于查询云联网相关地域带宽信息，其中预付费模式的云联网仅支持地域间限速，后付费模式的云联网支持地域间限速和地域出口限速。
@@ -3244,6 +3467,32 @@ LimitTypes取值范围：
                 InquiryPriceResetVpnGatewayInternetMaxBandwidthOutcome InquiryPriceResetVpnGatewayInternetMaxBandwidth(const Model::InquiryPriceResetVpnGatewayInternetMaxBandwidthRequest &request);
                 void InquiryPriceResetVpnGatewayInternetMaxBandwidthAsync(const Model::InquiryPriceResetVpnGatewayInternetMaxBandwidthRequest& request, const InquiryPriceResetVpnGatewayInternetMaxBandwidthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 InquiryPriceResetVpnGatewayInternetMaxBandwidthOutcomeCallable InquiryPriceResetVpnGatewayInternetMaxBandwidthCallable(const Model::InquiryPriceResetVpnGatewayInternetMaxBandwidthRequest& request);
+
+                /**
+                 *本接口（LockCcnBandwidths）用户锁定云联网限速实例。
+该接口一般用来封禁地域间限速的云联网实例下的限速实例, 目前联通内部运营系统通过云API调用, 如果是出口限速, 一般使用更粗的云联网实例粒度封禁（LockCcns）。
+如有需要, 可以封禁任意限速实例, 可接入到内部运营系统。
+                 * @param req LockCcnBandwidthsRequest
+                 * @return LockCcnBandwidthsOutcome
+                 */
+                LockCcnBandwidthsOutcome LockCcnBandwidths(const Model::LockCcnBandwidthsRequest &request);
+                void LockCcnBandwidthsAsync(const Model::LockCcnBandwidthsRequest& request, const LockCcnBandwidthsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                LockCcnBandwidthsOutcomeCallable LockCcnBandwidthsCallable(const Model::LockCcnBandwidthsRequest& request);
+
+                /**
+                 *本接口（LockCcns）用于锁定云联网实例
+
+该接口一般用来封禁出口限速的云联网实例, 目前联通内部运营系统通过云API调用, 因为出口限速无法按地域间封禁, 只能按更粗的云联网实例粒度封禁, 如果是地域间限速, 一般可以通过更细的限速实例粒度封禁（LockCcnBandwidths）
+
+如有需要, 可以封禁任意限速实例, 可接入到内部运营系统
+
+
+                 * @param req LockCcnsRequest
+                 * @return LockCcnsOutcome
+                 */
+                LockCcnsOutcome LockCcns(const Model::LockCcnsRequest &request);
+                void LockCcnsAsync(const Model::LockCcnsRequest& request, const LockCcnsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                LockCcnsOutcomeCallable LockCcnsCallable(const Model::LockCcnsRequest& request);
 
                 /**
                  *本接口（MigrateNetworkInterface）用于弹性网卡迁移。
@@ -3526,7 +3775,7 @@ LimitTypes取值范围：
                 ModifyNetworkInterfaceAttributeOutcomeCallable ModifyNetworkInterfaceAttributeCallable(const Model::ModifyNetworkInterfaceAttributeRequest& request);
 
                 /**
-                 *修改弹性网卡服务质量
+                 *修改弹性网卡服务质量。
                  * @param req ModifyNetworkInterfaceQosRequest
                  * @return ModifyNetworkInterfaceQosOutcome
                  */
@@ -3613,7 +3862,7 @@ LimitTypes取值范围：
                 ModifySubnetAttributeOutcomeCallable ModifySubnetAttributeCallable(const Model::ModifySubnetAttributeRequest& request);
 
                 /**
-                 *修改模版对象中的IP地址、协议端口、IP地址组、协议端口组。当前仅支持北京、泰国、北美地域请求。
+                 *修改模板对象中的IP地址、协议端口、IP地址组、协议端口组。当前仅支持北京、泰国、北美地域请求。
                  * @param req ModifyTemplateMemberRequest
                  * @return ModifyTemplateMemberOutcome
                  */
@@ -3696,7 +3945,7 @@ LimitTypes取值范围：
                 ModifyVpnGatewayRoutesOutcomeCallable ModifyVpnGatewayRoutesCallable(const Model::ModifyVpnGatewayRoutesRequest& request);
 
                 /**
-                 *路由表列表页操作增加“发布到云联网”，用于发布路由到云联网。
+                 *本接口（NotifyRoutes）用于路由表列表页操作增加“发布到云联网”，发布路由到云联网。
                  * @param req NotifyRoutesRequest
                  * @return NotifyRoutesOutcome
                  */
@@ -3924,6 +4173,32 @@ LimitTypes取值范围：
                 UnassignPrivateIpAddressesOutcome UnassignPrivateIpAddresses(const Model::UnassignPrivateIpAddressesRequest &request);
                 void UnassignPrivateIpAddressesAsync(const Model::UnassignPrivateIpAddressesRequest& request, const UnassignPrivateIpAddressesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UnassignPrivateIpAddressesOutcomeCallable UnassignPrivateIpAddressesCallable(const Model::UnassignPrivateIpAddressesRequest& request);
+
+                /**
+                 *本接口（UnlockCcnBandwidths）用户解锁云联网限速实例。
+该接口一般用来封禁地域间限速的云联网实例下的限速实例, 目前联通内部运营系统通过云API调用, 如果是出口限速, 一般使用更粗的云联网实例粒度封禁（SecurityUnlockCcns）。
+如有需要, 可以封禁任意限速实例, 可接入到内部运营系统。
+                 * @param req UnlockCcnBandwidthsRequest
+                 * @return UnlockCcnBandwidthsOutcome
+                 */
+                UnlockCcnBandwidthsOutcome UnlockCcnBandwidths(const Model::UnlockCcnBandwidthsRequest &request);
+                void UnlockCcnBandwidthsAsync(const Model::UnlockCcnBandwidthsRequest& request, const UnlockCcnBandwidthsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UnlockCcnBandwidthsOutcomeCallable UnlockCcnBandwidthsCallable(const Model::UnlockCcnBandwidthsRequest& request);
+
+                /**
+                 *本接口（UnlockCcns）用于解锁云联网实例
+
+该接口一般用来解封禁出口限速的云联网实例, 目前联通内部运营系统通过云API调用, 因为出口限速无法按地域间解封禁, 只能按更粗的云联网实例粒度解封禁, 如果是地域间限速, 一般可以通过更细的限速实例粒度解封禁（UnlockCcnBandwidths）
+
+如有需要, 可以封禁任意限速实例, 可接入到内部运营系统
+
+
+                 * @param req UnlockCcnsRequest
+                 * @return UnlockCcnsOutcome
+                 */
+                UnlockCcnsOutcome UnlockCcns(const Model::UnlockCcnsRequest &request);
+                void UnlockCcnsAsync(const Model::UnlockCcnsRequest& request, const UnlockCcnsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UnlockCcnsOutcomeCallable UnlockCcnsCallable(const Model::UnlockCcnsRequest& request);
 
                 /**
                  *路由表列表页操作增加“从云联网撤销”，用于撤销已发布到云联网的路由。

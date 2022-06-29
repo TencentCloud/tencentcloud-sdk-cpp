@@ -24,10 +24,11 @@ using namespace std;
 
 CreateDBImportJobRequest::CreateDBImportJobRequest() :
     m_instanceIdHasBeenSet(false),
-    m_fileNameHasBeenSet(false),
     m_userHasBeenSet(false),
+    m_fileNameHasBeenSet(false),
     m_passwordHasBeenSet(false),
-    m_dbNameHasBeenSet(false)
+    m_dbNameHasBeenSet(false),
+    m_cosUrlHasBeenSet(false)
 {
 }
 
@@ -46,20 +47,20 @@ string CreateDBImportJobRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_fileNameHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "FileName";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_fileName.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_userHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "User";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_user.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fileNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_fileName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_passwordHasBeenSet)
@@ -76,6 +77,14 @@ string CreateDBImportJobRequest::ToJsonString() const
         string key = "DbName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_dbName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cosUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CosUrl";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_cosUrl.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -102,22 +111,6 @@ bool CreateDBImportJobRequest::InstanceIdHasBeenSet() const
     return m_instanceIdHasBeenSet;
 }
 
-string CreateDBImportJobRequest::GetFileName() const
-{
-    return m_fileName;
-}
-
-void CreateDBImportJobRequest::SetFileName(const string& _fileName)
-{
-    m_fileName = _fileName;
-    m_fileNameHasBeenSet = true;
-}
-
-bool CreateDBImportJobRequest::FileNameHasBeenSet() const
-{
-    return m_fileNameHasBeenSet;
-}
-
 string CreateDBImportJobRequest::GetUser() const
 {
     return m_user;
@@ -132,6 +125,22 @@ void CreateDBImportJobRequest::SetUser(const string& _user)
 bool CreateDBImportJobRequest::UserHasBeenSet() const
 {
     return m_userHasBeenSet;
+}
+
+string CreateDBImportJobRequest::GetFileName() const
+{
+    return m_fileName;
+}
+
+void CreateDBImportJobRequest::SetFileName(const string& _fileName)
+{
+    m_fileName = _fileName;
+    m_fileNameHasBeenSet = true;
+}
+
+bool CreateDBImportJobRequest::FileNameHasBeenSet() const
+{
+    return m_fileNameHasBeenSet;
 }
 
 string CreateDBImportJobRequest::GetPassword() const
@@ -164,6 +173,22 @@ void CreateDBImportJobRequest::SetDbName(const string& _dbName)
 bool CreateDBImportJobRequest::DbNameHasBeenSet() const
 {
     return m_dbNameHasBeenSet;
+}
+
+string CreateDBImportJobRequest::GetCosUrl() const
+{
+    return m_cosUrl;
+}
+
+void CreateDBImportJobRequest::SetCosUrl(const string& _cosUrl)
+{
+    m_cosUrl = _cosUrl;
+    m_cosUrlHasBeenSet = true;
+}
+
+bool CreateDBImportJobRequest::CosUrlHasBeenSet() const
+{
+    return m_cosUrlHasBeenSet;
 }
 
 

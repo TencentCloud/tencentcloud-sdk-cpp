@@ -69,11 +69,13 @@ CreateApiRequest::CreateApiRequest() :
     m_targetNamespaceIdHasBeenSet(false),
     m_userTypeHasBeenSet(false),
     m_isBase64EncodedHasBeenSet(false),
+    m_eventBusIdHasBeenSet(false),
     m_serviceScfFunctionTypeHasBeenSet(false),
     m_eIAMAppTypeHasBeenSet(false),
     m_eIAMAuthTypeHasBeenSet(false),
     m_tokenTimeoutHasBeenSet(false),
-    m_eIAMAppIdHasBeenSet(false)
+    m_eIAMAppIdHasBeenSet(false),
+    m_ownerHasBeenSet(false)
 {
 }
 
@@ -500,6 +502,14 @@ string CreateApiRequest::ToJsonString() const
         d.AddMember(iKey, m_isBase64Encoded, allocator);
     }
 
+    if (m_eventBusIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EventBusId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_eventBusId.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_serviceScfFunctionTypeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -538,6 +548,14 @@ string CreateApiRequest::ToJsonString() const
         string key = "EIAMAppId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_eIAMAppId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ownerHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Owner";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_owner.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -1284,6 +1302,22 @@ bool CreateApiRequest::IsBase64EncodedHasBeenSet() const
     return m_isBase64EncodedHasBeenSet;
 }
 
+string CreateApiRequest::GetEventBusId() const
+{
+    return m_eventBusId;
+}
+
+void CreateApiRequest::SetEventBusId(const string& _eventBusId)
+{
+    m_eventBusId = _eventBusId;
+    m_eventBusIdHasBeenSet = true;
+}
+
+bool CreateApiRequest::EventBusIdHasBeenSet() const
+{
+    return m_eventBusIdHasBeenSet;
+}
+
 string CreateApiRequest::GetServiceScfFunctionType() const
 {
     return m_serviceScfFunctionType;
@@ -1362,6 +1396,22 @@ void CreateApiRequest::SetEIAMAppId(const string& _eIAMAppId)
 bool CreateApiRequest::EIAMAppIdHasBeenSet() const
 {
     return m_eIAMAppIdHasBeenSet;
+}
+
+string CreateApiRequest::GetOwner() const
+{
+    return m_owner;
+}
+
+void CreateApiRequest::SetOwner(const string& _owner)
+{
+    m_owner = _owner;
+    m_ownerHasBeenSet = true;
+}
+
+bool CreateApiRequest::OwnerHasBeenSet() const
+{
+    return m_ownerHasBeenSet;
 }
 
 

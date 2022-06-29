@@ -22,7 +22,8 @@
 using namespace TencentCloud::Cloudhsm::V20191112::Model;
 using namespace std;
 
-DescribeSupportedHsmRequest::DescribeSupportedHsmRequest()
+DescribeSupportedHsmRequest::DescribeSupportedHsmRequest() :
+    m_hsmTypeHasBeenSet(false)
 {
 }
 
@@ -33,6 +34,14 @@ string DescribeSupportedHsmRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_hsmTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HsmType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_hsmType.c_str(), allocator).Move(), allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +49,21 @@ string DescribeSupportedHsmRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string DescribeSupportedHsmRequest::GetHsmType() const
+{
+    return m_hsmType;
+}
+
+void DescribeSupportedHsmRequest::SetHsmType(const string& _hsmType)
+{
+    m_hsmType = _hsmType;
+    m_hsmTypeHasBeenSet = true;
+}
+
+bool DescribeSupportedHsmRequest::HsmTypeHasBeenSet() const
+{
+    return m_hsmTypeHasBeenSet;
+}
 
 

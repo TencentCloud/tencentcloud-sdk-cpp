@@ -59,9 +59,9 @@ namespace TencentCloud
                     bool EffectiveMachineInfoListHasBeenSet() const;
 
                     /**
-                     * 获取用户批量导入失败的机器列表（比如机器不存在等...）
+                     * 获取用户批量导入失败的机器列表（例如机器不存在等...）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InvalidMachineList 用户批量导入失败的机器列表（比如机器不存在等...）
+                     * @return InvalidMachineList 用户批量导入失败的机器列表（例如机器不存在等...）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> GetInvalidMachineList() const;
@@ -82,7 +82,7 @@ namespace TencentCloud
                     bool m_effectiveMachineInfoListHasBeenSet;
 
                     /**
-                     * 用户批量导入失败的机器列表（比如机器不存在等...）
+                     * 用户批量导入失败的机器列表（例如机器不存在等...）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_invalidMachineList;

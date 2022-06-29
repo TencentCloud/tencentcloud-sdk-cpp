@@ -276,6 +276,58 @@ namespace TencentCloud
                      */
                     bool ForwardHostHasBeenSet() const;
 
+                    /**
+                     * 获取服务器名称指示（ServerNameIndication，简称SNI）开关。ON表示开启，OFF表示关闭。
+注意：此字段可能返回 null，表示取不到有效值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ServerNameIndicationSwitch 服务器名称指示（ServerNameIndication，简称SNI）开关。ON表示开启，OFF表示关闭。
+注意：此字段可能返回 null，表示取不到有效值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetServerNameIndicationSwitch() const;
+
+                    /**
+                     * 设置服务器名称指示（ServerNameIndication，简称SNI）开关。ON表示开启，OFF表示关闭。
+注意：此字段可能返回 null，表示取不到有效值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ServerNameIndicationSwitch 服务器名称指示（ServerNameIndication，简称SNI）开关。ON表示开启，OFF表示关闭。
+注意：此字段可能返回 null，表示取不到有效值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetServerNameIndicationSwitch(const std::string& _serverNameIndicationSwitch);
+
+                    /**
+                     * 判断参数 ServerNameIndicationSwitch 是否已赋值
+                     * @return ServerNameIndicationSwitch 是否已赋值
+                     */
+                    bool ServerNameIndicationSwitchHasBeenSet() const;
+
+                    /**
+                     * 获取服务器名称指示（ServerNameIndication，简称SNI），当SNI开关打开时，该字段必填。
+注意：此字段可能返回 null，表示取不到有效值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ServerNameIndication 服务器名称指示（ServerNameIndication，简称SNI），当SNI开关打开时，该字段必填。
+注意：此字段可能返回 null，表示取不到有效值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetServerNameIndication() const;
+
+                    /**
+                     * 设置服务器名称指示（ServerNameIndication，简称SNI），当SNI开关打开时，该字段必填。
+注意：此字段可能返回 null，表示取不到有效值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ServerNameIndication 服务器名称指示（ServerNameIndication，简称SNI），当SNI开关打开时，该字段必填。
+注意：此字段可能返回 null，表示取不到有效值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetServerNameIndication(const std::string& _serverNameIndication);
+
+                    /**
+                     * 判断参数 ServerNameIndication 是否已赋值
+                     * @return ServerNameIndication 是否已赋值
+                     */
+                    bool ServerNameIndicationHasBeenSet() const;
+
                 private:
 
                     /**
@@ -352,6 +404,22 @@ namespace TencentCloud
                      */
                     std::string m_forwardHost;
                     bool m_forwardHostHasBeenSet;
+
+                    /**
+                     * 服务器名称指示（ServerNameIndication，简称SNI）开关。ON表示开启，OFF表示关闭。
+注意：此字段可能返回 null，表示取不到有效值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_serverNameIndicationSwitch;
+                    bool m_serverNameIndicationSwitchHasBeenSet;
+
+                    /**
+                     * 服务器名称指示（ServerNameIndication，简称SNI），当SNI开关打开时，该字段必填。
+注意：此字段可能返回 null，表示取不到有效值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_serverNameIndication;
+                    bool m_serverNameIndicationHasBeenSet;
 
                 };
             }

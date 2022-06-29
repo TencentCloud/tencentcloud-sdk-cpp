@@ -26,11 +26,13 @@ SearchImageRequest::SearchImageRequest() :
     m_groupIdHasBeenSet(false),
     m_imageUrlHasBeenSet(false),
     m_imageBase64HasBeenSet(false),
-    m_matchThresholdHasBeenSet(false),
-    m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
+    m_offsetHasBeenSet(false),
+    m_matchThresholdHasBeenSet(false),
     m_filterHasBeenSet(false),
-    m_imageRectHasBeenSet(false)
+    m_imageRectHasBeenSet(false),
+    m_enableDetectHasBeenSet(false),
+    m_categoryIdHasBeenSet(false)
 {
 }
 
@@ -65,12 +67,12 @@ string SearchImageRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_imageBase64.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_matchThresholdHasBeenSet)
+    if (m_limitHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "MatchThreshold";
+        string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_matchThreshold, allocator);
+        d.AddMember(iKey, m_limit, allocator);
     }
 
     if (m_offsetHasBeenSet)
@@ -81,12 +83,12 @@ string SearchImageRequest::ToJsonString() const
         d.AddMember(iKey, m_offset, allocator);
     }
 
-    if (m_limitHasBeenSet)
+    if (m_matchThresholdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Limit";
+        string key = "MatchThreshold";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_limit, allocator);
+        d.AddMember(iKey, m_matchThreshold, allocator);
     }
 
     if (m_filterHasBeenSet)
@@ -104,6 +106,22 @@ string SearchImageRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_imageRect.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_enableDetectHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableDetect";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableDetect, allocator);
+    }
+
+    if (m_categoryIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CategoryId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_categoryId, allocator);
     }
 
 
@@ -162,20 +180,20 @@ bool SearchImageRequest::ImageBase64HasBeenSet() const
     return m_imageBase64HasBeenSet;
 }
 
-int64_t SearchImageRequest::GetMatchThreshold() const
+int64_t SearchImageRequest::GetLimit() const
 {
-    return m_matchThreshold;
+    return m_limit;
 }
 
-void SearchImageRequest::SetMatchThreshold(const int64_t& _matchThreshold)
+void SearchImageRequest::SetLimit(const int64_t& _limit)
 {
-    m_matchThreshold = _matchThreshold;
-    m_matchThresholdHasBeenSet = true;
+    m_limit = _limit;
+    m_limitHasBeenSet = true;
 }
 
-bool SearchImageRequest::MatchThresholdHasBeenSet() const
+bool SearchImageRequest::LimitHasBeenSet() const
 {
-    return m_matchThresholdHasBeenSet;
+    return m_limitHasBeenSet;
 }
 
 int64_t SearchImageRequest::GetOffset() const
@@ -194,20 +212,20 @@ bool SearchImageRequest::OffsetHasBeenSet() const
     return m_offsetHasBeenSet;
 }
 
-int64_t SearchImageRequest::GetLimit() const
+int64_t SearchImageRequest::GetMatchThreshold() const
 {
-    return m_limit;
+    return m_matchThreshold;
 }
 
-void SearchImageRequest::SetLimit(const int64_t& _limit)
+void SearchImageRequest::SetMatchThreshold(const int64_t& _matchThreshold)
 {
-    m_limit = _limit;
-    m_limitHasBeenSet = true;
+    m_matchThreshold = _matchThreshold;
+    m_matchThresholdHasBeenSet = true;
 }
 
-bool SearchImageRequest::LimitHasBeenSet() const
+bool SearchImageRequest::MatchThresholdHasBeenSet() const
 {
-    return m_limitHasBeenSet;
+    return m_matchThresholdHasBeenSet;
 }
 
 string SearchImageRequest::GetFilter() const
@@ -240,6 +258,38 @@ void SearchImageRequest::SetImageRect(const ImageRect& _imageRect)
 bool SearchImageRequest::ImageRectHasBeenSet() const
 {
     return m_imageRectHasBeenSet;
+}
+
+bool SearchImageRequest::GetEnableDetect() const
+{
+    return m_enableDetect;
+}
+
+void SearchImageRequest::SetEnableDetect(const bool& _enableDetect)
+{
+    m_enableDetect = _enableDetect;
+    m_enableDetectHasBeenSet = true;
+}
+
+bool SearchImageRequest::EnableDetectHasBeenSet() const
+{
+    return m_enableDetectHasBeenSet;
+}
+
+int64_t SearchImageRequest::GetCategoryId() const
+{
+    return m_categoryId;
+}
+
+void SearchImageRequest::SetCategoryId(const int64_t& _categoryId)
+{
+    m_categoryId = _categoryId;
+    m_categoryIdHasBeenSet = true;
+}
+
+bool SearchImageRequest::CategoryIdHasBeenSet() const
+{
+    return m_categoryIdHasBeenSet;
 }
 
 

@@ -151,14 +151,14 @@ namespace TencentCloud
                     bool ContextHasBeenSet() const;
 
                     /**
-                     * 获取查询语句，语句长度最大为4096
-                     * @return Query 查询语句，语句长度最大为4096
+                     * 获取查询语句，参考控制台请求参数，语句长度最大为4096
+                     * @return Query 查询语句，参考控制台请求参数，语句长度最大为4096
                      */
                     std::string GetQuery() const;
 
                     /**
-                     * 设置查询语句，语句长度最大为4096
-                     * @param Query 查询语句，语句长度最大为4096
+                     * 设置查询语句，参考控制台请求参数，语句长度最大为4096
+                     * @param Query 查询语句，参考控制台请求参数，语句长度最大为4096
                      */
                     void SetQuery(const std::string& _query);
 
@@ -225,7 +225,7 @@ namespace TencentCloud
                     bool m_contextHasBeenSet;
 
                     /**
-                     * 查询语句，语句长度最大为4096
+                     * 查询语句，参考控制台请求参数，语句长度最大为4096
                      */
                     std::string m_query;
                     bool m_queryHasBeenSet;

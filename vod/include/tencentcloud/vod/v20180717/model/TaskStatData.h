@@ -53,6 +53,7 @@ namespace TencentCloud
 <li> Transcoding: 普通转码</li>
 <li> Transcoding-TESHD: 极速高清转码</li>
 <li> Editing: 视频编辑</li>
+<li> Editing-TESHD: 极速高清视频编辑</li>
 <li> AdaptiveBitrateStreaming: 自适应码流</li>
 <li> ContentAudit: 智能识别</li>
 <li> RemoveWatermark: 去水印</li>
@@ -61,6 +62,7 @@ namespace TencentCloud
 <li> Transcoding: 普通转码</li>
 <li> Transcoding-TESHD: 极速高清转码</li>
 <li> Editing: 视频编辑</li>
+<li> Editing-TESHD: 极速高清视频编辑</li>
 <li> AdaptiveBitrateStreaming: 自适应码流</li>
 <li> ContentAudit: 智能识别</li>
 <li> RemoveWatermark: 去水印</li>
@@ -73,6 +75,7 @@ namespace TencentCloud
 <li> Transcoding: 普通转码</li>
 <li> Transcoding-TESHD: 极速高清转码</li>
 <li> Editing: 视频编辑</li>
+<li> Editing-TESHD: 极速高清视频编辑</li>
 <li> AdaptiveBitrateStreaming: 自适应码流</li>
 <li> ContentAudit: 智能识别</li>
 <li> RemoveWatermark: 去水印</li>
@@ -81,6 +84,7 @@ namespace TencentCloud
 <li> Transcoding: 普通转码</li>
 <li> Transcoding-TESHD: 极速高清转码</li>
 <li> Editing: 视频编辑</li>
+<li> Editing-TESHD: 极速高清视频编辑</li>
 <li> AdaptiveBitrateStreaming: 自适应码流</li>
 <li> ContentAudit: 智能识别</li>
 <li> RemoveWatermark: 去水印</li>
@@ -148,6 +152,16 @@ namespace TencentCloud
 <li>Edit.H265.FHD: H.265编码方式全高清视频编辑</li>
 <li>Edit.H265.2K: H.265编码方式2K视频编辑</li>
 <li>Edit.H265.4K: H.265编码方式4K视频编辑</li>
+<li>Edit.TESHD-10.H264.SD: H.264编码方式标清极速高清视频编辑</li>
+<li>Edit.TESHD-10.H264.HD: H.264编码方式高清极速高清视频编辑</li>
+<li>Edit.TESHD-10.H264.FHD: H.264编码方式全高清极速高清视频编辑</li>
+<li>Edit.TESHD-10.H264.2K: H.264编码方式2K极速高清视频编辑</li>
+<li>Edit.TESHD-10.H264.4K: H.264编码方式4K极速高清视频编辑</li>
+<li>Edit.TESHD-10.H265.SD: H.265编码方式标清极速高清视频编辑</li>
+<li>Edit.TESHD-10.H265.HD: H.265编码方式高清极速高清视频编辑</li>
+<li>Edit.TESHD-10.H265.FHD: H.265编码方式全高清极速高清视频编辑</li>
+<li>Edit.TESHD-10.H265.2K: H.265编码方式2K极速高清视频编辑</li>
+<li>Edit.TESHD-10.H265.4K: H.265编码方式4K极速高清视频编辑</li>
 去水印规格：
 <li>480P: 分辨率640*480及以下</li>
 <li>720P: 分辨率1280*720及以下</li>
@@ -190,6 +204,16 @@ namespace TencentCloud
 <li>Edit.H265.FHD: H.265编码方式全高清视频编辑</li>
 <li>Edit.H265.2K: H.265编码方式2K视频编辑</li>
 <li>Edit.H265.4K: H.265编码方式4K视频编辑</li>
+<li>Edit.TESHD-10.H264.SD: H.264编码方式标清极速高清视频编辑</li>
+<li>Edit.TESHD-10.H264.HD: H.264编码方式高清极速高清视频编辑</li>
+<li>Edit.TESHD-10.H264.FHD: H.264编码方式全高清极速高清视频编辑</li>
+<li>Edit.TESHD-10.H264.2K: H.264编码方式2K极速高清视频编辑</li>
+<li>Edit.TESHD-10.H264.4K: H.264编码方式4K极速高清视频编辑</li>
+<li>Edit.TESHD-10.H265.SD: H.265编码方式标清极速高清视频编辑</li>
+<li>Edit.TESHD-10.H265.HD: H.265编码方式高清极速高清视频编辑</li>
+<li>Edit.TESHD-10.H265.FHD: H.265编码方式全高清极速高清视频编辑</li>
+<li>Edit.TESHD-10.H265.2K: H.265编码方式2K极速高清视频编辑</li>
+<li>Edit.TESHD-10.H265.4K: H.265编码方式4K极速高清视频编辑</li>
 去水印规格：
 <li>480P: 分辨率640*480及以下</li>
 <li>720P: 分辨率1280*720及以下</li>
@@ -236,6 +260,16 @@ namespace TencentCloud
 <li>Edit.H265.FHD: H.265编码方式全高清视频编辑</li>
 <li>Edit.H265.2K: H.265编码方式2K视频编辑</li>
 <li>Edit.H265.4K: H.265编码方式4K视频编辑</li>
+<li>Edit.TESHD-10.H264.SD: H.264编码方式标清极速高清视频编辑</li>
+<li>Edit.TESHD-10.H264.HD: H.264编码方式高清极速高清视频编辑</li>
+<li>Edit.TESHD-10.H264.FHD: H.264编码方式全高清极速高清视频编辑</li>
+<li>Edit.TESHD-10.H264.2K: H.264编码方式2K极速高清视频编辑</li>
+<li>Edit.TESHD-10.H264.4K: H.264编码方式4K极速高清视频编辑</li>
+<li>Edit.TESHD-10.H265.SD: H.265编码方式标清极速高清视频编辑</li>
+<li>Edit.TESHD-10.H265.HD: H.265编码方式高清极速高清视频编辑</li>
+<li>Edit.TESHD-10.H265.FHD: H.265编码方式全高清极速高清视频编辑</li>
+<li>Edit.TESHD-10.H265.2K: H.265编码方式2K极速高清视频编辑</li>
+<li>Edit.TESHD-10.H265.4K: H.265编码方式4K极速高清视频编辑</li>
 去水印规格：
 <li>480P: 分辨率640*480及以下</li>
 <li>720P: 分辨率1280*720及以下</li>
@@ -278,6 +312,16 @@ namespace TencentCloud
 <li>Edit.H265.FHD: H.265编码方式全高清视频编辑</li>
 <li>Edit.H265.2K: H.265编码方式2K视频编辑</li>
 <li>Edit.H265.4K: H.265编码方式4K视频编辑</li>
+<li>Edit.TESHD-10.H264.SD: H.264编码方式标清极速高清视频编辑</li>
+<li>Edit.TESHD-10.H264.HD: H.264编码方式高清极速高清视频编辑</li>
+<li>Edit.TESHD-10.H264.FHD: H.264编码方式全高清极速高清视频编辑</li>
+<li>Edit.TESHD-10.H264.2K: H.264编码方式2K极速高清视频编辑</li>
+<li>Edit.TESHD-10.H264.4K: H.264编码方式4K极速高清视频编辑</li>
+<li>Edit.TESHD-10.H265.SD: H.265编码方式标清极速高清视频编辑</li>
+<li>Edit.TESHD-10.H265.HD: H.265编码方式高清极速高清视频编辑</li>
+<li>Edit.TESHD-10.H265.FHD: H.265编码方式全高清极速高清视频编辑</li>
+<li>Edit.TESHD-10.H265.2K: H.265编码方式2K极速高清视频编辑</li>
+<li>Edit.TESHD-10.H265.4K: H.265编码方式4K极速高清视频编辑</li>
 去水印规格：
 <li>480P: 分辨率640*480及以下</li>
 <li>720P: 分辨率1280*720及以下</li>
@@ -301,6 +345,7 @@ namespace TencentCloud
 <li> Transcoding: 普通转码</li>
 <li> Transcoding-TESHD: 极速高清转码</li>
 <li> Editing: 视频编辑</li>
+<li> Editing-TESHD: 极速高清视频编辑</li>
 <li> AdaptiveBitrateStreaming: 自适应码流</li>
 <li> ContentAudit: 智能识别</li>
 <li> RemoveWatermark: 去水印</li>
@@ -351,6 +396,16 @@ namespace TencentCloud
 <li>Edit.H265.FHD: H.265编码方式全高清视频编辑</li>
 <li>Edit.H265.2K: H.265编码方式2K视频编辑</li>
 <li>Edit.H265.4K: H.265编码方式4K视频编辑</li>
+<li>Edit.TESHD-10.H264.SD: H.264编码方式标清极速高清视频编辑</li>
+<li>Edit.TESHD-10.H264.HD: H.264编码方式高清极速高清视频编辑</li>
+<li>Edit.TESHD-10.H264.FHD: H.264编码方式全高清极速高清视频编辑</li>
+<li>Edit.TESHD-10.H264.2K: H.264编码方式2K极速高清视频编辑</li>
+<li>Edit.TESHD-10.H264.4K: H.264编码方式4K极速高清视频编辑</li>
+<li>Edit.TESHD-10.H265.SD: H.265编码方式标清极速高清视频编辑</li>
+<li>Edit.TESHD-10.H265.HD: H.265编码方式高清极速高清视频编辑</li>
+<li>Edit.TESHD-10.H265.FHD: H.265编码方式全高清极速高清视频编辑</li>
+<li>Edit.TESHD-10.H265.2K: H.265编码方式2K极速高清视频编辑</li>
+<li>Edit.TESHD-10.H265.4K: H.265编码方式4K极速高清视频编辑</li>
 去水印规格：
 <li>480P: 分辨率640*480及以下</li>
 <li>720P: 分辨率1280*720及以下</li>

@@ -427,135 +427,6 @@ NlpClient::DescribeDictsOutcomeCallable NlpClient::DescribeDictsCallable(const D
     return task->get_future();
 }
 
-NlpClient::DescribeEntityOutcome NlpClient::DescribeEntity(const DescribeEntityRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeEntity");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeEntityResponse rsp = DescribeEntityResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeEntityOutcome(rsp);
-        else
-            return DescribeEntityOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeEntityOutcome(outcome.GetError());
-    }
-}
-
-void NlpClient::DescribeEntityAsync(const DescribeEntityRequest& request, const DescribeEntityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeEntity(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-NlpClient::DescribeEntityOutcomeCallable NlpClient::DescribeEntityCallable(const DescribeEntityRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeEntityOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeEntity(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-NlpClient::DescribeRelationOutcome NlpClient::DescribeRelation(const DescribeRelationRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeRelation");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeRelationResponse rsp = DescribeRelationResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeRelationOutcome(rsp);
-        else
-            return DescribeRelationOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeRelationOutcome(outcome.GetError());
-    }
-}
-
-void NlpClient::DescribeRelationAsync(const DescribeRelationRequest& request, const DescribeRelationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeRelation(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-NlpClient::DescribeRelationOutcomeCallable NlpClient::DescribeRelationCallable(const DescribeRelationRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeRelationOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeRelation(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-NlpClient::DescribeTripleOutcome NlpClient::DescribeTriple(const DescribeTripleRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeTriple");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeTripleResponse rsp = DescribeTripleResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeTripleOutcome(rsp);
-        else
-            return DescribeTripleOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeTripleOutcome(outcome.GetError());
-    }
-}
-
-void NlpClient::DescribeTripleAsync(const DescribeTripleRequest& request, const DescribeTripleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeTriple(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-NlpClient::DescribeTripleOutcomeCallable NlpClient::DescribeTripleCallable(const DescribeTripleRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeTripleOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeTriple(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 NlpClient::DescribeWordItemsOutcome NlpClient::DescribeWordItems(const DescribeWordItemsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeWordItems");
@@ -943,6 +814,49 @@ NlpClient::TextCorrectionOutcomeCallable NlpClient::TextCorrectionCallable(const
     return task->get_future();
 }
 
+NlpClient::TextCorrectionProOutcome NlpClient::TextCorrectionPro(const TextCorrectionProRequest &request)
+{
+    auto outcome = MakeRequest(request, "TextCorrectionPro");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        TextCorrectionProResponse rsp = TextCorrectionProResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return TextCorrectionProOutcome(rsp);
+        else
+            return TextCorrectionProOutcome(o.GetError());
+    }
+    else
+    {
+        return TextCorrectionProOutcome(outcome.GetError());
+    }
+}
+
+void NlpClient::TextCorrectionProAsync(const TextCorrectionProRequest& request, const TextCorrectionProAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->TextCorrectionPro(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+NlpClient::TextCorrectionProOutcomeCallable NlpClient::TextCorrectionProCallable(const TextCorrectionProRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<TextCorrectionProOutcome()>>(
+        [this, request]()
+        {
+            return this->TextCorrectionPro(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 NlpClient::TextSimilarityOutcome NlpClient::TextSimilarity(const TextSimilarityRequest &request)
 {
     auto outcome = MakeRequest(request, "TextSimilarity");
@@ -979,6 +893,49 @@ NlpClient::TextSimilarityOutcomeCallable NlpClient::TextSimilarityCallable(const
         [this, request]()
         {
             return this->TextSimilarity(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+NlpClient::TextSimilarityProOutcome NlpClient::TextSimilarityPro(const TextSimilarityProRequest &request)
+{
+    auto outcome = MakeRequest(request, "TextSimilarityPro");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        TextSimilarityProResponse rsp = TextSimilarityProResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return TextSimilarityProOutcome(rsp);
+        else
+            return TextSimilarityProOutcome(o.GetError());
+    }
+    else
+    {
+        return TextSimilarityProOutcome(outcome.GetError());
+    }
+}
+
+void NlpClient::TextSimilarityProAsync(const TextSimilarityProRequest& request, const TextSimilarityProAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->TextSimilarityPro(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+NlpClient::TextSimilarityProOutcomeCallable NlpClient::TextSimilarityProCallable(const TextSimilarityProRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<TextSimilarityProOutcome()>>(
+        [this, request]()
+        {
+            return this->TextSimilarityPro(request);
         }
     );
 

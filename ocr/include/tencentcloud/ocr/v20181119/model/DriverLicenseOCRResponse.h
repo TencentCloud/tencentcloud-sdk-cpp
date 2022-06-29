@@ -239,6 +239,30 @@ WARN_DRIVER_LICENSE_PS_CARD ps告警
                      */
                     bool IssuingAuthorityHasBeenSet() const;
 
+                    /**
+                     * 获取状态（仅电子驾驶证支持返回该字段）
+                     * @return State 状态（仅电子驾驶证支持返回该字段）
+                     */
+                    std::string GetState() const;
+
+                    /**
+                     * 判断参数 State 是否已赋值
+                     * @return State 是否已赋值
+                     */
+                    bool StateHasBeenSet() const;
+
+                    /**
+                     * 获取累积记分（仅电子驾驶证支持返回该字段）
+                     * @return CumulativeScore 累积记分（仅电子驾驶证支持返回该字段）
+                     */
+                    std::string GetCumulativeScore() const;
+
+                    /**
+                     * 判断参数 CumulativeScore 是否已赋值
+                     * @return CumulativeScore 是否已赋值
+                     */
+                    bool CumulativeScoreHasBeenSet() const;
+
                 private:
 
                     /**
@@ -338,6 +362,18 @@ WARN_DRIVER_LICENSE_PS_CARD ps告警
                      */
                     std::string m_issuingAuthority;
                     bool m_issuingAuthorityHasBeenSet;
+
+                    /**
+                     * 状态（仅电子驾驶证支持返回该字段）
+                     */
+                    std::string m_state;
+                    bool m_stateHasBeenSet;
+
+                    /**
+                     * 累积记分（仅电子驾驶证支持返回该字段）
+                     */
+                    std::string m_cumulativeScore;
+                    bool m_cumulativeScoreHasBeenSet;
 
                 };
             }

@@ -194,17 +194,17 @@ lc，最小连接数。
                     bool ForwardProtocolHasBeenSet() const;
 
                     /**
-                     * 获取加速通道转发到源站的请求中携带的host。
+                     * 获取回源Host。加速通道转发到源站的请求中携带的host。
 当ForwardHost=default时，使用规则的域名，其他情况为该字段所设置的值。
-                     * @return ForwardHost 加速通道转发到源站的请求中携带的host。
+                     * @return ForwardHost 回源Host。加速通道转发到源站的请求中携带的host。
 当ForwardHost=default时，使用规则的域名，其他情况为该字段所设置的值。
                      */
                     std::string GetForwardHost() const;
 
                     /**
-                     * 设置加速通道转发到源站的请求中携带的host。
+                     * 设置回源Host。加速通道转发到源站的请求中携带的host。
 当ForwardHost=default时，使用规则的域名，其他情况为该字段所设置的值。
-                     * @param ForwardHost 加速通道转发到源站的请求中携带的host。
+                     * @param ForwardHost 回源Host。加速通道转发到源站的请求中携带的host。
 当ForwardHost=default时，使用规则的域名，其他情况为该字段所设置的值。
                      */
                     void SetForwardHost(const std::string& _forwardHost);
@@ -214,6 +214,42 @@ lc，最小连接数。
                      * @return ForwardHost 是否已赋值
                      */
                     bool ForwardHostHasBeenSet() const;
+
+                    /**
+                     * 获取服务器名称指示（ServerNameIndication，简称SNI）开关。ON表示开启，OFF表示关闭。
+                     * @return ServerNameIndicationSwitch 服务器名称指示（ServerNameIndication，简称SNI）开关。ON表示开启，OFF表示关闭。
+                     */
+                    std::string GetServerNameIndicationSwitch() const;
+
+                    /**
+                     * 设置服务器名称指示（ServerNameIndication，简称SNI）开关。ON表示开启，OFF表示关闭。
+                     * @param ServerNameIndicationSwitch 服务器名称指示（ServerNameIndication，简称SNI）开关。ON表示开启，OFF表示关闭。
+                     */
+                    void SetServerNameIndicationSwitch(const std::string& _serverNameIndicationSwitch);
+
+                    /**
+                     * 判断参数 ServerNameIndicationSwitch 是否已赋值
+                     * @return ServerNameIndicationSwitch 是否已赋值
+                     */
+                    bool ServerNameIndicationSwitchHasBeenSet() const;
+
+                    /**
+                     * 获取服务器名称指示（ServerNameIndication，简称SNI），当SNI开关打开时，该字段必填。
+                     * @return ServerNameIndication 服务器名称指示（ServerNameIndication，简称SNI），当SNI开关打开时，该字段必填。
+                     */
+                    std::string GetServerNameIndication() const;
+
+                    /**
+                     * 设置服务器名称指示（ServerNameIndication，简称SNI），当SNI开关打开时，该字段必填。
+                     * @param ServerNameIndication 服务器名称指示（ServerNameIndication，简称SNI），当SNI开关打开时，该字段必填。
+                     */
+                    void SetServerNameIndication(const std::string& _serverNameIndication);
+
+                    /**
+                     * 判断参数 ServerNameIndication 是否已赋值
+                     * @return ServerNameIndication 是否已赋值
+                     */
+                    bool ServerNameIndicationHasBeenSet() const;
 
                 private:
 
@@ -266,11 +302,23 @@ lc，最小连接数。
                     bool m_forwardProtocolHasBeenSet;
 
                     /**
-                     * 加速通道转发到源站的请求中携带的host。
+                     * 回源Host。加速通道转发到源站的请求中携带的host。
 当ForwardHost=default时，使用规则的域名，其他情况为该字段所设置的值。
                      */
                     std::string m_forwardHost;
                     bool m_forwardHostHasBeenSet;
+
+                    /**
+                     * 服务器名称指示（ServerNameIndication，简称SNI）开关。ON表示开启，OFF表示关闭。
+                     */
+                    std::string m_serverNameIndicationSwitch;
+                    bool m_serverNameIndicationSwitchHasBeenSet;
+
+                    /**
+                     * 服务器名称指示（ServerNameIndication，简称SNI），当SNI开关打开时，该字段必填。
+                     */
+                    std::string m_serverNameIndication;
+                    bool m_serverNameIndicationHasBeenSet;
 
                 };
             }

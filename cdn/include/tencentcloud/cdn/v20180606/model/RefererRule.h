@@ -160,21 +160,21 @@ blacklist：黑名单
 
                     /**
                      * 获取是否允许空 referer
-true：允许空 referer
-false：不允许空 referer
+防盗链类型为白名单时，true表示允许空 referer，false表示不允许空 referer；
+防盗链类型为黑名单时，true表示拒绝空referer，false表示不拒绝空referer；
                      * @return AllowEmpty 是否允许空 referer
-true：允许空 referer
-false：不允许空 referer
+防盗链类型为白名单时，true表示允许空 referer，false表示不允许空 referer；
+防盗链类型为黑名单时，true表示拒绝空referer，false表示不拒绝空referer；
                      */
                     bool GetAllowEmpty() const;
 
                     /**
                      * 设置是否允许空 referer
-true：允许空 referer
-false：不允许空 referer
+防盗链类型为白名单时，true表示允许空 referer，false表示不允许空 referer；
+防盗链类型为黑名单时，true表示拒绝空referer，false表示不拒绝空referer；
                      * @param AllowEmpty 是否允许空 referer
-true：允许空 referer
-false：不允许空 referer
+防盗链类型为白名单时，true表示允许空 referer，false表示不允许空 referer；
+防盗链类型为黑名单时，true表示拒绝空referer，false表示不拒绝空referer；
                      */
                     void SetAllowEmpty(const bool& _allowEmpty);
 
@@ -222,8 +222,8 @@ blacklist：黑名单
 
                     /**
                      * 是否允许空 referer
-true：允许空 referer
-false：不允许空 referer
+防盗链类型为白名单时，true表示允许空 referer，false表示不允许空 referer；
+防盗链类型为黑名单时，true表示拒绝空referer，false表示不拒绝空referer；
                      */
                     bool m_allowEmpty;
                     bool m_allowEmptyHasBeenSet;

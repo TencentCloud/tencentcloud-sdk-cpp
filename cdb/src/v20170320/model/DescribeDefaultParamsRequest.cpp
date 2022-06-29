@@ -23,7 +23,8 @@ using namespace TencentCloud::Cdb::V20170320::Model;
 using namespace std;
 
 DescribeDefaultParamsRequest::DescribeDefaultParamsRequest() :
-    m_engineVersionHasBeenSet(false)
+    m_engineVersionHasBeenSet(false),
+    m_templateTypeHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,14 @@ string DescribeDefaultParamsRequest::ToJsonString() const
         string key = "EngineVersion";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_engineVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_templateTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TemplateType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_templateType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -64,6 +73,22 @@ void DescribeDefaultParamsRequest::SetEngineVersion(const string& _engineVersion
 bool DescribeDefaultParamsRequest::EngineVersionHasBeenSet() const
 {
     return m_engineVersionHasBeenSet;
+}
+
+string DescribeDefaultParamsRequest::GetTemplateType() const
+{
+    return m_templateType;
+}
+
+void DescribeDefaultParamsRequest::SetTemplateType(const string& _templateType)
+{
+    m_templateType = _templateType;
+    m_templateTypeHasBeenSet = true;
+}
+
+bool DescribeDefaultParamsRequest::TemplateTypeHasBeenSet() const
+{
+    return m_templateTypeHasBeenSet;
 }
 
 

@@ -70,7 +70,13 @@ ModifyApiRequest::ModifyApiRequest() :
     m_responseErrorCodesHasBeenSet(false),
     m_isBase64EncodedHasBeenSet(false),
     m_isBase64TriggerHasBeenSet(false),
-    m_base64EncodedTriggerRulesHasBeenSet(false)
+    m_base64EncodedTriggerRulesHasBeenSet(false),
+    m_eventBusIdHasBeenSet(false),
+    m_serviceScfFunctionTypeHasBeenSet(false),
+    m_eIAMAppTypeHasBeenSet(false),
+    m_eIAMAuthTypeHasBeenSet(false),
+    m_eIAMAppIdHasBeenSet(false),
+    m_tokenTimeoutHasBeenSet(false)
 {
 }
 
@@ -512,6 +518,54 @@ string ModifyApiRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_eventBusIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EventBusId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_eventBusId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_serviceScfFunctionTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServiceScfFunctionType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_serviceScfFunctionType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_eIAMAppTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EIAMAppType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_eIAMAppType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_eIAMAuthTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EIAMAuthType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_eIAMAuthType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_eIAMAppIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EIAMAppId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_eIAMAppId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tokenTimeoutHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TokenTimeout";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_tokenTimeout, allocator);
     }
 
 
@@ -1288,6 +1342,102 @@ void ModifyApiRequest::SetBase64EncodedTriggerRules(const vector<Base64EncodedTr
 bool ModifyApiRequest::Base64EncodedTriggerRulesHasBeenSet() const
 {
     return m_base64EncodedTriggerRulesHasBeenSet;
+}
+
+string ModifyApiRequest::GetEventBusId() const
+{
+    return m_eventBusId;
+}
+
+void ModifyApiRequest::SetEventBusId(const string& _eventBusId)
+{
+    m_eventBusId = _eventBusId;
+    m_eventBusIdHasBeenSet = true;
+}
+
+bool ModifyApiRequest::EventBusIdHasBeenSet() const
+{
+    return m_eventBusIdHasBeenSet;
+}
+
+string ModifyApiRequest::GetServiceScfFunctionType() const
+{
+    return m_serviceScfFunctionType;
+}
+
+void ModifyApiRequest::SetServiceScfFunctionType(const string& _serviceScfFunctionType)
+{
+    m_serviceScfFunctionType = _serviceScfFunctionType;
+    m_serviceScfFunctionTypeHasBeenSet = true;
+}
+
+bool ModifyApiRequest::ServiceScfFunctionTypeHasBeenSet() const
+{
+    return m_serviceScfFunctionTypeHasBeenSet;
+}
+
+string ModifyApiRequest::GetEIAMAppType() const
+{
+    return m_eIAMAppType;
+}
+
+void ModifyApiRequest::SetEIAMAppType(const string& _eIAMAppType)
+{
+    m_eIAMAppType = _eIAMAppType;
+    m_eIAMAppTypeHasBeenSet = true;
+}
+
+bool ModifyApiRequest::EIAMAppTypeHasBeenSet() const
+{
+    return m_eIAMAppTypeHasBeenSet;
+}
+
+string ModifyApiRequest::GetEIAMAuthType() const
+{
+    return m_eIAMAuthType;
+}
+
+void ModifyApiRequest::SetEIAMAuthType(const string& _eIAMAuthType)
+{
+    m_eIAMAuthType = _eIAMAuthType;
+    m_eIAMAuthTypeHasBeenSet = true;
+}
+
+bool ModifyApiRequest::EIAMAuthTypeHasBeenSet() const
+{
+    return m_eIAMAuthTypeHasBeenSet;
+}
+
+string ModifyApiRequest::GetEIAMAppId() const
+{
+    return m_eIAMAppId;
+}
+
+void ModifyApiRequest::SetEIAMAppId(const string& _eIAMAppId)
+{
+    m_eIAMAppId = _eIAMAppId;
+    m_eIAMAppIdHasBeenSet = true;
+}
+
+bool ModifyApiRequest::EIAMAppIdHasBeenSet() const
+{
+    return m_eIAMAppIdHasBeenSet;
+}
+
+int64_t ModifyApiRequest::GetTokenTimeout() const
+{
+    return m_tokenTimeout;
+}
+
+void ModifyApiRequest::SetTokenTimeout(const int64_t& _tokenTimeout)
+{
+    m_tokenTimeout = _tokenTimeout;
+    m_tokenTimeoutHasBeenSet = true;
+}
+
+bool ModifyApiRequest::TokenTimeoutHasBeenSet() const
+{
+    return m_tokenTimeoutHasBeenSet;
 }
 
 

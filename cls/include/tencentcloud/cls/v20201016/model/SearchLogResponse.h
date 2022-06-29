@@ -47,8 +47,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取加载后续内容的Context，过期时间1小时
-                     * @return Context 加载后续内容的Context，过期时间1小时
+                     * 获取透传本次接口返回的Context值，可获取后续更多日志，过期时间1小时
+                     * @return Context 透传本次接口返回的Context值，可获取后续更多日志，过期时间1小时
                      */
                     std::string GetContext() const;
 
@@ -59,8 +59,10 @@ namespace TencentCloud
                     bool ContextHasBeenSet() const;
 
                     /**
-                     * 获取原始日志查询结果是否全部返回。查询语句(Query)包含SQL时该参数无意义
-                     * @return ListOver 原始日志查询结果是否全部返回。查询语句(Query)包含SQL时该参数无意义
+                     * 获取符合检索条件的日志是否已全部返回，如未全部返回可使用Context参数获取后续更多日志
+注意：仅当检索分析语句(Query)不包含SQL时有效
+                     * @return ListOver 符合检索条件的日志是否已全部返回，如未全部返回可使用Context参数获取后续更多日志
+注意：仅当检索分析语句(Query)不包含SQL时有效
                      */
                     bool GetListOver() const;
 
@@ -71,8 +73,8 @@ namespace TencentCloud
                     bool ListOverHasBeenSet() const;
 
                     /**
-                     * 获取返回的是否为分析结果
-                     * @return Analysis 返回的是否为分析结果
+                     * 获取返回的是否为统计分析（即SQL）结果
+                     * @return Analysis 返回的是否为统计分析（即SQL）结果
                      */
                     bool GetAnalysis() const;
 
@@ -83,23 +85,9 @@ namespace TencentCloud
                     bool AnalysisHasBeenSet() const;
 
                     /**
-                     * 获取如果Analysis为True，则返回分析结果的列名，否则为空
+                     * 获取匹配检索条件的原始日志
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ColNames 如果Analysis为True，则返回分析结果的列名，否则为空
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::vector<std::string> GetColNames() const;
-
-                    /**
-                     * 判断参数 ColNames 是否已赋值
-                     * @return ColNames 是否已赋值
-                     */
-                    bool ColNamesHasBeenSet() const;
-
-                    /**
-                     * 获取日志查询结果；当Analysis为True时，可能返回为null
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Results 日志查询结果；当Analysis为True时，可能返回为null
+                     * @return Results 匹配检索条件的原始日志
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<LogInfo> GetResults() const;
@@ -111,9 +99,27 @@ namespace TencentCloud
                     bool ResultsHasBeenSet() const;
 
                     /**
-                     * 获取日志分析结果；当Analysis为False时，可能返回为null
+                     * 获取日志统计分析结果的列名
+当UseNewAnalysis为false时生效
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AnalysisResults 日志分析结果；当Analysis为False时，可能返回为null
+                     * @return ColNames 日志统计分析结果的列名
+当UseNewAnalysis为false时生效
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> GetColNames() const;
+
+                    /**
+                     * 判断参数 ColNames 是否已赋值
+                     * @return ColNames 是否已赋值
+                     */
+                    bool ColNamesHasBeenSet() const;
+
+                    /**
+                     * 获取日志统计分析结果
+当UseNewAnalysis为false时生效
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AnalysisResults 日志统计分析结果
+当UseNewAnalysis为false时生效
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<LogItems> GetAnalysisResults() const;
@@ -125,9 +131,11 @@ namespace TencentCloud
                     bool AnalysisResultsHasBeenSet() const;
 
                     /**
-                     * 获取新的日志分析结果; UseNewAnalysis为true有效
+                     * 获取日志统计分析结果
+当UseNewAnalysis为true时生效
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AnalysisRecords 新的日志分析结果; UseNewAnalysis为true有效
+                     * @return AnalysisRecords 日志统计分析结果
+当UseNewAnalysis为true时生效
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> GetAnalysisRecords() const;
@@ -139,9 +147,11 @@ namespace TencentCloud
                     bool AnalysisRecordsHasBeenSet() const;
 
                     /**
-                     * 获取日志分析的列属性; UseNewAnalysis为true有效
+                     * 获取日志统计分析结果的列属性
+当UseNewAnalysis为true时生效
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Columns 日志分析的列属性; UseNewAnalysis为true有效
+                     * @return Columns 日志统计分析结果的列属性
+当UseNewAnalysis为true时生效
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Column> GetColumns() const;
@@ -155,53 +165,58 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 加载后续内容的Context，过期时间1小时
+                     * 透传本次接口返回的Context值，可获取后续更多日志，过期时间1小时
                      */
                     std::string m_context;
                     bool m_contextHasBeenSet;
 
                     /**
-                     * 原始日志查询结果是否全部返回。查询语句(Query)包含SQL时该参数无意义
+                     * 符合检索条件的日志是否已全部返回，如未全部返回可使用Context参数获取后续更多日志
+注意：仅当检索分析语句(Query)不包含SQL时有效
                      */
                     bool m_listOver;
                     bool m_listOverHasBeenSet;
 
                     /**
-                     * 返回的是否为分析结果
+                     * 返回的是否为统计分析（即SQL）结果
                      */
                     bool m_analysis;
                     bool m_analysisHasBeenSet;
 
                     /**
-                     * 如果Analysis为True，则返回分析结果的列名，否则为空
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::vector<std::string> m_colNames;
-                    bool m_colNamesHasBeenSet;
-
-                    /**
-                     * 日志查询结果；当Analysis为True时，可能返回为null
+                     * 匹配检索条件的原始日志
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<LogInfo> m_results;
                     bool m_resultsHasBeenSet;
 
                     /**
-                     * 日志分析结果；当Analysis为False时，可能返回为null
+                     * 日志统计分析结果的列名
+当UseNewAnalysis为false时生效
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_colNames;
+                    bool m_colNamesHasBeenSet;
+
+                    /**
+                     * 日志统计分析结果
+当UseNewAnalysis为false时生效
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<LogItems> m_analysisResults;
                     bool m_analysisResultsHasBeenSet;
 
                     /**
-                     * 新的日志分析结果; UseNewAnalysis为true有效
+                     * 日志统计分析结果
+当UseNewAnalysis为true时生效
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_analysisRecords;
                     bool m_analysisRecordsHasBeenSet;
 
                     /**
-                     * 日志分析的列属性; UseNewAnalysis为true有效
+                     * 日志统计分析结果的列属性
+当UseNewAnalysis为true时生效
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Column> m_columns;

@@ -40,6 +40,49 @@ DnspodClient::DnspodClient(const Credential &credential, const string &region, c
 }
 
 
+DnspodClient::CreateDealOutcome DnspodClient::CreateDeal(const CreateDealRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateDeal");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateDealResponse rsp = CreateDealResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateDealOutcome(rsp);
+        else
+            return CreateDealOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateDealOutcome(outcome.GetError());
+    }
+}
+
+void DnspodClient::CreateDealAsync(const CreateDealRequest& request, const CreateDealAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateDeal(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DnspodClient::CreateDealOutcomeCallable DnspodClient::CreateDealCallable(const CreateDealRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateDealOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateDeal(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DnspodClient::CreateDomainOutcome DnspodClient::CreateDomain(const CreateDomainRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateDomain");
@@ -599,6 +642,49 @@ DnspodClient::DescribeDomainAliasListOutcomeCallable DnspodClient::DescribeDomai
     return task->get_future();
 }
 
+DnspodClient::DescribeDomainAnalyticsOutcome DnspodClient::DescribeDomainAnalytics(const DescribeDomainAnalyticsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDomainAnalytics");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDomainAnalyticsResponse rsp = DescribeDomainAnalyticsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDomainAnalyticsOutcome(rsp);
+        else
+            return DescribeDomainAnalyticsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDomainAnalyticsOutcome(outcome.GetError());
+    }
+}
+
+void DnspodClient::DescribeDomainAnalyticsAsync(const DescribeDomainAnalyticsRequest& request, const DescribeDomainAnalyticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDomainAnalytics(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DnspodClient::DescribeDomainAnalyticsOutcomeCallable DnspodClient::DescribeDomainAnalyticsCallable(const DescribeDomainAnalyticsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDomainAnalyticsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDomainAnalytics(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DnspodClient::DescribeDomainListOutcome DnspodClient::DescribeDomainList(const DescribeDomainListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDomainList");
@@ -943,6 +1029,49 @@ DnspodClient::DescribeRecordTypeOutcomeCallable DnspodClient::DescribeRecordType
     return task->get_future();
 }
 
+DnspodClient::DescribeSubdomainAnalyticsOutcome DnspodClient::DescribeSubdomainAnalytics(const DescribeSubdomainAnalyticsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSubdomainAnalytics");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSubdomainAnalyticsResponse rsp = DescribeSubdomainAnalyticsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSubdomainAnalyticsOutcome(rsp);
+        else
+            return DescribeSubdomainAnalyticsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSubdomainAnalyticsOutcome(outcome.GetError());
+    }
+}
+
+void DnspodClient::DescribeSubdomainAnalyticsAsync(const DescribeSubdomainAnalyticsRequest& request, const DescribeSubdomainAnalyticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSubdomainAnalytics(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DnspodClient::DescribeSubdomainAnalyticsOutcomeCallable DnspodClient::DescribeSubdomainAnalyticsCallable(const DescribeSubdomainAnalyticsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSubdomainAnalyticsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSubdomainAnalytics(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DnspodClient::DescribeUserDetailOutcome DnspodClient::DescribeUserDetail(const DescribeUserDetailRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeUserDetail");
@@ -1244,6 +1373,49 @@ DnspodClient::ModifyDynamicDNSOutcomeCallable DnspodClient::ModifyDynamicDNSCall
     return task->get_future();
 }
 
+DnspodClient::ModifyPackageAutoRenewOutcome DnspodClient::ModifyPackageAutoRenew(const ModifyPackageAutoRenewRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyPackageAutoRenew");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyPackageAutoRenewResponse rsp = ModifyPackageAutoRenewResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyPackageAutoRenewOutcome(rsp);
+        else
+            return ModifyPackageAutoRenewOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyPackageAutoRenewOutcome(outcome.GetError());
+    }
+}
+
+void DnspodClient::ModifyPackageAutoRenewAsync(const ModifyPackageAutoRenewRequest& request, const ModifyPackageAutoRenewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyPackageAutoRenew(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DnspodClient::ModifyPackageAutoRenewOutcomeCallable DnspodClient::ModifyPackageAutoRenewCallable(const ModifyPackageAutoRenewRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyPackageAutoRenewOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyPackageAutoRenew(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DnspodClient::ModifyRecordOutcome DnspodClient::ModifyRecord(const ModifyRecordRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyRecord");
@@ -1452,6 +1624,92 @@ DnspodClient::ModifySubdomainStatusOutcomeCallable DnspodClient::ModifySubdomain
         [this, request]()
         {
             return this->ModifySubdomainStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DnspodClient::ModifyVasAutoRenewStatusOutcome DnspodClient::ModifyVasAutoRenewStatus(const ModifyVasAutoRenewStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyVasAutoRenewStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyVasAutoRenewStatusResponse rsp = ModifyVasAutoRenewStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyVasAutoRenewStatusOutcome(rsp);
+        else
+            return ModifyVasAutoRenewStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyVasAutoRenewStatusOutcome(outcome.GetError());
+    }
+}
+
+void DnspodClient::ModifyVasAutoRenewStatusAsync(const ModifyVasAutoRenewStatusRequest& request, const ModifyVasAutoRenewStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyVasAutoRenewStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DnspodClient::ModifyVasAutoRenewStatusOutcomeCallable DnspodClient::ModifyVasAutoRenewStatusCallable(const ModifyVasAutoRenewStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyVasAutoRenewStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyVasAutoRenewStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DnspodClient::PayOrderWithBalanceOutcome DnspodClient::PayOrderWithBalance(const PayOrderWithBalanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "PayOrderWithBalance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        PayOrderWithBalanceResponse rsp = PayOrderWithBalanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return PayOrderWithBalanceOutcome(rsp);
+        else
+            return PayOrderWithBalanceOutcome(o.GetError());
+    }
+    else
+    {
+        return PayOrderWithBalanceOutcome(outcome.GetError());
+    }
+}
+
+void DnspodClient::PayOrderWithBalanceAsync(const PayOrderWithBalanceRequest& request, const PayOrderWithBalanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->PayOrderWithBalance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DnspodClient::PayOrderWithBalanceOutcomeCallable DnspodClient::PayOrderWithBalanceCallable(const PayOrderWithBalanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<PayOrderWithBalanceOutcome()>>(
+        [this, request]()
+        {
+            return this->PayOrderWithBalance(request);
         }
     );
 

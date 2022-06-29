@@ -25,10 +25,10 @@ using namespace std;
 ComposeMediaRequest::ComposeMediaRequest() :
     m_tracksHasBeenSet(false),
     m_outputHasBeenSet(false),
+    m_subAppIdHasBeenSet(false),
     m_canvasHasBeenSet(false),
     m_sessionContextHasBeenSet(false),
-    m_sessionIdHasBeenSet(false),
-    m_subAppIdHasBeenSet(false)
+    m_sessionIdHasBeenSet(false)
 {
 }
 
@@ -63,6 +63,14 @@ string ComposeMediaRequest::ToJsonString() const
         m_output.ToJsonObject(d[key.c_str()], allocator);
     }
 
+    if (m_subAppIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubAppId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_subAppId, allocator);
+    }
+
     if (m_canvasHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -86,14 +94,6 @@ string ComposeMediaRequest::ToJsonString() const
         string key = "SessionId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_sessionId.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_subAppIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SubAppId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_subAppId, allocator);
     }
 
 
@@ -134,6 +134,22 @@ void ComposeMediaRequest::SetOutput(const ComposeMediaOutput& _output)
 bool ComposeMediaRequest::OutputHasBeenSet() const
 {
     return m_outputHasBeenSet;
+}
+
+uint64_t ComposeMediaRequest::GetSubAppId() const
+{
+    return m_subAppId;
+}
+
+void ComposeMediaRequest::SetSubAppId(const uint64_t& _subAppId)
+{
+    m_subAppId = _subAppId;
+    m_subAppIdHasBeenSet = true;
+}
+
+bool ComposeMediaRequest::SubAppIdHasBeenSet() const
+{
+    return m_subAppIdHasBeenSet;
 }
 
 Canvas ComposeMediaRequest::GetCanvas() const
@@ -182,22 +198,6 @@ void ComposeMediaRequest::SetSessionId(const string& _sessionId)
 bool ComposeMediaRequest::SessionIdHasBeenSet() const
 {
     return m_sessionIdHasBeenSet;
-}
-
-uint64_t ComposeMediaRequest::GetSubAppId() const
-{
-    return m_subAppId;
-}
-
-void ComposeMediaRequest::SetSubAppId(const uint64_t& _subAppId)
-{
-    m_subAppId = _subAppId;
-    m_subAppIdHasBeenSet = true;
-}
-
-bool ComposeMediaRequest::SubAppIdHasBeenSet() const
-{
-    return m_subAppIdHasBeenSet;
 }
 
 

@@ -32,7 +32,8 @@ DomainBriefInfo::DomainBriefInfo() :
     m_originHasBeenSet(false),
     m_disableHasBeenSet(false),
     m_areaHasBeenSet(false),
-    m_readonlyHasBeenSet(false)
+    m_readonlyHasBeenSet(false),
+    m_tagHasBeenSet(false)
 {
 }
 
@@ -168,6 +169,26 @@ CoreInternalOutcome DomainBriefInfo::Deserialize(const rapidjson::Value &value)
         m_readonlyHasBeenSet = true;
     }
 
+    if (value.HasMember("Tag") && !value["Tag"].IsNull())
+    {
+        if (!value["Tag"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DomainBriefInfo.Tag` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Tag"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Tag item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tag.push_back(item);
+        }
+        m_tagHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -270,6 +291,21 @@ void DomainBriefInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "Readonly";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_readonly.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tag.begin(); itr != m_tag.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -465,5 +501,21 @@ void DomainBriefInfo::SetReadonly(const string& _readonly)
 bool DomainBriefInfo::ReadonlyHasBeenSet() const
 {
     return m_readonlyHasBeenSet;
+}
+
+vector<Tag> DomainBriefInfo::GetTag() const
+{
+    return m_tag;
+}
+
+void DomainBriefInfo::SetTag(const vector<Tag>& _tag)
+{
+    m_tag = _tag;
+    m_tagHasBeenSet = true;
+}
+
+bool DomainBriefInfo::TagHasBeenSet() const
+{
+    return m_tagHasBeenSet;
 }
 

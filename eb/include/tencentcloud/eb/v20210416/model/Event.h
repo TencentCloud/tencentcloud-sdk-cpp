@@ -118,6 +118,28 @@ namespace TencentCloud
                      */
                     bool SubjectHasBeenSet() const;
 
+                    /**
+                     * 获取事件发生的毫秒时间戳，
+time.Now().UnixNano()/1e6
+                     * @return Time 事件发生的毫秒时间戳，
+time.Now().UnixNano()/1e6
+                     */
+                    int64_t GetTime() const;
+
+                    /**
+                     * 设置事件发生的毫秒时间戳，
+time.Now().UnixNano()/1e6
+                     * @param Time 事件发生的毫秒时间戳，
+time.Now().UnixNano()/1e6
+                     */
+                    void SetTime(const int64_t& _time);
+
+                    /**
+                     * 判断参数 Time 是否已赋值
+                     * @return Time 是否已赋值
+                     */
+                    bool TimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -143,6 +165,13 @@ namespace TencentCloud
                      */
                     std::string m_subject;
                     bool m_subjectHasBeenSet;
+
+                    /**
+                     * 事件发生的毫秒时间戳，
+time.Now().UnixNano()/1e6
+                     */
+                    int64_t m_time;
+                    bool m_timeHasBeenSet;
 
                 };
             }

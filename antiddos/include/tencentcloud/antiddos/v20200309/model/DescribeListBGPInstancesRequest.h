@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/antiddos/v20200309/model/TagFilter.h>
 
 
 namespace TencentCloud
@@ -169,14 +170,14 @@ namespace TencentCloud
                     bool FilterLineHasBeenSet() const;
 
                     /**
-                     * 获取状态搜索，idle：允许中；attacking：攻击中；blocking：封堵中
-                     * @return FilterStatus 状态搜索，idle：允许中；attacking：攻击中；blocking：封堵中
+                     * 获取状态搜索，idle：运行中；attacking：攻击中；blocking：封堵中
+                     * @return FilterStatus 状态搜索，idle：运行中；attacking：攻击中；blocking：封堵中
                      */
                     std::string GetFilterStatus() const;
 
                     /**
-                     * 设置状态搜索，idle：允许中；attacking：攻击中；blocking：封堵中
-                     * @param FilterStatus 状态搜索，idle：允许中；attacking：攻击中；blocking：封堵中
+                     * 设置状态搜索，idle：运行中；attacking：攻击中；blocking：封堵中
+                     * @param FilterStatus 状态搜索，idle：运行中；attacking：攻击中；blocking：封堵中
                      */
                     void SetFilterStatus(const std::string& _filterStatus);
 
@@ -203,6 +204,60 @@ namespace TencentCloud
                      * @return FilterBoundStatus 是否已赋值
                      */
                     bool FilterBoundStatusHasBeenSet() const;
+
+                    /**
+                     * 获取实例id数组
+                     * @return FilterInstanceIdList 实例id数组
+                     */
+                    std::vector<std::string> GetFilterInstanceIdList() const;
+
+                    /**
+                     * 设置实例id数组
+                     * @param FilterInstanceIdList 实例id数组
+                     */
+                    void SetFilterInstanceIdList(const std::vector<std::string>& _filterInstanceIdList);
+
+                    /**
+                     * 判断参数 FilterInstanceIdList 是否已赋值
+                     * @return FilterInstanceIdList 是否已赋值
+                     */
+                    bool FilterInstanceIdListHasBeenSet() const;
+
+                    /**
+                     * 获取企业版搜索
+                     * @return FilterEnterpriseFlag 企业版搜索
+                     */
+                    uint64_t GetFilterEnterpriseFlag() const;
+
+                    /**
+                     * 设置企业版搜索
+                     * @param FilterEnterpriseFlag 企业版搜索
+                     */
+                    void SetFilterEnterpriseFlag(const uint64_t& _filterEnterpriseFlag);
+
+                    /**
+                     * 判断参数 FilterEnterpriseFlag 是否已赋值
+                     * @return FilterEnterpriseFlag 是否已赋值
+                     */
+                    bool FilterEnterpriseFlagHasBeenSet() const;
+
+                    /**
+                     * 获取标签搜索
+                     * @return FilterTag 标签搜索
+                     */
+                    TagFilter GetFilterTag() const;
+
+                    /**
+                     * 设置标签搜索
+                     * @param FilterTag 标签搜索
+                     */
+                    void SetFilterTag(const TagFilter& _filterTag);
+
+                    /**
+                     * 判断参数 FilterTag 是否已赋值
+                     * @return FilterTag 是否已赋值
+                     */
+                    bool FilterTagHasBeenSet() const;
 
                 private:
 
@@ -249,7 +304,7 @@ namespace TencentCloud
                     bool m_filterLineHasBeenSet;
 
                     /**
-                     * 状态搜索，idle：允许中；attacking：攻击中；blocking：封堵中
+                     * 状态搜索，idle：运行中；attacking：攻击中；blocking：封堵中
                      */
                     std::string m_filterStatus;
                     bool m_filterStatusHasBeenSet;
@@ -259,6 +314,24 @@ namespace TencentCloud
                      */
                     std::string m_filterBoundStatus;
                     bool m_filterBoundStatusHasBeenSet;
+
+                    /**
+                     * 实例id数组
+                     */
+                    std::vector<std::string> m_filterInstanceIdList;
+                    bool m_filterInstanceIdListHasBeenSet;
+
+                    /**
+                     * 企业版搜索
+                     */
+                    uint64_t m_filterEnterpriseFlag;
+                    bool m_filterEnterpriseFlagHasBeenSet;
+
+                    /**
+                     * 标签搜索
+                     */
+                    TagFilter m_filterTag;
+                    bool m_filterTagHasBeenSet;
 
                 };
             }

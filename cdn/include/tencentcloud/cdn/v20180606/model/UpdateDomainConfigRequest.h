@@ -55,11 +55,14 @@
 #include <tencentcloud/cdn/v20180606/model/Ipv6Access.h>
 #include <tencentcloud/cdn/v20180606/model/OfflineCache.h>
 #include <tencentcloud/cdn/v20180606/model/OriginCombine.h>
+#include <tencentcloud/cdn/v20180606/model/PostSize.h>
 #include <tencentcloud/cdn/v20180606/model/Quic.h>
 #include <tencentcloud/cdn/v20180606/model/OssPrivateAccess.h>
 #include <tencentcloud/cdn/v20180606/model/WebSocket.h>
 #include <tencentcloud/cdn/v20180606/model/RemoteAuthentication.h>
 #include <tencentcloud/cdn/v20180606/model/ShareCname.h>
+#include <tencentcloud/cdn/v20180606/model/HwPrivateAccess.h>
+#include <tencentcloud/cdn/v20180606/model/QnPrivateAccess.h>
 
 
 namespace TencentCloud
@@ -532,6 +535,28 @@ namespace TencentCloud
                     bool MaxAgeHasBeenSet() const;
 
                     /**
+                     * 获取地域属性特殊配置
+适用于域名境内加速、境外加速配置不一致场景
+                     * @return SpecificConfig 地域属性特殊配置
+适用于域名境内加速、境外加速配置不一致场景
+                     */
+                    SpecificConfig GetSpecificConfig() const;
+
+                    /**
+                     * 设置地域属性特殊配置
+适用于域名境内加速、境外加速配置不一致场景
+                     * @param SpecificConfig 地域属性特殊配置
+适用于域名境内加速、境外加速配置不一致场景
+                     */
+                    void SetSpecificConfig(const SpecificConfig& _specificConfig);
+
+                    /**
+                     * 判断参数 SpecificConfig 是否已赋值
+                     * @return SpecificConfig 是否已赋值
+                     */
+                    bool SpecificConfigHasBeenSet() const;
+
+                    /**
                      * 获取域名业务类型
 web：静态加速
 download：下载加速
@@ -560,28 +585,6 @@ media：流媒体点播加速
                      * @return ServiceType 是否已赋值
                      */
                     bool ServiceTypeHasBeenSet() const;
-
-                    /**
-                     * 获取地域属性特殊配置
-适用于域名境内加速、境外加速配置不一致场景
-                     * @return SpecificConfig 地域属性特殊配置
-适用于域名境内加速、境外加速配置不一致场景
-                     */
-                    SpecificConfig GetSpecificConfig() const;
-
-                    /**
-                     * 设置地域属性特殊配置
-适用于域名境内加速、境外加速配置不一致场景
-                     * @param SpecificConfig 地域属性特殊配置
-适用于域名境内加速、境外加速配置不一致场景
-                     */
-                    void SetSpecificConfig(const SpecificConfig& _specificConfig);
-
-                    /**
-                     * 判断参数 SpecificConfig 是否已赋值
-                     * @return SpecificConfig 是否已赋值
-                     */
-                    bool SpecificConfigHasBeenSet() const;
 
                     /**
                      * 获取域名加速区域
@@ -816,14 +819,32 @@ global：全球加速
                     bool OriginCombineHasBeenSet() const;
 
                     /**
-                     * 获取QUIC正在内测中，请先提交内测申请，详情请前往QUIC产品文档。
-                     * @return Quic QUIC正在内测中，请先提交内测申请，详情请前往QUIC产品文档。
+                     * 获取POST请求传输配置
+                     * @return PostMaxSize POST请求传输配置
+                     */
+                    PostSize GetPostMaxSize() const;
+
+                    /**
+                     * 设置POST请求传输配置
+                     * @param PostMaxSize POST请求传输配置
+                     */
+                    void SetPostMaxSize(const PostSize& _postMaxSize);
+
+                    /**
+                     * 判断参数 PostMaxSize 是否已赋值
+                     * @return PostMaxSize 是否已赋值
+                     */
+                    bool PostMaxSizeHasBeenSet() const;
+
+                    /**
+                     * 获取Quic访问（收费服务，详见计费说明和产品文档）
+                     * @return Quic Quic访问（收费服务，详见计费说明和产品文档）
                      */
                     Quic GetQuic() const;
 
                     /**
-                     * 设置QUIC正在内测中，请先提交内测申请，详情请前往QUIC产品文档。
-                     * @param Quic QUIC正在内测中，请先提交内测申请，详情请前往QUIC产品文档。
+                     * 设置Quic访问（收费服务，详见计费说明和产品文档）
+                     * @param Quic Quic访问（收费服务，详见计费说明和产品文档）
                      */
                     void SetQuic(const Quic& _quic);
 
@@ -904,6 +925,42 @@ global：全球加速
                      * @return ShareCname 是否已赋值
                      */
                     bool ShareCnameHasBeenSet() const;
+
+                    /**
+                     * 获取华为云对象存储回源鉴权
+                     * @return HwPrivateAccess 华为云对象存储回源鉴权
+                     */
+                    HwPrivateAccess GetHwPrivateAccess() const;
+
+                    /**
+                     * 设置华为云对象存储回源鉴权
+                     * @param HwPrivateAccess 华为云对象存储回源鉴权
+                     */
+                    void SetHwPrivateAccess(const HwPrivateAccess& _hwPrivateAccess);
+
+                    /**
+                     * 判断参数 HwPrivateAccess 是否已赋值
+                     * @return HwPrivateAccess 是否已赋值
+                     */
+                    bool HwPrivateAccessHasBeenSet() const;
+
+                    /**
+                     * 获取七牛云对象存储回源鉴权
+                     * @return QnPrivateAccess 七牛云对象存储回源鉴权
+                     */
+                    QnPrivateAccess GetQnPrivateAccess() const;
+
+                    /**
+                     * 设置七牛云对象存储回源鉴权
+                     * @param QnPrivateAccess 七牛云对象存储回源鉴权
+                     */
+                    void SetQnPrivateAccess(const QnPrivateAccess& _qnPrivateAccess);
+
+                    /**
+                     * 判断参数 QnPrivateAccess 是否已赋值
+                     * @return QnPrivateAccess 是否已赋值
+                     */
+                    bool QnPrivateAccessHasBeenSet() const;
 
                 private:
 
@@ -1058,6 +1115,13 @@ global：全球加速
                     bool m_maxAgeHasBeenSet;
 
                     /**
+                     * 地域属性特殊配置
+适用于域名境内加速、境外加速配置不一致场景
+                     */
+                    SpecificConfig m_specificConfig;
+                    bool m_specificConfigHasBeenSet;
+
+                    /**
                      * 域名业务类型
 web：静态加速
 download：下载加速
@@ -1065,13 +1129,6 @@ media：流媒体点播加速
                      */
                     std::string m_serviceType;
                     bool m_serviceTypeHasBeenSet;
-
-                    /**
-                     * 地域属性特殊配置
-适用于域名境内加速、境外加速配置不一致场景
-                     */
-                    SpecificConfig m_specificConfig;
-                    bool m_specificConfigHasBeenSet;
 
                     /**
                      * 域名加速区域
@@ -1150,7 +1207,13 @@ global：全球加速
                     bool m_originCombineHasBeenSet;
 
                     /**
-                     * QUIC正在内测中，请先提交内测申请，详情请前往QUIC产品文档。
+                     * POST请求传输配置
+                     */
+                    PostSize m_postMaxSize;
+                    bool m_postMaxSizeHasBeenSet;
+
+                    /**
+                     * Quic访问（收费服务，详见计费说明和产品文档）
                      */
                     Quic m_quic;
                     bool m_quicHasBeenSet;
@@ -1178,6 +1241,18 @@ global：全球加速
                      */
                     ShareCname m_shareCname;
                     bool m_shareCnameHasBeenSet;
+
+                    /**
+                     * 华为云对象存储回源鉴权
+                     */
+                    HwPrivateAccess m_hwPrivateAccess;
+                    bool m_hwPrivateAccessHasBeenSet;
+
+                    /**
+                     * 七牛云对象存储回源鉴权
+                     */
+                    QnPrivateAccess m_qnPrivateAccess;
+                    bool m_qnPrivateAccessHasBeenSet;
 
                 };
             }

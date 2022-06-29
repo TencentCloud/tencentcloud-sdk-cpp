@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool OrderIdHasBeenSet() const;
 
                     /**
-                     * 获取订单类型 1应急 2 旗舰护网 3 安全管家
-                     * @return InquireType 订单类型 1应急 2 旗舰护网 3 安全管家
+                     * 获取订单类型 1应急 2 旗舰重保 3 安全管家
+                     * @return InquireType 订单类型 1应急 2 旗舰重保 3 安全管家
                      */
                     uint64_t GetInquireType() const;
 
                     /**
-                     * 设置订单类型 1应急 2 旗舰护网 3 安全管家
-                     * @param InquireType 订单类型 1应急 2 旗舰护网 3 安全管家
+                     * 设置订单类型 1应急 2 旗舰重保 3 安全管家
+                     * @param InquireType 订单类型 1应急 2 旗舰重保 3 安全管家
                      */
                     void SetInquireType(const uint64_t& _inquireType);
 
@@ -181,7 +181,7 @@ namespace TencentCloud
                     bool m_orderIdHasBeenSet;
 
                     /**
-                     * 订单类型 1应急 2 旗舰护网 3 安全管家
+                     * 订单类型 1应急 2 旗舰重保 3 安全管家
                      */
                     uint64_t m_inquireType;
                     bool m_inquireTypeHasBeenSet;

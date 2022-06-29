@@ -53,13 +53,13 @@ namespace TencentCloud
                     /**
                      * 获取审核结果的类型，可以取的值有：
 <li>ImagePorn：图片鉴黄</li>
-<li>ImageTerrorism：图片鉴恐</li>
-<li>ImagePolitical：图片鉴政</li>
+<li>ImageTerrorism：图片涉敏</li>
+<li>ImagePolitical：图片涉敏</li>
 <li>PornVoice：声音鉴黄</li>
                      * @return Type 审核结果的类型，可以取的值有：
 <li>ImagePorn：图片鉴黄</li>
-<li>ImageTerrorism：图片鉴恐</li>
-<li>ImagePolitical：图片鉴政</li>
+<li>ImageTerrorism：图片涉敏</li>
+<li>ImagePolitical：图片涉敏</li>
 <li>PornVoice：声音鉴黄</li>
                      */
                     std::string GetType() const;
@@ -67,13 +67,13 @@ namespace TencentCloud
                     /**
                      * 设置审核结果的类型，可以取的值有：
 <li>ImagePorn：图片鉴黄</li>
-<li>ImageTerrorism：图片鉴恐</li>
-<li>ImagePolitical：图片鉴政</li>
+<li>ImageTerrorism：图片涉敏</li>
+<li>ImagePolitical：图片涉敏</li>
 <li>PornVoice：声音鉴黄</li>
                      * @param Type 审核结果的类型，可以取的值有：
 <li>ImagePorn：图片鉴黄</li>
-<li>ImageTerrorism：图片鉴恐</li>
-<li>ImagePolitical：图片鉴政</li>
+<li>ImageTerrorism：图片涉敏</li>
+<li>ImagePolitical：图片涉敏</li>
 <li>PornVoice：声音鉴黄</li>
                      */
                     void SetType(const std::string& _type);
@@ -103,14 +103,14 @@ namespace TencentCloud
                     bool ImagePornResultSetHasBeenSet() const;
 
                     /**
-                     * 获取图片鉴恐的结果，当 Type 为 ImageTerrorism 时有效。
-                     * @return ImageTerrorismResultSet 图片鉴恐的结果，当 Type 为 ImageTerrorism 时有效。
+                     * 获取图片涉敏的结果，当 Type 为 ImageTerrorism 时有效。
+                     * @return ImageTerrorismResultSet 图片涉敏的结果，当 Type 为 ImageTerrorism 时有效。
                      */
                     std::vector<LiveStreamAiReviewImageTerrorismResult> GetImageTerrorismResultSet() const;
 
                     /**
-                     * 设置图片鉴恐的结果，当 Type 为 ImageTerrorism 时有效。
-                     * @param ImageTerrorismResultSet 图片鉴恐的结果，当 Type 为 ImageTerrorism 时有效。
+                     * 设置图片涉敏的结果，当 Type 为 ImageTerrorism 时有效。
+                     * @param ImageTerrorismResultSet 图片涉敏的结果，当 Type 为 ImageTerrorism 时有效。
                      */
                     void SetImageTerrorismResultSet(const std::vector<LiveStreamAiReviewImageTerrorismResult>& _imageTerrorismResultSet);
 
@@ -121,14 +121,14 @@ namespace TencentCloud
                     bool ImageTerrorismResultSetHasBeenSet() const;
 
                     /**
-                     * 获取图片鉴政的结果，当 Type 为 ImagePolitical 时有效。
-                     * @return ImagePoliticalResultSet 图片鉴政的结果，当 Type 为 ImagePolitical 时有效。
+                     * 获取图片涉敏的结果，当 Type 为 ImagePolitical 时有效。
+                     * @return ImagePoliticalResultSet 图片涉敏的结果，当 Type 为 ImagePolitical 时有效。
                      */
                     std::vector<LiveStreamAiReviewImagePoliticalResult> GetImagePoliticalResultSet() const;
 
                     /**
-                     * 设置图片鉴政的结果，当 Type 为 ImagePolitical 时有效。
-                     * @param ImagePoliticalResultSet 图片鉴政的结果，当 Type 为 ImagePolitical 时有效。
+                     * 设置图片涉敏的结果，当 Type 为 ImagePolitical 时有效。
+                     * @param ImagePoliticalResultSet 图片涉敏的结果，当 Type 为 ImagePolitical 时有效。
                      */
                     void SetImagePoliticalResultSet(const std::vector<LiveStreamAiReviewImagePoliticalResult>& _imagePoliticalResultSet);
 
@@ -161,8 +161,8 @@ namespace TencentCloud
                     /**
                      * 审核结果的类型，可以取的值有：
 <li>ImagePorn：图片鉴黄</li>
-<li>ImageTerrorism：图片鉴恐</li>
-<li>ImagePolitical：图片鉴政</li>
+<li>ImageTerrorism：图片涉敏</li>
+<li>ImagePolitical：图片涉敏</li>
 <li>PornVoice：声音鉴黄</li>
                      */
                     std::string m_type;
@@ -175,13 +175,13 @@ namespace TencentCloud
                     bool m_imagePornResultSetHasBeenSet;
 
                     /**
-                     * 图片鉴恐的结果，当 Type 为 ImageTerrorism 时有效。
+                     * 图片涉敏的结果，当 Type 为 ImageTerrorism 时有效。
                      */
                     std::vector<LiveStreamAiReviewImageTerrorismResult> m_imageTerrorismResultSet;
                     bool m_imageTerrorismResultSetHasBeenSet;
 
                     /**
-                     * 图片鉴政的结果，当 Type 为 ImagePolitical 时有效。
+                     * 图片涉敏的结果，当 Type 为 ImagePolitical 时有效。
                      */
                     std::vector<LiveStreamAiReviewImagePoliticalResult> m_imagePoliticalResultSet;
                     bool m_imagePoliticalResultSetHasBeenSet;

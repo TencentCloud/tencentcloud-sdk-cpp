@@ -31,7 +31,8 @@ CreateFileSystemRequest::CreateFileSystemRequest() :
     m_rootInodeUserHasBeenSet(false),
     m_rootInodeGroupHasBeenSet(false),
     m_enableRangerHasBeenSet(false),
-    m_rangerServiceAddressesHasBeenSet(false)
+    m_rangerServiceAddressesHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -121,6 +122,21 @@ string CreateFileSystemRequest::ToJsonString() const
         for (auto itr = m_rangerServiceAddresses.begin(); itr != m_rangerServiceAddresses.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
     }
 
@@ -274,6 +290,22 @@ void CreateFileSystemRequest::SetRangerServiceAddresses(const vector<string>& _r
 bool CreateFileSystemRequest::RangerServiceAddressesHasBeenSet() const
 {
     return m_rangerServiceAddressesHasBeenSet;
+}
+
+vector<Tag> CreateFileSystemRequest::GetTags() const
+{
+    return m_tags;
+}
+
+void CreateFileSystemRequest::SetTags(const vector<Tag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool CreateFileSystemRequest::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 
 

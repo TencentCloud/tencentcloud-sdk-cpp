@@ -23,8 +23,8 @@ using namespace TencentCloud::Clb::V20180317::Model;
 using namespace std;
 
 CreateClsLogSetRequest::CreateClsLogSetRequest() :
-    m_periodHasBeenSet(false),
     m_logsetNameHasBeenSet(false),
+    m_periodHasBeenSet(false),
     m_logsetTypeHasBeenSet(false)
 {
 }
@@ -36,20 +36,20 @@ string CreateClsLogSetRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_periodHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Period";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_period, allocator);
-    }
-
     if (m_logsetNameHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LogsetName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_logsetName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_periodHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Period";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_period, allocator);
     }
 
     if (m_logsetTypeHasBeenSet)
@@ -68,22 +68,6 @@ string CreateClsLogSetRequest::ToJsonString() const
 }
 
 
-uint64_t CreateClsLogSetRequest::GetPeriod() const
-{
-    return m_period;
-}
-
-void CreateClsLogSetRequest::SetPeriod(const uint64_t& _period)
-{
-    m_period = _period;
-    m_periodHasBeenSet = true;
-}
-
-bool CreateClsLogSetRequest::PeriodHasBeenSet() const
-{
-    return m_periodHasBeenSet;
-}
-
 string CreateClsLogSetRequest::GetLogsetName() const
 {
     return m_logsetName;
@@ -98,6 +82,22 @@ void CreateClsLogSetRequest::SetLogsetName(const string& _logsetName)
 bool CreateClsLogSetRequest::LogsetNameHasBeenSet() const
 {
     return m_logsetNameHasBeenSet;
+}
+
+uint64_t CreateClsLogSetRequest::GetPeriod() const
+{
+    return m_period;
+}
+
+void CreateClsLogSetRequest::SetPeriod(const uint64_t& _period)
+{
+    m_period = _period;
+    m_periodHasBeenSet = true;
+}
+
+bool CreateClsLogSetRequest::PeriodHasBeenSet() const
+{
+    return m_periodHasBeenSet;
 }
 
 string CreateClsLogSetRequest::GetLogsetType() const

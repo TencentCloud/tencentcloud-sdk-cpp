@@ -132,6 +132,96 @@ namespace TencentCloud
                      */
                     bool FromHasBeenSet() const;
 
+                    /**
+                     * 获取部署策略，AUTO 为全自动；BETA 为小批量验证后自动；MANUAL 为全手动；
+                     * @return DeployStrategyType 部署策略，AUTO 为全自动；BETA 为小批量验证后自动；MANUAL 为全手动；
+                     */
+                    std::string GetDeployStrategyType() const;
+
+                    /**
+                     * 设置部署策略，AUTO 为全自动；BETA 为小批量验证后自动；MANUAL 为全手动；
+                     * @param DeployStrategyType 部署策略，AUTO 为全自动；BETA 为小批量验证后自动；MANUAL 为全手动；
+                     */
+                    void SetDeployStrategyType(const std::string& _deployStrategyType);
+
+                    /**
+                     * 判断参数 DeployStrategyType 是否已赋值
+                     * @return DeployStrategyType 是否已赋值
+                     */
+                    bool DeployStrategyTypeHasBeenSet() const;
+
+                    /**
+                     * 获取发布批次数
+                     * @return TotalBatchCount 发布批次数
+                     */
+                    int64_t GetTotalBatchCount() const;
+
+                    /**
+                     * 设置发布批次数
+                     * @param TotalBatchCount 发布批次数
+                     */
+                    void SetTotalBatchCount(const int64_t& _totalBatchCount);
+
+                    /**
+                     * 判断参数 TotalBatchCount 是否已赋值
+                     * @return TotalBatchCount 是否已赋值
+                     */
+                    bool TotalBatchCountHasBeenSet() const;
+
+                    /**
+                     * 获取批次间隔时间
+                     * @return BatchInterval 批次间隔时间
+                     */
+                    int64_t GetBatchInterval() const;
+
+                    /**
+                     * 设置批次间隔时间
+                     * @param BatchInterval 批次间隔时间
+                     */
+                    void SetBatchInterval(const int64_t& _batchInterval);
+
+                    /**
+                     * 判断参数 BatchInterval 是否已赋值
+                     * @return BatchInterval 是否已赋值
+                     */
+                    bool BatchIntervalHasBeenSet() const;
+
+                    /**
+                     * 获取小批量验证批次的实例数
+                     * @return BetaBatchNum 小批量验证批次的实例数
+                     */
+                    int64_t GetBetaBatchNum() const;
+
+                    /**
+                     * 设置小批量验证批次的实例数
+                     * @param BetaBatchNum 小批量验证批次的实例数
+                     */
+                    void SetBetaBatchNum(const int64_t& _betaBatchNum);
+
+                    /**
+                     * 判断参数 BetaBatchNum 是否已赋值
+                     * @return BetaBatchNum 是否已赋值
+                     */
+                    bool BetaBatchNumHasBeenSet() const;
+
+                    /**
+                     * 获取发布过程中保障的最小可用实例数
+                     * @return MinAvailable 发布过程中保障的最小可用实例数
+                     */
+                    int64_t GetMinAvailable() const;
+
+                    /**
+                     * 设置发布过程中保障的最小可用实例数
+                     * @param MinAvailable 发布过程中保障的最小可用实例数
+                     */
+                    void SetMinAvailable(const int64_t& _minAvailable);
+
+                    /**
+                     * 判断参数 MinAvailable 是否已赋值
+                     * @return MinAvailable 是否已赋值
+                     */
+                    bool MinAvailableHasBeenSet() const;
+
                 private:
 
                     /**
@@ -163,6 +253,36 @@ namespace TencentCloud
                      */
                     std::string m_from;
                     bool m_fromHasBeenSet;
+
+                    /**
+                     * 部署策略，AUTO 为全自动；BETA 为小批量验证后自动；MANUAL 为全手动；
+                     */
+                    std::string m_deployStrategyType;
+                    bool m_deployStrategyTypeHasBeenSet;
+
+                    /**
+                     * 发布批次数
+                     */
+                    int64_t m_totalBatchCount;
+                    bool m_totalBatchCountHasBeenSet;
+
+                    /**
+                     * 批次间隔时间
+                     */
+                    int64_t m_batchInterval;
+                    bool m_batchIntervalHasBeenSet;
+
+                    /**
+                     * 小批量验证批次的实例数
+                     */
+                    int64_t m_betaBatchNum;
+                    bool m_betaBatchNumHasBeenSet;
+
+                    /**
+                     * 发布过程中保障的最小可用实例数
+                     */
+                    int64_t m_minAvailable;
+                    bool m_minAvailableHasBeenSet;
 
                 };
             }

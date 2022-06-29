@@ -26,7 +26,8 @@ CcnBandwidthInfo::CcnBandwidthInfo() :
     m_expiredTimeHasBeenSet(false),
     m_regionFlowControlIdHasBeenSet(false),
     m_renewFlagHasBeenSet(false),
-    m_ccnRegionBandwidthLimitHasBeenSet(false)
+    m_ccnRegionBandwidthLimitHasBeenSet(false),
+    m_marketIdHasBeenSet(false)
 {
 }
 
@@ -102,6 +103,16 @@ CoreInternalOutcome CcnBandwidthInfo::Deserialize(const rapidjson::Value &value)
         m_ccnRegionBandwidthLimitHasBeenSet = true;
     }
 
+    if (value.HasMember("MarketId") && !value["MarketId"].IsNull())
+    {
+        if (!value["MarketId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CcnBandwidthInfo.MarketId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_marketId = string(value["MarketId"].GetString());
+        m_marketIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -156,6 +167,14 @@ void CcnBandwidthInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_ccnRegionBandwidthLimit.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_marketIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MarketId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_marketId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -255,5 +274,21 @@ void CcnBandwidthInfo::SetCcnRegionBandwidthLimit(const CcnRegionBandwidthLimit&
 bool CcnBandwidthInfo::CcnRegionBandwidthLimitHasBeenSet() const
 {
     return m_ccnRegionBandwidthLimitHasBeenSet;
+}
+
+string CcnBandwidthInfo::GetMarketId() const
+{
+    return m_marketId;
+}
+
+void CcnBandwidthInfo::SetMarketId(const string& _marketId)
+{
+    m_marketId = _marketId;
+    m_marketIdHasBeenSet = true;
+}
+
+bool CcnBandwidthInfo::MarketIdHasBeenSet() const
+{
+    return m_marketIdHasBeenSet;
 }
 

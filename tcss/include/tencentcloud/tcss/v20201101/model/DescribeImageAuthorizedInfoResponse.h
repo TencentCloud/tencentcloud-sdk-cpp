@@ -91,6 +91,18 @@ namespace TencentCloud
                      */
                     bool NotScannedImageCntHasBeenSet() const;
 
+                    /**
+                     * 获取本地未开启扫描镜像数
+                     * @return NotScannedLocalImageCnt 本地未开启扫描镜像数
+                     */
+                    uint64_t GetNotScannedLocalImageCnt() const;
+
+                    /**
+                     * 判断参数 NotScannedLocalImageCnt 是否已赋值
+                     * @return NotScannedLocalImageCnt 是否已赋值
+                     */
+                    bool NotScannedLocalImageCntHasBeenSet() const;
+
                 private:
 
                     /**
@@ -116,6 +128,12 @@ namespace TencentCloud
                      */
                     uint64_t m_notScannedImageCnt;
                     bool m_notScannedImageCntHasBeenSet;
+
+                    /**
+                     * 本地未开启扫描镜像数
+                     */
+                    uint64_t m_notScannedLocalImageCnt;
+                    bool m_notScannedLocalImageCntHasBeenSet;
 
                 };
             }

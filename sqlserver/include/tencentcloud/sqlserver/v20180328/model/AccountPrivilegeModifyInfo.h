@@ -83,6 +83,24 @@ namespace TencentCloud
                      */
                     bool DBPrivilegesHasBeenSet() const;
 
+                    /**
+                     * 获取是否为管理员账户
+                     * @return IsAdmin 是否为管理员账户
+                     */
+                    bool GetIsAdmin() const;
+
+                    /**
+                     * 设置是否为管理员账户
+                     * @param IsAdmin 是否为管理员账户
+                     */
+                    void SetIsAdmin(const bool& _isAdmin);
+
+                    /**
+                     * 判断参数 IsAdmin 是否已赋值
+                     * @return IsAdmin 是否已赋值
+                     */
+                    bool IsAdminHasBeenSet() const;
+
                 private:
 
                     /**
@@ -96,6 +114,12 @@ namespace TencentCloud
                      */
                     std::vector<DBPrivilegeModifyInfo> m_dBPrivileges;
                     bool m_dBPrivilegesHasBeenSet;
+
+                    /**
+                     * 是否为管理员账户
+                     */
+                    bool m_isAdmin;
+                    bool m_isAdminHasBeenSet;
 
                 };
             }

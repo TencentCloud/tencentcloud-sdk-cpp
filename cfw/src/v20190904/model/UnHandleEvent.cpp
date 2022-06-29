@@ -24,7 +24,8 @@ UnHandleEvent::UnHandleEvent() :
     m_eventTableListStructHasBeenSet(false),
     m_baseLineUserHasBeenSet(false),
     m_baseLineInSwitchHasBeenSet(false),
-    m_baseLineOutSwitchHasBeenSet(false)
+    m_baseLineOutSwitchHasBeenSet(false),
+    m_vpcFwCountHasBeenSet(false)
 {
 }
 
@@ -83,6 +84,16 @@ CoreInternalOutcome UnHandleEvent::Deserialize(const rapidjson::Value &value)
         m_baseLineOutSwitchHasBeenSet = true;
     }
 
+    if (value.HasMember("VpcFwCount") && !value["VpcFwCount"].IsNull())
+    {
+        if (!value["VpcFwCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `UnHandleEvent.VpcFwCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_vpcFwCount = value["VpcFwCount"].GetUint64();
+        m_vpcFwCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -127,6 +138,14 @@ void UnHandleEvent::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "BaseLineOutSwitch";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_baseLineOutSwitch, allocator);
+    }
+
+    if (m_vpcFwCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VpcFwCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_vpcFwCount, allocator);
     }
 
 }
@@ -194,5 +213,21 @@ void UnHandleEvent::SetBaseLineOutSwitch(const uint64_t& _baseLineOutSwitch)
 bool UnHandleEvent::BaseLineOutSwitchHasBeenSet() const
 {
     return m_baseLineOutSwitchHasBeenSet;
+}
+
+uint64_t UnHandleEvent::GetVpcFwCount() const
+{
+    return m_vpcFwCount;
+}
+
+void UnHandleEvent::SetVpcFwCount(const uint64_t& _vpcFwCount)
+{
+    m_vpcFwCount = _vpcFwCount;
+    m_vpcFwCountHasBeenSet = true;
+}
+
+bool UnHandleEvent::VpcFwCountHasBeenSet() const
+{
+    return m_vpcFwCountHasBeenSet;
 }
 

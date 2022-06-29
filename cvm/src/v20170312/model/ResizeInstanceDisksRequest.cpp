@@ -25,7 +25,9 @@ using namespace std;
 ResizeInstanceDisksRequest::ResizeInstanceDisksRequest() :
     m_instanceIdHasBeenSet(false),
     m_dataDisksHasBeenSet(false),
-    m_forceStopHasBeenSet(false)
+    m_forceStopHasBeenSet(false),
+    m_systemDiskHasBeenSet(false),
+    m_resizeOnlineHasBeenSet(false)
 {
 }
 
@@ -65,6 +67,23 @@ string ResizeInstanceDisksRequest::ToJsonString() const
         string key = "ForceStop";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_forceStop, allocator);
+    }
+
+    if (m_systemDiskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SystemDisk";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_systemDisk.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_resizeOnlineHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResizeOnline";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_resizeOnline, allocator);
     }
 
 
@@ -121,6 +140,38 @@ void ResizeInstanceDisksRequest::SetForceStop(const bool& _forceStop)
 bool ResizeInstanceDisksRequest::ForceStopHasBeenSet() const
 {
     return m_forceStopHasBeenSet;
+}
+
+SystemDisk ResizeInstanceDisksRequest::GetSystemDisk() const
+{
+    return m_systemDisk;
+}
+
+void ResizeInstanceDisksRequest::SetSystemDisk(const SystemDisk& _systemDisk)
+{
+    m_systemDisk = _systemDisk;
+    m_systemDiskHasBeenSet = true;
+}
+
+bool ResizeInstanceDisksRequest::SystemDiskHasBeenSet() const
+{
+    return m_systemDiskHasBeenSet;
+}
+
+bool ResizeInstanceDisksRequest::GetResizeOnline() const
+{
+    return m_resizeOnline;
+}
+
+void ResizeInstanceDisksRequest::SetResizeOnline(const bool& _resizeOnline)
+{
+    m_resizeOnline = _resizeOnline;
+    m_resizeOnlineHasBeenSet = true;
+}
+
+bool ResizeInstanceDisksRequest::ResizeOnlineHasBeenSet() const
+{
+    return m_resizeOnlineHasBeenSet;
 }
 
 

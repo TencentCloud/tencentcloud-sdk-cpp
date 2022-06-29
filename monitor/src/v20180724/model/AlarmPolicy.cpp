@@ -49,7 +49,11 @@ AlarmPolicy::AlarmPolicy() :
     m_instanceGroupNameHasBeenSet(false),
     m_ruleTypeHasBeenSet(false),
     m_originIdHasBeenSet(false),
-    m_tagInstancesHasBeenSet(false)
+    m_tagInstancesHasBeenSet(false),
+    m_filterDimensionsParamHasBeenSet(false),
+    m_isOneClickHasBeenSet(false),
+    m_oneClickStatusHasBeenSet(false),
+    m_advancedMetricNumberHasBeenSet(false)
 {
 }
 
@@ -405,6 +409,46 @@ CoreInternalOutcome AlarmPolicy::Deserialize(const rapidjson::Value &value)
         m_tagInstancesHasBeenSet = true;
     }
 
+    if (value.HasMember("FilterDimensionsParam") && !value["FilterDimensionsParam"].IsNull())
+    {
+        if (!value["FilterDimensionsParam"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AlarmPolicy.FilterDimensionsParam` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_filterDimensionsParam = string(value["FilterDimensionsParam"].GetString());
+        m_filterDimensionsParamHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsOneClick") && !value["IsOneClick"].IsNull())
+    {
+        if (!value["IsOneClick"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AlarmPolicy.IsOneClick` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isOneClick = value["IsOneClick"].GetInt64();
+        m_isOneClickHasBeenSet = true;
+    }
+
+    if (value.HasMember("OneClickStatus") && !value["OneClickStatus"].IsNull())
+    {
+        if (!value["OneClickStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AlarmPolicy.OneClickStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_oneClickStatus = value["OneClickStatus"].GetInt64();
+        m_oneClickStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("AdvancedMetricNumber") && !value["AdvancedMetricNumber"].IsNull())
+    {
+        if (!value["AdvancedMetricNumber"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AlarmPolicy.AdvancedMetricNumber` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_advancedMetricNumber = value["AdvancedMetricNumber"].GetInt64();
+        m_advancedMetricNumberHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -676,6 +720,38 @@ void AlarmPolicy::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_filterDimensionsParamHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FilterDimensionsParam";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_filterDimensionsParam.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isOneClickHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsOneClick";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isOneClick, allocator);
+    }
+
+    if (m_oneClickStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OneClickStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_oneClickStatus, allocator);
+    }
+
+    if (m_advancedMetricNumberHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AdvancedMetricNumber";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_advancedMetricNumber, allocator);
     }
 
 }
@@ -1143,5 +1219,69 @@ void AlarmPolicy::SetTagInstances(const vector<TagInstance>& _tagInstances)
 bool AlarmPolicy::TagInstancesHasBeenSet() const
 {
     return m_tagInstancesHasBeenSet;
+}
+
+string AlarmPolicy::GetFilterDimensionsParam() const
+{
+    return m_filterDimensionsParam;
+}
+
+void AlarmPolicy::SetFilterDimensionsParam(const string& _filterDimensionsParam)
+{
+    m_filterDimensionsParam = _filterDimensionsParam;
+    m_filterDimensionsParamHasBeenSet = true;
+}
+
+bool AlarmPolicy::FilterDimensionsParamHasBeenSet() const
+{
+    return m_filterDimensionsParamHasBeenSet;
+}
+
+int64_t AlarmPolicy::GetIsOneClick() const
+{
+    return m_isOneClick;
+}
+
+void AlarmPolicy::SetIsOneClick(const int64_t& _isOneClick)
+{
+    m_isOneClick = _isOneClick;
+    m_isOneClickHasBeenSet = true;
+}
+
+bool AlarmPolicy::IsOneClickHasBeenSet() const
+{
+    return m_isOneClickHasBeenSet;
+}
+
+int64_t AlarmPolicy::GetOneClickStatus() const
+{
+    return m_oneClickStatus;
+}
+
+void AlarmPolicy::SetOneClickStatus(const int64_t& _oneClickStatus)
+{
+    m_oneClickStatus = _oneClickStatus;
+    m_oneClickStatusHasBeenSet = true;
+}
+
+bool AlarmPolicy::OneClickStatusHasBeenSet() const
+{
+    return m_oneClickStatusHasBeenSet;
+}
+
+int64_t AlarmPolicy::GetAdvancedMetricNumber() const
+{
+    return m_advancedMetricNumber;
+}
+
+void AlarmPolicy::SetAdvancedMetricNumber(const int64_t& _advancedMetricNumber)
+{
+    m_advancedMetricNumber = _advancedMetricNumber;
+    m_advancedMetricNumberHasBeenSet = true;
+}
+
+bool AlarmPolicy::AdvancedMetricNumberHasBeenSet() const
+{
+    return m_advancedMetricNumberHasBeenSet;
 }
 

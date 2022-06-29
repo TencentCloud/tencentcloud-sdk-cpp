@@ -24,7 +24,8 @@ using namespace std;
 
 DeleteResourceConfigsRequest::DeleteResourceConfigsRequest() :
     m_resourceIdHasBeenSet(false),
-    m_resourceConfigVersionsHasBeenSet(false)
+    m_resourceConfigVersionsHasBeenSet(false),
+    m_workSpaceIdHasBeenSet(false)
 {
 }
 
@@ -54,6 +55,14 @@ string DeleteResourceConfigsRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
+    }
+
+    if (m_workSpaceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WorkSpaceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_workSpaceId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -94,6 +103,22 @@ void DeleteResourceConfigsRequest::SetResourceConfigVersions(const vector<int64_
 bool DeleteResourceConfigsRequest::ResourceConfigVersionsHasBeenSet() const
 {
     return m_resourceConfigVersionsHasBeenSet;
+}
+
+string DeleteResourceConfigsRequest::GetWorkSpaceId() const
+{
+    return m_workSpaceId;
+}
+
+void DeleteResourceConfigsRequest::SetWorkSpaceId(const string& _workSpaceId)
+{
+    m_workSpaceId = _workSpaceId;
+    m_workSpaceIdHasBeenSet = true;
+}
+
+bool DeleteResourceConfigsRequest::WorkSpaceIdHasBeenSet() const
+{
+    return m_workSpaceIdHasBeenSet;
 }
 
 

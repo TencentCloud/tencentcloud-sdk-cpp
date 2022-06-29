@@ -84,14 +84,14 @@ namespace TencentCloud
                     bool MaterialIdHasBeenSet() const;
 
                     /**
-                     * 获取操作者 Id。
-                     * @return Operator 操作者 Id。
+                     * 获取操作者 Id。（废弃，请勿使用）
+                     * @return Operator 操作者 Id。（废弃，请勿使用）
                      */
                     std::string GetOperator() const;
 
                     /**
-                     * 设置操作者 Id。
-                     * @param Operator 操作者 Id。
+                     * 设置操作者 Id。（废弃，请勿使用）
+                     * @param Operator 操作者 Id。（废弃，请勿使用）
                      */
                     void SetOperator(const std::string& _operator);
 
@@ -102,26 +102,34 @@ namespace TencentCloud
                     bool OperatorHasBeenSet() const;
 
                     /**
-                     * 获取操作类型，可取值为：
-<li>Upload：上传；</li>
+                     * 获取操作类型，可取值有：
+<li>Upload：本地上传；</li>
 <li>PullUpload：拉取上传；</li>
-<li>Record：直播录制。</li>
-                     * @return OperationType 操作类型，可取值为：
-<li>Upload：上传；</li>
+<li>VideoEdit：视频剪辑；</li>
+<li>LiveStreamClip：直播流剪辑；</li>
+<li>LiveStreamRecord：直播流录制。</li>
+                     * @return OperationType 操作类型，可取值有：
+<li>Upload：本地上传；</li>
 <li>PullUpload：拉取上传；</li>
-<li>Record：直播录制。</li>
+<li>VideoEdit：视频剪辑；</li>
+<li>LiveStreamClip：直播流剪辑；</li>
+<li>LiveStreamRecord：直播流录制。</li>
                      */
                     std::string GetOperationType() const;
 
                     /**
-                     * 设置操作类型，可取值为：
-<li>Upload：上传；</li>
+                     * 设置操作类型，可取值有：
+<li>Upload：本地上传；</li>
 <li>PullUpload：拉取上传；</li>
-<li>Record：直播录制。</li>
-                     * @param OperationType 操作类型，可取值为：
-<li>Upload：上传；</li>
+<li>VideoEdit：视频剪辑；</li>
+<li>LiveStreamClip：直播流剪辑；</li>
+<li>LiveStreamRecord：直播流录制。</li>
+                     * @param OperationType 操作类型，可取值有：
+<li>Upload：本地上传；</li>
 <li>PullUpload：拉取上传；</li>
-<li>Record：直播录制。</li>
+<li>VideoEdit：视频剪辑；</li>
+<li>LiveStreamClip：直播流剪辑；</li>
+<li>LiveStreamRecord：直播流录制。</li>
                      */
                     void SetOperationType(const std::string& _operationType);
 
@@ -167,6 +175,42 @@ namespace TencentCloud
                      */
                     bool ClassPathHasBeenSet() const;
 
+                    /**
+                     * 获取生成文件的任务 Id。当生成新文件是拉取上传、视频剪辑、直播流剪辑时为任务 Id。
+                     * @return TaskId 生成文件的任务 Id。当生成新文件是拉取上传、视频剪辑、直播流剪辑时为任务 Id。
+                     */
+                    std::string GetTaskId() const;
+
+                    /**
+                     * 设置生成文件的任务 Id。当生成新文件是拉取上传、视频剪辑、直播流剪辑时为任务 Id。
+                     * @param TaskId 生成文件的任务 Id。当生成新文件是拉取上传、视频剪辑、直播流剪辑时为任务 Id。
+                     */
+                    void SetTaskId(const std::string& _taskId);
+
+                    /**
+                     * 判断参数 TaskId 是否已赋值
+                     * @return TaskId 是否已赋值
+                     */
+                    bool TaskIdHasBeenSet() const;
+
+                    /**
+                     * 获取来源上下文信息。视频剪辑生成新文件时此字段为项目 Id；直播流剪辑或者直播流录制生成新文件则为原始流地址。
+                     * @return SourceContext 来源上下文信息。视频剪辑生成新文件时此字段为项目 Id；直播流剪辑或者直播流录制生成新文件则为原始流地址。
+                     */
+                    std::string GetSourceContext() const;
+
+                    /**
+                     * 设置来源上下文信息。视频剪辑生成新文件时此字段为项目 Id；直播流剪辑或者直播流录制生成新文件则为原始流地址。
+                     * @param SourceContext 来源上下文信息。视频剪辑生成新文件时此字段为项目 Id；直播流剪辑或者直播流录制生成新文件则为原始流地址。
+                     */
+                    void SetSourceContext(const std::string& _sourceContext);
+
+                    /**
+                     * 判断参数 SourceContext 是否已赋值
+                     * @return SourceContext 是否已赋值
+                     */
+                    bool SourceContextHasBeenSet() const;
+
                 private:
 
                     /**
@@ -182,16 +226,18 @@ namespace TencentCloud
                     bool m_materialIdHasBeenSet;
 
                     /**
-                     * 操作者 Id。
+                     * 操作者 Id。（废弃，请勿使用）
                      */
                     std::string m_operator;
                     bool m_operatorHasBeenSet;
 
                     /**
-                     * 操作类型，可取值为：
-<li>Upload：上传；</li>
+                     * 操作类型，可取值有：
+<li>Upload：本地上传；</li>
 <li>PullUpload：拉取上传；</li>
-<li>Record：直播录制。</li>
+<li>VideoEdit：视频剪辑；</li>
+<li>LiveStreamClip：直播流剪辑；</li>
+<li>LiveStreamRecord：直播流录制。</li>
                      */
                     std::string m_operationType;
                     bool m_operationTypeHasBeenSet;
@@ -207,6 +253,18 @@ namespace TencentCloud
                      */
                     std::string m_classPath;
                     bool m_classPathHasBeenSet;
+
+                    /**
+                     * 生成文件的任务 Id。当生成新文件是拉取上传、视频剪辑、直播流剪辑时为任务 Id。
+                     */
+                    std::string m_taskId;
+                    bool m_taskIdHasBeenSet;
+
+                    /**
+                     * 来源上下文信息。视频剪辑生成新文件时此字段为项目 Id；直播流剪辑或者直播流录制生成新文件则为原始流地址。
+                     */
+                    std::string m_sourceContext;
+                    bool m_sourceContextHasBeenSet;
 
                 };
             }

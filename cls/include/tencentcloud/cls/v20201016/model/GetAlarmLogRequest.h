@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool QueryHasBeenSet() const;
 
                     /**
-                     * 获取单次查询返回的日志条数，最大值为100
-                     * @return Limit 单次查询返回的日志条数，最大值为100
+                     * 获取单次查询返回的日志条数，最大值为1000
+                     * @return Limit 单次查询返回的日志条数，最大值为1000
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置单次查询返回的日志条数，最大值为100
-                     * @param Limit 单次查询返回的日志条数，最大值为100
+                     * 设置单次查询返回的日志条数，最大值为1000
+                     * @param Limit 单次查询返回的日志条数，最大值为1000
                      */
                     void SetLimit(const int64_t& _limit);
 
@@ -189,7 +189,7 @@ namespace TencentCloud
                     bool m_queryHasBeenSet;
 
                     /**
-                     * 单次查询返回的日志条数，最大值为100
+                     * 单次查询返回的日志条数，最大值为1000
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;

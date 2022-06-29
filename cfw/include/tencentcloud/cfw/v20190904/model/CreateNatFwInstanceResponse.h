@@ -43,7 +43,25 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取防火墙实例id
+                     * @return CfwInsId 防火墙实例id
+                     */
+                    std::string GetCfwInsId() const;
+
+                    /**
+                     * 判断参数 CfwInsId 是否已赋值
+                     * @return CfwInsId 是否已赋值
+                     */
+                    bool CfwInsIdHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 防火墙实例id
+                     */
+                    std::string m_cfwInsId;
+                    bool m_cfwInsIdHasBeenSet;
 
                 };
             }

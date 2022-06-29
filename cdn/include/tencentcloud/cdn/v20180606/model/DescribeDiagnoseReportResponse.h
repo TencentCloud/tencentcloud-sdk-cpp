@@ -140,6 +140,20 @@ namespace TencentCloud
                      */
                     bool OriginInfoHasBeenSet() const;
 
+                    /**
+                     * 获取刷新检测信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PurgeInfo 刷新检测信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    DiagnoseData GetPurgeInfo() const;
+
+                    /**
+                     * 判断参数 PurgeInfo 是否已赋值
+                     * @return PurgeInfo 是否已赋值
+                     */
+                    bool PurgeInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -189,6 +203,13 @@ namespace TencentCloud
                      */
                     DiagnoseData m_originInfo;
                     bool m_originInfoHasBeenSet;
+
+                    /**
+                     * 刷新检测信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    DiagnoseData m_purgeInfo;
+                    bool m_purgeInfoHasBeenSet;
 
                 };
             }

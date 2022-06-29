@@ -86,13 +86,17 @@ namespace TencentCloud
 
                     /**
                      * 获取端口(all, 离散port,  range)。
+说明：如果Protocol设置为ALL，则Port也需要设置为all。
                      * @return Port 端口(all, 离散port,  range)。
+说明：如果Protocol设置为ALL，则Port也需要设置为all。
                      */
                     std::string GetPort() const;
 
                     /**
                      * 设置端口(all, 离散port,  range)。
+说明：如果Protocol设置为ALL，则Port也需要设置为all。
                      * @param Port 端口(all, 离散port,  range)。
+说明：如果Protocol设置为ALL，则Port也需要设置为all。
                      */
                     void SetPort(const std::string& _port);
 
@@ -262,6 +266,7 @@ namespace TencentCloud
 
                     /**
                      * 端口(all, 离散port,  range)。
+说明：如果Protocol设置为ALL，则Port也需要设置为all。
                      */
                     std::string m_port;
                     bool m_portHasBeenSet;

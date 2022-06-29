@@ -2835,6 +2835,49 @@ TcbClient::EstablishWxGatewayRouteOutcomeCallable TcbClient::EstablishWxGatewayR
     return task->get_future();
 }
 
+TcbClient::FreezeCloudBaseRunServersOutcome TcbClient::FreezeCloudBaseRunServers(const FreezeCloudBaseRunServersRequest &request)
+{
+    auto outcome = MakeRequest(request, "FreezeCloudBaseRunServers");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        FreezeCloudBaseRunServersResponse rsp = FreezeCloudBaseRunServersResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return FreezeCloudBaseRunServersOutcome(rsp);
+        else
+            return FreezeCloudBaseRunServersOutcome(o.GetError());
+    }
+    else
+    {
+        return FreezeCloudBaseRunServersOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::FreezeCloudBaseRunServersAsync(const FreezeCloudBaseRunServersRequest& request, const FreezeCloudBaseRunServersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->FreezeCloudBaseRunServers(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcbClient::FreezeCloudBaseRunServersOutcomeCallable TcbClient::FreezeCloudBaseRunServersCallable(const FreezeCloudBaseRunServersRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<FreezeCloudBaseRunServersOutcome()>>(
+        [this, request]()
+        {
+            return this->FreezeCloudBaseRunServers(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcbClient::ModifyCloudBaseRunServerFlowConfOutcome TcbClient::ModifyCloudBaseRunServerFlowConf(const ModifyCloudBaseRunServerFlowConfRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyCloudBaseRunServerFlowConf");
@@ -3179,6 +3222,49 @@ TcbClient::RollUpdateCloudBaseRunServerVersionOutcomeCallable TcbClient::RollUpd
     return task->get_future();
 }
 
+TcbClient::SearchClsLogOutcome TcbClient::SearchClsLog(const SearchClsLogRequest &request)
+{
+    auto outcome = MakeRequest(request, "SearchClsLog");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SearchClsLogResponse rsp = SearchClsLogResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SearchClsLogOutcome(rsp);
+        else
+            return SearchClsLogOutcome(o.GetError());
+    }
+    else
+    {
+        return SearchClsLogOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::SearchClsLogAsync(const SearchClsLogRequest& request, const SearchClsLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SearchClsLog(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcbClient::SearchClsLogOutcomeCallable TcbClient::SearchClsLogCallable(const SearchClsLogRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SearchClsLogOutcome()>>(
+        [this, request]()
+        {
+            return this->SearchClsLog(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcbClient::TurnOffStandaloneGatewayOutcome TcbClient::TurnOffStandaloneGateway(const TurnOffStandaloneGatewayRequest &request)
 {
     auto outcome = MakeRequest(request, "TurnOffStandaloneGateway");
@@ -3258,6 +3344,49 @@ TcbClient::TurnOnStandaloneGatewayOutcomeCallable TcbClient::TurnOnStandaloneGat
         [this, request]()
         {
             return this->TurnOnStandaloneGateway(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcbClient::UnfreezeCloudBaseRunServersOutcome TcbClient::UnfreezeCloudBaseRunServers(const UnfreezeCloudBaseRunServersRequest &request)
+{
+    auto outcome = MakeRequest(request, "UnfreezeCloudBaseRunServers");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UnfreezeCloudBaseRunServersResponse rsp = UnfreezeCloudBaseRunServersResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UnfreezeCloudBaseRunServersOutcome(rsp);
+        else
+            return UnfreezeCloudBaseRunServersOutcome(o.GetError());
+    }
+    else
+    {
+        return UnfreezeCloudBaseRunServersOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::UnfreezeCloudBaseRunServersAsync(const UnfreezeCloudBaseRunServersRequest& request, const UnfreezeCloudBaseRunServersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UnfreezeCloudBaseRunServers(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcbClient::UnfreezeCloudBaseRunServersOutcomeCallable TcbClient::UnfreezeCloudBaseRunServersCallable(const UnfreezeCloudBaseRunServersRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UnfreezeCloudBaseRunServersOutcome()>>(
+        [this, request]()
+        {
+            return this->UnfreezeCloudBaseRunServers(request);
         }
     );
 

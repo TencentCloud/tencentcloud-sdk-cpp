@@ -23,7 +23,8 @@ using namespace std;
 SpecInfo::SpecInfo() :
     m_regionHasBeenSet(false),
     m_zoneHasBeenSet(false),
-    m_specItemInfoListHasBeenSet(false)
+    m_specItemInfoListHasBeenSet(false),
+    m_supportKMSRegionsHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,19 @@ CoreInternalOutcome SpecInfo::Deserialize(const rapidjson::Value &value)
         m_specItemInfoListHasBeenSet = true;
     }
 
+    if (value.HasMember("SupportKMSRegions") && !value["SupportKMSRegions"].IsNull())
+    {
+        if (!value["SupportKMSRegions"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `SpecInfo.SupportKMSRegions` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["SupportKMSRegions"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_supportKMSRegions.push_back((*itr).GetString());
+        }
+        m_supportKMSRegionsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -107,6 +121,19 @@ void SpecInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_supportKMSRegionsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SupportKMSRegions";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_supportKMSRegions.begin(); itr != m_supportKMSRegions.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
@@ -159,5 +186,21 @@ void SpecInfo::SetSpecItemInfoList(const vector<SpecItemInfo>& _specItemInfoList
 bool SpecInfo::SpecItemInfoListHasBeenSet() const
 {
     return m_specItemInfoListHasBeenSet;
+}
+
+vector<string> SpecInfo::GetSupportKMSRegions() const
+{
+    return m_supportKMSRegions;
+}
+
+void SpecInfo::SetSupportKMSRegions(const vector<string>& _supportKMSRegions)
+{
+    m_supportKMSRegions = _supportKMSRegions;
+    m_supportKMSRegionsHasBeenSet = true;
+}
+
+bool SpecInfo::SupportKMSRegionsHasBeenSet() const
+{
+    return m_supportKMSRegionsHasBeenSet;
 }
 

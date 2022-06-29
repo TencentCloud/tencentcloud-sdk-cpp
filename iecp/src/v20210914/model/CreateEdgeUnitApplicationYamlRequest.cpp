@@ -24,8 +24,8 @@ using namespace std;
 
 CreateEdgeUnitApplicationYamlRequest::CreateEdgeUnitApplicationYamlRequest() :
     m_edgeUnitIdHasBeenSet(false),
-    m_basicInfoHasBeenSet(false),
-    m_yamlHasBeenSet(false)
+    m_yamlHasBeenSet(false),
+    m_basicInfoHasBeenSet(false)
 {
 }
 
@@ -44,6 +44,14 @@ string CreateEdgeUnitApplicationYamlRequest::ToJsonString() const
         d.AddMember(iKey, m_edgeUnitId, allocator);
     }
 
+    if (m_yamlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Yaml";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_yaml.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_basicInfoHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -51,14 +59,6 @@ string CreateEdgeUnitApplicationYamlRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_basicInfo.ToJsonObject(d[key.c_str()], allocator);
-    }
-
-    if (m_yamlHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Yaml";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_yaml.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -85,22 +85,6 @@ bool CreateEdgeUnitApplicationYamlRequest::EdgeUnitIdHasBeenSet() const
     return m_edgeUnitIdHasBeenSet;
 }
 
-ApplicationBasicInfo CreateEdgeUnitApplicationYamlRequest::GetBasicInfo() const
-{
-    return m_basicInfo;
-}
-
-void CreateEdgeUnitApplicationYamlRequest::SetBasicInfo(const ApplicationBasicInfo& _basicInfo)
-{
-    m_basicInfo = _basicInfo;
-    m_basicInfoHasBeenSet = true;
-}
-
-bool CreateEdgeUnitApplicationYamlRequest::BasicInfoHasBeenSet() const
-{
-    return m_basicInfoHasBeenSet;
-}
-
 string CreateEdgeUnitApplicationYamlRequest::GetYaml() const
 {
     return m_yaml;
@@ -115,6 +99,22 @@ void CreateEdgeUnitApplicationYamlRequest::SetYaml(const string& _yaml)
 bool CreateEdgeUnitApplicationYamlRequest::YamlHasBeenSet() const
 {
     return m_yamlHasBeenSet;
+}
+
+ApplicationBasicInfo CreateEdgeUnitApplicationYamlRequest::GetBasicInfo() const
+{
+    return m_basicInfo;
+}
+
+void CreateEdgeUnitApplicationYamlRequest::SetBasicInfo(const ApplicationBasicInfo& _basicInfo)
+{
+    m_basicInfo = _basicInfo;
+    m_basicInfoHasBeenSet = true;
+}
+
+bool CreateEdgeUnitApplicationYamlRequest::BasicInfoHasBeenSet() const
+{
+    return m_basicInfoHasBeenSet;
 }
 
 

@@ -83,14 +83,26 @@ namespace TencentCloud
                     bool RemotePathHasBeenSet() const;
 
                     /**
-                     * 获取文件系统协议类型，默认值NFS 3.0
-                     * @return Protocol 文件系统协议类型，默认值NFS 3.0
+                     * 获取文件系统协议类型，默认值NFS 3.0。
+<li>NFS 3.0。
+<li>NFS 4.0。
+<li>TURBO。
+                     * @return Protocol 文件系统协议类型，默认值NFS 3.0。
+<li>NFS 3.0。
+<li>NFS 4.0。
+<li>TURBO。
                      */
                     std::string GetProtocol() const;
 
                     /**
-                     * 设置文件系统协议类型，默认值NFS 3.0
-                     * @param Protocol 文件系统协议类型，默认值NFS 3.0
+                     * 设置文件系统协议类型，默认值NFS 3.0。
+<li>NFS 3.0。
+<li>NFS 4.0。
+<li>TURBO。
+                     * @param Protocol 文件系统协议类型，默认值NFS 3.0。
+<li>NFS 3.0。
+<li>NFS 4.0。
+<li>TURBO。
                      */
                     void SetProtocol(const std::string& _protocol);
 
@@ -133,7 +145,10 @@ namespace TencentCloud
                     bool m_remotePathHasBeenSet;
 
                     /**
-                     * 文件系统协议类型，默认值NFS 3.0
+                     * 文件系统协议类型，默认值NFS 3.0。
+<li>NFS 3.0。
+<li>NFS 4.0。
+<li>TURBO。
                      */
                     std::string m_protocol;
                     bool m_protocolHasBeenSet;

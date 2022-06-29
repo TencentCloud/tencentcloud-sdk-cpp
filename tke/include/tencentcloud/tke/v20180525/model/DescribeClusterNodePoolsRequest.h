@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tke/v20180525/model/Filter.h>
 
 
 namespace TencentCloud
@@ -60,6 +61,96 @@ namespace TencentCloud
                      */
                     bool ClusterIdHasBeenSet() const;
 
+                    /**
+                     * 获取·  NodePoolsName
+    按照【节点池名】进行过滤。
+    类型：String
+    必选：否
+
+·  NodePoolsId
+    按照【节点池id】进行过滤。
+    类型：String
+    必选：否
+
+·  tags
+    按照【标签键值对】进行过滤。
+    类型：String
+    必选：否
+
+·  tag:tag-key
+    按照【标签键值对】进行过滤。
+    类型：String
+    必选：否
+                     * @return Filters ·  NodePoolsName
+    按照【节点池名】进行过滤。
+    类型：String
+    必选：否
+
+·  NodePoolsId
+    按照【节点池id】进行过滤。
+    类型：String
+    必选：否
+
+·  tags
+    按照【标签键值对】进行过滤。
+    类型：String
+    必选：否
+
+·  tag:tag-key
+    按照【标签键值对】进行过滤。
+    类型：String
+    必选：否
+                     */
+                    std::vector<Filter> GetFilters() const;
+
+                    /**
+                     * 设置·  NodePoolsName
+    按照【节点池名】进行过滤。
+    类型：String
+    必选：否
+
+·  NodePoolsId
+    按照【节点池id】进行过滤。
+    类型：String
+    必选：否
+
+·  tags
+    按照【标签键值对】进行过滤。
+    类型：String
+    必选：否
+
+·  tag:tag-key
+    按照【标签键值对】进行过滤。
+    类型：String
+    必选：否
+                     * @param Filters ·  NodePoolsName
+    按照【节点池名】进行过滤。
+    类型：String
+    必选：否
+
+·  NodePoolsId
+    按照【节点池id】进行过滤。
+    类型：String
+    必选：否
+
+·  tags
+    按照【标签键值对】进行过滤。
+    类型：String
+    必选：否
+
+·  tag:tag-key
+    按照【标签键值对】进行过滤。
+    类型：String
+    必选：否
+                     */
+                    void SetFilters(const std::vector<Filter>& _filters);
+
+                    /**
+                     * 判断参数 Filters 是否已赋值
+                     * @return Filters 是否已赋值
+                     */
+                    bool FiltersHasBeenSet() const;
+
                 private:
 
                     /**
@@ -67,6 +158,30 @@ namespace TencentCloud
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
+
+                    /**
+                     * ·  NodePoolsName
+    按照【节点池名】进行过滤。
+    类型：String
+    必选：否
+
+·  NodePoolsId
+    按照【节点池id】进行过滤。
+    类型：String
+    必选：否
+
+·  tags
+    按照【标签键值对】进行过滤。
+    类型：String
+    必选：否
+
+·  tag:tag-key
+    按照【标签键值对】进行过滤。
+    类型：String
+    必选：否
+                     */
+                    std::vector<Filter> m_filters;
+                    bool m_filtersHasBeenSet;
 
                 };
             }

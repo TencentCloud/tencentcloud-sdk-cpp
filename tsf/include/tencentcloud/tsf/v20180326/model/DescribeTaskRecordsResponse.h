@@ -46,7 +46,9 @@ namespace TencentCloud
 
                     /**
                      * 获取任务记录列表
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Result 任务记录列表
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     TaskRecordPage GetResult() const;
 
@@ -60,6 +62,7 @@ namespace TencentCloud
 
                     /**
                      * 任务记录列表
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     TaskRecordPage m_result;
                     bool m_resultHasBeenSet;

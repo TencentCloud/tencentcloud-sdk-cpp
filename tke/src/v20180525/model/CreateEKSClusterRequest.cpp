@@ -32,7 +32,8 @@ CreateEKSClusterRequest::CreateEKSClusterRequest() :
     m_dnsServersHasBeenSet(false),
     m_extraParamHasBeenSet(false),
     m_enableVpcCoreDNSHasBeenSet(false),
-    m_tagSpecificationHasBeenSet(false)
+    m_tagSpecificationHasBeenSet(false),
+    m_subnetInfosHasBeenSet(false)
 {
 }
 
@@ -136,6 +137,21 @@ string CreateEKSClusterRequest::ToJsonString() const
 
         int i=0;
         for (auto itr = m_tagSpecification.begin(); itr != m_tagSpecification.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_subnetInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubnetInfos";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_subnetInfos.begin(); itr != m_subnetInfos.end(); ++itr, ++i)
         {
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
@@ -308,6 +324,22 @@ void CreateEKSClusterRequest::SetTagSpecification(const vector<TagSpecification>
 bool CreateEKSClusterRequest::TagSpecificationHasBeenSet() const
 {
     return m_tagSpecificationHasBeenSet;
+}
+
+vector<SubnetInfos> CreateEKSClusterRequest::GetSubnetInfos() const
+{
+    return m_subnetInfos;
+}
+
+void CreateEKSClusterRequest::SetSubnetInfos(const vector<SubnetInfos>& _subnetInfos)
+{
+    m_subnetInfos = _subnetInfos;
+    m_subnetInfosHasBeenSet = true;
+}
+
+bool CreateEKSClusterRequest::SubnetInfosHasBeenSet() const
+{
+    return m_subnetInfosHasBeenSet;
 }
 
 

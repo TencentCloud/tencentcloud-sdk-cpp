@@ -126,6 +126,49 @@ OrganizationClient::CreateOrganizationMemberOutcomeCallable OrganizationClient::
     return task->get_future();
 }
 
+OrganizationClient::CreateOrganizationMemberPolicyOutcome OrganizationClient::CreateOrganizationMemberPolicy(const CreateOrganizationMemberPolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateOrganizationMemberPolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateOrganizationMemberPolicyResponse rsp = CreateOrganizationMemberPolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateOrganizationMemberPolicyOutcome(rsp);
+        else
+            return CreateOrganizationMemberPolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateOrganizationMemberPolicyOutcome(outcome.GetError());
+    }
+}
+
+void OrganizationClient::CreateOrganizationMemberPolicyAsync(const CreateOrganizationMemberPolicyRequest& request, const CreateOrganizationMemberPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateOrganizationMemberPolicy(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OrganizationClient::CreateOrganizationMemberPolicyOutcomeCallable OrganizationClient::CreateOrganizationMemberPolicyCallable(const CreateOrganizationMemberPolicyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateOrganizationMemberPolicyOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateOrganizationMemberPolicy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 OrganizationClient::DescribeOrganizationOutcome OrganizationClient::DescribeOrganization(const DescribeOrganizationRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeOrganization");

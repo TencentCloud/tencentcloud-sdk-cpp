@@ -38,7 +38,8 @@ EmrProductConfigOutter::EmrProductConfigOutter() :
     m_securityGroupHasBeenSet(false),
     m_cbsEncryptHasBeenSet(false),
     m_applicationRoleHasBeenSet(false),
-    m_securityGroupsHasBeenSet(false)
+    m_securityGroupsHasBeenSet(false),
+    m_publicKeyIdHasBeenSet(false)
 {
 }
 
@@ -261,6 +262,16 @@ CoreInternalOutcome EmrProductConfigOutter::Deserialize(const rapidjson::Value &
         m_securityGroupsHasBeenSet = true;
     }
 
+    if (value.HasMember("PublicKeyId") && !value["PublicKeyId"].IsNull())
+    {
+        if (!value["PublicKeyId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EmrProductConfigOutter.PublicKeyId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_publicKeyId = string(value["PublicKeyId"].GetString());
+        m_publicKeyIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -424,6 +435,14 @@ void EmrProductConfigOutter::ToJsonObject(rapidjson::Value &value, rapidjson::Do
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_publicKeyIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PublicKeyId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_publicKeyId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -715,5 +734,21 @@ void EmrProductConfigOutter::SetSecurityGroups(const vector<string>& _securityGr
 bool EmrProductConfigOutter::SecurityGroupsHasBeenSet() const
 {
     return m_securityGroupsHasBeenSet;
+}
+
+string EmrProductConfigOutter::GetPublicKeyId() const
+{
+    return m_publicKeyId;
+}
+
+void EmrProductConfigOutter::SetPublicKeyId(const string& _publicKeyId)
+{
+    m_publicKeyId = _publicKeyId;
+    m_publicKeyIdHasBeenSet = true;
+}
+
+bool EmrProductConfigOutter::PublicKeyIdHasBeenSet() const
+{
+    return m_publicKeyIdHasBeenSet;
 }
 

@@ -48,76 +48,22 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取会话保持时间，单位秒
-                     * @return KeepTime 会话保持时间，单位秒
+                     * 获取转发协议，取值[http, https]
+                     * @return Protocol 转发协议，取值[http, https]
                      */
-                    uint64_t GetKeepTime() const;
+                    std::string GetProtocol() const;
 
                     /**
-                     * 设置会话保持时间，单位秒
-                     * @param KeepTime 会话保持时间，单位秒
+                     * 设置转发协议，取值[http, https]
+                     * @param Protocol 转发协议，取值[http, https]
                      */
-                    void SetKeepTime(const uint64_t& _keepTime);
+                    void SetProtocol(const std::string& _protocol);
 
                     /**
-                     * 判断参数 KeepTime 是否已赋值
-                     * @return KeepTime 是否已赋值
+                     * 判断参数 Protocol 是否已赋值
+                     * @return Protocol 是否已赋值
                      */
-                    bool KeepTimeHasBeenSet() const;
-
-                    /**
-                     * 获取负载均衡方式，取值[1(加权轮询)]
-                     * @return LbType 负载均衡方式，取值[1(加权轮询)]
-                     */
-                    uint64_t GetLbType() const;
-
-                    /**
-                     * 设置负载均衡方式，取值[1(加权轮询)]
-                     * @param LbType 负载均衡方式，取值[1(加权轮询)]
-                     */
-                    void SetLbType(const uint64_t& _lbType);
-
-                    /**
-                     * 判断参数 LbType 是否已赋值
-                     * @return LbType 是否已赋值
-                     */
-                    bool LbTypeHasBeenSet() const;
-
-                    /**
-                     * 获取回源列表
-                     * @return SourceList 回源列表
-                     */
-                    std::vector<L4RuleSource> GetSourceList() const;
-
-                    /**
-                     * 设置回源列表
-                     * @param SourceList 回源列表
-                     */
-                    void SetSourceList(const std::vector<L4RuleSource>& _sourceList);
-
-                    /**
-                     * 判断参数 SourceList 是否已赋值
-                     * @return SourceList 是否已赋值
-                     */
-                    bool SourceListHasBeenSet() const;
-
-                    /**
-                     * 获取会话保持开关，取值[0(会话保持关闭)，1(会话保持开启)]
-                     * @return KeepEnable 会话保持开关，取值[0(会话保持关闭)，1(会话保持开启)]
-                     */
-                    uint64_t GetKeepEnable() const;
-
-                    /**
-                     * 设置会话保持开关，取值[0(会话保持关闭)，1(会话保持开启)]
-                     * @param KeepEnable 会话保持开关，取值[0(会话保持关闭)，1(会话保持开启)]
-                     */
-                    void SetKeepEnable(const uint64_t& _keepEnable);
-
-                    /**
-                     * 判断参数 KeepEnable 是否已赋值
-                     * @return KeepEnable 是否已赋值
-                     */
-                    bool KeepEnableHasBeenSet() const;
+                    bool ProtocolHasBeenSet() const;
 
                     /**
                      * 获取转发域名
@@ -138,22 +84,58 @@ namespace TencentCloud
                     bool DomainHasBeenSet() const;
 
                     /**
-                     * 获取转发协议，取值[http, https]
-                     * @return Protocol 转发协议，取值[http, https]
+                     * 获取负载均衡方式，取值[1(加权轮询)]
+                     * @return LbType 负载均衡方式，取值[1(加权轮询)]
                      */
-                    std::string GetProtocol() const;
+                    uint64_t GetLbType() const;
 
                     /**
-                     * 设置转发协议，取值[http, https]
-                     * @param Protocol 转发协议，取值[http, https]
+                     * 设置负载均衡方式，取值[1(加权轮询)]
+                     * @param LbType 负载均衡方式，取值[1(加权轮询)]
                      */
-                    void SetProtocol(const std::string& _protocol);
+                    void SetLbType(const uint64_t& _lbType);
 
                     /**
-                     * 判断参数 Protocol 是否已赋值
-                     * @return Protocol 是否已赋值
+                     * 判断参数 LbType 是否已赋值
+                     * @return LbType 是否已赋值
                      */
-                    bool ProtocolHasBeenSet() const;
+                    bool LbTypeHasBeenSet() const;
+
+                    /**
+                     * 获取会话保持开关，取值[0(会话保持关闭)，1(会话保持开启)]
+                     * @return KeepEnable 会话保持开关，取值[0(会话保持关闭)，1(会话保持开启)]
+                     */
+                    uint64_t GetKeepEnable() const;
+
+                    /**
+                     * 设置会话保持开关，取值[0(会话保持关闭)，1(会话保持开启)]
+                     * @param KeepEnable 会话保持开关，取值[0(会话保持关闭)，1(会话保持开启)]
+                     */
+                    void SetKeepEnable(const uint64_t& _keepEnable);
+
+                    /**
+                     * 判断参数 KeepEnable 是否已赋值
+                     * @return KeepEnable 是否已赋值
+                     */
+                    bool KeepEnableHasBeenSet() const;
+
+                    /**
+                     * 获取会话保持时间，单位秒
+                     * @return KeepTime 会话保持时间，单位秒
+                     */
+                    uint64_t GetKeepTime() const;
+
+                    /**
+                     * 设置会话保持时间，单位秒
+                     * @param KeepTime 会话保持时间，单位秒
+                     */
+                    void SetKeepTime(const uint64_t& _keepTime);
+
+                    /**
+                     * 判断参数 KeepTime 是否已赋值
+                     * @return KeepTime 是否已赋值
+                     */
+                    bool KeepTimeHasBeenSet() const;
 
                     /**
                      * 获取回源方式，取值[1(域名回源)，2(IP回源)]
@@ -174,22 +156,184 @@ namespace TencentCloud
                     bool SourceTypeHasBeenSet() const;
 
                     /**
-                     * 获取是否开启Https协议使用Http回源，取值[0(关闭), 1(开启)]，不填写默认是关闭
-                     * @return HttpsToHttpEnable 是否开启Https协议使用Http回源，取值[0(关闭), 1(开启)]，不填写默认是关闭
+                     * 获取回源列表
+                     * @return SourceList 回源列表
                      */
-                    uint64_t GetHttpsToHttpEnable() const;
+                    std::vector<L4RuleSource> GetSourceList() const;
 
                     /**
-                     * 设置是否开启Https协议使用Http回源，取值[0(关闭), 1(开启)]，不填写默认是关闭
-                     * @param HttpsToHttpEnable 是否开启Https协议使用Http回源，取值[0(关闭), 1(开启)]，不填写默认是关闭
+                     * 设置回源列表
+                     * @param SourceList 回源列表
                      */
-                    void SetHttpsToHttpEnable(const uint64_t& _httpsToHttpEnable);
+                    void SetSourceList(const std::vector<L4RuleSource>& _sourceList);
 
                     /**
-                     * 判断参数 HttpsToHttpEnable 是否已赋值
-                     * @return HttpsToHttpEnable 是否已赋值
+                     * 判断参数 SourceList 是否已赋值
+                     * @return SourceList 是否已赋值
                      */
-                    bool HttpsToHttpEnableHasBeenSet() const;
+                    bool SourceListHasBeenSet() const;
+
+                    /**
+                     * 获取区域码
+                     * @return Region 区域码
+                     */
+                    uint64_t GetRegion() const;
+
+                    /**
+                     * 设置区域码
+                     * @param Region 区域码
+                     */
+                    void SetRegion(const uint64_t& _region);
+
+                    /**
+                     * 判断参数 Region 是否已赋值
+                     * @return Region 是否已赋值
+                     */
+                    bool RegionHasBeenSet() const;
+
+                    /**
+                     * 获取资源Id
+                     * @return Id 资源Id
+                     */
+                    std::string GetId() const;
+
+                    /**
+                     * 设置资源Id
+                     * @param Id 资源Id
+                     */
+                    void SetId(const std::string& _id);
+
+                    /**
+                     * 判断参数 Id 是否已赋值
+                     * @return Id 是否已赋值
+                     */
+                    bool IdHasBeenSet() const;
+
+                    /**
+                     * 获取资源Ip
+                     * @return Ip 资源Ip
+                     */
+                    std::string GetIp() const;
+
+                    /**
+                     * 设置资源Ip
+                     * @param Ip 资源Ip
+                     */
+                    void SetIp(const std::string& _ip);
+
+                    /**
+                     * 判断参数 Ip 是否已赋值
+                     * @return Ip 是否已赋值
+                     */
+                    bool IpHasBeenSet() const;
+
+                    /**
+                     * 获取规则ID，当添加新规则时可以不用填写此字段；当修改或者删除规则时需要填写此字段；
+                     * @return RuleId 规则ID，当添加新规则时可以不用填写此字段；当修改或者删除规则时需要填写此字段；
+                     */
+                    std::string GetRuleId() const;
+
+                    /**
+                     * 设置规则ID，当添加新规则时可以不用填写此字段；当修改或者删除规则时需要填写此字段；
+                     * @param RuleId 规则ID，当添加新规则时可以不用填写此字段；当修改或者删除规则时需要填写此字段；
+                     */
+                    void SetRuleId(const std::string& _ruleId);
+
+                    /**
+                     * 判断参数 RuleId 是否已赋值
+                     * @return RuleId 是否已赋值
+                     */
+                    bool RuleIdHasBeenSet() const;
+
+                    /**
+                     * 获取规则描述
+                     * @return RuleName 规则描述
+                     */
+                    std::string GetRuleName() const;
+
+                    /**
+                     * 设置规则描述
+                     * @param RuleName 规则描述
+                     */
+                    void SetRuleName(const std::string& _ruleName);
+
+                    /**
+                     * 判断参数 RuleName 是否已赋值
+                     * @return RuleName 是否已赋值
+                     */
+                    bool RuleNameHasBeenSet() const;
+
+                    /**
+                     * 获取证书来源，当转发协议为https时必须填，取值[2(腾讯云托管证书)]，当转发协议为http时也可以填0
+                     * @return CertType 证书来源，当转发协议为https时必须填，取值[2(腾讯云托管证书)]，当转发协议为http时也可以填0
+                     */
+                    uint64_t GetCertType() const;
+
+                    /**
+                     * 设置证书来源，当转发协议为https时必须填，取值[2(腾讯云托管证书)]，当转发协议为http时也可以填0
+                     * @param CertType 证书来源，当转发协议为https时必须填，取值[2(腾讯云托管证书)]，当转发协议为http时也可以填0
+                     */
+                    void SetCertType(const uint64_t& _certType);
+
+                    /**
+                     * 判断参数 CertType 是否已赋值
+                     * @return CertType 是否已赋值
+                     */
+                    bool CertTypeHasBeenSet() const;
+
+                    /**
+                     * 获取当证书来源为腾讯云托管证书时，此字段必须填写托管证书ID
+                     * @return SSLId 当证书来源为腾讯云托管证书时，此字段必须填写托管证书ID
+                     */
+                    std::string GetSSLId() const;
+
+                    /**
+                     * 设置当证书来源为腾讯云托管证书时，此字段必须填写托管证书ID
+                     * @param SSLId 当证书来源为腾讯云托管证书时，此字段必须填写托管证书ID
+                     */
+                    void SetSSLId(const std::string& _sSLId);
+
+                    /**
+                     * 判断参数 SSLId 是否已赋值
+                     * @return SSLId 是否已赋值
+                     */
+                    bool SSLIdHasBeenSet() const;
+
+                    /**
+                     * 获取当证书来源为自有证书时，此字段必须填写证书内容；(因已不再支持自有证书，此字段已弃用，请不用填写此字段)
+                     * @return Cert 当证书来源为自有证书时，此字段必须填写证书内容；(因已不再支持自有证书，此字段已弃用，请不用填写此字段)
+                     */
+                    std::string GetCert() const;
+
+                    /**
+                     * 设置当证书来源为自有证书时，此字段必须填写证书内容；(因已不再支持自有证书，此字段已弃用，请不用填写此字段)
+                     * @param Cert 当证书来源为自有证书时，此字段必须填写证书内容；(因已不再支持自有证书，此字段已弃用，请不用填写此字段)
+                     */
+                    void SetCert(const std::string& _cert);
+
+                    /**
+                     * 判断参数 Cert 是否已赋值
+                     * @return Cert 是否已赋值
+                     */
+                    bool CertHasBeenSet() const;
+
+                    /**
+                     * 获取当证书来源为自有证书时，此字段必须填写证书密钥；(因已不再支持自有证书，此字段已弃用，请不用填写此字段)
+                     * @return PrivateKey 当证书来源为自有证书时，此字段必须填写证书密钥；(因已不再支持自有证书，此字段已弃用，请不用填写此字段)
+                     */
+                    std::string GetPrivateKey() const;
+
+                    /**
+                     * 设置当证书来源为自有证书时，此字段必须填写证书密钥；(因已不再支持自有证书，此字段已弃用，请不用填写此字段)
+                     * @param PrivateKey 当证书来源为自有证书时，此字段必须填写证书密钥；(因已不再支持自有证书，此字段已弃用，请不用填写此字段)
+                     */
+                    void SetPrivateKey(const std::string& _privateKey);
+
+                    /**
+                     * 判断参数 PrivateKey 是否已赋值
+                     * @return PrivateKey 是否已赋值
+                     */
+                    bool PrivateKeyHasBeenSet() const;
 
                     /**
                      * 获取规则状态，取值[0(规则配置成功)，1(规则配置生效中)，2(规则配置失败)，3(规则删除生效中)，5(规则删除失败)，6(规则等待配置)，7(规则等待删除)，8(规则待配置证书)]
@@ -210,22 +354,22 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取HTTPS协议的CC防护等级
-                     * @return CCLevel HTTPS协议的CC防护等级
+                     * 获取cc防护状态，取值[0(关闭), 1(开启)]
+                     * @return CCStatus cc防护状态，取值[0(关闭), 1(开启)]
                      */
-                    std::string GetCCLevel() const;
+                    uint64_t GetCCStatus() const;
 
                     /**
-                     * 设置HTTPS协议的CC防护等级
-                     * @param CCLevel HTTPS协议的CC防护等级
+                     * 设置cc防护状态，取值[0(关闭), 1(开启)]
+                     * @param CCStatus cc防护状态，取值[0(关闭), 1(开启)]
                      */
-                    void SetCCLevel(const std::string& _cCLevel);
+                    void SetCCStatus(const uint64_t& _cCStatus);
 
                     /**
-                     * 判断参数 CCLevel 是否已赋值
-                     * @return CCLevel 是否已赋值
+                     * 判断参数 CCStatus 是否已赋值
+                     * @return CCStatus 是否已赋值
                      */
-                    bool CCLevelHasBeenSet() const;
+                    bool CCStatusHasBeenSet() const;
 
                     /**
                      * 获取HTTPS协议的CC防护状态，取值[0(关闭), 1(开启)]
@@ -264,58 +408,22 @@ namespace TencentCloud
                     bool CCThresholdHasBeenSet() const;
 
                     /**
-                     * 获取区域码
-                     * @return Region 区域码
+                     * 获取HTTPS协议的CC防护等级
+                     * @return CCLevel HTTPS协议的CC防护等级
                      */
-                    uint64_t GetRegion() const;
+                    std::string GetCCLevel() const;
 
                     /**
-                     * 设置区域码
-                     * @param Region 区域码
+                     * 设置HTTPS协议的CC防护等级
+                     * @param CCLevel HTTPS协议的CC防护等级
                      */
-                    void SetRegion(const uint64_t& _region);
+                    void SetCCLevel(const std::string& _cCLevel);
 
                     /**
-                     * 判断参数 Region 是否已赋值
-                     * @return Region 是否已赋值
+                     * 判断参数 CCLevel 是否已赋值
+                     * @return CCLevel 是否已赋值
                      */
-                    bool RegionHasBeenSet() const;
-
-                    /**
-                     * 获取规则描述
-                     * @return RuleName 规则描述
-                     */
-                    std::string GetRuleName() const;
-
-                    /**
-                     * 设置规则描述
-                     * @param RuleName 规则描述
-                     */
-                    void SetRuleName(const std::string& _ruleName);
-
-                    /**
-                     * 判断参数 RuleName 是否已赋值
-                     * @return RuleName 是否已赋值
-                     */
-                    bool RuleNameHasBeenSet() const;
-
-                    /**
-                     * 获取当证书来源为自有证书时，此字段必须填写证书内容；(因已不再支持自有证书，此字段已弃用，请不用填写此字段)
-                     * @return Cert 当证书来源为自有证书时，此字段必须填写证书内容；(因已不再支持自有证书，此字段已弃用，请不用填写此字段)
-                     */
-                    std::string GetCert() const;
-
-                    /**
-                     * 设置当证书来源为自有证书时，此字段必须填写证书内容；(因已不再支持自有证书，此字段已弃用，请不用填写此字段)
-                     * @param Cert 当证书来源为自有证书时，此字段必须填写证书内容；(因已不再支持自有证书，此字段已弃用，请不用填写此字段)
-                     */
-                    void SetCert(const std::string& _cert);
-
-                    /**
-                     * 判断参数 Cert 是否已赋值
-                     * @return Cert 是否已赋值
-                     */
-                    bool CertHasBeenSet() const;
+                    bool CCLevelHasBeenSet() const;
 
                     /**
                      * 获取修改时间
@@ -336,76 +444,22 @@ namespace TencentCloud
                     bool ModifyTimeHasBeenSet() const;
 
                     /**
-                     * 获取规则ID，当添加新规则时可以不用填写此字段；当修改或者删除规则时需要填写此字段；
-                     * @return RuleId 规则ID，当添加新规则时可以不用填写此字段；当修改或者删除规则时需要填写此字段；
+                     * 获取是否开启Https协议使用Http回源，取值[0(关闭), 1(开启)]，不填写默认是关闭
+                     * @return HttpsToHttpEnable 是否开启Https协议使用Http回源，取值[0(关闭), 1(开启)]，不填写默认是关闭
                      */
-                    std::string GetRuleId() const;
+                    uint64_t GetHttpsToHttpEnable() const;
 
                     /**
-                     * 设置规则ID，当添加新规则时可以不用填写此字段；当修改或者删除规则时需要填写此字段；
-                     * @param RuleId 规则ID，当添加新规则时可以不用填写此字段；当修改或者删除规则时需要填写此字段；
+                     * 设置是否开启Https协议使用Http回源，取值[0(关闭), 1(开启)]，不填写默认是关闭
+                     * @param HttpsToHttpEnable 是否开启Https协议使用Http回源，取值[0(关闭), 1(开启)]，不填写默认是关闭
                      */
-                    void SetRuleId(const std::string& _ruleId);
+                    void SetHttpsToHttpEnable(const uint64_t& _httpsToHttpEnable);
 
                     /**
-                     * 判断参数 RuleId 是否已赋值
-                     * @return RuleId 是否已赋值
+                     * 判断参数 HttpsToHttpEnable 是否已赋值
+                     * @return HttpsToHttpEnable 是否已赋值
                      */
-                    bool RuleIdHasBeenSet() const;
-
-                    /**
-                     * 获取资源Ip
-                     * @return Ip 资源Ip
-                     */
-                    std::string GetIp() const;
-
-                    /**
-                     * 设置资源Ip
-                     * @param Ip 资源Ip
-                     */
-                    void SetIp(const std::string& _ip);
-
-                    /**
-                     * 判断参数 Ip 是否已赋值
-                     * @return Ip 是否已赋值
-                     */
-                    bool IpHasBeenSet() const;
-
-                    /**
-                     * 获取当证书来源为自有证书时，此字段必须填写证书密钥；(因已不再支持自有证书，此字段已弃用，请不用填写此字段)
-                     * @return PrivateKey 当证书来源为自有证书时，此字段必须填写证书密钥；(因已不再支持自有证书，此字段已弃用，请不用填写此字段)
-                     */
-                    std::string GetPrivateKey() const;
-
-                    /**
-                     * 设置当证书来源为自有证书时，此字段必须填写证书密钥；(因已不再支持自有证书，此字段已弃用，请不用填写此字段)
-                     * @param PrivateKey 当证书来源为自有证书时，此字段必须填写证书密钥；(因已不再支持自有证书，此字段已弃用，请不用填写此字段)
-                     */
-                    void SetPrivateKey(const std::string& _privateKey);
-
-                    /**
-                     * 判断参数 PrivateKey 是否已赋值
-                     * @return PrivateKey 是否已赋值
-                     */
-                    bool PrivateKeyHasBeenSet() const;
-
-                    /**
-                     * 获取证书来源，当转发协议为https时必须填，取值[2(腾讯云托管证书)]，当转发协议为http时也可以填0
-                     * @return CertType 证书来源，当转发协议为https时必须填，取值[2(腾讯云托管证书)]，当转发协议为http时也可以填0
-                     */
-                    uint64_t GetCertType() const;
-
-                    /**
-                     * 设置证书来源，当转发协议为https时必须填，取值[2(腾讯云托管证书)]，当转发协议为http时也可以填0
-                     * @param CertType 证书来源，当转发协议为https时必须填，取值[2(腾讯云托管证书)]，当转发协议为http时也可以填0
-                     */
-                    void SetCertType(const uint64_t& _certType);
-
-                    /**
-                     * 判断参数 CertType 是否已赋值
-                     * @return CertType 是否已赋值
-                     */
-                    bool CertTypeHasBeenSet() const;
+                    bool HttpsToHttpEnableHasBeenSet() const;
 
                     /**
                      * 获取接入端口值
@@ -430,90 +484,42 @@ namespace TencentCloud
                     bool VirtualPortHasBeenSet() const;
 
                     /**
-                     * 获取cc防护状态，取值[0(关闭), 1(开启)]
-                     * @return CCStatus cc防护状态，取值[0(关闭), 1(开启)]
+                     * 获取http强制跳转https，1表示打开，0表示关闭
+                     * @return RewriteHttps http强制跳转https，1表示打开，0表示关闭
                      */
-                    uint64_t GetCCStatus() const;
+                    uint64_t GetRewriteHttps() const;
 
                     /**
-                     * 设置cc防护状态，取值[0(关闭), 1(开启)]
-                     * @param CCStatus cc防护状态，取值[0(关闭), 1(开启)]
+                     * 设置http强制跳转https，1表示打开，0表示关闭
+                     * @param RewriteHttps http强制跳转https，1表示打开，0表示关闭
                      */
-                    void SetCCStatus(const uint64_t& _cCStatus);
+                    void SetRewriteHttps(const uint64_t& _rewriteHttps);
 
                     /**
-                     * 判断参数 CCStatus 是否已赋值
-                     * @return CCStatus 是否已赋值
+                     * 判断参数 RewriteHttps 是否已赋值
+                     * @return RewriteHttps 是否已赋值
                      */
-                    bool CCStatusHasBeenSet() const;
+                    bool RewriteHttpsHasBeenSet() const;
 
                     /**
-                     * 获取当证书来源为腾讯云托管证书时，此字段必须填写托管证书ID
-                     * @return SSLId 当证书来源为腾讯云托管证书时，此字段必须填写托管证书ID
+                     * 获取规则配置失败时的详细错误原因(仅当Status=2时有效)，1001证书不存在，1002证书获取失败，1003证书上传失败，1004证书已过期
+                     * @return ErrCode 规则配置失败时的详细错误原因(仅当Status=2时有效)，1001证书不存在，1002证书获取失败，1003证书上传失败，1004证书已过期
                      */
-                    std::string GetSSLId() const;
+                    uint64_t GetErrCode() const;
 
                     /**
-                     * 设置当证书来源为腾讯云托管证书时，此字段必须填写托管证书ID
-                     * @param SSLId 当证书来源为腾讯云托管证书时，此字段必须填写托管证书ID
+                     * 设置规则配置失败时的详细错误原因(仅当Status=2时有效)，1001证书不存在，1002证书获取失败，1003证书上传失败，1004证书已过期
+                     * @param ErrCode 规则配置失败时的详细错误原因(仅当Status=2时有效)，1001证书不存在，1002证书获取失败，1003证书上传失败，1004证书已过期
                      */
-                    void SetSSLId(const std::string& _sSLId);
+                    void SetErrCode(const uint64_t& _errCode);
 
                     /**
-                     * 判断参数 SSLId 是否已赋值
-                     * @return SSLId 是否已赋值
+                     * 判断参数 ErrCode 是否已赋值
+                     * @return ErrCode 是否已赋值
                      */
-                    bool SSLIdHasBeenSet() const;
-
-                    /**
-                     * 获取资源Id
-                     * @return Id 资源Id
-                     */
-                    std::string GetId() const;
-
-                    /**
-                     * 设置资源Id
-                     * @param Id 资源Id
-                     */
-                    void SetId(const std::string& _id);
-
-                    /**
-                     * 判断参数 Id 是否已赋值
-                     * @return Id 是否已赋值
-                     */
-                    bool IdHasBeenSet() const;
+                    bool ErrCodeHasBeenSet() const;
 
                 private:
-
-                    /**
-                     * 会话保持时间，单位秒
-                     */
-                    uint64_t m_keepTime;
-                    bool m_keepTimeHasBeenSet;
-
-                    /**
-                     * 负载均衡方式，取值[1(加权轮询)]
-                     */
-                    uint64_t m_lbType;
-                    bool m_lbTypeHasBeenSet;
-
-                    /**
-                     * 回源列表
-                     */
-                    std::vector<L4RuleSource> m_sourceList;
-                    bool m_sourceListHasBeenSet;
-
-                    /**
-                     * 会话保持开关，取值[0(会话保持关闭)，1(会话保持开启)]
-                     */
-                    uint64_t m_keepEnable;
-                    bool m_keepEnableHasBeenSet;
-
-                    /**
-                     * 转发域名
-                     */
-                    std::string m_domain;
-                    bool m_domainHasBeenSet;
 
                     /**
                      * 转发协议，取值[http, https]
@@ -522,16 +528,94 @@ namespace TencentCloud
                     bool m_protocolHasBeenSet;
 
                     /**
+                     * 转发域名
+                     */
+                    std::string m_domain;
+                    bool m_domainHasBeenSet;
+
+                    /**
+                     * 负载均衡方式，取值[1(加权轮询)]
+                     */
+                    uint64_t m_lbType;
+                    bool m_lbTypeHasBeenSet;
+
+                    /**
+                     * 会话保持开关，取值[0(会话保持关闭)，1(会话保持开启)]
+                     */
+                    uint64_t m_keepEnable;
+                    bool m_keepEnableHasBeenSet;
+
+                    /**
+                     * 会话保持时间，单位秒
+                     */
+                    uint64_t m_keepTime;
+                    bool m_keepTimeHasBeenSet;
+
+                    /**
                      * 回源方式，取值[1(域名回源)，2(IP回源)]
                      */
                     uint64_t m_sourceType;
                     bool m_sourceTypeHasBeenSet;
 
                     /**
-                     * 是否开启Https协议使用Http回源，取值[0(关闭), 1(开启)]，不填写默认是关闭
+                     * 回源列表
                      */
-                    uint64_t m_httpsToHttpEnable;
-                    bool m_httpsToHttpEnableHasBeenSet;
+                    std::vector<L4RuleSource> m_sourceList;
+                    bool m_sourceListHasBeenSet;
+
+                    /**
+                     * 区域码
+                     */
+                    uint64_t m_region;
+                    bool m_regionHasBeenSet;
+
+                    /**
+                     * 资源Id
+                     */
+                    std::string m_id;
+                    bool m_idHasBeenSet;
+
+                    /**
+                     * 资源Ip
+                     */
+                    std::string m_ip;
+                    bool m_ipHasBeenSet;
+
+                    /**
+                     * 规则ID，当添加新规则时可以不用填写此字段；当修改或者删除规则时需要填写此字段；
+                     */
+                    std::string m_ruleId;
+                    bool m_ruleIdHasBeenSet;
+
+                    /**
+                     * 规则描述
+                     */
+                    std::string m_ruleName;
+                    bool m_ruleNameHasBeenSet;
+
+                    /**
+                     * 证书来源，当转发协议为https时必须填，取值[2(腾讯云托管证书)]，当转发协议为http时也可以填0
+                     */
+                    uint64_t m_certType;
+                    bool m_certTypeHasBeenSet;
+
+                    /**
+                     * 当证书来源为腾讯云托管证书时，此字段必须填写托管证书ID
+                     */
+                    std::string m_sSLId;
+                    bool m_sSLIdHasBeenSet;
+
+                    /**
+                     * 当证书来源为自有证书时，此字段必须填写证书内容；(因已不再支持自有证书，此字段已弃用，请不用填写此字段)
+                     */
+                    std::string m_cert;
+                    bool m_certHasBeenSet;
+
+                    /**
+                     * 当证书来源为自有证书时，此字段必须填写证书密钥；(因已不再支持自有证书，此字段已弃用，请不用填写此字段)
+                     */
+                    std::string m_privateKey;
+                    bool m_privateKeyHasBeenSet;
 
                     /**
                      * 规则状态，取值[0(规则配置成功)，1(规则配置生效中)，2(规则配置失败)，3(规则删除生效中)，5(规则删除失败)，6(规则等待配置)，7(规则等待删除)，8(规则待配置证书)]
@@ -540,10 +624,10 @@ namespace TencentCloud
                     bool m_statusHasBeenSet;
 
                     /**
-                     * HTTPS协议的CC防护等级
+                     * cc防护状态，取值[0(关闭), 1(开启)]
                      */
-                    std::string m_cCLevel;
-                    bool m_cCLevelHasBeenSet;
+                    uint64_t m_cCStatus;
+                    bool m_cCStatusHasBeenSet;
 
                     /**
                      * HTTPS协议的CC防护状态，取值[0(关闭), 1(开启)]
@@ -558,22 +642,10 @@ namespace TencentCloud
                     bool m_cCThresholdHasBeenSet;
 
                     /**
-                     * 区域码
+                     * HTTPS协议的CC防护等级
                      */
-                    uint64_t m_region;
-                    bool m_regionHasBeenSet;
-
-                    /**
-                     * 规则描述
-                     */
-                    std::string m_ruleName;
-                    bool m_ruleNameHasBeenSet;
-
-                    /**
-                     * 当证书来源为自有证书时，此字段必须填写证书内容；(因已不再支持自有证书，此字段已弃用，请不用填写此字段)
-                     */
-                    std::string m_cert;
-                    bool m_certHasBeenSet;
+                    std::string m_cCLevel;
+                    bool m_cCLevelHasBeenSet;
 
                     /**
                      * 修改时间
@@ -582,28 +654,10 @@ namespace TencentCloud
                     bool m_modifyTimeHasBeenSet;
 
                     /**
-                     * 规则ID，当添加新规则时可以不用填写此字段；当修改或者删除规则时需要填写此字段；
+                     * 是否开启Https协议使用Http回源，取值[0(关闭), 1(开启)]，不填写默认是关闭
                      */
-                    std::string m_ruleId;
-                    bool m_ruleIdHasBeenSet;
-
-                    /**
-                     * 资源Ip
-                     */
-                    std::string m_ip;
-                    bool m_ipHasBeenSet;
-
-                    /**
-                     * 当证书来源为自有证书时，此字段必须填写证书密钥；(因已不再支持自有证书，此字段已弃用，请不用填写此字段)
-                     */
-                    std::string m_privateKey;
-                    bool m_privateKeyHasBeenSet;
-
-                    /**
-                     * 证书来源，当转发协议为https时必须填，取值[2(腾讯云托管证书)]，当转发协议为http时也可以填0
-                     */
-                    uint64_t m_certType;
-                    bool m_certTypeHasBeenSet;
+                    uint64_t m_httpsToHttpEnable;
+                    bool m_httpsToHttpEnableHasBeenSet;
 
                     /**
                      * 接入端口值
@@ -613,22 +667,16 @@ namespace TencentCloud
                     bool m_virtualPortHasBeenSet;
 
                     /**
-                     * cc防护状态，取值[0(关闭), 1(开启)]
+                     * http强制跳转https，1表示打开，0表示关闭
                      */
-                    uint64_t m_cCStatus;
-                    bool m_cCStatusHasBeenSet;
+                    uint64_t m_rewriteHttps;
+                    bool m_rewriteHttpsHasBeenSet;
 
                     /**
-                     * 当证书来源为腾讯云托管证书时，此字段必须填写托管证书ID
+                     * 规则配置失败时的详细错误原因(仅当Status=2时有效)，1001证书不存在，1002证书获取失败，1003证书上传失败，1004证书已过期
                      */
-                    std::string m_sSLId;
-                    bool m_sSLIdHasBeenSet;
-
-                    /**
-                     * 资源Id
-                     */
-                    std::string m_id;
-                    bool m_idHasBeenSet;
+                    uint64_t m_errCode;
+                    bool m_errCodeHasBeenSet;
 
                 };
             }

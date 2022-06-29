@@ -109,6 +109,36 @@ namespace TencentCloud
                      */
                     bool ResourceIdHasBeenSet() const;
 
+                    /**
+                     * 获取购买状态
+待购: Pending
+已购: Normal
+隔离: Isolate
+                     * @return BuyStatus 购买状态
+待购: Pending
+已购: Normal
+隔离: Isolate
+                     */
+                    std::string GetBuyStatus() const;
+
+                    /**
+                     * 判断参数 BuyStatus 是否已赋值
+                     * @return BuyStatus 是否已赋值
+                     */
+                    bool BuyStatusHasBeenSet() const;
+
+                    /**
+                     * 获取是否曾经购买过(false:未曾 true:曾经购买过)
+                     * @return IsPurchased 是否曾经购买过(false:未曾 true:曾经购买过)
+                     */
+                    bool GetIsPurchased() const;
+
+                    /**
+                     * 判断参数 IsPurchased 是否已赋值
+                     * @return IsPurchased 是否已赋值
+                     */
+                    bool IsPurchasedHasBeenSet() const;
+
                 private:
 
                     /**
@@ -143,6 +173,21 @@ namespace TencentCloud
                      */
                     std::string m_resourceId;
                     bool m_resourceIdHasBeenSet;
+
+                    /**
+                     * 购买状态
+待购: Pending
+已购: Normal
+隔离: Isolate
+                     */
+                    std::string m_buyStatus;
+                    bool m_buyStatusHasBeenSet;
+
+                    /**
+                     * 是否曾经购买过(false:未曾 true:曾经购买过)
+                     */
+                    bool m_isPurchased;
+                    bool m_isPurchasedHasBeenSet;
 
                 };
             }

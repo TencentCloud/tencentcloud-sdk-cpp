@@ -342,6 +342,28 @@ namespace TencentCloud
                      */
                     bool DeviceTypeNameHasBeenSet() const;
 
+                    /**
+                     * 获取引擎类型描述，可能的取值范围有：Innodb，RocksDB
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EngineType 引擎类型描述，可能的取值范围有：Innodb，RocksDB
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetEngineType() const;
+
+                    /**
+                     * 设置引擎类型描述，可能的取值范围有：Innodb，RocksDB
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param EngineType 引擎类型描述，可能的取值范围有：Innodb，RocksDB
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetEngineType(const std::string& _engineType);
+
+                    /**
+                     * 判断参数 EngineType 是否已赋值
+                     * @return EngineType 是否已赋值
+                     */
+                    bool EngineTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -441,6 +463,13 @@ namespace TencentCloud
                      */
                     std::string m_deviceTypeName;
                     bool m_deviceTypeNameHasBeenSet;
+
+                    /**
+                     * 引擎类型描述，可能的取值范围有：Innodb，RocksDB
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_engineType;
+                    bool m_engineTypeHasBeenSet;
 
                 };
             }

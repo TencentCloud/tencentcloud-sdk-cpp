@@ -46,7 +46,9 @@ OverseaConfig::OverseaConfig() :
     m_statusCodeCacheHasBeenSet(false),
     m_videoSeekHasBeenSet(false),
     m_awsPrivateAccessHasBeenSet(false),
-    m_ossPrivateAccessHasBeenSet(false)
+    m_ossPrivateAccessHasBeenSet(false),
+    m_hwPrivateAccessHasBeenSet(false),
+    m_qnPrivateAccessHasBeenSet(false)
 {
 }
 
@@ -490,6 +492,40 @@ CoreInternalOutcome OverseaConfig::Deserialize(const rapidjson::Value &value)
         m_ossPrivateAccessHasBeenSet = true;
     }
 
+    if (value.HasMember("HwPrivateAccess") && !value["HwPrivateAccess"].IsNull())
+    {
+        if (!value["HwPrivateAccess"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `OverseaConfig.HwPrivateAccess` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_hwPrivateAccess.Deserialize(value["HwPrivateAccess"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_hwPrivateAccessHasBeenSet = true;
+    }
+
+    if (value.HasMember("QnPrivateAccess") && !value["QnPrivateAccess"].IsNull())
+    {
+        if (!value["QnPrivateAccess"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `OverseaConfig.QnPrivateAccess` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_qnPrivateAccess.Deserialize(value["QnPrivateAccess"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_qnPrivateAccessHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -728,6 +764,24 @@ void OverseaConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_ossPrivateAccess.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_hwPrivateAccessHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HwPrivateAccess";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_hwPrivateAccess.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_qnPrivateAccessHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QnPrivateAccess";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_qnPrivateAccess.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -1147,5 +1201,37 @@ void OverseaConfig::SetOssPrivateAccess(const OssPrivateAccess& _ossPrivateAcces
 bool OverseaConfig::OssPrivateAccessHasBeenSet() const
 {
     return m_ossPrivateAccessHasBeenSet;
+}
+
+HwPrivateAccess OverseaConfig::GetHwPrivateAccess() const
+{
+    return m_hwPrivateAccess;
+}
+
+void OverseaConfig::SetHwPrivateAccess(const HwPrivateAccess& _hwPrivateAccess)
+{
+    m_hwPrivateAccess = _hwPrivateAccess;
+    m_hwPrivateAccessHasBeenSet = true;
+}
+
+bool OverseaConfig::HwPrivateAccessHasBeenSet() const
+{
+    return m_hwPrivateAccessHasBeenSet;
+}
+
+QnPrivateAccess OverseaConfig::GetQnPrivateAccess() const
+{
+    return m_qnPrivateAccess;
+}
+
+void OverseaConfig::SetQnPrivateAccess(const QnPrivateAccess& _qnPrivateAccess)
+{
+    m_qnPrivateAccess = _qnPrivateAccess;
+    m_qnPrivateAccessHasBeenSet = true;
+}
+
+bool OverseaConfig::QnPrivateAccessHasBeenSet() const
+{
+    return m_qnPrivateAccessHasBeenSet;
 }
 

@@ -1072,6 +1072,49 @@ CfwClient::DescribeGuideScanInfoOutcomeCallable CfwClient::DescribeGuideScanInfo
     return task->get_future();
 }
 
+CfwClient::DescribeIPStatusListOutcome CfwClient::DescribeIPStatusList(const DescribeIPStatusListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeIPStatusList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeIPStatusListResponse rsp = DescribeIPStatusListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeIPStatusListOutcome(rsp);
+        else
+            return DescribeIPStatusListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeIPStatusListOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::DescribeIPStatusListAsync(const DescribeIPStatusListRequest& request, const DescribeIPStatusListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeIPStatusList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CfwClient::DescribeIPStatusListOutcomeCallable CfwClient::DescribeIPStatusListCallable(const DescribeIPStatusListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeIPStatusListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeIPStatusList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CfwClient::DescribeNatFwInfoCountOutcome CfwClient::DescribeNatFwInfoCount(const DescribeNatFwInfoCountRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeNatFwInfoCount");
@@ -2484,6 +2527,49 @@ CfwClient::ModifyResourceGroupOutcomeCallable CfwClient::ModifyResourceGroupCall
         [this, request]()
         {
             return this->ModifyResourceGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CfwClient::ModifyRunSyncAssetOutcome CfwClient::ModifyRunSyncAsset(const ModifyRunSyncAssetRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyRunSyncAsset");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyRunSyncAssetResponse rsp = ModifyRunSyncAssetResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyRunSyncAssetOutcome(rsp);
+        else
+            return ModifyRunSyncAssetOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyRunSyncAssetOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::ModifyRunSyncAssetAsync(const ModifyRunSyncAssetRequest& request, const ModifyRunSyncAssetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyRunSyncAsset(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CfwClient::ModifyRunSyncAssetOutcomeCallable CfwClient::ModifyRunSyncAssetCallable(const ModifyRunSyncAssetRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyRunSyncAssetOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyRunSyncAsset(request);
         }
     );
 

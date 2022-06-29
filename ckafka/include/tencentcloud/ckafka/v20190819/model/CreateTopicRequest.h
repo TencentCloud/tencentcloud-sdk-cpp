@@ -224,14 +224,14 @@ namespace TencentCloud
                     bool UncleanLeaderElectionEnableHasBeenSet() const;
 
                     /**
-                     * 获取可消息选。保留时间，单位ms，当前最小值为60000ms
-                     * @return RetentionMs 可消息选。保留时间，单位ms，当前最小值为60000ms
+                     * 获取可选参数。消息保留时间，单位ms，当前最小值为60000ms
+                     * @return RetentionMs 可选参数。消息保留时间，单位ms，当前最小值为60000ms
                      */
                     int64_t GetRetentionMs() const;
 
                     /**
-                     * 设置可消息选。保留时间，单位ms，当前最小值为60000ms
-                     * @param RetentionMs 可消息选。保留时间，单位ms，当前最小值为60000ms
+                     * 设置可选参数。消息保留时间，单位ms，当前最小值为60000ms
+                     * @param RetentionMs 可选参数。消息保留时间，单位ms，当前最小值为60000ms
                      */
                     void SetRetentionMs(const int64_t& _retentionMs);
 
@@ -258,6 +258,24 @@ namespace TencentCloud
                      * @return SegmentMs 是否已赋值
                      */
                     bool SegmentMsHasBeenSet() const;
+
+                    /**
+                     * 获取主题消息最大值，单位为 Byte，最小值1024Byte(即1KB)，最大值为8388608Byte（即8MB）。
+                     * @return MaxMessageBytes 主题消息最大值，单位为 Byte，最小值1024Byte(即1KB)，最大值为8388608Byte（即8MB）。
+                     */
+                    int64_t GetMaxMessageBytes() const;
+
+                    /**
+                     * 设置主题消息最大值，单位为 Byte，最小值1024Byte(即1KB)，最大值为8388608Byte（即8MB）。
+                     * @param MaxMessageBytes 主题消息最大值，单位为 Byte，最小值1024Byte(即1KB)，最大值为8388608Byte（即8MB）。
+                     */
+                    void SetMaxMessageBytes(const int64_t& _maxMessageBytes);
+
+                    /**
+                     * 判断参数 MaxMessageBytes 是否已赋值
+                     * @return MaxMessageBytes 是否已赋值
+                     */
+                    bool MaxMessageBytesHasBeenSet() const;
 
                     /**
                      * 获取预设ACL规则, 1:打开  0:关闭，默认不打开
@@ -394,7 +412,7 @@ namespace TencentCloud
                     bool m_uncleanLeaderElectionEnableHasBeenSet;
 
                     /**
-                     * 可消息选。保留时间，单位ms，当前最小值为60000ms
+                     * 可选参数。消息保留时间，单位ms，当前最小值为60000ms
                      */
                     int64_t m_retentionMs;
                     bool m_retentionMsHasBeenSet;
@@ -404,6 +422,12 @@ namespace TencentCloud
                      */
                     int64_t m_segmentMs;
                     bool m_segmentMsHasBeenSet;
+
+                    /**
+                     * 主题消息最大值，单位为 Byte，最小值1024Byte(即1KB)，最大值为8388608Byte（即8MB）。
+                     */
+                    int64_t m_maxMessageBytes;
+                    bool m_maxMessageBytesHasBeenSet;
 
                     /**
                      * 预设ACL规则, 1:打开  0:关闭，默认不打开

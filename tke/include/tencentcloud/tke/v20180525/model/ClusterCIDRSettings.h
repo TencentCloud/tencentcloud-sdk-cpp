@@ -172,6 +172,24 @@ namespace TencentCloud
                      */
                     bool ClaimExpiredSecondsHasBeenSet() const;
 
+                    /**
+                     * 获取是否忽略 ServiceCIDR 冲突错误, 仅在 VPC-CNI 模式生效，默认不忽略
+                     * @return IgnoreServiceCIDRConflict 是否忽略 ServiceCIDR 冲突错误, 仅在 VPC-CNI 模式生效，默认不忽略
+                     */
+                    bool GetIgnoreServiceCIDRConflict() const;
+
+                    /**
+                     * 设置是否忽略 ServiceCIDR 冲突错误, 仅在 VPC-CNI 模式生效，默认不忽略
+                     * @param IgnoreServiceCIDRConflict 是否忽略 ServiceCIDR 冲突错误, 仅在 VPC-CNI 模式生效，默认不忽略
+                     */
+                    void SetIgnoreServiceCIDRConflict(const bool& _ignoreServiceCIDRConflict);
+
+                    /**
+                     * 判断参数 IgnoreServiceCIDRConflict 是否已赋值
+                     * @return IgnoreServiceCIDRConflict 是否已赋值
+                     */
+                    bool IgnoreServiceCIDRConflictHasBeenSet() const;
+
                 private:
 
                     /**
@@ -215,6 +233,12 @@ namespace TencentCloud
                      */
                     int64_t m_claimExpiredSeconds;
                     bool m_claimExpiredSecondsHasBeenSet;
+
+                    /**
+                     * 是否忽略 ServiceCIDR 冲突错误, 仅在 VPC-CNI 模式生效，默认不忽略
+                     */
+                    bool m_ignoreServiceCIDRConflict;
+                    bool m_ignoreServiceCIDRConflictHasBeenSet;
 
                 };
             }

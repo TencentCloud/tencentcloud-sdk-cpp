@@ -31,12 +31,20 @@
 #include <tencentcloud/cpdp/v20190820/model/AddShopResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/ApplyApplicationMaterialRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/ApplyApplicationMaterialResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/ApplyFlexPaymentRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/ApplyFlexPaymentResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/ApplyFlexSettlementRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/ApplyFlexSettlementResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/ApplyOpenBankOrderDetailReceiptRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/ApplyOpenBankOrderDetailReceiptResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/ApplyOutwardOrderRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/ApplyOutwardOrderResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/ApplyPayerInfoRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/ApplyPayerInfoResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/ApplyReWithdrawalRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/ApplyReWithdrawalResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/ApplyReconciliationFileRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/ApplyReconciliationFileResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/ApplyTradeRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/ApplyTradeResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/ApplyWithdrawalRequest.h>
@@ -45,6 +53,8 @@
 #include <tencentcloud/cpdp/v20190820/model/BindAccountResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/BindAcctRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/BindAcctResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/BindOpenBankExternalSubMerchantBankAccountRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/BindOpenBankExternalSubMerchantBankAccountResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/BindRelateAccReUnionPayRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/BindRelateAccReUnionPayResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/BindRelateAcctSmallAmountRequest.h>
@@ -55,6 +65,10 @@
 #include <tencentcloud/cpdp/v20190820/model/CheckAcctResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/CheckAmountRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/CheckAmountResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/CloseCloudOrderRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/CloseCloudOrderResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/CloseOpenBankPaymentOrderRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/CloseOpenBankPaymentOrderResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/CloseOrderRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/CloseOrderResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/ConfirmOrderRequest.h>
@@ -69,20 +83,46 @@
 #include <tencentcloud/cpdp/v20190820/model/CreateAnchorResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/CreateBatchPaymentRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/CreateBatchPaymentResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/CreateCloudSubMerchantRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/CreateCloudSubMerchantResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/CreateCustAcctIdRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/CreateCustAcctIdResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/CreateExternalAnchorRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/CreateExternalAnchorResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/CreateFlexPayeeRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/CreateFlexPayeeResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/CreateInvoiceRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/CreateInvoiceResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/CreateInvoiceV2Request.h>
 #include <tencentcloud/cpdp/v20190820/model/CreateInvoiceV2Response.h>
 #include <tencentcloud/cpdp/v20190820/model/CreateMerchantRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/CreateMerchantResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/CreateOpenBankAggregatedSubMerchantRegistrationRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/CreateOpenBankAggregatedSubMerchantRegistrationResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/CreateOpenBankExternalSubMerchantAccountBookRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/CreateOpenBankExternalSubMerchantAccountBookResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/CreateOpenBankExternalSubMerchantRegistrationRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/CreateOpenBankExternalSubMerchantRegistrationResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/CreateOpenBankMerchantRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/CreateOpenBankMerchantResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/CreateOpenBankPaymentOrderRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/CreateOpenBankPaymentOrderResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/CreateOpenBankRechargeOrderRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/CreateOpenBankRechargeOrderResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/CreateOpenBankSubMerchantRateConfigureRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/CreateOpenBankSubMerchantRateConfigureResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/CreateOpenBankUnifiedOrderRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/CreateOpenBankUnifiedOrderResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/CreateOrderRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/CreateOrderResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/CreatePayMerchantRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/CreatePayMerchantResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/CreatePayRollPreOrderRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/CreatePayRollPreOrderResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/CreatePayRollPreOrderWithAuthRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/CreatePayRollPreOrderWithAuthResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/CreatePayRollTokenRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/CreatePayRollTokenResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/CreateRedInvoiceRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/CreateRedInvoiceResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/CreateRedInvoiceV2Request.h>
@@ -127,6 +167,18 @@
 #include <tencentcloud/cpdp/v20190820/model/DownloadReconciliationUrlResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/ExecuteMemberTransactionRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/ExecuteMemberTransactionResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/FreezeFlexBalanceRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/FreezeFlexBalanceResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/GetBillDownloadUrlRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/GetBillDownloadUrlResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/GetDistributeBillDownloadUrlRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/GetDistributeBillDownloadUrlResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/GetPayRollAuthRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/GetPayRollAuthResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/GetPayRollAuthListRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/GetPayRollAuthListResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/GetPayRollAuthResultRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/GetPayRollAuthResultResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/MigrateOrderRefundRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/MigrateOrderRefundResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/MigrateOrderRefundQueryRequest.h>
@@ -135,6 +187,8 @@
 #include <tencentcloud/cpdp/v20190820/model/ModifyAgentTaxPaymentInfoResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/ModifyBindedAccountRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/ModifyBindedAccountResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/ModifyFlexPayeeAccountRightStatusRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/ModifyFlexPayeeAccountRightStatusResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/ModifyMerchantRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/ModifyMerchantResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/ModifyMntMbrBindRelateAcctBankCodeRequest.h>
@@ -169,6 +223,12 @@
 #include <tencentcloud/cpdp/v20190820/model/QueryBillDownloadURLResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryCityCodeRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryCityCodeResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryCloudChannelDataRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryCloudChannelDataResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryCloudOrderRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryCloudOrderResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryCloudRefundOrderRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryCloudRefundOrderResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryCommonTransferRechargeRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryCommonTransferRechargeResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryContractRequest.h>
@@ -183,8 +243,30 @@
 #include <tencentcloud/cpdp/v20190820/model/QueryCustAcctIdBalanceResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryDownloadBillURLRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryDownloadBillURLResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryExceedingInfoRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryExceedingInfoResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryExchangeRateRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryExchangeRateResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryFlexAmountBeforeTaxRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryFlexAmountBeforeTaxResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryFlexFreezeOrderListRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryFlexFreezeOrderListResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryFlexPayeeAccountBalanceRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryFlexPayeeAccountBalanceResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryFlexPayeeAccountInfoRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryFlexPayeeAccountInfoResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryFlexPayeeAccountListRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryFlexPayeeAccountListResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryFlexPayeeInfoRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryFlexPayeeInfoResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryFlexPaymentOrderListRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryFlexPaymentOrderListResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryFlexPaymentOrderStatusRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryFlexPaymentOrderStatusResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryFlexSettlementOrderListRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryFlexSettlementOrderListResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryFundsTransactionDetailsRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryFundsTransactionDetailsResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryInvoiceRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryInvoiceResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryInvoiceV2Request.h>
@@ -195,6 +277,8 @@
 #include <tencentcloud/cpdp/v20190820/model/QueryMemberBindResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryMemberTransactionRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryMemberTransactionResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryMemberTransactionDetailsRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryMemberTransactionDetailsResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryMerchantRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryMerchantResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryMerchantBalanceRequest.h>
@@ -207,6 +291,38 @@
 #include <tencentcloud/cpdp/v20190820/model/QueryMerchantOrderResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryMerchantPayWayListRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryMerchantPayWayListResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryOpenBankBankAccountBalanceRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryOpenBankBankAccountBalanceResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryOpenBankBankBranchListRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryOpenBankBankBranchListResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryOpenBankBillDataPageRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryOpenBankBillDataPageResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryOpenBankBindExternalSubMerchantBankAccountRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryOpenBankBindExternalSubMerchantBankAccountResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryOpenBankDailyReceiptDownloadUrlRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryOpenBankDailyReceiptDownloadUrlResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryOpenBankDownLoadUrlRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryOpenBankDownLoadUrlResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryOpenBankExternalSubAccountBookBalanceRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryOpenBankExternalSubAccountBookBalanceResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryOpenBankExternalSubMerchantBankAccountRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryOpenBankExternalSubMerchantBankAccountResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryOpenBankExternalSubMerchantRegistrationRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryOpenBankExternalSubMerchantRegistrationResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryOpenBankOrderDetailReceiptInfoRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryOpenBankOrderDetailReceiptInfoResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryOpenBankPaymentOrderRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryOpenBankPaymentOrderResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryOpenBankRefundOrderRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryOpenBankRefundOrderResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryOpenBankSubMerchantCredentialRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryOpenBankSubMerchantCredentialResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryOpenBankSubMerchantRateConfigureRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryOpenBankSubMerchantRateConfigureResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryOpenBankSupportBankListRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryOpenBankSupportBankListResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryOpenBankUnbindExternalSubMerchantBankAccountRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryOpenBankUnbindExternalSubMerchantBankAccountResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryOrderRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryOrderResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryOrderStatusRequest.h>
@@ -217,6 +333,8 @@
 #include <tencentcloud/cpdp/v20190820/model/QueryPayerInfoResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryReconciliationDocumentRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryReconciliationDocumentResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryReconciliationFileApplyInfoRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryReconciliationFileApplyInfoResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryRefundRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryRefundResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryShopOpenIdRequest.h>
@@ -243,8 +361,12 @@
 #include <tencentcloud/cpdp/v20190820/model/RechargeMemberThirdPayResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/RefundRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/RefundResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/RefundCloudOrderRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/RefundCloudOrderResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/RefundMemberTransactionRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/RefundMemberTransactionResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/RefundOpenBankOrderRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/RefundOpenBankOrderResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/RefundOrderRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/RefundOrderResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/RefundTlinxOrderRequest.h>
@@ -271,8 +393,12 @@
 #include <tencentcloud/cpdp/v20190820/model/TransferSinglePayResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/UnBindAcctRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/UnBindAcctResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/UnbindOpenBankExternalSubMerchantBankAccountRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/UnbindOpenBankExternalSubMerchantBankAccountResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/UnbindRelateAcctRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/UnbindRelateAcctResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/UnifiedCloudOrderRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/UnifiedCloudOrderResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/UnifiedOrderRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/UnifiedOrderResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/UnifiedTlinxOrderRequest.h>
@@ -281,6 +407,8 @@
 #include <tencentcloud/cpdp/v20190820/model/UploadExternalAnchorInfoResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/UploadFileRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/UploadFileResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/UploadOpenBankSubMerchantCredentialRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/UploadOpenBankSubMerchantCredentialResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/UploadOrgFileRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/UploadOrgFileResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/UploadTaxListRequest.h>
@@ -321,6 +449,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ApplyApplicationMaterialResponse> ApplyApplicationMaterialOutcome;
                 typedef std::future<ApplyApplicationMaterialOutcome> ApplyApplicationMaterialOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::ApplyApplicationMaterialRequest&, ApplyApplicationMaterialOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ApplyApplicationMaterialAsyncHandler;
+                typedef Outcome<Core::Error, Model::ApplyFlexPaymentResponse> ApplyFlexPaymentOutcome;
+                typedef std::future<ApplyFlexPaymentOutcome> ApplyFlexPaymentOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::ApplyFlexPaymentRequest&, ApplyFlexPaymentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ApplyFlexPaymentAsyncHandler;
+                typedef Outcome<Core::Error, Model::ApplyFlexSettlementResponse> ApplyFlexSettlementOutcome;
+                typedef std::future<ApplyFlexSettlementOutcome> ApplyFlexSettlementOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::ApplyFlexSettlementRequest&, ApplyFlexSettlementOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ApplyFlexSettlementAsyncHandler;
+                typedef Outcome<Core::Error, Model::ApplyOpenBankOrderDetailReceiptResponse> ApplyOpenBankOrderDetailReceiptOutcome;
+                typedef std::future<ApplyOpenBankOrderDetailReceiptOutcome> ApplyOpenBankOrderDetailReceiptOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::ApplyOpenBankOrderDetailReceiptRequest&, ApplyOpenBankOrderDetailReceiptOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ApplyOpenBankOrderDetailReceiptAsyncHandler;
                 typedef Outcome<Core::Error, Model::ApplyOutwardOrderResponse> ApplyOutwardOrderOutcome;
                 typedef std::future<ApplyOutwardOrderOutcome> ApplyOutwardOrderOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::ApplyOutwardOrderRequest&, ApplyOutwardOrderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ApplyOutwardOrderAsyncHandler;
@@ -330,6 +467,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ApplyReWithdrawalResponse> ApplyReWithdrawalOutcome;
                 typedef std::future<ApplyReWithdrawalOutcome> ApplyReWithdrawalOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::ApplyReWithdrawalRequest&, ApplyReWithdrawalOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ApplyReWithdrawalAsyncHandler;
+                typedef Outcome<Core::Error, Model::ApplyReconciliationFileResponse> ApplyReconciliationFileOutcome;
+                typedef std::future<ApplyReconciliationFileOutcome> ApplyReconciliationFileOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::ApplyReconciliationFileRequest&, ApplyReconciliationFileOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ApplyReconciliationFileAsyncHandler;
                 typedef Outcome<Core::Error, Model::ApplyTradeResponse> ApplyTradeOutcome;
                 typedef std::future<ApplyTradeOutcome> ApplyTradeOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::ApplyTradeRequest&, ApplyTradeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ApplyTradeAsyncHandler;
@@ -342,6 +482,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::BindAcctResponse> BindAcctOutcome;
                 typedef std::future<BindAcctOutcome> BindAcctOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::BindAcctRequest&, BindAcctOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BindAcctAsyncHandler;
+                typedef Outcome<Core::Error, Model::BindOpenBankExternalSubMerchantBankAccountResponse> BindOpenBankExternalSubMerchantBankAccountOutcome;
+                typedef std::future<BindOpenBankExternalSubMerchantBankAccountOutcome> BindOpenBankExternalSubMerchantBankAccountOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::BindOpenBankExternalSubMerchantBankAccountRequest&, BindOpenBankExternalSubMerchantBankAccountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BindOpenBankExternalSubMerchantBankAccountAsyncHandler;
                 typedef Outcome<Core::Error, Model::BindRelateAccReUnionPayResponse> BindRelateAccReUnionPayOutcome;
                 typedef std::future<BindRelateAccReUnionPayOutcome> BindRelateAccReUnionPayOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::BindRelateAccReUnionPayRequest&, BindRelateAccReUnionPayOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BindRelateAccReUnionPayAsyncHandler;
@@ -357,6 +500,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CheckAmountResponse> CheckAmountOutcome;
                 typedef std::future<CheckAmountOutcome> CheckAmountOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::CheckAmountRequest&, CheckAmountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckAmountAsyncHandler;
+                typedef Outcome<Core::Error, Model::CloseCloudOrderResponse> CloseCloudOrderOutcome;
+                typedef std::future<CloseCloudOrderOutcome> CloseCloudOrderOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::CloseCloudOrderRequest&, CloseCloudOrderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CloseCloudOrderAsyncHandler;
+                typedef Outcome<Core::Error, Model::CloseOpenBankPaymentOrderResponse> CloseOpenBankPaymentOrderOutcome;
+                typedef std::future<CloseOpenBankPaymentOrderOutcome> CloseOpenBankPaymentOrderOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::CloseOpenBankPaymentOrderRequest&, CloseOpenBankPaymentOrderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CloseOpenBankPaymentOrderAsyncHandler;
                 typedef Outcome<Core::Error, Model::CloseOrderResponse> CloseOrderOutcome;
                 typedef std::future<CloseOrderOutcome> CloseOrderOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::CloseOrderRequest&, CloseOrderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CloseOrderAsyncHandler;
@@ -378,12 +527,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateBatchPaymentResponse> CreateBatchPaymentOutcome;
                 typedef std::future<CreateBatchPaymentOutcome> CreateBatchPaymentOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::CreateBatchPaymentRequest&, CreateBatchPaymentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateBatchPaymentAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateCloudSubMerchantResponse> CreateCloudSubMerchantOutcome;
+                typedef std::future<CreateCloudSubMerchantOutcome> CreateCloudSubMerchantOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::CreateCloudSubMerchantRequest&, CreateCloudSubMerchantOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCloudSubMerchantAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateCustAcctIdResponse> CreateCustAcctIdOutcome;
                 typedef std::future<CreateCustAcctIdOutcome> CreateCustAcctIdOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::CreateCustAcctIdRequest&, CreateCustAcctIdOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCustAcctIdAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateExternalAnchorResponse> CreateExternalAnchorOutcome;
                 typedef std::future<CreateExternalAnchorOutcome> CreateExternalAnchorOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::CreateExternalAnchorRequest&, CreateExternalAnchorOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateExternalAnchorAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateFlexPayeeResponse> CreateFlexPayeeOutcome;
+                typedef std::future<CreateFlexPayeeOutcome> CreateFlexPayeeOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::CreateFlexPayeeRequest&, CreateFlexPayeeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateFlexPayeeAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateInvoiceResponse> CreateInvoiceOutcome;
                 typedef std::future<CreateInvoiceOutcome> CreateInvoiceOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::CreateInvoiceRequest&, CreateInvoiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateInvoiceAsyncHandler;
@@ -393,12 +548,45 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateMerchantResponse> CreateMerchantOutcome;
                 typedef std::future<CreateMerchantOutcome> CreateMerchantOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::CreateMerchantRequest&, CreateMerchantOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateMerchantAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateOpenBankAggregatedSubMerchantRegistrationResponse> CreateOpenBankAggregatedSubMerchantRegistrationOutcome;
+                typedef std::future<CreateOpenBankAggregatedSubMerchantRegistrationOutcome> CreateOpenBankAggregatedSubMerchantRegistrationOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::CreateOpenBankAggregatedSubMerchantRegistrationRequest&, CreateOpenBankAggregatedSubMerchantRegistrationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateOpenBankAggregatedSubMerchantRegistrationAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateOpenBankExternalSubMerchantAccountBookResponse> CreateOpenBankExternalSubMerchantAccountBookOutcome;
+                typedef std::future<CreateOpenBankExternalSubMerchantAccountBookOutcome> CreateOpenBankExternalSubMerchantAccountBookOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::CreateOpenBankExternalSubMerchantAccountBookRequest&, CreateOpenBankExternalSubMerchantAccountBookOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateOpenBankExternalSubMerchantAccountBookAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateOpenBankExternalSubMerchantRegistrationResponse> CreateOpenBankExternalSubMerchantRegistrationOutcome;
+                typedef std::future<CreateOpenBankExternalSubMerchantRegistrationOutcome> CreateOpenBankExternalSubMerchantRegistrationOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::CreateOpenBankExternalSubMerchantRegistrationRequest&, CreateOpenBankExternalSubMerchantRegistrationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateOpenBankExternalSubMerchantRegistrationAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateOpenBankMerchantResponse> CreateOpenBankMerchantOutcome;
+                typedef std::future<CreateOpenBankMerchantOutcome> CreateOpenBankMerchantOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::CreateOpenBankMerchantRequest&, CreateOpenBankMerchantOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateOpenBankMerchantAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateOpenBankPaymentOrderResponse> CreateOpenBankPaymentOrderOutcome;
+                typedef std::future<CreateOpenBankPaymentOrderOutcome> CreateOpenBankPaymentOrderOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::CreateOpenBankPaymentOrderRequest&, CreateOpenBankPaymentOrderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateOpenBankPaymentOrderAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateOpenBankRechargeOrderResponse> CreateOpenBankRechargeOrderOutcome;
+                typedef std::future<CreateOpenBankRechargeOrderOutcome> CreateOpenBankRechargeOrderOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::CreateOpenBankRechargeOrderRequest&, CreateOpenBankRechargeOrderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateOpenBankRechargeOrderAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateOpenBankSubMerchantRateConfigureResponse> CreateOpenBankSubMerchantRateConfigureOutcome;
+                typedef std::future<CreateOpenBankSubMerchantRateConfigureOutcome> CreateOpenBankSubMerchantRateConfigureOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::CreateOpenBankSubMerchantRateConfigureRequest&, CreateOpenBankSubMerchantRateConfigureOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateOpenBankSubMerchantRateConfigureAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateOpenBankUnifiedOrderResponse> CreateOpenBankUnifiedOrderOutcome;
+                typedef std::future<CreateOpenBankUnifiedOrderOutcome> CreateOpenBankUnifiedOrderOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::CreateOpenBankUnifiedOrderRequest&, CreateOpenBankUnifiedOrderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateOpenBankUnifiedOrderAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateOrderResponse> CreateOrderOutcome;
                 typedef std::future<CreateOrderOutcome> CreateOrderOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::CreateOrderRequest&, CreateOrderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateOrderAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreatePayMerchantResponse> CreatePayMerchantOutcome;
                 typedef std::future<CreatePayMerchantOutcome> CreatePayMerchantOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::CreatePayMerchantRequest&, CreatePayMerchantOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePayMerchantAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreatePayRollPreOrderResponse> CreatePayRollPreOrderOutcome;
+                typedef std::future<CreatePayRollPreOrderOutcome> CreatePayRollPreOrderOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::CreatePayRollPreOrderRequest&, CreatePayRollPreOrderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePayRollPreOrderAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreatePayRollPreOrderWithAuthResponse> CreatePayRollPreOrderWithAuthOutcome;
+                typedef std::future<CreatePayRollPreOrderWithAuthOutcome> CreatePayRollPreOrderWithAuthOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::CreatePayRollPreOrderWithAuthRequest&, CreatePayRollPreOrderWithAuthOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePayRollPreOrderWithAuthAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreatePayRollTokenResponse> CreatePayRollTokenOutcome;
+                typedef std::future<CreatePayRollTokenOutcome> CreatePayRollTokenOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::CreatePayRollTokenRequest&, CreatePayRollTokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePayRollTokenAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateRedInvoiceResponse> CreateRedInvoiceOutcome;
                 typedef std::future<CreateRedInvoiceOutcome> CreateRedInvoiceOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::CreateRedInvoiceRequest&, CreateRedInvoiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRedInvoiceAsyncHandler;
@@ -465,6 +653,24 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ExecuteMemberTransactionResponse> ExecuteMemberTransactionOutcome;
                 typedef std::future<ExecuteMemberTransactionOutcome> ExecuteMemberTransactionOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::ExecuteMemberTransactionRequest&, ExecuteMemberTransactionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExecuteMemberTransactionAsyncHandler;
+                typedef Outcome<Core::Error, Model::FreezeFlexBalanceResponse> FreezeFlexBalanceOutcome;
+                typedef std::future<FreezeFlexBalanceOutcome> FreezeFlexBalanceOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::FreezeFlexBalanceRequest&, FreezeFlexBalanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> FreezeFlexBalanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetBillDownloadUrlResponse> GetBillDownloadUrlOutcome;
+                typedef std::future<GetBillDownloadUrlOutcome> GetBillDownloadUrlOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::GetBillDownloadUrlRequest&, GetBillDownloadUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetBillDownloadUrlAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetDistributeBillDownloadUrlResponse> GetDistributeBillDownloadUrlOutcome;
+                typedef std::future<GetDistributeBillDownloadUrlOutcome> GetDistributeBillDownloadUrlOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::GetDistributeBillDownloadUrlRequest&, GetDistributeBillDownloadUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetDistributeBillDownloadUrlAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetPayRollAuthResponse> GetPayRollAuthOutcome;
+                typedef std::future<GetPayRollAuthOutcome> GetPayRollAuthOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::GetPayRollAuthRequest&, GetPayRollAuthOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetPayRollAuthAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetPayRollAuthListResponse> GetPayRollAuthListOutcome;
+                typedef std::future<GetPayRollAuthListOutcome> GetPayRollAuthListOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::GetPayRollAuthListRequest&, GetPayRollAuthListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetPayRollAuthListAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetPayRollAuthResultResponse> GetPayRollAuthResultOutcome;
+                typedef std::future<GetPayRollAuthResultOutcome> GetPayRollAuthResultOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::GetPayRollAuthResultRequest&, GetPayRollAuthResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetPayRollAuthResultAsyncHandler;
                 typedef Outcome<Core::Error, Model::MigrateOrderRefundResponse> MigrateOrderRefundOutcome;
                 typedef std::future<MigrateOrderRefundOutcome> MigrateOrderRefundOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::MigrateOrderRefundRequest&, MigrateOrderRefundOutcome, const std::shared_ptr<const AsyncCallerContext>&)> MigrateOrderRefundAsyncHandler;
@@ -477,6 +683,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyBindedAccountResponse> ModifyBindedAccountOutcome;
                 typedef std::future<ModifyBindedAccountOutcome> ModifyBindedAccountOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::ModifyBindedAccountRequest&, ModifyBindedAccountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBindedAccountAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyFlexPayeeAccountRightStatusResponse> ModifyFlexPayeeAccountRightStatusOutcome;
+                typedef std::future<ModifyFlexPayeeAccountRightStatusOutcome> ModifyFlexPayeeAccountRightStatusOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::ModifyFlexPayeeAccountRightStatusRequest&, ModifyFlexPayeeAccountRightStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyFlexPayeeAccountRightStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyMerchantResponse> ModifyMerchantOutcome;
                 typedef std::future<ModifyMerchantOutcome> ModifyMerchantOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::ModifyMerchantRequest&, ModifyMerchantOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyMerchantAsyncHandler;
@@ -528,6 +737,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::QueryCityCodeResponse> QueryCityCodeOutcome;
                 typedef std::future<QueryCityCodeOutcome> QueryCityCodeOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::QueryCityCodeRequest&, QueryCityCodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryCityCodeAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryCloudChannelDataResponse> QueryCloudChannelDataOutcome;
+                typedef std::future<QueryCloudChannelDataOutcome> QueryCloudChannelDataOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::QueryCloudChannelDataRequest&, QueryCloudChannelDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryCloudChannelDataAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryCloudOrderResponse> QueryCloudOrderOutcome;
+                typedef std::future<QueryCloudOrderOutcome> QueryCloudOrderOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::QueryCloudOrderRequest&, QueryCloudOrderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryCloudOrderAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryCloudRefundOrderResponse> QueryCloudRefundOrderOutcome;
+                typedef std::future<QueryCloudRefundOrderOutcome> QueryCloudRefundOrderOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::QueryCloudRefundOrderRequest&, QueryCloudRefundOrderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryCloudRefundOrderAsyncHandler;
                 typedef Outcome<Core::Error, Model::QueryCommonTransferRechargeResponse> QueryCommonTransferRechargeOutcome;
                 typedef std::future<QueryCommonTransferRechargeOutcome> QueryCommonTransferRechargeOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::QueryCommonTransferRechargeRequest&, QueryCommonTransferRechargeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryCommonTransferRechargeAsyncHandler;
@@ -549,9 +767,42 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::QueryDownloadBillURLResponse> QueryDownloadBillURLOutcome;
                 typedef std::future<QueryDownloadBillURLOutcome> QueryDownloadBillURLOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::QueryDownloadBillURLRequest&, QueryDownloadBillURLOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryDownloadBillURLAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryExceedingInfoResponse> QueryExceedingInfoOutcome;
+                typedef std::future<QueryExceedingInfoOutcome> QueryExceedingInfoOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::QueryExceedingInfoRequest&, QueryExceedingInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryExceedingInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::QueryExchangeRateResponse> QueryExchangeRateOutcome;
                 typedef std::future<QueryExchangeRateOutcome> QueryExchangeRateOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::QueryExchangeRateRequest&, QueryExchangeRateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryExchangeRateAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryFlexAmountBeforeTaxResponse> QueryFlexAmountBeforeTaxOutcome;
+                typedef std::future<QueryFlexAmountBeforeTaxOutcome> QueryFlexAmountBeforeTaxOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::QueryFlexAmountBeforeTaxRequest&, QueryFlexAmountBeforeTaxOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryFlexAmountBeforeTaxAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryFlexFreezeOrderListResponse> QueryFlexFreezeOrderListOutcome;
+                typedef std::future<QueryFlexFreezeOrderListOutcome> QueryFlexFreezeOrderListOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::QueryFlexFreezeOrderListRequest&, QueryFlexFreezeOrderListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryFlexFreezeOrderListAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryFlexPayeeAccountBalanceResponse> QueryFlexPayeeAccountBalanceOutcome;
+                typedef std::future<QueryFlexPayeeAccountBalanceOutcome> QueryFlexPayeeAccountBalanceOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::QueryFlexPayeeAccountBalanceRequest&, QueryFlexPayeeAccountBalanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryFlexPayeeAccountBalanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryFlexPayeeAccountInfoResponse> QueryFlexPayeeAccountInfoOutcome;
+                typedef std::future<QueryFlexPayeeAccountInfoOutcome> QueryFlexPayeeAccountInfoOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::QueryFlexPayeeAccountInfoRequest&, QueryFlexPayeeAccountInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryFlexPayeeAccountInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryFlexPayeeAccountListResponse> QueryFlexPayeeAccountListOutcome;
+                typedef std::future<QueryFlexPayeeAccountListOutcome> QueryFlexPayeeAccountListOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::QueryFlexPayeeAccountListRequest&, QueryFlexPayeeAccountListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryFlexPayeeAccountListAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryFlexPayeeInfoResponse> QueryFlexPayeeInfoOutcome;
+                typedef std::future<QueryFlexPayeeInfoOutcome> QueryFlexPayeeInfoOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::QueryFlexPayeeInfoRequest&, QueryFlexPayeeInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryFlexPayeeInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryFlexPaymentOrderListResponse> QueryFlexPaymentOrderListOutcome;
+                typedef std::future<QueryFlexPaymentOrderListOutcome> QueryFlexPaymentOrderListOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::QueryFlexPaymentOrderListRequest&, QueryFlexPaymentOrderListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryFlexPaymentOrderListAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryFlexPaymentOrderStatusResponse> QueryFlexPaymentOrderStatusOutcome;
+                typedef std::future<QueryFlexPaymentOrderStatusOutcome> QueryFlexPaymentOrderStatusOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::QueryFlexPaymentOrderStatusRequest&, QueryFlexPaymentOrderStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryFlexPaymentOrderStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryFlexSettlementOrderListResponse> QueryFlexSettlementOrderListOutcome;
+                typedef std::future<QueryFlexSettlementOrderListOutcome> QueryFlexSettlementOrderListOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::QueryFlexSettlementOrderListRequest&, QueryFlexSettlementOrderListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryFlexSettlementOrderListAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryFundsTransactionDetailsResponse> QueryFundsTransactionDetailsOutcome;
+                typedef std::future<QueryFundsTransactionDetailsOutcome> QueryFundsTransactionDetailsOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::QueryFundsTransactionDetailsRequest&, QueryFundsTransactionDetailsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryFundsTransactionDetailsAsyncHandler;
                 typedef Outcome<Core::Error, Model::QueryInvoiceResponse> QueryInvoiceOutcome;
                 typedef std::future<QueryInvoiceOutcome> QueryInvoiceOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::QueryInvoiceRequest&, QueryInvoiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryInvoiceAsyncHandler;
@@ -567,6 +818,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::QueryMemberTransactionResponse> QueryMemberTransactionOutcome;
                 typedef std::future<QueryMemberTransactionOutcome> QueryMemberTransactionOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::QueryMemberTransactionRequest&, QueryMemberTransactionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryMemberTransactionAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryMemberTransactionDetailsResponse> QueryMemberTransactionDetailsOutcome;
+                typedef std::future<QueryMemberTransactionDetailsOutcome> QueryMemberTransactionDetailsOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::QueryMemberTransactionDetailsRequest&, QueryMemberTransactionDetailsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryMemberTransactionDetailsAsyncHandler;
                 typedef Outcome<Core::Error, Model::QueryMerchantResponse> QueryMerchantOutcome;
                 typedef std::future<QueryMerchantOutcome> QueryMerchantOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::QueryMerchantRequest&, QueryMerchantOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryMerchantAsyncHandler;
@@ -585,6 +839,54 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::QueryMerchantPayWayListResponse> QueryMerchantPayWayListOutcome;
                 typedef std::future<QueryMerchantPayWayListOutcome> QueryMerchantPayWayListOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::QueryMerchantPayWayListRequest&, QueryMerchantPayWayListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryMerchantPayWayListAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryOpenBankBankAccountBalanceResponse> QueryOpenBankBankAccountBalanceOutcome;
+                typedef std::future<QueryOpenBankBankAccountBalanceOutcome> QueryOpenBankBankAccountBalanceOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::QueryOpenBankBankAccountBalanceRequest&, QueryOpenBankBankAccountBalanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryOpenBankBankAccountBalanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryOpenBankBankBranchListResponse> QueryOpenBankBankBranchListOutcome;
+                typedef std::future<QueryOpenBankBankBranchListOutcome> QueryOpenBankBankBranchListOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::QueryOpenBankBankBranchListRequest&, QueryOpenBankBankBranchListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryOpenBankBankBranchListAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryOpenBankBillDataPageResponse> QueryOpenBankBillDataPageOutcome;
+                typedef std::future<QueryOpenBankBillDataPageOutcome> QueryOpenBankBillDataPageOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::QueryOpenBankBillDataPageRequest&, QueryOpenBankBillDataPageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryOpenBankBillDataPageAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryOpenBankBindExternalSubMerchantBankAccountResponse> QueryOpenBankBindExternalSubMerchantBankAccountOutcome;
+                typedef std::future<QueryOpenBankBindExternalSubMerchantBankAccountOutcome> QueryOpenBankBindExternalSubMerchantBankAccountOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::QueryOpenBankBindExternalSubMerchantBankAccountRequest&, QueryOpenBankBindExternalSubMerchantBankAccountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryOpenBankBindExternalSubMerchantBankAccountAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryOpenBankDailyReceiptDownloadUrlResponse> QueryOpenBankDailyReceiptDownloadUrlOutcome;
+                typedef std::future<QueryOpenBankDailyReceiptDownloadUrlOutcome> QueryOpenBankDailyReceiptDownloadUrlOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::QueryOpenBankDailyReceiptDownloadUrlRequest&, QueryOpenBankDailyReceiptDownloadUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryOpenBankDailyReceiptDownloadUrlAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryOpenBankDownLoadUrlResponse> QueryOpenBankDownLoadUrlOutcome;
+                typedef std::future<QueryOpenBankDownLoadUrlOutcome> QueryOpenBankDownLoadUrlOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::QueryOpenBankDownLoadUrlRequest&, QueryOpenBankDownLoadUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryOpenBankDownLoadUrlAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryOpenBankExternalSubAccountBookBalanceResponse> QueryOpenBankExternalSubAccountBookBalanceOutcome;
+                typedef std::future<QueryOpenBankExternalSubAccountBookBalanceOutcome> QueryOpenBankExternalSubAccountBookBalanceOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::QueryOpenBankExternalSubAccountBookBalanceRequest&, QueryOpenBankExternalSubAccountBookBalanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryOpenBankExternalSubAccountBookBalanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryOpenBankExternalSubMerchantBankAccountResponse> QueryOpenBankExternalSubMerchantBankAccountOutcome;
+                typedef std::future<QueryOpenBankExternalSubMerchantBankAccountOutcome> QueryOpenBankExternalSubMerchantBankAccountOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::QueryOpenBankExternalSubMerchantBankAccountRequest&, QueryOpenBankExternalSubMerchantBankAccountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryOpenBankExternalSubMerchantBankAccountAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryOpenBankExternalSubMerchantRegistrationResponse> QueryOpenBankExternalSubMerchantRegistrationOutcome;
+                typedef std::future<QueryOpenBankExternalSubMerchantRegistrationOutcome> QueryOpenBankExternalSubMerchantRegistrationOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::QueryOpenBankExternalSubMerchantRegistrationRequest&, QueryOpenBankExternalSubMerchantRegistrationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryOpenBankExternalSubMerchantRegistrationAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryOpenBankOrderDetailReceiptInfoResponse> QueryOpenBankOrderDetailReceiptInfoOutcome;
+                typedef std::future<QueryOpenBankOrderDetailReceiptInfoOutcome> QueryOpenBankOrderDetailReceiptInfoOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::QueryOpenBankOrderDetailReceiptInfoRequest&, QueryOpenBankOrderDetailReceiptInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryOpenBankOrderDetailReceiptInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryOpenBankPaymentOrderResponse> QueryOpenBankPaymentOrderOutcome;
+                typedef std::future<QueryOpenBankPaymentOrderOutcome> QueryOpenBankPaymentOrderOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::QueryOpenBankPaymentOrderRequest&, QueryOpenBankPaymentOrderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryOpenBankPaymentOrderAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryOpenBankRefundOrderResponse> QueryOpenBankRefundOrderOutcome;
+                typedef std::future<QueryOpenBankRefundOrderOutcome> QueryOpenBankRefundOrderOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::QueryOpenBankRefundOrderRequest&, QueryOpenBankRefundOrderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryOpenBankRefundOrderAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryOpenBankSubMerchantCredentialResponse> QueryOpenBankSubMerchantCredentialOutcome;
+                typedef std::future<QueryOpenBankSubMerchantCredentialOutcome> QueryOpenBankSubMerchantCredentialOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::QueryOpenBankSubMerchantCredentialRequest&, QueryOpenBankSubMerchantCredentialOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryOpenBankSubMerchantCredentialAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryOpenBankSubMerchantRateConfigureResponse> QueryOpenBankSubMerchantRateConfigureOutcome;
+                typedef std::future<QueryOpenBankSubMerchantRateConfigureOutcome> QueryOpenBankSubMerchantRateConfigureOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::QueryOpenBankSubMerchantRateConfigureRequest&, QueryOpenBankSubMerchantRateConfigureOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryOpenBankSubMerchantRateConfigureAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryOpenBankSupportBankListResponse> QueryOpenBankSupportBankListOutcome;
+                typedef std::future<QueryOpenBankSupportBankListOutcome> QueryOpenBankSupportBankListOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::QueryOpenBankSupportBankListRequest&, QueryOpenBankSupportBankListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryOpenBankSupportBankListAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryOpenBankUnbindExternalSubMerchantBankAccountResponse> QueryOpenBankUnbindExternalSubMerchantBankAccountOutcome;
+                typedef std::future<QueryOpenBankUnbindExternalSubMerchantBankAccountOutcome> QueryOpenBankUnbindExternalSubMerchantBankAccountOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::QueryOpenBankUnbindExternalSubMerchantBankAccountRequest&, QueryOpenBankUnbindExternalSubMerchantBankAccountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryOpenBankUnbindExternalSubMerchantBankAccountAsyncHandler;
                 typedef Outcome<Core::Error, Model::QueryOrderResponse> QueryOrderOutcome;
                 typedef std::future<QueryOrderOutcome> QueryOrderOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::QueryOrderRequest&, QueryOrderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryOrderAsyncHandler;
@@ -600,6 +902,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::QueryReconciliationDocumentResponse> QueryReconciliationDocumentOutcome;
                 typedef std::future<QueryReconciliationDocumentOutcome> QueryReconciliationDocumentOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::QueryReconciliationDocumentRequest&, QueryReconciliationDocumentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryReconciliationDocumentAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryReconciliationFileApplyInfoResponse> QueryReconciliationFileApplyInfoOutcome;
+                typedef std::future<QueryReconciliationFileApplyInfoOutcome> QueryReconciliationFileApplyInfoOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::QueryReconciliationFileApplyInfoRequest&, QueryReconciliationFileApplyInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryReconciliationFileApplyInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::QueryRefundResponse> QueryRefundOutcome;
                 typedef std::future<QueryRefundOutcome> QueryRefundOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::QueryRefundRequest&, QueryRefundOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryRefundAsyncHandler;
@@ -639,9 +944,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RefundResponse> RefundOutcome;
                 typedef std::future<RefundOutcome> RefundOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::RefundRequest&, RefundOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RefundAsyncHandler;
+                typedef Outcome<Core::Error, Model::RefundCloudOrderResponse> RefundCloudOrderOutcome;
+                typedef std::future<RefundCloudOrderOutcome> RefundCloudOrderOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::RefundCloudOrderRequest&, RefundCloudOrderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RefundCloudOrderAsyncHandler;
                 typedef Outcome<Core::Error, Model::RefundMemberTransactionResponse> RefundMemberTransactionOutcome;
                 typedef std::future<RefundMemberTransactionOutcome> RefundMemberTransactionOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::RefundMemberTransactionRequest&, RefundMemberTransactionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RefundMemberTransactionAsyncHandler;
+                typedef Outcome<Core::Error, Model::RefundOpenBankOrderResponse> RefundOpenBankOrderOutcome;
+                typedef std::future<RefundOpenBankOrderOutcome> RefundOpenBankOrderOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::RefundOpenBankOrderRequest&, RefundOpenBankOrderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RefundOpenBankOrderAsyncHandler;
                 typedef Outcome<Core::Error, Model::RefundOrderResponse> RefundOrderOutcome;
                 typedef std::future<RefundOrderOutcome> RefundOrderOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::RefundOrderRequest&, RefundOrderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RefundOrderAsyncHandler;
@@ -681,9 +992,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UnBindAcctResponse> UnBindAcctOutcome;
                 typedef std::future<UnBindAcctOutcome> UnBindAcctOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::UnBindAcctRequest&, UnBindAcctOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UnBindAcctAsyncHandler;
+                typedef Outcome<Core::Error, Model::UnbindOpenBankExternalSubMerchantBankAccountResponse> UnbindOpenBankExternalSubMerchantBankAccountOutcome;
+                typedef std::future<UnbindOpenBankExternalSubMerchantBankAccountOutcome> UnbindOpenBankExternalSubMerchantBankAccountOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::UnbindOpenBankExternalSubMerchantBankAccountRequest&, UnbindOpenBankExternalSubMerchantBankAccountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UnbindOpenBankExternalSubMerchantBankAccountAsyncHandler;
                 typedef Outcome<Core::Error, Model::UnbindRelateAcctResponse> UnbindRelateAcctOutcome;
                 typedef std::future<UnbindRelateAcctOutcome> UnbindRelateAcctOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::UnbindRelateAcctRequest&, UnbindRelateAcctOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UnbindRelateAcctAsyncHandler;
+                typedef Outcome<Core::Error, Model::UnifiedCloudOrderResponse> UnifiedCloudOrderOutcome;
+                typedef std::future<UnifiedCloudOrderOutcome> UnifiedCloudOrderOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::UnifiedCloudOrderRequest&, UnifiedCloudOrderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UnifiedCloudOrderAsyncHandler;
                 typedef Outcome<Core::Error, Model::UnifiedOrderResponse> UnifiedOrderOutcome;
                 typedef std::future<UnifiedOrderOutcome> UnifiedOrderOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::UnifiedOrderRequest&, UnifiedOrderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UnifiedOrderAsyncHandler;
@@ -696,6 +1013,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UploadFileResponse> UploadFileOutcome;
                 typedef std::future<UploadFileOutcome> UploadFileOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::UploadFileRequest&, UploadFileOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UploadFileAsyncHandler;
+                typedef Outcome<Core::Error, Model::UploadOpenBankSubMerchantCredentialResponse> UploadOpenBankSubMerchantCredentialOutcome;
+                typedef std::future<UploadOpenBankSubMerchantCredentialOutcome> UploadOpenBankSubMerchantCredentialOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::UploadOpenBankSubMerchantCredentialRequest&, UploadOpenBankSubMerchantCredentialOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UploadOpenBankSubMerchantCredentialAsyncHandler;
                 typedef Outcome<Core::Error, Model::UploadOrgFileResponse> UploadOrgFileOutcome;
                 typedef std::future<UploadOrgFileOutcome> UploadOrgFileOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::UploadOrgFileRequest&, UploadOrgFileOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UploadOrgFileAsyncHandler;
@@ -757,6 +1077,33 @@ namespace TencentCloud
                 ApplyApplicationMaterialOutcomeCallable ApplyApplicationMaterialCallable(const Model::ApplyApplicationMaterialRequest& request);
 
                 /**
+                 *灵云V2-付款
+                 * @param req ApplyFlexPaymentRequest
+                 * @return ApplyFlexPaymentOutcome
+                 */
+                ApplyFlexPaymentOutcome ApplyFlexPayment(const Model::ApplyFlexPaymentRequest &request);
+                void ApplyFlexPaymentAsync(const Model::ApplyFlexPaymentRequest& request, const ApplyFlexPaymentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ApplyFlexPaymentOutcomeCallable ApplyFlexPaymentCallable(const Model::ApplyFlexPaymentRequest& request);
+
+                /**
+                 *灵云V2-结算
+                 * @param req ApplyFlexSettlementRequest
+                 * @return ApplyFlexSettlementOutcome
+                 */
+                ApplyFlexSettlementOutcome ApplyFlexSettlement(const Model::ApplyFlexSettlementRequest &request);
+                void ApplyFlexSettlementAsync(const Model::ApplyFlexSettlementRequest& request, const ApplyFlexSettlementAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ApplyFlexSettlementOutcomeCallable ApplyFlexSettlementCallable(const Model::ApplyFlexSettlementRequest& request);
+
+                /**
+                 *云企付-申请单笔交易回单
+                 * @param req ApplyOpenBankOrderDetailReceiptRequest
+                 * @return ApplyOpenBankOrderDetailReceiptOutcome
+                 */
+                ApplyOpenBankOrderDetailReceiptOutcome ApplyOpenBankOrderDetailReceipt(const Model::ApplyOpenBankOrderDetailReceiptRequest &request);
+                void ApplyOpenBankOrderDetailReceiptAsync(const Model::ApplyOpenBankOrderDetailReceiptRequest& request, const ApplyOpenBankOrderDetailReceiptAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ApplyOpenBankOrderDetailReceiptOutcomeCallable ApplyOpenBankOrderDetailReceiptCallable(const Model::ApplyOpenBankOrderDetailReceiptRequest& request);
+
+                /**
                  *跨境-汇出指令申请。通过该接口可将对接方账户中的人民币余额汇兑成外币，再汇出至指定银行账户。
                  * @param req ApplyOutwardOrderRequest
                  * @return ApplyOutwardOrderOutcome
@@ -782,6 +1129,15 @@ namespace TencentCloud
                 ApplyReWithdrawalOutcome ApplyReWithdrawal(const Model::ApplyReWithdrawalRequest &request);
                 void ApplyReWithdrawalAsync(const Model::ApplyReWithdrawalRequest& request, const ApplyReWithdrawalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ApplyReWithdrawalOutcomeCallable ApplyReWithdrawalCallable(const Model::ApplyReWithdrawalRequest& request);
+
+                /**
+                 *聚鑫-申请对账文件
+                 * @param req ApplyReconciliationFileRequest
+                 * @return ApplyReconciliationFileOutcome
+                 */
+                ApplyReconciliationFileOutcome ApplyReconciliationFile(const Model::ApplyReconciliationFileRequest &request);
+                void ApplyReconciliationFileAsync(const Model::ApplyReconciliationFileRequest& request, const ApplyReconciliationFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ApplyReconciliationFileOutcomeCallable ApplyReconciliationFileCallable(const Model::ApplyReconciliationFileRequest& request);
 
                 /**
                  *跨境-提交贸易材料。通过提交贸易材料接口可为对接方累计贸易额度，在额度范围内可发起汇兑汇出交易。
@@ -818,6 +1174,15 @@ namespace TencentCloud
                 BindAcctOutcome BindAcct(const Model::BindAcctRequest &request);
                 void BindAcctAsync(const Model::BindAcctRequest& request, const BindAcctAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 BindAcctOutcomeCallable BindAcctCallable(const Model::BindAcctRequest& request);
+
+                /**
+                 *云企付-子商户银行卡绑定
+                 * @param req BindOpenBankExternalSubMerchantBankAccountRequest
+                 * @return BindOpenBankExternalSubMerchantBankAccountOutcome
+                 */
+                BindOpenBankExternalSubMerchantBankAccountOutcome BindOpenBankExternalSubMerchantBankAccount(const Model::BindOpenBankExternalSubMerchantBankAccountRequest &request);
+                void BindOpenBankExternalSubMerchantBankAccountAsync(const Model::BindOpenBankExternalSubMerchantBankAccountRequest& request, const BindOpenBankExternalSubMerchantBankAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                BindOpenBankExternalSubMerchantBankAccountOutcomeCallable BindOpenBankExternalSubMerchantBankAccountCallable(const Model::BindOpenBankExternalSubMerchantBankAccountRequest& request);
 
                 /**
                  *会员绑定提现账户-回填银联鉴权短信码。用于会员填写动态验证码后，发往银行进行验证，验证成功则完成绑定。
@@ -870,6 +1235,24 @@ namespace TencentCloud
                 CheckAmountOutcome CheckAmount(const Model::CheckAmountRequest &request);
                 void CheckAmountAsync(const Model::CheckAmountRequest& request, const CheckAmountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CheckAmountOutcomeCallable CheckAmountCallable(const Model::CheckAmountRequest& request);
+
+                /**
+                 *通过此接口关闭此前已创建的订单。关闭后，用户将无法继续付款，仅能关闭创建后未支付的订单。
+                 * @param req CloseCloudOrderRequest
+                 * @return CloseCloudOrderOutcome
+                 */
+                CloseCloudOrderOutcome CloseCloudOrder(const Model::CloseCloudOrderRequest &request);
+                void CloseCloudOrderAsync(const Model::CloseCloudOrderRequest& request, const CloseCloudOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CloseCloudOrderOutcomeCallable CloseCloudOrderCallable(const Model::CloseCloudOrderRequest& request);
+
+                /**
+                 *云企付-关闭订单
+                 * @param req CloseOpenBankPaymentOrderRequest
+                 * @return CloseOpenBankPaymentOrderOutcome
+                 */
+                CloseOpenBankPaymentOrderOutcome CloseOpenBankPaymentOrder(const Model::CloseOpenBankPaymentOrderRequest &request);
+                void CloseOpenBankPaymentOrderAsync(const Model::CloseOpenBankPaymentOrderRequest& request, const CloseOpenBankPaymentOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CloseOpenBankPaymentOrderOutcomeCallable CloseOpenBankPaymentOrderCallable(const Model::CloseOpenBankPaymentOrderRequest& request);
 
                 /**
                  *通过此接口关闭此前已创建的订单，关闭后，用户将无法继续付款。仅能关闭创建后未支付的订单
@@ -935,6 +1318,15 @@ namespace TencentCloud
                 CreateBatchPaymentOutcomeCallable CreateBatchPaymentCallable(const Model::CreateBatchPaymentRequest& request);
 
                 /**
+                 *创建子商户
+                 * @param req CreateCloudSubMerchantRequest
+                 * @return CreateCloudSubMerchantOutcome
+                 */
+                CreateCloudSubMerchantOutcome CreateCloudSubMerchant(const Model::CreateCloudSubMerchantRequest &request);
+                void CreateCloudSubMerchantAsync(const Model::CreateCloudSubMerchantRequest& request, const CreateCloudSubMerchantAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateCloudSubMerchantOutcomeCallable CreateCloudSubMerchantCallable(const Model::CreateCloudSubMerchantRequest& request);
+
+                /**
                  *会员子账户开立。会员在银行注册，并开立会员子账户，交易网会员代码即会员在平台端系统的会员编号。
 平台需保存银行返回的子账户账号，后续交易接口都会用到。会员属性字段为预留扩展字段，当前必须送默认值。
                  * @param req CreateCustAcctIdRequest
@@ -952,6 +1344,15 @@ namespace TencentCloud
                 CreateExternalAnchorOutcome CreateExternalAnchor(const Model::CreateExternalAnchorRequest &request);
                 void CreateExternalAnchorAsync(const Model::CreateExternalAnchorRequest& request, const CreateExternalAnchorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateExternalAnchorOutcomeCallable CreateExternalAnchorCallable(const Model::CreateExternalAnchorRequest& request);
+
+                /**
+                 *灵云V2-收款用户开立
+                 * @param req CreateFlexPayeeRequest
+                 * @return CreateFlexPayeeOutcome
+                 */
+                CreateFlexPayeeOutcome CreateFlexPayee(const Model::CreateFlexPayeeRequest &request);
+                void CreateFlexPayeeAsync(const Model::CreateFlexPayeeRequest& request, const CreateFlexPayeeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateFlexPayeeOutcomeCallable CreateFlexPayeeCallable(const Model::CreateFlexPayeeRequest& request);
 
                 /**
                  *智慧零售-发票开具
@@ -981,6 +1382,78 @@ namespace TencentCloud
                 CreateMerchantOutcomeCallable CreateMerchantCallable(const Model::CreateMerchantRequest& request);
 
                 /**
+                 *云企付-子商户进件V2
+                 * @param req CreateOpenBankAggregatedSubMerchantRegistrationRequest
+                 * @return CreateOpenBankAggregatedSubMerchantRegistrationOutcome
+                 */
+                CreateOpenBankAggregatedSubMerchantRegistrationOutcome CreateOpenBankAggregatedSubMerchantRegistration(const Model::CreateOpenBankAggregatedSubMerchantRegistrationRequest &request);
+                void CreateOpenBankAggregatedSubMerchantRegistrationAsync(const Model::CreateOpenBankAggregatedSubMerchantRegistrationRequest& request, const CreateOpenBankAggregatedSubMerchantRegistrationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateOpenBankAggregatedSubMerchantRegistrationOutcomeCallable CreateOpenBankAggregatedSubMerchantRegistrationCallable(const Model::CreateOpenBankAggregatedSubMerchantRegistrationRequest& request);
+
+                /**
+                 *第三方子商户电子记账本创建接口
+                 * @param req CreateOpenBankExternalSubMerchantAccountBookRequest
+                 * @return CreateOpenBankExternalSubMerchantAccountBookOutcome
+                 */
+                CreateOpenBankExternalSubMerchantAccountBookOutcome CreateOpenBankExternalSubMerchantAccountBook(const Model::CreateOpenBankExternalSubMerchantAccountBookRequest &request);
+                void CreateOpenBankExternalSubMerchantAccountBookAsync(const Model::CreateOpenBankExternalSubMerchantAccountBookRequest& request, const CreateOpenBankExternalSubMerchantAccountBookAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateOpenBankExternalSubMerchantAccountBookOutcomeCallable CreateOpenBankExternalSubMerchantAccountBookCallable(const Model::CreateOpenBankExternalSubMerchantAccountBookRequest& request);
+
+                /**
+                 *云企付-子商户进件
+                 * @param req CreateOpenBankExternalSubMerchantRegistrationRequest
+                 * @return CreateOpenBankExternalSubMerchantRegistrationOutcome
+                 */
+                CreateOpenBankExternalSubMerchantRegistrationOutcome CreateOpenBankExternalSubMerchantRegistration(const Model::CreateOpenBankExternalSubMerchantRegistrationRequest &request);
+                void CreateOpenBankExternalSubMerchantRegistrationAsync(const Model::CreateOpenBankExternalSubMerchantRegistrationRequest& request, const CreateOpenBankExternalSubMerchantRegistrationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateOpenBankExternalSubMerchantRegistrationOutcomeCallable CreateOpenBankExternalSubMerchantRegistrationCallable(const Model::CreateOpenBankExternalSubMerchantRegistrationRequest& request);
+
+                /**
+                 *云企付-创建商户
+                 * @param req CreateOpenBankMerchantRequest
+                 * @return CreateOpenBankMerchantOutcome
+                 */
+                CreateOpenBankMerchantOutcome CreateOpenBankMerchant(const Model::CreateOpenBankMerchantRequest &request);
+                void CreateOpenBankMerchantAsync(const Model::CreateOpenBankMerchantRequest& request, const CreateOpenBankMerchantAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateOpenBankMerchantOutcomeCallable CreateOpenBankMerchantCallable(const Model::CreateOpenBankMerchantRequest& request);
+
+                /**
+                 *云企付-创建支付订单
+                 * @param req CreateOpenBankPaymentOrderRequest
+                 * @return CreateOpenBankPaymentOrderOutcome
+                 */
+                CreateOpenBankPaymentOrderOutcome CreateOpenBankPaymentOrder(const Model::CreateOpenBankPaymentOrderRequest &request);
+                void CreateOpenBankPaymentOrderAsync(const Model::CreateOpenBankPaymentOrderRequest& request, const CreateOpenBankPaymentOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateOpenBankPaymentOrderOutcomeCallable CreateOpenBankPaymentOrderCallable(const Model::CreateOpenBankPaymentOrderRequest& request);
+
+                /**
+                 *云企付-创建充值订单
+                 * @param req CreateOpenBankRechargeOrderRequest
+                 * @return CreateOpenBankRechargeOrderOutcome
+                 */
+                CreateOpenBankRechargeOrderOutcome CreateOpenBankRechargeOrder(const Model::CreateOpenBankRechargeOrderRequest &request);
+                void CreateOpenBankRechargeOrderAsync(const Model::CreateOpenBankRechargeOrderRequest& request, const CreateOpenBankRechargeOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateOpenBankRechargeOrderOutcomeCallable CreateOpenBankRechargeOrderCallable(const Model::CreateOpenBankRechargeOrderRequest& request);
+
+                /**
+                 *云企付-子商户费率配置
+                 * @param req CreateOpenBankSubMerchantRateConfigureRequest
+                 * @return CreateOpenBankSubMerchantRateConfigureOutcome
+                 */
+                CreateOpenBankSubMerchantRateConfigureOutcome CreateOpenBankSubMerchantRateConfigure(const Model::CreateOpenBankSubMerchantRateConfigureRequest &request);
+                void CreateOpenBankSubMerchantRateConfigureAsync(const Model::CreateOpenBankSubMerchantRateConfigureRequest& request, const CreateOpenBankSubMerchantRateConfigureAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateOpenBankSubMerchantRateConfigureOutcomeCallable CreateOpenBankSubMerchantRateConfigureCallable(const Model::CreateOpenBankSubMerchantRateConfigureRequest& request);
+
+                /**
+                 *云企付-聚合下单
+                 * @param req CreateOpenBankUnifiedOrderRequest
+                 * @return CreateOpenBankUnifiedOrderOutcome
+                 */
+                CreateOpenBankUnifiedOrderOutcome CreateOpenBankUnifiedOrder(const Model::CreateOpenBankUnifiedOrderRequest &request);
+                void CreateOpenBankUnifiedOrderAsync(const Model::CreateOpenBankUnifiedOrderRequest& request, const CreateOpenBankUnifiedOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateOpenBankUnifiedOrderOutcomeCallable CreateOpenBankUnifiedOrderCallable(const Model::CreateOpenBankUnifiedOrderRequest& request);
+
+                /**
                  *云鉴-消费订单发起的接口
                  * @param req CreateOrderRequest
                  * @return CreateOrderOutcome
@@ -997,6 +1470,33 @@ namespace TencentCloud
                 CreatePayMerchantOutcome CreatePayMerchant(const Model::CreatePayMerchantRequest &request);
                 void CreatePayMerchantAsync(const Model::CreatePayMerchantRequest& request, const CreatePayMerchantAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreatePayMerchantOutcomeCallable CreatePayMerchantCallable(const Model::CreatePayMerchantRequest& request);
+
+                /**
+                 *务工卡-核身预下单
+                 * @param req CreatePayRollPreOrderRequest
+                 * @return CreatePayRollPreOrderOutcome
+                 */
+                CreatePayRollPreOrderOutcome CreatePayRollPreOrder(const Model::CreatePayRollPreOrderRequest &request);
+                void CreatePayRollPreOrderAsync(const Model::CreatePayRollPreOrderRequest& request, const CreatePayRollPreOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreatePayRollPreOrderOutcomeCallable CreatePayRollPreOrderCallable(const Model::CreatePayRollPreOrderRequest& request);
+
+                /**
+                 *务工卡-核身预下单带授权
+                 * @param req CreatePayRollPreOrderWithAuthRequest
+                 * @return CreatePayRollPreOrderWithAuthOutcome
+                 */
+                CreatePayRollPreOrderWithAuthOutcome CreatePayRollPreOrderWithAuth(const Model::CreatePayRollPreOrderWithAuthRequest &request);
+                void CreatePayRollPreOrderWithAuthAsync(const Model::CreatePayRollPreOrderWithAuthRequest& request, const CreatePayRollPreOrderWithAuthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreatePayRollPreOrderWithAuthOutcomeCallable CreatePayRollPreOrderWithAuthCallable(const Model::CreatePayRollPreOrderWithAuthRequest& request);
+
+                /**
+                 *务工卡-生成授权令牌
+                 * @param req CreatePayRollTokenRequest
+                 * @return CreatePayRollTokenOutcome
+                 */
+                CreatePayRollTokenOutcome CreatePayRollToken(const Model::CreatePayRollTokenRequest &request);
+                void CreatePayRollTokenAsync(const Model::CreatePayRollTokenRequest& request, const CreatePayRollTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreatePayRollTokenOutcomeCallable CreatePayRollTokenCallable(const Model::CreatePayRollTokenRequest& request);
 
                 /**
                  *智慧零售-发票红冲
@@ -1143,7 +1643,7 @@ namespace TencentCloud
                 DistributeQueryOutcomeCallable DistributeQueryCallable(const Model::DistributeQueryRequest& request);
 
                 /**
-                 *云支付-T查询已添加分账接收方接口
+                 *云支付-查询已添加分账接收方接口
                  * @param req DistributeQueryReceiverRequest
                  * @return DistributeQueryReceiverOutcome
                  */
@@ -1197,6 +1697,62 @@ namespace TencentCloud
                 ExecuteMemberTransactionOutcomeCallable ExecuteMemberTransactionCallable(const Model::ExecuteMemberTransactionRequest& request);
 
                 /**
+                 *灵云V2-冻结余额
+                 * @param req FreezeFlexBalanceRequest
+                 * @return FreezeFlexBalanceOutcome
+                 */
+                FreezeFlexBalanceOutcome FreezeFlexBalance(const Model::FreezeFlexBalanceRequest &request);
+                void FreezeFlexBalanceAsync(const Model::FreezeFlexBalanceRequest& request, const FreezeFlexBalanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                FreezeFlexBalanceOutcomeCallable FreezeFlexBalanceCallable(const Model::FreezeFlexBalanceRequest& request);
+
+                /**
+                 *调用该接口返回对账单下载地址，对账单下载URL通过GET方式访问，返回zip包，解压后为csv格式文件。文件首行如下：
+订单号,订单归属日期,机构编号,订单描述,交易类型,订单状态,支付场景,原始金额,折扣金额,实际交易金额,支付渠道优惠金额,抹零金额,币种,下单时间,付款成功时间,商户编号,门店编号,付款方式编号,付款方式名称,商户手续费T1,商户扣率,是否信用卡交易,原始订单号,用户账号,外部订单号,订单备注
+                 * @param req GetBillDownloadUrlRequest
+                 * @return GetBillDownloadUrlOutcome
+                 */
+                GetBillDownloadUrlOutcome GetBillDownloadUrl(const Model::GetBillDownloadUrlRequest &request);
+                void GetBillDownloadUrlAsync(const Model::GetBillDownloadUrlRequest& request, const GetBillDownloadUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetBillDownloadUrlOutcomeCallable GetBillDownloadUrlCallable(const Model::GetBillDownloadUrlRequest& request);
+
+                /**
+                 *调用该接口返回对账单下载地址，对账单下载URL通过GET方式访问，返回zip包，解压后为csv格式文件。文件首行如下：
+商户号,订单号,支付订单号,分账订单总金额,分账详情（通过|分割每笔明细：商户号1#分账金额1|商户号2#分账金额2）,交易手续费承担方商户号,交易手续费,发起时间,分账状态,结算日期,非交易主体分账金额,商户退款订单号,商户分账单号
+                 * @param req GetDistributeBillDownloadUrlRequest
+                 * @return GetDistributeBillDownloadUrlOutcome
+                 */
+                GetDistributeBillDownloadUrlOutcome GetDistributeBillDownloadUrl(const Model::GetDistributeBillDownloadUrlRequest &request);
+                void GetDistributeBillDownloadUrlAsync(const Model::GetDistributeBillDownloadUrlRequest& request, const GetDistributeBillDownloadUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetDistributeBillDownloadUrlOutcomeCallable GetDistributeBillDownloadUrlCallable(const Model::GetDistributeBillDownloadUrlRequest& request);
+
+                /**
+                 *务工卡-查询授权关系
+                 * @param req GetPayRollAuthRequest
+                 * @return GetPayRollAuthOutcome
+                 */
+                GetPayRollAuthOutcome GetPayRollAuth(const Model::GetPayRollAuthRequest &request);
+                void GetPayRollAuthAsync(const Model::GetPayRollAuthRequest& request, const GetPayRollAuthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetPayRollAuthOutcomeCallable GetPayRollAuthCallable(const Model::GetPayRollAuthRequest& request);
+
+                /**
+                 *务工卡-查询核身记录
+                 * @param req GetPayRollAuthListRequest
+                 * @return GetPayRollAuthListOutcome
+                 */
+                GetPayRollAuthListOutcome GetPayRollAuthList(const Model::GetPayRollAuthListRequest &request);
+                void GetPayRollAuthListAsync(const Model::GetPayRollAuthListRequest& request, const GetPayRollAuthListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetPayRollAuthListOutcomeCallable GetPayRollAuthListCallable(const Model::GetPayRollAuthListRequest& request);
+
+                /**
+                 *务工卡-获取核身结果
+                 * @param req GetPayRollAuthResultRequest
+                 * @return GetPayRollAuthResultOutcome
+                 */
+                GetPayRollAuthResultOutcome GetPayRollAuthResult(const Model::GetPayRollAuthResultRequest &request);
+                void GetPayRollAuthResultAsync(const Model::GetPayRollAuthResultRequest& request, const GetPayRollAuthResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetPayRollAuthResultOutcomeCallable GetPayRollAuthResultCallable(const Model::GetPayRollAuthResultRequest& request);
+
+                /**
                  *山姆聚合支付项目-存量订单退款接口。可以通过本接口将支付款全部或部分退还给付款方，在收到用户退款请求并且验证成功之后，按照退款规则将支付款按原路退回到支付帐号。
                  * @param req MigrateOrderRefundRequest
                  * @return MigrateOrderRefundOutcome
@@ -1231,6 +1787,15 @@ namespace TencentCloud
                 ModifyBindedAccountOutcome ModifyBindedAccount(const Model::ModifyBindedAccountRequest &request);
                 void ModifyBindedAccountAsync(const Model::ModifyBindedAccountRequest& request, const ModifyBindedAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyBindedAccountOutcomeCallable ModifyBindedAccountCallable(const Model::ModifyBindedAccountRequest& request);
+
+                /**
+                 *灵云V2-收款用户账户权益状态修改
+                 * @param req ModifyFlexPayeeAccountRightStatusRequest
+                 * @return ModifyFlexPayeeAccountRightStatusOutcome
+                 */
+                ModifyFlexPayeeAccountRightStatusOutcome ModifyFlexPayeeAccountRightStatus(const Model::ModifyFlexPayeeAccountRightStatusRequest &request);
+                void ModifyFlexPayeeAccountRightStatusAsync(const Model::ModifyFlexPayeeAccountRightStatusRequest& request, const ModifyFlexPayeeAccountRightStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyFlexPayeeAccountRightStatusOutcomeCallable ModifyFlexPayeeAccountRightStatusCallable(const Model::ModifyFlexPayeeAccountRightStatusRequest& request);
 
                 /**
                  *云鉴-商户信息修改的接口
@@ -1386,6 +1951,33 @@ namespace TencentCloud
                 QueryCityCodeOutcomeCallable QueryCityCodeCallable(const Model::QueryCityCodeRequest& request);
 
                 /**
+                 *发起支付等渠道操作后，可以调用该接口查询渠道的数据。
+                 * @param req QueryCloudChannelDataRequest
+                 * @return QueryCloudChannelDataOutcome
+                 */
+                QueryCloudChannelDataOutcome QueryCloudChannelData(const Model::QueryCloudChannelDataRequest &request);
+                void QueryCloudChannelDataAsync(const Model::QueryCloudChannelDataRequest& request, const QueryCloudChannelDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryCloudChannelDataOutcomeCallable QueryCloudChannelDataCallable(const Model::QueryCloudChannelDataRequest& request);
+
+                /**
+                 *根据订单号或用户ID，查询支付订单状态。
+                 * @param req QueryCloudOrderRequest
+                 * @return QueryCloudOrderOutcome
+                 */
+                QueryCloudOrderOutcome QueryCloudOrder(const Model::QueryCloudOrderRequest &request);
+                void QueryCloudOrderAsync(const Model::QueryCloudOrderRequest& request, const QueryCloudOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryCloudOrderOutcomeCallable QueryCloudOrderCallable(const Model::QueryCloudOrderRequest& request);
+
+                /**
+                 *提交退款申请后，通过调用该接口查询退款状态。退款可能有一定延时，用微信零钱支付的退款约20分钟内到账，银行卡支付的退款约3个工作日后到账。
+                 * @param req QueryCloudRefundOrderRequest
+                 * @return QueryCloudRefundOrderOutcome
+                 */
+                QueryCloudRefundOrderOutcome QueryCloudRefundOrder(const Model::QueryCloudRefundOrderRequest &request);
+                void QueryCloudRefundOrderAsync(const Model::QueryCloudRefundOrderRequest& request, const QueryCloudRefundOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryCloudRefundOrderOutcomeCallable QueryCloudRefundOrderCallable(const Model::QueryCloudRefundOrderRequest& request);
+
+                /**
                  *查询普通转账充值明细。接口用于查询会员主动转账进资金汇总账户的明细情况。若会员使用绑定账号转入，则直接入账到会员子账户。若未使用绑定账号转入，则系统无法自动清分到对应子账户，则转入挂账子账户由平台自行清分。若是 “见证+收单充值”T0充值记录时备注Note为“见证+收单充值,订单号” 此接口可以查到T0到账的“见证+收单充值”充值记录。
                  * @param req QueryCommonTransferRechargeRequest
                  * @return QueryCommonTransferRechargeOutcome
@@ -1449,6 +2041,15 @@ namespace TencentCloud
                 QueryDownloadBillURLOutcomeCallable QueryDownloadBillURLCallable(const Model::QueryDownloadBillURLRequest& request);
 
                 /**
+                 *灵云-查询超额信息
+                 * @param req QueryExceedingInfoRequest
+                 * @return QueryExceedingInfoOutcome
+                 */
+                QueryExceedingInfoOutcome QueryExceedingInfo(const Model::QueryExceedingInfoRequest &request);
+                void QueryExceedingInfoAsync(const Model::QueryExceedingInfoRequest& request, const QueryExceedingInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryExceedingInfoOutcomeCallable QueryExceedingInfoCallable(const Model::QueryExceedingInfoRequest& request);
+
+                /**
                  *跨境-查询汇率
                  * @param req QueryExchangeRateRequest
                  * @return QueryExchangeRateOutcome
@@ -1456,6 +2057,96 @@ namespace TencentCloud
                 QueryExchangeRateOutcome QueryExchangeRate(const Model::QueryExchangeRateRequest &request);
                 void QueryExchangeRateAsync(const Model::QueryExchangeRateRequest& request, const QueryExchangeRateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 QueryExchangeRateOutcomeCallable QueryExchangeRateCallable(const Model::QueryExchangeRateRequest& request);
+
+                /**
+                 *灵云V2-查询税前金额
+                 * @param req QueryFlexAmountBeforeTaxRequest
+                 * @return QueryFlexAmountBeforeTaxOutcome
+                 */
+                QueryFlexAmountBeforeTaxOutcome QueryFlexAmountBeforeTax(const Model::QueryFlexAmountBeforeTaxRequest &request);
+                void QueryFlexAmountBeforeTaxAsync(const Model::QueryFlexAmountBeforeTaxRequest& request, const QueryFlexAmountBeforeTaxAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryFlexAmountBeforeTaxOutcomeCallable QueryFlexAmountBeforeTaxCallable(const Model::QueryFlexAmountBeforeTaxRequest& request);
+
+                /**
+                 *灵云V2-查询冻结订单列表
+                 * @param req QueryFlexFreezeOrderListRequest
+                 * @return QueryFlexFreezeOrderListOutcome
+                 */
+                QueryFlexFreezeOrderListOutcome QueryFlexFreezeOrderList(const Model::QueryFlexFreezeOrderListRequest &request);
+                void QueryFlexFreezeOrderListAsync(const Model::QueryFlexFreezeOrderListRequest& request, const QueryFlexFreezeOrderListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryFlexFreezeOrderListOutcomeCallable QueryFlexFreezeOrderListCallable(const Model::QueryFlexFreezeOrderListRequest& request);
+
+                /**
+                 *灵云V2-收款用户账户余额查询
+                 * @param req QueryFlexPayeeAccountBalanceRequest
+                 * @return QueryFlexPayeeAccountBalanceOutcome
+                 */
+                QueryFlexPayeeAccountBalanceOutcome QueryFlexPayeeAccountBalance(const Model::QueryFlexPayeeAccountBalanceRequest &request);
+                void QueryFlexPayeeAccountBalanceAsync(const Model::QueryFlexPayeeAccountBalanceRequest& request, const QueryFlexPayeeAccountBalanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryFlexPayeeAccountBalanceOutcomeCallable QueryFlexPayeeAccountBalanceCallable(const Model::QueryFlexPayeeAccountBalanceRequest& request);
+
+                /**
+                 *灵云V2-收款用户账户信息查询
+                 * @param req QueryFlexPayeeAccountInfoRequest
+                 * @return QueryFlexPayeeAccountInfoOutcome
+                 */
+                QueryFlexPayeeAccountInfoOutcome QueryFlexPayeeAccountInfo(const Model::QueryFlexPayeeAccountInfoRequest &request);
+                void QueryFlexPayeeAccountInfoAsync(const Model::QueryFlexPayeeAccountInfoRequest& request, const QueryFlexPayeeAccountInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryFlexPayeeAccountInfoOutcomeCallable QueryFlexPayeeAccountInfoCallable(const Model::QueryFlexPayeeAccountInfoRequest& request);
+
+                /**
+                 *灵云V2-收款用户账户列表查询
+                 * @param req QueryFlexPayeeAccountListRequest
+                 * @return QueryFlexPayeeAccountListOutcome
+                 */
+                QueryFlexPayeeAccountListOutcome QueryFlexPayeeAccountList(const Model::QueryFlexPayeeAccountListRequest &request);
+                void QueryFlexPayeeAccountListAsync(const Model::QueryFlexPayeeAccountListRequest& request, const QueryFlexPayeeAccountListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryFlexPayeeAccountListOutcomeCallable QueryFlexPayeeAccountListCallable(const Model::QueryFlexPayeeAccountListRequest& request);
+
+                /**
+                 *灵云V2-收款用户信息查询
+                 * @param req QueryFlexPayeeInfoRequest
+                 * @return QueryFlexPayeeInfoOutcome
+                 */
+                QueryFlexPayeeInfoOutcome QueryFlexPayeeInfo(const Model::QueryFlexPayeeInfoRequest &request);
+                void QueryFlexPayeeInfoAsync(const Model::QueryFlexPayeeInfoRequest& request, const QueryFlexPayeeInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryFlexPayeeInfoOutcomeCallable QueryFlexPayeeInfoCallable(const Model::QueryFlexPayeeInfoRequest& request);
+
+                /**
+                 *灵云V2-查询付款订单列表
+                 * @param req QueryFlexPaymentOrderListRequest
+                 * @return QueryFlexPaymentOrderListOutcome
+                 */
+                QueryFlexPaymentOrderListOutcome QueryFlexPaymentOrderList(const Model::QueryFlexPaymentOrderListRequest &request);
+                void QueryFlexPaymentOrderListAsync(const Model::QueryFlexPaymentOrderListRequest& request, const QueryFlexPaymentOrderListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryFlexPaymentOrderListOutcomeCallable QueryFlexPaymentOrderListCallable(const Model::QueryFlexPaymentOrderListRequest& request);
+
+                /**
+                 *灵云V2-查询付款订单状态
+                 * @param req QueryFlexPaymentOrderStatusRequest
+                 * @return QueryFlexPaymentOrderStatusOutcome
+                 */
+                QueryFlexPaymentOrderStatusOutcome QueryFlexPaymentOrderStatus(const Model::QueryFlexPaymentOrderStatusRequest &request);
+                void QueryFlexPaymentOrderStatusAsync(const Model::QueryFlexPaymentOrderStatusRequest& request, const QueryFlexPaymentOrderStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryFlexPaymentOrderStatusOutcomeCallable QueryFlexPaymentOrderStatusCallable(const Model::QueryFlexPaymentOrderStatusRequest& request);
+
+                /**
+                 *灵云V2-查询结算订单列表
+                 * @param req QueryFlexSettlementOrderListRequest
+                 * @return QueryFlexSettlementOrderListOutcome
+                 */
+                QueryFlexSettlementOrderListOutcome QueryFlexSettlementOrderList(const Model::QueryFlexSettlementOrderListRequest &request);
+                void QueryFlexSettlementOrderListAsync(const Model::QueryFlexSettlementOrderListRequest& request, const QueryFlexSettlementOrderListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryFlexSettlementOrderListOutcomeCallable QueryFlexSettlementOrderListCallable(const Model::QueryFlexSettlementOrderListRequest& request);
+
+                /**
+                 *聚鑫-查询会员资金交易信息列表
+                 * @param req QueryFundsTransactionDetailsRequest
+                 * @return QueryFundsTransactionDetailsOutcome
+                 */
+                QueryFundsTransactionDetailsOutcome QueryFundsTransactionDetails(const Model::QueryFundsTransactionDetailsRequest &request);
+                void QueryFundsTransactionDetailsAsync(const Model::QueryFundsTransactionDetailsRequest& request, const QueryFundsTransactionDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryFundsTransactionDetailsOutcomeCallable QueryFundsTransactionDetailsCallable(const Model::QueryFundsTransactionDetailsRequest& request);
 
                 /**
                  *智慧零售-发票查询
@@ -1502,6 +2193,15 @@ namespace TencentCloud
                 QueryMemberTransactionOutcome QueryMemberTransaction(const Model::QueryMemberTransactionRequest &request);
                 void QueryMemberTransactionAsync(const Model::QueryMemberTransactionRequest& request, const QueryMemberTransactionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 QueryMemberTransactionOutcomeCallable QueryMemberTransactionCallable(const Model::QueryMemberTransactionRequest& request);
+
+                /**
+                 *聚鑫-查询会员间交易信息列表
+                 * @param req QueryMemberTransactionDetailsRequest
+                 * @return QueryMemberTransactionDetailsOutcome
+                 */
+                QueryMemberTransactionDetailsOutcome QueryMemberTransactionDetails(const Model::QueryMemberTransactionDetailsRequest &request);
+                void QueryMemberTransactionDetailsAsync(const Model::QueryMemberTransactionDetailsRequest& request, const QueryMemberTransactionDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryMemberTransactionDetailsOutcomeCallable QueryMemberTransactionDetailsCallable(const Model::QueryMemberTransactionDetailsRequest& request);
 
                 /**
                  *云鉴-商户信息查询接口
@@ -1558,6 +2258,150 @@ namespace TencentCloud
                 QueryMerchantPayWayListOutcomeCallable QueryMerchantPayWayListCallable(const Model::QueryMerchantPayWayListRequest& request);
 
                 /**
+                 *云企付-子商户银行卡余额查询
+                 * @param req QueryOpenBankBankAccountBalanceRequest
+                 * @return QueryOpenBankBankAccountBalanceOutcome
+                 */
+                QueryOpenBankBankAccountBalanceOutcome QueryOpenBankBankAccountBalance(const Model::QueryOpenBankBankAccountBalanceRequest &request);
+                void QueryOpenBankBankAccountBalanceAsync(const Model::QueryOpenBankBankAccountBalanceRequest& request, const QueryOpenBankBankAccountBalanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryOpenBankBankAccountBalanceOutcomeCallable QueryOpenBankBankAccountBalanceCallable(const Model::QueryOpenBankBankAccountBalanceRequest& request);
+
+                /**
+                 *云企付-查询联行号
+                 * @param req QueryOpenBankBankBranchListRequest
+                 * @return QueryOpenBankBankBranchListOutcome
+                 */
+                QueryOpenBankBankBranchListOutcome QueryOpenBankBankBranchList(const Model::QueryOpenBankBankBranchListRequest &request);
+                void QueryOpenBankBankBranchListAsync(const Model::QueryOpenBankBankBranchListRequest& request, const QueryOpenBankBankBranchListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryOpenBankBankBranchListOutcomeCallable QueryOpenBankBankBranchListCallable(const Model::QueryOpenBankBankBranchListRequest& request);
+
+                /**
+                 *云企付-分页查询对账单数据
+                 * @param req QueryOpenBankBillDataPageRequest
+                 * @return QueryOpenBankBillDataPageOutcome
+                 */
+                QueryOpenBankBillDataPageOutcome QueryOpenBankBillDataPage(const Model::QueryOpenBankBillDataPageRequest &request);
+                void QueryOpenBankBillDataPageAsync(const Model::QueryOpenBankBillDataPageRequest& request, const QueryOpenBankBillDataPageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryOpenBankBillDataPageOutcomeCallable QueryOpenBankBillDataPageCallable(const Model::QueryOpenBankBillDataPageRequest& request);
+
+                /**
+                 *云企付-子商户银行卡绑定结果查询
+                 * @param req QueryOpenBankBindExternalSubMerchantBankAccountRequest
+                 * @return QueryOpenBankBindExternalSubMerchantBankAccountOutcome
+                 */
+                QueryOpenBankBindExternalSubMerchantBankAccountOutcome QueryOpenBankBindExternalSubMerchantBankAccount(const Model::QueryOpenBankBindExternalSubMerchantBankAccountRequest &request);
+                void QueryOpenBankBindExternalSubMerchantBankAccountAsync(const Model::QueryOpenBankBindExternalSubMerchantBankAccountRequest& request, const QueryOpenBankBindExternalSubMerchantBankAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryOpenBankBindExternalSubMerchantBankAccountOutcomeCallable QueryOpenBankBindExternalSubMerchantBankAccountCallable(const Model::QueryOpenBankBindExternalSubMerchantBankAccountRequest& request);
+
+                /**
+                 *云企付-按日期批量查询回单下载地址
+                 * @param req QueryOpenBankDailyReceiptDownloadUrlRequest
+                 * @return QueryOpenBankDailyReceiptDownloadUrlOutcome
+                 */
+                QueryOpenBankDailyReceiptDownloadUrlOutcome QueryOpenBankDailyReceiptDownloadUrl(const Model::QueryOpenBankDailyReceiptDownloadUrlRequest &request);
+                void QueryOpenBankDailyReceiptDownloadUrlAsync(const Model::QueryOpenBankDailyReceiptDownloadUrlRequest& request, const QueryOpenBankDailyReceiptDownloadUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryOpenBankDailyReceiptDownloadUrlOutcomeCallable QueryOpenBankDailyReceiptDownloadUrlCallable(const Model::QueryOpenBankDailyReceiptDownloadUrlRequest& request);
+
+                /**
+                 *云企付-查询对账单下载地址
+                 * @param req QueryOpenBankDownLoadUrlRequest
+                 * @return QueryOpenBankDownLoadUrlOutcome
+                 */
+                QueryOpenBankDownLoadUrlOutcome QueryOpenBankDownLoadUrl(const Model::QueryOpenBankDownLoadUrlRequest &request);
+                void QueryOpenBankDownLoadUrlAsync(const Model::QueryOpenBankDownLoadUrlRequest& request, const QueryOpenBankDownLoadUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryOpenBankDownLoadUrlOutcomeCallable QueryOpenBankDownLoadUrlCallable(const Model::QueryOpenBankDownLoadUrlRequest& request);
+
+                /**
+                 *第三方子商户电子记账本余额查询接口
+                 * @param req QueryOpenBankExternalSubAccountBookBalanceRequest
+                 * @return QueryOpenBankExternalSubAccountBookBalanceOutcome
+                 */
+                QueryOpenBankExternalSubAccountBookBalanceOutcome QueryOpenBankExternalSubAccountBookBalance(const Model::QueryOpenBankExternalSubAccountBookBalanceRequest &request);
+                void QueryOpenBankExternalSubAccountBookBalanceAsync(const Model::QueryOpenBankExternalSubAccountBookBalanceRequest& request, const QueryOpenBankExternalSubAccountBookBalanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryOpenBankExternalSubAccountBookBalanceOutcomeCallable QueryOpenBankExternalSubAccountBookBalanceCallable(const Model::QueryOpenBankExternalSubAccountBookBalanceRequest& request);
+
+                /**
+                 *云企付-子商户银行卡列表查询
+                 * @param req QueryOpenBankExternalSubMerchantBankAccountRequest
+                 * @return QueryOpenBankExternalSubMerchantBankAccountOutcome
+                 */
+                QueryOpenBankExternalSubMerchantBankAccountOutcome QueryOpenBankExternalSubMerchantBankAccount(const Model::QueryOpenBankExternalSubMerchantBankAccountRequest &request);
+                void QueryOpenBankExternalSubMerchantBankAccountAsync(const Model::QueryOpenBankExternalSubMerchantBankAccountRequest& request, const QueryOpenBankExternalSubMerchantBankAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryOpenBankExternalSubMerchantBankAccountOutcomeCallable QueryOpenBankExternalSubMerchantBankAccountCallable(const Model::QueryOpenBankExternalSubMerchantBankAccountRequest& request);
+
+                /**
+                 *云企付-子商户进件结果查询
+                 * @param req QueryOpenBankExternalSubMerchantRegistrationRequest
+                 * @return QueryOpenBankExternalSubMerchantRegistrationOutcome
+                 */
+                QueryOpenBankExternalSubMerchantRegistrationOutcome QueryOpenBankExternalSubMerchantRegistration(const Model::QueryOpenBankExternalSubMerchantRegistrationRequest &request);
+                void QueryOpenBankExternalSubMerchantRegistrationAsync(const Model::QueryOpenBankExternalSubMerchantRegistrationRequest& request, const QueryOpenBankExternalSubMerchantRegistrationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryOpenBankExternalSubMerchantRegistrationOutcomeCallable QueryOpenBankExternalSubMerchantRegistrationCallable(const Model::QueryOpenBankExternalSubMerchantRegistrationRequest& request);
+
+                /**
+                 *云企付-单笔交易回单申请结果查询
+                 * @param req QueryOpenBankOrderDetailReceiptInfoRequest
+                 * @return QueryOpenBankOrderDetailReceiptInfoOutcome
+                 */
+                QueryOpenBankOrderDetailReceiptInfoOutcome QueryOpenBankOrderDetailReceiptInfo(const Model::QueryOpenBankOrderDetailReceiptInfoRequest &request);
+                void QueryOpenBankOrderDetailReceiptInfoAsync(const Model::QueryOpenBankOrderDetailReceiptInfoRequest& request, const QueryOpenBankOrderDetailReceiptInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryOpenBankOrderDetailReceiptInfoOutcomeCallable QueryOpenBankOrderDetailReceiptInfoCallable(const Model::QueryOpenBankOrderDetailReceiptInfoRequest& request);
+
+                /**
+                 *云企付-查询订单支付结果
+                 * @param req QueryOpenBankPaymentOrderRequest
+                 * @return QueryOpenBankPaymentOrderOutcome
+                 */
+                QueryOpenBankPaymentOrderOutcome QueryOpenBankPaymentOrder(const Model::QueryOpenBankPaymentOrderRequest &request);
+                void QueryOpenBankPaymentOrderAsync(const Model::QueryOpenBankPaymentOrderRequest& request, const QueryOpenBankPaymentOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryOpenBankPaymentOrderOutcomeCallable QueryOpenBankPaymentOrderCallable(const Model::QueryOpenBankPaymentOrderRequest& request);
+
+                /**
+                 *云企付-退款结果查询
+                 * @param req QueryOpenBankRefundOrderRequest
+                 * @return QueryOpenBankRefundOrderOutcome
+                 */
+                QueryOpenBankRefundOrderOutcome QueryOpenBankRefundOrder(const Model::QueryOpenBankRefundOrderRequest &request);
+                void QueryOpenBankRefundOrderAsync(const Model::QueryOpenBankRefundOrderRequest& request, const QueryOpenBankRefundOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryOpenBankRefundOrderOutcomeCallable QueryOpenBankRefundOrderCallable(const Model::QueryOpenBankRefundOrderRequest& request);
+
+                /**
+                 *云企付-子商户资质文件查询
+                 * @param req QueryOpenBankSubMerchantCredentialRequest
+                 * @return QueryOpenBankSubMerchantCredentialOutcome
+                 */
+                QueryOpenBankSubMerchantCredentialOutcome QueryOpenBankSubMerchantCredential(const Model::QueryOpenBankSubMerchantCredentialRequest &request);
+                void QueryOpenBankSubMerchantCredentialAsync(const Model::QueryOpenBankSubMerchantCredentialRequest& request, const QueryOpenBankSubMerchantCredentialAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryOpenBankSubMerchantCredentialOutcomeCallable QueryOpenBankSubMerchantCredentialCallable(const Model::QueryOpenBankSubMerchantCredentialRequest& request);
+
+                /**
+                 *云企付-子商户费率配置结果查询
+                 * @param req QueryOpenBankSubMerchantRateConfigureRequest
+                 * @return QueryOpenBankSubMerchantRateConfigureOutcome
+                 */
+                QueryOpenBankSubMerchantRateConfigureOutcome QueryOpenBankSubMerchantRateConfigure(const Model::QueryOpenBankSubMerchantRateConfigureRequest &request);
+                void QueryOpenBankSubMerchantRateConfigureAsync(const Model::QueryOpenBankSubMerchantRateConfigureRequest& request, const QueryOpenBankSubMerchantRateConfigureAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryOpenBankSubMerchantRateConfigureOutcomeCallable QueryOpenBankSubMerchantRateConfigureCallable(const Model::QueryOpenBankSubMerchantRateConfigureRequest& request);
+
+                /**
+                 *云企付-查询支持银行列表
+                 * @param req QueryOpenBankSupportBankListRequest
+                 * @return QueryOpenBankSupportBankListOutcome
+                 */
+                QueryOpenBankSupportBankListOutcome QueryOpenBankSupportBankList(const Model::QueryOpenBankSupportBankListRequest &request);
+                void QueryOpenBankSupportBankListAsync(const Model::QueryOpenBankSupportBankListRequest& request, const QueryOpenBankSupportBankListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryOpenBankSupportBankListOutcomeCallable QueryOpenBankSupportBankListCallable(const Model::QueryOpenBankSupportBankListRequest& request);
+
+                /**
+                 *云企付-子商户银行卡解绑结果查询
+                 * @param req QueryOpenBankUnbindExternalSubMerchantBankAccountRequest
+                 * @return QueryOpenBankUnbindExternalSubMerchantBankAccountOutcome
+                 */
+                QueryOpenBankUnbindExternalSubMerchantBankAccountOutcome QueryOpenBankUnbindExternalSubMerchantBankAccount(const Model::QueryOpenBankUnbindExternalSubMerchantBankAccountRequest &request);
+                void QueryOpenBankUnbindExternalSubMerchantBankAccountAsync(const Model::QueryOpenBankUnbindExternalSubMerchantBankAccountRequest& request, const QueryOpenBankUnbindExternalSubMerchantBankAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryOpenBankUnbindExternalSubMerchantBankAccountOutcomeCallable QueryOpenBankUnbindExternalSubMerchantBankAccountCallable(const Model::QueryOpenBankUnbindExternalSubMerchantBankAccountRequest& request);
+
+                /**
                  *根据订单号，或者用户Id，查询支付订单状态 
                  * @param req QueryOrderRequest
                  * @return QueryOrderOutcome
@@ -1601,6 +2445,15 @@ namespace TencentCloud
                 QueryReconciliationDocumentOutcome QueryReconciliationDocument(const Model::QueryReconciliationDocumentRequest &request);
                 void QueryReconciliationDocumentAsync(const Model::QueryReconciliationDocumentRequest& request, const QueryReconciliationDocumentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 QueryReconciliationDocumentOutcomeCallable QueryReconciliationDocumentCallable(const Model::QueryReconciliationDocumentRequest& request);
+
+                /**
+                 *聚鑫-查询对账文件申请结果
+                 * @param req QueryReconciliationFileApplyInfoRequest
+                 * @return QueryReconciliationFileApplyInfoOutcome
+                 */
+                QueryReconciliationFileApplyInfoOutcome QueryReconciliationFileApplyInfo(const Model::QueryReconciliationFileApplyInfoRequest &request);
+                void QueryReconciliationFileApplyInfoAsync(const Model::QueryReconciliationFileApplyInfoRequest& request, const QueryReconciliationFileApplyInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryReconciliationFileApplyInfoOutcomeCallable QueryReconciliationFileApplyInfoCallable(const Model::QueryReconciliationFileApplyInfoRequest& request);
 
                 /**
                  *提交退款申请后，通过调用该接口查询退款状态。退款可能有一定延时，用微信零钱支付的退款约20分钟内到账，银行卡支付的退款约3个工作日后到账。
@@ -1720,6 +2573,15 @@ namespace TencentCloud
                 RefundOutcomeCallable RefundCallable(const Model::RefundRequest& request);
 
                 /**
+                 *如交易订单需退款，可以通过本接口将支付款全部或部分退还给付款方，聚鑫将在收到退款请求并且验证成功之后，按照退款规则将支付款按原路退回到支付帐号。最长支持1年的订单退款。在订单包含多个子订单的情况下，如果使用本接口传入OutTradeNo或TransactionId退款，则只支持全单退款；如果需要部分退款，请通过传入子订单的方式来指定部分金额退款。 
+                 * @param req RefundCloudOrderRequest
+                 * @return RefundCloudOrderOutcome
+                 */
+                RefundCloudOrderOutcome RefundCloudOrder(const Model::RefundCloudOrderRequest &request);
+                void RefundCloudOrderAsync(const Model::RefundCloudOrderRequest& request, const RefundCloudOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RefundCloudOrderOutcomeCallable RefundCloudOrderCallable(const Model::RefundCloudOrderRequest& request);
+
+                /**
                  *会员间交易退款
                  * @param req RefundMemberTransactionRequest
                  * @return RefundMemberTransactionOutcome
@@ -1727,6 +2589,15 @@ namespace TencentCloud
                 RefundMemberTransactionOutcome RefundMemberTransaction(const Model::RefundMemberTransactionRequest &request);
                 void RefundMemberTransactionAsync(const Model::RefundMemberTransactionRequest& request, const RefundMemberTransactionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RefundMemberTransactionOutcomeCallable RefundMemberTransactionCallable(const Model::RefundMemberTransactionRequest& request);
+
+                /**
+                 *云企付-退款申请
+                 * @param req RefundOpenBankOrderRequest
+                 * @return RefundOpenBankOrderOutcome
+                 */
+                RefundOpenBankOrderOutcome RefundOpenBankOrder(const Model::RefundOpenBankOrderRequest &request);
+                void RefundOpenBankOrderAsync(const Model::RefundOpenBankOrderRequest& request, const RefundOpenBankOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RefundOpenBankOrderOutcomeCallable RefundOpenBankOrderCallable(const Model::RefundOpenBankOrderRequest& request);
 
                 /**
                  *云鉴-消费订单退款的接口
@@ -1846,6 +2717,15 @@ namespace TencentCloud
                 UnBindAcctOutcomeCallable UnBindAcctCallable(const Model::UnBindAcctRequest& request);
 
                 /**
+                 *云企付-子商户银行卡解绑
+                 * @param req UnbindOpenBankExternalSubMerchantBankAccountRequest
+                 * @return UnbindOpenBankExternalSubMerchantBankAccountOutcome
+                 */
+                UnbindOpenBankExternalSubMerchantBankAccountOutcome UnbindOpenBankExternalSubMerchantBankAccount(const Model::UnbindOpenBankExternalSubMerchantBankAccountRequest &request);
+                void UnbindOpenBankExternalSubMerchantBankAccountAsync(const Model::UnbindOpenBankExternalSubMerchantBankAccountRequest& request, const UnbindOpenBankExternalSubMerchantBankAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UnbindOpenBankExternalSubMerchantBankAccountOutcomeCallable UnbindOpenBankExternalSubMerchantBankAccountCallable(const Model::UnbindOpenBankExternalSubMerchantBankAccountRequest& request);
+
+                /**
                  *会员解绑提现账户。此接口可以支持会员解除名下的绑定账户关系。
                  * @param req UnbindRelateAcctRequest
                  * @return UnbindRelateAcctOutcome
@@ -1853,6 +2733,15 @@ namespace TencentCloud
                 UnbindRelateAcctOutcome UnbindRelateAcct(const Model::UnbindRelateAcctRequest &request);
                 void UnbindRelateAcctAsync(const Model::UnbindRelateAcctRequest& request, const UnbindRelateAcctAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UnbindRelateAcctOutcomeCallable UnbindRelateAcctCallable(const Model::UnbindRelateAcctRequest& request);
+
+                /**
+                 *应用需要先调用本接口生成支付订单号，并将应答的PayInfo透传给聚鑫SDK，拉起客户端（包括微信公众号/微信小程序/客户端App）支付。
+                 * @param req UnifiedCloudOrderRequest
+                 * @return UnifiedCloudOrderOutcome
+                 */
+                UnifiedCloudOrderOutcome UnifiedCloudOrder(const Model::UnifiedCloudOrderRequest &request);
+                void UnifiedCloudOrderAsync(const Model::UnifiedCloudOrderRequest& request, const UnifiedCloudOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UnifiedCloudOrderOutcomeCallable UnifiedCloudOrderCallable(const Model::UnifiedCloudOrderRequest& request);
 
                 /**
                  *应用需要先调用本接口生成支付订单号，并将应答的PayInfo透传给聚鑫SDK，拉起客户端（包括微信公众号/微信小程序/客户端App）支付。
@@ -1889,6 +2778,15 @@ namespace TencentCloud
                 UploadFileOutcome UploadFile(const Model::UploadFileRequest &request);
                 void UploadFileAsync(const Model::UploadFileRequest& request, const UploadFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UploadFileOutcomeCallable UploadFileCallable(const Model::UploadFileRequest& request);
+
+                /**
+                 *云企付-子商户资质文件上传
+                 * @param req UploadOpenBankSubMerchantCredentialRequest
+                 * @return UploadOpenBankSubMerchantCredentialOutcome
+                 */
+                UploadOpenBankSubMerchantCredentialOutcome UploadOpenBankSubMerchantCredential(const Model::UploadOpenBankSubMerchantCredentialRequest &request);
+                void UploadOpenBankSubMerchantCredentialAsync(const Model::UploadOpenBankSubMerchantCredentialRequest& request, const UploadOpenBankSubMerchantCredentialAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UploadOpenBankSubMerchantCredentialOutcomeCallable UploadOpenBankSubMerchantCredentialCallable(const Model::UploadOpenBankSubMerchantCredentialRequest& request);
 
                 /**
                  *云支付-上传机构文件接口

@@ -498,6 +498,42 @@ SyncNormal:正常
                      */
                     bool IsolateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取只读副本所在地域
+                     * @return RegionId 只读副本所在地域
+                     */
+                    std::string GetRegionId() const;
+
+                    /**
+                     * 设置只读副本所在地域
+                     * @param RegionId 只读副本所在地域
+                     */
+                    void SetRegionId(const std::string& _regionId);
+
+                    /**
+                     * 判断参数 RegionId 是否已赋值
+                     * @return RegionId 是否已赋值
+                     */
+                    bool RegionIdHasBeenSet() const;
+
+                    /**
+                     * 获取只读副本所在可用区
+                     * @return ZoneId 只读副本所在可用区
+                     */
+                    std::string GetZoneId() const;
+
+                    /**
+                     * 设置只读副本所在可用区
+                     * @param ZoneId 只读副本所在可用区
+                     */
+                    void SetZoneId(const std::string& _zoneId);
+
+                    /**
+                     * 判断参数 ZoneId 是否已赋值
+                     * @return ZoneId 是否已赋值
+                     */
+                    bool ZoneIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -645,6 +681,18 @@ SyncNormal:正常
                      */
                     std::string m_isolateTime;
                     bool m_isolateTimeHasBeenSet;
+
+                    /**
+                     * 只读副本所在地域
+                     */
+                    std::string m_regionId;
+                    bool m_regionIdHasBeenSet;
+
+                    /**
+                     * 只读副本所在可用区
+                     */
+                    std::string m_zoneId;
+                    bool m_zoneIdHasBeenSet;
 
                 };
             }

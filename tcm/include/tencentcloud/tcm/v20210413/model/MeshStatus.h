@@ -89,17 +89,17 @@ namespace TencentCloud
                     bool CanaryVersionHasBeenSet() const;
 
                     /**
-                     * 获取Prometheus状态
+                     * 获取已废弃
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Prometheus Prometheus状态
+                     * @return Prometheus 已废弃
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<PrometheusStatus> GetPrometheus() const;
 
                     /**
-                     * 设置Prometheus状态
+                     * 设置已废弃
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Prometheus Prometheus状态
+                     * @param Prometheus 已废弃
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetPrometheus(const std::vector<PrometheusStatus>& _prometheus);
@@ -154,6 +154,28 @@ namespace TencentCloud
                      */
                     bool ActiveOperationListHasBeenSet() const;
 
+                    /**
+                     * 获取获取TPS信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TPS 获取TPS信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    PrometheusStatus GetTPS() const;
+
+                    /**
+                     * 设置获取TPS信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TPS 获取TPS信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTPS(const PrometheusStatus& _tPS);
+
+                    /**
+                     * 判断参数 TPS 是否已赋值
+                     * @return TPS 是否已赋值
+                     */
+                    bool TPSHasBeenSet() const;
+
                 private:
 
                     /**
@@ -170,7 +192,7 @@ namespace TencentCloud
                     bool m_canaryVersionHasBeenSet;
 
                     /**
-                     * Prometheus状态
+                     * 已废弃
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<PrometheusStatus> m_prometheus;
@@ -189,6 +211,13 @@ namespace TencentCloud
                      */
                     std::vector<ActiveOperation> m_activeOperationList;
                     bool m_activeOperationListHasBeenSet;
+
+                    /**
+                     * 获取TPS信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    PrometheusStatus m_tPS;
+                    bool m_tPSHasBeenSet;
 
                 };
             }

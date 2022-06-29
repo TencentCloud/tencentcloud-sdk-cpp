@@ -23,6 +23,10 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/redis/v20180412/model/AddReplicationInstanceRequest.h>
+#include <tencentcloud/redis/v20180412/model/AddReplicationInstanceResponse.h>
+#include <tencentcloud/redis/v20180412/model/AllocateWanAddressRequest.h>
+#include <tencentcloud/redis/v20180412/model/AllocateWanAddressResponse.h>
 #include <tencentcloud/redis/v20180412/model/ApplyParamsTemplateRequest.h>
 #include <tencentcloud/redis/v20180412/model/ApplyParamsTemplateResponse.h>
 #include <tencentcloud/redis/v20180412/model/AssociateSecurityGroupsRequest.h>
@@ -39,10 +43,14 @@
 #include <tencentcloud/redis/v20180412/model/CreateInstancesResponse.h>
 #include <tencentcloud/redis/v20180412/model/CreateParamTemplateRequest.h>
 #include <tencentcloud/redis/v20180412/model/CreateParamTemplateResponse.h>
+#include <tencentcloud/redis/v20180412/model/CreateReplicationGroupRequest.h>
+#include <tencentcloud/redis/v20180412/model/CreateReplicationGroupResponse.h>
 #include <tencentcloud/redis/v20180412/model/DeleteInstanceAccountRequest.h>
 #include <tencentcloud/redis/v20180412/model/DeleteInstanceAccountResponse.h>
 #include <tencentcloud/redis/v20180412/model/DeleteParamTemplateRequest.h>
 #include <tencentcloud/redis/v20180412/model/DeleteParamTemplateResponse.h>
+#include <tencentcloud/redis/v20180412/model/DeleteReplicationInstanceRequest.h>
+#include <tencentcloud/redis/v20180412/model/DeleteReplicationInstanceResponse.h>
 #include <tencentcloud/redis/v20180412/model/DescribeAutoBackupConfigRequest.h>
 #include <tencentcloud/redis/v20180412/model/DescribeAutoBackupConfigResponse.h>
 #include <tencentcloud/redis/v20180412/model/DescribeBackupUrlRequest.h>
@@ -103,6 +111,8 @@
 #include <tencentcloud/redis/v20180412/model/DescribeProjectSecurityGroupsResponse.h>
 #include <tencentcloud/redis/v20180412/model/DescribeProxySlowLogRequest.h>
 #include <tencentcloud/redis/v20180412/model/DescribeProxySlowLogResponse.h>
+#include <tencentcloud/redis/v20180412/model/DescribeReplicationGroupRequest.h>
+#include <tencentcloud/redis/v20180412/model/DescribeReplicationGroupResponse.h>
 #include <tencentcloud/redis/v20180412/model/DescribeSlowLogRequest.h>
 #include <tencentcloud/redis/v20180412/model/DescribeSlowLogResponse.h>
 #include <tencentcloud/redis/v20180412/model/DescribeTaskInfoRequest.h>
@@ -145,12 +155,16 @@
 #include <tencentcloud/redis/v20180412/model/ModifyInstanceAccountResponse.h>
 #include <tencentcloud/redis/v20180412/model/ModifyInstanceParamsRequest.h>
 #include <tencentcloud/redis/v20180412/model/ModifyInstanceParamsResponse.h>
+#include <tencentcloud/redis/v20180412/model/ModifyInstanceReadOnlyRequest.h>
+#include <tencentcloud/redis/v20180412/model/ModifyInstanceReadOnlyResponse.h>
 #include <tencentcloud/redis/v20180412/model/ModifyMaintenanceWindowRequest.h>
 #include <tencentcloud/redis/v20180412/model/ModifyMaintenanceWindowResponse.h>
 #include <tencentcloud/redis/v20180412/model/ModifyNetworkConfigRequest.h>
 #include <tencentcloud/redis/v20180412/model/ModifyNetworkConfigResponse.h>
 #include <tencentcloud/redis/v20180412/model/ModifyParamTemplateRequest.h>
 #include <tencentcloud/redis/v20180412/model/ModifyParamTemplateResponse.h>
+#include <tencentcloud/redis/v20180412/model/ReleaseWanAddressRequest.h>
+#include <tencentcloud/redis/v20180412/model/ReleaseWanAddressResponse.h>
 #include <tencentcloud/redis/v20180412/model/RenewInstanceRequest.h>
 #include <tencentcloud/redis/v20180412/model/RenewInstanceResponse.h>
 #include <tencentcloud/redis/v20180412/model/ResetPasswordRequest.h>
@@ -165,6 +179,10 @@
 #include <tencentcloud/redis/v20180412/model/UpgradeInstanceResponse.h>
 #include <tencentcloud/redis/v20180412/model/UpgradeInstanceVersionRequest.h>
 #include <tencentcloud/redis/v20180412/model/UpgradeInstanceVersionResponse.h>
+#include <tencentcloud/redis/v20180412/model/UpgradeProxyVersionRequest.h>
+#include <tencentcloud/redis/v20180412/model/UpgradeProxyVersionResponse.h>
+#include <tencentcloud/redis/v20180412/model/UpgradeSmallVersionRequest.h>
+#include <tencentcloud/redis/v20180412/model/UpgradeSmallVersionResponse.h>
 #include <tencentcloud/redis/v20180412/model/UpgradeVersionToMultiAvailabilityZonesRequest.h>
 #include <tencentcloud/redis/v20180412/model/UpgradeVersionToMultiAvailabilityZonesResponse.h>
 
@@ -181,6 +199,12 @@ namespace TencentCloud
                 RedisClient(const Credential &credential, const std::string &region);
                 RedisClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::AddReplicationInstanceResponse> AddReplicationInstanceOutcome;
+                typedef std::future<AddReplicationInstanceOutcome> AddReplicationInstanceOutcomeCallable;
+                typedef std::function<void(const RedisClient*, const Model::AddReplicationInstanceRequest&, AddReplicationInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddReplicationInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::AllocateWanAddressResponse> AllocateWanAddressOutcome;
+                typedef std::future<AllocateWanAddressOutcome> AllocateWanAddressOutcomeCallable;
+                typedef std::function<void(const RedisClient*, const Model::AllocateWanAddressRequest&, AllocateWanAddressOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AllocateWanAddressAsyncHandler;
                 typedef Outcome<Core::Error, Model::ApplyParamsTemplateResponse> ApplyParamsTemplateOutcome;
                 typedef std::future<ApplyParamsTemplateOutcome> ApplyParamsTemplateOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::ApplyParamsTemplateRequest&, ApplyParamsTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ApplyParamsTemplateAsyncHandler;
@@ -205,12 +229,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateParamTemplateResponse> CreateParamTemplateOutcome;
                 typedef std::future<CreateParamTemplateOutcome> CreateParamTemplateOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::CreateParamTemplateRequest&, CreateParamTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateParamTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateReplicationGroupResponse> CreateReplicationGroupOutcome;
+                typedef std::future<CreateReplicationGroupOutcome> CreateReplicationGroupOutcomeCallable;
+                typedef std::function<void(const RedisClient*, const Model::CreateReplicationGroupRequest&, CreateReplicationGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateReplicationGroupAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteInstanceAccountResponse> DeleteInstanceAccountOutcome;
                 typedef std::future<DeleteInstanceAccountOutcome> DeleteInstanceAccountOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::DeleteInstanceAccountRequest&, DeleteInstanceAccountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteInstanceAccountAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteParamTemplateResponse> DeleteParamTemplateOutcome;
                 typedef std::future<DeleteParamTemplateOutcome> DeleteParamTemplateOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::DeleteParamTemplateRequest&, DeleteParamTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteParamTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteReplicationInstanceResponse> DeleteReplicationInstanceOutcome;
+                typedef std::future<DeleteReplicationInstanceOutcome> DeleteReplicationInstanceOutcomeCallable;
+                typedef std::function<void(const RedisClient*, const Model::DeleteReplicationInstanceRequest&, DeleteReplicationInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteReplicationInstanceAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAutoBackupConfigResponse> DescribeAutoBackupConfigOutcome;
                 typedef std::future<DescribeAutoBackupConfigOutcome> DescribeAutoBackupConfigOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::DescribeAutoBackupConfigRequest&, DescribeAutoBackupConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAutoBackupConfigAsyncHandler;
@@ -301,6 +331,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeProxySlowLogResponse> DescribeProxySlowLogOutcome;
                 typedef std::future<DescribeProxySlowLogOutcome> DescribeProxySlowLogOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::DescribeProxySlowLogRequest&, DescribeProxySlowLogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProxySlowLogAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeReplicationGroupResponse> DescribeReplicationGroupOutcome;
+                typedef std::future<DescribeReplicationGroupOutcome> DescribeReplicationGroupOutcomeCallable;
+                typedef std::function<void(const RedisClient*, const Model::DescribeReplicationGroupRequest&, DescribeReplicationGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeReplicationGroupAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSlowLogResponse> DescribeSlowLogOutcome;
                 typedef std::future<DescribeSlowLogOutcome> DescribeSlowLogOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::DescribeSlowLogRequest&, DescribeSlowLogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSlowLogAsyncHandler;
@@ -364,6 +397,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyInstanceParamsResponse> ModifyInstanceParamsOutcome;
                 typedef std::future<ModifyInstanceParamsOutcome> ModifyInstanceParamsOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::ModifyInstanceParamsRequest&, ModifyInstanceParamsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstanceParamsAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyInstanceReadOnlyResponse> ModifyInstanceReadOnlyOutcome;
+                typedef std::future<ModifyInstanceReadOnlyOutcome> ModifyInstanceReadOnlyOutcomeCallable;
+                typedef std::function<void(const RedisClient*, const Model::ModifyInstanceReadOnlyRequest&, ModifyInstanceReadOnlyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstanceReadOnlyAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyMaintenanceWindowResponse> ModifyMaintenanceWindowOutcome;
                 typedef std::future<ModifyMaintenanceWindowOutcome> ModifyMaintenanceWindowOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::ModifyMaintenanceWindowRequest&, ModifyMaintenanceWindowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyMaintenanceWindowAsyncHandler;
@@ -373,6 +409,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyParamTemplateResponse> ModifyParamTemplateOutcome;
                 typedef std::future<ModifyParamTemplateOutcome> ModifyParamTemplateOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::ModifyParamTemplateRequest&, ModifyParamTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyParamTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::ReleaseWanAddressResponse> ReleaseWanAddressOutcome;
+                typedef std::future<ReleaseWanAddressOutcome> ReleaseWanAddressOutcomeCallable;
+                typedef std::function<void(const RedisClient*, const Model::ReleaseWanAddressRequest&, ReleaseWanAddressOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReleaseWanAddressAsyncHandler;
                 typedef Outcome<Core::Error, Model::RenewInstanceResponse> RenewInstanceOutcome;
                 typedef std::future<RenewInstanceOutcome> RenewInstanceOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::RenewInstanceRequest&, RenewInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RenewInstanceAsyncHandler;
@@ -394,11 +433,35 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UpgradeInstanceVersionResponse> UpgradeInstanceVersionOutcome;
                 typedef std::future<UpgradeInstanceVersionOutcome> UpgradeInstanceVersionOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::UpgradeInstanceVersionRequest&, UpgradeInstanceVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpgradeInstanceVersionAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpgradeProxyVersionResponse> UpgradeProxyVersionOutcome;
+                typedef std::future<UpgradeProxyVersionOutcome> UpgradeProxyVersionOutcomeCallable;
+                typedef std::function<void(const RedisClient*, const Model::UpgradeProxyVersionRequest&, UpgradeProxyVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpgradeProxyVersionAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpgradeSmallVersionResponse> UpgradeSmallVersionOutcome;
+                typedef std::future<UpgradeSmallVersionOutcome> UpgradeSmallVersionOutcomeCallable;
+                typedef std::function<void(const RedisClient*, const Model::UpgradeSmallVersionRequest&, UpgradeSmallVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpgradeSmallVersionAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpgradeVersionToMultiAvailabilityZonesResponse> UpgradeVersionToMultiAvailabilityZonesOutcome;
                 typedef std::future<UpgradeVersionToMultiAvailabilityZonesOutcome> UpgradeVersionToMultiAvailabilityZonesOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::UpgradeVersionToMultiAvailabilityZonesRequest&, UpgradeVersionToMultiAvailabilityZonesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpgradeVersionToMultiAvailabilityZonesAsyncHandler;
 
 
+
+                /**
+                 *添加复制组成员
+                 * @param req AddReplicationInstanceRequest
+                 * @return AddReplicationInstanceOutcome
+                 */
+                AddReplicationInstanceOutcome AddReplicationInstance(const Model::AddReplicationInstanceRequest &request);
+                void AddReplicationInstanceAsync(const Model::AddReplicationInstanceRequest& request, const AddReplicationInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AddReplicationInstanceOutcomeCallable AddReplicationInstanceCallable(const Model::AddReplicationInstanceRequest& request);
+
+                /**
+                 *开通外网
+                 * @param req AllocateWanAddressRequest
+                 * @return AllocateWanAddressOutcome
+                 */
+                AllocateWanAddressOutcome AllocateWanAddress(const Model::AllocateWanAddressRequest &request);
+                void AllocateWanAddressAsync(const Model::AllocateWanAddressRequest& request, const AllocateWanAddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AllocateWanAddressOutcomeCallable AllocateWanAddressCallable(const Model::AllocateWanAddressRequest& request);
 
                 /**
                  *应用参数模板到实例
@@ -419,7 +482,7 @@ namespace TencentCloud
                 AssociateSecurityGroupsOutcomeCallable AssociateSecurityGroupsCallable(const Model::AssociateSecurityGroupsRequest& request);
 
                 /**
-                 *该接口仅支持多AZ实例副本组提主
+                 *该接口仅支持多AZ实例副本组提主和单AZ副本提主
                  * @param req ChangeReplicaToMasterRequest
                  * @return ChangeReplicaToMasterOutcome
                  */
@@ -464,13 +527,22 @@ namespace TencentCloud
                 CreateInstancesOutcomeCallable CreateInstancesCallable(const Model::CreateInstancesRequest& request);
 
                 /**
-                 *创建参数模板
+                 *创建参数模板。
                  * @param req CreateParamTemplateRequest
                  * @return CreateParamTemplateOutcome
                  */
                 CreateParamTemplateOutcome CreateParamTemplate(const Model::CreateParamTemplateRequest &request);
                 void CreateParamTemplateAsync(const Model::CreateParamTemplateRequest& request, const CreateParamTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateParamTemplateOutcomeCallable CreateParamTemplateCallable(const Model::CreateParamTemplateRequest& request);
+
+                /**
+                 *创建复制组
+                 * @param req CreateReplicationGroupRequest
+                 * @return CreateReplicationGroupOutcome
+                 */
+                CreateReplicationGroupOutcome CreateReplicationGroup(const Model::CreateReplicationGroupRequest &request);
+                void CreateReplicationGroupAsync(const Model::CreateReplicationGroupRequest& request, const CreateReplicationGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateReplicationGroupOutcomeCallable CreateReplicationGroupCallable(const Model::CreateReplicationGroupRequest& request);
 
                 /**
                  *删除实例子账号
@@ -489,6 +561,15 @@ namespace TencentCloud
                 DeleteParamTemplateOutcome DeleteParamTemplate(const Model::DeleteParamTemplateRequest &request);
                 void DeleteParamTemplateAsync(const Model::DeleteParamTemplateRequest& request, const DeleteParamTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteParamTemplateOutcomeCallable DeleteParamTemplateCallable(const Model::DeleteParamTemplateRequest& request);
+
+                /**
+                 *移除复制组成员 注：接口下线中，请使用 RemoveReplicationInstance
+                 * @param req DeleteReplicationInstanceRequest
+                 * @return DeleteReplicationInstanceOutcome
+                 */
+                DeleteReplicationInstanceOutcome DeleteReplicationInstance(const Model::DeleteReplicationInstanceRequest &request);
+                void DeleteReplicationInstanceAsync(const Model::DeleteReplicationInstanceRequest& request, const DeleteReplicationInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteReplicationInstanceOutcomeCallable DeleteReplicationInstanceCallable(const Model::DeleteReplicationInstanceRequest& request);
 
                 /**
                  *获取备份配置
@@ -680,7 +761,7 @@ namespace TencentCloud
                 DescribeInstanceShardsOutcomeCallable DescribeInstanceShardsCallable(const Model::DescribeInstanceShardsRequest& request);
 
                 /**
-                 *查询Redis节点信息
+                 *查询Redis节点详细信息
                  * @param req DescribeInstanceZoneInfoRequest
                  * @return DescribeInstanceZoneInfoOutcome
                  */
@@ -707,7 +788,7 @@ namespace TencentCloud
                 DescribeMaintenanceWindowOutcomeCallable DescribeMaintenanceWindowCallable(const Model::DescribeMaintenanceWindowRequest& request);
 
                 /**
-                 *查询参数模板详情
+                 *查询参数模板详情。
                  * @param req DescribeParamTemplateInfoRequest
                  * @return DescribeParamTemplateInfoOutcome
                  */
@@ -759,6 +840,15 @@ namespace TencentCloud
                 DescribeProxySlowLogOutcome DescribeProxySlowLog(const Model::DescribeProxySlowLogRequest &request);
                 void DescribeProxySlowLogAsync(const Model::DescribeProxySlowLogRequest& request, const DescribeProxySlowLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeProxySlowLogOutcomeCallable DescribeProxySlowLogCallable(const Model::DescribeProxySlowLogRequest& request);
+
+                /**
+                 *查询复制组
+                 * @param req DescribeReplicationGroupRequest
+                 * @return DescribeReplicationGroupOutcome
+                 */
+                DescribeReplicationGroupOutcome DescribeReplicationGroup(const Model::DescribeReplicationGroupRequest &request);
+                void DescribeReplicationGroupAsync(const Model::DescribeReplicationGroupRequest& request, const DescribeReplicationGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeReplicationGroupOutcomeCallable DescribeReplicationGroupCallable(const Model::DescribeReplicationGroupRequest& request);
 
                 /**
                  *查询实例慢查询记录
@@ -896,7 +986,7 @@ namespace TencentCloud
                 ModfiyInstancePasswordOutcomeCallable ModfiyInstancePasswordCallable(const Model::ModfiyInstancePasswordRequest& request);
 
                 /**
-                 *设置自动备份时间
+                 *设置自动备份配置
                  * @param req ModifyAutoBackupConfigRequest
                  * @return ModifyAutoBackupConfigOutcome
                  */
@@ -905,7 +995,7 @@ namespace TencentCloud
                 ModifyAutoBackupConfigOutcomeCallable ModifyAutoBackupConfigCallable(const Model::ModifyAutoBackupConfigRequest& request);
 
                 /**
-                 *修改实例的连接配置，包括带宽和最大连接数
+                 *修改实例的连接配置，包括带宽和最大连接数。
                  * @param req ModifyConnectionConfigRequest
                  * @return ModifyConnectionConfigOutcome
                  */
@@ -950,6 +1040,15 @@ namespace TencentCloud
                 ModifyInstanceParamsOutcomeCallable ModifyInstanceParamsCallable(const Model::ModifyInstanceParamsRequest& request);
 
                 /**
+                 *设置实例输入模式
+                 * @param req ModifyInstanceReadOnlyRequest
+                 * @return ModifyInstanceReadOnlyOutcome
+                 */
+                ModifyInstanceReadOnlyOutcome ModifyInstanceReadOnly(const Model::ModifyInstanceReadOnlyRequest &request);
+                void ModifyInstanceReadOnlyAsync(const Model::ModifyInstanceReadOnlyRequest& request, const ModifyInstanceReadOnlyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyInstanceReadOnlyOutcomeCallable ModifyInstanceReadOnlyCallable(const Model::ModifyInstanceReadOnlyRequest& request);
+
+                /**
                  *修改实例维护时间窗时间，需要进行版本升级或者架构升级的实例，会在维护时间窗内进行时间切换。注意：已经发起版本升级或者架构升级的实例，无法修改维护时间窗。
                  * @param req ModifyMaintenanceWindowRequest
                  * @return ModifyMaintenanceWindowOutcome
@@ -975,6 +1074,15 @@ namespace TencentCloud
                 ModifyParamTemplateOutcome ModifyParamTemplate(const Model::ModifyParamTemplateRequest &request);
                 void ModifyParamTemplateAsync(const Model::ModifyParamTemplateRequest& request, const ModifyParamTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyParamTemplateOutcomeCallable ModifyParamTemplateCallable(const Model::ModifyParamTemplateRequest& request);
+
+                /**
+                 *关闭外网
+                 * @param req ReleaseWanAddressRequest
+                 * @return ReleaseWanAddressOutcome
+                 */
+                ReleaseWanAddressOutcome ReleaseWanAddress(const Model::ReleaseWanAddressRequest &request);
+                void ReleaseWanAddressAsync(const Model::ReleaseWanAddressRequest& request, const ReleaseWanAddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ReleaseWanAddressOutcomeCallable ReleaseWanAddressCallable(const Model::ReleaseWanAddressRequest& request);
 
                 /**
                  *续费实例
@@ -1038,6 +1146,24 @@ namespace TencentCloud
                 UpgradeInstanceVersionOutcome UpgradeInstanceVersion(const Model::UpgradeInstanceVersionRequest &request);
                 void UpgradeInstanceVersionAsync(const Model::UpgradeInstanceVersionRequest& request, const UpgradeInstanceVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UpgradeInstanceVersionOutcomeCallable UpgradeInstanceVersionCallable(const Model::UpgradeInstanceVersionRequest& request);
+
+                /**
+                 *实例proxy版本升级
+                 * @param req UpgradeProxyVersionRequest
+                 * @return UpgradeProxyVersionOutcome
+                 */
+                UpgradeProxyVersionOutcome UpgradeProxyVersion(const Model::UpgradeProxyVersionRequest &request);
+                void UpgradeProxyVersionAsync(const Model::UpgradeProxyVersionRequest& request, const UpgradeProxyVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpgradeProxyVersionOutcomeCallable UpgradeProxyVersionCallable(const Model::UpgradeProxyVersionRequest& request);
+
+                /**
+                 *实例小版本升级
+                 * @param req UpgradeSmallVersionRequest
+                 * @return UpgradeSmallVersionOutcome
+                 */
+                UpgradeSmallVersionOutcome UpgradeSmallVersion(const Model::UpgradeSmallVersionRequest &request);
+                void UpgradeSmallVersionAsync(const Model::UpgradeSmallVersionRequest& request, const UpgradeSmallVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpgradeSmallVersionOutcomeCallable UpgradeSmallVersionCallable(const Model::UpgradeSmallVersionRequest& request);
 
                 /**
                  *升级实例支持多AZ

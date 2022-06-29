@@ -49,7 +49,9 @@ JobV1::JobV1() :
     m_schedulerTypeHasBeenSet(false),
     m_clusterStatusHasBeenSet(false),
     m_runningCuHasBeenSet(false),
-    m_flinkVersionHasBeenSet(false)
+    m_flinkVersionHasBeenSet(false),
+    m_workSpaceIdHasBeenSet(false),
+    m_workSpaceNameHasBeenSet(false)
 {
 }
 
@@ -348,6 +350,26 @@ CoreInternalOutcome JobV1::Deserialize(const rapidjson::Value &value)
         m_flinkVersionHasBeenSet = true;
     }
 
+    if (value.HasMember("WorkSpaceId") && !value["WorkSpaceId"].IsNull())
+    {
+        if (!value["WorkSpaceId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `JobV1.WorkSpaceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_workSpaceId = string(value["WorkSpaceId"].GetString());
+        m_workSpaceIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("WorkSpaceName") && !value["WorkSpaceName"].IsNull())
+    {
+        if (!value["WorkSpaceName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `JobV1.WorkSpaceName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_workSpaceName = string(value["WorkSpaceName"].GetString());
+        m_workSpaceNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -585,6 +607,22 @@ void JobV1::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocator
         string key = "FlinkVersion";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_flinkVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_workSpaceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WorkSpaceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_workSpaceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_workSpaceNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WorkSpaceName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_workSpaceName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1052,5 +1090,37 @@ void JobV1::SetFlinkVersion(const string& _flinkVersion)
 bool JobV1::FlinkVersionHasBeenSet() const
 {
     return m_flinkVersionHasBeenSet;
+}
+
+string JobV1::GetWorkSpaceId() const
+{
+    return m_workSpaceId;
+}
+
+void JobV1::SetWorkSpaceId(const string& _workSpaceId)
+{
+    m_workSpaceId = _workSpaceId;
+    m_workSpaceIdHasBeenSet = true;
+}
+
+bool JobV1::WorkSpaceIdHasBeenSet() const
+{
+    return m_workSpaceIdHasBeenSet;
+}
+
+string JobV1::GetWorkSpaceName() const
+{
+    return m_workSpaceName;
+}
+
+void JobV1::SetWorkSpaceName(const string& _workSpaceName)
+{
+    m_workSpaceName = _workSpaceName;
+    m_workSpaceNameHasBeenSet = true;
+}
+
+bool JobV1::WorkSpaceNameHasBeenSet() const
+{
+    return m_workSpaceNameHasBeenSet;
 }
 

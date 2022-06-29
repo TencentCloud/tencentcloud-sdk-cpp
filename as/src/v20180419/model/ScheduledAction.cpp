@@ -30,7 +30,8 @@ ScheduledAction::ScheduledAction() :
     m_maxSizeHasBeenSet(false),
     m_desiredCapacityHasBeenSet(false),
     m_minSizeHasBeenSet(false),
-    m_createdTimeHasBeenSet(false)
+    m_createdTimeHasBeenSet(false),
+    m_scheduledTypeHasBeenSet(false)
 {
 }
 
@@ -139,6 +140,16 @@ CoreInternalOutcome ScheduledAction::Deserialize(const rapidjson::Value &value)
         m_createdTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("ScheduledType") && !value["ScheduledType"].IsNull())
+    {
+        if (!value["ScheduledType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ScheduledAction.ScheduledType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_scheduledType = string(value["ScheduledType"].GetString());
+        m_scheduledTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -224,6 +235,14 @@ void ScheduledAction::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "CreatedTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_createdTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_scheduledTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScheduledType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_scheduledType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -387,5 +406,21 @@ void ScheduledAction::SetCreatedTime(const string& _createdTime)
 bool ScheduledAction::CreatedTimeHasBeenSet() const
 {
     return m_createdTimeHasBeenSet;
+}
+
+string ScheduledAction::GetScheduledType() const
+{
+    return m_scheduledType;
+}
+
+void ScheduledAction::SetScheduledType(const string& _scheduledType)
+{
+    m_scheduledType = _scheduledType;
+    m_scheduledTypeHasBeenSet = true;
+}
+
+bool ScheduledAction::ScheduledTypeHasBeenSet() const
+{
+    return m_scheduledTypeHasBeenSet;
 }
 

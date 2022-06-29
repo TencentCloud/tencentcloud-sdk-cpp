@@ -26,7 +26,9 @@ ModifyClusterAttributeRequest::ModifyClusterAttributeRequest() :
     m_clusterIdHasBeenSet(false),
     m_projectIdHasBeenSet(false),
     m_clusterNameHasBeenSet(false),
-    m_clusterDescHasBeenSet(false)
+    m_clusterDescHasBeenSet(false),
+    m_clusterLevelHasBeenSet(false),
+    m_autoUpgradeClusterLevelHasBeenSet(false)
 {
 }
 
@@ -67,6 +69,23 @@ string ModifyClusterAttributeRequest::ToJsonString() const
         string key = "ClusterDesc";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_clusterDesc.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clusterLevelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterLevel";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_clusterLevel.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_autoUpgradeClusterLevelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoUpgradeClusterLevel";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_autoUpgradeClusterLevel.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -139,6 +158,38 @@ void ModifyClusterAttributeRequest::SetClusterDesc(const string& _clusterDesc)
 bool ModifyClusterAttributeRequest::ClusterDescHasBeenSet() const
 {
     return m_clusterDescHasBeenSet;
+}
+
+string ModifyClusterAttributeRequest::GetClusterLevel() const
+{
+    return m_clusterLevel;
+}
+
+void ModifyClusterAttributeRequest::SetClusterLevel(const string& _clusterLevel)
+{
+    m_clusterLevel = _clusterLevel;
+    m_clusterLevelHasBeenSet = true;
+}
+
+bool ModifyClusterAttributeRequest::ClusterLevelHasBeenSet() const
+{
+    return m_clusterLevelHasBeenSet;
+}
+
+AutoUpgradeClusterLevel ModifyClusterAttributeRequest::GetAutoUpgradeClusterLevel() const
+{
+    return m_autoUpgradeClusterLevel;
+}
+
+void ModifyClusterAttributeRequest::SetAutoUpgradeClusterLevel(const AutoUpgradeClusterLevel& _autoUpgradeClusterLevel)
+{
+    m_autoUpgradeClusterLevel = _autoUpgradeClusterLevel;
+    m_autoUpgradeClusterLevelHasBeenSet = true;
+}
+
+bool ModifyClusterAttributeRequest::AutoUpgradeClusterLevelHasBeenSet() const
+{
+    return m_autoUpgradeClusterLevelHasBeenSet;
 }
 
 

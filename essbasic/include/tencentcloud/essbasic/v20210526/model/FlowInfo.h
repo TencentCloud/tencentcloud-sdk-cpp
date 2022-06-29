@@ -68,14 +68,14 @@ namespace TencentCloud
                     bool FlowNameHasBeenSet() const;
 
                     /**
-                     * 获取签署截止时间戳，超过有效签署时间则该签署流程失败
-                     * @return Deadline 签署截止时间戳，超过有效签署时间则该签署流程失败
+                     * 获取签署截止时间戳，超过有效签署时间则该签署流程失败，默认一年
+                     * @return Deadline 签署截止时间戳，超过有效签署时间则该签署流程失败，默认一年
                      */
                     int64_t GetDeadline() const;
 
                     /**
-                     * 设置签署截止时间戳，超过有效签署时间则该签署流程失败
-                     * @param Deadline 签署截止时间戳，超过有效签署时间则该签署流程失败
+                     * 设置签署截止时间戳，超过有效签署时间则该签署流程失败，默认一年
+                     * @param Deadline 签署截止时间戳，超过有效签署时间则该签署流程失败，默认一年
                      */
                     void SetDeadline(const int64_t& _deadline);
 
@@ -86,14 +86,14 @@ namespace TencentCloud
                     bool DeadlineHasBeenSet() const;
 
                     /**
-                     * 获取模版ID
-                     * @return TemplateId 模版ID
+                     * 获取模板ID
+                     * @return TemplateId 模板ID
                      */
                     std::string GetTemplateId() const;
 
                     /**
-                     * 设置模版ID
-                     * @param TemplateId 模版ID
+                     * 设置模板ID
+                     * @param TemplateId 模板ID
                      */
                     void SetTemplateId(const std::string& _templateId);
 
@@ -156,14 +156,14 @@ namespace TencentCloud
                     bool CallbackUrlHasBeenSet() const;
 
                     /**
-                     * 获取多个签署人信息
-                     * @return FlowApprovers 多个签署人信息
+                     * 获取多个签署人信息，渠道侧目前不支持超过5个签署方信息
+                     * @return FlowApprovers 多个签署人信息，渠道侧目前不支持超过5个签署方信息
                      */
                     std::vector<FlowApproverInfo> GetFlowApprovers() const;
 
                     /**
-                     * 设置多个签署人信息
-                     * @param FlowApprovers 多个签署人信息
+                     * 设置多个签署人信息，渠道侧目前不支持超过5个签署方信息
+                     * @param FlowApprovers 多个签署人信息，渠道侧目前不支持超过5个签署方信息
                      */
                     void SetFlowApprovers(const std::vector<FlowApproverInfo>& _flowApprovers);
 
@@ -254,13 +254,13 @@ namespace TencentCloud
                     bool m_flowNameHasBeenSet;
 
                     /**
-                     * 签署截止时间戳，超过有效签署时间则该签署流程失败
+                     * 签署截止时间戳，超过有效签署时间则该签署流程失败，默认一年
                      */
                     int64_t m_deadline;
                     bool m_deadlineHasBeenSet;
 
                     /**
-                     * 模版ID
+                     * 模板ID
                      */
                     std::string m_templateId;
                     bool m_templateIdHasBeenSet;
@@ -282,7 +282,7 @@ namespace TencentCloud
                     bool m_callbackUrlHasBeenSet;
 
                     /**
-                     * 多个签署人信息
+                     * 多个签署人信息，渠道侧目前不支持超过5个签署方信息
                      */
                     std::vector<FlowApproverInfo> m_flowApprovers;
                     bool m_flowApproversHasBeenSet;

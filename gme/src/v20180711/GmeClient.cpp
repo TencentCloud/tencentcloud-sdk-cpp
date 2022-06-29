@@ -126,6 +126,92 @@ GmeClient::CreateAppOutcomeCallable GmeClient::CreateAppCallable(const CreateApp
     return task->get_future();
 }
 
+GmeClient::CreateScanUserOutcome GmeClient::CreateScanUser(const CreateScanUserRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateScanUser");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateScanUserResponse rsp = CreateScanUserResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateScanUserOutcome(rsp);
+        else
+            return CreateScanUserOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateScanUserOutcome(outcome.GetError());
+    }
+}
+
+void GmeClient::CreateScanUserAsync(const CreateScanUserRequest& request, const CreateScanUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateScanUser(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GmeClient::CreateScanUserOutcomeCallable GmeClient::CreateScanUserCallable(const CreateScanUserRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateScanUserOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateScanUser(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+GmeClient::DeleteScanUserOutcome GmeClient::DeleteScanUser(const DeleteScanUserRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteScanUser");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteScanUserResponse rsp = DeleteScanUserResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteScanUserOutcome(rsp);
+        else
+            return DeleteScanUserOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteScanUserOutcome(outcome.GetError());
+    }
+}
+
+void GmeClient::DeleteScanUserAsync(const DeleteScanUserRequest& request, const DeleteScanUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteScanUser(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GmeClient::DeleteScanUserOutcomeCallable GmeClient::DeleteScanUserCallable(const DeleteScanUserRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteScanUserOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteScanUser(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 GmeClient::DescribeAgeDetectTaskOutcome GmeClient::DescribeAgeDetectTask(const DescribeAgeDetectTaskRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeAgeDetectTask");
@@ -334,6 +420,49 @@ GmeClient::DescribeFilterResultListOutcomeCallable GmeClient::DescribeFilterResu
         [this, request]()
         {
             return this->DescribeFilterResultList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+GmeClient::DescribeRealtimeScanConfigOutcome GmeClient::DescribeRealtimeScanConfig(const DescribeRealtimeScanConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRealtimeScanConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRealtimeScanConfigResponse rsp = DescribeRealtimeScanConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRealtimeScanConfigOutcome(rsp);
+        else
+            return DescribeRealtimeScanConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRealtimeScanConfigOutcome(outcome.GetError());
+    }
+}
+
+void GmeClient::DescribeRealtimeScanConfigAsync(const DescribeRealtimeScanConfigRequest& request, const DescribeRealtimeScanConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRealtimeScanConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GmeClient::DescribeRealtimeScanConfigOutcomeCallable GmeClient::DescribeRealtimeScanConfigCallable(const DescribeRealtimeScanConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRealtimeScanConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRealtimeScanConfig(request);
         }
     );
 
@@ -592,6 +721,92 @@ GmeClient::ScanVoiceOutcomeCallable GmeClient::ScanVoiceCallable(const ScanVoice
         [this, request]()
         {
             return this->ScanVoice(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+GmeClient::UpdateScanRoomsOutcome GmeClient::UpdateScanRooms(const UpdateScanRoomsRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateScanRooms");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateScanRoomsResponse rsp = UpdateScanRoomsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateScanRoomsOutcome(rsp);
+        else
+            return UpdateScanRoomsOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateScanRoomsOutcome(outcome.GetError());
+    }
+}
+
+void GmeClient::UpdateScanRoomsAsync(const UpdateScanRoomsRequest& request, const UpdateScanRoomsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateScanRooms(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GmeClient::UpdateScanRoomsOutcomeCallable GmeClient::UpdateScanRoomsCallable(const UpdateScanRoomsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateScanRoomsOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateScanRooms(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+GmeClient::UpdateScanUsersOutcome GmeClient::UpdateScanUsers(const UpdateScanUsersRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateScanUsers");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateScanUsersResponse rsp = UpdateScanUsersResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateScanUsersOutcome(rsp);
+        else
+            return UpdateScanUsersOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateScanUsersOutcome(outcome.GetError());
+    }
+}
+
+void GmeClient::UpdateScanUsersAsync(const UpdateScanUsersRequest& request, const UpdateScanUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateScanUsers(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GmeClient::UpdateScanUsersOutcomeCallable GmeClient::UpdateScanUsersCallable(const UpdateScanUsersRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateScanUsersOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateScanUsers(request);
         }
     );
 

@@ -25,6 +25,8 @@
 #include <tencentcloud/emr/v20190103/model/Placement.h>
 #include <tencentcloud/emr/v20190103/model/VPCSettings.h>
 #include <tencentcloud/emr/v20190103/model/CustomMetaInfo.h>
+#include <tencentcloud/emr/v20190103/model/ExternalService.h>
+#include <tencentcloud/emr/v20190103/model/MultiZoneSetting.h>
 
 
 namespace TencentCloud
@@ -97,24 +99,6 @@ namespace TencentCloud
                      * @return TimeSpan 是否已赋值
                      */
                     bool TimeSpanHasBeenSet() const;
-
-                    /**
-                     * 获取询价的节点规格。
-                     * @return ResourceSpec 询价的节点规格。
-                     */
-                    NewResourceSpec GetResourceSpec() const;
-
-                    /**
-                     * 设置询价的节点规格。
-                     * @param ResourceSpec 询价的节点规格。
-                     */
-                    void SetResourceSpec(const NewResourceSpec& _resourceSpec);
-
-                    /**
-                     * 判断参数 ResourceSpec 是否已赋值
-                     * @return ResourceSpec 是否已赋值
-                     */
-                    bool ResourceSpecHasBeenSet() const;
 
                     /**
                      * 获取货币种类。取值范围：
@@ -223,6 +207,24 @@ namespace TencentCloud
                      * @return Software 是否已赋值
                      */
                     bool SoftwareHasBeenSet() const;
+
+                    /**
+                     * 获取询价的节点规格。
+                     * @return ResourceSpec 询价的节点规格。
+                     */
+                    NewResourceSpec GetResourceSpec() const;
+
+                    /**
+                     * 设置询价的节点规格。
+                     * @param ResourceSpec 询价的节点规格。
+                     */
+                    void SetResourceSpec(const NewResourceSpec& _resourceSpec);
+
+                    /**
+                     * 判断参数 ResourceSpec 是否已赋值
+                     * @return ResourceSpec 是否已赋值
+                     */
+                    bool ResourceSpecHasBeenSet() const;
 
                     /**
                      * 获取实例所在的位置。通过该参数可以指定实例所属可用区，所属项目等属性。
@@ -394,6 +396,60 @@ Hadoop-Hbase
                      */
                     bool SceneNameHasBeenSet() const;
 
+                    /**
+                     * 获取共用组件信息
+                     * @return ExternalService 共用组件信息
+                     */
+                    std::vector<ExternalService> GetExternalService() const;
+
+                    /**
+                     * 设置共用组件信息
+                     * @param ExternalService 共用组件信息
+                     */
+                    void SetExternalService(const std::vector<ExternalService>& _externalService);
+
+                    /**
+                     * 判断参数 ExternalService 是否已赋值
+                     * @return ExternalService 是否已赋值
+                     */
+                    bool ExternalServiceHasBeenSet() const;
+
+                    /**
+                     * 获取当前默认值为0，跨AZ特性支持后为1
+                     * @return VersionID 当前默认值为0，跨AZ特性支持后为1
+                     */
+                    uint64_t GetVersionID() const;
+
+                    /**
+                     * 设置当前默认值为0，跨AZ特性支持后为1
+                     * @param VersionID 当前默认值为0，跨AZ特性支持后为1
+                     */
+                    void SetVersionID(const uint64_t& _versionID);
+
+                    /**
+                     * 判断参数 VersionID 是否已赋值
+                     * @return VersionID 是否已赋值
+                     */
+                    bool VersionIDHasBeenSet() const;
+
+                    /**
+                     * 获取可用区的规格信息
+                     * @return MultiZoneSettings 可用区的规格信息
+                     */
+                    std::vector<MultiZoneSetting> GetMultiZoneSettings() const;
+
+                    /**
+                     * 设置可用区的规格信息
+                     * @param MultiZoneSettings 可用区的规格信息
+                     */
+                    void SetMultiZoneSettings(const std::vector<MultiZoneSetting>& _multiZoneSettings);
+
+                    /**
+                     * 判断参数 MultiZoneSettings 是否已赋值
+                     * @return MultiZoneSettings 是否已赋值
+                     */
+                    bool MultiZoneSettingsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -411,12 +467,6 @@ Hadoop-Hbase
                      */
                     uint64_t m_timeSpan;
                     bool m_timeSpanHasBeenSet;
-
-                    /**
-                     * 询价的节点规格。
-                     */
-                    NewResourceSpec m_resourceSpec;
-                    bool m_resourceSpecHasBeenSet;
 
                     /**
                      * 货币种类。取值范围：
@@ -450,6 +500,12 @@ Hadoop-Hbase
                      */
                     std::vector<std::string> m_software;
                     bool m_softwareHasBeenSet;
+
+                    /**
+                     * 询价的节点规格。
+                     */
+                    NewResourceSpec m_resourceSpec;
+                    bool m_resourceSpecHasBeenSet;
 
                     /**
                      * 实例所在的位置。通过该参数可以指定实例所属可用区，所属项目等属性。
@@ -503,6 +559,24 @@ Hadoop-Hbase
                      */
                     std::string m_sceneName;
                     bool m_sceneNameHasBeenSet;
+
+                    /**
+                     * 共用组件信息
+                     */
+                    std::vector<ExternalService> m_externalService;
+                    bool m_externalServiceHasBeenSet;
+
+                    /**
+                     * 当前默认值为0，跨AZ特性支持后为1
+                     */
+                    uint64_t m_versionID;
+                    bool m_versionIDHasBeenSet;
+
+                    /**
+                     * 可用区的规格信息
+                     */
+                    std::vector<MultiZoneSetting> m_multiZoneSettings;
+                    bool m_multiZoneSettingsHasBeenSet;
 
                 };
             }

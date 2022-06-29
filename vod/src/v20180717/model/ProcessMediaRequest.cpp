@@ -24,6 +24,7 @@ using namespace std;
 
 ProcessMediaRequest::ProcessMediaRequest() :
     m_fileIdHasBeenSet(false),
+    m_subAppIdHasBeenSet(false),
     m_mediaProcessTaskHasBeenSet(false),
     m_aiContentReviewTaskHasBeenSet(false),
     m_aiAnalysisTaskHasBeenSet(false),
@@ -32,8 +33,7 @@ ProcessMediaRequest::ProcessMediaRequest() :
     m_tasksNotifyModeHasBeenSet(false),
     m_sessionContextHasBeenSet(false),
     m_sessionIdHasBeenSet(false),
-    m_extInfoHasBeenSet(false),
-    m_subAppIdHasBeenSet(false)
+    m_extInfoHasBeenSet(false)
 {
 }
 
@@ -50,6 +50,14 @@ string ProcessMediaRequest::ToJsonString() const
         string key = "FileId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_fileId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subAppIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubAppId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_subAppId, allocator);
     }
 
     if (m_mediaProcessTaskHasBeenSet)
@@ -128,14 +136,6 @@ string ProcessMediaRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_extInfo.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_subAppIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SubAppId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_subAppId, allocator);
-    }
-
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -158,6 +158,22 @@ void ProcessMediaRequest::SetFileId(const string& _fileId)
 bool ProcessMediaRequest::FileIdHasBeenSet() const
 {
     return m_fileIdHasBeenSet;
+}
+
+uint64_t ProcessMediaRequest::GetSubAppId() const
+{
+    return m_subAppId;
+}
+
+void ProcessMediaRequest::SetSubAppId(const uint64_t& _subAppId)
+{
+    m_subAppId = _subAppId;
+    m_subAppIdHasBeenSet = true;
+}
+
+bool ProcessMediaRequest::SubAppIdHasBeenSet() const
+{
+    return m_subAppIdHasBeenSet;
 }
 
 MediaProcessTaskInput ProcessMediaRequest::GetMediaProcessTask() const
@@ -302,22 +318,6 @@ void ProcessMediaRequest::SetExtInfo(const string& _extInfo)
 bool ProcessMediaRequest::ExtInfoHasBeenSet() const
 {
     return m_extInfoHasBeenSet;
-}
-
-uint64_t ProcessMediaRequest::GetSubAppId() const
-{
-    return m_subAppId;
-}
-
-void ProcessMediaRequest::SetSubAppId(const uint64_t& _subAppId)
-{
-    m_subAppId = _subAppId;
-    m_subAppIdHasBeenSet = true;
-}
-
-bool ProcessMediaRequest::SubAppIdHasBeenSet() const
-{
-    return m_subAppIdHasBeenSet;
 }
 
 

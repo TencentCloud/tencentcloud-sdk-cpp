@@ -664,6 +664,28 @@ namespace TencentCloud
                      */
                     bool VulRepairPlanHasBeenSet() const;
 
+                    /**
+                     * 获取漏洞文件路径
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return VulPath 漏洞文件路径
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetVulPath() const;
+
+                    /**
+                     * 设置漏洞文件路径
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param VulPath 漏洞文件路径
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetVulPath(const std::string& _vulPath);
+
+                    /**
+                     * 判断参数 VulPath 是否已赋值
+                     * @return VulPath 是否已赋值
+                     */
+                    bool VulPathHasBeenSet() const;
+
                 private:
 
                     /**
@@ -866,6 +888,13 @@ namespace TencentCloud
                      */
                     std::string m_vulRepairPlan;
                     bool m_vulRepairPlanHasBeenSet;
+
+                    /**
+                     * 漏洞文件路径
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_vulPath;
+                    bool m_vulPathHasBeenSet;
 
                 };
             }

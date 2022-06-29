@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取最小实例数
-                     * @return MinReplicas 最小实例数
+                     * 获取最小实例数（可以不传）
+                     * @return MinReplicas 最小实例数（可以不传）
                      */
                     int64_t GetMinReplicas() const;
 
                     /**
-                     * 设置最小实例数
-                     * @param MinReplicas 最小实例数
+                     * 设置最小实例数（可以不传）
+                     * @param MinReplicas 最小实例数（可以不传）
                      */
                     void SetMinReplicas(const int64_t& _minReplicas);
 
@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool MinReplicasHasBeenSet() const;
 
                     /**
-                     * 获取最大实例数
-                     * @return MaxReplicas 最大实例数
+                     * 获取最大实例数（可以不传）
+                     * @return MaxReplicas 最大实例数（可以不传）
                      */
                     int64_t GetMaxReplicas() const;
 
                     /**
-                     * 设置最大实例数
-                     * @param MaxReplicas 最大实例数
+                     * 设置最大实例数（可以不传）
+                     * @param MaxReplicas 最大实例数（可以不传）
                      */
                     void SetMaxReplicas(const int64_t& _maxReplicas);
 
@@ -118,16 +118,34 @@ namespace TencentCloud
                      */
                     bool ThresholdHasBeenSet() const;
 
+                    /**
+                     * 获取是否启用
+                     * @return Enabled 是否启用
+                     */
+                    bool GetEnabled() const;
+
+                    /**
+                     * 设置是否启用
+                     * @param Enabled 是否启用
+                     */
+                    void SetEnabled(const bool& _enabled);
+
+                    /**
+                     * 判断参数 Enabled 是否已赋值
+                     * @return Enabled 是否已赋值
+                     */
+                    bool EnabledHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 最小实例数
+                     * 最小实例数（可以不传）
                      */
                     int64_t m_minReplicas;
                     bool m_minReplicasHasBeenSet;
 
                     /**
-                     * 最大实例数
+                     * 最大实例数（可以不传）
                      */
                     int64_t m_maxReplicas;
                     bool m_maxReplicasHasBeenSet;
@@ -143,6 +161,12 @@ namespace TencentCloud
                      */
                     int64_t m_threshold;
                     bool m_thresholdHasBeenSet;
+
+                    /**
+                     * 是否启用
+                     */
+                    bool m_enabled;
+                    bool m_enabledHasBeenSet;
 
                 };
             }

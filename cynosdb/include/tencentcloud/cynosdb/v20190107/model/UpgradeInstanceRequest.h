@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool CpuHasBeenSet() const;
 
                     /**
-                     * 获取数据库内存
-                     * @return Memory 数据库内存
+                     * 获取数据库内存，单位GB
+                     * @return Memory 数据库内存，单位GB
                      */
                     int64_t GetMemory() const;
 
                     /**
-                     * 设置数据库内存
-                     * @param Memory 数据库内存
+                     * 设置数据库内存，单位GB
+                     * @param Memory 数据库内存，单位GB
                      */
                     void SetMemory(const int64_t& _memory);
 
@@ -205,7 +205,7 @@ namespace TencentCloud
                     bool m_cpuHasBeenSet;
 
                     /**
-                     * 数据库内存
+                     * 数据库内存，单位GB
                      */
                     int64_t m_memory;
                     bool m_memoryHasBeenSet;

@@ -28,7 +28,13 @@ ModifyBackupConfigRequest::ModifyBackupConfigRequest() :
     m_startTimeHasBeenSet(false),
     m_backupMethodHasBeenSet(false),
     m_binlogExpireDaysHasBeenSet(false),
-    m_backupTimeWindowHasBeenSet(false)
+    m_backupTimeWindowHasBeenSet(false),
+    m_enableBackupPeriodSaveHasBeenSet(false),
+    m_enableBackupPeriodLongTermSaveHasBeenSet(false),
+    m_backupPeriodSaveDaysHasBeenSet(false),
+    m_backupPeriodSaveIntervalHasBeenSet(false),
+    m_backupPeriodSaveCountHasBeenSet(false),
+    m_startBackupPeriodSaveDateHasBeenSet(false)
 {
 }
 
@@ -86,6 +92,54 @@ string ModifyBackupConfigRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_backupTimeWindow.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_enableBackupPeriodSaveHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableBackupPeriodSave";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_enableBackupPeriodSave.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_enableBackupPeriodLongTermSaveHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableBackupPeriodLongTermSave";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_enableBackupPeriodLongTermSave.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_backupPeriodSaveDaysHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BackupPeriodSaveDays";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_backupPeriodSaveDays, allocator);
+    }
+
+    if (m_backupPeriodSaveIntervalHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BackupPeriodSaveInterval";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_backupPeriodSaveInterval.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_backupPeriodSaveCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BackupPeriodSaveCount";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_backupPeriodSaveCount, allocator);
+    }
+
+    if (m_startBackupPeriodSaveDateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StartBackupPeriodSaveDate";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_startBackupPeriodSaveDate.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -190,6 +244,102 @@ void ModifyBackupConfigRequest::SetBackupTimeWindow(const CommonTimeWindow& _bac
 bool ModifyBackupConfigRequest::BackupTimeWindowHasBeenSet() const
 {
     return m_backupTimeWindowHasBeenSet;
+}
+
+string ModifyBackupConfigRequest::GetEnableBackupPeriodSave() const
+{
+    return m_enableBackupPeriodSave;
+}
+
+void ModifyBackupConfigRequest::SetEnableBackupPeriodSave(const string& _enableBackupPeriodSave)
+{
+    m_enableBackupPeriodSave = _enableBackupPeriodSave;
+    m_enableBackupPeriodSaveHasBeenSet = true;
+}
+
+bool ModifyBackupConfigRequest::EnableBackupPeriodSaveHasBeenSet() const
+{
+    return m_enableBackupPeriodSaveHasBeenSet;
+}
+
+string ModifyBackupConfigRequest::GetEnableBackupPeriodLongTermSave() const
+{
+    return m_enableBackupPeriodLongTermSave;
+}
+
+void ModifyBackupConfigRequest::SetEnableBackupPeriodLongTermSave(const string& _enableBackupPeriodLongTermSave)
+{
+    m_enableBackupPeriodLongTermSave = _enableBackupPeriodLongTermSave;
+    m_enableBackupPeriodLongTermSaveHasBeenSet = true;
+}
+
+bool ModifyBackupConfigRequest::EnableBackupPeriodLongTermSaveHasBeenSet() const
+{
+    return m_enableBackupPeriodLongTermSaveHasBeenSet;
+}
+
+int64_t ModifyBackupConfigRequest::GetBackupPeriodSaveDays() const
+{
+    return m_backupPeriodSaveDays;
+}
+
+void ModifyBackupConfigRequest::SetBackupPeriodSaveDays(const int64_t& _backupPeriodSaveDays)
+{
+    m_backupPeriodSaveDays = _backupPeriodSaveDays;
+    m_backupPeriodSaveDaysHasBeenSet = true;
+}
+
+bool ModifyBackupConfigRequest::BackupPeriodSaveDaysHasBeenSet() const
+{
+    return m_backupPeriodSaveDaysHasBeenSet;
+}
+
+string ModifyBackupConfigRequest::GetBackupPeriodSaveInterval() const
+{
+    return m_backupPeriodSaveInterval;
+}
+
+void ModifyBackupConfigRequest::SetBackupPeriodSaveInterval(const string& _backupPeriodSaveInterval)
+{
+    m_backupPeriodSaveInterval = _backupPeriodSaveInterval;
+    m_backupPeriodSaveIntervalHasBeenSet = true;
+}
+
+bool ModifyBackupConfigRequest::BackupPeriodSaveIntervalHasBeenSet() const
+{
+    return m_backupPeriodSaveIntervalHasBeenSet;
+}
+
+int64_t ModifyBackupConfigRequest::GetBackupPeriodSaveCount() const
+{
+    return m_backupPeriodSaveCount;
+}
+
+void ModifyBackupConfigRequest::SetBackupPeriodSaveCount(const int64_t& _backupPeriodSaveCount)
+{
+    m_backupPeriodSaveCount = _backupPeriodSaveCount;
+    m_backupPeriodSaveCountHasBeenSet = true;
+}
+
+bool ModifyBackupConfigRequest::BackupPeriodSaveCountHasBeenSet() const
+{
+    return m_backupPeriodSaveCountHasBeenSet;
+}
+
+string ModifyBackupConfigRequest::GetStartBackupPeriodSaveDate() const
+{
+    return m_startBackupPeriodSaveDate;
+}
+
+void ModifyBackupConfigRequest::SetStartBackupPeriodSaveDate(const string& _startBackupPeriodSaveDate)
+{
+    m_startBackupPeriodSaveDate = _startBackupPeriodSaveDate;
+    m_startBackupPeriodSaveDateHasBeenSet = true;
+}
+
+bool ModifyBackupConfigRequest::StartBackupPeriodSaveDateHasBeenSet() const
+{
+    return m_startBackupPeriodSaveDateHasBeenSet;
 }
 
 

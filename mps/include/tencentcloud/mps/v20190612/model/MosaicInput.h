@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 视频处理任务中的马赛克参数类型
+                * 媒体处理任务中的马赛克参数类型
                 */
                 class MosaicInput : public AbstractModel
                 {

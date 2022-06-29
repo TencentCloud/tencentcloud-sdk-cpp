@@ -27,7 +27,9 @@ UserInfo::UserInfo() :
     m_creatorHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_workGroupSetHasBeenSet(false),
-    m_isOwnerHasBeenSet(false)
+    m_isOwnerHasBeenSet(false),
+    m_userTypeHasBeenSet(false),
+    m_userAliasHasBeenSet(false)
 {
 }
 
@@ -126,6 +128,26 @@ CoreInternalOutcome UserInfo::Deserialize(const rapidjson::Value &value)
         m_isOwnerHasBeenSet = true;
     }
 
+    if (value.HasMember("UserType") && !value["UserType"].IsNull())
+    {
+        if (!value["UserType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UserInfo.UserType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_userType = string(value["UserType"].GetString());
+        m_userTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("UserAlias") && !value["UserAlias"].IsNull())
+    {
+        if (!value["UserAlias"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UserInfo.UserAlias` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_userAlias = string(value["UserAlias"].GetString());
+        m_userAliasHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -201,6 +223,22 @@ void UserInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "IsOwner";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isOwner, allocator);
+    }
+
+    if (m_userTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_userType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_userAliasHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserAlias";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_userAlias.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -316,5 +354,37 @@ void UserInfo::SetIsOwner(const bool& _isOwner)
 bool UserInfo::IsOwnerHasBeenSet() const
 {
     return m_isOwnerHasBeenSet;
+}
+
+string UserInfo::GetUserType() const
+{
+    return m_userType;
+}
+
+void UserInfo::SetUserType(const string& _userType)
+{
+    m_userType = _userType;
+    m_userTypeHasBeenSet = true;
+}
+
+bool UserInfo::UserTypeHasBeenSet() const
+{
+    return m_userTypeHasBeenSet;
+}
+
+string UserInfo::GetUserAlias() const
+{
+    return m_userAlias;
+}
+
+void UserInfo::SetUserAlias(const string& _userAlias)
+{
+    m_userAlias = _userAlias;
+    m_userAliasHasBeenSet = true;
+}
+
+bool UserInfo::UserAliasHasBeenSet() const
+{
+    return m_userAliasHasBeenSet;
 }
 

@@ -83,11 +83,11 @@ namespace TencentCloud
                     bool LabelHasBeenSet() const;
 
                     /**
-                     * 获取对应识别label的置信度，分数越高意味涉政可能性越大。 
+                     * 获取对应识别label的置信度，分数越高意味违法违规可能性越大。 
 0到70，Suggestion建议为PASS； 
 70到80，Suggestion建议为REVIEW； 
 80到100，Suggestion建议为BLOCK。
-                     * @return Confidence 对应识别label的置信度，分数越高意味涉政可能性越大。 
+                     * @return Confidence 对应识别label的置信度，分数越高意味违法违规可能性越大。 
 0到70，Suggestion建议为PASS； 
 70到80，Suggestion建议为REVIEW； 
 80到100，Suggestion建议为BLOCK。
@@ -95,11 +95,11 @@ namespace TencentCloud
                     double GetConfidence() const;
 
                     /**
-                     * 设置对应识别label的置信度，分数越高意味涉政可能性越大。 
+                     * 设置对应识别label的置信度，分数越高意味违法违规可能性越大。 
 0到70，Suggestion建议为PASS； 
 70到80，Suggestion建议为REVIEW； 
 80到100，Suggestion建议为BLOCK。
-                     * @param Confidence 对应识别label的置信度，分数越高意味涉政可能性越大。 
+                     * @param Confidence 对应识别label的置信度，分数越高意味违法违规可能性越大。 
 0到70，Suggestion建议为PASS； 
 70到80，Suggestion建议为REVIEW； 
 80到100，Suggestion建议为BLOCK。
@@ -157,7 +157,7 @@ BLOCK：违规
                     bool m_labelHasBeenSet;
 
                     /**
-                     * 对应识别label的置信度，分数越高意味涉政可能性越大。 
+                     * 对应识别label的置信度，分数越高意味违法违规可能性越大。 
 0到70，Suggestion建议为PASS； 
 70到80，Suggestion建议为REVIEW； 
 80到100，Suggestion建议为BLOCK。

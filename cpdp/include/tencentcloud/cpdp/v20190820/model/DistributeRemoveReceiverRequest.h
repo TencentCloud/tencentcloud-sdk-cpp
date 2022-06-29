@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取收单系统分配的开放ID
-                     * @return OpenId 收单系统分配的开放ID
+                     * 获取使用门店OpenId
+                     * @return OpenId 使用门店OpenId
                      */
                     std::string GetOpenId() const;
 
                     /**
-                     * 设置收单系统分配的开放ID
-                     * @param OpenId 收单系统分配的开放ID
+                     * 设置使用门店OpenId
+                     * @param OpenId 使用门店OpenId
                      */
                     void SetOpenId(const std::string& _openId);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool OpenIdHasBeenSet() const;
 
                     /**
-                     * 获取收单系统分配的密钥
-                     * @return OpenKey 收单系统分配的密钥
+                     * 获取使用门店OpenKey
+                     * @return OpenKey 使用门店OpenKey
                      */
                     std::string GetOpenKey() const;
 
                     /**
-                     * 设置收单系统分配的密钥
-                     * @param OpenKey 收单系统分配的密钥
+                     * 设置使用门店OpenKey
+                     * @param OpenKey 使用门店OpenKey
                      */
                     void SetOpenKey(const std::string& _openKey);
 
@@ -97,24 +97,6 @@ namespace TencentCloud
                     bool MerchantNoHasBeenSet() const;
 
                     /**
-                     * 获取沙箱环境填sandbox，正式环境不填
-                     * @return Profile 沙箱环境填sandbox，正式环境不填
-                     */
-                    std::string GetProfile() const;
-
-                    /**
-                     * 设置沙箱环境填sandbox，正式环境不填
-                     * @param Profile 沙箱环境填sandbox，正式环境不填
-                     */
-                    void SetProfile(const std::string& _profile);
-
-                    /**
-                     * 判断参数 Profile 是否已赋值
-                     * @return Profile 是否已赋值
-                     */
-                    bool ProfileHasBeenSet() const;
-
-                    /**
                      * 获取备注
                      * @return Remark 备注
                      */
@@ -132,16 +114,34 @@ namespace TencentCloud
                      */
                     bool RemarkHasBeenSet() const;
 
+                    /**
+                     * 获取沙箱环境填sandbox，正式环境不填
+                     * @return Profile 沙箱环境填sandbox，正式环境不填
+                     */
+                    std::string GetProfile() const;
+
+                    /**
+                     * 设置沙箱环境填sandbox，正式环境不填
+                     * @param Profile 沙箱环境填sandbox，正式环境不填
+                     */
+                    void SetProfile(const std::string& _profile);
+
+                    /**
+                     * 判断参数 Profile 是否已赋值
+                     * @return Profile 是否已赋值
+                     */
+                    bool ProfileHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 收单系统分配的开放ID
+                     * 使用门店OpenId
                      */
                     std::string m_openId;
                     bool m_openIdHasBeenSet;
 
                     /**
-                     * 收单系统分配的密钥
+                     * 使用门店OpenKey
                      */
                     std::string m_openKey;
                     bool m_openKeyHasBeenSet;
@@ -153,16 +153,16 @@ namespace TencentCloud
                     bool m_merchantNoHasBeenSet;
 
                     /**
-                     * 沙箱环境填sandbox，正式环境不填
-                     */
-                    std::string m_profile;
-                    bool m_profileHasBeenSet;
-
-                    /**
                      * 备注
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
+
+                    /**
+                     * 沙箱环境填sandbox，正式环境不填
+                     */
+                    std::string m_profile;
+                    bool m_profileHasBeenSet;
 
                 };
             }

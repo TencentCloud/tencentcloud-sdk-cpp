@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 内容审核鉴政任务输入参数类型
+                * 内容审核敏感任务输入参数类型
                 */
                 class AiReviewPoliticalTaskInput : public AbstractModel
                 {
@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取鉴政模板 ID。
-                     * @return Definition 鉴政模板 ID。
+                     * 获取模板 ID。
+                     * @return Definition 模板 ID。
                      */
                     uint64_t GetDefinition() const;
 
                     /**
-                     * 设置鉴政模板 ID。
-                     * @param Definition 鉴政模板 ID。
+                     * 设置模板 ID。
+                     * @param Definition 模板 ID。
                      */
                     void SetDefinition(const uint64_t& _definition);
 
@@ -67,7 +67,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 鉴政模板 ID。
+                     * 模板 ID。
                      */
                     uint64_t m_definition;
                     bool m_definitionHasBeenSet;

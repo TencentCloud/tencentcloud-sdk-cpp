@@ -23,7 +23,8 @@ using namespace std;
 CosConfig::CosConfig() :
     m_actionHasBeenSet(false),
     m_bucketNameHasBeenSet(false),
-    m_authorizationHasBeenSet(false)
+    m_authorizationHasBeenSet(false),
+    m_pathMatchModeHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,16 @@ CoreInternalOutcome CosConfig::Deserialize(const rapidjson::Value &value)
         m_authorizationHasBeenSet = true;
     }
 
+    if (value.HasMember("PathMatchMode") && !value["PathMatchMode"].IsNull())
+    {
+        if (!value["PathMatchMode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CosConfig.PathMatchMode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_pathMatchMode = string(value["PathMatchMode"].GetString());
+        m_pathMatchModeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +102,14 @@ void CosConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "Authorization";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_authorization, allocator);
+    }
+
+    if (m_pathMatchModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PathMatchMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_pathMatchMode.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -142,5 +161,21 @@ void CosConfig::SetAuthorization(const bool& _authorization)
 bool CosConfig::AuthorizationHasBeenSet() const
 {
     return m_authorizationHasBeenSet;
+}
+
+string CosConfig::GetPathMatchMode() const
+{
+    return m_pathMatchMode;
+}
+
+void CosConfig::SetPathMatchMode(const string& _pathMatchMode)
+{
+    m_pathMatchMode = _pathMatchMode;
+    m_pathMatchModeHasBeenSet = true;
+}
+
+bool CosConfig::PathMatchModeHasBeenSet() const
+{
+    return m_pathMatchModeHasBeenSet;
 }
 

@@ -388,6 +388,124 @@ MountNamespace逃逸、
                      */
                     bool ClientIPHasBeenSet() const;
 
+                    /**
+                     * 获取网络状态
+未隔离  	NORMAL
+已隔离		ISOLATED
+隔离中		ISOLATING
+隔离失败	ISOLATE_FAILED
+解除隔离中  RESTORING
+解除隔离失败 RESTORE_FAILED
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ContainerNetStatus 网络状态
+未隔离  	NORMAL
+已隔离		ISOLATED
+隔离中		ISOLATING
+隔离失败	ISOLATE_FAILED
+解除隔离中  RESTORING
+解除隔离失败 RESTORE_FAILED
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetContainerNetStatus() const;
+
+                    /**
+                     * 设置网络状态
+未隔离  	NORMAL
+已隔离		ISOLATED
+隔离中		ISOLATING
+隔离失败	ISOLATE_FAILED
+解除隔离中  RESTORING
+解除隔离失败 RESTORE_FAILED
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ContainerNetStatus 网络状态
+未隔离  	NORMAL
+已隔离		ISOLATED
+隔离中		ISOLATING
+隔离失败	ISOLATE_FAILED
+解除隔离中  RESTORING
+解除隔离失败 RESTORE_FAILED
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetContainerNetStatus(const std::string& _containerNetStatus);
+
+                    /**
+                     * 判断参数 ContainerNetStatus 是否已赋值
+                     * @return ContainerNetStatus 是否已赋值
+                     */
+                    bool ContainerNetStatusHasBeenSet() const;
+
+                    /**
+                     * 获取容器子状态
+"AGENT_OFFLINE"       //Agent离线
+"NODE_DESTROYED"      //节点已销毁
+"CONTAINER_EXITED"    //容器已退出
+"CONTAINER_DESTROYED" //容器已销毁
+"SHARED_HOST"         // 容器与主机共享网络
+"RESOURCE_LIMIT"      //隔离操作资源超限
+"UNKNOW"              // 原因未知
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ContainerNetSubStatus 容器子状态
+"AGENT_OFFLINE"       //Agent离线
+"NODE_DESTROYED"      //节点已销毁
+"CONTAINER_EXITED"    //容器已退出
+"CONTAINER_DESTROYED" //容器已销毁
+"SHARED_HOST"         // 容器与主机共享网络
+"RESOURCE_LIMIT"      //隔离操作资源超限
+"UNKNOW"              // 原因未知
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetContainerNetSubStatus() const;
+
+                    /**
+                     * 设置容器子状态
+"AGENT_OFFLINE"       //Agent离线
+"NODE_DESTROYED"      //节点已销毁
+"CONTAINER_EXITED"    //容器已退出
+"CONTAINER_DESTROYED" //容器已销毁
+"SHARED_HOST"         // 容器与主机共享网络
+"RESOURCE_LIMIT"      //隔离操作资源超限
+"UNKNOW"              // 原因未知
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ContainerNetSubStatus 容器子状态
+"AGENT_OFFLINE"       //Agent离线
+"NODE_DESTROYED"      //节点已销毁
+"CONTAINER_EXITED"    //容器已退出
+"CONTAINER_DESTROYED" //容器已销毁
+"SHARED_HOST"         // 容器与主机共享网络
+"RESOURCE_LIMIT"      //隔离操作资源超限
+"UNKNOW"              // 原因未知
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetContainerNetSubStatus(const std::string& _containerNetSubStatus);
+
+                    /**
+                     * 判断参数 ContainerNetSubStatus 是否已赋值
+                     * @return ContainerNetSubStatus 是否已赋值
+                     */
+                    bool ContainerNetSubStatusHasBeenSet() const;
+
+                    /**
+                     * 获取容器隔离操作来源
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ContainerIsolateOperationSrc 容器隔离操作来源
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetContainerIsolateOperationSrc() const;
+
+                    /**
+                     * 设置容器隔离操作来源
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ContainerIsolateOperationSrc 容器隔离操作来源
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetContainerIsolateOperationSrc(const std::string& _containerIsolateOperationSrc);
+
+                    /**
+                     * 判断参数 ContainerIsolateOperationSrc 是否已赋值
+                     * @return ContainerIsolateOperationSrc 是否已赋值
+                     */
+                    bool ContainerIsolateOperationSrcHasBeenSet() const;
+
                 private:
 
                     /**
@@ -497,6 +615,40 @@ MountNamespace逃逸、
                      */
                     std::string m_clientIP;
                     bool m_clientIPHasBeenSet;
+
+                    /**
+                     * 网络状态
+未隔离  	NORMAL
+已隔离		ISOLATED
+隔离中		ISOLATING
+隔离失败	ISOLATE_FAILED
+解除隔离中  RESTORING
+解除隔离失败 RESTORE_FAILED
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_containerNetStatus;
+                    bool m_containerNetStatusHasBeenSet;
+
+                    /**
+                     * 容器子状态
+"AGENT_OFFLINE"       //Agent离线
+"NODE_DESTROYED"      //节点已销毁
+"CONTAINER_EXITED"    //容器已退出
+"CONTAINER_DESTROYED" //容器已销毁
+"SHARED_HOST"         // 容器与主机共享网络
+"RESOURCE_LIMIT"      //隔离操作资源超限
+"UNKNOW"              // 原因未知
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_containerNetSubStatus;
+                    bool m_containerNetSubStatusHasBeenSet;
+
+                    /**
+                     * 容器隔离操作来源
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_containerIsolateOperationSrc;
+                    bool m_containerIsolateOperationSrcHasBeenSet;
 
                 };
             }

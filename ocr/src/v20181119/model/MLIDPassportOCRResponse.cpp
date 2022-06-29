@@ -33,7 +33,9 @@ MLIDPassportOCRResponse::MLIDPassportOCRResponse() :
     m_nationalityHasBeenSet(false),
     m_warnHasBeenSet(false),
     m_imageHasBeenSet(false),
-    m_advancedInfoHasBeenSet(false)
+    m_advancedInfoHasBeenSet(false),
+    m_codeSetHasBeenSet(false),
+    m_codeCrcHasBeenSet(false)
 {
 }
 
@@ -174,6 +176,26 @@ CoreInternalOutcome MLIDPassportOCRResponse::Deserialize(const string &payload)
         m_advancedInfoHasBeenSet = true;
     }
 
+    if (rsp.HasMember("CodeSet") && !rsp["CodeSet"].IsNull())
+    {
+        if (!rsp["CodeSet"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CodeSet` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_codeSet = string(rsp["CodeSet"].GetString());
+        m_codeSetHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("CodeCrc") && !rsp["CodeCrc"].IsNull())
+    {
+        if (!rsp["CodeCrc"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CodeCrc` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_codeCrc = string(rsp["CodeCrc"].GetString());
+        m_codeCrcHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -267,6 +289,22 @@ string MLIDPassportOCRResponse::ToJsonString() const
         string key = "AdvancedInfo";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_advancedInfo.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_codeSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CodeSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_codeSet.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_codeCrcHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CodeCrc";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_codeCrc.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -379,6 +417,26 @@ string MLIDPassportOCRResponse::GetAdvancedInfo() const
 bool MLIDPassportOCRResponse::AdvancedInfoHasBeenSet() const
 {
     return m_advancedInfoHasBeenSet;
+}
+
+string MLIDPassportOCRResponse::GetCodeSet() const
+{
+    return m_codeSet;
+}
+
+bool MLIDPassportOCRResponse::CodeSetHasBeenSet() const
+{
+    return m_codeSetHasBeenSet;
+}
+
+string MLIDPassportOCRResponse::GetCodeCrc() const
+{
+    return m_codeCrc;
+}
+
+bool MLIDPassportOCRResponse::CodeCrcHasBeenSet() const
+{
+    return m_codeCrcHasBeenSet;
 }
 
 

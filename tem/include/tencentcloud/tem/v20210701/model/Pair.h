@@ -126,6 +126,28 @@ namespace TencentCloud
                      */
                     bool ConfigHasBeenSet() const;
 
+                    /**
+                     * 获取加密配置名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Secret 加密配置名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetSecret() const;
+
+                    /**
+                     * 设置加密配置名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Secret 加密配置名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSecret(const std::string& _secret);
+
+                    /**
+                     * 判断参数 Secret 是否已赋值
+                     * @return Secret 是否已赋值
+                     */
+                    bool SecretHasBeenSet() const;
+
                 private:
 
                     /**
@@ -153,6 +175,13 @@ namespace TencentCloud
                      */
                     std::string m_config;
                     bool m_configHasBeenSet;
+
+                    /**
+                     * 加密配置名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_secret;
+                    bool m_secretHasBeenSet;
 
                 };
             }

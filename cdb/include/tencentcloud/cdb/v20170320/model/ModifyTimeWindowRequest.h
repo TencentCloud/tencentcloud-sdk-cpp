@@ -96,6 +96,24 @@ namespace TencentCloud
                      */
                     bool WeekdaysHasBeenSet() const;
 
+                    /**
+                     * 获取数据延迟阈值，仅对主实例和灾备实例有效，不传默认修改为10
+                     * @return MaxDelayTime 数据延迟阈值，仅对主实例和灾备实例有效，不传默认修改为10
+                     */
+                    uint64_t GetMaxDelayTime() const;
+
+                    /**
+                     * 设置数据延迟阈值，仅对主实例和灾备实例有效，不传默认修改为10
+                     * @param MaxDelayTime 数据延迟阈值，仅对主实例和灾备实例有效，不传默认修改为10
+                     */
+                    void SetMaxDelayTime(const uint64_t& _maxDelayTime);
+
+                    /**
+                     * 判断参数 MaxDelayTime 是否已赋值
+                     * @return MaxDelayTime 是否已赋值
+                     */
+                    bool MaxDelayTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -115,6 +133,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_weekdays;
                     bool m_weekdaysHasBeenSet;
+
+                    /**
+                     * 数据延迟阈值，仅对主实例和灾备实例有效，不传默认修改为10
+                     */
+                    uint64_t m_maxDelayTime;
+                    bool m_maxDelayTimeHasBeenSet;
 
                 };
             }

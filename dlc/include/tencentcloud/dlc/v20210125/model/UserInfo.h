@@ -169,17 +169,17 @@ namespace TencentCloud
                     bool WorkGroupSetHasBeenSet() const;
 
                     /**
-                     * 获取是否是管理员账号
+                     * 获取是否是主账号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IsOwner 是否是管理员账号
+                     * @return IsOwner 是否是主账号
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool GetIsOwner() const;
 
                     /**
-                     * 设置是否是管理员账号
+                     * 设置是否是主账号
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IsOwner 是否是管理员账号
+                     * @param IsOwner 是否是主账号
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetIsOwner(const bool& _isOwner);
@@ -189,6 +189,50 @@ namespace TencentCloud
                      * @return IsOwner 是否已赋值
                      */
                     bool IsOwnerHasBeenSet() const;
+
+                    /**
+                     * 获取用户类型。ADMIN：管理员 COMMON：普通用户。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UserType 用户类型。ADMIN：管理员 COMMON：普通用户。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetUserType() const;
+
+                    /**
+                     * 设置用户类型。ADMIN：管理员 COMMON：普通用户。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param UserType 用户类型。ADMIN：管理员 COMMON：普通用户。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetUserType(const std::string& _userType);
+
+                    /**
+                     * 判断参数 UserType 是否已赋值
+                     * @return UserType 是否已赋值
+                     */
+                    bool UserTypeHasBeenSet() const;
+
+                    /**
+                     * 获取用户别名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UserAlias 用户别名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetUserAlias() const;
+
+                    /**
+                     * 设置用户别名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param UserAlias 用户别名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetUserAlias(const std::string& _userAlias);
+
+                    /**
+                     * 判断参数 UserAlias 是否已赋值
+                     * @return UserAlias 是否已赋值
+                     */
+                    bool UserAliasHasBeenSet() const;
 
                 private:
 
@@ -232,11 +276,25 @@ namespace TencentCloud
                     bool m_workGroupSetHasBeenSet;
 
                     /**
-                     * 是否是管理员账号
+                     * 是否是主账号
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isOwner;
                     bool m_isOwnerHasBeenSet;
+
+                    /**
+                     * 用户类型。ADMIN：管理员 COMMON：普通用户。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_userType;
+                    bool m_userTypeHasBeenSet;
+
+                    /**
+                     * 用户别名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_userAlias;
+                    bool m_userAliasHasBeenSet;
 
                 };
             }

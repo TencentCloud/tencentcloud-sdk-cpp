@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool EnableScanHasBeenSet() const;
 
                     /**
-                     * 获取检测周期每隔多少天
-                     * @return Cycle 检测周期每隔多少天
+                     * 获取检测周期每隔多少天(1|3|7)
+                     * @return Cycle 检测周期每隔多少天(1|3|7)
                      */
                     uint64_t GetCycle() const;
 
                     /**
-                     * 设置检测周期每隔多少天
-                     * @param Cycle 检测周期每隔多少天
+                     * 设置检测周期每隔多少天(1|3|7)
+                     * @param Cycle 检测周期每隔多少天(1|3|7)
                      */
                     void SetCycle(const uint64_t& _cycle);
 
@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool BeginScanAtHasBeenSet() const;
 
                     /**
-                     * 获取扫描全部路径
-                     * @return ScanPathAll 扫描全部路径
+                     * 获取扫描全部路径(true:全选,false:自选)
+                     * @return ScanPathAll 扫描全部路径(true:全选,false:自选)
                      */
                     bool GetScanPathAll() const;
 
                     /**
-                     * 设置扫描全部路径
-                     * @param ScanPathAll 扫描全部路径
+                     * 设置扫描全部路径(true:全选,false:自选)
+                     * @param ScanPathAll 扫描全部路径(true:全选,false:自选)
                      */
                     void SetScanPathAll(const bool& _scanPathAll);
 
@@ -133,14 +133,14 @@ namespace TencentCloud
                     bool ScanPathTypeHasBeenSet() const;
 
                     /**
-                     * 获取超时时长
-                     * @return Timeout 超时时长
+                     * 获取超时时长(5~24h)
+                     * @return Timeout 超时时长(5~24h)
                      */
                     uint64_t GetTimeout() const;
 
                     /**
-                     * 设置超时时长
-                     * @param Timeout 超时时长
+                     * 设置超时时长(5~24h)
+                     * @param Timeout 超时时长(5~24h)
                      */
                     void SetTimeout(const uint64_t& _timeout);
 
@@ -231,7 +231,7 @@ namespace TencentCloud
                     bool m_enableScanHasBeenSet;
 
                     /**
-                     * 检测周期每隔多少天
+                     * 检测周期每隔多少天(1|3|7)
                      */
                     uint64_t m_cycle;
                     bool m_cycleHasBeenSet;
@@ -243,7 +243,7 @@ namespace TencentCloud
                     bool m_beginScanAtHasBeenSet;
 
                     /**
-                     * 扫描全部路径
+                     * 扫描全部路径(true:全选,false:自选)
                      */
                     bool m_scanPathAll;
                     bool m_scanPathAllHasBeenSet;
@@ -255,7 +255,7 @@ namespace TencentCloud
                     bool m_scanPathTypeHasBeenSet;
 
                     /**
-                     * 超时时长
+                     * 超时时长(5~24h)
                      */
                     uint64_t m_timeout;
                     bool m_timeoutHasBeenSet;

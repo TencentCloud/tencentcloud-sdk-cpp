@@ -387,6 +387,24 @@ global：全球锁定
                      */
                     bool ProductHasBeenSet() const;
 
+                    /**
+                     * 获取主域名
+                     * @return ParentHost 主域名
+                     */
+                    std::string GetParentHost() const;
+
+                    /**
+                     * 设置主域名
+                     * @param ParentHost 主域名
+                     */
+                    void SetParentHost(const std::string& _parentHost);
+
+                    /**
+                     * 判断参数 ParentHost 是否已赋值
+                     * @return ParentHost 是否已赋值
+                     */
+                    bool ParentHostHasBeenSet() const;
+
                 private:
 
                     /**
@@ -494,6 +512,12 @@ global：全球锁定
                      */
                     std::string m_product;
                     bool m_productHasBeenSet;
+
+                    /**
+                     * 主域名
+                     */
+                    std::string m_parentHost;
+                    bool m_parentHostHasBeenSet;
 
                 };
             }

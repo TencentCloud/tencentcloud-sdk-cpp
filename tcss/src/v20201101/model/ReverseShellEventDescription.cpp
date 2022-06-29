@@ -24,7 +24,8 @@ ReverseShellEventDescription::ReverseShellEventDescription() :
     m_descriptionHasBeenSet(false),
     m_solutionHasBeenSet(false),
     m_remarkHasBeenSet(false),
-    m_dstAddressHasBeenSet(false)
+    m_dstAddressHasBeenSet(false),
+    m_operationTimeHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome ReverseShellEventDescription::Deserialize(const rapidjson::V
         m_dstAddressHasBeenSet = true;
     }
 
+    if (value.HasMember("OperationTime") && !value["OperationTime"].IsNull())
+    {
+        if (!value["OperationTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ReverseShellEventDescription.OperationTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_operationTime = string(value["OperationTime"].GetString());
+        m_operationTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +121,14 @@ void ReverseShellEventDescription::ToJsonObject(rapidjson::Value &value, rapidjs
         string key = "DstAddress";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_dstAddress.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_operationTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OperationTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_operationTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -177,5 +196,21 @@ void ReverseShellEventDescription::SetDstAddress(const string& _dstAddress)
 bool ReverseShellEventDescription::DstAddressHasBeenSet() const
 {
     return m_dstAddressHasBeenSet;
+}
+
+string ReverseShellEventDescription::GetOperationTime() const
+{
+    return m_operationTime;
+}
+
+void ReverseShellEventDescription::SetOperationTime(const string& _operationTime)
+{
+    m_operationTime = _operationTime;
+    m_operationTimeHasBeenSet = true;
+}
+
+bool ReverseShellEventDescription::OperationTimeHasBeenSet() const
+{
+    return m_operationTimeHasBeenSet;
 }
 

@@ -31,7 +31,8 @@ UpgradeDBInstanceRequest::UpgradeDBInstanceRequest() :
     m_cpuHasBeenSet(false),
     m_dBVersionHasBeenSet(false),
     m_hATypeHasBeenSet(false),
-    m_multiZonesHasBeenSet(false)
+    m_multiZonesHasBeenSet(false),
+    m_waitSwitchHasBeenSet(false)
 {
 }
 
@@ -117,6 +118,14 @@ string UpgradeDBInstanceRequest::ToJsonString() const
         string key = "MultiZones";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_multiZones.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_waitSwitchHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WaitSwitch";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_waitSwitch, allocator);
     }
 
 
@@ -269,6 +278,22 @@ void UpgradeDBInstanceRequest::SetMultiZones(const string& _multiZones)
 bool UpgradeDBInstanceRequest::MultiZonesHasBeenSet() const
 {
     return m_multiZonesHasBeenSet;
+}
+
+int64_t UpgradeDBInstanceRequest::GetWaitSwitch() const
+{
+    return m_waitSwitch;
+}
+
+void UpgradeDBInstanceRequest::SetWaitSwitch(const int64_t& _waitSwitch)
+{
+    m_waitSwitch = _waitSwitch;
+    m_waitSwitchHasBeenSet = true;
+}
+
+bool UpgradeDBInstanceRequest::WaitSwitchHasBeenSet() const
+{
+    return m_waitSwitchHasBeenSet;
 }
 
 

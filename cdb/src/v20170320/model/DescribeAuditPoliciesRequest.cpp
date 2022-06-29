@@ -28,7 +28,8 @@ DescribeAuditPoliciesRequest::DescribeAuditPoliciesRequest() :
     m_policyNameHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_ruleIdHasBeenSet(false)
+    m_ruleIdHasBeenSet(false),
+    m_instanceNameHasBeenSet(false)
 {
 }
 
@@ -85,6 +86,14 @@ string DescribeAuditPoliciesRequest::ToJsonString() const
         string key = "RuleId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_ruleId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_instanceName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -189,6 +198,22 @@ void DescribeAuditPoliciesRequest::SetRuleId(const string& _ruleId)
 bool DescribeAuditPoliciesRequest::RuleIdHasBeenSet() const
 {
     return m_ruleIdHasBeenSet;
+}
+
+string DescribeAuditPoliciesRequest::GetInstanceName() const
+{
+    return m_instanceName;
+}
+
+void DescribeAuditPoliciesRequest::SetInstanceName(const string& _instanceName)
+{
+    m_instanceName = _instanceName;
+    m_instanceNameHasBeenSet = true;
+}
+
+bool DescribeAuditPoliciesRequest::InstanceNameHasBeenSet() const
+{
+    return m_instanceNameHasBeenSet;
 }
 
 

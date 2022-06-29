@@ -1803,6 +1803,49 @@ CvmClient::DisassociateSecurityGroupsOutcomeCallable CvmClient::DisassociateSecu
     return task->get_future();
 }
 
+CvmClient::ExportImagesOutcome CvmClient::ExportImages(const ExportImagesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ExportImages");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ExportImagesResponse rsp = ExportImagesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ExportImagesOutcome(rsp);
+        else
+            return ExportImagesOutcome(o.GetError());
+    }
+    else
+    {
+        return ExportImagesOutcome(outcome.GetError());
+    }
+}
+
+void CvmClient::ExportImagesAsync(const ExportImagesRequest& request, const ExportImagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ExportImages(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CvmClient::ExportImagesOutcomeCallable CvmClient::ExportImagesCallable(const ExportImagesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ExportImagesOutcome()>>(
+        [this, request]()
+        {
+            return this->ExportImages(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CvmClient::ImportImageOutcome CvmClient::ImportImage(const ImportImageRequest &request)
 {
     auto outcome = MakeRequest(request, "ImportImage");
@@ -2785,6 +2828,49 @@ CvmClient::ModifyLaunchTemplateDefaultVersionOutcomeCallable CvmClient::ModifyLa
         [this, request]()
         {
             return this->ModifyLaunchTemplateDefaultVersion(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CvmClient::ProgramFpgaImageOutcome CvmClient::ProgramFpgaImage(const ProgramFpgaImageRequest &request)
+{
+    auto outcome = MakeRequest(request, "ProgramFpgaImage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ProgramFpgaImageResponse rsp = ProgramFpgaImageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ProgramFpgaImageOutcome(rsp);
+        else
+            return ProgramFpgaImageOutcome(o.GetError());
+    }
+    else
+    {
+        return ProgramFpgaImageOutcome(outcome.GetError());
+    }
+}
+
+void CvmClient::ProgramFpgaImageAsync(const ProgramFpgaImageRequest& request, const ProgramFpgaImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ProgramFpgaImage(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CvmClient::ProgramFpgaImageOutcomeCallable CvmClient::ProgramFpgaImageCallable(const ProgramFpgaImageRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ProgramFpgaImageOutcome()>>(
+        [this, request]()
+        {
+            return this->ProgramFpgaImage(request);
         }
     );
 

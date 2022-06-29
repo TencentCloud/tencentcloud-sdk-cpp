@@ -108,6 +108,34 @@ namespace TencentCloud
                      */
                     bool ConsoleIntranetAddressHasBeenSet() const;
 
+                    /**
+                     * 获取客户端公网带宽
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InternetBandWidth 客户端公网带宽
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetInternetBandWidth() const;
+
+                    /**
+                     * 判断参数 InternetBandWidth 是否已赋值
+                     * @return InternetBandWidth 是否已赋值
+                     */
+                    bool InternetBandWidthHasBeenSet() const;
+
+                    /**
+                     * 获取控制台公网带宽
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ConsoleInternetBandWidth 控制台公网带宽
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetConsoleInternetBandWidth() const;
+
+                    /**
+                     * 判断参数 ConsoleInternetBandWidth 是否已赋值
+                     * @return ConsoleInternetBandWidth 是否已赋值
+                     */
+                    bool ConsoleInternetBandWidthHasBeenSet() const;
+
                 private:
 
                     /**
@@ -141,6 +169,20 @@ namespace TencentCloud
                      */
                     std::string m_consoleIntranetAddress;
                     bool m_consoleIntranetAddressHasBeenSet;
+
+                    /**
+                     * 客户端公网带宽
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_internetBandWidth;
+                    bool m_internetBandWidthHasBeenSet;
+
+                    /**
+                     * 控制台公网带宽
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_consoleInternetBandWidth;
+                    bool m_consoleInternetBandWidthHasBeenSet;
 
                 };
             }

@@ -25,7 +25,8 @@ using namespace std;
 CreateTopicRequest::CreateTopicRequest() :
     m_topicNameHasBeenSet(false),
     m_partitionCountHasBeenSet(false),
-    m_topicTypeHasBeenSet(false)
+    m_topicTypeHasBeenSet(false),
+    m_periodHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,14 @@ string CreateTopicRequest::ToJsonString() const
         string key = "TopicType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_topicType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_periodHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Period";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_period, allocator);
     }
 
 
@@ -114,6 +123,22 @@ void CreateTopicRequest::SetTopicType(const string& _topicType)
 bool CreateTopicRequest::TopicTypeHasBeenSet() const
 {
     return m_topicTypeHasBeenSet;
+}
+
+uint64_t CreateTopicRequest::GetPeriod() const
+{
+    return m_period;
+}
+
+void CreateTopicRequest::SetPeriod(const uint64_t& _period)
+{
+    m_period = _period;
+    m_periodHasBeenSet = true;
+}
+
+bool CreateTopicRequest::PeriodHasBeenSet() const
+{
+    return m_periodHasBeenSet;
 }
 
 

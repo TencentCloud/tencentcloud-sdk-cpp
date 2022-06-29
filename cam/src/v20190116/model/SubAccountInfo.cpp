@@ -29,7 +29,8 @@ SubAccountInfo::SubAccountInfo() :
     m_phoneNumHasBeenSet(false),
     m_countryCodeHasBeenSet(false),
     m_emailHasBeenSet(false),
-    m_createTimeHasBeenSet(false)
+    m_createTimeHasBeenSet(false),
+    m_nickNameHasBeenSet(false)
 {
 }
 
@@ -128,6 +129,16 @@ CoreInternalOutcome SubAccountInfo::Deserialize(const rapidjson::Value &value)
         m_createTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("NickName") && !value["NickName"].IsNull())
+    {
+        if (!value["NickName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SubAccountInfo.NickName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_nickName = string(value["NickName"].GetString());
+        m_nickNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -205,6 +216,14 @@ void SubAccountInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_nickNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NickName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_nickName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -352,5 +371,21 @@ void SubAccountInfo::SetCreateTime(const string& _createTime)
 bool SubAccountInfo::CreateTimeHasBeenSet() const
 {
     return m_createTimeHasBeenSet;
+}
+
+string SubAccountInfo::GetNickName() const
+{
+    return m_nickName;
+}
+
+void SubAccountInfo::SetNickName(const string& _nickName)
+{
+    m_nickName = _nickName;
+    m_nickNameHasBeenSet = true;
+}
+
+bool SubAccountInfo::NickNameHasBeenSet() const
+{
+    return m_nickNameHasBeenSet;
 }
 

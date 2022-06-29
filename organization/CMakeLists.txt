@@ -64,14 +64,17 @@ set(organization_public_header_model
   include/tencentcloud/organization/v20181225/model/MoveOrganizationMembersToNodeResponse.h
   include/tencentcloud/organization/v20181225/model/OrgNode.h
   include/tencentcloud/organization/v20210331/model/OrgPermission.h
+  include/tencentcloud/organization/v20210331/model/MemberIdentity.h
   include/tencentcloud/organization/v20210331/model/DescribeOrganizationResponse.h
   include/tencentcloud/organization/v20210331/model/BindOrganizationMemberAuthAccountRequest.h
   include/tencentcloud/organization/v20210331/model/CreateOrganizationMemberRequest.h
-  include/tencentcloud/organization/v20210331/model/BindOrganizationMemberAuthAccountResponse.h
+  include/tencentcloud/organization/v20210331/model/DescribeOrganizationMembersResponse.h
   include/tencentcloud/organization/v20210331/model/DescribeOrganizationMembersRequest.h
   include/tencentcloud/organization/v20210331/model/OrgMember.h
+  include/tencentcloud/organization/v20210331/model/CreateOrganizationMemberPolicyResponse.h
+  include/tencentcloud/organization/v20210331/model/CreateOrganizationMemberPolicyRequest.h
   include/tencentcloud/organization/v20210331/model/DescribeOrganizationRequest.h
-  include/tencentcloud/organization/v20210331/model/DescribeOrganizationMembersResponse.h
+  include/tencentcloud/organization/v20210331/model/BindOrganizationMemberAuthAccountResponse.h
   include/tencentcloud/organization/v20210331/model/CreateOrganizationMemberResponse.h
   )
 
@@ -122,14 +125,17 @@ set(organization_src
   src/v20181225/model/MoveOrganizationMembersToNodeResponse.cpp
   src/v20181225/model/OrgNode.cpp
   src/v20210331/model/OrgPermission.cpp
+  src/v20210331/model/MemberIdentity.cpp
   src/v20210331/model/DescribeOrganizationResponse.cpp
   src/v20210331/model/BindOrganizationMemberAuthAccountRequest.cpp
   src/v20210331/model/CreateOrganizationMemberRequest.cpp
-  src/v20210331/model/BindOrganizationMemberAuthAccountResponse.cpp
+  src/v20210331/model/DescribeOrganizationMembersResponse.cpp
   src/v20210331/model/DescribeOrganizationMembersRequest.cpp
   src/v20210331/model/OrgMember.cpp
+  src/v20210331/model/CreateOrganizationMemberPolicyResponse.cpp
+  src/v20210331/model/CreateOrganizationMemberPolicyRequest.cpp
   src/v20210331/model/DescribeOrganizationRequest.cpp
-  src/v20210331/model/DescribeOrganizationMembersResponse.cpp
+  src/v20210331/model/BindOrganizationMemberAuthAccountResponse.cpp
   src/v20210331/model/CreateOrganizationMemberResponse.cpp
   )
 

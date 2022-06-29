@@ -29,7 +29,8 @@ DescribeDealsByCondRequest::DescribeDealsByCondRequest() :
     m_offsetHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_orderIdHasBeenSet(false),
-    m_bigDealIdHasBeenSet(false)
+    m_bigDealIdHasBeenSet(false),
+    m_resourceIdHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,14 @@ string DescribeDealsByCondRequest::ToJsonString() const
         string key = "BigDealId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_bigDealId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resourceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_resourceId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -214,6 +223,22 @@ void DescribeDealsByCondRequest::SetBigDealId(const string& _bigDealId)
 bool DescribeDealsByCondRequest::BigDealIdHasBeenSet() const
 {
     return m_bigDealIdHasBeenSet;
+}
+
+string DescribeDealsByCondRequest::GetResourceId() const
+{
+    return m_resourceId;
+}
+
+void DescribeDealsByCondRequest::SetResourceId(const string& _resourceId)
+{
+    m_resourceId = _resourceId;
+    m_resourceIdHasBeenSet = true;
+}
+
+bool DescribeDealsByCondRequest::ResourceIdHasBeenSet() const
+{
+    return m_resourceIdHasBeenSet;
 }
 
 

@@ -37,7 +37,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 视频处理的输入对象信息。
+                * 媒体处理的输入对象信息。
                 */
                 class MediaInputInfo : public AbstractModel
                 {
@@ -67,14 +67,14 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取当 Type 为 COS 时有效，则该项为必填，表示视频处理 COS 对象信息。
-                     * @return CosInputInfo 当 Type 为 COS 时有效，则该项为必填，表示视频处理 COS 对象信息。
+                     * 获取当 Type 为 COS 时有效，则该项为必填，表示媒体处理 COS 对象信息。
+                     * @return CosInputInfo 当 Type 为 COS 时有效，则该项为必填，表示媒体处理 COS 对象信息。
                      */
                     CosInputInfo GetCosInputInfo() const;
 
                     /**
-                     * 设置当 Type 为 COS 时有效，则该项为必填，表示视频处理 COS 对象信息。
-                     * @param CosInputInfo 当 Type 为 COS 时有效，则该项为必填，表示视频处理 COS 对象信息。
+                     * 设置当 Type 为 COS 时有效，则该项为必填，表示媒体处理 COS 对象信息。
+                     * @param CosInputInfo 当 Type 为 COS 时有效，则该项为必填，表示媒体处理 COS 对象信息。
                      */
                     void SetCosInputInfo(const CosInputInfo& _cosInputInfo);
 
@@ -85,17 +85,17 @@ namespace TencentCloud
                     bool CosInputInfoHasBeenSet() const;
 
                     /**
-                     * 获取当 Type 为 URL 时有效，则该项为必填，表示视频处理 URL 对象信息。
+                     * 获取当 Type 为 URL 时有效，则该项为必填，表示媒体处理 URL 对象信息。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return UrlInputInfo 当 Type 为 URL 时有效，则该项为必填，表示视频处理 URL 对象信息。
+                     * @return UrlInputInfo 当 Type 为 URL 时有效，则该项为必填，表示媒体处理 URL 对象信息。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     UrlInputInfo GetUrlInputInfo() const;
 
                     /**
-                     * 设置当 Type 为 URL 时有效，则该项为必填，表示视频处理 URL 对象信息。
+                     * 设置当 Type 为 URL 时有效，则该项为必填，表示媒体处理 URL 对象信息。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UrlInputInfo 当 Type 为 URL 时有效，则该项为必填，表示视频处理 URL 对象信息。
+                     * @param UrlInputInfo 当 Type 为 URL 时有效，则该项为必填，表示媒体处理 URL 对象信息。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetUrlInputInfo(const UrlInputInfo& _urlInputInfo);
@@ -115,13 +115,13 @@ namespace TencentCloud
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 当 Type 为 COS 时有效，则该项为必填，表示视频处理 COS 对象信息。
+                     * 当 Type 为 COS 时有效，则该项为必填，表示媒体处理 COS 对象信息。
                      */
                     CosInputInfo m_cosInputInfo;
                     bool m_cosInputInfoHasBeenSet;
 
                     /**
-                     * 当 Type 为 URL 时有效，则该项为必填，表示视频处理 URL 对象信息。
+                     * 当 Type 为 URL 时有效，则该项为必填，表示媒体处理 URL 对象信息。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     UrlInputInfo m_urlInputInfo;

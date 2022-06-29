@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 画面鉴政任务控制参数。
+                * 画面涉敏任务控制参数。
                 */
                 class PoliticalImgReviewTemplateInfoForUpdate : public AbstractModel
                 {
@@ -47,22 +47,22 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取画面鉴政任务开关，可选值：
-<li>ON：开启画面鉴政任务；</li>
-<li>OFF：关闭画面鉴政任务。</li>
-                     * @return Switch 画面鉴政任务开关，可选值：
-<li>ON：开启画面鉴政任务；</li>
-<li>OFF：关闭画面鉴政任务。</li>
+                     * 获取画面涉敏任务开关，可选值：
+<li>ON：开启画面涉敏任务；</li>
+<li>OFF：关闭画面涉敏任务。</li>
+                     * @return Switch 画面涉敏任务开关，可选值：
+<li>ON：开启画面涉敏任务；</li>
+<li>OFF：关闭画面涉敏任务。</li>
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置画面鉴政任务开关，可选值：
-<li>ON：开启画面鉴政任务；</li>
-<li>OFF：关闭画面鉴政任务。</li>
-                     * @param Switch 画面鉴政任务开关，可选值：
-<li>ON：开启画面鉴政任务；</li>
-<li>OFF：关闭画面鉴政任务。</li>
+                     * 设置画面涉敏任务开关，可选值：
+<li>ON：开启画面涉敏任务；</li>
+<li>OFF：关闭画面涉敏任务。</li>
+                     * @param Switch 画面涉敏任务开关，可选值：
+<li>ON：开启画面涉敏任务；</li>
+<li>OFF：关闭画面涉敏任务。</li>
                      */
                     void SetSwitch(const std::string& _switch);
 
@@ -73,18 +73,18 @@ namespace TencentCloud
                     bool SwitchHasBeenSet() const;
 
                     /**
-                     * 获取画面鉴政过滤标签，审核结果包含选择的标签则返回结果，如果过滤标签为空，则审核结果全部返回，可选值为：
+                     * 获取画面涉敏过滤标签，审核结果包含选择的标签则返回结果，如果过滤标签为空，则审核结果全部返回，可选值为：
 <li>violation_photo：违规图标；</li>
-<li>politician：政治人物；</li>
+<li>politician：涉敏人物；</li>
 <li>entertainment：娱乐人物；</li>
 <li>sport：体育人物；</li>
 <li>entrepreneur：商业人物；</li>
 <li>scholar：教育学者；</li>
 <li>celebrity：知名人物；</li>
 <li>military：军事人物。</li>
-                     * @return LabelSet 画面鉴政过滤标签，审核结果包含选择的标签则返回结果，如果过滤标签为空，则审核结果全部返回，可选值为：
+                     * @return LabelSet 画面涉敏过滤标签，审核结果包含选择的标签则返回结果，如果过滤标签为空，则审核结果全部返回，可选值为：
 <li>violation_photo：违规图标；</li>
-<li>politician：政治人物；</li>
+<li>politician：涉敏人物；</li>
 <li>entertainment：娱乐人物；</li>
 <li>sport：体育人物；</li>
 <li>entrepreneur：商业人物；</li>
@@ -95,18 +95,18 @@ namespace TencentCloud
                     std::vector<std::string> GetLabelSet() const;
 
                     /**
-                     * 设置画面鉴政过滤标签，审核结果包含选择的标签则返回结果，如果过滤标签为空，则审核结果全部返回，可选值为：
+                     * 设置画面涉敏过滤标签，审核结果包含选择的标签则返回结果，如果过滤标签为空，则审核结果全部返回，可选值为：
 <li>violation_photo：违规图标；</li>
-<li>politician：政治人物；</li>
+<li>politician：涉敏人物；</li>
 <li>entertainment：娱乐人物；</li>
 <li>sport：体育人物；</li>
 <li>entrepreneur：商业人物；</li>
 <li>scholar：教育学者；</li>
 <li>celebrity：知名人物；</li>
 <li>military：军事人物。</li>
-                     * @param LabelSet 画面鉴政过滤标签，审核结果包含选择的标签则返回结果，如果过滤标签为空，则审核结果全部返回，可选值为：
+                     * @param LabelSet 画面涉敏过滤标签，审核结果包含选择的标签则返回结果，如果过滤标签为空，则审核结果全部返回，可选值为：
 <li>violation_photo：违规图标；</li>
-<li>politician：政治人物；</li>
+<li>politician：涉敏人物；</li>
 <li>entertainment：娱乐人物；</li>
 <li>sport：体育人物；</li>
 <li>entrepreneur：商业人物；</li>
@@ -161,17 +161,17 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 画面鉴政任务开关，可选值：
-<li>ON：开启画面鉴政任务；</li>
-<li>OFF：关闭画面鉴政任务。</li>
+                     * 画面涉敏任务开关，可选值：
+<li>ON：开启画面涉敏任务；</li>
+<li>OFF：关闭画面涉敏任务。</li>
                      */
                     std::string m_switch;
                     bool m_switchHasBeenSet;
 
                     /**
-                     * 画面鉴政过滤标签，审核结果包含选择的标签则返回结果，如果过滤标签为空，则审核结果全部返回，可选值为：
+                     * 画面涉敏过滤标签，审核结果包含选择的标签则返回结果，如果过滤标签为空，则审核结果全部返回，可选值为：
 <li>violation_photo：违规图标；</li>
-<li>politician：政治人物；</li>
+<li>politician：涉敏人物；</li>
 <li>entertainment：娱乐人物；</li>
 <li>sport：体育人物；</li>
 <li>entrepreneur：商业人物；</li>

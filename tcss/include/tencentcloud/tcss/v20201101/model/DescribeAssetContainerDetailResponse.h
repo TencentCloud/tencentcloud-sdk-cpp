@@ -321,6 +321,70 @@ namespace TencentCloud
                      */
                     bool HostStatusHasBeenSet() const;
 
+                    /**
+                     * 获取网络状态
+未隔离  	NORMAL
+已隔离		ISOLATED
+隔离中		ISOLATING
+隔离失败	ISOLATE_FAILED
+解除隔离中  RESTORING
+解除隔离失败 RESTORE_FAILED
+                     * @return NetStatus 网络状态
+未隔离  	NORMAL
+已隔离		ISOLATED
+隔离中		ISOLATING
+隔离失败	ISOLATE_FAILED
+解除隔离中  RESTORING
+解除隔离失败 RESTORE_FAILED
+                     */
+                    std::string GetNetStatus() const;
+
+                    /**
+                     * 判断参数 NetStatus 是否已赋值
+                     * @return NetStatus 是否已赋值
+                     */
+                    bool NetStatusHasBeenSet() const;
+
+                    /**
+                     * 获取网络子状态
+                     * @return NetSubStatus 网络子状态
+                     */
+                    std::string GetNetSubStatus() const;
+
+                    /**
+                     * 判断参数 NetSubStatus 是否已赋值
+                     * @return NetSubStatus 是否已赋值
+                     */
+                    bool NetSubStatusHasBeenSet() const;
+
+                    /**
+                     * 获取隔离来源
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsolateSource 隔离来源
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetIsolateSource() const;
+
+                    /**
+                     * 判断参数 IsolateSource 是否已赋值
+                     * @return IsolateSource 是否已赋值
+                     */
+                    bool IsolateSourceHasBeenSet() const;
+
+                    /**
+                     * 获取隔离时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsolateTime 隔离时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetIsolateTime() const;
+
+                    /**
+                     * 判断参数 IsolateTime 是否已赋值
+                     * @return IsolateTime 是否已赋值
+                     */
+                    bool IsolateTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -460,6 +524,38 @@ namespace TencentCloud
                      */
                     std::string m_hostStatus;
                     bool m_hostStatusHasBeenSet;
+
+                    /**
+                     * 网络状态
+未隔离  	NORMAL
+已隔离		ISOLATED
+隔离中		ISOLATING
+隔离失败	ISOLATE_FAILED
+解除隔离中  RESTORING
+解除隔离失败 RESTORE_FAILED
+                     */
+                    std::string m_netStatus;
+                    bool m_netStatusHasBeenSet;
+
+                    /**
+                     * 网络子状态
+                     */
+                    std::string m_netSubStatus;
+                    bool m_netSubStatusHasBeenSet;
+
+                    /**
+                     * 隔离来源
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_isolateSource;
+                    bool m_isolateSourceHasBeenSet;
+
+                    /**
+                     * 隔离时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_isolateTime;
+                    bool m_isolateTimeHasBeenSet;
 
                 };
             }

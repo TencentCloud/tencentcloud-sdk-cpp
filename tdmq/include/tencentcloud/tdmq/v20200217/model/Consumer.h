@@ -134,6 +134,28 @@ namespace TencentCloud
                      */
                     bool ClientVersionHasBeenSet() const;
 
+                    /**
+                     * 获取消费者连接的主题分区号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Partition 消费者连接的主题分区号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetPartition() const;
+
+                    /**
+                     * 设置消费者连接的主题分区号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Partition 消费者连接的主题分区号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPartition(const int64_t& _partition);
+
+                    /**
+                     * 判断参数 Partition 是否已赋值
+                     * @return Partition 是否已赋值
+                     */
+                    bool PartitionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -163,6 +185,13 @@ namespace TencentCloud
                      */
                     std::string m_clientVersion;
                     bool m_clientVersionHasBeenSet;
+
+                    /**
+                     * 消费者连接的主题分区号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_partition;
+                    bool m_partitionHasBeenSet;
 
                 };
             }

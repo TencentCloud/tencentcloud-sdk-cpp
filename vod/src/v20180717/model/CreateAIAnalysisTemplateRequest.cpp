@@ -23,14 +23,14 @@ using namespace TencentCloud::Vod::V20180717::Model;
 using namespace std;
 
 CreateAIAnalysisTemplateRequest::CreateAIAnalysisTemplateRequest() :
+    m_subAppIdHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_commentHasBeenSet(false),
     m_classificationConfigureHasBeenSet(false),
     m_tagConfigureHasBeenSet(false),
     m_coverConfigureHasBeenSet(false),
     m_frameTagConfigureHasBeenSet(false),
-    m_highlightConfigureHasBeenSet(false),
-    m_subAppIdHasBeenSet(false)
+    m_highlightConfigureHasBeenSet(false)
 {
 }
 
@@ -40,6 +40,14 @@ string CreateAIAnalysisTemplateRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
+
+    if (m_subAppIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubAppId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_subAppId, allocator);
+    }
 
     if (m_nameHasBeenSet)
     {
@@ -102,14 +110,6 @@ string CreateAIAnalysisTemplateRequest::ToJsonString() const
         m_highlightConfigure.ToJsonObject(d[key.c_str()], allocator);
     }
 
-    if (m_subAppIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SubAppId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_subAppId, allocator);
-    }
-
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -117,6 +117,22 @@ string CreateAIAnalysisTemplateRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+uint64_t CreateAIAnalysisTemplateRequest::GetSubAppId() const
+{
+    return m_subAppId;
+}
+
+void CreateAIAnalysisTemplateRequest::SetSubAppId(const uint64_t& _subAppId)
+{
+    m_subAppId = _subAppId;
+    m_subAppIdHasBeenSet = true;
+}
+
+bool CreateAIAnalysisTemplateRequest::SubAppIdHasBeenSet() const
+{
+    return m_subAppIdHasBeenSet;
+}
 
 string CreateAIAnalysisTemplateRequest::GetName() const
 {
@@ -228,22 +244,6 @@ void CreateAIAnalysisTemplateRequest::SetHighlightConfigure(const HighlightsConf
 bool CreateAIAnalysisTemplateRequest::HighlightConfigureHasBeenSet() const
 {
     return m_highlightConfigureHasBeenSet;
-}
-
-uint64_t CreateAIAnalysisTemplateRequest::GetSubAppId() const
-{
-    return m_subAppId;
-}
-
-void CreateAIAnalysisTemplateRequest::SetSubAppId(const uint64_t& _subAppId)
-{
-    m_subAppId = _subAppId;
-    m_subAppIdHasBeenSet = true;
-}
-
-bool CreateAIAnalysisTemplateRequest::SubAppIdHasBeenSet() const
-{
-    return m_subAppIdHasBeenSet;
 }
 
 

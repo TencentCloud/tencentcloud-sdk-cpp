@@ -67,14 +67,14 @@ namespace TencentCloud
                     bool ReplicasHasBeenSet() const;
 
                     /**
-                     * 获取资源限制
-                     * @return Resources 资源限制
+                     * 获取资源配置
+                     * @return Resources 资源配置
                      */
                     ResourceRequirements GetResources() const;
 
                     /**
-                     * 设置资源限制
-                     * @param Resources 资源限制
+                     * 设置资源配置
+                     * @param Resources 资源配置
                      */
                     void SetResources(const ResourceRequirements& _resources);
 
@@ -129,7 +129,7 @@ namespace TencentCloud
                     bool m_replicasHasBeenSet;
 
                     /**
-                     * 资源限制
+                     * 资源配置
                      */
                     ResourceRequirements m_resources;
                     bool m_resourcesHasBeenSet;

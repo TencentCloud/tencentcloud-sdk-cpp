@@ -27,6 +27,7 @@
 #include <tencentcloud/emr/v20190103/model/MultiDiskMC.h>
 #include <tencentcloud/emr/v20190103/model/CdbInfo.h>
 #include <tencentcloud/emr/v20190103/model/Tag.h>
+#include <tencentcloud/emr/v20190103/model/SubnetInfo.h>
 
 
 namespace TencentCloud
@@ -933,6 +934,94 @@ namespace TencentCloud
                      */
                     bool SupportModifyPayModeHasBeenSet() const;
 
+                    /**
+                     * 获取系统盘类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RootStorageType 系统盘类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetRootStorageType() const;
+
+                    /**
+                     * 设置系统盘类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RootStorageType 系统盘类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRootStorageType(const int64_t& _rootStorageType);
+
+                    /**
+                     * 判断参数 RootStorageType 是否已赋值
+                     * @return RootStorageType 是否已赋值
+                     */
+                    bool RootStorageTypeHasBeenSet() const;
+
+                    /**
+                     * 获取可用区信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Zone 可用区信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetZone() const;
+
+                    /**
+                     * 设置可用区信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Zone 可用区信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetZone(const std::string& _zone);
+
+                    /**
+                     * 判断参数 Zone 是否已赋值
+                     * @return Zone 是否已赋值
+                     */
+                    bool ZoneHasBeenSet() const;
+
+                    /**
+                     * 获取子网
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SubnetInfo 子网
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    SubnetInfo GetSubnetInfo() const;
+
+                    /**
+                     * 设置子网
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SubnetInfo 子网
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSubnetInfo(const SubnetInfo& _subnetInfo);
+
+                    /**
+                     * 判断参数 SubnetInfo 是否已赋值
+                     * @return SubnetInfo 是否已赋值
+                     */
+                    bool SubnetInfoHasBeenSet() const;
+
+                    /**
+                     * 获取客户端
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Clients 客户端
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetClients() const;
+
+                    /**
+                     * 设置客户端
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Clients 客户端
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetClients(const std::string& _clients);
+
+                    /**
+                     * 判断参数 Clients 是否已赋值
+                     * @return Clients 是否已赋值
+                     */
+                    bool ClientsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1215,6 +1304,34 @@ namespace TencentCloud
                      */
                     int64_t m_supportModifyPayMode;
                     bool m_supportModifyPayModeHasBeenSet;
+
+                    /**
+                     * 系统盘类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_rootStorageType;
+                    bool m_rootStorageTypeHasBeenSet;
+
+                    /**
+                     * 可用区信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_zone;
+                    bool m_zoneHasBeenSet;
+
+                    /**
+                     * 子网
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    SubnetInfo m_subnetInfo;
+                    bool m_subnetInfoHasBeenSet;
+
+                    /**
+                     * 客户端
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_clients;
+                    bool m_clientsHasBeenSet;
 
                 };
             }

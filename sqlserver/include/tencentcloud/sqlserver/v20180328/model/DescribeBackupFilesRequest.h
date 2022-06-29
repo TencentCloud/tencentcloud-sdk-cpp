@@ -132,6 +132,24 @@ namespace TencentCloud
                      */
                     bool DatabaseNameHasBeenSet() const;
 
+                    /**
+                     * 获取列表项排序，目前只按照备份大小排序（desc-降序，asc-升序），默认desc
+                     * @return OrderBy 列表项排序，目前只按照备份大小排序（desc-降序，asc-升序），默认desc
+                     */
+                    std::string GetOrderBy() const;
+
+                    /**
+                     * 设置列表项排序，目前只按照备份大小排序（desc-降序，asc-升序），默认desc
+                     * @param OrderBy 列表项排序，目前只按照备份大小排序（desc-降序，asc-升序），默认desc
+                     */
+                    void SetOrderBy(const std::string& _orderBy);
+
+                    /**
+                     * 判断参数 OrderBy 是否已赋值
+                     * @return OrderBy 是否已赋值
+                     */
+                    bool OrderByHasBeenSet() const;
+
                 private:
 
                     /**
@@ -163,6 +181,12 @@ namespace TencentCloud
                      */
                     std::string m_databaseName;
                     bool m_databaseNameHasBeenSet;
+
+                    /**
+                     * 列表项排序，目前只按照备份大小排序（desc-降序，asc-升序），默认desc
+                     */
+                    std::string m_orderBy;
+                    bool m_orderByHasBeenSet;
 
                 };
             }

@@ -100,6 +100,68 @@ namespace TencentCloud
                      */
                     bool SecurityGroupsHasBeenSet() const;
 
+                    /**
+                     * 获取给实例绑定用户角色，传空值为解绑操作
+                     * @return CamRoleName 给实例绑定用户角色，传空值为解绑操作
+                     */
+                    std::string GetCamRoleName() const;
+
+                    /**
+                     * 设置给实例绑定用户角色，传空值为解绑操作
+                     * @param CamRoleName 给实例绑定用户角色，传空值为解绑操作
+                     */
+                    void SetCamRoleName(const std::string& _camRoleName);
+
+                    /**
+                     * 判断参数 CamRoleName 是否已赋值
+                     * @return CamRoleName 是否已赋值
+                     */
+                    bool CamRoleNameHasBeenSet() const;
+
+                    /**
+                     * 获取实例销毁保护标志，表示是否允许通过api接口删除实例。取值范围：<br><li>TRUE：表示开启实例保护，不允许通过api接口删除实例<br><li>FALSE：表示关闭实例保护，允许通过api接口删除实例<br><br>默认取值：FALSE。
+                     * @return DisableApiTermination 实例销毁保护标志，表示是否允许通过api接口删除实例。取值范围：<br><li>TRUE：表示开启实例保护，不允许通过api接口删除实例<br><li>FALSE：表示关闭实例保护，允许通过api接口删除实例<br><br>默认取值：FALSE。
+                     */
+                    bool GetDisableApiTermination() const;
+
+                    /**
+                     * 设置实例销毁保护标志，表示是否允许通过api接口删除实例。取值范围：<br><li>TRUE：表示开启实例保护，不允许通过api接口删除实例<br><li>FALSE：表示关闭实例保护，允许通过api接口删除实例<br><br>默认取值：FALSE。
+                     * @param DisableApiTermination 实例销毁保护标志，表示是否允许通过api接口删除实例。取值范围：<br><li>TRUE：表示开启实例保护，不允许通过api接口删除实例<br><li>FALSE：表示关闭实例保护，允许通过api接口删除实例<br><br>默认取值：FALSE。
+                     */
+                    void SetDisableApiTermination(const bool& _disableApiTermination);
+
+                    /**
+                     * 判断参数 DisableApiTermination 是否已赋值
+                     * @return DisableApiTermination 是否已赋值
+                     */
+                    bool DisableApiTerminationHasBeenSet() const;
+
+                    /**
+                     * 获取角色类别，与CamRoleName搭配使用，该值可从CAM DescribeRoleList, GetRole接口返回RoleType字段获取，当前只接受user、system和service_linked三种类别。
+举例：一般CamRoleName中包含“LinkedRoleIn”（如TKE_QCSLinkedRoleInPrometheusService）时，DescribeRoleList和GetRole返回的RoleType为service_linked，则本参数也需要传递service_linked。
+该参数默认值为user，若CameRoleName为非service_linked类型，本参数可不传递。
+                     * @return CamRoleType 角色类别，与CamRoleName搭配使用，该值可从CAM DescribeRoleList, GetRole接口返回RoleType字段获取，当前只接受user、system和service_linked三种类别。
+举例：一般CamRoleName中包含“LinkedRoleIn”（如TKE_QCSLinkedRoleInPrometheusService）时，DescribeRoleList和GetRole返回的RoleType为service_linked，则本参数也需要传递service_linked。
+该参数默认值为user，若CameRoleName为非service_linked类型，本参数可不传递。
+                     */
+                    std::string GetCamRoleType() const;
+
+                    /**
+                     * 设置角色类别，与CamRoleName搭配使用，该值可从CAM DescribeRoleList, GetRole接口返回RoleType字段获取，当前只接受user、system和service_linked三种类别。
+举例：一般CamRoleName中包含“LinkedRoleIn”（如TKE_QCSLinkedRoleInPrometheusService）时，DescribeRoleList和GetRole返回的RoleType为service_linked，则本参数也需要传递service_linked。
+该参数默认值为user，若CameRoleName为非service_linked类型，本参数可不传递。
+                     * @param CamRoleType 角色类别，与CamRoleName搭配使用，该值可从CAM DescribeRoleList, GetRole接口返回RoleType字段获取，当前只接受user、system和service_linked三种类别。
+举例：一般CamRoleName中包含“LinkedRoleIn”（如TKE_QCSLinkedRoleInPrometheusService）时，DescribeRoleList和GetRole返回的RoleType为service_linked，则本参数也需要传递service_linked。
+该参数默认值为user，若CameRoleName为非service_linked类型，本参数可不传递。
+                     */
+                    void SetCamRoleType(const std::string& _camRoleType);
+
+                    /**
+                     * 判断参数 CamRoleType 是否已赋值
+                     * @return CamRoleType 是否已赋值
+                     */
+                    bool CamRoleTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -120,6 +182,26 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_securityGroups;
                     bool m_securityGroupsHasBeenSet;
+
+                    /**
+                     * 给实例绑定用户角色，传空值为解绑操作
+                     */
+                    std::string m_camRoleName;
+                    bool m_camRoleNameHasBeenSet;
+
+                    /**
+                     * 实例销毁保护标志，表示是否允许通过api接口删除实例。取值范围：<br><li>TRUE：表示开启实例保护，不允许通过api接口删除实例<br><li>FALSE：表示关闭实例保护，允许通过api接口删除实例<br><br>默认取值：FALSE。
+                     */
+                    bool m_disableApiTermination;
+                    bool m_disableApiTerminationHasBeenSet;
+
+                    /**
+                     * 角色类别，与CamRoleName搭配使用，该值可从CAM DescribeRoleList, GetRole接口返回RoleType字段获取，当前只接受user、system和service_linked三种类别。
+举例：一般CamRoleName中包含“LinkedRoleIn”（如TKE_QCSLinkedRoleInPrometheusService）时，DescribeRoleList和GetRole返回的RoleType为service_linked，则本参数也需要传递service_linked。
+该参数默认值为user，若CameRoleName为非service_linked类型，本参数可不传递。
+                     */
+                    std::string m_camRoleType;
+                    bool m_camRoleTypeHasBeenSet;
 
                 };
             }

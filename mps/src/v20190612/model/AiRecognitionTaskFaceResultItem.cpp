@@ -24,7 +24,16 @@ AiRecognitionTaskFaceResultItem::AiRecognitionTaskFaceResultItem() :
     m_idHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_segmentSetHasBeenSet(false)
+    m_segmentSetHasBeenSet(false),
+    m_genderHasBeenSet(false),
+    m_birthdayHasBeenSet(false),
+    m_professionHasBeenSet(false),
+    m_schoolOfGraduationHasBeenSet(false),
+    m_abstractHasBeenSet(false),
+    m_placeOfBirthHasBeenSet(false),
+    m_personTypeHasBeenSet(false),
+    m_remarkHasBeenSet(false),
+    m_urlHasBeenSet(false)
 {
 }
 
@@ -83,6 +92,96 @@ CoreInternalOutcome AiRecognitionTaskFaceResultItem::Deserialize(const rapidjson
         m_segmentSetHasBeenSet = true;
     }
 
+    if (value.HasMember("Gender") && !value["Gender"].IsNull())
+    {
+        if (!value["Gender"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AiRecognitionTaskFaceResultItem.Gender` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_gender = string(value["Gender"].GetString());
+        m_genderHasBeenSet = true;
+    }
+
+    if (value.HasMember("Birthday") && !value["Birthday"].IsNull())
+    {
+        if (!value["Birthday"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AiRecognitionTaskFaceResultItem.Birthday` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_birthday = string(value["Birthday"].GetString());
+        m_birthdayHasBeenSet = true;
+    }
+
+    if (value.HasMember("Profession") && !value["Profession"].IsNull())
+    {
+        if (!value["Profession"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AiRecognitionTaskFaceResultItem.Profession` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_profession = string(value["Profession"].GetString());
+        m_professionHasBeenSet = true;
+    }
+
+    if (value.HasMember("SchoolOfGraduation") && !value["SchoolOfGraduation"].IsNull())
+    {
+        if (!value["SchoolOfGraduation"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AiRecognitionTaskFaceResultItem.SchoolOfGraduation` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_schoolOfGraduation = string(value["SchoolOfGraduation"].GetString());
+        m_schoolOfGraduationHasBeenSet = true;
+    }
+
+    if (value.HasMember("Abstract") && !value["Abstract"].IsNull())
+    {
+        if (!value["Abstract"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AiRecognitionTaskFaceResultItem.Abstract` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_abstract = string(value["Abstract"].GetString());
+        m_abstractHasBeenSet = true;
+    }
+
+    if (value.HasMember("PlaceOfBirth") && !value["PlaceOfBirth"].IsNull())
+    {
+        if (!value["PlaceOfBirth"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AiRecognitionTaskFaceResultItem.PlaceOfBirth` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_placeOfBirth = string(value["PlaceOfBirth"].GetString());
+        m_placeOfBirthHasBeenSet = true;
+    }
+
+    if (value.HasMember("PersonType") && !value["PersonType"].IsNull())
+    {
+        if (!value["PersonType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AiRecognitionTaskFaceResultItem.PersonType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_personType = string(value["PersonType"].GetString());
+        m_personTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("Remark") && !value["Remark"].IsNull())
+    {
+        if (!value["Remark"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AiRecognitionTaskFaceResultItem.Remark` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_remark = string(value["Remark"].GetString());
+        m_remarkHasBeenSet = true;
+    }
+
+    if (value.HasMember("Url") && !value["Url"].IsNull())
+    {
+        if (!value["Url"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AiRecognitionTaskFaceResultItem.Url` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_url = string(value["Url"].GetString());
+        m_urlHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -127,6 +226,78 @@ void AiRecognitionTaskFaceResultItem::ToJsonObject(rapidjson::Value &value, rapi
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_genderHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Gender";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_gender.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_birthdayHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Birthday";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_birthday.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_professionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Profession";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_profession.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_schoolOfGraduationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SchoolOfGraduation";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_schoolOfGraduation.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_abstractHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Abstract";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_abstract.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_placeOfBirthHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PlaceOfBirth";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_placeOfBirth.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_personTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PersonType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_personType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_remarkHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Remark";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_remark.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_urlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Url";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_url.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -194,5 +365,149 @@ void AiRecognitionTaskFaceResultItem::SetSegmentSet(const vector<AiRecognitionTa
 bool AiRecognitionTaskFaceResultItem::SegmentSetHasBeenSet() const
 {
     return m_segmentSetHasBeenSet;
+}
+
+string AiRecognitionTaskFaceResultItem::GetGender() const
+{
+    return m_gender;
+}
+
+void AiRecognitionTaskFaceResultItem::SetGender(const string& _gender)
+{
+    m_gender = _gender;
+    m_genderHasBeenSet = true;
+}
+
+bool AiRecognitionTaskFaceResultItem::GenderHasBeenSet() const
+{
+    return m_genderHasBeenSet;
+}
+
+string AiRecognitionTaskFaceResultItem::GetBirthday() const
+{
+    return m_birthday;
+}
+
+void AiRecognitionTaskFaceResultItem::SetBirthday(const string& _birthday)
+{
+    m_birthday = _birthday;
+    m_birthdayHasBeenSet = true;
+}
+
+bool AiRecognitionTaskFaceResultItem::BirthdayHasBeenSet() const
+{
+    return m_birthdayHasBeenSet;
+}
+
+string AiRecognitionTaskFaceResultItem::GetProfession() const
+{
+    return m_profession;
+}
+
+void AiRecognitionTaskFaceResultItem::SetProfession(const string& _profession)
+{
+    m_profession = _profession;
+    m_professionHasBeenSet = true;
+}
+
+bool AiRecognitionTaskFaceResultItem::ProfessionHasBeenSet() const
+{
+    return m_professionHasBeenSet;
+}
+
+string AiRecognitionTaskFaceResultItem::GetSchoolOfGraduation() const
+{
+    return m_schoolOfGraduation;
+}
+
+void AiRecognitionTaskFaceResultItem::SetSchoolOfGraduation(const string& _schoolOfGraduation)
+{
+    m_schoolOfGraduation = _schoolOfGraduation;
+    m_schoolOfGraduationHasBeenSet = true;
+}
+
+bool AiRecognitionTaskFaceResultItem::SchoolOfGraduationHasBeenSet() const
+{
+    return m_schoolOfGraduationHasBeenSet;
+}
+
+string AiRecognitionTaskFaceResultItem::GetAbstract() const
+{
+    return m_abstract;
+}
+
+void AiRecognitionTaskFaceResultItem::SetAbstract(const string& _abstract)
+{
+    m_abstract = _abstract;
+    m_abstractHasBeenSet = true;
+}
+
+bool AiRecognitionTaskFaceResultItem::AbstractHasBeenSet() const
+{
+    return m_abstractHasBeenSet;
+}
+
+string AiRecognitionTaskFaceResultItem::GetPlaceOfBirth() const
+{
+    return m_placeOfBirth;
+}
+
+void AiRecognitionTaskFaceResultItem::SetPlaceOfBirth(const string& _placeOfBirth)
+{
+    m_placeOfBirth = _placeOfBirth;
+    m_placeOfBirthHasBeenSet = true;
+}
+
+bool AiRecognitionTaskFaceResultItem::PlaceOfBirthHasBeenSet() const
+{
+    return m_placeOfBirthHasBeenSet;
+}
+
+string AiRecognitionTaskFaceResultItem::GetPersonType() const
+{
+    return m_personType;
+}
+
+void AiRecognitionTaskFaceResultItem::SetPersonType(const string& _personType)
+{
+    m_personType = _personType;
+    m_personTypeHasBeenSet = true;
+}
+
+bool AiRecognitionTaskFaceResultItem::PersonTypeHasBeenSet() const
+{
+    return m_personTypeHasBeenSet;
+}
+
+string AiRecognitionTaskFaceResultItem::GetRemark() const
+{
+    return m_remark;
+}
+
+void AiRecognitionTaskFaceResultItem::SetRemark(const string& _remark)
+{
+    m_remark = _remark;
+    m_remarkHasBeenSet = true;
+}
+
+bool AiRecognitionTaskFaceResultItem::RemarkHasBeenSet() const
+{
+    return m_remarkHasBeenSet;
+}
+
+string AiRecognitionTaskFaceResultItem::GetUrl() const
+{
+    return m_url;
+}
+
+void AiRecognitionTaskFaceResultItem::SetUrl(const string& _url)
+{
+    m_url = _url;
+    m_urlHasBeenSet = true;
+}
+
+bool AiRecognitionTaskFaceResultItem::UrlHasBeenSet() const
+{
+    return m_urlHasBeenSet;
 }
 

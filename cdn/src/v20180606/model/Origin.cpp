@@ -32,7 +32,8 @@ Origin::Origin() :
     m_basePathHasBeenSet(false),
     m_pathRulesHasBeenSet(false),
     m_pathBasedOriginHasBeenSet(false),
-    m_advanceHttpsHasBeenSet(false)
+    m_advanceHttpsHasBeenSet(false),
+    m_originCompanyHasBeenSet(false)
 {
 }
 
@@ -194,6 +195,16 @@ CoreInternalOutcome Origin::Deserialize(const rapidjson::Value &value)
         m_advanceHttpsHasBeenSet = true;
     }
 
+    if (value.HasMember("OriginCompany") && !value["OriginCompany"].IsNull())
+    {
+        if (!value["OriginCompany"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Origin.OriginCompany` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_originCompany = string(value["OriginCompany"].GetString());
+        m_originCompanyHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -320,6 +331,14 @@ void Origin::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocato
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_advanceHttps.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_originCompanyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OriginCompany";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_originCompany.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -515,5 +534,21 @@ void Origin::SetAdvanceHttps(const AdvanceHttps& _advanceHttps)
 bool Origin::AdvanceHttpsHasBeenSet() const
 {
     return m_advanceHttpsHasBeenSet;
+}
+
+string Origin::GetOriginCompany() const
+{
+    return m_originCompany;
+}
+
+void Origin::SetOriginCompany(const string& _originCompany)
+{
+    m_originCompany = _originCompany;
+    m_originCompanyHasBeenSet = true;
+}
+
+bool Origin::OriginCompanyHasBeenSet() const
+{
+    return m_originCompanyHasBeenSet;
 }
 

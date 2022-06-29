@@ -35,7 +35,8 @@ ImageRepository::ImageRepository() :
     m_tcrRepoInfoHasBeenSet(false),
     m_tcrBindingIdHasBeenSet(false),
     m_applicationIdHasBeenSet(false),
-    m_applicationNameHasBeenSet(false)
+    m_applicationNameHasBeenSet(false),
+    m_applicationNameRealHasBeenSet(false)
 {
 }
 
@@ -208,6 +209,16 @@ CoreInternalOutcome ImageRepository::Deserialize(const rapidjson::Value &value)
         m_applicationNameHasBeenSet = true;
     }
 
+    if (value.HasMember("ApplicationNameReal") && !value["ApplicationNameReal"].IsNull())
+    {
+        if (!value["ApplicationNameReal"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImageRepository.ApplicationNameReal` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_applicationNameReal = string(value["ApplicationNameReal"].GetString());
+        m_applicationNameRealHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -335,6 +346,14 @@ void ImageRepository::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_applicationName.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_applicationNameRealHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApplicationNameReal";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_applicationNameReal.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -578,5 +597,21 @@ void ImageRepository::SetApplicationName(const ScalableRule& _applicationName)
 bool ImageRepository::ApplicationNameHasBeenSet() const
 {
     return m_applicationNameHasBeenSet;
+}
+
+string ImageRepository::GetApplicationNameReal() const
+{
+    return m_applicationNameReal;
+}
+
+void ImageRepository::SetApplicationNameReal(const string& _applicationNameReal)
+{
+    m_applicationNameReal = _applicationNameReal;
+    m_applicationNameRealHasBeenSet = true;
+}
+
+bool ImageRepository::ApplicationNameRealHasBeenSet() const
+{
+    return m_applicationNameRealHasBeenSet;
 }
 

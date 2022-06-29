@@ -21,7 +21,8 @@ using namespace TencentCloud::Vod::V20180717::Model;
 using namespace std;
 
 FileDeleteTask::FileDeleteTask() :
-    m_fileIdSetHasBeenSet(false)
+    m_fileIdSetHasBeenSet(false),
+    m_fileDeleteResultInfoHasBeenSet(false)
 {
 }
 
@@ -41,6 +42,26 @@ CoreInternalOutcome FileDeleteTask::Deserialize(const rapidjson::Value &value)
             m_fileIdSet.push_back((*itr).GetString());
         }
         m_fileIdSetHasBeenSet = true;
+    }
+
+    if (value.HasMember("FileDeleteResultInfo") && !value["FileDeleteResultInfo"].IsNull())
+    {
+        if (!value["FileDeleteResultInfo"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `FileDeleteTask.FileDeleteResultInfo` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["FileDeleteResultInfo"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            FileDeleteResultItem item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_fileDeleteResultInfo.push_back(item);
+        }
+        m_fileDeleteResultInfoHasBeenSet = true;
     }
 
 
@@ -63,6 +84,21 @@ void FileDeleteTask::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         }
     }
 
+    if (m_fileDeleteResultInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileDeleteResultInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_fileDeleteResultInfo.begin(); itr != m_fileDeleteResultInfo.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
 }
 
 
@@ -80,5 +116,21 @@ void FileDeleteTask::SetFileIdSet(const vector<string>& _fileIdSet)
 bool FileDeleteTask::FileIdSetHasBeenSet() const
 {
     return m_fileIdSetHasBeenSet;
+}
+
+vector<FileDeleteResultItem> FileDeleteTask::GetFileDeleteResultInfo() const
+{
+    return m_fileDeleteResultInfo;
+}
+
+void FileDeleteTask::SetFileDeleteResultInfo(const vector<FileDeleteResultItem>& _fileDeleteResultInfo)
+{
+    m_fileDeleteResultInfo = _fileDeleteResultInfo;
+    m_fileDeleteResultInfoHasBeenSet = true;
+}
+
+bool FileDeleteTask::FileDeleteResultInfoHasBeenSet() const
+{
+    return m_fileDeleteResultInfoHasBeenSet;
 }
 

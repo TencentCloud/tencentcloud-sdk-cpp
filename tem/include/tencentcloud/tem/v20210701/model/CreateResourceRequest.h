@@ -114,6 +114,42 @@ namespace TencentCloud
                      */
                     bool SourceChannelHasBeenSet() const;
 
+                    /**
+                     * 获取资源来源，目前支持：existing，已有资源；creating，自动创建
+                     * @return ResourceFrom 资源来源，目前支持：existing，已有资源；creating，自动创建
+                     */
+                    std::string GetResourceFrom() const;
+
+                    /**
+                     * 设置资源来源，目前支持：existing，已有资源；creating，自动创建
+                     * @param ResourceFrom 资源来源，目前支持：existing，已有资源；creating，自动创建
+                     */
+                    void SetResourceFrom(const std::string& _resourceFrom);
+
+                    /**
+                     * 判断参数 ResourceFrom 是否已赋值
+                     * @return ResourceFrom 是否已赋值
+                     */
+                    bool ResourceFromHasBeenSet() const;
+
+                    /**
+                     * 获取设置 resource 的额外配置
+                     * @return ResourceConfig 设置 resource 的额外配置
+                     */
+                    std::string GetResourceConfig() const;
+
+                    /**
+                     * 设置设置 resource 的额外配置
+                     * @param ResourceConfig 设置 resource 的额外配置
+                     */
+                    void SetResourceConfig(const std::string& _resourceConfig);
+
+                    /**
+                     * 判断参数 ResourceConfig 是否已赋值
+                     * @return ResourceConfig 是否已赋值
+                     */
+                    bool ResourceConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -139,6 +175,18 @@ namespace TencentCloud
                      */
                     int64_t m_sourceChannel;
                     bool m_sourceChannelHasBeenSet;
+
+                    /**
+                     * 资源来源，目前支持：existing，已有资源；creating，自动创建
+                     */
+                    std::string m_resourceFrom;
+                    bool m_resourceFromHasBeenSet;
+
+                    /**
+                     * 设置 resource 的额外配置
+                     */
+                    std::string m_resourceConfig;
+                    bool m_resourceConfigHasBeenSet;
 
                 };
             }

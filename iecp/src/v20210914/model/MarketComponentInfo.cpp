@@ -29,7 +29,9 @@ MarketComponentInfo::MarketComponentInfo() :
     m_detailHasBeenSet(false),
     m_iconHasBeenSet(false),
     m_versionHasBeenSet(false),
-    m_workloadVisualConfigHasBeenSet(false)
+    m_workloadVisualConfigHasBeenSet(false),
+    m_detailUrlHasBeenSet(false),
+    m_installedHasBeenSet(false)
 {
 }
 
@@ -128,6 +130,26 @@ CoreInternalOutcome MarketComponentInfo::Deserialize(const rapidjson::Value &val
         m_workloadVisualConfigHasBeenSet = true;
     }
 
+    if (value.HasMember("DetailUrl") && !value["DetailUrl"].IsNull())
+    {
+        if (!value["DetailUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MarketComponentInfo.DetailUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_detailUrl = string(value["DetailUrl"].GetString());
+        m_detailUrlHasBeenSet = true;
+    }
+
+    if (value.HasMember("Installed") && !value["Installed"].IsNull())
+    {
+        if (!value["Installed"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `MarketComponentInfo.Installed` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_installed = value["Installed"].GetBool();
+        m_installedHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -205,6 +227,22 @@ void MarketComponentInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "WorkloadVisualConfig";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_workloadVisualConfig.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_detailUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DetailUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_detailUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_installedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Installed";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_installed, allocator);
     }
 
 }
@@ -352,5 +390,37 @@ void MarketComponentInfo::SetWorkloadVisualConfig(const string& _workloadVisualC
 bool MarketComponentInfo::WorkloadVisualConfigHasBeenSet() const
 {
     return m_workloadVisualConfigHasBeenSet;
+}
+
+string MarketComponentInfo::GetDetailUrl() const
+{
+    return m_detailUrl;
+}
+
+void MarketComponentInfo::SetDetailUrl(const string& _detailUrl)
+{
+    m_detailUrl = _detailUrl;
+    m_detailUrlHasBeenSet = true;
+}
+
+bool MarketComponentInfo::DetailUrlHasBeenSet() const
+{
+    return m_detailUrlHasBeenSet;
+}
+
+bool MarketComponentInfo::GetInstalled() const
+{
+    return m_installed;
+}
+
+void MarketComponentInfo::SetInstalled(const bool& _installed)
+{
+    m_installed = _installed;
+    m_installedHasBeenSet = true;
+}
+
+bool MarketComponentInfo::InstalledHasBeenSet() const
+{
+    return m_installedHasBeenSet;
 }
 

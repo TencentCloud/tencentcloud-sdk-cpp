@@ -26,6 +26,7 @@ DescribeChannelLocalRecordURLRequest::DescribeChannelLocalRecordURLRequest() :
     m_deviceIdHasBeenSet(false),
     m_channelIdHasBeenSet(false),
     m_recordIdHasBeenSet(false),
+    m_expireTimeHasBeenSet(false),
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false)
 {
@@ -60,6 +61,14 @@ string DescribeChannelLocalRecordURLRequest::ToJsonString() const
         string key = "RecordId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_recordId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_expireTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExpireTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_expireTime, allocator);
     }
 
     if (m_startTimeHasBeenSet)
@@ -132,6 +141,22 @@ void DescribeChannelLocalRecordURLRequest::SetRecordId(const string& _recordId)
 bool DescribeChannelLocalRecordURLRequest::RecordIdHasBeenSet() const
 {
     return m_recordIdHasBeenSet;
+}
+
+int64_t DescribeChannelLocalRecordURLRequest::GetExpireTime() const
+{
+    return m_expireTime;
+}
+
+void DescribeChannelLocalRecordURLRequest::SetExpireTime(const int64_t& _expireTime)
+{
+    m_expireTime = _expireTime;
+    m_expireTimeHasBeenSet = true;
+}
+
+bool DescribeChannelLocalRecordURLRequest::ExpireTimeHasBeenSet() const
+{
+    return m_expireTimeHasBeenSet;
 }
 
 int64_t DescribeChannelLocalRecordURLRequest::GetStartTime() const

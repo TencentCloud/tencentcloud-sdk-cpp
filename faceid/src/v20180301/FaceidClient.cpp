@@ -1373,6 +1373,49 @@ FaceidClient::MobileStatusOutcomeCallable FaceidClient::MobileStatusCallable(con
     return task->get_future();
 }
 
+FaceidClient::ParseNfcDataOutcome FaceidClient::ParseNfcData(const ParseNfcDataRequest &request)
+{
+    auto outcome = MakeRequest(request, "ParseNfcData");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ParseNfcDataResponse rsp = ParseNfcDataResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ParseNfcDataOutcome(rsp);
+        else
+            return ParseNfcDataOutcome(o.GetError());
+    }
+    else
+    {
+        return ParseNfcDataOutcome(outcome.GetError());
+    }
+}
+
+void FaceidClient::ParseNfcDataAsync(const ParseNfcDataRequest& request, const ParseNfcDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ParseNfcData(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+FaceidClient::ParseNfcDataOutcomeCallable FaceidClient::ParseNfcDataCallable(const ParseNfcDataRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ParseNfcDataOutcome()>>(
+        [this, request]()
+        {
+            return this->ParseNfcData(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 FaceidClient::PhoneVerificationOutcome FaceidClient::PhoneVerification(const PhoneVerificationRequest &request)
 {
     auto outcome = MakeRequest(request, "PhoneVerification");
@@ -1409,6 +1452,135 @@ FaceidClient::PhoneVerificationOutcomeCallable FaceidClient::PhoneVerificationCa
         [this, request]()
         {
             return this->PhoneVerification(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+FaceidClient::PhoneVerificationCMCCOutcome FaceidClient::PhoneVerificationCMCC(const PhoneVerificationCMCCRequest &request)
+{
+    auto outcome = MakeRequest(request, "PhoneVerificationCMCC");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        PhoneVerificationCMCCResponse rsp = PhoneVerificationCMCCResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return PhoneVerificationCMCCOutcome(rsp);
+        else
+            return PhoneVerificationCMCCOutcome(o.GetError());
+    }
+    else
+    {
+        return PhoneVerificationCMCCOutcome(outcome.GetError());
+    }
+}
+
+void FaceidClient::PhoneVerificationCMCCAsync(const PhoneVerificationCMCCRequest& request, const PhoneVerificationCMCCAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->PhoneVerificationCMCC(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+FaceidClient::PhoneVerificationCMCCOutcomeCallable FaceidClient::PhoneVerificationCMCCCallable(const PhoneVerificationCMCCRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<PhoneVerificationCMCCOutcome()>>(
+        [this, request]()
+        {
+            return this->PhoneVerificationCMCC(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+FaceidClient::PhoneVerificationCTCCOutcome FaceidClient::PhoneVerificationCTCC(const PhoneVerificationCTCCRequest &request)
+{
+    auto outcome = MakeRequest(request, "PhoneVerificationCTCC");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        PhoneVerificationCTCCResponse rsp = PhoneVerificationCTCCResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return PhoneVerificationCTCCOutcome(rsp);
+        else
+            return PhoneVerificationCTCCOutcome(o.GetError());
+    }
+    else
+    {
+        return PhoneVerificationCTCCOutcome(outcome.GetError());
+    }
+}
+
+void FaceidClient::PhoneVerificationCTCCAsync(const PhoneVerificationCTCCRequest& request, const PhoneVerificationCTCCAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->PhoneVerificationCTCC(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+FaceidClient::PhoneVerificationCTCCOutcomeCallable FaceidClient::PhoneVerificationCTCCCallable(const PhoneVerificationCTCCRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<PhoneVerificationCTCCOutcome()>>(
+        [this, request]()
+        {
+            return this->PhoneVerificationCTCC(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+FaceidClient::PhoneVerificationCUCCOutcome FaceidClient::PhoneVerificationCUCC(const PhoneVerificationCUCCRequest &request)
+{
+    auto outcome = MakeRequest(request, "PhoneVerificationCUCC");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        PhoneVerificationCUCCResponse rsp = PhoneVerificationCUCCResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return PhoneVerificationCUCCOutcome(rsp);
+        else
+            return PhoneVerificationCUCCOutcome(o.GetError());
+    }
+    else
+    {
+        return PhoneVerificationCUCCOutcome(outcome.GetError());
+    }
+}
+
+void FaceidClient::PhoneVerificationCUCCAsync(const PhoneVerificationCUCCRequest& request, const PhoneVerificationCUCCAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->PhoneVerificationCUCC(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+FaceidClient::PhoneVerificationCUCCOutcomeCallable FaceidClient::PhoneVerificationCUCCCallable(const PhoneVerificationCUCCRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<PhoneVerificationCUCCOutcome()>>(
+        [this, request]()
+        {
+            return this->PhoneVerificationCUCC(request);
         }
     );
 

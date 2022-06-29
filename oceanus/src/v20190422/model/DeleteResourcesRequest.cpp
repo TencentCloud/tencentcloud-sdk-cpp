@@ -23,7 +23,8 @@ using namespace TencentCloud::Oceanus::V20190422::Model;
 using namespace std;
 
 DeleteResourcesRequest::DeleteResourcesRequest() :
-    m_resourceIdsHasBeenSet(false)
+    m_resourceIdsHasBeenSet(false),
+    m_workSpaceIdHasBeenSet(false)
 {
 }
 
@@ -45,6 +46,14 @@ string DeleteResourcesRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_workSpaceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WorkSpaceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_workSpaceId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -69,6 +78,22 @@ void DeleteResourcesRequest::SetResourceIds(const vector<string>& _resourceIds)
 bool DeleteResourcesRequest::ResourceIdsHasBeenSet() const
 {
     return m_resourceIdsHasBeenSet;
+}
+
+string DeleteResourcesRequest::GetWorkSpaceId() const
+{
+    return m_workSpaceId;
+}
+
+void DeleteResourcesRequest::SetWorkSpaceId(const string& _workSpaceId)
+{
+    m_workSpaceId = _workSpaceId;
+    m_workSpaceIdHasBeenSet = true;
+}
+
+bool DeleteResourcesRequest::WorkSpaceIdHasBeenSet() const
+{
+    return m_workSpaceIdHasBeenSet;
 }
 
 

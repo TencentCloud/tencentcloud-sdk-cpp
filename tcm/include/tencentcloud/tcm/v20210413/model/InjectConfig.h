@@ -90,6 +90,28 @@ namespace TencentCloud
                      */
                     bool HoldApplicationUntilProxyStartsHasBeenSet() const;
 
+                    /**
+                     * 获取是否允许sidecar等待
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return HoldProxyUntilApplicationEnds 是否允许sidecar等待
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetHoldProxyUntilApplicationEnds() const;
+
+                    /**
+                     * 设置是否允许sidecar等待
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param HoldProxyUntilApplicationEnds 是否允许sidecar等待
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetHoldProxyUntilApplicationEnds(const bool& _holdProxyUntilApplicationEnds);
+
+                    /**
+                     * 判断参数 HoldProxyUntilApplicationEnds 是否已赋值
+                     * @return HoldProxyUntilApplicationEnds 是否已赋值
+                     */
+                    bool HoldProxyUntilApplicationEndsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -105,6 +127,13 @@ namespace TencentCloud
                      */
                     bool m_holdApplicationUntilProxyStarts;
                     bool m_holdApplicationUntilProxyStartsHasBeenSet;
+
+                    /**
+                     * 是否允许sidecar等待
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_holdProxyUntilApplicationEnds;
+                    bool m_holdProxyUntilApplicationEndsHasBeenSet;
 
                 };
             }

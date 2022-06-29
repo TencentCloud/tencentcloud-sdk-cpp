@@ -80,7 +80,11 @@ DetailDomain::DetailDomain() :
     m_ossPrivateAccessHasBeenSet(false),
     m_webSocketHasBeenSet(false),
     m_remoteAuthenticationHasBeenSet(false),
-    m_shareCnameHasBeenSet(false)
+    m_shareCnameHasBeenSet(false),
+    m_ruleEngineHasBeenSet(false),
+    m_parentHostHasBeenSet(false),
+    m_hwPrivateAccessHasBeenSet(false),
+    m_qnPrivateAccessHasBeenSet(false)
 {
 }
 
@@ -1020,6 +1024,67 @@ CoreInternalOutcome DetailDomain::Deserialize(const rapidjson::Value &value)
         m_shareCnameHasBeenSet = true;
     }
 
+    if (value.HasMember("RuleEngine") && !value["RuleEngine"].IsNull())
+    {
+        if (!value["RuleEngine"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `DetailDomain.RuleEngine` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_ruleEngine.Deserialize(value["RuleEngine"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_ruleEngineHasBeenSet = true;
+    }
+
+    if (value.HasMember("ParentHost") && !value["ParentHost"].IsNull())
+    {
+        if (!value["ParentHost"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DetailDomain.ParentHost` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_parentHost = string(value["ParentHost"].GetString());
+        m_parentHostHasBeenSet = true;
+    }
+
+    if (value.HasMember("HwPrivateAccess") && !value["HwPrivateAccess"].IsNull())
+    {
+        if (!value["HwPrivateAccess"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `DetailDomain.HwPrivateAccess` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_hwPrivateAccess.Deserialize(value["HwPrivateAccess"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_hwPrivateAccessHasBeenSet = true;
+    }
+
+    if (value.HasMember("QnPrivateAccess") && !value["QnPrivateAccess"].IsNull())
+    {
+        if (!value["QnPrivateAccess"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `DetailDomain.QnPrivateAccess` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_qnPrivateAccess.Deserialize(value["QnPrivateAccess"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_qnPrivateAccessHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1568,6 +1633,41 @@ void DetailDomain::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_shareCname.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_ruleEngineHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RuleEngine";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_ruleEngine.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_parentHostHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ParentHost";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_parentHost.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_hwPrivateAccessHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HwPrivateAccess";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_hwPrivateAccess.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_qnPrivateAccessHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QnPrivateAccess";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_qnPrivateAccess.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -2531,5 +2631,69 @@ void DetailDomain::SetShareCname(const ShareCname& _shareCname)
 bool DetailDomain::ShareCnameHasBeenSet() const
 {
     return m_shareCnameHasBeenSet;
+}
+
+RuleEngine DetailDomain::GetRuleEngine() const
+{
+    return m_ruleEngine;
+}
+
+void DetailDomain::SetRuleEngine(const RuleEngine& _ruleEngine)
+{
+    m_ruleEngine = _ruleEngine;
+    m_ruleEngineHasBeenSet = true;
+}
+
+bool DetailDomain::RuleEngineHasBeenSet() const
+{
+    return m_ruleEngineHasBeenSet;
+}
+
+string DetailDomain::GetParentHost() const
+{
+    return m_parentHost;
+}
+
+void DetailDomain::SetParentHost(const string& _parentHost)
+{
+    m_parentHost = _parentHost;
+    m_parentHostHasBeenSet = true;
+}
+
+bool DetailDomain::ParentHostHasBeenSet() const
+{
+    return m_parentHostHasBeenSet;
+}
+
+HwPrivateAccess DetailDomain::GetHwPrivateAccess() const
+{
+    return m_hwPrivateAccess;
+}
+
+void DetailDomain::SetHwPrivateAccess(const HwPrivateAccess& _hwPrivateAccess)
+{
+    m_hwPrivateAccess = _hwPrivateAccess;
+    m_hwPrivateAccessHasBeenSet = true;
+}
+
+bool DetailDomain::HwPrivateAccessHasBeenSet() const
+{
+    return m_hwPrivateAccessHasBeenSet;
+}
+
+QnPrivateAccess DetailDomain::GetQnPrivateAccess() const
+{
+    return m_qnPrivateAccess;
+}
+
+void DetailDomain::SetQnPrivateAccess(const QnPrivateAccess& _qnPrivateAccess)
+{
+    m_qnPrivateAccess = _qnPrivateAccess;
+    m_qnPrivateAccessHasBeenSet = true;
+}
+
+bool DetailDomain::QnPrivateAccessHasBeenSet() const
+{
+    return m_qnPrivateAccessHasBeenSet;
 }
 

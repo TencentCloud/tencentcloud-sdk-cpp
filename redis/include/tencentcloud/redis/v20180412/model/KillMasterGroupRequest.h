@@ -102,6 +102,24 @@ namespace TencentCloud
                      */
                     bool PasswordHasBeenSet() const;
 
+                    /**
+                     * 获取单AZ实例节点信息
+                     * @return ShardIds 单AZ实例节点信息
+                     */
+                    std::vector<int64_t> GetShardIds() const;
+
+                    /**
+                     * 设置单AZ实例节点信息
+                     * @param ShardIds 单AZ实例节点信息
+                     */
+                    void SetShardIds(const std::vector<int64_t>& _shardIds);
+
+                    /**
+                     * 判断参数 ShardIds 是否已赋值
+                     * @return ShardIds 是否已赋值
+                     */
+                    bool ShardIdsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -121,6 +139,12 @@ namespace TencentCloud
                      */
                     std::string m_password;
                     bool m_passwordHasBeenSet;
+
+                    /**
+                     * 单AZ实例节点信息
+                     */
+                    std::vector<int64_t> m_shardIds;
+                    bool m_shardIdsHasBeenSet;
 
                 };
             }

@@ -102,6 +102,20 @@ namespace TencentCloud
                      */
                     bool RisksHasBeenSet() const;
 
+                    /**
+                     * 获取巡检资源数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ResourceCount 巡检资源数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetResourceCount() const;
+
+                    /**
+                     * 判断参数 ResourceCount 是否已赋值
+                     * @return ResourceCount 是否已赋值
+                     */
+                    bool ResourceCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -132,6 +146,13 @@ namespace TencentCloud
                      */
                     std::string m_risks;
                     bool m_risksHasBeenSet;
+
+                    /**
+                     * 巡检资源数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_resourceCount;
+                    bool m_resourceCountHasBeenSet;
 
                 };
             }

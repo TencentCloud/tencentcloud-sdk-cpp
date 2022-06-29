@@ -32,7 +32,8 @@ DescribeCertificatesRequest::DescribeCertificatesRequest() :
     m_certificateStatusHasBeenSet(false),
     m_deployableHasBeenSet(false),
     m_uploadHasBeenSet(false),
-    m_renewHasBeenSet(false)
+    m_renewHasBeenSet(false),
+    m_filterSourceHasBeenSet(false)
 {
 }
 
@@ -126,6 +127,14 @@ string DescribeCertificatesRequest::ToJsonString() const
         string key = "Renew";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_renew, allocator);
+    }
+
+    if (m_filterSourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FilterSource";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_filterSource.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -294,6 +303,22 @@ void DescribeCertificatesRequest::SetRenew(const int64_t& _renew)
 bool DescribeCertificatesRequest::RenewHasBeenSet() const
 {
     return m_renewHasBeenSet;
+}
+
+string DescribeCertificatesRequest::GetFilterSource() const
+{
+    return m_filterSource;
+}
+
+void DescribeCertificatesRequest::SetFilterSource(const string& _filterSource)
+{
+    m_filterSource = _filterSource;
+    m_filterSourceHasBeenSet = true;
+}
+
+bool DescribeCertificatesRequest::FilterSourceHasBeenSet() const
+{
+    return m_filterSourceHasBeenSet;
 }
 
 

@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tcss/v20201101/model/ImageRepoInfo.h>
 
 
 namespace TencentCloud
@@ -43,7 +44,49 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取镜像仓库列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return List 镜像仓库列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<ImageRepoInfo> GetList() const;
+
+                    /**
+                     * 判断参数 List 是否已赋值
+                     * @return List 是否已赋值
+                     */
+                    bool ListHasBeenSet() const;
+
+                    /**
+                     * 获取总数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TotalCount 总数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetTotalCount() const;
+
+                    /**
+                     * 判断参数 TotalCount 是否已赋值
+                     * @return TotalCount 是否已赋值
+                     */
+                    bool TotalCountHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 镜像仓库列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<ImageRepoInfo> m_list;
+                    bool m_listHasBeenSet;
+
+                    /**
+                     * 总数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_totalCount;
+                    bool m_totalCountHasBeenSet;
 
                 };
             }

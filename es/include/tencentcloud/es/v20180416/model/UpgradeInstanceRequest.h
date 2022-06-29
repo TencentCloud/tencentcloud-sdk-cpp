@@ -150,6 +150,24 @@ namespace TencentCloud
                      */
                     bool UpgradeModeHasBeenSet() const;
 
+                    /**
+                     * 获取升级版本前是否对集群进行备份，默认不备份
+                     * @return CosBackup 升级版本前是否对集群进行备份，默认不备份
+                     */
+                    bool GetCosBackup() const;
+
+                    /**
+                     * 设置升级版本前是否对集群进行备份，默认不备份
+                     * @param CosBackup 升级版本前是否对集群进行备份，默认不备份
+                     */
+                    void SetCosBackup(const bool& _cosBackup);
+
+                    /**
+                     * 判断参数 CosBackup 是否已赋值
+                     * @return CosBackup 是否已赋值
+                     */
+                    bool CosBackupHasBeenSet() const;
+
                 private:
 
                     /**
@@ -187,6 +205,12 @@ namespace TencentCloud
                      */
                     std::string m_upgradeMode;
                     bool m_upgradeModeHasBeenSet;
+
+                    /**
+                     * 升级版本前是否对集群进行备份，默认不备份
+                     */
+                    bool m_cosBackup;
+                    bool m_cosBackupHasBeenSet;
 
                 };
             }

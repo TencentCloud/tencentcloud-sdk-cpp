@@ -133,14 +133,14 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取出站还是入站，0：入站，1：出站
-                     * @return Direction 出站还是入站，0：入站，1：出站
+                     * 获取出站还是入站，1：入站，0：出站
+                     * @return Direction 出站还是入站，1：入站，0：出站
                      */
                     uint64_t GetDirection() const;
 
                     /**
-                     * 设置出站还是入站，0：入站，1：出站
-                     * @param Direction 出站还是入站，0：入站，1：出站
+                     * 设置出站还是入站，1：入站，0：出站
+                     * @param Direction 出站还是入站，1：入站，0：出站
                      */
                     void SetDirection(const uint64_t& _direction);
 
@@ -255,7 +255,7 @@ namespace TencentCloud
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 出站还是入站，0：入站，1：出站
+                     * 出站还是入站，1：入站，0：出站
                      */
                     uint64_t m_direction;
                     bool m_directionHasBeenSet;

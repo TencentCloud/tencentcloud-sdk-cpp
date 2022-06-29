@@ -169,6 +169,49 @@ TagClient::CreateTagOutcomeCallable TagClient::CreateTagCallable(const CreateTag
     return task->get_future();
 }
 
+TagClient::CreateTagsOutcome TagClient::CreateTags(const CreateTagsRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateTags");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateTagsResponse rsp = CreateTagsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateTagsOutcome(rsp);
+        else
+            return CreateTagsOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateTagsOutcome(outcome.GetError());
+    }
+}
+
+void TagClient::CreateTagsAsync(const CreateTagsRequest& request, const CreateTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateTags(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TagClient::CreateTagsOutcomeCallable TagClient::CreateTagsCallable(const CreateTagsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateTagsOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateTags(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TagClient::DeleteResourceTagOutcome TagClient::DeleteResourceTag(const DeleteResourceTagRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteResourceTag");
@@ -248,6 +291,49 @@ TagClient::DeleteTagOutcomeCallable TagClient::DeleteTagCallable(const DeleteTag
         [this, request]()
         {
             return this->DeleteTag(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TagClient::DeleteTagsOutcome TagClient::DeleteTags(const DeleteTagsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteTags");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteTagsResponse rsp = DeleteTagsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteTagsOutcome(rsp);
+        else
+            return DeleteTagsOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteTagsOutcome(outcome.GetError());
+    }
+}
+
+void TagClient::DeleteTagsAsync(const DeleteTagsRequest& request, const DeleteTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteTags(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TagClient::DeleteTagsOutcomeCallable TagClient::DeleteTagsCallable(const DeleteTagsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteTagsOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteTags(request);
         }
     );
 
@@ -771,6 +857,178 @@ TagClient::DetachResourcesTagOutcomeCallable TagClient::DetachResourcesTagCallab
     return task->get_future();
 }
 
+TagClient::GetResourcesOutcome TagClient::GetResources(const GetResourcesRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetResources");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetResourcesResponse rsp = GetResourcesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetResourcesOutcome(rsp);
+        else
+            return GetResourcesOutcome(o.GetError());
+    }
+    else
+    {
+        return GetResourcesOutcome(outcome.GetError());
+    }
+}
+
+void TagClient::GetResourcesAsync(const GetResourcesRequest& request, const GetResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetResources(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TagClient::GetResourcesOutcomeCallable TagClient::GetResourcesCallable(const GetResourcesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetResourcesOutcome()>>(
+        [this, request]()
+        {
+            return this->GetResources(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TagClient::GetTagKeysOutcome TagClient::GetTagKeys(const GetTagKeysRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetTagKeys");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetTagKeysResponse rsp = GetTagKeysResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetTagKeysOutcome(rsp);
+        else
+            return GetTagKeysOutcome(o.GetError());
+    }
+    else
+    {
+        return GetTagKeysOutcome(outcome.GetError());
+    }
+}
+
+void TagClient::GetTagKeysAsync(const GetTagKeysRequest& request, const GetTagKeysAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetTagKeys(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TagClient::GetTagKeysOutcomeCallable TagClient::GetTagKeysCallable(const GetTagKeysRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetTagKeysOutcome()>>(
+        [this, request]()
+        {
+            return this->GetTagKeys(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TagClient::GetTagValuesOutcome TagClient::GetTagValues(const GetTagValuesRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetTagValues");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetTagValuesResponse rsp = GetTagValuesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetTagValuesOutcome(rsp);
+        else
+            return GetTagValuesOutcome(o.GetError());
+    }
+    else
+    {
+        return GetTagValuesOutcome(outcome.GetError());
+    }
+}
+
+void TagClient::GetTagValuesAsync(const GetTagValuesRequest& request, const GetTagValuesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetTagValues(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TagClient::GetTagValuesOutcomeCallable TagClient::GetTagValuesCallable(const GetTagValuesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetTagValuesOutcome()>>(
+        [this, request]()
+        {
+            return this->GetTagValues(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TagClient::GetTagsOutcome TagClient::GetTags(const GetTagsRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetTags");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetTagsResponse rsp = GetTagsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetTagsOutcome(rsp);
+        else
+            return GetTagsOutcome(o.GetError());
+    }
+    else
+    {
+        return GetTagsOutcome(outcome.GetError());
+    }
+}
+
+void TagClient::GetTagsAsync(const GetTagsRequest& request, const GetTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetTags(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TagClient::GetTagsOutcomeCallable TagClient::GetTagsCallable(const GetTagsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetTagsOutcome()>>(
+        [this, request]()
+        {
+            return this->GetTags(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TagClient::ModifyResourceTagsOutcome TagClient::ModifyResourceTags(const ModifyResourceTagsRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyResourceTags");
@@ -850,6 +1108,92 @@ TagClient::ModifyResourcesTagValueOutcomeCallable TagClient::ModifyResourcesTagV
         [this, request]()
         {
             return this->ModifyResourcesTagValue(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TagClient::TagResourcesOutcome TagClient::TagResources(const TagResourcesRequest &request)
+{
+    auto outcome = MakeRequest(request, "TagResources");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        TagResourcesResponse rsp = TagResourcesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return TagResourcesOutcome(rsp);
+        else
+            return TagResourcesOutcome(o.GetError());
+    }
+    else
+    {
+        return TagResourcesOutcome(outcome.GetError());
+    }
+}
+
+void TagClient::TagResourcesAsync(const TagResourcesRequest& request, const TagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->TagResources(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TagClient::TagResourcesOutcomeCallable TagClient::TagResourcesCallable(const TagResourcesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<TagResourcesOutcome()>>(
+        [this, request]()
+        {
+            return this->TagResources(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TagClient::UnTagResourcesOutcome TagClient::UnTagResources(const UnTagResourcesRequest &request)
+{
+    auto outcome = MakeRequest(request, "UnTagResources");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UnTagResourcesResponse rsp = UnTagResourcesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UnTagResourcesOutcome(rsp);
+        else
+            return UnTagResourcesOutcome(o.GetError());
+    }
+    else
+    {
+        return UnTagResourcesOutcome(outcome.GetError());
+    }
+}
+
+void TagClient::UnTagResourcesAsync(const UnTagResourcesRequest& request, const UnTagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UnTagResources(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TagClient::UnTagResourcesOutcomeCallable TagClient::UnTagResourcesCallable(const UnTagResourcesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UnTagResourcesOutcome()>>(
+        [this, request]()
+        {
+            return this->UnTagResources(request);
         }
     );
 

@@ -1287,6 +1287,49 @@ TbaasClient::InvokeChainMakerContractOutcomeCallable TbaasClient::InvokeChainMak
     return task->get_future();
 }
 
+TbaasClient::InvokeChainMakerDemoContractOutcome TbaasClient::InvokeChainMakerDemoContract(const InvokeChainMakerDemoContractRequest &request)
+{
+    auto outcome = MakeRequest(request, "InvokeChainMakerDemoContract");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        InvokeChainMakerDemoContractResponse rsp = InvokeChainMakerDemoContractResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return InvokeChainMakerDemoContractOutcome(rsp);
+        else
+            return InvokeChainMakerDemoContractOutcome(o.GetError());
+    }
+    else
+    {
+        return InvokeChainMakerDemoContractOutcome(outcome.GetError());
+    }
+}
+
+void TbaasClient::InvokeChainMakerDemoContractAsync(const InvokeChainMakerDemoContractRequest& request, const InvokeChainMakerDemoContractAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->InvokeChainMakerDemoContract(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TbaasClient::InvokeChainMakerDemoContractOutcomeCallable TbaasClient::InvokeChainMakerDemoContractCallable(const InvokeChainMakerDemoContractRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<InvokeChainMakerDemoContractOutcome()>>(
+        [this, request]()
+        {
+            return this->InvokeChainMakerDemoContract(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TbaasClient::QueryOutcome TbaasClient::Query(const QueryRequest &request)
 {
     auto outcome = MakeRequest(request, "Query");
@@ -1409,6 +1452,135 @@ TbaasClient::QueryChainMakerContractOutcomeCallable TbaasClient::QueryChainMaker
         [this, request]()
         {
             return this->QueryChainMakerContract(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TbaasClient::QueryChainMakerDemoBlockTransactionOutcome TbaasClient::QueryChainMakerDemoBlockTransaction(const QueryChainMakerDemoBlockTransactionRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryChainMakerDemoBlockTransaction");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryChainMakerDemoBlockTransactionResponse rsp = QueryChainMakerDemoBlockTransactionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryChainMakerDemoBlockTransactionOutcome(rsp);
+        else
+            return QueryChainMakerDemoBlockTransactionOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryChainMakerDemoBlockTransactionOutcome(outcome.GetError());
+    }
+}
+
+void TbaasClient::QueryChainMakerDemoBlockTransactionAsync(const QueryChainMakerDemoBlockTransactionRequest& request, const QueryChainMakerDemoBlockTransactionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->QueryChainMakerDemoBlockTransaction(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TbaasClient::QueryChainMakerDemoBlockTransactionOutcomeCallable TbaasClient::QueryChainMakerDemoBlockTransactionCallable(const QueryChainMakerDemoBlockTransactionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<QueryChainMakerDemoBlockTransactionOutcome()>>(
+        [this, request]()
+        {
+            return this->QueryChainMakerDemoBlockTransaction(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TbaasClient::QueryChainMakerDemoContractOutcome TbaasClient::QueryChainMakerDemoContract(const QueryChainMakerDemoContractRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryChainMakerDemoContract");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryChainMakerDemoContractResponse rsp = QueryChainMakerDemoContractResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryChainMakerDemoContractOutcome(rsp);
+        else
+            return QueryChainMakerDemoContractOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryChainMakerDemoContractOutcome(outcome.GetError());
+    }
+}
+
+void TbaasClient::QueryChainMakerDemoContractAsync(const QueryChainMakerDemoContractRequest& request, const QueryChainMakerDemoContractAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->QueryChainMakerDemoContract(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TbaasClient::QueryChainMakerDemoContractOutcomeCallable TbaasClient::QueryChainMakerDemoContractCallable(const QueryChainMakerDemoContractRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<QueryChainMakerDemoContractOutcome()>>(
+        [this, request]()
+        {
+            return this->QueryChainMakerDemoContract(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TbaasClient::QueryChainMakerDemoTransactionOutcome TbaasClient::QueryChainMakerDemoTransaction(const QueryChainMakerDemoTransactionRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryChainMakerDemoTransaction");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryChainMakerDemoTransactionResponse rsp = QueryChainMakerDemoTransactionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryChainMakerDemoTransactionOutcome(rsp);
+        else
+            return QueryChainMakerDemoTransactionOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryChainMakerDemoTransactionOutcome(outcome.GetError());
+    }
+}
+
+void TbaasClient::QueryChainMakerDemoTransactionAsync(const QueryChainMakerDemoTransactionRequest& request, const QueryChainMakerDemoTransactionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->QueryChainMakerDemoTransaction(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TbaasClient::QueryChainMakerDemoTransactionOutcomeCallable TbaasClient::QueryChainMakerDemoTransactionCallable(const QueryChainMakerDemoTransactionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<QueryChainMakerDemoTransactionOutcome()>>(
+        [this, request]()
+        {
+            return this->QueryChainMakerDemoTransaction(request);
         }
     );
 

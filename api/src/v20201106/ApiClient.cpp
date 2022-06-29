@@ -40,6 +40,49 @@ ApiClient::ApiClient(const Credential &credential, const string &region, const C
 }
 
 
+ApiClient::DescribeProductsOutcome ApiClient::DescribeProducts(const DescribeProductsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeProducts");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeProductsResponse rsp = DescribeProductsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeProductsOutcome(rsp);
+        else
+            return DescribeProductsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeProductsOutcome(outcome.GetError());
+    }
+}
+
+void ApiClient::DescribeProductsAsync(const DescribeProductsRequest& request, const DescribeProductsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeProducts(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ApiClient::DescribeProductsOutcomeCallable ApiClient::DescribeProductsCallable(const DescribeProductsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeProductsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeProducts(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ApiClient::DescribeRegionsOutcome ApiClient::DescribeRegions(const DescribeRegionsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeRegions");

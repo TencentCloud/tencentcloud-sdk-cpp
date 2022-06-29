@@ -28,7 +28,8 @@ CreateAMQPExchangeRequest::CreateAMQPExchangeRequest() :
     m_typeHasBeenSet(false),
     m_clusterIdHasBeenSet(false),
     m_remarkHasBeenSet(false),
-    m_alternateExchangeHasBeenSet(false)
+    m_alternateExchangeHasBeenSet(false),
+    m_delayedTypeHasBeenSet(false)
 {
 }
 
@@ -90,6 +91,14 @@ string CreateAMQPExchangeRequest::ToJsonString() const
         string key = "AlternateExchange";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_alternateExchange.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_delayedTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DelayedType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_delayedType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -194,6 +203,22 @@ void CreateAMQPExchangeRequest::SetAlternateExchange(const string& _alternateExc
 bool CreateAMQPExchangeRequest::AlternateExchangeHasBeenSet() const
 {
     return m_alternateExchangeHasBeenSet;
+}
+
+string CreateAMQPExchangeRequest::GetDelayedType() const
+{
+    return m_delayedType;
+}
+
+void CreateAMQPExchangeRequest::SetDelayedType(const string& _delayedType)
+{
+    m_delayedType = _delayedType;
+    m_delayedTypeHasBeenSet = true;
+}
+
+bool CreateAMQPExchangeRequest::DelayedTypeHasBeenSet() const
+{
+    return m_delayedTypeHasBeenSet;
 }
 
 

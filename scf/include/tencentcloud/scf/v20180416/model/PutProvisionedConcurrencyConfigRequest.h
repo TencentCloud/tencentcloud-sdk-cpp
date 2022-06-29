@@ -133,6 +133,98 @@ namespace TencentCloud
                      */
                     bool TriggerActionsHasBeenSet() const;
 
+                    /**
+                     * 获取预置类型，
+静态预置：Default
+动态追踪并发利用率指标预置：ConcurrencyUtilizationTracking
+预置类型二选一，设置静态预置时可以设置VersionProvisionedConcurrencyNum。
+
+动态利用率预置可以设置TrackingTarget，MinCapacity，MaxCapacity，保持向后兼容性此时VersionProvisionedConcurrencyNum设置为0.
+                     * @return ProvisionedType 预置类型，
+静态预置：Default
+动态追踪并发利用率指标预置：ConcurrencyUtilizationTracking
+预置类型二选一，设置静态预置时可以设置VersionProvisionedConcurrencyNum。
+
+动态利用率预置可以设置TrackingTarget，MinCapacity，MaxCapacity，保持向后兼容性此时VersionProvisionedConcurrencyNum设置为0.
+                     */
+                    std::string GetProvisionedType() const;
+
+                    /**
+                     * 设置预置类型，
+静态预置：Default
+动态追踪并发利用率指标预置：ConcurrencyUtilizationTracking
+预置类型二选一，设置静态预置时可以设置VersionProvisionedConcurrencyNum。
+
+动态利用率预置可以设置TrackingTarget，MinCapacity，MaxCapacity，保持向后兼容性此时VersionProvisionedConcurrencyNum设置为0.
+                     * @param ProvisionedType 预置类型，
+静态预置：Default
+动态追踪并发利用率指标预置：ConcurrencyUtilizationTracking
+预置类型二选一，设置静态预置时可以设置VersionProvisionedConcurrencyNum。
+
+动态利用率预置可以设置TrackingTarget，MinCapacity，MaxCapacity，保持向后兼容性此时VersionProvisionedConcurrencyNum设置为0.
+                     */
+                    void SetProvisionedType(const std::string& _provisionedType);
+
+                    /**
+                     * 判断参数 ProvisionedType 是否已赋值
+                     * @return ProvisionedType 是否已赋值
+                     */
+                    bool ProvisionedTypeHasBeenSet() const;
+
+                    /**
+                     * 获取指标追踪的并发利用率。设置范围(0,1)
+                     * @return TrackingTarget 指标追踪的并发利用率。设置范围(0,1)
+                     */
+                    double GetTrackingTarget() const;
+
+                    /**
+                     * 设置指标追踪的并发利用率。设置范围(0,1)
+                     * @param TrackingTarget 指标追踪的并发利用率。设置范围(0,1)
+                     */
+                    void SetTrackingTarget(const double& _trackingTarget);
+
+                    /**
+                     * 判断参数 TrackingTarget 是否已赋值
+                     * @return TrackingTarget 是否已赋值
+                     */
+                    bool TrackingTargetHasBeenSet() const;
+
+                    /**
+                     * 获取缩容时的最小值, 最小值为1
+                     * @return MinCapacity 缩容时的最小值, 最小值为1
+                     */
+                    uint64_t GetMinCapacity() const;
+
+                    /**
+                     * 设置缩容时的最小值, 最小值为1
+                     * @param MinCapacity 缩容时的最小值, 最小值为1
+                     */
+                    void SetMinCapacity(const uint64_t& _minCapacity);
+
+                    /**
+                     * 判断参数 MinCapacity 是否已赋值
+                     * @return MinCapacity 是否已赋值
+                     */
+                    bool MinCapacityHasBeenSet() const;
+
+                    /**
+                     * 获取扩容时的最大值
+                     * @return MaxCapacity 扩容时的最大值
+                     */
+                    uint64_t GetMaxCapacity() const;
+
+                    /**
+                     * 设置扩容时的最大值
+                     * @param MaxCapacity 扩容时的最大值
+                     */
+                    void SetMaxCapacity(const uint64_t& _maxCapacity);
+
+                    /**
+                     * 判断参数 MaxCapacity 是否已赋值
+                     * @return MaxCapacity 是否已赋值
+                     */
+                    bool MaxCapacityHasBeenSet() const;
+
                 private:
 
                     /**
@@ -164,6 +256,35 @@ namespace TencentCloud
                      */
                     std::vector<TriggerAction> m_triggerActions;
                     bool m_triggerActionsHasBeenSet;
+
+                    /**
+                     * 预置类型，
+静态预置：Default
+动态追踪并发利用率指标预置：ConcurrencyUtilizationTracking
+预置类型二选一，设置静态预置时可以设置VersionProvisionedConcurrencyNum。
+
+动态利用率预置可以设置TrackingTarget，MinCapacity，MaxCapacity，保持向后兼容性此时VersionProvisionedConcurrencyNum设置为0.
+                     */
+                    std::string m_provisionedType;
+                    bool m_provisionedTypeHasBeenSet;
+
+                    /**
+                     * 指标追踪的并发利用率。设置范围(0,1)
+                     */
+                    double m_trackingTarget;
+                    bool m_trackingTargetHasBeenSet;
+
+                    /**
+                     * 缩容时的最小值, 最小值为1
+                     */
+                    uint64_t m_minCapacity;
+                    bool m_minCapacityHasBeenSet;
+
+                    /**
+                     * 扩容时的最大值
+                     */
+                    uint64_t m_maxCapacity;
+                    bool m_maxCapacityHasBeenSet;
 
                 };
             }

@@ -97,6 +97,24 @@ namespace TencentCloud
                      */
                     bool InstanceIdsHasBeenSet() const;
 
+                    /**
+                     * 获取是否查询官方demo实例
+                     * @return DemoInstanceFlag 是否查询官方demo实例
+                     */
+                    int64_t GetDemoInstanceFlag() const;
+
+                    /**
+                     * 设置是否查询官方demo实例
+                     * @param DemoInstanceFlag 是否查询官方demo实例
+                     */
+                    void SetDemoInstanceFlag(const int64_t& _demoInstanceFlag);
+
+                    /**
+                     * 判断参数 DemoInstanceFlag 是否已赋值
+                     * @return DemoInstanceFlag 是否已赋值
+                     */
+                    bool DemoInstanceFlagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -116,6 +134,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_instanceIds;
                     bool m_instanceIdsHasBeenSet;
+
+                    /**
+                     * 是否查询官方demo实例
+                     */
+                    int64_t m_demoInstanceFlag;
+                    bool m_demoInstanceFlagHasBeenSet;
 
                 };
             }

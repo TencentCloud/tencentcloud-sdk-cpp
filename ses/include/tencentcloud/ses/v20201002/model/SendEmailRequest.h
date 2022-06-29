@@ -46,22 +46,22 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取发信邮件地址。请填写发件人邮箱地址，例如：noreply@mail.qcloud.com。如需填写发件人说明，请按照 
-发信人 <邮件地址> 的方式填写，例如：
-腾讯云团队 <noreply@mail.qcloud.com>
-                     * @return FromEmailAddress 发信邮件地址。请填写发件人邮箱地址，例如：noreply@mail.qcloud.com。如需填写发件人说明，请按照 
-发信人 <邮件地址> 的方式填写，例如：
-腾讯云团队 <noreply@mail.qcloud.com>
+                     * 获取发信邮件地址。请填写发件人邮箱地址，例如：noreply@mail.qcloud.com
+如需填写发件人说明，请按照如下方式： 
+别名 <邮箱地址>
+                     * @return FromEmailAddress 发信邮件地址。请填写发件人邮箱地址，例如：noreply@mail.qcloud.com
+如需填写发件人说明，请按照如下方式： 
+别名 <邮箱地址>
                      */
                     std::string GetFromEmailAddress() const;
 
                     /**
-                     * 设置发信邮件地址。请填写发件人邮箱地址，例如：noreply@mail.qcloud.com。如需填写发件人说明，请按照 
-发信人 <邮件地址> 的方式填写，例如：
-腾讯云团队 <noreply@mail.qcloud.com>
-                     * @param FromEmailAddress 发信邮件地址。请填写发件人邮箱地址，例如：noreply@mail.qcloud.com。如需填写发件人说明，请按照 
-发信人 <邮件地址> 的方式填写，例如：
-腾讯云团队 <noreply@mail.qcloud.com>
+                     * 设置发信邮件地址。请填写发件人邮箱地址，例如：noreply@mail.qcloud.com
+如需填写发件人说明，请按照如下方式： 
+别名 <邮箱地址>
+                     * @param FromEmailAddress 发信邮件地址。请填写发件人邮箱地址，例如：noreply@mail.qcloud.com
+如需填写发件人说明，请按照如下方式： 
+别名 <邮箱地址>
                      */
                     void SetFromEmailAddress(const std::string& _fromEmailAddress);
 
@@ -108,14 +108,14 @@ namespace TencentCloud
                     bool SubjectHasBeenSet() const;
 
                     /**
-                     * 获取邮件的“回复”电子邮件地址。可以填写您能收到邮件的邮箱地址，可以是个人邮箱。如果不填，收件人将会回复到腾讯云。
-                     * @return ReplyToAddresses 邮件的“回复”电子邮件地址。可以填写您能收到邮件的邮箱地址，可以是个人邮箱。如果不填，收件人将会回复到腾讯云。
+                     * 获取邮件的“回复”电子邮件地址。可以填写您能收到邮件的邮箱地址，可以是个人邮箱。如果不填，收件人的回复邮件将会发送失败。
+                     * @return ReplyToAddresses 邮件的“回复”电子邮件地址。可以填写您能收到邮件的邮箱地址，可以是个人邮箱。如果不填，收件人的回复邮件将会发送失败。
                      */
                     std::string GetReplyToAddresses() const;
 
                     /**
-                     * 设置邮件的“回复”电子邮件地址。可以填写您能收到邮件的邮箱地址，可以是个人邮箱。如果不填，收件人将会回复到腾讯云。
-                     * @param ReplyToAddresses 邮件的“回复”电子邮件地址。可以填写您能收到邮件的邮箱地址，可以是个人邮箱。如果不填，收件人将会回复到腾讯云。
+                     * 设置邮件的“回复”电子邮件地址。可以填写您能收到邮件的邮箱地址，可以是个人邮箱。如果不填，收件人的回复邮件将会发送失败。
+                     * @param ReplyToAddresses 邮件的“回复”电子邮件地址。可以填写您能收到邮件的邮箱地址，可以是个人邮箱。如果不填，收件人的回复邮件将会发送失败。
                      */
                     void SetReplyToAddresses(const std::string& _replyToAddresses);
 
@@ -144,14 +144,14 @@ namespace TencentCloud
                     bool TemplateHasBeenSet() const;
 
                     /**
-                     * 获取使用API直接发送内容时，填写的邮件内容
-                     * @return Simple 使用API直接发送内容时，填写的邮件内容
+                     * 获取已废弃
+                     * @return Simple 已废弃
                      */
                     Simple GetSimple() const;
 
                     /**
-                     * 设置使用API直接发送内容时，填写的邮件内容
-                     * @param Simple 使用API直接发送内容时，填写的邮件内容
+                     * 设置已废弃
+                     * @param Simple 已废弃
                      */
                     void SetSimple(const Simple& _simple);
 
@@ -179,12 +179,48 @@ namespace TencentCloud
                      */
                     bool AttachmentsHasBeenSet() const;
 
+                    /**
+                     * 获取退订选项 1: 加入退订链接 0: 不加入退订链接
+                     * @return Unsubscribe 退订选项 1: 加入退订链接 0: 不加入退订链接
+                     */
+                    std::string GetUnsubscribe() const;
+
+                    /**
+                     * 设置退订选项 1: 加入退订链接 0: 不加入退订链接
+                     * @param Unsubscribe 退订选项 1: 加入退订链接 0: 不加入退订链接
+                     */
+                    void SetUnsubscribe(const std::string& _unsubscribe);
+
+                    /**
+                     * 判断参数 Unsubscribe 是否已赋值
+                     * @return Unsubscribe 是否已赋值
+                     */
+                    bool UnsubscribeHasBeenSet() const;
+
+                    /**
+                     * 获取邮件触发类型 0:非触发类，默认类型，营销类邮件、非即时类邮件等选择此类型  1:触发类，验证码等即时发送类邮件，若邮件超过一定大小，系统会自动选择非触发类型通道
+                     * @return TriggerType 邮件触发类型 0:非触发类，默认类型，营销类邮件、非即时类邮件等选择此类型  1:触发类，验证码等即时发送类邮件，若邮件超过一定大小，系统会自动选择非触发类型通道
+                     */
+                    uint64_t GetTriggerType() const;
+
+                    /**
+                     * 设置邮件触发类型 0:非触发类，默认类型，营销类邮件、非即时类邮件等选择此类型  1:触发类，验证码等即时发送类邮件，若邮件超过一定大小，系统会自动选择非触发类型通道
+                     * @param TriggerType 邮件触发类型 0:非触发类，默认类型，营销类邮件、非即时类邮件等选择此类型  1:触发类，验证码等即时发送类邮件，若邮件超过一定大小，系统会自动选择非触发类型通道
+                     */
+                    void SetTriggerType(const uint64_t& _triggerType);
+
+                    /**
+                     * 判断参数 TriggerType 是否已赋值
+                     * @return TriggerType 是否已赋值
+                     */
+                    bool TriggerTypeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 发信邮件地址。请填写发件人邮箱地址，例如：noreply@mail.qcloud.com。如需填写发件人说明，请按照 
-发信人 <邮件地址> 的方式填写，例如：
-腾讯云团队 <noreply@mail.qcloud.com>
+                     * 发信邮件地址。请填写发件人邮箱地址，例如：noreply@mail.qcloud.com
+如需填写发件人说明，请按照如下方式： 
+别名 <邮箱地址>
                      */
                     std::string m_fromEmailAddress;
                     bool m_fromEmailAddressHasBeenSet;
@@ -202,7 +238,7 @@ namespace TencentCloud
                     bool m_subjectHasBeenSet;
 
                     /**
-                     * 邮件的“回复”电子邮件地址。可以填写您能收到邮件的邮箱地址，可以是个人邮箱。如果不填，收件人将会回复到腾讯云。
+                     * 邮件的“回复”电子邮件地址。可以填写您能收到邮件的邮箱地址，可以是个人邮箱。如果不填，收件人的回复邮件将会发送失败。
                      */
                     std::string m_replyToAddresses;
                     bool m_replyToAddressesHasBeenSet;
@@ -214,7 +250,7 @@ namespace TencentCloud
                     bool m_templateHasBeenSet;
 
                     /**
-                     * 使用API直接发送内容时，填写的邮件内容
+                     * 已废弃
                      */
                     Simple m_simple;
                     bool m_simpleHasBeenSet;
@@ -224,6 +260,18 @@ namespace TencentCloud
                      */
                     std::vector<Attachment> m_attachments;
                     bool m_attachmentsHasBeenSet;
+
+                    /**
+                     * 退订选项 1: 加入退订链接 0: 不加入退订链接
+                     */
+                    std::string m_unsubscribe;
+                    bool m_unsubscribeHasBeenSet;
+
+                    /**
+                     * 邮件触发类型 0:非触发类，默认类型，营销类邮件、非即时类邮件等选择此类型  1:触发类，验证码等即时发送类邮件，若邮件超过一定大小，系统会自动选择非触发类型通道
+                     */
+                    uint64_t m_triggerType;
+                    bool m_triggerTypeHasBeenSet;
 
                 };
             }

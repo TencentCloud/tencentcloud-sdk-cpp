@@ -27,7 +27,8 @@ ModifyNetworkConfigRequest::ModifyNetworkConfigRequest() :
     m_operationHasBeenSet(false),
     m_vipHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
-    m_subnetIdHasBeenSet(false)
+    m_subnetIdHasBeenSet(false),
+    m_recycleHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,14 @@ string ModifyNetworkConfigRequest::ToJsonString() const
         string key = "SubnetId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_subnetId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_recycleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Recycle";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_recycle, allocator);
     }
 
 
@@ -164,6 +173,22 @@ void ModifyNetworkConfigRequest::SetSubnetId(const string& _subnetId)
 bool ModifyNetworkConfigRequest::SubnetIdHasBeenSet() const
 {
     return m_subnetIdHasBeenSet;
+}
+
+int64_t ModifyNetworkConfigRequest::GetRecycle() const
+{
+    return m_recycle;
+}
+
+void ModifyNetworkConfigRequest::SetRecycle(const int64_t& _recycle)
+{
+    m_recycle = _recycle;
+    m_recycleHasBeenSet = true;
+}
+
+bool ModifyNetworkConfigRequest::RecycleHasBeenSet() const
+{
+    return m_recycleHasBeenSet;
 }
 
 

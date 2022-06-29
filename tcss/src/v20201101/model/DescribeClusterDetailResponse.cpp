@@ -39,7 +39,15 @@ DescribeClusterDetailResponse::DescribeClusterDetailResponse() :
     m_hintRiskCountHasBeenSet(false),
     m_checkStatusHasBeenSet(false),
     m_defenderStatusHasBeenSet(false),
-    m_taskCreateTimeHasBeenSet(false)
+    m_taskCreateTimeHasBeenSet(false),
+    m_networkTypeHasBeenSet(false),
+    m_apiServerAddressHasBeenSet(false),
+    m_nodeCountHasBeenSet(false),
+    m_namespaceCountHasBeenSet(false),
+    m_workloadCountHasBeenSet(false),
+    m_podCountHasBeenSet(false),
+    m_serviceCountHasBeenSet(false),
+    m_ingressCountHasBeenSet(false)
 {
 }
 
@@ -237,6 +245,86 @@ CoreInternalOutcome DescribeClusterDetailResponse::Deserialize(const string &pay
         m_taskCreateTimeHasBeenSet = true;
     }
 
+    if (rsp.HasMember("NetworkType") && !rsp["NetworkType"].IsNull())
+    {
+        if (!rsp["NetworkType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NetworkType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_networkType = string(rsp["NetworkType"].GetString());
+        m_networkTypeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ApiServerAddress") && !rsp["ApiServerAddress"].IsNull())
+    {
+        if (!rsp["ApiServerAddress"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApiServerAddress` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_apiServerAddress = string(rsp["ApiServerAddress"].GetString());
+        m_apiServerAddressHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("NodeCount") && !rsp["NodeCount"].IsNull())
+    {
+        if (!rsp["NodeCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `NodeCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_nodeCount = rsp["NodeCount"].GetUint64();
+        m_nodeCountHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("NamespaceCount") && !rsp["NamespaceCount"].IsNull())
+    {
+        if (!rsp["NamespaceCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `NamespaceCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_namespaceCount = rsp["NamespaceCount"].GetUint64();
+        m_namespaceCountHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("WorkloadCount") && !rsp["WorkloadCount"].IsNull())
+    {
+        if (!rsp["WorkloadCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `WorkloadCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_workloadCount = rsp["WorkloadCount"].GetUint64();
+        m_workloadCountHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("PodCount") && !rsp["PodCount"].IsNull())
+    {
+        if (!rsp["PodCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `PodCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_podCount = rsp["PodCount"].GetUint64();
+        m_podCountHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ServiceCount") && !rsp["ServiceCount"].IsNull())
+    {
+        if (!rsp["ServiceCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_serviceCount = rsp["ServiceCount"].GetUint64();
+        m_serviceCountHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("IngressCount") && !rsp["IngressCount"].IsNull())
+    {
+        if (!rsp["IngressCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `IngressCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_ingressCount = rsp["IngressCount"].GetUint64();
+        m_ingressCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -373,6 +461,70 @@ string DescribeClusterDetailResponse::ToJsonString() const
         string key = "TaskCreateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_taskCreateTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_networkTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NetworkType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_networkType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_apiServerAddressHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApiServerAddress";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_apiServerAddress.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_nodeCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NodeCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_nodeCount, allocator);
+    }
+
+    if (m_namespaceCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NamespaceCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_namespaceCount, allocator);
+    }
+
+    if (m_workloadCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WorkloadCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_workloadCount, allocator);
+    }
+
+    if (m_podCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PodCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_podCount, allocator);
+    }
+
+    if (m_serviceCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServiceCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_serviceCount, allocator);
+    }
+
+    if (m_ingressCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IngressCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_ingressCount, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -545,6 +697,86 @@ string DescribeClusterDetailResponse::GetTaskCreateTime() const
 bool DescribeClusterDetailResponse::TaskCreateTimeHasBeenSet() const
 {
     return m_taskCreateTimeHasBeenSet;
+}
+
+string DescribeClusterDetailResponse::GetNetworkType() const
+{
+    return m_networkType;
+}
+
+bool DescribeClusterDetailResponse::NetworkTypeHasBeenSet() const
+{
+    return m_networkTypeHasBeenSet;
+}
+
+string DescribeClusterDetailResponse::GetApiServerAddress() const
+{
+    return m_apiServerAddress;
+}
+
+bool DescribeClusterDetailResponse::ApiServerAddressHasBeenSet() const
+{
+    return m_apiServerAddressHasBeenSet;
+}
+
+uint64_t DescribeClusterDetailResponse::GetNodeCount() const
+{
+    return m_nodeCount;
+}
+
+bool DescribeClusterDetailResponse::NodeCountHasBeenSet() const
+{
+    return m_nodeCountHasBeenSet;
+}
+
+uint64_t DescribeClusterDetailResponse::GetNamespaceCount() const
+{
+    return m_namespaceCount;
+}
+
+bool DescribeClusterDetailResponse::NamespaceCountHasBeenSet() const
+{
+    return m_namespaceCountHasBeenSet;
+}
+
+uint64_t DescribeClusterDetailResponse::GetWorkloadCount() const
+{
+    return m_workloadCount;
+}
+
+bool DescribeClusterDetailResponse::WorkloadCountHasBeenSet() const
+{
+    return m_workloadCountHasBeenSet;
+}
+
+uint64_t DescribeClusterDetailResponse::GetPodCount() const
+{
+    return m_podCount;
+}
+
+bool DescribeClusterDetailResponse::PodCountHasBeenSet() const
+{
+    return m_podCountHasBeenSet;
+}
+
+uint64_t DescribeClusterDetailResponse::GetServiceCount() const
+{
+    return m_serviceCount;
+}
+
+bool DescribeClusterDetailResponse::ServiceCountHasBeenSet() const
+{
+    return m_serviceCountHasBeenSet;
+}
+
+uint64_t DescribeClusterDetailResponse::GetIngressCount() const
+{
+    return m_ingressCount;
+}
+
+bool DescribeClusterDetailResponse::IngressCountHasBeenSet() const
+{
+    return m_ingressCountHasBeenSet;
 }
 
 

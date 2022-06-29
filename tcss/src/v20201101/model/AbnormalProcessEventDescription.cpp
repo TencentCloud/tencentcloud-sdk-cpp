@@ -26,7 +26,9 @@ AbnormalProcessEventDescription::AbnormalProcessEventDescription() :
     m_remarkHasBeenSet(false),
     m_matchRuleHasBeenSet(false),
     m_ruleNameHasBeenSet(false),
-    m_ruleIdHasBeenSet(false)
+    m_ruleIdHasBeenSet(false),
+    m_operationTimeHasBeenSet(false),
+    m_groupNameHasBeenSet(false)
 {
 }
 
@@ -102,6 +104,26 @@ CoreInternalOutcome AbnormalProcessEventDescription::Deserialize(const rapidjson
         m_ruleIdHasBeenSet = true;
     }
 
+    if (value.HasMember("OperationTime") && !value["OperationTime"].IsNull())
+    {
+        if (!value["OperationTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AbnormalProcessEventDescription.OperationTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_operationTime = string(value["OperationTime"].GetString());
+        m_operationTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("GroupName") && !value["GroupName"].IsNull())
+    {
+        if (!value["GroupName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AbnormalProcessEventDescription.GroupName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_groupName = string(value["GroupName"].GetString());
+        m_groupNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -156,6 +178,22 @@ void AbnormalProcessEventDescription::ToJsonObject(rapidjson::Value &value, rapi
         string key = "RuleId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_ruleId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_operationTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OperationTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_operationTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_groupNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GroupName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_groupName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -255,5 +293,37 @@ void AbnormalProcessEventDescription::SetRuleId(const string& _ruleId)
 bool AbnormalProcessEventDescription::RuleIdHasBeenSet() const
 {
     return m_ruleIdHasBeenSet;
+}
+
+string AbnormalProcessEventDescription::GetOperationTime() const
+{
+    return m_operationTime;
+}
+
+void AbnormalProcessEventDescription::SetOperationTime(const string& _operationTime)
+{
+    m_operationTime = _operationTime;
+    m_operationTimeHasBeenSet = true;
+}
+
+bool AbnormalProcessEventDescription::OperationTimeHasBeenSet() const
+{
+    return m_operationTimeHasBeenSet;
+}
+
+string AbnormalProcessEventDescription::GetGroupName() const
+{
+    return m_groupName;
+}
+
+void AbnormalProcessEventDescription::SetGroupName(const string& _groupName)
+{
+    m_groupName = _groupName;
+    m_groupNameHasBeenSet = true;
+}
+
+bool AbnormalProcessEventDescription::GroupNameHasBeenSet() const
+{
+    return m_groupNameHasBeenSet;
 }
 

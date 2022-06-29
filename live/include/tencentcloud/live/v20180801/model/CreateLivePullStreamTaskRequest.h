@@ -73,7 +73,7 @@ PullVodPushLive -点播。
 SourceType 为直播（PullLivePushLive）只可以填1个，
 SourceType 为点播（PullVodPushLive）可以填多个，上限30个。
 当前支持的文件格式：flv，mp4，hls。
-当前支持的拉流协议：http，https，rtmp。
+当前支持的拉流协议：http，https，rtmp，rtmps，rtsp，srt。
 注意：
 1. 建议优先使用 flv 文件，对于 mp4 未交织好的文件轮播推流易产生卡顿，可通过点播转码进行重新交织后再轮播。
 2. 拒绝内网域名等攻击性拉流地址，如有使用，则做账号封禁处理。
@@ -85,7 +85,7 @@ SourceType 为点播（PullVodPushLive）可以填多个，上限30个。
 SourceType 为直播（PullLivePushLive）只可以填1个，
 SourceType 为点播（PullVodPushLive）可以填多个，上限30个。
 当前支持的文件格式：flv，mp4，hls。
-当前支持的拉流协议：http，https，rtmp。
+当前支持的拉流协议：http，https，rtmp，rtmps，rtsp，srt。
 注意：
 1. 建议优先使用 flv 文件，对于 mp4 未交织好的文件轮播推流易产生卡顿，可通过点播转码进行重新交织后再轮播。
 2. 拒绝内网域名等攻击性拉流地址，如有使用，则做账号封禁处理。
@@ -101,7 +101,7 @@ SourceType 为点播（PullVodPushLive）可以填多个，上限30个。
 SourceType 为直播（PullLivePushLive）只可以填1个，
 SourceType 为点播（PullVodPushLive）可以填多个，上限30个。
 当前支持的文件格式：flv，mp4，hls。
-当前支持的拉流协议：http，https，rtmp。
+当前支持的拉流协议：http，https，rtmp，rtmps，rtsp，srt。
 注意：
 1. 建议优先使用 flv 文件，对于 mp4 未交织好的文件轮播推流易产生卡顿，可通过点播转码进行重新交织后再轮播。
 2. 拒绝内网域名等攻击性拉流地址，如有使用，则做账号封禁处理。
@@ -113,7 +113,7 @@ SourceType 为点播（PullVodPushLive）可以填多个，上限30个。
 SourceType 为直播（PullLivePushLive）只可以填1个，
 SourceType 为点播（PullVodPushLive）可以填多个，上限30个。
 当前支持的文件格式：flv，mp4，hls。
-当前支持的拉流协议：http，https，rtmp。
+当前支持的拉流协议：http，https，rtmp，rtmps，rtsp，srt。
 注意：
 1. 建议优先使用 flv 文件，对于 mp4 未交织好的文件轮播推流易产生卡顿，可通过点播转码进行重新交织后再轮播。
 2. 拒绝内网域名等攻击性拉流地址，如有使用，则做账号封禁处理。
@@ -516,6 +516,100 @@ ContinueBreakPoint：播放完当前正在播放的点播 url 后再使用新的
                      */
                     bool CommentHasBeenSet() const;
 
+                    /**
+                     * 获取完整目标 URL 地址。
+用法注意：如果使用该参数来传完整目标地址，则 DomainName, AppName, StreamName 需要传入空值，任务将会使用该 ToUrl 参数指定的目标地址。
+
+注意：签名时间需要超过任务结束时间，避免因签名过期造成任务失败。
+                     * @return ToUrl 完整目标 URL 地址。
+用法注意：如果使用该参数来传完整目标地址，则 DomainName, AppName, StreamName 需要传入空值，任务将会使用该 ToUrl 参数指定的目标地址。
+
+注意：签名时间需要超过任务结束时间，避免因签名过期造成任务失败。
+                     */
+                    std::string GetToUrl() const;
+
+                    /**
+                     * 设置完整目标 URL 地址。
+用法注意：如果使用该参数来传完整目标地址，则 DomainName, AppName, StreamName 需要传入空值，任务将会使用该 ToUrl 参数指定的目标地址。
+
+注意：签名时间需要超过任务结束时间，避免因签名过期造成任务失败。
+                     * @param ToUrl 完整目标 URL 地址。
+用法注意：如果使用该参数来传完整目标地址，则 DomainName, AppName, StreamName 需要传入空值，任务将会使用该 ToUrl 参数指定的目标地址。
+
+注意：签名时间需要超过任务结束时间，避免因签名过期造成任务失败。
+                     */
+                    void SetToUrl(const std::string& _toUrl);
+
+                    /**
+                     * 判断参数 ToUrl 是否已赋值
+                     * @return ToUrl 是否已赋值
+                     */
+                    bool ToUrlHasBeenSet() const;
+
+                    /**
+                     * 获取备源的类型：
+PullLivePushLive -直播，
+PullVodPushLive -点播。
+注意：
+1. 仅当主源类型为直播源时，备源才会生效。
+2. 主直播源拉流中断时，自动使用备源进行拉流。
+3. 如果备源为点播文件时，则每次轮播完点播文件就检查主源是否恢复，如果主源恢复则自动切回到主源，否则继续拉备源。
+                     * @return BackupSourceType 备源的类型：
+PullLivePushLive -直播，
+PullVodPushLive -点播。
+注意：
+1. 仅当主源类型为直播源时，备源才会生效。
+2. 主直播源拉流中断时，自动使用备源进行拉流。
+3. 如果备源为点播文件时，则每次轮播完点播文件就检查主源是否恢复，如果主源恢复则自动切回到主源，否则继续拉备源。
+                     */
+                    std::string GetBackupSourceType() const;
+
+                    /**
+                     * 设置备源的类型：
+PullLivePushLive -直播，
+PullVodPushLive -点播。
+注意：
+1. 仅当主源类型为直播源时，备源才会生效。
+2. 主直播源拉流中断时，自动使用备源进行拉流。
+3. 如果备源为点播文件时，则每次轮播完点播文件就检查主源是否恢复，如果主源恢复则自动切回到主源，否则继续拉备源。
+                     * @param BackupSourceType 备源的类型：
+PullLivePushLive -直播，
+PullVodPushLive -点播。
+注意：
+1. 仅当主源类型为直播源时，备源才会生效。
+2. 主直播源拉流中断时，自动使用备源进行拉流。
+3. 如果备源为点播文件时，则每次轮播完点播文件就检查主源是否恢复，如果主源恢复则自动切回到主源，否则继续拉备源。
+                     */
+                    void SetBackupSourceType(const std::string& _backupSourceType);
+
+                    /**
+                     * 判断参数 BackupSourceType 是否已赋值
+                     * @return BackupSourceType 是否已赋值
+                     */
+                    bool BackupSourceTypeHasBeenSet() const;
+
+                    /**
+                     * 获取备源 URL。
+只允许填一个备源 URL
+                     * @return BackupSourceUrl 备源 URL。
+只允许填一个备源 URL
+                     */
+                    std::string GetBackupSourceUrl() const;
+
+                    /**
+                     * 设置备源 URL。
+只允许填一个备源 URL
+                     * @param BackupSourceUrl 备源 URL。
+只允许填一个备源 URL
+                     */
+                    void SetBackupSourceUrl(const std::string& _backupSourceUrl);
+
+                    /**
+                     * 判断参数 BackupSourceUrl 是否已赋值
+                     * @return BackupSourceUrl 是否已赋值
+                     */
+                    bool BackupSourceUrlHasBeenSet() const;
+
                 private:
 
                     /**
@@ -531,7 +625,7 @@ PullVodPushLive -点播。
 SourceType 为直播（PullLivePushLive）只可以填1个，
 SourceType 为点播（PullVodPushLive）可以填多个，上限30个。
 当前支持的文件格式：flv，mp4，hls。
-当前支持的拉流协议：http，https，rtmp。
+当前支持的拉流协议：http，https，rtmp，rtmps，rtsp，srt。
 注意：
 1. 建议优先使用 flv 文件，对于 mp4 未交织好的文件轮播推流易产生卡顿，可通过点播转码进行重新交织后再轮播。
 2. 拒绝内网域名等攻击性拉流地址，如有使用，则做账号封禁处理。
@@ -658,6 +752,34 @@ ContinueBreakPoint：播放完当前正在播放的点播 url 后再使用新的
                      */
                     std::string m_comment;
                     bool m_commentHasBeenSet;
+
+                    /**
+                     * 完整目标 URL 地址。
+用法注意：如果使用该参数来传完整目标地址，则 DomainName, AppName, StreamName 需要传入空值，任务将会使用该 ToUrl 参数指定的目标地址。
+
+注意：签名时间需要超过任务结束时间，避免因签名过期造成任务失败。
+                     */
+                    std::string m_toUrl;
+                    bool m_toUrlHasBeenSet;
+
+                    /**
+                     * 备源的类型：
+PullLivePushLive -直播，
+PullVodPushLive -点播。
+注意：
+1. 仅当主源类型为直播源时，备源才会生效。
+2. 主直播源拉流中断时，自动使用备源进行拉流。
+3. 如果备源为点播文件时，则每次轮播完点播文件就检查主源是否恢复，如果主源恢复则自动切回到主源，否则继续拉备源。
+                     */
+                    std::string m_backupSourceType;
+                    bool m_backupSourceTypeHasBeenSet;
+
+                    /**
+                     * 备源 URL。
+只允许填一个备源 URL
+                     */
+                    std::string m_backupSourceUrl;
+                    bool m_backupSourceUrlHasBeenSet;
 
                 };
             }

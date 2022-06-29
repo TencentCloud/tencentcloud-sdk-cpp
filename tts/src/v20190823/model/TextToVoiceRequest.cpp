@@ -25,10 +25,10 @@ using namespace std;
 TextToVoiceRequest::TextToVoiceRequest() :
     m_textHasBeenSet(false),
     m_sessionIdHasBeenSet(false),
-    m_modelTypeHasBeenSet(false),
     m_volumeHasBeenSet(false),
     m_speedHasBeenSet(false),
     m_projectIdHasBeenSet(false),
+    m_modelTypeHasBeenSet(false),
     m_voiceTypeHasBeenSet(false),
     m_primaryLanguageHasBeenSet(false),
     m_sampleRateHasBeenSet(false),
@@ -59,14 +59,6 @@ string TextToVoiceRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_sessionId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_modelTypeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ModelType";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_modelType, allocator);
-    }
-
     if (m_volumeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -89,6 +81,14 @@ string TextToVoiceRequest::ToJsonString() const
         string key = "ProjectId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_projectId, allocator);
+    }
+
+    if (m_modelTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModelType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_modelType, allocator);
     }
 
     if (m_voiceTypeHasBeenSet)
@@ -163,22 +163,6 @@ bool TextToVoiceRequest::SessionIdHasBeenSet() const
     return m_sessionIdHasBeenSet;
 }
 
-int64_t TextToVoiceRequest::GetModelType() const
-{
-    return m_modelType;
-}
-
-void TextToVoiceRequest::SetModelType(const int64_t& _modelType)
-{
-    m_modelType = _modelType;
-    m_modelTypeHasBeenSet = true;
-}
-
-bool TextToVoiceRequest::ModelTypeHasBeenSet() const
-{
-    return m_modelTypeHasBeenSet;
-}
-
 double TextToVoiceRequest::GetVolume() const
 {
     return m_volume;
@@ -225,6 +209,22 @@ void TextToVoiceRequest::SetProjectId(const int64_t& _projectId)
 bool TextToVoiceRequest::ProjectIdHasBeenSet() const
 {
     return m_projectIdHasBeenSet;
+}
+
+int64_t TextToVoiceRequest::GetModelType() const
+{
+    return m_modelType;
+}
+
+void TextToVoiceRequest::SetModelType(const int64_t& _modelType)
+{
+    m_modelType = _modelType;
+    m_modelTypeHasBeenSet = true;
+}
+
+bool TextToVoiceRequest::ModelTypeHasBeenSet() const
+{
+    return m_modelTypeHasBeenSet;
 }
 
 int64_t TextToVoiceRequest::GetVoiceType() const

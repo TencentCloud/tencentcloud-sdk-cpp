@@ -96,6 +96,24 @@ namespace TencentCloud
                      */
                     bool IDHasBeenSet() const;
 
+                    /**
+                     * 获取该参数已废弃
+                     * @return IsDemo 该参数已废弃
+                     */
+                    int64_t GetIsDemo() const;
+
+                    /**
+                     * 设置该参数已废弃
+                     * @param IsDemo 该参数已废弃
+                     */
+                    void SetIsDemo(const int64_t& _isDemo);
+
+                    /**
+                     * 判断参数 IsDemo 是否已赋值
+                     * @return IsDemo 是否已赋值
+                     */
+                    bool IsDemoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -115,6 +133,12 @@ namespace TencentCloud
                      */
                     int64_t m_iD;
                     bool m_iDHasBeenSet;
+
+                    /**
+                     * 该参数已废弃
+                     */
+                    int64_t m_isDemo;
+                    bool m_isDemoHasBeenSet;
 
                 };
             }

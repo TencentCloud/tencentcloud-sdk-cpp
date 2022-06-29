@@ -25,6 +25,7 @@
 #include <tencentcloud/mna/v20210119/model/DestAddressInfo.h>
 #include <tencentcloud/mna/v20210119/model/DeviceInfo.h>
 #include <tencentcloud/mna/v20210119/model/Capacity.h>
+#include <tencentcloud/mna/v20210119/model/Context.h>
 
 
 namespace TencentCloud
@@ -238,6 +239,42 @@ BU4M：带宽型保障 + 上行带宽保障4Mbps
                      */
                     bool ProtocolHasBeenSet() const;
 
+                    /**
+                     * 获取加速策略关键数据
+                     * @return Context 加速策略关键数据
+                     */
+                    Context GetContext() const;
+
+                    /**
+                     * 设置加速策略关键数据
+                     * @param Context 加速策略关键数据
+                     */
+                    void SetContext(const Context& _context);
+
+                    /**
+                     * 判断参数 Context 是否已赋值
+                     * @return Context 是否已赋值
+                     */
+                    bool ContextHasBeenSet() const;
+
+                    /**
+                     * 获取签名
+                     * @return Extern 签名
+                     */
+                    std::string GetExtern() const;
+
+                    /**
+                     * 设置签名
+                     * @param Extern 签名
+                     */
+                    void SetExtern(const std::string& _extern);
+
+                    /**
+                     * 判断参数 Extern 是否已赋值
+                     * @return Extern 是否已赋值
+                     */
+                    bool ExternHasBeenSet() const;
+
                 private:
 
                     /**
@@ -299,6 +336,18 @@ BU4M：带宽型保障 + 上行带宽保障4Mbps
                      */
                     uint64_t m_protocol;
                     bool m_protocolHasBeenSet;
+
+                    /**
+                     * 加速策略关键数据
+                     */
+                    Context m_context;
+                    bool m_contextHasBeenSet;
+
+                    /**
+                     * 签名
+                     */
+                    std::string m_extern;
+                    bool m_externHasBeenSet;
 
                 };
             }

@@ -276,6 +276,36 @@ namespace TencentCloud
                      */
                     bool VcrfHasBeenSet() const;
 
+                    /**
+                     * 获取内容自适应编码。可选值：
+<li>0：不开启</li>
+<li>1：开启</li>
+默认值: 0.   当开启该参数时，将会自适应生成多个不同分辨率，不同码率的码流， 其中VideoTemplate的宽和高为多个码流中的最大分辨率，VideoTemplate中的码率为多个码流中的最高码率， VideoTemplate中的vcrf为多个码流中的最高质量。 当不设置分辨率、码率和vcrf时， ContentAdaptStream 参数生成的最高分辨率为视频源的分辨率，视频质量为接近vmaf95分。 若要开启该参数或了解计费细节, 请联系您的腾讯云商务。
+                     * @return ContentAdaptStream 内容自适应编码。可选值：
+<li>0：不开启</li>
+<li>1：开启</li>
+默认值: 0.   当开启该参数时，将会自适应生成多个不同分辨率，不同码率的码流， 其中VideoTemplate的宽和高为多个码流中的最大分辨率，VideoTemplate中的码率为多个码流中的最高码率， VideoTemplate中的vcrf为多个码流中的最高质量。 当不设置分辨率、码率和vcrf时， ContentAdaptStream 参数生成的最高分辨率为视频源的分辨率，视频质量为接近vmaf95分。 若要开启该参数或了解计费细节, 请联系您的腾讯云商务。
+                     */
+                    uint64_t GetContentAdaptStream() const;
+
+                    /**
+                     * 设置内容自适应编码。可选值：
+<li>0：不开启</li>
+<li>1：开启</li>
+默认值: 0.   当开启该参数时，将会自适应生成多个不同分辨率，不同码率的码流， 其中VideoTemplate的宽和高为多个码流中的最大分辨率，VideoTemplate中的码率为多个码流中的最高码率， VideoTemplate中的vcrf为多个码流中的最高质量。 当不设置分辨率、码率和vcrf时， ContentAdaptStream 参数生成的最高分辨率为视频源的分辨率，视频质量为接近vmaf95分。 若要开启该参数或了解计费细节, 请联系您的腾讯云商务。
+                     * @param ContentAdaptStream 内容自适应编码。可选值：
+<li>0：不开启</li>
+<li>1：开启</li>
+默认值: 0.   当开启该参数时，将会自适应生成多个不同分辨率，不同码率的码流， 其中VideoTemplate的宽和高为多个码流中的最大分辨率，VideoTemplate中的码率为多个码流中的最高码率， VideoTemplate中的vcrf为多个码流中的最高质量。 当不设置分辨率、码率和vcrf时， ContentAdaptStream 参数生成的最高分辨率为视频源的分辨率，视频质量为接近vmaf95分。 若要开启该参数或了解计费细节, 请联系您的腾讯云商务。
+                     */
+                    void SetContentAdaptStream(const uint64_t& _contentAdaptStream);
+
+                    /**
+                     * 判断参数 ContentAdaptStream 是否已赋值
+                     * @return ContentAdaptStream 是否已赋值
+                     */
+                    bool ContentAdaptStreamHasBeenSet() const;
+
                 private:
 
                     /**
@@ -348,6 +378,15 @@ namespace TencentCloud
                      */
                     uint64_t m_vcrf;
                     bool m_vcrfHasBeenSet;
+
+                    /**
+                     * 内容自适应编码。可选值：
+<li>0：不开启</li>
+<li>1：开启</li>
+默认值: 0.   当开启该参数时，将会自适应生成多个不同分辨率，不同码率的码流， 其中VideoTemplate的宽和高为多个码流中的最大分辨率，VideoTemplate中的码率为多个码流中的最高码率， VideoTemplate中的vcrf为多个码流中的最高质量。 当不设置分辨率、码率和vcrf时， ContentAdaptStream 参数生成的最高分辨率为视频源的分辨率，视频质量为接近vmaf95分。 若要开启该参数或了解计费细节, 请联系您的腾讯云商务。
+                     */
+                    uint64_t m_contentAdaptStream;
+                    bool m_contentAdaptStreamHasBeenSet;
 
                 };
             }

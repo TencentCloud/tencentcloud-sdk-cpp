@@ -49,6 +49,8 @@
 #include <tencentcloud/domain/v20180808/model/DescribeDomainNameListResponse.h>
 #include <tencentcloud/domain/v20180808/model/DescribeDomainPriceListRequest.h>
 #include <tencentcloud/domain/v20180808/model/DescribeDomainPriceListResponse.h>
+#include <tencentcloud/domain/v20180808/model/DescribeDomainSimpleInfoRequest.h>
+#include <tencentcloud/domain/v20180808/model/DescribeDomainSimpleInfoResponse.h>
 #include <tencentcloud/domain/v20180808/model/DescribePhoneEmailListRequest.h>
 #include <tencentcloud/domain/v20180808/model/DescribePhoneEmailListResponse.h>
 #include <tencentcloud/domain/v20180808/model/DescribeTemplateRequest.h>
@@ -126,6 +128,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDomainPriceListResponse> DescribeDomainPriceListOutcome;
                 typedef std::future<DescribeDomainPriceListOutcome> DescribeDomainPriceListOutcomeCallable;
                 typedef std::function<void(const DomainClient*, const Model::DescribeDomainPriceListRequest&, DescribeDomainPriceListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainPriceListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDomainSimpleInfoResponse> DescribeDomainSimpleInfoOutcome;
+                typedef std::future<DescribeDomainSimpleInfoOutcome> DescribeDomainSimpleInfoOutcomeCallable;
+                typedef std::function<void(const DomainClient*, const Model::DescribeDomainSimpleInfoRequest&, DescribeDomainSimpleInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainSimpleInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribePhoneEmailListResponse> DescribePhoneEmailListOutcome;
                 typedef std::future<DescribePhoneEmailListOutcome> DescribePhoneEmailListOutcomeCallable;
                 typedef std::function<void(const DomainClient*, const Model::DescribePhoneEmailListRequest&, DescribePhoneEmailListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePhoneEmailListAsyncHandler;
@@ -283,6 +288,15 @@ namespace TencentCloud
                 DescribeDomainPriceListOutcome DescribeDomainPriceList(const Model::DescribeDomainPriceListRequest &request);
                 void DescribeDomainPriceListAsync(const Model::DescribeDomainPriceListRequest& request, const DescribeDomainPriceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDomainPriceListOutcomeCallable DescribeDomainPriceListCallable(const Model::DescribeDomainPriceListRequest& request);
+
+                /**
+                 *获取域名实名信息详情
+                 * @param req DescribeDomainSimpleInfoRequest
+                 * @return DescribeDomainSimpleInfoOutcome
+                 */
+                DescribeDomainSimpleInfoOutcome DescribeDomainSimpleInfo(const Model::DescribeDomainSimpleInfoRequest &request);
+                void DescribeDomainSimpleInfoAsync(const Model::DescribeDomainSimpleInfoRequest& request, const DescribeDomainSimpleInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDomainSimpleInfoOutcomeCallable DescribeDomainSimpleInfoCallable(const Model::DescribeDomainSimpleInfoRequest& request);
 
                 /**
                  *本接口用于获取已验证的手机邮箱列表

@@ -378,17 +378,17 @@ namespace TencentCloud
                     bool HttpVersionHasBeenSet() const;
 
                     /**
-                     * 获取自定义探测相关参数。健康检查原IP类型：0（使用LB的VIP做为源IP），1（使用100.64网段IP做为源IP），默认值：0
+                     * 获取自定义探测相关参数。健康检查源IP类型：0（使用LB的VIP作为源IP），1（使用100.64网段IP作为源IP），默认值：0
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SourceIpType 自定义探测相关参数。健康检查原IP类型：0（使用LB的VIP做为源IP），1（使用100.64网段IP做为源IP），默认值：0
+                     * @return SourceIpType 自定义探测相关参数。健康检查源IP类型：0（使用LB的VIP作为源IP），1（使用100.64网段IP作为源IP），默认值：0
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetSourceIpType() const;
 
                     /**
-                     * 设置自定义探测相关参数。健康检查原IP类型：0（使用LB的VIP做为源IP），1（使用100.64网段IP做为源IP），默认值：0
+                     * 设置自定义探测相关参数。健康检查源IP类型：0（使用LB的VIP作为源IP），1（使用100.64网段IP作为源IP），默认值：0
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SourceIpType 自定义探测相关参数。健康检查原IP类型：0（使用LB的VIP做为源IP），1（使用100.64网段IP做为源IP），默认值：0
+                     * @param SourceIpType 自定义探测相关参数。健康检查源IP类型：0（使用LB的VIP作为源IP），1（使用100.64网段IP作为源IP），默认值：0
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetSourceIpType(const int64_t& _sourceIpType);
@@ -398,6 +398,28 @@ namespace TencentCloud
                      * @return SourceIpType 是否已赋值
                      */
                     bool SourceIpTypeHasBeenSet() const;
+
+                    /**
+                     * 获取GRPC健康检查状态码（仅适用于后端转发协议为GRPC的规则）。默认值为 12，可输入值为数值、多个数值、或者范围，例如 20 或 20,25 或 0-99
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ExtendedCode GRPC健康检查状态码（仅适用于后端转发协议为GRPC的规则）。默认值为 12，可输入值为数值、多个数值、或者范围，例如 20 或 20,25 或 0-99
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetExtendedCode() const;
+
+                    /**
+                     * 设置GRPC健康检查状态码（仅适用于后端转发协议为GRPC的规则）。默认值为 12，可输入值为数值、多个数值、或者范围，例如 20 或 20,25 或 0-99
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ExtendedCode GRPC健康检查状态码（仅适用于后端转发协议为GRPC的规则）。默认值为 12，可输入值为数值、多个数值、或者范围，例如 20 或 20,25 或 0-99
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetExtendedCode(const std::string& _extendedCode);
+
+                    /**
+                     * 判断参数 ExtendedCode 是否已赋值
+                     * @return ExtendedCode 是否已赋值
+                     */
+                    bool ExtendedCodeHasBeenSet() const;
 
                 private:
 
@@ -507,11 +529,18 @@ namespace TencentCloud
                     bool m_httpVersionHasBeenSet;
 
                     /**
-                     * 自定义探测相关参数。健康检查原IP类型：0（使用LB的VIP做为源IP），1（使用100.64网段IP做为源IP），默认值：0
+                     * 自定义探测相关参数。健康检查源IP类型：0（使用LB的VIP作为源IP），1（使用100.64网段IP作为源IP），默认值：0
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_sourceIpType;
                     bool m_sourceIpTypeHasBeenSet;
+
+                    /**
+                     * GRPC健康检查状态码（仅适用于后端转发协议为GRPC的规则）。默认值为 12，可输入值为数值、多个数值、或者范围，例如 20 或 20,25 或 0-99
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_extendedCode;
+                    bool m_extendedCodeHasBeenSet;
 
                 };
             }

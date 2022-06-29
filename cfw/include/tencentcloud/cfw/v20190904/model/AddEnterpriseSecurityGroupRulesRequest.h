@@ -97,6 +97,24 @@ namespace TencentCloud
                      */
                     bool ClientTokenHasBeenSet() const;
 
+                    /**
+                     * 获取是否延迟下发，1则延迟下发，否则立即下发
+                     * @return IsDelay 是否延迟下发，1则延迟下发，否则立即下发
+                     */
+                    uint64_t GetIsDelay() const;
+
+                    /**
+                     * 设置是否延迟下发，1则延迟下发，否则立即下发
+                     * @param IsDelay 是否延迟下发，1则延迟下发，否则立即下发
+                     */
+                    void SetIsDelay(const uint64_t& _isDelay);
+
+                    /**
+                     * 判断参数 IsDelay 是否已赋值
+                     * @return IsDelay 是否已赋值
+                     */
+                    bool IsDelayHasBeenSet() const;
+
                 private:
 
                     /**
@@ -116,6 +134,12 @@ namespace TencentCloud
                      */
                     std::string m_clientToken;
                     bool m_clientTokenHasBeenSet;
+
+                    /**
+                     * 是否延迟下发，1则延迟下发，否则立即下发
+                     */
+                    uint64_t m_isDelay;
+                    bool m_isDelayHasBeenSet;
 
                 };
             }

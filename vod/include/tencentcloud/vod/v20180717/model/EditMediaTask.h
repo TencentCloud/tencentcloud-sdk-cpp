@@ -222,14 +222,14 @@ namespace TencentCloud
                     bool OutputHasBeenSet() const;
 
                     /**
-                     * 获取原始视频的元信息。
-                     * @return MetaData 原始视频的元信息。
+                     * 获取输出视频的元信息。
+                     * @return MetaData 输出视频的元信息。
                      */
                     MediaMetaData GetMetaData() const;
 
                     /**
-                     * 设置原始视频的元信息。
-                     * @param MetaData 原始视频的元信息。
+                     * 设置输出视频的元信息。
+                     * @param MetaData 输出视频的元信息。
                      */
                     void SetMetaData(const MediaMetaData& _metaData);
 
@@ -351,7 +351,7 @@ namespace TencentCloud
                     bool m_outputHasBeenSet;
 
                     /**
-                     * 原始视频的元信息。
+                     * 输出视频的元信息。
                      */
                     MediaMetaData m_metaData;
                     bool m_metaDataHasBeenSet;

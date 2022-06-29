@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取结果
-                     * @return Data 结果
+                     * 获取自定义泄露事件列表
+                     * @return Data 自定义泄露事件列表
                      */
                     SaDivulgeDataQueryPubList GetData() const;
 
@@ -59,7 +59,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 结果
+                     * 自定义泄露事件列表
                      */
                     SaDivulgeDataQueryPubList m_data;
                     bool m_dataHasBeenSet;

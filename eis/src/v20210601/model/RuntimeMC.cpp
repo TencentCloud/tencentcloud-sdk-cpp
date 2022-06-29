@@ -31,7 +31,15 @@ RuntimeMC::RuntimeMC() :
     m_updatedAtHasBeenSet(false),
     m_workerSizeHasBeenSet(false),
     m_workerReplicaHasBeenSet(false),
-    m_runningInstanceCountHasBeenSet(false)
+    m_runningInstanceCountHasBeenSet(false),
+    m_cpuUsedHasBeenSet(false),
+    m_cpuLimitHasBeenSet(false),
+    m_memoryUsedHasBeenSet(false),
+    m_memoryLimitHasBeenSet(false),
+    m_expiredAtHasBeenSet(false),
+    m_chargeTypeHasBeenSet(false),
+    m_resourceLimitTypeHasBeenSet(false),
+    m_autoRenewalHasBeenSet(false)
 {
 }
 
@@ -150,6 +158,86 @@ CoreInternalOutcome RuntimeMC::Deserialize(const rapidjson::Value &value)
         m_runningInstanceCountHasBeenSet = true;
     }
 
+    if (value.HasMember("CpuUsed") && !value["CpuUsed"].IsNull())
+    {
+        if (!value["CpuUsed"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuntimeMC.CpuUsed` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_cpuUsed = value["CpuUsed"].GetDouble();
+        m_cpuUsedHasBeenSet = true;
+    }
+
+    if (value.HasMember("CpuLimit") && !value["CpuLimit"].IsNull())
+    {
+        if (!value["CpuLimit"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuntimeMC.CpuLimit` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_cpuLimit = value["CpuLimit"].GetDouble();
+        m_cpuLimitHasBeenSet = true;
+    }
+
+    if (value.HasMember("MemoryUsed") && !value["MemoryUsed"].IsNull())
+    {
+        if (!value["MemoryUsed"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuntimeMC.MemoryUsed` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_memoryUsed = value["MemoryUsed"].GetDouble();
+        m_memoryUsedHasBeenSet = true;
+    }
+
+    if (value.HasMember("MemoryLimit") && !value["MemoryLimit"].IsNull())
+    {
+        if (!value["MemoryLimit"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuntimeMC.MemoryLimit` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_memoryLimit = value["MemoryLimit"].GetDouble();
+        m_memoryLimitHasBeenSet = true;
+    }
+
+    if (value.HasMember("ExpiredAt") && !value["ExpiredAt"].IsNull())
+    {
+        if (!value["ExpiredAt"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuntimeMC.ExpiredAt` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_expiredAt = value["ExpiredAt"].GetInt64();
+        m_expiredAtHasBeenSet = true;
+    }
+
+    if (value.HasMember("ChargeType") && !value["ChargeType"].IsNull())
+    {
+        if (!value["ChargeType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuntimeMC.ChargeType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_chargeType = value["ChargeType"].GetInt64();
+        m_chargeTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ResourceLimitType") && !value["ResourceLimitType"].IsNull())
+    {
+        if (!value["ResourceLimitType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuntimeMC.ResourceLimitType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_resourceLimitType = value["ResourceLimitType"].GetInt64();
+        m_resourceLimitTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("AutoRenewal") && !value["AutoRenewal"].IsNull())
+    {
+        if (!value["AutoRenewal"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuntimeMC.AutoRenewal` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_autoRenewal = value["AutoRenewal"].GetBool();
+        m_autoRenewalHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -243,6 +331,70 @@ void RuntimeMC::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "RunningInstanceCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_runningInstanceCount, allocator);
+    }
+
+    if (m_cpuUsedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CpuUsed";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_cpuUsed, allocator);
+    }
+
+    if (m_cpuLimitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CpuLimit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_cpuLimit, allocator);
+    }
+
+    if (m_memoryUsedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MemoryUsed";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_memoryUsed, allocator);
+    }
+
+    if (m_memoryLimitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MemoryLimit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_memoryLimit, allocator);
+    }
+
+    if (m_expiredAtHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExpiredAt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_expiredAt, allocator);
+    }
+
+    if (m_chargeTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ChargeType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_chargeType, allocator);
+    }
+
+    if (m_resourceLimitTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceLimitType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_resourceLimitType, allocator);
+    }
+
+    if (m_autoRenewalHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoRenewal";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_autoRenewal, allocator);
     }
 
 }
@@ -422,5 +574,133 @@ void RuntimeMC::SetRunningInstanceCount(const int64_t& _runningInstanceCount)
 bool RuntimeMC::RunningInstanceCountHasBeenSet() const
 {
     return m_runningInstanceCountHasBeenSet;
+}
+
+double RuntimeMC::GetCpuUsed() const
+{
+    return m_cpuUsed;
+}
+
+void RuntimeMC::SetCpuUsed(const double& _cpuUsed)
+{
+    m_cpuUsed = _cpuUsed;
+    m_cpuUsedHasBeenSet = true;
+}
+
+bool RuntimeMC::CpuUsedHasBeenSet() const
+{
+    return m_cpuUsedHasBeenSet;
+}
+
+double RuntimeMC::GetCpuLimit() const
+{
+    return m_cpuLimit;
+}
+
+void RuntimeMC::SetCpuLimit(const double& _cpuLimit)
+{
+    m_cpuLimit = _cpuLimit;
+    m_cpuLimitHasBeenSet = true;
+}
+
+bool RuntimeMC::CpuLimitHasBeenSet() const
+{
+    return m_cpuLimitHasBeenSet;
+}
+
+double RuntimeMC::GetMemoryUsed() const
+{
+    return m_memoryUsed;
+}
+
+void RuntimeMC::SetMemoryUsed(const double& _memoryUsed)
+{
+    m_memoryUsed = _memoryUsed;
+    m_memoryUsedHasBeenSet = true;
+}
+
+bool RuntimeMC::MemoryUsedHasBeenSet() const
+{
+    return m_memoryUsedHasBeenSet;
+}
+
+double RuntimeMC::GetMemoryLimit() const
+{
+    return m_memoryLimit;
+}
+
+void RuntimeMC::SetMemoryLimit(const double& _memoryLimit)
+{
+    m_memoryLimit = _memoryLimit;
+    m_memoryLimitHasBeenSet = true;
+}
+
+bool RuntimeMC::MemoryLimitHasBeenSet() const
+{
+    return m_memoryLimitHasBeenSet;
+}
+
+int64_t RuntimeMC::GetExpiredAt() const
+{
+    return m_expiredAt;
+}
+
+void RuntimeMC::SetExpiredAt(const int64_t& _expiredAt)
+{
+    m_expiredAt = _expiredAt;
+    m_expiredAtHasBeenSet = true;
+}
+
+bool RuntimeMC::ExpiredAtHasBeenSet() const
+{
+    return m_expiredAtHasBeenSet;
+}
+
+int64_t RuntimeMC::GetChargeType() const
+{
+    return m_chargeType;
+}
+
+void RuntimeMC::SetChargeType(const int64_t& _chargeType)
+{
+    m_chargeType = _chargeType;
+    m_chargeTypeHasBeenSet = true;
+}
+
+bool RuntimeMC::ChargeTypeHasBeenSet() const
+{
+    return m_chargeTypeHasBeenSet;
+}
+
+int64_t RuntimeMC::GetResourceLimitType() const
+{
+    return m_resourceLimitType;
+}
+
+void RuntimeMC::SetResourceLimitType(const int64_t& _resourceLimitType)
+{
+    m_resourceLimitType = _resourceLimitType;
+    m_resourceLimitTypeHasBeenSet = true;
+}
+
+bool RuntimeMC::ResourceLimitTypeHasBeenSet() const
+{
+    return m_resourceLimitTypeHasBeenSet;
+}
+
+bool RuntimeMC::GetAutoRenewal() const
+{
+    return m_autoRenewal;
+}
+
+void RuntimeMC::SetAutoRenewal(const bool& _autoRenewal)
+{
+    m_autoRenewal = _autoRenewal;
+    m_autoRenewalHasBeenSet = true;
+}
+
+bool RuntimeMC::AutoRenewalHasBeenSet() const
+{
+    return m_autoRenewalHasBeenSet;
 }
 

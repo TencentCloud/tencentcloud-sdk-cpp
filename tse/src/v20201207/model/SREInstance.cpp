@@ -43,7 +43,13 @@ SREInstance::SREInstance() :
     m_serviceGovernanceInfosHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_enableConsoleInternetHasBeenSet(false),
-    m_enableConsoleIntranetHasBeenSet(false)
+    m_enableConsoleIntranetHasBeenSet(false),
+    m_configInfoVisibleHasBeenSet(false),
+    m_consoleDefaultPwdHasBeenSet(false),
+    m_tradeTypeHasBeenSet(false),
+    m_autoRenewFlagHasBeenSet(false),
+    m_curDeadlineHasBeenSet(false),
+    m_isolateTimeHasBeenSet(false)
 {
 }
 
@@ -325,6 +331,66 @@ CoreInternalOutcome SREInstance::Deserialize(const rapidjson::Value &value)
         m_enableConsoleIntranetHasBeenSet = true;
     }
 
+    if (value.HasMember("ConfigInfoVisible") && !value["ConfigInfoVisible"].IsNull())
+    {
+        if (!value["ConfigInfoVisible"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `SREInstance.ConfigInfoVisible` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_configInfoVisible = value["ConfigInfoVisible"].GetBool();
+        m_configInfoVisibleHasBeenSet = true;
+    }
+
+    if (value.HasMember("ConsoleDefaultPwd") && !value["ConsoleDefaultPwd"].IsNull())
+    {
+        if (!value["ConsoleDefaultPwd"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SREInstance.ConsoleDefaultPwd` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_consoleDefaultPwd = string(value["ConsoleDefaultPwd"].GetString());
+        m_consoleDefaultPwdHasBeenSet = true;
+    }
+
+    if (value.HasMember("TradeType") && !value["TradeType"].IsNull())
+    {
+        if (!value["TradeType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SREInstance.TradeType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_tradeType = value["TradeType"].GetInt64();
+        m_tradeTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("AutoRenewFlag") && !value["AutoRenewFlag"].IsNull())
+    {
+        if (!value["AutoRenewFlag"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SREInstance.AutoRenewFlag` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_autoRenewFlag = value["AutoRenewFlag"].GetInt64();
+        m_autoRenewFlagHasBeenSet = true;
+    }
+
+    if (value.HasMember("CurDeadline") && !value["CurDeadline"].IsNull())
+    {
+        if (!value["CurDeadline"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SREInstance.CurDeadline` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_curDeadline = string(value["CurDeadline"].GetString());
+        m_curDeadlineHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsolateTime") && !value["IsolateTime"].IsNull())
+    {
+        if (!value["IsolateTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SREInstance.IsolateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_isolateTime = string(value["IsolateTime"].GetString());
+        m_isolateTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -547,6 +613,54 @@ void SREInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "EnableConsoleIntranet";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_enableConsoleIntranet, allocator);
+    }
+
+    if (m_configInfoVisibleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConfigInfoVisible";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_configInfoVisible, allocator);
+    }
+
+    if (m_consoleDefaultPwdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConsoleDefaultPwd";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_consoleDefaultPwd.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tradeTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TradeType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_tradeType, allocator);
+    }
+
+    if (m_autoRenewFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoRenewFlag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_autoRenewFlag, allocator);
+    }
+
+    if (m_curDeadlineHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CurDeadline";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_curDeadline.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isolateTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsolateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_isolateTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -918,5 +1032,101 @@ void SREInstance::SetEnableConsoleIntranet(const bool& _enableConsoleIntranet)
 bool SREInstance::EnableConsoleIntranetHasBeenSet() const
 {
     return m_enableConsoleIntranetHasBeenSet;
+}
+
+bool SREInstance::GetConfigInfoVisible() const
+{
+    return m_configInfoVisible;
+}
+
+void SREInstance::SetConfigInfoVisible(const bool& _configInfoVisible)
+{
+    m_configInfoVisible = _configInfoVisible;
+    m_configInfoVisibleHasBeenSet = true;
+}
+
+bool SREInstance::ConfigInfoVisibleHasBeenSet() const
+{
+    return m_configInfoVisibleHasBeenSet;
+}
+
+string SREInstance::GetConsoleDefaultPwd() const
+{
+    return m_consoleDefaultPwd;
+}
+
+void SREInstance::SetConsoleDefaultPwd(const string& _consoleDefaultPwd)
+{
+    m_consoleDefaultPwd = _consoleDefaultPwd;
+    m_consoleDefaultPwdHasBeenSet = true;
+}
+
+bool SREInstance::ConsoleDefaultPwdHasBeenSet() const
+{
+    return m_consoleDefaultPwdHasBeenSet;
+}
+
+int64_t SREInstance::GetTradeType() const
+{
+    return m_tradeType;
+}
+
+void SREInstance::SetTradeType(const int64_t& _tradeType)
+{
+    m_tradeType = _tradeType;
+    m_tradeTypeHasBeenSet = true;
+}
+
+bool SREInstance::TradeTypeHasBeenSet() const
+{
+    return m_tradeTypeHasBeenSet;
+}
+
+int64_t SREInstance::GetAutoRenewFlag() const
+{
+    return m_autoRenewFlag;
+}
+
+void SREInstance::SetAutoRenewFlag(const int64_t& _autoRenewFlag)
+{
+    m_autoRenewFlag = _autoRenewFlag;
+    m_autoRenewFlagHasBeenSet = true;
+}
+
+bool SREInstance::AutoRenewFlagHasBeenSet() const
+{
+    return m_autoRenewFlagHasBeenSet;
+}
+
+string SREInstance::GetCurDeadline() const
+{
+    return m_curDeadline;
+}
+
+void SREInstance::SetCurDeadline(const string& _curDeadline)
+{
+    m_curDeadline = _curDeadline;
+    m_curDeadlineHasBeenSet = true;
+}
+
+bool SREInstance::CurDeadlineHasBeenSet() const
+{
+    return m_curDeadlineHasBeenSet;
+}
+
+string SREInstance::GetIsolateTime() const
+{
+    return m_isolateTime;
+}
+
+void SREInstance::SetIsolateTime(const string& _isolateTime)
+{
+    m_isolateTime = _isolateTime;
+    m_isolateTimeHasBeenSet = true;
+}
+
+bool SREInstance::IsolateTimeHasBeenSet() const
+{
+    return m_isolateTimeHasBeenSet;
 }
 

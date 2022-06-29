@@ -204,6 +204,24 @@ namespace TencentCloud
                      */
                     bool MultiZonesHasBeenSet() const;
 
+                    /**
+                     * 获取执行变配的方式，默认为 1。支持值包括：0 - 立刻执行，1 - 维护时间窗执行
+                     * @return WaitSwitch 执行变配的方式，默认为 1。支持值包括：0 - 立刻执行，1 - 维护时间窗执行
+                     */
+                    int64_t GetWaitSwitch() const;
+
+                    /**
+                     * 设置执行变配的方式，默认为 1。支持值包括：0 - 立刻执行，1 - 维护时间窗执行
+                     * @param WaitSwitch 执行变配的方式，默认为 1。支持值包括：0 - 立刻执行，1 - 维护时间窗执行
+                     */
+                    void SetWaitSwitch(const int64_t& _waitSwitch);
+
+                    /**
+                     * 判断参数 WaitSwitch 是否已赋值
+                     * @return WaitSwitch 是否已赋值
+                     */
+                    bool WaitSwitchHasBeenSet() const;
+
                 private:
 
                     /**
@@ -259,6 +277,12 @@ namespace TencentCloud
                      */
                     std::string m_multiZones;
                     bool m_multiZonesHasBeenSet;
+
+                    /**
+                     * 执行变配的方式，默认为 1。支持值包括：0 - 立刻执行，1 - 维护时间窗执行
+                     */
+                    int64_t m_waitSwitch;
+                    bool m_waitSwitchHasBeenSet;
 
                 };
             }

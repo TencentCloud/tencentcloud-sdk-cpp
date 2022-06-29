@@ -97,6 +97,60 @@ namespace TencentCloud
                      */
                     bool PolicySetHasBeenSet() const;
 
+                    /**
+                     * 获取用户类型。ADMIN：管理员 COMMON：一般用户。当用户类型为管理员的时候，不能设置权限集合和绑定的工作组集合，管理员默认拥有所有权限。该参数不填默认为COMMON
+                     * @return UserType 用户类型。ADMIN：管理员 COMMON：一般用户。当用户类型为管理员的时候，不能设置权限集合和绑定的工作组集合，管理员默认拥有所有权限。该参数不填默认为COMMON
+                     */
+                    std::string GetUserType() const;
+
+                    /**
+                     * 设置用户类型。ADMIN：管理员 COMMON：一般用户。当用户类型为管理员的时候，不能设置权限集合和绑定的工作组集合，管理员默认拥有所有权限。该参数不填默认为COMMON
+                     * @param UserType 用户类型。ADMIN：管理员 COMMON：一般用户。当用户类型为管理员的时候，不能设置权限集合和绑定的工作组集合，管理员默认拥有所有权限。该参数不填默认为COMMON
+                     */
+                    void SetUserType(const std::string& _userType);
+
+                    /**
+                     * 判断参数 UserType 是否已赋值
+                     * @return UserType 是否已赋值
+                     */
+                    bool UserTypeHasBeenSet() const;
+
+                    /**
+                     * 获取绑定到用户的工作组ID集合。
+                     * @return WorkGroupIds 绑定到用户的工作组ID集合。
+                     */
+                    std::vector<int64_t> GetWorkGroupIds() const;
+
+                    /**
+                     * 设置绑定到用户的工作组ID集合。
+                     * @param WorkGroupIds 绑定到用户的工作组ID集合。
+                     */
+                    void SetWorkGroupIds(const std::vector<int64_t>& _workGroupIds);
+
+                    /**
+                     * 判断参数 WorkGroupIds 是否已赋值
+                     * @return WorkGroupIds 是否已赋值
+                     */
+                    bool WorkGroupIdsHasBeenSet() const;
+
+                    /**
+                     * 获取用户别名，字符长度小50
+                     * @return UserAlias 用户别名，字符长度小50
+                     */
+                    std::string GetUserAlias() const;
+
+                    /**
+                     * 设置用户别名，字符长度小50
+                     * @param UserAlias 用户别名，字符长度小50
+                     */
+                    void SetUserAlias(const std::string& _userAlias);
+
+                    /**
+                     * 判断参数 UserAlias 是否已赋值
+                     * @return UserAlias 是否已赋值
+                     */
+                    bool UserAliasHasBeenSet() const;
+
                 private:
 
                     /**
@@ -116,6 +170,24 @@ namespace TencentCloud
                      */
                     std::vector<Policy> m_policySet;
                     bool m_policySetHasBeenSet;
+
+                    /**
+                     * 用户类型。ADMIN：管理员 COMMON：一般用户。当用户类型为管理员的时候，不能设置权限集合和绑定的工作组集合，管理员默认拥有所有权限。该参数不填默认为COMMON
+                     */
+                    std::string m_userType;
+                    bool m_userTypeHasBeenSet;
+
+                    /**
+                     * 绑定到用户的工作组ID集合。
+                     */
+                    std::vector<int64_t> m_workGroupIds;
+                    bool m_workGroupIdsHasBeenSet;
+
+                    /**
+                     * 用户别名，字符长度小50
+                     */
+                    std::string m_userAlias;
+                    bool m_userAliasHasBeenSet;
 
                 };
             }

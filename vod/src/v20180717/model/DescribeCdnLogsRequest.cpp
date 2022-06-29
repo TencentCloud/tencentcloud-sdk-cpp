@@ -26,9 +26,9 @@ DescribeCdnLogsRequest::DescribeCdnLogsRequest() :
     m_domainNameHasBeenSet(false),
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
+    m_subAppIdHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_offsetHasBeenSet(false),
-    m_subAppIdHasBeenSet(false)
+    m_offsetHasBeenSet(false)
 {
 }
 
@@ -63,6 +63,14 @@ string DescribeCdnLogsRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_endTime.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_subAppIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubAppId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_subAppId, allocator);
+    }
+
     if (m_limitHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -77,14 +85,6 @@ string DescribeCdnLogsRequest::ToJsonString() const
         string key = "Offset";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_offset, allocator);
-    }
-
-    if (m_subAppIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SubAppId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_subAppId, allocator);
     }
 
 
@@ -143,6 +143,22 @@ bool DescribeCdnLogsRequest::EndTimeHasBeenSet() const
     return m_endTimeHasBeenSet;
 }
 
+uint64_t DescribeCdnLogsRequest::GetSubAppId() const
+{
+    return m_subAppId;
+}
+
+void DescribeCdnLogsRequest::SetSubAppId(const uint64_t& _subAppId)
+{
+    m_subAppId = _subAppId;
+    m_subAppIdHasBeenSet = true;
+}
+
+bool DescribeCdnLogsRequest::SubAppIdHasBeenSet() const
+{
+    return m_subAppIdHasBeenSet;
+}
+
 uint64_t DescribeCdnLogsRequest::GetLimit() const
 {
     return m_limit;
@@ -173,22 +189,6 @@ void DescribeCdnLogsRequest::SetOffset(const uint64_t& _offset)
 bool DescribeCdnLogsRequest::OffsetHasBeenSet() const
 {
     return m_offsetHasBeenSet;
-}
-
-uint64_t DescribeCdnLogsRequest::GetSubAppId() const
-{
-    return m_subAppId;
-}
-
-void DescribeCdnLogsRequest::SetSubAppId(const uint64_t& _subAppId)
-{
-    m_subAppId = _subAppId;
-    m_subAppIdHasBeenSet = true;
-}
-
-bool DescribeCdnLogsRequest::SubAppIdHasBeenSet() const
-{
-    return m_subAppIdHasBeenSet;
 }
 
 

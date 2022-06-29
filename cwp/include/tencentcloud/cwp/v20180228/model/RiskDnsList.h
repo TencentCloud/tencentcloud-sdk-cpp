@@ -155,14 +155,14 @@ namespace TencentCloud
                     bool UserRuleIdHasBeenSet() const;
 
                     /**
-                     * 获取状态；0-待处理，2-已加白，3-非信任状态
-                     * @return Status 状态；0-待处理，2-已加白，3-非信任状态
+                     * 获取状态；0-待处理，2-已加白，3-非信任状态，4-已处理，5-已忽略
+                     * @return Status 状态；0-待处理，2-已加白，3-非信任状态，4-已处理，5-已忽略
                      */
                     uint64_t GetStatus() const;
 
                     /**
-                     * 设置状态；0-待处理，2-已加白，3-非信任状态
-                     * @param Status 状态；0-待处理，2-已加白，3-非信任状态
+                     * 设置状态；0-待处理，2-已加白，3-非信任状态，4-已处理，5-已忽略
+                     * @param Status 状态；0-待处理，2-已加白，3-非信任状态，4-已处理，5-已忽略
                      */
                     void SetStatus(const uint64_t& _status);
 
@@ -489,7 +489,7 @@ namespace TencentCloud
                     bool m_userRuleIdHasBeenSet;
 
                     /**
-                     * 状态；0-待处理，2-已加白，3-非信任状态
+                     * 状态；0-待处理，2-已加白，3-非信任状态，4-已处理，5-已忽略
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;

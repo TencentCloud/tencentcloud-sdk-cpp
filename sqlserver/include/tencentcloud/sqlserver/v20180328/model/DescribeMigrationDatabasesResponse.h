@@ -57,7 +57,9 @@ namespace TencentCloud
 
                     /**
                      * 获取数据库名称数组
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return MigrateDBSet 数据库名称数组
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> GetMigrateDBSet() const;
 
@@ -77,6 +79,7 @@ namespace TencentCloud
 
                     /**
                      * 数据库名称数组
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_migrateDBSet;
                     bool m_migrateDBSetHasBeenSet;

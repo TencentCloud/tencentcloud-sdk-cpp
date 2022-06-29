@@ -133,14 +133,14 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取通道唯一标识
-                     * @return ChannelId 通道唯一标识
+                     * 获取通道唯一标识（此接口升级为必填字段）
+                     * @return ChannelId 通道唯一标识（此接口升级为必填字段）
                      */
                     std::string GetChannelId() const;
 
                     /**
-                     * 设置通道唯一标识
-                     * @param ChannelId 通道唯一标识
+                     * 设置通道唯一标识（此接口升级为必填字段）
+                     * @param ChannelId 通道唯一标识（此接口升级为必填字段）
                      */
                     void SetChannelId(const std::string& _channelId);
 
@@ -183,7 +183,7 @@ namespace TencentCloud
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 通道唯一标识
+                     * 通道唯一标识（此接口升级为必填字段）
                      */
                     std::string m_channelId;
                     bool m_channelIdHasBeenSet;

@@ -30,7 +30,8 @@ DescribeAgentSelfPayDealsV2Request::DescribeAgentSelfPayDealsV2Request() :
     m_creatTimeRangeEndHasBeenSet(false),
     m_orderHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_dealNamesHasBeenSet(false)
+    m_dealNamesHasBeenSet(false),
+    m_bigDealIdsHasBeenSet(false)
 {
 }
 
@@ -105,6 +106,19 @@ string DescribeAgentSelfPayDealsV2Request::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_dealNames.begin(); itr != m_dealNames.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_bigDealIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BigDealIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_bigDealIds.begin(); itr != m_bigDealIds.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
@@ -244,6 +258,22 @@ void DescribeAgentSelfPayDealsV2Request::SetDealNames(const vector<string>& _dea
 bool DescribeAgentSelfPayDealsV2Request::DealNamesHasBeenSet() const
 {
     return m_dealNamesHasBeenSet;
+}
+
+vector<string> DescribeAgentSelfPayDealsV2Request::GetBigDealIds() const
+{
+    return m_bigDealIds;
+}
+
+void DescribeAgentSelfPayDealsV2Request::SetBigDealIds(const vector<string>& _bigDealIds)
+{
+    m_bigDealIds = _bigDealIds;
+    m_bigDealIdsHasBeenSet = true;
+}
+
+bool DescribeAgentSelfPayDealsV2Request::BigDealIdsHasBeenSet() const
+{
+    return m_bigDealIdsHasBeenSet;
 }
 
 

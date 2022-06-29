@@ -35,7 +35,10 @@ DescribeOrganizationResponse::DescribeOrganizationResponse() :
     m_rootNodeIdHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_joinTimeHasBeenSet(false),
-    m_isAllowQuitHasBeenSet(false)
+    m_isAllowQuitHasBeenSet(false),
+    m_payUinHasBeenSet(false),
+    m_payNameHasBeenSet(false),
+    m_isAssignManagerHasBeenSet(false)
 {
 }
 
@@ -203,6 +206,36 @@ CoreInternalOutcome DescribeOrganizationResponse::Deserialize(const string &payl
         m_isAllowQuitHasBeenSet = true;
     }
 
+    if (rsp.HasMember("PayUin") && !rsp["PayUin"].IsNull())
+    {
+        if (!rsp["PayUin"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PayUin` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_payUin = string(rsp["PayUin"].GetString());
+        m_payUinHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("PayName") && !rsp["PayName"].IsNull())
+    {
+        if (!rsp["PayName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PayName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_payName = string(rsp["PayName"].GetString());
+        m_payNameHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("IsAssignManager") && !rsp["IsAssignManager"].IsNull())
+    {
+        if (!rsp["IsAssignManager"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `IsAssignManager` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isAssignManager = rsp["IsAssignManager"].GetBool();
+        m_isAssignManagerHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -314,6 +347,30 @@ string DescribeOrganizationResponse::ToJsonString() const
         string key = "IsAllowQuit";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_isAllowQuit.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_payUinHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PayUin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_payUin.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_payNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PayName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_payName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isAssignManagerHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsAssignManager";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isAssignManager, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -446,6 +503,36 @@ string DescribeOrganizationResponse::GetIsAllowQuit() const
 bool DescribeOrganizationResponse::IsAllowQuitHasBeenSet() const
 {
     return m_isAllowQuitHasBeenSet;
+}
+
+string DescribeOrganizationResponse::GetPayUin() const
+{
+    return m_payUin;
+}
+
+bool DescribeOrganizationResponse::PayUinHasBeenSet() const
+{
+    return m_payUinHasBeenSet;
+}
+
+string DescribeOrganizationResponse::GetPayName() const
+{
+    return m_payName;
+}
+
+bool DescribeOrganizationResponse::PayNameHasBeenSet() const
+{
+    return m_payNameHasBeenSet;
+}
+
+bool DescribeOrganizationResponse::GetIsAssignManager() const
+{
+    return m_isAssignManager;
+}
+
+bool DescribeOrganizationResponse::IsAssignManagerHasBeenSet() const
+{
+    return m_isAssignManagerHasBeenSet;
 }
 
 

@@ -75,6 +75,7 @@ set(dts_public_header_model
   include/tencentcloud/dts/v20180330/model/ActivateSubscribeResponse.h
   include/tencentcloud/dts/v20180330/model/CreateSubscribeResponse.h
   include/tencentcloud/dts/v20180330/model/MigrateOption.h
+  include/tencentcloud/dts/v20180330/model/SubsErr.h
   include/tencentcloud/dts/v20180330/model/ErrorInfo.h
   include/tencentcloud/dts/v20180330/model/StartMigrateJobResponse.h
   include/tencentcloud/dts/v20180330/model/StartMigrateJobRequest.h
@@ -138,6 +139,7 @@ set(dts_src
   src/v20180330/model/ActivateSubscribeResponse.cpp
   src/v20180330/model/CreateSubscribeResponse.cpp
   src/v20180330/model/MigrateOption.cpp
+  src/v20180330/model/SubsErr.cpp
   src/v20180330/model/ErrorInfo.cpp
   src/v20180330/model/StartMigrateJobResponse.cpp
   src/v20180330/model/StartMigrateJobRequest.cpp

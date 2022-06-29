@@ -47,7 +47,11 @@ CmqQueue::CmqQueue() :
     m_tagsHasBeenSet(false),
     m_traceHasBeenSet(false),
     m_tenantIdHasBeenSet(false),
-    m_namespaceNameHasBeenSet(false)
+    m_namespaceNameHasBeenSet(false),
+    m_statusHasBeenSet(false),
+    m_maxUnackedMsgNumHasBeenSet(false),
+    m_maxMsgBacklogSizeHasBeenSet(false),
+    m_retentionSizeInMBHasBeenSet(false)
 {
 }
 
@@ -360,6 +364,46 @@ CoreInternalOutcome CmqQueue::Deserialize(const rapidjson::Value &value)
         m_namespaceNameHasBeenSet = true;
     }
 
+    if (value.HasMember("Status") && !value["Status"].IsNull())
+    {
+        if (!value["Status"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CmqQueue.Status` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_status = value["Status"].GetInt64();
+        m_statusHasBeenSet = true;
+    }
+
+    if (value.HasMember("MaxUnackedMsgNum") && !value["MaxUnackedMsgNum"].IsNull())
+    {
+        if (!value["MaxUnackedMsgNum"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CmqQueue.MaxUnackedMsgNum` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_maxUnackedMsgNum = value["MaxUnackedMsgNum"].GetInt64();
+        m_maxUnackedMsgNumHasBeenSet = true;
+    }
+
+    if (value.HasMember("MaxMsgBacklogSize") && !value["MaxMsgBacklogSize"].IsNull())
+    {
+        if (!value["MaxMsgBacklogSize"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CmqQueue.MaxMsgBacklogSize` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_maxMsgBacklogSize = value["MaxMsgBacklogSize"].GetInt64();
+        m_maxMsgBacklogSizeHasBeenSet = true;
+    }
+
+    if (value.HasMember("RetentionSizeInMB") && !value["RetentionSizeInMB"].IsNull())
+    {
+        if (!value["RetentionSizeInMB"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CmqQueue.RetentionSizeInMB` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_retentionSizeInMB = value["RetentionSizeInMB"].GetUint64();
+        m_retentionSizeInMBHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -597,6 +641,38 @@ void CmqQueue::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "NamespaceName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_namespaceName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_status, allocator);
+    }
+
+    if (m_maxUnackedMsgNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxUnackedMsgNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_maxUnackedMsgNum, allocator);
+    }
+
+    if (m_maxMsgBacklogSizeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxMsgBacklogSize";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_maxMsgBacklogSize, allocator);
+    }
+
+    if (m_retentionSizeInMBHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RetentionSizeInMB";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_retentionSizeInMB, allocator);
     }
 
 }
@@ -1032,5 +1108,69 @@ void CmqQueue::SetNamespaceName(const string& _namespaceName)
 bool CmqQueue::NamespaceNameHasBeenSet() const
 {
     return m_namespaceNameHasBeenSet;
+}
+
+int64_t CmqQueue::GetStatus() const
+{
+    return m_status;
+}
+
+void CmqQueue::SetStatus(const int64_t& _status)
+{
+    m_status = _status;
+    m_statusHasBeenSet = true;
+}
+
+bool CmqQueue::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
+}
+
+int64_t CmqQueue::GetMaxUnackedMsgNum() const
+{
+    return m_maxUnackedMsgNum;
+}
+
+void CmqQueue::SetMaxUnackedMsgNum(const int64_t& _maxUnackedMsgNum)
+{
+    m_maxUnackedMsgNum = _maxUnackedMsgNum;
+    m_maxUnackedMsgNumHasBeenSet = true;
+}
+
+bool CmqQueue::MaxUnackedMsgNumHasBeenSet() const
+{
+    return m_maxUnackedMsgNumHasBeenSet;
+}
+
+int64_t CmqQueue::GetMaxMsgBacklogSize() const
+{
+    return m_maxMsgBacklogSize;
+}
+
+void CmqQueue::SetMaxMsgBacklogSize(const int64_t& _maxMsgBacklogSize)
+{
+    m_maxMsgBacklogSize = _maxMsgBacklogSize;
+    m_maxMsgBacklogSizeHasBeenSet = true;
+}
+
+bool CmqQueue::MaxMsgBacklogSizeHasBeenSet() const
+{
+    return m_maxMsgBacklogSizeHasBeenSet;
+}
+
+uint64_t CmqQueue::GetRetentionSizeInMB() const
+{
+    return m_retentionSizeInMB;
+}
+
+void CmqQueue::SetRetentionSizeInMB(const uint64_t& _retentionSizeInMB)
+{
+    m_retentionSizeInMB = _retentionSizeInMB;
+    m_retentionSizeInMBHasBeenSet = true;
+}
+
+bool CmqQueue::RetentionSizeInMBHasBeenSet() const
+{
+    return m_retentionSizeInMBHasBeenSet;
 }
 

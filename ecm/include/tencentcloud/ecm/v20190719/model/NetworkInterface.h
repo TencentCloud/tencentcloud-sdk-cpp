@@ -400,6 +400,28 @@ DELETING：删除中
                      */
                     bool EcmRegionHasBeenSet() const;
 
+                    /**
+                     * 获取网卡绑定的子机类型：cvm，eks。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Business 网卡绑定的子机类型：cvm，eks。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetBusiness() const;
+
+                    /**
+                     * 设置网卡绑定的子机类型：cvm，eks。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Business 网卡绑定的子机类型：cvm，eks。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetBusiness(const std::string& _business);
+
+                    /**
+                     * 判断参数 Business 是否已赋值
+                     * @return Business 是否已赋值
+                     */
+                    bool BusinessHasBeenSet() const;
+
                 private:
 
                     /**
@@ -514,6 +536,13 @@ DELETING：删除中
                      */
                     std::string m_ecmRegion;
                     bool m_ecmRegionHasBeenSet;
+
+                    /**
+                     * 网卡绑定的子机类型：cvm，eks。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_business;
+                    bool m_businessHasBeenSet;
 
                 };
             }

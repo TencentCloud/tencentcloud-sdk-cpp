@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/ame/v20190916/model/KTVSingerBaseInfo.h>
 
 
 namespace TencentCloud
@@ -83,14 +84,32 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取演唱者列表
-                     * @return SingerSet 演唱者列表
+                     * 获取演唱者基础信息列表
+                     * @return SingerInfoSet 演唱者基础信息列表
+                     */
+                    std::vector<KTVSingerBaseInfo> GetSingerInfoSet() const;
+
+                    /**
+                     * 设置演唱者基础信息列表
+                     * @param SingerInfoSet 演唱者基础信息列表
+                     */
+                    void SetSingerInfoSet(const std::vector<KTVSingerBaseInfo>& _singerInfoSet);
+
+                    /**
+                     * 判断参数 SingerInfoSet 是否已赋值
+                     * @return SingerInfoSet 是否已赋值
+                     */
+                    bool SingerInfoSetHasBeenSet() const;
+
+                    /**
+                     * 获取已弃用，请使用SingerInfoSet
+                     * @return SingerSet 已弃用，请使用SingerInfoSet
                      */
                     std::vector<std::string> GetSingerSet() const;
 
                     /**
-                     * 设置演唱者列表
-                     * @param SingerSet 演唱者列表
+                     * 设置已弃用，请使用SingerInfoSet
+                     * @param SingerSet 已弃用，请使用SingerInfoSet
                      */
                     void SetSingerSet(const std::vector<std::string>& _singerSet);
 
@@ -187,7 +206,13 @@ namespace TencentCloud
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 演唱者列表
+                     * 演唱者基础信息列表
+                     */
+                    std::vector<KTVSingerBaseInfo> m_singerInfoSet;
+                    bool m_singerInfoSetHasBeenSet;
+
+                    /**
+                     * 已弃用，请使用SingerInfoSet
                      */
                     std::vector<std::string> m_singerSet;
                     bool m_singerSetHasBeenSet;

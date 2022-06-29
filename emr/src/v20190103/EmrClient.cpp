@@ -40,6 +40,49 @@ EmrClient::EmrClient(const Credential &credential, const string &region, const C
 }
 
 
+EmrClient::AddUsersForUserManagerOutcome EmrClient::AddUsersForUserManager(const AddUsersForUserManagerRequest &request)
+{
+    auto outcome = MakeRequest(request, "AddUsersForUserManager");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AddUsersForUserManagerResponse rsp = AddUsersForUserManagerResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AddUsersForUserManagerOutcome(rsp);
+        else
+            return AddUsersForUserManagerOutcome(o.GetError());
+    }
+    else
+    {
+        return AddUsersForUserManagerOutcome(outcome.GetError());
+    }
+}
+
+void EmrClient::AddUsersForUserManagerAsync(const AddUsersForUserManagerRequest& request, const AddUsersForUserManagerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AddUsersForUserManager(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EmrClient::AddUsersForUserManagerOutcomeCallable EmrClient::AddUsersForUserManagerCallable(const AddUsersForUserManagerRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AddUsersForUserManagerOutcome()>>(
+        [this, request]()
+        {
+            return this->AddUsersForUserManager(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EmrClient::CreateInstanceOutcome EmrClient::CreateInstance(const CreateInstanceRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateInstance");
@@ -255,6 +298,49 @@ EmrClient::DescribeInstancesOutcomeCallable EmrClient::DescribeInstancesCallable
     return task->get_future();
 }
 
+EmrClient::DescribeInstancesListOutcome EmrClient::DescribeInstancesList(const DescribeInstancesListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeInstancesList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeInstancesListResponse rsp = DescribeInstancesListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeInstancesListOutcome(rsp);
+        else
+            return DescribeInstancesListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeInstancesListOutcome(outcome.GetError());
+    }
+}
+
+void EmrClient::DescribeInstancesListAsync(const DescribeInstancesListRequest& request, const DescribeInstancesListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeInstancesList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EmrClient::DescribeInstancesListOutcomeCallable EmrClient::DescribeInstancesListCallable(const DescribeInstancesListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeInstancesListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeInstancesList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EmrClient::DescribeJobFlowOutcome EmrClient::DescribeJobFlow(const DescribeJobFlowRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeJobFlow");
@@ -291,6 +377,92 @@ EmrClient::DescribeJobFlowOutcomeCallable EmrClient::DescribeJobFlowCallable(con
         [this, request]()
         {
             return this->DescribeJobFlow(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EmrClient::DescribeResourceScheduleOutcome EmrClient::DescribeResourceSchedule(const DescribeResourceScheduleRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeResourceSchedule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeResourceScheduleResponse rsp = DescribeResourceScheduleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeResourceScheduleOutcome(rsp);
+        else
+            return DescribeResourceScheduleOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeResourceScheduleOutcome(outcome.GetError());
+    }
+}
+
+void EmrClient::DescribeResourceScheduleAsync(const DescribeResourceScheduleRequest& request, const DescribeResourceScheduleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeResourceSchedule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EmrClient::DescribeResourceScheduleOutcomeCallable EmrClient::DescribeResourceScheduleCallable(const DescribeResourceScheduleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeResourceScheduleOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeResourceSchedule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EmrClient::DescribeUsersForUserManagerOutcome EmrClient::DescribeUsersForUserManager(const DescribeUsersForUserManagerRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeUsersForUserManager");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeUsersForUserManagerResponse rsp = DescribeUsersForUserManagerResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeUsersForUserManagerOutcome(rsp);
+        else
+            return DescribeUsersForUserManagerOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeUsersForUserManagerOutcome(outcome.GetError());
+    }
+}
+
+void EmrClient::DescribeUsersForUserManagerAsync(const DescribeUsersForUserManagerRequest& request, const DescribeUsersForUserManagerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeUsersForUserManager(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EmrClient::DescribeUsersForUserManagerOutcomeCallable EmrClient::DescribeUsersForUserManagerCallable(const DescribeUsersForUserManagerRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeUsersForUserManagerOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeUsersForUserManager(request);
         }
     );
 
@@ -506,6 +678,135 @@ EmrClient::InquiryPriceUpdateInstanceOutcomeCallable EmrClient::InquiryPriceUpda
         [this, request]()
         {
             return this->InquiryPriceUpdateInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EmrClient::ModifyResourcePoolsOutcome EmrClient::ModifyResourcePools(const ModifyResourcePoolsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyResourcePools");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyResourcePoolsResponse rsp = ModifyResourcePoolsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyResourcePoolsOutcome(rsp);
+        else
+            return ModifyResourcePoolsOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyResourcePoolsOutcome(outcome.GetError());
+    }
+}
+
+void EmrClient::ModifyResourcePoolsAsync(const ModifyResourcePoolsRequest& request, const ModifyResourcePoolsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyResourcePools(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EmrClient::ModifyResourcePoolsOutcomeCallable EmrClient::ModifyResourcePoolsCallable(const ModifyResourcePoolsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyResourcePoolsOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyResourcePools(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EmrClient::ModifyResourceScheduleConfigOutcome EmrClient::ModifyResourceScheduleConfig(const ModifyResourceScheduleConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyResourceScheduleConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyResourceScheduleConfigResponse rsp = ModifyResourceScheduleConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyResourceScheduleConfigOutcome(rsp);
+        else
+            return ModifyResourceScheduleConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyResourceScheduleConfigOutcome(outcome.GetError());
+    }
+}
+
+void EmrClient::ModifyResourceScheduleConfigAsync(const ModifyResourceScheduleConfigRequest& request, const ModifyResourceScheduleConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyResourceScheduleConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EmrClient::ModifyResourceScheduleConfigOutcomeCallable EmrClient::ModifyResourceScheduleConfigCallable(const ModifyResourceScheduleConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyResourceScheduleConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyResourceScheduleConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EmrClient::ModifyResourceSchedulerOutcome EmrClient::ModifyResourceScheduler(const ModifyResourceSchedulerRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyResourceScheduler");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyResourceSchedulerResponse rsp = ModifyResourceSchedulerResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyResourceSchedulerOutcome(rsp);
+        else
+            return ModifyResourceSchedulerOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyResourceSchedulerOutcome(outcome.GetError());
+    }
+}
+
+void EmrClient::ModifyResourceSchedulerAsync(const ModifyResourceSchedulerRequest& request, const ModifyResourceSchedulerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyResourceScheduler(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EmrClient::ModifyResourceSchedulerOutcomeCallable EmrClient::ModifyResourceSchedulerCallable(const ModifyResourceSchedulerRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyResourceSchedulerOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyResourceScheduler(request);
         }
     );
 

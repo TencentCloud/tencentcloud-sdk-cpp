@@ -35,6 +35,7 @@ CreateTopicRequest::CreateTopicRequest() :
     m_uncleanLeaderElectionEnableHasBeenSet(false),
     m_retentionMsHasBeenSet(false),
     m_segmentMsHasBeenSet(false),
+    m_maxMessageBytesHasBeenSet(false),
     m_enableAclRuleHasBeenSet(false),
     m_aclRuleNameHasBeenSet(false),
     m_retentionBytesHasBeenSet(false),
@@ -148,6 +149,14 @@ string CreateTopicRequest::ToJsonString() const
         string key = "SegmentMs";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_segmentMs, allocator);
+    }
+
+    if (m_maxMessageBytesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxMessageBytes";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_maxMessageBytes, allocator);
     }
 
     if (m_enableAclRuleHasBeenSet)
@@ -387,6 +396,22 @@ void CreateTopicRequest::SetSegmentMs(const int64_t& _segmentMs)
 bool CreateTopicRequest::SegmentMsHasBeenSet() const
 {
     return m_segmentMsHasBeenSet;
+}
+
+int64_t CreateTopicRequest::GetMaxMessageBytes() const
+{
+    return m_maxMessageBytes;
+}
+
+void CreateTopicRequest::SetMaxMessageBytes(const int64_t& _maxMessageBytes)
+{
+    m_maxMessageBytes = _maxMessageBytes;
+    m_maxMessageBytesHasBeenSet = true;
+}
+
+bool CreateTopicRequest::MaxMessageBytesHasBeenSet() const
+{
+    return m_maxMessageBytesHasBeenSet;
 }
 
 int64_t CreateTopicRequest::GetEnableAclRule() const

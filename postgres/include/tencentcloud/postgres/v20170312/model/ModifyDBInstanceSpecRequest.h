@@ -151,14 +151,14 @@ namespace TencentCloud
                     bool ActivityIdHasBeenSet() const;
 
                     /**
-                     * 获取指定实例配置完成变更后的切换时间，默认为 立即切换，入参为 0 ：立即切换 。1：指定时间切换。
-                     * @return SwitchTag 指定实例配置完成变更后的切换时间，默认为 立即切换，入参为 0 ：立即切换 。1：指定时间切换。
+                     * 获取指定实例配置完成变更后的切换时间，默认为 立即切换，入参为 0 ：立即切换 。1：指定时间切换。2：维护时间窗口内切换。
+                     * @return SwitchTag 指定实例配置完成变更后的切换时间，默认为 立即切换，入参为 0 ：立即切换 。1：指定时间切换。2：维护时间窗口内切换。
                      */
                     uint64_t GetSwitchTag() const;
 
                     /**
-                     * 设置指定实例配置完成变更后的切换时间，默认为 立即切换，入参为 0 ：立即切换 。1：指定时间切换。
-                     * @param SwitchTag 指定实例配置完成变更后的切换时间，默认为 立即切换，入参为 0 ：立即切换 。1：指定时间切换。
+                     * 设置指定实例配置完成变更后的切换时间，默认为 立即切换，入参为 0 ：立即切换 。1：指定时间切换。2：维护时间窗口内切换。
+                     * @param SwitchTag 指定实例配置完成变更后的切换时间，默认为 立即切换，入参为 0 ：立即切换 。1：指定时间切换。2：维护时间窗口内切换。
                      */
                     void SetSwitchTag(const uint64_t& _switchTag);
 
@@ -169,14 +169,14 @@ namespace TencentCloud
                     bool SwitchTagHasBeenSet() const;
 
                     /**
-                     * 获取切换开始时间，时间格式：HH:MM:SS，例如：01:00:00。
-                     * @return SwitchStartTime 切换开始时间，时间格式：HH:MM:SS，例如：01:00:00。
+                     * 获取切换开始时间，时间格式：HH:MM:SS，例如：01:00:00。当SwitchTag为0或2时，该参数失效。
+                     * @return SwitchStartTime 切换开始时间，时间格式：HH:MM:SS，例如：01:00:00。当SwitchTag为0或2时，该参数失效。
                      */
                     std::string GetSwitchStartTime() const;
 
                     /**
-                     * 设置切换开始时间，时间格式：HH:MM:SS，例如：01:00:00。
-                     * @param SwitchStartTime 切换开始时间，时间格式：HH:MM:SS，例如：01:00:00。
+                     * 设置切换开始时间，时间格式：HH:MM:SS，例如：01:00:00。当SwitchTag为0或2时，该参数失效。
+                     * @param SwitchStartTime 切换开始时间，时间格式：HH:MM:SS，例如：01:00:00。当SwitchTag为0或2时，该参数失效。
                      */
                     void SetSwitchStartTime(const std::string& _switchStartTime);
 
@@ -187,14 +187,14 @@ namespace TencentCloud
                     bool SwitchStartTimeHasBeenSet() const;
 
                     /**
-                     * 获取切换截止时间，时间格式：HH:MM:SS，例如：01:30:00。
-                     * @return SwitchEndTime 切换截止时间，时间格式：HH:MM:SS，例如：01:30:00。
+                     * 获取切换截止时间，时间格式：HH:MM:SS，例如：01:30:00。当SwitchTag为0或2时，该参数失效。
+                     * @return SwitchEndTime 切换截止时间，时间格式：HH:MM:SS，例如：01:30:00。当SwitchTag为0或2时，该参数失效。
                      */
                     std::string GetSwitchEndTime() const;
 
                     /**
-                     * 设置切换截止时间，时间格式：HH:MM:SS，例如：01:30:00。
-                     * @param SwitchEndTime 切换截止时间，时间格式：HH:MM:SS，例如：01:30:00。
+                     * 设置切换截止时间，时间格式：HH:MM:SS，例如：01:30:00。当SwitchTag为0或2时，该参数失效。
+                     * @param SwitchEndTime 切换截止时间，时间格式：HH:MM:SS，例如：01:30:00。当SwitchTag为0或2时，该参数失效。
                      */
                     void SetSwitchEndTime(const std::string& _switchEndTime);
 
@@ -243,19 +243,19 @@ namespace TencentCloud
                     bool m_activityIdHasBeenSet;
 
                     /**
-                     * 指定实例配置完成变更后的切换时间，默认为 立即切换，入参为 0 ：立即切换 。1：指定时间切换。
+                     * 指定实例配置完成变更后的切换时间，默认为 立即切换，入参为 0 ：立即切换 。1：指定时间切换。2：维护时间窗口内切换。
                      */
                     uint64_t m_switchTag;
                     bool m_switchTagHasBeenSet;
 
                     /**
-                     * 切换开始时间，时间格式：HH:MM:SS，例如：01:00:00。
+                     * 切换开始时间，时间格式：HH:MM:SS，例如：01:00:00。当SwitchTag为0或2时，该参数失效。
                      */
                     std::string m_switchStartTime;
                     bool m_switchStartTimeHasBeenSet;
 
                     /**
-                     * 切换截止时间，时间格式：HH:MM:SS，例如：01:30:00。
+                     * 切换截止时间，时间格式：HH:MM:SS，例如：01:30:00。当SwitchTag为0或2时，该参数失效。
                      */
                     std::string m_switchEndTime;
                     bool m_switchEndTimeHasBeenSet;

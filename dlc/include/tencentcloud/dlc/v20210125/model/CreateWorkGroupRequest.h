@@ -97,6 +97,24 @@ namespace TencentCloud
                      */
                     bool PolicySetHasBeenSet() const;
 
+                    /**
+                     * 获取需要绑定到工作组的用户Id集合
+                     * @return UserIds 需要绑定到工作组的用户Id集合
+                     */
+                    std::vector<std::string> GetUserIds() const;
+
+                    /**
+                     * 设置需要绑定到工作组的用户Id集合
+                     * @param UserIds 需要绑定到工作组的用户Id集合
+                     */
+                    void SetUserIds(const std::vector<std::string>& _userIds);
+
+                    /**
+                     * 判断参数 UserIds 是否已赋值
+                     * @return UserIds 是否已赋值
+                     */
+                    bool UserIdsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -116,6 +134,12 @@ namespace TencentCloud
                      */
                     std::vector<Policy> m_policySet;
                     bool m_policySetHasBeenSet;
+
+                    /**
+                     * 需要绑定到工作组的用户Id集合
+                     */
+                    std::vector<std::string> m_userIds;
+                    bool m_userIdsHasBeenSet;
 
                 };
             }

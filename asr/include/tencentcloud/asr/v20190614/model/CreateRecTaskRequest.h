@@ -57,8 +57,7 @@ namespace TencentCloud
 • 16k_en_edu 英文教育；
 • 16k_zh_medical  医疗；
 • 16k_th 泰语；
-• 16k_wuu-SH：16k 上海话方言；
-• 16k_zh_dialect：多方言。
+• 16k_zh_dialect：多方言，支持23种方言。
                      * @return EngineModelType 引擎模型类型。
 电话场景：
 • 8k_en：电话 8k 英语；
@@ -73,8 +72,7 @@ namespace TencentCloud
 • 16k_en_edu 英文教育；
 • 16k_zh_medical  医疗；
 • 16k_th 泰语；
-• 16k_wuu-SH：16k 上海话方言；
-• 16k_zh_dialect：多方言。
+• 16k_zh_dialect：多方言，支持23种方言。
                      */
                     std::string GetEngineModelType() const;
 
@@ -93,8 +91,7 @@ namespace TencentCloud
 • 16k_en_edu 英文教育；
 • 16k_zh_medical  医疗；
 • 16k_th 泰语；
-• 16k_wuu-SH：16k 上海话方言；
-• 16k_zh_dialect：多方言。
+• 16k_zh_dialect：多方言，支持23种方言。
                      * @param EngineModelType 引擎模型类型。
 电话场景：
 • 8k_en：电话 8k 英语；
@@ -109,8 +106,7 @@ namespace TencentCloud
 • 16k_en_edu 英文教育；
 • 16k_zh_medical  医疗；
 • 16k_th 泰语；
-• 16k_wuu-SH：16k 上海话方言；
-• 16k_zh_dialect：多方言。
+• 16k_zh_dialect：多方言，支持23种方言。
                      */
                     void SetEngineModelType(const std::string& _engineModelType);
 
@@ -121,14 +117,14 @@ namespace TencentCloud
                     bool EngineModelTypeHasBeenSet() const;
 
                     /**
-                     * 获取识别声道数。1：单声道；2：双声道（仅支持 8k_zh 引擎模）。注意：录音识别会自动将音频转码为填写的识别声道数
-                     * @return ChannelNum 识别声道数。1：单声道；2：双声道（仅支持 8k_zh 引擎模）。注意：录音识别会自动将音频转码为填写的识别声道数
+                     * 获取识别声道数。1：单声道（非电话场景，直接选择单声道即可，忽略音频声道数）；2：双声道（仅支持8k_zh电话场景，双声道应分别对应通话双方）。注意：双声道的电话音频已物理分离说话人，无需再开启说话人分离功能。
+                     * @return ChannelNum 识别声道数。1：单声道（非电话场景，直接选择单声道即可，忽略音频声道数）；2：双声道（仅支持8k_zh电话场景，双声道应分别对应通话双方）。注意：双声道的电话音频已物理分离说话人，无需再开启说话人分离功能。
                      */
                     uint64_t GetChannelNum() const;
 
                     /**
-                     * 设置识别声道数。1：单声道；2：双声道（仅支持 8k_zh 引擎模）。注意：录音识别会自动将音频转码为填写的识别声道数
-                     * @param ChannelNum 识别声道数。1：单声道；2：双声道（仅支持 8k_zh 引擎模）。注意：录音识别会自动将音频转码为填写的识别声道数
+                     * 设置识别声道数。1：单声道（非电话场景，直接选择单声道即可，忽略音频声道数）；2：双声道（仅支持8k_zh电话场景，双声道应分别对应通话双方）。注意：双声道的电话音频已物理分离说话人，无需再开启说话人分离功能。
+                     * @param ChannelNum 识别声道数。1：单声道（非电话场景，直接选择单声道即可，忽略音频声道数）；2：双声道（仅支持8k_zh电话场景，双声道应分别对应通话双方）。注意：双声道的电话音频已物理分离说话人，无需再开启说话人分离功能。
                      */
                     void SetChannelNum(const uint64_t& _channelNum);
 
@@ -175,14 +171,18 @@ namespace TencentCloud
                     bool SourceTypeHasBeenSet() const;
 
                     /**
-                     * 获取是否开启说话人分离，0：不开启，1：开启(仅支持8k_zh，16k_zh，16k_zh_video引擎模型，单声道音频)，默认值为 0。
-                     * @return SpeakerDiarization 是否开启说话人分离，0：不开启，1：开启(仅支持8k_zh，16k_zh，16k_zh_video引擎模型，单声道音频)，默认值为 0。
+                     * 获取是否开启说话人分离，0：不开启，1：开启(仅支持8k_zh，16k_zh，16k_zh_video，单声道音频)，默认值为 0。
+注意：8k电话场景建议使用双声道来区分通话双方，设置ChannelNum=2即可，不用开启说话人分离。
+                     * @return SpeakerDiarization 是否开启说话人分离，0：不开启，1：开启(仅支持8k_zh，16k_zh，16k_zh_video，单声道音频)，默认值为 0。
+注意：8k电话场景建议使用双声道来区分通话双方，设置ChannelNum=2即可，不用开启说话人分离。
                      */
                     int64_t GetSpeakerDiarization() const;
 
                     /**
-                     * 设置是否开启说话人分离，0：不开启，1：开启(仅支持8k_zh，16k_zh，16k_zh_video引擎模型，单声道音频)，默认值为 0。
-                     * @param SpeakerDiarization 是否开启说话人分离，0：不开启，1：开启(仅支持8k_zh，16k_zh，16k_zh_video引擎模型，单声道音频)，默认值为 0。
+                     * 设置是否开启说话人分离，0：不开启，1：开启(仅支持8k_zh，16k_zh，16k_zh_video，单声道音频)，默认值为 0。
+注意：8k电话场景建议使用双声道来区分通话双方，设置ChannelNum=2即可，不用开启说话人分离。
+                     * @param SpeakerDiarization 是否开启说话人分离，0：不开启，1：开启(仅支持8k_zh，16k_zh，16k_zh_video，单声道音频)，默认值为 0。
+注意：8k电话场景建议使用双声道来区分通话双方，设置ChannelNum=2即可，不用开启说话人分离。
                      */
                     void SetSpeakerDiarization(const int64_t& _speakerDiarization);
 
@@ -251,14 +251,14 @@ namespace TencentCloud
                     bool UrlHasBeenSet() const;
 
                     /**
-                     * 获取语音数据，当SourceType 值为1时必须填写，为0可不写。要base64编码(采用python语言时注意读取文件应该为string而不是byte，以byte格式读取后要decode()。编码后的数据不可带有回车换行符)。音频数据要小于5MB。
-                     * @return Data 语音数据，当SourceType 值为1时必须填写，为0可不写。要base64编码(采用python语言时注意读取文件应该为string而不是byte，以byte格式读取后要decode()。编码后的数据不可带有回车换行符)。音频数据要小于5MB。
+                     * 获取语音数据base64编码，当SourceType 值为1时必须填写，为0可不写。音频数据要小于5MB。
+                     * @return Data 语音数据base64编码，当SourceType 值为1时必须填写，为0可不写。音频数据要小于5MB。
                      */
                     std::string GetData() const;
 
                     /**
-                     * 设置语音数据，当SourceType 值为1时必须填写，为0可不写。要base64编码(采用python语言时注意读取文件应该为string而不是byte，以byte格式读取后要decode()。编码后的数据不可带有回车换行符)。音频数据要小于5MB。
-                     * @param Data 语音数据，当SourceType 值为1时必须填写，为0可不写。要base64编码(采用python语言时注意读取文件应该为string而不是byte，以byte格式读取后要decode()。编码后的数据不可带有回车换行符)。音频数据要小于5MB。
+                     * 设置语音数据base64编码，当SourceType 值为1时必须填写，为0可不写。音频数据要小于5MB。
+                     * @param Data 语音数据base64编码，当SourceType 值为1时必须填写，为0可不写。音频数据要小于5MB。
                      */
                     void SetData(const std::string& _data);
 
@@ -287,22 +287,22 @@ namespace TencentCloud
                     bool DataLenHasBeenSet() const;
 
                     /**
-                     * 获取热词id。用于调用对应的热词表，如果在调用语音识别服务时，不进行单独的热词id设置，自动生效默认热词；如果进行了单独的热词id设置，那么将生效单独设置的热词id。
-                     * @return HotwordId 热词id。用于调用对应的热词表，如果在调用语音识别服务时，不进行单独的热词id设置，自动生效默认热词；如果进行了单独的热词id设置，那么将生效单独设置的热词id。
+                     * 获取是否进行阿拉伯数字智能转换（目前支持中文普通话引擎）。0：不转换，直接输出中文数字，1：根据场景智能转换为阿拉伯数字，3: 打开数学相关数字转换。默认值为 1。
+                     * @return ConvertNumMode 是否进行阿拉伯数字智能转换（目前支持中文普通话引擎）。0：不转换，直接输出中文数字，1：根据场景智能转换为阿拉伯数字，3: 打开数学相关数字转换。默认值为 1。
                      */
-                    std::string GetHotwordId() const;
+                    int64_t GetConvertNumMode() const;
 
                     /**
-                     * 设置热词id。用于调用对应的热词表，如果在调用语音识别服务时，不进行单独的热词id设置，自动生效默认热词；如果进行了单独的热词id设置，那么将生效单独设置的热词id。
-                     * @param HotwordId 热词id。用于调用对应的热词表，如果在调用语音识别服务时，不进行单独的热词id设置，自动生效默认热词；如果进行了单独的热词id设置，那么将生效单独设置的热词id。
+                     * 设置是否进行阿拉伯数字智能转换（目前支持中文普通话引擎）。0：不转换，直接输出中文数字，1：根据场景智能转换为阿拉伯数字，3: 打开数学相关数字转换。默认值为 1。
+                     * @param ConvertNumMode 是否进行阿拉伯数字智能转换（目前支持中文普通话引擎）。0：不转换，直接输出中文数字，1：根据场景智能转换为阿拉伯数字，3: 打开数学相关数字转换。默认值为 1。
                      */
-                    void SetHotwordId(const std::string& _hotwordId);
+                    void SetConvertNumMode(const int64_t& _convertNumMode);
 
                     /**
-                     * 判断参数 HotwordId 是否已赋值
-                     * @return HotwordId 是否已赋值
+                     * 判断参数 ConvertNumMode 是否已赋值
+                     * @return ConvertNumMode 是否已赋值
                      */
-                    bool HotwordIdHasBeenSet() const;
+                    bool ConvertNumModeHasBeenSet() const;
 
                     /**
                      * 获取是否过滤脏词（目前支持中文普通话引擎）。0：不过滤脏词；1：过滤脏词；2：将脏词替换为 * 。默认值为 0。
@@ -323,40 +323,40 @@ namespace TencentCloud
                     bool FilterDirtyHasBeenSet() const;
 
                     /**
-                     * 获取是否过滤语气词（目前支持中文普通话引擎）。0：不过滤语气词；1：部分过滤；2：严格过滤 。默认值为 0。
-                     * @return FilterModal 是否过滤语气词（目前支持中文普通话引擎）。0：不过滤语气词；1：部分过滤；2：严格过滤 。默认值为 0。
+                     * 获取热词表id。如不设置该参数，自动生效默认热词表；如果设置了该参数，那么将生效对应的热词表。
+                     * @return HotwordId 热词表id。如不设置该参数，自动生效默认热词表；如果设置了该参数，那么将生效对应的热词表。
                      */
-                    int64_t GetFilterModal() const;
+                    std::string GetHotwordId() const;
 
                     /**
-                     * 设置是否过滤语气词（目前支持中文普通话引擎）。0：不过滤语气词；1：部分过滤；2：严格过滤 。默认值为 0。
-                     * @param FilterModal 是否过滤语气词（目前支持中文普通话引擎）。0：不过滤语气词；1：部分过滤；2：严格过滤 。默认值为 0。
+                     * 设置热词表id。如不设置该参数，自动生效默认热词表；如果设置了该参数，那么将生效对应的热词表。
+                     * @param HotwordId 热词表id。如不设置该参数，自动生效默认热词表；如果设置了该参数，那么将生效对应的热词表。
                      */
-                    void SetFilterModal(const int64_t& _filterModal);
+                    void SetHotwordId(const std::string& _hotwordId);
 
                     /**
-                     * 判断参数 FilterModal 是否已赋值
-                     * @return FilterModal 是否已赋值
+                     * 判断参数 HotwordId 是否已赋值
+                     * @return HotwordId 是否已赋值
                      */
-                    bool FilterModalHasBeenSet() const;
+                    bool HotwordIdHasBeenSet() const;
 
                     /**
-                     * 获取是否进行阿拉伯数字智能转换（目前支持中文普通话引擎）。0：不转换，直接输出中文数字，1：根据场景智能转换为阿拉伯数字，3: 打开数学相关数字转换。默认值为 1。
-                     * @return ConvertNumMode 是否进行阿拉伯数字智能转换（目前支持中文普通话引擎）。0：不转换，直接输出中文数字，1：根据场景智能转换为阿拉伯数字，3: 打开数学相关数字转换。默认值为 1。
+                     * 获取自学习模型 id。如不设置该参数，自动生效最后一次上线的自学习模型；如果设置了该参数，那么将生效对应的自学习模型。
+                     * @return CustomizationId 自学习模型 id。如不设置该参数，自动生效最后一次上线的自学习模型；如果设置了该参数，那么将生效对应的自学习模型。
                      */
-                    int64_t GetConvertNumMode() const;
+                    std::string GetCustomizationId() const;
 
                     /**
-                     * 设置是否进行阿拉伯数字智能转换（目前支持中文普通话引擎）。0：不转换，直接输出中文数字，1：根据场景智能转换为阿拉伯数字，3: 打开数学相关数字转换。默认值为 1。
-                     * @param ConvertNumMode 是否进行阿拉伯数字智能转换（目前支持中文普通话引擎）。0：不转换，直接输出中文数字，1：根据场景智能转换为阿拉伯数字，3: 打开数学相关数字转换。默认值为 1。
+                     * 设置自学习模型 id。如不设置该参数，自动生效最后一次上线的自学习模型；如果设置了该参数，那么将生效对应的自学习模型。
+                     * @param CustomizationId 自学习模型 id。如不设置该参数，自动生效最后一次上线的自学习模型；如果设置了该参数，那么将生效对应的自学习模型。
                      */
-                    void SetConvertNumMode(const int64_t& _convertNumMode);
+                    void SetCustomizationId(const std::string& _customizationId);
 
                     /**
-                     * 判断参数 ConvertNumMode 是否已赋值
-                     * @return ConvertNumMode 是否已赋值
+                     * 判断参数 CustomizationId 是否已赋值
+                     * @return CustomizationId 是否已赋值
                      */
-                    bool ConvertNumModeHasBeenSet() const;
+                    bool CustomizationIdHasBeenSet() const;
 
                     /**
                      * 获取附加参数(该参数无意义，忽略即可)
@@ -394,6 +394,24 @@ namespace TencentCloud
                      */
                     bool FilterPuncHasBeenSet() const;
 
+                    /**
+                     * 获取是否过滤语气词（目前支持中文普通话引擎）。0：不过滤语气词；1：部分过滤；2：严格过滤 。默认值为 0。
+                     * @return FilterModal 是否过滤语气词（目前支持中文普通话引擎）。0：不过滤语气词；1：部分过滤；2：严格过滤 。默认值为 0。
+                     */
+                    int64_t GetFilterModal() const;
+
+                    /**
+                     * 设置是否过滤语气词（目前支持中文普通话引擎）。0：不过滤语气词；1：部分过滤；2：严格过滤 。默认值为 0。
+                     * @param FilterModal 是否过滤语气词（目前支持中文普通话引擎）。0：不过滤语气词；1：部分过滤；2：严格过滤 。默认值为 0。
+                     */
+                    void SetFilterModal(const int64_t& _filterModal);
+
+                    /**
+                     * 判断参数 FilterModal 是否已赋值
+                     * @return FilterModal 是否已赋值
+                     */
+                    bool FilterModalHasBeenSet() const;
+
                 private:
 
                     /**
@@ -411,14 +429,13 @@ namespace TencentCloud
 • 16k_en_edu 英文教育；
 • 16k_zh_medical  医疗；
 • 16k_th 泰语；
-• 16k_wuu-SH：16k 上海话方言；
-• 16k_zh_dialect：多方言。
+• 16k_zh_dialect：多方言，支持23种方言。
                      */
                     std::string m_engineModelType;
                     bool m_engineModelTypeHasBeenSet;
 
                     /**
-                     * 识别声道数。1：单声道；2：双声道（仅支持 8k_zh 引擎模）。注意：录音识别会自动将音频转码为填写的识别声道数
+                     * 识别声道数。1：单声道（非电话场景，直接选择单声道即可，忽略音频声道数）；2：双声道（仅支持8k_zh电话场景，双声道应分别对应通话双方）。注意：双声道的电话音频已物理分离说话人，无需再开启说话人分离功能。
                      */
                     uint64_t m_channelNum;
                     bool m_channelNumHasBeenSet;
@@ -436,7 +453,8 @@ namespace TencentCloud
                     bool m_sourceTypeHasBeenSet;
 
                     /**
-                     * 是否开启说话人分离，0：不开启，1：开启(仅支持8k_zh，16k_zh，16k_zh_video引擎模型，单声道音频)，默认值为 0。
+                     * 是否开启说话人分离，0：不开启，1：开启(仅支持8k_zh，16k_zh，16k_zh_video，单声道音频)，默认值为 0。
+注意：8k电话场景建议使用双声道来区分通话双方，设置ChannelNum=2即可，不用开启说话人分离。
                      */
                     int64_t m_speakerDiarization;
                     bool m_speakerDiarizationHasBeenSet;
@@ -461,7 +479,7 @@ namespace TencentCloud
                     bool m_urlHasBeenSet;
 
                     /**
-                     * 语音数据，当SourceType 值为1时必须填写，为0可不写。要base64编码(采用python语言时注意读取文件应该为string而不是byte，以byte格式读取后要decode()。编码后的数据不可带有回车换行符)。音频数据要小于5MB。
+                     * 语音数据base64编码，当SourceType 值为1时必须填写，为0可不写。音频数据要小于5MB。
                      */
                     std::string m_data;
                     bool m_dataHasBeenSet;
@@ -473,10 +491,10 @@ namespace TencentCloud
                     bool m_dataLenHasBeenSet;
 
                     /**
-                     * 热词id。用于调用对应的热词表，如果在调用语音识别服务时，不进行单独的热词id设置，自动生效默认热词；如果进行了单独的热词id设置，那么将生效单独设置的热词id。
+                     * 是否进行阿拉伯数字智能转换（目前支持中文普通话引擎）。0：不转换，直接输出中文数字，1：根据场景智能转换为阿拉伯数字，3: 打开数学相关数字转换。默认值为 1。
                      */
-                    std::string m_hotwordId;
-                    bool m_hotwordIdHasBeenSet;
+                    int64_t m_convertNumMode;
+                    bool m_convertNumModeHasBeenSet;
 
                     /**
                      * 是否过滤脏词（目前支持中文普通话引擎）。0：不过滤脏词；1：过滤脏词；2：将脏词替换为 * 。默认值为 0。
@@ -485,16 +503,16 @@ namespace TencentCloud
                     bool m_filterDirtyHasBeenSet;
 
                     /**
-                     * 是否过滤语气词（目前支持中文普通话引擎）。0：不过滤语气词；1：部分过滤；2：严格过滤 。默认值为 0。
+                     * 热词表id。如不设置该参数，自动生效默认热词表；如果设置了该参数，那么将生效对应的热词表。
                      */
-                    int64_t m_filterModal;
-                    bool m_filterModalHasBeenSet;
+                    std::string m_hotwordId;
+                    bool m_hotwordIdHasBeenSet;
 
                     /**
-                     * 是否进行阿拉伯数字智能转换（目前支持中文普通话引擎）。0：不转换，直接输出中文数字，1：根据场景智能转换为阿拉伯数字，3: 打开数学相关数字转换。默认值为 1。
+                     * 自学习模型 id。如不设置该参数，自动生效最后一次上线的自学习模型；如果设置了该参数，那么将生效对应的自学习模型。
                      */
-                    int64_t m_convertNumMode;
-                    bool m_convertNumModeHasBeenSet;
+                    std::string m_customizationId;
+                    bool m_customizationIdHasBeenSet;
 
                     /**
                      * 附加参数(该参数无意义，忽略即可)
@@ -507,6 +525,12 @@ namespace TencentCloud
                      */
                     int64_t m_filterPunc;
                     bool m_filterPuncHasBeenSet;
+
+                    /**
+                     * 是否过滤语气词（目前支持中文普通话引擎）。0：不过滤语气词；1：部分过滤；2：严格过滤 。默认值为 0。
+                     */
+                    int64_t m_filterModal;
+                    bool m_filterModalHasBeenSet;
 
                 };
             }

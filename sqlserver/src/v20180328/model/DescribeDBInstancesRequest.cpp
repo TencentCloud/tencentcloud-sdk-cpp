@@ -37,7 +37,8 @@ DescribeDBInstancesRequest::DescribeDBInstancesRequest() :
     m_zoneHasBeenSet(false),
     m_tagKeysHasBeenSet(false),
     m_searchKeyHasBeenSet(false),
-    m_uidSetHasBeenSet(false)
+    m_uidSetHasBeenSet(false),
+    m_instanceTypeHasBeenSet(false)
 {
 }
 
@@ -196,6 +197,14 @@ string DescribeDBInstancesRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_instanceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_instanceType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -444,6 +453,22 @@ void DescribeDBInstancesRequest::SetUidSet(const vector<string>& _uidSet)
 bool DescribeDBInstancesRequest::UidSetHasBeenSet() const
 {
     return m_uidSetHasBeenSet;
+}
+
+string DescribeDBInstancesRequest::GetInstanceType() const
+{
+    return m_instanceType;
+}
+
+void DescribeDBInstancesRequest::SetInstanceType(const string& _instanceType)
+{
+    m_instanceType = _instanceType;
+    m_instanceTypeHasBeenSet = true;
+}
+
+bool DescribeDBInstancesRequest::InstanceTypeHasBeenSet() const
+{
+    return m_instanceTypeHasBeenSet;
 }
 
 

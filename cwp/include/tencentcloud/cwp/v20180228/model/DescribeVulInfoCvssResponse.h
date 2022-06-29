@@ -156,9 +156,9 @@ namespace TencentCloud
                     bool ReferenceHasBeenSet() const;
 
                     /**
-                     * 获取CVSS信息，wiki:http://tapd.oa.com/Teneyes/markdown_wikis/view/#1010131751011792303
+                     * 获取CVSS信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CVSS CVSS信息，wiki:http://tapd.oa.com/Teneyes/markdown_wikis/view/#1010131751011792303
+                     * @return CVSS CVSS信息
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetCVSS() const;
@@ -298,7 +298,7 @@ namespace TencentCloud
                     bool m_referenceHasBeenSet;
 
                     /**
-                     * CVSS信息，wiki:http://tapd.oa.com/Teneyes/markdown_wikis/view/#1010131751011792303
+                     * CVSS信息
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cVSS;

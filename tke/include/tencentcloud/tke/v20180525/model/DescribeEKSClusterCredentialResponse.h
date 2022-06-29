@@ -60,8 +60,8 @@ namespace TencentCloud
                     bool AddressesHasBeenSet() const;
 
                     /**
-                     * 获取集群的认证信息
-                     * @return Credential 集群的认证信息
+                     * 获取集群的认证信息（token只有请求是主账号才返回，子账户请使用返回的kubeconfig）
+                     * @return Credential 集群的认证信息（token只有请求是主账号才返回，子账户请使用返回的kubeconfig）
                      */
                     ClusterCredential GetCredential() const;
 
@@ -107,6 +107,18 @@ namespace TencentCloud
                      */
                     bool ProxyLBHasBeenSet() const;
 
+                    /**
+                     * 获取连接用户集群k8s 的Config
+                     * @return Kubeconfig 连接用户集群k8s 的Config
+                     */
+                    std::string GetKubeconfig() const;
+
+                    /**
+                     * 判断参数 Kubeconfig 是否已赋值
+                     * @return Kubeconfig 是否已赋值
+                     */
+                    bool KubeconfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -116,7 +128,7 @@ namespace TencentCloud
                     bool m_addressesHasBeenSet;
 
                     /**
-                     * 集群的认证信息
+                     * 集群的认证信息（token只有请求是主账号才返回，子账户请使用返回的kubeconfig）
                      */
                     ClusterCredential m_credential;
                     bool m_credentialHasBeenSet;
@@ -138,6 +150,12 @@ namespace TencentCloud
                      */
                     bool m_proxyLB;
                     bool m_proxyLBHasBeenSet;
+
+                    /**
+                     * 连接用户集群k8s 的Config
+                     */
+                    std::string m_kubeconfig;
+                    bool m_kubeconfigHasBeenSet;
 
                 };
             }

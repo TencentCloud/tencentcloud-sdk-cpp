@@ -31,6 +31,8 @@ CreateClusterNodePoolRequest::CreateClusterNodePoolRequest() :
     m_nameHasBeenSet(false),
     m_labelsHasBeenSet(false),
     m_taintsHasBeenSet(false),
+    m_containerRuntimeHasBeenSet(false),
+    m_runtimeVersionHasBeenSet(false),
     m_nodePoolOsHasBeenSet(false),
     m_osCustomizeTypeHasBeenSet(false),
     m_tagsHasBeenSet(false)
@@ -121,6 +123,22 @@ string CreateClusterNodePoolRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_containerRuntimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ContainerRuntime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_containerRuntime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_runtimeVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RuntimeVersion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_runtimeVersion.c_str(), allocator).Move(), allocator);
     }
 
     if (m_nodePoolOsHasBeenSet)
@@ -288,6 +306,38 @@ void CreateClusterNodePoolRequest::SetTaints(const vector<Taint>& _taints)
 bool CreateClusterNodePoolRequest::TaintsHasBeenSet() const
 {
     return m_taintsHasBeenSet;
+}
+
+string CreateClusterNodePoolRequest::GetContainerRuntime() const
+{
+    return m_containerRuntime;
+}
+
+void CreateClusterNodePoolRequest::SetContainerRuntime(const string& _containerRuntime)
+{
+    m_containerRuntime = _containerRuntime;
+    m_containerRuntimeHasBeenSet = true;
+}
+
+bool CreateClusterNodePoolRequest::ContainerRuntimeHasBeenSet() const
+{
+    return m_containerRuntimeHasBeenSet;
+}
+
+string CreateClusterNodePoolRequest::GetRuntimeVersion() const
+{
+    return m_runtimeVersion;
+}
+
+void CreateClusterNodePoolRequest::SetRuntimeVersion(const string& _runtimeVersion)
+{
+    m_runtimeVersion = _runtimeVersion;
+    m_runtimeVersionHasBeenSet = true;
+}
+
+bool CreateClusterNodePoolRequest::RuntimeVersionHasBeenSet() const
+{
+    return m_runtimeVersionHasBeenSet;
 }
 
 string CreateClusterNodePoolRequest::GetNodePoolOs() const

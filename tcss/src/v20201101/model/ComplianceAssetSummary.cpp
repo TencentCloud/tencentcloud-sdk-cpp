@@ -38,7 +38,9 @@ ComplianceAssetSummary::ComplianceAssetSummary() :
     m_scanFailedAssetCountHasBeenSet(false),
     m_checkCostTimeHasBeenSet(false),
     m_lastCheckTimeHasBeenSet(false),
-    m_periodRuleHasBeenSet(false)
+    m_periodRuleHasBeenSet(false),
+    m_openPolicyItemCountHasBeenSet(false),
+    m_ignoredPolicyItemCountHasBeenSet(false)
 {
 }
 
@@ -234,6 +236,26 @@ CoreInternalOutcome ComplianceAssetSummary::Deserialize(const rapidjson::Value &
         m_periodRuleHasBeenSet = true;
     }
 
+    if (value.HasMember("OpenPolicyItemCount") && !value["OpenPolicyItemCount"].IsNull())
+    {
+        if (!value["OpenPolicyItemCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ComplianceAssetSummary.OpenPolicyItemCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_openPolicyItemCount = value["OpenPolicyItemCount"].GetUint64();
+        m_openPolicyItemCountHasBeenSet = true;
+    }
+
+    if (value.HasMember("IgnoredPolicyItemCount") && !value["IgnoredPolicyItemCount"].IsNull())
+    {
+        if (!value["IgnoredPolicyItemCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ComplianceAssetSummary.IgnoredPolicyItemCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_ignoredPolicyItemCount = value["IgnoredPolicyItemCount"].GetUint64();
+        m_ignoredPolicyItemCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -384,6 +406,22 @@ void ComplianceAssetSummary::ToJsonObject(rapidjson::Value &value, rapidjson::Do
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_periodRule.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_openPolicyItemCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OpenPolicyItemCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_openPolicyItemCount, allocator);
+    }
+
+    if (m_ignoredPolicyItemCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IgnoredPolicyItemCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_ignoredPolicyItemCount, allocator);
     }
 
 }
@@ -675,5 +713,37 @@ void ComplianceAssetSummary::SetPeriodRule(const CompliancePeriodTaskRule& _peri
 bool ComplianceAssetSummary::PeriodRuleHasBeenSet() const
 {
     return m_periodRuleHasBeenSet;
+}
+
+uint64_t ComplianceAssetSummary::GetOpenPolicyItemCount() const
+{
+    return m_openPolicyItemCount;
+}
+
+void ComplianceAssetSummary::SetOpenPolicyItemCount(const uint64_t& _openPolicyItemCount)
+{
+    m_openPolicyItemCount = _openPolicyItemCount;
+    m_openPolicyItemCountHasBeenSet = true;
+}
+
+bool ComplianceAssetSummary::OpenPolicyItemCountHasBeenSet() const
+{
+    return m_openPolicyItemCountHasBeenSet;
+}
+
+uint64_t ComplianceAssetSummary::GetIgnoredPolicyItemCount() const
+{
+    return m_ignoredPolicyItemCount;
+}
+
+void ComplianceAssetSummary::SetIgnoredPolicyItemCount(const uint64_t& _ignoredPolicyItemCount)
+{
+    m_ignoredPolicyItemCount = _ignoredPolicyItemCount;
+    m_ignoredPolicyItemCountHasBeenSet = true;
+}
+
+bool ComplianceAssetSummary::IgnoredPolicyItemCountHasBeenSet() const
+{
+    return m_ignoredPolicyItemCountHasBeenSet;
 }
 

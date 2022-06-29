@@ -46,7 +46,11 @@ DescribeAssetContainerDetailResponse::DescribeAssetContainerDetailResponse() :
     m_createTimeHasBeenSet(false),
     m_imageCreateTimeHasBeenSet(false),
     m_imageSizeHasBeenSet(false),
-    m_hostStatusHasBeenSet(false)
+    m_hostStatusHasBeenSet(false),
+    m_netStatusHasBeenSet(false),
+    m_netSubStatusHasBeenSet(false),
+    m_isolateSourceHasBeenSet(false),
+    m_isolateTimeHasBeenSet(false)
 {
 }
 
@@ -331,6 +335,46 @@ CoreInternalOutcome DescribeAssetContainerDetailResponse::Deserialize(const stri
         m_hostStatusHasBeenSet = true;
     }
 
+    if (rsp.HasMember("NetStatus") && !rsp["NetStatus"].IsNull())
+    {
+        if (!rsp["NetStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NetStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_netStatus = string(rsp["NetStatus"].GetString());
+        m_netStatusHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("NetSubStatus") && !rsp["NetSubStatus"].IsNull())
+    {
+        if (!rsp["NetSubStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NetSubStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_netSubStatus = string(rsp["NetSubStatus"].GetString());
+        m_netSubStatusHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("IsolateSource") && !rsp["IsolateSource"].IsNull())
+    {
+        if (!rsp["IsolateSource"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `IsolateSource` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_isolateSource = string(rsp["IsolateSource"].GetString());
+        m_isolateSourceHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("IsolateTime") && !rsp["IsolateTime"].IsNull())
+    {
+        if (!rsp["IsolateTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `IsolateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_isolateTime = string(rsp["IsolateTime"].GetString());
+        m_isolateTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -531,6 +575,38 @@ string DescribeAssetContainerDetailResponse::ToJsonString() const
         string key = "HostStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_hostStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_netStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NetStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_netStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_netSubStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NetSubStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_netSubStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isolateSourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsolateSource";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_isolateSource.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isolateTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsolateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_isolateTime.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -773,6 +849,46 @@ string DescribeAssetContainerDetailResponse::GetHostStatus() const
 bool DescribeAssetContainerDetailResponse::HostStatusHasBeenSet() const
 {
     return m_hostStatusHasBeenSet;
+}
+
+string DescribeAssetContainerDetailResponse::GetNetStatus() const
+{
+    return m_netStatus;
+}
+
+bool DescribeAssetContainerDetailResponse::NetStatusHasBeenSet() const
+{
+    return m_netStatusHasBeenSet;
+}
+
+string DescribeAssetContainerDetailResponse::GetNetSubStatus() const
+{
+    return m_netSubStatus;
+}
+
+bool DescribeAssetContainerDetailResponse::NetSubStatusHasBeenSet() const
+{
+    return m_netSubStatusHasBeenSet;
+}
+
+string DescribeAssetContainerDetailResponse::GetIsolateSource() const
+{
+    return m_isolateSource;
+}
+
+bool DescribeAssetContainerDetailResponse::IsolateSourceHasBeenSet() const
+{
+    return m_isolateSourceHasBeenSet;
+}
+
+string DescribeAssetContainerDetailResponse::GetIsolateTime() const
+{
+    return m_isolateTime;
+}
+
+bool DescribeAssetContainerDetailResponse::IsolateTimeHasBeenSet() const
+{
+    return m_isolateTimeHasBeenSet;
 }
 
 

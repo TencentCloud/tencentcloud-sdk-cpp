@@ -227,14 +227,14 @@ namespace TencentCloud
                     bool RuleLevelHasBeenSet() const;
 
                     /**
-                     * 获取处理状态： 0 = 待处理 1= 已处理, 2 = 已加白
-                     * @return Status 处理状态： 0 = 待处理 1= 已处理, 2 = 已加白
+                     * 获取处理状态： 0 = 待处理 1= 已处理, 2 = 已加白， 3 = 已忽略
+                     * @return Status 处理状态： 0 = 待处理 1= 已处理, 2 = 已加白， 3 = 已忽略
                      */
                     uint64_t GetStatus() const;
 
                     /**
-                     * 设置处理状态： 0 = 待处理 1= 已处理, 2 = 已加白
-                     * @param Status 处理状态： 0 = 待处理 1= 已处理, 2 = 已加白
+                     * 设置处理状态： 0 = 待处理 1= 已处理, 2 = 已加白， 3 = 已忽略
+                     * @param Status 处理状态： 0 = 待处理 1= 已处理, 2 = 已加白， 3 = 已忽略
                      */
                     void SetStatus(const uint64_t& _status);
 
@@ -475,7 +475,7 @@ namespace TencentCloud
                     bool m_ruleLevelHasBeenSet;
 
                     /**
-                     * 处理状态： 0 = 待处理 1= 已处理, 2 = 已加白
+                     * 处理状态： 0 = 待处理 1= 已处理, 2 = 已加白， 3 = 已忽略
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;

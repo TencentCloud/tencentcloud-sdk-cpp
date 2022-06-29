@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/oceanus/v20190422/model/CheckSavepointRequest.h>
+#include <tencentcloud/oceanus/v20190422/model/CheckSavepointResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/CreateJobRequest.h>
 #include <tencentcloud/oceanus/v20190422/model/CreateJobResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/CreateJobConfigRequest.h>
@@ -39,6 +41,8 @@
 #include <tencentcloud/oceanus/v20190422/model/DeleteTableConfigResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/DescribeJobConfigsRequest.h>
 #include <tencentcloud/oceanus/v20190422/model/DescribeJobConfigsResponse.h>
+#include <tencentcloud/oceanus/v20190422/model/DescribeJobSavepointRequest.h>
+#include <tencentcloud/oceanus/v20190422/model/DescribeJobSavepointResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/DescribeJobsRequest.h>
 #include <tencentcloud/oceanus/v20190422/model/DescribeJobsResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/DescribeResourceConfigsRequest.h>
@@ -49,10 +53,14 @@
 #include <tencentcloud/oceanus/v20190422/model/DescribeResourcesResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/DescribeSystemResourcesRequest.h>
 #include <tencentcloud/oceanus/v20190422/model/DescribeSystemResourcesResponse.h>
+#include <tencentcloud/oceanus/v20190422/model/ModifyJobRequest.h>
+#include <tencentcloud/oceanus/v20190422/model/ModifyJobResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/RunJobsRequest.h>
 #include <tencentcloud/oceanus/v20190422/model/RunJobsResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/StopJobsRequest.h>
 #include <tencentcloud/oceanus/v20190422/model/StopJobsResponse.h>
+#include <tencentcloud/oceanus/v20190422/model/TriggerJobSavepointRequest.h>
+#include <tencentcloud/oceanus/v20190422/model/TriggerJobSavepointResponse.h>
 
 
 namespace TencentCloud
@@ -67,6 +75,9 @@ namespace TencentCloud
                 OceanusClient(const Credential &credential, const std::string &region);
                 OceanusClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::CheckSavepointResponse> CheckSavepointOutcome;
+                typedef std::future<CheckSavepointOutcome> CheckSavepointOutcomeCallable;
+                typedef std::function<void(const OceanusClient*, const Model::CheckSavepointRequest&, CheckSavepointOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckSavepointAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateJobResponse> CreateJobOutcome;
                 typedef std::future<CreateJobOutcome> CreateJobOutcomeCallable;
                 typedef std::function<void(const OceanusClient*, const Model::CreateJobRequest&, CreateJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateJobAsyncHandler;
@@ -91,6 +102,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeJobConfigsResponse> DescribeJobConfigsOutcome;
                 typedef std::future<DescribeJobConfigsOutcome> DescribeJobConfigsOutcomeCallable;
                 typedef std::function<void(const OceanusClient*, const Model::DescribeJobConfigsRequest&, DescribeJobConfigsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeJobConfigsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeJobSavepointResponse> DescribeJobSavepointOutcome;
+                typedef std::future<DescribeJobSavepointOutcome> DescribeJobSavepointOutcomeCallable;
+                typedef std::function<void(const OceanusClient*, const Model::DescribeJobSavepointRequest&, DescribeJobSavepointOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeJobSavepointAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeJobsResponse> DescribeJobsOutcome;
                 typedef std::future<DescribeJobsOutcome> DescribeJobsOutcomeCallable;
                 typedef std::function<void(const OceanusClient*, const Model::DescribeJobsRequest&, DescribeJobsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeJobsAsyncHandler;
@@ -106,14 +120,29 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeSystemResourcesResponse> DescribeSystemResourcesOutcome;
                 typedef std::future<DescribeSystemResourcesOutcome> DescribeSystemResourcesOutcomeCallable;
                 typedef std::function<void(const OceanusClient*, const Model::DescribeSystemResourcesRequest&, DescribeSystemResourcesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSystemResourcesAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyJobResponse> ModifyJobOutcome;
+                typedef std::future<ModifyJobOutcome> ModifyJobOutcomeCallable;
+                typedef std::function<void(const OceanusClient*, const Model::ModifyJobRequest&, ModifyJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyJobAsyncHandler;
                 typedef Outcome<Core::Error, Model::RunJobsResponse> RunJobsOutcome;
                 typedef std::future<RunJobsOutcome> RunJobsOutcomeCallable;
                 typedef std::function<void(const OceanusClient*, const Model::RunJobsRequest&, RunJobsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RunJobsAsyncHandler;
                 typedef Outcome<Core::Error, Model::StopJobsResponse> StopJobsOutcome;
                 typedef std::future<StopJobsOutcome> StopJobsOutcomeCallable;
                 typedef std::function<void(const OceanusClient*, const Model::StopJobsRequest&, StopJobsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopJobsAsyncHandler;
+                typedef Outcome<Core::Error, Model::TriggerJobSavepointResponse> TriggerJobSavepointOutcome;
+                typedef std::future<TriggerJobSavepointOutcome> TriggerJobSavepointOutcomeCallable;
+                typedef std::function<void(const OceanusClient*, const Model::TriggerJobSavepointRequest&, TriggerJobSavepointOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TriggerJobSavepointAsyncHandler;
 
 
+
+                /**
+                 *检查快照是否可用
+                 * @param req CheckSavepointRequest
+                 * @return CheckSavepointOutcome
+                 */
+                CheckSavepointOutcome CheckSavepoint(const Model::CheckSavepointRequest &request);
+                void CheckSavepointAsync(const Model::CheckSavepointRequest& request, const CheckSavepointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CheckSavepointOutcomeCallable CheckSavepointCallable(const Model::CheckSavepointRequest& request);
 
                 /**
                  *新建作业接口，一个 AppId 最多允许创建1000个作业
@@ -188,6 +217,15 @@ namespace TencentCloud
                 DescribeJobConfigsOutcomeCallable DescribeJobConfigsCallable(const Model::DescribeJobConfigsRequest& request);
 
                 /**
+                 *查找Savepoint列表
+                 * @param req DescribeJobSavepointRequest
+                 * @return DescribeJobSavepointOutcome
+                 */
+                DescribeJobSavepointOutcome DescribeJobSavepoint(const Model::DescribeJobSavepointRequest &request);
+                void DescribeJobSavepointAsync(const Model::DescribeJobSavepointRequest& request, const DescribeJobSavepointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeJobSavepointOutcomeCallable DescribeJobSavepointCallable(const Model::DescribeJobSavepointRequest& request);
+
+                /**
                  *查询作业
                  * @param req DescribeJobsRequest
                  * @return DescribeJobsOutcome
@@ -233,6 +271,25 @@ namespace TencentCloud
                 DescribeSystemResourcesOutcomeCallable DescribeSystemResourcesCallable(const Model::DescribeSystemResourcesRequest& request);
 
                 /**
+                 *更新作业属性，仅允许以下3种操作，不支持组合操作：
+(1)	更新作业名称
+(2)	更新作业备注 
+(3)	更新作业最大并行度
+变更前提：WorkerCuNum<=MaxParallelism
+如果MaxParallelism变小，不重启作业，待下一次重启生效
+如果MaxParallelism变大，则要求入参RestartAllowed必须为True
+假设作业运行状态，则先停止作业，再启动作业，中间状态丢失
+假设作业暂停状态，则将作业更改为停止状态，中间状态丢失
+
+
+                 * @param req ModifyJobRequest
+                 * @return ModifyJobOutcome
+                 */
+                ModifyJobOutcome ModifyJob(const Model::ModifyJobRequest &request);
+                void ModifyJobAsync(const Model::ModifyJobRequest& request, const ModifyJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyJobOutcomeCallable ModifyJobCallable(const Model::ModifyJobRequest& request);
+
+                /**
                  *批量启动或者恢复作业，批量操作数量上限20
                  * @param req RunJobsRequest
                  * @return RunJobsOutcome
@@ -249,6 +306,15 @@ namespace TencentCloud
                 StopJobsOutcome StopJobs(const Model::StopJobsRequest &request);
                 void StopJobsAsync(const Model::StopJobsRequest& request, const StopJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 StopJobsOutcomeCallable StopJobsCallable(const Model::StopJobsRequest& request);
+
+                /**
+                 *触发Savepoint
+                 * @param req TriggerJobSavepointRequest
+                 * @return TriggerJobSavepointOutcome
+                 */
+                TriggerJobSavepointOutcome TriggerJobSavepoint(const Model::TriggerJobSavepointRequest &request);
+                void TriggerJobSavepointAsync(const Model::TriggerJobSavepointRequest& request, const TriggerJobSavepointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                TriggerJobSavepointOutcomeCallable TriggerJobSavepointCallable(const Model::TriggerJobSavepointRequest& request);
 
             };
         }

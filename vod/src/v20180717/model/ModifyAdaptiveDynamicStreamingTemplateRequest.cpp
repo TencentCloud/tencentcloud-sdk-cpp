@@ -24,13 +24,13 @@ using namespace std;
 
 ModifyAdaptiveDynamicStreamingTemplateRequest::ModifyAdaptiveDynamicStreamingTemplateRequest() :
     m_definitionHasBeenSet(false),
+    m_subAppIdHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_formatHasBeenSet(false),
     m_disableHigherVideoBitrateHasBeenSet(false),
     m_disableHigherVideoResolutionHasBeenSet(false),
     m_streamInfosHasBeenSet(false),
-    m_commentHasBeenSet(false),
-    m_subAppIdHasBeenSet(false)
+    m_commentHasBeenSet(false)
 {
 }
 
@@ -47,6 +47,14 @@ string ModifyAdaptiveDynamicStreamingTemplateRequest::ToJsonString() const
         string key = "Definition";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_definition, allocator);
+    }
+
+    if (m_subAppIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubAppId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_subAppId, allocator);
     }
 
     if (m_nameHasBeenSet)
@@ -104,14 +112,6 @@ string ModifyAdaptiveDynamicStreamingTemplateRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_comment.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_subAppIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SubAppId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_subAppId, allocator);
-    }
-
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -134,6 +134,22 @@ void ModifyAdaptiveDynamicStreamingTemplateRequest::SetDefinition(const uint64_t
 bool ModifyAdaptiveDynamicStreamingTemplateRequest::DefinitionHasBeenSet() const
 {
     return m_definitionHasBeenSet;
+}
+
+uint64_t ModifyAdaptiveDynamicStreamingTemplateRequest::GetSubAppId() const
+{
+    return m_subAppId;
+}
+
+void ModifyAdaptiveDynamicStreamingTemplateRequest::SetSubAppId(const uint64_t& _subAppId)
+{
+    m_subAppId = _subAppId;
+    m_subAppIdHasBeenSet = true;
+}
+
+bool ModifyAdaptiveDynamicStreamingTemplateRequest::SubAppIdHasBeenSet() const
+{
+    return m_subAppIdHasBeenSet;
 }
 
 string ModifyAdaptiveDynamicStreamingTemplateRequest::GetName() const
@@ -230,22 +246,6 @@ void ModifyAdaptiveDynamicStreamingTemplateRequest::SetComment(const string& _co
 bool ModifyAdaptiveDynamicStreamingTemplateRequest::CommentHasBeenSet() const
 {
     return m_commentHasBeenSet;
-}
-
-uint64_t ModifyAdaptiveDynamicStreamingTemplateRequest::GetSubAppId() const
-{
-    return m_subAppId;
-}
-
-void ModifyAdaptiveDynamicStreamingTemplateRequest::SetSubAppId(const uint64_t& _subAppId)
-{
-    m_subAppId = _subAppId;
-    m_subAppIdHasBeenSet = true;
-}
-
-bool ModifyAdaptiveDynamicStreamingTemplateRequest::SubAppIdHasBeenSet() const
-{
-    return m_subAppIdHasBeenSet;
 }
 
 

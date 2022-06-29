@@ -394,6 +394,72 @@ namespace TencentCloud
                      */
                     bool AffectedVersionHasBeenSet() const;
 
+                    /**
+                     * 获取忽略的资产数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IgnoredAssetNum 忽略的资产数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetIgnoredAssetNum() const;
+
+                    /**
+                     * 设置忽略的资产数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param IgnoredAssetNum 忽略的资产数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIgnoredAssetNum(const int64_t& _ignoredAssetNum);
+
+                    /**
+                     * 判断参数 IgnoredAssetNum 是否已赋值
+                     * @return IgnoredAssetNum 是否已赋值
+                     */
+                    bool IgnoredAssetNumHasBeenSet() const;
+
+                    /**
+                     * 获取是否忽略该检测项
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsIgnored 是否忽略该检测项
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetIsIgnored() const;
+
+                    /**
+                     * 设置是否忽略该检测项
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param IsIgnored 是否忽略该检测项
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIsIgnored(const bool& _isIgnored);
+
+                    /**
+                     * 判断参数 IsIgnored 是否已赋值
+                     * @return IsIgnored 是否已赋值
+                     */
+                    bool IsIgnoredHasBeenSet() const;
+
+                    /**
+                     * 获取受影响评估
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RiskAssessment 受影响评估
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetRiskAssessment() const;
+
+                    /**
+                     * 设置受影响评估
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RiskAssessment 受影响评估
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRiskAssessment(const std::string& _riskAssessment);
+
+                    /**
+                     * 判断参数 RiskAssessment 是否已赋值
+                     * @return RiskAssessment 是否已赋值
+                     */
+                    bool RiskAssessmentHasBeenSet() const;
+
                 private:
 
                     /**
@@ -506,6 +572,27 @@ namespace TencentCloud
                      */
                     std::string m_affectedVersion;
                     bool m_affectedVersionHasBeenSet;
+
+                    /**
+                     * 忽略的资产数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_ignoredAssetNum;
+                    bool m_ignoredAssetNumHasBeenSet;
+
+                    /**
+                     * 是否忽略该检测项
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_isIgnored;
+                    bool m_isIgnoredHasBeenSet;
+
+                    /**
+                     * 受影响评估
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_riskAssessment;
+                    bool m_riskAssessmentHasBeenSet;
 
                 };
             }

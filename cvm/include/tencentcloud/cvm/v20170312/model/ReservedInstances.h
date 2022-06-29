@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取已购买的预留实例计费ID。形如：650c138f-ae7e-4750-952a-96841d6e9fc1。
-                     * @return ReservedInstancesId 已购买的预留实例计费ID。形如：650c138f-ae7e-4750-952a-96841d6e9fc1。
+                     * 获取（此字段已废弃，建议使用字段：ReservedInstanceId）已购买的预留实例计费ID。形如：ri-rtbh4han。
+                     * @return ReservedInstancesId （此字段已废弃，建议使用字段：ReservedInstanceId）已购买的预留实例计费ID。形如：ri-rtbh4han。
                      */
                     std::string GetReservedInstancesId() const;
 
                     /**
-                     * 设置已购买的预留实例计费ID。形如：650c138f-ae7e-4750-952a-96841d6e9fc1。
-                     * @param ReservedInstancesId 已购买的预留实例计费ID。形如：650c138f-ae7e-4750-952a-96841d6e9fc1。
+                     * 设置（此字段已废弃，建议使用字段：ReservedInstanceId）已购买的预留实例计费ID。形如：ri-rtbh4han。
+                     * @param ReservedInstancesId （此字段已废弃，建议使用字段：ReservedInstanceId）已购买的预留实例计费ID。形如：ri-rtbh4han。
                      */
                     void SetReservedInstancesId(const std::string& _reservedInstancesId);
 
@@ -294,10 +294,46 @@ namespace TencentCloud
                      */
                     bool InstanceFamilyHasBeenSet() const;
 
+                    /**
+                     * 获取已购买的预留实例计费ID。形如：ri-rtbh4han。
+                     * @return ReservedInstanceId 已购买的预留实例计费ID。形如：ri-rtbh4han。
+                     */
+                    std::string GetReservedInstanceId() const;
+
+                    /**
+                     * 设置已购买的预留实例计费ID。形如：ri-rtbh4han。
+                     * @param ReservedInstanceId 已购买的预留实例计费ID。形如：ri-rtbh4han。
+                     */
+                    void SetReservedInstanceId(const std::string& _reservedInstanceId);
+
+                    /**
+                     * 判断参数 ReservedInstanceId 是否已赋值
+                     * @return ReservedInstanceId 是否已赋值
+                     */
+                    bool ReservedInstanceIdHasBeenSet() const;
+
+                    /**
+                     * 获取预留实例显示名称。形如：riname-01
+                     * @return ReservedInstanceName 预留实例显示名称。形如：riname-01
+                     */
+                    std::string GetReservedInstanceName() const;
+
+                    /**
+                     * 设置预留实例显示名称。形如：riname-01
+                     * @param ReservedInstanceName 预留实例显示名称。形如：riname-01
+                     */
+                    void SetReservedInstanceName(const std::string& _reservedInstanceName);
+
+                    /**
+                     * 判断参数 ReservedInstanceName 是否已赋值
+                     * @return ReservedInstanceName 是否已赋值
+                     */
+                    bool ReservedInstanceNameHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 已购买的预留实例计费ID。形如：650c138f-ae7e-4750-952a-96841d6e9fc1。
+                     * （此字段已废弃，建议使用字段：ReservedInstanceId）已购买的预留实例计费ID。形如：ri-rtbh4han。
                      */
                     std::string m_reservedInstancesId;
                     bool m_reservedInstancesIdHasBeenSet;
@@ -375,6 +411,18 @@ namespace TencentCloud
                      */
                     std::string m_instanceFamily;
                     bool m_instanceFamilyHasBeenSet;
+
+                    /**
+                     * 已购买的预留实例计费ID。形如：ri-rtbh4han。
+                     */
+                    std::string m_reservedInstanceId;
+                    bool m_reservedInstanceIdHasBeenSet;
+
+                    /**
+                     * 预留实例显示名称。形如：riname-01
+                     */
+                    std::string m_reservedInstanceName;
+                    bool m_reservedInstanceNameHasBeenSet;
 
                 };
             }

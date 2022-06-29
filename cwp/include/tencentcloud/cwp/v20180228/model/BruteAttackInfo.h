@@ -482,6 +482,28 @@ namespace TencentCloud
                      */
                     bool InstanceIdHasBeenSet() const;
 
+                    /**
+                     * 获取0：待处理，1：忽略，5：已处理，6：加入白名单
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DataStatus 0：待处理，1：忽略，5：已处理，6：加入白名单
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetDataStatus() const;
+
+                    /**
+                     * 设置0：待处理，1：忽略，5：已处理，6：加入白名单
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DataStatus 0：待处理，1：忽略，5：已处理，6：加入白名单
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDataStatus(const uint64_t& _dataStatus);
+
+                    /**
+                     * 判断参数 DataStatus 是否已赋值
+                     * @return DataStatus 是否已赋值
+                     */
+                    bool DataStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -622,6 +644,13 @@ namespace TencentCloud
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
+
+                    /**
+                     * 0：待处理，1：忽略，5：已处理，6：加入白名单
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_dataStatus;
+                    bool m_dataStatusHasBeenSet;
 
                 };
             }

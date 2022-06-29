@@ -728,6 +728,49 @@ SslClient::DownloadCertificateOutcomeCallable SslClient::DownloadCertificateCall
     return task->get_future();
 }
 
+SslClient::HostCertificateOutcome SslClient::HostCertificate(const HostCertificateRequest &request)
+{
+    auto outcome = MakeRequest(request, "HostCertificate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        HostCertificateResponse rsp = HostCertificateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return HostCertificateOutcome(rsp);
+        else
+            return HostCertificateOutcome(o.GetError());
+    }
+    else
+    {
+        return HostCertificateOutcome(outcome.GetError());
+    }
+}
+
+void SslClient::HostCertificateAsync(const HostCertificateRequest& request, const HostCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->HostCertificate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SslClient::HostCertificateOutcomeCallable SslClient::HostCertificateCallable(const HostCertificateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<HostCertificateOutcome()>>(
+        [this, request]()
+        {
+            return this->HostCertificate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 SslClient::ModifyCertificateAliasOutcome SslClient::ModifyCertificateAlias(const ModifyCertificateAliasRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyCertificateAlias");

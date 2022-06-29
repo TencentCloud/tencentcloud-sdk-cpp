@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取备份类型，当前只支持按天备份，取值为daily
-                     * @return BackupType 备份类型，当前只支持按天备份，取值为daily
+                     * 获取备份类型，当length(BackupDay) <=7 && length(BackupDay) >=2时，取值为weekly，当length(BackupDay)=1时，取值daily，默认daily
+                     * @return BackupType 备份类型，当length(BackupDay) <=7 && length(BackupDay) >=2时，取值为weekly，当length(BackupDay)=1时，取值daily，默认daily
                      */
                     std::string GetBackupType() const;
 
                     /**
-                     * 设置备份类型，当前只支持按天备份，取值为daily
-                     * @param BackupType 备份类型，当前只支持按天备份，取值为daily
+                     * 设置备份类型，当length(BackupDay) <=7 && length(BackupDay) >=2时，取值为weekly，当length(BackupDay)=1时，取值daily，默认daily
+                     * @param BackupType 备份类型，当length(BackupDay) <=7 && length(BackupDay) >=2时，取值为weekly，当length(BackupDay)=1时，取值daily，默认daily
                      */
                     void SetBackupType(const std::string& _backupType);
 
@@ -132,6 +132,42 @@ namespace TencentCloud
                      */
                     bool BackupModelHasBeenSet() const;
 
+                    /**
+                     * 获取BackupType取值为weekly时，表示每周的星期N做备份。（如果数据备份保留时间<7天，则取值[1,2,3,4,5,6,7]。如果数据备份保留时间>=7天，则备份周期取值至少是一周的任意2天）
+                     * @return BackupCycle BackupType取值为weekly时，表示每周的星期N做备份。（如果数据备份保留时间<7天，则取值[1,2,3,4,5,6,7]。如果数据备份保留时间>=7天，则备份周期取值至少是一周的任意2天）
+                     */
+                    std::vector<uint64_t> GetBackupCycle() const;
+
+                    /**
+                     * 设置BackupType取值为weekly时，表示每周的星期N做备份。（如果数据备份保留时间<7天，则取值[1,2,3,4,5,6,7]。如果数据备份保留时间>=7天，则备份周期取值至少是一周的任意2天）
+                     * @param BackupCycle BackupType取值为weekly时，表示每周的星期N做备份。（如果数据备份保留时间<7天，则取值[1,2,3,4,5,6,7]。如果数据备份保留时间>=7天，则备份周期取值至少是一周的任意2天）
+                     */
+                    void SetBackupCycle(const std::vector<uint64_t>& _backupCycle);
+
+                    /**
+                     * 判断参数 BackupCycle 是否已赋值
+                     * @return BackupCycle 是否已赋值
+                     */
+                    bool BackupCycleHasBeenSet() const;
+
+                    /**
+                     * 获取数据(日志)备份保留时间，取值[3-1830]天，默认7天
+                     * @return BackupSaveDays 数据(日志)备份保留时间，取值[3-1830]天，默认7天
+                     */
+                    uint64_t GetBackupSaveDays() const;
+
+                    /**
+                     * 设置数据(日志)备份保留时间，取值[3-1830]天，默认7天
+                     * @param BackupSaveDays 数据(日志)备份保留时间，取值[3-1830]天，默认7天
+                     */
+                    void SetBackupSaveDays(const uint64_t& _backupSaveDays);
+
+                    /**
+                     * 判断参数 BackupSaveDays 是否已赋值
+                     * @return BackupSaveDays 是否已赋值
+                     */
+                    bool BackupSaveDaysHasBeenSet() const;
+
                 private:
 
                     /**
@@ -141,7 +177,7 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 备份类型，当前只支持按天备份，取值为daily
+                     * 备份类型，当length(BackupDay) <=7 && length(BackupDay) >=2时，取值为weekly，当length(BackupDay)=1时，取值daily，默认daily
                      */
                     std::string m_backupType;
                     bool m_backupTypeHasBeenSet;
@@ -163,6 +199,18 @@ namespace TencentCloud
                      */
                     std::string m_backupModel;
                     bool m_backupModelHasBeenSet;
+
+                    /**
+                     * BackupType取值为weekly时，表示每周的星期N做备份。（如果数据备份保留时间<7天，则取值[1,2,3,4,5,6,7]。如果数据备份保留时间>=7天，则备份周期取值至少是一周的任意2天）
+                     */
+                    std::vector<uint64_t> m_backupCycle;
+                    bool m_backupCycleHasBeenSet;
+
+                    /**
+                     * 数据(日志)备份保留时间，取值[3-1830]天，默认7天
+                     */
+                    uint64_t m_backupSaveDays;
+                    bool m_backupSaveDaysHasBeenSet;
 
                 };
             }

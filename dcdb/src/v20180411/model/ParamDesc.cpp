@@ -26,7 +26,8 @@ ParamDesc::ParamDesc() :
     m_setValueHasBeenSet(false),
     m_defaultHasBeenSet(false),
     m_constraintHasBeenSet(false),
-    m_haveSetValueHasBeenSet(false)
+    m_haveSetValueHasBeenSet(false),
+    m_needRestartHasBeenSet(false)
 {
 }
 
@@ -102,6 +103,16 @@ CoreInternalOutcome ParamDesc::Deserialize(const rapidjson::Value &value)
         m_haveSetValueHasBeenSet = true;
     }
 
+    if (value.HasMember("NeedRestart") && !value["NeedRestart"].IsNull())
+    {
+        if (!value["NeedRestart"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ParamDesc.NeedRestart` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_needRestart = value["NeedRestart"].GetBool();
+        m_needRestartHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -156,6 +167,14 @@ void ParamDesc::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "HaveSetValue";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_haveSetValue, allocator);
+    }
+
+    if (m_needRestartHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NeedRestart";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_needRestart, allocator);
     }
 
 }
@@ -255,5 +274,21 @@ void ParamDesc::SetHaveSetValue(const bool& _haveSetValue)
 bool ParamDesc::HaveSetValueHasBeenSet() const
 {
     return m_haveSetValueHasBeenSet;
+}
+
+bool ParamDesc::GetNeedRestart() const
+{
+    return m_needRestart;
+}
+
+void ParamDesc::SetNeedRestart(const bool& _needRestart)
+{
+    m_needRestart = _needRestart;
+    m_needRestartHasBeenSet = true;
+}
+
+bool ParamDesc::NeedRestartHasBeenSet() const
+{
+    return m_needRestartHasBeenSet;
 }
 

@@ -23,10 +23,18 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/essbasic/v20210526/model/ChannelCancelMultiFlowSignQRCodeRequest.h>
+#include <tencentcloud/essbasic/v20210526/model/ChannelCancelMultiFlowSignQRCodeResponse.h>
+#include <tencentcloud/essbasic/v20210526/model/ChannelCreateFlowByFilesRequest.h>
+#include <tencentcloud/essbasic/v20210526/model/ChannelCreateFlowByFilesResponse.h>
+#include <tencentcloud/essbasic/v20210526/model/ChannelCreateMultiFlowSignQRCodeRequest.h>
+#include <tencentcloud/essbasic/v20210526/model/ChannelCreateMultiFlowSignQRCodeResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/CreateConsoleLoginUrlRequest.h>
 #include <tencentcloud/essbasic/v20210526/model/CreateConsoleLoginUrlResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/CreateFlowsByTemplatesRequest.h>
 #include <tencentcloud/essbasic/v20210526/model/CreateFlowsByTemplatesResponse.h>
+#include <tencentcloud/essbasic/v20210526/model/CreateSealByImageRequest.h>
+#include <tencentcloud/essbasic/v20210526/model/CreateSealByImageResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/CreateSignUrlsRequest.h>
 #include <tencentcloud/essbasic/v20210526/model/CreateSignUrlsResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/DescribeFlowDetailInfoRequest.h>
@@ -47,6 +55,8 @@
 #include <tencentcloud/essbasic/v20210526/model/SyncProxyOrganizationResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/SyncProxyOrganizationOperatorsRequest.h>
 #include <tencentcloud/essbasic/v20210526/model/SyncProxyOrganizationOperatorsResponse.h>
+#include <tencentcloud/essbasic/v20210526/model/UploadFilesRequest.h>
+#include <tencentcloud/essbasic/v20210526/model/UploadFilesResponse.h>
 
 
 namespace TencentCloud
@@ -61,12 +71,24 @@ namespace TencentCloud
                 EssbasicClient(const Credential &credential, const std::string &region);
                 EssbasicClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::ChannelCancelMultiFlowSignQRCodeResponse> ChannelCancelMultiFlowSignQRCodeOutcome;
+                typedef std::future<ChannelCancelMultiFlowSignQRCodeOutcome> ChannelCancelMultiFlowSignQRCodeOutcomeCallable;
+                typedef std::function<void(const EssbasicClient*, const Model::ChannelCancelMultiFlowSignQRCodeRequest&, ChannelCancelMultiFlowSignQRCodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChannelCancelMultiFlowSignQRCodeAsyncHandler;
+                typedef Outcome<Core::Error, Model::ChannelCreateFlowByFilesResponse> ChannelCreateFlowByFilesOutcome;
+                typedef std::future<ChannelCreateFlowByFilesOutcome> ChannelCreateFlowByFilesOutcomeCallable;
+                typedef std::function<void(const EssbasicClient*, const Model::ChannelCreateFlowByFilesRequest&, ChannelCreateFlowByFilesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChannelCreateFlowByFilesAsyncHandler;
+                typedef Outcome<Core::Error, Model::ChannelCreateMultiFlowSignQRCodeResponse> ChannelCreateMultiFlowSignQRCodeOutcome;
+                typedef std::future<ChannelCreateMultiFlowSignQRCodeOutcome> ChannelCreateMultiFlowSignQRCodeOutcomeCallable;
+                typedef std::function<void(const EssbasicClient*, const Model::ChannelCreateMultiFlowSignQRCodeRequest&, ChannelCreateMultiFlowSignQRCodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChannelCreateMultiFlowSignQRCodeAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateConsoleLoginUrlResponse> CreateConsoleLoginUrlOutcome;
                 typedef std::future<CreateConsoleLoginUrlOutcome> CreateConsoleLoginUrlOutcomeCallable;
                 typedef std::function<void(const EssbasicClient*, const Model::CreateConsoleLoginUrlRequest&, CreateConsoleLoginUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateConsoleLoginUrlAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateFlowsByTemplatesResponse> CreateFlowsByTemplatesOutcome;
                 typedef std::future<CreateFlowsByTemplatesOutcome> CreateFlowsByTemplatesOutcomeCallable;
                 typedef std::function<void(const EssbasicClient*, const Model::CreateFlowsByTemplatesRequest&, CreateFlowsByTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateFlowsByTemplatesAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateSealByImageResponse> CreateSealByImageOutcome;
+                typedef std::future<CreateSealByImageOutcome> CreateSealByImageOutcomeCallable;
+                typedef std::function<void(const EssbasicClient*, const Model::CreateSealByImageRequest&, CreateSealByImageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSealByImageAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateSignUrlsResponse> CreateSignUrlsOutcome;
                 typedef std::future<CreateSignUrlsOutcome> CreateSignUrlsOutcomeCallable;
                 typedef std::function<void(const EssbasicClient*, const Model::CreateSignUrlsRequest&, CreateSignUrlsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSignUrlsAsyncHandler;
@@ -97,8 +119,39 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::SyncProxyOrganizationOperatorsResponse> SyncProxyOrganizationOperatorsOutcome;
                 typedef std::future<SyncProxyOrganizationOperatorsOutcome> SyncProxyOrganizationOperatorsOutcomeCallable;
                 typedef std::function<void(const EssbasicClient*, const Model::SyncProxyOrganizationOperatorsRequest&, SyncProxyOrganizationOperatorsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SyncProxyOrganizationOperatorsAsyncHandler;
+                typedef Outcome<Core::Error, Model::UploadFilesResponse> UploadFilesOutcome;
+                typedef std::future<UploadFilesOutcome> UploadFilesOutcomeCallable;
+                typedef std::function<void(const EssbasicClient*, const Model::UploadFilesRequest&, UploadFilesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UploadFilesAsyncHandler;
 
 
+
+                /**
+                 *此接口（ChannelCancelMultiFlowSignQRCode）用于取消一码多扫二维码。该接口对传入的二维码ID，若还在有效期内，可以提前失效。
+                 * @param req ChannelCancelMultiFlowSignQRCodeRequest
+                 * @return ChannelCancelMultiFlowSignQRCodeOutcome
+                 */
+                ChannelCancelMultiFlowSignQRCodeOutcome ChannelCancelMultiFlowSignQRCode(const Model::ChannelCancelMultiFlowSignQRCodeRequest &request);
+                void ChannelCancelMultiFlowSignQRCodeAsync(const Model::ChannelCancelMultiFlowSignQRCodeRequest& request, const ChannelCancelMultiFlowSignQRCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ChannelCancelMultiFlowSignQRCodeOutcomeCallable ChannelCancelMultiFlowSignQRCodeCallable(const Model::ChannelCancelMultiFlowSignQRCodeRequest& request);
+
+                /**
+                 *接口（ChannelCreateFlowByFiles）用于渠道版通过文件创建流程。此接口不可直接使用，需要运营申请
+                 * @param req ChannelCreateFlowByFilesRequest
+                 * @return ChannelCreateFlowByFilesOutcome
+                 */
+                ChannelCreateFlowByFilesOutcome ChannelCreateFlowByFiles(const Model::ChannelCreateFlowByFilesRequest &request);
+                void ChannelCreateFlowByFilesAsync(const Model::ChannelCreateFlowByFilesRequest& request, const ChannelCreateFlowByFilesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ChannelCreateFlowByFilesOutcomeCallable ChannelCreateFlowByFilesCallable(const Model::ChannelCreateFlowByFilesRequest& request);
+
+                /**
+                 *此接口（ChannelCreateMultiFlowSignQRCode）用于创建一码多扫流程签署二维码。
+适用的模版仅限于B2C（1、无序签署，2、顺序签署时B静默签署，3、顺序签署时B非首位签署）、单C的模版，且模版中发起方没有填写控件。
+                 * @param req ChannelCreateMultiFlowSignQRCodeRequest
+                 * @return ChannelCreateMultiFlowSignQRCodeOutcome
+                 */
+                ChannelCreateMultiFlowSignQRCodeOutcome ChannelCreateMultiFlowSignQRCode(const Model::ChannelCreateMultiFlowSignQRCodeRequest &request);
+                void ChannelCreateMultiFlowSignQRCodeAsync(const Model::ChannelCreateMultiFlowSignQRCodeRequest& request, const ChannelCreateMultiFlowSignQRCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ChannelCreateMultiFlowSignQRCodeOutcomeCallable ChannelCreateMultiFlowSignQRCodeCallable(const Model::ChannelCreateMultiFlowSignQRCodeRequest& request);
 
                 /**
                  *此接口（CreateConsoleLoginUrl）用于创建电子签控制台登录链接。若企业未激活，调用同步企业信息、同步经办人信息
@@ -120,6 +173,15 @@ namespace TencentCloud
                 CreateFlowsByTemplatesOutcomeCallable CreateFlowsByTemplatesCallable(const Model::CreateFlowsByTemplatesRequest& request);
 
                 /**
+                 *渠道通过图片为子客代创建印章，图片最大5m；此接口不可直接使用，需要运营申请
+                 * @param req CreateSealByImageRequest
+                 * @return CreateSealByImageOutcome
+                 */
+                CreateSealByImageOutcome CreateSealByImage(const Model::CreateSealByImageRequest &request);
+                void CreateSealByImageAsync(const Model::CreateSealByImageRequest& request, const CreateSealByImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateSealByImageOutcomeCallable CreateSealByImageCallable(const Model::CreateSealByImageRequest& request);
+
+                /**
                  *创建参与者签署短链
                  * @param req CreateSignUrlsRequest
                  * @return CreateSignUrlsOutcome
@@ -138,7 +200,8 @@ namespace TencentCloud
                 DescribeFlowDetailInfoOutcomeCallable DescribeFlowDetailInfoCallable(const Model::DescribeFlowDetailInfoRequest& request);
 
                 /**
-                 *根据流程信息批量获取资源下载链接
+                 *根据流程信息批量获取资源下载链接，可直接下载
+限制：只能下载合作企业授权过的、单方签署的流程文件（若合作企业与渠道是同一企业，可以下载所有流程文件）
                  * @param req DescribeResourceUrlsByFlowsRequest
                  * @return DescribeResourceUrlsByFlowsOutcome
                  */
@@ -166,8 +229,9 @@ namespace TencentCloud
                 DescribeUsageOutcomeCallable DescribeUsageCallable(const Model::DescribeUsageRequest& request);
 
                 /**
-                 *此接口（GetDownloadFlowUrl）用于创建电子签批量下载确认页面链接，支持客户合同（流程）按照自定义文件夹形式 分类下载。
+                 *此接口（GetDownloadFlowUrl）用于创建电子签批量下载地址，让合作企业进入控制台直接下载，支持客户合同（流程）按照自定义文件夹形式 分类下载。
 当前接口限制最多合同（流程）50个.
+
                  * @param req GetDownloadFlowUrlRequest
                  * @return GetDownloadFlowUrlOutcome
                  */
@@ -191,7 +255,7 @@ namespace TencentCloud
                 /**
                  *该接口 (PrepareFlows) 用于创建待发起文件
 用户通过该接口进入流程发起的确认页面，进行发起信息二次确认， 如果确认则进行正常发起。
-目前该接口只支持B2C。
+目前该接口只支持B2C，不建议使用。
                  * @param req PrepareFlowsRequest
                  * @return PrepareFlowsOutcome
                  */
@@ -216,6 +280,16 @@ namespace TencentCloud
                 SyncProxyOrganizationOperatorsOutcome SyncProxyOrganizationOperators(const Model::SyncProxyOrganizationOperatorsRequest &request);
                 void SyncProxyOrganizationOperatorsAsync(const Model::SyncProxyOrganizationOperatorsRequest& request, const SyncProxyOrganizationOperatorsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SyncProxyOrganizationOperatorsOutcomeCallable SyncProxyOrganizationOperatorsCallable(const Model::SyncProxyOrganizationOperatorsRequest& request);
+
+                /**
+                 *此接口（UploadFiles）用于文件上传。
+调用时需要设置Domain 为 file.ess.tencent.cn
+                 * @param req UploadFilesRequest
+                 * @return UploadFilesOutcome
+                 */
+                UploadFilesOutcome UploadFiles(const Model::UploadFilesRequest &request);
+                void UploadFilesAsync(const Model::UploadFilesRequest& request, const UploadFilesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UploadFilesOutcomeCallable UploadFilesCallable(const Model::UploadFilesRequest& request);
 
             };
         }

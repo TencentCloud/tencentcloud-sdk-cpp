@@ -98,14 +98,14 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取偏移量，不填默认为0
-                     * @return Offset 偏移量，不填默认为0
+                     * 获取偏移量，不填默认为0。
+                     * @return Offset 偏移量，不填默认为0。
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量，不填默认为0
-                     * @param Offset 偏移量，不填默认为0
+                     * 设置偏移量，不填默认为0。
+                     * @param Offset 偏移量，不填默认为0。
                      */
                     void SetOffset(const int64_t& _offset);
 
@@ -116,14 +116,14 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取返回数量，不填则默认10，最大值20
-                     * @return Limit 返回数量，不填则默认10，最大值20
+                     * 获取返回数量，不填则默认10，最大值20。
+                     * @return Limit 返回数量，不填则默认10，最大值20。
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置返回数量，不填则默认10，最大值20
-                     * @param Limit 返回数量，不填则默认10，最大值20
+                     * 设置返回数量，不填则默认10，最大值20。
+                     * @param Limit 返回数量，不填则默认10，最大值20。
                      */
                     void SetLimit(const int64_t& _limit);
 
@@ -152,14 +152,14 @@ namespace TencentCloud
                     bool TagKeyHasBeenSet() const;
 
                     /**
-                     * 获取过滤器
-                     * @return Filters 过滤器
+                     * 获取过滤器。filter.Name 支持('Ip', 'VpcId', 'SubNetId', 'InstanceType','InstanceId') ,filter.Values最多传递10个值.
+                     * @return Filters 过滤器。filter.Name 支持('Ip', 'VpcId', 'SubNetId', 'InstanceType','InstanceId') ,filter.Values最多传递10个值.
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置过滤器
-                     * @param Filters 过滤器
+                     * 设置过滤器。filter.Name 支持('Ip', 'VpcId', 'SubNetId', 'InstanceType','InstanceId') ,filter.Values最多传递10个值.
+                     * @param Filters 过滤器。filter.Name 支持('Ip', 'VpcId', 'SubNetId', 'InstanceType','InstanceId') ,filter.Values最多传递10个值.
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
@@ -168,6 +168,42 @@ namespace TencentCloud
                      * @return Filters 是否已赋值
                      */
                     bool FiltersHasBeenSet() const;
+
+                    /**
+                     * 获取已经废弃， 使用InstanceIdList
+                     * @return InstanceIds 已经废弃， 使用InstanceIdList
+                     */
+                    std::string GetInstanceIds() const;
+
+                    /**
+                     * 设置已经废弃， 使用InstanceIdList
+                     * @param InstanceIds 已经废弃， 使用InstanceIdList
+                     */
+                    void SetInstanceIds(const std::string& _instanceIds);
+
+                    /**
+                     * 判断参数 InstanceIds 是否已赋值
+                     * @return InstanceIds 是否已赋值
+                     */
+                    bool InstanceIdsHasBeenSet() const;
+
+                    /**
+                     * 获取按照实例ID过滤
+                     * @return InstanceIdList 按照实例ID过滤
+                     */
+                    std::vector<std::string> GetInstanceIdList() const;
+
+                    /**
+                     * 设置按照实例ID过滤
+                     * @param InstanceIdList 按照实例ID过滤
+                     */
+                    void SetInstanceIdList(const std::vector<std::string>& _instanceIdList);
+
+                    /**
+                     * 判断参数 InstanceIdList 是否已赋值
+                     * @return InstanceIdList 是否已赋值
+                     */
+                    bool InstanceIdListHasBeenSet() const;
 
                 private:
 
@@ -190,13 +226,13 @@ namespace TencentCloud
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 偏移量，不填默认为0
+                     * 偏移量，不填默认为0。
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 返回数量，不填则默认10，最大值20
+                     * 返回数量，不填则默认10，最大值20。
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
@@ -208,10 +244,22 @@ namespace TencentCloud
                     bool m_tagKeyHasBeenSet;
 
                     /**
-                     * 过滤器
+                     * 过滤器。filter.Name 支持('Ip', 'VpcId', 'SubNetId', 'InstanceType','InstanceId') ,filter.Values最多传递10个值.
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;
+
+                    /**
+                     * 已经废弃， 使用InstanceIdList
+                     */
+                    std::string m_instanceIds;
+                    bool m_instanceIdsHasBeenSet;
+
+                    /**
+                     * 按照实例ID过滤
+                     */
+                    std::vector<std::string> m_instanceIdList;
+                    bool m_instanceIdListHasBeenSet;
 
                 };
             }

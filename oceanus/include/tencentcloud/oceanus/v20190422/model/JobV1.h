@@ -684,6 +684,50 @@ namespace TencentCloud
                      */
                     bool FlinkVersionHasBeenSet() const;
 
+                    /**
+                     * 获取工作空间 SerialId
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return WorkSpaceId 工作空间 SerialId
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetWorkSpaceId() const;
+
+                    /**
+                     * 设置工作空间 SerialId
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param WorkSpaceId 工作空间 SerialId
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetWorkSpaceId(const std::string& _workSpaceId);
+
+                    /**
+                     * 判断参数 WorkSpaceId 是否已赋值
+                     * @return WorkSpaceId 是否已赋值
+                     */
+                    bool WorkSpaceIdHasBeenSet() const;
+
+                    /**
+                     * 获取工作空间名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return WorkSpaceName 工作空间名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetWorkSpaceName() const;
+
+                    /**
+                     * 设置工作空间名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param WorkSpaceName 工作空间名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetWorkSpaceName(const std::string& _workSpaceName);
+
+                    /**
+                     * 判断参数 WorkSpaceName 是否已赋值
+                     * @return WorkSpaceName 是否已赋值
+                     */
+                    bool WorkSpaceNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -888,6 +932,20 @@ namespace TencentCloud
                      */
                     std::string m_flinkVersion;
                     bool m_flinkVersionHasBeenSet;
+
+                    /**
+                     * 工作空间 SerialId
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_workSpaceId;
+                    bool m_workSpaceIdHasBeenSet;
+
+                    /**
+                     * 工作空间名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_workSpaceName;
+                    bool m_workSpaceNameHasBeenSet;
 
                 };
             }

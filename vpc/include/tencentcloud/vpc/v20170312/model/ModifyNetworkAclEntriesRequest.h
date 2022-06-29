@@ -62,14 +62,14 @@ namespace TencentCloud
                     bool NetworkAclIdHasBeenSet() const;
 
                     /**
-                     * 获取网络ACL规则集。
-                     * @return NetworkAclEntrySet 网络ACL规则集。
+                     * 获取网络ACL规则集。NetworkAclEntrySet和NetworkAclQuintupleSet只能输入一个。
+                     * @return NetworkAclEntrySet 网络ACL规则集。NetworkAclEntrySet和NetworkAclQuintupleSet只能输入一个。
                      */
                     NetworkAclEntrySet GetNetworkAclEntrySet() const;
 
                     /**
-                     * 设置网络ACL规则集。
-                     * @param NetworkAclEntrySet 网络ACL规则集。
+                     * 设置网络ACL规则集。NetworkAclEntrySet和NetworkAclQuintupleSet只能输入一个。
+                     * @param NetworkAclEntrySet 网络ACL规则集。NetworkAclEntrySet和NetworkAclQuintupleSet只能输入一个。
                      */
                     void SetNetworkAclEntrySet(const NetworkAclEntrySet& _networkAclEntrySet);
 
@@ -88,7 +88,7 @@ namespace TencentCloud
                     bool m_networkAclIdHasBeenSet;
 
                     /**
-                     * 网络ACL规则集。
+                     * 网络ACL规则集。NetworkAclEntrySet和NetworkAclQuintupleSet只能输入一个。
                      */
                     NetworkAclEntrySet m_networkAclEntrySet;
                     bool m_networkAclEntrySetHasBeenSet;

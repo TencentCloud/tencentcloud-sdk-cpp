@@ -244,6 +244,166 @@ namespace TencentCloud
                      */
                     bool RunningInstanceCountHasBeenSet() const;
 
+                    /**
+                     * 获取已使用cpu核数
+                     * @return CpuUsed 已使用cpu核数
+                     */
+                    double GetCpuUsed() const;
+
+                    /**
+                     * 设置已使用cpu核数
+                     * @param CpuUsed 已使用cpu核数
+                     */
+                    void SetCpuUsed(const double& _cpuUsed);
+
+                    /**
+                     * 判断参数 CpuUsed 是否已赋值
+                     * @return CpuUsed 是否已赋值
+                     */
+                    bool CpuUsedHasBeenSet() const;
+
+                    /**
+                     * 获取cpu核数上限
+                     * @return CpuLimit cpu核数上限
+                     */
+                    double GetCpuLimit() const;
+
+                    /**
+                     * 设置cpu核数上限
+                     * @param CpuLimit cpu核数上限
+                     */
+                    void SetCpuLimit(const double& _cpuLimit);
+
+                    /**
+                     * 判断参数 CpuLimit 是否已赋值
+                     * @return CpuLimit 是否已赋值
+                     */
+                    bool CpuLimitHasBeenSet() const;
+
+                    /**
+                     * 获取已使用内存 MB
+                     * @return MemoryUsed 已使用内存 MB
+                     */
+                    double GetMemoryUsed() const;
+
+                    /**
+                     * 设置已使用内存 MB
+                     * @param MemoryUsed 已使用内存 MB
+                     */
+                    void SetMemoryUsed(const double& _memoryUsed);
+
+                    /**
+                     * 判断参数 MemoryUsed 是否已赋值
+                     * @return MemoryUsed 是否已赋值
+                     */
+                    bool MemoryUsedHasBeenSet() const;
+
+                    /**
+                     * 获取内存上限 MB
+                     * @return MemoryLimit 内存上限 MB
+                     */
+                    double GetMemoryLimit() const;
+
+                    /**
+                     * 设置内存上限 MB
+                     * @param MemoryLimit 内存上限 MB
+                     */
+                    void SetMemoryLimit(const double& _memoryLimit);
+
+                    /**
+                     * 判断参数 MemoryLimit 是否已赋值
+                     * @return MemoryLimit 是否已赋值
+                     */
+                    bool MemoryLimitHasBeenSet() const;
+
+                    /**
+                     * 获取运行时过期时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ExpiredAt 运行时过期时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetExpiredAt() const;
+
+                    /**
+                     * 设置运行时过期时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ExpiredAt 运行时过期时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetExpiredAt(const int64_t& _expiredAt);
+
+                    /**
+                     * 判断参数 ExpiredAt 是否已赋值
+                     * @return ExpiredAt 是否已赋值
+                     */
+                    bool ExpiredAtHasBeenSet() const;
+
+                    /**
+                     * 获取收费类型：0:缺省，1:通过订单页自助下单(支持续费/升配等操作)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ChargeType 收费类型：0:缺省，1:通过订单页自助下单(支持续费/升配等操作)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetChargeType() const;
+
+                    /**
+                     * 设置收费类型：0:缺省，1:通过订单页自助下单(支持续费/升配等操作)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ChargeType 收费类型：0:缺省，1:通过订单页自助下单(支持续费/升配等操作)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetChargeType(const int64_t& _chargeType);
+
+                    /**
+                     * 判断参数 ChargeType 是否已赋值
+                     * @return ChargeType 是否已赋值
+                     */
+                    bool ChargeTypeHasBeenSet() const;
+
+                    /**
+                     * 获取资源限制类型：0:无限制，1:有限制
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ResourceLimitType 资源限制类型：0:无限制，1:有限制
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetResourceLimitType() const;
+
+                    /**
+                     * 设置资源限制类型：0:无限制，1:有限制
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ResourceLimitType 资源限制类型：0:无限制，1:有限制
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetResourceLimitType(const int64_t& _resourceLimitType);
+
+                    /**
+                     * 判断参数 ResourceLimitType 是否已赋值
+                     * @return ResourceLimitType 是否已赋值
+                     */
+                    bool ResourceLimitTypeHasBeenSet() const;
+
+                    /**
+                     * 获取是否开启自动续费
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AutoRenewal 是否开启自动续费
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetAutoRenewal() const;
+
+                    /**
+                     * 设置是否开启自动续费
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AutoRenewal 是否开启自动续费
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAutoRenewal(const bool& _autoRenewal);
+
+                    /**
+                     * 判断参数 AutoRenewal 是否已赋值
+                     * @return AutoRenewal 是否已赋值
+                     */
+                    bool AutoRenewalHasBeenSet() const;
+
                 private:
 
                     /**
@@ -311,6 +471,58 @@ namespace TencentCloud
                      */
                     int64_t m_runningInstanceCount;
                     bool m_runningInstanceCountHasBeenSet;
+
+                    /**
+                     * 已使用cpu核数
+                     */
+                    double m_cpuUsed;
+                    bool m_cpuUsedHasBeenSet;
+
+                    /**
+                     * cpu核数上限
+                     */
+                    double m_cpuLimit;
+                    bool m_cpuLimitHasBeenSet;
+
+                    /**
+                     * 已使用内存 MB
+                     */
+                    double m_memoryUsed;
+                    bool m_memoryUsedHasBeenSet;
+
+                    /**
+                     * 内存上限 MB
+                     */
+                    double m_memoryLimit;
+                    bool m_memoryLimitHasBeenSet;
+
+                    /**
+                     * 运行时过期时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_expiredAt;
+                    bool m_expiredAtHasBeenSet;
+
+                    /**
+                     * 收费类型：0:缺省，1:通过订单页自助下单(支持续费/升配等操作)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_chargeType;
+                    bool m_chargeTypeHasBeenSet;
+
+                    /**
+                     * 资源限制类型：0:无限制，1:有限制
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_resourceLimitType;
+                    bool m_resourceLimitTypeHasBeenSet;
+
+                    /**
+                     * 是否开启自动续费
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_autoRenewal;
+                    bool m_autoRenewalHasBeenSet;
 
                 };
             }

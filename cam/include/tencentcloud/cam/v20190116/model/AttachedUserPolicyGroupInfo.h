@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 用户关联策略(随组管理)信息
+                * 用户关联策略(随组关联)信息
                 */
                 class AttachedUserPolicyGroupInfo : public AbstractModel
                 {

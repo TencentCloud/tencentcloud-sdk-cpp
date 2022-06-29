@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例Vip信息列表
-                     * @return VpcIds 实例Vip信息列表
+                     * 获取vpc网络ID信息列表
+                     * @return VpcIds vpc网络ID信息列表
                      */
                     std::vector<int64_t> GetVpcIds() const;
 
                     /**
-                     * 设置实例Vip信息列表
-                     * @param VpcIds 实例Vip信息列表
+                     * 设置vpc网络ID信息列表
+                     * @param VpcIds vpc网络ID信息列表
                      */
                     void SetVpcIds(const std::vector<int64_t>& _vpcIds);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool VpcIdsHasBeenSet() const;
 
                     /**
-                     * 获取子网id信息列表
-                     * @return SubnetIds 子网id信息列表
+                     * 获取子网ID信息列表
+                     * @return SubnetIds 子网ID信息列表
                      */
                     std::vector<int64_t> GetSubnetIds() const;
 
                     /**
-                     * 设置子网id信息列表
-                     * @param SubnetIds 子网id信息列表
+                     * 设置子网ID信息列表
+                     * @param SubnetIds 子网ID信息列表
                      */
                     void SetSubnetIds(const std::vector<int64_t>& _subnetIds);
 
@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool PayModeHasBeenSet() const;
 
                     /**
-                     * 获取实例id过滤信息列表
-                     * @return InstanceIds 实例id过滤信息列表
+                     * 获取实例ID过滤信息列表
+                     * @return InstanceIds 实例ID过滤信息列表
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
-                     * 设置实例id过滤信息列表
-                     * @param InstanceIds 实例id过滤信息列表
+                     * 设置实例ID过滤信息列表
+                     * @param InstanceIds 实例ID过滤信息列表
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
 
@@ -279,13 +279,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例Vip信息列表
+                     * vpc网络ID信息列表
                      */
                     std::vector<int64_t> m_vpcIds;
                     bool m_vpcIdsHasBeenSet;
 
                     /**
-                     * 子网id信息列表
+                     * 子网ID信息列表
                      */
                     std::vector<int64_t> m_subnetIds;
                     bool m_subnetIdsHasBeenSet;
@@ -297,7 +297,7 @@ namespace TencentCloud
                     bool m_payModeHasBeenSet;
 
                     /**
-                     * 实例id过滤信息列表
+                     * 实例ID过滤信息列表
                      */
                     std::vector<std::string> m_instanceIds;
                     bool m_instanceIdsHasBeenSet;

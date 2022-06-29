@@ -452,6 +452,24 @@ namespace TencentCloud
                      */
                     bool OnlineScamHasBeenSet() const;
 
+                    /**
+                     * 获取平台: 1android
+                     * @return Platform 平台: 1android
+                     */
+                    std::string GetPlatform() const;
+
+                    /**
+                     * 设置平台: 1android
+                     * @param Platform 平台: 1android
+                     */
+                    void SetPlatform(const std::string& _platform);
+
+                    /**
+                     * 判断参数 Platform 是否已赋值
+                     * @return Platform 是否已赋值
+                     */
+                    bool PlatformHasBeenSet() const;
+
                 private:
 
                     /**
@@ -585,6 +603,12 @@ namespace TencentCloud
                      */
                     OnlineScamInfo m_onlineScam;
                     bool m_onlineScamHasBeenSet;
+
+                    /**
+                     * 平台: 1android
+                     */
+                    std::string m_platform;
+                    bool m_platformHasBeenSet;
 
                 };
             }

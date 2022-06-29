@@ -41,12 +41,6 @@
 #include <tencentcloud/nlp/v20190408/model/DescribeDictResponse.h>
 #include <tencentcloud/nlp/v20190408/model/DescribeDictsRequest.h>
 #include <tencentcloud/nlp/v20190408/model/DescribeDictsResponse.h>
-#include <tencentcloud/nlp/v20190408/model/DescribeEntityRequest.h>
-#include <tencentcloud/nlp/v20190408/model/DescribeEntityResponse.h>
-#include <tencentcloud/nlp/v20190408/model/DescribeRelationRequest.h>
-#include <tencentcloud/nlp/v20190408/model/DescribeRelationResponse.h>
-#include <tencentcloud/nlp/v20190408/model/DescribeTripleRequest.h>
-#include <tencentcloud/nlp/v20190408/model/DescribeTripleResponse.h>
 #include <tencentcloud/nlp/v20190408/model/DescribeWordItemsRequest.h>
 #include <tencentcloud/nlp/v20190408/model/DescribeWordItemsResponse.h>
 #include <tencentcloud/nlp/v20190408/model/KeywordsExtractionRequest.h>
@@ -65,8 +59,12 @@
 #include <tencentcloud/nlp/v20190408/model/TextClassificationResponse.h>
 #include <tencentcloud/nlp/v20190408/model/TextCorrectionRequest.h>
 #include <tencentcloud/nlp/v20190408/model/TextCorrectionResponse.h>
+#include <tencentcloud/nlp/v20190408/model/TextCorrectionProRequest.h>
+#include <tencentcloud/nlp/v20190408/model/TextCorrectionProResponse.h>
 #include <tencentcloud/nlp/v20190408/model/TextSimilarityRequest.h>
 #include <tencentcloud/nlp/v20190408/model/TextSimilarityResponse.h>
+#include <tencentcloud/nlp/v20190408/model/TextSimilarityProRequest.h>
+#include <tencentcloud/nlp/v20190408/model/TextSimilarityProResponse.h>
 #include <tencentcloud/nlp/v20190408/model/UpdateDictRequest.h>
 #include <tencentcloud/nlp/v20190408/model/UpdateDictResponse.h>
 #include <tencentcloud/nlp/v20190408/model/WordEmbeddingRequest.h>
@@ -114,15 +112,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDictsResponse> DescribeDictsOutcome;
                 typedef std::future<DescribeDictsOutcome> DescribeDictsOutcomeCallable;
                 typedef std::function<void(const NlpClient*, const Model::DescribeDictsRequest&, DescribeDictsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDictsAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeEntityResponse> DescribeEntityOutcome;
-                typedef std::future<DescribeEntityOutcome> DescribeEntityOutcomeCallable;
-                typedef std::function<void(const NlpClient*, const Model::DescribeEntityRequest&, DescribeEntityOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEntityAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeRelationResponse> DescribeRelationOutcome;
-                typedef std::future<DescribeRelationOutcome> DescribeRelationOutcomeCallable;
-                typedef std::function<void(const NlpClient*, const Model::DescribeRelationRequest&, DescribeRelationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRelationAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeTripleResponse> DescribeTripleOutcome;
-                typedef std::future<DescribeTripleOutcome> DescribeTripleOutcomeCallable;
-                typedef std::function<void(const NlpClient*, const Model::DescribeTripleRequest&, DescribeTripleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTripleAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeWordItemsResponse> DescribeWordItemsOutcome;
                 typedef std::future<DescribeWordItemsOutcome> DescribeWordItemsOutcomeCallable;
                 typedef std::function<void(const NlpClient*, const Model::DescribeWordItemsRequest&, DescribeWordItemsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWordItemsAsyncHandler;
@@ -150,9 +139,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::TextCorrectionResponse> TextCorrectionOutcome;
                 typedef std::future<TextCorrectionOutcome> TextCorrectionOutcomeCallable;
                 typedef std::function<void(const NlpClient*, const Model::TextCorrectionRequest&, TextCorrectionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TextCorrectionAsyncHandler;
+                typedef Outcome<Core::Error, Model::TextCorrectionProResponse> TextCorrectionProOutcome;
+                typedef std::future<TextCorrectionProOutcome> TextCorrectionProOutcomeCallable;
+                typedef std::function<void(const NlpClient*, const Model::TextCorrectionProRequest&, TextCorrectionProOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TextCorrectionProAsyncHandler;
                 typedef Outcome<Core::Error, Model::TextSimilarityResponse> TextSimilarityOutcome;
                 typedef std::future<TextSimilarityOutcome> TextSimilarityOutcomeCallable;
                 typedef std::function<void(const NlpClient*, const Model::TextSimilarityRequest&, TextSimilarityOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TextSimilarityAsyncHandler;
+                typedef Outcome<Core::Error, Model::TextSimilarityProResponse> TextSimilarityProOutcome;
+                typedef std::future<TextSimilarityProOutcome> TextSimilarityProOutcomeCallable;
+                typedef std::function<void(const NlpClient*, const Model::TextSimilarityProRequest&, TextSimilarityProOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TextSimilarityProAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpdateDictResponse> UpdateDictOutcome;
                 typedef std::future<UpdateDictOutcome> UpdateDictOutcomeCallable;
                 typedef std::function<void(const NlpClient*, const Model::UpdateDictRequest&, UpdateDictOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateDictAsyncHandler;
@@ -249,33 +244,6 @@ namespace TencentCloud
                 DescribeDictsOutcomeCallable DescribeDictsCallable(const Model::DescribeDictsRequest& request);
 
                 /**
-                 *此接口正在维护升级，后续上线另行通知。
-                 * @param req DescribeEntityRequest
-                 * @return DescribeEntityOutcome
-                 */
-                DescribeEntityOutcome DescribeEntity(const Model::DescribeEntityRequest &request);
-                void DescribeEntityAsync(const Model::DescribeEntityRequest& request, const DescribeEntityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeEntityOutcomeCallable DescribeEntityCallable(const Model::DescribeEntityRequest& request);
-
-                /**
-                 *此接口正在维护升级，后续上线另行通知。
-                 * @param req DescribeRelationRequest
-                 * @return DescribeRelationOutcome
-                 */
-                DescribeRelationOutcome DescribeRelation(const Model::DescribeRelationRequest &request);
-                void DescribeRelationAsync(const Model::DescribeRelationRequest& request, const DescribeRelationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeRelationOutcomeCallable DescribeRelationCallable(const Model::DescribeRelationRequest& request);
-
-                /**
-                 *此接口正在维护升级，后续上线另行通知。
-                 * @param req DescribeTripleRequest
-                 * @return DescribeTripleOutcome
-                 */
-                DescribeTripleOutcome DescribeTriple(const Model::DescribeTripleRequest &request);
-                void DescribeTripleAsync(const Model::DescribeTripleRequest& request, const DescribeTripleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeTripleOutcomeCallable DescribeTripleCallable(const Model::DescribeTripleRequest& request);
-
-                /**
                  *依据自定义词库的ID，查询对应的词条信息。
                  * @param req DescribeWordItemsRequest
                  * @return DescribeWordItemsOutcome
@@ -358,9 +326,6 @@ namespace TencentCloud
 目前已提供：
 
 - 通用领域分类体系，二级分类，包括14个分类类目，分别是汽车、科技、健康、体育、旅行、教育、职业、文化、房产、娱乐、女性、奥运、财经以及其他，适用于通用的场景。
-
-- 新闻领域分类体系，五级分类，包括35个一级分类类目，228个二级分类，493个三级分类，204个四级分类，40个五级分类（详细请见附录->文本分类映射表），已应用于腾讯新闻的文章分类。
-
                  * @param req TextClassificationRequest
                  * @return TextClassificationOutcome
                  */
@@ -380,6 +345,17 @@ namespace TencentCloud
                 TextCorrectionOutcomeCallable TextCorrectionCallable(const Model::TextCorrectionRequest& request);
 
                 /**
+                 *提供对中文文本的自动纠错功能，能够识别输入文本中的错误片段，定位错误并给出正确的文本结果；支持长度不超过128字符（含标点符号）的长文本纠错。
+
+此功能是基于千亿级大规模互联网语料和LSTM、BERT等深度神经网络模型进行训练，并持续迭代更新，以保证效果不断提升，是搜索引擎、语音识别、内容审核等功能更好运行的基础之一。
+                 * @param req TextCorrectionProRequest
+                 * @return TextCorrectionProOutcome
+                 */
+                TextCorrectionProOutcome TextCorrectionPro(const Model::TextCorrectionProRequest &request);
+                void TextCorrectionProAsync(const Model::TextCorrectionProRequest& request, const TextCorrectionProAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                TextCorrectionProOutcomeCallable TextCorrectionProCallable(const Model::TextCorrectionProRequest& request);
+
+                /**
                  *句子相似度接口能够基于深度学习技术来计算一个源句子和多个目标句子的相似度，相似度分值越大的两个句子在语义上越相似。目前仅支持短文本（不超过500字符）的相似度计算，长文本的相似度计算也即将推出。
 
 鉴于句子相似度是一个应用非常广泛的功能，腾讯云自然语言处理团队在Bert等领先的深度神经网络模型的基础上，专门针对文本相似任务进行了优化，并持续迭代更新。基于句子相似度，可以轻松实现诸如文本去重、相似推荐等功能。
@@ -391,6 +367,19 @@ namespace TencentCloud
                 TextSimilarityOutcome TextSimilarity(const Model::TextSimilarityRequest &request);
                 void TextSimilarityAsync(const Model::TextSimilarityRequest& request, const TextSimilarityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 TextSimilarityOutcomeCallable TextSimilarityCallable(const Model::TextSimilarityRequest& request);
+
+                /**
+                 *句子相似度接口能够基于深度学习技术来计算一个源句子和多个目标句子的相似度，相似度分值越大的两个句子在语义上越相似。目前仅支持短文本（不超过128字符）的相似度计算，长文本的相似度计算也即将推出。
+
+鉴于句子相似度是一个应用非常广泛的功能，腾讯云自然语言处理团队在Bert等领先的深度神经网络模型的基础上，专门针对文本相似任务进行了优化，并持续迭代更新。基于句子相似度，可以轻松实现诸如文本去重、相似推荐等功能。
+
+接口将以句子数量为单位消耗资源包，而不是调用接口次数为单位。
+                 * @param req TextSimilarityProRequest
+                 * @return TextSimilarityProOutcome
+                 */
+                TextSimilarityProOutcome TextSimilarityPro(const Model::TextSimilarityProRequest &request);
+                void TextSimilarityProAsync(const Model::TextSimilarityProRequest& request, const TextSimilarityProAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                TextSimilarityProOutcomeCallable TextSimilarityProCallable(const Model::TextSimilarityProRequest& request);
 
                 /**
                  *修改自定义词库元数据信息，包括名称、描述。

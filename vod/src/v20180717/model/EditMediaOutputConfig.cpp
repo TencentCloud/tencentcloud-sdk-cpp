@@ -24,7 +24,9 @@ EditMediaOutputConfig::EditMediaOutputConfig() :
     m_mediaNameHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_classIdHasBeenSet(false),
-    m_expireTimeHasBeenSet(false)
+    m_expireTimeHasBeenSet(false),
+    m_videoStreamHasBeenSet(false),
+    m_tEHDConfigHasBeenSet(false)
 {
 }
 
@@ -73,6 +75,40 @@ CoreInternalOutcome EditMediaOutputConfig::Deserialize(const rapidjson::Value &v
         m_expireTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("VideoStream") && !value["VideoStream"].IsNull())
+    {
+        if (!value["VideoStream"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `EditMediaOutputConfig.VideoStream` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_videoStream.Deserialize(value["VideoStream"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_videoStreamHasBeenSet = true;
+    }
+
+    if (value.HasMember("TEHDConfig") && !value["TEHDConfig"].IsNull())
+    {
+        if (!value["TEHDConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `EditMediaOutputConfig.TEHDConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_tEHDConfig.Deserialize(value["TEHDConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_tEHDConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +146,24 @@ void EditMediaOutputConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "ExpireTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_expireTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_videoStreamHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VideoStream";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_videoStream.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_tEHDConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TEHDConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_tEHDConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -177,5 +231,37 @@ void EditMediaOutputConfig::SetExpireTime(const string& _expireTime)
 bool EditMediaOutputConfig::ExpireTimeHasBeenSet() const
 {
     return m_expireTimeHasBeenSet;
+}
+
+EditMediaVideoStream EditMediaOutputConfig::GetVideoStream() const
+{
+    return m_videoStream;
+}
+
+void EditMediaOutputConfig::SetVideoStream(const EditMediaVideoStream& _videoStream)
+{
+    m_videoStream = _videoStream;
+    m_videoStreamHasBeenSet = true;
+}
+
+bool EditMediaOutputConfig::VideoStreamHasBeenSet() const
+{
+    return m_videoStreamHasBeenSet;
+}
+
+EditMediaTEHDConfig EditMediaOutputConfig::GetTEHDConfig() const
+{
+    return m_tEHDConfig;
+}
+
+void EditMediaOutputConfig::SetTEHDConfig(const EditMediaTEHDConfig& _tEHDConfig)
+{
+    m_tEHDConfig = _tEHDConfig;
+    m_tEHDConfigHasBeenSet = true;
+}
+
+bool EditMediaOutputConfig::TEHDConfigHasBeenSet() const
+{
+    return m_tEHDConfigHasBeenSet;
 }
 

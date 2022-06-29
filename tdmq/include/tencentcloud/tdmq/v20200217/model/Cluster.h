@@ -178,14 +178,14 @@ namespace TencentCloud
                     bool HealthyInfoHasBeenSet() const;
 
                     /**
-                     * 获取集群状态，0:创建中，1:正常，2:删除中，3:已删除，5:创建失败，6: 删除失败
-                     * @return Status 集群状态，0:创建中，1:正常，2:删除中，3:已删除，5:创建失败，6: 删除失败
+                     * 获取集群状态，0:创建中，1:正常，2:销毁中，3:已删除，4: 隔离中，5:创建失败，6: 删除失败
+                     * @return Status 集群状态，0:创建中，1:正常，2:销毁中，3:已删除，4: 隔离中，5:创建失败，6: 删除失败
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置集群状态，0:创建中，1:正常，2:删除中，3:已删除，5:创建失败，6: 删除失败
-                     * @param Status 集群状态，0:创建中，1:正常，2:删除中，3:已删除，5:创建失败，6: 删除失败
+                     * 设置集群状态，0:创建中，1:正常，2:销毁中，3:已删除，4: 隔离中，5:创建失败，6: 删除失败
+                     * @param Status 集群状态，0:创建中，1:正常，2:销毁中，3:已删除，4: 隔离中，5:创建失败，6: 删除失败
                      */
                     void SetStatus(const int64_t& _status);
 
@@ -571,6 +571,36 @@ namespace TencentCloud
                      */
                     bool TagsHasBeenSet() const;
 
+                    /**
+                     * 获取计费模式：
+0: 按量计费
+1: 包年包月
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PayMode 计费模式：
+0: 按量计费
+1: 包年包月
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetPayMode() const;
+
+                    /**
+                     * 设置计费模式：
+0: 按量计费
+1: 包年包月
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param PayMode 计费模式：
+0: 按量计费
+1: 包年包月
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPayMode(const int64_t& _payMode);
+
+                    /**
+                     * 判断参数 PayMode 是否已赋值
+                     * @return PayMode 是否已赋值
+                     */
+                    bool PayModeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -617,7 +647,7 @@ namespace TencentCloud
                     bool m_healthyInfoHasBeenSet;
 
                     /**
-                     * 集群状态，0:创建中，1:正常，2:删除中，3:已删除，5:创建失败，6: 删除失败
+                     * 集群状态，0:创建中，1:正常，2:销毁中，3:已删除，4: 隔离中，5:创建失败，6: 删除失败
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
@@ -742,6 +772,15 @@ namespace TencentCloud
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
+
+                    /**
+                     * 计费模式：
+0: 按量计费
+1: 包年包月
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_payMode;
+                    bool m_payModeHasBeenSet;
 
                 };
             }

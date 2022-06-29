@@ -222,6 +222,24 @@ namespace TencentCloud
                      */
                     bool RenewHasBeenSet() const;
 
+                    /**
+                     * 获取筛选来源， upload：上传证书， buy：腾讯云证书， 不传默认全部
+                     * @return FilterSource 筛选来源， upload：上传证书， buy：腾讯云证书， 不传默认全部
+                     */
+                    std::string GetFilterSource() const;
+
+                    /**
+                     * 设置筛选来源， upload：上传证书， buy：腾讯云证书， 不传默认全部
+                     * @param FilterSource 筛选来源， upload：上传证书， buy：腾讯云证书， 不传默认全部
+                     */
+                    void SetFilterSource(const std::string& _filterSource);
+
+                    /**
+                     * 判断参数 FilterSource 是否已赋值
+                     * @return FilterSource 是否已赋值
+                     */
+                    bool FilterSourceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -283,6 +301,12 @@ namespace TencentCloud
                      */
                     int64_t m_renew;
                     bool m_renewHasBeenSet;
+
+                    /**
+                     * 筛选来源， upload：上传证书， buy：腾讯云证书， 不传默认全部
+                     */
+                    std::string m_filterSource;
+                    bool m_filterSourceHasBeenSet;
 
                 };
             }

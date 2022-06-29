@@ -128,14 +128,14 @@ namespace TencentCloud
                     bool TaskTypeHasBeenSet() const;
 
                     /**
-                     * 获取邮件的“回复”电子邮件地址。可以填写您能收到邮件的邮箱地址，可以是个人邮箱。如果不填，收件人将会回复到腾讯云。
-                     * @return ReplyToAddresses 邮件的“回复”电子邮件地址。可以填写您能收到邮件的邮箱地址，可以是个人邮箱。如果不填，收件人将会回复到腾讯云。
+                     * 获取邮件的“回复”电子邮件地址。可以填写您能收到邮件的邮箱地址，可以是个人邮箱。如果不填，收件人的回复邮件将会发送失败。
+                     * @return ReplyToAddresses 邮件的“回复”电子邮件地址。可以填写您能收到邮件的邮箱地址，可以是个人邮箱。如果不填，收件人的回复邮件将会发送失败。
                      */
                     std::string GetReplyToAddresses() const;
 
                     /**
-                     * 设置邮件的“回复”电子邮件地址。可以填写您能收到邮件的邮箱地址，可以是个人邮箱。如果不填，收件人将会回复到腾讯云。
-                     * @param ReplyToAddresses 邮件的“回复”电子邮件地址。可以填写您能收到邮件的邮箱地址，可以是个人邮箱。如果不填，收件人将会回复到腾讯云。
+                     * 设置邮件的“回复”电子邮件地址。可以填写您能收到邮件的邮箱地址，可以是个人邮箱。如果不填，收件人的回复邮件将会发送失败。
+                     * @param ReplyToAddresses 邮件的“回复”电子邮件地址。可以填写您能收到邮件的邮箱地址，可以是个人邮箱。如果不填，收件人的回复邮件将会发送失败。
                      */
                     void SetReplyToAddresses(const std::string& _replyToAddresses);
 
@@ -164,14 +164,14 @@ namespace TencentCloud
                     bool TemplateHasBeenSet() const;
 
                     /**
-                     * 获取使用API直接发送内容时，填写的邮件内容
-                     * @return Simple 使用API直接发送内容时，填写的邮件内容
+                     * 获取已废弃
+                     * @return Simple 已废弃
                      */
                     Simple GetSimple() const;
 
                     /**
-                     * 设置使用API直接发送内容时，填写的邮件内容
-                     * @param Simple 使用API直接发送内容时，填写的邮件内容
+                     * 设置已废弃
+                     * @param Simple 已废弃
                      */
                     void SetSimple(const Simple& _simple);
 
@@ -182,14 +182,14 @@ namespace TencentCloud
                     bool SimpleHasBeenSet() const;
 
                     /**
-                     * 获取需要发送附件时，填写附件相关参数。
-                     * @return Attachments 需要发送附件时，填写附件相关参数。
+                     * 获取需要发送附件时，填写附件相关参数（暂未支持）
+                     * @return Attachments 需要发送附件时，填写附件相关参数（暂未支持）
                      */
                     std::vector<Attachment> GetAttachments() const;
 
                     /**
-                     * 设置需要发送附件时，填写附件相关参数。
-                     * @param Attachments 需要发送附件时，填写附件相关参数。
+                     * 设置需要发送附件时，填写附件相关参数（暂未支持）
+                     * @param Attachments 需要发送附件时，填写附件相关参数（暂未支持）
                      */
                     void SetAttachments(const std::vector<Attachment>& _attachments);
 
@@ -235,6 +235,42 @@ namespace TencentCloud
                      */
                     bool TimedParamHasBeenSet() const;
 
+                    /**
+                     * 获取退订选项 1: 加入退订链接 0: 不加入退订链接
+                     * @return Unsubscribe 退订选项 1: 加入退订链接 0: 不加入退订链接
+                     */
+                    std::string GetUnsubscribe() const;
+
+                    /**
+                     * 设置退订选项 1: 加入退订链接 0: 不加入退订链接
+                     * @param Unsubscribe 退订选项 1: 加入退订链接 0: 不加入退订链接
+                     */
+                    void SetUnsubscribe(const std::string& _unsubscribe);
+
+                    /**
+                     * 判断参数 Unsubscribe 是否已赋值
+                     * @return Unsubscribe 是否已赋值
+                     */
+                    bool UnsubscribeHasBeenSet() const;
+
+                    /**
+                     * 获取是否添加广告标识 0:不添加 1:添加到subject前面，2:添加到subject后面
+                     * @return ADLocation 是否添加广告标识 0:不添加 1:添加到subject前面，2:添加到subject后面
+                     */
+                    uint64_t GetADLocation() const;
+
+                    /**
+                     * 设置是否添加广告标识 0:不添加 1:添加到subject前面，2:添加到subject后面
+                     * @param ADLocation 是否添加广告标识 0:不添加 1:添加到subject前面，2:添加到subject后面
+                     */
+                    void SetADLocation(const uint64_t& _aDLocation);
+
+                    /**
+                     * 判断参数 ADLocation 是否已赋值
+                     * @return ADLocation 是否已赋值
+                     */
+                    bool ADLocationHasBeenSet() const;
+
                 private:
 
                     /**
@@ -264,7 +300,7 @@ namespace TencentCloud
                     bool m_taskTypeHasBeenSet;
 
                     /**
-                     * 邮件的“回复”电子邮件地址。可以填写您能收到邮件的邮箱地址，可以是个人邮箱。如果不填，收件人将会回复到腾讯云。
+                     * 邮件的“回复”电子邮件地址。可以填写您能收到邮件的邮箱地址，可以是个人邮箱。如果不填，收件人的回复邮件将会发送失败。
                      */
                     std::string m_replyToAddresses;
                     bool m_replyToAddressesHasBeenSet;
@@ -276,13 +312,13 @@ namespace TencentCloud
                     bool m_templateHasBeenSet;
 
                     /**
-                     * 使用API直接发送内容时，填写的邮件内容
+                     * 已废弃
                      */
                     Simple m_simple;
                     bool m_simpleHasBeenSet;
 
                     /**
-                     * 需要发送附件时，填写附件相关参数。
+                     * 需要发送附件时，填写附件相关参数（暂未支持）
                      */
                     std::vector<Attachment> m_attachments;
                     bool m_attachmentsHasBeenSet;
@@ -298,6 +334,18 @@ namespace TencentCloud
                      */
                     TimedEmailParam m_timedParam;
                     bool m_timedParamHasBeenSet;
+
+                    /**
+                     * 退订选项 1: 加入退订链接 0: 不加入退订链接
+                     */
+                    std::string m_unsubscribe;
+                    bool m_unsubscribeHasBeenSet;
+
+                    /**
+                     * 是否添加广告标识 0:不添加 1:添加到subject前面，2:添加到subject后面
+                     */
+                    uint64_t m_aDLocation;
+                    bool m_aDLocationHasBeenSet;
 
                 };
             }

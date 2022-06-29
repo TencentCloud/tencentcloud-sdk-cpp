@@ -26,7 +26,8 @@ DescribeAMQPVHostsRequest::DescribeAMQPVHostsRequest() :
     m_clusterIdHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_nameKeywordHasBeenSet(false)
+    m_nameKeywordHasBeenSet(false),
+    m_vHostIdListHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,19 @@ string DescribeAMQPVHostsRequest::ToJsonString() const
         string key = "NameKeyword";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_nameKeyword.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_vHostIdListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VHostIdList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_vHostIdList.begin(); itr != m_vHostIdList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -139,6 +153,22 @@ void DescribeAMQPVHostsRequest::SetNameKeyword(const string& _nameKeyword)
 bool DescribeAMQPVHostsRequest::NameKeywordHasBeenSet() const
 {
     return m_nameKeywordHasBeenSet;
+}
+
+vector<string> DescribeAMQPVHostsRequest::GetVHostIdList() const
+{
+    return m_vHostIdList;
+}
+
+void DescribeAMQPVHostsRequest::SetVHostIdList(const vector<string>& _vHostIdList)
+{
+    m_vHostIdList = _vHostIdList;
+    m_vHostIdListHasBeenSet = true;
+}
+
+bool DescribeAMQPVHostsRequest::VHostIdListHasBeenSet() const
+{
+    return m_vHostIdListHasBeenSet;
 }
 
 

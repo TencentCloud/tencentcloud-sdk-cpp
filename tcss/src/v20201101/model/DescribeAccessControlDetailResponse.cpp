@@ -27,7 +27,9 @@ DescribeAccessControlDetailResponse::DescribeAccessControlDetailResponse() :
     m_eventBaseInfoHasBeenSet(false),
     m_processInfoHasBeenSet(false),
     m_tamperedFileInfoHasBeenSet(false),
-    m_eventDetailHasBeenSet(false)
+    m_eventDetailHasBeenSet(false),
+    m_parentProcessInfoHasBeenSet(false),
+    m_ancestorProcessInfoHasBeenSet(false)
 {
 }
 
@@ -133,6 +135,40 @@ CoreInternalOutcome DescribeAccessControlDetailResponse::Deserialize(const strin
         m_eventDetailHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ParentProcessInfo") && !rsp["ParentProcessInfo"].IsNull())
+    {
+        if (!rsp["ParentProcessInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ParentProcessInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_parentProcessInfo.Deserialize(rsp["ParentProcessInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_parentProcessInfoHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("AncestorProcessInfo") && !rsp["AncestorProcessInfo"].IsNull())
+    {
+        if (!rsp["AncestorProcessInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AncestorProcessInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_ancestorProcessInfo.Deserialize(rsp["AncestorProcessInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_ancestorProcessInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -177,6 +213,24 @@ string DescribeAccessControlDetailResponse::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_eventDetail.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_parentProcessInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ParentProcessInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_parentProcessInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_ancestorProcessInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AncestorProcessInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_ancestorProcessInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -229,6 +283,26 @@ AccessControlEventDescription DescribeAccessControlDetailResponse::GetEventDetai
 bool DescribeAccessControlDetailResponse::EventDetailHasBeenSet() const
 {
     return m_eventDetailHasBeenSet;
+}
+
+ProcessBaseInfo DescribeAccessControlDetailResponse::GetParentProcessInfo() const
+{
+    return m_parentProcessInfo;
+}
+
+bool DescribeAccessControlDetailResponse::ParentProcessInfoHasBeenSet() const
+{
+    return m_parentProcessInfoHasBeenSet;
+}
+
+ProcessBaseInfo DescribeAccessControlDetailResponse::GetAncestorProcessInfo() const
+{
+    return m_ancestorProcessInfo;
+}
+
+bool DescribeAccessControlDetailResponse::AncestorProcessInfoHasBeenSet() const
+{
+    return m_ancestorProcessInfoHasBeenSet;
 }
 
 

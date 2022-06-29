@@ -40,7 +40,9 @@ StartWhiteboardPushRequest::StartWhiteboardPushRequest() :
     m_userDefinedStreamIdHasBeenSet(false),
     m_extraDataHasBeenSet(false),
     m_tRTCRoomIdHasBeenSet(false),
-    m_tRTCRoomIdStrHasBeenSet(false)
+    m_tRTCRoomIdStrHasBeenSet(false),
+    m_iMAuthParamHasBeenSet(false),
+    m_tRTCAuthParamHasBeenSet(false)
 {
 }
 
@@ -195,6 +197,24 @@ string StartWhiteboardPushRequest::ToJsonString() const
         string key = "TRTCRoomIdStr";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_tRTCRoomIdStr.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_iMAuthParamHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IMAuthParam";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_iMAuthParam.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_tRTCAuthParamHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TRTCAuthParam";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_tRTCAuthParam.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -491,6 +511,38 @@ void StartWhiteboardPushRequest::SetTRTCRoomIdStr(const string& _tRTCRoomIdStr)
 bool StartWhiteboardPushRequest::TRTCRoomIdStrHasBeenSet() const
 {
     return m_tRTCRoomIdStrHasBeenSet;
+}
+
+AuthParam StartWhiteboardPushRequest::GetIMAuthParam() const
+{
+    return m_iMAuthParam;
+}
+
+void StartWhiteboardPushRequest::SetIMAuthParam(const AuthParam& _iMAuthParam)
+{
+    m_iMAuthParam = _iMAuthParam;
+    m_iMAuthParamHasBeenSet = true;
+}
+
+bool StartWhiteboardPushRequest::IMAuthParamHasBeenSet() const
+{
+    return m_iMAuthParamHasBeenSet;
+}
+
+AuthParam StartWhiteboardPushRequest::GetTRTCAuthParam() const
+{
+    return m_tRTCAuthParam;
+}
+
+void StartWhiteboardPushRequest::SetTRTCAuthParam(const AuthParam& _tRTCAuthParam)
+{
+    m_tRTCAuthParam = _tRTCAuthParam;
+    m_tRTCAuthParamHasBeenSet = true;
+}
+
+bool StartWhiteboardPushRequest::TRTCAuthParamHasBeenSet() const
+{
+    return m_tRTCAuthParamHasBeenSet;
 }
 
 

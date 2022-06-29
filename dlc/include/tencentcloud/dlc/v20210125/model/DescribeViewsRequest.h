@@ -160,14 +160,14 @@ view-id - String - （过滤条件）view id形如：12342。
                     bool SortHasBeenSet() const;
 
                     /**
-                     * 获取排序规则
-                     * @return Asc 排序规则
+                     * 获取排序规则，true:升序；false:降序
+                     * @return Asc 排序规则，true:升序；false:降序
                      */
                     bool GetAsc() const;
 
                     /**
-                     * 设置排序规则
-                     * @param Asc 排序规则
+                     * 设置排序规则，true:升序；false:降序
+                     * @param Asc 排序规则，true:升序；false:降序
                      */
                     void SetAsc(const bool& _asc);
 
@@ -178,14 +178,14 @@ view-id - String - （过滤条件）view id形如：12342。
                     bool AscHasBeenSet() const;
 
                     /**
-                     * 获取开始时间
-                     * @return StartTime 开始时间
+                     * 获取按视图更新时间筛选，开始时间，如2021-11-11 00:00:00
+                     * @return StartTime 按视图更新时间筛选，开始时间，如2021-11-11 00:00:00
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置开始时间
-                     * @param StartTime 开始时间
+                     * 设置按视图更新时间筛选，开始时间，如2021-11-11 00:00:00
+                     * @param StartTime 按视图更新时间筛选，开始时间，如2021-11-11 00:00:00
                      */
                     void SetStartTime(const std::string& _startTime);
 
@@ -196,14 +196,14 @@ view-id - String - （过滤条件）view id形如：12342。
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取结束时间
-                     * @return EndTime 结束时间
+                     * 获取按视图更新时间筛选，结束时间，如2021-11-12 00:00:00
+                     * @return EndTime 按视图更新时间筛选，结束时间，如2021-11-12 00:00:00
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置结束时间
-                     * @param EndTime 结束时间
+                     * 设置按视图更新时间筛选，结束时间，如2021-11-12 00:00:00
+                     * @param EndTime 按视图更新时间筛选，结束时间，如2021-11-12 00:00:00
                      */
                     void SetEndTime(const std::string& _endTime);
 
@@ -254,19 +254,19 @@ view-id - String - （过滤条件）view id形如：12342。
                     bool m_sortHasBeenSet;
 
                     /**
-                     * 排序规则
+                     * 排序规则，true:升序；false:降序
                      */
                     bool m_asc;
                     bool m_ascHasBeenSet;
 
                     /**
-                     * 开始时间
+                     * 按视图更新时间筛选，开始时间，如2021-11-11 00:00:00
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 结束时间
+                     * 按视图更新时间筛选，结束时间，如2021-11-12 00:00:00
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;

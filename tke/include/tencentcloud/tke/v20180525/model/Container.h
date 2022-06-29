@@ -28,6 +28,7 @@
 #include <tencentcloud/tke/v20180525/model/VolumeMount.h>
 #include <tencentcloud/tke/v20180525/model/ContainerState.h>
 #include <tencentcloud/tke/v20180525/model/LivenessOrReadinessProbe.h>
+#include <tencentcloud/tke/v20180525/model/SecurityContext.h>
 
 
 namespace TencentCloud
@@ -330,6 +331,28 @@ namespace TencentCloud
                      */
                     bool GpuLimitHasBeenSet() const;
 
+                    /**
+                     * 获取容器的安全上下文
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SecurityContext 容器的安全上下文
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    SecurityContext GetSecurityContext() const;
+
+                    /**
+                     * 设置容器的安全上下文
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SecurityContext 容器的安全上下文
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSecurityContext(const SecurityContext& _securityContext);
+
+                    /**
+                     * 判断参数 SecurityContext 是否已赋值
+                     * @return SecurityContext 是否已赋值
+                     */
+                    bool SecurityContextHasBeenSet() const;
+
                 private:
 
                     /**
@@ -422,6 +445,13 @@ namespace TencentCloud
                      */
                     uint64_t m_gpuLimit;
                     bool m_gpuLimitHasBeenSet;
+
+                    /**
+                     * 容器的安全上下文
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    SecurityContext m_securityContext;
+                    bool m_securityContextHasBeenSet;
 
                 };
             }

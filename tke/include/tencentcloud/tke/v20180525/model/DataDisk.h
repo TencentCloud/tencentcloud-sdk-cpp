@@ -157,17 +157,17 @@ namespace TencentCloud
                     bool MountTargetHasBeenSet() const;
 
                     /**
-                     * 获取挂载设备名或分区名
+                     * 获取挂载设备名或分区名，当且仅当添加已有节点时需要
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DiskPartition 挂载设备名或分区名
+                     * @return DiskPartition 挂载设备名或分区名，当且仅当添加已有节点时需要
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetDiskPartition() const;
 
                     /**
-                     * 设置挂载设备名或分区名
+                     * 设置挂载设备名或分区名，当且仅当添加已有节点时需要
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DiskPartition 挂载设备名或分区名
+                     * @param DiskPartition 挂载设备名或分区名，当且仅当添加已有节点时需要
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetDiskPartition(const std::string& _diskPartition);
@@ -216,7 +216,7 @@ namespace TencentCloud
                     bool m_mountTargetHasBeenSet;
 
                     /**
-                     * 挂载设备名或分区名
+                     * 挂载设备名或分区名，当且仅当添加已有节点时需要
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_diskPartition;

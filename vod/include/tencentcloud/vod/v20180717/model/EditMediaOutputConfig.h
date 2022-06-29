@@ -24,6 +24,8 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/vod/v20180717/model/EditMediaVideoStream.h>
+#include <tencentcloud/vod/v20180717/model/EditMediaTEHDConfig.h>
 
 
 namespace TencentCloud
@@ -122,6 +124,42 @@ namespace TencentCloud
                      */
                     bool ExpireTimeHasBeenSet() const;
 
+                    /**
+                     * 获取输出的视频信息。
+                     * @return VideoStream 输出的视频信息。
+                     */
+                    EditMediaVideoStream GetVideoStream() const;
+
+                    /**
+                     * 设置输出的视频信息。
+                     * @param VideoStream 输出的视频信息。
+                     */
+                    void SetVideoStream(const EditMediaVideoStream& _videoStream);
+
+                    /**
+                     * 判断参数 VideoStream 是否已赋值
+                     * @return VideoStream 是否已赋值
+                     */
+                    bool VideoStreamHasBeenSet() const;
+
+                    /**
+                     * 获取极速高清转码参数。
+                     * @return TEHDConfig 极速高清转码参数。
+                     */
+                    EditMediaTEHDConfig GetTEHDConfig() const;
+
+                    /**
+                     * 设置极速高清转码参数。
+                     * @param TEHDConfig 极速高清转码参数。
+                     */
+                    void SetTEHDConfig(const EditMediaTEHDConfig& _tEHDConfig);
+
+                    /**
+                     * 判断参数 TEHDConfig 是否已赋值
+                     * @return TEHDConfig 是否已赋值
+                     */
+                    bool TEHDConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -148,6 +186,18 @@ namespace TencentCloud
                      */
                     std::string m_expireTime;
                     bool m_expireTimeHasBeenSet;
+
+                    /**
+                     * 输出的视频信息。
+                     */
+                    EditMediaVideoStream m_videoStream;
+                    bool m_videoStreamHasBeenSet;
+
+                    /**
+                     * 极速高清转码参数。
+                     */
+                    EditMediaTEHDConfig m_tEHDConfig;
+                    bool m_tEHDConfigHasBeenSet;
 
                 };
             }

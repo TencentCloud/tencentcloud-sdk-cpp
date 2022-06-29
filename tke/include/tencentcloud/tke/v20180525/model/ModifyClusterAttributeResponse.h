@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tke/v20180525/model/AutoUpgradeClusterLevel.h>
 
 
 namespace TencentCloud
@@ -85,6 +86,34 @@ namespace TencentCloud
                      */
                     bool ClusterDescHasBeenSet() const;
 
+                    /**
+                     * 获取集群等级
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ClusterLevel 集群等级
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetClusterLevel() const;
+
+                    /**
+                     * 判断参数 ClusterLevel 是否已赋值
+                     * @return ClusterLevel 是否已赋值
+                     */
+                    bool ClusterLevelHasBeenSet() const;
+
+                    /**
+                     * 获取自动变配集群等级
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AutoUpgradeClusterLevel 自动变配集群等级
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    AutoUpgradeClusterLevel GetAutoUpgradeClusterLevel() const;
+
+                    /**
+                     * 判断参数 AutoUpgradeClusterLevel 是否已赋值
+                     * @return AutoUpgradeClusterLevel 是否已赋值
+                     */
+                    bool AutoUpgradeClusterLevelHasBeenSet() const;
+
                 private:
 
                     /**
@@ -107,6 +136,20 @@ namespace TencentCloud
                      */
                     std::string m_clusterDesc;
                     bool m_clusterDescHasBeenSet;
+
+                    /**
+                     * 集群等级
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_clusterLevel;
+                    bool m_clusterLevelHasBeenSet;
+
+                    /**
+                     * 自动变配集群等级
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    AutoUpgradeClusterLevel m_autoUpgradeClusterLevel;
+                    bool m_autoUpgradeClusterLevelHasBeenSet;
 
                 };
             }

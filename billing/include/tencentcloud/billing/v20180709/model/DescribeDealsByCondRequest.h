@@ -216,6 +216,24 @@ namespace TencentCloud
                      */
                     bool BigDealIdHasBeenSet() const;
 
+                    /**
+                     * 获取资源id
+                     * @return ResourceId 资源id
+                     */
+                    std::string GetResourceId() const;
+
+                    /**
+                     * 设置资源id
+                     * @param ResourceId 资源id
+                     */
+                    void SetResourceId(const std::string& _resourceId);
+
+                    /**
+                     * 判断参数 ResourceId 是否已赋值
+                     * @return ResourceId 是否已赋值
+                     */
+                    bool ResourceIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -271,6 +289,12 @@ namespace TencentCloud
                      */
                     std::string m_bigDealId;
                     bool m_bigDealIdHasBeenSet;
+
+                    /**
+                     * 资源id
+                     */
+                    std::string m_resourceId;
+                    bool m_resourceIdHasBeenSet;
 
                 };
             }

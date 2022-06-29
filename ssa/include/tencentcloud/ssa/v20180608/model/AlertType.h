@@ -48,17 +48,17 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取时间戳
+                     * 获取标准时间格式
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AlertTime 时间戳
+                     * @return AlertTime 标准时间格式
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetAlertTime() const;
 
                     /**
-                     * 设置时间戳
+                     * 设置标准时间格式
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AlertTime 时间戳
+                     * @param AlertTime 标准时间格式
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetAlertTime(const std::string& _alertTime);
@@ -600,7 +600,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 时间戳
+                     * 标准时间格式
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_alertTime;

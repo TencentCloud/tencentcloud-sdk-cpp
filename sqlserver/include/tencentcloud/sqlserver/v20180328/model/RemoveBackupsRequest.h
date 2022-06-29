@@ -78,6 +78,42 @@ namespace TencentCloud
                      */
                     bool BackupNamesHasBeenSet() const;
 
+                    /**
+                     * 获取批量删除手动备份起始时间
+                     * @return StartTime 批量删除手动备份起始时间
+                     */
+                    std::string GetStartTime() const;
+
+                    /**
+                     * 设置批量删除手动备份起始时间
+                     * @param StartTime 批量删除手动备份起始时间
+                     */
+                    void SetStartTime(const std::string& _startTime);
+
+                    /**
+                     * 判断参数 StartTime 是否已赋值
+                     * @return StartTime 是否已赋值
+                     */
+                    bool StartTimeHasBeenSet() const;
+
+                    /**
+                     * 获取批量删除手动备份截止时间
+                     * @return EndTime 批量删除手动备份截止时间
+                     */
+                    std::string GetEndTime() const;
+
+                    /**
+                     * 设置批量删除手动备份截止时间
+                     * @param EndTime 批量删除手动备份截止时间
+                     */
+                    void SetEndTime(const std::string& _endTime);
+
+                    /**
+                     * 判断参数 EndTime 是否已赋值
+                     * @return EndTime 是否已赋值
+                     */
+                    bool EndTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -91,6 +127,18 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_backupNames;
                     bool m_backupNamesHasBeenSet;
+
+                    /**
+                     * 批量删除手动备份起始时间
+                     */
+                    std::string m_startTime;
+                    bool m_startTimeHasBeenSet;
+
+                    /**
+                     * 批量删除手动备份截止时间
+                     */
+                    std::string m_endTime;
+                    bool m_endTimeHasBeenSet;
 
                 };
             }

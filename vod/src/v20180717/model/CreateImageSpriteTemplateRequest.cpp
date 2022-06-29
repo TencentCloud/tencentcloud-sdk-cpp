@@ -27,13 +27,13 @@ CreateImageSpriteTemplateRequest::CreateImageSpriteTemplateRequest() :
     m_sampleIntervalHasBeenSet(false),
     m_rowCountHasBeenSet(false),
     m_columnCountHasBeenSet(false),
+    m_subAppIdHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_commentHasBeenSet(false),
     m_fillTypeHasBeenSet(false),
     m_widthHasBeenSet(false),
     m_heightHasBeenSet(false),
-    m_resolutionAdaptiveHasBeenSet(false),
-    m_subAppIdHasBeenSet(false)
+    m_resolutionAdaptiveHasBeenSet(false)
 {
 }
 
@@ -74,6 +74,14 @@ string CreateImageSpriteTemplateRequest::ToJsonString() const
         string key = "ColumnCount";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_columnCount, allocator);
+    }
+
+    if (m_subAppIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubAppId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_subAppId, allocator);
     }
 
     if (m_nameHasBeenSet)
@@ -122,14 +130,6 @@ string CreateImageSpriteTemplateRequest::ToJsonString() const
         string key = "ResolutionAdaptive";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_resolutionAdaptive.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_subAppIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SubAppId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_subAppId, allocator);
     }
 
 
@@ -202,6 +202,22 @@ void CreateImageSpriteTemplateRequest::SetColumnCount(const uint64_t& _columnCou
 bool CreateImageSpriteTemplateRequest::ColumnCountHasBeenSet() const
 {
     return m_columnCountHasBeenSet;
+}
+
+uint64_t CreateImageSpriteTemplateRequest::GetSubAppId() const
+{
+    return m_subAppId;
+}
+
+void CreateImageSpriteTemplateRequest::SetSubAppId(const uint64_t& _subAppId)
+{
+    m_subAppId = _subAppId;
+    m_subAppIdHasBeenSet = true;
+}
+
+bool CreateImageSpriteTemplateRequest::SubAppIdHasBeenSet() const
+{
+    return m_subAppIdHasBeenSet;
 }
 
 string CreateImageSpriteTemplateRequest::GetName() const
@@ -298,22 +314,6 @@ void CreateImageSpriteTemplateRequest::SetResolutionAdaptive(const string& _reso
 bool CreateImageSpriteTemplateRequest::ResolutionAdaptiveHasBeenSet() const
 {
     return m_resolutionAdaptiveHasBeenSet;
-}
-
-uint64_t CreateImageSpriteTemplateRequest::GetSubAppId() const
-{
-    return m_subAppId;
-}
-
-void CreateImageSpriteTemplateRequest::SetSubAppId(const uint64_t& _subAppId)
-{
-    m_subAppId = _subAppId;
-    m_subAppIdHasBeenSet = true;
-}
-
-bool CreateImageSpriteTemplateRequest::SubAppIdHasBeenSet() const
-{
-    return m_subAppIdHasBeenSet;
 }
 
 

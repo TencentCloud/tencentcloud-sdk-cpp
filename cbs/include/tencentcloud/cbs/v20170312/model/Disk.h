@@ -748,6 +748,42 @@ namespace TencentCloud
                      */
                     bool DeleteSnapshotHasBeenSet() const;
 
+                    /**
+                     * 获取云硬盘备份点已使用的数量。
+                     * @return DiskBackupCount 云硬盘备份点已使用的数量。
+                     */
+                    uint64_t GetDiskBackupCount() const;
+
+                    /**
+                     * 设置云硬盘备份点已使用的数量。
+                     * @param DiskBackupCount 云硬盘备份点已使用的数量。
+                     */
+                    void SetDiskBackupCount(const uint64_t& _diskBackupCount);
+
+                    /**
+                     * 判断参数 DiskBackupCount 是否已赋值
+                     * @return DiskBackupCount 是否已赋值
+                     */
+                    bool DiskBackupCountHasBeenSet() const;
+
+                    /**
+                     * 获取云硬盘挂载实例的类型。取值范围：<br><li>CVM<br><li>EKS
+                     * @return InstanceType 云硬盘挂载实例的类型。取值范围：<br><li>CVM<br><li>EKS
+                     */
+                    std::string GetInstanceType() const;
+
+                    /**
+                     * 设置云硬盘挂载实例的类型。取值范围：<br><li>CVM<br><li>EKS
+                     * @param InstanceType 云硬盘挂载实例的类型。取值范围：<br><li>CVM<br><li>EKS
+                     */
+                    void SetInstanceType(const std::string& _instanceType);
+
+                    /**
+                     * 判断参数 InstanceType 是否已赋值
+                     * @return InstanceType 是否已赋值
+                     */
+                    bool InstanceTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -978,6 +1014,18 @@ namespace TencentCloud
                      */
                     int64_t m_deleteSnapshot;
                     bool m_deleteSnapshotHasBeenSet;
+
+                    /**
+                     * 云硬盘备份点已使用的数量。
+                     */
+                    uint64_t m_diskBackupCount;
+                    bool m_diskBackupCountHasBeenSet;
+
+                    /**
+                     * 云硬盘挂载实例的类型。取值范围：<br><li>CVM<br><li>EKS
+                     */
+                    std::string m_instanceType;
+                    bool m_instanceTypeHasBeenSet;
 
                 };
             }

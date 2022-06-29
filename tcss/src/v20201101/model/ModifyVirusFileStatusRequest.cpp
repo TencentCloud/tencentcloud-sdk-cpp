@@ -25,7 +25,8 @@ using namespace std;
 ModifyVirusFileStatusRequest::ModifyVirusFileStatusRequest() :
     m_eventIdSetHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_remarkHasBeenSet(false)
+    m_remarkHasBeenSet(false),
+    m_autoIsolateHasBeenSet(false)
 {
 }
 
@@ -63,6 +64,14 @@ string ModifyVirusFileStatusRequest::ToJsonString() const
         string key = "Remark";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_remark.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_autoIsolateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoIsolate";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_autoIsolate, allocator);
     }
 
 
@@ -119,6 +128,22 @@ void ModifyVirusFileStatusRequest::SetRemark(const string& _remark)
 bool ModifyVirusFileStatusRequest::RemarkHasBeenSet() const
 {
     return m_remarkHasBeenSet;
+}
+
+bool ModifyVirusFileStatusRequest::GetAutoIsolate() const
+{
+    return m_autoIsolate;
+}
+
+void ModifyVirusFileStatusRequest::SetAutoIsolate(const bool& _autoIsolate)
+{
+    m_autoIsolate = _autoIsolate;
+    m_autoIsolateHasBeenSet = true;
+}
+
+bool ModifyVirusFileStatusRequest::AutoIsolateHasBeenSet() const
+{
+    return m_autoIsolateHasBeenSet;
 }
 
 

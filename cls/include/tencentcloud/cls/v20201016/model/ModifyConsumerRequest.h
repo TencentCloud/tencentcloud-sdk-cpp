@@ -63,14 +63,14 @@ namespace TencentCloud
                     bool TopicIdHasBeenSet() const;
 
                     /**
-                     * 获取投递任务是否生效
-                     * @return Effective 投递任务是否生效
+                     * 获取投递任务是否生效，默认不生效
+                     * @return Effective 投递任务是否生效，默认不生效
                      */
                     bool GetEffective() const;
 
                     /**
-                     * 设置投递任务是否生效
-                     * @param Effective 投递任务是否生效
+                     * 设置投递任务是否生效，默认不生效
+                     * @param Effective 投递任务是否生效，默认不生效
                      */
                     void SetEffective(const bool& _effective);
 
@@ -143,7 +143,7 @@ namespace TencentCloud
                     bool m_topicIdHasBeenSet;
 
                     /**
-                     * 投递任务是否生效
+                     * 投递任务是否生效，默认不生效
                      */
                     bool m_effective;
                     bool m_effectiveHasBeenSet;

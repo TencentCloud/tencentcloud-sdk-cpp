@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cme/v20191029/model/VodPullInputPlayInfo.h>
 
 
 namespace TencentCloud
@@ -55,6 +56,20 @@ namespace TencentCloud
                      */
                     bool StreamInputRtmpPushUrlHasBeenSet() const;
 
+                    /**
+                     * 获取点播输入源播放进度信息，当 Operation 取值 DescribeInputPlayInfo 且 InputType 为 VodPull 类型时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return VodPullInputPlayInfo 点播输入源播放进度信息，当 Operation 取值 DescribeInputPlayInfo 且 InputType 为 VodPull 类型时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    VodPullInputPlayInfo GetVodPullInputPlayInfo() const;
+
+                    /**
+                     * 判断参数 VodPullInputPlayInfo 是否已赋值
+                     * @return VodPullInputPlayInfo 是否已赋值
+                     */
+                    bool VodPullInputPlayInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -62,6 +77,13 @@ namespace TencentCloud
                      */
                     std::string m_streamInputRtmpPushUrl;
                     bool m_streamInputRtmpPushUrlHasBeenSet;
+
+                    /**
+                     * 点播输入源播放进度信息，当 Operation 取值 DescribeInputPlayInfo 且 InputType 为 VodPull 类型时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    VodPullInputPlayInfo m_vodPullInputPlayInfo;
+                    bool m_vodPullInputPlayInfoHasBeenSet;
 
                 };
             }

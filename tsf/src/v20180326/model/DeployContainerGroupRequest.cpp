@@ -57,7 +57,8 @@ DeployContainerGroupRequest::DeployContainerGroupRequest() :
     m_volumeInfosHasBeenSet(false),
     m_volumeMountInfosHasBeenSet(false),
     m_volumeInfoListHasBeenSet(false),
-    m_volumeMountInfoListHasBeenSet(false)
+    m_volumeMountInfoListHasBeenSet(false),
+    m_volumeCleanHasBeenSet(false)
 {
 }
 
@@ -372,6 +373,14 @@ string DeployContainerGroupRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_volumeCleanHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VolumeClean";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_volumeClean, allocator);
     }
 
 
@@ -940,6 +949,22 @@ void DeployContainerGroupRequest::SetVolumeMountInfoList(const vector<VolumeMoun
 bool DeployContainerGroupRequest::VolumeMountInfoListHasBeenSet() const
 {
     return m_volumeMountInfoListHasBeenSet;
+}
+
+bool DeployContainerGroupRequest::GetVolumeClean() const
+{
+    return m_volumeClean;
+}
+
+void DeployContainerGroupRequest::SetVolumeClean(const bool& _volumeClean)
+{
+    m_volumeClean = _volumeClean;
+    m_volumeCleanHasBeenSet = true;
+}
+
+bool DeployContainerGroupRequest::VolumeCleanHasBeenSet() const
+{
+    return m_volumeCleanHasBeenSet;
 }
 
 

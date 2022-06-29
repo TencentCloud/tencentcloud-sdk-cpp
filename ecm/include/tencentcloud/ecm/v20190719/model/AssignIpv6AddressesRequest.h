@@ -115,6 +115,36 @@ namespace TencentCloud
                      */
                     bool Ipv6AddressCountHasBeenSet() const;
 
+                    /**
+                     * 获取ipv6运营商如下：
+CTCC：中国电信
+CUCC：中国联通
+CMCC：中国移动
+                     * @return Ipv6ISP ipv6运营商如下：
+CTCC：中国电信
+CUCC：中国联通
+CMCC：中国移动
+                     */
+                    std::string GetIpv6ISP() const;
+
+                    /**
+                     * 设置ipv6运营商如下：
+CTCC：中国电信
+CUCC：中国联通
+CMCC：中国移动
+                     * @param Ipv6ISP ipv6运营商如下：
+CTCC：中国电信
+CUCC：中国联通
+CMCC：中国移动
+                     */
+                    void SetIpv6ISP(const std::string& _ipv6ISP);
+
+                    /**
+                     * 判断参数 Ipv6ISP 是否已赋值
+                     * @return Ipv6ISP 是否已赋值
+                     */
+                    bool Ipv6ISPHasBeenSet() const;
+
                 private:
 
                     /**
@@ -140,6 +170,15 @@ namespace TencentCloud
                      */
                     int64_t m_ipv6AddressCount;
                     bool m_ipv6AddressCountHasBeenSet;
+
+                    /**
+                     * ipv6运营商如下：
+CTCC：中国电信
+CUCC：中国联通
+CMCC：中国移动
+                     */
+                    std::string m_ipv6ISP;
+                    bool m_ipv6ISPHasBeenSet;
 
                 };
             }

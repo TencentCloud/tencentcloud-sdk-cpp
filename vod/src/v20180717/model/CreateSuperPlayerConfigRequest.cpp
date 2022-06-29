@@ -24,15 +24,17 @@ using namespace std;
 
 CreateSuperPlayerConfigRequest::CreateSuperPlayerConfigRequest() :
     m_nameHasBeenSet(false),
+    m_subAppIdHasBeenSet(false),
+    m_audioVideoTypeHasBeenSet(false),
     m_drmSwitchHasBeenSet(false),
     m_adaptiveDynamicStreamingDefinitionHasBeenSet(false),
     m_drmStreamingsInfoHasBeenSet(false),
+    m_transcodeDefinitionHasBeenSet(false),
     m_imageSpriteDefinitionHasBeenSet(false),
     m_resolutionNamesHasBeenSet(false),
     m_domainHasBeenSet(false),
     m_schemeHasBeenSet(false),
-    m_commentHasBeenSet(false),
-    m_subAppIdHasBeenSet(false)
+    m_commentHasBeenSet(false)
 {
 }
 
@@ -49,6 +51,22 @@ string CreateSuperPlayerConfigRequest::ToJsonString() const
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subAppIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubAppId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_subAppId, allocator);
+    }
+
+    if (m_audioVideoTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AudioVideoType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_audioVideoType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_drmSwitchHasBeenSet)
@@ -74,6 +92,14 @@ string CreateSuperPlayerConfigRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_drmStreamingsInfo.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_transcodeDefinitionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TranscodeDefinition";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_transcodeDefinition, allocator);
     }
 
     if (m_imageSpriteDefinitionHasBeenSet)
@@ -123,14 +149,6 @@ string CreateSuperPlayerConfigRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_comment.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_subAppIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SubAppId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_subAppId, allocator);
-    }
-
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -153,6 +171,38 @@ void CreateSuperPlayerConfigRequest::SetName(const string& _name)
 bool CreateSuperPlayerConfigRequest::NameHasBeenSet() const
 {
     return m_nameHasBeenSet;
+}
+
+uint64_t CreateSuperPlayerConfigRequest::GetSubAppId() const
+{
+    return m_subAppId;
+}
+
+void CreateSuperPlayerConfigRequest::SetSubAppId(const uint64_t& _subAppId)
+{
+    m_subAppId = _subAppId;
+    m_subAppIdHasBeenSet = true;
+}
+
+bool CreateSuperPlayerConfigRequest::SubAppIdHasBeenSet() const
+{
+    return m_subAppIdHasBeenSet;
+}
+
+string CreateSuperPlayerConfigRequest::GetAudioVideoType() const
+{
+    return m_audioVideoType;
+}
+
+void CreateSuperPlayerConfigRequest::SetAudioVideoType(const string& _audioVideoType)
+{
+    m_audioVideoType = _audioVideoType;
+    m_audioVideoTypeHasBeenSet = true;
+}
+
+bool CreateSuperPlayerConfigRequest::AudioVideoTypeHasBeenSet() const
+{
+    return m_audioVideoTypeHasBeenSet;
 }
 
 string CreateSuperPlayerConfigRequest::GetDrmSwitch() const
@@ -201,6 +251,22 @@ void CreateSuperPlayerConfigRequest::SetDrmStreamingsInfo(const DrmStreamingsInf
 bool CreateSuperPlayerConfigRequest::DrmStreamingsInfoHasBeenSet() const
 {
     return m_drmStreamingsInfoHasBeenSet;
+}
+
+uint64_t CreateSuperPlayerConfigRequest::GetTranscodeDefinition() const
+{
+    return m_transcodeDefinition;
+}
+
+void CreateSuperPlayerConfigRequest::SetTranscodeDefinition(const uint64_t& _transcodeDefinition)
+{
+    m_transcodeDefinition = _transcodeDefinition;
+    m_transcodeDefinitionHasBeenSet = true;
+}
+
+bool CreateSuperPlayerConfigRequest::TranscodeDefinitionHasBeenSet() const
+{
+    return m_transcodeDefinitionHasBeenSet;
 }
 
 uint64_t CreateSuperPlayerConfigRequest::GetImageSpriteDefinition() const
@@ -281,22 +347,6 @@ void CreateSuperPlayerConfigRequest::SetComment(const string& _comment)
 bool CreateSuperPlayerConfigRequest::CommentHasBeenSet() const
 {
     return m_commentHasBeenSet;
-}
-
-uint64_t CreateSuperPlayerConfigRequest::GetSubAppId() const
-{
-    return m_subAppId;
-}
-
-void CreateSuperPlayerConfigRequest::SetSubAppId(const uint64_t& _subAppId)
-{
-    m_subAppId = _subAppId;
-    m_subAppIdHasBeenSet = true;
-}
-
-bool CreateSuperPlayerConfigRequest::SubAppIdHasBeenSet() const
-{
-    return m_subAppIdHasBeenSet;
 }
 
 

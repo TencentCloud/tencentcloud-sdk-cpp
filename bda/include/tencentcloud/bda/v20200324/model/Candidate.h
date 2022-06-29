@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool PersonIdHasBeenSet() const;
 
                     /**
-                     * 获取人体轨迹ID。
-                     * @return TraceId 人体轨迹ID。
+                     * 获取人体动作轨迹ID。
+                     * @return TraceId 人体动作轨迹ID。
                      */
                     std::string GetTraceId() const;
 
                     /**
-                     * 设置人体轨迹ID。
-                     * @param TraceId 人体轨迹ID。
+                     * 设置人体动作轨迹ID。
+                     * @param TraceId 人体动作轨迹ID。
                      */
                     void SetTraceId(const std::string& _traceId);
 
@@ -129,7 +129,7 @@ namespace TencentCloud
                     bool m_personIdHasBeenSet;
 
                     /**
-                     * 人体轨迹ID。
+                     * 人体动作轨迹ID。
                      */
                     std::string m_traceId;
                     bool m_traceIdHasBeenSet;

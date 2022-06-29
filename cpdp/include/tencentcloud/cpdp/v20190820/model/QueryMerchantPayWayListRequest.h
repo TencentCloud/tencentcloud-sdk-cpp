@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取收单系统分配的开放ID
-                     * @return OpenId 收单系统分配的开放ID
+                     * 获取使用门店OpenId
+                     * @return OpenId 使用门店OpenId
                      */
                     std::string GetOpenId() const;
 
                     /**
-                     * 设置收单系统分配的开放ID
-                     * @param OpenId 收单系统分配的开放ID
+                     * 设置使用门店OpenId
+                     * @param OpenId 使用门店OpenId
                      */
                     void SetOpenId(const std::string& _openId);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool OpenIdHasBeenSet() const;
 
                     /**
-                     * 获取收单系统分配的密钥
-                     * @return OpenKey 收单系统分配的密钥
+                     * 获取使用门店OpenKey
+                     * @return OpenKey 使用门店OpenKey
                      */
                     std::string GetOpenKey() const;
 
                     /**
-                     * 设置收单系统分配的密钥
-                     * @param OpenKey 收单系统分配的密钥
+                     * 设置使用门店OpenKey
+                     * @param OpenKey 使用门店OpenKey
                      */
                     void SetOpenKey(const std::string& _openKey);
 
@@ -117,13 +117,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 收单系统分配的开放ID
+                     * 使用门店OpenId
                      */
                     std::string m_openId;
                     bool m_openIdHasBeenSet;
 
                     /**
-                     * 收单系统分配的密钥
+                     * 使用门店OpenKey
                      */
                     std::string m_openKey;
                     bool m_openKeyHasBeenSet;

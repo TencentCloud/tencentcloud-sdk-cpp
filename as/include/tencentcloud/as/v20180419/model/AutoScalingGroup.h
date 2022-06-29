@@ -87,14 +87,54 @@ namespace TencentCloud
                     bool AutoScalingGroupNameHasBeenSet() const;
 
                     /**
-                     * 获取伸缩组当前状态。取值范围：<br><li>NORMAL：正常<br><li>CVM_ABNORMAL：启动配置异常<br><li>LB_ABNORMAL：负载均衡器异常<br><li>VPC_ABNORMAL：VPC网络异常<br><li>INSUFFICIENT_BALANCE：余额不足<br><li>LB_BACKEND_REGION_NOT_MATCH：CLB实例后端地域与AS服务所在地域不匹配<br>
-                     * @return AutoScalingGroupStatus 伸缩组当前状态。取值范围：<br><li>NORMAL：正常<br><li>CVM_ABNORMAL：启动配置异常<br><li>LB_ABNORMAL：负载均衡器异常<br><li>VPC_ABNORMAL：VPC网络异常<br><li>INSUFFICIENT_BALANCE：余额不足<br><li>LB_BACKEND_REGION_NOT_MATCH：CLB实例后端地域与AS服务所在地域不匹配<br>
+                     * 获取伸缩组当前状态。取值范围：<br>
+<li>NORMAL：正常<br>
+<li>CVM_ABNORMAL：启动配置异常<br>
+<li>LB_ABNORMAL：负载均衡器异常<br>
+<li>LB_LISTENER_ABNORMAL：负载均衡器监听器异常<br>
+<li>LB_LOCATION_ABNORMAL：负载均衡器监听器转发配置异常<br>
+<li>VPC_ABNORMAL：VPC网络异常<br>
+<li>SUBNET_ABNORMAL：VPC子网异常<br>
+<li>INSUFFICIENT_BALANCE：余额不足<br>
+<li>LB_BACKEND_REGION_NOT_MATCH：CLB实例后端地域与AS服务所在地域不匹配<br>
+<li>LB_BACKEND_VPC_NOT_MATCH：CLB实例VPC与伸缩组VPC不匹配
+                     * @return AutoScalingGroupStatus 伸缩组当前状态。取值范围：<br>
+<li>NORMAL：正常<br>
+<li>CVM_ABNORMAL：启动配置异常<br>
+<li>LB_ABNORMAL：负载均衡器异常<br>
+<li>LB_LISTENER_ABNORMAL：负载均衡器监听器异常<br>
+<li>LB_LOCATION_ABNORMAL：负载均衡器监听器转发配置异常<br>
+<li>VPC_ABNORMAL：VPC网络异常<br>
+<li>SUBNET_ABNORMAL：VPC子网异常<br>
+<li>INSUFFICIENT_BALANCE：余额不足<br>
+<li>LB_BACKEND_REGION_NOT_MATCH：CLB实例后端地域与AS服务所在地域不匹配<br>
+<li>LB_BACKEND_VPC_NOT_MATCH：CLB实例VPC与伸缩组VPC不匹配
                      */
                     std::string GetAutoScalingGroupStatus() const;
 
                     /**
-                     * 设置伸缩组当前状态。取值范围：<br><li>NORMAL：正常<br><li>CVM_ABNORMAL：启动配置异常<br><li>LB_ABNORMAL：负载均衡器异常<br><li>VPC_ABNORMAL：VPC网络异常<br><li>INSUFFICIENT_BALANCE：余额不足<br><li>LB_BACKEND_REGION_NOT_MATCH：CLB实例后端地域与AS服务所在地域不匹配<br>
-                     * @param AutoScalingGroupStatus 伸缩组当前状态。取值范围：<br><li>NORMAL：正常<br><li>CVM_ABNORMAL：启动配置异常<br><li>LB_ABNORMAL：负载均衡器异常<br><li>VPC_ABNORMAL：VPC网络异常<br><li>INSUFFICIENT_BALANCE：余额不足<br><li>LB_BACKEND_REGION_NOT_MATCH：CLB实例后端地域与AS服务所在地域不匹配<br>
+                     * 设置伸缩组当前状态。取值范围：<br>
+<li>NORMAL：正常<br>
+<li>CVM_ABNORMAL：启动配置异常<br>
+<li>LB_ABNORMAL：负载均衡器异常<br>
+<li>LB_LISTENER_ABNORMAL：负载均衡器监听器异常<br>
+<li>LB_LOCATION_ABNORMAL：负载均衡器监听器转发配置异常<br>
+<li>VPC_ABNORMAL：VPC网络异常<br>
+<li>SUBNET_ABNORMAL：VPC子网异常<br>
+<li>INSUFFICIENT_BALANCE：余额不足<br>
+<li>LB_BACKEND_REGION_NOT_MATCH：CLB实例后端地域与AS服务所在地域不匹配<br>
+<li>LB_BACKEND_VPC_NOT_MATCH：CLB实例VPC与伸缩组VPC不匹配
+                     * @param AutoScalingGroupStatus 伸缩组当前状态。取值范围：<br>
+<li>NORMAL：正常<br>
+<li>CVM_ABNORMAL：启动配置异常<br>
+<li>LB_ABNORMAL：负载均衡器异常<br>
+<li>LB_LISTENER_ABNORMAL：负载均衡器监听器异常<br>
+<li>LB_LOCATION_ABNORMAL：负载均衡器监听器转发配置异常<br>
+<li>VPC_ABNORMAL：VPC网络异常<br>
+<li>SUBNET_ABNORMAL：VPC子网异常<br>
+<li>INSUFFICIENT_BALANCE：余额不足<br>
+<li>LB_BACKEND_REGION_NOT_MATCH：CLB实例后端地域与AS服务所在地域不匹配<br>
+<li>LB_BACKEND_VPC_NOT_MATCH：CLB实例VPC与伸缩组VPC不匹配
                      */
                     void SetAutoScalingGroupStatus(const std::string& _autoScalingGroupStatus);
 
@@ -651,7 +691,17 @@ namespace TencentCloud
                     bool m_autoScalingGroupNameHasBeenSet;
 
                     /**
-                     * 伸缩组当前状态。取值范围：<br><li>NORMAL：正常<br><li>CVM_ABNORMAL：启动配置异常<br><li>LB_ABNORMAL：负载均衡器异常<br><li>VPC_ABNORMAL：VPC网络异常<br><li>INSUFFICIENT_BALANCE：余额不足<br><li>LB_BACKEND_REGION_NOT_MATCH：CLB实例后端地域与AS服务所在地域不匹配<br>
+                     * 伸缩组当前状态。取值范围：<br>
+<li>NORMAL：正常<br>
+<li>CVM_ABNORMAL：启动配置异常<br>
+<li>LB_ABNORMAL：负载均衡器异常<br>
+<li>LB_LISTENER_ABNORMAL：负载均衡器监听器异常<br>
+<li>LB_LOCATION_ABNORMAL：负载均衡器监听器转发配置异常<br>
+<li>VPC_ABNORMAL：VPC网络异常<br>
+<li>SUBNET_ABNORMAL：VPC子网异常<br>
+<li>INSUFFICIENT_BALANCE：余额不足<br>
+<li>LB_BACKEND_REGION_NOT_MATCH：CLB实例后端地域与AS服务所在地域不匹配<br>
+<li>LB_BACKEND_VPC_NOT_MATCH：CLB实例VPC与伸缩组VPC不匹配
                      */
                     std::string m_autoScalingGroupStatus;
                     bool m_autoScalingGroupStatusHasBeenSet;

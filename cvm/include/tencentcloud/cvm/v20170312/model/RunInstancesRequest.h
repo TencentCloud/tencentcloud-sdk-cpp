@@ -92,21 +92,17 @@ namespace TencentCloud
 
                     /**
                      * 获取实例所在的位置。通过该参数可以指定实例所属可用区，所属项目，所属宿主机（在专用宿主机上创建子机时指定）等属性。
- <b>注：本数据结构中的Zone为必填参数。</b>
-如果您不指定LaunchTemplate参数，则Placement为必选参数。若同时传递该参数和LaunchTemplate，则默认覆盖LaunchTemplate中对应的值。
+ <b>注：如果您不指定LaunchTemplate参数，则Placement为必选参数。若同时传递Placement和LaunchTemplate，则默认覆盖LaunchTemplate中对应的Placement的值。</b>
                      * @return Placement 实例所在的位置。通过该参数可以指定实例所属可用区，所属项目，所属宿主机（在专用宿主机上创建子机时指定）等属性。
- <b>注：本数据结构中的Zone为必填参数。</b>
-如果您不指定LaunchTemplate参数，则Placement为必选参数。若同时传递该参数和LaunchTemplate，则默认覆盖LaunchTemplate中对应的值。
+ <b>注：如果您不指定LaunchTemplate参数，则Placement为必选参数。若同时传递Placement和LaunchTemplate，则默认覆盖LaunchTemplate中对应的Placement的值。</b>
                      */
                     Placement GetPlacement() const;
 
                     /**
                      * 设置实例所在的位置。通过该参数可以指定实例所属可用区，所属项目，所属宿主机（在专用宿主机上创建子机时指定）等属性。
- <b>注：本数据结构中的Zone为必填参数。</b>
-如果您不指定LaunchTemplate参数，则Placement为必选参数。若同时传递该参数和LaunchTemplate，则默认覆盖LaunchTemplate中对应的值。
+ <b>注：如果您不指定LaunchTemplate参数，则Placement为必选参数。若同时传递Placement和LaunchTemplate，则默认覆盖LaunchTemplate中对应的Placement的值。</b>
                      * @param Placement 实例所在的位置。通过该参数可以指定实例所属可用区，所属项目，所属宿主机（在专用宿主机上创建子机时指定）等属性。
- <b>注：本数据结构中的Zone为必填参数。</b>
-如果您不指定LaunchTemplate参数，则Placement为必选参数。若同时传递该参数和LaunchTemplate，则默认覆盖LaunchTemplate中对应的值。
+ <b>注：如果您不指定LaunchTemplate参数，则Placement为必选参数。若同时传递Placement和LaunchTemplate，则默认覆盖LaunchTemplate中对应的Placement的值。</b>
                      */
                     void SetPlacement(const Placement& _placement);
 
@@ -140,17 +136,17 @@ namespace TencentCloud
 
                     /**
                      * 获取指定有效的[镜像](https://cloud.tencent.com/document/product/213/4940)ID，格式形如`img-xxx`。镜像类型分为四种：<br/><li>公共镜像</li><li>自定义镜像</li><li>共享镜像</li><li>服务市场镜像</li><br/>可通过以下方式获取可用的镜像ID：<br/><li>`公共镜像`、`自定义镜像`、`共享镜像`的镜像ID可通过登录[控制台](https://console.cloud.tencent.com/cvm/image?rid=1&imageType=PUBLIC_IMAGE)查询；`服务镜像市场`的镜像ID可通过[云市场](https://market.cloud.tencent.com/list)查询。</li><li>通过调用接口 [DescribeImages](https://cloud.tencent.com/document/api/213/15715) ，传入InstanceType获取当前机型支持的镜像列表，取返回信息中的`ImageId`字段。</li>
-如果您不指定LaunchTemplate参数，则ImageId为必选参数。若同时传递该参数和LaunchTemplate，则默认覆盖LaunchTemplate中对应的值。
+ <b>注：如果您不指定LaunchTemplate参数，则ImageId为必选参数。若同时传递ImageId和LaunchTemplate，则默认覆盖LaunchTemplate中对应的ImageId的值。</b>
                      * @return ImageId 指定有效的[镜像](https://cloud.tencent.com/document/product/213/4940)ID，格式形如`img-xxx`。镜像类型分为四种：<br/><li>公共镜像</li><li>自定义镜像</li><li>共享镜像</li><li>服务市场镜像</li><br/>可通过以下方式获取可用的镜像ID：<br/><li>`公共镜像`、`自定义镜像`、`共享镜像`的镜像ID可通过登录[控制台](https://console.cloud.tencent.com/cvm/image?rid=1&imageType=PUBLIC_IMAGE)查询；`服务镜像市场`的镜像ID可通过[云市场](https://market.cloud.tencent.com/list)查询。</li><li>通过调用接口 [DescribeImages](https://cloud.tencent.com/document/api/213/15715) ，传入InstanceType获取当前机型支持的镜像列表，取返回信息中的`ImageId`字段。</li>
-如果您不指定LaunchTemplate参数，则ImageId为必选参数。若同时传递该参数和LaunchTemplate，则默认覆盖LaunchTemplate中对应的值。
+ <b>注：如果您不指定LaunchTemplate参数，则ImageId为必选参数。若同时传递ImageId和LaunchTemplate，则默认覆盖LaunchTemplate中对应的ImageId的值。</b>
                      */
                     std::string GetImageId() const;
 
                     /**
                      * 设置指定有效的[镜像](https://cloud.tencent.com/document/product/213/4940)ID，格式形如`img-xxx`。镜像类型分为四种：<br/><li>公共镜像</li><li>自定义镜像</li><li>共享镜像</li><li>服务市场镜像</li><br/>可通过以下方式获取可用的镜像ID：<br/><li>`公共镜像`、`自定义镜像`、`共享镜像`的镜像ID可通过登录[控制台](https://console.cloud.tencent.com/cvm/image?rid=1&imageType=PUBLIC_IMAGE)查询；`服务镜像市场`的镜像ID可通过[云市场](https://market.cloud.tencent.com/list)查询。</li><li>通过调用接口 [DescribeImages](https://cloud.tencent.com/document/api/213/15715) ，传入InstanceType获取当前机型支持的镜像列表，取返回信息中的`ImageId`字段。</li>
-如果您不指定LaunchTemplate参数，则ImageId为必选参数。若同时传递该参数和LaunchTemplate，则默认覆盖LaunchTemplate中对应的值。
+ <b>注：如果您不指定LaunchTemplate参数，则ImageId为必选参数。若同时传递ImageId和LaunchTemplate，则默认覆盖LaunchTemplate中对应的ImageId的值。</b>
                      * @param ImageId 指定有效的[镜像](https://cloud.tencent.com/document/product/213/4940)ID，格式形如`img-xxx`。镜像类型分为四种：<br/><li>公共镜像</li><li>自定义镜像</li><li>共享镜像</li><li>服务市场镜像</li><br/>可通过以下方式获取可用的镜像ID：<br/><li>`公共镜像`、`自定义镜像`、`共享镜像`的镜像ID可通过登录[控制台](https://console.cloud.tencent.com/cvm/image?rid=1&imageType=PUBLIC_IMAGE)查询；`服务镜像市场`的镜像ID可通过[云市场](https://market.cloud.tencent.com/list)查询。</li><li>通过调用接口 [DescribeImages](https://cloud.tencent.com/document/api/213/15715) ，传入InstanceType获取当前机型支持的镜像列表，取返回信息中的`ImageId`字段。</li>
-如果您不指定LaunchTemplate参数，则ImageId为必选参数。若同时传递该参数和LaunchTemplate，则默认覆盖LaunchTemplate中对应的值。
+ <b>注：如果您不指定LaunchTemplate参数，则ImageId为必选参数。若同时传递ImageId和LaunchTemplate，则默认覆盖LaunchTemplate中对应的ImageId的值。</b>
                      */
                     void SetImageId(const std::string& _imageId);
 
@@ -536,6 +532,60 @@ false（默认）：发送正常请求，通过检查后直接创建实例
                      */
                     bool LaunchTemplateHasBeenSet() const;
 
+                    /**
+                     * 获取指定专用集群创建。
+                     * @return DedicatedClusterId 指定专用集群创建。
+                     */
+                    std::string GetDedicatedClusterId() const;
+
+                    /**
+                     * 设置指定专用集群创建。
+                     * @param DedicatedClusterId 指定专用集群创建。
+                     */
+                    void SetDedicatedClusterId(const std::string& _dedicatedClusterId);
+
+                    /**
+                     * 判断参数 DedicatedClusterId 是否已赋值
+                     * @return DedicatedClusterId 是否已赋值
+                     */
+                    bool DedicatedClusterIdHasBeenSet() const;
+
+                    /**
+                     * 获取指定CHC物理服务器来创建CHC云主机。
+                     * @return ChcIds 指定CHC物理服务器来创建CHC云主机。
+                     */
+                    std::vector<std::string> GetChcIds() const;
+
+                    /**
+                     * 设置指定CHC物理服务器来创建CHC云主机。
+                     * @param ChcIds 指定CHC物理服务器来创建CHC云主机。
+                     */
+                    void SetChcIds(const std::vector<std::string>& _chcIds);
+
+                    /**
+                     * 判断参数 ChcIds 是否已赋值
+                     * @return ChcIds 是否已赋值
+                     */
+                    bool ChcIdsHasBeenSet() const;
+
+                    /**
+                     * 获取实例销毁保护标志，表示是否允许通过api接口删除实例。取值范围：<br><li>TRUE：表示开启实例保护，不允许通过api接口删除实例<br><li>FALSE：表示关闭实例保护，允许通过api接口删除实例<br><br>默认取值：FALSE。
+                     * @return DisableApiTermination 实例销毁保护标志，表示是否允许通过api接口删除实例。取值范围：<br><li>TRUE：表示开启实例保护，不允许通过api接口删除实例<br><li>FALSE：表示关闭实例保护，允许通过api接口删除实例<br><br>默认取值：FALSE。
+                     */
+                    bool GetDisableApiTermination() const;
+
+                    /**
+                     * 设置实例销毁保护标志，表示是否允许通过api接口删除实例。取值范围：<br><li>TRUE：表示开启实例保护，不允许通过api接口删除实例<br><li>FALSE：表示关闭实例保护，允许通过api接口删除实例<br><br>默认取值：FALSE。
+                     * @param DisableApiTermination 实例销毁保护标志，表示是否允许通过api接口删除实例。取值范围：<br><li>TRUE：表示开启实例保护，不允许通过api接口删除实例<br><li>FALSE：表示关闭实例保护，允许通过api接口删除实例<br><br>默认取值：FALSE。
+                     */
+                    void SetDisableApiTermination(const bool& _disableApiTermination);
+
+                    /**
+                     * 判断参数 DisableApiTermination 是否已赋值
+                     * @return DisableApiTermination 是否已赋值
+                     */
+                    bool DisableApiTerminationHasBeenSet() const;
+
                 private:
 
                     /**
@@ -552,8 +602,7 @@ false（默认）：发送正常请求，通过检查后直接创建实例
 
                     /**
                      * 实例所在的位置。通过该参数可以指定实例所属可用区，所属项目，所属宿主机（在专用宿主机上创建子机时指定）等属性。
- <b>注：本数据结构中的Zone为必填参数。</b>
-如果您不指定LaunchTemplate参数，则Placement为必选参数。若同时传递该参数和LaunchTemplate，则默认覆盖LaunchTemplate中对应的值。
+ <b>注：如果您不指定LaunchTemplate参数，则Placement为必选参数。若同时传递Placement和LaunchTemplate，则默认覆盖LaunchTemplate中对应的Placement的值。</b>
                      */
                     Placement m_placement;
                     bool m_placementHasBeenSet;
@@ -567,7 +616,7 @@ false（默认）：发送正常请求，通过检查后直接创建实例
 
                     /**
                      * 指定有效的[镜像](https://cloud.tencent.com/document/product/213/4940)ID，格式形如`img-xxx`。镜像类型分为四种：<br/><li>公共镜像</li><li>自定义镜像</li><li>共享镜像</li><li>服务市场镜像</li><br/>可通过以下方式获取可用的镜像ID：<br/><li>`公共镜像`、`自定义镜像`、`共享镜像`的镜像ID可通过登录[控制台](https://console.cloud.tencent.com/cvm/image?rid=1&imageType=PUBLIC_IMAGE)查询；`服务镜像市场`的镜像ID可通过[云市场](https://market.cloud.tencent.com/list)查询。</li><li>通过调用接口 [DescribeImages](https://cloud.tencent.com/document/api/213/15715) ，传入InstanceType获取当前机型支持的镜像列表，取返回信息中的`ImageId`字段。</li>
-如果您不指定LaunchTemplate参数，则ImageId为必选参数。若同时传递该参数和LaunchTemplate，则默认覆盖LaunchTemplate中对应的值。
+ <b>注：如果您不指定LaunchTemplate参数，则ImageId为必选参数。若同时传递ImageId和LaunchTemplate，则默认覆盖LaunchTemplate中对应的ImageId的值。</b>
                      */
                     std::string m_imageId;
                     bool m_imageIdHasBeenSet;
@@ -695,6 +744,24 @@ false（默认）：发送正常请求，通过检查后直接创建实例
                      */
                     LaunchTemplate m_launchTemplate;
                     bool m_launchTemplateHasBeenSet;
+
+                    /**
+                     * 指定专用集群创建。
+                     */
+                    std::string m_dedicatedClusterId;
+                    bool m_dedicatedClusterIdHasBeenSet;
+
+                    /**
+                     * 指定CHC物理服务器来创建CHC云主机。
+                     */
+                    std::vector<std::string> m_chcIds;
+                    bool m_chcIdsHasBeenSet;
+
+                    /**
+                     * 实例销毁保护标志，表示是否允许通过api接口删除实例。取值范围：<br><li>TRUE：表示开启实例保护，不允许通过api接口删除实例<br><li>FALSE：表示关闭实例保护，允许通过api接口删除实例<br><br>默认取值：FALSE。
+                     */
+                    bool m_disableApiTermination;
+                    bool m_disableApiTerminationHasBeenSet;
 
                 };
             }

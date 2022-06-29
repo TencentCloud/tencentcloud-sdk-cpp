@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool DomainHasBeenSet() const;
 
                     /**
-                     * 获取协议（可取值htttps）
-                     * @return Protocol 协议（可取值htttps）
+                     * 获取协议（可取值https）
+                     * @return Protocol 协议（可取值https）
                      */
                     std::string GetProtocol() const;
 
                     /**
-                     * 设置协议（可取值htttps）
-                     * @param Protocol 协议（可取值htttps）
+                     * 设置协议（可取值https）
+                     * @param Protocol 协议（可取值https）
                      */
                     void SetProtocol(const std::string& _protocol);
 
@@ -127,7 +127,7 @@ namespace TencentCloud
                     bool m_domainHasBeenSet;
 
                     /**
-                     * 协议（可取值htttps）
+                     * 协议（可取值https）
                      */
                     std::string m_protocol;
                     bool m_protocolHasBeenSet;

@@ -116,14 +116,14 @@ namespace TencentCloud
                     bool CountHasBeenSet() const;
 
                     /**
-                     * 获取是否自动续费，默认为0，1表示自动续费。小时计费实例设置该标识无效。
-                     * @return AutoRenew 是否自动续费，默认为0，1表示自动续费。小时计费实例设置该标识无效。
+                     * 获取是否自动续费，0表示不自动续费，1表示自动续费，默认为0。小时计费实例设置该标识无效。
+                     * @return AutoRenew 是否自动续费，0表示不自动续费，1表示自动续费，默认为0。小时计费实例设置该标识无效。
                      */
                     int64_t GetAutoRenew() const;
 
                     /**
-                     * 设置是否自动续费，默认为0，1表示自动续费。小时计费实例设置该标识无效。
-                     * @param AutoRenew 是否自动续费，默认为0，1表示自动续费。小时计费实例设置该标识无效。
+                     * 设置是否自动续费，0表示不自动续费，1表示自动续费，默认为0。小时计费实例设置该标识无效。
+                     * @param AutoRenew 是否自动续费，0表示不自动续费，1表示自动续费，默认为0。小时计费实例设置该标识无效。
                      */
                     void SetAutoRenew(const int64_t& _autoRenew);
 
@@ -150,6 +150,24 @@ namespace TencentCloud
                      * @return Tags 是否已赋值
                      */
                     bool TagsHasBeenSet() const;
+
+                    /**
+                     * 获取用户自定义实例名
+                     * @return Name 用户自定义实例名
+                     */
+                    std::string GetName() const;
+
+                    /**
+                     * 设置用户自定义实例名
+                     * @param Name 用户自定义实例名
+                     */
+                    void SetName(const std::string& _name);
+
+                    /**
+                     * 判断参数 Name 是否已赋值
+                     * @return Name 是否已赋值
+                     */
+                    bool NameHasBeenSet() const;
 
                 private:
 
@@ -178,7 +196,7 @@ namespace TencentCloud
                     bool m_countHasBeenSet;
 
                     /**
-                     * 是否自动续费，默认为0，1表示自动续费。小时计费实例设置该标识无效。
+                     * 是否自动续费，0表示不自动续费，1表示自动续费，默认为0。小时计费实例设置该标识无效。
                      */
                     int64_t m_autoRenew;
                     bool m_autoRenewHasBeenSet;
@@ -188,6 +206,12 @@ namespace TencentCloud
                      */
                     std::vector<TagItem> m_tags;
                     bool m_tagsHasBeenSet;
+
+                    /**
+                     * 用户自定义实例名
+                     */
+                    std::string m_name;
+                    bool m_nameHasBeenSet;
 
                 };
             }

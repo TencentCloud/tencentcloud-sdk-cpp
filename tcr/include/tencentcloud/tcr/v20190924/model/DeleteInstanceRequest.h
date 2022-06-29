@@ -78,6 +78,24 @@ namespace TencentCloud
                      */
                     bool DeleteBucketHasBeenSet() const;
 
+                    /**
+                     * 获取是否dryRun模式，缺省值：false
+                     * @return DryRun 是否dryRun模式，缺省值：false
+                     */
+                    bool GetDryRun() const;
+
+                    /**
+                     * 设置是否dryRun模式，缺省值：false
+                     * @param DryRun 是否dryRun模式，缺省值：false
+                     */
+                    void SetDryRun(const bool& _dryRun);
+
+                    /**
+                     * 判断参数 DryRun 是否已赋值
+                     * @return DryRun 是否已赋值
+                     */
+                    bool DryRunHasBeenSet() const;
+
                 private:
 
                     /**
@@ -91,6 +109,12 @@ namespace TencentCloud
                      */
                     bool m_deleteBucket;
                     bool m_deleteBucketHasBeenSet;
+
+                    /**
+                     * 是否dryRun模式，缺省值：false
+                     */
+                    bool m_dryRun;
+                    bool m_dryRunHasBeenSet;
 
                 };
             }

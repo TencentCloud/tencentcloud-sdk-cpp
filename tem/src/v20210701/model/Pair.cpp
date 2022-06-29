@@ -24,7 +24,8 @@ Pair::Pair() :
     m_keyHasBeenSet(false),
     m_valueHasBeenSet(false),
     m_typeHasBeenSet(false),
-    m_configHasBeenSet(false)
+    m_configHasBeenSet(false),
+    m_secretHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome Pair::Deserialize(const rapidjson::Value &value)
         m_configHasBeenSet = true;
     }
 
+    if (value.HasMember("Secret") && !value["Secret"].IsNull())
+    {
+        if (!value["Secret"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Pair.Secret` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_secret = string(value["Secret"].GetString());
+        m_secretHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +121,14 @@ void Pair::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorT
         string key = "Config";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_config.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_secretHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Secret";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_secret.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -177,5 +196,21 @@ void Pair::SetConfig(const string& _config)
 bool Pair::ConfigHasBeenSet() const
 {
     return m_configHasBeenSet;
+}
+
+string Pair::GetSecret() const
+{
+    return m_secret;
+}
+
+void Pair::SetSecret(const string& _secret)
+{
+    m_secret = _secret;
+    m_secretHasBeenSet = true;
+}
+
+bool Pair::SecretHasBeenSet() const
+{
+    return m_secretHasBeenSet;
 }
 

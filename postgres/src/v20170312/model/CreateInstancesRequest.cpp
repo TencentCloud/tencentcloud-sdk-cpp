@@ -46,7 +46,10 @@ CreateInstancesRequest::CreateInstancesRequest() :
     m_securityGroupIdsHasBeenSet(false),
     m_dBMajorVersionHasBeenSet(false),
     m_dBKernelVersionHasBeenSet(false),
-    m_dBNodeSetHasBeenSet(false)
+    m_dBNodeSetHasBeenSet(false),
+    m_needSupportTDEHasBeenSet(false),
+    m_kMSKeyIdHasBeenSet(false),
+    m_kMSRegionHasBeenSet(false)
 {
 }
 
@@ -271,6 +274,30 @@ string CreateInstancesRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_needSupportTDEHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NeedSupportTDE";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_needSupportTDE, allocator);
+    }
+
+    if (m_kMSKeyIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KMSKeyId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_kMSKeyId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_kMSRegionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KMSRegion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_kMSRegion.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -663,6 +690,54 @@ void CreateInstancesRequest::SetDBNodeSet(const vector<DBNode>& _dBNodeSet)
 bool CreateInstancesRequest::DBNodeSetHasBeenSet() const
 {
     return m_dBNodeSetHasBeenSet;
+}
+
+uint64_t CreateInstancesRequest::GetNeedSupportTDE() const
+{
+    return m_needSupportTDE;
+}
+
+void CreateInstancesRequest::SetNeedSupportTDE(const uint64_t& _needSupportTDE)
+{
+    m_needSupportTDE = _needSupportTDE;
+    m_needSupportTDEHasBeenSet = true;
+}
+
+bool CreateInstancesRequest::NeedSupportTDEHasBeenSet() const
+{
+    return m_needSupportTDEHasBeenSet;
+}
+
+string CreateInstancesRequest::GetKMSKeyId() const
+{
+    return m_kMSKeyId;
+}
+
+void CreateInstancesRequest::SetKMSKeyId(const string& _kMSKeyId)
+{
+    m_kMSKeyId = _kMSKeyId;
+    m_kMSKeyIdHasBeenSet = true;
+}
+
+bool CreateInstancesRequest::KMSKeyIdHasBeenSet() const
+{
+    return m_kMSKeyIdHasBeenSet;
+}
+
+string CreateInstancesRequest::GetKMSRegion() const
+{
+    return m_kMSRegion;
+}
+
+void CreateInstancesRequest::SetKMSRegion(const string& _kMSRegion)
+{
+    m_kMSRegion = _kMSRegion;
+    m_kMSRegionHasBeenSet = true;
+}
+
+bool CreateInstancesRequest::KMSRegionHasBeenSet() const
+{
+    return m_kMSRegionHasBeenSet;
 }
 
 

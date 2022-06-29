@@ -60,7 +60,10 @@ DeployApplicationRequest::DeployApplicationRequest() :
     m_logEnableHasBeenSet(false),
     m_confEditedHasBeenSet(false),
     m_speedUpHasBeenSet(false),
-    m_startupProbeHasBeenSet(false)
+    m_startupProbeHasBeenSet(false),
+    m_osFlavourHasBeenSet(false),
+    m_enablePrometheusConfHasBeenSet(false),
+    m_enableTracingHasBeenSet(false)
 {
 }
 
@@ -437,6 +440,31 @@ string DeployApplicationRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_startupProbe.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_osFlavourHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OsFlavour";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_osFlavour.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_enablePrometheusConfHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnablePrometheusConf";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_enablePrometheusConf.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_enableTracingHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableTracing";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableTracing, allocator);
     }
 
 
@@ -1053,6 +1081,54 @@ void DeployApplicationRequest::SetStartupProbe(const HealthCheckConfig& _startup
 bool DeployApplicationRequest::StartupProbeHasBeenSet() const
 {
     return m_startupProbeHasBeenSet;
+}
+
+string DeployApplicationRequest::GetOsFlavour() const
+{
+    return m_osFlavour;
+}
+
+void DeployApplicationRequest::SetOsFlavour(const string& _osFlavour)
+{
+    m_osFlavour = _osFlavour;
+    m_osFlavourHasBeenSet = true;
+}
+
+bool DeployApplicationRequest::OsFlavourHasBeenSet() const
+{
+    return m_osFlavourHasBeenSet;
+}
+
+EnablePrometheusConf DeployApplicationRequest::GetEnablePrometheusConf() const
+{
+    return m_enablePrometheusConf;
+}
+
+void DeployApplicationRequest::SetEnablePrometheusConf(const EnablePrometheusConf& _enablePrometheusConf)
+{
+    m_enablePrometheusConf = _enablePrometheusConf;
+    m_enablePrometheusConfHasBeenSet = true;
+}
+
+bool DeployApplicationRequest::EnablePrometheusConfHasBeenSet() const
+{
+    return m_enablePrometheusConfHasBeenSet;
+}
+
+int64_t DeployApplicationRequest::GetEnableTracing() const
+{
+    return m_enableTracing;
+}
+
+void DeployApplicationRequest::SetEnableTracing(const int64_t& _enableTracing)
+{
+    m_enableTracing = _enableTracing;
+    m_enableTracingHasBeenSet = true;
+}
+
+bool DeployApplicationRequest::EnableTracingHasBeenSet() const
+{
+    return m_enableTracingHasBeenSet;
 }
 
 

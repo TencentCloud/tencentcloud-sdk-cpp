@@ -66,14 +66,14 @@ namespace TencentCloud
                     bool OutboundTrafficPolicyHasBeenSet() const;
 
                     /**
-                     * 获取调用链配置
-                     * @return Tracing 调用链配置
+                     * 获取调用链配置（Deprecated，请使用 MeshConfig.Tracing 进行配置）
+                     * @return Tracing 调用链配置（Deprecated，请使用 MeshConfig.Tracing 进行配置）
                      */
                     TracingConfig GetTracing() const;
 
                     /**
-                     * 设置调用链配置
-                     * @param Tracing 调用链配置
+                     * 设置调用链配置（Deprecated，请使用 MeshConfig.Tracing 进行配置）
+                     * @param Tracing 调用链配置（Deprecated，请使用 MeshConfig.Tracing 进行配置）
                      */
                     void SetTracing(const TracingConfig& _tracing);
 
@@ -114,7 +114,7 @@ namespace TencentCloud
                     bool m_outboundTrafficPolicyHasBeenSet;
 
                     /**
-                     * 调用链配置
+                     * 调用链配置（Deprecated，请使用 MeshConfig.Tracing 进行配置）
                      */
                     TracingConfig m_tracing;
                     bool m_tracingHasBeenSet;

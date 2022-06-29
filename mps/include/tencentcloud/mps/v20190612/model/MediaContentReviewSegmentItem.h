@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 内容审核涉黄/暴恐嫌疑片段
+                * 内容审核涉黄/涉敏嫌疑片段
                 */
                 class MediaContentReviewSegmentItem : public AbstractModel
                 {

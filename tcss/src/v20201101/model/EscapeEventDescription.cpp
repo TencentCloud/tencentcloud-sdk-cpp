@@ -23,7 +23,8 @@ using namespace std;
 EscapeEventDescription::EscapeEventDescription() :
     m_descriptionHasBeenSet(false),
     m_solutionHasBeenSet(false),
-    m_remarkHasBeenSet(false)
+    m_remarkHasBeenSet(false),
+    m_operationTimeHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,16 @@ CoreInternalOutcome EscapeEventDescription::Deserialize(const rapidjson::Value &
         m_remarkHasBeenSet = true;
     }
 
+    if (value.HasMember("OperationTime") && !value["OperationTime"].IsNull())
+    {
+        if (!value["OperationTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EscapeEventDescription.OperationTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_operationTime = string(value["OperationTime"].GetString());
+        m_operationTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +102,14 @@ void EscapeEventDescription::ToJsonObject(rapidjson::Value &value, rapidjson::Do
         string key = "Remark";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_remark.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_operationTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OperationTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_operationTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -142,5 +161,21 @@ void EscapeEventDescription::SetRemark(const string& _remark)
 bool EscapeEventDescription::RemarkHasBeenSet() const
 {
     return m_remarkHasBeenSet;
+}
+
+string EscapeEventDescription::GetOperationTime() const
+{
+    return m_operationTime;
+}
+
+void EscapeEventDescription::SetOperationTime(const string& _operationTime)
+{
+    m_operationTime = _operationTime;
+    m_operationTimeHasBeenSet = true;
+}
+
+bool EscapeEventDescription::OperationTimeHasBeenSet() const
+{
+    return m_operationTimeHasBeenSet;
 }
 

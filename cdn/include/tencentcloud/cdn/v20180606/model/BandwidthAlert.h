@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cdn/v20180606/model/StatisticItem.h>
 
 
 namespace TencentCloud
@@ -250,6 +251,28 @@ off：关闭
                      */
                     bool MetricHasBeenSet() const;
 
+                    /**
+                     * 获取累计用量配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return StatisticItems 累计用量配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<StatisticItem> GetStatisticItems() const;
+
+                    /**
+                     * 设置累计用量配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param StatisticItems 累计用量配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetStatisticItems(const std::vector<StatisticItem>& _statisticItems);
+
+                    /**
+                     * 判断参数 StatisticItems 是否已赋值
+                     * @return StatisticItems 是否已赋值
+                     */
+                    bool StatisticItemsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -314,6 +337,13 @@ off：关闭
                      */
                     std::string m_metric;
                     bool m_metricHasBeenSet;
+
+                    /**
+                     * 累计用量配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<StatisticItem> m_statisticItems;
+                    bool m_statisticItemsHasBeenSet;
 
                 };
             }

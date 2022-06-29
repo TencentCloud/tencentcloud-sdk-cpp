@@ -150,6 +150,42 @@ namespace TencentCloud
                      */
                     bool SourceHasBeenSet() const;
 
+                    /**
+                     * 获取vpc间防火墙开关边id
+                     * @return EdgeId vpc间防火墙开关边id
+                     */
+                    std::string GetEdgeId() const;
+
+                    /**
+                     * 设置vpc间防火墙开关边id
+                     * @param EdgeId vpc间防火墙开关边id
+                     */
+                    void SetEdgeId(const std::string& _edgeId);
+
+                    /**
+                     * 判断参数 EdgeId 是否已赋值
+                     * @return EdgeId 是否已赋值
+                     */
+                    bool EdgeIdHasBeenSet() const;
+
+                    /**
+                     * 获取日志来源 move：vpc间防火墙
+                     * @return LogSource 日志来源 move：vpc间防火墙
+                     */
+                    std::string GetLogSource() const;
+
+                    /**
+                     * 设置日志来源 move：vpc间防火墙
+                     * @param LogSource 日志来源 move：vpc间防火墙
+                     */
+                    void SetLogSource(const std::string& _logSource);
+
+                    /**
+                     * 判断参数 LogSource 是否已赋值
+                     * @return LogSource 是否已赋值
+                     */
+                    bool LogSourceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -187,6 +223,18 @@ namespace TencentCloud
                      */
                     std::string m_source;
                     bool m_sourceHasBeenSet;
+
+                    /**
+                     * vpc间防火墙开关边id
+                     */
+                    std::string m_edgeId;
+                    bool m_edgeIdHasBeenSet;
+
+                    /**
+                     * 日志来源 move：vpc间防火墙
+                     */
+                    std::string m_logSource;
+                    bool m_logSourceHasBeenSet;
 
                 };
             }

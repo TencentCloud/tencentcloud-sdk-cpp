@@ -80,14 +80,14 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取过滤参数,"Filters":[{"Name":"Status","Values":["2"]}]
-                     * @return Filters 过滤参数,"Filters":[{"Name":"Status","Values":["2"]}]
+                     * 获取过滤参数,Status：EVENT_UNDEAL:未处理，EVENT_DEALED:已处理，EVENT_INGNORE:忽略
+                     * @return Filters 过滤参数,Status：EVENT_UNDEAL:未处理，EVENT_DEALED:已处理，EVENT_INGNORE:忽略
                      */
                     std::vector<RunTimeFilters> GetFilters() const;
 
                     /**
-                     * 设置过滤参数,"Filters":[{"Name":"Status","Values":["2"]}]
-                     * @param Filters 过滤参数,"Filters":[{"Name":"Status","Values":["2"]}]
+                     * 设置过滤参数,Status：EVENT_UNDEAL:未处理，EVENT_DEALED:已处理，EVENT_INGNORE:忽略
+                     * @param Filters 过滤参数,Status：EVENT_UNDEAL:未处理，EVENT_DEALED:已处理，EVENT_INGNORE:忽略
                      */
                     void SetFilters(const std::vector<RunTimeFilters>& _filters);
 
@@ -148,7 +148,7 @@ namespace TencentCloud
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 过滤参数,"Filters":[{"Name":"Status","Values":["2"]}]
+                     * 过滤参数,Status：EVENT_UNDEAL:未处理，EVENT_DEALED:已处理，EVENT_INGNORE:忽略
                      */
                     std::vector<RunTimeFilters> m_filters;
                     bool m_filtersHasBeenSet;

@@ -191,14 +191,50 @@ namespace TencentCloud
                     bool TaintsHasBeenSet() const;
 
                     /**
-                     * 获取节点池os
-                     * @return NodePoolOs 节点池os
+                     * 获取节点池纬度运行时类型及版本
+                     * @return ContainerRuntime 节点池纬度运行时类型及版本
+                     */
+                    std::string GetContainerRuntime() const;
+
+                    /**
+                     * 设置节点池纬度运行时类型及版本
+                     * @param ContainerRuntime 节点池纬度运行时类型及版本
+                     */
+                    void SetContainerRuntime(const std::string& _containerRuntime);
+
+                    /**
+                     * 判断参数 ContainerRuntime 是否已赋值
+                     * @return ContainerRuntime 是否已赋值
+                     */
+                    bool ContainerRuntimeHasBeenSet() const;
+
+                    /**
+                     * 获取运行时版本
+                     * @return RuntimeVersion 运行时版本
+                     */
+                    std::string GetRuntimeVersion() const;
+
+                    /**
+                     * 设置运行时版本
+                     * @param RuntimeVersion 运行时版本
+                     */
+                    void SetRuntimeVersion(const std::string& _runtimeVersion);
+
+                    /**
+                     * 判断参数 RuntimeVersion 是否已赋值
+                     * @return RuntimeVersion 是否已赋值
+                     */
+                    bool RuntimeVersionHasBeenSet() const;
+
+                    /**
+                     * 获取节点池os，当为自定义镜像时，传镜像id；否则为公共镜像的osName
+                     * @return NodePoolOs 节点池os，当为自定义镜像时，传镜像id；否则为公共镜像的osName
                      */
                     std::string GetNodePoolOs() const;
 
                     /**
-                     * 设置节点池os
-                     * @param NodePoolOs 节点池os
+                     * 设置节点池os，当为自定义镜像时，传镜像id；否则为公共镜像的osName
+                     * @param NodePoolOs 节点池os，当为自定义镜像时，传镜像id；否则为公共镜像的osName
                      */
                     void SetNodePoolOs(const std::string& _nodePoolOs);
 
@@ -295,7 +331,19 @@ namespace TencentCloud
                     bool m_taintsHasBeenSet;
 
                     /**
-                     * 节点池os
+                     * 节点池纬度运行时类型及版本
+                     */
+                    std::string m_containerRuntime;
+                    bool m_containerRuntimeHasBeenSet;
+
+                    /**
+                     * 运行时版本
+                     */
+                    std::string m_runtimeVersion;
+                    bool m_runtimeVersionHasBeenSet;
+
+                    /**
+                     * 节点池os，当为自定义镜像时，传镜像id；否则为公共镜像的osName
                      */
                     std::string m_nodePoolOs;
                     bool m_nodePoolOsHasBeenSet;

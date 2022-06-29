@@ -122,6 +122,50 @@ namespace TencentCloud
                      */
                     bool RemarkHasBeenSet() const;
 
+                    /**
+                     * 获取公网接入点地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PublicEndpoint 公网接入点地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetPublicEndpoint() const;
+
+                    /**
+                     * 设置公网接入点地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param PublicEndpoint 公网接入点地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPublicEndpoint(const std::string& _publicEndpoint);
+
+                    /**
+                     * 判断参数 PublicEndpoint 是否已赋值
+                     * @return PublicEndpoint 是否已赋值
+                     */
+                    bool PublicEndpointHasBeenSet() const;
+
+                    /**
+                     * 获取VPC接入点地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return VpcEndpoint VPC接入点地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetVpcEndpoint() const;
+
+                    /**
+                     * 设置VPC接入点地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param VpcEndpoint VPC接入点地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetVpcEndpoint(const std::string& _vpcEndpoint);
+
+                    /**
+                     * 判断参数 VpcEndpoint 是否已赋值
+                     * @return VpcEndpoint 是否已赋值
+                     */
+                    bool VpcEndpointHasBeenSet() const;
+
                 private:
 
                     /**
@@ -148,6 +192,20 @@ namespace TencentCloud
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
+
+                    /**
+                     * 公网接入点地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_publicEndpoint;
+                    bool m_publicEndpointHasBeenSet;
+
+                    /**
+                     * VPC接入点地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_vpcEndpoint;
+                    bool m_vpcEndpointHasBeenSet;
 
                 };
             }

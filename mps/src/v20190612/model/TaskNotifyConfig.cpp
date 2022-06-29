@@ -23,8 +23,8 @@ using namespace std;
 TaskNotifyConfig::TaskNotifyConfig() :
     m_cmqModelHasBeenSet(false),
     m_cmqRegionHasBeenSet(false),
-    m_queueNameHasBeenSet(false),
     m_topicNameHasBeenSet(false),
+    m_queueNameHasBeenSet(false),
     m_notifyModeHasBeenSet(false),
     m_notifyTypeHasBeenSet(false),
     m_notifyUrlHasBeenSet(false)
@@ -56,16 +56,6 @@ CoreInternalOutcome TaskNotifyConfig::Deserialize(const rapidjson::Value &value)
         m_cmqRegionHasBeenSet = true;
     }
 
-    if (value.HasMember("QueueName") && !value["QueueName"].IsNull())
-    {
-        if (!value["QueueName"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `TaskNotifyConfig.QueueName` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_queueName = string(value["QueueName"].GetString());
-        m_queueNameHasBeenSet = true;
-    }
-
     if (value.HasMember("TopicName") && !value["TopicName"].IsNull())
     {
         if (!value["TopicName"].IsString())
@@ -74,6 +64,16 @@ CoreInternalOutcome TaskNotifyConfig::Deserialize(const rapidjson::Value &value)
         }
         m_topicName = string(value["TopicName"].GetString());
         m_topicNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("QueueName") && !value["QueueName"].IsNull())
+    {
+        if (!value["QueueName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskNotifyConfig.QueueName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_queueName = string(value["QueueName"].GetString());
+        m_queueNameHasBeenSet = true;
     }
 
     if (value.HasMember("NotifyMode") && !value["NotifyMode"].IsNull())
@@ -129,20 +129,20 @@ void TaskNotifyConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         value.AddMember(iKey, rapidjson::Value(m_cmqRegion.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_queueNameHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "QueueName";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_queueName.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_topicNameHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TopicName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_topicName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_queueNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QueueName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_queueName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_notifyModeHasBeenSet)
@@ -204,22 +204,6 @@ bool TaskNotifyConfig::CmqRegionHasBeenSet() const
     return m_cmqRegionHasBeenSet;
 }
 
-string TaskNotifyConfig::GetQueueName() const
-{
-    return m_queueName;
-}
-
-void TaskNotifyConfig::SetQueueName(const string& _queueName)
-{
-    m_queueName = _queueName;
-    m_queueNameHasBeenSet = true;
-}
-
-bool TaskNotifyConfig::QueueNameHasBeenSet() const
-{
-    return m_queueNameHasBeenSet;
-}
-
 string TaskNotifyConfig::GetTopicName() const
 {
     return m_topicName;
@@ -234,6 +218,22 @@ void TaskNotifyConfig::SetTopicName(const string& _topicName)
 bool TaskNotifyConfig::TopicNameHasBeenSet() const
 {
     return m_topicNameHasBeenSet;
+}
+
+string TaskNotifyConfig::GetQueueName() const
+{
+    return m_queueName;
+}
+
+void TaskNotifyConfig::SetQueueName(const string& _queueName)
+{
+    m_queueName = _queueName;
+    m_queueNameHasBeenSet = true;
+}
+
+bool TaskNotifyConfig::QueueNameHasBeenSet() const
+{
+    return m_queueNameHasBeenSet;
 }
 
 string TaskNotifyConfig::GetNotifyMode() const

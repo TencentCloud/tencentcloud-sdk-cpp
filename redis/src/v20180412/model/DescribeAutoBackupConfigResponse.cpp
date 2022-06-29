@@ -26,7 +26,9 @@ using namespace std;
 DescribeAutoBackupConfigResponse::DescribeAutoBackupConfigResponse() :
     m_autoBackupTypeHasBeenSet(false),
     m_weekDaysHasBeenSet(false),
-    m_timePeriodHasBeenSet(false)
+    m_timePeriodHasBeenSet(false),
+    m_backupStorageDaysHasBeenSet(false),
+    m_binlogStorageDaysHasBeenSet(false)
 {
 }
 
@@ -97,6 +99,26 @@ CoreInternalOutcome DescribeAutoBackupConfigResponse::Deserialize(const string &
         m_timePeriodHasBeenSet = true;
     }
 
+    if (rsp.HasMember("BackupStorageDays") && !rsp["BackupStorageDays"].IsNull())
+    {
+        if (!rsp["BackupStorageDays"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `BackupStorageDays` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_backupStorageDays = rsp["BackupStorageDays"].GetInt64();
+        m_backupStorageDaysHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("BinlogStorageDays") && !rsp["BinlogStorageDays"].IsNull())
+    {
+        if (!rsp["BinlogStorageDays"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `BinlogStorageDays` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_binlogStorageDays = rsp["BinlogStorageDays"].GetInt64();
+        m_binlogStorageDaysHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -134,6 +156,22 @@ string DescribeAutoBackupConfigResponse::ToJsonString() const
         string key = "TimePeriod";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_timePeriod.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_backupStorageDaysHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BackupStorageDays";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_backupStorageDays, allocator);
+    }
+
+    if (m_binlogStorageDaysHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BinlogStorageDays";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_binlogStorageDays, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -176,6 +214,26 @@ string DescribeAutoBackupConfigResponse::GetTimePeriod() const
 bool DescribeAutoBackupConfigResponse::TimePeriodHasBeenSet() const
 {
     return m_timePeriodHasBeenSet;
+}
+
+int64_t DescribeAutoBackupConfigResponse::GetBackupStorageDays() const
+{
+    return m_backupStorageDays;
+}
+
+bool DescribeAutoBackupConfigResponse::BackupStorageDaysHasBeenSet() const
+{
+    return m_backupStorageDaysHasBeenSet;
+}
+
+int64_t DescribeAutoBackupConfigResponse::GetBinlogStorageDays() const
+{
+    return m_binlogStorageDays;
+}
+
+bool DescribeAutoBackupConfigResponse::BinlogStorageDaysHasBeenSet() const
+{
+    return m_binlogStorageDaysHasBeenSet;
 }
 
 

@@ -30,7 +30,8 @@ ContentReviewTemplateItem::ContentReviewTemplateItem() :
     m_prohibitedConfigureHasBeenSet(false),
     m_userDefineConfigureHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
+    m_updateTimeHasBeenSet(false),
+    m_typeHasBeenSet(false)
 {
 }
 
@@ -174,6 +175,16 @@ CoreInternalOutcome ContentReviewTemplateItem::Deserialize(const rapidjson::Valu
         m_updateTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("Type") && !value["Type"].IsNull())
+    {
+        if (!value["Type"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ContentReviewTemplateItem.Type` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_type = string(value["Type"].GetString());
+        m_typeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -264,6 +275,14 @@ void ContentReviewTemplateItem::ToJsonObject(rapidjson::Value &value, rapidjson:
         string key = "UpdateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_updateTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_typeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Type";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -427,5 +446,21 @@ void ContentReviewTemplateItem::SetUpdateTime(const string& _updateTime)
 bool ContentReviewTemplateItem::UpdateTimeHasBeenSet() const
 {
     return m_updateTimeHasBeenSet;
+}
+
+string ContentReviewTemplateItem::GetType() const
+{
+    return m_type;
+}
+
+void ContentReviewTemplateItem::SetType(const string& _type)
+{
+    m_type = _type;
+    m_typeHasBeenSet = true;
+}
+
+bool ContentReviewTemplateItem::TypeHasBeenSet() const
+{
+    return m_typeHasBeenSet;
 }
 

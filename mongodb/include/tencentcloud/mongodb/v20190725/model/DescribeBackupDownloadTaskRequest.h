@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool BackupNameHasBeenSet() const;
 
                     /**
-                     * 获取指定要查询任务的时间范围，StartTime指定开始时间，不填默认不限制开始时间
-                     * @return StartTime 指定要查询任务的时间范围，StartTime指定开始时间，不填默认不限制开始时间
+                     * 获取指定查询时间范围内的任务，StartTime指定开始时间，不填默认不限制开始时间
+                     * @return StartTime 指定查询时间范围内的任务，StartTime指定开始时间，不填默认不限制开始时间
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置指定要查询任务的时间范围，StartTime指定开始时间，不填默认不限制开始时间
-                     * @param StartTime 指定要查询任务的时间范围，StartTime指定开始时间，不填默认不限制开始时间
+                     * 设置指定查询时间范围内的任务，StartTime指定开始时间，不填默认不限制开始时间
+                     * @param StartTime 指定查询时间范围内的任务，StartTime指定开始时间，不填默认不限制开始时间
                      */
                     void SetStartTime(const std::string& _startTime);
 
@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取指定要查询任务的时间范围，EndTime指定结束时间，不填默认不限制结束时间
-                     * @return EndTime 指定要查询任务的时间范围，EndTime指定结束时间，不填默认不限制结束时间
+                     * 获取指定查询时间范围内的任务，EndTime指定截止时间，不填默认不限制截止时间
+                     * @return EndTime 指定查询时间范围内的任务，EndTime指定截止时间，不填默认不限制截止时间
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置指定要查询任务的时间范围，EndTime指定结束时间，不填默认不限制结束时间
-                     * @param EndTime 指定要查询任务的时间范围，EndTime指定结束时间，不填默认不限制结束时间
+                     * 设置指定查询时间范围内的任务，EndTime指定截止时间，不填默认不限制截止时间
+                     * @param EndTime 指定查询时间范围内的任务，EndTime指定截止时间，不填默认不限制截止时间
                      */
                     void SetEndTime(const std::string& _endTime);
 
@@ -219,13 +219,13 @@ namespace TencentCloud
                     bool m_backupNameHasBeenSet;
 
                     /**
-                     * 指定要查询任务的时间范围，StartTime指定开始时间，不填默认不限制开始时间
+                     * 指定查询时间范围内的任务，StartTime指定开始时间，不填默认不限制开始时间
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 指定要查询任务的时间范围，EndTime指定结束时间，不填默认不限制结束时间
+                     * 指定查询时间范围内的任务，EndTime指定截止时间，不填默认不限制截止时间
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;

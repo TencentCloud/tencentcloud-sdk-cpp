@@ -111,12 +111,22 @@
 #include <tencentcloud/ocr/v20181119/model/QuotaInvoiceOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeContainerOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeContainerOCRResponse.h>
+#include <tencentcloud/ocr/v20181119/model/RecognizeHealthCodeOCRRequest.h>
+#include <tencentcloud/ocr/v20181119/model/RecognizeHealthCodeOCRResponse.h>
+#include <tencentcloud/ocr/v20181119/model/RecognizeIndonesiaIDCardOCRRequest.h>
+#include <tencentcloud/ocr/v20181119/model/RecognizeIndonesiaIDCardOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeOnlineTaxiItineraryOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeOnlineTaxiItineraryOCRResponse.h>
+#include <tencentcloud/ocr/v20181119/model/RecognizePhilippinesDrivingLicenseOCRRequest.h>
+#include <tencentcloud/ocr/v20181119/model/RecognizePhilippinesDrivingLicenseOCRResponse.h>
+#include <tencentcloud/ocr/v20181119/model/RecognizePhilippinesVoteIDOCRRequest.h>
+#include <tencentcloud/ocr/v20181119/model/RecognizePhilippinesVoteIDOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeTableOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeTableOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeThaiIDCardOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeThaiIDCardOCRResponse.h>
+#include <tencentcloud/ocr/v20181119/model/RecognizeTravelCardOCRRequest.h>
+#include <tencentcloud/ocr/v20181119/model/RecognizeTravelCardOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/ResidenceBookletOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/ResidenceBookletOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/RideHailingDriverLicenseOCRRequest.h>
@@ -143,6 +153,8 @@
 #include <tencentcloud/ocr/v20181119/model/VatInvoiceOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/VatInvoiceVerifyRequest.h>
 #include <tencentcloud/ocr/v20181119/model/VatInvoiceVerifyResponse.h>
+#include <tencentcloud/ocr/v20181119/model/VatInvoiceVerifyNewRequest.h>
+#include <tencentcloud/ocr/v20181119/model/VatInvoiceVerifyNewResponse.h>
 #include <tencentcloud/ocr/v20181119/model/VatRollInvoiceOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/VatRollInvoiceOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/VehicleLicenseOCRRequest.h>
@@ -307,15 +319,30 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RecognizeContainerOCRResponse> RecognizeContainerOCROutcome;
                 typedef std::future<RecognizeContainerOCROutcome> RecognizeContainerOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::RecognizeContainerOCRRequest&, RecognizeContainerOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeContainerOCRAsyncHandler;
+                typedef Outcome<Core::Error, Model::RecognizeHealthCodeOCRResponse> RecognizeHealthCodeOCROutcome;
+                typedef std::future<RecognizeHealthCodeOCROutcome> RecognizeHealthCodeOCROutcomeCallable;
+                typedef std::function<void(const OcrClient*, const Model::RecognizeHealthCodeOCRRequest&, RecognizeHealthCodeOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeHealthCodeOCRAsyncHandler;
+                typedef Outcome<Core::Error, Model::RecognizeIndonesiaIDCardOCRResponse> RecognizeIndonesiaIDCardOCROutcome;
+                typedef std::future<RecognizeIndonesiaIDCardOCROutcome> RecognizeIndonesiaIDCardOCROutcomeCallable;
+                typedef std::function<void(const OcrClient*, const Model::RecognizeIndonesiaIDCardOCRRequest&, RecognizeIndonesiaIDCardOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeIndonesiaIDCardOCRAsyncHandler;
                 typedef Outcome<Core::Error, Model::RecognizeOnlineTaxiItineraryOCRResponse> RecognizeOnlineTaxiItineraryOCROutcome;
                 typedef std::future<RecognizeOnlineTaxiItineraryOCROutcome> RecognizeOnlineTaxiItineraryOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::RecognizeOnlineTaxiItineraryOCRRequest&, RecognizeOnlineTaxiItineraryOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeOnlineTaxiItineraryOCRAsyncHandler;
+                typedef Outcome<Core::Error, Model::RecognizePhilippinesDrivingLicenseOCRResponse> RecognizePhilippinesDrivingLicenseOCROutcome;
+                typedef std::future<RecognizePhilippinesDrivingLicenseOCROutcome> RecognizePhilippinesDrivingLicenseOCROutcomeCallable;
+                typedef std::function<void(const OcrClient*, const Model::RecognizePhilippinesDrivingLicenseOCRRequest&, RecognizePhilippinesDrivingLicenseOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizePhilippinesDrivingLicenseOCRAsyncHandler;
+                typedef Outcome<Core::Error, Model::RecognizePhilippinesVoteIDOCRResponse> RecognizePhilippinesVoteIDOCROutcome;
+                typedef std::future<RecognizePhilippinesVoteIDOCROutcome> RecognizePhilippinesVoteIDOCROutcomeCallable;
+                typedef std::function<void(const OcrClient*, const Model::RecognizePhilippinesVoteIDOCRRequest&, RecognizePhilippinesVoteIDOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizePhilippinesVoteIDOCRAsyncHandler;
                 typedef Outcome<Core::Error, Model::RecognizeTableOCRResponse> RecognizeTableOCROutcome;
                 typedef std::future<RecognizeTableOCROutcome> RecognizeTableOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::RecognizeTableOCRRequest&, RecognizeTableOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeTableOCRAsyncHandler;
                 typedef Outcome<Core::Error, Model::RecognizeThaiIDCardOCRResponse> RecognizeThaiIDCardOCROutcome;
                 typedef std::future<RecognizeThaiIDCardOCROutcome> RecognizeThaiIDCardOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::RecognizeThaiIDCardOCRRequest&, RecognizeThaiIDCardOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeThaiIDCardOCRAsyncHandler;
+                typedef Outcome<Core::Error, Model::RecognizeTravelCardOCRResponse> RecognizeTravelCardOCROutcome;
+                typedef std::future<RecognizeTravelCardOCROutcome> RecognizeTravelCardOCROutcomeCallable;
+                typedef std::function<void(const OcrClient*, const Model::RecognizeTravelCardOCRRequest&, RecognizeTravelCardOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeTravelCardOCRAsyncHandler;
                 typedef Outcome<Core::Error, Model::ResidenceBookletOCRResponse> ResidenceBookletOCROutcome;
                 typedef std::future<ResidenceBookletOCROutcome> ResidenceBookletOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::ResidenceBookletOCRRequest&, ResidenceBookletOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResidenceBookletOCRAsyncHandler;
@@ -355,6 +382,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::VatInvoiceVerifyResponse> VatInvoiceVerifyOutcome;
                 typedef std::future<VatInvoiceVerifyOutcome> VatInvoiceVerifyOutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::VatInvoiceVerifyRequest&, VatInvoiceVerifyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> VatInvoiceVerifyAsyncHandler;
+                typedef Outcome<Core::Error, Model::VatInvoiceVerifyNewResponse> VatInvoiceVerifyNewOutcome;
+                typedef std::future<VatInvoiceVerifyNewOutcome> VatInvoiceVerifyNewOutcomeCallable;
+                typedef std::function<void(const OcrClient*, const Model::VatInvoiceVerifyNewRequest&, VatInvoiceVerifyNewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> VatInvoiceVerifyNewAsyncHandler;
                 typedef Outcome<Core::Error, Model::VatRollInvoiceOCRResponse> VatRollInvoiceOCROutcome;
                 typedef std::future<VatRollInvoiceOCROutcome> VatRollInvoiceOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::VatRollInvoiceOCRRequest&, VatRollInvoiceOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> VatRollInvoiceOCRAsyncHandler;
@@ -477,7 +507,9 @@ namespace TencentCloud
 
 驾驶证副页：包括证号、姓名、档案编号、记录。
 
-另外，本接口还支持复印件、翻拍和PS告警功能。
+另外，本接口还支持复印件、翻拍和PS告警功能。同时支持识别交管12123APP发放的电子驾驶证正页。
+
+电子驾驶证正页：包括证号、姓名、性别、国籍、出生日期、初次领证日期、准驾车型、有效期开始时间、有效期截止时间、档案编号、状态、累积记分。
                  * @param req DriverLicenseOCRRequest
                  * @return DriverLicenseOCROutcome
                  */
@@ -730,56 +762,42 @@ namespace TencentCloud
           <td>适用于快速文本识别场景，准召率有一定损失，价格更优惠</td>
           <td>适用于所有通用场景的印刷体识别</td>
           <td>适用于文字较多、长串数字、小字、模糊字、倾斜文本等困难场景</td>
-          
-          
         </tr>
         <tr>
           <td>识别准确率</td>
           <td>91%</td>
           <td>96%</td>
           <td>99%</td>
-          
-          
         </tr>
         <tr>
           <td>价格</td>
           <td>低</td>
           <td>中</td>
           <td>高</td>
-          
-          
         </tr>
         <tr>
           <td>支持的语言</td>
           <td>中文、英文、中英文</td>
           <td>中文、英文、中英文、日语、韩语、西班牙语、法语、德语、葡萄牙语、越南语、马来语、俄语、意大利语、荷兰语、瑞典语、芬兰语、丹麦语、挪威语、匈牙利语、泰语</td>  
           <td>中文、英文、中英文</td>
-          
-          
         </tr>
         <tr>
           <td>自动语言检测</td>
           <td>支持</td>
           <td>支持</td>  
           <td>支持</td>
-          
-          
         </tr>
         <tr>
           <td>返回文本行坐标</td>
           <td>支持</td>
           <td>支持</td>
           <td>支持</td>
-          
-          
         </tr>
         <tr>
           <td>自动旋转纠正</td>
           <td>支持旋转识别，返回角度信息</td>
           <td>支持旋转识别，返回角度信息</td>
           <td>支持旋转识别，返回角度信息</td>
-          
-         
         </tr>
       </tbody>
     </table>
@@ -910,7 +928,7 @@ namespace TencentCloud
                 InvoiceGeneralOCROutcomeCallable InvoiceGeneralOCRCallable(const Model::InvoiceGeneralOCRRequest& request);
 
                 /**
-                 *本接口支持对中国大陆机动车车牌的自动定位和识别，返回地域编号和车牌号信息。
+                 *本接口支持对中国大陆机动车车牌的自动定位和识别，返回地域编号和车牌号码与车牌颜色信息。
                  * @param req LicensePlateOCRRequest
                  * @return LicensePlateOCROutcome
                  */
@@ -958,7 +976,7 @@ namespace TencentCloud
                 MixedInvoiceDetectOutcomeCallable MixedInvoiceDetectCallable(const Model::MixedInvoiceDetectRequest& request);
 
                 /**
-                 *本接口支持多张、多类型票据的混合识别，系统自动实现分割、分类和识别，同时支持自选需要识别的票据类型。目前已支持增值税发票、增值税发票（卷票）、定额发票、通用机打发票、购车发票、火车票、出租车发票、机票行程单、汽车票、轮船票、过路过桥费发票共11种票据。
+                 *本接口支持 单张、多张、多类型 票据的混合识别，同时支持自选需要识别的票据类型，已支持票种包括：增值税发票（专票、普票、卷票）、全电发票、非税发票、定额发票、通用机打发票、购车发票、火车票、出租车发票、机票行程单、汽车票、轮船票、过路过桥费发票共14种标准报销发票，并支持其他类发票的识别。
                  * @param req MixedInvoiceOCRRequest
                  * @return MixedInvoiceOCROutcome
                  */
@@ -1043,6 +1061,24 @@ namespace TencentCloud
                 RecognizeContainerOCROutcomeCallable RecognizeContainerOCRCallable(const Model::RecognizeContainerOCRRequest& request);
 
                 /**
+                 *本接口支持北京、上海、广东、江苏、吉林、黑龙江、天津、辽宁、浙江、河南、四川、贵州、山东、安徽、福建、江西、湖南等省份健康码的识别，包括持码人姓名、持码人身份证号、健康码更新时间、健康码颜色、核酸检测结果、核酸检测间隔时长、核酸检测时间，疫苗接种信息，八个字段的识别结果输出。不同省市健康码显示的字段信息有所不同，上述字段的识别结果可能为空，以图片上具体展示的信息为准。
+                 * @param req RecognizeHealthCodeOCRRequest
+                 * @return RecognizeHealthCodeOCROutcome
+                 */
+                RecognizeHealthCodeOCROutcome RecognizeHealthCodeOCR(const Model::RecognizeHealthCodeOCRRequest &request);
+                void RecognizeHealthCodeOCRAsync(const Model::RecognizeHealthCodeOCRRequest& request, const RecognizeHealthCodeOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RecognizeHealthCodeOCROutcomeCallable RecognizeHealthCodeOCRCallable(const Model::RecognizeHealthCodeOCRRequest& request);
+
+                /**
+                 *印尼身份证识别
+                 * @param req RecognizeIndonesiaIDCardOCRRequest
+                 * @return RecognizeIndonesiaIDCardOCROutcome
+                 */
+                RecognizeIndonesiaIDCardOCROutcome RecognizeIndonesiaIDCardOCR(const Model::RecognizeIndonesiaIDCardOCRRequest &request);
+                void RecognizeIndonesiaIDCardOCRAsync(const Model::RecognizeIndonesiaIDCardOCRRequest& request, const RecognizeIndonesiaIDCardOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RecognizeIndonesiaIDCardOCROutcomeCallable RecognizeIndonesiaIDCardOCRCallable(const Model::RecognizeIndonesiaIDCardOCRRequest& request);
+
+                /**
                  *本接口支持网约车行程单关键字段的识别，包括行程起止日期、上车时间、起点、终点、里程、金额等字段。
                  * @param req RecognizeOnlineTaxiItineraryOCRRequest
                  * @return RecognizeOnlineTaxiItineraryOCROutcome
@@ -1050,6 +1086,24 @@ namespace TencentCloud
                 RecognizeOnlineTaxiItineraryOCROutcome RecognizeOnlineTaxiItineraryOCR(const Model::RecognizeOnlineTaxiItineraryOCRRequest &request);
                 void RecognizeOnlineTaxiItineraryOCRAsync(const Model::RecognizeOnlineTaxiItineraryOCRRequest& request, const RecognizeOnlineTaxiItineraryOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RecognizeOnlineTaxiItineraryOCROutcomeCallable RecognizeOnlineTaxiItineraryOCRCallable(const Model::RecognizeOnlineTaxiItineraryOCRRequest& request);
+
+                /**
+                 *菲律宾驾驶证识别
+                 * @param req RecognizePhilippinesDrivingLicenseOCRRequest
+                 * @return RecognizePhilippinesDrivingLicenseOCROutcome
+                 */
+                RecognizePhilippinesDrivingLicenseOCROutcome RecognizePhilippinesDrivingLicenseOCR(const Model::RecognizePhilippinesDrivingLicenseOCRRequest &request);
+                void RecognizePhilippinesDrivingLicenseOCRAsync(const Model::RecognizePhilippinesDrivingLicenseOCRRequest& request, const RecognizePhilippinesDrivingLicenseOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RecognizePhilippinesDrivingLicenseOCROutcomeCallable RecognizePhilippinesDrivingLicenseOCRCallable(const Model::RecognizePhilippinesDrivingLicenseOCRRequest& request);
+
+                /**
+                 *菲律宾VoteID识别
+                 * @param req RecognizePhilippinesVoteIDOCRRequest
+                 * @return RecognizePhilippinesVoteIDOCROutcome
+                 */
+                RecognizePhilippinesVoteIDOCROutcome RecognizePhilippinesVoteIDOCR(const Model::RecognizePhilippinesVoteIDOCRRequest &request);
+                void RecognizePhilippinesVoteIDOCRAsync(const Model::RecognizePhilippinesVoteIDOCRRequest& request, const RecognizePhilippinesVoteIDOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RecognizePhilippinesVoteIDOCROutcomeCallable RecognizePhilippinesVoteIDOCRCallable(const Model::RecognizePhilippinesVoteIDOCRRequest& request);
 
                 /**
                  *本接口支持中英文图片/ PDF内常规表格、无线表格、多表格的检测和识别，支持日文有线表格识别，返回每个单元格的文字内容，支持旋转的表格图片识别，且支持将识别结果保存为 Excel 格式。
@@ -1070,6 +1124,15 @@ namespace TencentCloud
                 RecognizeThaiIDCardOCROutcome RecognizeThaiIDCardOCR(const Model::RecognizeThaiIDCardOCRRequest &request);
                 void RecognizeThaiIDCardOCRAsync(const Model::RecognizeThaiIDCardOCRRequest& request, const RecognizeThaiIDCardOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RecognizeThaiIDCardOCROutcomeCallable RecognizeThaiIDCardOCRCallable(const Model::RecognizeThaiIDCardOCRRequest& request);
+
+                /**
+                 *本接口支持通信大数据行程卡识别，包括行程卡颜色、更新时间、途经地、存在中高风险地区的城市、电话号码，五个字段的识别结果输出。
+                 * @param req RecognizeTravelCardOCRRequest
+                 * @return RecognizeTravelCardOCROutcome
+                 */
+                RecognizeTravelCardOCROutcome RecognizeTravelCardOCR(const Model::RecognizeTravelCardOCRRequest &request);
+                void RecognizeTravelCardOCRAsync(const Model::RecognizeTravelCardOCRRequest& request, const RecognizeTravelCardOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RecognizeTravelCardOCROutcomeCallable RecognizeTravelCardOCRCallable(const Model::RecognizeTravelCardOCRRequest& request);
 
                 /**
                  *本接口支持居民户口簿户主页及成员页关键字段的识别，包括姓名、户别、地址、籍贯、身份证号码等。
@@ -1100,7 +1163,7 @@ namespace TencentCloud
                 RideHailingTransportLicenseOCROutcomeCallable RideHailingTransportLicenseOCRCallable(const Model::RideHailingTransportLicenseOCRRequest& request);
 
                 /**
-                 *印章识别已支持各类印章，包括发票章，财务章等，适用于公文，票据等场景。
+                 *本接口支持各类印章识别，包括发票章，财务章等，适用于公文，票据等场景。
                  * @param req SealOCRRequest
                  * @return SealOCROutcome
                  */
@@ -1186,13 +1249,22 @@ namespace TencentCloud
                 VatInvoiceOCROutcomeCallable VatInvoiceOCRCallable(const Model::VatInvoiceOCRRequest& request);
 
                 /**
-                 *本接口支持增值税发票的准确性核验，您可以通过输入增值税发票的关键字段提供所需的验证信息，接口返回真实的票面相关信息，包括发票代码、发票号码、开票日期、金额、消费类型、购方名称、购方税号、销方名称、销方税号等多个常用字段。支持多种发票类型核验，包括增值税专用发票、增值税普通发票（含电子普通发票、卷式发票、通行费发票）、机动车销售统一发票、货物运输业增值税专用发票、二手车销售统一发票。
+                 *本接口支持增值税发票的准确性核验，您可以通过输入增值税发票的关键字段提供所需的验证信息，接口返回真实的票面相关信息，包括发票代码、发票号码、开票日期、金额、消费类型、购方名称、购方税号、销方名称、销方税号等多个常用字段。支持多种发票类型核验，包括增值税专用发票、增值税普通发票（含电子普通发票、卷式发票、通行费发票）、全电发票、机动车销售统一发票、货物运输业增值税专用发票、二手车销售统一发票。
                  * @param req VatInvoiceVerifyRequest
                  * @return VatInvoiceVerifyOutcome
                  */
                 VatInvoiceVerifyOutcome VatInvoiceVerify(const Model::VatInvoiceVerifyRequest &request);
                 void VatInvoiceVerifyAsync(const Model::VatInvoiceVerifyRequest& request, const VatInvoiceVerifyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 VatInvoiceVerifyOutcomeCallable VatInvoiceVerifyCallable(const Model::VatInvoiceVerifyRequest& request);
+
+                /**
+                 *本接口支持增值税发票的准确性核验，您可以通过输入增值税发票的关键字段提供所需的验证信息，接口返回真实的票面相关信息，包括发票代码、发票号码、开票日期、金额、消费类型、购方名称、购方税号、销方名称、销方税号等多个常用字段。支持多种发票类型核验，包括增值税专用发票、增值税普通发票（含电子普通发票、卷式发票、通行费发票）、全电发票、机动车销售统一发票、货物运输业增值税专用发票、二手车销售统一发票。
+                 * @param req VatInvoiceVerifyNewRequest
+                 * @return VatInvoiceVerifyNewOutcome
+                 */
+                VatInvoiceVerifyNewOutcome VatInvoiceVerifyNew(const Model::VatInvoiceVerifyNewRequest &request);
+                void VatInvoiceVerifyNewAsync(const Model::VatInvoiceVerifyNewRequest& request, const VatInvoiceVerifyNewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                VatInvoiceVerifyNewOutcomeCallable VatInvoiceVerifyNewCallable(const Model::VatInvoiceVerifyNewRequest& request);
 
                 /**
                  *本接口支持对增值税发票（卷票）的发票代码、发票号码、日期、校验码、合计金额（小写）等关键字段的识别。
@@ -1279,7 +1351,7 @@ namespace TencentCloud
                 VinOCROutcomeCallable VinOCRCallable(const Model::VinOCRRequest& request);
 
                 /**
-                 *本接口支持市面上主流版式电子运单的识别，包括收件人和寄件人的姓名、电话、地址以及运单号等字段。
+                 *本接口支持市面上主流版式电子运单的识别，包括收件人和寄件人的姓名、电话、地址以及运单号等字段，精度均处于业界领先水平，识别准确率达到99%以上。
                  * @param req WaybillOCRRequest
                  * @return WaybillOCROutcome
                  */

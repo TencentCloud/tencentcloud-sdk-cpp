@@ -35,7 +35,8 @@ RumProject::RumProject() :
     m_iDHasBeenSet(false),
     m_instanceKeyHasBeenSet(false),
     m_descHasBeenSet(false),
-    m_isStarHasBeenSet(false)
+    m_isStarHasBeenSet(false),
+    m_projectStatusHasBeenSet(false)
 {
 }
 
@@ -194,6 +195,16 @@ CoreInternalOutcome RumProject::Deserialize(const rapidjson::Value &value)
         m_isStarHasBeenSet = true;
     }
 
+    if (value.HasMember("ProjectStatus") && !value["ProjectStatus"].IsNull())
+    {
+        if (!value["ProjectStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RumProject.ProjectStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_projectStatus = value["ProjectStatus"].GetInt64();
+        m_projectStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -319,6 +330,14 @@ void RumProject::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "IsStar";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isStar, allocator);
+    }
+
+    if (m_projectStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProjectStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_projectStatus, allocator);
     }
 
 }
@@ -562,5 +581,21 @@ void RumProject::SetIsStar(const int64_t& _isStar)
 bool RumProject::IsStarHasBeenSet() const
 {
     return m_isStarHasBeenSet;
+}
+
+int64_t RumProject::GetProjectStatus() const
+{
+    return m_projectStatus;
+}
+
+void RumProject::SetProjectStatus(const int64_t& _projectStatus)
+{
+    m_projectStatus = _projectStatus;
+    m_projectStatusHasBeenSet = true;
+}
+
+bool RumProject::ProjectStatusHasBeenSet() const
+{
+    return m_projectStatusHasBeenSet;
 }
 

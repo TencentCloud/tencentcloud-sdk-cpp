@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cbs/v20170312/model/Tag.h>
 
 
 namespace TencentCloud
@@ -96,6 +97,42 @@ namespace TencentCloud
                      */
                     bool DeadlineHasBeenSet() const;
 
+                    /**
+                     * 获取云硬盘备份点ID。传入此参数时，将通过备份点创建快照。
+                     * @return DiskBackupId 云硬盘备份点ID。传入此参数时，将通过备份点创建快照。
+                     */
+                    std::string GetDiskBackupId() const;
+
+                    /**
+                     * 设置云硬盘备份点ID。传入此参数时，将通过备份点创建快照。
+                     * @param DiskBackupId 云硬盘备份点ID。传入此参数时，将通过备份点创建快照。
+                     */
+                    void SetDiskBackupId(const std::string& _diskBackupId);
+
+                    /**
+                     * 判断参数 DiskBackupId 是否已赋值
+                     * @return DiskBackupId 是否已赋值
+                     */
+                    bool DiskBackupIdHasBeenSet() const;
+
+                    /**
+                     * 获取快照绑定的标签。
+                     * @return Tags 快照绑定的标签。
+                     */
+                    std::vector<Tag> GetTags() const;
+
+                    /**
+                     * 设置快照绑定的标签。
+                     * @param Tags 快照绑定的标签。
+                     */
+                    void SetTags(const std::vector<Tag>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     */
+                    bool TagsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -115,6 +152,18 @@ namespace TencentCloud
                      */
                     std::string m_deadline;
                     bool m_deadlineHasBeenSet;
+
+                    /**
+                     * 云硬盘备份点ID。传入此参数时，将通过备份点创建快照。
+                     */
+                    std::string m_diskBackupId;
+                    bool m_diskBackupIdHasBeenSet;
+
+                    /**
+                     * 快照绑定的标签。
+                     */
+                    std::vector<Tag> m_tags;
+                    bool m_tagsHasBeenSet;
 
                 };
             }

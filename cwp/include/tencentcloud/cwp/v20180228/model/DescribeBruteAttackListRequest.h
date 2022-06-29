@@ -83,6 +83,7 @@ namespace TencentCloud
                      * 获取过滤条件。
 <li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li>
 <li>Uuid - String - 是否必填：否 - 云镜唯一Uuid</li>
+<li>Quuid - String - 是否必填：否 - 云服务器uuid</li>
 <li>Status - String - 是否必填：否 - 状态筛选：失败：FAILED 成功：SUCCESS</li>
 <li>UserName - String - 是否必填：否 - UserName筛选</li>
 <li>SrcIp - String - 是否必填：否 - 来源ip筛选</li>
@@ -94,6 +95,7 @@ namespace TencentCloud
                      * @return Filters 过滤条件。
 <li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li>
 <li>Uuid - String - 是否必填：否 - 云镜唯一Uuid</li>
+<li>Quuid - String - 是否必填：否 - 云服务器uuid</li>
 <li>Status - String - 是否必填：否 - 状态筛选：失败：FAILED 成功：SUCCESS</li>
 <li>UserName - String - 是否必填：否 - UserName筛选</li>
 <li>SrcIp - String - 是否必填：否 - 来源ip筛选</li>
@@ -109,6 +111,7 @@ namespace TencentCloud
                      * 设置过滤条件。
 <li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li>
 <li>Uuid - String - 是否必填：否 - 云镜唯一Uuid</li>
+<li>Quuid - String - 是否必填：否 - 云服务器uuid</li>
 <li>Status - String - 是否必填：否 - 状态筛选：失败：FAILED 成功：SUCCESS</li>
 <li>UserName - String - 是否必填：否 - UserName筛选</li>
 <li>SrcIp - String - 是否必填：否 - 来源ip筛选</li>
@@ -120,6 +123,7 @@ namespace TencentCloud
                      * @param Filters 过滤条件。
 <li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li>
 <li>Uuid - String - 是否必填：否 - 云镜唯一Uuid</li>
+<li>Quuid - String - 是否必填：否 - 云服务器uuid</li>
 <li>Status - String - 是否必填：否 - 状态筛选：失败：FAILED 成功：SUCCESS</li>
 <li>UserName - String - 是否必填：否 - UserName筛选</li>
 <li>SrcIp - String - 是否必填：否 - 来源ip筛选</li>
@@ -136,6 +140,42 @@ namespace TencentCloud
                      * @return Filters 是否已赋值
                      */
                     bool FiltersHasBeenSet() const;
+
+                    /**
+                     * 获取排序方式：根据请求次数排序：asc-升序/desc-降序
+                     * @return Order 排序方式：根据请求次数排序：asc-升序/desc-降序
+                     */
+                    std::string GetOrder() const;
+
+                    /**
+                     * 设置排序方式：根据请求次数排序：asc-升序/desc-降序
+                     * @param Order 排序方式：根据请求次数排序：asc-升序/desc-降序
+                     */
+                    void SetOrder(const std::string& _order);
+
+                    /**
+                     * 判断参数 Order 是否已赋值
+                     * @return Order 是否已赋值
+                     */
+                    bool OrderHasBeenSet() const;
+
+                    /**
+                     * 获取排序字段：CreateTime-首次攻击时间
+                     * @return By 排序字段：CreateTime-首次攻击时间
+                     */
+                    std::string GetBy() const;
+
+                    /**
+                     * 设置排序字段：CreateTime-首次攻击时间
+                     * @param By 排序字段：CreateTime-首次攻击时间
+                     */
+                    void SetBy(const std::string& _by);
+
+                    /**
+                     * 判断参数 By 是否已赋值
+                     * @return By 是否已赋值
+                     */
+                    bool ByHasBeenSet() const;
 
                 private:
 
@@ -155,6 +195,7 @@ namespace TencentCloud
                      * 过滤条件。
 <li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li>
 <li>Uuid - String - 是否必填：否 - 云镜唯一Uuid</li>
+<li>Quuid - String - 是否必填：否 - 云服务器uuid</li>
 <li>Status - String - 是否必填：否 - 状态筛选：失败：FAILED 成功：SUCCESS</li>
 <li>UserName - String - 是否必填：否 - UserName筛选</li>
 <li>SrcIp - String - 是否必填：否 - 来源ip筛选</li>
@@ -166,6 +207,18 @@ namespace TencentCloud
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;
+
+                    /**
+                     * 排序方式：根据请求次数排序：asc-升序/desc-降序
+                     */
+                    std::string m_order;
+                    bool m_orderHasBeenSet;
+
+                    /**
+                     * 排序字段：CreateTime-首次攻击时间
+                     */
+                    std::string m_by;
+                    bool m_byHasBeenSet;
 
                 };
             }

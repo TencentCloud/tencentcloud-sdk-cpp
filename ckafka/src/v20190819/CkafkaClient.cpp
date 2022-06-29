@@ -40,6 +40,49 @@ CkafkaClient::CkafkaClient(const Credential &credential, const string &region, c
 }
 
 
+CkafkaClient::AuthorizeTokenOutcome CkafkaClient::AuthorizeToken(const AuthorizeTokenRequest &request)
+{
+    auto outcome = MakeRequest(request, "AuthorizeToken");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AuthorizeTokenResponse rsp = AuthorizeTokenResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AuthorizeTokenOutcome(rsp);
+        else
+            return AuthorizeTokenOutcome(o.GetError());
+    }
+    else
+    {
+        return AuthorizeTokenOutcome(outcome.GetError());
+    }
+}
+
+void CkafkaClient::AuthorizeTokenAsync(const AuthorizeTokenRequest& request, const AuthorizeTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AuthorizeToken(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CkafkaClient::AuthorizeTokenOutcomeCallable CkafkaClient::AuthorizeTokenCallable(const AuthorizeTokenRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AuthorizeTokenOutcome()>>(
+        [this, request]()
+        {
+            return this->AuthorizeToken(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CkafkaClient::BatchCreateAclOutcome CkafkaClient::BatchCreateAcl(const BatchCreateAclRequest &request)
 {
     auto outcome = MakeRequest(request, "BatchCreateAcl");
@@ -169,6 +212,49 @@ CkafkaClient::BatchModifyTopicAttributesOutcomeCallable CkafkaClient::BatchModif
     return task->get_future();
 }
 
+CkafkaClient::CancelAuthorizationTokenOutcome CkafkaClient::CancelAuthorizationToken(const CancelAuthorizationTokenRequest &request)
+{
+    auto outcome = MakeRequest(request, "CancelAuthorizationToken");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CancelAuthorizationTokenResponse rsp = CancelAuthorizationTokenResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CancelAuthorizationTokenOutcome(rsp);
+        else
+            return CancelAuthorizationTokenOutcome(o.GetError());
+    }
+    else
+    {
+        return CancelAuthorizationTokenOutcome(outcome.GetError());
+    }
+}
+
+void CkafkaClient::CancelAuthorizationTokenAsync(const CancelAuthorizationTokenRequest& request, const CancelAuthorizationTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CancelAuthorizationToken(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CkafkaClient::CancelAuthorizationTokenOutcomeCallable CkafkaClient::CancelAuthorizationTokenCallable(const CancelAuthorizationTokenRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CancelAuthorizationTokenOutcome()>>(
+        [this, request]()
+        {
+            return this->CancelAuthorizationToken(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CkafkaClient::CreateAclOutcome CkafkaClient::CreateAcl(const CreateAclRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateAcl");
@@ -205,6 +291,49 @@ CkafkaClient::CreateAclOutcomeCallable CkafkaClient::CreateAclCallable(const Cre
         [this, request]()
         {
             return this->CreateAcl(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CkafkaClient::CreateConsumerOutcome CkafkaClient::CreateConsumer(const CreateConsumerRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateConsumer");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateConsumerResponse rsp = CreateConsumerResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateConsumerOutcome(rsp);
+        else
+            return CreateConsumerOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateConsumerOutcome(outcome.GetError());
+    }
+}
+
+void CkafkaClient::CreateConsumerAsync(const CreateConsumerRequest& request, const CreateConsumerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateConsumer(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CkafkaClient::CreateConsumerOutcomeCallable CkafkaClient::CreateConsumerCallable(const CreateConsumerRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateConsumerOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateConsumer(request);
         }
     );
 
@@ -291,6 +420,92 @@ CkafkaClient::CreatePartitionOutcomeCallable CkafkaClient::CreatePartitionCallab
         [this, request]()
         {
             return this->CreatePartition(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CkafkaClient::CreateRouteOutcome CkafkaClient::CreateRoute(const CreateRouteRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateRoute");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateRouteResponse rsp = CreateRouteResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateRouteOutcome(rsp);
+        else
+            return CreateRouteOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateRouteOutcome(outcome.GetError());
+    }
+}
+
+void CkafkaClient::CreateRouteAsync(const CreateRouteRequest& request, const CreateRouteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateRoute(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CkafkaClient::CreateRouteOutcomeCallable CkafkaClient::CreateRouteCallable(const CreateRouteRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateRouteOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateRoute(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CkafkaClient::CreateTokenOutcome CkafkaClient::CreateToken(const CreateTokenRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateToken");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateTokenResponse rsp = CreateTokenResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateTokenOutcome(rsp);
+        else
+            return CreateTokenOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateTokenOutcome(outcome.GetError());
+    }
+}
+
+void CkafkaClient::CreateTokenAsync(const CreateTokenRequest& request, const CreateTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateToken(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CkafkaClient::CreateTokenOutcomeCallable CkafkaClient::CreateTokenCallable(const CreateTokenRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateTokenOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateToken(request);
         }
     );
 
@@ -513,6 +728,49 @@ CkafkaClient::DeleteAclRuleOutcomeCallable CkafkaClient::DeleteAclRuleCallable(c
     return task->get_future();
 }
 
+CkafkaClient::DeleteGroupOutcome CkafkaClient::DeleteGroup(const DeleteGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteGroupResponse rsp = DeleteGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteGroupOutcome(rsp);
+        else
+            return DeleteGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteGroupOutcome(outcome.GetError());
+    }
+}
+
+void CkafkaClient::DeleteGroupAsync(const DeleteGroupRequest& request, const DeleteGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CkafkaClient::DeleteGroupOutcomeCallable CkafkaClient::DeleteGroupCallable(const DeleteGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CkafkaClient::DeleteInstancePreOutcome CkafkaClient::DeleteInstancePre(const DeleteInstancePreRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteInstancePre");
@@ -549,6 +807,49 @@ CkafkaClient::DeleteInstancePreOutcomeCallable CkafkaClient::DeleteInstancePreCa
         [this, request]()
         {
             return this->DeleteInstancePre(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CkafkaClient::DeleteRouteOutcome CkafkaClient::DeleteRoute(const DeleteRouteRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteRoute");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteRouteResponse rsp = DeleteRouteResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteRouteOutcome(rsp);
+        else
+            return DeleteRouteOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteRouteOutcome(outcome.GetError());
+    }
+}
+
+void CkafkaClient::DeleteRouteAsync(const DeleteRouteRequest& request, const DeleteRouteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteRoute(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CkafkaClient::DeleteRouteOutcomeCallable CkafkaClient::DeleteRouteCallable(const DeleteRouteRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteRouteOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteRoute(request);
         }
     );
 
@@ -1624,6 +1925,49 @@ CkafkaClient::ModifyInstanceAttributesOutcomeCallable CkafkaClient::ModifyInstan
         [this, request]()
         {
             return this->ModifyInstanceAttributes(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CkafkaClient::ModifyInstancePreOutcome CkafkaClient::ModifyInstancePre(const ModifyInstancePreRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyInstancePre");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyInstancePreResponse rsp = ModifyInstancePreResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyInstancePreOutcome(rsp);
+        else
+            return ModifyInstancePreOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyInstancePreOutcome(outcome.GetError());
+    }
+}
+
+void CkafkaClient::ModifyInstancePreAsync(const ModifyInstancePreRequest& request, const ModifyInstancePreAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyInstancePre(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CkafkaClient::ModifyInstancePreOutcomeCallable CkafkaClient::ModifyInstancePreCallable(const ModifyInstancePreRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyInstancePreOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyInstancePre(request);
         }
     );
 

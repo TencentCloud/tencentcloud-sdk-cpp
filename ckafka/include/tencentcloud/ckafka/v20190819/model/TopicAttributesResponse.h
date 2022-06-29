@@ -27,6 +27,7 @@
 #include <tencentcloud/ckafka/v20190819/model/Config.h>
 #include <tencentcloud/ckafka/v20190819/model/TopicPartitionDO.h>
 #include <tencentcloud/ckafka/v20190819/model/AclRule.h>
+#include <tencentcloud/ckafka/v20190819/model/InstanceQuotaConfigResp.h>
 
 
 namespace TencentCloud
@@ -241,6 +242,28 @@ namespace TencentCloud
                      */
                     bool AclRuleListHasBeenSet() const;
 
+                    /**
+                     * 获取topic 限流策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return QuotaConfig topic 限流策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    InstanceQuotaConfigResp GetQuotaConfig() const;
+
+                    /**
+                     * 设置topic 限流策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param QuotaConfig topic 限流策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetQuotaConfig(const InstanceQuotaConfigResp& _quotaConfig);
+
+                    /**
+                     * 判断参数 QuotaConfig 是否已赋值
+                     * @return QuotaConfig 是否已赋值
+                     */
+                    bool QuotaConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -305,6 +328,13 @@ namespace TencentCloud
                      */
                     std::vector<AclRule> m_aclRuleList;
                     bool m_aclRuleListHasBeenSet;
+
+                    /**
+                     * topic 限流策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    InstanceQuotaConfigResp m_quotaConfig;
+                    bool m_quotaConfigHasBeenSet;
 
                 };
             }

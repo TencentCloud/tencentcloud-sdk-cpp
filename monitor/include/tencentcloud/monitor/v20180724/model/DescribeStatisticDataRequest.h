@@ -116,14 +116,34 @@ namespace TencentCloud
                     bool ConditionsHasBeenSet() const;
 
                     /**
-                     * 获取统计粒度。默认取值为300，单位为s
-                     * @return Period 统计粒度。默认取值为300，单位为s
+                     * 获取统计粒度。默认取值为300，单位为s；可选的值为60、300、3600、86400
+受存储时长限制，统计粒度与统计的时间范围有关：
+60s：EndTime-StartTime<12小时，且StartTime距当前时间不能超过15天；
+300s：EndTime-StartTime<3天，且StartTime距当前时间不能超过31天；
+3600s：EndTime-StartTime<30天，且StartTime距当前时间不能超过93天；
+86400s：EndTime-StartTime<186天，且StartTime距当前时间不能超过186天。
+                     * @return Period 统计粒度。默认取值为300，单位为s；可选的值为60、300、3600、86400
+受存储时长限制，统计粒度与统计的时间范围有关：
+60s：EndTime-StartTime<12小时，且StartTime距当前时间不能超过15天；
+300s：EndTime-StartTime<3天，且StartTime距当前时间不能超过31天；
+3600s：EndTime-StartTime<30天，且StartTime距当前时间不能超过93天；
+86400s：EndTime-StartTime<186天，且StartTime距当前时间不能超过186天。
                      */
                     uint64_t GetPeriod() const;
 
                     /**
-                     * 设置统计粒度。默认取值为300，单位为s
-                     * @param Period 统计粒度。默认取值为300，单位为s
+                     * 设置统计粒度。默认取值为300，单位为s；可选的值为60、300、3600、86400
+受存储时长限制，统计粒度与统计的时间范围有关：
+60s：EndTime-StartTime<12小时，且StartTime距当前时间不能超过15天；
+300s：EndTime-StartTime<3天，且StartTime距当前时间不能超过31天；
+3600s：EndTime-StartTime<30天，且StartTime距当前时间不能超过93天；
+86400s：EndTime-StartTime<186天，且StartTime距当前时间不能超过186天。
+                     * @param Period 统计粒度。默认取值为300，单位为s；可选的值为60、300、3600、86400
+受存储时长限制，统计粒度与统计的时间范围有关：
+60s：EndTime-StartTime<12小时，且StartTime距当前时间不能超过15天；
+300s：EndTime-StartTime<3天，且StartTime距当前时间不能超过31天；
+3600s：EndTime-StartTime<30天，且StartTime距当前时间不能超过93天；
+86400s：EndTime-StartTime<186天，且StartTime距当前时间不能超过186天。
                      */
                     void SetPeriod(const uint64_t& _period);
 
@@ -214,7 +234,12 @@ namespace TencentCloud
                     bool m_conditionsHasBeenSet;
 
                     /**
-                     * 统计粒度。默认取值为300，单位为s
+                     * 统计粒度。默认取值为300，单位为s；可选的值为60、300、3600、86400
+受存储时长限制，统计粒度与统计的时间范围有关：
+60s：EndTime-StartTime<12小时，且StartTime距当前时间不能超过15天；
+300s：EndTime-StartTime<3天，且StartTime距当前时间不能超过31天；
+3600s：EndTime-StartTime<30天，且StartTime距当前时间不能超过93天；
+86400s：EndTime-StartTime<186天，且StartTime距当前时间不能超过186天。
                      */
                     uint64_t m_period;
                     bool m_periodHasBeenSet;

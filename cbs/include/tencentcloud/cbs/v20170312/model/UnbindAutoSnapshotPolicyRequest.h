@@ -43,24 +43,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取要解绑定期快照策略的云盘ID列表。
-                     * @return DiskIds 要解绑定期快照策略的云盘ID列表。
-                     */
-                    std::vector<std::string> GetDiskIds() const;
-
-                    /**
-                     * 设置要解绑定期快照策略的云盘ID列表。
-                     * @param DiskIds 要解绑定期快照策略的云盘ID列表。
-                     */
-                    void SetDiskIds(const std::vector<std::string>& _diskIds);
-
-                    /**
-                     * 判断参数 DiskIds 是否已赋值
-                     * @return DiskIds 是否已赋值
-                     */
-                    bool DiskIdsHasBeenSet() const;
-
-                    /**
                      * 获取要解绑的定期快照策略ID。
                      * @return AutoSnapshotPolicyId 要解绑的定期快照策略ID。
                      */
@@ -78,19 +60,37 @@ namespace TencentCloud
                      */
                     bool AutoSnapshotPolicyIdHasBeenSet() const;
 
-                private:
+                    /**
+                     * 获取要解绑定期快照策略的云盘ID列表。
+                     * @return DiskIds 要解绑定期快照策略的云盘ID列表。
+                     */
+                    std::vector<std::string> GetDiskIds() const;
 
                     /**
-                     * 要解绑定期快照策略的云盘ID列表。
+                     * 设置要解绑定期快照策略的云盘ID列表。
+                     * @param DiskIds 要解绑定期快照策略的云盘ID列表。
                      */
-                    std::vector<std::string> m_diskIds;
-                    bool m_diskIdsHasBeenSet;
+                    void SetDiskIds(const std::vector<std::string>& _diskIds);
+
+                    /**
+                     * 判断参数 DiskIds 是否已赋值
+                     * @return DiskIds 是否已赋值
+                     */
+                    bool DiskIdsHasBeenSet() const;
+
+                private:
 
                     /**
                      * 要解绑的定期快照策略ID。
                      */
                     std::string m_autoSnapshotPolicyId;
                     bool m_autoSnapshotPolicyIdHasBeenSet;
+
+                    /**
+                     * 要解绑定期快照策略的云盘ID列表。
+                     */
+                    std::vector<std::string> m_diskIds;
+                    bool m_diskIdsHasBeenSet;
 
                 };
             }

@@ -25,7 +25,8 @@ using namespace std;
 AddEnterpriseSecurityGroupRulesRequest::AddEnterpriseSecurityGroupRulesRequest() :
     m_dataHasBeenSet(false),
     m_typeHasBeenSet(false),
-    m_clientTokenHasBeenSet(false)
+    m_clientTokenHasBeenSet(false),
+    m_isDelayHasBeenSet(false)
 {
 }
 
@@ -65,6 +66,14 @@ string AddEnterpriseSecurityGroupRulesRequest::ToJsonString() const
         string key = "ClientToken";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_clientToken.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isDelayHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsDelay";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isDelay, allocator);
     }
 
 
@@ -121,6 +130,22 @@ void AddEnterpriseSecurityGroupRulesRequest::SetClientToken(const string& _clien
 bool AddEnterpriseSecurityGroupRulesRequest::ClientTokenHasBeenSet() const
 {
     return m_clientTokenHasBeenSet;
+}
+
+uint64_t AddEnterpriseSecurityGroupRulesRequest::GetIsDelay() const
+{
+    return m_isDelay;
+}
+
+void AddEnterpriseSecurityGroupRulesRequest::SetIsDelay(const uint64_t& _isDelay)
+{
+    m_isDelay = _isDelay;
+    m_isDelayHasBeenSet = true;
+}
+
+bool AddEnterpriseSecurityGroupRulesRequest::IsDelayHasBeenSet() const
+{
+    return m_isDelayHasBeenSet;
 }
 
 

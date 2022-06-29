@@ -362,14 +362,14 @@ namespace TencentCloud
                     bool RestartComputeNodeHasBeenSet() const;
 
                     /**
-                     * 获取启动任务过程中，创建计算资源如CVM失败后的最大重试次数，默认为0。
-                     * @return ResourceMaxRetryCount 启动任务过程中，创建计算资源如CVM失败后的最大重试次数，默认为0。
+                     * 获取启动任务过程中，创建计算资源如CVM失败后的最大重试次数，默认为0。最大值100。
+                     * @return ResourceMaxRetryCount 启动任务过程中，创建计算资源如CVM失败后的最大重试次数，默认为0。最大值100。
                      */
                     uint64_t GetResourceMaxRetryCount() const;
 
                     /**
-                     * 设置启动任务过程中，创建计算资源如CVM失败后的最大重试次数，默认为0。
-                     * @param ResourceMaxRetryCount 启动任务过程中，创建计算资源如CVM失败后的最大重试次数，默认为0。
+                     * 设置启动任务过程中，创建计算资源如CVM失败后的最大重试次数，默认为0。最大值100。
+                     * @param ResourceMaxRetryCount 启动任务过程中，创建计算资源如CVM失败后的最大重试次数，默认为0。最大值100。
                      */
                     void SetResourceMaxRetryCount(const uint64_t& _resourceMaxRetryCount);
 
@@ -484,7 +484,7 @@ namespace TencentCloud
                     bool m_restartComputeNodeHasBeenSet;
 
                     /**
-                     * 启动任务过程中，创建计算资源如CVM失败后的最大重试次数，默认为0。
+                     * 启动任务过程中，创建计算资源如CVM失败后的最大重试次数，默认为0。最大值100。
                      */
                     uint64_t m_resourceMaxRetryCount;
                     bool m_resourceMaxRetryCountHasBeenSet;

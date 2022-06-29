@@ -25,7 +25,8 @@ AccountCreateInfo::AccountCreateInfo() :
     m_passwordHasBeenSet(false),
     m_dBPrivilegesHasBeenSet(false),
     m_remarkHasBeenSet(false),
-    m_isAdminHasBeenSet(false)
+    m_isAdminHasBeenSet(false),
+    m_authenticationHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,16 @@ CoreInternalOutcome AccountCreateInfo::Deserialize(const rapidjson::Value &value
         m_isAdminHasBeenSet = true;
     }
 
+    if (value.HasMember("Authentication") && !value["Authentication"].IsNull())
+    {
+        if (!value["Authentication"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AccountCreateInfo.Authentication` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_authentication = string(value["Authentication"].GetString());
+        m_authenticationHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -146,6 +157,14 @@ void AccountCreateInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "IsAdmin";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isAdmin, allocator);
+    }
+
+    if (m_authenticationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Authentication";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_authentication.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -229,5 +248,21 @@ void AccountCreateInfo::SetIsAdmin(const bool& _isAdmin)
 bool AccountCreateInfo::IsAdminHasBeenSet() const
 {
     return m_isAdminHasBeenSet;
+}
+
+string AccountCreateInfo::GetAuthentication() const
+{
+    return m_authentication;
+}
+
+void AccountCreateInfo::SetAuthentication(const string& _authentication)
+{
+    m_authentication = _authentication;
+    m_authenticationHasBeenSet = true;
+}
+
+bool AccountCreateInfo::AuthenticationHasBeenSet() const
+{
+    return m_authenticationHasBeenSet;
 }
 

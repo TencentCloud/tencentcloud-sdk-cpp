@@ -900,6 +900,49 @@ EbClient::PublishEventOutcomeCallable EbClient::PublishEventCallable(const Publi
     return task->get_future();
 }
 
+EbClient::PutEventsOutcome EbClient::PutEvents(const PutEventsRequest &request)
+{
+    auto outcome = MakeRequest(request, "PutEvents");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        PutEventsResponse rsp = PutEventsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return PutEventsOutcome(rsp);
+        else
+            return PutEventsOutcome(o.GetError());
+    }
+    else
+    {
+        return PutEventsOutcome(outcome.GetError());
+    }
+}
+
+void EbClient::PutEventsAsync(const PutEventsRequest& request, const PutEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->PutEvents(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EbClient::PutEventsOutcomeCallable EbClient::PutEventsCallable(const PutEventsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<PutEventsOutcome()>>(
+        [this, request]()
+        {
+            return this->PutEvents(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EbClient::UpdateConnectionOutcome EbClient::UpdateConnection(const UpdateConnectionRequest &request)
 {
     auto outcome = MakeRequest(request, "UpdateConnection");

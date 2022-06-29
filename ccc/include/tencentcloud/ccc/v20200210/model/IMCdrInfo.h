@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 全媒体服务记录信息
+                * 文本会话服务记录信息
                 */
                 class IMCdrInfo : public AbstractModel
                 {
@@ -84,13 +84,45 @@ namespace TencentCloud
 
                     /**
                      * 获取结束状态
+0 异常结束
+1 正常结束
+3 无坐席在线
+17 坐席放弃接听
+100 黑名单
+101 坐席手动转接
+102 IVR阶段放弃
+108 用户超时自动结束
                      * @return EndStatus 结束状态
+0 异常结束
+1 正常结束
+3 无坐席在线
+17 坐席放弃接听
+100 黑名单
+101 坐席手动转接
+102 IVR阶段放弃
+108 用户超时自动结束
                      */
                     int64_t GetEndStatus() const;
 
                     /**
                      * 设置结束状态
+0 异常结束
+1 正常结束
+3 无坐席在线
+17 坐席放弃接听
+100 黑名单
+101 坐席手动转接
+102 IVR阶段放弃
+108 用户超时自动结束
                      * @param EndStatus 结束状态
+0 异常结束
+1 正常结束
+3 无坐席在线
+17 坐席放弃接听
+100 黑名单
+101 坐席手动转接
+102 IVR阶段放弃
+108 用户超时自动结束
                      */
                     void SetEndStatus(const int64_t& _endStatus);
 
@@ -172,6 +204,72 @@ namespace TencentCloud
                      */
                     bool TimestampHasBeenSet() const;
 
+                    /**
+                     * 获取会话ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SessionId 会话ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetSessionId() const;
+
+                    /**
+                     * 设置会话ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SessionId 会话ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSessionId(const std::string& _sessionId);
+
+                    /**
+                     * 判断参数 SessionId 是否已赋值
+                     * @return SessionId 是否已赋值
+                     */
+                    bool SessionIdHasBeenSet() const;
+
+                    /**
+                     * 获取技能组ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SkillGroupId 技能组ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetSkillGroupId() const;
+
+                    /**
+                     * 设置技能组ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SkillGroupId 技能组ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSkillGroupId(const std::string& _skillGroupId);
+
+                    /**
+                     * 判断参数 SkillGroupId 是否已赋值
+                     * @return SkillGroupId 是否已赋值
+                     */
+                    bool SkillGroupIdHasBeenSet() const;
+
+                    /**
+                     * 获取技能组名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SkillGroupName 技能组名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetSkillGroupName() const;
+
+                    /**
+                     * 设置技能组名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SkillGroupName 技能组名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSkillGroupName(const std::string& _skillGroupName);
+
+                    /**
+                     * 判断参数 SkillGroupName 是否已赋值
+                     * @return SkillGroupName 是否已赋值
+                     */
+                    bool SkillGroupNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -188,6 +286,14 @@ namespace TencentCloud
 
                     /**
                      * 结束状态
+0 异常结束
+1 正常结束
+3 无坐席在线
+17 坐席放弃接听
+100 黑名单
+101 坐席手动转接
+102 IVR阶段放弃
+108 用户超时自动结束
                      */
                     int64_t m_endStatus;
                     bool m_endStatusHasBeenSet;
@@ -215,6 +321,27 @@ namespace TencentCloud
                      */
                     int64_t m_timestamp;
                     bool m_timestampHasBeenSet;
+
+                    /**
+                     * 会话ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_sessionId;
+                    bool m_sessionIdHasBeenSet;
+
+                    /**
+                     * 技能组ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_skillGroupId;
+                    bool m_skillGroupIdHasBeenSet;
+
+                    /**
+                     * 技能组名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_skillGroupName;
+                    bool m_skillGroupNameHasBeenSet;
 
                 };
             }

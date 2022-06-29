@@ -40,7 +40,12 @@ AbnormalProcessEventInfo::AbnormalProcessEventInfo() :
     m_ruleExistHasBeenSet(false),
     m_eventCountHasBeenSet(false),
     m_latestFoundTimeHasBeenSet(false),
-    m_ruleIdHasBeenSet(false)
+    m_ruleIdHasBeenSet(false),
+    m_matchGroupNameHasBeenSet(false),
+    m_matchRuleLevelHasBeenSet(false),
+    m_containerNetStatusHasBeenSet(false),
+    m_containerNetSubStatusHasBeenSet(false),
+    m_containerIsolateOperationSrcHasBeenSet(false)
 {
 }
 
@@ -249,6 +254,56 @@ CoreInternalOutcome AbnormalProcessEventInfo::Deserialize(const rapidjson::Value
         m_ruleIdHasBeenSet = true;
     }
 
+    if (value.HasMember("MatchGroupName") && !value["MatchGroupName"].IsNull())
+    {
+        if (!value["MatchGroupName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AbnormalProcessEventInfo.MatchGroupName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_matchGroupName = string(value["MatchGroupName"].GetString());
+        m_matchGroupNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("MatchRuleLevel") && !value["MatchRuleLevel"].IsNull())
+    {
+        if (!value["MatchRuleLevel"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AbnormalProcessEventInfo.MatchRuleLevel` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_matchRuleLevel = string(value["MatchRuleLevel"].GetString());
+        m_matchRuleLevelHasBeenSet = true;
+    }
+
+    if (value.HasMember("ContainerNetStatus") && !value["ContainerNetStatus"].IsNull())
+    {
+        if (!value["ContainerNetStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AbnormalProcessEventInfo.ContainerNetStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_containerNetStatus = string(value["ContainerNetStatus"].GetString());
+        m_containerNetStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("ContainerNetSubStatus") && !value["ContainerNetSubStatus"].IsNull())
+    {
+        if (!value["ContainerNetSubStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AbnormalProcessEventInfo.ContainerNetSubStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_containerNetSubStatus = string(value["ContainerNetSubStatus"].GetString());
+        m_containerNetSubStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("ContainerIsolateOperationSrc") && !value["ContainerIsolateOperationSrc"].IsNull())
+    {
+        if (!value["ContainerIsolateOperationSrc"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AbnormalProcessEventInfo.ContainerIsolateOperationSrc` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_containerIsolateOperationSrc = string(value["ContainerIsolateOperationSrc"].GetString());
+        m_containerIsolateOperationSrcHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -414,6 +469,46 @@ void AbnormalProcessEventInfo::ToJsonObject(rapidjson::Value &value, rapidjson::
         string key = "RuleId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_ruleId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_matchGroupNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MatchGroupName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_matchGroupName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_matchRuleLevelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MatchRuleLevel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_matchRuleLevel.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_containerNetStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ContainerNetStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_containerNetStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_containerNetSubStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ContainerNetSubStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_containerNetSubStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_containerIsolateOperationSrcHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ContainerIsolateOperationSrc";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_containerIsolateOperationSrc.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -737,5 +832,85 @@ void AbnormalProcessEventInfo::SetRuleId(const string& _ruleId)
 bool AbnormalProcessEventInfo::RuleIdHasBeenSet() const
 {
     return m_ruleIdHasBeenSet;
+}
+
+string AbnormalProcessEventInfo::GetMatchGroupName() const
+{
+    return m_matchGroupName;
+}
+
+void AbnormalProcessEventInfo::SetMatchGroupName(const string& _matchGroupName)
+{
+    m_matchGroupName = _matchGroupName;
+    m_matchGroupNameHasBeenSet = true;
+}
+
+bool AbnormalProcessEventInfo::MatchGroupNameHasBeenSet() const
+{
+    return m_matchGroupNameHasBeenSet;
+}
+
+string AbnormalProcessEventInfo::GetMatchRuleLevel() const
+{
+    return m_matchRuleLevel;
+}
+
+void AbnormalProcessEventInfo::SetMatchRuleLevel(const string& _matchRuleLevel)
+{
+    m_matchRuleLevel = _matchRuleLevel;
+    m_matchRuleLevelHasBeenSet = true;
+}
+
+bool AbnormalProcessEventInfo::MatchRuleLevelHasBeenSet() const
+{
+    return m_matchRuleLevelHasBeenSet;
+}
+
+string AbnormalProcessEventInfo::GetContainerNetStatus() const
+{
+    return m_containerNetStatus;
+}
+
+void AbnormalProcessEventInfo::SetContainerNetStatus(const string& _containerNetStatus)
+{
+    m_containerNetStatus = _containerNetStatus;
+    m_containerNetStatusHasBeenSet = true;
+}
+
+bool AbnormalProcessEventInfo::ContainerNetStatusHasBeenSet() const
+{
+    return m_containerNetStatusHasBeenSet;
+}
+
+string AbnormalProcessEventInfo::GetContainerNetSubStatus() const
+{
+    return m_containerNetSubStatus;
+}
+
+void AbnormalProcessEventInfo::SetContainerNetSubStatus(const string& _containerNetSubStatus)
+{
+    m_containerNetSubStatus = _containerNetSubStatus;
+    m_containerNetSubStatusHasBeenSet = true;
+}
+
+bool AbnormalProcessEventInfo::ContainerNetSubStatusHasBeenSet() const
+{
+    return m_containerNetSubStatusHasBeenSet;
+}
+
+string AbnormalProcessEventInfo::GetContainerIsolateOperationSrc() const
+{
+    return m_containerIsolateOperationSrc;
+}
+
+void AbnormalProcessEventInfo::SetContainerIsolateOperationSrc(const string& _containerIsolateOperationSrc)
+{
+    m_containerIsolateOperationSrc = _containerIsolateOperationSrc;
+    m_containerIsolateOperationSrcHasBeenSet = true;
+}
+
+bool AbnormalProcessEventInfo::ContainerIsolateOperationSrcHasBeenSet() const
+{
+    return m_containerIsolateOperationSrcHasBeenSet;
 }
 

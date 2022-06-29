@@ -30,7 +30,9 @@ CreateQosRequest::CreateQosRequest() :
     m_durationHasBeenSet(false),
     m_capacityHasBeenSet(false),
     m_templateIdHasBeenSet(false),
-    m_protocolHasBeenSet(false)
+    m_protocolHasBeenSet(false),
+    m_contextHasBeenSet(false),
+    m_externHasBeenSet(false)
 {
 }
 
@@ -107,6 +109,23 @@ string CreateQosRequest::ToJsonString() const
         string key = "Protocol";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_protocol, allocator);
+    }
+
+    if (m_contextHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Context";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_context.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_externHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Extern";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_extern.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -243,6 +262,38 @@ void CreateQosRequest::SetProtocol(const uint64_t& _protocol)
 bool CreateQosRequest::ProtocolHasBeenSet() const
 {
     return m_protocolHasBeenSet;
+}
+
+Context CreateQosRequest::GetContext() const
+{
+    return m_context;
+}
+
+void CreateQosRequest::SetContext(const Context& _context)
+{
+    m_context = _context;
+    m_contextHasBeenSet = true;
+}
+
+bool CreateQosRequest::ContextHasBeenSet() const
+{
+    return m_contextHasBeenSet;
+}
+
+string CreateQosRequest::GetExtern() const
+{
+    return m_extern;
+}
+
+void CreateQosRequest::SetExtern(const string& _extern)
+{
+    m_extern = _extern;
+    m_externHasBeenSet = true;
+}
+
+bool CreateQosRequest::ExternHasBeenSet() const
+{
+    return m_externHasBeenSet;
 }
 
 

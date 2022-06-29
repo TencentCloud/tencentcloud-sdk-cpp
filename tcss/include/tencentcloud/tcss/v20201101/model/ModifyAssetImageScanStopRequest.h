@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tcss/v20201101/model/AssetFilters.h>
 
 
 namespace TencentCloud
@@ -43,14 +44,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务id
-                     * @return TaskID 任务id
+                     * 获取任务id；任务id，镜像id和根据过滤条件筛选三选一。
+                     * @return TaskID 任务id；任务id，镜像id和根据过滤条件筛选三选一。
                      */
                     std::string GetTaskID() const;
 
                     /**
-                     * 设置任务id
-                     * @param TaskID 任务id
+                     * 设置任务id；任务id，镜像id和根据过滤条件筛选三选一。
+                     * @param TaskID 任务id；任务id，镜像id和根据过滤条件筛选三选一。
                      */
                     void SetTaskID(const std::string& _taskID);
 
@@ -61,14 +62,14 @@ namespace TencentCloud
                     bool TaskIDHasBeenSet() const;
 
                     /**
-                     * 获取镜像id
-                     * @return Images 镜像id
+                     * 获取镜像id；任务id，镜像id和根据过滤条件筛选三选一。
+                     * @return Images 镜像id；任务id，镜像id和根据过滤条件筛选三选一。
                      */
                     std::vector<std::string> GetImages() const;
 
                     /**
-                     * 设置镜像id
-                     * @param Images 镜像id
+                     * 设置镜像id；任务id，镜像id和根据过滤条件筛选三选一。
+                     * @param Images 镜像id；任务id，镜像id和根据过滤条件筛选三选一。
                      */
                     void SetImages(const std::vector<std::string>& _images);
 
@@ -78,19 +79,67 @@ namespace TencentCloud
                      */
                     bool ImagesHasBeenSet() const;
 
+                    /**
+                     * 获取根据过滤条件筛选出镜像；任务id，镜像id和根据过滤条件筛选三选一。
+                     * @return Filters 根据过滤条件筛选出镜像；任务id，镜像id和根据过滤条件筛选三选一。
+                     */
+                    std::vector<AssetFilters> GetFilters() const;
+
+                    /**
+                     * 设置根据过滤条件筛选出镜像；任务id，镜像id和根据过滤条件筛选三选一。
+                     * @param Filters 根据过滤条件筛选出镜像；任务id，镜像id和根据过滤条件筛选三选一。
+                     */
+                    void SetFilters(const std::vector<AssetFilters>& _filters);
+
+                    /**
+                     * 判断参数 Filters 是否已赋值
+                     * @return Filters 是否已赋值
+                     */
+                    bool FiltersHasBeenSet() const;
+
+                    /**
+                     * 获取根据过滤条件筛选出镜像，再排除个别镜像
+                     * @return ExcludeImageIds 根据过滤条件筛选出镜像，再排除个别镜像
+                     */
+                    std::string GetExcludeImageIds() const;
+
+                    /**
+                     * 设置根据过滤条件筛选出镜像，再排除个别镜像
+                     * @param ExcludeImageIds 根据过滤条件筛选出镜像，再排除个别镜像
+                     */
+                    void SetExcludeImageIds(const std::string& _excludeImageIds);
+
+                    /**
+                     * 判断参数 ExcludeImageIds 是否已赋值
+                     * @return ExcludeImageIds 是否已赋值
+                     */
+                    bool ExcludeImageIdsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 任务id
+                     * 任务id；任务id，镜像id和根据过滤条件筛选三选一。
                      */
                     std::string m_taskID;
                     bool m_taskIDHasBeenSet;
 
                     /**
-                     * 镜像id
+                     * 镜像id；任务id，镜像id和根据过滤条件筛选三选一。
                      */
                     std::vector<std::string> m_images;
                     bool m_imagesHasBeenSet;
+
+                    /**
+                     * 根据过滤条件筛选出镜像；任务id，镜像id和根据过滤条件筛选三选一。
+                     */
+                    std::vector<AssetFilters> m_filters;
+                    bool m_filtersHasBeenSet;
+
+                    /**
+                     * 根据过滤条件筛选出镜像，再排除个别镜像
+                     */
+                    std::string m_excludeImageIds;
+                    bool m_excludeImageIdsHasBeenSet;
 
                 };
             }

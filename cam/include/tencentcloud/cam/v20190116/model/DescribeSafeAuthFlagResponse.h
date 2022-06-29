@@ -81,6 +81,18 @@ namespace TencentCloud
                      */
                     bool OffsiteFlagHasBeenSet() const;
 
+                    /**
+                     * 获取1: 提示7天信任设备 0: 不提示
+                     * @return PromptTrust 1: 提示7天信任设备 0: 不提示
+                     */
+                    uint64_t GetPromptTrust() const;
+
+                    /**
+                     * 判断参数 PromptTrust 是否已赋值
+                     * @return PromptTrust 是否已赋值
+                     */
+                    bool PromptTrustHasBeenSet() const;
+
                 private:
 
                     /**
@@ -100,6 +112,12 @@ namespace TencentCloud
                      */
                     OffsiteFlag m_offsiteFlag;
                     bool m_offsiteFlagHasBeenSet;
+
+                    /**
+                     * 1: 提示7天信任设备 0: 不提示
+                     */
+                    uint64_t m_promptTrust;
+                    bool m_promptTrustHasBeenSet;
 
                 };
             }

@@ -23,7 +23,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cat::V20180409::Model;
 using namespace std;
 
-CreateProbeTasksResponse::CreateProbeTasksResponse()
+CreateProbeTasksResponse::CreateProbeTasksResponse() :
+    m_taskIDsHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,19 @@ CoreInternalOutcome CreateProbeTasksResponse::Deserialize(const string &payload)
     }
 
 
+    if (rsp.HasMember("TaskIDs") && !rsp["TaskIDs"].IsNull())
+    {
+        if (!rsp["TaskIDs"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `TaskIDs` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["TaskIDs"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_taskIDs.push_back((*itr).GetString());
+        }
+        m_taskIDsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +84,19 @@ string CreateProbeTasksResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_taskIDsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskIDs";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_taskIDs.begin(); itr != m_taskIDs.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +109,15 @@ string CreateProbeTasksResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+vector<string> CreateProbeTasksResponse::GetTaskIDs() const
+{
+    return m_taskIDs;
+}
+
+bool CreateProbeTasksResponse::TaskIDsHasBeenSet() const
+{
+    return m_taskIDsHasBeenSet;
+}
 
 

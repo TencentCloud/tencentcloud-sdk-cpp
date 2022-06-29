@@ -30,7 +30,10 @@ CreateProbeTasksRequest::CreateProbeTasksRequest() :
     m_parametersHasBeenSet(false),
     m_taskCategoryHasBeenSet(false),
     m_cronHasBeenSet(false),
-    m_tagHasBeenSet(false)
+    m_tagHasBeenSet(false),
+    m_probeTypeHasBeenSet(false),
+    m_pluginSourceHasBeenSet(false),
+    m_clientNumHasBeenSet(false)
 {
 }
 
@@ -122,6 +125,30 @@ string CreateProbeTasksRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_probeTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProbeType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_probeType, allocator);
+    }
+
+    if (m_pluginSourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PluginSource";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_pluginSource.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clientNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClientNum";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_clientNum.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -258,6 +285,54 @@ void CreateProbeTasksRequest::SetTag(const vector<Tag>& _tag)
 bool CreateProbeTasksRequest::TagHasBeenSet() const
 {
     return m_tagHasBeenSet;
+}
+
+uint64_t CreateProbeTasksRequest::GetProbeType() const
+{
+    return m_probeType;
+}
+
+void CreateProbeTasksRequest::SetProbeType(const uint64_t& _probeType)
+{
+    m_probeType = _probeType;
+    m_probeTypeHasBeenSet = true;
+}
+
+bool CreateProbeTasksRequest::ProbeTypeHasBeenSet() const
+{
+    return m_probeTypeHasBeenSet;
+}
+
+string CreateProbeTasksRequest::GetPluginSource() const
+{
+    return m_pluginSource;
+}
+
+void CreateProbeTasksRequest::SetPluginSource(const string& _pluginSource)
+{
+    m_pluginSource = _pluginSource;
+    m_pluginSourceHasBeenSet = true;
+}
+
+bool CreateProbeTasksRequest::PluginSourceHasBeenSet() const
+{
+    return m_pluginSourceHasBeenSet;
+}
+
+string CreateProbeTasksRequest::GetClientNum() const
+{
+    return m_clientNum;
+}
+
+void CreateProbeTasksRequest::SetClientNum(const string& _clientNum)
+{
+    m_clientNum = _clientNum;
+    m_clientNumHasBeenSet = true;
+}
+
+bool CreateProbeTasksRequest::ClientNumHasBeenSet() const
+{
+    return m_clientNumHasBeenSet;
 }
 
 

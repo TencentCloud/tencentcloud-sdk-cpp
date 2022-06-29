@@ -1674,6 +1674,49 @@ IotexplorerClient::DescribeGatewayBindDevicesOutcomeCallable IotexplorerClient::
     return task->get_future();
 }
 
+IotexplorerClient::DescribeGatewaySubDeviceListOutcome IotexplorerClient::DescribeGatewaySubDeviceList(const DescribeGatewaySubDeviceListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeGatewaySubDeviceList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeGatewaySubDeviceListResponse rsp = DescribeGatewaySubDeviceListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeGatewaySubDeviceListOutcome(rsp);
+        else
+            return DescribeGatewaySubDeviceListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeGatewaySubDeviceListOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::DescribeGatewaySubDeviceListAsync(const DescribeGatewaySubDeviceListRequest& request, const DescribeGatewaySubDeviceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeGatewaySubDeviceList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::DescribeGatewaySubDeviceListOutcomeCallable IotexplorerClient::DescribeGatewaySubDeviceListCallable(const DescribeGatewaySubDeviceListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeGatewaySubDeviceListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeGatewaySubDeviceList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotexplorerClient::DescribeGatewaySubProductsOutcome IotexplorerClient::DescribeGatewaySubProducts(const DescribeGatewaySubProductsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeGatewaySubProducts");
@@ -3301,6 +3344,49 @@ IotexplorerClient::ModifyTopicRuleOutcomeCallable IotexplorerClient::ModifyTopic
         [this, request]()
         {
             return this->ModifyTopicRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IotexplorerClient::PublishBroadcastMessageOutcome IotexplorerClient::PublishBroadcastMessage(const PublishBroadcastMessageRequest &request)
+{
+    auto outcome = MakeRequest(request, "PublishBroadcastMessage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        PublishBroadcastMessageResponse rsp = PublishBroadcastMessageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return PublishBroadcastMessageOutcome(rsp);
+        else
+            return PublishBroadcastMessageOutcome(o.GetError());
+    }
+    else
+    {
+        return PublishBroadcastMessageOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::PublishBroadcastMessageAsync(const PublishBroadcastMessageRequest& request, const PublishBroadcastMessageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->PublishBroadcastMessage(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::PublishBroadcastMessageOutcomeCallable IotexplorerClient::PublishBroadcastMessageCallable(const PublishBroadcastMessageRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<PublishBroadcastMessageOutcome()>>(
+        [this, request]()
+        {
+            return this->PublishBroadcastMessage(request);
         }
     );
 

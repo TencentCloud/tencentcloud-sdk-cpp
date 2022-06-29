@@ -186,6 +186,7 @@ set(iotvideoindustry_public_header_model
   include/tencentcloud/iotvideoindustry/v20201201/model/DescribeStatisticSummaryRequest.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DescribeGroupsResponse.h
   include/tencentcloud/iotvideoindustry/v20201201/model/ChannelDetail.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/DescribeChannelLiveStreamURLResponse.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DescribeDeviceStreamsData.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DeleteLiveRecordPlanRequest.h
   include/tencentcloud/iotvideoindustry/v20201201/model/ModifyBindRecordingPlanRequest.h
@@ -195,6 +196,7 @@ set(iotvideoindustry_public_header_model
   include/tencentcloud/iotvideoindustry/v20201201/model/CreateTimeTemplateResponse.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DeleteLiveChannelRequest.h
   include/tencentcloud/iotvideoindustry/v20201201/model/StatisticItem.h
+  include/tencentcloud/iotvideoindustry/v20201201/model/DescribeChannelLiveStreamURLRequest.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DescribeSIPServerResponse.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DescribeGroupByPathRequest.h
   include/tencentcloud/iotvideoindustry/v20201201/model/DescribeRecordDatesByLiveResponse.h
@@ -428,6 +430,7 @@ set(iotvideoindustry_src
   src/v20201201/model/DescribeStatisticSummaryRequest.cpp
   src/v20201201/model/DescribeGroupsResponse.cpp
   src/v20201201/model/ChannelDetail.cpp
+  src/v20201201/model/DescribeChannelLiveStreamURLResponse.cpp
   src/v20201201/model/DescribeDeviceStreamsData.cpp
   src/v20201201/model/DeleteLiveRecordPlanRequest.cpp
   src/v20201201/model/ModifyBindRecordingPlanRequest.cpp
@@ -437,6 +440,7 @@ set(iotvideoindustry_src
   src/v20201201/model/CreateTimeTemplateResponse.cpp
   src/v20201201/model/DeleteLiveChannelRequest.cpp
   src/v20201201/model/StatisticItem.cpp
+  src/v20201201/model/DescribeChannelLiveStreamURLRequest.cpp
   src/v20201201/model/DescribeSIPServerResponse.cpp
   src/v20201201/model/DescribeGroupByPathRequest.cpp
   src/v20201201/model/DescribeRecordDatesByLiveResponse.cpp

@@ -27,7 +27,8 @@ SentenceDetail::SentenceDetail() :
     m_endMsHasBeenSet(false),
     m_wordsNumHasBeenSet(false),
     m_wordsHasBeenSet(false),
-    m_speechSpeedHasBeenSet(false)
+    m_speechSpeedHasBeenSet(false),
+    m_speakerIdHasBeenSet(false)
 {
 }
 
@@ -116,6 +117,16 @@ CoreInternalOutcome SentenceDetail::Deserialize(const rapidjson::Value &value)
         m_speechSpeedHasBeenSet = true;
     }
 
+    if (value.HasMember("SpeakerId") && !value["SpeakerId"].IsNull())
+    {
+        if (!value["SpeakerId"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SentenceDetail.SpeakerId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_speakerId = value["SpeakerId"].GetInt64();
+        m_speakerIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -184,6 +195,14 @@ void SentenceDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "SpeechSpeed";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_speechSpeed, allocator);
+    }
+
+    if (m_speakerIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SpeakerId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_speakerId, allocator);
     }
 
 }
@@ -299,5 +318,21 @@ void SentenceDetail::SetSpeechSpeed(const double& _speechSpeed)
 bool SentenceDetail::SpeechSpeedHasBeenSet() const
 {
     return m_speechSpeedHasBeenSet;
+}
+
+int64_t SentenceDetail::GetSpeakerId() const
+{
+    return m_speakerId;
+}
+
+void SentenceDetail::SetSpeakerId(const int64_t& _speakerId)
+{
+    m_speakerId = _speakerId;
+    m_speakerIdHasBeenSet = true;
+}
+
+bool SentenceDetail::SpeakerIdHasBeenSet() const
+{
+    return m_speakerIdHasBeenSet;
 }
 

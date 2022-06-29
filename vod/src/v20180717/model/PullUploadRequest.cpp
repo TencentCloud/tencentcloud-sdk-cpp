@@ -24,6 +24,7 @@ using namespace std;
 
 PullUploadRequest::PullUploadRequest() :
     m_mediaUrlHasBeenSet(false),
+    m_subAppIdHasBeenSet(false),
     m_mediaNameHasBeenSet(false),
     m_coverUrlHasBeenSet(false),
     m_procedureHasBeenSet(false),
@@ -33,7 +34,6 @@ PullUploadRequest::PullUploadRequest() :
     m_sessionContextHasBeenSet(false),
     m_sessionIdHasBeenSet(false),
     m_extInfoHasBeenSet(false),
-    m_subAppIdHasBeenSet(false),
     m_sourceContextHasBeenSet(false)
 {
 }
@@ -51,6 +51,14 @@ string PullUploadRequest::ToJsonString() const
         string key = "MediaUrl";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_mediaUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subAppIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubAppId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_subAppId, allocator);
     }
 
     if (m_mediaNameHasBeenSet)
@@ -125,14 +133,6 @@ string PullUploadRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_extInfo.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_subAppIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SubAppId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_subAppId, allocator);
-    }
-
     if (m_sourceContextHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -163,6 +163,22 @@ void PullUploadRequest::SetMediaUrl(const string& _mediaUrl)
 bool PullUploadRequest::MediaUrlHasBeenSet() const
 {
     return m_mediaUrlHasBeenSet;
+}
+
+uint64_t PullUploadRequest::GetSubAppId() const
+{
+    return m_subAppId;
+}
+
+void PullUploadRequest::SetSubAppId(const uint64_t& _subAppId)
+{
+    m_subAppId = _subAppId;
+    m_subAppIdHasBeenSet = true;
+}
+
+bool PullUploadRequest::SubAppIdHasBeenSet() const
+{
+    return m_subAppIdHasBeenSet;
 }
 
 string PullUploadRequest::GetMediaName() const
@@ -307,22 +323,6 @@ void PullUploadRequest::SetExtInfo(const string& _extInfo)
 bool PullUploadRequest::ExtInfoHasBeenSet() const
 {
     return m_extInfoHasBeenSet;
-}
-
-uint64_t PullUploadRequest::GetSubAppId() const
-{
-    return m_subAppId;
-}
-
-void PullUploadRequest::SetSubAppId(const uint64_t& _subAppId)
-{
-    m_subAppId = _subAppId;
-    m_subAppIdHasBeenSet = true;
-}
-
-bool PullUploadRequest::SubAppIdHasBeenSet() const
-{
-    return m_subAppIdHasBeenSet;
 }
 
 string PullUploadRequest::GetSourceContext() const

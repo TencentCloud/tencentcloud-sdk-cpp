@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool TopicNameHasBeenSet() const;
 
                     /**
-                     * 获取0：非分区topic，无分区；非0：具体分区topic的分区数，最大不允许超过128。
-                     * @return Partitions 0：非分区topic，无分区；非0：具体分区topic的分区数，最大不允许超过128。
+                     * 获取入参为1，即是创建非分区topic，无分区；入参大于1，表示分区topic的分区数，最大不允许超过128。
+                     * @return Partitions 入参为1，即是创建非分区topic，无分区；入参大于1，表示分区topic的分区数，最大不允许超过128。
                      */
                     uint64_t GetPartitions() const;
 
                     /**
-                     * 设置0：非分区topic，无分区；非0：具体分区topic的分区数，最大不允许超过128。
-                     * @param Partitions 0：非分区topic，无分区；非0：具体分区topic的分区数，最大不允许超过128。
+                     * 设置入参为1，即是创建非分区topic，无分区；入参大于1，表示分区topic的分区数，最大不允许超过128。
+                     * @param Partitions 入参为1，即是创建非分区topic，无分区；入参大于1，表示分区topic的分区数，最大不允许超过128。
                      */
                     void SetPartitions(const uint64_t& _partitions);
 
@@ -95,40 +95,6 @@ namespace TencentCloud
                      * @return Partitions 是否已赋值
                      */
                     bool PartitionsHasBeenSet() const;
-
-                    /**
-                     * 获取0： 普通消息；
-1 ：全局顺序消息；
-2 ：局部顺序消息；
-3 ：重试队列；
-4 ：死信队列。
-                     * @return TopicType 0： 普通消息；
-1 ：全局顺序消息；
-2 ：局部顺序消息；
-3 ：重试队列；
-4 ：死信队列。
-                     */
-                    uint64_t GetTopicType() const;
-
-                    /**
-                     * 设置0： 普通消息；
-1 ：全局顺序消息；
-2 ：局部顺序消息；
-3 ：重试队列；
-4 ：死信队列。
-                     * @param TopicType 0： 普通消息；
-1 ：全局顺序消息；
-2 ：局部顺序消息；
-3 ：重试队列；
-4 ：死信队列。
-                     */
-                    void SetTopicType(const uint64_t& _topicType);
-
-                    /**
-                     * 判断参数 TopicType 是否已赋值
-                     * @return TopicType 是否已赋值
-                     */
-                    bool TopicTypeHasBeenSet() const;
 
                     /**
                      * 获取备注，128字符以内。
@@ -149,6 +115,44 @@ namespace TencentCloud
                     bool RemarkHasBeenSet() const;
 
                     /**
+                     * 获取该入参将逐步弃用，可切换至PulsarTopicType参数
+0： 普通消息；
+1 ：全局顺序消息；
+2 ：局部顺序消息；
+3 ：重试队列；
+4 ：死信队列。
+                     * @return TopicType 该入参将逐步弃用，可切换至PulsarTopicType参数
+0： 普通消息；
+1 ：全局顺序消息；
+2 ：局部顺序消息；
+3 ：重试队列；
+4 ：死信队列。
+                     */
+                    uint64_t GetTopicType() const;
+
+                    /**
+                     * 设置该入参将逐步弃用，可切换至PulsarTopicType参数
+0： 普通消息；
+1 ：全局顺序消息；
+2 ：局部顺序消息；
+3 ：重试队列；
+4 ：死信队列。
+                     * @param TopicType 该入参将逐步弃用，可切换至PulsarTopicType参数
+0： 普通消息；
+1 ：全局顺序消息；
+2 ：局部顺序消息；
+3 ：重试队列；
+4 ：死信队列。
+                     */
+                    void SetTopicType(const uint64_t& _topicType);
+
+                    /**
+                     * 判断参数 TopicType 是否已赋值
+                     * @return TopicType 是否已赋值
+                     */
+                    bool TopicTypeHasBeenSet() const;
+
+                    /**
                      * 获取Pulsar 集群的ID
                      * @return ClusterId Pulsar 集群的ID
                      */
@@ -166,6 +170,40 @@ namespace TencentCloud
                      */
                     bool ClusterIdHasBeenSet() const;
 
+                    /**
+                     * 获取Pulsar 主题类型
+0: 非持久非分区
+1: 非持久分区
+2: 持久非分区
+3: 持久分区
+                     * @return PulsarTopicType Pulsar 主题类型
+0: 非持久非分区
+1: 非持久分区
+2: 持久非分区
+3: 持久分区
+                     */
+                    int64_t GetPulsarTopicType() const;
+
+                    /**
+                     * 设置Pulsar 主题类型
+0: 非持久非分区
+1: 非持久分区
+2: 持久非分区
+3: 持久分区
+                     * @param PulsarTopicType Pulsar 主题类型
+0: 非持久非分区
+1: 非持久分区
+2: 持久非分区
+3: 持久分区
+                     */
+                    void SetPulsarTopicType(const int64_t& _pulsarTopicType);
+
+                    /**
+                     * 判断参数 PulsarTopicType 是否已赋值
+                     * @return PulsarTopicType 是否已赋值
+                     */
+                    bool PulsarTopicTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -181,13 +219,20 @@ namespace TencentCloud
                     bool m_topicNameHasBeenSet;
 
                     /**
-                     * 0：非分区topic，无分区；非0：具体分区topic的分区数，最大不允许超过128。
+                     * 入参为1，即是创建非分区topic，无分区；入参大于1，表示分区topic的分区数，最大不允许超过128。
                      */
                     uint64_t m_partitions;
                     bool m_partitionsHasBeenSet;
 
                     /**
-                     * 0： 普通消息；
+                     * 备注，128字符以内。
+                     */
+                    std::string m_remark;
+                    bool m_remarkHasBeenSet;
+
+                    /**
+                     * 该入参将逐步弃用，可切换至PulsarTopicType参数
+0： 普通消息；
 1 ：全局顺序消息；
 2 ：局部顺序消息；
 3 ：重试队列；
@@ -197,16 +242,20 @@ namespace TencentCloud
                     bool m_topicTypeHasBeenSet;
 
                     /**
-                     * 备注，128字符以内。
-                     */
-                    std::string m_remark;
-                    bool m_remarkHasBeenSet;
-
-                    /**
                      * Pulsar 集群的ID
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
+
+                    /**
+                     * Pulsar 主题类型
+0: 非持久非分区
+1: 非持久分区
+2: 持久非分区
+3: 持久分区
+                     */
+                    int64_t m_pulsarTopicType;
+                    bool m_pulsarTopicTypeHasBeenSet;
 
                 };
             }

@@ -126,6 +126,49 @@ StsClient::AssumeRoleWithSAMLOutcomeCallable StsClient::AssumeRoleWithSAMLCallab
     return task->get_future();
 }
 
+StsClient::AssumeRoleWithWebIdentityOutcome StsClient::AssumeRoleWithWebIdentity(const AssumeRoleWithWebIdentityRequest &request)
+{
+    auto outcome = MakeRequest(request, "AssumeRoleWithWebIdentity");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AssumeRoleWithWebIdentityResponse rsp = AssumeRoleWithWebIdentityResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AssumeRoleWithWebIdentityOutcome(rsp);
+        else
+            return AssumeRoleWithWebIdentityOutcome(o.GetError());
+    }
+    else
+    {
+        return AssumeRoleWithWebIdentityOutcome(outcome.GetError());
+    }
+}
+
+void StsClient::AssumeRoleWithWebIdentityAsync(const AssumeRoleWithWebIdentityRequest& request, const AssumeRoleWithWebIdentityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AssumeRoleWithWebIdentity(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+StsClient::AssumeRoleWithWebIdentityOutcomeCallable StsClient::AssumeRoleWithWebIdentityCallable(const AssumeRoleWithWebIdentityRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AssumeRoleWithWebIdentityOutcome()>>(
+        [this, request]()
+        {
+            return this->AssumeRoleWithWebIdentity(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 StsClient::GetCallerIdentityOutcome StsClient::GetCallerIdentity(const GetCallerIdentityRequest &request)
 {
     auto outcome = MakeRequest(request, "GetCallerIdentity");

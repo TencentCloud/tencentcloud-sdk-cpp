@@ -133,14 +133,14 @@ namespace TencentCloud
                     bool ContextHasBeenSet() const;
 
                     /**
-                     * 获取单次获取的历史数据项目的最大数量, 缺省10
-                     * @return Size 单次获取的历史数据项目的最大数量, 缺省10
+                     * 获取查询数据项目的最大数量, 默认为10。假设传Size=10，返回的实际事件数量为N，则 5 <= N <= 10。
+                     * @return Size 查询数据项目的最大数量, 默认为10。假设传Size=10，返回的实际事件数量为N，则 5 <= N <= 10。
                      */
                     uint64_t GetSize() const;
 
                     /**
-                     * 设置单次获取的历史数据项目的最大数量, 缺省10
-                     * @param Size 单次获取的历史数据项目的最大数量, 缺省10
+                     * 设置查询数据项目的最大数量, 默认为10。假设传Size=10，返回的实际事件数量为N，则 5 <= N <= 10。
+                     * @param Size 查询数据项目的最大数量, 默认为10。假设传Size=10，返回的实际事件数量为N，则 5 <= N <= 10。
                      */
                     void SetSize(const uint64_t& _size);
 
@@ -237,7 +237,7 @@ namespace TencentCloud
                     bool m_contextHasBeenSet;
 
                     /**
-                     * 单次获取的历史数据项目的最大数量, 缺省10
+                     * 查询数据项目的最大数量, 默认为10。假设传Size=10，返回的实际事件数量为N，则 5 <= N <= 10。
                      */
                     uint64_t m_size;
                     bool m_sizeHasBeenSet;

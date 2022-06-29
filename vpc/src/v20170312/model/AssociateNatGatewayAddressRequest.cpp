@@ -26,7 +26,10 @@ AssociateNatGatewayAddressRequest::AssociateNatGatewayAddressRequest() :
     m_natGatewayIdHasBeenSet(false),
     m_addressCountHasBeenSet(false),
     m_publicIpAddressesHasBeenSet(false),
-    m_zoneHasBeenSet(false)
+    m_zoneHasBeenSet(false),
+    m_stockPublicIpAddressesBandwidthOutHasBeenSet(false),
+    m_publicIpAddressesBandwidthOutHasBeenSet(false),
+    m_publicIpFromSameZoneHasBeenSet(false)
 {
 }
 
@@ -72,6 +75,30 @@ string AssociateNatGatewayAddressRequest::ToJsonString() const
         string key = "Zone";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_zone.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_stockPublicIpAddressesBandwidthOutHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StockPublicIpAddressesBandwidthOut";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_stockPublicIpAddressesBandwidthOut, allocator);
+    }
+
+    if (m_publicIpAddressesBandwidthOutHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PublicIpAddressesBandwidthOut";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_publicIpAddressesBandwidthOut, allocator);
+    }
+
+    if (m_publicIpFromSameZoneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PublicIpFromSameZone";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_publicIpFromSameZone, allocator);
     }
 
 
@@ -144,6 +171,54 @@ void AssociateNatGatewayAddressRequest::SetZone(const string& _zone)
 bool AssociateNatGatewayAddressRequest::ZoneHasBeenSet() const
 {
     return m_zoneHasBeenSet;
+}
+
+uint64_t AssociateNatGatewayAddressRequest::GetStockPublicIpAddressesBandwidthOut() const
+{
+    return m_stockPublicIpAddressesBandwidthOut;
+}
+
+void AssociateNatGatewayAddressRequest::SetStockPublicIpAddressesBandwidthOut(const uint64_t& _stockPublicIpAddressesBandwidthOut)
+{
+    m_stockPublicIpAddressesBandwidthOut = _stockPublicIpAddressesBandwidthOut;
+    m_stockPublicIpAddressesBandwidthOutHasBeenSet = true;
+}
+
+bool AssociateNatGatewayAddressRequest::StockPublicIpAddressesBandwidthOutHasBeenSet() const
+{
+    return m_stockPublicIpAddressesBandwidthOutHasBeenSet;
+}
+
+uint64_t AssociateNatGatewayAddressRequest::GetPublicIpAddressesBandwidthOut() const
+{
+    return m_publicIpAddressesBandwidthOut;
+}
+
+void AssociateNatGatewayAddressRequest::SetPublicIpAddressesBandwidthOut(const uint64_t& _publicIpAddressesBandwidthOut)
+{
+    m_publicIpAddressesBandwidthOut = _publicIpAddressesBandwidthOut;
+    m_publicIpAddressesBandwidthOutHasBeenSet = true;
+}
+
+bool AssociateNatGatewayAddressRequest::PublicIpAddressesBandwidthOutHasBeenSet() const
+{
+    return m_publicIpAddressesBandwidthOutHasBeenSet;
+}
+
+bool AssociateNatGatewayAddressRequest::GetPublicIpFromSameZone() const
+{
+    return m_publicIpFromSameZone;
+}
+
+void AssociateNatGatewayAddressRequest::SetPublicIpFromSameZone(const bool& _publicIpFromSameZone)
+{
+    m_publicIpFromSameZone = _publicIpFromSameZone;
+    m_publicIpFromSameZoneHasBeenSet = true;
+}
+
+bool AssociateNatGatewayAddressRequest::PublicIpFromSameZoneHasBeenSet() const
+{
+    return m_publicIpFromSameZoneHasBeenSet;
 }
 
 

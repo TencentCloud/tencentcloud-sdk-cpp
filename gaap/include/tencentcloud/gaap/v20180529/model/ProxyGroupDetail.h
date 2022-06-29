@@ -108,11 +108,13 @@ namespace TencentCloud
 1表示创建中；
 4表示销毁中；
 11表示迁移中；
+12表示部分部署中。
                      * @return Status 通道组状态：
 0表示正常运行；
 1表示创建中；
 4表示销毁中；
 11表示迁移中；
+12表示部分部署中。
                      */
                     int64_t GetStatus() const;
 
@@ -122,11 +124,13 @@ namespace TencentCloud
 1表示创建中；
 4表示销毁中；
 11表示迁移中；
+12表示部分部署中。
                      * @param Status 通道组状态：
 0表示正常运行；
 1表示创建中；
 4表示销毁中；
 11表示迁移中；
+12表示部分部署中。
                      */
                     void SetStatus(const int64_t& _status);
 
@@ -395,17 +399,17 @@ namespace TencentCloud
                     bool IPAddressVersionHasBeenSet() const;
 
                     /**
-                     * 获取通道组套餐类型：Thunder表示标准通道组，Accelerator表示游戏加速器通道组，CrossBorder表示跨境通道组。
+                     * 获取通道组套餐类型：Thunder表示标准通道组，Accelerator表示银牌加速通道组，CrossBorder表示跨境通道组。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PackageType 通道组套餐类型：Thunder表示标准通道组，Accelerator表示游戏加速器通道组，CrossBorder表示跨境通道组。
+                     * @return PackageType 通道组套餐类型：Thunder表示标准通道组，Accelerator表示银牌加速通道组，CrossBorder表示跨境通道组。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetPackageType() const;
 
                     /**
-                     * 设置通道组套餐类型：Thunder表示标准通道组，Accelerator表示游戏加速器通道组，CrossBorder表示跨境通道组。
+                     * 设置通道组套餐类型：Thunder表示标准通道组，Accelerator表示银牌加速通道组，CrossBorder表示跨境通道组。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PackageType 通道组套餐类型：Thunder表示标准通道组，Accelerator表示游戏加速器通道组，CrossBorder表示跨境通道组。
+                     * @param PackageType 通道组套餐类型：Thunder表示标准通道组，Accelerator表示银牌加速通道组，CrossBorder表示跨境通道组。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetPackageType(const std::string& _packageType);
@@ -472,6 +476,7 @@ namespace TencentCloud
 1表示创建中；
 4表示销毁中；
 11表示迁移中；
+12表示部分部署中。
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
@@ -561,7 +566,7 @@ namespace TencentCloud
                     bool m_iPAddressVersionHasBeenSet;
 
                     /**
-                     * 通道组套餐类型：Thunder表示标准通道组，Accelerator表示游戏加速器通道组，CrossBorder表示跨境通道组。
+                     * 通道组套餐类型：Thunder表示标准通道组，Accelerator表示银牌加速通道组，CrossBorder表示跨境通道组。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_packageType;

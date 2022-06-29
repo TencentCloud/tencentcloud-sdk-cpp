@@ -23,6 +23,7 @@ using namespace std;
 AdaptiveDynamicStreamingTaskInput::AdaptiveDynamicStreamingTaskInput() :
     m_definitionHasBeenSet(false),
     m_watermarkSetHasBeenSet(false),
+    m_traceWatermarkHasBeenSet(false),
     m_subtitleSetHasBeenSet(false)
 {
 }
@@ -60,6 +61,23 @@ CoreInternalOutcome AdaptiveDynamicStreamingTaskInput::Deserialize(const rapidjs
             m_watermarkSet.push_back(item);
         }
         m_watermarkSetHasBeenSet = true;
+    }
+
+    if (value.HasMember("TraceWatermark") && !value["TraceWatermark"].IsNull())
+    {
+        if (!value["TraceWatermark"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AdaptiveDynamicStreamingTaskInput.TraceWatermark` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_traceWatermark.Deserialize(value["TraceWatermark"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_traceWatermarkHasBeenSet = true;
     }
 
     if (value.HasMember("SubtitleSet") && !value["SubtitleSet"].IsNull())
@@ -103,6 +121,15 @@ void AdaptiveDynamicStreamingTaskInput::ToJsonObject(rapidjson::Value &value, ra
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_traceWatermarkHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TraceWatermark";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_traceWatermark.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_subtitleSetHasBeenSet)
@@ -151,6 +178,22 @@ void AdaptiveDynamicStreamingTaskInput::SetWatermarkSet(const vector<WatermarkIn
 bool AdaptiveDynamicStreamingTaskInput::WatermarkSetHasBeenSet() const
 {
     return m_watermarkSetHasBeenSet;
+}
+
+TraceWatermarkInput AdaptiveDynamicStreamingTaskInput::GetTraceWatermark() const
+{
+    return m_traceWatermark;
+}
+
+void AdaptiveDynamicStreamingTaskInput::SetTraceWatermark(const TraceWatermarkInput& _traceWatermark)
+{
+    m_traceWatermark = _traceWatermark;
+    m_traceWatermarkHasBeenSet = true;
+}
+
+bool AdaptiveDynamicStreamingTaskInput::TraceWatermarkHasBeenSet() const
+{
+    return m_traceWatermarkHasBeenSet;
 }
 
 vector<string> AdaptiveDynamicStreamingTaskInput::GetSubtitleSet() const

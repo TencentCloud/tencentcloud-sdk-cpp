@@ -101,6 +101,24 @@ namespace TencentCloud
                      */
                     bool SpecItemsHasBeenSet() const;
 
+                    /**
+                     * 获取是否支持跨可用区部署 1-支持，0-不支持
+                     * @return SupportMultiAZ 是否支持跨可用区部署 1-支持，0-不支持
+                     */
+                    int64_t GetSupportMultiAZ() const;
+
+                    /**
+                     * 设置是否支持跨可用区部署 1-支持，0-不支持
+                     * @param SupportMultiAZ 是否支持跨可用区部署 1-支持，0-不支持
+                     */
+                    void SetSupportMultiAZ(const int64_t& _supportMultiAZ);
+
+                    /**
+                     * 判断参数 SupportMultiAZ 是否已赋值
+                     * @return SupportMultiAZ 是否已赋值
+                     */
+                    bool SupportMultiAZHasBeenSet() const;
+
                 private:
 
                     /**
@@ -120,6 +138,12 @@ namespace TencentCloud
                      */
                     std::vector<SpecItem> m_specItems;
                     bool m_specItemsHasBeenSet;
+
+                    /**
+                     * 是否支持跨可用区部署 1-支持，0-不支持
+                     */
+                    int64_t m_supportMultiAZ;
+                    bool m_supportMultiAZHasBeenSet;
 
                 };
             }

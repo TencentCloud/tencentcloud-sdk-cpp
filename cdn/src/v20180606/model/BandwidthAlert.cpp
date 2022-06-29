@@ -28,7 +28,8 @@ BandwidthAlert::BandwidthAlert() :
     m_alertSwitchHasBeenSet(false),
     m_alertPercentageHasBeenSet(false),
     m_lastTriggerTimeOverseasHasBeenSet(false),
-    m_metricHasBeenSet(false)
+    m_metricHasBeenSet(false),
+    m_statisticItemsHasBeenSet(false)
 {
 }
 
@@ -117,6 +118,26 @@ CoreInternalOutcome BandwidthAlert::Deserialize(const rapidjson::Value &value)
         m_metricHasBeenSet = true;
     }
 
+    if (value.HasMember("StatisticItems") && !value["StatisticItems"].IsNull())
+    {
+        if (!value["StatisticItems"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `BandwidthAlert.StatisticItems` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["StatisticItems"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            StatisticItem item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_statisticItems.push_back(item);
+        }
+        m_statisticItemsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -186,6 +207,21 @@ void BandwidthAlert::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "Metric";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_metric.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_statisticItemsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StatisticItems";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_statisticItems.begin(); itr != m_statisticItems.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -317,5 +353,21 @@ void BandwidthAlert::SetMetric(const string& _metric)
 bool BandwidthAlert::MetricHasBeenSet() const
 {
     return m_metricHasBeenSet;
+}
+
+vector<StatisticItem> BandwidthAlert::GetStatisticItems() const
+{
+    return m_statisticItems;
+}
+
+void BandwidthAlert::SetStatisticItems(const vector<StatisticItem>& _statisticItems)
+{
+    m_statisticItems = _statisticItems;
+    m_statisticItemsHasBeenSet = true;
+}
+
+bool BandwidthAlert::StatisticItemsHasBeenSet() const
+{
+    return m_statisticItemsHasBeenSet;
 }
 

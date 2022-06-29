@@ -43,14 +43,58 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取资源名列表，取值为：USER_KEY_PAIR、INSTANCE、SNAPSHOT。
-                     * @return ResourceNames 资源名列表，取值为：USER_KEY_PAIR、INSTANCE、SNAPSHOT。
+                     * 获取资源名列表，可取值:
+- GENERAL_BUNDLE_INSTANCE 通用型套餐实例
+- STORAGE_BUNDLE_INSTANCE 存储型套餐实例 
+- ENTERPRISE_BUNDLE_INSTANCE 企业型套餐实例 
+- EXCLUSIVE_BUNDLE_INSTANCE 专属型套餐实例
+- BEFAST_BUNDLE_INSTANCE 蜂驰型套餐实例
+- USER_KEY_PAIR 密钥对
+- SNAPSHOT 快照
+- BLUEPRINT 自定义镜像
+- FREE_BLUEPRINT 免费自定义镜像
+- DATA_DISK 数据盘
+- FIREWALL_RULE 防火墙规则
+                     * @return ResourceNames 资源名列表，可取值:
+- GENERAL_BUNDLE_INSTANCE 通用型套餐实例
+- STORAGE_BUNDLE_INSTANCE 存储型套餐实例 
+- ENTERPRISE_BUNDLE_INSTANCE 企业型套餐实例 
+- EXCLUSIVE_BUNDLE_INSTANCE 专属型套餐实例
+- BEFAST_BUNDLE_INSTANCE 蜂驰型套餐实例
+- USER_KEY_PAIR 密钥对
+- SNAPSHOT 快照
+- BLUEPRINT 自定义镜像
+- FREE_BLUEPRINT 免费自定义镜像
+- DATA_DISK 数据盘
+- FIREWALL_RULE 防火墙规则
                      */
                     std::vector<std::string> GetResourceNames() const;
 
                     /**
-                     * 设置资源名列表，取值为：USER_KEY_PAIR、INSTANCE、SNAPSHOT。
-                     * @param ResourceNames 资源名列表，取值为：USER_KEY_PAIR、INSTANCE、SNAPSHOT。
+                     * 设置资源名列表，可取值:
+- GENERAL_BUNDLE_INSTANCE 通用型套餐实例
+- STORAGE_BUNDLE_INSTANCE 存储型套餐实例 
+- ENTERPRISE_BUNDLE_INSTANCE 企业型套餐实例 
+- EXCLUSIVE_BUNDLE_INSTANCE 专属型套餐实例
+- BEFAST_BUNDLE_INSTANCE 蜂驰型套餐实例
+- USER_KEY_PAIR 密钥对
+- SNAPSHOT 快照
+- BLUEPRINT 自定义镜像
+- FREE_BLUEPRINT 免费自定义镜像
+- DATA_DISK 数据盘
+- FIREWALL_RULE 防火墙规则
+                     * @param ResourceNames 资源名列表，可取值:
+- GENERAL_BUNDLE_INSTANCE 通用型套餐实例
+- STORAGE_BUNDLE_INSTANCE 存储型套餐实例 
+- ENTERPRISE_BUNDLE_INSTANCE 企业型套餐实例 
+- EXCLUSIVE_BUNDLE_INSTANCE 专属型套餐实例
+- BEFAST_BUNDLE_INSTANCE 蜂驰型套餐实例
+- USER_KEY_PAIR 密钥对
+- SNAPSHOT 快照
+- BLUEPRINT 自定义镜像
+- FREE_BLUEPRINT 免费自定义镜像
+- DATA_DISK 数据盘
+- FIREWALL_RULE 防火墙规则
                      */
                     void SetResourceNames(const std::vector<std::string>& _resourceNames);
 
@@ -63,7 +107,18 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 资源名列表，取值为：USER_KEY_PAIR、INSTANCE、SNAPSHOT。
+                     * 资源名列表，可取值:
+- GENERAL_BUNDLE_INSTANCE 通用型套餐实例
+- STORAGE_BUNDLE_INSTANCE 存储型套餐实例 
+- ENTERPRISE_BUNDLE_INSTANCE 企业型套餐实例 
+- EXCLUSIVE_BUNDLE_INSTANCE 专属型套餐实例
+- BEFAST_BUNDLE_INSTANCE 蜂驰型套餐实例
+- USER_KEY_PAIR 密钥对
+- SNAPSHOT 快照
+- BLUEPRINT 自定义镜像
+- FREE_BLUEPRINT 免费自定义镜像
+- DATA_DISK 数据盘
+- FIREWALL_RULE 防火墙规则
                      */
                     std::vector<std::string> m_resourceNames;
                     bool m_resourceNamesHasBeenSet;

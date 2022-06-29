@@ -36,7 +36,10 @@ CreateJobConfigRequest::CreateJobConfigRequest() :
     m_jobManagerSpecHasBeenSet(false),
     m_taskManagerSpecHasBeenSet(false),
     m_clsLogsetIdHasBeenSet(false),
-    m_clsTopicIdHasBeenSet(false)
+    m_clsTopicIdHasBeenSet(false),
+    m_logCollectTypeHasBeenSet(false),
+    m_pythonVersionHasBeenSet(false),
+    m_workSpaceIdHasBeenSet(false)
 {
 }
 
@@ -171,6 +174,30 @@ string CreateJobConfigRequest::ToJsonString() const
         string key = "ClsTopicId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_clsTopicId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_logCollectTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LogCollectType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_logCollectType, allocator);
+    }
+
+    if (m_pythonVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PythonVersion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_pythonVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_workSpaceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WorkSpaceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_workSpaceId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -403,6 +430,54 @@ void CreateJobConfigRequest::SetClsTopicId(const string& _clsTopicId)
 bool CreateJobConfigRequest::ClsTopicIdHasBeenSet() const
 {
     return m_clsTopicIdHasBeenSet;
+}
+
+int64_t CreateJobConfigRequest::GetLogCollectType() const
+{
+    return m_logCollectType;
+}
+
+void CreateJobConfigRequest::SetLogCollectType(const int64_t& _logCollectType)
+{
+    m_logCollectType = _logCollectType;
+    m_logCollectTypeHasBeenSet = true;
+}
+
+bool CreateJobConfigRequest::LogCollectTypeHasBeenSet() const
+{
+    return m_logCollectTypeHasBeenSet;
+}
+
+string CreateJobConfigRequest::GetPythonVersion() const
+{
+    return m_pythonVersion;
+}
+
+void CreateJobConfigRequest::SetPythonVersion(const string& _pythonVersion)
+{
+    m_pythonVersion = _pythonVersion;
+    m_pythonVersionHasBeenSet = true;
+}
+
+bool CreateJobConfigRequest::PythonVersionHasBeenSet() const
+{
+    return m_pythonVersionHasBeenSet;
+}
+
+string CreateJobConfigRequest::GetWorkSpaceId() const
+{
+    return m_workSpaceId;
+}
+
+void CreateJobConfigRequest::SetWorkSpaceId(const string& _workSpaceId)
+{
+    m_workSpaceId = _workSpaceId;
+    m_workSpaceIdHasBeenSet = true;
+}
+
+bool CreateJobConfigRequest::WorkSpaceIdHasBeenSet() const
+{
+    return m_workSpaceIdHasBeenSet;
 }
 
 

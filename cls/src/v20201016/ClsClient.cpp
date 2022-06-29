@@ -83,6 +83,49 @@ ClsClient::ApplyConfigToMachineGroupOutcomeCallable ClsClient::ApplyConfigToMach
     return task->get_future();
 }
 
+ClsClient::CloseKafkaConsumerOutcome ClsClient::CloseKafkaConsumer(const CloseKafkaConsumerRequest &request)
+{
+    auto outcome = MakeRequest(request, "CloseKafkaConsumer");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CloseKafkaConsumerResponse rsp = CloseKafkaConsumerResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CloseKafkaConsumerOutcome(rsp);
+        else
+            return CloseKafkaConsumerOutcome(o.GetError());
+    }
+    else
+    {
+        return CloseKafkaConsumerOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::CloseKafkaConsumerAsync(const CloseKafkaConsumerRequest& request, const CloseKafkaConsumerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CloseKafkaConsumer(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClsClient::CloseKafkaConsumerOutcomeCallable ClsClient::CloseKafkaConsumerCallable(const CloseKafkaConsumerRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CloseKafkaConsumerOutcome()>>(
+        [this, request]()
+        {
+            return this->CloseKafkaConsumer(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ClsClient::CreateAlarmOutcome ClsClient::CreateAlarm(const CreateAlarmRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateAlarm");
@@ -205,6 +248,49 @@ ClsClient::CreateConfigOutcomeCallable ClsClient::CreateConfigCallable(const Cre
         [this, request]()
         {
             return this->CreateConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ClsClient::CreateConfigExtraOutcome ClsClient::CreateConfigExtra(const CreateConfigExtraRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateConfigExtra");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateConfigExtraResponse rsp = CreateConfigExtraResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateConfigExtraOutcome(rsp);
+        else
+            return CreateConfigExtraOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateConfigExtraOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::CreateConfigExtraAsync(const CreateConfigExtraRequest& request, const CreateConfigExtraAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateConfigExtra(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClsClient::CreateConfigExtraOutcomeCallable ClsClient::CreateConfigExtraCallable(const CreateConfigExtraRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateConfigExtraOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateConfigExtra(request);
         }
     );
 
@@ -642,6 +728,49 @@ ClsClient::DeleteConfigOutcomeCallable ClsClient::DeleteConfigCallable(const Del
     return task->get_future();
 }
 
+ClsClient::DeleteConfigExtraOutcome ClsClient::DeleteConfigExtra(const DeleteConfigExtraRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteConfigExtra");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteConfigExtraResponse rsp = DeleteConfigExtraResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteConfigExtraOutcome(rsp);
+        else
+            return DeleteConfigExtraOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteConfigExtraOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::DeleteConfigExtraAsync(const DeleteConfigExtraRequest& request, const DeleteConfigExtraAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteConfigExtra(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClsClient::DeleteConfigExtraOutcomeCallable ClsClient::DeleteConfigExtraCallable(const DeleteConfigExtraRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteConfigExtraOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteConfigExtra(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ClsClient::DeleteConfigFromMachineGroupOutcome ClsClient::DeleteConfigFromMachineGroup(const DeleteConfigFromMachineGroupRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteConfigFromMachineGroup");
@@ -1072,6 +1201,49 @@ ClsClient::DescribeAlarmsOutcomeCallable ClsClient::DescribeAlarmsCallable(const
     return task->get_future();
 }
 
+ClsClient::DescribeConfigExtrasOutcome ClsClient::DescribeConfigExtras(const DescribeConfigExtrasRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeConfigExtras");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeConfigExtrasResponse rsp = DescribeConfigExtrasResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeConfigExtrasOutcome(rsp);
+        else
+            return DescribeConfigExtrasOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeConfigExtrasOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::DescribeConfigExtrasAsync(const DescribeConfigExtrasRequest& request, const DescribeConfigExtrasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeConfigExtras(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClsClient::DescribeConfigExtrasOutcomeCallable ClsClient::DescribeConfigExtrasCallable(const DescribeConfigExtrasRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeConfigExtrasOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeConfigExtras(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ClsClient::DescribeConfigMachineGroupsOutcome ClsClient::DescribeConfigMachineGroups(const DescribeConfigMachineGroupsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeConfigMachineGroups");
@@ -1323,6 +1495,49 @@ ClsClient::DescribeLogContextOutcomeCallable ClsClient::DescribeLogContextCallab
         [this, request]()
         {
             return this->DescribeLogContext(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ClsClient::DescribeLogHistogramOutcome ClsClient::DescribeLogHistogram(const DescribeLogHistogramRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeLogHistogram");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeLogHistogramResponse rsp = DescribeLogHistogramResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeLogHistogramOutcome(rsp);
+        else
+            return DescribeLogHistogramOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeLogHistogramOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::DescribeLogHistogramAsync(const DescribeLogHistogramRequest& request, const DescribeLogHistogramAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeLogHistogram(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClsClient::DescribeLogHistogramOutcomeCallable ClsClient::DescribeLogHistogramCallable(const DescribeLogHistogramRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeLogHistogramOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeLogHistogram(request);
         }
     );
 
@@ -1889,6 +2104,49 @@ ClsClient::ModifyConfigOutcomeCallable ClsClient::ModifyConfigCallable(const Mod
     return task->get_future();
 }
 
+ClsClient::ModifyConfigExtraOutcome ClsClient::ModifyConfigExtra(const ModifyConfigExtraRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyConfigExtra");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyConfigExtraResponse rsp = ModifyConfigExtraResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyConfigExtraOutcome(rsp);
+        else
+            return ModifyConfigExtraOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyConfigExtraOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::ModifyConfigExtraAsync(const ModifyConfigExtraRequest& request, const ModifyConfigExtraAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyConfigExtra(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClsClient::ModifyConfigExtraOutcomeCallable ClsClient::ModifyConfigExtraCallable(const ModifyConfigExtraRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyConfigExtraOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyConfigExtra(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ClsClient::ModifyConsumerOutcome ClsClient::ModifyConsumer(const ModifyConsumerRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyConsumer");
@@ -2140,6 +2398,49 @@ ClsClient::ModifyTopicOutcomeCallable ClsClient::ModifyTopicCallable(const Modif
         [this, request]()
         {
             return this->ModifyTopic(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ClsClient::OpenKafkaConsumerOutcome ClsClient::OpenKafkaConsumer(const OpenKafkaConsumerRequest &request)
+{
+    auto outcome = MakeRequest(request, "OpenKafkaConsumer");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        OpenKafkaConsumerResponse rsp = OpenKafkaConsumerResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return OpenKafkaConsumerOutcome(rsp);
+        else
+            return OpenKafkaConsumerOutcome(o.GetError());
+    }
+    else
+    {
+        return OpenKafkaConsumerOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::OpenKafkaConsumerAsync(const OpenKafkaConsumerRequest& request, const OpenKafkaConsumerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->OpenKafkaConsumer(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClsClient::OpenKafkaConsumerOutcomeCallable ClsClient::OpenKafkaConsumerCallable(const OpenKafkaConsumerRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<OpenKafkaConsumerOutcome()>>(
+        [this, request]()
+        {
+            return this->OpenKafkaConsumer(request);
         }
     );
 

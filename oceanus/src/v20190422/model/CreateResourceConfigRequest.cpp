@@ -26,7 +26,8 @@ CreateResourceConfigRequest::CreateResourceConfigRequest() :
     m_resourceIdHasBeenSet(false),
     m_resourceLocHasBeenSet(false),
     m_remarkHasBeenSet(false),
-    m_autoDeleteHasBeenSet(false)
+    m_autoDeleteHasBeenSet(false),
+    m_workSpaceIdHasBeenSet(false)
 {
 }
 
@@ -68,6 +69,14 @@ string CreateResourceConfigRequest::ToJsonString() const
         string key = "AutoDelete";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_autoDelete, allocator);
+    }
+
+    if (m_workSpaceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WorkSpaceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_workSpaceId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -140,6 +149,22 @@ void CreateResourceConfigRequest::SetAutoDelete(const int64_t& _autoDelete)
 bool CreateResourceConfigRequest::AutoDeleteHasBeenSet() const
 {
     return m_autoDeleteHasBeenSet;
+}
+
+string CreateResourceConfigRequest::GetWorkSpaceId() const
+{
+    return m_workSpaceId;
+}
+
+void CreateResourceConfigRequest::SetWorkSpaceId(const string& _workSpaceId)
+{
+    m_workSpaceId = _workSpaceId;
+    m_workSpaceIdHasBeenSet = true;
+}
+
+bool CreateResourceConfigRequest::WorkSpaceIdHasBeenSet() const
+{
+    return m_workSpaceIdHasBeenSet;
 }
 
 

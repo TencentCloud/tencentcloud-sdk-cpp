@@ -58,7 +58,9 @@ AddCdnDomainRequest::AddCdnDomainRequest() :
     m_offlineCacheHasBeenSet(false),
     m_quicHasBeenSet(false),
     m_awsPrivateAccessHasBeenSet(false),
-    m_ossPrivateAccessHasBeenSet(false)
+    m_ossPrivateAccessHasBeenSet(false),
+    m_hwPrivateAccessHasBeenSet(false),
+    m_qnPrivateAccessHasBeenSet(false)
 {
 }
 
@@ -393,6 +395,24 @@ string AddCdnDomainRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_ossPrivateAccess.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_hwPrivateAccessHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HwPrivateAccess";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_hwPrivateAccess.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_qnPrivateAccessHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QnPrivateAccess";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_qnPrivateAccess.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -977,6 +997,38 @@ void AddCdnDomainRequest::SetOssPrivateAccess(const OssPrivateAccess& _ossPrivat
 bool AddCdnDomainRequest::OssPrivateAccessHasBeenSet() const
 {
     return m_ossPrivateAccessHasBeenSet;
+}
+
+HwPrivateAccess AddCdnDomainRequest::GetHwPrivateAccess() const
+{
+    return m_hwPrivateAccess;
+}
+
+void AddCdnDomainRequest::SetHwPrivateAccess(const HwPrivateAccess& _hwPrivateAccess)
+{
+    m_hwPrivateAccess = _hwPrivateAccess;
+    m_hwPrivateAccessHasBeenSet = true;
+}
+
+bool AddCdnDomainRequest::HwPrivateAccessHasBeenSet() const
+{
+    return m_hwPrivateAccessHasBeenSet;
+}
+
+QnPrivateAccess AddCdnDomainRequest::GetQnPrivateAccess() const
+{
+    return m_qnPrivateAccess;
+}
+
+void AddCdnDomainRequest::SetQnPrivateAccess(const QnPrivateAccess& _qnPrivateAccess)
+{
+    m_qnPrivateAccess = _qnPrivateAccess;
+    m_qnPrivateAccessHasBeenSet = true;
+}
+
+bool AddCdnDomainRequest::QnPrivateAccessHasBeenSet() const
+{
+    return m_qnPrivateAccessHasBeenSet;
 }
 
 

@@ -35,7 +35,8 @@ KeyMetadata::KeyMetadata() :
     m_deletionDateHasBeenSet(false),
     m_originHasBeenSet(false),
     m_validToHasBeenSet(false),
-    m_resourceIdHasBeenSet(false)
+    m_resourceIdHasBeenSet(false),
+    m_hsmClusterIdHasBeenSet(false)
 {
 }
 
@@ -194,6 +195,16 @@ CoreInternalOutcome KeyMetadata::Deserialize(const rapidjson::Value &value)
         m_resourceIdHasBeenSet = true;
     }
 
+    if (value.HasMember("HsmClusterId") && !value["HsmClusterId"].IsNull())
+    {
+        if (!value["HsmClusterId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `KeyMetadata.HsmClusterId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_hsmClusterId = string(value["HsmClusterId"].GetString());
+        m_hsmClusterIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -319,6 +330,14 @@ void KeyMetadata::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "ResourceId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_resourceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_hsmClusterIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HsmClusterId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_hsmClusterId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -562,5 +581,21 @@ void KeyMetadata::SetResourceId(const string& _resourceId)
 bool KeyMetadata::ResourceIdHasBeenSet() const
 {
     return m_resourceIdHasBeenSet;
+}
+
+string KeyMetadata::GetHsmClusterId() const
+{
+    return m_hsmClusterId;
+}
+
+void KeyMetadata::SetHsmClusterId(const string& _hsmClusterId)
+{
+    m_hsmClusterId = _hsmClusterId;
+    m_hsmClusterIdHasBeenSet = true;
+}
+
+bool KeyMetadata::HsmClusterIdHasBeenSet() const
+{
+    return m_hsmClusterIdHasBeenSet;
 }
 

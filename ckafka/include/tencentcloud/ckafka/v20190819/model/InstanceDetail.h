@@ -265,14 +265,14 @@ namespace TencentCloud
                     bool RenewFlagHasBeenSet() const;
 
                     /**
-                     * 获取实例状态 int：0表示健康，1表示告警，2 表示实例状态异常
-                     * @return Healthy 实例状态 int：0表示健康，1表示告警，2 表示实例状态异常
+                     * 获取实例状态 int：1表示健康，2表示告警，3 表示实例状态异常
+                     * @return Healthy 实例状态 int：1表示健康，2表示告警，3 表示实例状态异常
                      */
                     int64_t GetHealthy() const;
 
                     /**
-                     * 设置实例状态 int：0表示健康，1表示告警，2 表示实例状态异常
-                     * @param Healthy 实例状态 int：0表示健康，1表示告警，2 表示实例状态异常
+                     * 设置实例状态 int：1表示健康，2表示告警，3 表示实例状态异常
+                     * @param Healthy 实例状态 int：1表示健康，2表示告警，3 表示实例状态异常
                      */
                     void SetHealthy(const int64_t& _healthy);
 
@@ -566,6 +566,72 @@ namespace TencentCloud
                      */
                     bool RebalanceTimeHasBeenSet() const;
 
+                    /**
+                     * 获取实例当前partition数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PartitionNumber 实例当前partition数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetPartitionNumber() const;
+
+                    /**
+                     * 设置实例当前partition数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param PartitionNumber 实例当前partition数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPartitionNumber(const uint64_t& _partitionNumber);
+
+                    /**
+                     * 判断参数 PartitionNumber 是否已赋值
+                     * @return PartitionNumber 是否已赋值
+                     */
+                    bool PartitionNumberHasBeenSet() const;
+
+                    /**
+                     * 获取公网带宽类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PublicNetworkChargeType 公网带宽类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetPublicNetworkChargeType() const;
+
+                    /**
+                     * 设置公网带宽类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param PublicNetworkChargeType 公网带宽类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPublicNetworkChargeType(const std::string& _publicNetworkChargeType);
+
+                    /**
+                     * 判断参数 PublicNetworkChargeType 是否已赋值
+                     * @return PublicNetworkChargeType 是否已赋值
+                     */
+                    bool PublicNetworkChargeTypeHasBeenSet() const;
+
+                    /**
+                     * 获取公网带宽值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PublicNetwork 公网带宽值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetPublicNetwork() const;
+
+                    /**
+                     * 设置公网带宽值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param PublicNetwork 公网带宽值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPublicNetwork(const int64_t& _publicNetwork);
+
+                    /**
+                     * 判断参数 PublicNetwork 是否已赋值
+                     * @return PublicNetwork 是否已赋值
+                     */
+                    bool PublicNetworkHasBeenSet() const;
+
                 private:
 
                     /**
@@ -641,7 +707,7 @@ namespace TencentCloud
                     bool m_renewFlagHasBeenSet;
 
                     /**
-                     * 实例状态 int：0表示健康，1表示告警，2 表示实例状态异常
+                     * 实例状态 int：1表示健康，2表示告警，3 表示实例状态异常
                      */
                     int64_t m_healthy;
                     bool m_healthyHasBeenSet;
@@ -737,6 +803,27 @@ namespace TencentCloud
                      */
                     std::string m_rebalanceTime;
                     bool m_rebalanceTimeHasBeenSet;
+
+                    /**
+                     * 实例当前partition数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_partitionNumber;
+                    bool m_partitionNumberHasBeenSet;
+
+                    /**
+                     * 公网带宽类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_publicNetworkChargeType;
+                    bool m_publicNetworkChargeTypeHasBeenSet;
+
+                    /**
+                     * 公网带宽值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_publicNetwork;
+                    bool m_publicNetworkHasBeenSet;
 
                 };
             }

@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取查询返回记录条数，默认为10000。
-                     * @return Limit 查询返回记录条数，默认为10000。
+                     * 获取单次请求返回的数量，最小值为1，最大值为1000，默认值为1000。
+                     * @return Limit 单次请求返回的数量，最小值为1，最大值为1000，默认值为1000。
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置查询返回记录条数，默认为10000。
-                     * @param Limit 查询返回记录条数，默认为10000。
+                     * 设置单次请求返回的数量，最小值为1，最大值为1000，默认值为1000。
+                     * @param Limit 单次请求返回的数量，最小值为1，最大值为1000，默认值为1000。
                      */
                     void SetLimit(const uint64_t& _limit);
 
@@ -105,7 +105,7 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 查询返回记录条数，默认为10000。
+                     * 单次请求返回的数量，最小值为1，最大值为1000，默认值为1000。
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;

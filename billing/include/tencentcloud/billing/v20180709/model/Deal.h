@@ -525,6 +525,72 @@ postMoveIn 按量计费迁入资源
                      */
                     bool ActionHasBeenSet() const;
 
+                    /**
+                     * 获取产品编码中文名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ProductName 产品编码中文名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetProductName() const;
+
+                    /**
+                     * 设置产品编码中文名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ProductName 产品编码中文名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetProductName(const std::string& _productName);
+
+                    /**
+                     * 判断参数 ProductName 是否已赋值
+                     * @return ProductName 是否已赋值
+                     */
+                    bool ProductNameHasBeenSet() const;
+
+                    /**
+                     * 获取子产品编码中文名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SubProductName 子产品编码中文名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetSubProductName() const;
+
+                    /**
+                     * 设置子产品编码中文名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SubProductName 子产品编码中文名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSubProductName(const std::string& _subProductName);
+
+                    /**
+                     * 判断参数 SubProductName 是否已赋值
+                     * @return SubProductName 是否已赋值
+                     */
+                    bool SubProductNameHasBeenSet() const;
+
+                    /**
+                     * 获取订单对应的资源id, 查询参数Limit超过200，将返回null
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ResourceId 订单对应的资源id, 查询参数Limit超过200，将返回null
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> GetResourceId() const;
+
+                    /**
+                     * 设置订单对应的资源id, 查询参数Limit超过200，将返回null
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ResourceId 订单对应的资源id, 查询参数Limit超过200，将返回null
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetResourceId(const std::vector<std::string>& _resourceId);
+
+                    /**
+                     * 判断参数 ResourceId 是否已赋值
+                     * @return ResourceId 是否已赋值
+                     */
+                    bool ResourceIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -680,6 +746,27 @@ postMoveIn 按量计费迁入资源
                      */
                     std::string m_action;
                     bool m_actionHasBeenSet;
+
+                    /**
+                     * 产品编码中文名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_productName;
+                    bool m_productNameHasBeenSet;
+
+                    /**
+                     * 子产品编码中文名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_subProductName;
+                    bool m_subProductNameHasBeenSet;
+
+                    /**
+                     * 订单对应的资源id, 查询参数Limit超过200，将返回null
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_resourceId;
+                    bool m_resourceIdHasBeenSet;
 
                 };
             }

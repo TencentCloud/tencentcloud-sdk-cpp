@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取postgresql实例ID数组
-                     * @return DBInstanceIdSet postgresql实例ID数组
+                     * 获取实例ID集合。注意：当前已不支持同时操作多个实例，这里只能传入单个实例ID。
+                     * @return DBInstanceIdSet 实例ID集合。注意：当前已不支持同时操作多个实例，这里只能传入单个实例ID。
                      */
                     std::vector<std::string> GetDBInstanceIdSet() const;
 
                     /**
-                     * 设置postgresql实例ID数组
-                     * @param DBInstanceIdSet postgresql实例ID数组
+                     * 设置实例ID集合。注意：当前已不支持同时操作多个实例，这里只能传入单个实例ID。
+                     * @param DBInstanceIdSet 实例ID集合。注意：当前已不支持同时操作多个实例，这里只能传入单个实例ID。
                      */
                     void SetDBInstanceIdSet(const std::vector<std::string>& _dBInstanceIdSet);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool DBInstanceIdSetHasBeenSet() const;
 
                     /**
-                     * 获取postgresql实例所属新项目的ID
-                     * @return ProjectId postgresql实例所属新项目的ID
+                     * 获取所属新项目的ID
+                     * @return ProjectId 所属新项目的ID
                      */
                     std::string GetProjectId() const;
 
                     /**
-                     * 设置postgresql实例所属新项目的ID
-                     * @param ProjectId postgresql实例所属新项目的ID
+                     * 设置所属新项目的ID
+                     * @param ProjectId 所属新项目的ID
                      */
                     void SetProjectId(const std::string& _projectId);
 
@@ -81,13 +81,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * postgresql实例ID数组
+                     * 实例ID集合。注意：当前已不支持同时操作多个实例，这里只能传入单个实例ID。
                      */
                     std::vector<std::string> m_dBInstanceIdSet;
                     bool m_dBInstanceIdSetHasBeenSet;
 
                     /**
-                     * postgresql实例所属新项目的ID
+                     * 所属新项目的ID
                      */
                     std::string m_projectId;
                     bool m_projectIdHasBeenSet;

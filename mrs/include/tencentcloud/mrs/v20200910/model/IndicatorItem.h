@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/mrs/v20200910/model/Coordinate.h>
 
 
 namespace TencentCloud
@@ -266,6 +267,50 @@ namespace TencentCloud
                      */
                     bool ItemStringHasBeenSet() const;
 
+                    /**
+                     * 获取指标项ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Id 指标项ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetId() const;
+
+                    /**
+                     * 设置指标项ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Id 指标项ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetId(const int64_t& _id);
+
+                    /**
+                     * 判断参数 Id 是否已赋值
+                     * @return Id 是否已赋值
+                     */
+                    bool IdHasBeenSet() const;
+
+                    /**
+                     * 获取指标项坐标位置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Coords 指标项坐标位置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    Coordinate GetCoords() const;
+
+                    /**
+                     * 设置指标项坐标位置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Coords 指标项坐标位置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCoords(const Coordinate& _coords);
+
+                    /**
+                     * 判断参数 Coords 是否已赋值
+                     * @return Coords 是否已赋值
+                     */
+                    bool CoordsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -337,6 +382,20 @@ namespace TencentCloud
                      */
                     std::string m_itemString;
                     bool m_itemStringHasBeenSet;
+
+                    /**
+                     * 指标项ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_id;
+                    bool m_idHasBeenSet;
+
+                    /**
+                     * 指标项坐标位置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    Coordinate m_coords;
+                    bool m_coordsHasBeenSet;
 
                 };
             }

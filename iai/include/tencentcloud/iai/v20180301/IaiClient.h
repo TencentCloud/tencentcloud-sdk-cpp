@@ -27,8 +27,6 @@
 #include <tencentcloud/iai/v20180301/model/AnalyzeDenseLandmarksResponse.h>
 #include <tencentcloud/iai/v20180301/model/AnalyzeFaceRequest.h>
 #include <tencentcloud/iai/v20180301/model/AnalyzeFaceResponse.h>
-#include <tencentcloud/iai/v20180301/model/CheckSimilarPersonRequest.h>
-#include <tencentcloud/iai/v20180301/model/CheckSimilarPersonResponse.h>
 #include <tencentcloud/iai/v20180301/model/CompareFaceRequest.h>
 #include <tencentcloud/iai/v20180301/model/CompareFaceResponse.h>
 #include <tencentcloud/iai/v20180301/model/CopyPersonRequest.h>
@@ -53,10 +51,6 @@
 #include <tencentcloud/iai/v20180301/model/DetectFaceAttributesResponse.h>
 #include <tencentcloud/iai/v20180301/model/DetectLiveFaceRequest.h>
 #include <tencentcloud/iai/v20180301/model/DetectLiveFaceResponse.h>
-#include <tencentcloud/iai/v20180301/model/EstimateCheckSimilarPersonCostTimeRequest.h>
-#include <tencentcloud/iai/v20180301/model/EstimateCheckSimilarPersonCostTimeResponse.h>
-#include <tencentcloud/iai/v20180301/model/GetCheckSimilarPersonJobIdListRequest.h>
-#include <tencentcloud/iai/v20180301/model/GetCheckSimilarPersonJobIdListResponse.h>
 #include <tencentcloud/iai/v20180301/model/GetGroupInfoRequest.h>
 #include <tencentcloud/iai/v20180301/model/GetGroupInfoResponse.h>
 #include <tencentcloud/iai/v20180301/model/GetGroupListRequest.h>
@@ -69,8 +63,6 @@
 #include <tencentcloud/iai/v20180301/model/GetPersonListResponse.h>
 #include <tencentcloud/iai/v20180301/model/GetPersonListNumRequest.h>
 #include <tencentcloud/iai/v20180301/model/GetPersonListNumResponse.h>
-#include <tencentcloud/iai/v20180301/model/GetSimilarPersonResultRequest.h>
-#include <tencentcloud/iai/v20180301/model/GetSimilarPersonResultResponse.h>
 #include <tencentcloud/iai/v20180301/model/GetUpgradeGroupFaceModelVersionJobListRequest.h>
 #include <tencentcloud/iai/v20180301/model/GetUpgradeGroupFaceModelVersionJobListResponse.h>
 #include <tencentcloud/iai/v20180301/model/GetUpgradeGroupFaceModelVersionResultRequest.h>
@@ -117,9 +109,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::AnalyzeFaceResponse> AnalyzeFaceOutcome;
                 typedef std::future<AnalyzeFaceOutcome> AnalyzeFaceOutcomeCallable;
                 typedef std::function<void(const IaiClient*, const Model::AnalyzeFaceRequest&, AnalyzeFaceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AnalyzeFaceAsyncHandler;
-                typedef Outcome<Core::Error, Model::CheckSimilarPersonResponse> CheckSimilarPersonOutcome;
-                typedef std::future<CheckSimilarPersonOutcome> CheckSimilarPersonOutcomeCallable;
-                typedef std::function<void(const IaiClient*, const Model::CheckSimilarPersonRequest&, CheckSimilarPersonOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckSimilarPersonAsyncHandler;
                 typedef Outcome<Core::Error, Model::CompareFaceResponse> CompareFaceOutcome;
                 typedef std::future<CompareFaceOutcome> CompareFaceOutcomeCallable;
                 typedef std::function<void(const IaiClient*, const Model::CompareFaceRequest&, CompareFaceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CompareFaceAsyncHandler;
@@ -156,12 +145,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DetectLiveFaceResponse> DetectLiveFaceOutcome;
                 typedef std::future<DetectLiveFaceOutcome> DetectLiveFaceOutcomeCallable;
                 typedef std::function<void(const IaiClient*, const Model::DetectLiveFaceRequest&, DetectLiveFaceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DetectLiveFaceAsyncHandler;
-                typedef Outcome<Core::Error, Model::EstimateCheckSimilarPersonCostTimeResponse> EstimateCheckSimilarPersonCostTimeOutcome;
-                typedef std::future<EstimateCheckSimilarPersonCostTimeOutcome> EstimateCheckSimilarPersonCostTimeOutcomeCallable;
-                typedef std::function<void(const IaiClient*, const Model::EstimateCheckSimilarPersonCostTimeRequest&, EstimateCheckSimilarPersonCostTimeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EstimateCheckSimilarPersonCostTimeAsyncHandler;
-                typedef Outcome<Core::Error, Model::GetCheckSimilarPersonJobIdListResponse> GetCheckSimilarPersonJobIdListOutcome;
-                typedef std::future<GetCheckSimilarPersonJobIdListOutcome> GetCheckSimilarPersonJobIdListOutcomeCallable;
-                typedef std::function<void(const IaiClient*, const Model::GetCheckSimilarPersonJobIdListRequest&, GetCheckSimilarPersonJobIdListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetCheckSimilarPersonJobIdListAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetGroupInfoResponse> GetGroupInfoOutcome;
                 typedef std::future<GetGroupInfoOutcome> GetGroupInfoOutcomeCallable;
                 typedef std::function<void(const IaiClient*, const Model::GetGroupInfoRequest&, GetGroupInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetGroupInfoAsyncHandler;
@@ -180,9 +163,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetPersonListNumResponse> GetPersonListNumOutcome;
                 typedef std::future<GetPersonListNumOutcome> GetPersonListNumOutcomeCallable;
                 typedef std::function<void(const IaiClient*, const Model::GetPersonListNumRequest&, GetPersonListNumOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetPersonListNumAsyncHandler;
-                typedef Outcome<Core::Error, Model::GetSimilarPersonResultResponse> GetSimilarPersonResultOutcome;
-                typedef std::future<GetSimilarPersonResultOutcome> GetSimilarPersonResultOutcomeCallable;
-                typedef std::function<void(const IaiClient*, const Model::GetSimilarPersonResultRequest&, GetSimilarPersonResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetSimilarPersonResultAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetUpgradeGroupFaceModelVersionJobListResponse> GetUpgradeGroupFaceModelVersionJobListOutcome;
                 typedef std::future<GetUpgradeGroupFaceModelVersionJobListOutcome> GetUpgradeGroupFaceModelVersionJobListOutcomeCallable;
                 typedef std::function<void(const IaiClient*, const Model::GetUpgradeGroupFaceModelVersionJobListRequest&, GetUpgradeGroupFaceModelVersionJobListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetUpgradeGroupFaceModelVersionJobListAsyncHandler;
@@ -245,25 +225,6 @@ namespace TencentCloud
                 AnalyzeFaceOutcome AnalyzeFace(const Model::AnalyzeFaceRequest &request);
                 void AnalyzeFaceAsync(const Model::AnalyzeFaceRequest& request, const AnalyzeFaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 AnalyzeFaceOutcomeCallable AnalyzeFaceCallable(const Model::AnalyzeFaceRequest& request);
-
-                /**
-                 *对指定的人员库进行人员查重，给出疑似相同人的信息。
-
-可以使用本接口对已有的单个人员库进行人员查重，避免同一人在单个人员库中拥有多个身份；也可以使用本接口对已有的多个人员库进行人员查重，查询同一人是否同时存在多个人员库中。
-
-不支持跨算法模型版本查重，且目前仅支持算法模型为3.0的人员库使用查重功能。
-
->     
-- 若对完全相同的指定人员库进行查重操作，需等待上次操作完成才可。即，若两次请求输入的 GroupIds 相同，第一次请求若未完成，第二次请求将返回失败。
-
->     
-- 查重的人员库状态为腾讯云开始进行查重任务的那一刻，即您可以理解为当您发起查重请求后，若您的查重任务需要排队，在排队期间您对人员库的增删操作均会会影响查重的结果。腾讯云将以开始进行查重任务的那一刻人员库的状态进行查重。查重任务开始后，您对人员库的任何操作均不影响查重任务的进行。但建议查重任务开始后，请不要对人员库中人员和人脸进行增删操作。
-                 * @param req CheckSimilarPersonRequest
-                 * @return CheckSimilarPersonOutcome
-                 */
-                CheckSimilarPersonOutcome CheckSimilarPerson(const Model::CheckSimilarPersonRequest &request);
-                void CheckSimilarPersonAsync(const Model::CheckSimilarPersonRequest& request, const CheckSimilarPersonAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                CheckSimilarPersonOutcomeCallable CheckSimilarPersonCallable(const Model::CheckSimilarPersonRequest& request);
 
                 /**
                  *对两张图片中的人脸进行相似度比对，返回人脸相似度分数。
@@ -442,30 +403,6 @@ namespace TencentCloud
                 DetectLiveFaceOutcomeCallable DetectLiveFaceCallable(const Model::DetectLiveFaceRequest& request);
 
                 /**
-                 *获取若要开始一个人员查重任务，这个任务结束的预估时间。
-
-若EndTimestamp符合您预期，请您尽快发起人员查重请求，否则导致可能需要更多处理时间。
-
-若预估时间超过5小时，则无法使用人员查重功能。
-                 * @param req EstimateCheckSimilarPersonCostTimeRequest
-                 * @return EstimateCheckSimilarPersonCostTimeOutcome
-                 */
-                EstimateCheckSimilarPersonCostTimeOutcome EstimateCheckSimilarPersonCostTime(const Model::EstimateCheckSimilarPersonCostTimeRequest &request);
-                void EstimateCheckSimilarPersonCostTimeAsync(const Model::EstimateCheckSimilarPersonCostTimeRequest& request, const EstimateCheckSimilarPersonCostTimeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                EstimateCheckSimilarPersonCostTimeOutcomeCallable EstimateCheckSimilarPersonCostTimeCallable(const Model::EstimateCheckSimilarPersonCostTimeRequest& request);
-
-                /**
-                 *获取人员查重任务列表，按任务创建时间逆序（最新的在前面）。
-
-只保留最近1年的数据。
-                 * @param req GetCheckSimilarPersonJobIdListRequest
-                 * @return GetCheckSimilarPersonJobIdListOutcome
-                 */
-                GetCheckSimilarPersonJobIdListOutcome GetCheckSimilarPersonJobIdList(const Model::GetCheckSimilarPersonJobIdListRequest &request);
-                void GetCheckSimilarPersonJobIdListAsync(const Model::GetCheckSimilarPersonJobIdListRequest& request, const GetCheckSimilarPersonJobIdListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                GetCheckSimilarPersonJobIdListOutcomeCallable GetCheckSimilarPersonJobIdListCallable(const Model::GetCheckSimilarPersonJobIdListRequest& request);
-
-                /**
                  *获取人员库信息。
                  * @param req GetGroupInfoRequest
                  * @return GetGroupInfoOutcome
@@ -518,15 +455,6 @@ namespace TencentCloud
                 GetPersonListNumOutcome GetPersonListNum(const Model::GetPersonListNumRequest &request);
                 void GetPersonListNumAsync(const Model::GetPersonListNumRequest& request, const GetPersonListNumAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GetPersonListNumOutcomeCallable GetPersonListNumCallable(const Model::GetPersonListNumRequest& request);
-
-                /**
-                 *获取人员查重接口（CheckSimilarPerson）结果。
-                 * @param req GetSimilarPersonResultRequest
-                 * @return GetSimilarPersonResultOutcome
-                 */
-                GetSimilarPersonResultOutcome GetSimilarPersonResult(const Model::GetSimilarPersonResultRequest &request);
-                void GetSimilarPersonResultAsync(const Model::GetSimilarPersonResultRequest& request, const GetSimilarPersonResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                GetSimilarPersonResultOutcomeCallable GetSimilarPersonResultCallable(const Model::GetSimilarPersonResultRequest& request);
 
                 /**
                  *获取人员库升级任务列表

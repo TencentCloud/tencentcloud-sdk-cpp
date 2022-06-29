@@ -98,14 +98,14 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取分页限制数目， 最大100，默认20
-                     * @return Limit 分页限制数目， 最大100，默认20
+                     * 获取分页限制数目， 最大200，默认20
+                     * @return Limit 分页限制数目， 最大200，默认20
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置分页限制数目， 最大100，默认20
-                     * @param Limit 分页限制数目， 最大100，默认20
+                     * 设置分页限制数目， 最大200，默认20
+                     * @param Limit 分页限制数目， 最大200，默认20
                      */
                     void SetLimit(const int64_t& _limit);
 
@@ -136,7 +136,7 @@ namespace TencentCloud
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 分页限制数目， 最大100，默认20
+                     * 分页限制数目， 最大200，默认20
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;

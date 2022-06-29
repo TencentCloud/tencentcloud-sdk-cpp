@@ -26,7 +26,9 @@ CreateTaskRequest::CreateTaskRequest() :
     m_mediaIdHasBeenSet(false),
     m_mediaPreknownInfoHasBeenSet(false),
     m_taskNameHasBeenSet(false),
-    m_uploadVideoHasBeenSet(false)
+    m_uploadVideoHasBeenSet(false),
+    m_labelHasBeenSet(false),
+    m_callbackURLHasBeenSet(false)
 {
 }
 
@@ -68,6 +70,22 @@ string CreateTaskRequest::ToJsonString() const
         string key = "UploadVideo";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_uploadVideo, allocator);
+    }
+
+    if (m_labelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Label";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_label.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_callbackURLHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CallbackURL";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_callbackURL.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -140,6 +158,38 @@ void CreateTaskRequest::SetUploadVideo(const bool& _uploadVideo)
 bool CreateTaskRequest::UploadVideoHasBeenSet() const
 {
     return m_uploadVideoHasBeenSet;
+}
+
+string CreateTaskRequest::GetLabel() const
+{
+    return m_label;
+}
+
+void CreateTaskRequest::SetLabel(const string& _label)
+{
+    m_label = _label;
+    m_labelHasBeenSet = true;
+}
+
+bool CreateTaskRequest::LabelHasBeenSet() const
+{
+    return m_labelHasBeenSet;
+}
+
+string CreateTaskRequest::GetCallbackURL() const
+{
+    return m_callbackURL;
+}
+
+void CreateTaskRequest::SetCallbackURL(const string& _callbackURL)
+{
+    m_callbackURL = _callbackURL;
+    m_callbackURLHasBeenSet = true;
+}
+
+bool CreateTaskRequest::CallbackURLHasBeenSet() const
+{
+    return m_callbackURLHasBeenSet;
 }
 
 

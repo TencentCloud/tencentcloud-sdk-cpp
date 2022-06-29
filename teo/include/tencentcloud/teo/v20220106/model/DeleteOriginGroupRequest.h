@@ -1,0 +1,101 @@
+/*
+ * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#ifndef TENCENTCLOUD_TEO_V20220106_MODEL_DELETEORIGINGROUPREQUEST_H_
+#define TENCENTCLOUD_TEO_V20220106_MODEL_DELETEORIGINGROUPREQUEST_H_
+
+#include <string>
+#include <vector>
+#include <map>
+#include <tencentcloud/core/AbstractModel.h>
+
+
+namespace TencentCloud
+{
+    namespace Teo
+    {
+        namespace V20220106
+        {
+            namespace Model
+            {
+                /**
+                * DeleteOriginGroup请求参数结构体
+                */
+                class DeleteOriginGroupRequest : public AbstractModel
+                {
+                public:
+                    DeleteOriginGroupRequest();
+                    ~DeleteOriginGroupRequest() = default;
+                    std::string ToJsonString() const;
+
+
+                    /**
+                     * 获取源站组ID
+                     * @return OriginId 源站组ID
+                     */
+                    std::string GetOriginId() const;
+
+                    /**
+                     * 设置源站组ID
+                     * @param OriginId 源站组ID
+                     */
+                    void SetOriginId(const std::string& _originId);
+
+                    /**
+                     * 判断参数 OriginId 是否已赋值
+                     * @return OriginId 是否已赋值
+                     */
+                    bool OriginIdHasBeenSet() const;
+
+                    /**
+                     * 获取站点ID
+                     * @return ZoneId 站点ID
+                     */
+                    std::string GetZoneId() const;
+
+                    /**
+                     * 设置站点ID
+                     * @param ZoneId 站点ID
+                     */
+                    void SetZoneId(const std::string& _zoneId);
+
+                    /**
+                     * 判断参数 ZoneId 是否已赋值
+                     * @return ZoneId 是否已赋值
+                     */
+                    bool ZoneIdHasBeenSet() const;
+
+                private:
+
+                    /**
+                     * 源站组ID
+                     */
+                    std::string m_originId;
+                    bool m_originIdHasBeenSet;
+
+                    /**
+                     * 站点ID
+                     */
+                    std::string m_zoneId;
+                    bool m_zoneIdHasBeenSet;
+
+                };
+            }
+        }
+    }
+}
+
+#endif // !TENCENTCLOUD_TEO_V20220106_MODEL_DELETEORIGINGROUPREQUEST_H_

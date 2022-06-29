@@ -226,6 +226,24 @@ namespace TencentCloud
                      */
                     bool UpdatedAtHasBeenSet() const;
 
+                    /**
+                     * 获取应用类型：0:NormalApp普通应用 1:TemplateApp模板应用 2:LightApp轻应用 3:MicroConnTemplate微连接模板 4:MicroConnApp微连接应用
+                     * @return ProjectType 应用类型：0:NormalApp普通应用 1:TemplateApp模板应用 2:LightApp轻应用 3:MicroConnTemplate微连接模板 4:MicroConnApp微连接应用
+                     */
+                    int64_t GetProjectType() const;
+
+                    /**
+                     * 设置应用类型：0:NormalApp普通应用 1:TemplateApp模板应用 2:LightApp轻应用 3:MicroConnTemplate微连接模板 4:MicroConnApp微连接应用
+                     * @param ProjectType 应用类型：0:NormalApp普通应用 1:TemplateApp模板应用 2:LightApp轻应用 3:MicroConnTemplate微连接模板 4:MicroConnApp微连接应用
+                     */
+                    void SetProjectType(const int64_t& _projectType);
+
+                    /**
+                     * 判断参数 ProjectType 是否已赋值
+                     * @return ProjectType 是否已赋值
+                     */
+                    bool ProjectTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -287,6 +305,12 @@ namespace TencentCloud
                      */
                     int64_t m_updatedAt;
                     bool m_updatedAtHasBeenSet;
+
+                    /**
+                     * 应用类型：0:NormalApp普通应用 1:TemplateApp模板应用 2:LightApp轻应用 3:MicroConnTemplate微连接模板 4:MicroConnApp微连接应用
+                     */
+                    int64_t m_projectType;
+                    bool m_projectTypeHasBeenSet;
 
                 };
             }

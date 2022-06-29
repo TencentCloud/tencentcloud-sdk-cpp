@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 标签索引配置信息
+                * 元字段索引配置
                 */
                 class RuleTagInfo : public AbstractModel
                 {
@@ -66,14 +66,14 @@ namespace TencentCloud
                     bool CaseSensitiveHasBeenSet() const;
 
                     /**
-                     * 获取标签索引配置中的字段信息
-                     * @return KeyValues 标签索引配置中的字段信息
+                     * 获取元字段索引配置中的字段信息
+                     * @return KeyValues 元字段索引配置中的字段信息
                      */
                     std::vector<KeyValueInfo> GetKeyValues() const;
 
                     /**
-                     * 设置标签索引配置中的字段信息
-                     * @param KeyValues 标签索引配置中的字段信息
+                     * 设置元字段索引配置中的字段信息
+                     * @param KeyValues 元字段索引配置中的字段信息
                      */
                     void SetKeyValues(const std::vector<KeyValueInfo>& _keyValues);
 
@@ -92,7 +92,7 @@ namespace TencentCloud
                     bool m_caseSensitiveHasBeenSet;
 
                     /**
-                     * 标签索引配置中的字段信息
+                     * 元字段索引配置中的字段信息
                      */
                     std::vector<KeyValueInfo> m_keyValues;
                     bool m_keyValuesHasBeenSet;

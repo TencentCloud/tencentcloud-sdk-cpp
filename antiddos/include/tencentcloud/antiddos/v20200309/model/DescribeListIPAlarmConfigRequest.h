@@ -144,6 +144,24 @@ namespace TencentCloud
                      */
                     bool FilterIpHasBeenSet() const;
 
+                    /**
+                     * 获取高防IP实例资源的cname
+                     * @return FilterCname 高防IP实例资源的cname
+                     */
+                    std::string GetFilterCname() const;
+
+                    /**
+                     * 设置高防IP实例资源的cname
+                     * @param FilterCname 高防IP实例资源的cname
+                     */
+                    void SetFilterCname(const std::string& _filterCname);
+
+                    /**
+                     * 判断参数 FilterCname 是否已赋值
+                     * @return FilterCname 是否已赋值
+                     */
+                    bool FilterCnameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -178,6 +196,12 @@ namespace TencentCloud
                      */
                     std::string m_filterIp;
                     bool m_filterIpHasBeenSet;
+
+                    /**
+                     * 高防IP实例资源的cname
+                     */
+                    std::string m_filterCname;
+                    bool m_filterCnameHasBeenSet;
 
                 };
             }

@@ -649,6 +649,110 @@ namespace TencentCloud
                      */
                     bool RegionIdHasBeenSet() const;
 
+                    /**
+                     * 获取资源包、预留实例、节省计划、竞价实例这四类特殊实例本身的扣费行为，此字段体现对应的实例类型。枚举值如下：
+
+ri=Standard RI
+
+svp=Savings Plan
+
+si=Spot Instances
+
+rp=Resource Pack
+                     * @return InstanceType 资源包、预留实例、节省计划、竞价实例这四类特殊实例本身的扣费行为，此字段体现对应的实例类型。枚举值如下：
+
+ri=Standard RI
+
+svp=Savings Plan
+
+si=Spot Instances
+
+rp=Resource Pack
+                     */
+                    std::string GetInstanceType() const;
+
+                    /**
+                     * 设置资源包、预留实例、节省计划、竞价实例这四类特殊实例本身的扣费行为，此字段体现对应的实例类型。枚举值如下：
+
+ri=Standard RI
+
+svp=Savings Plan
+
+si=Spot Instances
+
+rp=Resource Pack
+                     * @param InstanceType 资源包、预留实例、节省计划、竞价实例这四类特殊实例本身的扣费行为，此字段体现对应的实例类型。枚举值如下：
+
+ri=Standard RI
+
+svp=Savings Plan
+
+si=Spot Instances
+
+rp=Resource Pack
+                     */
+                    void SetInstanceType(const std::string& _instanceType);
+
+                    /**
+                     * 判断参数 InstanceType 是否已赋值
+                     * @return InstanceType 是否已赋值
+                     */
+                    bool InstanceTypeHasBeenSet() const;
+
+                    /**
+                     * 获取按组件原价的口径换算的预留实例抵扣金额
+                     * @return OriginalCostWithRI 按组件原价的口径换算的预留实例抵扣金额
+                     */
+                    std::string GetOriginalCostWithRI() const;
+
+                    /**
+                     * 设置按组件原价的口径换算的预留实例抵扣金额
+                     * @param OriginalCostWithRI 按组件原价的口径换算的预留实例抵扣金额
+                     */
+                    void SetOriginalCostWithRI(const std::string& _originalCostWithRI);
+
+                    /**
+                     * 判断参数 OriginalCostWithRI 是否已赋值
+                     * @return OriginalCostWithRI 是否已赋值
+                     */
+                    bool OriginalCostWithRIHasBeenSet() const;
+
+                    /**
+                     * 获取节省计划抵扣的SP包面值
+                     * @return SPDeduction 节省计划抵扣的SP包面值
+                     */
+                    std::string GetSPDeduction() const;
+
+                    /**
+                     * 设置节省计划抵扣的SP包面值
+                     * @param SPDeduction 节省计划抵扣的SP包面值
+                     */
+                    void SetSPDeduction(const std::string& _sPDeduction);
+
+                    /**
+                     * 判断参数 SPDeduction 是否已赋值
+                     * @return SPDeduction 是否已赋值
+                     */
+                    bool SPDeductionHasBeenSet() const;
+
+                    /**
+                     * 获取按组件原价的口径换算的节省计划抵扣金额
+                     * @return OriginalCostWithSP 按组件原价的口径换算的节省计划抵扣金额
+                     */
+                    std::string GetOriginalCostWithSP() const;
+
+                    /**
+                     * 设置按组件原价的口径换算的节省计划抵扣金额
+                     * @param OriginalCostWithSP 按组件原价的口径换算的节省计划抵扣金额
+                     */
+                    void SetOriginalCostWithSP(const std::string& _originalCostWithSP);
+
+                    /**
+                     * 判断参数 OriginalCostWithSP 是否已赋值
+                     * @return OriginalCostWithSP 是否已赋值
+                     */
+                    bool OriginalCostWithSPHasBeenSet() const;
+
                 private:
 
                     /**
@@ -850,6 +954,38 @@ namespace TencentCloud
                      */
                     int64_t m_regionId;
                     bool m_regionIdHasBeenSet;
+
+                    /**
+                     * 资源包、预留实例、节省计划、竞价实例这四类特殊实例本身的扣费行为，此字段体现对应的实例类型。枚举值如下：
+
+ri=Standard RI
+
+svp=Savings Plan
+
+si=Spot Instances
+
+rp=Resource Pack
+                     */
+                    std::string m_instanceType;
+                    bool m_instanceTypeHasBeenSet;
+
+                    /**
+                     * 按组件原价的口径换算的预留实例抵扣金额
+                     */
+                    std::string m_originalCostWithRI;
+                    bool m_originalCostWithRIHasBeenSet;
+
+                    /**
+                     * 节省计划抵扣的SP包面值
+                     */
+                    std::string m_sPDeduction;
+                    bool m_sPDeductionHasBeenSet;
+
+                    /**
+                     * 按组件原价的口径换算的节省计划抵扣金额
+                     */
+                    std::string m_originalCostWithSP;
+                    bool m_originalCostWithSPHasBeenSet;
 
                 };
             }

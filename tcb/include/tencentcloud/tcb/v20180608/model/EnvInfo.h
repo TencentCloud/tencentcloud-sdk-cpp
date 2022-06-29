@@ -481,6 +481,50 @@ namespace TencentCloud
                      */
                     bool CustomLogServicesHasBeenSet() const;
 
+                    /**
+                     * 获取环境类型：baas, run, hoting, weda
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EnvType 环境类型：baas, run, hoting, weda
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetEnvType() const;
+
+                    /**
+                     * 设置环境类型：baas, run, hoting, weda
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param EnvType 环境类型：baas, run, hoting, weda
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetEnvType(const std::string& _envType);
+
+                    /**
+                     * 判断参数 EnvType 是否已赋值
+                     * @return EnvType 是否已赋值
+                     */
+                    bool EnvTypeHasBeenSet() const;
+
+                    /**
+                     * 获取是否是dau新套餐
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsDauPackage 是否是dau新套餐
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetIsDauPackage() const;
+
+                    /**
+                     * 设置是否是dau新套餐
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param IsDauPackage 是否是dau新套餐
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIsDauPackage(const bool& _isDauPackage);
+
+                    /**
+                     * 判断参数 IsDauPackage 是否已赋值
+                     * @return IsDauPackage 是否已赋值
+                     */
+                    bool IsDauPackageHasBeenSet() const;
+
                 private:
 
                     /**
@@ -619,6 +663,20 @@ namespace TencentCloud
                      */
                     std::vector<ClsInfo> m_customLogServices;
                     bool m_customLogServicesHasBeenSet;
+
+                    /**
+                     * 环境类型：baas, run, hoting, weda
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_envType;
+                    bool m_envTypeHasBeenSet;
+
+                    /**
+                     * 是否是dau新套餐
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_isDauPackage;
+                    bool m_isDauPackageHasBeenSet;
 
                 };
             }

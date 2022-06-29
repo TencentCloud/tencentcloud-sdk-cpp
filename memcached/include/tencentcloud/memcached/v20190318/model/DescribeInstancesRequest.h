@@ -43,78 +43,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID组成的数组，数组下标从0开始
-                     * @return InstanceIds 实例ID组成的数组，数组下标从0开始
-                     */
-                    std::vector<std::string> GetInstanceIds() const;
-
-                    /**
-                     * 设置实例ID组成的数组，数组下标从0开始
-                     * @param InstanceIds 实例ID组成的数组，数组下标从0开始
-                     */
-                    void SetInstanceIds(const std::vector<std::string>& _instanceIds);
-
-                    /**
-                     * 判断参数 InstanceIds 是否已赋值
-                     * @return InstanceIds 是否已赋值
-                     */
-                    bool InstanceIdsHasBeenSet() const;
-
-                    /**
-                     * 获取实例名称组成的数组，数组下标从0开始
-                     * @return InstanceNames 实例名称组成的数组，数组下标从0开始
-                     */
-                    std::vector<std::string> GetInstanceNames() const;
-
-                    /**
-                     * 设置实例名称组成的数组，数组下标从0开始
-                     * @param InstanceNames 实例名称组成的数组，数组下标从0开始
-                     */
-                    void SetInstanceNames(const std::vector<std::string>& _instanceNames);
-
-                    /**
-                     * 判断参数 InstanceNames 是否已赋值
-                     * @return InstanceNames 是否已赋值
-                     */
-                    bool InstanceNamesHasBeenSet() const;
-
-                    /**
-                     * 获取实例列表的大小，参数默认值100
-                     * @return Limit 实例列表的大小，参数默认值100
-                     */
-                    uint64_t GetLimit() const;
-
-                    /**
-                     * 设置实例列表的大小，参数默认值100
-                     * @param Limit 实例列表的大小，参数默认值100
-                     */
-                    void SetLimit(const uint64_t& _limit);
-
-                    /**
-                     * 判断参数 Limit 是否已赋值
-                     * @return Limit 是否已赋值
-                     */
-                    bool LimitHasBeenSet() const;
-
-                    /**
-                     * 获取偏移量，取Limit整数倍
-                     * @return Offset 偏移量，取Limit整数倍
-                     */
-                    uint64_t GetOffset() const;
-
-                    /**
-                     * 设置偏移量，取Limit整数倍
-                     * @param Offset 偏移量，取Limit整数倍
-                     */
-                    void SetOffset(const uint64_t& _offset);
-
-                    /**
-                     * 判断参数 Offset 是否已赋值
-                     * @return Offset 是否已赋值
-                     */
-                    bool OffsetHasBeenSet() const;
-
-                    /**
                      * 获取枚举范围： AddTimeStamp, InstanceName, ProjectId
                      * @return OrderBy 枚举范围： AddTimeStamp, InstanceName, ProjectId
                      */
@@ -131,6 +59,60 @@ namespace TencentCloud
                      * @return OrderBy 是否已赋值
                      */
                     bool OrderByHasBeenSet() const;
+
+                    /**
+                     * 获取查找的关键字
+                     * @return SearchKeys 查找的关键字
+                     */
+                    std::vector<std::string> GetSearchKeys() const;
+
+                    /**
+                     * 设置查找的关键字
+                     * @param SearchKeys 查找的关键字
+                     */
+                    void SetSearchKeys(const std::vector<std::string>& _searchKeys);
+
+                    /**
+                     * 判断参数 SearchKeys 是否已赋值
+                     * @return SearchKeys 是否已赋值
+                     */
+                    bool SearchKeysHasBeenSet() const;
+
+                    /**
+                     * 获取子网ID列表
+                     * @return UniqSubnetIds 子网ID列表
+                     */
+                    std::vector<std::string> GetUniqSubnetIds() const;
+
+                    /**
+                     * 设置子网ID列表
+                     * @param UniqSubnetIds 子网ID列表
+                     */
+                    void SetUniqSubnetIds(const std::vector<std::string>& _uniqSubnetIds);
+
+                    /**
+                     * 判断参数 UniqSubnetIds 是否已赋值
+                     * @return UniqSubnetIds 是否已赋值
+                     */
+                    bool UniqSubnetIdsHasBeenSet() const;
+
+                    /**
+                     * 获取VIP列表
+                     * @return Vips VIP列表
+                     */
+                    std::vector<std::string> GetVips() const;
+
+                    /**
+                     * 设置VIP列表
+                     * @param Vips VIP列表
+                     */
+                    void SetVips(const std::vector<std::string>& _vips);
+
+                    /**
+                     * 判断参数 Vips 是否已赋值
+                     * @return Vips 是否已赋值
+                     */
+                    bool VipsHasBeenSet() const;
 
                     /**
                      * 获取0倒序，1正序，默认倒序
@@ -151,68 +133,32 @@ namespace TencentCloud
                     bool OrderTypeHasBeenSet() const;
 
                     /**
-                     * 获取项目ID组成的数组，数组下标从0开始
-                     * @return ProjectIds 项目ID组成的数组，数组下标从0开始
+                     * 获取实例名称列表
+                     * @return InstanceNames 实例名称列表
                      */
-                    std::vector<int64_t> GetProjectIds() const;
+                    std::vector<std::string> GetInstanceNames() const;
 
                     /**
-                     * 设置项目ID组成的数组，数组下标从0开始
-                     * @param ProjectIds 项目ID组成的数组，数组下标从0开始
+                     * 设置实例名称列表
+                     * @param InstanceNames 实例名称列表
                      */
-                    void SetProjectIds(const std::vector<int64_t>& _projectIds);
+                    void SetInstanceNames(const std::vector<std::string>& _instanceNames);
 
                     /**
-                     * 判断参数 ProjectIds 是否已赋值
-                     * @return ProjectIds 是否已赋值
+                     * 判断参数 InstanceNames 是否已赋值
+                     * @return InstanceNames 是否已赋值
                      */
-                    bool ProjectIdsHasBeenSet() const;
+                    bool InstanceNamesHasBeenSet() const;
 
                     /**
-                     * 获取搜索关键词：支持实例ID、实例名称、完整IP
-                     * @return SearchKeys 搜索关键词：支持实例ID、实例名称、完整IP
-                     */
-                    std::vector<std::string> GetSearchKeys() const;
-
-                    /**
-                     * 设置搜索关键词：支持实例ID、实例名称、完整IP
-                     * @param SearchKeys 搜索关键词：支持实例ID、实例名称、完整IP
-                     */
-                    void SetSearchKeys(const std::vector<std::string>& _searchKeys);
-
-                    /**
-                     * 判断参数 SearchKeys 是否已赋值
-                     * @return SearchKeys 是否已赋值
-                     */
-                    bool SearchKeysHasBeenSet() const;
-
-                    /**
-                     * 获取子网ID数组，数组下标从0开始，如：subnet-fdj24n34j2
-                     * @return UniqSubnetIds 子网ID数组，数组下标从0开始，如：subnet-fdj24n34j2
-                     */
-                    std::vector<std::string> GetUniqSubnetIds() const;
-
-                    /**
-                     * 设置子网ID数组，数组下标从0开始，如：subnet-fdj24n34j2
-                     * @param UniqSubnetIds 子网ID数组，数组下标从0开始，如：subnet-fdj24n34j2
-                     */
-                    void SetUniqSubnetIds(const std::vector<std::string>& _uniqSubnetIds);
-
-                    /**
-                     * 判断参数 UniqSubnetIds 是否已赋值
-                     * @return UniqSubnetIds 是否已赋值
-                     */
-                    bool UniqSubnetIdsHasBeenSet() const;
-
-                    /**
-                     * 获取私有网络ID数组，数组下标从0开始，如果不传则默认选择基础网络，如：vpc-sad23jfdfk
-                     * @return UniqVpcIds 私有网络ID数组，数组下标从0开始，如果不传则默认选择基础网络，如：vpc-sad23jfdfk
+                     * 获取VPC ID列表
+                     * @return UniqVpcIds VPC ID列表
                      */
                     std::vector<std::string> GetUniqVpcIds() const;
 
                     /**
-                     * 设置私有网络ID数组，数组下标从0开始，如果不传则默认选择基础网络，如：vpc-sad23jfdfk
-                     * @param UniqVpcIds 私有网络ID数组，数组下标从0开始，如果不传则默认选择基础网络，如：vpc-sad23jfdfk
+                     * 设置VPC ID列表
+                     * @param UniqVpcIds VPC ID列表
                      */
                     void SetUniqVpcIds(const std::vector<std::string>& _uniqVpcIds);
 
@@ -223,48 +169,78 @@ namespace TencentCloud
                     bool UniqVpcIdsHasBeenSet() const;
 
                     /**
-                     * 获取实例服务IP组成的数组，数组下标从0开始
-                     * @return Vips 实例服务IP组成的数组，数组下标从0开始
+                     * 获取项目ID列表
+                     * @return ProjectIds 项目ID列表
                      */
-                    std::vector<std::string> GetVips() const;
+                    std::vector<int64_t> GetProjectIds() const;
 
                     /**
-                     * 设置实例服务IP组成的数组，数组下标从0开始
-                     * @param Vips 实例服务IP组成的数组，数组下标从0开始
+                     * 设置项目ID列表
+                     * @param ProjectIds 项目ID列表
                      */
-                    void SetVips(const std::vector<std::string>& _vips);
+                    void SetProjectIds(const std::vector<int64_t>& _projectIds);
 
                     /**
-                     * 判断参数 Vips 是否已赋值
-                     * @return Vips 是否已赋值
+                     * 判断参数 ProjectIds 是否已赋值
+                     * @return ProjectIds 是否已赋值
                      */
-                    bool VipsHasBeenSet() const;
+                    bool ProjectIdsHasBeenSet() const;
+
+                    /**
+                     * 获取偏移量，取Limit整数倍
+                     * @return Offset 偏移量，取Limit整数倍
+                     */
+                    uint64_t GetOffset() const;
+
+                    /**
+                     * 设置偏移量，取Limit整数倍
+                     * @param Offset 偏移量，取Limit整数倍
+                     */
+                    void SetOffset(const uint64_t& _offset);
+
+                    /**
+                     * 判断参数 Offset 是否已赋值
+                     * @return Offset 是否已赋值
+                     */
+                    bool OffsetHasBeenSet() const;
+
+                    /**
+                     * 获取实例列表的大小，参数默认值100
+                     * @return Limit 实例列表的大小，参数默认值100
+                     */
+                    uint64_t GetLimit() const;
+
+                    /**
+                     * 设置实例列表的大小，参数默认值100
+                     * @param Limit 实例列表的大小，参数默认值100
+                     */
+                    void SetLimit(const uint64_t& _limit);
+
+                    /**
+                     * 判断参数 Limit 是否已赋值
+                     * @return Limit 是否已赋值
+                     */
+                    bool LimitHasBeenSet() const;
+
+                    /**
+                     * 获取实例ID列表
+                     * @return InstanceIds 实例ID列表
+                     */
+                    std::vector<std::string> GetInstanceIds() const;
+
+                    /**
+                     * 设置实例ID列表
+                     * @param InstanceIds 实例ID列表
+                     */
+                    void SetInstanceIds(const std::vector<std::string>& _instanceIds);
+
+                    /**
+                     * 判断参数 InstanceIds 是否已赋值
+                     * @return InstanceIds 是否已赋值
+                     */
+                    bool InstanceIdsHasBeenSet() const;
 
                 private:
-
-                    /**
-                     * 实例ID组成的数组，数组下标从0开始
-                     */
-                    std::vector<std::string> m_instanceIds;
-                    bool m_instanceIdsHasBeenSet;
-
-                    /**
-                     * 实例名称组成的数组，数组下标从0开始
-                     */
-                    std::vector<std::string> m_instanceNames;
-                    bool m_instanceNamesHasBeenSet;
-
-                    /**
-                     * 实例列表的大小，参数默认值100
-                     */
-                    uint64_t m_limit;
-                    bool m_limitHasBeenSet;
-
-                    /**
-                     * 偏移量，取Limit整数倍
-                     */
-                    uint64_t m_offset;
-                    bool m_offsetHasBeenSet;
 
                     /**
                      * 枚举范围： AddTimeStamp, InstanceName, ProjectId
@@ -273,40 +249,64 @@ namespace TencentCloud
                     bool m_orderByHasBeenSet;
 
                     /**
+                     * 查找的关键字
+                     */
+                    std::vector<std::string> m_searchKeys;
+                    bool m_searchKeysHasBeenSet;
+
+                    /**
+                     * 子网ID列表
+                     */
+                    std::vector<std::string> m_uniqSubnetIds;
+                    bool m_uniqSubnetIdsHasBeenSet;
+
+                    /**
+                     * VIP列表
+                     */
+                    std::vector<std::string> m_vips;
+                    bool m_vipsHasBeenSet;
+
+                    /**
                      * 0倒序，1正序，默认倒序
                      */
                     int64_t m_orderType;
                     bool m_orderTypeHasBeenSet;
 
                     /**
-                     * 项目ID组成的数组，数组下标从0开始
+                     * 实例名称列表
                      */
-                    std::vector<int64_t> m_projectIds;
-                    bool m_projectIdsHasBeenSet;
+                    std::vector<std::string> m_instanceNames;
+                    bool m_instanceNamesHasBeenSet;
 
                     /**
-                     * 搜索关键词：支持实例ID、实例名称、完整IP
-                     */
-                    std::vector<std::string> m_searchKeys;
-                    bool m_searchKeysHasBeenSet;
-
-                    /**
-                     * 子网ID数组，数组下标从0开始，如：subnet-fdj24n34j2
-                     */
-                    std::vector<std::string> m_uniqSubnetIds;
-                    bool m_uniqSubnetIdsHasBeenSet;
-
-                    /**
-                     * 私有网络ID数组，数组下标从0开始，如果不传则默认选择基础网络，如：vpc-sad23jfdfk
+                     * VPC ID列表
                      */
                     std::vector<std::string> m_uniqVpcIds;
                     bool m_uniqVpcIdsHasBeenSet;
 
                     /**
-                     * 实例服务IP组成的数组，数组下标从0开始
+                     * 项目ID列表
                      */
-                    std::vector<std::string> m_vips;
-                    bool m_vipsHasBeenSet;
+                    std::vector<int64_t> m_projectIds;
+                    bool m_projectIdsHasBeenSet;
+
+                    /**
+                     * 偏移量，取Limit整数倍
+                     */
+                    uint64_t m_offset;
+                    bool m_offsetHasBeenSet;
+
+                    /**
+                     * 实例列表的大小，参数默认值100
+                     */
+                    uint64_t m_limit;
+                    bool m_limitHasBeenSet;
+
+                    /**
+                     * 实例ID列表
+                     */
+                    std::vector<std::string> m_instanceIds;
+                    bool m_instanceIdsHasBeenSet;
 
                 };
             }

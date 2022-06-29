@@ -38,7 +38,8 @@ JobConfig::JobConfig() :
     m_jobManagerSpecHasBeenSet(false),
     m_taskManagerSpecHasBeenSet(false),
     m_clsLogsetIdHasBeenSet(false),
-    m_clsTopicIdHasBeenSet(false)
+    m_clsTopicIdHasBeenSet(false),
+    m_pythonVersionHasBeenSet(false)
 {
 }
 
@@ -247,6 +248,16 @@ CoreInternalOutcome JobConfig::Deserialize(const rapidjson::Value &value)
         m_clsTopicIdHasBeenSet = true;
     }
 
+    if (value.HasMember("PythonVersion") && !value["PythonVersion"].IsNull())
+    {
+        if (!value["PythonVersion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `JobConfig.PythonVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_pythonVersion = string(value["PythonVersion"].GetString());
+        m_pythonVersionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -410,6 +421,14 @@ void JobConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "ClsTopicId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_clsTopicId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_pythonVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PythonVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_pythonVersion.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -701,5 +720,21 @@ void JobConfig::SetClsTopicId(const string& _clsTopicId)
 bool JobConfig::ClsTopicIdHasBeenSet() const
 {
     return m_clsTopicIdHasBeenSet;
+}
+
+string JobConfig::GetPythonVersion() const
+{
+    return m_pythonVersion;
+}
+
+void JobConfig::SetPythonVersion(const string& _pythonVersion)
+{
+    m_pythonVersion = _pythonVersion;
+    m_pythonVersionHasBeenSet = true;
+}
+
+bool JobConfig::PythonVersionHasBeenSet() const
+{
+    return m_pythonVersionHasBeenSet;
 }
 

@@ -23,18 +23,28 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/ckafka/v20190819/model/AuthorizeTokenRequest.h>
+#include <tencentcloud/ckafka/v20190819/model/AuthorizeTokenResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/BatchCreateAclRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/BatchCreateAclResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/BatchModifyGroupOffsetsRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/BatchModifyGroupOffsetsResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/BatchModifyTopicAttributesRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/BatchModifyTopicAttributesResponse.h>
+#include <tencentcloud/ckafka/v20190819/model/CancelAuthorizationTokenRequest.h>
+#include <tencentcloud/ckafka/v20190819/model/CancelAuthorizationTokenResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/CreateAclRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/CreateAclResponse.h>
+#include <tencentcloud/ckafka/v20190819/model/CreateConsumerRequest.h>
+#include <tencentcloud/ckafka/v20190819/model/CreateConsumerResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/CreateInstancePreRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/CreateInstancePreResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/CreatePartitionRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/CreatePartitionResponse.h>
+#include <tencentcloud/ckafka/v20190819/model/CreateRouteRequest.h>
+#include <tencentcloud/ckafka/v20190819/model/CreateRouteResponse.h>
+#include <tencentcloud/ckafka/v20190819/model/CreateTokenRequest.h>
+#include <tencentcloud/ckafka/v20190819/model/CreateTokenResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/CreateTopicRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/CreateTopicResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/CreateTopicIpWhiteListRequest.h>
@@ -45,8 +55,12 @@
 #include <tencentcloud/ckafka/v20190819/model/DeleteAclResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/DeleteAclRuleRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/DeleteAclRuleResponse.h>
+#include <tencentcloud/ckafka/v20190819/model/DeleteGroupRequest.h>
+#include <tencentcloud/ckafka/v20190819/model/DeleteGroupResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/DeleteInstancePreRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/DeleteInstancePreResponse.h>
+#include <tencentcloud/ckafka/v20190819/model/DeleteRouteRequest.h>
+#include <tencentcloud/ckafka/v20190819/model/DeleteRouteResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/DeleteRouteTriggerTimeRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/DeleteRouteTriggerTimeResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/DeleteTopicRequest.h>
@@ -97,6 +111,8 @@
 #include <tencentcloud/ckafka/v20190819/model/ModifyGroupOffsetsResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/ModifyInstanceAttributesRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/ModifyInstanceAttributesResponse.h>
+#include <tencentcloud/ckafka/v20190819/model/ModifyInstancePreRequest.h>
+#include <tencentcloud/ckafka/v20190819/model/ModifyInstancePreResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/ModifyPasswordRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/ModifyPasswordResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/ModifyTopicAttributesRequest.h>
@@ -117,6 +133,9 @@ namespace TencentCloud
                 CkafkaClient(const Credential &credential, const std::string &region);
                 CkafkaClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::AuthorizeTokenResponse> AuthorizeTokenOutcome;
+                typedef std::future<AuthorizeTokenOutcome> AuthorizeTokenOutcomeCallable;
+                typedef std::function<void(const CkafkaClient*, const Model::AuthorizeTokenRequest&, AuthorizeTokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AuthorizeTokenAsyncHandler;
                 typedef Outcome<Core::Error, Model::BatchCreateAclResponse> BatchCreateAclOutcome;
                 typedef std::future<BatchCreateAclOutcome> BatchCreateAclOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::BatchCreateAclRequest&, BatchCreateAclOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BatchCreateAclAsyncHandler;
@@ -126,15 +145,27 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::BatchModifyTopicAttributesResponse> BatchModifyTopicAttributesOutcome;
                 typedef std::future<BatchModifyTopicAttributesOutcome> BatchModifyTopicAttributesOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::BatchModifyTopicAttributesRequest&, BatchModifyTopicAttributesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BatchModifyTopicAttributesAsyncHandler;
+                typedef Outcome<Core::Error, Model::CancelAuthorizationTokenResponse> CancelAuthorizationTokenOutcome;
+                typedef std::future<CancelAuthorizationTokenOutcome> CancelAuthorizationTokenOutcomeCallable;
+                typedef std::function<void(const CkafkaClient*, const Model::CancelAuthorizationTokenRequest&, CancelAuthorizationTokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CancelAuthorizationTokenAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateAclResponse> CreateAclOutcome;
                 typedef std::future<CreateAclOutcome> CreateAclOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::CreateAclRequest&, CreateAclOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAclAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateConsumerResponse> CreateConsumerOutcome;
+                typedef std::future<CreateConsumerOutcome> CreateConsumerOutcomeCallable;
+                typedef std::function<void(const CkafkaClient*, const Model::CreateConsumerRequest&, CreateConsumerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateConsumerAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateInstancePreResponse> CreateInstancePreOutcome;
                 typedef std::future<CreateInstancePreOutcome> CreateInstancePreOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::CreateInstancePreRequest&, CreateInstancePreOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateInstancePreAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreatePartitionResponse> CreatePartitionOutcome;
                 typedef std::future<CreatePartitionOutcome> CreatePartitionOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::CreatePartitionRequest&, CreatePartitionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePartitionAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateRouteResponse> CreateRouteOutcome;
+                typedef std::future<CreateRouteOutcome> CreateRouteOutcomeCallable;
+                typedef std::function<void(const CkafkaClient*, const Model::CreateRouteRequest&, CreateRouteOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRouteAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateTokenResponse> CreateTokenOutcome;
+                typedef std::future<CreateTokenOutcome> CreateTokenOutcomeCallable;
+                typedef std::function<void(const CkafkaClient*, const Model::CreateTokenRequest&, CreateTokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTokenAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateTopicResponse> CreateTopicOutcome;
                 typedef std::future<CreateTopicOutcome> CreateTopicOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::CreateTopicRequest&, CreateTopicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTopicAsyncHandler;
@@ -150,9 +181,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteAclRuleResponse> DeleteAclRuleOutcome;
                 typedef std::future<DeleteAclRuleOutcome> DeleteAclRuleOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::DeleteAclRuleRequest&, DeleteAclRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAclRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteGroupResponse> DeleteGroupOutcome;
+                typedef std::future<DeleteGroupOutcome> DeleteGroupOutcomeCallable;
+                typedef std::function<void(const CkafkaClient*, const Model::DeleteGroupRequest&, DeleteGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteGroupAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteInstancePreResponse> DeleteInstancePreOutcome;
                 typedef std::future<DeleteInstancePreOutcome> DeleteInstancePreOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::DeleteInstancePreRequest&, DeleteInstancePreOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteInstancePreAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteRouteResponse> DeleteRouteOutcome;
+                typedef std::future<DeleteRouteOutcome> DeleteRouteOutcomeCallable;
+                typedef std::function<void(const CkafkaClient*, const Model::DeleteRouteRequest&, DeleteRouteOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRouteAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteRouteTriggerTimeResponse> DeleteRouteTriggerTimeOutcome;
                 typedef std::future<DeleteRouteTriggerTimeOutcome> DeleteRouteTriggerTimeOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::DeleteRouteTriggerTimeRequest&, DeleteRouteTriggerTimeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRouteTriggerTimeAsyncHandler;
@@ -228,6 +265,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyInstanceAttributesResponse> ModifyInstanceAttributesOutcome;
                 typedef std::future<ModifyInstanceAttributesOutcome> ModifyInstanceAttributesOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::ModifyInstanceAttributesRequest&, ModifyInstanceAttributesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstanceAttributesAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyInstancePreResponse> ModifyInstancePreOutcome;
+                typedef std::future<ModifyInstancePreOutcome> ModifyInstancePreOutcomeCallable;
+                typedef std::function<void(const CkafkaClient*, const Model::ModifyInstancePreRequest&, ModifyInstancePreOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstancePreAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyPasswordResponse> ModifyPasswordOutcome;
                 typedef std::future<ModifyPasswordOutcome> ModifyPasswordOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::ModifyPasswordRequest&, ModifyPasswordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPasswordAsyncHandler;
@@ -239,6 +279,15 @@ namespace TencentCloud
                 typedef std::function<void(const CkafkaClient*, const Model::SendMessageRequest&, SendMessageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SendMessageAsyncHandler;
 
 
+
+                /**
+                 *给实例授权token
+                 * @param req AuthorizeTokenRequest
+                 * @return AuthorizeTokenOutcome
+                 */
+                AuthorizeTokenOutcome AuthorizeToken(const Model::AuthorizeTokenRequest &request);
+                void AuthorizeTokenAsync(const Model::AuthorizeTokenRequest& request, const AuthorizeTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AuthorizeTokenOutcomeCallable AuthorizeTokenCallable(const Model::AuthorizeTokenRequest& request);
 
                 /**
                  *批量添加ACL策略
@@ -268,6 +317,15 @@ namespace TencentCloud
                 BatchModifyTopicAttributesOutcomeCallable BatchModifyTopicAttributesCallable(const Model::BatchModifyTopicAttributesRequest& request);
 
                 /**
+                 *取消授权token
+                 * @param req CancelAuthorizationTokenRequest
+                 * @return CancelAuthorizationTokenOutcome
+                 */
+                CancelAuthorizationTokenOutcome CancelAuthorizationToken(const Model::CancelAuthorizationTokenRequest &request);
+                void CancelAuthorizationTokenAsync(const Model::CancelAuthorizationTokenRequest& request, const CancelAuthorizationTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CancelAuthorizationTokenOutcomeCallable CancelAuthorizationTokenCallable(const Model::CancelAuthorizationTokenRequest& request);
+
+                /**
                  *添加 ACL 策略
                  * @param req CreateAclRequest
                  * @return CreateAclOutcome
@@ -275,6 +333,15 @@ namespace TencentCloud
                 CreateAclOutcome CreateAcl(const Model::CreateAclRequest &request);
                 void CreateAclAsync(const Model::CreateAclRequest& request, const CreateAclAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateAclOutcomeCallable CreateAclCallable(const Model::CreateAclRequest& request);
+
+                /**
+                 *创建消费者组
+                 * @param req CreateConsumerRequest
+                 * @return CreateConsumerOutcome
+                 */
+                CreateConsumerOutcome CreateConsumer(const Model::CreateConsumerRequest &request);
+                void CreateConsumerAsync(const Model::CreateConsumerRequest& request, const CreateConsumerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateConsumerOutcomeCallable CreateConsumerCallable(const Model::CreateConsumerRequest& request);
 
                 /**
                  *创建实例(预付费包年包月)
@@ -293,6 +360,24 @@ namespace TencentCloud
                 CreatePartitionOutcome CreatePartition(const Model::CreatePartitionRequest &request);
                 void CreatePartitionAsync(const Model::CreatePartitionRequest& request, const CreatePartitionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreatePartitionOutcomeCallable CreatePartitionCallable(const Model::CreatePartitionRequest& request);
+
+                /**
+                 *添加实例路由
+                 * @param req CreateRouteRequest
+                 * @return CreateRouteOutcome
+                 */
+                CreateRouteOutcome CreateRoute(const Model::CreateRouteRequest &request);
+                void CreateRouteAsync(const Model::CreateRouteRequest& request, const CreateRouteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateRouteOutcomeCallable CreateRouteCallable(const Model::CreateRouteRequest& request);
+
+                /**
+                 *创建最高权限的token
+                 * @param req CreateTokenRequest
+                 * @return CreateTokenOutcome
+                 */
+                CreateTokenOutcome CreateToken(const Model::CreateTokenRequest &request);
+                void CreateTokenAsync(const Model::CreateTokenRequest& request, const CreateTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateTokenOutcomeCallable CreateTokenCallable(const Model::CreateTokenRequest& request);
 
                 /**
                  *创建ckafka主题
@@ -340,6 +425,15 @@ namespace TencentCloud
                 DeleteAclRuleOutcomeCallable DeleteAclRuleCallable(const Model::DeleteAclRuleRequest& request);
 
                 /**
+                 *删除消费组
+                 * @param req DeleteGroupRequest
+                 * @return DeleteGroupOutcome
+                 */
+                DeleteGroupOutcome DeleteGroup(const Model::DeleteGroupRequest &request);
+                void DeleteGroupAsync(const Model::DeleteGroupRequest& request, const DeleteGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteGroupOutcomeCallable DeleteGroupCallable(const Model::DeleteGroupRequest& request);
+
+                /**
                  *删除预付费实例
                  * @param req DeleteInstancePreRequest
                  * @return DeleteInstancePreOutcome
@@ -347,6 +441,15 @@ namespace TencentCloud
                 DeleteInstancePreOutcome DeleteInstancePre(const Model::DeleteInstancePreRequest &request);
                 void DeleteInstancePreAsync(const Model::DeleteInstancePreRequest& request, const DeleteInstancePreAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteInstancePreOutcomeCallable DeleteInstancePreCallable(const Model::DeleteInstancePreRequest& request);
+
+                /**
+                 *删除路由
+                 * @param req DeleteRouteRequest
+                 * @return DeleteRouteOutcome
+                 */
+                DeleteRouteOutcome DeleteRoute(const Model::DeleteRouteRequest &request);
+                void DeleteRouteAsync(const Model::DeleteRouteRequest& request, const DeleteRouteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteRouteOutcomeCallable DeleteRouteCallable(const Model::DeleteRouteRequest& request);
 
                 /**
                  *修改删除路由延迟触发时间
@@ -574,6 +677,15 @@ namespace TencentCloud
                 ModifyInstanceAttributesOutcome ModifyInstanceAttributes(const Model::ModifyInstanceAttributesRequest &request);
                 void ModifyInstanceAttributesAsync(const Model::ModifyInstanceAttributesRequest& request, const ModifyInstanceAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyInstanceAttributesOutcomeCallable ModifyInstanceAttributesCallable(const Model::ModifyInstanceAttributesRequest& request);
+
+                /**
+                 *预付费实例变配接口，调整磁盘，带宽
+                 * @param req ModifyInstancePreRequest
+                 * @return ModifyInstancePreOutcome
+                 */
+                ModifyInstancePreOutcome ModifyInstancePre(const Model::ModifyInstancePreRequest &request);
+                void ModifyInstancePreAsync(const Model::ModifyInstancePreRequest& request, const ModifyInstancePreAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyInstancePreOutcomeCallable ModifyInstancePreCallable(const Model::ModifyInstancePreRequest& request);
 
                 /**
                  *修改密码

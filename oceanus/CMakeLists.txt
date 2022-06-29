@@ -21,6 +21,7 @@ set(oceanus_public_header
 set(oceanus_public_header_model
   include/tencentcloud/oceanus/v20190422/model/DescribeResourceConfigsResponse.h
   include/tencentcloud/oceanus/v20190422/model/CreateResourceRequest.h
+  include/tencentcloud/oceanus/v20190422/model/CheckSavepointRequest.h
   include/tencentcloud/oceanus/v20190422/model/CreateJobRequest.h
   include/tencentcloud/oceanus/v20190422/model/ResourceRefDetail.h
   include/tencentcloud/oceanus/v20190422/model/StopJobsRequest.h
@@ -28,20 +29,28 @@ set(oceanus_public_header_model
   include/tencentcloud/oceanus/v20190422/model/ResourceLoc.h
   include/tencentcloud/oceanus/v20190422/model/RunJobsRequest.h
   include/tencentcloud/oceanus/v20190422/model/StopJobDescription.h
+  include/tencentcloud/oceanus/v20190422/model/ModifyJobResponse.h
   include/tencentcloud/oceanus/v20190422/model/DeleteTableConfigResponse.h
   include/tencentcloud/oceanus/v20190422/model/CreateResourceConfigResponse.h
   include/tencentcloud/oceanus/v20190422/model/CreateJobConfigRequest.h
   include/tencentcloud/oceanus/v20190422/model/CreateResourceConfigRequest.h
   include/tencentcloud/oceanus/v20190422/model/Property.h
   include/tencentcloud/oceanus/v20190422/model/DeleteTableConfigRequest.h
+  include/tencentcloud/oceanus/v20190422/model/Savepoint.h
   include/tencentcloud/oceanus/v20190422/model/SystemResourceItem.h
   include/tencentcloud/oceanus/v20190422/model/DescribeResourceRelatedJobsRequest.h
   include/tencentcloud/oceanus/v20190422/model/DeleteResourcesResponse.h
   include/tencentcloud/oceanus/v20190422/model/CreateJobConfigResponse.h
   include/tencentcloud/oceanus/v20190422/model/ResourceConfigItem.h
+  include/tencentcloud/oceanus/v20190422/model/TriggerJobSavepointResponse.h
+  include/tencentcloud/oceanus/v20190422/model/TriggerJobSavepointRequest.h
   include/tencentcloud/oceanus/v20190422/model/DescribeResourcesRequest.h
   include/tencentcloud/oceanus/v20190422/model/ResourceLocParam.h
+  include/tencentcloud/oceanus/v20190422/model/DescribeJobSavepointRequest.h
+  include/tencentcloud/oceanus/v20190422/model/CheckSavepointResponse.h
   include/tencentcloud/oceanus/v20190422/model/DeleteResourceConfigsRequest.h
+  include/tencentcloud/oceanus/v20190422/model/DescribeJobSavepointResponse.h
+  include/tencentcloud/oceanus/v20190422/model/ModifyJobRequest.h
   include/tencentcloud/oceanus/v20190422/model/RunJobsResponse.h
   include/tencentcloud/oceanus/v20190422/model/Filter.h
   include/tencentcloud/oceanus/v20190422/model/DeleteResourcesRequest.h
@@ -69,6 +78,7 @@ set(oceanus_src
   src/v20190422/OceanusClient.cpp
   src/v20190422/model/DescribeResourceConfigsResponse.cpp
   src/v20190422/model/CreateResourceRequest.cpp
+  src/v20190422/model/CheckSavepointRequest.cpp
   src/v20190422/model/CreateJobRequest.cpp
   src/v20190422/model/ResourceRefDetail.cpp
   src/v20190422/model/StopJobsRequest.cpp
@@ -76,20 +86,28 @@ set(oceanus_src
   src/v20190422/model/ResourceLoc.cpp
   src/v20190422/model/RunJobsRequest.cpp
   src/v20190422/model/StopJobDescription.cpp
+  src/v20190422/model/ModifyJobResponse.cpp
   src/v20190422/model/DeleteTableConfigResponse.cpp
   src/v20190422/model/CreateResourceConfigResponse.cpp
   src/v20190422/model/CreateJobConfigRequest.cpp
   src/v20190422/model/CreateResourceConfigRequest.cpp
   src/v20190422/model/Property.cpp
   src/v20190422/model/DeleteTableConfigRequest.cpp
+  src/v20190422/model/Savepoint.cpp
   src/v20190422/model/SystemResourceItem.cpp
   src/v20190422/model/DescribeResourceRelatedJobsRequest.cpp
   src/v20190422/model/DeleteResourcesResponse.cpp
   src/v20190422/model/CreateJobConfigResponse.cpp
   src/v20190422/model/ResourceConfigItem.cpp
+  src/v20190422/model/TriggerJobSavepointResponse.cpp
+  src/v20190422/model/TriggerJobSavepointRequest.cpp
   src/v20190422/model/DescribeResourcesRequest.cpp
   src/v20190422/model/ResourceLocParam.cpp
+  src/v20190422/model/DescribeJobSavepointRequest.cpp
+  src/v20190422/model/CheckSavepointResponse.cpp
   src/v20190422/model/DeleteResourceConfigsRequest.cpp
+  src/v20190422/model/DescribeJobSavepointResponse.cpp
+  src/v20190422/model/ModifyJobRequest.cpp
   src/v20190422/model/RunJobsResponse.cpp
   src/v20190422/model/Filter.cpp
   src/v20190422/model/DeleteResourcesRequest.cpp
