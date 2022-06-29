@@ -72,14 +72,6 @@ namespace TencentCloud
             }
             return *this;
         }
-        HttpProfile & operator=(HttpProfile &&o)
-        {
-            if (this != &o)
-            {
-                *this = std::move(o);
-            }
-            return *this;
-        }
 
     private:
         Method m_reqMethod;
