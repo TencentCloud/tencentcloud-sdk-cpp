@@ -21,8 +21,8 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/ess/v20201111/model/UserInfo.h>
 #include <tencentcloud/ess/v20201111/model/ApproverInfo.h>
+#include <tencentcloud/ess/v20201111/model/UserInfo.h>
 #include <tencentcloud/ess/v20201111/model/Agent.h>
 #include <tencentcloud/ess/v20201111/model/Component.h>
 #include <tencentcloud/ess/v20201111/model/CcInfo.h>
@@ -48,32 +48,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取调用方用户信息
-                     * @return Operator 调用方用户信息
-                     */
-                    UserInfo GetOperator() const;
-
-                    /**
-                     * 设置调用方用户信息
-                     * @param Operator 调用方用户信息
-                     */
-                    void SetOperator(const UserInfo& _operator);
-
-                    /**
-                     * 判断参数 Operator 是否已赋值
-                     * @return Operator 是否已赋值
-                     */
-                    bool OperatorHasBeenSet() const;
-
-                    /**
-                     * 获取流程名称
-                     * @return FlowName 流程名称
+                     * 获取签署流程名称,最大长度200个字符
+                     * @return FlowName 签署流程名称,最大长度200个字符
                      */
                     std::string GetFlowName() const;
 
                     /**
-                     * 设置流程名称
-                     * @param FlowName 流程名称
+                     * 设置签署流程名称,最大长度200个字符
+                     * @param FlowName 签署流程名称,最大长度200个字符
                      */
                     void SetFlowName(const std::string& _flowName);
 
@@ -82,24 +64,6 @@ namespace TencentCloud
                      * @return FlowName 是否已赋值
                      */
                     bool FlowNameHasBeenSet() const;
-
-                    /**
-                     * 获取签署pdf文件的资源编号列表
-                     * @return FileIds 签署pdf文件的资源编号列表
-                     */
-                    std::vector<std::string> GetFileIds() const;
-
-                    /**
-                     * 设置签署pdf文件的资源编号列表
-                     * @param FileIds 签署pdf文件的资源编号列表
-                     */
-                    void SetFileIds(const std::vector<std::string>& _fileIds);
-
-                    /**
-                     * 判断参数 FileIds 是否已赋值
-                     * @return FileIds 是否已赋值
-                     */
-                    bool FileIdsHasBeenSet() const;
 
                     /**
                      * 获取签署参与者信息
@@ -120,22 +84,114 @@ namespace TencentCloud
                     bool ApproversHasBeenSet() const;
 
                     /**
-                     * 获取流程描述
-                     * @return FlowDescription 流程描述
+                     * 获取签署pdf文件的资源编号列表，通过UploadFiles接口获取
+                     * @return FileIds 签署pdf文件的资源编号列表，通过UploadFiles接口获取
                      */
-                    std::string GetFlowDescription() const;
+                    std::vector<std::string> GetFileIds() const;
 
                     /**
-                     * 设置流程描述
-                     * @param FlowDescription 流程描述
+                     * 设置签署pdf文件的资源编号列表，通过UploadFiles接口获取
+                     * @param FileIds 签署pdf文件的资源编号列表，通过UploadFiles接口获取
                      */
-                    void SetFlowDescription(const std::string& _flowDescription);
+                    void SetFileIds(const std::vector<std::string>& _fileIds);
 
                     /**
-                     * 判断参数 FlowDescription 是否已赋值
-                     * @return FlowDescription 是否已赋值
+                     * 判断参数 FileIds 是否已赋值
+                     * @return FileIds 是否已赋值
                      */
-                    bool FlowDescriptionHasBeenSet() const;
+                    bool FileIdsHasBeenSet() const;
+
+                    /**
+                     * 获取调用方用户信息
+                     * @return Operator 调用方用户信息
+                     */
+                    UserInfo GetOperator() const;
+
+                    /**
+                     * 设置调用方用户信息
+                     * @param Operator 调用方用户信息
+                     */
+                    void SetOperator(const UserInfo& _operator);
+
+                    /**
+                     * 判断参数 Operator 是否已赋值
+                     * @return Operator 是否已赋值
+                     */
+                    bool OperatorHasBeenSet() const;
+
+                    /**
+                     * 获取应用号信息
+                     * @return Agent 应用号信息
+                     */
+                    Agent GetAgent() const;
+
+                    /**
+                     * 设置应用号信息
+                     * @param Agent 应用号信息
+                     */
+                    void SetAgent(const Agent& _agent);
+
+                    /**
+                     * 判断参数 Agent 是否已赋值
+                     * @return Agent 是否已赋值
+                     */
+                    bool AgentHasBeenSet() const;
+
+                    /**
+                     * 获取经办人内容控件配置。可选类型为：
+TEXT - 内容文本控件
+MULTI_LINE_TEXT - 多行文本控件
+CHECK_BOX - 勾选框控件
+注：默认字体大小为 字号12
+                     * @return Components 经办人内容控件配置。可选类型为：
+TEXT - 内容文本控件
+MULTI_LINE_TEXT - 多行文本控件
+CHECK_BOX - 勾选框控件
+注：默认字体大小为 字号12
+                     */
+                    std::vector<Component> GetComponents() const;
+
+                    /**
+                     * 设置经办人内容控件配置。可选类型为：
+TEXT - 内容文本控件
+MULTI_LINE_TEXT - 多行文本控件
+CHECK_BOX - 勾选框控件
+注：默认字体大小为 字号12
+                     * @param Components 经办人内容控件配置。可选类型为：
+TEXT - 内容文本控件
+MULTI_LINE_TEXT - 多行文本控件
+CHECK_BOX - 勾选框控件
+注：默认字体大小为 字号12
+                     */
+                    void SetComponents(const std::vector<Component>& _components);
+
+                    /**
+                     * 判断参数 Components 是否已赋值
+                     * @return Components 是否已赋值
+                     */
+                    bool ComponentsHasBeenSet() const;
+
+                    /**
+                     * 获取签署流程的签署截止时间。
+值为unix时间戳,精确到秒,不传默认为当前时间一年后
+                     * @return Deadline 签署流程的签署截止时间。
+值为unix时间戳,精确到秒,不传默认为当前时间一年后
+                     */
+                    int64_t GetDeadline() const;
+
+                    /**
+                     * 设置签署流程的签署截止时间。
+值为unix时间戳,精确到秒,不传默认为当前时间一年后
+                     * @param Deadline 签署流程的签署截止时间。
+值为unix时间戳,精确到秒,不传默认为当前时间一年后
+                     */
+                    void SetDeadline(const int64_t& _deadline);
+
+                    /**
+                     * 判断参数 Deadline 是否已赋值
+                     * @return Deadline 是否已赋值
+                     */
+                    bool DeadlineHasBeenSet() const;
 
                     /**
                      * 获取发送类型：
@@ -168,14 +224,54 @@ false：有序签
                     bool UnorderedHasBeenSet() const;
 
                     /**
-                     * 获取流程的类型
-                     * @return FlowType 流程的类型
+                     * 获取是否需要预览，true：预览模式，false：非预览（默认）；
+预览链接有效期300秒；
+                     * @return NeedPreview 是否需要预览，true：预览模式，false：非预览（默认）；
+预览链接有效期300秒；
+                     */
+                    bool GetNeedPreview() const;
+
+                    /**
+                     * 设置是否需要预览，true：预览模式，false：非预览（默认）；
+预览链接有效期300秒；
+                     * @param NeedPreview 是否需要预览，true：预览模式，false：非预览（默认）；
+预览链接有效期300秒；
+                     */
+                    void SetNeedPreview(const bool& _needPreview);
+
+                    /**
+                     * 判断参数 NeedPreview 是否已赋值
+                     * @return NeedPreview 是否已赋值
+                     */
+                    bool NeedPreviewHasBeenSet() const;
+
+                    /**
+                     * 获取签署流程描述,最大长度1000个字符
+                     * @return FlowDescription 签署流程描述,最大长度1000个字符
+                     */
+                    std::string GetFlowDescription() const;
+
+                    /**
+                     * 设置签署流程描述,最大长度1000个字符
+                     * @param FlowDescription 签署流程描述,最大长度1000个字符
+                     */
+                    void SetFlowDescription(const std::string& _flowDescription);
+
+                    /**
+                     * 判断参数 FlowDescription 是否已赋值
+                     * @return FlowDescription 是否已赋值
+                     */
+                    bool FlowDescriptionHasBeenSet() const;
+
+                    /**
+                     * 获取签署流程的类型(如销售合同/入职合同等)，最大长度200个字符
+                     * @return FlowType 签署流程的类型(如销售合同/入职合同等)，最大长度200个字符
                      */
                     std::string GetFlowType() const;
 
                     /**
-                     * 设置流程的类型
-                     * @param FlowType 流程的类型
+                     * 设置签署流程的类型(如销售合同/入职合同等)，最大长度200个字符
+                     * @param FlowType 签署流程的类型(如销售合同/入职合同等)，最大长度200个字符
                      */
                     void SetFlowType(const std::string& _flowType);
 
@@ -186,80 +282,18 @@ false：有序签
                     bool FlowTypeHasBeenSet() const;
 
                     /**
-                     * 获取流程的签署截止时间
-                     * @return Deadline 流程的签署截止时间
-                     */
-                    int64_t GetDeadline() const;
-
-                    /**
-                     * 设置流程的签署截止时间
-                     * @param Deadline 流程的签署截止时间
-                     */
-                    void SetDeadline(const int64_t& _deadline);
-
-                    /**
-                     * 判断参数 Deadline 是否已赋值
-                     * @return Deadline 是否已赋值
-                     */
-                    bool DeadlineHasBeenSet() const;
-
-                    /**
-                     * 获取应用号信息
-                     * @return Agent 应用号信息
-                     */
-                    Agent GetAgent() const;
-
-                    /**
-                     * 设置应用号信息
-                     * @param Agent 应用号信息
-                     */
-                    void SetAgent(const Agent& _agent);
-
-                    /**
-                     * 判断参数 Agent 是否已赋值
-                     * @return Agent 是否已赋值
-                     */
-                    bool AgentHasBeenSet() const;
-
-                    /**
-                     * 获取经办人内容控件配置。可选类型为：
-TEXT - 内容文本控件
-MULTI_LINE_TEXT - 多行文本控件
-注：默认字体大小为 字号12
-                     * @return Components 经办人内容控件配置。可选类型为：
-TEXT - 内容文本控件
-MULTI_LINE_TEXT - 多行文本控件
-注：默认字体大小为 字号12
-                     */
-                    std::vector<Component> GetComponents() const;
-
-                    /**
-                     * 设置经办人内容控件配置。可选类型为：
-TEXT - 内容文本控件
-MULTI_LINE_TEXT - 多行文本控件
-注：默认字体大小为 字号12
-                     * @param Components 经办人内容控件配置。可选类型为：
-TEXT - 内容文本控件
-MULTI_LINE_TEXT - 多行文本控件
-注：默认字体大小为 字号12
-                     */
-                    void SetComponents(const std::vector<Component>& _components);
-
-                    /**
-                     * 判断参数 Components 是否已赋值
-                     * @return Components 是否已赋值
-                     */
-                    bool ComponentsHasBeenSet() const;
-
-                    /**
-                     * 获取被抄送人的信息列表
-                     * @return CcInfos 被抄送人的信息列表
+                     * 获取被抄送人的信息列表。
+注:此功能为白名单功能，若有需要，请联系电子签客服开白使用
+                     * @return CcInfos 被抄送人的信息列表。
+注:此功能为白名单功能，若有需要，请联系电子签客服开白使用
                      */
                     std::vector<CcInfo> GetCcInfos() const;
 
                     /**
-                     * 设置被抄送人的信息列表
-                     * @param CcInfos 被抄送人的信息列表
+                     * 设置被抄送人的信息列表。
+注:此功能为白名单功能，若有需要，请联系电子签客服开白使用
+                     * @param CcInfos 被抄送人的信息列表。
+注:此功能为白名单功能，若有需要，请联系电子签客服开白使用
                      */
                     void SetCcInfos(const std::vector<CcInfo>& _ccInfos);
 
@@ -270,42 +304,30 @@ MULTI_LINE_TEXT - 多行文本控件
                     bool CcInfosHasBeenSet() const;
 
                     /**
-                     * 获取是否需要预览，true：预览模式，false：非预览（默认）
-                     * @return NeedPreview 是否需要预览，true：预览模式，false：非预览（默认）
+                     * 获取合同显示的页卡模板，说明：只支持{合同名称}, {发起方企业}, {发起方姓名}, {签署方N企业}, {签署方N姓名}，且N不能超过签署人的数量，N从1开始
+                     * @return CustomShowMap 合同显示的页卡模板，说明：只支持{合同名称}, {发起方企业}, {发起方姓名}, {签署方N企业}, {签署方N姓名}，且N不能超过签署人的数量，N从1开始
                      */
-                    bool GetNeedPreview() const;
+                    std::string GetCustomShowMap() const;
 
                     /**
-                     * 设置是否需要预览，true：预览模式，false：非预览（默认）
-                     * @param NeedPreview 是否需要预览，true：预览模式，false：非预览（默认）
+                     * 设置合同显示的页卡模板，说明：只支持{合同名称}, {发起方企业}, {发起方姓名}, {签署方N企业}, {签署方N姓名}，且N不能超过签署人的数量，N从1开始
+                     * @param CustomShowMap 合同显示的页卡模板，说明：只支持{合同名称}, {发起方企业}, {发起方姓名}, {签署方N企业}, {签署方N姓名}，且N不能超过签署人的数量，N从1开始
                      */
-                    void SetNeedPreview(const bool& _needPreview);
+                    void SetCustomShowMap(const std::string& _customShowMap);
 
                     /**
-                     * 判断参数 NeedPreview 是否已赋值
-                     * @return NeedPreview 是否已赋值
+                     * 判断参数 CustomShowMap 是否已赋值
+                     * @return CustomShowMap 是否已赋值
                      */
-                    bool NeedPreviewHasBeenSet() const;
+                    bool CustomShowMapHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 调用方用户信息
-                     */
-                    UserInfo m_operator;
-                    bool m_operatorHasBeenSet;
-
-                    /**
-                     * 流程名称
+                     * 签署流程名称,最大长度200个字符
                      */
                     std::string m_flowName;
                     bool m_flowNameHasBeenSet;
-
-                    /**
-                     * 签署pdf文件的资源编号列表
-                     */
-                    std::vector<std::string> m_fileIds;
-                    bool m_fileIdsHasBeenSet;
 
                     /**
                      * 签署参与者信息
@@ -314,31 +336,16 @@ MULTI_LINE_TEXT - 多行文本控件
                     bool m_approversHasBeenSet;
 
                     /**
-                     * 流程描述
+                     * 签署pdf文件的资源编号列表，通过UploadFiles接口获取
                      */
-                    std::string m_flowDescription;
-                    bool m_flowDescriptionHasBeenSet;
+                    std::vector<std::string> m_fileIds;
+                    bool m_fileIdsHasBeenSet;
 
                     /**
-                     * 发送类型：
-true：无序签
-false：有序签
-注：默认为false（有序签）
+                     * 调用方用户信息
                      */
-                    bool m_unordered;
-                    bool m_unorderedHasBeenSet;
-
-                    /**
-                     * 流程的类型
-                     */
-                    std::string m_flowType;
-                    bool m_flowTypeHasBeenSet;
-
-                    /**
-                     * 流程的签署截止时间
-                     */
-                    int64_t m_deadline;
-                    bool m_deadlineHasBeenSet;
+                    UserInfo m_operator;
+                    bool m_operatorHasBeenSet;
 
                     /**
                      * 应用号信息
@@ -350,22 +357,59 @@ false：有序签
                      * 经办人内容控件配置。可选类型为：
 TEXT - 内容文本控件
 MULTI_LINE_TEXT - 多行文本控件
+CHECK_BOX - 勾选框控件
 注：默认字体大小为 字号12
                      */
                     std::vector<Component> m_components;
                     bool m_componentsHasBeenSet;
 
                     /**
-                     * 被抄送人的信息列表
+                     * 签署流程的签署截止时间。
+值为unix时间戳,精确到秒,不传默认为当前时间一年后
+                     */
+                    int64_t m_deadline;
+                    bool m_deadlineHasBeenSet;
+
+                    /**
+                     * 发送类型：
+true：无序签
+false：有序签
+注：默认为false（有序签）
+                     */
+                    bool m_unordered;
+                    bool m_unorderedHasBeenSet;
+
+                    /**
+                     * 是否需要预览，true：预览模式，false：非预览（默认）；
+预览链接有效期300秒；
+                     */
+                    bool m_needPreview;
+                    bool m_needPreviewHasBeenSet;
+
+                    /**
+                     * 签署流程描述,最大长度1000个字符
+                     */
+                    std::string m_flowDescription;
+                    bool m_flowDescriptionHasBeenSet;
+
+                    /**
+                     * 签署流程的类型(如销售合同/入职合同等)，最大长度200个字符
+                     */
+                    std::string m_flowType;
+                    bool m_flowTypeHasBeenSet;
+
+                    /**
+                     * 被抄送人的信息列表。
+注:此功能为白名单功能，若有需要，请联系电子签客服开白使用
                      */
                     std::vector<CcInfo> m_ccInfos;
                     bool m_ccInfosHasBeenSet;
 
                     /**
-                     * 是否需要预览，true：预览模式，false：非预览（默认）
+                     * 合同显示的页卡模板，说明：只支持{合同名称}, {发起方企业}, {发起方姓名}, {签署方N企业}, {签署方N姓名}，且N不能超过签署人的数量，N从1开始
                      */
-                    bool m_needPreview;
-                    bool m_needPreviewHasBeenSet;
+                    std::string m_customShowMap;
+                    bool m_customShowMapHasBeenSet;
 
                 };
             }

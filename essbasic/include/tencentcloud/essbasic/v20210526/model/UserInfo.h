@@ -47,22 +47,22 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取自定义用户编号
-                     * @return CustomUserId 自定义用户编号
+                     * 获取用户在渠道的编号
+                     * @return OpenId 用户在渠道的编号
                      */
-                    std::string GetCustomUserId() const;
+                    std::string GetOpenId() const;
 
                     /**
-                     * 设置自定义用户编号
-                     * @param CustomUserId 自定义用户编号
+                     * 设置用户在渠道的编号
+                     * @param OpenId 用户在渠道的编号
                      */
-                    void SetCustomUserId(const std::string& _customUserId);
+                    void SetOpenId(const std::string& _openId);
 
                     /**
-                     * 判断参数 CustomUserId 是否已赋值
-                     * @return CustomUserId 是否已赋值
+                     * 判断参数 OpenId 是否已赋值
+                     * @return OpenId 是否已赋值
                      */
-                    bool CustomUserIdHasBeenSet() const;
+                    bool OpenIdHasBeenSet() const;
 
                     /**
                      * 获取用户的来源渠道
@@ -83,22 +83,22 @@ namespace TencentCloud
                     bool ChannelHasBeenSet() const;
 
                     /**
-                     * 获取用户在渠道的编号
-                     * @return OpenId 用户在渠道的编号
+                     * 获取自定义用户编号
+                     * @return CustomUserId 自定义用户编号
                      */
-                    std::string GetOpenId() const;
+                    std::string GetCustomUserId() const;
 
                     /**
-                     * 设置用户在渠道的编号
-                     * @param OpenId 用户在渠道的编号
+                     * 设置自定义用户编号
+                     * @param CustomUserId 自定义用户编号
                      */
-                    void SetOpenId(const std::string& _openId);
+                    void SetCustomUserId(const std::string& _customUserId);
 
                     /**
-                     * 判断参数 OpenId 是否已赋值
-                     * @return OpenId 是否已赋值
+                     * 判断参数 CustomUserId 是否已赋值
+                     * @return CustomUserId 是否已赋值
                      */
-                    bool OpenIdHasBeenSet() const;
+                    bool CustomUserIdHasBeenSet() const;
 
                     /**
                      * 获取用户真实IP
@@ -139,10 +139,10 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 自定义用户编号
+                     * 用户在渠道的编号
                      */
-                    std::string m_customUserId;
-                    bool m_customUserIdHasBeenSet;
+                    std::string m_openId;
+                    bool m_openIdHasBeenSet;
 
                     /**
                      * 用户的来源渠道
@@ -151,10 +151,10 @@ namespace TencentCloud
                     bool m_channelHasBeenSet;
 
                     /**
-                     * 用户在渠道的编号
+                     * 自定义用户编号
                      */
-                    std::string m_openId;
-                    bool m_openIdHasBeenSet;
+                    std::string m_customUserId;
+                    bool m_customUserIdHasBeenSet;
 
                     /**
                      * 用户真实IP

@@ -178,11 +178,11 @@ FINISH：已完成。
                      * 获取微信小程序视频发布状态，取值：
 <li>Pass：发布成功；</li>
 <li>Failed：发布失败；</li>
-<li>Rejected：智能识别未通过。</li>
+<li>Rejected：音视频审核未通过。</li>
                      * @return PublishResult 微信小程序视频发布状态，取值：
 <li>Pass：发布成功；</li>
 <li>Failed：发布失败；</li>
-<li>Rejected：智能识别未通过。</li>
+<li>Rejected：音视频审核未通过。</li>
                      */
                     std::string GetPublishResult() const;
 
@@ -190,11 +190,11 @@ FINISH：已完成。
                      * 设置微信小程序视频发布状态，取值：
 <li>Pass：发布成功；</li>
 <li>Failed：发布失败；</li>
-<li>Rejected：智能识别未通过。</li>
+<li>Rejected：音视频审核未通过。</li>
                      * @param PublishResult 微信小程序视频发布状态，取值：
 <li>Pass：发布成功；</li>
 <li>Failed：发布失败；</li>
-<li>Rejected：智能识别未通过。</li>
+<li>Rejected：音视频审核未通过。</li>
                      */
                     void SetPublishResult(const std::string& _publishResult);
 
@@ -251,7 +251,7 @@ FINISH：已完成。
                      * 微信小程序视频发布状态，取值：
 <li>Pass：发布成功；</li>
 <li>Failed：发布失败；</li>
-<li>Rejected：智能识别未通过。</li>
+<li>Rejected：音视频审核未通过。</li>
                      */
                     std::string m_publishResult;
                     bool m_publishResultHasBeenSet;

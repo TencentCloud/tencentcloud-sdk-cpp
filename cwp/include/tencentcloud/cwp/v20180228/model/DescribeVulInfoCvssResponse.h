@@ -239,6 +239,20 @@ namespace TencentCloud
                      */
                     bool LabelsHasBeenSet() const;
 
+                    /**
+                     * 获取已防御的攻击次数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DefenseAttackCount 已防御的攻击次数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetDefenseAttackCount() const;
+
+                    /**
+                     * 判断参数 DefenseAttackCount 是否已赋值
+                     * @return DefenseAttackCount 是否已赋值
+                     */
+                    bool DefenseAttackCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -338,6 +352,13 @@ namespace TencentCloud
                      */
                     std::string m_labels;
                     bool m_labelsHasBeenSet;
+
+                    /**
+                     * 已防御的攻击次数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_defenseAttackCount;
+                    bool m_defenseAttackCountHasBeenSet;
 
                 };
             }

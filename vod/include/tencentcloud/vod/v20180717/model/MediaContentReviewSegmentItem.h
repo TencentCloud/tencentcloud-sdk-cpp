@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 智能识别涉及令人反感的信息、涉及令人不安全的信息的嫌疑片段
+                * 音视频审核涉及令人反感的信息、涉及令人不安全的信息的嫌疑片段
                 */
                 class MediaContentReviewSegmentItem : public AbstractModel
                 {

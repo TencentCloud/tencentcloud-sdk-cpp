@@ -63,14 +63,14 @@ namespace TencentCloud
                     bool AgentHasBeenSet() const;
 
                     /**
-                     * 获取合同(流程)编号数组
-                     * @return FlowIds 合同(流程)编号数组
+                     * 获取合同(流程)编号数组，最多支持100个。
+                     * @return FlowIds 合同(流程)编号数组，最多支持100个。
                      */
                     std::vector<std::string> GetFlowIds() const;
 
                     /**
-                     * 设置合同(流程)编号数组
-                     * @param FlowIds 合同(流程)编号数组
+                     * 设置合同(流程)编号数组，最多支持100个。
+                     * @param FlowIds 合同(流程)编号数组，最多支持100个。
                      */
                     void SetFlowIds(const std::vector<std::string>& _flowIds);
 
@@ -107,7 +107,7 @@ namespace TencentCloud
                     bool m_agentHasBeenSet;
 
                     /**
-                     * 合同(流程)编号数组
+                     * 合同(流程)编号数组，最多支持100个。
                      */
                     std::vector<std::string> m_flowIds;
                     bool m_flowIdsHasBeenSet;

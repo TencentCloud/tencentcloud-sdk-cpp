@@ -46,14 +46,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取渠道应用相关信息
-                     * @return Agent 渠道应用相关信息
+                     * 获取渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
+                     * @return Agent 渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
                      */
                     Agent GetAgent() const;
 
                     /**
-                     * 设置渠道应用相关信息
-                     * @param Agent 渠道应用相关信息
+                     * 设置渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
+                     * @param Agent 渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
                      */
                     void SetAgent(const Agent& _agent);
 
@@ -64,14 +64,14 @@ namespace TencentCloud
                     bool AgentHasBeenSet() const;
 
                     /**
-                     * 获取多个合同（流程）信息
-                     * @return FlowInfos 多个合同（流程）信息
+                     * 获取多个合同（签署流程）信息，最大支持20个签署流程。
+                     * @return FlowInfos 多个合同（签署流程）信息，最大支持20个签署流程。
                      */
                     std::vector<FlowInfo> GetFlowInfos() const;
 
                     /**
-                     * 设置多个合同（流程）信息
-                     * @param FlowInfos 多个合同（流程）信息
+                     * 设置多个合同（签署流程）信息，最大支持20个签署流程。
+                     * @param FlowInfos 多个合同（签署流程）信息，最大支持20个签署流程。
                      */
                     void SetFlowInfos(const std::vector<FlowInfo>& _flowInfos);
 
@@ -82,14 +82,14 @@ namespace TencentCloud
                     bool FlowInfosHasBeenSet() const;
 
                     /**
-                     * 获取操作完成后的跳转地址
-                     * @return JumpUrl 操作完成后的跳转地址
+                     * 获取操作完成后的跳转地址，最大长度200
+                     * @return JumpUrl 操作完成后的跳转地址，最大长度200
                      */
                     std::string GetJumpUrl() const;
 
                     /**
-                     * 设置操作完成后的跳转地址
-                     * @param JumpUrl 操作完成后的跳转地址
+                     * 设置操作完成后的跳转地址，最大长度200
+                     * @param JumpUrl 操作完成后的跳转地址，最大长度200
                      */
                     void SetJumpUrl(const std::string& _jumpUrl);
 
@@ -120,19 +120,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 渠道应用相关信息
+                     * 渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
                      */
                     Agent m_agent;
                     bool m_agentHasBeenSet;
 
                     /**
-                     * 多个合同（流程）信息
+                     * 多个合同（签署流程）信息，最大支持20个签署流程。
                      */
                     std::vector<FlowInfo> m_flowInfos;
                     bool m_flowInfosHasBeenSet;
 
                     /**
-                     * 操作完成后的跳转地址
+                     * 操作完成后的跳转地址，最大长度200
                      */
                     std::string m_jumpUrl;
                     bool m_jumpUrlHasBeenSet;

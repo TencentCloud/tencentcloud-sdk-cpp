@@ -45,6 +45,42 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取签署流程id
+                     * @return FlowId 签署流程id
+                     */
+                    std::string GetFlowId() const;
+
+                    /**
+                     * 设置签署流程id
+                     * @param FlowId 签署流程id
+                     */
+                    void SetFlowId(const std::string& _flowId);
+
+                    /**
+                     * 判断参数 FlowId 是否已赋值
+                     * @return FlowId 是否已赋值
+                     */
+                    bool FlowIdHasBeenSet() const;
+
+                    /**
+                     * 获取撤销原因，最长200个字符；
+                     * @return CancelMessage 撤销原因，最长200个字符；
+                     */
+                    std::string GetCancelMessage() const;
+
+                    /**
+                     * 设置撤销原因，最长200个字符；
+                     * @param CancelMessage 撤销原因，最长200个字符；
+                     */
+                    void SetCancelMessage(const std::string& _cancelMessage);
+
+                    /**
+                     * 判断参数 CancelMessage 是否已赋值
+                     * @return CancelMessage 是否已赋值
+                     */
+                    bool CancelMessageHasBeenSet() const;
+
+                    /**
                      * 获取操作用户id
                      * @return Operator 操作用户id
                      */
@@ -61,42 +97,6 @@ namespace TencentCloud
                      * @return Operator 是否已赋值
                      */
                     bool OperatorHasBeenSet() const;
-
-                    /**
-                     * 获取流程id
-                     * @return FlowId 流程id
-                     */
-                    std::string GetFlowId() const;
-
-                    /**
-                     * 设置流程id
-                     * @param FlowId 流程id
-                     */
-                    void SetFlowId(const std::string& _flowId);
-
-                    /**
-                     * 判断参数 FlowId 是否已赋值
-                     * @return FlowId 是否已赋值
-                     */
-                    bool FlowIdHasBeenSet() const;
-
-                    /**
-                     * 获取撤销原因
-                     * @return CancelMessage 撤销原因
-                     */
-                    std::string GetCancelMessage() const;
-
-                    /**
-                     * 设置撤销原因
-                     * @param CancelMessage 撤销原因
-                     */
-                    void SetCancelMessage(const std::string& _cancelMessage);
-
-                    /**
-                     * 判断参数 CancelMessage 是否已赋值
-                     * @return CancelMessage 是否已赋值
-                     */
-                    bool CancelMessageHasBeenSet() const;
 
                     /**
                      * 获取应用相关信息
@@ -119,22 +119,22 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 操作用户id
-                     */
-                    UserInfo m_operator;
-                    bool m_operatorHasBeenSet;
-
-                    /**
-                     * 流程id
+                     * 签署流程id
                      */
                     std::string m_flowId;
                     bool m_flowIdHasBeenSet;
 
                     /**
-                     * 撤销原因
+                     * 撤销原因，最长200个字符；
                      */
                     std::string m_cancelMessage;
                     bool m_cancelMessageHasBeenSet;
+
+                    /**
+                     * 操作用户id
+                     */
+                    UserInfo m_operator;
+                    bool m_operatorHasBeenSet;
 
                     /**
                      * 应用相关信息

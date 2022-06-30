@@ -63,14 +63,14 @@ namespace TencentCloud
                     bool AgentHasBeenSet() const;
 
                     /**
-                     * 获取所签署合同ID数组
-                     * @return FlowIds 所签署合同ID数组
+                     * 获取签署流程编号数组，最多支持100个。
+                     * @return FlowIds 签署流程编号数组，最多支持100个。
                      */
                     std::vector<std::string> GetFlowIds() const;
 
                     /**
-                     * 设置所签署合同ID数组
-                     * @param FlowIds 所签署合同ID数组
+                     * 设置签署流程编号数组，最多支持100个。
+                     * @param FlowIds 签署流程编号数组，最多支持100个。
                      */
                     void SetFlowIds(const std::vector<std::string>& _flowIds);
 
@@ -81,32 +81,14 @@ namespace TencentCloud
                     bool FlowIdsHasBeenSet() const;
 
                     /**
-                     * 获取操作者的信息
-                     * @return Operator 操作者的信息
-                     */
-                    UserInfo GetOperator() const;
-
-                    /**
-                     * 设置操作者的信息
-                     * @param Operator 操作者的信息
-                     */
-                    void SetOperator(const UserInfo& _operator);
-
-                    /**
-                     * 判断参数 Operator 是否已赋值
-                     * @return Operator 是否已赋值
-                     */
-                    bool OperatorHasBeenSet() const;
-
-                    /**
-                     * 获取签署链接类型，默认：“WEIXINAPP”-直接跳小程序; “CHANNEL”-跳转H5页面; “APP”-第三方APP或小程序跳转电子签小程序;
-                     * @return Endpoint 签署链接类型，默认：“WEIXINAPP”-直接跳小程序; “CHANNEL”-跳转H5页面; “APP”-第三方APP或小程序跳转电子签小程序;
+                     * 获取签署链接类型：“WEIXINAPP”-直接跳小程序；“CHANNEL”-跳转H5页面；“APP”-第三方APP或小程序跳转电子签小程序；默认“WEIXINAPP”类型，即跳转至小程序。
+                     * @return Endpoint 签署链接类型：“WEIXINAPP”-直接跳小程序；“CHANNEL”-跳转H5页面；“APP”-第三方APP或小程序跳转电子签小程序；默认“WEIXINAPP”类型，即跳转至小程序。
                      */
                     std::string GetEndpoint() const;
 
                     /**
-                     * 设置签署链接类型，默认：“WEIXINAPP”-直接跳小程序; “CHANNEL”-跳转H5页面; “APP”-第三方APP或小程序跳转电子签小程序;
-                     * @param Endpoint 签署链接类型，默认：“WEIXINAPP”-直接跳小程序; “CHANNEL”-跳转H5页面; “APP”-第三方APP或小程序跳转电子签小程序;
+                     * 设置签署链接类型：“WEIXINAPP”-直接跳小程序；“CHANNEL”-跳转H5页面；“APP”-第三方APP或小程序跳转电子签小程序；默认“WEIXINAPP”类型，即跳转至小程序。
+                     * @param Endpoint 签署链接类型：“WEIXINAPP”-直接跳小程序；“CHANNEL”-跳转H5页面；“APP”-第三方APP或小程序跳转电子签小程序；默认“WEIXINAPP”类型，即跳转至小程序。
                      */
                     void SetEndpoint(const std::string& _endpoint);
 
@@ -117,14 +99,14 @@ namespace TencentCloud
                     bool EndpointHasBeenSet() const;
 
                     /**
-                     * 获取签署完之后的H5页面的跳转链接，针对Endpoint为CHANNEL时有效
-                     * @return JumpUrl 签署完之后的H5页面的跳转链接，针对Endpoint为CHANNEL时有效
+                     * 获取签署完之后的H5页面的跳转链接，针对Endpoint为CHANNEL时有效，最大长度1000个字符。
+                     * @return JumpUrl 签署完之后的H5页面的跳转链接，针对Endpoint为CHANNEL时有效，最大长度1000个字符。
                      */
                     std::string GetJumpUrl() const;
 
                     /**
-                     * 设置签署完之后的H5页面的跳转链接，针对Endpoint为CHANNEL时有效
-                     * @param JumpUrl 签署完之后的H5页面的跳转链接，针对Endpoint为CHANNEL时有效
+                     * 设置签署完之后的H5页面的跳转链接，针对Endpoint为CHANNEL时有效，最大长度1000个字符。
+                     * @param JumpUrl 签署完之后的H5页面的跳转链接，针对Endpoint为CHANNEL时有效，最大长度1000个字符。
                      */
                     void SetJumpUrl(const std::string& _jumpUrl);
 
@@ -152,6 +134,24 @@ namespace TencentCloud
                      */
                     bool AutoJumpBackHasBeenSet() const;
 
+                    /**
+                     * 获取操作者的信息
+                     * @return Operator 操作者的信息
+                     */
+                    UserInfo GetOperator() const;
+
+                    /**
+                     * 设置操作者的信息
+                     * @param Operator 操作者的信息
+                     */
+                    void SetOperator(const UserInfo& _operator);
+
+                    /**
+                     * 判断参数 Operator 是否已赋值
+                     * @return Operator 是否已赋值
+                     */
+                    bool OperatorHasBeenSet() const;
+
                 private:
 
                     /**
@@ -161,25 +161,19 @@ namespace TencentCloud
                     bool m_agentHasBeenSet;
 
                     /**
-                     * 所签署合同ID数组
+                     * 签署流程编号数组，最多支持100个。
                      */
                     std::vector<std::string> m_flowIds;
                     bool m_flowIdsHasBeenSet;
 
                     /**
-                     * 操作者的信息
-                     */
-                    UserInfo m_operator;
-                    bool m_operatorHasBeenSet;
-
-                    /**
-                     * 签署链接类型，默认：“WEIXINAPP”-直接跳小程序; “CHANNEL”-跳转H5页面; “APP”-第三方APP或小程序跳转电子签小程序;
+                     * 签署链接类型：“WEIXINAPP”-直接跳小程序；“CHANNEL”-跳转H5页面；“APP”-第三方APP或小程序跳转电子签小程序；默认“WEIXINAPP”类型，即跳转至小程序。
                      */
                     std::string m_endpoint;
                     bool m_endpointHasBeenSet;
 
                     /**
-                     * 签署完之后的H5页面的跳转链接，针对Endpoint为CHANNEL时有效
+                     * 签署完之后的H5页面的跳转链接，针对Endpoint为CHANNEL时有效，最大长度1000个字符。
                      */
                     std::string m_jumpUrl;
                     bool m_jumpUrlHasBeenSet;
@@ -189,6 +183,12 @@ namespace TencentCloud
                      */
                     bool m_autoJumpBack;
                     bool m_autoJumpBackHasBeenSet;
+
+                    /**
+                     * 操作者的信息
+                     */
+                    UserInfo m_operator;
+                    bool m_operatorHasBeenSet;
 
                 };
             }

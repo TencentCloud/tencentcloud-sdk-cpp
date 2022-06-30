@@ -377,6 +377,24 @@ ipvs-bpf模式: 设置KubeProxyMode为kube-proxy-bpf
                      */
                     bool CiliumModeHasBeenSet() const;
 
+                    /**
+                     * 获取集群VPC-CNI模式下是否是双栈集群，默认false，表明非双栈集群。
+                     * @return IsDualStack 集群VPC-CNI模式下是否是双栈集群，默认false，表明非双栈集群。
+                     */
+                    bool GetIsDualStack() const;
+
+                    /**
+                     * 设置集群VPC-CNI模式下是否是双栈集群，默认false，表明非双栈集群。
+                     * @param IsDualStack 集群VPC-CNI模式下是否是双栈集群，默认false，表明非双栈集群。
+                     */
+                    void SetIsDualStack(const bool& _isDualStack);
+
+                    /**
+                     * 判断参数 IsDualStack 是否已赋值
+                     * @return IsDualStack 是否已赋值
+                     */
+                    bool IsDualStackHasBeenSet() const;
+
                 private:
 
                     /**
@@ -486,6 +504,12 @@ ipvs-bpf模式: 设置KubeProxyMode为kube-proxy-bpf
                      */
                     std::string m_ciliumMode;
                     bool m_ciliumModeHasBeenSet;
+
+                    /**
+                     * 集群VPC-CNI模式下是否是双栈集群，默认false，表明非双栈集群。
+                     */
+                    bool m_isDualStack;
+                    bool m_isDualStackHasBeenSet;
 
                 };
             }

@@ -22,10 +22,10 @@ using namespace std;
 
 Agent::Agent() :
     m_appIdHasBeenSet(false),
-    m_proxyOrganizationIdHasBeenSet(false),
-    m_proxyAppIdHasBeenSet(false),
+    m_proxyOrganizationOpenIdHasBeenSet(false),
     m_proxyOperatorHasBeenSet(false),
-    m_proxyOrganizationOpenIdHasBeenSet(false)
+    m_proxyAppIdHasBeenSet(false),
+    m_proxyOrganizationIdHasBeenSet(false)
 {
 }
 
@@ -44,24 +44,14 @@ CoreInternalOutcome Agent::Deserialize(const rapidjson::Value &value)
         m_appIdHasBeenSet = true;
     }
 
-    if (value.HasMember("ProxyOrganizationId") && !value["ProxyOrganizationId"].IsNull())
+    if (value.HasMember("ProxyOrganizationOpenId") && !value["ProxyOrganizationOpenId"].IsNull())
     {
-        if (!value["ProxyOrganizationId"].IsString())
+        if (!value["ProxyOrganizationOpenId"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `Agent.ProxyOrganizationId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Agent.ProxyOrganizationOpenId` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_proxyOrganizationId = string(value["ProxyOrganizationId"].GetString());
-        m_proxyOrganizationIdHasBeenSet = true;
-    }
-
-    if (value.HasMember("ProxyAppId") && !value["ProxyAppId"].IsNull())
-    {
-        if (!value["ProxyAppId"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `Agent.ProxyAppId` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_proxyAppId = string(value["ProxyAppId"].GetString());
-        m_proxyAppIdHasBeenSet = true;
+        m_proxyOrganizationOpenId = string(value["ProxyOrganizationOpenId"].GetString());
+        m_proxyOrganizationOpenIdHasBeenSet = true;
     }
 
     if (value.HasMember("ProxyOperator") && !value["ProxyOperator"].IsNull())
@@ -81,14 +71,24 @@ CoreInternalOutcome Agent::Deserialize(const rapidjson::Value &value)
         m_proxyOperatorHasBeenSet = true;
     }
 
-    if (value.HasMember("ProxyOrganizationOpenId") && !value["ProxyOrganizationOpenId"].IsNull())
+    if (value.HasMember("ProxyAppId") && !value["ProxyAppId"].IsNull())
     {
-        if (!value["ProxyOrganizationOpenId"].IsString())
+        if (!value["ProxyAppId"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `Agent.ProxyOrganizationOpenId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Agent.ProxyAppId` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_proxyOrganizationOpenId = string(value["ProxyOrganizationOpenId"].GetString());
-        m_proxyOrganizationOpenIdHasBeenSet = true;
+        m_proxyAppId = string(value["ProxyAppId"].GetString());
+        m_proxyAppIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("ProxyOrganizationId") && !value["ProxyOrganizationId"].IsNull())
+    {
+        if (!value["ProxyOrganizationId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Agent.ProxyOrganizationId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_proxyOrganizationId = string(value["ProxyOrganizationId"].GetString());
+        m_proxyOrganizationIdHasBeenSet = true;
     }
 
 
@@ -106,20 +106,12 @@ void Agent::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocator
         value.AddMember(iKey, rapidjson::Value(m_appId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_proxyOrganizationIdHasBeenSet)
+    if (m_proxyOrganizationOpenIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ProxyOrganizationId";
+        string key = "ProxyOrganizationOpenId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_proxyOrganizationId.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_proxyAppIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ProxyAppId";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_proxyAppId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_proxyOrganizationOpenId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_proxyOperatorHasBeenSet)
@@ -131,12 +123,20 @@ void Agent::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocator
         m_proxyOperator.ToJsonObject(value[key.c_str()], allocator);
     }
 
-    if (m_proxyOrganizationOpenIdHasBeenSet)
+    if (m_proxyAppIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ProxyOrganizationOpenId";
+        string key = "ProxyAppId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_proxyOrganizationOpenId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_proxyAppId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_proxyOrganizationIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProxyOrganizationId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_proxyOrganizationId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -158,36 +158,20 @@ bool Agent::AppIdHasBeenSet() const
     return m_appIdHasBeenSet;
 }
 
-string Agent::GetProxyOrganizationId() const
+string Agent::GetProxyOrganizationOpenId() const
 {
-    return m_proxyOrganizationId;
+    return m_proxyOrganizationOpenId;
 }
 
-void Agent::SetProxyOrganizationId(const string& _proxyOrganizationId)
+void Agent::SetProxyOrganizationOpenId(const string& _proxyOrganizationOpenId)
 {
-    m_proxyOrganizationId = _proxyOrganizationId;
-    m_proxyOrganizationIdHasBeenSet = true;
+    m_proxyOrganizationOpenId = _proxyOrganizationOpenId;
+    m_proxyOrganizationOpenIdHasBeenSet = true;
 }
 
-bool Agent::ProxyOrganizationIdHasBeenSet() const
+bool Agent::ProxyOrganizationOpenIdHasBeenSet() const
 {
-    return m_proxyOrganizationIdHasBeenSet;
-}
-
-string Agent::GetProxyAppId() const
-{
-    return m_proxyAppId;
-}
-
-void Agent::SetProxyAppId(const string& _proxyAppId)
-{
-    m_proxyAppId = _proxyAppId;
-    m_proxyAppIdHasBeenSet = true;
-}
-
-bool Agent::ProxyAppIdHasBeenSet() const
-{
-    return m_proxyAppIdHasBeenSet;
+    return m_proxyOrganizationOpenIdHasBeenSet;
 }
 
 UserInfo Agent::GetProxyOperator() const
@@ -206,19 +190,35 @@ bool Agent::ProxyOperatorHasBeenSet() const
     return m_proxyOperatorHasBeenSet;
 }
 
-string Agent::GetProxyOrganizationOpenId() const
+string Agent::GetProxyAppId() const
 {
-    return m_proxyOrganizationOpenId;
+    return m_proxyAppId;
 }
 
-void Agent::SetProxyOrganizationOpenId(const string& _proxyOrganizationOpenId)
+void Agent::SetProxyAppId(const string& _proxyAppId)
 {
-    m_proxyOrganizationOpenId = _proxyOrganizationOpenId;
-    m_proxyOrganizationOpenIdHasBeenSet = true;
+    m_proxyAppId = _proxyAppId;
+    m_proxyAppIdHasBeenSet = true;
 }
 
-bool Agent::ProxyOrganizationOpenIdHasBeenSet() const
+bool Agent::ProxyAppIdHasBeenSet() const
 {
-    return m_proxyOrganizationOpenIdHasBeenSet;
+    return m_proxyAppIdHasBeenSet;
+}
+
+string Agent::GetProxyOrganizationId() const
+{
+    return m_proxyOrganizationId;
+}
+
+void Agent::SetProxyOrganizationId(const string& _proxyOrganizationId)
+{
+    m_proxyOrganizationId = _proxyOrganizationId;
+    m_proxyOrganizationIdHasBeenSet = true;
+}
+
+bool Agent::ProxyOrganizationIdHasBeenSet() const
+{
+    return m_proxyOrganizationIdHasBeenSet;
 }
 

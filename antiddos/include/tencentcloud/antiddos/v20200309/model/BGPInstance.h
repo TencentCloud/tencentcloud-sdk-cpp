@@ -353,6 +353,24 @@ namespace TencentCloud
                      */
                     bool TagInfoListHasBeenSet() const;
 
+                    /**
+                     * 获取新版本1ip高防包
+                     * @return IpCountNewFlag 新版本1ip高防包
+                     */
+                    uint64_t GetIpCountNewFlag() const;
+
+                    /**
+                     * 设置新版本1ip高防包
+                     * @param IpCountNewFlag 新版本1ip高防包
+                     */
+                    void SetIpCountNewFlag(const uint64_t& _ipCountNewFlag);
+
+                    /**
+                     * 判断参数 IpCountNewFlag 是否已赋值
+                     * @return IpCountNewFlag 是否已赋值
+                     */
+                    bool IpCountNewFlagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -450,6 +468,12 @@ namespace TencentCloud
                      */
                     std::vector<TagInfo> m_tagInfoList;
                     bool m_tagInfoListHasBeenSet;
+
+                    /**
+                     * 新版本1ip高防包
+                     */
+                    uint64_t m_ipCountNewFlag;
+                    bool m_ipCountNewFlagHasBeenSet;
 
                 };
             }

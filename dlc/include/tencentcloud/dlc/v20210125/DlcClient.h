@@ -23,8 +23,16 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/dlc/v20210125/model/AddDMSPartitionsRequest.h>
+#include <tencentcloud/dlc/v20210125/model/AddDMSPartitionsResponse.h>
 #include <tencentcloud/dlc/v20210125/model/AddUsersToWorkGroupRequest.h>
 #include <tencentcloud/dlc/v20210125/model/AddUsersToWorkGroupResponse.h>
+#include <tencentcloud/dlc/v20210125/model/AlterDMSDatabaseRequest.h>
+#include <tencentcloud/dlc/v20210125/model/AlterDMSDatabaseResponse.h>
+#include <tencentcloud/dlc/v20210125/model/AlterDMSPartitionRequest.h>
+#include <tencentcloud/dlc/v20210125/model/AlterDMSPartitionResponse.h>
+#include <tencentcloud/dlc/v20210125/model/AlterDMSTableRequest.h>
+#include <tencentcloud/dlc/v20210125/model/AlterDMSTableResponse.h>
 #include <tencentcloud/dlc/v20210125/model/AttachUserPolicyRequest.h>
 #include <tencentcloud/dlc/v20210125/model/AttachUserPolicyResponse.h>
 #include <tencentcloud/dlc/v20210125/model/AttachWorkGroupPolicyRequest.h>
@@ -33,6 +41,12 @@
 #include <tencentcloud/dlc/v20210125/model/BindWorkGroupsToUserResponse.h>
 #include <tencentcloud/dlc/v20210125/model/CancelTaskRequest.h>
 #include <tencentcloud/dlc/v20210125/model/CancelTaskResponse.h>
+#include <tencentcloud/dlc/v20210125/model/CheckLockMetaDataRequest.h>
+#include <tencentcloud/dlc/v20210125/model/CheckLockMetaDataResponse.h>
+#include <tencentcloud/dlc/v20210125/model/CreateDMSDatabaseRequest.h>
+#include <tencentcloud/dlc/v20210125/model/CreateDMSDatabaseResponse.h>
+#include <tencentcloud/dlc/v20210125/model/CreateDMSTableRequest.h>
+#include <tencentcloud/dlc/v20210125/model/CreateDMSTableResponse.h>
 #include <tencentcloud/dlc/v20210125/model/CreateDatabaseRequest.h>
 #include <tencentcloud/dlc/v20210125/model/CreateDatabaseResponse.h>
 #include <tencentcloud/dlc/v20210125/model/CreateExportTaskRequest.h>
@@ -69,6 +83,14 @@
 #include <tencentcloud/dlc/v20210125/model/DeleteUsersFromWorkGroupResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DeleteWorkGroupRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DeleteWorkGroupResponse.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeDMSDatabaseRequest.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeDMSDatabaseResponse.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeDMSPartitionsRequest.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeDMSPartitionsResponse.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeDMSTableRequest.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeDMSTableResponse.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeDMSTablesRequest.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeDMSTablesResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeDatabasesRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeDatabasesResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeScriptsRequest.h>
@@ -99,8 +121,16 @@
 #include <tencentcloud/dlc/v20210125/model/DetachUserPolicyResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DetachWorkGroupPolicyRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DetachWorkGroupPolicyResponse.h>
+#include <tencentcloud/dlc/v20210125/model/DropDMSDatabaseRequest.h>
+#include <tencentcloud/dlc/v20210125/model/DropDMSDatabaseResponse.h>
+#include <tencentcloud/dlc/v20210125/model/DropDMSPartitionsRequest.h>
+#include <tencentcloud/dlc/v20210125/model/DropDMSPartitionsResponse.h>
+#include <tencentcloud/dlc/v20210125/model/DropDMSTableRequest.h>
+#include <tencentcloud/dlc/v20210125/model/DropDMSTableResponse.h>
 #include <tencentcloud/dlc/v20210125/model/ListTaskJobLogDetailRequest.h>
 #include <tencentcloud/dlc/v20210125/model/ListTaskJobLogDetailResponse.h>
+#include <tencentcloud/dlc/v20210125/model/LockMetaDataRequest.h>
+#include <tencentcloud/dlc/v20210125/model/LockMetaDataResponse.h>
 #include <tencentcloud/dlc/v20210125/model/ModifySparkAppRequest.h>
 #include <tencentcloud/dlc/v20210125/model/ModifySparkAppResponse.h>
 #include <tencentcloud/dlc/v20210125/model/ModifyUserRequest.h>
@@ -109,6 +139,8 @@
 #include <tencentcloud/dlc/v20210125/model/ModifyWorkGroupResponse.h>
 #include <tencentcloud/dlc/v20210125/model/UnbindWorkGroupsFromUserRequest.h>
 #include <tencentcloud/dlc/v20210125/model/UnbindWorkGroupsFromUserResponse.h>
+#include <tencentcloud/dlc/v20210125/model/UnlockMetaDataRequest.h>
+#include <tencentcloud/dlc/v20210125/model/UnlockMetaDataResponse.h>
 
 
 namespace TencentCloud
@@ -123,9 +155,21 @@ namespace TencentCloud
                 DlcClient(const Credential &credential, const std::string &region);
                 DlcClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::AddDMSPartitionsResponse> AddDMSPartitionsOutcome;
+                typedef std::future<AddDMSPartitionsOutcome> AddDMSPartitionsOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::AddDMSPartitionsRequest&, AddDMSPartitionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddDMSPartitionsAsyncHandler;
                 typedef Outcome<Core::Error, Model::AddUsersToWorkGroupResponse> AddUsersToWorkGroupOutcome;
                 typedef std::future<AddUsersToWorkGroupOutcome> AddUsersToWorkGroupOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::AddUsersToWorkGroupRequest&, AddUsersToWorkGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddUsersToWorkGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::AlterDMSDatabaseResponse> AlterDMSDatabaseOutcome;
+                typedef std::future<AlterDMSDatabaseOutcome> AlterDMSDatabaseOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::AlterDMSDatabaseRequest&, AlterDMSDatabaseOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AlterDMSDatabaseAsyncHandler;
+                typedef Outcome<Core::Error, Model::AlterDMSPartitionResponse> AlterDMSPartitionOutcome;
+                typedef std::future<AlterDMSPartitionOutcome> AlterDMSPartitionOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::AlterDMSPartitionRequest&, AlterDMSPartitionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AlterDMSPartitionAsyncHandler;
+                typedef Outcome<Core::Error, Model::AlterDMSTableResponse> AlterDMSTableOutcome;
+                typedef std::future<AlterDMSTableOutcome> AlterDMSTableOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::AlterDMSTableRequest&, AlterDMSTableOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AlterDMSTableAsyncHandler;
                 typedef Outcome<Core::Error, Model::AttachUserPolicyResponse> AttachUserPolicyOutcome;
                 typedef std::future<AttachUserPolicyOutcome> AttachUserPolicyOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::AttachUserPolicyRequest&, AttachUserPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AttachUserPolicyAsyncHandler;
@@ -138,6 +182,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CancelTaskResponse> CancelTaskOutcome;
                 typedef std::future<CancelTaskOutcome> CancelTaskOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::CancelTaskRequest&, CancelTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CancelTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::CheckLockMetaDataResponse> CheckLockMetaDataOutcome;
+                typedef std::future<CheckLockMetaDataOutcome> CheckLockMetaDataOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::CheckLockMetaDataRequest&, CheckLockMetaDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckLockMetaDataAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateDMSDatabaseResponse> CreateDMSDatabaseOutcome;
+                typedef std::future<CreateDMSDatabaseOutcome> CreateDMSDatabaseOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::CreateDMSDatabaseRequest&, CreateDMSDatabaseOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDMSDatabaseAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateDMSTableResponse> CreateDMSTableOutcome;
+                typedef std::future<CreateDMSTableOutcome> CreateDMSTableOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::CreateDMSTableRequest&, CreateDMSTableOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDMSTableAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateDatabaseResponse> CreateDatabaseOutcome;
                 typedef std::future<CreateDatabaseOutcome> CreateDatabaseOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::CreateDatabaseRequest&, CreateDatabaseOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDatabaseAsyncHandler;
@@ -192,6 +245,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteWorkGroupResponse> DeleteWorkGroupOutcome;
                 typedef std::future<DeleteWorkGroupOutcome> DeleteWorkGroupOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::DeleteWorkGroupRequest&, DeleteWorkGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteWorkGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDMSDatabaseResponse> DescribeDMSDatabaseOutcome;
+                typedef std::future<DescribeDMSDatabaseOutcome> DescribeDMSDatabaseOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::DescribeDMSDatabaseRequest&, DescribeDMSDatabaseOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDMSDatabaseAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDMSPartitionsResponse> DescribeDMSPartitionsOutcome;
+                typedef std::future<DescribeDMSPartitionsOutcome> DescribeDMSPartitionsOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::DescribeDMSPartitionsRequest&, DescribeDMSPartitionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDMSPartitionsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDMSTableResponse> DescribeDMSTableOutcome;
+                typedef std::future<DescribeDMSTableOutcome> DescribeDMSTableOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::DescribeDMSTableRequest&, DescribeDMSTableOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDMSTableAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDMSTablesResponse> DescribeDMSTablesOutcome;
+                typedef std::future<DescribeDMSTablesOutcome> DescribeDMSTablesOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::DescribeDMSTablesRequest&, DescribeDMSTablesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDMSTablesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDatabasesResponse> DescribeDatabasesOutcome;
                 typedef std::future<DescribeDatabasesOutcome> DescribeDatabasesOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::DescribeDatabasesRequest&, DescribeDatabasesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDatabasesAsyncHandler;
@@ -237,9 +302,21 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DetachWorkGroupPolicyResponse> DetachWorkGroupPolicyOutcome;
                 typedef std::future<DetachWorkGroupPolicyOutcome> DetachWorkGroupPolicyOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::DetachWorkGroupPolicyRequest&, DetachWorkGroupPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DetachWorkGroupPolicyAsyncHandler;
+                typedef Outcome<Core::Error, Model::DropDMSDatabaseResponse> DropDMSDatabaseOutcome;
+                typedef std::future<DropDMSDatabaseOutcome> DropDMSDatabaseOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::DropDMSDatabaseRequest&, DropDMSDatabaseOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DropDMSDatabaseAsyncHandler;
+                typedef Outcome<Core::Error, Model::DropDMSPartitionsResponse> DropDMSPartitionsOutcome;
+                typedef std::future<DropDMSPartitionsOutcome> DropDMSPartitionsOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::DropDMSPartitionsRequest&, DropDMSPartitionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DropDMSPartitionsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DropDMSTableResponse> DropDMSTableOutcome;
+                typedef std::future<DropDMSTableOutcome> DropDMSTableOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::DropDMSTableRequest&, DropDMSTableOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DropDMSTableAsyncHandler;
                 typedef Outcome<Core::Error, Model::ListTaskJobLogDetailResponse> ListTaskJobLogDetailOutcome;
                 typedef std::future<ListTaskJobLogDetailOutcome> ListTaskJobLogDetailOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::ListTaskJobLogDetailRequest&, ListTaskJobLogDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListTaskJobLogDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::LockMetaDataResponse> LockMetaDataOutcome;
+                typedef std::future<LockMetaDataOutcome> LockMetaDataOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::LockMetaDataRequest&, LockMetaDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> LockMetaDataAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifySparkAppResponse> ModifySparkAppOutcome;
                 typedef std::future<ModifySparkAppOutcome> ModifySparkAppOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::ModifySparkAppRequest&, ModifySparkAppOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySparkAppAsyncHandler;
@@ -252,8 +329,20 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UnbindWorkGroupsFromUserResponse> UnbindWorkGroupsFromUserOutcome;
                 typedef std::future<UnbindWorkGroupsFromUserOutcome> UnbindWorkGroupsFromUserOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::UnbindWorkGroupsFromUserRequest&, UnbindWorkGroupsFromUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UnbindWorkGroupsFromUserAsyncHandler;
+                typedef Outcome<Core::Error, Model::UnlockMetaDataResponse> UnlockMetaDataOutcome;
+                typedef std::future<UnlockMetaDataOutcome> UnlockMetaDataOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::UnlockMetaDataRequest&, UnlockMetaDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UnlockMetaDataAsyncHandler;
 
 
+
+                /**
+                 *DMS元数据新增分区
+                 * @param req AddDMSPartitionsRequest
+                 * @return AddDMSPartitionsOutcome
+                 */
+                AddDMSPartitionsOutcome AddDMSPartitions(const Model::AddDMSPartitionsRequest &request);
+                void AddDMSPartitionsAsync(const Model::AddDMSPartitionsRequest& request, const AddDMSPartitionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AddDMSPartitionsOutcomeCallable AddDMSPartitionsCallable(const Model::AddDMSPartitionsRequest& request);
 
                 /**
                  *添加用户到工作组
@@ -263,6 +352,33 @@ namespace TencentCloud
                 AddUsersToWorkGroupOutcome AddUsersToWorkGroup(const Model::AddUsersToWorkGroupRequest &request);
                 void AddUsersToWorkGroupAsync(const Model::AddUsersToWorkGroupRequest& request, const AddUsersToWorkGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 AddUsersToWorkGroupOutcomeCallable AddUsersToWorkGroupCallable(const Model::AddUsersToWorkGroupRequest& request);
+
+                /**
+                 *DMS元数据更新库
+                 * @param req AlterDMSDatabaseRequest
+                 * @return AlterDMSDatabaseOutcome
+                 */
+                AlterDMSDatabaseOutcome AlterDMSDatabase(const Model::AlterDMSDatabaseRequest &request);
+                void AlterDMSDatabaseAsync(const Model::AlterDMSDatabaseRequest& request, const AlterDMSDatabaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AlterDMSDatabaseOutcomeCallable AlterDMSDatabaseCallable(const Model::AlterDMSDatabaseRequest& request);
+
+                /**
+                 *DMS元数据更新分区
+                 * @param req AlterDMSPartitionRequest
+                 * @return AlterDMSPartitionOutcome
+                 */
+                AlterDMSPartitionOutcome AlterDMSPartition(const Model::AlterDMSPartitionRequest &request);
+                void AlterDMSPartitionAsync(const Model::AlterDMSPartitionRequest& request, const AlterDMSPartitionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AlterDMSPartitionOutcomeCallable AlterDMSPartitionCallable(const Model::AlterDMSPartitionRequest& request);
+
+                /**
+                 *DMS元数据更新表
+                 * @param req AlterDMSTableRequest
+                 * @return AlterDMSTableOutcome
+                 */
+                AlterDMSTableOutcome AlterDMSTable(const Model::AlterDMSTableRequest &request);
+                void AlterDMSTableAsync(const Model::AlterDMSTableRequest& request, const AlterDMSTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AlterDMSTableOutcomeCallable AlterDMSTableCallable(const Model::AlterDMSTableRequest& request);
 
                 /**
                  *绑定鉴权策略到用户
@@ -299,6 +415,33 @@ namespace TencentCloud
                 CancelTaskOutcome CancelTask(const Model::CancelTaskRequest &request);
                 void CancelTaskAsync(const Model::CancelTaskRequest& request, const CancelTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CancelTaskOutcomeCallable CancelTaskCallable(const Model::CancelTaskRequest& request);
+
+                /**
+                 *元数据锁检查
+                 * @param req CheckLockMetaDataRequest
+                 * @return CheckLockMetaDataOutcome
+                 */
+                CheckLockMetaDataOutcome CheckLockMetaData(const Model::CheckLockMetaDataRequest &request);
+                void CheckLockMetaDataAsync(const Model::CheckLockMetaDataRequest& request, const CheckLockMetaDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CheckLockMetaDataOutcomeCallable CheckLockMetaDataCallable(const Model::CheckLockMetaDataRequest& request);
+
+                /**
+                 *DMS元数据创建库
+                 * @param req CreateDMSDatabaseRequest
+                 * @return CreateDMSDatabaseOutcome
+                 */
+                CreateDMSDatabaseOutcome CreateDMSDatabase(const Model::CreateDMSDatabaseRequest &request);
+                void CreateDMSDatabaseAsync(const Model::CreateDMSDatabaseRequest& request, const CreateDMSDatabaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateDMSDatabaseOutcomeCallable CreateDMSDatabaseCallable(const Model::CreateDMSDatabaseRequest& request);
+
+                /**
+                 *DMS元数据创建表
+                 * @param req CreateDMSTableRequest
+                 * @return CreateDMSTableOutcome
+                 */
+                CreateDMSTableOutcome CreateDMSTable(const Model::CreateDMSTableRequest &request);
+                void CreateDMSTableAsync(const Model::CreateDMSTableRequest& request, const CreateDMSTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateDMSTableOutcomeCallable CreateDMSTableCallable(const Model::CreateDMSTableRequest& request);
 
                 /**
                  *本接口（CreateDatabase）用于生成建库SQL语句。
@@ -463,6 +606,42 @@ namespace TencentCloud
                 DeleteWorkGroupOutcomeCallable DeleteWorkGroupCallable(const Model::DeleteWorkGroupRequest& request);
 
                 /**
+                 *DMS元数据获取库
+                 * @param req DescribeDMSDatabaseRequest
+                 * @return DescribeDMSDatabaseOutcome
+                 */
+                DescribeDMSDatabaseOutcome DescribeDMSDatabase(const Model::DescribeDMSDatabaseRequest &request);
+                void DescribeDMSDatabaseAsync(const Model::DescribeDMSDatabaseRequest& request, const DescribeDMSDatabaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDMSDatabaseOutcomeCallable DescribeDMSDatabaseCallable(const Model::DescribeDMSDatabaseRequest& request);
+
+                /**
+                 *DMS元数据获取分区
+                 * @param req DescribeDMSPartitionsRequest
+                 * @return DescribeDMSPartitionsOutcome
+                 */
+                DescribeDMSPartitionsOutcome DescribeDMSPartitions(const Model::DescribeDMSPartitionsRequest &request);
+                void DescribeDMSPartitionsAsync(const Model::DescribeDMSPartitionsRequest& request, const DescribeDMSPartitionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDMSPartitionsOutcomeCallable DescribeDMSPartitionsCallable(const Model::DescribeDMSPartitionsRequest& request);
+
+                /**
+                 *DMS元数据获取表
+                 * @param req DescribeDMSTableRequest
+                 * @return DescribeDMSTableOutcome
+                 */
+                DescribeDMSTableOutcome DescribeDMSTable(const Model::DescribeDMSTableRequest &request);
+                void DescribeDMSTableAsync(const Model::DescribeDMSTableRequest& request, const DescribeDMSTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDMSTableOutcomeCallable DescribeDMSTableCallable(const Model::DescribeDMSTableRequest& request);
+
+                /**
+                 *DMS元数据获取表列表
+                 * @param req DescribeDMSTablesRequest
+                 * @return DescribeDMSTablesOutcome
+                 */
+                DescribeDMSTablesOutcome DescribeDMSTables(const Model::DescribeDMSTablesRequest &request);
+                void DescribeDMSTablesAsync(const Model::DescribeDMSTablesRequest& request, const DescribeDMSTablesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDMSTablesOutcomeCallable DescribeDMSTablesCallable(const Model::DescribeDMSTablesRequest& request);
+
+                /**
                  *本接口（DescribeDatabases）用于查询数据库列表。
                  * @param req DescribeDatabasesRequest
                  * @return DescribeDatabasesOutcome
@@ -598,6 +777,33 @@ namespace TencentCloud
                 DetachWorkGroupPolicyOutcomeCallable DetachWorkGroupPolicyCallable(const Model::DetachWorkGroupPolicyRequest& request);
 
                 /**
+                 *DMS元数据删除库
+                 * @param req DropDMSDatabaseRequest
+                 * @return DropDMSDatabaseOutcome
+                 */
+                DropDMSDatabaseOutcome DropDMSDatabase(const Model::DropDMSDatabaseRequest &request);
+                void DropDMSDatabaseAsync(const Model::DropDMSDatabaseRequest& request, const DropDMSDatabaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DropDMSDatabaseOutcomeCallable DropDMSDatabaseCallable(const Model::DropDMSDatabaseRequest& request);
+
+                /**
+                 *DMS元数据删除分区
+                 * @param req DropDMSPartitionsRequest
+                 * @return DropDMSPartitionsOutcome
+                 */
+                DropDMSPartitionsOutcome DropDMSPartitions(const Model::DropDMSPartitionsRequest &request);
+                void DropDMSPartitionsAsync(const Model::DropDMSPartitionsRequest& request, const DropDMSPartitionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DropDMSPartitionsOutcomeCallable DropDMSPartitionsCallable(const Model::DropDMSPartitionsRequest& request);
+
+                /**
+                 *DMS元数据删除表
+                 * @param req DropDMSTableRequest
+                 * @return DropDMSTableOutcome
+                 */
+                DropDMSTableOutcome DropDMSTable(const Model::DropDMSTableRequest &request);
+                void DropDMSTableAsync(const Model::DropDMSTableRequest& request, const DropDMSTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DropDMSTableOutcomeCallable DropDMSTableCallable(const Model::DropDMSTableRequest& request);
+
+                /**
                  *本接口（ListTaskJobLogDetail）用于获取spark-jar日志列表
                  * @param req ListTaskJobLogDetailRequest
                  * @return ListTaskJobLogDetailOutcome
@@ -605,6 +811,15 @@ namespace TencentCloud
                 ListTaskJobLogDetailOutcome ListTaskJobLogDetail(const Model::ListTaskJobLogDetailRequest &request);
                 void ListTaskJobLogDetailAsync(const Model::ListTaskJobLogDetailRequest& request, const ListTaskJobLogDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ListTaskJobLogDetailOutcomeCallable ListTaskJobLogDetailCallable(const Model::ListTaskJobLogDetailRequest& request);
+
+                /**
+                 *元数据锁
+                 * @param req LockMetaDataRequest
+                 * @return LockMetaDataOutcome
+                 */
+                LockMetaDataOutcome LockMetaData(const Model::LockMetaDataRequest &request);
+                void LockMetaDataAsync(const Model::LockMetaDataRequest& request, const LockMetaDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                LockMetaDataOutcomeCallable LockMetaDataCallable(const Model::LockMetaDataRequest& request);
 
                 /**
                  *更新spark应用
@@ -641,6 +856,15 @@ namespace TencentCloud
                 UnbindWorkGroupsFromUserOutcome UnbindWorkGroupsFromUser(const Model::UnbindWorkGroupsFromUserRequest &request);
                 void UnbindWorkGroupsFromUserAsync(const Model::UnbindWorkGroupsFromUserRequest& request, const UnbindWorkGroupsFromUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UnbindWorkGroupsFromUserOutcomeCallable UnbindWorkGroupsFromUserCallable(const Model::UnbindWorkGroupsFromUserRequest& request);
+
+                /**
+                 *元数据解锁
+                 * @param req UnlockMetaDataRequest
+                 * @return UnlockMetaDataOutcome
+                 */
+                UnlockMetaDataOutcome UnlockMetaData(const Model::UnlockMetaDataRequest &request);
+                void UnlockMetaDataAsync(const Model::UnlockMetaDataRequest& request, const UnlockMetaDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UnlockMetaDataOutcomeCallable UnlockMetaDataCallable(const Model::UnlockMetaDataRequest& request);
 
             };
         }

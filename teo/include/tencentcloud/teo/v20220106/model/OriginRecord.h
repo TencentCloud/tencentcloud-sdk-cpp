@@ -67,17 +67,17 @@ namespace TencentCloud
 
                     /**
                      * 获取当源站配置类型Type=area时，表示区域
-当源站类型Type=area时，为空表示默认区域
+为空表示默认区域
                      * @return Area 当源站配置类型Type=area时，表示区域
-当源站类型Type=area时，为空表示默认区域
+为空表示默认区域
                      */
                     std::vector<std::string> GetArea() const;
 
                     /**
                      * 设置当源站配置类型Type=area时，表示区域
-当源站类型Type=area时，为空表示默认区域
+为空表示默认区域
                      * @param Area 当源站配置类型Type=area时，表示区域
-当源站类型Type=area时，为空表示默认区域
+为空表示默认区域
                      */
                     void SetArea(const std::vector<std::string>& _area);
 
@@ -89,13 +89,21 @@ namespace TencentCloud
 
                     /**
                      * 获取当源站配置类型Type=weight时，表示权重
+取值范围为[1-100]
+源站组内多个源站权重总和应为100
                      * @return Weight 当源站配置类型Type=weight时，表示权重
+取值范围为[1-100]
+源站组内多个源站权重总和应为100
                      */
                     uint64_t GetWeight() const;
 
                     /**
                      * 设置当源站配置类型Type=weight时，表示权重
+取值范围为[1-100]
+源站组内多个源站权重总和应为100
                      * @param Weight 当源站配置类型Type=weight时，表示权重
+取值范围为[1-100]
+源站组内多个源站权重总和应为100
                      */
                     void SetWeight(const uint64_t& _weight);
 
@@ -203,13 +211,15 @@ namespace TencentCloud
 
                     /**
                      * 当源站配置类型Type=area时，表示区域
-当源站类型Type=area时，为空表示默认区域
+为空表示默认区域
                      */
                     std::vector<std::string> m_area;
                     bool m_areaHasBeenSet;
 
                     /**
                      * 当源站配置类型Type=weight时，表示权重
+取值范围为[1-100]
+源站组内多个源站权重总和应为100
                      */
                     uint64_t m_weight;
                     bool m_weightHasBeenSet;

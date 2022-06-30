@@ -24,11 +24,11 @@ using namespace std;
 
 OperateChannelTemplateRequest::OperateChannelTemplateRequest() :
     m_agentHasBeenSet(false),
-    m_templateIdHasBeenSet(false),
     m_operateTypeHasBeenSet(false),
-    m_operatorHasBeenSet(false),
+    m_templateIdHasBeenSet(false),
+    m_proxyOrganizationOpenIdsHasBeenSet(false),
     m_authTagHasBeenSet(false),
-    m_proxyOrganizationOpenIdsHasBeenSet(false)
+    m_operatorHasBeenSet(false)
 {
 }
 
@@ -48,14 +48,6 @@ string OperateChannelTemplateRequest::ToJsonString() const
         m_agent.ToJsonObject(d[key.c_str()], allocator);
     }
 
-    if (m_templateIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "TemplateId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_templateId.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_operateTypeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -64,13 +56,20 @@ string OperateChannelTemplateRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_operateType.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_operatorHasBeenSet)
+    if (m_templateIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Operator";
+        string key = "TemplateId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_operator.ToJsonObject(d[key.c_str()], allocator);
+        d.AddMember(iKey, rapidjson::Value(m_templateId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_proxyOrganizationOpenIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProxyOrganizationOpenIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_proxyOrganizationOpenIds.c_str(), allocator).Move(), allocator);
     }
 
     if (m_authTagHasBeenSet)
@@ -81,12 +80,13 @@ string OperateChannelTemplateRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_authTag.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_proxyOrganizationOpenIdsHasBeenSet)
+    if (m_operatorHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ProxyOrganizationOpenIds";
+        string key = "Operator";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_proxyOrganizationOpenIds.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_operator.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -113,22 +113,6 @@ bool OperateChannelTemplateRequest::AgentHasBeenSet() const
     return m_agentHasBeenSet;
 }
 
-string OperateChannelTemplateRequest::GetTemplateId() const
-{
-    return m_templateId;
-}
-
-void OperateChannelTemplateRequest::SetTemplateId(const string& _templateId)
-{
-    m_templateId = _templateId;
-    m_templateIdHasBeenSet = true;
-}
-
-bool OperateChannelTemplateRequest::TemplateIdHasBeenSet() const
-{
-    return m_templateIdHasBeenSet;
-}
-
 string OperateChannelTemplateRequest::GetOperateType() const
 {
     return m_operateType;
@@ -145,20 +129,36 @@ bool OperateChannelTemplateRequest::OperateTypeHasBeenSet() const
     return m_operateTypeHasBeenSet;
 }
 
-UserInfo OperateChannelTemplateRequest::GetOperator() const
+string OperateChannelTemplateRequest::GetTemplateId() const
 {
-    return m_operator;
+    return m_templateId;
 }
 
-void OperateChannelTemplateRequest::SetOperator(const UserInfo& _operator)
+void OperateChannelTemplateRequest::SetTemplateId(const string& _templateId)
 {
-    m_operator = _operator;
-    m_operatorHasBeenSet = true;
+    m_templateId = _templateId;
+    m_templateIdHasBeenSet = true;
 }
 
-bool OperateChannelTemplateRequest::OperatorHasBeenSet() const
+bool OperateChannelTemplateRequest::TemplateIdHasBeenSet() const
 {
-    return m_operatorHasBeenSet;
+    return m_templateIdHasBeenSet;
+}
+
+string OperateChannelTemplateRequest::GetProxyOrganizationOpenIds() const
+{
+    return m_proxyOrganizationOpenIds;
+}
+
+void OperateChannelTemplateRequest::SetProxyOrganizationOpenIds(const string& _proxyOrganizationOpenIds)
+{
+    m_proxyOrganizationOpenIds = _proxyOrganizationOpenIds;
+    m_proxyOrganizationOpenIdsHasBeenSet = true;
+}
+
+bool OperateChannelTemplateRequest::ProxyOrganizationOpenIdsHasBeenSet() const
+{
+    return m_proxyOrganizationOpenIdsHasBeenSet;
 }
 
 string OperateChannelTemplateRequest::GetAuthTag() const
@@ -177,20 +177,20 @@ bool OperateChannelTemplateRequest::AuthTagHasBeenSet() const
     return m_authTagHasBeenSet;
 }
 
-string OperateChannelTemplateRequest::GetProxyOrganizationOpenIds() const
+UserInfo OperateChannelTemplateRequest::GetOperator() const
 {
-    return m_proxyOrganizationOpenIds;
+    return m_operator;
 }
 
-void OperateChannelTemplateRequest::SetProxyOrganizationOpenIds(const string& _proxyOrganizationOpenIds)
+void OperateChannelTemplateRequest::SetOperator(const UserInfo& _operator)
 {
-    m_proxyOrganizationOpenIds = _proxyOrganizationOpenIds;
-    m_proxyOrganizationOpenIdsHasBeenSet = true;
+    m_operator = _operator;
+    m_operatorHasBeenSet = true;
 }
 
-bool OperateChannelTemplateRequest::ProxyOrganizationOpenIdsHasBeenSet() const
+bool OperateChannelTemplateRequest::OperatorHasBeenSet() const
 {
-    return m_proxyOrganizationOpenIdsHasBeenSet;
+    return m_operatorHasBeenSet;
 }
 
 

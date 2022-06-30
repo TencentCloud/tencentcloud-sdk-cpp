@@ -1029,6 +1029,49 @@ CccClient::DescribeTelSessionOutcomeCallable CccClient::DescribeTelSessionCallab
     return task->get_future();
 }
 
+CccClient::ModifyStaffOutcome CccClient::ModifyStaff(const ModifyStaffRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyStaff");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyStaffResponse rsp = ModifyStaffResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyStaffOutcome(rsp);
+        else
+            return ModifyStaffOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyStaffOutcome(outcome.GetError());
+    }
+}
+
+void CccClient::ModifyStaffAsync(const ModifyStaffRequest& request, const ModifyStaffAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyStaff(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CccClient::ModifyStaffOutcomeCallable CccClient::ModifyStaffCallable(const ModifyStaffRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyStaffOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyStaff(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CccClient::StopAutoCalloutTaskOutcome CccClient::StopAutoCalloutTask(const StopAutoCalloutTaskRequest &request)
 {
     auto outcome = MakeRequest(request, "StopAutoCalloutTask");

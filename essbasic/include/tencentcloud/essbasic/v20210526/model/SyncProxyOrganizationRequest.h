@@ -46,17 +46,17 @@ namespace TencentCloud
 
                     /**
                      * 获取应用信息
-此接口Agent.ProxyOrganizationOpenId必填
+此接口Agent.AppId、Agent.ProxyOrganizationOpenId必填
                      * @return Agent 应用信息
-此接口Agent.ProxyOrganizationOpenId必填
+此接口Agent.AppId、Agent.ProxyOrganizationOpenId必填
                      */
                     Agent GetAgent() const;
 
                     /**
                      * 设置应用信息
-此接口Agent.ProxyOrganizationOpenId必填
+此接口Agent.AppId、Agent.ProxyOrganizationOpenId必填
                      * @param Agent 应用信息
-此接口Agent.ProxyOrganizationOpenId必填
+此接口Agent.AppId、Agent.ProxyOrganizationOpenId必填
                      */
                     void SetAgent(const Agent& _agent);
 
@@ -67,14 +67,14 @@ namespace TencentCloud
                     bool AgentHasBeenSet() const;
 
                     /**
-                     * 获取渠道侧合作企业名称
-                     * @return ProxyOrganizationName 渠道侧合作企业名称
+                     * 获取渠道侧合作企业名称，最大长度64个字符
+                     * @return ProxyOrganizationName 渠道侧合作企业名称，最大长度64个字符
                      */
                     std::string GetProxyOrganizationName() const;
 
                     /**
-                     * 设置渠道侧合作企业名称
-                     * @param ProxyOrganizationName 渠道侧合作企业名称
+                     * 设置渠道侧合作企业名称，最大长度64个字符
+                     * @param ProxyOrganizationName 渠道侧合作企业名称，最大长度64个字符
                      */
                     void SetProxyOrganizationName(const std::string& _proxyOrganizationName);
 
@@ -83,24 +83,6 @@ namespace TencentCloud
                      * @return ProxyOrganizationName 是否已赋值
                      */
                     bool ProxyOrganizationNameHasBeenSet() const;
-
-                    /**
-                     * 获取渠道侧合作企业统一社会信用代码
-                     * @return UniformSocialCreditCode 渠道侧合作企业统一社会信用代码
-                     */
-                    std::string GetUniformSocialCreditCode() const;
-
-                    /**
-                     * 设置渠道侧合作企业统一社会信用代码
-                     * @param UniformSocialCreditCode 渠道侧合作企业统一社会信用代码
-                     */
-                    void SetUniformSocialCreditCode(const std::string& _uniformSocialCreditCode);
-
-                    /**
-                     * 判断参数 UniformSocialCreditCode 是否已赋值
-                     * @return UniformSocialCreditCode 是否已赋值
-                     */
-                    bool UniformSocialCreditCodeHasBeenSet() const;
 
                     /**
                      * 获取营业执照正面照(PNG或JPG) base64格式, 大小不超过5M
@@ -119,6 +101,24 @@ namespace TencentCloud
                      * @return BusinessLicense 是否已赋值
                      */
                     bool BusinessLicenseHasBeenSet() const;
+
+                    /**
+                     * 获取渠道侧合作企业统一社会信用代码，最大长度200个字符
+                     * @return UniformSocialCreditCode 渠道侧合作企业统一社会信用代码，最大长度200个字符
+                     */
+                    std::string GetUniformSocialCreditCode() const;
+
+                    /**
+                     * 设置渠道侧合作企业统一社会信用代码，最大长度200个字符
+                     * @param UniformSocialCreditCode 渠道侧合作企业统一社会信用代码，最大长度200个字符
+                     */
+                    void SetUniformSocialCreditCode(const std::string& _uniformSocialCreditCode);
+
+                    /**
+                     * 判断参数 UniformSocialCreditCode 是否已赋值
+                     * @return UniformSocialCreditCode 是否已赋值
+                     */
+                    bool UniformSocialCreditCodeHasBeenSet() const;
 
                     /**
                      * 获取操作者的信息
@@ -142,28 +142,28 @@ namespace TencentCloud
 
                     /**
                      * 应用信息
-此接口Agent.ProxyOrganizationOpenId必填
+此接口Agent.AppId、Agent.ProxyOrganizationOpenId必填
                      */
                     Agent m_agent;
                     bool m_agentHasBeenSet;
 
                     /**
-                     * 渠道侧合作企业名称
+                     * 渠道侧合作企业名称，最大长度64个字符
                      */
                     std::string m_proxyOrganizationName;
                     bool m_proxyOrganizationNameHasBeenSet;
-
-                    /**
-                     * 渠道侧合作企业统一社会信用代码
-                     */
-                    std::string m_uniformSocialCreditCode;
-                    bool m_uniformSocialCreditCodeHasBeenSet;
 
                     /**
                      * 营业执照正面照(PNG或JPG) base64格式, 大小不超过5M
                      */
                     std::string m_businessLicense;
                     bool m_businessLicenseHasBeenSet;
+
+                    /**
+                     * 渠道侧合作企业统一社会信用代码，最大长度200个字符
+                     */
+                    std::string m_uniformSocialCreditCode;
+                    bool m_uniformSocialCreditCodeHasBeenSet;
 
                     /**
                      * 操作者的信息

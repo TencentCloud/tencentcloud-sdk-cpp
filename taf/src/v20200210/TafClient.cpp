@@ -83,49 +83,6 @@ TafClient::DetectFraudKOLOutcomeCallable TafClient::DetectFraudKOLCallable(const
     return task->get_future();
 }
 
-TafClient::EnhanceTaDegreeOutcome TafClient::EnhanceTaDegree(const EnhanceTaDegreeRequest &request)
-{
-    auto outcome = MakeRequest(request, "EnhanceTaDegree");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        EnhanceTaDegreeResponse rsp = EnhanceTaDegreeResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return EnhanceTaDegreeOutcome(rsp);
-        else
-            return EnhanceTaDegreeOutcome(o.GetError());
-    }
-    else
-    {
-        return EnhanceTaDegreeOutcome(outcome.GetError());
-    }
-}
-
-void TafClient::EnhanceTaDegreeAsync(const EnhanceTaDegreeRequest& request, const EnhanceTaDegreeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->EnhanceTaDegree(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-TafClient::EnhanceTaDegreeOutcomeCallable TafClient::EnhanceTaDegreeCallable(const EnhanceTaDegreeRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<EnhanceTaDegreeOutcome()>>(
-        [this, request]()
-        {
-            return this->EnhanceTaDegree(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 TafClient::RecognizeCustomizedAudienceOutcome TafClient::RecognizeCustomizedAudience(const RecognizeCustomizedAudienceRequest &request)
 {
     auto outcome = MakeRequest(request, "RecognizeCustomizedAudience");

@@ -37,7 +37,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 小程序智能识别信息单元
+                * 小程序音视频审核信息单元
                 */
                 class MediaMiniProgramReviewInfoItem : public AbstractModel
                 {
@@ -85,14 +85,14 @@ namespace TencentCloud
                     bool MetaDataHasBeenSet() const;
 
                     /**
-                     * 获取小程序智能识别视频播放地址。
-                     * @return Url 小程序智能识别视频播放地址。
+                     * 获取小程序音视频审核视频播放地址。
+                     * @return Url 小程序音视频审核视频播放地址。
                      */
                     std::string GetUrl() const;
 
                     /**
-                     * 设置小程序智能识别视频播放地址。
-                     * @param Url 小程序智能识别视频播放地址。
+                     * 设置小程序音视频审核视频播放地址。
+                     * @param Url 小程序音视频审核视频播放地址。
                      */
                     void SetUrl(const std::string& _url);
 
@@ -129,14 +129,14 @@ namespace TencentCloud
                     bool ReviewResultHasBeenSet() const;
 
                     /**
-                     * 获取小程序智能识别元素。
-                     * @return ReviewSummary 小程序智能识别元素。
+                     * 获取小程序音视频审核元素。
+                     * @return ReviewSummary 小程序音视频审核元素。
                      */
                     std::vector<MediaMiniProgramReviewElem> GetReviewSummary() const;
 
                     /**
-                     * 设置小程序智能识别元素。
-                     * @param ReviewSummary 小程序智能识别元素。
+                     * 设置小程序音视频审核元素。
+                     * @param ReviewSummary 小程序音视频审核元素。
                      */
                     void SetReviewSummary(const std::vector<MediaMiniProgramReviewElem>& _reviewSummary);
 
@@ -161,7 +161,7 @@ namespace TencentCloud
                     bool m_metaDataHasBeenSet;
 
                     /**
-                     * 小程序智能识别视频播放地址。
+                     * 小程序音视频审核视频播放地址。
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;
@@ -175,7 +175,7 @@ namespace TencentCloud
                     bool m_reviewResultHasBeenSet;
 
                     /**
-                     * 小程序智能识别元素。
+                     * 小程序音视频审核元素。
                      */
                     std::vector<MediaMiniProgramReviewElem> m_reviewSummary;
                     bool m_reviewSummaryHasBeenSet;

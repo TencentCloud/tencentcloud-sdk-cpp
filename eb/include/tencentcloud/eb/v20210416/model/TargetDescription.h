@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/eb/v20210416/model/SCFParams.h>
 #include <tencentcloud/eb/v20210416/model/CkafkaTargetParams.h>
+#include <tencentcloud/eb/v20210416/model/ESTargetParams.h>
 
 
 namespace TencentCloud
@@ -102,6 +103,24 @@ namespace TencentCloud
                      */
                     bool CkafkaTargetParamsHasBeenSet() const;
 
+                    /**
+                     * 获取ElasticSearch参数
+                     * @return ESTargetParams ElasticSearch参数
+                     */
+                    ESTargetParams GetESTargetParams() const;
+
+                    /**
+                     * 设置ElasticSearch参数
+                     * @param ESTargetParams ElasticSearch参数
+                     */
+                    void SetESTargetParams(const ESTargetParams& _eSTargetParams);
+
+                    /**
+                     * 判断参数 ESTargetParams 是否已赋值
+                     * @return ESTargetParams 是否已赋值
+                     */
+                    bool ESTargetParamsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -121,6 +140,12 @@ namespace TencentCloud
                      */
                     CkafkaTargetParams m_ckafkaTargetParams;
                     bool m_ckafkaTargetParamsHasBeenSet;
+
+                    /**
+                     * ElasticSearch参数
+                     */
+                    ESTargetParams m_eSTargetParams;
+                    bool m_eSTargetParamsHasBeenSet;
 
                 };
             }

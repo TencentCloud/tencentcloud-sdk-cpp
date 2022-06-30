@@ -35,7 +35,8 @@ VulEffectHostList::VulEffectHostList() :
     m_isSupportAutoFixHasBeenSet(false),
     m_fixStatusMsgHasBeenSet(false),
     m_firstDiscoveryTimeHasBeenSet(false),
-    m_instanceStateHasBeenSet(false)
+    m_instanceStateHasBeenSet(false),
+    m_publicIpAddressesHasBeenSet(false)
 {
 }
 
@@ -197,6 +198,16 @@ CoreInternalOutcome VulEffectHostList::Deserialize(const rapidjson::Value &value
         m_instanceStateHasBeenSet = true;
     }
 
+    if (value.HasMember("PublicIpAddresses") && !value["PublicIpAddresses"].IsNull())
+    {
+        if (!value["PublicIpAddresses"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VulEffectHostList.PublicIpAddresses` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_publicIpAddresses = string(value["PublicIpAddresses"].GetString());
+        m_publicIpAddressesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -327,6 +338,14 @@ void VulEffectHostList::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "InstanceState";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_instanceState.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_publicIpAddressesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PublicIpAddresses";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_publicIpAddresses.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -570,5 +589,21 @@ void VulEffectHostList::SetInstanceState(const string& _instanceState)
 bool VulEffectHostList::InstanceStateHasBeenSet() const
 {
     return m_instanceStateHasBeenSet;
+}
+
+string VulEffectHostList::GetPublicIpAddresses() const
+{
+    return m_publicIpAddresses;
+}
+
+void VulEffectHostList::SetPublicIpAddresses(const string& _publicIpAddresses)
+{
+    m_publicIpAddresses = _publicIpAddresses;
+    m_publicIpAddressesHasBeenSet = true;
+}
+
+bool VulEffectHostList::PublicIpAddressesHasBeenSet() const
+{
+    return m_publicIpAddressesHasBeenSet;
 }
 

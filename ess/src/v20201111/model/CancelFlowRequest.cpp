@@ -23,9 +23,9 @@ using namespace TencentCloud::Ess::V20201111::Model;
 using namespace std;
 
 CancelFlowRequest::CancelFlowRequest() :
-    m_operatorHasBeenSet(false),
     m_flowIdHasBeenSet(false),
     m_cancelMessageHasBeenSet(false),
+    m_operatorHasBeenSet(false),
     m_agentHasBeenSet(false)
 {
 }
@@ -36,15 +36,6 @@ string CancelFlowRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
-
-    if (m_operatorHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Operator";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_operator.ToJsonObject(d[key.c_str()], allocator);
-    }
 
     if (m_flowIdHasBeenSet)
     {
@@ -60,6 +51,15 @@ string CancelFlowRequest::ToJsonString() const
         string key = "CancelMessage";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_cancelMessage.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_operatorHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Operator";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_operator.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_agentHasBeenSet)
@@ -78,22 +78,6 @@ string CancelFlowRequest::ToJsonString() const
     return buffer.GetString();
 }
 
-
-UserInfo CancelFlowRequest::GetOperator() const
-{
-    return m_operator;
-}
-
-void CancelFlowRequest::SetOperator(const UserInfo& _operator)
-{
-    m_operator = _operator;
-    m_operatorHasBeenSet = true;
-}
-
-bool CancelFlowRequest::OperatorHasBeenSet() const
-{
-    return m_operatorHasBeenSet;
-}
 
 string CancelFlowRequest::GetFlowId() const
 {
@@ -125,6 +109,22 @@ void CancelFlowRequest::SetCancelMessage(const string& _cancelMessage)
 bool CancelFlowRequest::CancelMessageHasBeenSet() const
 {
     return m_cancelMessageHasBeenSet;
+}
+
+UserInfo CancelFlowRequest::GetOperator() const
+{
+    return m_operator;
+}
+
+void CancelFlowRequest::SetOperator(const UserInfo& _operator)
+{
+    m_operator = _operator;
+    m_operatorHasBeenSet = true;
+}
+
+bool CancelFlowRequest::OperatorHasBeenSet() const
+{
+    return m_operatorHasBeenSet;
 }
 
 Agent CancelFlowRequest::GetAgent() const

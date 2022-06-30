@@ -66,14 +66,14 @@ namespace TencentCloud
                     bool SubAppIdHasBeenSet() const;
 
                     /**
-                     * 获取视频内容分析模板名称，长度限制：64 个字符。
-                     * @return Name 视频内容分析模板名称，长度限制：64 个字符。
+                     * 获取音视频内容分析模板名称，长度限制：64 个字符。
+                     * @return Name 音视频内容分析模板名称，长度限制：64 个字符。
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置视频内容分析模板名称，长度限制：64 个字符。
-                     * @param Name 视频内容分析模板名称，长度限制：64 个字符。
+                     * 设置音视频内容分析模板名称，长度限制：64 个字符。
+                     * @param Name 音视频内容分析模板名称，长度限制：64 个字符。
                      */
                     void SetName(const std::string& _name);
 
@@ -84,14 +84,14 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取视频内容分析模板描述信息，长度限制：256 个字符。
-                     * @return Comment 视频内容分析模板描述信息，长度限制：256 个字符。
+                     * 获取音视频内容分析模板描述信息，长度限制：256 个字符。
+                     * @return Comment 音视频内容分析模板描述信息，长度限制：256 个字符。
                      */
                     std::string GetComment() const;
 
                     /**
-                     * 设置视频内容分析模板描述信息，长度限制：256 个字符。
-                     * @param Comment 视频内容分析模板描述信息，长度限制：256 个字符。
+                     * 设置音视频内容分析模板描述信息，长度限制：256 个字符。
+                     * @param Comment 音视频内容分析模板描述信息，长度限制：256 个字符。
                      */
                     void SetComment(const std::string& _comment);
 
@@ -200,13 +200,13 @@ namespace TencentCloud
                     bool m_subAppIdHasBeenSet;
 
                     /**
-                     * 视频内容分析模板名称，长度限制：64 个字符。
+                     * 音视频内容分析模板名称，长度限制：64 个字符。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 视频内容分析模板描述信息，长度限制：256 个字符。
+                     * 音视频内容分析模板描述信息，长度限制：256 个字符。
                      */
                     std::string m_comment;
                     bool m_commentHasBeenSet;

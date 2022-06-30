@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool ZoneIdHasBeenSet() const;
 
                     /**
-                     * 获取四层代理ID
-                     * @return ProxyId 四层代理ID
+                     * 获取代理ID
+                     * @return ProxyId 代理ID
                      */
                     std::string GetProxyId() const;
 
                     /**
-                     * 设置四层代理ID
-                     * @param ProxyId 四层代理ID
+                     * 设置代理ID
+                     * @param ProxyId 代理ID
                      */
                     void SetProxyId(const std::string& _proxyId);
 
@@ -79,14 +79,22 @@ namespace TencentCloud
                     bool ProxyIdHasBeenSet() const;
 
                     /**
-                     * 获取四层代理名称
-                     * @return ProxyName 四层代理名称
+                     * 获取代理名称
+当ProxyType=hostname时，表示域名或者子域名
+当ProxyType=instance时，表示实例名称
+                     * @return ProxyName 代理名称
+当ProxyType=hostname时，表示域名或者子域名
+当ProxyType=instance时，表示实例名称
                      */
                     std::string GetProxyName() const;
 
                     /**
-                     * 设置四层代理名称
-                     * @param ProxyName 四层代理名称
+                     * 设置代理名称
+当ProxyType=hostname时，表示域名或者子域名
+当ProxyType=instance时，表示实例名称
+                     * @param ProxyName 代理名称
+当ProxyType=hostname时，表示域名或者子域名
+当ProxyType=instance时，表示实例名称
                      */
                     void SetProxyName(const std::string& _proxyName);
 
@@ -152,21 +160,21 @@ namespace TencentCloud
 
                     /**
                      * 获取服务类型
-hostname：子域名
-instance：实例
+hostname：子域名模式
+instance：实例模式
                      * @return ProxyType 服务类型
-hostname：子域名
-instance：实例
+hostname：子域名模式
+instance：实例模式
                      */
                     std::string GetProxyType() const;
 
                     /**
                      * 设置服务类型
-hostname：子域名
-instance：实例
+hostname：子域名模式
+instance：实例模式
                      * @param ProxyType 服务类型
-hostname：子域名
-instance：实例
+hostname：子域名模式
+instance：实例模式
                      */
                     void SetProxyType(const std::string& _proxyType);
 
@@ -185,13 +193,15 @@ instance：实例
                     bool m_zoneIdHasBeenSet;
 
                     /**
-                     * 四层代理ID
+                     * 代理ID
                      */
                     std::string m_proxyId;
                     bool m_proxyIdHasBeenSet;
 
                     /**
-                     * 四层代理名称
+                     * 代理名称
+当ProxyType=hostname时，表示域名或者子域名
+当ProxyType=instance时，表示实例名称
                      */
                     std::string m_proxyName;
                     bool m_proxyNameHasBeenSet;
@@ -216,8 +226,8 @@ instance：实例
 
                     /**
                      * 服务类型
-hostname：子域名
-instance：实例
+hostname：子域名模式
+instance：实例模式
                      */
                     std::string m_proxyType;
                     bool m_proxyTypeHasBeenSet;

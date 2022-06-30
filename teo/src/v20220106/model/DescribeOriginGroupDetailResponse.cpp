@@ -33,7 +33,8 @@ DescribeOriginGroupDetailResponse::DescribeOriginGroupDetailResponse() :
     m_zoneNameHasBeenSet(false),
     m_originTypeHasBeenSet(false),
     m_applicationProxyUsedHasBeenSet(false),
-    m_loadBalancingUsedHasBeenSet(false)
+    m_loadBalancingUsedHasBeenSet(false),
+    m_loadBalancingUsedTypeHasBeenSet(false)
 {
 }
 
@@ -181,6 +182,16 @@ CoreInternalOutcome DescribeOriginGroupDetailResponse::Deserialize(const string 
         m_loadBalancingUsedHasBeenSet = true;
     }
 
+    if (rsp.HasMember("LoadBalancingUsedType") && !rsp["LoadBalancingUsedType"].IsNull())
+    {
+        if (!rsp["LoadBalancingUsedType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LoadBalancingUsedType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_loadBalancingUsedType = string(rsp["LoadBalancingUsedType"].GetString());
+        m_loadBalancingUsedTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -276,6 +287,14 @@ string DescribeOriginGroupDetailResponse::ToJsonString() const
         string key = "LoadBalancingUsed";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_loadBalancingUsed, allocator);
+    }
+
+    if (m_loadBalancingUsedTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LoadBalancingUsedType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_loadBalancingUsedType.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -388,6 +407,16 @@ bool DescribeOriginGroupDetailResponse::GetLoadBalancingUsed() const
 bool DescribeOriginGroupDetailResponse::LoadBalancingUsedHasBeenSet() const
 {
     return m_loadBalancingUsedHasBeenSet;
+}
+
+string DescribeOriginGroupDetailResponse::GetLoadBalancingUsedType() const
+{
+    return m_loadBalancingUsedType;
+}
+
+bool DescribeOriginGroupDetailResponse::LoadBalancingUsedTypeHasBeenSet() const
+{
+    return m_loadBalancingUsedTypeHasBeenSet;
 }
 
 

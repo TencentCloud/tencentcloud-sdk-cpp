@@ -99,32 +99,6 @@ namespace TencentCloud
                     bool OrganizationNameHasBeenSet() const;
 
                     /**
-                     * 获取是否需要签署
-- `false`: 不需要签署
--  `true`:  需要签署
-                     * @return Required 是否需要签署
-- `false`: 不需要签署
--  `true`:  需要签署
-                     */
-                    bool GetRequired() const;
-
-                    /**
-                     * 设置是否需要签署
-- `false`: 不需要签署
--  `true`:  需要签署
-                     * @param Required 是否需要签署
-- `false`: 不需要签署
--  `true`:  需要签署
-                     */
-                    void SetRequired(const bool& _required);
-
-                    /**
-                     * 判断参数 Required 是否已赋值
-                     * @return Required 是否已赋值
-                     */
-                    bool RequiredHasBeenSet() const;
-
-                    /**
                      * 获取签署方经办人姓名
                      * @return ApproverName 签署方经办人姓名
                      */
@@ -161,24 +135,6 @@ namespace TencentCloud
                     bool ApproverMobileHasBeenSet() const;
 
                     /**
-                     * 获取签署方经办人证件号码
-                     * @return ApproverIdCardNumber 签署方经办人证件号码
-                     */
-                    std::string GetApproverIdCardNumber() const;
-
-                    /**
-                     * 设置签署方经办人证件号码
-                     * @param ApproverIdCardNumber 签署方经办人证件号码
-                     */
-                    void SetApproverIdCardNumber(const std::string& _approverIdCardNumber);
-
-                    /**
-                     * 判断参数 ApproverIdCardNumber 是否已赋值
-                     * @return ApproverIdCardNumber 是否已赋值
-                     */
-                    bool ApproverIdCardNumberHasBeenSet() const;
-
-                    /**
                      * 获取签署方经办人证件类型ID_CARD 身份证
 HONGKONG_AND_MACAO 港澳居民来往内地通行证
 HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)
@@ -205,6 +161,24 @@ HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)
                     bool ApproverIdCardTypeHasBeenSet() const;
 
                     /**
+                     * 获取签署方经办人证件号码
+                     * @return ApproverIdCardNumber 签署方经办人证件号码
+                     */
+                    std::string GetApproverIdCardNumber() const;
+
+                    /**
+                     * 设置签署方经办人证件号码
+                     * @param ApproverIdCardNumber 签署方经办人证件号码
+                     */
+                    void SetApproverIdCardNumber(const std::string& _approverIdCardNumber);
+
+                    /**
+                     * 判断参数 ApproverIdCardNumber 是否已赋值
+                     * @return ApproverIdCardNumber 是否已赋值
+                     */
+                    bool ApproverIdCardNumberHasBeenSet() const;
+
+                    /**
                      * 获取签署方经办人在模板中的角色ID
                      * @return RecipientId 签署方经办人在模板中的角色ID
                      */
@@ -223,22 +197,40 @@ HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)
                     bool RecipientIdHasBeenSet() const;
 
                     /**
-                     * 获取签署方经办人的用户ID,和签署方经办人姓名+手机号+证件必须有一个
-                     * @return UserId 签署方经办人的用户ID,和签署方经办人姓名+手机号+证件必须有一个
+                     * 获取签署意愿确认渠道,WEIXINAPP:人脸识别
+                     * @return VerifyChannel 签署意愿确认渠道,WEIXINAPP:人脸识别
                      */
-                    std::string GetUserId() const;
+                    std::vector<std::string> GetVerifyChannel() const;
 
                     /**
-                     * 设置签署方经办人的用户ID,和签署方经办人姓名+手机号+证件必须有一个
-                     * @param UserId 签署方经办人的用户ID,和签署方经办人姓名+手机号+证件必须有一个
+                     * 设置签署意愿确认渠道,WEIXINAPP:人脸识别
+                     * @param VerifyChannel 签署意愿确认渠道,WEIXINAPP:人脸识别
                      */
-                    void SetUserId(const std::string& _userId);
+                    void SetVerifyChannel(const std::vector<std::string>& _verifyChannel);
 
                     /**
-                     * 判断参数 UserId 是否已赋值
-                     * @return UserId 是否已赋值
+                     * 判断参数 VerifyChannel 是否已赋值
+                     * @return VerifyChannel 是否已赋值
                      */
-                    bool UserIdHasBeenSet() const;
+                    bool VerifyChannelHasBeenSet() const;
+
+                    /**
+                     * 获取是否发送短信，sms--短信通知，none--不通知，默认为sms
+                     * @return NotifyType 是否发送短信，sms--短信通知，none--不通知，默认为sms
+                     */
+                    std::string GetNotifyType() const;
+
+                    /**
+                     * 设置是否发送短信，sms--短信通知，none--不通知，默认为sms
+                     * @param NotifyType 是否发送短信，sms--短信通知，none--不通知，默认为sms
+                     */
+                    void SetNotifyType(const std::string& _notifyType);
+
+                    /**
+                     * 判断参数 NotifyType 是否已赋值
+                     * @return NotifyType 是否已赋值
+                     */
+                    bool NotifyTypeHasBeenSet() const;
 
                     /**
                      * 获取签署前置条件：是否需要阅读全文，默认为不需要
@@ -277,40 +269,40 @@ HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)
                     bool PreReadTimeHasBeenSet() const;
 
                     /**
-                     * 获取是否发送短信，sms--短信通知，none--不通知，默认为sms
-                     * @return NotifyType 是否发送短信，sms--短信通知，none--不通知，默认为sms
+                     * 获取签署方经办人的用户ID,和签署方经办人姓名+手机号+证件必须有一个
+                     * @return UserId 签署方经办人的用户ID,和签署方经办人姓名+手机号+证件必须有一个
                      */
-                    std::string GetNotifyType() const;
+                    std::string GetUserId() const;
 
                     /**
-                     * 设置是否发送短信，sms--短信通知，none--不通知，默认为sms
-                     * @param NotifyType 是否发送短信，sms--短信通知，none--不通知，默认为sms
+                     * 设置签署方经办人的用户ID,和签署方经办人姓名+手机号+证件必须有一个
+                     * @param UserId 签署方经办人的用户ID,和签署方经办人姓名+手机号+证件必须有一个
                      */
-                    void SetNotifyType(const std::string& _notifyType);
+                    void SetUserId(const std::string& _userId);
 
                     /**
-                     * 判断参数 NotifyType 是否已赋值
-                     * @return NotifyType 是否已赋值
+                     * 判断参数 UserId 是否已赋值
+                     * @return UserId 是否已赋值
                      */
-                    bool NotifyTypeHasBeenSet() const;
+                    bool UserIdHasBeenSet() const;
 
                     /**
-                     * 获取签署意愿确认渠道,WEIXINAPP:人脸识别
-                     * @return VerifyChannel 签署意愿确认渠道,WEIXINAPP:人脸识别
+                     * 获取当前只支持true，默认为true
+                     * @return Required 当前只支持true，默认为true
                      */
-                    std::vector<std::string> GetVerifyChannel() const;
+                    bool GetRequired() const;
 
                     /**
-                     * 设置签署意愿确认渠道,WEIXINAPP:人脸识别
-                     * @param VerifyChannel 签署意愿确认渠道,WEIXINAPP:人脸识别
+                     * 设置当前只支持true，默认为true
+                     * @param Required 当前只支持true，默认为true
                      */
-                    void SetVerifyChannel(const std::vector<std::string>& _verifyChannel);
+                    void SetRequired(const bool& _required);
 
                     /**
-                     * 判断参数 VerifyChannel 是否已赋值
-                     * @return VerifyChannel 是否已赋值
+                     * 判断参数 Required 是否已赋值
+                     * @return Required 是否已赋值
                      */
-                    bool VerifyChannelHasBeenSet() const;
+                    bool RequiredHasBeenSet() const;
 
                 private:
 
@@ -331,14 +323,6 @@ HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)
                     bool m_organizationNameHasBeenSet;
 
                     /**
-                     * 是否需要签署
-- `false`: 不需要签署
--  `true`:  需要签署
-                     */
-                    bool m_required;
-                    bool m_requiredHasBeenSet;
-
-                    /**
                      * 签署方经办人姓名
                      */
                     std::string m_approverName;
@@ -351,12 +335,6 @@ HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)
                     bool m_approverMobileHasBeenSet;
 
                     /**
-                     * 签署方经办人证件号码
-                     */
-                    std::string m_approverIdCardNumber;
-                    bool m_approverIdCardNumberHasBeenSet;
-
-                    /**
                      * 签署方经办人证件类型ID_CARD 身份证
 HONGKONG_AND_MACAO 港澳居民来往内地通行证
 HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)
@@ -365,16 +343,28 @@ HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)
                     bool m_approverIdCardTypeHasBeenSet;
 
                     /**
+                     * 签署方经办人证件号码
+                     */
+                    std::string m_approverIdCardNumber;
+                    bool m_approverIdCardNumberHasBeenSet;
+
+                    /**
                      * 签署方经办人在模板中的角色ID
                      */
                     std::string m_recipientId;
                     bool m_recipientIdHasBeenSet;
 
                     /**
-                     * 签署方经办人的用户ID,和签署方经办人姓名+手机号+证件必须有一个
+                     * 签署意愿确认渠道,WEIXINAPP:人脸识别
                      */
-                    std::string m_userId;
-                    bool m_userIdHasBeenSet;
+                    std::vector<std::string> m_verifyChannel;
+                    bool m_verifyChannelHasBeenSet;
+
+                    /**
+                     * 是否发送短信，sms--短信通知，none--不通知，默认为sms
+                     */
+                    std::string m_notifyType;
+                    bool m_notifyTypeHasBeenSet;
 
                     /**
                      * 签署前置条件：是否需要阅读全文，默认为不需要
@@ -389,16 +379,16 @@ HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)
                     bool m_preReadTimeHasBeenSet;
 
                     /**
-                     * 是否发送短信，sms--短信通知，none--不通知，默认为sms
+                     * 签署方经办人的用户ID,和签署方经办人姓名+手机号+证件必须有一个
                      */
-                    std::string m_notifyType;
-                    bool m_notifyTypeHasBeenSet;
+                    std::string m_userId;
+                    bool m_userIdHasBeenSet;
 
                     /**
-                     * 签署意愿确认渠道,WEIXINAPP:人脸识别
+                     * 当前只支持true，默认为true
                      */
-                    std::vector<std::string> m_verifyChannel;
-                    bool m_verifyChannelHasBeenSet;
+                    bool m_required;
+                    bool m_requiredHasBeenSet;
 
                 };
             }

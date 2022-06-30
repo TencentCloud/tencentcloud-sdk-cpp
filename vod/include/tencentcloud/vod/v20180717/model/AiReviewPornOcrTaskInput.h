@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 智能识别 Ocr 文字涉及令人反感的信息的任务输入参数类型
+                * 音视频审核 Ocr 文字涉及令人反感的信息的任务输入参数类型
                 */
                 class AiReviewPornOcrTaskInput : public AbstractModel
                 {

@@ -25,8 +25,8 @@ using namespace std;
 SyncProxyOrganizationRequest::SyncProxyOrganizationRequest() :
     m_agentHasBeenSet(false),
     m_proxyOrganizationNameHasBeenSet(false),
-    m_uniformSocialCreditCodeHasBeenSet(false),
     m_businessLicenseHasBeenSet(false),
+    m_uniformSocialCreditCodeHasBeenSet(false),
     m_operatorHasBeenSet(false)
 {
 }
@@ -55,20 +55,20 @@ string SyncProxyOrganizationRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_proxyOrganizationName.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_uniformSocialCreditCodeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "UniformSocialCreditCode";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_uniformSocialCreditCode.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_businessLicenseHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "BusinessLicense";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_businessLicense.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_uniformSocialCreditCodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UniformSocialCreditCode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_uniformSocialCreditCode.c_str(), allocator).Move(), allocator);
     }
 
     if (m_operatorHasBeenSet)
@@ -120,22 +120,6 @@ bool SyncProxyOrganizationRequest::ProxyOrganizationNameHasBeenSet() const
     return m_proxyOrganizationNameHasBeenSet;
 }
 
-string SyncProxyOrganizationRequest::GetUniformSocialCreditCode() const
-{
-    return m_uniformSocialCreditCode;
-}
-
-void SyncProxyOrganizationRequest::SetUniformSocialCreditCode(const string& _uniformSocialCreditCode)
-{
-    m_uniformSocialCreditCode = _uniformSocialCreditCode;
-    m_uniformSocialCreditCodeHasBeenSet = true;
-}
-
-bool SyncProxyOrganizationRequest::UniformSocialCreditCodeHasBeenSet() const
-{
-    return m_uniformSocialCreditCodeHasBeenSet;
-}
-
 string SyncProxyOrganizationRequest::GetBusinessLicense() const
 {
     return m_businessLicense;
@@ -150,6 +134,22 @@ void SyncProxyOrganizationRequest::SetBusinessLicense(const string& _businessLic
 bool SyncProxyOrganizationRequest::BusinessLicenseHasBeenSet() const
 {
     return m_businessLicenseHasBeenSet;
+}
+
+string SyncProxyOrganizationRequest::GetUniformSocialCreditCode() const
+{
+    return m_uniformSocialCreditCode;
+}
+
+void SyncProxyOrganizationRequest::SetUniformSocialCreditCode(const string& _uniformSocialCreditCode)
+{
+    m_uniformSocialCreditCode = _uniformSocialCreditCode;
+    m_uniformSocialCreditCodeHasBeenSet = true;
+}
+
+bool SyncProxyOrganizationRequest::UniformSocialCreditCodeHasBeenSet() const
+{
+    return m_uniformSocialCreditCodeHasBeenSet;
 }
 
 UserInfo SyncProxyOrganizationRequest::GetOperator() const

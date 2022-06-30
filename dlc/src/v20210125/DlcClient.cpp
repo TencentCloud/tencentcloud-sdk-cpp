@@ -40,6 +40,49 @@ DlcClient::DlcClient(const Credential &credential, const string &region, const C
 }
 
 
+DlcClient::AddDMSPartitionsOutcome DlcClient::AddDMSPartitions(const AddDMSPartitionsRequest &request)
+{
+    auto outcome = MakeRequest(request, "AddDMSPartitions");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AddDMSPartitionsResponse rsp = AddDMSPartitionsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AddDMSPartitionsOutcome(rsp);
+        else
+            return AddDMSPartitionsOutcome(o.GetError());
+    }
+    else
+    {
+        return AddDMSPartitionsOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::AddDMSPartitionsAsync(const AddDMSPartitionsRequest& request, const AddDMSPartitionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AddDMSPartitions(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DlcClient::AddDMSPartitionsOutcomeCallable DlcClient::AddDMSPartitionsCallable(const AddDMSPartitionsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AddDMSPartitionsOutcome()>>(
+        [this, request]()
+        {
+            return this->AddDMSPartitions(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DlcClient::AddUsersToWorkGroupOutcome DlcClient::AddUsersToWorkGroup(const AddUsersToWorkGroupRequest &request)
 {
     auto outcome = MakeRequest(request, "AddUsersToWorkGroup");
@@ -76,6 +119,135 @@ DlcClient::AddUsersToWorkGroupOutcomeCallable DlcClient::AddUsersToWorkGroupCall
         [this, request]()
         {
             return this->AddUsersToWorkGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DlcClient::AlterDMSDatabaseOutcome DlcClient::AlterDMSDatabase(const AlterDMSDatabaseRequest &request)
+{
+    auto outcome = MakeRequest(request, "AlterDMSDatabase");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AlterDMSDatabaseResponse rsp = AlterDMSDatabaseResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AlterDMSDatabaseOutcome(rsp);
+        else
+            return AlterDMSDatabaseOutcome(o.GetError());
+    }
+    else
+    {
+        return AlterDMSDatabaseOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::AlterDMSDatabaseAsync(const AlterDMSDatabaseRequest& request, const AlterDMSDatabaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AlterDMSDatabase(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DlcClient::AlterDMSDatabaseOutcomeCallable DlcClient::AlterDMSDatabaseCallable(const AlterDMSDatabaseRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AlterDMSDatabaseOutcome()>>(
+        [this, request]()
+        {
+            return this->AlterDMSDatabase(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DlcClient::AlterDMSPartitionOutcome DlcClient::AlterDMSPartition(const AlterDMSPartitionRequest &request)
+{
+    auto outcome = MakeRequest(request, "AlterDMSPartition");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AlterDMSPartitionResponse rsp = AlterDMSPartitionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AlterDMSPartitionOutcome(rsp);
+        else
+            return AlterDMSPartitionOutcome(o.GetError());
+    }
+    else
+    {
+        return AlterDMSPartitionOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::AlterDMSPartitionAsync(const AlterDMSPartitionRequest& request, const AlterDMSPartitionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AlterDMSPartition(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DlcClient::AlterDMSPartitionOutcomeCallable DlcClient::AlterDMSPartitionCallable(const AlterDMSPartitionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AlterDMSPartitionOutcome()>>(
+        [this, request]()
+        {
+            return this->AlterDMSPartition(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DlcClient::AlterDMSTableOutcome DlcClient::AlterDMSTable(const AlterDMSTableRequest &request)
+{
+    auto outcome = MakeRequest(request, "AlterDMSTable");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AlterDMSTableResponse rsp = AlterDMSTableResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AlterDMSTableOutcome(rsp);
+        else
+            return AlterDMSTableOutcome(o.GetError());
+    }
+    else
+    {
+        return AlterDMSTableOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::AlterDMSTableAsync(const AlterDMSTableRequest& request, const AlterDMSTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AlterDMSTable(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DlcClient::AlterDMSTableOutcomeCallable DlcClient::AlterDMSTableCallable(const AlterDMSTableRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AlterDMSTableOutcome()>>(
+        [this, request]()
+        {
+            return this->AlterDMSTable(request);
         }
     );
 
@@ -248,6 +420,135 @@ DlcClient::CancelTaskOutcomeCallable DlcClient::CancelTaskCallable(const CancelT
         [this, request]()
         {
             return this->CancelTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DlcClient::CheckLockMetaDataOutcome DlcClient::CheckLockMetaData(const CheckLockMetaDataRequest &request)
+{
+    auto outcome = MakeRequest(request, "CheckLockMetaData");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CheckLockMetaDataResponse rsp = CheckLockMetaDataResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CheckLockMetaDataOutcome(rsp);
+        else
+            return CheckLockMetaDataOutcome(o.GetError());
+    }
+    else
+    {
+        return CheckLockMetaDataOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::CheckLockMetaDataAsync(const CheckLockMetaDataRequest& request, const CheckLockMetaDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CheckLockMetaData(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DlcClient::CheckLockMetaDataOutcomeCallable DlcClient::CheckLockMetaDataCallable(const CheckLockMetaDataRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CheckLockMetaDataOutcome()>>(
+        [this, request]()
+        {
+            return this->CheckLockMetaData(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DlcClient::CreateDMSDatabaseOutcome DlcClient::CreateDMSDatabase(const CreateDMSDatabaseRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateDMSDatabase");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateDMSDatabaseResponse rsp = CreateDMSDatabaseResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateDMSDatabaseOutcome(rsp);
+        else
+            return CreateDMSDatabaseOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateDMSDatabaseOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::CreateDMSDatabaseAsync(const CreateDMSDatabaseRequest& request, const CreateDMSDatabaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateDMSDatabase(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DlcClient::CreateDMSDatabaseOutcomeCallable DlcClient::CreateDMSDatabaseCallable(const CreateDMSDatabaseRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateDMSDatabaseOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateDMSDatabase(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DlcClient::CreateDMSTableOutcome DlcClient::CreateDMSTable(const CreateDMSTableRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateDMSTable");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateDMSTableResponse rsp = CreateDMSTableResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateDMSTableOutcome(rsp);
+        else
+            return CreateDMSTableOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateDMSTableOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::CreateDMSTableAsync(const CreateDMSTableRequest& request, const CreateDMSTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateDMSTable(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DlcClient::CreateDMSTableOutcomeCallable DlcClient::CreateDMSTableCallable(const CreateDMSTableRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateDMSTableOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateDMSTable(request);
         }
     );
 
@@ -1029,6 +1330,178 @@ DlcClient::DeleteWorkGroupOutcomeCallable DlcClient::DeleteWorkGroupCallable(con
     return task->get_future();
 }
 
+DlcClient::DescribeDMSDatabaseOutcome DlcClient::DescribeDMSDatabase(const DescribeDMSDatabaseRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDMSDatabase");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDMSDatabaseResponse rsp = DescribeDMSDatabaseResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDMSDatabaseOutcome(rsp);
+        else
+            return DescribeDMSDatabaseOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDMSDatabaseOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::DescribeDMSDatabaseAsync(const DescribeDMSDatabaseRequest& request, const DescribeDMSDatabaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDMSDatabase(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DlcClient::DescribeDMSDatabaseOutcomeCallable DlcClient::DescribeDMSDatabaseCallable(const DescribeDMSDatabaseRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDMSDatabaseOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDMSDatabase(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DlcClient::DescribeDMSPartitionsOutcome DlcClient::DescribeDMSPartitions(const DescribeDMSPartitionsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDMSPartitions");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDMSPartitionsResponse rsp = DescribeDMSPartitionsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDMSPartitionsOutcome(rsp);
+        else
+            return DescribeDMSPartitionsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDMSPartitionsOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::DescribeDMSPartitionsAsync(const DescribeDMSPartitionsRequest& request, const DescribeDMSPartitionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDMSPartitions(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DlcClient::DescribeDMSPartitionsOutcomeCallable DlcClient::DescribeDMSPartitionsCallable(const DescribeDMSPartitionsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDMSPartitionsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDMSPartitions(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DlcClient::DescribeDMSTableOutcome DlcClient::DescribeDMSTable(const DescribeDMSTableRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDMSTable");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDMSTableResponse rsp = DescribeDMSTableResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDMSTableOutcome(rsp);
+        else
+            return DescribeDMSTableOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDMSTableOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::DescribeDMSTableAsync(const DescribeDMSTableRequest& request, const DescribeDMSTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDMSTable(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DlcClient::DescribeDMSTableOutcomeCallable DlcClient::DescribeDMSTableCallable(const DescribeDMSTableRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDMSTableOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDMSTable(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DlcClient::DescribeDMSTablesOutcome DlcClient::DescribeDMSTables(const DescribeDMSTablesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDMSTables");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDMSTablesResponse rsp = DescribeDMSTablesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDMSTablesOutcome(rsp);
+        else
+            return DescribeDMSTablesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDMSTablesOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::DescribeDMSTablesAsync(const DescribeDMSTablesRequest& request, const DescribeDMSTablesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDMSTables(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DlcClient::DescribeDMSTablesOutcomeCallable DlcClient::DescribeDMSTablesCallable(const DescribeDMSTablesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDMSTablesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDMSTables(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DlcClient::DescribeDatabasesOutcome DlcClient::DescribeDatabases(const DescribeDatabasesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDatabases");
@@ -1674,6 +2147,135 @@ DlcClient::DetachWorkGroupPolicyOutcomeCallable DlcClient::DetachWorkGroupPolicy
     return task->get_future();
 }
 
+DlcClient::DropDMSDatabaseOutcome DlcClient::DropDMSDatabase(const DropDMSDatabaseRequest &request)
+{
+    auto outcome = MakeRequest(request, "DropDMSDatabase");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DropDMSDatabaseResponse rsp = DropDMSDatabaseResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DropDMSDatabaseOutcome(rsp);
+        else
+            return DropDMSDatabaseOutcome(o.GetError());
+    }
+    else
+    {
+        return DropDMSDatabaseOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::DropDMSDatabaseAsync(const DropDMSDatabaseRequest& request, const DropDMSDatabaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DropDMSDatabase(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DlcClient::DropDMSDatabaseOutcomeCallable DlcClient::DropDMSDatabaseCallable(const DropDMSDatabaseRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DropDMSDatabaseOutcome()>>(
+        [this, request]()
+        {
+            return this->DropDMSDatabase(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DlcClient::DropDMSPartitionsOutcome DlcClient::DropDMSPartitions(const DropDMSPartitionsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DropDMSPartitions");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DropDMSPartitionsResponse rsp = DropDMSPartitionsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DropDMSPartitionsOutcome(rsp);
+        else
+            return DropDMSPartitionsOutcome(o.GetError());
+    }
+    else
+    {
+        return DropDMSPartitionsOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::DropDMSPartitionsAsync(const DropDMSPartitionsRequest& request, const DropDMSPartitionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DropDMSPartitions(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DlcClient::DropDMSPartitionsOutcomeCallable DlcClient::DropDMSPartitionsCallable(const DropDMSPartitionsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DropDMSPartitionsOutcome()>>(
+        [this, request]()
+        {
+            return this->DropDMSPartitions(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DlcClient::DropDMSTableOutcome DlcClient::DropDMSTable(const DropDMSTableRequest &request)
+{
+    auto outcome = MakeRequest(request, "DropDMSTable");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DropDMSTableResponse rsp = DropDMSTableResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DropDMSTableOutcome(rsp);
+        else
+            return DropDMSTableOutcome(o.GetError());
+    }
+    else
+    {
+        return DropDMSTableOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::DropDMSTableAsync(const DropDMSTableRequest& request, const DropDMSTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DropDMSTable(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DlcClient::DropDMSTableOutcomeCallable DlcClient::DropDMSTableCallable(const DropDMSTableRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DropDMSTableOutcome()>>(
+        [this, request]()
+        {
+            return this->DropDMSTable(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DlcClient::ListTaskJobLogDetailOutcome DlcClient::ListTaskJobLogDetail(const ListTaskJobLogDetailRequest &request)
 {
     auto outcome = MakeRequest(request, "ListTaskJobLogDetail");
@@ -1710,6 +2312,49 @@ DlcClient::ListTaskJobLogDetailOutcomeCallable DlcClient::ListTaskJobLogDetailCa
         [this, request]()
         {
             return this->ListTaskJobLogDetail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DlcClient::LockMetaDataOutcome DlcClient::LockMetaData(const LockMetaDataRequest &request)
+{
+    auto outcome = MakeRequest(request, "LockMetaData");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        LockMetaDataResponse rsp = LockMetaDataResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return LockMetaDataOutcome(rsp);
+        else
+            return LockMetaDataOutcome(o.GetError());
+    }
+    else
+    {
+        return LockMetaDataOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::LockMetaDataAsync(const LockMetaDataRequest& request, const LockMetaDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->LockMetaData(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DlcClient::LockMetaDataOutcomeCallable DlcClient::LockMetaDataCallable(const LockMetaDataRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<LockMetaDataOutcome()>>(
+        [this, request]()
+        {
+            return this->LockMetaData(request);
         }
     );
 
@@ -1882,6 +2527,49 @@ DlcClient::UnbindWorkGroupsFromUserOutcomeCallable DlcClient::UnbindWorkGroupsFr
         [this, request]()
         {
             return this->UnbindWorkGroupsFromUser(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DlcClient::UnlockMetaDataOutcome DlcClient::UnlockMetaData(const UnlockMetaDataRequest &request)
+{
+    auto outcome = MakeRequest(request, "UnlockMetaData");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UnlockMetaDataResponse rsp = UnlockMetaDataResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UnlockMetaDataOutcome(rsp);
+        else
+            return UnlockMetaDataOutcome(o.GetError());
+    }
+    else
+    {
+        return UnlockMetaDataOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::UnlockMetaDataAsync(const UnlockMetaDataRequest& request, const UnlockMetaDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UnlockMetaData(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DlcClient::UnlockMetaDataOutcomeCallable DlcClient::UnlockMetaDataCallable(const UnlockMetaDataRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UnlockMetaDataOutcome()>>(
+        [this, request]()
+        {
+            return this->UnlockMetaData(request);
         }
     );
 

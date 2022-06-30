@@ -39,7 +39,11 @@ VulInfoList::VulInfoList() :
     m_cvssScoreHasBeenSet(false),
     m_labelsHasBeenSet(false),
     m_fixSwitchHasBeenSet(false),
-    m_taskIdHasBeenSet(false)
+    m_taskIdHasBeenSet(false),
+    m_isSupportDefenseHasBeenSet(false),
+    m_defenseAttackCountHasBeenSet(false),
+    m_firstAppearTimeHasBeenSet(false),
+    m_vulCategoryHasBeenSet(false)
 {
 }
 
@@ -238,6 +242,46 @@ CoreInternalOutcome VulInfoList::Deserialize(const rapidjson::Value &value)
         m_taskIdHasBeenSet = true;
     }
 
+    if (value.HasMember("IsSupportDefense") && !value["IsSupportDefense"].IsNull())
+    {
+        if (!value["IsSupportDefense"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `VulInfoList.IsSupportDefense` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isSupportDefense = value["IsSupportDefense"].GetUint64();
+        m_isSupportDefenseHasBeenSet = true;
+    }
+
+    if (value.HasMember("DefenseAttackCount") && !value["DefenseAttackCount"].IsNull())
+    {
+        if (!value["DefenseAttackCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `VulInfoList.DefenseAttackCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_defenseAttackCount = value["DefenseAttackCount"].GetUint64();
+        m_defenseAttackCountHasBeenSet = true;
+    }
+
+    if (value.HasMember("FirstAppearTime") && !value["FirstAppearTime"].IsNull())
+    {
+        if (!value["FirstAppearTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VulInfoList.FirstAppearTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_firstAppearTime = string(value["FirstAppearTime"].GetString());
+        m_firstAppearTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("VulCategory") && !value["VulCategory"].IsNull())
+    {
+        if (!value["VulCategory"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `VulInfoList.VulCategory` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_vulCategory = value["VulCategory"].GetUint64();
+        m_vulCategoryHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -395,6 +439,38 @@ void VulInfoList::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "TaskId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_taskId, allocator);
+    }
+
+    if (m_isSupportDefenseHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsSupportDefense";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isSupportDefense, allocator);
+    }
+
+    if (m_defenseAttackCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DefenseAttackCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_defenseAttackCount, allocator);
+    }
+
+    if (m_firstAppearTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FirstAppearTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_firstAppearTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_vulCategoryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VulCategory";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_vulCategory, allocator);
     }
 
 }
@@ -702,5 +778,69 @@ void VulInfoList::SetTaskId(const uint64_t& _taskId)
 bool VulInfoList::TaskIdHasBeenSet() const
 {
     return m_taskIdHasBeenSet;
+}
+
+uint64_t VulInfoList::GetIsSupportDefense() const
+{
+    return m_isSupportDefense;
+}
+
+void VulInfoList::SetIsSupportDefense(const uint64_t& _isSupportDefense)
+{
+    m_isSupportDefense = _isSupportDefense;
+    m_isSupportDefenseHasBeenSet = true;
+}
+
+bool VulInfoList::IsSupportDefenseHasBeenSet() const
+{
+    return m_isSupportDefenseHasBeenSet;
+}
+
+uint64_t VulInfoList::GetDefenseAttackCount() const
+{
+    return m_defenseAttackCount;
+}
+
+void VulInfoList::SetDefenseAttackCount(const uint64_t& _defenseAttackCount)
+{
+    m_defenseAttackCount = _defenseAttackCount;
+    m_defenseAttackCountHasBeenSet = true;
+}
+
+bool VulInfoList::DefenseAttackCountHasBeenSet() const
+{
+    return m_defenseAttackCountHasBeenSet;
+}
+
+string VulInfoList::GetFirstAppearTime() const
+{
+    return m_firstAppearTime;
+}
+
+void VulInfoList::SetFirstAppearTime(const string& _firstAppearTime)
+{
+    m_firstAppearTime = _firstAppearTime;
+    m_firstAppearTimeHasBeenSet = true;
+}
+
+bool VulInfoList::FirstAppearTimeHasBeenSet() const
+{
+    return m_firstAppearTimeHasBeenSet;
+}
+
+uint64_t VulInfoList::GetVulCategory() const
+{
+    return m_vulCategory;
+}
+
+void VulInfoList::SetVulCategory(const uint64_t& _vulCategory)
+{
+    m_vulCategory = _vulCategory;
+    m_vulCategoryHasBeenSet = true;
+}
+
+bool VulInfoList::VulCategoryHasBeenSet() const
+{
+    return m_vulCategoryHasBeenSet;
 }
 

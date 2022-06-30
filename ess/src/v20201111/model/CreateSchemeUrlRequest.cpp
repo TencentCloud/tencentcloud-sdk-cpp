@@ -25,12 +25,12 @@ using namespace std;
 CreateSchemeUrlRequest::CreateSchemeUrlRequest() :
     m_operatorHasBeenSet(false),
     m_agentHasBeenSet(false),
+    m_endPointHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_mobileHasBeenSet(false),
-    m_pathTypeHasBeenSet(false),
-    m_flowIdHasBeenSet(false),
     m_organizationNameHasBeenSet(false),
-    m_endPointHasBeenSet(false),
+    m_flowIdHasBeenSet(false),
+    m_pathTypeHasBeenSet(false),
     m_autoJumpBackHasBeenSet(false)
 {
 }
@@ -60,6 +60,14 @@ string CreateSchemeUrlRequest::ToJsonString() const
         m_agent.ToJsonObject(d[key.c_str()], allocator);
     }
 
+    if (m_endPointHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EndPoint";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_endPoint.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_nameHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -76,12 +84,12 @@ string CreateSchemeUrlRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_mobile.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_pathTypeHasBeenSet)
+    if (m_organizationNameHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "PathType";
+        string key = "OrganizationName";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_pathType, allocator);
+        d.AddMember(iKey, rapidjson::Value(m_organizationName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_flowIdHasBeenSet)
@@ -92,20 +100,12 @@ string CreateSchemeUrlRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_flowId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_organizationNameHasBeenSet)
+    if (m_pathTypeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "OrganizationName";
+        string key = "PathType";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_organizationName.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_endPointHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "EndPoint";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_endPoint.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, m_pathType, allocator);
     }
 
     if (m_autoJumpBackHasBeenSet)
@@ -156,6 +156,22 @@ bool CreateSchemeUrlRequest::AgentHasBeenSet() const
     return m_agentHasBeenSet;
 }
 
+string CreateSchemeUrlRequest::GetEndPoint() const
+{
+    return m_endPoint;
+}
+
+void CreateSchemeUrlRequest::SetEndPoint(const string& _endPoint)
+{
+    m_endPoint = _endPoint;
+    m_endPointHasBeenSet = true;
+}
+
+bool CreateSchemeUrlRequest::EndPointHasBeenSet() const
+{
+    return m_endPointHasBeenSet;
+}
+
 string CreateSchemeUrlRequest::GetName() const
 {
     return m_name;
@@ -188,20 +204,20 @@ bool CreateSchemeUrlRequest::MobileHasBeenSet() const
     return m_mobileHasBeenSet;
 }
 
-uint64_t CreateSchemeUrlRequest::GetPathType() const
+string CreateSchemeUrlRequest::GetOrganizationName() const
 {
-    return m_pathType;
+    return m_organizationName;
 }
 
-void CreateSchemeUrlRequest::SetPathType(const uint64_t& _pathType)
+void CreateSchemeUrlRequest::SetOrganizationName(const string& _organizationName)
 {
-    m_pathType = _pathType;
-    m_pathTypeHasBeenSet = true;
+    m_organizationName = _organizationName;
+    m_organizationNameHasBeenSet = true;
 }
 
-bool CreateSchemeUrlRequest::PathTypeHasBeenSet() const
+bool CreateSchemeUrlRequest::OrganizationNameHasBeenSet() const
 {
-    return m_pathTypeHasBeenSet;
+    return m_organizationNameHasBeenSet;
 }
 
 string CreateSchemeUrlRequest::GetFlowId() const
@@ -220,36 +236,20 @@ bool CreateSchemeUrlRequest::FlowIdHasBeenSet() const
     return m_flowIdHasBeenSet;
 }
 
-string CreateSchemeUrlRequest::GetOrganizationName() const
+uint64_t CreateSchemeUrlRequest::GetPathType() const
 {
-    return m_organizationName;
+    return m_pathType;
 }
 
-void CreateSchemeUrlRequest::SetOrganizationName(const string& _organizationName)
+void CreateSchemeUrlRequest::SetPathType(const uint64_t& _pathType)
 {
-    m_organizationName = _organizationName;
-    m_organizationNameHasBeenSet = true;
+    m_pathType = _pathType;
+    m_pathTypeHasBeenSet = true;
 }
 
-bool CreateSchemeUrlRequest::OrganizationNameHasBeenSet() const
+bool CreateSchemeUrlRequest::PathTypeHasBeenSet() const
 {
-    return m_organizationNameHasBeenSet;
-}
-
-string CreateSchemeUrlRequest::GetEndPoint() const
-{
-    return m_endPoint;
-}
-
-void CreateSchemeUrlRequest::SetEndPoint(const string& _endPoint)
-{
-    m_endPoint = _endPoint;
-    m_endPointHasBeenSet = true;
-}
-
-bool CreateSchemeUrlRequest::EndPointHasBeenSet() const
-{
-    return m_endPointHasBeenSet;
+    return m_pathTypeHasBeenSet;
 }
 
 bool CreateSchemeUrlRequest::GetAutoJumpBack() const

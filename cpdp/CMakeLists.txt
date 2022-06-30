@@ -508,6 +508,7 @@ set(cpdp_public_header_model
   include/tencentcloud/cpdp/v20190820/model/WithdrawItem.h
   include/tencentcloud/cpdp/v20190820/model/QueryMemberTransactionRequest.h
   include/tencentcloud/cpdp/v20190820/model/QueryCityCodeRequest.h
+  include/tencentcloud/cpdp/v20190820/model/OpenBankFormInfo.h
   include/tencentcloud/cpdp/v20190820/model/CreateOrderRequest.h
   include/tencentcloud/cpdp/v20190820/model/ModifyBindedAccountRequest.h
   include/tencentcloud/cpdp/v20190820/model/WithdrawCashMembershipResponse.h
@@ -1124,6 +1125,7 @@ set(cpdp_src
   src/v20190820/model/WithdrawItem.cpp
   src/v20190820/model/QueryMemberTransactionRequest.cpp
   src/v20190820/model/QueryCityCodeRequest.cpp
+  src/v20190820/model/OpenBankFormInfo.cpp
   src/v20190820/model/CreateOrderRequest.cpp
   src/v20190820/model/ModifyBindedAccountRequest.cpp
   src/v20190820/model/WithdrawCashMembershipResponse.cpp

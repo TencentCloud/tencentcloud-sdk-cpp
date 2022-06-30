@@ -48,17 +48,17 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID
+                     * 获取代理ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ProxyId 实例ID
+                     * @return ProxyId 代理ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetProxyId() const;
 
                     /**
-                     * 设置实例ID
+                     * 设置代理ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ProxyId 实例ID
+                     * @param ProxyId 代理ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetProxyId(const std::string& _proxyId);
@@ -70,14 +70,22 @@ namespace TencentCloud
                     bool ProxyIdHasBeenSet() const;
 
                     /**
-                     * 获取实例名称
-                     * @return ProxyName 实例名称
+                     * 获取代理名称
+当ProxyType=hostname时，表示域名或者子域名
+当ProxyType=instance时，表示实例名称
+                     * @return ProxyName 代理名称
+当ProxyType=hostname时，表示域名或者子域名
+当ProxyType=instance时，表示实例名称
                      */
                     std::string GetProxyName() const;
 
                     /**
-                     * 设置实例名称
-                     * @param ProxyName 实例名称
+                     * 设置代理名称
+当ProxyType=hostname时，表示域名或者子域名
+当ProxyType=instance时，表示实例名称
+                     * @param ProxyName 代理名称
+当ProxyType=hostname时，表示域名或者子域名
+当ProxyType=instance时，表示实例名称
                      */
                     void SetProxyName(const std::string& _proxyName);
 
@@ -357,24 +365,24 @@ fail：部署失败/停用失败
 
                     /**
                      * 获取服务类型
-hostname：子域名
-instance：实例
+hostname：子域名模式
+instance：实例模式
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProxyType 服务类型
-hostname：子域名
-instance：实例
+hostname：子域名模式
+instance：实例模式
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetProxyType() const;
 
                     /**
                      * 设置服务类型
-hostname：子域名
-instance：实例
+hostname：子域名模式
+instance：实例模式
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param ProxyType 服务类型
-hostname：子域名
-instance：实例
+hostname：子域名模式
+instance：实例模式
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetProxyType(const std::string& _proxyType);
@@ -386,17 +394,25 @@ instance：实例
                     bool ProxyTypeHasBeenSet() const;
 
                     /**
-                     * 获取七层实例ID
+                     * 获取当ProxyType=hostname时：
+ProxyName为域名，如：test.123.com
+HostId表示该域名，即test.123.com对应的代理加速唯一标识
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return HostId 七层实例ID
+                     * @return HostId 当ProxyType=hostname时：
+ProxyName为域名，如：test.123.com
+HostId表示该域名，即test.123.com对应的代理加速唯一标识
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetHostId() const;
 
                     /**
-                     * 设置七层实例ID
+                     * 设置当ProxyType=hostname时：
+ProxyName为域名，如：test.123.com
+HostId表示该域名，即test.123.com对应的代理加速唯一标识
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param HostId 七层实例ID
+                     * @param HostId 当ProxyType=hostname时：
+ProxyName为域名，如：test.123.com
+HostId表示该域名，即test.123.com对应的代理加速唯一标识
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetHostId(const std::string& _hostId);
@@ -410,14 +426,16 @@ instance：实例
                 private:
 
                     /**
-                     * 实例ID
+                     * 代理ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_proxyId;
                     bool m_proxyIdHasBeenSet;
 
                     /**
-                     * 实例名称
+                     * 代理名称
+当ProxyType=hostname时，表示域名或者子域名
+当ProxyType=instance时，表示实例名称
                      */
                     std::string m_proxyName;
                     bool m_proxyNameHasBeenSet;
@@ -509,15 +527,17 @@ fail：部署失败/停用失败
 
                     /**
                      * 服务类型
-hostname：子域名
-instance：实例
+hostname：子域名模式
+instance：实例模式
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_proxyType;
                     bool m_proxyTypeHasBeenSet;
 
                     /**
-                     * 七层实例ID
+                     * 当ProxyType=hostname时：
+ProxyName为域名，如：test.123.com
+HostId表示该域名，即test.123.com对应的代理加速唯一标识
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_hostId;

@@ -57,8 +57,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取视频内容识别模板详情列表。
-                     * @return AIRecognitionTemplateSet 视频内容识别模板详情列表。
+                     * 获取音视频内容识别模板详情列表。
+                     * @return AIRecognitionTemplateSet 音视频内容识别模板详情列表。
                      */
                     std::vector<AIRecognitionTemplateItem> GetAIRecognitionTemplateSet() const;
 
@@ -77,7 +77,7 @@ namespace TencentCloud
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 视频内容识别模板详情列表。
+                     * 音视频内容识别模板详情列表。
                      */
                     std::vector<AIRecognitionTemplateItem> m_aIRecognitionTemplateSet;
                     bool m_aIRecognitionTemplateSetHasBeenSet;

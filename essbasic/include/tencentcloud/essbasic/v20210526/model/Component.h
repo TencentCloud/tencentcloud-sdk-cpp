@@ -155,14 +155,14 @@ SIGN_PERSONAL_SEAL - 个人签署印章控件；
                     bool ComponentTypeHasBeenSet() const;
 
                     /**
-                     * 获取控件简称
-                     * @return ComponentName 控件简称
+                     * 获取控件简称，不能超过30个字符
+                     * @return ComponentName 控件简称，不能超过30个字符
                      */
                     std::string GetComponentName() const;
 
                     /**
-                     * 设置控件简称
-                     * @param ComponentName 控件简称
+                     * 设置控件简称，不能超过30个字符
+                     * @param ComponentName 控件简称，不能超过30个字符
                      */
                     void SetComponentName(const std::string& _componentName);
 
@@ -191,14 +191,14 @@ SIGN_PERSONAL_SEAL - 个人签署印章控件；
                     bool ComponentRequiredHasBeenSet() const;
 
                     /**
-                     * 获取控件所属文件的序号 (文档中文件的排列序号)
-                     * @return FileIndex 控件所属文件的序号 (文档中文件的排列序号)
+                     * 获取控件所属文件的序号 (文档中文件的排列序号，从0开始)
+                     * @return FileIndex 控件所属文件的序号 (文档中文件的排列序号，从0开始)
                      */
                     int64_t GetFileIndex() const;
 
                     /**
-                     * 设置控件所属文件的序号 (文档中文件的排列序号)
-                     * @param FileIndex 控件所属文件的序号 (文档中文件的排列序号)
+                     * 设置控件所属文件的序号 (文档中文件的排列序号，从0开始)
+                     * @param FileIndex 控件所属文件的序号 (文档中文件的排列序号，从0开始)
                      */
                     void SetFileIndex(const int64_t& _fileIndex);
 
@@ -283,14 +283,14 @@ KEYWORD - 关键字
                     bool ComponentHeightHasBeenSet() const;
 
                     /**
-                     * 获取参数控件所在页码
-                     * @return ComponentPage 参数控件所在页码
+                     * 获取参数控件所在页码，从1开始
+                     * @return ComponentPage 参数控件所在页码，从1开始
                      */
                     int64_t GetComponentPage() const;
 
                     /**
-                     * 设置参数控件所在页码
-                     * @param ComponentPage 参数控件所在页码
+                     * 设置参数控件所在页码，从1开始
+                     * @param ComponentPage 参数控件所在页码，从1开始
                      */
                     void SetComponentPage(const int64_t& _componentPage);
 
@@ -433,14 +433,14 @@ TEXT控件可以指定字体
                     bool DocumentIdHasBeenSet() const;
 
                     /**
-                     * 获取控件描述
-                     * @return ComponentDescription 控件描述
+                     * 获取控件描述，不能超过30个字符
+                     * @return ComponentDescription 控件描述，不能超过30个字符
                      */
                     std::string GetComponentDescription() const;
 
                     /**
-                     * 设置控件描述
-                     * @param ComponentDescription 控件描述
+                     * 设置控件描述，不能超过30个字符
+                     * @param ComponentDescription 控件描述，不能超过30个字符
                      */
                     void SetComponentDescription(const std::string& _componentDescription);
 
@@ -451,14 +451,14 @@ TEXT控件可以指定字体
                     bool ComponentDescriptionHasBeenSet() const;
 
                     /**
-                     * 获取指定关键字时横坐标偏移量
-                     * @return OffsetX 指定关键字时横坐标偏移量
+                     * 获取指定关键字时横坐标偏移量，单位pt
+                     * @return OffsetX 指定关键字时横坐标偏移量，单位pt
                      */
                     double GetOffsetX() const;
 
                     /**
-                     * 设置指定关键字时横坐标偏移量
-                     * @param OffsetX 指定关键字时横坐标偏移量
+                     * 设置指定关键字时横坐标偏移量，单位pt
+                     * @param OffsetX 指定关键字时横坐标偏移量，单位pt
                      */
                     void SetOffsetX(const double& _offsetX);
 
@@ -469,14 +469,14 @@ TEXT控件可以指定字体
                     bool OffsetXHasBeenSet() const;
 
                     /**
-                     * 获取指定关键字时纵坐标偏移量
-                     * @return OffsetY 指定关键字时纵坐标偏移量
+                     * 获取指定关键字时纵坐标偏移量，单位pt
+                     * @return OffsetY 指定关键字时纵坐标偏移量，单位pt
                      */
                     double GetOffsetY() const;
 
                     /**
-                     * 设置指定关键字时纵坐标偏移量
-                     * @param OffsetY 指定关键字时纵坐标偏移量
+                     * 设置指定关键字时纵坐标偏移量，单位pt
+                     * @param OffsetY 指定关键字时纵坐标偏移量，单位pt
                      */
                     void SetOffsetY(const double& _offsetY);
 
@@ -519,7 +519,7 @@ SIGN_PERSONAL_SEAL - 个人签署印章控件；
                     bool m_componentTypeHasBeenSet;
 
                     /**
-                     * 控件简称
+                     * 控件简称，不能超过30个字符
                      */
                     std::string m_componentName;
                     bool m_componentNameHasBeenSet;
@@ -531,7 +531,7 @@ SIGN_PERSONAL_SEAL - 个人签署印章控件；
                     bool m_componentRequiredHasBeenSet;
 
                     /**
-                     * 控件所属文件的序号 (文档中文件的排列序号)
+                     * 控件所属文件的序号 (文档中文件的排列序号，从0开始)
                      */
                     int64_t m_fileIndex;
                     bool m_fileIndexHasBeenSet;
@@ -560,7 +560,7 @@ KEYWORD - 关键字
                     bool m_componentHeightHasBeenSet;
 
                     /**
-                     * 参数控件所在页码
+                     * 参数控件所在页码，从1开始
                      */
                     int64_t m_componentPage;
                     bool m_componentPageHasBeenSet;
@@ -608,19 +608,19 @@ TEXT控件可以指定字体
                     bool m_documentIdHasBeenSet;
 
                     /**
-                     * 控件描述
+                     * 控件描述，不能超过30个字符
                      */
                     std::string m_componentDescription;
                     bool m_componentDescriptionHasBeenSet;
 
                     /**
-                     * 指定关键字时横坐标偏移量
+                     * 指定关键字时横坐标偏移量，单位pt
                      */
                     double m_offsetX;
                     bool m_offsetXHasBeenSet;
 
                     /**
-                     * 指定关键字时纵坐标偏移量
+                     * 指定关键字时纵坐标偏移量，单位pt
                      */
                     double m_offsetY;
                     bool m_offsetYHasBeenSet;

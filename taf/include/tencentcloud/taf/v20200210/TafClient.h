@@ -25,8 +25,6 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/taf/v20200210/model/DetectFraudKOLRequest.h>
 #include <tencentcloud/taf/v20200210/model/DetectFraudKOLResponse.h>
-#include <tencentcloud/taf/v20200210/model/EnhanceTaDegreeRequest.h>
-#include <tencentcloud/taf/v20200210/model/EnhanceTaDegreeResponse.h>
 #include <tencentcloud/taf/v20200210/model/RecognizeCustomizedAudienceRequest.h>
 #include <tencentcloud/taf/v20200210/model/RecognizeCustomizedAudienceResponse.h>
 #include <tencentcloud/taf/v20200210/model/RecognizeEffectiveFlowRequest.h>
@@ -54,9 +52,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DetectFraudKOLResponse> DetectFraudKOLOutcome;
                 typedef std::future<DetectFraudKOLOutcome> DetectFraudKOLOutcomeCallable;
                 typedef std::function<void(const TafClient*, const Model::DetectFraudKOLRequest&, DetectFraudKOLOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DetectFraudKOLAsyncHandler;
-                typedef Outcome<Core::Error, Model::EnhanceTaDegreeResponse> EnhanceTaDegreeOutcome;
-                typedef std::future<EnhanceTaDegreeOutcome> EnhanceTaDegreeOutcomeCallable;
-                typedef std::function<void(const TafClient*, const Model::EnhanceTaDegreeRequest&, EnhanceTaDegreeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnhanceTaDegreeAsyncHandler;
                 typedef Outcome<Core::Error, Model::RecognizeCustomizedAudienceResponse> RecognizeCustomizedAudienceOutcome;
                 typedef std::future<RecognizeCustomizedAudienceOutcome> RecognizeCustomizedAudienceOutcomeCallable;
                 typedef std::function<void(const TafClient*, const Model::RecognizeCustomizedAudienceRequest&, RecognizeCustomizedAudienceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeCustomizedAudienceAsyncHandler;
@@ -83,15 +78,6 @@ namespace TencentCloud
                 DetectFraudKOLOutcome DetectFraudKOL(const Model::DetectFraudKOLRequest &request);
                 void DetectFraudKOLAsync(const Model::DetectFraudKOLRequest& request, const DetectFraudKOLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DetectFraudKOLOutcomeCallable DetectFraudKOLCallable(const Model::DetectFraudKOLRequest& request);
-
-                /**
-                 *流量反欺诈-虚假TA识别
-                 * @param req EnhanceTaDegreeRequest
-                 * @return EnhanceTaDegreeOutcome
-                 */
-                EnhanceTaDegreeOutcome EnhanceTaDegree(const Model::EnhanceTaDegreeRequest &request);
-                void EnhanceTaDegreeAsync(const Model::EnhanceTaDegreeRequest& request, const EnhanceTaDegreeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                EnhanceTaDegreeOutcomeCallable EnhanceTaDegreeCallable(const Model::EnhanceTaDegreeRequest& request);
 
                 /**
                  *流量反欺诈-流量验准定制版

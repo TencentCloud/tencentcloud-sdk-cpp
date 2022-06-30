@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 创建流程签署人入参
+                * 创建签署流程签署人入参
                 */
                 class FlowApproverInfo : public AbstractModel
                 {
@@ -48,14 +48,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取签署人姓名
-                     * @return Name 签署人姓名
+                     * 获取签署人姓名，最大长度50个字符
+                     * @return Name 签署人姓名，最大长度50个字符
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置签署人姓名
-                     * @param Name 签署人姓名
+                     * 设置签署人姓名，最大长度50个字符
+                     * @param Name 签署人姓名，最大长度50个字符
                      */
                     void SetName(const std::string& _name);
 
@@ -66,14 +66,44 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取经办人身份证号
-                     * @return IdCardNumber 经办人身份证号
+                     * 获取经办人身份证件类型
+1.ID_CARD 居民身份证
+2.HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证
+3.HONGKONG_AND_MACAO 港澳居民来往内地通行证
+                     * @return IdCardType 经办人身份证件类型
+1.ID_CARD 居民身份证
+2.HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证
+3.HONGKONG_AND_MACAO 港澳居民来往内地通行证
+                     */
+                    std::string GetIdCardType() const;
+
+                    /**
+                     * 设置经办人身份证件类型
+1.ID_CARD 居民身份证
+2.HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证
+3.HONGKONG_AND_MACAO 港澳居民来往内地通行证
+                     * @param IdCardType 经办人身份证件类型
+1.ID_CARD 居民身份证
+2.HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证
+3.HONGKONG_AND_MACAO 港澳居民来往内地通行证
+                     */
+                    void SetIdCardType(const std::string& _idCardType);
+
+                    /**
+                     * 判断参数 IdCardType 是否已赋值
+                     * @return IdCardType 是否已赋值
+                     */
+                    bool IdCardTypeHasBeenSet() const;
+
+                    /**
+                     * 获取经办人证件号
+                     * @return IdCardNumber 经办人证件号
                      */
                     std::string GetIdCardNumber() const;
 
                     /**
-                     * 设置经办人身份证号
-                     * @param IdCardNumber 经办人身份证号
+                     * 设置经办人证件号
+                     * @param IdCardNumber 经办人证件号
                      */
                     void SetIdCardNumber(const std::string& _idCardNumber);
 
@@ -84,14 +114,14 @@ namespace TencentCloud
                     bool IdCardNumberHasBeenSet() const;
 
                     /**
-                     * 获取签署人手机号，脱敏显示
-                     * @return Mobile 签署人手机号，脱敏显示
+                     * 获取签署人手机号，脱敏显示。大陆手机号为11位，暂不支持海外手机号。
+                     * @return Mobile 签署人手机号，脱敏显示。大陆手机号为11位，暂不支持海外手机号。
                      */
                     std::string GetMobile() const;
 
                     /**
-                     * 设置签署人手机号，脱敏显示
-                     * @param Mobile 签署人手机号，脱敏显示
+                     * 设置签署人手机号，脱敏显示。大陆手机号为11位，暂不支持海外手机号。
+                     * @param Mobile 签署人手机号，脱敏显示。大陆手机号为11位，暂不支持海外手机号。
                      */
                     void SetMobile(const std::string& _mobile);
 
@@ -102,166 +132,14 @@ namespace TencentCloud
                     bool MobileHasBeenSet() const;
 
                     /**
-                     * 获取签署完前端跳转的url，暂未使用
-                     * @return JumpUrl 签署完前端跳转的url，暂未使用
-                     */
-                    std::string GetJumpUrl() const;
-
-                    /**
-                     * 设置签署完前端跳转的url，暂未使用
-                     * @param JumpUrl 签署完前端跳转的url，暂未使用
-                     */
-                    void SetJumpUrl(const std::string& _jumpUrl);
-
-                    /**
-                     * 判断参数 JumpUrl 是否已赋值
-                     * @return JumpUrl 是否已赋值
-                     */
-                    bool JumpUrlHasBeenSet() const;
-
-                    /**
-                     * 获取签署截止时间
-                     * @return Deadline 签署截止时间
-                     */
-                    int64_t GetDeadline() const;
-
-                    /**
-                     * 设置签署截止时间
-                     * @param Deadline 签署截止时间
-                     */
-                    void SetDeadline(const int64_t& _deadline);
-
-                    /**
-                     * 判断参数 Deadline 是否已赋值
-                     * @return Deadline 是否已赋值
-                     */
-                    bool DeadlineHasBeenSet() const;
-
-                    /**
-                     * 获取签署完回调url
-                     * @return CallbackUrl 签署完回调url
-                     */
-                    std::string GetCallbackUrl() const;
-
-                    /**
-                     * 设置签署完回调url
-                     * @param CallbackUrl 签署完回调url
-                     */
-                    void SetCallbackUrl(const std::string& _callbackUrl);
-
-                    /**
-                     * 判断参数 CallbackUrl 是否已赋值
-                     * @return CallbackUrl 是否已赋值
-                     */
-                    bool CallbackUrlHasBeenSet() const;
-
-                    /**
-                     * 获取签署人类型，PERSON-个人；ORGANIZATION-企业；
-ENTERPRISESERVER-企业静默签;
-注：ENTERPRISESERVER 类型仅用于使用文件创建流程（ChannelCreateFlowByFiles）接口；并且仅能指定发起方企业签署方为静默签署；
-                     * @return ApproverType 签署人类型，PERSON-个人；ORGANIZATION-企业；
-ENTERPRISESERVER-企业静默签;
-注：ENTERPRISESERVER 类型仅用于使用文件创建流程（ChannelCreateFlowByFiles）接口；并且仅能指定发起方企业签署方为静默签署；
-                     */
-                    std::string GetApproverType() const;
-
-                    /**
-                     * 设置签署人类型，PERSON-个人；ORGANIZATION-企业；
-ENTERPRISESERVER-企业静默签;
-注：ENTERPRISESERVER 类型仅用于使用文件创建流程（ChannelCreateFlowByFiles）接口；并且仅能指定发起方企业签署方为静默签署；
-                     * @param ApproverType 签署人类型，PERSON-个人；ORGANIZATION-企业；
-ENTERPRISESERVER-企业静默签;
-注：ENTERPRISESERVER 类型仅用于使用文件创建流程（ChannelCreateFlowByFiles）接口；并且仅能指定发起方企业签署方为静默签署；
-                     */
-                    void SetApproverType(const std::string& _approverType);
-
-                    /**
-                     * 判断参数 ApproverType 是否已赋值
-                     * @return ApproverType 是否已赋值
-                     */
-                    bool ApproverTypeHasBeenSet() const;
-
-                    /**
-                     * 获取用户侧第三方id
-                     * @return OpenId 用户侧第三方id
-                     */
-                    std::string GetOpenId() const;
-
-                    /**
-                     * 设置用户侧第三方id
-                     * @param OpenId 用户侧第三方id
-                     */
-                    void SetOpenId(const std::string& _openId);
-
-                    /**
-                     * 判断参数 OpenId 是否已赋值
-                     * @return OpenId 是否已赋值
-                     */
-                    bool OpenIdHasBeenSet() const;
-
-                    /**
-                     * 获取合同的强制预览时间：3~300s，未指定则按合同页数计算
-                     * @return PreReadTime 合同的强制预览时间：3~300s，未指定则按合同页数计算
-                     */
-                    int64_t GetPreReadTime() const;
-
-                    /**
-                     * 设置合同的强制预览时间：3~300s，未指定则按合同页数计算
-                     * @param PreReadTime 合同的强制预览时间：3~300s，未指定则按合同页数计算
-                     */
-                    void SetPreReadTime(const int64_t& _preReadTime);
-
-                    /**
-                     * 判断参数 PreReadTime 是否已赋值
-                     * @return PreReadTime 是否已赋值
-                     */
-                    bool PreReadTimeHasBeenSet() const;
-
-                    /**
-                     * 获取个人签署方指定签署控件类型，目前仅支持：OCR_ESIGN(AI智慧手写签名)
-                     * @return ComponentLimitType 个人签署方指定签署控件类型，目前仅支持：OCR_ESIGN(AI智慧手写签名)
-                     */
-                    std::vector<std::string> GetComponentLimitType() const;
-
-                    /**
-                     * 设置个人签署方指定签署控件类型，目前仅支持：OCR_ESIGN(AI智慧手写签名)
-                     * @param ComponentLimitType 个人签署方指定签署控件类型，目前仅支持：OCR_ESIGN(AI智慧手写签名)
-                     */
-                    void SetComponentLimitType(const std::vector<std::string>& _componentLimitType);
-
-                    /**
-                     * 判断参数 ComponentLimitType 是否已赋值
-                     * @return ComponentLimitType 是否已赋值
-                     */
-                    bool ComponentLimitTypeHasBeenSet() const;
-
-                    /**
-                     * 获取流程签署人在模板中对应的签署人Id；在非单方签署、以及非B2C签署的场景下必传，用于指定当前签署方在流程中的位置；
-                     * @return RecipientId 流程签署人在模板中对应的签署人Id；在非单方签署、以及非B2C签署的场景下必传，用于指定当前签署方在流程中的位置；
-                     */
-                    std::string GetRecipientId() const;
-
-                    /**
-                     * 设置流程签署人在模板中对应的签署人Id；在非单方签署、以及非B2C签署的场景下必传，用于指定当前签署方在流程中的位置；
-                     * @param RecipientId 流程签署人在模板中对应的签署人Id；在非单方签署、以及非B2C签署的场景下必传，用于指定当前签署方在流程中的位置；
-                     */
-                    void SetRecipientId(const std::string& _recipientId);
-
-                    /**
-                     * 判断参数 RecipientId 是否已赋值
-                     * @return RecipientId 是否已赋值
-                     */
-                    bool RecipientIdHasBeenSet() const;
-
-                    /**
-                     * 获取企业签署方工商营业执照上的企业名称，签署方为非发起方企业场景下必传；
-                     * @return OrganizationName 企业签署方工商营业执照上的企业名称，签署方为非发起方企业场景下必传；
+                     * 获取企业签署方工商营业执照上的企业名称，签署方为非发起方企业场景下必传，最大长度64个字符；
+                     * @return OrganizationName 企业签署方工商营业执照上的企业名称，签署方为非发起方企业场景下必传，最大长度64个字符；
                      */
                     std::string GetOrganizationName() const;
 
                     /**
-                     * 设置企业签署方工商营业执照上的企业名称，签署方为非发起方企业场景下必传；
-                     * @param OrganizationName 企业签署方工商营业执照上的企业名称，签署方为非发起方企业场景下必传；
+                     * 设置企业签署方工商营业执照上的企业名称，签署方为非发起方企业场景下必传，最大长度64个字符；
+                     * @param OrganizationName 企业签署方工商营业执照上的企业名称，签署方为非发起方企业场景下必传，最大长度64个字符；
                      */
                     void SetOrganizationName(const std::string& _organizationName);
 
@@ -270,24 +148,6 @@ ENTERPRISESERVER-企业静默签;
                      * @return OrganizationName 是否已赋值
                      */
                     bool OrganizationNameHasBeenSet() const;
-
-                    /**
-                     * 获取企业签署方在同一渠道下的其他合作企业OpenId，签署方为非发起方企业场景下必传；
-                     * @return OrganizationOpenId 企业签署方在同一渠道下的其他合作企业OpenId，签署方为非发起方企业场景下必传；
-                     */
-                    std::string GetOrganizationOpenId() const;
-
-                    /**
-                     * 设置企业签署方在同一渠道下的其他合作企业OpenId，签署方为非发起方企业场景下必传；
-                     * @param OrganizationOpenId 企业签署方在同一渠道下的其他合作企业OpenId，签署方为非发起方企业场景下必传；
-                     */
-                    void SetOrganizationOpenId(const std::string& _organizationOpenId);
-
-                    /**
-                     * 判断参数 OrganizationOpenId 是否已赋值
-                     * @return OrganizationOpenId 是否已赋值
-                     */
-                    bool OrganizationOpenIdHasBeenSet() const;
 
                     /**
                      * 获取指定签署人非渠道企业下员工，在ApproverType为ORGANIZATION时指定。
@@ -312,6 +172,122 @@ ENTERPRISESERVER-企业静默签;
                     bool NotChannelOrganizationHasBeenSet() const;
 
                     /**
+                     * 获取用户侧第三方id，最大长度64个字符
+                     * @return OpenId 用户侧第三方id，最大长度64个字符
+                     */
+                    std::string GetOpenId() const;
+
+                    /**
+                     * 设置用户侧第三方id，最大长度64个字符
+                     * @param OpenId 用户侧第三方id，最大长度64个字符
+                     */
+                    void SetOpenId(const std::string& _openId);
+
+                    /**
+                     * 判断参数 OpenId 是否已赋值
+                     * @return OpenId 是否已赋值
+                     */
+                    bool OpenIdHasBeenSet() const;
+
+                    /**
+                     * 获取企业签署方在同一渠道下的其他合作企业OpenId，签署方为非发起方企业场景下必传，最大长度64个字符；
+                     * @return OrganizationOpenId 企业签署方在同一渠道下的其他合作企业OpenId，签署方为非发起方企业场景下必传，最大长度64个字符；
+                     */
+                    std::string GetOrganizationOpenId() const;
+
+                    /**
+                     * 设置企业签署方在同一渠道下的其他合作企业OpenId，签署方为非发起方企业场景下必传，最大长度64个字符；
+                     * @param OrganizationOpenId 企业签署方在同一渠道下的其他合作企业OpenId，签署方为非发起方企业场景下必传，最大长度64个字符；
+                     */
+                    void SetOrganizationOpenId(const std::string& _organizationOpenId);
+
+                    /**
+                     * 判断参数 OrganizationOpenId 是否已赋值
+                     * @return OrganizationOpenId 是否已赋值
+                     */
+                    bool OrganizationOpenIdHasBeenSet() const;
+
+                    /**
+                     * 获取签署人类型，PERSON-个人；ORGANIZATION-企业；
+ENTERPRISESERVER-企业静默签;
+注：ENTERPRISESERVER 类型仅用于使用文件创建签署流程（ChannelCreateFlowByFiles）接口；并且仅能指定发起方企业签署方为静默签署；
+                     * @return ApproverType 签署人类型，PERSON-个人；ORGANIZATION-企业；
+ENTERPRISESERVER-企业静默签;
+注：ENTERPRISESERVER 类型仅用于使用文件创建签署流程（ChannelCreateFlowByFiles）接口；并且仅能指定发起方企业签署方为静默签署；
+                     */
+                    std::string GetApproverType() const;
+
+                    /**
+                     * 设置签署人类型，PERSON-个人；ORGANIZATION-企业；
+ENTERPRISESERVER-企业静默签;
+注：ENTERPRISESERVER 类型仅用于使用文件创建签署流程（ChannelCreateFlowByFiles）接口；并且仅能指定发起方企业签署方为静默签署；
+                     * @param ApproverType 签署人类型，PERSON-个人；ORGANIZATION-企业；
+ENTERPRISESERVER-企业静默签;
+注：ENTERPRISESERVER 类型仅用于使用文件创建签署流程（ChannelCreateFlowByFiles）接口；并且仅能指定发起方企业签署方为静默签署；
+                     */
+                    void SetApproverType(const std::string& _approverType);
+
+                    /**
+                     * 判断参数 ApproverType 是否已赋值
+                     * @return ApproverType 是否已赋值
+                     */
+                    bool ApproverTypeHasBeenSet() const;
+
+                    /**
+                     * 获取签署流程签署人在模板中对应的签署人Id；在非单方签署、以及非B2C签署的场景下必传，用于指定当前签署方在签署流程中的位置；
+                     * @return RecipientId 签署流程签署人在模板中对应的签署人Id；在非单方签署、以及非B2C签署的场景下必传，用于指定当前签署方在签署流程中的位置；
+                     */
+                    std::string GetRecipientId() const;
+
+                    /**
+                     * 设置签署流程签署人在模板中对应的签署人Id；在非单方签署、以及非B2C签署的场景下必传，用于指定当前签署方在签署流程中的位置；
+                     * @param RecipientId 签署流程签署人在模板中对应的签署人Id；在非单方签署、以及非B2C签署的场景下必传，用于指定当前签署方在签署流程中的位置；
+                     */
+                    void SetRecipientId(const std::string& _recipientId);
+
+                    /**
+                     * 判断参数 RecipientId 是否已赋值
+                     * @return RecipientId 是否已赋值
+                     */
+                    bool RecipientIdHasBeenSet() const;
+
+                    /**
+                     * 获取签署截止时间，默认一年
+                     * @return Deadline 签署截止时间，默认一年
+                     */
+                    int64_t GetDeadline() const;
+
+                    /**
+                     * 设置签署截止时间，默认一年
+                     * @param Deadline 签署截止时间，默认一年
+                     */
+                    void SetDeadline(const int64_t& _deadline);
+
+                    /**
+                     * 判断参数 Deadline 是否已赋值
+                     * @return Deadline 是否已赋值
+                     */
+                    bool DeadlineHasBeenSet() const;
+
+                    /**
+                     * 获取签署完回调url，最大长度1000个字符
+                     * @return CallbackUrl 签署完回调url，最大长度1000个字符
+                     */
+                    std::string GetCallbackUrl() const;
+
+                    /**
+                     * 设置签署完回调url，最大长度1000个字符
+                     * @param CallbackUrl 签署完回调url，最大长度1000个字符
+                     */
+                    void SetCallbackUrl(const std::string& _callbackUrl);
+
+                    /**
+                     * 判断参数 CallbackUrl 是否已赋值
+                     * @return CallbackUrl 是否已赋值
+                     */
+                    bool CallbackUrlHasBeenSet() const;
+
+                    /**
                      * 获取使用PDF文件直接发起合同时，签署人指定的签署控件
                      * @return SignComponents 使用PDF文件直接发起合同时，签署人指定的签署控件
                      */
@@ -329,87 +305,94 @@ ENTERPRISESERVER-企业静默签;
                      */
                     bool SignComponentsHasBeenSet() const;
 
+                    /**
+                     * 获取个人签署方指定签署控件类型，目前仅支持：OCR_ESIGN(AI智慧手写签名)
+                     * @return ComponentLimitType 个人签署方指定签署控件类型，目前仅支持：OCR_ESIGN(AI智慧手写签名)
+                     */
+                    std::vector<std::string> GetComponentLimitType() const;
+
+                    /**
+                     * 设置个人签署方指定签署控件类型，目前仅支持：OCR_ESIGN(AI智慧手写签名)
+                     * @param ComponentLimitType 个人签署方指定签署控件类型，目前仅支持：OCR_ESIGN(AI智慧手写签名)
+                     */
+                    void SetComponentLimitType(const std::vector<std::string>& _componentLimitType);
+
+                    /**
+                     * 判断参数 ComponentLimitType 是否已赋值
+                     * @return ComponentLimitType 是否已赋值
+                     */
+                    bool ComponentLimitTypeHasBeenSet() const;
+
+                    /**
+                     * 获取合同的强制预览时间：3~300s，未指定则按合同页数计算
+                     * @return PreReadTime 合同的强制预览时间：3~300s，未指定则按合同页数计算
+                     */
+                    int64_t GetPreReadTime() const;
+
+                    /**
+                     * 设置合同的强制预览时间：3~300s，未指定则按合同页数计算
+                     * @param PreReadTime 合同的强制预览时间：3~300s，未指定则按合同页数计算
+                     */
+                    void SetPreReadTime(const int64_t& _preReadTime);
+
+                    /**
+                     * 判断参数 PreReadTime 是否已赋值
+                     * @return PreReadTime 是否已赋值
+                     */
+                    bool PreReadTimeHasBeenSet() const;
+
+                    /**
+                     * 获取签署完前端跳转的url，暂未使用
+                     * @return JumpUrl 签署完前端跳转的url，暂未使用
+                     */
+                    std::string GetJumpUrl() const;
+
+                    /**
+                     * 设置签署完前端跳转的url，暂未使用
+                     * @param JumpUrl 签署完前端跳转的url，暂未使用
+                     */
+                    void SetJumpUrl(const std::string& _jumpUrl);
+
+                    /**
+                     * 判断参数 JumpUrl 是否已赋值
+                     * @return JumpUrl 是否已赋值
+                     */
+                    bool JumpUrlHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 签署人姓名
+                     * 签署人姓名，最大长度50个字符
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 经办人身份证号
+                     * 经办人身份证件类型
+1.ID_CARD 居民身份证
+2.HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证
+3.HONGKONG_AND_MACAO 港澳居民来往内地通行证
+                     */
+                    std::string m_idCardType;
+                    bool m_idCardTypeHasBeenSet;
+
+                    /**
+                     * 经办人证件号
                      */
                     std::string m_idCardNumber;
                     bool m_idCardNumberHasBeenSet;
 
                     /**
-                     * 签署人手机号，脱敏显示
+                     * 签署人手机号，脱敏显示。大陆手机号为11位，暂不支持海外手机号。
                      */
                     std::string m_mobile;
                     bool m_mobileHasBeenSet;
 
                     /**
-                     * 签署完前端跳转的url，暂未使用
-                     */
-                    std::string m_jumpUrl;
-                    bool m_jumpUrlHasBeenSet;
-
-                    /**
-                     * 签署截止时间
-                     */
-                    int64_t m_deadline;
-                    bool m_deadlineHasBeenSet;
-
-                    /**
-                     * 签署完回调url
-                     */
-                    std::string m_callbackUrl;
-                    bool m_callbackUrlHasBeenSet;
-
-                    /**
-                     * 签署人类型，PERSON-个人；ORGANIZATION-企业；
-ENTERPRISESERVER-企业静默签;
-注：ENTERPRISESERVER 类型仅用于使用文件创建流程（ChannelCreateFlowByFiles）接口；并且仅能指定发起方企业签署方为静默签署；
-                     */
-                    std::string m_approverType;
-                    bool m_approverTypeHasBeenSet;
-
-                    /**
-                     * 用户侧第三方id
-                     */
-                    std::string m_openId;
-                    bool m_openIdHasBeenSet;
-
-                    /**
-                     * 合同的强制预览时间：3~300s，未指定则按合同页数计算
-                     */
-                    int64_t m_preReadTime;
-                    bool m_preReadTimeHasBeenSet;
-
-                    /**
-                     * 个人签署方指定签署控件类型，目前仅支持：OCR_ESIGN(AI智慧手写签名)
-                     */
-                    std::vector<std::string> m_componentLimitType;
-                    bool m_componentLimitTypeHasBeenSet;
-
-                    /**
-                     * 流程签署人在模板中对应的签署人Id；在非单方签署、以及非B2C签署的场景下必传，用于指定当前签署方在流程中的位置；
-                     */
-                    std::string m_recipientId;
-                    bool m_recipientIdHasBeenSet;
-
-                    /**
-                     * 企业签署方工商营业执照上的企业名称，签署方为非发起方企业场景下必传；
+                     * 企业签署方工商营业执照上的企业名称，签署方为非发起方企业场景下必传，最大长度64个字符；
                      */
                     std::string m_organizationName;
                     bool m_organizationNameHasBeenSet;
-
-                    /**
-                     * 企业签署方在同一渠道下的其他合作企业OpenId，签署方为非发起方企业场景下必传；
-                     */
-                    std::string m_organizationOpenId;
-                    bool m_organizationOpenIdHasBeenSet;
 
                     /**
                      * 指定签署人非渠道企业下员工，在ApproverType为ORGANIZATION时指定。
@@ -419,10 +402,66 @@ ENTERPRISESERVER-企业静默签;
                     bool m_notChannelOrganizationHasBeenSet;
 
                     /**
+                     * 用户侧第三方id，最大长度64个字符
+                     */
+                    std::string m_openId;
+                    bool m_openIdHasBeenSet;
+
+                    /**
+                     * 企业签署方在同一渠道下的其他合作企业OpenId，签署方为非发起方企业场景下必传，最大长度64个字符；
+                     */
+                    std::string m_organizationOpenId;
+                    bool m_organizationOpenIdHasBeenSet;
+
+                    /**
+                     * 签署人类型，PERSON-个人；ORGANIZATION-企业；
+ENTERPRISESERVER-企业静默签;
+注：ENTERPRISESERVER 类型仅用于使用文件创建签署流程（ChannelCreateFlowByFiles）接口；并且仅能指定发起方企业签署方为静默签署；
+                     */
+                    std::string m_approverType;
+                    bool m_approverTypeHasBeenSet;
+
+                    /**
+                     * 签署流程签署人在模板中对应的签署人Id；在非单方签署、以及非B2C签署的场景下必传，用于指定当前签署方在签署流程中的位置；
+                     */
+                    std::string m_recipientId;
+                    bool m_recipientIdHasBeenSet;
+
+                    /**
+                     * 签署截止时间，默认一年
+                     */
+                    int64_t m_deadline;
+                    bool m_deadlineHasBeenSet;
+
+                    /**
+                     * 签署完回调url，最大长度1000个字符
+                     */
+                    std::string m_callbackUrl;
+                    bool m_callbackUrlHasBeenSet;
+
+                    /**
                      * 使用PDF文件直接发起合同时，签署人指定的签署控件
                      */
                     std::vector<Component> m_signComponents;
                     bool m_signComponentsHasBeenSet;
+
+                    /**
+                     * 个人签署方指定签署控件类型，目前仅支持：OCR_ESIGN(AI智慧手写签名)
+                     */
+                    std::vector<std::string> m_componentLimitType;
+                    bool m_componentLimitTypeHasBeenSet;
+
+                    /**
+                     * 合同的强制预览时间：3~300s，未指定则按合同页数计算
+                     */
+                    int64_t m_preReadTime;
+                    bool m_preReadTimeHasBeenSet;
+
+                    /**
+                     * 签署完前端跳转的url，暂未使用
+                     */
+                    std::string m_jumpUrl;
+                    bool m_jumpUrlHasBeenSet;
 
                 };
             }

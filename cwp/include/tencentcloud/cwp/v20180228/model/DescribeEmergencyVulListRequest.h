@@ -85,11 +85,13 @@ namespace TencentCloud
 <li>Level - String - 是否必填：否 - 漏洞等级筛选 1:低 2:中 3:高 4:提示</li>
 <li>VulName- String - 是否必填：否 - 漏洞名称搜索</li>
 <li>Uuids- String - 是否必填：否 - 主机uuid</li>
+<li>IsSupportDefense - int- 是否必填：否 - 是否支持防御 0:不支持 1:支持</li>
                      * @return Filters 过滤条件。
 <li>Status - String - 是否必填：是 - 漏洞状态筛选，0//未检测 1有风险 ，2无风险 ，3 检查中展示progress</li>
 <li>Level - String - 是否必填：否 - 漏洞等级筛选 1:低 2:中 3:高 4:提示</li>
 <li>VulName- String - 是否必填：否 - 漏洞名称搜索</li>
 <li>Uuids- String - 是否必填：否 - 主机uuid</li>
+<li>IsSupportDefense - int- 是否必填：否 - 是否支持防御 0:不支持 1:支持</li>
                      */
                     std::vector<Filters> GetFilters() const;
 
@@ -99,11 +101,13 @@ namespace TencentCloud
 <li>Level - String - 是否必填：否 - 漏洞等级筛选 1:低 2:中 3:高 4:提示</li>
 <li>VulName- String - 是否必填：否 - 漏洞名称搜索</li>
 <li>Uuids- String - 是否必填：否 - 主机uuid</li>
+<li>IsSupportDefense - int- 是否必填：否 - 是否支持防御 0:不支持 1:支持</li>
                      * @param Filters 过滤条件。
 <li>Status - String - 是否必填：是 - 漏洞状态筛选，0//未检测 1有风险 ，2无风险 ，3 检查中展示progress</li>
 <li>Level - String - 是否必填：否 - 漏洞等级筛选 1:低 2:中 3:高 4:提示</li>
 <li>VulName- String - 是否必填：否 - 漏洞名称搜索</li>
 <li>Uuids- String - 是否必填：否 - 主机uuid</li>
+<li>IsSupportDefense - int- 是否必填：否 - 是否支持防御 0:不支持 1:支持</li>
                      */
                     void SetFilters(const std::vector<Filters>& _filters);
 
@@ -132,14 +136,14 @@ namespace TencentCloud
                     bool OrderHasBeenSet() const;
 
                     /**
-                     * 获取排序字段 PublishDate
-                     * @return By 排序字段 PublishDate
+                     * 获取排序字段 PublishDate  LastScanTime HostCount
+                     * @return By 排序字段 PublishDate  LastScanTime HostCount
                      */
                     std::string GetBy() const;
 
                     /**
-                     * 设置排序字段 PublishDate
-                     * @param By 排序字段 PublishDate
+                     * 设置排序字段 PublishDate  LastScanTime HostCount
+                     * @param By 排序字段 PublishDate  LastScanTime HostCount
                      */
                     void SetBy(const std::string& _by);
 
@@ -169,6 +173,7 @@ namespace TencentCloud
 <li>Level - String - 是否必填：否 - 漏洞等级筛选 1:低 2:中 3:高 4:提示</li>
 <li>VulName- String - 是否必填：否 - 漏洞名称搜索</li>
 <li>Uuids- String - 是否必填：否 - 主机uuid</li>
+<li>IsSupportDefense - int- 是否必填：否 - 是否支持防御 0:不支持 1:支持</li>
                      */
                     std::vector<Filters> m_filters;
                     bool m_filtersHasBeenSet;
@@ -180,7 +185,7 @@ namespace TencentCloud
                     bool m_orderHasBeenSet;
 
                     /**
-                     * 排序字段 PublishDate
+                     * 排序字段 PublishDate  LastScanTime HostCount
                      */
                     std::string m_by;
                     bool m_byHasBeenSet;

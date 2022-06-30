@@ -25,8 +25,8 @@ using namespace std;
 CreateFlowsByTemplatesRequest::CreateFlowsByTemplatesRequest() :
     m_agentHasBeenSet(false),
     m_flowInfosHasBeenSet(false),
-    m_operatorHasBeenSet(false),
-    m_needPreviewHasBeenSet(false)
+    m_needPreviewHasBeenSet(false),
+    m_operatorHasBeenSet(false)
 {
 }
 
@@ -61,6 +61,14 @@ string CreateFlowsByTemplatesRequest::ToJsonString() const
         }
     }
 
+    if (m_needPreviewHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NeedPreview";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_needPreview, allocator);
+    }
+
     if (m_operatorHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -68,14 +76,6 @@ string CreateFlowsByTemplatesRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_operator.ToJsonObject(d[key.c_str()], allocator);
-    }
-
-    if (m_needPreviewHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "NeedPreview";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_needPreview, allocator);
     }
 
 
@@ -118,22 +118,6 @@ bool CreateFlowsByTemplatesRequest::FlowInfosHasBeenSet() const
     return m_flowInfosHasBeenSet;
 }
 
-UserInfo CreateFlowsByTemplatesRequest::GetOperator() const
-{
-    return m_operator;
-}
-
-void CreateFlowsByTemplatesRequest::SetOperator(const UserInfo& _operator)
-{
-    m_operator = _operator;
-    m_operatorHasBeenSet = true;
-}
-
-bool CreateFlowsByTemplatesRequest::OperatorHasBeenSet() const
-{
-    return m_operatorHasBeenSet;
-}
-
 bool CreateFlowsByTemplatesRequest::GetNeedPreview() const
 {
     return m_needPreview;
@@ -148,6 +132,22 @@ void CreateFlowsByTemplatesRequest::SetNeedPreview(const bool& _needPreview)
 bool CreateFlowsByTemplatesRequest::NeedPreviewHasBeenSet() const
 {
     return m_needPreviewHasBeenSet;
+}
+
+UserInfo CreateFlowsByTemplatesRequest::GetOperator() const
+{
+    return m_operator;
+}
+
+void CreateFlowsByTemplatesRequest::SetOperator(const UserInfo& _operator)
+{
+    m_operator = _operator;
+    m_operatorHasBeenSet = true;
+}
+
+bool CreateFlowsByTemplatesRequest::OperatorHasBeenSet() const
+{
+    return m_operatorHasBeenSet;
 }
 
 

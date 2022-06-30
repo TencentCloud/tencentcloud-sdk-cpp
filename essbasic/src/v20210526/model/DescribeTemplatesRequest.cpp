@@ -24,11 +24,11 @@ using namespace std;
 
 DescribeTemplatesRequest::DescribeTemplatesRequest() :
     m_agentHasBeenSet(false),
-    m_operatorHasBeenSet(false),
     m_templateIdHasBeenSet(false),
     m_contentTypeHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_offsetHasBeenSet(false)
+    m_offsetHasBeenSet(false),
+    m_operatorHasBeenSet(false)
 {
 }
 
@@ -46,15 +46,6 @@ string DescribeTemplatesRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_agent.ToJsonObject(d[key.c_str()], allocator);
-    }
-
-    if (m_operatorHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Operator";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_operator.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_templateIdHasBeenSet)
@@ -89,6 +80,15 @@ string DescribeTemplatesRequest::ToJsonString() const
         d.AddMember(iKey, m_offset, allocator);
     }
 
+    if (m_operatorHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Operator";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_operator.ToJsonObject(d[key.c_str()], allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -111,22 +111,6 @@ void DescribeTemplatesRequest::SetAgent(const Agent& _agent)
 bool DescribeTemplatesRequest::AgentHasBeenSet() const
 {
     return m_agentHasBeenSet;
-}
-
-UserInfo DescribeTemplatesRequest::GetOperator() const
-{
-    return m_operator;
-}
-
-void DescribeTemplatesRequest::SetOperator(const UserInfo& _operator)
-{
-    m_operator = _operator;
-    m_operatorHasBeenSet = true;
-}
-
-bool DescribeTemplatesRequest::OperatorHasBeenSet() const
-{
-    return m_operatorHasBeenSet;
 }
 
 string DescribeTemplatesRequest::GetTemplateId() const
@@ -191,6 +175,22 @@ void DescribeTemplatesRequest::SetOffset(const uint64_t& _offset)
 bool DescribeTemplatesRequest::OffsetHasBeenSet() const
 {
     return m_offsetHasBeenSet;
+}
+
+UserInfo DescribeTemplatesRequest::GetOperator() const
+{
+    return m_operator;
+}
+
+void DescribeTemplatesRequest::SetOperator(const UserInfo& _operator)
+{
+    m_operator = _operator;
+    m_operatorHasBeenSet = true;
+}
+
+bool DescribeTemplatesRequest::OperatorHasBeenSet() const
+{
+    return m_operatorHasBeenSet;
 }
 
 

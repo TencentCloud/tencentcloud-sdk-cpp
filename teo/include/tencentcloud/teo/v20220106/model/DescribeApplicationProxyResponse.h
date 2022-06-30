@@ -73,9 +73,9 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取当ZoneId不为空时，表示当前站点允许创建的实例数量
+                     * 获取字段已废弃
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Quota 当ZoneId不为空时，表示当前站点允许创建的实例数量
+                     * @return Quota 字段已废弃
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetQuota() const;
@@ -85,6 +85,34 @@ namespace TencentCloud
                      * @return Quota 是否已赋值
                      */
                     bool QuotaHasBeenSet() const;
+
+                    /**
+                     * 获取表示套餐内PlatType为ip的Anycast IP实例数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IpCount 表示套餐内PlatType为ip的Anycast IP实例数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetIpCount() const;
+
+                    /**
+                     * 判断参数 IpCount 是否已赋值
+                     * @return IpCount 是否已赋值
+                     */
+                    bool IpCountHasBeenSet() const;
+
+                    /**
+                     * 获取表示套餐内PlatType为domain的CNAME实例数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DomainCount 表示套餐内PlatType为domain的CNAME实例数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetDomainCount() const;
+
+                    /**
+                     * 判断参数 DomainCount 是否已赋值
+                     * @return DomainCount 是否已赋值
+                     */
+                    bool DomainCountHasBeenSet() const;
 
                 private:
 
@@ -103,11 +131,25 @@ namespace TencentCloud
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 当ZoneId不为空时，表示当前站点允许创建的实例数量
+                     * 字段已废弃
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_quota;
                     bool m_quotaHasBeenSet;
+
+                    /**
+                     * 表示套餐内PlatType为ip的Anycast IP实例数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_ipCount;
+                    bool m_ipCountHasBeenSet;
+
+                    /**
+                     * 表示套餐内PlatType为domain的CNAME实例数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_domainCount;
+                    bool m_domainCountHasBeenSet;
 
                 };
             }

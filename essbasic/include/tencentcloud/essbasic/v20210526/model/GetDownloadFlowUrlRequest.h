@@ -22,8 +22,8 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/essbasic/v20210526/model/Agent.h>
-#include <tencentcloud/essbasic/v20210526/model/UserInfo.h>
 #include <tencentcloud/essbasic/v20210526/model/DownloadFlowInfo.h>
+#include <tencentcloud/essbasic/v20210526/model/UserInfo.h>
 
 
 namespace TencentCloud
@@ -64,6 +64,24 @@ namespace TencentCloud
                     bool AgentHasBeenSet() const;
 
                     /**
+                     * 获取文件夹数组，签署流程总数不能超过50个，一个文件夹下，不能超过20个签署流程
+                     * @return DownLoadFlows 文件夹数组，签署流程总数不能超过50个，一个文件夹下，不能超过20个签署流程
+                     */
+                    std::vector<DownloadFlowInfo> GetDownLoadFlows() const;
+
+                    /**
+                     * 设置文件夹数组，签署流程总数不能超过50个，一个文件夹下，不能超过20个签署流程
+                     * @param DownLoadFlows 文件夹数组，签署流程总数不能超过50个，一个文件夹下，不能超过20个签署流程
+                     */
+                    void SetDownLoadFlows(const std::vector<DownloadFlowInfo>& _downLoadFlows);
+
+                    /**
+                     * 判断参数 DownLoadFlows 是否已赋值
+                     * @return DownLoadFlows 是否已赋值
+                     */
+                    bool DownLoadFlowsHasBeenSet() const;
+
+                    /**
                      * 获取操作者的信息
                      * @return Operator 操作者的信息
                      */
@@ -81,24 +99,6 @@ namespace TencentCloud
                      */
                     bool OperatorHasBeenSet() const;
 
-                    /**
-                     * 获取文件夹数组，合同（流程）总数不能超过50个，一个文件夹下，不能超过20个合同（流程），
-                     * @return DownLoadFlows 文件夹数组，合同（流程）总数不能超过50个，一个文件夹下，不能超过20个合同（流程），
-                     */
-                    std::vector<DownloadFlowInfo> GetDownLoadFlows() const;
-
-                    /**
-                     * 设置文件夹数组，合同（流程）总数不能超过50个，一个文件夹下，不能超过20个合同（流程），
-                     * @param DownLoadFlows 文件夹数组，合同（流程）总数不能超过50个，一个文件夹下，不能超过20个合同（流程），
-                     */
-                    void SetDownLoadFlows(const std::vector<DownloadFlowInfo>& _downLoadFlows);
-
-                    /**
-                     * 判断参数 DownLoadFlows 是否已赋值
-                     * @return DownLoadFlows 是否已赋值
-                     */
-                    bool DownLoadFlowsHasBeenSet() const;
-
                 private:
 
                     /**
@@ -108,16 +108,16 @@ namespace TencentCloud
                     bool m_agentHasBeenSet;
 
                     /**
+                     * 文件夹数组，签署流程总数不能超过50个，一个文件夹下，不能超过20个签署流程
+                     */
+                    std::vector<DownloadFlowInfo> m_downLoadFlows;
+                    bool m_downLoadFlowsHasBeenSet;
+
+                    /**
                      * 操作者的信息
                      */
                     UserInfo m_operator;
                     bool m_operatorHasBeenSet;
-
-                    /**
-                     * 文件夹数组，合同（流程）总数不能超过50个，一个文件夹下，不能超过20个合同（流程），
-                     */
-                    std::vector<DownloadFlowInfo> m_downLoadFlows;
-                    bool m_downLoadFlowsHasBeenSet;
 
                 };
             }

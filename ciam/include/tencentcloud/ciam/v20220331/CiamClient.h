@@ -37,6 +37,8 @@
 #include <tencentcloud/ciam/v20220331/model/LinkAccountResponse.h>
 #include <tencentcloud/ciam/v20220331/model/ListJobsRequest.h>
 #include <tencentcloud/ciam/v20220331/model/ListJobsResponse.h>
+#include <tencentcloud/ciam/v20220331/model/ListLogMessageByConditionRequest.h>
+#include <tencentcloud/ciam/v20220331/model/ListLogMessageByConditionResponse.h>
 #include <tencentcloud/ciam/v20220331/model/ListUserRequest.h>
 #include <tencentcloud/ciam/v20220331/model/ListUserResponse.h>
 #include <tencentcloud/ciam/v20220331/model/ListUserByPropertyRequest.h>
@@ -84,6 +86,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ListJobsResponse> ListJobsOutcome;
                 typedef std::future<ListJobsOutcome> ListJobsOutcomeCallable;
                 typedef std::function<void(const CiamClient*, const Model::ListJobsRequest&, ListJobsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListJobsAsyncHandler;
+                typedef Outcome<Core::Error, Model::ListLogMessageByConditionResponse> ListLogMessageByConditionOutcome;
+                typedef std::future<ListLogMessageByConditionOutcome> ListLogMessageByConditionOutcomeCallable;
+                typedef std::function<void(const CiamClient*, const Model::ListLogMessageByConditionRequest&, ListLogMessageByConditionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListLogMessageByConditionAsyncHandler;
                 typedef Outcome<Core::Error, Model::ListUserResponse> ListUserOutcome;
                 typedef std::future<ListUserOutcome> ListUserOutcomeCallable;
                 typedef std::function<void(const CiamClient*, const Model::ListUserRequest&, ListUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListUserAsyncHandler;
@@ -167,6 +172,15 @@ namespace TencentCloud
                 ListJobsOutcome ListJobs(const Model::ListJobsRequest &request);
                 void ListJobsAsync(const Model::ListJobsRequest& request, const ListJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ListJobsOutcomeCallable ListJobsCallable(const Model::ListJobsRequest& request);
+
+                /**
+                 *查询日志信息
+                 * @param req ListLogMessageByConditionRequest
+                 * @return ListLogMessageByConditionOutcome
+                 */
+                ListLogMessageByConditionOutcome ListLogMessageByCondition(const Model::ListLogMessageByConditionRequest &request);
+                void ListLogMessageByConditionAsync(const Model::ListLogMessageByConditionRequest& request, const ListLogMessageByConditionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListLogMessageByConditionOutcomeCallable ListLogMessageByConditionCallable(const Model::ListLogMessageByConditionRequest& request);
 
                 /**
                  *查询用户列表

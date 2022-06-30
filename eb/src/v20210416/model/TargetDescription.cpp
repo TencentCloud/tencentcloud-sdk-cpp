@@ -23,7 +23,8 @@ using namespace std;
 TargetDescription::TargetDescription() :
     m_resourceDescriptionHasBeenSet(false),
     m_sCFParamsHasBeenSet(false),
-    m_ckafkaTargetParamsHasBeenSet(false)
+    m_ckafkaTargetParamsHasBeenSet(false),
+    m_eSTargetParamsHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,23 @@ CoreInternalOutcome TargetDescription::Deserialize(const rapidjson::Value &value
         m_ckafkaTargetParamsHasBeenSet = true;
     }
 
+    if (value.HasMember("ESTargetParams") && !value["ESTargetParams"].IsNull())
+    {
+        if (!value["ESTargetParams"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `TargetDescription.ESTargetParams` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_eSTargetParams.Deserialize(value["ESTargetParams"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_eSTargetParamsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -107,6 +125,15 @@ void TargetDescription::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_ckafkaTargetParams.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_eSTargetParamsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ESTargetParams";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_eSTargetParams.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -158,5 +185,21 @@ void TargetDescription::SetCkafkaTargetParams(const CkafkaTargetParams& _ckafkaT
 bool TargetDescription::CkafkaTargetParamsHasBeenSet() const
 {
     return m_ckafkaTargetParamsHasBeenSet;
+}
+
+ESTargetParams TargetDescription::GetESTargetParams() const
+{
+    return m_eSTargetParams;
+}
+
+void TargetDescription::SetESTargetParams(const ESTargetParams& _eSTargetParams)
+{
+    m_eSTargetParams = _eSTargetParams;
+    m_eSTargetParamsHasBeenSet = true;
+}
+
+bool TargetDescription::ESTargetParamsHasBeenSet() const
+{
+    return m_eSTargetParamsHasBeenSet;
 }
 

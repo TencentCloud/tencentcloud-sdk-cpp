@@ -63,24 +63,6 @@ namespace TencentCloud
                     bool AgentHasBeenSet() const;
 
                     /**
-                     * 获取渠道方模板库模板唯一标识
-                     * @return TemplateId 渠道方模板库模板唯一标识
-                     */
-                    std::string GetTemplateId() const;
-
-                    /**
-                     * 设置渠道方模板库模板唯一标识
-                     * @param TemplateId 渠道方模板库模板唯一标识
-                     */
-                    void SetTemplateId(const std::string& _templateId);
-
-                    /**
-                     * 判断参数 TemplateId 是否已赋值
-                     * @return TemplateId 是否已赋值
-                     */
-                    bool TemplateIdHasBeenSet() const;
-
-                    /**
                      * 获取操作类型，查询:"SELECT"，删除:"DELETE"，更新:"UPDATE"
                      * @return OperateType 操作类型，查询:"SELECT"，删除:"DELETE"，更新:"UPDATE"
                      */
@@ -99,22 +81,40 @@ namespace TencentCloud
                     bool OperateTypeHasBeenSet() const;
 
                     /**
-                     * 获取操作者的信息
-                     * @return Operator 操作者的信息
+                     * 获取渠道方模板库模板唯一标识
+                     * @return TemplateId 渠道方模板库模板唯一标识
                      */
-                    UserInfo GetOperator() const;
+                    std::string GetTemplateId() const;
 
                     /**
-                     * 设置操作者的信息
-                     * @param Operator 操作者的信息
+                     * 设置渠道方模板库模板唯一标识
+                     * @param TemplateId 渠道方模板库模板唯一标识
                      */
-                    void SetOperator(const UserInfo& _operator);
+                    void SetTemplateId(const std::string& _templateId);
 
                     /**
-                     * 判断参数 Operator 是否已赋值
-                     * @return Operator 是否已赋值
+                     * 判断参数 TemplateId 是否已赋值
+                     * @return TemplateId 是否已赋值
                      */
-                    bool OperatorHasBeenSet() const;
+                    bool TemplateIdHasBeenSet() const;
+
+                    /**
+                     * 获取合作企业方第三方机构唯一标识数据，支持多个， 用","进行分隔
+                     * @return ProxyOrganizationOpenIds 合作企业方第三方机构唯一标识数据，支持多个， 用","进行分隔
+                     */
+                    std::string GetProxyOrganizationOpenIds() const;
+
+                    /**
+                     * 设置合作企业方第三方机构唯一标识数据，支持多个， 用","进行分隔
+                     * @param ProxyOrganizationOpenIds 合作企业方第三方机构唯一标识数据，支持多个， 用","进行分隔
+                     */
+                    void SetProxyOrganizationOpenIds(const std::string& _proxyOrganizationOpenIds);
+
+                    /**
+                     * 判断参数 ProxyOrganizationOpenIds 是否已赋值
+                     * @return ProxyOrganizationOpenIds 是否已赋值
+                     */
+                    bool ProxyOrganizationOpenIdsHasBeenSet() const;
 
                     /**
                      * 获取模板可见性, 全部可见-"all", 部分可见-"part"
@@ -135,22 +135,22 @@ namespace TencentCloud
                     bool AuthTagHasBeenSet() const;
 
                     /**
-                     * 获取合作企业方第三方机构唯一标识数据，支持多个， 用","进行分隔
-                     * @return ProxyOrganizationOpenIds 合作企业方第三方机构唯一标识数据，支持多个， 用","进行分隔
+                     * 获取操作者的信息
+                     * @return Operator 操作者的信息
                      */
-                    std::string GetProxyOrganizationOpenIds() const;
+                    UserInfo GetOperator() const;
 
                     /**
-                     * 设置合作企业方第三方机构唯一标识数据，支持多个， 用","进行分隔
-                     * @param ProxyOrganizationOpenIds 合作企业方第三方机构唯一标识数据，支持多个， 用","进行分隔
+                     * 设置操作者的信息
+                     * @param Operator 操作者的信息
                      */
-                    void SetProxyOrganizationOpenIds(const std::string& _proxyOrganizationOpenIds);
+                    void SetOperator(const UserInfo& _operator);
 
                     /**
-                     * 判断参数 ProxyOrganizationOpenIds 是否已赋值
-                     * @return ProxyOrganizationOpenIds 是否已赋值
+                     * 判断参数 Operator 是否已赋值
+                     * @return Operator 是否已赋值
                      */
-                    bool ProxyOrganizationOpenIdsHasBeenSet() const;
+                    bool OperatorHasBeenSet() const;
 
                 private:
 
@@ -161,22 +161,22 @@ namespace TencentCloud
                     bool m_agentHasBeenSet;
 
                     /**
-                     * 渠道方模板库模板唯一标识
-                     */
-                    std::string m_templateId;
-                    bool m_templateIdHasBeenSet;
-
-                    /**
                      * 操作类型，查询:"SELECT"，删除:"DELETE"，更新:"UPDATE"
                      */
                     std::string m_operateType;
                     bool m_operateTypeHasBeenSet;
 
                     /**
-                     * 操作者的信息
+                     * 渠道方模板库模板唯一标识
                      */
-                    UserInfo m_operator;
-                    bool m_operatorHasBeenSet;
+                    std::string m_templateId;
+                    bool m_templateIdHasBeenSet;
+
+                    /**
+                     * 合作企业方第三方机构唯一标识数据，支持多个， 用","进行分隔
+                     */
+                    std::string m_proxyOrganizationOpenIds;
+                    bool m_proxyOrganizationOpenIdsHasBeenSet;
 
                     /**
                      * 模板可见性, 全部可见-"all", 部分可见-"part"
@@ -185,10 +185,10 @@ namespace TencentCloud
                     bool m_authTagHasBeenSet;
 
                     /**
-                     * 合作企业方第三方机构唯一标识数据，支持多个， 用","进行分隔
+                     * 操作者的信息
                      */
-                    std::string m_proxyOrganizationOpenIds;
-                    bool m_proxyOrganizationOpenIdsHasBeenSet;
+                    UserInfo m_operator;
+                    bool m_operatorHasBeenSet;
 
                 };
             }

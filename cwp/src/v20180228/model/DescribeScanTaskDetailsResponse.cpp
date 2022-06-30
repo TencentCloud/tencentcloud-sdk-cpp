@@ -37,7 +37,8 @@ DescribeScanTaskDetailsResponse::DescribeScanTaskDetailsResponse() :
     m_vulInfoHasBeenSet(false),
     m_riskEventCountHasBeenSet(false),
     m_typeHasBeenSet(false),
-    m_stoppingAllHasBeenSet(false)
+    m_stoppingAllHasBeenSet(false),
+    m_vulCountHasBeenSet(false)
 {
 }
 
@@ -238,6 +239,16 @@ CoreInternalOutcome DescribeScanTaskDetailsResponse::Deserialize(const string &p
         m_stoppingAllHasBeenSet = true;
     }
 
+    if (rsp.HasMember("VulCount") && !rsp["VulCount"].IsNull())
+    {
+        if (!rsp["VulCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `VulCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_vulCount = rsp["VulCount"].GetUint64();
+        m_vulCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -377,6 +388,14 @@ string DescribeScanTaskDetailsResponse::ToJsonString() const
         string key = "StoppingAll";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_stoppingAll, allocator);
+    }
+
+    if (m_vulCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VulCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_vulCount, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -529,6 +548,16 @@ bool DescribeScanTaskDetailsResponse::GetStoppingAll() const
 bool DescribeScanTaskDetailsResponse::StoppingAllHasBeenSet() const
 {
     return m_stoppingAllHasBeenSet;
+}
+
+uint64_t DescribeScanTaskDetailsResponse::GetVulCount() const
+{
+    return m_vulCount;
+}
+
+bool DescribeScanTaskDetailsResponse::VulCountHasBeenSet() const
+{
+    return m_vulCountHasBeenSet;
 }
 
 

@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool SubAppIdHasBeenSet() const;
 
                     /**
-                     * 获取视频内容识别模板唯一标识过滤条件，数组长度限制：100。
-                     * @return Definitions 视频内容识别模板唯一标识过滤条件，数组长度限制：100。
+                     * 获取音视频内容识别模板唯一标识过滤条件，数组长度限制：100。
+                     * @return Definitions 音视频内容识别模板唯一标识过滤条件，数组长度限制：100。
                      */
                     std::vector<int64_t> GetDefinitions() const;
 
                     /**
-                     * 设置视频内容识别模板唯一标识过滤条件，数组长度限制：100。
-                     * @param Definitions 视频内容识别模板唯一标识过滤条件，数组长度限制：100。
+                     * 设置音视频内容识别模板唯一标识过滤条件，数组长度限制：100。
+                     * @param Definitions 音视频内容识别模板唯一标识过滤条件，数组长度限制：100。
                      */
                     void SetDefinitions(const std::vector<int64_t>& _definitions);
 
@@ -123,7 +123,7 @@ namespace TencentCloud
                     bool m_subAppIdHasBeenSet;
 
                     /**
-                     * 视频内容识别模板唯一标识过滤条件，数组长度限制：100。
+                     * 音视频内容识别模板唯一标识过滤条件，数组长度限制：100。
                      */
                     std::vector<int64_t> m_definitions;
                     bool m_definitionsHasBeenSet;

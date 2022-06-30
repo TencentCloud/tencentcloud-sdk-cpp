@@ -37,7 +37,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 智能识别 Asr 文字涉及令人不适宜信息、违规任务结果类型
+                * 音视频审核 Asr 文字涉及令人不适宜信息、违规任务结果类型
                 */
                 class AiReviewTaskPoliticalAsrResult : public AbstractModel
                 {
@@ -121,14 +121,14 @@ namespace TencentCloud
                     bool MessageHasBeenSet() const;
 
                     /**
-                     * 获取智能识别 Asr 文字涉及令人不适宜信息的任务输入。
-                     * @return Input 智能识别 Asr 文字涉及令人不适宜信息的任务输入。
+                     * 获取音视频审核 Asr 文字涉及令人不适宜信息的任务输入。
+                     * @return Input 音视频审核 Asr 文字涉及令人不适宜信息的任务输入。
                      */
                     AiReviewPoliticalAsrTaskInput GetInput() const;
 
                     /**
-                     * 设置智能识别 Asr 文字涉及令人不适宜信息的任务输入。
-                     * @param Input 智能识别 Asr 文字涉及令人不适宜信息的任务输入。
+                     * 设置音视频审核 Asr 文字涉及令人不适宜信息的任务输入。
+                     * @param Input 音视频审核 Asr 文字涉及令人不适宜信息的任务输入。
                      */
                     void SetInput(const AiReviewPoliticalAsrTaskInput& _input);
 
@@ -139,14 +139,14 @@ namespace TencentCloud
                     bool InputHasBeenSet() const;
 
                     /**
-                     * 获取智能识别 Asr 文字涉及令人不适宜信息的任务输出。
-                     * @return Output 智能识别 Asr 文字涉及令人不适宜信息的任务输出。
+                     * 获取音视频审核 Asr 文字涉及令人不适宜信息的任务输出。
+                     * @return Output 音视频审核 Asr 文字涉及令人不适宜信息的任务输出。
                      */
                     AiReviewPoliticalAsrTaskOutput GetOutput() const;
 
                     /**
-                     * 设置智能识别 Asr 文字涉及令人不适宜信息的任务输出。
-                     * @param Output 智能识别 Asr 文字涉及令人不适宜信息的任务输出。
+                     * 设置音视频审核 Asr 文字涉及令人不适宜信息的任务输出。
+                     * @param Output 音视频审核 Asr 文字涉及令人不适宜信息的任务输出。
                      */
                     void SetOutput(const AiReviewPoliticalAsrTaskOutput& _output);
 
@@ -183,13 +183,13 @@ namespace TencentCloud
                     bool m_messageHasBeenSet;
 
                     /**
-                     * 智能识别 Asr 文字涉及令人不适宜信息的任务输入。
+                     * 音视频审核 Asr 文字涉及令人不适宜信息的任务输入。
                      */
                     AiReviewPoliticalAsrTaskInput m_input;
                     bool m_inputHasBeenSet;
 
                     /**
-                     * 智能识别 Asr 文字涉及令人不适宜信息的任务输出。
+                     * 音视频审核 Asr 文字涉及令人不适宜信息的任务输出。
                      */
                     AiReviewPoliticalAsrTaskOutput m_output;
                     bool m_outputHasBeenSet;

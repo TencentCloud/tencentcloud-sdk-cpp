@@ -85,14 +85,14 @@ namespace TencentCloud
                     bool TemplateIdHasBeenSet() const;
 
                     /**
-                     * 获取合同名称
-                     * @return FlowName 合同名称
+                     * 获取签署流程名称，最大长度200个字符。
+                     * @return FlowName 签署流程名称，最大长度200个字符。
                      */
                     std::string GetFlowName() const;
 
                     /**
-                     * 设置合同名称
-                     * @param FlowName 合同名称
+                     * 设置签署流程名称，最大长度200个字符。
+                     * @param FlowName 签署流程名称，最大长度200个字符。
                      */
                     void SetFlowName(const std::string& _flowName);
 
@@ -103,32 +103,32 @@ namespace TencentCloud
                     bool FlowNameHasBeenSet() const;
 
                     /**
-                     * 获取用户信息
-                     * @return Operator 用户信息
+                     * 获取最大可发起签署流程份数，默认5份；发起签署流程数量超过此上限后，二维码自动失效。
+                     * @return MaxFlowNum 最大可发起签署流程份数，默认5份；发起签署流程数量超过此上限后，二维码自动失效。
                      */
-                    UserInfo GetOperator() const;
+                    int64_t GetMaxFlowNum() const;
 
                     /**
-                     * 设置用户信息
-                     * @param Operator 用户信息
+                     * 设置最大可发起签署流程份数，默认5份；发起签署流程数量超过此上限后，二维码自动失效。
+                     * @param MaxFlowNum 最大可发起签署流程份数，默认5份；发起签署流程数量超过此上限后，二维码自动失效。
                      */
-                    void SetOperator(const UserInfo& _operator);
+                    void SetMaxFlowNum(const int64_t& _maxFlowNum);
 
                     /**
-                     * 判断参数 Operator 是否已赋值
-                     * @return Operator 是否已赋值
+                     * 判断参数 MaxFlowNum 是否已赋值
+                     * @return MaxFlowNum 是否已赋值
                      */
-                    bool OperatorHasBeenSet() const;
+                    bool MaxFlowNumHasBeenSet() const;
 
                     /**
-                     * 获取合同有效天数 默认7天 最高设置不超过30天
-                     * @return FlowEffectiveDay 合同有效天数 默认7天 最高设置不超过30天
+                     * 获取签署流程有效天数 默认7天 最高设置不超过30天
+                     * @return FlowEffectiveDay 签署流程有效天数 默认7天 最高设置不超过30天
                      */
                     int64_t GetFlowEffectiveDay() const;
 
                     /**
-                     * 设置合同有效天数 默认7天 最高设置不超过30天
-                     * @param FlowEffectiveDay 合同有效天数 默认7天 最高设置不超过30天
+                     * 设置签署流程有效天数 默认7天 最高设置不超过30天
+                     * @param FlowEffectiveDay 签署流程有效天数 默认7天 最高设置不超过30天
                      */
                     void SetFlowEffectiveDay(const int64_t& _flowEffectiveDay);
 
@@ -157,32 +157,22 @@ namespace TencentCloud
                     bool QrEffectiveDayHasBeenSet() const;
 
                     /**
-                     * 获取最大合同份数，默认5份 超过此上限 二维码自动失效
-                     * @return MaxFlowNum 最大合同份数，默认5份 超过此上限 二维码自动失效
-                     */
-                    int64_t GetMaxFlowNum() const;
-
-                    /**
-                     * 设置最大合同份数，默认5份 超过此上限 二维码自动失效
-                     * @param MaxFlowNum 最大合同份数，默认5份 超过此上限 二维码自动失效
-                     */
-                    void SetMaxFlowNum(const int64_t& _maxFlowNum);
-
-                    /**
-                     * 判断参数 MaxFlowNum 是否已赋值
-                     * @return MaxFlowNum 是否已赋值
-                     */
-                    bool MaxFlowNumHasBeenSet() const;
-
-                    /**
-                     * 获取回调地址
-                     * @return CallbackUrl 回调地址
+                     * 获取回调地址，最大长度1000个字符
+不传默认使用渠道应用号配置的回调地址
+回调时机:用户通过签署二维码发起合同时，企业额度不足导致失败
+                     * @return CallbackUrl 回调地址，最大长度1000个字符
+不传默认使用渠道应用号配置的回调地址
+回调时机:用户通过签署二维码发起合同时，企业额度不足导致失败
                      */
                     std::string GetCallbackUrl() const;
 
                     /**
-                     * 设置回调地址
-                     * @param CallbackUrl 回调地址
+                     * 设置回调地址，最大长度1000个字符
+不传默认使用渠道应用号配置的回调地址
+回调时机:用户通过签署二维码发起合同时，企业额度不足导致失败
+                     * @param CallbackUrl 回调地址，最大长度1000个字符
+不传默认使用渠道应用号配置的回调地址
+回调时机:用户通过签署二维码发起合同时，企业额度不足导致失败
                      */
                     void SetCallbackUrl(const std::string& _callbackUrl);
 
@@ -191,6 +181,24 @@ namespace TencentCloud
                      * @return CallbackUrl 是否已赋值
                      */
                     bool CallbackUrlHasBeenSet() const;
+
+                    /**
+                     * 获取用户信息
+                     * @return Operator 用户信息
+                     */
+                    UserInfo GetOperator() const;
+
+                    /**
+                     * 设置用户信息
+                     * @param Operator 用户信息
+                     */
+                    void SetOperator(const UserInfo& _operator);
+
+                    /**
+                     * 判断参数 Operator 是否已赋值
+                     * @return Operator 是否已赋值
+                     */
+                    bool OperatorHasBeenSet() const;
 
                 private:
 
@@ -208,19 +216,19 @@ namespace TencentCloud
                     bool m_templateIdHasBeenSet;
 
                     /**
-                     * 合同名称
+                     * 签署流程名称，最大长度200个字符。
                      */
                     std::string m_flowName;
                     bool m_flowNameHasBeenSet;
 
                     /**
-                     * 用户信息
+                     * 最大可发起签署流程份数，默认5份；发起签署流程数量超过此上限后，二维码自动失效。
                      */
-                    UserInfo m_operator;
-                    bool m_operatorHasBeenSet;
+                    int64_t m_maxFlowNum;
+                    bool m_maxFlowNumHasBeenSet;
 
                     /**
-                     * 合同有效天数 默认7天 最高设置不超过30天
+                     * 签署流程有效天数 默认7天 最高设置不超过30天
                      */
                     int64_t m_flowEffectiveDay;
                     bool m_flowEffectiveDayHasBeenSet;
@@ -232,16 +240,18 @@ namespace TencentCloud
                     bool m_qrEffectiveDayHasBeenSet;
 
                     /**
-                     * 最大合同份数，默认5份 超过此上限 二维码自动失效
-                     */
-                    int64_t m_maxFlowNum;
-                    bool m_maxFlowNumHasBeenSet;
-
-                    /**
-                     * 回调地址
+                     * 回调地址，最大长度1000个字符
+不传默认使用渠道应用号配置的回调地址
+回调时机:用户通过签署二维码发起合同时，企业额度不足导致失败
                      */
                     std::string m_callbackUrl;
                     bool m_callbackUrlHasBeenSet;
+
+                    /**
+                     * 用户信息
+                     */
+                    UserInfo m_operator;
+                    bool m_operatorHasBeenSet;
 
                 };
             }

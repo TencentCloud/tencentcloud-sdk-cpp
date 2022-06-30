@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取返回的电子文档ID
-                     * @return DocumentId 返回的电子文档ID
+                     * 获取签署流程电子文档ID
+                     * @return DocumentId 签署流程电子文档ID
                      */
                     std::string GetDocumentId() const;
 
@@ -56,9 +56,9 @@ namespace TencentCloud
                     bool DocumentIdHasBeenSet() const;
 
                     /**
-                     * 获取返回合同文件的预览地址 5分钟内有效。仅当NeedPreview为true 时返回
+                     * 获取签署流程文件的预览地址, 5分钟内有效。仅当NeedPreview为true 时返回
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PreviewFileUrl 返回合同文件的预览地址 5分钟内有效。仅当NeedPreview为true 时返回
+                     * @return PreviewFileUrl 签署流程文件的预览地址, 5分钟内有效。仅当NeedPreview为true 时返回
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetPreviewFileUrl() const;
@@ -72,13 +72,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 返回的电子文档ID
+                     * 签署流程电子文档ID
                      */
                     std::string m_documentId;
                     bool m_documentIdHasBeenSet;
 
                     /**
-                     * 返回合同文件的预览地址 5分钟内有效。仅当NeedPreview为true 时返回
+                     * 签署流程文件的预览地址, 5分钟内有效。仅当NeedPreview为true 时返回
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_previewFileUrl;

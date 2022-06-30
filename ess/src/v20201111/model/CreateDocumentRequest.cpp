@@ -23,14 +23,14 @@ using namespace TencentCloud::Ess::V20201111::Model;
 using namespace std;
 
 CreateDocumentRequest::CreateDocumentRequest() :
-    m_operatorHasBeenSet(false),
-    m_templateIdHasBeenSet(false),
     m_flowIdHasBeenSet(false),
+    m_templateIdHasBeenSet(false),
     m_fileNamesHasBeenSet(false),
-    m_formFieldsHasBeenSet(false),
+    m_operatorHasBeenSet(false),
     m_agentHasBeenSet(false),
-    m_clientTokenHasBeenSet(false),
-    m_needPreviewHasBeenSet(false)
+    m_formFieldsHasBeenSet(false),
+    m_needPreviewHasBeenSet(false),
+    m_clientTokenHasBeenSet(false)
 {
 }
 
@@ -41,13 +41,12 @@ string CreateDocumentRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_operatorHasBeenSet)
+    if (m_flowIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Operator";
+        string key = "FlowId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_operator.ToJsonObject(d[key.c_str()], allocator);
+        d.AddMember(iKey, rapidjson::Value(m_flowId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_templateIdHasBeenSet)
@@ -56,14 +55,6 @@ string CreateDocumentRequest::ToJsonString() const
         string key = "TemplateId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_templateId.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_flowIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "FlowId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_flowId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_fileNamesHasBeenSet)
@@ -77,6 +68,24 @@ string CreateDocumentRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_operatorHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Operator";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_operator.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_agentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Agent";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_agent.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_formFieldsHasBeenSet)
@@ -94,13 +103,12 @@ string CreateDocumentRequest::ToJsonString() const
         }
     }
 
-    if (m_agentHasBeenSet)
+    if (m_needPreviewHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Agent";
+        string key = "NeedPreview";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_agent.ToJsonObject(d[key.c_str()], allocator);
+        d.AddMember(iKey, m_needPreview, allocator);
     }
 
     if (m_clientTokenHasBeenSet)
@@ -111,14 +119,6 @@ string CreateDocumentRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_clientToken.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_needPreviewHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "NeedPreview";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_needPreview, allocator);
-    }
-
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -127,20 +127,20 @@ string CreateDocumentRequest::ToJsonString() const
 }
 
 
-UserInfo CreateDocumentRequest::GetOperator() const
+string CreateDocumentRequest::GetFlowId() const
 {
-    return m_operator;
+    return m_flowId;
 }
 
-void CreateDocumentRequest::SetOperator(const UserInfo& _operator)
+void CreateDocumentRequest::SetFlowId(const string& _flowId)
 {
-    m_operator = _operator;
-    m_operatorHasBeenSet = true;
+    m_flowId = _flowId;
+    m_flowIdHasBeenSet = true;
 }
 
-bool CreateDocumentRequest::OperatorHasBeenSet() const
+bool CreateDocumentRequest::FlowIdHasBeenSet() const
 {
-    return m_operatorHasBeenSet;
+    return m_flowIdHasBeenSet;
 }
 
 string CreateDocumentRequest::GetTemplateId() const
@@ -159,22 +159,6 @@ bool CreateDocumentRequest::TemplateIdHasBeenSet() const
     return m_templateIdHasBeenSet;
 }
 
-string CreateDocumentRequest::GetFlowId() const
-{
-    return m_flowId;
-}
-
-void CreateDocumentRequest::SetFlowId(const string& _flowId)
-{
-    m_flowId = _flowId;
-    m_flowIdHasBeenSet = true;
-}
-
-bool CreateDocumentRequest::FlowIdHasBeenSet() const
-{
-    return m_flowIdHasBeenSet;
-}
-
 vector<string> CreateDocumentRequest::GetFileNames() const
 {
     return m_fileNames;
@@ -191,20 +175,20 @@ bool CreateDocumentRequest::FileNamesHasBeenSet() const
     return m_fileNamesHasBeenSet;
 }
 
-vector<FormField> CreateDocumentRequest::GetFormFields() const
+UserInfo CreateDocumentRequest::GetOperator() const
 {
-    return m_formFields;
+    return m_operator;
 }
 
-void CreateDocumentRequest::SetFormFields(const vector<FormField>& _formFields)
+void CreateDocumentRequest::SetOperator(const UserInfo& _operator)
 {
-    m_formFields = _formFields;
-    m_formFieldsHasBeenSet = true;
+    m_operator = _operator;
+    m_operatorHasBeenSet = true;
 }
 
-bool CreateDocumentRequest::FormFieldsHasBeenSet() const
+bool CreateDocumentRequest::OperatorHasBeenSet() const
 {
-    return m_formFieldsHasBeenSet;
+    return m_operatorHasBeenSet;
 }
 
 Agent CreateDocumentRequest::GetAgent() const
@@ -223,20 +207,20 @@ bool CreateDocumentRequest::AgentHasBeenSet() const
     return m_agentHasBeenSet;
 }
 
-string CreateDocumentRequest::GetClientToken() const
+vector<FormField> CreateDocumentRequest::GetFormFields() const
 {
-    return m_clientToken;
+    return m_formFields;
 }
 
-void CreateDocumentRequest::SetClientToken(const string& _clientToken)
+void CreateDocumentRequest::SetFormFields(const vector<FormField>& _formFields)
 {
-    m_clientToken = _clientToken;
-    m_clientTokenHasBeenSet = true;
+    m_formFields = _formFields;
+    m_formFieldsHasBeenSet = true;
 }
 
-bool CreateDocumentRequest::ClientTokenHasBeenSet() const
+bool CreateDocumentRequest::FormFieldsHasBeenSet() const
 {
-    return m_clientTokenHasBeenSet;
+    return m_formFieldsHasBeenSet;
 }
 
 bool CreateDocumentRequest::GetNeedPreview() const
@@ -253,6 +237,22 @@ void CreateDocumentRequest::SetNeedPreview(const bool& _needPreview)
 bool CreateDocumentRequest::NeedPreviewHasBeenSet() const
 {
     return m_needPreviewHasBeenSet;
+}
+
+string CreateDocumentRequest::GetClientToken() const
+{
+    return m_clientToken;
+}
+
+void CreateDocumentRequest::SetClientToken(const string& _clientToken)
+{
+    m_clientToken = _clientToken;
+    m_clientTokenHasBeenSet = true;
+}
+
+bool CreateDocumentRequest::ClientTokenHasBeenSet() const
+{
+    return m_clientTokenHasBeenSet;
 }
 
 

@@ -23,8 +23,8 @@ using namespace TencentCloud::Essbasic::V20210526::Model;
 using namespace std;
 
 SyncProxyOrganizationOperatorsRequest::SyncProxyOrganizationOperatorsRequest() :
-    m_operatorTypeHasBeenSet(false),
     m_agentHasBeenSet(false),
+    m_operatorTypeHasBeenSet(false),
     m_proxyOrganizationOperatorsHasBeenSet(false),
     m_operatorHasBeenSet(false)
 {
@@ -37,14 +37,6 @@ string SyncProxyOrganizationOperatorsRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_operatorTypeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "OperatorType";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_operatorType.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_agentHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -52,6 +44,14 @@ string SyncProxyOrganizationOperatorsRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_agent.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_operatorTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OperatorType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_operatorType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_proxyOrganizationOperatorsHasBeenSet)
@@ -86,22 +86,6 @@ string SyncProxyOrganizationOperatorsRequest::ToJsonString() const
 }
 
 
-string SyncProxyOrganizationOperatorsRequest::GetOperatorType() const
-{
-    return m_operatorType;
-}
-
-void SyncProxyOrganizationOperatorsRequest::SetOperatorType(const string& _operatorType)
-{
-    m_operatorType = _operatorType;
-    m_operatorTypeHasBeenSet = true;
-}
-
-bool SyncProxyOrganizationOperatorsRequest::OperatorTypeHasBeenSet() const
-{
-    return m_operatorTypeHasBeenSet;
-}
-
 Agent SyncProxyOrganizationOperatorsRequest::GetAgent() const
 {
     return m_agent;
@@ -116,6 +100,22 @@ void SyncProxyOrganizationOperatorsRequest::SetAgent(const Agent& _agent)
 bool SyncProxyOrganizationOperatorsRequest::AgentHasBeenSet() const
 {
     return m_agentHasBeenSet;
+}
+
+string SyncProxyOrganizationOperatorsRequest::GetOperatorType() const
+{
+    return m_operatorType;
+}
+
+void SyncProxyOrganizationOperatorsRequest::SetOperatorType(const string& _operatorType)
+{
+    m_operatorType = _operatorType;
+    m_operatorTypeHasBeenSet = true;
+}
+
+bool SyncProxyOrganizationOperatorsRequest::OperatorTypeHasBeenSet() const
+{
+    return m_operatorTypeHasBeenSet;
 }
 
 vector<ProxyOrganizationOperator> SyncProxyOrganizationOperatorsRequest::GetProxyOrganizationOperators() const

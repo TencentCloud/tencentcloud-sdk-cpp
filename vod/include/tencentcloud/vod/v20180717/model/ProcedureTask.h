@@ -40,7 +40,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 视频处理任务信息
+                * 音视频处理任务信息
                 */
                 class ProcedureTask : public AbstractModel
                 {
@@ -52,14 +52,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取视频处理任务 ID。
-                     * @return TaskId 视频处理任务 ID。
+                     * 获取音视频处理任务 ID。
+                     * @return TaskId 音视频处理任务 ID。
                      */
                     std::string GetTaskId() const;
 
                     /**
-                     * 设置视频处理任务 ID。
-                     * @param TaskId 视频处理任务 ID。
+                     * 设置音视频处理任务 ID。
+                     * @param TaskId 音视频处理任务 ID。
                      */
                     void SetTaskId(const std::string& _taskId);
 
@@ -210,17 +210,17 @@ namespace TencentCloud
                     bool FileUrlHasBeenSet() const;
 
                     /**
-                     * 获取原始视频的元信息。
+                     * 获取原始音视频的元信息。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MetaData 原始视频的元信息。
+                     * @return MetaData 原始音视频的元信息。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     MediaMetaData GetMetaData() const;
 
                     /**
-                     * 设置原始视频的元信息。
+                     * 设置原始音视频的元信息。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MetaData 原始视频的元信息。
+                     * @param MetaData 原始音视频的元信息。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetMetaData(const MediaMetaData& _metaData);
@@ -232,14 +232,14 @@ namespace TencentCloud
                     bool MetaDataHasBeenSet() const;
 
                     /**
-                     * 获取视频处理任务的执行状态与结果。
-                     * @return MediaProcessResultSet 视频处理任务的执行状态与结果。
+                     * 获取音视频处理任务的执行状态与结果。
+                     * @return MediaProcessResultSet 音视频处理任务的执行状态与结果。
                      */
                     std::vector<MediaProcessTaskResult> GetMediaProcessResultSet() const;
 
                     /**
-                     * 设置视频处理任务的执行状态与结果。
-                     * @param MediaProcessResultSet 视频处理任务的执行状态与结果。
+                     * 设置音视频处理任务的执行状态与结果。
+                     * @param MediaProcessResultSet 音视频处理任务的执行状态与结果。
                      */
                     void SetMediaProcessResultSet(const std::vector<MediaProcessTaskResult>& _mediaProcessResultSet);
 
@@ -250,14 +250,14 @@ namespace TencentCloud
                     bool MediaProcessResultSetHasBeenSet() const;
 
                     /**
-                     * 获取视频智能识别任务的执行状态与结果。
-                     * @return AiContentReviewResultSet 视频智能识别任务的执行状态与结果。
+                     * 获取音视频审核任务的执行状态与结果。
+                     * @return AiContentReviewResultSet 音视频审核任务的执行状态与结果。
                      */
                     std::vector<AiContentReviewResult> GetAiContentReviewResultSet() const;
 
                     /**
-                     * 设置视频智能识别任务的执行状态与结果。
-                     * @param AiContentReviewResultSet 视频智能识别任务的执行状态与结果。
+                     * 设置音视频审核任务的执行状态与结果。
+                     * @param AiContentReviewResultSet 音视频审核任务的执行状态与结果。
                      */
                     void SetAiContentReviewResultSet(const std::vector<AiContentReviewResult>& _aiContentReviewResultSet);
 
@@ -268,14 +268,14 @@ namespace TencentCloud
                     bool AiContentReviewResultSetHasBeenSet() const;
 
                     /**
-                     * 获取视频内容分析任务的执行状态与结果。
-                     * @return AiAnalysisResultSet 视频内容分析任务的执行状态与结果。
+                     * 获取音视频内容分析任务的执行状态与结果。
+                     * @return AiAnalysisResultSet 音视频内容分析任务的执行状态与结果。
                      */
                     std::vector<AiAnalysisResult> GetAiAnalysisResultSet() const;
 
                     /**
-                     * 设置视频内容分析任务的执行状态与结果。
-                     * @param AiAnalysisResultSet 视频内容分析任务的执行状态与结果。
+                     * 设置音视频内容分析任务的执行状态与结果。
+                     * @param AiAnalysisResultSet 音视频内容分析任务的执行状态与结果。
                      */
                     void SetAiAnalysisResultSet(const std::vector<AiAnalysisResult>& _aiAnalysisResultSet);
 
@@ -286,14 +286,14 @@ namespace TencentCloud
                     bool AiAnalysisResultSetHasBeenSet() const;
 
                     /**
-                     * 获取视频内容识别任务的执行状态与结果。
-                     * @return AiRecognitionResultSet 视频内容识别任务的执行状态与结果。
+                     * 获取音视频内容识别任务的执行状态与结果。
+                     * @return AiRecognitionResultSet 音视频内容识别任务的执行状态与结果。
                      */
                     std::vector<AiRecognitionResult> GetAiRecognitionResultSet() const;
 
                     /**
-                     * 设置视频内容识别任务的执行状态与结果。
-                     * @param AiRecognitionResultSet 视频内容识别任务的执行状态与结果。
+                     * 设置音视频内容识别任务的执行状态与结果。
+                     * @param AiRecognitionResultSet 音视频内容识别任务的执行状态与结果。
                      */
                     void SetAiRecognitionResultSet(const std::vector<AiRecognitionResult>& _aiRecognitionResultSet);
 
@@ -390,7 +390,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 视频处理任务 ID。
+                     * 音视频处理任务 ID。
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;
@@ -440,32 +440,32 @@ namespace TencentCloud
                     bool m_fileUrlHasBeenSet;
 
                     /**
-                     * 原始视频的元信息。
+                     * 原始音视频的元信息。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     MediaMetaData m_metaData;
                     bool m_metaDataHasBeenSet;
 
                     /**
-                     * 视频处理任务的执行状态与结果。
+                     * 音视频处理任务的执行状态与结果。
                      */
                     std::vector<MediaProcessTaskResult> m_mediaProcessResultSet;
                     bool m_mediaProcessResultSetHasBeenSet;
 
                     /**
-                     * 视频智能识别任务的执行状态与结果。
+                     * 音视频审核任务的执行状态与结果。
                      */
                     std::vector<AiContentReviewResult> m_aiContentReviewResultSet;
                     bool m_aiContentReviewResultSetHasBeenSet;
 
                     /**
-                     * 视频内容分析任务的执行状态与结果。
+                     * 音视频内容分析任务的执行状态与结果。
                      */
                     std::vector<AiAnalysisResult> m_aiAnalysisResultSet;
                     bool m_aiAnalysisResultSetHasBeenSet;
 
                     /**
-                     * 视频内容识别任务的执行状态与结果。
+                     * 音视频内容识别任务的执行状态与结果。
                      */
                     std::vector<AiRecognitionResult> m_aiRecognitionResultSet;
                     bool m_aiRecognitionResultSetHasBeenSet;

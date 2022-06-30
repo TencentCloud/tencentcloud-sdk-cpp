@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 智能识别涉及令人不安全的信息的任务输入参数类型
+                * 音视频审核涉及令人不安全的信息的任务输入参数类型
                 */
                 class AiReviewTerrorismTaskInput : public AbstractModel
                 {

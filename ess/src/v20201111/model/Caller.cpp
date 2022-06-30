@@ -23,8 +23,8 @@ using namespace std;
 Caller::Caller() :
     m_applicationIdHasBeenSet(false),
     m_organizationIdHasBeenSet(false),
-    m_subOrganizationIdHasBeenSet(false),
-    m_operatorIdHasBeenSet(false)
+    m_operatorIdHasBeenSet(false),
+    m_subOrganizationIdHasBeenSet(false)
 {
 }
 
@@ -53,16 +53,6 @@ CoreInternalOutcome Caller::Deserialize(const rapidjson::Value &value)
         m_organizationIdHasBeenSet = true;
     }
 
-    if (value.HasMember("SubOrganizationId") && !value["SubOrganizationId"].IsNull())
-    {
-        if (!value["SubOrganizationId"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `Caller.SubOrganizationId` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_subOrganizationId = string(value["SubOrganizationId"].GetString());
-        m_subOrganizationIdHasBeenSet = true;
-    }
-
     if (value.HasMember("OperatorId") && !value["OperatorId"].IsNull())
     {
         if (!value["OperatorId"].IsString())
@@ -71,6 +61,16 @@ CoreInternalOutcome Caller::Deserialize(const rapidjson::Value &value)
         }
         m_operatorId = string(value["OperatorId"].GetString());
         m_operatorIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("SubOrganizationId") && !value["SubOrganizationId"].IsNull())
+    {
+        if (!value["SubOrganizationId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Caller.SubOrganizationId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subOrganizationId = string(value["SubOrganizationId"].GetString());
+        m_subOrganizationIdHasBeenSet = true;
     }
 
 
@@ -96,20 +96,20 @@ void Caller::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocato
         value.AddMember(iKey, rapidjson::Value(m_organizationId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_subOrganizationIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SubOrganizationId";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_subOrganizationId.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_operatorIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OperatorId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_operatorId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subOrganizationIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubOrganizationId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subOrganizationId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -147,22 +147,6 @@ bool Caller::OrganizationIdHasBeenSet() const
     return m_organizationIdHasBeenSet;
 }
 
-string Caller::GetSubOrganizationId() const
-{
-    return m_subOrganizationId;
-}
-
-void Caller::SetSubOrganizationId(const string& _subOrganizationId)
-{
-    m_subOrganizationId = _subOrganizationId;
-    m_subOrganizationIdHasBeenSet = true;
-}
-
-bool Caller::SubOrganizationIdHasBeenSet() const
-{
-    return m_subOrganizationIdHasBeenSet;
-}
-
 string Caller::GetOperatorId() const
 {
     return m_operatorId;
@@ -177,5 +161,21 @@ void Caller::SetOperatorId(const string& _operatorId)
 bool Caller::OperatorIdHasBeenSet() const
 {
     return m_operatorIdHasBeenSet;
+}
+
+string Caller::GetSubOrganizationId() const
+{
+    return m_subOrganizationId;
+}
+
+void Caller::SetSubOrganizationId(const string& _subOrganizationId)
+{
+    m_subOrganizationId = _subOrganizationId;
+    m_subOrganizationIdHasBeenSet = true;
+}
+
+bool Caller::SubOrganizationIdHasBeenSet() const
+{
+    return m_subOrganizationIdHasBeenSet;
 }
 

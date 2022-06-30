@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取图片智能识别次数统计数据，展示查询时间范围内的图片智能识别次数的概览数据。
-                     * @return ImageReviewUsageDataSet 图片智能识别次数统计数据，展示查询时间范围内的图片智能识别次数的概览数据。
+                     * 获取图片审核次数统计数据，展示查询时间范围内的图片审核次数的概览数据。
+                     * @return ImageReviewUsageDataSet 图片审核次数统计数据，展示查询时间范围内的图片审核次数的概览数据。
                      */
                     std::vector<ImageReviewUsageDataItem> GetImageReviewUsageDataSet() const;
 
@@ -59,7 +59,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 图片智能识别次数统计数据，展示查询时间范围内的图片智能识别次数的概览数据。
+                     * 图片审核次数统计数据，展示查询时间范围内的图片审核次数的概览数据。
                      */
                     std::vector<ImageReviewUsageDataItem> m_imageReviewUsageDataSet;
                     bool m_imageReviewUsageDataSetHasBeenSet;

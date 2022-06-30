@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 智能识别 Asr 文字涉及令人不适宜的信息、违规任务输入参数类型
+                * 音视频审核 Asr 文字涉及令人不适宜的信息、违规任务输入参数类型
                 */
                 class AiReviewPoliticalAsrTaskInput : public AbstractModel
                 {

@@ -20,6 +20,7 @@ set(eb_public_header
 
 set(eb_public_header_model
   include/tencentcloud/eb/v20210416/model/ListConnectionsResponse.h
+  include/tencentcloud/eb/v20210416/model/ESTargetParams.h
   include/tencentcloud/eb/v20210416/model/GetEventBusResponse.h
   include/tencentcloud/eb/v20210416/model/RetryPolicy.h
   include/tencentcloud/eb/v20210416/model/CkafkaTargetParams.h
@@ -98,6 +99,7 @@ set(eb_public_header_model
 set(eb_src
   src/v20210416/EbClient.cpp
   src/v20210416/model/ListConnectionsResponse.cpp
+  src/v20210416/model/ESTargetParams.cpp
   src/v20210416/model/GetEventBusResponse.cpp
   src/v20210416/model/RetryPolicy.cpp
   src/v20210416/model/CkafkaTargetParams.cpp

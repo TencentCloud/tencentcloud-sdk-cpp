@@ -88,17 +88,17 @@ namespace TencentCloud
                     bool ThirdPayOrderIdHasBeenSet() const;
 
                     /**
-                     * 获取小程序跳转参数渠道为TENPAY，付款方式为EBANK_PAYMENT时必选。
+                     * 获取跳转参数渠道为TENPAY，付款方式为EBANK_PAYMENT时必选。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RedirectInfo 小程序跳转参数渠道为TENPAY，付款方式为EBANK_PAYMENT时必选。
+                     * @return RedirectInfo 跳转参数渠道为TENPAY，付款方式为EBANK_PAYMENT时必选。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     OpenBankRedirectInfo GetRedirectInfo() const;
 
                     /**
-                     * 设置小程序跳转参数渠道为TENPAY，付款方式为EBANK_PAYMENT时必选。
+                     * 设置跳转参数渠道为TENPAY，付款方式为EBANK_PAYMENT时必选。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RedirectInfo 小程序跳转参数渠道为TENPAY，付款方式为EBANK_PAYMENT时必选。
+                     * @param RedirectInfo 跳转参数渠道为TENPAY，付款方式为EBANK_PAYMENT时必选。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetRedirectInfo(const OpenBankRedirectInfo& _redirectInfo);
@@ -143,7 +143,7 @@ namespace TencentCloud
                     bool m_thirdPayOrderIdHasBeenSet;
 
                     /**
-                     * 小程序跳转参数渠道为TENPAY，付款方式为EBANK_PAYMENT时必选。
+                     * 跳转参数渠道为TENPAY，付款方式为EBANK_PAYMENT时必选。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     OpenBankRedirectInfo m_redirectInfo;

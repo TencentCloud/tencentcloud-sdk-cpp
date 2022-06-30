@@ -23,8 +23,8 @@ using namespace TencentCloud::Essbasic::V20210526::Model;
 using namespace std;
 
 UploadFilesRequest::UploadFilesRequest() :
-    m_businessTypeHasBeenSet(false),
     m_agentHasBeenSet(false),
+    m_businessTypeHasBeenSet(false),
     m_fileInfosHasBeenSet(false),
     m_operatorHasBeenSet(false)
 {
@@ -37,14 +37,6 @@ string UploadFilesRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_businessTypeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "BusinessType";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_businessType.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_agentHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -52,6 +44,14 @@ string UploadFilesRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_agent.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_businessTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BusinessType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_businessType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_fileInfosHasBeenSet)
@@ -86,22 +86,6 @@ string UploadFilesRequest::ToJsonString() const
 }
 
 
-string UploadFilesRequest::GetBusinessType() const
-{
-    return m_businessType;
-}
-
-void UploadFilesRequest::SetBusinessType(const string& _businessType)
-{
-    m_businessType = _businessType;
-    m_businessTypeHasBeenSet = true;
-}
-
-bool UploadFilesRequest::BusinessTypeHasBeenSet() const
-{
-    return m_businessTypeHasBeenSet;
-}
-
 Agent UploadFilesRequest::GetAgent() const
 {
     return m_agent;
@@ -116,6 +100,22 @@ void UploadFilesRequest::SetAgent(const Agent& _agent)
 bool UploadFilesRequest::AgentHasBeenSet() const
 {
     return m_agentHasBeenSet;
+}
+
+string UploadFilesRequest::GetBusinessType() const
+{
+    return m_businessType;
+}
+
+void UploadFilesRequest::SetBusinessType(const string& _businessType)
+{
+    m_businessType = _businessType;
+    m_businessTypeHasBeenSet = true;
+}
+
+bool UploadFilesRequest::BusinessTypeHasBeenSet() const
+{
+    return m_businessTypeHasBeenSet;
 }
 
 vector<UploadFile> UploadFilesRequest::GetFileInfos() const

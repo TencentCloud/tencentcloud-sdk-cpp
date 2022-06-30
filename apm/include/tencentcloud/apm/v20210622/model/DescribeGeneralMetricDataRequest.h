@@ -44,42 +44,42 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取要过滤的维度信息，支持：service.name（服务名）、span.kind（客户端/服务端视角）为维度进行过滤。
-
+                     * 获取要过滤的维度信息
+service_metric视图支持：service.name（服务名）、span.kind（客户端/服务端视角）为维度进行过滤。
 span.kind:
-
-       server:服务端视角
-       client:客户端视角
-
+	server:服务端视角
+	client:客户端视角
 默认为服务端视角进行查询。
-                     * @return Filters 要过滤的维度信息，支持：service.name（服务名）、span.kind（客户端/服务端视角）为维度进行过滤。
-
+runtime_metric视图支持：service.name（服务名）维度进行过滤。
+sql_metric视图支持：service.name（服务名）维度进行过滤。
+                     * @return Filters 要过滤的维度信息
+service_metric视图支持：service.name（服务名）、span.kind（客户端/服务端视角）为维度进行过滤。
 span.kind:
-
-       server:服务端视角
-       client:客户端视角
-
+	server:服务端视角
+	client:客户端视角
 默认为服务端视角进行查询。
+runtime_metric视图支持：service.name（服务名）维度进行过滤。
+sql_metric视图支持：service.name（服务名）维度进行过滤。
                      */
                     std::vector<GeneralFilter> GetFilters() const;
 
                     /**
-                     * 设置要过滤的维度信息，支持：service.name（服务名）、span.kind（客户端/服务端视角）为维度进行过滤。
-
+                     * 设置要过滤的维度信息
+service_metric视图支持：service.name（服务名）、span.kind（客户端/服务端视角）为维度进行过滤。
 span.kind:
-
-       server:服务端视角
-       client:客户端视角
-
+	server:服务端视角
+	client:客户端视角
 默认为服务端视角进行查询。
-                     * @param Filters 要过滤的维度信息，支持：service.name（服务名）、span.kind（客户端/服务端视角）为维度进行过滤。
-
+runtime_metric视图支持：service.name（服务名）维度进行过滤。
+sql_metric视图支持：service.name（服务名）维度进行过滤。
+                     * @param Filters 要过滤的维度信息
+service_metric视图支持：service.name（服务名）、span.kind（客户端/服务端视角）为维度进行过滤。
 span.kind:
-
-       server:服务端视角
-       client:客户端视角
-
+	server:服务端视角
+	client:客户端视角
 默认为服务端视角进行查询。
+runtime_metric视图支持：service.name（服务名）维度进行过滤。
+sql_metric视图支持：service.name（服务名）维度进行过滤。
                      */
                     void SetFilters(const std::vector<GeneralFilter>& _filters);
 
@@ -90,14 +90,26 @@ span.kind:
                     bool FiltersHasBeenSet() const;
 
                     /**
-                     * 获取需要查询的指标，不可自定义输入。支持：service_request_count（总请求）、service_duration（平均响应时间）的指标数据。
-                     * @return Metrics 需要查询的指标，不可自定义输入。支持：service_request_count（总请求）、service_duration（平均响应时间）的指标数据。
+                     * 获取需要查询的指标，不可自定义输入。
+service_metric视图支持：service_request_count（总请求）、service_duration（平均响应时间）、service_error_req_rate（平均错误率）、service_slow_call_count（慢调用）、service_error_request_count（异常数量）。
+runtime_metric视图支持：service_gc_full_count（Full GC）。
+sql_metric视图支持：service_slow_sql_count（慢sql）。
+                     * @return Metrics 需要查询的指标，不可自定义输入。
+service_metric视图支持：service_request_count（总请求）、service_duration（平均响应时间）、service_error_req_rate（平均错误率）、service_slow_call_count（慢调用）、service_error_request_count（异常数量）。
+runtime_metric视图支持：service_gc_full_count（Full GC）。
+sql_metric视图支持：service_slow_sql_count（慢sql）。
                      */
                     std::vector<std::string> GetMetrics() const;
 
                     /**
-                     * 设置需要查询的指标，不可自定义输入。支持：service_request_count（总请求）、service_duration（平均响应时间）的指标数据。
-                     * @param Metrics 需要查询的指标，不可自定义输入。支持：service_request_count（总请求）、service_duration（平均响应时间）的指标数据。
+                     * 设置需要查询的指标，不可自定义输入。
+service_metric视图支持：service_request_count（总请求）、service_duration（平均响应时间）、service_error_req_rate（平均错误率）、service_slow_call_count（慢调用）、service_error_request_count（异常数量）。
+runtime_metric视图支持：service_gc_full_count（Full GC）。
+sql_metric视图支持：service_slow_sql_count（慢sql）。
+                     * @param Metrics 需要查询的指标，不可自定义输入。
+service_metric视图支持：service_request_count（总请求）、service_duration（平均响应时间）、service_error_req_rate（平均错误率）、service_slow_call_count（慢调用）、service_error_request_count（异常数量）。
+runtime_metric视图支持：service_gc_full_count（Full GC）。
+sql_metric视图支持：service_slow_sql_count（慢sql）。
                      */
                     void SetMetrics(const std::vector<std::string>& _metrics);
 
@@ -126,14 +138,14 @@ span.kind:
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取视图名称，不可自定义输入。支持：service_metric
-                     * @return ViewName 视图名称，不可自定义输入。支持：service_metric
+                     * 获取视图名称，不可自定义输入。支持：service_metric、runtime_metric、sql_metric。
+                     * @return ViewName 视图名称，不可自定义输入。支持：service_metric、runtime_metric、sql_metric。
                      */
                     std::string GetViewName() const;
 
                     /**
-                     * 设置视图名称，不可自定义输入。支持：service_metric
-                     * @param ViewName 视图名称，不可自定义输入。支持：service_metric
+                     * 设置视图名称，不可自定义输入。支持：service_metric、runtime_metric、sql_metric。
+                     * @param ViewName 视图名称，不可自定义输入。支持：service_metric、runtime_metric、sql_metric。
                      */
                     void SetViewName(const std::string& _viewName);
 
@@ -144,14 +156,26 @@ span.kind:
                     bool ViewNameHasBeenSet() const;
 
                     /**
-                     * 获取聚合维度，支持：service.name（服务名）、span.kind （客户端/服务端视角）维度进行聚合。
-                     * @return GroupBy 聚合维度，支持：service.name（服务名）、span.kind （客户端/服务端视角）维度进行聚合。
+                     * 获取聚合维度
+service_metric视图支持：service.name（服务名）、span.kind （客户端/服务端视角）维度进行聚合。
+runtime_metric视图支持：service.name（服务名）维度进行聚合。
+sql_metric视图支持：service.name（服务名）维度进行聚合。
+                     * @return GroupBy 聚合维度
+service_metric视图支持：service.name（服务名）、span.kind （客户端/服务端视角）维度进行聚合。
+runtime_metric视图支持：service.name（服务名）维度进行聚合。
+sql_metric视图支持：service.name（服务名）维度进行聚合。
                      */
                     std::vector<std::string> GetGroupBy() const;
 
                     /**
-                     * 设置聚合维度，支持：service.name（服务名）、span.kind （客户端/服务端视角）维度进行聚合。
-                     * @param GroupBy 聚合维度，支持：service.name（服务名）、span.kind （客户端/服务端视角）维度进行聚合。
+                     * 设置聚合维度
+service_metric视图支持：service.name（服务名）、span.kind （客户端/服务端视角）维度进行聚合。
+runtime_metric视图支持：service.name（服务名）维度进行聚合。
+sql_metric视图支持：service.name（服务名）维度进行聚合。
+                     * @param GroupBy 聚合维度
+service_metric视图支持：service.name（服务名）、span.kind （客户端/服务端视角）维度进行聚合。
+runtime_metric视图支持：service.name（服务名）维度进行聚合。
+sql_metric视图支持：service.name（服务名）维度进行聚合。
                      */
                     void SetGroupBy(const std::vector<std::string>& _groupBy);
 
@@ -218,20 +242,23 @@ span.kind:
                 private:
 
                     /**
-                     * 要过滤的维度信息，支持：service.name（服务名）、span.kind（客户端/服务端视角）为维度进行过滤。
-
+                     * 要过滤的维度信息
+service_metric视图支持：service.name（服务名）、span.kind（客户端/服务端视角）为维度进行过滤。
 span.kind:
-
-       server:服务端视角
-       client:客户端视角
-
+	server:服务端视角
+	client:客户端视角
 默认为服务端视角进行查询。
+runtime_metric视图支持：service.name（服务名）维度进行过滤。
+sql_metric视图支持：service.name（服务名）维度进行过滤。
                      */
                     std::vector<GeneralFilter> m_filters;
                     bool m_filtersHasBeenSet;
 
                     /**
-                     * 需要查询的指标，不可自定义输入。支持：service_request_count（总请求）、service_duration（平均响应时间）的指标数据。
+                     * 需要查询的指标，不可自定义输入。
+service_metric视图支持：service_request_count（总请求）、service_duration（平均响应时间）、service_error_req_rate（平均错误率）、service_slow_call_count（慢调用）、service_error_request_count（异常数量）。
+runtime_metric视图支持：service_gc_full_count（Full GC）。
+sql_metric视图支持：service_slow_sql_count（慢sql）。
                      */
                     std::vector<std::string> m_metrics;
                     bool m_metricsHasBeenSet;
@@ -243,13 +270,16 @@ span.kind:
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 视图名称，不可自定义输入。支持：service_metric
+                     * 视图名称，不可自定义输入。支持：service_metric、runtime_metric、sql_metric。
                      */
                     std::string m_viewName;
                     bool m_viewNameHasBeenSet;
 
                     /**
-                     * 聚合维度，支持：service.name（服务名）、span.kind （客户端/服务端视角）维度进行聚合。
+                     * 聚合维度
+service_metric视图支持：service.name（服务名）、span.kind （客户端/服务端视角）维度进行聚合。
+runtime_metric视图支持：service.name（服务名）维度进行聚合。
+sql_metric视图支持：service.name（服务名）维度进行聚合。
                      */
                     std::vector<std::string> m_groupBy;
                     bool m_groupByHasBeenSet;

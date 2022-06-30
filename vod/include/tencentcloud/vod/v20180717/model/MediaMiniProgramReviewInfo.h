@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 小程序智能识别信息
+                * 小程序音视频审核信息
                 */
                 class MediaMiniProgramReviewInfo : public AbstractModel
                 {
@@ -48,14 +48,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取智能识别信息列表。
-                     * @return MiniProgramReviewList 智能识别信息列表。
+                     * 获取音视频审核信息列表。
+                     * @return MiniProgramReviewList 音视频审核信息列表。
                      */
                     std::vector<MediaMiniProgramReviewInfoItem> GetMiniProgramReviewList() const;
 
                     /**
-                     * 设置智能识别信息列表。
-                     * @param MiniProgramReviewList 智能识别信息列表。
+                     * 设置音视频审核信息列表。
+                     * @param MiniProgramReviewList 音视频审核信息列表。
                      */
                     void SetMiniProgramReviewList(const std::vector<MediaMiniProgramReviewInfoItem>& _miniProgramReviewList);
 
@@ -68,7 +68,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 智能识别信息列表。
+                     * 音视频审核信息列表。
                      */
                     std::vector<MediaMiniProgramReviewInfoItem> m_miniProgramReviewList;
                     bool m_miniProgramReviewListHasBeenSet;

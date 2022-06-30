@@ -221,6 +221,20 @@ namespace TencentCloud
                      */
                     bool StoppingAllHasBeenSet() const;
 
+                    /**
+                     * 获取扫描出漏洞个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return VulCount 扫描出漏洞个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetVulCount() const;
+
+                    /**
+                     * 判断参数 VulCount 是否已赋值
+                     * @return VulCount 是否已赋值
+                     */
+                    bool VulCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -310,6 +324,13 @@ namespace TencentCloud
                      */
                     bool m_stoppingAll;
                     bool m_stoppingAllHasBeenSet;
+
+                    /**
+                     * 扫描出漏洞个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_vulCount;
+                    bool m_vulCountHasBeenSet;
 
                 };
             }

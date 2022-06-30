@@ -40,6 +40,7 @@ set(ccc_public_header_model
   include/tencentcloud/ccc/v20200210/model/DescribeAutoCalloutTaskRequest.h
   include/tencentcloud/ccc/v20200210/model/SkillGroupItem.h
   include/tencentcloud/ccc/v20200210/model/CreateUserSigResponse.h
+  include/tencentcloud/ccc/v20200210/model/ModifyStaffRequest.h
   include/tencentcloud/ccc/v20200210/model/DeleteStaffRequest.h
   include/tencentcloud/ccc/v20200210/model/CreateCCCSkillGroupResponse.h
   include/tencentcloud/ccc/v20200210/model/DescribeTelSessionRequest.h
@@ -67,6 +68,7 @@ set(ccc_public_header_model
   include/tencentcloud/ccc/v20200210/model/AutoCalloutTaskInfo.h
   include/tencentcloud/ccc/v20200210/model/StaffInfo.h
   include/tencentcloud/ccc/v20200210/model/PSTNSessionInfo.h
+  include/tencentcloud/ccc/v20200210/model/ModifyStaffResponse.h
   include/tencentcloud/ccc/v20200210/model/ServeParticipant.h
   include/tencentcloud/ccc/v20200210/model/DescribeTelCdrResponse.h
   include/tencentcloud/ccc/v20200210/model/DescribeStaffStatusMetricsResponse.h
@@ -118,6 +120,7 @@ set(ccc_src
   src/v20200210/model/DescribeAutoCalloutTaskRequest.cpp
   src/v20200210/model/SkillGroupItem.cpp
   src/v20200210/model/CreateUserSigResponse.cpp
+  src/v20200210/model/ModifyStaffRequest.cpp
   src/v20200210/model/DeleteStaffRequest.cpp
   src/v20200210/model/CreateCCCSkillGroupResponse.cpp
   src/v20200210/model/DescribeTelSessionRequest.cpp
@@ -145,6 +148,7 @@ set(ccc_src
   src/v20200210/model/AutoCalloutTaskInfo.cpp
   src/v20200210/model/StaffInfo.cpp
   src/v20200210/model/PSTNSessionInfo.cpp
+  src/v20200210/model/ModifyStaffResponse.cpp
   src/v20200210/model/ServeParticipant.cpp
   src/v20200210/model/DescribeTelCdrResponse.cpp
   src/v20200210/model/DescribeStaffStatusMetricsResponse.cpp

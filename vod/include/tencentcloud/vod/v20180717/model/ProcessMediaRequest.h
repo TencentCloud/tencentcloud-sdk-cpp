@@ -101,14 +101,14 @@ namespace TencentCloud
                     bool MediaProcessTaskHasBeenSet() const;
 
                     /**
-                     * 获取视频智能识别类型任务参数。
-                     * @return AiContentReviewTask 视频智能识别类型任务参数。
+                     * 获取音视频内容审核类型任务参数。
+                     * @return AiContentReviewTask 音视频内容审核类型任务参数。
                      */
                     AiContentReviewTaskInput GetAiContentReviewTask() const;
 
                     /**
-                     * 设置视频智能识别类型任务参数。
-                     * @param AiContentReviewTask 视频智能识别类型任务参数。
+                     * 设置音视频内容审核类型任务参数。
+                     * @param AiContentReviewTask 音视频内容审核类型任务参数。
                      */
                     void SetAiContentReviewTask(const AiContentReviewTaskInput& _aiContentReviewTask);
 
@@ -119,14 +119,14 @@ namespace TencentCloud
                     bool AiContentReviewTaskHasBeenSet() const;
 
                     /**
-                     * 获取视频内容分析类型任务参数。
-                     * @return AiAnalysisTask 视频内容分析类型任务参数。
+                     * 获取音视频内容分析类型任务参数。
+                     * @return AiAnalysisTask 音视频内容分析类型任务参数。
                      */
                     AiAnalysisTaskInput GetAiAnalysisTask() const;
 
                     /**
-                     * 设置视频内容分析类型任务参数。
-                     * @param AiAnalysisTask 视频内容分析类型任务参数。
+                     * 设置音视频内容分析类型任务参数。
+                     * @param AiAnalysisTask 音视频内容分析类型任务参数。
                      */
                     void SetAiAnalysisTask(const AiAnalysisTaskInput& _aiAnalysisTask);
 
@@ -137,14 +137,14 @@ namespace TencentCloud
                     bool AiAnalysisTaskHasBeenSet() const;
 
                     /**
-                     * 获取视频内容识别类型任务参数。
-                     * @return AiRecognitionTask 视频内容识别类型任务参数。
+                     * 获取音视频内容识别类型任务参数。
+                     * @return AiRecognitionTask 音视频内容识别类型任务参数。
                      */
                     AiRecognitionTaskInput GetAiRecognitionTask() const;
 
                     /**
-                     * 设置视频内容识别类型任务参数。
-                     * @param AiRecognitionTask 视频内容识别类型任务参数。
+                     * 设置音视频内容识别类型任务参数。
+                     * @param AiRecognitionTask 音视频内容识别类型任务参数。
                      */
                     void SetAiRecognitionTask(const AiRecognitionTaskInput& _aiRecognitionTask);
 
@@ -265,19 +265,19 @@ namespace TencentCloud
                     bool m_mediaProcessTaskHasBeenSet;
 
                     /**
-                     * 视频智能识别类型任务参数。
+                     * 音视频内容审核类型任务参数。
                      */
                     AiContentReviewTaskInput m_aiContentReviewTask;
                     bool m_aiContentReviewTaskHasBeenSet;
 
                     /**
-                     * 视频内容分析类型任务参数。
+                     * 音视频内容分析类型任务参数。
                      */
                     AiAnalysisTaskInput m_aiAnalysisTask;
                     bool m_aiAnalysisTaskHasBeenSet;
 
                     /**
-                     * 视频内容识别类型任务参数。
+                     * 音视频内容识别类型任务参数。
                      */
                     AiRecognitionTaskInput m_aiRecognitionTask;
                     bool m_aiRecognitionTaskHasBeenSet;

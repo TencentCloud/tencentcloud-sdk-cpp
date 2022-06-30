@@ -26,11 +26,11 @@ TemplateInfo::TemplateInfo() :
     m_descriptionHasBeenSet(false),
     m_componentsHasBeenSet(false),
     m_signComponentsHasBeenSet(false),
-    m_creatorHasBeenSet(false),
-    m_createdOnHasBeenSet(false),
-    m_templateTypeHasBeenSet(false),
     m_recipientsHasBeenSet(false),
-    m_isPromoterHasBeenSet(false)
+    m_templateTypeHasBeenSet(false),
+    m_isPromoterHasBeenSet(false),
+    m_creatorHasBeenSet(false),
+    m_createdOnHasBeenSet(false)
 {
 }
 
@@ -109,36 +109,6 @@ CoreInternalOutcome TemplateInfo::Deserialize(const rapidjson::Value &value)
         m_signComponentsHasBeenSet = true;
     }
 
-    if (value.HasMember("Creator") && !value["Creator"].IsNull())
-    {
-        if (!value["Creator"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `TemplateInfo.Creator` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_creator = string(value["Creator"].GetString());
-        m_creatorHasBeenSet = true;
-    }
-
-    if (value.HasMember("CreatedOn") && !value["CreatedOn"].IsNull())
-    {
-        if (!value["CreatedOn"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `TemplateInfo.CreatedOn` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_createdOn = value["CreatedOn"].GetInt64();
-        m_createdOnHasBeenSet = true;
-    }
-
-    if (value.HasMember("TemplateType") && !value["TemplateType"].IsNull())
-    {
-        if (!value["TemplateType"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `TemplateInfo.TemplateType` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_templateType = value["TemplateType"].GetInt64();
-        m_templateTypeHasBeenSet = true;
-    }
-
     if (value.HasMember("Recipients") && !value["Recipients"].IsNull())
     {
         if (!value["Recipients"].IsArray())
@@ -159,6 +129,16 @@ CoreInternalOutcome TemplateInfo::Deserialize(const rapidjson::Value &value)
         m_recipientsHasBeenSet = true;
     }
 
+    if (value.HasMember("TemplateType") && !value["TemplateType"].IsNull())
+    {
+        if (!value["TemplateType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TemplateInfo.TemplateType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_templateType = value["TemplateType"].GetInt64();
+        m_templateTypeHasBeenSet = true;
+    }
+
     if (value.HasMember("IsPromoter") && !value["IsPromoter"].IsNull())
     {
         if (!value["IsPromoter"].IsBool())
@@ -167,6 +147,26 @@ CoreInternalOutcome TemplateInfo::Deserialize(const rapidjson::Value &value)
         }
         m_isPromoter = value["IsPromoter"].GetBool();
         m_isPromoterHasBeenSet = true;
+    }
+
+    if (value.HasMember("Creator") && !value["Creator"].IsNull())
+    {
+        if (!value["Creator"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TemplateInfo.Creator` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_creator = string(value["Creator"].GetString());
+        m_creatorHasBeenSet = true;
+    }
+
+    if (value.HasMember("CreatedOn") && !value["CreatedOn"].IsNull())
+    {
+        if (!value["CreatedOn"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TemplateInfo.CreatedOn` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_createdOn = value["CreatedOn"].GetInt64();
+        m_createdOnHasBeenSet = true;
     }
 
 
@@ -230,30 +230,6 @@ void TemplateInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         }
     }
 
-    if (m_creatorHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Creator";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_creator.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_createdOnHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "CreatedOn";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_createdOn, allocator);
-    }
-
-    if (m_templateTypeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "TemplateType";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_templateType, allocator);
-    }
-
     if (m_recipientsHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -269,12 +245,36 @@ void TemplateInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         }
     }
 
+    if (m_templateTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TemplateType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_templateType, allocator);
+    }
+
     if (m_isPromoterHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IsPromoter";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isPromoter, allocator);
+    }
+
+    if (m_creatorHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Creator";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_creator.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_createdOnHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreatedOn";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_createdOn, allocator);
     }
 
 }
@@ -360,6 +360,54 @@ bool TemplateInfo::SignComponentsHasBeenSet() const
     return m_signComponentsHasBeenSet;
 }
 
+vector<Recipient> TemplateInfo::GetRecipients() const
+{
+    return m_recipients;
+}
+
+void TemplateInfo::SetRecipients(const vector<Recipient>& _recipients)
+{
+    m_recipients = _recipients;
+    m_recipientsHasBeenSet = true;
+}
+
+bool TemplateInfo::RecipientsHasBeenSet() const
+{
+    return m_recipientsHasBeenSet;
+}
+
+int64_t TemplateInfo::GetTemplateType() const
+{
+    return m_templateType;
+}
+
+void TemplateInfo::SetTemplateType(const int64_t& _templateType)
+{
+    m_templateType = _templateType;
+    m_templateTypeHasBeenSet = true;
+}
+
+bool TemplateInfo::TemplateTypeHasBeenSet() const
+{
+    return m_templateTypeHasBeenSet;
+}
+
+bool TemplateInfo::GetIsPromoter() const
+{
+    return m_isPromoter;
+}
+
+void TemplateInfo::SetIsPromoter(const bool& _isPromoter)
+{
+    m_isPromoter = _isPromoter;
+    m_isPromoterHasBeenSet = true;
+}
+
+bool TemplateInfo::IsPromoterHasBeenSet() const
+{
+    return m_isPromoterHasBeenSet;
+}
+
 string TemplateInfo::GetCreator() const
 {
     return m_creator;
@@ -390,53 +438,5 @@ void TemplateInfo::SetCreatedOn(const int64_t& _createdOn)
 bool TemplateInfo::CreatedOnHasBeenSet() const
 {
     return m_createdOnHasBeenSet;
-}
-
-int64_t TemplateInfo::GetTemplateType() const
-{
-    return m_templateType;
-}
-
-void TemplateInfo::SetTemplateType(const int64_t& _templateType)
-{
-    m_templateType = _templateType;
-    m_templateTypeHasBeenSet = true;
-}
-
-bool TemplateInfo::TemplateTypeHasBeenSet() const
-{
-    return m_templateTypeHasBeenSet;
-}
-
-vector<Recipient> TemplateInfo::GetRecipients() const
-{
-    return m_recipients;
-}
-
-void TemplateInfo::SetRecipients(const vector<Recipient>& _recipients)
-{
-    m_recipients = _recipients;
-    m_recipientsHasBeenSet = true;
-}
-
-bool TemplateInfo::RecipientsHasBeenSet() const
-{
-    return m_recipientsHasBeenSet;
-}
-
-bool TemplateInfo::GetIsPromoter() const
-{
-    return m_isPromoter;
-}
-
-void TemplateInfo::SetIsPromoter(const bool& _isPromoter)
-{
-    m_isPromoter = _isPromoter;
-    m_isPromoterHasBeenSet = true;
-}
-
-bool TemplateInfo::IsPromoterHasBeenSet() const
-{
-    return m_isPromoterHasBeenSet;
 }
 

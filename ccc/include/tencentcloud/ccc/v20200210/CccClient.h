@@ -69,6 +69,8 @@
 #include <tencentcloud/ccc/v20200210/model/DescribeTelCdrResponse.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeTelSessionRequest.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeTelSessionResponse.h>
+#include <tencentcloud/ccc/v20200210/model/ModifyStaffRequest.h>
+#include <tencentcloud/ccc/v20200210/model/ModifyStaffResponse.h>
 #include <tencentcloud/ccc/v20200210/model/StopAutoCalloutTaskRequest.h>
 #include <tencentcloud/ccc/v20200210/model/StopAutoCalloutTaskResponse.h>
 #include <tencentcloud/ccc/v20200210/model/UnbindStaffSkillGroupListRequest.h>
@@ -156,6 +158,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeTelSessionResponse> DescribeTelSessionOutcome;
                 typedef std::future<DescribeTelSessionOutcome> DescribeTelSessionOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::DescribeTelSessionRequest&, DescribeTelSessionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTelSessionAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyStaffResponse> ModifyStaffOutcome;
+                typedef std::future<ModifyStaffOutcome> ModifyStaffOutcomeCallable;
+                typedef std::function<void(const CccClient*, const Model::ModifyStaffRequest&, ModifyStaffOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyStaffAsyncHandler;
                 typedef Outcome<Core::Error, Model::StopAutoCalloutTaskResponse> StopAutoCalloutTaskOutcome;
                 typedef std::future<StopAutoCalloutTaskOutcome> StopAutoCalloutTaskOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::StopAutoCalloutTaskRequest&, StopAutoCalloutTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopAutoCalloutTaskAsyncHandler;
@@ -373,6 +378,15 @@ namespace TencentCloud
                 DescribeTelSessionOutcome DescribeTelSession(const Model::DescribeTelSessionRequest &request);
                 void DescribeTelSessionAsync(const Model::DescribeTelSessionRequest& request, const DescribeTelSessionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeTelSessionOutcomeCallable DescribeTelSessionCallable(const Model::DescribeTelSessionRequest& request);
+
+                /**
+                 *修改客服账号
+                 * @param req ModifyStaffRequest
+                 * @return ModifyStaffOutcome
+                 */
+                ModifyStaffOutcome ModifyStaff(const Model::ModifyStaffRequest &request);
+                void ModifyStaffAsync(const Model::ModifyStaffRequest& request, const ModifyStaffAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyStaffOutcomeCallable ModifyStaffCallable(const Model::ModifyStaffRequest& request);
 
                 /**
                  *停止自动外呼任务

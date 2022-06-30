@@ -67,6 +67,24 @@ namespace TencentCloud
                     bool AgentHasBeenSet() const;
 
                     /**
+                     * 获取查询资源所对应的签署流程Id，最多支持50个。
+                     * @return FlowIds 查询资源所对应的签署流程Id，最多支持50个。
+                     */
+                    std::vector<std::string> GetFlowIds() const;
+
+                    /**
+                     * 设置查询资源所对应的签署流程Id，最多支持50个。
+                     * @param FlowIds 查询资源所对应的签署流程Id，最多支持50个。
+                     */
+                    void SetFlowIds(const std::vector<std::string>& _flowIds);
+
+                    /**
+                     * 判断参数 FlowIds 是否已赋值
+                     * @return FlowIds 是否已赋值
+                     */
+                    bool FlowIdsHasBeenSet() const;
+
+                    /**
                      * 获取操作者的信息
                      * @return Operator 操作者的信息
                      */
@@ -84,24 +102,6 @@ namespace TencentCloud
                      */
                     bool OperatorHasBeenSet() const;
 
-                    /**
-                     * 获取查询资源所对应的流程Id
-                     * @return FlowIds 查询资源所对应的流程Id
-                     */
-                    std::vector<std::string> GetFlowIds() const;
-
-                    /**
-                     * 设置查询资源所对应的流程Id
-                     * @param FlowIds 查询资源所对应的流程Id
-                     */
-                    void SetFlowIds(const std::vector<std::string>& _flowIds);
-
-                    /**
-                     * 判断参数 FlowIds 是否已赋值
-                     * @return FlowIds 是否已赋值
-                     */
-                    bool FlowIdsHasBeenSet() const;
-
                 private:
 
                     /**
@@ -112,16 +112,16 @@ namespace TencentCloud
                     bool m_agentHasBeenSet;
 
                     /**
+                     * 查询资源所对应的签署流程Id，最多支持50个。
+                     */
+                    std::vector<std::string> m_flowIds;
+                    bool m_flowIdsHasBeenSet;
+
+                    /**
                      * 操作者的信息
                      */
                     UserInfo m_operator;
                     bool m_operatorHasBeenSet;
-
-                    /**
-                     * 查询资源所对应的流程Id
-                     */
-                    std::vector<std::string> m_flowIds;
-                    bool m_flowIdsHasBeenSet;
 
                 };
             }

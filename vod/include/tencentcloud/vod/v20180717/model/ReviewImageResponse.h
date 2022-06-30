@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取图片智能识别任务结果。
-                     * @return ReviewResultSet 图片智能识别任务结果。
+                     * 获取图片审核任务结果。
+                     * @return ReviewResultSet 图片审核任务结果。
                      */
                     std::vector<ContentReviewResult> GetReviewResultSet() const;
 
@@ -59,7 +59,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 图片智能识别任务结果。
+                     * 图片审核任务结果。
                      */
                     std::vector<ContentReviewResult> m_reviewResultSet;
                     bool m_reviewResultSetHasBeenSet;

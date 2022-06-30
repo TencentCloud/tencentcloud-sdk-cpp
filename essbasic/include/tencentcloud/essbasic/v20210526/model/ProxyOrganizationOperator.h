@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取经办人ID（渠道颁发）
-                     * @return Id 经办人ID（渠道颁发）
+                     * 获取经办人ID（渠道颁发），最大长度64个字符
+                     * @return Id 经办人ID（渠道颁发），最大长度64个字符
                      */
                     std::string GetId() const;
 
                     /**
-                     * 设置经办人ID（渠道颁发）
-                     * @param Id 经办人ID（渠道颁发）
+                     * 设置经办人ID（渠道颁发），最大长度64个字符
+                     * @param Id 经办人ID（渠道颁发），最大长度64个字符
                      */
                     void SetId(const std::string& _id);
 
@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取经办人姓名
-                     * @return Name 经办人姓名
+                     * 获取经办人姓名，最大长度50个字符
+                     * @return Name 经办人姓名，最大长度50个字符
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置经办人姓名
-                     * @param Name 经办人姓名
+                     * 设置经办人姓名，最大长度50个字符
+                     * @param Name 经办人姓名，最大长度50个字符
                      */
                     void SetName(const std::string& _name);
 
@@ -84,29 +84,25 @@ namespace TencentCloud
 
                     /**
                      * 获取经办人身份证件类型
-用户证件类型：默认ID_CARD
-1. ID_CARD - 居民身份证
-2. HOUSEHOLD_REGISTER - 户口本
-3. TEMP_ID_CARD - 临时居民身份证
+1.ID_CARD 居民身份证
+2.HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证
+3.HONGKONG_AND_MACAO 港澳居民来往内地通行证
                      * @return IdCardType 经办人身份证件类型
-用户证件类型：默认ID_CARD
-1. ID_CARD - 居民身份证
-2. HOUSEHOLD_REGISTER - 户口本
-3. TEMP_ID_CARD - 临时居民身份证
+1.ID_CARD 居民身份证
+2.HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证
+3.HONGKONG_AND_MACAO 港澳居民来往内地通行证
                      */
                     std::string GetIdCardType() const;
 
                     /**
                      * 设置经办人身份证件类型
-用户证件类型：默认ID_CARD
-1. ID_CARD - 居民身份证
-2. HOUSEHOLD_REGISTER - 户口本
-3. TEMP_ID_CARD - 临时居民身份证
+1.ID_CARD 居民身份证
+2.HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证
+3.HONGKONG_AND_MACAO 港澳居民来往内地通行证
                      * @param IdCardType 经办人身份证件类型
-用户证件类型：默认ID_CARD
-1. ID_CARD - 居民身份证
-2. HOUSEHOLD_REGISTER - 户口本
-3. TEMP_ID_CARD - 临时居民身份证
+1.ID_CARD 居民身份证
+2.HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证
+3.HONGKONG_AND_MACAO 港澳居民来往内地通行证
                      */
                     void SetIdCardType(const std::string& _idCardType);
 
@@ -117,14 +113,14 @@ namespace TencentCloud
                     bool IdCardTypeHasBeenSet() const;
 
                     /**
-                     * 获取经办人身份证号
-                     * @return IdCardNumber 经办人身份证号
+                     * 获取经办人证件号
+                     * @return IdCardNumber 经办人证件号
                      */
                     std::string GetIdCardNumber() const;
 
                     /**
-                     * 设置经办人身份证号
-                     * @param IdCardNumber 经办人身份证号
+                     * 设置经办人证件号
+                     * @param IdCardNumber 经办人证件号
                      */
                     void SetIdCardNumber(const std::string& _idCardNumber);
 
@@ -135,14 +131,14 @@ namespace TencentCloud
                     bool IdCardNumberHasBeenSet() const;
 
                     /**
-                     * 获取经办人手机号
-                     * @return Mobile 经办人手机号
+                     * 获取经办人手机号，大陆手机号输入11位，暂不支持海外手机号。
+                     * @return Mobile 经办人手机号，大陆手机号输入11位，暂不支持海外手机号。
                      */
                     std::string GetMobile() const;
 
                     /**
-                     * 设置经办人手机号
-                     * @param Mobile 经办人手机号
+                     * 设置经办人手机号，大陆手机号输入11位，暂不支持海外手机号。
+                     * @param Mobile 经办人手机号，大陆手机号输入11位，暂不支持海外手机号。
                      */
                     void SetMobile(const std::string& _mobile);
 
@@ -155,35 +151,34 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 经办人ID（渠道颁发）
+                     * 经办人ID（渠道颁发），最大长度64个字符
                      */
                     std::string m_id;
                     bool m_idHasBeenSet;
 
                     /**
-                     * 经办人姓名
+                     * 经办人姓名，最大长度50个字符
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 经办人身份证件类型
-用户证件类型：默认ID_CARD
-1. ID_CARD - 居民身份证
-2. HOUSEHOLD_REGISTER - 户口本
-3. TEMP_ID_CARD - 临时居民身份证
+1.ID_CARD 居民身份证
+2.HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证
+3.HONGKONG_AND_MACAO 港澳居民来往内地通行证
                      */
                     std::string m_idCardType;
                     bool m_idCardTypeHasBeenSet;
 
                     /**
-                     * 经办人身份证号
+                     * 经办人证件号
                      */
                     std::string m_idCardNumber;
                     bool m_idCardNumberHasBeenSet;
 
                     /**
-                     * 经办人手机号
+                     * 经办人手机号，大陆手机号输入11位，暂不支持海外手机号。
                      */
                     std::string m_mobile;
                     bool m_mobileHasBeenSet;

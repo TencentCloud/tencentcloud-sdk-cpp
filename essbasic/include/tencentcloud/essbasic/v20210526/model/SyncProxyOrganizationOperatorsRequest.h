@@ -46,6 +46,24 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取渠道应用相关信息。 此接口Agent.AppId 和 Agent.ProxyOrganizationOpenId必填。
+                     * @return Agent 渠道应用相关信息。 此接口Agent.AppId 和 Agent.ProxyOrganizationOpenId必填。
+                     */
+                    Agent GetAgent() const;
+
+                    /**
+                     * 设置渠道应用相关信息。 此接口Agent.AppId 和 Agent.ProxyOrganizationOpenId必填。
+                     * @param Agent 渠道应用相关信息。 此接口Agent.AppId 和 Agent.ProxyOrganizationOpenId必填。
+                     */
+                    void SetAgent(const Agent& _agent);
+
+                    /**
+                     * 判断参数 Agent 是否已赋值
+                     * @return Agent 是否已赋值
+                     */
+                    bool AgentHasBeenSet() const;
+
+                    /**
                      * 获取操作类型，新增:"CREATE"，修改:"UPDATE"，离职:"RESIGN"
                      * @return OperatorType 操作类型，新增:"CREATE"，修改:"UPDATE"，离职:"RESIGN"
                      */
@@ -64,32 +82,14 @@ namespace TencentCloud
                     bool OperatorTypeHasBeenSet() const;
 
                     /**
-                     * 获取应用信息
-                     * @return Agent 应用信息
-                     */
-                    Agent GetAgent() const;
-
-                    /**
-                     * 设置应用信息
-                     * @param Agent 应用信息
-                     */
-                    void SetAgent(const Agent& _agent);
-
-                    /**
-                     * 判断参数 Agent 是否已赋值
-                     * @return Agent 是否已赋值
-                     */
-                    bool AgentHasBeenSet() const;
-
-                    /**
-                     * 获取经办人信息列表
-                     * @return ProxyOrganizationOperators 经办人信息列表
+                     * 获取经办人信息列表，最大长度200
+                     * @return ProxyOrganizationOperators 经办人信息列表，最大长度200
                      */
                     std::vector<ProxyOrganizationOperator> GetProxyOrganizationOperators() const;
 
                     /**
-                     * 设置经办人信息列表
-                     * @param ProxyOrganizationOperators 经办人信息列表
+                     * 设置经办人信息列表，最大长度200
+                     * @param ProxyOrganizationOperators 经办人信息列表，最大长度200
                      */
                     void SetProxyOrganizationOperators(const std::vector<ProxyOrganizationOperator>& _proxyOrganizationOperators);
 
@@ -120,19 +120,19 @@ namespace TencentCloud
                 private:
 
                     /**
+                     * 渠道应用相关信息。 此接口Agent.AppId 和 Agent.ProxyOrganizationOpenId必填。
+                     */
+                    Agent m_agent;
+                    bool m_agentHasBeenSet;
+
+                    /**
                      * 操作类型，新增:"CREATE"，修改:"UPDATE"，离职:"RESIGN"
                      */
                     std::string m_operatorType;
                     bool m_operatorTypeHasBeenSet;
 
                     /**
-                     * 应用信息
-                     */
-                    Agent m_agent;
-                    bool m_agentHasBeenSet;
-
-                    /**
-                     * 经办人信息列表
+                     * 经办人信息列表，最大长度200
                      */
                     std::vector<ProxyOrganizationOperator> m_proxyOrganizationOperators;
                     bool m_proxyOrganizationOperatorsHasBeenSet;

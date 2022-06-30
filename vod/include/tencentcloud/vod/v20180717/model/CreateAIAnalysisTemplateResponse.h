@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取视频内容分析模板唯一标识。
-                     * @return Definition 视频内容分析模板唯一标识。
+                     * 获取音视频内容分析模板唯一标识。
+                     * @return Definition 音视频内容分析模板唯一标识。
                      */
                     int64_t GetDefinition() const;
 
@@ -58,7 +58,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 视频内容分析模板唯一标识。
+                     * 音视频内容分析模板唯一标识。
                      */
                     int64_t m_definition;
                     bool m_definitionHasBeenSet;

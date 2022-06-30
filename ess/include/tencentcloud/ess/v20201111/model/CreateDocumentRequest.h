@@ -22,8 +22,8 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/ess/v20201111/model/UserInfo.h>
-#include <tencentcloud/ess/v20201111/model/FormField.h>
 #include <tencentcloud/ess/v20201111/model/Agent.h>
+#include <tencentcloud/ess/v20201111/model/FormField.h>
 
 
 namespace TencentCloud
@@ -46,22 +46,22 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取无
-                     * @return Operator 无
+                     * 获取签署流程编号,由CreateFlow接口返回
+                     * @return FlowId 签署流程编号,由CreateFlow接口返回
                      */
-                    UserInfo GetOperator() const;
+                    std::string GetFlowId() const;
 
                     /**
-                     * 设置无
-                     * @param Operator 无
+                     * 设置签署流程编号,由CreateFlow接口返回
+                     * @param FlowId 签署流程编号,由CreateFlow接口返回
                      */
-                    void SetOperator(const UserInfo& _operator);
+                    void SetFlowId(const std::string& _flowId);
 
                     /**
-                     * 判断参数 Operator 是否已赋值
-                     * @return Operator 是否已赋值
+                     * 判断参数 FlowId 是否已赋值
+                     * @return FlowId 是否已赋值
                      */
-                    bool OperatorHasBeenSet() const;
+                    bool FlowIdHasBeenSet() const;
 
                     /**
                      * 获取用户上传的模板ID
@@ -82,32 +82,14 @@ namespace TencentCloud
                     bool TemplateIdHasBeenSet() const;
 
                     /**
-                     * 获取流程ID
-                     * @return FlowId 流程ID
-                     */
-                    std::string GetFlowId() const;
-
-                    /**
-                     * 设置流程ID
-                     * @param FlowId 流程ID
-                     */
-                    void SetFlowId(const std::string& _flowId);
-
-                    /**
-                     * 判断参数 FlowId 是否已赋值
-                     * @return FlowId 是否已赋值
-                     */
-                    bool FlowIdHasBeenSet() const;
-
-                    /**
-                     * 获取文件名列表
-                     * @return FileNames 文件名列表
+                     * 获取文件名列表,单个文件名最大长度200个字符
+                     * @return FileNames 文件名列表,单个文件名最大长度200个字符
                      */
                     std::vector<std::string> GetFileNames() const;
 
                     /**
-                     * 设置文件名列表
-                     * @param FileNames 文件名列表
+                     * 设置文件名列表,单个文件名最大长度200个字符
+                     * @param FileNames 文件名列表,单个文件名最大长度200个字符
                      */
                     void SetFileNames(const std::vector<std::string>& _fileNames);
 
@@ -118,22 +100,22 @@ namespace TencentCloud
                     bool FileNamesHasBeenSet() const;
 
                     /**
-                     * 获取内容控件信息数组
-                     * @return FormFields 内容控件信息数组
+                     * 获取无
+                     * @return Operator 无
                      */
-                    std::vector<FormField> GetFormFields() const;
+                    UserInfo GetOperator() const;
 
                     /**
-                     * 设置内容控件信息数组
-                     * @param FormFields 内容控件信息数组
+                     * 设置无
+                     * @param Operator 无
                      */
-                    void SetFormFields(const std::vector<FormField>& _formFields);
+                    void SetOperator(const UserInfo& _operator);
 
                     /**
-                     * 判断参数 FormFields 是否已赋值
-                     * @return FormFields 是否已赋值
+                     * 判断参数 Operator 是否已赋值
+                     * @return Operator 是否已赋值
                      */
-                    bool FormFieldsHasBeenSet() const;
+                    bool OperatorHasBeenSet() const;
 
                     /**
                      * 获取应用相关信息
@@ -154,22 +136,22 @@ namespace TencentCloud
                     bool AgentHasBeenSet() const;
 
                     /**
-                     * 获取客户端Token，保持接口幂等性
-                     * @return ClientToken 客户端Token，保持接口幂等性
+                     * 获取内容控件信息数组
+                     * @return FormFields 内容控件信息数组
                      */
-                    std::string GetClientToken() const;
+                    std::vector<FormField> GetFormFields() const;
 
                     /**
-                     * 设置客户端Token，保持接口幂等性
-                     * @param ClientToken 客户端Token，保持接口幂等性
+                     * 设置内容控件信息数组
+                     * @param FormFields 内容控件信息数组
                      */
-                    void SetClientToken(const std::string& _clientToken);
+                    void SetFormFields(const std::vector<FormField>& _formFields);
 
                     /**
-                     * 判断参数 ClientToken 是否已赋值
-                     * @return ClientToken 是否已赋值
+                     * 判断参数 FormFields 是否已赋值
+                     * @return FormFields 是否已赋值
                      */
-                    bool ClientTokenHasBeenSet() const;
+                    bool FormFieldsHasBeenSet() const;
 
                     /**
                      * 获取是否需要生成预览文件 默认不生成；
@@ -193,13 +175,31 @@ namespace TencentCloud
                      */
                     bool NeedPreviewHasBeenSet() const;
 
+                    /**
+                     * 获取客户端Token，保持接口幂等性,最大长度64个字符
+                     * @return ClientToken 客户端Token，保持接口幂等性,最大长度64个字符
+                     */
+                    std::string GetClientToken() const;
+
+                    /**
+                     * 设置客户端Token，保持接口幂等性,最大长度64个字符
+                     * @param ClientToken 客户端Token，保持接口幂等性,最大长度64个字符
+                     */
+                    void SetClientToken(const std::string& _clientToken);
+
+                    /**
+                     * 判断参数 ClientToken 是否已赋值
+                     * @return ClientToken 是否已赋值
+                     */
+                    bool ClientTokenHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 无
+                     * 签署流程编号,由CreateFlow接口返回
                      */
-                    UserInfo m_operator;
-                    bool m_operatorHasBeenSet;
+                    std::string m_flowId;
+                    bool m_flowIdHasBeenSet;
 
                     /**
                      * 用户上传的模板ID
@@ -208,22 +208,16 @@ namespace TencentCloud
                     bool m_templateIdHasBeenSet;
 
                     /**
-                     * 流程ID
-                     */
-                    std::string m_flowId;
-                    bool m_flowIdHasBeenSet;
-
-                    /**
-                     * 文件名列表
+                     * 文件名列表,单个文件名最大长度200个字符
                      */
                     std::vector<std::string> m_fileNames;
                     bool m_fileNamesHasBeenSet;
 
                     /**
-                     * 内容控件信息数组
+                     * 无
                      */
-                    std::vector<FormField> m_formFields;
-                    bool m_formFieldsHasBeenSet;
+                    UserInfo m_operator;
+                    bool m_operatorHasBeenSet;
 
                     /**
                      * 应用相关信息
@@ -232,10 +226,10 @@ namespace TencentCloud
                     bool m_agentHasBeenSet;
 
                     /**
-                     * 客户端Token，保持接口幂等性
+                     * 内容控件信息数组
                      */
-                    std::string m_clientToken;
-                    bool m_clientTokenHasBeenSet;
+                    std::vector<FormField> m_formFields;
+                    bool m_formFieldsHasBeenSet;
 
                     /**
                      * 是否需要生成预览文件 默认不生成；
@@ -243,6 +237,12 @@ namespace TencentCloud
                      */
                     bool m_needPreview;
                     bool m_needPreviewHasBeenSet;
+
+                    /**
+                     * 客户端Token，保持接口幂等性,最大长度64个字符
+                     */
+                    std::string m_clientToken;
+                    bool m_clientTokenHasBeenSet;
 
                 };
             }

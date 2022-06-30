@@ -24,8 +24,8 @@ using namespace std;
 
 DescribeResourceUrlsByFlowsRequest::DescribeResourceUrlsByFlowsRequest() :
     m_agentHasBeenSet(false),
-    m_operatorHasBeenSet(false),
-    m_flowIdsHasBeenSet(false)
+    m_flowIdsHasBeenSet(false),
+    m_operatorHasBeenSet(false)
 {
 }
 
@@ -45,15 +45,6 @@ string DescribeResourceUrlsByFlowsRequest::ToJsonString() const
         m_agent.ToJsonObject(d[key.c_str()], allocator);
     }
 
-    if (m_operatorHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Operator";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_operator.ToJsonObject(d[key.c_str()], allocator);
-    }
-
     if (m_flowIdsHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -65,6 +56,15 @@ string DescribeResourceUrlsByFlowsRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_operatorHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Operator";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_operator.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -91,22 +91,6 @@ bool DescribeResourceUrlsByFlowsRequest::AgentHasBeenSet() const
     return m_agentHasBeenSet;
 }
 
-UserInfo DescribeResourceUrlsByFlowsRequest::GetOperator() const
-{
-    return m_operator;
-}
-
-void DescribeResourceUrlsByFlowsRequest::SetOperator(const UserInfo& _operator)
-{
-    m_operator = _operator;
-    m_operatorHasBeenSet = true;
-}
-
-bool DescribeResourceUrlsByFlowsRequest::OperatorHasBeenSet() const
-{
-    return m_operatorHasBeenSet;
-}
-
 vector<string> DescribeResourceUrlsByFlowsRequest::GetFlowIds() const
 {
     return m_flowIds;
@@ -121,6 +105,22 @@ void DescribeResourceUrlsByFlowsRequest::SetFlowIds(const vector<string>& _flowI
 bool DescribeResourceUrlsByFlowsRequest::FlowIdsHasBeenSet() const
 {
     return m_flowIdsHasBeenSet;
+}
+
+UserInfo DescribeResourceUrlsByFlowsRequest::GetOperator() const
+{
+    return m_operator;
+}
+
+void DescribeResourceUrlsByFlowsRequest::SetOperator(const UserInfo& _operator)
+{
+    m_operator = _operator;
+    m_operatorHasBeenSet = true;
+}
+
+bool DescribeResourceUrlsByFlowsRequest::OperatorHasBeenSet() const
+{
+    return m_operatorHasBeenSet;
 }
 
 

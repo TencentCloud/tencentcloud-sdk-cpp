@@ -79,6 +79,28 @@ namespace TencentCloud
                     bool BusinessTypeHasBeenSet() const;
 
                     /**
+                     * 获取业务编号的数组，如模板编号、文档编号、印章编号
+最大支持20个资源
+                     * @return BusinessIds 业务编号的数组，如模板编号、文档编号、印章编号
+最大支持20个资源
+                     */
+                    std::vector<std::string> GetBusinessIds() const;
+
+                    /**
+                     * 设置业务编号的数组，如模板编号、文档编号、印章编号
+最大支持20个资源
+                     * @param BusinessIds 业务编号的数组，如模板编号、文档编号、印章编号
+最大支持20个资源
+                     */
+                    void SetBusinessIds(const std::vector<std::string>& _businessIds);
+
+                    /**
+                     * 判断参数 BusinessIds 是否已赋值
+                     * @return BusinessIds 是否已赋值
+                     */
+                    bool BusinessIdsHasBeenSet() const;
+
+                    /**
                      * 获取操作者信息
                      * @return Operator 操作者信息
                      */
@@ -97,40 +119,22 @@ namespace TencentCloud
                     bool OperatorHasBeenSet() const;
 
                     /**
-                     * 获取业务编号的数组，如模板编号、文档编号、印章编号
-                     * @return BusinessIds 业务编号的数组，如模板编号、文档编号、印章编号
+                     * 获取应用相关信息
+                     * @return Agent 应用相关信息
                      */
-                    std::vector<std::string> GetBusinessIds() const;
+                    Agent GetAgent() const;
 
                     /**
-                     * 设置业务编号的数组，如模板编号、文档编号、印章编号
-                     * @param BusinessIds 业务编号的数组，如模板编号、文档编号、印章编号
+                     * 设置应用相关信息
+                     * @param Agent 应用相关信息
                      */
-                    void SetBusinessIds(const std::vector<std::string>& _businessIds);
+                    void SetAgent(const Agent& _agent);
 
                     /**
-                     * 判断参数 BusinessIds 是否已赋值
-                     * @return BusinessIds 是否已赋值
+                     * 判断参数 Agent 是否已赋值
+                     * @return Agent 是否已赋值
                      */
-                    bool BusinessIdsHasBeenSet() const;
-
-                    /**
-                     * 获取文件类型，"JPG", "PDF","ZIP"等
-                     * @return FileType 文件类型，"JPG", "PDF","ZIP"等
-                     */
-                    std::string GetFileType() const;
-
-                    /**
-                     * 设置文件类型，"JPG", "PDF","ZIP"等
-                     * @param FileType 文件类型，"JPG", "PDF","ZIP"等
-                     */
-                    void SetFileType(const std::string& _fileType);
-
-                    /**
-                     * 判断参数 FileType 是否已赋值
-                     * @return FileType 是否已赋值
-                     */
-                    bool FileTypeHasBeenSet() const;
+                    bool AgentHasBeenSet() const;
 
                     /**
                      * 获取下载后的文件命名，只有fileType为zip的时候生效
@@ -151,14 +155,32 @@ namespace TencentCloud
                     bool FileNameHasBeenSet() const;
 
                     /**
-                     * 获取指定资源起始偏移量
-                     * @return Offset 指定资源起始偏移量
+                     * 获取文件类型，"JPG", "PDF","ZIP"等
+                     * @return FileType 文件类型，"JPG", "PDF","ZIP"等
+                     */
+                    std::string GetFileType() const;
+
+                    /**
+                     * 设置文件类型，"JPG", "PDF","ZIP"等
+                     * @param FileType 文件类型，"JPG", "PDF","ZIP"等
+                     */
+                    void SetFileType(const std::string& _fileType);
+
+                    /**
+                     * 判断参数 FileType 是否已赋值
+                     * @return FileType 是否已赋值
+                     */
+                    bool FileTypeHasBeenSet() const;
+
+                    /**
+                     * 获取指定资源起始偏移量，默认0
+                     * @return Offset 指定资源起始偏移量，默认0
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置指定资源起始偏移量
-                     * @param Offset 指定资源起始偏移量
+                     * 设置指定资源起始偏移量，默认0
+                     * @param Offset 指定资源起始偏移量，默认0
                      */
                     void SetOffset(const int64_t& _offset);
 
@@ -187,32 +209,14 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取应用相关信息
-                     * @return Agent 应用相关信息
-                     */
-                    Agent GetAgent() const;
-
-                    /**
-                     * 设置应用相关信息
-                     * @param Agent 应用相关信息
-                     */
-                    void SetAgent(const Agent& _agent);
-
-                    /**
-                     * 判断参数 Agent 是否已赋值
-                     * @return Agent 是否已赋值
-                     */
-                    bool AgentHasBeenSet() const;
-
-                    /**
-                     * 获取下载url过期时间，0: 按默认值5分钟，允许范围：1s~24*60*60s(1天)
-                     * @return UrlTtl 下载url过期时间，0: 按默认值5分钟，允许范围：1s~24*60*60s(1天)
+                     * 获取下载url过期时间，单位秒。0: 按默认值5分钟，允许范围：1s~24*60*60s(1天)
+                     * @return UrlTtl 下载url过期时间，单位秒。0: 按默认值5分钟，允许范围：1s~24*60*60s(1天)
                      */
                     int64_t GetUrlTtl() const;
 
                     /**
-                     * 设置下载url过期时间，0: 按默认值5分钟，允许范围：1s~24*60*60s(1天)
-                     * @param UrlTtl 下载url过期时间，0: 按默认值5分钟，允许范围：1s~24*60*60s(1天)
+                     * 设置下载url过期时间，单位秒。0: 按默认值5分钟，允许范围：1s~24*60*60s(1天)
+                     * @param UrlTtl 下载url过期时间，单位秒。0: 按默认值5分钟，允许范围：1s~24*60*60s(1天)
                      */
                     void SetUrlTtl(const int64_t& _urlTtl);
 
@@ -223,32 +227,14 @@ namespace TencentCloud
                     bool UrlTtlHasBeenSet() const;
 
                     /**
-                     * 获取流程校验发送邮件权限
-                     * @return CcToken 流程校验发送邮件权限
-                     */
-                    std::string GetCcToken() const;
-
-                    /**
-                     * 设置流程校验发送邮件权限
-                     * @param CcToken 流程校验发送邮件权限
-                     */
-                    void SetCcToken(const std::string& _ccToken);
-
-                    /**
-                     * 判断参数 CcToken 是否已赋值
-                     * @return CcToken 是否已赋值
-                     */
-                    bool CcTokenHasBeenSet() const;
-
-                    /**
-                     * 获取场景
-                     * @return Scene 场景
+                     * 获取暂不开放
+                     * @return Scene 暂不开放
                      */
                     std::string GetScene() const;
 
                     /**
-                     * 设置场景
-                     * @param Scene 场景
+                     * 设置暂不开放
+                     * @param Scene 暂不开放
                      */
                     void SetScene(const std::string& _scene);
 
@@ -257,6 +243,24 @@ namespace TencentCloud
                      * @return Scene 是否已赋值
                      */
                     bool SceneHasBeenSet() const;
+
+                    /**
+                     * 获取暂不开放
+                     * @return CcToken 暂不开放
+                     */
+                    std::string GetCcToken() const;
+
+                    /**
+                     * 设置暂不开放
+                     * @param CcToken 暂不开放
+                     */
+                    void SetCcToken(const std::string& _ccToken);
+
+                    /**
+                     * 判断参数 CcToken 是否已赋值
+                     * @return CcToken 是否已赋值
+                     */
+                    bool CcTokenHasBeenSet() const;
 
                 private:
 
@@ -271,22 +275,23 @@ namespace TencentCloud
                     bool m_businessTypeHasBeenSet;
 
                     /**
+                     * 业务编号的数组，如模板编号、文档编号、印章编号
+最大支持20个资源
+                     */
+                    std::vector<std::string> m_businessIds;
+                    bool m_businessIdsHasBeenSet;
+
+                    /**
                      * 操作者信息
                      */
                     UserInfo m_operator;
                     bool m_operatorHasBeenSet;
 
                     /**
-                     * 业务编号的数组，如模板编号、文档编号、印章编号
+                     * 应用相关信息
                      */
-                    std::vector<std::string> m_businessIds;
-                    bool m_businessIdsHasBeenSet;
-
-                    /**
-                     * 文件类型，"JPG", "PDF","ZIP"等
-                     */
-                    std::string m_fileType;
-                    bool m_fileTypeHasBeenSet;
+                    Agent m_agent;
+                    bool m_agentHasBeenSet;
 
                     /**
                      * 下载后的文件命名，只有fileType为zip的时候生效
@@ -295,7 +300,13 @@ namespace TencentCloud
                     bool m_fileNameHasBeenSet;
 
                     /**
-                     * 指定资源起始偏移量
+                     * 文件类型，"JPG", "PDF","ZIP"等
+                     */
+                    std::string m_fileType;
+                    bool m_fileTypeHasBeenSet;
+
+                    /**
+                     * 指定资源起始偏移量，默认0
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
@@ -307,28 +318,22 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 应用相关信息
-                     */
-                    Agent m_agent;
-                    bool m_agentHasBeenSet;
-
-                    /**
-                     * 下载url过期时间，0: 按默认值5分钟，允许范围：1s~24*60*60s(1天)
+                     * 下载url过期时间，单位秒。0: 按默认值5分钟，允许范围：1s~24*60*60s(1天)
                      */
                     int64_t m_urlTtl;
                     bool m_urlTtlHasBeenSet;
 
                     /**
-                     * 流程校验发送邮件权限
-                     */
-                    std::string m_ccToken;
-                    bool m_ccTokenHasBeenSet;
-
-                    /**
-                     * 场景
+                     * 暂不开放
                      */
                     std::string m_scene;
                     bool m_sceneHasBeenSet;
+
+                    /**
+                     * 暂不开放
+                     */
+                    std::string m_ccToken;
+                    bool m_ccTokenHasBeenSet;
 
                 };
             }

@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取被抄送人手机号
-                     * @return Mobile 被抄送人手机号
+                     * 获取被抄送人手机号，大陆11位手机号
+                     * @return Mobile 被抄送人手机号，大陆11位手机号
                      */
                     std::string GetMobile() const;
 
                     /**
-                     * 设置被抄送人手机号
-                     * @param Mobile 被抄送人手机号
+                     * 设置被抄送人手机号，大陆11位手机号
+                     * @param Mobile 被抄送人手机号，大陆11位手机号
                      */
                     void SetMobile(const std::string& _mobile);
 
@@ -67,7 +67,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 被抄送人手机号
+                     * 被抄送人手机号，大陆11位手机号
                      */
                     std::string m_mobile;
                     bool m_mobileHasBeenSet;

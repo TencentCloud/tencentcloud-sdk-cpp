@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取流程资源对应链接信息
-                     * @return FlowResourceUrlInfos 流程资源对应链接信息
+                     * 获取签署流程资源对应链接信息
+                     * @return FlowResourceUrlInfos 签署流程资源对应链接信息
                      */
                     std::vector<FlowResourceUrlInfo> GetFlowResourceUrlInfos() const;
 
@@ -73,7 +73,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 流程资源对应链接信息
+                     * 签署流程资源对应链接信息
                      */
                     std::vector<FlowResourceUrlInfo> m_flowResourceUrlInfos;
                     bool m_flowResourceUrlInfosHasBeenSet;

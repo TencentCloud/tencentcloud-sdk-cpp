@@ -50,7 +50,7 @@ namespace TencentCloud
                      * 获取如果是 Component 控件类型，则可选类型为：
 TEXT - 内容文本控件
 DATE - 内容日期控件
-SELECT - 勾选框控件
+CHECK_BOX - 勾选框控件
 如果是 SignComponent 控件类型，则可选类型为：
 SIGN_SEAL - 签署印章控件
 SIGN_DATE - 签署日期控件
@@ -58,7 +58,7 @@ SIGN_SIGNATURE - 手写签名控件
                      * @return ComponentType 如果是 Component 控件类型，则可选类型为：
 TEXT - 内容文本控件
 DATE - 内容日期控件
-SELECT - 勾选框控件
+CHECK_BOX - 勾选框控件
 如果是 SignComponent 控件类型，则可选类型为：
 SIGN_SEAL - 签署印章控件
 SIGN_DATE - 签署日期控件
@@ -70,7 +70,7 @@ SIGN_SIGNATURE - 手写签名控件
                      * 设置如果是 Component 控件类型，则可选类型为：
 TEXT - 内容文本控件
 DATE - 内容日期控件
-SELECT - 勾选框控件
+CHECK_BOX - 勾选框控件
 如果是 SignComponent 控件类型，则可选类型为：
 SIGN_SEAL - 签署印章控件
 SIGN_DATE - 签署日期控件
@@ -78,7 +78,7 @@ SIGN_SIGNATURE - 手写签名控件
                      * @param ComponentType 如果是 Component 控件类型，则可选类型为：
 TEXT - 内容文本控件
 DATE - 内容日期控件
-SELECT - 勾选框控件
+CHECK_BOX - 勾选框控件
 如果是 SignComponent 控件类型，则可选类型为：
 SIGN_SEAL - 签署印章控件
 SIGN_DATE - 签署日期控件
@@ -403,14 +403,14 @@ KEYWORD 关键字，使用ComponentId指定关键字
                     bool ComponentDateFontSizeHasBeenSet() const;
 
                     /**
-                     * 获取指定关键字时横坐标偏移量
-                     * @return OffsetX 指定关键字时横坐标偏移量
+                     * 获取指定关键字时横坐标偏移量，单位pt
+                     * @return OffsetX 指定关键字时横坐标偏移量，单位pt
                      */
                     double GetOffsetX() const;
 
                     /**
-                     * 设置指定关键字时横坐标偏移量
-                     * @param OffsetX 指定关键字时横坐标偏移量
+                     * 设置指定关键字时横坐标偏移量，单位pt
+                     * @param OffsetX 指定关键字时横坐标偏移量，单位pt
                      */
                     void SetOffsetX(const double& _offsetX);
 
@@ -421,14 +421,14 @@ KEYWORD 关键字，使用ComponentId指定关键字
                     bool OffsetXHasBeenSet() const;
 
                     /**
-                     * 获取指定关键字时纵坐标偏移量
-                     * @return OffsetY 指定关键字时纵坐标偏移量
+                     * 获取指定关键字时纵坐标偏移量，单位pt
+                     * @return OffsetY 指定关键字时纵坐标偏移量，单位pt
                      */
                     double GetOffsetY() const;
 
                     /**
-                     * 设置指定关键字时纵坐标偏移量
-                     * @param OffsetY 指定关键字时纵坐标偏移量
+                     * 设置指定关键字时纵坐标偏移量，单位pt
+                     * @param OffsetY 指定关键字时纵坐标偏移量，单位pt
                      */
                     void SetOffsetY(const double& _offsetY);
 
@@ -444,7 +444,7 @@ KEYWORD 关键字，使用ComponentId指定关键字
                      * 如果是 Component 控件类型，则可选类型为：
 TEXT - 内容文本控件
 DATE - 内容日期控件
-SELECT - 勾选框控件
+CHECK_BOX - 勾选框控件
 如果是 SignComponent 控件类型，则可选类型为：
 SIGN_SEAL - 签署印章控件
 SIGN_DATE - 签署日期控件
@@ -554,13 +554,13 @@ KEYWORD 关键字，使用ComponentId指定关键字
                     bool m_componentDateFontSizeHasBeenSet;
 
                     /**
-                     * 指定关键字时横坐标偏移量
+                     * 指定关键字时横坐标偏移量，单位pt
                      */
                     double m_offsetX;
                     bool m_offsetXHasBeenSet;
 
                     /**
-                     * 指定关键字时纵坐标偏移量
+                     * 指定关键字时纵坐标偏移量，单位pt
                      */
                     double m_offsetY;
                     bool m_offsetYHasBeenSet;

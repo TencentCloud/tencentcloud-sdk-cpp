@@ -48,14 +48,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取内容智能识别模板唯一标识。
-                     * @return Definition 内容智能识别模板唯一标识。
+                     * 获取内容审核模板唯一标识。
+                     * @return Definition 内容审核模板唯一标识。
                      */
                     int64_t GetDefinition() const;
 
                     /**
-                     * 设置内容智能识别模板唯一标识。
-                     * @param Definition 内容智能识别模板唯一标识。
+                     * 设置内容审核模板唯一标识。
+                     * @param Definition 内容审核模板唯一标识。
                      */
                     void SetDefinition(const int64_t& _definition);
 
@@ -84,14 +84,14 @@ namespace TencentCloud
                     bool SubAppIdHasBeenSet() const;
 
                     /**
-                     * 获取内容智能识别模板名称，长度限制：64 个字符。
-                     * @return Name 内容智能识别模板名称，长度限制：64 个字符。
+                     * 获取内容审核模板名称，长度限制：64 个字符。
+                     * @return Name 内容审核模板名称，长度限制：64 个字符。
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置内容智能识别模板名称，长度限制：64 个字符。
-                     * @param Name 内容智能识别模板名称，长度限制：64 个字符。
+                     * 设置内容审核模板名称，长度限制：64 个字符。
+                     * @param Name 内容审核模板名称，长度限制：64 个字符。
                      */
                     void SetName(const std::string& _name);
 
@@ -102,14 +102,14 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取内容智能识别模板描述信息，长度限制：256 个字符。
-                     * @return Comment 内容智能识别模板描述信息，长度限制：256 个字符。
+                     * 获取内容审核模板描述信息，长度限制：256 个字符。
+                     * @return Comment 内容审核模板描述信息，长度限制：256 个字符。
                      */
                     std::string GetComment() const;
 
                     /**
-                     * 设置内容智能识别模板描述信息，长度限制：256 个字符。
-                     * @param Comment 内容智能识别模板描述信息，长度限制：256 个字符。
+                     * 设置内容审核模板描述信息，长度限制：256 个字符。
+                     * @param Comment 内容审核模板描述信息，长度限制：256 个字符。
                      */
                     void SetComment(const std::string& _comment);
 
@@ -200,14 +200,14 @@ namespace TencentCloud
                     bool ProhibitedConfigureHasBeenSet() const;
 
                     /**
-                     * 获取用户自定义内容智能识别控制参数。
-                     * @return UserDefineConfigure 用户自定义内容智能识别控制参数。
+                     * 获取用户自定义内容审核控制参数。
+                     * @return UserDefineConfigure 用户自定义内容审核控制参数。
                      */
                     UserDefineConfigureInfoForUpdate GetUserDefineConfigure() const;
 
                     /**
-                     * 设置用户自定义内容智能识别控制参数。
-                     * @param UserDefineConfigure 用户自定义内容智能识别控制参数。
+                     * 设置用户自定义内容审核控制参数。
+                     * @param UserDefineConfigure 用户自定义内容审核控制参数。
                      */
                     void SetUserDefineConfigure(const UserDefineConfigureInfoForUpdate& _userDefineConfigure);
 
@@ -236,20 +236,20 @@ namespace TencentCloud
                     bool ScreenshotIntervalHasBeenSet() const;
 
                     /**
-                     * 获取智能识别结果是否进入智能识别墙（对智能识别结果进行人工识别）的开关。
+                     * 获取审核结果是否进入审核墙（对审核结果进行人工识别）的开关。
 <li>ON：是；</li>
 <li>OFF：否。</li>
-                     * @return ReviewWallSwitch 智能识别结果是否进入智能识别墙（对智能识别结果进行人工识别）的开关。
+                     * @return ReviewWallSwitch 审核结果是否进入审核墙（对审核结果进行人工识别）的开关。
 <li>ON：是；</li>
 <li>OFF：否。</li>
                      */
                     std::string GetReviewWallSwitch() const;
 
                     /**
-                     * 设置智能识别结果是否进入智能识别墙（对智能识别结果进行人工识别）的开关。
+                     * 设置审核结果是否进入审核墙（对审核结果进行人工识别）的开关。
 <li>ON：是；</li>
 <li>OFF：否。</li>
-                     * @param ReviewWallSwitch 智能识别结果是否进入智能识别墙（对智能识别结果进行人工识别）的开关。
+                     * @param ReviewWallSwitch 审核结果是否进入审核墙（对审核结果进行人工识别）的开关。
 <li>ON：是；</li>
 <li>OFF：否。</li>
                      */
@@ -264,7 +264,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 内容智能识别模板唯一标识。
+                     * 内容审核模板唯一标识。
                      */
                     int64_t m_definition;
                     bool m_definitionHasBeenSet;
@@ -276,13 +276,13 @@ namespace TencentCloud
                     bool m_subAppIdHasBeenSet;
 
                     /**
-                     * 内容智能识别模板名称，长度限制：64 个字符。
+                     * 内容审核模板名称，长度限制：64 个字符。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 内容智能识别模板描述信息，长度限制：256 个字符。
+                     * 内容审核模板描述信息，长度限制：256 个字符。
                      */
                     std::string m_comment;
                     bool m_commentHasBeenSet;
@@ -314,7 +314,7 @@ namespace TencentCloud
                     bool m_prohibitedConfigureHasBeenSet;
 
                     /**
-                     * 用户自定义内容智能识别控制参数。
+                     * 用户自定义内容审核控制参数。
                      */
                     UserDefineConfigureInfoForUpdate m_userDefineConfigure;
                     bool m_userDefineConfigureHasBeenSet;
@@ -326,7 +326,7 @@ namespace TencentCloud
                     bool m_screenshotIntervalHasBeenSet;
 
                     /**
-                     * 智能识别结果是否进入智能识别墙（对智能识别结果进行人工识别）的开关。
+                     * 审核结果是否进入审核墙（对审核结果进行人工识别）的开关。
 <li>ON：是；</li>
 <li>OFF：否。</li>
                      */

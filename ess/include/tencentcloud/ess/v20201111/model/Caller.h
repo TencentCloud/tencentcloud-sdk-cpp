@@ -83,24 +83,6 @@ namespace TencentCloud
                     bool OrganizationIdHasBeenSet() const;
 
                     /**
-                     * 获取下属机构ID
-                     * @return SubOrganizationId 下属机构ID
-                     */
-                    std::string GetSubOrganizationId() const;
-
-                    /**
-                     * 设置下属机构ID
-                     * @param SubOrganizationId 下属机构ID
-                     */
-                    void SetSubOrganizationId(const std::string& _subOrganizationId);
-
-                    /**
-                     * 判断参数 SubOrganizationId 是否已赋值
-                     * @return SubOrganizationId 是否已赋值
-                     */
-                    bool SubOrganizationIdHasBeenSet() const;
-
-                    /**
                      * 获取经办人的用户ID
                      * @return OperatorId 经办人的用户ID
                      */
@@ -118,6 +100,24 @@ namespace TencentCloud
                      */
                     bool OperatorIdHasBeenSet() const;
 
+                    /**
+                     * 获取下属机构ID
+                     * @return SubOrganizationId 下属机构ID
+                     */
+                    std::string GetSubOrganizationId() const;
+
+                    /**
+                     * 设置下属机构ID
+                     * @param SubOrganizationId 下属机构ID
+                     */
+                    void SetSubOrganizationId(const std::string& _subOrganizationId);
+
+                    /**
+                     * 判断参数 SubOrganizationId 是否已赋值
+                     * @return SubOrganizationId 是否已赋值
+                     */
+                    bool SubOrganizationIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -133,16 +133,16 @@ namespace TencentCloud
                     bool m_organizationIdHasBeenSet;
 
                     /**
-                     * 下属机构ID
-                     */
-                    std::string m_subOrganizationId;
-                    bool m_subOrganizationIdHasBeenSet;
-
-                    /**
                      * 经办人的用户ID
                      */
                     std::string m_operatorId;
                     bool m_operatorIdHasBeenSet;
+
+                    /**
+                     * 下属机构ID
+                     */
+                    std::string m_subOrganizationId;
+                    bool m_subOrganizationIdHasBeenSet;
 
                 };
             }

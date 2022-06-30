@@ -46,6 +46,24 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取应用相关信息，若是渠道版调用 appid 和proxyappid 必填
+                     * @return Agent 应用相关信息，若是渠道版调用 appid 和proxyappid 必填
+                     */
+                    Agent GetAgent() const;
+
+                    /**
+                     * 设置应用相关信息，若是渠道版调用 appid 和proxyappid 必填
+                     * @param Agent 应用相关信息，若是渠道版调用 appid 和proxyappid 必填
+                     */
+                    void SetAgent(const Agent& _agent);
+
+                    /**
+                     * 判断参数 Agent 是否已赋值
+                     * @return Agent 是否已赋值
+                     */
+                    bool AgentHasBeenSet() const;
+
+                    /**
                      * 获取文件对应业务类型，用于区分文件存储路径：
 1. TEMPLATE - 模板； 文件类型：.pdf
 2. DOCUMENT - 签署过程及签署后的合同文档/图片控件 文件类型：.pdf/.jpg/.png
@@ -70,24 +88,6 @@ namespace TencentCloud
                      * @return BusinessType 是否已赋值
                      */
                     bool BusinessTypeHasBeenSet() const;
-
-                    /**
-                     * 获取应用相关信息，若是渠道版调用 appid 和proxyappid 必填
-                     * @return Agent 应用相关信息，若是渠道版调用 appid 和proxyappid 必填
-                     */
-                    Agent GetAgent() const;
-
-                    /**
-                     * 设置应用相关信息，若是渠道版调用 appid 和proxyappid 必填
-                     * @param Agent 应用相关信息，若是渠道版调用 appid 和proxyappid 必填
-                     */
-                    void SetAgent(const Agent& _agent);
-
-                    /**
-                     * 判断参数 Agent 是否已赋值
-                     * @return Agent 是否已赋值
-                     */
-                    bool AgentHasBeenSet() const;
 
                     /**
                      * 获取上传文件内容数组，最多支持20个文件
@@ -128,18 +128,18 @@ namespace TencentCloud
                 private:
 
                     /**
+                     * 应用相关信息，若是渠道版调用 appid 和proxyappid 必填
+                     */
+                    Agent m_agent;
+                    bool m_agentHasBeenSet;
+
+                    /**
                      * 文件对应业务类型，用于区分文件存储路径：
 1. TEMPLATE - 模板； 文件类型：.pdf
 2. DOCUMENT - 签署过程及签署后的合同文档/图片控件 文件类型：.pdf/.jpg/.png
                      */
                     std::string m_businessType;
                     bool m_businessTypeHasBeenSet;
-
-                    /**
-                     * 应用相关信息，若是渠道版调用 appid 和proxyappid 必填
-                     */
-                    Agent m_agent;
-                    bool m_agentHasBeenSet;
 
                     /**
                      * 上传文件内容数组，最多支持20个文件

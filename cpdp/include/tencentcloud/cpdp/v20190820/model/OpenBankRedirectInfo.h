@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cpdp/v20190820/model/OpenBankFormInfo.h>
 
 
 namespace TencentCloud
@@ -176,6 +177,28 @@ namespace TencentCloud
                      */
                     bool MpUserNameHasBeenSet() const;
 
+                    /**
+                     * 获取网银支付提交页面信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FormInfo 网银支付提交页面信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    OpenBankFormInfo GetFormInfo() const;
+
+                    /**
+                     * 设置网银支付提交页面信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param FormInfo 网银支付提交页面信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetFormInfo(const OpenBankFormInfo& _formInfo);
+
+                    /**
+                     * 判断参数 FormInfo 是否已赋值
+                     * @return FormInfo 是否已赋值
+                     */
+                    bool FormInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -220,6 +243,13 @@ namespace TencentCloud
                      */
                     std::string m_mpUserName;
                     bool m_mpUserNameHasBeenSet;
+
+                    /**
+                     * 网银支付提交页面信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    OpenBankFormInfo m_formInfo;
+                    bool m_formInfoHasBeenSet;
 
                 };
             }

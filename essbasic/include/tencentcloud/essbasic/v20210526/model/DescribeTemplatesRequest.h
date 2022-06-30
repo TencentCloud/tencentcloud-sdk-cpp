@@ -63,24 +63,6 @@ namespace TencentCloud
                     bool AgentHasBeenSet() const;
 
                     /**
-                     * 获取操作者的信息
-                     * @return Operator 操作者的信息
-                     */
-                    UserInfo GetOperator() const;
-
-                    /**
-                     * 设置操作者的信息
-                     * @param Operator 操作者的信息
-                     */
-                    void SetOperator(const UserInfo& _operator);
-
-                    /**
-                     * 判断参数 Operator 是否已赋值
-                     * @return Operator 是否已赋值
-                     */
-                    bool OperatorHasBeenSet() const;
-
-                    /**
                      * 获取模板唯一标识
                      * @return TemplateId 模板唯一标识
                      */
@@ -152,6 +134,24 @@ namespace TencentCloud
                      */
                     bool OffsetHasBeenSet() const;
 
+                    /**
+                     * 获取操作者的信息
+                     * @return Operator 操作者的信息
+                     */
+                    UserInfo GetOperator() const;
+
+                    /**
+                     * 设置操作者的信息
+                     * @param Operator 操作者的信息
+                     */
+                    void SetOperator(const UserInfo& _operator);
+
+                    /**
+                     * 判断参数 Operator 是否已赋值
+                     * @return Operator 是否已赋值
+                     */
+                    bool OperatorHasBeenSet() const;
+
                 private:
 
                     /**
@@ -159,12 +159,6 @@ namespace TencentCloud
                      */
                     Agent m_agent;
                     bool m_agentHasBeenSet;
-
-                    /**
-                     * 操作者的信息
-                     */
-                    UserInfo m_operator;
-                    bool m_operatorHasBeenSet;
 
                     /**
                      * 模板唯一标识
@@ -189,6 +183,12 @@ namespace TencentCloud
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
+
+                    /**
+                     * 操作者的信息
+                     */
+                    UserInfo m_operator;
+                    bool m_operatorHasBeenSet;
 
                 };
             }

@@ -23,17 +23,17 @@ using namespace std;
 FlowCreateApprover::FlowCreateApprover() :
     m_approverTypeHasBeenSet(false),
     m_organizationNameHasBeenSet(false),
-    m_requiredHasBeenSet(false),
     m_approverNameHasBeenSet(false),
     m_approverMobileHasBeenSet(false),
-    m_approverIdCardNumberHasBeenSet(false),
     m_approverIdCardTypeHasBeenSet(false),
+    m_approverIdCardNumberHasBeenSet(false),
     m_recipientIdHasBeenSet(false),
-    m_userIdHasBeenSet(false),
+    m_verifyChannelHasBeenSet(false),
+    m_notifyTypeHasBeenSet(false),
     m_isFullTextHasBeenSet(false),
     m_preReadTimeHasBeenSet(false),
-    m_notifyTypeHasBeenSet(false),
-    m_verifyChannelHasBeenSet(false)
+    m_userIdHasBeenSet(false),
+    m_requiredHasBeenSet(false)
 {
 }
 
@@ -62,16 +62,6 @@ CoreInternalOutcome FlowCreateApprover::Deserialize(const rapidjson::Value &valu
         m_organizationNameHasBeenSet = true;
     }
 
-    if (value.HasMember("Required") && !value["Required"].IsNull())
-    {
-        if (!value["Required"].IsBool())
-        {
-            return CoreInternalOutcome(Core::Error("response `FlowCreateApprover.Required` IsBool=false incorrectly").SetRequestId(requestId));
-        }
-        m_required = value["Required"].GetBool();
-        m_requiredHasBeenSet = true;
-    }
-
     if (value.HasMember("ApproverName") && !value["ApproverName"].IsNull())
     {
         if (!value["ApproverName"].IsString())
@@ -92,16 +82,6 @@ CoreInternalOutcome FlowCreateApprover::Deserialize(const rapidjson::Value &valu
         m_approverMobileHasBeenSet = true;
     }
 
-    if (value.HasMember("ApproverIdCardNumber") && !value["ApproverIdCardNumber"].IsNull())
-    {
-        if (!value["ApproverIdCardNumber"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `FlowCreateApprover.ApproverIdCardNumber` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_approverIdCardNumber = string(value["ApproverIdCardNumber"].GetString());
-        m_approverIdCardNumberHasBeenSet = true;
-    }
-
     if (value.HasMember("ApproverIdCardType") && !value["ApproverIdCardType"].IsNull())
     {
         if (!value["ApproverIdCardType"].IsString())
@@ -110,6 +90,16 @@ CoreInternalOutcome FlowCreateApprover::Deserialize(const rapidjson::Value &valu
         }
         m_approverIdCardType = string(value["ApproverIdCardType"].GetString());
         m_approverIdCardTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ApproverIdCardNumber") && !value["ApproverIdCardNumber"].IsNull())
+    {
+        if (!value["ApproverIdCardNumber"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `FlowCreateApprover.ApproverIdCardNumber` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_approverIdCardNumber = string(value["ApproverIdCardNumber"].GetString());
+        m_approverIdCardNumberHasBeenSet = true;
     }
 
     if (value.HasMember("RecipientId") && !value["RecipientId"].IsNull())
@@ -122,14 +112,27 @@ CoreInternalOutcome FlowCreateApprover::Deserialize(const rapidjson::Value &valu
         m_recipientIdHasBeenSet = true;
     }
 
-    if (value.HasMember("UserId") && !value["UserId"].IsNull())
+    if (value.HasMember("VerifyChannel") && !value["VerifyChannel"].IsNull())
     {
-        if (!value["UserId"].IsString())
+        if (!value["VerifyChannel"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `FlowCreateApprover.VerifyChannel` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["VerifyChannel"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            return CoreInternalOutcome(Core::Error("response `FlowCreateApprover.UserId` IsString=false incorrectly").SetRequestId(requestId));
+            m_verifyChannel.push_back((*itr).GetString());
         }
-        m_userId = string(value["UserId"].GetString());
-        m_userIdHasBeenSet = true;
+        m_verifyChannelHasBeenSet = true;
+    }
+
+    if (value.HasMember("NotifyType") && !value["NotifyType"].IsNull())
+    {
+        if (!value["NotifyType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `FlowCreateApprover.NotifyType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_notifyType = string(value["NotifyType"].GetString());
+        m_notifyTypeHasBeenSet = true;
     }
 
     if (value.HasMember("IsFullText") && !value["IsFullText"].IsNull())
@@ -152,27 +155,24 @@ CoreInternalOutcome FlowCreateApprover::Deserialize(const rapidjson::Value &valu
         m_preReadTimeHasBeenSet = true;
     }
 
-    if (value.HasMember("NotifyType") && !value["NotifyType"].IsNull())
+    if (value.HasMember("UserId") && !value["UserId"].IsNull())
     {
-        if (!value["NotifyType"].IsString())
+        if (!value["UserId"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `FlowCreateApprover.NotifyType` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FlowCreateApprover.UserId` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_notifyType = string(value["NotifyType"].GetString());
-        m_notifyTypeHasBeenSet = true;
+        m_userId = string(value["UserId"].GetString());
+        m_userIdHasBeenSet = true;
     }
 
-    if (value.HasMember("VerifyChannel") && !value["VerifyChannel"].IsNull())
+    if (value.HasMember("Required") && !value["Required"].IsNull())
     {
-        if (!value["VerifyChannel"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `FlowCreateApprover.VerifyChannel` is not array type"));
-
-        const rapidjson::Value &tmpValue = value["VerifyChannel"];
-        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        if (!value["Required"].IsBool())
         {
-            m_verifyChannel.push_back((*itr).GetString());
+            return CoreInternalOutcome(Core::Error("response `FlowCreateApprover.Required` IsBool=false incorrectly").SetRequestId(requestId));
         }
-        m_verifyChannelHasBeenSet = true;
+        m_required = value["Required"].GetBool();
+        m_requiredHasBeenSet = true;
     }
 
 
@@ -198,14 +198,6 @@ void FlowCreateApprover::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         value.AddMember(iKey, rapidjson::Value(m_organizationName.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_requiredHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Required";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_required, allocator);
-    }
-
     if (m_approverNameHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -222,20 +214,20 @@ void FlowCreateApprover::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         value.AddMember(iKey, rapidjson::Value(m_approverMobile.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_approverIdCardNumberHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ApproverIdCardNumber";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_approverIdCardNumber.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_approverIdCardTypeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ApproverIdCardType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_approverIdCardType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_approverIdCardNumberHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApproverIdCardNumber";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_approverIdCardNumber.c_str(), allocator).Move(), allocator);
     }
 
     if (m_recipientIdHasBeenSet)
@@ -246,12 +238,25 @@ void FlowCreateApprover::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         value.AddMember(iKey, rapidjson::Value(m_recipientId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_userIdHasBeenSet)
+    if (m_verifyChannelHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "UserId";
+        string key = "VerifyChannel";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_userId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_verifyChannel.begin(); itr != m_verifyChannel.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_notifyTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NotifyType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_notifyType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_isFullTextHasBeenSet)
@@ -270,25 +275,20 @@ void FlowCreateApprover::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         value.AddMember(iKey, m_preReadTime, allocator);
     }
 
-    if (m_notifyTypeHasBeenSet)
+    if (m_userIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "NotifyType";
+        string key = "UserId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_notifyType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_userId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_verifyChannelHasBeenSet)
+    if (m_requiredHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "VerifyChannel";
+        string key = "Required";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        for (auto itr = m_verifyChannel.begin(); itr != m_verifyChannel.end(); ++itr)
-        {
-            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
-        }
+        value.AddMember(iKey, m_required, allocator);
     }
 
 }
@@ -326,22 +326,6 @@ bool FlowCreateApprover::OrganizationNameHasBeenSet() const
     return m_organizationNameHasBeenSet;
 }
 
-bool FlowCreateApprover::GetRequired() const
-{
-    return m_required;
-}
-
-void FlowCreateApprover::SetRequired(const bool& _required)
-{
-    m_required = _required;
-    m_requiredHasBeenSet = true;
-}
-
-bool FlowCreateApprover::RequiredHasBeenSet() const
-{
-    return m_requiredHasBeenSet;
-}
-
 string FlowCreateApprover::GetApproverName() const
 {
     return m_approverName;
@@ -374,22 +358,6 @@ bool FlowCreateApprover::ApproverMobileHasBeenSet() const
     return m_approverMobileHasBeenSet;
 }
 
-string FlowCreateApprover::GetApproverIdCardNumber() const
-{
-    return m_approverIdCardNumber;
-}
-
-void FlowCreateApprover::SetApproverIdCardNumber(const string& _approverIdCardNumber)
-{
-    m_approverIdCardNumber = _approverIdCardNumber;
-    m_approverIdCardNumberHasBeenSet = true;
-}
-
-bool FlowCreateApprover::ApproverIdCardNumberHasBeenSet() const
-{
-    return m_approverIdCardNumberHasBeenSet;
-}
-
 string FlowCreateApprover::GetApproverIdCardType() const
 {
     return m_approverIdCardType;
@@ -404,6 +372,22 @@ void FlowCreateApprover::SetApproverIdCardType(const string& _approverIdCardType
 bool FlowCreateApprover::ApproverIdCardTypeHasBeenSet() const
 {
     return m_approverIdCardTypeHasBeenSet;
+}
+
+string FlowCreateApprover::GetApproverIdCardNumber() const
+{
+    return m_approverIdCardNumber;
+}
+
+void FlowCreateApprover::SetApproverIdCardNumber(const string& _approverIdCardNumber)
+{
+    m_approverIdCardNumber = _approverIdCardNumber;
+    m_approverIdCardNumberHasBeenSet = true;
+}
+
+bool FlowCreateApprover::ApproverIdCardNumberHasBeenSet() const
+{
+    return m_approverIdCardNumberHasBeenSet;
 }
 
 string FlowCreateApprover::GetRecipientId() const
@@ -422,20 +406,36 @@ bool FlowCreateApprover::RecipientIdHasBeenSet() const
     return m_recipientIdHasBeenSet;
 }
 
-string FlowCreateApprover::GetUserId() const
+vector<string> FlowCreateApprover::GetVerifyChannel() const
 {
-    return m_userId;
+    return m_verifyChannel;
 }
 
-void FlowCreateApprover::SetUserId(const string& _userId)
+void FlowCreateApprover::SetVerifyChannel(const vector<string>& _verifyChannel)
 {
-    m_userId = _userId;
-    m_userIdHasBeenSet = true;
+    m_verifyChannel = _verifyChannel;
+    m_verifyChannelHasBeenSet = true;
 }
 
-bool FlowCreateApprover::UserIdHasBeenSet() const
+bool FlowCreateApprover::VerifyChannelHasBeenSet() const
 {
-    return m_userIdHasBeenSet;
+    return m_verifyChannelHasBeenSet;
+}
+
+string FlowCreateApprover::GetNotifyType() const
+{
+    return m_notifyType;
+}
+
+void FlowCreateApprover::SetNotifyType(const string& _notifyType)
+{
+    m_notifyType = _notifyType;
+    m_notifyTypeHasBeenSet = true;
+}
+
+bool FlowCreateApprover::NotifyTypeHasBeenSet() const
+{
+    return m_notifyTypeHasBeenSet;
 }
 
 bool FlowCreateApprover::GetIsFullText() const
@@ -470,35 +470,35 @@ bool FlowCreateApprover::PreReadTimeHasBeenSet() const
     return m_preReadTimeHasBeenSet;
 }
 
-string FlowCreateApprover::GetNotifyType() const
+string FlowCreateApprover::GetUserId() const
 {
-    return m_notifyType;
+    return m_userId;
 }
 
-void FlowCreateApprover::SetNotifyType(const string& _notifyType)
+void FlowCreateApprover::SetUserId(const string& _userId)
 {
-    m_notifyType = _notifyType;
-    m_notifyTypeHasBeenSet = true;
+    m_userId = _userId;
+    m_userIdHasBeenSet = true;
 }
 
-bool FlowCreateApprover::NotifyTypeHasBeenSet() const
+bool FlowCreateApprover::UserIdHasBeenSet() const
 {
-    return m_notifyTypeHasBeenSet;
+    return m_userIdHasBeenSet;
 }
 
-vector<string> FlowCreateApprover::GetVerifyChannel() const
+bool FlowCreateApprover::GetRequired() const
 {
-    return m_verifyChannel;
+    return m_required;
 }
 
-void FlowCreateApprover::SetVerifyChannel(const vector<string>& _verifyChannel)
+void FlowCreateApprover::SetRequired(const bool& _required)
 {
-    m_verifyChannel = _verifyChannel;
-    m_verifyChannelHasBeenSet = true;
+    m_required = _required;
+    m_requiredHasBeenSet = true;
 }
 
-bool FlowCreateApprover::VerifyChannelHasBeenSet() const
+bool FlowCreateApprover::RequiredHasBeenSet() const
 {
-    return m_verifyChannelHasBeenSet;
+    return m_requiredHasBeenSet;
 }
 

@@ -262,6 +262,24 @@ namespace TencentCloud
                      */
                     bool FailTypeHasBeenSet() const;
 
+                    /**
+                     * 获取外网ip
+                     * @return MachineWanIp 外网ip
+                     */
+                    std::string GetMachineWanIp() const;
+
+                    /**
+                     * 设置外网ip
+                     * @param MachineWanIp 外网ip
+                     */
+                    void SetMachineWanIp(const std::string& _machineWanIp);
+
+                    /**
+                     * 判断参数 MachineWanIp 是否已赋值
+                     * @return MachineWanIp 是否已赋值
+                     */
+                    bool MachineWanIpHasBeenSet() const;
+
                 private:
 
                     /**
@@ -335,6 +353,12 @@ namespace TencentCloud
                      */
                     uint64_t m_failType;
                     bool m_failTypeHasBeenSet;
+
+                    /**
+                     * 外网ip
+                     */
+                    std::string m_machineWanIp;
+                    bool m_machineWanIpHasBeenSet;
 
                 };
             }

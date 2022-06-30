@@ -32,7 +32,9 @@ EmergencyVul::EmergencyVul() :
     m_cveIdHasBeenSet(false),
     m_cvssScoreHasBeenSet(false),
     m_labelsHasBeenSet(false),
-    m_hostCountHasBeenSet(false)
+    m_hostCountHasBeenSet(false),
+    m_isSupportDefenseHasBeenSet(false),
+    m_defenseAttackCountHasBeenSet(false)
 {
 }
 
@@ -161,6 +163,26 @@ CoreInternalOutcome EmergencyVul::Deserialize(const rapidjson::Value &value)
         m_hostCountHasBeenSet = true;
     }
 
+    if (value.HasMember("IsSupportDefense") && !value["IsSupportDefense"].IsNull())
+    {
+        if (!value["IsSupportDefense"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `EmergencyVul.IsSupportDefense` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isSupportDefense = value["IsSupportDefense"].GetUint64();
+        m_isSupportDefenseHasBeenSet = true;
+    }
+
+    if (value.HasMember("DefenseAttackCount") && !value["DefenseAttackCount"].IsNull())
+    {
+        if (!value["DefenseAttackCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `EmergencyVul.DefenseAttackCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_defenseAttackCount = value["DefenseAttackCount"].GetUint64();
+        m_defenseAttackCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -262,6 +284,22 @@ void EmergencyVul::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "HostCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_hostCount, allocator);
+    }
+
+    if (m_isSupportDefenseHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsSupportDefense";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isSupportDefense, allocator);
+    }
+
+    if (m_defenseAttackCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DefenseAttackCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_defenseAttackCount, allocator);
     }
 
 }
@@ -457,5 +495,37 @@ void EmergencyVul::SetHostCount(const uint64_t& _hostCount)
 bool EmergencyVul::HostCountHasBeenSet() const
 {
     return m_hostCountHasBeenSet;
+}
+
+uint64_t EmergencyVul::GetIsSupportDefense() const
+{
+    return m_isSupportDefense;
+}
+
+void EmergencyVul::SetIsSupportDefense(const uint64_t& _isSupportDefense)
+{
+    m_isSupportDefense = _isSupportDefense;
+    m_isSupportDefenseHasBeenSet = true;
+}
+
+bool EmergencyVul::IsSupportDefenseHasBeenSet() const
+{
+    return m_isSupportDefenseHasBeenSet;
+}
+
+uint64_t EmergencyVul::GetDefenseAttackCount() const
+{
+    return m_defenseAttackCount;
+}
+
+void EmergencyVul::SetDefenseAttackCount(const uint64_t& _defenseAttackCount)
+{
+    m_defenseAttackCount = _defenseAttackCount;
+    m_defenseAttackCountHasBeenSet = true;
+}
+
+bool EmergencyVul::DefenseAttackCountHasBeenSet() const
+{
+    return m_defenseAttackCountHasBeenSet;
 }
 

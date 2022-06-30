@@ -24,12 +24,12 @@ using namespace std;
 
 CreateProcedureTemplateRequest::CreateProcedureTemplateRequest() :
     m_nameHasBeenSet(false),
+    m_subAppIdHasBeenSet(false),
     m_commentHasBeenSet(false),
     m_mediaProcessTaskHasBeenSet(false),
     m_aiContentReviewTaskHasBeenSet(false),
     m_aiAnalysisTaskHasBeenSet(false),
-    m_aiRecognitionTaskHasBeenSet(false),
-    m_subAppIdHasBeenSet(false)
+    m_aiRecognitionTaskHasBeenSet(false)
 {
 }
 
@@ -46,6 +46,14 @@ string CreateProcedureTemplateRequest::ToJsonString() const
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subAppIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubAppId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_subAppId, allocator);
     }
 
     if (m_commentHasBeenSet)
@@ -92,14 +100,6 @@ string CreateProcedureTemplateRequest::ToJsonString() const
         m_aiRecognitionTask.ToJsonObject(d[key.c_str()], allocator);
     }
 
-    if (m_subAppIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SubAppId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_subAppId, allocator);
-    }
-
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -122,6 +122,22 @@ void CreateProcedureTemplateRequest::SetName(const string& _name)
 bool CreateProcedureTemplateRequest::NameHasBeenSet() const
 {
     return m_nameHasBeenSet;
+}
+
+uint64_t CreateProcedureTemplateRequest::GetSubAppId() const
+{
+    return m_subAppId;
+}
+
+void CreateProcedureTemplateRequest::SetSubAppId(const uint64_t& _subAppId)
+{
+    m_subAppId = _subAppId;
+    m_subAppIdHasBeenSet = true;
+}
+
+bool CreateProcedureTemplateRequest::SubAppIdHasBeenSet() const
+{
+    return m_subAppIdHasBeenSet;
 }
 
 string CreateProcedureTemplateRequest::GetComment() const
@@ -202,22 +218,6 @@ void CreateProcedureTemplateRequest::SetAiRecognitionTask(const AiRecognitionTas
 bool CreateProcedureTemplateRequest::AiRecognitionTaskHasBeenSet() const
 {
     return m_aiRecognitionTaskHasBeenSet;
-}
-
-uint64_t CreateProcedureTemplateRequest::GetSubAppId() const
-{
-    return m_subAppId;
-}
-
-void CreateProcedureTemplateRequest::SetSubAppId(const uint64_t& _subAppId)
-{
-    m_subAppId = _subAppId;
-    m_subAppIdHasBeenSet = true;
-}
-
-bool CreateProcedureTemplateRequest::SubAppIdHasBeenSet() const
-{
-    return m_subAppIdHasBeenSet;
 }
 
 

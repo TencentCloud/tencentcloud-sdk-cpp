@@ -23,7 +23,9 @@ using namespace TencentCloud::Tcbr::V20220217::Model;
 using namespace std;
 
 DescribeCloudRunServersRequest::DescribeCloudRunServersRequest() :
-    m_envIdHasBeenSet(false)
+    m_envIdHasBeenSet(false),
+    m_pageSizeHasBeenSet(false),
+    m_pageNumHasBeenSet(false)
 {
 }
 
@@ -40,6 +42,22 @@ string DescribeCloudRunServersRequest::ToJsonString() const
         string key = "EnvId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_envId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_pageSizeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PageSize";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_pageSize, allocator);
+    }
+
+    if (m_pageNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PageNum";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_pageNum, allocator);
     }
 
 
@@ -64,6 +82,38 @@ void DescribeCloudRunServersRequest::SetEnvId(const string& _envId)
 bool DescribeCloudRunServersRequest::EnvIdHasBeenSet() const
 {
     return m_envIdHasBeenSet;
+}
+
+int64_t DescribeCloudRunServersRequest::GetPageSize() const
+{
+    return m_pageSize;
+}
+
+void DescribeCloudRunServersRequest::SetPageSize(const int64_t& _pageSize)
+{
+    m_pageSize = _pageSize;
+    m_pageSizeHasBeenSet = true;
+}
+
+bool DescribeCloudRunServersRequest::PageSizeHasBeenSet() const
+{
+    return m_pageSizeHasBeenSet;
+}
+
+int64_t DescribeCloudRunServersRequest::GetPageNum() const
+{
+    return m_pageNum;
+}
+
+void DescribeCloudRunServersRequest::SetPageNum(const int64_t& _pageNum)
+{
+    m_pageNum = _pageNum;
+    m_pageNumHasBeenSet = true;
+}
+
+bool DescribeCloudRunServersRequest::PageNumHasBeenSet() const
+{
+    return m_pageNumHasBeenSet;
 }
 
 

@@ -37,7 +37,8 @@ DescribeVulInfoCvssResponse::DescribeVulInfoCvssResponse() :
     m_cvssScoreHasBeenSet(false),
     m_cveInfoHasBeenSet(false),
     m_cvssScoreFloatHasBeenSet(false),
-    m_labelsHasBeenSet(false)
+    m_labelsHasBeenSet(false),
+    m_defenseAttackCountHasBeenSet(false)
 {
 }
 
@@ -215,6 +216,16 @@ CoreInternalOutcome DescribeVulInfoCvssResponse::Deserialize(const string &paylo
         m_labelsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("DefenseAttackCount") && !rsp["DefenseAttackCount"].IsNull())
+    {
+        if (!rsp["DefenseAttackCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DefenseAttackCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_defenseAttackCount = rsp["DefenseAttackCount"].GetUint64();
+        m_defenseAttackCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -335,6 +346,14 @@ string DescribeVulInfoCvssResponse::ToJsonString() const
         string key = "Labels";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_labels.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_defenseAttackCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DefenseAttackCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_defenseAttackCount, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -487,6 +506,16 @@ string DescribeVulInfoCvssResponse::GetLabels() const
 bool DescribeVulInfoCvssResponse::LabelsHasBeenSet() const
 {
     return m_labelsHasBeenSet;
+}
+
+uint64_t DescribeVulInfoCvssResponse::GetDefenseAttackCount() const
+{
+    return m_defenseAttackCount;
+}
+
+bool DescribeVulInfoCvssResponse::DefenseAttackCountHasBeenSet() const
+{
+    return m_defenseAttackCountHasBeenSet;
 }
 
 

@@ -295,6 +295,24 @@ namespace TencentCloud
                      */
                     bool DbNameHasBeenSet() const;
 
+                    /**
+                     * 获取命名空间id数组
+                     * @return NamespaceIdList 命名空间id数组
+                     */
+                    std::vector<std::string> GetNamespaceIdList() const;
+
+                    /**
+                     * 设置命名空间id数组
+                     * @param NamespaceIdList 命名空间id数组
+                     */
+                    void SetNamespaceIdList(const std::vector<std::string>& _namespaceIdList);
+
+                    /**
+                     * 判断参数 NamespaceIdList 是否已赋值
+                     * @return NamespaceIdList 是否已赋值
+                     */
+                    bool NamespaceIdListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -380,6 +398,12 @@ namespace TencentCloud
                      */
                     std::string m_dbName;
                     bool m_dbNameHasBeenSet;
+
+                    /**
+                     * 命名空间id数组
+                     */
+                    std::vector<std::string> m_namespaceIdList;
+                    bool m_namespaceIdListHasBeenSet;
 
                 };
             }

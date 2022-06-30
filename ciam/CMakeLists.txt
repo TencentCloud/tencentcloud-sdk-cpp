@@ -40,6 +40,7 @@ set(ciam_public_header_model
   include/tencentcloud/ciam/v20220331/model/User.h
   include/tencentcloud/ciam/v20220331/model/Pageable.h
   include/tencentcloud/ciam/v20220331/model/ResetPasswordResponse.h
+  include/tencentcloud/ciam/v20220331/model/UpdateUserResponse.h
   include/tencentcloud/ciam/v20220331/model/SetPasswordRequest.h
   include/tencentcloud/ciam/v20220331/model/SaltLocation.h
   include/tencentcloud/ciam/v20220331/model/UpdateUserStatusRequest.h
@@ -53,10 +54,12 @@ set(ciam_public_header_model
   include/tencentcloud/ciam/v20220331/model/CreateFileExportUserJobResponse.h
   include/tencentcloud/ciam/v20220331/model/CreateApiImportUserJobResponse.h
   include/tencentcloud/ciam/v20220331/model/LinkAccountRequest.h
+  include/tencentcloud/ciam/v20220331/model/ListLogMessageByConditionRequest.h
   include/tencentcloud/ciam/v20220331/model/SaltLocationRule.h
   include/tencentcloud/ciam/v20220331/model/MemberMap.h
   include/tencentcloud/ciam/v20220331/model/ListUserResponse.h
-  include/tencentcloud/ciam/v20220331/model/UpdateUserResponse.h
+  include/tencentcloud/ciam/v20220331/model/LogMessage.h
+  include/tencentcloud/ciam/v20220331/model/ListLogMessageByConditionResponse.h
   )
 
 set(ciam_src
@@ -82,6 +85,7 @@ set(ciam_src
   src/v20220331/model/User.cpp
   src/v20220331/model/Pageable.cpp
   src/v20220331/model/ResetPasswordResponse.cpp
+  src/v20220331/model/UpdateUserResponse.cpp
   src/v20220331/model/SetPasswordRequest.cpp
   src/v20220331/model/SaltLocation.cpp
   src/v20220331/model/UpdateUserStatusRequest.cpp
@@ -95,10 +99,12 @@ set(ciam_src
   src/v20220331/model/CreateFileExportUserJobResponse.cpp
   src/v20220331/model/CreateApiImportUserJobResponse.cpp
   src/v20220331/model/LinkAccountRequest.cpp
+  src/v20220331/model/ListLogMessageByConditionRequest.cpp
   src/v20220331/model/SaltLocationRule.cpp
   src/v20220331/model/MemberMap.cpp
   src/v20220331/model/ListUserResponse.cpp
-  src/v20220331/model/UpdateUserResponse.cpp
+  src/v20220331/model/LogMessage.cpp
+  src/v20220331/model/ListLogMessageByConditionResponse.cpp
   )
 
 set(ciam_include

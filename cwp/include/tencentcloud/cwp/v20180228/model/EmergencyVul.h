@@ -278,6 +278,50 @@ namespace TencentCloud
                      */
                     bool HostCountHasBeenSet() const;
 
+                    /**
+                     * 获取是否支持防御， 0:不支持 1:支持
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsSupportDefense 是否支持防御， 0:不支持 1:支持
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetIsSupportDefense() const;
+
+                    /**
+                     * 设置是否支持防御， 0:不支持 1:支持
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param IsSupportDefense 是否支持防御， 0:不支持 1:支持
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIsSupportDefense(const uint64_t& _isSupportDefense);
+
+                    /**
+                     * 判断参数 IsSupportDefense 是否已赋值
+                     * @return IsSupportDefense 是否已赋值
+                     */
+                    bool IsSupportDefenseHasBeenSet() const;
+
+                    /**
+                     * 获取已防御的攻击次数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DefenseAttackCount 已防御的攻击次数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetDefenseAttackCount() const;
+
+                    /**
+                     * 设置已防御的攻击次数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DefenseAttackCount 已防御的攻击次数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDefenseAttackCount(const uint64_t& _defenseAttackCount);
+
+                    /**
+                     * 判断参数 DefenseAttackCount 是否已赋值
+                     * @return DefenseAttackCount 是否已赋值
+                     */
+                    bool DefenseAttackCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -355,6 +399,20 @@ namespace TencentCloud
                      */
                     uint64_t m_hostCount;
                     bool m_hostCountHasBeenSet;
+
+                    /**
+                     * 是否支持防御， 0:不支持 1:支持
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_isSupportDefense;
+                    bool m_isSupportDefenseHasBeenSet;
+
+                    /**
+                     * 已防御的攻击次数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_defenseAttackCount;
+                    bool m_defenseAttackCountHasBeenSet;
 
                 };
             }

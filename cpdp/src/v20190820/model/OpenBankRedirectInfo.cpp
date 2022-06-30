@@ -27,7 +27,8 @@ OpenBankRedirectInfo::OpenBankRedirectInfo() :
     m_expireTimeHasBeenSet(false),
     m_mpAppIdHasBeenSet(false),
     m_mpPathHasBeenSet(false),
-    m_mpUserNameHasBeenSet(false)
+    m_mpUserNameHasBeenSet(false),
+    m_formInfoHasBeenSet(false)
 {
 }
 
@@ -106,6 +107,23 @@ CoreInternalOutcome OpenBankRedirectInfo::Deserialize(const rapidjson::Value &va
         m_mpUserNameHasBeenSet = true;
     }
 
+    if (value.HasMember("FormInfo") && !value["FormInfo"].IsNull())
+    {
+        if (!value["FormInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `OpenBankRedirectInfo.FormInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_formInfo.Deserialize(value["FormInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_formInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +185,15 @@ void OpenBankRedirectInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "MpUserName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_mpUserName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_formInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FormInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_formInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -282,5 +309,21 @@ void OpenBankRedirectInfo::SetMpUserName(const string& _mpUserName)
 bool OpenBankRedirectInfo::MpUserNameHasBeenSet() const
 {
     return m_mpUserNameHasBeenSet;
+}
+
+OpenBankFormInfo OpenBankRedirectInfo::GetFormInfo() const
+{
+    return m_formInfo;
+}
+
+void OpenBankRedirectInfo::SetFormInfo(const OpenBankFormInfo& _formInfo)
+{
+    m_formInfo = _formInfo;
+    m_formInfoHasBeenSet = true;
+}
+
+bool OpenBankRedirectInfo::FormInfoHasBeenSet() const
+{
+    return m_formInfoHasBeenSet;
 }
 

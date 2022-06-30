@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取流程编号
-                     * @return FlowId 流程编号
+                     * 获取签署流程编号
+                     * @return FlowId 签署流程编号
                      */
                     std::string GetFlowId() const;
 
@@ -58,7 +58,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 流程编号
+                     * 签署流程编号
                      */
                     std::string m_flowId;
                     bool m_flowIdHasBeenSet;

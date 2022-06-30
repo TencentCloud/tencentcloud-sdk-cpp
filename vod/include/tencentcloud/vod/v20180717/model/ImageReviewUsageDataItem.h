@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 图片智能识别次数统计数据。
+                * 图片审核次数统计数据。
                 */
                 class ImageReviewUsageDataItem : public AbstractModel
                 {

@@ -22,9 +22,9 @@ using namespace std;
 
 UsageDetail::UsageDetail() :
     m_proxyOrganizationOpenIdHasBeenSet(false),
-    m_usageHasBeenSet(false),
+    m_proxyOrganizationNameHasBeenSet(false),
     m_dateHasBeenSet(false),
-    m_proxyOrganizationNameHasBeenSet(false)
+    m_usageHasBeenSet(false)
 {
 }
 
@@ -43,14 +43,14 @@ CoreInternalOutcome UsageDetail::Deserialize(const rapidjson::Value &value)
         m_proxyOrganizationOpenIdHasBeenSet = true;
     }
 
-    if (value.HasMember("Usage") && !value["Usage"].IsNull())
+    if (value.HasMember("ProxyOrganizationName") && !value["ProxyOrganizationName"].IsNull())
     {
-        if (!value["Usage"].IsUint64())
+        if (!value["ProxyOrganizationName"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `UsageDetail.Usage` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UsageDetail.ProxyOrganizationName` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_usage = value["Usage"].GetUint64();
-        m_usageHasBeenSet = true;
+        m_proxyOrganizationName = string(value["ProxyOrganizationName"].GetString());
+        m_proxyOrganizationNameHasBeenSet = true;
     }
 
     if (value.HasMember("Date") && !value["Date"].IsNull())
@@ -63,14 +63,14 @@ CoreInternalOutcome UsageDetail::Deserialize(const rapidjson::Value &value)
         m_dateHasBeenSet = true;
     }
 
-    if (value.HasMember("ProxyOrganizationName") && !value["ProxyOrganizationName"].IsNull())
+    if (value.HasMember("Usage") && !value["Usage"].IsNull())
     {
-        if (!value["ProxyOrganizationName"].IsString())
+        if (!value["Usage"].IsUint64())
         {
-            return CoreInternalOutcome(Core::Error("response `UsageDetail.ProxyOrganizationName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UsageDetail.Usage` IsUint64=false incorrectly").SetRequestId(requestId));
         }
-        m_proxyOrganizationName = string(value["ProxyOrganizationName"].GetString());
-        m_proxyOrganizationNameHasBeenSet = true;
+        m_usage = value["Usage"].GetUint64();
+        m_usageHasBeenSet = true;
     }
 
 
@@ -88,12 +88,12 @@ void UsageDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         value.AddMember(iKey, rapidjson::Value(m_proxyOrganizationOpenId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_usageHasBeenSet)
+    if (m_proxyOrganizationNameHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Usage";
+        string key = "ProxyOrganizationName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_usage, allocator);
+        value.AddMember(iKey, rapidjson::Value(m_proxyOrganizationName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_dateHasBeenSet)
@@ -104,12 +104,12 @@ void UsageDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         value.AddMember(iKey, rapidjson::Value(m_date.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_proxyOrganizationNameHasBeenSet)
+    if (m_usageHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ProxyOrganizationName";
+        string key = "Usage";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_proxyOrganizationName.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, m_usage, allocator);
     }
 
 }
@@ -131,20 +131,20 @@ bool UsageDetail::ProxyOrganizationOpenIdHasBeenSet() const
     return m_proxyOrganizationOpenIdHasBeenSet;
 }
 
-uint64_t UsageDetail::GetUsage() const
+string UsageDetail::GetProxyOrganizationName() const
 {
-    return m_usage;
+    return m_proxyOrganizationName;
 }
 
-void UsageDetail::SetUsage(const uint64_t& _usage)
+void UsageDetail::SetProxyOrganizationName(const string& _proxyOrganizationName)
 {
-    m_usage = _usage;
-    m_usageHasBeenSet = true;
+    m_proxyOrganizationName = _proxyOrganizationName;
+    m_proxyOrganizationNameHasBeenSet = true;
 }
 
-bool UsageDetail::UsageHasBeenSet() const
+bool UsageDetail::ProxyOrganizationNameHasBeenSet() const
 {
-    return m_usageHasBeenSet;
+    return m_proxyOrganizationNameHasBeenSet;
 }
 
 string UsageDetail::GetDate() const
@@ -163,19 +163,19 @@ bool UsageDetail::DateHasBeenSet() const
     return m_dateHasBeenSet;
 }
 
-string UsageDetail::GetProxyOrganizationName() const
+uint64_t UsageDetail::GetUsage() const
 {
-    return m_proxyOrganizationName;
+    return m_usage;
 }
 
-void UsageDetail::SetProxyOrganizationName(const string& _proxyOrganizationName)
+void UsageDetail::SetUsage(const uint64_t& _usage)
 {
-    m_proxyOrganizationName = _proxyOrganizationName;
-    m_proxyOrganizationNameHasBeenSet = true;
+    m_usage = _usage;
+    m_usageHasBeenSet = true;
 }
 
-bool UsageDetail::ProxyOrganizationNameHasBeenSet() const
+bool UsageDetail::UsageHasBeenSet() const
 {
-    return m_proxyOrganizationNameHasBeenSet;
+    return m_usageHasBeenSet;
 }
 

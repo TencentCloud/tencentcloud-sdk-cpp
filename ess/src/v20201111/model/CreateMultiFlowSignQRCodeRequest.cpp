@@ -24,13 +24,13 @@ using namespace std;
 
 CreateMultiFlowSignQRCodeRequest::CreateMultiFlowSignQRCodeRequest() :
     m_templateIdHasBeenSet(false),
-    m_operatorHasBeenSet(false),
     m_flowNameHasBeenSet(false),
+    m_operatorHasBeenSet(false),
     m_agentHasBeenSet(false),
-    m_flowEffectiveDayHasBeenSet(false),
-    m_qrEffectiveDayHasBeenSet(false),
+    m_callbackUrlHasBeenSet(false),
     m_maxFlowNumHasBeenSet(false),
-    m_callbackUrlHasBeenSet(false)
+    m_flowEffectiveDayHasBeenSet(false),
+    m_qrEffectiveDayHasBeenSet(false)
 {
 }
 
@@ -49,6 +49,14 @@ string CreateMultiFlowSignQRCodeRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_templateId.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_flowNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FlowName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_flowName.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_operatorHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -58,14 +66,6 @@ string CreateMultiFlowSignQRCodeRequest::ToJsonString() const
         m_operator.ToJsonObject(d[key.c_str()], allocator);
     }
 
-    if (m_flowNameHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "FlowName";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_flowName.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_agentHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -73,6 +73,22 @@ string CreateMultiFlowSignQRCodeRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_agent.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_callbackUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CallbackUrl";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_callbackUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_maxFlowNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxFlowNum";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_maxFlowNum, allocator);
     }
 
     if (m_flowEffectiveDayHasBeenSet)
@@ -89,22 +105,6 @@ string CreateMultiFlowSignQRCodeRequest::ToJsonString() const
         string key = "QrEffectiveDay";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_qrEffectiveDay, allocator);
-    }
-
-    if (m_maxFlowNumHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "MaxFlowNum";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_maxFlowNum, allocator);
-    }
-
-    if (m_callbackUrlHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "CallbackUrl";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_callbackUrl.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -131,22 +131,6 @@ bool CreateMultiFlowSignQRCodeRequest::TemplateIdHasBeenSet() const
     return m_templateIdHasBeenSet;
 }
 
-UserInfo CreateMultiFlowSignQRCodeRequest::GetOperator() const
-{
-    return m_operator;
-}
-
-void CreateMultiFlowSignQRCodeRequest::SetOperator(const UserInfo& _operator)
-{
-    m_operator = _operator;
-    m_operatorHasBeenSet = true;
-}
-
-bool CreateMultiFlowSignQRCodeRequest::OperatorHasBeenSet() const
-{
-    return m_operatorHasBeenSet;
-}
-
 string CreateMultiFlowSignQRCodeRequest::GetFlowName() const
 {
     return m_flowName;
@@ -163,6 +147,22 @@ bool CreateMultiFlowSignQRCodeRequest::FlowNameHasBeenSet() const
     return m_flowNameHasBeenSet;
 }
 
+UserInfo CreateMultiFlowSignQRCodeRequest::GetOperator() const
+{
+    return m_operator;
+}
+
+void CreateMultiFlowSignQRCodeRequest::SetOperator(const UserInfo& _operator)
+{
+    m_operator = _operator;
+    m_operatorHasBeenSet = true;
+}
+
+bool CreateMultiFlowSignQRCodeRequest::OperatorHasBeenSet() const
+{
+    return m_operatorHasBeenSet;
+}
+
 Agent CreateMultiFlowSignQRCodeRequest::GetAgent() const
 {
     return m_agent;
@@ -177,6 +177,38 @@ void CreateMultiFlowSignQRCodeRequest::SetAgent(const Agent& _agent)
 bool CreateMultiFlowSignQRCodeRequest::AgentHasBeenSet() const
 {
     return m_agentHasBeenSet;
+}
+
+string CreateMultiFlowSignQRCodeRequest::GetCallbackUrl() const
+{
+    return m_callbackUrl;
+}
+
+void CreateMultiFlowSignQRCodeRequest::SetCallbackUrl(const string& _callbackUrl)
+{
+    m_callbackUrl = _callbackUrl;
+    m_callbackUrlHasBeenSet = true;
+}
+
+bool CreateMultiFlowSignQRCodeRequest::CallbackUrlHasBeenSet() const
+{
+    return m_callbackUrlHasBeenSet;
+}
+
+int64_t CreateMultiFlowSignQRCodeRequest::GetMaxFlowNum() const
+{
+    return m_maxFlowNum;
+}
+
+void CreateMultiFlowSignQRCodeRequest::SetMaxFlowNum(const int64_t& _maxFlowNum)
+{
+    m_maxFlowNum = _maxFlowNum;
+    m_maxFlowNumHasBeenSet = true;
+}
+
+bool CreateMultiFlowSignQRCodeRequest::MaxFlowNumHasBeenSet() const
+{
+    return m_maxFlowNumHasBeenSet;
 }
 
 int64_t CreateMultiFlowSignQRCodeRequest::GetFlowEffectiveDay() const
@@ -209,38 +241,6 @@ void CreateMultiFlowSignQRCodeRequest::SetQrEffectiveDay(const int64_t& _qrEffec
 bool CreateMultiFlowSignQRCodeRequest::QrEffectiveDayHasBeenSet() const
 {
     return m_qrEffectiveDayHasBeenSet;
-}
-
-int64_t CreateMultiFlowSignQRCodeRequest::GetMaxFlowNum() const
-{
-    return m_maxFlowNum;
-}
-
-void CreateMultiFlowSignQRCodeRequest::SetMaxFlowNum(const int64_t& _maxFlowNum)
-{
-    m_maxFlowNum = _maxFlowNum;
-    m_maxFlowNumHasBeenSet = true;
-}
-
-bool CreateMultiFlowSignQRCodeRequest::MaxFlowNumHasBeenSet() const
-{
-    return m_maxFlowNumHasBeenSet;
-}
-
-string CreateMultiFlowSignQRCodeRequest::GetCallbackUrl() const
-{
-    return m_callbackUrl;
-}
-
-void CreateMultiFlowSignQRCodeRequest::SetCallbackUrl(const string& _callbackUrl)
-{
-    m_callbackUrl = _callbackUrl;
-    m_callbackUrlHasBeenSet = true;
-}
-
-bool CreateMultiFlowSignQRCodeRequest::CallbackUrlHasBeenSet() const
-{
-    return m_callbackUrlHasBeenSet;
 }
 
 

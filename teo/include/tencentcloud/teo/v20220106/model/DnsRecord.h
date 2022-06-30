@@ -315,29 +315,29 @@ pending: 不生效
                     bool CnameHasBeenSet() const;
 
                     /**
-                     * 获取域名是否开启了lb，四层，安全
+                     * 获取域名是否开启了负载均衡，四层代理，安全
 - lb 负载均衡
 - security 安全
-- l4 四层
+- l4 四层代理
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DomainStatus 域名是否开启了lb，四层，安全
+                     * @return DomainStatus 域名是否开启了负载均衡，四层代理，安全
 - lb 负载均衡
 - security 安全
-- l4 四层
+- l4 四层代理
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> GetDomainStatus() const;
 
                     /**
-                     * 设置域名是否开启了lb，四层，安全
+                     * 设置域名是否开启了负载均衡，四层代理，安全
 - lb 负载均衡
 - security 安全
-- l4 四层
+- l4 四层代理
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DomainStatus 域名是否开启了lb，四层，安全
+                     * @param DomainStatus 域名是否开启了负载均衡，四层代理，安全
 - lb 负载均衡
 - security 安全
-- l4 四层
+- l4 四层代理
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetDomainStatus(const std::vector<std::string>& _domainStatus);
@@ -439,10 +439,10 @@ pending: 不生效
                     bool m_cnameHasBeenSet;
 
                     /**
-                     * 域名是否开启了lb，四层，安全
+                     * 域名是否开启了负载均衡，四层代理，安全
 - lb 负载均衡
 - security 安全
-- l4 四层
+- l4 四层代理
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_domainStatus;

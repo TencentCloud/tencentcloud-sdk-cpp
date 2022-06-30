@@ -30,7 +30,9 @@ OriginGroup::OriginGroup() :
     m_zoneNameHasBeenSet(false),
     m_originTypeHasBeenSet(false),
     m_applicationProxyUsedHasBeenSet(false),
-    m_loadBalancingUsedHasBeenSet(false)
+    m_loadBalancingUsedHasBeenSet(false),
+    m_statusHasBeenSet(false),
+    m_loadBalancingUsedTypeHasBeenSet(false)
 {
 }
 
@@ -149,6 +151,33 @@ CoreInternalOutcome OriginGroup::Deserialize(const rapidjson::Value &value)
         m_loadBalancingUsedHasBeenSet = true;
     }
 
+    if (value.HasMember("Status") && !value["Status"].IsNull())
+    {
+        if (!value["Status"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `OriginGroup.Status` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_status.Deserialize(value["Status"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_statusHasBeenSet = true;
+    }
+
+    if (value.HasMember("LoadBalancingUsedType") && !value["LoadBalancingUsedType"].IsNull())
+    {
+        if (!value["LoadBalancingUsedType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `OriginGroup.LoadBalancingUsedType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_loadBalancingUsedType = string(value["LoadBalancingUsedType"].GetString());
+        m_loadBalancingUsedTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -241,6 +270,23 @@ void OriginGroup::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "LoadBalancingUsed";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_loadBalancingUsed, allocator);
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_status.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_loadBalancingUsedTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LoadBalancingUsedType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_loadBalancingUsedType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -404,5 +450,37 @@ void OriginGroup::SetLoadBalancingUsed(const bool& _loadBalancingUsed)
 bool OriginGroup::LoadBalancingUsedHasBeenSet() const
 {
     return m_loadBalancingUsedHasBeenSet;
+}
+
+OriginCheckOriginStatus OriginGroup::GetStatus() const
+{
+    return m_status;
+}
+
+void OriginGroup::SetStatus(const OriginCheckOriginStatus& _status)
+{
+    m_status = _status;
+    m_statusHasBeenSet = true;
+}
+
+bool OriginGroup::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
+}
+
+string OriginGroup::GetLoadBalancingUsedType() const
+{
+    return m_loadBalancingUsedType;
+}
+
+void OriginGroup::SetLoadBalancingUsedType(const string& _loadBalancingUsedType)
+{
+    m_loadBalancingUsedType = _loadBalancingUsedType;
+    m_loadBalancingUsedTypeHasBeenSet = true;
+}
+
+bool OriginGroup::LoadBalancingUsedTypeHasBeenSet() const
+{
+    return m_loadBalancingUsedTypeHasBeenSet;
 }
 

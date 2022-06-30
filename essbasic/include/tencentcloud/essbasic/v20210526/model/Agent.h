@@ -66,40 +66,22 @@ namespace TencentCloud
                     bool AppIdHasBeenSet() const;
 
                     /**
-                     * 获取腾讯电子签颁发给渠道侧合作企业的企业ID
-                     * @return ProxyOrganizationId 腾讯电子签颁发给渠道侧合作企业的企业ID
+                     * 获取渠道/平台合作企业的企业ID
+                     * @return ProxyOrganizationOpenId 渠道/平台合作企业的企业ID
                      */
-                    std::string GetProxyOrganizationId() const;
+                    std::string GetProxyOrganizationOpenId() const;
 
                     /**
-                     * 设置腾讯电子签颁发给渠道侧合作企业的企业ID
-                     * @param ProxyOrganizationId 腾讯电子签颁发给渠道侧合作企业的企业ID
+                     * 设置渠道/平台合作企业的企业ID
+                     * @param ProxyOrganizationOpenId 渠道/平台合作企业的企业ID
                      */
-                    void SetProxyOrganizationId(const std::string& _proxyOrganizationId);
+                    void SetProxyOrganizationOpenId(const std::string& _proxyOrganizationOpenId);
 
                     /**
-                     * 判断参数 ProxyOrganizationId 是否已赋值
-                     * @return ProxyOrganizationId 是否已赋值
+                     * 判断参数 ProxyOrganizationOpenId 是否已赋值
+                     * @return ProxyOrganizationOpenId 是否已赋值
                      */
-                    bool ProxyOrganizationIdHasBeenSet() const;
-
-                    /**
-                     * 获取腾讯电子签颁发给渠道侧合作企业的应用ID
-                     * @return ProxyAppId 腾讯电子签颁发给渠道侧合作企业的应用ID
-                     */
-                    std::string GetProxyAppId() const;
-
-                    /**
-                     * 设置腾讯电子签颁发给渠道侧合作企业的应用ID
-                     * @param ProxyAppId 腾讯电子签颁发给渠道侧合作企业的应用ID
-                     */
-                    void SetProxyAppId(const std::string& _proxyAppId);
-
-                    /**
-                     * 判断参数 ProxyAppId 是否已赋值
-                     * @return ProxyAppId 是否已赋值
-                     */
-                    bool ProxyAppIdHasBeenSet() const;
+                    bool ProxyOrganizationOpenIdHasBeenSet() const;
 
                     /**
                      * 获取渠道/平台合作企业经办人（操作员）
@@ -120,22 +102,40 @@ namespace TencentCloud
                     bool ProxyOperatorHasBeenSet() const;
 
                     /**
-                     * 获取渠道/平台合作企业的企业ID
-                     * @return ProxyOrganizationOpenId 渠道/平台合作企业的企业ID
+                     * 获取腾讯电子签颁发给渠道侧合作企业的应用ID
+                     * @return ProxyAppId 腾讯电子签颁发给渠道侧合作企业的应用ID
                      */
-                    std::string GetProxyOrganizationOpenId() const;
+                    std::string GetProxyAppId() const;
 
                     /**
-                     * 设置渠道/平台合作企业的企业ID
-                     * @param ProxyOrganizationOpenId 渠道/平台合作企业的企业ID
+                     * 设置腾讯电子签颁发给渠道侧合作企业的应用ID
+                     * @param ProxyAppId 腾讯电子签颁发给渠道侧合作企业的应用ID
                      */
-                    void SetProxyOrganizationOpenId(const std::string& _proxyOrganizationOpenId);
+                    void SetProxyAppId(const std::string& _proxyAppId);
 
                     /**
-                     * 判断参数 ProxyOrganizationOpenId 是否已赋值
-                     * @return ProxyOrganizationOpenId 是否已赋值
+                     * 判断参数 ProxyAppId 是否已赋值
+                     * @return ProxyAppId 是否已赋值
                      */
-                    bool ProxyOrganizationOpenIdHasBeenSet() const;
+                    bool ProxyAppIdHasBeenSet() const;
+
+                    /**
+                     * 获取腾讯电子签颁发给渠道侧合作企业的企业ID
+                     * @return ProxyOrganizationId 腾讯电子签颁发给渠道侧合作企业的企业ID
+                     */
+                    std::string GetProxyOrganizationId() const;
+
+                    /**
+                     * 设置腾讯电子签颁发给渠道侧合作企业的企业ID
+                     * @param ProxyOrganizationId 腾讯电子签颁发给渠道侧合作企业的企业ID
+                     */
+                    void SetProxyOrganizationId(const std::string& _proxyOrganizationId);
+
+                    /**
+                     * 判断参数 ProxyOrganizationId 是否已赋值
+                     * @return ProxyOrganizationId 是否已赋值
+                     */
+                    bool ProxyOrganizationIdHasBeenSet() const;
 
                 private:
 
@@ -146,16 +146,10 @@ namespace TencentCloud
                     bool m_appIdHasBeenSet;
 
                     /**
-                     * 腾讯电子签颁发给渠道侧合作企业的企业ID
+                     * 渠道/平台合作企业的企业ID
                      */
-                    std::string m_proxyOrganizationId;
-                    bool m_proxyOrganizationIdHasBeenSet;
-
-                    /**
-                     * 腾讯电子签颁发给渠道侧合作企业的应用ID
-                     */
-                    std::string m_proxyAppId;
-                    bool m_proxyAppIdHasBeenSet;
+                    std::string m_proxyOrganizationOpenId;
+                    bool m_proxyOrganizationOpenIdHasBeenSet;
 
                     /**
                      * 渠道/平台合作企业经办人（操作员）
@@ -164,10 +158,16 @@ namespace TencentCloud
                     bool m_proxyOperatorHasBeenSet;
 
                     /**
-                     * 渠道/平台合作企业的企业ID
+                     * 腾讯电子签颁发给渠道侧合作企业的应用ID
                      */
-                    std::string m_proxyOrganizationOpenId;
-                    bool m_proxyOrganizationOpenIdHasBeenSet;
+                    std::string m_proxyAppId;
+                    bool m_proxyAppIdHasBeenSet;
+
+                    /**
+                     * 腾讯电子签颁发给渠道侧合作企业的企业ID
+                     */
+                    std::string m_proxyOrganizationId;
+                    bool m_proxyOrganizationIdHasBeenSet;
 
                 };
             }

@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 图片画面智能识别涉及令人反感的信息的任务结果类型
+                * 图片画面审核涉及令人反感的信息的任务结果类型
                 */
                 class PornImageResult : public AbstractModel
                 {

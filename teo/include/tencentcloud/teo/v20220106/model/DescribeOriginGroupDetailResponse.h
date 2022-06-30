@@ -69,8 +69,12 @@ namespace TencentCloud
                     bool OriginNameHasBeenSet() const;
 
                     /**
-                     * 获取配置类型
-                     * @return Type 配置类型
+                     * 获取源站组配置类型
+area：表示按照Record记录中的Area字段进行按客户端IP所在区域回源。
+weight：表示按照Record记录中的Weight字段进行按权重回源。
+                     * @return Type 源站组配置类型
+area：表示按照Record记录中的Area字段进行按客户端IP所在区域回源。
+weight：表示按照Record记录中的Weight字段进行按权重回源。
                      */
                     std::string GetType() const;
 
@@ -143,9 +147,9 @@ namespace TencentCloud
                     bool OriginTypeHasBeenSet() const;
 
                     /**
-                     * 获取是否被四层代理使用
+                     * 获取当前源站组是否被四层代理使用。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ApplicationProxyUsed 是否被四层代理使用
+                     * @return ApplicationProxyUsed 当前源站组是否被四层代理使用。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool GetApplicationProxyUsed() const;
@@ -157,9 +161,9 @@ namespace TencentCloud
                     bool ApplicationProxyUsedHasBeenSet() const;
 
                     /**
-                     * 获取是否被负载均衡使用
+                     * 获取当前源站组是否被负载均衡使用。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return LoadBalancingUsed 是否被负载均衡使用
+                     * @return LoadBalancingUsed 当前源站组是否被负载均衡使用。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool GetLoadBalancingUsed() const;
@@ -169,6 +173,28 @@ namespace TencentCloud
                      * @return LoadBalancingUsed 是否已赋值
                      */
                     bool LoadBalancingUsedHasBeenSet() const;
+
+                    /**
+                     * 获取使用当前源站组的负载均衡的类型：
+none：未被使用
+dns_only：被仅DNS类型负载均衡使用
+proxied：被代理加速类型负载均衡使用
+both：同时被仅DNS和代理加速类型负载均衡使用
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LoadBalancingUsedType 使用当前源站组的负载均衡的类型：
+none：未被使用
+dns_only：被仅DNS类型负载均衡使用
+proxied：被代理加速类型负载均衡使用
+both：同时被仅DNS和代理加速类型负载均衡使用
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetLoadBalancingUsedType() const;
+
+                    /**
+                     * 判断参数 LoadBalancingUsedType 是否已赋值
+                     * @return LoadBalancingUsedType 是否已赋值
+                     */
+                    bool LoadBalancingUsedTypeHasBeenSet() const;
 
                 private:
 
@@ -185,7 +211,9 @@ namespace TencentCloud
                     bool m_originNameHasBeenSet;
 
                     /**
-                     * 配置类型
+                     * 源站组配置类型
+area：表示按照Record记录中的Area字段进行按客户端IP所在区域回源。
+weight：表示按照Record记录中的Weight字段进行按权重回源。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
@@ -222,18 +250,29 @@ namespace TencentCloud
                     bool m_originTypeHasBeenSet;
 
                     /**
-                     * 是否被四层代理使用
+                     * 当前源站组是否被四层代理使用。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_applicationProxyUsed;
                     bool m_applicationProxyUsedHasBeenSet;
 
                     /**
-                     * 是否被负载均衡使用
+                     * 当前源站组是否被负载均衡使用。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_loadBalancingUsed;
                     bool m_loadBalancingUsedHasBeenSet;
+
+                    /**
+                     * 使用当前源站组的负载均衡的类型：
+none：未被使用
+dns_only：被仅DNS类型负载均衡使用
+proxied：被代理加速类型负载均衡使用
+both：同时被仅DNS和代理加速类型负载均衡使用
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_loadBalancingUsedType;
+                    bool m_loadBalancingUsedTypeHasBeenSet;
 
                 };
             }

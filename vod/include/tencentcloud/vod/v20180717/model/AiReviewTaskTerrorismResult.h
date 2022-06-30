@@ -37,7 +37,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 智能识别涉及令人不安全的信息的任务结果类型
+                * 音视频审核涉及令人不安全的信息的任务结果类型
                 */
                 class AiReviewTaskTerrorismResult : public AbstractModel
                 {
@@ -121,14 +121,14 @@ namespace TencentCloud
                     bool MessageHasBeenSet() const;
 
                     /**
-                     * 获取智能识别涉及令人不安全的信息的任务输入。
-                     * @return Input 智能识别涉及令人不安全的信息的任务输入。
+                     * 获取音视频审核涉及令人不安全的信息的任务输入。
+                     * @return Input 音视频审核涉及令人不安全的信息的任务输入。
                      */
                     AiReviewTerrorismTaskInput GetInput() const;
 
                     /**
-                     * 设置智能识别涉及令人不安全的信息的任务输入。
-                     * @param Input 智能识别涉及令人不安全的信息的任务输入。
+                     * 设置音视频审核涉及令人不安全的信息的任务输入。
+                     * @param Input 音视频审核涉及令人不安全的信息的任务输入。
                      */
                     void SetInput(const AiReviewTerrorismTaskInput& _input);
 
@@ -139,17 +139,17 @@ namespace TencentCloud
                     bool InputHasBeenSet() const;
 
                     /**
-                     * 获取智能识别涉及令人不安全的信息的任务输出。
+                     * 获取音视频审核涉及令人不安全的信息的任务输出。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Output 智能识别涉及令人不安全的信息的任务输出。
+                     * @return Output 音视频审核涉及令人不安全的信息的任务输出。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AiReviewTerrorismTaskOutput GetOutput() const;
 
                     /**
-                     * 设置智能识别涉及令人不安全的信息的任务输出。
+                     * 设置音视频审核涉及令人不安全的信息的任务输出。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Output 智能识别涉及令人不安全的信息的任务输出。
+                     * @param Output 音视频审核涉及令人不安全的信息的任务输出。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetOutput(const AiReviewTerrorismTaskOutput& _output);
@@ -187,13 +187,13 @@ namespace TencentCloud
                     bool m_messageHasBeenSet;
 
                     /**
-                     * 智能识别涉及令人不安全的信息的任务输入。
+                     * 音视频审核涉及令人不安全的信息的任务输入。
                      */
                     AiReviewTerrorismTaskInput m_input;
                     bool m_inputHasBeenSet;
 
                     /**
-                     * 智能识别涉及令人不安全的信息的任务输出。
+                     * 音视频审核涉及令人不安全的信息的任务输出。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AiReviewTerrorismTaskOutput m_output;

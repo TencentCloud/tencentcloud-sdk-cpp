@@ -38,7 +38,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 此结构体 (FlowInfo) 用于描述流程信息。
+                * 此结构体 (FlowInfo) 用于描述签署流程信息。
                 */
                 class FlowInfo : public AbstractModel
                 {
@@ -50,14 +50,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取合同名字
-                     * @return FlowName 合同名字
+                     * 获取合同名字，最大长度200个字符
+                     * @return FlowName 合同名字，最大长度200个字符
                      */
                     std::string GetFlowName() const;
 
                     /**
-                     * 设置合同名字
-                     * @param FlowName 合同名字
+                     * 设置合同名字，最大长度200个字符
+                     * @param FlowName 合同名字，最大长度200个字符
                      */
                     void SetFlowName(const std::string& _flowName);
 
@@ -104,66 +104,14 @@ namespace TencentCloud
                     bool TemplateIdHasBeenSet() const;
 
                     /**
-                     * 获取合同类型：
-1. “劳务”
-2. “销售”
-3. “租赁”
-4. “其他”
-                     * @return FlowType 合同类型：
-1. “劳务”
-2. “销售”
-3. “租赁”
-4. “其他”
-                     */
-                    std::string GetFlowType() const;
-
-                    /**
-                     * 设置合同类型：
-1. “劳务”
-2. “销售”
-3. “租赁”
-4. “其他”
-                     * @param FlowType 合同类型：
-1. “劳务”
-2. “销售”
-3. “租赁”
-4. “其他”
-                     */
-                    void SetFlowType(const std::string& _flowType);
-
-                    /**
-                     * 判断参数 FlowType 是否已赋值
-                     * @return FlowType 是否已赋值
-                     */
-                    bool FlowTypeHasBeenSet() const;
-
-                    /**
-                     * 获取回调地址
-                     * @return CallbackUrl 回调地址
-                     */
-                    std::string GetCallbackUrl() const;
-
-                    /**
-                     * 设置回调地址
-                     * @param CallbackUrl 回调地址
-                     */
-                    void SetCallbackUrl(const std::string& _callbackUrl);
-
-                    /**
-                     * 判断参数 CallbackUrl 是否已赋值
-                     * @return CallbackUrl 是否已赋值
-                     */
-                    bool CallbackUrlHasBeenSet() const;
-
-                    /**
-                     * 获取多个签署人信息，渠道侧目前不支持超过5个签署方信息
-                     * @return FlowApprovers 多个签署人信息，渠道侧目前不支持超过5个签署方信息
+                     * 获取多个签署人信息，最大支持50个签署方
+                     * @return FlowApprovers 多个签署人信息，最大支持50个签署方
                      */
                     std::vector<FlowApproverInfo> GetFlowApprovers() const;
 
                     /**
-                     * 设置多个签署人信息，渠道侧目前不支持超过5个签署方信息
-                     * @param FlowApprovers 多个签署人信息，渠道侧目前不支持超过5个签署方信息
+                     * 设置多个签署人信息，最大支持50个签署方
+                     * @param FlowApprovers 多个签署人信息，最大支持50个签署方
                      */
                     void SetFlowApprovers(const std::vector<FlowApproverInfo>& _flowApprovers);
 
@@ -192,14 +140,50 @@ namespace TencentCloud
                     bool FormFieldsHasBeenSet() const;
 
                     /**
-                     * 获取合同描述
-                     * @return FlowDescription 合同描述
+                     * 获取回调地址，最大长度1000个字符
+                     * @return CallbackUrl 回调地址，最大长度1000个字符
+                     */
+                    std::string GetCallbackUrl() const;
+
+                    /**
+                     * 设置回调地址，最大长度1000个字符
+                     * @param CallbackUrl 回调地址，最大长度1000个字符
+                     */
+                    void SetCallbackUrl(const std::string& _callbackUrl);
+
+                    /**
+                     * 判断参数 CallbackUrl 是否已赋值
+                     * @return CallbackUrl 是否已赋值
+                     */
+                    bool CallbackUrlHasBeenSet() const;
+
+                    /**
+                     * 获取合同类型，如：1. “劳务”；2. “销售”；3. “租赁”；4. “其他”，最大长度200个字符
+                     * @return FlowType 合同类型，如：1. “劳务”；2. “销售”；3. “租赁”；4. “其他”，最大长度200个字符
+                     */
+                    std::string GetFlowType() const;
+
+                    /**
+                     * 设置合同类型，如：1. “劳务”；2. “销售”；3. “租赁”；4. “其他”，最大长度200个字符
+                     * @param FlowType 合同类型，如：1. “劳务”；2. “销售”；3. “租赁”；4. “其他”，最大长度200个字符
+                     */
+                    void SetFlowType(const std::string& _flowType);
+
+                    /**
+                     * 判断参数 FlowType 是否已赋值
+                     * @return FlowType 是否已赋值
+                     */
+                    bool FlowTypeHasBeenSet() const;
+
+                    /**
+                     * 获取合同描述，最大长度1000个字符
+                     * @return FlowDescription 合同描述，最大长度1000个字符
                      */
                     std::string GetFlowDescription() const;
 
                     /**
-                     * 设置合同描述
-                     * @param FlowDescription 合同描述
+                     * 设置合同描述，最大长度1000个字符
+                     * @param FlowDescription 合同描述，最大长度1000个字符
                      */
                     void SetFlowDescription(const std::string& _flowDescription);
 
@@ -210,14 +194,14 @@ namespace TencentCloud
                     bool FlowDescriptionHasBeenSet() const;
 
                     /**
-                     * 获取渠道的业务信息，限制1024字符
-                     * @return CustomerData 渠道的业务信息，限制1024字符
+                     * 获取渠道的业务信息，最大长度1000个字符
+                     * @return CustomerData 渠道的业务信息，最大长度1000个字符
                      */
                     std::string GetCustomerData() const;
 
                     /**
-                     * 设置渠道的业务信息，限制1024字符
-                     * @param CustomerData 渠道的业务信息，限制1024字符
+                     * 设置渠道的业务信息，最大长度1000个字符
+                     * @param CustomerData 渠道的业务信息，最大长度1000个字符
                      */
                     void SetCustomerData(const std::string& _customerData);
 
@@ -226,6 +210,24 @@ namespace TencentCloud
                      * @return CustomerData 是否已赋值
                      */
                     bool CustomerDataHasBeenSet() const;
+
+                    /**
+                     * 获取合同显示的页卡模板，说明：只支持{合同名称}, {发起方企业}, {发起方姓名}, {签署方N企业}, {签署方N姓名}，且N不能超过签署人的数量，N从1开始
+                     * @return CustomShowMap 合同显示的页卡模板，说明：只支持{合同名称}, {发起方企业}, {发起方姓名}, {签署方N企业}, {签署方N姓名}，且N不能超过签署人的数量，N从1开始
+                     */
+                    std::string GetCustomShowMap() const;
+
+                    /**
+                     * 设置合同显示的页卡模板，说明：只支持{合同名称}, {发起方企业}, {发起方姓名}, {签署方N企业}, {签署方N姓名}，且N不能超过签署人的数量，N从1开始
+                     * @param CustomShowMap 合同显示的页卡模板，说明：只支持{合同名称}, {发起方企业}, {发起方姓名}, {签署方N企业}, {签署方N姓名}，且N不能超过签署人的数量，N从1开始
+                     */
+                    void SetCustomShowMap(const std::string& _customShowMap);
+
+                    /**
+                     * 判断参数 CustomShowMap 是否已赋值
+                     * @return CustomShowMap 是否已赋值
+                     */
+                    bool CustomShowMapHasBeenSet() const;
 
                     /**
                      * 获取被抄送人的信息列表，抄送功能暂不开放
@@ -248,7 +250,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 合同名字
+                     * 合同名字，最大长度200个字符
                      */
                     std::string m_flowName;
                     bool m_flowNameHasBeenSet;
@@ -266,23 +268,7 @@ namespace TencentCloud
                     bool m_templateIdHasBeenSet;
 
                     /**
-                     * 合同类型：
-1. “劳务”
-2. “销售”
-3. “租赁”
-4. “其他”
-                     */
-                    std::string m_flowType;
-                    bool m_flowTypeHasBeenSet;
-
-                    /**
-                     * 回调地址
-                     */
-                    std::string m_callbackUrl;
-                    bool m_callbackUrlHasBeenSet;
-
-                    /**
-                     * 多个签署人信息，渠道侧目前不支持超过5个签署方信息
+                     * 多个签署人信息，最大支持50个签署方
                      */
                     std::vector<FlowApproverInfo> m_flowApprovers;
                     bool m_flowApproversHasBeenSet;
@@ -294,16 +280,34 @@ namespace TencentCloud
                     bool m_formFieldsHasBeenSet;
 
                     /**
-                     * 合同描述
+                     * 回调地址，最大长度1000个字符
+                     */
+                    std::string m_callbackUrl;
+                    bool m_callbackUrlHasBeenSet;
+
+                    /**
+                     * 合同类型，如：1. “劳务”；2. “销售”；3. “租赁”；4. “其他”，最大长度200个字符
+                     */
+                    std::string m_flowType;
+                    bool m_flowTypeHasBeenSet;
+
+                    /**
+                     * 合同描述，最大长度1000个字符
                      */
                     std::string m_flowDescription;
                     bool m_flowDescriptionHasBeenSet;
 
                     /**
-                     * 渠道的业务信息，限制1024字符
+                     * 渠道的业务信息，最大长度1000个字符
                      */
                     std::string m_customerData;
                     bool m_customerDataHasBeenSet;
+
+                    /**
+                     * 合同显示的页卡模板，说明：只支持{合同名称}, {发起方企业}, {发起方姓名}, {签署方N企业}, {签署方N姓名}，且N不能超过签署人的数量，N从1开始
+                     */
+                    std::string m_customShowMap;
+                    bool m_customShowMapHasBeenSet;
 
                     /**
                      * 被抄送人的信息列表，抄送功能暂不开放

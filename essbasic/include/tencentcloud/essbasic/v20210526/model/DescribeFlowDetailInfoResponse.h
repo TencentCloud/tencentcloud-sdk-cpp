@@ -69,9 +69,9 @@ namespace TencentCloud
                     bool ProxyOrganizationOpenIdHasBeenSet() const;
 
                     /**
-                     * 获取合同(流程)的具体详细描述信息
+                     * 获取合同(签署流程)的具体详细描述信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FlowInfo 合同(流程)的具体详细描述信息
+                     * @return FlowInfo 合同(签署流程)的具体详细描述信息
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<FlowDetailInfo> GetFlowInfo() const;
@@ -97,7 +97,7 @@ namespace TencentCloud
                     bool m_proxyOrganizationOpenIdHasBeenSet;
 
                     /**
-                     * 合同(流程)的具体详细描述信息
+                     * 合同(签署流程)的具体详细描述信息
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<FlowDetailInfo> m_flowInfo;

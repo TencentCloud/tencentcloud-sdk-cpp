@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool FileIdHasBeenSet() const;
 
                     /**
-                     * 获取图片智能识别模板 ID，当前固定填 10。
-                     * @return Definition 图片智能识别模板 ID，当前固定填 10。
+                     * 获取图片审核模板 ID，当前固定填 10。
+                     * @return Definition 图片审核模板 ID，当前固定填 10。
                      */
                     uint64_t GetDefinition() const;
 
                     /**
-                     * 设置图片智能识别模板 ID，当前固定填 10。
-                     * @param Definition 图片智能识别模板 ID，当前固定填 10。
+                     * 设置图片审核模板 ID，当前固定填 10。
+                     * @param Definition 图片审核模板 ID，当前固定填 10。
                      */
                     void SetDefinition(const uint64_t& _definition);
 
@@ -105,7 +105,7 @@ namespace TencentCloud
                     bool m_fileIdHasBeenSet;
 
                     /**
-                     * 图片智能识别模板 ID，当前固定填 10。
+                     * 图片审核模板 ID，当前固定填 10。
                      */
                     uint64_t m_definition;
                     bool m_definitionHasBeenSet;

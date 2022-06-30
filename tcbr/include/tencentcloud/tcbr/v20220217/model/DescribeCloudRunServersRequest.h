@@ -60,6 +60,50 @@ namespace TencentCloud
                      */
                     bool EnvIdHasBeenSet() const;
 
+                    /**
+                     * 获取默认为9， 最大为30
+不传或传0时 取默认9
+大于30时取30
+                     * @return PageSize 默认为9， 最大为30
+不传或传0时 取默认9
+大于30时取30
+                     */
+                    int64_t GetPageSize() const;
+
+                    /**
+                     * 设置默认为9， 最大为30
+不传或传0时 取默认9
+大于30时取30
+                     * @param PageSize 默认为9， 最大为30
+不传或传0时 取默认9
+大于30时取30
+                     */
+                    void SetPageSize(const int64_t& _pageSize);
+
+                    /**
+                     * 判断参数 PageSize 是否已赋值
+                     * @return PageSize 是否已赋值
+                     */
+                    bool PageSizeHasBeenSet() const;
+
+                    /**
+                     * 获取不传或传0时 会默认为1
+                     * @return PageNum 不传或传0时 会默认为1
+                     */
+                    int64_t GetPageNum() const;
+
+                    /**
+                     * 设置不传或传0时 会默认为1
+                     * @param PageNum 不传或传0时 会默认为1
+                     */
+                    void SetPageNum(const int64_t& _pageNum);
+
+                    /**
+                     * 判断参数 PageNum 是否已赋值
+                     * @return PageNum 是否已赋值
+                     */
+                    bool PageNumHasBeenSet() const;
+
                 private:
 
                     /**
@@ -67,6 +111,20 @@ namespace TencentCloud
                      */
                     std::string m_envId;
                     bool m_envIdHasBeenSet;
+
+                    /**
+                     * 默认为9， 最大为30
+不传或传0时 取默认9
+大于30时取30
+                     */
+                    int64_t m_pageSize;
+                    bool m_pageSizeHasBeenSet;
+
+                    /**
+                     * 不传或传0时 会默认为1
+                     */
+                    int64_t m_pageNum;
+                    bool m_pageNumHasBeenSet;
 
                 };
             }

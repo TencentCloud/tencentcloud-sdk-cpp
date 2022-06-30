@@ -45,24 +45,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取操作人信息
-                     * @return Operator 操作人信息
-                     */
-                    UserInfo GetOperator() const;
-
-                    /**
-                     * 设置操作人信息
-                     * @param Operator 操作人信息
-                     */
-                    void SetOperator(const UserInfo& _operator);
-
-                    /**
-                     * 判断参数 Operator 是否已赋值
-                     * @return Operator 是否已赋值
-                     */
-                    bool OperatorHasBeenSet() const;
-
-                    /**
                      * 获取需要查询的流程ID列表
                      * @return FlowIds 需要查询的流程ID列表
                      */
@@ -81,14 +63,32 @@ namespace TencentCloud
                     bool FlowIdsHasBeenSet() const;
 
                     /**
-                     * 获取代理商信息
-                     * @return Agent 代理商信息
+                     * 获取操作人信息
+                     * @return Operator 操作人信息
+                     */
+                    UserInfo GetOperator() const;
+
+                    /**
+                     * 设置操作人信息
+                     * @param Operator 操作人信息
+                     */
+                    void SetOperator(const UserInfo& _operator);
+
+                    /**
+                     * 判断参数 Operator 是否已赋值
+                     * @return Operator 是否已赋值
+                     */
+                    bool OperatorHasBeenSet() const;
+
+                    /**
+                     * 获取应用相关信息
+                     * @return Agent 应用相关信息
                      */
                     Agent GetAgent() const;
 
                     /**
-                     * 设置代理商信息
-                     * @param Agent 代理商信息
+                     * 设置应用相关信息
+                     * @param Agent 应用相关信息
                      */
                     void SetAgent(const Agent& _agent);
 
@@ -101,19 +101,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 操作人信息
-                     */
-                    UserInfo m_operator;
-                    bool m_operatorHasBeenSet;
-
-                    /**
                      * 需要查询的流程ID列表
                      */
                     std::vector<std::string> m_flowIds;
                     bool m_flowIdsHasBeenSet;
 
                     /**
-                     * 代理商信息
+                     * 操作人信息
+                     */
+                    UserInfo m_operator;
+                    bool m_operatorHasBeenSet;
+
+                    /**
+                     * 应用相关信息
                      */
                     Agent m_agent;
                     bool m_agentHasBeenSet;

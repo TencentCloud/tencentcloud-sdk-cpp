@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool ComponentIdHasBeenSet() const;
 
                     /**
-                     * 获取控件名字
-                     * @return ComponentName 控件名字
+                     * 获取控件名字，最大长度不超过30字符
+                     * @return ComponentName 控件名字，最大长度不超过30字符
                      */
                     std::string GetComponentName() const;
 
                     /**
-                     * 设置控件名字
-                     * @param ComponentName 控件名字
+                     * 设置控件名字，最大长度不超过30字符
+                     * @param ComponentName 控件名字，最大长度不超过30字符
                      */
                     void SetComponentName(const std::string& _componentName);
 
@@ -115,7 +115,7 @@ namespace TencentCloud
                     bool m_componentIdHasBeenSet;
 
                     /**
-                     * 控件名字
+                     * 控件名字，最大长度不超过30字符
                      */
                     std::string m_componentName;
                     bool m_componentNameHasBeenSet;

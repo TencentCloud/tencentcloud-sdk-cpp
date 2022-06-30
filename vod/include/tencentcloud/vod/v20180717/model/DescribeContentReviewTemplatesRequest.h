@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool SubAppIdHasBeenSet() const;
 
                     /**
-                     * 获取内容智能识别模板唯一标识过滤条件，数组长度限制：100。
-                     * @return Definitions 内容智能识别模板唯一标识过滤条件，数组长度限制：100。
+                     * 获取内容审核模板唯一标识过滤条件，数组长度限制：100。
+                     * @return Definitions 内容审核模板唯一标识过滤条件，数组长度限制：100。
                      */
                     std::vector<int64_t> GetDefinitions() const;
 
                     /**
-                     * 设置内容智能识别模板唯一标识过滤条件，数组长度限制：100。
-                     * @param Definitions 内容智能识别模板唯一标识过滤条件，数组长度限制：100。
+                     * 设置内容审核模板唯一标识过滤条件，数组长度限制：100。
+                     * @param Definitions 内容审核模板唯一标识过滤条件，数组长度限制：100。
                      */
                     void SetDefinitions(const std::vector<int64_t>& _definitions);
 
@@ -123,7 +123,7 @@ namespace TencentCloud
                     bool m_subAppIdHasBeenSet;
 
                     /**
-                     * 内容智能识别模板唯一标识过滤条件，数组长度限制：100。
+                     * 内容审核模板唯一标识过滤条件，数组长度限制：100。
                      */
                     std::vector<int64_t> m_definitions;
                     bool m_definitionsHasBeenSet;

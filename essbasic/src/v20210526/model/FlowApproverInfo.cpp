@@ -22,20 +22,21 @@ using namespace std;
 
 FlowApproverInfo::FlowApproverInfo() :
     m_nameHasBeenSet(false),
+    m_idCardTypeHasBeenSet(false),
     m_idCardNumberHasBeenSet(false),
     m_mobileHasBeenSet(false),
-    m_jumpUrlHasBeenSet(false),
+    m_organizationNameHasBeenSet(false),
+    m_notChannelOrganizationHasBeenSet(false),
+    m_openIdHasBeenSet(false),
+    m_organizationOpenIdHasBeenSet(false),
+    m_approverTypeHasBeenSet(false),
+    m_recipientIdHasBeenSet(false),
     m_deadlineHasBeenSet(false),
     m_callbackUrlHasBeenSet(false),
-    m_approverTypeHasBeenSet(false),
-    m_openIdHasBeenSet(false),
-    m_preReadTimeHasBeenSet(false),
+    m_signComponentsHasBeenSet(false),
     m_componentLimitTypeHasBeenSet(false),
-    m_recipientIdHasBeenSet(false),
-    m_organizationNameHasBeenSet(false),
-    m_organizationOpenIdHasBeenSet(false),
-    m_notChannelOrganizationHasBeenSet(false),
-    m_signComponentsHasBeenSet(false)
+    m_preReadTimeHasBeenSet(false),
+    m_jumpUrlHasBeenSet(false)
 {
 }
 
@@ -52,6 +53,16 @@ CoreInternalOutcome FlowApproverInfo::Deserialize(const rapidjson::Value &value)
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
+    }
+
+    if (value.HasMember("IdCardType") && !value["IdCardType"].IsNull())
+    {
+        if (!value["IdCardType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `FlowApproverInfo.IdCardType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_idCardType = string(value["IdCardType"].GetString());
+        m_idCardTypeHasBeenSet = true;
     }
 
     if (value.HasMember("IdCardNumber") && !value["IdCardNumber"].IsNull())
@@ -74,14 +85,64 @@ CoreInternalOutcome FlowApproverInfo::Deserialize(const rapidjson::Value &value)
         m_mobileHasBeenSet = true;
     }
 
-    if (value.HasMember("JumpUrl") && !value["JumpUrl"].IsNull())
+    if (value.HasMember("OrganizationName") && !value["OrganizationName"].IsNull())
     {
-        if (!value["JumpUrl"].IsString())
+        if (!value["OrganizationName"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `FlowApproverInfo.JumpUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FlowApproverInfo.OrganizationName` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_jumpUrl = string(value["JumpUrl"].GetString());
-        m_jumpUrlHasBeenSet = true;
+        m_organizationName = string(value["OrganizationName"].GetString());
+        m_organizationNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("NotChannelOrganization") && !value["NotChannelOrganization"].IsNull())
+    {
+        if (!value["NotChannelOrganization"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `FlowApproverInfo.NotChannelOrganization` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_notChannelOrganization = value["NotChannelOrganization"].GetBool();
+        m_notChannelOrganizationHasBeenSet = true;
+    }
+
+    if (value.HasMember("OpenId") && !value["OpenId"].IsNull())
+    {
+        if (!value["OpenId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `FlowApproverInfo.OpenId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_openId = string(value["OpenId"].GetString());
+        m_openIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("OrganizationOpenId") && !value["OrganizationOpenId"].IsNull())
+    {
+        if (!value["OrganizationOpenId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `FlowApproverInfo.OrganizationOpenId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_organizationOpenId = string(value["OrganizationOpenId"].GetString());
+        m_organizationOpenIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("ApproverType") && !value["ApproverType"].IsNull())
+    {
+        if (!value["ApproverType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `FlowApproverInfo.ApproverType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_approverType = string(value["ApproverType"].GetString());
+        m_approverTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("RecipientId") && !value["RecipientId"].IsNull())
+    {
+        if (!value["RecipientId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `FlowApproverInfo.RecipientId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_recipientId = string(value["RecipientId"].GetString());
+        m_recipientIdHasBeenSet = true;
     }
 
     if (value.HasMember("Deadline") && !value["Deadline"].IsNull())
@@ -104,89 +165,6 @@ CoreInternalOutcome FlowApproverInfo::Deserialize(const rapidjson::Value &value)
         m_callbackUrlHasBeenSet = true;
     }
 
-    if (value.HasMember("ApproverType") && !value["ApproverType"].IsNull())
-    {
-        if (!value["ApproverType"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `FlowApproverInfo.ApproverType` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_approverType = string(value["ApproverType"].GetString());
-        m_approverTypeHasBeenSet = true;
-    }
-
-    if (value.HasMember("OpenId") && !value["OpenId"].IsNull())
-    {
-        if (!value["OpenId"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `FlowApproverInfo.OpenId` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_openId = string(value["OpenId"].GetString());
-        m_openIdHasBeenSet = true;
-    }
-
-    if (value.HasMember("PreReadTime") && !value["PreReadTime"].IsNull())
-    {
-        if (!value["PreReadTime"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `FlowApproverInfo.PreReadTime` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_preReadTime = value["PreReadTime"].GetInt64();
-        m_preReadTimeHasBeenSet = true;
-    }
-
-    if (value.HasMember("ComponentLimitType") && !value["ComponentLimitType"].IsNull())
-    {
-        if (!value["ComponentLimitType"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `FlowApproverInfo.ComponentLimitType` is not array type"));
-
-        const rapidjson::Value &tmpValue = value["ComponentLimitType"];
-        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
-        {
-            m_componentLimitType.push_back((*itr).GetString());
-        }
-        m_componentLimitTypeHasBeenSet = true;
-    }
-
-    if (value.HasMember("RecipientId") && !value["RecipientId"].IsNull())
-    {
-        if (!value["RecipientId"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `FlowApproverInfo.RecipientId` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_recipientId = string(value["RecipientId"].GetString());
-        m_recipientIdHasBeenSet = true;
-    }
-
-    if (value.HasMember("OrganizationName") && !value["OrganizationName"].IsNull())
-    {
-        if (!value["OrganizationName"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `FlowApproverInfo.OrganizationName` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_organizationName = string(value["OrganizationName"].GetString());
-        m_organizationNameHasBeenSet = true;
-    }
-
-    if (value.HasMember("OrganizationOpenId") && !value["OrganizationOpenId"].IsNull())
-    {
-        if (!value["OrganizationOpenId"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `FlowApproverInfo.OrganizationOpenId` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_organizationOpenId = string(value["OrganizationOpenId"].GetString());
-        m_organizationOpenIdHasBeenSet = true;
-    }
-
-    if (value.HasMember("NotChannelOrganization") && !value["NotChannelOrganization"].IsNull())
-    {
-        if (!value["NotChannelOrganization"].IsBool())
-        {
-            return CoreInternalOutcome(Core::Error("response `FlowApproverInfo.NotChannelOrganization` IsBool=false incorrectly").SetRequestId(requestId));
-        }
-        m_notChannelOrganization = value["NotChannelOrganization"].GetBool();
-        m_notChannelOrganizationHasBeenSet = true;
-    }
-
     if (value.HasMember("SignComponents") && !value["SignComponents"].IsNull())
     {
         if (!value["SignComponents"].IsArray())
@@ -207,6 +185,39 @@ CoreInternalOutcome FlowApproverInfo::Deserialize(const rapidjson::Value &value)
         m_signComponentsHasBeenSet = true;
     }
 
+    if (value.HasMember("ComponentLimitType") && !value["ComponentLimitType"].IsNull())
+    {
+        if (!value["ComponentLimitType"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `FlowApproverInfo.ComponentLimitType` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ComponentLimitType"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_componentLimitType.push_back((*itr).GetString());
+        }
+        m_componentLimitTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("PreReadTime") && !value["PreReadTime"].IsNull())
+    {
+        if (!value["PreReadTime"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `FlowApproverInfo.PreReadTime` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_preReadTime = value["PreReadTime"].GetInt64();
+        m_preReadTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("JumpUrl") && !value["JumpUrl"].IsNull())
+    {
+        if (!value["JumpUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `FlowApproverInfo.JumpUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_jumpUrl = string(value["JumpUrl"].GetString());
+        m_jumpUrlHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -220,6 +231,14 @@ void FlowApproverInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_idCardTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IdCardType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_idCardType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_idCardNumberHasBeenSet)
@@ -238,12 +257,52 @@ void FlowApproverInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         value.AddMember(iKey, rapidjson::Value(m_mobile.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_jumpUrlHasBeenSet)
+    if (m_organizationNameHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "JumpUrl";
+        string key = "OrganizationName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_jumpUrl.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_organizationName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_notChannelOrganizationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NotChannelOrganization";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_notChannelOrganization, allocator);
+    }
+
+    if (m_openIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OpenId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_openId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_organizationOpenIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OrganizationOpenId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_organizationOpenId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_approverTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApproverType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_approverType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_recipientIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RecipientId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_recipientId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_deadlineHasBeenSet)
@@ -262,28 +321,19 @@ void FlowApproverInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         value.AddMember(iKey, rapidjson::Value(m_callbackUrl.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_approverTypeHasBeenSet)
+    if (m_signComponentsHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ApproverType";
+        string key = "SignComponents";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_approverType.c_str(), allocator).Move(), allocator);
-    }
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
-    if (m_openIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "OpenId";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_openId.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_preReadTimeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "PreReadTime";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_preReadTime, allocator);
+        int i=0;
+        for (auto itr = m_signComponents.begin(); itr != m_signComponents.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     if (m_componentLimitTypeHasBeenSet)
@@ -299,51 +349,20 @@ void FlowApproverInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         }
     }
 
-    if (m_recipientIdHasBeenSet)
+    if (m_preReadTimeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "RecipientId";
+        string key = "PreReadTime";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_recipientId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, m_preReadTime, allocator);
     }
 
-    if (m_organizationNameHasBeenSet)
+    if (m_jumpUrlHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "OrganizationName";
+        string key = "JumpUrl";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_organizationName.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_organizationOpenIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "OrganizationOpenId";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_organizationOpenId.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_notChannelOrganizationHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "NotChannelOrganization";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_notChannelOrganization, allocator);
-    }
-
-    if (m_signComponentsHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SignComponents";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        int i=0;
-        for (auto itr = m_signComponents.begin(); itr != m_signComponents.end(); ++itr, ++i)
-        {
-            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
-        }
+        value.AddMember(iKey, rapidjson::Value(m_jumpUrl.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -363,6 +382,22 @@ void FlowApproverInfo::SetName(const string& _name)
 bool FlowApproverInfo::NameHasBeenSet() const
 {
     return m_nameHasBeenSet;
+}
+
+string FlowApproverInfo::GetIdCardType() const
+{
+    return m_idCardType;
+}
+
+void FlowApproverInfo::SetIdCardType(const string& _idCardType)
+{
+    m_idCardType = _idCardType;
+    m_idCardTypeHasBeenSet = true;
+}
+
+bool FlowApproverInfo::IdCardTypeHasBeenSet() const
+{
+    return m_idCardTypeHasBeenSet;
 }
 
 string FlowApproverInfo::GetIdCardNumber() const
@@ -397,20 +432,100 @@ bool FlowApproverInfo::MobileHasBeenSet() const
     return m_mobileHasBeenSet;
 }
 
-string FlowApproverInfo::GetJumpUrl() const
+string FlowApproverInfo::GetOrganizationName() const
 {
-    return m_jumpUrl;
+    return m_organizationName;
 }
 
-void FlowApproverInfo::SetJumpUrl(const string& _jumpUrl)
+void FlowApproverInfo::SetOrganizationName(const string& _organizationName)
 {
-    m_jumpUrl = _jumpUrl;
-    m_jumpUrlHasBeenSet = true;
+    m_organizationName = _organizationName;
+    m_organizationNameHasBeenSet = true;
 }
 
-bool FlowApproverInfo::JumpUrlHasBeenSet() const
+bool FlowApproverInfo::OrganizationNameHasBeenSet() const
 {
-    return m_jumpUrlHasBeenSet;
+    return m_organizationNameHasBeenSet;
+}
+
+bool FlowApproverInfo::GetNotChannelOrganization() const
+{
+    return m_notChannelOrganization;
+}
+
+void FlowApproverInfo::SetNotChannelOrganization(const bool& _notChannelOrganization)
+{
+    m_notChannelOrganization = _notChannelOrganization;
+    m_notChannelOrganizationHasBeenSet = true;
+}
+
+bool FlowApproverInfo::NotChannelOrganizationHasBeenSet() const
+{
+    return m_notChannelOrganizationHasBeenSet;
+}
+
+string FlowApproverInfo::GetOpenId() const
+{
+    return m_openId;
+}
+
+void FlowApproverInfo::SetOpenId(const string& _openId)
+{
+    m_openId = _openId;
+    m_openIdHasBeenSet = true;
+}
+
+bool FlowApproverInfo::OpenIdHasBeenSet() const
+{
+    return m_openIdHasBeenSet;
+}
+
+string FlowApproverInfo::GetOrganizationOpenId() const
+{
+    return m_organizationOpenId;
+}
+
+void FlowApproverInfo::SetOrganizationOpenId(const string& _organizationOpenId)
+{
+    m_organizationOpenId = _organizationOpenId;
+    m_organizationOpenIdHasBeenSet = true;
+}
+
+bool FlowApproverInfo::OrganizationOpenIdHasBeenSet() const
+{
+    return m_organizationOpenIdHasBeenSet;
+}
+
+string FlowApproverInfo::GetApproverType() const
+{
+    return m_approverType;
+}
+
+void FlowApproverInfo::SetApproverType(const string& _approverType)
+{
+    m_approverType = _approverType;
+    m_approverTypeHasBeenSet = true;
+}
+
+bool FlowApproverInfo::ApproverTypeHasBeenSet() const
+{
+    return m_approverTypeHasBeenSet;
+}
+
+string FlowApproverInfo::GetRecipientId() const
+{
+    return m_recipientId;
+}
+
+void FlowApproverInfo::SetRecipientId(const string& _recipientId)
+{
+    m_recipientId = _recipientId;
+    m_recipientIdHasBeenSet = true;
+}
+
+bool FlowApproverInfo::RecipientIdHasBeenSet() const
+{
+    return m_recipientIdHasBeenSet;
 }
 
 int64_t FlowApproverInfo::GetDeadline() const
@@ -445,52 +560,20 @@ bool FlowApproverInfo::CallbackUrlHasBeenSet() const
     return m_callbackUrlHasBeenSet;
 }
 
-string FlowApproverInfo::GetApproverType() const
+vector<Component> FlowApproverInfo::GetSignComponents() const
 {
-    return m_approverType;
+    return m_signComponents;
 }
 
-void FlowApproverInfo::SetApproverType(const string& _approverType)
+void FlowApproverInfo::SetSignComponents(const vector<Component>& _signComponents)
 {
-    m_approverType = _approverType;
-    m_approverTypeHasBeenSet = true;
+    m_signComponents = _signComponents;
+    m_signComponentsHasBeenSet = true;
 }
 
-bool FlowApproverInfo::ApproverTypeHasBeenSet() const
+bool FlowApproverInfo::SignComponentsHasBeenSet() const
 {
-    return m_approverTypeHasBeenSet;
-}
-
-string FlowApproverInfo::GetOpenId() const
-{
-    return m_openId;
-}
-
-void FlowApproverInfo::SetOpenId(const string& _openId)
-{
-    m_openId = _openId;
-    m_openIdHasBeenSet = true;
-}
-
-bool FlowApproverInfo::OpenIdHasBeenSet() const
-{
-    return m_openIdHasBeenSet;
-}
-
-int64_t FlowApproverInfo::GetPreReadTime() const
-{
-    return m_preReadTime;
-}
-
-void FlowApproverInfo::SetPreReadTime(const int64_t& _preReadTime)
-{
-    m_preReadTime = _preReadTime;
-    m_preReadTimeHasBeenSet = true;
-}
-
-bool FlowApproverInfo::PreReadTimeHasBeenSet() const
-{
-    return m_preReadTimeHasBeenSet;
+    return m_signComponentsHasBeenSet;
 }
 
 vector<string> FlowApproverInfo::GetComponentLimitType() const
@@ -509,83 +592,35 @@ bool FlowApproverInfo::ComponentLimitTypeHasBeenSet() const
     return m_componentLimitTypeHasBeenSet;
 }
 
-string FlowApproverInfo::GetRecipientId() const
+int64_t FlowApproverInfo::GetPreReadTime() const
 {
-    return m_recipientId;
+    return m_preReadTime;
 }
 
-void FlowApproverInfo::SetRecipientId(const string& _recipientId)
+void FlowApproverInfo::SetPreReadTime(const int64_t& _preReadTime)
 {
-    m_recipientId = _recipientId;
-    m_recipientIdHasBeenSet = true;
+    m_preReadTime = _preReadTime;
+    m_preReadTimeHasBeenSet = true;
 }
 
-bool FlowApproverInfo::RecipientIdHasBeenSet() const
+bool FlowApproverInfo::PreReadTimeHasBeenSet() const
 {
-    return m_recipientIdHasBeenSet;
+    return m_preReadTimeHasBeenSet;
 }
 
-string FlowApproverInfo::GetOrganizationName() const
+string FlowApproverInfo::GetJumpUrl() const
 {
-    return m_organizationName;
+    return m_jumpUrl;
 }
 
-void FlowApproverInfo::SetOrganizationName(const string& _organizationName)
+void FlowApproverInfo::SetJumpUrl(const string& _jumpUrl)
 {
-    m_organizationName = _organizationName;
-    m_organizationNameHasBeenSet = true;
+    m_jumpUrl = _jumpUrl;
+    m_jumpUrlHasBeenSet = true;
 }
 
-bool FlowApproverInfo::OrganizationNameHasBeenSet() const
+bool FlowApproverInfo::JumpUrlHasBeenSet() const
 {
-    return m_organizationNameHasBeenSet;
-}
-
-string FlowApproverInfo::GetOrganizationOpenId() const
-{
-    return m_organizationOpenId;
-}
-
-void FlowApproverInfo::SetOrganizationOpenId(const string& _organizationOpenId)
-{
-    m_organizationOpenId = _organizationOpenId;
-    m_organizationOpenIdHasBeenSet = true;
-}
-
-bool FlowApproverInfo::OrganizationOpenIdHasBeenSet() const
-{
-    return m_organizationOpenIdHasBeenSet;
-}
-
-bool FlowApproverInfo::GetNotChannelOrganization() const
-{
-    return m_notChannelOrganization;
-}
-
-void FlowApproverInfo::SetNotChannelOrganization(const bool& _notChannelOrganization)
-{
-    m_notChannelOrganization = _notChannelOrganization;
-    m_notChannelOrganizationHasBeenSet = true;
-}
-
-bool FlowApproverInfo::NotChannelOrganizationHasBeenSet() const
-{
-    return m_notChannelOrganizationHasBeenSet;
-}
-
-vector<Component> FlowApproverInfo::GetSignComponents() const
-{
-    return m_signComponents;
-}
-
-void FlowApproverInfo::SetSignComponents(const vector<Component>& _signComponents)
-{
-    m_signComponents = _signComponents;
-    m_signComponentsHasBeenSet = true;
-}
-
-bool FlowApproverInfo::SignComponentsHasBeenSet() const
-{
-    return m_signComponentsHasBeenSet;
+    return m_jumpUrlHasBeenSet;
 }
 

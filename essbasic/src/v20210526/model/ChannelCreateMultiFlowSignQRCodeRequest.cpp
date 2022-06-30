@@ -26,11 +26,11 @@ ChannelCreateMultiFlowSignQRCodeRequest::ChannelCreateMultiFlowSignQRCodeRequest
     m_agentHasBeenSet(false),
     m_templateIdHasBeenSet(false),
     m_flowNameHasBeenSet(false),
-    m_operatorHasBeenSet(false),
+    m_maxFlowNumHasBeenSet(false),
     m_flowEffectiveDayHasBeenSet(false),
     m_qrEffectiveDayHasBeenSet(false),
-    m_maxFlowNumHasBeenSet(false),
-    m_callbackUrlHasBeenSet(false)
+    m_callbackUrlHasBeenSet(false),
+    m_operatorHasBeenSet(false)
 {
 }
 
@@ -66,13 +66,12 @@ string ChannelCreateMultiFlowSignQRCodeRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_flowName.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_operatorHasBeenSet)
+    if (m_maxFlowNumHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Operator";
+        string key = "MaxFlowNum";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_operator.ToJsonObject(d[key.c_str()], allocator);
+        d.AddMember(iKey, m_maxFlowNum, allocator);
     }
 
     if (m_flowEffectiveDayHasBeenSet)
@@ -91,20 +90,21 @@ string ChannelCreateMultiFlowSignQRCodeRequest::ToJsonString() const
         d.AddMember(iKey, m_qrEffectiveDay, allocator);
     }
 
-    if (m_maxFlowNumHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "MaxFlowNum";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_maxFlowNum, allocator);
-    }
-
     if (m_callbackUrlHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CallbackUrl";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_callbackUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_operatorHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Operator";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_operator.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -163,20 +163,20 @@ bool ChannelCreateMultiFlowSignQRCodeRequest::FlowNameHasBeenSet() const
     return m_flowNameHasBeenSet;
 }
 
-UserInfo ChannelCreateMultiFlowSignQRCodeRequest::GetOperator() const
+int64_t ChannelCreateMultiFlowSignQRCodeRequest::GetMaxFlowNum() const
 {
-    return m_operator;
+    return m_maxFlowNum;
 }
 
-void ChannelCreateMultiFlowSignQRCodeRequest::SetOperator(const UserInfo& _operator)
+void ChannelCreateMultiFlowSignQRCodeRequest::SetMaxFlowNum(const int64_t& _maxFlowNum)
 {
-    m_operator = _operator;
-    m_operatorHasBeenSet = true;
+    m_maxFlowNum = _maxFlowNum;
+    m_maxFlowNumHasBeenSet = true;
 }
 
-bool ChannelCreateMultiFlowSignQRCodeRequest::OperatorHasBeenSet() const
+bool ChannelCreateMultiFlowSignQRCodeRequest::MaxFlowNumHasBeenSet() const
 {
-    return m_operatorHasBeenSet;
+    return m_maxFlowNumHasBeenSet;
 }
 
 int64_t ChannelCreateMultiFlowSignQRCodeRequest::GetFlowEffectiveDay() const
@@ -211,22 +211,6 @@ bool ChannelCreateMultiFlowSignQRCodeRequest::QrEffectiveDayHasBeenSet() const
     return m_qrEffectiveDayHasBeenSet;
 }
 
-int64_t ChannelCreateMultiFlowSignQRCodeRequest::GetMaxFlowNum() const
-{
-    return m_maxFlowNum;
-}
-
-void ChannelCreateMultiFlowSignQRCodeRequest::SetMaxFlowNum(const int64_t& _maxFlowNum)
-{
-    m_maxFlowNum = _maxFlowNum;
-    m_maxFlowNumHasBeenSet = true;
-}
-
-bool ChannelCreateMultiFlowSignQRCodeRequest::MaxFlowNumHasBeenSet() const
-{
-    return m_maxFlowNumHasBeenSet;
-}
-
 string ChannelCreateMultiFlowSignQRCodeRequest::GetCallbackUrl() const
 {
     return m_callbackUrl;
@@ -241,6 +225,22 @@ void ChannelCreateMultiFlowSignQRCodeRequest::SetCallbackUrl(const string& _call
 bool ChannelCreateMultiFlowSignQRCodeRequest::CallbackUrlHasBeenSet() const
 {
     return m_callbackUrlHasBeenSet;
+}
+
+UserInfo ChannelCreateMultiFlowSignQRCodeRequest::GetOperator() const
+{
+    return m_operator;
+}
+
+void ChannelCreateMultiFlowSignQRCodeRequest::SetOperator(const UserInfo& _operator)
+{
+    m_operator = _operator;
+    m_operatorHasBeenSet = true;
+}
+
+bool ChannelCreateMultiFlowSignQRCodeRequest::OperatorHasBeenSet() const
+{
+    return m_operatorHasBeenSet;
 }
 
 

@@ -57,8 +57,12 @@ namespace TencentCloud
                     bool ProxyIdHasBeenSet() const;
 
                     /**
-                     * 获取实例名称
-                     * @return ProxyName 实例名称
+                     * 获取代理名称
+当ProxyType=hostname时，表示域名或者子域名
+当ProxyType=instance时，表示实例名称
+                     * @return ProxyName 代理名称
+当ProxyType=hostname时，表示域名或者子域名
+当ProxyType=instance时，表示实例名称
                      */
                     std::string GetProxyName() const;
 
@@ -224,11 +228,11 @@ progress：部署中
 
                     /**
                      * 获取服务类型
-hostname：子域名
-instance：实例
+hostname：子域名模式
+instance：实例模式
                      * @return ProxyType 服务类型
-hostname：子域名
-instance：实例
+hostname：子域名模式
+instance：实例模式
                      */
                     std::string GetProxyType() const;
 
@@ -239,8 +243,12 @@ instance：实例
                     bool ProxyTypeHasBeenSet() const;
 
                     /**
-                     * 获取七层实例ID
-                     * @return HostId 七层实例ID
+                     * 获取当ProxyType=hostname时：
+ProxyName为域名，如：test.123.com
+HostId表示该域名，即test.123.com对应的代理加速唯一标识
+                     * @return HostId 当ProxyType=hostname时：
+ProxyName为域名，如：test.123.com
+HostId表示该域名，即test.123.com对应的代理加速唯一标识
                      */
                     std::string GetHostId() const;
 
@@ -259,7 +267,9 @@ instance：实例
                     bool m_proxyIdHasBeenSet;
 
                     /**
-                     * 实例名称
+                     * 代理名称
+当ProxyType=hostname时，表示域名或者子域名
+当ProxyType=instance时，表示实例名称
                      */
                     std::string m_proxyName;
                     bool m_proxyNameHasBeenSet;
@@ -343,14 +353,16 @@ progress：部署中
 
                     /**
                      * 服务类型
-hostname：子域名
-instance：实例
+hostname：子域名模式
+instance：实例模式
                      */
                     std::string m_proxyType;
                     bool m_proxyTypeHasBeenSet;
 
                     /**
-                     * 七层实例ID
+                     * 当ProxyType=hostname时：
+ProxyName为域名，如：test.123.com
+HostId表示该域名，即test.123.com对应的代理加速唯一标识
                      */
                     std::string m_hostId;
                     bool m_hostIdHasBeenSet;

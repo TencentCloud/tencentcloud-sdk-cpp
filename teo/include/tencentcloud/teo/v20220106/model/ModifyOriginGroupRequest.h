@@ -83,11 +83,11 @@ namespace TencentCloud
                      * 获取配置类型，当OriginType=self 时，需要填写：
 area: 按区域配置
 weight: 按权重配置
-当OriginType=third_party 时，不需要填写
+当OriginType=third_party/cos 时，不需要填写
                      * @return Type 配置类型，当OriginType=self 时，需要填写：
 area: 按区域配置
 weight: 按权重配置
-当OriginType=third_party 时，不需要填写
+当OriginType=third_party/cos 时，不需要填写
                      */
                     std::string GetType() const;
 
@@ -95,11 +95,11 @@ weight: 按权重配置
                      * 设置配置类型，当OriginType=self 时，需要填写：
 area: 按区域配置
 weight: 按权重配置
-当OriginType=third_party 时，不需要填写
+当OriginType=third_party/cos 时，不需要填写
                      * @param Type 配置类型，当OriginType=self 时，需要填写：
 area: 按区域配置
 weight: 按权重配置
-当OriginType=third_party 时，不需要填写
+当OriginType=third_party/cos 时，不需要填写
                      */
                     void SetType(const std::string& _type);
 
@@ -149,9 +149,11 @@ weight: 按权重配置
                      * 获取源站类型
 self：自有源站
 third_party：第三方源站
+cos：腾讯云COS源站
                      * @return OriginType 源站类型
 self：自有源站
 third_party：第三方源站
+cos：腾讯云COS源站
                      */
                     std::string GetOriginType() const;
 
@@ -159,9 +161,11 @@ third_party：第三方源站
                      * 设置源站类型
 self：自有源站
 third_party：第三方源站
+cos：腾讯云COS源站
                      * @param OriginType 源站类型
 self：自有源站
 third_party：第三方源站
+cos：腾讯云COS源站
                      */
                     void SetOriginType(const std::string& _originType);
 
@@ -189,7 +193,7 @@ third_party：第三方源站
                      * 配置类型，当OriginType=self 时，需要填写：
 area: 按区域配置
 weight: 按权重配置
-当OriginType=third_party 时，不需要填写
+当OriginType=third_party/cos 时，不需要填写
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
@@ -210,6 +214,7 @@ weight: 按权重配置
                      * 源站类型
 self：自有源站
 third_party：第三方源站
+cos：腾讯云COS源站
                      */
                     std::string m_originType;
                     bool m_originTypeHasBeenSet;

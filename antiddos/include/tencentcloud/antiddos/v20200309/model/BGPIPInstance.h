@@ -33,6 +33,7 @@
 #include <tencentcloud/antiddos/v20200309/model/EipAddressPackRelation.h>
 #include <tencentcloud/antiddos/v20200309/model/EipAddressRelation.h>
 #include <tencentcloud/antiddos/v20200309/model/TagInfo.h>
+#include <tencentcloud/antiddos/v20200309/model/AnycastOutPackRelation.h>
 
 
 namespace TencentCloud
@@ -521,6 +522,32 @@ namespace TencentCloud
                      */
                     bool TagInfoListHasBeenSet() const;
 
+                    /**
+                     * 获取资产实例所属的全力防护套餐包详情，
+注意：当资产实例不是全力防护套餐包的实例时，此字段为null
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AnycastOutPackRelation 资产实例所属的全力防护套餐包详情，
+注意：当资产实例不是全力防护套餐包的实例时，此字段为null
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    AnycastOutPackRelation GetAnycastOutPackRelation() const;
+
+                    /**
+                     * 设置资产实例所属的全力防护套餐包详情，
+注意：当资产实例不是全力防护套餐包的实例时，此字段为null
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AnycastOutPackRelation 资产实例所属的全力防护套餐包详情，
+注意：当资产实例不是全力防护套餐包的实例时，此字段为null
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAnycastOutPackRelation(const AnycastOutPackRelation& _anycastOutPackRelation);
+
+                    /**
+                     * 判断参数 AnycastOutPackRelation 是否已赋值
+                     * @return AnycastOutPackRelation 是否已赋值
+                     */
+                    bool AnycastOutPackRelationHasBeenSet() const;
+
                 private:
 
                     /**
@@ -670,6 +697,14 @@ namespace TencentCloud
                      */
                     std::vector<TagInfo> m_tagInfoList;
                     bool m_tagInfoListHasBeenSet;
+
+                    /**
+                     * 资产实例所属的全力防护套餐包详情，
+注意：当资产实例不是全力防护套餐包的实例时，此字段为null
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    AnycastOutPackRelation m_anycastOutPackRelation;
+                    bool m_anycastOutPackRelationHasBeenSet;
 
                 };
             }

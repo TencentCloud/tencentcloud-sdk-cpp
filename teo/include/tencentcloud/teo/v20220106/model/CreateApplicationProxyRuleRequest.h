@@ -126,11 +126,9 @@ namespace TencentCloud
                      * 获取源站类型，取值：
 custom：手动添加
 origins：源站组
-load_balancing：负载均衡
                      * @return OriginType 源站类型，取值：
 custom：手动添加
 origins：源站组
-load_balancing：负载均衡
                      */
                     std::string GetOriginType() const;
 
@@ -138,11 +136,9 @@ load_balancing：负载均衡
                      * 设置源站类型，取值：
 custom：手动添加
 origins：源站组
-load_balancing：负载均衡
                      * @param OriginType 源站类型，取值：
 custom：手动添加
 origins：源站组
-load_balancing：负载均衡
                      */
                     void SetOriginType(const std::string& _originType);
 
@@ -158,13 +154,11 @@ load_balancing：负载均衡
 IP:端口
 域名:端口
 当OriginType=origins时，包含一个元素，表示源站组ID
-当OriginType=load_balancing时，包含一个元素，表示负载均衡ID
                      * @return OriginValue 源站信息：
 当OriginType=custom时，表示多个：
 IP:端口
 域名:端口
 当OriginType=origins时，包含一个元素，表示源站组ID
-当OriginType=load_balancing时，包含一个元素，表示负载均衡ID
                      */
                     std::vector<std::string> GetOriginValue() const;
 
@@ -174,13 +168,11 @@ IP:端口
 IP:端口
 域名:端口
 当OriginType=origins时，包含一个元素，表示源站组ID
-当OriginType=load_balancing时，包含一个元素，表示负载均衡ID
                      * @param OriginValue 源站信息：
 当OriginType=custom时，表示多个：
 IP:端口
 域名:端口
 当OriginType=origins时，包含一个元素，表示源站组ID
-当OriginType=load_balancing时，包含一个元素，表示负载均衡ID
                      */
                     void SetOriginValue(const std::vector<std::string>& _originValue);
 
@@ -286,7 +278,6 @@ OFF：不传递
                      * 源站类型，取值：
 custom：手动添加
 origins：源站组
-load_balancing：负载均衡
                      */
                     std::string m_originType;
                     bool m_originTypeHasBeenSet;
@@ -297,7 +288,6 @@ load_balancing：负载均衡
 IP:端口
 域名:端口
 当OriginType=origins时，包含一个元素，表示源站组ID
-当OriginType=load_balancing时，包含一个元素，表示负载均衡ID
                      */
                     std::vector<std::string> m_originValue;
                     bool m_originValueHasBeenSet;

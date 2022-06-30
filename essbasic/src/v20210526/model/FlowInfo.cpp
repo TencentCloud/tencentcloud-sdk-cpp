@@ -24,12 +24,13 @@ FlowInfo::FlowInfo() :
     m_flowNameHasBeenSet(false),
     m_deadlineHasBeenSet(false),
     m_templateIdHasBeenSet(false),
-    m_flowTypeHasBeenSet(false),
-    m_callbackUrlHasBeenSet(false),
     m_flowApproversHasBeenSet(false),
     m_formFieldsHasBeenSet(false),
+    m_callbackUrlHasBeenSet(false),
+    m_flowTypeHasBeenSet(false),
     m_flowDescriptionHasBeenSet(false),
     m_customerDataHasBeenSet(false),
+    m_customShowMapHasBeenSet(false),
     m_ccInfosHasBeenSet(false)
 {
 }
@@ -67,26 +68,6 @@ CoreInternalOutcome FlowInfo::Deserialize(const rapidjson::Value &value)
         }
         m_templateId = string(value["TemplateId"].GetString());
         m_templateIdHasBeenSet = true;
-    }
-
-    if (value.HasMember("FlowType") && !value["FlowType"].IsNull())
-    {
-        if (!value["FlowType"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `FlowInfo.FlowType` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_flowType = string(value["FlowType"].GetString());
-        m_flowTypeHasBeenSet = true;
-    }
-
-    if (value.HasMember("CallbackUrl") && !value["CallbackUrl"].IsNull())
-    {
-        if (!value["CallbackUrl"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `FlowInfo.CallbackUrl` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_callbackUrl = string(value["CallbackUrl"].GetString());
-        m_callbackUrlHasBeenSet = true;
     }
 
     if (value.HasMember("FlowApprovers") && !value["FlowApprovers"].IsNull())
@@ -129,6 +110,26 @@ CoreInternalOutcome FlowInfo::Deserialize(const rapidjson::Value &value)
         m_formFieldsHasBeenSet = true;
     }
 
+    if (value.HasMember("CallbackUrl") && !value["CallbackUrl"].IsNull())
+    {
+        if (!value["CallbackUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `FlowInfo.CallbackUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_callbackUrl = string(value["CallbackUrl"].GetString());
+        m_callbackUrlHasBeenSet = true;
+    }
+
+    if (value.HasMember("FlowType") && !value["FlowType"].IsNull())
+    {
+        if (!value["FlowType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `FlowInfo.FlowType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_flowType = string(value["FlowType"].GetString());
+        m_flowTypeHasBeenSet = true;
+    }
+
     if (value.HasMember("FlowDescription") && !value["FlowDescription"].IsNull())
     {
         if (!value["FlowDescription"].IsString())
@@ -147,6 +148,16 @@ CoreInternalOutcome FlowInfo::Deserialize(const rapidjson::Value &value)
         }
         m_customerData = string(value["CustomerData"].GetString());
         m_customerDataHasBeenSet = true;
+    }
+
+    if (value.HasMember("CustomShowMap") && !value["CustomShowMap"].IsNull())
+    {
+        if (!value["CustomShowMap"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `FlowInfo.CustomShowMap` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_customShowMap = string(value["CustomShowMap"].GetString());
+        m_customShowMapHasBeenSet = true;
     }
 
     if (value.HasMember("CcInfos") && !value["CcInfos"].IsNull())
@@ -200,22 +211,6 @@ void FlowInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         value.AddMember(iKey, rapidjson::Value(m_templateId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_flowTypeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "FlowType";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_flowType.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_callbackUrlHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "CallbackUrl";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_callbackUrl.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_flowApproversHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -246,6 +241,22 @@ void FlowInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         }
     }
 
+    if (m_callbackUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CallbackUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_callbackUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_flowTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FlowType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_flowType.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_flowDescriptionHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -260,6 +271,14 @@ void FlowInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "CustomerData";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_customerData.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_customShowMapHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CustomShowMap";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_customShowMap.c_str(), allocator).Move(), allocator);
     }
 
     if (m_ccInfosHasBeenSet)
@@ -328,38 +347,6 @@ bool FlowInfo::TemplateIdHasBeenSet() const
     return m_templateIdHasBeenSet;
 }
 
-string FlowInfo::GetFlowType() const
-{
-    return m_flowType;
-}
-
-void FlowInfo::SetFlowType(const string& _flowType)
-{
-    m_flowType = _flowType;
-    m_flowTypeHasBeenSet = true;
-}
-
-bool FlowInfo::FlowTypeHasBeenSet() const
-{
-    return m_flowTypeHasBeenSet;
-}
-
-string FlowInfo::GetCallbackUrl() const
-{
-    return m_callbackUrl;
-}
-
-void FlowInfo::SetCallbackUrl(const string& _callbackUrl)
-{
-    m_callbackUrl = _callbackUrl;
-    m_callbackUrlHasBeenSet = true;
-}
-
-bool FlowInfo::CallbackUrlHasBeenSet() const
-{
-    return m_callbackUrlHasBeenSet;
-}
-
 vector<FlowApproverInfo> FlowInfo::GetFlowApprovers() const
 {
     return m_flowApprovers;
@@ -392,6 +379,38 @@ bool FlowInfo::FormFieldsHasBeenSet() const
     return m_formFieldsHasBeenSet;
 }
 
+string FlowInfo::GetCallbackUrl() const
+{
+    return m_callbackUrl;
+}
+
+void FlowInfo::SetCallbackUrl(const string& _callbackUrl)
+{
+    m_callbackUrl = _callbackUrl;
+    m_callbackUrlHasBeenSet = true;
+}
+
+bool FlowInfo::CallbackUrlHasBeenSet() const
+{
+    return m_callbackUrlHasBeenSet;
+}
+
+string FlowInfo::GetFlowType() const
+{
+    return m_flowType;
+}
+
+void FlowInfo::SetFlowType(const string& _flowType)
+{
+    m_flowType = _flowType;
+    m_flowTypeHasBeenSet = true;
+}
+
+bool FlowInfo::FlowTypeHasBeenSet() const
+{
+    return m_flowTypeHasBeenSet;
+}
+
 string FlowInfo::GetFlowDescription() const
 {
     return m_flowDescription;
@@ -422,6 +441,22 @@ void FlowInfo::SetCustomerData(const string& _customerData)
 bool FlowInfo::CustomerDataHasBeenSet() const
 {
     return m_customerDataHasBeenSet;
+}
+
+string FlowInfo::GetCustomShowMap() const
+{
+    return m_customShowMap;
+}
+
+void FlowInfo::SetCustomShowMap(const string& _customShowMap)
+{
+    m_customShowMap = _customShowMap;
+    m_customShowMapHasBeenSet = true;
+}
+
+bool FlowInfo::CustomShowMapHasBeenSet() const
+{
+    return m_customShowMapHasBeenSet;
 }
 
 vector<CcInfo> FlowInfo::GetCcInfos() const

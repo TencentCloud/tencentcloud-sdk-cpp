@@ -24,7 +24,8 @@ using namespace std;
 
 DescribeVulHostTopRequest::DescribeVulHostTopRequest() :
     m_topHasBeenSet(false),
-    m_vulCategoryHasBeenSet(false)
+    m_vulCategoryHasBeenSet(false),
+    m_isFollowVulHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string DescribeVulHostTopRequest::ToJsonString() const
         string key = "VulCategory";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_vulCategory, allocator);
+    }
+
+    if (m_isFollowVulHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsFollowVul";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isFollowVul, allocator);
     }
 
 
@@ -89,6 +98,22 @@ void DescribeVulHostTopRequest::SetVulCategory(const uint64_t& _vulCategory)
 bool DescribeVulHostTopRequest::VulCategoryHasBeenSet() const
 {
     return m_vulCategoryHasBeenSet;
+}
+
+uint64_t DescribeVulHostTopRequest::GetIsFollowVul() const
+{
+    return m_isFollowVul;
+}
+
+void DescribeVulHostTopRequest::SetIsFollowVul(const uint64_t& _isFollowVul)
+{
+    m_isFollowVul = _isFollowVul;
+    m_isFollowVulHasBeenSet = true;
+}
+
+bool DescribeVulHostTopRequest::IsFollowVulHasBeenSet() const
+{
+    return m_isFollowVulHasBeenSet;
 }
 
 

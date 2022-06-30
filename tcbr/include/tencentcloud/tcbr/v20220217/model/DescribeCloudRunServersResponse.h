@@ -56,6 +56,18 @@ namespace TencentCloud
                      */
                     bool ServerListHasBeenSet() const;
 
+                    /**
+                     * 获取服务总数
+                     * @return Total 服务总数
+                     */
+                    int64_t GetTotal() const;
+
+                    /**
+                     * 判断参数 Total 是否已赋值
+                     * @return Total 是否已赋值
+                     */
+                    bool TotalHasBeenSet() const;
+
                 private:
 
                     /**
@@ -63,6 +75,12 @@ namespace TencentCloud
                      */
                     std::vector<ServerBaseInfo> m_serverList;
                     bool m_serverListHasBeenSet;
+
+                    /**
+                     * 服务总数
+                     */
+                    int64_t m_total;
+                    bool m_totalHasBeenSet;
 
                 };
             }

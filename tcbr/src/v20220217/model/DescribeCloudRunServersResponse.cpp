@@ -24,7 +24,8 @@ using namespace TencentCloud::Tcbr::V20220217::Model;
 using namespace std;
 
 DescribeCloudRunServersResponse::DescribeCloudRunServersResponse() :
-    m_serverListHasBeenSet(false)
+    m_serverListHasBeenSet(false),
+    m_totalHasBeenSet(false)
 {
 }
 
@@ -82,6 +83,16 @@ CoreInternalOutcome DescribeCloudRunServersResponse::Deserialize(const string &p
         m_serverListHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Total") && !rsp["Total"].IsNull())
+    {
+        if (!rsp["Total"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Total` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_total = rsp["Total"].GetInt64();
+        m_totalHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -107,6 +118,14 @@ string DescribeCloudRunServersResponse::ToJsonString() const
         }
     }
 
+    if (m_totalHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Total";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_total, allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -127,6 +146,16 @@ vector<ServerBaseInfo> DescribeCloudRunServersResponse::GetServerList() const
 bool DescribeCloudRunServersResponse::ServerListHasBeenSet() const
 {
     return m_serverListHasBeenSet;
+}
+
+int64_t DescribeCloudRunServersResponse::GetTotal() const
+{
+    return m_total;
+}
+
+bool DescribeCloudRunServersResponse::TotalHasBeenSet() const
+{
+    return m_totalHasBeenSet;
 }
 
 

@@ -112,6 +112,28 @@ namespace TencentCloud
                      */
                     bool MetricDataValueHasBeenSet() const;
 
+                    /**
+                     * 获取日环比
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DailyPercent 日环比
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double GetDailyPercent() const;
+
+                    /**
+                     * 设置日环比
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DailyPercent 日环比
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDailyPercent(const double& _dailyPercent);
+
+                    /**
+                     * 判断参数 DailyPercent 是否已赋值
+                     * @return DailyPercent 是否已赋值
+                     */
+                    bool DailyPercentHasBeenSet() const;
+
                 private:
 
                     /**
@@ -134,6 +156,13 @@ namespace TencentCloud
                      */
                     std::string m_metricDataValue;
                     bool m_metricDataValueHasBeenSet;
+
+                    /**
+                     * 日环比
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double m_dailyPercent;
+                    bool m_dailyPercentHasBeenSet;
 
                 };
             }

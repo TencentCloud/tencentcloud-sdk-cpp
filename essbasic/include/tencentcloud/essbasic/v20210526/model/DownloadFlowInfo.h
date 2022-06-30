@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 合同（流程）下载信息
+                * 签署流程下载信息
                 */
                 class DownloadFlowInfo : public AbstractModel
                 {
@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool FileNameHasBeenSet() const;
 
                     /**
-                     * 获取合同（流程）的标识数组
-                     * @return FlowIdList 合同（流程）的标识数组
+                     * 获取签署流程的标识数组
+                     * @return FlowIdList 签署流程的标识数组
                      */
                     std::vector<std::string> GetFlowIdList() const;
 
                     /**
-                     * 设置合同（流程）的标识数组
-                     * @param FlowIdList 合同（流程）的标识数组
+                     * 设置签署流程的标识数组
+                     * @param FlowIdList 签署流程的标识数组
                      */
                     void SetFlowIdList(const std::vector<std::string>& _flowIdList);
 
@@ -91,7 +91,7 @@ namespace TencentCloud
                     bool m_fileNameHasBeenSet;
 
                     /**
-                     * 合同（流程）的标识数组
+                     * 签署流程的标识数组
                      */
                     std::vector<std::string> m_flowIdList;
                     bool m_flowIdListHasBeenSet;

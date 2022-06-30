@@ -46,14 +46,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取渠道应用相关信息
-                     * @return Agent 渠道应用相关信息
+                     * 获取渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
+                     * @return Agent 渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
                      */
                     Agent GetAgent() const;
 
                     /**
-                     * 设置渠道应用相关信息
-                     * @param Agent 渠道应用相关信息
+                     * 设置渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
+                     * @param Agent 渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
                      */
                     void SetAgent(const Agent& _agent);
 
@@ -64,14 +64,14 @@ namespace TencentCloud
                     bool AgentHasBeenSet() const;
 
                     /**
-                     * 获取多个合同（流程）信息
-                     * @return FlowInfos 多个合同（流程）信息
+                     * 获取多个合同（签署流程）信息，最多支持20个
+                     * @return FlowInfos 多个合同（签署流程）信息，最多支持20个
                      */
                     std::vector<FlowInfo> GetFlowInfos() const;
 
                     /**
-                     * 设置多个合同（流程）信息
-                     * @param FlowInfos 多个合同（流程）信息
+                     * 设置多个合同（签署流程）信息，最多支持20个
+                     * @param FlowInfos 多个合同（签署流程）信息，最多支持20个
                      */
                     void SetFlowInfos(const std::vector<FlowInfo>& _flowInfos);
 
@@ -80,6 +80,28 @@ namespace TencentCloud
                      * @return FlowInfos 是否已赋值
                      */
                     bool FlowInfosHasBeenSet() const;
+
+                    /**
+                     * 获取是否为预览模式；默认为false，即非预览模式，此时发起合同并返回FlowIds；若为预览模式，则返回PreviewUrls；
+预览链接有效期300秒；
+                     * @return NeedPreview 是否为预览模式；默认为false，即非预览模式，此时发起合同并返回FlowIds；若为预览模式，则返回PreviewUrls；
+预览链接有效期300秒；
+                     */
+                    bool GetNeedPreview() const;
+
+                    /**
+                     * 设置是否为预览模式；默认为false，即非预览模式，此时发起合同并返回FlowIds；若为预览模式，则返回PreviewUrls；
+预览链接有效期300秒；
+                     * @param NeedPreview 是否为预览模式；默认为false，即非预览模式，此时发起合同并返回FlowIds；若为预览模式，则返回PreviewUrls；
+预览链接有效期300秒；
+                     */
+                    void SetNeedPreview(const bool& _needPreview);
+
+                    /**
+                     * 判断参数 NeedPreview 是否已赋值
+                     * @return NeedPreview 是否已赋值
+                     */
+                    bool NeedPreviewHasBeenSet() const;
 
                     /**
                      * 获取操作者的信息
@@ -99,49 +121,32 @@ namespace TencentCloud
                      */
                     bool OperatorHasBeenSet() const;
 
-                    /**
-                     * 获取是否为预览模式；默认为false，即非预览模式，此时发起合同并返回FlowIds；若为预览模式，则返回PreviewUrls；
-                     * @return NeedPreview 是否为预览模式；默认为false，即非预览模式，此时发起合同并返回FlowIds；若为预览模式，则返回PreviewUrls；
-                     */
-                    bool GetNeedPreview() const;
-
-                    /**
-                     * 设置是否为预览模式；默认为false，即非预览模式，此时发起合同并返回FlowIds；若为预览模式，则返回PreviewUrls；
-                     * @param NeedPreview 是否为预览模式；默认为false，即非预览模式，此时发起合同并返回FlowIds；若为预览模式，则返回PreviewUrls；
-                     */
-                    void SetNeedPreview(const bool& _needPreview);
-
-                    /**
-                     * 判断参数 NeedPreview 是否已赋值
-                     * @return NeedPreview 是否已赋值
-                     */
-                    bool NeedPreviewHasBeenSet() const;
-
                 private:
 
                     /**
-                     * 渠道应用相关信息
+                     * 渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
                      */
                     Agent m_agent;
                     bool m_agentHasBeenSet;
 
                     /**
-                     * 多个合同（流程）信息
+                     * 多个合同（签署流程）信息，最多支持20个
                      */
                     std::vector<FlowInfo> m_flowInfos;
                     bool m_flowInfosHasBeenSet;
+
+                    /**
+                     * 是否为预览模式；默认为false，即非预览模式，此时发起合同并返回FlowIds；若为预览模式，则返回PreviewUrls；
+预览链接有效期300秒；
+                     */
+                    bool m_needPreview;
+                    bool m_needPreviewHasBeenSet;
 
                     /**
                      * 操作者的信息
                      */
                     UserInfo m_operator;
                     bool m_operatorHasBeenSet;
-
-                    /**
-                     * 是否为预览模式；默认为false，即非预览模式，此时发起合同并返回FlowIds；若为预览模式，则返回PreviewUrls；
-                     */
-                    bool m_needPreview;
-                    bool m_needPreviewHasBeenSet;
 
                 };
             }

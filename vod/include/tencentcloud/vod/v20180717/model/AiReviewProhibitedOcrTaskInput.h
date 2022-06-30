@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 智能识别 Ocr 文字鉴违禁任务输入参数类型
+                * 音视频审核 Ocr 文字鉴违禁任务输入参数类型
                 */
                 class AiReviewProhibitedOcrTaskInput : public AbstractModel
                 {

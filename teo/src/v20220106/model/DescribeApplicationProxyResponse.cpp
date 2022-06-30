@@ -26,7 +26,9 @@ using namespace std;
 DescribeApplicationProxyResponse::DescribeApplicationProxyResponse() :
     m_dataHasBeenSet(false),
     m_totalCountHasBeenSet(false),
-    m_quotaHasBeenSet(false)
+    m_quotaHasBeenSet(false),
+    m_ipCountHasBeenSet(false),
+    m_domainCountHasBeenSet(false)
 {
 }
 
@@ -104,6 +106,26 @@ CoreInternalOutcome DescribeApplicationProxyResponse::Deserialize(const string &
         m_quotaHasBeenSet = true;
     }
 
+    if (rsp.HasMember("IpCount") && !rsp["IpCount"].IsNull())
+    {
+        if (!rsp["IpCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `IpCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_ipCount = rsp["IpCount"].GetUint64();
+        m_ipCountHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("DomainCount") && !rsp["DomainCount"].IsNull())
+    {
+        if (!rsp["DomainCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DomainCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_domainCount = rsp["DomainCount"].GetUint64();
+        m_domainCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -143,6 +165,22 @@ string DescribeApplicationProxyResponse::ToJsonString() const
         string key = "Quota";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_quota, allocator);
+    }
+
+    if (m_ipCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IpCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_ipCount, allocator);
+    }
+
+    if (m_domainCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DomainCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_domainCount, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -185,6 +223,26 @@ int64_t DescribeApplicationProxyResponse::GetQuota() const
 bool DescribeApplicationProxyResponse::QuotaHasBeenSet() const
 {
     return m_quotaHasBeenSet;
+}
+
+uint64_t DescribeApplicationProxyResponse::GetIpCount() const
+{
+    return m_ipCount;
+}
+
+bool DescribeApplicationProxyResponse::IpCountHasBeenSet() const
+{
+    return m_ipCountHasBeenSet;
+}
+
+uint64_t DescribeApplicationProxyResponse::GetDomainCount() const
+{
+    return m_domainCount;
+}
+
+bool DescribeApplicationProxyResponse::DomainCountHasBeenSet() const
+{
+    return m_domainCountHasBeenSet;
 }
 
 

@@ -25,10 +25,10 @@ using namespace std;
 CreateSignUrlsRequest::CreateSignUrlsRequest() :
     m_agentHasBeenSet(false),
     m_flowIdsHasBeenSet(false),
-    m_operatorHasBeenSet(false),
     m_endpointHasBeenSet(false),
     m_jumpUrlHasBeenSet(false),
-    m_autoJumpBackHasBeenSet(false)
+    m_autoJumpBackHasBeenSet(false),
+    m_operatorHasBeenSet(false)
 {
 }
 
@@ -61,15 +61,6 @@ string CreateSignUrlsRequest::ToJsonString() const
         }
     }
 
-    if (m_operatorHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Operator";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_operator.ToJsonObject(d[key.c_str()], allocator);
-    }
-
     if (m_endpointHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -92,6 +83,15 @@ string CreateSignUrlsRequest::ToJsonString() const
         string key = "AutoJumpBack";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_autoJumpBack, allocator);
+    }
+
+    if (m_operatorHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Operator";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_operator.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -132,22 +132,6 @@ void CreateSignUrlsRequest::SetFlowIds(const vector<string>& _flowIds)
 bool CreateSignUrlsRequest::FlowIdsHasBeenSet() const
 {
     return m_flowIdsHasBeenSet;
-}
-
-UserInfo CreateSignUrlsRequest::GetOperator() const
-{
-    return m_operator;
-}
-
-void CreateSignUrlsRequest::SetOperator(const UserInfo& _operator)
-{
-    m_operator = _operator;
-    m_operatorHasBeenSet = true;
-}
-
-bool CreateSignUrlsRequest::OperatorHasBeenSet() const
-{
-    return m_operatorHasBeenSet;
 }
 
 string CreateSignUrlsRequest::GetEndpoint() const
@@ -196,6 +180,22 @@ void CreateSignUrlsRequest::SetAutoJumpBack(const bool& _autoJumpBack)
 bool CreateSignUrlsRequest::AutoJumpBackHasBeenSet() const
 {
     return m_autoJumpBackHasBeenSet;
+}
+
+UserInfo CreateSignUrlsRequest::GetOperator() const
+{
+    return m_operator;
+}
+
+void CreateSignUrlsRequest::SetOperator(const UserInfo& _operator)
+{
+    m_operator = _operator;
+    m_operatorHasBeenSet = true;
+}
+
+bool CreateSignUrlsRequest::OperatorHasBeenSet() const
+{
+    return m_operatorHasBeenSet;
 }
 
 

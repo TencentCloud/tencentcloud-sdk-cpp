@@ -45,14 +45,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取渠道应用相关信息
-                     * @return Agent 渠道应用相关信息
+                     * 获取渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
+                     * @return Agent 渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
                      */
                     Agent GetAgent() const;
 
                     /**
-                     * 设置渠道应用相关信息
-                     * @param Agent 渠道应用相关信息
+                     * 设置渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
+                     * @param Agent 渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
                      */
                     void SetAgent(const Agent& _agent);
 
@@ -63,14 +63,14 @@ namespace TencentCloud
                     bool AgentHasBeenSet() const;
 
                     /**
-                     * 获取印章名称
-                     * @return SealName 印章名称
+                     * 获取印章名称，最大长度不超过30字符
+                     * @return SealName 印章名称，最大长度不超过30字符
                      */
                     std::string GetSealName() const;
 
                     /**
-                     * 设置印章名称
-                     * @param SealName 印章名称
+                     * 设置印章名称，最大长度不超过30字符
+                     * @param SealName 印章名称，最大长度不超过30字符
                      */
                     void SetSealName(const std::string& _sealName);
 
@@ -119,13 +119,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 渠道应用相关信息
+                     * 渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
                      */
                     Agent m_agent;
                     bool m_agentHasBeenSet;
 
                     /**
-                     * 印章名称
+                     * 印章名称，最大长度不超过30字符
                      */
                     std::string m_sealName;
                     bool m_sealNameHasBeenSet;

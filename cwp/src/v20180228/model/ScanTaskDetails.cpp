@@ -32,7 +32,8 @@ ScanTaskDetails::ScanTaskDetails() :
     m_statusHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_idHasBeenSet(false),
-    m_failTypeHasBeenSet(false)
+    m_failTypeHasBeenSet(false),
+    m_machineWanIpHasBeenSet(false)
 {
 }
 
@@ -161,6 +162,16 @@ CoreInternalOutcome ScanTaskDetails::Deserialize(const rapidjson::Value &value)
         m_failTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("MachineWanIp") && !value["MachineWanIp"].IsNull())
+    {
+        if (!value["MachineWanIp"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ScanTaskDetails.MachineWanIp` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_machineWanIp = string(value["MachineWanIp"].GetString());
+        m_machineWanIpHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -262,6 +273,14 @@ void ScanTaskDetails::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "FailType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_failType, allocator);
+    }
+
+    if (m_machineWanIpHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MachineWanIp";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_machineWanIp.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -457,5 +476,21 @@ void ScanTaskDetails::SetFailType(const uint64_t& _failType)
 bool ScanTaskDetails::FailTypeHasBeenSet() const
 {
     return m_failTypeHasBeenSet;
+}
+
+string ScanTaskDetails::GetMachineWanIp() const
+{
+    return m_machineWanIp;
+}
+
+void ScanTaskDetails::SetMachineWanIp(const string& _machineWanIp)
+{
+    m_machineWanIp = _machineWanIp;
+    m_machineWanIpHasBeenSet = true;
+}
+
+bool ScanTaskDetails::MachineWanIpHasBeenSet() const
+{
+    return m_machineWanIpHasBeenSet;
 }
 

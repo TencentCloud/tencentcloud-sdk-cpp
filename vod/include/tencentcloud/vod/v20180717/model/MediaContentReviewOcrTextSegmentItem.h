@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 智能识别 Ocr 文字的嫌疑片段
+                * 音视频审核 Ocr 文字的嫌疑片段
                 */
                 class MediaContentReviewOcrTextSegmentItem : public AbstractModel
                 {
@@ -101,11 +101,11 @@ namespace TencentCloud
                     bool ConfidenceHasBeenSet() const;
 
                     /**
-                     * 获取嫌疑片段智能识别的结果建议，取值范围：
+                     * 获取嫌疑片段音视频审核的结果建议，取值范围：
 <li>pass。</li>
 <li>review。</li>
 <li>block。</li>
-                     * @return Suggestion 嫌疑片段智能识别的结果建议，取值范围：
+                     * @return Suggestion 嫌疑片段音视频审核的结果建议，取值范围：
 <li>pass。</li>
 <li>review。</li>
 <li>block。</li>
@@ -113,11 +113,11 @@ namespace TencentCloud
                     std::string GetSuggestion() const;
 
                     /**
-                     * 设置嫌疑片段智能识别的结果建议，取值范围：
+                     * 设置嫌疑片段音视频审核的结果建议，取值范围：
 <li>pass。</li>
 <li>review。</li>
 <li>block。</li>
-                     * @param Suggestion 嫌疑片段智能识别的结果建议，取值范围：
+                     * @param Suggestion 嫌疑片段音视频审核的结果建议，取值范围：
 <li>pass。</li>
 <li>review。</li>
 <li>block。</li>
@@ -227,7 +227,7 @@ PicUrlExpireTime 时间点后图片将被删除）。
                     bool m_confidenceHasBeenSet;
 
                     /**
-                     * 嫌疑片段智能识别的结果建议，取值范围：
+                     * 嫌疑片段音视频审核的结果建议，取值范围：
 <li>pass。</li>
 <li>review。</li>
 <li>block。</li>

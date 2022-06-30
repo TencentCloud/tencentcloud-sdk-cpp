@@ -882,6 +882,28 @@ namespace TencentCloud
                      */
                     bool AgentVersionHasBeenSet() const;
 
+                    /**
+                     * 获取容器母机实例ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NodeInstanceId 容器母机实例ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetNodeInstanceId() const;
+
+                    /**
+                     * 设置容器母机实例ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param NodeInstanceId 容器母机实例ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetNodeInstanceId(const std::string& _nodeInstanceId);
+
+                    /**
+                     * 判断参数 NodeInstanceId 是否已赋值
+                     * @return NodeInstanceId 是否已赋值
+                     */
+                    bool NodeInstanceIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1149,6 +1171,13 @@ namespace TencentCloud
                      */
                     std::string m_agentVersion;
                     bool m_agentVersionHasBeenSet;
+
+                    /**
+                     * 容器母机实例ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_nodeInstanceId;
+                    bool m_nodeInstanceIdHasBeenSet;
 
                 };
             }

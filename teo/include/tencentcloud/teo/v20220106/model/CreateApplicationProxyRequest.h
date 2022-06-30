@@ -80,14 +80,22 @@ namespace TencentCloud
                     bool ZoneNameHasBeenSet() const;
 
                     /**
-                     * 获取四层代理名称
-                     * @return ProxyName 四层代理名称
+                     * 获取代理名称
+当ProxyType=hostname时，表示域名或者子域名
+当ProxyType=instance时，表示实例名称
+                     * @return ProxyName 代理名称
+当ProxyType=hostname时，表示域名或者子域名
+当ProxyType=instance时，表示实例名称
                      */
                     std::string GetProxyName() const;
 
                     /**
-                     * 设置四层代理名称
-                     * @param ProxyName 四层代理名称
+                     * 设置代理名称
+当ProxyType=hostname时，表示域名或者子域名
+当ProxyType=instance时，表示实例名称
+                     * @param ProxyName 代理名称
+当ProxyType=hostname时，表示域名或者子域名
+当ProxyType=instance时，表示实例名称
                      */
                     void SetProxyName(const std::string& _proxyName);
 
@@ -233,21 +241,21 @@ domain表示CNAME
 
                     /**
                      * 获取服务类型
-hostname：子域名
-instance：实例
+hostname：子域名模式
+instance：实例模式
                      * @return ProxyType 服务类型
-hostname：子域名
-instance：实例
+hostname：子域名模式
+instance：实例模式
                      */
                     std::string GetProxyType() const;
 
                     /**
                      * 设置服务类型
-hostname：子域名
-instance：实例
+hostname：子域名模式
+instance：实例模式
                      * @param ProxyType 服务类型
-hostname：子域名
-instance：实例
+hostname：子域名模式
+instance：实例模式
                      */
                     void SetProxyType(const std::string& _proxyType);
 
@@ -272,7 +280,9 @@ instance：实例
                     bool m_zoneNameHasBeenSet;
 
                     /**
-                     * 四层代理名称
+                     * 代理名称
+当ProxyType=hostname时，表示域名或者子域名
+当ProxyType=instance时，表示实例名称
                      */
                     std::string m_proxyName;
                     bool m_proxyNameHasBeenSet;
@@ -323,8 +333,8 @@ domain表示CNAME
 
                     /**
                      * 服务类型
-hostname：子域名
-instance：实例
+hostname：子域名模式
+instance：实例模式
                      */
                     std::string m_proxyType;
                     bool m_proxyTypeHasBeenSet;

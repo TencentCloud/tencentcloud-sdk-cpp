@@ -63,14 +63,14 @@ namespace TencentCloud
                     bool OperatorHasBeenSet() const;
 
                     /**
-                     * 获取调用方渠道信息，参考通用结构
-                     * @return Agent 调用方渠道信息，参考通用结构
+                     * 获取应用相关信息
+                     * @return Agent 应用相关信息
                      */
                     Agent GetAgent() const;
 
                     /**
-                     * 设置调用方渠道信息，参考通用结构
-                     * @param Agent 调用方渠道信息，参考通用结构
+                     * 设置应用相关信息
+                     * @param Agent 应用相关信息
                      */
                     void SetAgent(const Agent& _agent);
 
@@ -79,96 +79,6 @@ namespace TencentCloud
                      * @return Agent 是否已赋值
                      */
                     bool AgentHasBeenSet() const;
-
-                    /**
-                     * 获取姓名
-                     * @return Name 姓名
-                     */
-                    std::string GetName() const;
-
-                    /**
-                     * 设置姓名
-                     * @param Name 姓名
-                     */
-                    void SetName(const std::string& _name);
-
-                    /**
-                     * 判断参数 Name 是否已赋值
-                     * @return Name 是否已赋值
-                     */
-                    bool NameHasBeenSet() const;
-
-                    /**
-                     * 获取手机号
-                     * @return Mobile 手机号
-                     */
-                    std::string GetMobile() const;
-
-                    /**
-                     * 设置手机号
-                     * @param Mobile 手机号
-                     */
-                    void SetMobile(const std::string& _mobile);
-
-                    /**
-                     * 判断参数 Mobile 是否已赋值
-                     * @return Mobile 是否已赋值
-                     */
-                    bool MobileHasBeenSet() const;
-
-                    /**
-                     * 获取跳转页面 1: 小程序合同详情 2: 小程序合同列表页 0: 不传, 默认主页
-                     * @return PathType 跳转页面 1: 小程序合同详情 2: 小程序合同列表页 0: 不传, 默认主页
-                     */
-                    uint64_t GetPathType() const;
-
-                    /**
-                     * 设置跳转页面 1: 小程序合同详情 2: 小程序合同列表页 0: 不传, 默认主页
-                     * @param PathType 跳转页面 1: 小程序合同详情 2: 小程序合同列表页 0: 不传, 默认主页
-                     */
-                    void SetPathType(const uint64_t& _pathType);
-
-                    /**
-                     * 判断参数 PathType 是否已赋值
-                     * @return PathType 是否已赋值
-                     */
-                    bool PathTypeHasBeenSet() const;
-
-                    /**
-                     * 获取合同详情 id (PathType=1时必传)
-                     * @return FlowId 合同详情 id (PathType=1时必传)
-                     */
-                    std::string GetFlowId() const;
-
-                    /**
-                     * 设置合同详情 id (PathType=1时必传)
-                     * @param FlowId 合同详情 id (PathType=1时必传)
-                     */
-                    void SetFlowId(const std::string& _flowId);
-
-                    /**
-                     * 判断参数 FlowId 是否已赋值
-                     * @return FlowId 是否已赋值
-                     */
-                    bool FlowIdHasBeenSet() const;
-
-                    /**
-                     * 获取企业名称
-                     * @return OrganizationName 企业名称
-                     */
-                    std::string GetOrganizationName() const;
-
-                    /**
-                     * 设置企业名称
-                     * @param OrganizationName 企业名称
-                     */
-                    void SetOrganizationName(const std::string& _organizationName);
-
-                    /**
-                     * 判断参数 OrganizationName 是否已赋值
-                     * @return OrganizationName 是否已赋值
-                     */
-                    bool OrganizationNameHasBeenSet() const;
 
                     /**
                      * 获取链接类型
@@ -201,6 +111,96 @@ APP：第三方APP或小程序跳转电子签小程序的path。
                     bool EndPointHasBeenSet() const;
 
                     /**
+                     * 获取姓名,最大长度50个字符
+                     * @return Name 姓名,最大长度50个字符
+                     */
+                    std::string GetName() const;
+
+                    /**
+                     * 设置姓名,最大长度50个字符
+                     * @param Name 姓名,最大长度50个字符
+                     */
+                    void SetName(const std::string& _name);
+
+                    /**
+                     * 判断参数 Name 是否已赋值
+                     * @return Name 是否已赋值
+                     */
+                    bool NameHasBeenSet() const;
+
+                    /**
+                     * 获取手机号，大陆手机号11位
+                     * @return Mobile 手机号，大陆手机号11位
+                     */
+                    std::string GetMobile() const;
+
+                    /**
+                     * 设置手机号，大陆手机号11位
+                     * @param Mobile 手机号，大陆手机号11位
+                     */
+                    void SetMobile(const std::string& _mobile);
+
+                    /**
+                     * 判断参数 Mobile 是否已赋值
+                     * @return Mobile 是否已赋值
+                     */
+                    bool MobileHasBeenSet() const;
+
+                    /**
+                     * 获取企业名称
+                     * @return OrganizationName 企业名称
+                     */
+                    std::string GetOrganizationName() const;
+
+                    /**
+                     * 设置企业名称
+                     * @param OrganizationName 企业名称
+                     */
+                    void SetOrganizationName(const std::string& _organizationName);
+
+                    /**
+                     * 判断参数 OrganizationName 是否已赋值
+                     * @return OrganizationName 是否已赋值
+                     */
+                    bool OrganizationNameHasBeenSet() const;
+
+                    /**
+                     * 获取签署流程编号 (PathType=1时必传)
+                     * @return FlowId 签署流程编号 (PathType=1时必传)
+                     */
+                    std::string GetFlowId() const;
+
+                    /**
+                     * 设置签署流程编号 (PathType=1时必传)
+                     * @param FlowId 签署流程编号 (PathType=1时必传)
+                     */
+                    void SetFlowId(const std::string& _flowId);
+
+                    /**
+                     * 判断参数 FlowId 是否已赋值
+                     * @return FlowId 是否已赋值
+                     */
+                    bool FlowIdHasBeenSet() const;
+
+                    /**
+                     * 获取跳转页面 1: 小程序合同详情 2: 小程序合同列表页 0: 不传, 默认主页
+                     * @return PathType 跳转页面 1: 小程序合同详情 2: 小程序合同列表页 0: 不传, 默认主页
+                     */
+                    uint64_t GetPathType() const;
+
+                    /**
+                     * 设置跳转页面 1: 小程序合同详情 2: 小程序合同列表页 0: 不传, 默认主页
+                     * @param PathType 跳转页面 1: 小程序合同详情 2: 小程序合同列表页 0: 不传, 默认主页
+                     */
+                    void SetPathType(const uint64_t& _pathType);
+
+                    /**
+                     * 判断参数 PathType 是否已赋值
+                     * @return PathType 是否已赋值
+                     */
+                    bool PathTypeHasBeenSet() const;
+
+                    /**
                      * 获取是否自动回跳 true：是， false：否。该参数只针对"APP" 类型的签署链接有效
                      * @return AutoJumpBack 是否自动回跳 true：是， false：否。该参数只针对"APP" 类型的签署链接有效
                      */
@@ -227,40 +227,10 @@ APP：第三方APP或小程序跳转电子签小程序的path。
                     bool m_operatorHasBeenSet;
 
                     /**
-                     * 调用方渠道信息，参考通用结构
+                     * 应用相关信息
                      */
                     Agent m_agent;
                     bool m_agentHasBeenSet;
-
-                    /**
-                     * 姓名
-                     */
-                    std::string m_name;
-                    bool m_nameHasBeenSet;
-
-                    /**
-                     * 手机号
-                     */
-                    std::string m_mobile;
-                    bool m_mobileHasBeenSet;
-
-                    /**
-                     * 跳转页面 1: 小程序合同详情 2: 小程序合同列表页 0: 不传, 默认主页
-                     */
-                    uint64_t m_pathType;
-                    bool m_pathTypeHasBeenSet;
-
-                    /**
-                     * 合同详情 id (PathType=1时必传)
-                     */
-                    std::string m_flowId;
-                    bool m_flowIdHasBeenSet;
-
-                    /**
-                     * 企业名称
-                     */
-                    std::string m_organizationName;
-                    bool m_organizationNameHasBeenSet;
 
                     /**
                      * 链接类型
@@ -270,6 +240,36 @@ APP：第三方APP或小程序跳转电子签小程序的path。
                      */
                     std::string m_endPoint;
                     bool m_endPointHasBeenSet;
+
+                    /**
+                     * 姓名,最大长度50个字符
+                     */
+                    std::string m_name;
+                    bool m_nameHasBeenSet;
+
+                    /**
+                     * 手机号，大陆手机号11位
+                     */
+                    std::string m_mobile;
+                    bool m_mobileHasBeenSet;
+
+                    /**
+                     * 企业名称
+                     */
+                    std::string m_organizationName;
+                    bool m_organizationNameHasBeenSet;
+
+                    /**
+                     * 签署流程编号 (PathType=1时必传)
+                     */
+                    std::string m_flowId;
+                    bool m_flowIdHasBeenSet;
+
+                    /**
+                     * 跳转页面 1: 小程序合同详情 2: 小程序合同列表页 0: 不传, 默认主页
+                     */
+                    uint64_t m_pathType;
+                    bool m_pathTypeHasBeenSet;
 
                     /**
                      * 是否自动回跳 true：是， false：否。该参数只针对"APP" 类型的签署链接有效

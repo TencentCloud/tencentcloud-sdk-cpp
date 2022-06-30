@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取1:web-cms 漏洞，2.应用漏洞 3:安全基线 4: Linux软件漏洞 5: windows系统漏洞 6:应急漏洞
-                     * @return VulCategory 1:web-cms 漏洞，2.应用漏洞 3:安全基线 4: Linux软件漏洞 5: windows系统漏洞 6:应急漏洞
+                     * 获取1:web-cms 漏洞，2.应用漏洞 3:安全基线 4: Linux软件漏洞 5: windows系统漏洞 6:应急漏洞，不填或者填0时返回 1，2，4，5 的总统计数据
+                     * @return VulCategory 1:web-cms 漏洞，2.应用漏洞 3:安全基线 4: Linux软件漏洞 5: windows系统漏洞 6:应急漏洞，不填或者填0时返回 1，2，4，5 的总统计数据
                      */
                     uint64_t GetVulCategory() const;
 
                     /**
-                     * 设置1:web-cms 漏洞，2.应用漏洞 3:安全基线 4: Linux软件漏洞 5: windows系统漏洞 6:应急漏洞
-                     * @param VulCategory 1:web-cms 漏洞，2.应用漏洞 3:安全基线 4: Linux软件漏洞 5: windows系统漏洞 6:应急漏洞
+                     * 设置1:web-cms 漏洞，2.应用漏洞 3:安全基线 4: Linux软件漏洞 5: windows系统漏洞 6:应急漏洞，不填或者填0时返回 1，2，4，5 的总统计数据
+                     * @param VulCategory 1:web-cms 漏洞，2.应用漏洞 3:安全基线 4: Linux软件漏洞 5: windows系统漏洞 6:应急漏洞，不填或者填0时返回 1，2，4，5 的总统计数据
                      */
                     void SetVulCategory(const uint64_t& _vulCategory);
 
@@ -60,13 +60,37 @@ namespace TencentCloud
                      */
                     bool VulCategoryHasBeenSet() const;
 
+                    /**
+                     * 获取是否仅统计重点关注漏洞 1=仅统计重点关注漏洞, 0=统计全部漏洞
+                     * @return IsFollowVul 是否仅统计重点关注漏洞 1=仅统计重点关注漏洞, 0=统计全部漏洞
+                     */
+                    uint64_t GetIsFollowVul() const;
+
+                    /**
+                     * 设置是否仅统计重点关注漏洞 1=仅统计重点关注漏洞, 0=统计全部漏洞
+                     * @param IsFollowVul 是否仅统计重点关注漏洞 1=仅统计重点关注漏洞, 0=统计全部漏洞
+                     */
+                    void SetIsFollowVul(const uint64_t& _isFollowVul);
+
+                    /**
+                     * 判断参数 IsFollowVul 是否已赋值
+                     * @return IsFollowVul 是否已赋值
+                     */
+                    bool IsFollowVulHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 1:web-cms 漏洞，2.应用漏洞 3:安全基线 4: Linux软件漏洞 5: windows系统漏洞 6:应急漏洞
+                     * 1:web-cms 漏洞，2.应用漏洞 3:安全基线 4: Linux软件漏洞 5: windows系统漏洞 6:应急漏洞，不填或者填0时返回 1，2，4，5 的总统计数据
                      */
                     uint64_t m_vulCategory;
                     bool m_vulCategoryHasBeenSet;
+
+                    /**
+                     * 是否仅统计重点关注漏洞 1=仅统计重点关注漏洞, 0=统计全部漏洞
+                     */
+                    uint64_t m_isFollowVul;
+                    bool m_isFollowVulHasBeenSet;
 
                 };
             }

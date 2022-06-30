@@ -57,8 +57,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取内容智能识别模板详情列表。
-                     * @return ContentReviewTemplateSet 内容智能识别模板详情列表。
+                     * 获取内容审核模板详情列表。
+                     * @return ContentReviewTemplateSet 内容审核模板详情列表。
                      */
                     std::vector<ContentReviewTemplateItem> GetContentReviewTemplateSet() const;
 
@@ -77,7 +77,7 @@ namespace TencentCloud
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 内容智能识别模板详情列表。
+                     * 内容审核模板详情列表。
                      */
                     std::vector<ContentReviewTemplateItem> m_contentReviewTemplateSet;
                     bool m_contentReviewTemplateSetHasBeenSet;

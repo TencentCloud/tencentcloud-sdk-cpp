@@ -36,7 +36,8 @@ DescribeStatisticsRequest::DescribeStatisticsRequest() :
     m_searchWordHasBeenSet(false),
     m_metricDimensionValuesHasBeenSet(false),
     m_bucketKeyHasBeenSet(false),
-    m_dbNameHasBeenSet(false)
+    m_dbNameHasBeenSet(false),
+    m_namespaceIdListHasBeenSet(false)
 {
 }
 
@@ -164,6 +165,19 @@ string DescribeStatisticsRequest::ToJsonString() const
         string key = "DbName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_dbName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_namespaceIdListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NamespaceIdList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_namespaceIdList.begin(); itr != m_namespaceIdList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -396,6 +410,22 @@ void DescribeStatisticsRequest::SetDbName(const string& _dbName)
 bool DescribeStatisticsRequest::DbNameHasBeenSet() const
 {
     return m_dbNameHasBeenSet;
+}
+
+vector<string> DescribeStatisticsRequest::GetNamespaceIdList() const
+{
+    return m_namespaceIdList;
+}
+
+void DescribeStatisticsRequest::SetNamespaceIdList(const vector<string>& _namespaceIdList)
+{
+    m_namespaceIdList = _namespaceIdList;
+    m_namespaceIdListHasBeenSet = true;
+}
+
+bool DescribeStatisticsRequest::NamespaceIdListHasBeenSet() const
+{
+    return m_namespaceIdListHasBeenSet;
 }
 
 

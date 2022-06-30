@@ -23,7 +23,8 @@ using namespace std;
 MetricDataSingleValue::MetricDataSingleValue() :
     m_metricNameHasBeenSet(false),
     m_metricFunctionHasBeenSet(false),
-    m_metricDataValueHasBeenSet(false)
+    m_metricDataValueHasBeenSet(false),
+    m_dailyPercentHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,16 @@ CoreInternalOutcome MetricDataSingleValue::Deserialize(const rapidjson::Value &v
         m_metricDataValueHasBeenSet = true;
     }
 
+    if (value.HasMember("DailyPercent") && !value["DailyPercent"].IsNull())
+    {
+        if (!value["DailyPercent"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `MetricDataSingleValue.DailyPercent` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_dailyPercent = value["DailyPercent"].GetDouble();
+        m_dailyPercentHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +102,14 @@ void MetricDataSingleValue::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "MetricDataValue";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_metricDataValue.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dailyPercentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DailyPercent";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_dailyPercent, allocator);
     }
 
 }
@@ -142,5 +161,21 @@ void MetricDataSingleValue::SetMetricDataValue(const string& _metricDataValue)
 bool MetricDataSingleValue::MetricDataValueHasBeenSet() const
 {
     return m_metricDataValueHasBeenSet;
+}
+
+double MetricDataSingleValue::GetDailyPercent() const
+{
+    return m_dailyPercent;
+}
+
+void MetricDataSingleValue::SetDailyPercent(const double& _dailyPercent)
+{
+    m_dailyPercent = _dailyPercent;
+    m_dailyPercentHasBeenSet = true;
+}
+
+bool MetricDataSingleValue::DailyPercentHasBeenSet() const
+{
+    return m_dailyPercentHasBeenSet;
 }
 

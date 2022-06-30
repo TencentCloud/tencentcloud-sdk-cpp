@@ -45,6 +45,24 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取签署流程编号，由CreateFlow接口返回
+                     * @return FlowId 签署流程编号，由CreateFlow接口返回
+                     */
+                    std::string GetFlowId() const;
+
+                    /**
+                     * 设置签署流程编号，由CreateFlow接口返回
+                     * @param FlowId 签署流程编号，由CreateFlow接口返回
+                     */
+                    void SetFlowId(const std::string& _flowId);
+
+                    /**
+                     * 判断参数 FlowId 是否已赋值
+                     * @return FlowId 是否已赋值
+                     */
+                    bool FlowIdHasBeenSet() const;
+
+                    /**
                      * 获取用户信息
                      * @return Operator 用户信息
                      */
@@ -61,24 +79,6 @@ namespace TencentCloud
                      * @return Operator 是否已赋值
                      */
                     bool OperatorHasBeenSet() const;
-
-                    /**
-                     * 获取流程编号
-                     * @return FlowId 流程编号
-                     */
-                    std::string GetFlowId() const;
-
-                    /**
-                     * 设置流程编号
-                     * @param FlowId 流程编号
-                     */
-                    void SetFlowId(const std::string& _flowId);
-
-                    /**
-                     * 判断参数 FlowId 是否已赋值
-                     * @return FlowId 是否已赋值
-                     */
-                    bool FlowIdHasBeenSet() const;
 
                     /**
                      * 获取应用相关信息
@@ -99,14 +99,14 @@ namespace TencentCloud
                     bool AgentHasBeenSet() const;
 
                     /**
-                     * 获取客户端Token，保持接口幂等性
-                     * @return ClientToken 客户端Token，保持接口幂等性
+                     * 获取客户端Token，保持接口幂等性,最大长度64个字符
+                     * @return ClientToken 客户端Token，保持接口幂等性,最大长度64个字符
                      */
                     std::string GetClientToken() const;
 
                     /**
-                     * 设置客户端Token，保持接口幂等性
-                     * @param ClientToken 客户端Token，保持接口幂等性
+                     * 设置客户端Token，保持接口幂等性,最大长度64个字符
+                     * @param ClientToken 客户端Token，保持接口幂等性,最大长度64个字符
                      */
                     void SetClientToken(const std::string& _clientToken);
 
@@ -119,16 +119,16 @@ namespace TencentCloud
                 private:
 
                     /**
+                     * 签署流程编号，由CreateFlow接口返回
+                     */
+                    std::string m_flowId;
+                    bool m_flowIdHasBeenSet;
+
+                    /**
                      * 用户信息
                      */
                     UserInfo m_operator;
                     bool m_operatorHasBeenSet;
-
-                    /**
-                     * 流程编号
-                     */
-                    std::string m_flowId;
-                    bool m_flowIdHasBeenSet;
 
                     /**
                      * 应用相关信息
@@ -137,7 +137,7 @@ namespace TencentCloud
                     bool m_agentHasBeenSet;
 
                     /**
-                     * 客户端Token，保持接口幂等性
+                     * 客户端Token，保持接口幂等性,最大长度64个字符
                      */
                     std::string m_clientToken;
                     bool m_clientTokenHasBeenSet;

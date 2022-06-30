@@ -319,6 +319,24 @@ namespace TencentCloud
                      */
                     bool FilterTagHasBeenSet() const;
 
+                    /**
+                     * 获取按照套餐类型进行过滤
+                     * @return FilterPackType 按照套餐类型进行过滤
+                     */
+                    std::vector<std::string> GetFilterPackType() const;
+
+                    /**
+                     * 设置按照套餐类型进行过滤
+                     * @param FilterPackType 按照套餐类型进行过滤
+                     */
+                    void SetFilterPackType(const std::vector<std::string>& _filterPackType);
+
+                    /**
+                     * 判断参数 FilterPackType 是否已赋值
+                     * @return FilterPackType 是否已赋值
+                     */
+                    bool FilterPackTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -410,6 +428,12 @@ namespace TencentCloud
                      */
                     TagFilter m_filterTag;
                     bool m_filterTagHasBeenSet;
+
+                    /**
+                     * 按照套餐类型进行过滤
+                     */
+                    std::vector<std::string> m_filterPackType;
+                    bool m_filterPackTypeHasBeenSet;
 
                 };
             }

@@ -57,8 +57,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取视频内容分析模板详情列表。
-                     * @return AIAnalysisTemplateSet 视频内容分析模板详情列表。
+                     * 获取音视频内容分析模板详情列表。
+                     * @return AIAnalysisTemplateSet 音视频内容分析模板详情列表。
                      */
                     std::vector<AIAnalysisTemplateItem> GetAIAnalysisTemplateSet() const;
 
@@ -77,7 +77,7 @@ namespace TencentCloud
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 视频内容分析模板详情列表。
+                     * 音视频内容分析模板详情列表。
                      */
                     std::vector<AIAnalysisTemplateItem> m_aIAnalysisTemplateSet;
                     bool m_aIAnalysisTemplateSetHasBeenSet;

@@ -376,6 +376,28 @@ namespace TencentCloud
                      */
                     bool InstanceStateHasBeenSet() const;
 
+                    /**
+                     * 获取外网ip
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PublicIpAddresses 外网ip
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetPublicIpAddresses() const;
+
+                    /**
+                     * 设置外网ip
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param PublicIpAddresses 外网ip
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPublicIpAddresses(const std::string& _publicIpAddresses);
+
+                    /**
+                     * 判断参数 PublicIpAddresses 是否已赋值
+                     * @return PublicIpAddresses 是否已赋值
+                     */
+                    bool PublicIpAddressesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -482,6 +504,13 @@ namespace TencentCloud
                      */
                     std::string m_instanceState;
                     bool m_instanceStateHasBeenSet;
+
+                    /**
+                     * 外网ip
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_publicIpAddresses;
+                    bool m_publicIpAddressesHasBeenSet;
 
                 };
             }

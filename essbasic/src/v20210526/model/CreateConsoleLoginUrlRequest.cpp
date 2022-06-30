@@ -25,11 +25,11 @@ using namespace std;
 CreateConsoleLoginUrlRequest::CreateConsoleLoginUrlRequest() :
     m_agentHasBeenSet(false),
     m_proxyOrganizationNameHasBeenSet(false),
-    m_uniformSocialCreditCodeHasBeenSet(false),
     m_proxyOperatorNameHasBeenSet(false),
-    m_operatorHasBeenSet(false),
     m_moduleHasBeenSet(false),
-    m_moduleIdHasBeenSet(false)
+    m_moduleIdHasBeenSet(false),
+    m_uniformSocialCreditCodeHasBeenSet(false),
+    m_operatorHasBeenSet(false)
 {
 }
 
@@ -57,29 +57,12 @@ string CreateConsoleLoginUrlRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_proxyOrganizationName.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_uniformSocialCreditCodeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "UniformSocialCreditCode";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_uniformSocialCreditCode.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_proxyOperatorNameHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ProxyOperatorName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_proxyOperatorName.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_operatorHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Operator";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_operator.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_moduleHasBeenSet)
@@ -96,6 +79,23 @@ string CreateConsoleLoginUrlRequest::ToJsonString() const
         string key = "ModuleId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_moduleId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_uniformSocialCreditCodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UniformSocialCreditCode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_uniformSocialCreditCode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_operatorHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Operator";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_operator.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -138,22 +138,6 @@ bool CreateConsoleLoginUrlRequest::ProxyOrganizationNameHasBeenSet() const
     return m_proxyOrganizationNameHasBeenSet;
 }
 
-string CreateConsoleLoginUrlRequest::GetUniformSocialCreditCode() const
-{
-    return m_uniformSocialCreditCode;
-}
-
-void CreateConsoleLoginUrlRequest::SetUniformSocialCreditCode(const string& _uniformSocialCreditCode)
-{
-    m_uniformSocialCreditCode = _uniformSocialCreditCode;
-    m_uniformSocialCreditCodeHasBeenSet = true;
-}
-
-bool CreateConsoleLoginUrlRequest::UniformSocialCreditCodeHasBeenSet() const
-{
-    return m_uniformSocialCreditCodeHasBeenSet;
-}
-
 string CreateConsoleLoginUrlRequest::GetProxyOperatorName() const
 {
     return m_proxyOperatorName;
@@ -168,22 +152,6 @@ void CreateConsoleLoginUrlRequest::SetProxyOperatorName(const string& _proxyOper
 bool CreateConsoleLoginUrlRequest::ProxyOperatorNameHasBeenSet() const
 {
     return m_proxyOperatorNameHasBeenSet;
-}
-
-UserInfo CreateConsoleLoginUrlRequest::GetOperator() const
-{
-    return m_operator;
-}
-
-void CreateConsoleLoginUrlRequest::SetOperator(const UserInfo& _operator)
-{
-    m_operator = _operator;
-    m_operatorHasBeenSet = true;
-}
-
-bool CreateConsoleLoginUrlRequest::OperatorHasBeenSet() const
-{
-    return m_operatorHasBeenSet;
 }
 
 string CreateConsoleLoginUrlRequest::GetModule() const
@@ -216,6 +184,38 @@ void CreateConsoleLoginUrlRequest::SetModuleId(const string& _moduleId)
 bool CreateConsoleLoginUrlRequest::ModuleIdHasBeenSet() const
 {
     return m_moduleIdHasBeenSet;
+}
+
+string CreateConsoleLoginUrlRequest::GetUniformSocialCreditCode() const
+{
+    return m_uniformSocialCreditCode;
+}
+
+void CreateConsoleLoginUrlRequest::SetUniformSocialCreditCode(const string& _uniformSocialCreditCode)
+{
+    m_uniformSocialCreditCode = _uniformSocialCreditCode;
+    m_uniformSocialCreditCodeHasBeenSet = true;
+}
+
+bool CreateConsoleLoginUrlRequest::UniformSocialCreditCodeHasBeenSet() const
+{
+    return m_uniformSocialCreditCodeHasBeenSet;
+}
+
+UserInfo CreateConsoleLoginUrlRequest::GetOperator() const
+{
+    return m_operator;
+}
+
+void CreateConsoleLoginUrlRequest::SetOperator(const UserInfo& _operator)
+{
+    m_operator = _operator;
+    m_operatorHasBeenSet = true;
+}
+
+bool CreateConsoleLoginUrlRequest::OperatorHasBeenSet() const
+{
+    return m_operatorHasBeenSet;
 }
 
 

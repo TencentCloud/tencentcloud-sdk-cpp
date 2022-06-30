@@ -139,6 +139,60 @@ namespace TencentCloud
                     bool SignComponentsHasBeenSet() const;
 
                     /**
+                     * 获取模板中的流程参与人信息
+                     * @return Recipients 模板中的流程参与人信息
+                     */
+                    std::vector<Recipient> GetRecipients() const;
+
+                    /**
+                     * 设置模板中的流程参与人信息
+                     * @param Recipients 模板中的流程参与人信息
+                     */
+                    void SetRecipients(const std::vector<Recipient>& _recipients);
+
+                    /**
+                     * 判断参数 Recipients 是否已赋值
+                     * @return Recipients 是否已赋值
+                     */
+                    bool RecipientsHasBeenSet() const;
+
+                    /**
+                     * 获取模板类型：1-静默签；2-静默签授权；3-普通模板
+                     * @return TemplateType 模板类型：1-静默签；2-静默签授权；3-普通模板
+                     */
+                    int64_t GetTemplateType() const;
+
+                    /**
+                     * 设置模板类型：1-静默签；2-静默签授权；3-普通模板
+                     * @param TemplateType 模板类型：1-静默签；2-静默签授权；3-普通模板
+                     */
+                    void SetTemplateType(const int64_t& _templateType);
+
+                    /**
+                     * 判断参数 TemplateType 是否已赋值
+                     * @return TemplateType 是否已赋值
+                     */
+                    bool TemplateTypeHasBeenSet() const;
+
+                    /**
+                     * 获取是否是发起人
+                     * @return IsPromoter 是否是发起人
+                     */
+                    bool GetIsPromoter() const;
+
+                    /**
+                     * 设置是否是发起人
+                     * @param IsPromoter 是否是发起人
+                     */
+                    void SetIsPromoter(const bool& _isPromoter);
+
+                    /**
+                     * 判断参数 IsPromoter 是否已赋值
+                     * @return IsPromoter 是否已赋值
+                     */
+                    bool IsPromoterHasBeenSet() const;
+
+                    /**
                      * 获取模板的创建者信息
                      * @return Creator 模板的创建者信息
                      */
@@ -174,60 +228,6 @@ namespace TencentCloud
                      */
                     bool CreatedOnHasBeenSet() const;
 
-                    /**
-                     * 获取模板类型：1-静默签；2-静默签授权；3-普通模板
-                     * @return TemplateType 模板类型：1-静默签；2-静默签授权；3-普通模板
-                     */
-                    int64_t GetTemplateType() const;
-
-                    /**
-                     * 设置模板类型：1-静默签；2-静默签授权；3-普通模板
-                     * @param TemplateType 模板类型：1-静默签；2-静默签授权；3-普通模板
-                     */
-                    void SetTemplateType(const int64_t& _templateType);
-
-                    /**
-                     * 判断参数 TemplateType 是否已赋值
-                     * @return TemplateType 是否已赋值
-                     */
-                    bool TemplateTypeHasBeenSet() const;
-
-                    /**
-                     * 获取模板中的流程参与人信息
-                     * @return Recipients 模板中的流程参与人信息
-                     */
-                    std::vector<Recipient> GetRecipients() const;
-
-                    /**
-                     * 设置模板中的流程参与人信息
-                     * @param Recipients 模板中的流程参与人信息
-                     */
-                    void SetRecipients(const std::vector<Recipient>& _recipients);
-
-                    /**
-                     * 判断参数 Recipients 是否已赋值
-                     * @return Recipients 是否已赋值
-                     */
-                    bool RecipientsHasBeenSet() const;
-
-                    /**
-                     * 获取是否是发起人
-                     * @return IsPromoter 是否是发起人
-                     */
-                    bool GetIsPromoter() const;
-
-                    /**
-                     * 设置是否是发起人
-                     * @param IsPromoter 是否是发起人
-                     */
-                    void SetIsPromoter(const bool& _isPromoter);
-
-                    /**
-                     * 判断参数 IsPromoter 是否已赋值
-                     * @return IsPromoter 是否已赋值
-                     */
-                    bool IsPromoterHasBeenSet() const;
-
                 private:
 
                     /**
@@ -261,6 +261,24 @@ namespace TencentCloud
                     bool m_signComponentsHasBeenSet;
 
                     /**
+                     * 模板中的流程参与人信息
+                     */
+                    std::vector<Recipient> m_recipients;
+                    bool m_recipientsHasBeenSet;
+
+                    /**
+                     * 模板类型：1-静默签；2-静默签授权；3-普通模板
+                     */
+                    int64_t m_templateType;
+                    bool m_templateTypeHasBeenSet;
+
+                    /**
+                     * 是否是发起人
+                     */
+                    bool m_isPromoter;
+                    bool m_isPromoterHasBeenSet;
+
+                    /**
                      * 模板的创建者信息
                      */
                     std::string m_creator;
@@ -271,24 +289,6 @@ namespace TencentCloud
                      */
                     int64_t m_createdOn;
                     bool m_createdOnHasBeenSet;
-
-                    /**
-                     * 模板类型：1-静默签；2-静默签授权；3-普通模板
-                     */
-                    int64_t m_templateType;
-                    bool m_templateTypeHasBeenSet;
-
-                    /**
-                     * 模板中的流程参与人信息
-                     */
-                    std::vector<Recipient> m_recipients;
-                    bool m_recipientsHasBeenSet;
-
-                    /**
-                     * 是否是发起人
-                     */
-                    bool m_isPromoter;
-                    bool m_isPromoterHasBeenSet;
 
                 };
             }

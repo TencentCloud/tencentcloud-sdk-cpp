@@ -341,6 +341,49 @@ CiamClient::ListJobsOutcomeCallable CiamClient::ListJobsCallable(const ListJobsR
     return task->get_future();
 }
 
+CiamClient::ListLogMessageByConditionOutcome CiamClient::ListLogMessageByCondition(const ListLogMessageByConditionRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListLogMessageByCondition");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListLogMessageByConditionResponse rsp = ListLogMessageByConditionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListLogMessageByConditionOutcome(rsp);
+        else
+            return ListLogMessageByConditionOutcome(o.GetError());
+    }
+    else
+    {
+        return ListLogMessageByConditionOutcome(outcome.GetError());
+    }
+}
+
+void CiamClient::ListLogMessageByConditionAsync(const ListLogMessageByConditionRequest& request, const ListLogMessageByConditionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ListLogMessageByCondition(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CiamClient::ListLogMessageByConditionOutcomeCallable CiamClient::ListLogMessageByConditionCallable(const ListLogMessageByConditionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ListLogMessageByConditionOutcome()>>(
+        [this, request]()
+        {
+            return this->ListLogMessageByCondition(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CiamClient::ListUserOutcome CiamClient::ListUser(const ListUserRequest &request)
 {
     auto outcome = MakeRequest(request, "ListUser");

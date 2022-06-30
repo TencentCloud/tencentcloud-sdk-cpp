@@ -21,9 +21,9 @@ using namespace TencentCloud::Essbasic::V20210526::Model;
 using namespace std;
 
 UserInfo::UserInfo() :
-    m_customUserIdHasBeenSet(false),
-    m_channelHasBeenSet(false),
     m_openIdHasBeenSet(false),
+    m_channelHasBeenSet(false),
+    m_customUserIdHasBeenSet(false),
     m_clientIpHasBeenSet(false),
     m_proxyIpHasBeenSet(false)
 {
@@ -34,14 +34,14 @@ CoreInternalOutcome UserInfo::Deserialize(const rapidjson::Value &value)
     string requestId = "";
 
 
-    if (value.HasMember("CustomUserId") && !value["CustomUserId"].IsNull())
+    if (value.HasMember("OpenId") && !value["OpenId"].IsNull())
     {
-        if (!value["CustomUserId"].IsString())
+        if (!value["OpenId"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `UserInfo.CustomUserId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UserInfo.OpenId` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_customUserId = string(value["CustomUserId"].GetString());
-        m_customUserIdHasBeenSet = true;
+        m_openId = string(value["OpenId"].GetString());
+        m_openIdHasBeenSet = true;
     }
 
     if (value.HasMember("Channel") && !value["Channel"].IsNull())
@@ -54,14 +54,14 @@ CoreInternalOutcome UserInfo::Deserialize(const rapidjson::Value &value)
         m_channelHasBeenSet = true;
     }
 
-    if (value.HasMember("OpenId") && !value["OpenId"].IsNull())
+    if (value.HasMember("CustomUserId") && !value["CustomUserId"].IsNull())
     {
-        if (!value["OpenId"].IsString())
+        if (!value["CustomUserId"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `UserInfo.OpenId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `UserInfo.CustomUserId` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_openId = string(value["OpenId"].GetString());
-        m_openIdHasBeenSet = true;
+        m_customUserId = string(value["CustomUserId"].GetString());
+        m_customUserIdHasBeenSet = true;
     }
 
     if (value.HasMember("ClientIp") && !value["ClientIp"].IsNull())
@@ -91,12 +91,12 @@ CoreInternalOutcome UserInfo::Deserialize(const rapidjson::Value &value)
 void UserInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
-    if (m_customUserIdHasBeenSet)
+    if (m_openIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "CustomUserId";
+        string key = "OpenId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_customUserId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_openId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_channelHasBeenSet)
@@ -107,12 +107,12 @@ void UserInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         value.AddMember(iKey, rapidjson::Value(m_channel.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_openIdHasBeenSet)
+    if (m_customUserIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "OpenId";
+        string key = "CustomUserId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_openId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_customUserId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_clientIpHasBeenSet)
@@ -134,20 +134,20 @@ void UserInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
 }
 
 
-string UserInfo::GetCustomUserId() const
+string UserInfo::GetOpenId() const
 {
-    return m_customUserId;
+    return m_openId;
 }
 
-void UserInfo::SetCustomUserId(const string& _customUserId)
+void UserInfo::SetOpenId(const string& _openId)
 {
-    m_customUserId = _customUserId;
-    m_customUserIdHasBeenSet = true;
+    m_openId = _openId;
+    m_openIdHasBeenSet = true;
 }
 
-bool UserInfo::CustomUserIdHasBeenSet() const
+bool UserInfo::OpenIdHasBeenSet() const
 {
-    return m_customUserIdHasBeenSet;
+    return m_openIdHasBeenSet;
 }
 
 string UserInfo::GetChannel() const
@@ -166,20 +166,20 @@ bool UserInfo::ChannelHasBeenSet() const
     return m_channelHasBeenSet;
 }
 
-string UserInfo::GetOpenId() const
+string UserInfo::GetCustomUserId() const
 {
-    return m_openId;
+    return m_customUserId;
 }
 
-void UserInfo::SetOpenId(const string& _openId)
+void UserInfo::SetCustomUserId(const string& _customUserId)
 {
-    m_openId = _openId;
-    m_openIdHasBeenSet = true;
+    m_customUserId = _customUserId;
+    m_customUserIdHasBeenSet = true;
 }
 
-bool UserInfo::OpenIdHasBeenSet() const
+bool UserInfo::CustomUserIdHasBeenSet() const
 {
-    return m_openIdHasBeenSet;
+    return m_customUserIdHasBeenSet;
 }
 
 string UserInfo::GetClientIp() const

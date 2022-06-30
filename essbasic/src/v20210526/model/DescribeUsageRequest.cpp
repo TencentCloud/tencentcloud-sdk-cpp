@@ -26,10 +26,10 @@ DescribeUsageRequest::DescribeUsageRequest() :
     m_agentHasBeenSet(false),
     m_startDateHasBeenSet(false),
     m_endDateHasBeenSet(false),
-    m_operatorHasBeenSet(false),
     m_needAggregateHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_offsetHasBeenSet(false)
+    m_offsetHasBeenSet(false),
+    m_operatorHasBeenSet(false)
 {
 }
 
@@ -65,15 +65,6 @@ string DescribeUsageRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_endDate.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_operatorHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Operator";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_operator.ToJsonObject(d[key.c_str()], allocator);
-    }
-
     if (m_needAggregateHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -96,6 +87,15 @@ string DescribeUsageRequest::ToJsonString() const
         string key = "Offset";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_operatorHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Operator";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_operator.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -154,22 +154,6 @@ bool DescribeUsageRequest::EndDateHasBeenSet() const
     return m_endDateHasBeenSet;
 }
 
-UserInfo DescribeUsageRequest::GetOperator() const
-{
-    return m_operator;
-}
-
-void DescribeUsageRequest::SetOperator(const UserInfo& _operator)
-{
-    m_operator = _operator;
-    m_operatorHasBeenSet = true;
-}
-
-bool DescribeUsageRequest::OperatorHasBeenSet() const
-{
-    return m_operatorHasBeenSet;
-}
-
 bool DescribeUsageRequest::GetNeedAggregate() const
 {
     return m_needAggregate;
@@ -216,6 +200,22 @@ void DescribeUsageRequest::SetOffset(const uint64_t& _offset)
 bool DescribeUsageRequest::OffsetHasBeenSet() const
 {
     return m_offsetHasBeenSet;
+}
+
+UserInfo DescribeUsageRequest::GetOperator() const
+{
+    return m_operator;
+}
+
+void DescribeUsageRequest::SetOperator(const UserInfo& _operator)
+{
+    m_operator = _operator;
+    m_operatorHasBeenSet = true;
+}
+
+bool DescribeUsageRequest::OperatorHasBeenSet() const
+{
+    return m_operatorHasBeenSet;
 }
 
 

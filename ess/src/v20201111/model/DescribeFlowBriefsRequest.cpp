@@ -23,8 +23,8 @@ using namespace TencentCloud::Ess::V20201111::Model;
 using namespace std;
 
 DescribeFlowBriefsRequest::DescribeFlowBriefsRequest() :
-    m_operatorHasBeenSet(false),
     m_flowIdsHasBeenSet(false),
+    m_operatorHasBeenSet(false),
     m_agentHasBeenSet(false)
 {
 }
@@ -35,15 +35,6 @@ string DescribeFlowBriefsRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
-
-    if (m_operatorHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Operator";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_operator.ToJsonObject(d[key.c_str()], allocator);
-    }
 
     if (m_flowIdsHasBeenSet)
     {
@@ -56,6 +47,15 @@ string DescribeFlowBriefsRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_operatorHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Operator";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_operator.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_agentHasBeenSet)
@@ -75,22 +75,6 @@ string DescribeFlowBriefsRequest::ToJsonString() const
 }
 
 
-UserInfo DescribeFlowBriefsRequest::GetOperator() const
-{
-    return m_operator;
-}
-
-void DescribeFlowBriefsRequest::SetOperator(const UserInfo& _operator)
-{
-    m_operator = _operator;
-    m_operatorHasBeenSet = true;
-}
-
-bool DescribeFlowBriefsRequest::OperatorHasBeenSet() const
-{
-    return m_operatorHasBeenSet;
-}
-
 vector<string> DescribeFlowBriefsRequest::GetFlowIds() const
 {
     return m_flowIds;
@@ -105,6 +89,22 @@ void DescribeFlowBriefsRequest::SetFlowIds(const vector<string>& _flowIds)
 bool DescribeFlowBriefsRequest::FlowIdsHasBeenSet() const
 {
     return m_flowIdsHasBeenSet;
+}
+
+UserInfo DescribeFlowBriefsRequest::GetOperator() const
+{
+    return m_operator;
+}
+
+void DescribeFlowBriefsRequest::SetOperator(const UserInfo& _operator)
+{
+    m_operator = _operator;
+    m_operatorHasBeenSet = true;
+}
+
+bool DescribeFlowBriefsRequest::OperatorHasBeenSet() const
+{
+    return m_operatorHasBeenSet;
 }
 
 Agent DescribeFlowBriefsRequest::GetAgent() const

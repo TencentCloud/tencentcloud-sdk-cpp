@@ -24,8 +24,8 @@ using namespace std;
 
 GetDownloadFlowUrlRequest::GetDownloadFlowUrlRequest() :
     m_agentHasBeenSet(false),
-    m_operatorHasBeenSet(false),
-    m_downLoadFlowsHasBeenSet(false)
+    m_downLoadFlowsHasBeenSet(false),
+    m_operatorHasBeenSet(false)
 {
 }
 
@@ -45,15 +45,6 @@ string GetDownloadFlowUrlRequest::ToJsonString() const
         m_agent.ToJsonObject(d[key.c_str()], allocator);
     }
 
-    if (m_operatorHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Operator";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_operator.ToJsonObject(d[key.c_str()], allocator);
-    }
-
     if (m_downLoadFlowsHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -67,6 +58,15 @@ string GetDownloadFlowUrlRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_operatorHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Operator";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_operator.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -93,22 +93,6 @@ bool GetDownloadFlowUrlRequest::AgentHasBeenSet() const
     return m_agentHasBeenSet;
 }
 
-UserInfo GetDownloadFlowUrlRequest::GetOperator() const
-{
-    return m_operator;
-}
-
-void GetDownloadFlowUrlRequest::SetOperator(const UserInfo& _operator)
-{
-    m_operator = _operator;
-    m_operatorHasBeenSet = true;
-}
-
-bool GetDownloadFlowUrlRequest::OperatorHasBeenSet() const
-{
-    return m_operatorHasBeenSet;
-}
-
 vector<DownloadFlowInfo> GetDownloadFlowUrlRequest::GetDownLoadFlows() const
 {
     return m_downLoadFlows;
@@ -123,6 +107,22 @@ void GetDownloadFlowUrlRequest::SetDownLoadFlows(const vector<DownloadFlowInfo>&
 bool GetDownloadFlowUrlRequest::DownLoadFlowsHasBeenSet() const
 {
     return m_downLoadFlowsHasBeenSet;
+}
+
+UserInfo GetDownloadFlowUrlRequest::GetOperator() const
+{
+    return m_operator;
+}
+
+void GetDownloadFlowUrlRequest::SetOperator(const UserInfo& _operator)
+{
+    m_operator = _operator;
+    m_operatorHasBeenSet = true;
+}
+
+bool GetDownloadFlowUrlRequest::OperatorHasBeenSet() const
+{
+    return m_operatorHasBeenSet;
 }
 
 
