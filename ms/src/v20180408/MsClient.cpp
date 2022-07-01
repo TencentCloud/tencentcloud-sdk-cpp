@@ -642,6 +642,49 @@ MsClient::DescribeShieldResultOutcomeCallable MsClient::DescribeShieldResultCall
     return task->get_future();
 }
 
+MsClient::DescribeUrlDetectionResultOutcome MsClient::DescribeUrlDetectionResult(const DescribeUrlDetectionResultRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeUrlDetectionResult");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeUrlDetectionResultResponse rsp = DescribeUrlDetectionResultResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeUrlDetectionResultOutcome(rsp);
+        else
+            return DescribeUrlDetectionResultOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeUrlDetectionResultOutcome(outcome.GetError());
+    }
+}
+
+void MsClient::DescribeUrlDetectionResultAsync(const DescribeUrlDetectionResultRequest& request, const DescribeUrlDetectionResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeUrlDetectionResult(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MsClient::DescribeUrlDetectionResultOutcomeCallable MsClient::DescribeUrlDetectionResultCallable(const DescribeUrlDetectionResultRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeUrlDetectionResultOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeUrlDetectionResult(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MsClient::DescribeUserBaseInfoInstanceOutcome MsClient::DescribeUserBaseInfoInstance(const DescribeUserBaseInfoInstanceRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeUserBaseInfoInstance");

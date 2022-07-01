@@ -51,6 +51,8 @@
 #include <tencentcloud/ms/v20180408/model/DescribeShieldPlanInstanceResponse.h>
 #include <tencentcloud/ms/v20180408/model/DescribeShieldResultRequest.h>
 #include <tencentcloud/ms/v20180408/model/DescribeShieldResultResponse.h>
+#include <tencentcloud/ms/v20180408/model/DescribeUrlDetectionResultRequest.h>
+#include <tencentcloud/ms/v20180408/model/DescribeUrlDetectionResultResponse.h>
 #include <tencentcloud/ms/v20180408/model/DescribeUserBaseInfoInstanceRequest.h>
 #include <tencentcloud/ms/v20180408/model/DescribeUserBaseInfoInstanceResponse.h>
 
@@ -109,6 +111,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeShieldResultResponse> DescribeShieldResultOutcome;
                 typedef std::future<DescribeShieldResultOutcome> DescribeShieldResultOutcomeCallable;
                 typedef std::function<void(const MsClient*, const Model::DescribeShieldResultRequest&, DescribeShieldResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeShieldResultAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeUrlDetectionResultResponse> DescribeUrlDetectionResultOutcome;
+                typedef std::future<DescribeUrlDetectionResultOutcome> DescribeUrlDetectionResultOutcomeCallable;
+                typedef std::function<void(const MsClient*, const Model::DescribeUrlDetectionResultRequest&, DescribeUrlDetectionResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUrlDetectionResultAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeUserBaseInfoInstanceResponse> DescribeUserBaseInfoInstanceOutcome;
                 typedef std::future<DescribeUserBaseInfoInstanceOutcome> DescribeUserBaseInfoInstanceOutcomeCallable;
                 typedef std::function<void(const MsClient*, const Model::DescribeUserBaseInfoInstanceRequest&, DescribeUserBaseInfoInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserBaseInfoInstanceAsyncHandler;
@@ -243,6 +248,15 @@ namespace TencentCloud
                 DescribeShieldResultOutcome DescribeShieldResult(const Model::DescribeShieldResultRequest &request);
                 void DescribeShieldResultAsync(const Model::DescribeShieldResultRequest& request, const DescribeShieldResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeShieldResultOutcomeCallable DescribeShieldResultCallable(const Model::DescribeShieldResultRequest& request);
+
+                /**
+                 *移动安全-网址检测服务
+                 * @param req DescribeUrlDetectionResultRequest
+                 * @return DescribeUrlDetectionResultOutcome
+                 */
+                DescribeUrlDetectionResultOutcome DescribeUrlDetectionResult(const Model::DescribeUrlDetectionResultRequest &request);
+                void DescribeUrlDetectionResultAsync(const Model::DescribeUrlDetectionResultRequest& request, const DescribeUrlDetectionResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeUrlDetectionResultOutcomeCallable DescribeUrlDetectionResultCallable(const Model::DescribeUrlDetectionResultRequest& request);
 
                 /**
                  *获取用户基础信息

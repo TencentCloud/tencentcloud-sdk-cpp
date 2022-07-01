@@ -83,6 +83,49 @@ DbdcClient::DescribeDBInstancesOutcomeCallable DbdcClient::DescribeDBInstancesCa
     return task->get_future();
 }
 
+DbdcClient::DescribeHostListOutcome DbdcClient::DescribeHostList(const DescribeHostListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeHostList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeHostListResponse rsp = DescribeHostListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeHostListOutcome(rsp);
+        else
+            return DescribeHostListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeHostListOutcome(outcome.GetError());
+    }
+}
+
+void DbdcClient::DescribeHostListAsync(const DescribeHostListRequest& request, const DescribeHostListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeHostList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DbdcClient::DescribeHostListOutcomeCallable DbdcClient::DescribeHostListCallable(const DescribeHostListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeHostListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeHostList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DbdcClient::DescribeInstanceDetailOutcome DbdcClient::DescribeInstanceDetail(const DescribeInstanceDetailRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeInstanceDetail");

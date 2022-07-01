@@ -19,19 +19,22 @@ set(dbdc_public_header
   )
 
 set(dbdc_public_header_model
-  include/tencentcloud/dbdc/v20201029/model/InstanceDeviceInfo.h
+  include/tencentcloud/dbdc/v20201029/model/InstanceDetail.h
   include/tencentcloud/dbdc/v20201029/model/DescribeInstanceDetailResponse.h
-  include/tencentcloud/dbdc/v20201029/model/DescribeInstanceListResponse.h
+  include/tencentcloud/dbdc/v20201029/model/DescribeInstanceDetail.h
   include/tencentcloud/dbdc/v20201029/model/DescribeDBInstancesRequest.h
   include/tencentcloud/dbdc/v20201029/model/DescribeInstanceDetailRequest.h
+  include/tencentcloud/dbdc/v20201029/model/HostDetail.h
+  include/tencentcloud/dbdc/v20201029/model/InstanceDeviceInfo.h
   include/tencentcloud/dbdc/v20201029/model/DescribeInstancesRequest.h
   include/tencentcloud/dbdc/v20201029/model/DeviceInfo.h
   include/tencentcloud/dbdc/v20201029/model/DBInstanceDetail.h
   include/tencentcloud/dbdc/v20201029/model/ModifyInstanceNameResponse.h
   include/tencentcloud/dbdc/v20201029/model/InstanceExpand.h
-  include/tencentcloud/dbdc/v20201029/model/InstanceDetail.h
+  include/tencentcloud/dbdc/v20201029/model/DescribeHostListResponse.h
+  include/tencentcloud/dbdc/v20201029/model/DescribeInstanceListResponse.h
   include/tencentcloud/dbdc/v20201029/model/DescribeDBInstancesResponse.h
-  include/tencentcloud/dbdc/v20201029/model/DescribeInstanceDetail.h
+  include/tencentcloud/dbdc/v20201029/model/DescribeHostListRequest.h
   include/tencentcloud/dbdc/v20201029/model/DescribeInstancesResponse.h
   include/tencentcloud/dbdc/v20201029/model/DescribeInstanceListRequest.h
   include/tencentcloud/dbdc/v20201029/model/ModifyInstanceNameRequest.h
@@ -39,19 +42,22 @@ set(dbdc_public_header_model
 
 set(dbdc_src
   src/v20201029/DbdcClient.cpp
-  src/v20201029/model/InstanceDeviceInfo.cpp
+  src/v20201029/model/InstanceDetail.cpp
   src/v20201029/model/DescribeInstanceDetailResponse.cpp
-  src/v20201029/model/DescribeInstanceListResponse.cpp
+  src/v20201029/model/DescribeInstanceDetail.cpp
   src/v20201029/model/DescribeDBInstancesRequest.cpp
   src/v20201029/model/DescribeInstanceDetailRequest.cpp
+  src/v20201029/model/HostDetail.cpp
+  src/v20201029/model/InstanceDeviceInfo.cpp
   src/v20201029/model/DescribeInstancesRequest.cpp
   src/v20201029/model/DeviceInfo.cpp
   src/v20201029/model/DBInstanceDetail.cpp
   src/v20201029/model/ModifyInstanceNameResponse.cpp
   src/v20201029/model/InstanceExpand.cpp
-  src/v20201029/model/InstanceDetail.cpp
+  src/v20201029/model/DescribeHostListResponse.cpp
+  src/v20201029/model/DescribeInstanceListResponse.cpp
   src/v20201029/model/DescribeDBInstancesResponse.cpp
-  src/v20201029/model/DescribeInstanceDetail.cpp
+  src/v20201029/model/DescribeHostListRequest.cpp
   src/v20201029/model/DescribeInstancesResponse.cpp
   src/v20201029/model/DescribeInstanceListRequest.cpp
   src/v20201029/model/ModifyInstanceNameRequest.cpp

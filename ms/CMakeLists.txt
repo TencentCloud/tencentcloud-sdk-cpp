@@ -44,6 +44,7 @@ set(ms_public_header_model
   include/tencentcloud/ms/v20180408/model/DescribeShieldInstancesRequest.h
   include/tencentcloud/ms/v20180408/model/CreateScanInstancesResponse.h
   include/tencentcloud/ms/v20180408/model/DescribeScanInstancesResponse.h
+  include/tencentcloud/ms/v20180408/model/DescribeUrlDetectionResultRequest.h
   include/tencentcloud/ms/v20180408/model/VulInfo.h
   include/tencentcloud/ms/v20180408/model/AppInfo.h
   include/tencentcloud/ms/v20180408/model/ServiceInfo.h
@@ -53,6 +54,7 @@ set(ms_public_header_model
   include/tencentcloud/ms/v20180408/model/ResourceServiceInfo.h
   include/tencentcloud/ms/v20180408/model/DescribeResourceInstancesRequest.h
   include/tencentcloud/ms/v20180408/model/AdInfo.h
+  include/tencentcloud/ms/v20180408/model/DescribeUrlDetectionResultResponse.h
   include/tencentcloud/ms/v20180408/model/DescribeShieldPlanInstanceRequest.h
   include/tencentcloud/ms/v20180408/model/ShieldInfo.h
   include/tencentcloud/ms/v20180408/model/ScanPermissionList.h
@@ -103,6 +105,7 @@ set(ms_src
   src/v20180408/model/DescribeShieldInstancesRequest.cpp
   src/v20180408/model/CreateScanInstancesResponse.cpp
   src/v20180408/model/DescribeScanInstancesResponse.cpp
+  src/v20180408/model/DescribeUrlDetectionResultRequest.cpp
   src/v20180408/model/VulInfo.cpp
   src/v20180408/model/AppInfo.cpp
   src/v20180408/model/ServiceInfo.cpp
@@ -112,6 +115,7 @@ set(ms_src
   src/v20180408/model/ResourceServiceInfo.cpp
   src/v20180408/model/DescribeResourceInstancesRequest.cpp
   src/v20180408/model/AdInfo.cpp
+  src/v20180408/model/DescribeUrlDetectionResultResponse.cpp
   src/v20180408/model/DescribeShieldPlanInstanceRequest.cpp
   src/v20180408/model/ShieldInfo.cpp
   src/v20180408/model/ScanPermissionList.cpp

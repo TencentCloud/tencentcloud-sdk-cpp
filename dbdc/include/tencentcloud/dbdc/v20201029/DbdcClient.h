@@ -25,6 +25,8 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/dbdc/v20201029/model/DescribeDBInstancesRequest.h>
 #include <tencentcloud/dbdc/v20201029/model/DescribeDBInstancesResponse.h>
+#include <tencentcloud/dbdc/v20201029/model/DescribeHostListRequest.h>
+#include <tencentcloud/dbdc/v20201029/model/DescribeHostListResponse.h>
 #include <tencentcloud/dbdc/v20201029/model/DescribeInstanceDetailRequest.h>
 #include <tencentcloud/dbdc/v20201029/model/DescribeInstanceDetailResponse.h>
 #include <tencentcloud/dbdc/v20201029/model/DescribeInstanceListRequest.h>
@@ -50,6 +52,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDBInstancesResponse> DescribeDBInstancesOutcome;
                 typedef std::future<DescribeDBInstancesOutcome> DescribeDBInstancesOutcomeCallable;
                 typedef std::function<void(const DbdcClient*, const Model::DescribeDBInstancesRequest&, DescribeDBInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeHostListResponse> DescribeHostListOutcome;
+                typedef std::future<DescribeHostListOutcome> DescribeHostListOutcomeCallable;
+                typedef std::function<void(const DbdcClient*, const Model::DescribeHostListRequest&, DescribeHostListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHostListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeInstanceDetailResponse> DescribeInstanceDetailOutcome;
                 typedef std::future<DescribeInstanceDetailOutcome> DescribeInstanceDetailOutcomeCallable;
                 typedef std::function<void(const DbdcClient*, const Model::DescribeInstanceDetailRequest&, DescribeInstanceDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceDetailAsyncHandler;
@@ -73,6 +78,15 @@ namespace TencentCloud
                 DescribeDBInstancesOutcome DescribeDBInstances(const Model::DescribeDBInstancesRequest &request);
                 void DescribeDBInstancesAsync(const Model::DescribeDBInstancesRequest& request, const DescribeDBInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDBInstancesOutcomeCallable DescribeDBInstancesCallable(const Model::DescribeDBInstancesRequest& request);
+
+                /**
+                 *本接口用于查询主机列表
+                 * @param req DescribeHostListRequest
+                 * @return DescribeHostListOutcome
+                 */
+                DescribeHostListOutcome DescribeHostList(const Model::DescribeHostListRequest &request);
+                void DescribeHostListAsync(const Model::DescribeHostListRequest& request, const DescribeHostListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeHostListOutcomeCallable DescribeHostListCallable(const Model::DescribeHostListRequest& request);
 
                 /**
                  *本接口用于查询独享集群详情
