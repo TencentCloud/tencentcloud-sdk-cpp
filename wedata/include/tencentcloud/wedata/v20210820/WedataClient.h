@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeProjectRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeProjectResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeRelatedInstancesRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeRelatedInstancesResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeTaskInstancesRequest.h>
@@ -41,6 +43,9 @@ namespace TencentCloud
                 WedataClient(const Credential &credential, const std::string &region);
                 WedataClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::DescribeProjectResponse> DescribeProjectOutcome;
+                typedef std::future<DescribeProjectOutcome> DescribeProjectOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeProjectRequest&, DescribeProjectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProjectAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRelatedInstancesResponse> DescribeRelatedInstancesOutcome;
                 typedef std::future<DescribeRelatedInstancesOutcome> DescribeRelatedInstancesOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeRelatedInstancesRequest&, DescribeRelatedInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRelatedInstancesAsyncHandler;
@@ -49,6 +54,15 @@ namespace TencentCloud
                 typedef std::function<void(const WedataClient*, const Model::DescribeTaskInstancesRequest&, DescribeTaskInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTaskInstancesAsyncHandler;
 
 
+
+                /**
+                 *获取项目信息
+                 * @param req DescribeProjectRequest
+                 * @return DescribeProjectOutcome
+                 */
+                DescribeProjectOutcome DescribeProject(const Model::DescribeProjectRequest &request);
+                void DescribeProjectAsync(const Model::DescribeProjectRequest& request, const DescribeProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeProjectOutcomeCallable DescribeProjectCallable(const Model::DescribeProjectRequest& request);
 
                 /**
                  *查询任务实例的关联实例列表

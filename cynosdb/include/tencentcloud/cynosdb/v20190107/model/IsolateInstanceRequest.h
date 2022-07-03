@@ -79,18 +79,14 @@ namespace TencentCloud
                     bool InstanceIdListHasBeenSet() const;
 
                     /**
-                     * 获取数据库类型，取值范围: 
-<li> MYSQL </li>
-                     * @return DbType 数据库类型，取值范围: 
-<li> MYSQL </li>
+                     * 获取该参数已废弃
+                     * @return DbType 该参数已废弃
                      */
                     std::string GetDbType() const;
 
                     /**
-                     * 设置数据库类型，取值范围: 
-<li> MYSQL </li>
-                     * @param DbType 数据库类型，取值范围: 
-<li> MYSQL </li>
+                     * 设置该参数已废弃
+                     * @param DbType 该参数已废弃
                      */
                     void SetDbType(const std::string& _dbType);
 
@@ -115,8 +111,7 @@ namespace TencentCloud
                     bool m_instanceIdListHasBeenSet;
 
                     /**
-                     * 数据库类型，取值范围: 
-<li> MYSQL </li>
+                     * 该参数已废弃
                      */
                     std::string m_dbType;
                     bool m_dbTypeHasBeenSet;

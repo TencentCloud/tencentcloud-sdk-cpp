@@ -24,7 +24,8 @@ using namespace std;
 
 QueryFlexPayeeInfoRequest::QueryFlexPayeeInfoRequest() :
     m_payeeIdHasBeenSet(false),
-    m_outUserIdHasBeenSet(false)
+    m_outUserIdHasBeenSet(false),
+    m_environmentHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string QueryFlexPayeeInfoRequest::ToJsonString() const
         string key = "OutUserId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_outUserId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_environmentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Environment";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_environment.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -89,6 +98,22 @@ void QueryFlexPayeeInfoRequest::SetOutUserId(const string& _outUserId)
 bool QueryFlexPayeeInfoRequest::OutUserIdHasBeenSet() const
 {
     return m_outUserIdHasBeenSet;
+}
+
+string QueryFlexPayeeInfoRequest::GetEnvironment() const
+{
+    return m_environment;
+}
+
+void QueryFlexPayeeInfoRequest::SetEnvironment(const string& _environment)
+{
+    m_environment = _environment;
+    m_environmentHasBeenSet = true;
+}
+
+bool QueryFlexPayeeInfoRequest::EnvironmentHasBeenSet() const
+{
+    return m_environmentHasBeenSet;
 }
 
 

@@ -28,7 +28,8 @@ FreezeFlexBalanceRequest::FreezeFlexBalanceRequest() :
     m_incomeTypeHasBeenSet(false),
     m_outOrderIdHasBeenSet(false),
     m_operationTypeHasBeenSet(false),
-    m_remarkHasBeenSet(false)
+    m_remarkHasBeenSet(false),
+    m_environmentHasBeenSet(false)
 {
 }
 
@@ -85,6 +86,14 @@ string FreezeFlexBalanceRequest::ToJsonString() const
         string key = "Remark";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_remark.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_environmentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Environment";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_environment.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -189,6 +198,22 @@ void FreezeFlexBalanceRequest::SetRemark(const string& _remark)
 bool FreezeFlexBalanceRequest::RemarkHasBeenSet() const
 {
     return m_remarkHasBeenSet;
+}
+
+string FreezeFlexBalanceRequest::GetEnvironment() const
+{
+    return m_environment;
+}
+
+void FreezeFlexBalanceRequest::SetEnvironment(const string& _environment)
+{
+    m_environment = _environment;
+    m_environmentHasBeenSet = true;
+}
+
+bool FreezeFlexBalanceRequest::EnvironmentHasBeenSet() const
+{
+    return m_environmentHasBeenSet;
 }
 
 

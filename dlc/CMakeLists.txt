@@ -28,6 +28,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/DescribeSparkAppJobRequest.h
   include/tencentcloud/dlc/v20210125/model/CreateDMSDatabaseResponse.h
   include/tencentcloud/dlc/v20210125/model/CreateStoreLocationResponse.h
+  include/tencentcloud/dlc/v20210125/model/ReportHeartbeatMetaDataRequest.h
   include/tencentcloud/dlc/v20210125/model/DescribeDMSDatabaseResponse.h
   include/tencentcloud/dlc/v20210125/model/DropDMSDatabaseRequest.h
   include/tencentcloud/dlc/v20210125/model/CreateScriptResponse.h
@@ -90,6 +91,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/AddUsersToWorkGroupResponse.h
   include/tencentcloud/dlc/v20210125/model/UserInfo.h
   include/tencentcloud/dlc/v20210125/model/CreateExportTaskRequest.h
+  include/tencentcloud/dlc/v20210125/model/ReportHeartbeatMetaDataResponse.h
   include/tencentcloud/dlc/v20210125/model/CreateDMSTableRequest.h
   include/tencentcloud/dlc/v20210125/model/DropDMSTableRequest.h
   include/tencentcloud/dlc/v20210125/model/DMSTable.h
@@ -192,6 +194,7 @@ set(dlc_src
   src/v20210125/model/DescribeSparkAppJobRequest.cpp
   src/v20210125/model/CreateDMSDatabaseResponse.cpp
   src/v20210125/model/CreateStoreLocationResponse.cpp
+  src/v20210125/model/ReportHeartbeatMetaDataRequest.cpp
   src/v20210125/model/DescribeDMSDatabaseResponse.cpp
   src/v20210125/model/DropDMSDatabaseRequest.cpp
   src/v20210125/model/CreateScriptResponse.cpp
@@ -254,6 +257,7 @@ set(dlc_src
   src/v20210125/model/AddUsersToWorkGroupResponse.cpp
   src/v20210125/model/UserInfo.cpp
   src/v20210125/model/CreateExportTaskRequest.cpp
+  src/v20210125/model/ReportHeartbeatMetaDataResponse.cpp
   src/v20210125/model/CreateDMSTableRequest.cpp
   src/v20210125/model/DropDMSTableRequest.cpp
   src/v20210125/model/DMSTable.cpp

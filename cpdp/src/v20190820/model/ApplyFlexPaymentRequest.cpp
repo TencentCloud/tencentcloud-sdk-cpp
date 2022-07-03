@@ -28,7 +28,8 @@ ApplyFlexPaymentRequest::ApplyFlexPaymentRequest() :
     m_amountBeforeTaxHasBeenSet(false),
     m_outOrderIdHasBeenSet(false),
     m_fundingAccountInfoHasBeenSet(false),
-    m_remarkHasBeenSet(false)
+    m_remarkHasBeenSet(false),
+    m_environmentHasBeenSet(false)
 {
 }
 
@@ -86,6 +87,14 @@ string ApplyFlexPaymentRequest::ToJsonString() const
         string key = "Remark";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_remark.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_environmentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Environment";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_environment.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -190,6 +199,22 @@ void ApplyFlexPaymentRequest::SetRemark(const string& _remark)
 bool ApplyFlexPaymentRequest::RemarkHasBeenSet() const
 {
     return m_remarkHasBeenSet;
+}
+
+string ApplyFlexPaymentRequest::GetEnvironment() const
+{
+    return m_environment;
+}
+
+void ApplyFlexPaymentRequest::SetEnvironment(const string& _environment)
+{
+    m_environment = _environment;
+    m_environmentHasBeenSet = true;
+}
+
+bool ApplyFlexPaymentRequest::EnvironmentHasBeenSet() const
+{
+    return m_environmentHasBeenSet;
 }
 
 

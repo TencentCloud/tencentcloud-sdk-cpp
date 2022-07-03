@@ -27,7 +27,8 @@ ApplyFlexSettlementRequest::ApplyFlexSettlementRequest() :
     m_incomeTypeHasBeenSet(false),
     m_amountBeforeTaxHasBeenSet(false),
     m_outOrderIdHasBeenSet(false),
-    m_remarkHasBeenSet(false)
+    m_remarkHasBeenSet(false),
+    m_environmentHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,14 @@ string ApplyFlexSettlementRequest::ToJsonString() const
         string key = "Remark";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_remark.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_environmentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Environment";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_environment.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -164,6 +173,22 @@ void ApplyFlexSettlementRequest::SetRemark(const string& _remark)
 bool ApplyFlexSettlementRequest::RemarkHasBeenSet() const
 {
     return m_remarkHasBeenSet;
+}
+
+string ApplyFlexSettlementRequest::GetEnvironment() const
+{
+    return m_environment;
+}
+
+void ApplyFlexSettlementRequest::SetEnvironment(const string& _environment)
+{
+    m_environment = _environment;
+    m_environmentHasBeenSet = true;
+}
+
+bool ApplyFlexSettlementRequest::EnvironmentHasBeenSet() const
+{
+    return m_environmentHasBeenSet;
 }
 
 

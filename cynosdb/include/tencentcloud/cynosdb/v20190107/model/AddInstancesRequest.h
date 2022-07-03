@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool MemoryHasBeenSet() const;
 
                     /**
-                     * 获取新增只读实例数，取值范围为(0,16]
-                     * @return ReadOnlyCount 新增只读实例数，取值范围为(0,16]
+                     * 获取新增只读实例数，取值范围为[0,4]
+                     * @return ReadOnlyCount 新增只读实例数，取值范围为[0,4]
                      */
                     int64_t GetReadOnlyCount() const;
 
                     /**
-                     * 设置新增只读实例数，取值范围为(0,16]
-                     * @param ReadOnlyCount 新增只读实例数，取值范围为(0,16]
+                     * 设置新增只读实例数，取值范围为[0,4]
+                     * @param ReadOnlyCount 新增只读实例数，取值范围为[0,4]
                      */
                     void SetReadOnlyCount(const int64_t& _readOnlyCount);
 
@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool ReadOnlyCountHasBeenSet() const;
 
                     /**
-                     * 获取实例组ID，在已有RO组中新增实例时使用，不传则新增RO组
-                     * @return InstanceGrpId 实例组ID，在已有RO组中新增实例时使用，不传则新增RO组
+                     * 获取实例组ID，在已有RO组中新增实例时使用，不传则新增RO组。当前版本不建议传输该值。
+                     * @return InstanceGrpId 实例组ID，在已有RO组中新增实例时使用，不传则新增RO组。当前版本不建议传输该值。
                      */
                     std::string GetInstanceGrpId() const;
 
                     /**
-                     * 设置实例组ID，在已有RO组中新增实例时使用，不传则新增RO组
-                     * @param InstanceGrpId 实例组ID，在已有RO组中新增实例时使用，不传则新增RO组
+                     * 设置实例组ID，在已有RO组中新增实例时使用，不传则新增RO组。当前版本不建议传输该值。
+                     * @param InstanceGrpId 实例组ID，在已有RO组中新增实例时使用，不传则新增RO组。当前版本不建议传输该值。
                      */
                     void SetInstanceGrpId(const std::string& _instanceGrpId);
 
@@ -133,14 +133,14 @@ namespace TencentCloud
                     bool InstanceGrpIdHasBeenSet() const;
 
                     /**
-                     * 获取所属VPC网络ID
-                     * @return VpcId 所属VPC网络ID
+                     * 获取所属VPC网络ID，该参数已废弃
+                     * @return VpcId 所属VPC网络ID，该参数已废弃
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置所属VPC网络ID
-                     * @param VpcId 所属VPC网络ID
+                     * 设置所属VPC网络ID，该参数已废弃
+                     * @param VpcId 所属VPC网络ID，该参数已废弃
                      */
                     void SetVpcId(const std::string& _vpcId);
 
@@ -151,14 +151,14 @@ namespace TencentCloud
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取所属子网ID，如果设置了VpcId，则SubnetId必填
-                     * @return SubnetId 所属子网ID，如果设置了VpcId，则SubnetId必填
+                     * 获取所属子网ID，如果设置了VpcId，则SubnetId必填。该参数已废弃。
+                     * @return SubnetId 所属子网ID，如果设置了VpcId，则SubnetId必填。该参数已废弃。
                      */
                     std::string GetSubnetId() const;
 
                     /**
-                     * 设置所属子网ID，如果设置了VpcId，则SubnetId必填
-                     * @param SubnetId 所属子网ID，如果设置了VpcId，则SubnetId必填
+                     * 设置所属子网ID，如果设置了VpcId，则SubnetId必填。该参数已废弃。
+                     * @param SubnetId 所属子网ID，如果设置了VpcId，则SubnetId必填。该参数已废弃。
                      */
                     void SetSubnetId(const std::string& _subnetId);
 
@@ -187,14 +187,14 @@ namespace TencentCloud
                     bool PortHasBeenSet() const;
 
                     /**
-                     * 获取实例名称，字符串长度范围为[0,64)
-                     * @return InstanceName 实例名称，字符串长度范围为[0,64)
+                     * 获取实例名称，字符串长度范围为[0,64)，取值范围为大小写字母，0-9数字，'_','-','.'
+                     * @return InstanceName 实例名称，字符串长度范围为[0,64)，取值范围为大小写字母，0-9数字，'_','-','.'
                      */
                     std::string GetInstanceName() const;
 
                     /**
-                     * 设置实例名称，字符串长度范围为[0,64)
-                     * @param InstanceName 实例名称，字符串长度范围为[0,64)
+                     * 设置实例名称，字符串长度范围为[0,64)，取值范围为大小写字母，0-9数字，'_','-','.'
+                     * @param InstanceName 实例名称，字符串长度范围为[0,64)，取值范围为大小写字母，0-9数字，'_','-','.'
                      */
                     void SetInstanceName(const std::string& _instanceName);
 
@@ -301,25 +301,25 @@ namespace TencentCloud
                     bool m_memoryHasBeenSet;
 
                     /**
-                     * 新增只读实例数，取值范围为(0,16]
+                     * 新增只读实例数，取值范围为[0,4]
                      */
                     int64_t m_readOnlyCount;
                     bool m_readOnlyCountHasBeenSet;
 
                     /**
-                     * 实例组ID，在已有RO组中新增实例时使用，不传则新增RO组
+                     * 实例组ID，在已有RO组中新增实例时使用，不传则新增RO组。当前版本不建议传输该值。
                      */
                     std::string m_instanceGrpId;
                     bool m_instanceGrpIdHasBeenSet;
 
                     /**
-                     * 所属VPC网络ID
+                     * 所属VPC网络ID，该参数已废弃
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * 所属子网ID，如果设置了VpcId，则SubnetId必填
+                     * 所属子网ID，如果设置了VpcId，则SubnetId必填。该参数已废弃。
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
@@ -331,7 +331,7 @@ namespace TencentCloud
                     bool m_portHasBeenSet;
 
                     /**
-                     * 实例名称，字符串长度范围为[0,64)
+                     * 实例名称，字符串长度范围为[0,64)，取值范围为大小写字母，0-9数字，'_','-','.'
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;

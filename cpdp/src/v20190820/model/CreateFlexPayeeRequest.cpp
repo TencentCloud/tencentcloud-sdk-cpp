@@ -30,7 +30,9 @@ CreateFlexPayeeRequest::CreateFlexPayeeRequest() :
     m_serviceProviderIdHasBeenSet(false),
     m_taxInfoHasBeenSet(false),
     m_idTypeHasBeenSet(false),
-    m_remarkHasBeenSet(false)
+    m_remarkHasBeenSet(false),
+    m_phoneNoHasBeenSet(false),
+    m_environmentHasBeenSet(false)
 {
 }
 
@@ -104,6 +106,22 @@ string CreateFlexPayeeRequest::ToJsonString() const
         string key = "Remark";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_remark.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_phoneNoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PhoneNo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_phoneNo.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_environmentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Environment";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_environment.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -240,6 +258,38 @@ void CreateFlexPayeeRequest::SetRemark(const string& _remark)
 bool CreateFlexPayeeRequest::RemarkHasBeenSet() const
 {
     return m_remarkHasBeenSet;
+}
+
+string CreateFlexPayeeRequest::GetPhoneNo() const
+{
+    return m_phoneNo;
+}
+
+void CreateFlexPayeeRequest::SetPhoneNo(const string& _phoneNo)
+{
+    m_phoneNo = _phoneNo;
+    m_phoneNoHasBeenSet = true;
+}
+
+bool CreateFlexPayeeRequest::PhoneNoHasBeenSet() const
+{
+    return m_phoneNoHasBeenSet;
+}
+
+string CreateFlexPayeeRequest::GetEnvironment() const
+{
+    return m_environment;
+}
+
+void CreateFlexPayeeRequest::SetEnvironment(const string& _environment)
+{
+    m_environment = _environment;
+    m_environmentHasBeenSet = true;
+}
+
+bool CreateFlexPayeeRequest::EnvironmentHasBeenSet() const
+{
+    return m_environmentHasBeenSet;
 }
 
 

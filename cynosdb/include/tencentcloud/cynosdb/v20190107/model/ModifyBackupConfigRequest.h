@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool BackupTimeEndHasBeenSet() const;
 
                     /**
-                     * 获取表示保留备份时长, 单位秒，超过该时间将被清理, 七天表示为3600*24*7=604800
-                     * @return ReserveDuration 表示保留备份时长, 单位秒，超过该时间将被清理, 七天表示为3600*24*7=604800
+                     * 获取表示保留备份时长, 单位秒，超过该时间将被清理, 七天表示为3600*24*7=604800，最大为158112000
+                     * @return ReserveDuration 表示保留备份时长, 单位秒，超过该时间将被清理, 七天表示为3600*24*7=604800，最大为158112000
                      */
                     uint64_t GetReserveDuration() const;
 
                     /**
-                     * 设置表示保留备份时长, 单位秒，超过该时间将被清理, 七天表示为3600*24*7=604800
-                     * @param ReserveDuration 表示保留备份时长, 单位秒，超过该时间将被清理, 七天表示为3600*24*7=604800
+                     * 设置表示保留备份时长, 单位秒，超过该时间将被清理, 七天表示为3600*24*7=604800，最大为158112000
+                     * @param ReserveDuration 表示保留备份时长, 单位秒，超过该时间将被清理, 七天表示为3600*24*7=604800，最大为158112000
                      */
                     void SetReserveDuration(const uint64_t& _reserveDuration);
 
@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool ReserveDurationHasBeenSet() const;
 
                     /**
-                     * 获取备份频率，长度为7的数组，分别对应周一到周日的备份方式，full-全量备份，increment-增量备份
-                     * @return BackupFreq 备份频率，长度为7的数组，分别对应周一到周日的备份方式，full-全量备份，increment-增量备份
+                     * 获取该参数目前不支持修改，无需填写。备份频率，长度为7的数组，分别对应周一到周日的备份方式，full-全量备份，increment-增量备份
+                     * @return BackupFreq 该参数目前不支持修改，无需填写。备份频率，长度为7的数组，分别对应周一到周日的备份方式，full-全量备份，increment-增量备份
                      */
                     std::vector<std::string> GetBackupFreq() const;
 
                     /**
-                     * 设置备份频率，长度为7的数组，分别对应周一到周日的备份方式，full-全量备份，increment-增量备份
-                     * @param BackupFreq 备份频率，长度为7的数组，分别对应周一到周日的备份方式，full-全量备份，increment-增量备份
+                     * 设置该参数目前不支持修改，无需填写。备份频率，长度为7的数组，分别对应周一到周日的备份方式，full-全量备份，increment-增量备份
+                     * @param BackupFreq 该参数目前不支持修改，无需填写。备份频率，长度为7的数组，分别对应周一到周日的备份方式，full-全量备份，increment-增量备份
                      */
                     void SetBackupFreq(const std::vector<std::string>& _backupFreq);
 
@@ -133,14 +133,14 @@ namespace TencentCloud
                     bool BackupFreqHasBeenSet() const;
 
                     /**
-                     * 获取备份方式，logic-逻辑备份，snapshot-快照备份
-                     * @return BackupType 备份方式，logic-逻辑备份，snapshot-快照备份
+                     * 获取该参数目前不支持修改，无需填写。备份方式，logic-逻辑备份，snapshot-快照备份
+                     * @return BackupType 该参数目前不支持修改，无需填写。备份方式，logic-逻辑备份，snapshot-快照备份
                      */
                     std::string GetBackupType() const;
 
                     /**
-                     * 设置备份方式，logic-逻辑备份，snapshot-快照备份
-                     * @param BackupType 备份方式，logic-逻辑备份，snapshot-快照备份
+                     * 设置该参数目前不支持修改，无需填写。备份方式，logic-逻辑备份，snapshot-快照备份
+                     * @param BackupType 该参数目前不支持修改，无需填写。备份方式，logic-逻辑备份，snapshot-快照备份
                      */
                     void SetBackupType(const std::string& _backupType);
 
@@ -171,19 +171,19 @@ namespace TencentCloud
                     bool m_backupTimeEndHasBeenSet;
 
                     /**
-                     * 表示保留备份时长, 单位秒，超过该时间将被清理, 七天表示为3600*24*7=604800
+                     * 表示保留备份时长, 单位秒，超过该时间将被清理, 七天表示为3600*24*7=604800，最大为158112000
                      */
                     uint64_t m_reserveDuration;
                     bool m_reserveDurationHasBeenSet;
 
                     /**
-                     * 备份频率，长度为7的数组，分别对应周一到周日的备份方式，full-全量备份，increment-增量备份
+                     * 该参数目前不支持修改，无需填写。备份频率，长度为7的数组，分别对应周一到周日的备份方式，full-全量备份，increment-增量备份
                      */
                     std::vector<std::string> m_backupFreq;
                     bool m_backupFreqHasBeenSet;
 
                     /**
-                     * 备份方式，logic-逻辑备份，snapshot-快照备份
+                     * 该参数目前不支持修改，无需填写。备份方式，logic-逻辑备份，snapshot-快照备份
                      */
                     std::string m_backupType;
                     bool m_backupTypeHasBeenSet;

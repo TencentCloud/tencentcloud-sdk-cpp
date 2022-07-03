@@ -384,6 +384,49 @@ CynosdbClient::DescribeBackupConfigOutcomeCallable CynosdbClient::DescribeBackup
     return task->get_future();
 }
 
+CynosdbClient::DescribeBackupDownloadUrlOutcome CynosdbClient::DescribeBackupDownloadUrl(const DescribeBackupDownloadUrlRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBackupDownloadUrl");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBackupDownloadUrlResponse rsp = DescribeBackupDownloadUrlResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBackupDownloadUrlOutcome(rsp);
+        else
+            return DescribeBackupDownloadUrlOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBackupDownloadUrlOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::DescribeBackupDownloadUrlAsync(const DescribeBackupDownloadUrlRequest& request, const DescribeBackupDownloadUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBackupDownloadUrl(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CynosdbClient::DescribeBackupDownloadUrlOutcomeCallable CynosdbClient::DescribeBackupDownloadUrlCallable(const DescribeBackupDownloadUrlRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBackupDownloadUrlOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBackupDownloadUrl(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CynosdbClient::DescribeBackupListOutcome CynosdbClient::DescribeBackupList(const DescribeBackupListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeBackupList");
@@ -420,6 +463,135 @@ CynosdbClient::DescribeBackupListOutcomeCallable CynosdbClient::DescribeBackupLi
         [this, request]()
         {
             return this->DescribeBackupList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CynosdbClient::DescribeBinlogDownloadUrlOutcome CynosdbClient::DescribeBinlogDownloadUrl(const DescribeBinlogDownloadUrlRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBinlogDownloadUrl");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBinlogDownloadUrlResponse rsp = DescribeBinlogDownloadUrlResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBinlogDownloadUrlOutcome(rsp);
+        else
+            return DescribeBinlogDownloadUrlOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBinlogDownloadUrlOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::DescribeBinlogDownloadUrlAsync(const DescribeBinlogDownloadUrlRequest& request, const DescribeBinlogDownloadUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBinlogDownloadUrl(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CynosdbClient::DescribeBinlogDownloadUrlOutcomeCallable CynosdbClient::DescribeBinlogDownloadUrlCallable(const DescribeBinlogDownloadUrlRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBinlogDownloadUrlOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBinlogDownloadUrl(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CynosdbClient::DescribeBinlogSaveDaysOutcome CynosdbClient::DescribeBinlogSaveDays(const DescribeBinlogSaveDaysRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBinlogSaveDays");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBinlogSaveDaysResponse rsp = DescribeBinlogSaveDaysResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBinlogSaveDaysOutcome(rsp);
+        else
+            return DescribeBinlogSaveDaysOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBinlogSaveDaysOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::DescribeBinlogSaveDaysAsync(const DescribeBinlogSaveDaysRequest& request, const DescribeBinlogSaveDaysAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBinlogSaveDays(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CynosdbClient::DescribeBinlogSaveDaysOutcomeCallable CynosdbClient::DescribeBinlogSaveDaysCallable(const DescribeBinlogSaveDaysRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBinlogSaveDaysOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBinlogSaveDays(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CynosdbClient::DescribeBinlogsOutcome CynosdbClient::DescribeBinlogs(const DescribeBinlogsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBinlogs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBinlogsResponse rsp = DescribeBinlogsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBinlogsOutcome(rsp);
+        else
+            return DescribeBinlogsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBinlogsOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::DescribeBinlogsAsync(const DescribeBinlogsRequest& request, const DescribeBinlogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBinlogs(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CynosdbClient::DescribeBinlogsOutcomeCallable CynosdbClient::DescribeBinlogsCallable(const DescribeBinlogsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBinlogsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBinlogs(request);
         }
     );
 
@@ -678,6 +850,49 @@ CynosdbClient::DescribeInstanceDetailOutcomeCallable CynosdbClient::DescribeInst
         [this, request]()
         {
             return this->DescribeInstanceDetail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CynosdbClient::DescribeInstanceSlowQueriesOutcome CynosdbClient::DescribeInstanceSlowQueries(const DescribeInstanceSlowQueriesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeInstanceSlowQueries");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeInstanceSlowQueriesResponse rsp = DescribeInstanceSlowQueriesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeInstanceSlowQueriesOutcome(rsp);
+        else
+            return DescribeInstanceSlowQueriesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeInstanceSlowQueriesOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::DescribeInstanceSlowQueriesAsync(const DescribeInstanceSlowQueriesRequest& request, const DescribeInstanceSlowQueriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeInstanceSlowQueries(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CynosdbClient::DescribeInstanceSlowQueriesOutcomeCallable CynosdbClient::DescribeInstanceSlowQueriesCallable(const DescribeInstanceSlowQueriesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeInstanceSlowQueriesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeInstanceSlowQueries(request);
         }
     );
 
@@ -1029,6 +1244,49 @@ CynosdbClient::DisassociateSecurityGroupsOutcomeCallable CynosdbClient::Disassoc
     return task->get_future();
 }
 
+CynosdbClient::ExportInstanceSlowQueriesOutcome CynosdbClient::ExportInstanceSlowQueries(const ExportInstanceSlowQueriesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ExportInstanceSlowQueries");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ExportInstanceSlowQueriesResponse rsp = ExportInstanceSlowQueriesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ExportInstanceSlowQueriesOutcome(rsp);
+        else
+            return ExportInstanceSlowQueriesOutcome(o.GetError());
+    }
+    else
+    {
+        return ExportInstanceSlowQueriesOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::ExportInstanceSlowQueriesAsync(const ExportInstanceSlowQueriesRequest& request, const ExportInstanceSlowQueriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ExportInstanceSlowQueries(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CynosdbClient::ExportInstanceSlowQueriesOutcomeCallable CynosdbClient::ExportInstanceSlowQueriesCallable(const ExportInstanceSlowQueriesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ExportInstanceSlowQueriesOutcome()>>(
+        [this, request]()
+        {
+            return this->ExportInstanceSlowQueries(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CynosdbClient::GrantAccountPrivilegesOutcome CynosdbClient::GrantAccountPrivileges(const GrantAccountPrivilegesRequest &request)
 {
     auto outcome = MakeRequest(request, "GrantAccountPrivileges");
@@ -1237,6 +1495,49 @@ CynosdbClient::ModifyBackupConfigOutcomeCallable CynosdbClient::ModifyBackupConf
         [this, request]()
         {
             return this->ModifyBackupConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CynosdbClient::ModifyBackupNameOutcome CynosdbClient::ModifyBackupName(const ModifyBackupNameRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyBackupName");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyBackupNameResponse rsp = ModifyBackupNameResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyBackupNameOutcome(rsp);
+        else
+            return ModifyBackupNameOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyBackupNameOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::ModifyBackupNameAsync(const ModifyBackupNameRequest& request, const ModifyBackupNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyBackupName(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CynosdbClient::ModifyBackupNameOutcomeCallable CynosdbClient::ModifyBackupNameCallable(const ModifyBackupNameRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyBackupNameOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyBackupName(request);
         }
     );
 

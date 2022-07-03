@@ -27,7 +27,8 @@ QueryFlexFreezeOrderListRequest::QueryFlexFreezeOrderListRequest() :
     m_operationTypeHasBeenSet(false),
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
-    m_pageNumberHasBeenSet(false)
+    m_pageNumberHasBeenSet(false),
+    m_environmentHasBeenSet(false)
 {
 }
 
@@ -77,6 +78,14 @@ string QueryFlexFreezeOrderListRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_pageNumber.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_environmentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Environment";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_environment.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -165,6 +174,22 @@ void QueryFlexFreezeOrderListRequest::SetPageNumber(const Paging& _pageNumber)
 bool QueryFlexFreezeOrderListRequest::PageNumberHasBeenSet() const
 {
     return m_pageNumberHasBeenSet;
+}
+
+string QueryFlexFreezeOrderListRequest::GetEnvironment() const
+{
+    return m_environment;
+}
+
+void QueryFlexFreezeOrderListRequest::SetEnvironment(const string& _environment)
+{
+    m_environment = _environment;
+    m_environmentHasBeenSet = true;
+}
+
+bool QueryFlexFreezeOrderListRequest::EnvironmentHasBeenSet() const
+{
+    return m_environmentHasBeenSet;
 }
 
 

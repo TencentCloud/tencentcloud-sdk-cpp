@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool UpgradeTypeHasBeenSet() const;
 
                     /**
-                     * 获取存储上限，为0表示使用标准配置
-                     * @return StorageLimit 存储上限，为0表示使用标准配置
+                     * 获取该参数已废弃
+                     * @return StorageLimit 该参数已废弃
                      */
                     uint64_t GetStorageLimit() const;
 
                     /**
-                     * 设置存储上限，为0表示使用标准配置
-                     * @param StorageLimit 存储上限，为0表示使用标准配置
+                     * 设置该参数已废弃
+                     * @param StorageLimit 该参数已废弃
                      */
                     void SetStorageLimit(const uint64_t& _storageLimit);
 
@@ -151,18 +151,14 @@ namespace TencentCloud
                     bool AutoVoucherHasBeenSet() const;
 
                     /**
-                     * 获取数据库类型，取值范围: 
-<li> MYSQL </li>
-                     * @return DbType 数据库类型，取值范围: 
-<li> MYSQL </li>
+                     * 获取该参数已废弃
+                     * @return DbType 该参数已废弃
                      */
                     std::string GetDbType() const;
 
                     /**
-                     * 设置数据库类型，取值范围: 
-<li> MYSQL </li>
-                     * @param DbType 数据库类型，取值范围: 
-<li> MYSQL </li>
+                     * 设置该参数已废弃
+                     * @param DbType 该参数已废弃
                      */
                     void SetDbType(const std::string& _dbType);
 
@@ -217,7 +213,7 @@ namespace TencentCloud
                     bool m_upgradeTypeHasBeenSet;
 
                     /**
-                     * 存储上限，为0表示使用标准配置
+                     * 该参数已废弃
                      */
                     uint64_t m_storageLimit;
                     bool m_storageLimitHasBeenSet;
@@ -229,8 +225,7 @@ namespace TencentCloud
                     bool m_autoVoucherHasBeenSet;
 
                     /**
-                     * 数据库类型，取值范围: 
-<li> MYSQL </li>
+                     * 该参数已废弃
                      */
                     std::string m_dbType;
                     bool m_dbTypeHasBeenSet;

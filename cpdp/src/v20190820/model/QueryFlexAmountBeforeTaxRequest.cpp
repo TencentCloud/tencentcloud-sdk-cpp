@@ -25,7 +25,8 @@ using namespace std;
 QueryFlexAmountBeforeTaxRequest::QueryFlexAmountBeforeTaxRequest() :
     m_payeeIdHasBeenSet(false),
     m_incomeTypeHasBeenSet(false),
-    m_amountAfterTaxHasBeenSet(false)
+    m_amountAfterTaxHasBeenSet(false),
+    m_environmentHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,14 @@ string QueryFlexAmountBeforeTaxRequest::ToJsonString() const
         string key = "AmountAfterTax";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_amountAfterTax.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_environmentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Environment";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_environment.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -114,6 +123,22 @@ void QueryFlexAmountBeforeTaxRequest::SetAmountAfterTax(const string& _amountAft
 bool QueryFlexAmountBeforeTaxRequest::AmountAfterTaxHasBeenSet() const
 {
     return m_amountAfterTaxHasBeenSet;
+}
+
+string QueryFlexAmountBeforeTaxRequest::GetEnvironment() const
+{
+    return m_environment;
+}
+
+void QueryFlexAmountBeforeTaxRequest::SetEnvironment(const string& _environment)
+{
+    m_environment = _environment;
+    m_environmentHasBeenSet = true;
+}
+
+bool QueryFlexAmountBeforeTaxRequest::EnvironmentHasBeenSet() const
+{
+    return m_environmentHasBeenSet;
 }
 
 

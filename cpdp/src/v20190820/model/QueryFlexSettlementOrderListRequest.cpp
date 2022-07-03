@@ -26,7 +26,9 @@ QueryFlexSettlementOrderListRequest::QueryFlexSettlementOrderListRequest() :
     m_payeeIdHasBeenSet(false),
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
-    m_pageNumberHasBeenSet(false)
+    m_pageNumberHasBeenSet(false),
+    m_operationTypeHasBeenSet(false),
+    m_environmentHasBeenSet(false)
 {
 }
 
@@ -68,6 +70,22 @@ string QueryFlexSettlementOrderListRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_pageNumber.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_operationTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OperationType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_operationType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_environmentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Environment";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_environment.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -140,6 +158,38 @@ void QueryFlexSettlementOrderListRequest::SetPageNumber(const Paging& _pageNumbe
 bool QueryFlexSettlementOrderListRequest::PageNumberHasBeenSet() const
 {
     return m_pageNumberHasBeenSet;
+}
+
+string QueryFlexSettlementOrderListRequest::GetOperationType() const
+{
+    return m_operationType;
+}
+
+void QueryFlexSettlementOrderListRequest::SetOperationType(const string& _operationType)
+{
+    m_operationType = _operationType;
+    m_operationTypeHasBeenSet = true;
+}
+
+bool QueryFlexSettlementOrderListRequest::OperationTypeHasBeenSet() const
+{
+    return m_operationTypeHasBeenSet;
+}
+
+string QueryFlexSettlementOrderListRequest::GetEnvironment() const
+{
+    return m_environment;
+}
+
+void QueryFlexSettlementOrderListRequest::SetEnvironment(const string& _environment)
+{
+    m_environment = _environment;
+    m_environmentHasBeenSet = true;
+}
+
+bool QueryFlexSettlementOrderListRequest::EnvironmentHasBeenSet() const
+{
+    return m_environmentHasBeenSet;
 }
 
 

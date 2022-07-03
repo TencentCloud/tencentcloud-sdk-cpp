@@ -51,6 +51,8 @@
 #include <tencentcloud/cvm/v20170312/model/DeleteLaunchTemplateVersionsResponse.h>
 #include <tencentcloud/cvm/v20170312/model/DescribeAccountQuotaRequest.h>
 #include <tencentcloud/cvm/v20170312/model/DescribeAccountQuotaResponse.h>
+#include <tencentcloud/cvm/v20170312/model/DescribeChcHostsRequest.h>
+#include <tencentcloud/cvm/v20170312/model/DescribeChcHostsResponse.h>
 #include <tencentcloud/cvm/v20170312/model/DescribeDisasterRecoverGroupQuotaRequest.h>
 #include <tencentcloud/cvm/v20170312/model/DescribeDisasterRecoverGroupQuotaResponse.h>
 #include <tencentcloud/cvm/v20170312/model/DescribeDisasterRecoverGroupsRequest.h>
@@ -239,6 +241,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAccountQuotaResponse> DescribeAccountQuotaOutcome;
                 typedef std::future<DescribeAccountQuotaOutcome> DescribeAccountQuotaOutcomeCallable;
                 typedef std::function<void(const CvmClient*, const Model::DescribeAccountQuotaRequest&, DescribeAccountQuotaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccountQuotaAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeChcHostsResponse> DescribeChcHostsOutcome;
+                typedef std::future<DescribeChcHostsOutcome> DescribeChcHostsOutcomeCallable;
+                typedef std::function<void(const CvmClient*, const Model::DescribeChcHostsRequest&, DescribeChcHostsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeChcHostsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDisasterRecoverGroupQuotaResponse> DescribeDisasterRecoverGroupQuotaOutcome;
                 typedef std::future<DescribeDisasterRecoverGroupQuotaOutcome> DescribeDisasterRecoverGroupQuotaOutcomeCallable;
                 typedef std::function<void(const CvmClient*, const Model::DescribeDisasterRecoverGroupQuotaRequest&, DescribeDisasterRecoverGroupQuotaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDisasterRecoverGroupQuotaAsyncHandler;
@@ -588,6 +593,18 @@ namespace TencentCloud
                 DescribeAccountQuotaOutcome DescribeAccountQuota(const Model::DescribeAccountQuotaRequest &request);
                 void DescribeAccountQuotaAsync(const Model::DescribeAccountQuotaRequest& request, const DescribeAccountQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAccountQuotaOutcomeCallable DescribeAccountQuotaCallable(const Model::DescribeAccountQuotaRequest& request);
+
+                /**
+                 *本接口 (DescribeChcHosts) 用于查询一个或多个CHC物理服务器详细信息。
+
+* 可以根据实例`ID`、实例名称或者设备类型等信息来查询实例的详细信息。过滤信息详细请见过滤器`Filter`。
+* 如果参数为空，返回当前用户一定数量（`Limit`所指定的数量，默认为20）的实例。
+                 * @param req DescribeChcHostsRequest
+                 * @return DescribeChcHostsOutcome
+                 */
+                DescribeChcHostsOutcome DescribeChcHosts(const Model::DescribeChcHostsRequest &request);
+                void DescribeChcHostsAsync(const Model::DescribeChcHostsRequest& request, const DescribeChcHostsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeChcHostsOutcomeCallable DescribeChcHostsCallable(const Model::DescribeChcHostsRequest& request);
 
                 /**
                  *本接口 (DescribeDisasterRecoverGroupQuota)用于查询[分散置放群组](https://cloud.tencent.com/document/product/213/15486)配额。

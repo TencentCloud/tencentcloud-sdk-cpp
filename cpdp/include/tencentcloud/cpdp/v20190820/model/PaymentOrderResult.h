@@ -284,6 +284,24 @@ FAILED:已失败
                      */
                     bool RemarkHasBeenSet() const;
 
+                    /**
+                     * 获取收款用户ID
+                     * @return PayeeId 收款用户ID
+                     */
+                    std::string GetPayeeId() const;
+
+                    /**
+                     * 设置收款用户ID
+                     * @param PayeeId 收款用户ID
+                     */
+                    void SetPayeeId(const std::string& _payeeId);
+
+                    /**
+                     * 判断参数 PayeeId 是否已赋值
+                     * @return PayeeId 是否已赋值
+                     */
+                    bool PayeeIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -361,6 +379,12 @@ FAILED:已失败
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
+
+                    /**
+                     * 收款用户ID
+                     */
+                    std::string m_payeeId;
+                    bool m_payeeIdHasBeenSet;
 
                 };
             }

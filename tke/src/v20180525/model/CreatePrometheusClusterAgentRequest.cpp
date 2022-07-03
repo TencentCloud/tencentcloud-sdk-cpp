@@ -22,7 +22,9 @@
 using namespace TencentCloud::Tke::V20180525::Model;
 using namespace std;
 
-CreatePrometheusClusterAgentRequest::CreatePrometheusClusterAgentRequest()
+CreatePrometheusClusterAgentRequest::CreatePrometheusClusterAgentRequest() :
+    m_instanceIdHasBeenSet(false),
+    m_agentsHasBeenSet(false)
 {
 }
 
@@ -33,6 +35,29 @@ string CreatePrometheusClusterAgentRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_instanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_agentsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Agents";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_agents.begin(); itr != m_agents.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +65,37 @@ string CreatePrometheusClusterAgentRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string CreatePrometheusClusterAgentRequest::GetInstanceId() const
+{
+    return m_instanceId;
+}
+
+void CreatePrometheusClusterAgentRequest::SetInstanceId(const string& _instanceId)
+{
+    m_instanceId = _instanceId;
+    m_instanceIdHasBeenSet = true;
+}
+
+bool CreatePrometheusClusterAgentRequest::InstanceIdHasBeenSet() const
+{
+    return m_instanceIdHasBeenSet;
+}
+
+vector<PrometheusClusterAgentBasic> CreatePrometheusClusterAgentRequest::GetAgents() const
+{
+    return m_agents;
+}
+
+void CreatePrometheusClusterAgentRequest::SetAgents(const vector<PrometheusClusterAgentBasic>& _agents)
+{
+    m_agents = _agents;
+    m_agentsHasBeenSet = true;
+}
+
+bool CreatePrometheusClusterAgentRequest::AgentsHasBeenSet() const
+{
+    return m_agentsHasBeenSet;
+}
 
 

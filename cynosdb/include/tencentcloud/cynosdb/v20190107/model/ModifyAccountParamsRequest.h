@@ -81,14 +81,14 @@ namespace TencentCloud
                     bool AccountHasBeenSet() const;
 
                     /**
-                     * 获取数据库表权限数组,当前仅支持参数：max_user_connections
-                     * @return AccountParams 数据库表权限数组,当前仅支持参数：max_user_connections
+                     * 获取数据库表权限数组,当前仅支持参数：max_user_connections，max_user_connections不能大于10240
+                     * @return AccountParams 数据库表权限数组,当前仅支持参数：max_user_connections，max_user_connections不能大于10240
                      */
                     std::vector<AccountParam> GetAccountParams() const;
 
                     /**
-                     * 设置数据库表权限数组,当前仅支持参数：max_user_connections
-                     * @param AccountParams 数据库表权限数组,当前仅支持参数：max_user_connections
+                     * 设置数据库表权限数组,当前仅支持参数：max_user_connections，max_user_connections不能大于10240
+                     * @param AccountParams 数据库表权限数组,当前仅支持参数：max_user_connections，max_user_connections不能大于10240
                      */
                     void SetAccountParams(const std::vector<AccountParam>& _accountParams);
 
@@ -113,7 +113,7 @@ namespace TencentCloud
                     bool m_accountHasBeenSet;
 
                     /**
-                     * 数据库表权限数组,当前仅支持参数：max_user_connections
+                     * 数据库表权限数组,当前仅支持参数：max_user_connections，max_user_connections不能大于10240
                      */
                     std::vector<AccountParam> m_accountParams;
                     bool m_accountParamsHasBeenSet;

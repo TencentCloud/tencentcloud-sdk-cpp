@@ -24,7 +24,8 @@ using namespace std;
 
 QueryFlexPayeeAccountBalanceRequest::QueryFlexPayeeAccountBalanceRequest() :
     m_payeeIdHasBeenSet(false),
-    m_incomeTypeHasBeenSet(false)
+    m_incomeTypeHasBeenSet(false),
+    m_environmentHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string QueryFlexPayeeAccountBalanceRequest::ToJsonString() const
         string key = "IncomeType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_incomeType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_environmentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Environment";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_environment.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -89,6 +98,22 @@ void QueryFlexPayeeAccountBalanceRequest::SetIncomeType(const string& _incomeTyp
 bool QueryFlexPayeeAccountBalanceRequest::IncomeTypeHasBeenSet() const
 {
     return m_incomeTypeHasBeenSet;
+}
+
+string QueryFlexPayeeAccountBalanceRequest::GetEnvironment() const
+{
+    return m_environment;
+}
+
+void QueryFlexPayeeAccountBalanceRequest::SetEnvironment(const string& _environment)
+{
+    m_environment = _environment;
+    m_environmentHasBeenSet = true;
+}
+
+bool QueryFlexPayeeAccountBalanceRequest::EnvironmentHasBeenSet() const
+{
+    return m_environmentHasBeenSet;
 }
 
 

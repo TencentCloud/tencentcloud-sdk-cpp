@@ -350,6 +350,24 @@ namespace TencentCloud
                      */
                     bool WorkSpaceIdHasBeenSet() const;
 
+                    /**
+                     * 获取日志级别
+                     * @return LogLevel 日志级别
+                     */
+                    std::string GetLogLevel() const;
+
+                    /**
+                     * 设置日志级别
+                     * @param LogLevel 日志级别
+                     */
+                    void SetLogLevel(const std::string& _logLevel);
+
+                    /**
+                     * 判断参数 LogLevel 是否已赋值
+                     * @return LogLevel 是否已赋值
+                     */
+                    bool LogLevelHasBeenSet() const;
+
                 private:
 
                     /**
@@ -453,6 +471,12 @@ namespace TencentCloud
                      */
                     std::string m_workSpaceId;
                     bool m_workSpaceIdHasBeenSet;
+
+                    /**
+                     * 日志级别
+                     */
+                    std::string m_logLevel;
+                    bool m_logLevelHasBeenSet;
 
                 };
             }

@@ -39,7 +39,8 @@ CreateJobConfigRequest::CreateJobConfigRequest() :
     m_clsTopicIdHasBeenSet(false),
     m_logCollectTypeHasBeenSet(false),
     m_pythonVersionHasBeenSet(false),
-    m_workSpaceIdHasBeenSet(false)
+    m_workSpaceIdHasBeenSet(false),
+    m_logLevelHasBeenSet(false)
 {
 }
 
@@ -198,6 +199,14 @@ string CreateJobConfigRequest::ToJsonString() const
         string key = "WorkSpaceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_workSpaceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_logLevelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LogLevel";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_logLevel.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -478,6 +487,22 @@ void CreateJobConfigRequest::SetWorkSpaceId(const string& _workSpaceId)
 bool CreateJobConfigRequest::WorkSpaceIdHasBeenSet() const
 {
     return m_workSpaceIdHasBeenSet;
+}
+
+string CreateJobConfigRequest::GetLogLevel() const
+{
+    return m_logLevel;
+}
+
+void CreateJobConfigRequest::SetLogLevel(const string& _logLevel)
+{
+    m_logLevel = _logLevel;
+    m_logLevelHasBeenSet = true;
+}
+
+bool CreateJobConfigRequest::LogLevelHasBeenSet() const
+{
+    return m_logLevelHasBeenSet;
 }
 
 

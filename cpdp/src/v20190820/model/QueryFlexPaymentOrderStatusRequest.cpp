@@ -24,7 +24,8 @@ using namespace std;
 
 QueryFlexPaymentOrderStatusRequest::QueryFlexPaymentOrderStatusRequest() :
     m_outOrderIdHasBeenSet(false),
-    m_orderIdHasBeenSet(false)
+    m_orderIdHasBeenSet(false),
+    m_environmentHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string QueryFlexPaymentOrderStatusRequest::ToJsonString() const
         string key = "OrderId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_orderId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_environmentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Environment";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_environment.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -89,6 +98,22 @@ void QueryFlexPaymentOrderStatusRequest::SetOrderId(const string& _orderId)
 bool QueryFlexPaymentOrderStatusRequest::OrderIdHasBeenSet() const
 {
     return m_orderIdHasBeenSet;
+}
+
+string QueryFlexPaymentOrderStatusRequest::GetEnvironment() const
+{
+    return m_environment;
+}
+
+void QueryFlexPaymentOrderStatusRequest::SetEnvironment(const string& _environment)
+{
+    m_environment = _environment;
+    m_environmentHasBeenSet = true;
+}
+
+bool QueryFlexPaymentOrderStatusRequest::EnvironmentHasBeenSet() const
+{
+    return m_environmentHasBeenSet;
 }
 
 

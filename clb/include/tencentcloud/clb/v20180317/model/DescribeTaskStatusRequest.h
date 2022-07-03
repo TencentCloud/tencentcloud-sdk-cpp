@@ -62,13 +62,17 @@ namespace TencentCloud
 
                     /**
                      * 获取订单ID。
+注意：参数TaskId和DealName必须传一个。
                      * @return DealName 订单ID。
+注意：参数TaskId和DealName必须传一个。
                      */
                     std::string GetDealName() const;
 
                     /**
                      * 设置订单ID。
+注意：参数TaskId和DealName必须传一个。
                      * @param DealName 订单ID。
+注意：参数TaskId和DealName必须传一个。
                      */
                     void SetDealName(const std::string& _dealName);
 
@@ -88,6 +92,7 @@ namespace TencentCloud
 
                     /**
                      * 订单ID。
+注意：参数TaskId和DealName必须传一个。
                      */
                     std::string m_dealName;
                     bool m_dealNameHasBeenSet;

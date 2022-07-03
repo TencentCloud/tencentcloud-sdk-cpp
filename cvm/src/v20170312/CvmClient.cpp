@@ -642,6 +642,49 @@ CvmClient::DescribeAccountQuotaOutcomeCallable CvmClient::DescribeAccountQuotaCa
     return task->get_future();
 }
 
+CvmClient::DescribeChcHostsOutcome CvmClient::DescribeChcHosts(const DescribeChcHostsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeChcHosts");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeChcHostsResponse rsp = DescribeChcHostsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeChcHostsOutcome(rsp);
+        else
+            return DescribeChcHostsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeChcHostsOutcome(outcome.GetError());
+    }
+}
+
+void CvmClient::DescribeChcHostsAsync(const DescribeChcHostsRequest& request, const DescribeChcHostsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeChcHosts(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CvmClient::DescribeChcHostsOutcomeCallable CvmClient::DescribeChcHostsCallable(const DescribeChcHostsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeChcHostsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeChcHosts(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CvmClient::DescribeDisasterRecoverGroupQuotaOutcome CvmClient::DescribeDisasterRecoverGroupQuota(const DescribeDisasterRecoverGroupQuotaRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDisasterRecoverGroupQuota");

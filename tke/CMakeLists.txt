@@ -91,6 +91,7 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/ModifyClusterAttributeResponse.h
   include/tencentcloud/tke/v20180525/model/RunAutomationServiceEnabled.h
   include/tencentcloud/tke/v20180525/model/CreateClusterResponse.h
+  include/tencentcloud/tke/v20180525/model/PrometheusClusterAgentPodConfig.h
   include/tencentcloud/tke/v20180525/model/RunSecurityServiceEnabled.h
   include/tencentcloud/tke/v20180525/model/ImageCache.h
   include/tencentcloud/tke/v20180525/model/DeletePrometheusAlertRuleResponse.h
@@ -139,6 +140,7 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/DescribeClusterNodePoolDetailResponse.h
   include/tencentcloud/tke/v20180525/model/DescribeEKSContainerInstanceEventRequest.h
   include/tencentcloud/tke/v20180525/model/ScaleOutClusterMasterResponse.h
+  include/tencentcloud/tke/v20180525/model/Toleration.h
   include/tencentcloud/tke/v20180525/model/CreateEKSContainerInstancesResponse.h
   include/tencentcloud/tke/v20180525/model/DescribeClusterKubeconfigResponse.h
   include/tencentcloud/tke/v20180525/model/DescribeClusterCommonNamesRequest.h
@@ -329,6 +331,7 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/PrometheusJobTargets.h
   include/tencentcloud/tke/v20180525/model/ModifyClusterAsGroupOptionAttributeResponse.h
   include/tencentcloud/tke/v20180525/model/UninstallLogAgentResponse.h
+  include/tencentcloud/tke/v20180525/model/PrometheusClusterAgentBasic.h
   include/tencentcloud/tke/v20180525/model/DeleteTKEEdgeClusterResponse.h
   include/tencentcloud/tke/v20180525/model/CreatePrometheusTempResponse.h
   include/tencentcloud/tke/v20180525/model/DescribePrometheusTargetsRequest.h
@@ -548,6 +551,7 @@ set(tke_src
   src/v20180525/model/ModifyClusterAttributeResponse.cpp
   src/v20180525/model/RunAutomationServiceEnabled.cpp
   src/v20180525/model/CreateClusterResponse.cpp
+  src/v20180525/model/PrometheusClusterAgentPodConfig.cpp
   src/v20180525/model/RunSecurityServiceEnabled.cpp
   src/v20180525/model/ImageCache.cpp
   src/v20180525/model/DeletePrometheusAlertRuleResponse.cpp
@@ -596,6 +600,7 @@ set(tke_src
   src/v20180525/model/DescribeClusterNodePoolDetailResponse.cpp
   src/v20180525/model/DescribeEKSContainerInstanceEventRequest.cpp
   src/v20180525/model/ScaleOutClusterMasterResponse.cpp
+  src/v20180525/model/Toleration.cpp
   src/v20180525/model/CreateEKSContainerInstancesResponse.cpp
   src/v20180525/model/DescribeClusterKubeconfigResponse.cpp
   src/v20180525/model/DescribeClusterCommonNamesRequest.cpp
@@ -786,6 +791,7 @@ set(tke_src
   src/v20180525/model/PrometheusJobTargets.cpp
   src/v20180525/model/ModifyClusterAsGroupOptionAttributeResponse.cpp
   src/v20180525/model/UninstallLogAgentResponse.cpp
+  src/v20180525/model/PrometheusClusterAgentBasic.cpp
   src/v20180525/model/DeleteTKEEdgeClusterResponse.cpp
   src/v20180525/model/CreatePrometheusTempResponse.cpp
   src/v20180525/model/DescribePrometheusTargetsRequest.cpp

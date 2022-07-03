@@ -166,6 +166,40 @@ UNFREEZE:解冻
                      */
                     bool RemarkHasBeenSet() const;
 
+                    /**
+                     * 获取环境类型
+__release__:生产环境
+__sandbox__:沙箱环境
+__test__:测试环境
+缺省默认为生产环境
+                     * @return Environment 环境类型
+__release__:生产环境
+__sandbox__:沙箱环境
+__test__:测试环境
+缺省默认为生产环境
+                     */
+                    std::string GetEnvironment() const;
+
+                    /**
+                     * 设置环境类型
+__release__:生产环境
+__sandbox__:沙箱环境
+__test__:测试环境
+缺省默认为生产环境
+                     * @param Environment 环境类型
+__release__:生产环境
+__sandbox__:沙箱环境
+__test__:测试环境
+缺省默认为生产环境
+                     */
+                    void SetEnvironment(const std::string& _environment);
+
+                    /**
+                     * 判断参数 Environment 是否已赋值
+                     * @return Environment 是否已赋值
+                     */
+                    bool EnvironmentHasBeenSet() const;
+
                 private:
 
                     /**
@@ -207,6 +241,16 @@ UNFREEZE:解冻
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
+
+                    /**
+                     * 环境类型
+__release__:生产环境
+__sandbox__:沙箱环境
+__test__:测试环境
+缺省默认为生产环境
+                     */
+                    std::string m_environment;
+                    bool m_environmentHasBeenSet;
 
                 };
             }

@@ -115,6 +115,74 @@ namespace TencentCloud
                      */
                     bool PageNumberHasBeenSet() const;
 
+                    /**
+                     * 获取操作类型。
+ENABLE_SETTLE: 正常结算
+DISABLE_SETTLE: 停用结算
+UNFREEZE_SETTLE: 解冻结算
+若需要支持多个操作类型，则以;分隔
+                     * @return OperationType 操作类型。
+ENABLE_SETTLE: 正常结算
+DISABLE_SETTLE: 停用结算
+UNFREEZE_SETTLE: 解冻结算
+若需要支持多个操作类型，则以;分隔
+                     */
+                    std::string GetOperationType() const;
+
+                    /**
+                     * 设置操作类型。
+ENABLE_SETTLE: 正常结算
+DISABLE_SETTLE: 停用结算
+UNFREEZE_SETTLE: 解冻结算
+若需要支持多个操作类型，则以;分隔
+                     * @param OperationType 操作类型。
+ENABLE_SETTLE: 正常结算
+DISABLE_SETTLE: 停用结算
+UNFREEZE_SETTLE: 解冻结算
+若需要支持多个操作类型，则以;分隔
+                     */
+                    void SetOperationType(const std::string& _operationType);
+
+                    /**
+                     * 判断参数 OperationType 是否已赋值
+                     * @return OperationType 是否已赋值
+                     */
+                    bool OperationTypeHasBeenSet() const;
+
+                    /**
+                     * 获取环境类型
+__release__:生产环境
+__sandbox__:沙箱环境
+__test__:测试环境
+缺省默认为生产环境
+                     * @return Environment 环境类型
+__release__:生产环境
+__sandbox__:沙箱环境
+__test__:测试环境
+缺省默认为生产环境
+                     */
+                    std::string GetEnvironment() const;
+
+                    /**
+                     * 设置环境类型
+__release__:生产环境
+__sandbox__:沙箱环境
+__test__:测试环境
+缺省默认为生产环境
+                     * @param Environment 环境类型
+__release__:生产环境
+__sandbox__:沙箱环境
+__test__:测试环境
+缺省默认为生产环境
+                     */
+                    void SetEnvironment(const std::string& _environment);
+
+                    /**
+                     * 判断参数 Environment 是否已赋值
+                     * @return Environment 是否已赋值
+                     */
+                    bool EnvironmentHasBeenSet() const;
+
                 private:
 
                     /**
@@ -140,6 +208,26 @@ namespace TencentCloud
                      */
                     Paging m_pageNumber;
                     bool m_pageNumberHasBeenSet;
+
+                    /**
+                     * 操作类型。
+ENABLE_SETTLE: 正常结算
+DISABLE_SETTLE: 停用结算
+UNFREEZE_SETTLE: 解冻结算
+若需要支持多个操作类型，则以;分隔
+                     */
+                    std::string m_operationType;
+                    bool m_operationTypeHasBeenSet;
+
+                    /**
+                     * 环境类型
+__release__:生产环境
+__sandbox__:沙箱环境
+__test__:测试环境
+缺省默认为生产环境
+                     */
+                    std::string m_environment;
+                    bool m_environmentHasBeenSet;
 
                 };
             }

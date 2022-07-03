@@ -19,10 +19,12 @@ set(wedata_public_header
   )
 
 set(wedata_public_header_model
+  include/tencentcloud/wedata/v20210820/model/DescribeProjectResponse.h
+  include/tencentcloud/wedata/v20210820/model/DescribeProjectRequest.h
   include/tencentcloud/wedata/v20210820/model/DescribeTaskInstancesRequest.h
-  include/tencentcloud/wedata/v20210820/model/DescribeTaskInstancesData.h
-  include/tencentcloud/wedata/v20210820/model/TaskInstanceInfo.h
   include/tencentcloud/wedata/v20210820/model/DescribeTaskInstancesResponse.h
+  include/tencentcloud/wedata/v20210820/model/TaskInstanceInfo.h
+  include/tencentcloud/wedata/v20210820/model/DescribeTaskInstancesData.h
   include/tencentcloud/wedata/v20210820/model/OrderField.h
   include/tencentcloud/wedata/v20210820/model/DescribeRelatedInstancesRequest.h
   include/tencentcloud/wedata/v20210820/model/DescribeRelatedInstancesResponse.h
@@ -30,10 +32,12 @@ set(wedata_public_header_model
 
 set(wedata_src
   src/v20210820/WedataClient.cpp
+  src/v20210820/model/DescribeProjectResponse.cpp
+  src/v20210820/model/DescribeProjectRequest.cpp
   src/v20210820/model/DescribeTaskInstancesRequest.cpp
-  src/v20210820/model/DescribeTaskInstancesData.cpp
-  src/v20210820/model/TaskInstanceInfo.cpp
   src/v20210820/model/DescribeTaskInstancesResponse.cpp
+  src/v20210820/model/TaskInstanceInfo.cpp
+  src/v20210820/model/DescribeTaskInstancesData.cpp
   src/v20210820/model/OrderField.cpp
   src/v20210820/model/DescribeRelatedInstancesRequest.cpp
   src/v20210820/model/DescribeRelatedInstancesResponse.cpp

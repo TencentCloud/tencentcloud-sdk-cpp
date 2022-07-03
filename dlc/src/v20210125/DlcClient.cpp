@@ -2491,6 +2491,49 @@ DlcClient::ModifyWorkGroupOutcomeCallable DlcClient::ModifyWorkGroupCallable(con
     return task->get_future();
 }
 
+DlcClient::ReportHeartbeatMetaDataOutcome DlcClient::ReportHeartbeatMetaData(const ReportHeartbeatMetaDataRequest &request)
+{
+    auto outcome = MakeRequest(request, "ReportHeartbeatMetaData");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ReportHeartbeatMetaDataResponse rsp = ReportHeartbeatMetaDataResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ReportHeartbeatMetaDataOutcome(rsp);
+        else
+            return ReportHeartbeatMetaDataOutcome(o.GetError());
+    }
+    else
+    {
+        return ReportHeartbeatMetaDataOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::ReportHeartbeatMetaDataAsync(const ReportHeartbeatMetaDataRequest& request, const ReportHeartbeatMetaDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ReportHeartbeatMetaData(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DlcClient::ReportHeartbeatMetaDataOutcomeCallable DlcClient::ReportHeartbeatMetaDataCallable(const ReportHeartbeatMetaDataRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ReportHeartbeatMetaDataOutcome()>>(
+        [this, request]()
+        {
+            return this->ReportHeartbeatMetaData(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DlcClient::UnbindWorkGroupsFromUserOutcome DlcClient::UnbindWorkGroupsFromUser(const UnbindWorkGroupsFromUserRequest &request)
 {
     auto outcome = MakeRequest(request, "UnbindWorkGroupsFromUser");

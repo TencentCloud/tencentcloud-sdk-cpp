@@ -25,7 +25,8 @@ using namespace std;
 ModifyFlexPayeeAccountRightStatusRequest::ModifyFlexPayeeAccountRightStatusRequest() :
     m_payeeIdHasBeenSet(false),
     m_accountRightTypeHasBeenSet(false),
-    m_accountRightStatusHasBeenSet(false)
+    m_accountRightStatusHasBeenSet(false),
+    m_environmentHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,14 @@ string ModifyFlexPayeeAccountRightStatusRequest::ToJsonString() const
         string key = "AccountRightStatus";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_accountRightStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_environmentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Environment";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_environment.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -114,6 +123,22 @@ void ModifyFlexPayeeAccountRightStatusRequest::SetAccountRightStatus(const strin
 bool ModifyFlexPayeeAccountRightStatusRequest::AccountRightStatusHasBeenSet() const
 {
     return m_accountRightStatusHasBeenSet;
+}
+
+string ModifyFlexPayeeAccountRightStatusRequest::GetEnvironment() const
+{
+    return m_environment;
+}
+
+void ModifyFlexPayeeAccountRightStatusRequest::SetEnvironment(const string& _environment)
+{
+    m_environment = _environment;
+    m_environmentHasBeenSet = true;
+}
+
+bool ModifyFlexPayeeAccountRightStatusRequest::EnvironmentHasBeenSet() const
+{
+    return m_environmentHasBeenSet;
 }
 
 

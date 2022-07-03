@@ -39,7 +39,7 @@ set(cvm_public_header_model
   include/tencentcloud/cvm/v20170312/model/AssociateSecurityGroupsRequest.h
   include/tencentcloud/cvm/v20170312/model/PostPaidQuota.h
   include/tencentcloud/cvm/v20170312/model/ResetInstancesTypeRequest.h
-  include/tencentcloud/cvm/v20170312/model/InquiryPriceResetInstanceRequest.h
+  include/tencentcloud/cvm/v20170312/model/ChcHost.h
   include/tencentcloud/cvm/v20170312/model/DeleteLaunchTemplateVersionsRequest.h
   include/tencentcloud/cvm/v20170312/model/DeleteImagesRequest.h
   include/tencentcloud/cvm/v20170312/model/DeleteLaunchTemplateRequest.h
@@ -49,6 +49,7 @@ set(cvm_public_header_model
   include/tencentcloud/cvm/v20170312/model/SystemDisk.h
   include/tencentcloud/cvm/v20170312/model/ResetInstanceRequest.h
   include/tencentcloud/cvm/v20170312/model/LaunchTemplate.h
+  include/tencentcloud/cvm/v20170312/model/DescribeChcHostsResponse.h
   include/tencentcloud/cvm/v20170312/model/InstanceTypeConfig.h
   include/tencentcloud/cvm/v20170312/model/AllocateHostsRequest.h
   include/tencentcloud/cvm/v20170312/model/LoginSettings.h
@@ -69,7 +70,7 @@ set(cvm_public_header_model
   include/tencentcloud/cvm/v20170312/model/InternetChargeTypeConfig.h
   include/tencentcloud/cvm/v20170312/model/DescribeImagesResponse.h
   include/tencentcloud/cvm/v20170312/model/ModifyInstancesVpcAttributeResponse.h
-  include/tencentcloud/cvm/v20170312/model/DescribeLaunchTemplatesResponse.h
+  include/tencentcloud/cvm/v20170312/model/CreateKeyPairResponse.h
   include/tencentcloud/cvm/v20170312/model/DescribeInstancesOperationLimitRequest.h
   include/tencentcloud/cvm/v20170312/model/ModifyInstancesChargeTypeRequest.h
   include/tencentcloud/cvm/v20170312/model/DescribeInstanceVncUrlRequest.h
@@ -112,6 +113,7 @@ set(cvm_public_header_model
   include/tencentcloud/cvm/v20170312/model/ResetInstancesPasswordResponse.h
   include/tencentcloud/cvm/v20170312/model/InquiryPriceRunInstancesRequest.h
   include/tencentcloud/cvm/v20170312/model/Image.h
+  include/tencentcloud/cvm/v20170312/model/ChcDeployExtraConfig.h
   include/tencentcloud/cvm/v20170312/model/DescribeDisasterRecoverGroupQuotaResponse.h
   include/tencentcloud/cvm/v20170312/model/DescribeRegionsRequest.h
   include/tencentcloud/cvm/v20170312/model/CreateDisasterRecoverGroupRequest.h
@@ -133,7 +135,7 @@ set(cvm_public_header_model
   include/tencentcloud/cvm/v20170312/model/Instance.h
   include/tencentcloud/cvm/v20170312/model/CreateLaunchTemplateVersionRequest.h
   include/tencentcloud/cvm/v20170312/model/EnhancedService.h
-  include/tencentcloud/cvm/v20170312/model/CreateKeyPairResponse.h
+  include/tencentcloud/cvm/v20170312/model/DescribeLaunchTemplatesResponse.h
   include/tencentcloud/cvm/v20170312/model/DescribeInstanceVncUrlResponse.h
   include/tencentcloud/cvm/v20170312/model/DescribeReservedInstancesOfferingsRequest.h
   include/tencentcloud/cvm/v20170312/model/ReservedInstanceFamilyItem.h
@@ -144,7 +146,7 @@ set(cvm_public_header_model
   include/tencentcloud/cvm/v20170312/model/ModifyInstanceDiskTypeResponse.h
   include/tencentcloud/cvm/v20170312/model/CreateLaunchTemplateRequest.h
   include/tencentcloud/cvm/v20170312/model/DescribeReservedInstancesConfigInfosRequest.h
-  include/tencentcloud/cvm/v20170312/model/TagSpecification.h
+  include/tencentcloud/cvm/v20170312/model/InquiryPriceResetInstanceRequest.h
   include/tencentcloud/cvm/v20170312/model/DescribeLaunchTemplatesRequest.h
   include/tencentcloud/cvm/v20170312/model/ResetInstancesInternetMaxBandwidthRequest.h
   include/tencentcloud/cvm/v20170312/model/InstanceFamilyConfig.h
@@ -181,6 +183,7 @@ set(cvm_public_header_model
   include/tencentcloud/cvm/v20170312/model/ReservedInstanceTypeItem.h
   include/tencentcloud/cvm/v20170312/model/ExportImagesResponse.h
   include/tencentcloud/cvm/v20170312/model/InquiryPriceRunInstancesResponse.h
+  include/tencentcloud/cvm/v20170312/model/TagSpecification.h
   include/tencentcloud/cvm/v20170312/model/DescribeHostsRequest.h
   include/tencentcloud/cvm/v20170312/model/DescribeAccountQuotaRequest.h
   include/tencentcloud/cvm/v20170312/model/ModifyInstancesRenewFlagResponse.h
@@ -193,6 +196,7 @@ set(cvm_public_header_model
   include/tencentcloud/cvm/v20170312/model/ImportImageResponse.h
   include/tencentcloud/cvm/v20170312/model/ModifyDisasterRecoverGroupAttributeRequest.h
   include/tencentcloud/cvm/v20170312/model/ReservedInstancePriceItem.h
+  include/tencentcloud/cvm/v20170312/model/DescribeChcHostsRequest.h
   include/tencentcloud/cvm/v20170312/model/RebootInstancesResponse.h
   include/tencentcloud/cvm/v20170312/model/CreateDisasterRecoverGroupResponse.h
   include/tencentcloud/cvm/v20170312/model/ModifyInstanceDiskTypeRequest.h
@@ -266,7 +270,7 @@ set(cvm_src
   src/v20170312/model/AssociateSecurityGroupsRequest.cpp
   src/v20170312/model/PostPaidQuota.cpp
   src/v20170312/model/ResetInstancesTypeRequest.cpp
-  src/v20170312/model/InquiryPriceResetInstanceRequest.cpp
+  src/v20170312/model/ChcHost.cpp
   src/v20170312/model/DeleteLaunchTemplateVersionsRequest.cpp
   src/v20170312/model/DeleteImagesRequest.cpp
   src/v20170312/model/DeleteLaunchTemplateRequest.cpp
@@ -276,6 +280,7 @@ set(cvm_src
   src/v20170312/model/SystemDisk.cpp
   src/v20170312/model/ResetInstanceRequest.cpp
   src/v20170312/model/LaunchTemplate.cpp
+  src/v20170312/model/DescribeChcHostsResponse.cpp
   src/v20170312/model/InstanceTypeConfig.cpp
   src/v20170312/model/AllocateHostsRequest.cpp
   src/v20170312/model/LoginSettings.cpp
@@ -296,7 +301,7 @@ set(cvm_src
   src/v20170312/model/InternetChargeTypeConfig.cpp
   src/v20170312/model/DescribeImagesResponse.cpp
   src/v20170312/model/ModifyInstancesVpcAttributeResponse.cpp
-  src/v20170312/model/DescribeLaunchTemplatesResponse.cpp
+  src/v20170312/model/CreateKeyPairResponse.cpp
   src/v20170312/model/DescribeInstancesOperationLimitRequest.cpp
   src/v20170312/model/ModifyInstancesChargeTypeRequest.cpp
   src/v20170312/model/DescribeInstanceVncUrlRequest.cpp
@@ -339,6 +344,7 @@ set(cvm_src
   src/v20170312/model/ResetInstancesPasswordResponse.cpp
   src/v20170312/model/InquiryPriceRunInstancesRequest.cpp
   src/v20170312/model/Image.cpp
+  src/v20170312/model/ChcDeployExtraConfig.cpp
   src/v20170312/model/DescribeDisasterRecoverGroupQuotaResponse.cpp
   src/v20170312/model/DescribeRegionsRequest.cpp
   src/v20170312/model/CreateDisasterRecoverGroupRequest.cpp
@@ -360,7 +366,7 @@ set(cvm_src
   src/v20170312/model/Instance.cpp
   src/v20170312/model/CreateLaunchTemplateVersionRequest.cpp
   src/v20170312/model/EnhancedService.cpp
-  src/v20170312/model/CreateKeyPairResponse.cpp
+  src/v20170312/model/DescribeLaunchTemplatesResponse.cpp
   src/v20170312/model/DescribeInstanceVncUrlResponse.cpp
   src/v20170312/model/DescribeReservedInstancesOfferingsRequest.cpp
   src/v20170312/model/ReservedInstanceFamilyItem.cpp
@@ -371,7 +377,7 @@ set(cvm_src
   src/v20170312/model/ModifyInstanceDiskTypeResponse.cpp
   src/v20170312/model/CreateLaunchTemplateRequest.cpp
   src/v20170312/model/DescribeReservedInstancesConfigInfosRequest.cpp
-  src/v20170312/model/TagSpecification.cpp
+  src/v20170312/model/InquiryPriceResetInstanceRequest.cpp
   src/v20170312/model/DescribeLaunchTemplatesRequest.cpp
   src/v20170312/model/ResetInstancesInternetMaxBandwidthRequest.cpp
   src/v20170312/model/InstanceFamilyConfig.cpp
@@ -408,6 +414,7 @@ set(cvm_src
   src/v20170312/model/ReservedInstanceTypeItem.cpp
   src/v20170312/model/ExportImagesResponse.cpp
   src/v20170312/model/InquiryPriceRunInstancesResponse.cpp
+  src/v20170312/model/TagSpecification.cpp
   src/v20170312/model/DescribeHostsRequest.cpp
   src/v20170312/model/DescribeAccountQuotaRequest.cpp
   src/v20170312/model/ModifyInstancesRenewFlagResponse.cpp
@@ -420,6 +427,7 @@ set(cvm_src
   src/v20170312/model/ImportImageResponse.cpp
   src/v20170312/model/ModifyDisasterRecoverGroupAttributeRequest.cpp
   src/v20170312/model/ReservedInstancePriceItem.cpp
+  src/v20170312/model/DescribeChcHostsRequest.cpp
   src/v20170312/model/RebootInstancesResponse.cpp
   src/v20170312/model/CreateDisasterRecoverGroupResponse.cpp
   src/v20170312/model/ModifyInstanceDiskTypeRequest.cpp
