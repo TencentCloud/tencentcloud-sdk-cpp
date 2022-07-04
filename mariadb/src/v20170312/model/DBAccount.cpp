@@ -27,7 +27,8 @@ DBAccount::DBAccount() :
     m_createTimeHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
     m_readOnlyHasBeenSet(false),
-    m_delayThreshHasBeenSet(false)
+    m_delayThreshHasBeenSet(false),
+    m_slaveConstHasBeenSet(false)
 {
 }
 
@@ -106,6 +107,16 @@ CoreInternalOutcome DBAccount::Deserialize(const rapidjson::Value &value)
         m_delayThreshHasBeenSet = true;
     }
 
+    if (value.HasMember("SlaveConst") && !value["SlaveConst"].IsNull())
+    {
+        if (!value["SlaveConst"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DBAccount.SlaveConst` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_slaveConst = value["SlaveConst"].GetInt64();
+        m_slaveConstHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +178,14 @@ void DBAccount::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "DelayThresh";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_delayThresh, allocator);
+    }
+
+    if (m_slaveConstHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SlaveConst";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_slaveConst, allocator);
     }
 
 }
@@ -282,5 +301,21 @@ void DBAccount::SetDelayThresh(const int64_t& _delayThresh)
 bool DBAccount::DelayThreshHasBeenSet() const
 {
     return m_delayThreshHasBeenSet;
+}
+
+int64_t DBAccount::GetSlaveConst() const
+{
+    return m_slaveConst;
+}
+
+void DBAccount::SetSlaveConst(const int64_t& _slaveConst)
+{
+    m_slaveConst = _slaveConst;
+    m_slaveConstHasBeenSet = true;
+}
+
+bool DBAccount::SlaveConstHasBeenSet() const
+{
+    return m_slaveConstHasBeenSet;
 }
 

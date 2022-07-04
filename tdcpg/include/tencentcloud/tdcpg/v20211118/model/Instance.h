@@ -340,6 +340,42 @@ namespace TencentCloud
                      */
                     bool InstanceTypeHasBeenSet() const;
 
+                    /**
+                     * 获取TDSQL-C PostgreSQL 合入的社区主要版本号
+                     * @return DBMajorVersion TDSQL-C PostgreSQL 合入的社区主要版本号
+                     */
+                    std::string GetDBMajorVersion() const;
+
+                    /**
+                     * 设置TDSQL-C PostgreSQL 合入的社区主要版本号
+                     * @param DBMajorVersion TDSQL-C PostgreSQL 合入的社区主要版本号
+                     */
+                    void SetDBMajorVersion(const std::string& _dBMajorVersion);
+
+                    /**
+                     * 判断参数 DBMajorVersion 是否已赋值
+                     * @return DBMajorVersion 是否已赋值
+                     */
+                    bool DBMajorVersionHasBeenSet() const;
+
+                    /**
+                     * 获取TDSQL-C PostgreSQL 内核版本号
+                     * @return DBKernelVersion TDSQL-C PostgreSQL 内核版本号
+                     */
+                    std::string GetDBKernelVersion() const;
+
+                    /**
+                     * 设置TDSQL-C PostgreSQL 内核版本号
+                     * @param DBKernelVersion TDSQL-C PostgreSQL 内核版本号
+                     */
+                    void SetDBKernelVersion(const std::string& _dBKernelVersion);
+
+                    /**
+                     * 判断参数 DBKernelVersion 是否已赋值
+                     * @return DBKernelVersion 是否已赋值
+                     */
+                    bool DBKernelVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -437,6 +473,18 @@ namespace TencentCloud
                      */
                     std::string m_instanceType;
                     bool m_instanceTypeHasBeenSet;
+
+                    /**
+                     * TDSQL-C PostgreSQL 合入的社区主要版本号
+                     */
+                    std::string m_dBMajorVersion;
+                    bool m_dBMajorVersionHasBeenSet;
+
+                    /**
+                     * TDSQL-C PostgreSQL 内核版本号
+                     */
+                    std::string m_dBKernelVersion;
+                    bool m_dBKernelVersionHasBeenSet;
 
                 };
             }

@@ -28,7 +28,9 @@ NodeInfo::NodeInfo() :
     m_diskSizeHasBeenSet(false),
     m_localDiskInfoHasBeenSet(false),
     m_diskCountHasBeenSet(false),
-    m_diskEncryptHasBeenSet(false)
+    m_diskEncryptHasBeenSet(false),
+    m_cpuNumHasBeenSet(false),
+    m_memSizeHasBeenSet(false)
 {
 }
 
@@ -124,6 +126,26 @@ CoreInternalOutcome NodeInfo::Deserialize(const rapidjson::Value &value)
         m_diskEncryptHasBeenSet = true;
     }
 
+    if (value.HasMember("CpuNum") && !value["CpuNum"].IsNull())
+    {
+        if (!value["CpuNum"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `NodeInfo.CpuNum` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_cpuNum = value["CpuNum"].GetUint64();
+        m_cpuNumHasBeenSet = true;
+    }
+
+    if (value.HasMember("MemSize") && !value["MemSize"].IsNull())
+    {
+        if (!value["MemSize"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `NodeInfo.MemSize` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_memSize = value["MemSize"].GetInt64();
+        m_memSizeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -194,6 +216,22 @@ void NodeInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "DiskEncrypt";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_diskEncrypt, allocator);
+    }
+
+    if (m_cpuNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CpuNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_cpuNum, allocator);
+    }
+
+    if (m_memSizeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MemSize";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_memSize, allocator);
     }
 
 }
@@ -325,5 +363,37 @@ void NodeInfo::SetDiskEncrypt(const uint64_t& _diskEncrypt)
 bool NodeInfo::DiskEncryptHasBeenSet() const
 {
     return m_diskEncryptHasBeenSet;
+}
+
+uint64_t NodeInfo::GetCpuNum() const
+{
+    return m_cpuNum;
+}
+
+void NodeInfo::SetCpuNum(const uint64_t& _cpuNum)
+{
+    m_cpuNum = _cpuNum;
+    m_cpuNumHasBeenSet = true;
+}
+
+bool NodeInfo::CpuNumHasBeenSet() const
+{
+    return m_cpuNumHasBeenSet;
+}
+
+int64_t NodeInfo::GetMemSize() const
+{
+    return m_memSize;
+}
+
+void NodeInfo::SetMemSize(const int64_t& _memSize)
+{
+    m_memSize = _memSize;
+    m_memSizeHasBeenSet = true;
+}
+
+bool NodeInfo::MemSizeHasBeenSet() const
+{
+    return m_memSizeHasBeenSet;
 }
 

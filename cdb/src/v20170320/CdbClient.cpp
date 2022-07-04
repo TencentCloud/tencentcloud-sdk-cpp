@@ -4813,6 +4813,49 @@ CdbClient::OfflineIsolatedInstancesOutcomeCallable CdbClient::OfflineIsolatedIns
     return task->get_future();
 }
 
+CdbClient::OpenAuditServiceOutcome CdbClient::OpenAuditService(const OpenAuditServiceRequest &request)
+{
+    auto outcome = MakeRequest(request, "OpenAuditService");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        OpenAuditServiceResponse rsp = OpenAuditServiceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return OpenAuditServiceOutcome(rsp);
+        else
+            return OpenAuditServiceOutcome(o.GetError());
+    }
+    else
+    {
+        return OpenAuditServiceOutcome(outcome.GetError());
+    }
+}
+
+void CdbClient::OpenAuditServiceAsync(const OpenAuditServiceRequest& request, const OpenAuditServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->OpenAuditService(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdbClient::OpenAuditServiceOutcomeCallable CdbClient::OpenAuditServiceCallable(const OpenAuditServiceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<OpenAuditServiceOutcome()>>(
+        [this, request]()
+        {
+            return this->OpenAuditService(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdbClient::OpenDBInstanceGTIDOutcome CdbClient::OpenDBInstanceGTID(const OpenDBInstanceGTIDRequest &request)
 {
     auto outcome = MakeRequest(request, "OpenDBInstanceGTID");

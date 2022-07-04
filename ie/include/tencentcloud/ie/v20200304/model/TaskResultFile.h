@@ -113,6 +113,28 @@ namespace TencentCloud
                      */
                     bool MediaInfoHasBeenSet() const;
 
+                    /**
+                     * 获取文件对应的md5。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Md5 文件对应的md5。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetMd5() const;
+
+                    /**
+                     * 设置文件对应的md5。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Md5 文件对应的md5。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMd5(const std::string& _md5);
+
+                    /**
+                     * 判断参数 Md5 是否已赋值
+                     * @return Md5 是否已赋值
+                     */
+                    bool Md5HasBeenSet() const;
+
                 private:
 
                     /**
@@ -135,6 +157,13 @@ namespace TencentCloud
                      */
                     MediaResultInfo m_mediaInfo;
                     bool m_mediaInfoHasBeenSet;
+
+                    /**
+                     * 文件对应的md5。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_md5;
+                    bool m_md5HasBeenSet;
 
                 };
             }

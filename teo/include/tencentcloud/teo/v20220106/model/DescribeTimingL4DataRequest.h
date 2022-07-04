@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/teo/v20220106/model/Filter.h>
 
 
 namespace TencentCloud
@@ -97,14 +98,14 @@ namespace TencentCloud
                     bool MetricNamesHasBeenSet() const;
 
                     /**
-                     * 获取ZoneId列表，仅在zone/instance维度下查询时该参数有效
-                     * @return ZoneIds ZoneId列表，仅在zone/instance维度下查询时该参数有效
+                     * 获取站点id列表
+                     * @return ZoneIds 站点id列表
                      */
                     std::vector<std::string> GetZoneIds() const;
 
                     /**
-                     * 设置ZoneId列表，仅在zone/instance维度下查询时该参数有效
-                     * @param ZoneIds ZoneId列表，仅在zone/instance维度下查询时该参数有效
+                     * 设置站点id列表
+                     * @param ZoneIds 站点id列表
                      */
                     void SetZoneIds(const std::vector<std::string>& _zoneIds);
 
@@ -115,14 +116,14 @@ namespace TencentCloud
                     bool ZoneIdsHasBeenSet() const;
 
                     /**
-                     * 获取InstanceId列表，仅在Instance维度下查询时该参数有效
-                     * @return InstanceIds InstanceId列表，仅在Instance维度下查询时该参数有效
+                     * 获取该字段已废弃，请使用ProxyIds字段
+                     * @return InstanceIds 该字段已废弃，请使用ProxyIds字段
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
-                     * 设置InstanceId列表，仅在Instance维度下查询时该参数有效
-                     * @param InstanceIds InstanceId列表，仅在Instance维度下查询时该参数有效
+                     * 设置该字段已废弃，请使用ProxyIds字段
+                     * @param InstanceIds 该字段已废弃，请使用ProxyIds字段
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
 
@@ -133,14 +134,14 @@ namespace TencentCloud
                     bool InstanceIdsHasBeenSet() const;
 
                     /**
-                     * 获取协议类型， 该字段当前无效
-                     * @return Protocol 协议类型， 该字段当前无效
+                     * 获取该字段当前无效
+                     * @return Protocol 该字段当前无效
                      */
                     std::string GetProtocol() const;
 
                     /**
-                     * 设置协议类型， 该字段当前无效
-                     * @param Protocol 协议类型， 该字段当前无效
+                     * 设置该字段当前无效
+                     * @param Protocol 该字段当前无效
                      */
                     void SetProtocol(const std::string& _protocol);
 
@@ -169,14 +170,14 @@ namespace TencentCloud
                     bool IntervalHasBeenSet() const;
 
                     /**
-                     * 获取规则ID，仅在instance维度有效
-                     * @return RuleId 规则ID，仅在instance维度有效
+                     * 获取该字段当前无效，请使用Filter筛选
+                     * @return RuleId 该字段当前无效，请使用Filter筛选
                      */
                     std::string GetRuleId() const;
 
                     /**
-                     * 设置规则ID，仅在instance维度有效
-                     * @param RuleId 规则ID，仅在instance维度有效
+                     * 设置该字段当前无效，请使用Filter筛选
+                     * @param RuleId 该字段当前无效，请使用Filter筛选
                      */
                     void SetRuleId(const std::string& _ruleId);
 
@@ -185,6 +186,42 @@ namespace TencentCloud
                      * @return RuleId 是否已赋值
                      */
                     bool RuleIdHasBeenSet() const;
+
+                    /**
+                     * 获取支持的 Filter：proxyd,ruleId
+                     * @return Filters 支持的 Filter：proxyd,ruleId
+                     */
+                    std::vector<Filter> GetFilters() const;
+
+                    /**
+                     * 设置支持的 Filter：proxyd,ruleId
+                     * @param Filters 支持的 Filter：proxyd,ruleId
+                     */
+                    void SetFilters(const std::vector<Filter>& _filters);
+
+                    /**
+                     * 判断参数 Filters 是否已赋值
+                     * @return Filters 是否已赋值
+                     */
+                    bool FiltersHasBeenSet() const;
+
+                    /**
+                     * 获取四层实例列表
+                     * @return ProxyIds 四层实例列表
+                     */
+                    std::vector<std::string> GetProxyIds() const;
+
+                    /**
+                     * 设置四层实例列表
+                     * @param ProxyIds 四层实例列表
+                     */
+                    void SetProxyIds(const std::vector<std::string>& _proxyIds);
+
+                    /**
+                     * 判断参数 ProxyIds 是否已赋值
+                     * @return ProxyIds 是否已赋值
+                     */
+                    bool ProxyIdsHasBeenSet() const;
 
                 private:
 
@@ -207,19 +244,19 @@ namespace TencentCloud
                     bool m_metricNamesHasBeenSet;
 
                     /**
-                     * ZoneId列表，仅在zone/instance维度下查询时该参数有效
+                     * 站点id列表
                      */
                     std::vector<std::string> m_zoneIds;
                     bool m_zoneIdsHasBeenSet;
 
                     /**
-                     * InstanceId列表，仅在Instance维度下查询时该参数有效
+                     * 该字段已废弃，请使用ProxyIds字段
                      */
                     std::vector<std::string> m_instanceIds;
                     bool m_instanceIdsHasBeenSet;
 
                     /**
-                     * 协议类型， 该字段当前无效
+                     * 该字段当前无效
                      */
                     std::string m_protocol;
                     bool m_protocolHasBeenSet;
@@ -231,10 +268,22 @@ namespace TencentCloud
                     bool m_intervalHasBeenSet;
 
                     /**
-                     * 规则ID，仅在instance维度有效
+                     * 该字段当前无效，请使用Filter筛选
                      */
                     std::string m_ruleId;
                     bool m_ruleIdHasBeenSet;
+
+                    /**
+                     * 支持的 Filter：proxyd,ruleId
+                     */
+                    std::vector<Filter> m_filters;
+                    bool m_filtersHasBeenSet;
+
+                    /**
+                     * 四层实例列表
+                     */
+                    std::vector<std::string> m_proxyIds;
+                    bool m_proxyIdsHasBeenSet;
 
                 };
             }

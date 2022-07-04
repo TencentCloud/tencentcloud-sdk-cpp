@@ -50,7 +50,8 @@ InstanceDetail::InstanceDetail() :
     m_rebalanceTimeHasBeenSet(false),
     m_partitionNumberHasBeenSet(false),
     m_publicNetworkChargeTypeHasBeenSet(false),
-    m_publicNetworkHasBeenSet(false)
+    m_publicNetworkHasBeenSet(false),
+    m_clusterTypeHasBeenSet(false)
 {
 }
 
@@ -382,6 +383,16 @@ CoreInternalOutcome InstanceDetail::Deserialize(const rapidjson::Value &value)
         m_publicNetworkHasBeenSet = true;
     }
 
+    if (value.HasMember("ClusterType") && !value["ClusterType"].IsNull())
+    {
+        if (!value["ClusterType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceDetail.ClusterType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clusterType = string(value["ClusterType"].GetString());
+        m_clusterTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -646,6 +657,14 @@ void InstanceDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "PublicNetwork";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_publicNetwork, allocator);
+    }
+
+    if (m_clusterTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clusterType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1129,5 +1148,21 @@ void InstanceDetail::SetPublicNetwork(const int64_t& _publicNetwork)
 bool InstanceDetail::PublicNetworkHasBeenSet() const
 {
     return m_publicNetworkHasBeenSet;
+}
+
+string InstanceDetail::GetClusterType() const
+{
+    return m_clusterType;
+}
+
+void InstanceDetail::SetClusterType(const string& _clusterType)
+{
+    m_clusterType = _clusterType;
+    m_clusterTypeHasBeenSet = true;
+}
+
+bool InstanceDetail::ClusterTypeHasBeenSet() const
+{
+    return m_clusterTypeHasBeenSet;
 }
 

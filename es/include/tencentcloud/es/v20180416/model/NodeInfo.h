@@ -207,6 +207,50 @@ namespace TencentCloud
                      */
                     bool DiskEncryptHasBeenSet() const;
 
+                    /**
+                     * 获取cpu数目
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CpuNum cpu数目
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetCpuNum() const;
+
+                    /**
+                     * 设置cpu数目
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param CpuNum cpu数目
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCpuNum(const uint64_t& _cpuNum);
+
+                    /**
+                     * 判断参数 CpuNum 是否已赋值
+                     * @return CpuNum 是否已赋值
+                     */
+                    bool CpuNumHasBeenSet() const;
+
+                    /**
+                     * 获取内存大小，单位GB
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MemSize 内存大小，单位GB
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetMemSize() const;
+
+                    /**
+                     * 设置内存大小，单位GB
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param MemSize 内存大小，单位GB
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMemSize(const int64_t& _memSize);
+
+                    /**
+                     * 判断参数 MemSize 是否已赋值
+                     * @return MemSize 是否已赋值
+                     */
+                    bool MemSizeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -260,6 +304,20 @@ namespace TencentCloud
                      */
                     uint64_t m_diskEncrypt;
                     bool m_diskEncryptHasBeenSet;
+
+                    /**
+                     * cpu数目
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_cpuNum;
+                    bool m_cpuNumHasBeenSet;
+
+                    /**
+                     * 内存大小，单位GB
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_memSize;
+                    bool m_memSizeHasBeenSet;
 
                 };
             }

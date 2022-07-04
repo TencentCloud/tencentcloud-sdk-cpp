@@ -128,6 +128,48 @@ CloseAudit、LogExpireDay必须至少提供一个，如果两个都提供则按�
                      */
                     bool CloseAuditHasBeenSet() const;
 
+                    /**
+                     * 获取高频审计日志保存时长。支持值包括：
+7 - 一周
+30 - 一个月；
+180 - 六个月；
+365 - 一年；
+1095 - 三年；
+1825 - 五年；
+                     * @return HighLogExpireDay 高频审计日志保存时长。支持值包括：
+7 - 一周
+30 - 一个月；
+180 - 六个月；
+365 - 一年；
+1095 - 三年；
+1825 - 五年；
+                     */
+                    int64_t GetHighLogExpireDay() const;
+
+                    /**
+                     * 设置高频审计日志保存时长。支持值包括：
+7 - 一周
+30 - 一个月；
+180 - 六个月；
+365 - 一年；
+1095 - 三年；
+1825 - 五年；
+                     * @param HighLogExpireDay 高频审计日志保存时长。支持值包括：
+7 - 一周
+30 - 一个月；
+180 - 六个月；
+365 - 一年；
+1095 - 三年；
+1825 - 五年；
+                     */
+                    void SetHighLogExpireDay(const int64_t& _highLogExpireDay);
+
+                    /**
+                     * 判断参数 HighLogExpireDay 是否已赋值
+                     * @return HighLogExpireDay 是否已赋值
+                     */
+                    bool HighLogExpireDayHasBeenSet() const;
+
                 private:
 
                     /**
@@ -155,6 +197,18 @@ CloseAudit、LogExpireDay必须至少提供一个，如果两个都提供则按�
                      */
                     bool m_closeAudit;
                     bool m_closeAuditHasBeenSet;
+
+                    /**
+                     * 高频审计日志保存时长。支持值包括：
+7 - 一周
+30 - 一个月；
+180 - 六个月；
+365 - 一年；
+1095 - 三年；
+1825 - 五年；
+                     */
+                    int64_t m_highLogExpireDay;
+                    bool m_highLogExpireDayHasBeenSet;
 
                 };
             }

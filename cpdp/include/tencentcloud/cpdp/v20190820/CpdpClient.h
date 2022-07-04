@@ -25,6 +25,10 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/cpdp/v20190820/model/AddContractRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/AddContractResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/AddFlexIdInfoRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/AddFlexIdInfoResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/AddFlexPhoneNoRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/AddFlexPhoneNoResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/AddMerchantRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/AddMerchantResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/AddShopRequest.h>
@@ -249,8 +253,12 @@
 #include <tencentcloud/cpdp/v20190820/model/QueryExchangeRateResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryFlexAmountBeforeTaxRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryFlexAmountBeforeTaxResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryFlexBillDownloadUrlRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryFlexBillDownloadUrlResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryFlexFreezeOrderListRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryFlexFreezeOrderListResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryFlexOrderSummaryListRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryFlexOrderSummaryListResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryFlexPayeeAccountBalanceRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryFlexPayeeAccountBalanceResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryFlexPayeeAccountInfoRequest.h>
@@ -440,6 +448,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::AddContractResponse> AddContractOutcome;
                 typedef std::future<AddContractOutcome> AddContractOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::AddContractRequest&, AddContractOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddContractAsyncHandler;
+                typedef Outcome<Core::Error, Model::AddFlexIdInfoResponse> AddFlexIdInfoOutcome;
+                typedef std::future<AddFlexIdInfoOutcome> AddFlexIdInfoOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::AddFlexIdInfoRequest&, AddFlexIdInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddFlexIdInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::AddFlexPhoneNoResponse> AddFlexPhoneNoOutcome;
+                typedef std::future<AddFlexPhoneNoOutcome> AddFlexPhoneNoOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::AddFlexPhoneNoRequest&, AddFlexPhoneNoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddFlexPhoneNoAsyncHandler;
                 typedef Outcome<Core::Error, Model::AddMerchantResponse> AddMerchantOutcome;
                 typedef std::future<AddMerchantOutcome> AddMerchantOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::AddMerchantRequest&, AddMerchantOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddMerchantAsyncHandler;
@@ -776,9 +790,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::QueryFlexAmountBeforeTaxResponse> QueryFlexAmountBeforeTaxOutcome;
                 typedef std::future<QueryFlexAmountBeforeTaxOutcome> QueryFlexAmountBeforeTaxOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::QueryFlexAmountBeforeTaxRequest&, QueryFlexAmountBeforeTaxOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryFlexAmountBeforeTaxAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryFlexBillDownloadUrlResponse> QueryFlexBillDownloadUrlOutcome;
+                typedef std::future<QueryFlexBillDownloadUrlOutcome> QueryFlexBillDownloadUrlOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::QueryFlexBillDownloadUrlRequest&, QueryFlexBillDownloadUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryFlexBillDownloadUrlAsyncHandler;
                 typedef Outcome<Core::Error, Model::QueryFlexFreezeOrderListResponse> QueryFlexFreezeOrderListOutcome;
                 typedef std::future<QueryFlexFreezeOrderListOutcome> QueryFlexFreezeOrderListOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::QueryFlexFreezeOrderListRequest&, QueryFlexFreezeOrderListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryFlexFreezeOrderListAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryFlexOrderSummaryListResponse> QueryFlexOrderSummaryListOutcome;
+                typedef std::future<QueryFlexOrderSummaryListOutcome> QueryFlexOrderSummaryListOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::QueryFlexOrderSummaryListRequest&, QueryFlexOrderSummaryListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryFlexOrderSummaryListAsyncHandler;
                 typedef Outcome<Core::Error, Model::QueryFlexPayeeAccountBalanceResponse> QueryFlexPayeeAccountBalanceOutcome;
                 typedef std::future<QueryFlexPayeeAccountBalanceOutcome> QueryFlexPayeeAccountBalanceOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::QueryFlexPayeeAccountBalanceRequest&, QueryFlexPayeeAccountBalanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryFlexPayeeAccountBalanceAsyncHandler;
@@ -1048,6 +1068,24 @@ namespace TencentCloud
                 AddContractOutcome AddContract(const Model::AddContractRequest &request);
                 void AddContractAsync(const Model::AddContractRequest& request, const AddContractAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 AddContractOutcomeCallable AddContractCallable(const Model::AddContractRequest& request);
+
+                /**
+                 *灵云V2-补充证件信息
+                 * @param req AddFlexIdInfoRequest
+                 * @return AddFlexIdInfoOutcome
+                 */
+                AddFlexIdInfoOutcome AddFlexIdInfo(const Model::AddFlexIdInfoRequest &request);
+                void AddFlexIdInfoAsync(const Model::AddFlexIdInfoRequest& request, const AddFlexIdInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AddFlexIdInfoOutcomeCallable AddFlexIdInfoCallable(const Model::AddFlexIdInfoRequest& request);
+
+                /**
+                 *灵云V2-补充手机号信息
+                 * @param req AddFlexPhoneNoRequest
+                 * @return AddFlexPhoneNoOutcome
+                 */
+                AddFlexPhoneNoOutcome AddFlexPhoneNo(const Model::AddFlexPhoneNoRequest &request);
+                void AddFlexPhoneNoAsync(const Model::AddFlexPhoneNoRequest& request, const AddFlexPhoneNoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AddFlexPhoneNoOutcomeCallable AddFlexPhoneNoCallable(const Model::AddFlexPhoneNoRequest& request);
 
                 /**
                  *云支付-添加商户接口
@@ -2068,6 +2106,15 @@ namespace TencentCloud
                 QueryFlexAmountBeforeTaxOutcomeCallable QueryFlexAmountBeforeTaxCallable(const Model::QueryFlexAmountBeforeTaxRequest& request);
 
                 /**
+                 *灵云V2-查询对账单文件下载链接
+                 * @param req QueryFlexBillDownloadUrlRequest
+                 * @return QueryFlexBillDownloadUrlOutcome
+                 */
+                QueryFlexBillDownloadUrlOutcome QueryFlexBillDownloadUrl(const Model::QueryFlexBillDownloadUrlRequest &request);
+                void QueryFlexBillDownloadUrlAsync(const Model::QueryFlexBillDownloadUrlRequest& request, const QueryFlexBillDownloadUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryFlexBillDownloadUrlOutcomeCallable QueryFlexBillDownloadUrlCallable(const Model::QueryFlexBillDownloadUrlRequest& request);
+
+                /**
                  *灵云V2-查询冻结订单列表
                  * @param req QueryFlexFreezeOrderListRequest
                  * @return QueryFlexFreezeOrderListOutcome
@@ -2075,6 +2122,15 @@ namespace TencentCloud
                 QueryFlexFreezeOrderListOutcome QueryFlexFreezeOrderList(const Model::QueryFlexFreezeOrderListRequest &request);
                 void QueryFlexFreezeOrderListAsync(const Model::QueryFlexFreezeOrderListRequest& request, const QueryFlexFreezeOrderListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 QueryFlexFreezeOrderListOutcomeCallable QueryFlexFreezeOrderListCallable(const Model::QueryFlexFreezeOrderListRequest& request);
+
+                /**
+                 *灵云V2-订单汇总列表查询
+                 * @param req QueryFlexOrderSummaryListRequest
+                 * @return QueryFlexOrderSummaryListOutcome
+                 */
+                QueryFlexOrderSummaryListOutcome QueryFlexOrderSummaryList(const Model::QueryFlexOrderSummaryListRequest &request);
+                void QueryFlexOrderSummaryListAsync(const Model::QueryFlexOrderSummaryListRequest& request, const QueryFlexOrderSummaryListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryFlexOrderSummaryListOutcomeCallable QueryFlexOrderSummaryListCallable(const Model::QueryFlexOrderSummaryListRequest& request);
 
                 /**
                  *灵云V2-收款用户账户余额查询

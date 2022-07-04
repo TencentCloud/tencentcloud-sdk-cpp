@@ -45,6 +45,36 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取文件对应业务类型，用于区分文件存储路径：
+1. TEMPLATE - 模板； 文件类型：.pdf/.html
+2. DOCUMENT - 签署过程及签署后的合同文档 文件类型：.pdf/.html
+3. SEAL - 印章； 文件类型：.jpg/.jpeg/.png
+                     * @return BusinessType 文件对应业务类型，用于区分文件存储路径：
+1. TEMPLATE - 模板； 文件类型：.pdf/.html
+2. DOCUMENT - 签署过程及签署后的合同文档 文件类型：.pdf/.html
+3. SEAL - 印章； 文件类型：.jpg/.jpeg/.png
+                     */
+                    std::string GetBusinessType() const;
+
+                    /**
+                     * 设置文件对应业务类型，用于区分文件存储路径：
+1. TEMPLATE - 模板； 文件类型：.pdf/.html
+2. DOCUMENT - 签署过程及签署后的合同文档 文件类型：.pdf/.html
+3. SEAL - 印章； 文件类型：.jpg/.jpeg/.png
+                     * @param BusinessType 文件对应业务类型，用于区分文件存储路径：
+1. TEMPLATE - 模板； 文件类型：.pdf/.html
+2. DOCUMENT - 签署过程及签署后的合同文档 文件类型：.pdf/.html
+3. SEAL - 印章； 文件类型：.jpg/.jpeg/.png
+                     */
+                    void SetBusinessType(const std::string& _businessType);
+
+                    /**
+                     * 判断参数 BusinessType 是否已赋值
+                     * @return BusinessType 是否已赋值
+                     */
+                    bool BusinessTypeHasBeenSet() const;
+
+                    /**
                      * 获取调用方信息
                      * @return Caller 调用方信息
                      */
@@ -61,48 +91,6 @@ namespace TencentCloud
                      * @return Caller 是否已赋值
                      */
                     bool CallerHasBeenSet() const;
-
-                    /**
-                     * 获取文件对应业务类型，用于区分文件存储路径：
-1. TEMPLATE - 模板； 文件类型：.pdf/.html
-2. DOCUMENT - 签署过程及签署后的合同文档 文件类型：.pdf/.html
-3. FLOW - 签署过程 文件类型：.pdf/.html
-4. SEAL - 印章； 文件类型：.jpg/.jpeg/.png
-5. BUSINESSLICENSE - 营业执照 文件类型：.jpg/.jpeg/.png
-6. IDCARD - 身份证 文件类型：.jpg/.jpeg/.png
-                     * @return BusinessType 文件对应业务类型，用于区分文件存储路径：
-1. TEMPLATE - 模板； 文件类型：.pdf/.html
-2. DOCUMENT - 签署过程及签署后的合同文档 文件类型：.pdf/.html
-3. FLOW - 签署过程 文件类型：.pdf/.html
-4. SEAL - 印章； 文件类型：.jpg/.jpeg/.png
-5. BUSINESSLICENSE - 营业执照 文件类型：.jpg/.jpeg/.png
-6. IDCARD - 身份证 文件类型：.jpg/.jpeg/.png
-                     */
-                    std::string GetBusinessType() const;
-
-                    /**
-                     * 设置文件对应业务类型，用于区分文件存储路径：
-1. TEMPLATE - 模板； 文件类型：.pdf/.html
-2. DOCUMENT - 签署过程及签署后的合同文档 文件类型：.pdf/.html
-3. FLOW - 签署过程 文件类型：.pdf/.html
-4. SEAL - 印章； 文件类型：.jpg/.jpeg/.png
-5. BUSINESSLICENSE - 营业执照 文件类型：.jpg/.jpeg/.png
-6. IDCARD - 身份证 文件类型：.jpg/.jpeg/.png
-                     * @param BusinessType 文件对应业务类型，用于区分文件存储路径：
-1. TEMPLATE - 模板； 文件类型：.pdf/.html
-2. DOCUMENT - 签署过程及签署后的合同文档 文件类型：.pdf/.html
-3. FLOW - 签署过程 文件类型：.pdf/.html
-4. SEAL - 印章； 文件类型：.jpg/.jpeg/.png
-5. BUSINESSLICENSE - 营业执照 文件类型：.jpg/.jpeg/.png
-6. IDCARD - 身份证 文件类型：.jpg/.jpeg/.png
-                     */
-                    void SetBusinessType(const std::string& _businessType);
-
-                    /**
-                     * 判断参数 BusinessType 是否已赋值
-                     * @return BusinessType 是否已赋值
-                     */
-                    bool BusinessTypeHasBeenSet() const;
 
                     /**
                      * 获取上传文件内容数组，最多支持20个文件
@@ -141,20 +129,20 @@ namespace TencentCloud
                     bool FileUrlsHasBeenSet() const;
 
                     /**
-                     * 获取是否将pdf灰色矩阵置白
+                     * 获取此参数只对 PDF 文件有效。是否将pdf灰色矩阵置白
 true--是，处理置白
 false--否，不处理
-                     * @return CoverRect 是否将pdf灰色矩阵置白
+                     * @return CoverRect 此参数只对 PDF 文件有效。是否将pdf灰色矩阵置白
 true--是，处理置白
 false--否，不处理
                      */
                     bool GetCoverRect() const;
 
                     /**
-                     * 设置是否将pdf灰色矩阵置白
+                     * 设置此参数只对 PDF 文件有效。是否将pdf灰色矩阵置白
 true--是，处理置白
 false--否，不处理
-                     * @param CoverRect 是否将pdf灰色矩阵置白
+                     * @param CoverRect 此参数只对 PDF 文件有效。是否将pdf灰色矩阵置白
 true--是，处理置白
 false--否，不处理
                      */
@@ -167,18 +155,18 @@ false--否，不处理
                     bool CoverRectHasBeenSet() const;
 
                     /**
-                     * 获取特殊文件类型需要指定文件类型：
-HTML-- .html文件
-                     * @return FileType 特殊文件类型需要指定文件类型：
-HTML-- .html文件
+                     * 获取文件类型， 默认通过文件内容解析得到文件类型，客户可以显示的说明上传文件的类型。
+如：PDF 表示上传的文件 xxx.pdf的文件类型是 PDF
+                     * @return FileType 文件类型， 默认通过文件内容解析得到文件类型，客户可以显示的说明上传文件的类型。
+如：PDF 表示上传的文件 xxx.pdf的文件类型是 PDF
                      */
                     std::string GetFileType() const;
 
                     /**
-                     * 设置特殊文件类型需要指定文件类型：
-HTML-- .html文件
-                     * @param FileType 特殊文件类型需要指定文件类型：
-HTML-- .html文件
+                     * 设置文件类型， 默认通过文件内容解析得到文件类型，客户可以显示的说明上传文件的类型。
+如：PDF 表示上传的文件 xxx.pdf的文件类型是 PDF
+                     * @param FileType 文件类型， 默认通过文件内容解析得到文件类型，客户可以显示的说明上传文件的类型。
+如：PDF 表示上传的文件 xxx.pdf的文件类型是 PDF
                      */
                     void SetFileType(const std::string& _fileType);
 
@@ -209,22 +197,19 @@ HTML-- .html文件
                 private:
 
                     /**
+                     * 文件对应业务类型，用于区分文件存储路径：
+1. TEMPLATE - 模板； 文件类型：.pdf/.html
+2. DOCUMENT - 签署过程及签署后的合同文档 文件类型：.pdf/.html
+3. SEAL - 印章； 文件类型：.jpg/.jpeg/.png
+                     */
+                    std::string m_businessType;
+                    bool m_businessTypeHasBeenSet;
+
+                    /**
                      * 调用方信息
                      */
                     Caller m_caller;
                     bool m_callerHasBeenSet;
-
-                    /**
-                     * 文件对应业务类型，用于区分文件存储路径：
-1. TEMPLATE - 模板； 文件类型：.pdf/.html
-2. DOCUMENT - 签署过程及签署后的合同文档 文件类型：.pdf/.html
-3. FLOW - 签署过程 文件类型：.pdf/.html
-4. SEAL - 印章； 文件类型：.jpg/.jpeg/.png
-5. BUSINESSLICENSE - 营业执照 文件类型：.jpg/.jpeg/.png
-6. IDCARD - 身份证 文件类型：.jpg/.jpeg/.png
-                     */
-                    std::string m_businessType;
-                    bool m_businessTypeHasBeenSet;
 
                     /**
                      * 上传文件内容数组，最多支持20个文件
@@ -239,7 +224,7 @@ HTML-- .html文件
                     bool m_fileUrlsHasBeenSet;
 
                     /**
-                     * 是否将pdf灰色矩阵置白
+                     * 此参数只对 PDF 文件有效。是否将pdf灰色矩阵置白
 true--是，处理置白
 false--否，不处理
                      */
@@ -247,8 +232,8 @@ false--否，不处理
                     bool m_coverRectHasBeenSet;
 
                     /**
-                     * 特殊文件类型需要指定文件类型：
-HTML-- .html文件
+                     * 文件类型， 默认通过文件内容解析得到文件类型，客户可以显示的说明上传文件的类型。
+如：PDF 表示上传的文件 xxx.pdf的文件类型是 PDF
                      */
                     std::string m_fileType;
                     bool m_fileTypeHasBeenSet;

@@ -632,6 +632,28 @@ namespace TencentCloud
                      */
                     bool PublicNetworkHasBeenSet() const;
 
+                    /**
+                     * 获取实例类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ClusterType 实例类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetClusterType() const;
+
+                    /**
+                     * 设置实例类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ClusterType 实例类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetClusterType(const std::string& _clusterType);
+
+                    /**
+                     * 判断参数 ClusterType 是否已赋值
+                     * @return ClusterType 是否已赋值
+                     */
+                    bool ClusterTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -824,6 +846,13 @@ namespace TencentCloud
                      */
                     int64_t m_publicNetwork;
                     bool m_publicNetworkHasBeenSet;
+
+                    /**
+                     * 实例类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_clusterType;
+                    bool m_clusterTypeHasBeenSet;
 
                 };
             }

@@ -21,7 +21,8 @@ using namespace TencentCloud::Ie::V20200304::Model;
 using namespace std;
 
 MediaJoiningInfo::MediaJoiningInfo() :
-    m_targetInfoHasBeenSet(false)
+    m_targetInfoHasBeenSet(false),
+    m_modeHasBeenSet(false)
 {
 }
 
@@ -47,6 +48,16 @@ CoreInternalOutcome MediaJoiningInfo::Deserialize(const rapidjson::Value &value)
         m_targetInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("Mode") && !value["Mode"].IsNull())
+    {
+        if (!value["Mode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MediaJoiningInfo.Mode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_mode = string(value["Mode"].GetString());
+        m_modeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -61,6 +72,14 @@ void MediaJoiningInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_targetInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_modeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Mode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_mode.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -80,5 +99,21 @@ void MediaJoiningInfo::SetTargetInfo(const MediaTargetInfo& _targetInfo)
 bool MediaJoiningInfo::TargetInfoHasBeenSet() const
 {
     return m_targetInfoHasBeenSet;
+}
+
+string MediaJoiningInfo::GetMode() const
+{
+    return m_mode;
+}
+
+void MediaJoiningInfo::SetMode(const string& _mode)
+{
+    m_mode = _mode;
+    m_modeHasBeenSet = true;
+}
+
+bool MediaJoiningInfo::ModeHasBeenSet() const
+{
+    return m_modeHasBeenSet;
 }
 

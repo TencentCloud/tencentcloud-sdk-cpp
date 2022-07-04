@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/teo/v20220106/model/BotManagedRule.h>
 #include <tencentcloud/teo/v20220106/model/BotPortraitRule.h>
+#include <tencentcloud/teo/v20220106/model/IntelligenceRule.h>
 
 
 namespace TencentCloud
@@ -138,6 +139,28 @@ namespace TencentCloud
                      */
                     bool PortraitRuleHasBeenSet() const;
 
+                    /**
+                     * 获取Bot智能分析
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IntelligenceRule Bot智能分析
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    IntelligenceRule GetIntelligenceRule() const;
+
+                    /**
+                     * 设置Bot智能分析
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param IntelligenceRule Bot智能分析
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIntelligenceRule(const IntelligenceRule& _intelligenceRule);
+
+                    /**
+                     * 判断参数 IntelligenceRule 是否已赋值
+                     * @return IntelligenceRule 是否已赋值
+                     */
+                    bool IntelligenceRuleHasBeenSet() const;
+
                 private:
 
                     /**
@@ -169,6 +192,13 @@ namespace TencentCloud
                      */
                     BotPortraitRule m_portraitRule;
                     bool m_portraitRuleHasBeenSet;
+
+                    /**
+                     * Bot智能分析
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    IntelligenceRule m_intelligenceRule;
+                    bool m_intelligenceRuleHasBeenSet;
 
                 };
             }

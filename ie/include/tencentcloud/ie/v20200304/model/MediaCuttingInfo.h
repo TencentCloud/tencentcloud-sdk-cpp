@@ -27,6 +27,7 @@
 #include <tencentcloud/ie/v20200304/model/MediaCuttingTimeInfo.h>
 #include <tencentcloud/ie/v20200304/model/MediaTargetInfo.h>
 #include <tencentcloud/ie/v20200304/model/MediaCuttingOutForm.h>
+#include <tencentcloud/ie/v20200304/model/MediaCuttingWatermark.h>
 
 
 namespace TencentCloud
@@ -38,7 +39,8 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 编辑处理/剪切任务信息
+                * 编辑处理/剪切任务信息。
+截图结果默认存在 SaveInfoSet 的第一个存储位置。
                 */
                 class MediaCuttingInfo : public AbstractModel
                 {
@@ -105,21 +107,25 @@ namespace TencentCloud
 
                     /**
                      * 获取列表文件形式，存储到用户存储服务中，可选值：
-UseSaveInfo：默认，结果列表和结果存储同一位置；
-NoListFile：不存储结果列表。
+<li>NoListFile：不存储结果列表; </li>
+<li>UseSaveInfo：默认，结果列表和结果存储同一位置（即SaveInfoSet 的第一个存储位置）；</li>
+<li>SaveInfoSet 存储的Id：存储在指定的存储位置。</li>
                      * @return ResultListSaveType 列表文件形式，存储到用户存储服务中，可选值：
-UseSaveInfo：默认，结果列表和结果存储同一位置；
-NoListFile：不存储结果列表。
+<li>NoListFile：不存储结果列表; </li>
+<li>UseSaveInfo：默认，结果列表和结果存储同一位置（即SaveInfoSet 的第一个存储位置）；</li>
+<li>SaveInfoSet 存储的Id：存储在指定的存储位置。</li>
                      */
                     std::string GetResultListSaveType() const;
 
                     /**
                      * 设置列表文件形式，存储到用户存储服务中，可选值：
-UseSaveInfo：默认，结果列表和结果存储同一位置；
-NoListFile：不存储结果列表。
+<li>NoListFile：不存储结果列表; </li>
+<li>UseSaveInfo：默认，结果列表和结果存储同一位置（即SaveInfoSet 的第一个存储位置）；</li>
+<li>SaveInfoSet 存储的Id：存储在指定的存储位置。</li>
                      * @param ResultListSaveType 列表文件形式，存储到用户存储服务中，可选值：
-UseSaveInfo：默认，结果列表和结果存储同一位置；
-NoListFile：不存储结果列表。
+<li>NoListFile：不存储结果列表; </li>
+<li>UseSaveInfo：默认，结果列表和结果存储同一位置（即SaveInfoSet 的第一个存储位置）；</li>
+<li>SaveInfoSet 存储的Id：存储在指定的存储位置。</li>
                      */
                     void SetResultListSaveType(const std::string& _resultListSaveType);
 
@@ -128,6 +134,42 @@ NoListFile：不存储结果列表。
                      * @return ResultListSaveType 是否已赋值
                      */
                     bool ResultListSaveTypeHasBeenSet() const;
+
+                    /**
+                     * 获取水印信息，最多支持 10 个水印。
+                     * @return WatermarkInfoSet 水印信息，最多支持 10 个水印。
+                     */
+                    std::vector<MediaCuttingWatermark> GetWatermarkInfoSet() const;
+
+                    /**
+                     * 设置水印信息，最多支持 10 个水印。
+                     * @param WatermarkInfoSet 水印信息，最多支持 10 个水印。
+                     */
+                    void SetWatermarkInfoSet(const std::vector<MediaCuttingWatermark>& _watermarkInfoSet);
+
+                    /**
+                     * 判断参数 WatermarkInfoSet 是否已赋值
+                     * @return WatermarkInfoSet 是否已赋值
+                     */
+                    bool WatermarkInfoSetHasBeenSet() const;
+
+                    /**
+                     * 获取是否去除纯色截图，如果值为 True ，对应时间点的截图如果是纯色，将略过。
+                     * @return DropPureColor 是否去除纯色截图，如果值为 True ，对应时间点的截图如果是纯色，将略过。
+                     */
+                    std::string GetDropPureColor() const;
+
+                    /**
+                     * 设置是否去除纯色截图，如果值为 True ，对应时间点的截图如果是纯色，将略过。
+                     * @param DropPureColor 是否去除纯色截图，如果值为 True ，对应时间点的截图如果是纯色，将略过。
+                     */
+                    void SetDropPureColor(const std::string& _dropPureColor);
+
+                    /**
+                     * 判断参数 DropPureColor 是否已赋值
+                     * @return DropPureColor 是否已赋值
+                     */
+                    bool DropPureColorHasBeenSet() const;
 
                 private:
 
@@ -151,11 +193,24 @@ NoListFile：不存储结果列表。
 
                     /**
                      * 列表文件形式，存储到用户存储服务中，可选值：
-UseSaveInfo：默认，结果列表和结果存储同一位置；
-NoListFile：不存储结果列表。
+<li>NoListFile：不存储结果列表; </li>
+<li>UseSaveInfo：默认，结果列表和结果存储同一位置（即SaveInfoSet 的第一个存储位置）；</li>
+<li>SaveInfoSet 存储的Id：存储在指定的存储位置。</li>
                      */
                     std::string m_resultListSaveType;
                     bool m_resultListSaveTypeHasBeenSet;
+
+                    /**
+                     * 水印信息，最多支持 10 个水印。
+                     */
+                    std::vector<MediaCuttingWatermark> m_watermarkInfoSet;
+                    bool m_watermarkInfoSetHasBeenSet;
+
+                    /**
+                     * 是否去除纯色截图，如果值为 True ，对应时间点的截图如果是纯色，将略过。
+                     */
+                    std::string m_dropPureColor;
+                    bool m_dropPureColorHasBeenSet;
 
                 };
             }

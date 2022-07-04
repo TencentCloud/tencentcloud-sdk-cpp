@@ -96,6 +96,24 @@ namespace TencentCloud
                      */
                     bool BusinessHasBeenSet() const;
 
+                    /**
+                     * 获取cdc专有集群业务字段，可忽略
+                     * @return CdcId cdc专有集群业务字段，可忽略
+                     */
+                    std::string GetCdcId() const;
+
+                    /**
+                     * 设置cdc专有集群业务字段，可忽略
+                     * @param CdcId cdc专有集群业务字段，可忽略
+                     */
+                    void SetCdcId(const std::string& _cdcId);
+
+                    /**
+                     * 判断参数 CdcId 是否已赋值
+                     * @return CdcId 是否已赋值
+                     */
+                    bool CdcIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -115,6 +133,12 @@ namespace TencentCloud
                      */
                     std::string m_business;
                     bool m_businessHasBeenSet;
+
+                    /**
+                     * cdc专有集群业务字段，可忽略
+                     */
+                    std::string m_cdcId;
+                    bool m_cdcIdHasBeenSet;
 
                 };
             }

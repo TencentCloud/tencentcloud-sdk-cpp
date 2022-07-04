@@ -33,7 +33,8 @@ DDoSAntiPly::DDoSAntiPly() :
     m_abnormalSynRatioHasBeenSet(false),
     m_abnormalSynNumHasBeenSet(false),
     m_connectTimeoutHasBeenSet(false),
-    m_emptyConnectProtectHasBeenSet(false)
+    m_emptyConnectProtectHasBeenSet(false),
+    m_udpShardHasBeenSet(false)
 {
 }
 
@@ -172,6 +173,16 @@ CoreInternalOutcome DDoSAntiPly::Deserialize(const rapidjson::Value &value)
         m_emptyConnectProtectHasBeenSet = true;
     }
 
+    if (value.HasMember("UdpShard") && !value["UdpShard"].IsNull())
+    {
+        if (!value["UdpShard"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DDoSAntiPly.UdpShard` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_udpShard = string(value["UdpShard"].GetString());
+        m_udpShardHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -281,6 +292,14 @@ void DDoSAntiPly::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "EmptyConnectProtect";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_emptyConnectProtect.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_udpShardHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UdpShard";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_udpShard.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -492,5 +511,21 @@ void DDoSAntiPly::SetEmptyConnectProtect(const string& _emptyConnectProtect)
 bool DDoSAntiPly::EmptyConnectProtectHasBeenSet() const
 {
     return m_emptyConnectProtectHasBeenSet;
+}
+
+string DDoSAntiPly::GetUdpShard() const
+{
+    return m_udpShard;
+}
+
+void DDoSAntiPly::SetUdpShard(const string& _udpShard)
+{
+    m_udpShard = _udpShard;
+    m_udpShardHasBeenSet = true;
+}
+
+bool DDoSAntiPly::UdpShardHasBeenSet() const
+{
+    return m_udpShardHasBeenSet;
 }
 

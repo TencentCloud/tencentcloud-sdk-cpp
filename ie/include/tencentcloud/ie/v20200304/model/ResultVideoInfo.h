@@ -135,17 +135,17 @@ namespace TencentCloud
                     bool HeightHasBeenSet() const;
 
                     /**
-                     * 获取视频帧率
+                     * 获取视频帧率，如果高于原始帧率，部分服务将无效。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Fps 视频帧率
+                     * @return Fps 视频帧率，如果高于原始帧率，部分服务将无效。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetFps() const;
 
                     /**
-                     * 设置视频帧率
+                     * 设置视频帧率，如果高于原始帧率，部分服务将无效。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Fps 视频帧率
+                     * @param Fps 视频帧率，如果高于原始帧率，部分服务将无效。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetFps(const int64_t& _fps);
@@ -187,7 +187,7 @@ namespace TencentCloud
                     bool m_heightHasBeenSet;
 
                     /**
-                     * 视频帧率
+                     * 视频帧率，如果高于原始帧率，部分服务将无效。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_fps;

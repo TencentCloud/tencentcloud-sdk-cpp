@@ -87,6 +87,28 @@ namespace TencentCloud
                      */
                     bool CosInfoHasBeenSet() const;
 
+                    /**
+                     * 获取存储信息ID标记，用于多个输出场景。部分任务支持多输出时，一般要求必选。
+ID只能包含字母、数字、下划线、中划线，长读不能超过128。
+                     * @return Id 存储信息ID标记，用于多个输出场景。部分任务支持多输出时，一般要求必选。
+ID只能包含字母、数字、下划线、中划线，长读不能超过128。
+                     */
+                    std::string GetId() const;
+
+                    /**
+                     * 设置存储信息ID标记，用于多个输出场景。部分任务支持多输出时，一般要求必选。
+ID只能包含字母、数字、下划线、中划线，长读不能超过128。
+                     * @param Id 存储信息ID标记，用于多个输出场景。部分任务支持多输出时，一般要求必选。
+ID只能包含字母、数字、下划线、中划线，长读不能超过128。
+                     */
+                    void SetId(const std::string& _id);
+
+                    /**
+                     * 判断参数 Id 是否已赋值
+                     * @return Id 是否已赋值
+                     */
+                    bool IdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -101,6 +123,13 @@ namespace TencentCloud
                      */
                     CosInfo m_cosInfo;
                     bool m_cosInfoHasBeenSet;
+
+                    /**
+                     * 存储信息ID标记，用于多个输出场景。部分任务支持多输出时，一般要求必选。
+ID只能包含字母、数字、下划线、中划线，长读不能超过128。
+                     */
+                    std::string m_id;
+                    bool m_idHasBeenSet;
 
                 };
             }

@@ -29,6 +29,10 @@
 #include <tencentcloud/cvm/v20170312/model/AssociateInstancesKeyPairsResponse.h>
 #include <tencentcloud/cvm/v20170312/model/AssociateSecurityGroupsRequest.h>
 #include <tencentcloud/cvm/v20170312/model/AssociateSecurityGroupsResponse.h>
+#include <tencentcloud/cvm/v20170312/model/ConfigureChcAssistVpcRequest.h>
+#include <tencentcloud/cvm/v20170312/model/ConfigureChcAssistVpcResponse.h>
+#include <tencentcloud/cvm/v20170312/model/ConfigureChcDeployVpcRequest.h>
+#include <tencentcloud/cvm/v20170312/model/ConfigureChcDeployVpcResponse.h>
 #include <tencentcloud/cvm/v20170312/model/CreateDisasterRecoverGroupRequest.h>
 #include <tencentcloud/cvm/v20170312/model/CreateDisasterRecoverGroupResponse.h>
 #include <tencentcloud/cvm/v20170312/model/CreateImageRequest.h>
@@ -131,6 +135,8 @@
 #include <tencentcloud/cvm/v20170312/model/InquiryPriceRunInstancesResponse.h>
 #include <tencentcloud/cvm/v20170312/model/InquiryPriceTerminateInstancesRequest.h>
 #include <tencentcloud/cvm/v20170312/model/InquiryPriceTerminateInstancesResponse.h>
+#include <tencentcloud/cvm/v20170312/model/ModifyChcAttributeRequest.h>
+#include <tencentcloud/cvm/v20170312/model/ModifyChcAttributeResponse.h>
 #include <tencentcloud/cvm/v20170312/model/ModifyDisasterRecoverGroupAttributeRequest.h>
 #include <tencentcloud/cvm/v20170312/model/ModifyDisasterRecoverGroupAttributeResponse.h>
 #include <tencentcloud/cvm/v20170312/model/ModifyHostsAttributeRequest.h>
@@ -161,6 +167,10 @@
 #include <tencentcloud/cvm/v20170312/model/PurchaseReservedInstancesOfferingResponse.h>
 #include <tencentcloud/cvm/v20170312/model/RebootInstancesRequest.h>
 #include <tencentcloud/cvm/v20170312/model/RebootInstancesResponse.h>
+#include <tencentcloud/cvm/v20170312/model/RemoveChcAssistVpcRequest.h>
+#include <tencentcloud/cvm/v20170312/model/RemoveChcAssistVpcResponse.h>
+#include <tencentcloud/cvm/v20170312/model/RemoveChcDeployVpcRequest.h>
+#include <tencentcloud/cvm/v20170312/model/RemoveChcDeployVpcResponse.h>
 #include <tencentcloud/cvm/v20170312/model/RenewHostsRequest.h>
 #include <tencentcloud/cvm/v20170312/model/RenewHostsResponse.h>
 #include <tencentcloud/cvm/v20170312/model/RenewInstancesRequest.h>
@@ -208,6 +218,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::AssociateSecurityGroupsResponse> AssociateSecurityGroupsOutcome;
                 typedef std::future<AssociateSecurityGroupsOutcome> AssociateSecurityGroupsOutcomeCallable;
                 typedef std::function<void(const CvmClient*, const Model::AssociateSecurityGroupsRequest&, AssociateSecurityGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AssociateSecurityGroupsAsyncHandler;
+                typedef Outcome<Core::Error, Model::ConfigureChcAssistVpcResponse> ConfigureChcAssistVpcOutcome;
+                typedef std::future<ConfigureChcAssistVpcOutcome> ConfigureChcAssistVpcOutcomeCallable;
+                typedef std::function<void(const CvmClient*, const Model::ConfigureChcAssistVpcRequest&, ConfigureChcAssistVpcOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ConfigureChcAssistVpcAsyncHandler;
+                typedef Outcome<Core::Error, Model::ConfigureChcDeployVpcResponse> ConfigureChcDeployVpcOutcome;
+                typedef std::future<ConfigureChcDeployVpcOutcome> ConfigureChcDeployVpcOutcomeCallable;
+                typedef std::function<void(const CvmClient*, const Model::ConfigureChcDeployVpcRequest&, ConfigureChcDeployVpcOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ConfigureChcDeployVpcAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateDisasterRecoverGroupResponse> CreateDisasterRecoverGroupOutcome;
                 typedef std::future<CreateDisasterRecoverGroupOutcome> CreateDisasterRecoverGroupOutcomeCallable;
                 typedef std::function<void(const CvmClient*, const Model::CreateDisasterRecoverGroupRequest&, CreateDisasterRecoverGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDisasterRecoverGroupAsyncHandler;
@@ -361,6 +377,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::InquiryPriceTerminateInstancesResponse> InquiryPriceTerminateInstancesOutcome;
                 typedef std::future<InquiryPriceTerminateInstancesOutcome> InquiryPriceTerminateInstancesOutcomeCallable;
                 typedef std::function<void(const CvmClient*, const Model::InquiryPriceTerminateInstancesRequest&, InquiryPriceTerminateInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InquiryPriceTerminateInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyChcAttributeResponse> ModifyChcAttributeOutcome;
+                typedef std::future<ModifyChcAttributeOutcome> ModifyChcAttributeOutcomeCallable;
+                typedef std::function<void(const CvmClient*, const Model::ModifyChcAttributeRequest&, ModifyChcAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyChcAttributeAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyDisasterRecoverGroupAttributeResponse> ModifyDisasterRecoverGroupAttributeOutcome;
                 typedef std::future<ModifyDisasterRecoverGroupAttributeOutcome> ModifyDisasterRecoverGroupAttributeOutcomeCallable;
                 typedef std::function<void(const CvmClient*, const Model::ModifyDisasterRecoverGroupAttributeRequest&, ModifyDisasterRecoverGroupAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDisasterRecoverGroupAttributeAsyncHandler;
@@ -406,6 +425,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RebootInstancesResponse> RebootInstancesOutcome;
                 typedef std::future<RebootInstancesOutcome> RebootInstancesOutcomeCallable;
                 typedef std::function<void(const CvmClient*, const Model::RebootInstancesRequest&, RebootInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RebootInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::RemoveChcAssistVpcResponse> RemoveChcAssistVpcOutcome;
+                typedef std::future<RemoveChcAssistVpcOutcome> RemoveChcAssistVpcOutcomeCallable;
+                typedef std::function<void(const CvmClient*, const Model::RemoveChcAssistVpcRequest&, RemoveChcAssistVpcOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RemoveChcAssistVpcAsyncHandler;
+                typedef Outcome<Core::Error, Model::RemoveChcDeployVpcResponse> RemoveChcDeployVpcOutcome;
+                typedef std::future<RemoveChcDeployVpcOutcome> RemoveChcDeployVpcOutcomeCallable;
+                typedef std::function<void(const CvmClient*, const Model::RemoveChcDeployVpcRequest&, RemoveChcDeployVpcOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RemoveChcDeployVpcAsyncHandler;
                 typedef Outcome<Core::Error, Model::RenewHostsResponse> RenewHostsOutcome;
                 typedef std::future<RenewHostsOutcome> RenewHostsOutcomeCallable;
                 typedef std::function<void(const CvmClient*, const Model::RenewHostsRequest&, RenewHostsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RenewHostsAsyncHandler;
@@ -478,6 +503,24 @@ namespace TencentCloud
                 AssociateSecurityGroupsOutcome AssociateSecurityGroups(const Model::AssociateSecurityGroupsRequest &request);
                 void AssociateSecurityGroupsAsync(const Model::AssociateSecurityGroupsRequest& request, const AssociateSecurityGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 AssociateSecurityGroupsOutcomeCallable AssociateSecurityGroupsCallable(const Model::AssociateSecurityGroupsRequest& request);
+
+                /**
+                 *配置CHC物理服务器的带外和部署网络。传入带外网络和部署网络信息
+                 * @param req ConfigureChcAssistVpcRequest
+                 * @return ConfigureChcAssistVpcOutcome
+                 */
+                ConfigureChcAssistVpcOutcome ConfigureChcAssistVpc(const Model::ConfigureChcAssistVpcRequest &request);
+                void ConfigureChcAssistVpcAsync(const Model::ConfigureChcAssistVpcRequest& request, const ConfigureChcAssistVpcAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ConfigureChcAssistVpcOutcomeCallable ConfigureChcAssistVpcCallable(const Model::ConfigureChcAssistVpcRequest& request);
+
+                /**
+                 *配置CHC物理服务器部署网络
+                 * @param req ConfigureChcDeployVpcRequest
+                 * @return ConfigureChcDeployVpcOutcome
+                 */
+                ConfigureChcDeployVpcOutcome ConfigureChcDeployVpc(const Model::ConfigureChcDeployVpcRequest &request);
+                void ConfigureChcDeployVpcAsync(const Model::ConfigureChcDeployVpcRequest& request, const ConfigureChcDeployVpcAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ConfigureChcDeployVpcOutcomeCallable ConfigureChcDeployVpcCallable(const Model::ConfigureChcDeployVpcRequest& request);
 
                 /**
                  *本接口 (CreateDisasterRecoverGroup)用于创建[分散置放群组](https://cloud.tencent.com/document/product/213/15486)。创建好的置放群组，可在[创建实例](https://cloud.tencent.com/document/api/213/15730)时指定。
@@ -1029,6 +1072,15 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
                 InquiryPriceTerminateInstancesOutcomeCallable InquiryPriceTerminateInstancesCallable(const Model::InquiryPriceTerminateInstancesRequest& request);
 
                 /**
+                 *修改CHC物理服务器的属性
+                 * @param req ModifyChcAttributeRequest
+                 * @return ModifyChcAttributeOutcome
+                 */
+                ModifyChcAttributeOutcome ModifyChcAttribute(const Model::ModifyChcAttributeRequest &request);
+                void ModifyChcAttributeAsync(const Model::ModifyChcAttributeRequest& request, const ModifyChcAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyChcAttributeOutcomeCallable ModifyChcAttributeCallable(const Model::ModifyChcAttributeRequest& request);
+
+                /**
                  *本接口 (ModifyDisasterRecoverGroupAttribute)用于修改[分散置放群组](https://cloud.tencent.com/document/product/213/15486)属性。
                  * @param req ModifyDisasterRecoverGroupAttributeRequest
                  * @return ModifyDisasterRecoverGroupAttributeOutcome
@@ -1210,6 +1262,24 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
                 RebootInstancesOutcome RebootInstances(const Model::RebootInstancesRequest &request);
                 void RebootInstancesAsync(const Model::RebootInstancesRequest& request, const RebootInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RebootInstancesOutcomeCallable RebootInstancesCallable(const Model::RebootInstancesRequest& request);
+
+                /**
+                 *清理CHC物理服务器的带外网络和部署网络
+                 * @param req RemoveChcAssistVpcRequest
+                 * @return RemoveChcAssistVpcOutcome
+                 */
+                RemoveChcAssistVpcOutcome RemoveChcAssistVpc(const Model::RemoveChcAssistVpcRequest &request);
+                void RemoveChcAssistVpcAsync(const Model::RemoveChcAssistVpcRequest& request, const RemoveChcAssistVpcAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RemoveChcAssistVpcOutcomeCallable RemoveChcAssistVpcCallable(const Model::RemoveChcAssistVpcRequest& request);
+
+                /**
+                 *清理CHC物理服务器的部署网络
+                 * @param req RemoveChcDeployVpcRequest
+                 * @return RemoveChcDeployVpcOutcome
+                 */
+                RemoveChcDeployVpcOutcome RemoveChcDeployVpc(const Model::RemoveChcDeployVpcRequest &request);
+                void RemoveChcDeployVpcAsync(const Model::RemoveChcDeployVpcRequest& request, const RemoveChcDeployVpcAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RemoveChcDeployVpcOutcomeCallable RemoveChcDeployVpcCallable(const Model::RemoveChcDeployVpcRequest& request);
 
                 /**
                  *本接口 (RenewHosts) 用于续费包年包月CDH实例。

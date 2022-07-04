@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取视频宽度，单位像素
-                     * @return Width 视频宽度，单位像素
+                     * 获取视频宽度，单位像素，一般要求是偶数，否则会向下对齐。
+                     * @return Width 视频宽度，单位像素，一般要求是偶数，否则会向下对齐。
                      */
                     int64_t GetWidth() const;
 
                     /**
-                     * 设置视频宽度，单位像素
-                     * @param Width 视频宽度，单位像素
+                     * 设置视频宽度，单位像素，一般要求是偶数，否则会向下对齐。
+                     * @param Width 视频宽度，单位像素，一般要求是偶数，否则会向下对齐。
                      */
                     void SetWidth(const int64_t& _width);
 
@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool WidthHasBeenSet() const;
 
                     /**
-                     * 获取视频高度，单位像素
-                     * @return Height 视频高度，单位像素
+                     * 获取视频高度，单位像素，一般要求是偶数，否则会向下对齐。
+                     * @return Height 视频高度，单位像素，一般要求是偶数，否则会向下对齐。
                      */
                     int64_t GetHeight() const;
 
                     /**
-                     * 设置视频高度，单位像素
-                     * @param Height 视频高度，单位像素
+                     * 设置视频高度，单位像素，一般要求是偶数，否则会向下对齐。
+                     * @param Height 视频高度，单位像素，一般要求是偶数，否则会向下对齐。
                      */
                     void SetHeight(const int64_t& _height);
 
@@ -103,13 +103,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 视频宽度，单位像素
+                     * 视频宽度，单位像素，一般要求是偶数，否则会向下对齐。
                      */
                     int64_t m_width;
                     bool m_widthHasBeenSet;
 
                     /**
-                     * 视频高度，单位像素
+                     * 视频高度，单位像素，一般要求是偶数，否则会向下对齐。
                      */
                     int64_t m_height;
                     bool m_heightHasBeenSet;

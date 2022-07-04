@@ -206,6 +206,28 @@ namespace TencentCloud
                      */
                     bool SwitchHasBeenSet() const;
 
+                    /**
+                     * 获取UDP分片功能是否支持，off-不支持，on-支持
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UdpShardOpen UDP分片功能是否支持，off-不支持，on-支持
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetUdpShardOpen() const;
+
+                    /**
+                     * 设置UDP分片功能是否支持，off-不支持，on-支持
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param UdpShardOpen UDP分片功能是否支持，off-不支持，on-支持
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetUdpShardOpen(const std::string& _udpShardOpen);
+
+                    /**
+                     * 判断参数 UdpShardOpen 是否已赋值
+                     * @return UdpShardOpen 是否已赋值
+                     */
+                    bool UdpShardOpenHasBeenSet() const;
+
                 private:
 
                     /**
@@ -256,6 +278,13 @@ namespace TencentCloud
                      */
                     std::string m_switch;
                     bool m_switchHasBeenSet;
+
+                    /**
+                     * UDP分片功能是否支持，off-不支持，on-支持
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_udpShardOpen;
+                    bool m_udpShardOpenHasBeenSet;
 
                 };
             }

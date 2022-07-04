@@ -24,7 +24,6 @@ using namespace std;
 
 CreateClusterRequest::CreateClusterRequest() :
     m_zoneHasBeenSet(false),
-    m_dBVersionHasBeenSet(false),
     m_masterUserPasswordHasBeenSet(false),
     m_cPUHasBeenSet(false),
     m_memoryHasBeenSet(false),
@@ -32,11 +31,14 @@ CreateClusterRequest::CreateClusterRequest() :
     m_subnetIdHasBeenSet(false),
     m_payModeHasBeenSet(false),
     m_clusterNameHasBeenSet(false),
+    m_dBVersionHasBeenSet(false),
     m_projectIdHasBeenSet(false),
     m_portHasBeenSet(false),
     m_instanceCountHasBeenSet(false),
     m_periodHasBeenSet(false),
-    m_autoRenewFlagHasBeenSet(false)
+    m_autoRenewFlagHasBeenSet(false),
+    m_dBMajorVersionHasBeenSet(false),
+    m_dBKernelVersionHasBeenSet(false)
 {
 }
 
@@ -53,14 +55,6 @@ string CreateClusterRequest::ToJsonString() const
         string key = "Zone";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_zone.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_dBVersionHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "DBVersion";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_dBVersion.c_str(), allocator).Move(), allocator);
     }
 
     if (m_masterUserPasswordHasBeenSet)
@@ -119,6 +113,14 @@ string CreateClusterRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_clusterName.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_dBVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DBVersion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_dBVersion.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_projectIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -159,6 +161,22 @@ string CreateClusterRequest::ToJsonString() const
         d.AddMember(iKey, m_autoRenewFlag, allocator);
     }
 
+    if (m_dBMajorVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DBMajorVersion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_dBMajorVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dBKernelVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DBKernelVersion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_dBKernelVersion.c_str(), allocator).Move(), allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -181,22 +199,6 @@ void CreateClusterRequest::SetZone(const string& _zone)
 bool CreateClusterRequest::ZoneHasBeenSet() const
 {
     return m_zoneHasBeenSet;
-}
-
-string CreateClusterRequest::GetDBVersion() const
-{
-    return m_dBVersion;
-}
-
-void CreateClusterRequest::SetDBVersion(const string& _dBVersion)
-{
-    m_dBVersion = _dBVersion;
-    m_dBVersionHasBeenSet = true;
-}
-
-bool CreateClusterRequest::DBVersionHasBeenSet() const
-{
-    return m_dBVersionHasBeenSet;
 }
 
 string CreateClusterRequest::GetMasterUserPassword() const
@@ -311,6 +313,22 @@ bool CreateClusterRequest::ClusterNameHasBeenSet() const
     return m_clusterNameHasBeenSet;
 }
 
+string CreateClusterRequest::GetDBVersion() const
+{
+    return m_dBVersion;
+}
+
+void CreateClusterRequest::SetDBVersion(const string& _dBVersion)
+{
+    m_dBVersion = _dBVersion;
+    m_dBVersionHasBeenSet = true;
+}
+
+bool CreateClusterRequest::DBVersionHasBeenSet() const
+{
+    return m_dBVersionHasBeenSet;
+}
+
 uint64_t CreateClusterRequest::GetProjectId() const
 {
     return m_projectId;
@@ -389,6 +407,38 @@ void CreateClusterRequest::SetAutoRenewFlag(const uint64_t& _autoRenewFlag)
 bool CreateClusterRequest::AutoRenewFlagHasBeenSet() const
 {
     return m_autoRenewFlagHasBeenSet;
+}
+
+string CreateClusterRequest::GetDBMajorVersion() const
+{
+    return m_dBMajorVersion;
+}
+
+void CreateClusterRequest::SetDBMajorVersion(const string& _dBMajorVersion)
+{
+    m_dBMajorVersion = _dBMajorVersion;
+    m_dBMajorVersionHasBeenSet = true;
+}
+
+bool CreateClusterRequest::DBMajorVersionHasBeenSet() const
+{
+    return m_dBMajorVersionHasBeenSet;
+}
+
+string CreateClusterRequest::GetDBKernelVersion() const
+{
+    return m_dBKernelVersion;
+}
+
+void CreateClusterRequest::SetDBKernelVersion(const string& _dBKernelVersion)
+{
+    m_dBKernelVersion = _dBKernelVersion;
+    m_dBKernelVersionHasBeenSet = true;
+}
+
+bool CreateClusterRequest::DBKernelVersionHasBeenSet() const
+{
+    return m_dBKernelVersionHasBeenSet;
 }
 
 

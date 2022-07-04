@@ -352,6 +352,24 @@ namespace TencentCloud
                      */
                     bool PartitionsHasBeenSet() const;
 
+                    /**
+                     * 获取当前表名
+                     * @return Name 当前表名
+                     */
+                    std::string GetName() const;
+
+                    /**
+                     * 设置当前表名
+                     * @param Name 当前表名
+                     */
+                    void SetName(const std::string& _name);
+
+                    /**
+                     * 判断参数 Name 是否已赋值
+                     * @return Name 是否已赋值
+                     */
+                    bool NameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -455,6 +473,12 @@ namespace TencentCloud
                      */
                     std::vector<DMSPartition> m_partitions;
                     bool m_partitionsHasBeenSet;
+
+                    /**
+                     * 当前表名
+                     */
+                    std::string m_name;
+                    bool m_nameHasBeenSet;
 
                 };
             }

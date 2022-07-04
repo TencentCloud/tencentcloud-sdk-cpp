@@ -83,6 +83,92 @@ CpdpClient::AddContractOutcomeCallable CpdpClient::AddContractCallable(const Add
     return task->get_future();
 }
 
+CpdpClient::AddFlexIdInfoOutcome CpdpClient::AddFlexIdInfo(const AddFlexIdInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "AddFlexIdInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AddFlexIdInfoResponse rsp = AddFlexIdInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AddFlexIdInfoOutcome(rsp);
+        else
+            return AddFlexIdInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return AddFlexIdInfoOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::AddFlexIdInfoAsync(const AddFlexIdInfoRequest& request, const AddFlexIdInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AddFlexIdInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::AddFlexIdInfoOutcomeCallable CpdpClient::AddFlexIdInfoCallable(const AddFlexIdInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AddFlexIdInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->AddFlexIdInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CpdpClient::AddFlexPhoneNoOutcome CpdpClient::AddFlexPhoneNo(const AddFlexPhoneNoRequest &request)
+{
+    auto outcome = MakeRequest(request, "AddFlexPhoneNo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AddFlexPhoneNoResponse rsp = AddFlexPhoneNoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AddFlexPhoneNoOutcome(rsp);
+        else
+            return AddFlexPhoneNoOutcome(o.GetError());
+    }
+    else
+    {
+        return AddFlexPhoneNoOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::AddFlexPhoneNoAsync(const AddFlexPhoneNoRequest& request, const AddFlexPhoneNoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AddFlexPhoneNo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::AddFlexPhoneNoOutcomeCallable CpdpClient::AddFlexPhoneNoCallable(const AddFlexPhoneNoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AddFlexPhoneNoOutcome()>>(
+        [this, request]()
+        {
+            return this->AddFlexPhoneNo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CpdpClient::AddMerchantOutcome CpdpClient::AddMerchant(const AddMerchantRequest &request)
 {
     auto outcome = MakeRequest(request, "AddMerchant");
@@ -4899,6 +4985,49 @@ CpdpClient::QueryFlexAmountBeforeTaxOutcomeCallable CpdpClient::QueryFlexAmountB
     return task->get_future();
 }
 
+CpdpClient::QueryFlexBillDownloadUrlOutcome CpdpClient::QueryFlexBillDownloadUrl(const QueryFlexBillDownloadUrlRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryFlexBillDownloadUrl");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryFlexBillDownloadUrlResponse rsp = QueryFlexBillDownloadUrlResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryFlexBillDownloadUrlOutcome(rsp);
+        else
+            return QueryFlexBillDownloadUrlOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryFlexBillDownloadUrlOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::QueryFlexBillDownloadUrlAsync(const QueryFlexBillDownloadUrlRequest& request, const QueryFlexBillDownloadUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->QueryFlexBillDownloadUrl(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::QueryFlexBillDownloadUrlOutcomeCallable CpdpClient::QueryFlexBillDownloadUrlCallable(const QueryFlexBillDownloadUrlRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<QueryFlexBillDownloadUrlOutcome()>>(
+        [this, request]()
+        {
+            return this->QueryFlexBillDownloadUrl(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CpdpClient::QueryFlexFreezeOrderListOutcome CpdpClient::QueryFlexFreezeOrderList(const QueryFlexFreezeOrderListRequest &request)
 {
     auto outcome = MakeRequest(request, "QueryFlexFreezeOrderList");
@@ -4935,6 +5064,49 @@ CpdpClient::QueryFlexFreezeOrderListOutcomeCallable CpdpClient::QueryFlexFreezeO
         [this, request]()
         {
             return this->QueryFlexFreezeOrderList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CpdpClient::QueryFlexOrderSummaryListOutcome CpdpClient::QueryFlexOrderSummaryList(const QueryFlexOrderSummaryListRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryFlexOrderSummaryList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryFlexOrderSummaryListResponse rsp = QueryFlexOrderSummaryListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryFlexOrderSummaryListOutcome(rsp);
+        else
+            return QueryFlexOrderSummaryListOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryFlexOrderSummaryListOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::QueryFlexOrderSummaryListAsync(const QueryFlexOrderSummaryListRequest& request, const QueryFlexOrderSummaryListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->QueryFlexOrderSummaryList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::QueryFlexOrderSummaryListOutcomeCallable CpdpClient::QueryFlexOrderSummaryListCallable(const QueryFlexOrderSummaryListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<QueryFlexOrderSummaryListOutcome()>>(
+        [this, request]()
+        {
+            return this->QueryFlexOrderSummaryList(request);
         }
     );
 

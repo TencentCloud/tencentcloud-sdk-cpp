@@ -135,6 +135,40 @@ namespace TencentCloud
                      */
                     bool LastFileHasBeenSet() const;
 
+                    /**
+                     * 获取任务结果包含的图片总数。
+静态图：总数即为文件数；
+雪碧图：所有小图总数；
+动图、视频：不计算图片数，为 0。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ImageCount 任务结果包含的图片总数。
+静态图：总数即为文件数；
+雪碧图：所有小图总数；
+动图、视频：不计算图片数，为 0。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetImageCount() const;
+
+                    /**
+                     * 设置任务结果包含的图片总数。
+静态图：总数即为文件数；
+雪碧图：所有小图总数；
+动图、视频：不计算图片数，为 0。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ImageCount 任务结果包含的图片总数。
+静态图：总数即为文件数；
+雪碧图：所有小图总数；
+动图、视频：不计算图片数，为 0。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetImageCount(const int64_t& _imageCount);
+
+                    /**
+                     * 判断参数 ImageCount 是否已赋值
+                     * @return ImageCount 是否已赋值
+                     */
+                    bool ImageCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -164,6 +198,16 @@ namespace TencentCloud
                      */
                     TaskResultFile m_lastFile;
                     bool m_lastFileHasBeenSet;
+
+                    /**
+                     * 任务结果包含的图片总数。
+静态图：总数即为文件数；
+雪碧图：所有小图总数；
+动图、视频：不计算图片数，为 0。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_imageCount;
+                    bool m_imageCountHasBeenSet;
 
                 };
             }

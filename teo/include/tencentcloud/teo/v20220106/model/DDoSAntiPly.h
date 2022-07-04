@@ -280,6 +280,28 @@ namespace TencentCloud
                      */
                     bool EmptyConnectProtectHasBeenSet() const;
 
+                    /**
+                     * 获取UDP分片开关；off-关闭，on-开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UdpShard UDP分片开关；off-关闭，on-开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetUdpShard() const;
+
+                    /**
+                     * 设置UDP分片开关；off-关闭，on-开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param UdpShard UDP分片开关；off-关闭，on-开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetUdpShard(const std::string& _udpShard);
+
+                    /**
+                     * 判断参数 UdpShard 是否已赋值
+                     * @return UdpShard 是否已赋值
+                     */
+                    bool UdpShardHasBeenSet() const;
+
                 private:
 
                     /**
@@ -359,6 +381,13 @@ namespace TencentCloud
                      */
                     std::string m_emptyConnectProtect;
                     bool m_emptyConnectProtectHasBeenSet;
+
+                    /**
+                     * UDP分片开关；off-关闭，on-开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_udpShard;
+                    bool m_udpShardHasBeenSet;
 
                 };
             }

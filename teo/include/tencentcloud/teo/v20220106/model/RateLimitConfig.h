@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/teo/v20220106/model/RateLimitUserRule.h>
 #include <tencentcloud/teo/v20220106/model/RateLimitTemplate.h>
+#include <tencentcloud/teo/v20220106/model/RateLimitIntelligence.h>
 
 
 namespace TencentCloud
@@ -106,6 +107,28 @@ namespace TencentCloud
                      */
                     bool TemplateHasBeenSet() const;
 
+                    /**
+                     * 获取智能客户端过滤
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Intelligence 智能客户端过滤
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    RateLimitIntelligence GetIntelligence() const;
+
+                    /**
+                     * 设置智能客户端过滤
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Intelligence 智能客户端过滤
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIntelligence(const RateLimitIntelligence& _intelligence);
+
+                    /**
+                     * 判断参数 Intelligence 是否已赋值
+                     * @return Intelligence 是否已赋值
+                     */
+                    bool IntelligenceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -126,6 +149,13 @@ namespace TencentCloud
                      */
                     RateLimitTemplate m_template;
                     bool m_templateHasBeenSet;
+
+                    /**
+                     * 智能客户端过滤
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    RateLimitIntelligence m_intelligence;
+                    bool m_intelligenceHasBeenSet;
 
                 };
             }

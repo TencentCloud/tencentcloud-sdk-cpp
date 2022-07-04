@@ -169,6 +169,92 @@ CvmClient::AssociateSecurityGroupsOutcomeCallable CvmClient::AssociateSecurityGr
     return task->get_future();
 }
 
+CvmClient::ConfigureChcAssistVpcOutcome CvmClient::ConfigureChcAssistVpc(const ConfigureChcAssistVpcRequest &request)
+{
+    auto outcome = MakeRequest(request, "ConfigureChcAssistVpc");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ConfigureChcAssistVpcResponse rsp = ConfigureChcAssistVpcResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ConfigureChcAssistVpcOutcome(rsp);
+        else
+            return ConfigureChcAssistVpcOutcome(o.GetError());
+    }
+    else
+    {
+        return ConfigureChcAssistVpcOutcome(outcome.GetError());
+    }
+}
+
+void CvmClient::ConfigureChcAssistVpcAsync(const ConfigureChcAssistVpcRequest& request, const ConfigureChcAssistVpcAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ConfigureChcAssistVpc(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CvmClient::ConfigureChcAssistVpcOutcomeCallable CvmClient::ConfigureChcAssistVpcCallable(const ConfigureChcAssistVpcRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ConfigureChcAssistVpcOutcome()>>(
+        [this, request]()
+        {
+            return this->ConfigureChcAssistVpc(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CvmClient::ConfigureChcDeployVpcOutcome CvmClient::ConfigureChcDeployVpc(const ConfigureChcDeployVpcRequest &request)
+{
+    auto outcome = MakeRequest(request, "ConfigureChcDeployVpc");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ConfigureChcDeployVpcResponse rsp = ConfigureChcDeployVpcResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ConfigureChcDeployVpcOutcome(rsp);
+        else
+            return ConfigureChcDeployVpcOutcome(o.GetError());
+    }
+    else
+    {
+        return ConfigureChcDeployVpcOutcome(outcome.GetError());
+    }
+}
+
+void CvmClient::ConfigureChcDeployVpcAsync(const ConfigureChcDeployVpcRequest& request, const ConfigureChcDeployVpcAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ConfigureChcDeployVpc(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CvmClient::ConfigureChcDeployVpcOutcomeCallable CvmClient::ConfigureChcDeployVpcCallable(const ConfigureChcDeployVpcRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ConfigureChcDeployVpcOutcome()>>(
+        [this, request]()
+        {
+            return this->ConfigureChcDeployVpc(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CvmClient::CreateDisasterRecoverGroupOutcome CvmClient::CreateDisasterRecoverGroup(const CreateDisasterRecoverGroupRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateDisasterRecoverGroup");
@@ -2362,6 +2448,49 @@ CvmClient::InquiryPriceTerminateInstancesOutcomeCallable CvmClient::InquiryPrice
     return task->get_future();
 }
 
+CvmClient::ModifyChcAttributeOutcome CvmClient::ModifyChcAttribute(const ModifyChcAttributeRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyChcAttribute");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyChcAttributeResponse rsp = ModifyChcAttributeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyChcAttributeOutcome(rsp);
+        else
+            return ModifyChcAttributeOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyChcAttributeOutcome(outcome.GetError());
+    }
+}
+
+void CvmClient::ModifyChcAttributeAsync(const ModifyChcAttributeRequest& request, const ModifyChcAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyChcAttribute(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CvmClient::ModifyChcAttributeOutcomeCallable CvmClient::ModifyChcAttributeCallable(const ModifyChcAttributeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyChcAttributeOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyChcAttribute(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CvmClient::ModifyDisasterRecoverGroupAttributeOutcome CvmClient::ModifyDisasterRecoverGroupAttribute(const ModifyDisasterRecoverGroupAttributeRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyDisasterRecoverGroupAttribute");
@@ -3000,6 +3129,92 @@ CvmClient::RebootInstancesOutcomeCallable CvmClient::RebootInstancesCallable(con
         [this, request]()
         {
             return this->RebootInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CvmClient::RemoveChcAssistVpcOutcome CvmClient::RemoveChcAssistVpc(const RemoveChcAssistVpcRequest &request)
+{
+    auto outcome = MakeRequest(request, "RemoveChcAssistVpc");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RemoveChcAssistVpcResponse rsp = RemoveChcAssistVpcResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RemoveChcAssistVpcOutcome(rsp);
+        else
+            return RemoveChcAssistVpcOutcome(o.GetError());
+    }
+    else
+    {
+        return RemoveChcAssistVpcOutcome(outcome.GetError());
+    }
+}
+
+void CvmClient::RemoveChcAssistVpcAsync(const RemoveChcAssistVpcRequest& request, const RemoveChcAssistVpcAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RemoveChcAssistVpc(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CvmClient::RemoveChcAssistVpcOutcomeCallable CvmClient::RemoveChcAssistVpcCallable(const RemoveChcAssistVpcRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RemoveChcAssistVpcOutcome()>>(
+        [this, request]()
+        {
+            return this->RemoveChcAssistVpc(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CvmClient::RemoveChcDeployVpcOutcome CvmClient::RemoveChcDeployVpc(const RemoveChcDeployVpcRequest &request)
+{
+    auto outcome = MakeRequest(request, "RemoveChcDeployVpc");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RemoveChcDeployVpcResponse rsp = RemoveChcDeployVpcResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RemoveChcDeployVpcOutcome(rsp);
+        else
+            return RemoveChcDeployVpcOutcome(o.GetError());
+    }
+    else
+    {
+        return RemoveChcDeployVpcOutcome(outcome.GetError());
+    }
+}
+
+void CvmClient::RemoveChcDeployVpcAsync(const RemoveChcDeployVpcRequest& request, const RemoveChcDeployVpcAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RemoveChcDeployVpc(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CvmClient::RemoveChcDeployVpcOutcomeCallable CvmClient::RemoveChcDeployVpcCallable(const RemoveChcDeployVpcRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RemoveChcDeployVpcOutcome()>>(
+        [this, request]()
+        {
+            return this->RemoveChcDeployVpc(request);
         }
     );
 

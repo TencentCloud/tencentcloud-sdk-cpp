@@ -24,7 +24,8 @@ MediaCuttingTaskResult::MediaCuttingTaskResult() :
     m_listFileHasBeenSet(false),
     m_resultCountHasBeenSet(false),
     m_firstFileHasBeenSet(false),
-    m_lastFileHasBeenSet(false)
+    m_lastFileHasBeenSet(false),
+    m_imageCountHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,16 @@ CoreInternalOutcome MediaCuttingTaskResult::Deserialize(const rapidjson::Value &
         m_lastFileHasBeenSet = true;
     }
 
+    if (value.HasMember("ImageCount") && !value["ImageCount"].IsNull())
+    {
+        if (!value["ImageCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `MediaCuttingTaskResult.ImageCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_imageCount = value["ImageCount"].GetInt64();
+        m_imageCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -134,6 +145,14 @@ void MediaCuttingTaskResult::ToJsonObject(rapidjson::Value &value, rapidjson::Do
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_lastFile.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_imageCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ImageCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_imageCount, allocator);
     }
 
 }
@@ -201,5 +220,21 @@ void MediaCuttingTaskResult::SetLastFile(const TaskResultFile& _lastFile)
 bool MediaCuttingTaskResult::LastFileHasBeenSet() const
 {
     return m_lastFileHasBeenSet;
+}
+
+int64_t MediaCuttingTaskResult::GetImageCount() const
+{
+    return m_imageCount;
+}
+
+void MediaCuttingTaskResult::SetImageCount(const int64_t& _imageCount)
+{
+    m_imageCount = _imageCount;
+    m_imageCountHasBeenSet = true;
+}
+
+bool MediaCuttingTaskResult::ImageCountHasBeenSet() const
+{
+    return m_imageCountHasBeenSet;
 }
 

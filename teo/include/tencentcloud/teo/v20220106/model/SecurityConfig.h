@@ -30,6 +30,7 @@
 #include <tencentcloud/teo/v20220106/model/AclConfig.h>
 #include <tencentcloud/teo/v20220106/model/BotConfig.h>
 #include <tencentcloud/teo/v20220106/model/SwitchConfig.h>
+#include <tencentcloud/teo/v20220106/model/IpTableConfig.h>
 
 
 namespace TencentCloud
@@ -184,6 +185,28 @@ namespace TencentCloud
                      */
                     bool SwitchConfigHasBeenSet() const;
 
+                    /**
+                     * 获取IP黑白名单
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IpTableConfig IP黑白名单
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    IpTableConfig GetIpTableConfig() const;
+
+                    /**
+                     * 设置IP黑白名单
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param IpTableConfig IP黑白名单
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIpTableConfig(const IpTableConfig& _ipTableConfig);
+
+                    /**
+                     * 判断参数 IpTableConfig 是否已赋值
+                     * @return IpTableConfig 是否已赋值
+                     */
+                    bool IpTableConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -227,6 +250,13 @@ namespace TencentCloud
                      */
                     SwitchConfig m_switchConfig;
                     bool m_switchConfigHasBeenSet;
+
+                    /**
+                     * IP黑白名单
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    IpTableConfig m_ipTableConfig;
+                    bool m_ipTableConfigHasBeenSet;
 
                 };
             }

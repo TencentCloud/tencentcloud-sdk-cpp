@@ -42,7 +42,31 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取cdc专业集群业务参数
+                     * @return CdcId cdc专业集群业务参数
+                     */
+                    std::string GetCdcId() const;
+
+                    /**
+                     * 设置cdc专业集群业务参数
+                     * @param CdcId cdc专业集群业务参数
+                     */
+                    void SetCdcId(const std::string& _cdcId);
+
+                    /**
+                     * 判断参数 CdcId 是否已赋值
+                     * @return CdcId 是否已赋值
+                     */
+                    bool CdcIdHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * cdc专业集群业务参数
+                     */
+                    std::string m_cdcId;
+                    bool m_cdcIdHasBeenSet;
 
                 };
             }

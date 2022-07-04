@@ -23,7 +23,8 @@ using namespace std;
 RateLimitConfig::RateLimitConfig() :
     m_switchHasBeenSet(false),
     m_userRulesHasBeenSet(false),
-    m_templateHasBeenSet(false)
+    m_templateHasBeenSet(false),
+    m_intelligenceHasBeenSet(false)
 {
 }
 
@@ -79,6 +80,23 @@ CoreInternalOutcome RateLimitConfig::Deserialize(const rapidjson::Value &value)
         m_templateHasBeenSet = true;
     }
 
+    if (value.HasMember("Intelligence") && !value["Intelligence"].IsNull())
+    {
+        if (!value["Intelligence"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `RateLimitConfig.Intelligence` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_intelligence.Deserialize(value["Intelligence"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_intelligenceHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -116,6 +134,15 @@ void RateLimitConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_template.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_intelligenceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Intelligence";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_intelligence.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -167,5 +194,21 @@ void RateLimitConfig::SetTemplate(const RateLimitTemplate& _template)
 bool RateLimitConfig::TemplateHasBeenSet() const
 {
     return m_templateHasBeenSet;
+}
+
+RateLimitIntelligence RateLimitConfig::GetIntelligence() const
+{
+    return m_intelligence;
+}
+
+void RateLimitConfig::SetIntelligence(const RateLimitIntelligence& _intelligence)
+{
+    m_intelligence = _intelligence;
+    m_intelligenceHasBeenSet = true;
+}
+
+bool RateLimitConfig::IntelligenceHasBeenSet() const
+{
+    return m_intelligenceHasBeenSet;
 }
 

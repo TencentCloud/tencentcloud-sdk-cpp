@@ -23,7 +23,8 @@ using namespace std;
 TaskResultFile::TaskResultFile() :
     m_urlHasBeenSet(false),
     m_fileSizeHasBeenSet(false),
-    m_mediaInfoHasBeenSet(false)
+    m_mediaInfoHasBeenSet(false),
+    m_md5HasBeenSet(false)
 {
 }
 
@@ -69,6 +70,16 @@ CoreInternalOutcome TaskResultFile::Deserialize(const rapidjson::Value &value)
         m_mediaInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("Md5") && !value["Md5"].IsNull())
+    {
+        if (!value["Md5"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskResultFile.Md5` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_md5 = string(value["Md5"].GetString());
+        m_md5HasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -99,6 +110,14 @@ void TaskResultFile::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_mediaInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_md5HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Md5";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_md5.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -150,5 +169,21 @@ void TaskResultFile::SetMediaInfo(const MediaResultInfo& _mediaInfo)
 bool TaskResultFile::MediaInfoHasBeenSet() const
 {
     return m_mediaInfoHasBeenSet;
+}
+
+string TaskResultFile::GetMd5() const
+{
+    return m_md5;
+}
+
+void TaskResultFile::SetMd5(const string& _md5)
+{
+    m_md5 = _md5;
+    m_md5HasBeenSet = true;
+}
+
+bool TaskResultFile::Md5HasBeenSet() const
+{
+    return m_md5HasBeenSet;
 }
 

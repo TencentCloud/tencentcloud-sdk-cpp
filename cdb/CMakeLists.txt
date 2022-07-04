@@ -44,9 +44,9 @@ set(cdb_public_header_model
   include/tencentcloud/cdb/v20170320/model/DescribeDBInstancesRequest.h
   include/tencentcloud/cdb/v20170320/model/TableName.h
   include/tencentcloud/cdb/v20170320/model/DeleteAccountsResponse.h
-  include/tencentcloud/cdb/v20170320/model/SlowLogInfo.h
+  include/tencentcloud/cdb/v20170320/model/RollbackTableName.h
   include/tencentcloud/cdb/v20170320/model/CloseWanServiceRequest.h
-  include/tencentcloud/cdb/v20170320/model/DescribeAuditConfigRequest.h
+  include/tencentcloud/cdb/v20170320/model/OpenAuditServiceResponse.h
   include/tencentcloud/cdb/v20170320/model/CreateRoInstanceIpResponse.h
   include/tencentcloud/cdb/v20170320/model/CreateAuditPolicyResponse.h
   include/tencentcloud/cdb/v20170320/model/DescribeInstanceParamRecordsRequest.h
@@ -59,6 +59,7 @@ set(cdb_public_header_model
   include/tencentcloud/cdb/v20170320/model/ModifyDBInstanceNameRequest.h
   include/tencentcloud/cdb/v20170320/model/TagInfoUnit.h
   include/tencentcloud/cdb/v20170320/model/ModifyAuditRuleResponse.h
+  include/tencentcloud/cdb/v20170320/model/OpenAuditServiceRequest.h
   include/tencentcloud/cdb/v20170320/model/DescribeAuditRulesRequest.h
   include/tencentcloud/cdb/v20170320/model/UpgradeDBInstanceEngineVersionResponse.h
   include/tencentcloud/cdb/v20170320/model/ErrlogItem.h
@@ -195,6 +196,7 @@ set(cdb_public_header_model
   include/tencentcloud/cdb/v20170320/model/DeployGroupInfo.h
   include/tencentcloud/cdb/v20170320/model/LocalBinlogConfig.h
   include/tencentcloud/cdb/v20170320/model/InquiryPriceUpgradeInstancesResponse.h
+  include/tencentcloud/cdb/v20170320/model/DescribeAuditConfigRequest.h
   include/tencentcloud/cdb/v20170320/model/CreateDBInstanceRequest.h
   include/tencentcloud/cdb/v20170320/model/DescribeProxyConnectionPoolConfRequest.h
   include/tencentcloud/cdb/v20170320/model/DescribeParamTemplatesRequest.h
@@ -236,7 +238,7 @@ set(cdb_public_header_model
   include/tencentcloud/cdb/v20170320/model/CloseWanServiceResponse.h
   include/tencentcloud/cdb/v20170320/model/RoWeight.h
   include/tencentcloud/cdb/v20170320/model/RenewDBInstanceRequest.h
-  include/tencentcloud/cdb/v20170320/model/RollbackTableName.h
+  include/tencentcloud/cdb/v20170320/model/SlowLogInfo.h
   include/tencentcloud/cdb/v20170320/model/ModifyLocalBinlogConfigResponse.h
   include/tencentcloud/cdb/v20170320/model/DescribeCloneListRequest.h
   include/tencentcloud/cdb/v20170320/model/ModifyInstanceTagRequest.h
@@ -402,9 +404,9 @@ set(cdb_src
   src/v20170320/model/DescribeDBInstancesRequest.cpp
   src/v20170320/model/TableName.cpp
   src/v20170320/model/DeleteAccountsResponse.cpp
-  src/v20170320/model/SlowLogInfo.cpp
+  src/v20170320/model/RollbackTableName.cpp
   src/v20170320/model/CloseWanServiceRequest.cpp
-  src/v20170320/model/DescribeAuditConfigRequest.cpp
+  src/v20170320/model/OpenAuditServiceResponse.cpp
   src/v20170320/model/CreateRoInstanceIpResponse.cpp
   src/v20170320/model/CreateAuditPolicyResponse.cpp
   src/v20170320/model/DescribeInstanceParamRecordsRequest.cpp
@@ -417,6 +419,7 @@ set(cdb_src
   src/v20170320/model/ModifyDBInstanceNameRequest.cpp
   src/v20170320/model/TagInfoUnit.cpp
   src/v20170320/model/ModifyAuditRuleResponse.cpp
+  src/v20170320/model/OpenAuditServiceRequest.cpp
   src/v20170320/model/DescribeAuditRulesRequest.cpp
   src/v20170320/model/UpgradeDBInstanceEngineVersionResponse.cpp
   src/v20170320/model/ErrlogItem.cpp
@@ -553,6 +556,7 @@ set(cdb_src
   src/v20170320/model/DeployGroupInfo.cpp
   src/v20170320/model/LocalBinlogConfig.cpp
   src/v20170320/model/InquiryPriceUpgradeInstancesResponse.cpp
+  src/v20170320/model/DescribeAuditConfigRequest.cpp
   src/v20170320/model/CreateDBInstanceRequest.cpp
   src/v20170320/model/DescribeProxyConnectionPoolConfRequest.cpp
   src/v20170320/model/DescribeParamTemplatesRequest.cpp
@@ -594,7 +598,7 @@ set(cdb_src
   src/v20170320/model/CloseWanServiceResponse.cpp
   src/v20170320/model/RoWeight.cpp
   src/v20170320/model/RenewDBInstanceRequest.cpp
-  src/v20170320/model/RollbackTableName.cpp
+  src/v20170320/model/SlowLogInfo.cpp
   src/v20170320/model/ModifyLocalBinlogConfigResponse.cpp
   src/v20170320/model/DescribeCloneListRequest.cpp
   src/v20170320/model/ModifyInstanceTagRequest.cpp

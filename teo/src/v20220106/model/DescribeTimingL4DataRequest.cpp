@@ -30,7 +30,9 @@ DescribeTimingL4DataRequest::DescribeTimingL4DataRequest() :
     m_instanceIdsHasBeenSet(false),
     m_protocolHasBeenSet(false),
     m_intervalHasBeenSet(false),
-    m_ruleIdHasBeenSet(false)
+    m_ruleIdHasBeenSet(false),
+    m_filtersHasBeenSet(false),
+    m_proxyIdsHasBeenSet(false)
 {
 }
 
@@ -118,6 +120,34 @@ string DescribeTimingL4DataRequest::ToJsonString() const
         string key = "RuleId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_ruleId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_filtersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Filters";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_filters.begin(); itr != m_filters.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_proxyIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProxyIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_proxyIds.begin(); itr != m_proxyIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -254,6 +284,38 @@ void DescribeTimingL4DataRequest::SetRuleId(const string& _ruleId)
 bool DescribeTimingL4DataRequest::RuleIdHasBeenSet() const
 {
     return m_ruleIdHasBeenSet;
+}
+
+vector<Filter> DescribeTimingL4DataRequest::GetFilters() const
+{
+    return m_filters;
+}
+
+void DescribeTimingL4DataRequest::SetFilters(const vector<Filter>& _filters)
+{
+    m_filters = _filters;
+    m_filtersHasBeenSet = true;
+}
+
+bool DescribeTimingL4DataRequest::FiltersHasBeenSet() const
+{
+    return m_filtersHasBeenSet;
+}
+
+vector<string> DescribeTimingL4DataRequest::GetProxyIds() const
+{
+    return m_proxyIds;
+}
+
+void DescribeTimingL4DataRequest::SetProxyIds(const vector<string>& _proxyIds)
+{
+    m_proxyIds = _proxyIds;
+    m_proxyIdsHasBeenSet = true;
+}
+
+bool DescribeTimingL4DataRequest::ProxyIdsHasBeenSet() const
+{
+    return m_proxyIdsHasBeenSet;
 }
 
 

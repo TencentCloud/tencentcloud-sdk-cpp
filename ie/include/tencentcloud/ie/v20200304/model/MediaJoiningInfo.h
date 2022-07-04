@@ -69,6 +69,32 @@ namespace TencentCloud
                      */
                     bool TargetInfoHasBeenSet() const;
 
+                    /**
+                     * 获取拼接模式：
+Fast：快速；
+Normal：正常；
+                     * @return Mode 拼接模式：
+Fast：快速；
+Normal：正常；
+                     */
+                    std::string GetMode() const;
+
+                    /**
+                     * 设置拼接模式：
+Fast：快速；
+Normal：正常；
+                     * @param Mode 拼接模式：
+Fast：快速；
+Normal：正常；
+                     */
+                    void SetMode(const std::string& _mode);
+
+                    /**
+                     * 判断参数 Mode 是否已赋值
+                     * @return Mode 是否已赋值
+                     */
+                    bool ModeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -77,6 +103,14 @@ namespace TencentCloud
                      */
                     MediaTargetInfo m_targetInfo;
                     bool m_targetInfoHasBeenSet;
+
+                    /**
+                     * 拼接模式：
+Fast：快速；
+Normal：正常；
+                     */
+                    std::string m_mode;
+                    bool m_modeHasBeenSet;
 
                 };
             }

@@ -61,24 +61,6 @@ namespace TencentCloud
                     bool ZoneHasBeenSet() const;
 
                     /**
-                     * 获取数据库版本，目前仅支持 10.17
-                     * @return DBVersion 数据库版本，目前仅支持 10.17
-                     */
-                    std::string GetDBVersion() const;
-
-                    /**
-                     * 设置数据库版本，目前仅支持 10.17
-                     * @param DBVersion 数据库版本，目前仅支持 10.17
-                     */
-                    void SetDBVersion(const std::string& _dBVersion);
-
-                    /**
-                     * 判断参数 DBVersion 是否已赋值
-                     * @return DBVersion 是否已赋值
-                     */
-                    bool DBVersionHasBeenSet() const;
-
-                    /**
                      * 获取数据库用户密码，必须满足 8-64个字符，至少包含 大写字母、小写字母、数字和符号~!@#$%^&*_-+=`|\(){}[]:;'<>,.?/中的任意三种
                      * @return MasterUserPassword 数据库用户密码，必须满足 8-64个字符，至少包含 大写字母、小写字母、数字和符号~!@#$%^&*_-+=`|\(){}[]:;'<>,.?/中的任意三种
                      */
@@ -213,6 +195,32 @@ namespace TencentCloud
                     bool ClusterNameHasBeenSet() const;
 
                     /**
+                     * 获取TDSQL-C PostgreSQL 合入的社区版本号。
+支持入参值为：10.17。当输入该参数时，会基于此版本号创建对应的最新DBKernelVersion数据库内核。
+注：该参数与DBMajorVersion、DBKernelVersion只能传递一个，且需要传递一个。
+                     * @return DBVersion TDSQL-C PostgreSQL 合入的社区版本号。
+支持入参值为：10.17。当输入该参数时，会基于此版本号创建对应的最新DBKernelVersion数据库内核。
+注：该参数与DBMajorVersion、DBKernelVersion只能传递一个，且需要传递一个。
+                     */
+                    std::string GetDBVersion() const;
+
+                    /**
+                     * 设置TDSQL-C PostgreSQL 合入的社区版本号。
+支持入参值为：10.17。当输入该参数时，会基于此版本号创建对应的最新DBKernelVersion数据库内核。
+注：该参数与DBMajorVersion、DBKernelVersion只能传递一个，且需要传递一个。
+                     * @param DBVersion TDSQL-C PostgreSQL 合入的社区版本号。
+支持入参值为：10.17。当输入该参数时，会基于此版本号创建对应的最新DBKernelVersion数据库内核。
+注：该参数与DBMajorVersion、DBKernelVersion只能传递一个，且需要传递一个。
+                     */
+                    void SetDBVersion(const std::string& _dBVersion);
+
+                    /**
+                     * 判断参数 DBVersion 是否已赋值
+                     * @return DBVersion 是否已赋值
+                     */
+                    bool DBVersionHasBeenSet() const;
+
+                    /**
                      * 获取项目Id，默认为0表示默认项目
                      * @return ProjectId 项目Id，默认为0表示默认项目
                      */
@@ -306,6 +314,58 @@ namespace TencentCloud
                      */
                     bool AutoRenewFlagHasBeenSet() const;
 
+                    /**
+                     * 获取TDSQL-C PostgreSQL 合入的社区主要版本号。
+支持入参值为：10。当输入该参数时，会基于此版本号创建对应的最新DBKernelVersion数据库内核。
+注：该参数和DBVersion、DBKernelVersion只能传递一个，且需要传递一个。
+                     * @return DBMajorVersion TDSQL-C PostgreSQL 合入的社区主要版本号。
+支持入参值为：10。当输入该参数时，会基于此版本号创建对应的最新DBKernelVersion数据库内核。
+注：该参数和DBVersion、DBKernelVersion只能传递一个，且需要传递一个。
+                     */
+                    std::string GetDBMajorVersion() const;
+
+                    /**
+                     * 设置TDSQL-C PostgreSQL 合入的社区主要版本号。
+支持入参值为：10。当输入该参数时，会基于此版本号创建对应的最新DBKernelVersion数据库内核。
+注：该参数和DBVersion、DBKernelVersion只能传递一个，且需要传递一个。
+                     * @param DBMajorVersion TDSQL-C PostgreSQL 合入的社区主要版本号。
+支持入参值为：10。当输入该参数时，会基于此版本号创建对应的最新DBKernelVersion数据库内核。
+注：该参数和DBVersion、DBKernelVersion只能传递一个，且需要传递一个。
+                     */
+                    void SetDBMajorVersion(const std::string& _dBMajorVersion);
+
+                    /**
+                     * 判断参数 DBMajorVersion 是否已赋值
+                     * @return DBMajorVersion 是否已赋值
+                     */
+                    bool DBMajorVersionHasBeenSet() const;
+
+                    /**
+                     * 获取TDSQL-C PostgreSQL 内核版本号。
+支持入参值为：v10.17_r1.4。当输入该参数时，会创建此版本号对应的数据库内核。
+注：该参数和DBVersion、DBMajorVersion只能传递一个，且需要传递一个。
+                     * @return DBKernelVersion TDSQL-C PostgreSQL 内核版本号。
+支持入参值为：v10.17_r1.4。当输入该参数时，会创建此版本号对应的数据库内核。
+注：该参数和DBVersion、DBMajorVersion只能传递一个，且需要传递一个。
+                     */
+                    std::string GetDBKernelVersion() const;
+
+                    /**
+                     * 设置TDSQL-C PostgreSQL 内核版本号。
+支持入参值为：v10.17_r1.4。当输入该参数时，会创建此版本号对应的数据库内核。
+注：该参数和DBVersion、DBMajorVersion只能传递一个，且需要传递一个。
+                     * @param DBKernelVersion TDSQL-C PostgreSQL 内核版本号。
+支持入参值为：v10.17_r1.4。当输入该参数时，会创建此版本号对应的数据库内核。
+注：该参数和DBVersion、DBMajorVersion只能传递一个，且需要传递一个。
+                     */
+                    void SetDBKernelVersion(const std::string& _dBKernelVersion);
+
+                    /**
+                     * 判断参数 DBKernelVersion 是否已赋值
+                     * @return DBKernelVersion 是否已赋值
+                     */
+                    bool DBKernelVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -313,12 +373,6 @@ namespace TencentCloud
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
-
-                    /**
-                     * 数据库版本，目前仅支持 10.17
-                     */
-                    std::string m_dBVersion;
-                    bool m_dBVersionHasBeenSet;
 
                     /**
                      * 数据库用户密码，必须满足 8-64个字符，至少包含 大写字母、小写字母、数字和符号~!@#$%^&*_-+=`|\(){}[]:;'<>,.?/中的任意三种
@@ -365,6 +419,14 @@ namespace TencentCloud
                     bool m_clusterNameHasBeenSet;
 
                     /**
+                     * TDSQL-C PostgreSQL 合入的社区版本号。
+支持入参值为：10.17。当输入该参数时，会基于此版本号创建对应的最新DBKernelVersion数据库内核。
+注：该参数与DBMajorVersion、DBKernelVersion只能传递一个，且需要传递一个。
+                     */
+                    std::string m_dBVersion;
+                    bool m_dBVersionHasBeenSet;
+
+                    /**
                      * 项目Id，默认为0表示默认项目
                      */
                     uint64_t m_projectId;
@@ -394,6 +456,22 @@ namespace TencentCloud
                      */
                     uint64_t m_autoRenewFlag;
                     bool m_autoRenewFlagHasBeenSet;
+
+                    /**
+                     * TDSQL-C PostgreSQL 合入的社区主要版本号。
+支持入参值为：10。当输入该参数时，会基于此版本号创建对应的最新DBKernelVersion数据库内核。
+注：该参数和DBVersion、DBKernelVersion只能传递一个，且需要传递一个。
+                     */
+                    std::string m_dBMajorVersion;
+                    bool m_dBMajorVersionHasBeenSet;
+
+                    /**
+                     * TDSQL-C PostgreSQL 内核版本号。
+支持入参值为：v10.17_r1.4。当输入该参数时，会创建此版本号对应的数据库内核。
+注：该参数和DBVersion、DBMajorVersion只能传递一个，且需要传递一个。
+                     */
+                    std::string m_dBKernelVersion;
+                    bool m_dBKernelVersionHasBeenSet;
 
                 };
             }

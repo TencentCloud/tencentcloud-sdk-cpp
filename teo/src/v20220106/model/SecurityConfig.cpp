@@ -26,7 +26,8 @@ SecurityConfig::SecurityConfig() :
     m_ddosConfigHasBeenSet(false),
     m_aclConfigHasBeenSet(false),
     m_botConfigHasBeenSet(false),
-    m_switchConfigHasBeenSet(false)
+    m_switchConfigHasBeenSet(false),
+    m_ipTableConfigHasBeenSet(false)
 {
 }
 
@@ -137,6 +138,23 @@ CoreInternalOutcome SecurityConfig::Deserialize(const rapidjson::Value &value)
         m_switchConfigHasBeenSet = true;
     }
 
+    if (value.HasMember("IpTableConfig") && !value["IpTableConfig"].IsNull())
+    {
+        if (!value["IpTableConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `SecurityConfig.IpTableConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_ipTableConfig.Deserialize(value["IpTableConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_ipTableConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -196,6 +214,15 @@ void SecurityConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_switchConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_ipTableConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IpTableConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_ipTableConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -295,5 +322,21 @@ void SecurityConfig::SetSwitchConfig(const SwitchConfig& _switchConfig)
 bool SecurityConfig::SwitchConfigHasBeenSet() const
 {
     return m_switchConfigHasBeenSet;
+}
+
+IpTableConfig SecurityConfig::GetIpTableConfig() const
+{
+    return m_ipTableConfig;
+}
+
+void SecurityConfig::SetIpTableConfig(const IpTableConfig& _ipTableConfig)
+{
+    m_ipTableConfig = _ipTableConfig;
+    m_ipTableConfigHasBeenSet = true;
+}
+
+bool SecurityConfig::IpTableConfigHasBeenSet() const
+{
+    return m_ipTableConfigHasBeenSet;
 }
 

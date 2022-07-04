@@ -23,8 +23,8 @@ using namespace TencentCloud::Ess::V20201111::Model;
 using namespace std;
 
 UploadFilesRequest::UploadFilesRequest() :
-    m_callerHasBeenSet(false),
     m_businessTypeHasBeenSet(false),
+    m_callerHasBeenSet(false),
     m_fileInfosHasBeenSet(false),
     m_fileUrlsHasBeenSet(false),
     m_coverRectHasBeenSet(false),
@@ -40,6 +40,14 @@ string UploadFilesRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_businessTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BusinessType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_businessType.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_callerHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -47,14 +55,6 @@ string UploadFilesRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_caller.ToJsonObject(d[key.c_str()], allocator);
-    }
-
-    if (m_businessTypeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "BusinessType";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_businessType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_fileInfosHasBeenSet)
@@ -117,22 +117,6 @@ string UploadFilesRequest::ToJsonString() const
 }
 
 
-Caller UploadFilesRequest::GetCaller() const
-{
-    return m_caller;
-}
-
-void UploadFilesRequest::SetCaller(const Caller& _caller)
-{
-    m_caller = _caller;
-    m_callerHasBeenSet = true;
-}
-
-bool UploadFilesRequest::CallerHasBeenSet() const
-{
-    return m_callerHasBeenSet;
-}
-
 string UploadFilesRequest::GetBusinessType() const
 {
     return m_businessType;
@@ -147,6 +131,22 @@ void UploadFilesRequest::SetBusinessType(const string& _businessType)
 bool UploadFilesRequest::BusinessTypeHasBeenSet() const
 {
     return m_businessTypeHasBeenSet;
+}
+
+Caller UploadFilesRequest::GetCaller() const
+{
+    return m_caller;
+}
+
+void UploadFilesRequest::SetCaller(const Caller& _caller)
+{
+    m_caller = _caller;
+    m_callerHasBeenSet = true;
+}
+
+bool UploadFilesRequest::CallerHasBeenSet() const
+{
+    return m_callerHasBeenSet;
 }
 
 vector<UploadFile> UploadFilesRequest::GetFileInfos() const

@@ -168,6 +168,42 @@ namespace TencentCloud
                      */
                     bool DelayThreshHasBeenSet() const;
 
+                    /**
+                     * 获取针对只读账号，设置策略是否固定备机，0：不固定备机，即备机不满足条件与客户端不断开连接，Proxy选择其他可用备机，1：备机不满足条件断开连接，确保一个连接固定备机。
+                     * @return SlaveConst 针对只读账号，设置策略是否固定备机，0：不固定备机，即备机不满足条件与客户端不断开连接，Proxy选择其他可用备机，1：备机不满足条件断开连接，确保一个连接固定备机。
+                     */
+                    int64_t GetSlaveConst() const;
+
+                    /**
+                     * 设置针对只读账号，设置策略是否固定备机，0：不固定备机，即备机不满足条件与客户端不断开连接，Proxy选择其他可用备机，1：备机不满足条件断开连接，确保一个连接固定备机。
+                     * @param SlaveConst 针对只读账号，设置策略是否固定备机，0：不固定备机，即备机不满足条件与客户端不断开连接，Proxy选择其他可用备机，1：备机不满足条件断开连接，确保一个连接固定备机。
+                     */
+                    void SetSlaveConst(const int64_t& _slaveConst);
+
+                    /**
+                     * 判断参数 SlaveConst 是否已赋值
+                     * @return SlaveConst 是否已赋值
+                     */
+                    bool SlaveConstHasBeenSet() const;
+
+                    /**
+                     * 获取用户最大连接数限制参数。不传或者传0表示为不限制，对应max_user_connections参数，目前10.1内核版本不支持设置。
+                     * @return MaxUserConnections 用户最大连接数限制参数。不传或者传0表示为不限制，对应max_user_connections参数，目前10.1内核版本不支持设置。
+                     */
+                    uint64_t GetMaxUserConnections() const;
+
+                    /**
+                     * 设置用户最大连接数限制参数。不传或者传0表示为不限制，对应max_user_connections参数，目前10.1内核版本不支持设置。
+                     * @param MaxUserConnections 用户最大连接数限制参数。不传或者传0表示为不限制，对应max_user_connections参数，目前10.1内核版本不支持设置。
+                     */
+                    void SetMaxUserConnections(const uint64_t& _maxUserConnections);
+
+                    /**
+                     * 判断参数 MaxUserConnections 是否已赋值
+                     * @return MaxUserConnections 是否已赋值
+                     */
+                    bool MaxUserConnectionsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -211,6 +247,18 @@ namespace TencentCloud
                      */
                     int64_t m_delayThresh;
                     bool m_delayThreshHasBeenSet;
+
+                    /**
+                     * 针对只读账号，设置策略是否固定备机，0：不固定备机，即备机不满足条件与客户端不断开连接，Proxy选择其他可用备机，1：备机不满足条件断开连接，确保一个连接固定备机。
+                     */
+                    int64_t m_slaveConst;
+                    bool m_slaveConstHasBeenSet;
+
+                    /**
+                     * 用户最大连接数限制参数。不传或者传0表示为不限制，对应max_user_connections参数，目前10.1内核版本不支持设置。
+                     */
+                    uint64_t m_maxUserConnections;
+                    bool m_maxUserConnectionsHasBeenSet;
 
                 };
             }

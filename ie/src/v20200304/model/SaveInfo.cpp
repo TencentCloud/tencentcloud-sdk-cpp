@@ -22,7 +22,8 @@ using namespace std;
 
 SaveInfo::SaveInfo() :
     m_typeHasBeenSet(false),
-    m_cosInfoHasBeenSet(false)
+    m_cosInfoHasBeenSet(false),
+    m_idHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,16 @@ CoreInternalOutcome SaveInfo::Deserialize(const rapidjson::Value &value)
         m_cosInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("Id") && !value["Id"].IsNull())
+    {
+        if (!value["Id"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SaveInfo.Id` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_id = string(value["Id"].GetString());
+        m_idHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -80,6 +91,14 @@ void SaveInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_cosInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_idHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Id";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_id.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -115,5 +134,21 @@ void SaveInfo::SetCosInfo(const CosInfo& _cosInfo)
 bool SaveInfo::CosInfoHasBeenSet() const
 {
     return m_cosInfoHasBeenSet;
+}
+
+string SaveInfo::GetId() const
+{
+    return m_id;
+}
+
+void SaveInfo::SetId(const string& _id)
+{
+    m_id = _id;
+    m_idHasBeenSet = true;
+}
+
+bool SaveInfo::IdHasBeenSet() const
+{
+    return m_idHasBeenSet;
 }
 

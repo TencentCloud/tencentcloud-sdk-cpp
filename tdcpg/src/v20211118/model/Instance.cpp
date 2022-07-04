@@ -35,7 +35,9 @@ Instance::Instance() :
     m_payPeriodEndTimeHasBeenSet(false),
     m_cPUHasBeenSet(false),
     m_memoryHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false)
+    m_instanceTypeHasBeenSet(false),
+    m_dBMajorVersionHasBeenSet(false),
+    m_dBKernelVersionHasBeenSet(false)
 {
 }
 
@@ -194,6 +196,26 @@ CoreInternalOutcome Instance::Deserialize(const rapidjson::Value &value)
         m_instanceTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("DBMajorVersion") && !value["DBMajorVersion"].IsNull())
+    {
+        if (!value["DBMajorVersion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Instance.DBMajorVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dBMajorVersion = string(value["DBMajorVersion"].GetString());
+        m_dBMajorVersionHasBeenSet = true;
+    }
+
+    if (value.HasMember("DBKernelVersion") && !value["DBKernelVersion"].IsNull())
+    {
+        if (!value["DBKernelVersion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Instance.DBKernelVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dBKernelVersion = string(value["DBKernelVersion"].GetString());
+        m_dBKernelVersionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -319,6 +341,22 @@ void Instance::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "InstanceType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_instanceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dBMajorVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DBMajorVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dBMajorVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dBKernelVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DBKernelVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dBKernelVersion.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -562,5 +600,37 @@ void Instance::SetInstanceType(const string& _instanceType)
 bool Instance::InstanceTypeHasBeenSet() const
 {
     return m_instanceTypeHasBeenSet;
+}
+
+string Instance::GetDBMajorVersion() const
+{
+    return m_dBMajorVersion;
+}
+
+void Instance::SetDBMajorVersion(const string& _dBMajorVersion)
+{
+    m_dBMajorVersion = _dBMajorVersion;
+    m_dBMajorVersionHasBeenSet = true;
+}
+
+bool Instance::DBMajorVersionHasBeenSet() const
+{
+    return m_dBMajorVersionHasBeenSet;
+}
+
+string Instance::GetDBKernelVersion() const
+{
+    return m_dBKernelVersion;
+}
+
+void Instance::SetDBKernelVersion(const string& _dBKernelVersion)
+{
+    m_dBKernelVersion = _dBKernelVersion;
+    m_dBKernelVersionHasBeenSet = true;
+}
+
+bool Instance::DBKernelVersionHasBeenSet() const
+{
+    return m_dBKernelVersionHasBeenSet;
 }
 

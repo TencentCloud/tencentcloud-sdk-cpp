@@ -39,7 +39,8 @@ AlterDMSTableRequest::AlterDMSTableRequest() :
     m_partitionKeysHasBeenSet(false),
     m_viewOriginalTextHasBeenSet(false),
     m_viewExpandedTextHasBeenSet(false),
-    m_partitionsHasBeenSet(false)
+    m_partitionsHasBeenSet(false),
+    m_nameHasBeenSet(false)
 {
 }
 
@@ -207,6 +208,14 @@ string AlterDMSTableRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_nameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Name";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -487,6 +496,22 @@ void AlterDMSTableRequest::SetPartitions(const vector<DMSPartition>& _partitions
 bool AlterDMSTableRequest::PartitionsHasBeenSet() const
 {
     return m_partitionsHasBeenSet;
+}
+
+string AlterDMSTableRequest::GetName() const
+{
+    return m_name;
+}
+
+void AlterDMSTableRequest::SetName(const string& _name)
+{
+    m_name = _name;
+    m_nameHasBeenSet = true;
+}
+
+bool AlterDMSTableRequest::NameHasBeenSet() const
+{
+    return m_nameHasBeenSet;
 }
 
 

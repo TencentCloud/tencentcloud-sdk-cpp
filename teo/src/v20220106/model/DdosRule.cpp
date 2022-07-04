@@ -27,7 +27,8 @@ DdosRule::DdosRule() :
     m_ddosAntiPlyHasBeenSet(false),
     m_ddosPacketFilterHasBeenSet(false),
     m_ddosAclHasBeenSet(false),
-    m_switchHasBeenSet(false)
+    m_switchHasBeenSet(false),
+    m_udpShardOpenHasBeenSet(false)
 {
 }
 
@@ -148,6 +149,16 @@ CoreInternalOutcome DdosRule::Deserialize(const rapidjson::Value &value)
         m_switchHasBeenSet = true;
     }
 
+    if (value.HasMember("UdpShardOpen") && !value["UdpShardOpen"].IsNull())
+    {
+        if (!value["UdpShardOpen"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DdosRule.UdpShardOpen` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_udpShardOpen = string(value["UdpShardOpen"].GetString());
+        m_udpShardOpenHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -215,6 +226,14 @@ void DdosRule::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "Switch";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_switch.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_udpShardOpenHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UdpShardOpen";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_udpShardOpen.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -330,5 +349,21 @@ void DdosRule::SetSwitch(const string& _switch)
 bool DdosRule::SwitchHasBeenSet() const
 {
     return m_switchHasBeenSet;
+}
+
+string DdosRule::GetUdpShardOpen() const
+{
+    return m_udpShardOpen;
+}
+
+void DdosRule::SetUdpShardOpen(const string& _udpShardOpen)
+{
+    m_udpShardOpen = _udpShardOpen;
+    m_udpShardOpenHasBeenSet = true;
+}
+
+bool DdosRule::UdpShardOpenHasBeenSet() const
+{
+    return m_udpShardOpenHasBeenSet;
 }
 

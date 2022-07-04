@@ -118,22 +118,14 @@ index：序号；
                     bool TargetVideoInfoHasBeenSet() const;
 
                     /**
-                     * 获取【不再使用】 对于多输出任务，部分子服务推荐结果信息以列表文件形式，存储到用户存储服务中，可选值：
-UseSaveInfo：默认，结果列表和结果存储同一位置；
-NoListFile：不存储结果列表。
-                     * @return ResultListSaveType 【不再使用】 对于多输出任务，部分子服务推荐结果信息以列表文件形式，存储到用户存储服务中，可选值：
-UseSaveInfo：默认，结果列表和结果存储同一位置；
-NoListFile：不存储结果列表。
+                     * 获取【不再使用】
+                     * @return ResultListSaveType 【不再使用】
                      */
                     std::string GetResultListSaveType() const;
 
                     /**
-                     * 设置【不再使用】 对于多输出任务，部分子服务推荐结果信息以列表文件形式，存储到用户存储服务中，可选值：
-UseSaveInfo：默认，结果列表和结果存储同一位置；
-NoListFile：不存储结果列表。
-                     * @param ResultListSaveType 【不再使用】 对于多输出任务，部分子服务推荐结果信息以列表文件形式，存储到用户存储服务中，可选值：
-UseSaveInfo：默认，结果列表和结果存储同一位置；
-NoListFile：不存储结果列表。
+                     * 设置【不再使用】
+                     * @param ResultListSaveType 【不再使用】
                      */
                     void SetResultListSaveType(const std::string& _resultListSaveType);
 
@@ -168,9 +160,7 @@ index：序号；
                     bool m_targetVideoInfoHasBeenSet;
 
                     /**
-                     * 【不再使用】 对于多输出任务，部分子服务推荐结果信息以列表文件形式，存储到用户存储服务中，可选值：
-UseSaveInfo：默认，结果列表和结果存储同一位置；
-NoListFile：不存储结果列表。
+                     * 【不再使用】
                      */
                     std::string m_resultListSaveType;
                     bool m_resultListSaveTypeHasBeenSet;

@@ -24,7 +24,9 @@ MediaCuttingOutForm::MediaCuttingOutForm() :
     m_typeHasBeenSet(false),
     m_fillTypeHasBeenSet(false),
     m_spriteRowCountHasBeenSet(false),
-    m_spriteColumnCountHasBeenSet(false)
+    m_spriteColumnCountHasBeenSet(false),
+    m_spriteInfoHasBeenSet(false),
+    m_dynamicInfoHasBeenSet(false)
 {
 }
 
@@ -73,6 +75,40 @@ CoreInternalOutcome MediaCuttingOutForm::Deserialize(const rapidjson::Value &val
         m_spriteColumnCountHasBeenSet = true;
     }
 
+    if (value.HasMember("SpriteInfo") && !value["SpriteInfo"].IsNull())
+    {
+        if (!value["SpriteInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `MediaCuttingOutForm.SpriteInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_spriteInfo.Deserialize(value["SpriteInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_spriteInfoHasBeenSet = true;
+    }
+
+    if (value.HasMember("DynamicInfo") && !value["DynamicInfo"].IsNull())
+    {
+        if (!value["DynamicInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `MediaCuttingOutForm.DynamicInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_dynamicInfo.Deserialize(value["DynamicInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_dynamicInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +146,24 @@ void MediaCuttingOutForm::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "SpriteColumnCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_spriteColumnCount, allocator);
+    }
+
+    if (m_spriteInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SpriteInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_spriteInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_dynamicInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DynamicInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_dynamicInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -177,5 +231,37 @@ void MediaCuttingOutForm::SetSpriteColumnCount(const int64_t& _spriteColumnCount
 bool MediaCuttingOutForm::SpriteColumnCountHasBeenSet() const
 {
     return m_spriteColumnCountHasBeenSet;
+}
+
+SpriteImageInfo MediaCuttingOutForm::GetSpriteInfo() const
+{
+    return m_spriteInfo;
+}
+
+void MediaCuttingOutForm::SetSpriteInfo(const SpriteImageInfo& _spriteInfo)
+{
+    m_spriteInfo = _spriteInfo;
+    m_spriteInfoHasBeenSet = true;
+}
+
+bool MediaCuttingOutForm::SpriteInfoHasBeenSet() const
+{
+    return m_spriteInfoHasBeenSet;
+}
+
+DynamicImageInfo MediaCuttingOutForm::GetDynamicInfo() const
+{
+    return m_dynamicInfo;
+}
+
+void MediaCuttingOutForm::SetDynamicInfo(const DynamicImageInfo& _dynamicInfo)
+{
+    m_dynamicInfo = _dynamicInfo;
+    m_dynamicInfoHasBeenSet = true;
+}
+
+bool MediaCuttingOutForm::DynamicInfoHasBeenSet() const
+{
+    return m_dynamicInfoHasBeenSet;
 }
 

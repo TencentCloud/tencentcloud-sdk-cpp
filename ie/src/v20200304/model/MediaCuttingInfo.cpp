@@ -24,7 +24,9 @@ MediaCuttingInfo::MediaCuttingInfo() :
     m_timeInfoHasBeenSet(false),
     m_targetInfoHasBeenSet(false),
     m_outFormHasBeenSet(false),
-    m_resultListSaveTypeHasBeenSet(false)
+    m_resultListSaveTypeHasBeenSet(false),
+    m_watermarkInfoSetHasBeenSet(false),
+    m_dropPureColorHasBeenSet(false)
 {
 }
 
@@ -94,6 +96,36 @@ CoreInternalOutcome MediaCuttingInfo::Deserialize(const rapidjson::Value &value)
         m_resultListSaveTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("WatermarkInfoSet") && !value["WatermarkInfoSet"].IsNull())
+    {
+        if (!value["WatermarkInfoSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `MediaCuttingInfo.WatermarkInfoSet` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["WatermarkInfoSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            MediaCuttingWatermark item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_watermarkInfoSet.push_back(item);
+        }
+        m_watermarkInfoSetHasBeenSet = true;
+    }
+
+    if (value.HasMember("DropPureColor") && !value["DropPureColor"].IsNull())
+    {
+        if (!value["DropPureColor"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MediaCuttingInfo.DropPureColor` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dropPureColor = string(value["DropPureColor"].GetString());
+        m_dropPureColorHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -134,6 +166,29 @@ void MediaCuttingInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "ResultListSaveType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_resultListSaveType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_watermarkInfoSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WatermarkInfoSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_watermarkInfoSet.begin(); itr != m_watermarkInfoSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_dropPureColorHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DropPureColor";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dropPureColor.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -201,5 +256,37 @@ void MediaCuttingInfo::SetResultListSaveType(const string& _resultListSaveType)
 bool MediaCuttingInfo::ResultListSaveTypeHasBeenSet() const
 {
     return m_resultListSaveTypeHasBeenSet;
+}
+
+vector<MediaCuttingWatermark> MediaCuttingInfo::GetWatermarkInfoSet() const
+{
+    return m_watermarkInfoSet;
+}
+
+void MediaCuttingInfo::SetWatermarkInfoSet(const vector<MediaCuttingWatermark>& _watermarkInfoSet)
+{
+    m_watermarkInfoSet = _watermarkInfoSet;
+    m_watermarkInfoSetHasBeenSet = true;
+}
+
+bool MediaCuttingInfo::WatermarkInfoSetHasBeenSet() const
+{
+    return m_watermarkInfoSetHasBeenSet;
+}
+
+string MediaCuttingInfo::GetDropPureColor() const
+{
+    return m_dropPureColor;
+}
+
+void MediaCuttingInfo::SetDropPureColor(const string& _dropPureColor)
+{
+    m_dropPureColor = _dropPureColor;
+    m_dropPureColorHasBeenSet = true;
+}
+
+bool MediaCuttingInfo::DropPureColorHasBeenSet() const
+{
+    return m_dropPureColorHasBeenSet;
 }
 

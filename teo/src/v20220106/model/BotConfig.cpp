@@ -25,7 +25,8 @@ BotConfig::BotConfig() :
     m_managedRuleHasBeenSet(false),
     m_uaBotRuleHasBeenSet(false),
     m_ispBotRuleHasBeenSet(false),
-    m_portraitRuleHasBeenSet(false)
+    m_portraitRuleHasBeenSet(false),
+    m_intelligenceRuleHasBeenSet(false)
 {
 }
 
@@ -112,6 +113,23 @@ CoreInternalOutcome BotConfig::Deserialize(const rapidjson::Value &value)
         m_portraitRuleHasBeenSet = true;
     }
 
+    if (value.HasMember("IntelligenceRule") && !value["IntelligenceRule"].IsNull())
+    {
+        if (!value["IntelligenceRule"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `BotConfig.IntelligenceRule` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_intelligenceRule.Deserialize(value["IntelligenceRule"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_intelligenceRuleHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -161,6 +179,15 @@ void BotConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_portraitRule.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_intelligenceRuleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IntelligenceRule";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_intelligenceRule.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -244,5 +271,21 @@ void BotConfig::SetPortraitRule(const BotPortraitRule& _portraitRule)
 bool BotConfig::PortraitRuleHasBeenSet() const
 {
     return m_portraitRuleHasBeenSet;
+}
+
+IntelligenceRule BotConfig::GetIntelligenceRule() const
+{
+    return m_intelligenceRule;
+}
+
+void BotConfig::SetIntelligenceRule(const IntelligenceRule& _intelligenceRule)
+{
+    m_intelligenceRule = _intelligenceRule;
+    m_intelligenceRuleHasBeenSet = true;
+}
+
+bool BotConfig::IntelligenceRuleHasBeenSet() const
+{
+    return m_intelligenceRuleHasBeenSet;
 }
 

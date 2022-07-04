@@ -29,7 +29,9 @@ CreateAccountRequest::CreateAccountRequest() :
     m_passwordHasBeenSet(false),
     m_readOnlyHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_delayThreshHasBeenSet(false)
+    m_delayThreshHasBeenSet(false),
+    m_slaveConstHasBeenSet(false),
+    m_maxUserConnectionsHasBeenSet(false)
 {
 }
 
@@ -94,6 +96,22 @@ string CreateAccountRequest::ToJsonString() const
         string key = "DelayThresh";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_delayThresh, allocator);
+    }
+
+    if (m_slaveConstHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SlaveConst";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_slaveConst, allocator);
+    }
+
+    if (m_maxUserConnectionsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxUserConnections";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_maxUserConnections, allocator);
     }
 
 
@@ -214,6 +232,38 @@ void CreateAccountRequest::SetDelayThresh(const int64_t& _delayThresh)
 bool CreateAccountRequest::DelayThreshHasBeenSet() const
 {
     return m_delayThreshHasBeenSet;
+}
+
+int64_t CreateAccountRequest::GetSlaveConst() const
+{
+    return m_slaveConst;
+}
+
+void CreateAccountRequest::SetSlaveConst(const int64_t& _slaveConst)
+{
+    m_slaveConst = _slaveConst;
+    m_slaveConstHasBeenSet = true;
+}
+
+bool CreateAccountRequest::SlaveConstHasBeenSet() const
+{
+    return m_slaveConstHasBeenSet;
+}
+
+uint64_t CreateAccountRequest::GetMaxUserConnections() const
+{
+    return m_maxUserConnections;
+}
+
+void CreateAccountRequest::SetMaxUserConnections(const uint64_t& _maxUserConnections)
+{
+    m_maxUserConnections = _maxUserConnections;
+    m_maxUserConnectionsHasBeenSet = true;
+}
+
+bool CreateAccountRequest::MaxUserConnectionsHasBeenSet() const
+{
+    return m_maxUserConnectionsHasBeenSet;
 }
 
 
