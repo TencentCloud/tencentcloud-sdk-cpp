@@ -14,23 +14,22 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/tke/v20180525/model/DescribeTKEEdgeScriptResponse.h>
+#include <tencentcloud/mariadb/v20170312/model/DestroyDBInstanceResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Tke::V20180525::Model;
+using namespace TencentCloud::Mariadb::V20170312::Model;
 using namespace std;
 
-DescribeTKEEdgeScriptResponse::DescribeTKEEdgeScriptResponse() :
-    m_linkHasBeenSet(false),
-    m_tokenHasBeenSet(false),
-    m_commandHasBeenSet(false)
+DestroyDBInstanceResponse::DestroyDBInstanceResponse() :
+    m_instanceIdHasBeenSet(false),
+    m_flowIdHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome DescribeTKEEdgeScriptResponse::Deserialize(const string &payload)
+CoreInternalOutcome DestroyDBInstanceResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -64,68 +63,50 @@ CoreInternalOutcome DescribeTKEEdgeScriptResponse::Deserialize(const string &pay
     }
 
 
-    if (rsp.HasMember("Link") && !rsp["Link"].IsNull())
+    if (rsp.HasMember("InstanceId") && !rsp["InstanceId"].IsNull())
     {
-        if (!rsp["Link"].IsString())
+        if (!rsp["InstanceId"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `Link` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_link = string(rsp["Link"].GetString());
-        m_linkHasBeenSet = true;
+        m_instanceId = string(rsp["InstanceId"].GetString());
+        m_instanceIdHasBeenSet = true;
     }
 
-    if (rsp.HasMember("Token") && !rsp["Token"].IsNull())
+    if (rsp.HasMember("FlowId") && !rsp["FlowId"].IsNull())
     {
-        if (!rsp["Token"].IsString())
+        if (!rsp["FlowId"].IsInt64())
         {
-            return CoreInternalOutcome(Core::Error("response `Token` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `FlowId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
-        m_token = string(rsp["Token"].GetString());
-        m_tokenHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("Command") && !rsp["Command"].IsNull())
-    {
-        if (!rsp["Command"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `Command` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_command = string(rsp["Command"].GetString());
-        m_commandHasBeenSet = true;
+        m_flowId = rsp["FlowId"].GetInt64();
+        m_flowIdHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string DescribeTKEEdgeScriptResponse::ToJsonString() const
+string DestroyDBInstanceResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_linkHasBeenSet)
+    if (m_instanceIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Link";
+        string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_link.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_tokenHasBeenSet)
+    if (m_flowIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Token";
+        string key = "FlowId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_token.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_commandHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Command";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_command.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, m_flowId, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -140,34 +121,24 @@ string DescribeTKEEdgeScriptResponse::ToJsonString() const
 }
 
 
-string DescribeTKEEdgeScriptResponse::GetLink() const
+string DestroyDBInstanceResponse::GetInstanceId() const
 {
-    return m_link;
+    return m_instanceId;
 }
 
-bool DescribeTKEEdgeScriptResponse::LinkHasBeenSet() const
+bool DestroyDBInstanceResponse::InstanceIdHasBeenSet() const
 {
-    return m_linkHasBeenSet;
+    return m_instanceIdHasBeenSet;
 }
 
-string DescribeTKEEdgeScriptResponse::GetToken() const
+int64_t DestroyDBInstanceResponse::GetFlowId() const
 {
-    return m_token;
+    return m_flowId;
 }
 
-bool DescribeTKEEdgeScriptResponse::TokenHasBeenSet() const
+bool DestroyDBInstanceResponse::FlowIdHasBeenSet() const
 {
-    return m_tokenHasBeenSet;
-}
-
-string DescribeTKEEdgeScriptResponse::GetCommand() const
-{
-    return m_command;
-}
-
-bool DescribeTKEEdgeScriptResponse::CommandHasBeenSet() const
-{
-    return m_commandHasBeenSet;
+    return m_flowIdHasBeenSet;
 }
 
 

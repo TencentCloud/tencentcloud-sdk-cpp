@@ -91,6 +91,7 @@ set(mariadb_public_header_model
   include/tencentcloud/mariadb/v20170312/model/DescribeBackupTimeRequest.h
   include/tencentcloud/mariadb/v20170312/model/RestartDBInstancesResponse.h
   include/tencentcloud/mariadb/v20170312/model/DescribeSaleInfoResponse.h
+  include/tencentcloud/mariadb/v20170312/model/DestroyDBInstanceRequest.h
   include/tencentcloud/mariadb/v20170312/model/DatabaseTable.h
   include/tencentcloud/mariadb/v20170312/model/Deal.h
   include/tencentcloud/mariadb/v20170312/model/DescribeDBPerformanceDetailsRequest.h
@@ -142,6 +143,7 @@ set(mariadb_public_header_model
   include/tencentcloud/mariadb/v20170312/model/DescribeDatabasesResponse.h
   include/tencentcloud/mariadb/v20170312/model/ViewPrivileges.h
   include/tencentcloud/mariadb/v20170312/model/DescribeOrdersRequest.h
+  include/tencentcloud/mariadb/v20170312/model/MonitorData.h
   include/tencentcloud/mariadb/v20170312/model/DescribeDBLogFilesResponse.h
   include/tencentcloud/mariadb/v20170312/model/CloseDBExtranetAccessRequest.h
   include/tencentcloud/mariadb/v20170312/model/ResourceTag.h
@@ -178,7 +180,7 @@ set(mariadb_public_header_model
   include/tencentcloud/mariadb/v20170312/model/DescribeDBParametersResponse.h
   include/tencentcloud/mariadb/v20170312/model/ModifyDBInstancesProjectRequest.h
   include/tencentcloud/mariadb/v20170312/model/FlushBinlogRequest.h
-  include/tencentcloud/mariadb/v20170312/model/MonitorData.h
+  include/tencentcloud/mariadb/v20170312/model/DestroyDBInstanceResponse.h
   include/tencentcloud/mariadb/v20170312/model/ModifyDBSyncModeResponse.h
   include/tencentcloud/mariadb/v20170312/model/DescribeInstanceNodeInfoResponse.h
   include/tencentcloud/mariadb/v20170312/model/ModifyLogFileRetentionPeriodResponse.h
@@ -261,6 +263,7 @@ set(mariadb_src
   src/v20170312/model/DescribeBackupTimeRequest.cpp
   src/v20170312/model/RestartDBInstancesResponse.cpp
   src/v20170312/model/DescribeSaleInfoResponse.cpp
+  src/v20170312/model/DestroyDBInstanceRequest.cpp
   src/v20170312/model/DatabaseTable.cpp
   src/v20170312/model/Deal.cpp
   src/v20170312/model/DescribeDBPerformanceDetailsRequest.cpp
@@ -312,6 +315,7 @@ set(mariadb_src
   src/v20170312/model/DescribeDatabasesResponse.cpp
   src/v20170312/model/ViewPrivileges.cpp
   src/v20170312/model/DescribeOrdersRequest.cpp
+  src/v20170312/model/MonitorData.cpp
   src/v20170312/model/DescribeDBLogFilesResponse.cpp
   src/v20170312/model/CloseDBExtranetAccessRequest.cpp
   src/v20170312/model/ResourceTag.cpp
@@ -348,7 +352,7 @@ set(mariadb_src
   src/v20170312/model/DescribeDBParametersResponse.cpp
   src/v20170312/model/ModifyDBInstancesProjectRequest.cpp
   src/v20170312/model/FlushBinlogRequest.cpp
-  src/v20170312/model/MonitorData.cpp
+  src/v20170312/model/DestroyDBInstanceResponse.cpp
   src/v20170312/model/ModifyDBSyncModeResponse.cpp
   src/v20170312/model/DescribeInstanceNodeInfoResponse.cpp
   src/v20170312/model/ModifyLogFileRetentionPeriodResponse.cpp

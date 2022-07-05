@@ -42,7 +42,79 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取数据库名称
+                     * @return Name 数据库名称
+                     */
+                    std::string GetName() const;
+
+                    /**
+                     * 设置数据库名称
+                     * @param Name 数据库名称
+                     */
+                    void SetName(const std::string& _name);
+
+                    /**
+                     * 判断参数 Name 是否已赋值
+                     * @return Name 是否已赋值
+                     */
+                    bool NameHasBeenSet() const;
+
+                    /**
+                     * 获取是否删除数据
+                     * @return DeleteData 是否删除数据
+                     */
+                    bool GetDeleteData() const;
+
+                    /**
+                     * 设置是否删除数据
+                     * @param DeleteData 是否删除数据
+                     */
+                    void SetDeleteData(const bool& _deleteData);
+
+                    /**
+                     * 判断参数 DeleteData 是否已赋值
+                     * @return DeleteData 是否已赋值
+                     */
+                    bool DeleteDataHasBeenSet() const;
+
+                    /**
+                     * 获取是否级联删除
+                     * @return Cascade 是否级联删除
+                     */
+                    bool GetCascade() const;
+
+                    /**
+                     * 设置是否级联删除
+                     * @param Cascade 是否级联删除
+                     */
+                    void SetCascade(const bool& _cascade);
+
+                    /**
+                     * 判断参数 Cascade 是否已赋值
+                     * @return Cascade 是否已赋值
+                     */
+                    bool CascadeHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 数据库名称
+                     */
+                    std::string m_name;
+                    bool m_nameHasBeenSet;
+
+                    /**
+                     * 是否删除数据
+                     */
+                    bool m_deleteData;
+                    bool m_deleteDataHasBeenSet;
+
+                    /**
+                     * 是否级联删除
+                     */
+                    bool m_cascade;
+                    bool m_cascadeHasBeenSet;
 
                 };
             }

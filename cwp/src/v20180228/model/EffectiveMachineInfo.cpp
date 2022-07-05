@@ -29,7 +29,8 @@ EffectiveMachineInfo::EffectiveMachineInfo() :
     m_uuidHasBeenSet(false),
     m_kernelVersionHasBeenSet(false),
     m_machineStatusHasBeenSet(false),
-    m_licenseOrderHasBeenSet(false)
+    m_licenseOrderHasBeenSet(false),
+    m_vulNumHasBeenSet(false)
 {
 }
 
@@ -145,6 +146,16 @@ CoreInternalOutcome EffectiveMachineInfo::Deserialize(const rapidjson::Value &va
         m_licenseOrderHasBeenSet = true;
     }
 
+    if (value.HasMember("VulNum") && !value["VulNum"].IsNull())
+    {
+        if (!value["VulNum"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `EffectiveMachineInfo.VulNum` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_vulNum = value["VulNum"].GetUint64();
+        m_vulNumHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -230,6 +241,14 @@ void EffectiveMachineInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_licenseOrder.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_vulNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VulNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_vulNum, allocator);
     }
 
 }
@@ -377,5 +396,21 @@ void EffectiveMachineInfo::SetLicenseOrder(const LicenseOrder& _licenseOrder)
 bool EffectiveMachineInfo::LicenseOrderHasBeenSet() const
 {
     return m_licenseOrderHasBeenSet;
+}
+
+uint64_t EffectiveMachineInfo::GetVulNum() const
+{
+    return m_vulNum;
+}
+
+void EffectiveMachineInfo::SetVulNum(const uint64_t& _vulNum)
+{
+    m_vulNum = _vulNum;
+    m_vulNumHasBeenSet = true;
+}
+
+bool EffectiveMachineInfo::VulNumHasBeenSet() const
+{
+    return m_vulNumHasBeenSet;
 }
 

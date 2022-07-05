@@ -21,8 +21,8 @@ using namespace TencentCloud::Cbs::V20170312::Model;
 using namespace std;
 
 Policy::Policy() :
-    m_dayOfWeekHasBeenSet(false),
-    m_hourHasBeenSet(false)
+    m_hourHasBeenSet(false),
+    m_dayOfWeekHasBeenSet(false)
 {
 }
 
@@ -30,19 +30,6 @@ CoreInternalOutcome Policy::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
-
-    if (value.HasMember("DayOfWeek") && !value["DayOfWeek"].IsNull())
-    {
-        if (!value["DayOfWeek"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `Policy.DayOfWeek` is not array type"));
-
-        const rapidjson::Value &tmpValue = value["DayOfWeek"];
-        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
-        {
-            m_dayOfWeek.push_back((*itr).GetUint64());
-        }
-        m_dayOfWeekHasBeenSet = true;
-    }
 
     if (value.HasMember("Hour") && !value["Hour"].IsNull())
     {
@@ -57,25 +44,25 @@ CoreInternalOutcome Policy::Deserialize(const rapidjson::Value &value)
         m_hourHasBeenSet = true;
     }
 
+    if (value.HasMember("DayOfWeek") && !value["DayOfWeek"].IsNull())
+    {
+        if (!value["DayOfWeek"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Policy.DayOfWeek` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["DayOfWeek"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_dayOfWeek.push_back((*itr).GetUint64());
+        }
+        m_dayOfWeekHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
 void Policy::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
-
-    if (m_dayOfWeekHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "DayOfWeek";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        for (auto itr = m_dayOfWeek.begin(); itr != m_dayOfWeek.end(); ++itr)
-        {
-            value[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
-        }
-    }
 
     if (m_hourHasBeenSet)
     {
@@ -90,24 +77,21 @@ void Policy::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocato
         }
     }
 
+    if (m_dayOfWeekHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DayOfWeek";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_dayOfWeek.begin(); itr != m_dayOfWeek.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
+        }
+    }
+
 }
 
-
-vector<uint64_t> Policy::GetDayOfWeek() const
-{
-    return m_dayOfWeek;
-}
-
-void Policy::SetDayOfWeek(const vector<uint64_t>& _dayOfWeek)
-{
-    m_dayOfWeek = _dayOfWeek;
-    m_dayOfWeekHasBeenSet = true;
-}
-
-bool Policy::DayOfWeekHasBeenSet() const
-{
-    return m_dayOfWeekHasBeenSet;
-}
 
 vector<uint64_t> Policy::GetHour() const
 {
@@ -123,5 +107,21 @@ void Policy::SetHour(const vector<uint64_t>& _hour)
 bool Policy::HourHasBeenSet() const
 {
     return m_hourHasBeenSet;
+}
+
+vector<uint64_t> Policy::GetDayOfWeek() const
+{
+    return m_dayOfWeek;
+}
+
+void Policy::SetDayOfWeek(const vector<uint64_t>& _dayOfWeek)
+{
+    m_dayOfWeek = _dayOfWeek;
+    m_dayOfWeekHasBeenSet = true;
+}
+
+bool Policy::DayOfWeekHasBeenSet() const
+{
+    return m_dayOfWeekHasBeenSet;
 }
 

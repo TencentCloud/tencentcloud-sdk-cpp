@@ -33,7 +33,8 @@ DescribeDMSPartitionsRequest::DescribeDMSPartitionsRequest() :
     m_filterHasBeenSet(false),
     m_maxPartsHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_limitHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_expressionHasBeenSet(false)
 {
 }
 
@@ -145,6 +146,14 @@ string DescribeDMSPartitionsRequest::ToJsonString() const
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_expressionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Expression";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_expression.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -329,6 +338,22 @@ void DescribeDMSPartitionsRequest::SetLimit(const int64_t& _limit)
 bool DescribeDMSPartitionsRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+string DescribeDMSPartitionsRequest::GetExpression() const
+{
+    return m_expression;
+}
+
+void DescribeDMSPartitionsRequest::SetExpression(const string& _expression)
+{
+    m_expression = _expression;
+    m_expressionHasBeenSet = true;
+}
+
+bool DescribeDMSPartitionsRequest::ExpressionHasBeenSet() const
+{
+    return m_expressionHasBeenSet;
 }
 
 

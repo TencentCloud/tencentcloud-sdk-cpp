@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/dlc/v20210125/model/Asset.h>
 
 
 namespace TencentCloud
@@ -43,7 +44,91 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取数据库名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Name 数据库名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetName() const;
+
+                    /**
+                     * 判断参数 Name 是否已赋值
+                     * @return Name 是否已赋值
+                     */
+                    bool NameHasBeenSet() const;
+
+                    /**
+                     * 获取schema名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SchemaName schema名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetSchemaName() const;
+
+                    /**
+                     * 判断参数 SchemaName 是否已赋值
+                     * @return SchemaName 是否已赋值
+                     */
+                    bool SchemaNameHasBeenSet() const;
+
+                    /**
+                     * 获取存储地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Location 存储地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetLocation() const;
+
+                    /**
+                     * 判断参数 Location 是否已赋值
+                     * @return Location 是否已赋值
+                     */
+                    bool LocationHasBeenSet() const;
+
+                    /**
+                     * 获取数据对象
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Asset 数据对象
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    Asset GetAsset() const;
+
+                    /**
+                     * 判断参数 Asset 是否已赋值
+                     * @return Asset 是否已赋值
+                     */
+                    bool AssetHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 数据库名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_name;
+                    bool m_nameHasBeenSet;
+
+                    /**
+                     * schema名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_schemaName;
+                    bool m_schemaNameHasBeenSet;
+
+                    /**
+                     * 存储地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_location;
+                    bool m_locationHasBeenSet;
+
+                    /**
+                     * 数据对象
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    Asset m_asset;
+                    bool m_assetHasBeenSet;
 
                 };
             }

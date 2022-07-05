@@ -62,42 +62,6 @@ namespace TencentCloud
                     bool AutoSnapshotPolicyIdHasBeenSet() const;
 
                     /**
-                     * 获取定期快照的执行策略。
-                     * @return Policy 定期快照的执行策略。
-                     */
-                    std::vector<Policy> GetPolicy() const;
-
-                    /**
-                     * 设置定期快照的执行策略。
-                     * @param Policy 定期快照的执行策略。
-                     */
-                    void SetPolicy(const std::vector<Policy>& _policy);
-
-                    /**
-                     * 判断参数 Policy 是否已赋值
-                     * @return Policy 是否已赋值
-                     */
-                    bool PolicyHasBeenSet() const;
-
-                    /**
-                     * 获取要创建的定期快照策略名。不传则默认为“未命名”。最大长度不能超60个字节。
-                     * @return AutoSnapshotPolicyName 要创建的定期快照策略名。不传则默认为“未命名”。最大长度不能超60个字节。
-                     */
-                    std::string GetAutoSnapshotPolicyName() const;
-
-                    /**
-                     * 设置要创建的定期快照策略名。不传则默认为“未命名”。最大长度不能超60个字节。
-                     * @param AutoSnapshotPolicyName 要创建的定期快照策略名。不传则默认为“未命名”。最大长度不能超60个字节。
-                     */
-                    void SetAutoSnapshotPolicyName(const std::string& _autoSnapshotPolicyName);
-
-                    /**
-                     * 判断参数 AutoSnapshotPolicyName 是否已赋值
-                     * @return AutoSnapshotPolicyName 是否已赋值
-                     */
-                    bool AutoSnapshotPolicyNameHasBeenSet() const;
-
-                    /**
                      * 获取是否激活定期快照策略，FALSE表示未激活，TRUE表示激活，默认为TRUE。
                      * @return IsActivated 是否激活定期快照策略，FALSE表示未激活，TRUE表示激活，默认为TRUE。
                      */
@@ -134,14 +98,50 @@ namespace TencentCloud
                     bool IsPermanentHasBeenSet() const;
 
                     /**
-                     * 获取通过该定期快照策略创建的快照保留天数，该参数不可与`IsPermanent`参数冲突，即若定期快照策略设置为永久保留，`RetentionDays`应置0。
-                     * @return RetentionDays 通过该定期快照策略创建的快照保留天数，该参数不可与`IsPermanent`参数冲突，即若定期快照策略设置为永久保留，`RetentionDays`应置0。
+                     * 获取要创建的定期快照策略名。不传则默认为“未命名”。最大长度不能超60个字节。
+                     * @return AutoSnapshotPolicyName 要创建的定期快照策略名。不传则默认为“未命名”。最大长度不能超60个字节。
+                     */
+                    std::string GetAutoSnapshotPolicyName() const;
+
+                    /**
+                     * 设置要创建的定期快照策略名。不传则默认为“未命名”。最大长度不能超60个字节。
+                     * @param AutoSnapshotPolicyName 要创建的定期快照策略名。不传则默认为“未命名”。最大长度不能超60个字节。
+                     */
+                    void SetAutoSnapshotPolicyName(const std::string& _autoSnapshotPolicyName);
+
+                    /**
+                     * 判断参数 AutoSnapshotPolicyName 是否已赋值
+                     * @return AutoSnapshotPolicyName 是否已赋值
+                     */
+                    bool AutoSnapshotPolicyNameHasBeenSet() const;
+
+                    /**
+                     * 获取定期快照的执行策略。
+                     * @return Policy 定期快照的执行策略。
+                     */
+                    std::vector<Policy> GetPolicy() const;
+
+                    /**
+                     * 设置定期快照的执行策略。
+                     * @param Policy 定期快照的执行策略。
+                     */
+                    void SetPolicy(const std::vector<Policy>& _policy);
+
+                    /**
+                     * 判断参数 Policy 是否已赋值
+                     * @return Policy 是否已赋值
+                     */
+                    bool PolicyHasBeenSet() const;
+
+                    /**
+                     * 获取通过该定期快照策略创建的快照保留天数。如果指定本参数，则IsPermanent入参不可指定为TRUE，否则会产生冲突。
+                     * @return RetentionDays 通过该定期快照策略创建的快照保留天数。如果指定本参数，则IsPermanent入参不可指定为TRUE，否则会产生冲突。
                      */
                     uint64_t GetRetentionDays() const;
 
                     /**
-                     * 设置通过该定期快照策略创建的快照保留天数，该参数不可与`IsPermanent`参数冲突，即若定期快照策略设置为永久保留，`RetentionDays`应置0。
-                     * @param RetentionDays 通过该定期快照策略创建的快照保留天数，该参数不可与`IsPermanent`参数冲突，即若定期快照策略设置为永久保留，`RetentionDays`应置0。
+                     * 设置通过该定期快照策略创建的快照保留天数。如果指定本参数，则IsPermanent入参不可指定为TRUE，否则会产生冲突。
+                     * @param RetentionDays 通过该定期快照策略创建的快照保留天数。如果指定本参数，则IsPermanent入参不可指定为TRUE，否则会产生冲突。
                      */
                     void SetRetentionDays(const uint64_t& _retentionDays);
 
@@ -160,18 +160,6 @@ namespace TencentCloud
                     bool m_autoSnapshotPolicyIdHasBeenSet;
 
                     /**
-                     * 定期快照的执行策略。
-                     */
-                    std::vector<Policy> m_policy;
-                    bool m_policyHasBeenSet;
-
-                    /**
-                     * 要创建的定期快照策略名。不传则默认为“未命名”。最大长度不能超60个字节。
-                     */
-                    std::string m_autoSnapshotPolicyName;
-                    bool m_autoSnapshotPolicyNameHasBeenSet;
-
-                    /**
                      * 是否激活定期快照策略，FALSE表示未激活，TRUE表示激活，默认为TRUE。
                      */
                     bool m_isActivated;
@@ -184,7 +172,19 @@ namespace TencentCloud
                     bool m_isPermanentHasBeenSet;
 
                     /**
-                     * 通过该定期快照策略创建的快照保留天数，该参数不可与`IsPermanent`参数冲突，即若定期快照策略设置为永久保留，`RetentionDays`应置0。
+                     * 要创建的定期快照策略名。不传则默认为“未命名”。最大长度不能超60个字节。
+                     */
+                    std::string m_autoSnapshotPolicyName;
+                    bool m_autoSnapshotPolicyNameHasBeenSet;
+
+                    /**
+                     * 定期快照的执行策略。
+                     */
+                    std::vector<Policy> m_policy;
+                    bool m_policyHasBeenSet;
+
+                    /**
+                     * 通过该定期快照策略创建的快照保留天数。如果指定本参数，则IsPermanent入参不可指定为TRUE，否则会产生冲突。
                      */
                     uint64_t m_retentionDays;
                     bool m_retentionDaysHasBeenSet;

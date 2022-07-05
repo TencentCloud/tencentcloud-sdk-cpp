@@ -43,7 +43,61 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取下载链接
+                     * @return Link 下载链接
+                     */
+                    std::string GetLink() const;
+
+                    /**
+                     * 判断参数 Link 是否已赋值
+                     * @return Link 是否已赋值
+                     */
+                    bool LinkHasBeenSet() const;
+
+                    /**
+                     * 获取下载需要的token
+                     * @return Token 下载需要的token
+                     */
+                    std::string GetToken() const;
+
+                    /**
+                     * 判断参数 Token 是否已赋值
+                     * @return Token 是否已赋值
+                     */
+                    bool TokenHasBeenSet() const;
+
+                    /**
+                     * 获取下载命令
+                     * @return Command 下载命令
+                     */
+                    std::string GetCommand() const;
+
+                    /**
+                     * 判断参数 Command 是否已赋值
+                     * @return Command 是否已赋值
+                     */
+                    bool CommandHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 下载链接
+                     */
+                    std::string m_link;
+                    bool m_linkHasBeenSet;
+
+                    /**
+                     * 下载需要的token
+                     */
+                    std::string m_token;
+                    bool m_tokenHasBeenSet;
+
+                    /**
+                     * 下载命令
+                     */
+                    std::string m_command;
+                    bool m_commandHasBeenSet;
 
                 };
             }

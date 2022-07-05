@@ -62,14 +62,14 @@ namespace TencentCloud
                     bool EnvironmentIdHasBeenSet() const;
 
                     /**
-                     * 获取未消费消息过期时间，单位：秒，取值范围：60秒~1天。
-                     * @return MsgTTL 未消费消息过期时间，单位：秒，取值范围：60秒~1天。
+                     * 获取未消费消息过期时间，单位：秒，取值范围：60秒~15天。
+                     * @return MsgTTL 未消费消息过期时间，单位：秒，取值范围：60秒~15天。
                      */
                     uint64_t GetMsgTTL() const;
 
                     /**
-                     * 设置未消费消息过期时间，单位：秒，取值范围：60秒~1天。
-                     * @param MsgTTL 未消费消息过期时间，单位：秒，取值范围：60秒~1天。
+                     * 设置未消费消息过期时间，单位：秒，取值范围：60秒~15天。
+                     * @param MsgTTL 未消费消息过期时间，单位：秒，取值范围：60秒~15天。
                      */
                     void SetMsgTTL(const uint64_t& _msgTTL);
 
@@ -142,7 +142,7 @@ namespace TencentCloud
                     bool m_environmentIdHasBeenSet;
 
                     /**
-                     * 未消费消息过期时间，单位：秒，取值范围：60秒~1天。
+                     * 未消费消息过期时间，单位：秒，取值范围：60秒~15天。
                      */
                     uint64_t m_msgTTL;
                     bool m_msgTTLHasBeenSet;

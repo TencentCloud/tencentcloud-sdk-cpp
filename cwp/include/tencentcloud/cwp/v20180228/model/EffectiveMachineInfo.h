@@ -246,6 +246,28 @@ namespace TencentCloud
                      */
                     bool LicenseOrderHasBeenSet() const;
 
+                    /**
+                     * 获取漏洞数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return VulNum 漏洞数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetVulNum() const;
+
+                    /**
+                     * 设置漏洞数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param VulNum 漏洞数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetVulNum(const uint64_t& _vulNum);
+
+                    /**
+                     * 判断参数 VulNum 是否已赋值
+                     * @return VulNum 是否已赋值
+                     */
+                    bool VulNumHasBeenSet() const;
+
                 private:
 
                     /**
@@ -310,6 +332,13 @@ namespace TencentCloud
                      */
                     LicenseOrder m_licenseOrder;
                     bool m_licenseOrderHasBeenSet;
+
+                    /**
+                     * 漏洞数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_vulNum;
+                    bool m_vulNumHasBeenSet;
 
                 };
             }

@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 描述了定期快照的执行策略。可理解为在DayOfWeek指定的那几天中，在Hour指定的小时执行该条定期快照策略。
+                * 描述了定期快照的执行策略。可理解为在DayOfWeek/DayOfMonth指定的几天中，或者是IntervalDays设定的间隔的几天，在Hour指定的小时执行该条定期快照策略。注：DayOfWeek/DayOfMonth/IntervalDays为互斥规则，仅可设置其中一条策略规则。
                 */
                 class Policy : public AbstractModel
                 {
@@ -45,24 +45,6 @@ namespace TencentCloud
                     void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
                     CoreInternalOutcome Deserialize(const rapidjson::Value &value);
 
-
-                    /**
-                     * 获取指定每周从周一到周日需要触发定期快照的日期，取值范围：[0, 6]。0表示周日触发，1-6分别表示周一至周六。
-                     * @return DayOfWeek 指定每周从周一到周日需要触发定期快照的日期，取值范围：[0, 6]。0表示周日触发，1-6分别表示周一至周六。
-                     */
-                    std::vector<uint64_t> GetDayOfWeek() const;
-
-                    /**
-                     * 设置指定每周从周一到周日需要触发定期快照的日期，取值范围：[0, 6]。0表示周日触发，1-6分别表示周一至周六。
-                     * @param DayOfWeek 指定每周从周一到周日需要触发定期快照的日期，取值范围：[0, 6]。0表示周日触发，1-6分别表示周一至周六。
-                     */
-                    void SetDayOfWeek(const std::vector<uint64_t>& _dayOfWeek);
-
-                    /**
-                     * 判断参数 DayOfWeek 是否已赋值
-                     * @return DayOfWeek 是否已赋值
-                     */
-                    bool DayOfWeekHasBeenSet() const;
 
                     /**
                      * 获取指定定期快照策略的触发时间。单位为小时，取值范围：[0, 23]。00:00 ~ 23:00 共 24 个时间点可选，1表示 01:00，依此类推。
@@ -82,19 +64,37 @@ namespace TencentCloud
                      */
                     bool HourHasBeenSet() const;
 
-                private:
+                    /**
+                     * 获取指定每周从周一到周日需要触发定期快照的日期，取值范围：[0, 6]。0表示周日触发，1-6分别表示周一至周六。
+                     * @return DayOfWeek 指定每周从周一到周日需要触发定期快照的日期，取值范围：[0, 6]。0表示周日触发，1-6分别表示周一至周六。
+                     */
+                    std::vector<uint64_t> GetDayOfWeek() const;
 
                     /**
-                     * 指定每周从周一到周日需要触发定期快照的日期，取值范围：[0, 6]。0表示周日触发，1-6分别表示周一至周六。
+                     * 设置指定每周从周一到周日需要触发定期快照的日期，取值范围：[0, 6]。0表示周日触发，1-6分别表示周一至周六。
+                     * @param DayOfWeek 指定每周从周一到周日需要触发定期快照的日期，取值范围：[0, 6]。0表示周日触发，1-6分别表示周一至周六。
                      */
-                    std::vector<uint64_t> m_dayOfWeek;
-                    bool m_dayOfWeekHasBeenSet;
+                    void SetDayOfWeek(const std::vector<uint64_t>& _dayOfWeek);
+
+                    /**
+                     * 判断参数 DayOfWeek 是否已赋值
+                     * @return DayOfWeek 是否已赋值
+                     */
+                    bool DayOfWeekHasBeenSet() const;
+
+                private:
 
                     /**
                      * 指定定期快照策略的触发时间。单位为小时，取值范围：[0, 23]。00:00 ~ 23:00 共 24 个时间点可选，1表示 01:00，依此类推。
                      */
                     std::vector<uint64_t> m_hour;
                     bool m_hourHasBeenSet;
+
+                    /**
+                     * 指定每周从周一到周日需要触发定期快照的日期，取值范围：[0, 6]。0表示周日触发，1-6分别表示周一至周六。
+                     */
+                    std::vector<uint64_t> m_dayOfWeek;
+                    bool m_dayOfWeekHasBeenSet;
 
                 };
             }

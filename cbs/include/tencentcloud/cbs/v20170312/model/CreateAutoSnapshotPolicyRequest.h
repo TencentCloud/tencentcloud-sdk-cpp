@@ -62,22 +62,22 @@ namespace TencentCloud
                     bool PolicyHasBeenSet() const;
 
                     /**
-                     * 获取要创建的定期快照策略名。不传则默认为“未命名”。最大长度不能超60个字节。
-                     * @return AutoSnapshotPolicyName 要创建的定期快照策略名。不传则默认为“未命名”。最大长度不能超60个字节。
+                     * 获取是否创建定期快照的执行策略。TRUE表示只需获取首次开始备份的时间，不实际创建定期快照策略，FALSE表示创建，默认为FALSE。
+                     * @return DryRun 是否创建定期快照的执行策略。TRUE表示只需获取首次开始备份的时间，不实际创建定期快照策略，FALSE表示创建，默认为FALSE。
                      */
-                    std::string GetAutoSnapshotPolicyName() const;
+                    bool GetDryRun() const;
 
                     /**
-                     * 设置要创建的定期快照策略名。不传则默认为“未命名”。最大长度不能超60个字节。
-                     * @param AutoSnapshotPolicyName 要创建的定期快照策略名。不传则默认为“未命名”。最大长度不能超60个字节。
+                     * 设置是否创建定期快照的执行策略。TRUE表示只需获取首次开始备份的时间，不实际创建定期快照策略，FALSE表示创建，默认为FALSE。
+                     * @param DryRun 是否创建定期快照的执行策略。TRUE表示只需获取首次开始备份的时间，不实际创建定期快照策略，FALSE表示创建，默认为FALSE。
                      */
-                    void SetAutoSnapshotPolicyName(const std::string& _autoSnapshotPolicyName);
+                    void SetDryRun(const bool& _dryRun);
 
                     /**
-                     * 判断参数 AutoSnapshotPolicyName 是否已赋值
-                     * @return AutoSnapshotPolicyName 是否已赋值
+                     * 判断参数 DryRun 是否已赋值
+                     * @return DryRun 是否已赋值
                      */
-                    bool AutoSnapshotPolicyNameHasBeenSet() const;
+                    bool DryRunHasBeenSet() const;
 
                     /**
                      * 获取是否激活定期快照策略，FALSE表示未激活，TRUE表示激活，默认为TRUE。
@@ -96,6 +96,24 @@ namespace TencentCloud
                      * @return IsActivated 是否已赋值
                      */
                     bool IsActivatedHasBeenSet() const;
+
+                    /**
+                     * 获取要创建的定期快照策略名。不传则默认为“未命名”。最大长度不能超60个字节。
+                     * @return AutoSnapshotPolicyName 要创建的定期快照策略名。不传则默认为“未命名”。最大长度不能超60个字节。
+                     */
+                    std::string GetAutoSnapshotPolicyName() const;
+
+                    /**
+                     * 设置要创建的定期快照策略名。不传则默认为“未命名”。最大长度不能超60个字节。
+                     * @param AutoSnapshotPolicyName 要创建的定期快照策略名。不传则默认为“未命名”。最大长度不能超60个字节。
+                     */
+                    void SetAutoSnapshotPolicyName(const std::string& _autoSnapshotPolicyName);
+
+                    /**
+                     * 判断参数 AutoSnapshotPolicyName 是否已赋值
+                     * @return AutoSnapshotPolicyName 是否已赋值
+                     */
+                    bool AutoSnapshotPolicyNameHasBeenSet() const;
 
                     /**
                      * 获取通过该定期快照策略创建的快照是否永久保留。FALSE表示非永久保留，TRUE表示永久保留，默认为FALSE。
@@ -133,24 +151,6 @@ namespace TencentCloud
                      */
                     bool RetentionDaysHasBeenSet() const;
 
-                    /**
-                     * 获取是否创建定期快照的执行策略。TRUE表示只需获取首次开始备份的时间，不实际创建定期快照策略，FALSE表示创建，默认为FALSE。
-                     * @return DryRun 是否创建定期快照的执行策略。TRUE表示只需获取首次开始备份的时间，不实际创建定期快照策略，FALSE表示创建，默认为FALSE。
-                     */
-                    bool GetDryRun() const;
-
-                    /**
-                     * 设置是否创建定期快照的执行策略。TRUE表示只需获取首次开始备份的时间，不实际创建定期快照策略，FALSE表示创建，默认为FALSE。
-                     * @param DryRun 是否创建定期快照的执行策略。TRUE表示只需获取首次开始备份的时间，不实际创建定期快照策略，FALSE表示创建，默认为FALSE。
-                     */
-                    void SetDryRun(const bool& _dryRun);
-
-                    /**
-                     * 判断参数 DryRun 是否已赋值
-                     * @return DryRun 是否已赋值
-                     */
-                    bool DryRunHasBeenSet() const;
-
                 private:
 
                     /**
@@ -160,16 +160,22 @@ namespace TencentCloud
                     bool m_policyHasBeenSet;
 
                     /**
-                     * 要创建的定期快照策略名。不传则默认为“未命名”。最大长度不能超60个字节。
+                     * 是否创建定期快照的执行策略。TRUE表示只需获取首次开始备份的时间，不实际创建定期快照策略，FALSE表示创建，默认为FALSE。
                      */
-                    std::string m_autoSnapshotPolicyName;
-                    bool m_autoSnapshotPolicyNameHasBeenSet;
+                    bool m_dryRun;
+                    bool m_dryRunHasBeenSet;
 
                     /**
                      * 是否激活定期快照策略，FALSE表示未激活，TRUE表示激活，默认为TRUE。
                      */
                     bool m_isActivated;
                     bool m_isActivatedHasBeenSet;
+
+                    /**
+                     * 要创建的定期快照策略名。不传则默认为“未命名”。最大长度不能超60个字节。
+                     */
+                    std::string m_autoSnapshotPolicyName;
+                    bool m_autoSnapshotPolicyNameHasBeenSet;
 
                     /**
                      * 通过该定期快照策略创建的快照是否永久保留。FALSE表示非永久保留，TRUE表示永久保留，默认为FALSE。
@@ -182,12 +188,6 @@ namespace TencentCloud
                      */
                     uint64_t m_retentionDays;
                     bool m_retentionDaysHasBeenSet;
-
-                    /**
-                     * 是否创建定期快照的执行策略。TRUE表示只需获取首次开始备份的时间，不实际创建定期快照策略，FALSE表示创建，默认为FALSE。
-                     */
-                    bool m_dryRun;
-                    bool m_dryRunHasBeenSet;
 
                 };
             }

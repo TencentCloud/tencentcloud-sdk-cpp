@@ -32,7 +32,9 @@ DescribePurchaseStateInfoResponse::DescribePurchaseStateInfoResponse() :
     m_purchasedAuthorizedCntHasBeenSet(false),
     m_expirationTimeHasBeenSet(false),
     m_automaticRenewalHasBeenSet(false),
-    m_givenAuthorizedCntHasBeenSet(false)
+    m_givenAuthorizedCntHasBeenSet(false),
+    m_beginTimeHasBeenSet(false),
+    m_subStateHasBeenSet(false)
 {
 }
 
@@ -160,6 +162,26 @@ CoreInternalOutcome DescribePurchaseStateInfoResponse::Deserialize(const string 
         m_givenAuthorizedCntHasBeenSet = true;
     }
 
+    if (rsp.HasMember("BeginTime") && !rsp["BeginTime"].IsNull())
+    {
+        if (!rsp["BeginTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BeginTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_beginTime = string(rsp["BeginTime"].GetString());
+        m_beginTimeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("SubState") && !rsp["SubState"].IsNull())
+    {
+        if (!rsp["SubState"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SubState` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subState = string(rsp["SubState"].GetString());
+        m_subStateHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -240,6 +262,22 @@ string DescribePurchaseStateInfoResponse::ToJsonString() const
         string key = "GivenAuthorizedCnt";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_givenAuthorizedCnt, allocator);
+    }
+
+    if (m_beginTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BeginTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_beginTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subStateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubState";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subState.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -342,6 +380,26 @@ uint64_t DescribePurchaseStateInfoResponse::GetGivenAuthorizedCnt() const
 bool DescribePurchaseStateInfoResponse::GivenAuthorizedCntHasBeenSet() const
 {
     return m_givenAuthorizedCntHasBeenSet;
+}
+
+string DescribePurchaseStateInfoResponse::GetBeginTime() const
+{
+    return m_beginTime;
+}
+
+bool DescribePurchaseStateInfoResponse::BeginTimeHasBeenSet() const
+{
+    return m_beginTimeHasBeenSet;
+}
+
+string DescribePurchaseStateInfoResponse::GetSubState() const
+{
+    return m_subState;
+}
+
+bool DescribePurchaseStateInfoResponse::SubStateHasBeenSet() const
+{
+    return m_subStateHasBeenSet;
 }
 
 

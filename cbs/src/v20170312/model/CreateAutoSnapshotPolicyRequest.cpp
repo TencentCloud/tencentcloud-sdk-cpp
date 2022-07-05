@@ -24,11 +24,11 @@ using namespace std;
 
 CreateAutoSnapshotPolicyRequest::CreateAutoSnapshotPolicyRequest() :
     m_policyHasBeenSet(false),
-    m_autoSnapshotPolicyNameHasBeenSet(false),
+    m_dryRunHasBeenSet(false),
     m_isActivatedHasBeenSet(false),
+    m_autoSnapshotPolicyNameHasBeenSet(false),
     m_isPermanentHasBeenSet(false),
-    m_retentionDaysHasBeenSet(false),
-    m_dryRunHasBeenSet(false)
+    m_retentionDaysHasBeenSet(false)
 {
 }
 
@@ -54,12 +54,12 @@ string CreateAutoSnapshotPolicyRequest::ToJsonString() const
         }
     }
 
-    if (m_autoSnapshotPolicyNameHasBeenSet)
+    if (m_dryRunHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "AutoSnapshotPolicyName";
+        string key = "DryRun";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_autoSnapshotPolicyName.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, m_dryRun, allocator);
     }
 
     if (m_isActivatedHasBeenSet)
@@ -68,6 +68,14 @@ string CreateAutoSnapshotPolicyRequest::ToJsonString() const
         string key = "IsActivated";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_isActivated, allocator);
+    }
+
+    if (m_autoSnapshotPolicyNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoSnapshotPolicyName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_autoSnapshotPolicyName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_isPermanentHasBeenSet)
@@ -84,14 +92,6 @@ string CreateAutoSnapshotPolicyRequest::ToJsonString() const
         string key = "RetentionDays";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_retentionDays, allocator);
-    }
-
-    if (m_dryRunHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "DryRun";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_dryRun, allocator);
     }
 
 
@@ -118,20 +118,20 @@ bool CreateAutoSnapshotPolicyRequest::PolicyHasBeenSet() const
     return m_policyHasBeenSet;
 }
 
-string CreateAutoSnapshotPolicyRequest::GetAutoSnapshotPolicyName() const
+bool CreateAutoSnapshotPolicyRequest::GetDryRun() const
 {
-    return m_autoSnapshotPolicyName;
+    return m_dryRun;
 }
 
-void CreateAutoSnapshotPolicyRequest::SetAutoSnapshotPolicyName(const string& _autoSnapshotPolicyName)
+void CreateAutoSnapshotPolicyRequest::SetDryRun(const bool& _dryRun)
 {
-    m_autoSnapshotPolicyName = _autoSnapshotPolicyName;
-    m_autoSnapshotPolicyNameHasBeenSet = true;
+    m_dryRun = _dryRun;
+    m_dryRunHasBeenSet = true;
 }
 
-bool CreateAutoSnapshotPolicyRequest::AutoSnapshotPolicyNameHasBeenSet() const
+bool CreateAutoSnapshotPolicyRequest::DryRunHasBeenSet() const
 {
-    return m_autoSnapshotPolicyNameHasBeenSet;
+    return m_dryRunHasBeenSet;
 }
 
 bool CreateAutoSnapshotPolicyRequest::GetIsActivated() const
@@ -148,6 +148,22 @@ void CreateAutoSnapshotPolicyRequest::SetIsActivated(const bool& _isActivated)
 bool CreateAutoSnapshotPolicyRequest::IsActivatedHasBeenSet() const
 {
     return m_isActivatedHasBeenSet;
+}
+
+string CreateAutoSnapshotPolicyRequest::GetAutoSnapshotPolicyName() const
+{
+    return m_autoSnapshotPolicyName;
+}
+
+void CreateAutoSnapshotPolicyRequest::SetAutoSnapshotPolicyName(const string& _autoSnapshotPolicyName)
+{
+    m_autoSnapshotPolicyName = _autoSnapshotPolicyName;
+    m_autoSnapshotPolicyNameHasBeenSet = true;
+}
+
+bool CreateAutoSnapshotPolicyRequest::AutoSnapshotPolicyNameHasBeenSet() const
+{
+    return m_autoSnapshotPolicyNameHasBeenSet;
 }
 
 bool CreateAutoSnapshotPolicyRequest::GetIsPermanent() const
@@ -180,22 +196,6 @@ void CreateAutoSnapshotPolicyRequest::SetRetentionDays(const uint64_t& _retentio
 bool CreateAutoSnapshotPolicyRequest::RetentionDaysHasBeenSet() const
 {
     return m_retentionDaysHasBeenSet;
-}
-
-bool CreateAutoSnapshotPolicyRequest::GetDryRun() const
-{
-    return m_dryRun;
-}
-
-void CreateAutoSnapshotPolicyRequest::SetDryRun(const bool& _dryRun)
-{
-    m_dryRun = _dryRun;
-    m_dryRunHasBeenSet = true;
-}
-
-bool CreateAutoSnapshotPolicyRequest::DryRunHasBeenSet() const
-{
-    return m_dryRunHasBeenSet;
 }
 
 

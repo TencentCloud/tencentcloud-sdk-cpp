@@ -1760,6 +1760,49 @@ MariadbClient::DescribeUpgradePriceOutcomeCallable MariadbClient::DescribeUpgrad
     return task->get_future();
 }
 
+MariadbClient::DestroyDBInstanceOutcome MariadbClient::DestroyDBInstance(const DestroyDBInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "DestroyDBInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DestroyDBInstanceResponse rsp = DestroyDBInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DestroyDBInstanceOutcome(rsp);
+        else
+            return DestroyDBInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return DestroyDBInstanceOutcome(outcome.GetError());
+    }
+}
+
+void MariadbClient::DestroyDBInstanceAsync(const DestroyDBInstanceRequest& request, const DestroyDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DestroyDBInstance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MariadbClient::DestroyDBInstanceOutcomeCallable MariadbClient::DestroyDBInstanceCallable(const DestroyDBInstanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DestroyDBInstanceOutcome()>>(
+        [this, request]()
+        {
+            return this->DestroyDBInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MariadbClient::DestroyHourDBInstanceOutcome MariadbClient::DestroyHourDBInstance(const DestroyHourDBInstanceRequest &request)
 {
     auto outcome = MakeRequest(request, "DestroyHourDBInstance");

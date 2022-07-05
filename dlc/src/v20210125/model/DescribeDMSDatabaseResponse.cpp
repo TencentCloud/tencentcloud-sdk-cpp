@@ -23,7 +23,11 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Dlc::V20210125::Model;
 using namespace std;
 
-DescribeDMSDatabaseResponse::DescribeDMSDatabaseResponse()
+DescribeDMSDatabaseResponse::DescribeDMSDatabaseResponse() :
+    m_nameHasBeenSet(false),
+    m_schemaNameHasBeenSet(false),
+    m_locationHasBeenSet(false),
+    m_assetHasBeenSet(false)
 {
 }
 
@@ -61,6 +65,53 @@ CoreInternalOutcome DescribeDMSDatabaseResponse::Deserialize(const string &paylo
     }
 
 
+    if (rsp.HasMember("Name") && !rsp["Name"].IsNull())
+    {
+        if (!rsp["Name"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Name` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_name = string(rsp["Name"].GetString());
+        m_nameHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("SchemaName") && !rsp["SchemaName"].IsNull())
+    {
+        if (!rsp["SchemaName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SchemaName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_schemaName = string(rsp["SchemaName"].GetString());
+        m_schemaNameHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Location") && !rsp["Location"].IsNull())
+    {
+        if (!rsp["Location"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Location` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_location = string(rsp["Location"].GetString());
+        m_locationHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Asset") && !rsp["Asset"].IsNull())
+    {
+        if (!rsp["Asset"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Asset` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_asset.Deserialize(rsp["Asset"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_assetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +121,39 @@ string DescribeDMSDatabaseResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_nameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Name";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_schemaNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SchemaName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_schemaName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_locationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Location";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_location.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_assetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Asset";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_asset.ToJsonObject(value[key.c_str()], allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +166,45 @@ string DescribeDMSDatabaseResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string DescribeDMSDatabaseResponse::GetName() const
+{
+    return m_name;
+}
+
+bool DescribeDMSDatabaseResponse::NameHasBeenSet() const
+{
+    return m_nameHasBeenSet;
+}
+
+string DescribeDMSDatabaseResponse::GetSchemaName() const
+{
+    return m_schemaName;
+}
+
+bool DescribeDMSDatabaseResponse::SchemaNameHasBeenSet() const
+{
+    return m_schemaNameHasBeenSet;
+}
+
+string DescribeDMSDatabaseResponse::GetLocation() const
+{
+    return m_location;
+}
+
+bool DescribeDMSDatabaseResponse::LocationHasBeenSet() const
+{
+    return m_locationHasBeenSet;
+}
+
+Asset DescribeDMSDatabaseResponse::GetAsset() const
+{
+    return m_asset;
+}
+
+bool DescribeDMSDatabaseResponse::AssetHasBeenSet() const
+{
+    return m_assetHasBeenSet;
+}
 
 

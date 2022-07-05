@@ -22,7 +22,10 @@
 using namespace TencentCloud::Dlc::V20210125::Model;
 using namespace std;
 
-DropDMSDatabaseRequest::DropDMSDatabaseRequest()
+DropDMSDatabaseRequest::DropDMSDatabaseRequest() :
+    m_nameHasBeenSet(false),
+    m_deleteDataHasBeenSet(false),
+    m_cascadeHasBeenSet(false)
 {
 }
 
@@ -33,6 +36,30 @@ string DropDMSDatabaseRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_nameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Name";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_deleteDataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeleteData";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_deleteData, allocator);
+    }
+
+    if (m_cascadeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Cascade";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_cascade, allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +67,53 @@ string DropDMSDatabaseRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string DropDMSDatabaseRequest::GetName() const
+{
+    return m_name;
+}
+
+void DropDMSDatabaseRequest::SetName(const string& _name)
+{
+    m_name = _name;
+    m_nameHasBeenSet = true;
+}
+
+bool DropDMSDatabaseRequest::NameHasBeenSet() const
+{
+    return m_nameHasBeenSet;
+}
+
+bool DropDMSDatabaseRequest::GetDeleteData() const
+{
+    return m_deleteData;
+}
+
+void DropDMSDatabaseRequest::SetDeleteData(const bool& _deleteData)
+{
+    m_deleteData = _deleteData;
+    m_deleteDataHasBeenSet = true;
+}
+
+bool DropDMSDatabaseRequest::DeleteDataHasBeenSet() const
+{
+    return m_deleteDataHasBeenSet;
+}
+
+bool DropDMSDatabaseRequest::GetCascade() const
+{
+    return m_cascade;
+}
+
+void DropDMSDatabaseRequest::SetCascade(const bool& _cascade)
+{
+    m_cascade = _cascade;
+    m_cascadeHasBeenSet = true;
+}
+
+bool DropDMSDatabaseRequest::CascadeHasBeenSet() const
+{
+    return m_cascadeHasBeenSet;
+}
 
 

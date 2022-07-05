@@ -240,6 +240,24 @@ namespace TencentCloud
                      */
                     bool LimitHasBeenSet() const;
 
+                    /**
+                     * 获取表达式
+                     * @return Expression 表达式
+                     */
+                    std::string GetExpression() const;
+
+                    /**
+                     * 设置表达式
+                     * @param Expression 表达式
+                     */
+                    void SetExpression(const std::string& _expression);
+
+                    /**
+                     * 判断参数 Expression 是否已赋值
+                     * @return Expression 是否已赋值
+                     */
+                    bool ExpressionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -307,6 +325,12 @@ namespace TencentCloud
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
+
+                    /**
+                     * 表达式
+                     */
+                    std::string m_expression;
+                    bool m_expressionHasBeenSet;
 
                 };
             }

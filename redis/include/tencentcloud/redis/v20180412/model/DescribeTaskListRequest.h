@@ -223,14 +223,14 @@ namespace TencentCloud
                     bool ResultHasBeenSet() const;
 
                     /**
-                     * 获取操作者Uin
-                     * @return OperatorUin 操作者Uin
+                     * 获取操作者Uin，该字段已废弃，使用OperateUin代替
+                     * @return OperatorUin 操作者Uin，该字段已废弃，使用OperateUin代替
                      */
                     std::vector<int64_t> GetOperatorUin() const;
 
                     /**
-                     * 设置操作者Uin
-                     * @param OperatorUin 操作者Uin
+                     * 设置操作者Uin，该字段已废弃，使用OperateUin代替
+                     * @param OperatorUin 操作者Uin，该字段已废弃，使用OperateUin代替
                      */
                     void SetOperatorUin(const std::vector<int64_t>& _operatorUin);
 
@@ -239,6 +239,24 @@ namespace TencentCloud
                      * @return OperatorUin 是否已赋值
                      */
                     bool OperatorUinHasBeenSet() const;
+
+                    /**
+                     * 获取操作者Uin
+                     * @return OperateUin 操作者Uin
+                     */
+                    std::vector<std::string> GetOperateUin() const;
+
+                    /**
+                     * 设置操作者Uin
+                     * @param OperateUin 操作者Uin
+                     */
+                    void SetOperateUin(const std::vector<std::string>& _operateUin);
+
+                    /**
+                     * 判断参数 OperateUin 是否已赋值
+                     * @return OperateUin 是否已赋值
+                     */
+                    bool OperateUinHasBeenSet() const;
 
                 private:
 
@@ -303,10 +321,16 @@ namespace TencentCloud
                     bool m_resultHasBeenSet;
 
                     /**
-                     * 操作者Uin
+                     * 操作者Uin，该字段已废弃，使用OperateUin代替
                      */
                     std::vector<int64_t> m_operatorUin;
                     bool m_operatorUinHasBeenSet;
+
+                    /**
+                     * 操作者Uin
+                     */
+                    std::vector<std::string> m_operateUin;
+                    bool m_operateUinHasBeenSet;
 
                 };
             }

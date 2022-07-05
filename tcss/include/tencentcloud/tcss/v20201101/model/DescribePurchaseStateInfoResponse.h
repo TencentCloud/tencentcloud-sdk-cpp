@@ -167,6 +167,36 @@ namespace TencentCloud
                      */
                     bool GivenAuthorizedCntHasBeenSet() const;
 
+                    /**
+                     * 获取起始时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BeginTime 起始时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetBeginTime() const;
+
+                    /**
+                     * 判断参数 BeginTime 是否已赋值
+                     * @return BeginTime 是否已赋值
+                     */
+                    bool BeginTimeHasBeenSet() const;
+
+                    /**
+                     * 获取子状态(具体意义依据State字段而定)
+State为4时，有效值为: ISOLATE(隔离) DESTROED(已销毁)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SubState 子状态(具体意义依据State字段而定)
+State为4时，有效值为: ISOLATE(隔离) DESTROED(已销毁)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetSubState() const;
+
+                    /**
+                     * 判断参数 SubState 是否已赋值
+                     * @return SubState 是否已赋值
+                     */
+                    bool SubStateHasBeenSet() const;
+
                 private:
 
                     /**
@@ -230,6 +260,21 @@ namespace TencentCloud
                      */
                     uint64_t m_givenAuthorizedCnt;
                     bool m_givenAuthorizedCntHasBeenSet;
+
+                    /**
+                     * 起始时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_beginTime;
+                    bool m_beginTimeHasBeenSet;
+
+                    /**
+                     * 子状态(具体意义依据State字段而定)
+State为4时，有效值为: ISOLATE(隔离) DESTROED(已销毁)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_subState;
+                    bool m_subStateHasBeenSet;
 
                 };
             }

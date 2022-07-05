@@ -22,7 +22,10 @@
 using namespace TencentCloud::Dlc::V20210125::Model;
 using namespace std;
 
-DescribeDMSDatabaseRequest::DescribeDMSDatabaseRequest()
+DescribeDMSDatabaseRequest::DescribeDMSDatabaseRequest() :
+    m_nameHasBeenSet(false),
+    m_schemaNameHasBeenSet(false),
+    m_patternHasBeenSet(false)
 {
 }
 
@@ -33,6 +36,30 @@ string DescribeDMSDatabaseRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_nameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Name";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_schemaNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SchemaName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_schemaName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_patternHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Pattern";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_pattern.c_str(), allocator).Move(), allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +67,53 @@ string DescribeDMSDatabaseRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string DescribeDMSDatabaseRequest::GetName() const
+{
+    return m_name;
+}
+
+void DescribeDMSDatabaseRequest::SetName(const string& _name)
+{
+    m_name = _name;
+    m_nameHasBeenSet = true;
+}
+
+bool DescribeDMSDatabaseRequest::NameHasBeenSet() const
+{
+    return m_nameHasBeenSet;
+}
+
+string DescribeDMSDatabaseRequest::GetSchemaName() const
+{
+    return m_schemaName;
+}
+
+void DescribeDMSDatabaseRequest::SetSchemaName(const string& _schemaName)
+{
+    m_schemaName = _schemaName;
+    m_schemaNameHasBeenSet = true;
+}
+
+bool DescribeDMSDatabaseRequest::SchemaNameHasBeenSet() const
+{
+    return m_schemaNameHasBeenSet;
+}
+
+string DescribeDMSDatabaseRequest::GetPattern() const
+{
+    return m_pattern;
+}
+
+void DescribeDMSDatabaseRequest::SetPattern(const string& _pattern)
+{
+    m_pattern = _pattern;
+    m_patternHasBeenSet = true;
+}
+
+bool DescribeDMSDatabaseRequest::PatternHasBeenSet() const
+{
+    return m_patternHasBeenSet;
+}
 
 

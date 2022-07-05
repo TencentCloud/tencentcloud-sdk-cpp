@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/dlc/v20210125/model/Asset.h>
 
 
 namespace TencentCloud
@@ -43,6 +44,60 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取基础元数据对象
+                     * @return Asset 基础元数据对象
+                     */
+                    Asset GetAsset() const;
+
+                    /**
+                     * 设置基础元数据对象
+                     * @param Asset 基础元数据对象
+                     */
+                    void SetAsset(const Asset& _asset);
+
+                    /**
+                     * 判断参数 Asset 是否已赋值
+                     * @return Asset 是否已赋值
+                     */
+                    bool AssetHasBeenSet() const;
+
+                    /**
+                     * 获取Schema目录
+                     * @return SchemaName Schema目录
+                     */
+                    std::string GetSchemaName() const;
+
+                    /**
+                     * 设置Schema目录
+                     * @param SchemaName Schema目录
+                     */
+                    void SetSchemaName(const std::string& _schemaName);
+
+                    /**
+                     * 判断参数 SchemaName 是否已赋值
+                     * @return SchemaName 是否已赋值
+                     */
+                    bool SchemaNameHasBeenSet() const;
+
+                    /**
+                     * 获取Db存储路径
+                     * @return Location Db存储路径
+                     */
+                    std::string GetLocation() const;
+
+                    /**
+                     * 设置Db存储路径
+                     * @param Location Db存储路径
+                     */
+                    void SetLocation(const std::string& _location);
+
+                    /**
+                     * 判断参数 Location 是否已赋值
+                     * @return Location 是否已赋值
+                     */
+                    bool LocationHasBeenSet() const;
+
+                    /**
                      * 获取数据库名称
                      * @return Name 数据库名称
                      */
@@ -61,6 +116,24 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                 private:
+
+                    /**
+                     * 基础元数据对象
+                     */
+                    Asset m_asset;
+                    bool m_assetHasBeenSet;
+
+                    /**
+                     * Schema目录
+                     */
+                    std::string m_schemaName;
+                    bool m_schemaNameHasBeenSet;
+
+                    /**
+                     * Db存储路径
+                     */
+                    std::string m_location;
+                    bool m_locationHasBeenSet;
 
                     /**
                      * 数据库名称

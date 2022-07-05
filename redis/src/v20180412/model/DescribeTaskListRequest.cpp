@@ -33,7 +33,8 @@ DescribeTaskListRequest::DescribeTaskListRequest() :
     m_endTimeHasBeenSet(false),
     m_taskStatusHasBeenSet(false),
     m_resultHasBeenSet(false),
-    m_operatorUinHasBeenSet(false)
+    m_operatorUinHasBeenSet(false),
+    m_operateUinHasBeenSet(false)
 {
 }
 
@@ -154,6 +155,19 @@ string DescribeTaskListRequest::ToJsonString() const
         for (auto itr = m_operatorUin.begin(); itr != m_operatorUin.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
+    }
+
+    if (m_operateUinHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OperateUin";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_operateUin.begin(); itr != m_operateUin.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
@@ -339,6 +353,22 @@ void DescribeTaskListRequest::SetOperatorUin(const vector<int64_t>& _operatorUin
 bool DescribeTaskListRequest::OperatorUinHasBeenSet() const
 {
     return m_operatorUinHasBeenSet;
+}
+
+vector<string> DescribeTaskListRequest::GetOperateUin() const
+{
+    return m_operateUin;
+}
+
+void DescribeTaskListRequest::SetOperateUin(const vector<string>& _operateUin)
+{
+    m_operateUin = _operateUin;
+    m_operateUinHasBeenSet = true;
+}
+
+bool DescribeTaskListRequest::OperateUinHasBeenSet() const
+{
+    return m_operateUinHasBeenSet;
 }
 
 

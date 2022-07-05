@@ -23,6 +23,9 @@ using namespace TencentCloud::Dlc::V20210125::Model;
 using namespace std;
 
 CreateDMSDatabaseRequest::CreateDMSDatabaseRequest() :
+    m_assetHasBeenSet(false),
+    m_schemaNameHasBeenSet(false),
+    m_locationHasBeenSet(false),
     m_nameHasBeenSet(false)
 {
 }
@@ -33,6 +36,31 @@ string CreateDMSDatabaseRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
+
+    if (m_assetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Asset";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_asset.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_schemaNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SchemaName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_schemaName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_locationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Location";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_location.c_str(), allocator).Move(), allocator);
+    }
 
     if (m_nameHasBeenSet)
     {
@@ -49,6 +77,54 @@ string CreateDMSDatabaseRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+Asset CreateDMSDatabaseRequest::GetAsset() const
+{
+    return m_asset;
+}
+
+void CreateDMSDatabaseRequest::SetAsset(const Asset& _asset)
+{
+    m_asset = _asset;
+    m_assetHasBeenSet = true;
+}
+
+bool CreateDMSDatabaseRequest::AssetHasBeenSet() const
+{
+    return m_assetHasBeenSet;
+}
+
+string CreateDMSDatabaseRequest::GetSchemaName() const
+{
+    return m_schemaName;
+}
+
+void CreateDMSDatabaseRequest::SetSchemaName(const string& _schemaName)
+{
+    m_schemaName = _schemaName;
+    m_schemaNameHasBeenSet = true;
+}
+
+bool CreateDMSDatabaseRequest::SchemaNameHasBeenSet() const
+{
+    return m_schemaNameHasBeenSet;
+}
+
+string CreateDMSDatabaseRequest::GetLocation() const
+{
+    return m_location;
+}
+
+void CreateDMSDatabaseRequest::SetLocation(const string& _location)
+{
+    m_location = _location;
+    m_locationHasBeenSet = true;
+}
+
+bool CreateDMSDatabaseRequest::LocationHasBeenSet() const
+{
+    return m_locationHasBeenSet;
+}
 
 string CreateDMSDatabaseRequest::GetName() const
 {

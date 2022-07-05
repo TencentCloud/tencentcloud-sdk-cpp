@@ -103,6 +103,8 @@
 #include <tencentcloud/mariadb/v20170312/model/DescribeSqlLogsResponse.h>
 #include <tencentcloud/mariadb/v20170312/model/DescribeUpgradePriceRequest.h>
 #include <tencentcloud/mariadb/v20170312/model/DescribeUpgradePriceResponse.h>
+#include <tencentcloud/mariadb/v20170312/model/DestroyDBInstanceRequest.h>
+#include <tencentcloud/mariadb/v20170312/model/DestroyDBInstanceResponse.h>
 #include <tencentcloud/mariadb/v20170312/model/DestroyHourDBInstanceRequest.h>
 #include <tencentcloud/mariadb/v20170312/model/DestroyHourDBInstanceResponse.h>
 #include <tencentcloud/mariadb/v20170312/model/DisassociateSecurityGroupsRequest.h>
@@ -285,6 +287,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeUpgradePriceResponse> DescribeUpgradePriceOutcome;
                 typedef std::future<DescribeUpgradePriceOutcome> DescribeUpgradePriceOutcomeCallable;
                 typedef std::function<void(const MariadbClient*, const Model::DescribeUpgradePriceRequest&, DescribeUpgradePriceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUpgradePriceAsyncHandler;
+                typedef Outcome<Core::Error, Model::DestroyDBInstanceResponse> DestroyDBInstanceOutcome;
+                typedef std::future<DestroyDBInstanceOutcome> DestroyDBInstanceOutcomeCallable;
+                typedef std::function<void(const MariadbClient*, const Model::DestroyDBInstanceRequest&, DestroyDBInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DestroyDBInstanceAsyncHandler;
                 typedef Outcome<Core::Error, Model::DestroyHourDBInstanceResponse> DestroyHourDBInstanceOutcome;
                 typedef std::future<DestroyHourDBInstanceOutcome> DestroyHourDBInstanceOutcomeCallable;
                 typedef std::function<void(const MariadbClient*, const Model::DestroyHourDBInstanceRequest&, DestroyHourDBInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DestroyHourDBInstanceAsyncHandler;
@@ -722,6 +727,15 @@ namespace TencentCloud
                 DescribeUpgradePriceOutcome DescribeUpgradePrice(const Model::DescribeUpgradePriceRequest &request);
                 void DescribeUpgradePriceAsync(const Model::DescribeUpgradePriceRequest& request, const DescribeUpgradePriceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeUpgradePriceOutcomeCallable DescribeUpgradePriceCallable(const Model::DescribeUpgradePriceRequest& request);
+
+                /**
+                 *本接口(DestroyDBInstance)用于销毁已隔离的包年包月实例。
+                 * @param req DestroyDBInstanceRequest
+                 * @return DestroyDBInstanceOutcome
+                 */
+                DestroyDBInstanceOutcome DestroyDBInstance(const Model::DestroyDBInstanceRequest &request);
+                void DestroyDBInstanceAsync(const Model::DestroyDBInstanceRequest& request, const DestroyDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DestroyDBInstanceOutcomeCallable DestroyDBInstanceCallable(const Model::DestroyDBInstanceRequest& request);
 
                 /**
                  *本接口（DestroyHourDBInstance）用于销毁按量计费实例。

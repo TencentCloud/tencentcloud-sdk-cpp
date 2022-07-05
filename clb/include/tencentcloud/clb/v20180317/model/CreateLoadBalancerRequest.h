@@ -275,14 +275,14 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool VipIspHasBeenSet() const;
 
                     /**
-                     * 获取购买负载均衡的同时，给负载均衡打上标签。
-                     * @return Tags 购买负载均衡的同时，给负载均衡打上标签。
+                     * 获取购买负载均衡的同时，给负载均衡打上标签，最大支持20个标签键值对。
+                     * @return Tags 购买负载均衡的同时，给负载均衡打上标签，最大支持20个标签键值对。
                      */
                     std::vector<TagInfo> GetTags() const;
 
                     /**
-                     * 设置购买负载均衡的同时，给负载均衡打上标签。
-                     * @param Tags 购买负载均衡的同时，给负载均衡打上标签。
+                     * 设置购买负载均衡的同时，给负载均衡打上标签，最大支持20个标签键值对。
+                     * @param Tags 购买负载均衡的同时，给负载均衡打上标签，最大支持20个标签键值对。
                      */
                     void SetTags(const std::vector<TagInfo>& _tags);
 
@@ -592,7 +592,7 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool m_vipIspHasBeenSet;
 
                     /**
-                     * 购买负载均衡的同时，给负载均衡打上标签。
+                     * 购买负载均衡的同时，给负载均衡打上标签，最大支持20个标签键值对。
                      */
                     std::vector<TagInfo> m_tags;
                     bool m_tagsHasBeenSet;

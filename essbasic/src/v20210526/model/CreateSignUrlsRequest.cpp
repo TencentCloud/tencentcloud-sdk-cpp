@@ -26,8 +26,14 @@ CreateSignUrlsRequest::CreateSignUrlsRequest() :
     m_agentHasBeenSet(false),
     m_flowIdsHasBeenSet(false),
     m_endpointHasBeenSet(false),
-    m_jumpUrlHasBeenSet(false),
+    m_generateTypeHasBeenSet(false),
+    m_organizationNameHasBeenSet(false),
+    m_nameHasBeenSet(false),
+    m_mobileHasBeenSet(false),
+    m_organizationOpenIdHasBeenSet(false),
+    m_openIdHasBeenSet(false),
     m_autoJumpBackHasBeenSet(false),
+    m_jumpUrlHasBeenSet(false),
     m_operatorHasBeenSet(false)
 {
 }
@@ -69,12 +75,52 @@ string CreateSignUrlsRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_endpoint.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_jumpUrlHasBeenSet)
+    if (m_generateTypeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "JumpUrl";
+        string key = "GenerateType";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_jumpUrl.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_generateType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_organizationNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OrganizationName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_organizationName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_nameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Name";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_mobileHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Mobile";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_mobile.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_organizationOpenIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OrganizationOpenId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_organizationOpenId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_openIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OpenId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_openId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_autoJumpBackHasBeenSet)
@@ -83,6 +129,14 @@ string CreateSignUrlsRequest::ToJsonString() const
         string key = "AutoJumpBack";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_autoJumpBack, allocator);
+    }
+
+    if (m_jumpUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "JumpUrl";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_jumpUrl.c_str(), allocator).Move(), allocator);
     }
 
     if (m_operatorHasBeenSet)
@@ -150,20 +204,100 @@ bool CreateSignUrlsRequest::EndpointHasBeenSet() const
     return m_endpointHasBeenSet;
 }
 
-string CreateSignUrlsRequest::GetJumpUrl() const
+string CreateSignUrlsRequest::GetGenerateType() const
 {
-    return m_jumpUrl;
+    return m_generateType;
 }
 
-void CreateSignUrlsRequest::SetJumpUrl(const string& _jumpUrl)
+void CreateSignUrlsRequest::SetGenerateType(const string& _generateType)
 {
-    m_jumpUrl = _jumpUrl;
-    m_jumpUrlHasBeenSet = true;
+    m_generateType = _generateType;
+    m_generateTypeHasBeenSet = true;
 }
 
-bool CreateSignUrlsRequest::JumpUrlHasBeenSet() const
+bool CreateSignUrlsRequest::GenerateTypeHasBeenSet() const
 {
-    return m_jumpUrlHasBeenSet;
+    return m_generateTypeHasBeenSet;
+}
+
+string CreateSignUrlsRequest::GetOrganizationName() const
+{
+    return m_organizationName;
+}
+
+void CreateSignUrlsRequest::SetOrganizationName(const string& _organizationName)
+{
+    m_organizationName = _organizationName;
+    m_organizationNameHasBeenSet = true;
+}
+
+bool CreateSignUrlsRequest::OrganizationNameHasBeenSet() const
+{
+    return m_organizationNameHasBeenSet;
+}
+
+string CreateSignUrlsRequest::GetName() const
+{
+    return m_name;
+}
+
+void CreateSignUrlsRequest::SetName(const string& _name)
+{
+    m_name = _name;
+    m_nameHasBeenSet = true;
+}
+
+bool CreateSignUrlsRequest::NameHasBeenSet() const
+{
+    return m_nameHasBeenSet;
+}
+
+string CreateSignUrlsRequest::GetMobile() const
+{
+    return m_mobile;
+}
+
+void CreateSignUrlsRequest::SetMobile(const string& _mobile)
+{
+    m_mobile = _mobile;
+    m_mobileHasBeenSet = true;
+}
+
+bool CreateSignUrlsRequest::MobileHasBeenSet() const
+{
+    return m_mobileHasBeenSet;
+}
+
+string CreateSignUrlsRequest::GetOrganizationOpenId() const
+{
+    return m_organizationOpenId;
+}
+
+void CreateSignUrlsRequest::SetOrganizationOpenId(const string& _organizationOpenId)
+{
+    m_organizationOpenId = _organizationOpenId;
+    m_organizationOpenIdHasBeenSet = true;
+}
+
+bool CreateSignUrlsRequest::OrganizationOpenIdHasBeenSet() const
+{
+    return m_organizationOpenIdHasBeenSet;
+}
+
+string CreateSignUrlsRequest::GetOpenId() const
+{
+    return m_openId;
+}
+
+void CreateSignUrlsRequest::SetOpenId(const string& _openId)
+{
+    m_openId = _openId;
+    m_openIdHasBeenSet = true;
+}
+
+bool CreateSignUrlsRequest::OpenIdHasBeenSet() const
+{
+    return m_openIdHasBeenSet;
 }
 
 bool CreateSignUrlsRequest::GetAutoJumpBack() const
@@ -180,6 +314,22 @@ void CreateSignUrlsRequest::SetAutoJumpBack(const bool& _autoJumpBack)
 bool CreateSignUrlsRequest::AutoJumpBackHasBeenSet() const
 {
     return m_autoJumpBackHasBeenSet;
+}
+
+string CreateSignUrlsRequest::GetJumpUrl() const
+{
+    return m_jumpUrl;
+}
+
+void CreateSignUrlsRequest::SetJumpUrl(const string& _jumpUrl)
+{
+    m_jumpUrl = _jumpUrl;
+    m_jumpUrlHasBeenSet = true;
+}
+
+bool CreateSignUrlsRequest::JumpUrlHasBeenSet() const
+{
+    return m_jumpUrlHasBeenSet;
 }
 
 UserInfo CreateSignUrlsRequest::GetOperator() const

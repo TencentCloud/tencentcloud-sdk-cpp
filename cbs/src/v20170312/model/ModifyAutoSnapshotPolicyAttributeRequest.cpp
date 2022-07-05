@@ -24,10 +24,10 @@ using namespace std;
 
 ModifyAutoSnapshotPolicyAttributeRequest::ModifyAutoSnapshotPolicyAttributeRequest() :
     m_autoSnapshotPolicyIdHasBeenSet(false),
-    m_policyHasBeenSet(false),
-    m_autoSnapshotPolicyNameHasBeenSet(false),
     m_isActivatedHasBeenSet(false),
     m_isPermanentHasBeenSet(false),
+    m_autoSnapshotPolicyNameHasBeenSet(false),
+    m_policyHasBeenSet(false),
     m_retentionDaysHasBeenSet(false)
 {
 }
@@ -47,29 +47,6 @@ string ModifyAutoSnapshotPolicyAttributeRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_autoSnapshotPolicyId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_policyHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Policy";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        int i=0;
-        for (auto itr = m_policy.begin(); itr != m_policy.end(); ++itr, ++i)
-        {
-            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
-        }
-    }
-
-    if (m_autoSnapshotPolicyNameHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "AutoSnapshotPolicyName";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_autoSnapshotPolicyName.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_isActivatedHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -84,6 +61,29 @@ string ModifyAutoSnapshotPolicyAttributeRequest::ToJsonString() const
         string key = "IsPermanent";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_isPermanent, allocator);
+    }
+
+    if (m_autoSnapshotPolicyNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoSnapshotPolicyName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_autoSnapshotPolicyName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_policyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Policy";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_policy.begin(); itr != m_policy.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
     if (m_retentionDaysHasBeenSet)
@@ -118,38 +118,6 @@ bool ModifyAutoSnapshotPolicyAttributeRequest::AutoSnapshotPolicyIdHasBeenSet() 
     return m_autoSnapshotPolicyIdHasBeenSet;
 }
 
-vector<Policy> ModifyAutoSnapshotPolicyAttributeRequest::GetPolicy() const
-{
-    return m_policy;
-}
-
-void ModifyAutoSnapshotPolicyAttributeRequest::SetPolicy(const vector<Policy>& _policy)
-{
-    m_policy = _policy;
-    m_policyHasBeenSet = true;
-}
-
-bool ModifyAutoSnapshotPolicyAttributeRequest::PolicyHasBeenSet() const
-{
-    return m_policyHasBeenSet;
-}
-
-string ModifyAutoSnapshotPolicyAttributeRequest::GetAutoSnapshotPolicyName() const
-{
-    return m_autoSnapshotPolicyName;
-}
-
-void ModifyAutoSnapshotPolicyAttributeRequest::SetAutoSnapshotPolicyName(const string& _autoSnapshotPolicyName)
-{
-    m_autoSnapshotPolicyName = _autoSnapshotPolicyName;
-    m_autoSnapshotPolicyNameHasBeenSet = true;
-}
-
-bool ModifyAutoSnapshotPolicyAttributeRequest::AutoSnapshotPolicyNameHasBeenSet() const
-{
-    return m_autoSnapshotPolicyNameHasBeenSet;
-}
-
 bool ModifyAutoSnapshotPolicyAttributeRequest::GetIsActivated() const
 {
     return m_isActivated;
@@ -180,6 +148,38 @@ void ModifyAutoSnapshotPolicyAttributeRequest::SetIsPermanent(const bool& _isPer
 bool ModifyAutoSnapshotPolicyAttributeRequest::IsPermanentHasBeenSet() const
 {
     return m_isPermanentHasBeenSet;
+}
+
+string ModifyAutoSnapshotPolicyAttributeRequest::GetAutoSnapshotPolicyName() const
+{
+    return m_autoSnapshotPolicyName;
+}
+
+void ModifyAutoSnapshotPolicyAttributeRequest::SetAutoSnapshotPolicyName(const string& _autoSnapshotPolicyName)
+{
+    m_autoSnapshotPolicyName = _autoSnapshotPolicyName;
+    m_autoSnapshotPolicyNameHasBeenSet = true;
+}
+
+bool ModifyAutoSnapshotPolicyAttributeRequest::AutoSnapshotPolicyNameHasBeenSet() const
+{
+    return m_autoSnapshotPolicyNameHasBeenSet;
+}
+
+vector<Policy> ModifyAutoSnapshotPolicyAttributeRequest::GetPolicy() const
+{
+    return m_policy;
+}
+
+void ModifyAutoSnapshotPolicyAttributeRequest::SetPolicy(const vector<Policy>& _policy)
+{
+    m_policy = _policy;
+    m_policyHasBeenSet = true;
+}
+
+bool ModifyAutoSnapshotPolicyAttributeRequest::PolicyHasBeenSet() const
+{
+    return m_policyHasBeenSet;
 }
 
 uint64_t ModifyAutoSnapshotPolicyAttributeRequest::GetRetentionDays() const
