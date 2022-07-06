@@ -35,7 +35,8 @@ ModifyClusterNodePoolRequest::ModifyClusterNodePoolRequest() :
     m_osCustomizeTypeHasBeenSet(false),
     m_extraArgsHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_unschedulableHasBeenSet(false)
+    m_unschedulableHasBeenSet(false),
+    m_deletionProtectionHasBeenSet(false)
 {
 }
 
@@ -170,6 +171,14 @@ string ModifyClusterNodePoolRequest::ToJsonString() const
         string key = "Unschedulable";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_unschedulable, allocator);
+    }
+
+    if (m_deletionProtectionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeletionProtection";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_deletionProtection, allocator);
     }
 
 
@@ -386,6 +395,22 @@ void ModifyClusterNodePoolRequest::SetUnschedulable(const int64_t& _unschedulabl
 bool ModifyClusterNodePoolRequest::UnschedulableHasBeenSet() const
 {
     return m_unschedulableHasBeenSet;
+}
+
+bool ModifyClusterNodePoolRequest::GetDeletionProtection() const
+{
+    return m_deletionProtection;
+}
+
+void ModifyClusterNodePoolRequest::SetDeletionProtection(const bool& _deletionProtection)
+{
+    m_deletionProtection = _deletionProtection;
+    m_deletionProtectionHasBeenSet = true;
+}
+
+bool ModifyClusterNodePoolRequest::DeletionProtectionHasBeenSet() const
+{
+    return m_deletionProtectionHasBeenSet;
 }
 
 

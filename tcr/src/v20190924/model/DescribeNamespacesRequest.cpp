@@ -26,7 +26,9 @@ DescribeNamespacesRequest::DescribeNamespacesRequest() :
     m_registryIdHasBeenSet(false),
     m_namespaceNameHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_offsetHasBeenSet(false)
+    m_offsetHasBeenSet(false),
+    m_allHasBeenSet(false),
+    m_filtersHasBeenSet(false)
 {
 }
 
@@ -67,6 +69,29 @@ string DescribeNamespacesRequest::ToJsonString() const
         string key = "Offset";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_allHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "All";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_all, allocator);
+    }
+
+    if (m_filtersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Filters";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_filters.begin(); itr != m_filters.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -139,6 +164,38 @@ void DescribeNamespacesRequest::SetOffset(const int64_t& _offset)
 bool DescribeNamespacesRequest::OffsetHasBeenSet() const
 {
     return m_offsetHasBeenSet;
+}
+
+bool DescribeNamespacesRequest::GetAll() const
+{
+    return m_all;
+}
+
+void DescribeNamespacesRequest::SetAll(const bool& _all)
+{
+    m_all = _all;
+    m_allHasBeenSet = true;
+}
+
+bool DescribeNamespacesRequest::AllHasBeenSet() const
+{
+    return m_allHasBeenSet;
+}
+
+vector<Filter> DescribeNamespacesRequest::GetFilters() const
+{
+    return m_filters;
+}
+
+void DescribeNamespacesRequest::SetFilters(const vector<Filter>& _filters)
+{
+    m_filters = _filters;
+    m_filtersHasBeenSet = true;
+}
+
+bool DescribeNamespacesRequest::FiltersHasBeenSet() const
+{
+    return m_filtersHasBeenSet;
 }
 
 

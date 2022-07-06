@@ -25,7 +25,8 @@ using namespace std;
 CreateNamespaceRequest::CreateNamespaceRequest() :
     m_registryIdHasBeenSet(false),
     m_namespaceNameHasBeenSet(false),
-    m_isPublicHasBeenSet(false)
+    m_isPublicHasBeenSet(false),
+    m_tagSpecificationHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,15 @@ string CreateNamespaceRequest::ToJsonString() const
         string key = "IsPublic";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_isPublic, allocator);
+    }
+
+    if (m_tagSpecificationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TagSpecification";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_tagSpecification.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -114,6 +124,22 @@ void CreateNamespaceRequest::SetIsPublic(const bool& _isPublic)
 bool CreateNamespaceRequest::IsPublicHasBeenSet() const
 {
     return m_isPublicHasBeenSet;
+}
+
+TagSpecification CreateNamespaceRequest::GetTagSpecification() const
+{
+    return m_tagSpecification;
+}
+
+void CreateNamespaceRequest::SetTagSpecification(const TagSpecification& _tagSpecification)
+{
+    m_tagSpecification = _tagSpecification;
+    m_tagSpecificationHasBeenSet = true;
+}
+
+bool CreateNamespaceRequest::TagSpecificationHasBeenSet() const
+{
+    return m_tagSpecificationHasBeenSet;
 }
 
 

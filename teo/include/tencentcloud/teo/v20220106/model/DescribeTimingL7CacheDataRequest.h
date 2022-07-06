@@ -80,14 +80,22 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取时序类访问流量指标列表
-                     * @return MetricNames 时序类访问流量指标列表
+                     * 获取时序类访问流量指标列表，支持的指标
+l7Cache_outFlux: 访问流量
+l7Cache_request: 访问请求数
+                     * @return MetricNames 时序类访问流量指标列表，支持的指标
+l7Cache_outFlux: 访问流量
+l7Cache_request: 访问请求数
                      */
                     std::vector<std::string> GetMetricNames() const;
 
                     /**
-                     * 设置时序类访问流量指标列表
-                     * @param MetricNames 时序类访问流量指标列表
+                     * 设置时序类访问流量指标列表，支持的指标
+l7Cache_outFlux: 访问流量
+l7Cache_request: 访问请求数
+                     * @param MetricNames 时序类访问流量指标列表，支持的指标
+l7Cache_outFlux: 访问流量
+l7Cache_request: 访问请求数
                      */
                     void SetMetricNames(const std::vector<std::string>& _metricNames);
 
@@ -174,7 +182,9 @@ EO响应：{Key: "cacheType", Value: ["hit"], Operator: "equals"}；
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 时序类访问流量指标列表
+                     * 时序类访问流量指标列表，支持的指标
+l7Cache_outFlux: 访问流量
+l7Cache_request: 访问请求数
                      */
                     std::vector<std::string> m_metricNames;
                     bool m_metricNamesHasBeenSet;

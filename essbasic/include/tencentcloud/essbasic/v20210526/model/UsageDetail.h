@@ -109,14 +109,14 @@ namespace TencentCloud
                     bool DateHasBeenSet() const;
 
                     /**
-                     * 获取消耗量
-                     * @return Usage 消耗量
+                     * 获取消耗数量
+                     * @return Usage 消耗数量
                      */
                     uint64_t GetUsage() const;
 
                     /**
-                     * 设置消耗量
-                     * @param Usage 消耗量
+                     * 设置消耗数量
+                     * @param Usage 消耗数量
                      */
                     void SetUsage(const uint64_t& _usage);
 
@@ -125,6 +125,28 @@ namespace TencentCloud
                      * @return Usage 是否已赋值
                      */
                     bool UsageHasBeenSet() const;
+
+                    /**
+                     * 获取撤回数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Cancel 撤回数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetCancel() const;
+
+                    /**
+                     * 设置撤回数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Cancel 撤回数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCancel(const uint64_t& _cancel);
+
+                    /**
+                     * 判断参数 Cancel 是否已赋值
+                     * @return Cancel 是否已赋值
+                     */
+                    bool CancelHasBeenSet() const;
 
                 private:
 
@@ -149,10 +171,17 @@ namespace TencentCloud
                     bool m_dateHasBeenSet;
 
                     /**
-                     * 消耗量
+                     * 消耗数量
                      */
                     uint64_t m_usage;
                     bool m_usageHasBeenSet;
+
+                    /**
+                     * 撤回数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_cancel;
+                    bool m_cancelHasBeenSet;
 
                 };
             }

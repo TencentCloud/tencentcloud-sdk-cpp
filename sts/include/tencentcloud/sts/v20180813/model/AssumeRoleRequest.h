@@ -191,6 +191,24 @@ qcs::cam::uin/12345678:role/tencentcloudServiceRole/4611686018427397920、qcs::c
                      */
                     bool TagsHasBeenSet() const;
 
+                    /**
+                     * 获取调用者身份uin
+                     * @return SourceIdentity 调用者身份uin
+                     */
+                    std::string GetSourceIdentity() const;
+
+                    /**
+                     * 设置调用者身份uin
+                     * @param SourceIdentity 调用者身份uin
+                     */
+                    void SetSourceIdentity(const std::string& _sourceIdentity);
+
+                    /**
+                     * 判断参数 SourceIdentity 是否已赋值
+                     * @return SourceIdentity 是否已赋值
+                     */
+                    bool SourceIdentityHasBeenSet() const;
+
                 private:
 
                     /**
@@ -238,6 +256,12 @@ qcs::cam::uin/12345678:role/tencentcloudServiceRole/4611686018427397920、qcs::c
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
+
+                    /**
+                     * 调用者身份uin
+                     */
+                    std::string m_sourceIdentity;
+                    bool m_sourceIdentityHasBeenSet;
 
                 };
             }

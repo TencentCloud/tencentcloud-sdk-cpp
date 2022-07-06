@@ -40,7 +40,8 @@ EscapeEventInfo::EscapeEventInfo() :
     m_hostIDHasBeenSet(false),
     m_containerNetStatusHasBeenSet(false),
     m_containerNetSubStatusHasBeenSet(false),
-    m_containerIsolateOperationSrcHasBeenSet(false)
+    m_containerIsolateOperationSrcHasBeenSet(false),
+    m_containerStatusHasBeenSet(false)
 {
 }
 
@@ -249,6 +250,16 @@ CoreInternalOutcome EscapeEventInfo::Deserialize(const rapidjson::Value &value)
         m_containerIsolateOperationSrcHasBeenSet = true;
     }
 
+    if (value.HasMember("ContainerStatus") && !value["ContainerStatus"].IsNull())
+    {
+        if (!value["ContainerStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EscapeEventInfo.ContainerStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_containerStatus = string(value["ContainerStatus"].GetString());
+        m_containerStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -414,6 +425,14 @@ void EscapeEventInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "ContainerIsolateOperationSrc";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_containerIsolateOperationSrc.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_containerStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ContainerStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_containerStatus.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -737,5 +756,21 @@ void EscapeEventInfo::SetContainerIsolateOperationSrc(const string& _containerIs
 bool EscapeEventInfo::ContainerIsolateOperationSrcHasBeenSet() const
 {
     return m_containerIsolateOperationSrcHasBeenSet;
+}
+
+string EscapeEventInfo::GetContainerStatus() const
+{
+    return m_containerStatus;
+}
+
+void EscapeEventInfo::SetContainerStatus(const string& _containerStatus)
+{
+    m_containerStatus = _containerStatus;
+    m_containerStatusHasBeenSet = true;
+}
+
+bool EscapeEventInfo::ContainerStatusHasBeenSet() const
+{
+    return m_containerStatusHasBeenSet;
 }
 

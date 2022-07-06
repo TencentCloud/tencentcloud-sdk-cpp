@@ -432,6 +432,28 @@ namespace TencentCloud
                      */
                     bool TagsHasBeenSet() const;
 
+                    /**
+                     * 获取删除保护开关
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DeletionProtection 删除保护开关
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetDeletionProtection() const;
+
+                    /**
+                     * 设置删除保护开关
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DeletionProtection 删除保护开关
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDeletionProtection(const bool& _deletionProtection);
+
+                    /**
+                     * 判断参数 DeletionProtection 是否已赋值
+                     * @return DeletionProtection 是否已赋值
+                     */
+                    bool DeletionProtectionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -557,6 +579,13 @@ namespace TencentCloud
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
+
+                    /**
+                     * 删除保护开关
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_deletionProtection;
+                    bool m_deletionProtectionHasBeenSet;
 
                 };
             }

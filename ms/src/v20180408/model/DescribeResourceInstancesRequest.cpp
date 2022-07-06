@@ -23,10 +23,10 @@ using namespace TencentCloud::Ms::V20180408::Model;
 using namespace std;
 
 DescribeResourceInstancesRequest::DescribeResourceInstancesRequest() :
-    m_pidsHasBeenSet(false),
     m_filtersHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
+    m_pidsHasBeenSet(false),
     m_orderFieldHasBeenSet(false),
     m_orderDirectionHasBeenSet(false)
 {
@@ -38,19 +38,6 @@ string DescribeResourceInstancesRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
-
-    if (m_pidsHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Pids";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        for (auto itr = m_pids.begin(); itr != m_pids.end(); ++itr)
-        {
-            d[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
-        }
-    }
 
     if (m_filtersHasBeenSet)
     {
@@ -83,6 +70,19 @@ string DescribeResourceInstancesRequest::ToJsonString() const
         d.AddMember(iKey, m_limit, allocator);
     }
 
+    if (m_pidsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Pids";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_pids.begin(); itr != m_pids.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
+        }
+    }
+
     if (m_orderFieldHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -106,22 +106,6 @@ string DescribeResourceInstancesRequest::ToJsonString() const
     return buffer.GetString();
 }
 
-
-vector<uint64_t> DescribeResourceInstancesRequest::GetPids() const
-{
-    return m_pids;
-}
-
-void DescribeResourceInstancesRequest::SetPids(const vector<uint64_t>& _pids)
-{
-    m_pids = _pids;
-    m_pidsHasBeenSet = true;
-}
-
-bool DescribeResourceInstancesRequest::PidsHasBeenSet() const
-{
-    return m_pidsHasBeenSet;
-}
 
 vector<Filter> DescribeResourceInstancesRequest::GetFilters() const
 {
@@ -169,6 +153,22 @@ void DescribeResourceInstancesRequest::SetLimit(const uint64_t& _limit)
 bool DescribeResourceInstancesRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+vector<uint64_t> DescribeResourceInstancesRequest::GetPids() const
+{
+    return m_pids;
+}
+
+void DescribeResourceInstancesRequest::SetPids(const vector<uint64_t>& _pids)
+{
+    m_pids = _pids;
+    m_pidsHasBeenSet = true;
+}
+
+bool DescribeResourceInstancesRequest::PidsHasBeenSet() const
+{
+    return m_pidsHasBeenSet;
 }
 
 string DescribeResourceInstancesRequest::GetOrderField() const

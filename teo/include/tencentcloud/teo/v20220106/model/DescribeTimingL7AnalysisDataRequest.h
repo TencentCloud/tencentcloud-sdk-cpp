@@ -80,14 +80,26 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取时序类访问流量指标
-                     * @return MetricNames 时序类访问流量指标
+                     * 获取指标列表，支持的指标
+l7Flow_outFlux: 访问流量
+l7Flow_request: 访问请求数
+l7Flow_outBandwidth: 访问带宽
+                     * @return MetricNames 指标列表，支持的指标
+l7Flow_outFlux: 访问流量
+l7Flow_request: 访问请求数
+l7Flow_outBandwidth: 访问带宽
                      */
                     std::vector<std::string> GetMetricNames() const;
 
                     /**
-                     * 设置时序类访问流量指标
-                     * @param MetricNames 时序类访问流量指标
+                     * 设置指标列表，支持的指标
+l7Flow_outFlux: 访问流量
+l7Flow_request: 访问请求数
+l7Flow_outBandwidth: 访问带宽
+                     * @param MetricNames 指标列表，支持的指标
+l7Flow_outFlux: 访问流量
+l7Flow_request: 访问请求数
+l7Flow_outBandwidth: 访问带宽
                      */
                     void SetMetricNames(const std::vector<std::string>& _metricNames);
 
@@ -166,7 +178,10 @@ namespace TencentCloud
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 时序类访问流量指标
+                     * 指标列表，支持的指标
+l7Flow_outFlux: 访问流量
+l7Flow_request: 访问请求数
+l7Flow_outBandwidth: 访问带宽
                      */
                     std::vector<std::string> m_metricNames;
                     bool m_metricNamesHasBeenSet;

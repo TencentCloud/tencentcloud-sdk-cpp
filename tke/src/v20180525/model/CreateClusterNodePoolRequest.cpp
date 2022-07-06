@@ -35,7 +35,8 @@ CreateClusterNodePoolRequest::CreateClusterNodePoolRequest() :
     m_runtimeVersionHasBeenSet(false),
     m_nodePoolOsHasBeenSet(false),
     m_osCustomizeTypeHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_deletionProtectionHasBeenSet(false)
 {
 }
 
@@ -170,6 +171,14 @@ string CreateClusterNodePoolRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_deletionProtectionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeletionProtection";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_deletionProtection, allocator);
     }
 
 
@@ -386,6 +395,22 @@ void CreateClusterNodePoolRequest::SetTags(const vector<Tag>& _tags)
 bool CreateClusterNodePoolRequest::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+bool CreateClusterNodePoolRequest::GetDeletionProtection() const
+{
+    return m_deletionProtection;
+}
+
+void CreateClusterNodePoolRequest::SetDeletionProtection(const bool& _deletionProtection)
+{
+    m_deletionProtection = _deletionProtection;
+    m_deletionProtectionHasBeenSet = true;
+}
+
+bool CreateClusterNodePoolRequest::DeletionProtectionHasBeenSet() const
+{
+    return m_deletionProtectionHasBeenSet;
 }
 
 

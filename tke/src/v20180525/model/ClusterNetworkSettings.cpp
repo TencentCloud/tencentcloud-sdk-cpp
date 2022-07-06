@@ -31,7 +31,9 @@ ClusterNetworkSettings::ClusterNetworkSettings() :
     m_kubeProxyModeHasBeenSet(false),
     m_serviceCIDRHasBeenSet(false),
     m_subnetsHasBeenSet(false),
-    m_ignoreServiceCIDRConflictHasBeenSet(false)
+    m_ignoreServiceCIDRConflictHasBeenSet(false),
+    m_isDualStackHasBeenSet(false),
+    m_ipv6ServiceCIDRHasBeenSet(false)
 {
 }
 
@@ -153,6 +155,26 @@ CoreInternalOutcome ClusterNetworkSettings::Deserialize(const rapidjson::Value &
         m_ignoreServiceCIDRConflictHasBeenSet = true;
     }
 
+    if (value.HasMember("IsDualStack") && !value["IsDualStack"].IsNull())
+    {
+        if (!value["IsDualStack"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterNetworkSettings.IsDualStack` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isDualStack = value["IsDualStack"].GetBool();
+        m_isDualStackHasBeenSet = true;
+    }
+
+    if (value.HasMember("Ipv6ServiceCIDR") && !value["Ipv6ServiceCIDR"].IsNull())
+    {
+        if (!value["Ipv6ServiceCIDR"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterNetworkSettings.Ipv6ServiceCIDR` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ipv6ServiceCIDR = string(value["Ipv6ServiceCIDR"].GetString());
+        m_ipv6ServiceCIDRHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -251,6 +273,22 @@ void ClusterNetworkSettings::ToJsonObject(rapidjson::Value &value, rapidjson::Do
         string key = "IgnoreServiceCIDRConflict";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_ignoreServiceCIDRConflict, allocator);
+    }
+
+    if (m_isDualStackHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsDualStack";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isDualStack, allocator);
+    }
+
+    if (m_ipv6ServiceCIDRHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Ipv6ServiceCIDR";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ipv6ServiceCIDR.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -430,5 +468,37 @@ void ClusterNetworkSettings::SetIgnoreServiceCIDRConflict(const bool& _ignoreSer
 bool ClusterNetworkSettings::IgnoreServiceCIDRConflictHasBeenSet() const
 {
     return m_ignoreServiceCIDRConflictHasBeenSet;
+}
+
+bool ClusterNetworkSettings::GetIsDualStack() const
+{
+    return m_isDualStack;
+}
+
+void ClusterNetworkSettings::SetIsDualStack(const bool& _isDualStack)
+{
+    m_isDualStack = _isDualStack;
+    m_isDualStackHasBeenSet = true;
+}
+
+bool ClusterNetworkSettings::IsDualStackHasBeenSet() const
+{
+    return m_isDualStackHasBeenSet;
+}
+
+string ClusterNetworkSettings::GetIpv6ServiceCIDR() const
+{
+    return m_ipv6ServiceCIDR;
+}
+
+void ClusterNetworkSettings::SetIpv6ServiceCIDR(const string& _ipv6ServiceCIDR)
+{
+    m_ipv6ServiceCIDR = _ipv6ServiceCIDR;
+    m_ipv6ServiceCIDRHasBeenSet = true;
+}
+
+bool ClusterNetworkSettings::Ipv6ServiceCIDRHasBeenSet() const
+{
+    return m_ipv6ServiceCIDRHasBeenSet;
 }
 

@@ -24,7 +24,8 @@ UsageDetail::UsageDetail() :
     m_proxyOrganizationOpenIdHasBeenSet(false),
     m_proxyOrganizationNameHasBeenSet(false),
     m_dateHasBeenSet(false),
-    m_usageHasBeenSet(false)
+    m_usageHasBeenSet(false),
+    m_cancelHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome UsageDetail::Deserialize(const rapidjson::Value &value)
         m_usageHasBeenSet = true;
     }
 
+    if (value.HasMember("Cancel") && !value["Cancel"].IsNull())
+    {
+        if (!value["Cancel"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `UsageDetail.Cancel` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_cancel = value["Cancel"].GetUint64();
+        m_cancelHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +121,14 @@ void UsageDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "Usage";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_usage, allocator);
+    }
+
+    if (m_cancelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Cancel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_cancel, allocator);
     }
 
 }
@@ -177,5 +196,21 @@ void UsageDetail::SetUsage(const uint64_t& _usage)
 bool UsageDetail::UsageHasBeenSet() const
 {
     return m_usageHasBeenSet;
+}
+
+uint64_t UsageDetail::GetCancel() const
+{
+    return m_cancel;
+}
+
+void UsageDetail::SetCancel(const uint64_t& _cancel)
+{
+    m_cancel = _cancel;
+    m_cancelHasBeenSet = true;
+}
+
+bool UsageDetail::CancelHasBeenSet() const
+{
+    return m_cancelHasBeenSet;
 }
 

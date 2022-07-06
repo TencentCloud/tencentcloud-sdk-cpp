@@ -24,7 +24,8 @@ TcrNamespaceInfo::TcrNamespaceInfo() :
     m_nameHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
     m_publicHasBeenSet(false),
-    m_namespaceIdHasBeenSet(false)
+    m_namespaceIdHasBeenSet(false),
+    m_tagSpecificationHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,23 @@ CoreInternalOutcome TcrNamespaceInfo::Deserialize(const rapidjson::Value &value)
         m_namespaceIdHasBeenSet = true;
     }
 
+    if (value.HasMember("TagSpecification") && !value["TagSpecification"].IsNull())
+    {
+        if (!value["TagSpecification"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `TcrNamespaceInfo.TagSpecification` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_tagSpecification.Deserialize(value["TagSpecification"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_tagSpecificationHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +128,15 @@ void TcrNamespaceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "NamespaceId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_namespaceId, allocator);
+    }
+
+    if (m_tagSpecificationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TagSpecification";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_tagSpecification.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -177,5 +204,21 @@ void TcrNamespaceInfo::SetNamespaceId(const int64_t& _namespaceId)
 bool TcrNamespaceInfo::NamespaceIdHasBeenSet() const
 {
     return m_namespaceIdHasBeenSet;
+}
+
+TagSpecification TcrNamespaceInfo::GetTagSpecification() const
+{
+    return m_tagSpecification;
+}
+
+void TcrNamespaceInfo::SetTagSpecification(const TagSpecification& _tagSpecification)
+{
+    m_tagSpecification = _tagSpecification;
+    m_tagSpecificationHasBeenSet = true;
+}
+
+bool TcrNamespaceInfo::TagSpecificationHasBeenSet() const
+{
+    return m_tagSpecificationHasBeenSet;
 }
 

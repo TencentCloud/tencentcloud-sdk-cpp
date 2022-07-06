@@ -39,7 +39,8 @@ NodePool::NodePool() :
     m_imageIdHasBeenSet(false),
     m_desiredPodNumHasBeenSet(false),
     m_userScriptHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_deletionProtectionHasBeenSet(false)
 {
 }
 
@@ -275,6 +276,16 @@ CoreInternalOutcome NodePool::Deserialize(const rapidjson::Value &value)
         m_tagsHasBeenSet = true;
     }
 
+    if (value.HasMember("DeletionProtection") && !value["DeletionProtection"].IsNull())
+    {
+        if (!value["DeletionProtection"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `NodePool.DeletionProtection` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_deletionProtection = value["DeletionProtection"].GetBool();
+        m_deletionProtectionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -454,6 +465,14 @@ void NodePool::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_deletionProtectionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeletionProtection";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_deletionProtection, allocator);
     }
 
 }
@@ -761,5 +780,21 @@ void NodePool::SetTags(const vector<Tag>& _tags)
 bool NodePool::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+bool NodePool::GetDeletionProtection() const
+{
+    return m_deletionProtection;
+}
+
+void NodePool::SetDeletionProtection(const bool& _deletionProtection)
+{
+    m_deletionProtection = _deletionProtection;
+    m_deletionProtectionHasBeenSet = true;
+}
+
+bool NodePool::DeletionProtectionHasBeenSet() const
+{
+    return m_deletionProtectionHasBeenSet;
 }
 

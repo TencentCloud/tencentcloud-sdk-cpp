@@ -41,7 +41,8 @@ Cluster::Cluster() :
     m_deletionProtectionHasBeenSet(false),
     m_enableExternalNodeHasBeenSet(false),
     m_clusterLevelHasBeenSet(false),
-    m_autoUpgradeClusterLevelHasBeenSet(false)
+    m_autoUpgradeClusterLevelHasBeenSet(false),
+    m_qGPUShareEnableHasBeenSet(false)
 {
 }
 
@@ -277,6 +278,16 @@ CoreInternalOutcome Cluster::Deserialize(const rapidjson::Value &value)
         m_autoUpgradeClusterLevelHasBeenSet = true;
     }
 
+    if (value.HasMember("QGPUShareEnable") && !value["QGPUShareEnable"].IsNull())
+    {
+        if (!value["QGPUShareEnable"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `Cluster.QGPUShareEnable` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_qGPUShareEnable = value["QGPUShareEnable"].GetBool();
+        m_qGPUShareEnableHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -458,6 +469,14 @@ void Cluster::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "AutoUpgradeClusterLevel";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_autoUpgradeClusterLevel, allocator);
+    }
+
+    if (m_qGPUShareEnableHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QGPUShareEnable";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_qGPUShareEnable, allocator);
     }
 
 }
@@ -797,5 +816,21 @@ void Cluster::SetAutoUpgradeClusterLevel(const bool& _autoUpgradeClusterLevel)
 bool Cluster::AutoUpgradeClusterLevelHasBeenSet() const
 {
     return m_autoUpgradeClusterLevelHasBeenSet;
+}
+
+bool Cluster::GetQGPUShareEnable() const
+{
+    return m_qGPUShareEnable;
+}
+
+void Cluster::SetQGPUShareEnable(const bool& _qGPUShareEnable)
+{
+    m_qGPUShareEnable = _qGPUShareEnable;
+    m_qGPUShareEnableHasBeenSet = true;
+}
+
+bool Cluster::QGPUShareEnableHasBeenSet() const
+{
+    return m_qGPUShareEnableHasBeenSet;
 }
 

@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tcr/v20190924/model/Filter.h>
 
 
 namespace TencentCloud
@@ -97,14 +98,14 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取页偏移
-                     * @return Offset 页偏移
+                     * 获取页面偏移（第几页）
+                     * @return Offset 页面偏移（第几页）
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置页偏移
-                     * @param Offset 页偏移
+                     * 设置页面偏移（第几页）
+                     * @param Offset 页面偏移（第几页）
                      */
                     void SetOffset(const int64_t& _offset);
 
@@ -113,6 +114,42 @@ namespace TencentCloud
                      * @return Offset 是否已赋值
                      */
                     bool OffsetHasBeenSet() const;
+
+                    /**
+                     * 获取列出所有命名空间
+                     * @return All 列出所有命名空间
+                     */
+                    bool GetAll() const;
+
+                    /**
+                     * 设置列出所有命名空间
+                     * @param All 列出所有命名空间
+                     */
+                    void SetAll(const bool& _all);
+
+                    /**
+                     * 判断参数 All 是否已赋值
+                     * @return All 是否已赋值
+                     */
+                    bool AllHasBeenSet() const;
+
+                    /**
+                     * 获取过滤条件
+                     * @return Filters 过滤条件
+                     */
+                    std::vector<Filter> GetFilters() const;
+
+                    /**
+                     * 设置过滤条件
+                     * @param Filters 过滤条件
+                     */
+                    void SetFilters(const std::vector<Filter>& _filters);
+
+                    /**
+                     * 判断参数 Filters 是否已赋值
+                     * @return Filters 是否已赋值
+                     */
+                    bool FiltersHasBeenSet() const;
 
                 private:
 
@@ -135,10 +172,22 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 页偏移
+                     * 页面偏移（第几页）
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
+
+                    /**
+                     * 列出所有命名空间
+                     */
+                    bool m_all;
+                    bool m_allHasBeenSet;
+
+                    /**
+                     * 过滤条件
+                     */
+                    std::vector<Filter> m_filters;
+                    bool m_filtersHasBeenSet;
 
                 };
             }

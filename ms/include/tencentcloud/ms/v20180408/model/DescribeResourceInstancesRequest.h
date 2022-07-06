@@ -44,32 +44,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取资源类别id数组，13624：加固专业版，12750：企业版。空数组表示返回全部资源。
-                     * @return Pids 资源类别id数组，13624：加固专业版，12750：企业版。空数组表示返回全部资源。
-                     */
-                    std::vector<uint64_t> GetPids() const;
-
-                    /**
-                     * 设置资源类别id数组，13624：加固专业版，12750：企业版。空数组表示返回全部资源。
-                     * @param Pids 资源类别id数组，13624：加固专业版，12750：企业版。空数组表示返回全部资源。
-                     */
-                    void SetPids(const std::vector<uint64_t>& _pids);
-
-                    /**
-                     * 判断参数 Pids 是否已赋值
-                     * @return Pids 是否已赋值
-                     */
-                    bool PidsHasBeenSet() const;
-
-                    /**
-                     * 获取支持通过资源id，pid进行查询
-                     * @return Filters 支持通过资源id，pid进行查询
+                     * 获取支持CreateTime、ExpireTime、AppName、AppPkgName、BindValue、IsBind过滤
+                     * @return Filters 支持CreateTime、ExpireTime、AppName、AppPkgName、BindValue、IsBind过滤
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置支持通过资源id，pid进行查询
-                     * @param Filters 支持通过资源id，pid进行查询
+                     * 设置支持CreateTime、ExpireTime、AppName、AppPkgName、BindValue、IsBind过滤
+                     * @param Filters 支持CreateTime、ExpireTime、AppName、AppPkgName、BindValue、IsBind过滤
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
@@ -116,6 +98,24 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
+                     * 获取资源类别id数组，13624：加固专业版，12750：企业版。空数组表示返回全部资源。
+                     * @return Pids 资源类别id数组，13624：加固专业版，12750：企业版。空数组表示返回全部资源。
+                     */
+                    std::vector<uint64_t> GetPids() const;
+
+                    /**
+                     * 设置资源类别id数组，13624：加固专业版，12750：企业版。空数组表示返回全部资源。
+                     * @param Pids 资源类别id数组，13624：加固专业版，12750：企业版。空数组表示返回全部资源。
+                     */
+                    void SetPids(const std::vector<uint64_t>& _pids);
+
+                    /**
+                     * 判断参数 Pids 是否已赋值
+                     * @return Pids 是否已赋值
+                     */
+                    bool PidsHasBeenSet() const;
+
+                    /**
                      * 获取按某个字段排序，目前支持CreateTime、ExpireTime其中的一个排序。
                      * @return OrderField 按某个字段排序，目前支持CreateTime、ExpireTime其中的一个排序。
                      */
@@ -154,13 +154,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 资源类别id数组，13624：加固专业版，12750：企业版。空数组表示返回全部资源。
-                     */
-                    std::vector<uint64_t> m_pids;
-                    bool m_pidsHasBeenSet;
-
-                    /**
-                     * 支持通过资源id，pid进行查询
+                     * 支持CreateTime、ExpireTime、AppName、AppPkgName、BindValue、IsBind过滤
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;
@@ -176,6 +170,12 @@ namespace TencentCloud
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
+
+                    /**
+                     * 资源类别id数组，13624：加固专业版，12750：企业版。空数组表示返回全部资源。
+                     */
+                    std::vector<uint64_t> m_pids;
+                    bool m_pidsHasBeenSet;
 
                     /**
                      * 按某个字段排序，目前支持CreateTime、ExpireTime其中的一个排序。

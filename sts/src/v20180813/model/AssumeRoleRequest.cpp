@@ -28,7 +28,8 @@ AssumeRoleRequest::AssumeRoleRequest() :
     m_durationSecondsHasBeenSet(false),
     m_policyHasBeenSet(false),
     m_externalIdHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_sourceIdentityHasBeenSet(false)
 {
 }
 
@@ -92,6 +93,14 @@ string AssumeRoleRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_sourceIdentityHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SourceIdentity";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_sourceIdentity.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -196,6 +205,22 @@ void AssumeRoleRequest::SetTags(const vector<Tag>& _tags)
 bool AssumeRoleRequest::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+string AssumeRoleRequest::GetSourceIdentity() const
+{
+    return m_sourceIdentity;
+}
+
+void AssumeRoleRequest::SetSourceIdentity(const string& _sourceIdentity)
+{
+    m_sourceIdentity = _sourceIdentity;
+    m_sourceIdentityHasBeenSet = true;
+}
+
+bool AssumeRoleRequest::SourceIdentityHasBeenSet() const
+{
+    return m_sourceIdentityHasBeenSet;
 }
 
 

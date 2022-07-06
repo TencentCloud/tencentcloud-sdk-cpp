@@ -526,6 +526,52 @@ MountNamespace逃逸、
                      */
                     bool ContainerIsolateOperationSrcHasBeenSet() const;
 
+                    /**
+                     * 获取容器状态
+正在运行: RUNNING
+暂停: PAUSED
+停止: STOPPED
+已经创建: CREATED
+已经销毁: DESTROYED
+正在重启中: RESTARTING
+迁移中: REMOVING
+                     * @return ContainerStatus 容器状态
+正在运行: RUNNING
+暂停: PAUSED
+停止: STOPPED
+已经创建: CREATED
+已经销毁: DESTROYED
+正在重启中: RESTARTING
+迁移中: REMOVING
+                     */
+                    std::string GetContainerStatus() const;
+
+                    /**
+                     * 设置容器状态
+正在运行: RUNNING
+暂停: PAUSED
+停止: STOPPED
+已经创建: CREATED
+已经销毁: DESTROYED
+正在重启中: RESTARTING
+迁移中: REMOVING
+                     * @param ContainerStatus 容器状态
+正在运行: RUNNING
+暂停: PAUSED
+停止: STOPPED
+已经创建: CREATED
+已经销毁: DESTROYED
+正在重启中: RESTARTING
+迁移中: REMOVING
+                     */
+                    void SetContainerStatus(const std::string& _containerStatus);
+
+                    /**
+                     * 判断参数 ContainerStatus 是否已赋值
+                     * @return ContainerStatus 是否已赋值
+                     */
+                    bool ContainerStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -677,6 +723,19 @@ MountNamespace逃逸、
                      */
                     std::string m_containerIsolateOperationSrc;
                     bool m_containerIsolateOperationSrcHasBeenSet;
+
+                    /**
+                     * 容器状态
+正在运行: RUNNING
+暂停: PAUSED
+停止: STOPPED
+已经创建: CREATED
+已经销毁: DESTROYED
+正在重启中: RESTARTING
+迁移中: REMOVING
+                     */
+                    std::string m_containerStatus;
+                    bool m_containerStatusHasBeenSet;
 
                 };
             }

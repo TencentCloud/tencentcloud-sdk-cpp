@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取文件id数组
-                     * @return FileIds 文件id数组
+                     * 获取文件id数组，有效期一个小时
+                     * @return FileIds 文件id数组，有效期一个小时
                      */
                     std::vector<std::string> GetFileIds() const;
 
@@ -82,7 +82,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 文件id数组
+                     * 文件id数组，有效期一个小时
                      */
                     std::vector<std::string> m_fileIds;
                     bool m_fileIdsHasBeenSet;

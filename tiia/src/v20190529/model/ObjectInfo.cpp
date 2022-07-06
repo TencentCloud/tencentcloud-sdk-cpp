@@ -24,7 +24,8 @@ ObjectInfo::ObjectInfo() :
     m_boxHasBeenSet(false),
     m_categoryIdHasBeenSet(false),
     m_colorsHasBeenSet(false),
-    m_attributesHasBeenSet(false)
+    m_attributesHasBeenSet(false),
+    m_allBoxHasBeenSet(false)
 {
 }
 
@@ -100,6 +101,26 @@ CoreInternalOutcome ObjectInfo::Deserialize(const rapidjson::Value &value)
         m_attributesHasBeenSet = true;
     }
 
+    if (value.HasMember("AllBox") && !value["AllBox"].IsNull())
+    {
+        if (!value["AllBox"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ObjectInfo.AllBox` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["AllBox"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Box item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_allBox.push_back(item);
+        }
+        m_allBoxHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +169,21 @@ void ObjectInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
 
         int i=0;
         for (auto itr = m_attributes.begin(); itr != m_attributes.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_allBoxHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AllBox";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_allBox.begin(); itr != m_allBox.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -219,5 +255,21 @@ void ObjectInfo::SetAttributes(const vector<Attribute>& _attributes)
 bool ObjectInfo::AttributesHasBeenSet() const
 {
     return m_attributesHasBeenSet;
+}
+
+vector<Box> ObjectInfo::GetAllBox() const
+{
+    return m_allBox;
+}
+
+void ObjectInfo::SetAllBox(const vector<Box>& _allBox)
+{
+    m_allBox = _allBox;
+    m_allBoxHasBeenSet = true;
+}
+
+bool ObjectInfo::AllBoxHasBeenSet() const
+{
+    return m_allBoxHasBeenSet;
 }
 

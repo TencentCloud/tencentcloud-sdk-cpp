@@ -121,6 +121,28 @@ namespace TencentCloud
                      */
                     bool AttributesHasBeenSet() const;
 
+                    /**
+                     * 获取图像的所有主体区域。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AllBox 图像的所有主体区域。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Box> GetAllBox() const;
+
+                    /**
+                     * 设置图像的所有主体区域。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AllBox 图像的所有主体区域。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAllBox(const std::vector<Box>& _allBox);
+
+                    /**
+                     * 判断参数 AllBox 是否已赋值
+                     * @return AllBox 是否已赋值
+                     */
+                    bool AllBoxHasBeenSet() const;
+
                 private:
 
                     /**
@@ -146,6 +168,13 @@ namespace TencentCloud
                      */
                     std::vector<Attribute> m_attributes;
                     bool m_attributesHasBeenSet;
+
+                    /**
+                     * 图像的所有主体区域。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Box> m_allBox;
+                    bool m_allBoxHasBeenSet;
 
                 };
             }

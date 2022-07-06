@@ -151,6 +151,24 @@ namespace TencentCloud
                      */
                     bool AutoUpgradeClusterLevelHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启QGPU共享
+                     * @return QGPUShareEnable 是否开启QGPU共享
+                     */
+                    bool GetQGPUShareEnable() const;
+
+                    /**
+                     * 设置是否开启QGPU共享
+                     * @param QGPUShareEnable 是否开启QGPU共享
+                     */
+                    void SetQGPUShareEnable(const bool& _qGPUShareEnable);
+
+                    /**
+                     * 判断参数 QGPUShareEnable 是否已赋值
+                     * @return QGPUShareEnable 是否已赋值
+                     */
+                    bool QGPUShareEnableHasBeenSet() const;
+
                 private:
 
                     /**
@@ -188,6 +206,12 @@ namespace TencentCloud
                      */
                     AutoUpgradeClusterLevel m_autoUpgradeClusterLevel;
                     bool m_autoUpgradeClusterLevelHasBeenSet;
+
+                    /**
+                     * 是否开启QGPU共享
+                     */
+                    bool m_qGPUShareEnable;
+                    bool m_qGPUShareEnableHasBeenSet;
 
                 };
             }

@@ -395,6 +395,24 @@ ipvs-bpf模式: 设置KubeProxyMode为kube-proxy-bpf
                      */
                     bool IsDualStackHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启QGPU共享
+                     * @return QGPUShareEnable 是否开启QGPU共享
+                     */
+                    bool GetQGPUShareEnable() const;
+
+                    /**
+                     * 设置是否开启QGPU共享
+                     * @param QGPUShareEnable 是否开启QGPU共享
+                     */
+                    void SetQGPUShareEnable(const bool& _qGPUShareEnable);
+
+                    /**
+                     * 判断参数 QGPUShareEnable 是否已赋值
+                     * @return QGPUShareEnable 是否已赋值
+                     */
+                    bool QGPUShareEnableHasBeenSet() const;
+
                 private:
 
                     /**
@@ -510,6 +528,12 @@ ipvs-bpf模式: 设置KubeProxyMode为kube-proxy-bpf
                      */
                     bool m_isDualStack;
                     bool m_isDualStackHasBeenSet;
+
+                    /**
+                     * 是否开启QGPU共享
+                     */
+                    bool m_qGPUShareEnable;
+                    bool m_qGPUShareEnableHasBeenSet;
 
                 };
             }

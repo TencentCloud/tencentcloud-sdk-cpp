@@ -41,7 +41,8 @@ RiskSyscallEventInfo::RiskSyscallEventInfo() :
     m_latestFoundTimeHasBeenSet(false),
     m_containerNetStatusHasBeenSet(false),
     m_containerNetSubStatusHasBeenSet(false),
-    m_containerIsolateOperationSrcHasBeenSet(false)
+    m_containerIsolateOperationSrcHasBeenSet(false),
+    m_containerStatusHasBeenSet(false)
 {
 }
 
@@ -260,6 +261,16 @@ CoreInternalOutcome RiskSyscallEventInfo::Deserialize(const rapidjson::Value &va
         m_containerIsolateOperationSrcHasBeenSet = true;
     }
 
+    if (value.HasMember("ContainerStatus") && !value["ContainerStatus"].IsNull())
+    {
+        if (!value["ContainerStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RiskSyscallEventInfo.ContainerStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_containerStatus = string(value["ContainerStatus"].GetString());
+        m_containerStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -433,6 +444,14 @@ void RiskSyscallEventInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "ContainerIsolateOperationSrc";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_containerIsolateOperationSrc.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_containerStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ContainerStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_containerStatus.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -772,5 +791,21 @@ void RiskSyscallEventInfo::SetContainerIsolateOperationSrc(const string& _contai
 bool RiskSyscallEventInfo::ContainerIsolateOperationSrcHasBeenSet() const
 {
     return m_containerIsolateOperationSrcHasBeenSet;
+}
+
+string RiskSyscallEventInfo::GetContainerStatus() const
+{
+    return m_containerStatus;
+}
+
+void RiskSyscallEventInfo::SetContainerStatus(const string& _containerStatus)
+{
+    m_containerStatus = _containerStatus;
+    m_containerStatusHasBeenSet = true;
+}
+
+bool RiskSyscallEventInfo::ContainerStatusHasBeenSet() const
+{
+    return m_containerStatusHasBeenSet;
 }
 

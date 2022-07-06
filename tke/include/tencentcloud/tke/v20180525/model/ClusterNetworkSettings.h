@@ -260,6 +260,50 @@ namespace TencentCloud
                      */
                     bool IgnoreServiceCIDRConflictHasBeenSet() const;
 
+                    /**
+                     * 获取集群VPC-CNI模式是否为非双栈集群，默认false，非双栈。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsDualStack 集群VPC-CNI模式是否为非双栈集群，默认false，非双栈。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetIsDualStack() const;
+
+                    /**
+                     * 设置集群VPC-CNI模式是否为非双栈集群，默认false，非双栈。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param IsDualStack 集群VPC-CNI模式是否为非双栈集群，默认false，非双栈。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIsDualStack(const bool& _isDualStack);
+
+                    /**
+                     * 判断参数 IsDualStack 是否已赋值
+                     * @return IsDualStack 是否已赋值
+                     */
+                    bool IsDualStackHasBeenSet() const;
+
+                    /**
+                     * 获取用于分配service的IP range，由系统自动分配
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Ipv6ServiceCIDR 用于分配service的IP range，由系统自动分配
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetIpv6ServiceCIDR() const;
+
+                    /**
+                     * 设置用于分配service的IP range，由系统自动分配
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Ipv6ServiceCIDR 用于分配service的IP range，由系统自动分配
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIpv6ServiceCIDR(const std::string& _ipv6ServiceCIDR);
+
+                    /**
+                     * 判断参数 Ipv6ServiceCIDR 是否已赋值
+                     * @return Ipv6ServiceCIDR 是否已赋值
+                     */
+                    bool Ipv6ServiceCIDRHasBeenSet() const;
+
                 private:
 
                     /**
@@ -331,6 +375,20 @@ namespace TencentCloud
                      */
                     bool m_ignoreServiceCIDRConflict;
                     bool m_ignoreServiceCIDRConflictHasBeenSet;
+
+                    /**
+                     * 集群VPC-CNI模式是否为非双栈集群，默认false，非双栈。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_isDualStack;
+                    bool m_isDualStackHasBeenSet;
+
+                    /**
+                     * 用于分配service的IP range，由系统自动分配
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_ipv6ServiceCIDR;
+                    bool m_ipv6ServiceCIDRHasBeenSet;
 
                 };
             }

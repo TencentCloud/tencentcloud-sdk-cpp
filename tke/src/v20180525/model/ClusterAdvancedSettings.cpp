@@ -38,7 +38,8 @@ ClusterAdvancedSettings::ClusterAdvancedSettings() :
     m_enableCustomizedPodCIDRHasBeenSet(false),
     m_basePodNumberHasBeenSet(false),
     m_ciliumModeHasBeenSet(false),
-    m_isDualStackHasBeenSet(false)
+    m_isDualStackHasBeenSet(false),
+    m_qGPUShareEnableHasBeenSet(false)
 {
 }
 
@@ -234,6 +235,16 @@ CoreInternalOutcome ClusterAdvancedSettings::Deserialize(const rapidjson::Value 
         m_isDualStackHasBeenSet = true;
     }
 
+    if (value.HasMember("QGPUShareEnable") && !value["QGPUShareEnable"].IsNull())
+    {
+        if (!value["QGPUShareEnable"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterAdvancedSettings.QGPUShareEnable` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_qGPUShareEnable = value["QGPUShareEnable"].GetBool();
+        m_qGPUShareEnableHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -384,6 +395,14 @@ void ClusterAdvancedSettings::ToJsonObject(rapidjson::Value &value, rapidjson::D
         string key = "IsDualStack";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isDualStack, allocator);
+    }
+
+    if (m_qGPUShareEnableHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QGPUShareEnable";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_qGPUShareEnable, allocator);
     }
 
 }
@@ -675,5 +694,21 @@ void ClusterAdvancedSettings::SetIsDualStack(const bool& _isDualStack)
 bool ClusterAdvancedSettings::IsDualStackHasBeenSet() const
 {
     return m_isDualStackHasBeenSet;
+}
+
+bool ClusterAdvancedSettings::GetQGPUShareEnable() const
+{
+    return m_qGPUShareEnable;
+}
+
+void ClusterAdvancedSettings::SetQGPUShareEnable(const bool& _qGPUShareEnable)
+{
+    m_qGPUShareEnable = _qGPUShareEnable;
+    m_qGPUShareEnableHasBeenSet = true;
+}
+
+bool ClusterAdvancedSettings::QGPUShareEnableHasBeenSet() const
+{
+    return m_qGPUShareEnableHasBeenSet;
 }
 
