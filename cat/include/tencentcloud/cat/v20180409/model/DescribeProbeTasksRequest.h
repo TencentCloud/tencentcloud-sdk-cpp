@@ -205,13 +205,57 @@ namespace TencentCloud
 
                     /**
                      * 获取拨测类型
+
+<li>1 = 创建中</li>
+<li> 2 = 运行中 </li>
+<li> 3 = 运行异常 </li>
+<li> 4 = 暂停中 </li>
+<li> 5 = 暂停异常 </li>
+<li> 6 = 任务暂停 </li>
+<li> 7 = 任务删除中 </li>
+<li> 8 = 任务删除异常 </li>
+<li> 9 = 任务删除</li>
+<li> 10 = 定时任务暂停中 </li>
                      * @return TaskType 拨测类型
+
+<li>1 = 创建中</li>
+<li> 2 = 运行中 </li>
+<li> 3 = 运行异常 </li>
+<li> 4 = 暂停中 </li>
+<li> 5 = 暂停异常 </li>
+<li> 6 = 任务暂停 </li>
+<li> 7 = 任务删除中 </li>
+<li> 8 = 任务删除异常 </li>
+<li> 9 = 任务删除</li>
+<li> 10 = 定时任务暂停中 </li>
                      */
                     std::vector<int64_t> GetTaskType() const;
 
                     /**
                      * 设置拨测类型
+
+<li>1 = 创建中</li>
+<li> 2 = 运行中 </li>
+<li> 3 = 运行异常 </li>
+<li> 4 = 暂停中 </li>
+<li> 5 = 暂停异常 </li>
+<li> 6 = 任务暂停 </li>
+<li> 7 = 任务删除中 </li>
+<li> 8 = 任务删除异常 </li>
+<li> 9 = 任务删除</li>
+<li> 10 = 定时任务暂停中 </li>
                      * @param TaskType 拨测类型
+
+<li>1 = 创建中</li>
+<li> 2 = 运行中 </li>
+<li> 3 = 运行异常 </li>
+<li> 4 = 暂停中 </li>
+<li> 5 = 暂停异常 </li>
+<li> 6 = 任务暂停 </li>
+<li> 7 = 任务删除中 </li>
+<li> 8 = 任务删除异常 </li>
+<li> 9 = 任务删除</li>
+<li> 10 = 定时任务暂停中 </li>
                      */
                     void SetTaskType(const std::vector<int64_t>& _taskType);
 
@@ -349,6 +393,17 @@ namespace TencentCloud
 
                     /**
                      * 拨测类型
+
+<li>1 = 创建中</li>
+<li> 2 = 运行中 </li>
+<li> 3 = 运行异常 </li>
+<li> 4 = 暂停中 </li>
+<li> 5 = 暂停异常 </li>
+<li> 6 = 任务暂停 </li>
+<li> 7 = 任务删除中 </li>
+<li> 8 = 任务删除异常 </li>
+<li> 9 = 任务删除</li>
+<li> 10 = 定时任务暂停中 </li>
                      */
                     std::vector<int64_t> m_taskType;
                     bool m_taskTypeHasBeenSet;

@@ -30,7 +30,9 @@ FreezeOrderResult::FreezeOrderResult() :
     m_finishTimeHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_statusDescHasBeenSet(false),
-    m_remarkHasBeenSet(false)
+    m_remarkHasBeenSet(false),
+    m_payeeIdHasBeenSet(false),
+    m_outUserIdHasBeenSet(false)
 {
 }
 
@@ -139,6 +141,26 @@ CoreInternalOutcome FreezeOrderResult::Deserialize(const rapidjson::Value &value
         m_remarkHasBeenSet = true;
     }
 
+    if (value.HasMember("PayeeId") && !value["PayeeId"].IsNull())
+    {
+        if (!value["PayeeId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `FreezeOrderResult.PayeeId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_payeeId = string(value["PayeeId"].GetString());
+        m_payeeIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("OutUserId") && !value["OutUserId"].IsNull())
+    {
+        if (!value["OutUserId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `FreezeOrderResult.OutUserId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_outUserId = string(value["OutUserId"].GetString());
+        m_outUserIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -224,6 +246,22 @@ void FreezeOrderResult::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "Remark";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_remark.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_payeeIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PayeeId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_payeeId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_outUserIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OutUserId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_outUserId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -387,5 +425,37 @@ void FreezeOrderResult::SetRemark(const string& _remark)
 bool FreezeOrderResult::RemarkHasBeenSet() const
 {
     return m_remarkHasBeenSet;
+}
+
+string FreezeOrderResult::GetPayeeId() const
+{
+    return m_payeeId;
+}
+
+void FreezeOrderResult::SetPayeeId(const string& _payeeId)
+{
+    m_payeeId = _payeeId;
+    m_payeeIdHasBeenSet = true;
+}
+
+bool FreezeOrderResult::PayeeIdHasBeenSet() const
+{
+    return m_payeeIdHasBeenSet;
+}
+
+string FreezeOrderResult::GetOutUserId() const
+{
+    return m_outUserId;
+}
+
+void FreezeOrderResult::SetOutUserId(const string& _outUserId)
+{
+    m_outUserId = _outUserId;
+    m_outUserIdHasBeenSet = true;
+}
+
+bool FreezeOrderResult::OutUserIdHasBeenSet() const
+{
+    return m_outUserIdHasBeenSet;
 }
 

@@ -44,24 +44,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取收款用户ID
-                     * @return PayeeId 收款用户ID
-                     */
-                    std::string GetPayeeId() const;
-
-                    /**
-                     * 设置收款用户ID
-                     * @param PayeeId 收款用户ID
-                     */
-                    void SetPayeeId(const std::string& _payeeId);
-
-                    /**
-                     * 判断参数 PayeeId 是否已赋值
-                     * @return PayeeId 是否已赋值
-                     */
-                    bool PayeeIdHasBeenSet() const;
-
-                    /**
                      * 获取开始时间，格式"yyyy-MM-dd hh:mm:ss"
                      * @return StartTime 开始时间，格式"yyyy-MM-dd hh:mm:ss"
                      */
@@ -116,6 +98,24 @@ namespace TencentCloud
                     bool PageNumberHasBeenSet() const;
 
                     /**
+                     * 获取收款用户ID
+                     * @return PayeeId 收款用户ID
+                     */
+                    std::string GetPayeeId() const;
+
+                    /**
+                     * 设置收款用户ID
+                     * @param PayeeId 收款用户ID
+                     */
+                    void SetPayeeId(const std::string& _payeeId);
+
+                    /**
+                     * 判断参数 PayeeId 是否已赋值
+                     * @return PayeeId 是否已赋值
+                     */
+                    bool PayeeIdHasBeenSet() const;
+
+                    /**
                      * 获取环境类型
 __release__:生产环境
 __sandbox__:沙箱环境
@@ -152,12 +152,6 @@ __test__:测试环境
                 private:
 
                     /**
-                     * 收款用户ID
-                     */
-                    std::string m_payeeId;
-                    bool m_payeeIdHasBeenSet;
-
-                    /**
                      * 开始时间，格式"yyyy-MM-dd hh:mm:ss"
                      */
                     std::string m_startTime;
@@ -174,6 +168,12 @@ __test__:测试环境
                      */
                     Paging m_pageNumber;
                     bool m_pageNumberHasBeenSet;
+
+                    /**
+                     * 收款用户ID
+                     */
+                    std::string m_payeeId;
+                    bool m_payeeIdHasBeenSet;
 
                     /**
                      * 环境类型

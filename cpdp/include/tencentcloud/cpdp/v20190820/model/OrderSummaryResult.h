@@ -172,6 +172,24 @@ namespace TencentCloud
                      */
                     bool SummaryCountHasBeenSet() const;
 
+                    /**
+                     * 获取外部用户ID
+                     * @return OutUserId 外部用户ID
+                     */
+                    std::string GetOutUserId() const;
+
+                    /**
+                     * 设置外部用户ID
+                     * @param OutUserId 外部用户ID
+                     */
+                    void SetOutUserId(const std::string& _outUserId);
+
+                    /**
+                     * 判断参数 OutUserId 是否已赋值
+                     * @return OutUserId 是否已赋值
+                     */
+                    bool OutUserIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -215,6 +233,12 @@ namespace TencentCloud
                      */
                     int64_t m_summaryCount;
                     bool m_summaryCountHasBeenSet;
+
+                    /**
+                     * 外部用户ID
+                     */
+                    std::string m_outUserId;
+                    bool m_outUserIdHasBeenSet;
 
                 };
             }

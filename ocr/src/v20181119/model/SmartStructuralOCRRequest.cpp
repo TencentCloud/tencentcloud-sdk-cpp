@@ -25,7 +25,9 @@ using namespace std;
 SmartStructuralOCRRequest::SmartStructuralOCRRequest() :
     m_imageUrlHasBeenSet(false),
     m_imageBase64HasBeenSet(false),
-    m_itemNamesHasBeenSet(false)
+    m_itemNamesHasBeenSet(false),
+    m_isPdfHasBeenSet(false),
+    m_pdfPageNumberHasBeenSet(false)
 {
 }
 
@@ -63,6 +65,22 @@ string SmartStructuralOCRRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_isPdfHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsPdf";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isPdf, allocator);
+    }
+
+    if (m_pdfPageNumberHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PdfPageNumber";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_pdfPageNumber, allocator);
     }
 
 
@@ -119,6 +137,38 @@ void SmartStructuralOCRRequest::SetItemNames(const vector<string>& _itemNames)
 bool SmartStructuralOCRRequest::ItemNamesHasBeenSet() const
 {
     return m_itemNamesHasBeenSet;
+}
+
+bool SmartStructuralOCRRequest::GetIsPdf() const
+{
+    return m_isPdf;
+}
+
+void SmartStructuralOCRRequest::SetIsPdf(const bool& _isPdf)
+{
+    m_isPdf = _isPdf;
+    m_isPdfHasBeenSet = true;
+}
+
+bool SmartStructuralOCRRequest::IsPdfHasBeenSet() const
+{
+    return m_isPdfHasBeenSet;
+}
+
+uint64_t SmartStructuralOCRRequest::GetPdfPageNumber() const
+{
+    return m_pdfPageNumber;
+}
+
+void SmartStructuralOCRRequest::SetPdfPageNumber(const uint64_t& _pdfPageNumber)
+{
+    m_pdfPageNumber = _pdfPageNumber;
+    m_pdfPageNumberHasBeenSet = true;
+}
+
+bool SmartStructuralOCRRequest::PdfPageNumberHasBeenSet() const
+{
+    return m_pdfPageNumberHasBeenSet;
 }
 
 

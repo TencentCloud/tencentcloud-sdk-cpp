@@ -31,7 +31,10 @@ SettlementOrderResult::SettlementOrderResult() :
     m_finishTimeHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_statusDescHasBeenSet(false),
-    m_remarkHasBeenSet(false)
+    m_remarkHasBeenSet(false),
+    m_payeeIdHasBeenSet(false),
+    m_outUserIdHasBeenSet(false),
+    m_operationTypeHasBeenSet(false)
 {
 }
 
@@ -150,6 +153,36 @@ CoreInternalOutcome SettlementOrderResult::Deserialize(const rapidjson::Value &v
         m_remarkHasBeenSet = true;
     }
 
+    if (value.HasMember("PayeeId") && !value["PayeeId"].IsNull())
+    {
+        if (!value["PayeeId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SettlementOrderResult.PayeeId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_payeeId = string(value["PayeeId"].GetString());
+        m_payeeIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("OutUserId") && !value["OutUserId"].IsNull())
+    {
+        if (!value["OutUserId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SettlementOrderResult.OutUserId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_outUserId = string(value["OutUserId"].GetString());
+        m_outUserIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("OperationType") && !value["OperationType"].IsNull())
+    {
+        if (!value["OperationType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SettlementOrderResult.OperationType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_operationType = string(value["OperationType"].GetString());
+        m_operationTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -243,6 +276,30 @@ void SettlementOrderResult::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "Remark";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_remark.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_payeeIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PayeeId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_payeeId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_outUserIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OutUserId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_outUserId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_operationTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OperationType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_operationType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -422,5 +479,53 @@ void SettlementOrderResult::SetRemark(const string& _remark)
 bool SettlementOrderResult::RemarkHasBeenSet() const
 {
     return m_remarkHasBeenSet;
+}
+
+string SettlementOrderResult::GetPayeeId() const
+{
+    return m_payeeId;
+}
+
+void SettlementOrderResult::SetPayeeId(const string& _payeeId)
+{
+    m_payeeId = _payeeId;
+    m_payeeIdHasBeenSet = true;
+}
+
+bool SettlementOrderResult::PayeeIdHasBeenSet() const
+{
+    return m_payeeIdHasBeenSet;
+}
+
+string SettlementOrderResult::GetOutUserId() const
+{
+    return m_outUserId;
+}
+
+void SettlementOrderResult::SetOutUserId(const string& _outUserId)
+{
+    m_outUserId = _outUserId;
+    m_outUserIdHasBeenSet = true;
+}
+
+bool SettlementOrderResult::OutUserIdHasBeenSet() const
+{
+    return m_outUserIdHasBeenSet;
+}
+
+string SettlementOrderResult::GetOperationType() const
+{
+    return m_operationType;
+}
+
+void SettlementOrderResult::SetOperationType(const string& _operationType)
+{
+    m_operationType = _operationType;
+    m_operationTypeHasBeenSet = true;
+}
+
+bool SettlementOrderResult::OperationTypeHasBeenSet() const
+{
+    return m_operationTypeHasBeenSet;
 }
 

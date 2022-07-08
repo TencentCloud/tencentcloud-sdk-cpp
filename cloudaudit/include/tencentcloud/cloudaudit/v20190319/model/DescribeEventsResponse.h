@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取日志集合是否结束
-                     * @return ListOver 日志集合是否结束
+                     * 获取日志集合是否结束。true表示结束，无需进行翻页。
+                     * @return ListOver 日志集合是否结束。true表示结束，无需进行翻页。
                      */
                     bool GetListOver() const;
 
@@ -83,9 +83,9 @@ namespace TencentCloud
                     bool EventsHasBeenSet() const;
 
                     /**
-                     * 获取总数
+                     * 获取此字段已经废弃。翻页请使用ListOver配合NextToken，在ListOver为false进行下一页数据读取。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TotalCount 总数
+                     * @return TotalCount 此字段已经废弃。翻页请使用ListOver配合NextToken，在ListOver为false进行下一页数据读取。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetTotalCount() const;
@@ -99,7 +99,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 日志集合是否结束
+                     * 日志集合是否结束。true表示结束，无需进行翻页。
                      */
                     bool m_listOver;
                     bool m_listOverHasBeenSet;
@@ -118,7 +118,7 @@ namespace TencentCloud
                     bool m_eventsHasBeenSet;
 
                     /**
-                     * 总数
+                     * 此字段已经废弃。翻页请使用ListOver配合NextToken，在ListOver为false进行下一页数据读取。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_totalCount;

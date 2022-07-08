@@ -302,6 +302,24 @@ FAILED:已失败
                      */
                     bool PayeeIdHasBeenSet() const;
 
+                    /**
+                     * 获取外部用户ID
+                     * @return OutUserId 外部用户ID
+                     */
+                    std::string GetOutUserId() const;
+
+                    /**
+                     * 设置外部用户ID
+                     * @param OutUserId 外部用户ID
+                     */
+                    void SetOutUserId(const std::string& _outUserId);
+
+                    /**
+                     * 判断参数 OutUserId 是否已赋值
+                     * @return OutUserId 是否已赋值
+                     */
+                    bool OutUserIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -385,6 +403,12 @@ FAILED:已失败
                      */
                     std::string m_payeeId;
                     bool m_payeeIdHasBeenSet;
+
+                    /**
+                     * 外部用户ID
+                     */
+                    std::string m_outUserId;
+                    bool m_outUserIdHasBeenSet;
 
                 };
             }

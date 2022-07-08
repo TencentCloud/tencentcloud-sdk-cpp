@@ -23,7 +23,8 @@ using namespace std;
 AnalysisDimensional::AnalysisDimensional() :
     m_nameHasBeenSet(false),
     m_typeHasBeenSet(false),
-    m_contentHasBeenSet(false)
+    m_contentHasBeenSet(false),
+    m_configInfoHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,26 @@ CoreInternalOutcome AnalysisDimensional::Deserialize(const rapidjson::Value &val
         m_contentHasBeenSet = true;
     }
 
+    if (value.HasMember("ConfigInfo") && !value["ConfigInfo"].IsNull())
+    {
+        if (!value["ConfigInfo"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `AnalysisDimensional.ConfigInfo` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ConfigInfo"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            AlarmAnalysisConfig item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_configInfo.push_back(item);
+        }
+        m_configInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +112,21 @@ void AnalysisDimensional::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "Content";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_content.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_configInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConfigInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_configInfo.begin(); itr != m_configInfo.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -142,5 +178,21 @@ void AnalysisDimensional::SetContent(const string& _content)
 bool AnalysisDimensional::ContentHasBeenSet() const
 {
     return m_contentHasBeenSet;
+}
+
+vector<AlarmAnalysisConfig> AnalysisDimensional::GetConfigInfo() const
+{
+    return m_configInfo;
+}
+
+void AnalysisDimensional::SetConfigInfo(const vector<AlarmAnalysisConfig>& _configInfo)
+{
+    m_configInfo = _configInfo;
+    m_configInfoHasBeenSet = true;
+}
+
+bool AnalysisDimensional::ConfigInfoHasBeenSet() const
+{
+    return m_configInfoHasBeenSet;
 }
 

@@ -284,6 +284,60 @@ FAILED:已失败
                      */
                     bool RemarkHasBeenSet() const;
 
+                    /**
+                     * 获取收款用户ID
+                     * @return PayeeId 收款用户ID
+                     */
+                    std::string GetPayeeId() const;
+
+                    /**
+                     * 设置收款用户ID
+                     * @param PayeeId 收款用户ID
+                     */
+                    void SetPayeeId(const std::string& _payeeId);
+
+                    /**
+                     * 判断参数 PayeeId 是否已赋值
+                     * @return PayeeId 是否已赋值
+                     */
+                    bool PayeeIdHasBeenSet() const;
+
+                    /**
+                     * 获取外部用户ID
+                     * @return OutUserId 外部用户ID
+                     */
+                    std::string GetOutUserId() const;
+
+                    /**
+                     * 设置外部用户ID
+                     * @param OutUserId 外部用户ID
+                     */
+                    void SetOutUserId(const std::string& _outUserId);
+
+                    /**
+                     * 判断参数 OutUserId 是否已赋值
+                     * @return OutUserId 是否已赋值
+                     */
+                    bool OutUserIdHasBeenSet() const;
+
+                    /**
+                     * 获取操作类型
+                     * @return OperationType 操作类型
+                     */
+                    std::string GetOperationType() const;
+
+                    /**
+                     * 设置操作类型
+                     * @param OperationType 操作类型
+                     */
+                    void SetOperationType(const std::string& _operationType);
+
+                    /**
+                     * 判断参数 OperationType 是否已赋值
+                     * @return OperationType 是否已赋值
+                     */
+                    bool OperationTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -361,6 +415,24 @@ FAILED:已失败
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
+
+                    /**
+                     * 收款用户ID
+                     */
+                    std::string m_payeeId;
+                    bool m_payeeIdHasBeenSet;
+
+                    /**
+                     * 外部用户ID
+                     */
+                    std::string m_outUserId;
+                    bool m_outUserIdHasBeenSet;
+
+                    /**
+                     * 操作类型
+                     */
+                    std::string m_operationType;
+                    bool m_operationTypeHasBeenSet;
 
                 };
             }

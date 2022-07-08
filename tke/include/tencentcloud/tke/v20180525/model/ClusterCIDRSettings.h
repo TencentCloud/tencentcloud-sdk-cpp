@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool IgnoreClusterCIDRConflictHasBeenSet() const;
 
                     /**
-                     * 获取集群中每个Node上最大的Pod数量。取值范围4～256。不为2的幂值时会向上取最接近的2的幂值。
-                     * @return MaxNodePodNum 集群中每个Node上最大的Pod数量。取值范围4～256。不为2的幂值时会向上取最接近的2的幂值。
+                     * 获取集群中每个Node上最大的Pod数量。取值范围16～256。不为2的幂值时会向上取最接近的2的幂值。
+                     * @return MaxNodePodNum 集群中每个Node上最大的Pod数量。取值范围16～256。不为2的幂值时会向上取最接近的2的幂值。
                      */
                     uint64_t GetMaxNodePodNum() const;
 
                     /**
-                     * 设置集群中每个Node上最大的Pod数量。取值范围4～256。不为2的幂值时会向上取最接近的2的幂值。
-                     * @param MaxNodePodNum 集群中每个Node上最大的Pod数量。取值范围4～256。不为2的幂值时会向上取最接近的2的幂值。
+                     * 设置集群中每个Node上最大的Pod数量。取值范围16～256。不为2的幂值时会向上取最接近的2的幂值。
+                     * @param MaxNodePodNum 集群中每个Node上最大的Pod数量。取值范围16～256。不为2的幂值时会向上取最接近的2的幂值。
                      */
                     void SetMaxNodePodNum(const uint64_t& _maxNodePodNum);
 
@@ -205,7 +205,7 @@ namespace TencentCloud
                     bool m_ignoreClusterCIDRConflictHasBeenSet;
 
                     /**
-                     * 集群中每个Node上最大的Pod数量。取值范围4～256。不为2的幂值时会向上取最接近的2的幂值。
+                     * 集群中每个Node上最大的Pod数量。取值范围16～256。不为2的幂值时会向上取最接近的2的幂值。
                      */
                     uint64_t m_maxNodePodNum;
                     bool m_maxNodePodNumHasBeenSet;

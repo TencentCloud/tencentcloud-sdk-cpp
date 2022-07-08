@@ -80,13 +80,33 @@ namespace TencentCloud
 
                     /**
                      * 获取任务类型
+AnalyzeTaskType_Network：网络质量
+AnalyzeTaskType_Browse：页面性能
+AnalyzeTaskType_UploadDownload：文件传输（含文件上传、文件下载）
+AnalyzeTaskType_Transport：端口性能
+AnalyzeTaskType_MediaStream：音视频体验
                      * @return TaskType 任务类型
+AnalyzeTaskType_Network：网络质量
+AnalyzeTaskType_Browse：页面性能
+AnalyzeTaskType_UploadDownload：文件传输（含文件上传、文件下载）
+AnalyzeTaskType_Transport：端口性能
+AnalyzeTaskType_MediaStream：音视频体验
                      */
                     std::string GetTaskType() const;
 
                     /**
                      * 设置任务类型
+AnalyzeTaskType_Network：网络质量
+AnalyzeTaskType_Browse：页面性能
+AnalyzeTaskType_UploadDownload：文件传输（含文件上传、文件下载）
+AnalyzeTaskType_Transport：端口性能
+AnalyzeTaskType_MediaStream：音视频体验
                      * @param TaskType 任务类型
+AnalyzeTaskType_Network：网络质量
+AnalyzeTaskType_Browse：页面性能
+AnalyzeTaskType_UploadDownload：文件传输（含文件上传、文件下载）
+AnalyzeTaskType_Transport：端口性能
+AnalyzeTaskType_MediaStream：音视频体验
                      */
                     void SetTaskType(const std::string& _taskType);
 
@@ -98,13 +118,21 @@ namespace TencentCloud
 
                     /**
                      * 获取待排序字段
+可以填写 ProbeTime 拨测时间排序
+也可填写SelectedFields 中的选中字段
                      * @return SortField 待排序字段
+可以填写 ProbeTime 拨测时间排序
+也可填写SelectedFields 中的选中字段
                      */
                     std::string GetSortField() const;
 
                     /**
                      * 设置待排序字段
+可以填写 ProbeTime 拨测时间排序
+也可填写SelectedFields 中的选中字段
                      * @param SortField 待排序字段
+可以填写 ProbeTime 拨测时间排序
+也可填写SelectedFields 中的选中字段
                      */
                     void SetSortField(const std::string& _sortField);
 
@@ -206,13 +234,37 @@ namespace TencentCloud
 
                     /**
                      * 获取拨测点运营商
+	
+这里实际按拨测结果中的运营商来填写即可
+
+电信：中国电信
+移动：中国移动
+联通：中国联通
                      * @return Operators 拨测点运营商
+	
+这里实际按拨测结果中的运营商来填写即可
+
+电信：中国电信
+移动：中国移动
+联通：中国联通
                      */
                     std::vector<std::string> GetOperators() const;
 
                     /**
                      * 设置拨测点运营商
+	
+这里实际按拨测结果中的运营商来填写即可
+
+电信：中国电信
+移动：中国移动
+联通：中国联通
                      * @param Operators 拨测点运营商
+	
+这里实际按拨测结果中的运营商来填写即可
+
+电信：中国电信
+移动：中国移动
+联通：中国联通
                      */
                     void SetOperators(const std::vector<std::string>& _operators);
 
@@ -224,13 +276,37 @@ namespace TencentCloud
 
                     /**
                      * 获取拨测点地区
+	
+这里实际按拨测结果中的地区来填写即可
+
+国内一般是省级单位，如广东、广西、香港特区、新疆；直辖市则填北京、上海
+
+海外一般是国家名，如澳大利亚、新加坡
                      * @return Districts 拨测点地区
+	
+这里实际按拨测结果中的地区来填写即可
+
+国内一般是省级单位，如广东、广西、香港特区、新疆；直辖市则填北京、上海
+
+海外一般是国家名，如澳大利亚、新加坡
                      */
                     std::vector<std::string> GetDistricts() const;
 
                     /**
                      * 设置拨测点地区
+	
+这里实际按拨测结果中的地区来填写即可
+
+国内一般是省级单位，如广东、广西、香港特区、新疆；直辖市则填北京、上海
+
+海外一般是国家名，如澳大利亚、新加坡
                      * @param Districts 拨测点地区
+	
+这里实际按拨测结果中的地区来填写即可
+
+国内一般是省级单位，如广东、广西、香港特区、新疆；直辖市则填北京、上海
+
+海外一般是国家名，如澳大利亚、新加坡
                      */
                     void SetDistricts(const std::vector<std::string>& _districts);
 
@@ -260,13 +336,45 @@ namespace TencentCloud
 
                     /**
                      * 获取城市
+这里实际按拨测结果中的城市来填写即可
+
+示例：
+
+深圳市
+武汉市
+首尔
+多伦多
                      * @return City 城市
+这里实际按拨测结果中的城市来填写即可
+
+示例：
+
+深圳市
+武汉市
+首尔
+多伦多
                      */
                     std::vector<std::string> GetCity() const;
 
                     /**
                      * 设置城市
+这里实际按拨测结果中的城市来填写即可
+
+示例：
+
+深圳市
+武汉市
+首尔
+多伦多
                      * @param City 城市
+这里实际按拨测结果中的城市来填写即可
+
+示例：
+
+深圳市
+武汉市
+首尔
+多伦多
                      */
                     void SetCity(const std::vector<std::string>& _city);
 
@@ -292,12 +400,19 @@ namespace TencentCloud
 
                     /**
                      * 任务类型
+AnalyzeTaskType_Network：网络质量
+AnalyzeTaskType_Browse：页面性能
+AnalyzeTaskType_UploadDownload：文件传输（含文件上传、文件下载）
+AnalyzeTaskType_Transport：端口性能
+AnalyzeTaskType_MediaStream：音视频体验
                      */
                     std::string m_taskType;
                     bool m_taskTypeHasBeenSet;
 
                     /**
                      * 待排序字段
+可以填写 ProbeTime 拨测时间排序
+也可填写SelectedFields 中的选中字段
                      */
                     std::string m_sortField;
                     bool m_sortFieldHasBeenSet;
@@ -334,12 +449,24 @@ namespace TencentCloud
 
                     /**
                      * 拨测点运营商
+	
+这里实际按拨测结果中的运营商来填写即可
+
+电信：中国电信
+移动：中国移动
+联通：中国联通
                      */
                     std::vector<std::string> m_operators;
                     bool m_operatorsHasBeenSet;
 
                     /**
                      * 拨测点地区
+	
+这里实际按拨测结果中的地区来填写即可
+
+国内一般是省级单位，如广东、广西、香港特区、新疆；直辖市则填北京、上海
+
+海外一般是国家名，如澳大利亚、新加坡
                      */
                     std::vector<std::string> m_districts;
                     bool m_districtsHasBeenSet;
@@ -352,6 +479,14 @@ namespace TencentCloud
 
                     /**
                      * 城市
+这里实际按拨测结果中的城市来填写即可
+
+示例：
+
+深圳市
+武汉市
+首尔
+多伦多
                      */
                     std::vector<std::string> m_city;
                     bool m_cityHasBeenSet;

@@ -16,6 +16,7 @@
 
 set(iotvideo_public_header
   include/tencentcloud/iotvideo/v20191126/IotvideoClient.h
+  include/tencentcloud/iotvideo/v20211125/IotvideoClient.h
   include/tencentcloud/iotvideo/v20201215/IotvideoClient.h
   )
 
@@ -174,6 +175,16 @@ set(iotvideo_public_header_model
   include/tencentcloud/iotvideo/v20191126/model/RechargeRecord.h
   include/tencentcloud/iotvideo/v20191126/model/VersionData.h
   include/tencentcloud/iotvideo/v20191126/model/DevicesData.h
+  include/tencentcloud/iotvideo/v20211125/model/MessageCntStats.h
+  include/tencentcloud/iotvideo/v20211125/model/CallDeviceActionAsyncResponse.h
+  include/tencentcloud/iotvideo/v20211125/model/DescribeDeviceDataStatsResponse.h
+  include/tencentcloud/iotvideo/v20211125/model/DescribeDeviceDataStatsRequest.h
+  include/tencentcloud/iotvideo/v20211125/model/CallDeviceActionSyncResponse.h
+  include/tencentcloud/iotvideo/v20211125/model/DeviceCntStats.h
+  include/tencentcloud/iotvideo/v20211125/model/DescribeMessageDataStatsResponse.h
+  include/tencentcloud/iotvideo/v20211125/model/DescribeMessageDataStatsRequest.h
+  include/tencentcloud/iotvideo/v20211125/model/CallDeviceActionAsyncRequest.h
+  include/tencentcloud/iotvideo/v20211125/model/CallDeviceActionSyncRequest.h
   include/tencentcloud/iotvideo/v20201215/model/DescribeCloudStorageDateRequest.h
   include/tencentcloud/iotvideo/v20201215/model/CloudStorageTimeData.h
   include/tencentcloud/iotvideo/v20201215/model/RetryDeviceFirmwareTaskRequest.h
@@ -361,6 +372,7 @@ set(iotvideo_public_header_model
 
 set(iotvideo_src
   src/v20191126/IotvideoClient.cpp
+  src/v20211125/IotvideoClient.cpp
   src/v20201215/IotvideoClient.cpp
   src/v20191126/model/DescribeRechargeRecordsResponse.cpp
   src/v20191126/model/UploadOtaVersionResponse.cpp
@@ -516,6 +528,16 @@ set(iotvideo_src
   src/v20191126/model/RechargeRecord.cpp
   src/v20191126/model/VersionData.cpp
   src/v20191126/model/DevicesData.cpp
+  src/v20211125/model/MessageCntStats.cpp
+  src/v20211125/model/CallDeviceActionAsyncResponse.cpp
+  src/v20211125/model/DescribeDeviceDataStatsResponse.cpp
+  src/v20211125/model/DescribeDeviceDataStatsRequest.cpp
+  src/v20211125/model/CallDeviceActionSyncResponse.cpp
+  src/v20211125/model/DeviceCntStats.cpp
+  src/v20211125/model/DescribeMessageDataStatsResponse.cpp
+  src/v20211125/model/DescribeMessageDataStatsRequest.cpp
+  src/v20211125/model/CallDeviceActionAsyncRequest.cpp
+  src/v20211125/model/CallDeviceActionSyncRequest.cpp
   src/v20201215/model/DescribeCloudStorageDateRequest.cpp
   src/v20201215/model/CloudStorageTimeData.cpp
   src/v20201215/model/RetryDeviceFirmwareTaskRequest.cpp

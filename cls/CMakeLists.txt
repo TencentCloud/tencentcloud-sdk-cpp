@@ -130,6 +130,7 @@ set(cls_public_header_model
   include/tencentcloud/cls/v20201016/model/CreateConfigRequest.h
   include/tencentcloud/cls/v20201016/model/CreateShipperResponse.h
   include/tencentcloud/cls/v20201016/model/DeleteIndexResponse.h
+  include/tencentcloud/cls/v20201016/model/AlarmAnalysisConfig.h
   include/tencentcloud/cls/v20201016/model/ModifyIndexRequest.h
   include/tencentcloud/cls/v20201016/model/Column.h
   include/tencentcloud/cls/v20201016/model/CompressInfo.h
@@ -304,6 +305,7 @@ set(cls_src
   src/v20201016/model/CreateConfigRequest.cpp
   src/v20201016/model/CreateShipperResponse.cpp
   src/v20201016/model/DeleteIndexResponse.cpp
+  src/v20201016/model/AlarmAnalysisConfig.cpp
   src/v20201016/model/ModifyIndexRequest.cpp
   src/v20201016/model/Column.cpp
   src/v20201016/model/CompressInfo.cpp

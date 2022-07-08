@@ -157,14 +157,14 @@ namespace TencentCloud
                     bool RecipientsHasBeenSet() const;
 
                     /**
-                     * 获取模板类型：1-静默签；2-静默签授权；3-普通模板
-                     * @return TemplateType 模板类型：1-静默签；2-静默签授权；3-普通模板
+                     * 获取模板类型：1-静默签；3-普通模板
+                     * @return TemplateType 模板类型：1-静默签；3-普通模板
                      */
                     int64_t GetTemplateType() const;
 
                     /**
-                     * 设置模板类型：1-静默签；2-静默签授权；3-普通模板
-                     * @param TemplateType 模板类型：1-静默签；2-静默签授权；3-普通模板
+                     * 设置模板类型：1-静默签；3-普通模板
+                     * @param TemplateType 模板类型：1-静默签；3-普通模板
                      */
                     void SetTemplateType(const int64_t& _templateType);
 
@@ -267,7 +267,7 @@ namespace TencentCloud
                     bool m_recipientsHasBeenSet;
 
                     /**
-                     * 模板类型：1-静默签；2-静默签授权；3-普通模板
+                     * 模板类型：1-静默签；3-普通模板
                      */
                     int64_t m_templateType;
                     bool m_templateTypeHasBeenSet;

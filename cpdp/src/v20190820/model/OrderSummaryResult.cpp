@@ -27,7 +27,8 @@ OrderSummaryResult::OrderSummaryResult() :
     m_incomeTypeHasBeenSet(false),
     m_summaryAmountHasBeenSet(false),
     m_summaryTimeHasBeenSet(false),
-    m_summaryCountHasBeenSet(false)
+    m_summaryCountHasBeenSet(false),
+    m_outUserIdHasBeenSet(false)
 {
 }
 
@@ -106,6 +107,16 @@ CoreInternalOutcome OrderSummaryResult::Deserialize(const rapidjson::Value &valu
         m_summaryCountHasBeenSet = true;
     }
 
+    if (value.HasMember("OutUserId") && !value["OutUserId"].IsNull())
+    {
+        if (!value["OutUserId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `OrderSummaryResult.OutUserId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_outUserId = string(value["OutUserId"].GetString());
+        m_outUserIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +178,14 @@ void OrderSummaryResult::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "SummaryCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_summaryCount, allocator);
+    }
+
+    if (m_outUserIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OutUserId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_outUserId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -282,5 +301,21 @@ void OrderSummaryResult::SetSummaryCount(const int64_t& _summaryCount)
 bool OrderSummaryResult::SummaryCountHasBeenSet() const
 {
     return m_summaryCountHasBeenSet;
+}
+
+string OrderSummaryResult::GetOutUserId() const
+{
+    return m_outUserId;
+}
+
+void OrderSummaryResult::SetOutUserId(const string& _outUserId)
+{
+    m_outUserId = _outUserId;
+    m_outUserIdHasBeenSet = true;
+}
+
+bool OrderSummaryResult::OutUserIdHasBeenSet() const
+{
+    return m_outUserIdHasBeenSet;
 }
 

@@ -23,9 +23,9 @@ using namespace TencentCloud::Ocr::V20181119::Model;
 using namespace std;
 
 RecognizePhilippinesDrivingLicenseOCRRequest::RecognizePhilippinesDrivingLicenseOCRRequest() :
-    m_returnHeadImageHasBeenSet(false),
     m_imageBase64HasBeenSet(false),
-    m_imageUrlHasBeenSet(false)
+    m_imageUrlHasBeenSet(false),
+    m_returnHeadImageHasBeenSet(false)
 {
 }
 
@@ -35,14 +35,6 @@ string RecognizePhilippinesDrivingLicenseOCRRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
-
-    if (m_returnHeadImageHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ReturnHeadImage";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_returnHeadImage, allocator);
-    }
 
     if (m_imageBase64HasBeenSet)
     {
@@ -60,6 +52,14 @@ string RecognizePhilippinesDrivingLicenseOCRRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_imageUrl.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_returnHeadImageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReturnHeadImage";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_returnHeadImage, allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -67,22 +67,6 @@ string RecognizePhilippinesDrivingLicenseOCRRequest::ToJsonString() const
     return buffer.GetString();
 }
 
-
-bool RecognizePhilippinesDrivingLicenseOCRRequest::GetReturnHeadImage() const
-{
-    return m_returnHeadImage;
-}
-
-void RecognizePhilippinesDrivingLicenseOCRRequest::SetReturnHeadImage(const bool& _returnHeadImage)
-{
-    m_returnHeadImage = _returnHeadImage;
-    m_returnHeadImageHasBeenSet = true;
-}
-
-bool RecognizePhilippinesDrivingLicenseOCRRequest::ReturnHeadImageHasBeenSet() const
-{
-    return m_returnHeadImageHasBeenSet;
-}
 
 string RecognizePhilippinesDrivingLicenseOCRRequest::GetImageBase64() const
 {
@@ -114,6 +98,22 @@ void RecognizePhilippinesDrivingLicenseOCRRequest::SetImageUrl(const string& _im
 bool RecognizePhilippinesDrivingLicenseOCRRequest::ImageUrlHasBeenSet() const
 {
     return m_imageUrlHasBeenSet;
+}
+
+bool RecognizePhilippinesDrivingLicenseOCRRequest::GetReturnHeadImage() const
+{
+    return m_returnHeadImage;
+}
+
+void RecognizePhilippinesDrivingLicenseOCRRequest::SetReturnHeadImage(const bool& _returnHeadImage)
+{
+    m_returnHeadImage = _returnHeadImage;
+    m_returnHeadImageHasBeenSet = true;
+}
+
+bool RecognizePhilippinesDrivingLicenseOCRRequest::ReturnHeadImageHasBeenSet() const
+{
+    return m_returnHeadImageHasBeenSet;
 }
 
 

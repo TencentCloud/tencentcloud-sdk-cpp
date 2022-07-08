@@ -43,24 +43,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取是否返回人像照片。
-                     * @return ReturnHeadImage 是否返回人像照片。
-                     */
-                    bool GetReturnHeadImage() const;
-
-                    /**
-                     * 设置是否返回人像照片。
-                     * @param ReturnHeadImage 是否返回人像照片。
-                     */
-                    void SetReturnHeadImage(const bool& _returnHeadImage);
-
-                    /**
-                     * 判断参数 ReturnHeadImage 是否已赋值
-                     * @return ReturnHeadImage 是否已赋值
-                     */
-                    bool ReturnHeadImageHasBeenSet() const;
-
-                    /**
                      * 获取图片的 Base64 值。
 支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。
 支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。
@@ -124,13 +106,25 @@ namespace TencentCloud
                      */
                     bool ImageUrlHasBeenSet() const;
 
-                private:
+                    /**
+                     * 获取是否返回人像照片。
+                     * @return ReturnHeadImage 是否返回人像照片。
+                     */
+                    bool GetReturnHeadImage() const;
 
                     /**
-                     * 是否返回人像照片。
+                     * 设置是否返回人像照片。
+                     * @param ReturnHeadImage 是否返回人像照片。
                      */
-                    bool m_returnHeadImage;
-                    bool m_returnHeadImageHasBeenSet;
+                    void SetReturnHeadImage(const bool& _returnHeadImage);
+
+                    /**
+                     * 判断参数 ReturnHeadImage 是否已赋值
+                     * @return ReturnHeadImage 是否已赋值
+                     */
+                    bool ReturnHeadImageHasBeenSet() const;
+
+                private:
 
                     /**
                      * 图片的 Base64 值。
@@ -150,6 +144,12 @@ namespace TencentCloud
                      */
                     std::string m_imageUrl;
                     bool m_imageUrlHasBeenSet;
+
+                    /**
+                     * 是否返回人像照片。
+                     */
+                    bool m_returnHeadImage;
+                    bool m_returnHeadImageHasBeenSet;
 
                 };
             }
