@@ -100,6 +100,24 @@ namespace TencentCloud
                      */
                     bool FundingAccountBindSerialNoHasBeenSet() const;
 
+                    /**
+                     * 获取资金账户名称
+                     * @return FundingAccountName 资金账户名称
+                     */
+                    std::string GetFundingAccountName() const;
+
+                    /**
+                     * 设置资金账户名称
+                     * @param FundingAccountName 资金账户名称
+                     */
+                    void SetFundingAccountName(const std::string& _fundingAccountName);
+
+                    /**
+                     * 判断参数 FundingAccountName 是否已赋值
+                     * @return FundingAccountName 是否已赋值
+                     */
+                    bool FundingAccountNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -119,6 +137,12 @@ namespace TencentCloud
                      */
                     std::string m_fundingAccountBindSerialNo;
                     bool m_fundingAccountBindSerialNoHasBeenSet;
+
+                    /**
+                     * 资金账户名称
+                     */
+                    std::string m_fundingAccountName;
+                    bool m_fundingAccountNameHasBeenSet;
 
                 };
             }

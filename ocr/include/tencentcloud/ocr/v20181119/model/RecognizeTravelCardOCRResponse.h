@@ -68,8 +68,8 @@ namespace TencentCloud
                     bool ColorHasBeenSet() const;
 
                     /**
-                     * 获取14天内到达或途经的城市
-                     * @return ReachedCity 14天内到达或途经的城市
+                     * 获取7天内到达或途经的城市（自2022年7月8日起，通信行程卡查询结果的覆盖时间范围由“14天”调整为“7天”）
+                     * @return ReachedCity 7天内到达或途经的城市（自2022年7月8日起，通信行程卡查询结果的覆盖时间范围由“14天”调整为“7天”）
                      */
                     std::vector<std::string> GetReachedCity() const;
 
@@ -80,8 +80,8 @@ namespace TencentCloud
                     bool ReachedCityHasBeenSet() const;
 
                     /**
-                     * 获取14天内到达或途径存在中高风险地区的城市
-                     * @return RiskArea 14天内到达或途径存在中高风险地区的城市
+                     * 获取7天内到达或途径存在中高风险地区的城市（自2022年6月29日起，通信行程卡取消“星号”标记，改字段将返回空值）
+                     * @return RiskArea 7天内到达或途径存在中高风险地区的城市（自2022年6月29日起，通信行程卡取消“星号”标记，改字段将返回空值）
                      */
                     std::vector<std::string> GetRiskArea() const;
 
@@ -118,13 +118,13 @@ namespace TencentCloud
                     bool m_colorHasBeenSet;
 
                     /**
-                     * 14天内到达或途经的城市
+                     * 7天内到达或途经的城市（自2022年7月8日起，通信行程卡查询结果的覆盖时间范围由“14天”调整为“7天”）
                      */
                     std::vector<std::string> m_reachedCity;
                     bool m_reachedCityHasBeenSet;
 
                     /**
-                     * 14天内到达或途径存在中高风险地区的城市
+                     * 7天内到达或途径存在中高风险地区的城市（自2022年6月29日起，通信行程卡取消“星号”标记，改字段将返回空值）
                      */
                     std::vector<std::string> m_riskArea;
                     bool m_riskAreaHasBeenSet;

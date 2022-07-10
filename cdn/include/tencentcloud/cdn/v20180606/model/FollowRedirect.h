@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cdn/v20180606/model/RedirectConfig.h>
 
 
 namespace TencentCloud
@@ -72,6 +73,28 @@ off：关闭
                      */
                     bool SwitchHasBeenSet() const;
 
+                    /**
+                     * 获取自定义回源302 follow请求host配置，该功能为白名单功能，需要开启请联系腾讯云工程师。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RedirectConfig 自定义回源302 follow请求host配置，该功能为白名单功能，需要开启请联系腾讯云工程师。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    RedirectConfig GetRedirectConfig() const;
+
+                    /**
+                     * 设置自定义回源302 follow请求host配置，该功能为白名单功能，需要开启请联系腾讯云工程师。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RedirectConfig 自定义回源302 follow请求host配置，该功能为白名单功能，需要开启请联系腾讯云工程师。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRedirectConfig(const RedirectConfig& _redirectConfig);
+
+                    /**
+                     * 判断参数 RedirectConfig 是否已赋值
+                     * @return RedirectConfig 是否已赋值
+                     */
+                    bool RedirectConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -81,6 +104,13 @@ off：关闭
                      */
                     std::string m_switch;
                     bool m_switchHasBeenSet;
+
+                    /**
+                     * 自定义回源302 follow请求host配置，该功能为白名单功能，需要开启请联系腾讯云工程师。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    RedirectConfig m_redirectConfig;
+                    bool m_redirectConfigHasBeenSet;
 
                 };
             }

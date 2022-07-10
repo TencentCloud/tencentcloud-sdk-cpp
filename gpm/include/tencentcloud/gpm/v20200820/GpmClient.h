@@ -131,7 +131,9 @@ namespace TencentCloud
 
 
                 /**
-                 *取消匹配。
+                 *此接口无法使用，游戏玩家匹配GPM已于6.1正式下架，感谢您的支持
+
+取消匹配。
                  * @param req CancelMatchingRequest
                  * @return CancelMatchingOutcome
                  */
@@ -140,7 +142,9 @@ namespace TencentCloud
                 CancelMatchingOutcomeCallable CancelMatchingCallable(const Model::CancelMatchingRequest& request);
 
                 /**
-                 *创建匹配
+                 *此接口无法使用，游戏玩家匹配GPM已于6.1正式下架，感谢您的支持
+
+创建匹配
                  * @param req CreateMatchRequest
                  * @return CreateMatchOutcome
                  */
@@ -149,7 +153,9 @@ namespace TencentCloud
                 CreateMatchOutcomeCallable CreateMatchCallable(const Model::CreateMatchRequest& request);
 
                 /**
-                 *创建规则
+                 *此接口无法使用，游戏玩家匹配GPM已于6.1正式下架，感谢您的支持
+
+创建规则
                  * @param req CreateRuleRequest
                  * @return CreateRuleOutcome
                  */
@@ -158,7 +164,9 @@ namespace TencentCloud
                 CreateRuleOutcomeCallable CreateRuleCallable(const Model::CreateRuleRequest& request);
 
                 /**
-                 *删除匹配
+                 *此接口无法使用，游戏玩家匹配GPM已于6.1正式下架，感谢您的支持
+
+删除匹配
                  * @param req DeleteMatchRequest
                  * @return DeleteMatchOutcome
                  */
@@ -167,7 +175,9 @@ namespace TencentCloud
                 DeleteMatchOutcomeCallable DeleteMatchCallable(const Model::DeleteMatchRequest& request);
 
                 /**
-                 *删除规则
+                 *此接口无法使用，游戏玩家匹配GPM已于6.1正式下架，感谢您的支持
+
+删除规则
                  * @param req DeleteRuleRequest
                  * @return DeleteRuleOutcome
                  */
@@ -176,7 +186,9 @@ namespace TencentCloud
                 DeleteRuleOutcomeCallable DeleteRuleCallable(const Model::DeleteRuleRequest& request);
 
                 /**
-                 *统计数据
+                 *此接口无法使用，游戏玩家匹配GPM已于6.1正式下架，感谢您的支持
+
+统计数据
                  * @param req DescribeDataRequest
                  * @return DescribeDataOutcome
                  */
@@ -185,7 +197,9 @@ namespace TencentCloud
                 DescribeDataOutcomeCallable DescribeDataCallable(const Model::DescribeDataRequest& request);
 
                 /**
-                 *查询匹配详情
+                 *此接口无法使用，游戏玩家匹配GPM已于6.1正式下架，感谢您的支持
+
+查询匹配详情
                  * @param req DescribeMatchRequest
                  * @return DescribeMatchOutcome
                  */
@@ -194,7 +208,9 @@ namespace TencentCloud
                 DescribeMatchOutcomeCallable DescribeMatchCallable(const Model::DescribeMatchRequest& request);
 
                 /**
-                 *分页查询匹配Code
+                 *此接口无法使用，游戏玩家匹配GPM已于6.1正式下架，感谢您的支持
+
+分页查询匹配Code
                  * @param req DescribeMatchCodesRequest
                  * @return DescribeMatchCodesOutcome
                  */
@@ -203,7 +219,9 @@ namespace TencentCloud
                 DescribeMatchCodesOutcomeCallable DescribeMatchCodesCallable(const Model::DescribeMatchCodesRequest& request);
 
                 /**
-                 *分页查询匹配列表
+                 *此接口无法使用，游戏玩家匹配GPM已于6.1正式下架，感谢您的支持
+
+分页查询匹配列表
                  * @param req DescribeMatchesRequest
                  * @return DescribeMatchesOutcome
                  */
@@ -212,7 +230,9 @@ namespace TencentCloud
                 DescribeMatchesOutcomeCallable DescribeMatchesCallable(const Model::DescribeMatchesRequest& request);
 
                 /**
-                 *查询匹配进度。
+                 *此接口无法使用，游戏玩家匹配GPM已于6.1正式下架，感谢您的支持
+
+查询匹配进度。
                  * @param req DescribeMatchingProgressRequest
                  * @return DescribeMatchingProgressOutcome
                  */
@@ -221,7 +241,9 @@ namespace TencentCloud
                 DescribeMatchingProgressOutcomeCallable DescribeMatchingProgressCallable(const Model::DescribeMatchingProgressRequest& request);
 
                 /**
-                 *查询规则详情
+                 *此接口无法使用，游戏玩家匹配GPM已于6.1正式下架，感谢您的支持
+
+查询规则详情
                  * @param req DescribeRuleRequest
                  * @return DescribeRuleOutcome
                  */
@@ -230,7 +252,9 @@ namespace TencentCloud
                 DescribeRuleOutcomeCallable DescribeRuleCallable(const Model::DescribeRuleRequest& request);
 
                 /**
-                 *分页查询规则集列表
+                 *此接口无法使用，游戏玩家匹配GPM已于6.1正式下架，感谢您的支持
+
+分页查询规则集列表
                  * @param req DescribeRulesRequest
                  * @return DescribeRulesOutcome
                  */
@@ -239,7 +263,9 @@ namespace TencentCloud
                 DescribeRulesOutcomeCallable DescribeRulesCallable(const Model::DescribeRulesRequest& request);
 
                 /**
-                 *查询匹配Token，Token用于push消息验证。
+                 *此接口无法使用，游戏玩家匹配GPM已于6.1正式下架，感谢您的支持
+
+查询匹配Token，Token用于push消息验证。
                  * @param req DescribeTokenRequest
                  * @return DescribeTokenOutcome
                  */
@@ -248,7 +274,9 @@ namespace TencentCloud
                 DescribeTokenOutcomeCallable DescribeTokenCallable(const Model::DescribeTokenRequest& request);
 
                 /**
-                 *修改匹配
+                 *此接口无法使用，游戏玩家匹配GPM已于6.1正式下架，感谢您的支持
+
+修改匹配
                  * @param req ModifyMatchRequest
                  * @return ModifyMatchOutcome
                  */
@@ -257,7 +285,9 @@ namespace TencentCloud
                 ModifyMatchOutcomeCallable ModifyMatchCallable(const Model::ModifyMatchRequest& request);
 
                 /**
-                 *修改规则（描述、标签）
+                 *此接口无法使用，游戏玩家匹配GPM已于6.1正式下架，感谢您的支持
+
+修改规则（描述、标签）
                  * @param req ModifyRuleRequest
                  * @return ModifyRuleOutcome
                  */
@@ -266,7 +296,9 @@ namespace TencentCloud
                 ModifyRuleOutcomeCallable ModifyRuleCallable(const Model::ModifyRuleRequest& request);
 
                 /**
-                 *修改匹配Token。
+                 *此接口无法使用，游戏玩家匹配GPM已于6.1正式下架，感谢您的支持
+
+修改匹配Token。
                  * @param req ModifyTokenRequest
                  * @return ModifyTokenOutcome
                  */
@@ -275,7 +307,9 @@ namespace TencentCloud
                 ModifyTokenOutcomeCallable ModifyTokenCallable(const Model::ModifyTokenRequest& request);
 
                 /**
-                 *支持传入一个玩家或多个玩家发起匹配，在同一个请求内的玩家将被分到同一个对局。
+                 *此接口无法使用，游戏玩家匹配GPM已于6.1正式下架，感谢您的支持
+
+支持传入一个玩家或多个玩家发起匹配，在同一个请求内的玩家将被分到同一个对局。
                  * @param req StartMatchingRequest
                  * @return StartMatchingOutcome
                  */
@@ -284,7 +318,9 @@ namespace TencentCloud
                 StartMatchingOutcomeCallable StartMatchingCallable(const Model::StartMatchingRequest& request);
 
                 /**
-                 *通过调用StartMatchingBackfill，用户可以传入一个回填的匹配请求，GPM为回填请求搜索符合条件的ticket并形成一个新的match。
+                 *此接口无法使用，游戏玩家匹配GPM已于6.1正式下架，感谢您的支持
+
+通过调用StartMatchingBackfill，用户可以传入一个回填的匹配请求，GPM为回填请求搜索符合条件的ticket并形成一个新的match。
                  * @param req StartMatchingBackfillRequest
                  * @return StartMatchingBackfillOutcome
                  */

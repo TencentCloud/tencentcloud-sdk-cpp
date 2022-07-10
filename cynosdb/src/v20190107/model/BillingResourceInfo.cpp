@@ -22,7 +22,8 @@ using namespace std;
 
 BillingResourceInfo::BillingResourceInfo() :
     m_clusterIdHasBeenSet(false),
-    m_instanceIdsHasBeenSet(false)
+    m_instanceIdsHasBeenSet(false),
+    m_dealNameHasBeenSet(false)
 {
 }
 
@@ -54,6 +55,16 @@ CoreInternalOutcome BillingResourceInfo::Deserialize(const rapidjson::Value &val
         m_instanceIdsHasBeenSet = true;
     }
 
+    if (value.HasMember("DealName") && !value["DealName"].IsNull())
+    {
+        if (!value["DealName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BillingResourceInfo.DealName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dealName = string(value["DealName"].GetString());
+        m_dealNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -80,6 +91,14 @@ void BillingResourceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_dealNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DealName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dealName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -115,5 +134,21 @@ void BillingResourceInfo::SetInstanceIds(const vector<string>& _instanceIds)
 bool BillingResourceInfo::InstanceIdsHasBeenSet() const
 {
     return m_instanceIdsHasBeenSet;
+}
+
+string BillingResourceInfo::GetDealName() const
+{
+    return m_dealName;
+}
+
+void BillingResourceInfo::SetDealName(const string& _dealName)
+{
+    m_dealName = _dealName;
+    m_dealNameHasBeenSet = true;
+}
+
+bool BillingResourceInfo::DealNameHasBeenSet() const
+{
+    return m_dealNameHasBeenSet;
 }
 

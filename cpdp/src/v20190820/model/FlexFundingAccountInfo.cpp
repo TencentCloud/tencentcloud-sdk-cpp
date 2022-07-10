@@ -23,7 +23,8 @@ using namespace std;
 FlexFundingAccountInfo::FlexFundingAccountInfo() :
     m_fundingAccountNoHasBeenSet(false),
     m_fundingAccountTypeHasBeenSet(false),
-    m_fundingAccountBindSerialNoHasBeenSet(false)
+    m_fundingAccountBindSerialNoHasBeenSet(false),
+    m_fundingAccountNameHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,16 @@ CoreInternalOutcome FlexFundingAccountInfo::Deserialize(const rapidjson::Value &
         m_fundingAccountBindSerialNoHasBeenSet = true;
     }
 
+    if (value.HasMember("FundingAccountName") && !value["FundingAccountName"].IsNull())
+    {
+        if (!value["FundingAccountName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `FlexFundingAccountInfo.FundingAccountName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_fundingAccountName = string(value["FundingAccountName"].GetString());
+        m_fundingAccountNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +102,14 @@ void FlexFundingAccountInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Do
         string key = "FundingAccountBindSerialNo";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_fundingAccountBindSerialNo.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fundingAccountNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FundingAccountName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fundingAccountName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -142,5 +161,21 @@ void FlexFundingAccountInfo::SetFundingAccountBindSerialNo(const string& _fundin
 bool FlexFundingAccountInfo::FundingAccountBindSerialNoHasBeenSet() const
 {
     return m_fundingAccountBindSerialNoHasBeenSet;
+}
+
+string FlexFundingAccountInfo::GetFundingAccountName() const
+{
+    return m_fundingAccountName;
+}
+
+void FlexFundingAccountInfo::SetFundingAccountName(const string& _fundingAccountName)
+{
+    m_fundingAccountName = _fundingAccountName;
+    m_fundingAccountNameHasBeenSet = true;
+}
+
+bool FlexFundingAccountInfo::FundingAccountNameHasBeenSet() const
+{
+    return m_fundingAccountNameHasBeenSet;
 }
 

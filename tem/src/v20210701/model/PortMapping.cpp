@@ -23,7 +23,8 @@ using namespace std;
 PortMapping::PortMapping() :
     m_portHasBeenSet(false),
     m_targetPortHasBeenSet(false),
-    m_protocolHasBeenSet(false)
+    m_protocolHasBeenSet(false),
+    m_serviceNameHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,16 @@ CoreInternalOutcome PortMapping::Deserialize(const rapidjson::Value &value)
         m_protocolHasBeenSet = true;
     }
 
+    if (value.HasMember("ServiceName") && !value["ServiceName"].IsNull())
+    {
+        if (!value["ServiceName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PortMapping.ServiceName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_serviceName = string(value["ServiceName"].GetString());
+        m_serviceNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +102,14 @@ void PortMapping::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "Protocol";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_protocol.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_serviceNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServiceName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_serviceName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -142,5 +161,21 @@ void PortMapping::SetProtocol(const string& _protocol)
 bool PortMapping::ProtocolHasBeenSet() const
 {
     return m_protocolHasBeenSet;
+}
+
+string PortMapping::GetServiceName() const
+{
+    return m_serviceName;
+}
+
+void PortMapping::SetServiceName(const string& _serviceName)
+{
+    m_serviceName = _serviceName;
+    m_serviceNameHasBeenSet = true;
+}
+
+bool PortMapping::ServiceNameHasBeenSet() const
+{
+    return m_serviceNameHasBeenSet;
 }
 

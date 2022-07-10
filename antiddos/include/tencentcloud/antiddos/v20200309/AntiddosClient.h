@@ -157,6 +157,8 @@
 #include <tencentcloud/antiddos/v20200309/model/DescribeListSchedulingDomainResponse.h>
 #include <tencentcloud/antiddos/v20200309/model/DescribeListWaterPrintConfigRequest.h>
 #include <tencentcloud/antiddos/v20200309/model/DescribeListWaterPrintConfigResponse.h>
+#include <tencentcloud/antiddos/v20200309/model/DescribeNewL7RulesRequest.h>
+#include <tencentcloud/antiddos/v20200309/model/DescribeNewL7RulesResponse.h>
 #include <tencentcloud/antiddos/v20200309/model/DescribeOverviewAttackTrendRequest.h>
 #include <tencentcloud/antiddos/v20200309/model/DescribeOverviewAttackTrendResponse.h>
 #include <tencentcloud/antiddos/v20200309/model/DescribeOverviewCCTrendRequest.h>
@@ -416,6 +418,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeListWaterPrintConfigResponse> DescribeListWaterPrintConfigOutcome;
                 typedef std::future<DescribeListWaterPrintConfigOutcome> DescribeListWaterPrintConfigOutcomeCallable;
                 typedef std::function<void(const AntiddosClient*, const Model::DescribeListWaterPrintConfigRequest&, DescribeListWaterPrintConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeListWaterPrintConfigAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeNewL7RulesResponse> DescribeNewL7RulesOutcome;
+                typedef std::future<DescribeNewL7RulesOutcome> DescribeNewL7RulesOutcomeCallable;
+                typedef std::function<void(const AntiddosClient*, const Model::DescribeNewL7RulesRequest&, DescribeNewL7RulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNewL7RulesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeOverviewAttackTrendResponse> DescribeOverviewAttackTrendOutcome;
                 typedef std::future<DescribeOverviewAttackTrendOutcome> DescribeOverviewAttackTrendOutcomeCallable;
                 typedef std::function<void(const AntiddosClient*, const Model::DescribeOverviewAttackTrendRequest&, DescribeOverviewAttackTrendOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOverviewAttackTrendAsyncHandler;
@@ -1089,6 +1094,15 @@ namespace TencentCloud
                 DescribeListWaterPrintConfigOutcome DescribeListWaterPrintConfig(const Model::DescribeListWaterPrintConfigRequest &request);
                 void DescribeListWaterPrintConfigAsync(const Model::DescribeListWaterPrintConfigRequest& request, const DescribeListWaterPrintConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeListWaterPrintConfigOutcomeCallable DescribeListWaterPrintConfigCallable(const Model::DescribeListWaterPrintConfigRequest& request);
+
+                /**
+                 *高防IP获取7层规则
+                 * @param req DescribeNewL7RulesRequest
+                 * @return DescribeNewL7RulesOutcome
+                 */
+                DescribeNewL7RulesOutcome DescribeNewL7Rules(const Model::DescribeNewL7RulesRequest &request);
+                void DescribeNewL7RulesAsync(const Model::DescribeNewL7RulesRequest& request, const DescribeNewL7RulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeNewL7RulesOutcomeCallable DescribeNewL7RulesCallable(const Model::DescribeNewL7RulesRequest& request);
 
                 /**
                  *拉取防护概览攻击趋势

@@ -411,7 +411,9 @@ namespace TencentCloud
 
 
                 /**
-                 *本接口（AttachCcnInstances）用于关联云联网实例。
+                 *此接口无法使用，游戏服务器引擎GSE已于6.1正式下架，感谢您的支持
+
+本接口（AttachCcnInstances）用于关联云联网实例。
                  * @param req AttachCcnInstancesRequest
                  * @return AttachCcnInstancesOutcome
                  */
@@ -420,7 +422,9 @@ namespace TencentCloud
                 AttachCcnInstancesOutcomeCallable AttachCcnInstancesCallable(const Model::AttachCcnInstancesRequest& request);
 
                 /**
-                 *本接口（CopyFleet）用于复制服务器舰队。
+                 *此接口无法使用，游戏服务器引擎GSE已于6.1正式下架，感谢您的支持
+
+本接口（CopyFleet）用于复制服务器舰队。
                  * @param req CopyFleetRequest
                  * @return CopyFleetOutcome
                  */
@@ -429,7 +433,9 @@ namespace TencentCloud
                 CopyFleetOutcomeCallable CopyFleetCallable(const Model::CopyFleetRequest& request);
 
                 /**
-                 *本接口（CreateAlias）用于创建别名。
+                 *此接口无法使用，游戏服务器引擎GSE已于6.1正式下架，感谢您的支持
+
+本接口（CreateAlias）用于创建别名。
                  * @param req CreateAliasRequest
                  * @return CreateAliasOutcome
                  */
@@ -438,7 +444,9 @@ namespace TencentCloud
                 CreateAliasOutcomeCallable CreateAliasCallable(const Model::CreateAliasRequest& request);
 
                 /**
-                 *本接口（CreateAsset）用于创建生成包。
+                 *此接口无法使用，游戏服务器引擎GSE已于6.1正式下架，感谢您的支持
+
+本接口（CreateAsset）用于创建生成包。
 通过获取上传cos的临时密钥，将文件上传至cos，然后将生成包的zip名称下发给本接口完成资源创建。  
 
 上传文件至 cos支持俩种方式：
@@ -460,7 +468,9 @@ namespace TencentCloud
                 CreateAssetOutcomeCallable CreateAssetCallable(const Model::CreateAssetRequest& request);
 
                 /**
-                 *本接口（CreateAssetWithImage）用于创建生成包镜像信息。
+                 *此接口无法使用，游戏服务器引擎GSE已于6.1正式下架，感谢您的支持
+
+本接口（CreateAssetWithImage）用于创建生成包镜像信息。
                  * @param req CreateAssetWithImageRequest
                  * @return CreateAssetWithImageOutcome
                  */
@@ -469,7 +479,9 @@ namespace TencentCloud
                 CreateAssetWithImageOutcomeCallable CreateAssetWithImageCallable(const Model::CreateAssetWithImageRequest& request);
 
                 /**
-                 *本接口（CreateFleet）用于创建服务器舰队。
+                 *此接口无法使用，游戏服务器引擎GSE已于6.1正式下架，感谢您的支持
+
+本接口（CreateFleet）用于创建服务器舰队。
                  * @param req CreateFleetRequest
                  * @return CreateFleetOutcome
                  */
@@ -478,7 +490,9 @@ namespace TencentCloud
                 CreateFleetOutcomeCallable CreateFleetCallable(const Model::CreateFleetRequest& request);
 
                 /**
-                 *本接口（CreateGameServerSession）用于创建游戏服务会话。
+                 *此接口无法使用，游戏服务器引擎GSE已于6.1正式下架，感谢您的支持
+
+本接口（CreateGameServerSession）用于创建游戏服务会话。
                  * @param req CreateGameServerSessionRequest
                  * @return CreateGameServerSessionOutcome
                  */
@@ -487,7 +501,9 @@ namespace TencentCloud
                 CreateGameServerSessionOutcomeCallable CreateGameServerSessionCallable(const Model::CreateGameServerSessionRequest& request);
 
                 /**
-                 *本接口（CreateGameServerSessionQueue）用于创建游戏服务器会话队列。
+                 *此接口无法使用，游戏服务器引擎GSE已于6.1正式下架，感谢您的支持
+
+本接口（CreateGameServerSessionQueue）用于创建游戏服务器会话队列。
                  * @param req CreateGameServerSessionQueueRequest
                  * @return CreateGameServerSessionQueueOutcome
                  */
@@ -496,7 +512,9 @@ namespace TencentCloud
                 CreateGameServerSessionQueueOutcomeCallable CreateGameServerSessionQueueCallable(const Model::CreateGameServerSessionQueueRequest& request);
 
                 /**
-                 *本接口（DeleteAlias）用于删除别名。
+                 *此接口无法使用，游戏服务器引擎GSE已于6.1正式下架，感谢您的支持
+
+本接口（DeleteAlias）用于删除别名。
                  * @param req DeleteAliasRequest
                  * @return DeleteAliasOutcome
                  */
@@ -505,7 +523,9 @@ namespace TencentCloud
                 DeleteAliasOutcomeCallable DeleteAliasCallable(const Model::DeleteAliasRequest& request);
 
                 /**
-                 *本接口（DeleteAsset）用于删除生成包。
+                 *此接口无法使用，游戏服务器引擎GSE已于6.1正式下架，感谢您的支持
+
+本接口（DeleteAsset）用于删除生成包。
                  * @param req DeleteAssetRequest
                  * @return DeleteAssetOutcome
                  */
@@ -514,7 +534,9 @@ namespace TencentCloud
                 DeleteAssetOutcomeCallable DeleteAssetCallable(const Model::DeleteAssetRequest& request);
 
                 /**
-                 *本接口（DeleteFleet）用于删除服务器舰队。
+                 *此接口无法使用，游戏服务器引擎GSE已于6.1正式下架，感谢您的支持
+
+本接口（DeleteFleet）用于删除服务器舰队。
                  * @param req DeleteFleetRequest
                  * @return DeleteFleetOutcome
                  */
@@ -523,7 +545,9 @@ namespace TencentCloud
                 DeleteFleetOutcomeCallable DeleteFleetCallable(const Model::DeleteFleetRequest& request);
 
                 /**
-                 *本接口（DeleteGameServerSessionQueue）用于删除游戏服务器会话队列。
+                 *此接口无法使用，游戏服务器引擎GSE已于6.1正式下架，感谢您的支持
+
+本接口（DeleteGameServerSessionQueue）用于删除游戏服务器会话队列。
                  * @param req DeleteGameServerSessionQueueRequest
                  * @return DeleteGameServerSessionQueueOutcome
                  */
@@ -532,7 +556,9 @@ namespace TencentCloud
                 DeleteGameServerSessionQueueOutcomeCallable DeleteGameServerSessionQueueCallable(const Model::DeleteGameServerSessionQueueRequest& request);
 
                 /**
-                 *本接口（DeleteScalingPolicy）用于删除服务器舰队的扩缩容策略。
+                 *此接口无法使用，游戏服务器引擎GSE已于6.1正式下架，感谢您的支持
+
+本接口（DeleteScalingPolicy）用于删除服务器舰队的扩缩容策略。
 通过服务器舰队ID和策略名称删除服务器舰队的扩缩容策略，只传递服务器舰队ID时，会将这个服务器舰队下的所有策略都删除。
 传递策略名称时，单独删除策略名称对应的策略。
                  * @param req DeleteScalingPolicyRequest
@@ -543,7 +569,9 @@ namespace TencentCloud
                 DeleteScalingPolicyOutcomeCallable DeleteScalingPolicyCallable(const Model::DeleteScalingPolicyRequest& request);
 
                 /**
-                 *本接口（DeleteTimerScalingPolicy）用于删除fleet下的定时器。
+                 *此接口无法使用，游戏服务器引擎GSE已于6.1正式下架，感谢您的支持
+
+本接口（DeleteTimerScalingPolicy）用于删除fleet下的定时器。
 
                  * @param req DeleteTimerScalingPolicyRequest
                  * @return DeleteTimerScalingPolicyOutcome
@@ -553,7 +581,9 @@ namespace TencentCloud
                 DeleteTimerScalingPolicyOutcomeCallable DeleteTimerScalingPolicyCallable(const Model::DeleteTimerScalingPolicyRequest& request);
 
                 /**
-                 *本接口（DescribeAlias）用于获取别名详情。
+                 *此接口无法使用，游戏服务器引擎GSE已于6.1正式下架，感谢您的支持
+
+本接口（DescribeAlias）用于获取别名详情。
                  * @param req DescribeAliasRequest
                  * @return DescribeAliasOutcome
                  */
@@ -562,7 +592,9 @@ namespace TencentCloud
                 DescribeAliasOutcomeCallable DescribeAliasCallable(const Model::DescribeAliasRequest& request);
 
                 /**
-                 *本接口（DescribeAsset）获取生成包信息。
+                 *此接口无法使用，游戏服务器引擎GSE已于6.1正式下架，感谢您的支持
+
+本接口（DescribeAsset）获取生成包信息。
                  * @param req DescribeAssetRequest
                  * @return DescribeAssetOutcome
                  */
@@ -571,7 +603,9 @@ namespace TencentCloud
                 DescribeAssetOutcomeCallable DescribeAssetCallable(const Model::DescribeAssetRequest& request);
 
                 /**
-                 *本接口（DescribeAssetSystems）用于获取生成包支持的操作系统。
+                 *此接口无法使用，游戏服务器引擎GSE已于6.1正式下架，感谢您的支持
+
+本接口（DescribeAssetSystems）用于获取生成包支持的操作系统。
                  * @param req DescribeAssetSystemsRequest
                  * @return DescribeAssetSystemsOutcome
                  */
@@ -580,7 +614,9 @@ namespace TencentCloud
                 DescribeAssetSystemsOutcomeCallable DescribeAssetSystemsCallable(const Model::DescribeAssetSystemsRequest& request);
 
                 /**
-                 *本接口（DescribeAssets）用于获取生成包列表。
+                 *此接口无法使用，游戏服务器引擎GSE已于6.1正式下架，感谢您的支持
+
+本接口（DescribeAssets）用于获取生成包列表。
                  * @param req DescribeAssetsRequest
                  * @return DescribeAssetsOutcome
                  */
@@ -589,7 +625,9 @@ namespace TencentCloud
                 DescribeAssetsOutcomeCallable DescribeAssetsCallable(const Model::DescribeAssetsRequest& request);
 
                 /**
-                 *本接口（DescribeCcnInstances）用于查询云联网实例。
+                 *此接口无法使用，游戏服务器引擎GSE已于6.1正式下架，感谢您的支持
+
+本接口（DescribeCcnInstances）用于查询云联网实例。
                  * @param req DescribeCcnInstancesRequest
                  * @return DescribeCcnInstancesOutcome
                  */
@@ -598,7 +636,9 @@ namespace TencentCloud
                 DescribeCcnInstancesOutcomeCallable DescribeCcnInstancesCallable(const Model::DescribeCcnInstancesRequest& request);
 
                 /**
-                 *本接口（DescribeFleetAttributes）用于查询服务器舰队属性。
+                 *此接口无法使用，游戏服务器引擎GSE已于6.1正式下架，感谢您的支持
+
+本接口（DescribeFleetAttributes）用于查询服务器舰队属性。
                  * @param req DescribeFleetAttributesRequest
                  * @return DescribeFleetAttributesOutcome
                  */
@@ -607,7 +647,9 @@ namespace TencentCloud
                 DescribeFleetAttributesOutcomeCallable DescribeFleetAttributesCallable(const Model::DescribeFleetAttributesRequest& request);
 
                 /**
-                 *本接口（DescribeFleetCapacity）用于查询服务部署容量配置。
+                 *此接口无法使用，游戏服务器引擎GSE已于6.1正式下架，感谢您的支持
+
+本接口（DescribeFleetCapacity）用于查询服务部署容量配置。
                  * @param req DescribeFleetCapacityRequest
                  * @return DescribeFleetCapacityOutcome
                  */
@@ -616,7 +658,9 @@ namespace TencentCloud
                 DescribeFleetCapacityOutcomeCallable DescribeFleetCapacityCallable(const Model::DescribeFleetCapacityRequest& request);
 
                 /**
-                 *本接口（DescribeFleetEvents）用于查询服务器舰队相关的事件列表。
+                 *此接口无法使用，游戏服务器引擎GSE已于6.1正式下架，感谢您的支持
+
+本接口（DescribeFleetEvents）用于查询服务器舰队相关的事件列表。
                  * @param req DescribeFleetEventsRequest
                  * @return DescribeFleetEventsOutcome
                  */
@@ -625,7 +669,9 @@ namespace TencentCloud
                 DescribeFleetEventsOutcomeCallable DescribeFleetEventsCallable(const Model::DescribeFleetEventsRequest& request);
 
                 /**
-                 *本接口（DescribeFleetPortSettings）用于获取服务器舰队安全组信息。
+                 *此接口无法使用，游戏服务器引擎GSE已于6.1正式下架，感谢您的支持
+
+本接口（DescribeFleetPortSettings）用于获取服务器舰队安全组信息。
                  * @param req DescribeFleetPortSettingsRequest
                  * @return DescribeFleetPortSettingsOutcome
                  */
@@ -634,7 +680,9 @@ namespace TencentCloud
                 DescribeFleetPortSettingsOutcomeCallable DescribeFleetPortSettingsCallable(const Model::DescribeFleetPortSettingsRequest& request);
 
                 /**
-                 *本接口（DescribeFleetRelatedResources）用于获取与游戏服务器舰队关联的资源信息，如别名、队列
+                 *此接口无法使用，游戏服务器引擎GSE已于6.1正式下架，感谢您的支持
+
+本接口（DescribeFleetRelatedResources）用于获取与游戏服务器舰队关联的资源信息，如别名、队列
                  * @param req DescribeFleetRelatedResourcesRequest
                  * @return DescribeFleetRelatedResourcesOutcome
                  */
@@ -643,7 +691,9 @@ namespace TencentCloud
                 DescribeFleetRelatedResourcesOutcomeCallable DescribeFleetRelatedResourcesCallable(const Model::DescribeFleetRelatedResourcesRequest& request);
 
                 /**
-                 *本接口（DescribeFleetStatisticDetails）用于查询服务部署统计详情。
+                 *此接口无法使用，游戏服务器引擎GSE已于6.1正式下架，感谢您的支持
+
+本接口（DescribeFleetStatisticDetails）用于查询服务部署统计详情。
                  * @param req DescribeFleetStatisticDetailsRequest
                  * @return DescribeFleetStatisticDetailsOutcome
                  */
@@ -652,7 +702,9 @@ namespace TencentCloud
                 DescribeFleetStatisticDetailsOutcomeCallable DescribeFleetStatisticDetailsCallable(const Model::DescribeFleetStatisticDetailsRequest& request);
 
                 /**
-                 *本接口（DescribeFleetStatisticFlows）用于查询服务部署统计用量。
+                 *此接口无法使用，游戏服务器引擎GSE已于6.1正式下架，感谢您的支持
+
+本接口（DescribeFleetStatisticFlows）用于查询服务部署统计用量。
                  * @param req DescribeFleetStatisticFlowsRequest
                  * @return DescribeFleetStatisticFlowsOutcome
                  */
@@ -661,7 +713,9 @@ namespace TencentCloud
                 DescribeFleetStatisticFlowsOutcomeCallable DescribeFleetStatisticFlowsCallable(const Model::DescribeFleetStatisticFlowsRequest& request);
 
                 /**
-                 *本接口（DescribeFleetStatisticSummary）用于查询服务部署统计汇总信息。
+                 *此接口无法使用，游戏服务器引擎GSE已于6.1正式下架，感谢您的支持
+
+本接口（DescribeFleetStatisticSummary）用于查询服务部署统计汇总信息。
                  * @param req DescribeFleetStatisticSummaryRequest
                  * @return DescribeFleetStatisticSummaryOutcome
                  */
@@ -670,7 +724,9 @@ namespace TencentCloud
                 DescribeFleetStatisticSummaryOutcomeCallable DescribeFleetStatisticSummaryCallable(const Model::DescribeFleetStatisticSummaryRequest& request);
 
                 /**
-                 *本接口（DescribeFleetUtilization）用于查询服务器舰队的利用率信息。
+                 *此接口无法使用，游戏服务器引擎GSE已于6.1正式下架，感谢您的支持
+
+本接口（DescribeFleetUtilization）用于查询服务器舰队的利用率信息。
                  * @param req DescribeFleetUtilizationRequest
                  * @return DescribeFleetUtilizationOutcome
                  */
@@ -679,7 +735,9 @@ namespace TencentCloud
                 DescribeFleetUtilizationOutcomeCallable DescribeFleetUtilizationCallable(const Model::DescribeFleetUtilizationRequest& request);
 
                 /**
-                 *本接口（DescribeGameServerSessionDetails）用于查询游戏服务器会话详情列表。
+                 *此接口无法使用，游戏服务器引擎GSE已于6.1正式下架，感谢您的支持
+
+本接口（DescribeGameServerSessionDetails）用于查询游戏服务器会话详情列表。
                  * @param req DescribeGameServerSessionDetailsRequest
                  * @return DescribeGameServerSessionDetailsOutcome
                  */
@@ -688,7 +746,9 @@ namespace TencentCloud
                 DescribeGameServerSessionDetailsOutcomeCallable DescribeGameServerSessionDetailsCallable(const Model::DescribeGameServerSessionDetailsRequest& request);
 
                 /**
-                 *本接口（DescribeGameServerSessionPlacement）用于查询游戏服务器会话的放置。
+                 *此接口无法使用，游戏服务器引擎GSE已于6.1正式下架，感谢您的支持
+
+本接口（DescribeGameServerSessionPlacement）用于查询游戏服务器会话的放置。
                  * @param req DescribeGameServerSessionPlacementRequest
                  * @return DescribeGameServerSessionPlacementOutcome
                  */
@@ -697,7 +757,9 @@ namespace TencentCloud
                 DescribeGameServerSessionPlacementOutcomeCallable DescribeGameServerSessionPlacementCallable(const Model::DescribeGameServerSessionPlacementRequest& request);
 
                 /**
-                 *本接口（DescribeGameServerSessionQueues）用于查询游戏服务器会话队列。
+                 *此接口无法使用，游戏服务器引擎GSE已于6.1正式下架，感谢您的支持
+
+本接口（DescribeGameServerSessionQueues）用于查询游戏服务器会话队列。
                  * @param req DescribeGameServerSessionQueuesRequest
                  * @return DescribeGameServerSessionQueuesOutcome
                  */
@@ -706,7 +768,9 @@ namespace TencentCloud
                 DescribeGameServerSessionQueuesOutcomeCallable DescribeGameServerSessionQueuesCallable(const Model::DescribeGameServerSessionQueuesRequest& request);
 
                 /**
-                 *本接口（DescribeGameServerSessions）用于查询游戏服务器会话列表。
+                 *此接口无法使用，游戏服务器引擎GSE已于6.1正式下架，感谢您的支持
+
+本接口（DescribeGameServerSessions）用于查询游戏服务器会话列表。
                  * @param req DescribeGameServerSessionsRequest
                  * @return DescribeGameServerSessionsOutcome
                  */
@@ -715,7 +779,9 @@ namespace TencentCloud
                 DescribeGameServerSessionsOutcomeCallable DescribeGameServerSessionsCallable(const Model::DescribeGameServerSessionsRequest& request);
 
                 /**
-                 *本接口（DescribeInstanceLimit）用于查询用户实例数限额。
+                 *此接口无法使用，游戏服务器引擎GSE已于6.1正式下架，感谢您的支持
+
+本接口（DescribeInstanceLimit）用于查询用户实例数限额。
                  * @param req DescribeInstanceLimitRequest
                  * @return DescribeInstanceLimitOutcome
                  */
@@ -724,7 +790,9 @@ namespace TencentCloud
                 DescribeInstanceLimitOutcomeCallable DescribeInstanceLimitCallable(const Model::DescribeInstanceLimitRequest& request);
 
                 /**
-                 *本接口（DescribeInstanceTypes）用于获取服务器实例类型列表。
+                 *此接口无法使用，游戏服务器引擎GSE已于6.1正式下架，感谢您的支持
+
+本接口（DescribeInstanceTypes）用于获取服务器实例类型列表。
                  * @param req DescribeInstanceTypesRequest
                  * @return DescribeInstanceTypesOutcome
                  */
@@ -733,7 +801,9 @@ namespace TencentCloud
                 DescribeInstanceTypesOutcomeCallable DescribeInstanceTypesCallable(const Model::DescribeInstanceTypesRequest& request);
 
                 /**
-                 *本接口（DescribeInstances）用于查询服务器实例列表。
+                 *此接口无法使用，游戏服务器引擎GSE已于6.1正式下架，感谢您的支持
+
+本接口（DescribeInstances）用于查询服务器实例列表。
                  * @param req DescribeInstancesRequest
                  * @return DescribeInstancesOutcome
                  */
@@ -742,7 +812,9 @@ namespace TencentCloud
                 DescribeInstancesOutcomeCallable DescribeInstancesCallable(const Model::DescribeInstancesRequest& request);
 
                 /**
-                 *本接口（DescribeInstancesExtend）用于查询实例扩展信息列表。
+                 *此接口无法使用，游戏服务器引擎GSE已于6.1正式下架，感谢您的支持
+
+本接口（DescribeInstancesExtend）用于查询实例扩展信息列表。
                  * @param req DescribeInstancesExtendRequest
                  * @return DescribeInstancesExtendOutcome
                  */
@@ -751,7 +823,9 @@ namespace TencentCloud
                 DescribeInstancesExtendOutcomeCallable DescribeInstancesExtendCallable(const Model::DescribeInstancesExtendRequest& request);
 
                 /**
-                 *本接口（DescribePlayerSessions）用于获取玩家会话列表。
+                 *此接口无法使用，游戏服务器引擎GSE已于6.1正式下架，感谢您的支持
+
+本接口（DescribePlayerSessions）用于获取玩家会话列表。
                  * @param req DescribePlayerSessionsRequest
                  * @return DescribePlayerSessionsOutcome
                  */
@@ -760,7 +834,9 @@ namespace TencentCloud
                 DescribePlayerSessionsOutcomeCallable DescribePlayerSessionsCallable(const Model::DescribePlayerSessionsRequest& request);
 
                 /**
-                 *本接口（DescribeRuntimeConfiguration）用于获取服务器舰队运行配置。
+                 *此接口无法使用，游戏服务器引擎GSE已于6.1正式下架，感谢您的支持
+
+本接口（DescribeRuntimeConfiguration）用于获取服务器舰队运行配置。
                  * @param req DescribeRuntimeConfigurationRequest
                  * @return DescribeRuntimeConfigurationOutcome
                  */
@@ -769,7 +845,9 @@ namespace TencentCloud
                 DescribeRuntimeConfigurationOutcomeCallable DescribeRuntimeConfigurationCallable(const Model::DescribeRuntimeConfigurationRequest& request);
 
                 /**
-                 *本接口（DescribeScalingPolicies）用于查询服务器舰队的动态扩缩容策略列表。
+                 *此接口无法使用，游戏服务器引擎GSE已于6.1正式下架，感谢您的支持
+
+本接口（DescribeScalingPolicies）用于查询服务器舰队的动态扩缩容策略列表。
                  * @param req DescribeScalingPoliciesRequest
                  * @return DescribeScalingPoliciesOutcome
                  */
@@ -778,7 +856,9 @@ namespace TencentCloud
                 DescribeScalingPoliciesOutcomeCallable DescribeScalingPoliciesCallable(const Model::DescribeScalingPoliciesRequest& request);
 
                 /**
-                 *本接口（DescribeTimerScalingPolicies）用于查询fleet下的定时器列表。可以通过fleetid，定时器名称分页查询。
+                 *此接口无法使用，游戏服务器引擎GSE已于6.1正式下架，感谢您的支持
+
+本接口（DescribeTimerScalingPolicies）用于查询fleet下的定时器列表。可以通过fleetid，定时器名称分页查询。
 
                  * @param req DescribeTimerScalingPoliciesRequest
                  * @return DescribeTimerScalingPoliciesOutcome
@@ -788,7 +868,9 @@ namespace TencentCloud
                 DescribeTimerScalingPoliciesOutcomeCallable DescribeTimerScalingPoliciesCallable(const Model::DescribeTimerScalingPoliciesRequest& request);
 
                 /**
-                 *本接口（DescribeUserQuota）获取用户单个模块配额。
+                 *此接口无法使用，游戏服务器引擎GSE已于6.1正式下架，感谢您的支持
+
+本接口（DescribeUserQuota）获取用户单个模块配额。
                  * @param req DescribeUserQuotaRequest
                  * @return DescribeUserQuotaOutcome
                  */
@@ -797,7 +879,9 @@ namespace TencentCloud
                 DescribeUserQuotaOutcomeCallable DescribeUserQuotaCallable(const Model::DescribeUserQuotaRequest& request);
 
                 /**
-                 *本接口（DescribeUserQuotas）用于获取用户配额
+                 *此接口无法使用，游戏服务器引擎GSE已于6.1正式下架，感谢您的支持
+
+本接口（DescribeUserQuotas）用于获取用户配额
                  * @param req DescribeUserQuotasRequest
                  * @return DescribeUserQuotasOutcome
                  */
@@ -806,7 +890,9 @@ namespace TencentCloud
                 DescribeUserQuotasOutcomeCallable DescribeUserQuotasCallable(const Model::DescribeUserQuotasRequest& request);
 
                 /**
-                 *本接口（DetachCcnInstances）用于解关联云联网实例。
+                 *此接口无法使用，游戏服务器引擎GSE已于6.1正式下架，感谢您的支持
+
+本接口（DetachCcnInstances）用于解关联云联网实例。
                  * @param req DetachCcnInstancesRequest
                  * @return DetachCcnInstancesOutcome
                  */
@@ -815,7 +901,9 @@ namespace TencentCloud
                 DetachCcnInstancesOutcomeCallable DetachCcnInstancesCallable(const Model::DetachCcnInstancesRequest& request);
 
                 /**
-                 *本接口（EndGameServerSessionAndProcess）用于终止游戏服务器会话和对应的进程，适用于时限保护和不保护。
+                 *此接口无法使用，游戏服务器引擎GSE已于6.1正式下架，感谢您的支持
+
+本接口（EndGameServerSessionAndProcess）用于终止游戏服务器会话和对应的进程，适用于时限保护和不保护。
                  * @param req EndGameServerSessionAndProcessRequest
                  * @return EndGameServerSessionAndProcessOutcome
                  */
@@ -824,7 +912,9 @@ namespace TencentCloud
                 EndGameServerSessionAndProcessOutcomeCallable EndGameServerSessionAndProcessCallable(const Model::EndGameServerSessionAndProcessRequest& request);
 
                 /**
-                 *本接口用于获取游戏服务器实例的日志URL。
+                 *此接口无法使用，游戏服务器引擎GSE已于6.1正式下架，感谢您的支持
+
+本接口用于获取游戏服务器实例的日志URL。
                  * @param req GetGameServerInstanceLogUrlRequest
                  * @return GetGameServerInstanceLogUrlOutcome
                  */
@@ -833,7 +923,9 @@ namespace TencentCloud
                 GetGameServerInstanceLogUrlOutcomeCallable GetGameServerInstanceLogUrlCallable(const Model::GetGameServerInstanceLogUrlRequest& request);
 
                 /**
-                 *本接口（GetGameServerSessionLogUrl）用于获取游戏服务器会话的日志URL。
+                 *此接口无法使用，游戏服务器引擎GSE已于6.1正式下架，感谢您的支持
+
+本接口（GetGameServerSessionLogUrl）用于获取游戏服务器会话的日志URL。
                  * @param req GetGameServerSessionLogUrlRequest
                  * @return GetGameServerSessionLogUrlOutcome
                  */
@@ -842,7 +934,9 @@ namespace TencentCloud
                 GetGameServerSessionLogUrlOutcomeCallable GetGameServerSessionLogUrlCallable(const Model::GetGameServerSessionLogUrlRequest& request);
 
                 /**
-                 *本接口（GetInstanceAccess）用于获取实例登录所需要的凭据。
+                 *此接口无法使用，游戏服务器引擎GSE已于6.1正式下架，感谢您的支持
+
+本接口（GetInstanceAccess）用于获取实例登录所需要的凭据。
                  * @param req GetInstanceAccessRequest
                  * @return GetInstanceAccessOutcome
                  */
@@ -851,7 +945,9 @@ namespace TencentCloud
                 GetInstanceAccessOutcomeCallable GetInstanceAccessCallable(const Model::GetInstanceAccessRequest& request);
 
                 /**
-                 *本接口（GetUploadCredentials）获取上传文件授权信息。
+                 *此接口无法使用，游戏服务器引擎GSE已于6.1正式下架，感谢您的支持
+
+本接口（GetUploadCredentials）获取上传文件授权信息。
 通过 [GetUploadCredentials](https://cloud.tencent.com/document/product/1165/48727) 接口获取临时授权信息后，调用 COS API将数据上传，根据上传的 BucketKey 信息进行生成包 [CreateAsset](https://cloud.tencent.com/document/product/1165/48731) 的创建。参考下面的示例部分。
                  * @param req GetUploadCredentialsRequest
                  * @return GetUploadCredentialsOutcome
@@ -861,7 +957,9 @@ namespace TencentCloud
                 GetUploadCredentialsOutcomeCallable GetUploadCredentialsCallable(const Model::GetUploadCredentialsRequest& request);
 
                 /**
-                 *本接口（GetUploadFederationToken）用于 获取生成包上传所需要的临时密钥。
+                 *此接口无法使用，游戏服务器引擎GSE已于6.1正式下架，感谢您的支持
+
+本接口（GetUploadFederationToken）用于 获取生成包上传所需要的临时密钥。
                  * @param req GetUploadFederationTokenRequest
                  * @return GetUploadFederationTokenOutcome
                  */
@@ -870,7 +968,9 @@ namespace TencentCloud
                 GetUploadFederationTokenOutcomeCallable GetUploadFederationTokenCallable(const Model::GetUploadFederationTokenRequest& request);
 
                 /**
-                 *本接口（JoinGameServerSession）用于加入游戏服务器会话。
+                 *此接口无法使用，游戏服务器引擎GSE已于6.1正式下架，感谢您的支持
+
+本接口（JoinGameServerSession）用于加入游戏服务器会话。
                  * @param req JoinGameServerSessionRequest
                  * @return JoinGameServerSessionOutcome
                  */
@@ -879,7 +979,9 @@ namespace TencentCloud
                 JoinGameServerSessionOutcomeCallable JoinGameServerSessionCallable(const Model::JoinGameServerSessionRequest& request);
 
                 /**
-                 *本接口（JoinGameServerSessionBatch）用于批量加入游戏服务器会话。
+                 *此接口无法使用，游戏服务器引擎GSE已于6.1正式下架，感谢您的支持
+
+本接口（JoinGameServerSessionBatch）用于批量加入游戏服务器会话。
                  * @param req JoinGameServerSessionBatchRequest
                  * @return JoinGameServerSessionBatchOutcome
                  */
@@ -888,7 +990,9 @@ namespace TencentCloud
                 JoinGameServerSessionBatchOutcomeCallable JoinGameServerSessionBatchCallable(const Model::JoinGameServerSessionBatchRequest& request);
 
                 /**
-                 *本接口（ListAliases）用于检索帐户下的所有别名。
+                 *此接口无法使用，游戏服务器引擎GSE已于6.1正式下架，感谢您的支持
+
+本接口（ListAliases）用于检索帐户下的所有别名。
                  * @param req ListAliasesRequest
                  * @return ListAliasesOutcome
                  */
@@ -897,7 +1001,9 @@ namespace TencentCloud
                 ListAliasesOutcomeCallable ListAliasesCallable(const Model::ListAliasesRequest& request);
 
                 /**
-                 *本接口（ListFleets）用于获取服务器舰队列表。
+                 *此接口无法使用，游戏服务器引擎GSE已于6.1正式下架，感谢您的支持
+
+本接口（ListFleets）用于获取服务器舰队列表。
                  * @param req ListFleetsRequest
                  * @return ListFleetsOutcome
                  */
@@ -906,7 +1012,9 @@ namespace TencentCloud
                 ListFleetsOutcomeCallable ListFleetsCallable(const Model::ListFleetsRequest& request);
 
                 /**
-                 *本接口（PutScalingPolicy）用于设置服务器舰队的动态扩缩容策略。
+                 *此接口无法使用，游戏服务器引擎GSE已于6.1正式下架，感谢您的支持
+
+本接口（PutScalingPolicy）用于设置服务器舰队的动态扩缩容策略。
 
 通过此接口可以增加或者更新服务器舰队的扩缩容策略。
 服务器舰队可以有多个扩缩容策略，但是只有一个TargetBased基于目标的策略。
@@ -1012,7 +1120,9 @@ if [AvailableGameServerSessions] >= [400] for [5] minutes, then scaling by [curr
                 PutScalingPolicyOutcomeCallable PutScalingPolicyCallable(const Model::PutScalingPolicyRequest& request);
 
                 /**
-                 *本接口（PutTimerScalingPolicy）用于给fleet创建或更新定时器。
+                 *此接口无法使用，游戏服务器引擎GSE已于6.1正式下架，感谢您的支持
+
+本接口（PutTimerScalingPolicy）用于给fleet创建或更新定时器。
 
 填写字段timer_id，表示更新；不填字段timer_id表示新增。
 
@@ -1024,7 +1134,9 @@ if [AvailableGameServerSessions] >= [400] for [5] minutes, then scaling by [curr
                 PutTimerScalingPolicyOutcomeCallable PutTimerScalingPolicyCallable(const Model::PutTimerScalingPolicyRequest& request);
 
                 /**
-                 *本接口（ResolveAlias）用于获取别名当前指向的fleetId。
+                 *此接口无法使用，游戏服务器引擎GSE已于6.1正式下架，感谢您的支持
+
+本接口（ResolveAlias）用于获取别名当前指向的fleetId。
                  * @param req ResolveAliasRequest
                  * @return ResolveAliasOutcome
                  */
@@ -1033,7 +1145,9 @@ if [AvailableGameServerSessions] >= [400] for [5] minutes, then scaling by [curr
                 ResolveAliasOutcomeCallable ResolveAliasCallable(const Model::ResolveAliasRequest& request);
 
                 /**
-                 *本接口（SearchGameServerSessions）用于搜索游戏服务器会话列表。
+                 *此接口无法使用，游戏服务器引擎GSE已于6.1正式下架，感谢您的支持
+
+本接口（SearchGameServerSessions）用于搜索游戏服务器会话列表。
                  * @param req SearchGameServerSessionsRequest
                  * @return SearchGameServerSessionsOutcome
                  */
@@ -1042,7 +1156,9 @@ if [AvailableGameServerSessions] >= [400] for [5] minutes, then scaling by [curr
                 SearchGameServerSessionsOutcomeCallable SearchGameServerSessionsCallable(const Model::SearchGameServerSessionsRequest& request);
 
                 /**
-                 *本接口（SetServerReserved）用于将异常的实例标记为保留，用于问题排查。
+                 *此接口无法使用，游戏服务器引擎GSE已于6.1正式下架，感谢您的支持
+
+本接口（SetServerReserved）用于将异常的实例标记为保留，用于问题排查。
 
 字段ReserveValue：0默认值，不保留；1 保留
 
@@ -1054,7 +1170,9 @@ if [AvailableGameServerSessions] >= [400] for [5] minutes, then scaling by [curr
                 SetServerReservedOutcomeCallable SetServerReservedCallable(const Model::SetServerReservedRequest& request);
 
                 /**
-                 *本接口（SetServerWeight）用于设置服务器权重。
+                 *此接口无法使用，游戏服务器引擎GSE已于6.1正式下架，感谢您的支持
+
+本接口（SetServerWeight）用于设置服务器权重。
                  * @param req SetServerWeightRequest
                  * @return SetServerWeightOutcome
                  */
@@ -1063,7 +1181,9 @@ if [AvailableGameServerSessions] >= [400] for [5] minutes, then scaling by [curr
                 SetServerWeightOutcomeCallable SetServerWeightCallable(const Model::SetServerWeightRequest& request);
 
                 /**
-                 *本接口（StartFleetActions）用于启用服务器舰队自动扩缩容。
+                 *此接口无法使用，游戏服务器引擎GSE已于6.1正式下架，感谢您的支持
+
+本接口（StartFleetActions）用于启用服务器舰队自动扩缩容。
                  * @param req StartFleetActionsRequest
                  * @return StartFleetActionsOutcome
                  */
@@ -1072,7 +1192,9 @@ if [AvailableGameServerSessions] >= [400] for [5] minutes, then scaling by [curr
                 StartFleetActionsOutcomeCallable StartFleetActionsCallable(const Model::StartFleetActionsRequest& request);
 
                 /**
-                 *本接口（StartGameServerSessionPlacement）用于开始放置游戏服务器会话。
+                 *此接口无法使用，游戏服务器引擎GSE已于6.1正式下架，感谢您的支持
+
+本接口（StartGameServerSessionPlacement）用于开始放置游戏服务器会话。
                  * @param req StartGameServerSessionPlacementRequest
                  * @return StartGameServerSessionPlacementOutcome
                  */
@@ -1081,7 +1203,9 @@ if [AvailableGameServerSessions] >= [400] for [5] minutes, then scaling by [curr
                 StartGameServerSessionPlacementOutcomeCallable StartGameServerSessionPlacementCallable(const Model::StartGameServerSessionPlacementRequest& request);
 
                 /**
-                 *本接口（StopFleetActions）用于停止服务器舰队自动扩缩容，改为手动扩缩容。
+                 *此接口无法使用，游戏服务器引擎GSE已于6.1正式下架，感谢您的支持
+
+本接口（StopFleetActions）用于停止服务器舰队自动扩缩容，改为手动扩缩容。
                  * @param req StopFleetActionsRequest
                  * @return StopFleetActionsOutcome
                  */
@@ -1090,7 +1214,9 @@ if [AvailableGameServerSessions] >= [400] for [5] minutes, then scaling by [curr
                 StopFleetActionsOutcomeCallable StopFleetActionsCallable(const Model::StopFleetActionsRequest& request);
 
                 /**
-                 *本接口（StopGameServerSessionPlacement）用于停止放置游戏服务器会话。
+                 *此接口无法使用，游戏服务器引擎GSE已于6.1正式下架，感谢您的支持
+
+本接口（StopGameServerSessionPlacement）用于停止放置游戏服务器会话。
                  * @param req StopGameServerSessionPlacementRequest
                  * @return StopGameServerSessionPlacementOutcome
                  */
@@ -1099,7 +1225,9 @@ if [AvailableGameServerSessions] >= [400] for [5] minutes, then scaling by [curr
                 StopGameServerSessionPlacementOutcomeCallable StopGameServerSessionPlacementCallable(const Model::StopGameServerSessionPlacementRequest& request);
 
                 /**
-                 *本接口（UpdateAlias）用于更新别名的属性。
+                 *此接口无法使用，游戏服务器引擎GSE已于6.1正式下架，感谢您的支持
+
+本接口（UpdateAlias）用于更新别名的属性。
                  * @param req UpdateAliasRequest
                  * @return UpdateAliasOutcome
                  */
@@ -1108,7 +1236,9 @@ if [AvailableGameServerSessions] >= [400] for [5] minutes, then scaling by [curr
                 UpdateAliasOutcomeCallable UpdateAliasCallable(const Model::UpdateAliasRequest& request);
 
                 /**
-                 *本接口（UpdateAsset）用于修改生成包信息。
+                 *此接口无法使用，游戏服务器引擎GSE已于6.1正式下架，感谢您的支持
+
+本接口（UpdateAsset）用于修改生成包信息。
                  * @param req UpdateAssetRequest
                  * @return UpdateAssetOutcome
                  */
@@ -1117,7 +1247,9 @@ if [AvailableGameServerSessions] >= [400] for [5] minutes, then scaling by [curr
                 UpdateAssetOutcomeCallable UpdateAssetCallable(const Model::UpdateAssetRequest& request);
 
                 /**
-                 *本接口（UpdateBucketAccelerateOpt）用于开启cos全球加速。
+                 *此接口无法使用，游戏服务器引擎GSE已于6.1正式下架，感谢您的支持
+
+本接口（UpdateBucketAccelerateOpt）用于开启cos全球加速。
                  * @param req UpdateBucketAccelerateOptRequest
                  * @return UpdateBucketAccelerateOptOutcome
                  */
@@ -1126,7 +1258,9 @@ if [AvailableGameServerSessions] >= [400] for [5] minutes, then scaling by [curr
                 UpdateBucketAccelerateOptOutcomeCallable UpdateBucketAccelerateOptCallable(const Model::UpdateBucketAccelerateOptRequest& request);
 
                 /**
-                 *本接口（UpdateBucketCORSOpt）用于设置cos跨域访问。
+                 *此接口无法使用，游戏服务器引擎GSE已于6.1正式下架，感谢您的支持
+
+本接口（UpdateBucketCORSOpt）用于设置cos跨域访问。
                  * @param req UpdateBucketCORSOptRequest
                  * @return UpdateBucketCORSOptOutcome
                  */
@@ -1135,7 +1269,9 @@ if [AvailableGameServerSessions] >= [400] for [5] minutes, then scaling by [curr
                 UpdateBucketCORSOptOutcomeCallable UpdateBucketCORSOptCallable(const Model::UpdateBucketCORSOptRequest& request);
 
                 /**
-                 *本接口（UpdateFleetAttributes）用于更新服务器舰队属性。
+                 *此接口无法使用，游戏服务器引擎GSE已于6.1正式下架，感谢您的支持
+
+本接口（UpdateFleetAttributes）用于更新服务器舰队属性。
                  * @param req UpdateFleetAttributesRequest
                  * @return UpdateFleetAttributesOutcome
                  */
@@ -1144,7 +1280,9 @@ if [AvailableGameServerSessions] >= [400] for [5] minutes, then scaling by [curr
                 UpdateFleetAttributesOutcomeCallable UpdateFleetAttributesCallable(const Model::UpdateFleetAttributesRequest& request);
 
                 /**
-                 *本接口（UpdateFleetCapacity）用于更新服务器舰队容量配置。
+                 *此接口无法使用，游戏服务器引擎GSE已于6.1正式下架，感谢您的支持
+
+本接口（UpdateFleetCapacity）用于更新服务器舰队容量配置。
                  * @param req UpdateFleetCapacityRequest
                  * @return UpdateFleetCapacityOutcome
                  */
@@ -1153,7 +1291,9 @@ if [AvailableGameServerSessions] >= [400] for [5] minutes, then scaling by [curr
                 UpdateFleetCapacityOutcomeCallable UpdateFleetCapacityCallable(const Model::UpdateFleetCapacityRequest& request);
 
                 /**
-                 *本接口（UpdateFleetName）用于更新服务器舰队名称。
+                 *此接口无法使用，游戏服务器引擎GSE已于6.1正式下架，感谢您的支持
+
+本接口（UpdateFleetName）用于更新服务器舰队名称。
                  * @param req UpdateFleetNameRequest
                  * @return UpdateFleetNameOutcome
                  */
@@ -1162,7 +1302,9 @@ if [AvailableGameServerSessions] >= [400] for [5] minutes, then scaling by [curr
                 UpdateFleetNameOutcomeCallable UpdateFleetNameCallable(const Model::UpdateFleetNameRequest& request);
 
                 /**
-                 *本接口（UpdateFleetPortSettings）用于更新服务器舰队安全组。
+                 *此接口无法使用，游戏服务器引擎GSE已于6.1正式下架，感谢您的支持
+
+本接口（UpdateFleetPortSettings）用于更新服务器舰队安全组。
                  * @param req UpdateFleetPortSettingsRequest
                  * @return UpdateFleetPortSettingsOutcome
                  */
@@ -1171,7 +1313,9 @@ if [AvailableGameServerSessions] >= [400] for [5] minutes, then scaling by [curr
                 UpdateFleetPortSettingsOutcomeCallable UpdateFleetPortSettingsCallable(const Model::UpdateFleetPortSettingsRequest& request);
 
                 /**
-                 *本接口（UpdateGameServerSession）用于更新游戏服务器会话。
+                 *此接口无法使用，游戏服务器引擎GSE已于6.1正式下架，感谢您的支持
+
+本接口（UpdateGameServerSession）用于更新游戏服务器会话。
                  * @param req UpdateGameServerSessionRequest
                  * @return UpdateGameServerSessionOutcome
                  */
@@ -1180,7 +1324,9 @@ if [AvailableGameServerSessions] >= [400] for [5] minutes, then scaling by [curr
                 UpdateGameServerSessionOutcomeCallable UpdateGameServerSessionCallable(const Model::UpdateGameServerSessionRequest& request);
 
                 /**
-                 *本接口（UpdateGameServerSessionQueue）用于修改游戏服务器会话队列。
+                 *此接口无法使用，游戏服务器引擎GSE已于6.1正式下架，感谢您的支持
+
+本接口（UpdateGameServerSessionQueue）用于修改游戏服务器会话队列。
                  * @param req UpdateGameServerSessionQueueRequest
                  * @return UpdateGameServerSessionQueueOutcome
                  */
@@ -1189,7 +1335,9 @@ if [AvailableGameServerSessions] >= [400] for [5] minutes, then scaling by [curr
                 UpdateGameServerSessionQueueOutcomeCallable UpdateGameServerSessionQueueCallable(const Model::UpdateGameServerSessionQueueRequest& request);
 
                 /**
-                 *本接口（UpdateRuntimeConfiguration）用于更新服务器舰队配置。
+                 *此接口无法使用，游戏服务器引擎GSE已于6.1正式下架，感谢您的支持
+
+本接口（UpdateRuntimeConfiguration）用于更新服务器舰队配置。
                  * @param req UpdateRuntimeConfigurationRequest
                  * @return UpdateRuntimeConfigurationOutcome
                  */

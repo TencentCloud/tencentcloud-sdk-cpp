@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool SourceChannelHasBeenSet() const;
 
                     /**
-                     * 获取是否开启调用链, 0 为关闭，1位开启
-                     * @return EnableTracing 是否开启调用链, 0 为关闭，1位开启
+                     * 获取是否开启调用链,（此参数已弃用）
+                     * @return EnableTracing 是否开启调用链,（此参数已弃用）
                      */
                     uint64_t GetEnableTracing() const;
 
                     /**
-                     * 设置是否开启调用链, 0 为关闭，1位开启
-                     * @param EnableTracing 是否开启调用链, 0 为关闭，1位开启
+                     * 设置是否开启调用链,（此参数已弃用）
+                     * @param EnableTracing 是否开启调用链,（此参数已弃用）
                      */
                     void SetEnableTracing(const uint64_t& _enableTracing);
 
@@ -135,7 +135,7 @@ namespace TencentCloud
                     bool m_sourceChannelHasBeenSet;
 
                     /**
-                     * 是否开启调用链, 0 为关闭，1位开启
+                     * 是否开启调用链,（此参数已弃用）
                      */
                     uint64_t m_enableTracing;
                     bool m_enableTracingHasBeenSet;

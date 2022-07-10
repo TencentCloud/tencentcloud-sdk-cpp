@@ -70,12 +70,12 @@ namespace TencentCloud
 __TENPAY__: 商企付
 __WECHAT__: 微信支付
 __ALIPAY__: 支付宝
-__WECHAT__: 微信支付
+__HUIFU__: 汇付斗拱
                      * @return ChannelName 渠道名称。详见附录-云企付枚举类说明-ChannelName。
 __TENPAY__: 商企付
 __WECHAT__: 微信支付
 __ALIPAY__: 支付宝
-__WECHAT__: 微信支付
+__HUIFU__: 汇付斗拱
                      */
                     std::string GetChannelName() const;
 
@@ -84,12 +84,12 @@ __WECHAT__: 微信支付
 __TENPAY__: 商企付
 __WECHAT__: 微信支付
 __ALIPAY__: 支付宝
-__WECHAT__: 微信支付
+__HUIFU__: 汇付斗拱
                      * @param ChannelName 渠道名称。详见附录-云企付枚举类说明-ChannelName。
 __TENPAY__: 商企付
 __WECHAT__: 微信支付
 __ALIPAY__: 支付宝
-__WECHAT__: 微信支付
+__HUIFU__: 汇付斗拱
                      */
                     void SetChannelName(const std::string& _channelName);
 
@@ -105,11 +105,15 @@ __EBANK_PAYMENT__:B2B EBank付款
 __OPENBANK_PAYMENT__:B2C  openbank付款
 __SAFT_ISV__:支付宝安心发
 __TRANS_TO_CHANGE__: 微信支付转账到零钱v2
+__TRANS_TO_CHANGE_V3__: 微信支付转账到零钱v3
+__ONLINEBANK__: 汇付网银
                      * @return PaymentMethod 付款方式。详见附录-云企付枚举类说明-PaymentMethod。
 __EBANK_PAYMENT__:B2B EBank付款
 __OPENBANK_PAYMENT__:B2C  openbank付款
 __SAFT_ISV__:支付宝安心发
 __TRANS_TO_CHANGE__: 微信支付转账到零钱v2
+__TRANS_TO_CHANGE_V3__: 微信支付转账到零钱v3
+__ONLINEBANK__: 汇付网银
                      */
                     std::string GetPaymentMethod() const;
 
@@ -119,11 +123,15 @@ __EBANK_PAYMENT__:B2B EBank付款
 __OPENBANK_PAYMENT__:B2C  openbank付款
 __SAFT_ISV__:支付宝安心发
 __TRANS_TO_CHANGE__: 微信支付转账到零钱v2
+__TRANS_TO_CHANGE_V3__: 微信支付转账到零钱v3
+__ONLINEBANK__: 汇付网银
                      * @param PaymentMethod 付款方式。详见附录-云企付枚举类说明-PaymentMethod。
 __EBANK_PAYMENT__:B2B EBank付款
 __OPENBANK_PAYMENT__:B2C  openbank付款
 __SAFT_ISV__:支付宝安心发
 __TRANS_TO_CHANGE__: 微信支付转账到零钱v2
+__TRANS_TO_CHANGE_V3__: 微信支付转账到零钱v3
+__ONLINEBANK__: 汇付网银
                      */
                     void SetPaymentMethod(const std::string& _paymentMethod);
 
@@ -484,7 +492,7 @@ __sandbox__:沙箱环境
 __TENPAY__: 商企付
 __WECHAT__: 微信支付
 __ALIPAY__: 支付宝
-__WECHAT__: 微信支付
+__HUIFU__: 汇付斗拱
                      */
                     std::string m_channelName;
                     bool m_channelNameHasBeenSet;
@@ -495,6 +503,8 @@ __EBANK_PAYMENT__:B2B EBank付款
 __OPENBANK_PAYMENT__:B2C  openbank付款
 __SAFT_ISV__:支付宝安心发
 __TRANS_TO_CHANGE__: 微信支付转账到零钱v2
+__TRANS_TO_CHANGE_V3__: 微信支付转账到零钱v3
+__ONLINEBANK__: 汇付网银
                      */
                     std::string m_paymentMethod;
                     bool m_paymentMethodHasBeenSet;

@@ -99,13 +99,53 @@ namespace TencentCloud
 
                     /**
                      * 获取任务状态列表
+<li>1 = 创建中</li>
+<li> 2 = 运行中 </li>
+<li> 3 = 运行异常 </li>
+<li> 4 = 暂停中 </li>
+<li> 5 = 暂停异常 </li>
+<li> 6 = 任务暂停 </li>
+<li> 7 = 任务删除中 </li>
+<li> 8 = 任务删除异常 </li>
+<li> 9 = 任务删除</li>
+<li> 10 = 定时任务暂停中 </li>
                      * @return TaskStatus 任务状态列表
+<li>1 = 创建中</li>
+<li> 2 = 运行中 </li>
+<li> 3 = 运行异常 </li>
+<li> 4 = 暂停中 </li>
+<li> 5 = 暂停异常 </li>
+<li> 6 = 任务暂停 </li>
+<li> 7 = 任务删除中 </li>
+<li> 8 = 任务删除异常 </li>
+<li> 9 = 任务删除</li>
+<li> 10 = 定时任务暂停中 </li>
                      */
                     std::vector<int64_t> GetTaskStatus() const;
 
                     /**
                      * 设置任务状态列表
+<li>1 = 创建中</li>
+<li> 2 = 运行中 </li>
+<li> 3 = 运行异常 </li>
+<li> 4 = 暂停中 </li>
+<li> 5 = 暂停异常 </li>
+<li> 6 = 任务暂停 </li>
+<li> 7 = 任务删除中 </li>
+<li> 8 = 任务删除异常 </li>
+<li> 9 = 任务删除</li>
+<li> 10 = 定时任务暂停中 </li>
                      * @param TaskStatus 任务状态列表
+<li>1 = 创建中</li>
+<li> 2 = 运行中 </li>
+<li> 3 = 运行异常 </li>
+<li> 4 = 暂停中 </li>
+<li> 5 = 暂停异常 </li>
+<li> 6 = 任务暂停 </li>
+<li> 7 = 任务删除中 </li>
+<li> 8 = 任务删除异常 </li>
+<li> 9 = 任务删除</li>
+<li> 10 = 定时任务暂停中 </li>
                      */
                     void SetTaskStatus(const std::vector<int64_t>& _taskStatus);
 
@@ -205,57 +245,45 @@ namespace TencentCloud
 
                     /**
                      * 获取拨测类型
+<li>1 = 页面浏览</li>
+<li> 2 =文件上传 </li>
+<li> 3 = 文件下载</li>
+<li> 4 = 端口性能 </li>
+<li> 5 = 网络质量 </li>
+<li> 6 =流媒体 </li>
 
-<li>1 = 创建中</li>
-<li> 2 = 运行中 </li>
-<li> 3 = 运行异常 </li>
-<li> 4 = 暂停中 </li>
-<li> 5 = 暂停异常 </li>
-<li> 6 = 任务暂停 </li>
-<li> 7 = 任务删除中 </li>
-<li> 8 = 任务删除异常 </li>
-<li> 9 = 任务删除</li>
-<li> 10 = 定时任务暂停中 </li>
+即使拨测只支持页面浏览，网络质量，文件下载
                      * @return TaskType 拨测类型
+<li>1 = 页面浏览</li>
+<li> 2 =文件上传 </li>
+<li> 3 = 文件下载</li>
+<li> 4 = 端口性能 </li>
+<li> 5 = 网络质量 </li>
+<li> 6 =流媒体 </li>
 
-<li>1 = 创建中</li>
-<li> 2 = 运行中 </li>
-<li> 3 = 运行异常 </li>
-<li> 4 = 暂停中 </li>
-<li> 5 = 暂停异常 </li>
-<li> 6 = 任务暂停 </li>
-<li> 7 = 任务删除中 </li>
-<li> 8 = 任务删除异常 </li>
-<li> 9 = 任务删除</li>
-<li> 10 = 定时任务暂停中 </li>
+即使拨测只支持页面浏览，网络质量，文件下载
                      */
                     std::vector<int64_t> GetTaskType() const;
 
                     /**
                      * 设置拨测类型
+<li>1 = 页面浏览</li>
+<li> 2 =文件上传 </li>
+<li> 3 = 文件下载</li>
+<li> 4 = 端口性能 </li>
+<li> 5 = 网络质量 </li>
+<li> 6 =流媒体 </li>
 
-<li>1 = 创建中</li>
-<li> 2 = 运行中 </li>
-<li> 3 = 运行异常 </li>
-<li> 4 = 暂停中 </li>
-<li> 5 = 暂停异常 </li>
-<li> 6 = 任务暂停 </li>
-<li> 7 = 任务删除中 </li>
-<li> 8 = 任务删除异常 </li>
-<li> 9 = 任务删除</li>
-<li> 10 = 定时任务暂停中 </li>
+即使拨测只支持页面浏览，网络质量，文件下载
                      * @param TaskType 拨测类型
+<li>1 = 页面浏览</li>
+<li> 2 =文件上传 </li>
+<li> 3 = 文件下载</li>
+<li> 4 = 端口性能 </li>
+<li> 5 = 网络质量 </li>
+<li> 6 =流媒体 </li>
 
-<li>1 = 创建中</li>
-<li> 2 = 运行中 </li>
-<li> 3 = 运行异常 </li>
-<li> 4 = 暂停中 </li>
-<li> 5 = 暂停异常 </li>
-<li> 6 = 任务暂停 </li>
-<li> 7 = 任务删除中 </li>
-<li> 8 = 任务删除异常 </li>
-<li> 9 = 任务删除</li>
-<li> 10 = 定时任务暂停中 </li>
+即使拨测只支持页面浏览，网络质量，文件下载
                      */
                     void SetTaskType(const std::vector<int64_t>& _taskType);
 
@@ -359,6 +387,16 @@ namespace TencentCloud
 
                     /**
                      * 任务状态列表
+<li>1 = 创建中</li>
+<li> 2 = 运行中 </li>
+<li> 3 = 运行异常 </li>
+<li> 4 = 暂停中 </li>
+<li> 5 = 暂停异常 </li>
+<li> 6 = 任务暂停 </li>
+<li> 7 = 任务删除中 </li>
+<li> 8 = 任务删除异常 </li>
+<li> 9 = 任务删除</li>
+<li> 10 = 定时任务暂停中 </li>
                      */
                     std::vector<int64_t> m_taskStatus;
                     bool m_taskStatusHasBeenSet;
@@ -393,17 +431,14 @@ namespace TencentCloud
 
                     /**
                      * 拨测类型
+<li>1 = 页面浏览</li>
+<li> 2 =文件上传 </li>
+<li> 3 = 文件下载</li>
+<li> 4 = 端口性能 </li>
+<li> 5 = 网络质量 </li>
+<li> 6 =流媒体 </li>
 
-<li>1 = 创建中</li>
-<li> 2 = 运行中 </li>
-<li> 3 = 运行异常 </li>
-<li> 4 = 暂停中 </li>
-<li> 5 = 暂停异常 </li>
-<li> 6 = 任务暂停 </li>
-<li> 7 = 任务删除中 </li>
-<li> 8 = 任务删除异常 </li>
-<li> 9 = 任务删除</li>
-<li> 10 = 定时任务暂停中 </li>
+即使拨测只支持页面浏览，网络质量，文件下载
                      */
                     std::vector<int64_t> m_taskType;
                     bool m_taskTypeHasBeenSet;

@@ -29,8 +29,6 @@
 #include <tencentcloud/live/v20180801/model/AddLiveDomainResponse.h>
 #include <tencentcloud/live/v20180801/model/AddLiveWatermarkRequest.h>
 #include <tencentcloud/live/v20180801/model/AddLiveWatermarkResponse.h>
-#include <tencentcloud/live/v20180801/model/BindLiveDomainCertRequest.h>
-#include <tencentcloud/live/v20180801/model/BindLiveDomainCertResponse.h>
 #include <tencentcloud/live/v20180801/model/CancelCommonMixStreamRequest.h>
 #include <tencentcloud/live/v20180801/model/CancelCommonMixStreamResponse.h>
 #include <tencentcloud/live/v20180801/model/CreateCommonMixStreamRequest.h>
@@ -39,8 +37,6 @@
 #include <tencentcloud/live/v20180801/model/CreateLiveCallbackRuleResponse.h>
 #include <tencentcloud/live/v20180801/model/CreateLiveCallbackTemplateRequest.h>
 #include <tencentcloud/live/v20180801/model/CreateLiveCallbackTemplateResponse.h>
-#include <tencentcloud/live/v20180801/model/CreateLiveCertRequest.h>
-#include <tencentcloud/live/v20180801/model/CreateLiveCertResponse.h>
 #include <tencentcloud/live/v20180801/model/CreateLivePullStreamTaskRequest.h>
 #include <tencentcloud/live/v20180801/model/CreateLivePullStreamTaskResponse.h>
 #include <tencentcloud/live/v20180801/model/CreateLiveRecordRequest.h>
@@ -69,8 +65,6 @@
 #include <tencentcloud/live/v20180801/model/DeleteLiveCallbackRuleResponse.h>
 #include <tencentcloud/live/v20180801/model/DeleteLiveCallbackTemplateRequest.h>
 #include <tencentcloud/live/v20180801/model/DeleteLiveCallbackTemplateResponse.h>
-#include <tencentcloud/live/v20180801/model/DeleteLiveCertRequest.h>
-#include <tencentcloud/live/v20180801/model/DeleteLiveCertResponse.h>
 #include <tencentcloud/live/v20180801/model/DeleteLiveDomainRequest.h>
 #include <tencentcloud/live/v20180801/model/DeleteLiveDomainResponse.h>
 #include <tencentcloud/live/v20180801/model/DeleteLivePullStreamTaskRequest.h>
@@ -229,10 +223,6 @@
 #include <tencentcloud/live/v20180801/model/ForbidLiveStreamResponse.h>
 #include <tencentcloud/live/v20180801/model/ModifyLiveCallbackTemplateRequest.h>
 #include <tencentcloud/live/v20180801/model/ModifyLiveCallbackTemplateResponse.h>
-#include <tencentcloud/live/v20180801/model/ModifyLiveCertRequest.h>
-#include <tencentcloud/live/v20180801/model/ModifyLiveCertResponse.h>
-#include <tencentcloud/live/v20180801/model/ModifyLiveDomainCertRequest.h>
-#include <tencentcloud/live/v20180801/model/ModifyLiveDomainCertResponse.h>
 #include <tencentcloud/live/v20180801/model/ModifyLiveDomainRefererRequest.h>
 #include <tencentcloud/live/v20180801/model/ModifyLiveDomainRefererResponse.h>
 #include <tencentcloud/live/v20180801/model/ModifyLivePlayAuthKeyRequest.h>
@@ -290,9 +280,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::AddLiveWatermarkResponse> AddLiveWatermarkOutcome;
                 typedef std::future<AddLiveWatermarkOutcome> AddLiveWatermarkOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::AddLiveWatermarkRequest&, AddLiveWatermarkOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddLiveWatermarkAsyncHandler;
-                typedef Outcome<Core::Error, Model::BindLiveDomainCertResponse> BindLiveDomainCertOutcome;
-                typedef std::future<BindLiveDomainCertOutcome> BindLiveDomainCertOutcomeCallable;
-                typedef std::function<void(const LiveClient*, const Model::BindLiveDomainCertRequest&, BindLiveDomainCertOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BindLiveDomainCertAsyncHandler;
                 typedef Outcome<Core::Error, Model::CancelCommonMixStreamResponse> CancelCommonMixStreamOutcome;
                 typedef std::future<CancelCommonMixStreamOutcome> CancelCommonMixStreamOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::CancelCommonMixStreamRequest&, CancelCommonMixStreamOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CancelCommonMixStreamAsyncHandler;
@@ -305,9 +292,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateLiveCallbackTemplateResponse> CreateLiveCallbackTemplateOutcome;
                 typedef std::future<CreateLiveCallbackTemplateOutcome> CreateLiveCallbackTemplateOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::CreateLiveCallbackTemplateRequest&, CreateLiveCallbackTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateLiveCallbackTemplateAsyncHandler;
-                typedef Outcome<Core::Error, Model::CreateLiveCertResponse> CreateLiveCertOutcome;
-                typedef std::future<CreateLiveCertOutcome> CreateLiveCertOutcomeCallable;
-                typedef std::function<void(const LiveClient*, const Model::CreateLiveCertRequest&, CreateLiveCertOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateLiveCertAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateLivePullStreamTaskResponse> CreateLivePullStreamTaskOutcome;
                 typedef std::future<CreateLivePullStreamTaskOutcome> CreateLivePullStreamTaskOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::CreateLivePullStreamTaskRequest&, CreateLivePullStreamTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateLivePullStreamTaskAsyncHandler;
@@ -350,9 +334,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteLiveCallbackTemplateResponse> DeleteLiveCallbackTemplateOutcome;
                 typedef std::future<DeleteLiveCallbackTemplateOutcome> DeleteLiveCallbackTemplateOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DeleteLiveCallbackTemplateRequest&, DeleteLiveCallbackTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLiveCallbackTemplateAsyncHandler;
-                typedef Outcome<Core::Error, Model::DeleteLiveCertResponse> DeleteLiveCertOutcome;
-                typedef std::future<DeleteLiveCertOutcome> DeleteLiveCertOutcomeCallable;
-                typedef std::function<void(const LiveClient*, const Model::DeleteLiveCertRequest&, DeleteLiveCertOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLiveCertAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteLiveDomainResponse> DeleteLiveDomainOutcome;
                 typedef std::future<DeleteLiveDomainOutcome> DeleteLiveDomainOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DeleteLiveDomainRequest&, DeleteLiveDomainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLiveDomainAsyncHandler;
@@ -590,12 +571,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyLiveCallbackTemplateResponse> ModifyLiveCallbackTemplateOutcome;
                 typedef std::future<ModifyLiveCallbackTemplateOutcome> ModifyLiveCallbackTemplateOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::ModifyLiveCallbackTemplateRequest&, ModifyLiveCallbackTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLiveCallbackTemplateAsyncHandler;
-                typedef Outcome<Core::Error, Model::ModifyLiveCertResponse> ModifyLiveCertOutcome;
-                typedef std::future<ModifyLiveCertOutcome> ModifyLiveCertOutcomeCallable;
-                typedef std::function<void(const LiveClient*, const Model::ModifyLiveCertRequest&, ModifyLiveCertOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLiveCertAsyncHandler;
-                typedef Outcome<Core::Error, Model::ModifyLiveDomainCertResponse> ModifyLiveDomainCertOutcome;
-                typedef std::future<ModifyLiveDomainCertOutcome> ModifyLiveDomainCertOutcomeCallable;
-                typedef std::function<void(const LiveClient*, const Model::ModifyLiveDomainCertRequest&, ModifyLiveDomainCertOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLiveDomainCertAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyLiveDomainRefererResponse> ModifyLiveDomainRefererOutcome;
                 typedef std::future<ModifyLiveDomainRefererOutcome> ModifyLiveDomainRefererOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::ModifyLiveDomainRefererRequest&, ModifyLiveDomainRefererOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLiveDomainRefererAsyncHandler;
@@ -681,16 +656,6 @@ namespace TencentCloud
                 AddLiveWatermarkOutcomeCallable AddLiveWatermarkCallable(const Model::AddLiveWatermarkRequest& request);
 
                 /**
-                 *域名绑定证书。
-注意：需先调用添加证书接口进行证书添加。获取到证书Id后再调用该接口进行绑定。
-                 * @param req BindLiveDomainCertRequest
-                 * @return BindLiveDomainCertOutcome
-                 */
-                BindLiveDomainCertOutcome BindLiveDomainCert(const Model::BindLiveDomainCertRequest &request);
-                void BindLiveDomainCertAsync(const Model::BindLiveDomainCertRequest& request, const BindLiveDomainCertAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                BindLiveDomainCertOutcomeCallable BindLiveDomainCertCallable(const Model::BindLiveDomainCertRequest& request);
-
-                /**
                  *该接口用来取消混流。用法与 mix_streamv2.cancel_mix_stream 基本一致。
                  * @param req CancelCommonMixStreamRequest
                  * @return CancelCommonMixStreamOutcome
@@ -730,15 +695,6 @@ namespace TencentCloud
                 CreateLiveCallbackTemplateOutcome CreateLiveCallbackTemplate(const Model::CreateLiveCallbackTemplateRequest &request);
                 void CreateLiveCallbackTemplateAsync(const Model::CreateLiveCallbackTemplateRequest& request, const CreateLiveCallbackTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateLiveCallbackTemplateOutcomeCallable CreateLiveCallbackTemplateCallable(const Model::CreateLiveCallbackTemplateRequest& request);
-
-                /**
-                 *添加证书
-                 * @param req CreateLiveCertRequest
-                 * @return CreateLiveCertOutcome
-                 */
-                CreateLiveCertOutcome CreateLiveCert(const Model::CreateLiveCertRequest &request);
-                void CreateLiveCertAsync(const Model::CreateLiveCertRequest& request, const CreateLiveCertAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                CreateLiveCertOutcomeCallable CreateLiveCertCallable(const Model::CreateLiveCertRequest& request);
 
                 /**
                  *创建直播拉流任务。支持将外部已有的点播文件，或者直播源拉取过来转推到指定的目标地址。
@@ -913,15 +869,6 @@ namespace TencentCloud
                 DeleteLiveCallbackTemplateOutcome DeleteLiveCallbackTemplate(const Model::DeleteLiveCallbackTemplateRequest &request);
                 void DeleteLiveCallbackTemplateAsync(const Model::DeleteLiveCallbackTemplateRequest& request, const DeleteLiveCallbackTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteLiveCallbackTemplateOutcomeCallable DeleteLiveCallbackTemplateCallable(const Model::DeleteLiveCallbackTemplateRequest& request);
-
-                /**
-                 *删除域名对应的证书
-                 * @param req DeleteLiveCertRequest
-                 * @return DeleteLiveCertOutcome
-                 */
-                DeleteLiveCertOutcome DeleteLiveCert(const Model::DeleteLiveCertRequest &request);
-                void DeleteLiveCertAsync(const Model::DeleteLiveCertRequest& request, const DeleteLiveCertAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DeleteLiveCertOutcomeCallable DeleteLiveCertCallable(const Model::DeleteLiveCertRequest& request);
 
                 /**
                  *删除已添加的直播域名
@@ -1676,24 +1623,6 @@ DomainName+AppName+StreamName+TemplateId唯一标识单个转码规则，如需�
                 ModifyLiveCallbackTemplateOutcome ModifyLiveCallbackTemplate(const Model::ModifyLiveCallbackTemplateRequest &request);
                 void ModifyLiveCallbackTemplateAsync(const Model::ModifyLiveCallbackTemplateRequest& request, const ModifyLiveCallbackTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyLiveCallbackTemplateOutcomeCallable ModifyLiveCallbackTemplateCallable(const Model::ModifyLiveCallbackTemplateRequest& request);
-
-                /**
-                 *修改证书
-                 * @param req ModifyLiveCertRequest
-                 * @return ModifyLiveCertOutcome
-                 */
-                ModifyLiveCertOutcome ModifyLiveCert(const Model::ModifyLiveCertRequest &request);
-                void ModifyLiveCertAsync(const Model::ModifyLiveCertRequest& request, const ModifyLiveCertAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                ModifyLiveCertOutcomeCallable ModifyLiveCertCallable(const Model::ModifyLiveCertRequest& request);
-
-                /**
-                 *修改域名和证书绑定信息
-                 * @param req ModifyLiveDomainCertRequest
-                 * @return ModifyLiveDomainCertOutcome
-                 */
-                ModifyLiveDomainCertOutcome ModifyLiveDomainCert(const Model::ModifyLiveDomainCertRequest &request);
-                void ModifyLiveDomainCertAsync(const Model::ModifyLiveDomainCertRequest& request, const ModifyLiveDomainCertAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                ModifyLiveDomainCertOutcomeCallable ModifyLiveDomainCertCallable(const Model::ModifyLiveDomainCertRequest& request);
 
                 /**
                  *设置直播域名 Referer 黑白名单。

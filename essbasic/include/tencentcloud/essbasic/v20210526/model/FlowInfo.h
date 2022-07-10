@@ -194,14 +194,14 @@ namespace TencentCloud
                     bool FlowDescriptionHasBeenSet() const;
 
                     /**
-                     * 获取渠道的业务信息，最大长度1000个字符
-                     * @return CustomerData 渠道的业务信息，最大长度1000个字符
+                     * 获取渠道的业务信息，最大长度1000个字符。发起自动签署时，需设置对应自动签署场景，目前仅支持场景：处方单-E_PRESCRIPTION_AUTO_SIGN
+                     * @return CustomerData 渠道的业务信息，最大长度1000个字符。发起自动签署时，需设置对应自动签署场景，目前仅支持场景：处方单-E_PRESCRIPTION_AUTO_SIGN
                      */
                     std::string GetCustomerData() const;
 
                     /**
-                     * 设置渠道的业务信息，最大长度1000个字符
-                     * @param CustomerData 渠道的业务信息，最大长度1000个字符
+                     * 设置渠道的业务信息，最大长度1000个字符。发起自动签署时，需设置对应自动签署场景，目前仅支持场景：处方单-E_PRESCRIPTION_AUTO_SIGN
+                     * @param CustomerData 渠道的业务信息，最大长度1000个字符。发起自动签署时，需设置对应自动签署场景，目前仅支持场景：处方单-E_PRESCRIPTION_AUTO_SIGN
                      */
                     void SetCustomerData(const std::string& _customerData);
 
@@ -298,7 +298,7 @@ namespace TencentCloud
                     bool m_flowDescriptionHasBeenSet;
 
                     /**
-                     * 渠道的业务信息，最大长度1000个字符
+                     * 渠道的业务信息，最大长度1000个字符。发起自动签署时，需设置对应自动签署场景，目前仅支持场景：处方单-E_PRESCRIPTION_AUTO_SIGN
                      */
                     std::string m_customerData;
                     bool m_customerDataHasBeenSet;

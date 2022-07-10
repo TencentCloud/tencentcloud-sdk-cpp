@@ -117,6 +117,8 @@
 #include <tencentcloud/cpdp/v20190820/model/CreateOpenBankSubMerchantRateConfigureResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/CreateOpenBankUnifiedOrderRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/CreateOpenBankUnifiedOrderResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/CreateOpenBankVerificationOrderRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/CreateOpenBankVerificationOrderResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/CreateOrderRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/CreateOrderResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/CreatePayMerchantRequest.h>
@@ -331,6 +333,8 @@
 #include <tencentcloud/cpdp/v20190820/model/QueryOpenBankSupportBankListResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryOpenBankUnbindExternalSubMerchantBankAccountRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryOpenBankUnbindExternalSubMerchantBankAccountResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryOpenBankVerificationOrderRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryOpenBankVerificationOrderResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryOrderRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryOrderResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryOrderStatusRequest.h>
@@ -423,6 +427,8 @@
 #include <tencentcloud/cpdp/v20190820/model/UploadTaxListResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/UploadTaxPaymentRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/UploadTaxPaymentResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/VerifyOpenBankAccountRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/VerifyOpenBankAccountResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/ViewContractRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/ViewContractResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/ViewMerchantRequest.h>
@@ -586,6 +592,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateOpenBankUnifiedOrderResponse> CreateOpenBankUnifiedOrderOutcome;
                 typedef std::future<CreateOpenBankUnifiedOrderOutcome> CreateOpenBankUnifiedOrderOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::CreateOpenBankUnifiedOrderRequest&, CreateOpenBankUnifiedOrderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateOpenBankUnifiedOrderAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateOpenBankVerificationOrderResponse> CreateOpenBankVerificationOrderOutcome;
+                typedef std::future<CreateOpenBankVerificationOrderOutcome> CreateOpenBankVerificationOrderOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::CreateOpenBankVerificationOrderRequest&, CreateOpenBankVerificationOrderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateOpenBankVerificationOrderAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateOrderResponse> CreateOrderOutcome;
                 typedef std::future<CreateOrderOutcome> CreateOrderOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::CreateOrderRequest&, CreateOrderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateOrderAsyncHandler;
@@ -907,6 +916,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::QueryOpenBankUnbindExternalSubMerchantBankAccountResponse> QueryOpenBankUnbindExternalSubMerchantBankAccountOutcome;
                 typedef std::future<QueryOpenBankUnbindExternalSubMerchantBankAccountOutcome> QueryOpenBankUnbindExternalSubMerchantBankAccountOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::QueryOpenBankUnbindExternalSubMerchantBankAccountRequest&, QueryOpenBankUnbindExternalSubMerchantBankAccountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryOpenBankUnbindExternalSubMerchantBankAccountAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryOpenBankVerificationOrderResponse> QueryOpenBankVerificationOrderOutcome;
+                typedef std::future<QueryOpenBankVerificationOrderOutcome> QueryOpenBankVerificationOrderOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::QueryOpenBankVerificationOrderRequest&, QueryOpenBankVerificationOrderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryOpenBankVerificationOrderAsyncHandler;
                 typedef Outcome<Core::Error, Model::QueryOrderResponse> QueryOrderOutcome;
                 typedef std::future<QueryOrderOutcome> QueryOrderOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::QueryOrderRequest&, QueryOrderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryOrderAsyncHandler;
@@ -1045,6 +1057,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UploadTaxPaymentResponse> UploadTaxPaymentOutcome;
                 typedef std::future<UploadTaxPaymentOutcome> UploadTaxPaymentOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::UploadTaxPaymentRequest&, UploadTaxPaymentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UploadTaxPaymentAsyncHandler;
+                typedef Outcome<Core::Error, Model::VerifyOpenBankAccountResponse> VerifyOpenBankAccountOutcome;
+                typedef std::future<VerifyOpenBankAccountOutcome> VerifyOpenBankAccountOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::VerifyOpenBankAccountRequest&, VerifyOpenBankAccountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> VerifyOpenBankAccountAsyncHandler;
                 typedef Outcome<Core::Error, Model::ViewContractResponse> ViewContractOutcome;
                 typedef std::future<ViewContractOutcome> ViewContractOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::ViewContractRequest&, ViewContractOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ViewContractAsyncHandler;
@@ -1456,7 +1471,7 @@ namespace TencentCloud
                 CreateOpenBankMerchantOutcomeCallable CreateOpenBankMerchantCallable(const Model::CreateOpenBankMerchantRequest& request);
 
                 /**
-                 *云企付-创建支付订单
+                 *云企付-创建支付订单。支持B2B网关支付，B2C转账下单。
                  * @param req CreateOpenBankPaymentOrderRequest
                  * @return CreateOpenBankPaymentOrderOutcome
                  */
@@ -1490,6 +1505,15 @@ namespace TencentCloud
                 CreateOpenBankUnifiedOrderOutcome CreateOpenBankUnifiedOrder(const Model::CreateOpenBankUnifiedOrderRequest &request);
                 void CreateOpenBankUnifiedOrderAsync(const Model::CreateOpenBankUnifiedOrderRequest& request, const CreateOpenBankUnifiedOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateOpenBankUnifiedOrderOutcomeCallable CreateOpenBankUnifiedOrderCallable(const Model::CreateOpenBankUnifiedOrderRequest& request);
+
+                /**
+                 *云企付-创建核销申请，适用于针对支付订单维度的确认收货，解冻等业务场景。目前支持的渠道有TENPAY下的EBANK_PAYMENT付款方式创建支付订单时，选择担保支付下单的订单进行解冻。
+                 * @param req CreateOpenBankVerificationOrderRequest
+                 * @return CreateOpenBankVerificationOrderOutcome
+                 */
+                CreateOpenBankVerificationOrderOutcome CreateOpenBankVerificationOrder(const Model::CreateOpenBankVerificationOrderRequest &request);
+                void CreateOpenBankVerificationOrderAsync(const Model::CreateOpenBankVerificationOrderRequest& request, const CreateOpenBankVerificationOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateOpenBankVerificationOrderOutcomeCallable CreateOpenBankVerificationOrderCallable(const Model::CreateOpenBankVerificationOrderRequest& request);
 
                 /**
                  *云鉴-消费订单发起的接口
@@ -2458,6 +2482,15 @@ namespace TencentCloud
                 QueryOpenBankUnbindExternalSubMerchantBankAccountOutcomeCallable QueryOpenBankUnbindExternalSubMerchantBankAccountCallable(const Model::QueryOpenBankUnbindExternalSubMerchantBankAccountRequest& request);
 
                 /**
+                 *云企付-查询核销订单状态，客户可以使用该接口来查询核销申请的订单状态。目前仅支持TENPAY渠道EBANK_PAYMENT付款方式的担保支付订单查询。
+                 * @param req QueryOpenBankVerificationOrderRequest
+                 * @return QueryOpenBankVerificationOrderOutcome
+                 */
+                QueryOpenBankVerificationOrderOutcome QueryOpenBankVerificationOrder(const Model::QueryOpenBankVerificationOrderRequest &request);
+                void QueryOpenBankVerificationOrderAsync(const Model::QueryOpenBankVerificationOrderRequest& request, const QueryOpenBankVerificationOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryOpenBankVerificationOrderOutcomeCallable QueryOpenBankVerificationOrderCallable(const Model::QueryOpenBankVerificationOrderRequest& request);
+
+                /**
                  *根据订单号，或者用户Id，查询支付订单状态 
                  * @param req QueryOrderRequest
                  * @return QueryOrderOutcome
@@ -2870,6 +2903,15 @@ namespace TencentCloud
                 UploadTaxPaymentOutcome UploadTaxPayment(const Model::UploadTaxPaymentRequest &request);
                 void UploadTaxPaymentAsync(const Model::UploadTaxPaymentRequest& request, const UploadTaxPaymentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UploadTaxPaymentOutcomeCallable UploadTaxPaymentCallable(const Model::UploadTaxPaymentRequest& request);
+
+                /**
+                 *云企付-子商户银行卡打款验证，在接入TENPAY渠道EBANK_PAYMENT付款时，若客户期望接入担保支付，需在接入前先完成，收款商户绑定的银行卡进行打款验证。验证成功后，才可以调用CreateOpenBankPaymentOrder接口进行担保支付下单。
+                 * @param req VerifyOpenBankAccountRequest
+                 * @return VerifyOpenBankAccountOutcome
+                 */
+                VerifyOpenBankAccountOutcome VerifyOpenBankAccount(const Model::VerifyOpenBankAccountRequest &request);
+                void VerifyOpenBankAccountAsync(const Model::VerifyOpenBankAccountRequest& request, const VerifyOpenBankAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                VerifyOpenBankAccountOutcomeCallable VerifyOpenBankAccountCallable(const Model::VerifyOpenBankAccountRequest& request);
 
                 /**
                  *云支付-查询合同明细接口

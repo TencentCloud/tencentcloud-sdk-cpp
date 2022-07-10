@@ -208,20 +208,28 @@ namespace TencentCloud
                     bool OrganizationOpenIdHasBeenSet() const;
 
                     /**
-                     * 获取签署人类型，PERSON-个人；ORGANIZATION-企业；
+                     * 获取签署人类型，PERSON-个人；
+PERSON_AUTO_SIGN-个人自动签；
+ORGANIZATION-企业；
 ENTERPRISESERVER-企业静默签;
 注：ENTERPRISESERVER 类型仅用于使用文件创建签署流程（ChannelCreateFlowByFiles）接口；并且仅能指定发起方企业签署方为静默签署；
-                     * @return ApproverType 签署人类型，PERSON-个人；ORGANIZATION-企业；
+                     * @return ApproverType 签署人类型，PERSON-个人；
+PERSON_AUTO_SIGN-个人自动签；
+ORGANIZATION-企业；
 ENTERPRISESERVER-企业静默签;
 注：ENTERPRISESERVER 类型仅用于使用文件创建签署流程（ChannelCreateFlowByFiles）接口；并且仅能指定发起方企业签署方为静默签署；
                      */
                     std::string GetApproverType() const;
 
                     /**
-                     * 设置签署人类型，PERSON-个人；ORGANIZATION-企业；
+                     * 设置签署人类型，PERSON-个人；
+PERSON_AUTO_SIGN-个人自动签；
+ORGANIZATION-企业；
 ENTERPRISESERVER-企业静默签;
 注：ENTERPRISESERVER 类型仅用于使用文件创建签署流程（ChannelCreateFlowByFiles）接口；并且仅能指定发起方企业签署方为静默签署；
-                     * @param ApproverType 签署人类型，PERSON-个人；ORGANIZATION-企业；
+                     * @param ApproverType 签署人类型，PERSON-个人；
+PERSON_AUTO_SIGN-个人自动签；
+ORGANIZATION-企业；
 ENTERPRISESERVER-企业静默签;
 注：ENTERPRISESERVER 类型仅用于使用文件创建签署流程（ChannelCreateFlowByFiles）接口；并且仅能指定发起方企业签署方为静默签署；
                      */
@@ -414,7 +422,9 @@ ENTERPRISESERVER-企业静默签;
                     bool m_organizationOpenIdHasBeenSet;
 
                     /**
-                     * 签署人类型，PERSON-个人；ORGANIZATION-企业；
+                     * 签署人类型，PERSON-个人；
+PERSON_AUTO_SIGN-个人自动签；
+ORGANIZATION-企业；
 ENTERPRISESERVER-企业静默签;
 注：ENTERPRISESERVER 类型仅用于使用文件创建签署流程（ChannelCreateFlowByFiles）接口；并且仅能指定发起方企业签署方为静默签署；
                      */

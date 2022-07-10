@@ -2921,6 +2921,49 @@ AntiddosClient::DescribeListWaterPrintConfigOutcomeCallable AntiddosClient::Desc
     return task->get_future();
 }
 
+AntiddosClient::DescribeNewL7RulesOutcome AntiddosClient::DescribeNewL7Rules(const DescribeNewL7RulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeNewL7Rules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeNewL7RulesResponse rsp = DescribeNewL7RulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeNewL7RulesOutcome(rsp);
+        else
+            return DescribeNewL7RulesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeNewL7RulesOutcome(outcome.GetError());
+    }
+}
+
+void AntiddosClient::DescribeNewL7RulesAsync(const DescribeNewL7RulesRequest& request, const DescribeNewL7RulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeNewL7Rules(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AntiddosClient::DescribeNewL7RulesOutcomeCallable AntiddosClient::DescribeNewL7RulesCallable(const DescribeNewL7RulesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeNewL7RulesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeNewL7Rules(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 AntiddosClient::DescribeOverviewAttackTrendOutcome AntiddosClient::DescribeOverviewAttackTrend(const DescribeOverviewAttackTrendRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeOverviewAttackTrend");

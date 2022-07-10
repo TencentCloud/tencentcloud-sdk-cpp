@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool RefundAmountHasBeenSet() const;
 
                     /**
-                     * 获取渠道商户号。
-                     * @return ChannelMerchantId 渠道商户号。
+                     * 获取渠道商户号。外部平台接入云企付平台下发。必填。
+                     * @return ChannelMerchantId 渠道商户号。外部平台接入云企付平台下发。必填。
                      */
                     std::string GetChannelMerchantId() const;
 
                     /**
-                     * 设置渠道商户号。
-                     * @param ChannelMerchantId 渠道商户号。
+                     * 设置渠道商户号。外部平台接入云企付平台下发。必填。
+                     * @param ChannelMerchantId 渠道商户号。外部平台接入云企付平台下发。必填。
                      */
                     void SetChannelMerchantId(const std::string& _channelMerchantId);
 
@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool ChannelMerchantIdHasBeenSet() const;
 
                     /**
-                     * 获取外部商户订单号，与云企付渠道订单号二者选填其一。
-                     * @return OutOrderId 外部商户订单号，与云企付渠道订单号二者选填其一。
+                     * 获取外部商户订单号，与云企付渠道订单号二者不能同时为空。
+                     * @return OutOrderId 外部商户订单号，与云企付渠道订单号二者不能同时为空。
                      */
                     std::string GetOutOrderId() const;
 
                     /**
-                     * 设置外部商户订单号，与云企付渠道订单号二者选填其一。
-                     * @param OutOrderId 外部商户订单号，与云企付渠道订单号二者选填其一。
+                     * 设置外部商户订单号，与云企付渠道订单号二者不能同时为空。
+                     * @param OutOrderId 外部商户订单号，与云企付渠道订单号二者不能同时为空。
                      */
                     void SetOutOrderId(const std::string& _outOrderId);
 
@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool OutOrderIdHasBeenSet() const;
 
                     /**
-                     * 获取云企付渠道订单号，与外部订单号二者选填其一。
-                     * @return ChannelOrderId 云企付渠道订单号，与外部订单号二者选填其一。
+                     * 获取云企付渠道订单号，与外部订单号二者不能同时为空。
+                     * @return ChannelOrderId 云企付渠道订单号，与外部订单号二者不能同时为空。
                      */
                     std::string GetChannelOrderId() const;
 
                     /**
-                     * 设置云企付渠道订单号，与外部订单号二者选填其一。
-                     * @param ChannelOrderId 云企付渠道订单号，与外部订单号二者选填其一。
+                     * 设置云企付渠道订单号，与外部订单号二者不能同时为空。
+                     * @param ChannelOrderId 云企付渠道订单号，与外部订单号二者不能同时为空。
                      */
                     void SetChannelOrderId(const std::string& _channelOrderId);
 
@@ -152,13 +152,17 @@ namespace TencentCloud
 
                     /**
                      * 获取退款原因。
+当EBANK_PAYMENT担保支付订单退款时，此字段必传。
                      * @return RefundReason 退款原因。
+当EBANK_PAYMENT担保支付订单退款时，此字段必传。
                      */
                     std::string GetRefundReason() const;
 
                     /**
                      * 设置退款原因。
+当EBANK_PAYMENT担保支付订单退款时，此字段必传。
                      * @param RefundReason 退款原因。
+当EBANK_PAYMENT担保支付订单退款时，此字段必传。
                      */
                     void SetRefundReason(const std::string& _refundReason);
 
@@ -253,19 +257,19 @@ _不填默认为生产环境_
                     bool m_refundAmountHasBeenSet;
 
                     /**
-                     * 渠道商户号。
+                     * 渠道商户号。外部平台接入云企付平台下发。必填。
                      */
                     std::string m_channelMerchantId;
                     bool m_channelMerchantIdHasBeenSet;
 
                     /**
-                     * 外部商户订单号，与云企付渠道订单号二者选填其一。
+                     * 外部商户订单号，与云企付渠道订单号二者不能同时为空。
                      */
                     std::string m_outOrderId;
                     bool m_outOrderIdHasBeenSet;
 
                     /**
-                     * 云企付渠道订单号，与外部订单号二者选填其一。
+                     * 云企付渠道订单号，与外部订单号二者不能同时为空。
                      */
                     std::string m_channelOrderId;
                     bool m_channelOrderIdHasBeenSet;
@@ -278,6 +282,7 @@ _不填默认为生产环境_
 
                     /**
                      * 退款原因。
+当EBANK_PAYMENT担保支付订单退款时，此字段必传。
                      */
                     std::string m_refundReason;
                     bool m_refundReasonHasBeenSet;

@@ -2061,6 +2061,49 @@ CpdpClient::CreateOpenBankUnifiedOrderOutcomeCallable CpdpClient::CreateOpenBank
     return task->get_future();
 }
 
+CpdpClient::CreateOpenBankVerificationOrderOutcome CpdpClient::CreateOpenBankVerificationOrder(const CreateOpenBankVerificationOrderRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateOpenBankVerificationOrder");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateOpenBankVerificationOrderResponse rsp = CreateOpenBankVerificationOrderResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateOpenBankVerificationOrderOutcome(rsp);
+        else
+            return CreateOpenBankVerificationOrderOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateOpenBankVerificationOrderOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::CreateOpenBankVerificationOrderAsync(const CreateOpenBankVerificationOrderRequest& request, const CreateOpenBankVerificationOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateOpenBankVerificationOrder(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::CreateOpenBankVerificationOrderOutcomeCallable CpdpClient::CreateOpenBankVerificationOrderCallable(const CreateOpenBankVerificationOrderRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateOpenBankVerificationOrderOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateOpenBankVerificationOrder(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CpdpClient::CreateOrderOutcome CpdpClient::CreateOrder(const CreateOrderRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateOrder");
@@ -6662,6 +6705,49 @@ CpdpClient::QueryOpenBankUnbindExternalSubMerchantBankAccountOutcomeCallable Cpd
     return task->get_future();
 }
 
+CpdpClient::QueryOpenBankVerificationOrderOutcome CpdpClient::QueryOpenBankVerificationOrder(const QueryOpenBankVerificationOrderRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryOpenBankVerificationOrder");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryOpenBankVerificationOrderResponse rsp = QueryOpenBankVerificationOrderResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryOpenBankVerificationOrderOutcome(rsp);
+        else
+            return QueryOpenBankVerificationOrderOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryOpenBankVerificationOrderOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::QueryOpenBankVerificationOrderAsync(const QueryOpenBankVerificationOrderRequest& request, const QueryOpenBankVerificationOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->QueryOpenBankVerificationOrder(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::QueryOpenBankVerificationOrderOutcomeCallable CpdpClient::QueryOpenBankVerificationOrderCallable(const QueryOpenBankVerificationOrderRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<QueryOpenBankVerificationOrderOutcome()>>(
+        [this, request]()
+        {
+            return this->QueryOpenBankVerificationOrder(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CpdpClient::QueryOrderOutcome CpdpClient::QueryOrder(const QueryOrderRequest &request)
 {
     auto outcome = MakeRequest(request, "QueryOrder");
@@ -8633,6 +8719,49 @@ CpdpClient::UploadTaxPaymentOutcomeCallable CpdpClient::UploadTaxPaymentCallable
         [this, request]()
         {
             return this->UploadTaxPayment(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CpdpClient::VerifyOpenBankAccountOutcome CpdpClient::VerifyOpenBankAccount(const VerifyOpenBankAccountRequest &request)
+{
+    auto outcome = MakeRequest(request, "VerifyOpenBankAccount");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        VerifyOpenBankAccountResponse rsp = VerifyOpenBankAccountResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return VerifyOpenBankAccountOutcome(rsp);
+        else
+            return VerifyOpenBankAccountOutcome(o.GetError());
+    }
+    else
+    {
+        return VerifyOpenBankAccountOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::VerifyOpenBankAccountAsync(const VerifyOpenBankAccountRequest& request, const VerifyOpenBankAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->VerifyOpenBankAccount(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::VerifyOpenBankAccountOutcomeCallable CpdpClient::VerifyOpenBankAccountCallable(const VerifyOpenBankAccountRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<VerifyOpenBankAccountOutcome()>>(
+        [this, request]()
+        {
+            return this->VerifyOpenBankAccount(request);
         }
     );
 

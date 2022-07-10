@@ -831,14 +831,18 @@ namespace TencentCloud
                     bool EnablePrometheusConfHasBeenSet() const;
 
                     /**
-                     * 获取1：开始apm采集；0：关闭apm采集
-                     * @return EnableTracing 1：开始apm采集；0：关闭apm采集
+                     * 获取1：开始apm采集（skywalking）；
+0：关闭apm采集；
+                     * @return EnableTracing 1：开始apm采集（skywalking）；
+0：关闭apm采集；
                      */
                     int64_t GetEnableTracing() const;
 
                     /**
-                     * 设置1：开始apm采集；0：关闭apm采集
-                     * @param EnableTracing 1：开始apm采集；0：关闭apm采集
+                     * 设置1：开始apm采集（skywalking）；
+0：关闭apm采集；
+                     * @param EnableTracing 1：开始apm采集（skywalking）；
+0：关闭apm采集；
                      */
                     void SetEnableTracing(const int64_t& _enableTracing);
 
@@ -1105,7 +1109,8 @@ namespace TencentCloud
                     bool m_enablePrometheusConfHasBeenSet;
 
                     /**
-                     * 1：开始apm采集；0：关闭apm采集
+                     * 1：开始apm采集（skywalking）；
+0：关闭apm采集；
                      */
                     int64_t m_enableTracing;
                     bool m_enableTracingHasBeenSet;

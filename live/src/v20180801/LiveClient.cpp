@@ -169,49 +169,6 @@ LiveClient::AddLiveWatermarkOutcomeCallable LiveClient::AddLiveWatermarkCallable
     return task->get_future();
 }
 
-LiveClient::BindLiveDomainCertOutcome LiveClient::BindLiveDomainCert(const BindLiveDomainCertRequest &request)
-{
-    auto outcome = MakeRequest(request, "BindLiveDomainCert");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        BindLiveDomainCertResponse rsp = BindLiveDomainCertResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return BindLiveDomainCertOutcome(rsp);
-        else
-            return BindLiveDomainCertOutcome(o.GetError());
-    }
-    else
-    {
-        return BindLiveDomainCertOutcome(outcome.GetError());
-    }
-}
-
-void LiveClient::BindLiveDomainCertAsync(const BindLiveDomainCertRequest& request, const BindLiveDomainCertAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->BindLiveDomainCert(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-LiveClient::BindLiveDomainCertOutcomeCallable LiveClient::BindLiveDomainCertCallable(const BindLiveDomainCertRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<BindLiveDomainCertOutcome()>>(
-        [this, request]()
-        {
-            return this->BindLiveDomainCert(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 LiveClient::CancelCommonMixStreamOutcome LiveClient::CancelCommonMixStream(const CancelCommonMixStreamRequest &request)
 {
     auto outcome = MakeRequest(request, "CancelCommonMixStream");
@@ -377,49 +334,6 @@ LiveClient::CreateLiveCallbackTemplateOutcomeCallable LiveClient::CreateLiveCall
         [this, request]()
         {
             return this->CreateLiveCallbackTemplate(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-LiveClient::CreateLiveCertOutcome LiveClient::CreateLiveCert(const CreateLiveCertRequest &request)
-{
-    auto outcome = MakeRequest(request, "CreateLiveCert");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        CreateLiveCertResponse rsp = CreateLiveCertResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return CreateLiveCertOutcome(rsp);
-        else
-            return CreateLiveCertOutcome(o.GetError());
-    }
-    else
-    {
-        return CreateLiveCertOutcome(outcome.GetError());
-    }
-}
-
-void LiveClient::CreateLiveCertAsync(const CreateLiveCertRequest& request, const CreateLiveCertAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateLiveCert(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-LiveClient::CreateLiveCertOutcomeCallable LiveClient::CreateLiveCertCallable(const CreateLiveCertRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<CreateLiveCertOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateLiveCert(request);
         }
     );
 
@@ -1022,49 +936,6 @@ LiveClient::DeleteLiveCallbackTemplateOutcomeCallable LiveClient::DeleteLiveCall
         [this, request]()
         {
             return this->DeleteLiveCallbackTemplate(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-LiveClient::DeleteLiveCertOutcome LiveClient::DeleteLiveCert(const DeleteLiveCertRequest &request)
-{
-    auto outcome = MakeRequest(request, "DeleteLiveCert");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DeleteLiveCertResponse rsp = DeleteLiveCertResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DeleteLiveCertOutcome(rsp);
-        else
-            return DeleteLiveCertOutcome(o.GetError());
-    }
-    else
-    {
-        return DeleteLiveCertOutcome(outcome.GetError());
-    }
-}
-
-void LiveClient::DeleteLiveCertAsync(const DeleteLiveCertRequest& request, const DeleteLiveCertAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteLiveCert(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-LiveClient::DeleteLiveCertOutcomeCallable LiveClient::DeleteLiveCertCallable(const DeleteLiveCertRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DeleteLiveCertOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteLiveCert(request);
         }
     );
 
@@ -4462,92 +4333,6 @@ LiveClient::ModifyLiveCallbackTemplateOutcomeCallable LiveClient::ModifyLiveCall
         [this, request]()
         {
             return this->ModifyLiveCallbackTemplate(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-LiveClient::ModifyLiveCertOutcome LiveClient::ModifyLiveCert(const ModifyLiveCertRequest &request)
-{
-    auto outcome = MakeRequest(request, "ModifyLiveCert");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        ModifyLiveCertResponse rsp = ModifyLiveCertResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return ModifyLiveCertOutcome(rsp);
-        else
-            return ModifyLiveCertOutcome(o.GetError());
-    }
-    else
-    {
-        return ModifyLiveCertOutcome(outcome.GetError());
-    }
-}
-
-void LiveClient::ModifyLiveCertAsync(const ModifyLiveCertRequest& request, const ModifyLiveCertAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyLiveCert(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-LiveClient::ModifyLiveCertOutcomeCallable LiveClient::ModifyLiveCertCallable(const ModifyLiveCertRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<ModifyLiveCertOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyLiveCert(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-LiveClient::ModifyLiveDomainCertOutcome LiveClient::ModifyLiveDomainCert(const ModifyLiveDomainCertRequest &request)
-{
-    auto outcome = MakeRequest(request, "ModifyLiveDomainCert");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        ModifyLiveDomainCertResponse rsp = ModifyLiveDomainCertResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return ModifyLiveDomainCertOutcome(rsp);
-        else
-            return ModifyLiveDomainCertOutcome(o.GetError());
-    }
-    else
-    {
-        return ModifyLiveDomainCertOutcome(outcome.GetError());
-    }
-}
-
-void LiveClient::ModifyLiveDomainCertAsync(const ModifyLiveDomainCertRequest& request, const ModifyLiveDomainCertAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyLiveDomainCert(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-LiveClient::ModifyLiveDomainCertOutcomeCallable LiveClient::ModifyLiveDomainCertCallable(const ModifyLiveDomainCertRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<ModifyLiveDomainCertOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyLiveDomainCert(request);
         }
     );
 
