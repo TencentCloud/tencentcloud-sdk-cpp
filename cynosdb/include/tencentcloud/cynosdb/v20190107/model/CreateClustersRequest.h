@@ -263,14 +263,14 @@ namespace TencentCloud
                     bool AdminPasswordHasBeenSet() const;
 
                     /**
-                     * 获取端口，默认5432
-                     * @return Port 端口，默认5432
+                     * 获取端口，默认3306，取值范围[0, 65535)
+                     * @return Port 端口，默认3306，取值范围[0, 65535)
                      */
                     int64_t GetPort() const;
 
                     /**
-                     * 设置端口，默认5432
-                     * @param Port 端口，默认5432
+                     * 设置端口，默认3306，取值范围[0, 65535)
+                     * @param Port 端口，默认3306，取值范围[0, 65535)
                      */
                     void SetPort(const int64_t& _port);
 
@@ -445,14 +445,14 @@ timeRollback，时间点回档
                     bool StorageLimitHasBeenSet() const;
 
                     /**
-                     * 获取实例数量
-                     * @return InstanceCount 实例数量
+                     * 获取实例数量，数量范围为(0,16]
+                     * @return InstanceCount 实例数量，数量范围为(0,16]
                      */
                     int64_t GetInstanceCount() const;
 
                     /**
-                     * 设置实例数量
-                     * @param InstanceCount 实例数量
+                     * 设置实例数量，数量范围为(0,16]
+                     * @param InstanceCount 实例数量，数量范围为(0,16]
                      */
                     void SetInstanceCount(const int64_t& _instanceCount);
 
@@ -499,14 +499,14 @@ timeRollback，时间点回档
                     bool TimeUnitHasBeenSet() const;
 
                     /**
-                     * 获取包年包月购买是否自动续费
-                     * @return AutoRenewFlag 包年包月购买是否自动续费
+                     * 获取包年包月购买是否自动续费，默认为0
+                     * @return AutoRenewFlag 包年包月购买是否自动续费，默认为0
                      */
                     int64_t GetAutoRenewFlag() const;
 
                     /**
-                     * 设置包年包月购买是否自动续费
-                     * @param AutoRenewFlag 包年包月购买是否自动续费
+                     * 设置包年包月购买是否自动续费，默认为0
+                     * @param AutoRenewFlag 包年包月购买是否自动续费，默认为0
                      */
                     void SetAutoRenewFlag(const int64_t& _autoRenewFlag);
 
@@ -813,14 +813,14 @@ cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回
                     bool DealModeHasBeenSet() const;
 
                     /**
-                     * 获取参数模版ID
-                     * @return ParamTemplateId 参数模版ID
+                     * 获取参数模版ID，可以通过查询参数模板信息DescribeParamTemplates获得参数模板ID
+                     * @return ParamTemplateId 参数模版ID，可以通过查询参数模板信息DescribeParamTemplates获得参数模板ID
                      */
                     int64_t GetParamTemplateId() const;
 
                     /**
-                     * 设置参数模版ID
-                     * @param ParamTemplateId 参数模版ID
+                     * 设置参数模版ID，可以通过查询参数模板信息DescribeParamTemplates获得参数模板ID
+                     * @param ParamTemplateId 参数模版ID，可以通过查询参数模板信息DescribeParamTemplates获得参数模板ID
                      */
                     void SetParamTemplateId(const int64_t& _paramTemplateId);
 
@@ -829,6 +829,24 @@ cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回
                      * @return ParamTemplateId 是否已赋值
                      */
                     bool ParamTemplateIdHasBeenSet() const;
+
+                    /**
+                     * 获取多可用区地址
+                     * @return SlaveZone 多可用区地址
+                     */
+                    std::string GetSlaveZone() const;
+
+                    /**
+                     * 设置多可用区地址
+                     * @param SlaveZone 多可用区地址
+                     */
+                    void SetSlaveZone(const std::string& _slaveZone);
+
+                    /**
+                     * 判断参数 SlaveZone 是否已赋值
+                     * @return SlaveZone 是否已赋值
+                     */
+                    bool SlaveZoneHasBeenSet() const;
 
                 private:
 
@@ -904,7 +922,7 @@ cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回
                     bool m_adminPasswordHasBeenSet;
 
                     /**
-                     * 端口，默认5432
+                     * 端口，默认3306，取值范围[0, 65535)
                      */
                     int64_t m_port;
                     bool m_portHasBeenSet;
@@ -963,7 +981,7 @@ timeRollback，时间点回档
                     bool m_storageLimitHasBeenSet;
 
                     /**
-                     * 实例数量
+                     * 实例数量，数量范围为(0,16]
                      */
                     int64_t m_instanceCount;
                     bool m_instanceCountHasBeenSet;
@@ -981,7 +999,7 @@ timeRollback，时间点回档
                     bool m_timeUnitHasBeenSet;
 
                     /**
-                     * 包年包月购买是否自动续费
+                     * 包年包月购买是否自动续费，默认为0
                      */
                     int64_t m_autoRenewFlag;
                     bool m_autoRenewFlagHasBeenSet;
@@ -1082,10 +1100,16 @@ cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回
                     bool m_dealModeHasBeenSet;
 
                     /**
-                     * 参数模版ID
+                     * 参数模版ID，可以通过查询参数模板信息DescribeParamTemplates获得参数模板ID
                      */
                     int64_t m_paramTemplateId;
                     bool m_paramTemplateIdHasBeenSet;
+
+                    /**
+                     * 多可用区地址
+                     */
+                    std::string m_slaveZone;
+                    bool m_slaveZoneHasBeenSet;
 
                 };
             }

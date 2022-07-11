@@ -55,6 +55,8 @@
 #include <tencentcloud/antiddos/v20200309/model/CreateIPAlarmThresholdConfigResponse.h>
 #include <tencentcloud/antiddos/v20200309/model/CreateL7RuleCertsRequest.h>
 #include <tencentcloud/antiddos/v20200309/model/CreateL7RuleCertsResponse.h>
+#include <tencentcloud/antiddos/v20200309/model/CreateNewL7RulesRequest.h>
+#include <tencentcloud/antiddos/v20200309/model/CreateNewL7RulesResponse.h>
 #include <tencentcloud/antiddos/v20200309/model/CreatePacketFilterConfigRequest.h>
 #include <tencentcloud/antiddos/v20200309/model/CreatePacketFilterConfigResponse.h>
 #include <tencentcloud/antiddos/v20200309/model/CreatePortAclConfigRequest.h>
@@ -265,6 +267,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateL7RuleCertsResponse> CreateL7RuleCertsOutcome;
                 typedef std::future<CreateL7RuleCertsOutcome> CreateL7RuleCertsOutcomeCallable;
                 typedef std::function<void(const AntiddosClient*, const Model::CreateL7RuleCertsRequest&, CreateL7RuleCertsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateL7RuleCertsAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateNewL7RulesResponse> CreateNewL7RulesOutcome;
+                typedef std::future<CreateNewL7RulesOutcome> CreateNewL7RulesOutcomeCallable;
+                typedef std::function<void(const AntiddosClient*, const Model::CreateNewL7RulesRequest&, CreateNewL7RulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateNewL7RulesAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreatePacketFilterConfigResponse> CreatePacketFilterConfigOutcome;
                 typedef std::future<CreatePacketFilterConfigOutcome> CreatePacketFilterConfigOutcomeCallable;
                 typedef std::function<void(const AntiddosClient*, const Model::CreatePacketFilterConfigRequest&, CreatePacketFilterConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePacketFilterConfigAsyncHandler;
@@ -633,6 +638,15 @@ namespace TencentCloud
                 CreateL7RuleCertsOutcome CreateL7RuleCerts(const Model::CreateL7RuleCertsRequest &request);
                 void CreateL7RuleCertsAsync(const Model::CreateL7RuleCertsRequest& request, const CreateL7RuleCertsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateL7RuleCertsOutcomeCallable CreateL7RuleCertsCallable(const Model::CreateL7RuleCertsRequest& request);
+
+                /**
+                 *添加7层转发规则
+                 * @param req CreateNewL7RulesRequest
+                 * @return CreateNewL7RulesOutcome
+                 */
+                CreateNewL7RulesOutcome CreateNewL7Rules(const Model::CreateNewL7RulesRequest &request);
+                void CreateNewL7RulesAsync(const Model::CreateNewL7RulesRequest& request, const CreateNewL7RulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateNewL7RulesOutcomeCallable CreateNewL7RulesCallable(const Model::CreateNewL7RulesRequest& request);
 
                 /**
                  *添加DDoS防护的特征过滤规则

@@ -25,7 +25,8 @@ using namespace std;
 CreateZoneRequest::CreateZoneRequest() :
     m_nameHasBeenSet(false),
     m_typeHasBeenSet(false),
-    m_jumpStartHasBeenSet(false)
+    m_jumpStartHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,21 @@ string CreateZoneRequest::ToJsonString() const
         string key = "JumpStart";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_jumpStart, allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -114,6 +130,22 @@ void CreateZoneRequest::SetJumpStart(const bool& _jumpStart)
 bool CreateZoneRequest::JumpStartHasBeenSet() const
 {
     return m_jumpStartHasBeenSet;
+}
+
+vector<Tag> CreateZoneRequest::GetTags() const
+{
+    return m_tags;
+}
+
+void CreateZoneRequest::SetTags(const vector<Tag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool CreateZoneRequest::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 
 

@@ -58,6 +58,7 @@ set(antiddos_public_header_model
   include/tencentcloud/antiddos/v20200309/model/CreateIPAlarmThresholdConfigRequest.h
   include/tencentcloud/antiddos/v20200309/model/CreateCcBlackWhiteIpListResponse.h
   include/tencentcloud/antiddos/v20200309/model/DescribeDefaultAlarmThresholdResponse.h
+  include/tencentcloud/antiddos/v20200309/model/CreateNewL7RulesResponse.h
   include/tencentcloud/antiddos/v20200309/model/CreateDDoSAIRequest.h
   include/tencentcloud/antiddos/v20200309/model/DescribeListProtectThresholdConfigRequest.h
   include/tencentcloud/antiddos/v20200309/model/ModifyNewDomainRulesResponse.h
@@ -191,6 +192,7 @@ set(antiddos_public_header_model
   include/tencentcloud/antiddos/v20200309/model/DescribeListDDoSAIRequest.h
   include/tencentcloud/antiddos/v20200309/model/DescribeListIPAlarmConfigRequest.h
   include/tencentcloud/antiddos/v20200309/model/PortSegment.h
+  include/tencentcloud/antiddos/v20200309/model/CreateNewL7RulesRequest.h
   include/tencentcloud/antiddos/v20200309/model/DescribeOverviewCCTrendResponse.h
   include/tencentcloud/antiddos/v20200309/model/ModifyCCReqLimitPolicyResponse.h
   include/tencentcloud/antiddos/v20200309/model/DefaultAlarmThreshold.h
@@ -310,6 +312,7 @@ set(antiddos_src
   src/v20200309/model/CreateIPAlarmThresholdConfigRequest.cpp
   src/v20200309/model/CreateCcBlackWhiteIpListResponse.cpp
   src/v20200309/model/DescribeDefaultAlarmThresholdResponse.cpp
+  src/v20200309/model/CreateNewL7RulesResponse.cpp
   src/v20200309/model/CreateDDoSAIRequest.cpp
   src/v20200309/model/DescribeListProtectThresholdConfigRequest.cpp
   src/v20200309/model/ModifyNewDomainRulesResponse.cpp
@@ -443,6 +446,7 @@ set(antiddos_src
   src/v20200309/model/DescribeListDDoSAIRequest.cpp
   src/v20200309/model/DescribeListIPAlarmConfigRequest.cpp
   src/v20200309/model/PortSegment.cpp
+  src/v20200309/model/CreateNewL7RulesRequest.cpp
   src/v20200309/model/DescribeOverviewCCTrendResponse.cpp
   src/v20200309/model/ModifyCCReqLimitPolicyResponse.cpp
   src/v20200309/model/DefaultAlarmThreshold.cpp

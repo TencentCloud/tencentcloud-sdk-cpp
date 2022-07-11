@@ -26,7 +26,8 @@ ServiceGovernanceInfo::ServiceGovernanceInfo() :
     m_vpcInfosHasBeenSet(false),
     m_authOpenHasBeenSet(false),
     m_featuresHasBeenSet(false),
-    m_mainPasswordHasBeenSet(false)
+    m_mainPasswordHasBeenSet(false),
+    m_pgwVpcInfosHasBeenSet(false)
 {
 }
 
@@ -118,6 +119,26 @@ CoreInternalOutcome ServiceGovernanceInfo::Deserialize(const rapidjson::Value &v
         m_mainPasswordHasBeenSet = true;
     }
 
+    if (value.HasMember("PgwVpcInfos") && !value["PgwVpcInfos"].IsNull())
+    {
+        if (!value["PgwVpcInfos"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ServiceGovernanceInfo.PgwVpcInfos` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["PgwVpcInfos"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            VpcInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_pgwVpcInfos.push_back(item);
+        }
+        m_pgwVpcInfosHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -190,6 +211,21 @@ void ServiceGovernanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "MainPassword";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_mainPassword.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_pgwVpcInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PgwVpcInfos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_pgwVpcInfos.begin(); itr != m_pgwVpcInfos.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -289,5 +325,21 @@ void ServiceGovernanceInfo::SetMainPassword(const string& _mainPassword)
 bool ServiceGovernanceInfo::MainPasswordHasBeenSet() const
 {
     return m_mainPasswordHasBeenSet;
+}
+
+vector<VpcInfo> ServiceGovernanceInfo::GetPgwVpcInfos() const
+{
+    return m_pgwVpcInfos;
+}
+
+void ServiceGovernanceInfo::SetPgwVpcInfos(const vector<VpcInfo>& _pgwVpcInfos)
+{
+    m_pgwVpcInfos = _pgwVpcInfos;
+    m_pgwVpcInfosHasBeenSet = true;
+}
+
+bool ServiceGovernanceInfo::PgwVpcInfosHasBeenSet() const
+{
+    return m_pgwVpcInfosHasBeenSet;
 }
 

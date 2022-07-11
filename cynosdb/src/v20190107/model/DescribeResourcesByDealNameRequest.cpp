@@ -23,7 +23,8 @@ using namespace TencentCloud::Cynosdb::V20190107::Model;
 using namespace std;
 
 DescribeResourcesByDealNameRequest::DescribeResourcesByDealNameRequest() :
-    m_dealNameHasBeenSet(false)
+    m_dealNameHasBeenSet(false),
+    m_dealNamesHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,19 @@ string DescribeResourcesByDealNameRequest::ToJsonString() const
         string key = "DealName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_dealName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dealNamesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DealNames";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_dealNames.begin(); itr != m_dealNames.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -64,6 +78,22 @@ void DescribeResourcesByDealNameRequest::SetDealName(const string& _dealName)
 bool DescribeResourcesByDealNameRequest::DealNameHasBeenSet() const
 {
     return m_dealNameHasBeenSet;
+}
+
+vector<string> DescribeResourcesByDealNameRequest::GetDealNames() const
+{
+    return m_dealNames;
+}
+
+void DescribeResourcesByDealNameRequest::SetDealNames(const vector<string>& _dealNames)
+{
+    m_dealNames = _dealNames;
+    m_dealNamesHasBeenSet = true;
+}
+
+bool DescribeResourcesByDealNameRequest::DealNamesHasBeenSet() const
+{
+    return m_dealNamesHasBeenSet;
 }
 
 

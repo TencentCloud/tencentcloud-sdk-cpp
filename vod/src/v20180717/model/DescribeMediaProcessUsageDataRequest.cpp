@@ -25,8 +25,8 @@ using namespace std;
 DescribeMediaProcessUsageDataRequest::DescribeMediaProcessUsageDataRequest() :
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_subAppIdHasBeenSet(false)
+    m_subAppIdHasBeenSet(false),
+    m_typeHasBeenSet(false)
 {
 }
 
@@ -53,20 +53,20 @@ string DescribeMediaProcessUsageDataRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_endTime.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_typeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Type";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_subAppIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SubAppId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_subAppId, allocator);
+    }
+
+    if (m_typeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Type";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -109,22 +109,6 @@ bool DescribeMediaProcessUsageDataRequest::EndTimeHasBeenSet() const
     return m_endTimeHasBeenSet;
 }
 
-string DescribeMediaProcessUsageDataRequest::GetType() const
-{
-    return m_type;
-}
-
-void DescribeMediaProcessUsageDataRequest::SetType(const string& _type)
-{
-    m_type = _type;
-    m_typeHasBeenSet = true;
-}
-
-bool DescribeMediaProcessUsageDataRequest::TypeHasBeenSet() const
-{
-    return m_typeHasBeenSet;
-}
-
 uint64_t DescribeMediaProcessUsageDataRequest::GetSubAppId() const
 {
     return m_subAppId;
@@ -139,6 +123,22 @@ void DescribeMediaProcessUsageDataRequest::SetSubAppId(const uint64_t& _subAppId
 bool DescribeMediaProcessUsageDataRequest::SubAppIdHasBeenSet() const
 {
     return m_subAppIdHasBeenSet;
+}
+
+string DescribeMediaProcessUsageDataRequest::GetType() const
+{
+    return m_type;
+}
+
+void DescribeMediaProcessUsageDataRequest::SetType(const string& _type)
+{
+    m_type = _type;
+    m_typeHasBeenSet = true;
+}
+
+bool DescribeMediaProcessUsageDataRequest::TypeHasBeenSet() const
+{
+    return m_typeHasBeenSet;
 }
 
 

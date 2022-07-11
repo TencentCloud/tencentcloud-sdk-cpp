@@ -100,6 +100,28 @@ namespace TencentCloud
                      */
                     bool ConfigInternetServiceIpHasBeenSet() const;
 
+                    /**
+                     * 获取config内网访问地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ConfigIntranetAddress config内网访问地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetConfigIntranetAddress() const;
+
+                    /**
+                     * 设置config内网访问地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ConfigIntranetAddress config内网访问地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetConfigIntranetAddress(const std::string& _configIntranetAddress);
+
+                    /**
+                     * 判断参数 ConfigIntranetAddress 是否已赋值
+                     * @return ConfigIntranetAddress 是否已赋值
+                     */
+                    bool ConfigIntranetAddressHasBeenSet() const;
+
                 private:
 
                     /**
@@ -119,6 +141,13 @@ namespace TencentCloud
                      */
                     std::string m_configInternetServiceIp;
                     bool m_configInternetServiceIpHasBeenSet;
+
+                    /**
+                     * config内网访问地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_configIntranetAddress;
+                    bool m_configIntranetAddressHasBeenSet;
 
                 };
             }

@@ -80,7 +80,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220106/model/TimingDataRecord.h
   include/tencentcloud/teo/v20220106/model/DdosAcls.h
   include/tencentcloud/teo/v20220106/model/DeleteOriginGroupRequest.h
-  include/tencentcloud/teo/v20220106/model/TopDetailData.h
+  include/tencentcloud/teo/v20220106/model/Tag.h
   include/tencentcloud/teo/v20220106/model/ModifyHostsCertificateResponse.h
   include/tencentcloud/teo/v20220106/model/CreateDnsRecordRequest.h
   include/tencentcloud/teo/v20220106/model/IpTableRule.h
@@ -115,6 +115,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220106/model/DescribeWebManagedRulesLogResponse.h
   include/tencentcloud/teo/v20220106/model/OriginRecord.h
   include/tencentcloud/teo/v20220106/model/WebLogs.h
+  include/tencentcloud/teo/v20220106/model/TopDetailData.h
   include/tencentcloud/teo/v20220106/model/CreatePrefetchTaskRequest.h
   include/tencentcloud/teo/v20220106/model/DeleteApplicationProxyRuleRequest.h
   include/tencentcloud/teo/v20220106/model/CacheConfigFollowOrigin.h
@@ -374,7 +375,7 @@ set(teo_src
   src/v20220106/model/TimingDataRecord.cpp
   src/v20220106/model/DdosAcls.cpp
   src/v20220106/model/DeleteOriginGroupRequest.cpp
-  src/v20220106/model/TopDetailData.cpp
+  src/v20220106/model/Tag.cpp
   src/v20220106/model/ModifyHostsCertificateResponse.cpp
   src/v20220106/model/CreateDnsRecordRequest.cpp
   src/v20220106/model/IpTableRule.cpp
@@ -409,6 +410,7 @@ set(teo_src
   src/v20220106/model/DescribeWebManagedRulesLogResponse.cpp
   src/v20220106/model/OriginRecord.cpp
   src/v20220106/model/WebLogs.cpp
+  src/v20220106/model/TopDetailData.cpp
   src/v20220106/model/CreatePrefetchTaskRequest.cpp
   src/v20220106/model/DeleteApplicationProxyRuleRequest.cpp
   src/v20220106/model/CacheConfigFollowOrigin.cpp

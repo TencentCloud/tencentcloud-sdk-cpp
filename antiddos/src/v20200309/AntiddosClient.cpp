@@ -728,6 +728,49 @@ AntiddosClient::CreateL7RuleCertsOutcomeCallable AntiddosClient::CreateL7RuleCer
     return task->get_future();
 }
 
+AntiddosClient::CreateNewL7RulesOutcome AntiddosClient::CreateNewL7Rules(const CreateNewL7RulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateNewL7Rules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateNewL7RulesResponse rsp = CreateNewL7RulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateNewL7RulesOutcome(rsp);
+        else
+            return CreateNewL7RulesOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateNewL7RulesOutcome(outcome.GetError());
+    }
+}
+
+void AntiddosClient::CreateNewL7RulesAsync(const CreateNewL7RulesRequest& request, const CreateNewL7RulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateNewL7Rules(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AntiddosClient::CreateNewL7RulesOutcomeCallable AntiddosClient::CreateNewL7RulesCallable(const CreateNewL7RulesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateNewL7RulesOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateNewL7Rules(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 AntiddosClient::CreatePacketFilterConfigOutcome AntiddosClient::CreatePacketFilterConfig(const CreatePacketFilterConfigRequest &request)
 {
     auto outcome = MakeRequest(request, "CreatePacketFilterConfig");

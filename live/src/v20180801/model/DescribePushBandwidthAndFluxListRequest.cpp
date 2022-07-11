@@ -28,7 +28,8 @@ DescribePushBandwidthAndFluxListRequest::DescribePushBandwidthAndFluxListRequest
     m_pushDomainsHasBeenSet(false),
     m_mainlandOrOverseaHasBeenSet(false),
     m_granularityHasBeenSet(false),
-    m_regionNamesHasBeenSet(false)
+    m_regionNamesHasBeenSet(false),
+    m_countryNamesHasBeenSet(false)
 {
 }
 
@@ -92,6 +93,19 @@ string DescribePushBandwidthAndFluxListRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_regionNames.begin(); itr != m_regionNames.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_countryNamesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CountryNames";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_countryNames.begin(); itr != m_countryNames.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
@@ -199,6 +213,22 @@ void DescribePushBandwidthAndFluxListRequest::SetRegionNames(const vector<string
 bool DescribePushBandwidthAndFluxListRequest::RegionNamesHasBeenSet() const
 {
     return m_regionNamesHasBeenSet;
+}
+
+vector<string> DescribePushBandwidthAndFluxListRequest::GetCountryNames() const
+{
+    return m_countryNames;
+}
+
+void DescribePushBandwidthAndFluxListRequest::SetCountryNames(const vector<string>& _countryNames)
+{
+    m_countryNames = _countryNames;
+    m_countryNamesHasBeenSet = true;
+}
+
+bool DescribePushBandwidthAndFluxListRequest::CountryNamesHasBeenSet() const
+{
+    return m_countryNamesHasBeenSet;
 }
 
 

@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/apm/v20210622/model/GeneralFilter.h>
+#include <tencentcloud/apm/v20210622/model/OrderBy.h>
 
 
 namespace TencentCloud
@@ -44,46 +45,42 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取要过滤的维度信息
-service_metric视图支持：service.name（服务名）、span.kind（客户端/服务端视角）为维度进行过滤。
+                     * 获取要过滤的维度信息：
+service_metric视图支持：service.name（服务名）、span.kind（客户端/服务端视角）为维度进行过滤，service.name（服务名）必填。
 span.kind:
 	server:服务端视角
 	client:客户端视角
 默认为服务端视角进行查询。
-runtime_metric视图支持：service.name（服务名）维度进行过滤。
-sql_metric视图支持：service.name（服务名）、db.instance（数据库名称）、（db.ip）数据库实例ip维度进行过滤。
-查询sql_duration_avg（耗时）指标时db.instance（数据库名称）必输入。
-                     * @return Filters 要过滤的维度信息
-service_metric视图支持：service.name（服务名）、span.kind（客户端/服务端视角）为维度进行过滤。
+runtime_metric视图支持：service.name（服务名）维度进行过滤，service.name（服务名）必填。
+sql_metric视图支持：service.name（服务名）、db.instance（数据库名称）、db.ip（数据库实例ip）维度进行过滤，查询service_slow_sql_count（慢sql）指标时service.name必填，查询sql_duration_avg（耗时）指标时db.instance（数据库名称）必填。
+                     * @return Filters 要过滤的维度信息：
+service_metric视图支持：service.name（服务名）、span.kind（客户端/服务端视角）为维度进行过滤，service.name（服务名）必填。
 span.kind:
 	server:服务端视角
 	client:客户端视角
 默认为服务端视角进行查询。
-runtime_metric视图支持：service.name（服务名）维度进行过滤。
-sql_metric视图支持：service.name（服务名）、db.instance（数据库名称）、（db.ip）数据库实例ip维度进行过滤。
-查询sql_duration_avg（耗时）指标时db.instance（数据库名称）必输入。
+runtime_metric视图支持：service.name（服务名）维度进行过滤，service.name（服务名）必填。
+sql_metric视图支持：service.name（服务名）、db.instance（数据库名称）、db.ip（数据库实例ip）维度进行过滤，查询service_slow_sql_count（慢sql）指标时service.name必填，查询sql_duration_avg（耗时）指标时db.instance（数据库名称）必填。
                      */
                     std::vector<GeneralFilter> GetFilters() const;
 
                     /**
-                     * 设置要过滤的维度信息
-service_metric视图支持：service.name（服务名）、span.kind（客户端/服务端视角）为维度进行过滤。
+                     * 设置要过滤的维度信息：
+service_metric视图支持：service.name（服务名）、span.kind（客户端/服务端视角）为维度进行过滤，service.name（服务名）必填。
 span.kind:
 	server:服务端视角
 	client:客户端视角
 默认为服务端视角进行查询。
-runtime_metric视图支持：service.name（服务名）维度进行过滤。
-sql_metric视图支持：service.name（服务名）、db.instance（数据库名称）、（db.ip）数据库实例ip维度进行过滤。
-查询sql_duration_avg（耗时）指标时db.instance（数据库名称）必输入。
-                     * @param Filters 要过滤的维度信息
-service_metric视图支持：service.name（服务名）、span.kind（客户端/服务端视角）为维度进行过滤。
+runtime_metric视图支持：service.name（服务名）维度进行过滤，service.name（服务名）必填。
+sql_metric视图支持：service.name（服务名）、db.instance（数据库名称）、db.ip（数据库实例ip）维度进行过滤，查询service_slow_sql_count（慢sql）指标时service.name必填，查询sql_duration_avg（耗时）指标时db.instance（数据库名称）必填。
+                     * @param Filters 要过滤的维度信息：
+service_metric视图支持：service.name（服务名）、span.kind（客户端/服务端视角）为维度进行过滤，service.name（服务名）必填。
 span.kind:
 	server:服务端视角
 	client:客户端视角
 默认为服务端视角进行查询。
-runtime_metric视图支持：service.name（服务名）维度进行过滤。
-sql_metric视图支持：service.name（服务名）、db.instance（数据库名称）、（db.ip）数据库实例ip维度进行过滤。
-查询sql_duration_avg（耗时）指标时db.instance（数据库名称）必输入。
+runtime_metric视图支持：service.name（服务名）维度进行过滤，service.name（服务名）必填。
+sql_metric视图支持：service.name（服务名）、db.instance（数据库名称）、db.ip（数据库实例ip）维度进行过滤，查询service_slow_sql_count（慢sql）指标时service.name必填，查询sql_duration_avg（耗时）指标时db.instance（数据库名称）必填。
                      */
                     void SetFilters(const std::vector<GeneralFilter>& _filters);
 
@@ -124,14 +121,14 @@ sql_metric视图支持：service_slow_sql_count（慢sql）、sql_duration_avg�
                     bool MetricsHasBeenSet() const;
 
                     /**
-                     * 获取实例ID
-                     * @return InstanceId 实例ID
+                     * 获取业务系统ID
+                     * @return InstanceId 业务系统ID
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID
-                     * @param InstanceId 实例ID
+                     * 设置业务系统ID
+                     * @param InstanceId 业务系统ID
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
@@ -160,30 +157,26 @@ sql_metric视图支持：service_slow_sql_count（慢sql）、sql_duration_avg�
                     bool ViewNameHasBeenSet() const;
 
                     /**
-                     * 获取聚合维度
-service_metric视图支持：service.name（服务名）、span.kind （客户端/服务端视角）维度进行聚合。
-runtime_metric视图支持：service.name（服务名）维度进行聚合。
-sql_metric视图支持：service.name（服务名）、db.statement（sql语句）维度进行聚合。
-查询sql_duration_avg（耗时）指标时service.name（服务名）、db.statement（sql语句）必输入。
-                     * @return GroupBy 聚合维度
-service_metric视图支持：service.name（服务名）、span.kind （客户端/服务端视角）维度进行聚合。
-runtime_metric视图支持：service.name（服务名）维度进行聚合。
-sql_metric视图支持：service.name（服务名）、db.statement（sql语句）维度进行聚合。
-查询sql_duration_avg（耗时）指标时service.name（服务名）、db.statement（sql语句）必输入。
+                     * 获取聚合维度：
+service_metric视图支持：service.name（服务名）、span.kind （客户端/服务端视角）维度进行聚合，service.name（服务名）必填。
+runtime_metric视图支持：service.name（服务名）维度进行聚合，service.name（服务名）必填。
+sql_metric视图支持：service.name（服务名）、db.statement（sql语句）维度进行聚合，查询service_slow_sql_count（慢sql）时service.name（服务名）必填，查询sql_duration_avg（耗时）指标时service.name（服务名）、db.statement（sql语句）必填。
+                     * @return GroupBy 聚合维度：
+service_metric视图支持：service.name（服务名）、span.kind （客户端/服务端视角）维度进行聚合，service.name（服务名）必填。
+runtime_metric视图支持：service.name（服务名）维度进行聚合，service.name（服务名）必填。
+sql_metric视图支持：service.name（服务名）、db.statement（sql语句）维度进行聚合，查询service_slow_sql_count（慢sql）时service.name（服务名）必填，查询sql_duration_avg（耗时）指标时service.name（服务名）、db.statement（sql语句）必填。
                      */
                     std::vector<std::string> GetGroupBy() const;
 
                     /**
-                     * 设置聚合维度
-service_metric视图支持：service.name（服务名）、span.kind （客户端/服务端视角）维度进行聚合。
-runtime_metric视图支持：service.name（服务名）维度进行聚合。
-sql_metric视图支持：service.name（服务名）、db.statement（sql语句）维度进行聚合。
-查询sql_duration_avg（耗时）指标时service.name（服务名）、db.statement（sql语句）必输入。
-                     * @param GroupBy 聚合维度
-service_metric视图支持：service.name（服务名）、span.kind （客户端/服务端视角）维度进行聚合。
-runtime_metric视图支持：service.name（服务名）维度进行聚合。
-sql_metric视图支持：service.name（服务名）、db.statement（sql语句）维度进行聚合。
-查询sql_duration_avg（耗时）指标时service.name（服务名）、db.statement（sql语句）必输入。
+                     * 设置聚合维度：
+service_metric视图支持：service.name（服务名）、span.kind （客户端/服务端视角）维度进行聚合，service.name（服务名）必填。
+runtime_metric视图支持：service.name（服务名）维度进行聚合，service.name（服务名）必填。
+sql_metric视图支持：service.name（服务名）、db.statement（sql语句）维度进行聚合，查询service_slow_sql_count（慢sql）时service.name（服务名）必填，查询sql_duration_avg（耗时）指标时service.name（服务名）、db.statement（sql语句）必填。
+                     * @param GroupBy 聚合维度：
+service_metric视图支持：service.name（服务名）、span.kind （客户端/服务端视角）维度进行聚合，service.name（服务名）必填。
+runtime_metric视图支持：service.name（服务名）维度进行聚合，service.name（服务名）必填。
+sql_metric视图支持：service.name（服务名）、db.statement（sql语句）维度进行聚合，查询service_slow_sql_count（慢sql）时service.name（服务名）必填，查询sql_duration_avg（耗时）指标时service.name（服务名）、db.statement（sql语句）必填。
                      */
                     void SetGroupBy(const std::vector<std::string>& _groupBy);
 
@@ -247,18 +240,73 @@ sql_metric视图支持：service.name（服务名）、db.statement（sql语句�
                      */
                     bool PeriodHasBeenSet() const;
 
+                    /**
+                     * 获取对查询指标进行排序：
+service_metric视图支持：service_request_count（总请求）、service_duration（平均响应时间）、service_error_req_rate（平均错误率）、service_slow_call_count（慢调用）、service_error_request_count（异常数量）。
+runtime_metric视图支持：service_gc_full_count（Full GC）。
+sql_metric视图支持：service_slow_sql_count（慢sql）、sql_duration_avg（耗时）。
+asc:对查询指标进行升序排序
+desc：对查询指标进行降序排序
+                     * @return OrderBy 对查询指标进行排序：
+service_metric视图支持：service_request_count（总请求）、service_duration（平均响应时间）、service_error_req_rate（平均错误率）、service_slow_call_count（慢调用）、service_error_request_count（异常数量）。
+runtime_metric视图支持：service_gc_full_count（Full GC）。
+sql_metric视图支持：service_slow_sql_count（慢sql）、sql_duration_avg（耗时）。
+asc:对查询指标进行升序排序
+desc：对查询指标进行降序排序
+                     */
+                    OrderBy GetOrderBy() const;
+
+                    /**
+                     * 设置对查询指标进行排序：
+service_metric视图支持：service_request_count（总请求）、service_duration（平均响应时间）、service_error_req_rate（平均错误率）、service_slow_call_count（慢调用）、service_error_request_count（异常数量）。
+runtime_metric视图支持：service_gc_full_count（Full GC）。
+sql_metric视图支持：service_slow_sql_count（慢sql）、sql_duration_avg（耗时）。
+asc:对查询指标进行升序排序
+desc：对查询指标进行降序排序
+                     * @param OrderBy 对查询指标进行排序：
+service_metric视图支持：service_request_count（总请求）、service_duration（平均响应时间）、service_error_req_rate（平均错误率）、service_slow_call_count（慢调用）、service_error_request_count（异常数量）。
+runtime_metric视图支持：service_gc_full_count（Full GC）。
+sql_metric视图支持：service_slow_sql_count（慢sql）、sql_duration_avg（耗时）。
+asc:对查询指标进行升序排序
+desc：对查询指标进行降序排序
+                     */
+                    void SetOrderBy(const OrderBy& _orderBy);
+
+                    /**
+                     * 判断参数 OrderBy 是否已赋值
+                     * @return OrderBy 是否已赋值
+                     */
+                    bool OrderByHasBeenSet() const;
+
+                    /**
+                     * 获取查询指标的限制条数，目前最多展示50条数据，PageSize取值为1-50，上送PageSize则根据PageSize的值展示限制条数。
+                     * @return PageSize 查询指标的限制条数，目前最多展示50条数据，PageSize取值为1-50，上送PageSize则根据PageSize的值展示限制条数。
+                     */
+                    int64_t GetPageSize() const;
+
+                    /**
+                     * 设置查询指标的限制条数，目前最多展示50条数据，PageSize取值为1-50，上送PageSize则根据PageSize的值展示限制条数。
+                     * @param PageSize 查询指标的限制条数，目前最多展示50条数据，PageSize取值为1-50，上送PageSize则根据PageSize的值展示限制条数。
+                     */
+                    void SetPageSize(const int64_t& _pageSize);
+
+                    /**
+                     * 判断参数 PageSize 是否已赋值
+                     * @return PageSize 是否已赋值
+                     */
+                    bool PageSizeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 要过滤的维度信息
-service_metric视图支持：service.name（服务名）、span.kind（客户端/服务端视角）为维度进行过滤。
+                     * 要过滤的维度信息：
+service_metric视图支持：service.name（服务名）、span.kind（客户端/服务端视角）为维度进行过滤，service.name（服务名）必填。
 span.kind:
 	server:服务端视角
 	client:客户端视角
 默认为服务端视角进行查询。
-runtime_metric视图支持：service.name（服务名）维度进行过滤。
-sql_metric视图支持：service.name（服务名）、db.instance（数据库名称）、（db.ip）数据库实例ip维度进行过滤。
-查询sql_duration_avg（耗时）指标时db.instance（数据库名称）必输入。
+runtime_metric视图支持：service.name（服务名）维度进行过滤，service.name（服务名）必填。
+sql_metric视图支持：service.name（服务名）、db.instance（数据库名称）、db.ip（数据库实例ip）维度进行过滤，查询service_slow_sql_count（慢sql）指标时service.name必填，查询sql_duration_avg（耗时）指标时db.instance（数据库名称）必填。
                      */
                     std::vector<GeneralFilter> m_filters;
                     bool m_filtersHasBeenSet;
@@ -273,7 +321,7 @@ sql_metric视图支持：service_slow_sql_count（慢sql）、sql_duration_avg�
                     bool m_metricsHasBeenSet;
 
                     /**
-                     * 实例ID
+                     * 业务系统ID
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
@@ -285,11 +333,10 @@ sql_metric视图支持：service_slow_sql_count（慢sql）、sql_duration_avg�
                     bool m_viewNameHasBeenSet;
 
                     /**
-                     * 聚合维度
-service_metric视图支持：service.name（服务名）、span.kind （客户端/服务端视角）维度进行聚合。
-runtime_metric视图支持：service.name（服务名）维度进行聚合。
-sql_metric视图支持：service.name（服务名）、db.statement（sql语句）维度进行聚合。
-查询sql_duration_avg（耗时）指标时service.name（服务名）、db.statement（sql语句）必输入。
+                     * 聚合维度：
+service_metric视图支持：service.name（服务名）、span.kind （客户端/服务端视角）维度进行聚合，service.name（服务名）必填。
+runtime_metric视图支持：service.name（服务名）维度进行聚合，service.name（服务名）必填。
+sql_metric视图支持：service.name（服务名）、db.statement（sql语句）维度进行聚合，查询service_slow_sql_count（慢sql）时service.name（服务名）必填，查询sql_duration_avg（耗时）指标时service.name（服务名）、db.statement（sql语句）必填。
                      */
                     std::vector<std::string> m_groupBy;
                     bool m_groupByHasBeenSet;
@@ -311,6 +358,23 @@ sql_metric视图支持：service.name（服务名）、db.statement（sql语句�
                      */
                     int64_t m_period;
                     bool m_periodHasBeenSet;
+
+                    /**
+                     * 对查询指标进行排序：
+service_metric视图支持：service_request_count（总请求）、service_duration（平均响应时间）、service_error_req_rate（平均错误率）、service_slow_call_count（慢调用）、service_error_request_count（异常数量）。
+runtime_metric视图支持：service_gc_full_count（Full GC）。
+sql_metric视图支持：service_slow_sql_count（慢sql）、sql_duration_avg（耗时）。
+asc:对查询指标进行升序排序
+desc：对查询指标进行降序排序
+                     */
+                    OrderBy m_orderBy;
+                    bool m_orderByHasBeenSet;
+
+                    /**
+                     * 查询指标的限制条数，目前最多展示50条数据，PageSize取值为1-50，上送PageSize则根据PageSize的值展示限制条数。
+                     */
+                    int64_t m_pageSize;
+                    bool m_pageSizeHasBeenSet;
 
                 };
             }

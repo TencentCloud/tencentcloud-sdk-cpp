@@ -96,6 +96,24 @@ namespace TencentCloud
                      */
                     bool SubnetIdHasBeenSet() const;
 
+                    /**
+                     * 获取引擎其他组件名称（pushgateway）
+                     * @return Workload 引擎其他组件名称（pushgateway）
+                     */
+                    std::string GetWorkload() const;
+
+                    /**
+                     * 设置引擎其他组件名称（pushgateway）
+                     * @param Workload 引擎其他组件名称（pushgateway）
+                     */
+                    void SetWorkload(const std::string& _workload);
+
+                    /**
+                     * 判断参数 Workload 是否已赋值
+                     * @return Workload 是否已赋值
+                     */
+                    bool WorkloadHasBeenSet() const;
+
                 private:
 
                     /**
@@ -115,6 +133,12 @@ namespace TencentCloud
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
+
+                    /**
+                     * 引擎其他组件名称（pushgateway）
+                     */
+                    std::string m_workload;
+                    bool m_workloadHasBeenSet;
 
                 };
             }

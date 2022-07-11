@@ -61,7 +61,8 @@ CreateClustersRequest::CreateClustersRequest() :
     m_alarmPolicyIdsHasBeenSet(false),
     m_clusterParamsHasBeenSet(false),
     m_dealModeHasBeenSet(false),
-    m_paramTemplateIdHasBeenSet(false)
+    m_paramTemplateIdHasBeenSet(false),
+    m_slaveZoneHasBeenSet(false)
 {
 }
 
@@ -406,6 +407,14 @@ string CreateClustersRequest::ToJsonString() const
         string key = "ParamTemplateId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_paramTemplateId, allocator);
+    }
+
+    if (m_slaveZoneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SlaveZone";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_slaveZone.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -1038,6 +1047,22 @@ void CreateClustersRequest::SetParamTemplateId(const int64_t& _paramTemplateId)
 bool CreateClustersRequest::ParamTemplateIdHasBeenSet() const
 {
     return m_paramTemplateIdHasBeenSet;
+}
+
+string CreateClustersRequest::GetSlaveZone() const
+{
+    return m_slaveZone;
+}
+
+void CreateClustersRequest::SetSlaveZone(const string& _slaveZone)
+{
+    m_slaveZone = _slaveZone;
+    m_slaveZoneHasBeenSet = true;
+}
+
+bool CreateClustersRequest::SlaveZoneHasBeenSet() const
+{
+    return m_slaveZoneHasBeenSet;
 }
 
 

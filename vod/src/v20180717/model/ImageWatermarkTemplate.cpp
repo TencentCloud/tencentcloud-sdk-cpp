@@ -24,7 +24,8 @@ ImageWatermarkTemplate::ImageWatermarkTemplate() :
     m_imageUrlHasBeenSet(false),
     m_widthHasBeenSet(false),
     m_heightHasBeenSet(false),
-    m_repeatTypeHasBeenSet(false)
+    m_repeatTypeHasBeenSet(false),
+    m_transparencyHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome ImageWatermarkTemplate::Deserialize(const rapidjson::Value &
         m_repeatTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("Transparency") && !value["Transparency"].IsNull())
+    {
+        if (!value["Transparency"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImageWatermarkTemplate.Transparency` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_transparency = value["Transparency"].GetInt64();
+        m_transparencyHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +121,14 @@ void ImageWatermarkTemplate::ToJsonObject(rapidjson::Value &value, rapidjson::Do
         string key = "RepeatType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_repeatType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_transparencyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Transparency";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_transparency, allocator);
     }
 
 }
@@ -177,5 +196,21 @@ void ImageWatermarkTemplate::SetRepeatType(const string& _repeatType)
 bool ImageWatermarkTemplate::RepeatTypeHasBeenSet() const
 {
     return m_repeatTypeHasBeenSet;
+}
+
+int64_t ImageWatermarkTemplate::GetTransparency() const
+{
+    return m_transparency;
+}
+
+void ImageWatermarkTemplate::SetTransparency(const int64_t& _transparency)
+{
+    m_transparency = _transparency;
+    m_transparencyHasBeenSet = true;
+}
+
+bool ImageWatermarkTemplate::TransparencyHasBeenSet() const
+{
+    return m_transparencyHasBeenSet;
 }
 

@@ -50,9 +50,13 @@ namespace TencentCloud
                      * 获取过滤字段名，支持的列表如下：
 - name: 站点名。
 - status: 站点状态
+- tagKey: 标签键
+- tagValue: 标签值
                      * @return Name 过滤字段名，支持的列表如下：
 - name: 站点名。
 - status: 站点状态
+- tagKey: 标签键
+- tagValue: 标签值
                      */
                     std::string GetName() const;
 
@@ -60,9 +64,13 @@ namespace TencentCloud
                      * 设置过滤字段名，支持的列表如下：
 - name: 站点名。
 - status: 站点状态
+- tagKey: 标签键
+- tagValue: 标签值
                      * @param Name 过滤字段名，支持的列表如下：
 - name: 站点名。
 - status: 站点状态
+- tagKey: 标签键
+- tagValue: 标签值
                      */
                     void SetName(const std::string& _name);
 
@@ -114,6 +122,8 @@ namespace TencentCloud
                      * 过滤字段名，支持的列表如下：
 - name: 站点名。
 - status: 站点状态
+- tagKey: 标签键
+- tagValue: 标签值
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;

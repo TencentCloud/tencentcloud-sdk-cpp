@@ -25,7 +25,8 @@ using namespace std;
 DescribeSREInstanceAccessAddressRequest::DescribeSREInstanceAccessAddressRequest() :
     m_instanceIdHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
-    m_subnetIdHasBeenSet(false)
+    m_subnetIdHasBeenSet(false),
+    m_workloadHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,14 @@ string DescribeSREInstanceAccessAddressRequest::ToJsonString() const
         string key = "SubnetId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_subnetId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_workloadHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Workload";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_workload.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -114,6 +123,22 @@ void DescribeSREInstanceAccessAddressRequest::SetSubnetId(const string& _subnetI
 bool DescribeSREInstanceAccessAddressRequest::SubnetIdHasBeenSet() const
 {
     return m_subnetIdHasBeenSet;
+}
+
+string DescribeSREInstanceAccessAddressRequest::GetWorkload() const
+{
+    return m_workload;
+}
+
+void DescribeSREInstanceAccessAddressRequest::SetWorkload(const string& _workload)
+{
+    m_workload = _workload;
+    m_workloadHasBeenSet = true;
+}
+
+bool DescribeSREInstanceAccessAddressRequest::WorkloadHasBeenSet() const
+{
+    return m_workloadHasBeenSet;
 }
 
 

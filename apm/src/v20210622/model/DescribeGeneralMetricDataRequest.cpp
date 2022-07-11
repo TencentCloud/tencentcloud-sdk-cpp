@@ -30,7 +30,9 @@ DescribeGeneralMetricDataRequest::DescribeGeneralMetricDataRequest() :
     m_groupByHasBeenSet(false),
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
-    m_periodHasBeenSet(false)
+    m_periodHasBeenSet(false),
+    m_orderByHasBeenSet(false),
+    m_pageSizeHasBeenSet(false)
 {
 }
 
@@ -120,6 +122,23 @@ string DescribeGeneralMetricDataRequest::ToJsonString() const
         string key = "Period";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_period, allocator);
+    }
+
+    if (m_orderByHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OrderBy";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_orderBy.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_pageSizeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PageSize";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_pageSize, allocator);
     }
 
 
@@ -256,6 +275,38 @@ void DescribeGeneralMetricDataRequest::SetPeriod(const int64_t& _period)
 bool DescribeGeneralMetricDataRequest::PeriodHasBeenSet() const
 {
     return m_periodHasBeenSet;
+}
+
+OrderBy DescribeGeneralMetricDataRequest::GetOrderBy() const
+{
+    return m_orderBy;
+}
+
+void DescribeGeneralMetricDataRequest::SetOrderBy(const OrderBy& _orderBy)
+{
+    m_orderBy = _orderBy;
+    m_orderByHasBeenSet = true;
+}
+
+bool DescribeGeneralMetricDataRequest::OrderByHasBeenSet() const
+{
+    return m_orderByHasBeenSet;
+}
+
+int64_t DescribeGeneralMetricDataRequest::GetPageSize() const
+{
+    return m_pageSize;
+}
+
+void DescribeGeneralMetricDataRequest::SetPageSize(const int64_t& _pageSize)
+{
+    m_pageSize = _pageSize;
+    m_pageSizeHasBeenSet = true;
+}
+
+bool DescribeGeneralMetricDataRequest::PageSizeHasBeenSet() const
+{
+    return m_pageSizeHasBeenSet;
 }
 
 

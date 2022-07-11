@@ -214,6 +214,28 @@ Africa 非洲。
                      */
                     bool RegionNamesHasBeenSet() const;
 
+                    /**
+                     * 获取国家，映射表参照如下文档：
+https://cloud.tencent.com/document/product/267/34019。
+                     * @return CountryNames 国家，映射表参照如下文档：
+https://cloud.tencent.com/document/product/267/34019。
+                     */
+                    std::vector<std::string> GetCountryNames() const;
+
+                    /**
+                     * 设置国家，映射表参照如下文档：
+https://cloud.tencent.com/document/product/267/34019。
+                     * @param CountryNames 国家，映射表参照如下文档：
+https://cloud.tencent.com/document/product/267/34019。
+                     */
+                    void SetCountryNames(const std::vector<std::string>& _countryNames);
+
+                    /**
+                     * 判断参数 CountryNames 是否已赋值
+                     * @return CountryNames 是否已赋值
+                     */
+                    bool CountryNamesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -267,6 +289,13 @@ Africa 非洲。
                      */
                     std::vector<std::string> m_regionNames;
                     bool m_regionNamesHasBeenSet;
+
+                    /**
+                     * 国家，映射表参照如下文档：
+https://cloud.tencent.com/document/product/267/34019。
+                     */
+                    std::vector<std::string> m_countryNames;
+                    bool m_countryNamesHasBeenSet;
 
                 };
             }

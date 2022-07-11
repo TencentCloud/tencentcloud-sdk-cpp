@@ -146,6 +146,32 @@ namespace TencentCloud
                      */
                     bool RepeatTypeHasBeenSet() const;
 
+                    /**
+                     * 获取图片透明度，取值范围：[0, 100]
+<li>0：完全不透明</li>
+<li>100：完全透明。</li>
+                     * @return Transparency 图片透明度，取值范围：[0, 100]
+<li>0：完全不透明</li>
+<li>100：完全透明。</li>
+                     */
+                    int64_t GetTransparency() const;
+
+                    /**
+                     * 设置图片透明度，取值范围：[0, 100]
+<li>0：完全不透明</li>
+<li>100：完全透明。</li>
+                     * @param Transparency 图片透明度，取值范围：[0, 100]
+<li>0：完全不透明</li>
+<li>100：完全透明。</li>
+                     */
+                    void SetTransparency(const int64_t& _transparency);
+
+                    /**
+                     * 判断参数 Transparency 是否已赋值
+                     * @return Transparency 是否已赋值
+                     */
+                    bool TransparencyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -178,6 +204,14 @@ namespace TencentCloud
                      */
                     std::string m_repeatType;
                     bool m_repeatTypeHasBeenSet;
+
+                    /**
+                     * 图片透明度，取值范围：[0, 100]
+<li>0：完全不透明</li>
+<li>100：完全透明。</li>
+                     */
+                    int64_t m_transparency;
+                    bool m_transparencyHasBeenSet;
 
                 };
             }

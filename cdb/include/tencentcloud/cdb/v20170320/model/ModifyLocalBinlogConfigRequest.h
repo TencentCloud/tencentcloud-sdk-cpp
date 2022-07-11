@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取本地binlog保留时长，可取值范围：[120,168]。
-                     * @return SaveHours 本地binlog保留时长，可取值范围：[120,168]。
+                     * 获取本地binlog保留时长，可取值范围：[72,168]，当实例存在灾备实例时，可取值范围：[120,168]。
+                     * @return SaveHours 本地binlog保留时长，可取值范围：[72,168]，当实例存在灾备实例时，可取值范围：[120,168]。
                      */
                     int64_t GetSaveHours() const;
 
                     /**
-                     * 设置本地binlog保留时长，可取值范围：[120,168]。
-                     * @param SaveHours 本地binlog保留时长，可取值范围：[120,168]。
+                     * 设置本地binlog保留时长，可取值范围：[72,168]，当实例存在灾备实例时，可取值范围：[120,168]。
+                     * @param SaveHours 本地binlog保留时长，可取值范围：[72,168]，当实例存在灾备实例时，可取值范围：[120,168]。
                      */
                     void SetSaveHours(const int64_t& _saveHours);
 
@@ -105,7 +105,7 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 本地binlog保留时长，可取值范围：[120,168]。
+                     * 本地binlog保留时长，可取值范围：[72,168]，当实例存在灾备实例时，可取值范围：[120,168]。
                      */
                     int64_t m_saveHours;
                     bool m_saveHoursHasBeenSet;

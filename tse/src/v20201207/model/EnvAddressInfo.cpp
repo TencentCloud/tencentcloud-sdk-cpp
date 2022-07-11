@@ -23,7 +23,8 @@ using namespace std;
 EnvAddressInfo::EnvAddressInfo() :
     m_envNameHasBeenSet(false),
     m_enableConfigInternetHasBeenSet(false),
-    m_configInternetServiceIpHasBeenSet(false)
+    m_configInternetServiceIpHasBeenSet(false),
+    m_configIntranetAddressHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,16 @@ CoreInternalOutcome EnvAddressInfo::Deserialize(const rapidjson::Value &value)
         m_configInternetServiceIpHasBeenSet = true;
     }
 
+    if (value.HasMember("ConfigIntranetAddress") && !value["ConfigIntranetAddress"].IsNull())
+    {
+        if (!value["ConfigIntranetAddress"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EnvAddressInfo.ConfigIntranetAddress` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_configIntranetAddress = string(value["ConfigIntranetAddress"].GetString());
+        m_configIntranetAddressHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +102,14 @@ void EnvAddressInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "ConfigInternetServiceIp";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_configInternetServiceIp.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_configIntranetAddressHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConfigIntranetAddress";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_configIntranetAddress.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -142,5 +161,21 @@ void EnvAddressInfo::SetConfigInternetServiceIp(const string& _configInternetSer
 bool EnvAddressInfo::ConfigInternetServiceIpHasBeenSet() const
 {
     return m_configInternetServiceIpHasBeenSet;
+}
+
+string EnvAddressInfo::GetConfigIntranetAddress() const
+{
+    return m_configIntranetAddress;
+}
+
+void EnvAddressInfo::SetConfigIntranetAddress(const string& _configIntranetAddress)
+{
+    m_configIntranetAddress = _configIntranetAddress;
+    m_configIntranetAddressHasBeenSet = true;
+}
+
+bool EnvAddressInfo::ConfigIntranetAddressHasBeenSet() const
+{
+    return m_configIntranetAddressHasBeenSet;
 }
 

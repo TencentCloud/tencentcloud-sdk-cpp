@@ -209,14 +209,14 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取下载url过期时间，单位秒。0: 按默认值5分钟，允许范围：1s~24*60*60s(1天)
-                     * @return UrlTtl 下载url过期时间，单位秒。0: 按默认值5分钟，允许范围：1s~24*60*60s(1天)
+                     * 获取下载url过期时间，单位秒。0: 按默认值5分钟，允许范围：1s~24x60x60s(1天)
+                     * @return UrlTtl 下载url过期时间，单位秒。0: 按默认值5分钟，允许范围：1s~24x60x60s(1天)
                      */
                     int64_t GetUrlTtl() const;
 
                     /**
-                     * 设置下载url过期时间，单位秒。0: 按默认值5分钟，允许范围：1s~24*60*60s(1天)
-                     * @param UrlTtl 下载url过期时间，单位秒。0: 按默认值5分钟，允许范围：1s~24*60*60s(1天)
+                     * 设置下载url过期时间，单位秒。0: 按默认值5分钟，允许范围：1s~24x60x60s(1天)
+                     * @param UrlTtl 下载url过期时间，单位秒。0: 按默认值5分钟，允许范围：1s~24x60x60s(1天)
                      */
                     void SetUrlTtl(const int64_t& _urlTtl);
 
@@ -318,7 +318,7 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 下载url过期时间，单位秒。0: 按默认值5分钟，允许范围：1s~24*60*60s(1天)
+                     * 下载url过期时间，单位秒。0: 按默认值5分钟，允许范围：1s~24x60x60s(1天)
                      */
                     int64_t m_urlTtl;
                     bool m_urlTtlHasBeenSet;

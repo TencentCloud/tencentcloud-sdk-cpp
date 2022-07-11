@@ -156,6 +156,24 @@ namespace TencentCloud
                      */
                     bool MainPasswordHasBeenSet() const;
 
+                    /**
+                     * 获取服务治理pushgateway引擎绑定的网络信息
+                     * @return PgwVpcInfos 服务治理pushgateway引擎绑定的网络信息
+                     */
+                    std::vector<VpcInfo> GetPgwVpcInfos() const;
+
+                    /**
+                     * 设置服务治理pushgateway引擎绑定的网络信息
+                     * @param PgwVpcInfos 服务治理pushgateway引擎绑定的网络信息
+                     */
+                    void SetPgwVpcInfos(const std::vector<VpcInfo>& _pgwVpcInfos);
+
+                    /**
+                     * 判断参数 PgwVpcInfos 是否已赋值
+                     * @return PgwVpcInfos 是否已赋值
+                     */
+                    bool PgwVpcInfosHasBeenSet() const;
+
                 private:
 
                     /**
@@ -193,6 +211,12 @@ namespace TencentCloud
                      */
                     std::string m_mainPassword;
                     bool m_mainPasswordHasBeenSet;
+
+                    /**
+                     * 服务治理pushgateway引擎绑定的网络信息
+                     */
+                    std::vector<VpcInfo> m_pgwVpcInfos;
+                    bool m_pgwVpcInfosHasBeenSet;
 
                 };
             }
