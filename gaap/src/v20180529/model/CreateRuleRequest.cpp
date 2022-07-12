@@ -33,7 +33,8 @@ CreateRuleRequest::CreateRuleRequest() :
     m_forwardProtocolHasBeenSet(false),
     m_forwardHostHasBeenSet(false),
     m_serverNameIndicationSwitchHasBeenSet(false),
-    m_serverNameIndicationHasBeenSet(false)
+    m_serverNameIndicationHasBeenSet(false),
+    m_forcedRedirectHasBeenSet(false)
 {
 }
 
@@ -131,6 +132,14 @@ string CreateRuleRequest::ToJsonString() const
         string key = "ServerNameIndication";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_serverNameIndication.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_forcedRedirectHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ForcedRedirect";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_forcedRedirect.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -315,6 +324,22 @@ void CreateRuleRequest::SetServerNameIndication(const string& _serverNameIndicat
 bool CreateRuleRequest::ServerNameIndicationHasBeenSet() const
 {
     return m_serverNameIndicationHasBeenSet;
+}
+
+string CreateRuleRequest::GetForcedRedirect() const
+{
+    return m_forcedRedirect;
+}
+
+void CreateRuleRequest::SetForcedRedirect(const string& _forcedRedirect)
+{
+    m_forcedRedirect = _forcedRedirect;
+    m_forcedRedirectHasBeenSet = true;
+}
+
+bool CreateRuleRequest::ForcedRedirectHasBeenSet() const
+{
+    return m_forcedRedirectHasBeenSet;
 }
 
 

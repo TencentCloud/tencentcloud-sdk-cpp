@@ -80,14 +80,14 @@ namespace TencentCloud
                     bool SortingHasBeenSet() const;
 
                     /**
-                     * 获取按照该参数过滤
-                     * @return Filters 按照该参数过滤
+                     * 获取按照该参数过滤,支持spark-job-name
+                     * @return Filters 按照该参数过滤,支持spark-job-name
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置按照该参数过滤
-                     * @param Filters 按照该参数过滤
+                     * 设置按照该参数过滤,支持spark-job-name
+                     * @param Filters 按照该参数过滤,支持spark-job-name
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
@@ -184,7 +184,7 @@ namespace TencentCloud
                     bool m_sortingHasBeenSet;
 
                     /**
-                     * 按照该参数过滤
+                     * 按照该参数过滤,支持spark-job-name
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;

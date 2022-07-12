@@ -32,7 +32,8 @@ ModifyRuleAttributeRequest::ModifyRuleAttributeRequest() :
     m_forwardProtocolHasBeenSet(false),
     m_forwardHostHasBeenSet(false),
     m_serverNameIndicationSwitchHasBeenSet(false),
-    m_serverNameIndicationHasBeenSet(false)
+    m_serverNameIndicationHasBeenSet(false),
+    m_forcedRedirectHasBeenSet(false)
 {
 }
 
@@ -122,6 +123,14 @@ string ModifyRuleAttributeRequest::ToJsonString() const
         string key = "ServerNameIndication";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_serverNameIndication.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_forcedRedirectHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ForcedRedirect";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_forcedRedirect.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -290,6 +299,22 @@ void ModifyRuleAttributeRequest::SetServerNameIndication(const string& _serverNa
 bool ModifyRuleAttributeRequest::ServerNameIndicationHasBeenSet() const
 {
     return m_serverNameIndicationHasBeenSet;
+}
+
+string ModifyRuleAttributeRequest::GetForcedRedirect() const
+{
+    return m_forcedRedirect;
+}
+
+void ModifyRuleAttributeRequest::SetForcedRedirect(const string& _forcedRedirect)
+{
+    m_forcedRedirect = _forcedRedirect;
+    m_forcedRedirectHasBeenSet = true;
+}
+
+bool ModifyRuleAttributeRequest::ForcedRedirectHasBeenSet() const
+{
+    return m_forcedRedirectHasBeenSet;
 }
 
 

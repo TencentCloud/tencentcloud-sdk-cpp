@@ -25,7 +25,9 @@ KTVMusicDetailInfo::KTVMusicDetailInfo() :
     m_playTokenHasBeenSet(false),
     m_lyricsUrlHasBeenSet(false),
     m_midiUrlHasBeenSet(false),
-    m_chorusClipSetHasBeenSet(false)
+    m_chorusClipSetHasBeenSet(false),
+    m_preludeIntervalHasBeenSet(false),
+    m_genreSetHasBeenSet(false)
 {
 }
 
@@ -101,6 +103,29 @@ CoreInternalOutcome KTVMusicDetailInfo::Deserialize(const rapidjson::Value &valu
         m_chorusClipSetHasBeenSet = true;
     }
 
+    if (value.HasMember("PreludeInterval") && !value["PreludeInterval"].IsNull())
+    {
+        if (!value["PreludeInterval"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `KTVMusicDetailInfo.PreludeInterval` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_preludeInterval = value["PreludeInterval"].GetInt64();
+        m_preludeIntervalHasBeenSet = true;
+    }
+
+    if (value.HasMember("GenreSet") && !value["GenreSet"].IsNull())
+    {
+        if (!value["GenreSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `KTVMusicDetailInfo.GenreSet` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["GenreSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_genreSet.push_back((*itr).GetString());
+        }
+        m_genreSetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -153,6 +178,27 @@ void KTVMusicDetailInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_preludeIntervalHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PreludeInterval";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_preludeInterval, allocator);
+    }
+
+    if (m_genreSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GenreSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_genreSet.begin(); itr != m_genreSet.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
@@ -237,5 +283,37 @@ void KTVMusicDetailInfo::SetChorusClipSet(const vector<ChorusClip>& _chorusClipS
 bool KTVMusicDetailInfo::ChorusClipSetHasBeenSet() const
 {
     return m_chorusClipSetHasBeenSet;
+}
+
+int64_t KTVMusicDetailInfo::GetPreludeInterval() const
+{
+    return m_preludeInterval;
+}
+
+void KTVMusicDetailInfo::SetPreludeInterval(const int64_t& _preludeInterval)
+{
+    m_preludeInterval = _preludeInterval;
+    m_preludeIntervalHasBeenSet = true;
+}
+
+bool KTVMusicDetailInfo::PreludeIntervalHasBeenSet() const
+{
+    return m_preludeIntervalHasBeenSet;
+}
+
+vector<string> KTVMusicDetailInfo::GetGenreSet() const
+{
+    return m_genreSet;
+}
+
+void KTVMusicDetailInfo::SetGenreSet(const vector<string>& _genreSet)
+{
+    m_genreSet = _genreSet;
+    m_genreSetHasBeenSet = true;
+}
+
+bool KTVMusicDetailInfo::GenreSetHasBeenSet() const
+{
+    return m_genreSetHasBeenSet;
 }
 

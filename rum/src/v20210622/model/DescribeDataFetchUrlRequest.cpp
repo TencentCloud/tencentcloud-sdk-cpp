@@ -45,7 +45,9 @@ DescribeDataFetchUrlRequest::DescribeDataFetchUrlRequest() :
     m_browserHasBeenSet(false),
     m_costTypeHasBeenSet(false),
     m_urlHasBeenSet(false),
-    m_envHasBeenSet(false)
+    m_envHasBeenSet(false),
+    m_statusHasBeenSet(false),
+    m_retHasBeenSet(false)
 {
 }
 
@@ -238,6 +240,22 @@ string DescribeDataFetchUrlRequest::ToJsonString() const
         string key = "Env";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_env.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_retHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Ret";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_ret.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -614,6 +632,38 @@ void DescribeDataFetchUrlRequest::SetEnv(const string& _env)
 bool DescribeDataFetchUrlRequest::EnvHasBeenSet() const
 {
     return m_envHasBeenSet;
+}
+
+string DescribeDataFetchUrlRequest::GetStatus() const
+{
+    return m_status;
+}
+
+void DescribeDataFetchUrlRequest::SetStatus(const string& _status)
+{
+    m_status = _status;
+    m_statusHasBeenSet = true;
+}
+
+bool DescribeDataFetchUrlRequest::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
+}
+
+string DescribeDataFetchUrlRequest::GetRet() const
+{
+    return m_ret;
+}
+
+void DescribeDataFetchUrlRequest::SetRet(const string& _ret)
+{
+    m_ret = _ret;
+    m_retHasBeenSet = true;
+}
+
+bool DescribeDataFetchUrlRequest::RetHasBeenSet() const
+{
+    return m_retHasBeenSet;
 }
 
 

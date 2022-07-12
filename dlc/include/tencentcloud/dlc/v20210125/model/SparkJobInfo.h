@@ -546,17 +546,17 @@ namespace TencentCloud
                     bool IsLocalPythonFilesHasBeenSet() const;
 
                     /**
-                     * 获取pyspark：python依赖, 除py文件外，还支持zip/egg等归档格式，多文件以逗号分隔
+                     * 获取注：该返回值已废弃
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AppPythonFiles pyspark：python依赖, 除py文件外，还支持zip/egg等归档格式，多文件以逗号分隔
+                     * @return AppPythonFiles 注：该返回值已废弃
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetAppPythonFiles() const;
 
                     /**
-                     * 设置pyspark：python依赖, 除py文件外，还支持zip/egg等归档格式，多文件以逗号分隔
+                     * 设置注：该返回值已废弃
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AppPythonFiles pyspark：python依赖, 除py文件外，还支持zip/egg等归档格式，多文件以逗号分隔
+                     * @param AppPythonFiles 注：该返回值已废弃
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetAppPythonFiles(const std::string& _appPythonFiles);
@@ -566,6 +566,94 @@ namespace TencentCloud
                      * @return AppPythonFiles 是否已赋值
                      */
                     bool AppPythonFilesHasBeenSet() const;
+
+                    /**
+                     * 获取archives：依赖上传方式，1、cos；2、lakefs（控制台使用，该方式不支持直接接口调用）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsLocalArchives archives：依赖上传方式，1、cos；2、lakefs（控制台使用，该方式不支持直接接口调用）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetIsLocalArchives() const;
+
+                    /**
+                     * 设置archives：依赖上传方式，1、cos；2、lakefs（控制台使用，该方式不支持直接接口调用）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param IsLocalArchives archives：依赖上传方式，1、cos；2、lakefs（控制台使用，该方式不支持直接接口调用）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIsLocalArchives(const std::string& _isLocalArchives);
+
+                    /**
+                     * 判断参数 IsLocalArchives 是否已赋值
+                     * @return IsLocalArchives 是否已赋值
+                     */
+                    bool IsLocalArchivesHasBeenSet() const;
+
+                    /**
+                     * 获取archives：依赖资源
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return JobArchives archives：依赖资源
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetJobArchives() const;
+
+                    /**
+                     * 设置archives：依赖资源
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param JobArchives archives：依赖资源
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetJobArchives(const std::string& _jobArchives);
+
+                    /**
+                     * 判断参数 JobArchives 是否已赋值
+                     * @return JobArchives 是否已赋值
+                     */
+                    bool JobArchivesHasBeenSet() const;
+
+                    /**
+                     * 获取pyspark：python依赖, 除py文件外，还支持zip/egg等归档格式，多文件以逗号分隔
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return JobPythonFiles pyspark：python依赖, 除py文件外，还支持zip/egg等归档格式，多文件以逗号分隔
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetJobPythonFiles() const;
+
+                    /**
+                     * 设置pyspark：python依赖, 除py文件外，还支持zip/egg等归档格式，多文件以逗号分隔
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param JobPythonFiles pyspark：python依赖, 除py文件外，还支持zip/egg等归档格式，多文件以逗号分隔
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetJobPythonFiles(const std::string& _jobPythonFiles);
+
+                    /**
+                     * 判断参数 JobPythonFiles 是否已赋值
+                     * @return JobPythonFiles 是否已赋值
+                     */
+                    bool JobPythonFilesHasBeenSet() const;
+
+                    /**
+                     * 获取当前job正在运行或准备运行的任务个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TaskNum 当前job正在运行或准备运行的任务个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetTaskNum() const;
+
+                    /**
+                     * 设置当前job正在运行或准备运行的任务个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TaskNum 当前job正在运行或准备运行的任务个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTaskNum(const int64_t& _taskNum);
+
+                    /**
+                     * 判断参数 TaskNum 是否已赋值
+                     * @return TaskNum 是否已赋值
+                     */
+                    bool TaskNumHasBeenSet() const;
 
                 private:
 
@@ -735,11 +823,39 @@ namespace TencentCloud
                     bool m_isLocalPythonFilesHasBeenSet;
 
                     /**
-                     * pyspark：python依赖, 除py文件外，还支持zip/egg等归档格式，多文件以逗号分隔
+                     * 注：该返回值已废弃
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_appPythonFiles;
                     bool m_appPythonFilesHasBeenSet;
+
+                    /**
+                     * archives：依赖上传方式，1、cos；2、lakefs（控制台使用，该方式不支持直接接口调用）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_isLocalArchives;
+                    bool m_isLocalArchivesHasBeenSet;
+
+                    /**
+                     * archives：依赖资源
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_jobArchives;
+                    bool m_jobArchivesHasBeenSet;
+
+                    /**
+                     * pyspark：python依赖, 除py文件外，还支持zip/egg等归档格式，多文件以逗号分隔
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_jobPythonFiles;
+                    bool m_jobPythonFilesHasBeenSet;
+
+                    /**
+                     * 当前job正在运行或准备运行的任务个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_taskNum;
+                    bool m_taskNumHasBeenSet;
 
                 };
             }

@@ -43,7 +43,9 @@ CreateSparkAppRequest::CreateSparkAppRequest() :
     m_maxRetriesHasBeenSet(false),
     m_dataSourceHasBeenSet(false),
     m_isLocalPythonFilesHasBeenSet(false),
-    m_appPythonFilesHasBeenSet(false)
+    m_appPythonFilesHasBeenSet(false),
+    m_isLocalArchivesHasBeenSet(false),
+    m_appArchivesHasBeenSet(false)
 {
 }
 
@@ -220,6 +222,22 @@ string CreateSparkAppRequest::ToJsonString() const
         string key = "AppPythonFiles";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_appPythonFiles.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isLocalArchivesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsLocalArchives";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_isLocalArchives.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_appArchivesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AppArchives";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_appArchives.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -564,6 +582,38 @@ void CreateSparkAppRequest::SetAppPythonFiles(const string& _appPythonFiles)
 bool CreateSparkAppRequest::AppPythonFilesHasBeenSet() const
 {
     return m_appPythonFilesHasBeenSet;
+}
+
+string CreateSparkAppRequest::GetIsLocalArchives() const
+{
+    return m_isLocalArchives;
+}
+
+void CreateSparkAppRequest::SetIsLocalArchives(const string& _isLocalArchives)
+{
+    m_isLocalArchives = _isLocalArchives;
+    m_isLocalArchivesHasBeenSet = true;
+}
+
+bool CreateSparkAppRequest::IsLocalArchivesHasBeenSet() const
+{
+    return m_isLocalArchivesHasBeenSet;
+}
+
+string CreateSparkAppRequest::GetAppArchives() const
+{
+    return m_appArchives;
+}
+
+void CreateSparkAppRequest::SetAppArchives(const string& _appArchives)
+{
+    m_appArchives = _appArchives;
+    m_appArchivesHasBeenSet = true;
+}
+
+bool CreateSparkAppRequest::AppArchivesHasBeenSet() const
+{
+    return m_appArchivesHasBeenSet;
 }
 
 

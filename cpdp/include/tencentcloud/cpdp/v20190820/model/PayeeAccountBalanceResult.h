@@ -230,6 +230,28 @@ OCCASION:偶然所得
                      */
                     bool InPayBalanceHasBeenSet() const;
 
+                    /**
+                     * 获取累计结算金额
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SumSettlementAmount 累计结算金额
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetSumSettlementAmount() const;
+
+                    /**
+                     * 设置累计结算金额
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SumSettlementAmount 累计结算金额
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSumSettlementAmount(const std::string& _sumSettlementAmount);
+
+                    /**
+                     * 判断参数 SumSettlementAmount 是否已赋值
+                     * @return SumSettlementAmount 是否已赋值
+                     */
+                    bool SumSettlementAmountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -289,6 +311,13 @@ OCCASION:偶然所得
                      */
                     std::string m_inPayBalance;
                     bool m_inPayBalanceHasBeenSet;
+
+                    /**
+                     * 累计结算金额
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_sumSettlementAmount;
+                    bool m_sumSettlementAmountHasBeenSet;
 
                 };
             }

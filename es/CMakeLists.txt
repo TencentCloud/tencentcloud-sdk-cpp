@@ -25,10 +25,11 @@ set(es_public_header_model
   include/tencentcloud/es/v20180416/model/IndexPolicyField.h
   include/tencentcloud/es/v20180416/model/NodeInfo.h
   include/tencentcloud/es/v20180416/model/UpgradeInstanceResponse.h
-  include/tencentcloud/es/v20180416/model/UpdateJdkRequest.h
+  include/tencentcloud/es/v20180416/model/UpdateDiagnoseSettingsResponse.h
   include/tencentcloud/es/v20180416/model/DescribeIndexMetaResponse.h
   include/tencentcloud/es/v20180416/model/UpdateInstanceResponse.h
   include/tencentcloud/es/v20180416/model/DescribeInstanceOperationsRequest.h
+  include/tencentcloud/es/v20180416/model/UpdateJdkRequest.h
   include/tencentcloud/es/v20180416/model/CreateIndexResponse.h
   include/tencentcloud/es/v20180416/model/OperationDetail.h
   include/tencentcloud/es/v20180416/model/DiagnoseInstanceResponse.h
@@ -44,6 +45,7 @@ set(es_public_header_model
   include/tencentcloud/es/v20180416/model/UpdateDictionariesRequest.h
   include/tencentcloud/es/v20180416/model/ZoneDetail.h
   include/tencentcloud/es/v20180416/model/UpdateRequestTargetNodeTypesRequest.h
+  include/tencentcloud/es/v20180416/model/OperationDuration.h
   include/tencentcloud/es/v20180416/model/NodeView.h
   include/tencentcloud/es/v20180416/model/DescribeIndexListRequest.h
   include/tencentcloud/es/v20180416/model/CosBackup.h
@@ -70,7 +72,7 @@ set(es_public_header_model
   include/tencentcloud/es/v20180416/model/UpdatePluginsRequest.h
   include/tencentcloud/es/v20180416/model/GetRequestTargetNodeTypesRequest.h
   include/tencentcloud/es/v20180416/model/KibanaNodeInfo.h
-  include/tencentcloud/es/v20180416/model/UpdateDiagnoseSettingsResponse.h
+  include/tencentcloud/es/v20180416/model/OperationDurationUpdated.h
   include/tencentcloud/es/v20180416/model/UpgradeLicenseResponse.h
   include/tencentcloud/es/v20180416/model/EsAcl.h
   include/tencentcloud/es/v20180416/model/UpdateIndexRequest.h
@@ -105,10 +107,11 @@ set(es_src
   src/v20180416/model/IndexPolicyField.cpp
   src/v20180416/model/NodeInfo.cpp
   src/v20180416/model/UpgradeInstanceResponse.cpp
-  src/v20180416/model/UpdateJdkRequest.cpp
+  src/v20180416/model/UpdateDiagnoseSettingsResponse.cpp
   src/v20180416/model/DescribeIndexMetaResponse.cpp
   src/v20180416/model/UpdateInstanceResponse.cpp
   src/v20180416/model/DescribeInstanceOperationsRequest.cpp
+  src/v20180416/model/UpdateJdkRequest.cpp
   src/v20180416/model/CreateIndexResponse.cpp
   src/v20180416/model/OperationDetail.cpp
   src/v20180416/model/DiagnoseInstanceResponse.cpp
@@ -124,6 +127,7 @@ set(es_src
   src/v20180416/model/UpdateDictionariesRequest.cpp
   src/v20180416/model/ZoneDetail.cpp
   src/v20180416/model/UpdateRequestTargetNodeTypesRequest.cpp
+  src/v20180416/model/OperationDuration.cpp
   src/v20180416/model/NodeView.cpp
   src/v20180416/model/DescribeIndexListRequest.cpp
   src/v20180416/model/CosBackup.cpp
@@ -150,7 +154,7 @@ set(es_src
   src/v20180416/model/UpdatePluginsRequest.cpp
   src/v20180416/model/GetRequestTargetNodeTypesRequest.cpp
   src/v20180416/model/KibanaNodeInfo.cpp
-  src/v20180416/model/UpdateDiagnoseSettingsResponse.cpp
+  src/v20180416/model/OperationDurationUpdated.cpp
   src/v20180416/model/UpgradeLicenseResponse.cpp
   src/v20180416/model/EsAcl.cpp
   src/v20180416/model/UpdateIndexRequest.cpp

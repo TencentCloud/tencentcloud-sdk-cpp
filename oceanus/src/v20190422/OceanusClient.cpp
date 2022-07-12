@@ -255,6 +255,49 @@ OceanusClient::CreateResourceConfigOutcomeCallable OceanusClient::CreateResource
     return task->get_future();
 }
 
+OceanusClient::DeleteJobsOutcome OceanusClient::DeleteJobs(const DeleteJobsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteJobs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteJobsResponse rsp = DeleteJobsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteJobsOutcome(rsp);
+        else
+            return DeleteJobsOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteJobsOutcome(outcome.GetError());
+    }
+}
+
+void OceanusClient::DeleteJobsAsync(const DeleteJobsRequest& request, const DeleteJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteJobs(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OceanusClient::DeleteJobsOutcomeCallable OceanusClient::DeleteJobsCallable(const DeleteJobsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteJobsOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteJobs(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 OceanusClient::DeleteResourceConfigsOutcome OceanusClient::DeleteResourceConfigs(const DeleteResourceConfigsRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteResourceConfigs");
@@ -377,6 +420,49 @@ OceanusClient::DeleteTableConfigOutcomeCallable OceanusClient::DeleteTableConfig
         [this, request]()
         {
             return this->DeleteTableConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+OceanusClient::DescribeClustersOutcome OceanusClient::DescribeClusters(const DescribeClustersRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeClusters");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeClustersResponse rsp = DescribeClustersResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeClustersOutcome(rsp);
+        else
+            return DescribeClustersOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeClustersOutcome(outcome.GetError());
+    }
+}
+
+void OceanusClient::DescribeClustersAsync(const DescribeClustersRequest& request, const DescribeClustersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeClusters(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OceanusClient::DescribeClustersOutcomeCallable OceanusClient::DescribeClustersCallable(const DescribeClustersRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeClustersOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeClusters(request);
         }
     );
 
@@ -678,6 +764,49 @@ OceanusClient::DescribeSystemResourcesOutcomeCallable OceanusClient::DescribeSys
         [this, request]()
         {
             return this->DescribeSystemResources(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+OceanusClient::DescribeTreeJobsOutcome OceanusClient::DescribeTreeJobs(const DescribeTreeJobsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTreeJobs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTreeJobsResponse rsp = DescribeTreeJobsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTreeJobsOutcome(rsp);
+        else
+            return DescribeTreeJobsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTreeJobsOutcome(outcome.GetError());
+    }
+}
+
+void OceanusClient::DescribeTreeJobsAsync(const DescribeTreeJobsRequest& request, const DescribeTreeJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTreeJobs(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OceanusClient::DescribeTreeJobsOutcomeCallable OceanusClient::DescribeTreeJobsCallable(const DescribeTreeJobsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTreeJobsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTreeJobs(request);
         }
     );
 

@@ -28,6 +28,7 @@
 #include <tencentcloud/es/v20180416/model/ZoneDetail.h>
 #include <tencentcloud/es/v20180416/model/WebNodeTypeInfo.h>
 #include <tencentcloud/es/v20180416/model/EsConfigSetInfo.h>
+#include <tencentcloud/es/v20180416/model/OperationDurationUpdated.h>
 
 
 namespace TencentCloud
@@ -613,6 +614,24 @@ namespace TencentCloud
                      */
                     bool EsConfigSetHasBeenSet() const;
 
+                    /**
+                     * 获取可维护时间段
+                     * @return OperationDuration 可维护时间段
+                     */
+                    OperationDurationUpdated GetOperationDuration() const;
+
+                    /**
+                     * 设置可维护时间段
+                     * @param OperationDuration 可维护时间段
+                     */
+                    void SetOperationDuration(const OperationDurationUpdated& _operationDuration);
+
+                    /**
+                     * 判断参数 OperationDuration 是否已赋值
+                     * @return OperationDuration 是否已赋值
+                     */
+                    bool OperationDurationHasBeenSet() const;
+
                 private:
 
                     /**
@@ -800,6 +819,12 @@ namespace TencentCloud
                      */
                     EsConfigSetInfo m_esConfigSet;
                     bool m_esConfigSetHasBeenSet;
+
+                    /**
+                     * 可维护时间段
+                     */
+                    OperationDurationUpdated m_operationDuration;
+                    bool m_operationDurationHasBeenSet;
 
                 };
             }

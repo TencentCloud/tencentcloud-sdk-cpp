@@ -28,7 +28,8 @@ PayeeAccountBalanceResult::PayeeAccountBalanceResult() :
     m_manualFreezeBalanceHasBeenSet(false),
     m_payableBalanceHasBeenSet(false),
     m_paidBalanceHasBeenSet(false),
-    m_inPayBalanceHasBeenSet(false)
+    m_inPayBalanceHasBeenSet(false),
+    m_sumSettlementAmountHasBeenSet(false)
 {
 }
 
@@ -117,6 +118,16 @@ CoreInternalOutcome PayeeAccountBalanceResult::Deserialize(const rapidjson::Valu
         m_inPayBalanceHasBeenSet = true;
     }
 
+    if (value.HasMember("SumSettlementAmount") && !value["SumSettlementAmount"].IsNull())
+    {
+        if (!value["SumSettlementAmount"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PayeeAccountBalanceResult.SumSettlementAmount` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sumSettlementAmount = string(value["SumSettlementAmount"].GetString());
+        m_sumSettlementAmountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -186,6 +197,14 @@ void PayeeAccountBalanceResult::ToJsonObject(rapidjson::Value &value, rapidjson:
         string key = "InPayBalance";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_inPayBalance.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sumSettlementAmountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SumSettlementAmount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sumSettlementAmount.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -317,5 +336,21 @@ void PayeeAccountBalanceResult::SetInPayBalance(const string& _inPayBalance)
 bool PayeeAccountBalanceResult::InPayBalanceHasBeenSet() const
 {
     return m_inPayBalanceHasBeenSet;
+}
+
+string PayeeAccountBalanceResult::GetSumSettlementAmount() const
+{
+    return m_sumSettlementAmount;
+}
+
+void PayeeAccountBalanceResult::SetSumSettlementAmount(const string& _sumSettlementAmount)
+{
+    m_sumSettlementAmount = _sumSettlementAmount;
+    m_sumSettlementAmountHasBeenSet = true;
+}
+
+bool PayeeAccountBalanceResult::SumSettlementAmountHasBeenSet() const
+{
+    return m_sumSettlementAmountHasBeenSet;
 }
 

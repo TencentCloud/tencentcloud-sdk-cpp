@@ -48,7 +48,11 @@ SparkJobInfo::SparkJobInfo() :
     m_streamingStatHasBeenSet(false),
     m_dataSourceHasBeenSet(false),
     m_isLocalPythonFilesHasBeenSet(false),
-    m_appPythonFilesHasBeenSet(false)
+    m_appPythonFilesHasBeenSet(false),
+    m_isLocalArchivesHasBeenSet(false),
+    m_jobArchivesHasBeenSet(false),
+    m_jobPythonFilesHasBeenSet(false),
+    m_taskNumHasBeenSet(false)
 {
 }
 
@@ -344,6 +348,46 @@ CoreInternalOutcome SparkJobInfo::Deserialize(const rapidjson::Value &value)
         m_appPythonFilesHasBeenSet = true;
     }
 
+    if (value.HasMember("IsLocalArchives") && !value["IsLocalArchives"].IsNull())
+    {
+        if (!value["IsLocalArchives"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SparkJobInfo.IsLocalArchives` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_isLocalArchives = string(value["IsLocalArchives"].GetString());
+        m_isLocalArchivesHasBeenSet = true;
+    }
+
+    if (value.HasMember("JobArchives") && !value["JobArchives"].IsNull())
+    {
+        if (!value["JobArchives"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SparkJobInfo.JobArchives` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_jobArchives = string(value["JobArchives"].GetString());
+        m_jobArchivesHasBeenSet = true;
+    }
+
+    if (value.HasMember("JobPythonFiles") && !value["JobPythonFiles"].IsNull())
+    {
+        if (!value["JobPythonFiles"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SparkJobInfo.JobPythonFiles` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_jobPythonFiles = string(value["JobPythonFiles"].GetString());
+        m_jobPythonFilesHasBeenSet = true;
+    }
+
+    if (value.HasMember("TaskNum") && !value["TaskNum"].IsNull())
+    {
+        if (!value["TaskNum"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SparkJobInfo.TaskNum` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_taskNum = value["TaskNum"].GetInt64();
+        m_taskNumHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -574,6 +618,38 @@ void SparkJobInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "AppPythonFiles";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_appPythonFiles.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isLocalArchivesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsLocalArchives";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_isLocalArchives.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_jobArchivesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "JobArchives";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_jobArchives.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_jobPythonFilesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "JobPythonFiles";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_jobPythonFiles.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_taskNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_taskNum, allocator);
     }
 
 }
@@ -1025,5 +1101,69 @@ void SparkJobInfo::SetAppPythonFiles(const string& _appPythonFiles)
 bool SparkJobInfo::AppPythonFilesHasBeenSet() const
 {
     return m_appPythonFilesHasBeenSet;
+}
+
+string SparkJobInfo::GetIsLocalArchives() const
+{
+    return m_isLocalArchives;
+}
+
+void SparkJobInfo::SetIsLocalArchives(const string& _isLocalArchives)
+{
+    m_isLocalArchives = _isLocalArchives;
+    m_isLocalArchivesHasBeenSet = true;
+}
+
+bool SparkJobInfo::IsLocalArchivesHasBeenSet() const
+{
+    return m_isLocalArchivesHasBeenSet;
+}
+
+string SparkJobInfo::GetJobArchives() const
+{
+    return m_jobArchives;
+}
+
+void SparkJobInfo::SetJobArchives(const string& _jobArchives)
+{
+    m_jobArchives = _jobArchives;
+    m_jobArchivesHasBeenSet = true;
+}
+
+bool SparkJobInfo::JobArchivesHasBeenSet() const
+{
+    return m_jobArchivesHasBeenSet;
+}
+
+string SparkJobInfo::GetJobPythonFiles() const
+{
+    return m_jobPythonFiles;
+}
+
+void SparkJobInfo::SetJobPythonFiles(const string& _jobPythonFiles)
+{
+    m_jobPythonFiles = _jobPythonFiles;
+    m_jobPythonFilesHasBeenSet = true;
+}
+
+bool SparkJobInfo::JobPythonFilesHasBeenSet() const
+{
+    return m_jobPythonFilesHasBeenSet;
+}
+
+int64_t SparkJobInfo::GetTaskNum() const
+{
+    return m_taskNum;
+}
+
+void SparkJobInfo::SetTaskNum(const int64_t& _taskNum)
+{
+    m_taskNum = _taskNum;
+    m_taskNumHasBeenSet = true;
+}
+
+bool SparkJobInfo::TaskNumHasBeenSet() const
+{
+    return m_taskNumHasBeenSet;
 }
 

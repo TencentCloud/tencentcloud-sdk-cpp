@@ -52,7 +52,8 @@ CreateInstanceRequest::CreateInstanceRequest() :
     m_basicSecurityTypeHasBeenSet(false),
     m_sceneTypeHasBeenSet(false),
     m_webNodeTypeInfoHasBeenSet(false),
-    m_protocolHasBeenSet(false)
+    m_protocolHasBeenSet(false),
+    m_operationDurationHasBeenSet(false)
 {
 }
 
@@ -328,6 +329,15 @@ string CreateInstanceRequest::ToJsonString() const
         string key = "Protocol";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_protocol.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_operationDurationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OperationDuration";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_operationDuration.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -816,6 +826,22 @@ void CreateInstanceRequest::SetProtocol(const string& _protocol)
 bool CreateInstanceRequest::ProtocolHasBeenSet() const
 {
     return m_protocolHasBeenSet;
+}
+
+OperationDuration CreateInstanceRequest::GetOperationDuration() const
+{
+    return m_operationDuration;
+}
+
+void CreateInstanceRequest::SetOperationDuration(const OperationDuration& _operationDuration)
+{
+    m_operationDuration = _operationDuration;
+    m_operationDurationHasBeenSet = true;
+}
+
+bool CreateInstanceRequest::OperationDurationHasBeenSet() const
+{
+    return m_operationDurationHasBeenSet;
 }
 
 

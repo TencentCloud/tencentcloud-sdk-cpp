@@ -25,6 +25,7 @@
 #include <tencentcloud/es/v20180416/model/NodeInfo.h>
 #include <tencentcloud/es/v20180416/model/TagInfo.h>
 #include <tencentcloud/es/v20180416/model/WebNodeTypeInfo.h>
+#include <tencentcloud/es/v20180416/model/OperationDuration.h>
 
 
 namespace TencentCloud
@@ -618,6 +619,24 @@ namespace TencentCloud
                      */
                     bool ProtocolHasBeenSet() const;
 
+                    /**
+                     * 获取可维护时间段
+                     * @return OperationDuration 可维护时间段
+                     */
+                    OperationDuration GetOperationDuration() const;
+
+                    /**
+                     * 设置可维护时间段
+                     * @param OperationDuration 可维护时间段
+                     */
+                    void SetOperationDuration(const OperationDuration& _operationDuration);
+
+                    /**
+                     * 判断参数 OperationDuration 是否已赋值
+                     * @return OperationDuration 是否已赋值
+                     */
+                    bool OperationDurationHasBeenSet() const;
+
                 private:
 
                     /**
@@ -807,6 +826,12 @@ namespace TencentCloud
                      */
                     std::string m_protocol;
                     bool m_protocolHasBeenSet;
+
+                    /**
+                     * 可维护时间段
+                     */
+                    OperationDuration m_operationDuration;
+                    bool m_operationDurationHasBeenSet;
 
                 };
             }

@@ -33,7 +33,8 @@ DescribeInstancesRequest::DescribeInstancesRequest() :
     m_tagListHasBeenSet(false),
     m_ipListHasBeenSet(false),
     m_zoneListHasBeenSet(false),
-    m_healthStatusHasBeenSet(false)
+    m_healthStatusHasBeenSet(false),
+    m_vpcIdsHasBeenSet(false)
 {
 }
 
@@ -161,6 +162,19 @@ string DescribeInstancesRequest::ToJsonString() const
         for (auto itr = m_healthStatus.begin(); itr != m_healthStatus.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
+    }
+
+    if (m_vpcIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VpcIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_vpcIds.begin(); itr != m_vpcIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
@@ -346,6 +360,22 @@ void DescribeInstancesRequest::SetHealthStatus(const vector<int64_t>& _healthSta
 bool DescribeInstancesRequest::HealthStatusHasBeenSet() const
 {
     return m_healthStatusHasBeenSet;
+}
+
+vector<string> DescribeInstancesRequest::GetVpcIds() const
+{
+    return m_vpcIds;
+}
+
+void DescribeInstancesRequest::SetVpcIds(const vector<string>& _vpcIds)
+{
+    m_vpcIds = _vpcIds;
+    m_vpcIdsHasBeenSet = true;
+}
+
+bool DescribeInstancesRequest::VpcIdsHasBeenSet() const
+{
+    return m_vpcIdsHasBeenSet;
 }
 
 

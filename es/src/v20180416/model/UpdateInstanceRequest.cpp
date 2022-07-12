@@ -52,7 +52,8 @@ UpdateInstanceRequest::UpdateInstanceRequest() :
     m_enableCerebroHasBeenSet(false),
     m_cerebroPublicAccessHasBeenSet(false),
     m_cerebroPrivateAccessHasBeenSet(false),
-    m_esConfigSetHasBeenSet(false)
+    m_esConfigSetHasBeenSet(false),
+    m_operationDurationHasBeenSet(false)
 {
 }
 
@@ -320,6 +321,15 @@ string UpdateInstanceRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_esConfigSet.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_operationDurationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OperationDuration";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_operationDuration.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -808,6 +818,22 @@ void UpdateInstanceRequest::SetEsConfigSet(const EsConfigSetInfo& _esConfigSet)
 bool UpdateInstanceRequest::EsConfigSetHasBeenSet() const
 {
     return m_esConfigSetHasBeenSet;
+}
+
+OperationDurationUpdated UpdateInstanceRequest::GetOperationDuration() const
+{
+    return m_operationDuration;
+}
+
+void UpdateInstanceRequest::SetOperationDuration(const OperationDurationUpdated& _operationDuration)
+{
+    m_operationDuration = _operationDuration;
+    m_operationDurationHasBeenSet = true;
+}
+
+bool UpdateInstanceRequest::OperationDurationHasBeenSet() const
+{
+    return m_operationDurationHasBeenSet;
 }
 
 

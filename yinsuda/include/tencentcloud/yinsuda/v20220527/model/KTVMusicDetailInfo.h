@@ -138,6 +138,42 @@ namespace TencentCloud
                      */
                     bool ChorusClipSetHasBeenSet() const;
 
+                    /**
+                     * 获取前奏间隔。
+                     * @return PreludeInterval 前奏间隔。
+                     */
+                    int64_t GetPreludeInterval() const;
+
+                    /**
+                     * 设置前奏间隔。
+                     * @param PreludeInterval 前奏间隔。
+                     */
+                    void SetPreludeInterval(const int64_t& _preludeInterval);
+
+                    /**
+                     * 判断参数 PreludeInterval 是否已赋值
+                     * @return PreludeInterval 是否已赋值
+                     */
+                    bool PreludeIntervalHasBeenSet() const;
+
+                    /**
+                     * 获取歌曲流派列表。
+                     * @return GenreSet 歌曲流派列表。
+                     */
+                    std::vector<std::string> GetGenreSet() const;
+
+                    /**
+                     * 设置歌曲流派列表。
+                     * @param GenreSet 歌曲流派列表。
+                     */
+                    void SetGenreSet(const std::vector<std::string>& _genreSet);
+
+                    /**
+                     * 判断参数 GenreSet 是否已赋值
+                     * @return GenreSet 是否已赋值
+                     */
+                    bool GenreSetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -169,6 +205,18 @@ namespace TencentCloud
                      */
                     std::vector<ChorusClip> m_chorusClipSet;
                     bool m_chorusClipSetHasBeenSet;
+
+                    /**
+                     * 前奏间隔。
+                     */
+                    int64_t m_preludeInterval;
+                    bool m_preludeIntervalHasBeenSet;
+
+                    /**
+                     * 歌曲流派列表。
+                     */
+                    std::vector<std::string> m_genreSet;
+                    bool m_genreSetHasBeenSet;
 
                 };
             }

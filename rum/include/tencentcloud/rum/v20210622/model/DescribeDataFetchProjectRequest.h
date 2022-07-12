@@ -456,6 +456,42 @@ namespace TencentCloud
                      */
                     bool EnvHasBeenSet() const;
 
+                    /**
+                     * 获取httpcode响应码
+                     * @return Status httpcode响应码
+                     */
+                    std::string GetStatus() const;
+
+                    /**
+                     * 设置httpcode响应码
+                     * @param Status httpcode响应码
+                     */
+                    void SetStatus(const std::string& _status);
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     */
+                    bool StatusHasBeenSet() const;
+
+                    /**
+                     * 获取retcode
+                     * @return Ret retcode
+                     */
+                    std::string GetRet() const;
+
+                    /**
+                     * 设置retcode
+                     * @param Ret retcode
+                     */
+                    void SetRet(const std::string& _ret);
+
+                    /**
+                     * 判断参数 Ret 是否已赋值
+                     * @return Ret 是否已赋值
+                     */
+                    bool RetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -595,6 +631,18 @@ namespace TencentCloud
                      */
                     std::string m_env;
                     bool m_envHasBeenSet;
+
+                    /**
+                     * httpcode响应码
+                     */
+                    std::string m_status;
+                    bool m_statusHasBeenSet;
+
+                    /**
+                     * retcode
+                     */
+                    std::string m_ret;
+                    bool m_retHasBeenSet;
 
                 };
             }

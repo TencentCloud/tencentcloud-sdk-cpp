@@ -354,6 +354,32 @@ namespace TencentCloud
                      */
                     bool InstanceChargeTypeHasBeenSet() const;
 
+                    /**
+                     * 获取实例的IPv6地址。
+注意：此字段可能返回 null，表示取不到有效值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IPv6Addresses 实例的IPv6地址。
+注意：此字段可能返回 null，表示取不到有效值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> GetIPv6Addresses() const;
+
+                    /**
+                     * 设置实例的IPv6地址。
+注意：此字段可能返回 null，表示取不到有效值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param IPv6Addresses 实例的IPv6地址。
+注意：此字段可能返回 null，表示取不到有效值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIPv6Addresses(const std::vector<std::string>& _iPv6Addresses);
+
+                    /**
+                     * 判断参数 IPv6Addresses 是否已赋值
+                     * @return IPv6Addresses 是否已赋值
+                     */
+                    bool IPv6AddressesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -453,6 +479,14 @@ namespace TencentCloud
                      */
                     std::string m_instanceChargeType;
                     bool m_instanceChargeTypeHasBeenSet;
+
+                    /**
+                     * 实例的IPv6地址。
+注意：此字段可能返回 null，表示取不到有效值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_iPv6Addresses;
+                    bool m_iPv6AddressesHasBeenSet;
 
                 };
             }

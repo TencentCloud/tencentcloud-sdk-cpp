@@ -95,7 +95,8 @@ InstanceInfo::InstanceInfo() :
     m_healthStatusHasBeenSet(false),
     m_esPrivateUrlHasBeenSet(false),
     m_esPrivateDomainHasBeenSet(false),
-    m_esConfigSetsHasBeenSet(false)
+    m_esConfigSetsHasBeenSet(false),
+    m_operationDurationHasBeenSet(false)
 {
 }
 
@@ -946,6 +947,23 @@ CoreInternalOutcome InstanceInfo::Deserialize(const rapidjson::Value &value)
         m_esConfigSetsHasBeenSet = true;
     }
 
+    if (value.HasMember("OperationDuration") && !value["OperationDuration"].IsNull())
+    {
+        if (!value["OperationDuration"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.OperationDuration` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_operationDuration.Deserialize(value["OperationDuration"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_operationDurationHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1591,6 +1609,15 @@ void InstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_operationDurationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OperationDuration";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_operationDuration.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -2794,5 +2821,21 @@ void InstanceInfo::SetEsConfigSets(const vector<EsConfigSetInfo>& _esConfigSets)
 bool InstanceInfo::EsConfigSetsHasBeenSet() const
 {
     return m_esConfigSetsHasBeenSet;
+}
+
+OperationDuration InstanceInfo::GetOperationDuration() const
+{
+    return m_operationDuration;
+}
+
+void InstanceInfo::SetOperationDuration(const OperationDuration& _operationDuration)
+{
+    m_operationDuration = _operationDuration;
+    m_operationDurationHasBeenSet = true;
+}
+
+bool InstanceInfo::OperationDurationHasBeenSet() const
+{
+    return m_operationDurationHasBeenSet;
 }
 

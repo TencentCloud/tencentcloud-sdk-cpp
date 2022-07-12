@@ -34,7 +34,8 @@ RuleInfo::RuleInfo() :
     m_bindStatusHasBeenSet(false),
     m_forwardHostHasBeenSet(false),
     m_serverNameIndicationSwitchHasBeenSet(false),
-    m_serverNameIndicationHasBeenSet(false)
+    m_serverNameIndicationHasBeenSet(false),
+    m_forcedRedirectHasBeenSet(false)
 {
 }
 
@@ -200,6 +201,16 @@ CoreInternalOutcome RuleInfo::Deserialize(const rapidjson::Value &value)
         m_serverNameIndicationHasBeenSet = true;
     }
 
+    if (value.HasMember("ForcedRedirect") && !value["ForcedRedirect"].IsNull())
+    {
+        if (!value["ForcedRedirect"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleInfo.ForcedRedirect` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_forcedRedirect = string(value["ForcedRedirect"].GetString());
+        m_forcedRedirectHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -325,6 +336,14 @@ void RuleInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "ServerNameIndication";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_serverNameIndication.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_forcedRedirectHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ForcedRedirect";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_forcedRedirect.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -552,5 +571,21 @@ void RuleInfo::SetServerNameIndication(const string& _serverNameIndication)
 bool RuleInfo::ServerNameIndicationHasBeenSet() const
 {
     return m_serverNameIndicationHasBeenSet;
+}
+
+string RuleInfo::GetForcedRedirect() const
+{
+    return m_forcedRedirect;
+}
+
+void RuleInfo::SetForcedRedirect(const string& _forcedRedirect)
+{
+    m_forcedRedirect = _forcedRedirect;
+    m_forcedRedirectHasBeenSet = true;
+}
+
+bool RuleInfo::ForcedRedirectHasBeenSet() const
+{
+    return m_forcedRedirectHasBeenSet;
 }
 

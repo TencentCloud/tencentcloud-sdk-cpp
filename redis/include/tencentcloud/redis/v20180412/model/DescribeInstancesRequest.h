@@ -44,14 +44,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例列表的大小，参数默认值20，传值则以传参为准，如果传参大于具体配置etc/conf/component.properties中的DescribeInstancesPageLimit配置项 （读不到配置默认配置项为1000），则以配置项为准
-                     * @return Limit 实例列表的大小，参数默认值20，传值则以传参为准，如果传参大于具体配置etc/conf/component.properties中的DescribeInstancesPageLimit配置项 （读不到配置默认配置项为1000），则以配置项为准
+                     * 获取返回数量，参数默认值20，最大值为1000
+                     * @return Limit 返回数量，参数默认值20，最大值为1000
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置实例列表的大小，参数默认值20，传值则以传参为准，如果传参大于具体配置etc/conf/component.properties中的DescribeInstancesPageLimit配置项 （读不到配置默认配置项为1000），则以配置项为准
-                     * @param Limit 实例列表的大小，参数默认值20，传值则以传参为准，如果传参大于具体配置etc/conf/component.properties中的DescribeInstancesPageLimit配置项 （读不到配置默认配置项为1000），则以配置项为准
+                     * 设置返回数量，参数默认值20，最大值为1000
+                     * @param Limit 返回数量，参数默认值20，最大值为1000
                      */
                     void SetLimit(const uint64_t& _limit);
 
@@ -475,10 +475,28 @@ namespace TencentCloud
                      */
                     bool TagKeysHasBeenSet() const;
 
+                    /**
+                     * 获取需要过滤的产品版本支持多个，"local"本地盘版，"cloud"云盘版，"cdc"独享集群版，如果不传则默认不过滤
+                     * @return ProductVersions 需要过滤的产品版本支持多个，"local"本地盘版，"cloud"云盘版，"cdc"独享集群版，如果不传则默认不过滤
+                     */
+                    std::vector<std::string> GetProductVersions() const;
+
+                    /**
+                     * 设置需要过滤的产品版本支持多个，"local"本地盘版，"cloud"云盘版，"cdc"独享集群版，如果不传则默认不过滤
+                     * @param ProductVersions 需要过滤的产品版本支持多个，"local"本地盘版，"cloud"云盘版，"cdc"独享集群版，如果不传则默认不过滤
+                     */
+                    void SetProductVersions(const std::vector<std::string>& _productVersions);
+
+                    /**
+                     * 判断参数 ProductVersions 是否已赋值
+                     * @return ProductVersions 是否已赋值
+                     */
+                    bool ProductVersionsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 实例列表的大小，参数默认值20，传值则以传参为准，如果传参大于具体配置etc/conf/component.properties中的DescribeInstancesPageLimit配置项 （读不到配置默认配置项为1000），则以配置项为准
+                     * 返回数量，参数默认值20，最大值为1000
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
@@ -620,6 +638,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_tagKeys;
                     bool m_tagKeysHasBeenSet;
+
+                    /**
+                     * 需要过滤的产品版本支持多个，"local"本地盘版，"cloud"云盘版，"cdc"独享集群版，如果不传则默认不过滤
+                     */
+                    std::vector<std::string> m_productVersions;
+                    bool m_productVersionsHasBeenSet;
 
                 };
             }

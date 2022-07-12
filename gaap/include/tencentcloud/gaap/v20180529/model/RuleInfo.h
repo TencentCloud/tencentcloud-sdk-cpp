@@ -328,6 +328,28 @@ namespace TencentCloud
                      */
                     bool ServerNameIndicationHasBeenSet() const;
 
+                    /**
+                     * 获取强转HTTPS指示，当传递值为https:时表示强转为https
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ForcedRedirect 强转HTTPS指示，当传递值为https:时表示强转为https
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetForcedRedirect() const;
+
+                    /**
+                     * 设置强转HTTPS指示，当传递值为https:时表示强转为https
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ForcedRedirect 强转HTTPS指示，当传递值为https:时表示强转为https
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetForcedRedirect(const std::string& _forcedRedirect);
+
+                    /**
+                     * 判断参数 ForcedRedirect 是否已赋值
+                     * @return ForcedRedirect 是否已赋值
+                     */
+                    bool ForcedRedirectHasBeenSet() const;
+
                 private:
 
                     /**
@@ -420,6 +442,13 @@ namespace TencentCloud
                      */
                     std::string m_serverNameIndication;
                     bool m_serverNameIndicationHasBeenSet;
+
+                    /**
+                     * 强转HTTPS指示，当传递值为https:时表示强转为https
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_forcedRedirect;
+                    bool m_forcedRedirectHasBeenSet;
 
                 };
             }

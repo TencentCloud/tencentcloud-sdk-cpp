@@ -44,7 +44,9 @@ ModifySparkAppRequest::ModifySparkAppRequest() :
     m_appPythonFilesHasBeenSet(false),
     m_cmdArgsHasBeenSet(false),
     m_maxRetriesHasBeenSet(false),
-    m_dataSourceHasBeenSet(false)
+    m_dataSourceHasBeenSet(false),
+    m_isLocalArchivesHasBeenSet(false),
+    m_appArchivesHasBeenSet(false)
 {
 }
 
@@ -229,6 +231,22 @@ string ModifySparkAppRequest::ToJsonString() const
         string key = "DataSource";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_dataSource.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isLocalArchivesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsLocalArchives";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_isLocalArchives.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_appArchivesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AppArchives";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_appArchives.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -589,6 +607,38 @@ void ModifySparkAppRequest::SetDataSource(const string& _dataSource)
 bool ModifySparkAppRequest::DataSourceHasBeenSet() const
 {
     return m_dataSourceHasBeenSet;
+}
+
+string ModifySparkAppRequest::GetIsLocalArchives() const
+{
+    return m_isLocalArchives;
+}
+
+void ModifySparkAppRequest::SetIsLocalArchives(const string& _isLocalArchives)
+{
+    m_isLocalArchives = _isLocalArchives;
+    m_isLocalArchivesHasBeenSet = true;
+}
+
+bool ModifySparkAppRequest::IsLocalArchivesHasBeenSet() const
+{
+    return m_isLocalArchivesHasBeenSet;
+}
+
+string ModifySparkAppRequest::GetAppArchives() const
+{
+    return m_appArchives;
+}
+
+void ModifySparkAppRequest::SetAppArchives(const string& _appArchives)
+{
+    m_appArchives = _appArchives;
+    m_appArchivesHasBeenSet = true;
+}
+
+bool ModifySparkAppRequest::AppArchivesHasBeenSet() const
+{
+    return m_appArchivesHasBeenSet;
 }
 
 

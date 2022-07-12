@@ -34,7 +34,8 @@ ExistedInstance::ExistedInstance() :
     m_osNameHasBeenSet(false),
     m_instanceTypeHasBeenSet(false),
     m_autoscalingGroupIdHasBeenSet(false),
-    m_instanceChargeTypeHasBeenSet(false)
+    m_instanceChargeTypeHasBeenSet(false),
+    m_iPv6AddressesHasBeenSet(false)
 {
 }
 
@@ -189,6 +190,19 @@ CoreInternalOutcome ExistedInstance::Deserialize(const rapidjson::Value &value)
         m_instanceChargeTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("IPv6Addresses") && !value["IPv6Addresses"].IsNull())
+    {
+        if (!value["IPv6Addresses"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ExistedInstance.IPv6Addresses` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["IPv6Addresses"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_iPv6Addresses.push_back((*itr).GetString());
+        }
+        m_iPv6AddressesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -316,6 +330,19 @@ void ExistedInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "InstanceChargeType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_instanceChargeType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_iPv6AddressesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IPv6Addresses";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_iPv6Addresses.begin(); itr != m_iPv6Addresses.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -543,5 +570,21 @@ void ExistedInstance::SetInstanceChargeType(const string& _instanceChargeType)
 bool ExistedInstance::InstanceChargeTypeHasBeenSet() const
 {
     return m_instanceChargeTypeHasBeenSet;
+}
+
+vector<string> ExistedInstance::GetIPv6Addresses() const
+{
+    return m_iPv6Addresses;
+}
+
+void ExistedInstance::SetIPv6Addresses(const vector<string>& _iPv6Addresses)
+{
+    m_iPv6Addresses = _iPv6Addresses;
+    m_iPv6AddressesHasBeenSet = true;
+}
+
+bool ExistedInstance::IPv6AddressesHasBeenSet() const
+{
+    return m_iPv6AddressesHasBeenSet;
 }
 

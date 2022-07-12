@@ -438,6 +438,42 @@ namespace TencentCloud
                      */
                     bool DataSourceHasBeenSet() const;
 
+                    /**
+                     * 获取archives：依赖上传方式，1、cos；2、lakefs（控制台使用，该方式不支持直接接口调用）
+                     * @return IsLocalArchives archives：依赖上传方式，1、cos；2、lakefs（控制台使用，该方式不支持直接接口调用）
+                     */
+                    std::string GetIsLocalArchives() const;
+
+                    /**
+                     * 设置archives：依赖上传方式，1、cos；2、lakefs（控制台使用，该方式不支持直接接口调用）
+                     * @param IsLocalArchives archives：依赖上传方式，1、cos；2、lakefs（控制台使用，该方式不支持直接接口调用）
+                     */
+                    void SetIsLocalArchives(const std::string& _isLocalArchives);
+
+                    /**
+                     * 判断参数 IsLocalArchives 是否已赋值
+                     * @return IsLocalArchives 是否已赋值
+                     */
+                    bool IsLocalArchivesHasBeenSet() const;
+
+                    /**
+                     * 获取archives：依赖资源
+                     * @return AppArchives archives：依赖资源
+                     */
+                    std::string GetAppArchives() const;
+
+                    /**
+                     * 设置archives：依赖资源
+                     * @param AppArchives archives：依赖资源
+                     */
+                    void SetAppArchives(const std::string& _appArchives);
+
+                    /**
+                     * 判断参数 AppArchives 是否已赋值
+                     * @return AppArchives 是否已赋值
+                     */
+                    bool AppArchivesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -571,6 +607,18 @@ namespace TencentCloud
                      */
                     std::string m_dataSource;
                     bool m_dataSourceHasBeenSet;
+
+                    /**
+                     * archives：依赖上传方式，1、cos；2、lakefs（控制台使用，该方式不支持直接接口调用）
+                     */
+                    std::string m_isLocalArchives;
+                    bool m_isLocalArchivesHasBeenSet;
+
+                    /**
+                     * archives：依赖资源
+                     */
+                    std::string m_appArchives;
+                    bool m_appArchivesHasBeenSet;
 
                 };
             }

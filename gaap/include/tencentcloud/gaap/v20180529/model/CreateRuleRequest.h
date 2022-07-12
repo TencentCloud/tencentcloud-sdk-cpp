@@ -245,6 +245,24 @@ namespace TencentCloud
                      */
                     bool ServerNameIndicationHasBeenSet() const;
 
+                    /**
+                     * 获取HTTP强制跳转HTTPS。输入当前规则对应的域名与地址。
+                     * @return ForcedRedirect HTTP强制跳转HTTPS。输入当前规则对应的域名与地址。
+                     */
+                    std::string GetForcedRedirect() const;
+
+                    /**
+                     * 设置HTTP强制跳转HTTPS。输入当前规则对应的域名与地址。
+                     * @param ForcedRedirect HTTP强制跳转HTTPS。输入当前规则对应的域名与地址。
+                     */
+                    void SetForcedRedirect(const std::string& _forcedRedirect);
+
+                    /**
+                     * 判断参数 ForcedRedirect 是否已赋值
+                     * @return ForcedRedirect 是否已赋值
+                     */
+                    bool ForcedRedirectHasBeenSet() const;
+
                 private:
 
                     /**
@@ -313,6 +331,12 @@ namespace TencentCloud
                      */
                     std::string m_serverNameIndication;
                     bool m_serverNameIndicationHasBeenSet;
+
+                    /**
+                     * HTTP强制跳转HTTPS。输入当前规则对应的域名与地址。
+                     */
+                    std::string m_forcedRedirect;
+                    bool m_forcedRedirectHasBeenSet;
 
                 };
             }

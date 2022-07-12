@@ -34,6 +34,7 @@
 #include <tencentcloud/es/v20180416/model/KibanaNodeInfo.h>
 #include <tencentcloud/es/v20180416/model/WebNodeTypeInfo.h>
 #include <tencentcloud/es/v20180416/model/EsConfigSetInfo.h>
+#include <tencentcloud/es/v20180416/model/OperationDuration.h>
 
 
 namespace TencentCloud
@@ -1582,6 +1583,28 @@ RENEW_FLAG_DEFAULT：不自动续费
                      */
                     bool EsConfigSetsHasBeenSet() const;
 
+                    /**
+                     * 获取集群可维护时间段
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OperationDuration 集群可维护时间段
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    OperationDuration GetOperationDuration() const;
+
+                    /**
+                     * 设置集群可维护时间段
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param OperationDuration 集群可维护时间段
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetOperationDuration(const OperationDuration& _operationDuration);
+
+                    /**
+                     * 判断参数 OperationDuration 是否已赋值
+                     * @return OperationDuration 是否已赋值
+                     */
+                    bool OperationDurationHasBeenSet() const;
+
                 private:
 
                     /**
@@ -2077,6 +2100,13 @@ RENEW_FLAG_DEFAULT：不自动续费
                      */
                     std::vector<EsConfigSetInfo> m_esConfigSets;
                     bool m_esConfigSetsHasBeenSet;
+
+                    /**
+                     * 集群可维护时间段
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    OperationDuration m_operationDuration;
+                    bool m_operationDurationHasBeenSet;
 
                 };
             }

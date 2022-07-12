@@ -241,6 +241,24 @@ namespace TencentCloud
                      */
                     bool HealthStatusHasBeenSet() const;
 
+                    /**
+                     * 获取Vpc列表 筛选项
+                     * @return VpcIds Vpc列表 筛选项
+                     */
+                    std::vector<std::string> GetVpcIds() const;
+
+                    /**
+                     * 设置Vpc列表 筛选项
+                     * @param VpcIds Vpc列表 筛选项
+                     */
+                    void SetVpcIds(const std::vector<std::string>& _vpcIds);
+
+                    /**
+                     * 判断参数 VpcIds 是否已赋值
+                     * @return VpcIds 是否已赋值
+                     */
+                    bool VpcIdsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -308,6 +326,12 @@ namespace TencentCloud
                      */
                     std::vector<int64_t> m_healthStatus;
                     bool m_healthStatusHasBeenSet;
+
+                    /**
+                     * Vpc列表 筛选项
+                     */
+                    std::vector<std::string> m_vpcIds;
+                    bool m_vpcIdsHasBeenSet;
 
                 };
             }
