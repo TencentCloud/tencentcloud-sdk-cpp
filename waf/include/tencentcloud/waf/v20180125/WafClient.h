@@ -53,8 +53,6 @@
 #include <tencentcloud/waf/v20180125/model/DescribeAccessIndexResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeAutoDenyIPRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribeAutoDenyIPResponse.h>
-#include <tencentcloud/waf/v20180125/model/DescribeCustomRulesRequest.h>
-#include <tencentcloud/waf/v20180125/model/DescribeCustomRulesResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeDomainWhiteRulesRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribeDomainWhiteRulesResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeDomainsRequest.h>
@@ -150,9 +148,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAutoDenyIPResponse> DescribeAutoDenyIPOutcome;
                 typedef std::future<DescribeAutoDenyIPOutcome> DescribeAutoDenyIPOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribeAutoDenyIPRequest&, DescribeAutoDenyIPOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAutoDenyIPAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeCustomRulesResponse> DescribeCustomRulesOutcome;
-                typedef std::future<DescribeCustomRulesOutcome> DescribeCustomRulesOutcomeCallable;
-                typedef std::function<void(const WafClient*, const Model::DescribeCustomRulesRequest&, DescribeCustomRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCustomRulesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDomainWhiteRulesResponse> DescribeDomainWhiteRulesOutcome;
                 typedef std::future<DescribeDomainWhiteRulesOutcome> DescribeDomainWhiteRulesOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribeDomainWhiteRulesRequest&, DescribeDomainWhiteRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainWhiteRulesAsyncHandler;
@@ -346,15 +341,6 @@ namespace TencentCloud
                 DescribeAutoDenyIPOutcome DescribeAutoDenyIP(const Model::DescribeAutoDenyIPRequest &request);
                 void DescribeAutoDenyIPAsync(const Model::DescribeAutoDenyIPRequest& request, const DescribeAutoDenyIPAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAutoDenyIPOutcomeCallable DescribeAutoDenyIPCallable(const Model::DescribeAutoDenyIPRequest& request);
-
-                /**
-                 *获取防护配置中的自定义策略列表
-                 * @param req DescribeCustomRulesRequest
-                 * @return DescribeCustomRulesOutcome
-                 */
-                DescribeCustomRulesOutcome DescribeCustomRules(const Model::DescribeCustomRulesRequest &request);
-                void DescribeCustomRulesAsync(const Model::DescribeCustomRulesRequest& request, const DescribeCustomRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeCustomRulesOutcomeCallable DescribeCustomRulesCallable(const Model::DescribeCustomRulesRequest& request);
 
                 /**
                  *获取域名的规则白名单

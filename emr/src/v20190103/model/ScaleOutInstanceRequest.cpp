@@ -46,7 +46,8 @@ ScaleOutInstanceRequest::ScaleOutInstanceRequest() :
     m_masterCountHasBeenSet(false),
     m_startServiceAfterScaleOutHasBeenSet(false),
     m_zoneIdHasBeenSet(false),
-    m_subnetIdHasBeenSet(false)
+    m_subnetIdHasBeenSet(false),
+    m_scaleOutServiceConfAssignHasBeenSet(false)
 {
 }
 
@@ -283,6 +284,14 @@ string ScaleOutInstanceRequest::ToJsonString() const
         string key = "SubnetId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_subnetId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_scaleOutServiceConfAssignHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScaleOutServiceConfAssign";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_scaleOutServiceConfAssign.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -675,6 +684,22 @@ void ScaleOutInstanceRequest::SetSubnetId(const string& _subnetId)
 bool ScaleOutInstanceRequest::SubnetIdHasBeenSet() const
 {
     return m_subnetIdHasBeenSet;
+}
+
+string ScaleOutInstanceRequest::GetScaleOutServiceConfAssign() const
+{
+    return m_scaleOutServiceConfAssign;
+}
+
+void ScaleOutInstanceRequest::SetScaleOutServiceConfAssign(const string& _scaleOutServiceConfAssign)
+{
+    m_scaleOutServiceConfAssign = _scaleOutServiceConfAssign;
+    m_scaleOutServiceConfAssignHasBeenSet = true;
+}
+
+bool ScaleOutInstanceRequest::ScaleOutServiceConfAssignHasBeenSet() const
+{
+    return m_scaleOutServiceConfAssignHasBeenSet;
 }
 
 

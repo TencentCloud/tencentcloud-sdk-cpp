@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_WAF_V20180125_MODEL_DESCRIBECUSTOMRULESPAGINGINFO_H_
-#define TENCENTCLOUD_WAF_V20180125_MODEL_DESCRIBECUSTOMRULESPAGINGINFO_H_
+#ifndef TENCENTCLOUD_ES_V20180416_MODEL_LOGSTASHEXTENDEDFILE_H_
+#define TENCENTCLOUD_ES_V20180416_MODEL_LOGSTASHEXTENDEDFILE_H_
 
 #include <string>
 #include <vector>
@@ -28,73 +28,73 @@
 
 namespace TencentCloud
 {
-    namespace Waf
+    namespace Es
     {
-        namespace V20180125
+        namespace V20180416
         {
             namespace Model
             {
                 /**
-                * DescribeCustomRules接口的翻页参数
+                * Logstash扩展文件信息
                 */
-                class DescribeCustomRulesPagingInfo : public AbstractModel
+                class LogstashExtendedFile : public AbstractModel
                 {
                 public:
-                    DescribeCustomRulesPagingInfo();
-                    ~DescribeCustomRulesPagingInfo() = default;
+                    LogstashExtendedFile();
+                    ~LogstashExtendedFile() = default;
                     void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
                     CoreInternalOutcome Deserialize(const rapidjson::Value &value);
 
 
                     /**
-                     * 获取当前页码
-                     * @return Offset 当前页码
+                     * 获取扩展文件名称
+                     * @return Name 扩展文件名称
                      */
-                    int64_t GetOffset() const;
+                    std::string GetName() const;
 
                     /**
-                     * 设置当前页码
-                     * @param Offset 当前页码
+                     * 设置扩展文件名称
+                     * @param Name 扩展文件名称
                      */
-                    void SetOffset(const int64_t& _offset);
+                    void SetName(const std::string& _name);
 
                     /**
-                     * 判断参数 Offset 是否已赋值
-                     * @return Offset 是否已赋值
+                     * 判断参数 Name 是否已赋值
+                     * @return Name 是否已赋值
                      */
-                    bool OffsetHasBeenSet() const;
+                    bool NameHasBeenSet() const;
 
                     /**
-                     * 获取当前页的最大数据条数
-                     * @return Limit 当前页的最大数据条数
+                     * 获取扩展文件大小，单位B
+                     * @return Size 扩展文件大小，单位B
                      */
-                    int64_t GetLimit() const;
+                    uint64_t GetSize() const;
 
                     /**
-                     * 设置当前页的最大数据条数
-                     * @param Limit 当前页的最大数据条数
+                     * 设置扩展文件大小，单位B
+                     * @param Size 扩展文件大小，单位B
                      */
-                    void SetLimit(const int64_t& _limit);
+                    void SetSize(const uint64_t& _size);
 
                     /**
-                     * 判断参数 Limit 是否已赋值
-                     * @return Limit 是否已赋值
+                     * 判断参数 Size 是否已赋值
+                     * @return Size 是否已赋值
                      */
-                    bool LimitHasBeenSet() const;
+                    bool SizeHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 当前页码
+                     * 扩展文件名称
                      */
-                    int64_t m_offset;
-                    bool m_offsetHasBeenSet;
+                    std::string m_name;
+                    bool m_nameHasBeenSet;
 
                     /**
-                     * 当前页的最大数据条数
+                     * 扩展文件大小，单位B
                      */
-                    int64_t m_limit;
-                    bool m_limitHasBeenSet;
+                    uint64_t m_size;
+                    bool m_sizeHasBeenSet;
 
                 };
             }
@@ -102,4 +102,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_WAF_V20180125_MODEL_DESCRIBECUSTOMRULESPAGINGINFO_H_
+#endif // !TENCENTCLOUD_ES_V20180416_MODEL_LOGSTASHEXTENDEDFILE_H_

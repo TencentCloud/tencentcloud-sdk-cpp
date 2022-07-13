@@ -151,14 +151,14 @@ namespace TencentCloud
                     bool ExpirationSortHasBeenSet() const;
 
                     /**
-                     * 获取证书状态。
-                     * @return CertificateStatus 证书状态。
+                     * 获取证书状态：0 = 审核中，1 = 已通过，2 = 审核失败，3 = 已过期，4 = 已添加DNS记录，5 = 企业证书，待提交，6 = 订单取消中，7 = 已取消，8 = 已提交资料， 待上传确认函，9 = 证书吊销中，10 = 已吊销，11 = 重颁发中，12 = 待上传吊销确认函，13 = 免费证书待提交资料。
+                     * @return CertificateStatus 证书状态：0 = 审核中，1 = 已通过，2 = 审核失败，3 = 已过期，4 = 已添加DNS记录，5 = 企业证书，待提交，6 = 订单取消中，7 = 已取消，8 = 已提交资料， 待上传确认函，9 = 证书吊销中，10 = 已吊销，11 = 重颁发中，12 = 待上传吊销确认函，13 = 免费证书待提交资料。
                      */
                     std::vector<uint64_t> GetCertificateStatus() const;
 
                     /**
-                     * 设置证书状态。
-                     * @param CertificateStatus 证书状态。
+                     * 设置证书状态：0 = 审核中，1 = 已通过，2 = 审核失败，3 = 已过期，4 = 已添加DNS记录，5 = 企业证书，待提交，6 = 订单取消中，7 = 已取消，8 = 已提交资料， 待上传确认函，9 = 证书吊销中，10 = 已吊销，11 = 重颁发中，12 = 待上传吊销确认函，13 = 免费证书待提交资料。
+                     * @param CertificateStatus 证书状态：0 = 审核中，1 = 已通过，2 = 审核失败，3 = 已过期，4 = 已添加DNS记录，5 = 企业证书，待提交，6 = 订单取消中，7 = 已取消，8 = 已提交资料， 待上传确认函，9 = 证书吊销中，10 = 已吊销，11 = 重颁发中，12 = 待上传吊销确认函，13 = 免费证书待提交资料。
                      */
                     void SetCertificateStatus(const std::vector<uint64_t>& _certificateStatus);
 
@@ -240,6 +240,24 @@ namespace TencentCloud
                      */
                     bool FilterSourceHasBeenSet() const;
 
+                    /**
+                     * 获取是否筛选国密证书。1:筛选  0:不筛选
+                     * @return IsSM 是否筛选国密证书。1:筛选  0:不筛选
+                     */
+                    int64_t GetIsSM() const;
+
+                    /**
+                     * 设置是否筛选国密证书。1:筛选  0:不筛选
+                     * @param IsSM 是否筛选国密证书。1:筛选  0:不筛选
+                     */
+                    void SetIsSM(const int64_t& _isSM);
+
+                    /**
+                     * 判断参数 IsSM 是否已赋值
+                     * @return IsSM 是否已赋值
+                     */
+                    bool IsSMHasBeenSet() const;
+
                 private:
 
                     /**
@@ -279,7 +297,7 @@ namespace TencentCloud
                     bool m_expirationSortHasBeenSet;
 
                     /**
-                     * 证书状态。
+                     * 证书状态：0 = 审核中，1 = 已通过，2 = 审核失败，3 = 已过期，4 = 已添加DNS记录，5 = 企业证书，待提交，6 = 订单取消中，7 = 已取消，8 = 已提交资料， 待上传确认函，9 = 证书吊销中，10 = 已吊销，11 = 重颁发中，12 = 待上传吊销确认函，13 = 免费证书待提交资料。
                      */
                     std::vector<uint64_t> m_certificateStatus;
                     bool m_certificateStatusHasBeenSet;
@@ -307,6 +325,12 @@ namespace TencentCloud
                      */
                     std::string m_filterSource;
                     bool m_filterSourceHasBeenSet;
+
+                    /**
+                     * 是否筛选国密证书。1:筛选  0:不筛选
+                     */
+                    int64_t m_isSM;
+                    bool m_isSMHasBeenSet;
 
                 };
             }

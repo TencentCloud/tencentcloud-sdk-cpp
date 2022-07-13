@@ -126,6 +126,49 @@ IotvideoClient::CallDeviceActionSyncOutcomeCallable IotvideoClient::CallDeviceAc
     return task->get_future();
 }
 
+IotvideoClient::CreateProductOutcome IotvideoClient::CreateProduct(const CreateProductRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateProduct");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateProductResponse rsp = CreateProductResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateProductOutcome(rsp);
+        else
+            return CreateProductOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateProductOutcome(outcome.GetError());
+    }
+}
+
+void IotvideoClient::CreateProductAsync(const CreateProductRequest& request, const CreateProductAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateProduct(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotvideoClient::CreateProductOutcomeCallable IotvideoClient::CreateProductCallable(const CreateProductRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateProductOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateProduct(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotvideoClient::DescribeDeviceDataStatsOutcome IotvideoClient::DescribeDeviceDataStats(const DescribeDeviceDataStatsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDeviceDataStats");
@@ -205,6 +248,49 @@ IotvideoClient::DescribeMessageDataStatsOutcomeCallable IotvideoClient::Describe
         [this, request]()
         {
             return this->DescribeMessageDataStats(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IotvideoClient::GenSingleDeviceSignatureOfPublicOutcome IotvideoClient::GenSingleDeviceSignatureOfPublic(const GenSingleDeviceSignatureOfPublicRequest &request)
+{
+    auto outcome = MakeRequest(request, "GenSingleDeviceSignatureOfPublic");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GenSingleDeviceSignatureOfPublicResponse rsp = GenSingleDeviceSignatureOfPublicResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GenSingleDeviceSignatureOfPublicOutcome(rsp);
+        else
+            return GenSingleDeviceSignatureOfPublicOutcome(o.GetError());
+    }
+    else
+    {
+        return GenSingleDeviceSignatureOfPublicOutcome(outcome.GetError());
+    }
+}
+
+void IotvideoClient::GenSingleDeviceSignatureOfPublicAsync(const GenSingleDeviceSignatureOfPublicRequest& request, const GenSingleDeviceSignatureOfPublicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GenSingleDeviceSignatureOfPublic(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotvideoClient::GenSingleDeviceSignatureOfPublicOutcomeCallable IotvideoClient::GenSingleDeviceSignatureOfPublicCallable(const GenSingleDeviceSignatureOfPublicRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GenSingleDeviceSignatureOfPublicOutcome()>>(
+        [this, request]()
+        {
+            return this->GenSingleDeviceSignatureOfPublic(request);
         }
     );
 

@@ -685,49 +685,6 @@ WafClient::DescribeAutoDenyIPOutcomeCallable WafClient::DescribeAutoDenyIPCallab
     return task->get_future();
 }
 
-WafClient::DescribeCustomRulesOutcome WafClient::DescribeCustomRules(const DescribeCustomRulesRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeCustomRules");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeCustomRulesResponse rsp = DescribeCustomRulesResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeCustomRulesOutcome(rsp);
-        else
-            return DescribeCustomRulesOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeCustomRulesOutcome(outcome.GetError());
-    }
-}
-
-void WafClient::DescribeCustomRulesAsync(const DescribeCustomRulesRequest& request, const DescribeCustomRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCustomRules(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-WafClient::DescribeCustomRulesOutcomeCallable WafClient::DescribeCustomRulesCallable(const DescribeCustomRulesRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeCustomRulesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCustomRules(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 WafClient::DescribeDomainWhiteRulesOutcome WafClient::DescribeDomainWhiteRules(const DescribeDomainWhiteRulesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDomainWhiteRules");

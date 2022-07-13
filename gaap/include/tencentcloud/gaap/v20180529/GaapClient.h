@@ -25,6 +25,8 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/gaap/v20180529/model/AddRealServersRequest.h>
 #include <tencentcloud/gaap/v20180529/model/AddRealServersResponse.h>
+#include <tencentcloud/gaap/v20180529/model/BanAndRecoverProxyRequest.h>
+#include <tencentcloud/gaap/v20180529/model/BanAndRecoverProxyResponse.h>
 #include <tencentcloud/gaap/v20180529/model/BindListenerRealServersRequest.h>
 #include <tencentcloud/gaap/v20180529/model/BindListenerRealServersResponse.h>
 #include <tencentcloud/gaap/v20180529/model/BindRuleRealServersRequest.h>
@@ -97,6 +99,8 @@
 #include <tencentcloud/gaap/v20180529/model/DescribeCertificatesResponse.h>
 #include <tencentcloud/gaap/v20180529/model/DescribeCountryAreaMappingRequest.h>
 #include <tencentcloud/gaap/v20180529/model/DescribeCountryAreaMappingResponse.h>
+#include <tencentcloud/gaap/v20180529/model/DescribeCrossBorderProxiesRequest.h>
+#include <tencentcloud/gaap/v20180529/model/DescribeCrossBorderProxiesResponse.h>
 #include <tencentcloud/gaap/v20180529/model/DescribeCustomHeaderRequest.h>
 #include <tencentcloud/gaap/v20180529/model/DescribeCustomHeaderResponse.h>
 #include <tencentcloud/gaap/v20180529/model/DescribeDestRegionsRequest.h>
@@ -220,6 +224,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::AddRealServersResponse> AddRealServersOutcome;
                 typedef std::future<AddRealServersOutcome> AddRealServersOutcomeCallable;
                 typedef std::function<void(const GaapClient*, const Model::AddRealServersRequest&, AddRealServersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddRealServersAsyncHandler;
+                typedef Outcome<Core::Error, Model::BanAndRecoverProxyResponse> BanAndRecoverProxyOutcome;
+                typedef std::future<BanAndRecoverProxyOutcome> BanAndRecoverProxyOutcomeCallable;
+                typedef std::function<void(const GaapClient*, const Model::BanAndRecoverProxyRequest&, BanAndRecoverProxyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BanAndRecoverProxyAsyncHandler;
                 typedef Outcome<Core::Error, Model::BindListenerRealServersResponse> BindListenerRealServersOutcome;
                 typedef std::future<BindListenerRealServersOutcome> BindListenerRealServersOutcomeCallable;
                 typedef std::function<void(const GaapClient*, const Model::BindListenerRealServersRequest&, BindListenerRealServersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BindListenerRealServersAsyncHandler;
@@ -328,6 +335,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeCountryAreaMappingResponse> DescribeCountryAreaMappingOutcome;
                 typedef std::future<DescribeCountryAreaMappingOutcome> DescribeCountryAreaMappingOutcomeCallable;
                 typedef std::function<void(const GaapClient*, const Model::DescribeCountryAreaMappingRequest&, DescribeCountryAreaMappingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCountryAreaMappingAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCrossBorderProxiesResponse> DescribeCrossBorderProxiesOutcome;
+                typedef std::future<DescribeCrossBorderProxiesOutcome> DescribeCrossBorderProxiesOutcomeCallable;
+                typedef std::function<void(const GaapClient*, const Model::DescribeCrossBorderProxiesRequest&, DescribeCrossBorderProxiesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCrossBorderProxiesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCustomHeaderResponse> DescribeCustomHeaderOutcome;
                 typedef std::future<DescribeCustomHeaderOutcome> DescribeCustomHeaderOutcomeCallable;
                 typedef std::function<void(const GaapClient*, const Model::DescribeCustomHeaderRequest&, DescribeCustomHeaderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCustomHeaderAsyncHandler;
@@ -498,6 +508,15 @@ namespace TencentCloud
                 AddRealServersOutcome AddRealServers(const Model::AddRealServersRequest &request);
                 void AddRealServersAsync(const Model::AddRealServersRequest& request, const AddRealServersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 AddRealServersOutcomeCallable AddRealServersCallable(const Model::AddRealServersRequest& request);
+
+                /**
+                 *本接口（BanAndRecoverProxy）用于联通封禁解封GAAP跨境通道实例，支持按照客户UIN维度下发请求。被封禁的实例带宽上限将会被限制到0Mbps，无法正常处理客户端和源站之间的请求。
+                 * @param req BanAndRecoverProxyRequest
+                 * @return BanAndRecoverProxyOutcome
+                 */
+                BanAndRecoverProxyOutcome BanAndRecoverProxy(const Model::BanAndRecoverProxyRequest &request);
+                void BanAndRecoverProxyAsync(const Model::BanAndRecoverProxyRequest& request, const BanAndRecoverProxyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                BanAndRecoverProxyOutcomeCallable BanAndRecoverProxyCallable(const Model::BanAndRecoverProxyRequest& request);
 
                 /**
                  *本接口（BindListenerRealServers）用于TCP/UDP监听器绑定解绑源站。
@@ -824,6 +843,15 @@ namespace TencentCloud
                 DescribeCountryAreaMappingOutcome DescribeCountryAreaMapping(const Model::DescribeCountryAreaMappingRequest &request);
                 void DescribeCountryAreaMappingAsync(const Model::DescribeCountryAreaMappingRequest& request, const DescribeCountryAreaMappingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeCountryAreaMappingOutcomeCallable DescribeCountryAreaMappingCallable(const Model::DescribeCountryAreaMappingRequest& request);
+
+                /**
+                 *本接口（DescribeCrossBorderProxies）用于查询跨境通道实例列表。
+                 * @param req DescribeCrossBorderProxiesRequest
+                 * @return DescribeCrossBorderProxiesOutcome
+                 */
+                DescribeCrossBorderProxiesOutcome DescribeCrossBorderProxies(const Model::DescribeCrossBorderProxiesRequest &request);
+                void DescribeCrossBorderProxiesAsync(const Model::DescribeCrossBorderProxiesRequest& request, const DescribeCrossBorderProxiesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCrossBorderProxiesOutcomeCallable DescribeCrossBorderProxiesCallable(const Model::DescribeCrossBorderProxiesRequest& request);
 
                 /**
                  *本接口（DescribeCustomHeader）用于自定义header列表

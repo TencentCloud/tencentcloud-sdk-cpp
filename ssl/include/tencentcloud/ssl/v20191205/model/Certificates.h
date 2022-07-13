@@ -731,6 +731,28 @@ namespace TencentCloud
                      */
                     bool IsIgnoreHasBeenSet() const;
 
+                    /**
+                     * 获取是否国密证书
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsSM 是否国密证书
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetIsSM() const;
+
+                    /**
+                     * 设置是否国密证书
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param IsSM 是否国密证书
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIsSM(const bool& _isSM);
+
+                    /**
+                     * 判断参数 IsSM 是否已赋值
+                     * @return IsSM 是否已赋值
+                     */
+                    bool IsSMHasBeenSet() const;
+
                 private:
 
                     /**
@@ -949,6 +971,13 @@ namespace TencentCloud
                      */
                     bool m_isIgnore;
                     bool m_isIgnoreHasBeenSet;
+
+                    /**
+                     * 是否国密证书
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_isSM;
+                    bool m_isSMHasBeenSet;
 
                 };
             }

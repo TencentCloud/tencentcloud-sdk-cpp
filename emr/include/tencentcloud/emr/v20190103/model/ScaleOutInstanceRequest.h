@@ -522,6 +522,24 @@ namespace TencentCloud
                      */
                     bool SubnetIdHasBeenSet() const;
 
+                    /**
+                     * 获取预设配置组
+                     * @return ScaleOutServiceConfAssign 预设配置组
+                     */
+                    std::string GetScaleOutServiceConfAssign() const;
+
+                    /**
+                     * 设置预设配置组
+                     * @param ScaleOutServiceConfAssign 预设配置组
+                     */
+                    void SetScaleOutServiceConfAssign(const std::string& _scaleOutServiceConfAssign);
+
+                    /**
+                     * 判断参数 ScaleOutServiceConfAssign 是否已赋值
+                     * @return ScaleOutServiceConfAssign 是否已赋值
+                     */
+                    bool ScaleOutServiceConfAssignHasBeenSet() const;
+
                 private:
 
                     /**
@@ -678,6 +696,12 @@ namespace TencentCloud
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
+
+                    /**
+                     * 预设配置组
+                     */
+                    std::string m_scaleOutServiceConfAssign;
+                    bool m_scaleOutServiceConfAssignHasBeenSet;
 
                 };
             }

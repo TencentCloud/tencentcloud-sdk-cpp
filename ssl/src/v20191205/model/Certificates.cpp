@@ -51,7 +51,8 @@ Certificates::Certificates() :
     m_boundResourceHasBeenSet(false),
     m_deployableHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_isIgnoreHasBeenSet(false)
+    m_isIgnoreHasBeenSet(false),
+    m_isSMHasBeenSet(false)
 {
 }
 
@@ -400,6 +401,16 @@ CoreInternalOutcome Certificates::Deserialize(const rapidjson::Value &value)
         m_isIgnoreHasBeenSet = true;
     }
 
+    if (value.HasMember("IsSM") && !value["IsSM"].IsNull())
+    {
+        if (!value["IsSM"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `Certificates.IsSM` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isSM = value["IsSM"].GetBool();
+        m_isSMHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -672,6 +683,14 @@ void Certificates::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "IsIgnore";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isIgnore, allocator);
+    }
+
+    if (m_isSMHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsSM";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isSM, allocator);
     }
 
 }
@@ -1171,5 +1190,21 @@ void Certificates::SetIsIgnore(const bool& _isIgnore)
 bool Certificates::IsIgnoreHasBeenSet() const
 {
     return m_isIgnoreHasBeenSet;
+}
+
+bool Certificates::GetIsSM() const
+{
+    return m_isSM;
+}
+
+void Certificates::SetIsSM(const bool& _isSM)
+{
+    m_isSM = _isSM;
+    m_isSMHasBeenSet = true;
+}
+
+bool Certificates::IsSMHasBeenSet() const
+{
+    return m_isSMHasBeenSet;
 }
 

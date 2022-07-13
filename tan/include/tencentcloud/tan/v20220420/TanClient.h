@@ -46,7 +46,7 @@ namespace TencentCloud
 
 
                 /**
-                 *创建节点记录
+                 *推送节点数据
                  * @param req CreateBlockNodeRecordsRequest
                  * @return CreateBlockNodeRecordsOutcome
                  */

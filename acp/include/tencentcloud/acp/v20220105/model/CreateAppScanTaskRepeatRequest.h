@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务来源, 0:默认值(私域), 1:灵犀, 2:灵鲲;
-                     * @return Source 任务来源, 0:默认值(私域), 1:灵犀, 2:灵鲲;
+                     * 获取任务来源, 0:小程序诊断, 1:预留字段(暂未使用), 2:app诊断(android);
+                     * @return Source 任务来源, 0:小程序诊断, 1:预留字段(暂未使用), 2:app诊断(android);
                      */
                     int64_t GetSource() const;
 
                     /**
-                     * 设置任务来源, 0:默认值(私域), 1:灵犀, 2:灵鲲;
-                     * @param Source 任务来源, 0:默认值(私域), 1:灵犀, 2:灵鲲;
+                     * 设置任务来源, 0:小程序诊断, 1:预留字段(暂未使用), 2:app诊断(android);
+                     * @param Source 任务来源, 0:小程序诊断, 1:预留字段(暂未使用), 2:app诊断(android);
                      */
                     void SetSource(const int64_t& _source);
 
@@ -133,14 +133,14 @@ namespace TencentCloud
                     bool AppPackageHasBeenSet() const;
 
                     /**
-                     * 获取上传的文件ID(灵犀诊断必填)
-                     * @return FileID 上传的文件ID(灵犀诊断必填)
+                     * 获取上传的文件ID(任务来源为1时必填)
+                     * @return FileID 上传的文件ID(任务来源为1时必填)
                      */
                     std::string GetFileID() const;
 
                     /**
-                     * 设置上传的文件ID(灵犀诊断必填)
-                     * @param FileID 上传的文件ID(灵犀诊断必填)
+                     * 设置上传的文件ID(任务来源为1时必填)
+                     * @param FileID 上传的文件ID(任务来源为1时必填)
                      */
                     void SetFileID(const std::string& _fileID);
 
@@ -151,14 +151,14 @@ namespace TencentCloud
                     bool FileIDHasBeenSet() const;
 
                     /**
-                     * 获取软件下载链接地址(灵鲲诊断必填)
-                     * @return AppDownloadUrl 软件下载链接地址(灵鲲诊断必填)
+                     * 获取软件下载链接地址(任务来源为2时必填)
+                     * @return AppDownloadUrl 软件下载链接地址(任务来源为2时必填)
                      */
                     std::string GetAppDownloadUrl() const;
 
                     /**
-                     * 设置软件下载链接地址(灵鲲诊断必填)
-                     * @param AppDownloadUrl 软件下载链接地址(灵鲲诊断必填)
+                     * 设置软件下载链接地址(任务来源为2时必填)
+                     * @param AppDownloadUrl 软件下载链接地址(任务来源为2时必填)
                      */
                     void SetAppDownloadUrl(const std::string& _appDownloadUrl);
 
@@ -169,14 +169,14 @@ namespace TencentCloud
                     bool AppDownloadUrlHasBeenSet() const;
 
                     /**
-                     * 获取隐私文本下载地址(灵鲲诊断必填)
-                     * @return PrivacyTextUrl 隐私文本下载地址(灵鲲诊断必填)
+                     * 获取隐私文本下载地址(任务来源为2时必填)
+                     * @return PrivacyTextUrl 隐私文本下载地址(任务来源为2时必填)
                      */
                     std::string GetPrivacyTextUrl() const;
 
                     /**
-                     * 设置隐私文本下载地址(灵鲲诊断必填)
-                     * @param PrivacyTextUrl 隐私文本下载地址(灵鲲诊断必填)
+                     * 设置隐私文本下载地址(任务来源为2时必填)
+                     * @param PrivacyTextUrl 隐私文本下载地址(任务来源为2时必填)
                      */
                     void SetPrivacyTextUrl(const std::string& _privacyTextUrl);
 
@@ -225,7 +225,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 任务来源, 0:默认值(私域), 1:灵犀, 2:灵鲲;
+                     * 任务来源, 0:小程序诊断, 1:预留字段(暂未使用), 2:app诊断(android);
                      */
                     int64_t m_source;
                     bool m_sourceHasBeenSet;
@@ -255,19 +255,19 @@ namespace TencentCloud
                     bool m_appPackageHasBeenSet;
 
                     /**
-                     * 上传的文件ID(灵犀诊断必填)
+                     * 上传的文件ID(任务来源为1时必填)
                      */
                     std::string m_fileID;
                     bool m_fileIDHasBeenSet;
 
                     /**
-                     * 软件下载链接地址(灵鲲诊断必填)
+                     * 软件下载链接地址(任务来源为2时必填)
                      */
                     std::string m_appDownloadUrl;
                     bool m_appDownloadUrlHasBeenSet;
 
                     /**
-                     * 隐私文本下载地址(灵鲲诊断必填)
+                     * 隐私文本下载地址(任务来源为2时必填)
                      */
                     std::string m_privacyTextUrl;
                     bool m_privacyTextUrlHasBeenSet;

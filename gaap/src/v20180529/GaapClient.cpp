@@ -83,6 +83,49 @@ GaapClient::AddRealServersOutcomeCallable GaapClient::AddRealServersCallable(con
     return task->get_future();
 }
 
+GaapClient::BanAndRecoverProxyOutcome GaapClient::BanAndRecoverProxy(const BanAndRecoverProxyRequest &request)
+{
+    auto outcome = MakeRequest(request, "BanAndRecoverProxy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        BanAndRecoverProxyResponse rsp = BanAndRecoverProxyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return BanAndRecoverProxyOutcome(rsp);
+        else
+            return BanAndRecoverProxyOutcome(o.GetError());
+    }
+    else
+    {
+        return BanAndRecoverProxyOutcome(outcome.GetError());
+    }
+}
+
+void GaapClient::BanAndRecoverProxyAsync(const BanAndRecoverProxyRequest& request, const BanAndRecoverProxyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->BanAndRecoverProxy(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GaapClient::BanAndRecoverProxyOutcomeCallable GaapClient::BanAndRecoverProxyCallable(const BanAndRecoverProxyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<BanAndRecoverProxyOutcome()>>(
+        [this, request]()
+        {
+            return this->BanAndRecoverProxy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 GaapClient::BindListenerRealServersOutcome GaapClient::BindListenerRealServers(const BindListenerRealServersRequest &request)
 {
     auto outcome = MakeRequest(request, "BindListenerRealServers");
@@ -1624,6 +1667,49 @@ GaapClient::DescribeCountryAreaMappingOutcomeCallable GaapClient::DescribeCountr
         [this, request]()
         {
             return this->DescribeCountryAreaMapping(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+GaapClient::DescribeCrossBorderProxiesOutcome GaapClient::DescribeCrossBorderProxies(const DescribeCrossBorderProxiesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCrossBorderProxies");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCrossBorderProxiesResponse rsp = DescribeCrossBorderProxiesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCrossBorderProxiesOutcome(rsp);
+        else
+            return DescribeCrossBorderProxiesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCrossBorderProxiesOutcome(outcome.GetError());
+    }
+}
+
+void GaapClient::DescribeCrossBorderProxiesAsync(const DescribeCrossBorderProxiesRequest& request, const DescribeCrossBorderProxiesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCrossBorderProxies(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GaapClient::DescribeCrossBorderProxiesOutcomeCallable GaapClient::DescribeCrossBorderProxiesCallable(const DescribeCrossBorderProxiesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCrossBorderProxiesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCrossBorderProxies(request);
         }
     );
 

@@ -62,14 +62,14 @@ namespace TencentCloud
                     bool AreaIdHasBeenSet() const;
 
                     /**
-                     * 获取计费类型, (1=体验，2=预付费，3=后付费)
-                     * @return ChargeType 计费类型, (1=体验，2=预付费，3=后付费)
+                     * 获取计费类型, (1=后付费，2=预付费)
+                     * @return ChargeType 计费类型, (1=后付费，2=预付费)
                      */
                     int64_t GetChargeType() const;
 
                     /**
-                     * 设置计费类型, (1=体验，2=预付费，3=后付费)
-                     * @param ChargeType 计费类型, (1=体验，2=预付费，3=后付费)
+                     * 设置计费类型, (1=后付费，2=预付费)
+                     * @param ChargeType 计费类型, (1=后付费，2=预付费)
                      */
                     void SetChargeType(const int64_t& _chargeType);
 
@@ -214,7 +214,7 @@ namespace TencentCloud
                     bool m_areaIdHasBeenSet;
 
                     /**
-                     * 计费类型, (1=体验，2=预付费，3=后付费)
+                     * 计费类型, (1=后付费，2=预付费)
                      */
                     int64_t m_chargeType;
                     bool m_chargeTypeHasBeenSet;

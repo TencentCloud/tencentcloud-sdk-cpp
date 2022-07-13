@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool TaskTypeHasBeenSet() const;
 
                     /**
-                     * 获取任务来源, 0:默认值(私域), 1:灵犀, 2:灵鲲;
-                     * @return Source 任务来源, 0:默认值(私域), 1:灵犀, 2:灵鲲;
+                     * 获取任务来源, 0:小程序诊断, 1:预留字段(暂未使用), 2:app诊断(android);
+                     * @return Source 任务来源, 0:小程序诊断, 1:预留字段(暂未使用), 2:app诊断(android);
                      */
                     int64_t GetSource() const;
 
                     /**
-                     * 设置任务来源, 0:默认值(私域), 1:灵犀, 2:灵鲲;
-                     * @param Source 任务来源, 0:默认值(私域), 1:灵犀, 2:灵鲲;
+                     * 设置任务来源, 0:小程序诊断, 1:预留字段(暂未使用), 2:app诊断(android);
+                     * @param Source 任务来源, 0:小程序诊断, 1:预留字段(暂未使用), 2:app诊断(android);
                      */
                     void SetSource(const int64_t& _source);
 
@@ -123,7 +123,7 @@ namespace TencentCloud
                     bool m_taskTypeHasBeenSet;
 
                     /**
-                     * 任务来源, 0:默认值(私域), 1:灵犀, 2:灵鲲;
+                     * 任务来源, 0:小程序诊断, 1:预留字段(暂未使用), 2:app诊断(android);
                      */
                     int64_t m_source;
                     bool m_sourceHasBeenSet;

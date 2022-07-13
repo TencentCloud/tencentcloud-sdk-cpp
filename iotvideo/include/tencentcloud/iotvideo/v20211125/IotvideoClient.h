@@ -27,10 +27,14 @@
 #include <tencentcloud/iotvideo/v20211125/model/CallDeviceActionAsyncResponse.h>
 #include <tencentcloud/iotvideo/v20211125/model/CallDeviceActionSyncRequest.h>
 #include <tencentcloud/iotvideo/v20211125/model/CallDeviceActionSyncResponse.h>
+#include <tencentcloud/iotvideo/v20211125/model/CreateProductRequest.h>
+#include <tencentcloud/iotvideo/v20211125/model/CreateProductResponse.h>
 #include <tencentcloud/iotvideo/v20211125/model/DescribeDeviceDataStatsRequest.h>
 #include <tencentcloud/iotvideo/v20211125/model/DescribeDeviceDataStatsResponse.h>
 #include <tencentcloud/iotvideo/v20211125/model/DescribeMessageDataStatsRequest.h>
 #include <tencentcloud/iotvideo/v20211125/model/DescribeMessageDataStatsResponse.h>
+#include <tencentcloud/iotvideo/v20211125/model/GenSingleDeviceSignatureOfPublicRequest.h>
+#include <tencentcloud/iotvideo/v20211125/model/GenSingleDeviceSignatureOfPublicResponse.h>
 
 
 namespace TencentCloud
@@ -51,12 +55,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CallDeviceActionSyncResponse> CallDeviceActionSyncOutcome;
                 typedef std::future<CallDeviceActionSyncOutcome> CallDeviceActionSyncOutcomeCallable;
                 typedef std::function<void(const IotvideoClient*, const Model::CallDeviceActionSyncRequest&, CallDeviceActionSyncOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CallDeviceActionSyncAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateProductResponse> CreateProductOutcome;
+                typedef std::future<CreateProductOutcome> CreateProductOutcomeCallable;
+                typedef std::function<void(const IotvideoClient*, const Model::CreateProductRequest&, CreateProductOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateProductAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDeviceDataStatsResponse> DescribeDeviceDataStatsOutcome;
                 typedef std::future<DescribeDeviceDataStatsOutcome> DescribeDeviceDataStatsOutcomeCallable;
                 typedef std::function<void(const IotvideoClient*, const Model::DescribeDeviceDataStatsRequest&, DescribeDeviceDataStatsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDeviceDataStatsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeMessageDataStatsResponse> DescribeMessageDataStatsOutcome;
                 typedef std::future<DescribeMessageDataStatsOutcome> DescribeMessageDataStatsOutcomeCallable;
                 typedef std::function<void(const IotvideoClient*, const Model::DescribeMessageDataStatsRequest&, DescribeMessageDataStatsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMessageDataStatsAsyncHandler;
+                typedef Outcome<Core::Error, Model::GenSingleDeviceSignatureOfPublicResponse> GenSingleDeviceSignatureOfPublicOutcome;
+                typedef std::future<GenSingleDeviceSignatureOfPublicOutcome> GenSingleDeviceSignatureOfPublicOutcomeCallable;
+                typedef std::function<void(const IotvideoClient*, const Model::GenSingleDeviceSignatureOfPublicRequest&, GenSingleDeviceSignatureOfPublicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GenSingleDeviceSignatureOfPublicAsyncHandler;
 
 
 
@@ -79,6 +89,15 @@ namespace TencentCloud
                 CallDeviceActionSyncOutcomeCallable CallDeviceActionSyncCallable(const Model::CallDeviceActionSyncRequest& request);
 
                 /**
+                 *创建产品
+                 * @param req CreateProductRequest
+                 * @return CreateProductOutcome
+                 */
+                CreateProductOutcome CreateProduct(const Model::CreateProductRequest &request);
+                void CreateProductAsync(const Model::CreateProductRequest& request, const CreateProductAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateProductOutcomeCallable CreateProductCallable(const Model::CreateProductRequest& request);
+
+                /**
                  *查询设备数据统计
                  * @param req DescribeDeviceDataStatsRequest
                  * @return DescribeDeviceDataStatsOutcome
@@ -95,6 +114,15 @@ namespace TencentCloud
                 DescribeMessageDataStatsOutcome DescribeMessageDataStats(const Model::DescribeMessageDataStatsRequest &request);
                 void DescribeMessageDataStatsAsync(const Model::DescribeMessageDataStatsRequest& request, const DescribeMessageDataStatsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeMessageDataStatsOutcomeCallable DescribeMessageDataStatsCallable(const Model::DescribeMessageDataStatsRequest& request);
+
+                /**
+                 *获取设备的绑定签名
+                 * @param req GenSingleDeviceSignatureOfPublicRequest
+                 * @return GenSingleDeviceSignatureOfPublicOutcome
+                 */
+                GenSingleDeviceSignatureOfPublicOutcome GenSingleDeviceSignatureOfPublic(const Model::GenSingleDeviceSignatureOfPublicRequest &request);
+                void GenSingleDeviceSignatureOfPublicAsync(const Model::GenSingleDeviceSignatureOfPublicRequest& request, const GenSingleDeviceSignatureOfPublicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GenSingleDeviceSignatureOfPublicOutcomeCallable GenSingleDeviceSignatureOfPublicCallable(const Model::GenSingleDeviceSignatureOfPublicRequest& request);
 
             };
         }

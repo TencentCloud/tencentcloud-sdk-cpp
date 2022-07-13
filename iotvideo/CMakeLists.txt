@@ -176,13 +176,19 @@ set(iotvideo_public_header_model
   include/tencentcloud/iotvideo/v20191126/model/VersionData.h
   include/tencentcloud/iotvideo/v20191126/model/DevicesData.h
   include/tencentcloud/iotvideo/v20211125/model/MessageCntStats.h
+  include/tencentcloud/iotvideo/v20211125/model/DeviceSignatureInfo.h
   include/tencentcloud/iotvideo/v20211125/model/CallDeviceActionAsyncResponse.h
-  include/tencentcloud/iotvideo/v20211125/model/DescribeDeviceDataStatsResponse.h
+  include/tencentcloud/iotvideo/v20211125/model/GenSingleDeviceSignatureOfPublicResponse.h
+  include/tencentcloud/iotvideo/v20211125/model/CreateProductRequest.h
+  include/tencentcloud/iotvideo/v20211125/model/GenSingleDeviceSignatureOfPublicRequest.h
   include/tencentcloud/iotvideo/v20211125/model/DescribeDeviceDataStatsRequest.h
   include/tencentcloud/iotvideo/v20211125/model/CallDeviceActionSyncResponse.h
+  include/tencentcloud/iotvideo/v20211125/model/CreateProductResponse.h
   include/tencentcloud/iotvideo/v20211125/model/DeviceCntStats.h
-  include/tencentcloud/iotvideo/v20211125/model/DescribeMessageDataStatsResponse.h
+  include/tencentcloud/iotvideo/v20211125/model/DescribeDeviceDataStatsResponse.h
+  include/tencentcloud/iotvideo/v20211125/model/VideoProduct.h
   include/tencentcloud/iotvideo/v20211125/model/DescribeMessageDataStatsRequest.h
+  include/tencentcloud/iotvideo/v20211125/model/DescribeMessageDataStatsResponse.h
   include/tencentcloud/iotvideo/v20211125/model/CallDeviceActionAsyncRequest.h
   include/tencentcloud/iotvideo/v20211125/model/CallDeviceActionSyncRequest.h
   include/tencentcloud/iotvideo/v20201215/model/DescribeCloudStorageDateRequest.h
@@ -529,13 +535,19 @@ set(iotvideo_src
   src/v20191126/model/VersionData.cpp
   src/v20191126/model/DevicesData.cpp
   src/v20211125/model/MessageCntStats.cpp
+  src/v20211125/model/DeviceSignatureInfo.cpp
   src/v20211125/model/CallDeviceActionAsyncResponse.cpp
-  src/v20211125/model/DescribeDeviceDataStatsResponse.cpp
+  src/v20211125/model/GenSingleDeviceSignatureOfPublicResponse.cpp
+  src/v20211125/model/CreateProductRequest.cpp
+  src/v20211125/model/GenSingleDeviceSignatureOfPublicRequest.cpp
   src/v20211125/model/DescribeDeviceDataStatsRequest.cpp
   src/v20211125/model/CallDeviceActionSyncResponse.cpp
+  src/v20211125/model/CreateProductResponse.cpp
   src/v20211125/model/DeviceCntStats.cpp
-  src/v20211125/model/DescribeMessageDataStatsResponse.cpp
+  src/v20211125/model/DescribeDeviceDataStatsResponse.cpp
+  src/v20211125/model/VideoProduct.cpp
   src/v20211125/model/DescribeMessageDataStatsRequest.cpp
+  src/v20211125/model/DescribeMessageDataStatsResponse.cpp
   src/v20211125/model/CallDeviceActionAsyncRequest.cpp
   src/v20211125/model/CallDeviceActionSyncRequest.cpp
   src/v20201215/model/DescribeCloudStorageDateRequest.cpp

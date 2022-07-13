@@ -27,6 +27,7 @@ set(gaap_public_header_model
   include/tencentcloud/gaap/v20180529/model/DescribeListenerStatisticsRequest.h
   include/tencentcloud/gaap/v20180529/model/DescribeProxyAndStatisticsListenersResponse.h
   include/tencentcloud/gaap/v20180529/model/DeleteRuleRequest.h
+  include/tencentcloud/gaap/v20180529/model/DescribeCrossBorderProxiesRequest.h
   include/tencentcloud/gaap/v20180529/model/BindRuleRealServersRequest.h
   include/tencentcloud/gaap/v20180529/model/DescribeHTTPSListenersResponse.h
   include/tencentcloud/gaap/v20180529/model/ModifyProxiesProjectRequest.h
@@ -87,6 +88,7 @@ set(gaap_public_header_model
   include/tencentcloud/gaap/v20180529/model/DescribeTCPListenersResponse.h
   include/tencentcloud/gaap/v20180529/model/DescribeRulesRequest.h
   include/tencentcloud/gaap/v20180529/model/DescribeCountryAreaMappingResponse.h
+  include/tencentcloud/gaap/v20180529/model/DescribeCrossBorderProxiesResponse.h
   include/tencentcloud/gaap/v20180529/model/DescribeRealServersResponse.h
   include/tencentcloud/gaap/v20180529/model/ModifyHTTPListenerAttributeResponse.h
   include/tencentcloud/gaap/v20180529/model/DescribeRealServerStatisticsRequest.h
@@ -115,7 +117,7 @@ set(gaap_public_header_model
   include/tencentcloud/gaap/v20180529/model/DescribeProxyGroupListResponse.h
   include/tencentcloud/gaap/v20180529/model/DescribeDomainErrorPageInfoRequest.h
   include/tencentcloud/gaap/v20180529/model/HTTPSListener.h
-  include/tencentcloud/gaap/v20180529/model/DomainAccessRegionDict.h
+  include/tencentcloud/gaap/v20180529/model/BanAndRecoverProxyRequest.h
   include/tencentcloud/gaap/v20180529/model/CloseSecurityPolicyRequest.h
   include/tencentcloud/gaap/v20180529/model/ModifyCertificateAttributesRequest.h
   include/tencentcloud/gaap/v20180529/model/ModifyProxyConfigurationRequest.h
@@ -141,6 +143,7 @@ set(gaap_public_header_model
   include/tencentcloud/gaap/v20180529/model/DescribeDomainErrorPageInfoResponse.h
   include/tencentcloud/gaap/v20180529/model/DestroyProxiesResponse.h
   include/tencentcloud/gaap/v20180529/model/DescribeRuleRealServersResponse.h
+  include/tencentcloud/gaap/v20180529/model/BanAndRecoverProxyResponse.h
   include/tencentcloud/gaap/v20180529/model/DescribeRealServersStatusRequest.h
   include/tencentcloud/gaap/v20180529/model/ModifyHTTPListenerAttributeRequest.h
   include/tencentcloud/gaap/v20180529/model/CreateProxyRequest.h
@@ -169,6 +172,7 @@ set(gaap_public_header_model
   include/tencentcloud/gaap/v20180529/model/ModifyDomainResponse.h
   include/tencentcloud/gaap/v20180529/model/DescribeRulesByRuleIdsResponse.h
   include/tencentcloud/gaap/v20180529/model/SetAuthenticationRequest.h
+  include/tencentcloud/gaap/v20180529/model/DomainAccessRegionDict.h
   include/tencentcloud/gaap/v20180529/model/InquiryPriceCreateProxyResponse.h
   include/tencentcloud/gaap/v20180529/model/NewRealServer.h
   include/tencentcloud/gaap/v20180529/model/DescribeFirstLinkSessionResponse.h
@@ -257,6 +261,7 @@ set(gaap_src
   src/v20180529/model/DescribeListenerStatisticsRequest.cpp
   src/v20180529/model/DescribeProxyAndStatisticsListenersResponse.cpp
   src/v20180529/model/DeleteRuleRequest.cpp
+  src/v20180529/model/DescribeCrossBorderProxiesRequest.cpp
   src/v20180529/model/BindRuleRealServersRequest.cpp
   src/v20180529/model/DescribeHTTPSListenersResponse.cpp
   src/v20180529/model/ModifyProxiesProjectRequest.cpp
@@ -317,6 +322,7 @@ set(gaap_src
   src/v20180529/model/DescribeTCPListenersResponse.cpp
   src/v20180529/model/DescribeRulesRequest.cpp
   src/v20180529/model/DescribeCountryAreaMappingResponse.cpp
+  src/v20180529/model/DescribeCrossBorderProxiesResponse.cpp
   src/v20180529/model/DescribeRealServersResponse.cpp
   src/v20180529/model/ModifyHTTPListenerAttributeResponse.cpp
   src/v20180529/model/DescribeRealServerStatisticsRequest.cpp
@@ -345,7 +351,7 @@ set(gaap_src
   src/v20180529/model/DescribeProxyGroupListResponse.cpp
   src/v20180529/model/DescribeDomainErrorPageInfoRequest.cpp
   src/v20180529/model/HTTPSListener.cpp
-  src/v20180529/model/DomainAccessRegionDict.cpp
+  src/v20180529/model/BanAndRecoverProxyRequest.cpp
   src/v20180529/model/CloseSecurityPolicyRequest.cpp
   src/v20180529/model/ModifyCertificateAttributesRequest.cpp
   src/v20180529/model/ModifyProxyConfigurationRequest.cpp
@@ -371,6 +377,7 @@ set(gaap_src
   src/v20180529/model/DescribeDomainErrorPageInfoResponse.cpp
   src/v20180529/model/DestroyProxiesResponse.cpp
   src/v20180529/model/DescribeRuleRealServersResponse.cpp
+  src/v20180529/model/BanAndRecoverProxyResponse.cpp
   src/v20180529/model/DescribeRealServersStatusRequest.cpp
   src/v20180529/model/ModifyHTTPListenerAttributeRequest.cpp
   src/v20180529/model/CreateProxyRequest.cpp
@@ -399,6 +406,7 @@ set(gaap_src
   src/v20180529/model/ModifyDomainResponse.cpp
   src/v20180529/model/DescribeRulesByRuleIdsResponse.cpp
   src/v20180529/model/SetAuthenticationRequest.cpp
+  src/v20180529/model/DomainAccessRegionDict.cpp
   src/v20180529/model/InquiryPriceCreateProxyResponse.cpp
   src/v20180529/model/NewRealServer.cpp
   src/v20180529/model/DescribeFirstLinkSessionResponse.cpp

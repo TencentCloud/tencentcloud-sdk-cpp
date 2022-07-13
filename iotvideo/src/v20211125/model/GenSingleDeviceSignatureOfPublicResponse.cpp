@@ -14,22 +14,21 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/waf/v20180125/model/DescribeCustomRulesResponse.h>
+#include <tencentcloud/iotvideo/v20211125/model/GenSingleDeviceSignatureOfPublicResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Waf::V20180125::Model;
+using namespace TencentCloud::Iotvideo::V20211125::Model;
 using namespace std;
 
-DescribeCustomRulesResponse::DescribeCustomRulesResponse() :
-    m_ruleListHasBeenSet(false),
-    m_totalCountHasBeenSet(false)
+GenSingleDeviceSignatureOfPublicResponse::GenSingleDeviceSignatureOfPublicResponse() :
+    m_deviceSignatureHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome DescribeCustomRulesResponse::Deserialize(const string &payload)
+CoreInternalOutcome GenSingleDeviceSignatureOfPublicResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -63,67 +62,40 @@ CoreInternalOutcome DescribeCustomRulesResponse::Deserialize(const string &paylo
     }
 
 
-    if (rsp.HasMember("RuleList") && !rsp["RuleList"].IsNull())
+    if (rsp.HasMember("DeviceSignature") && !rsp["DeviceSignature"].IsNull())
     {
-        if (!rsp["RuleList"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `RuleList` is not array type"));
-
-        const rapidjson::Value &tmpValue = rsp["RuleList"];
-        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        if (!rsp["DeviceSignature"].IsObject())
         {
-            DescribeCustomRulesRspRuleListItem item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
-            if (!outcome.IsSuccess())
-            {
-                outcome.GetError().SetRequestId(requestId);
-                return outcome;
-            }
-            m_ruleList.push_back(item);
+            return CoreInternalOutcome(Core::Error("response `DeviceSignature` is not object type").SetRequestId(requestId));
         }
-        m_ruleListHasBeenSet = true;
-    }
 
-    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
-    {
-        if (!rsp["TotalCount"].IsString())
+        CoreInternalOutcome outcome = m_deviceSignature.Deserialize(rsp["DeviceSignature"]);
+        if (!outcome.IsSuccess())
         {
-            return CoreInternalOutcome(Core::Error("response `TotalCount` IsString=false incorrectly").SetRequestId(requestId));
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
         }
-        m_totalCount = string(rsp["TotalCount"].GetString());
-        m_totalCountHasBeenSet = true;
+
+        m_deviceSignatureHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string DescribeCustomRulesResponse::ToJsonString() const
+string GenSingleDeviceSignatureOfPublicResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_ruleListHasBeenSet)
+    if (m_deviceSignatureHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "RuleList";
+        string key = "DeviceSignature";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        int i=0;
-        for (auto itr = m_ruleList.begin(); itr != m_ruleList.end(); ++itr, ++i)
-        {
-            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
-        }
-    }
-
-    if (m_totalCountHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "TotalCount";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_totalCount.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_deviceSignature.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -138,24 +110,14 @@ string DescribeCustomRulesResponse::ToJsonString() const
 }
 
 
-vector<DescribeCustomRulesRspRuleListItem> DescribeCustomRulesResponse::GetRuleList() const
+DeviceSignatureInfo GenSingleDeviceSignatureOfPublicResponse::GetDeviceSignature() const
 {
-    return m_ruleList;
+    return m_deviceSignature;
 }
 
-bool DescribeCustomRulesResponse::RuleListHasBeenSet() const
+bool GenSingleDeviceSignatureOfPublicResponse::DeviceSignatureHasBeenSet() const
 {
-    return m_ruleListHasBeenSet;
-}
-
-string DescribeCustomRulesResponse::GetTotalCount() const
-{
-    return m_totalCount;
-}
-
-bool DescribeCustomRulesResponse::TotalCountHasBeenSet() const
-{
-    return m_totalCountHasBeenSet;
+    return m_deviceSignatureHasBeenSet;
 }
 
 

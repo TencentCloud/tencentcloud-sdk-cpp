@@ -56,8 +56,8 @@ namespace TencentCloud
                     bool ResultHasBeenSet() const;
 
                     /**
-                     * 获取上传url(灵鲲:Post方法（100:apk,101:txt）, 灵犀:put方法)
-                     * @return UploadUrl 上传url(灵鲲:Post方法（100:apk,101:txt）, 灵犀:put方法)
+                     * 获取上传url(任务来源为2时:Post方法（100:apk,101:txt）, 任务来源为1时:put方法)
+                     * @return UploadUrl 上传url(任务来源为2时:Post方法（100:apk,101:txt）, 任务来源为1时:put方法)
                      */
                     std::string GetUploadUrl() const;
 
@@ -68,9 +68,9 @@ namespace TencentCloud
                     bool UploadUrlHasBeenSet() const;
 
                     /**
-                     * 获取上传url鉴权信息(灵犀上传需要, Authorization参数值)
+                     * 获取上传url鉴权信息(任务来源为1时上传需要, Authorization参数值)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return UploadSign 上传url鉴权信息(灵犀上传需要, Authorization参数值)
+                     * @return UploadSign 上传url鉴权信息(任务来源为1时上传需要, Authorization参数值)
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetUploadSign() const;
@@ -82,9 +82,9 @@ namespace TencentCloud
                     bool UploadSignHasBeenSet() const;
 
                     /**
-                     * 获取上传文件ID(灵犀提交诊断任务需要)
+                     * 获取上传文件ID(任务来源为1时提交诊断任务需要)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FildID 上传文件ID(灵犀提交诊断任务需要)
+                     * @return FildID 上传文件ID(任务来源为1时提交诊断任务需要)
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetFildID() const;
@@ -104,20 +104,20 @@ namespace TencentCloud
                     bool m_resultHasBeenSet;
 
                     /**
-                     * 上传url(灵鲲:Post方法（100:apk,101:txt）, 灵犀:put方法)
+                     * 上传url(任务来源为2时:Post方法（100:apk,101:txt）, 任务来源为1时:put方法)
                      */
                     std::string m_uploadUrl;
                     bool m_uploadUrlHasBeenSet;
 
                     /**
-                     * 上传url鉴权信息(灵犀上传需要, Authorization参数值)
+                     * 上传url鉴权信息(任务来源为1时上传需要, Authorization参数值)
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_uploadSign;
                     bool m_uploadSignHasBeenSet;
 
                     /**
-                     * 上传文件ID(灵犀提交诊断任务需要)
+                     * 上传文件ID(任务来源为1时提交诊断任务需要)
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fildID;

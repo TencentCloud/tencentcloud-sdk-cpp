@@ -27,10 +27,16 @@
 #include <tencentcloud/es/v20180416/model/CreateIndexResponse.h>
 #include <tencentcloud/es/v20180416/model/CreateInstanceRequest.h>
 #include <tencentcloud/es/v20180416/model/CreateInstanceResponse.h>
+#include <tencentcloud/es/v20180416/model/CreateLogstashInstanceRequest.h>
+#include <tencentcloud/es/v20180416/model/CreateLogstashInstanceResponse.h>
 #include <tencentcloud/es/v20180416/model/DeleteIndexRequest.h>
 #include <tencentcloud/es/v20180416/model/DeleteIndexResponse.h>
 #include <tencentcloud/es/v20180416/model/DeleteInstanceRequest.h>
 #include <tencentcloud/es/v20180416/model/DeleteInstanceResponse.h>
+#include <tencentcloud/es/v20180416/model/DeleteLogstashInstanceRequest.h>
+#include <tencentcloud/es/v20180416/model/DeleteLogstashInstanceResponse.h>
+#include <tencentcloud/es/v20180416/model/DeleteLogstashPipelinesRequest.h>
+#include <tencentcloud/es/v20180416/model/DeleteLogstashPipelinesResponse.h>
 #include <tencentcloud/es/v20180416/model/DescribeIndexListRequest.h>
 #include <tencentcloud/es/v20180416/model/DescribeIndexListResponse.h>
 #include <tencentcloud/es/v20180416/model/DescribeIndexMetaRequest.h>
@@ -41,6 +47,14 @@
 #include <tencentcloud/es/v20180416/model/DescribeInstanceOperationsResponse.h>
 #include <tencentcloud/es/v20180416/model/DescribeInstancesRequest.h>
 #include <tencentcloud/es/v20180416/model/DescribeInstancesResponse.h>
+#include <tencentcloud/es/v20180416/model/DescribeLogstashInstanceLogsRequest.h>
+#include <tencentcloud/es/v20180416/model/DescribeLogstashInstanceLogsResponse.h>
+#include <tencentcloud/es/v20180416/model/DescribeLogstashInstanceOperationsRequest.h>
+#include <tencentcloud/es/v20180416/model/DescribeLogstashInstanceOperationsResponse.h>
+#include <tencentcloud/es/v20180416/model/DescribeLogstashInstancesRequest.h>
+#include <tencentcloud/es/v20180416/model/DescribeLogstashInstancesResponse.h>
+#include <tencentcloud/es/v20180416/model/DescribeLogstashPipelinesRequest.h>
+#include <tencentcloud/es/v20180416/model/DescribeLogstashPipelinesResponse.h>
 #include <tencentcloud/es/v20180416/model/DescribeViewsRequest.h>
 #include <tencentcloud/es/v20180416/model/DescribeViewsResponse.h>
 #include <tencentcloud/es/v20180416/model/DiagnoseInstanceRequest.h>
@@ -51,8 +65,16 @@
 #include <tencentcloud/es/v20180416/model/RestartInstanceResponse.h>
 #include <tencentcloud/es/v20180416/model/RestartKibanaRequest.h>
 #include <tencentcloud/es/v20180416/model/RestartKibanaResponse.h>
+#include <tencentcloud/es/v20180416/model/RestartLogstashInstanceRequest.h>
+#include <tencentcloud/es/v20180416/model/RestartLogstashInstanceResponse.h>
 #include <tencentcloud/es/v20180416/model/RestartNodesRequest.h>
 #include <tencentcloud/es/v20180416/model/RestartNodesResponse.h>
+#include <tencentcloud/es/v20180416/model/SaveAndDeployLogstashPipelineRequest.h>
+#include <tencentcloud/es/v20180416/model/SaveAndDeployLogstashPipelineResponse.h>
+#include <tencentcloud/es/v20180416/model/StartLogstashPipelinesRequest.h>
+#include <tencentcloud/es/v20180416/model/StartLogstashPipelinesResponse.h>
+#include <tencentcloud/es/v20180416/model/StopLogstashPipelinesRequest.h>
+#include <tencentcloud/es/v20180416/model/StopLogstashPipelinesResponse.h>
 #include <tencentcloud/es/v20180416/model/UpdateDiagnoseSettingsRequest.h>
 #include <tencentcloud/es/v20180416/model/UpdateDiagnoseSettingsResponse.h>
 #include <tencentcloud/es/v20180416/model/UpdateDictionariesRequest.h>
@@ -63,6 +85,10 @@
 #include <tencentcloud/es/v20180416/model/UpdateInstanceResponse.h>
 #include <tencentcloud/es/v20180416/model/UpdateJdkRequest.h>
 #include <tencentcloud/es/v20180416/model/UpdateJdkResponse.h>
+#include <tencentcloud/es/v20180416/model/UpdateLogstashInstanceRequest.h>
+#include <tencentcloud/es/v20180416/model/UpdateLogstashInstanceResponse.h>
+#include <tencentcloud/es/v20180416/model/UpdateLogstashPipelineDescRequest.h>
+#include <tencentcloud/es/v20180416/model/UpdateLogstashPipelineDescResponse.h>
 #include <tencentcloud/es/v20180416/model/UpdatePluginsRequest.h>
 #include <tencentcloud/es/v20180416/model/UpdatePluginsResponse.h>
 #include <tencentcloud/es/v20180416/model/UpdateRequestTargetNodeTypesRequest.h>
@@ -91,12 +117,21 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateInstanceResponse> CreateInstanceOutcome;
                 typedef std::future<CreateInstanceOutcome> CreateInstanceOutcomeCallable;
                 typedef std::function<void(const EsClient*, const Model::CreateInstanceRequest&, CreateInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateLogstashInstanceResponse> CreateLogstashInstanceOutcome;
+                typedef std::future<CreateLogstashInstanceOutcome> CreateLogstashInstanceOutcomeCallable;
+                typedef std::function<void(const EsClient*, const Model::CreateLogstashInstanceRequest&, CreateLogstashInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateLogstashInstanceAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteIndexResponse> DeleteIndexOutcome;
                 typedef std::future<DeleteIndexOutcome> DeleteIndexOutcomeCallable;
                 typedef std::function<void(const EsClient*, const Model::DeleteIndexRequest&, DeleteIndexOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteIndexAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteInstanceResponse> DeleteInstanceOutcome;
                 typedef std::future<DeleteInstanceOutcome> DeleteInstanceOutcomeCallable;
                 typedef std::function<void(const EsClient*, const Model::DeleteInstanceRequest&, DeleteInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteLogstashInstanceResponse> DeleteLogstashInstanceOutcome;
+                typedef std::future<DeleteLogstashInstanceOutcome> DeleteLogstashInstanceOutcomeCallable;
+                typedef std::function<void(const EsClient*, const Model::DeleteLogstashInstanceRequest&, DeleteLogstashInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLogstashInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteLogstashPipelinesResponse> DeleteLogstashPipelinesOutcome;
+                typedef std::future<DeleteLogstashPipelinesOutcome> DeleteLogstashPipelinesOutcomeCallable;
+                typedef std::function<void(const EsClient*, const Model::DeleteLogstashPipelinesRequest&, DeleteLogstashPipelinesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLogstashPipelinesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeIndexListResponse> DescribeIndexListOutcome;
                 typedef std::future<DescribeIndexListOutcome> DescribeIndexListOutcomeCallable;
                 typedef std::function<void(const EsClient*, const Model::DescribeIndexListRequest&, DescribeIndexListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIndexListAsyncHandler;
@@ -112,6 +147,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeInstancesResponse> DescribeInstancesOutcome;
                 typedef std::future<DescribeInstancesOutcome> DescribeInstancesOutcomeCallable;
                 typedef std::function<void(const EsClient*, const Model::DescribeInstancesRequest&, DescribeInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeLogstashInstanceLogsResponse> DescribeLogstashInstanceLogsOutcome;
+                typedef std::future<DescribeLogstashInstanceLogsOutcome> DescribeLogstashInstanceLogsOutcomeCallable;
+                typedef std::function<void(const EsClient*, const Model::DescribeLogstashInstanceLogsRequest&, DescribeLogstashInstanceLogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLogstashInstanceLogsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeLogstashInstanceOperationsResponse> DescribeLogstashInstanceOperationsOutcome;
+                typedef std::future<DescribeLogstashInstanceOperationsOutcome> DescribeLogstashInstanceOperationsOutcomeCallable;
+                typedef std::function<void(const EsClient*, const Model::DescribeLogstashInstanceOperationsRequest&, DescribeLogstashInstanceOperationsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLogstashInstanceOperationsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeLogstashInstancesResponse> DescribeLogstashInstancesOutcome;
+                typedef std::future<DescribeLogstashInstancesOutcome> DescribeLogstashInstancesOutcomeCallable;
+                typedef std::function<void(const EsClient*, const Model::DescribeLogstashInstancesRequest&, DescribeLogstashInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLogstashInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeLogstashPipelinesResponse> DescribeLogstashPipelinesOutcome;
+                typedef std::future<DescribeLogstashPipelinesOutcome> DescribeLogstashPipelinesOutcomeCallable;
+                typedef std::function<void(const EsClient*, const Model::DescribeLogstashPipelinesRequest&, DescribeLogstashPipelinesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLogstashPipelinesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeViewsResponse> DescribeViewsOutcome;
                 typedef std::future<DescribeViewsOutcome> DescribeViewsOutcomeCallable;
                 typedef std::function<void(const EsClient*, const Model::DescribeViewsRequest&, DescribeViewsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeViewsAsyncHandler;
@@ -127,9 +174,21 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RestartKibanaResponse> RestartKibanaOutcome;
                 typedef std::future<RestartKibanaOutcome> RestartKibanaOutcomeCallable;
                 typedef std::function<void(const EsClient*, const Model::RestartKibanaRequest&, RestartKibanaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RestartKibanaAsyncHandler;
+                typedef Outcome<Core::Error, Model::RestartLogstashInstanceResponse> RestartLogstashInstanceOutcome;
+                typedef std::future<RestartLogstashInstanceOutcome> RestartLogstashInstanceOutcomeCallable;
+                typedef std::function<void(const EsClient*, const Model::RestartLogstashInstanceRequest&, RestartLogstashInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RestartLogstashInstanceAsyncHandler;
                 typedef Outcome<Core::Error, Model::RestartNodesResponse> RestartNodesOutcome;
                 typedef std::future<RestartNodesOutcome> RestartNodesOutcomeCallable;
                 typedef std::function<void(const EsClient*, const Model::RestartNodesRequest&, RestartNodesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RestartNodesAsyncHandler;
+                typedef Outcome<Core::Error, Model::SaveAndDeployLogstashPipelineResponse> SaveAndDeployLogstashPipelineOutcome;
+                typedef std::future<SaveAndDeployLogstashPipelineOutcome> SaveAndDeployLogstashPipelineOutcomeCallable;
+                typedef std::function<void(const EsClient*, const Model::SaveAndDeployLogstashPipelineRequest&, SaveAndDeployLogstashPipelineOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SaveAndDeployLogstashPipelineAsyncHandler;
+                typedef Outcome<Core::Error, Model::StartLogstashPipelinesResponse> StartLogstashPipelinesOutcome;
+                typedef std::future<StartLogstashPipelinesOutcome> StartLogstashPipelinesOutcomeCallable;
+                typedef std::function<void(const EsClient*, const Model::StartLogstashPipelinesRequest&, StartLogstashPipelinesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartLogstashPipelinesAsyncHandler;
+                typedef Outcome<Core::Error, Model::StopLogstashPipelinesResponse> StopLogstashPipelinesOutcome;
+                typedef std::future<StopLogstashPipelinesOutcome> StopLogstashPipelinesOutcomeCallable;
+                typedef std::function<void(const EsClient*, const Model::StopLogstashPipelinesRequest&, StopLogstashPipelinesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopLogstashPipelinesAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpdateDiagnoseSettingsResponse> UpdateDiagnoseSettingsOutcome;
                 typedef std::future<UpdateDiagnoseSettingsOutcome> UpdateDiagnoseSettingsOutcomeCallable;
                 typedef std::function<void(const EsClient*, const Model::UpdateDiagnoseSettingsRequest&, UpdateDiagnoseSettingsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateDiagnoseSettingsAsyncHandler;
@@ -145,6 +204,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UpdateJdkResponse> UpdateJdkOutcome;
                 typedef std::future<UpdateJdkOutcome> UpdateJdkOutcomeCallable;
                 typedef std::function<void(const EsClient*, const Model::UpdateJdkRequest&, UpdateJdkOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateJdkAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateLogstashInstanceResponse> UpdateLogstashInstanceOutcome;
+                typedef std::future<UpdateLogstashInstanceOutcome> UpdateLogstashInstanceOutcomeCallable;
+                typedef std::function<void(const EsClient*, const Model::UpdateLogstashInstanceRequest&, UpdateLogstashInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateLogstashInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateLogstashPipelineDescResponse> UpdateLogstashPipelineDescOutcome;
+                typedef std::future<UpdateLogstashPipelineDescOutcome> UpdateLogstashPipelineDescOutcomeCallable;
+                typedef std::function<void(const EsClient*, const Model::UpdateLogstashPipelineDescRequest&, UpdateLogstashPipelineDescOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateLogstashPipelineDescAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpdatePluginsResponse> UpdatePluginsOutcome;
                 typedef std::future<UpdatePluginsOutcome> UpdatePluginsOutcomeCallable;
                 typedef std::function<void(const EsClient*, const Model::UpdatePluginsRequest&, UpdatePluginsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdatePluginsAsyncHandler;
@@ -179,6 +244,15 @@ namespace TencentCloud
                 CreateInstanceOutcomeCallable CreateInstanceCallable(const Model::CreateInstanceRequest& request);
 
                 /**
+                 *用于创建Logstash实例
+                 * @param req CreateLogstashInstanceRequest
+                 * @return CreateLogstashInstanceOutcome
+                 */
+                CreateLogstashInstanceOutcome CreateLogstashInstance(const Model::CreateLogstashInstanceRequest &request);
+                void CreateLogstashInstanceAsync(const Model::CreateLogstashInstanceRequest& request, const CreateLogstashInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateLogstashInstanceOutcomeCallable CreateLogstashInstanceCallable(const Model::CreateLogstashInstanceRequest& request);
+
+                /**
                  *删除索引
                  * @param req DeleteIndexRequest
                  * @return DeleteIndexOutcome
@@ -195,6 +269,24 @@ namespace TencentCloud
                 DeleteInstanceOutcome DeleteInstance(const Model::DeleteInstanceRequest &request);
                 void DeleteInstanceAsync(const Model::DeleteInstanceRequest& request, const DeleteInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteInstanceOutcomeCallable DeleteInstanceCallable(const Model::DeleteInstanceRequest& request);
+
+                /**
+                 *用于删除Logstash实例
+                 * @param req DeleteLogstashInstanceRequest
+                 * @return DeleteLogstashInstanceOutcome
+                 */
+                DeleteLogstashInstanceOutcome DeleteLogstashInstance(const Model::DeleteLogstashInstanceRequest &request);
+                void DeleteLogstashInstanceAsync(const Model::DeleteLogstashInstanceRequest& request, const DeleteLogstashInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteLogstashInstanceOutcomeCallable DeleteLogstashInstanceCallable(const Model::DeleteLogstashInstanceRequest& request);
+
+                /**
+                 *用于批量删除Logstash管道
+                 * @param req DeleteLogstashPipelinesRequest
+                 * @return DeleteLogstashPipelinesOutcome
+                 */
+                DeleteLogstashPipelinesOutcome DeleteLogstashPipelines(const Model::DeleteLogstashPipelinesRequest &request);
+                void DeleteLogstashPipelinesAsync(const Model::DeleteLogstashPipelinesRequest& request, const DeleteLogstashPipelinesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteLogstashPipelinesOutcomeCallable DeleteLogstashPipelinesCallable(const Model::DeleteLogstashPipelinesRequest& request);
 
                 /**
                  *获取索引列表
@@ -242,6 +334,42 @@ namespace TencentCloud
                 DescribeInstancesOutcomeCallable DescribeInstancesCallable(const Model::DescribeInstancesRequest& request);
 
                 /**
+                 *查询用户该地域下符合条件的Logstash实例的日志
+                 * @param req DescribeLogstashInstanceLogsRequest
+                 * @return DescribeLogstashInstanceLogsOutcome
+                 */
+                DescribeLogstashInstanceLogsOutcome DescribeLogstashInstanceLogs(const Model::DescribeLogstashInstanceLogsRequest &request);
+                void DescribeLogstashInstanceLogsAsync(const Model::DescribeLogstashInstanceLogsRequest& request, const DescribeLogstashInstanceLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLogstashInstanceLogsOutcomeCallable DescribeLogstashInstanceLogsCallable(const Model::DescribeLogstashInstanceLogsRequest& request);
+
+                /**
+                 *查询实例指定条件下的操作记录
+                 * @param req DescribeLogstashInstanceOperationsRequest
+                 * @return DescribeLogstashInstanceOperationsOutcome
+                 */
+                DescribeLogstashInstanceOperationsOutcome DescribeLogstashInstanceOperations(const Model::DescribeLogstashInstanceOperationsRequest &request);
+                void DescribeLogstashInstanceOperationsAsync(const Model::DescribeLogstashInstanceOperationsRequest& request, const DescribeLogstashInstanceOperationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLogstashInstanceOperationsOutcomeCallable DescribeLogstashInstanceOperationsCallable(const Model::DescribeLogstashInstanceOperationsRequest& request);
+
+                /**
+                 *查询用户该地域下符合条件的所有Logstash实例
+                 * @param req DescribeLogstashInstancesRequest
+                 * @return DescribeLogstashInstancesOutcome
+                 */
+                DescribeLogstashInstancesOutcome DescribeLogstashInstances(const Model::DescribeLogstashInstancesRequest &request);
+                void DescribeLogstashInstancesAsync(const Model::DescribeLogstashInstancesRequest& request, const DescribeLogstashInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLogstashInstancesOutcomeCallable DescribeLogstashInstancesCallable(const Model::DescribeLogstashInstancesRequest& request);
+
+                /**
+                 *用于获取Logstash实例管道列表
+                 * @param req DescribeLogstashPipelinesRequest
+                 * @return DescribeLogstashPipelinesOutcome
+                 */
+                DescribeLogstashPipelinesOutcome DescribeLogstashPipelines(const Model::DescribeLogstashPipelinesRequest &request);
+                void DescribeLogstashPipelinesAsync(const Model::DescribeLogstashPipelinesRequest& request, const DescribeLogstashPipelinesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLogstashPipelinesOutcomeCallable DescribeLogstashPipelinesCallable(const Model::DescribeLogstashPipelinesRequest& request);
+
+                /**
                  *查询集群各视图数据，包括集群维度、节点维度、Kibana维度
                  * @param req DescribeViewsRequest
                  * @return DescribeViewsOutcome
@@ -287,6 +415,15 @@ namespace TencentCloud
                 RestartKibanaOutcomeCallable RestartKibanaCallable(const Model::RestartKibanaRequest& request);
 
                 /**
+                 *用于重启Logstash实例
+                 * @param req RestartLogstashInstanceRequest
+                 * @return RestartLogstashInstanceOutcome
+                 */
+                RestartLogstashInstanceOutcome RestartLogstashInstance(const Model::RestartLogstashInstanceRequest &request);
+                void RestartLogstashInstanceAsync(const Model::RestartLogstashInstanceRequest& request, const RestartLogstashInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RestartLogstashInstanceOutcomeCallable RestartLogstashInstanceCallable(const Model::RestartLogstashInstanceRequest& request);
+
+                /**
                  *用于重启集群节点
                  * @param req RestartNodesRequest
                  * @return RestartNodesOutcome
@@ -294,6 +431,33 @@ namespace TencentCloud
                 RestartNodesOutcome RestartNodes(const Model::RestartNodesRequest &request);
                 void RestartNodesAsync(const Model::RestartNodesRequest& request, const RestartNodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RestartNodesOutcomeCallable RestartNodesCallable(const Model::RestartNodesRequest& request);
+
+                /**
+                 *用于下发并且部署管道
+                 * @param req SaveAndDeployLogstashPipelineRequest
+                 * @return SaveAndDeployLogstashPipelineOutcome
+                 */
+                SaveAndDeployLogstashPipelineOutcome SaveAndDeployLogstashPipeline(const Model::SaveAndDeployLogstashPipelineRequest &request);
+                void SaveAndDeployLogstashPipelineAsync(const Model::SaveAndDeployLogstashPipelineRequest& request, const SaveAndDeployLogstashPipelineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SaveAndDeployLogstashPipelineOutcomeCallable SaveAndDeployLogstashPipelineCallable(const Model::SaveAndDeployLogstashPipelineRequest& request);
+
+                /**
+                 *用于启动Logstash管道
+                 * @param req StartLogstashPipelinesRequest
+                 * @return StartLogstashPipelinesOutcome
+                 */
+                StartLogstashPipelinesOutcome StartLogstashPipelines(const Model::StartLogstashPipelinesRequest &request);
+                void StartLogstashPipelinesAsync(const Model::StartLogstashPipelinesRequest& request, const StartLogstashPipelinesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                StartLogstashPipelinesOutcomeCallable StartLogstashPipelinesCallable(const Model::StartLogstashPipelinesRequest& request);
+
+                /**
+                 *用于批量停止Logstash管道
+                 * @param req StopLogstashPipelinesRequest
+                 * @return StopLogstashPipelinesOutcome
+                 */
+                StopLogstashPipelinesOutcome StopLogstashPipelines(const Model::StopLogstashPipelinesRequest &request);
+                void StopLogstashPipelinesAsync(const Model::StopLogstashPipelinesRequest& request, const StopLogstashPipelinesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                StopLogstashPipelinesOutcomeCallable StopLogstashPipelinesCallable(const Model::StopLogstashPipelinesRequest& request);
 
                 /**
                  *更新智能运维配置
@@ -346,6 +510,29 @@ namespace TencentCloud
                 UpdateJdkOutcome UpdateJdk(const Model::UpdateJdkRequest &request);
                 void UpdateJdkAsync(const Model::UpdateJdkRequest& request, const UpdateJdkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UpdateJdkOutcomeCallable UpdateJdkCallable(const Model::UpdateJdkRequest& request);
+
+                /**
+                 *对集群进行节点规格变更，修改实例名称，修改配置，等操作。参数中InstanceId为必传参数，参数传递组合及含义如下：
+- InstanceName：修改实例名称(仅用于标识实例)
+- NodeNum: 修改实例节点数量（节点横向扩缩容，纵向扩缩容等）
+- YMLConfig: 修改实例YML配置
+- BindedES：修改绑定的ES集群配置
+以上参数组合只能传递一种，多传或少传均会导致请求失败
+                 * @param req UpdateLogstashInstanceRequest
+                 * @return UpdateLogstashInstanceOutcome
+                 */
+                UpdateLogstashInstanceOutcome UpdateLogstashInstance(const Model::UpdateLogstashInstanceRequest &request);
+                void UpdateLogstashInstanceAsync(const Model::UpdateLogstashInstanceRequest& request, const UpdateLogstashInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateLogstashInstanceOutcomeCallable UpdateLogstashInstanceCallable(const Model::UpdateLogstashInstanceRequest& request);
+
+                /**
+                 *用于更新管道描述信息
+                 * @param req UpdateLogstashPipelineDescRequest
+                 * @return UpdateLogstashPipelineDescOutcome
+                 */
+                UpdateLogstashPipelineDescOutcome UpdateLogstashPipelineDesc(const Model::UpdateLogstashPipelineDescRequest &request);
+                void UpdateLogstashPipelineDescAsync(const Model::UpdateLogstashPipelineDescRequest& request, const UpdateLogstashPipelineDescAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateLogstashPipelineDescOutcomeCallable UpdateLogstashPipelineDescCallable(const Model::UpdateLogstashPipelineDescRequest& request);
 
                 /**
                  *变更插件列表
