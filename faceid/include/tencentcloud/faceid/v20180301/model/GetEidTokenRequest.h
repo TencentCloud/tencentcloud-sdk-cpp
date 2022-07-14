@@ -121,14 +121,14 @@ namespace TencentCloud
                     bool ExtraHasBeenSet() const;
 
                     /**
-                     * 获取小程序模式配置，包括如何传入姓名身份证的配置。
-                     * @return Config 小程序模式配置，包括如何传入姓名身份证的配置。
+                     * 获取小程序模式配置，包括如何传入姓名身份证的配置，以及是否使用意愿核身。
+                     * @return Config 小程序模式配置，包括如何传入姓名身份证的配置，以及是否使用意愿核身。
                      */
                     GetEidTokenConfig GetConfig() const;
 
                     /**
-                     * 设置小程序模式配置，包括如何传入姓名身份证的配置。
-                     * @param Config 小程序模式配置，包括如何传入姓名身份证的配置。
+                     * 设置小程序模式配置，包括如何传入姓名身份证的配置，以及是否使用意愿核身。
+                     * @param Config 小程序模式配置，包括如何传入姓名身份证的配置，以及是否使用意愿核身。
                      */
                     void SetConfig(const GetEidTokenConfig& _config);
 
@@ -202,7 +202,7 @@ namespace TencentCloud
                     bool m_extraHasBeenSet;
 
                     /**
-                     * 小程序模式配置，包括如何传入姓名身份证的配置。
+                     * 小程序模式配置，包括如何传入姓名身份证的配置，以及是否使用意愿核身。
                      */
                     GetEidTokenConfig m_config;
                     bool m_configHasBeenSet;

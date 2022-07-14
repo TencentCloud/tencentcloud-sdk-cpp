@@ -52,13 +52,11 @@ set(trtc_public_header_model
   include/tencentcloud/trtc/v20190722/model/OutputParams.h
   include/tencentcloud/trtc/v20190722/model/DescribeExternalTrtcMeasureRequest.h
   include/tencentcloud/trtc/v20190722/model/ModifyPictureRequest.h
-  include/tencentcloud/trtc/v20190722/model/CreateTroubleInfoResponse.h
   include/tencentcloud/trtc/v20190722/model/StopMCUMixTranscodeByStrRoomIdRequest.h
   include/tencentcloud/trtc/v20190722/model/QualityData.h
   include/tencentcloud/trtc/v20190722/model/AbnormalEvent.h
   include/tencentcloud/trtc/v20190722/model/StopMCUMixTranscodeByStrRoomIdResponse.h
   include/tencentcloud/trtc/v20190722/model/DeletePictureResponse.h
-  include/tencentcloud/trtc/v20190722/model/CreateTroubleInfoRequest.h
   include/tencentcloud/trtc/v20190722/model/EventList.h
   include/tencentcloud/trtc/v20190722/model/DismissRoomRequest.h
   include/tencentcloud/trtc/v20190722/model/DescribeDetailEventResponse.h
@@ -123,13 +121,11 @@ set(trtc_src
   src/v20190722/model/OutputParams.cpp
   src/v20190722/model/DescribeExternalTrtcMeasureRequest.cpp
   src/v20190722/model/ModifyPictureRequest.cpp
-  src/v20190722/model/CreateTroubleInfoResponse.cpp
   src/v20190722/model/StopMCUMixTranscodeByStrRoomIdRequest.cpp
   src/v20190722/model/QualityData.cpp
   src/v20190722/model/AbnormalEvent.cpp
   src/v20190722/model/StopMCUMixTranscodeByStrRoomIdResponse.cpp
   src/v20190722/model/DeletePictureResponse.cpp
-  src/v20190722/model/CreateTroubleInfoRequest.cpp
   src/v20190722/model/EventList.cpp
   src/v20190722/model/DismissRoomRequest.cpp
   src/v20190722/model/DescribeDetailEventResponse.cpp

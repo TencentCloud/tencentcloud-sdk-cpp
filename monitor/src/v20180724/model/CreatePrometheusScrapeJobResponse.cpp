@@ -23,7 +23,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Monitor::V20180724::Model;
 using namespace std;
 
-CreatePrometheusScrapeJobResponse::CreatePrometheusScrapeJobResponse()
+CreatePrometheusScrapeJobResponse::CreatePrometheusScrapeJobResponse() :
+    m_jobIdHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,16 @@ CoreInternalOutcome CreatePrometheusScrapeJobResponse::Deserialize(const string 
     }
 
 
+    if (rsp.HasMember("JobId") && !rsp["JobId"].IsNull())
+    {
+        if (!rsp["JobId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `JobId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_jobId = string(rsp["JobId"].GetString());
+        m_jobIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +81,14 @@ string CreatePrometheusScrapeJobResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_jobIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "JobId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_jobId.c_str(), allocator).Move(), allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +101,15 @@ string CreatePrometheusScrapeJobResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string CreatePrometheusScrapeJobResponse::GetJobId() const
+{
+    return m_jobId;
+}
+
+bool CreatePrometheusScrapeJobResponse::JobIdHasBeenSet() const
+{
+    return m_jobIdHasBeenSet;
+}
 
 

@@ -88,6 +88,42 @@ namespace TencentCloud
                      */
                     bool InputTypeHasBeenSet() const;
 
+                    /**
+                     * 获取是否使用意愿核身，默认不使用。注意：如开启使用，则计费标签按【意愿核身】计费标签计价；如不开启，则计费标签按【E证通】计费标签计价，价格详见：[价格说明](https://cloud.tencent.com/document/product/1007/56804)。
+                     * @return UseIntentionVerify 是否使用意愿核身，默认不使用。注意：如开启使用，则计费标签按【意愿核身】计费标签计价；如不开启，则计费标签按【E证通】计费标签计价，价格详见：[价格说明](https://cloud.tencent.com/document/product/1007/56804)。
+                     */
+                    bool GetUseIntentionVerify() const;
+
+                    /**
+                     * 设置是否使用意愿核身，默认不使用。注意：如开启使用，则计费标签按【意愿核身】计费标签计价；如不开启，则计费标签按【E证通】计费标签计价，价格详见：[价格说明](https://cloud.tencent.com/document/product/1007/56804)。
+                     * @param UseIntentionVerify 是否使用意愿核身，默认不使用。注意：如开启使用，则计费标签按【意愿核身】计费标签计价；如不开启，则计费标签按【E证通】计费标签计价，价格详见：[价格说明](https://cloud.tencent.com/document/product/1007/56804)。
+                     */
+                    void SetUseIntentionVerify(const bool& _useIntentionVerify);
+
+                    /**
+                     * 判断参数 UseIntentionVerify 是否已赋值
+                     * @return UseIntentionVerify 是否已赋值
+                     */
+                    bool UseIntentionVerifyHasBeenSet() const;
+
+                    /**
+                     * 获取意愿核身使用的文案，若未使用意愿核身功能，该字段无需传入。默认为空，最长可接受120的字符串长度。
+                     * @return IntentionVerifyText 意愿核身使用的文案，若未使用意愿核身功能，该字段无需传入。默认为空，最长可接受120的字符串长度。
+                     */
+                    std::string GetIntentionVerifyText() const;
+
+                    /**
+                     * 设置意愿核身使用的文案，若未使用意愿核身功能，该字段无需传入。默认为空，最长可接受120的字符串长度。
+                     * @param IntentionVerifyText 意愿核身使用的文案，若未使用意愿核身功能，该字段无需传入。默认为空，最长可接受120的字符串长度。
+                     */
+                    void SetIntentionVerifyText(const std::string& _intentionVerifyText);
+
+                    /**
+                     * 判断参数 IntentionVerifyText 是否已赋值
+                     * @return IntentionVerifyText 是否已赋值
+                     */
+                    bool IntentionVerifyTextHasBeenSet() const;
+
                 private:
 
                     /**
@@ -101,6 +137,18 @@ namespace TencentCloud
                      */
                     std::string m_inputType;
                     bool m_inputTypeHasBeenSet;
+
+                    /**
+                     * 是否使用意愿核身，默认不使用。注意：如开启使用，则计费标签按【意愿核身】计费标签计价；如不开启，则计费标签按【E证通】计费标签计价，价格详见：[价格说明](https://cloud.tencent.com/document/product/1007/56804)。
+                     */
+                    bool m_useIntentionVerify;
+                    bool m_useIntentionVerifyHasBeenSet;
+
+                    /**
+                     * 意愿核身使用的文案，若未使用意愿核身功能，该字段无需传入。默认为空，最长可接受120的字符串长度。
+                     */
+                    std::string m_intentionVerifyText;
+                    bool m_intentionVerifyTextHasBeenSet;
 
                 };
             }

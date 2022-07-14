@@ -470,6 +470,42 @@ TypeId为标准架构时，MemSize是实例总内存容量；TypeId为集群架�
                      */
                     bool DryRunHasBeenSet() const;
 
+                    /**
+                     * 获取"local"本地盘版，"cloud"云盘版，"cdc"独享集群版，如果不传默认发货为本地盘版本
+                     * @return ProductVersion "local"本地盘版，"cloud"云盘版，"cdc"独享集群版，如果不传默认发货为本地盘版本
+                     */
+                    std::string GetProductVersion() const;
+
+                    /**
+                     * 设置"local"本地盘版，"cloud"云盘版，"cdc"独享集群版，如果不传默认发货为本地盘版本
+                     * @param ProductVersion "local"本地盘版，"cloud"云盘版，"cdc"独享集群版，如果不传默认发货为本地盘版本
+                     */
+                    void SetProductVersion(const std::string& _productVersion);
+
+                    /**
+                     * 判断参数 ProductVersion 是否已赋值
+                     * @return ProductVersion 是否已赋值
+                     */
+                    bool ProductVersionHasBeenSet() const;
+
+                    /**
+                     * 获取独享集群id，ProductVersion="cdc"时必传
+                     * @return RedisClusterId 独享集群id，ProductVersion="cdc"时必传
+                     */
+                    std::string GetRedisClusterId() const;
+
+                    /**
+                     * 设置独享集群id，ProductVersion="cdc"时必传
+                     * @param RedisClusterId 独享集群id，ProductVersion="cdc"时必传
+                     */
+                    void SetRedisClusterId(const std::string& _redisClusterId);
+
+                    /**
+                     * 判断参数 RedisClusterId 是否已赋值
+                     * @return RedisClusterId 是否已赋值
+                     */
+                    bool RedisClusterIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -612,6 +648,18 @@ TypeId为标准架构时，MemSize是实例总内存容量；TypeId为集群架�
                      */
                     bool m_dryRun;
                     bool m_dryRunHasBeenSet;
+
+                    /**
+                     * "local"本地盘版，"cloud"云盘版，"cdc"独享集群版，如果不传默认发货为本地盘版本
+                     */
+                    std::string m_productVersion;
+                    bool m_productVersionHasBeenSet;
+
+                    /**
+                     * 独享集群id，ProductVersion="cdc"时必传
+                     */
+                    std::string m_redisClusterId;
+                    bool m_redisClusterIdHasBeenSet;
 
                 };
             }

@@ -83,49 +83,6 @@ TrtcClient::CreatePictureOutcomeCallable TrtcClient::CreatePictureCallable(const
     return task->get_future();
 }
 
-TrtcClient::CreateTroubleInfoOutcome TrtcClient::CreateTroubleInfo(const CreateTroubleInfoRequest &request)
-{
-    auto outcome = MakeRequest(request, "CreateTroubleInfo");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        CreateTroubleInfoResponse rsp = CreateTroubleInfoResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return CreateTroubleInfoOutcome(rsp);
-        else
-            return CreateTroubleInfoOutcome(o.GetError());
-    }
-    else
-    {
-        return CreateTroubleInfoOutcome(outcome.GetError());
-    }
-}
-
-void TrtcClient::CreateTroubleInfoAsync(const CreateTroubleInfoRequest& request, const CreateTroubleInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateTroubleInfo(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-TrtcClient::CreateTroubleInfoOutcomeCallable TrtcClient::CreateTroubleInfoCallable(const CreateTroubleInfoRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<CreateTroubleInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateTroubleInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 TrtcClient::DeletePictureOutcome TrtcClient::DeletePicture(const DeletePictureRequest &request)
 {
     auto outcome = MakeRequest(request, "DeletePicture");

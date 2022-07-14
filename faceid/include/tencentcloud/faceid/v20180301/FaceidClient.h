@@ -41,8 +41,6 @@
 #include <tencentcloud/faceid/v20180301/model/CheckPhoneAndNameResponse.h>
 #include <tencentcloud/faceid/v20180301/model/DetectAuthRequest.h>
 #include <tencentcloud/faceid/v20180301/model/DetectAuthResponse.h>
-#include <tencentcloud/faceid/v20180301/model/DetectReflectLivenessAndCompareRequest.h>
-#include <tencentcloud/faceid/v20180301/model/DetectReflectLivenessAndCompareResponse.h>
 #include <tencentcloud/faceid/v20180301/model/EncryptedPhoneVerificationRequest.h>
 #include <tencentcloud/faceid/v20180301/model/EncryptedPhoneVerificationResponse.h>
 #include <tencentcloud/faceid/v20180301/model/GetActionSequenceRequest.h>
@@ -136,9 +134,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DetectAuthResponse> DetectAuthOutcome;
                 typedef std::future<DetectAuthOutcome> DetectAuthOutcomeCallable;
                 typedef std::function<void(const FaceidClient*, const Model::DetectAuthRequest&, DetectAuthOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DetectAuthAsyncHandler;
-                typedef Outcome<Core::Error, Model::DetectReflectLivenessAndCompareResponse> DetectReflectLivenessAndCompareOutcome;
-                typedef std::future<DetectReflectLivenessAndCompareOutcome> DetectReflectLivenessAndCompareOutcomeCallable;
-                typedef std::function<void(const FaceidClient*, const Model::DetectReflectLivenessAndCompareRequest&, DetectReflectLivenessAndCompareOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DetectReflectLivenessAndCompareAsyncHandler;
                 typedef Outcome<Core::Error, Model::EncryptedPhoneVerificationResponse> EncryptedPhoneVerificationOutcome;
                 typedef std::future<EncryptedPhoneVerificationOutcome> EncryptedPhoneVerificationOutcomeCallable;
                 typedef std::function<void(const FaceidClient*, const Model::EncryptedPhoneVerificationRequest&, EncryptedPhoneVerificationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EncryptedPhoneVerificationAsyncHandler;
@@ -301,16 +296,6 @@ namespace TencentCloud
                 DetectAuthOutcome DetectAuth(const Model::DetectAuthRequest &request);
                 void DetectAuthAsync(const Model::DetectAuthRequest& request, const DetectAuthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DetectAuthOutcomeCallable DetectAuthCallable(const Model::DetectAuthRequest& request);
-
-                /**
-                 *使用活体比对（光线）SDK生成的数据包检测活体，并和传入的图片进行比对。
-图片和SDK生成的数据内容必须存储在腾讯云COS，COS Bucket所在的Region需要和本接口请求的Region保持一致，推荐使用生成上传链接接口来完成资源传递。
-                 * @param req DetectReflectLivenessAndCompareRequest
-                 * @return DetectReflectLivenessAndCompareOutcome
-                 */
-                DetectReflectLivenessAndCompareOutcome DetectReflectLivenessAndCompare(const Model::DetectReflectLivenessAndCompareRequest &request);
-                void DetectReflectLivenessAndCompareAsync(const Model::DetectReflectLivenessAndCompareRequest& request, const DetectReflectLivenessAndCompareAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DetectReflectLivenessAndCompareOutcomeCallable DetectReflectLivenessAndCompareCallable(const Model::DetectReflectLivenessAndCompareRequest& request);
 
                 /**
                  *本接口用于校验手机号、姓名和身份证号的真实性和一致性，入参支持明文、MD5和SHA256加密传输。

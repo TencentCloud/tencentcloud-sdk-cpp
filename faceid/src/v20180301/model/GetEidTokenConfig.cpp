@@ -21,7 +21,9 @@ using namespace TencentCloud::Faceid::V20180301::Model;
 using namespace std;
 
 GetEidTokenConfig::GetEidTokenConfig() :
-    m_inputTypeHasBeenSet(false)
+    m_inputTypeHasBeenSet(false),
+    m_useIntentionVerifyHasBeenSet(false),
+    m_intentionVerifyTextHasBeenSet(false)
 {
 }
 
@@ -40,6 +42,26 @@ CoreInternalOutcome GetEidTokenConfig::Deserialize(const rapidjson::Value &value
         m_inputTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("UseIntentionVerify") && !value["UseIntentionVerify"].IsNull())
+    {
+        if (!value["UseIntentionVerify"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `GetEidTokenConfig.UseIntentionVerify` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_useIntentionVerify = value["UseIntentionVerify"].GetBool();
+        m_useIntentionVerifyHasBeenSet = true;
+    }
+
+    if (value.HasMember("IntentionVerifyText") && !value["IntentionVerifyText"].IsNull())
+    {
+        if (!value["IntentionVerifyText"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `GetEidTokenConfig.IntentionVerifyText` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_intentionVerifyText = string(value["IntentionVerifyText"].GetString());
+        m_intentionVerifyTextHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -53,6 +75,22 @@ void GetEidTokenConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "InputType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_inputType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_useIntentionVerifyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UseIntentionVerify";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_useIntentionVerify, allocator);
+    }
+
+    if (m_intentionVerifyTextHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IntentionVerifyText";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_intentionVerifyText.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -72,5 +110,37 @@ void GetEidTokenConfig::SetInputType(const string& _inputType)
 bool GetEidTokenConfig::InputTypeHasBeenSet() const
 {
     return m_inputTypeHasBeenSet;
+}
+
+bool GetEidTokenConfig::GetUseIntentionVerify() const
+{
+    return m_useIntentionVerify;
+}
+
+void GetEidTokenConfig::SetUseIntentionVerify(const bool& _useIntentionVerify)
+{
+    m_useIntentionVerify = _useIntentionVerify;
+    m_useIntentionVerifyHasBeenSet = true;
+}
+
+bool GetEidTokenConfig::UseIntentionVerifyHasBeenSet() const
+{
+    return m_useIntentionVerifyHasBeenSet;
+}
+
+string GetEidTokenConfig::GetIntentionVerifyText() const
+{
+    return m_intentionVerifyText;
+}
+
+void GetEidTokenConfig::SetIntentionVerifyText(const string& _intentionVerifyText)
+{
+    m_intentionVerifyText = _intentionVerifyText;
+    m_intentionVerifyTextHasBeenSet = true;
+}
+
+bool GetEidTokenConfig::IntentionVerifyTextHasBeenSet() const
+{
+    return m_intentionVerifyTextHasBeenSet;
 }
 

@@ -37,17 +37,16 @@ set(faceid_public_header_model
   include/tencentcloud/faceid/v20180301/model/CheckIdCardInformationResponse.h
   include/tencentcloud/faceid/v20180301/model/GetDetectInfoEnhancedResponse.h
   include/tencentcloud/faceid/v20180301/model/PhoneVerificationRequest.h
-  include/tencentcloud/faceid/v20180301/model/PhoneVerificationCMCCRequest.h
   include/tencentcloud/faceid/v20180301/model/GetEidResultRequest.h
   include/tencentcloud/faceid/v20180301/model/DetectAuthResponse.h
   include/tencentcloud/faceid/v20180301/model/PhoneVerificationResponse.h
   include/tencentcloud/faceid/v20180301/model/GetEidTokenRequest.h
-  include/tencentcloud/faceid/v20180301/model/IdCardOCRVerificationRequest.h
+  include/tencentcloud/faceid/v20180301/model/PhoneVerificationCMCCRequest.h
   include/tencentcloud/faceid/v20180301/model/GetWeChatBillDetailsResponse.h
   include/tencentcloud/faceid/v20180301/model/CheckPhoneAndNameResponse.h
   include/tencentcloud/faceid/v20180301/model/BankCard4EVerificationResponse.h
   include/tencentcloud/faceid/v20180301/model/MobileStatusRequest.h
-  include/tencentcloud/faceid/v20180301/model/DetectReflectLivenessAndCompareResponse.h
+  include/tencentcloud/faceid/v20180301/model/IdCardOCRVerificationRequest.h
   include/tencentcloud/faceid/v20180301/model/GetRealNameAuthTokenRequest.h
   include/tencentcloud/faceid/v20180301/model/ParseNfcDataResponse.h
   include/tencentcloud/faceid/v20180301/model/CheckIdNameDateRequest.h
@@ -55,7 +54,7 @@ set(faceid_public_header_model
   include/tencentcloud/faceid/v20180301/model/LivenessRecognitionRequest.h
   include/tencentcloud/faceid/v20180301/model/EidInfo.h
   include/tencentcloud/faceid/v20180301/model/GetFaceIdTokenResponse.h
-  include/tencentcloud/faceid/v20180301/model/DetectReflectLivenessAndCompareRequest.h
+  include/tencentcloud/faceid/v20180301/model/GetRealNameAuthTokenResponse.h
   include/tencentcloud/faceid/v20180301/model/PhoneVerificationCMCCResponse.h
   include/tencentcloud/faceid/v20180301/model/CheckEidTokenStatusResponse.h
   include/tencentcloud/faceid/v20180301/model/PhoneVerificationCTCCResponse.h
@@ -99,7 +98,6 @@ set(faceid_public_header_model
   include/tencentcloud/faceid/v20180301/model/DetectDetail.h
   include/tencentcloud/faceid/v20180301/model/GetFaceIdResultResponse.h
   include/tencentcloud/faceid/v20180301/model/EncryptedPhoneVerificationRequest.h
-  include/tencentcloud/faceid/v20180301/model/GetRealNameAuthTokenResponse.h
   include/tencentcloud/faceid/v20180301/model/GetRealNameAuthResultResponse.h
   include/tencentcloud/faceid/v20180301/model/EncryptedPhoneVerificationResponse.h
   )
@@ -124,17 +122,16 @@ set(faceid_src
   src/v20180301/model/CheckIdCardInformationResponse.cpp
   src/v20180301/model/GetDetectInfoEnhancedResponse.cpp
   src/v20180301/model/PhoneVerificationRequest.cpp
-  src/v20180301/model/PhoneVerificationCMCCRequest.cpp
   src/v20180301/model/GetEidResultRequest.cpp
   src/v20180301/model/DetectAuthResponse.cpp
   src/v20180301/model/PhoneVerificationResponse.cpp
   src/v20180301/model/GetEidTokenRequest.cpp
-  src/v20180301/model/IdCardOCRVerificationRequest.cpp
+  src/v20180301/model/PhoneVerificationCMCCRequest.cpp
   src/v20180301/model/GetWeChatBillDetailsResponse.cpp
   src/v20180301/model/CheckPhoneAndNameResponse.cpp
   src/v20180301/model/BankCard4EVerificationResponse.cpp
   src/v20180301/model/MobileStatusRequest.cpp
-  src/v20180301/model/DetectReflectLivenessAndCompareResponse.cpp
+  src/v20180301/model/IdCardOCRVerificationRequest.cpp
   src/v20180301/model/GetRealNameAuthTokenRequest.cpp
   src/v20180301/model/ParseNfcDataResponse.cpp
   src/v20180301/model/CheckIdNameDateRequest.cpp
@@ -142,7 +139,7 @@ set(faceid_src
   src/v20180301/model/LivenessRecognitionRequest.cpp
   src/v20180301/model/EidInfo.cpp
   src/v20180301/model/GetFaceIdTokenResponse.cpp
-  src/v20180301/model/DetectReflectLivenessAndCompareRequest.cpp
+  src/v20180301/model/GetRealNameAuthTokenResponse.cpp
   src/v20180301/model/PhoneVerificationCMCCResponse.cpp
   src/v20180301/model/CheckEidTokenStatusResponse.cpp
   src/v20180301/model/PhoneVerificationCTCCResponse.cpp
@@ -186,7 +183,6 @@ set(faceid_src
   src/v20180301/model/DetectDetail.cpp
   src/v20180301/model/GetFaceIdResultResponse.cpp
   src/v20180301/model/EncryptedPhoneVerificationRequest.cpp
-  src/v20180301/model/GetRealNameAuthTokenResponse.cpp
   src/v20180301/model/GetRealNameAuthResultResponse.cpp
   src/v20180301/model/EncryptedPhoneVerificationResponse.cpp
   )

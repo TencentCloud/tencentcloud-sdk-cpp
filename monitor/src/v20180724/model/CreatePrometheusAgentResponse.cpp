@@ -23,7 +23,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Monitor::V20180724::Model;
 using namespace std;
 
-CreatePrometheusAgentResponse::CreatePrometheusAgentResponse()
+CreatePrometheusAgentResponse::CreatePrometheusAgentResponse() :
+    m_agentIdHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,16 @@ CoreInternalOutcome CreatePrometheusAgentResponse::Deserialize(const string &pay
     }
 
 
+    if (rsp.HasMember("AgentId") && !rsp["AgentId"].IsNull())
+    {
+        if (!rsp["AgentId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AgentId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_agentId = string(rsp["AgentId"].GetString());
+        m_agentIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +81,14 @@ string CreatePrometheusAgentResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_agentIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AgentId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_agentId.c_str(), allocator).Move(), allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +101,15 @@ string CreatePrometheusAgentResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string CreatePrometheusAgentResponse::GetAgentId() const
+{
+    return m_agentId;
+}
+
+bool CreatePrometheusAgentResponse::AgentIdHasBeenSet() const
+{
+    return m_agentIdHasBeenSet;
+}
 
 

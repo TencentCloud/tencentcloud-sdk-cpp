@@ -43,7 +43,25 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取创建成功的 Agent Id
+                     * @return AgentId 创建成功的 Agent Id
+                     */
+                    std::string GetAgentId() const;
+
+                    /**
+                     * 判断参数 AgentId 是否已赋值
+                     * @return AgentId 是否已赋值
+                     */
+                    bool AgentIdHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 创建成功的 Agent Id
+                     */
+                    std::string m_agentId;
+                    bool m_agentIdHasBeenSet;
 
                 };
             }

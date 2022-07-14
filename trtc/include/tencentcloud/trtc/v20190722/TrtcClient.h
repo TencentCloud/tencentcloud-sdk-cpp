@@ -25,8 +25,6 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/trtc/v20190722/model/CreatePictureRequest.h>
 #include <tencentcloud/trtc/v20190722/model/CreatePictureResponse.h>
-#include <tencentcloud/trtc/v20190722/model/CreateTroubleInfoRequest.h>
-#include <tencentcloud/trtc/v20190722/model/CreateTroubleInfoResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DeletePictureRequest.h>
 #include <tencentcloud/trtc/v20190722/model/DeletePictureResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeAbnormalEventRequest.h>
@@ -84,9 +82,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreatePictureResponse> CreatePictureOutcome;
                 typedef std::future<CreatePictureOutcome> CreatePictureOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::CreatePictureRequest&, CreatePictureOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePictureAsyncHandler;
-                typedef Outcome<Core::Error, Model::CreateTroubleInfoResponse> CreateTroubleInfoOutcome;
-                typedef std::future<CreateTroubleInfoOutcome> CreateTroubleInfoOutcomeCallable;
-                typedef std::function<void(const TrtcClient*, const Model::CreateTroubleInfoRequest&, CreateTroubleInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTroubleInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeletePictureResponse> DeletePictureOutcome;
                 typedef std::future<DeletePictureOutcome> DeletePictureOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::DeletePictureRequest&, DeletePictureOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeletePictureAsyncHandler;
@@ -158,15 +153,6 @@ namespace TencentCloud
                 CreatePictureOutcome CreatePicture(const Model::CreatePictureRequest &request);
                 void CreatePictureAsync(const Model::CreatePictureRequest& request, const CreatePictureAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreatePictureOutcomeCallable CreatePictureCallable(const Model::CreatePictureRequest& request);
-
-                /**
-                 *创建异常信息
-                 * @param req CreateTroubleInfoRequest
-                 * @return CreateTroubleInfoOutcome
-                 */
-                CreateTroubleInfoOutcome CreateTroubleInfo(const Model::CreateTroubleInfoRequest &request);
-                void CreateTroubleInfoAsync(const Model::CreateTroubleInfoRequest& request, const CreateTroubleInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                CreateTroubleInfoOutcomeCallable CreateTroubleInfoCallable(const Model::CreateTroubleInfoRequest& request);
 
                 /**
                  *如果您需要在 [云端混流转码](https://cloud.tencent.com/document/product/647/16827) 时频繁删除自定义背景图或水印，可通过此接口删除已上传的图片。无需频繁删除图片的场景，建议直接在 [控制台 > 应用管理 > 素材管理](https://cloud.tencent.com/document/product/647/50769) 中操作。

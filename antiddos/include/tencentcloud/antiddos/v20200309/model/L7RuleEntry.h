@@ -433,6 +433,24 @@ namespace TencentCloud
                      */
                     bool IdHasBeenSet() const;
 
+                    /**
+                     * 获取智能cc开关，取值[0(关闭), 1(开启)]
+                     * @return CCAIEnable 智能cc开关，取值[0(关闭), 1(开启)]
+                     */
+                    uint64_t GetCCAIEnable() const;
+
+                    /**
+                     * 设置智能cc开关，取值[0(关闭), 1(开启)]
+                     * @param CCAIEnable 智能cc开关，取值[0(关闭), 1(开启)]
+                     */
+                    void SetCCAIEnable(const uint64_t& _cCAIEnable);
+
+                    /**
+                     * 判断参数 CCAIEnable 是否已赋值
+                     * @return CCAIEnable 是否已赋值
+                     */
+                    bool CCAIEnableHasBeenSet() const;
+
                 private:
 
                     /**
@@ -562,6 +580,12 @@ namespace TencentCloud
                      */
                     std::string m_id;
                     bool m_idHasBeenSet;
+
+                    /**
+                     * 智能cc开关，取值[0(关闭), 1(开启)]
+                     */
+                    uint64_t m_cCAIEnable;
+                    bool m_cCAIEnableHasBeenSet;
 
                 };
             }

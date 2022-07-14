@@ -23,7 +23,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Monitor::V20180724::Model;
 using namespace std;
 
-CreateExporterIntegrationResponse::CreateExporterIntegrationResponse()
+CreateExporterIntegrationResponse::CreateExporterIntegrationResponse() :
+    m_namesHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,19 @@ CoreInternalOutcome CreateExporterIntegrationResponse::Deserialize(const string 
     }
 
 
+    if (rsp.HasMember("Names") && !rsp["Names"].IsNull())
+    {
+        if (!rsp["Names"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Names` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["Names"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_names.push_back((*itr).GetString());
+        }
+        m_namesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +84,19 @@ string CreateExporterIntegrationResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_namesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Names";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_names.begin(); itr != m_names.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +109,15 @@ string CreateExporterIntegrationResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+vector<string> CreateExporterIntegrationResponse::GetNames() const
+{
+    return m_names;
+}
+
+bool CreateExporterIntegrationResponse::NamesHasBeenSet() const
+{
+    return m_namesHasBeenSet;
+}
 
 

@@ -226,6 +226,24 @@ TypeId为标准架构时，MemSize是实例总内存容量；TypeId为集群架�
                      */
                     bool ZoneNameHasBeenSet() const;
 
+                    /**
+                     * 获取"local"本地盘版，"cloud"云盘版，"cdc"独享集群版，如果不传默认询价为本地盘版本
+                     * @return ProductVersion "local"本地盘版，"cloud"云盘版，"cdc"独享集群版，如果不传默认询价为本地盘版本
+                     */
+                    std::string GetProductVersion() const;
+
+                    /**
+                     * 设置"local"本地盘版，"cloud"云盘版，"cdc"独享集群版，如果不传默认询价为本地盘版本
+                     * @param ProductVersion "local"本地盘版，"cloud"云盘版，"cdc"独享集群版，如果不传默认询价为本地盘版本
+                     */
+                    void SetProductVersion(const std::string& _productVersion);
+
+                    /**
+                     * 判断参数 ProductVersion 是否已赋值
+                     * @return ProductVersion 是否已赋值
+                     */
+                    bool ProductVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -288,6 +306,12 @@ TypeId为标准架构时，MemSize是实例总内存容量；TypeId为集群架�
                      */
                     std::string m_zoneName;
                     bool m_zoneNameHasBeenSet;
+
+                    /**
+                     * "local"本地盘版，"cloud"云盘版，"cdc"独享集群版，如果不传默认询价为本地盘版本
+                     */
+                    std::string m_productVersion;
+                    bool m_productVersionHasBeenSet;
 
                 };
             }

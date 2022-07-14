@@ -45,7 +45,9 @@ CreateInstancesRequest::CreateInstancesRequest() :
     m_resourceTagsHasBeenSet(false),
     m_zoneNameHasBeenSet(false),
     m_templateIdHasBeenSet(false),
-    m_dryRunHasBeenSet(false)
+    m_dryRunHasBeenSet(false),
+    m_productVersionHasBeenSet(false),
+    m_redisClusterIdHasBeenSet(false)
 {
 }
 
@@ -257,6 +259,22 @@ string CreateInstancesRequest::ToJsonString() const
         string key = "DryRun";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_dryRun, allocator);
+    }
+
+    if (m_productVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProductVersion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_productVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_redisClusterIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RedisClusterId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_redisClusterId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -633,6 +651,38 @@ void CreateInstancesRequest::SetDryRun(const bool& _dryRun)
 bool CreateInstancesRequest::DryRunHasBeenSet() const
 {
     return m_dryRunHasBeenSet;
+}
+
+string CreateInstancesRequest::GetProductVersion() const
+{
+    return m_productVersion;
+}
+
+void CreateInstancesRequest::SetProductVersion(const string& _productVersion)
+{
+    m_productVersion = _productVersion;
+    m_productVersionHasBeenSet = true;
+}
+
+bool CreateInstancesRequest::ProductVersionHasBeenSet() const
+{
+    return m_productVersionHasBeenSet;
+}
+
+string CreateInstancesRequest::GetRedisClusterId() const
+{
+    return m_redisClusterId;
+}
+
+void CreateInstancesRequest::SetRedisClusterId(const string& _redisClusterId)
+{
+    m_redisClusterId = _redisClusterId;
+    m_redisClusterIdHasBeenSet = true;
+}
+
+bool CreateInstancesRequest::RedisClusterIdHasBeenSet() const
+{
+    return m_redisClusterIdHasBeenSet;
 }
 
 

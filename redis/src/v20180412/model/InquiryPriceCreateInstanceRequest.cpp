@@ -32,7 +32,8 @@ InquiryPriceCreateInstanceRequest::InquiryPriceCreateInstanceRequest() :
     m_redisShardNumHasBeenSet(false),
     m_redisReplicasNumHasBeenSet(false),
     m_replicasReadonlyHasBeenSet(false),
-    m_zoneNameHasBeenSet(false)
+    m_zoneNameHasBeenSet(false),
+    m_productVersionHasBeenSet(false)
 {
 }
 
@@ -121,6 +122,14 @@ string InquiryPriceCreateInstanceRequest::ToJsonString() const
         string key = "ZoneName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_zoneName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_productVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProductVersion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_productVersion.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -289,6 +298,22 @@ void InquiryPriceCreateInstanceRequest::SetZoneName(const string& _zoneName)
 bool InquiryPriceCreateInstanceRequest::ZoneNameHasBeenSet() const
 {
     return m_zoneNameHasBeenSet;
+}
+
+string InquiryPriceCreateInstanceRequest::GetProductVersion() const
+{
+    return m_productVersion;
+}
+
+void InquiryPriceCreateInstanceRequest::SetProductVersion(const string& _productVersion)
+{
+    m_productVersion = _productVersion;
+    m_productVersionHasBeenSet = true;
+}
+
+bool InquiryPriceCreateInstanceRequest::ProductVersionHasBeenSet() const
+{
+    return m_productVersionHasBeenSet;
 }
 
 
