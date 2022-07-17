@@ -24,6 +24,7 @@
 #include <tencentcloud/mps/v20190612/model/VideoTemplateInfoForUpdate.h>
 #include <tencentcloud/mps/v20190612/model/AudioTemplateInfoForUpdate.h>
 #include <tencentcloud/mps/v20190612/model/TEHDConfigForUpdate.h>
+#include <tencentcloud/mps/v20190612/model/EnhanceConfig.h>
 
 
 namespace TencentCloud
@@ -223,6 +224,24 @@ namespace TencentCloud
                      */
                     bool TEHDConfigHasBeenSet() const;
 
+                    /**
+                     * 获取音视频增强参数。
+                     * @return EnhanceConfig 音视频增强参数。
+                     */
+                    EnhanceConfig GetEnhanceConfig() const;
+
+                    /**
+                     * 设置音视频增强参数。
+                     * @param EnhanceConfig 音视频增强参数。
+                     */
+                    void SetEnhanceConfig(const EnhanceConfig& _enhanceConfig);
+
+                    /**
+                     * 判断参数 EnhanceConfig 是否已赋值
+                     * @return EnhanceConfig 是否已赋值
+                     */
+                    bool EnhanceConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -282,6 +301,12 @@ namespace TencentCloud
                      */
                     TEHDConfigForUpdate m_tEHDConfig;
                     bool m_tEHDConfigHasBeenSet;
+
+                    /**
+                     * 音视频增强参数。
+                     */
+                    EnhanceConfig m_enhanceConfig;
+                    bool m_enhanceConfigHasBeenSet;
 
                 };
             }

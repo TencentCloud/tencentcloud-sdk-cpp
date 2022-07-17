@@ -73,6 +73,8 @@
 #include <tencentcloud/waf/v20180125/model/DescribeWafAutoDenyStatusResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeWafThreatenIntelligenceRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribeWafThreatenIntelligenceResponse.h>
+#include <tencentcloud/waf/v20180125/model/GetAttackDownloadRecordsRequest.h>
+#include <tencentcloud/waf/v20180125/model/GetAttackDownloadRecordsResponse.h>
 #include <tencentcloud/waf/v20180125/model/ModifyAccessPeriodRequest.h>
 #include <tencentcloud/waf/v20180125/model/ModifyAccessPeriodResponse.h>
 #include <tencentcloud/waf/v20180125/model/ModifyCustomRuleStatusRequest.h>
@@ -178,6 +180,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeWafThreatenIntelligenceResponse> DescribeWafThreatenIntelligenceOutcome;
                 typedef std::future<DescribeWafThreatenIntelligenceOutcome> DescribeWafThreatenIntelligenceOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribeWafThreatenIntelligenceRequest&, DescribeWafThreatenIntelligenceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWafThreatenIntelligenceAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetAttackDownloadRecordsResponse> GetAttackDownloadRecordsOutcome;
+                typedef std::future<GetAttackDownloadRecordsOutcome> GetAttackDownloadRecordsOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::GetAttackDownloadRecordsRequest&, GetAttackDownloadRecordsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetAttackDownloadRecordsAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyAccessPeriodResponse> ModifyAccessPeriodOutcome;
                 typedef std::future<ModifyAccessPeriodOutcome> ModifyAccessPeriodOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::ModifyAccessPeriodRequest&, ModifyAccessPeriodOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAccessPeriodAsyncHandler;
@@ -433,6 +438,15 @@ namespace TencentCloud
                 DescribeWafThreatenIntelligenceOutcome DescribeWafThreatenIntelligence(const Model::DescribeWafThreatenIntelligenceRequest &request);
                 void DescribeWafThreatenIntelligenceAsync(const Model::DescribeWafThreatenIntelligenceRequest& request, const DescribeWafThreatenIntelligenceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeWafThreatenIntelligenceOutcomeCallable DescribeWafThreatenIntelligenceCallable(const Model::DescribeWafThreatenIntelligenceRequest& request);
+
+                /**
+                 *查询下载攻击日志任务记录列表
+                 * @param req GetAttackDownloadRecordsRequest
+                 * @return GetAttackDownloadRecordsOutcome
+                 */
+                GetAttackDownloadRecordsOutcome GetAttackDownloadRecords(const Model::GetAttackDownloadRecordsRequest &request);
+                void GetAttackDownloadRecordsAsync(const Model::GetAttackDownloadRecordsRequest& request, const GetAttackDownloadRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetAttackDownloadRecordsOutcomeCallable GetAttackDownloadRecordsCallable(const Model::GetAttackDownloadRecordsRequest& request);
 
                 /**
                  *本接口用于修改访问日志保存期限

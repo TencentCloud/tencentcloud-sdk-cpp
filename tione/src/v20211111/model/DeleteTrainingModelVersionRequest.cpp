@@ -23,7 +23,8 @@ using namespace TencentCloud::Tione::V20211111::Model;
 using namespace std;
 
 DeleteTrainingModelVersionRequest::DeleteTrainingModelVersionRequest() :
-    m_trainingModelVersionIdHasBeenSet(false)
+    m_trainingModelVersionIdHasBeenSet(false),
+    m_enableDeleteCosHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,14 @@ string DeleteTrainingModelVersionRequest::ToJsonString() const
         string key = "TrainingModelVersionId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_trainingModelVersionId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_enableDeleteCosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableDeleteCos";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableDeleteCos, allocator);
     }
 
 
@@ -64,6 +73,22 @@ void DeleteTrainingModelVersionRequest::SetTrainingModelVersionId(const string& 
 bool DeleteTrainingModelVersionRequest::TrainingModelVersionIdHasBeenSet() const
 {
     return m_trainingModelVersionIdHasBeenSet;
+}
+
+bool DeleteTrainingModelVersionRequest::GetEnableDeleteCos() const
+{
+    return m_enableDeleteCos;
+}
+
+void DeleteTrainingModelVersionRequest::SetEnableDeleteCos(const bool& _enableDeleteCos)
+{
+    m_enableDeleteCos = _enableDeleteCos;
+    m_enableDeleteCosHasBeenSet = true;
+}
+
+bool DeleteTrainingModelVersionRequest::EnableDeleteCosHasBeenSet() const
+{
+    return m_enableDeleteCosHasBeenSet;
 }
 
 

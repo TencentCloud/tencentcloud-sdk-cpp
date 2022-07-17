@@ -23,6 +23,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/mps/v20190612/model/WorkflowTask.h>
 #include <tencentcloud/mps/v20190612/model/EditMediaTask.h>
+#include <tencentcloud/mps/v20190612/model/ScheduleTask.h>
 
 
 namespace TencentCloud
@@ -49,9 +50,11 @@ namespace TencentCloud
                      * 获取支持事件类型，目前取值有：
 <li>WorkflowTask：视频工作流处理任务。</li>
 <li>EditMediaTask：视频编辑任务。</li>
+<li>ScheduleTask：编排任务。</li>
                      * @return EventType 支持事件类型，目前取值有：
 <li>WorkflowTask：视频工作流处理任务。</li>
 <li>EditMediaTask：视频编辑任务。</li>
+<li>ScheduleTask：编排任务。</li>
                      */
                     std::string GetEventType() const;
 
@@ -113,12 +116,27 @@ namespace TencentCloud
                      */
                     bool SessionContextHasBeenSet() const;
 
+                    /**
+                     * 获取编排任务信息，仅当 TaskType 为 ScheduleTask，该字段有值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ScheduleTaskEvent 编排任务信息，仅当 TaskType 为 ScheduleTask，该字段有值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ScheduleTask GetScheduleTaskEvent() const;
+
+                    /**
+                     * 判断参数 ScheduleTaskEvent 是否已赋值
+                     * @return ScheduleTaskEvent 是否已赋值
+                     */
+                    bool ScheduleTaskEventHasBeenSet() const;
+
                 private:
 
                     /**
                      * 支持事件类型，目前取值有：
 <li>WorkflowTask：视频工作流处理任务。</li>
 <li>EditMediaTask：视频编辑任务。</li>
+<li>ScheduleTask：编排任务。</li>
                      */
                     std::string m_eventType;
                     bool m_eventTypeHasBeenSet;
@@ -148,6 +166,13 @@ namespace TencentCloud
                      */
                     std::string m_sessionContext;
                     bool m_sessionContextHasBeenSet;
+
+                    /**
+                     * 编排任务信息，仅当 TaskType 为 ScheduleTask，该字段有值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ScheduleTask m_scheduleTaskEvent;
+                    bool m_scheduleTaskEventHasBeenSet;
 
                 };
             }

@@ -60,6 +60,24 @@ namespace TencentCloud
                      */
                     bool TrainingModelIdHasBeenSet() const;
 
+                    /**
+                     * 获取是否同步清理cos
+                     * @return EnableDeleteCos 是否同步清理cos
+                     */
+                    bool GetEnableDeleteCos() const;
+
+                    /**
+                     * 设置是否同步清理cos
+                     * @param EnableDeleteCos 是否同步清理cos
+                     */
+                    void SetEnableDeleteCos(const bool& _enableDeleteCos);
+
+                    /**
+                     * 判断参数 EnableDeleteCos 是否已赋值
+                     * @return EnableDeleteCos 是否已赋值
+                     */
+                    bool EnableDeleteCosHasBeenSet() const;
+
                 private:
 
                     /**
@@ -67,6 +85,12 @@ namespace TencentCloud
                      */
                     std::string m_trainingModelId;
                     bool m_trainingModelIdHasBeenSet;
+
+                    /**
+                     * 是否同步清理cos
+                     */
+                    bool m_enableDeleteCos;
+                    bool m_enableDeleteCosHasBeenSet;
 
                 };
             }

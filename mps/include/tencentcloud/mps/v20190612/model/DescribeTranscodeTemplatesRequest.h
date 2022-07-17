@@ -174,6 +174,40 @@ namespace TencentCloud
                      */
                     bool LimitHasBeenSet() const;
 
+                    /**
+                     * 获取模板类型（替换旧版本 TEHDType），可选值：
+<li>Common：普通转码模板；</li>
+<li>TEHD：极速高清模板。</li>
+<li>Enhance：音视频增强模板。</li>
+默认空，不限制类型。
+                     * @return TranscodeType 模板类型（替换旧版本 TEHDType），可选值：
+<li>Common：普通转码模板；</li>
+<li>TEHD：极速高清模板。</li>
+<li>Enhance：音视频增强模板。</li>
+默认空，不限制类型。
+                     */
+                    std::string GetTranscodeType() const;
+
+                    /**
+                     * 设置模板类型（替换旧版本 TEHDType），可选值：
+<li>Common：普通转码模板；</li>
+<li>TEHD：极速高清模板。</li>
+<li>Enhance：音视频增强模板。</li>
+默认空，不限制类型。
+                     * @param TranscodeType 模板类型（替换旧版本 TEHDType），可选值：
+<li>Common：普通转码模板；</li>
+<li>TEHD：极速高清模板。</li>
+<li>Enhance：音视频增强模板。</li>
+默认空，不限制类型。
+                     */
+                    void SetTranscodeType(const std::string& _transcodeType);
+
+                    /**
+                     * 判断参数 TranscodeType 是否已赋值
+                     * @return TranscodeType 是否已赋值
+                     */
+                    bool TranscodeTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -217,6 +251,16 @@ namespace TencentCloud
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
+
+                    /**
+                     * 模板类型（替换旧版本 TEHDType），可选值：
+<li>Common：普通转码模板；</li>
+<li>TEHD：极速高清模板。</li>
+<li>Enhance：音视频增强模板。</li>
+默认空，不限制类型。
+                     */
+                    std::string m_transcodeType;
+                    bool m_transcodeTypeHasBeenSet;
 
                 };
             }

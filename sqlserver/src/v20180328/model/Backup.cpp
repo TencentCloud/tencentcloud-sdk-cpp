@@ -34,7 +34,10 @@ Backup::Backup() :
     m_backupWayHasBeenSet(false),
     m_backupNameHasBeenSet(false),
     m_groupIdHasBeenSet(false),
-    m_backupFormatHasBeenSet(false)
+    m_backupFormatHasBeenSet(false),
+    m_regionHasBeenSet(false),
+    m_crossBackupAddrHasBeenSet(false),
+    m_crossBackupStatusHasBeenSet(false)
 {
 }
 
@@ -186,6 +189,56 @@ CoreInternalOutcome Backup::Deserialize(const rapidjson::Value &value)
         m_backupFormatHasBeenSet = true;
     }
 
+    if (value.HasMember("Region") && !value["Region"].IsNull())
+    {
+        if (!value["Region"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Backup.Region` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_region = string(value["Region"].GetString());
+        m_regionHasBeenSet = true;
+    }
+
+    if (value.HasMember("CrossBackupAddr") && !value["CrossBackupAddr"].IsNull())
+    {
+        if (!value["CrossBackupAddr"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Backup.CrossBackupAddr` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["CrossBackupAddr"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            CrossBackupAddr item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_crossBackupAddr.push_back(item);
+        }
+        m_crossBackupAddrHasBeenSet = true;
+    }
+
+    if (value.HasMember("CrossBackupStatus") && !value["CrossBackupStatus"].IsNull())
+    {
+        if (!value["CrossBackupStatus"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Backup.CrossBackupStatus` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["CrossBackupStatus"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            CrossRegionStatus item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_crossBackupStatus.push_back(item);
+        }
+        m_crossBackupStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -308,6 +361,44 @@ void Backup::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocato
         string key = "BackupFormat";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_backupFormat.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_regionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Region";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_region.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_crossBackupAddrHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CrossBackupAddr";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_crossBackupAddr.begin(); itr != m_crossBackupAddr.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_crossBackupStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CrossBackupStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_crossBackupStatus.begin(); itr != m_crossBackupStatus.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -535,5 +626,53 @@ void Backup::SetBackupFormat(const string& _backupFormat)
 bool Backup::BackupFormatHasBeenSet() const
 {
     return m_backupFormatHasBeenSet;
+}
+
+string Backup::GetRegion() const
+{
+    return m_region;
+}
+
+void Backup::SetRegion(const string& _region)
+{
+    m_region = _region;
+    m_regionHasBeenSet = true;
+}
+
+bool Backup::RegionHasBeenSet() const
+{
+    return m_regionHasBeenSet;
+}
+
+vector<CrossBackupAddr> Backup::GetCrossBackupAddr() const
+{
+    return m_crossBackupAddr;
+}
+
+void Backup::SetCrossBackupAddr(const vector<CrossBackupAddr>& _crossBackupAddr)
+{
+    m_crossBackupAddr = _crossBackupAddr;
+    m_crossBackupAddrHasBeenSet = true;
+}
+
+bool Backup::CrossBackupAddrHasBeenSet() const
+{
+    return m_crossBackupAddrHasBeenSet;
+}
+
+vector<CrossRegionStatus> Backup::GetCrossBackupStatus() const
+{
+    return m_crossBackupStatus;
+}
+
+void Backup::SetCrossBackupStatus(const vector<CrossRegionStatus>& _crossBackupStatus)
+{
+    m_crossBackupStatus = _crossBackupStatus;
+    m_crossBackupStatusHasBeenSet = true;
+}
+
+bool Backup::CrossBackupStatusHasBeenSet() const
+{
+    return m_crossBackupStatusHasBeenSet;
 }
 

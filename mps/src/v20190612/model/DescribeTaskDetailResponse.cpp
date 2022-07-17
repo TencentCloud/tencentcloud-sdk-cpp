@@ -29,14 +29,15 @@ DescribeTaskDetailResponse::DescribeTaskDetailResponse() :
     m_createTimeHasBeenSet(false),
     m_beginProcessTimeHasBeenSet(false),
     m_finishTimeHasBeenSet(false),
-    m_workflowTaskHasBeenSet(false),
     m_editMediaTaskHasBeenSet(false),
+    m_workflowTaskHasBeenSet(false),
     m_liveStreamProcessTaskHasBeenSet(false),
     m_taskNotifyConfigHasBeenSet(false),
     m_tasksPriorityHasBeenSet(false),
     m_sessionIdHasBeenSet(false),
     m_sessionContextHasBeenSet(false),
-    m_extInfoHasBeenSet(false)
+    m_extInfoHasBeenSet(false),
+    m_scheduleTaskHasBeenSet(false)
 {
 }
 
@@ -124,23 +125,6 @@ CoreInternalOutcome DescribeTaskDetailResponse::Deserialize(const string &payloa
         m_finishTimeHasBeenSet = true;
     }
 
-    if (rsp.HasMember("WorkflowTask") && !rsp["WorkflowTask"].IsNull())
-    {
-        if (!rsp["WorkflowTask"].IsObject())
-        {
-            return CoreInternalOutcome(Core::Error("response `WorkflowTask` is not object type").SetRequestId(requestId));
-        }
-
-        CoreInternalOutcome outcome = m_workflowTask.Deserialize(rsp["WorkflowTask"]);
-        if (!outcome.IsSuccess())
-        {
-            outcome.GetError().SetRequestId(requestId);
-            return outcome;
-        }
-
-        m_workflowTaskHasBeenSet = true;
-    }
-
     if (rsp.HasMember("EditMediaTask") && !rsp["EditMediaTask"].IsNull())
     {
         if (!rsp["EditMediaTask"].IsObject())
@@ -156,6 +140,23 @@ CoreInternalOutcome DescribeTaskDetailResponse::Deserialize(const string &payloa
         }
 
         m_editMediaTaskHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("WorkflowTask") && !rsp["WorkflowTask"].IsNull())
+    {
+        if (!rsp["WorkflowTask"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `WorkflowTask` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_workflowTask.Deserialize(rsp["WorkflowTask"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_workflowTaskHasBeenSet = true;
     }
 
     if (rsp.HasMember("LiveStreamProcessTask") && !rsp["LiveStreamProcessTask"].IsNull())
@@ -232,6 +233,23 @@ CoreInternalOutcome DescribeTaskDetailResponse::Deserialize(const string &payloa
         m_extInfoHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ScheduleTask") && !rsp["ScheduleTask"].IsNull())
+    {
+        if (!rsp["ScheduleTask"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ScheduleTask` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_scheduleTask.Deserialize(rsp["ScheduleTask"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_scheduleTaskHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -282,15 +300,6 @@ string DescribeTaskDetailResponse::ToJsonString() const
         value.AddMember(iKey, rapidjson::Value(m_finishTime.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_workflowTaskHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "WorkflowTask";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_workflowTask.ToJsonObject(value[key.c_str()], allocator);
-    }
-
     if (m_editMediaTaskHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -298,6 +307,15 @@ string DescribeTaskDetailResponse::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_editMediaTask.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_workflowTaskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WorkflowTask";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_workflowTask.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_liveStreamProcessTaskHasBeenSet)
@@ -348,6 +366,15 @@ string DescribeTaskDetailResponse::ToJsonString() const
         string key = "ExtInfo";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_extInfo.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_scheduleTaskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScheduleTask";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_scheduleTask.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -412,16 +439,6 @@ bool DescribeTaskDetailResponse::FinishTimeHasBeenSet() const
     return m_finishTimeHasBeenSet;
 }
 
-WorkflowTask DescribeTaskDetailResponse::GetWorkflowTask() const
-{
-    return m_workflowTask;
-}
-
-bool DescribeTaskDetailResponse::WorkflowTaskHasBeenSet() const
-{
-    return m_workflowTaskHasBeenSet;
-}
-
 EditMediaTask DescribeTaskDetailResponse::GetEditMediaTask() const
 {
     return m_editMediaTask;
@@ -430,6 +447,16 @@ EditMediaTask DescribeTaskDetailResponse::GetEditMediaTask() const
 bool DescribeTaskDetailResponse::EditMediaTaskHasBeenSet() const
 {
     return m_editMediaTaskHasBeenSet;
+}
+
+WorkflowTask DescribeTaskDetailResponse::GetWorkflowTask() const
+{
+    return m_workflowTask;
+}
+
+bool DescribeTaskDetailResponse::WorkflowTaskHasBeenSet() const
+{
+    return m_workflowTaskHasBeenSet;
 }
 
 LiveStreamProcessTask DescribeTaskDetailResponse::GetLiveStreamProcessTask() const
@@ -490,6 +517,16 @@ string DescribeTaskDetailResponse::GetExtInfo() const
 bool DescribeTaskDetailResponse::ExtInfoHasBeenSet() const
 {
     return m_extInfoHasBeenSet;
+}
+
+ScheduleTask DescribeTaskDetailResponse::GetScheduleTask() const
+{
+    return m_scheduleTask;
+}
+
+bool DescribeTaskDetailResponse::ScheduleTaskHasBeenSet() const
+{
+    return m_scheduleTaskHasBeenSet;
 }
 
 

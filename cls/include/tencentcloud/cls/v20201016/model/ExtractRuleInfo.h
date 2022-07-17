@@ -267,6 +267,50 @@ namespace TencentCloud
                      */
                     bool BacktrackingHasBeenSet() const;
 
+                    /**
+                     * 获取是否为Gbk编码.   0: 否, 1: 是
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsGBK 是否为Gbk编码.   0: 否, 1: 是
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetIsGBK() const;
+
+                    /**
+                     * 设置是否为Gbk编码.   0: 否, 1: 是
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param IsGBK 是否为Gbk编码.   0: 否, 1: 是
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIsGBK(const int64_t& _isGBK);
+
+                    /**
+                     * 判断参数 IsGBK 是否已赋值
+                     * @return IsGBK 是否已赋值
+                     */
+                    bool IsGBKHasBeenSet() const;
+
+                    /**
+                     * 获取是否为标准json.   0: 否, 1: 是
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return JsonStandard 是否为标准json.   0: 否, 1: 是
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetJsonStandard() const;
+
+                    /**
+                     * 设置是否为标准json.   0: 否, 1: 是
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param JsonStandard 是否为标准json.   0: 否, 1: 是
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetJsonStandard(const int64_t& _jsonStandard);
+
+                    /**
+                     * 判断参数 JsonStandard 是否已赋值
+                     * @return JsonStandard 是否已赋值
+                     */
+                    bool JsonStandardHasBeenSet() const;
+
                 private:
 
                     /**
@@ -338,6 +382,20 @@ namespace TencentCloud
                      */
                     int64_t m_backtracking;
                     bool m_backtrackingHasBeenSet;
+
+                    /**
+                     * 是否为Gbk编码.   0: 否, 1: 是
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_isGBK;
+                    bool m_isGBKHasBeenSet;
+
+                    /**
+                     * 是否为标准json.   0: 否, 1: 是
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_jsonStandard;
+                    bool m_jsonStandardHasBeenSet;
 
                 };
             }

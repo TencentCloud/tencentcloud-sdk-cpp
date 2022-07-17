@@ -21,10 +21,11 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/mps/v20190612/model/WorkflowTask.h>
 #include <tencentcloud/mps/v20190612/model/EditMediaTask.h>
+#include <tencentcloud/mps/v20190612/model/WorkflowTask.h>
 #include <tencentcloud/mps/v20190612/model/LiveStreamProcessTask.h>
 #include <tencentcloud/mps/v20190612/model/TaskNotifyConfig.h>
+#include <tencentcloud/mps/v20190612/model/ScheduleTask.h>
 
 
 namespace TencentCloud
@@ -52,10 +53,12 @@ namespace TencentCloud
 <li>WorkflowTask：视频工作流处理任务。</li>
 <li>EditMediaTask：视频编辑任务。</li>
 <li>LiveStreamProcessTask：直播流处理任务。</li>
+<li>ScheduleTask：编排处理任务。</li>
                      * @return TaskType 任务类型，目前取值有：
 <li>WorkflowTask：视频工作流处理任务。</li>
 <li>EditMediaTask：视频编辑任务。</li>
 <li>LiveStreamProcessTask：直播流处理任务。</li>
+<li>ScheduleTask：编排处理任务。</li>
                      */
                     std::string GetTaskType() const;
 
@@ -120,20 +123,6 @@ namespace TencentCloud
                     bool FinishTimeHasBeenSet() const;
 
                     /**
-                     * 获取视频处理任务信息，仅当 TaskType 为 WorkflowTask，该字段有值。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return WorkflowTask 视频处理任务信息，仅当 TaskType 为 WorkflowTask，该字段有值。
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    WorkflowTask GetWorkflowTask() const;
-
-                    /**
-                     * 判断参数 WorkflowTask 是否已赋值
-                     * @return WorkflowTask 是否已赋值
-                     */
-                    bool WorkflowTaskHasBeenSet() const;
-
-                    /**
                      * 获取视频编辑任务信息，仅当 TaskType 为 EditMediaTask，该字段有值。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return EditMediaTask 视频编辑任务信息，仅当 TaskType 为 EditMediaTask，该字段有值。
@@ -146,6 +135,20 @@ namespace TencentCloud
                      * @return EditMediaTask 是否已赋值
                      */
                     bool EditMediaTaskHasBeenSet() const;
+
+                    /**
+                     * 获取视频处理任务信息，仅当 TaskType 为 WorkflowTask，该字段有值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return WorkflowTask 视频处理任务信息，仅当 TaskType 为 WorkflowTask，该字段有值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    WorkflowTask GetWorkflowTask() const;
+
+                    /**
+                     * 判断参数 WorkflowTask 是否已赋值
+                     * @return WorkflowTask 是否已赋值
+                     */
+                    bool WorkflowTaskHasBeenSet() const;
 
                     /**
                      * 获取直播流处理任务信息，仅当 TaskType 为 LiveStreamProcessTask，该字段有值。
@@ -223,6 +226,20 @@ namespace TencentCloud
                      */
                     bool ExtInfoHasBeenSet() const;
 
+                    /**
+                     * 获取编排处理任务信息，仅当 TaskType 为 ScheduleTask，该字段有值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ScheduleTask 编排处理任务信息，仅当 TaskType 为 ScheduleTask，该字段有值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ScheduleTask GetScheduleTask() const;
+
+                    /**
+                     * 判断参数 ScheduleTask 是否已赋值
+                     * @return ScheduleTask 是否已赋值
+                     */
+                    bool ScheduleTaskHasBeenSet() const;
+
                 private:
 
                     /**
@@ -230,6 +247,7 @@ namespace TencentCloud
 <li>WorkflowTask：视频工作流处理任务。</li>
 <li>EditMediaTask：视频编辑任务。</li>
 <li>LiveStreamProcessTask：直播流处理任务。</li>
+<li>ScheduleTask：编排处理任务。</li>
                      */
                     std::string m_taskType;
                     bool m_taskTypeHasBeenSet;
@@ -262,18 +280,18 @@ namespace TencentCloud
                     bool m_finishTimeHasBeenSet;
 
                     /**
-                     * 视频处理任务信息，仅当 TaskType 为 WorkflowTask，该字段有值。
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    WorkflowTask m_workflowTask;
-                    bool m_workflowTaskHasBeenSet;
-
-                    /**
                      * 视频编辑任务信息，仅当 TaskType 为 EditMediaTask，该字段有值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     EditMediaTask m_editMediaTask;
                     bool m_editMediaTaskHasBeenSet;
+
+                    /**
+                     * 视频处理任务信息，仅当 TaskType 为 WorkflowTask，该字段有值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    WorkflowTask m_workflowTask;
+                    bool m_workflowTaskHasBeenSet;
 
                     /**
                      * 直播流处理任务信息，仅当 TaskType 为 LiveStreamProcessTask，该字段有值。
@@ -312,6 +330,13 @@ namespace TencentCloud
                      */
                     std::string m_extInfo;
                     bool m_extInfoHasBeenSet;
+
+                    /**
+                     * 编排处理任务信息，仅当 TaskType 为 ScheduleTask，该字段有值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ScheduleTask m_scheduleTask;
+                    bool m_scheduleTaskHasBeenSet;
 
                 };
             }

@@ -120,6 +120,40 @@ namespace TencentCloud
                      */
                     bool SelectedNodeListHasBeenSet() const;
 
+                    /**
+                     * 获取组件的部署模式，取值说明：
+IN_GENERAL_NODE：常规节点
+IN_EKLET：eklet 节点
+IN_SHARED_NODE_POOL：共享节电池
+IN_EXCLUSIVE_NODE_POOL：独占节点池
+                     * @return DeployMode 组件的部署模式，取值说明：
+IN_GENERAL_NODE：常规节点
+IN_EKLET：eklet 节点
+IN_SHARED_NODE_POOL：共享节电池
+IN_EXCLUSIVE_NODE_POOL：独占节点池
+                     */
+                    std::string GetDeployMode() const;
+
+                    /**
+                     * 设置组件的部署模式，取值说明：
+IN_GENERAL_NODE：常规节点
+IN_EKLET：eklet 节点
+IN_SHARED_NODE_POOL：共享节电池
+IN_EXCLUSIVE_NODE_POOL：独占节点池
+                     * @param DeployMode 组件的部署模式，取值说明：
+IN_GENERAL_NODE：常规节点
+IN_EKLET：eklet 节点
+IN_SHARED_NODE_POOL：共享节电池
+IN_EXCLUSIVE_NODE_POOL：独占节点池
+                     */
+                    void SetDeployMode(const std::string& _deployMode);
+
+                    /**
+                     * 判断参数 DeployMode 是否已赋值
+                     * @return DeployMode 是否已赋值
+                     */
+                    bool DeployModeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -145,6 +179,16 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_selectedNodeList;
                     bool m_selectedNodeListHasBeenSet;
+
+                    /**
+                     * 组件的部署模式，取值说明：
+IN_GENERAL_NODE：常规节点
+IN_EKLET：eklet 节点
+IN_SHARED_NODE_POOL：共享节电池
+IN_EXCLUSIVE_NODE_POOL：独占节点池
+                     */
+                    std::string m_deployMode;
+                    bool m_deployModeHasBeenSet;
 
                 };
             }

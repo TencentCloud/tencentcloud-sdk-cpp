@@ -247,6 +247,36 @@ namespace TencentCloud
                      */
                     bool SessionContextHasBeenSet() const;
 
+                    /**
+                     * 获取编排ID。
+注意1：对于OutputStorage、OutputDir，如果编排任务里没有配置，将采用请求里对应参数。
+注意2：对于TaskNotifyConfig，如果编排任务里没有配置，将采用请求里对应的参数。
+注意3：编排的 Trigger 只是用来自动化触发场景，在手动发起的请求中已经配置的 Trigger 无意义。
+                     * @return ScheduleId 编排ID。
+注意1：对于OutputStorage、OutputDir，如果编排任务里没有配置，将采用请求里对应参数。
+注意2：对于TaskNotifyConfig，如果编排任务里没有配置，将采用请求里对应的参数。
+注意3：编排的 Trigger 只是用来自动化触发场景，在手动发起的请求中已经配置的 Trigger 无意义。
+                     */
+                    int64_t GetScheduleId() const;
+
+                    /**
+                     * 设置编排ID。
+注意1：对于OutputStorage、OutputDir，如果编排任务里没有配置，将采用请求里对应参数。
+注意2：对于TaskNotifyConfig，如果编排任务里没有配置，将采用请求里对应的参数。
+注意3：编排的 Trigger 只是用来自动化触发场景，在手动发起的请求中已经配置的 Trigger 无意义。
+                     * @param ScheduleId 编排ID。
+注意1：对于OutputStorage、OutputDir，如果编排任务里没有配置，将采用请求里对应参数。
+注意2：对于TaskNotifyConfig，如果编排任务里没有配置，将采用请求里对应的参数。
+注意3：编排的 Trigger 只是用来自动化触发场景，在手动发起的请求中已经配置的 Trigger 无意义。
+                     */
+                    void SetScheduleId(const int64_t& _scheduleId);
+
+                    /**
+                     * 判断参数 ScheduleId 是否已赋值
+                     * @return ScheduleId 是否已赋值
+                     */
+                    bool ScheduleIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -314,6 +344,15 @@ namespace TencentCloud
                      */
                     std::string m_sessionContext;
                     bool m_sessionContextHasBeenSet;
+
+                    /**
+                     * 编排ID。
+注意1：对于OutputStorage、OutputDir，如果编排任务里没有配置，将采用请求里对应参数。
+注意2：对于TaskNotifyConfig，如果编排任务里没有配置，将采用请求里对应的参数。
+注意3：编排的 Trigger 只是用来自动化触发场景，在手动发起的请求中已经配置的 Trigger 无意义。
+                     */
+                    int64_t m_scheduleId;
+                    bool m_scheduleIdHasBeenSet;
 
                 };
             }

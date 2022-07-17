@@ -28,7 +28,8 @@ DescribeTranscodeTemplatesRequest::DescribeTranscodeTemplatesRequest() :
     m_containerTypeHasBeenSet(false),
     m_tEHDTypeHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_limitHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_transcodeTypeHasBeenSet(false)
 {
 }
 
@@ -90,6 +91,14 @@ string DescribeTranscodeTemplatesRequest::ToJsonString() const
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_transcodeTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TranscodeType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_transcodeType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -194,6 +203,22 @@ void DescribeTranscodeTemplatesRequest::SetLimit(const uint64_t& _limit)
 bool DescribeTranscodeTemplatesRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+string DescribeTranscodeTemplatesRequest::GetTranscodeType() const
+{
+    return m_transcodeType;
+}
+
+void DescribeTranscodeTemplatesRequest::SetTranscodeType(const string& _transcodeType)
+{
+    m_transcodeType = _transcodeType;
+    m_transcodeTypeHasBeenSet = true;
+}
+
+bool DescribeTranscodeTemplatesRequest::TranscodeTypeHasBeenSet() const
+{
+    return m_transcodeTypeHasBeenSet;
 }
 
 

@@ -849,6 +849,60 @@ namespace TencentCloud
                      */
                     bool InstanceTypeHasBeenSet() const;
 
+                    /**
+                     * 获取跨地域备份目的地域，如果为空，则表示未开启跨地域备份
+                     * @return CrossRegions 跨地域备份目的地域，如果为空，则表示未开启跨地域备份
+                     */
+                    std::vector<std::string> GetCrossRegions() const;
+
+                    /**
+                     * 设置跨地域备份目的地域，如果为空，则表示未开启跨地域备份
+                     * @param CrossRegions 跨地域备份目的地域，如果为空，则表示未开启跨地域备份
+                     */
+                    void SetCrossRegions(const std::vector<std::string>& _crossRegions);
+
+                    /**
+                     * 判断参数 CrossRegions 是否已赋值
+                     * @return CrossRegions 是否已赋值
+                     */
+                    bool CrossRegionsHasBeenSet() const;
+
+                    /**
+                     * 获取跨地域备份状态 enable-开启，disable-关闭
+                     * @return CrossBackupEnabled 跨地域备份状态 enable-开启，disable-关闭
+                     */
+                    std::string GetCrossBackupEnabled() const;
+
+                    /**
+                     * 设置跨地域备份状态 enable-开启，disable-关闭
+                     * @param CrossBackupEnabled 跨地域备份状态 enable-开启，disable-关闭
+                     */
+                    void SetCrossBackupEnabled(const std::string& _crossBackupEnabled);
+
+                    /**
+                     * 判断参数 CrossBackupEnabled 是否已赋值
+                     * @return CrossBackupEnabled 是否已赋值
+                     */
+                    bool CrossBackupEnabledHasBeenSet() const;
+
+                    /**
+                     * 获取跨地域备份保留天数，则默认7天
+                     * @return CrossBackupSaveDays 跨地域备份保留天数，则默认7天
+                     */
+                    uint64_t GetCrossBackupSaveDays() const;
+
+                    /**
+                     * 设置跨地域备份保留天数，则默认7天
+                     * @param CrossBackupSaveDays 跨地域备份保留天数，则默认7天
+                     */
+                    void SetCrossBackupSaveDays(const uint64_t& _crossBackupSaveDays);
+
+                    /**
+                     * 判断参数 CrossBackupSaveDays 是否已赋值
+                     * @return CrossBackupSaveDays 是否已赋值
+                     */
+                    bool CrossBackupSaveDaysHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1115,6 +1169,24 @@ namespace TencentCloud
                      */
                     std::string m_instanceType;
                     bool m_instanceTypeHasBeenSet;
+
+                    /**
+                     * 跨地域备份目的地域，如果为空，则表示未开启跨地域备份
+                     */
+                    std::vector<std::string> m_crossRegions;
+                    bool m_crossRegionsHasBeenSet;
+
+                    /**
+                     * 跨地域备份状态 enable-开启，disable-关闭
+                     */
+                    std::string m_crossBackupEnabled;
+                    bool m_crossBackupEnabledHasBeenSet;
+
+                    /**
+                     * 跨地域备份保留天数，则默认7天
+                     */
+                    uint64_t m_crossBackupSaveDays;
+                    bool m_crossBackupSaveDaysHasBeenSet;
 
                 };
             }

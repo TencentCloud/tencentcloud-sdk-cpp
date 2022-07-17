@@ -38,13 +38,14 @@ set(ocr_public_header_model
   include/tencentcloud/ocr/v20181119/model/VerifyBizLicenseResponse.h
   include/tencentcloud/ocr/v20181119/model/FinanBillSliceOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/DriverLicenseOCRResponse.h
+  include/tencentcloud/ocr/v20181119/model/WaybillOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/Words.h
   include/tencentcloud/ocr/v20181119/model/VerifyBizLicenseRequest.h
   include/tencentcloud/ocr/v20181119/model/TextDetectionEn.h
   include/tencentcloud/ocr/v20181119/model/PermitOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/InvoiceGeneralOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/Rect.h
-  include/tencentcloud/ocr/v20181119/model/WaybillOCRResponse.h
+  include/tencentcloud/ocr/v20181119/model/LicensePlateInfo.h
   include/tencentcloud/ocr/v20181119/model/SingleInvoiceInfo.h
   include/tencentcloud/ocr/v20181119/model/TextFormula.h
   include/tencentcloud/ocr/v20181119/model/MLIDCardOCRRequest.h
@@ -256,13 +257,14 @@ set(ocr_src
   src/v20181119/model/VerifyBizLicenseResponse.cpp
   src/v20181119/model/FinanBillSliceOCRResponse.cpp
   src/v20181119/model/DriverLicenseOCRResponse.cpp
+  src/v20181119/model/WaybillOCRResponse.cpp
   src/v20181119/model/Words.cpp
   src/v20181119/model/VerifyBizLicenseRequest.cpp
   src/v20181119/model/TextDetectionEn.cpp
   src/v20181119/model/PermitOCRResponse.cpp
   src/v20181119/model/InvoiceGeneralOCRRequest.cpp
   src/v20181119/model/Rect.cpp
-  src/v20181119/model/WaybillOCRResponse.cpp
+  src/v20181119/model/LicensePlateInfo.cpp
   src/v20181119/model/SingleInvoiceInfo.cpp
   src/v20181119/model/TextFormula.cpp
   src/v20181119/model/MLIDCardOCRRequest.cpp

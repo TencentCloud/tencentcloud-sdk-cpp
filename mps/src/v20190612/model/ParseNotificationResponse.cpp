@@ -28,7 +28,8 @@ ParseNotificationResponse::ParseNotificationResponse() :
     m_workflowTaskEventHasBeenSet(false),
     m_editMediaTaskEventHasBeenSet(false),
     m_sessionIdHasBeenSet(false),
-    m_sessionContextHasBeenSet(false)
+    m_sessionContextHasBeenSet(false),
+    m_scheduleTaskEventHasBeenSet(false)
 {
 }
 
@@ -130,6 +131,23 @@ CoreInternalOutcome ParseNotificationResponse::Deserialize(const string &payload
         m_sessionContextHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ScheduleTaskEvent") && !rsp["ScheduleTaskEvent"].IsNull())
+    {
+        if (!rsp["ScheduleTaskEvent"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ScheduleTaskEvent` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_scheduleTaskEvent.Deserialize(rsp["ScheduleTaskEvent"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_scheduleTaskEventHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -180,6 +198,15 @@ string ParseNotificationResponse::ToJsonString() const
         string key = "SessionContext";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_sessionContext.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_scheduleTaskEventHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScheduleTaskEvent";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_scheduleTaskEvent.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -242,6 +269,16 @@ string ParseNotificationResponse::GetSessionContext() const
 bool ParseNotificationResponse::SessionContextHasBeenSet() const
 {
     return m_sessionContextHasBeenSet;
+}
+
+ScheduleTask ParseNotificationResponse::GetScheduleTaskEvent() const
+{
+    return m_scheduleTaskEvent;
+}
+
+bool ParseNotificationResponse::ScheduleTaskEventHasBeenSet() const
+{
+    return m_scheduleTaskEventHasBeenSet;
 }
 
 

@@ -27,7 +27,8 @@ CreateSSHKeyPairSecretRequest::CreateSSHKeyPairSecretRequest() :
     m_projectIdHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_kmsKeyIdHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_sSHKeyNameHasBeenSet(false)
 {
 }
 
@@ -83,6 +84,14 @@ string CreateSSHKeyPairSecretRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_sSHKeyNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SSHKeyName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_sSHKeyName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -171,6 +180,22 @@ void CreateSSHKeyPairSecretRequest::SetTags(const vector<Tag>& _tags)
 bool CreateSSHKeyPairSecretRequest::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+string CreateSSHKeyPairSecretRequest::GetSSHKeyName() const
+{
+    return m_sSHKeyName;
+}
+
+void CreateSSHKeyPairSecretRequest::SetSSHKeyName(const string& _sSHKeyName)
+{
+    m_sSHKeyName = _sSHKeyName;
+    m_sSHKeyNameHasBeenSet = true;
+}
+
+bool CreateSSHKeyPairSecretRequest::SSHKeyNameHasBeenSet() const
+{
+    return m_sSHKeyNameHasBeenSet;
 }
 
 

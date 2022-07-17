@@ -31,7 +31,8 @@ Cluster::Cluster() :
     m_linkedTimeHasBeenSet(false),
     m_configHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_typeHasBeenSet(false)
+    m_typeHasBeenSet(false),
+    m_hostedNamespacesHasBeenSet(false)
 {
 }
 
@@ -164,6 +165,19 @@ CoreInternalOutcome Cluster::Deserialize(const rapidjson::Value &value)
         m_typeHasBeenSet = true;
     }
 
+    if (value.HasMember("HostedNamespaces") && !value["HostedNamespaces"].IsNull())
+    {
+        if (!value["HostedNamespaces"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Cluster.HostedNamespaces` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["HostedNamespaces"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_hostedNamespaces.push_back((*itr).GetString());
+        }
+        m_hostedNamespacesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -259,6 +273,19 @@ void Cluster::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "Type";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_hostedNamespacesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HostedNamespaces";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_hostedNamespaces.begin(); itr != m_hostedNamespaces.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -438,5 +465,21 @@ void Cluster::SetType(const string& _type)
 bool Cluster::TypeHasBeenSet() const
 {
     return m_typeHasBeenSet;
+}
+
+vector<string> Cluster::GetHostedNamespaces() const
+{
+    return m_hostedNamespaces;
+}
+
+void Cluster::SetHostedNamespaces(const vector<string>& _hostedNamespaces)
+{
+    m_hostedNamespaces = _hostedNamespaces;
+    m_hostedNamespacesHasBeenSet = true;
+}
+
+bool Cluster::HostedNamespacesHasBeenSet() const
+{
+    return m_hostedNamespacesHasBeenSet;
 }
 

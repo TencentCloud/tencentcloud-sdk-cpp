@@ -25,7 +25,9 @@ BackupFile::BackupFile() :
     m_fileNameHasBeenSet(false),
     m_sizeHasBeenSet(false),
     m_dBsHasBeenSet(false),
-    m_downloadLinkHasBeenSet(false)
+    m_downloadLinkHasBeenSet(false),
+    m_regionHasBeenSet(false),
+    m_crossBackupAddrHasBeenSet(false)
 {
 }
 
@@ -87,6 +89,36 @@ CoreInternalOutcome BackupFile::Deserialize(const rapidjson::Value &value)
         m_downloadLinkHasBeenSet = true;
     }
 
+    if (value.HasMember("Region") && !value["Region"].IsNull())
+    {
+        if (!value["Region"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BackupFile.Region` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_region = string(value["Region"].GetString());
+        m_regionHasBeenSet = true;
+    }
+
+    if (value.HasMember("CrossBackupAddr") && !value["CrossBackupAddr"].IsNull())
+    {
+        if (!value["CrossBackupAddr"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `BackupFile.CrossBackupAddr` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["CrossBackupAddr"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            CrossBackupAddr item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_crossBackupAddr.push_back(item);
+        }
+        m_crossBackupAddrHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -137,6 +169,29 @@ void BackupFile::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "DownloadLink";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_downloadLink.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_regionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Region";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_region.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_crossBackupAddrHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CrossBackupAddr";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_crossBackupAddr.begin(); itr != m_crossBackupAddr.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -220,5 +275,37 @@ void BackupFile::SetDownloadLink(const string& _downloadLink)
 bool BackupFile::DownloadLinkHasBeenSet() const
 {
     return m_downloadLinkHasBeenSet;
+}
+
+string BackupFile::GetRegion() const
+{
+    return m_region;
+}
+
+void BackupFile::SetRegion(const string& _region)
+{
+    m_region = _region;
+    m_regionHasBeenSet = true;
+}
+
+bool BackupFile::RegionHasBeenSet() const
+{
+    return m_regionHasBeenSet;
+}
+
+vector<CrossBackupAddr> BackupFile::GetCrossBackupAddr() const
+{
+    return m_crossBackupAddr;
+}
+
+void BackupFile::SetCrossBackupAddr(const vector<CrossBackupAddr>& _crossBackupAddr)
+{
+    m_crossBackupAddr = _crossBackupAddr;
+    m_crossBackupAddrHasBeenSet = true;
+}
+
+bool BackupFile::CrossBackupAddrHasBeenSet() const
+{
+    return m_crossBackupAddrHasBeenSet;
 }
 

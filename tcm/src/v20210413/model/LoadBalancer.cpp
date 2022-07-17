@@ -24,7 +24,13 @@ LoadBalancer::LoadBalancer() :
     m_loadBalancerTypeHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
     m_internetChargeTypeHasBeenSet(false),
-    m_internetMaxBandwidthOutHasBeenSet(false)
+    m_internetMaxBandwidthOutHasBeenSet(false),
+    m_zoneIDHasBeenSet(false),
+    m_vipIspHasBeenSet(false),
+    m_tgwGroupNameHasBeenSet(false),
+    m_addressIPVersionHasBeenSet(false),
+    m_tagsHasBeenSet(false),
+    m_extensiveClustersHasBeenSet(false)
 {
 }
 
@@ -73,6 +79,83 @@ CoreInternalOutcome LoadBalancer::Deserialize(const rapidjson::Value &value)
         m_internetMaxBandwidthOutHasBeenSet = true;
     }
 
+    if (value.HasMember("ZoneID") && !value["ZoneID"].IsNull())
+    {
+        if (!value["ZoneID"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LoadBalancer.ZoneID` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_zoneID = string(value["ZoneID"].GetString());
+        m_zoneIDHasBeenSet = true;
+    }
+
+    if (value.HasMember("VipIsp") && !value["VipIsp"].IsNull())
+    {
+        if (!value["VipIsp"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LoadBalancer.VipIsp` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_vipIsp = string(value["VipIsp"].GetString());
+        m_vipIspHasBeenSet = true;
+    }
+
+    if (value.HasMember("TgwGroupName") && !value["TgwGroupName"].IsNull())
+    {
+        if (!value["TgwGroupName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LoadBalancer.TgwGroupName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_tgwGroupName = string(value["TgwGroupName"].GetString());
+        m_tgwGroupNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("AddressIPVersion") && !value["AddressIPVersion"].IsNull())
+    {
+        if (!value["AddressIPVersion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LoadBalancer.AddressIPVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_addressIPVersion = string(value["AddressIPVersion"].GetString());
+        m_addressIPVersionHasBeenSet = true;
+    }
+
+    if (value.HasMember("Tags") && !value["Tags"].IsNull())
+    {
+        if (!value["Tags"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `LoadBalancer.Tags` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Tags"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Tag item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tags.push_back(item);
+        }
+        m_tagsHasBeenSet = true;
+    }
+
+    if (value.HasMember("ExtensiveClusters") && !value["ExtensiveClusters"].IsNull())
+    {
+        if (!value["ExtensiveClusters"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `LoadBalancer.ExtensiveClusters` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_extensiveClusters.Deserialize(value["ExtensiveClusters"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_extensiveClustersHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +193,62 @@ void LoadBalancer::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "InternetMaxBandwidthOut";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_internetMaxBandwidthOut, allocator);
+    }
+
+    if (m_zoneIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ZoneID";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_zoneID.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_vipIspHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VipIsp";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_vipIsp.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tgwGroupNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TgwGroupName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tgwGroupName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_addressIPVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AddressIPVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_addressIPVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_extensiveClustersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExtensiveClusters";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_extensiveClusters.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -177,5 +316,101 @@ void LoadBalancer::SetInternetMaxBandwidthOut(const int64_t& _internetMaxBandwid
 bool LoadBalancer::InternetMaxBandwidthOutHasBeenSet() const
 {
     return m_internetMaxBandwidthOutHasBeenSet;
+}
+
+string LoadBalancer::GetZoneID() const
+{
+    return m_zoneID;
+}
+
+void LoadBalancer::SetZoneID(const string& _zoneID)
+{
+    m_zoneID = _zoneID;
+    m_zoneIDHasBeenSet = true;
+}
+
+bool LoadBalancer::ZoneIDHasBeenSet() const
+{
+    return m_zoneIDHasBeenSet;
+}
+
+string LoadBalancer::GetVipIsp() const
+{
+    return m_vipIsp;
+}
+
+void LoadBalancer::SetVipIsp(const string& _vipIsp)
+{
+    m_vipIsp = _vipIsp;
+    m_vipIspHasBeenSet = true;
+}
+
+bool LoadBalancer::VipIspHasBeenSet() const
+{
+    return m_vipIspHasBeenSet;
+}
+
+string LoadBalancer::GetTgwGroupName() const
+{
+    return m_tgwGroupName;
+}
+
+void LoadBalancer::SetTgwGroupName(const string& _tgwGroupName)
+{
+    m_tgwGroupName = _tgwGroupName;
+    m_tgwGroupNameHasBeenSet = true;
+}
+
+bool LoadBalancer::TgwGroupNameHasBeenSet() const
+{
+    return m_tgwGroupNameHasBeenSet;
+}
+
+string LoadBalancer::GetAddressIPVersion() const
+{
+    return m_addressIPVersion;
+}
+
+void LoadBalancer::SetAddressIPVersion(const string& _addressIPVersion)
+{
+    m_addressIPVersion = _addressIPVersion;
+    m_addressIPVersionHasBeenSet = true;
+}
+
+bool LoadBalancer::AddressIPVersionHasBeenSet() const
+{
+    return m_addressIPVersionHasBeenSet;
+}
+
+vector<Tag> LoadBalancer::GetTags() const
+{
+    return m_tags;
+}
+
+void LoadBalancer::SetTags(const vector<Tag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool LoadBalancer::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
+}
+
+ExtensiveClusters LoadBalancer::GetExtensiveClusters() const
+{
+    return m_extensiveClusters;
+}
+
+void LoadBalancer::SetExtensiveClusters(const ExtensiveClusters& _extensiveClusters)
+{
+    m_extensiveClusters = _extensiveClusters;
+    m_extensiveClustersHasBeenSet = true;
+}
+
+bool LoadBalancer::ExtensiveClustersHasBeenSet() const
+{
+    return m_extensiveClustersHasBeenSet;
 }
 

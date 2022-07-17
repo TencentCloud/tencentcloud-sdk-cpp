@@ -24,7 +24,8 @@ WorkloadConfig::WorkloadConfig() :
     m_replicasHasBeenSet(false),
     m_resourcesHasBeenSet(false),
     m_horizontalPodAutoscalerHasBeenSet(false),
-    m_selectedNodeListHasBeenSet(false)
+    m_selectedNodeListHasBeenSet(false),
+    m_deployModeHasBeenSet(false)
 {
 }
 
@@ -90,6 +91,16 @@ CoreInternalOutcome WorkloadConfig::Deserialize(const rapidjson::Value &value)
         m_selectedNodeListHasBeenSet = true;
     }
 
+    if (value.HasMember("DeployMode") && !value["DeployMode"].IsNull())
+    {
+        if (!value["DeployMode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `WorkloadConfig.DeployMode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_deployMode = string(value["DeployMode"].GetString());
+        m_deployModeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -134,6 +145,14 @@ void WorkloadConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_deployModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeployMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_deployMode.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -201,5 +220,21 @@ void WorkloadConfig::SetSelectedNodeList(const vector<string>& _selectedNodeList
 bool WorkloadConfig::SelectedNodeListHasBeenSet() const
 {
     return m_selectedNodeListHasBeenSet;
+}
+
+string WorkloadConfig::GetDeployMode() const
+{
+    return m_deployMode;
+}
+
+void WorkloadConfig::SetDeployMode(const string& _deployMode)
+{
+    m_deployMode = _deployMode;
+    m_deployModeHasBeenSet = true;
+}
+
+bool WorkloadConfig::DeployModeHasBeenSet() const
+{
+    return m_deployModeHasBeenSet;
 }
 

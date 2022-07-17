@@ -1115,6 +1115,49 @@ WafClient::DescribeWafThreatenIntelligenceOutcomeCallable WafClient::DescribeWaf
     return task->get_future();
 }
 
+WafClient::GetAttackDownloadRecordsOutcome WafClient::GetAttackDownloadRecords(const GetAttackDownloadRecordsRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetAttackDownloadRecords");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetAttackDownloadRecordsResponse rsp = GetAttackDownloadRecordsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetAttackDownloadRecordsOutcome(rsp);
+        else
+            return GetAttackDownloadRecordsOutcome(o.GetError());
+    }
+    else
+    {
+        return GetAttackDownloadRecordsOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::GetAttackDownloadRecordsAsync(const GetAttackDownloadRecordsRequest& request, const GetAttackDownloadRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetAttackDownloadRecords(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::GetAttackDownloadRecordsOutcomeCallable WafClient::GetAttackDownloadRecordsCallable(const GetAttackDownloadRecordsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetAttackDownloadRecordsOutcome()>>(
+        [this, request]()
+        {
+            return this->GetAttackDownloadRecords(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WafClient::ModifyAccessPeriodOutcome WafClient::ModifyAccessPeriod(const ModifyAccessPeriodRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyAccessPeriod");

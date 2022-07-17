@@ -24,6 +24,8 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/sqlserver/v20180328/model/CrossBackupAddr.h>
+#include <tencentcloud/sqlserver/v20180328/model/CrossRegionStatus.h>
 
 
 namespace TencentCloud
@@ -298,6 +300,60 @@ namespace TencentCloud
                      */
                     bool BackupFormatHasBeenSet() const;
 
+                    /**
+                     * 获取实例当前地域Code
+                     * @return Region 实例当前地域Code
+                     */
+                    std::string GetRegion() const;
+
+                    /**
+                     * 设置实例当前地域Code
+                     * @param Region 实例当前地域Code
+                     */
+                    void SetRegion(const std::string& _region);
+
+                    /**
+                     * 判断参数 Region 是否已赋值
+                     * @return Region 是否已赋值
+                     */
+                    bool RegionHasBeenSet() const;
+
+                    /**
+                     * 获取跨地域备份的目的地域下载链接
+                     * @return CrossBackupAddr 跨地域备份的目的地域下载链接
+                     */
+                    std::vector<CrossBackupAddr> GetCrossBackupAddr() const;
+
+                    /**
+                     * 设置跨地域备份的目的地域下载链接
+                     * @param CrossBackupAddr 跨地域备份的目的地域下载链接
+                     */
+                    void SetCrossBackupAddr(const std::vector<CrossBackupAddr>& _crossBackupAddr);
+
+                    /**
+                     * 判断参数 CrossBackupAddr 是否已赋值
+                     * @return CrossBackupAddr 是否已赋值
+                     */
+                    bool CrossBackupAddrHasBeenSet() const;
+
+                    /**
+                     * 获取跨地域备份的目标地域和备份状态
+                     * @return CrossBackupStatus 跨地域备份的目标地域和备份状态
+                     */
+                    std::vector<CrossRegionStatus> GetCrossBackupStatus() const;
+
+                    /**
+                     * 设置跨地域备份的目标地域和备份状态
+                     * @param CrossBackupStatus 跨地域备份的目标地域和备份状态
+                     */
+                    void SetCrossBackupStatus(const std::vector<CrossRegionStatus>& _crossBackupStatus);
+
+                    /**
+                     * 判断参数 CrossBackupStatus 是否已赋值
+                     * @return CrossBackupStatus 是否已赋值
+                     */
+                    bool CrossBackupStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -383,6 +439,24 @@ namespace TencentCloud
                      */
                     std::string m_backupFormat;
                     bool m_backupFormatHasBeenSet;
+
+                    /**
+                     * 实例当前地域Code
+                     */
+                    std::string m_region;
+                    bool m_regionHasBeenSet;
+
+                    /**
+                     * 跨地域备份的目的地域下载链接
+                     */
+                    std::vector<CrossBackupAddr> m_crossBackupAddr;
+                    bool m_crossBackupAddrHasBeenSet;
+
+                    /**
+                     * 跨地域备份的目标地域和备份状态
+                     */
+                    std::vector<CrossRegionStatus> m_crossBackupStatus;
+                    bool m_crossBackupStatusHasBeenSet;
 
                 };
             }

@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/ocr/v20181119/model/Rect.h>
+#include <tencentcloud/ocr/v20181119/model/LicensePlateInfo.h>
 
 
 namespace TencentCloud
@@ -92,6 +93,18 @@ namespace TencentCloud
                      */
                     bool ColorHasBeenSet() const;
 
+                    /**
+                     * 获取全部车牌信息。
+                     * @return LicensePlateInfos 全部车牌信息。
+                     */
+                    std::vector<LicensePlateInfo> GetLicensePlateInfos() const;
+
+                    /**
+                     * 判断参数 LicensePlateInfos 是否已赋值
+                     * @return LicensePlateInfos 是否已赋值
+                     */
+                    bool LicensePlateInfosHasBeenSet() const;
+
                 private:
 
                     /**
@@ -117,6 +130,12 @@ namespace TencentCloud
                      */
                     std::string m_color;
                     bool m_colorHasBeenSet;
+
+                    /**
+                     * 全部车牌信息。
+                     */
+                    std::vector<LicensePlateInfo> m_licensePlateInfos;
+                    bool m_licensePlateInfosHasBeenSet;
 
                 };
             }

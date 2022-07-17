@@ -30,7 +30,9 @@ ExtractRuleInfo::ExtractRuleInfo() :
     m_filterKeyRegexHasBeenSet(false),
     m_unMatchUpLoadSwitchHasBeenSet(false),
     m_unMatchLogKeyHasBeenSet(false),
-    m_backtrackingHasBeenSet(false)
+    m_backtrackingHasBeenSet(false),
+    m_isGBKHasBeenSet(false),
+    m_jsonStandardHasBeenSet(false)
 {
 }
 
@@ -152,6 +154,26 @@ CoreInternalOutcome ExtractRuleInfo::Deserialize(const rapidjson::Value &value)
         m_backtrackingHasBeenSet = true;
     }
 
+    if (value.HasMember("IsGBK") && !value["IsGBK"].IsNull())
+    {
+        if (!value["IsGBK"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ExtractRuleInfo.IsGBK` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isGBK = value["IsGBK"].GetInt64();
+        m_isGBKHasBeenSet = true;
+    }
+
+    if (value.HasMember("JsonStandard") && !value["JsonStandard"].IsNull())
+    {
+        if (!value["JsonStandard"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ExtractRuleInfo.JsonStandard` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_jsonStandard = value["JsonStandard"].GetInt64();
+        m_jsonStandardHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -249,6 +271,22 @@ void ExtractRuleInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "Backtracking";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_backtracking, allocator);
+    }
+
+    if (m_isGBKHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsGBK";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isGBK, allocator);
+    }
+
+    if (m_jsonStandardHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "JsonStandard";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_jsonStandard, allocator);
     }
 
 }
@@ -412,5 +450,37 @@ void ExtractRuleInfo::SetBacktracking(const int64_t& _backtracking)
 bool ExtractRuleInfo::BacktrackingHasBeenSet() const
 {
     return m_backtrackingHasBeenSet;
+}
+
+int64_t ExtractRuleInfo::GetIsGBK() const
+{
+    return m_isGBK;
+}
+
+void ExtractRuleInfo::SetIsGBK(const int64_t& _isGBK)
+{
+    m_isGBK = _isGBK;
+    m_isGBKHasBeenSet = true;
+}
+
+bool ExtractRuleInfo::IsGBKHasBeenSet() const
+{
+    return m_isGBKHasBeenSet;
+}
+
+int64_t ExtractRuleInfo::GetJsonStandard() const
+{
+    return m_jsonStandard;
+}
+
+void ExtractRuleInfo::SetJsonStandard(const int64_t& _jsonStandard)
+{
+    m_jsonStandard = _jsonStandard;
+    m_jsonStandardHasBeenSet = true;
+}
+
+bool ExtractRuleInfo::JsonStandardHasBeenSet() const
+{
+    return m_jsonStandardHasBeenSet;
 }
 

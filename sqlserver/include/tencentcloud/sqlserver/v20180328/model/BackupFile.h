@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/sqlserver/v20180328/model/CrossBackupAddr.h>
 
 
 namespace TencentCloud
@@ -136,6 +137,42 @@ namespace TencentCloud
                      */
                     bool DownloadLinkHasBeenSet() const;
 
+                    /**
+                     * 获取当前实例地域码
+                     * @return Region 当前实例地域码
+                     */
+                    std::string GetRegion() const;
+
+                    /**
+                     * 设置当前实例地域码
+                     * @param Region 当前实例地域码
+                     */
+                    void SetRegion(const std::string& _region);
+
+                    /**
+                     * 判断参数 Region 是否已赋值
+                     * @return Region 是否已赋值
+                     */
+                    bool RegionHasBeenSet() const;
+
+                    /**
+                     * 获取备份的跨地域region和所对应的下载地址
+                     * @return CrossBackupAddr 备份的跨地域region和所对应的下载地址
+                     */
+                    std::vector<CrossBackupAddr> GetCrossBackupAddr() const;
+
+                    /**
+                     * 设置备份的跨地域region和所对应的下载地址
+                     * @param CrossBackupAddr 备份的跨地域region和所对应的下载地址
+                     */
+                    void SetCrossBackupAddr(const std::vector<CrossBackupAddr>& _crossBackupAddr);
+
+                    /**
+                     * 判断参数 CrossBackupAddr 是否已赋值
+                     * @return CrossBackupAddr 是否已赋值
+                     */
+                    bool CrossBackupAddrHasBeenSet() const;
+
                 private:
 
                     /**
@@ -167,6 +204,18 @@ namespace TencentCloud
                      */
                     std::string m_downloadLink;
                     bool m_downloadLinkHasBeenSet;
+
+                    /**
+                     * 当前实例地域码
+                     */
+                    std::string m_region;
+                    bool m_regionHasBeenSet;
+
+                    /**
+                     * 备份的跨地域region和所对应的下载地址
+                     */
+                    std::vector<CrossBackupAddr> m_crossBackupAddr;
+                    bool m_crossBackupAddrHasBeenSet;
 
                 };
             }

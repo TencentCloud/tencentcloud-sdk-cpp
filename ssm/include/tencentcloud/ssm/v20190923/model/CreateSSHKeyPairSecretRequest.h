@@ -141,6 +141,24 @@ namespace TencentCloud
                      */
                     bool TagsHasBeenSet() const;
 
+                    /**
+                     * 获取用户自定义输入的SSH密钥对的名称，可由数字，字母和下划线组成，只能以数字和字母开头，长度不超过25个字符。
+                     * @return SSHKeyName 用户自定义输入的SSH密钥对的名称，可由数字，字母和下划线组成，只能以数字和字母开头，长度不超过25个字符。
+                     */
+                    std::string GetSSHKeyName() const;
+
+                    /**
+                     * 设置用户自定义输入的SSH密钥对的名称，可由数字，字母和下划线组成，只能以数字和字母开头，长度不超过25个字符。
+                     * @param SSHKeyName 用户自定义输入的SSH密钥对的名称，可由数字，字母和下划线组成，只能以数字和字母开头，长度不超过25个字符。
+                     */
+                    void SetSSHKeyName(const std::string& _sSHKeyName);
+
+                    /**
+                     * 判断参数 SSHKeyName 是否已赋值
+                     * @return SSHKeyName 是否已赋值
+                     */
+                    bool SSHKeyNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -174,6 +192,12 @@ namespace TencentCloud
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
+
+                    /**
+                     * 用户自定义输入的SSH密钥对的名称，可由数字，字母和下划线组成，只能以数字和字母开头，长度不超过25个字符。
+                     */
+                    std::string m_sSHKeyName;
+                    bool m_sSHKeyNameHasBeenSet;
 
                 };
             }

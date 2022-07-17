@@ -262,6 +262,24 @@ namespace TencentCloud
                      */
                     bool TypeHasBeenSet() const;
 
+                    /**
+                     * 获取集群关联的 Namespace 列表
+                     * @return HostedNamespaces 集群关联的 Namespace 列表
+                     */
+                    std::vector<std::string> GetHostedNamespaces() const;
+
+                    /**
+                     * 设置集群关联的 Namespace 列表
+                     * @param HostedNamespaces 集群关联的 Namespace 列表
+                     */
+                    void SetHostedNamespaces(const std::vector<std::string>& _hostedNamespaces);
+
+                    /**
+                     * 判断参数 HostedNamespaces 是否已赋值
+                     * @return HostedNamespaces 是否已赋值
+                     */
+                    bool HostedNamespacesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -333,6 +351,12 @@ namespace TencentCloud
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
+
+                    /**
+                     * 集群关联的 Namespace 列表
+                     */
+                    std::vector<std::string> m_hostedNamespaces;
+                    bool m_hostedNamespacesHasBeenSet;
 
                 };
             }

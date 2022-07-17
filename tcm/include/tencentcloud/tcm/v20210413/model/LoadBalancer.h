@@ -24,6 +24,8 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tcm/v20210413/model/Tag.h>
+#include <tencentcloud/tcm/v20210413/model/ExtensiveClusters.h>
 
 
 namespace TencentCloud
@@ -109,14 +111,14 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool InternetChargeTypeHasBeenSet() const;
 
                     /**
-                     * 获取最大出带宽，单位Mbps，范围支持0到2048，仅对公网属性的LB生效，默认值 10
-                     * @return InternetMaxBandwidthOut 最大出带宽，单位Mbps，范围支持0到2048，仅对公网属性的LB生效，默认值 10
+                     * 获取最大出带宽，单位Mbps，仅对公网属性的LB生效，默认值 10
+                     * @return InternetMaxBandwidthOut 最大出带宽，单位Mbps，仅对公网属性的LB生效，默认值 10
                      */
                     int64_t GetInternetMaxBandwidthOut() const;
 
                     /**
-                     * 设置最大出带宽，单位Mbps，范围支持0到2048，仅对公网属性的LB生效，默认值 10
-                     * @param InternetMaxBandwidthOut 最大出带宽，单位Mbps，范围支持0到2048，仅对公网属性的LB生效，默认值 10
+                     * 设置最大出带宽，单位Mbps，仅对公网属性的LB生效，默认值 10
+                     * @param InternetMaxBandwidthOut 最大出带宽，单位Mbps，仅对公网属性的LB生效，默认值 10
                      */
                     void SetInternetMaxBandwidthOut(const int64_t& _internetMaxBandwidthOut);
 
@@ -125,6 +127,138 @@ OPEN：公网属性， INTERNAL：内网属性。
                      * @return InternetMaxBandwidthOut 是否已赋值
                      */
                     bool InternetMaxBandwidthOutHasBeenSet() const;
+
+                    /**
+                     * 获取可用区 ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ZoneID 可用区 ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetZoneID() const;
+
+                    /**
+                     * 设置可用区 ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ZoneID 可用区 ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetZoneID(const std::string& _zoneID);
+
+                    /**
+                     * 判断参数 ZoneID 是否已赋值
+                     * @return ZoneID 是否已赋值
+                     */
+                    bool ZoneIDHasBeenSet() const;
+
+                    /**
+                     * 获取运营商类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return VipIsp 运营商类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetVipIsp() const;
+
+                    /**
+                     * 设置运营商类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param VipIsp 运营商类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetVipIsp(const std::string& _vipIsp);
+
+                    /**
+                     * 判断参数 VipIsp 是否已赋值
+                     * @return VipIsp 是否已赋值
+                     */
+                    bool VipIspHasBeenSet() const;
+
+                    /**
+                     * 获取TGW Group 名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TgwGroupName TGW Group 名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetTgwGroupName() const;
+
+                    /**
+                     * 设置TGW Group 名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TgwGroupName TGW Group 名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTgwGroupName(const std::string& _tgwGroupName);
+
+                    /**
+                     * 判断参数 TgwGroupName 是否已赋值
+                     * @return TgwGroupName 是否已赋值
+                     */
+                    bool TgwGroupNameHasBeenSet() const;
+
+                    /**
+                     * 获取IP 类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AddressIPVersion IP 类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetAddressIPVersion() const;
+
+                    /**
+                     * 设置IP 类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AddressIPVersion IP 类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAddressIPVersion(const std::string& _addressIPVersion);
+
+                    /**
+                     * 判断参数 AddressIPVersion 是否已赋值
+                     * @return AddressIPVersion 是否已赋值
+                     */
+                    bool AddressIPVersionHasBeenSet() const;
+
+                    /**
+                     * 获取标签列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Tags 标签列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Tag> GetTags() const;
+
+                    /**
+                     * 设置标签列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Tags 标签列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTags(const std::vector<Tag>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     */
+                    bool TagsHasBeenSet() const;
+
+                    /**
+                     * 获取内网独占集群配置列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ExtensiveClusters 内网独占集群配置列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ExtensiveClusters GetExtensiveClusters() const;
+
+                    /**
+                     * 设置内网独占集群配置列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ExtensiveClusters 内网独占集群配置列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetExtensiveClusters(const ExtensiveClusters& _extensiveClusters);
+
+                    /**
+                     * 判断参数 ExtensiveClusters 是否已赋值
+                     * @return ExtensiveClusters 是否已赋值
+                     */
+                    bool ExtensiveClustersHasBeenSet() const;
 
                 private:
 
@@ -149,10 +283,52 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool m_internetChargeTypeHasBeenSet;
 
                     /**
-                     * 最大出带宽，单位Mbps，范围支持0到2048，仅对公网属性的LB生效，默认值 10
+                     * 最大出带宽，单位Mbps，仅对公网属性的LB生效，默认值 10
                      */
                     int64_t m_internetMaxBandwidthOut;
                     bool m_internetMaxBandwidthOutHasBeenSet;
+
+                    /**
+                     * 可用区 ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_zoneID;
+                    bool m_zoneIDHasBeenSet;
+
+                    /**
+                     * 运营商类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_vipIsp;
+                    bool m_vipIspHasBeenSet;
+
+                    /**
+                     * TGW Group 名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_tgwGroupName;
+                    bool m_tgwGroupNameHasBeenSet;
+
+                    /**
+                     * IP 类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_addressIPVersion;
+                    bool m_addressIPVersionHasBeenSet;
+
+                    /**
+                     * 标签列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Tag> m_tags;
+                    bool m_tagsHasBeenSet;
+
+                    /**
+                     * 内网独占集群配置列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ExtensiveClusters m_extensiveClusters;
+                    bool m_extensiveClustersHasBeenSet;
 
                 };
             }

@@ -33,7 +33,8 @@ ProcessMediaRequest::ProcessMediaRequest() :
     m_taskNotifyConfigHasBeenSet(false),
     m_tasksPriorityHasBeenSet(false),
     m_sessionIdHasBeenSet(false),
-    m_sessionContextHasBeenSet(false)
+    m_sessionContextHasBeenSet(false),
+    m_scheduleIdHasBeenSet(false)
 {
 }
 
@@ -137,6 +138,14 @@ string ProcessMediaRequest::ToJsonString() const
         string key = "SessionContext";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_sessionContext.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_scheduleIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScheduleId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_scheduleId, allocator);
     }
 
 
@@ -321,6 +330,22 @@ void ProcessMediaRequest::SetSessionContext(const string& _sessionContext)
 bool ProcessMediaRequest::SessionContextHasBeenSet() const
 {
     return m_sessionContextHasBeenSet;
+}
+
+int64_t ProcessMediaRequest::GetScheduleId() const
+{
+    return m_scheduleId;
+}
+
+void ProcessMediaRequest::SetScheduleId(const int64_t& _scheduleId)
+{
+    m_scheduleId = _scheduleId;
+    m_scheduleIdHasBeenSet = true;
+}
+
+bool ProcessMediaRequest::ScheduleIdHasBeenSet() const
+{
+    return m_scheduleIdHasBeenSet;
 }
 
 
