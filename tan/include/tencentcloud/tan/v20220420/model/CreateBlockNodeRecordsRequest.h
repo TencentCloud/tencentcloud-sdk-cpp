@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取盘查实例id
-                     * @return GroupId 盘查实例id
+                     * 获取盘查组id，可在“盘查组概览”功能中获取。
+                     * @return GroupId 盘查组id，可在“盘查组概览”功能中获取。
                      */
                     std::string GetGroupId() const;
 
                     /**
-                     * 设置盘查实例id
-                     * @param GroupId 盘查实例id
+                     * 设置盘查组id，可在“盘查组概览”功能中获取。
+                     * @param GroupId 盘查组id，可在“盘查组概览”功能中获取。
                      */
                     void SetGroupId(const std::string& _groupId);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool GroupIdHasBeenSet() const;
 
                     /**
-                     * 获取节点id
-                     * @return NodeId 节点id
+                     * 获取节点id，可在“数据接入管理”中获取。
+                     * @return NodeId 节点id，可在“数据接入管理”中获取。
                      */
                     std::string GetNodeId() const;
 
                     /**
-                     * 设置节点id
-                     * @param NodeId 节点id
+                     * 设置节点id，可在“数据接入管理”中获取。
+                     * @param NodeId 节点id，可在“数据接入管理”中获取。
                      */
                     void SetNodeId(const std::string& _nodeId);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool NodeIdHasBeenSet() const;
 
                     /**
-                     * 获取节点记录-json
-                     * @return Records 节点记录-json
+                     * 获取节点数据json，具体demo请参考输入示例，其中key为数据接入管理中节点内创建的属性变量名，value为期望的推送值。
+                     * @return Records 节点数据json，具体demo请参考输入示例，其中key为数据接入管理中节点内创建的属性变量名，value为期望的推送值。
                      */
                     std::string GetRecords() const;
 
                     /**
-                     * 设置节点记录-json
-                     * @param Records 节点记录-json
+                     * 设置节点数据json，具体demo请参考输入示例，其中key为数据接入管理中节点内创建的属性变量名，value为期望的推送值。
+                     * @param Records 节点数据json，具体demo请参考输入示例，其中key为数据接入管理中节点内创建的属性变量名，value为期望的推送值。
                      */
                     void SetRecords(const std::string& _records);
 
@@ -99,19 +99,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 盘查实例id
+                     * 盘查组id，可在“盘查组概览”功能中获取。
                      */
                     std::string m_groupId;
                     bool m_groupIdHasBeenSet;
 
                     /**
-                     * 节点id
+                     * 节点id，可在“数据接入管理”中获取。
                      */
                     std::string m_nodeId;
                     bool m_nodeIdHasBeenSet;
 
                     /**
-                     * 节点记录-json
+                     * 节点数据json，具体demo请参考输入示例，其中key为数据接入管理中节点内创建的属性变量名，value为期望的推送值。
                      */
                     std::string m_records;
                     bool m_recordsHasBeenSet;

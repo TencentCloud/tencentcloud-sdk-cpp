@@ -334,6 +334,42 @@ namespace TencentCloud
                      */
                     bool MotorBankAccountHasBeenSet() const;
 
+                    /**
+                     * 获取销售地址
+                     * @return SellerAddress 销售地址
+                     */
+                    std::string GetSellerAddress() const;
+
+                    /**
+                     * 设置销售地址
+                     * @param SellerAddress 销售地址
+                     */
+                    void SetSellerAddress(const std::string& _sellerAddress);
+
+                    /**
+                     * 判断参数 SellerAddress 是否已赋值
+                     * @return SellerAddress 是否已赋值
+                     */
+                    bool SellerAddressHasBeenSet() const;
+
+                    /**
+                     * 获取销售电话
+                     * @return SellerTel 销售电话
+                     */
+                    std::string GetSellerTel() const;
+
+                    /**
+                     * 设置销售电话
+                     * @param SellerTel 销售电话
+                     */
+                    void SetSellerTel(const std::string& _sellerTel);
+
+                    /**
+                     * 判断参数 SellerTel 是否已赋值
+                     * @return SellerTel 是否已赋值
+                     */
+                    bool SellerTelHasBeenSet() const;
+
                 private:
 
                     /**
@@ -431,6 +467,18 @@ namespace TencentCloud
                      */
                     std::string m_motorBankAccount;
                     bool m_motorBankAccountHasBeenSet;
+
+                    /**
+                     * 销售地址
+                     */
+                    std::string m_sellerAddress;
+                    bool m_sellerAddressHasBeenSet;
+
+                    /**
+                     * 销售电话
+                     */
+                    std::string m_sellerTel;
+                    bool m_sellerTelHasBeenSet;
 
                 };
             }

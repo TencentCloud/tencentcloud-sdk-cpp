@@ -21,9 +21,9 @@ using namespace TencentCloud::Taf::V20200210::Model;
 using namespace std;
 
 InputRecognizeTargetAudience::InputRecognizeTargetAudience() :
+    m_modelIdListHasBeenSet(false),
     m_uidHasBeenSet(false),
     m_accountTypeHasBeenSet(false),
-    m_modelIdListHasBeenSet(false),
     m_ipHasBeenSet(false),
     m_osHasBeenSet(false),
     m_osvHasBeenSet(false),
@@ -69,6 +69,19 @@ CoreInternalOutcome InputRecognizeTargetAudience::Deserialize(const rapidjson::V
     string requestId = "";
 
 
+    if (value.HasMember("ModelIdList") && !value["ModelIdList"].IsNull())
+    {
+        if (!value["ModelIdList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `InputRecognizeTargetAudience.ModelIdList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ModelIdList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_modelIdList.push_back((*itr).GetInt64());
+        }
+        m_modelIdListHasBeenSet = true;
+    }
+
     if (value.HasMember("Uid") && !value["Uid"].IsNull())
     {
         if (!value["Uid"].IsString())
@@ -87,19 +100,6 @@ CoreInternalOutcome InputRecognizeTargetAudience::Deserialize(const rapidjson::V
         }
         m_accountType = value["AccountType"].GetInt64();
         m_accountTypeHasBeenSet = true;
-    }
-
-    if (value.HasMember("ModelIdList") && !value["ModelIdList"].IsNull())
-    {
-        if (!value["ModelIdList"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `InputRecognizeTargetAudience.ModelIdList` is not array type"));
-
-        const rapidjson::Value &tmpValue = value["ModelIdList"];
-        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
-        {
-            m_modelIdList.push_back((*itr).GetInt64());
-        }
-        m_modelIdListHasBeenSet = true;
     }
 
     if (value.HasMember("Ip") && !value["Ip"].IsNull())
@@ -489,6 +489,19 @@ CoreInternalOutcome InputRecognizeTargetAudience::Deserialize(const rapidjson::V
 void InputRecognizeTargetAudience::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
+    if (m_modelIdListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModelIdList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_modelIdList.begin(); itr != m_modelIdList.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
+    }
+
     if (m_uidHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -503,19 +516,6 @@ void InputRecognizeTargetAudience::ToJsonObject(rapidjson::Value &value, rapidjs
         string key = "AccountType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_accountType, allocator);
-    }
-
-    if (m_modelIdListHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ModelIdList";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        for (auto itr = m_modelIdList.begin(); itr != m_modelIdList.end(); ++itr)
-        {
-            value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
-        }
     }
 
     if (m_ipHasBeenSet)
@@ -824,6 +824,22 @@ void InputRecognizeTargetAudience::ToJsonObject(rapidjson::Value &value, rapidjs
 }
 
 
+vector<int64_t> InputRecognizeTargetAudience::GetModelIdList() const
+{
+    return m_modelIdList;
+}
+
+void InputRecognizeTargetAudience::SetModelIdList(const vector<int64_t>& _modelIdList)
+{
+    m_modelIdList = _modelIdList;
+    m_modelIdListHasBeenSet = true;
+}
+
+bool InputRecognizeTargetAudience::ModelIdListHasBeenSet() const
+{
+    return m_modelIdListHasBeenSet;
+}
+
 string InputRecognizeTargetAudience::GetUid() const
 {
     return m_uid;
@@ -854,22 +870,6 @@ void InputRecognizeTargetAudience::SetAccountType(const int64_t& _accountType)
 bool InputRecognizeTargetAudience::AccountTypeHasBeenSet() const
 {
     return m_accountTypeHasBeenSet;
-}
-
-vector<int64_t> InputRecognizeTargetAudience::GetModelIdList() const
-{
-    return m_modelIdList;
-}
-
-void InputRecognizeTargetAudience::SetModelIdList(const vector<int64_t>& _modelIdList)
-{
-    m_modelIdList = _modelIdList;
-    m_modelIdListHasBeenSet = true;
-}
-
-bool InputRecognizeTargetAudience::ModelIdListHasBeenSet() const
-{
-    return m_modelIdListHasBeenSet;
 }
 
 string InputRecognizeTargetAudience::GetIp() const

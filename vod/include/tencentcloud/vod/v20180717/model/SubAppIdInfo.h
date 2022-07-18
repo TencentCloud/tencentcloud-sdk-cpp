@@ -66,21 +66,21 @@ namespace TencentCloud
 
                     /**
                      * 获取子应用名称。
-                     * @return Name 子应用名称。
+                     * @return SubAppIdName 子应用名称。
                      */
-                    std::string GetName() const;
+                    std::string GetSubAppIdName() const;
 
                     /**
                      * 设置子应用名称。
-                     * @param Name 子应用名称。
+                     * @param SubAppIdName 子应用名称。
                      */
-                    void SetName(const std::string& _name);
+                    void SetSubAppIdName(const std::string& _subAppIdName);
 
                     /**
-                     * 判断参数 Name 是否已赋值
-                     * @return Name 是否已赋值
+                     * 判断参数 SubAppIdName 是否已赋值
+                     * @return SubAppIdName 是否已赋值
                      */
-                    bool NameHasBeenSet() const;
+                    bool SubAppIdNameHasBeenSet() const;
 
                     /**
                      * 获取子应用简介。
@@ -152,6 +152,24 @@ namespace TencentCloud
                      */
                     bool StatusHasBeenSet() const;
 
+                    /**
+                     * 获取子应用名称（该字段已不推荐使用，建议使用新的子应用名称字段 SubAppIdName）。
+                     * @return Name 子应用名称（该字段已不推荐使用，建议使用新的子应用名称字段 SubAppIdName）。
+                     */
+                    std::string GetName() const;
+
+                    /**
+                     * 设置子应用名称（该字段已不推荐使用，建议使用新的子应用名称字段 SubAppIdName）。
+                     * @param Name 子应用名称（该字段已不推荐使用，建议使用新的子应用名称字段 SubAppIdName）。
+                     */
+                    void SetName(const std::string& _name);
+
+                    /**
+                     * 判断参数 Name 是否已赋值
+                     * @return Name 是否已赋值
+                     */
+                    bool NameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -163,8 +181,8 @@ namespace TencentCloud
                     /**
                      * 子应用名称。
                      */
-                    std::string m_name;
-                    bool m_nameHasBeenSet;
+                    std::string m_subAppIdName;
+                    bool m_subAppIdNameHasBeenSet;
 
                     /**
                      * 子应用简介。
@@ -187,6 +205,12 @@ namespace TencentCloud
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * 子应用名称（该字段已不推荐使用，建议使用新的子应用名称字段 SubAppIdName）。
+                     */
+                    std::string m_name;
+                    bool m_nameHasBeenSet;
 
                 };
             }

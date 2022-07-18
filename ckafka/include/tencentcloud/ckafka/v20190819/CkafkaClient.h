@@ -33,8 +33,12 @@
 #include <tencentcloud/ckafka/v20190819/model/BatchModifyTopicAttributesResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/CancelAuthorizationTokenRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/CancelAuthorizationTokenResponse.h>
+#include <tencentcloud/ckafka/v20190819/model/CheckCdcClusterRequest.h>
+#include <tencentcloud/ckafka/v20190819/model/CheckCdcClusterResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/CreateAclRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/CreateAclResponse.h>
+#include <tencentcloud/ckafka/v20190819/model/CreateCdcClusterRequest.h>
+#include <tencentcloud/ckafka/v20190819/model/CreateCdcClusterResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/CreateConsumerRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/CreateConsumerResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/CreateInstancePreRequest.h>
@@ -148,9 +152,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CancelAuthorizationTokenResponse> CancelAuthorizationTokenOutcome;
                 typedef std::future<CancelAuthorizationTokenOutcome> CancelAuthorizationTokenOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::CancelAuthorizationTokenRequest&, CancelAuthorizationTokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CancelAuthorizationTokenAsyncHandler;
+                typedef Outcome<Core::Error, Model::CheckCdcClusterResponse> CheckCdcClusterOutcome;
+                typedef std::future<CheckCdcClusterOutcome> CheckCdcClusterOutcomeCallable;
+                typedef std::function<void(const CkafkaClient*, const Model::CheckCdcClusterRequest&, CheckCdcClusterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckCdcClusterAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateAclResponse> CreateAclOutcome;
                 typedef std::future<CreateAclOutcome> CreateAclOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::CreateAclRequest&, CreateAclOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAclAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateCdcClusterResponse> CreateCdcClusterOutcome;
+                typedef std::future<CreateCdcClusterOutcome> CreateCdcClusterOutcomeCallable;
+                typedef std::function<void(const CkafkaClient*, const Model::CreateCdcClusterRequest&, CreateCdcClusterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCdcClusterAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateConsumerResponse> CreateConsumerOutcome;
                 typedef std::future<CreateConsumerOutcome> CreateConsumerOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::CreateConsumerRequest&, CreateConsumerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateConsumerAsyncHandler;
@@ -326,6 +336,15 @@ namespace TencentCloud
                 CancelAuthorizationTokenOutcomeCallable CancelAuthorizationTokenCallable(const Model::CancelAuthorizationTokenRequest& request);
 
                 /**
+                 *用于查询cdc-ckafka任务状态
+                 * @param req CheckCdcClusterRequest
+                 * @return CheckCdcClusterOutcome
+                 */
+                CheckCdcClusterOutcome CheckCdcCluster(const Model::CheckCdcClusterRequest &request);
+                void CheckCdcClusterAsync(const Model::CheckCdcClusterRequest& request, const CheckCdcClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CheckCdcClusterOutcomeCallable CheckCdcClusterCallable(const Model::CheckCdcClusterRequest& request);
+
+                /**
                  *添加 ACL 策略
                  * @param req CreateAclRequest
                  * @return CreateAclOutcome
@@ -333,6 +352,15 @@ namespace TencentCloud
                 CreateAclOutcome CreateAcl(const Model::CreateAclRequest &request);
                 void CreateAclAsync(const Model::CreateAclRequest& request, const CreateAclAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateAclOutcomeCallable CreateAclCallable(const Model::CreateAclRequest& request);
+
+                /**
+                 *用于cdc的专用ckafka集群
+                 * @param req CreateCdcClusterRequest
+                 * @return CreateCdcClusterOutcome
+                 */
+                CreateCdcClusterOutcome CreateCdcCluster(const Model::CreateCdcClusterRequest &request);
+                void CreateCdcClusterAsync(const Model::CreateCdcClusterRequest& request, const CreateCdcClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateCdcClusterOutcomeCallable CreateCdcClusterCallable(const Model::CreateCdcClusterRequest& request);
 
                 /**
                  *创建消费者组

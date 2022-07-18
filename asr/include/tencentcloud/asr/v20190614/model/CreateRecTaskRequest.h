@@ -43,7 +43,7 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取引擎模型类型。
+                     * 获取引擎模型类型。注意：非电话场景请务必使用16k的引擎。
 电话场景：
 • 8k_en：电话 8k 英语；
 • 8k_zh：电话 8k 中文普通话通用；
@@ -58,7 +58,7 @@ namespace TencentCloud
 • 16k_zh_medical  医疗；
 • 16k_th 泰语；
 • 16k_zh_dialect：多方言，支持23种方言。
-                     * @return EngineModelType 引擎模型类型。
+                     * @return EngineModelType 引擎模型类型。注意：非电话场景请务必使用16k的引擎。
 电话场景：
 • 8k_en：电话 8k 英语；
 • 8k_zh：电话 8k 中文普通话通用；
@@ -77,7 +77,7 @@ namespace TencentCloud
                     std::string GetEngineModelType() const;
 
                     /**
-                     * 设置引擎模型类型。
+                     * 设置引擎模型类型。注意：非电话场景请务必使用16k的引擎。
 电话场景：
 • 8k_en：电话 8k 英语；
 • 8k_zh：电话 8k 中文普通话通用；
@@ -92,7 +92,7 @@ namespace TencentCloud
 • 16k_zh_medical  医疗；
 • 16k_th 泰语；
 • 16k_zh_dialect：多方言，支持23种方言。
-                     * @param EngineModelType 引擎模型类型。
+                     * @param EngineModelType 引擎模型类型。注意：非电话场景请务必使用16k的引擎。
 电话场景：
 • 8k_en：电话 8k 英语；
 • 8k_zh：电话 8k 中文普通话通用；
@@ -415,7 +415,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 引擎模型类型。
+                     * 引擎模型类型。注意：非电话场景请务必使用16k的引擎。
 电话场景：
 • 8k_en：电话 8k 英语；
 • 8k_zh：电话 8k 中文普通话通用；

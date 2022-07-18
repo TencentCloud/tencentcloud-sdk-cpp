@@ -23,9 +23,10 @@ using namespace std;
 MediaClassInfo::MediaClassInfo() :
     m_classIdHasBeenSet(false),
     m_parentIdHasBeenSet(false),
-    m_classNameHasBeenSet(false),
+    m_nameHasBeenSet(false),
     m_levelHasBeenSet(false),
-    m_subClassIdSetHasBeenSet(false)
+    m_subClassIdSetHasBeenSet(false),
+    m_classNameHasBeenSet(false)
 {
 }
 
@@ -54,14 +55,14 @@ CoreInternalOutcome MediaClassInfo::Deserialize(const rapidjson::Value &value)
         m_parentIdHasBeenSet = true;
     }
 
-    if (value.HasMember("ClassName") && !value["ClassName"].IsNull())
+    if (value.HasMember("Name") && !value["Name"].IsNull())
     {
-        if (!value["ClassName"].IsString())
+        if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `MediaClassInfo.ClassName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaClassInfo.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_className = string(value["ClassName"].GetString());
-        m_classNameHasBeenSet = true;
+        m_name = string(value["Name"].GetString());
+        m_nameHasBeenSet = true;
     }
 
     if (value.HasMember("Level") && !value["Level"].IsNull())
@@ -87,6 +88,16 @@ CoreInternalOutcome MediaClassInfo::Deserialize(const rapidjson::Value &value)
         m_subClassIdSetHasBeenSet = true;
     }
 
+    if (value.HasMember("ClassName") && !value["ClassName"].IsNull())
+    {
+        if (!value["ClassName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MediaClassInfo.ClassName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_className = string(value["ClassName"].GetString());
+        m_classNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,12 +121,12 @@ void MediaClassInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         value.AddMember(iKey, m_parentId, allocator);
     }
 
-    if (m_classNameHasBeenSet)
+    if (m_nameHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ClassName";
+        string key = "Name";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_className.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
     if (m_levelHasBeenSet)
@@ -137,6 +148,14 @@ void MediaClassInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
+    }
+
+    if (m_classNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClassName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_className.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -174,20 +193,20 @@ bool MediaClassInfo::ParentIdHasBeenSet() const
     return m_parentIdHasBeenSet;
 }
 
-string MediaClassInfo::GetClassName() const
+string MediaClassInfo::GetName() const
 {
-    return m_className;
+    return m_name;
 }
 
-void MediaClassInfo::SetClassName(const string& _className)
+void MediaClassInfo::SetName(const string& _name)
 {
-    m_className = _className;
-    m_classNameHasBeenSet = true;
+    m_name = _name;
+    m_nameHasBeenSet = true;
 }
 
-bool MediaClassInfo::ClassNameHasBeenSet() const
+bool MediaClassInfo::NameHasBeenSet() const
 {
-    return m_classNameHasBeenSet;
+    return m_nameHasBeenSet;
 }
 
 uint64_t MediaClassInfo::GetLevel() const
@@ -220,5 +239,21 @@ void MediaClassInfo::SetSubClassIdSet(const vector<int64_t>& _subClassIdSet)
 bool MediaClassInfo::SubClassIdSetHasBeenSet() const
 {
     return m_subClassIdSetHasBeenSet;
+}
+
+string MediaClassInfo::GetClassName() const
+{
+    return m_className;
+}
+
+void MediaClassInfo::SetClassName(const string& _className)
+{
+    m_className = _className;
+    m_classNameHasBeenSet = true;
+}
+
+bool MediaClassInfo::ClassNameHasBeenSet() const
+{
+    return m_classNameHasBeenSet;
 }
 

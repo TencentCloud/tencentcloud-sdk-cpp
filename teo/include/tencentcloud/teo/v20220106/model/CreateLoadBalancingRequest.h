@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool ZoneIdHasBeenSet() const;
 
                     /**
-                     * 获取子域名，填写@表示根域
-                     * @return Host 子域名，填写@表示根域
+                     * 获取子域名
+                     * @return Host 子域名
                      */
                     std::string GetHost() const;
 
                     /**
-                     * 设置子域名，填写@表示根域
-                     * @param Host 子域名，填写@表示根域
+                     * 设置子域名
+                     * @param Host 子域名
                      */
                     void SetHost(const std::string& _host);
 
@@ -149,7 +149,7 @@ proxied: 开启代理
                     bool m_zoneIdHasBeenSet;
 
                     /**
-                     * 子域名，填写@表示根域
+                     * 子域名
                      */
                     std::string m_host;
                     bool m_hostHasBeenSet;

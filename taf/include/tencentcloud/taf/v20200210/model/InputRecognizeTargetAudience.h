@@ -48,6 +48,24 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取模型ID列表
+                     * @return ModelIdList 模型ID列表
+                     */
+                    std::vector<int64_t> GetModelIdList() const;
+
+                    /**
+                     * 设置模型ID列表
+                     * @param ModelIdList 模型ID列表
+                     */
+                    void SetModelIdList(const std::vector<int64_t>& _modelIdList);
+
+                    /**
+                     * 判断参数 ModelIdList 是否已赋值
+                     * @return ModelIdList 是否已赋值
+                     */
+                    bool ModelIdListHasBeenSet() const;
+
+                    /**
                      * 获取设备ID，AccountType指定的类型
                      * @return Uid 设备ID，AccountType指定的类型
                      */
@@ -82,24 +100,6 @@ namespace TencentCloud
                      * @return AccountType 是否已赋值
                      */
                     bool AccountTypeHasBeenSet() const;
-
-                    /**
-                     * 获取模型ID列表
-                     * @return ModelIdList 模型ID列表
-                     */
-                    std::vector<int64_t> GetModelIdList() const;
-
-                    /**
-                     * 设置模型ID列表
-                     * @param ModelIdList 模型ID列表
-                     */
-                    void SetModelIdList(const std::vector<int64_t>& _modelIdList);
-
-                    /**
-                     * 判断参数 ModelIdList 是否已赋值
-                     * @return ModelIdList 是否已赋值
-                     */
-                    bool ModelIdListHasBeenSet() const;
 
                     /**
                      * 获取用户IP
@@ -770,6 +770,12 @@ namespace TencentCloud
                 private:
 
                     /**
+                     * 模型ID列表
+                     */
+                    std::vector<int64_t> m_modelIdList;
+                    bool m_modelIdListHasBeenSet;
+
+                    /**
                      * 设备ID，AccountType指定的类型
                      */
                     std::string m_uid;
@@ -780,12 +786,6 @@ namespace TencentCloud
                      */
                     int64_t m_accountType;
                     bool m_accountTypeHasBeenSet;
-
-                    /**
-                     * 模型ID列表
-                     */
-                    std::vector<int64_t> m_modelIdList;
-                    bool m_modelIdListHasBeenSet;
 
                     /**
                      * 用户IP

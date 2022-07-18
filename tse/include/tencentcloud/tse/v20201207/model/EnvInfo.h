@@ -263,6 +263,42 @@ namespace TencentCloud
                      */
                     bool AliasEnvNameHasBeenSet() const;
 
+                    /**
+                     * 获取环境描述
+                     * @return EnvDesc 环境描述
+                     */
+                    std::string GetEnvDesc() const;
+
+                    /**
+                     * 设置环境描述
+                     * @param EnvDesc 环境描述
+                     */
+                    void SetEnvDesc(const std::string& _envDesc);
+
+                    /**
+                     * 判断参数 EnvDesc 是否已赋值
+                     * @return EnvDesc 是否已赋值
+                     */
+                    bool EnvDescHasBeenSet() const;
+
+                    /**
+                     * 获取客户端带宽
+                     * @return ClientBandWidth 客户端带宽
+                     */
+                    uint64_t GetClientBandWidth() const;
+
+                    /**
+                     * 设置客户端带宽
+                     * @param ClientBandWidth 客户端带宽
+                     */
+                    void SetClientBandWidth(const uint64_t& _clientBandWidth);
+
+                    /**
+                     * 判断参数 ClientBandWidth 是否已赋值
+                     * @return ClientBandWidth 是否已赋值
+                     */
+                    bool ClientBandWidthHasBeenSet() const;
+
                 private:
 
                     /**
@@ -336,6 +372,18 @@ namespace TencentCloud
                      */
                     std::string m_aliasEnvName;
                     bool m_aliasEnvNameHasBeenSet;
+
+                    /**
+                     * 环境描述
+                     */
+                    std::string m_envDesc;
+                    bool m_envDescHasBeenSet;
+
+                    /**
+                     * 客户端带宽
+                     */
+                    uint64_t m_clientBandWidth;
+                    bool m_clientBandWidthHasBeenSet;
 
                 };
             }

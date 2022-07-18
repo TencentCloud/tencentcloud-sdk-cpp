@@ -193,6 +193,24 @@ namespace TencentCloud
                     bool SniSwitchHasBeenSet() const;
 
                     /**
+                     * 获取后端目标类型，NODE表示绑定普通节点，TARGETGROUP表示绑定目标组。
+                     * @return TargetType 后端目标类型，NODE表示绑定普通节点，TARGETGROUP表示绑定目标组。
+                     */
+                    std::string GetTargetType() const;
+
+                    /**
+                     * 设置后端目标类型，NODE表示绑定普通节点，TARGETGROUP表示绑定目标组。
+                     * @param TargetType 后端目标类型，NODE表示绑定普通节点，TARGETGROUP表示绑定目标组。
+                     */
+                    void SetTargetType(const std::string& _targetType);
+
+                    /**
+                     * 判断参数 TargetType 是否已赋值
+                     * @return TargetType 是否已赋值
+                     */
+                    bool TargetTypeHasBeenSet() const;
+
+                    /**
                      * 获取是否开启长连接，此参数仅适用于HTTP/HTTPS监听器。
                      * @return KeepaliveEnable 是否开启长连接，此参数仅适用于HTTP/HTTPS监听器。
                      */
@@ -296,6 +314,12 @@ namespace TencentCloud
                      */
                     int64_t m_sniSwitch;
                     bool m_sniSwitchHasBeenSet;
+
+                    /**
+                     * 后端目标类型，NODE表示绑定普通节点，TARGETGROUP表示绑定目标组。
+                     */
+                    std::string m_targetType;
+                    bool m_targetTypeHasBeenSet;
 
                     /**
                      * 是否开启长连接，此参数仅适用于HTTP/HTTPS监听器。

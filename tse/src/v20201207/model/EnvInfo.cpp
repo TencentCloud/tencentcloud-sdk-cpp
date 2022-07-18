@@ -32,7 +32,9 @@ EnvInfo::EnvInfo() :
     m_specIdHasBeenSet(false),
     m_envReplicaHasBeenSet(false),
     m_runningCountHasBeenSet(false),
-    m_aliasEnvNameHasBeenSet(false)
+    m_aliasEnvNameHasBeenSet(false),
+    m_envDescHasBeenSet(false),
+    m_clientBandWidthHasBeenSet(false)
 {
 }
 
@@ -171,6 +173,26 @@ CoreInternalOutcome EnvInfo::Deserialize(const rapidjson::Value &value)
         m_aliasEnvNameHasBeenSet = true;
     }
 
+    if (value.HasMember("EnvDesc") && !value["EnvDesc"].IsNull())
+    {
+        if (!value["EnvDesc"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EnvInfo.EnvDesc` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_envDesc = string(value["EnvDesc"].GetString());
+        m_envDescHasBeenSet = true;
+    }
+
+    if (value.HasMember("ClientBandWidth") && !value["ClientBandWidth"].IsNull())
+    {
+        if (!value["ClientBandWidth"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `EnvInfo.ClientBandWidth` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_clientBandWidth = value["ClientBandWidth"].GetUint64();
+        m_clientBandWidthHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -279,6 +301,22 @@ void EnvInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "AliasEnvName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_aliasEnvName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_envDescHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnvDesc";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_envDesc.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clientBandWidthHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClientBandWidth";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_clientBandWidth, allocator);
     }
 
 }
@@ -474,5 +512,37 @@ void EnvInfo::SetAliasEnvName(const string& _aliasEnvName)
 bool EnvInfo::AliasEnvNameHasBeenSet() const
 {
     return m_aliasEnvNameHasBeenSet;
+}
+
+string EnvInfo::GetEnvDesc() const
+{
+    return m_envDesc;
+}
+
+void EnvInfo::SetEnvDesc(const string& _envDesc)
+{
+    m_envDesc = _envDesc;
+    m_envDescHasBeenSet = true;
+}
+
+bool EnvInfo::EnvDescHasBeenSet() const
+{
+    return m_envDescHasBeenSet;
+}
+
+uint64_t EnvInfo::GetClientBandWidth() const
+{
+    return m_clientBandWidth;
+}
+
+void EnvInfo::SetClientBandWidth(const uint64_t& _clientBandWidth)
+{
+    m_clientBandWidth = _clientBandWidth;
+    m_clientBandWidthHasBeenSet = true;
+}
+
+bool EnvInfo::ClientBandWidthHasBeenSet() const
+{
+    return m_clientBandWidthHasBeenSet;
 }
 

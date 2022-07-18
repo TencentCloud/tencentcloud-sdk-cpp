@@ -31,6 +31,7 @@ ModifyListenerRequest::ModifyListenerRequest() :
     m_certificateHasBeenSet(false),
     m_schedulerHasBeenSet(false),
     m_sniSwitchHasBeenSet(false),
+    m_targetTypeHasBeenSet(false),
     m_keepaliveEnableHasBeenSet(false),
     m_deregisterTargetRstHasBeenSet(false),
     m_sessionTypeHasBeenSet(false)
@@ -108,6 +109,14 @@ string ModifyListenerRequest::ToJsonString() const
         string key = "SniSwitch";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_sniSwitch, allocator);
+    }
+
+    if (m_targetTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TargetType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_targetType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_keepaliveEnableHasBeenSet)
@@ -268,6 +277,22 @@ void ModifyListenerRequest::SetSniSwitch(const int64_t& _sniSwitch)
 bool ModifyListenerRequest::SniSwitchHasBeenSet() const
 {
     return m_sniSwitchHasBeenSet;
+}
+
+string ModifyListenerRequest::GetTargetType() const
+{
+    return m_targetType;
+}
+
+void ModifyListenerRequest::SetTargetType(const string& _targetType)
+{
+    m_targetType = _targetType;
+    m_targetTypeHasBeenSet = true;
+}
+
+bool ModifyListenerRequest::TargetTypeHasBeenSet() const
+{
+    return m_targetTypeHasBeenSet;
 }
 
 int64_t ModifyListenerRequest::GetKeepaliveEnable() const

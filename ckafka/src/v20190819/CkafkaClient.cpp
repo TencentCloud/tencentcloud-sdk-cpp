@@ -255,6 +255,49 @@ CkafkaClient::CancelAuthorizationTokenOutcomeCallable CkafkaClient::CancelAuthor
     return task->get_future();
 }
 
+CkafkaClient::CheckCdcClusterOutcome CkafkaClient::CheckCdcCluster(const CheckCdcClusterRequest &request)
+{
+    auto outcome = MakeRequest(request, "CheckCdcCluster");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CheckCdcClusterResponse rsp = CheckCdcClusterResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CheckCdcClusterOutcome(rsp);
+        else
+            return CheckCdcClusterOutcome(o.GetError());
+    }
+    else
+    {
+        return CheckCdcClusterOutcome(outcome.GetError());
+    }
+}
+
+void CkafkaClient::CheckCdcClusterAsync(const CheckCdcClusterRequest& request, const CheckCdcClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CheckCdcCluster(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CkafkaClient::CheckCdcClusterOutcomeCallable CkafkaClient::CheckCdcClusterCallable(const CheckCdcClusterRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CheckCdcClusterOutcome()>>(
+        [this, request]()
+        {
+            return this->CheckCdcCluster(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CkafkaClient::CreateAclOutcome CkafkaClient::CreateAcl(const CreateAclRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateAcl");
@@ -291,6 +334,49 @@ CkafkaClient::CreateAclOutcomeCallable CkafkaClient::CreateAclCallable(const Cre
         [this, request]()
         {
             return this->CreateAcl(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CkafkaClient::CreateCdcClusterOutcome CkafkaClient::CreateCdcCluster(const CreateCdcClusterRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateCdcCluster");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateCdcClusterResponse rsp = CreateCdcClusterResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateCdcClusterOutcome(rsp);
+        else
+            return CreateCdcClusterOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateCdcClusterOutcome(outcome.GetError());
+    }
+}
+
+void CkafkaClient::CreateCdcClusterAsync(const CreateCdcClusterRequest& request, const CreateCdcClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateCdcCluster(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CkafkaClient::CreateCdcClusterOutcomeCallable CkafkaClient::CreateCdcClusterCallable(const CreateCdcClusterRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateCdcClusterOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateCdcCluster(request);
         }
     );
 
