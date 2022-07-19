@@ -31,6 +31,8 @@
 #include <tencentcloud/ciam/v20220331/model/CreateUserResponse.h>
 #include <tencentcloud/ciam/v20220331/model/DeleteUsersRequest.h>
 #include <tencentcloud/ciam/v20220331/model/DeleteUsersResponse.h>
+#include <tencentcloud/ciam/v20220331/model/DescribeUserRequest.h>
+#include <tencentcloud/ciam/v20220331/model/DescribeUserResponse.h>
 #include <tencentcloud/ciam/v20220331/model/DescribeUserByIdRequest.h>
 #include <tencentcloud/ciam/v20220331/model/DescribeUserByIdResponse.h>
 #include <tencentcloud/ciam/v20220331/model/LinkAccountRequest.h>
@@ -77,6 +79,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteUsersResponse> DeleteUsersOutcome;
                 typedef std::future<DeleteUsersOutcome> DeleteUsersOutcomeCallable;
                 typedef std::function<void(const CiamClient*, const Model::DeleteUsersRequest&, DeleteUsersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteUsersAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeUserResponse> DescribeUserOutcome;
+                typedef std::future<DescribeUserOutcome> DescribeUserOutcomeCallable;
+                typedef std::function<void(const CiamClient*, const Model::DescribeUserRequest&, DescribeUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeUserByIdResponse> DescribeUserByIdOutcome;
                 typedef std::future<DescribeUserByIdOutcome> DescribeUserByIdOutcomeCallable;
                 typedef std::function<void(const CiamClient*, const Model::DescribeUserByIdRequest&, DescribeUserByIdOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserByIdAsyncHandler;
@@ -145,6 +150,15 @@ namespace TencentCloud
                 DeleteUsersOutcome DeleteUsers(const Model::DeleteUsersRequest &request);
                 void DeleteUsersAsync(const Model::DeleteUsersRequest& request, const DeleteUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteUsersOutcomeCallable DeleteUsersCallable(const Model::DeleteUsersRequest& request);
+
+                /**
+                 *多条件查询用户信息
+                 * @param req DescribeUserRequest
+                 * @return DescribeUserOutcome
+                 */
+                DescribeUserOutcome DescribeUser(const Model::DescribeUserRequest &request);
+                void DescribeUserAsync(const Model::DescribeUserRequest& request, const DescribeUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeUserOutcomeCallable DescribeUserCallable(const Model::DescribeUserRequest& request);
 
                 /**
                  *根据ID查询用户信息

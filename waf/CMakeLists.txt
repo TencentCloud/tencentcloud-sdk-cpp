@@ -55,14 +55,17 @@ set(waf_public_header_model
   include/tencentcloud/waf/v20180125/model/DescribeAutoDenyIPRequest.h
   include/tencentcloud/waf/v20180125/model/DescribeIpAccessControlRequest.h
   include/tencentcloud/waf/v20180125/model/AddSpartaProtectionRequest.h
+  include/tencentcloud/waf/v20180125/model/PostAttackDownloadTaskRequest.h
   include/tencentcloud/waf/v20180125/model/DescribeAccessFastAnalysisRequest.h
   include/tencentcloud/waf/v20180125/model/DeleteIpAccessControlRequest.h
   include/tencentcloud/waf/v20180125/model/DeleteDomainWhiteRulesResponse.h
+  include/tencentcloud/waf/v20180125/model/DownloadAttackRecordInfo.h
   include/tencentcloud/waf/v20180125/model/CreateAttackDownloadTaskRequest.h
   include/tencentcloud/waf/v20180125/model/DescribeWafAutoDenyStatusResponse.h
   include/tencentcloud/waf/v20180125/model/DeleteDomainWhiteRulesRequest.h
   include/tencentcloud/waf/v20180125/model/DomainPackageNew.h
   include/tencentcloud/waf/v20180125/model/RuleList.h
+  include/tencentcloud/waf/v20180125/model/PostAttackDownloadTaskResponse.h
   include/tencentcloud/waf/v20180125/model/ModifyCustomRuleStatusResponse.h
   include/tencentcloud/waf/v20180125/model/AddSpartaProtectionResponse.h
   include/tencentcloud/waf/v20180125/model/IpAccessControlData.h
@@ -155,14 +158,17 @@ set(waf_src
   src/v20180125/model/DescribeAutoDenyIPRequest.cpp
   src/v20180125/model/DescribeIpAccessControlRequest.cpp
   src/v20180125/model/AddSpartaProtectionRequest.cpp
+  src/v20180125/model/PostAttackDownloadTaskRequest.cpp
   src/v20180125/model/DescribeAccessFastAnalysisRequest.cpp
   src/v20180125/model/DeleteIpAccessControlRequest.cpp
   src/v20180125/model/DeleteDomainWhiteRulesResponse.cpp
+  src/v20180125/model/DownloadAttackRecordInfo.cpp
   src/v20180125/model/CreateAttackDownloadTaskRequest.cpp
   src/v20180125/model/DescribeWafAutoDenyStatusResponse.cpp
   src/v20180125/model/DeleteDomainWhiteRulesRequest.cpp
   src/v20180125/model/DomainPackageNew.cpp
   src/v20180125/model/RuleList.cpp
+  src/v20180125/model/PostAttackDownloadTaskResponse.cpp
   src/v20180125/model/ModifyCustomRuleStatusResponse.cpp
   src/v20180125/model/AddSpartaProtectionResponse.cpp
   src/v20180125/model/IpAccessControlData.cpp

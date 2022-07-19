@@ -349,6 +349,24 @@ namespace TencentCloud
                      */
                     bool QuotaConsumerByteRateHasBeenSet() const;
 
+                    /**
+                     * 获取调整topic副本数
+                     * @return ReplicaNum 调整topic副本数
+                     */
+                    int64_t GetReplicaNum() const;
+
+                    /**
+                     * 设置调整topic副本数
+                     * @param ReplicaNum 调整topic副本数
+                     */
+                    void SetReplicaNum(const int64_t& _replicaNum);
+
+                    /**
+                     * 判断参数 ReplicaNum 是否已赋值
+                     * @return ReplicaNum 是否已赋值
+                     */
+                    bool ReplicaNumHasBeenSet() const;
+
                 private:
 
                     /**
@@ -452,6 +470,12 @@ namespace TencentCloud
                      */
                     int64_t m_quotaConsumerByteRate;
                     bool m_quotaConsumerByteRateHasBeenSet;
+
+                    /**
+                     * 调整topic副本数
+                     */
+                    int64_t m_replicaNum;
+                    bool m_replicaNumHasBeenSet;
 
                 };
             }

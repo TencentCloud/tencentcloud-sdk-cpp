@@ -25,7 +25,8 @@ using namespace std;
 ListUserRequest::ListUserRequest() :
     m_userStoreIdHasBeenSet(false),
     m_pageableHasBeenSet(false),
-    m_filtersHasBeenSet(false)
+    m_filtersHasBeenSet(false),
+    m_originalHasBeenSet(false)
 {
 }
 
@@ -66,6 +67,14 @@ string ListUserRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_originalHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Original";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_original, allocator);
     }
 
 
@@ -122,6 +131,22 @@ void ListUserRequest::SetFilters(const vector<Filter>& _filters)
 bool ListUserRequest::FiltersHasBeenSet() const
 {
     return m_filtersHasBeenSet;
+}
+
+bool ListUserRequest::GetOriginal() const
+{
+    return m_original;
+}
+
+void ListUserRequest::SetOriginal(const bool& _original)
+{
+    m_original = _original;
+    m_originalHasBeenSet = true;
+}
+
+bool ListUserRequest::OriginalHasBeenSet() const
+{
+    return m_originalHasBeenSet;
 }
 
 

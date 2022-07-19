@@ -385,6 +385,50 @@ namespace TencentCloud
                      */
                     bool ActionTypeHasBeenSet() const;
 
+                    /**
+                     * 获取是否可重试
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsExecuteRedo 是否可重试
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetIsExecuteRedo() const;
+
+                    /**
+                     * 设置是否可重试
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param IsExecuteRedo 是否可重试
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIsExecuteRedo(const bool& _isExecuteRedo);
+
+                    /**
+                     * 判断参数 IsExecuteRedo 是否已赋值
+                     * @return IsExecuteRedo 是否已赋值
+                     */
+                    bool IsExecuteRedoHasBeenSet() const;
+
+                    /**
+                     * 获取动作风险级别
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ActionRisk 动作风险级别
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetActionRisk() const;
+
+                    /**
+                     * 设置动作风险级别
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ActionRisk 动作风险级别
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetActionRisk(const std::string& _actionRisk);
+
+                    /**
+                     * 判断参数 ActionRisk 是否已赋值
+                     * @return ActionRisk 是否已赋值
+                     */
+                    bool ActionRiskHasBeenSet() const;
+
                 private:
 
                     /**
@@ -496,6 +540,20 @@ namespace TencentCloud
                      */
                     std::string m_actionType;
                     bool m_actionTypeHasBeenSet;
+
+                    /**
+                     * 是否可重试
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_isExecuteRedo;
+                    bool m_isExecuteRedoHasBeenSet;
+
+                    /**
+                     * 动作风险级别
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_actionRisk;
+                    bool m_actionRiskHasBeenSet;
 
                 };
             }

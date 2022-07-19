@@ -212,6 +212,49 @@ CiamClient::DeleteUsersOutcomeCallable CiamClient::DeleteUsersCallable(const Del
     return task->get_future();
 }
 
+CiamClient::DescribeUserOutcome CiamClient::DescribeUser(const DescribeUserRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeUser");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeUserResponse rsp = DescribeUserResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeUserOutcome(rsp);
+        else
+            return DescribeUserOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeUserOutcome(outcome.GetError());
+    }
+}
+
+void CiamClient::DescribeUserAsync(const DescribeUserRequest& request, const DescribeUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeUser(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CiamClient::DescribeUserOutcomeCallable CiamClient::DescribeUserCallable(const DescribeUserRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeUserOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeUser(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CiamClient::DescribeUserByIdOutcome CiamClient::DescribeUserById(const DescribeUserByIdRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeUserById");

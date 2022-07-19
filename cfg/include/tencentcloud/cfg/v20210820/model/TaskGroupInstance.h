@@ -224,6 +224,28 @@ namespace TencentCloud
                      */
                     bool TaskGroupInstanceEndTimeHasBeenSet() const;
 
+                    /**
+                     * 获取实例是否可重试
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TaskGroupInstanceIsRedo 实例是否可重试
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetTaskGroupInstanceIsRedo() const;
+
+                    /**
+                     * 设置实例是否可重试
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TaskGroupInstanceIsRedo 实例是否可重试
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTaskGroupInstanceIsRedo(const bool& _taskGroupInstanceIsRedo);
+
+                    /**
+                     * 判断参数 TaskGroupInstanceIsRedo 是否已赋值
+                     * @return TaskGroupInstanceIsRedo 是否已赋值
+                     */
+                    bool TaskGroupInstanceIsRedoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -283,6 +305,13 @@ namespace TencentCloud
                      */
                     std::string m_taskGroupInstanceEndTime;
                     bool m_taskGroupInstanceEndTimeHasBeenSet;
+
+                    /**
+                     * 实例是否可重试
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_taskGroupInstanceIsRedo;
+                    bool m_taskGroupInstanceIsRedoHasBeenSet;
 
                 };
             }

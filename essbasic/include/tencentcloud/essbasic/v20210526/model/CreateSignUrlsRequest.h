@@ -104,11 +104,13 @@ namespace TencentCloud
 "CHANNEL"：渠道合作企业；
 "NOT_CHANNEL"：非渠道合作企业；
 "PERSON"：个人；
+"FOLLOWER"：关注方，目前是合同抄送方；
                      * @return GenerateType 签署链接生成类型，默认是 "ALL"；
 "ALL"：全部签署方签署链接；
 "CHANNEL"：渠道合作企业；
 "NOT_CHANNEL"：非渠道合作企业；
 "PERSON"：个人；
+"FOLLOWER"：关注方，目前是合同抄送方；
                      */
                     std::string GetGenerateType() const;
 
@@ -118,11 +120,13 @@ namespace TencentCloud
 "CHANNEL"：渠道合作企业；
 "NOT_CHANNEL"：非渠道合作企业；
 "PERSON"：个人；
+"FOLLOWER"：关注方，目前是合同抄送方；
                      * @param GenerateType 签署链接生成类型，默认是 "ALL"；
 "ALL"：全部签署方签署链接；
 "CHANNEL"：渠道合作企业；
 "NOT_CHANNEL"：非渠道合作企业；
 "PERSON"：个人；
+"FOLLOWER"：关注方，目前是合同抄送方；
                      */
                     void SetGenerateType(const std::string& _generateType);
 
@@ -169,14 +173,18 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取参与人手机号，GenerateType为"PERSON"时必填
-                     * @return Mobile 参与人手机号，GenerateType为"PERSON"时必填
+                     * 获取参与人手机号；
+GenerateType为"PERSON"或"FOLLOWER"时必填
+                     * @return Mobile 参与人手机号；
+GenerateType为"PERSON"或"FOLLOWER"时必填
                      */
                     std::string GetMobile() const;
 
                     /**
-                     * 设置参与人手机号，GenerateType为"PERSON"时必填
-                     * @param Mobile 参与人手机号，GenerateType为"PERSON"时必填
+                     * 设置参与人手机号；
+GenerateType为"PERSON"或"FOLLOWER"时必填
+                     * @param Mobile 参与人手机号；
+GenerateType为"PERSON"或"FOLLOWER"时必填
                      */
                     void SetMobile(const std::string& _mobile);
 
@@ -302,6 +310,7 @@ namespace TencentCloud
 "CHANNEL"：渠道合作企业；
 "NOT_CHANNEL"：非渠道合作企业；
 "PERSON"：个人；
+"FOLLOWER"：关注方，目前是合同抄送方；
                      */
                     std::string m_generateType;
                     bool m_generateTypeHasBeenSet;
@@ -319,7 +328,8 @@ namespace TencentCloud
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 参与人手机号，GenerateType为"PERSON"时必填
+                     * 参与人手机号；
+GenerateType为"PERSON"或"FOLLOWER"时必填
                      */
                     std::string m_mobile;
                     bool m_mobileHasBeenSet;

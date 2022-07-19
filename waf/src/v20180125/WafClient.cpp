@@ -1416,6 +1416,49 @@ WafClient::ModifyWafThreatenIntelligenceOutcomeCallable WafClient::ModifyWafThre
     return task->get_future();
 }
 
+WafClient::PostAttackDownloadTaskOutcome WafClient::PostAttackDownloadTask(const PostAttackDownloadTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "PostAttackDownloadTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        PostAttackDownloadTaskResponse rsp = PostAttackDownloadTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return PostAttackDownloadTaskOutcome(rsp);
+        else
+            return PostAttackDownloadTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return PostAttackDownloadTaskOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::PostAttackDownloadTaskAsync(const PostAttackDownloadTaskRequest& request, const PostAttackDownloadTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->PostAttackDownloadTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::PostAttackDownloadTaskOutcomeCallable WafClient::PostAttackDownloadTaskCallable(const PostAttackDownloadTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<PostAttackDownloadTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->PostAttackDownloadTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WafClient::SearchAccessLogOutcome WafClient::SearchAccessLog(const SearchAccessLogRequest &request)
 {
     auto outcome = MakeRequest(request, "SearchAccessLog");

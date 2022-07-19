@@ -27,7 +27,8 @@ KTVMusicBaseInfo::KTVMusicBaseInfo() :
     m_durationHasBeenSet(false),
     m_singerImageUrlHasBeenSet(false),
     m_albumInfoHasBeenSet(false),
-    m_rightSetHasBeenSet(false)
+    m_rightSetHasBeenSet(false),
+    m_recommendTypeHasBeenSet(false)
 {
 }
 
@@ -119,6 +120,16 @@ CoreInternalOutcome KTVMusicBaseInfo::Deserialize(const rapidjson::Value &value)
         m_rightSetHasBeenSet = true;
     }
 
+    if (value.HasMember("RecommendType") && !value["RecommendType"].IsNull())
+    {
+        if (!value["RecommendType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `KTVMusicBaseInfo.RecommendType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_recommendType = string(value["RecommendType"].GetString());
+        m_recommendTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -191,6 +202,14 @@ void KTVMusicBaseInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_recommendTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RecommendType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_recommendType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -306,5 +325,21 @@ void KTVMusicBaseInfo::SetRightSet(const vector<string>& _rightSet)
 bool KTVMusicBaseInfo::RightSetHasBeenSet() const
 {
     return m_rightSetHasBeenSet;
+}
+
+string KTVMusicBaseInfo::GetRecommendType() const
+{
+    return m_recommendType;
+}
+
+void KTVMusicBaseInfo::SetRecommendType(const string& _recommendType)
+{
+    m_recommendType = _recommendType;
+    m_recommendTypeHasBeenSet = true;
+}
+
+bool KTVMusicBaseInfo::RecommendTypeHasBeenSet() const
+{
+    return m_recommendTypeHasBeenSet;
 }
 

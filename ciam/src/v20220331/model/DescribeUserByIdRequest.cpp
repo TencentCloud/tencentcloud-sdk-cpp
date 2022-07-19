@@ -24,7 +24,8 @@ using namespace std;
 
 DescribeUserByIdRequest::DescribeUserByIdRequest() :
     m_userStoreIdHasBeenSet(false),
-    m_userIdHasBeenSet(false)
+    m_userIdHasBeenSet(false),
+    m_originalHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string DescribeUserByIdRequest::ToJsonString() const
         string key = "UserId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_userId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_originalHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Original";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_original, allocator);
     }
 
 
@@ -89,6 +98,22 @@ void DescribeUserByIdRequest::SetUserId(const string& _userId)
 bool DescribeUserByIdRequest::UserIdHasBeenSet() const
 {
     return m_userIdHasBeenSet;
+}
+
+bool DescribeUserByIdRequest::GetOriginal() const
+{
+    return m_original;
+}
+
+void DescribeUserByIdRequest::SetOriginal(const bool& _original)
+{
+    m_original = _original;
+    m_originalHasBeenSet = true;
+}
+
+bool DescribeUserByIdRequest::OriginalHasBeenSet() const
+{
+    return m_originalHasBeenSet;
 }
 
 

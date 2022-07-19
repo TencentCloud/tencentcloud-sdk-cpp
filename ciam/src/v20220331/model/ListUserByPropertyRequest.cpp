@@ -25,7 +25,8 @@ using namespace std;
 ListUserByPropertyRequest::ListUserByPropertyRequest() :
     m_userStoreIdHasBeenSet(false),
     m_propertyCodeHasBeenSet(false),
-    m_propertyValueHasBeenSet(false)
+    m_propertyValueHasBeenSet(false),
+    m_originalHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,14 @@ string ListUserByPropertyRequest::ToJsonString() const
         string key = "PropertyValue";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_propertyValue.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_originalHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Original";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_original, allocator);
     }
 
 
@@ -114,6 +123,22 @@ void ListUserByPropertyRequest::SetPropertyValue(const string& _propertyValue)
 bool ListUserByPropertyRequest::PropertyValueHasBeenSet() const
 {
     return m_propertyValueHasBeenSet;
+}
+
+bool ListUserByPropertyRequest::GetOriginal() const
+{
+    return m_original;
+}
+
+void ListUserByPropertyRequest::SetOriginal(const bool& _original)
+{
+    m_original = _original;
+    m_originalHasBeenSet = true;
+}
+
+bool ListUserByPropertyRequest::OriginalHasBeenSet() const
+{
+    return m_originalHasBeenSet;
 }
 
 

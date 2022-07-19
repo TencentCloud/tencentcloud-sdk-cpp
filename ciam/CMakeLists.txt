@@ -24,6 +24,7 @@ set(ciam_public_header_model
   include/tencentcloud/ciam/v20220331/model/ListUserRequest.h
   include/tencentcloud/ciam/v20220331/model/ResetPasswordRequest.h
   include/tencentcloud/ciam/v20220331/model/ErrorDetails.h
+  include/tencentcloud/ciam/v20220331/model/DescribeUserRequest.h
   include/tencentcloud/ciam/v20220331/model/DeleteUsersRequest.h
   include/tencentcloud/ciam/v20220331/model/ImportUser.h
   include/tencentcloud/ciam/v20220331/model/UpdateUserStatusResponse.h
@@ -57,6 +58,8 @@ set(ciam_public_header_model
   include/tencentcloud/ciam/v20220331/model/ListLogMessageByConditionRequest.h
   include/tencentcloud/ciam/v20220331/model/SaltLocationRule.h
   include/tencentcloud/ciam/v20220331/model/MemberMap.h
+  include/tencentcloud/ciam/v20220331/model/QueryUserFilter.h
+  include/tencentcloud/ciam/v20220331/model/DescribeUserResponse.h
   include/tencentcloud/ciam/v20220331/model/ListUserResponse.h
   include/tencentcloud/ciam/v20220331/model/LogMessage.h
   include/tencentcloud/ciam/v20220331/model/ListLogMessageByConditionResponse.h
@@ -69,6 +72,7 @@ set(ciam_src
   src/v20220331/model/ListUserRequest.cpp
   src/v20220331/model/ResetPasswordRequest.cpp
   src/v20220331/model/ErrorDetails.cpp
+  src/v20220331/model/DescribeUserRequest.cpp
   src/v20220331/model/DeleteUsersRequest.cpp
   src/v20220331/model/ImportUser.cpp
   src/v20220331/model/UpdateUserStatusResponse.cpp
@@ -102,6 +106,8 @@ set(ciam_src
   src/v20220331/model/ListLogMessageByConditionRequest.cpp
   src/v20220331/model/SaltLocationRule.cpp
   src/v20220331/model/MemberMap.cpp
+  src/v20220331/model/QueryUserFilter.cpp
+  src/v20220331/model/DescribeUserResponse.cpp
   src/v20220331/model/ListUserResponse.cpp
   src/v20220331/model/LogMessage.cpp
   src/v20220331/model/ListLogMessageByConditionResponse.cpp

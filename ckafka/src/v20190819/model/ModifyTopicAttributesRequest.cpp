@@ -39,7 +39,8 @@ ModifyTopicAttributesRequest::ModifyTopicAttributesRequest() :
     m_retentionBytesHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_quotaProducerByteRateHasBeenSet(false),
-    m_quotaConsumerByteRateHasBeenSet(false)
+    m_quotaConsumerByteRateHasBeenSet(false),
+    m_replicaNumHasBeenSet(false)
 {
 }
 
@@ -196,6 +197,14 @@ string ModifyTopicAttributesRequest::ToJsonString() const
         string key = "QuotaConsumerByteRate";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_quotaConsumerByteRate, allocator);
+    }
+
+    if (m_replicaNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReplicaNum";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_replicaNum, allocator);
     }
 
 
@@ -476,6 +485,22 @@ void ModifyTopicAttributesRequest::SetQuotaConsumerByteRate(const int64_t& _quot
 bool ModifyTopicAttributesRequest::QuotaConsumerByteRateHasBeenSet() const
 {
     return m_quotaConsumerByteRateHasBeenSet;
+}
+
+int64_t ModifyTopicAttributesRequest::GetReplicaNum() const
+{
+    return m_replicaNum;
+}
+
+void ModifyTopicAttributesRequest::SetReplicaNum(const int64_t& _replicaNum)
+{
+    m_replicaNum = _replicaNum;
+    m_replicaNumHasBeenSet = true;
+}
+
+bool ModifyTopicAttributesRequest::ReplicaNumHasBeenSet() const
+{
+    return m_replicaNumHasBeenSet;
 }
 
 

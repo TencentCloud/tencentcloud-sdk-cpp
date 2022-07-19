@@ -566,6 +566,34 @@ namespace TencentCloud
                      */
                     bool EncryptPrivateKeyHasBeenSet() const;
 
+                    /**
+                     * 获取签名证书 SHA1指纹
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CertFingerprint 签名证书 SHA1指纹
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetCertFingerprint() const;
+
+                    /**
+                     * 判断参数 CertFingerprint 是否已赋值
+                     * @return CertFingerprint 是否已赋值
+                     */
+                    bool CertFingerprintHasBeenSet() const;
+
+                    /**
+                     * 获取加密证书 SHA1指纹 （国密证书特有）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EncryptCertFingerprint 加密证书 SHA1指纹 （国密证书特有）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetEncryptCertFingerprint() const;
+
+                    /**
+                     * 判断参数 EncryptCertFingerprint 是否已赋值
+                     * @return EncryptCertFingerprint 是否已赋值
+                     */
+                    bool EncryptCertFingerprintHasBeenSet() const;
+
                 private:
 
                     /**
@@ -826,6 +854,20 @@ namespace TencentCloud
                      */
                     std::string m_encryptPrivateKey;
                     bool m_encryptPrivateKeyHasBeenSet;
+
+                    /**
+                     * 签名证书 SHA1指纹
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_certFingerprint;
+                    bool m_certFingerprintHasBeenSet;
+
+                    /**
+                     * 加密证书 SHA1指纹 （国密证书特有）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_encryptCertFingerprint;
+                    bool m_encryptCertFingerprintHasBeenSet;
 
                 };
             }

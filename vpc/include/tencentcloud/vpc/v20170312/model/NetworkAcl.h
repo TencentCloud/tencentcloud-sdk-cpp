@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/vpc/v20170312/model/Subnet.h>
 #include <tencentcloud/vpc/v20170312/model/NetworkAclEntry.h>
+#include <tencentcloud/vpc/v20170312/model/Tag.h>
 
 
 namespace TencentCloud
@@ -174,6 +175,42 @@ namespace TencentCloud
                      */
                     bool EgressEntriesHasBeenSet() const;
 
+                    /**
+                     * 获取网络ACL类型。三元组：'TRIPLE'   五元组：'QUINTUPLE'
+                     * @return NetworkAclType 网络ACL类型。三元组：'TRIPLE'   五元组：'QUINTUPLE'
+                     */
+                    std::string GetNetworkAclType() const;
+
+                    /**
+                     * 设置网络ACL类型。三元组：'TRIPLE'   五元组：'QUINTUPLE'
+                     * @param NetworkAclType 网络ACL类型。三元组：'TRIPLE'   五元组：'QUINTUPLE'
+                     */
+                    void SetNetworkAclType(const std::string& _networkAclType);
+
+                    /**
+                     * 判断参数 NetworkAclType 是否已赋值
+                     * @return NetworkAclType 是否已赋值
+                     */
+                    bool NetworkAclTypeHasBeenSet() const;
+
+                    /**
+                     * 获取标签键值对
+                     * @return TagSet 标签键值对
+                     */
+                    std::vector<Tag> GetTagSet() const;
+
+                    /**
+                     * 设置标签键值对
+                     * @param TagSet 标签键值对
+                     */
+                    void SetTagSet(const std::vector<Tag>& _tagSet);
+
+                    /**
+                     * 判断参数 TagSet 是否已赋值
+                     * @return TagSet 是否已赋值
+                     */
+                    bool TagSetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -217,6 +254,18 @@ namespace TencentCloud
                      */
                     std::vector<NetworkAclEntry> m_egressEntries;
                     bool m_egressEntriesHasBeenSet;
+
+                    /**
+                     * 网络ACL类型。三元组：'TRIPLE'   五元组：'QUINTUPLE'
+                     */
+                    std::string m_networkAclType;
+                    bool m_networkAclTypeHasBeenSet;
+
+                    /**
+                     * 标签键值对
+                     */
+                    std::vector<Tag> m_tagSet;
+                    bool m_tagSetHasBeenSet;
 
                 };
             }

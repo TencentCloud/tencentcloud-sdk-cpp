@@ -23,7 +23,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Waf::V20180125::Model;
 using namespace std;
 
-GetAttackDownloadRecordsResponse::GetAttackDownloadRecordsResponse()
+GetAttackDownloadRecordsResponse::GetAttackDownloadRecordsResponse() :
+    m_recordsHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,26 @@ CoreInternalOutcome GetAttackDownloadRecordsResponse::Deserialize(const string &
     }
 
 
+    if (rsp.HasMember("Records") && !rsp["Records"].IsNull())
+    {
+        if (!rsp["Records"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Records` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["Records"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            DownloadAttackRecordInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_records.push_back(item);
+        }
+        m_recordsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +91,21 @@ string GetAttackDownloadRecordsResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_recordsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Records";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_records.begin(); itr != m_records.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +118,15 @@ string GetAttackDownloadRecordsResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+vector<DownloadAttackRecordInfo> GetAttackDownloadRecordsResponse::GetRecords() const
+{
+    return m_records;
+}
+
+bool GetAttackDownloadRecordsResponse::RecordsHasBeenSet() const
+{
+    return m_recordsHasBeenSet;
+}
 
 

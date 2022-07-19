@@ -87,6 +87,8 @@
 #include <tencentcloud/waf/v20180125/model/ModifyWafAutoDenyStatusResponse.h>
 #include <tencentcloud/waf/v20180125/model/ModifyWafThreatenIntelligenceRequest.h>
 #include <tencentcloud/waf/v20180125/model/ModifyWafThreatenIntelligenceResponse.h>
+#include <tencentcloud/waf/v20180125/model/PostAttackDownloadTaskRequest.h>
+#include <tencentcloud/waf/v20180125/model/PostAttackDownloadTaskResponse.h>
 #include <tencentcloud/waf/v20180125/model/SearchAccessLogRequest.h>
 #include <tencentcloud/waf/v20180125/model/SearchAccessLogResponse.h>
 #include <tencentcloud/waf/v20180125/model/UpsertIpAccessControlRequest.h>
@@ -201,6 +203,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyWafThreatenIntelligenceResponse> ModifyWafThreatenIntelligenceOutcome;
                 typedef std::future<ModifyWafThreatenIntelligenceOutcome> ModifyWafThreatenIntelligenceOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::ModifyWafThreatenIntelligenceRequest&, ModifyWafThreatenIntelligenceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyWafThreatenIntelligenceAsyncHandler;
+                typedef Outcome<Core::Error, Model::PostAttackDownloadTaskResponse> PostAttackDownloadTaskOutcome;
+                typedef std::future<PostAttackDownloadTaskOutcome> PostAttackDownloadTaskOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::PostAttackDownloadTaskRequest&, PostAttackDownloadTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PostAttackDownloadTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::SearchAccessLogResponse> SearchAccessLogOutcome;
                 typedef std::future<SearchAccessLogOutcome> SearchAccessLogOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::SearchAccessLogRequest&, SearchAccessLogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SearchAccessLogAsyncHandler;
@@ -501,6 +506,15 @@ namespace TencentCloud
                 ModifyWafThreatenIntelligenceOutcome ModifyWafThreatenIntelligence(const Model::ModifyWafThreatenIntelligenceRequest &request);
                 void ModifyWafThreatenIntelligenceAsync(const Model::ModifyWafThreatenIntelligenceRequest& request, const ModifyWafThreatenIntelligenceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyWafThreatenIntelligenceOutcomeCallable ModifyWafThreatenIntelligenceCallable(const Model::ModifyWafThreatenIntelligenceRequest& request);
+
+                /**
+                 *创建搜索下载攻击日志任务，使用CLS新版本的搜索下载getlog接口
+                 * @param req PostAttackDownloadTaskRequest
+                 * @return PostAttackDownloadTaskOutcome
+                 */
+                PostAttackDownloadTaskOutcome PostAttackDownloadTask(const Model::PostAttackDownloadTaskRequest &request);
+                void PostAttackDownloadTaskAsync(const Model::PostAttackDownloadTaskRequest& request, const PostAttackDownloadTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                PostAttackDownloadTaskOutcomeCallable PostAttackDownloadTaskCallable(const Model::PostAttackDownloadTaskRequest& request);
 
                 /**
                  *本接口用于搜索WAF访问日志

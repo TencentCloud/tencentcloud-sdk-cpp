@@ -185,6 +185,32 @@ namespace TencentCloud
                      */
                     bool RightSetHasBeenSet() const;
 
+                    /**
+                     * 获取推荐类型，取值有：
+<li>Featured：精选；</li>
+<li>Other：其他。</li>
+                     * @return RecommendType 推荐类型，取值有：
+<li>Featured：精选；</li>
+<li>Other：其他。</li>
+                     */
+                    std::string GetRecommendType() const;
+
+                    /**
+                     * 设置推荐类型，取值有：
+<li>Featured：精选；</li>
+<li>Other：其他。</li>
+                     * @param RecommendType 推荐类型，取值有：
+<li>Featured：精选；</li>
+<li>Other：其他。</li>
+                     */
+                    void SetRecommendType(const std::string& _recommendType);
+
+                    /**
+                     * 判断参数 RecommendType 是否已赋值
+                     * @return RecommendType 是否已赋值
+                     */
+                    bool RecommendTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -231,6 +257,14 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_rightSet;
                     bool m_rightSetHasBeenSet;
+
+                    /**
+                     * 推荐类型，取值有：
+<li>Featured：精选；</li>
+<li>Other：其他。</li>
+                     */
+                    std::string m_recommendType;
+                    bool m_recommendTypeHasBeenSet;
 
                 };
             }

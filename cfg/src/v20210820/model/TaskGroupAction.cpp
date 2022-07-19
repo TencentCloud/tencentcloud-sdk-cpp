@@ -37,7 +37,9 @@ TaskGroupAction::TaskGroupAction() :
     m_taskGroupActionExecuteIdHasBeenSet(false),
     m_actionApiTypeHasBeenSet(false),
     m_actionAttributeHasBeenSet(false),
-    m_actionTypeHasBeenSet(false)
+    m_actionTypeHasBeenSet(false),
+    m_isExecuteRedoHasBeenSet(false),
+    m_actionRiskHasBeenSet(false)
 {
 }
 
@@ -226,6 +228,26 @@ CoreInternalOutcome TaskGroupAction::Deserialize(const rapidjson::Value &value)
         m_actionTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("IsExecuteRedo") && !value["IsExecuteRedo"].IsNull())
+    {
+        if (!value["IsExecuteRedo"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskGroupAction.IsExecuteRedo` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isExecuteRedo = value["IsExecuteRedo"].GetBool();
+        m_isExecuteRedoHasBeenSet = true;
+    }
+
+    if (value.HasMember("ActionRisk") && !value["ActionRisk"].IsNull())
+    {
+        if (!value["ActionRisk"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskGroupAction.ActionRisk` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_actionRisk = string(value["ActionRisk"].GetString());
+        m_actionRiskHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -374,6 +396,22 @@ void TaskGroupAction::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "ActionType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_actionType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isExecuteRedoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsExecuteRedo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isExecuteRedo, allocator);
+    }
+
+    if (m_actionRiskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ActionRisk";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_actionRisk.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -649,5 +687,37 @@ void TaskGroupAction::SetActionType(const string& _actionType)
 bool TaskGroupAction::ActionTypeHasBeenSet() const
 {
     return m_actionTypeHasBeenSet;
+}
+
+bool TaskGroupAction::GetIsExecuteRedo() const
+{
+    return m_isExecuteRedo;
+}
+
+void TaskGroupAction::SetIsExecuteRedo(const bool& _isExecuteRedo)
+{
+    m_isExecuteRedo = _isExecuteRedo;
+    m_isExecuteRedoHasBeenSet = true;
+}
+
+bool TaskGroupAction::IsExecuteRedoHasBeenSet() const
+{
+    return m_isExecuteRedoHasBeenSet;
+}
+
+string TaskGroupAction::GetActionRisk() const
+{
+    return m_actionRisk;
+}
+
+void TaskGroupAction::SetActionRisk(const string& _actionRisk)
+{
+    m_actionRisk = _actionRisk;
+    m_actionRiskHasBeenSet = true;
+}
+
+bool TaskGroupAction::ActionRiskHasBeenSet() const
+{
+    return m_actionRiskHasBeenSet;
 }
 

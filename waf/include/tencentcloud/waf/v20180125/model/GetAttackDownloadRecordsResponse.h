@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/waf/v20180125/model/DownloadAttackRecordInfo.h>
 
 
 namespace TencentCloud
@@ -43,7 +44,25 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取下载攻击日志记录数组
+                     * @return Records 下载攻击日志记录数组
+                     */
+                    std::vector<DownloadAttackRecordInfo> GetRecords() const;
+
+                    /**
+                     * 判断参数 Records 是否已赋值
+                     * @return Records 是否已赋值
+                     */
+                    bool RecordsHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 下载攻击日志记录数组
+                     */
+                    std::vector<DownloadAttackRecordInfo> m_records;
+                    bool m_recordsHasBeenSet;
 
                 };
             }

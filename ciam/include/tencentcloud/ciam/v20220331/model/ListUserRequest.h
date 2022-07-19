@@ -110,6 +110,24 @@ namespace TencentCloud
                      */
                     bool FiltersHasBeenSet() const;
 
+                    /**
+                     * 获取返回信息是否为原文
+                     * @return Original 返回信息是否为原文
+                     */
+                    bool GetOriginal() const;
+
+                    /**
+                     * 设置返回信息是否为原文
+                     * @param Original 返回信息是否为原文
+                     */
+                    void SetOriginal(const bool& _original);
+
+                    /**
+                     * 判断参数 Original 是否已赋值
+                     * @return Original 是否已赋值
+                     */
+                    bool OriginalHasBeenSet() const;
+
                 private:
 
                     /**
@@ -132,6 +150,12 @@ namespace TencentCloud
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;
+
+                    /**
+                     * 返回信息是否为原文
+                     */
+                    bool m_original;
+                    bool m_originalHasBeenSet;
 
                 };
             }

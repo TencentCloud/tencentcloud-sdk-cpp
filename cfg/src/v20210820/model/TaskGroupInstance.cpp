@@ -29,7 +29,8 @@ TaskGroupInstance::TaskGroupInstance() :
     m_taskGroupInstanceUpdateTimeHasBeenSet(false),
     m_taskGroupInstanceStatusTypeHasBeenSet(false),
     m_taskGroupInstanceStartTimeHasBeenSet(false),
-    m_taskGroupInstanceEndTimeHasBeenSet(false)
+    m_taskGroupInstanceEndTimeHasBeenSet(false),
+    m_taskGroupInstanceIsRedoHasBeenSet(false)
 {
 }
 
@@ -128,6 +129,16 @@ CoreInternalOutcome TaskGroupInstance::Deserialize(const rapidjson::Value &value
         m_taskGroupInstanceEndTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("TaskGroupInstanceIsRedo") && !value["TaskGroupInstanceIsRedo"].IsNull())
+    {
+        if (!value["TaskGroupInstanceIsRedo"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskGroupInstance.TaskGroupInstanceIsRedo` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_taskGroupInstanceIsRedo = value["TaskGroupInstanceIsRedo"].GetBool();
+        m_taskGroupInstanceIsRedoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -205,6 +216,14 @@ void TaskGroupInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "TaskGroupInstanceEndTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_taskGroupInstanceEndTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_taskGroupInstanceIsRedoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskGroupInstanceIsRedo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_taskGroupInstanceIsRedo, allocator);
     }
 
 }
@@ -352,5 +371,21 @@ void TaskGroupInstance::SetTaskGroupInstanceEndTime(const string& _taskGroupInst
 bool TaskGroupInstance::TaskGroupInstanceEndTimeHasBeenSet() const
 {
     return m_taskGroupInstanceEndTimeHasBeenSet;
+}
+
+bool TaskGroupInstance::GetTaskGroupInstanceIsRedo() const
+{
+    return m_taskGroupInstanceIsRedo;
+}
+
+void TaskGroupInstance::SetTaskGroupInstanceIsRedo(const bool& _taskGroupInstanceIsRedo)
+{
+    m_taskGroupInstanceIsRedo = _taskGroupInstanceIsRedo;
+    m_taskGroupInstanceIsRedoHasBeenSet = true;
+}
+
+bool TaskGroupInstance::TaskGroupInstanceIsRedoHasBeenSet() const
+{
+    return m_taskGroupInstanceIsRedoHasBeenSet;
 }
 

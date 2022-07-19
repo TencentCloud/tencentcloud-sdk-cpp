@@ -182,7 +182,7 @@ namespace TencentCloud
                 CreateSealByImageOutcomeCallable CreateSealByImageCallable(const Model::CreateSealByImageRequest& request);
 
                 /**
-                 *创建跳转小程序查看或签署的链接
+                 *创建跳转小程序查看或签署的链接；自动签署的签署方不创建签署链接；
                  * @param req CreateSignUrlsRequest
                  * @return CreateSignUrlsOutcome
                  */
