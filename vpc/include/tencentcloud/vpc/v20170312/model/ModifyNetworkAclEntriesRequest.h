@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/vpc/v20170312/model/NetworkAclEntrySet.h>
+#include <tencentcloud/vpc/v20170312/model/NetworkAclQuintupleEntries.h>
 
 
 namespace TencentCloud
@@ -79,6 +80,24 @@ namespace TencentCloud
                      */
                     bool NetworkAclEntrySetHasBeenSet() const;
 
+                    /**
+                     * 获取网络ACL五元组规则集。NetworkAclEntrySet和NetworkAclQuintupleSet只能输入一个。
+                     * @return NetworkAclQuintupleSet 网络ACL五元组规则集。NetworkAclEntrySet和NetworkAclQuintupleSet只能输入一个。
+                     */
+                    NetworkAclQuintupleEntries GetNetworkAclQuintupleSet() const;
+
+                    /**
+                     * 设置网络ACL五元组规则集。NetworkAclEntrySet和NetworkAclQuintupleSet只能输入一个。
+                     * @param NetworkAclQuintupleSet 网络ACL五元组规则集。NetworkAclEntrySet和NetworkAclQuintupleSet只能输入一个。
+                     */
+                    void SetNetworkAclQuintupleSet(const NetworkAclQuintupleEntries& _networkAclQuintupleSet);
+
+                    /**
+                     * 判断参数 NetworkAclQuintupleSet 是否已赋值
+                     * @return NetworkAclQuintupleSet 是否已赋值
+                     */
+                    bool NetworkAclQuintupleSetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -92,6 +111,12 @@ namespace TencentCloud
                      */
                     NetworkAclEntrySet m_networkAclEntrySet;
                     bool m_networkAclEntrySetHasBeenSet;
+
+                    /**
+                     * 网络ACL五元组规则集。NetworkAclEntrySet和NetworkAclQuintupleSet只能输入一个。
+                     */
+                    NetworkAclQuintupleEntries m_networkAclQuintupleSet;
+                    bool m_networkAclQuintupleSetHasBeenSet;
 
                 };
             }

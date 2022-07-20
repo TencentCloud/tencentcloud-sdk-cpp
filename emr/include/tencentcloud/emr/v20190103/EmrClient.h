@@ -31,6 +31,8 @@
 #include <tencentcloud/emr/v20190103/model/DescribeClusterNodesResponse.h>
 #include <tencentcloud/emr/v20190103/model/DescribeCvmQuotaRequest.h>
 #include <tencentcloud/emr/v20190103/model/DescribeCvmQuotaResponse.h>
+#include <tencentcloud/emr/v20190103/model/DescribeEmrApplicationStaticsRequest.h>
+#include <tencentcloud/emr/v20190103/model/DescribeEmrApplicationStaticsResponse.h>
 #include <tencentcloud/emr/v20190103/model/DescribeInstanceRenewNodesRequest.h>
 #include <tencentcloud/emr/v20190103/model/DescribeInstanceRenewNodesResponse.h>
 #include <tencentcloud/emr/v20190103/model/DescribeInstancesRequest.h>
@@ -95,6 +97,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeCvmQuotaResponse> DescribeCvmQuotaOutcome;
                 typedef std::future<DescribeCvmQuotaOutcome> DescribeCvmQuotaOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::DescribeCvmQuotaRequest&, DescribeCvmQuotaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCvmQuotaAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeEmrApplicationStaticsResponse> DescribeEmrApplicationStaticsOutcome;
+                typedef std::future<DescribeEmrApplicationStaticsOutcome> DescribeEmrApplicationStaticsOutcomeCallable;
+                typedef std::function<void(const EmrClient*, const Model::DescribeEmrApplicationStaticsRequest&, DescribeEmrApplicationStaticsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEmrApplicationStaticsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeInstanceRenewNodesResponse> DescribeInstanceRenewNodesOutcome;
                 typedef std::future<DescribeInstanceRenewNodesOutcome> DescribeInstanceRenewNodesOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::DescribeInstanceRenewNodesRequest&, DescribeInstanceRenewNodesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceRenewNodesAsyncHandler;
@@ -191,6 +196,15 @@ namespace TencentCloud
                 DescribeCvmQuotaOutcome DescribeCvmQuota(const Model::DescribeCvmQuotaRequest &request);
                 void DescribeCvmQuotaAsync(const Model::DescribeCvmQuotaRequest& request, const DescribeCvmQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeCvmQuotaOutcomeCallable DescribeCvmQuotaCallable(const Model::DescribeCvmQuotaRequest& request);
+
+                /**
+                 *（通过走emrcc接入到cam） yarn applciation 统计接口
+                 * @param req DescribeEmrApplicationStaticsRequest
+                 * @return DescribeEmrApplicationStaticsOutcome
+                 */
+                DescribeEmrApplicationStaticsOutcome DescribeEmrApplicationStatics(const Model::DescribeEmrApplicationStaticsRequest &request);
+                void DescribeEmrApplicationStaticsAsync(const Model::DescribeEmrApplicationStaticsRequest& request, const DescribeEmrApplicationStaticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeEmrApplicationStaticsOutcomeCallable DescribeEmrApplicationStaticsCallable(const Model::DescribeEmrApplicationStaticsRequest& request);
 
                 /**
                  *预付费集群隔离后续费资源查询

@@ -142,11 +142,13 @@ namespace TencentCloud
 TEXT - 内容文本控件
 MULTI_LINE_TEXT - 多行文本控件
 CHECK_BOX - 勾选框控件
+ATTACHMENT - 附件
 注：默认字体大小为 字号12
                      * @return Components 经办人内容控件配置。可选类型为：
 TEXT - 内容文本控件
 MULTI_LINE_TEXT - 多行文本控件
 CHECK_BOX - 勾选框控件
+ATTACHMENT - 附件
 注：默认字体大小为 字号12
                      */
                     std::vector<Component> GetComponents() const;
@@ -156,11 +158,13 @@ CHECK_BOX - 勾选框控件
 TEXT - 内容文本控件
 MULTI_LINE_TEXT - 多行文本控件
 CHECK_BOX - 勾选框控件
+ATTACHMENT - 附件
 注：默认字体大小为 字号12
                      * @param Components 经办人内容控件配置。可选类型为：
 TEXT - 内容文本控件
 MULTI_LINE_TEXT - 多行文本控件
 CHECK_BOX - 勾选框控件
+ATTACHMENT - 附件
 注：默认字体大小为 字号12
                      */
                     void SetComponents(const std::vector<Component>& _components);
@@ -358,6 +362,7 @@ false：有序签
 TEXT - 内容文本控件
 MULTI_LINE_TEXT - 多行文本控件
 CHECK_BOX - 勾选框控件
+ATTACHMENT - 附件
 注：默认字体大小为 字号12
                      */
                     std::vector<Component> m_components;

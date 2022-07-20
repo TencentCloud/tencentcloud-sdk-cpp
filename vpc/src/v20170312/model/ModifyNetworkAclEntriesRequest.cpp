@@ -24,7 +24,8 @@ using namespace std;
 
 ModifyNetworkAclEntriesRequest::ModifyNetworkAclEntriesRequest() :
     m_networkAclIdHasBeenSet(false),
-    m_networkAclEntrySetHasBeenSet(false)
+    m_networkAclEntrySetHasBeenSet(false),
+    m_networkAclQuintupleSetHasBeenSet(false)
 {
 }
 
@@ -50,6 +51,15 @@ string ModifyNetworkAclEntriesRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_networkAclEntrySet.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_networkAclQuintupleSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NetworkAclQuintupleSet";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_networkAclQuintupleSet.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -90,6 +100,22 @@ void ModifyNetworkAclEntriesRequest::SetNetworkAclEntrySet(const NetworkAclEntry
 bool ModifyNetworkAclEntriesRequest::NetworkAclEntrySetHasBeenSet() const
 {
     return m_networkAclEntrySetHasBeenSet;
+}
+
+NetworkAclQuintupleEntries ModifyNetworkAclEntriesRequest::GetNetworkAclQuintupleSet() const
+{
+    return m_networkAclQuintupleSet;
+}
+
+void ModifyNetworkAclEntriesRequest::SetNetworkAclQuintupleSet(const NetworkAclQuintupleEntries& _networkAclQuintupleSet)
+{
+    m_networkAclQuintupleSet = _networkAclQuintupleSet;
+    m_networkAclQuintupleSetHasBeenSet = true;
+}
+
+bool ModifyNetworkAclEntriesRequest::NetworkAclQuintupleSetHasBeenSet() const
+{
+    return m_networkAclQuintupleSetHasBeenSet;
 }
 
 

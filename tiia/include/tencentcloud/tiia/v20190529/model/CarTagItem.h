@@ -121,14 +121,14 @@ namespace TencentCloud
                     bool ColorHasBeenSet() const;
 
                     /**
-                     * 获取置信度，0-100
-                     * @return Confidence 置信度，0-100
+                     * 获取车系置信度，0-100
+                     * @return Confidence 车系置信度，0-100
                      */
                     int64_t GetConfidence() const;
 
                     /**
-                     * 设置置信度，0-100
-                     * @param Confidence 置信度，0-100
+                     * 设置车系置信度，0-100
+                     * @param Confidence 车系置信度，0-100
                      */
                     void SetConfidence(const int64_t& _confidence);
 
@@ -175,17 +175,17 @@ namespace TencentCloud
                     bool CarLocationHasBeenSet() const;
 
                     /**
-                     * 获取车牌信息
+                     * 获取车牌信息，仅车辆识别（增强版）支持
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PlateContent 车牌信息
+                     * @return PlateContent 车牌信息，仅车辆识别（增强版）支持
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     CarPlateContent GetPlateContent() const;
 
                     /**
-                     * 设置车牌信息
+                     * 设置车牌信息，仅车辆识别（增强版）支持
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PlateContent 车牌信息
+                     * @param PlateContent 车牌信息，仅车辆识别（增强版）支持
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetPlateContent(const CarPlateContent& _plateContent);
@@ -195,6 +195,72 @@ namespace TencentCloud
                      * @return PlateContent 是否已赋值
                      */
                     bool PlateContentHasBeenSet() const;
+
+                    /**
+                     * 获取车牌信息置信度，0-100，仅车辆识别（增强版）支持
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PlateConfidence 车牌信息置信度，0-100，仅车辆识别（增强版）支持
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetPlateConfidence() const;
+
+                    /**
+                     * 设置车牌信息置信度，0-100，仅车辆识别（增强版）支持
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param PlateConfidence 车牌信息置信度，0-100，仅车辆识别（增强版）支持
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPlateConfidence(const int64_t& _plateConfidence);
+
+                    /**
+                     * 判断参数 PlateConfidence 是否已赋值
+                     * @return PlateConfidence 是否已赋值
+                     */
+                    bool PlateConfidenceHasBeenSet() const;
+
+                    /**
+                     * 获取车辆类型置信度，0-100，仅车辆识别（增强版）支持
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TypeConfidence 车辆类型置信度，0-100，仅车辆识别（增强版）支持
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetTypeConfidence() const;
+
+                    /**
+                     * 设置车辆类型置信度，0-100，仅车辆识别（增强版）支持
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TypeConfidence 车辆类型置信度，0-100，仅车辆识别（增强版）支持
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTypeConfidence(const int64_t& _typeConfidence);
+
+                    /**
+                     * 判断参数 TypeConfidence 是否已赋值
+                     * @return TypeConfidence 是否已赋值
+                     */
+                    bool TypeConfidenceHasBeenSet() const;
+
+                    /**
+                     * 获取车辆颜色置信度，0-100，仅车辆识别（增强版）支持
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ColorConfidence 车辆颜色置信度，0-100，仅车辆识别（增强版）支持
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetColorConfidence() const;
+
+                    /**
+                     * 设置车辆颜色置信度，0-100，仅车辆识别（增强版）支持
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ColorConfidence 车辆颜色置信度，0-100，仅车辆识别（增强版）支持
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetColorConfidence(const int64_t& _colorConfidence);
+
+                    /**
+                     * 判断参数 ColorConfidence 是否已赋值
+                     * @return ColorConfidence 是否已赋值
+                     */
+                    bool ColorConfidenceHasBeenSet() const;
 
                 private:
 
@@ -223,7 +289,7 @@ namespace TencentCloud
                     bool m_colorHasBeenSet;
 
                     /**
-                     * 置信度，0-100
+                     * 车系置信度，0-100
                      */
                     int64_t m_confidence;
                     bool m_confidenceHasBeenSet;
@@ -241,11 +307,32 @@ namespace TencentCloud
                     bool m_carLocationHasBeenSet;
 
                     /**
-                     * 车牌信息
+                     * 车牌信息，仅车辆识别（增强版）支持
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     CarPlateContent m_plateContent;
                     bool m_plateContentHasBeenSet;
+
+                    /**
+                     * 车牌信息置信度，0-100，仅车辆识别（增强版）支持
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_plateConfidence;
+                    bool m_plateConfidenceHasBeenSet;
+
+                    /**
+                     * 车辆类型置信度，0-100，仅车辆识别（增强版）支持
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_typeConfidence;
+                    bool m_typeConfidenceHasBeenSet;
+
+                    /**
+                     * 车辆颜色置信度，0-100，仅车辆识别（增强版）支持
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_colorConfidence;
+                    bool m_colorConfidenceHasBeenSet;
 
                 };
             }

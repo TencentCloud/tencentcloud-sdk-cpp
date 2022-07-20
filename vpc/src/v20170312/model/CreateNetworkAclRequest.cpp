@@ -24,7 +24,9 @@ using namespace std;
 
 CreateNetworkAclRequest::CreateNetworkAclRequest() :
     m_vpcIdHasBeenSet(false),
-    m_networkAclNameHasBeenSet(false)
+    m_networkAclNameHasBeenSet(false),
+    m_networkAclTypeHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -49,6 +51,29 @@ string CreateNetworkAclRequest::ToJsonString() const
         string key = "NetworkAclName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_networkAclName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_networkAclTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NetworkAclType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_networkAclType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -89,6 +114,38 @@ void CreateNetworkAclRequest::SetNetworkAclName(const string& _networkAclName)
 bool CreateNetworkAclRequest::NetworkAclNameHasBeenSet() const
 {
     return m_networkAclNameHasBeenSet;
+}
+
+string CreateNetworkAclRequest::GetNetworkAclType() const
+{
+    return m_networkAclType;
+}
+
+void CreateNetworkAclRequest::SetNetworkAclType(const string& _networkAclType)
+{
+    m_networkAclType = _networkAclType;
+    m_networkAclTypeHasBeenSet = true;
+}
+
+bool CreateNetworkAclRequest::NetworkAclTypeHasBeenSet() const
+{
+    return m_networkAclTypeHasBeenSet;
+}
+
+vector<Tag> CreateNetworkAclRequest::GetTags() const
+{
+    return m_tags;
+}
+
+void CreateNetworkAclRequest::SetTags(const vector<Tag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool CreateNetworkAclRequest::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 
 

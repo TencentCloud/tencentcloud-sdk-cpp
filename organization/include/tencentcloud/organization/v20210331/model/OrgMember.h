@@ -400,6 +400,28 @@ namespace TencentCloud
                      */
                     bool BindStatusHasBeenSet() const;
 
+                    /**
+                     * 获取成员权限状态 已确认：Confirmed ，待确认：UnConfirmed
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PermissionStatus 成员权限状态 已确认：Confirmed ，待确认：UnConfirmed
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetPermissionStatus() const;
+
+                    /**
+                     * 设置成员权限状态 已确认：Confirmed ，待确认：UnConfirmed
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param PermissionStatus 成员权限状态 已确认：Confirmed ，待确认：UnConfirmed
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPermissionStatus(const std::string& _permissionStatus);
+
+                    /**
+                     * 判断参数 PermissionStatus 是否已赋值
+                     * @return PermissionStatus 是否已赋值
+                     */
+                    bool PermissionStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -513,6 +535,13 @@ namespace TencentCloud
                      */
                     std::string m_bindStatus;
                     bool m_bindStatusHasBeenSet;
+
+                    /**
+                     * 成员权限状态 已确认：Confirmed ，待确认：UnConfirmed
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_permissionStatus;
+                    bool m_permissionStatusHasBeenSet;
 
                 };
             }

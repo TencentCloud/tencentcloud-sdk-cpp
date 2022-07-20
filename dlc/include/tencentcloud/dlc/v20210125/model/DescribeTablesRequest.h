@@ -178,14 +178,14 @@ table-id - String - （过滤条件）table id形如：12342。
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取排序字段，支持：ModifiedTime（默认）；CreateTime
-                     * @return Sort 排序字段，支持：ModifiedTime（默认）；CreateTime
+                     * 获取排序字段，支持：CreateTime、UpdateTime、StorageSize、RecordCount、Name（不传则默认按name升序）
+                     * @return Sort 排序字段，支持：CreateTime、UpdateTime、StorageSize、RecordCount、Name（不传则默认按name升序）
                      */
                     std::string GetSort() const;
 
                     /**
-                     * 设置排序字段，支持：ModifiedTime（默认）；CreateTime
-                     * @param Sort 排序字段，支持：ModifiedTime（默认）；CreateTime
+                     * 设置排序字段，支持：CreateTime、UpdateTime、StorageSize、RecordCount、Name（不传则默认按name升序）
+                     * @param Sort 排序字段，支持：CreateTime、UpdateTime、StorageSize、RecordCount、Name（不传则默认按name升序）
                      */
                     void SetSort(const std::string& _sort);
 
@@ -296,7 +296,7 @@ table-id - String - （过滤条件）table id形如：12342。
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 排序字段，支持：ModifiedTime（默认）；CreateTime
+                     * 排序字段，支持：CreateTime、UpdateTime、StorageSize、RecordCount、Name（不传则默认按name升序）
                      */
                     std::string m_sort;
                     bool m_sortHasBeenSet;

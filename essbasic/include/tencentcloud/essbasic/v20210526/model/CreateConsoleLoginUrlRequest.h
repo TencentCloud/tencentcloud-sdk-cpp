@@ -157,6 +157,24 @@ namespace TencentCloud
                     bool UniformSocialCreditCodeHasBeenSet() const;
 
                     /**
+                     * 获取是否展示左侧菜单栏 是：ENABLE（默认） 否：DISABLE
+                     * @return MenuStatus 是否展示左侧菜单栏 是：ENABLE（默认） 否：DISABLE
+                     */
+                    std::string GetMenuStatus() const;
+
+                    /**
+                     * 设置是否展示左侧菜单栏 是：ENABLE（默认） 否：DISABLE
+                     * @param MenuStatus 是否展示左侧菜单栏 是：ENABLE（默认） 否：DISABLE
+                     */
+                    void SetMenuStatus(const std::string& _menuStatus);
+
+                    /**
+                     * 判断参数 MenuStatus 是否已赋值
+                     * @return MenuStatus 是否已赋值
+                     */
+                    bool MenuStatusHasBeenSet() const;
+
+                    /**
                      * 获取操作者的信息
                      * @return Operator 操作者的信息
                      */
@@ -212,6 +230,12 @@ namespace TencentCloud
                      */
                     std::string m_uniformSocialCreditCode;
                     bool m_uniformSocialCreditCodeHasBeenSet;
+
+                    /**
+                     * 是否展示左侧菜单栏 是：ENABLE（默认） 否：DISABLE
+                     */
+                    std::string m_menuStatus;
+                    bool m_menuStatusHasBeenSet;
 
                     /**
                      * 操作者的信息

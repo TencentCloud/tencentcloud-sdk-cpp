@@ -28,7 +28,7 @@ set(emr_public_header_model
   include/tencentcloud/emr/v20190103/model/TerminateTasksRequest.h
   include/tencentcloud/emr/v20190103/model/HostVolumeContext.h
   include/tencentcloud/emr/v20190103/model/Step.h
-  include/tencentcloud/emr/v20190103/model/SubnetInfo.h
+  include/tencentcloud/emr/v20190103/model/DescribeEmrApplicationStaticsRequest.h
   include/tencentcloud/emr/v20190103/model/UserManagerFilter.h
   include/tencentcloud/emr/v20190103/model/MetaDbInfo.h
   include/tencentcloud/emr/v20190103/model/DiskSpec.h
@@ -71,6 +71,7 @@ set(emr_public_header_model
   include/tencentcloud/emr/v20190103/model/RunJobFlowRequest.h
   include/tencentcloud/emr/v20190103/model/PriceResource.h
   include/tencentcloud/emr/v20190103/model/CustomServiceDefine.h
+  include/tencentcloud/emr/v20190103/model/SubnetInfo.h
   include/tencentcloud/emr/v20190103/model/DescribeCvmQuotaResponse.h
   include/tencentcloud/emr/v20190103/model/BootstrapAction.h
   include/tencentcloud/emr/v20190103/model/DescribeCvmQuotaRequest.h
@@ -93,6 +94,7 @@ set(emr_public_header_model
   include/tencentcloud/emr/v20190103/model/MultiDiskMC.h
   include/tencentcloud/emr/v20190103/model/AddUsersForUserManagerRequest.h
   include/tencentcloud/emr/v20190103/model/CustomMetaInfo.h
+  include/tencentcloud/emr/v20190103/model/ApplicationStatics.h
   include/tencentcloud/emr/v20190103/model/InquiryPriceCreateInstanceRequest.h
   include/tencentcloud/emr/v20190103/model/DescribeClusterNodesResponse.h
   include/tencentcloud/emr/v20190103/model/ModifyResourceScheduleConfigRequest.h
@@ -105,6 +107,7 @@ set(emr_public_header_model
   include/tencentcloud/emr/v20190103/model/InquiryPriceScaleOutInstanceRequest.h
   include/tencentcloud/emr/v20190103/model/Resource.h
   include/tencentcloud/emr/v20190103/model/Filters.h
+  include/tencentcloud/emr/v20190103/model/DescribeEmrApplicationStaticsResponse.h
   include/tencentcloud/emr/v20190103/model/InquirePriceRenewEmrRequest.h
   include/tencentcloud/emr/v20190103/model/DescribeInstanceRenewNodesResponse.h
   include/tencentcloud/emr/v20190103/model/UserManagerUserBriefInfo.h
@@ -131,7 +134,7 @@ set(emr_src
   src/v20190103/model/TerminateTasksRequest.cpp
   src/v20190103/model/HostVolumeContext.cpp
   src/v20190103/model/Step.cpp
-  src/v20190103/model/SubnetInfo.cpp
+  src/v20190103/model/DescribeEmrApplicationStaticsRequest.cpp
   src/v20190103/model/UserManagerFilter.cpp
   src/v20190103/model/MetaDbInfo.cpp
   src/v20190103/model/DiskSpec.cpp
@@ -174,6 +177,7 @@ set(emr_src
   src/v20190103/model/RunJobFlowRequest.cpp
   src/v20190103/model/PriceResource.cpp
   src/v20190103/model/CustomServiceDefine.cpp
+  src/v20190103/model/SubnetInfo.cpp
   src/v20190103/model/DescribeCvmQuotaResponse.cpp
   src/v20190103/model/BootstrapAction.cpp
   src/v20190103/model/DescribeCvmQuotaRequest.cpp
@@ -196,6 +200,7 @@ set(emr_src
   src/v20190103/model/MultiDiskMC.cpp
   src/v20190103/model/AddUsersForUserManagerRequest.cpp
   src/v20190103/model/CustomMetaInfo.cpp
+  src/v20190103/model/ApplicationStatics.cpp
   src/v20190103/model/InquiryPriceCreateInstanceRequest.cpp
   src/v20190103/model/DescribeClusterNodesResponse.cpp
   src/v20190103/model/ModifyResourceScheduleConfigRequest.cpp
@@ -208,6 +213,7 @@ set(emr_src
   src/v20190103/model/InquiryPriceScaleOutInstanceRequest.cpp
   src/v20190103/model/Resource.cpp
   src/v20190103/model/Filters.cpp
+  src/v20190103/model/DescribeEmrApplicationStaticsResponse.cpp
   src/v20190103/model/InquirePriceRenewEmrRequest.cpp
   src/v20190103/model/DescribeInstanceRenewNodesResponse.cpp
   src/v20190103/model/UserManagerUserBriefInfo.cpp

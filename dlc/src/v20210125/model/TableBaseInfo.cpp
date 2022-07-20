@@ -26,7 +26,9 @@ TableBaseInfo::TableBaseInfo() :
     m_datasourceConnectionNameHasBeenSet(false),
     m_tableCommentHasBeenSet(false),
     m_typeHasBeenSet(false),
-    m_tableFormatHasBeenSet(false)
+    m_tableFormatHasBeenSet(false),
+    m_userAliasHasBeenSet(false),
+    m_userSubUinHasBeenSet(false)
 {
 }
 
@@ -95,6 +97,26 @@ CoreInternalOutcome TableBaseInfo::Deserialize(const rapidjson::Value &value)
         m_tableFormatHasBeenSet = true;
     }
 
+    if (value.HasMember("UserAlias") && !value["UserAlias"].IsNull())
+    {
+        if (!value["UserAlias"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TableBaseInfo.UserAlias` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_userAlias = string(value["UserAlias"].GetString());
+        m_userAliasHasBeenSet = true;
+    }
+
+    if (value.HasMember("UserSubUin") && !value["UserSubUin"].IsNull())
+    {
+        if (!value["UserSubUin"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TableBaseInfo.UserSubUin` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_userSubUin = string(value["UserSubUin"].GetString());
+        m_userSubUinHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +170,22 @@ void TableBaseInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "TableFormat";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_tableFormat.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_userAliasHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserAlias";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_userAlias.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_userSubUinHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserSubUin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_userSubUin.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -247,5 +285,37 @@ void TableBaseInfo::SetTableFormat(const string& _tableFormat)
 bool TableBaseInfo::TableFormatHasBeenSet() const
 {
     return m_tableFormatHasBeenSet;
+}
+
+string TableBaseInfo::GetUserAlias() const
+{
+    return m_userAlias;
+}
+
+void TableBaseInfo::SetUserAlias(const string& _userAlias)
+{
+    m_userAlias = _userAlias;
+    m_userAliasHasBeenSet = true;
+}
+
+bool TableBaseInfo::UserAliasHasBeenSet() const
+{
+    return m_userAliasHasBeenSet;
+}
+
+string TableBaseInfo::GetUserSubUin() const
+{
+    return m_userSubUin;
+}
+
+void TableBaseInfo::SetUserSubUin(const string& _userSubUin)
+{
+    m_userSubUin = _userSubUin;
+    m_userSubUinHasBeenSet = true;
+}
+
+bool TableBaseInfo::UserSubUinHasBeenSet() const
+{
+    return m_userSubUinHasBeenSet;
 }
 

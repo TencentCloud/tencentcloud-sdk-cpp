@@ -170,6 +170,50 @@ namespace TencentCloud
                      */
                     bool TableFormatHasBeenSet() const;
 
+                    /**
+                     * 获取建表用户昵称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UserAlias 建表用户昵称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetUserAlias() const;
+
+                    /**
+                     * 设置建表用户昵称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param UserAlias 建表用户昵称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetUserAlias(const std::string& _userAlias);
+
+                    /**
+                     * 判断参数 UserAlias 是否已赋值
+                     * @return UserAlias 是否已赋值
+                     */
+                    bool UserAliasHasBeenSet() const;
+
+                    /**
+                     * 获取建表用户ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UserSubUin 建表用户ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetUserSubUin() const;
+
+                    /**
+                     * 设置建表用户ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param UserSubUin 建表用户ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetUserSubUin(const std::string& _userSubUin);
+
+                    /**
+                     * 判断参数 UserSubUin 是否已赋值
+                     * @return UserSubUin 是否已赋值
+                     */
+                    bool UserSubUinHasBeenSet() const;
+
                 private:
 
                     /**
@@ -211,6 +255,20 @@ namespace TencentCloud
                      */
                     std::string m_tableFormat;
                     bool m_tableFormatHasBeenSet;
+
+                    /**
+                     * 建表用户昵称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_userAlias;
+                    bool m_userAliasHasBeenSet;
+
+                    /**
+                     * 建表用户ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_userSubUin;
+                    bool m_userSubUinHasBeenSet;
 
                 };
             }

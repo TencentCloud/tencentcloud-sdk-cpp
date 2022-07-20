@@ -82,6 +82,42 @@ namespace TencentCloud
                      */
                     bool ViewNameHasBeenSet() const;
 
+                    /**
+                     * 获取视图创建人昵称
+                     * @return UserAlias 视图创建人昵称
+                     */
+                    std::string GetUserAlias() const;
+
+                    /**
+                     * 设置视图创建人昵称
+                     * @param UserAlias 视图创建人昵称
+                     */
+                    void SetUserAlias(const std::string& _userAlias);
+
+                    /**
+                     * 判断参数 UserAlias 是否已赋值
+                     * @return UserAlias 是否已赋值
+                     */
+                    bool UserAliasHasBeenSet() const;
+
+                    /**
+                     * 获取视图创建人ID
+                     * @return UserSubUin 视图创建人ID
+                     */
+                    std::string GetUserSubUin() const;
+
+                    /**
+                     * 设置视图创建人ID
+                     * @param UserSubUin 视图创建人ID
+                     */
+                    void SetUserSubUin(const std::string& _userSubUin);
+
+                    /**
+                     * 判断参数 UserSubUin 是否已赋值
+                     * @return UserSubUin 是否已赋值
+                     */
+                    bool UserSubUinHasBeenSet() const;
+
                 private:
 
                     /**
@@ -95,6 +131,18 @@ namespace TencentCloud
                      */
                     std::string m_viewName;
                     bool m_viewNameHasBeenSet;
+
+                    /**
+                     * 视图创建人昵称
+                     */
+                    std::string m_userAlias;
+                    bool m_userAliasHasBeenSet;
+
+                    /**
+                     * 视图创建人ID
+                     */
+                    std::string m_userSubUin;
+                    bool m_userSubUinHasBeenSet;
 
                 };
             }

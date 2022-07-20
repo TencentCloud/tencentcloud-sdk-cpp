@@ -212,6 +212,49 @@ EmrClient::DescribeCvmQuotaOutcomeCallable EmrClient::DescribeCvmQuotaCallable(c
     return task->get_future();
 }
 
+EmrClient::DescribeEmrApplicationStaticsOutcome EmrClient::DescribeEmrApplicationStatics(const DescribeEmrApplicationStaticsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeEmrApplicationStatics");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeEmrApplicationStaticsResponse rsp = DescribeEmrApplicationStaticsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeEmrApplicationStaticsOutcome(rsp);
+        else
+            return DescribeEmrApplicationStaticsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeEmrApplicationStaticsOutcome(outcome.GetError());
+    }
+}
+
+void EmrClient::DescribeEmrApplicationStaticsAsync(const DescribeEmrApplicationStaticsRequest& request, const DescribeEmrApplicationStaticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeEmrApplicationStatics(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EmrClient::DescribeEmrApplicationStaticsOutcomeCallable EmrClient::DescribeEmrApplicationStaticsCallable(const DescribeEmrApplicationStaticsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeEmrApplicationStaticsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeEmrApplicationStatics(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EmrClient::DescribeInstanceRenewNodesOutcome EmrClient::DescribeInstanceRenewNodes(const DescribeInstanceRenewNodesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeInstanceRenewNodes");

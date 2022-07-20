@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/dlc/v20210125/model/Filter.h>
 
 
 namespace TencentCloud
@@ -114,6 +115,60 @@ namespace TencentCloud
                      */
                     bool TaskIdHasBeenSet() const;
 
+                    /**
+                     * 获取更新时间起始点
+                     * @return StartTime 更新时间起始点
+                     */
+                    std::string GetStartTime() const;
+
+                    /**
+                     * 设置更新时间起始点
+                     * @param StartTime 更新时间起始点
+                     */
+                    void SetStartTime(const std::string& _startTime);
+
+                    /**
+                     * 判断参数 StartTime 是否已赋值
+                     * @return StartTime 是否已赋值
+                     */
+                    bool StartTimeHasBeenSet() const;
+
+                    /**
+                     * 获取更新时间截止点
+                     * @return EndTime 更新时间截止点
+                     */
+                    std::string GetEndTime() const;
+
+                    /**
+                     * 设置更新时间截止点
+                     * @param EndTime 更新时间截止点
+                     */
+                    void SetEndTime(const std::string& _endTime);
+
+                    /**
+                     * 判断参数 EndTime 是否已赋值
+                     * @return EndTime 是否已赋值
+                     */
+                    bool EndTimeHasBeenSet() const;
+
+                    /**
+                     * 获取按照该参数过滤,支持task-state
+                     * @return Filters 按照该参数过滤,支持task-state
+                     */
+                    std::vector<Filter> GetFilters() const;
+
+                    /**
+                     * 设置按照该参数过滤,支持task-state
+                     * @param Filters 按照该参数过滤,支持task-state
+                     */
+                    void SetFilters(const std::vector<Filter>& _filters);
+
+                    /**
+                     * 判断参数 Filters 是否已赋值
+                     * @return Filters 是否已赋值
+                     */
+                    bool FiltersHasBeenSet() const;
+
                 private:
 
                     /**
@@ -139,6 +194,24 @@ namespace TencentCloud
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;
+
+                    /**
+                     * 更新时间起始点
+                     */
+                    std::string m_startTime;
+                    bool m_startTimeHasBeenSet;
+
+                    /**
+                     * 更新时间截止点
+                     */
+                    std::string m_endTime;
+                    bool m_endTimeHasBeenSet;
+
+                    /**
+                     * 按照该参数过滤,支持task-state
+                     */
+                    std::vector<Filter> m_filters;
+                    bool m_filtersHasBeenSet;
 
                 };
             }

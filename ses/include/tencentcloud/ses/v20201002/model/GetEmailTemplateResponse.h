@@ -56,6 +56,18 @@ namespace TencentCloud
                      */
                     bool TemplateContentHasBeenSet() const;
 
+                    /**
+                     * 获取模板状态 0-审核通过 1-待审核 2-审核拒绝
+                     * @return TemplateStatus 模板状态 0-审核通过 1-待审核 2-审核拒绝
+                     */
+                    uint64_t GetTemplateStatus() const;
+
+                    /**
+                     * 判断参数 TemplateStatus 是否已赋值
+                     * @return TemplateStatus 是否已赋值
+                     */
+                    bool TemplateStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -63,6 +75,12 @@ namespace TencentCloud
                      */
                     TemplateContent m_templateContent;
                     bool m_templateContentHasBeenSet;
+
+                    /**
+                     * 模板状态 0-审核通过 1-待审核 2-审核拒绝
+                     */
+                    uint64_t m_templateStatus;
+                    bool m_templateStatusHasBeenSet;
 
                 };
             }

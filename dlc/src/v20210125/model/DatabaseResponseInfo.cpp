@@ -25,7 +25,10 @@ DatabaseResponseInfo::DatabaseResponseInfo() :
     m_commentHasBeenSet(false),
     m_propertiesHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_modifiedTimeHasBeenSet(false)
+    m_modifiedTimeHasBeenSet(false),
+    m_locationHasBeenSet(false),
+    m_userAliasHasBeenSet(false),
+    m_userSubUinHasBeenSet(false)
 {
 }
 
@@ -94,6 +97,36 @@ CoreInternalOutcome DatabaseResponseInfo::Deserialize(const rapidjson::Value &va
         m_modifiedTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("Location") && !value["Location"].IsNull())
+    {
+        if (!value["Location"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DatabaseResponseInfo.Location` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_location = string(value["Location"].GetString());
+        m_locationHasBeenSet = true;
+    }
+
+    if (value.HasMember("UserAlias") && !value["UserAlias"].IsNull())
+    {
+        if (!value["UserAlias"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DatabaseResponseInfo.UserAlias` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_userAlias = string(value["UserAlias"].GetString());
+        m_userAliasHasBeenSet = true;
+    }
+
+    if (value.HasMember("UserSubUin") && !value["UserSubUin"].IsNull())
+    {
+        if (!value["UserSubUin"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DatabaseResponseInfo.UserSubUin` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_userSubUin = string(value["UserSubUin"].GetString());
+        m_userSubUinHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -146,6 +179,30 @@ void DatabaseResponseInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "ModifiedTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_modifiedTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_locationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Location";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_location.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_userAliasHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserAlias";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_userAlias.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_userSubUinHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserSubUin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_userSubUin.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -229,5 +286,53 @@ void DatabaseResponseInfo::SetModifiedTime(const string& _modifiedTime)
 bool DatabaseResponseInfo::ModifiedTimeHasBeenSet() const
 {
     return m_modifiedTimeHasBeenSet;
+}
+
+string DatabaseResponseInfo::GetLocation() const
+{
+    return m_location;
+}
+
+void DatabaseResponseInfo::SetLocation(const string& _location)
+{
+    m_location = _location;
+    m_locationHasBeenSet = true;
+}
+
+bool DatabaseResponseInfo::LocationHasBeenSet() const
+{
+    return m_locationHasBeenSet;
+}
+
+string DatabaseResponseInfo::GetUserAlias() const
+{
+    return m_userAlias;
+}
+
+void DatabaseResponseInfo::SetUserAlias(const string& _userAlias)
+{
+    m_userAlias = _userAlias;
+    m_userAliasHasBeenSet = true;
+}
+
+bool DatabaseResponseInfo::UserAliasHasBeenSet() const
+{
+    return m_userAliasHasBeenSet;
+}
+
+string DatabaseResponseInfo::GetUserSubUin() const
+{
+    return m_userSubUin;
+}
+
+void DatabaseResponseInfo::SetUserSubUin(const string& _userSubUin)
+{
+    m_userSubUin = _userSubUin;
+    m_userSubUinHasBeenSet = true;
+}
+
+bool DatabaseResponseInfo::UserSubUinHasBeenSet() const
+{
+    return m_userSubUinHasBeenSet;
 }
 

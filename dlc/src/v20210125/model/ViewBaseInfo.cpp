@@ -22,7 +22,9 @@ using namespace std;
 
 ViewBaseInfo::ViewBaseInfo() :
     m_databaseNameHasBeenSet(false),
-    m_viewNameHasBeenSet(false)
+    m_viewNameHasBeenSet(false),
+    m_userAliasHasBeenSet(false),
+    m_userSubUinHasBeenSet(false)
 {
 }
 
@@ -51,6 +53,26 @@ CoreInternalOutcome ViewBaseInfo::Deserialize(const rapidjson::Value &value)
         m_viewNameHasBeenSet = true;
     }
 
+    if (value.HasMember("UserAlias") && !value["UserAlias"].IsNull())
+    {
+        if (!value["UserAlias"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ViewBaseInfo.UserAlias` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_userAlias = string(value["UserAlias"].GetString());
+        m_userAliasHasBeenSet = true;
+    }
+
+    if (value.HasMember("UserSubUin") && !value["UserSubUin"].IsNull())
+    {
+        if (!value["UserSubUin"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ViewBaseInfo.UserSubUin` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_userSubUin = string(value["UserSubUin"].GetString());
+        m_userSubUinHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +94,22 @@ void ViewBaseInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "ViewName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_viewName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_userAliasHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserAlias";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_userAlias.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_userSubUinHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserSubUin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_userSubUin.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -107,5 +145,37 @@ void ViewBaseInfo::SetViewName(const string& _viewName)
 bool ViewBaseInfo::ViewNameHasBeenSet() const
 {
     return m_viewNameHasBeenSet;
+}
+
+string ViewBaseInfo::GetUserAlias() const
+{
+    return m_userAlias;
+}
+
+void ViewBaseInfo::SetUserAlias(const string& _userAlias)
+{
+    m_userAlias = _userAlias;
+    m_userAliasHasBeenSet = true;
+}
+
+bool ViewBaseInfo::UserAliasHasBeenSet() const
+{
+    return m_userAliasHasBeenSet;
+}
+
+string ViewBaseInfo::GetUserSubUin() const
+{
+    return m_userSubUin;
+}
+
+void ViewBaseInfo::SetUserSubUin(const string& _userSubUin)
+{
+    m_userSubUin = _userSubUin;
+    m_userSubUinHasBeenSet = true;
+}
+
+bool ViewBaseInfo::UserSubUinHasBeenSet() const
+{
+    return m_userSubUinHasBeenSet;
 }
 

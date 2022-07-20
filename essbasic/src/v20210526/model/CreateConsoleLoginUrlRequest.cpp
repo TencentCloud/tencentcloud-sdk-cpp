@@ -29,6 +29,7 @@ CreateConsoleLoginUrlRequest::CreateConsoleLoginUrlRequest() :
     m_moduleHasBeenSet(false),
     m_moduleIdHasBeenSet(false),
     m_uniformSocialCreditCodeHasBeenSet(false),
+    m_menuStatusHasBeenSet(false),
     m_operatorHasBeenSet(false)
 {
 }
@@ -87,6 +88,14 @@ string CreateConsoleLoginUrlRequest::ToJsonString() const
         string key = "UniformSocialCreditCode";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_uniformSocialCreditCode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_menuStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MenuStatus";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_menuStatus.c_str(), allocator).Move(), allocator);
     }
 
     if (m_operatorHasBeenSet)
@@ -200,6 +209,22 @@ void CreateConsoleLoginUrlRequest::SetUniformSocialCreditCode(const string& _uni
 bool CreateConsoleLoginUrlRequest::UniformSocialCreditCodeHasBeenSet() const
 {
     return m_uniformSocialCreditCodeHasBeenSet;
+}
+
+string CreateConsoleLoginUrlRequest::GetMenuStatus() const
+{
+    return m_menuStatus;
+}
+
+void CreateConsoleLoginUrlRequest::SetMenuStatus(const string& _menuStatus)
+{
+    m_menuStatus = _menuStatus;
+    m_menuStatusHasBeenSet = true;
+}
+
+bool CreateConsoleLoginUrlRequest::MenuStatusHasBeenSet() const
+{
+    return m_menuStatusHasBeenSet;
 }
 
 UserInfo CreateConsoleLoginUrlRequest::GetOperator() const

@@ -36,7 +36,8 @@ OrgMember::OrgMember() :
     m_payUinHasBeenSet(false),
     m_payNameHasBeenSet(false),
     m_orgIdentityHasBeenSet(false),
-    m_bindStatusHasBeenSet(false)
+    m_bindStatusHasBeenSet(false),
+    m_permissionStatusHasBeenSet(false)
 {
 }
 
@@ -225,6 +226,16 @@ CoreInternalOutcome OrgMember::Deserialize(const rapidjson::Value &value)
         m_bindStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("PermissionStatus") && !value["PermissionStatus"].IsNull())
+    {
+        if (!value["PermissionStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `OrgMember.PermissionStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_permissionStatus = string(value["PermissionStatus"].GetString());
+        m_permissionStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -372,6 +383,14 @@ void OrgMember::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "BindStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_bindStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_permissionStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PermissionStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_permissionStatus.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -631,5 +650,21 @@ void OrgMember::SetBindStatus(const string& _bindStatus)
 bool OrgMember::BindStatusHasBeenSet() const
 {
     return m_bindStatusHasBeenSet;
+}
+
+string OrgMember::GetPermissionStatus() const
+{
+    return m_permissionStatus;
+}
+
+void OrgMember::SetPermissionStatus(const string& _permissionStatus)
+{
+    m_permissionStatus = _permissionStatus;
+    m_permissionStatusHasBeenSet = true;
+}
+
+bool OrgMember::PermissionStatusHasBeenSet() const
+{
+    return m_permissionStatusHasBeenSet;
 }
 

@@ -153,6 +153,72 @@ namespace TencentCloud
                      */
                     bool ModifiedTimeHasBeenSet() const;
 
+                    /**
+                     * 获取cos存储路径
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Location cos存储路径
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetLocation() const;
+
+                    /**
+                     * 设置cos存储路径
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Location cos存储路径
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetLocation(const std::string& _location);
+
+                    /**
+                     * 判断参数 Location 是否已赋值
+                     * @return Location 是否已赋值
+                     */
+                    bool LocationHasBeenSet() const;
+
+                    /**
+                     * 获取建库用户昵称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UserAlias 建库用户昵称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetUserAlias() const;
+
+                    /**
+                     * 设置建库用户昵称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param UserAlias 建库用户昵称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetUserAlias(const std::string& _userAlias);
+
+                    /**
+                     * 判断参数 UserAlias 是否已赋值
+                     * @return UserAlias 是否已赋值
+                     */
+                    bool UserAliasHasBeenSet() const;
+
+                    /**
+                     * 获取建库用户ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UserSubUin 建库用户ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetUserSubUin() const;
+
+                    /**
+                     * 设置建库用户ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param UserSubUin 建库用户ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetUserSubUin(const std::string& _userSubUin);
+
+                    /**
+                     * 判断参数 UserSubUin 是否已赋值
+                     * @return UserSubUin 是否已赋值
+                     */
+                    bool UserSubUinHasBeenSet() const;
+
                 private:
 
                     /**
@@ -188,6 +254,27 @@ namespace TencentCloud
                      */
                     std::string m_modifiedTime;
                     bool m_modifiedTimeHasBeenSet;
+
+                    /**
+                     * cos存储路径
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_location;
+                    bool m_locationHasBeenSet;
+
+                    /**
+                     * 建库用户昵称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_userAlias;
+                    bool m_userAliasHasBeenSet;
+
+                    /**
+                     * 建库用户ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_userSubUin;
+                    bool m_userSubUinHasBeenSet;
 
                 };
             }

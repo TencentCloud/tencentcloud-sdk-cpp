@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/vpc/v20170312/model/Tag.h>
 
 
 namespace TencentCloud
@@ -78,6 +79,42 @@ namespace TencentCloud
                      */
                     bool NetworkAclNameHasBeenSet() const;
 
+                    /**
+                     * 获取网络ACL类型，三元组(TRIPLE)或五元组(QUINTUPLE)
+                     * @return NetworkAclType 网络ACL类型，三元组(TRIPLE)或五元组(QUINTUPLE)
+                     */
+                    std::string GetNetworkAclType() const;
+
+                    /**
+                     * 设置网络ACL类型，三元组(TRIPLE)或五元组(QUINTUPLE)
+                     * @param NetworkAclType 网络ACL类型，三元组(TRIPLE)或五元组(QUINTUPLE)
+                     */
+                    void SetNetworkAclType(const std::string& _networkAclType);
+
+                    /**
+                     * 判断参数 NetworkAclType 是否已赋值
+                     * @return NetworkAclType 是否已赋值
+                     */
+                    bool NetworkAclTypeHasBeenSet() const;
+
+                    /**
+                     * 获取指定绑定的标签列表，例如：[{"Key": "city", "Value": "shanghai"}]。
+                     * @return Tags 指定绑定的标签列表，例如：[{"Key": "city", "Value": "shanghai"}]。
+                     */
+                    std::vector<Tag> GetTags() const;
+
+                    /**
+                     * 设置指定绑定的标签列表，例如：[{"Key": "city", "Value": "shanghai"}]。
+                     * @param Tags 指定绑定的标签列表，例如：[{"Key": "city", "Value": "shanghai"}]。
+                     */
+                    void SetTags(const std::vector<Tag>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     */
+                    bool TagsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -91,6 +128,18 @@ namespace TencentCloud
                      */
                     std::string m_networkAclName;
                     bool m_networkAclNameHasBeenSet;
+
+                    /**
+                     * 网络ACL类型，三元组(TRIPLE)或五元组(QUINTUPLE)
+                     */
+                    std::string m_networkAclType;
+                    bool m_networkAclTypeHasBeenSet;
+
+                    /**
+                     * 指定绑定的标签列表，例如：[{"Key": "city", "Value": "shanghai"}]。
+                     */
+                    std::vector<Tag> m_tags;
+                    bool m_tagsHasBeenSet;
 
                 };
             }
