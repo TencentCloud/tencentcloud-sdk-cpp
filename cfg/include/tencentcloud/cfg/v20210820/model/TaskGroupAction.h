@@ -429,6 +429,28 @@ namespace TencentCloud
                      */
                     bool ActionRiskHasBeenSet() const;
 
+                    /**
+                     * 获取动作运行时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TaskGroupActionExecuteTime 动作运行时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetTaskGroupActionExecuteTime() const;
+
+                    /**
+                     * 设置动作运行时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TaskGroupActionExecuteTime 动作运行时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTaskGroupActionExecuteTime(const int64_t& _taskGroupActionExecuteTime);
+
+                    /**
+                     * 判断参数 TaskGroupActionExecuteTime 是否已赋值
+                     * @return TaskGroupActionExecuteTime 是否已赋值
+                     */
+                    bool TaskGroupActionExecuteTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -554,6 +576,13 @@ namespace TencentCloud
                      */
                     std::string m_actionRisk;
                     bool m_actionRiskHasBeenSet;
+
+                    /**
+                     * 动作运行时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_taskGroupActionExecuteTime;
+                    bool m_taskGroupActionExecuteTimeHasBeenSet;
 
                 };
             }

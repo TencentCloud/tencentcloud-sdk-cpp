@@ -126,6 +126,49 @@ MmpsClient::CreateAppScanTaskRepeatOutcomeCallable MmpsClient::CreateAppScanTask
     return task->get_future();
 }
 
+MmpsClient::CreateFlySecMiniAppProfessionalScanTaskOutcome MmpsClient::CreateFlySecMiniAppProfessionalScanTask(const CreateFlySecMiniAppProfessionalScanTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateFlySecMiniAppProfessionalScanTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateFlySecMiniAppProfessionalScanTaskResponse rsp = CreateFlySecMiniAppProfessionalScanTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateFlySecMiniAppProfessionalScanTaskOutcome(rsp);
+        else
+            return CreateFlySecMiniAppProfessionalScanTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateFlySecMiniAppProfessionalScanTaskOutcome(outcome.GetError());
+    }
+}
+
+void MmpsClient::CreateFlySecMiniAppProfessionalScanTaskAsync(const CreateFlySecMiniAppProfessionalScanTaskRequest& request, const CreateFlySecMiniAppProfessionalScanTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateFlySecMiniAppProfessionalScanTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MmpsClient::CreateFlySecMiniAppProfessionalScanTaskOutcomeCallable MmpsClient::CreateFlySecMiniAppProfessionalScanTaskCallable(const CreateFlySecMiniAppProfessionalScanTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateFlySecMiniAppProfessionalScanTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateFlySecMiniAppProfessionalScanTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MmpsClient::CreateFlySecMiniAppScanTaskOutcome MmpsClient::CreateFlySecMiniAppScanTask(const CreateFlySecMiniAppScanTaskRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateFlySecMiniAppScanTask");

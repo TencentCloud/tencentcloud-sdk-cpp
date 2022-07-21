@@ -246,6 +246,28 @@ namespace TencentCloud
                      */
                     bool TaskGroupInstanceIsRedoHasBeenSet() const;
 
+                    /**
+                     * 获取动作实例执行时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TaskGroupInstanceExecuteTime 动作实例执行时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetTaskGroupInstanceExecuteTime() const;
+
+                    /**
+                     * 设置动作实例执行时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TaskGroupInstanceExecuteTime 动作实例执行时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTaskGroupInstanceExecuteTime(const int64_t& _taskGroupInstanceExecuteTime);
+
+                    /**
+                     * 判断参数 TaskGroupInstanceExecuteTime 是否已赋值
+                     * @return TaskGroupInstanceExecuteTime 是否已赋值
+                     */
+                    bool TaskGroupInstanceExecuteTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -312,6 +334,13 @@ namespace TencentCloud
                      */
                     bool m_taskGroupInstanceIsRedo;
                     bool m_taskGroupInstanceIsRedoHasBeenSet;
+
+                    /**
+                     * 动作实例执行时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_taskGroupInstanceExecuteTime;
+                    bool m_taskGroupInstanceExecuteTimeHasBeenSet;
 
                 };
             }

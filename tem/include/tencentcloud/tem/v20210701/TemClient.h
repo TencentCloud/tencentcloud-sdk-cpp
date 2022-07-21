@@ -51,6 +51,8 @@
 #include <tencentcloud/tem/v20210701/model/DescribeIngressesResponse.h>
 #include <tencentcloud/tem/v20210701/model/DescribeRelatedIngressesRequest.h>
 #include <tencentcloud/tem/v20210701/model/DescribeRelatedIngressesResponse.h>
+#include <tencentcloud/tem/v20210701/model/DestroyEnvironmentRequest.h>
+#include <tencentcloud/tem/v20210701/model/DestroyEnvironmentResponse.h>
 #include <tencentcloud/tem/v20210701/model/GenerateApplicationPackageDownloadUrlRequest.h>
 #include <tencentcloud/tem/v20210701/model/GenerateApplicationPackageDownloadUrlResponse.h>
 #include <tencentcloud/tem/v20210701/model/ModifyApplicationInfoRequest.h>
@@ -129,6 +131,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeRelatedIngressesResponse> DescribeRelatedIngressesOutcome;
                 typedef std::future<DescribeRelatedIngressesOutcome> DescribeRelatedIngressesOutcomeCallable;
                 typedef std::function<void(const TemClient*, const Model::DescribeRelatedIngressesRequest&, DescribeRelatedIngressesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRelatedIngressesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DestroyEnvironmentResponse> DestroyEnvironmentOutcome;
+                typedef std::future<DestroyEnvironmentOutcome> DestroyEnvironmentOutcomeCallable;
+                typedef std::function<void(const TemClient*, const Model::DestroyEnvironmentRequest&, DestroyEnvironmentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DestroyEnvironmentAsyncHandler;
                 typedef Outcome<Core::Error, Model::GenerateApplicationPackageDownloadUrlResponse> GenerateApplicationPackageDownloadUrlOutcome;
                 typedef std::future<GenerateApplicationPackageDownloadUrlOutcome> GenerateApplicationPackageDownloadUrlOutcomeCallable;
                 typedef std::function<void(const TemClient*, const Model::GenerateApplicationPackageDownloadUrlRequest&, GenerateApplicationPackageDownloadUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GenerateApplicationPackageDownloadUrlAsyncHandler;
@@ -293,6 +298,15 @@ namespace TencentCloud
                 DescribeRelatedIngressesOutcome DescribeRelatedIngresses(const Model::DescribeRelatedIngressesRequest &request);
                 void DescribeRelatedIngressesAsync(const Model::DescribeRelatedIngressesRequest& request, const DescribeRelatedIngressesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeRelatedIngressesOutcomeCallable DescribeRelatedIngressesCallable(const Model::DescribeRelatedIngressesRequest& request);
+
+                /**
+                 *销毁命名空间
+                 * @param req DestroyEnvironmentRequest
+                 * @return DestroyEnvironmentOutcome
+                 */
+                DestroyEnvironmentOutcome DestroyEnvironment(const Model::DestroyEnvironmentRequest &request);
+                void DestroyEnvironmentAsync(const Model::DestroyEnvironmentRequest& request, const DestroyEnvironmentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DestroyEnvironmentOutcomeCallable DestroyEnvironmentCallable(const Model::DestroyEnvironmentRequest& request);
 
                 /**
                  *生成应用程序包预签名下载链接

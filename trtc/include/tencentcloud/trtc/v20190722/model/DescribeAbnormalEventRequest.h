@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取用户SDKAppID，查询SDKAppID下任意20条异常体验事件（可能不同房间）
-                     * @return SdkAppId 用户SDKAppID，查询SDKAppID下任意20条异常体验事件（可能不同房间）
+                     * 获取用户SdkAppId（如：1400xxxxxx）
+                     * @return SdkAppId 用户SdkAppId（如：1400xxxxxx）
                      */
                     std::string GetSdkAppId() const;
 
                     /**
-                     * 设置用户SDKAppID，查询SDKAppID下任意20条异常体验事件（可能不同房间）
-                     * @param SdkAppId 用户SDKAppID，查询SDKAppID下任意20条异常体验事件（可能不同房间）
+                     * 设置用户SdkAppId（如：1400xxxxxx）
+                     * @param SdkAppId 用户SdkAppId（如：1400xxxxxx）
                      */
                     void SetSdkAppId(const std::string& _sdkAppId);
 
@@ -61,14 +61,18 @@ namespace TencentCloud
                     bool SdkAppIdHasBeenSet() const;
 
                     /**
-                     * 获取查询开始时间,本地unix时间戳（1592448600s）
-                     * @return StartTime 查询开始时间,本地unix时间戳（1592448600s）
+                     * 获取查询开始时间，本地unix时间戳，单位为秒（如：1590065777）
+注意：支持查询14天内的数据
+                     * @return StartTime 查询开始时间，本地unix时间戳，单位为秒（如：1590065777）
+注意：支持查询14天内的数据
                      */
                     uint64_t GetStartTime() const;
 
                     /**
-                     * 设置查询开始时间,本地unix时间戳（1592448600s）
-                     * @param StartTime 查询开始时间,本地unix时间戳（1592448600s）
+                     * 设置查询开始时间，本地unix时间戳，单位为秒（如：1590065777）
+注意：支持查询14天内的数据
+                     * @param StartTime 查询开始时间，本地unix时间戳，单位为秒（如：1590065777）
+注意：支持查询14天内的数据
                      */
                     void SetStartTime(const uint64_t& _startTime);
 
@@ -79,14 +83,14 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取查询结束时间,本地unix时间戳（1592449080s）
-                     * @return EndTime 查询结束时间,本地unix时间戳（1592449080s）
+                     * 获取查询结束时间，本地unix时间戳，单位为秒（如：1590065877）注意：与StartTime间隔时间不超过1小时。
+                     * @return EndTime 查询结束时间，本地unix时间戳，单位为秒（如：1590065877）注意：与StartTime间隔时间不超过1小时。
                      */
                     uint64_t GetEndTime() const;
 
                     /**
-                     * 设置查询结束时间,本地unix时间戳（1592449080s）
-                     * @param EndTime 查询结束时间,本地unix时间戳（1592449080s）
+                     * 设置查询结束时间，本地unix时间戳，单位为秒（如：1590065877）注意：与StartTime间隔时间不超过1小时。
+                     * @param EndTime 查询结束时间，本地unix时间戳，单位为秒（如：1590065877）注意：与StartTime间隔时间不超过1小时。
                      */
                     void SetEndTime(const uint64_t& _endTime);
 
@@ -117,19 +121,20 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 用户SDKAppID，查询SDKAppID下任意20条异常体验事件（可能不同房间）
+                     * 用户SdkAppId（如：1400xxxxxx）
                      */
                     std::string m_sdkAppId;
                     bool m_sdkAppIdHasBeenSet;
 
                     /**
-                     * 查询开始时间,本地unix时间戳（1592448600s）
+                     * 查询开始时间，本地unix时间戳，单位为秒（如：1590065777）
+注意：支持查询14天内的数据
                      */
                     uint64_t m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 查询结束时间,本地unix时间戳（1592449080s）
+                     * 查询结束时间，本地unix时间戳，单位为秒（如：1590065877）注意：与StartTime间隔时间不超过1小时。
                      */
                     uint64_t m_endTime;
                     bool m_endTimeHasBeenSet;

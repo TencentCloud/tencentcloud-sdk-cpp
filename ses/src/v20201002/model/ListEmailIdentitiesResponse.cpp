@@ -24,7 +24,9 @@ using namespace TencentCloud::Ses::V20201002::Model;
 using namespace std;
 
 ListEmailIdentitiesResponse::ListEmailIdentitiesResponse() :
-    m_emailIdentitiesHasBeenSet(false)
+    m_emailIdentitiesHasBeenSet(false),
+    m_maxReputationLevelHasBeenSet(false),
+    m_maxDailyQuotaHasBeenSet(false)
 {
 }
 
@@ -82,6 +84,26 @@ CoreInternalOutcome ListEmailIdentitiesResponse::Deserialize(const string &paylo
         m_emailIdentitiesHasBeenSet = true;
     }
 
+    if (rsp.HasMember("MaxReputationLevel") && !rsp["MaxReputationLevel"].IsNull())
+    {
+        if (!rsp["MaxReputationLevel"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `MaxReputationLevel` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_maxReputationLevel = rsp["MaxReputationLevel"].GetUint64();
+        m_maxReputationLevelHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("MaxDailyQuota") && !rsp["MaxDailyQuota"].IsNull())
+    {
+        if (!rsp["MaxDailyQuota"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `MaxDailyQuota` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_maxDailyQuota = rsp["MaxDailyQuota"].GetUint64();
+        m_maxDailyQuotaHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -107,6 +129,22 @@ string ListEmailIdentitiesResponse::ToJsonString() const
         }
     }
 
+    if (m_maxReputationLevelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxReputationLevel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_maxReputationLevel, allocator);
+    }
+
+    if (m_maxDailyQuotaHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxDailyQuota";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_maxDailyQuota, allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -127,6 +165,26 @@ vector<EmailIdentity> ListEmailIdentitiesResponse::GetEmailIdentities() const
 bool ListEmailIdentitiesResponse::EmailIdentitiesHasBeenSet() const
 {
     return m_emailIdentitiesHasBeenSet;
+}
+
+uint64_t ListEmailIdentitiesResponse::GetMaxReputationLevel() const
+{
+    return m_maxReputationLevel;
+}
+
+bool ListEmailIdentitiesResponse::MaxReputationLevelHasBeenSet() const
+{
+    return m_maxReputationLevelHasBeenSet;
+}
+
+uint64_t ListEmailIdentitiesResponse::GetMaxDailyQuota() const
+{
+    return m_maxDailyQuota;
+}
+
+bool ListEmailIdentitiesResponse::MaxDailyQuotaHasBeenSet() const
+{
+    return m_maxDailyQuotaHasBeenSet;
 }
 
 

@@ -31,7 +31,8 @@ ImportImageRequest::ImportImageRequest() :
     m_imageDescriptionHasBeenSet(false),
     m_dryRunHasBeenSet(false),
     m_forceHasBeenSet(false),
-    m_tagSpecificationHasBeenSet(false)
+    m_tagSpecificationHasBeenSet(false),
+    m_licenseTypeHasBeenSet(false)
 {
 }
 
@@ -119,6 +120,14 @@ string ImportImageRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_licenseTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LicenseType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_licenseType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -271,6 +280,22 @@ void ImportImageRequest::SetTagSpecification(const vector<TagSpecification>& _ta
 bool ImportImageRequest::TagSpecificationHasBeenSet() const
 {
     return m_tagSpecificationHasBeenSet;
+}
+
+string ImportImageRequest::GetLicenseType() const
+{
+    return m_licenseType;
+}
+
+void ImportImageRequest::SetLicenseType(const string& _licenseType)
+{
+    m_licenseType = _licenseType;
+    m_licenseTypeHasBeenSet = true;
+}
+
+bool ImportImageRequest::LicenseTypeHasBeenSet() const
+{
+    return m_licenseTypeHasBeenSet;
 }
 
 

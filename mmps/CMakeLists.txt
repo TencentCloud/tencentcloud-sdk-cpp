@@ -33,11 +33,13 @@ set(mmps_public_header_model
   include/tencentcloud/mmps/v20200710/model/DescribeScanTaskReportUrlResponse.h
   include/tencentcloud/mmps/v20200710/model/DescribeFlySecMiniAppScanTaskStatusRequest.h
   include/tencentcloud/mmps/v20200710/model/CreateFlySecMiniAppScanTaskResponse.h
-  include/tencentcloud/mmps/v20200710/model/CreateFlySecMiniAppScanTaskRequest.h
+  include/tencentcloud/mmps/v20200710/model/CreateFlySecMiniAppProfessionalScanTaskRequest.h
+  include/tencentcloud/mmps/v20200710/model/CreateFlySecMiniAppProfessionalScanTaskResponse.h
   include/tencentcloud/mmps/v20200710/model/DescribeFlySecMiniAppScanTaskListRequest.h
   include/tencentcloud/mmps/v20200710/model/DescribeFlySecMiniAppScanReportListRequest.h
   include/tencentcloud/mmps/v20200710/model/DescribeFlySecMiniAppScanTaskParamResponse.h
   include/tencentcloud/mmps/v20200710/model/CreateFlySecMiniAppScanTaskRepeatRequest.h
+  include/tencentcloud/mmps/v20200710/model/CreateFlySecMiniAppScanTaskRequest.h
   include/tencentcloud/mmps/v20200710/model/CreateAppScanTaskRepeatRequest.h
   include/tencentcloud/mmps/v20200710/model/DescribeScanTaskReportUrlRequest.h
   include/tencentcloud/mmps/v20200710/model/TaskFlowStepsInfo.h
@@ -72,11 +74,13 @@ set(mmps_src
   src/v20200710/model/DescribeScanTaskReportUrlResponse.cpp
   src/v20200710/model/DescribeFlySecMiniAppScanTaskStatusRequest.cpp
   src/v20200710/model/CreateFlySecMiniAppScanTaskResponse.cpp
-  src/v20200710/model/CreateFlySecMiniAppScanTaskRequest.cpp
+  src/v20200710/model/CreateFlySecMiniAppProfessionalScanTaskRequest.cpp
+  src/v20200710/model/CreateFlySecMiniAppProfessionalScanTaskResponse.cpp
   src/v20200710/model/DescribeFlySecMiniAppScanTaskListRequest.cpp
   src/v20200710/model/DescribeFlySecMiniAppScanReportListRequest.cpp
   src/v20200710/model/DescribeFlySecMiniAppScanTaskParamResponse.cpp
   src/v20200710/model/CreateFlySecMiniAppScanTaskRepeatRequest.cpp
+  src/v20200710/model/CreateFlySecMiniAppScanTaskRequest.cpp
   src/v20200710/model/CreateAppScanTaskRepeatRequest.cpp
   src/v20200710/model/DescribeScanTaskReportUrlRequest.cpp
   src/v20200710/model/TaskFlowStepsInfo.cpp

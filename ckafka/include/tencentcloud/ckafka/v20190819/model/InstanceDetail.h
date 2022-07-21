@@ -654,6 +654,28 @@ namespace TencentCloud
                      */
                     bool ClusterTypeHasBeenSet() const;
 
+                    /**
+                     * 获取实例功能列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Features 实例功能列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> GetFeatures() const;
+
+                    /**
+                     * 设置实例功能列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Features 实例功能列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetFeatures(const std::vector<std::string>& _features);
+
+                    /**
+                     * 判断参数 Features 是否已赋值
+                     * @return Features 是否已赋值
+                     */
+                    bool FeaturesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -853,6 +875,13 @@ namespace TencentCloud
                      */
                     std::string m_clusterType;
                     bool m_clusterTypeHasBeenSet;
+
+                    /**
+                     * 实例功能列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_features;
+                    bool m_featuresHasBeenSet;
 
                 };
             }

@@ -30,7 +30,8 @@ TaskGroupInstance::TaskGroupInstance() :
     m_taskGroupInstanceStatusTypeHasBeenSet(false),
     m_taskGroupInstanceStartTimeHasBeenSet(false),
     m_taskGroupInstanceEndTimeHasBeenSet(false),
-    m_taskGroupInstanceIsRedoHasBeenSet(false)
+    m_taskGroupInstanceIsRedoHasBeenSet(false),
+    m_taskGroupInstanceExecuteTimeHasBeenSet(false)
 {
 }
 
@@ -139,6 +140,16 @@ CoreInternalOutcome TaskGroupInstance::Deserialize(const rapidjson::Value &value
         m_taskGroupInstanceIsRedoHasBeenSet = true;
     }
 
+    if (value.HasMember("TaskGroupInstanceExecuteTime") && !value["TaskGroupInstanceExecuteTime"].IsNull())
+    {
+        if (!value["TaskGroupInstanceExecuteTime"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskGroupInstance.TaskGroupInstanceExecuteTime` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_taskGroupInstanceExecuteTime = value["TaskGroupInstanceExecuteTime"].GetInt64();
+        m_taskGroupInstanceExecuteTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -224,6 +235,14 @@ void TaskGroupInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "TaskGroupInstanceIsRedo";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_taskGroupInstanceIsRedo, allocator);
+    }
+
+    if (m_taskGroupInstanceExecuteTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskGroupInstanceExecuteTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_taskGroupInstanceExecuteTime, allocator);
     }
 
 }
@@ -387,5 +406,21 @@ void TaskGroupInstance::SetTaskGroupInstanceIsRedo(const bool& _taskGroupInstanc
 bool TaskGroupInstance::TaskGroupInstanceIsRedoHasBeenSet() const
 {
     return m_taskGroupInstanceIsRedoHasBeenSet;
+}
+
+int64_t TaskGroupInstance::GetTaskGroupInstanceExecuteTime() const
+{
+    return m_taskGroupInstanceExecuteTime;
+}
+
+void TaskGroupInstance::SetTaskGroupInstanceExecuteTime(const int64_t& _taskGroupInstanceExecuteTime)
+{
+    m_taskGroupInstanceExecuteTime = _taskGroupInstanceExecuteTime;
+    m_taskGroupInstanceExecuteTimeHasBeenSet = true;
+}
+
+bool TaskGroupInstance::TaskGroupInstanceExecuteTimeHasBeenSet() const
+{
+    return m_taskGroupInstanceExecuteTimeHasBeenSet;
 }
 

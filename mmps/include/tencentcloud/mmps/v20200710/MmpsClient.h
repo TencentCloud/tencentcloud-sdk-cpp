@@ -27,6 +27,8 @@
 #include <tencentcloud/mmps/v20200710/model/CreateAppScanTaskResponse.h>
 #include <tencentcloud/mmps/v20200710/model/CreateAppScanTaskRepeatRequest.h>
 #include <tencentcloud/mmps/v20200710/model/CreateAppScanTaskRepeatResponse.h>
+#include <tencentcloud/mmps/v20200710/model/CreateFlySecMiniAppProfessionalScanTaskRequest.h>
+#include <tencentcloud/mmps/v20200710/model/CreateFlySecMiniAppProfessionalScanTaskResponse.h>
 #include <tencentcloud/mmps/v20200710/model/CreateFlySecMiniAppScanTaskRequest.h>
 #include <tencentcloud/mmps/v20200710/model/CreateFlySecMiniAppScanTaskResponse.h>
 #include <tencentcloud/mmps/v20200710/model/CreateFlySecMiniAppScanTaskRepeatRequest.h>
@@ -71,6 +73,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateAppScanTaskRepeatResponse> CreateAppScanTaskRepeatOutcome;
                 typedef std::future<CreateAppScanTaskRepeatOutcome> CreateAppScanTaskRepeatOutcomeCallable;
                 typedef std::function<void(const MmpsClient*, const Model::CreateAppScanTaskRepeatRequest&, CreateAppScanTaskRepeatOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAppScanTaskRepeatAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateFlySecMiniAppProfessionalScanTaskResponse> CreateFlySecMiniAppProfessionalScanTaskOutcome;
+                typedef std::future<CreateFlySecMiniAppProfessionalScanTaskOutcome> CreateFlySecMiniAppProfessionalScanTaskOutcomeCallable;
+                typedef std::function<void(const MmpsClient*, const Model::CreateFlySecMiniAppProfessionalScanTaskRequest&, CreateFlySecMiniAppProfessionalScanTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateFlySecMiniAppProfessionalScanTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateFlySecMiniAppScanTaskResponse> CreateFlySecMiniAppScanTaskOutcome;
                 typedef std::future<CreateFlySecMiniAppScanTaskOutcome> CreateFlySecMiniAppScanTaskOutcomeCallable;
                 typedef std::function<void(const MmpsClient*, const Model::CreateFlySecMiniAppScanTaskRequest&, CreateFlySecMiniAppScanTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateFlySecMiniAppScanTaskAsyncHandler;
@@ -127,6 +132,15 @@ namespace TencentCloud
                 CreateAppScanTaskRepeatOutcome CreateAppScanTaskRepeat(const Model::CreateAppScanTaskRepeatRequest &request);
                 void CreateAppScanTaskRepeatAsync(const Model::CreateAppScanTaskRepeatRequest& request, const CreateAppScanTaskRepeatAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateAppScanTaskRepeatOutcomeCallable CreateAppScanTaskRepeatCallable(const Model::CreateAppScanTaskRepeatRequest& request);
+
+                /**
+                 *创建小程序安全深度诊断任务
+                 * @param req CreateFlySecMiniAppProfessionalScanTaskRequest
+                 * @return CreateFlySecMiniAppProfessionalScanTaskOutcome
+                 */
+                CreateFlySecMiniAppProfessionalScanTaskOutcome CreateFlySecMiniAppProfessionalScanTask(const Model::CreateFlySecMiniAppProfessionalScanTaskRequest &request);
+                void CreateFlySecMiniAppProfessionalScanTaskAsync(const Model::CreateFlySecMiniAppProfessionalScanTaskRequest& request, const CreateFlySecMiniAppProfessionalScanTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateFlySecMiniAppProfessionalScanTaskOutcomeCallable CreateFlySecMiniAppProfessionalScanTaskCallable(const Model::CreateFlySecMiniAppProfessionalScanTaskRequest& request);
 
                 /**
                  *创建小程序翼扬安全的基础或深度诊断任务

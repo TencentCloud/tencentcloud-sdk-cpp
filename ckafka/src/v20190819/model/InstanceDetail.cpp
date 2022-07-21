@@ -51,7 +51,8 @@ InstanceDetail::InstanceDetail() :
     m_partitionNumberHasBeenSet(false),
     m_publicNetworkChargeTypeHasBeenSet(false),
     m_publicNetworkHasBeenSet(false),
-    m_clusterTypeHasBeenSet(false)
+    m_clusterTypeHasBeenSet(false),
+    m_featuresHasBeenSet(false)
 {
 }
 
@@ -393,6 +394,19 @@ CoreInternalOutcome InstanceDetail::Deserialize(const rapidjson::Value &value)
         m_clusterTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("Features") && !value["Features"].IsNull())
+    {
+        if (!value["Features"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `InstanceDetail.Features` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Features"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_features.push_back((*itr).GetString());
+        }
+        m_featuresHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -665,6 +679,19 @@ void InstanceDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "ClusterType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_clusterType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_featuresHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Features";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_features.begin(); itr != m_features.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -1164,5 +1191,21 @@ void InstanceDetail::SetClusterType(const string& _clusterType)
 bool InstanceDetail::ClusterTypeHasBeenSet() const
 {
     return m_clusterTypeHasBeenSet;
+}
+
+vector<string> InstanceDetail::GetFeatures() const
+{
+    return m_features;
+}
+
+void InstanceDetail::SetFeatures(const vector<string>& _features)
+{
+    m_features = _features;
+    m_featuresHasBeenSet = true;
+}
+
+bool InstanceDetail::FeaturesHasBeenSet() const
+{
+    return m_featuresHasBeenSet;
 }
 

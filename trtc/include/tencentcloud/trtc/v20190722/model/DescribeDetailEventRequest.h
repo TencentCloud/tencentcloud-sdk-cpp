@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取通话 ID（唯一标识一次通话）： sdkappid_roomgString（房间号_createTime（房间创建时间，unix时间戳，单位s）。通过 DescribeRoomInformation（查询房间列表）接口获取。（链接：https://cloud.tencent.com/document/product/647/44050）
-                     * @return CommId 通话 ID（唯一标识一次通话）： sdkappid_roomgString（房间号_createTime（房间创建时间，unix时间戳，单位s）。通过 DescribeRoomInformation（查询房间列表）接口获取。（链接：https://cloud.tencent.com/document/product/647/44050）
+                     * 获取通话 ID（唯一标识一次通话）： SdkAppId_RoomId（房间号）_ CreateTime（房间创建时间，unix时间戳，单位为s）例：1400xxxxxx_218695_1590065777。通过 DescribeRoomInfo（查询历史房间列表）接口获取（[查询历史房间列表](https://cloud.tencent.com/document/product/647/44050)）。
+                     * @return CommId 通话 ID（唯一标识一次通话）： SdkAppId_RoomId（房间号）_ CreateTime（房间创建时间，unix时间戳，单位为s）例：1400xxxxxx_218695_1590065777。通过 DescribeRoomInfo（查询历史房间列表）接口获取（[查询历史房间列表](https://cloud.tencent.com/document/product/647/44050)）。
                      */
                     std::string GetCommId() const;
 
                     /**
-                     * 设置通话 ID（唯一标识一次通话）： sdkappid_roomgString（房间号_createTime（房间创建时间，unix时间戳，单位s）。通过 DescribeRoomInformation（查询房间列表）接口获取。（链接：https://cloud.tencent.com/document/product/647/44050）
-                     * @param CommId 通话 ID（唯一标识一次通话）： sdkappid_roomgString（房间号_createTime（房间创建时间，unix时间戳，单位s）。通过 DescribeRoomInformation（查询房间列表）接口获取。（链接：https://cloud.tencent.com/document/product/647/44050）
+                     * 设置通话 ID（唯一标识一次通话）： SdkAppId_RoomId（房间号）_ CreateTime（房间创建时间，unix时间戳，单位为s）例：1400xxxxxx_218695_1590065777。通过 DescribeRoomInfo（查询历史房间列表）接口获取（[查询历史房间列表](https://cloud.tencent.com/document/product/647/44050)）。
+                     * @param CommId 通话 ID（唯一标识一次通话）： SdkAppId_RoomId（房间号）_ CreateTime（房间创建时间，unix时间戳，单位为s）例：1400xxxxxx_218695_1590065777。通过 DescribeRoomInfo（查询历史房间列表）接口获取（[查询历史房间列表](https://cloud.tencent.com/document/product/647/44050)）。
                      */
                     void SetCommId(const std::string& _commId);
 
@@ -61,14 +61,18 @@ namespace TencentCloud
                     bool CommIdHasBeenSet() const;
 
                     /**
-                     * 获取查询开始时间，14天内。本地unix时间戳（1588055615s）
-                     * @return StartTime 查询开始时间，14天内。本地unix时间戳（1588055615s）
+                     * 获取查询开始时间，本地unix时间戳，单位为秒（如：1590065777）
+注意：支持查询14天内的数据
+                     * @return StartTime 查询开始时间，本地unix时间戳，单位为秒（如：1590065777）
+注意：支持查询14天内的数据
                      */
                     uint64_t GetStartTime() const;
 
                     /**
-                     * 设置查询开始时间，14天内。本地unix时间戳（1588055615s）
-                     * @param StartTime 查询开始时间，14天内。本地unix时间戳（1588055615s）
+                     * 设置查询开始时间，本地unix时间戳，单位为秒（如：1590065777）
+注意：支持查询14天内的数据
+                     * @param StartTime 查询开始时间，本地unix时间戳，单位为秒（如：1590065777）
+注意：支持查询14天内的数据
                      */
                     void SetStartTime(const uint64_t& _startTime);
 
@@ -79,14 +83,18 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取查询结束时间，本地unix时间戳（1588058615s）
-                     * @return EndTime 查询结束时间，本地unix时间戳（1588058615s）
+                     * 获取查询结束时间，本地unix时间戳，单位为秒（如：1590065877）
+注意：查询时间大于房间结束时间，以房间结束时间为准。
+                     * @return EndTime 查询结束时间，本地unix时间戳，单位为秒（如：1590065877）
+注意：查询时间大于房间结束时间，以房间结束时间为准。
                      */
                     uint64_t GetEndTime() const;
 
                     /**
-                     * 设置查询结束时间，本地unix时间戳（1588058615s）
-                     * @param EndTime 查询结束时间，本地unix时间戳（1588058615s）
+                     * 设置查询结束时间，本地unix时间戳，单位为秒（如：1590065877）
+注意：查询时间大于房间结束时间，以房间结束时间为准。
+                     * @param EndTime 查询结束时间，本地unix时间戳，单位为秒（如：1590065877）
+注意：查询时间大于房间结束时间，以房间结束时间为准。
                      */
                     void SetEndTime(const uint64_t& _endTime);
 
@@ -97,14 +105,14 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取用户id
-                     * @return UserId 用户id
+                     * 获取用户UserId
+                     * @return UserId 用户UserId
                      */
                     std::string GetUserId() const;
 
                     /**
-                     * 设置用户id
-                     * @param UserId 用户id
+                     * 设置用户UserId
+                     * @param UserId 用户UserId
                      */
                     void SetUserId(const std::string& _userId);
 
@@ -115,14 +123,14 @@ namespace TencentCloud
                     bool UserIdHasBeenSet() const;
 
                     /**
-                     * 获取房间号
-                     * @return RoomId 房间号
+                     * 获取房间号（如：223）
+                     * @return RoomId 房间号（如：223）
                      */
                     std::string GetRoomId() const;
 
                     /**
-                     * 设置房间号
-                     * @param RoomId 房间号
+                     * 设置房间号（如：223）
+                     * @param RoomId 房间号（如：223）
                      */
                     void SetRoomId(const std::string& _roomId);
 
@@ -135,31 +143,33 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 通话 ID（唯一标识一次通话）： sdkappid_roomgString（房间号_createTime（房间创建时间，unix时间戳，单位s）。通过 DescribeRoomInformation（查询房间列表）接口获取。（链接：https://cloud.tencent.com/document/product/647/44050）
+                     * 通话 ID（唯一标识一次通话）： SdkAppId_RoomId（房间号）_ CreateTime（房间创建时间，unix时间戳，单位为s）例：1400xxxxxx_218695_1590065777。通过 DescribeRoomInfo（查询历史房间列表）接口获取（[查询历史房间列表](https://cloud.tencent.com/document/product/647/44050)）。
                      */
                     std::string m_commId;
                     bool m_commIdHasBeenSet;
 
                     /**
-                     * 查询开始时间，14天内。本地unix时间戳（1588055615s）
+                     * 查询开始时间，本地unix时间戳，单位为秒（如：1590065777）
+注意：支持查询14天内的数据
                      */
                     uint64_t m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 查询结束时间，本地unix时间戳（1588058615s）
+                     * 查询结束时间，本地unix时间戳，单位为秒（如：1590065877）
+注意：查询时间大于房间结束时间，以房间结束时间为准。
                      */
                     uint64_t m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 用户id
+                     * 用户UserId
                      */
                     std::string m_userId;
                     bool m_userIdHasBeenSet;
 
                     /**
-                     * 房间号
+                     * 房间号（如：223）
                      */
                     std::string m_roomId;
                     bool m_roomIdHasBeenSet;

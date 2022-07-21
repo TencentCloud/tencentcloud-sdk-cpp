@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取通话 ID（唯一标识一次通话）： sdkappid_roomgString（房间号_createTime（房间创建时间，unix时间戳，单位为s）例：1400353843_218695_1590065777。通过 DescribeRoomInformation（查询房间列表）接口获取（链接：https://cloud.tencent.com/document/product/647/44050）
-                     * @return CommId 通话 ID（唯一标识一次通话）： sdkappid_roomgString（房间号_createTime（房间创建时间，unix时间戳，单位为s）例：1400353843_218695_1590065777。通过 DescribeRoomInformation（查询房间列表）接口获取（链接：https://cloud.tencent.com/document/product/647/44050）
+                     * 获取通话 ID（唯一标识一次通话）： SdkAppId_RoomId（房间号）_ CreateTime（房间创建时间，unix时间戳，单位为s）例：1400xxxxxx_218695_1590065777。通过 DescribeRoomInfo（查询历史房间列表）接口获取（[查询历史房间列表](https://cloud.tencent.com/document/product/647/44050)）。
+                     * @return CommId 通话 ID（唯一标识一次通话）： SdkAppId_RoomId（房间号）_ CreateTime（房间创建时间，unix时间戳，单位为s）例：1400xxxxxx_218695_1590065777。通过 DescribeRoomInfo（查询历史房间列表）接口获取（[查询历史房间列表](https://cloud.tencent.com/document/product/647/44050)）。
                      */
                     std::string GetCommId() const;
 
                     /**
-                     * 设置通话 ID（唯一标识一次通话）： sdkappid_roomgString（房间号_createTime（房间创建时间，unix时间戳，单位为s）例：1400353843_218695_1590065777。通过 DescribeRoomInformation（查询房间列表）接口获取（链接：https://cloud.tencent.com/document/product/647/44050）
-                     * @param CommId 通话 ID（唯一标识一次通话）： sdkappid_roomgString（房间号_createTime（房间创建时间，unix时间戳，单位为s）例：1400353843_218695_1590065777。通过 DescribeRoomInformation（查询房间列表）接口获取（链接：https://cloud.tencent.com/document/product/647/44050）
+                     * 设置通话 ID（唯一标识一次通话）： SdkAppId_RoomId（房间号）_ CreateTime（房间创建时间，unix时间戳，单位为s）例：1400xxxxxx_218695_1590065777。通过 DescribeRoomInfo（查询历史房间列表）接口获取（[查询历史房间列表](https://cloud.tencent.com/document/product/647/44050)）。
+                     * @param CommId 通话 ID（唯一标识一次通话）： SdkAppId_RoomId（房间号）_ CreateTime（房间创建时间，unix时间戳，单位为s）例：1400xxxxxx_218695_1590065777。通过 DescribeRoomInfo（查询历史房间列表）接口获取（[查询历史房间列表](https://cloud.tencent.com/document/product/647/44050)）。
                      */
                     void SetCommId(const std::string& _commId);
 
@@ -61,14 +61,18 @@ namespace TencentCloud
                     bool CommIdHasBeenSet() const;
 
                     /**
-                     * 获取查询开始时间，14天内。本地unix时间戳（1590065777s），查询实时数据时，查询起止时间不超过1个小时。
-                     * @return StartTime 查询开始时间，14天内。本地unix时间戳（1590065777s），查询实时数据时，查询起止时间不超过1个小时。
+                     * 获取查询开始时间，本地unix时间戳，单位为秒（如：1590065777），
+注意：支持查询14天内的数据。
+                     * @return StartTime 查询开始时间，本地unix时间戳，单位为秒（如：1590065777），
+注意：支持查询14天内的数据。
                      */
                     uint64_t GetStartTime() const;
 
                     /**
-                     * 设置查询开始时间，14天内。本地unix时间戳（1590065777s），查询实时数据时，查询起止时间不超过1个小时。
-                     * @param StartTime 查询开始时间，14天内。本地unix时间戳（1590065777s），查询实时数据时，查询起止时间不超过1个小时。
+                     * 设置查询开始时间，本地unix时间戳，单位为秒（如：1590065777），
+注意：支持查询14天内的数据。
+                     * @param StartTime 查询开始时间，本地unix时间戳，单位为秒（如：1590065777），
+注意：支持查询14天内的数据。
                      */
                     void SetStartTime(const uint64_t& _startTime);
 
@@ -79,14 +83,18 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取查询结束时间，本地unix时间戳（1590065877s）
-                     * @return EndTime 查询结束时间，本地unix时间戳（1590065877s）
+                     * 获取查询结束时间，本地unix时间戳，单位为秒（如：1590065877）
+注意：DataType 不为null ，与StartTime间隔时间不超过1小时；DataType 为null，与StartTime间隔时间不超过4小时。
+                     * @return EndTime 查询结束时间，本地unix时间戳，单位为秒（如：1590065877）
+注意：DataType 不为null ，与StartTime间隔时间不超过1小时；DataType 为null，与StartTime间隔时间不超过4小时。
                      */
                     uint64_t GetEndTime() const;
 
                     /**
-                     * 设置查询结束时间，本地unix时间戳（1590065877s）
-                     * @param EndTime 查询结束时间，本地unix时间戳（1590065877s）
+                     * 设置查询结束时间，本地unix时间戳，单位为秒（如：1590065877）
+注意：DataType 不为null ，与StartTime间隔时间不超过1小时；DataType 为null，与StartTime间隔时间不超过4小时。
+                     * @param EndTime 查询结束时间，本地unix时间戳，单位为秒（如：1590065877）
+注意：DataType 不为null ，与StartTime间隔时间不超过1小时；DataType 为null，与StartTime间隔时间不超过4小时。
                      */
                     void SetEndTime(const uint64_t& _endTime);
 
@@ -97,14 +105,14 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取用户SDKAppID（1400353843）
-                     * @return SdkAppId 用户SDKAppID（1400353843）
+                     * 获取用户SdkAppId（如：1400xxxxxx）。
+                     * @return SdkAppId 用户SdkAppId（如：1400xxxxxx）。
                      */
                     std::string GetSdkAppId() const;
 
                     /**
-                     * 设置用户SDKAppID（1400353843）
-                     * @param SdkAppId 用户SDKAppID（1400353843）
+                     * 设置用户SdkAppId（如：1400xxxxxx）。
+                     * @param SdkAppId 用户SdkAppId（如：1400xxxxxx）。
                      */
                     void SetSdkAppId(const std::string& _sdkAppId);
 
@@ -115,14 +123,14 @@ namespace TencentCloud
                     bool SdkAppIdHasBeenSet() const;
 
                     /**
-                     * 获取需查询的用户数组，不填默认返回6个用户,最多可填6个用户
-                     * @return UserIds 需查询的用户数组，不填默认返回6个用户,最多可填6个用户
+                     * 获取需查询的用户数组，默认不填返回6个用户。
+                     * @return UserIds 需查询的用户数组，默认不填返回6个用户。
                      */
                     std::vector<std::string> GetUserIds() const;
 
                     /**
-                     * 设置需查询的用户数组，不填默认返回6个用户,最多可填6个用户
-                     * @param UserIds 需查询的用户数组，不填默认返回6个用户,最多可填6个用户
+                     * 设置需查询的用户数组，默认不填返回6个用户。
+                     * @param UserIds 需查询的用户数组，默认不填返回6个用户。
                      */
                     void SetUserIds(const std::vector<std::string>& _userIds);
 
@@ -203,14 +211,18 @@ bigvHeight：上/下行分辨率高
                     bool DataTypeHasBeenSet() const;
 
                     /**
-                     * 获取设置分页index，从0开始（PageNumber和PageSize 其中一个不填均默认返回6条数据）
-                     * @return PageNumber 设置分页index，从0开始（PageNumber和PageSize 其中一个不填均默认返回6条数据）
+                     * 获取当前页数，默认为0，
+注意：PageNumber和PageSize 其中一个不填均默认返回6条数据。
+                     * @return PageNumber 当前页数，默认为0，
+注意：PageNumber和PageSize 其中一个不填均默认返回6条数据。
                      */
                     std::string GetPageNumber() const;
 
                     /**
-                     * 设置设置分页index，从0开始（PageNumber和PageSize 其中一个不填均默认返回6条数据）
-                     * @param PageNumber 设置分页index，从0开始（PageNumber和PageSize 其中一个不填均默认返回6条数据）
+                     * 设置当前页数，默认为0，
+注意：PageNumber和PageSize 其中一个不填均默认返回6条数据。
+                     * @param PageNumber 当前页数，默认为0，
+注意：PageNumber和PageSize 其中一个不填均默认返回6条数据。
                      */
                     void SetPageNumber(const std::string& _pageNumber);
 
@@ -221,14 +233,26 @@ bigvHeight：上/下行分辨率高
                     bool PageNumberHasBeenSet() const;
 
                     /**
-                     * 获取设置分页大小（PageNumber和PageSize 其中一个不填均默认返回6条数据,DataType，UserIds不为null，PageSize最大不超过6，DataType，UserIds为null，PageSize最大不超过100）
-                     * @return PageSize 设置分页大小（PageNumber和PageSize 其中一个不填均默认返回6条数据,DataType，UserIds不为null，PageSize最大不超过6，DataType，UserIds为null，PageSize最大不超过100）
+                     * 获取每页个数，默认为6，
+范围：[1，100]
+注意：DataType不为null，UserIds长度不能超过6，PageSize最大值不超过6；
+DataType 为null，UserIds长度不超过100，PageSize最大不超过100。
+                     * @return PageSize 每页个数，默认为6，
+范围：[1，100]
+注意：DataType不为null，UserIds长度不能超过6，PageSize最大值不超过6；
+DataType 为null，UserIds长度不超过100，PageSize最大不超过100。
                      */
                     std::string GetPageSize() const;
 
                     /**
-                     * 设置设置分页大小（PageNumber和PageSize 其中一个不填均默认返回6条数据,DataType，UserIds不为null，PageSize最大不超过6，DataType，UserIds为null，PageSize最大不超过100）
-                     * @param PageSize 设置分页大小（PageNumber和PageSize 其中一个不填均默认返回6条数据,DataType，UserIds不为null，PageSize最大不超过6，DataType，UserIds为null，PageSize最大不超过100）
+                     * 设置每页个数，默认为6，
+范围：[1，100]
+注意：DataType不为null，UserIds长度不能超过6，PageSize最大值不超过6；
+DataType 为null，UserIds长度不超过100，PageSize最大不超过100。
+                     * @param PageSize 每页个数，默认为6，
+范围：[1，100]
+注意：DataType不为null，UserIds长度不能超过6，PageSize最大值不超过6；
+DataType 为null，UserIds长度不超过100，PageSize最大不超过100。
                      */
                     void SetPageSize(const std::string& _pageSize);
 
@@ -241,31 +265,33 @@ bigvHeight：上/下行分辨率高
                 private:
 
                     /**
-                     * 通话 ID（唯一标识一次通话）： sdkappid_roomgString（房间号_createTime（房间创建时间，unix时间戳，单位为s）例：1400353843_218695_1590065777。通过 DescribeRoomInformation（查询房间列表）接口获取（链接：https://cloud.tencent.com/document/product/647/44050）
+                     * 通话 ID（唯一标识一次通话）： SdkAppId_RoomId（房间号）_ CreateTime（房间创建时间，unix时间戳，单位为s）例：1400xxxxxx_218695_1590065777。通过 DescribeRoomInfo（查询历史房间列表）接口获取（[查询历史房间列表](https://cloud.tencent.com/document/product/647/44050)）。
                      */
                     std::string m_commId;
                     bool m_commIdHasBeenSet;
 
                     /**
-                     * 查询开始时间，14天内。本地unix时间戳（1590065777s），查询实时数据时，查询起止时间不超过1个小时。
+                     * 查询开始时间，本地unix时间戳，单位为秒（如：1590065777），
+注意：支持查询14天内的数据。
                      */
                     uint64_t m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 查询结束时间，本地unix时间戳（1590065877s）
+                     * 查询结束时间，本地unix时间戳，单位为秒（如：1590065877）
+注意：DataType 不为null ，与StartTime间隔时间不超过1小时；DataType 为null，与StartTime间隔时间不超过4小时。
                      */
                     uint64_t m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 用户SDKAppID（1400353843）
+                     * 用户SdkAppId（如：1400xxxxxx）。
                      */
                     std::string m_sdkAppId;
                     bool m_sdkAppIdHasBeenSet;
 
                     /**
-                     * 需查询的用户数组，不填默认返回6个用户,最多可填6个用户
+                     * 需查询的用户数组，默认不填返回6个用户。
                      */
                     std::vector<std::string> m_userIds;
                     bool m_userIdsHasBeenSet;
@@ -290,13 +316,17 @@ bigvHeight：上/下行分辨率高
                     bool m_dataTypeHasBeenSet;
 
                     /**
-                     * 设置分页index，从0开始（PageNumber和PageSize 其中一个不填均默认返回6条数据）
+                     * 当前页数，默认为0，
+注意：PageNumber和PageSize 其中一个不填均默认返回6条数据。
                      */
                     std::string m_pageNumber;
                     bool m_pageNumberHasBeenSet;
 
                     /**
-                     * 设置分页大小（PageNumber和PageSize 其中一个不填均默认返回6条数据,DataType，UserIds不为null，PageSize最大不超过6，DataType，UserIds为null，PageSize最大不超过100）
+                     * 每页个数，默认为6，
+范围：[1，100]
+注意：DataType不为null，UserIds长度不能超过6，PageSize最大值不超过6；
+DataType 为null，UserIds长度不超过100，PageSize最大不超过100。
                      */
                     std::string m_pageSize;
                     bool m_pageSizeHasBeenSet;

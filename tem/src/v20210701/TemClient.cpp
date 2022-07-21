@@ -642,6 +642,49 @@ TemClient::DescribeRelatedIngressesOutcomeCallable TemClient::DescribeRelatedIng
     return task->get_future();
 }
 
+TemClient::DestroyEnvironmentOutcome TemClient::DestroyEnvironment(const DestroyEnvironmentRequest &request)
+{
+    auto outcome = MakeRequest(request, "DestroyEnvironment");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DestroyEnvironmentResponse rsp = DestroyEnvironmentResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DestroyEnvironmentOutcome(rsp);
+        else
+            return DestroyEnvironmentOutcome(o.GetError());
+    }
+    else
+    {
+        return DestroyEnvironmentOutcome(outcome.GetError());
+    }
+}
+
+void TemClient::DestroyEnvironmentAsync(const DestroyEnvironmentRequest& request, const DestroyEnvironmentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DestroyEnvironment(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TemClient::DestroyEnvironmentOutcomeCallable TemClient::DestroyEnvironmentCallable(const DestroyEnvironmentRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DestroyEnvironmentOutcome()>>(
+        [this, request]()
+        {
+            return this->DestroyEnvironment(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TemClient::GenerateApplicationPackageDownloadUrlOutcome TemClient::GenerateApplicationPackageDownloadUrl(const GenerateApplicationPackageDownloadUrlRequest &request)
 {
     auto outcome = MakeRequest(request, "GenerateApplicationPackageDownloadUrl");

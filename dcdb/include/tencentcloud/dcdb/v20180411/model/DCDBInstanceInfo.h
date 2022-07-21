@@ -974,6 +974,28 @@ namespace TencentCloud
                      */
                     bool ResourceTagsHasBeenSet() const;
 
+                    /**
+                     * 获取数据库引擎版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DbVersionId 数据库引擎版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetDbVersionId() const;
+
+                    /**
+                     * 设置数据库引擎版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DbVersionId 数据库引擎版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDbVersionId(const std::string& _dbVersionId);
+
+                    /**
+                     * 判断参数 DbVersionId 是否已赋值
+                     * @return DbVersionId 是否已赋值
+                     */
+                    bool DbVersionIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1280,6 +1302,13 @@ namespace TencentCloud
                      */
                     std::vector<ResourceTag> m_resourceTags;
                     bool m_resourceTagsHasBeenSet;
+
+                    /**
+                     * 数据库引擎版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_dbVersionId;
+                    bool m_dbVersionIdHasBeenSet;
 
                 };
             }

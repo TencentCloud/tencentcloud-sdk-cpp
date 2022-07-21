@@ -33,6 +33,7 @@ set(tem_public_header_model
   include/tencentcloud/tem/v20210701/model/EsInfo.h
   include/tencentcloud/tem/v20210701/model/DeployServiceBatchDetail.h
   include/tencentcloud/tem/v20210701/model/DescribeApplicationPodsResponse.h
+  include/tencentcloud/tem/v20210701/model/RestartApplicationRequest.h
   include/tencentcloud/tem/v20210701/model/DeleteIngressRequest.h
   include/tencentcloud/tem/v20210701/model/RestartApplicationPodRequest.h
   include/tencentcloud/tem/v20210701/model/DescribeRelatedIngressesRequest.h
@@ -57,6 +58,7 @@ set(tem_public_header_model
   include/tencentcloud/tem/v20210701/model/LogOutputConf.h
   include/tencentcloud/tem/v20210701/model/DescribeIngressesResponse.h
   include/tencentcloud/tem/v20210701/model/DeleteIngressResponse.h
+  include/tencentcloud/tem/v20210701/model/DestroyEnvironmentRequest.h
   include/tencentcloud/tem/v20210701/model/TemNamespaceInfo.h
   include/tencentcloud/tem/v20210701/model/GenerateApplicationPackageDownloadUrlResponse.h
   include/tencentcloud/tem/v20210701/model/IngressRuleBackend.h
@@ -77,7 +79,7 @@ set(tem_public_header_model
   include/tencentcloud/tem/v20210701/model/IngressRulePath.h
   include/tencentcloud/tem/v20210701/model/CreateEnvironmentResponse.h
   include/tencentcloud/tem/v20210701/model/NamespacePage.h
-  include/tencentcloud/tem/v20210701/model/RestartApplicationRequest.h
+  include/tencentcloud/tem/v20210701/model/DestroyEnvironmentResponse.h
   include/tencentcloud/tem/v20210701/model/CreateApplicationResponse.h
   include/tencentcloud/tem/v20210701/model/HorizontalAutoscaler.h
   include/tencentcloud/tem/v20210701/model/RevertDeployApplicationRequest.h
@@ -173,6 +175,7 @@ set(tem_src
   src/v20210701/model/EsInfo.cpp
   src/v20210701/model/DeployServiceBatchDetail.cpp
   src/v20210701/model/DescribeApplicationPodsResponse.cpp
+  src/v20210701/model/RestartApplicationRequest.cpp
   src/v20210701/model/DeleteIngressRequest.cpp
   src/v20210701/model/RestartApplicationPodRequest.cpp
   src/v20210701/model/DescribeRelatedIngressesRequest.cpp
@@ -197,6 +200,7 @@ set(tem_src
   src/v20210701/model/LogOutputConf.cpp
   src/v20210701/model/DescribeIngressesResponse.cpp
   src/v20210701/model/DeleteIngressResponse.cpp
+  src/v20210701/model/DestroyEnvironmentRequest.cpp
   src/v20210701/model/TemNamespaceInfo.cpp
   src/v20210701/model/GenerateApplicationPackageDownloadUrlResponse.cpp
   src/v20210701/model/IngressRuleBackend.cpp
@@ -217,7 +221,7 @@ set(tem_src
   src/v20210701/model/IngressRulePath.cpp
   src/v20210701/model/CreateEnvironmentResponse.cpp
   src/v20210701/model/NamespacePage.cpp
-  src/v20210701/model/RestartApplicationRequest.cpp
+  src/v20210701/model/DestroyEnvironmentResponse.cpp
   src/v20210701/model/CreateApplicationResponse.cpp
   src/v20210701/model/HorizontalAutoscaler.cpp
   src/v20210701/model/RevertDeployApplicationRequest.cpp

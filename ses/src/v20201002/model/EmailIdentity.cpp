@@ -23,7 +23,9 @@ using namespace std;
 EmailIdentity::EmailIdentity() :
     m_identityNameHasBeenSet(false),
     m_identityTypeHasBeenSet(false),
-    m_sendingEnabledHasBeenSet(false)
+    m_sendingEnabledHasBeenSet(false),
+    m_currentReputationLevelHasBeenSet(false),
+    m_dailyQuotaHasBeenSet(false)
 {
 }
 
@@ -62,6 +64,26 @@ CoreInternalOutcome EmailIdentity::Deserialize(const rapidjson::Value &value)
         m_sendingEnabledHasBeenSet = true;
     }
 
+    if (value.HasMember("CurrentReputationLevel") && !value["CurrentReputationLevel"].IsNull())
+    {
+        if (!value["CurrentReputationLevel"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `EmailIdentity.CurrentReputationLevel` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_currentReputationLevel = value["CurrentReputationLevel"].GetUint64();
+        m_currentReputationLevelHasBeenSet = true;
+    }
+
+    if (value.HasMember("DailyQuota") && !value["DailyQuota"].IsNull())
+    {
+        if (!value["DailyQuota"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `EmailIdentity.DailyQuota` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_dailyQuota = value["DailyQuota"].GetUint64();
+        m_dailyQuotaHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +113,22 @@ void EmailIdentity::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "SendingEnabled";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_sendingEnabled, allocator);
+    }
+
+    if (m_currentReputationLevelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CurrentReputationLevel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_currentReputationLevel, allocator);
+    }
+
+    if (m_dailyQuotaHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DailyQuota";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_dailyQuota, allocator);
     }
 
 }
@@ -142,5 +180,37 @@ void EmailIdentity::SetSendingEnabled(const bool& _sendingEnabled)
 bool EmailIdentity::SendingEnabledHasBeenSet() const
 {
     return m_sendingEnabledHasBeenSet;
+}
+
+uint64_t EmailIdentity::GetCurrentReputationLevel() const
+{
+    return m_currentReputationLevel;
+}
+
+void EmailIdentity::SetCurrentReputationLevel(const uint64_t& _currentReputationLevel)
+{
+    m_currentReputationLevel = _currentReputationLevel;
+    m_currentReputationLevelHasBeenSet = true;
+}
+
+bool EmailIdentity::CurrentReputationLevelHasBeenSet() const
+{
+    return m_currentReputationLevelHasBeenSet;
+}
+
+uint64_t EmailIdentity::GetDailyQuota() const
+{
+    return m_dailyQuota;
+}
+
+void EmailIdentity::SetDailyQuota(const uint64_t& _dailyQuota)
+{
+    m_dailyQuota = _dailyQuota;
+    m_dailyQuotaHasBeenSet = true;
+}
+
+bool EmailIdentity::DailyQuotaHasBeenSet() const
+{
+    return m_dailyQuotaHasBeenSet;
 }
 

@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取用户sdkappid(1400188366)
-                     * @return SdkAppId 用户sdkappid(1400188366)
+                     * 获取用户SdkAppId（如：1400xxxxxx）
+                     * @return SdkAppId 用户SdkAppId（如：1400xxxxxx）
                      */
                     std::string GetSdkAppId() const;
 
                     /**
-                     * 设置用户sdkappid(1400188366)
-                     * @param SdkAppId 用户sdkappid(1400188366)
+                     * 设置用户SdkAppId（如：1400xxxxxx）
+                     * @param SdkAppId 用户SdkAppId（如：1400xxxxxx）
                      */
                     void SetSdkAppId(const std::string& _sdkAppId);
 
@@ -61,14 +61,18 @@ namespace TencentCloud
                     bool SdkAppIdHasBeenSet() const;
 
                     /**
-                     * 获取查询开始时间，5天内。本地unix时间戳（1587571000s）
-                     * @return StartTime 查询开始时间，5天内。本地unix时间戳（1587571000s）
+                     * 获取查询开始时间，本地unix时间戳，单位为秒（如：1590065777）
+注意：支持查询14天内的数据。
+                     * @return StartTime 查询开始时间，本地unix时间戳，单位为秒（如：1590065777）
+注意：支持查询14天内的数据。
                      */
                     uint64_t GetStartTime() const;
 
                     /**
-                     * 设置查询开始时间，5天内。本地unix时间戳（1587571000s）
-                     * @param StartTime 查询开始时间，5天内。本地unix时间戳（1587571000s）
+                     * 设置查询开始时间，本地unix时间戳，单位为秒（如：1590065777）
+注意：支持查询14天内的数据。
+                     * @param StartTime 查询开始时间，本地unix时间戳，单位为秒（如：1590065777）
+注意：支持查询14天内的数据。
                      */
                     void SetStartTime(const uint64_t& _startTime);
 
@@ -79,14 +83,18 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取查询结束时间，本地unix时间戳（1588034999s）
-                     * @return EndTime 查询结束时间，本地unix时间戳（1588034999s）
+                     * 获取查询结束时间，本地unix时间戳，单位为秒（如：1590065877），建议与StartTime间隔时间超过24小时。
+注意：按天统计，结束时间小于前一天，否则查询数据为空（如：需查询20号数据，结束时间需小于20号0点）。
+                     * @return EndTime 查询结束时间，本地unix时间戳，单位为秒（如：1590065877），建议与StartTime间隔时间超过24小时。
+注意：按天统计，结束时间小于前一天，否则查询数据为空（如：需查询20号数据，结束时间需小于20号0点）。
                      */
                     uint64_t GetEndTime() const;
 
                     /**
-                     * 设置查询结束时间，本地unix时间戳（1588034999s）
-                     * @param EndTime 查询结束时间，本地unix时间戳（1588034999s）
+                     * 设置查询结束时间，本地unix时间戳，单位为秒（如：1590065877），建议与StartTime间隔时间超过24小时。
+注意：按天统计，结束时间小于前一天，否则查询数据为空（如：需查询20号数据，结束时间需小于20号0点）。
+                     * @param EndTime 查询结束时间，本地unix时间戳，单位为秒（如：1590065877），建议与StartTime间隔时间超过24小时。
+注意：按天统计，结束时间小于前一天，否则查询数据为空（如：需查询20号数据，结束时间需小于20号0点）。
                      */
                     void SetEndTime(const uint64_t& _endTime);
 
@@ -99,19 +107,21 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 用户sdkappid(1400188366)
+                     * 用户SdkAppId（如：1400xxxxxx）
                      */
                     std::string m_sdkAppId;
                     bool m_sdkAppIdHasBeenSet;
 
                     /**
-                     * 查询开始时间，5天内。本地unix时间戳（1587571000s）
+                     * 查询开始时间，本地unix时间戳，单位为秒（如：1590065777）
+注意：支持查询14天内的数据。
                      */
                     uint64_t m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 查询结束时间，本地unix时间戳（1588034999s）
+                     * 查询结束时间，本地unix时间戳，单位为秒（如：1590065877），建议与StartTime间隔时间超过24小时。
+注意：按天统计，结束时间小于前一天，否则查询数据为空（如：需查询20号数据，结束时间需小于20号0点）。
                      */
                     uint64_t m_endTime;
                     bool m_endTimeHasBeenSet;

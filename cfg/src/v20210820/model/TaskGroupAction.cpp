@@ -39,7 +39,8 @@ TaskGroupAction::TaskGroupAction() :
     m_actionAttributeHasBeenSet(false),
     m_actionTypeHasBeenSet(false),
     m_isExecuteRedoHasBeenSet(false),
-    m_actionRiskHasBeenSet(false)
+    m_actionRiskHasBeenSet(false),
+    m_taskGroupActionExecuteTimeHasBeenSet(false)
 {
 }
 
@@ -248,6 +249,16 @@ CoreInternalOutcome TaskGroupAction::Deserialize(const rapidjson::Value &value)
         m_actionRiskHasBeenSet = true;
     }
 
+    if (value.HasMember("TaskGroupActionExecuteTime") && !value["TaskGroupActionExecuteTime"].IsNull())
+    {
+        if (!value["TaskGroupActionExecuteTime"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskGroupAction.TaskGroupActionExecuteTime` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_taskGroupActionExecuteTime = value["TaskGroupActionExecuteTime"].GetInt64();
+        m_taskGroupActionExecuteTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -412,6 +423,14 @@ void TaskGroupAction::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "ActionRisk";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_actionRisk.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_taskGroupActionExecuteTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskGroupActionExecuteTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_taskGroupActionExecuteTime, allocator);
     }
 
 }
@@ -719,5 +738,21 @@ void TaskGroupAction::SetActionRisk(const string& _actionRisk)
 bool TaskGroupAction::ActionRiskHasBeenSet() const
 {
     return m_actionRiskHasBeenSet;
+}
+
+int64_t TaskGroupAction::GetTaskGroupActionExecuteTime() const
+{
+    return m_taskGroupActionExecuteTime;
+}
+
+void TaskGroupAction::SetTaskGroupActionExecuteTime(const int64_t& _taskGroupActionExecuteTime)
+{
+    m_taskGroupActionExecuteTime = _taskGroupActionExecuteTime;
+    m_taskGroupActionExecuteTimeHasBeenSet = true;
+}
+
+bool TaskGroupAction::TaskGroupActionExecuteTimeHasBeenSet() const
+{
+    return m_taskGroupActionExecuteTimeHasBeenSet;
 }
 

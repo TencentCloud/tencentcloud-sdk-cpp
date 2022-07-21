@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool MiniAppIDHasBeenSet() const;
 
                     /**
-                     * 获取诊断模式 1:基础诊断，2:深度诊断
-                     * @return Mode 诊断模式 1:基础诊断，2:深度诊断
+                     * 获取诊断模式 1:基础诊断
+                     * @return Mode 诊断模式 1:基础诊断
                      */
                     int64_t GetMode() const;
 
                     /**
-                     * 设置诊断模式 1:基础诊断，2:深度诊断
-                     * @param Mode 诊断模式 1:基础诊断，2:深度诊断
+                     * 设置诊断模式 1:基础诊断
+                     * @param Mode 诊断模式 1:基础诊断
                      */
                     void SetMode(const int64_t& _mode);
 
@@ -231,7 +231,7 @@ namespace TencentCloud
                     bool m_miniAppIDHasBeenSet;
 
                     /**
-                     * 诊断模式 1:基础诊断，2:深度诊断
+                     * 诊断模式 1:基础诊断
                      */
                     int64_t m_mode;
                     bool m_modeHasBeenSet;

@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取用户sdkappid
-                     * @return SdkAppId 用户sdkappid
+                     * 获取用户SdkAppId（如：1400xxxxxx）
+                     * @return SdkAppId 用户SdkAppId（如：1400xxxxxx）
                      */
                     std::string GetSdkAppId() const;
 
                     /**
-                     * 设置用户sdkappid
-                     * @param SdkAppId 用户sdkappid
+                     * 设置用户SdkAppId（如：1400xxxxxx）
+                     * @param SdkAppId 用户SdkAppId（如：1400xxxxxx）
                      */
                     void SetSdkAppId(const std::string& _sdkAppId);
 
@@ -61,14 +61,18 @@ namespace TencentCloud
                     bool SdkAppIdHasBeenSet() const;
 
                     /**
-                     * 获取查询开始时间，14天内。本地unix时间戳（1588031999）
-                     * @return StartTime 查询开始时间，14天内。本地unix时间戳（1588031999）
+                     * 获取查询开始时间，本地unix时间戳，单位为秒（如：1590065777）
+注意：支持查询14天内的数据
+                     * @return StartTime 查询开始时间，本地unix时间戳，单位为秒（如：1590065777）
+注意：支持查询14天内的数据
                      */
                     uint64_t GetStartTime() const;
 
                     /**
-                     * 设置查询开始时间，14天内。本地unix时间戳（1588031999）
-                     * @param StartTime 查询开始时间，14天内。本地unix时间戳（1588031999）
+                     * 设置查询开始时间，本地unix时间戳，单位为秒（如：1590065777）
+注意：支持查询14天内的数据
+                     * @param StartTime 查询开始时间，本地unix时间戳，单位为秒（如：1590065777）
+注意：支持查询14天内的数据
                      */
                     void SetStartTime(const uint64_t& _startTime);
 
@@ -79,14 +83,18 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取查询结束时间，本地unix时间戳（1588034999）
-                     * @return EndTime 查询结束时间，本地unix时间戳（1588034999）
+                     * 获取查询结束时间，本地unix时间戳，单位为秒（如：1590065877）
+注意：与StartTime间隔时间不超过24小时。
+                     * @return EndTime 查询结束时间，本地unix时间戳，单位为秒（如：1590065877）
+注意：与StartTime间隔时间不超过24小时。
                      */
                     uint64_t GetEndTime() const;
 
                     /**
-                     * 设置查询结束时间，本地unix时间戳（1588034999）
-                     * @param EndTime 查询结束时间，本地unix时间戳（1588034999）
+                     * 设置查询结束时间，本地unix时间戳，单位为秒（如：1590065877）
+注意：与StartTime间隔时间不超过24小时。
+                     * @param EndTime 查询结束时间，本地unix时间戳，单位为秒（如：1590065877）
+注意：与StartTime间隔时间不超过24小时。
                      */
                     void SetEndTime(const uint64_t& _endTime);
 
@@ -97,14 +105,14 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取字符串房间号
-                     * @return RoomId 字符串房间号
+                     * 获取房间号（如：223)
+                     * @return RoomId 房间号（如：223)
                      */
                     std::string GetRoomId() const;
 
                     /**
-                     * 设置字符串房间号
-                     * @param RoomId 字符串房间号
+                     * 设置房间号（如：223)
+                     * @param RoomId 房间号（如：223)
                      */
                     void SetRoomId(const std::string& _roomId);
 
@@ -115,14 +123,18 @@ namespace TencentCloud
                     bool RoomIdHasBeenSet() const;
 
                     /**
-                     * 获取分页index，从0开始（PageNumber和PageSize 其中一个不填均默认返回10条数据）
-                     * @return PageNumber 分页index，从0开始（PageNumber和PageSize 其中一个不填均默认返回10条数据）
+                     * 获取当前页数，默认为0，
+注意：PageNumber和PageSize 其中一个不填均默认返回10条数据。
+                     * @return PageNumber 当前页数，默认为0，
+注意：PageNumber和PageSize 其中一个不填均默认返回10条数据。
                      */
                     std::string GetPageNumber() const;
 
                     /**
-                     * 设置分页index，从0开始（PageNumber和PageSize 其中一个不填均默认返回10条数据）
-                     * @param PageNumber 分页index，从0开始（PageNumber和PageSize 其中一个不填均默认返回10条数据）
+                     * 设置当前页数，默认为0，
+注意：PageNumber和PageSize 其中一个不填均默认返回10条数据。
+                     * @param PageNumber 当前页数，默认为0，
+注意：PageNumber和PageSize 其中一个不填均默认返回10条数据。
                      */
                     void SetPageNumber(const std::string& _pageNumber);
 
@@ -133,14 +145,18 @@ namespace TencentCloud
                     bool PageNumberHasBeenSet() const;
 
                     /**
-                     * 获取分页大小（PageNumber和PageSize 其中一个不填均默认返回10条数据,最大不超过100）
-                     * @return PageSize 分页大小（PageNumber和PageSize 其中一个不填均默认返回10条数据,最大不超过100）
+                     * 获取每页个数，默认为10，
+范围：[1，100]
+                     * @return PageSize 每页个数，默认为10，
+范围：[1，100]
                      */
                     std::string GetPageSize() const;
 
                     /**
-                     * 设置分页大小（PageNumber和PageSize 其中一个不填均默认返回10条数据,最大不超过100）
-                     * @param PageSize 分页大小（PageNumber和PageSize 其中一个不填均默认返回10条数据,最大不超过100）
+                     * 设置每页个数，默认为10，
+范围：[1，100]
+                     * @param PageSize 每页个数，默认为10，
+范围：[1，100]
                      */
                     void SetPageSize(const std::string& _pageSize);
 
@@ -153,37 +169,41 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 用户sdkappid
+                     * 用户SdkAppId（如：1400xxxxxx）
                      */
                     std::string m_sdkAppId;
                     bool m_sdkAppIdHasBeenSet;
 
                     /**
-                     * 查询开始时间，14天内。本地unix时间戳（1588031999）
+                     * 查询开始时间，本地unix时间戳，单位为秒（如：1590065777）
+注意：支持查询14天内的数据
                      */
                     uint64_t m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 查询结束时间，本地unix时间戳（1588034999）
+                     * 查询结束时间，本地unix时间戳，单位为秒（如：1590065877）
+注意：与StartTime间隔时间不超过24小时。
                      */
                     uint64_t m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 字符串房间号
+                     * 房间号（如：223)
                      */
                     std::string m_roomId;
                     bool m_roomIdHasBeenSet;
 
                     /**
-                     * 分页index，从0开始（PageNumber和PageSize 其中一个不填均默认返回10条数据）
+                     * 当前页数，默认为0，
+注意：PageNumber和PageSize 其中一个不填均默认返回10条数据。
                      */
                     std::string m_pageNumber;
                     bool m_pageNumberHasBeenSet;
 
                     /**
-                     * 分页大小（PageNumber和PageSize 其中一个不填均默认返回10条数据,最大不超过100）
+                     * 每页个数，默认为10，
+范围：[1，100]
                      */
                     std::string m_pageSize;
                     bool m_pageSizeHasBeenSet;

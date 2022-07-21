@@ -115,6 +115,8 @@
 #include <tencentcloud/vpc/v20170312/model/CreateNetDetectResponse.h>
 #include <tencentcloud/vpc/v20170312/model/CreateNetworkAclRequest.h>
 #include <tencentcloud/vpc/v20170312/model/CreateNetworkAclResponse.h>
+#include <tencentcloud/vpc/v20170312/model/CreateNetworkAclQuintupleEntriesRequest.h>
+#include <tencentcloud/vpc/v20170312/model/CreateNetworkAclQuintupleEntriesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/CreateNetworkInterfaceRequest.h>
 #include <tencentcloud/vpc/v20170312/model/CreateNetworkInterfaceResponse.h>
 #include <tencentcloud/vpc/v20170312/model/CreateRouteTableRequest.h>
@@ -189,6 +191,8 @@
 #include <tencentcloud/vpc/v20170312/model/DeleteNetDetectResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DeleteNetworkAclRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DeleteNetworkAclResponse.h>
+#include <tencentcloud/vpc/v20170312/model/DeleteNetworkAclQuintupleEntriesRequest.h>
+#include <tencentcloud/vpc/v20170312/model/DeleteNetworkAclQuintupleEntriesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DeleteNetworkInterfaceRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DeleteNetworkInterfaceResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DeleteRouteTableRequest.h>
@@ -303,6 +307,8 @@
 #include <tencentcloud/vpc/v20170312/model/DescribeNetDetectStatesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeNetDetectsRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeNetDetectsResponse.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeNetworkAclQuintupleEntriesRequest.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeNetworkAclQuintupleEntriesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeNetworkAclsRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeNetworkAclsResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeNetworkInterfaceLimitRequest.h>
@@ -491,6 +497,8 @@
 #include <tencentcloud/vpc/v20170312/model/ModifyNetworkAclAttributeResponse.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyNetworkAclEntriesRequest.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyNetworkAclEntriesResponse.h>
+#include <tencentcloud/vpc/v20170312/model/ModifyNetworkAclQuintupleEntriesRequest.h>
+#include <tencentcloud/vpc/v20170312/model/ModifyNetworkAclQuintupleEntriesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyNetworkInterfaceAttributeRequest.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyNetworkInterfaceAttributeResponse.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyNetworkInterfaceQosRequest.h>
@@ -733,6 +741,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateNetworkAclResponse> CreateNetworkAclOutcome;
                 typedef std::future<CreateNetworkAclOutcome> CreateNetworkAclOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::CreateNetworkAclRequest&, CreateNetworkAclOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateNetworkAclAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateNetworkAclQuintupleEntriesResponse> CreateNetworkAclQuintupleEntriesOutcome;
+                typedef std::future<CreateNetworkAclQuintupleEntriesOutcome> CreateNetworkAclQuintupleEntriesOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::CreateNetworkAclQuintupleEntriesRequest&, CreateNetworkAclQuintupleEntriesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateNetworkAclQuintupleEntriesAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateNetworkInterfaceResponse> CreateNetworkInterfaceOutcome;
                 typedef std::future<CreateNetworkInterfaceOutcome> CreateNetworkInterfaceOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::CreateNetworkInterfaceRequest&, CreateNetworkInterfaceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateNetworkInterfaceAsyncHandler;
@@ -844,6 +855,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteNetworkAclResponse> DeleteNetworkAclOutcome;
                 typedef std::future<DeleteNetworkAclOutcome> DeleteNetworkAclOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DeleteNetworkAclRequest&, DeleteNetworkAclOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteNetworkAclAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteNetworkAclQuintupleEntriesResponse> DeleteNetworkAclQuintupleEntriesOutcome;
+                typedef std::future<DeleteNetworkAclQuintupleEntriesOutcome> DeleteNetworkAclQuintupleEntriesOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::DeleteNetworkAclQuintupleEntriesRequest&, DeleteNetworkAclQuintupleEntriesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteNetworkAclQuintupleEntriesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteNetworkInterfaceResponse> DeleteNetworkInterfaceOutcome;
                 typedef std::future<DeleteNetworkInterfaceOutcome> DeleteNetworkInterfaceOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DeleteNetworkInterfaceRequest&, DeleteNetworkInterfaceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteNetworkInterfaceAsyncHandler;
@@ -1015,6 +1029,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeNetDetectsResponse> DescribeNetDetectsOutcome;
                 typedef std::future<DescribeNetDetectsOutcome> DescribeNetDetectsOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DescribeNetDetectsRequest&, DescribeNetDetectsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNetDetectsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeNetworkAclQuintupleEntriesResponse> DescribeNetworkAclQuintupleEntriesOutcome;
+                typedef std::future<DescribeNetworkAclQuintupleEntriesOutcome> DescribeNetworkAclQuintupleEntriesOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::DescribeNetworkAclQuintupleEntriesRequest&, DescribeNetworkAclQuintupleEntriesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNetworkAclQuintupleEntriesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeNetworkAclsResponse> DescribeNetworkAclsOutcome;
                 typedef std::future<DescribeNetworkAclsOutcome> DescribeNetworkAclsOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DescribeNetworkAclsRequest&, DescribeNetworkAclsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNetworkAclsAsyncHandler;
@@ -1297,6 +1314,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyNetworkAclEntriesResponse> ModifyNetworkAclEntriesOutcome;
                 typedef std::future<ModifyNetworkAclEntriesOutcome> ModifyNetworkAclEntriesOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::ModifyNetworkAclEntriesRequest&, ModifyNetworkAclEntriesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyNetworkAclEntriesAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyNetworkAclQuintupleEntriesResponse> ModifyNetworkAclQuintupleEntriesOutcome;
+                typedef std::future<ModifyNetworkAclQuintupleEntriesOutcome> ModifyNetworkAclQuintupleEntriesOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::ModifyNetworkAclQuintupleEntriesRequest&, ModifyNetworkAclQuintupleEntriesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyNetworkAclQuintupleEntriesAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyNetworkInterfaceAttributeResponse> ModifyNetworkInterfaceAttributeOutcome;
                 typedef std::future<ModifyNetworkInterfaceAttributeOutcome> ModifyNetworkInterfaceAttributeOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::ModifyNetworkInterfaceAttributeRequest&, ModifyNetworkInterfaceAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyNetworkInterfaceAttributeAsyncHandler;
@@ -1918,6 +1938,15 @@ namespace TencentCloud
                 CreateNetworkAclOutcomeCallable CreateNetworkAclCallable(const Model::CreateNetworkAclRequest& request);
 
                 /**
+                 *本接口（CreateNetworkAclQuintupleEntries）用于增量网络ACL五元组的入站规则和出站规则。
+                 * @param req CreateNetworkAclQuintupleEntriesRequest
+                 * @return CreateNetworkAclQuintupleEntriesOutcome
+                 */
+                CreateNetworkAclQuintupleEntriesOutcome CreateNetworkAclQuintupleEntries(const Model::CreateNetworkAclQuintupleEntriesRequest &request);
+                void CreateNetworkAclQuintupleEntriesAsync(const Model::CreateNetworkAclQuintupleEntriesRequest& request, const CreateNetworkAclQuintupleEntriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateNetworkAclQuintupleEntriesOutcomeCallable CreateNetworkAclQuintupleEntriesCallable(const Model::CreateNetworkAclQuintupleEntriesRequest& request);
+
+                /**
                  *本接口（CreateNetworkInterface）用于创建弹性网卡。
 * 创建弹性网卡时可以指定内网IP，并且可以指定一个主IP，指定的内网IP必须在弹性网卡所在子网内，而且不能被占用。
 * 创建弹性网卡时可以指定需要申请的内网IP数量，系统会随机生成内网IP地址。
@@ -2317,6 +2346,15 @@ namespace TencentCloud
                 DeleteNetworkAclOutcome DeleteNetworkAcl(const Model::DeleteNetworkAclRequest &request);
                 void DeleteNetworkAclAsync(const Model::DeleteNetworkAclRequest& request, const DeleteNetworkAclAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteNetworkAclOutcomeCallable DeleteNetworkAclCallable(const Model::DeleteNetworkAclRequest& request);
+
+                /**
+                 *本接口（DeleteNetworkAclQuintupleEntries）用于删除网络ACL五元组指定的入站规则和出站规则（但不是全量删除该ACL下的所有条目）。在NetworkAclQuintupleEntrySet参数中：NetworkAclQuintupleEntry需要提供NetworkAclQuintupleEntryId。
+                 * @param req DeleteNetworkAclQuintupleEntriesRequest
+                 * @return DeleteNetworkAclQuintupleEntriesOutcome
+                 */
+                DeleteNetworkAclQuintupleEntriesOutcome DeleteNetworkAclQuintupleEntries(const Model::DeleteNetworkAclQuintupleEntriesRequest &request);
+                void DeleteNetworkAclQuintupleEntriesAsync(const Model::DeleteNetworkAclQuintupleEntriesRequest& request, const DeleteNetworkAclQuintupleEntriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteNetworkAclQuintupleEntriesOutcomeCallable DeleteNetworkAclQuintupleEntriesCallable(const Model::DeleteNetworkAclQuintupleEntriesRequest& request);
 
                 /**
                  *本接口（DeleteNetworkInterface）用于删除弹性网卡。
@@ -2853,6 +2891,15 @@ namespace TencentCloud
                 DescribeNetDetectsOutcome DescribeNetDetects(const Model::DescribeNetDetectsRequest &request);
                 void DescribeNetDetectsAsync(const Model::DescribeNetDetectsRequest& request, const DescribeNetDetectsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeNetDetectsOutcomeCallable DescribeNetDetectsCallable(const Model::DescribeNetDetectsRequest& request);
+
+                /**
+                 *本接口（DescribeNetworkAclQuintupleEntries）查询入方向或出方向网络ACL五元组条目列表。
+                 * @param req DescribeNetworkAclQuintupleEntriesRequest
+                 * @return DescribeNetworkAclQuintupleEntriesOutcome
+                 */
+                DescribeNetworkAclQuintupleEntriesOutcome DescribeNetworkAclQuintupleEntries(const Model::DescribeNetworkAclQuintupleEntriesRequest &request);
+                void DescribeNetworkAclQuintupleEntriesAsync(const Model::DescribeNetworkAclQuintupleEntriesRequest& request, const DescribeNetworkAclQuintupleEntriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeNetworkAclQuintupleEntriesOutcomeCallable DescribeNetworkAclQuintupleEntriesCallable(const Model::DescribeNetworkAclQuintupleEntriesRequest& request);
 
                 /**
                  *本接口（DescribeNetworkAcls）用于查询网络ACL列表。
@@ -3764,6 +3811,15 @@ LimitTypes取值范围：
                 ModifyNetworkAclEntriesOutcome ModifyNetworkAclEntries(const Model::ModifyNetworkAclEntriesRequest &request);
                 void ModifyNetworkAclEntriesAsync(const Model::ModifyNetworkAclEntriesRequest& request, const ModifyNetworkAclEntriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyNetworkAclEntriesOutcomeCallable ModifyNetworkAclEntriesCallable(const Model::ModifyNetworkAclEntriesRequest& request);
+
+                /**
+                 *本接口（ModifyNetworkAclQuintupleEntries）用于修改网络ACL五元组的入站规则和出站规则。在NetworkAclQuintupleEntrySet参数中：NetworkAclQuintupleEntry需要提供NetworkAclQuintupleEntryId。
+                 * @param req ModifyNetworkAclQuintupleEntriesRequest
+                 * @return ModifyNetworkAclQuintupleEntriesOutcome
+                 */
+                ModifyNetworkAclQuintupleEntriesOutcome ModifyNetworkAclQuintupleEntries(const Model::ModifyNetworkAclQuintupleEntriesRequest &request);
+                void ModifyNetworkAclQuintupleEntriesAsync(const Model::ModifyNetworkAclQuintupleEntriesRequest& request, const ModifyNetworkAclQuintupleEntriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyNetworkAclQuintupleEntriesOutcomeCallable ModifyNetworkAclQuintupleEntriesCallable(const Model::ModifyNetworkAclQuintupleEntriesRequest& request);
 
                 /**
                  *本接口（ModifyNetworkInterfaceAttribute）用于修改弹性网卡属性。

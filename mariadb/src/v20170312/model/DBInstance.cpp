@@ -71,7 +71,8 @@ DBInstance::DBInstance() :
     m_dcnStatusHasBeenSet(false),
     m_dcnDstNumHasBeenSet(false),
     m_instanceTypeHasBeenSet(false),
-    m_resourceTagsHasBeenSet(false)
+    m_resourceTagsHasBeenSet(false),
+    m_dbVersionIdHasBeenSet(false)
 {
 }
 
@@ -600,6 +601,16 @@ CoreInternalOutcome DBInstance::Deserialize(const rapidjson::Value &value)
         m_resourceTagsHasBeenSet = true;
     }
 
+    if (value.HasMember("DbVersionId") && !value["DbVersionId"].IsNull())
+    {
+        if (!value["DbVersionId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DBInstance.DbVersionId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dbVersionId = string(value["DbVersionId"].GetString());
+        m_dbVersionIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1020,6 +1031,14 @@ void DBInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_dbVersionIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DbVersionId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dbVersionId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1839,5 +1858,21 @@ void DBInstance::SetResourceTags(const vector<ResourceTag>& _resourceTags)
 bool DBInstance::ResourceTagsHasBeenSet() const
 {
     return m_resourceTagsHasBeenSet;
+}
+
+string DBInstance::GetDbVersionId() const
+{
+    return m_dbVersionId;
+}
+
+void DBInstance::SetDbVersionId(const string& _dbVersionId)
+{
+    m_dbVersionId = _dbVersionId;
+    m_dbVersionIdHasBeenSet = true;
+}
+
+bool DBInstance::DbVersionIdHasBeenSet() const
+{
+    return m_dbVersionIdHasBeenSet;
 }
 

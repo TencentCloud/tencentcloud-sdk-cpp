@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取起始时间
-                     * @return StartTime 起始时间
+                     * 获取起始时间，时间戳（秒）
+                     * @return StartTime 起始时间，时间戳（秒）
                      */
                     int64_t GetStartTime() const;
 
                     /**
-                     * 设置起始时间
-                     * @param StartTime 起始时间
+                     * 设置起始时间，时间戳（秒）
+                     * @param StartTime 起始时间，时间戳（秒）
                      */
                     void SetStartTime(const int64_t& _startTime);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取结束时间
-                     * @return EndTime 结束时间
+                     * 获取结束时间，时间戳（秒）
+                     * @return EndTime 结束时间，时间戳（秒）
                      */
                     int64_t GetEndTime() const;
 
                     /**
-                     * 设置结束时间
-                     * @param EndTime 结束时间
+                     * 设置结束时间，时间戳（秒）
+                     * @param EndTime 结束时间，时间戳（秒）
                      */
                     void SetEndTime(const int64_t& _endTime);
 
@@ -249,13 +249,13 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 起始时间
+                     * 起始时间，时间戳（秒）
                      */
                     int64_t m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 结束时间
+                     * 结束时间，时间戳（秒）
                      */
                     int64_t m_endTime;
                     bool m_endTimeHasBeenSet;

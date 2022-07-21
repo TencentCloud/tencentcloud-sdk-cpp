@@ -56,6 +56,30 @@ namespace TencentCloud
                      */
                     bool EmailIdentitiesHasBeenSet() const;
 
+                    /**
+                     * 获取最大信誉等级
+                     * @return MaxReputationLevel 最大信誉等级
+                     */
+                    uint64_t GetMaxReputationLevel() const;
+
+                    /**
+                     * 判断参数 MaxReputationLevel 是否已赋值
+                     * @return MaxReputationLevel 是否已赋值
+                     */
+                    bool MaxReputationLevelHasBeenSet() const;
+
+                    /**
+                     * 获取单域名最高日发送量
+                     * @return MaxDailyQuota 单域名最高日发送量
+                     */
+                    uint64_t GetMaxDailyQuota() const;
+
+                    /**
+                     * 判断参数 MaxDailyQuota 是否已赋值
+                     * @return MaxDailyQuota 是否已赋值
+                     */
+                    bool MaxDailyQuotaHasBeenSet() const;
+
                 private:
 
                     /**
@@ -63,6 +87,18 @@ namespace TencentCloud
                      */
                     std::vector<EmailIdentity> m_emailIdentities;
                     bool m_emailIdentitiesHasBeenSet;
+
+                    /**
+                     * 最大信誉等级
+                     */
+                    uint64_t m_maxReputationLevel;
+                    bool m_maxReputationLevelHasBeenSet;
+
+                    /**
+                     * 单域名最高日发送量
+                     */
+                    uint64_t m_maxDailyQuota;
+                    bool m_maxDailyQuotaHasBeenSet;
 
                 };
             }
