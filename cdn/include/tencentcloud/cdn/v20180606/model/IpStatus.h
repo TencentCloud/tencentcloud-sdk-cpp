@@ -144,6 +144,28 @@ offline：下线状态
                      */
                     bool StatusHasBeenSet() const;
 
+                    /**
+                     * 获取节点 IPV6
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Ipv6 节点 IPV6
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetIpv6() const;
+
+                    /**
+                     * 设置节点 IPV6
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Ipv6 节点 IPV6
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIpv6(const std::string& _ipv6);
+
+                    /**
+                     * 判断参数 Ipv6 是否已赋值
+                     * @return Ipv6 是否已赋值
+                     */
+                    bool Ipv6HasBeenSet() const;
+
                 private:
 
                     /**
@@ -177,6 +199,13 @@ offline：下线状态
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * 节点 IPV6
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_ipv6;
+                    bool m_ipv6HasBeenSet;
 
                 };
             }

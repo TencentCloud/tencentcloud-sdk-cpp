@@ -14,54 +14,55 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_WAF_V20180125_MODEL_CREATEATTACKDOWNLOADTASKRESPONSE_H_
-#define TENCENTCLOUD_WAF_V20180125_MODEL_CREATEATTACKDOWNLOADTASKRESPONSE_H_
+#ifndef TENCENTCLOUD_TRTC_V20190722_MODEL_DESCRIBEUSEREVENTRESPONSE_H_
+#define TENCENTCLOUD_TRTC_V20190722_MODEL_DESCRIBEUSEREVENTRESPONSE_H_
 
 #include <string>
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/trtc/v20190722/model/EventList.h>
 
 
 namespace TencentCloud
 {
-    namespace Waf
+    namespace Trtc
     {
-        namespace V20180125
+        namespace V20190722
         {
             namespace Model
             {
                 /**
-                * CreateAttackDownloadTask返回参数结构体
+                * DescribeUserEvent返回参数结构体
                 */
-                class CreateAttackDownloadTaskResponse : public AbstractModel
+                class DescribeUserEventResponse : public AbstractModel
                 {
                 public:
-                    CreateAttackDownloadTaskResponse();
-                    ~CreateAttackDownloadTaskResponse() = default;
+                    DescribeUserEventResponse();
+                    ~DescribeUserEventResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取任务ID
-                     * @return Flow 任务ID
+                     * 获取返回的事件列表，若没有数据，会返回空数组。
+                     * @return Data 返回的事件列表，若没有数据，会返回空数组。
                      */
-                    std::string GetFlow() const;
+                    std::vector<EventList> GetData() const;
 
                     /**
-                     * 判断参数 Flow 是否已赋值
-                     * @return Flow 是否已赋值
+                     * 判断参数 Data 是否已赋值
+                     * @return Data 是否已赋值
                      */
-                    bool FlowHasBeenSet() const;
+                    bool DataHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 任务ID
+                     * 返回的事件列表，若没有数据，会返回空数组。
                      */
-                    std::string m_flow;
-                    bool m_flowHasBeenSet;
+                    std::vector<EventList> m_data;
+                    bool m_dataHasBeenSet;
 
                 };
             }
@@ -69,4 +70,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_WAF_V20180125_MODEL_CREATEATTACKDOWNLOADTASKRESPONSE_H_
+#endif // !TENCENTCLOUD_TRTC_V20190722_MODEL_DESCRIBEUSEREVENTRESPONSE_H_

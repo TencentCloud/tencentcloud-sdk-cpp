@@ -83,6 +83,8 @@
 #include <tencentcloud/cynosdb/v20190107/model/ExportInstanceSlowQueriesResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/GrantAccountPrivilegesRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/GrantAccountPrivilegesResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/InquirePriceCreateRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/InquirePriceCreateResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/IsolateClusterRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/IsolateClusterResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/IsolateInstanceRequest.h>
@@ -223,6 +225,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GrantAccountPrivilegesResponse> GrantAccountPrivilegesOutcome;
                 typedef std::future<GrantAccountPrivilegesOutcome> GrantAccountPrivilegesOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::GrantAccountPrivilegesRequest&, GrantAccountPrivilegesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GrantAccountPrivilegesAsyncHandler;
+                typedef Outcome<Core::Error, Model::InquirePriceCreateResponse> InquirePriceCreateOutcome;
+                typedef std::future<InquirePriceCreateOutcome> InquirePriceCreateOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::InquirePriceCreateRequest&, InquirePriceCreateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InquirePriceCreateAsyncHandler;
                 typedef Outcome<Core::Error, Model::IsolateClusterResponse> IsolateClusterOutcome;
                 typedef std::future<IsolateClusterOutcome> IsolateClusterOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::IsolateClusterRequest&, IsolateClusterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> IsolateClusterAsyncHandler;
@@ -549,6 +554,15 @@ namespace TencentCloud
                 GrantAccountPrivilegesOutcome GrantAccountPrivileges(const Model::GrantAccountPrivilegesRequest &request);
                 void GrantAccountPrivilegesAsync(const Model::GrantAccountPrivilegesRequest& request, const GrantAccountPrivilegesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GrantAccountPrivilegesOutcomeCallable GrantAccountPrivilegesCallable(const Model::GrantAccountPrivilegesRequest& request);
+
+                /**
+                 *查询新购集群价格
+                 * @param req InquirePriceCreateRequest
+                 * @return InquirePriceCreateOutcome
+                 */
+                InquirePriceCreateOutcome InquirePriceCreate(const Model::InquirePriceCreateRequest &request);
+                void InquirePriceCreateAsync(const Model::InquirePriceCreateRequest& request, const InquirePriceCreateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                InquirePriceCreateOutcomeCallable InquirePriceCreateCallable(const Model::InquirePriceCreateRequest& request);
 
                 /**
                  *隔离集群

@@ -493,6 +493,24 @@ namespace TencentCloud
                      */
                     bool ProductVersionsHasBeenSet() const;
 
+                    /**
+                     * 获取批量查询指定的实例
+                     * @return InstanceIds 批量查询指定的实例
+                     */
+                    std::vector<std::string> GetInstanceIds() const;
+
+                    /**
+                     * 设置批量查询指定的实例
+                     * @param InstanceIds 批量查询指定的实例
+                     */
+                    void SetInstanceIds(const std::vector<std::string>& _instanceIds);
+
+                    /**
+                     * 判断参数 InstanceIds 是否已赋值
+                     * @return InstanceIds 是否已赋值
+                     */
+                    bool InstanceIdsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -644,6 +662,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_productVersions;
                     bool m_productVersionsHasBeenSet;
+
+                    /**
+                     * 批量查询指定的实例
+                     */
+                    std::vector<std::string> m_instanceIds;
+                    bool m_instanceIdsHasBeenSet;
 
                 };
             }

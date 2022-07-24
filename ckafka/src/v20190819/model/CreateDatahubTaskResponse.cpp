@@ -14,21 +14,21 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/waf/v20180125/model/CreateAttackDownloadTaskResponse.h>
+#include <tencentcloud/ckafka/v20190819/model/CreateDatahubTaskResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Waf::V20180125::Model;
+using namespace TencentCloud::Ckafka::V20190819::Model;
 using namespace std;
 
-CreateAttackDownloadTaskResponse::CreateAttackDownloadTaskResponse() :
-    m_flowHasBeenSet(false)
+CreateDatahubTaskResponse::CreateDatahubTaskResponse() :
+    m_resultHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome CreateAttackDownloadTaskResponse::Deserialize(const string &payload)
+CoreInternalOutcome CreateDatahubTaskResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -62,32 +62,40 @@ CoreInternalOutcome CreateAttackDownloadTaskResponse::Deserialize(const string &
     }
 
 
-    if (rsp.HasMember("Flow") && !rsp["Flow"].IsNull())
+    if (rsp.HasMember("Result") && !rsp["Result"].IsNull())
     {
-        if (!rsp["Flow"].IsString())
+        if (!rsp["Result"].IsObject())
         {
-            return CoreInternalOutcome(Core::Error("response `Flow` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Result` is not object type").SetRequestId(requestId));
         }
-        m_flow = string(rsp["Flow"].GetString());
-        m_flowHasBeenSet = true;
+
+        CoreInternalOutcome outcome = m_result.Deserialize(rsp["Result"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_resultHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string CreateAttackDownloadTaskResponse::ToJsonString() const
+string CreateDatahubTaskResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_flowHasBeenSet)
+    if (m_resultHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Flow";
+        string key = "Result";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_flow.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_result.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -102,14 +110,14 @@ string CreateAttackDownloadTaskResponse::ToJsonString() const
 }
 
 
-string CreateAttackDownloadTaskResponse::GetFlow() const
+CreateDatahubTaskRes CreateDatahubTaskResponse::GetResult() const
 {
-    return m_flow;
+    return m_result;
 }
 
-bool CreateAttackDownloadTaskResponse::FlowHasBeenSet() const
+bool CreateDatahubTaskResponse::ResultHasBeenSet() const
 {
-    return m_flowHasBeenSet;
+    return m_resultHasBeenSet;
 }
 
 

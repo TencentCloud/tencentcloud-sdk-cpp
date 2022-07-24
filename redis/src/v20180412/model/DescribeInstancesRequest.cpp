@@ -47,7 +47,8 @@ DescribeInstancesRequest::DescribeInstancesRequest() :
     m_monitorVersionHasBeenSet(false),
     m_instanceTagsHasBeenSet(false),
     m_tagKeysHasBeenSet(false),
-    m_productVersionsHasBeenSet(false)
+    m_productVersionsHasBeenSet(false),
+    m_instanceIdsHasBeenSet(false)
 {
 }
 
@@ -320,6 +321,19 @@ string DescribeInstancesRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_productVersions.begin(); itr != m_productVersions.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_instanceIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_instanceIds.begin(); itr != m_instanceIds.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
@@ -731,6 +745,22 @@ void DescribeInstancesRequest::SetProductVersions(const vector<string>& _product
 bool DescribeInstancesRequest::ProductVersionsHasBeenSet() const
 {
     return m_productVersionsHasBeenSet;
+}
+
+vector<string> DescribeInstancesRequest::GetInstanceIds() const
+{
+    return m_instanceIds;
+}
+
+void DescribeInstancesRequest::SetInstanceIds(const vector<string>& _instanceIds)
+{
+    m_instanceIds = _instanceIds;
+    m_instanceIdsHasBeenSet = true;
+}
+
+bool DescribeInstancesRequest::InstanceIdsHasBeenSet() const
+{
+    return m_instanceIdsHasBeenSet;
 }
 
 

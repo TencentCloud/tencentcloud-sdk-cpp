@@ -25,7 +25,8 @@ IpStatus::IpStatus() :
     m_districtHasBeenSet(false),
     m_ispHasBeenSet(false),
     m_cityHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_ipv6HasBeenSet(false)
 {
 }
 
@@ -84,6 +85,16 @@ CoreInternalOutcome IpStatus::Deserialize(const rapidjson::Value &value)
         m_statusHasBeenSet = true;
     }
 
+    if (value.HasMember("Ipv6") && !value["Ipv6"].IsNull())
+    {
+        if (!value["Ipv6"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `IpStatus.Ipv6` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ipv6 = string(value["Ipv6"].GetString());
+        m_ipv6HasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +140,14 @@ void IpStatus::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ipv6HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Ipv6";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ipv6.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -212,5 +231,21 @@ void IpStatus::SetStatus(const string& _status)
 bool IpStatus::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+string IpStatus::GetIpv6() const
+{
+    return m_ipv6;
+}
+
+void IpStatus::SetIpv6(const string& _ipv6)
+{
+    m_ipv6 = _ipv6;
+    m_ipv6HasBeenSet = true;
+}
+
+bool IpStatus::Ipv6HasBeenSet() const
+{
+    return m_ipv6HasBeenSet;
 }
 

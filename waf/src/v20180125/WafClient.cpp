@@ -212,49 +212,6 @@ WafClient::CreateAccessExportOutcomeCallable WafClient::CreateAccessExportCallab
     return task->get_future();
 }
 
-WafClient::CreateAttackDownloadTaskOutcome WafClient::CreateAttackDownloadTask(const CreateAttackDownloadTaskRequest &request)
-{
-    auto outcome = MakeRequest(request, "CreateAttackDownloadTask");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        CreateAttackDownloadTaskResponse rsp = CreateAttackDownloadTaskResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return CreateAttackDownloadTaskOutcome(rsp);
-        else
-            return CreateAttackDownloadTaskOutcome(o.GetError());
-    }
-    else
-    {
-        return CreateAttackDownloadTaskOutcome(outcome.GetError());
-    }
-}
-
-void WafClient::CreateAttackDownloadTaskAsync(const CreateAttackDownloadTaskRequest& request, const CreateAttackDownloadTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateAttackDownloadTask(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-WafClient::CreateAttackDownloadTaskOutcomeCallable WafClient::CreateAttackDownloadTaskCallable(const CreateAttackDownloadTaskRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<CreateAttackDownloadTaskOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateAttackDownloadTask(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 WafClient::DeleteAccessExportOutcome WafClient::DeleteAccessExport(const DeleteAccessExportRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteAccessExport");

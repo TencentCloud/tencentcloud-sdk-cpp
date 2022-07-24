@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool InvoiceCodeHasBeenSet() const;
 
                     /**
-                     * 获取发票号码（8位）。
-                     * @return InvoiceNo 发票号码（8位）。
+                     * 获取发票号码（8位）
+                     * @return InvoiceNo 发票号码（8位）
                      */
                     std::string GetInvoiceNo() const;
 
                     /**
-                     * 设置发票号码（8位）。
-                     * @param InvoiceNo 发票号码（8位）。
+                     * 设置发票号码（8位）
+                     * @param InvoiceNo 发票号码（8位）
                      */
                     void SetInvoiceNo(const std::string& _invoiceNo);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool InvoiceNoHasBeenSet() const;
 
                     /**
-                     * 获取开票日期（不支持当天发票查询，支持五年以内开具的发票），如：2019-12-20。
-                     * @return InvoiceDate 开票日期（不支持当天发票查询，支持五年以内开具的发票），如：2019-12-20。
+                     * 获取开票日期（不支持当天发票查询，支持五年以内开具的发票），格式：“YYYY-MM-DD”，如：2019-12-20。
+                     * @return InvoiceDate 开票日期（不支持当天发票查询，支持五年以内开具的发票），格式：“YYYY-MM-DD”，如：2019-12-20。
                      */
                     std::string GetInvoiceDate() const;
 
                     /**
-                     * 设置开票日期（不支持当天发票查询，支持五年以内开具的发票），如：2019-12-20。
-                     * @param InvoiceDate 开票日期（不支持当天发票查询，支持五年以内开具的发票），如：2019-12-20。
+                     * 设置开票日期（不支持当天发票查询，支持五年以内开具的发票），格式：“YYYY-MM-DD”，如：2019-12-20。
+                     * @param InvoiceDate 开票日期（不支持当天发票查询，支持五年以内开具的发票），格式：“YYYY-MM-DD”，如：2019-12-20。
                      */
                     void SetInvoiceDate(const std::string& _invoiceDate);
 
@@ -171,13 +171,13 @@ namespace TencentCloud
                     bool m_invoiceCodeHasBeenSet;
 
                     /**
-                     * 发票号码（8位）。
+                     * 发票号码（8位）
                      */
                     std::string m_invoiceNo;
                     bool m_invoiceNoHasBeenSet;
 
                     /**
-                     * 开票日期（不支持当天发票查询，支持五年以内开具的发票），如：2019-12-20。
+                     * 开票日期（不支持当天发票查询，支持五年以内开具的发票），格式：“YYYY-MM-DD”，如：2019-12-20。
                      */
                     std::string m_invoiceDate;
                     bool m_invoiceDateHasBeenSet;

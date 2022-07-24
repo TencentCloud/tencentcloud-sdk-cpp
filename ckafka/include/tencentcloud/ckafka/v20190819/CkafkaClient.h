@@ -39,8 +39,12 @@
 #include <tencentcloud/ckafka/v20190819/model/CreateAclResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/CreateCdcClusterRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/CreateCdcClusterResponse.h>
+#include <tencentcloud/ckafka/v20190819/model/CreateConnectResourceRequest.h>
+#include <tencentcloud/ckafka/v20190819/model/CreateConnectResourceResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/CreateConsumerRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/CreateConsumerResponse.h>
+#include <tencentcloud/ckafka/v20190819/model/CreateDatahubTaskRequest.h>
+#include <tencentcloud/ckafka/v20190819/model/CreateDatahubTaskResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/CreateInstancePreRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/CreateInstancePreResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/CreatePartitionRequest.h>
@@ -161,9 +165,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateCdcClusterResponse> CreateCdcClusterOutcome;
                 typedef std::future<CreateCdcClusterOutcome> CreateCdcClusterOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::CreateCdcClusterRequest&, CreateCdcClusterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCdcClusterAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateConnectResourceResponse> CreateConnectResourceOutcome;
+                typedef std::future<CreateConnectResourceOutcome> CreateConnectResourceOutcomeCallable;
+                typedef std::function<void(const CkafkaClient*, const Model::CreateConnectResourceRequest&, CreateConnectResourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateConnectResourceAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateConsumerResponse> CreateConsumerOutcome;
                 typedef std::future<CreateConsumerOutcome> CreateConsumerOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::CreateConsumerRequest&, CreateConsumerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateConsumerAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateDatahubTaskResponse> CreateDatahubTaskOutcome;
+                typedef std::future<CreateDatahubTaskOutcome> CreateDatahubTaskOutcomeCallable;
+                typedef std::function<void(const CkafkaClient*, const Model::CreateDatahubTaskRequest&, CreateDatahubTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDatahubTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateInstancePreResponse> CreateInstancePreOutcome;
                 typedef std::future<CreateInstancePreOutcome> CreateInstancePreOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::CreateInstancePreRequest&, CreateInstancePreOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateInstancePreAsyncHandler;
@@ -363,6 +373,15 @@ namespace TencentCloud
                 CreateCdcClusterOutcomeCallable CreateCdcClusterCallable(const Model::CreateCdcClusterRequest& request);
 
                 /**
+                 *创建Datahub连接源
+                 * @param req CreateConnectResourceRequest
+                 * @return CreateConnectResourceOutcome
+                 */
+                CreateConnectResourceOutcome CreateConnectResource(const Model::CreateConnectResourceRequest &request);
+                void CreateConnectResourceAsync(const Model::CreateConnectResourceRequest& request, const CreateConnectResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateConnectResourceOutcomeCallable CreateConnectResourceCallable(const Model::CreateConnectResourceRequest& request);
+
+                /**
                  *创建消费者组
                  * @param req CreateConsumerRequest
                  * @return CreateConsumerOutcome
@@ -370,6 +389,15 @@ namespace TencentCloud
                 CreateConsumerOutcome CreateConsumer(const Model::CreateConsumerRequest &request);
                 void CreateConsumerAsync(const Model::CreateConsumerRequest& request, const CreateConsumerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateConsumerOutcomeCallable CreateConsumerCallable(const Model::CreateConsumerRequest& request);
+
+                /**
+                 *创建Datahub转储任务
+                 * @param req CreateDatahubTaskRequest
+                 * @return CreateDatahubTaskOutcome
+                 */
+                CreateDatahubTaskOutcome CreateDatahubTask(const Model::CreateDatahubTaskRequest &request);
+                void CreateDatahubTaskAsync(const Model::CreateDatahubTaskRequest& request, const CreateDatahubTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateDatahubTaskOutcomeCallable CreateDatahubTaskCallable(const Model::CreateDatahubTaskRequest& request);
 
                 /**
                  *创建实例(预付费包年包月)

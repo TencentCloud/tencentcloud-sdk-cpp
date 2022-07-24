@@ -25,6 +25,10 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/oceanus/v20190422/model/CheckSavepointRequest.h>
 #include <tencentcloud/oceanus/v20190422/model/CheckSavepointResponse.h>
+#include <tencentcloud/oceanus/v20190422/model/CopyJobsRequest.h>
+#include <tencentcloud/oceanus/v20190422/model/CopyJobsResponse.h>
+#include <tencentcloud/oceanus/v20190422/model/CreateFolderRequest.h>
+#include <tencentcloud/oceanus/v20190422/model/CreateFolderResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/CreateJobRequest.h>
 #include <tencentcloud/oceanus/v20190422/model/CreateJobResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/CreateJobConfigRequest.h>
@@ -84,6 +88,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CheckSavepointResponse> CheckSavepointOutcome;
                 typedef std::future<CheckSavepointOutcome> CheckSavepointOutcomeCallable;
                 typedef std::function<void(const OceanusClient*, const Model::CheckSavepointRequest&, CheckSavepointOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckSavepointAsyncHandler;
+                typedef Outcome<Core::Error, Model::CopyJobsResponse> CopyJobsOutcome;
+                typedef std::future<CopyJobsOutcome> CopyJobsOutcomeCallable;
+                typedef std::function<void(const OceanusClient*, const Model::CopyJobsRequest&, CopyJobsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CopyJobsAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateFolderResponse> CreateFolderOutcome;
+                typedef std::future<CreateFolderOutcome> CreateFolderOutcomeCallable;
+                typedef std::function<void(const OceanusClient*, const Model::CreateFolderRequest&, CreateFolderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateFolderAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateJobResponse> CreateJobOutcome;
                 typedef std::future<CreateJobOutcome> CreateJobOutcomeCallable;
                 typedef std::function<void(const OceanusClient*, const Model::CreateJobRequest&, CreateJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateJobAsyncHandler;
@@ -158,6 +168,25 @@ namespace TencentCloud
                 CheckSavepointOutcome CheckSavepoint(const Model::CheckSavepointRequest &request);
                 void CheckSavepointAsync(const Model::CheckSavepointRequest& request, const CheckSavepointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CheckSavepointOutcomeCallable CheckSavepointCallable(const Model::CheckSavepointRequest& request);
+
+                /**
+                 *单条和批量复制作业
+https://iwiki.woa.com/pages/viewpage.action?pageId=1288112774
+                 * @param req CopyJobsRequest
+                 * @return CopyJobsOutcome
+                 */
+                CopyJobsOutcome CopyJobs(const Model::CopyJobsRequest &request);
+                void CopyJobsAsync(const Model::CopyJobsRequest& request, const CopyJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CopyJobsOutcomeCallable CopyJobsCallable(const Model::CopyJobsRequest& request);
+
+                /**
+                 *作业列表页面新建文件夹请求
+                 * @param req CreateFolderRequest
+                 * @return CreateFolderOutcome
+                 */
+                CreateFolderOutcome CreateFolder(const Model::CreateFolderRequest &request);
+                void CreateFolderAsync(const Model::CreateFolderRequest& request, const CreateFolderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateFolderOutcomeCallable CreateFolderCallable(const Model::CreateFolderRequest& request);
 
                 /**
                  *新建作业接口，一个 AppId 最多允许创建1000个作业

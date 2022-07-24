@@ -31,8 +31,6 @@
 #include <tencentcloud/waf/v20180125/model/AddSpartaProtectionResponse.h>
 #include <tencentcloud/waf/v20180125/model/CreateAccessExportRequest.h>
 #include <tencentcloud/waf/v20180125/model/CreateAccessExportResponse.h>
-#include <tencentcloud/waf/v20180125/model/CreateAttackDownloadTaskRequest.h>
-#include <tencentcloud/waf/v20180125/model/CreateAttackDownloadTaskResponse.h>
 #include <tencentcloud/waf/v20180125/model/DeleteAccessExportRequest.h>
 #include <tencentcloud/waf/v20180125/model/DeleteAccessExportResponse.h>
 #include <tencentcloud/waf/v20180125/model/DeleteAttackDownloadRecordRequest.h>
@@ -119,9 +117,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateAccessExportResponse> CreateAccessExportOutcome;
                 typedef std::future<CreateAccessExportOutcome> CreateAccessExportOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::CreateAccessExportRequest&, CreateAccessExportOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAccessExportAsyncHandler;
-                typedef Outcome<Core::Error, Model::CreateAttackDownloadTaskResponse> CreateAttackDownloadTaskOutcome;
-                typedef std::future<CreateAttackDownloadTaskOutcome> CreateAttackDownloadTaskOutcomeCallable;
-                typedef std::function<void(const WafClient*, const Model::CreateAttackDownloadTaskRequest&, CreateAttackDownloadTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAttackDownloadTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteAccessExportResponse> DeleteAccessExportOutcome;
                 typedef std::future<DeleteAccessExportOutcome> DeleteAccessExportOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DeleteAccessExportRequest&, DeleteAccessExportOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAccessExportAsyncHandler;
@@ -250,15 +245,6 @@ namespace TencentCloud
                 CreateAccessExportOutcome CreateAccessExport(const Model::CreateAccessExportRequest &request);
                 void CreateAccessExportAsync(const Model::CreateAccessExportRequest& request, const CreateAccessExportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateAccessExportOutcomeCallable CreateAccessExportCallable(const Model::CreateAccessExportRequest& request);
-
-                /**
-                 *创建攻击日志下载任务
-                 * @param req CreateAttackDownloadTaskRequest
-                 * @return CreateAttackDownloadTaskOutcome
-                 */
-                CreateAttackDownloadTaskOutcome CreateAttackDownloadTask(const Model::CreateAttackDownloadTaskRequest &request);
-                void CreateAttackDownloadTaskAsync(const Model::CreateAttackDownloadTaskRequest& request, const CreateAttackDownloadTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                CreateAttackDownloadTaskOutcomeCallable CreateAttackDownloadTaskCallable(const Model::CreateAttackDownloadTaskRequest& request);
 
                 /**
                  *本接口用于删除访问日志导出

@@ -83,6 +83,92 @@ OceanusClient::CheckSavepointOutcomeCallable OceanusClient::CheckSavepointCallab
     return task->get_future();
 }
 
+OceanusClient::CopyJobsOutcome OceanusClient::CopyJobs(const CopyJobsRequest &request)
+{
+    auto outcome = MakeRequest(request, "CopyJobs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CopyJobsResponse rsp = CopyJobsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CopyJobsOutcome(rsp);
+        else
+            return CopyJobsOutcome(o.GetError());
+    }
+    else
+    {
+        return CopyJobsOutcome(outcome.GetError());
+    }
+}
+
+void OceanusClient::CopyJobsAsync(const CopyJobsRequest& request, const CopyJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CopyJobs(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OceanusClient::CopyJobsOutcomeCallable OceanusClient::CopyJobsCallable(const CopyJobsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CopyJobsOutcome()>>(
+        [this, request]()
+        {
+            return this->CopyJobs(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+OceanusClient::CreateFolderOutcome OceanusClient::CreateFolder(const CreateFolderRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateFolder");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateFolderResponse rsp = CreateFolderResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateFolderOutcome(rsp);
+        else
+            return CreateFolderOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateFolderOutcome(outcome.GetError());
+    }
+}
+
+void OceanusClient::CreateFolderAsync(const CreateFolderRequest& request, const CreateFolderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateFolder(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OceanusClient::CreateFolderOutcomeCallable OceanusClient::CreateFolderCallable(const CreateFolderRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateFolderOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateFolder(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 OceanusClient::CreateJobOutcome OceanusClient::CreateJob(const CreateJobRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateJob");

@@ -26,7 +26,8 @@ DescribeIpStatusRequest::DescribeIpStatusRequest() :
     m_domainHasBeenSet(false),
     m_layerHasBeenSet(false),
     m_areaHasBeenSet(false),
-    m_segmentHasBeenSet(false)
+    m_segmentHasBeenSet(false),
+    m_showIpv6HasBeenSet(false)
 {
 }
 
@@ -67,6 +68,14 @@ string DescribeIpStatusRequest::ToJsonString() const
         string key = "Segment";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_segment, allocator);
+    }
+
+    if (m_showIpv6HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ShowIpv6";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_showIpv6, allocator);
     }
 
 
@@ -139,6 +148,22 @@ void DescribeIpStatusRequest::SetSegment(const bool& _segment)
 bool DescribeIpStatusRequest::SegmentHasBeenSet() const
 {
     return m_segmentHasBeenSet;
+}
+
+bool DescribeIpStatusRequest::GetShowIpv6() const
+{
+    return m_showIpv6;
+}
+
+void DescribeIpStatusRequest::SetShowIpv6(const bool& _showIpv6)
+{
+    m_showIpv6 = _showIpv6;
+    m_showIpv6HasBeenSet = true;
+}
+
+bool DescribeIpStatusRequest::ShowIpv6HasBeenSet() const
+{
+    return m_showIpv6HasBeenSet;
 }
 
 

@@ -138,6 +138,24 @@ global: 全球节点
                      */
                     bool SegmentHasBeenSet() const;
 
+                    /**
+                     * 获取是否查询节点 IPV6 信息。
+                     * @return ShowIpv6 是否查询节点 IPV6 信息。
+                     */
+                    bool GetShowIpv6() const;
+
+                    /**
+                     * 设置是否查询节点 IPV6 信息。
+                     * @param ShowIpv6 是否查询节点 IPV6 信息。
+                     */
+                    void SetShowIpv6(const bool& _showIpv6);
+
+                    /**
+                     * 判断参数 ShowIpv6 是否已赋值
+                     * @return ShowIpv6 是否已赋值
+                     */
+                    bool ShowIpv6HasBeenSet() const;
+
                 private:
 
                     /**
@@ -169,6 +187,12 @@ global: 全球节点
                      */
                     bool m_segment;
                     bool m_segmentHasBeenSet;
+
+                    /**
+                     * 是否查询节点 IPV6 信息。
+                     */
+                    bool m_showIpv6;
+                    bool m_showIpv6HasBeenSet;
 
                 };
             }

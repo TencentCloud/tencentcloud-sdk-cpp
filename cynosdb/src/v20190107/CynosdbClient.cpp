@@ -1330,6 +1330,49 @@ CynosdbClient::GrantAccountPrivilegesOutcomeCallable CynosdbClient::GrantAccount
     return task->get_future();
 }
 
+CynosdbClient::InquirePriceCreateOutcome CynosdbClient::InquirePriceCreate(const InquirePriceCreateRequest &request)
+{
+    auto outcome = MakeRequest(request, "InquirePriceCreate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        InquirePriceCreateResponse rsp = InquirePriceCreateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return InquirePriceCreateOutcome(rsp);
+        else
+            return InquirePriceCreateOutcome(o.GetError());
+    }
+    else
+    {
+        return InquirePriceCreateOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::InquirePriceCreateAsync(const InquirePriceCreateRequest& request, const InquirePriceCreateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->InquirePriceCreate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CynosdbClient::InquirePriceCreateOutcomeCallable CynosdbClient::InquirePriceCreateCallable(const InquirePriceCreateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<InquirePriceCreateOutcome()>>(
+        [this, request]()
+        {
+            return this->InquirePriceCreate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CynosdbClient::IsolateClusterOutcome CynosdbClient::IsolateCluster(const IsolateClusterRequest &request)
 {
     auto outcome = MakeRequest(request, "IsolateCluster");

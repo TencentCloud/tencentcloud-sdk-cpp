@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 查询参数
+                * 过滤条件
                 */
                 class QueryFilter : public AbstractModel
                 {
@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取查询的字段
-                     * @return FilterKey 查询的字段
+                     * 获取过滤key
+                     * @return FilterKey 过滤key
                      */
                     std::string GetFilterKey() const;
 
                     /**
-                     * 设置查询的字段
-                     * @param FilterKey 查询的字段
+                     * 设置过滤key
+                     * @param FilterKey 过滤key
                      */
                     void SetFilterKey(const std::string& _filterKey);
 
@@ -65,32 +65,14 @@ namespace TencentCloud
                     bool FilterKeyHasBeenSet() const;
 
                     /**
-                     * 获取查询的值
-                     * @return FilterValue 查询的值
-                     */
-                    std::string GetFilterValue() const;
-
-                    /**
-                     * 设置查询的值
-                     * @param FilterValue 查询的值
-                     */
-                    void SetFilterValue(const std::string& _filterValue);
-
-                    /**
-                     * 判断参数 FilterValue 是否已赋值
-                     * @return FilterValue 是否已赋值
-                     */
-                    bool FilterValueHasBeenSet() const;
-
-                    /**
-                     * 获取匹配类型，1等于；2大于；3小于；4大于等于；5小于等于；6不等于；7in；8not in；9模糊匹配
-                     * @return FilterOperatorType 匹配类型，1等于；2大于；3小于；4大于等于；5小于等于；6不等于；7in；8not in；9模糊匹配
+                     * 获取操作符(只支持32位)
+                     * @return FilterOperatorType 操作符(只支持32位)
                      */
                     int64_t GetFilterOperatorType() const;
 
                     /**
-                     * 设置匹配类型，1等于；2大于；3小于；4大于等于；5小于等于；6不等于；7in；8not in；9模糊匹配
-                     * @param FilterOperatorType 匹配类型，1等于；2大于；3小于；4大于等于；5小于等于；6不等于；7in；8not in；9模糊匹配
+                     * 设置操作符(只支持32位)
+                     * @param FilterOperatorType 操作符(只支持32位)
                      */
                     void SetFilterOperatorType(const int64_t& _filterOperatorType);
 
@@ -100,25 +82,43 @@ namespace TencentCloud
                      */
                     bool FilterOperatorTypeHasBeenSet() const;
 
+                    /**
+                     * 获取过滤value
+                     * @return FilterValue 过滤value
+                     */
+                    std::string GetFilterValue() const;
+
+                    /**
+                     * 设置过滤value
+                     * @param FilterValue 过滤value
+                     */
+                    void SetFilterValue(const std::string& _filterValue);
+
+                    /**
+                     * 判断参数 FilterValue 是否已赋值
+                     * @return FilterValue 是否已赋值
+                     */
+                    bool FilterValueHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 查询的字段
+                     * 过滤key
                      */
                     std::string m_filterKey;
                     bool m_filterKeyHasBeenSet;
 
                     /**
-                     * 查询的值
-                     */
-                    std::string m_filterValue;
-                    bool m_filterValueHasBeenSet;
-
-                    /**
-                     * 匹配类型，1等于；2大于；3小于；4大于等于；5小于等于；6不等于；7in；8not in；9模糊匹配
+                     * 操作符(只支持32位)
                      */
                     int64_t m_filterOperatorType;
                     bool m_filterOperatorTypeHasBeenSet;
+
+                    /**
+                     * 过滤value
+                     */
+                    std::string m_filterValue;
+                    bool m_filterValueHasBeenSet;
 
                 };
             }

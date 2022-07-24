@@ -384,6 +384,49 @@ CkafkaClient::CreateCdcClusterOutcomeCallable CkafkaClient::CreateCdcClusterCall
     return task->get_future();
 }
 
+CkafkaClient::CreateConnectResourceOutcome CkafkaClient::CreateConnectResource(const CreateConnectResourceRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateConnectResource");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateConnectResourceResponse rsp = CreateConnectResourceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateConnectResourceOutcome(rsp);
+        else
+            return CreateConnectResourceOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateConnectResourceOutcome(outcome.GetError());
+    }
+}
+
+void CkafkaClient::CreateConnectResourceAsync(const CreateConnectResourceRequest& request, const CreateConnectResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateConnectResource(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CkafkaClient::CreateConnectResourceOutcomeCallable CkafkaClient::CreateConnectResourceCallable(const CreateConnectResourceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateConnectResourceOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateConnectResource(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CkafkaClient::CreateConsumerOutcome CkafkaClient::CreateConsumer(const CreateConsumerRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateConsumer");
@@ -420,6 +463,49 @@ CkafkaClient::CreateConsumerOutcomeCallable CkafkaClient::CreateConsumerCallable
         [this, request]()
         {
             return this->CreateConsumer(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CkafkaClient::CreateDatahubTaskOutcome CkafkaClient::CreateDatahubTask(const CreateDatahubTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateDatahubTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateDatahubTaskResponse rsp = CreateDatahubTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateDatahubTaskOutcome(rsp);
+        else
+            return CreateDatahubTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateDatahubTaskOutcome(outcome.GetError());
+    }
+}
+
+void CkafkaClient::CreateDatahubTaskAsync(const CreateDatahubTaskRequest& request, const CreateDatahubTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateDatahubTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CkafkaClient::CreateDatahubTaskOutcomeCallable CkafkaClient::CreateDatahubTaskCallable(const CreateDatahubTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateDatahubTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateDatahubTask(request);
         }
     );
 

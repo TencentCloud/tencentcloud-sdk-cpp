@@ -133,20 +133,20 @@ SourceType 为点播（PullVodPushLive）可以填多个，上限30个。
                     /**
                      * 获取推流域名。
 将拉取过来的流推到该域名。
-注意：请使用已在云直播配置的推流域名。
+注意：如果目标地址为非云直播，且样式不同于云直播，请使用 ToUrl 传入完整推流地址，详细用法请参考 ToUrl 参数说明。
                      * @return DomainName 推流域名。
 将拉取过来的流推到该域名。
-注意：请使用已在云直播配置的推流域名。
+注意：如果目标地址为非云直播，且样式不同于云直播，请使用 ToUrl 传入完整推流地址，详细用法请参考 ToUrl 参数说明。
                      */
                     std::string GetDomainName() const;
 
                     /**
                      * 设置推流域名。
 将拉取过来的流推到该域名。
-注意：请使用已在云直播配置的推流域名。
+注意：如果目标地址为非云直播，且样式不同于云直播，请使用 ToUrl 传入完整推流地址，详细用法请参考 ToUrl 参数说明。
                      * @param DomainName 推流域名。
 将拉取过来的流推到该域名。
-注意：请使用已在云直播配置的推流域名。
+注意：如果目标地址为非云直播，且样式不同于云直播，请使用 ToUrl 传入完整推流地址，详细用法请参考 ToUrl 参数说明。
                      */
                     void SetDomainName(const std::string& _domainName);
 
@@ -640,7 +640,7 @@ SourceType 为点播（PullVodPushLive）可以填多个，上限30个。
                     /**
                      * 推流域名。
 将拉取过来的流推到该域名。
-注意：请使用已在云直播配置的推流域名。
+注意：如果目标地址为非云直播，且样式不同于云直播，请使用 ToUrl 传入完整推流地址，详细用法请参考 ToUrl 参数说明。
                      */
                     std::string m_domainName;
                     bool m_domainNameHasBeenSet;

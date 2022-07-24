@@ -1,0 +1,216 @@
+/*
+ * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include <tencentcloud/ckafka/v20190819/model/PostgreSQLParam.h>
+
+using TencentCloud::CoreInternalOutcome;
+using namespace TencentCloud::Ckafka::V20190819::Model;
+using namespace std;
+
+PostgreSQLParam::PostgreSQLParam() :
+    m_databaseHasBeenSet(false),
+    m_tableHasBeenSet(false),
+    m_resourceHasBeenSet(false),
+    m_pluginNameHasBeenSet(false),
+    m_snapshotModeHasBeenSet(false)
+{
+}
+
+CoreInternalOutcome PostgreSQLParam::Deserialize(const rapidjson::Value &value)
+{
+    string requestId = "";
+
+
+    if (value.HasMember("Database") && !value["Database"].IsNull())
+    {
+        if (!value["Database"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PostgreSQLParam.Database` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_database = string(value["Database"].GetString());
+        m_databaseHasBeenSet = true;
+    }
+
+    if (value.HasMember("Table") && !value["Table"].IsNull())
+    {
+        if (!value["Table"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PostgreSQLParam.Table` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_table = string(value["Table"].GetString());
+        m_tableHasBeenSet = true;
+    }
+
+    if (value.HasMember("Resource") && !value["Resource"].IsNull())
+    {
+        if (!value["Resource"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PostgreSQLParam.Resource` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_resource = string(value["Resource"].GetString());
+        m_resourceHasBeenSet = true;
+    }
+
+    if (value.HasMember("PluginName") && !value["PluginName"].IsNull())
+    {
+        if (!value["PluginName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PostgreSQLParam.PluginName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_pluginName = string(value["PluginName"].GetString());
+        m_pluginNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("SnapshotMode") && !value["SnapshotMode"].IsNull())
+    {
+        if (!value["SnapshotMode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PostgreSQLParam.SnapshotMode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_snapshotMode = string(value["SnapshotMode"].GetString());
+        m_snapshotModeHasBeenSet = true;
+    }
+
+
+    return CoreInternalOutcome(true);
+}
+
+void PostgreSQLParam::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
+{
+
+    if (m_databaseHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Database";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_database.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tableHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Table";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_table.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Resource";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_resource.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_pluginNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PluginName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_pluginName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_snapshotModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SnapshotMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_snapshotMode.c_str(), allocator).Move(), allocator);
+    }
+
+}
+
+
+string PostgreSQLParam::GetDatabase() const
+{
+    return m_database;
+}
+
+void PostgreSQLParam::SetDatabase(const string& _database)
+{
+    m_database = _database;
+    m_databaseHasBeenSet = true;
+}
+
+bool PostgreSQLParam::DatabaseHasBeenSet() const
+{
+    return m_databaseHasBeenSet;
+}
+
+string PostgreSQLParam::GetTable() const
+{
+    return m_table;
+}
+
+void PostgreSQLParam::SetTable(const string& _table)
+{
+    m_table = _table;
+    m_tableHasBeenSet = true;
+}
+
+bool PostgreSQLParam::TableHasBeenSet() const
+{
+    return m_tableHasBeenSet;
+}
+
+string PostgreSQLParam::GetResource() const
+{
+    return m_resource;
+}
+
+void PostgreSQLParam::SetResource(const string& _resource)
+{
+    m_resource = _resource;
+    m_resourceHasBeenSet = true;
+}
+
+bool PostgreSQLParam::ResourceHasBeenSet() const
+{
+    return m_resourceHasBeenSet;
+}
+
+string PostgreSQLParam::GetPluginName() const
+{
+    return m_pluginName;
+}
+
+void PostgreSQLParam::SetPluginName(const string& _pluginName)
+{
+    m_pluginName = _pluginName;
+    m_pluginNameHasBeenSet = true;
+}
+
+bool PostgreSQLParam::PluginNameHasBeenSet() const
+{
+    return m_pluginNameHasBeenSet;
+}
+
+string PostgreSQLParam::GetSnapshotMode() const
+{
+    return m_snapshotMode;
+}
+
+void PostgreSQLParam::SetSnapshotMode(const string& _snapshotMode)
+{
+    m_snapshotMode = _snapshotMode;
+    m_snapshotModeHasBeenSet = true;
+}
+
+bool PostgreSQLParam::SnapshotModeHasBeenSet() const
+{
+    return m_snapshotModeHasBeenSet;
+}
+
