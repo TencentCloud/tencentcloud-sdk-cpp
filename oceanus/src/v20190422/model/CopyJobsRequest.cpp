@@ -22,7 +22,9 @@
 using namespace TencentCloud::Oceanus::V20190422::Model;
 using namespace std;
 
-CopyJobsRequest::CopyJobsRequest()
+CopyJobsRequest::CopyJobsRequest() :
+    m_jobItemsHasBeenSet(false),
+    m_workSpaceIdHasBeenSet(false)
 {
 }
 
@@ -33,6 +35,29 @@ string CopyJobsRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_jobItemsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "JobItems";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_jobItems.begin(); itr != m_jobItems.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_workSpaceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WorkSpaceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_workSpaceId.c_str(), allocator).Move(), allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +65,37 @@ string CopyJobsRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+vector<CopyJobItem> CopyJobsRequest::GetJobItems() const
+{
+    return m_jobItems;
+}
+
+void CopyJobsRequest::SetJobItems(const vector<CopyJobItem>& _jobItems)
+{
+    m_jobItems = _jobItems;
+    m_jobItemsHasBeenSet = true;
+}
+
+bool CopyJobsRequest::JobItemsHasBeenSet() const
+{
+    return m_jobItemsHasBeenSet;
+}
+
+string CopyJobsRequest::GetWorkSpaceId() const
+{
+    return m_workSpaceId;
+}
+
+void CopyJobsRequest::SetWorkSpaceId(const string& _workSpaceId)
+{
+    m_workSpaceId = _workSpaceId;
+    m_workSpaceIdHasBeenSet = true;
+}
+
+bool CopyJobsRequest::WorkSpaceIdHasBeenSet() const
+{
+    return m_workSpaceIdHasBeenSet;
+}
 
 

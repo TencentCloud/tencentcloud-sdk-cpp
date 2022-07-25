@@ -63,6 +63,12 @@
 #include <tencentcloud/ckafka/v20190819/model/DeleteAclResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/DeleteAclRuleRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/DeleteAclRuleResponse.h>
+#include <tencentcloud/ckafka/v20190819/model/DeleteConnectResourceRequest.h>
+#include <tencentcloud/ckafka/v20190819/model/DeleteConnectResourceResponse.h>
+#include <tencentcloud/ckafka/v20190819/model/DeleteDatahubTaskRequest.h>
+#include <tencentcloud/ckafka/v20190819/model/DeleteDatahubTaskResponse.h>
+#include <tencentcloud/ckafka/v20190819/model/DeleteDatahubTopicRequest.h>
+#include <tencentcloud/ckafka/v20190819/model/DeleteDatahubTopicResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/DeleteGroupRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/DeleteGroupResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/DeleteInstancePreRequest.h>
@@ -83,8 +89,18 @@
 #include <tencentcloud/ckafka/v20190819/model/DescribeAppInfoResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/DescribeCkafkaZoneRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/DescribeCkafkaZoneResponse.h>
+#include <tencentcloud/ckafka/v20190819/model/DescribeConnectResourceRequest.h>
+#include <tencentcloud/ckafka/v20190819/model/DescribeConnectResourceResponse.h>
+#include <tencentcloud/ckafka/v20190819/model/DescribeConnectResourcesRequest.h>
+#include <tencentcloud/ckafka/v20190819/model/DescribeConnectResourcesResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/DescribeConsumerGroupRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/DescribeConsumerGroupResponse.h>
+#include <tencentcloud/ckafka/v20190819/model/DescribeDatahubGroupOffsetsRequest.h>
+#include <tencentcloud/ckafka/v20190819/model/DescribeDatahubGroupOffsetsResponse.h>
+#include <tencentcloud/ckafka/v20190819/model/DescribeDatahubTaskRequest.h>
+#include <tencentcloud/ckafka/v20190819/model/DescribeDatahubTaskResponse.h>
+#include <tencentcloud/ckafka/v20190819/model/DescribeDatahubTasksRequest.h>
+#include <tencentcloud/ckafka/v20190819/model/DescribeDatahubTasksResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/DescribeGroupRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/DescribeGroupResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/DescribeGroupInfoRequest.h>
@@ -113,8 +129,16 @@
 #include <tencentcloud/ckafka/v20190819/model/DescribeTopicSyncReplicaResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/DescribeUserRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/DescribeUserResponse.h>
+#include <tencentcloud/ckafka/v20190819/model/FetchDatahubMessageByOffsetRequest.h>
+#include <tencentcloud/ckafka/v20190819/model/FetchDatahubMessageByOffsetResponse.h>
+#include <tencentcloud/ckafka/v20190819/model/FetchLatestDatahubMessageListRequest.h>
+#include <tencentcloud/ckafka/v20190819/model/FetchLatestDatahubMessageListResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/FetchMessageByOffsetRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/FetchMessageByOffsetResponse.h>
+#include <tencentcloud/ckafka/v20190819/model/ModifyConnectResourceRequest.h>
+#include <tencentcloud/ckafka/v20190819/model/ModifyConnectResourceResponse.h>
+#include <tencentcloud/ckafka/v20190819/model/ModifyDatahubTaskRequest.h>
+#include <tencentcloud/ckafka/v20190819/model/ModifyDatahubTaskResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/ModifyGroupOffsetsRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/ModifyGroupOffsetsResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/ModifyInstanceAttributesRequest.h>
@@ -201,6 +225,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteAclRuleResponse> DeleteAclRuleOutcome;
                 typedef std::future<DeleteAclRuleOutcome> DeleteAclRuleOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::DeleteAclRuleRequest&, DeleteAclRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAclRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteConnectResourceResponse> DeleteConnectResourceOutcome;
+                typedef std::future<DeleteConnectResourceOutcome> DeleteConnectResourceOutcomeCallable;
+                typedef std::function<void(const CkafkaClient*, const Model::DeleteConnectResourceRequest&, DeleteConnectResourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteConnectResourceAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteDatahubTaskResponse> DeleteDatahubTaskOutcome;
+                typedef std::future<DeleteDatahubTaskOutcome> DeleteDatahubTaskOutcomeCallable;
+                typedef std::function<void(const CkafkaClient*, const Model::DeleteDatahubTaskRequest&, DeleteDatahubTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDatahubTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteDatahubTopicResponse> DeleteDatahubTopicOutcome;
+                typedef std::future<DeleteDatahubTopicOutcome> DeleteDatahubTopicOutcomeCallable;
+                typedef std::function<void(const CkafkaClient*, const Model::DeleteDatahubTopicRequest&, DeleteDatahubTopicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDatahubTopicAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteGroupResponse> DeleteGroupOutcome;
                 typedef std::future<DeleteGroupOutcome> DeleteGroupOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::DeleteGroupRequest&, DeleteGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteGroupAsyncHandler;
@@ -231,9 +264,24 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeCkafkaZoneResponse> DescribeCkafkaZoneOutcome;
                 typedef std::future<DescribeCkafkaZoneOutcome> DescribeCkafkaZoneOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::DescribeCkafkaZoneRequest&, DescribeCkafkaZoneOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCkafkaZoneAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeConnectResourceResponse> DescribeConnectResourceOutcome;
+                typedef std::future<DescribeConnectResourceOutcome> DescribeConnectResourceOutcomeCallable;
+                typedef std::function<void(const CkafkaClient*, const Model::DescribeConnectResourceRequest&, DescribeConnectResourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeConnectResourceAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeConnectResourcesResponse> DescribeConnectResourcesOutcome;
+                typedef std::future<DescribeConnectResourcesOutcome> DescribeConnectResourcesOutcomeCallable;
+                typedef std::function<void(const CkafkaClient*, const Model::DescribeConnectResourcesRequest&, DescribeConnectResourcesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeConnectResourcesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeConsumerGroupResponse> DescribeConsumerGroupOutcome;
                 typedef std::future<DescribeConsumerGroupOutcome> DescribeConsumerGroupOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::DescribeConsumerGroupRequest&, DescribeConsumerGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeConsumerGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDatahubGroupOffsetsResponse> DescribeDatahubGroupOffsetsOutcome;
+                typedef std::future<DescribeDatahubGroupOffsetsOutcome> DescribeDatahubGroupOffsetsOutcomeCallable;
+                typedef std::function<void(const CkafkaClient*, const Model::DescribeDatahubGroupOffsetsRequest&, DescribeDatahubGroupOffsetsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDatahubGroupOffsetsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDatahubTaskResponse> DescribeDatahubTaskOutcome;
+                typedef std::future<DescribeDatahubTaskOutcome> DescribeDatahubTaskOutcomeCallable;
+                typedef std::function<void(const CkafkaClient*, const Model::DescribeDatahubTaskRequest&, DescribeDatahubTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDatahubTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDatahubTasksResponse> DescribeDatahubTasksOutcome;
+                typedef std::future<DescribeDatahubTasksOutcome> DescribeDatahubTasksOutcomeCallable;
+                typedef std::function<void(const CkafkaClient*, const Model::DescribeDatahubTasksRequest&, DescribeDatahubTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDatahubTasksAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeGroupResponse> DescribeGroupOutcome;
                 typedef std::future<DescribeGroupOutcome> DescribeGroupOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::DescribeGroupRequest&, DescribeGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGroupAsyncHandler;
@@ -276,9 +324,21 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeUserResponse> DescribeUserOutcome;
                 typedef std::future<DescribeUserOutcome> DescribeUserOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::DescribeUserRequest&, DescribeUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserAsyncHandler;
+                typedef Outcome<Core::Error, Model::FetchDatahubMessageByOffsetResponse> FetchDatahubMessageByOffsetOutcome;
+                typedef std::future<FetchDatahubMessageByOffsetOutcome> FetchDatahubMessageByOffsetOutcomeCallable;
+                typedef std::function<void(const CkafkaClient*, const Model::FetchDatahubMessageByOffsetRequest&, FetchDatahubMessageByOffsetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> FetchDatahubMessageByOffsetAsyncHandler;
+                typedef Outcome<Core::Error, Model::FetchLatestDatahubMessageListResponse> FetchLatestDatahubMessageListOutcome;
+                typedef std::future<FetchLatestDatahubMessageListOutcome> FetchLatestDatahubMessageListOutcomeCallable;
+                typedef std::function<void(const CkafkaClient*, const Model::FetchLatestDatahubMessageListRequest&, FetchLatestDatahubMessageListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> FetchLatestDatahubMessageListAsyncHandler;
                 typedef Outcome<Core::Error, Model::FetchMessageByOffsetResponse> FetchMessageByOffsetOutcome;
                 typedef std::future<FetchMessageByOffsetOutcome> FetchMessageByOffsetOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::FetchMessageByOffsetRequest&, FetchMessageByOffsetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> FetchMessageByOffsetAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyConnectResourceResponse> ModifyConnectResourceOutcome;
+                typedef std::future<ModifyConnectResourceOutcome> ModifyConnectResourceOutcomeCallable;
+                typedef std::function<void(const CkafkaClient*, const Model::ModifyConnectResourceRequest&, ModifyConnectResourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyConnectResourceAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyDatahubTaskResponse> ModifyDatahubTaskOutcome;
+                typedef std::future<ModifyDatahubTaskOutcome> ModifyDatahubTaskOutcomeCallable;
+                typedef std::function<void(const CkafkaClient*, const Model::ModifyDatahubTaskRequest&, ModifyDatahubTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDatahubTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyGroupOffsetsResponse> ModifyGroupOffsetsOutcome;
                 typedef std::future<ModifyGroupOffsetsOutcome> ModifyGroupOffsetsOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::ModifyGroupOffsetsRequest&, ModifyGroupOffsetsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyGroupOffsetsAsyncHandler;
@@ -481,6 +541,33 @@ namespace TencentCloud
                 DeleteAclRuleOutcomeCallable DeleteAclRuleCallable(const Model::DeleteAclRuleRequest& request);
 
                 /**
+                 *删除Datahub连接源
+                 * @param req DeleteConnectResourceRequest
+                 * @return DeleteConnectResourceOutcome
+                 */
+                DeleteConnectResourceOutcome DeleteConnectResource(const Model::DeleteConnectResourceRequest &request);
+                void DeleteConnectResourceAsync(const Model::DeleteConnectResourceRequest& request, const DeleteConnectResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteConnectResourceOutcomeCallable DeleteConnectResourceCallable(const Model::DeleteConnectResourceRequest& request);
+
+                /**
+                 *删除Datahub任务
+                 * @param req DeleteDatahubTaskRequest
+                 * @return DeleteDatahubTaskOutcome
+                 */
+                DeleteDatahubTaskOutcome DeleteDatahubTask(const Model::DeleteDatahubTaskRequest &request);
+                void DeleteDatahubTaskAsync(const Model::DeleteDatahubTaskRequest& request, const DeleteDatahubTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteDatahubTaskOutcomeCallable DeleteDatahubTaskCallable(const Model::DeleteDatahubTaskRequest& request);
+
+                /**
+                 *删除Datahub主题
+                 * @param req DeleteDatahubTopicRequest
+                 * @return DeleteDatahubTopicOutcome
+                 */
+                DeleteDatahubTopicOutcome DeleteDatahubTopic(const Model::DeleteDatahubTopicRequest &request);
+                void DeleteDatahubTopicAsync(const Model::DeleteDatahubTopicRequest& request, const DeleteDatahubTopicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteDatahubTopicOutcomeCallable DeleteDatahubTopicCallable(const Model::DeleteDatahubTopicRequest& request);
+
+                /**
                  *删除消费组
                  * @param req DeleteGroupRequest
                  * @return DeleteGroupOutcome
@@ -571,6 +658,24 @@ namespace TencentCloud
                 DescribeCkafkaZoneOutcomeCallable DescribeCkafkaZoneCallable(const Model::DescribeCkafkaZoneRequest& request);
 
                 /**
+                 *查询Datahub连接源
+                 * @param req DescribeConnectResourceRequest
+                 * @return DescribeConnectResourceOutcome
+                 */
+                DescribeConnectResourceOutcome DescribeConnectResource(const Model::DescribeConnectResourceRequest &request);
+                void DescribeConnectResourceAsync(const Model::DescribeConnectResourceRequest& request, const DescribeConnectResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeConnectResourceOutcomeCallable DescribeConnectResourceCallable(const Model::DescribeConnectResourceRequest& request);
+
+                /**
+                 *查询Datahub连接源列表
+                 * @param req DescribeConnectResourcesRequest
+                 * @return DescribeConnectResourcesOutcome
+                 */
+                DescribeConnectResourcesOutcome DescribeConnectResources(const Model::DescribeConnectResourcesRequest &request);
+                void DescribeConnectResourcesAsync(const Model::DescribeConnectResourcesRequest& request, const DescribeConnectResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeConnectResourcesOutcomeCallable DescribeConnectResourcesCallable(const Model::DescribeConnectResourcesRequest& request);
+
+                /**
                  *查询消费分组信息
                  * @param req DescribeConsumerGroupRequest
                  * @return DescribeConsumerGroupOutcome
@@ -578,6 +683,33 @@ namespace TencentCloud
                 DescribeConsumerGroupOutcome DescribeConsumerGroup(const Model::DescribeConsumerGroupRequest &request);
                 void DescribeConsumerGroupAsync(const Model::DescribeConsumerGroupRequest& request, const DescribeConsumerGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeConsumerGroupOutcomeCallable DescribeConsumerGroupCallable(const Model::DescribeConsumerGroupRequest& request);
+
+                /**
+                 *获取Datahub消费分组offset
+                 * @param req DescribeDatahubGroupOffsetsRequest
+                 * @return DescribeDatahubGroupOffsetsOutcome
+                 */
+                DescribeDatahubGroupOffsetsOutcome DescribeDatahubGroupOffsets(const Model::DescribeDatahubGroupOffsetsRequest &request);
+                void DescribeDatahubGroupOffsetsAsync(const Model::DescribeDatahubGroupOffsetsRequest& request, const DescribeDatahubGroupOffsetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDatahubGroupOffsetsOutcomeCallable DescribeDatahubGroupOffsetsCallable(const Model::DescribeDatahubGroupOffsetsRequest& request);
+
+                /**
+                 *查询Datahub任务信息
+                 * @param req DescribeDatahubTaskRequest
+                 * @return DescribeDatahubTaskOutcome
+                 */
+                DescribeDatahubTaskOutcome DescribeDatahubTask(const Model::DescribeDatahubTaskRequest &request);
+                void DescribeDatahubTaskAsync(const Model::DescribeDatahubTaskRequest& request, const DescribeDatahubTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDatahubTaskOutcomeCallable DescribeDatahubTaskCallable(const Model::DescribeDatahubTaskRequest& request);
+
+                /**
+                 *查询Datahub任务列表 
+                 * @param req DescribeDatahubTasksRequest
+                 * @return DescribeDatahubTasksOutcome
+                 */
+                DescribeDatahubTasksOutcome DescribeDatahubTasks(const Model::DescribeDatahubTasksRequest &request);
+                void DescribeDatahubTasksAsync(const Model::DescribeDatahubTasksRequest& request, const DescribeDatahubTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDatahubTasksOutcomeCallable DescribeDatahubTasksCallable(const Model::DescribeDatahubTasksRequest& request);
 
                 /**
                  *枚举消费分组(精简版)
@@ -709,12 +841,48 @@ namespace TencentCloud
 
                 /**
                  *根据指定offset位置的消息
+                 * @param req FetchDatahubMessageByOffsetRequest
+                 * @return FetchDatahubMessageByOffsetOutcome
+                 */
+                FetchDatahubMessageByOffsetOutcome FetchDatahubMessageByOffset(const Model::FetchDatahubMessageByOffsetRequest &request);
+                void FetchDatahubMessageByOffsetAsync(const Model::FetchDatahubMessageByOffsetRequest& request, const FetchDatahubMessageByOffsetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                FetchDatahubMessageByOffsetOutcomeCallable FetchDatahubMessageByOffsetCallable(const Model::FetchDatahubMessageByOffsetRequest& request);
+
+                /**
+                 *查询最新消息列表
+                 * @param req FetchLatestDatahubMessageListRequest
+                 * @return FetchLatestDatahubMessageListOutcome
+                 */
+                FetchLatestDatahubMessageListOutcome FetchLatestDatahubMessageList(const Model::FetchLatestDatahubMessageListRequest &request);
+                void FetchLatestDatahubMessageListAsync(const Model::FetchLatestDatahubMessageListRequest& request, const FetchLatestDatahubMessageListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                FetchLatestDatahubMessageListOutcomeCallable FetchLatestDatahubMessageListCallable(const Model::FetchLatestDatahubMessageListRequest& request);
+
+                /**
+                 *根据指定offset位置的消息
                  * @param req FetchMessageByOffsetRequest
                  * @return FetchMessageByOffsetOutcome
                  */
                 FetchMessageByOffsetOutcome FetchMessageByOffset(const Model::FetchMessageByOffsetRequest &request);
                 void FetchMessageByOffsetAsync(const Model::FetchMessageByOffsetRequest& request, const FetchMessageByOffsetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 FetchMessageByOffsetOutcomeCallable FetchMessageByOffsetCallable(const Model::FetchMessageByOffsetRequest& request);
+
+                /**
+                 *编辑Datahub连接源
+                 * @param req ModifyConnectResourceRequest
+                 * @return ModifyConnectResourceOutcome
+                 */
+                ModifyConnectResourceOutcome ModifyConnectResource(const Model::ModifyConnectResourceRequest &request);
+                void ModifyConnectResourceAsync(const Model::ModifyConnectResourceRequest& request, const ModifyConnectResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyConnectResourceOutcomeCallable ModifyConnectResourceCallable(const Model::ModifyConnectResourceRequest& request);
+
+                /**
+                 *修改Datahub任务
+                 * @param req ModifyDatahubTaskRequest
+                 * @return ModifyDatahubTaskOutcome
+                 */
+                ModifyDatahubTaskOutcome ModifyDatahubTask(const Model::ModifyDatahubTaskRequest &request);
+                void ModifyDatahubTaskAsync(const Model::ModifyDatahubTaskRequest& request, const ModifyDatahubTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDatahubTaskOutcomeCallable ModifyDatahubTaskCallable(const Model::ModifyDatahubTaskRequest& request);
 
                 /**
                  *设置Groups 消费分组offset

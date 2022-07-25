@@ -23,7 +23,10 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Oceanus::V20190422::Model;
 using namespace std;
 
-CopyJobsResponse::CopyJobsResponse()
+CopyJobsResponse::CopyJobsResponse() :
+    m_successCountHasBeenSet(false),
+    m_failCountHasBeenSet(false),
+    m_copyJobsResultsHasBeenSet(false)
 {
 }
 
@@ -61,6 +64,46 @@ CoreInternalOutcome CopyJobsResponse::Deserialize(const string &payload)
     }
 
 
+    if (rsp.HasMember("SuccessCount") && !rsp["SuccessCount"].IsNull())
+    {
+        if (!rsp["SuccessCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SuccessCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_successCount = rsp["SuccessCount"].GetInt64();
+        m_successCountHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("FailCount") && !rsp["FailCount"].IsNull())
+    {
+        if (!rsp["FailCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `FailCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_failCount = rsp["FailCount"].GetInt64();
+        m_failCountHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("CopyJobsResults") && !rsp["CopyJobsResults"].IsNull())
+    {
+        if (!rsp["CopyJobsResults"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `CopyJobsResults` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["CopyJobsResults"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            CopyJobResult item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_copyJobsResults.push_back(item);
+        }
+        m_copyJobsResultsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +113,37 @@ string CopyJobsResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_successCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SuccessCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_successCount, allocator);
+    }
+
+    if (m_failCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FailCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_failCount, allocator);
+    }
+
+    if (m_copyJobsResultsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CopyJobsResults";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_copyJobsResults.begin(); itr != m_copyJobsResults.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +156,35 @@ string CopyJobsResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+int64_t CopyJobsResponse::GetSuccessCount() const
+{
+    return m_successCount;
+}
+
+bool CopyJobsResponse::SuccessCountHasBeenSet() const
+{
+    return m_successCountHasBeenSet;
+}
+
+int64_t CopyJobsResponse::GetFailCount() const
+{
+    return m_failCount;
+}
+
+bool CopyJobsResponse::FailCountHasBeenSet() const
+{
+    return m_failCountHasBeenSet;
+}
+
+vector<CopyJobResult> CopyJobsResponse::GetCopyJobsResults() const
+{
+    return m_copyJobsResults;
+}
+
+bool CopyJobsResponse::CopyJobsResultsHasBeenSet() const
+{
+    return m_copyJobsResultsHasBeenSet;
+}
 
 

@@ -28,6 +28,7 @@
 #include <tencentcloud/as/v20180419/model/EnhancedService.h>
 #include <tencentcloud/as/v20180419/model/InstanceMarketOptionsRequest.h>
 #include <tencentcloud/as/v20180419/model/InstanceTag.h>
+#include <tencentcloud/as/v20180419/model/Tag.h>
 #include <tencentcloud/as/v20180419/model/HostNameSettings.h>
 #include <tencentcloud/as/v20180419/model/InstanceNameSettings.h>
 #include <tencentcloud/as/v20180419/model/InstanceChargePrepaid.h>
@@ -329,6 +330,24 @@ namespace TencentCloud
                     bool InstanceTypesHasBeenSet() const;
 
                     /**
+                     * 获取CAM角色名称。可通过DescribeRoleList接口返回值中的roleName获取。
+                     * @return CamRoleName CAM角色名称。可通过DescribeRoleList接口返回值中的roleName获取。
+                     */
+                    std::string GetCamRoleName() const;
+
+                    /**
+                     * 设置CAM角色名称。可通过DescribeRoleList接口返回值中的roleName获取。
+                     * @param CamRoleName CAM角色名称。可通过DescribeRoleList接口返回值中的roleName获取。
+                     */
+                    void SetCamRoleName(const std::string& _camRoleName);
+
+                    /**
+                     * 判断参数 CamRoleName 是否已赋值
+                     * @return CamRoleName 是否已赋值
+                     */
+                    bool CamRoleNameHasBeenSet() const;
+
+                    /**
                      * 获取实例类型校验策略，取值包括 ALL 和 ANY，默认取值为ANY。
 <br><li> ALL，所有实例类型（InstanceType）都可用则通过校验，否则校验报错。
 <br><li> ANY，存在任何一个实例类型（InstanceType）可用则通过校验，否则校验报错。
@@ -385,22 +404,22 @@ namespace TencentCloud
                     bool InstanceTagsHasBeenSet() const;
 
                     /**
-                     * 获取CAM角色名称。可通过DescribeRoleList接口返回值中的roleName获取。
-                     * @return CamRoleName CAM角色名称。可通过DescribeRoleList接口返回值中的roleName获取。
+                     * 获取标签描述列表。通过指定该参数可以支持绑定标签到启动配置。每个启动配置最多支持30个标签。
+                     * @return Tags 标签描述列表。通过指定该参数可以支持绑定标签到启动配置。每个启动配置最多支持30个标签。
                      */
-                    std::string GetCamRoleName() const;
+                    std::vector<Tag> GetTags() const;
 
                     /**
-                     * 设置CAM角色名称。可通过DescribeRoleList接口返回值中的roleName获取。
-                     * @param CamRoleName CAM角色名称。可通过DescribeRoleList接口返回值中的roleName获取。
+                     * 设置标签描述列表。通过指定该参数可以支持绑定标签到启动配置。每个启动配置最多支持30个标签。
+                     * @param Tags 标签描述列表。通过指定该参数可以支持绑定标签到启动配置。每个启动配置最多支持30个标签。
                      */
-                    void SetCamRoleName(const std::string& _camRoleName);
+                    void SetTags(const std::vector<Tag>& _tags);
 
                     /**
-                     * 判断参数 CamRoleName 是否已赋值
-                     * @return CamRoleName 是否已赋值
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
                      */
-                    bool CamRoleNameHasBeenSet() const;
+                    bool TagsHasBeenSet() const;
 
                     /**
                      * 获取云服务器主机名（HostName）的相关设置。
@@ -579,6 +598,12 @@ namespace TencentCloud
                     bool m_instanceTypesHasBeenSet;
 
                     /**
+                     * CAM角色名称。可通过DescribeRoleList接口返回值中的roleName获取。
+                     */
+                    std::string m_camRoleName;
+                    bool m_camRoleNameHasBeenSet;
+
+                    /**
                      * 实例类型校验策略，取值包括 ALL 和 ANY，默认取值为ANY。
 <br><li> ALL，所有实例类型（InstanceType）都可用则通过校验，否则校验报错。
 <br><li> ANY，存在任何一个实例类型（InstanceType）可用则通过校验，否则校验报错。
@@ -596,10 +621,10 @@ namespace TencentCloud
                     bool m_instanceTagsHasBeenSet;
 
                     /**
-                     * CAM角色名称。可通过DescribeRoleList接口返回值中的roleName获取。
+                     * 标签描述列表。通过指定该参数可以支持绑定标签到启动配置。每个启动配置最多支持30个标签。
                      */
-                    std::string m_camRoleName;
-                    bool m_camRoleNameHasBeenSet;
+                    std::vector<Tag> m_tags;
+                    bool m_tagsHasBeenSet;
 
                     /**
                      * 云服务器主机名（HostName）的相关设置。

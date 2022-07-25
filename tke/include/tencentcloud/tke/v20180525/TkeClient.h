@@ -59,6 +59,8 @@
 #include <tencentcloud/tke/v20180525/model/CreateEKSClusterResponse.h>
 #include <tencentcloud/tke/v20180525/model/CreateEKSContainerInstancesRequest.h>
 #include <tencentcloud/tke/v20180525/model/CreateEKSContainerInstancesResponse.h>
+#include <tencentcloud/tke/v20180525/model/CreateEdgeLogConfigRequest.h>
+#include <tencentcloud/tke/v20180525/model/CreateEdgeLogConfigResponse.h>
 #include <tencentcloud/tke/v20180525/model/CreateImageCacheRequest.h>
 #include <tencentcloud/tke/v20180525/model/CreateImageCacheResponse.h>
 #include <tencentcloud/tke/v20180525/model/CreatePrometheusAlertPolicyRequest.h>
@@ -147,6 +149,8 @@
 #include <tencentcloud/tke/v20180525/model/DescribeClusterEndpointStatusResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeClusterEndpointVipStatusRequest.h>
 #include <tencentcloud/tke/v20180525/model/DescribeClusterEndpointVipStatusResponse.h>
+#include <tencentcloud/tke/v20180525/model/DescribeClusterEndpointsRequest.h>
+#include <tencentcloud/tke/v20180525/model/DescribeClusterEndpointsResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeClusterInstancesRequest.h>
 #include <tencentcloud/tke/v20180525/model/DescribeClusterInstancesResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeClusterKubeconfigRequest.h>
@@ -287,6 +291,8 @@
 #include <tencentcloud/tke/v20180525/model/GetTkeAppChartListResponse.h>
 #include <tencentcloud/tke/v20180525/model/GetUpgradeInstanceProgressRequest.h>
 #include <tencentcloud/tke/v20180525/model/GetUpgradeInstanceProgressResponse.h>
+#include <tencentcloud/tke/v20180525/model/InstallEdgeLogAgentRequest.h>
+#include <tencentcloud/tke/v20180525/model/InstallEdgeLogAgentResponse.h>
 #include <tencentcloud/tke/v20180525/model/InstallLogAgentRequest.h>
 #include <tencentcloud/tke/v20180525/model/InstallLogAgentResponse.h>
 #include <tencentcloud/tke/v20180525/model/ModifyClusterAsGroupAttributeRequest.h>
@@ -337,6 +343,8 @@
 #include <tencentcloud/tke/v20180525/model/SyncPrometheusTempResponse.h>
 #include <tencentcloud/tke/v20180525/model/SyncPrometheusTemplateRequest.h>
 #include <tencentcloud/tke/v20180525/model/SyncPrometheusTemplateResponse.h>
+#include <tencentcloud/tke/v20180525/model/UninstallEdgeLogAgentRequest.h>
+#include <tencentcloud/tke/v20180525/model/UninstallEdgeLogAgentResponse.h>
 #include <tencentcloud/tke/v20180525/model/UninstallLogAgentRequest.h>
 #include <tencentcloud/tke/v20180525/model/UninstallLogAgentResponse.h>
 #include <tencentcloud/tke/v20180525/model/UpdateClusterVersionRequest.h>
@@ -419,6 +427,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateEKSContainerInstancesResponse> CreateEKSContainerInstancesOutcome;
                 typedef std::future<CreateEKSContainerInstancesOutcome> CreateEKSContainerInstancesOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::CreateEKSContainerInstancesRequest&, CreateEKSContainerInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateEKSContainerInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateEdgeLogConfigResponse> CreateEdgeLogConfigOutcome;
+                typedef std::future<CreateEdgeLogConfigOutcome> CreateEdgeLogConfigOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::CreateEdgeLogConfigRequest&, CreateEdgeLogConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateEdgeLogConfigAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateImageCacheResponse> CreateImageCacheOutcome;
                 typedef std::future<CreateImageCacheOutcome> CreateImageCacheOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::CreateImageCacheRequest&, CreateImageCacheOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateImageCacheAsyncHandler;
@@ -551,6 +562,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeClusterEndpointVipStatusResponse> DescribeClusterEndpointVipStatusOutcome;
                 typedef std::future<DescribeClusterEndpointVipStatusOutcome> DescribeClusterEndpointVipStatusOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DescribeClusterEndpointVipStatusRequest&, DescribeClusterEndpointVipStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterEndpointVipStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeClusterEndpointsResponse> DescribeClusterEndpointsOutcome;
+                typedef std::future<DescribeClusterEndpointsOutcome> DescribeClusterEndpointsOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::DescribeClusterEndpointsRequest&, DescribeClusterEndpointsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterEndpointsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeClusterInstancesResponse> DescribeClusterInstancesOutcome;
                 typedef std::future<DescribeClusterInstancesOutcome> DescribeClusterInstancesOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DescribeClusterInstancesRequest&, DescribeClusterInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterInstancesAsyncHandler;
@@ -761,6 +775,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetUpgradeInstanceProgressResponse> GetUpgradeInstanceProgressOutcome;
                 typedef std::future<GetUpgradeInstanceProgressOutcome> GetUpgradeInstanceProgressOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::GetUpgradeInstanceProgressRequest&, GetUpgradeInstanceProgressOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetUpgradeInstanceProgressAsyncHandler;
+                typedef Outcome<Core::Error, Model::InstallEdgeLogAgentResponse> InstallEdgeLogAgentOutcome;
+                typedef std::future<InstallEdgeLogAgentOutcome> InstallEdgeLogAgentOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::InstallEdgeLogAgentRequest&, InstallEdgeLogAgentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InstallEdgeLogAgentAsyncHandler;
                 typedef Outcome<Core::Error, Model::InstallLogAgentResponse> InstallLogAgentOutcome;
                 typedef std::future<InstallLogAgentOutcome> InstallLogAgentOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::InstallLogAgentRequest&, InstallLogAgentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InstallLogAgentAsyncHandler;
@@ -836,6 +853,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::SyncPrometheusTemplateResponse> SyncPrometheusTemplateOutcome;
                 typedef std::future<SyncPrometheusTemplateOutcome> SyncPrometheusTemplateOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::SyncPrometheusTemplateRequest&, SyncPrometheusTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SyncPrometheusTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::UninstallEdgeLogAgentResponse> UninstallEdgeLogAgentOutcome;
+                typedef std::future<UninstallEdgeLogAgentOutcome> UninstallEdgeLogAgentOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::UninstallEdgeLogAgentRequest&, UninstallEdgeLogAgentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UninstallEdgeLogAgentAsyncHandler;
                 typedef Outcome<Core::Error, Model::UninstallLogAgentResponse> UninstallLogAgentOutcome;
                 typedef std::future<UninstallLogAgentOutcome> UninstallLogAgentOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::UninstallLogAgentRequest&, UninstallLogAgentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UninstallLogAgentAsyncHandler;
@@ -1021,6 +1041,15 @@ namespace TencentCloud
                 CreateEKSContainerInstancesOutcome CreateEKSContainerInstances(const Model::CreateEKSContainerInstancesRequest &request);
                 void CreateEKSContainerInstancesAsync(const Model::CreateEKSContainerInstancesRequest& request, const CreateEKSContainerInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateEKSContainerInstancesOutcomeCallable CreateEKSContainerInstancesCallable(const Model::CreateEKSContainerInstancesRequest& request);
+
+                /**
+                 *创建边缘集群日志采集配置
+                 * @param req CreateEdgeLogConfigRequest
+                 * @return CreateEdgeLogConfigOutcome
+                 */
+                CreateEdgeLogConfigOutcome CreateEdgeLogConfig(const Model::CreateEdgeLogConfigRequest &request);
+                void CreateEdgeLogConfigAsync(const Model::CreateEdgeLogConfigRequest& request, const CreateEdgeLogConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateEdgeLogConfigOutcomeCallable CreateEdgeLogConfigCallable(const Model::CreateEdgeLogConfigRequest& request);
 
                 /**
                  *创建镜像缓存的接口。创建过程中，请勿删除EKSCI实例和云盘，否则镜像缓存将创建失败。
@@ -1417,6 +1446,15 @@ namespace TencentCloud
                 DescribeClusterEndpointVipStatusOutcome DescribeClusterEndpointVipStatus(const Model::DescribeClusterEndpointVipStatusRequest &request);
                 void DescribeClusterEndpointVipStatusAsync(const Model::DescribeClusterEndpointVipStatusRequest& request, const DescribeClusterEndpointVipStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeClusterEndpointVipStatusOutcomeCallable DescribeClusterEndpointVipStatusCallable(const Model::DescribeClusterEndpointVipStatusRequest& request);
+
+                /**
+                 *获取集群的访问地址，包括内网地址，外网地址，外网域名，外网访问安全策略
+                 * @param req DescribeClusterEndpointsRequest
+                 * @return DescribeClusterEndpointsOutcome
+                 */
+                DescribeClusterEndpointsOutcome DescribeClusterEndpoints(const Model::DescribeClusterEndpointsRequest &request);
+                void DescribeClusterEndpointsAsync(const Model::DescribeClusterEndpointsRequest& request, const DescribeClusterEndpointsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeClusterEndpointsOutcomeCallable DescribeClusterEndpointsCallable(const Model::DescribeClusterEndpointsRequest& request);
 
                 /**
                  * 查询集群下节点实例信息 
@@ -2049,6 +2087,15 @@ namespace TencentCloud
                 GetUpgradeInstanceProgressOutcomeCallable GetUpgradeInstanceProgressCallable(const Model::GetUpgradeInstanceProgressRequest& request);
 
                 /**
+                 *在tke@edge集群的边缘节点上安装日志采集组件
+                 * @param req InstallEdgeLogAgentRequest
+                 * @return InstallEdgeLogAgentOutcome
+                 */
+                InstallEdgeLogAgentOutcome InstallEdgeLogAgent(const Model::InstallEdgeLogAgentRequest &request);
+                void InstallEdgeLogAgentAsync(const Model::InstallEdgeLogAgentRequest& request, const InstallEdgeLogAgentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                InstallEdgeLogAgentOutcomeCallable InstallEdgeLogAgentCallable(const Model::InstallEdgeLogAgentRequest& request);
+
+                /**
                  *在TKE集群中安装CLS日志采集组件
                  * @param req InstallLogAgentRequest
                  * @return InstallLogAgentOutcome
@@ -2272,6 +2319,15 @@ namespace TencentCloud
                 SyncPrometheusTemplateOutcome SyncPrometheusTemplate(const Model::SyncPrometheusTemplateRequest &request);
                 void SyncPrometheusTemplateAsync(const Model::SyncPrometheusTemplateRequest& request, const SyncPrometheusTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SyncPrometheusTemplateOutcomeCallable SyncPrometheusTemplateCallable(const Model::SyncPrometheusTemplateRequest& request);
+
+                /**
+                 *从tke@edge集群边缘节点上卸载日志采集组件
+                 * @param req UninstallEdgeLogAgentRequest
+                 * @return UninstallEdgeLogAgentOutcome
+                 */
+                UninstallEdgeLogAgentOutcome UninstallEdgeLogAgent(const Model::UninstallEdgeLogAgentRequest &request);
+                void UninstallEdgeLogAgentAsync(const Model::UninstallEdgeLogAgentRequest& request, const UninstallEdgeLogAgentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UninstallEdgeLogAgentOutcomeCallable UninstallEdgeLogAgentCallable(const Model::UninstallEdgeLogAgentRequest& request);
 
                 /**
                  *从TKE集群中卸载CLS日志采集组件

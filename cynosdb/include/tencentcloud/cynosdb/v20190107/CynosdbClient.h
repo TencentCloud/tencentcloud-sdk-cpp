@@ -69,6 +69,8 @@
 #include <tencentcloud/cynosdb/v20190107/model/DescribeInstancesResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeMaintainPeriodRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeMaintainPeriodResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/DescribeParamTemplatesRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/DescribeParamTemplatesResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeProjectSecurityGroupsRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeProjectSecurityGroupsResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeResourcesByDealNameRequest.h>
@@ -85,6 +87,8 @@
 #include <tencentcloud/cynosdb/v20190107/model/GrantAccountPrivilegesResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/InquirePriceCreateRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/InquirePriceCreateResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/InquirePriceRenewRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/InquirePriceRenewResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/IsolateClusterRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/IsolateClusterResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/IsolateInstanceRequest.h>
@@ -204,6 +208,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeMaintainPeriodResponse> DescribeMaintainPeriodOutcome;
                 typedef std::future<DescribeMaintainPeriodOutcome> DescribeMaintainPeriodOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::DescribeMaintainPeriodRequest&, DescribeMaintainPeriodOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMaintainPeriodAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeParamTemplatesResponse> DescribeParamTemplatesOutcome;
+                typedef std::future<DescribeParamTemplatesOutcome> DescribeParamTemplatesOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::DescribeParamTemplatesRequest&, DescribeParamTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeParamTemplatesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeProjectSecurityGroupsResponse> DescribeProjectSecurityGroupsOutcome;
                 typedef std::future<DescribeProjectSecurityGroupsOutcome> DescribeProjectSecurityGroupsOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::DescribeProjectSecurityGroupsRequest&, DescribeProjectSecurityGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProjectSecurityGroupsAsyncHandler;
@@ -228,6 +235,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::InquirePriceCreateResponse> InquirePriceCreateOutcome;
                 typedef std::future<InquirePriceCreateOutcome> InquirePriceCreateOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::InquirePriceCreateRequest&, InquirePriceCreateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InquirePriceCreateAsyncHandler;
+                typedef Outcome<Core::Error, Model::InquirePriceRenewResponse> InquirePriceRenewOutcome;
+                typedef std::future<InquirePriceRenewOutcome> InquirePriceRenewOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::InquirePriceRenewRequest&, InquirePriceRenewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InquirePriceRenewAsyncHandler;
                 typedef Outcome<Core::Error, Model::IsolateClusterResponse> IsolateClusterOutcome;
                 typedef std::future<IsolateClusterOutcome> IsolateClusterOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::IsolateClusterRequest&, IsolateClusterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> IsolateClusterAsyncHandler;
@@ -493,6 +503,15 @@ namespace TencentCloud
                 DescribeMaintainPeriodOutcomeCallable DescribeMaintainPeriodCallable(const Model::DescribeMaintainPeriodRequest& request);
 
                 /**
+                 *查询用户指定产品下的所有参数模板信息
+                 * @param req DescribeParamTemplatesRequest
+                 * @return DescribeParamTemplatesOutcome
+                 */
+                DescribeParamTemplatesOutcome DescribeParamTemplates(const Model::DescribeParamTemplatesRequest &request);
+                void DescribeParamTemplatesAsync(const Model::DescribeParamTemplatesRequest& request, const DescribeParamTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeParamTemplatesOutcomeCallable DescribeParamTemplatesCallable(const Model::DescribeParamTemplatesRequest& request);
+
+                /**
                  *查询项目安全组信息
                  * @param req DescribeProjectSecurityGroupsRequest
                  * @return DescribeProjectSecurityGroupsOutcome
@@ -563,6 +582,15 @@ namespace TencentCloud
                 InquirePriceCreateOutcome InquirePriceCreate(const Model::InquirePriceCreateRequest &request);
                 void InquirePriceCreateAsync(const Model::InquirePriceCreateRequest& request, const InquirePriceCreateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 InquirePriceCreateOutcomeCallable InquirePriceCreateCallable(const Model::InquirePriceCreateRequest& request);
+
+                /**
+                 *查询续费集群价格
+                 * @param req InquirePriceRenewRequest
+                 * @return InquirePriceRenewOutcome
+                 */
+                InquirePriceRenewOutcome InquirePriceRenew(const Model::InquirePriceRenewRequest &request);
+                void InquirePriceRenewAsync(const Model::InquirePriceRenewRequest& request, const InquirePriceRenewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                InquirePriceRenewOutcomeCallable InquirePriceRenewCallable(const Model::InquirePriceRenewRequest& request);
 
                 /**
                  *隔离集群

@@ -80,6 +80,7 @@ set(as_public_header_model
   include/tencentcloud/as/v20180419/model/ModifyLoadBalancerTargetAttributesResponse.h
   include/tencentcloud/as/v20180419/model/ModifyAutoScalingGroupResponse.h
   include/tencentcloud/as/v20180419/model/DeleteLaunchConfigurationRequest.h
+  include/tencentcloud/as/v20180419/model/InvocationResult.h
   include/tencentcloud/as/v20180419/model/ModifyScalingPolicyRequest.h
   include/tencentcloud/as/v20180419/model/InstanceMarketOptionsRequest.h
   include/tencentcloud/as/v20180419/model/UpgradeLifecycleHookResponse.h
@@ -221,6 +222,7 @@ set(as_src
   src/v20180419/model/ModifyLoadBalancerTargetAttributesResponse.cpp
   src/v20180419/model/ModifyAutoScalingGroupResponse.cpp
   src/v20180419/model/DeleteLaunchConfigurationRequest.cpp
+  src/v20180419/model/InvocationResult.cpp
   src/v20180419/model/ModifyScalingPolicyRequest.cpp
   src/v20180419/model/InstanceMarketOptionsRequest.cpp
   src/v20180419/model/UpgradeLifecycleHookResponse.cpp

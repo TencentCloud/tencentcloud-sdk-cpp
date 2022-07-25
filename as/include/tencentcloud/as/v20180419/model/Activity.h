@@ -27,6 +27,7 @@
 #include <tencentcloud/as/v20180419/model/ActivtyRelatedInstance.h>
 #include <tencentcloud/as/v20180419/model/LifecycleActionResultInfo.h>
 #include <tencentcloud/as/v20180419/model/DetailedStatusMessage.h>
+#include <tencentcloud/as/v20180419/model/InvocationResult.h>
 
 
 namespace TencentCloud
@@ -90,10 +91,12 @@ namespace TencentCloud
 <li>SCALE_OUT：扩容活动<li>SCALE_IN：缩容活动<li>ATTACH_INSTANCES：添加实例<li>REMOVE_INSTANCES：销毁实例<li>DETACH_INSTANCES：移出实例<li>TERMINATE_INSTANCES_UNEXPECTEDLY：实例在CVM控制台被销毁<li>REPLACE_UNHEALTHY_INSTANCE：替换不健康实例
 <li>START_INSTANCES：开启实例
 <li>STOP_INSTANCES：关闭实例
+<li>INVOKE_COMMAND：执行命令
                      * @return ActivityType 伸缩活动类型。取值如下：<br>
 <li>SCALE_OUT：扩容活动<li>SCALE_IN：缩容活动<li>ATTACH_INSTANCES：添加实例<li>REMOVE_INSTANCES：销毁实例<li>DETACH_INSTANCES：移出实例<li>TERMINATE_INSTANCES_UNEXPECTEDLY：实例在CVM控制台被销毁<li>REPLACE_UNHEALTHY_INSTANCE：替换不健康实例
 <li>START_INSTANCES：开启实例
 <li>STOP_INSTANCES：关闭实例
+<li>INVOKE_COMMAND：执行命令
                      */
                     std::string GetActivityType() const;
 
@@ -102,10 +105,12 @@ namespace TencentCloud
 <li>SCALE_OUT：扩容活动<li>SCALE_IN：缩容活动<li>ATTACH_INSTANCES：添加实例<li>REMOVE_INSTANCES：销毁实例<li>DETACH_INSTANCES：移出实例<li>TERMINATE_INSTANCES_UNEXPECTEDLY：实例在CVM控制台被销毁<li>REPLACE_UNHEALTHY_INSTANCE：替换不健康实例
 <li>START_INSTANCES：开启实例
 <li>STOP_INSTANCES：关闭实例
+<li>INVOKE_COMMAND：执行命令
                      * @param ActivityType 伸缩活动类型。取值如下：<br>
 <li>SCALE_OUT：扩容活动<li>SCALE_IN：缩容活动<li>ATTACH_INSTANCES：添加实例<li>REMOVE_INSTANCES：销毁实例<li>DETACH_INSTANCES：移出实例<li>TERMINATE_INSTANCES_UNEXPECTEDLY：实例在CVM控制台被销毁<li>REPLACE_UNHEALTHY_INSTANCE：替换不健康实例
 <li>START_INSTANCES：开启实例
 <li>STOP_INSTANCES：关闭实例
+<li>INVOKE_COMMAND：执行命令
                      */
                     void SetActivityType(const std::string& _activityType);
 
@@ -337,6 +342,24 @@ namespace TencentCloud
                      */
                     bool DetailedStatusMessageSetHasBeenSet() const;
 
+                    /**
+                     * 获取执行命令结果。
+                     * @return InvocationResultSet 执行命令结果。
+                     */
+                    std::vector<InvocationResult> GetInvocationResultSet() const;
+
+                    /**
+                     * 设置执行命令结果。
+                     * @param InvocationResultSet 执行命令结果。
+                     */
+                    void SetInvocationResultSet(const std::vector<InvocationResult>& _invocationResultSet);
+
+                    /**
+                     * 判断参数 InvocationResultSet 是否已赋值
+                     * @return InvocationResultSet 是否已赋值
+                     */
+                    bool InvocationResultSetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -356,6 +379,7 @@ namespace TencentCloud
 <li>SCALE_OUT：扩容活动<li>SCALE_IN：缩容活动<li>ATTACH_INSTANCES：添加实例<li>REMOVE_INSTANCES：销毁实例<li>DETACH_INSTANCES：移出实例<li>TERMINATE_INSTANCES_UNEXPECTEDLY：实例在CVM控制台被销毁<li>REPLACE_UNHEALTHY_INSTANCE：替换不健康实例
 <li>START_INSTANCES：开启实例
 <li>STOP_INSTANCES：关闭实例
+<li>INVOKE_COMMAND：执行命令
                      */
                     std::string m_activityType;
                     bool m_activityTypeHasBeenSet;
@@ -431,6 +455,12 @@ namespace TencentCloud
                      */
                     std::vector<DetailedStatusMessage> m_detailedStatusMessageSet;
                     bool m_detailedStatusMessageSetHasBeenSet;
+
+                    /**
+                     * 执行命令结果。
+                     */
+                    std::vector<InvocationResult> m_invocationResultSet;
+                    bool m_invocationResultSetHasBeenSet;
 
                 };
             }

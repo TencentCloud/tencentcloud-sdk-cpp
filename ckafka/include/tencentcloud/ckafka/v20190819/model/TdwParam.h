@@ -82,6 +82,24 @@ namespace TencentCloud
                      */
                     bool TidHasBeenSet() const;
 
+                    /**
+                     * 获取是否为国内站，默认true
+                     * @return IsDomestic 是否为国内站，默认true
+                     */
+                    bool GetIsDomestic() const;
+
+                    /**
+                     * 设置是否为国内站，默认true
+                     * @param IsDomestic 是否为国内站，默认true
+                     */
+                    void SetIsDomestic(const bool& _isDomestic);
+
+                    /**
+                     * 判断参数 IsDomestic 是否已赋值
+                     * @return IsDomestic 是否已赋值
+                     */
+                    bool IsDomesticHasBeenSet() const;
+
                 private:
 
                     /**
@@ -95,6 +113,12 @@ namespace TencentCloud
                      */
                     std::string m_tid;
                     bool m_tidHasBeenSet;
+
+                    /**
+                     * 是否为国内站，默认true
+                     */
+                    bool m_isDomestic;
+                    bool m_isDomesticHasBeenSet;
 
                 };
             }

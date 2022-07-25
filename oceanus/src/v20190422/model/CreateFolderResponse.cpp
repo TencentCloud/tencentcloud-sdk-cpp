@@ -23,7 +23,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Oceanus::V20190422::Model;
 using namespace std;
 
-CreateFolderResponse::CreateFolderResponse()
+CreateFolderResponse::CreateFolderResponse() :
+    m_folderIdHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,16 @@ CoreInternalOutcome CreateFolderResponse::Deserialize(const string &payload)
     }
 
 
+    if (rsp.HasMember("FolderId") && !rsp["FolderId"].IsNull())
+    {
+        if (!rsp["FolderId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `FolderId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_folderId = string(rsp["FolderId"].GetString());
+        m_folderIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +81,14 @@ string CreateFolderResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_folderIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FolderId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_folderId.c_str(), allocator).Move(), allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +101,15 @@ string CreateFolderResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string CreateFolderResponse::GetFolderId() const
+{
+    return m_folderId;
+}
+
+bool CreateFolderResponse::FolderIdHasBeenSet() const
+{
+    return m_folderIdHasBeenSet;
+}
 
 

@@ -32,6 +32,7 @@
 #include <tencentcloud/as/v20180419/model/EnhancedService.h>
 #include <tencentcloud/as/v20180419/model/InstanceMarketOptionsRequest.h>
 #include <tencentcloud/as/v20180419/model/InstanceTag.h>
+#include <tencentcloud/as/v20180419/model/Tag.h>
 #include <tencentcloud/as/v20180419/model/HostNameSettings.h>
 #include <tencentcloud/as/v20180419/model/InstanceNameSettings.h>
 #include <tencentcloud/as/v20180419/model/InstanceChargePrepaid.h>
@@ -398,14 +399,14 @@ namespace TencentCloud
                     bool InstanceTypesHasBeenSet() const;
 
                     /**
-                     * 获取标签列表。
-                     * @return InstanceTags 标签列表。
+                     * 获取实例标签列表。扩容出来的实例会自动带上标签，最多支持10个标签。
+                     * @return InstanceTags 实例标签列表。扩容出来的实例会自动带上标签，最多支持10个标签。
                      */
                     std::vector<InstanceTag> GetInstanceTags() const;
 
                     /**
-                     * 设置标签列表。
-                     * @param InstanceTags 标签列表。
+                     * 设置实例标签列表。扩容出来的实例会自动带上标签，最多支持10个标签。
+                     * @param InstanceTags 实例标签列表。扩容出来的实例会自动带上标签，最多支持10个标签。
                      */
                     void SetInstanceTags(const std::vector<InstanceTag>& _instanceTags);
 
@@ -414,6 +415,28 @@ namespace TencentCloud
                      * @return InstanceTags 是否已赋值
                      */
                     bool InstanceTagsHasBeenSet() const;
+
+                    /**
+                     * 获取标签列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Tags 标签列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Tag> GetTags() const;
+
+                    /**
+                     * 设置标签列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Tags 标签列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTags(const std::vector<Tag>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     */
+                    bool TagsHasBeenSet() const;
 
                     /**
                      * 获取版本号。
@@ -682,10 +705,17 @@ namespace TencentCloud
                     bool m_instanceTypesHasBeenSet;
 
                     /**
-                     * 标签列表。
+                     * 实例标签列表。扩容出来的实例会自动带上标签，最多支持10个标签。
                      */
                     std::vector<InstanceTag> m_instanceTags;
                     bool m_instanceTagsHasBeenSet;
+
+                    /**
+                     * 标签列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Tag> m_tags;
+                    bool m_tagsHasBeenSet;
 
                     /**
                      * 版本号。

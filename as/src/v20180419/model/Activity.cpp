@@ -34,7 +34,8 @@ Activity::Activity() :
     m_activityRelatedInstanceSetHasBeenSet(false),
     m_statusMessageSimplifiedHasBeenSet(false),
     m_lifecycleActionResultSetHasBeenSet(false),
-    m_detailedStatusMessageSetHasBeenSet(false)
+    m_detailedStatusMessageSetHasBeenSet(false),
+    m_invocationResultSetHasBeenSet(false)
 {
 }
 
@@ -213,6 +214,26 @@ CoreInternalOutcome Activity::Deserialize(const rapidjson::Value &value)
         m_detailedStatusMessageSetHasBeenSet = true;
     }
 
+    if (value.HasMember("InvocationResultSet") && !value["InvocationResultSet"].IsNull())
+    {
+        if (!value["InvocationResultSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Activity.InvocationResultSet` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["InvocationResultSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            InvocationResult item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_invocationResultSet.push_back(item);
+        }
+        m_invocationResultSetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -347,6 +368,21 @@ void Activity::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
 
         int i=0;
         for (auto itr = m_detailedStatusMessageSet.begin(); itr != m_detailedStatusMessageSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_invocationResultSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InvocationResultSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_invocationResultSet.begin(); itr != m_invocationResultSet.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -578,5 +614,21 @@ void Activity::SetDetailedStatusMessageSet(const vector<DetailedStatusMessage>& 
 bool Activity::DetailedStatusMessageSetHasBeenSet() const
 {
     return m_detailedStatusMessageSetHasBeenSet;
+}
+
+vector<InvocationResult> Activity::GetInvocationResultSet() const
+{
+    return m_invocationResultSet;
+}
+
+void Activity::SetInvocationResultSet(const vector<InvocationResult>& _invocationResultSet)
+{
+    m_invocationResultSet = _invocationResultSet;
+    m_invocationResultSetHasBeenSet = true;
+}
+
+bool Activity::InvocationResultSetHasBeenSet() const
+{
+    return m_invocationResultSetHasBeenSet;
 }
 

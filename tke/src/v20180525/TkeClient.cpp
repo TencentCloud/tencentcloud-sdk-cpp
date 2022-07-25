@@ -814,6 +814,49 @@ TkeClient::CreateEKSContainerInstancesOutcomeCallable TkeClient::CreateEKSContai
     return task->get_future();
 }
 
+TkeClient::CreateEdgeLogConfigOutcome TkeClient::CreateEdgeLogConfig(const CreateEdgeLogConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateEdgeLogConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateEdgeLogConfigResponse rsp = CreateEdgeLogConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateEdgeLogConfigOutcome(rsp);
+        else
+            return CreateEdgeLogConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateEdgeLogConfigOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::CreateEdgeLogConfigAsync(const CreateEdgeLogConfigRequest& request, const CreateEdgeLogConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateEdgeLogConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::CreateEdgeLogConfigOutcomeCallable TkeClient::CreateEdgeLogConfigCallable(const CreateEdgeLogConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateEdgeLogConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateEdgeLogConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TkeClient::CreateImageCacheOutcome TkeClient::CreateImageCache(const CreateImageCacheRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateImageCache");
@@ -2699,6 +2742,49 @@ TkeClient::DescribeClusterEndpointVipStatusOutcomeCallable TkeClient::DescribeCl
         [this, request]()
         {
             return this->DescribeClusterEndpointVipStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::DescribeClusterEndpointsOutcome TkeClient::DescribeClusterEndpoints(const DescribeClusterEndpointsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeClusterEndpoints");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeClusterEndpointsResponse rsp = DescribeClusterEndpointsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeClusterEndpointsOutcome(rsp);
+        else
+            return DescribeClusterEndpointsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeClusterEndpointsOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DescribeClusterEndpointsAsync(const DescribeClusterEndpointsRequest& request, const DescribeClusterEndpointsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeClusterEndpoints(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DescribeClusterEndpointsOutcomeCallable TkeClient::DescribeClusterEndpointsCallable(const DescribeClusterEndpointsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeClusterEndpointsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeClusterEndpoints(request);
         }
     );
 
@@ -5716,6 +5802,49 @@ TkeClient::GetUpgradeInstanceProgressOutcomeCallable TkeClient::GetUpgradeInstan
     return task->get_future();
 }
 
+TkeClient::InstallEdgeLogAgentOutcome TkeClient::InstallEdgeLogAgent(const InstallEdgeLogAgentRequest &request)
+{
+    auto outcome = MakeRequest(request, "InstallEdgeLogAgent");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        InstallEdgeLogAgentResponse rsp = InstallEdgeLogAgentResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return InstallEdgeLogAgentOutcome(rsp);
+        else
+            return InstallEdgeLogAgentOutcome(o.GetError());
+    }
+    else
+    {
+        return InstallEdgeLogAgentOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::InstallEdgeLogAgentAsync(const InstallEdgeLogAgentRequest& request, const InstallEdgeLogAgentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->InstallEdgeLogAgent(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::InstallEdgeLogAgentOutcomeCallable TkeClient::InstallEdgeLogAgentCallable(const InstallEdgeLogAgentRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<InstallEdgeLogAgentOutcome()>>(
+        [this, request]()
+        {
+            return this->InstallEdgeLogAgent(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TkeClient::InstallLogAgentOutcome TkeClient::InstallLogAgent(const InstallLogAgentRequest &request)
 {
     auto outcome = MakeRequest(request, "InstallLogAgent");
@@ -6784,6 +6913,49 @@ TkeClient::SyncPrometheusTemplateOutcomeCallable TkeClient::SyncPrometheusTempla
         [this, request]()
         {
             return this->SyncPrometheusTemplate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::UninstallEdgeLogAgentOutcome TkeClient::UninstallEdgeLogAgent(const UninstallEdgeLogAgentRequest &request)
+{
+    auto outcome = MakeRequest(request, "UninstallEdgeLogAgent");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UninstallEdgeLogAgentResponse rsp = UninstallEdgeLogAgentResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UninstallEdgeLogAgentOutcome(rsp);
+        else
+            return UninstallEdgeLogAgentOutcome(o.GetError());
+    }
+    else
+    {
+        return UninstallEdgeLogAgentOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::UninstallEdgeLogAgentAsync(const UninstallEdgeLogAgentRequest& request, const UninstallEdgeLogAgentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UninstallEdgeLogAgent(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::UninstallEdgeLogAgentOutcomeCallable TkeClient::UninstallEdgeLogAgentCallable(const UninstallEdgeLogAgentRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UninstallEdgeLogAgentOutcome()>>(
+        [this, request]()
+        {
+            return this->UninstallEdgeLogAgent(request);
         }
     );
 

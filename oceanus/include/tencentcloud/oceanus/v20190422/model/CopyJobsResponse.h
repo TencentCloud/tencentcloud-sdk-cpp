@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/oceanus/v20190422/model/CopyJobResult.h>
 
 
 namespace TencentCloud
@@ -43,7 +44,70 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取成功条数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SuccessCount 成功条数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetSuccessCount() const;
+
+                    /**
+                     * 判断参数 SuccessCount 是否已赋值
+                     * @return SuccessCount 是否已赋值
+                     */
+                    bool SuccessCountHasBeenSet() const;
+
+                    /**
+                     * 获取失败条数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FailCount 失败条数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetFailCount() const;
+
+                    /**
+                     * 判断参数 FailCount 是否已赋值
+                     * @return FailCount 是否已赋值
+                     */
+                    bool FailCountHasBeenSet() const;
+
+                    /**
+                     * 获取结果列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CopyJobsResults 结果列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<CopyJobResult> GetCopyJobsResults() const;
+
+                    /**
+                     * 判断参数 CopyJobsResults 是否已赋值
+                     * @return CopyJobsResults 是否已赋值
+                     */
+                    bool CopyJobsResultsHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 成功条数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_successCount;
+                    bool m_successCountHasBeenSet;
+
+                    /**
+                     * 失败条数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_failCount;
+                    bool m_failCountHasBeenSet;
+
+                    /**
+                     * 结果列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<CopyJobResult> m_copyJobsResults;
+                    bool m_copyJobsResultsHasBeenSet;
 
                 };
             }

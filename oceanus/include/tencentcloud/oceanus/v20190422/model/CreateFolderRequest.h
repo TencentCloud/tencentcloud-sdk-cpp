@@ -43,6 +43,42 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取新建文件夹名
+                     * @return FolderName 新建文件夹名
+                     */
+                    std::string GetFolderName() const;
+
+                    /**
+                     * 设置新建文件夹名
+                     * @param FolderName 新建文件夹名
+                     */
+                    void SetFolderName(const std::string& _folderName);
+
+                    /**
+                     * 判断参数 FolderName 是否已赋值
+                     * @return FolderName 是否已赋值
+                     */
+                    bool FolderNameHasBeenSet() const;
+
+                    /**
+                     * 获取新建文件夹的父目录ID
+                     * @return ParentId 新建文件夹的父目录ID
+                     */
+                    std::string GetParentId() const;
+
+                    /**
+                     * 设置新建文件夹的父目录ID
+                     * @param ParentId 新建文件夹的父目录ID
+                     */
+                    void SetParentId(const std::string& _parentId);
+
+                    /**
+                     * 判断参数 ParentId 是否已赋值
+                     * @return ParentId 是否已赋值
+                     */
+                    bool ParentIdHasBeenSet() const;
+
+                    /**
                      * 获取文件夹类型，0是任务文件夹，1是依赖文件夹
                      * @return FolderType 文件夹类型，0是任务文件夹，1是依赖文件夹
                      */
@@ -79,6 +115,18 @@ namespace TencentCloud
                     bool WorkSpaceIdHasBeenSet() const;
 
                 private:
+
+                    /**
+                     * 新建文件夹名
+                     */
+                    std::string m_folderName;
+                    bool m_folderNameHasBeenSet;
+
+                    /**
+                     * 新建文件夹的父目录ID
+                     */
+                    std::string m_parentId;
+                    bool m_parentIdHasBeenSet;
 
                     /**
                      * 文件夹类型，0是任务文件夹，1是依赖文件夹

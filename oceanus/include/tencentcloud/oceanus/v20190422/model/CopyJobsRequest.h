@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/oceanus/v20190422/model/CopyJobItem.h>
 
 
 namespace TencentCloud
@@ -42,7 +43,55 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取复制明细列表
+                     * @return JobItems 复制明细列表
+                     */
+                    std::vector<CopyJobItem> GetJobItems() const;
+
+                    /**
+                     * 设置复制明细列表
+                     * @param JobItems 复制明细列表
+                     */
+                    void SetJobItems(const std::vector<CopyJobItem>& _jobItems);
+
+                    /**
+                     * 判断参数 JobItems 是否已赋值
+                     * @return JobItems 是否已赋值
+                     */
+                    bool JobItemsHasBeenSet() const;
+
+                    /**
+                     * 获取工作空间 SerialId
+                     * @return WorkSpaceId 工作空间 SerialId
+                     */
+                    std::string GetWorkSpaceId() const;
+
+                    /**
+                     * 设置工作空间 SerialId
+                     * @param WorkSpaceId 工作空间 SerialId
+                     */
+                    void SetWorkSpaceId(const std::string& _workSpaceId);
+
+                    /**
+                     * 判断参数 WorkSpaceId 是否已赋值
+                     * @return WorkSpaceId 是否已赋值
+                     */
+                    bool WorkSpaceIdHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 复制明细列表
+                     */
+                    std::vector<CopyJobItem> m_jobItems;
+                    bool m_jobItemsHasBeenSet;
+
+                    /**
+                     * 工作空间 SerialId
+                     */
+                    std::string m_workSpaceId;
+                    bool m_workSpaceIdHasBeenSet;
 
                 };
             }

@@ -22,7 +22,8 @@ using namespace std;
 
 TdwParam::TdwParam() :
     m_bidHasBeenSet(false),
-    m_tidHasBeenSet(false)
+    m_tidHasBeenSet(false),
+    m_isDomesticHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,16 @@ CoreInternalOutcome TdwParam::Deserialize(const rapidjson::Value &value)
         m_tidHasBeenSet = true;
     }
 
+    if (value.HasMember("IsDomestic") && !value["IsDomestic"].IsNull())
+    {
+        if (!value["IsDomestic"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `TdwParam.IsDomestic` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isDomestic = value["IsDomestic"].GetBool();
+        m_isDomesticHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +83,14 @@ void TdwParam::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "Tid";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_tid.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isDomesticHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsDomestic";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isDomestic, allocator);
     }
 
 }
@@ -107,5 +126,21 @@ void TdwParam::SetTid(const string& _tid)
 bool TdwParam::TidHasBeenSet() const
 {
     return m_tidHasBeenSet;
+}
+
+bool TdwParam::GetIsDomestic() const
+{
+    return m_isDomestic;
+}
+
+void TdwParam::SetIsDomestic(const bool& _isDomestic)
+{
+    m_isDomestic = _isDomestic;
+    m_isDomesticHasBeenSet = true;
+}
+
+bool TdwParam::IsDomesticHasBeenSet() const
+{
+    return m_isDomesticHasBeenSet;
 }
 
