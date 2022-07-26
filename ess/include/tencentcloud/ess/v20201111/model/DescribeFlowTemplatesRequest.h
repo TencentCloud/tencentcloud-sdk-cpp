@@ -46,14 +46,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取操作人信息
-                     * @return Operator 操作人信息
+                     * 获取调用方用户信息，userId 必填
+                     * @return Operator 调用方用户信息，userId 必填
                      */
                     UserInfo GetOperator() const;
 
                     /**
-                     * 设置操作人信息
-                     * @param Operator 操作人信息
+                     * 设置调用方用户信息，userId 必填
+                     * @param Operator 调用方用户信息，userId 必填
                      */
                     void SetOperator(const UserInfo& _operator);
 
@@ -62,42 +62,6 @@ namespace TencentCloud
                      * @return Operator 是否已赋值
                      */
                     bool OperatorHasBeenSet() const;
-
-                    /**
-                     * 获取查询偏移位置，默认0
-                     * @return Offset 查询偏移位置，默认0
-                     */
-                    uint64_t GetOffset() const;
-
-                    /**
-                     * 设置查询偏移位置，默认0
-                     * @param Offset 查询偏移位置，默认0
-                     */
-                    void SetOffset(const uint64_t& _offset);
-
-                    /**
-                     * 判断参数 Offset 是否已赋值
-                     * @return Offset 是否已赋值
-                     */
-                    bool OffsetHasBeenSet() const;
-
-                    /**
-                     * 获取查询个数，默认20，最大100
-                     * @return Limit 查询个数，默认20，最大100
-                     */
-                    uint64_t GetLimit() const;
-
-                    /**
-                     * 设置查询个数，默认20，最大100
-                     * @param Limit 查询个数，默认20，最大100
-                     */
-                    void SetLimit(const uint64_t& _limit);
-
-                    /**
-                     * 判断参数 Limit 是否已赋值
-                     * @return Limit 是否已赋值
-                     */
-                    bool LimitHasBeenSet() const;
 
                     /**
                      * 获取搜索条件，具体参考Filter结构体。本接口取值：template-id：按照【 **模板唯一标识** 】进行过滤
@@ -118,22 +82,58 @@ namespace TencentCloud
                     bool FiltersHasBeenSet() const;
 
                     /**
-                     * 获取应用相关信息
-                     * @return Agent 应用相关信息
+                     * 获取查询个数，默认20，最大100
+                     * @return Limit 查询个数，默认20，最大100
                      */
-                    Agent GetAgent() const;
+                    uint64_t GetLimit() const;
 
                     /**
-                     * 设置应用相关信息
-                     * @param Agent 应用相关信息
+                     * 设置查询个数，默认20，最大100
+                     * @param Limit 查询个数，默认20，最大100
                      */
-                    void SetAgent(const Agent& _agent);
+                    void SetLimit(const uint64_t& _limit);
 
                     /**
-                     * 判断参数 Agent 是否已赋值
-                     * @return Agent 是否已赋值
+                     * 判断参数 Limit 是否已赋值
+                     * @return Limit 是否已赋值
                      */
-                    bool AgentHasBeenSet() const;
+                    bool LimitHasBeenSet() const;
+
+                    /**
+                     * 获取查询偏移位置，默认0
+                     * @return Offset 查询偏移位置，默认0
+                     */
+                    uint64_t GetOffset() const;
+
+                    /**
+                     * 设置查询偏移位置，默认0
+                     * @param Offset 查询偏移位置，默认0
+                     */
+                    void SetOffset(const uint64_t& _offset);
+
+                    /**
+                     * 判断参数 Offset 是否已赋值
+                     * @return Offset 是否已赋值
+                     */
+                    bool OffsetHasBeenSet() const;
+
+                    /**
+                     * 获取查询内容：0-模板列表及详情（默认），1-仅模板列表
+                     * @return ContentType 查询内容：0-模板列表及详情（默认），1-仅模板列表
+                     */
+                    int64_t GetContentType() const;
+
+                    /**
+                     * 设置查询内容：0-模板列表及详情（默认），1-仅模板列表
+                     * @param ContentType 查询内容：0-模板列表及详情（默认），1-仅模板列表
+                     */
+                    void SetContentType(const int64_t& _contentType);
+
+                    /**
+                     * 判断参数 ContentType 是否已赋值
+                     * @return ContentType 是否已赋值
+                     */
+                    bool ContentTypeHasBeenSet() const;
 
                     /**
                      * 获取暂未开放
@@ -154,42 +154,30 @@ namespace TencentCloud
                     bool GenerateSourceHasBeenSet() const;
 
                     /**
-                     * 获取查询内容：0-模板列表及详情（默认），1-仅模板列表
-                     * @return ContentType 查询内容：0-模板列表及详情（默认），1-仅模板列表
+                     * 获取应用相关信息
+                     * @return Agent 应用相关信息
                      */
-                    int64_t GetContentType() const;
+                    Agent GetAgent() const;
 
                     /**
-                     * 设置查询内容：0-模板列表及详情（默认），1-仅模板列表
-                     * @param ContentType 查询内容：0-模板列表及详情（默认），1-仅模板列表
+                     * 设置应用相关信息
+                     * @param Agent 应用相关信息
                      */
-                    void SetContentType(const int64_t& _contentType);
+                    void SetAgent(const Agent& _agent);
 
                     /**
-                     * 判断参数 ContentType 是否已赋值
-                     * @return ContentType 是否已赋值
+                     * 判断参数 Agent 是否已赋值
+                     * @return Agent 是否已赋值
                      */
-                    bool ContentTypeHasBeenSet() const;
+                    bool AgentHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 操作人信息
+                     * 调用方用户信息，userId 必填
                      */
                     UserInfo m_operator;
                     bool m_operatorHasBeenSet;
-
-                    /**
-                     * 查询偏移位置，默认0
-                     */
-                    uint64_t m_offset;
-                    bool m_offsetHasBeenSet;
-
-                    /**
-                     * 查询个数，默认20，最大100
-                     */
-                    uint64_t m_limit;
-                    bool m_limitHasBeenSet;
 
                     /**
                      * 搜索条件，具体参考Filter结构体。本接口取值：template-id：按照【 **模板唯一标识** 】进行过滤
@@ -198,10 +186,22 @@ namespace TencentCloud
                     bool m_filtersHasBeenSet;
 
                     /**
-                     * 应用相关信息
+                     * 查询个数，默认20，最大100
                      */
-                    Agent m_agent;
-                    bool m_agentHasBeenSet;
+                    uint64_t m_limit;
+                    bool m_limitHasBeenSet;
+
+                    /**
+                     * 查询偏移位置，默认0
+                     */
+                    uint64_t m_offset;
+                    bool m_offsetHasBeenSet;
+
+                    /**
+                     * 查询内容：0-模板列表及详情（默认），1-仅模板列表
+                     */
+                    int64_t m_contentType;
+                    bool m_contentTypeHasBeenSet;
 
                     /**
                      * 暂未开放
@@ -210,10 +210,10 @@ namespace TencentCloud
                     bool m_generateSourceHasBeenSet;
 
                     /**
-                     * 查询内容：0-模板列表及详情（默认），1-仅模板列表
+                     * 应用相关信息
                      */
-                    int64_t m_contentType;
-                    bool m_contentTypeHasBeenSet;
+                    Agent m_agent;
+                    bool m_agentHasBeenSet;
 
                 };
             }

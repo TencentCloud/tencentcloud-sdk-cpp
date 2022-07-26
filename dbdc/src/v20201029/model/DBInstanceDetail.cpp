@@ -36,10 +36,12 @@ DBInstanceDetail::DBInstanceDetail() :
     m_memoryHasBeenSet(false),
     m_diskHasBeenSet(false),
     m_shardNumHasBeenSet(false),
+    m_regionHasBeenSet(false),
     m_zoneHasBeenSet(false),
     m_dbHostsHasBeenSet(false),
     m_hostRoleHasBeenSet(false),
-    m_dbEngineHasBeenSet(false)
+    m_dbEngineHasBeenSet(false),
+    m_createTimeHasBeenSet(false)
 {
 }
 
@@ -198,6 +200,16 @@ CoreInternalOutcome DBInstanceDetail::Deserialize(const rapidjson::Value &value)
         m_shardNumHasBeenSet = true;
     }
 
+    if (value.HasMember("Region") && !value["Region"].IsNull())
+    {
+        if (!value["Region"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DBInstanceDetail.Region` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_region = string(value["Region"].GetString());
+        m_regionHasBeenSet = true;
+    }
+
     if (value.HasMember("Zone") && !value["Zone"].IsNull())
     {
         if (!value["Zone"].IsString())
@@ -236,6 +248,16 @@ CoreInternalOutcome DBInstanceDetail::Deserialize(const rapidjson::Value &value)
         }
         m_dbEngine = string(value["DbEngine"].GetString());
         m_dbEngineHasBeenSet = true;
+    }
+
+    if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
+    {
+        if (!value["CreateTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DBInstanceDetail.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_createTime = string(value["CreateTime"].GetString());
+        m_createTimeHasBeenSet = true;
     }
 
 
@@ -365,6 +387,14 @@ void DBInstanceDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         value.AddMember(iKey, m_shardNum, allocator);
     }
 
+    if (m_regionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Region";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_region.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_zoneHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -395,6 +425,14 @@ void DBInstanceDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "DbEngine";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_dbEngine.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_createTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -640,6 +678,22 @@ bool DBInstanceDetail::ShardNumHasBeenSet() const
     return m_shardNumHasBeenSet;
 }
 
+string DBInstanceDetail::GetRegion() const
+{
+    return m_region;
+}
+
+void DBInstanceDetail::SetRegion(const string& _region)
+{
+    m_region = _region;
+    m_regionHasBeenSet = true;
+}
+
+bool DBInstanceDetail::RegionHasBeenSet() const
+{
+    return m_regionHasBeenSet;
+}
+
 string DBInstanceDetail::GetZone() const
 {
     return m_zone;
@@ -702,5 +756,21 @@ void DBInstanceDetail::SetDbEngine(const string& _dbEngine)
 bool DBInstanceDetail::DbEngineHasBeenSet() const
 {
     return m_dbEngineHasBeenSet;
+}
+
+string DBInstanceDetail::GetCreateTime() const
+{
+    return m_createTime;
+}
+
+void DBInstanceDetail::SetCreateTime(const string& _createTime)
+{
+    m_createTime = _createTime;
+    m_createTimeHasBeenSet = true;
+}
+
+bool DBInstanceDetail::CreateTimeHasBeenSet() const
+{
+    return m_createTimeHasBeenSet;
 }
 

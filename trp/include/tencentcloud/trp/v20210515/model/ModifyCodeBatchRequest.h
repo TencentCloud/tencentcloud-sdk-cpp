@@ -114,6 +114,60 @@ namespace TencentCloud
                      */
                     bool MpTplHasBeenSet() const;
 
+                    /**
+                     * 获取商户ID
+                     * @return MerchantId 商户ID
+                     */
+                    std::string GetMerchantId() const;
+
+                    /**
+                     * 设置商户ID
+                     * @param MerchantId 商户ID
+                     */
+                    void SetMerchantId(const std::string& _merchantId);
+
+                    /**
+                     * 判断参数 MerchantId 是否已赋值
+                     * @return MerchantId 是否已赋值
+                     */
+                    bool MerchantIdHasBeenSet() const;
+
+                    /**
+                     * 获取商品ID
+                     * @return ProductId 商品ID
+                     */
+                    std::string GetProductId() const;
+
+                    /**
+                     * 设置商品ID
+                     * @param ProductId 商品ID
+                     */
+                    void SetProductId(const std::string& _productId);
+
+                    /**
+                     * 判断参数 ProductId 是否已赋值
+                     * @return ProductId 是否已赋值
+                     */
+                    bool ProductIdHasBeenSet() const;
+
+                    /**
+                     * 获取备注
+                     * @return Remark 备注
+                     */
+                    std::string GetRemark() const;
+
+                    /**
+                     * 设置备注
+                     * @param Remark 备注
+                     */
+                    void SetRemark(const std::string& _remark);
+
+                    /**
+                     * 判断参数 Remark 是否已赋值
+                     * @return Remark 是否已赋值
+                     */
+                    bool RemarkHasBeenSet() const;
+
                 private:
 
                     /**
@@ -139,6 +193,24 @@ namespace TencentCloud
                      */
                     std::string m_mpTpl;
                     bool m_mpTplHasBeenSet;
+
+                    /**
+                     * 商户ID
+                     */
+                    std::string m_merchantId;
+                    bool m_merchantIdHasBeenSet;
+
+                    /**
+                     * 商品ID
+                     */
+                    std::string m_productId;
+                    bool m_productIdHasBeenSet;
+
+                    /**
+                     * 备注
+                     */
+                    std::string m_remark;
+                    bool m_remarkHasBeenSet;
 
                 };
             }

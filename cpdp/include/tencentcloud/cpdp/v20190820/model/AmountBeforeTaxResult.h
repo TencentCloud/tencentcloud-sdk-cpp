@@ -68,6 +68,28 @@ namespace TencentCloud
                      */
                     bool AmountBeforeTaxHasBeenSet() const;
 
+                    /**
+                     * 获取两位精度税前金额
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AmountBeforeTaxWithTwoDigitPrecision 两位精度税前金额
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetAmountBeforeTaxWithTwoDigitPrecision() const;
+
+                    /**
+                     * 设置两位精度税前金额
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AmountBeforeTaxWithTwoDigitPrecision 两位精度税前金额
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAmountBeforeTaxWithTwoDigitPrecision(const std::string& _amountBeforeTaxWithTwoDigitPrecision);
+
+                    /**
+                     * 判断参数 AmountBeforeTaxWithTwoDigitPrecision 是否已赋值
+                     * @return AmountBeforeTaxWithTwoDigitPrecision 是否已赋值
+                     */
+                    bool AmountBeforeTaxWithTwoDigitPrecisionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -76,6 +98,13 @@ namespace TencentCloud
                      */
                     std::string m_amountBeforeTax;
                     bool m_amountBeforeTaxHasBeenSet;
+
+                    /**
+                     * 两位精度税前金额
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_amountBeforeTaxWithTwoDigitPrecision;
+                    bool m_amountBeforeTaxWithTwoDigitPrecisionHasBeenSet;
 
                 };
             }

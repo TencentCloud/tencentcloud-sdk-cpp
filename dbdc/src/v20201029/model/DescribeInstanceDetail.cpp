@@ -45,7 +45,8 @@ DescribeInstanceDetail::DescribeInstanceDetail() :
     m_diskAssignedHasBeenSet(false),
     m_diskAssignableHasBeenSet(false),
     m_zoneHasBeenSet(false),
-    m_fenceIdHasBeenSet(false)
+    m_fenceIdHasBeenSet(false),
+    m_clusterIdHasBeenSet(false)
 {
 }
 
@@ -304,6 +305,16 @@ CoreInternalOutcome DescribeInstanceDetail::Deserialize(const rapidjson::Value &
         m_fenceIdHasBeenSet = true;
     }
 
+    if (value.HasMember("ClusterId") && !value["ClusterId"].IsNull())
+    {
+        if (!value["ClusterId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeInstanceDetail.ClusterId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clusterId = string(value["ClusterId"].GetString());
+        m_clusterIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -509,6 +520,14 @@ void DescribeInstanceDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Do
         string key = "FenceId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_fenceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clusterIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clusterId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -912,5 +931,21 @@ void DescribeInstanceDetail::SetFenceId(const string& _fenceId)
 bool DescribeInstanceDetail::FenceIdHasBeenSet() const
 {
     return m_fenceIdHasBeenSet;
+}
+
+string DescribeInstanceDetail::GetClusterId() const
+{
+    return m_clusterId;
+}
+
+void DescribeInstanceDetail::SetClusterId(const string& _clusterId)
+{
+    m_clusterId = _clusterId;
+    m_clusterIdHasBeenSet = true;
+}
+
+bool DescribeInstanceDetail::ClusterIdHasBeenSet() const
+{
+    return m_clusterIdHasBeenSet;
 }
 

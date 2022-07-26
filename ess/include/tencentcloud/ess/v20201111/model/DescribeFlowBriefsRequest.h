@@ -45,6 +45,24 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取调用方用户信息，userId 必填
+                     * @return Operator 调用方用户信息，userId 必填
+                     */
+                    UserInfo GetOperator() const;
+
+                    /**
+                     * 设置调用方用户信息，userId 必填
+                     * @param Operator 调用方用户信息，userId 必填
+                     */
+                    void SetOperator(const UserInfo& _operator);
+
+                    /**
+                     * 判断参数 Operator 是否已赋值
+                     * @return Operator 是否已赋值
+                     */
+                    bool OperatorHasBeenSet() const;
+
+                    /**
                      * 获取需要查询的流程ID列表
                      * @return FlowIds 需要查询的流程ID列表
                      */
@@ -61,24 +79,6 @@ namespace TencentCloud
                      * @return FlowIds 是否已赋值
                      */
                     bool FlowIdsHasBeenSet() const;
-
-                    /**
-                     * 获取操作人信息
-                     * @return Operator 操作人信息
-                     */
-                    UserInfo GetOperator() const;
-
-                    /**
-                     * 设置操作人信息
-                     * @param Operator 操作人信息
-                     */
-                    void SetOperator(const UserInfo& _operator);
-
-                    /**
-                     * 判断参数 Operator 是否已赋值
-                     * @return Operator 是否已赋值
-                     */
-                    bool OperatorHasBeenSet() const;
 
                     /**
                      * 获取应用相关信息
@@ -101,16 +101,16 @@ namespace TencentCloud
                 private:
 
                     /**
+                     * 调用方用户信息，userId 必填
+                     */
+                    UserInfo m_operator;
+                    bool m_operatorHasBeenSet;
+
+                    /**
                      * 需要查询的流程ID列表
                      */
                     std::vector<std::string> m_flowIds;
                     bool m_flowIdsHasBeenSet;
-
-                    /**
-                     * 操作人信息
-                     */
-                    UserInfo m_operator;
-                    bool m_operatorHasBeenSet;
 
                     /**
                      * 应用相关信息

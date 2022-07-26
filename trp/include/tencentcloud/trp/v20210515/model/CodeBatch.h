@@ -356,17 +356,17 @@ namespace TencentCloud
                     bool ProductNameHasBeenSet() const;
 
                     /**
-                     * 获取0
+                     * 获取未使用
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Ext 0
+                     * @return Ext 未使用
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Ext GetExt() const;
 
                     /**
-                     * 设置0
+                     * 设置未使用
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Ext 0
+                     * @param Ext 未使用
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetExt(const Ext& _ext);
@@ -500,7 +500,7 @@ namespace TencentCloud
                     bool m_productNameHasBeenSet;
 
                     /**
-                     * 0
+                     * 未使用
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Ext m_ext;

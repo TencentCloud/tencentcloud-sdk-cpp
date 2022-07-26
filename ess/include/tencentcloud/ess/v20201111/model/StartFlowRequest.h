@@ -45,6 +45,24 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取调用方用户信息，userId 必填
+                     * @return Operator 调用方用户信息，userId 必填
+                     */
+                    UserInfo GetOperator() const;
+
+                    /**
+                     * 设置调用方用户信息，userId 必填
+                     * @param Operator 调用方用户信息，userId 必填
+                     */
+                    void SetOperator(const UserInfo& _operator);
+
+                    /**
+                     * 判断参数 Operator 是否已赋值
+                     * @return Operator 是否已赋值
+                     */
+                    bool OperatorHasBeenSet() const;
+
+                    /**
                      * 获取签署流程编号，由CreateFlow接口返回
                      * @return FlowId 签署流程编号，由CreateFlow接口返回
                      */
@@ -61,42 +79,6 @@ namespace TencentCloud
                      * @return FlowId 是否已赋值
                      */
                     bool FlowIdHasBeenSet() const;
-
-                    /**
-                     * 获取用户信息
-                     * @return Operator 用户信息
-                     */
-                    UserInfo GetOperator() const;
-
-                    /**
-                     * 设置用户信息
-                     * @param Operator 用户信息
-                     */
-                    void SetOperator(const UserInfo& _operator);
-
-                    /**
-                     * 判断参数 Operator 是否已赋值
-                     * @return Operator 是否已赋值
-                     */
-                    bool OperatorHasBeenSet() const;
-
-                    /**
-                     * 获取应用相关信息
-                     * @return Agent 应用相关信息
-                     */
-                    Agent GetAgent() const;
-
-                    /**
-                     * 设置应用相关信息
-                     * @param Agent 应用相关信息
-                     */
-                    void SetAgent(const Agent& _agent);
-
-                    /**
-                     * 判断参数 Agent 是否已赋值
-                     * @return Agent 是否已赋值
-                     */
-                    bool AgentHasBeenSet() const;
 
                     /**
                      * 获取客户端Token，保持接口幂等性,最大长度64个字符
@@ -116,7 +98,31 @@ namespace TencentCloud
                      */
                     bool ClientTokenHasBeenSet() const;
 
+                    /**
+                     * 获取应用相关信息
+                     * @return Agent 应用相关信息
+                     */
+                    Agent GetAgent() const;
+
+                    /**
+                     * 设置应用相关信息
+                     * @param Agent 应用相关信息
+                     */
+                    void SetAgent(const Agent& _agent);
+
+                    /**
+                     * 判断参数 Agent 是否已赋值
+                     * @return Agent 是否已赋值
+                     */
+                    bool AgentHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 调用方用户信息，userId 必填
+                     */
+                    UserInfo m_operator;
+                    bool m_operatorHasBeenSet;
 
                     /**
                      * 签署流程编号，由CreateFlow接口返回
@@ -125,22 +131,16 @@ namespace TencentCloud
                     bool m_flowIdHasBeenSet;
 
                     /**
-                     * 用户信息
+                     * 客户端Token，保持接口幂等性,最大长度64个字符
                      */
-                    UserInfo m_operator;
-                    bool m_operatorHasBeenSet;
+                    std::string m_clientToken;
+                    bool m_clientTokenHasBeenSet;
 
                     /**
                      * 应用相关信息
                      */
                     Agent m_agent;
                     bool m_agentHasBeenSet;
-
-                    /**
-                     * 客户端Token，保持接口幂等性,最大长度64个字符
-                     */
-                    std::string m_clientToken;
-                    bool m_clientTokenHasBeenSet;
 
                 };
             }

@@ -26,7 +26,8 @@ BindRealServer::BindRealServer() :
     m_realServerWeightHasBeenSet(false),
     m_realServerStatusHasBeenSet(false),
     m_realServerPortHasBeenSet(false),
-    m_downIPListHasBeenSet(false)
+    m_downIPListHasBeenSet(false),
+    m_realServerFailoverRoleHasBeenSet(false)
 {
 }
 
@@ -98,6 +99,16 @@ CoreInternalOutcome BindRealServer::Deserialize(const rapidjson::Value &value)
         m_downIPListHasBeenSet = true;
     }
 
+    if (value.HasMember("RealServerFailoverRole") && !value["RealServerFailoverRole"].IsNull())
+    {
+        if (!value["RealServerFailoverRole"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BindRealServer.RealServerFailoverRole` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_realServerFailoverRole = string(value["RealServerFailoverRole"].GetString());
+        m_realServerFailoverRoleHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -156,6 +167,14 @@ void BindRealServer::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_realServerFailoverRoleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RealServerFailoverRole";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_realServerFailoverRole.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -255,5 +274,21 @@ void BindRealServer::SetDownIPList(const vector<string>& _downIPList)
 bool BindRealServer::DownIPListHasBeenSet() const
 {
     return m_downIPListHasBeenSet;
+}
+
+string BindRealServer::GetRealServerFailoverRole() const
+{
+    return m_realServerFailoverRole;
+}
+
+void BindRealServer::SetRealServerFailoverRole(const string& _realServerFailoverRole)
+{
+    m_realServerFailoverRole = _realServerFailoverRole;
+    m_realServerFailoverRoleHasBeenSet = true;
+}
+
+bool BindRealServer::RealServerFailoverRoleHasBeenSet() const
+{
+    return m_realServerFailoverRoleHasBeenSet;
 }
 

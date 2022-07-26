@@ -32,7 +32,18 @@ UDPListener::UDPListener() :
     m_bindStatusHasBeenSet(false),
     m_realServerSetHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_sessionPersistHasBeenSet(false)
+    m_sessionPersistHasBeenSet(false),
+    m_delayLoopHasBeenSet(false),
+    m_connectTimeoutHasBeenSet(false),
+    m_healthyThresholdHasBeenSet(false),
+    m_unhealthyThresholdHasBeenSet(false),
+    m_failoverSwitchHasBeenSet(false),
+    m_healthCheckHasBeenSet(false),
+    m_checkTypeHasBeenSet(false),
+    m_checkPortHasBeenSet(false),
+    m_contextTypeHasBeenSet(false),
+    m_sendContextHasBeenSet(false),
+    m_recvContextHasBeenSet(false)
 {
 }
 
@@ -171,6 +182,116 @@ CoreInternalOutcome UDPListener::Deserialize(const rapidjson::Value &value)
         m_sessionPersistHasBeenSet = true;
     }
 
+    if (value.HasMember("DelayLoop") && !value["DelayLoop"].IsNull())
+    {
+        if (!value["DelayLoop"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `UDPListener.DelayLoop` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_delayLoop = value["DelayLoop"].GetUint64();
+        m_delayLoopHasBeenSet = true;
+    }
+
+    if (value.HasMember("ConnectTimeout") && !value["ConnectTimeout"].IsNull())
+    {
+        if (!value["ConnectTimeout"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `UDPListener.ConnectTimeout` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_connectTimeout = value["ConnectTimeout"].GetUint64();
+        m_connectTimeoutHasBeenSet = true;
+    }
+
+    if (value.HasMember("HealthyThreshold") && !value["HealthyThreshold"].IsNull())
+    {
+        if (!value["HealthyThreshold"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `UDPListener.HealthyThreshold` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_healthyThreshold = value["HealthyThreshold"].GetUint64();
+        m_healthyThresholdHasBeenSet = true;
+    }
+
+    if (value.HasMember("UnhealthyThreshold") && !value["UnhealthyThreshold"].IsNull())
+    {
+        if (!value["UnhealthyThreshold"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `UDPListener.UnhealthyThreshold` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_unhealthyThreshold = value["UnhealthyThreshold"].GetUint64();
+        m_unhealthyThresholdHasBeenSet = true;
+    }
+
+    if (value.HasMember("FailoverSwitch") && !value["FailoverSwitch"].IsNull())
+    {
+        if (!value["FailoverSwitch"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `UDPListener.FailoverSwitch` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_failoverSwitch = value["FailoverSwitch"].GetInt64();
+        m_failoverSwitchHasBeenSet = true;
+    }
+
+    if (value.HasMember("HealthCheck") && !value["HealthCheck"].IsNull())
+    {
+        if (!value["HealthCheck"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `UDPListener.HealthCheck` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_healthCheck = value["HealthCheck"].GetUint64();
+        m_healthCheckHasBeenSet = true;
+    }
+
+    if (value.HasMember("CheckType") && !value["CheckType"].IsNull())
+    {
+        if (!value["CheckType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UDPListener.CheckType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_checkType = string(value["CheckType"].GetString());
+        m_checkTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("CheckPort") && !value["CheckPort"].IsNull())
+    {
+        if (!value["CheckPort"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `UDPListener.CheckPort` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_checkPort = value["CheckPort"].GetInt64();
+        m_checkPortHasBeenSet = true;
+    }
+
+    if (value.HasMember("ContextType") && !value["ContextType"].IsNull())
+    {
+        if (!value["ContextType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UDPListener.ContextType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_contextType = string(value["ContextType"].GetString());
+        m_contextTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("SendContext") && !value["SendContext"].IsNull())
+    {
+        if (!value["SendContext"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UDPListener.SendContext` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sendContext = string(value["SendContext"].GetString());
+        m_sendContextHasBeenSet = true;
+    }
+
+    if (value.HasMember("RecvContext") && !value["RecvContext"].IsNull())
+    {
+        if (!value["RecvContext"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UDPListener.RecvContext` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_recvContext = string(value["RecvContext"].GetString());
+        m_recvContextHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -279,6 +400,94 @@ void UDPListener::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "SessionPersist";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_sessionPersist, allocator);
+    }
+
+    if (m_delayLoopHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DelayLoop";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_delayLoop, allocator);
+    }
+
+    if (m_connectTimeoutHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConnectTimeout";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_connectTimeout, allocator);
+    }
+
+    if (m_healthyThresholdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HealthyThreshold";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_healthyThreshold, allocator);
+    }
+
+    if (m_unhealthyThresholdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UnhealthyThreshold";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_unhealthyThreshold, allocator);
+    }
+
+    if (m_failoverSwitchHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FailoverSwitch";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_failoverSwitch, allocator);
+    }
+
+    if (m_healthCheckHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HealthCheck";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_healthCheck, allocator);
+    }
+
+    if (m_checkTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CheckType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_checkType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_checkPortHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CheckPort";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_checkPort, allocator);
+    }
+
+    if (m_contextTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ContextType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_contextType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sendContextHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SendContext";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sendContext.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_recvContextHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RecvContext";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_recvContext.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -474,5 +683,181 @@ void UDPListener::SetSessionPersist(const uint64_t& _sessionPersist)
 bool UDPListener::SessionPersistHasBeenSet() const
 {
     return m_sessionPersistHasBeenSet;
+}
+
+uint64_t UDPListener::GetDelayLoop() const
+{
+    return m_delayLoop;
+}
+
+void UDPListener::SetDelayLoop(const uint64_t& _delayLoop)
+{
+    m_delayLoop = _delayLoop;
+    m_delayLoopHasBeenSet = true;
+}
+
+bool UDPListener::DelayLoopHasBeenSet() const
+{
+    return m_delayLoopHasBeenSet;
+}
+
+uint64_t UDPListener::GetConnectTimeout() const
+{
+    return m_connectTimeout;
+}
+
+void UDPListener::SetConnectTimeout(const uint64_t& _connectTimeout)
+{
+    m_connectTimeout = _connectTimeout;
+    m_connectTimeoutHasBeenSet = true;
+}
+
+bool UDPListener::ConnectTimeoutHasBeenSet() const
+{
+    return m_connectTimeoutHasBeenSet;
+}
+
+uint64_t UDPListener::GetHealthyThreshold() const
+{
+    return m_healthyThreshold;
+}
+
+void UDPListener::SetHealthyThreshold(const uint64_t& _healthyThreshold)
+{
+    m_healthyThreshold = _healthyThreshold;
+    m_healthyThresholdHasBeenSet = true;
+}
+
+bool UDPListener::HealthyThresholdHasBeenSet() const
+{
+    return m_healthyThresholdHasBeenSet;
+}
+
+uint64_t UDPListener::GetUnhealthyThreshold() const
+{
+    return m_unhealthyThreshold;
+}
+
+void UDPListener::SetUnhealthyThreshold(const uint64_t& _unhealthyThreshold)
+{
+    m_unhealthyThreshold = _unhealthyThreshold;
+    m_unhealthyThresholdHasBeenSet = true;
+}
+
+bool UDPListener::UnhealthyThresholdHasBeenSet() const
+{
+    return m_unhealthyThresholdHasBeenSet;
+}
+
+int64_t UDPListener::GetFailoverSwitch() const
+{
+    return m_failoverSwitch;
+}
+
+void UDPListener::SetFailoverSwitch(const int64_t& _failoverSwitch)
+{
+    m_failoverSwitch = _failoverSwitch;
+    m_failoverSwitchHasBeenSet = true;
+}
+
+bool UDPListener::FailoverSwitchHasBeenSet() const
+{
+    return m_failoverSwitchHasBeenSet;
+}
+
+uint64_t UDPListener::GetHealthCheck() const
+{
+    return m_healthCheck;
+}
+
+void UDPListener::SetHealthCheck(const uint64_t& _healthCheck)
+{
+    m_healthCheck = _healthCheck;
+    m_healthCheckHasBeenSet = true;
+}
+
+bool UDPListener::HealthCheckHasBeenSet() const
+{
+    return m_healthCheckHasBeenSet;
+}
+
+string UDPListener::GetCheckType() const
+{
+    return m_checkType;
+}
+
+void UDPListener::SetCheckType(const string& _checkType)
+{
+    m_checkType = _checkType;
+    m_checkTypeHasBeenSet = true;
+}
+
+bool UDPListener::CheckTypeHasBeenSet() const
+{
+    return m_checkTypeHasBeenSet;
+}
+
+int64_t UDPListener::GetCheckPort() const
+{
+    return m_checkPort;
+}
+
+void UDPListener::SetCheckPort(const int64_t& _checkPort)
+{
+    m_checkPort = _checkPort;
+    m_checkPortHasBeenSet = true;
+}
+
+bool UDPListener::CheckPortHasBeenSet() const
+{
+    return m_checkPortHasBeenSet;
+}
+
+string UDPListener::GetContextType() const
+{
+    return m_contextType;
+}
+
+void UDPListener::SetContextType(const string& _contextType)
+{
+    m_contextType = _contextType;
+    m_contextTypeHasBeenSet = true;
+}
+
+bool UDPListener::ContextTypeHasBeenSet() const
+{
+    return m_contextTypeHasBeenSet;
+}
+
+string UDPListener::GetSendContext() const
+{
+    return m_sendContext;
+}
+
+void UDPListener::SetSendContext(const string& _sendContext)
+{
+    m_sendContext = _sendContext;
+    m_sendContextHasBeenSet = true;
+}
+
+bool UDPListener::SendContextHasBeenSet() const
+{
+    return m_sendContextHasBeenSet;
+}
+
+string UDPListener::GetRecvContext() const
+{
+    return m_recvContext;
+}
+
+void UDPListener::SetRecvContext(const string& _recvContext)
+{
+    m_recvContext = _recvContext;
+    m_recvContextHasBeenSet = true;
+}
+
+bool UDPListener::RecvContextHasBeenSet() const
+{
+    return m_recvContextHasBeenSet;
 }
 

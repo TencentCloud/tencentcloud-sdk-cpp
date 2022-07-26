@@ -24,14 +24,14 @@ using namespace std;
 
 CreateSchemeUrlRequest::CreateSchemeUrlRequest() :
     m_operatorHasBeenSet(false),
-    m_agentHasBeenSet(false),
-    m_endPointHasBeenSet(false),
+    m_organizationNameHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_mobileHasBeenSet(false),
-    m_organizationNameHasBeenSet(false),
+    m_endPointHasBeenSet(false),
     m_flowIdHasBeenSet(false),
     m_pathTypeHasBeenSet(false),
-    m_autoJumpBackHasBeenSet(false)
+    m_autoJumpBackHasBeenSet(false),
+    m_agentHasBeenSet(false)
 {
 }
 
@@ -51,21 +51,12 @@ string CreateSchemeUrlRequest::ToJsonString() const
         m_operator.ToJsonObject(d[key.c_str()], allocator);
     }
 
-    if (m_agentHasBeenSet)
+    if (m_organizationNameHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Agent";
+        string key = "OrganizationName";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_agent.ToJsonObject(d[key.c_str()], allocator);
-    }
-
-    if (m_endPointHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "EndPoint";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_endPoint.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_organizationName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_nameHasBeenSet)
@@ -84,12 +75,12 @@ string CreateSchemeUrlRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_mobile.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_organizationNameHasBeenSet)
+    if (m_endPointHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "OrganizationName";
+        string key = "EndPoint";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_organizationName.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_endPoint.c_str(), allocator).Move(), allocator);
     }
 
     if (m_flowIdHasBeenSet)
@@ -116,6 +107,15 @@ string CreateSchemeUrlRequest::ToJsonString() const
         d.AddMember(iKey, m_autoJumpBack, allocator);
     }
 
+    if (m_agentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Agent";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_agent.ToJsonObject(d[key.c_str()], allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -140,36 +140,20 @@ bool CreateSchemeUrlRequest::OperatorHasBeenSet() const
     return m_operatorHasBeenSet;
 }
 
-Agent CreateSchemeUrlRequest::GetAgent() const
+string CreateSchemeUrlRequest::GetOrganizationName() const
 {
-    return m_agent;
+    return m_organizationName;
 }
 
-void CreateSchemeUrlRequest::SetAgent(const Agent& _agent)
+void CreateSchemeUrlRequest::SetOrganizationName(const string& _organizationName)
 {
-    m_agent = _agent;
-    m_agentHasBeenSet = true;
+    m_organizationName = _organizationName;
+    m_organizationNameHasBeenSet = true;
 }
 
-bool CreateSchemeUrlRequest::AgentHasBeenSet() const
+bool CreateSchemeUrlRequest::OrganizationNameHasBeenSet() const
 {
-    return m_agentHasBeenSet;
-}
-
-string CreateSchemeUrlRequest::GetEndPoint() const
-{
-    return m_endPoint;
-}
-
-void CreateSchemeUrlRequest::SetEndPoint(const string& _endPoint)
-{
-    m_endPoint = _endPoint;
-    m_endPointHasBeenSet = true;
-}
-
-bool CreateSchemeUrlRequest::EndPointHasBeenSet() const
-{
-    return m_endPointHasBeenSet;
+    return m_organizationNameHasBeenSet;
 }
 
 string CreateSchemeUrlRequest::GetName() const
@@ -204,20 +188,20 @@ bool CreateSchemeUrlRequest::MobileHasBeenSet() const
     return m_mobileHasBeenSet;
 }
 
-string CreateSchemeUrlRequest::GetOrganizationName() const
+string CreateSchemeUrlRequest::GetEndPoint() const
 {
-    return m_organizationName;
+    return m_endPoint;
 }
 
-void CreateSchemeUrlRequest::SetOrganizationName(const string& _organizationName)
+void CreateSchemeUrlRequest::SetEndPoint(const string& _endPoint)
 {
-    m_organizationName = _organizationName;
-    m_organizationNameHasBeenSet = true;
+    m_endPoint = _endPoint;
+    m_endPointHasBeenSet = true;
 }
 
-bool CreateSchemeUrlRequest::OrganizationNameHasBeenSet() const
+bool CreateSchemeUrlRequest::EndPointHasBeenSet() const
 {
-    return m_organizationNameHasBeenSet;
+    return m_endPointHasBeenSet;
 }
 
 string CreateSchemeUrlRequest::GetFlowId() const
@@ -266,6 +250,22 @@ void CreateSchemeUrlRequest::SetAutoJumpBack(const bool& _autoJumpBack)
 bool CreateSchemeUrlRequest::AutoJumpBackHasBeenSet() const
 {
     return m_autoJumpBackHasBeenSet;
+}
+
+Agent CreateSchemeUrlRequest::GetAgent() const
+{
+    return m_agent;
+}
+
+void CreateSchemeUrlRequest::SetAgent(const Agent& _agent)
+{
+    m_agent = _agent;
+    m_agentHasBeenSet = true;
+}
+
+bool CreateSchemeUrlRequest::AgentHasBeenSet() const
+{
+    return m_agentHasBeenSet;
 }
 
 

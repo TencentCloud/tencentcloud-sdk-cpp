@@ -317,6 +317,24 @@ namespace TencentCloud
                     bool ShardNumHasBeenSet() const;
 
                     /**
+                     * 获取地域
+                     * @return Region 地域
+                     */
+                    std::string GetRegion() const;
+
+                    /**
+                     * 设置地域
+                     * @param Region 地域
+                     */
+                    void SetRegion(const std::string& _region);
+
+                    /**
+                     * 判断参数 Region 是否已赋值
+                     * @return Region 是否已赋值
+                     */
+                    bool RegionHasBeenSet() const;
+
+                    /**
                      * 获取可用区
                      * @return Zone 可用区
                      */
@@ -387,6 +405,24 @@ namespace TencentCloud
                      * @return DbEngine 是否已赋值
                      */
                     bool DbEngineHasBeenSet() const;
+
+                    /**
+                     * 获取创建时间
+                     * @return CreateTime 创建时间
+                     */
+                    std::string GetCreateTime() const;
+
+                    /**
+                     * 设置创建时间
+                     * @param CreateTime 创建时间
+                     */
+                    void SetCreateTime(const std::string& _createTime);
+
+                    /**
+                     * 判断参数 CreateTime 是否已赋值
+                     * @return CreateTime 是否已赋值
+                     */
+                    bool CreateTimeHasBeenSet() const;
 
                 private:
 
@@ -481,6 +517,12 @@ namespace TencentCloud
                     bool m_shardNumHasBeenSet;
 
                     /**
+                     * 地域
+                     */
+                    std::string m_region;
+                    bool m_regionHasBeenSet;
+
+                    /**
                      * 可用区
                      */
                     std::string m_zone;
@@ -503,6 +545,12 @@ namespace TencentCloud
                      */
                     std::string m_dbEngine;
                     bool m_dbEngineHasBeenSet;
+
+                    /**
+                     * 创建时间
+                     */
+                    std::string m_createTime;
+                    bool m_createTimeHasBeenSet;
 
                 };
             }

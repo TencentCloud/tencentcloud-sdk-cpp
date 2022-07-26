@@ -28,7 +28,8 @@ CreateCodeBatchRequest::CreateCodeBatchRequest() :
     m_productIdHasBeenSet(false),
     m_batchTypeHasBeenSet(false),
     m_batchIdHasBeenSet(false),
-    m_remarkHasBeenSet(false)
+    m_remarkHasBeenSet(false),
+    m_mpTplHasBeenSet(false)
 {
 }
 
@@ -85,6 +86,14 @@ string CreateCodeBatchRequest::ToJsonString() const
         string key = "Remark";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_remark.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_mpTplHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MpTpl";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_mpTpl.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -189,6 +198,22 @@ void CreateCodeBatchRequest::SetRemark(const string& _remark)
 bool CreateCodeBatchRequest::RemarkHasBeenSet() const
 {
     return m_remarkHasBeenSet;
+}
+
+string CreateCodeBatchRequest::GetMpTpl() const
+{
+    return m_mpTpl;
+}
+
+void CreateCodeBatchRequest::SetMpTpl(const string& _mpTpl)
+{
+    m_mpTpl = _mpTpl;
+    m_mpTplHasBeenSet = true;
+}
+
+bool CreateCodeBatchRequest::MpTplHasBeenSet() const
+{
+    return m_mpTplHasBeenSet;
 }
 
 

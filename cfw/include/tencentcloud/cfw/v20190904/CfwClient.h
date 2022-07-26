@@ -446,7 +446,7 @@ namespace TencentCloud
                 CreateDatabaseWhiteListRulesOutcomeCallable CreateDatabaseWhiteListRulesCallable(const Model::CreateDatabaseWhiteListRulesRequest& request);
 
                 /**
-                 *创建防火墙实例
+                 *创建NAT防火墙实例（Region参数必填）
                  * @param req CreateNatFwInstanceRequest
                  * @return CreateNatFwInstanceOutcome
                  */

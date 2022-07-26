@@ -42,7 +42,8 @@ BGPIPInstance::BGPIPInstance() :
     m_v6FlagHasBeenSet(false),
     m_bGPIPChannelFlagHasBeenSet(false),
     m_tagInfoListHasBeenSet(false),
-    m_anycastOutPackRelationHasBeenSet(false)
+    m_anycastOutPackRelationHasBeenSet(false),
+    m_instanceVersionHasBeenSet(false)
 {
 }
 
@@ -344,6 +345,16 @@ CoreInternalOutcome BGPIPInstance::Deserialize(const rapidjson::Value &value)
         m_anycastOutPackRelationHasBeenSet = true;
     }
 
+    if (value.HasMember("InstanceVersion") && !value["InstanceVersion"].IsNull())
+    {
+        if (!value["InstanceVersion"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `BGPIPInstance.InstanceVersion` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceVersion = value["InstanceVersion"].GetUint64();
+        m_instanceVersionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -541,6 +552,14 @@ void BGPIPInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_anycastOutPackRelation.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_instanceVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_instanceVersion, allocator);
     }
 
 }
@@ -896,5 +915,21 @@ void BGPIPInstance::SetAnycastOutPackRelation(const AnycastOutPackRelation& _any
 bool BGPIPInstance::AnycastOutPackRelationHasBeenSet() const
 {
     return m_anycastOutPackRelationHasBeenSet;
+}
+
+uint64_t BGPIPInstance::GetInstanceVersion() const
+{
+    return m_instanceVersion;
+}
+
+void BGPIPInstance::SetInstanceVersion(const uint64_t& _instanceVersion)
+{
+    m_instanceVersion = _instanceVersion;
+    m_instanceVersionHasBeenSet = true;
+}
+
+bool BGPIPInstance::InstanceVersionHasBeenSet() const
+{
+    return m_instanceVersionHasBeenSet;
 }
 

@@ -29,7 +29,13 @@ L7RuleHealth::L7RuleHealth() :
     m_aliveNumHasBeenSet(false),
     m_kickNumHasBeenSet(false),
     m_methodHasBeenSet(false),
-    m_statusCodeHasBeenSet(false)
+    m_statusCodeHasBeenSet(false),
+    m_protocolFlagHasBeenSet(false),
+    m_passiveEnableHasBeenSet(false),
+    m_blockInterHasBeenSet(false),
+    m_failedCountInterHasBeenSet(false),
+    m_failedThresholdHasBeenSet(false),
+    m_passiveStatusCodeHasBeenSet(false)
 {
 }
 
@@ -128,6 +134,66 @@ CoreInternalOutcome L7RuleHealth::Deserialize(const rapidjson::Value &value)
         m_statusCodeHasBeenSet = true;
     }
 
+    if (value.HasMember("ProtocolFlag") && !value["ProtocolFlag"].IsNull())
+    {
+        if (!value["ProtocolFlag"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `L7RuleHealth.ProtocolFlag` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_protocolFlag = value["ProtocolFlag"].GetUint64();
+        m_protocolFlagHasBeenSet = true;
+    }
+
+    if (value.HasMember("PassiveEnable") && !value["PassiveEnable"].IsNull())
+    {
+        if (!value["PassiveEnable"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `L7RuleHealth.PassiveEnable` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_passiveEnable = value["PassiveEnable"].GetUint64();
+        m_passiveEnableHasBeenSet = true;
+    }
+
+    if (value.HasMember("BlockInter") && !value["BlockInter"].IsNull())
+    {
+        if (!value["BlockInter"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `L7RuleHealth.BlockInter` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_blockInter = value["BlockInter"].GetUint64();
+        m_blockInterHasBeenSet = true;
+    }
+
+    if (value.HasMember("FailedCountInter") && !value["FailedCountInter"].IsNull())
+    {
+        if (!value["FailedCountInter"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `L7RuleHealth.FailedCountInter` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_failedCountInter = value["FailedCountInter"].GetUint64();
+        m_failedCountInterHasBeenSet = true;
+    }
+
+    if (value.HasMember("FailedThreshold") && !value["FailedThreshold"].IsNull())
+    {
+        if (!value["FailedThreshold"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `L7RuleHealth.FailedThreshold` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_failedThreshold = value["FailedThreshold"].GetUint64();
+        m_failedThresholdHasBeenSet = true;
+    }
+
+    if (value.HasMember("PassiveStatusCode") && !value["PassiveStatusCode"].IsNull())
+    {
+        if (!value["PassiveStatusCode"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `L7RuleHealth.PassiveStatusCode` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_passiveStatusCode = value["PassiveStatusCode"].GetUint64();
+        m_passiveStatusCodeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -205,6 +271,54 @@ void L7RuleHealth::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "StatusCode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_statusCode, allocator);
+    }
+
+    if (m_protocolFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProtocolFlag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_protocolFlag, allocator);
+    }
+
+    if (m_passiveEnableHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PassiveEnable";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_passiveEnable, allocator);
+    }
+
+    if (m_blockInterHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BlockInter";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_blockInter, allocator);
+    }
+
+    if (m_failedCountInterHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FailedCountInter";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_failedCountInter, allocator);
+    }
+
+    if (m_failedThresholdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FailedThreshold";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_failedThreshold, allocator);
+    }
+
+    if (m_passiveStatusCodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PassiveStatusCode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_passiveStatusCode, allocator);
     }
 
 }
@@ -352,5 +466,101 @@ void L7RuleHealth::SetStatusCode(const uint64_t& _statusCode)
 bool L7RuleHealth::StatusCodeHasBeenSet() const
 {
     return m_statusCodeHasBeenSet;
+}
+
+uint64_t L7RuleHealth::GetProtocolFlag() const
+{
+    return m_protocolFlag;
+}
+
+void L7RuleHealth::SetProtocolFlag(const uint64_t& _protocolFlag)
+{
+    m_protocolFlag = _protocolFlag;
+    m_protocolFlagHasBeenSet = true;
+}
+
+bool L7RuleHealth::ProtocolFlagHasBeenSet() const
+{
+    return m_protocolFlagHasBeenSet;
+}
+
+uint64_t L7RuleHealth::GetPassiveEnable() const
+{
+    return m_passiveEnable;
+}
+
+void L7RuleHealth::SetPassiveEnable(const uint64_t& _passiveEnable)
+{
+    m_passiveEnable = _passiveEnable;
+    m_passiveEnableHasBeenSet = true;
+}
+
+bool L7RuleHealth::PassiveEnableHasBeenSet() const
+{
+    return m_passiveEnableHasBeenSet;
+}
+
+uint64_t L7RuleHealth::GetBlockInter() const
+{
+    return m_blockInter;
+}
+
+void L7RuleHealth::SetBlockInter(const uint64_t& _blockInter)
+{
+    m_blockInter = _blockInter;
+    m_blockInterHasBeenSet = true;
+}
+
+bool L7RuleHealth::BlockInterHasBeenSet() const
+{
+    return m_blockInterHasBeenSet;
+}
+
+uint64_t L7RuleHealth::GetFailedCountInter() const
+{
+    return m_failedCountInter;
+}
+
+void L7RuleHealth::SetFailedCountInter(const uint64_t& _failedCountInter)
+{
+    m_failedCountInter = _failedCountInter;
+    m_failedCountInterHasBeenSet = true;
+}
+
+bool L7RuleHealth::FailedCountInterHasBeenSet() const
+{
+    return m_failedCountInterHasBeenSet;
+}
+
+uint64_t L7RuleHealth::GetFailedThreshold() const
+{
+    return m_failedThreshold;
+}
+
+void L7RuleHealth::SetFailedThreshold(const uint64_t& _failedThreshold)
+{
+    m_failedThreshold = _failedThreshold;
+    m_failedThresholdHasBeenSet = true;
+}
+
+bool L7RuleHealth::FailedThresholdHasBeenSet() const
+{
+    return m_failedThresholdHasBeenSet;
+}
+
+uint64_t L7RuleHealth::GetPassiveStatusCode() const
+{
+    return m_passiveStatusCode;
+}
+
+void L7RuleHealth::SetPassiveStatusCode(const uint64_t& _passiveStatusCode)
+{
+    m_passiveStatusCode = _passiveStatusCode;
+    m_passiveStatusCodeHasBeenSet = true;
+}
+
+bool L7RuleHealth::PassiveStatusCodeHasBeenSet() const
+{
+    return m_passiveStatusCodeHasBeenSet;
 }
 

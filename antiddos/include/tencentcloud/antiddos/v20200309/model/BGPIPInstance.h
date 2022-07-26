@@ -548,6 +548,28 @@ namespace TencentCloud
                      */
                     bool AnycastOutPackRelationHasBeenSet() const;
 
+                    /**
+                     * 获取资源实例版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InstanceVersion 资源实例版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetInstanceVersion() const;
+
+                    /**
+                     * 设置资源实例版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param InstanceVersion 资源实例版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetInstanceVersion(const uint64_t& _instanceVersion);
+
+                    /**
+                     * 判断参数 InstanceVersion 是否已赋值
+                     * @return InstanceVersion 是否已赋值
+                     */
+                    bool InstanceVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -705,6 +727,13 @@ namespace TencentCloud
                      */
                     AnycastOutPackRelation m_anycastOutPackRelation;
                     bool m_anycastOutPackRelationHasBeenSet;
+
+                    /**
+                     * 资源实例版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_instanceVersion;
+                    bool m_instanceVersionHasBeenSet;
 
                 };
             }

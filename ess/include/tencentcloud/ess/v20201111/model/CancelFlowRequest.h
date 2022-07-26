@@ -45,6 +45,24 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取调用方用户信息，userId 必填
+                     * @return Operator 调用方用户信息，userId 必填
+                     */
+                    UserInfo GetOperator() const;
+
+                    /**
+                     * 设置调用方用户信息，userId 必填
+                     * @param Operator 调用方用户信息，userId 必填
+                     */
+                    void SetOperator(const UserInfo& _operator);
+
+                    /**
+                     * 判断参数 Operator 是否已赋值
+                     * @return Operator 是否已赋值
+                     */
+                    bool OperatorHasBeenSet() const;
+
+                    /**
                      * 获取签署流程id
                      * @return FlowId 签署流程id
                      */
@@ -81,24 +99,6 @@ namespace TencentCloud
                     bool CancelMessageHasBeenSet() const;
 
                     /**
-                     * 获取操作用户id
-                     * @return Operator 操作用户id
-                     */
-                    UserInfo GetOperator() const;
-
-                    /**
-                     * 设置操作用户id
-                     * @param Operator 操作用户id
-                     */
-                    void SetOperator(const UserInfo& _operator);
-
-                    /**
-                     * 判断参数 Operator 是否已赋值
-                     * @return Operator 是否已赋值
-                     */
-                    bool OperatorHasBeenSet() const;
-
-                    /**
                      * 获取应用相关信息
                      * @return Agent 应用相关信息
                      */
@@ -119,6 +119,12 @@ namespace TencentCloud
                 private:
 
                     /**
+                     * 调用方用户信息，userId 必填
+                     */
+                    UserInfo m_operator;
+                    bool m_operatorHasBeenSet;
+
+                    /**
                      * 签署流程id
                      */
                     std::string m_flowId;
@@ -129,12 +135,6 @@ namespace TencentCloud
                      */
                     std::string m_cancelMessage;
                     bool m_cancelMessageHasBeenSet;
-
-                    /**
-                     * 操作用户id
-                     */
-                    UserInfo m_operator;
-                    bool m_operatorHasBeenSet;
 
                     /**
                      * 应用相关信息

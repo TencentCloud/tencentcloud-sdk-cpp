@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool ReceiverQueueSizeHasBeenSet() const;
 
                     /**
-                     * 获取默认值为：Latest。用作判定consumer初始接收消息的位置，可选参数为：Earliest, Latest
-                     * @return SubInitialPosition 默认值为：Latest。用作判定consumer初始接收消息的位置，可选参数为：Earliest, Latest
+                     * 获取默认值为：Earliest。用作判定consumer初始接收消息的位置，可选参数为：Earliest, Latest
+                     * @return SubInitialPosition 默认值为：Earliest。用作判定consumer初始接收消息的位置，可选参数为：Earliest, Latest
                      */
                     std::string GetSubInitialPosition() const;
 
                     /**
-                     * 设置默认值为：Latest。用作判定consumer初始接收消息的位置，可选参数为：Earliest, Latest
-                     * @param SubInitialPosition 默认值为：Latest。用作判定consumer初始接收消息的位置，可选参数为：Earliest, Latest
+                     * 设置默认值为：Earliest。用作判定consumer初始接收消息的位置，可选参数为：Earliest, Latest
+                     * @param SubInitialPosition 默认值为：Earliest。用作判定consumer初始接收消息的位置，可选参数为：Earliest, Latest
                      */
                     void SetSubInitialPosition(const std::string& _subInitialPosition);
 
@@ -189,7 +189,7 @@ namespace TencentCloud
                     bool m_receiverQueueSizeHasBeenSet;
 
                     /**
-                     * 默认值为：Latest。用作判定consumer初始接收消息的位置，可选参数为：Earliest, Latest
+                     * 默认值为：Earliest。用作判定consumer初始接收消息的位置，可选参数为：Earliest, Latest
                      */
                     std::string m_subInitialPosition;
                     bool m_subInitialPositionHasBeenSet;

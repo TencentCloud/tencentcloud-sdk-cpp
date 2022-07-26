@@ -23,10 +23,10 @@ using namespace TencentCloud::Ess::V20201111::Model;
 using namespace std;
 
 StartFlowRequest::StartFlowRequest() :
-    m_flowIdHasBeenSet(false),
     m_operatorHasBeenSet(false),
-    m_agentHasBeenSet(false),
-    m_clientTokenHasBeenSet(false)
+    m_flowIdHasBeenSet(false),
+    m_clientTokenHasBeenSet(false),
+    m_agentHasBeenSet(false)
 {
 }
 
@@ -37,6 +37,15 @@ string StartFlowRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_operatorHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Operator";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_operator.ToJsonObject(d[key.c_str()], allocator);
+    }
+
     if (m_flowIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -45,13 +54,12 @@ string StartFlowRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_flowId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_operatorHasBeenSet)
+    if (m_clientTokenHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Operator";
+        string key = "ClientToken";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_operator.ToJsonObject(d[key.c_str()], allocator);
+        d.AddMember(iKey, rapidjson::Value(m_clientToken.c_str(), allocator).Move(), allocator);
     }
 
     if (m_agentHasBeenSet)
@@ -63,14 +71,6 @@ string StartFlowRequest::ToJsonString() const
         m_agent.ToJsonObject(d[key.c_str()], allocator);
     }
 
-    if (m_clientTokenHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ClientToken";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_clientToken.c_str(), allocator).Move(), allocator);
-    }
-
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -78,22 +78,6 @@ string StartFlowRequest::ToJsonString() const
     return buffer.GetString();
 }
 
-
-string StartFlowRequest::GetFlowId() const
-{
-    return m_flowId;
-}
-
-void StartFlowRequest::SetFlowId(const string& _flowId)
-{
-    m_flowId = _flowId;
-    m_flowIdHasBeenSet = true;
-}
-
-bool StartFlowRequest::FlowIdHasBeenSet() const
-{
-    return m_flowIdHasBeenSet;
-}
 
 UserInfo StartFlowRequest::GetOperator() const
 {
@@ -111,20 +95,20 @@ bool StartFlowRequest::OperatorHasBeenSet() const
     return m_operatorHasBeenSet;
 }
 
-Agent StartFlowRequest::GetAgent() const
+string StartFlowRequest::GetFlowId() const
 {
-    return m_agent;
+    return m_flowId;
 }
 
-void StartFlowRequest::SetAgent(const Agent& _agent)
+void StartFlowRequest::SetFlowId(const string& _flowId)
 {
-    m_agent = _agent;
-    m_agentHasBeenSet = true;
+    m_flowId = _flowId;
+    m_flowIdHasBeenSet = true;
 }
 
-bool StartFlowRequest::AgentHasBeenSet() const
+bool StartFlowRequest::FlowIdHasBeenSet() const
 {
-    return m_agentHasBeenSet;
+    return m_flowIdHasBeenSet;
 }
 
 string StartFlowRequest::GetClientToken() const
@@ -141,6 +125,22 @@ void StartFlowRequest::SetClientToken(const string& _clientToken)
 bool StartFlowRequest::ClientTokenHasBeenSet() const
 {
     return m_clientTokenHasBeenSet;
+}
+
+Agent StartFlowRequest::GetAgent() const
+{
+    return m_agent;
+}
+
+void StartFlowRequest::SetAgent(const Agent& _agent)
+{
+    m_agent = _agent;
+    m_agentHasBeenSet = true;
+}
+
+bool StartFlowRequest::AgentHasBeenSet() const
+{
+    return m_agentHasBeenSet;
 }
 
 

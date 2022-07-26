@@ -45,14 +45,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取调用方用户信息，参考通用结构
-                     * @return Operator 调用方用户信息，参考通用结构
+                     * 获取调用方用户信息，userId 必填
+                     * @return Operator 调用方用户信息，userId 必填
                      */
                     UserInfo GetOperator() const;
 
                     /**
-                     * 设置调用方用户信息，参考通用结构
-                     * @param Operator 调用方用户信息，参考通用结构
+                     * 设置调用方用户信息，userId 必填
+                     * @param Operator 调用方用户信息，userId 必填
                      */
                     void SetOperator(const UserInfo& _operator);
 
@@ -63,52 +63,22 @@ namespace TencentCloud
                     bool OperatorHasBeenSet() const;
 
                     /**
-                     * 获取应用相关信息
-                     * @return Agent 应用相关信息
+                     * 获取企业名称
+                     * @return OrganizationName 企业名称
                      */
-                    Agent GetAgent() const;
+                    std::string GetOrganizationName() const;
 
                     /**
-                     * 设置应用相关信息
-                     * @param Agent 应用相关信息
+                     * 设置企业名称
+                     * @param OrganizationName 企业名称
                      */
-                    void SetAgent(const Agent& _agent);
+                    void SetOrganizationName(const std::string& _organizationName);
 
                     /**
-                     * 判断参数 Agent 是否已赋值
-                     * @return Agent 是否已赋值
+                     * 判断参数 OrganizationName 是否已赋值
+                     * @return OrganizationName 是否已赋值
                      */
-                    bool AgentHasBeenSet() const;
-
-                    /**
-                     * 获取链接类型
-HTTP：跳转电子签小程序的http_url，
-APP：第三方APP或小程序跳转电子签小程序的path。
-默认为HTTP类型
-                     * @return EndPoint 链接类型
-HTTP：跳转电子签小程序的http_url，
-APP：第三方APP或小程序跳转电子签小程序的path。
-默认为HTTP类型
-                     */
-                    std::string GetEndPoint() const;
-
-                    /**
-                     * 设置链接类型
-HTTP：跳转电子签小程序的http_url，
-APP：第三方APP或小程序跳转电子签小程序的path。
-默认为HTTP类型
-                     * @param EndPoint 链接类型
-HTTP：跳转电子签小程序的http_url，
-APP：第三方APP或小程序跳转电子签小程序的path。
-默认为HTTP类型
-                     */
-                    void SetEndPoint(const std::string& _endPoint);
-
-                    /**
-                     * 判断参数 EndPoint 是否已赋值
-                     * @return EndPoint 是否已赋值
-                     */
-                    bool EndPointHasBeenSet() const;
+                    bool OrganizationNameHasBeenSet() const;
 
                     /**
                      * 获取姓名,最大长度50个字符
@@ -147,22 +117,34 @@ APP：第三方APP或小程序跳转电子签小程序的path。
                     bool MobileHasBeenSet() const;
 
                     /**
-                     * 获取企业名称
-                     * @return OrganizationName 企业名称
+                     * 获取链接类型
+HTTP：跳转电子签小程序的http_url，
+APP：第三方APP或小程序跳转电子签小程序的path。
+默认为HTTP类型
+                     * @return EndPoint 链接类型
+HTTP：跳转电子签小程序的http_url，
+APP：第三方APP或小程序跳转电子签小程序的path。
+默认为HTTP类型
                      */
-                    std::string GetOrganizationName() const;
+                    std::string GetEndPoint() const;
 
                     /**
-                     * 设置企业名称
-                     * @param OrganizationName 企业名称
+                     * 设置链接类型
+HTTP：跳转电子签小程序的http_url，
+APP：第三方APP或小程序跳转电子签小程序的path。
+默认为HTTP类型
+                     * @param EndPoint 链接类型
+HTTP：跳转电子签小程序的http_url，
+APP：第三方APP或小程序跳转电子签小程序的path。
+默认为HTTP类型
                      */
-                    void SetOrganizationName(const std::string& _organizationName);
+                    void SetEndPoint(const std::string& _endPoint);
 
                     /**
-                     * 判断参数 OrganizationName 是否已赋值
-                     * @return OrganizationName 是否已赋值
+                     * 判断参数 EndPoint 是否已赋值
+                     * @return EndPoint 是否已赋值
                      */
-                    bool OrganizationNameHasBeenSet() const;
+                    bool EndPointHasBeenSet() const;
 
                     /**
                      * 获取签署流程编号 (PathType=1时必传)
@@ -218,28 +200,37 @@ APP：第三方APP或小程序跳转电子签小程序的path。
                      */
                     bool AutoJumpBackHasBeenSet() const;
 
+                    /**
+                     * 获取应用相关信息
+                     * @return Agent 应用相关信息
+                     */
+                    Agent GetAgent() const;
+
+                    /**
+                     * 设置应用相关信息
+                     * @param Agent 应用相关信息
+                     */
+                    void SetAgent(const Agent& _agent);
+
+                    /**
+                     * 判断参数 Agent 是否已赋值
+                     * @return Agent 是否已赋值
+                     */
+                    bool AgentHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 调用方用户信息，参考通用结构
+                     * 调用方用户信息，userId 必填
                      */
                     UserInfo m_operator;
                     bool m_operatorHasBeenSet;
 
                     /**
-                     * 应用相关信息
+                     * 企业名称
                      */
-                    Agent m_agent;
-                    bool m_agentHasBeenSet;
-
-                    /**
-                     * 链接类型
-HTTP：跳转电子签小程序的http_url，
-APP：第三方APP或小程序跳转电子签小程序的path。
-默认为HTTP类型
-                     */
-                    std::string m_endPoint;
-                    bool m_endPointHasBeenSet;
+                    std::string m_organizationName;
+                    bool m_organizationNameHasBeenSet;
 
                     /**
                      * 姓名,最大长度50个字符
@@ -254,10 +245,13 @@ APP：第三方APP或小程序跳转电子签小程序的path。
                     bool m_mobileHasBeenSet;
 
                     /**
-                     * 企业名称
+                     * 链接类型
+HTTP：跳转电子签小程序的http_url，
+APP：第三方APP或小程序跳转电子签小程序的path。
+默认为HTTP类型
                      */
-                    std::string m_organizationName;
-                    bool m_organizationNameHasBeenSet;
+                    std::string m_endPoint;
+                    bool m_endPointHasBeenSet;
 
                     /**
                      * 签署流程编号 (PathType=1时必传)
@@ -276,6 +270,12 @@ APP：第三方APP或小程序跳转电子签小程序的path。
                      */
                     bool m_autoJumpBack;
                     bool m_autoJumpBackHasBeenSet;
+
+                    /**
+                     * 应用相关信息
+                     */
+                    Agent m_agent;
+                    bool m_agentHasBeenSet;
 
                 };
             }

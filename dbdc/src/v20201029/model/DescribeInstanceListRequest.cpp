@@ -31,7 +31,8 @@ DescribeInstanceListRequest::DescribeInstanceListRequest() :
     m_instanceIdHasBeenSet(false),
     m_instanceNameHasBeenSet(false),
     m_fenceIdHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_clusterIdHasBeenSet(false)
 {
 }
 
@@ -136,6 +137,19 @@ string DescribeInstanceListRequest::ToJsonString() const
         for (auto itr = m_status.begin(); itr != m_status.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
+    }
+
+    if (m_clusterIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_clusterId.begin(); itr != m_clusterId.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
@@ -289,6 +303,22 @@ void DescribeInstanceListRequest::SetStatus(const vector<int64_t>& _status)
 bool DescribeInstanceListRequest::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+vector<string> DescribeInstanceListRequest::GetClusterId() const
+{
+    return m_clusterId;
+}
+
+void DescribeInstanceListRequest::SetClusterId(const vector<string>& _clusterId)
+{
+    m_clusterId = _clusterId;
+    m_clusterIdHasBeenSet = true;
+}
+
+bool DescribeInstanceListRequest::ClusterIdHasBeenSet() const
+{
+    return m_clusterIdHasBeenSet;
 }
 
 

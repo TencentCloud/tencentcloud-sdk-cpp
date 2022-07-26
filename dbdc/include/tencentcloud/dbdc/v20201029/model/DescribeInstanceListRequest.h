@@ -204,6 +204,24 @@ namespace TencentCloud
                      */
                     bool StatusHasBeenSet() const;
 
+                    /**
+                     * 获取按所属集群ID过滤
+                     * @return ClusterId 按所属集群ID过滤
+                     */
+                    std::vector<std::string> GetClusterId() const;
+
+                    /**
+                     * 设置按所属集群ID过滤
+                     * @param ClusterId 按所属集群ID过滤
+                     */
+                    void SetClusterId(const std::vector<std::string>& _clusterId);
+
+                    /**
+                     * 判断参数 ClusterId 是否已赋值
+                     * @return ClusterId 是否已赋值
+                     */
+                    bool ClusterIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -259,6 +277,12 @@ namespace TencentCloud
                      */
                     std::vector<int64_t> m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * 按所属集群ID过滤
+                     */
+                    std::vector<std::string> m_clusterId;
+                    bool m_clusterIdHasBeenSet;
 
                 };
             }

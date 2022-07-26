@@ -150,6 +150,24 @@ namespace TencentCloud
                      */
                     bool RemarkHasBeenSet() const;
 
+                    /**
+                     * 获取活动ID
+                     * @return MpTpl 活动ID
+                     */
+                    std::string GetMpTpl() const;
+
+                    /**
+                     * 设置活动ID
+                     * @param MpTpl 活动ID
+                     */
+                    void SetMpTpl(const std::string& _mpTpl);
+
+                    /**
+                     * 判断参数 MpTpl 是否已赋值
+                     * @return MpTpl 是否已赋值
+                     */
+                    bool MpTplHasBeenSet() const;
+
                 private:
 
                     /**
@@ -187,6 +205,12 @@ namespace TencentCloud
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
+
+                    /**
+                     * 活动ID
+                     */
+                    std::string m_mpTpl;
+                    bool m_mpTplHasBeenSet;
 
                 };
             }

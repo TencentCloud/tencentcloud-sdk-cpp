@@ -458,6 +458,42 @@ namespace TencentCloud
                      */
                     bool SlaveHostIdsHasBeenSet() const;
 
+                    /**
+                     * 获取需要回档的源实例ID
+                     * @return RollbackInstanceId 需要回档的源实例ID
+                     */
+                    std::string GetRollbackInstanceId() const;
+
+                    /**
+                     * 设置需要回档的源实例ID
+                     * @param RollbackInstanceId 需要回档的源实例ID
+                     */
+                    void SetRollbackInstanceId(const std::string& _rollbackInstanceId);
+
+                    /**
+                     * 判断参数 RollbackInstanceId 是否已赋值
+                     * @return RollbackInstanceId 是否已赋值
+                     */
+                    bool RollbackInstanceIdHasBeenSet() const;
+
+                    /**
+                     * 获取回档时间
+                     * @return RollbackTime 回档时间
+                     */
+                    std::string GetRollbackTime() const;
+
+                    /**
+                     * 设置回档时间
+                     * @param RollbackTime 回档时间
+                     */
+                    void SetRollbackTime(const std::string& _rollbackTime);
+
+                    /**
+                     * 判断参数 RollbackTime 是否已赋值
+                     * @return RollbackTime 是否已赋值
+                     */
+                    bool RollbackTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -597,6 +633,18 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_slaveHostIds;
                     bool m_slaveHostIdsHasBeenSet;
+
+                    /**
+                     * 需要回档的源实例ID
+                     */
+                    std::string m_rollbackInstanceId;
+                    bool m_rollbackInstanceIdHasBeenSet;
+
+                    /**
+                     * 回档时间
+                     */
+                    std::string m_rollbackTime;
+                    bool m_rollbackTimeHasBeenSet;
 
                 };
             }

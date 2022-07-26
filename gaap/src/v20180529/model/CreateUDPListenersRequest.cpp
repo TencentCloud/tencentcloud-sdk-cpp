@@ -29,7 +29,18 @@ CreateUDPListenersRequest::CreateUDPListenersRequest() :
     m_realServerTypeHasBeenSet(false),
     m_proxyIdHasBeenSet(false),
     m_groupIdHasBeenSet(false),
-    m_realServerPortsHasBeenSet(false)
+    m_realServerPortsHasBeenSet(false),
+    m_delayLoopHasBeenSet(false),
+    m_connectTimeoutHasBeenSet(false),
+    m_healthyThresholdHasBeenSet(false),
+    m_unhealthyThresholdHasBeenSet(false),
+    m_failoverSwitchHasBeenSet(false),
+    m_healthCheckHasBeenSet(false),
+    m_checkTypeHasBeenSet(false),
+    m_checkPortHasBeenSet(false),
+    m_contextTypeHasBeenSet(false),
+    m_sendContextHasBeenSet(false),
+    m_recvContextHasBeenSet(false)
 {
 }
 
@@ -104,6 +115,94 @@ string CreateUDPListenersRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
         }
+    }
+
+    if (m_delayLoopHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DelayLoop";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_delayLoop, allocator);
+    }
+
+    if (m_connectTimeoutHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConnectTimeout";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_connectTimeout, allocator);
+    }
+
+    if (m_healthyThresholdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HealthyThreshold";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_healthyThreshold, allocator);
+    }
+
+    if (m_unhealthyThresholdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UnhealthyThreshold";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_unhealthyThreshold, allocator);
+    }
+
+    if (m_failoverSwitchHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FailoverSwitch";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_failoverSwitch, allocator);
+    }
+
+    if (m_healthCheckHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HealthCheck";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_healthCheck, allocator);
+    }
+
+    if (m_checkTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CheckType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_checkType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_checkPortHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CheckPort";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_checkPort, allocator);
+    }
+
+    if (m_contextTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ContextType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_contextType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sendContextHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SendContext";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_sendContext.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_recvContextHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RecvContext";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_recvContext.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -224,6 +323,182 @@ void CreateUDPListenersRequest::SetRealServerPorts(const vector<uint64_t>& _real
 bool CreateUDPListenersRequest::RealServerPortsHasBeenSet() const
 {
     return m_realServerPortsHasBeenSet;
+}
+
+uint64_t CreateUDPListenersRequest::GetDelayLoop() const
+{
+    return m_delayLoop;
+}
+
+void CreateUDPListenersRequest::SetDelayLoop(const uint64_t& _delayLoop)
+{
+    m_delayLoop = _delayLoop;
+    m_delayLoopHasBeenSet = true;
+}
+
+bool CreateUDPListenersRequest::DelayLoopHasBeenSet() const
+{
+    return m_delayLoopHasBeenSet;
+}
+
+uint64_t CreateUDPListenersRequest::GetConnectTimeout() const
+{
+    return m_connectTimeout;
+}
+
+void CreateUDPListenersRequest::SetConnectTimeout(const uint64_t& _connectTimeout)
+{
+    m_connectTimeout = _connectTimeout;
+    m_connectTimeoutHasBeenSet = true;
+}
+
+bool CreateUDPListenersRequest::ConnectTimeoutHasBeenSet() const
+{
+    return m_connectTimeoutHasBeenSet;
+}
+
+uint64_t CreateUDPListenersRequest::GetHealthyThreshold() const
+{
+    return m_healthyThreshold;
+}
+
+void CreateUDPListenersRequest::SetHealthyThreshold(const uint64_t& _healthyThreshold)
+{
+    m_healthyThreshold = _healthyThreshold;
+    m_healthyThresholdHasBeenSet = true;
+}
+
+bool CreateUDPListenersRequest::HealthyThresholdHasBeenSet() const
+{
+    return m_healthyThresholdHasBeenSet;
+}
+
+uint64_t CreateUDPListenersRequest::GetUnhealthyThreshold() const
+{
+    return m_unhealthyThreshold;
+}
+
+void CreateUDPListenersRequest::SetUnhealthyThreshold(const uint64_t& _unhealthyThreshold)
+{
+    m_unhealthyThreshold = _unhealthyThreshold;
+    m_unhealthyThresholdHasBeenSet = true;
+}
+
+bool CreateUDPListenersRequest::UnhealthyThresholdHasBeenSet() const
+{
+    return m_unhealthyThresholdHasBeenSet;
+}
+
+int64_t CreateUDPListenersRequest::GetFailoverSwitch() const
+{
+    return m_failoverSwitch;
+}
+
+void CreateUDPListenersRequest::SetFailoverSwitch(const int64_t& _failoverSwitch)
+{
+    m_failoverSwitch = _failoverSwitch;
+    m_failoverSwitchHasBeenSet = true;
+}
+
+bool CreateUDPListenersRequest::FailoverSwitchHasBeenSet() const
+{
+    return m_failoverSwitchHasBeenSet;
+}
+
+uint64_t CreateUDPListenersRequest::GetHealthCheck() const
+{
+    return m_healthCheck;
+}
+
+void CreateUDPListenersRequest::SetHealthCheck(const uint64_t& _healthCheck)
+{
+    m_healthCheck = _healthCheck;
+    m_healthCheckHasBeenSet = true;
+}
+
+bool CreateUDPListenersRequest::HealthCheckHasBeenSet() const
+{
+    return m_healthCheckHasBeenSet;
+}
+
+string CreateUDPListenersRequest::GetCheckType() const
+{
+    return m_checkType;
+}
+
+void CreateUDPListenersRequest::SetCheckType(const string& _checkType)
+{
+    m_checkType = _checkType;
+    m_checkTypeHasBeenSet = true;
+}
+
+bool CreateUDPListenersRequest::CheckTypeHasBeenSet() const
+{
+    return m_checkTypeHasBeenSet;
+}
+
+int64_t CreateUDPListenersRequest::GetCheckPort() const
+{
+    return m_checkPort;
+}
+
+void CreateUDPListenersRequest::SetCheckPort(const int64_t& _checkPort)
+{
+    m_checkPort = _checkPort;
+    m_checkPortHasBeenSet = true;
+}
+
+bool CreateUDPListenersRequest::CheckPortHasBeenSet() const
+{
+    return m_checkPortHasBeenSet;
+}
+
+string CreateUDPListenersRequest::GetContextType() const
+{
+    return m_contextType;
+}
+
+void CreateUDPListenersRequest::SetContextType(const string& _contextType)
+{
+    m_contextType = _contextType;
+    m_contextTypeHasBeenSet = true;
+}
+
+bool CreateUDPListenersRequest::ContextTypeHasBeenSet() const
+{
+    return m_contextTypeHasBeenSet;
+}
+
+string CreateUDPListenersRequest::GetSendContext() const
+{
+    return m_sendContext;
+}
+
+void CreateUDPListenersRequest::SetSendContext(const string& _sendContext)
+{
+    m_sendContext = _sendContext;
+    m_sendContextHasBeenSet = true;
+}
+
+bool CreateUDPListenersRequest::SendContextHasBeenSet() const
+{
+    return m_sendContextHasBeenSet;
+}
+
+string CreateUDPListenersRequest::GetRecvContext() const
+{
+    return m_recvContext;
+}
+
+void CreateUDPListenersRequest::SetRecvContext(const string& _recvContext)
+{
+    m_recvContext = _recvContext;
+    m_recvContextHasBeenSet = true;
+}
+
+bool CreateUDPListenersRequest::RecvContextHasBeenSet() const
+{
+    return m_recvContextHasBeenSet;
 }
 
 

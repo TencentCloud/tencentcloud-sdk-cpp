@@ -119,14 +119,14 @@ namespace TencentCloud
                     bool ProductIdHasBeenSet() const;
 
                     /**
-                     * 获取集群类型, 0:公有云, 1:金融围笼
-                     * @return Type 集群类型, 0:公有云, 1:金融围笼
+                     * 获取集群类型, 0:公有云, 1:金融围笼, 2:CDC集群
+                     * @return Type 集群类型, 0:公有云, 1:金融围笼, 2:CDC集群
                      */
                     int64_t GetType() const;
 
                     /**
-                     * 设置集群类型, 0:公有云, 1:金融围笼
-                     * @param Type 集群类型, 0:公有云, 1:金融围笼
+                     * 设置集群类型, 0:公有云, 1:金融围笼, 2:CDC集群
+                     * @param Type 集群类型, 0:公有云, 1:金融围笼, 2:CDC集群
                      */
                     void SetType(const int64_t& _type);
 
@@ -137,14 +137,14 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取主机类型, 0:物理机, 1:cvm本地盘, 2:cvm云盘
-                     * @return HostType 主机类型, 0:物理机, 1:cvm本地盘, 2:cvm云盘
+                     * 获取主机类型, 0:物理机, 1:CVM机型, 2:CDC机型
+                     * @return HostType 主机类型, 0:物理机, 1:CVM机型, 2:CDC机型
                      */
                     int64_t GetHostType() const;
 
                     /**
-                     * 设置主机类型, 0:物理机, 1:cvm本地盘, 2:cvm云盘
-                     * @param HostType 主机类型, 0:物理机, 1:cvm本地盘, 2:cvm云盘
+                     * 设置主机类型, 0:物理机, 1:CVM机型, 2:CDC机型
+                     * @param HostType 主机类型, 0:物理机, 1:CVM机型, 2:CDC机型
                      */
                     void SetHostType(const int64_t& _hostType);
 
@@ -479,17 +479,17 @@ namespace TencentCloud
                     bool ZoneHasBeenSet() const;
 
                     /**
-                     * 获取围笼ID
+                     * 获取金融围笼ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FenceId 围笼ID
+                     * @return FenceId 金融围笼ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetFenceId() const;
 
                     /**
-                     * 设置围笼ID
+                     * 设置金融围笼ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FenceId 围笼ID
+                     * @param FenceId 金融围笼ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetFenceId(const std::string& _fenceId);
@@ -499,6 +499,28 @@ namespace TencentCloud
                      * @return FenceId 是否已赋值
                      */
                     bool FenceIdHasBeenSet() const;
+
+                    /**
+                     * 获取所属集群ID(默认集群为空)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ClusterId 所属集群ID(默认集群为空)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetClusterId() const;
+
+                    /**
+                     * 设置所属集群ID(默认集群为空)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ClusterId 所属集群ID(默认集群为空)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetClusterId(const std::string& _clusterId);
+
+                    /**
+                     * 判断参数 ClusterId 是否已赋值
+                     * @return ClusterId 是否已赋值
+                     */
+                    bool ClusterIdHasBeenSet() const;
 
                 private:
 
@@ -527,13 +549,13 @@ namespace TencentCloud
                     bool m_productIdHasBeenSet;
 
                     /**
-                     * 集群类型, 0:公有云, 1:金融围笼
+                     * 集群类型, 0:公有云, 1:金融围笼, 2:CDC集群
                      */
                     int64_t m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 主机类型, 0:物理机, 1:cvm本地盘, 2:cvm云盘
+                     * 主机类型, 0:物理机, 1:CVM机型, 2:CDC机型
                      */
                     int64_t m_hostType;
                     bool m_hostTypeHasBeenSet;
@@ -647,11 +669,18 @@ namespace TencentCloud
                     bool m_zoneHasBeenSet;
 
                     /**
-                     * 围笼ID
+                     * 金融围笼ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fenceId;
                     bool m_fenceIdHasBeenSet;
+
+                    /**
+                     * 所属集群ID(默认集群为空)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_clusterId;
+                    bool m_clusterIdHasBeenSet;
 
                 };
             }

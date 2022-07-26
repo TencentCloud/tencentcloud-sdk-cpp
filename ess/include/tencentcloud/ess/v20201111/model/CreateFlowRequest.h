@@ -21,8 +21,8 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/ess/v20201111/model/FlowCreateApprover.h>
 #include <tencentcloud/ess/v20201111/model/UserInfo.h>
+#include <tencentcloud/ess/v20201111/model/FlowCreateApprover.h>
 #include <tencentcloud/ess/v20201111/model/Agent.h>
 
 
@@ -44,6 +44,24 @@ namespace TencentCloud
                     ~CreateFlowRequest() = default;
                     std::string ToJsonString() const;
 
+
+                    /**
+                     * 获取调用方用户信息，userId 必填
+                     * @return Operator 调用方用户信息，userId 必填
+                     */
+                    UserInfo GetOperator() const;
+
+                    /**
+                     * 设置调用方用户信息，userId 必填
+                     * @param Operator 调用方用户信息，userId 必填
+                     */
+                    void SetOperator(const UserInfo& _operator);
+
+                    /**
+                     * 判断参数 Operator 是否已赋值
+                     * @return Operator 是否已赋值
+                     */
+                    bool OperatorHasBeenSet() const;
 
                     /**
                      * 获取签署流程名称,最大长度200个字符
@@ -82,70 +100,58 @@ namespace TencentCloud
                     bool ApproversHasBeenSet() const;
 
                     /**
-                     * 获取操作人信息
-                     * @return Operator 操作人信息
+                     * 获取签署流程的类型(如销售合同/入职合同等)，最大长度200个字符
+                     * @return FlowType 签署流程的类型(如销售合同/入职合同等)，最大长度200个字符
                      */
-                    UserInfo GetOperator() const;
+                    std::string GetFlowType() const;
 
                     /**
-                     * 设置操作人信息
-                     * @param Operator 操作人信息
+                     * 设置签署流程的类型(如销售合同/入职合同等)，最大长度200个字符
+                     * @param FlowType 签署流程的类型(如销售合同/入职合同等)，最大长度200个字符
                      */
-                    void SetOperator(const UserInfo& _operator);
+                    void SetFlowType(const std::string& _flowType);
 
                     /**
-                     * 判断参数 Operator 是否已赋值
-                     * @return Operator 是否已赋值
+                     * 判断参数 FlowType 是否已赋值
+                     * @return FlowType 是否已赋值
                      */
-                    bool OperatorHasBeenSet() const;
+                    bool FlowTypeHasBeenSet() const;
 
                     /**
-                     * 获取应用相关信息
-                     * @return Agent 应用相关信息
+                     * 获取客户端Token，保持接口幂等性,最大长度64个字符
+                     * @return ClientToken 客户端Token，保持接口幂等性,最大长度64个字符
                      */
-                    Agent GetAgent() const;
+                    std::string GetClientToken() const;
 
                     /**
-                     * 设置应用相关信息
-                     * @param Agent 应用相关信息
+                     * 设置客户端Token，保持接口幂等性,最大长度64个字符
+                     * @param ClientToken 客户端Token，保持接口幂等性,最大长度64个字符
                      */
-                    void SetAgent(const Agent& _agent);
+                    void SetClientToken(const std::string& _clientToken);
 
                     /**
-                     * 判断参数 Agent 是否已赋值
-                     * @return Agent 是否已赋值
+                     * 判断参数 ClientToken 是否已赋值
+                     * @return ClientToken 是否已赋值
                      */
-                    bool AgentHasBeenSet() const;
+                    bool ClientTokenHasBeenSet() const;
 
                     /**
-                     * 获取发送类型：
-true：无序签
-false：有序签
-注：默认为false（有序签），请和模板中的配置保持一致
-                     * @return Unordered 发送类型：
-true：无序签
-false：有序签
-注：默认为false（有序签），请和模板中的配置保持一致
+                     * 获取暂未开放
+                     * @return CallbackUrl 暂未开放
                      */
-                    bool GetUnordered() const;
+                    std::string GetCallbackUrl() const;
 
                     /**
-                     * 设置发送类型：
-true：无序签
-false：有序签
-注：默认为false（有序签），请和模板中的配置保持一致
-                     * @param Unordered 发送类型：
-true：无序签
-false：有序签
-注：默认为false（有序签），请和模板中的配置保持一致
+                     * 设置暂未开放
+                     * @param CallbackUrl 暂未开放
                      */
-                    void SetUnordered(const bool& _unordered);
+                    void SetCallbackUrl(const std::string& _callbackUrl);
 
                     /**
-                     * 判断参数 Unordered 是否已赋值
-                     * @return Unordered 是否已赋值
+                     * 判断参数 CallbackUrl 是否已赋值
+                     * @return CallbackUrl 是否已赋值
                      */
-                    bool UnorderedHasBeenSet() const;
+                    bool CallbackUrlHasBeenSet() const;
 
                     /**
                      * 获取签署流程的签署截止时间。
@@ -168,24 +174,6 @@ false：有序签
                      * @return DeadLine 是否已赋值
                      */
                     bool DeadLineHasBeenSet() const;
-
-                    /**
-                     * 获取签署流程的类型(如销售合同/入职合同等)，最大长度200个字符
-                     * @return FlowType 签署流程的类型(如销售合同/入职合同等)，最大长度200个字符
-                     */
-                    std::string GetFlowType() const;
-
-                    /**
-                     * 设置签署流程的类型(如销售合同/入职合同等)，最大长度200个字符
-                     * @param FlowType 签署流程的类型(如销售合同/入职合同等)，最大长度200个字符
-                     */
-                    void SetFlowType(const std::string& _flowType);
-
-                    /**
-                     * 判断参数 FlowType 是否已赋值
-                     * @return FlowType 是否已赋值
-                     */
-                    bool FlowTypeHasBeenSet() const;
 
                     /**
                      * 获取用户自定义字段(需进行base64 encode),回调的时候会进行透传, 长度需要小于20480
@@ -224,22 +212,34 @@ false：有序签
                     bool FlowDescriptionHasBeenSet() const;
 
                     /**
-                     * 获取客户端Token，保持接口幂等性,最大长度64个字符
-                     * @return ClientToken 客户端Token，保持接口幂等性,最大长度64个字符
+                     * 获取发送类型：
+true：无序签
+false：有序签
+注：默认为false（有序签），请和模板中的配置保持一致
+                     * @return Unordered 发送类型：
+true：无序签
+false：有序签
+注：默认为false（有序签），请和模板中的配置保持一致
                      */
-                    std::string GetClientToken() const;
+                    bool GetUnordered() const;
 
                     /**
-                     * 设置客户端Token，保持接口幂等性,最大长度64个字符
-                     * @param ClientToken 客户端Token，保持接口幂等性,最大长度64个字符
+                     * 设置发送类型：
+true：无序签
+false：有序签
+注：默认为false（有序签），请和模板中的配置保持一致
+                     * @param Unordered 发送类型：
+true：无序签
+false：有序签
+注：默认为false（有序签），请和模板中的配置保持一致
                      */
-                    void SetClientToken(const std::string& _clientToken);
+                    void SetUnordered(const bool& _unordered);
 
                     /**
-                     * 判断参数 ClientToken 是否已赋值
-                     * @return ClientToken 是否已赋值
+                     * 判断参数 Unordered 是否已赋值
+                     * @return Unordered 是否已赋值
                      */
-                    bool ClientTokenHasBeenSet() const;
+                    bool UnorderedHasBeenSet() const;
 
                     /**
                      * 获取合同显示的页卡模板，说明：只支持{合同名称}, {发起方企业}, {发起方姓名}, {签署方N企业}, {签署方N姓名}，且N不能超过签署人的数量，N从1开始
@@ -278,24 +278,30 @@ false：有序签
                     bool RelatedFlowIdHasBeenSet() const;
 
                     /**
-                     * 获取暂未开放
-                     * @return CallbackUrl 暂未开放
+                     * 获取应用相关信息
+                     * @return Agent 应用相关信息
                      */
-                    std::string GetCallbackUrl() const;
+                    Agent GetAgent() const;
 
                     /**
-                     * 设置暂未开放
-                     * @param CallbackUrl 暂未开放
+                     * 设置应用相关信息
+                     * @param Agent 应用相关信息
                      */
-                    void SetCallbackUrl(const std::string& _callbackUrl);
+                    void SetAgent(const Agent& _agent);
 
                     /**
-                     * 判断参数 CallbackUrl 是否已赋值
-                     * @return CallbackUrl 是否已赋值
+                     * 判断参数 Agent 是否已赋值
+                     * @return Agent 是否已赋值
                      */
-                    bool CallbackUrlHasBeenSet() const;
+                    bool AgentHasBeenSet() const;
 
                 private:
+
+                    /**
+                     * 调用方用户信息，userId 必填
+                     */
+                    UserInfo m_operator;
+                    bool m_operatorHasBeenSet;
 
                     /**
                      * 签署流程名称,最大长度200个字符
@@ -310,25 +316,22 @@ false：有序签
                     bool m_approversHasBeenSet;
 
                     /**
-                     * 操作人信息
+                     * 签署流程的类型(如销售合同/入职合同等)，最大长度200个字符
                      */
-                    UserInfo m_operator;
-                    bool m_operatorHasBeenSet;
+                    std::string m_flowType;
+                    bool m_flowTypeHasBeenSet;
 
                     /**
-                     * 应用相关信息
+                     * 客户端Token，保持接口幂等性,最大长度64个字符
                      */
-                    Agent m_agent;
-                    bool m_agentHasBeenSet;
+                    std::string m_clientToken;
+                    bool m_clientTokenHasBeenSet;
 
                     /**
-                     * 发送类型：
-true：无序签
-false：有序签
-注：默认为false（有序签），请和模板中的配置保持一致
+                     * 暂未开放
                      */
-                    bool m_unordered;
-                    bool m_unorderedHasBeenSet;
+                    std::string m_callbackUrl;
+                    bool m_callbackUrlHasBeenSet;
 
                     /**
                      * 签署流程的签署截止时间。
@@ -336,12 +339,6 @@ false：有序签
                      */
                     int64_t m_deadLine;
                     bool m_deadLineHasBeenSet;
-
-                    /**
-                     * 签署流程的类型(如销售合同/入职合同等)，最大长度200个字符
-                     */
-                    std::string m_flowType;
-                    bool m_flowTypeHasBeenSet;
 
                     /**
                      * 用户自定义字段(需进行base64 encode),回调的时候会进行透传, 长度需要小于20480
@@ -356,10 +353,13 @@ false：有序签
                     bool m_flowDescriptionHasBeenSet;
 
                     /**
-                     * 客户端Token，保持接口幂等性,最大长度64个字符
+                     * 发送类型：
+true：无序签
+false：有序签
+注：默认为false（有序签），请和模板中的配置保持一致
                      */
-                    std::string m_clientToken;
-                    bool m_clientTokenHasBeenSet;
+                    bool m_unordered;
+                    bool m_unorderedHasBeenSet;
 
                     /**
                      * 合同显示的页卡模板，说明：只支持{合同名称}, {发起方企业}, {发起方姓名}, {签署方N企业}, {签署方N姓名}，且N不能超过签署人的数量，N从1开始
@@ -374,10 +374,10 @@ false：有序签
                     bool m_relatedFlowIdHasBeenSet;
 
                     /**
-                     * 暂未开放
+                     * 应用相关信息
                      */
-                    std::string m_callbackUrl;
-                    bool m_callbackUrlHasBeenSet;
+                    Agent m_agent;
+                    bool m_agentHasBeenSet;
 
                 };
             }

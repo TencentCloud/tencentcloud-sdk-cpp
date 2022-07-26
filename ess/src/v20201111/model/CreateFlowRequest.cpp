@@ -23,19 +23,19 @@ using namespace TencentCloud::Ess::V20201111::Model;
 using namespace std;
 
 CreateFlowRequest::CreateFlowRequest() :
+    m_operatorHasBeenSet(false),
     m_flowNameHasBeenSet(false),
     m_approversHasBeenSet(false),
-    m_operatorHasBeenSet(false),
-    m_agentHasBeenSet(false),
-    m_unorderedHasBeenSet(false),
-    m_deadLineHasBeenSet(false),
     m_flowTypeHasBeenSet(false),
+    m_clientTokenHasBeenSet(false),
+    m_callbackUrlHasBeenSet(false),
+    m_deadLineHasBeenSet(false),
     m_userDataHasBeenSet(false),
     m_flowDescriptionHasBeenSet(false),
-    m_clientTokenHasBeenSet(false),
+    m_unorderedHasBeenSet(false),
     m_customShowMapHasBeenSet(false),
     m_relatedFlowIdHasBeenSet(false),
-    m_callbackUrlHasBeenSet(false)
+    m_agentHasBeenSet(false)
 {
 }
 
@@ -45,6 +45,15 @@ string CreateFlowRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
+
+    if (m_operatorHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Operator";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_operator.ToJsonObject(d[key.c_str()], allocator);
+    }
 
     if (m_flowNameHasBeenSet)
     {
@@ -69,30 +78,28 @@ string CreateFlowRequest::ToJsonString() const
         }
     }
 
-    if (m_operatorHasBeenSet)
+    if (m_flowTypeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Operator";
+        string key = "FlowType";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_operator.ToJsonObject(d[key.c_str()], allocator);
+        d.AddMember(iKey, rapidjson::Value(m_flowType.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_agentHasBeenSet)
+    if (m_clientTokenHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Agent";
+        string key = "ClientToken";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_agent.ToJsonObject(d[key.c_str()], allocator);
+        d.AddMember(iKey, rapidjson::Value(m_clientToken.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_unorderedHasBeenSet)
+    if (m_callbackUrlHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Unordered";
+        string key = "CallbackUrl";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_unordered, allocator);
+        d.AddMember(iKey, rapidjson::Value(m_callbackUrl.c_str(), allocator).Move(), allocator);
     }
 
     if (m_deadLineHasBeenSet)
@@ -101,14 +108,6 @@ string CreateFlowRequest::ToJsonString() const
         string key = "DeadLine";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_deadLine, allocator);
-    }
-
-    if (m_flowTypeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "FlowType";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_flowType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_userDataHasBeenSet)
@@ -127,12 +126,12 @@ string CreateFlowRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_flowDescription.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_clientTokenHasBeenSet)
+    if (m_unorderedHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ClientToken";
+        string key = "Unordered";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_clientToken.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, m_unordered, allocator);
     }
 
     if (m_customShowMapHasBeenSet)
@@ -151,12 +150,13 @@ string CreateFlowRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_relatedFlowId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_callbackUrlHasBeenSet)
+    if (m_agentHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "CallbackUrl";
+        string key = "Agent";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_callbackUrl.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_agent.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -166,6 +166,22 @@ string CreateFlowRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+UserInfo CreateFlowRequest::GetOperator() const
+{
+    return m_operator;
+}
+
+void CreateFlowRequest::SetOperator(const UserInfo& _operator)
+{
+    m_operator = _operator;
+    m_operatorHasBeenSet = true;
+}
+
+bool CreateFlowRequest::OperatorHasBeenSet() const
+{
+    return m_operatorHasBeenSet;
+}
 
 string CreateFlowRequest::GetFlowName() const
 {
@@ -199,52 +215,52 @@ bool CreateFlowRequest::ApproversHasBeenSet() const
     return m_approversHasBeenSet;
 }
 
-UserInfo CreateFlowRequest::GetOperator() const
+string CreateFlowRequest::GetFlowType() const
 {
-    return m_operator;
+    return m_flowType;
 }
 
-void CreateFlowRequest::SetOperator(const UserInfo& _operator)
+void CreateFlowRequest::SetFlowType(const string& _flowType)
 {
-    m_operator = _operator;
-    m_operatorHasBeenSet = true;
+    m_flowType = _flowType;
+    m_flowTypeHasBeenSet = true;
 }
 
-bool CreateFlowRequest::OperatorHasBeenSet() const
+bool CreateFlowRequest::FlowTypeHasBeenSet() const
 {
-    return m_operatorHasBeenSet;
+    return m_flowTypeHasBeenSet;
 }
 
-Agent CreateFlowRequest::GetAgent() const
+string CreateFlowRequest::GetClientToken() const
 {
-    return m_agent;
+    return m_clientToken;
 }
 
-void CreateFlowRequest::SetAgent(const Agent& _agent)
+void CreateFlowRequest::SetClientToken(const string& _clientToken)
 {
-    m_agent = _agent;
-    m_agentHasBeenSet = true;
+    m_clientToken = _clientToken;
+    m_clientTokenHasBeenSet = true;
 }
 
-bool CreateFlowRequest::AgentHasBeenSet() const
+bool CreateFlowRequest::ClientTokenHasBeenSet() const
 {
-    return m_agentHasBeenSet;
+    return m_clientTokenHasBeenSet;
 }
 
-bool CreateFlowRequest::GetUnordered() const
+string CreateFlowRequest::GetCallbackUrl() const
 {
-    return m_unordered;
+    return m_callbackUrl;
 }
 
-void CreateFlowRequest::SetUnordered(const bool& _unordered)
+void CreateFlowRequest::SetCallbackUrl(const string& _callbackUrl)
 {
-    m_unordered = _unordered;
-    m_unorderedHasBeenSet = true;
+    m_callbackUrl = _callbackUrl;
+    m_callbackUrlHasBeenSet = true;
 }
 
-bool CreateFlowRequest::UnorderedHasBeenSet() const
+bool CreateFlowRequest::CallbackUrlHasBeenSet() const
 {
-    return m_unorderedHasBeenSet;
+    return m_callbackUrlHasBeenSet;
 }
 
 int64_t CreateFlowRequest::GetDeadLine() const
@@ -261,22 +277,6 @@ void CreateFlowRequest::SetDeadLine(const int64_t& _deadLine)
 bool CreateFlowRequest::DeadLineHasBeenSet() const
 {
     return m_deadLineHasBeenSet;
-}
-
-string CreateFlowRequest::GetFlowType() const
-{
-    return m_flowType;
-}
-
-void CreateFlowRequest::SetFlowType(const string& _flowType)
-{
-    m_flowType = _flowType;
-    m_flowTypeHasBeenSet = true;
-}
-
-bool CreateFlowRequest::FlowTypeHasBeenSet() const
-{
-    return m_flowTypeHasBeenSet;
 }
 
 string CreateFlowRequest::GetUserData() const
@@ -311,20 +311,20 @@ bool CreateFlowRequest::FlowDescriptionHasBeenSet() const
     return m_flowDescriptionHasBeenSet;
 }
 
-string CreateFlowRequest::GetClientToken() const
+bool CreateFlowRequest::GetUnordered() const
 {
-    return m_clientToken;
+    return m_unordered;
 }
 
-void CreateFlowRequest::SetClientToken(const string& _clientToken)
+void CreateFlowRequest::SetUnordered(const bool& _unordered)
 {
-    m_clientToken = _clientToken;
-    m_clientTokenHasBeenSet = true;
+    m_unordered = _unordered;
+    m_unorderedHasBeenSet = true;
 }
 
-bool CreateFlowRequest::ClientTokenHasBeenSet() const
+bool CreateFlowRequest::UnorderedHasBeenSet() const
 {
-    return m_clientTokenHasBeenSet;
+    return m_unorderedHasBeenSet;
 }
 
 string CreateFlowRequest::GetCustomShowMap() const
@@ -359,20 +359,20 @@ bool CreateFlowRequest::RelatedFlowIdHasBeenSet() const
     return m_relatedFlowIdHasBeenSet;
 }
 
-string CreateFlowRequest::GetCallbackUrl() const
+Agent CreateFlowRequest::GetAgent() const
 {
-    return m_callbackUrl;
+    return m_agent;
 }
 
-void CreateFlowRequest::SetCallbackUrl(const string& _callbackUrl)
+void CreateFlowRequest::SetAgent(const Agent& _agent)
 {
-    m_callbackUrl = _callbackUrl;
-    m_callbackUrlHasBeenSet = true;
+    m_agent = _agent;
+    m_agentHasBeenSet = true;
 }
 
-bool CreateFlowRequest::CallbackUrlHasBeenSet() const
+bool CreateFlowRequest::AgentHasBeenSet() const
 {
-    return m_callbackUrlHasBeenSet;
+    return m_agentHasBeenSet;
 }
 
 

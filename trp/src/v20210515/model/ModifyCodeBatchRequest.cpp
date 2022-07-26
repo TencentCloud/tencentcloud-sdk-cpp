@@ -26,7 +26,10 @@ ModifyCodeBatchRequest::ModifyCodeBatchRequest() :
     m_batchIdHasBeenSet(false),
     m_corpIdHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_mpTplHasBeenSet(false)
+    m_mpTplHasBeenSet(false),
+    m_merchantIdHasBeenSet(false),
+    m_productIdHasBeenSet(false),
+    m_remarkHasBeenSet(false)
 {
 }
 
@@ -67,6 +70,30 @@ string ModifyCodeBatchRequest::ToJsonString() const
         string key = "MpTpl";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_mpTpl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_merchantIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MerchantId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_merchantId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_productIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProductId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_productId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_remarkHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Remark";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_remark.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -139,6 +166,54 @@ void ModifyCodeBatchRequest::SetMpTpl(const string& _mpTpl)
 bool ModifyCodeBatchRequest::MpTplHasBeenSet() const
 {
     return m_mpTplHasBeenSet;
+}
+
+string ModifyCodeBatchRequest::GetMerchantId() const
+{
+    return m_merchantId;
+}
+
+void ModifyCodeBatchRequest::SetMerchantId(const string& _merchantId)
+{
+    m_merchantId = _merchantId;
+    m_merchantIdHasBeenSet = true;
+}
+
+bool ModifyCodeBatchRequest::MerchantIdHasBeenSet() const
+{
+    return m_merchantIdHasBeenSet;
+}
+
+string ModifyCodeBatchRequest::GetProductId() const
+{
+    return m_productId;
+}
+
+void ModifyCodeBatchRequest::SetProductId(const string& _productId)
+{
+    m_productId = _productId;
+    m_productIdHasBeenSet = true;
+}
+
+bool ModifyCodeBatchRequest::ProductIdHasBeenSet() const
+{
+    return m_productIdHasBeenSet;
+}
+
+string ModifyCodeBatchRequest::GetRemark() const
+{
+    return m_remark;
+}
+
+void ModifyCodeBatchRequest::SetRemark(const string& _remark)
+{
+    m_remark = _remark;
+    m_remarkHasBeenSet = true;
+}
+
+bool ModifyCodeBatchRequest::RemarkHasBeenSet() const
+{
+    return m_remarkHasBeenSet;
 }
 
 

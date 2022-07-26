@@ -104,6 +104,28 @@ namespace TencentCloud
                      */
                     bool PortHasBeenSet() const;
 
+                    /**
+                     * 获取备份源站，1: 备份源站，0: 普通源站
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Backup 备份源站，1: 备份源站，0: 普通源站
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetBackup() const;
+
+                    /**
+                     * 设置备份源站，1: 备份源站，0: 普通源站
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Backup 备份源站，1: 备份源站，0: 普通源站
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetBackup(const uint64_t& _backup);
+
+                    /**
+                     * 判断参数 Backup 是否已赋值
+                     * @return Backup 是否已赋值
+                     */
+                    bool BackupHasBeenSet() const;
+
                 private:
 
                     /**
@@ -124,6 +146,13 @@ namespace TencentCloud
                      */
                     uint64_t m_port;
                     bool m_portHasBeenSet;
+
+                    /**
+                     * 备份源站，1: 备份源站，0: 普通源站
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_backup;
+                    bool m_backupHasBeenSet;
 
                 };
             }

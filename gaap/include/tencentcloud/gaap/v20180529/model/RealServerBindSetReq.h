@@ -119,14 +119,14 @@ namespace TencentCloud
                     bool RealServerWeightHasBeenSet() const;
 
                     /**
-                     * 获取源站主备角色：master主，slave备，该参数必须在监听器打开了源站主备模式，且监听器类型为TCP监听器
-                     * @return RealServerFailoverRole 源站主备角色：master主，slave备，该参数必须在监听器打开了源站主备模式，且监听器类型为TCP监听器
+                     * 获取源站主备角色：master表示主，slave表示备，该参数必须在监听器打开了源站主备模式。
+                     * @return RealServerFailoverRole 源站主备角色：master表示主，slave表示备，该参数必须在监听器打开了源站主备模式。
                      */
                     std::string GetRealServerFailoverRole() const;
 
                     /**
-                     * 设置源站主备角色：master主，slave备，该参数必须在监听器打开了源站主备模式，且监听器类型为TCP监听器
-                     * @param RealServerFailoverRole 源站主备角色：master主，slave备，该参数必须在监听器打开了源站主备模式，且监听器类型为TCP监听器
+                     * 设置源站主备角色：master表示主，slave表示备，该参数必须在监听器打开了源站主备模式。
+                     * @param RealServerFailoverRole 源站主备角色：master表示主，slave表示备，该参数必须在监听器打开了源站主备模式。
                      */
                     void SetRealServerFailoverRole(const std::string& _realServerFailoverRole);
 
@@ -163,7 +163,7 @@ namespace TencentCloud
                     bool m_realServerWeightHasBeenSet;
 
                     /**
-                     * 源站主备角色：master主，slave备，该参数必须在监听器打开了源站主备模式，且监听器类型为TCP监听器
+                     * 源站主备角色：master表示主，slave表示备，该参数必须在监听器打开了源站主备模式。
                      */
                     std::string m_realServerFailoverRole;
                     bool m_realServerFailoverRoleHasBeenSet;

@@ -332,9 +332,9 @@ namespace TencentCloud
                     bool ZoneHasBeenSet() const;
 
                     /**
-                     * 获取围笼ID
+                     * 获取金融围笼ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FenceId 围笼ID
+                     * @return FenceId 金融围笼ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetFenceId() const;
@@ -344,6 +344,20 @@ namespace TencentCloud
                      * @return FenceId 是否已赋值
                      */
                     bool FenceIdHasBeenSet() const;
+
+                    /**
+                     * 获取所属集群ID(默认集群为空)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ClusterId 所属集群ID(默认集群为空)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetClusterId() const;
+
+                    /**
+                     * 判断参数 ClusterId 是否已赋值
+                     * @return ClusterId 是否已赋值
+                     */
+                    bool ClusterIdHasBeenSet() const;
 
                 private:
 
@@ -492,11 +506,18 @@ namespace TencentCloud
                     bool m_zoneHasBeenSet;
 
                     /**
-                     * 围笼ID
+                     * 金融围笼ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fenceId;
                     bool m_fenceIdHasBeenSet;
+
+                    /**
+                     * 所属集群ID(默认集群为空)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_clusterId;
+                    bool m_clusterIdHasBeenSet;
 
                 };
             }

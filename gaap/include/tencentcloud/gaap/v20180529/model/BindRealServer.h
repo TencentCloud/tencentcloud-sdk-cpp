@@ -174,6 +174,24 @@ namespace TencentCloud
                      */
                     bool DownIPListHasBeenSet() const;
 
+                    /**
+                     * 获取源站主备角色：master表示主，slave表示备，该参数必须在监听器打开了源站主备模式。
+                     * @return RealServerFailoverRole 源站主备角色：master表示主，slave表示备，该参数必须在监听器打开了源站主备模式。
+                     */
+                    std::string GetRealServerFailoverRole() const;
+
+                    /**
+                     * 设置源站主备角色：master表示主，slave表示备，该参数必须在监听器打开了源站主备模式。
+                     * @param RealServerFailoverRole 源站主备角色：master表示主，slave表示备，该参数必须在监听器打开了源站主备模式。
+                     */
+                    void SetRealServerFailoverRole(const std::string& _realServerFailoverRole);
+
+                    /**
+                     * 判断参数 RealServerFailoverRole 是否已赋值
+                     * @return RealServerFailoverRole 是否已赋值
+                     */
+                    bool RealServerFailoverRoleHasBeenSet() const;
+
                 private:
 
                     /**
@@ -216,6 +234,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_downIPList;
                     bool m_downIPListHasBeenSet;
+
+                    /**
+                     * 源站主备角色：master表示主，slave表示备，该参数必须在监听器打开了源站主备模式。
+                     */
+                    std::string m_realServerFailoverRole;
+                    bool m_realServerFailoverRoleHasBeenSet;
 
                 };
             }

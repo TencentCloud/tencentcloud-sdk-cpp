@@ -24,12 +24,12 @@ using namespace std;
 
 DescribeFlowTemplatesRequest::DescribeFlowTemplatesRequest() :
     m_operatorHasBeenSet(false),
-    m_offsetHasBeenSet(false),
-    m_limitHasBeenSet(false),
     m_filtersHasBeenSet(false),
-    m_agentHasBeenSet(false),
+    m_limitHasBeenSet(false),
+    m_offsetHasBeenSet(false),
+    m_contentTypeHasBeenSet(false),
     m_generateSourceHasBeenSet(false),
-    m_contentTypeHasBeenSet(false)
+    m_agentHasBeenSet(false)
 {
 }
 
@@ -49,22 +49,6 @@ string DescribeFlowTemplatesRequest::ToJsonString() const
         m_operator.ToJsonObject(d[key.c_str()], allocator);
     }
 
-    if (m_offsetHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Offset";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_offset, allocator);
-    }
-
-    if (m_limitHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Limit";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_limit, allocator);
-    }
-
     if (m_filtersHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -80,13 +64,28 @@ string DescribeFlowTemplatesRequest::ToJsonString() const
         }
     }
 
-    if (m_agentHasBeenSet)
+    if (m_limitHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Agent";
+        string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_agent.ToJsonObject(d[key.c_str()], allocator);
+        d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_offsetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Offset";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_contentTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ContentType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_contentType, allocator);
     }
 
     if (m_generateSourceHasBeenSet)
@@ -97,12 +96,13 @@ string DescribeFlowTemplatesRequest::ToJsonString() const
         d.AddMember(iKey, m_generateSource, allocator);
     }
 
-    if (m_contentTypeHasBeenSet)
+    if (m_agentHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ContentType";
+        string key = "Agent";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_contentType, allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_agent.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -129,20 +129,20 @@ bool DescribeFlowTemplatesRequest::OperatorHasBeenSet() const
     return m_operatorHasBeenSet;
 }
 
-uint64_t DescribeFlowTemplatesRequest::GetOffset() const
+vector<Filter> DescribeFlowTemplatesRequest::GetFilters() const
 {
-    return m_offset;
+    return m_filters;
 }
 
-void DescribeFlowTemplatesRequest::SetOffset(const uint64_t& _offset)
+void DescribeFlowTemplatesRequest::SetFilters(const vector<Filter>& _filters)
 {
-    m_offset = _offset;
-    m_offsetHasBeenSet = true;
+    m_filters = _filters;
+    m_filtersHasBeenSet = true;
 }
 
-bool DescribeFlowTemplatesRequest::OffsetHasBeenSet() const
+bool DescribeFlowTemplatesRequest::FiltersHasBeenSet() const
 {
-    return m_offsetHasBeenSet;
+    return m_filtersHasBeenSet;
 }
 
 uint64_t DescribeFlowTemplatesRequest::GetLimit() const
@@ -161,36 +161,36 @@ bool DescribeFlowTemplatesRequest::LimitHasBeenSet() const
     return m_limitHasBeenSet;
 }
 
-vector<Filter> DescribeFlowTemplatesRequest::GetFilters() const
+uint64_t DescribeFlowTemplatesRequest::GetOffset() const
 {
-    return m_filters;
+    return m_offset;
 }
 
-void DescribeFlowTemplatesRequest::SetFilters(const vector<Filter>& _filters)
+void DescribeFlowTemplatesRequest::SetOffset(const uint64_t& _offset)
 {
-    m_filters = _filters;
-    m_filtersHasBeenSet = true;
+    m_offset = _offset;
+    m_offsetHasBeenSet = true;
 }
 
-bool DescribeFlowTemplatesRequest::FiltersHasBeenSet() const
+bool DescribeFlowTemplatesRequest::OffsetHasBeenSet() const
 {
-    return m_filtersHasBeenSet;
+    return m_offsetHasBeenSet;
 }
 
-Agent DescribeFlowTemplatesRequest::GetAgent() const
+int64_t DescribeFlowTemplatesRequest::GetContentType() const
 {
-    return m_agent;
+    return m_contentType;
 }
 
-void DescribeFlowTemplatesRequest::SetAgent(const Agent& _agent)
+void DescribeFlowTemplatesRequest::SetContentType(const int64_t& _contentType)
 {
-    m_agent = _agent;
-    m_agentHasBeenSet = true;
+    m_contentType = _contentType;
+    m_contentTypeHasBeenSet = true;
 }
 
-bool DescribeFlowTemplatesRequest::AgentHasBeenSet() const
+bool DescribeFlowTemplatesRequest::ContentTypeHasBeenSet() const
 {
-    return m_agentHasBeenSet;
+    return m_contentTypeHasBeenSet;
 }
 
 uint64_t DescribeFlowTemplatesRequest::GetGenerateSource() const
@@ -209,20 +209,20 @@ bool DescribeFlowTemplatesRequest::GenerateSourceHasBeenSet() const
     return m_generateSourceHasBeenSet;
 }
 
-int64_t DescribeFlowTemplatesRequest::GetContentType() const
+Agent DescribeFlowTemplatesRequest::GetAgent() const
 {
-    return m_contentType;
+    return m_agent;
 }
 
-void DescribeFlowTemplatesRequest::SetContentType(const int64_t& _contentType)
+void DescribeFlowTemplatesRequest::SetAgent(const Agent& _agent)
 {
-    m_contentType = _contentType;
-    m_contentTypeHasBeenSet = true;
+    m_agent = _agent;
+    m_agentHasBeenSet = true;
 }
 
-bool DescribeFlowTemplatesRequest::ContentTypeHasBeenSet() const
+bool DescribeFlowTemplatesRequest::AgentHasBeenSet() const
 {
-    return m_contentTypeHasBeenSet;
+    return m_agentHasBeenSet;
 }
 
 

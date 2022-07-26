@@ -208,6 +208,114 @@ namespace TencentCloud
                      */
                     bool StatusCodeHasBeenSet() const;
 
+                    /**
+                     * 获取是否同时下发http和https规则健康检查配置
+                     * @return ProtocolFlag 是否同时下发http和https规则健康检查配置
+                     */
+                    uint64_t GetProtocolFlag() const;
+
+                    /**
+                     * 设置是否同时下发http和https规则健康检查配置
+                     * @param ProtocolFlag 是否同时下发http和https规则健康检查配置
+                     */
+                    void SetProtocolFlag(const uint64_t& _protocolFlag);
+
+                    /**
+                     * 判断参数 ProtocolFlag 是否已赋值
+                     * @return ProtocolFlag 是否已赋值
+                     */
+                    bool ProtocolFlagHasBeenSet() const;
+
+                    /**
+                     * 获取被动探测开关，=1表示开启；=0表示关闭
+                     * @return PassiveEnable 被动探测开关，=1表示开启；=0表示关闭
+                     */
+                    uint64_t GetPassiveEnable() const;
+
+                    /**
+                     * 设置被动探测开关，=1表示开启；=0表示关闭
+                     * @param PassiveEnable 被动探测开关，=1表示开启；=0表示关闭
+                     */
+                    void SetPassiveEnable(const uint64_t& _passiveEnable);
+
+                    /**
+                     * 判断参数 PassiveEnable 是否已赋值
+                     * @return PassiveEnable 是否已赋值
+                     */
+                    bool PassiveEnableHasBeenSet() const;
+
+                    /**
+                     * 获取被动探测不健康屏蔽时间
+                     * @return BlockInter 被动探测不健康屏蔽时间
+                     */
+                    uint64_t GetBlockInter() const;
+
+                    /**
+                     * 设置被动探测不健康屏蔽时间
+                     * @param BlockInter 被动探测不健康屏蔽时间
+                     */
+                    void SetBlockInter(const uint64_t& _blockInter);
+
+                    /**
+                     * 判断参数 BlockInter 是否已赋值
+                     * @return BlockInter 是否已赋值
+                     */
+                    bool BlockInterHasBeenSet() const;
+
+                    /**
+                     * 获取被动探测不健康统计间隔
+                     * @return FailedCountInter 被动探测不健康统计间隔
+                     */
+                    uint64_t GetFailedCountInter() const;
+
+                    /**
+                     * 设置被动探测不健康统计间隔
+                     * @param FailedCountInter 被动探测不健康统计间隔
+                     */
+                    void SetFailedCountInter(const uint64_t& _failedCountInter);
+
+                    /**
+                     * 判断参数 FailedCountInter 是否已赋值
+                     * @return FailedCountInter 是否已赋值
+                     */
+                    bool FailedCountInterHasBeenSet() const;
+
+                    /**
+                     * 获取被动探测不健康阈值
+                     * @return FailedThreshold 被动探测不健康阈值
+                     */
+                    uint64_t GetFailedThreshold() const;
+
+                    /**
+                     * 设置被动探测不健康阈值
+                     * @param FailedThreshold 被动探测不健康阈值
+                     */
+                    void SetFailedThreshold(const uint64_t& _failedThreshold);
+
+                    /**
+                     * 判断参数 FailedThreshold 是否已赋值
+                     * @return FailedThreshold 是否已赋值
+                     */
+                    bool FailedThresholdHasBeenSet() const;
+
+                    /**
+                     * 获取被动探测判定正常状态码，1xx =1, 2xx=2, 3xx=4, 4xx=8,5xx=16，多个状态码值加和
+                     * @return PassiveStatusCode 被动探测判定正常状态码，1xx =1, 2xx=2, 3xx=4, 4xx=8,5xx=16，多个状态码值加和
+                     */
+                    uint64_t GetPassiveStatusCode() const;
+
+                    /**
+                     * 设置被动探测判定正常状态码，1xx =1, 2xx=2, 3xx=4, 4xx=8,5xx=16，多个状态码值加和
+                     * @param PassiveStatusCode 被动探测判定正常状态码，1xx =1, 2xx=2, 3xx=4, 4xx=8,5xx=16，多个状态码值加和
+                     */
+                    void SetPassiveStatusCode(const uint64_t& _passiveStatusCode);
+
+                    /**
+                     * 判断参数 PassiveStatusCode 是否已赋值
+                     * @return PassiveStatusCode 是否已赋值
+                     */
+                    bool PassiveStatusCodeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -263,6 +371,42 @@ namespace TencentCloud
                      */
                     uint64_t m_statusCode;
                     bool m_statusCodeHasBeenSet;
+
+                    /**
+                     * 是否同时下发http和https规则健康检查配置
+                     */
+                    uint64_t m_protocolFlag;
+                    bool m_protocolFlagHasBeenSet;
+
+                    /**
+                     * 被动探测开关，=1表示开启；=0表示关闭
+                     */
+                    uint64_t m_passiveEnable;
+                    bool m_passiveEnableHasBeenSet;
+
+                    /**
+                     * 被动探测不健康屏蔽时间
+                     */
+                    uint64_t m_blockInter;
+                    bool m_blockInterHasBeenSet;
+
+                    /**
+                     * 被动探测不健康统计间隔
+                     */
+                    uint64_t m_failedCountInter;
+                    bool m_failedCountInterHasBeenSet;
+
+                    /**
+                     * 被动探测不健康阈值
+                     */
+                    uint64_t m_failedThreshold;
+                    bool m_failedThresholdHasBeenSet;
+
+                    /**
+                     * 被动探测判定正常状态码，1xx =1, 2xx=2, 3xx=4, 4xx=8,5xx=16，多个状态码值加和
+                     */
+                    uint64_t m_passiveStatusCode;
+                    bool m_passiveStatusCodeHasBeenSet;
 
                 };
             }

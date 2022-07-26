@@ -26,7 +26,8 @@ DescribeMicroserviceRequest::DescribeMicroserviceRequest() :
     m_microserviceIdHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_groupIdsHasBeenSet(false)
+    m_groupIdsHasBeenSet(false),
+    m_filtersHasBeenSet(false)
 {
 }
 
@@ -71,6 +72,21 @@ string DescribeMicroserviceRequest::ToJsonString() const
         for (auto itr = m_groupIds.begin(); itr != m_groupIds.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_filtersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Filters";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_filters.begin(); itr != m_filters.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
     }
 
@@ -144,6 +160,22 @@ void DescribeMicroserviceRequest::SetGroupIds(const vector<string>& _groupIds)
 bool DescribeMicroserviceRequest::GroupIdsHasBeenSet() const
 {
     return m_groupIdsHasBeenSet;
+}
+
+vector<Filter> DescribeMicroserviceRequest::GetFilters() const
+{
+    return m_filters;
+}
+
+void DescribeMicroserviceRequest::SetFilters(const vector<Filter>& _filters)
+{
+    m_filters = _filters;
+    m_filtersHasBeenSet = true;
+}
+
+bool DescribeMicroserviceRequest::FiltersHasBeenSet() const
+{
+    return m_filtersHasBeenSet;
 }
 
 

@@ -139,14 +139,14 @@ namespace TencentCloud
                     bool RealServerTypeHasBeenSet() const;
 
                     /**
-                     * 获取转发源站策略
-                     * @return Scheduler 转发源站策略
+                     * 获取监听器源站访问策略，其中：rr表示轮询；wrr表示加权轮询；lc表示最小连接数；lrtt表示最小时延。
+                     * @return Scheduler 监听器源站访问策略，其中：rr表示轮询；wrr表示加权轮询；lc表示最小连接数；lrtt表示最小时延。
                      */
                     std::string GetScheduler() const;
 
                     /**
-                     * 设置转发源站策略
-                     * @param Scheduler 转发源站策略
+                     * 设置监听器源站访问策略，其中：rr表示轮询；wrr表示加权轮询；lc表示最小连接数；lrtt表示最小时延。
+                     * @param Scheduler 监听器源站访问策略，其中：rr表示轮询；wrr表示加权轮询；lc表示最小连接数；lrtt表示最小时延。
                      */
                     void SetScheduler(const std::string& _scheduler);
 
@@ -383,7 +383,7 @@ namespace TencentCloud
                     bool m_realServerTypeHasBeenSet;
 
                     /**
-                     * 转发源站策略
+                     * 监听器源站访问策略，其中：rr表示轮询；wrr表示加权轮询；lc表示最小连接数；lrtt表示最小时延。
                      */
                     std::string m_scheduler;
                     bool m_schedulerHasBeenSet;

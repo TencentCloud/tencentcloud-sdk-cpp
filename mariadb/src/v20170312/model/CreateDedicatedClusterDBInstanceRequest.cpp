@@ -45,7 +45,9 @@ CreateDedicatedClusterDBInstanceRequest::CreateDedicatedClusterDBInstanceRequest
     m_initParamsHasBeenSet(false),
     m_nodeNumHasBeenSet(false),
     m_masterHostIdHasBeenSet(false),
-    m_slaveHostIdsHasBeenSet(false)
+    m_slaveHostIdsHasBeenSet(false),
+    m_rollbackInstanceIdHasBeenSet(false),
+    m_rollbackTimeHasBeenSet(false)
 {
 }
 
@@ -262,6 +264,22 @@ string CreateDedicatedClusterDBInstanceRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_rollbackInstanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RollbackInstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_rollbackInstanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_rollbackTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RollbackTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_rollbackTime.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -638,6 +656,38 @@ void CreateDedicatedClusterDBInstanceRequest::SetSlaveHostIds(const vector<strin
 bool CreateDedicatedClusterDBInstanceRequest::SlaveHostIdsHasBeenSet() const
 {
     return m_slaveHostIdsHasBeenSet;
+}
+
+string CreateDedicatedClusterDBInstanceRequest::GetRollbackInstanceId() const
+{
+    return m_rollbackInstanceId;
+}
+
+void CreateDedicatedClusterDBInstanceRequest::SetRollbackInstanceId(const string& _rollbackInstanceId)
+{
+    m_rollbackInstanceId = _rollbackInstanceId;
+    m_rollbackInstanceIdHasBeenSet = true;
+}
+
+bool CreateDedicatedClusterDBInstanceRequest::RollbackInstanceIdHasBeenSet() const
+{
+    return m_rollbackInstanceIdHasBeenSet;
+}
+
+string CreateDedicatedClusterDBInstanceRequest::GetRollbackTime() const
+{
+    return m_rollbackTime;
+}
+
+void CreateDedicatedClusterDBInstanceRequest::SetRollbackTime(const string& _rollbackTime)
+{
+    m_rollbackTime = _rollbackTime;
+    m_rollbackTimeHasBeenSet = true;
+}
+
+bool CreateDedicatedClusterDBInstanceRequest::RollbackTimeHasBeenSet() const
+{
+    return m_rollbackTimeHasBeenSet;
 }
 
 

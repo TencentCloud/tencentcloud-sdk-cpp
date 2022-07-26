@@ -23,14 +23,14 @@ using namespace TencentCloud::Ess::V20201111::Model;
 using namespace std;
 
 CreateDocumentRequest::CreateDocumentRequest() :
+    m_operatorHasBeenSet(false),
     m_flowIdHasBeenSet(false),
     m_templateIdHasBeenSet(false),
     m_fileNamesHasBeenSet(false),
-    m_operatorHasBeenSet(false),
-    m_agentHasBeenSet(false),
     m_formFieldsHasBeenSet(false),
     m_needPreviewHasBeenSet(false),
-    m_clientTokenHasBeenSet(false)
+    m_clientTokenHasBeenSet(false),
+    m_agentHasBeenSet(false)
 {
 }
 
@@ -40,6 +40,15 @@ string CreateDocumentRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
+
+    if (m_operatorHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Operator";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_operator.ToJsonObject(d[key.c_str()], allocator);
+    }
 
     if (m_flowIdHasBeenSet)
     {
@@ -68,24 +77,6 @@ string CreateDocumentRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
-    }
-
-    if (m_operatorHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Operator";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_operator.ToJsonObject(d[key.c_str()], allocator);
-    }
-
-    if (m_agentHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Agent";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_agent.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_formFieldsHasBeenSet)
@@ -119,6 +110,15 @@ string CreateDocumentRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_clientToken.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_agentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Agent";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_agent.ToJsonObject(d[key.c_str()], allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -126,6 +126,22 @@ string CreateDocumentRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+UserInfo CreateDocumentRequest::GetOperator() const
+{
+    return m_operator;
+}
+
+void CreateDocumentRequest::SetOperator(const UserInfo& _operator)
+{
+    m_operator = _operator;
+    m_operatorHasBeenSet = true;
+}
+
+bool CreateDocumentRequest::OperatorHasBeenSet() const
+{
+    return m_operatorHasBeenSet;
+}
 
 string CreateDocumentRequest::GetFlowId() const
 {
@@ -175,38 +191,6 @@ bool CreateDocumentRequest::FileNamesHasBeenSet() const
     return m_fileNamesHasBeenSet;
 }
 
-UserInfo CreateDocumentRequest::GetOperator() const
-{
-    return m_operator;
-}
-
-void CreateDocumentRequest::SetOperator(const UserInfo& _operator)
-{
-    m_operator = _operator;
-    m_operatorHasBeenSet = true;
-}
-
-bool CreateDocumentRequest::OperatorHasBeenSet() const
-{
-    return m_operatorHasBeenSet;
-}
-
-Agent CreateDocumentRequest::GetAgent() const
-{
-    return m_agent;
-}
-
-void CreateDocumentRequest::SetAgent(const Agent& _agent)
-{
-    m_agent = _agent;
-    m_agentHasBeenSet = true;
-}
-
-bool CreateDocumentRequest::AgentHasBeenSet() const
-{
-    return m_agentHasBeenSet;
-}
-
 vector<FormField> CreateDocumentRequest::GetFormFields() const
 {
     return m_formFields;
@@ -253,6 +237,22 @@ void CreateDocumentRequest::SetClientToken(const string& _clientToken)
 bool CreateDocumentRequest::ClientTokenHasBeenSet() const
 {
     return m_clientTokenHasBeenSet;
+}
+
+Agent CreateDocumentRequest::GetAgent() const
+{
+    return m_agent;
+}
+
+void CreateDocumentRequest::SetAgent(const Agent& _agent)
+{
+    m_agent = _agent;
+    m_agentHasBeenSet = true;
+}
+
+bool CreateDocumentRequest::AgentHasBeenSet() const
+{
+    return m_agentHasBeenSet;
 }
 
 

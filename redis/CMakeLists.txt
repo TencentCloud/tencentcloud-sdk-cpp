@@ -77,6 +77,7 @@ set(redis_public_header_model
   include/tencentcloud/redis/v20180412/model/CreateParamTemplateResponse.h
   include/tencentcloud/redis/v20180412/model/InstanceTagInfo.h
   include/tencentcloud/redis/v20180412/model/DescribeInstanceDTSInfoResponse.h
+  include/tencentcloud/redis/v20180412/model/ChangeMasterInstanceResponse.h
   include/tencentcloud/redis/v20180412/model/AddReplicationInstanceResponse.h
   include/tencentcloud/redis/v20180412/model/DestroyPostpaidInstanceResponse.h
   include/tencentcloud/redis/v20180412/model/SwitchInstanceVipRequest.h
@@ -86,7 +87,7 @@ set(redis_public_header_model
   include/tencentcloud/redis/v20180412/model/RedisCommonInstanceList.h
   include/tencentcloud/redis/v20180412/model/SourceInfo.h
   include/tencentcloud/redis/v20180412/model/ModifyDBInstanceSecurityGroupsResponse.h
-  include/tencentcloud/redis/v20180412/model/DescribeInstanceMonitorHotKeyRequest.h
+  include/tencentcloud/redis/v20180412/model/ChangeMasterInstanceRequest.h
   include/tencentcloud/redis/v20180412/model/DescribeInstanceDTSInfoRequest.h
   include/tencentcloud/redis/v20180412/model/CreateParamTemplateRequest.h
   include/tencentcloud/redis/v20180412/model/DescribeTendisSlowLogResponse.h
@@ -170,7 +171,9 @@ set(redis_public_header_model
   include/tencentcloud/redis/v20180412/model/DescribeAutoBackupConfigRequest.h
   include/tencentcloud/redis/v20180412/model/DescribeInstanceMonitorSIPResponse.h
   include/tencentcloud/redis/v20180412/model/DestroyPostpaidInstanceRequest.h
+  include/tencentcloud/redis/v20180412/model/ChangeInstanceRoleRequest.h
   include/tencentcloud/redis/v20180412/model/DeleteInstanceAccountRequest.h
+  include/tencentcloud/redis/v20180412/model/DescribeInstanceMonitorHotKeyRequest.h
   include/tencentcloud/redis/v20180412/model/UpgradeInstanceResponse.h
   include/tencentcloud/redis/v20180412/model/ManualBackupInstanceRequest.h
   include/tencentcloud/redis/v20180412/model/DescribeReplicationGroupResponse.h
@@ -218,6 +221,7 @@ set(redis_public_header_model
   include/tencentcloud/redis/v20180412/model/DescribeInstanceMonitorSIPRequest.h
   include/tencentcloud/redis/v20180412/model/InstanceClusterShard.h
   include/tencentcloud/redis/v20180412/model/TendisSlowLogDetail.h
+  include/tencentcloud/redis/v20180412/model/ChangeInstanceRoleResponse.h
   include/tencentcloud/redis/v20180412/model/UpgradeProxyVersionRequest.h
   include/tencentcloud/redis/v20180412/model/ZoneCapacityConf.h
   include/tencentcloud/redis/v20180412/model/UpgradeInstanceRequest.h
@@ -291,6 +295,7 @@ set(redis_src
   src/v20180412/model/CreateParamTemplateResponse.cpp
   src/v20180412/model/InstanceTagInfo.cpp
   src/v20180412/model/DescribeInstanceDTSInfoResponse.cpp
+  src/v20180412/model/ChangeMasterInstanceResponse.cpp
   src/v20180412/model/AddReplicationInstanceResponse.cpp
   src/v20180412/model/DestroyPostpaidInstanceResponse.cpp
   src/v20180412/model/SwitchInstanceVipRequest.cpp
@@ -300,7 +305,7 @@ set(redis_src
   src/v20180412/model/RedisCommonInstanceList.cpp
   src/v20180412/model/SourceInfo.cpp
   src/v20180412/model/ModifyDBInstanceSecurityGroupsResponse.cpp
-  src/v20180412/model/DescribeInstanceMonitorHotKeyRequest.cpp
+  src/v20180412/model/ChangeMasterInstanceRequest.cpp
   src/v20180412/model/DescribeInstanceDTSInfoRequest.cpp
   src/v20180412/model/CreateParamTemplateRequest.cpp
   src/v20180412/model/DescribeTendisSlowLogResponse.cpp
@@ -384,7 +389,9 @@ set(redis_src
   src/v20180412/model/DescribeAutoBackupConfigRequest.cpp
   src/v20180412/model/DescribeInstanceMonitorSIPResponse.cpp
   src/v20180412/model/DestroyPostpaidInstanceRequest.cpp
+  src/v20180412/model/ChangeInstanceRoleRequest.cpp
   src/v20180412/model/DeleteInstanceAccountRequest.cpp
+  src/v20180412/model/DescribeInstanceMonitorHotKeyRequest.cpp
   src/v20180412/model/UpgradeInstanceResponse.cpp
   src/v20180412/model/ManualBackupInstanceRequest.cpp
   src/v20180412/model/DescribeReplicationGroupResponse.cpp
@@ -432,6 +439,7 @@ set(redis_src
   src/v20180412/model/DescribeInstanceMonitorSIPRequest.cpp
   src/v20180412/model/InstanceClusterShard.cpp
   src/v20180412/model/TendisSlowLogDetail.cpp
+  src/v20180412/model/ChangeInstanceRoleResponse.cpp
   src/v20180412/model/UpgradeProxyVersionRequest.cpp
   src/v20180412/model/ZoneCapacityConf.cpp
   src/v20180412/model/UpgradeInstanceRequest.cpp

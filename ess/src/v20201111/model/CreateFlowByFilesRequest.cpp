@@ -23,19 +23,19 @@ using namespace TencentCloud::Ess::V20201111::Model;
 using namespace std;
 
 CreateFlowByFilesRequest::CreateFlowByFilesRequest() :
+    m_operatorHasBeenSet(false),
     m_flowNameHasBeenSet(false),
     m_approversHasBeenSet(false),
     m_fileIdsHasBeenSet(false),
-    m_operatorHasBeenSet(false),
-    m_agentHasBeenSet(false),
+    m_flowTypeHasBeenSet(false),
     m_componentsHasBeenSet(false),
-    m_deadlineHasBeenSet(false),
-    m_unorderedHasBeenSet(false),
+    m_ccInfosHasBeenSet(false),
     m_needPreviewHasBeenSet(false),
     m_flowDescriptionHasBeenSet(false),
-    m_flowTypeHasBeenSet(false),
-    m_ccInfosHasBeenSet(false),
-    m_customShowMapHasBeenSet(false)
+    m_deadlineHasBeenSet(false),
+    m_unorderedHasBeenSet(false),
+    m_customShowMapHasBeenSet(false),
+    m_agentHasBeenSet(false)
 {
 }
 
@@ -45,6 +45,15 @@ string CreateFlowByFilesRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
+
+    if (m_operatorHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Operator";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_operator.ToJsonObject(d[key.c_str()], allocator);
+    }
 
     if (m_flowNameHasBeenSet)
     {
@@ -82,22 +91,12 @@ string CreateFlowByFilesRequest::ToJsonString() const
         }
     }
 
-    if (m_operatorHasBeenSet)
+    if (m_flowTypeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Operator";
+        string key = "FlowType";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_operator.ToJsonObject(d[key.c_str()], allocator);
-    }
-
-    if (m_agentHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Agent";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_agent.ToJsonObject(d[key.c_str()], allocator);
+        d.AddMember(iKey, rapidjson::Value(m_flowType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_componentsHasBeenSet)
@@ -115,20 +114,19 @@ string CreateFlowByFilesRequest::ToJsonString() const
         }
     }
 
-    if (m_deadlineHasBeenSet)
+    if (m_ccInfosHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Deadline";
+        string key = "CcInfos";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_deadline, allocator);
-    }
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
-    if (m_unorderedHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Unordered";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_unordered, allocator);
+        int i=0;
+        for (auto itr = m_ccInfos.begin(); itr != m_ccInfos.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
     if (m_needPreviewHasBeenSet)
@@ -147,27 +145,20 @@ string CreateFlowByFilesRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_flowDescription.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_flowTypeHasBeenSet)
+    if (m_deadlineHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "FlowType";
+        string key = "Deadline";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_flowType.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, m_deadline, allocator);
     }
 
-    if (m_ccInfosHasBeenSet)
+    if (m_unorderedHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "CcInfos";
+        string key = "Unordered";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        int i=0;
-        for (auto itr = m_ccInfos.begin(); itr != m_ccInfos.end(); ++itr, ++i)
-        {
-            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
-        }
+        d.AddMember(iKey, m_unordered, allocator);
     }
 
     if (m_customShowMapHasBeenSet)
@@ -178,6 +169,15 @@ string CreateFlowByFilesRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_customShowMap.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_agentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Agent";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_agent.ToJsonObject(d[key.c_str()], allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -185,6 +185,22 @@ string CreateFlowByFilesRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+UserInfo CreateFlowByFilesRequest::GetOperator() const
+{
+    return m_operator;
+}
+
+void CreateFlowByFilesRequest::SetOperator(const UserInfo& _operator)
+{
+    m_operator = _operator;
+    m_operatorHasBeenSet = true;
+}
+
+bool CreateFlowByFilesRequest::OperatorHasBeenSet() const
+{
+    return m_operatorHasBeenSet;
+}
 
 string CreateFlowByFilesRequest::GetFlowName() const
 {
@@ -234,36 +250,20 @@ bool CreateFlowByFilesRequest::FileIdsHasBeenSet() const
     return m_fileIdsHasBeenSet;
 }
 
-UserInfo CreateFlowByFilesRequest::GetOperator() const
+string CreateFlowByFilesRequest::GetFlowType() const
 {
-    return m_operator;
+    return m_flowType;
 }
 
-void CreateFlowByFilesRequest::SetOperator(const UserInfo& _operator)
+void CreateFlowByFilesRequest::SetFlowType(const string& _flowType)
 {
-    m_operator = _operator;
-    m_operatorHasBeenSet = true;
+    m_flowType = _flowType;
+    m_flowTypeHasBeenSet = true;
 }
 
-bool CreateFlowByFilesRequest::OperatorHasBeenSet() const
+bool CreateFlowByFilesRequest::FlowTypeHasBeenSet() const
 {
-    return m_operatorHasBeenSet;
-}
-
-Agent CreateFlowByFilesRequest::GetAgent() const
-{
-    return m_agent;
-}
-
-void CreateFlowByFilesRequest::SetAgent(const Agent& _agent)
-{
-    m_agent = _agent;
-    m_agentHasBeenSet = true;
-}
-
-bool CreateFlowByFilesRequest::AgentHasBeenSet() const
-{
-    return m_agentHasBeenSet;
+    return m_flowTypeHasBeenSet;
 }
 
 vector<Component> CreateFlowByFilesRequest::GetComponents() const
@@ -282,36 +282,20 @@ bool CreateFlowByFilesRequest::ComponentsHasBeenSet() const
     return m_componentsHasBeenSet;
 }
 
-int64_t CreateFlowByFilesRequest::GetDeadline() const
+vector<CcInfo> CreateFlowByFilesRequest::GetCcInfos() const
 {
-    return m_deadline;
+    return m_ccInfos;
 }
 
-void CreateFlowByFilesRequest::SetDeadline(const int64_t& _deadline)
+void CreateFlowByFilesRequest::SetCcInfos(const vector<CcInfo>& _ccInfos)
 {
-    m_deadline = _deadline;
-    m_deadlineHasBeenSet = true;
+    m_ccInfos = _ccInfos;
+    m_ccInfosHasBeenSet = true;
 }
 
-bool CreateFlowByFilesRequest::DeadlineHasBeenSet() const
+bool CreateFlowByFilesRequest::CcInfosHasBeenSet() const
 {
-    return m_deadlineHasBeenSet;
-}
-
-bool CreateFlowByFilesRequest::GetUnordered() const
-{
-    return m_unordered;
-}
-
-void CreateFlowByFilesRequest::SetUnordered(const bool& _unordered)
-{
-    m_unordered = _unordered;
-    m_unorderedHasBeenSet = true;
-}
-
-bool CreateFlowByFilesRequest::UnorderedHasBeenSet() const
-{
-    return m_unorderedHasBeenSet;
+    return m_ccInfosHasBeenSet;
 }
 
 bool CreateFlowByFilesRequest::GetNeedPreview() const
@@ -346,36 +330,36 @@ bool CreateFlowByFilesRequest::FlowDescriptionHasBeenSet() const
     return m_flowDescriptionHasBeenSet;
 }
 
-string CreateFlowByFilesRequest::GetFlowType() const
+int64_t CreateFlowByFilesRequest::GetDeadline() const
 {
-    return m_flowType;
+    return m_deadline;
 }
 
-void CreateFlowByFilesRequest::SetFlowType(const string& _flowType)
+void CreateFlowByFilesRequest::SetDeadline(const int64_t& _deadline)
 {
-    m_flowType = _flowType;
-    m_flowTypeHasBeenSet = true;
+    m_deadline = _deadline;
+    m_deadlineHasBeenSet = true;
 }
 
-bool CreateFlowByFilesRequest::FlowTypeHasBeenSet() const
+bool CreateFlowByFilesRequest::DeadlineHasBeenSet() const
 {
-    return m_flowTypeHasBeenSet;
+    return m_deadlineHasBeenSet;
 }
 
-vector<CcInfo> CreateFlowByFilesRequest::GetCcInfos() const
+bool CreateFlowByFilesRequest::GetUnordered() const
 {
-    return m_ccInfos;
+    return m_unordered;
 }
 
-void CreateFlowByFilesRequest::SetCcInfos(const vector<CcInfo>& _ccInfos)
+void CreateFlowByFilesRequest::SetUnordered(const bool& _unordered)
 {
-    m_ccInfos = _ccInfos;
-    m_ccInfosHasBeenSet = true;
+    m_unordered = _unordered;
+    m_unorderedHasBeenSet = true;
 }
 
-bool CreateFlowByFilesRequest::CcInfosHasBeenSet() const
+bool CreateFlowByFilesRequest::UnorderedHasBeenSet() const
 {
-    return m_ccInfosHasBeenSet;
+    return m_unorderedHasBeenSet;
 }
 
 string CreateFlowByFilesRequest::GetCustomShowMap() const
@@ -392,6 +376,22 @@ void CreateFlowByFilesRequest::SetCustomShowMap(const string& _customShowMap)
 bool CreateFlowByFilesRequest::CustomShowMapHasBeenSet() const
 {
     return m_customShowMapHasBeenSet;
+}
+
+Agent CreateFlowByFilesRequest::GetAgent() const
+{
+    return m_agent;
+}
+
+void CreateFlowByFilesRequest::SetAgent(const Agent& _agent)
+{
+    m_agent = _agent;
+    m_agentHasBeenSet = true;
+}
+
+bool CreateFlowByFilesRequest::AgentHasBeenSet() const
+{
+    return m_agentHasBeenSet;
 }
 
 
