@@ -23,7 +23,9 @@ using namespace TencentCloud::Acp::V20220105::Model;
 using namespace std;
 
 DescribeResourceUsageInfoRequest::DescribeResourceUsageInfoRequest() :
-    m_priceNameHasBeenSet(false)
+    m_priceNameHasBeenSet(false),
+    m_taskTypeHasBeenSet(false),
+    m_platformHasBeenSet(false)
 {
 }
 
@@ -40,6 +42,22 @@ string DescribeResourceUsageInfoRequest::ToJsonString() const
         string key = "PriceName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_priceName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_taskTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_taskType, allocator);
+    }
+
+    if (m_platformHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Platform";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_platform, allocator);
     }
 
 
@@ -64,6 +82,38 @@ void DescribeResourceUsageInfoRequest::SetPriceName(const string& _priceName)
 bool DescribeResourceUsageInfoRequest::PriceNameHasBeenSet() const
 {
     return m_priceNameHasBeenSet;
+}
+
+int64_t DescribeResourceUsageInfoRequest::GetTaskType() const
+{
+    return m_taskType;
+}
+
+void DescribeResourceUsageInfoRequest::SetTaskType(const int64_t& _taskType)
+{
+    m_taskType = _taskType;
+    m_taskTypeHasBeenSet = true;
+}
+
+bool DescribeResourceUsageInfoRequest::TaskTypeHasBeenSet() const
+{
+    return m_taskTypeHasBeenSet;
+}
+
+int64_t DescribeResourceUsageInfoRequest::GetPlatform() const
+{
+    return m_platform;
+}
+
+void DescribeResourceUsageInfoRequest::SetPlatform(const int64_t& _platform)
+{
+    m_platform = _platform;
+    m_platformHasBeenSet = true;
+}
+
+bool DescribeResourceUsageInfoRequest::PlatformHasBeenSet() const
+{
+    return m_platformHasBeenSet;
 }
 
 

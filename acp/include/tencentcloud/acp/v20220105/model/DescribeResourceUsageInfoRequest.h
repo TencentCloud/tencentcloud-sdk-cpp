@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取资源计费项名称
-                     * @return PriceName 资源计费项名称
+                     * 获取资源计费项名称(为空时，则根据TaskType和Platform进行查询)
+                     * @return PriceName 资源计费项名称(为空时，则根据TaskType和Platform进行查询)
                      */
                     std::string GetPriceName() const;
 
                     /**
-                     * 设置资源计费项名称
-                     * @param PriceName 资源计费项名称
+                     * 设置资源计费项名称(为空时，则根据TaskType和Platform进行查询)
+                     * @param PriceName 资源计费项名称(为空时，则根据TaskType和Platform进行查询)
                      */
                     void SetPriceName(const std::string& _priceName);
 
@@ -60,13 +60,61 @@ namespace TencentCloud
                      */
                     bool PriceNameHasBeenSet() const;
 
+                    /**
+                     * 获取任务类型, 0:基础版, 1:专家版
+                     * @return TaskType 任务类型, 0:基础版, 1:专家版
+                     */
+                    int64_t GetTaskType() const;
+
+                    /**
+                     * 设置任务类型, 0:基础版, 1:专家版
+                     * @param TaskType 任务类型, 0:基础版, 1:专家版
+                     */
+                    void SetTaskType(const int64_t& _taskType);
+
+                    /**
+                     * 判断参数 TaskType 是否已赋值
+                     * @return TaskType 是否已赋值
+                     */
+                    bool TaskTypeHasBeenSet() const;
+
+                    /**
+                     * 获取应用平台, 0:android
+                     * @return Platform 应用平台, 0:android
+                     */
+                    int64_t GetPlatform() const;
+
+                    /**
+                     * 设置应用平台, 0:android
+                     * @param Platform 应用平台, 0:android
+                     */
+                    void SetPlatform(const int64_t& _platform);
+
+                    /**
+                     * 判断参数 Platform 是否已赋值
+                     * @return Platform 是否已赋值
+                     */
+                    bool PlatformHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 资源计费项名称
+                     * 资源计费项名称(为空时，则根据TaskType和Platform进行查询)
                      */
                     std::string m_priceName;
                     bool m_priceNameHasBeenSet;
+
+                    /**
+                     * 任务类型, 0:基础版, 1:专家版
+                     */
+                    int64_t m_taskType;
+                    bool m_taskTypeHasBeenSet;
+
+                    /**
+                     * 应用平台, 0:android
+                     */
+                    int64_t m_platform;
+                    bool m_platformHasBeenSet;
 
                 };
             }

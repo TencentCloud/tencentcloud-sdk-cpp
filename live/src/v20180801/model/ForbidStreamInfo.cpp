@@ -23,7 +23,9 @@ using namespace std;
 ForbidStreamInfo::ForbidStreamInfo() :
     m_streamNameHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_expireTimeHasBeenSet(false)
+    m_expireTimeHasBeenSet(false),
+    m_appNameHasBeenSet(false),
+    m_domainNameHasBeenSet(false)
 {
 }
 
@@ -62,6 +64,26 @@ CoreInternalOutcome ForbidStreamInfo::Deserialize(const rapidjson::Value &value)
         m_expireTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("AppName") && !value["AppName"].IsNull())
+    {
+        if (!value["AppName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ForbidStreamInfo.AppName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_appName = string(value["AppName"].GetString());
+        m_appNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("DomainName") && !value["DomainName"].IsNull())
+    {
+        if (!value["DomainName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ForbidStreamInfo.DomainName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_domainName = string(value["DomainName"].GetString());
+        m_domainNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +113,22 @@ void ForbidStreamInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "ExpireTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_expireTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_appNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AppName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_appName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_domainNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DomainName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_domainName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -142,5 +180,37 @@ void ForbidStreamInfo::SetExpireTime(const string& _expireTime)
 bool ForbidStreamInfo::ExpireTimeHasBeenSet() const
 {
     return m_expireTimeHasBeenSet;
+}
+
+string ForbidStreamInfo::GetAppName() const
+{
+    return m_appName;
+}
+
+void ForbidStreamInfo::SetAppName(const string& _appName)
+{
+    m_appName = _appName;
+    m_appNameHasBeenSet = true;
+}
+
+bool ForbidStreamInfo::AppNameHasBeenSet() const
+{
+    return m_appNameHasBeenSet;
+}
+
+string ForbidStreamInfo::GetDomainName() const
+{
+    return m_domainName;
+}
+
+void ForbidStreamInfo::SetDomainName(const string& _domainName)
+{
+    m_domainName = _domainName;
+    m_domainNameHasBeenSet = true;
+}
+
+bool ForbidStreamInfo::DomainNameHasBeenSet() const
+{
+    return m_domainNameHasBeenSet;
 }
 

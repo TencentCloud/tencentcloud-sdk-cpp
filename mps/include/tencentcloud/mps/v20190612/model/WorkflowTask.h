@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取已弃用，请使用各个具体任务的 ErrCode。
-                     * @return ErrCode 已弃用，请使用各个具体任务的 ErrCode。
+                     * 获取源异常时返回非0错误码，返回0 时请使用各个具体任务的 ErrCode。
+                     * @return ErrCode 源异常时返回非0错误码，返回0 时请使用各个具体任务的 ErrCode。
                      */
                     int64_t GetErrCode() const;
 
                     /**
-                     * 设置已弃用，请使用各个具体任务的 ErrCode。
-                     * @param ErrCode 已弃用，请使用各个具体任务的 ErrCode。
+                     * 设置源异常时返回非0错误码，返回0 时请使用各个具体任务的 ErrCode。
+                     * @param ErrCode 源异常时返回非0错误码，返回0 时请使用各个具体任务的 ErrCode。
                      */
                     void SetErrCode(const int64_t& _errCode);
 
@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool ErrCodeHasBeenSet() const;
 
                     /**
-                     * 获取已弃用，请使用各个具体任务的 Message。
-                     * @return Message 已弃用，请使用各个具体任务的 Message。
+                     * 获取源异常时返回对应异常Message，否则请使用各个具体任务的 Message。
+                     * @return Message 源异常时返回对应异常Message，否则请使用各个具体任务的 Message。
                      */
                     std::string GetMessage() const;
 
                     /**
-                     * 设置已弃用，请使用各个具体任务的 Message。
-                     * @param Message 已弃用，请使用各个具体任务的 Message。
+                     * 设置源异常时返回对应异常Message，否则请使用各个具体任务的 Message。
+                     * @param Message 源异常时返回对应异常Message，否则请使用各个具体任务的 Message。
                      */
                     void SetMessage(const std::string& _message);
 
@@ -265,13 +265,13 @@ namespace TencentCloud
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 已弃用，请使用各个具体任务的 ErrCode。
+                     * 源异常时返回非0错误码，返回0 时请使用各个具体任务的 ErrCode。
                      */
                     int64_t m_errCode;
                     bool m_errCodeHasBeenSet;
 
                     /**
-                     * 已弃用，请使用各个具体任务的 Message。
+                     * 源异常时返回对应异常Message，否则请使用各个具体任务的 Message。
                      */
                     std::string m_message;
                     bool m_messageHasBeenSet;

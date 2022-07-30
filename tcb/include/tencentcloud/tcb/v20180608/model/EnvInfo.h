@@ -525,6 +525,28 @@ namespace TencentCloud
                      */
                     bool IsDauPackageHasBeenSet() const;
 
+                    /**
+                     * 获取套餐类型:空\baas\tcbr
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PackageType 套餐类型:空\baas\tcbr
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetPackageType() const;
+
+                    /**
+                     * 设置套餐类型:空\baas\tcbr
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param PackageType 套餐类型:空\baas\tcbr
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPackageType(const std::string& _packageType);
+
+                    /**
+                     * 判断参数 PackageType 是否已赋值
+                     * @return PackageType 是否已赋值
+                     */
+                    bool PackageTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -677,6 +699,13 @@ namespace TencentCloud
                      */
                     bool m_isDauPackage;
                     bool m_isDauPackageHasBeenSet;
+
+                    /**
+                     * 套餐类型:空\baas\tcbr
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_packageType;
+                    bool m_packageTypeHasBeenSet;
 
                 };
             }

@@ -198,7 +198,7 @@ namespace TencentCloud
                 DescribeCvmQuotaOutcomeCallable DescribeCvmQuotaCallable(const Model::DescribeCvmQuotaRequest& request);
 
                 /**
-                 * yarn applciation 统计接口查询
+                 * yarn application 统计接口查询
                  * @param req DescribeEmrApplicationStaticsRequest
                  * @return DescribeEmrApplicationStaticsOutcome
                  */

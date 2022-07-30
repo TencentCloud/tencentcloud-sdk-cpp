@@ -84,7 +84,7 @@ namespace TencentCloud
                 DescribeKTVPlaylistDetailOutcomeCallable DescribeKTVPlaylistDetailCallable(const Model::DescribeKTVPlaylistDetailRequest& request);
 
                 /**
-                 *获取推荐歌单列表。
+                 *获取歌单列表。
                  * @param req DescribeKTVPlaylistsRequest
                  * @return DescribeKTVPlaylistsOutcome
                  */

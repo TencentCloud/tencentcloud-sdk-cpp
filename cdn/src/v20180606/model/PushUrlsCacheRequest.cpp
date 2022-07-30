@@ -28,7 +28,8 @@ PushUrlsCacheRequest::PushUrlsCacheRequest() :
     m_areaHasBeenSet(false),
     m_layerHasBeenSet(false),
     m_parseM3U8HasBeenSet(false),
-    m_disableRangeHasBeenSet(false)
+    m_disableRangeHasBeenSet(false),
+    m_urlEncodeHasBeenSet(false)
 {
 }
 
@@ -90,6 +91,14 @@ string PushUrlsCacheRequest::ToJsonString() const
         string key = "DisableRange";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_disableRange, allocator);
+    }
+
+    if (m_urlEncodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UrlEncode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_urlEncode, allocator);
     }
 
 
@@ -194,6 +203,22 @@ void PushUrlsCacheRequest::SetDisableRange(const bool& _disableRange)
 bool PushUrlsCacheRequest::DisableRangeHasBeenSet() const
 {
     return m_disableRangeHasBeenSet;
+}
+
+bool PushUrlsCacheRequest::GetUrlEncode() const
+{
+    return m_urlEncode;
+}
+
+void PushUrlsCacheRequest::SetUrlEncode(const bool& _urlEncode)
+{
+    m_urlEncode = _urlEncode;
+    m_urlEncodeHasBeenSet = true;
+}
+
+bool PushUrlsCacheRequest::UrlEncodeHasBeenSet() const
+{
+    return m_urlEncodeHasBeenSet;
 }
 
 

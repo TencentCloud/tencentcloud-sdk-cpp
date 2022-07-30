@@ -341,49 +341,6 @@ TiiaClient::DescribeImagesOutcomeCallable TiiaClient::DescribeImagesCallable(con
     return task->get_future();
 }
 
-TiiaClient::DetectCelebrityOutcome TiiaClient::DetectCelebrity(const DetectCelebrityRequest &request)
-{
-    auto outcome = MakeRequest(request, "DetectCelebrity");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DetectCelebrityResponse rsp = DetectCelebrityResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DetectCelebrityOutcome(rsp);
-        else
-            return DetectCelebrityOutcome(o.GetError());
-    }
-    else
-    {
-        return DetectCelebrityOutcome(outcome.GetError());
-    }
-}
-
-void TiiaClient::DetectCelebrityAsync(const DetectCelebrityRequest& request, const DetectCelebrityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DetectCelebrity(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-TiiaClient::DetectCelebrityOutcomeCallable TiiaClient::DetectCelebrityCallable(const DetectCelebrityRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DetectCelebrityOutcome()>>(
-        [this, request]()
-        {
-            return this->DetectCelebrity(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 TiiaClient::DetectDisgustOutcome TiiaClient::DetectDisgust(const DetectDisgustRequest &request)
 {
     auto outcome = MakeRequest(request, "DetectDisgust");

@@ -23,7 +23,9 @@ using namespace std;
 TdwParam::TdwParam() :
     m_bidHasBeenSet(false),
     m_tidHasBeenSet(false),
-    m_isDomesticHasBeenSet(false)
+    m_isDomesticHasBeenSet(false),
+    m_tdwHostHasBeenSet(false),
+    m_tdwPortHasBeenSet(false)
 {
 }
 
@@ -62,6 +64,26 @@ CoreInternalOutcome TdwParam::Deserialize(const rapidjson::Value &value)
         m_isDomesticHasBeenSet = true;
     }
 
+    if (value.HasMember("TdwHost") && !value["TdwHost"].IsNull())
+    {
+        if (!value["TdwHost"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TdwParam.TdwHost` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_tdwHost = string(value["TdwHost"].GetString());
+        m_tdwHostHasBeenSet = true;
+    }
+
+    if (value.HasMember("TdwPort") && !value["TdwPort"].IsNull())
+    {
+        if (!value["TdwPort"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TdwParam.TdwPort` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_tdwPort = value["TdwPort"].GetInt64();
+        m_tdwPortHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +113,22 @@ void TdwParam::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "IsDomestic";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isDomestic, allocator);
+    }
+
+    if (m_tdwHostHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TdwHost";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tdwHost.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tdwPortHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TdwPort";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_tdwPort, allocator);
     }
 
 }
@@ -142,5 +180,37 @@ void TdwParam::SetIsDomestic(const bool& _isDomestic)
 bool TdwParam::IsDomesticHasBeenSet() const
 {
     return m_isDomesticHasBeenSet;
+}
+
+string TdwParam::GetTdwHost() const
+{
+    return m_tdwHost;
+}
+
+void TdwParam::SetTdwHost(const string& _tdwHost)
+{
+    m_tdwHost = _tdwHost;
+    m_tdwHostHasBeenSet = true;
+}
+
+bool TdwParam::TdwHostHasBeenSet() const
+{
+    return m_tdwHostHasBeenSet;
+}
+
+int64_t TdwParam::GetTdwPort() const
+{
+    return m_tdwPort;
+}
+
+void TdwParam::SetTdwPort(const int64_t& _tdwPort)
+{
+    m_tdwPort = _tdwPort;
+    m_tdwPortHasBeenSet = true;
+}
+
+bool TdwParam::TdwPortHasBeenSet() const
+{
+    return m_tdwPortHasBeenSet;
 }
 

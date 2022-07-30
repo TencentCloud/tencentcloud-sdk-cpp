@@ -88,20 +88,24 @@ namespace TencentCloud
 
                     /**
                      * 获取FRONT 为行驶证主页正面（有红色印章的一面），
-BACK 为行驶证副页正面（有号码号牌的一面）。
+BACK 为行驶证副页正面（有号码号牌的一面），
+DOUBLE 为行驶证主页正面和副页正面。
 默认值为：FRONT。
                      * @return CardSide FRONT 为行驶证主页正面（有红色印章的一面），
-BACK 为行驶证副页正面（有号码号牌的一面）。
+BACK 为行驶证副页正面（有号码号牌的一面），
+DOUBLE 为行驶证主页正面和副页正面。
 默认值为：FRONT。
                      */
                     std::string GetCardSide() const;
 
                     /**
                      * 设置FRONT 为行驶证主页正面（有红色印章的一面），
-BACK 为行驶证副页正面（有号码号牌的一面）。
+BACK 为行驶证副页正面（有号码号牌的一面），
+DOUBLE 为行驶证主页正面和副页正面。
 默认值为：FRONT。
                      * @param CardSide FRONT 为行驶证主页正面（有红色印章的一面），
-BACK 为行驶证副页正面（有号码号牌的一面）。
+BACK 为行驶证副页正面（有号码号牌的一面），
+DOUBLE 为行驶证主页正面和副页正面。
 默认值为：FRONT。
                      */
                     void SetCardSide(const std::string& _cardSide);
@@ -130,7 +134,8 @@ BACK 为行驶证副页正面（有号码号牌的一面）。
 
                     /**
                      * FRONT 为行驶证主页正面（有红色印章的一面），
-BACK 为行驶证副页正面（有号码号牌的一面）。
+BACK 为行驶证副页正面（有号码号牌的一面），
+DOUBLE 为行驶证主页正面和副页正面。
 默认值为：FRONT。
                      */
                     std::string m_cardSide;

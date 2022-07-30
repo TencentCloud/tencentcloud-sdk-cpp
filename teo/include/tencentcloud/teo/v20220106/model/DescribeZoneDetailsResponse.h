@@ -24,6 +24,7 @@
 #include <tencentcloud/teo/v20220106/model/VanityNameServers.h>
 #include <tencentcloud/teo/v20220106/model/VanityNameServersIps.h>
 #include <tencentcloud/teo/v20220106/model/Tag.h>
+#include <tencentcloud/teo/v20220106/model/Resource.h>
 
 
 namespace TencentCloud
@@ -246,6 +247,20 @@ namespace TencentCloud
                      */
                     bool TagsHasBeenSet() const;
 
+                    /**
+                     * 获取计费资源
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Resources 计费资源
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Resource> GetResources() const;
+
+                    /**
+                     * 判断参数 Resources 是否已赋值
+                     * @return Resources 是否已赋值
+                     */
+                    bool ResourcesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -347,6 +362,13 @@ namespace TencentCloud
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
+
+                    /**
+                     * 计费资源
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Resource> m_resources;
+                    bool m_resourcesHasBeenSet;
 
                 };
             }

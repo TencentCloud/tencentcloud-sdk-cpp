@@ -24,7 +24,8 @@ using namespace std;
 
 DescribeKTVPlaylistsRequest::DescribeKTVPlaylistsRequest() :
     m_appNameHasBeenSet(false),
-    m_userIdHasBeenSet(false)
+    m_userIdHasBeenSet(false),
+    m_typesHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,19 @@ string DescribeKTVPlaylistsRequest::ToJsonString() const
         string key = "UserId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_userId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_typesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Types";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_types.begin(); itr != m_types.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -89,6 +103,22 @@ void DescribeKTVPlaylistsRequest::SetUserId(const string& _userId)
 bool DescribeKTVPlaylistsRequest::UserIdHasBeenSet() const
 {
     return m_userIdHasBeenSet;
+}
+
+vector<string> DescribeKTVPlaylistsRequest::GetTypes() const
+{
+    return m_types;
+}
+
+void DescribeKTVPlaylistsRequest::SetTypes(const vector<string>& _types)
+{
+    m_types = _types;
+    m_typesHasBeenSet = true;
+}
+
+bool DescribeKTVPlaylistsRequest::TypesHasBeenSet() const
+{
+    return m_typesHasBeenSet;
 }
 
 

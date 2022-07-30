@@ -27,6 +27,7 @@
 #include <tencentcloud/faceid/v20180301/model/DetectInfoVideoData.h>
 #include <tencentcloud/faceid/v20180301/model/Encryption.h>
 #include <tencentcloud/faceid/v20180301/model/IntentionVerifyData.h>
+#include <tencentcloud/faceid/v20180301/model/IntentionQuestionResult.h>
 
 
 namespace TencentCloud
@@ -133,6 +134,20 @@ namespace TencentCloud
                      */
                     bool IntentionVerifyDataHasBeenSet() const;
 
+                    /**
+                     * 获取意愿核身问答模式结果。若未使用该意愿核身功能，该字段返回值可以不处理。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IntentionQuestionResult 意愿核身问答模式结果。若未使用该意愿核身功能，该字段返回值可以不处理。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    IntentionQuestionResult GetIntentionQuestionResult() const;
+
+                    /**
+                     * 判断参数 IntentionQuestionResult 是否已赋值
+                     * @return IntentionQuestionResult 是否已赋值
+                     */
+                    bool IntentionQuestionResultHasBeenSet() const;
+
                 private:
 
                     /**
@@ -176,6 +191,13 @@ namespace TencentCloud
                      */
                     IntentionVerifyData m_intentionVerifyData;
                     bool m_intentionVerifyDataHasBeenSet;
+
+                    /**
+                     * 意愿核身问答模式结果。若未使用该意愿核身功能，该字段返回值可以不处理。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    IntentionQuestionResult m_intentionQuestionResult;
+                    bool m_intentionQuestionResultHasBeenSet;
 
                 };
             }

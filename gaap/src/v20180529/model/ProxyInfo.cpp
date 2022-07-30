@@ -54,7 +54,8 @@ ProxyInfo::ProxyInfo() :
     m_banStatusHasBeenSet(false),
     m_iPListHasBeenSet(false),
     m_http3SupportedHasBeenSet(false),
-    m_inBanBlacklistHasBeenSet(false)
+    m_inBanBlacklistHasBeenSet(false),
+    m_featureBitmapHasBeenSet(false)
 {
 }
 
@@ -446,6 +447,16 @@ CoreInternalOutcome ProxyInfo::Deserialize(const rapidjson::Value &value)
         m_inBanBlacklistHasBeenSet = true;
     }
 
+    if (value.HasMember("FeatureBitmap") && !value["FeatureBitmap"].IsNull())
+    {
+        if (!value["FeatureBitmap"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProxyInfo.FeatureBitmap` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_featureBitmap = value["FeatureBitmap"].GetInt64();
+        m_featureBitmapHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -754,6 +765,14 @@ void ProxyInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "InBanBlacklist";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_inBanBlacklist, allocator);
+    }
+
+    if (m_featureBitmapHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FeatureBitmap";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_featureBitmap, allocator);
     }
 
 }
@@ -1301,5 +1320,21 @@ void ProxyInfo::SetInBanBlacklist(const int64_t& _inBanBlacklist)
 bool ProxyInfo::InBanBlacklistHasBeenSet() const
 {
     return m_inBanBlacklistHasBeenSet;
+}
+
+int64_t ProxyInfo::GetFeatureBitmap() const
+{
+    return m_featureBitmap;
+}
+
+void ProxyInfo::SetFeatureBitmap(const int64_t& _featureBitmap)
+{
+    m_featureBitmap = _featureBitmap;
+    m_featureBitmapHasBeenSet = true;
+}
+
+bool ProxyInfo::FeatureBitmapHasBeenSet() const
+{
+    return m_featureBitmapHasBeenSet;
 }
 

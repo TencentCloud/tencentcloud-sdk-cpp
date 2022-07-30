@@ -37,8 +37,6 @@
 #include <tencentcloud/tiia/v20190529/model/DescribeGroupsResponse.h>
 #include <tencentcloud/tiia/v20190529/model/DescribeImagesRequest.h>
 #include <tencentcloud/tiia/v20190529/model/DescribeImagesResponse.h>
-#include <tencentcloud/tiia/v20190529/model/DetectCelebrityRequest.h>
-#include <tencentcloud/tiia/v20190529/model/DetectCelebrityResponse.h>
 #include <tencentcloud/tiia/v20190529/model/DetectDisgustRequest.h>
 #include <tencentcloud/tiia/v20190529/model/DetectDisgustResponse.h>
 #include <tencentcloud/tiia/v20190529/model/DetectEnvelopeRequest.h>
@@ -98,9 +96,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeImagesResponse> DescribeImagesOutcome;
                 typedef std::future<DescribeImagesOutcome> DescribeImagesOutcomeCallable;
                 typedef std::function<void(const TiiaClient*, const Model::DescribeImagesRequest&, DescribeImagesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImagesAsyncHandler;
-                typedef Outcome<Core::Error, Model::DetectCelebrityResponse> DetectCelebrityOutcome;
-                typedef std::future<DetectCelebrityOutcome> DetectCelebrityOutcomeCallable;
-                typedef std::function<void(const TiiaClient*, const Model::DetectCelebrityRequest&, DetectCelebrityOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DetectCelebrityAsyncHandler;
                 typedef Outcome<Core::Error, Model::DetectDisgustResponse> DetectDisgustOutcome;
                 typedef std::future<DetectDisgustOutcome> DetectDisgustOutcomeCallable;
                 typedef std::function<void(const TiiaClient*, const Model::DetectDisgustRequest&, DetectDisgustOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DetectDisgustAsyncHandler;
@@ -215,19 +210,6 @@ namespace TencentCloud
                 DescribeImagesOutcome DescribeImages(const Model::DescribeImagesRequest &request);
                 void DescribeImagesAsync(const Model::DescribeImagesRequest& request, const DescribeImagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeImagesOutcomeCallable DescribeImagesCallable(const Model::DescribeImagesRequest& request);
-
-                /**
-                 *传入一张图片，可以识别图片中包含的人物是否为公众人物，如果是，输出人物的姓名、基本信息、脸部坐标。
-
-支持识别一张图片中存在的多个人脸，针对每个人脸，会给出与之最相似的公众人物。
->     
-- 公共参数中的签名方式必须指定为V3版本，即配置SignatureMethod参数为TC3-HMAC-SHA256。
-                 * @param req DetectCelebrityRequest
-                 * @return DetectCelebrityOutcome
-                 */
-                DetectCelebrityOutcome DetectCelebrity(const Model::DetectCelebrityRequest &request);
-                void DetectCelebrityAsync(const Model::DetectCelebrityRequest& request, const DetectCelebrityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DetectCelebrityOutcomeCallable DetectCelebrityCallable(const Model::DetectCelebrityRequest& request);
 
                 /**
                  *输入一张图片，返回AI针对一张图片是否是恶心的一系列判断值。

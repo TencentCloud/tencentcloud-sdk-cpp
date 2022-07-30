@@ -801,6 +801,72 @@ CrossBorder表示跨境通道。
                      */
                     bool InBanBlacklistHasBeenSet() const;
 
+                    /**
+                     * 获取特性位图，每个bit位代表一种特性，其中：
+0，表示不支持该特性；
+1，表示支持该特性。
+特性位图含义如下（从右往左）：
+第1个bit，支持4层加速；
+第2个bit，支持7层加速；
+第3个bit，支持Http3接入；
+第4个bit，支持IPv6；
+第5个bit，支持精品BGP接入；
+第6个bit，支持三网接入；
+第7个bit，支持接入段Qos加速。
+注意：此字段可能返回 null，表示取不到有效值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FeatureBitmap 特性位图，每个bit位代表一种特性，其中：
+0，表示不支持该特性；
+1，表示支持该特性。
+特性位图含义如下（从右往左）：
+第1个bit，支持4层加速；
+第2个bit，支持7层加速；
+第3个bit，支持Http3接入；
+第4个bit，支持IPv6；
+第5个bit，支持精品BGP接入；
+第6个bit，支持三网接入；
+第7个bit，支持接入段Qos加速。
+注意：此字段可能返回 null，表示取不到有效值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetFeatureBitmap() const;
+
+                    /**
+                     * 设置特性位图，每个bit位代表一种特性，其中：
+0，表示不支持该特性；
+1，表示支持该特性。
+特性位图含义如下（从右往左）：
+第1个bit，支持4层加速；
+第2个bit，支持7层加速；
+第3个bit，支持Http3接入；
+第4个bit，支持IPv6；
+第5个bit，支持精品BGP接入；
+第6个bit，支持三网接入；
+第7个bit，支持接入段Qos加速。
+注意：此字段可能返回 null，表示取不到有效值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param FeatureBitmap 特性位图，每个bit位代表一种特性，其中：
+0，表示不支持该特性；
+1，表示支持该特性。
+特性位图含义如下（从右往左）：
+第1个bit，支持4层加速；
+第2个bit，支持7层加速；
+第3个bit，支持Http3接入；
+第4个bit，支持IPv6；
+第5个bit，支持精品BGP接入；
+第6个bit，支持三网接入；
+第7个bit，支持接入段Qos加速。
+注意：此字段可能返回 null，表示取不到有效值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetFeatureBitmap(const int64_t& _featureBitmap);
+
+                    /**
+                     * 判断参数 FeatureBitmap 是否已赋值
+                     * @return FeatureBitmap 是否已赋值
+                     */
+                    bool FeatureBitmapHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1041,6 +1107,24 @@ CrossBorder表示跨境通道。
                      */
                     int64_t m_inBanBlacklist;
                     bool m_inBanBlacklistHasBeenSet;
+
+                    /**
+                     * 特性位图，每个bit位代表一种特性，其中：
+0，表示不支持该特性；
+1，表示支持该特性。
+特性位图含义如下（从右往左）：
+第1个bit，支持4层加速；
+第2个bit，支持7层加速；
+第3个bit，支持Http3接入；
+第4个bit，支持IPv6；
+第5个bit，支持精品BGP接入；
+第6个bit，支持三网接入；
+第7个bit，支持接入段Qos加速。
+注意：此字段可能返回 null，表示取不到有效值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_featureBitmap;
+                    bool m_featureBitmapHasBeenSet;
 
                 };
             }

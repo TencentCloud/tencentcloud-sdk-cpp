@@ -78,6 +78,32 @@ namespace TencentCloud
                      */
                     bool UserIdHasBeenSet() const;
 
+                    /**
+                     * 获取类型列表，取值有：
+<li>OfficialRec：官方推荐；</li>
+<li>Customize：自定义。</li>
+                     * @return Types 类型列表，取值有：
+<li>OfficialRec：官方推荐；</li>
+<li>Customize：自定义。</li>
+                     */
+                    std::vector<std::string> GetTypes() const;
+
+                    /**
+                     * 设置类型列表，取值有：
+<li>OfficialRec：官方推荐；</li>
+<li>Customize：自定义。</li>
+                     * @param Types 类型列表，取值有：
+<li>OfficialRec：官方推荐；</li>
+<li>Customize：自定义。</li>
+                     */
+                    void SetTypes(const std::vector<std::string>& _types);
+
+                    /**
+                     * 判断参数 Types 是否已赋值
+                     * @return Types 是否已赋值
+                     */
+                    bool TypesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -91,6 +117,14 @@ namespace TencentCloud
                      */
                     std::string m_userId;
                     bool m_userIdHasBeenSet;
+
+                    /**
+                     * 类型列表，取值有：
+<li>OfficialRec：官方推荐；</li>
+<li>Customize：自定义。</li>
+                     */
+                    std::vector<std::string> m_types;
+                    bool m_typesHasBeenSet;
 
                 };
             }

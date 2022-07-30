@@ -186,8 +186,10 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/ModifyNodePoolInstanceTypesRequest.h
   include/tencentcloud/tke/v20180525/model/AddClusterCIDRRequest.h
   include/tencentcloud/tke/v20180525/model/CreateClusterRequest.h
+  include/tencentcloud/tke/v20180525/model/NodePoolOption.h
   include/tencentcloud/tke/v20180525/model/DescribeEdgeClusterExtraArgsRequest.h
   include/tencentcloud/tke/v20180525/model/DescribePrometheusGlobalConfigResponse.h
+  include/tencentcloud/tke/v20180525/model/DescribeEdgeLogSwitchesResponse.h
   include/tencentcloud/tke/v20180525/model/CreatePrometheusClusterAgentResponse.h
   include/tencentcloud/tke/v20180525/model/DescribePrometheusTemplatesResponse.h
   include/tencentcloud/tke/v20180525/model/UpdateEKSContainerInstanceResponse.h
@@ -204,7 +206,7 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/DeleteClusterAsGroupsResponse.h
   include/tencentcloud/tke/v20180525/model/RegionInstance.h
   include/tencentcloud/tke/v20180525/model/DescribePrometheusConfigRequest.h
-  include/tencentcloud/tke/v20180525/model/NodePoolOption.h
+  include/tencentcloud/tke/v20180525/model/DescribeEdgeLogSwitchesRequest.h
   include/tencentcloud/tke/v20180525/model/DeletePrometheusTemplateRequest.h
   include/tencentcloud/tke/v20180525/model/DeletePrometheusRecordRuleYamlResponse.h
   include/tencentcloud/tke/v20180525/model/DescribePrometheusTempSyncResponse.h
@@ -654,8 +656,10 @@ set(tke_src
   src/v20180525/model/ModifyNodePoolInstanceTypesRequest.cpp
   src/v20180525/model/AddClusterCIDRRequest.cpp
   src/v20180525/model/CreateClusterRequest.cpp
+  src/v20180525/model/NodePoolOption.cpp
   src/v20180525/model/DescribeEdgeClusterExtraArgsRequest.cpp
   src/v20180525/model/DescribePrometheusGlobalConfigResponse.cpp
+  src/v20180525/model/DescribeEdgeLogSwitchesResponse.cpp
   src/v20180525/model/CreatePrometheusClusterAgentResponse.cpp
   src/v20180525/model/DescribePrometheusTemplatesResponse.cpp
   src/v20180525/model/UpdateEKSContainerInstanceResponse.cpp
@@ -672,7 +676,7 @@ set(tke_src
   src/v20180525/model/DeleteClusterAsGroupsResponse.cpp
   src/v20180525/model/RegionInstance.cpp
   src/v20180525/model/DescribePrometheusConfigRequest.cpp
-  src/v20180525/model/NodePoolOption.cpp
+  src/v20180525/model/DescribeEdgeLogSwitchesRequest.cpp
   src/v20180525/model/DeletePrometheusTemplateRequest.cpp
   src/v20180525/model/DeletePrometheusRecordRuleYamlResponse.cpp
   src/v20180525/model/DescribePrometheusTempSyncResponse.cpp

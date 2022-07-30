@@ -48,41 +48,49 @@ namespace TencentCloud
 
                     /**
                      * 获取如果是 Component 控件类型，则可选类型为：
-TEXT - 内容文本控件
-DATE - 内容日期控件
-CHECK_BOX - 勾选框控件
+TEXT - 单行文本
+MULTI_LINE_TEXT - 多行文本
+CHECK_BOX - 勾选框
+ATTACHMENT - 附件
+SELECTOR - 选择器
 如果是 SignComponent 控件类型，则可选类型为：
-SIGN_SEAL - 签署印章控件
+SIGN_SEAL - 签署印章控件，静默签署时需要传入印章id作为ComponentValue
 SIGN_DATE - 签署日期控件
-SIGN_SIGNATURE - 手写签名控件
+SIGN_SIGNATURE - 手写签名控件，静默签署时不能使用
                      * @return ComponentType 如果是 Component 控件类型，则可选类型为：
-TEXT - 内容文本控件
-DATE - 内容日期控件
-CHECK_BOX - 勾选框控件
+TEXT - 单行文本
+MULTI_LINE_TEXT - 多行文本
+CHECK_BOX - 勾选框
+ATTACHMENT - 附件
+SELECTOR - 选择器
 如果是 SignComponent 控件类型，则可选类型为：
-SIGN_SEAL - 签署印章控件
+SIGN_SEAL - 签署印章控件，静默签署时需要传入印章id作为ComponentValue
 SIGN_DATE - 签署日期控件
-SIGN_SIGNATURE - 手写签名控件
+SIGN_SIGNATURE - 手写签名控件，静默签署时不能使用
                      */
                     std::string GetComponentType() const;
 
                     /**
                      * 设置如果是 Component 控件类型，则可选类型为：
-TEXT - 内容文本控件
-DATE - 内容日期控件
-CHECK_BOX - 勾选框控件
+TEXT - 单行文本
+MULTI_LINE_TEXT - 多行文本
+CHECK_BOX - 勾选框
+ATTACHMENT - 附件
+SELECTOR - 选择器
 如果是 SignComponent 控件类型，则可选类型为：
-SIGN_SEAL - 签署印章控件
+SIGN_SEAL - 签署印章控件，静默签署时需要传入印章id作为ComponentValue
 SIGN_DATE - 签署日期控件
-SIGN_SIGNATURE - 手写签名控件
+SIGN_SIGNATURE - 手写签名控件，静默签署时不能使用
                      * @param ComponentType 如果是 Component 控件类型，则可选类型为：
-TEXT - 内容文本控件
-DATE - 内容日期控件
-CHECK_BOX - 勾选框控件
+TEXT - 单行文本
+MULTI_LINE_TEXT - 多行文本
+CHECK_BOX - 勾选框
+ATTACHMENT - 附件
+SELECTOR - 选择器
 如果是 SignComponent 控件类型，则可选类型为：
-SIGN_SEAL - 签署印章控件
+SIGN_SEAL - 签署印章控件，静默签署时需要传入印章id作为ComponentValue
 SIGN_DATE - 签署日期控件
-SIGN_SIGNATURE - 手写签名控件
+SIGN_SIGNATURE - 手写签名控件，静默签署时不能使用
                      */
                     void SetComponentType(const std::string& _componentType);
 
@@ -323,14 +331,34 @@ ESIGN -- 个人印章类型
                     bool ComponentRecipientIdHasBeenSet() const;
 
                     /**
-                     * 获取控件所填写的内容
-                     * @return ComponentValue 控件所填写的内容
+                     * 获取控件填充vaule，ComponentType和传入值类型对应关系：
+TEXT - 文本内容
+MULTI_LINE_TEXT - 文本内容
+CHECK_BOX - true/false
+ATTACHMENT - 附件的FileId，需要通过UploadFiles接口上传获取
+SELECTOR - 选项值
+                     * @return ComponentValue 控件填充vaule，ComponentType和传入值类型对应关系：
+TEXT - 文本内容
+MULTI_LINE_TEXT - 文本内容
+CHECK_BOX - true/false
+ATTACHMENT - 附件的FileId，需要通过UploadFiles接口上传获取
+SELECTOR - 选项值
                      */
                     std::string GetComponentValue() const;
 
                     /**
-                     * 设置控件所填写的内容
-                     * @param ComponentValue 控件所填写的内容
+                     * 设置控件填充vaule，ComponentType和传入值类型对应关系：
+TEXT - 文本内容
+MULTI_LINE_TEXT - 文本内容
+CHECK_BOX - true/false
+ATTACHMENT - 附件的FileId，需要通过UploadFiles接口上传获取
+SELECTOR - 选项值
+                     * @param ComponentValue 控件填充vaule，ComponentType和传入值类型对应关系：
+TEXT - 文本内容
+MULTI_LINE_TEXT - 文本内容
+CHECK_BOX - true/false
+ATTACHMENT - 附件的FileId，需要通过UploadFiles接口上传获取
+SELECTOR - 选项值
                      */
                     void SetComponentValue(const std::string& _componentValue);
 
@@ -442,13 +470,15 @@ KEYWORD 关键字，使用ComponentId指定关键字
 
                     /**
                      * 如果是 Component 控件类型，则可选类型为：
-TEXT - 内容文本控件
-DATE - 内容日期控件
-CHECK_BOX - 勾选框控件
+TEXT - 单行文本
+MULTI_LINE_TEXT - 多行文本
+CHECK_BOX - 勾选框
+ATTACHMENT - 附件
+SELECTOR - 选择器
 如果是 SignComponent 控件类型，则可选类型为：
-SIGN_SEAL - 签署印章控件
+SIGN_SEAL - 签署印章控件，静默签署时需要传入印章id作为ComponentValue
 SIGN_DATE - 签署日期控件
-SIGN_SIGNATURE - 手写签名控件
+SIGN_SIGNATURE - 手写签名控件，静默签署时不能使用
                      */
                     std::string m_componentType;
                     bool m_componentTypeHasBeenSet;
@@ -528,7 +558,12 @@ ESIGN -- 个人印章类型
                     bool m_componentRecipientIdHasBeenSet;
 
                     /**
-                     * 控件所填写的内容
+                     * 控件填充vaule，ComponentType和传入值类型对应关系：
+TEXT - 文本内容
+MULTI_LINE_TEXT - 文本内容
+CHECK_BOX - true/false
+ATTACHMENT - 附件的FileId，需要通过UploadFiles接口上传获取
+SELECTOR - 选项值
                      */
                     std::string m_componentValue;
                     bool m_componentValueHasBeenSet;

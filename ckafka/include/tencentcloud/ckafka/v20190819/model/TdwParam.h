@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool TidHasBeenSet() const;
 
                     /**
-                     * 获取是否为国内站，默认true
-                     * @return IsDomestic 是否为国内站，默认true
+                     * 获取默认true
+                     * @return IsDomestic 默认true
                      */
                     bool GetIsDomestic() const;
 
                     /**
-                     * 设置是否为国内站，默认true
-                     * @param IsDomestic 是否为国内站，默认true
+                     * 设置默认true
+                     * @param IsDomestic 默认true
                      */
                     void SetIsDomestic(const bool& _isDomestic);
 
@@ -99,6 +99,42 @@ namespace TencentCloud
                      * @return IsDomestic 是否已赋值
                      */
                     bool IsDomesticHasBeenSet() const;
+
+                    /**
+                     * 获取TDW地址，默认tl-tdbank-tdmanager.tencent-distribute.com
+                     * @return TdwHost TDW地址，默认tl-tdbank-tdmanager.tencent-distribute.com
+                     */
+                    std::string GetTdwHost() const;
+
+                    /**
+                     * 设置TDW地址，默认tl-tdbank-tdmanager.tencent-distribute.com
+                     * @param TdwHost TDW地址，默认tl-tdbank-tdmanager.tencent-distribute.com
+                     */
+                    void SetTdwHost(const std::string& _tdwHost);
+
+                    /**
+                     * 判断参数 TdwHost 是否已赋值
+                     * @return TdwHost 是否已赋值
+                     */
+                    bool TdwHostHasBeenSet() const;
+
+                    /**
+                     * 获取TDW端口，默认8099
+                     * @return TdwPort TDW端口，默认8099
+                     */
+                    int64_t GetTdwPort() const;
+
+                    /**
+                     * 设置TDW端口，默认8099
+                     * @param TdwPort TDW端口，默认8099
+                     */
+                    void SetTdwPort(const int64_t& _tdwPort);
+
+                    /**
+                     * 判断参数 TdwPort 是否已赋值
+                     * @return TdwPort 是否已赋值
+                     */
+                    bool TdwPortHasBeenSet() const;
 
                 private:
 
@@ -115,10 +151,22 @@ namespace TencentCloud
                     bool m_tidHasBeenSet;
 
                     /**
-                     * 是否为国内站，默认true
+                     * 默认true
                      */
                     bool m_isDomestic;
                     bool m_isDomesticHasBeenSet;
+
+                    /**
+                     * TDW地址，默认tl-tdbank-tdmanager.tencent-distribute.com
+                     */
+                    std::string m_tdwHost;
+                    bool m_tdwHostHasBeenSet;
+
+                    /**
+                     * TDW端口，默认8099
+                     */
+                    int64_t m_tdwPort;
+                    bool m_tdwPortHasBeenSet;
 
                 };
             }

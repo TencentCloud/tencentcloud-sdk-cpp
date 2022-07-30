@@ -100,6 +100,50 @@ namespace TencentCloud
                      */
                     bool ExpireTimeHasBeenSet() const;
 
+                    /**
+                     * 获取推流路径。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AppName 推流路径。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetAppName() const;
+
+                    /**
+                     * 设置推流路径。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AppName 推流路径。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAppName(const std::string& _appName);
+
+                    /**
+                     * 判断参数 AppName 是否已赋值
+                     * @return AppName 是否已赋值
+                     */
+                    bool AppNameHasBeenSet() const;
+
+                    /**
+                     * 获取推流域名。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DomainName 推流域名。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetDomainName() const;
+
+                    /**
+                     * 设置推流域名。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DomainName 推流域名。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDomainName(const std::string& _domainName);
+
+                    /**
+                     * 判断参数 DomainName 是否已赋值
+                     * @return DomainName 是否已赋值
+                     */
+                    bool DomainNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -119,6 +163,20 @@ namespace TencentCloud
                      */
                     std::string m_expireTime;
                     bool m_expireTimeHasBeenSet;
+
+                    /**
+                     * 推流路径。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_appName;
+                    bool m_appNameHasBeenSet;
+
+                    /**
+                     * 推流域名。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_domainName;
+                    bool m_domainNameHasBeenSet;
 
                 };
             }

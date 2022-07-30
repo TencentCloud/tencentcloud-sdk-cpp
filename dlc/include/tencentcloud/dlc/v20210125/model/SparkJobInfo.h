@@ -655,6 +655,28 @@ namespace TencentCloud
                      */
                     bool TaskNumHasBeenSet() const;
 
+                    /**
+                     * 获取引擎状态：-100（默认：未知状态），-2~11：引擎正常状态；
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DataEngineStatus 引擎状态：-100（默认：未知状态），-2~11：引擎正常状态；
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetDataEngineStatus() const;
+
+                    /**
+                     * 设置引擎状态：-100（默认：未知状态），-2~11：引擎正常状态；
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DataEngineStatus 引擎状态：-100（默认：未知状态），-2~11：引擎正常状态；
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDataEngineStatus(const int64_t& _dataEngineStatus);
+
+                    /**
+                     * 判断参数 DataEngineStatus 是否已赋值
+                     * @return DataEngineStatus 是否已赋值
+                     */
+                    bool DataEngineStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -856,6 +878,13 @@ namespace TencentCloud
                      */
                     int64_t m_taskNum;
                     bool m_taskNumHasBeenSet;
+
+                    /**
+                     * 引擎状态：-100（默认：未知状态），-2~11：引擎正常状态；
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_dataEngineStatus;
+                    bool m_dataEngineStatusHasBeenSet;
 
                 };
             }

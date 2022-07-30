@@ -27,7 +27,9 @@ ListTaskJobLogDetailRequest::ListTaskJobLogDetailRequest() :
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_contextHasBeenSet(false)
+    m_contextHasBeenSet(false),
+    m_ascHasBeenSet(false),
+    m_filtersHasBeenSet(false)
 {
 }
 
@@ -76,6 +78,29 @@ string ListTaskJobLogDetailRequest::ToJsonString() const
         string key = "Context";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_context.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ascHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Asc";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_asc, allocator);
+    }
+
+    if (m_filtersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Filters";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_filters.begin(); itr != m_filters.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -164,6 +189,38 @@ void ListTaskJobLogDetailRequest::SetContext(const string& _context)
 bool ListTaskJobLogDetailRequest::ContextHasBeenSet() const
 {
     return m_contextHasBeenSet;
+}
+
+bool ListTaskJobLogDetailRequest::GetAsc() const
+{
+    return m_asc;
+}
+
+void ListTaskJobLogDetailRequest::SetAsc(const bool& _asc)
+{
+    m_asc = _asc;
+    m_ascHasBeenSet = true;
+}
+
+bool ListTaskJobLogDetailRequest::AscHasBeenSet() const
+{
+    return m_ascHasBeenSet;
+}
+
+vector<Filter> ListTaskJobLogDetailRequest::GetFilters() const
+{
+    return m_filters;
+}
+
+void ListTaskJobLogDetailRequest::SetFilters(const vector<Filter>& _filters)
+{
+    m_filters = _filters;
+    m_filtersHasBeenSet = true;
+}
+
+bool ListTaskJobLogDetailRequest::FiltersHasBeenSet() const
+{
+    return m_filtersHasBeenSet;
 }
 
 

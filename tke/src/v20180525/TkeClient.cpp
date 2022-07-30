@@ -3695,6 +3695,49 @@ TkeClient::DescribeEdgeClusterInstancesOutcomeCallable TkeClient::DescribeEdgeCl
     return task->get_future();
 }
 
+TkeClient::DescribeEdgeLogSwitchesOutcome TkeClient::DescribeEdgeLogSwitches(const DescribeEdgeLogSwitchesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeEdgeLogSwitches");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeEdgeLogSwitchesResponse rsp = DescribeEdgeLogSwitchesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeEdgeLogSwitchesOutcome(rsp);
+        else
+            return DescribeEdgeLogSwitchesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeEdgeLogSwitchesOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DescribeEdgeLogSwitchesAsync(const DescribeEdgeLogSwitchesRequest& request, const DescribeEdgeLogSwitchesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeEdgeLogSwitches(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DescribeEdgeLogSwitchesOutcomeCallable TkeClient::DescribeEdgeLogSwitchesCallable(const DescribeEdgeLogSwitchesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeEdgeLogSwitchesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeEdgeLogSwitches(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TkeClient::DescribeEksContainerInstanceLogOutcome TkeClient::DescribeEksContainerInstanceLog(const DescribeEksContainerInstanceLogRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeEksContainerInstanceLog");

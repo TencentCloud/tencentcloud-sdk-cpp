@@ -47,14 +47,34 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取控件填充value
-                     * @return ComponentValue 控件填充value
+                     * 获取控件填充value，ComponentType和传入值类型对应关系：
+TEXT - 文本内容
+MULTI_LINE_TEXT - 文本内容
+CHECK_BOX - true/false
+ATTACHMENT - 附件的FileId，需要通过UploadFiles接口上传获取
+SELECTOR - 模板中配置的选项值
+                     * @return ComponentValue 控件填充value，ComponentType和传入值类型对应关系：
+TEXT - 文本内容
+MULTI_LINE_TEXT - 文本内容
+CHECK_BOX - true/false
+ATTACHMENT - 附件的FileId，需要通过UploadFiles接口上传获取
+SELECTOR - 模板中配置的选项值
                      */
                     std::string GetComponentValue() const;
 
                     /**
-                     * 设置控件填充value
-                     * @param ComponentValue 控件填充value
+                     * 设置控件填充value，ComponentType和传入值类型对应关系：
+TEXT - 文本内容
+MULTI_LINE_TEXT - 文本内容
+CHECK_BOX - true/false
+ATTACHMENT - 附件的FileId，需要通过UploadFiles接口上传获取
+SELECTOR - 模板中配置的选项值
+                     * @param ComponentValue 控件填充value，ComponentType和传入值类型对应关系：
+TEXT - 文本内容
+MULTI_LINE_TEXT - 文本内容
+CHECK_BOX - true/false
+ATTACHMENT - 附件的FileId，需要通过UploadFiles接口上传获取
+SELECTOR - 模板中配置的选项值
                      */
                     void SetComponentValue(const std::string& _componentValue);
 
@@ -65,14 +85,14 @@ namespace TencentCloud
                     bool ComponentValueHasBeenSet() const;
 
                     /**
-                     * 获取控件id
-                     * @return ComponentId 控件id
+                     * 获取控件id，和ComponentName选择一项传入即可
+                     * @return ComponentId 控件id，和ComponentName选择一项传入即可
                      */
                     std::string GetComponentId() const;
 
                     /**
-                     * 设置控件id
-                     * @param ComponentId 控件id
+                     * 设置控件id，和ComponentName选择一项传入即可
+                     * @param ComponentId 控件id，和ComponentName选择一项传入即可
                      */
                     void SetComponentId(const std::string& _componentId);
 
@@ -83,14 +103,14 @@ namespace TencentCloud
                     bool ComponentIdHasBeenSet() const;
 
                     /**
-                     * 获取控件名字，最大长度不超过30字符
-                     * @return ComponentName 控件名字，最大长度不超过30字符
+                     * 获取控件名字，最大长度不超过30字符，和ComponentId选择一项传入即可
+                     * @return ComponentName 控件名字，最大长度不超过30字符，和ComponentId选择一项传入即可
                      */
                     std::string GetComponentName() const;
 
                     /**
-                     * 设置控件名字，最大长度不超过30字符
-                     * @param ComponentName 控件名字，最大长度不超过30字符
+                     * 设置控件名字，最大长度不超过30字符，和ComponentId选择一项传入即可
+                     * @param ComponentName 控件名字，最大长度不超过30字符，和ComponentId选择一项传入即可
                      */
                     void SetComponentName(const std::string& _componentName);
 
@@ -103,19 +123,24 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 控件填充value
+                     * 控件填充value，ComponentType和传入值类型对应关系：
+TEXT - 文本内容
+MULTI_LINE_TEXT - 文本内容
+CHECK_BOX - true/false
+ATTACHMENT - 附件的FileId，需要通过UploadFiles接口上传获取
+SELECTOR - 模板中配置的选项值
                      */
                     std::string m_componentValue;
                     bool m_componentValueHasBeenSet;
 
                     /**
-                     * 控件id
+                     * 控件id，和ComponentName选择一项传入即可
                      */
                     std::string m_componentId;
                     bool m_componentIdHasBeenSet;
 
                     /**
-                     * 控件名字，最大长度不超过30字符
+                     * 控件名字，最大长度不超过30字符，和ComponentId选择一项传入即可
                      */
                     std::string m_componentName;
                     bool m_componentNameHasBeenSet;

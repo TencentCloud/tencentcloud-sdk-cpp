@@ -66,7 +66,9 @@ DBInstance::DBInstance() :
     m_instanceTypeHasBeenSet(false),
     m_crossRegionsHasBeenSet(false),
     m_crossBackupEnabledHasBeenSet(false),
-    m_crossBackupSaveDaysHasBeenSet(false)
+    m_crossBackupSaveDaysHasBeenSet(false),
+    m_dnsPodDomainHasBeenSet(false),
+    m_tgwWanVPortHasBeenSet(false)
 {
 }
 
@@ -551,6 +553,26 @@ CoreInternalOutcome DBInstance::Deserialize(const rapidjson::Value &value)
         m_crossBackupSaveDaysHasBeenSet = true;
     }
 
+    if (value.HasMember("DnsPodDomain") && !value["DnsPodDomain"].IsNull())
+    {
+        if (!value["DnsPodDomain"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DBInstance.DnsPodDomain` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dnsPodDomain = string(value["DnsPodDomain"].GetString());
+        m_dnsPodDomainHasBeenSet = true;
+    }
+
+    if (value.HasMember("TgwWanVPort") && !value["TgwWanVPort"].IsNull())
+    {
+        if (!value["TgwWanVPort"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DBInstance.TgwWanVPort` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_tgwWanVPort = value["TgwWanVPort"].GetInt64();
+        m_tgwWanVPortHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -941,6 +963,22 @@ void DBInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "CrossBackupSaveDays";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_crossBackupSaveDays, allocator);
+    }
+
+    if (m_dnsPodDomainHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DnsPodDomain";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dnsPodDomain.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tgwWanVPortHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TgwWanVPort";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_tgwWanVPort, allocator);
     }
 
 }
@@ -1680,5 +1718,37 @@ void DBInstance::SetCrossBackupSaveDays(const uint64_t& _crossBackupSaveDays)
 bool DBInstance::CrossBackupSaveDaysHasBeenSet() const
 {
     return m_crossBackupSaveDaysHasBeenSet;
+}
+
+string DBInstance::GetDnsPodDomain() const
+{
+    return m_dnsPodDomain;
+}
+
+void DBInstance::SetDnsPodDomain(const string& _dnsPodDomain)
+{
+    m_dnsPodDomain = _dnsPodDomain;
+    m_dnsPodDomainHasBeenSet = true;
+}
+
+bool DBInstance::DnsPodDomainHasBeenSet() const
+{
+    return m_dnsPodDomainHasBeenSet;
+}
+
+int64_t DBInstance::GetTgwWanVPort() const
+{
+    return m_tgwWanVPort;
+}
+
+void DBInstance::SetTgwWanVPort(const int64_t& _tgwWanVPort)
+{
+    m_tgwWanVPort = _tgwWanVPort;
+    m_tgwWanVPortHasBeenSet = true;
+}
+
+bool DBInstance::TgwWanVPortHasBeenSet() const
+{
+    return m_tgwWanVPortHasBeenSet;
 }
 

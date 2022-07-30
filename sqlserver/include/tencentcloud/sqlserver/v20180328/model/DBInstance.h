@@ -903,6 +903,42 @@ namespace TencentCloud
                      */
                     bool CrossBackupSaveDaysHasBeenSet() const;
 
+                    /**
+                     * 获取外网地址域名
+                     * @return DnsPodDomain 外网地址域名
+                     */
+                    std::string GetDnsPodDomain() const;
+
+                    /**
+                     * 设置外网地址域名
+                     * @param DnsPodDomain 外网地址域名
+                     */
+                    void SetDnsPodDomain(const std::string& _dnsPodDomain);
+
+                    /**
+                     * 判断参数 DnsPodDomain 是否已赋值
+                     * @return DnsPodDomain 是否已赋值
+                     */
+                    bool DnsPodDomainHasBeenSet() const;
+
+                    /**
+                     * 获取外网端口号
+                     * @return TgwWanVPort 外网端口号
+                     */
+                    int64_t GetTgwWanVPort() const;
+
+                    /**
+                     * 设置外网端口号
+                     * @param TgwWanVPort 外网端口号
+                     */
+                    void SetTgwWanVPort(const int64_t& _tgwWanVPort);
+
+                    /**
+                     * 判断参数 TgwWanVPort 是否已赋值
+                     * @return TgwWanVPort 是否已赋值
+                     */
+                    bool TgwWanVPortHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1187,6 +1223,18 @@ namespace TencentCloud
                      */
                     uint64_t m_crossBackupSaveDays;
                     bool m_crossBackupSaveDaysHasBeenSet;
+
+                    /**
+                     * 外网地址域名
+                     */
+                    std::string m_dnsPodDomain;
+                    bool m_dnsPodDomainHasBeenSet;
+
+                    /**
+                     * 外网端口号
+                     */
+                    int64_t m_tgwWanVPort;
+                    bool m_tgwWanVPortHasBeenSet;
 
                 };
             }

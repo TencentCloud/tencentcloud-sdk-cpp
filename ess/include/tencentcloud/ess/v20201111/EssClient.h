@@ -27,6 +27,8 @@
 #include <tencentcloud/ess/v20201111/model/CancelFlowResponse.h>
 #include <tencentcloud/ess/v20201111/model/CancelMultiFlowSignQRCodeRequest.h>
 #include <tencentcloud/ess/v20201111/model/CancelMultiFlowSignQRCodeResponse.h>
+#include <tencentcloud/ess/v20201111/model/CreateConvertTaskApiRequest.h>
+#include <tencentcloud/ess/v20201111/model/CreateConvertTaskApiResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateDocumentRequest.h>
 #include <tencentcloud/ess/v20201111/model/CreateDocumentResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateFlowRequest.h>
@@ -45,6 +47,8 @@
 #include <tencentcloud/ess/v20201111/model/DescribeFlowTemplatesResponse.h>
 #include <tencentcloud/ess/v20201111/model/DescribeThirdPartyAuthCodeRequest.h>
 #include <tencentcloud/ess/v20201111/model/DescribeThirdPartyAuthCodeResponse.h>
+#include <tencentcloud/ess/v20201111/model/GetTaskResultApiRequest.h>
+#include <tencentcloud/ess/v20201111/model/GetTaskResultApiResponse.h>
 #include <tencentcloud/ess/v20201111/model/StartFlowRequest.h>
 #include <tencentcloud/ess/v20201111/model/StartFlowResponse.h>
 #include <tencentcloud/ess/v20201111/model/UploadFilesRequest.h>
@@ -69,6 +73,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CancelMultiFlowSignQRCodeResponse> CancelMultiFlowSignQRCodeOutcome;
                 typedef std::future<CancelMultiFlowSignQRCodeOutcome> CancelMultiFlowSignQRCodeOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::CancelMultiFlowSignQRCodeRequest&, CancelMultiFlowSignQRCodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CancelMultiFlowSignQRCodeAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateConvertTaskApiResponse> CreateConvertTaskApiOutcome;
+                typedef std::future<CreateConvertTaskApiOutcome> CreateConvertTaskApiOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::CreateConvertTaskApiRequest&, CreateConvertTaskApiOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateConvertTaskApiAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateDocumentResponse> CreateDocumentOutcome;
                 typedef std::future<CreateDocumentOutcome> CreateDocumentOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::CreateDocumentRequest&, CreateDocumentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDocumentAsyncHandler;
@@ -96,6 +103,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeThirdPartyAuthCodeResponse> DescribeThirdPartyAuthCodeOutcome;
                 typedef std::future<DescribeThirdPartyAuthCodeOutcome> DescribeThirdPartyAuthCodeOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::DescribeThirdPartyAuthCodeRequest&, DescribeThirdPartyAuthCodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeThirdPartyAuthCodeAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetTaskResultApiResponse> GetTaskResultApiOutcome;
+                typedef std::future<GetTaskResultApiOutcome> GetTaskResultApiOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::GetTaskResultApiRequest&, GetTaskResultApiOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetTaskResultApiAsyncHandler;
                 typedef Outcome<Core::Error, Model::StartFlowResponse> StartFlowOutcome;
                 typedef std::future<StartFlowOutcome> StartFlowOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::StartFlowRequest&, StartFlowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartFlowAsyncHandler;
@@ -124,6 +134,15 @@ namespace TencentCloud
                 CancelMultiFlowSignQRCodeOutcome CancelMultiFlowSignQRCode(const Model::CancelMultiFlowSignQRCodeRequest &request);
                 void CancelMultiFlowSignQRCodeAsync(const Model::CancelMultiFlowSignQRCodeRequest& request, const CancelMultiFlowSignQRCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CancelMultiFlowSignQRCodeOutcomeCallable CancelMultiFlowSignQRCodeCallable(const Model::CancelMultiFlowSignQRCodeRequest& request);
+
+                /**
+                 *创建文件转换任务
+                 * @param req CreateConvertTaskApiRequest
+                 * @return CreateConvertTaskApiOutcome
+                 */
+                CreateConvertTaskApiOutcome CreateConvertTaskApi(const Model::CreateConvertTaskApiRequest &request);
+                void CreateConvertTaskApiAsync(const Model::CreateConvertTaskApiRequest& request, const CreateConvertTaskApiAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateConvertTaskApiOutcomeCallable CreateConvertTaskApiCallable(const Model::CreateConvertTaskApiRequest& request);
 
                 /**
                  *创建签署流程电子文档
@@ -227,6 +246,15 @@ namespace TencentCloud
                 DescribeThirdPartyAuthCodeOutcome DescribeThirdPartyAuthCode(const Model::DescribeThirdPartyAuthCodeRequest &request);
                 void DescribeThirdPartyAuthCodeAsync(const Model::DescribeThirdPartyAuthCodeRequest& request, const DescribeThirdPartyAuthCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeThirdPartyAuthCodeOutcomeCallable DescribeThirdPartyAuthCodeCallable(const Model::DescribeThirdPartyAuthCodeRequest& request);
+
+                /**
+                 *查询转换任务状态
+                 * @param req GetTaskResultApiRequest
+                 * @return GetTaskResultApiOutcome
+                 */
+                GetTaskResultApiOutcome GetTaskResultApi(const Model::GetTaskResultApiRequest &request);
+                void GetTaskResultApiAsync(const Model::GetTaskResultApiRequest& request, const GetTaskResultApiAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetTaskResultApiOutcomeCallable GetTaskResultApiCallable(const Model::GetTaskResultApiRequest& request);
 
                 /**
                  *此接口用于发起流程

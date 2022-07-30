@@ -19,25 +19,63 @@ set(bma_public_header
   )
 
 set(bma_public_header_model
-  include/tencentcloud/bma/v20210624/model/DescribeCRWorkInfoRequest.h
+  include/tencentcloud/bma/v20210624/model/Monitor.h
   include/tencentcloud/bma/v20210624/model/DescribeCRWorkInfoResponse.h
-  include/tencentcloud/bma/v20210624/model/CreateCRRightRequest.h
   include/tencentcloud/bma/v20210624/model/CreateCRRightResponse.h
-  include/tencentcloud/bma/v20210624/model/CreateCRBlockRequest.h
-  include/tencentcloud/bma/v20210624/model/CreateCRBlockResponse.h
+  include/tencentcloud/bma/v20210624/model/CreateCRWorkResponse.h
+  include/tencentcloud/bma/v20210624/model/CreateCRRightRequest.h
+  include/tencentcloud/bma/v20210624/model/ModifyCRBlockStatusResponse.h
+  include/tencentcloud/bma/v20210624/model/ModifyCRObtainStatusRequest.h
+  include/tencentcloud/bma/v20210624/model/DescribeCRWorkInfoRequest.h
+  include/tencentcloud/bma/v20210624/model/MonitorTort.h
+  include/tencentcloud/bma/v20210624/model/UpdateCRWorkResponse.h
+  include/tencentcloud/bma/v20210624/model/DescribeCRMonitorsResponse.h
   include/tencentcloud/bma/v20210624/model/CreateCRCompanyVerifyResponse.h
+  include/tencentcloud/bma/v20210624/model/ModifyCRBlockStatusRequest.h
+  include/tencentcloud/bma/v20210624/model/ModifyCRMonitorRequest.h
+  include/tencentcloud/bma/v20210624/model/DescribeCRMonitorDetailResponse.h
+  include/tencentcloud/bma/v20210624/model/CreateCRWorkRequest.h
+  include/tencentcloud/bma/v20210624/model/Filter.h
+  include/tencentcloud/bma/v20210624/model/CreateCRBlockResponse.h
+  include/tencentcloud/bma/v20210624/model/ModifyCRRightStatusRequest.h
+  include/tencentcloud/bma/v20210624/model/DescribeCRMonitorsRequest.h
+  include/tencentcloud/bma/v20210624/model/UpdateCRWorkRequest.h
+  include/tencentcloud/bma/v20210624/model/DescribeCRMonitorDetailRequest.h
+  include/tencentcloud/bma/v20210624/model/ModifyCRRightStatusResponse.h
+  include/tencentcloud/bma/v20210624/model/CreateCRBlockRequest.h
+  include/tencentcloud/bma/v20210624/model/ModifyCRMonitorResponse.h
+  include/tencentcloud/bma/v20210624/model/ModifyCRObtainStatusResponse.h
   include/tencentcloud/bma/v20210624/model/CreateCRCompanyVerifyRequest.h
   )
 
 set(bma_src
   src/v20210624/BmaClient.cpp
-  src/v20210624/model/DescribeCRWorkInfoRequest.cpp
+  src/v20210624/model/Monitor.cpp
   src/v20210624/model/DescribeCRWorkInfoResponse.cpp
-  src/v20210624/model/CreateCRRightRequest.cpp
   src/v20210624/model/CreateCRRightResponse.cpp
-  src/v20210624/model/CreateCRBlockRequest.cpp
-  src/v20210624/model/CreateCRBlockResponse.cpp
+  src/v20210624/model/CreateCRWorkResponse.cpp
+  src/v20210624/model/CreateCRRightRequest.cpp
+  src/v20210624/model/ModifyCRBlockStatusResponse.cpp
+  src/v20210624/model/ModifyCRObtainStatusRequest.cpp
+  src/v20210624/model/DescribeCRWorkInfoRequest.cpp
+  src/v20210624/model/MonitorTort.cpp
+  src/v20210624/model/UpdateCRWorkResponse.cpp
+  src/v20210624/model/DescribeCRMonitorsResponse.cpp
   src/v20210624/model/CreateCRCompanyVerifyResponse.cpp
+  src/v20210624/model/ModifyCRBlockStatusRequest.cpp
+  src/v20210624/model/ModifyCRMonitorRequest.cpp
+  src/v20210624/model/DescribeCRMonitorDetailResponse.cpp
+  src/v20210624/model/CreateCRWorkRequest.cpp
+  src/v20210624/model/Filter.cpp
+  src/v20210624/model/CreateCRBlockResponse.cpp
+  src/v20210624/model/ModifyCRRightStatusRequest.cpp
+  src/v20210624/model/DescribeCRMonitorsRequest.cpp
+  src/v20210624/model/UpdateCRWorkRequest.cpp
+  src/v20210624/model/DescribeCRMonitorDetailRequest.cpp
+  src/v20210624/model/ModifyCRRightStatusResponse.cpp
+  src/v20210624/model/CreateCRBlockRequest.cpp
+  src/v20210624/model/ModifyCRMonitorResponse.cpp
+  src/v20210624/model/ModifyCRObtainStatusResponse.cpp
   src/v20210624/model/CreateCRCompanyVerifyRequest.cpp
   )
 

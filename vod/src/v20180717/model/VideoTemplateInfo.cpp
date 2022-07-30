@@ -29,7 +29,8 @@ VideoTemplateInfo::VideoTemplateInfo() :
     m_heightHasBeenSet(false),
     m_fillTypeHasBeenSet(false),
     m_vcrfHasBeenSet(false),
-    m_gopHasBeenSet(false)
+    m_gopHasBeenSet(false),
+    m_preserveHDRSwitchHasBeenSet(false)
 {
 }
 
@@ -128,6 +129,16 @@ CoreInternalOutcome VideoTemplateInfo::Deserialize(const rapidjson::Value &value
         m_gopHasBeenSet = true;
     }
 
+    if (value.HasMember("PreserveHDRSwitch") && !value["PreserveHDRSwitch"].IsNull())
+    {
+        if (!value["PreserveHDRSwitch"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VideoTemplateInfo.PreserveHDRSwitch` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_preserveHDRSwitch = string(value["PreserveHDRSwitch"].GetString());
+        m_preserveHDRSwitchHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -205,6 +216,14 @@ void VideoTemplateInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "Gop";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_gop, allocator);
+    }
+
+    if (m_preserveHDRSwitchHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PreserveHDRSwitch";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_preserveHDRSwitch.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -352,5 +371,21 @@ void VideoTemplateInfo::SetGop(const uint64_t& _gop)
 bool VideoTemplateInfo::GopHasBeenSet() const
 {
     return m_gopHasBeenSet;
+}
+
+string VideoTemplateInfo::GetPreserveHDRSwitch() const
+{
+    return m_preserveHDRSwitch;
+}
+
+void VideoTemplateInfo::SetPreserveHDRSwitch(const string& _preserveHDRSwitch)
+{
+    m_preserveHDRSwitch = _preserveHDRSwitch;
+    m_preserveHDRSwitchHasBeenSet = true;
+}
+
+bool VideoTemplateInfo::PreserveHDRSwitchHasBeenSet() const
+{
+    return m_preserveHDRSwitchHasBeenSet;
 }
 

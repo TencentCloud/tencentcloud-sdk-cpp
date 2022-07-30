@@ -355,6 +355,72 @@ namespace TencentCloud
                      */
                     bool PayStatusHasBeenSet() const;
 
+                    /**
+                     * 获取支付方式，一次性、按月、按年
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PayType 支付方式，一次性、按月、按年
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetPayType() const;
+
+                    /**
+                     * 设置支付方式，一次性、按月、按年
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param PayType 支付方式，一次性、按月、按年
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPayType(const std::string& _payType);
+
+                    /**
+                     * 判断参数 PayType 是否已赋值
+                     * @return PayType 是否已赋值
+                     */
+                    bool PayTypeHasBeenSet() const;
+
+                    /**
+                     * 获取购买时长的单位
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TimeUnit 购买时长的单位
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetTimeUnit() const;
+
+                    /**
+                     * 设置购买时长的单位
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TimeUnit 购买时长的单位
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTimeUnit(const std::string& _timeUnit);
+
+                    /**
+                     * 判断参数 TimeUnit 是否已赋值
+                     * @return TimeUnit 是否已赋值
+                     */
+                    bool TimeUnitHasBeenSet() const;
+
+                    /**
+                     * 获取购买时长
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TimeSpan 购买时长
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetTimeSpan() const;
+
+                    /**
+                     * 设置购买时长
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TimeSpan 购买时长
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTimeSpan(const int64_t& _timeSpan);
+
+                    /**
+                     * 判断参数 TimeSpan 是否已赋值
+                     * @return TimeSpan 是否已赋值
+                     */
+                    bool TimeSpanHasBeenSet() const;
+
                 private:
 
                     /**
@@ -457,6 +523,27 @@ namespace TencentCloud
                      */
                     int64_t m_payStatus;
                     bool m_payStatusHasBeenSet;
+
+                    /**
+                     * 支付方式，一次性、按月、按年
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_payType;
+                    bool m_payTypeHasBeenSet;
+
+                    /**
+                     * 购买时长的单位
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_timeUnit;
+                    bool m_timeUnitHasBeenSet;
+
+                    /**
+                     * 购买时长
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_timeSpan;
+                    bool m_timeSpanHasBeenSet;
 
                 };
             }

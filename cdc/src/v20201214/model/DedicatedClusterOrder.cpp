@@ -36,7 +36,10 @@ DedicatedClusterOrder::DedicatedClusterOrder() :
     m_cpuHasBeenSet(false),
     m_memHasBeenSet(false),
     m_gpuHasBeenSet(false),
-    m_payStatusHasBeenSet(false)
+    m_payStatusHasBeenSet(false),
+    m_payTypeHasBeenSet(false),
+    m_timeUnitHasBeenSet(false),
+    m_timeSpanHasBeenSet(false)
 {
 }
 
@@ -224,6 +227,36 @@ CoreInternalOutcome DedicatedClusterOrder::Deserialize(const rapidjson::Value &v
         m_payStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("PayType") && !value["PayType"].IsNull())
+    {
+        if (!value["PayType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DedicatedClusterOrder.PayType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_payType = string(value["PayType"].GetString());
+        m_payTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("TimeUnit") && !value["TimeUnit"].IsNull())
+    {
+        if (!value["TimeUnit"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DedicatedClusterOrder.TimeUnit` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_timeUnit = string(value["TimeUnit"].GetString());
+        m_timeUnitHasBeenSet = true;
+    }
+
+    if (value.HasMember("TimeSpan") && !value["TimeSpan"].IsNull())
+    {
+        if (!value["TimeSpan"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DedicatedClusterOrder.TimeSpan` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_timeSpan = value["TimeSpan"].GetInt64();
+        m_timeSpanHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -379,6 +412,30 @@ void DedicatedClusterOrder::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "PayStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_payStatus, allocator);
+    }
+
+    if (m_payTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PayType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_payType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_timeUnitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TimeUnit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_timeUnit.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_timeSpanHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TimeSpan";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_timeSpan, allocator);
     }
 
 }
@@ -638,5 +695,53 @@ void DedicatedClusterOrder::SetPayStatus(const int64_t& _payStatus)
 bool DedicatedClusterOrder::PayStatusHasBeenSet() const
 {
     return m_payStatusHasBeenSet;
+}
+
+string DedicatedClusterOrder::GetPayType() const
+{
+    return m_payType;
+}
+
+void DedicatedClusterOrder::SetPayType(const string& _payType)
+{
+    m_payType = _payType;
+    m_payTypeHasBeenSet = true;
+}
+
+bool DedicatedClusterOrder::PayTypeHasBeenSet() const
+{
+    return m_payTypeHasBeenSet;
+}
+
+string DedicatedClusterOrder::GetTimeUnit() const
+{
+    return m_timeUnit;
+}
+
+void DedicatedClusterOrder::SetTimeUnit(const string& _timeUnit)
+{
+    m_timeUnit = _timeUnit;
+    m_timeUnitHasBeenSet = true;
+}
+
+bool DedicatedClusterOrder::TimeUnitHasBeenSet() const
+{
+    return m_timeUnitHasBeenSet;
+}
+
+int64_t DedicatedClusterOrder::GetTimeSpan() const
+{
+    return m_timeSpan;
+}
+
+void DedicatedClusterOrder::SetTimeSpan(const int64_t& _timeSpan)
+{
+    m_timeSpan = _timeSpan;
+    m_timeSpanHasBeenSet = true;
+}
+
+bool DedicatedClusterOrder::TimeSpanHasBeenSet() const
+{
+    return m_timeSpanHasBeenSet;
 }
 

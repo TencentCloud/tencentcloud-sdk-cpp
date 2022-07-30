@@ -171,30 +171,14 @@ namespace TencentCloud
                     bool PackageTypeHasBeenSet() const;
 
                     /**
-                     * 获取支持Http3的开关，其中：
-0，表示不需要支持Http3接入；
-1，表示需要支持Http3接入。
-注意：如果开启了Http3的功能，那么该通道组就不再支持TCP/UDP接入的功能。
-该功能的启停无法在通道组创建完毕后再修改。
-                     * @return Http3Supported 支持Http3的开关，其中：
-0，表示不需要支持Http3接入；
-1，表示需要支持Http3接入。
-注意：如果开启了Http3的功能，那么该通道组就不再支持TCP/UDP接入的功能。
-该功能的启停无法在通道组创建完毕后再修改。
+                     * 获取该字段已废弃，当IPAddressVersion为IPv4时，所创建的通道组默认支持Http3.0；当为IPv6，默认不支持Http3.0。
+                     * @return Http3Supported 该字段已废弃，当IPAddressVersion为IPv4时，所创建的通道组默认支持Http3.0；当为IPv6，默认不支持Http3.0。
                      */
                     int64_t GetHttp3Supported() const;
 
                     /**
-                     * 设置支持Http3的开关，其中：
-0，表示不需要支持Http3接入；
-1，表示需要支持Http3接入。
-注意：如果开启了Http3的功能，那么该通道组就不再支持TCP/UDP接入的功能。
-该功能的启停无法在通道组创建完毕后再修改。
-                     * @param Http3Supported 支持Http3的开关，其中：
-0，表示不需要支持Http3接入；
-1，表示需要支持Http3接入。
-注意：如果开启了Http3的功能，那么该通道组就不再支持TCP/UDP接入的功能。
-该功能的启停无法在通道组创建完毕后再修改。
+                     * 设置该字段已废弃，当IPAddressVersion为IPv4时，所创建的通道组默认支持Http3.0；当为IPv6，默认不支持Http3.0。
+                     * @param Http3Supported 该字段已废弃，当IPAddressVersion为IPv4时，所创建的通道组默认支持Http3.0；当为IPv6，默认不支持Http3.0。
                      */
                     void SetHttp3Supported(const int64_t& _http3Supported);
 
@@ -249,11 +233,7 @@ namespace TencentCloud
                     bool m_packageTypeHasBeenSet;
 
                     /**
-                     * 支持Http3的开关，其中：
-0，表示不需要支持Http3接入；
-1，表示需要支持Http3接入。
-注意：如果开启了Http3的功能，那么该通道组就不再支持TCP/UDP接入的功能。
-该功能的启停无法在通道组创建完毕后再修改。
+                     * 该字段已废弃，当IPAddressVersion为IPv4时，所创建的通道组默认支持Http3.0；当为IPv6，默认不支持Http3.0。
                      */
                     int64_t m_http3Supported;
                     bool m_http3SupportedHasBeenSet;

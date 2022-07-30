@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool ModeHasBeenSet() const;
 
                     /**
-                     * 获取诊断报告类型 0:基础诊断报告, 1:总裁版诊断报告
-                     * @return ReportType 诊断报告类型 0:基础诊断报告, 1:总裁版诊断报告
+                     * 获取诊断报告类型 0:基础诊断报告，1:总裁版诊断报告，2:诊断报告json结果
+                     * @return ReportType 诊断报告类型 0:基础诊断报告，1:总裁版诊断报告，2:诊断报告json结果
                      */
                     int64_t GetReportType() const;
 
                     /**
-                     * 设置诊断报告类型 0:基础诊断报告, 1:总裁版诊断报告
-                     * @param ReportType 诊断报告类型 0:基础诊断报告, 1:总裁版诊断报告
+                     * 设置诊断报告类型 0:基础诊断报告，1:总裁版诊断报告，2:诊断报告json结果
+                     * @param ReportType 诊断报告类型 0:基础诊断报告，1:总裁版诊断报告，2:诊断报告json结果
                      */
                     void SetReportType(const int64_t& _reportType);
 
@@ -135,7 +135,7 @@ namespace TencentCloud
                     bool m_modeHasBeenSet;
 
                     /**
-                     * 诊断报告类型 0:基础诊断报告, 1:总裁版诊断报告
+                     * 诊断报告类型 0:基础诊断报告，1:总裁版诊断报告，2:诊断报告json结果
                      */
                     int64_t m_reportType;
                     bool m_reportTypeHasBeenSet;

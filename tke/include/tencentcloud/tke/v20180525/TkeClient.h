@@ -193,6 +193,8 @@
 #include <tencentcloud/tke/v20180525/model/DescribeEdgeClusterExtraArgsResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeEdgeClusterInstancesRequest.h>
 #include <tencentcloud/tke/v20180525/model/DescribeEdgeClusterInstancesResponse.h>
+#include <tencentcloud/tke/v20180525/model/DescribeEdgeLogSwitchesRequest.h>
+#include <tencentcloud/tke/v20180525/model/DescribeEdgeLogSwitchesResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeEksContainerInstanceLogRequest.h>
 #include <tencentcloud/tke/v20180525/model/DescribeEksContainerInstanceLogResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeEnableVpcCniProgressRequest.h>
@@ -628,6 +630,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeEdgeClusterInstancesResponse> DescribeEdgeClusterInstancesOutcome;
                 typedef std::future<DescribeEdgeClusterInstancesOutcome> DescribeEdgeClusterInstancesOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DescribeEdgeClusterInstancesRequest&, DescribeEdgeClusterInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEdgeClusterInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeEdgeLogSwitchesResponse> DescribeEdgeLogSwitchesOutcome;
+                typedef std::future<DescribeEdgeLogSwitchesOutcome> DescribeEdgeLogSwitchesOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::DescribeEdgeLogSwitchesRequest&, DescribeEdgeLogSwitchesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEdgeLogSwitchesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeEksContainerInstanceLogResponse> DescribeEksContainerInstanceLogOutcome;
                 typedef std::future<DescribeEksContainerInstanceLogOutcome> DescribeEksContainerInstanceLogOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DescribeEksContainerInstanceLogRequest&, DescribeEksContainerInstanceLogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEksContainerInstanceLogAsyncHandler;
@@ -1644,6 +1649,15 @@ namespace TencentCloud
                 DescribeEdgeClusterInstancesOutcome DescribeEdgeClusterInstances(const Model::DescribeEdgeClusterInstancesRequest &request);
                 void DescribeEdgeClusterInstancesAsync(const Model::DescribeEdgeClusterInstancesRequest& request, const DescribeEdgeClusterInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeEdgeClusterInstancesOutcomeCallable DescribeEdgeClusterInstancesCallable(const Model::DescribeEdgeClusterInstancesRequest& request);
+
+                /**
+                 *获取事件、审计和日志的状态接口
+                 * @param req DescribeEdgeLogSwitchesRequest
+                 * @return DescribeEdgeLogSwitchesOutcome
+                 */
+                DescribeEdgeLogSwitchesOutcome DescribeEdgeLogSwitches(const Model::DescribeEdgeLogSwitchesRequest &request);
+                void DescribeEdgeLogSwitchesAsync(const Model::DescribeEdgeLogSwitchesRequest& request, const DescribeEdgeLogSwitchesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeEdgeLogSwitchesOutcomeCallable DescribeEdgeLogSwitchesCallable(const Model::DescribeEdgeLogSwitchesRequest& request);
 
                 /**
                  *查询容器实例中容器日志

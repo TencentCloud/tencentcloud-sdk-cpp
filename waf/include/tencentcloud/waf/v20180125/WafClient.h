@@ -63,6 +63,8 @@
 #include <tencentcloud/waf/v20180125/model/DescribeIpAccessControlResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeIpHitItemsRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribeIpHitItemsResponse.h>
+#include <tencentcloud/waf/v20180125/model/DescribeUserCdcClbWafRegionsRequest.h>
+#include <tencentcloud/waf/v20180125/model/DescribeUserCdcClbWafRegionsResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeUserClbWafRegionsRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribeUserClbWafRegionsResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeWafAutoDenyRulesRequest.h>
@@ -165,6 +167,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeIpHitItemsResponse> DescribeIpHitItemsOutcome;
                 typedef std::future<DescribeIpHitItemsOutcome> DescribeIpHitItemsOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribeIpHitItemsRequest&, DescribeIpHitItemsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIpHitItemsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeUserCdcClbWafRegionsResponse> DescribeUserCdcClbWafRegionsOutcome;
+                typedef std::future<DescribeUserCdcClbWafRegionsOutcome> DescribeUserCdcClbWafRegionsOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::DescribeUserCdcClbWafRegionsRequest&, DescribeUserCdcClbWafRegionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserCdcClbWafRegionsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeUserClbWafRegionsResponse> DescribeUserClbWafRegionsOutcome;
                 typedef std::future<DescribeUserClbWafRegionsOutcome> DescribeUserClbWafRegionsOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribeUserClbWafRegionsRequest&, DescribeUserClbWafRegionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserClbWafRegionsAsyncHandler;
@@ -393,6 +398,15 @@ namespace TencentCloud
                 DescribeIpHitItemsOutcome DescribeIpHitItems(const Model::DescribeIpHitItemsRequest &request);
                 void DescribeIpHitItemsAsync(const Model::DescribeIpHitItemsRequest& request, const DescribeIpHitItemsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeIpHitItemsOutcomeCallable DescribeIpHitItemsCallable(const Model::DescribeIpHitItemsRequest& request);
+
+                /**
+                 *在CDC场景下，负载均衡型WAF的添加、编辑域名配置的时候，需要展示CDC负载均衡型WAF（cdc-clb-waf)支持的地域列表，通过DescribeUserCdcClbWafRegions既可以获得当前对客户已经开放的地域列表
+                 * @param req DescribeUserCdcClbWafRegionsRequest
+                 * @return DescribeUserCdcClbWafRegionsOutcome
+                 */
+                DescribeUserCdcClbWafRegionsOutcome DescribeUserCdcClbWafRegions(const Model::DescribeUserCdcClbWafRegionsRequest &request);
+                void DescribeUserCdcClbWafRegionsAsync(const Model::DescribeUserCdcClbWafRegionsRequest& request, const DescribeUserCdcClbWafRegionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeUserCdcClbWafRegionsOutcomeCallable DescribeUserCdcClbWafRegionsCallable(const Model::DescribeUserCdcClbWafRegionsRequest& request);
 
                 /**
                  *在负载均衡型WAF的添加、编辑域名配置的时候，需要展示负载均衡型WAF（clb-waf)支持的地域列表，通过DescribeUserClbWafRegions既可以获得当前对客户已经开放的地域列表

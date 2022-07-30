@@ -37,7 +37,9 @@ DedicatedClusterOrderItem::DedicatedClusterOrderItem() :
     m_totalMemHasBeenSet(false),
     m_totalGpuHasBeenSet(false),
     m_typeNameHasBeenSet(false),
-    m_computeFormatHasBeenSet(false)
+    m_computeFormatHasBeenSet(false),
+    m_typeFamilyHasBeenSet(false),
+    m_subOrderPayStatusHasBeenSet(false)
 {
 }
 
@@ -225,6 +227,26 @@ CoreInternalOutcome DedicatedClusterOrderItem::Deserialize(const rapidjson::Valu
         m_computeFormatHasBeenSet = true;
     }
 
+    if (value.HasMember("TypeFamily") && !value["TypeFamily"].IsNull())
+    {
+        if (!value["TypeFamily"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DedicatedClusterOrderItem.TypeFamily` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_typeFamily = string(value["TypeFamily"].GetString());
+        m_typeFamilyHasBeenSet = true;
+    }
+
+    if (value.HasMember("SubOrderPayStatus") && !value["SubOrderPayStatus"].IsNull())
+    {
+        if (!value["SubOrderPayStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DedicatedClusterOrderItem.SubOrderPayStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_subOrderPayStatus = value["SubOrderPayStatus"].GetInt64();
+        m_subOrderPayStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -381,6 +403,22 @@ void DedicatedClusterOrderItem::ToJsonObject(rapidjson::Value &value, rapidjson:
         string key = "ComputeFormat";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_computeFormat.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_typeFamilyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TypeFamily";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_typeFamily.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subOrderPayStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubOrderPayStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_subOrderPayStatus, allocator);
     }
 
 }
@@ -656,5 +694,37 @@ void DedicatedClusterOrderItem::SetComputeFormat(const string& _computeFormat)
 bool DedicatedClusterOrderItem::ComputeFormatHasBeenSet() const
 {
     return m_computeFormatHasBeenSet;
+}
+
+string DedicatedClusterOrderItem::GetTypeFamily() const
+{
+    return m_typeFamily;
+}
+
+void DedicatedClusterOrderItem::SetTypeFamily(const string& _typeFamily)
+{
+    m_typeFamily = _typeFamily;
+    m_typeFamilyHasBeenSet = true;
+}
+
+bool DedicatedClusterOrderItem::TypeFamilyHasBeenSet() const
+{
+    return m_typeFamilyHasBeenSet;
+}
+
+int64_t DedicatedClusterOrderItem::GetSubOrderPayStatus() const
+{
+    return m_subOrderPayStatus;
+}
+
+void DedicatedClusterOrderItem::SetSubOrderPayStatus(const int64_t& _subOrderPayStatus)
+{
+    m_subOrderPayStatus = _subOrderPayStatus;
+    m_subOrderPayStatusHasBeenSet = true;
+}
+
+bool DedicatedClusterOrderItem::SubOrderPayStatusHasBeenSet() const
+{
+    return m_subOrderPayStatusHasBeenSet;
 }
 

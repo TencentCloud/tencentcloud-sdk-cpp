@@ -900,6 +900,49 @@ WafClient::DescribeIpHitItemsOutcomeCallable WafClient::DescribeIpHitItemsCallab
     return task->get_future();
 }
 
+WafClient::DescribeUserCdcClbWafRegionsOutcome WafClient::DescribeUserCdcClbWafRegions(const DescribeUserCdcClbWafRegionsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeUserCdcClbWafRegions");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeUserCdcClbWafRegionsResponse rsp = DescribeUserCdcClbWafRegionsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeUserCdcClbWafRegionsOutcome(rsp);
+        else
+            return DescribeUserCdcClbWafRegionsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeUserCdcClbWafRegionsOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::DescribeUserCdcClbWafRegionsAsync(const DescribeUserCdcClbWafRegionsRequest& request, const DescribeUserCdcClbWafRegionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeUserCdcClbWafRegions(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::DescribeUserCdcClbWafRegionsOutcomeCallable WafClient::DescribeUserCdcClbWafRegionsCallable(const DescribeUserCdcClbWafRegionsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeUserCdcClbWafRegionsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeUserCdcClbWafRegions(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WafClient::DescribeUserClbWafRegionsOutcome WafClient::DescribeUserClbWafRegions(const DescribeUserClbWafRegionsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeUserClbWafRegions");

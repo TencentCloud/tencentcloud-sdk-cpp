@@ -24,12 +24,12 @@ using namespace std;
 
 CreateCRCompanyVerifyRequest::CreateCRCompanyVerifyRequest() :
     m_companyNameHasBeenSet(false),
+    m_companyIDTypeHasBeenSet(false),
     m_companyIDHasBeenSet(false),
     m_companyLegalNameHasBeenSet(false),
     m_managerNameHasBeenSet(false),
     m_managerPhoneHasBeenSet(false),
     m_verificationCodeHasBeenSet(false),
-    m_companyIDTypeHasBeenSet(false),
     m_typeHasBeenSet(false)
 {
 }
@@ -47,6 +47,14 @@ string CreateCRCompanyVerifyRequest::ToJsonString() const
         string key = "CompanyName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_companyName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_companyIDTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CompanyIDType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_companyIDType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_companyIDHasBeenSet)
@@ -89,14 +97,6 @@ string CreateCRCompanyVerifyRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_verificationCode.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_companyIDTypeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "CompanyIDType";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_companyIDType.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_typeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -127,6 +127,22 @@ void CreateCRCompanyVerifyRequest::SetCompanyName(const string& _companyName)
 bool CreateCRCompanyVerifyRequest::CompanyNameHasBeenSet() const
 {
     return m_companyNameHasBeenSet;
+}
+
+string CreateCRCompanyVerifyRequest::GetCompanyIDType() const
+{
+    return m_companyIDType;
+}
+
+void CreateCRCompanyVerifyRequest::SetCompanyIDType(const string& _companyIDType)
+{
+    m_companyIDType = _companyIDType;
+    m_companyIDTypeHasBeenSet = true;
+}
+
+bool CreateCRCompanyVerifyRequest::CompanyIDTypeHasBeenSet() const
+{
+    return m_companyIDTypeHasBeenSet;
 }
 
 string CreateCRCompanyVerifyRequest::GetCompanyID() const
@@ -207,22 +223,6 @@ void CreateCRCompanyVerifyRequest::SetVerificationCode(const string& _verificati
 bool CreateCRCompanyVerifyRequest::VerificationCodeHasBeenSet() const
 {
     return m_verificationCodeHasBeenSet;
-}
-
-string CreateCRCompanyVerifyRequest::GetCompanyIDType() const
-{
-    return m_companyIDType;
-}
-
-void CreateCRCompanyVerifyRequest::SetCompanyIDType(const string& _companyIDType)
-{
-    m_companyIDType = _companyIDType;
-    m_companyIDTypeHasBeenSet = true;
-}
-
-bool CreateCRCompanyVerifyRequest::CompanyIDTypeHasBeenSet() const
-{
-    return m_companyIDTypeHasBeenSet;
 }
 
 string CreateCRCompanyVerifyRequest::GetType() const

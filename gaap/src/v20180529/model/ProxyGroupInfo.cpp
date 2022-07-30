@@ -31,7 +31,8 @@ ProxyGroupInfo::ProxyGroupInfo() :
     m_versionHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_proxyTypeHasBeenSet(false),
-    m_http3SupportedHasBeenSet(false)
+    m_http3SupportedHasBeenSet(false),
+    m_featureBitmapHasBeenSet(false)
 {
 }
 
@@ -167,6 +168,16 @@ CoreInternalOutcome ProxyGroupInfo::Deserialize(const rapidjson::Value &value)
         m_http3SupportedHasBeenSet = true;
     }
 
+    if (value.HasMember("FeatureBitmap") && !value["FeatureBitmap"].IsNull())
+    {
+        if (!value["FeatureBitmap"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProxyGroupInfo.FeatureBitmap` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_featureBitmap = value["FeatureBitmap"].GetInt64();
+        m_featureBitmapHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -268,6 +279,14 @@ void ProxyGroupInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "Http3Supported";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_http3Supported, allocator);
+    }
+
+    if (m_featureBitmapHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FeatureBitmap";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_featureBitmap, allocator);
     }
 
 }
@@ -447,5 +466,21 @@ void ProxyGroupInfo::SetHttp3Supported(const int64_t& _http3Supported)
 bool ProxyGroupInfo::Http3SupportedHasBeenSet() const
 {
     return m_http3SupportedHasBeenSet;
+}
+
+int64_t ProxyGroupInfo::GetFeatureBitmap() const
+{
+    return m_featureBitmap;
+}
+
+void ProxyGroupInfo::SetFeatureBitmap(const int64_t& _featureBitmap)
+{
+    m_featureBitmap = _featureBitmap;
+    m_featureBitmapHasBeenSet = true;
+}
+
+bool ProxyGroupInfo::FeatureBitmapHasBeenSet() const
+{
+    return m_featureBitmapHasBeenSet;
 }
 

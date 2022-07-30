@@ -37,11 +37,12 @@ set(faceid_public_header_model
   include/tencentcloud/faceid/v20180301/model/CheckIdCardInformationResponse.h
   include/tencentcloud/faceid/v20180301/model/GetDetectInfoEnhancedResponse.h
   include/tencentcloud/faceid/v20180301/model/PhoneVerificationRequest.h
+  include/tencentcloud/faceid/v20180301/model/PhoneVerificationCMCCRequest.h
   include/tencentcloud/faceid/v20180301/model/GetEidResultRequest.h
   include/tencentcloud/faceid/v20180301/model/DetectAuthResponse.h
   include/tencentcloud/faceid/v20180301/model/PhoneVerificationResponse.h
   include/tencentcloud/faceid/v20180301/model/GetEidTokenRequest.h
-  include/tencentcloud/faceid/v20180301/model/PhoneVerificationCMCCRequest.h
+  include/tencentcloud/faceid/v20180301/model/IntentionQuestionResult.h
   include/tencentcloud/faceid/v20180301/model/GetWeChatBillDetailsResponse.h
   include/tencentcloud/faceid/v20180301/model/CheckPhoneAndNameResponse.h
   include/tencentcloud/faceid/v20180301/model/BankCard4EVerificationResponse.h
@@ -99,6 +100,7 @@ set(faceid_public_header_model
   include/tencentcloud/faceid/v20180301/model/GetFaceIdResultResponse.h
   include/tencentcloud/faceid/v20180301/model/EncryptedPhoneVerificationRequest.h
   include/tencentcloud/faceid/v20180301/model/GetRealNameAuthResultResponse.h
+  include/tencentcloud/faceid/v20180301/model/IntentionQuestion.h
   include/tencentcloud/faceid/v20180301/model/EncryptedPhoneVerificationResponse.h
   )
 
@@ -122,11 +124,12 @@ set(faceid_src
   src/v20180301/model/CheckIdCardInformationResponse.cpp
   src/v20180301/model/GetDetectInfoEnhancedResponse.cpp
   src/v20180301/model/PhoneVerificationRequest.cpp
+  src/v20180301/model/PhoneVerificationCMCCRequest.cpp
   src/v20180301/model/GetEidResultRequest.cpp
   src/v20180301/model/DetectAuthResponse.cpp
   src/v20180301/model/PhoneVerificationResponse.cpp
   src/v20180301/model/GetEidTokenRequest.cpp
-  src/v20180301/model/PhoneVerificationCMCCRequest.cpp
+  src/v20180301/model/IntentionQuestionResult.cpp
   src/v20180301/model/GetWeChatBillDetailsResponse.cpp
   src/v20180301/model/CheckPhoneAndNameResponse.cpp
   src/v20180301/model/BankCard4EVerificationResponse.cpp
@@ -184,6 +187,7 @@ set(faceid_src
   src/v20180301/model/GetFaceIdResultResponse.cpp
   src/v20180301/model/EncryptedPhoneVerificationRequest.cpp
   src/v20180301/model/GetRealNameAuthResultResponse.cpp
+  src/v20180301/model/IntentionQuestion.cpp
   src/v20180301/model/EncryptedPhoneVerificationResponse.cpp
   )
 

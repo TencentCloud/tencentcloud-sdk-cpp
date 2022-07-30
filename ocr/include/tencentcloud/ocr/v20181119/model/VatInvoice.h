@@ -359,17 +359,17 @@ namespace TencentCloud
 
                     /**
                      * 获取是否作废（红冲）是否作废（红冲）
-Y: 已作废 N：未作废 H：红冲
+Y：已作废，N：未作废，H：红冲，HP：部分红冲，HF：全额红冲
                      * @return IsAbandoned 是否作废（红冲）是否作废（红冲）
-Y: 已作废 N：未作废 H：红冲
+Y：已作废，N：未作废，H：红冲，HP：部分红冲，HF：全额红冲
                      */
                     std::string GetIsAbandoned() const;
 
                     /**
                      * 设置是否作废（红冲）是否作废（红冲）
-Y: 已作废 N：未作废 H：红冲
+Y：已作废，N：未作废，H：红冲，HP：部分红冲，HF：全额红冲
                      * @param IsAbandoned 是否作废（红冲）是否作废（红冲）
-Y: 已作废 N：未作废 H：红冲
+Y：已作废，N：未作废，H：红冲，HP：部分红冲，HF：全额红冲
                      */
                     void SetIsAbandoned(const std::string& _isAbandoned);
 
@@ -617,7 +617,7 @@ Y: 有清单 N：无清单
 
                     /**
                      * 是否作废（红冲）是否作废（红冲）
-Y: 已作废 N：未作废 H：红冲
+Y：已作废，N：未作废，H：红冲，HP：部分红冲，HF：全额红冲
                      */
                     std::string m_isAbandoned;
                     bool m_isAbandonedHasBeenSet;

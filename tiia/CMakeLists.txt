@@ -23,7 +23,6 @@ set(tiia_public_header_model
   include/tencentcloud/tiia/v20190529/model/DetectDisgustRequest.h
   include/tencentcloud/tiia/v20190529/model/SearchImageResponse.h
   include/tencentcloud/tiia/v20190529/model/RecognizeCarProRequest.h
-  include/tencentcloud/tiia/v20190529/model/RecognizeCarProResponse.h
   include/tencentcloud/tiia/v20190529/model/CreateImageRequest.h
   include/tencentcloud/tiia/v20190529/model/DetectLabelBetaRequest.h
   include/tencentcloud/tiia/v20190529/model/DeleteImagesResponse.h
@@ -53,9 +52,8 @@ set(tiia_public_header_model
   include/tencentcloud/tiia/v20190529/model/EnhanceImageRequest.h
   include/tencentcloud/tiia/v20190529/model/GroupInfo.h
   include/tencentcloud/tiia/v20190529/model/CropImageResponse.h
-  include/tencentcloud/tiia/v20190529/model/DetectCelebrityRequest.h
+  include/tencentcloud/tiia/v20190529/model/Product.h
   include/tencentcloud/tiia/v20190529/model/Coord.h
-  include/tencentcloud/tiia/v20190529/model/Face.h
   include/tencentcloud/tiia/v20190529/model/DetectEnvelopeRequest.h
   include/tencentcloud/tiia/v20190529/model/DetectProductResponse.h
   include/tencentcloud/tiia/v20190529/model/ColorInfo.h
@@ -70,12 +68,9 @@ set(tiia_public_header_model
   include/tencentcloud/tiia/v20190529/model/ImageTag.h
   include/tencentcloud/tiia/v20190529/model/Attribute.h
   include/tencentcloud/tiia/v20190529/model/ImageInfo.h
-  include/tencentcloud/tiia/v20190529/model/Labels.h
-  include/tencentcloud/tiia/v20190529/model/DetectCelebrityResponse.h
-  include/tencentcloud/tiia/v20190529/model/Product.h
+  include/tencentcloud/tiia/v20190529/model/RecognizeCarProResponse.h
   include/tencentcloud/tiia/v20190529/model/DescribeGroupsResponse.h
   include/tencentcloud/tiia/v20190529/model/CarTagItem.h
-  include/tencentcloud/tiia/v20190529/model/Threshold.h
   include/tencentcloud/tiia/v20190529/model/LemmaInfo.h
   include/tencentcloud/tiia/v20190529/model/DescribeImagesResponse.h
   include/tencentcloud/tiia/v20190529/model/DetectMisbehaviorRequest.h
@@ -88,7 +83,6 @@ set(tiia_src
   src/v20190529/model/DetectDisgustRequest.cpp
   src/v20190529/model/SearchImageResponse.cpp
   src/v20190529/model/RecognizeCarProRequest.cpp
-  src/v20190529/model/RecognizeCarProResponse.cpp
   src/v20190529/model/CreateImageRequest.cpp
   src/v20190529/model/DetectLabelBetaRequest.cpp
   src/v20190529/model/DeleteImagesResponse.cpp
@@ -118,9 +112,8 @@ set(tiia_src
   src/v20190529/model/EnhanceImageRequest.cpp
   src/v20190529/model/GroupInfo.cpp
   src/v20190529/model/CropImageResponse.cpp
-  src/v20190529/model/DetectCelebrityRequest.cpp
+  src/v20190529/model/Product.cpp
   src/v20190529/model/Coord.cpp
-  src/v20190529/model/Face.cpp
   src/v20190529/model/DetectEnvelopeRequest.cpp
   src/v20190529/model/DetectProductResponse.cpp
   src/v20190529/model/ColorInfo.cpp
@@ -135,12 +128,9 @@ set(tiia_src
   src/v20190529/model/ImageTag.cpp
   src/v20190529/model/Attribute.cpp
   src/v20190529/model/ImageInfo.cpp
-  src/v20190529/model/Labels.cpp
-  src/v20190529/model/DetectCelebrityResponse.cpp
-  src/v20190529/model/Product.cpp
+  src/v20190529/model/RecognizeCarProResponse.cpp
   src/v20190529/model/DescribeGroupsResponse.cpp
   src/v20190529/model/CarTagItem.cpp
-  src/v20190529/model/Threshold.cpp
   src/v20190529/model/LemmaInfo.cpp
   src/v20190529/model/DescribeImagesResponse.cpp
   src/v20190529/model/DetectMisbehaviorRequest.cpp

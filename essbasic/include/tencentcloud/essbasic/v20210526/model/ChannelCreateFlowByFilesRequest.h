@@ -245,6 +245,24 @@ namespace TencentCloud
                     bool CustomShowMapHasBeenSet() const;
 
                     /**
+                     * 获取渠道的业务信息，最大长度1000个字符。发起自动签署时，需设置对应自动签署场景，目前仅支持场景：处方单-E_PRESCRIPTION_AUTO_SIGN
+                     * @return CustomerData 渠道的业务信息，最大长度1000个字符。发起自动签署时，需设置对应自动签署场景，目前仅支持场景：处方单-E_PRESCRIPTION_AUTO_SIGN
+                     */
+                    std::string GetCustomerData() const;
+
+                    /**
+                     * 设置渠道的业务信息，最大长度1000个字符。发起自动签署时，需设置对应自动签署场景，目前仅支持场景：处方单-E_PRESCRIPTION_AUTO_SIGN
+                     * @param CustomerData 渠道的业务信息，最大长度1000个字符。发起自动签署时，需设置对应自动签署场景，目前仅支持场景：处方单-E_PRESCRIPTION_AUTO_SIGN
+                     */
+                    void SetCustomerData(const std::string& _customerData);
+
+                    /**
+                     * 判断参数 CustomerData 是否已赋值
+                     * @return CustomerData 是否已赋值
+                     */
+                    bool CustomerDataHasBeenSet() const;
+
+                    /**
                      * 获取操作者的信息
                      * @return Operator 操作者的信息
                      */
@@ -329,6 +347,12 @@ namespace TencentCloud
                      */
                     std::string m_customShowMap;
                     bool m_customShowMapHasBeenSet;
+
+                    /**
+                     * 渠道的业务信息，最大长度1000个字符。发起自动签署时，需设置对应自动签署场景，目前仅支持场景：处方单-E_PRESCRIPTION_AUTO_SIGN
+                     */
+                    std::string m_customerData;
+                    bool m_customerDataHasBeenSet;
 
                     /**
                      * 操作者的信息

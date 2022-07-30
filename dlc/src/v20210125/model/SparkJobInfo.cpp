@@ -52,7 +52,8 @@ SparkJobInfo::SparkJobInfo() :
     m_isLocalArchivesHasBeenSet(false),
     m_jobArchivesHasBeenSet(false),
     m_jobPythonFilesHasBeenSet(false),
-    m_taskNumHasBeenSet(false)
+    m_taskNumHasBeenSet(false),
+    m_dataEngineStatusHasBeenSet(false)
 {
 }
 
@@ -388,6 +389,16 @@ CoreInternalOutcome SparkJobInfo::Deserialize(const rapidjson::Value &value)
         m_taskNumHasBeenSet = true;
     }
 
+    if (value.HasMember("DataEngineStatus") && !value["DataEngineStatus"].IsNull())
+    {
+        if (!value["DataEngineStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SparkJobInfo.DataEngineStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_dataEngineStatus = value["DataEngineStatus"].GetInt64();
+        m_dataEngineStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -650,6 +661,14 @@ void SparkJobInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "TaskNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_taskNum, allocator);
+    }
+
+    if (m_dataEngineStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DataEngineStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_dataEngineStatus, allocator);
     }
 
 }
@@ -1165,5 +1184,21 @@ void SparkJobInfo::SetTaskNum(const int64_t& _taskNum)
 bool SparkJobInfo::TaskNumHasBeenSet() const
 {
     return m_taskNumHasBeenSet;
+}
+
+int64_t SparkJobInfo::GetDataEngineStatus() const
+{
+    return m_dataEngineStatus;
+}
+
+void SparkJobInfo::SetDataEngineStatus(const int64_t& _dataEngineStatus)
+{
+    m_dataEngineStatus = _dataEngineStatus;
+    m_dataEngineStatusHasBeenSet = true;
+}
+
+bool SparkJobInfo::DataEngineStatusHasBeenSet() const
+{
+    return m_dataEngineStatusHasBeenSet;
 }
 

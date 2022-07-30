@@ -118,14 +118,14 @@ namespace TencentCloud
                     bool ApproverMobileHasBeenSet() const;
 
                     /**
-                     * 获取本环节操作人签署控件配置，为企业静默签署时，只允许类型为SIGN_SEAL（印章）和SIGN_DATE（日期）控件，并且传入印章编号。
-                     * @return SignComponents 本环节操作人签署控件配置，为企业静默签署时，只允许类型为SIGN_SEAL（印章）和SIGN_DATE（日期）控件，并且传入印章编号。
+                     * 获取本环节操作人签署控件配置
+                     * @return SignComponents 本环节操作人签署控件配置
                      */
                     std::vector<Component> GetSignComponents() const;
 
                     /**
-                     * 设置本环节操作人签署控件配置，为企业静默签署时，只允许类型为SIGN_SEAL（印章）和SIGN_DATE（日期）控件，并且传入印章编号。
-                     * @param SignComponents 本环节操作人签署控件配置，为企业静默签署时，只允许类型为SIGN_SEAL（印章）和SIGN_DATE（日期）控件，并且传入印章编号。
+                     * 设置本环节操作人签署控件配置
+                     * @param SignComponents 本环节操作人签署控件配置
                      */
                     void SetSignComponents(const std::vector<Component>& _signComponents);
 
@@ -298,7 +298,7 @@ HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)
                     bool m_approverMobileHasBeenSet;
 
                     /**
-                     * 本环节操作人签署控件配置，为企业静默签署时，只允许类型为SIGN_SEAL（印章）和SIGN_DATE（日期）控件，并且传入印章编号。
+                     * 本环节操作人签署控件配置
                      */
                     std::vector<Component> m_signComponents;
                     bool m_signComponentsHasBeenSet;

@@ -281,6 +281,60 @@ namespace TencentCloud
                      */
                     bool DataTargetRecordMappingHasBeenSet() const;
 
+                    /**
+                     * 获取事件路由到特定主题的正则表达式，默认为(.*)
+                     * @return TopicRegex 事件路由到特定主题的正则表达式，默认为(.*)
+                     */
+                    std::string GetTopicRegex() const;
+
+                    /**
+                     * 设置事件路由到特定主题的正则表达式，默认为(.*)
+                     * @param TopicRegex 事件路由到特定主题的正则表达式，默认为(.*)
+                     */
+                    void SetTopicRegex(const std::string& _topicRegex);
+
+                    /**
+                     * 判断参数 TopicRegex 是否已赋值
+                     * @return TopicRegex 是否已赋值
+                     */
+                    bool TopicRegexHasBeenSet() const;
+
+                    /**
+                     * 获取TopicRegex的引用组，指定$1、$2等
+                     * @return TopicReplacement TopicRegex的引用组，指定$1、$2等
+                     */
+                    std::string GetTopicReplacement() const;
+
+                    /**
+                     * 设置TopicRegex的引用组，指定$1、$2等
+                     * @param TopicReplacement TopicRegex的引用组，指定$1、$2等
+                     */
+                    void SetTopicReplacement(const std::string& _topicReplacement);
+
+                    /**
+                     * 判断参数 TopicReplacement 是否已赋值
+                     * @return TopicReplacement 是否已赋值
+                     */
+                    bool TopicReplacementHasBeenSet() const;
+
+                    /**
+                     * 获取格式：库1.表1:字段1,字段2;库2.表2:字段2，表之间;（分号）隔开，字段之间,（逗号）隔开。不指定的表默认取表的主键
+                     * @return KeyColumns 格式：库1.表1:字段1,字段2;库2.表2:字段2，表之间;（分号）隔开，字段之间,（逗号）隔开。不指定的表默认取表的主键
+                     */
+                    std::string GetKeyColumns() const;
+
+                    /**
+                     * 设置格式：库1.表1:字段1,字段2;库2.表2:字段2，表之间;（分号）隔开，字段之间,（逗号）隔开。不指定的表默认取表的主键
+                     * @param KeyColumns 格式：库1.表1:字段1,字段2;库2.表2:字段2，表之间;（分号）隔开，字段之间,（逗号）隔开。不指定的表默认取表的主键
+                     */
+                    void SetKeyColumns(const std::string& _keyColumns);
+
+                    /**
+                     * 判断参数 KeyColumns 是否已赋值
+                     * @return KeyColumns 是否已赋值
+                     */
+                    bool KeyColumnsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -360,6 +414,24 @@ namespace TencentCloud
                      */
                     std::vector<RecordMapping> m_dataTargetRecordMapping;
                     bool m_dataTargetRecordMappingHasBeenSet;
+
+                    /**
+                     * 事件路由到特定主题的正则表达式，默认为(.*)
+                     */
+                    std::string m_topicRegex;
+                    bool m_topicRegexHasBeenSet;
+
+                    /**
+                     * TopicRegex的引用组，指定$1、$2等
+                     */
+                    std::string m_topicReplacement;
+                    bool m_topicReplacementHasBeenSet;
+
+                    /**
+                     * 格式：库1.表1:字段1,字段2;库2.表2:字段2，表之间;（分号）隔开，字段之间,（逗号）隔开。不指定的表默认取表的主键
+                     */
+                    std::string m_keyColumns;
+                    bool m_keyColumnsHasBeenSet;
 
                 };
             }

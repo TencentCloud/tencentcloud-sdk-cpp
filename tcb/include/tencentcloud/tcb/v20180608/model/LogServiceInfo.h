@@ -136,6 +136,28 @@ namespace TencentCloud
                      */
                     bool RegionHasBeenSet() const;
 
+                    /**
+                     * 获取topic保存时长 默认7天
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Period topic保存时长 默认7天
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetPeriod() const;
+
+                    /**
+                     * 设置topic保存时长 默认7天
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Period topic保存时长 默认7天
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPeriod(const int64_t& _period);
+
+                    /**
+                     * 判断参数 Period 是否已赋值
+                     * @return Period 是否已赋值
+                     */
+                    bool PeriodHasBeenSet() const;
+
                 private:
 
                     /**
@@ -167,6 +189,13 @@ namespace TencentCloud
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
+
+                    /**
+                     * topic保存时长 默认7天
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_period;
+                    bool m_periodHasBeenSet;
 
                 };
             }

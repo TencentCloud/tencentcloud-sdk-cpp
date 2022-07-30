@@ -273,6 +273,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220106/model/DDoSFeaturesFilter.h
   include/tencentcloud/teo/v20220106/model/DescribeWebProtectionAttackEventsResponse.h
   include/tencentcloud/teo/v20220106/model/CreatePurgeTaskRequest.h
+  include/tencentcloud/teo/v20220106/model/Resource.h
   include/tencentcloud/teo/v20220106/model/DeleteDnsRecordsResponse.h
   include/tencentcloud/teo/v20220106/model/DescribeBotLogRequest.h
   include/tencentcloud/teo/v20220106/model/DownloadL7LogsResponse.h
@@ -307,6 +308,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220106/model/DescribeOriginGroupDetailRequest.h
   include/tencentcloud/teo/v20220106/model/DescribeDDosAttackEventDetailRequest.h
   include/tencentcloud/teo/v20220106/model/DescribeTimingL4DataResponse.h
+  include/tencentcloud/teo/v20220106/model/Sv.h
   include/tencentcloud/teo/v20220106/model/BotConfig.h
   include/tencentcloud/teo/v20220106/model/TimingTypeValue.h
   include/tencentcloud/teo/v20220106/model/DescribeBotManagedRulesRequest.h
@@ -568,6 +570,7 @@ set(teo_src
   src/v20220106/model/DDoSFeaturesFilter.cpp
   src/v20220106/model/DescribeWebProtectionAttackEventsResponse.cpp
   src/v20220106/model/CreatePurgeTaskRequest.cpp
+  src/v20220106/model/Resource.cpp
   src/v20220106/model/DeleteDnsRecordsResponse.cpp
   src/v20220106/model/DescribeBotLogRequest.cpp
   src/v20220106/model/DownloadL7LogsResponse.cpp
@@ -602,6 +605,7 @@ set(teo_src
   src/v20220106/model/DescribeOriginGroupDetailRequest.cpp
   src/v20220106/model/DescribeDDosAttackEventDetailRequest.cpp
   src/v20220106/model/DescribeTimingL4DataResponse.cpp
+  src/v20220106/model/Sv.cpp
   src/v20220106/model/BotConfig.cpp
   src/v20220106/model/TimingTypeValue.cpp
   src/v20220106/model/DescribeBotManagedRulesRequest.cpp

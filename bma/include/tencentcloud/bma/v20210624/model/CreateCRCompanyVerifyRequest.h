@@ -61,6 +61,24 @@ namespace TencentCloud
                     bool CompanyNameHasBeenSet() const;
 
                     /**
+                     * 获取企业认证号码类型 1：社会信用代码 2：组织机构代码 3：企业工商注册码 4：其他 默认为1
+                     * @return CompanyIDType 企业认证号码类型 1：社会信用代码 2：组织机构代码 3：企业工商注册码 4：其他 默认为1
+                     */
+                    std::string GetCompanyIDType() const;
+
+                    /**
+                     * 设置企业认证号码类型 1：社会信用代码 2：组织机构代码 3：企业工商注册码 4：其他 默认为1
+                     * @param CompanyIDType 企业认证号码类型 1：社会信用代码 2：组织机构代码 3：企业工商注册码 4：其他 默认为1
+                     */
+                    void SetCompanyIDType(const std::string& _companyIDType);
+
+                    /**
+                     * 判断参数 CompanyIDType 是否已赋值
+                     * @return CompanyIDType 是否已赋值
+                     */
+                    bool CompanyIDTypeHasBeenSet() const;
+
+                    /**
                      * 获取企业证件号码
                      * @return CompanyID 企业证件号码
                      */
@@ -151,24 +169,6 @@ namespace TencentCloud
                     bool VerificationCodeHasBeenSet() const;
 
                     /**
-                     * 获取企业认证号码类型 1：社会信用代码 2：组织机构代码 3：企业工商注册码 4：其他 默认为1
-                     * @return CompanyIDType 企业认证号码类型 1：社会信用代码 2：组织机构代码 3：企业工商注册码 4：其他 默认为1
-                     */
-                    std::string GetCompanyIDType() const;
-
-                    /**
-                     * 设置企业认证号码类型 1：社会信用代码 2：组织机构代码 3：企业工商注册码 4：其他 默认为1
-                     * @param CompanyIDType 企业认证号码类型 1：社会信用代码 2：组织机构代码 3：企业工商注册码 4：其他 默认为1
-                     */
-                    void SetCompanyIDType(const std::string& _companyIDType);
-
-                    /**
-                     * 判断参数 CompanyIDType 是否已赋值
-                     * @return CompanyIDType 是否已赋值
-                     */
-                    bool CompanyIDTypeHasBeenSet() const;
-
-                    /**
                      * 获取xxx
                      * @return Type xxx
                      */
@@ -193,6 +193,12 @@ namespace TencentCloud
                      */
                     std::string m_companyName;
                     bool m_companyNameHasBeenSet;
+
+                    /**
+                     * 企业认证号码类型 1：社会信用代码 2：组织机构代码 3：企业工商注册码 4：其他 默认为1
+                     */
+                    std::string m_companyIDType;
+                    bool m_companyIDTypeHasBeenSet;
 
                     /**
                      * 企业证件号码
@@ -223,12 +229,6 @@ namespace TencentCloud
                      */
                     std::string m_verificationCode;
                     bool m_verificationCodeHasBeenSet;
-
-                    /**
-                     * 企业认证号码类型 1：社会信用代码 2：组织机构代码 3：企业工商注册码 4：其他 默认为1
-                     */
-                    std::string m_companyIDType;
-                    bool m_companyIDTypeHasBeenSet;
 
                     /**
                      * xxx

@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/teo/v20220106/model/Tag.h>
+#include <tencentcloud/teo/v20220106/model/Resource.h>
 
 
 namespace TencentCloud
@@ -285,6 +286,58 @@ namespace TencentCloud
                      */
                     bool TagsHasBeenSet() const;
 
+                    /**
+                     * 获取计费资源
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Resources 计费资源
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Resource> GetResources() const;
+
+                    /**
+                     * 设置计费资源
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Resources 计费资源
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetResources(const std::vector<Resource>& _resources);
+
+                    /**
+                     * 判断参数 Resources 是否已赋值
+                     * @return Resources 是否已赋值
+                     */
+                    bool ResourcesHasBeenSet() const;
+
+                    /**
+                     * 获取是否开启cname加速
+- enabled 开启
+- disabled 关闭
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CnameSpeedUp 是否开启cname加速
+- enabled 开启
+- disabled 关闭
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetCnameSpeedUp() const;
+
+                    /**
+                     * 设置是否开启cname加速
+- enabled 开启
+- disabled 关闭
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param CnameSpeedUp 是否开启cname加速
+- enabled 开启
+- disabled 关闭
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCnameSpeedUp(const std::string& _cnameSpeedUp);
+
+                    /**
+                     * 判断参数 CnameSpeedUp 是否已赋值
+                     * @return CnameSpeedUp 是否已赋值
+                     */
+                    bool CnameSpeedUpHasBeenSet() const;
+
                 private:
 
                     /**
@@ -362,6 +415,22 @@ namespace TencentCloud
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
+
+                    /**
+                     * 计费资源
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Resource> m_resources;
+                    bool m_resourcesHasBeenSet;
+
+                    /**
+                     * 是否开启cname加速
+- enabled 开启
+- disabled 关闭
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_cnameSpeedUp;
+                    bool m_cnameSpeedUpHasBeenSet;
 
                 };
             }

@@ -31,7 +31,9 @@ Zone::Zone() :
     m_createdOnHasBeenSet(false),
     m_modifiedOnHasBeenSet(false),
     m_cnameStatusHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_resourcesHasBeenSet(false),
+    m_cnameSpeedUpHasBeenSet(false)
 {
 }
 
@@ -166,6 +168,36 @@ CoreInternalOutcome Zone::Deserialize(const rapidjson::Value &value)
         m_tagsHasBeenSet = true;
     }
 
+    if (value.HasMember("Resources") && !value["Resources"].IsNull())
+    {
+        if (!value["Resources"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Zone.Resources` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Resources"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Resource item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_resources.push_back(item);
+        }
+        m_resourcesHasBeenSet = true;
+    }
+
+    if (value.HasMember("CnameSpeedUp") && !value["CnameSpeedUp"].IsNull())
+    {
+        if (!value["CnameSpeedUp"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Zone.CnameSpeedUp` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cnameSpeedUp = string(value["CnameSpeedUp"].GetString());
+        m_cnameSpeedUpHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -276,6 +308,29 @@ void Zone::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorT
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_resourcesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Resources";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_resources.begin(); itr != m_resources.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_cnameSpeedUpHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CnameSpeedUp";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cnameSpeedUp.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -455,5 +510,37 @@ void Zone::SetTags(const vector<Tag>& _tags)
 bool Zone::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+vector<Resource> Zone::GetResources() const
+{
+    return m_resources;
+}
+
+void Zone::SetResources(const vector<Resource>& _resources)
+{
+    m_resources = _resources;
+    m_resourcesHasBeenSet = true;
+}
+
+bool Zone::ResourcesHasBeenSet() const
+{
+    return m_resourcesHasBeenSet;
+}
+
+string Zone::GetCnameSpeedUp() const
+{
+    return m_cnameSpeedUp;
+}
+
+void Zone::SetCnameSpeedUp(const string& _cnameSpeedUp)
+{
+    m_cnameSpeedUp = _cnameSpeedUp;
+    m_cnameSpeedUpHasBeenSet = true;
+}
+
+bool Zone::CnameSpeedUpHasBeenSet() const
+{
+    return m_cnameSpeedUpHasBeenSet;
 }
 

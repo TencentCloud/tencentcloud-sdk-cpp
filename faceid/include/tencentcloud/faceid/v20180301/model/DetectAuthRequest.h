@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/faceid/v20180301/model/Encryption.h>
+#include <tencentcloud/faceid/v20180301/model/IntentionQuestion.h>
 
 
 namespace TencentCloud
@@ -213,6 +214,24 @@ Base64编码后的图片数据大小不超过3M，仅支持jpg、png格式。请
                      */
                     bool IntentionVerifyTextHasBeenSet() const;
 
+                    /**
+                     * 获取意愿核身过程中播报文本/问题、用户朗读/回答的文本，当前支持一个播报文本+回答文本。
+                     * @return IntentionQuestions 意愿核身过程中播报文本/问题、用户朗读/回答的文本，当前支持一个播报文本+回答文本。
+                     */
+                    std::vector<IntentionQuestion> GetIntentionQuestions() const;
+
+                    /**
+                     * 设置意愿核身过程中播报文本/问题、用户朗读/回答的文本，当前支持一个播报文本+回答文本。
+                     * @param IntentionQuestions 意愿核身过程中播报文本/问题、用户朗读/回答的文本，当前支持一个播报文本+回答文本。
+                     */
+                    void SetIntentionQuestions(const std::vector<IntentionQuestion>& _intentionQuestions);
+
+                    /**
+                     * 判断参数 IntentionQuestions 是否已赋值
+                     * @return IntentionQuestions 是否已赋值
+                     */
+                    bool IntentionQuestionsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -270,6 +289,12 @@ Base64编码后的图片数据大小不超过3M，仅支持jpg、png格式。请
                      */
                     std::string m_intentionVerifyText;
                     bool m_intentionVerifyTextHasBeenSet;
+
+                    /**
+                     * 意愿核身过程中播报文本/问题、用户朗读/回答的文本，当前支持一个播报文本+回答文本。
+                     */
+                    std::vector<IntentionQuestion> m_intentionQuestions;
+                    bool m_intentionQuestionsHasBeenSet;
 
                 };
             }

@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool PlatformHasBeenSet() const;
 
                     /**
-                     * 获取报告类型, 0:诊断报告, 1:堆栈报告
-                     * @return ReportType 报告类型, 0:诊断报告, 1:堆栈报告
+                     * 获取报告类型, 0:诊断报告, 1:堆栈报告(预留), 2:视频证据(预留), 3:报告json结果
+                     * @return ReportType 报告类型, 0:诊断报告, 1:堆栈报告(预留), 2:视频证据(预留), 3:报告json结果
                      */
                     int64_t GetReportType() const;
 
                     /**
-                     * 设置报告类型, 0:诊断报告, 1:堆栈报告
-                     * @param ReportType 报告类型, 0:诊断报告, 1:堆栈报告
+                     * 设置报告类型, 0:诊断报告, 1:堆栈报告(预留), 2:视频证据(预留), 3:报告json结果
+                     * @param ReportType 报告类型, 0:诊断报告, 1:堆栈报告(预留), 2:视频证据(预留), 3:报告json结果
                      */
                     void SetReportType(const int64_t& _reportType);
 
@@ -153,7 +153,7 @@ namespace TencentCloud
                     bool m_platformHasBeenSet;
 
                     /**
-                     * 报告类型, 0:诊断报告, 1:堆栈报告
+                     * 报告类型, 0:诊断报告, 1:堆栈报告(预留), 2:视频证据(预留), 3:报告json结果
                      */
                     int64_t m_reportType;
                     bool m_reportTypeHasBeenSet;

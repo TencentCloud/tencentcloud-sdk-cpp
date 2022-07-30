@@ -198,6 +198,24 @@ global：预热全球节点
                      */
                     bool DisableRangeHasBeenSet() const;
 
+                    /**
+                     * 获取是否对URL进行编码
+                     * @return UrlEncode 是否对URL进行编码
+                     */
+                    bool GetUrlEncode() const;
+
+                    /**
+                     * 设置是否对URL进行编码
+                     * @param UrlEncode 是否对URL进行编码
+                     */
+                    void SetUrlEncode(const bool& _urlEncode);
+
+                    /**
+                     * 判断参数 UrlEncode 是否已赋值
+                     * @return UrlEncode 是否已赋值
+                     */
+                    bool UrlEncodeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -247,6 +265,12 @@ global：预热全球节点
                      */
                     bool m_disableRange;
                     bool m_disableRangeHasBeenSet;
+
+                    /**
+                     * 是否对URL进行编码
+                     */
+                    bool m_urlEncode;
+                    bool m_urlEncodeHasBeenSet;
 
                 };
             }

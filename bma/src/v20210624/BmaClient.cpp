@@ -169,6 +169,135 @@ BmaClient::CreateCRRightOutcomeCallable BmaClient::CreateCRRightCallable(const C
     return task->get_future();
 }
 
+BmaClient::CreateCRWorkOutcome BmaClient::CreateCRWork(const CreateCRWorkRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateCRWork");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateCRWorkResponse rsp = CreateCRWorkResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateCRWorkOutcome(rsp);
+        else
+            return CreateCRWorkOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateCRWorkOutcome(outcome.GetError());
+    }
+}
+
+void BmaClient::CreateCRWorkAsync(const CreateCRWorkRequest& request, const CreateCRWorkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateCRWork(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BmaClient::CreateCRWorkOutcomeCallable BmaClient::CreateCRWorkCallable(const CreateCRWorkRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateCRWorkOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateCRWork(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+BmaClient::DescribeCRMonitorDetailOutcome BmaClient::DescribeCRMonitorDetail(const DescribeCRMonitorDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCRMonitorDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCRMonitorDetailResponse rsp = DescribeCRMonitorDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCRMonitorDetailOutcome(rsp);
+        else
+            return DescribeCRMonitorDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCRMonitorDetailOutcome(outcome.GetError());
+    }
+}
+
+void BmaClient::DescribeCRMonitorDetailAsync(const DescribeCRMonitorDetailRequest& request, const DescribeCRMonitorDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCRMonitorDetail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BmaClient::DescribeCRMonitorDetailOutcomeCallable BmaClient::DescribeCRMonitorDetailCallable(const DescribeCRMonitorDetailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCRMonitorDetailOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCRMonitorDetail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+BmaClient::DescribeCRMonitorsOutcome BmaClient::DescribeCRMonitors(const DescribeCRMonitorsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCRMonitors");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCRMonitorsResponse rsp = DescribeCRMonitorsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCRMonitorsOutcome(rsp);
+        else
+            return DescribeCRMonitorsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCRMonitorsOutcome(outcome.GetError());
+    }
+}
+
+void BmaClient::DescribeCRMonitorsAsync(const DescribeCRMonitorsRequest& request, const DescribeCRMonitorsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCRMonitors(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BmaClient::DescribeCRMonitorsOutcomeCallable BmaClient::DescribeCRMonitorsCallable(const DescribeCRMonitorsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCRMonitorsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCRMonitors(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 BmaClient::DescribeCRWorkInfoOutcome BmaClient::DescribeCRWorkInfo(const DescribeCRWorkInfoRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeCRWorkInfo");
@@ -205,6 +334,221 @@ BmaClient::DescribeCRWorkInfoOutcomeCallable BmaClient::DescribeCRWorkInfoCallab
         [this, request]()
         {
             return this->DescribeCRWorkInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+BmaClient::ModifyCRBlockStatusOutcome BmaClient::ModifyCRBlockStatus(const ModifyCRBlockStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyCRBlockStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyCRBlockStatusResponse rsp = ModifyCRBlockStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyCRBlockStatusOutcome(rsp);
+        else
+            return ModifyCRBlockStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyCRBlockStatusOutcome(outcome.GetError());
+    }
+}
+
+void BmaClient::ModifyCRBlockStatusAsync(const ModifyCRBlockStatusRequest& request, const ModifyCRBlockStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyCRBlockStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BmaClient::ModifyCRBlockStatusOutcomeCallable BmaClient::ModifyCRBlockStatusCallable(const ModifyCRBlockStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyCRBlockStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyCRBlockStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+BmaClient::ModifyCRMonitorOutcome BmaClient::ModifyCRMonitor(const ModifyCRMonitorRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyCRMonitor");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyCRMonitorResponse rsp = ModifyCRMonitorResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyCRMonitorOutcome(rsp);
+        else
+            return ModifyCRMonitorOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyCRMonitorOutcome(outcome.GetError());
+    }
+}
+
+void BmaClient::ModifyCRMonitorAsync(const ModifyCRMonitorRequest& request, const ModifyCRMonitorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyCRMonitor(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BmaClient::ModifyCRMonitorOutcomeCallable BmaClient::ModifyCRMonitorCallable(const ModifyCRMonitorRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyCRMonitorOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyCRMonitor(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+BmaClient::ModifyCRObtainStatusOutcome BmaClient::ModifyCRObtainStatus(const ModifyCRObtainStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyCRObtainStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyCRObtainStatusResponse rsp = ModifyCRObtainStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyCRObtainStatusOutcome(rsp);
+        else
+            return ModifyCRObtainStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyCRObtainStatusOutcome(outcome.GetError());
+    }
+}
+
+void BmaClient::ModifyCRObtainStatusAsync(const ModifyCRObtainStatusRequest& request, const ModifyCRObtainStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyCRObtainStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BmaClient::ModifyCRObtainStatusOutcomeCallable BmaClient::ModifyCRObtainStatusCallable(const ModifyCRObtainStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyCRObtainStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyCRObtainStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+BmaClient::ModifyCRRightStatusOutcome BmaClient::ModifyCRRightStatus(const ModifyCRRightStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyCRRightStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyCRRightStatusResponse rsp = ModifyCRRightStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyCRRightStatusOutcome(rsp);
+        else
+            return ModifyCRRightStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyCRRightStatusOutcome(outcome.GetError());
+    }
+}
+
+void BmaClient::ModifyCRRightStatusAsync(const ModifyCRRightStatusRequest& request, const ModifyCRRightStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyCRRightStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BmaClient::ModifyCRRightStatusOutcomeCallable BmaClient::ModifyCRRightStatusCallable(const ModifyCRRightStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyCRRightStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyCRRightStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+BmaClient::UpdateCRWorkOutcome BmaClient::UpdateCRWork(const UpdateCRWorkRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateCRWork");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateCRWorkResponse rsp = UpdateCRWorkResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateCRWorkOutcome(rsp);
+        else
+            return UpdateCRWorkOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateCRWorkOutcome(outcome.GetError());
+    }
+}
+
+void BmaClient::UpdateCRWorkAsync(const UpdateCRWorkRequest& request, const UpdateCRWorkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateCRWork(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BmaClient::UpdateCRWorkOutcomeCallable BmaClient::UpdateCRWorkCallable(const UpdateCRWorkRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateCRWorkOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateCRWork(request);
         }
     );
 

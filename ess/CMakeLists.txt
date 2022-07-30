@@ -32,6 +32,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/FileUrl.h
   include/tencentcloud/ess/v20201111/model/DescribeThirdPartyAuthCodeRequest.h
   include/tencentcloud/ess/v20201111/model/SignQrCode.h
+  include/tencentcloud/ess/v20201111/model/GetTaskResultApiRequest.h
   include/tencentcloud/ess/v20201111/model/UploadFilesRequest.h
   include/tencentcloud/ess/v20201111/model/CancelFlowRequest.h
   include/tencentcloud/ess/v20201111/model/DescribeFlowBriefsResponse.h
@@ -41,8 +42,10 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/UploadFilesResponse.h
   include/tencentcloud/ess/v20201111/model/DescribeThirdPartyAuthCodeResponse.h
   include/tencentcloud/ess/v20201111/model/CreateFlowByFilesResponse.h
+  include/tencentcloud/ess/v20201111/model/OrganizationInfo.h
   include/tencentcloud/ess/v20201111/model/DescribeFlowBriefsRequest.h
   include/tencentcloud/ess/v20201111/model/Recipient.h
+  include/tencentcloud/ess/v20201111/model/UserInfo.h
   include/tencentcloud/ess/v20201111/model/DescribeFileUrlsRequest.h
   include/tencentcloud/ess/v20201111/model/ApproverInfo.h
   include/tencentcloud/ess/v20201111/model/Caller.h
@@ -50,7 +53,9 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/Filter.h
   include/tencentcloud/ess/v20201111/model/FileInfo.h
   include/tencentcloud/ess/v20201111/model/CreateMultiFlowSignQRCodeRequest.h
+  include/tencentcloud/ess/v20201111/model/CreateConvertTaskApiResponse.h
   include/tencentcloud/ess/v20201111/model/StartFlowResponse.h
+  include/tencentcloud/ess/v20201111/model/CreateConvertTaskApiRequest.h
   include/tencentcloud/ess/v20201111/model/CreateSchemeUrlResponse.h
   include/tencentcloud/ess/v20201111/model/CreateFlowByFilesRequest.h
   include/tencentcloud/ess/v20201111/model/CancelMultiFlowSignQRCodeResponse.h
@@ -58,7 +63,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/Agent.h
   include/tencentcloud/ess/v20201111/model/FormField.h
   include/tencentcloud/ess/v20201111/model/DescribeFlowTemplatesRequest.h
-  include/tencentcloud/ess/v20201111/model/UserInfo.h
+  include/tencentcloud/ess/v20201111/model/GetTaskResultApiResponse.h
   include/tencentcloud/ess/v20201111/model/FlowBrief.h
   include/tencentcloud/ess/v20201111/model/CcInfo.h
   )
@@ -78,6 +83,7 @@ set(ess_src
   src/v20201111/model/FileUrl.cpp
   src/v20201111/model/DescribeThirdPartyAuthCodeRequest.cpp
   src/v20201111/model/SignQrCode.cpp
+  src/v20201111/model/GetTaskResultApiRequest.cpp
   src/v20201111/model/UploadFilesRequest.cpp
   src/v20201111/model/CancelFlowRequest.cpp
   src/v20201111/model/DescribeFlowBriefsResponse.cpp
@@ -87,8 +93,10 @@ set(ess_src
   src/v20201111/model/UploadFilesResponse.cpp
   src/v20201111/model/DescribeThirdPartyAuthCodeResponse.cpp
   src/v20201111/model/CreateFlowByFilesResponse.cpp
+  src/v20201111/model/OrganizationInfo.cpp
   src/v20201111/model/DescribeFlowBriefsRequest.cpp
   src/v20201111/model/Recipient.cpp
+  src/v20201111/model/UserInfo.cpp
   src/v20201111/model/DescribeFileUrlsRequest.cpp
   src/v20201111/model/ApproverInfo.cpp
   src/v20201111/model/Caller.cpp
@@ -96,7 +104,9 @@ set(ess_src
   src/v20201111/model/Filter.cpp
   src/v20201111/model/FileInfo.cpp
   src/v20201111/model/CreateMultiFlowSignQRCodeRequest.cpp
+  src/v20201111/model/CreateConvertTaskApiResponse.cpp
   src/v20201111/model/StartFlowResponse.cpp
+  src/v20201111/model/CreateConvertTaskApiRequest.cpp
   src/v20201111/model/CreateSchemeUrlResponse.cpp
   src/v20201111/model/CreateFlowByFilesRequest.cpp
   src/v20201111/model/CancelMultiFlowSignQRCodeResponse.cpp
@@ -104,7 +114,7 @@ set(ess_src
   src/v20201111/model/Agent.cpp
   src/v20201111/model/FormField.cpp
   src/v20201111/model/DescribeFlowTemplatesRequest.cpp
-  src/v20201111/model/UserInfo.cpp
+  src/v20201111/model/GetTaskResultApiResponse.cpp
   src/v20201111/model/FlowBrief.cpp
   src/v20201111/model/CcInfo.cpp
   )

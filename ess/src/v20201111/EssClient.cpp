@@ -126,6 +126,49 @@ EssClient::CancelMultiFlowSignQRCodeOutcomeCallable EssClient::CancelMultiFlowSi
     return task->get_future();
 }
 
+EssClient::CreateConvertTaskApiOutcome EssClient::CreateConvertTaskApi(const CreateConvertTaskApiRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateConvertTaskApi");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateConvertTaskApiResponse rsp = CreateConvertTaskApiResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateConvertTaskApiOutcome(rsp);
+        else
+            return CreateConvertTaskApiOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateConvertTaskApiOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::CreateConvertTaskApiAsync(const CreateConvertTaskApiRequest& request, const CreateConvertTaskApiAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateConvertTaskApi(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssClient::CreateConvertTaskApiOutcomeCallable EssClient::CreateConvertTaskApiCallable(const CreateConvertTaskApiRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateConvertTaskApiOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateConvertTaskApi(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssClient::CreateDocumentOutcome EssClient::CreateDocument(const CreateDocumentRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateDocument");
@@ -506,6 +549,49 @@ EssClient::DescribeThirdPartyAuthCodeOutcomeCallable EssClient::DescribeThirdPar
         [this, request]()
         {
             return this->DescribeThirdPartyAuthCode(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EssClient::GetTaskResultApiOutcome EssClient::GetTaskResultApi(const GetTaskResultApiRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetTaskResultApi");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetTaskResultApiResponse rsp = GetTaskResultApiResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetTaskResultApiOutcome(rsp);
+        else
+            return GetTaskResultApiOutcome(o.GetError());
+    }
+    else
+    {
+        return GetTaskResultApiOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::GetTaskResultApiAsync(const GetTaskResultApiRequest& request, const GetTaskResultApiAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetTaskResultApi(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssClient::GetTaskResultApiOutcomeCallable EssClient::GetTaskResultApiCallable(const GetTaskResultApiRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetTaskResultApiOutcome()>>(
+        [this, request]()
+        {
+            return this->GetTaskResultApi(request);
         }
     );
 

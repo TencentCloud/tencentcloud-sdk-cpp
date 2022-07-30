@@ -34,6 +34,7 @@ ChannelCreateFlowByFilesRequest::ChannelCreateFlowByFilesRequest() :
     m_flowTypeHasBeenSet(false),
     m_flowDescriptionHasBeenSet(false),
     m_customShowMapHasBeenSet(false),
+    m_customerDataHasBeenSet(false),
     m_operatorHasBeenSet(false)
 {
 }
@@ -151,6 +152,14 @@ string ChannelCreateFlowByFilesRequest::ToJsonString() const
         string key = "CustomShowMap";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_customShowMap.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_customerDataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CustomerData";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_customerData.c_str(), allocator).Move(), allocator);
     }
 
     if (m_operatorHasBeenSet)
@@ -344,6 +353,22 @@ void ChannelCreateFlowByFilesRequest::SetCustomShowMap(const string& _customShow
 bool ChannelCreateFlowByFilesRequest::CustomShowMapHasBeenSet() const
 {
     return m_customShowMapHasBeenSet;
+}
+
+string ChannelCreateFlowByFilesRequest::GetCustomerData() const
+{
+    return m_customerData;
+}
+
+void ChannelCreateFlowByFilesRequest::SetCustomerData(const string& _customerData)
+{
+    m_customerData = _customerData;
+    m_customerDataHasBeenSet = true;
+}
+
+bool ChannelCreateFlowByFilesRequest::CustomerDataHasBeenSet() const
+{
+    return m_customerDataHasBeenSet;
 }
 
 UserInfo ChannelCreateFlowByFilesRequest::GetOperator() const

@@ -33,7 +33,10 @@ MySQLParam::MySQLParam() :
     m_dataSourceStartFromHasBeenSet(false),
     m_dataTargetInsertModeHasBeenSet(false),
     m_dataTargetPrimaryKeyFieldHasBeenSet(false),
-    m_dataTargetRecordMappingHasBeenSet(false)
+    m_dataTargetRecordMappingHasBeenSet(false),
+    m_topicRegexHasBeenSet(false),
+    m_topicReplacementHasBeenSet(false),
+    m_keyColumnsHasBeenSet(false)
 {
 }
 
@@ -182,6 +185,36 @@ CoreInternalOutcome MySQLParam::Deserialize(const rapidjson::Value &value)
         m_dataTargetRecordMappingHasBeenSet = true;
     }
 
+    if (value.HasMember("TopicRegex") && !value["TopicRegex"].IsNull())
+    {
+        if (!value["TopicRegex"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MySQLParam.TopicRegex` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_topicRegex = string(value["TopicRegex"].GetString());
+        m_topicRegexHasBeenSet = true;
+    }
+
+    if (value.HasMember("TopicReplacement") && !value["TopicReplacement"].IsNull())
+    {
+        if (!value["TopicReplacement"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MySQLParam.TopicReplacement` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_topicReplacement = string(value["TopicReplacement"].GetString());
+        m_topicReplacementHasBeenSet = true;
+    }
+
+    if (value.HasMember("KeyColumns") && !value["KeyColumns"].IsNull())
+    {
+        if (!value["KeyColumns"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MySQLParam.KeyColumns` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_keyColumns = string(value["KeyColumns"].GetString());
+        m_keyColumnsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -298,6 +331,30 @@ void MySQLParam::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_topicRegexHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TopicRegex";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_topicRegex.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_topicReplacementHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TopicReplacement";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_topicReplacement.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_keyColumnsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KeyColumns";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_keyColumns.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -509,5 +566,53 @@ void MySQLParam::SetDataTargetRecordMapping(const vector<RecordMapping>& _dataTa
 bool MySQLParam::DataTargetRecordMappingHasBeenSet() const
 {
     return m_dataTargetRecordMappingHasBeenSet;
+}
+
+string MySQLParam::GetTopicRegex() const
+{
+    return m_topicRegex;
+}
+
+void MySQLParam::SetTopicRegex(const string& _topicRegex)
+{
+    m_topicRegex = _topicRegex;
+    m_topicRegexHasBeenSet = true;
+}
+
+bool MySQLParam::TopicRegexHasBeenSet() const
+{
+    return m_topicRegexHasBeenSet;
+}
+
+string MySQLParam::GetTopicReplacement() const
+{
+    return m_topicReplacement;
+}
+
+void MySQLParam::SetTopicReplacement(const string& _topicReplacement)
+{
+    m_topicReplacement = _topicReplacement;
+    m_topicReplacementHasBeenSet = true;
+}
+
+bool MySQLParam::TopicReplacementHasBeenSet() const
+{
+    return m_topicReplacementHasBeenSet;
+}
+
+string MySQLParam::GetKeyColumns() const
+{
+    return m_keyColumns;
+}
+
+void MySQLParam::SetKeyColumns(const string& _keyColumns)
+{
+    m_keyColumns = _keyColumns;
+    m_keyColumnsHasBeenSet = true;
+}
+
+bool MySQLParam::KeyColumnsHasBeenSet() const
+{
+    return m_keyColumnsHasBeenSet;
 }
 

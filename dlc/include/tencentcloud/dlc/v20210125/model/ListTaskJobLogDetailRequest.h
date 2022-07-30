@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/dlc/v20210125/model/Filter.h>
 
 
 namespace TencentCloud
@@ -97,14 +98,14 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取分页大小，最大100，配合Context一起使用
-                     * @return Limit 分页大小，最大100，配合Context一起使用
+                     * 获取分页大小，最大1000，配合Context一起使用
+                     * @return Limit 分页大小，最大1000，配合Context一起使用
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置分页大小，最大100，配合Context一起使用
-                     * @param Limit 分页大小，最大100，配合Context一起使用
+                     * 设置分页大小，最大1000，配合Context一起使用
+                     * @param Limit 分页大小，最大1000，配合Context一起使用
                      */
                     void SetLimit(const int64_t& _limit);
 
@@ -132,6 +133,42 @@ namespace TencentCloud
                      */
                     bool ContextHasBeenSet() const;
 
+                    /**
+                     * 获取最近1000条日志是否升序排列，true:升序排序，false:倒序，默认false，倒序排列
+                     * @return Asc 最近1000条日志是否升序排列，true:升序排序，false:倒序，默认false，倒序排列
+                     */
+                    bool GetAsc() const;
+
+                    /**
+                     * 设置最近1000条日志是否升序排列，true:升序排序，false:倒序，默认false，倒序排列
+                     * @param Asc 最近1000条日志是否升序排列，true:升序排序，false:倒序，默认false，倒序排列
+                     */
+                    void SetAsc(const bool& _asc);
+
+                    /**
+                     * 判断参数 Asc 是否已赋值
+                     * @return Asc 是否已赋值
+                     */
+                    bool AscHasBeenSet() const;
+
+                    /**
+                     * 获取预览日志的通用过滤条件
+                     * @return Filters 预览日志的通用过滤条件
+                     */
+                    std::vector<Filter> GetFilters() const;
+
+                    /**
+                     * 设置预览日志的通用过滤条件
+                     * @param Filters 预览日志的通用过滤条件
+                     */
+                    void SetFilters(const std::vector<Filter>& _filters);
+
+                    /**
+                     * 判断参数 Filters 是否已赋值
+                     * @return Filters 是否已赋值
+                     */
+                    bool FiltersHasBeenSet() const;
+
                 private:
 
                     /**
@@ -153,7 +190,7 @@ namespace TencentCloud
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 分页大小，最大100，配合Context一起使用
+                     * 分页大小，最大1000，配合Context一起使用
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
@@ -163,6 +200,18 @@ namespace TencentCloud
                      */
                     std::string m_context;
                     bool m_contextHasBeenSet;
+
+                    /**
+                     * 最近1000条日志是否升序排列，true:升序排序，false:倒序，默认false，倒序排列
+                     */
+                    bool m_asc;
+                    bool m_ascHasBeenSet;
+
+                    /**
+                     * 预览日志的通用过滤条件
+                     */
+                    std::vector<Filter> m_filters;
+                    bool m_filtersHasBeenSet;
 
                 };
             }

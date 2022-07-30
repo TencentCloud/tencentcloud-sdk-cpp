@@ -25,7 +25,8 @@ LogServiceInfo::LogServiceInfo() :
     m_logsetIdHasBeenSet(false),
     m_topicNameHasBeenSet(false),
     m_topicIdHasBeenSet(false),
-    m_regionHasBeenSet(false)
+    m_regionHasBeenSet(false),
+    m_periodHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,16 @@ CoreInternalOutcome LogServiceInfo::Deserialize(const rapidjson::Value &value)
         m_regionHasBeenSet = true;
     }
 
+    if (value.HasMember("Period") && !value["Period"].IsNull())
+    {
+        if (!value["Period"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `LogServiceInfo.Period` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_period = value["Period"].GetInt64();
+        m_periodHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +140,14 @@ void LogServiceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "Region";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_region.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_periodHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Period";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_period, allocator);
     }
 
 }
@@ -212,5 +231,21 @@ void LogServiceInfo::SetRegion(const string& _region)
 bool LogServiceInfo::RegionHasBeenSet() const
 {
     return m_regionHasBeenSet;
+}
+
+int64_t LogServiceInfo::GetPeriod() const
+{
+    return m_period;
+}
+
+void LogServiceInfo::SetPeriod(const int64_t& _period)
+{
+    m_period = _period;
+    m_periodHasBeenSet = true;
+}
+
+bool LogServiceInfo::PeriodHasBeenSet() const
+{
+    return m_periodHasBeenSet;
 }
 
