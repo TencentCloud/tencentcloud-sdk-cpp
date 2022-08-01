@@ -15,19 +15,11 @@
 #
 
 set(eis_public_header
-  include/tencentcloud/eis/v20200715/EisClient.h
   include/tencentcloud/eis/v20210601/EisClient.h
+  include/tencentcloud/eis/v20200715/EisClient.h
   )
 
 set(eis_public_header_model
-  include/tencentcloud/eis/v20200715/model/EisConnectionOperation.h
-  include/tencentcloud/eis/v20200715/model/ListEisConnectorsRequest.h
-  include/tencentcloud/eis/v20200715/model/EisConnectorSummary.h
-  include/tencentcloud/eis/v20200715/model/ListEisConnectorOperationsResponse.h
-  include/tencentcloud/eis/v20200715/model/DescribeEisConnectorConfigResponse.h
-  include/tencentcloud/eis/v20200715/model/ListEisConnectorOperationsRequest.h
-  include/tencentcloud/eis/v20200715/model/DescribeEisConnectorConfigRequest.h
-  include/tencentcloud/eis/v20200715/model/ListEisConnectorsResponse.h
   include/tencentcloud/eis/v20210601/model/ListRuntimesMCResponse.h
   include/tencentcloud/eis/v20210601/model/RuntimeMC.h
   include/tencentcloud/eis/v20210601/model/GetRuntimeResourceMonitorMetricMCResponse.h
@@ -42,19 +34,19 @@ set(eis_public_header_model
   include/tencentcloud/eis/v20210601/model/AbstractRuntimeMC.h
   include/tencentcloud/eis/v20210601/model/ListRuntimeDeployedInstancesMCResponse.h
   include/tencentcloud/eis/v20210601/model/RuntimeDeployedInstanceMC.h
+  include/tencentcloud/eis/v20200715/model/EisConnectionOperation.h
+  include/tencentcloud/eis/v20200715/model/ListEisConnectorsRequest.h
+  include/tencentcloud/eis/v20200715/model/EisConnectorSummary.h
+  include/tencentcloud/eis/v20200715/model/ListEisConnectorOperationsResponse.h
+  include/tencentcloud/eis/v20200715/model/DescribeEisConnectorConfigResponse.h
+  include/tencentcloud/eis/v20200715/model/ListEisConnectorOperationsRequest.h
+  include/tencentcloud/eis/v20200715/model/DescribeEisConnectorConfigRequest.h
+  include/tencentcloud/eis/v20200715/model/ListEisConnectorsResponse.h
   )
 
 set(eis_src
-  src/v20200715/EisClient.cpp
   src/v20210601/EisClient.cpp
-  src/v20200715/model/EisConnectionOperation.cpp
-  src/v20200715/model/ListEisConnectorsRequest.cpp
-  src/v20200715/model/EisConnectorSummary.cpp
-  src/v20200715/model/ListEisConnectorOperationsResponse.cpp
-  src/v20200715/model/DescribeEisConnectorConfigResponse.cpp
-  src/v20200715/model/ListEisConnectorOperationsRequest.cpp
-  src/v20200715/model/DescribeEisConnectorConfigRequest.cpp
-  src/v20200715/model/ListEisConnectorsResponse.cpp
+  src/v20200715/EisClient.cpp
   src/v20210601/model/ListRuntimesMCResponse.cpp
   src/v20210601/model/RuntimeMC.cpp
   src/v20210601/model/GetRuntimeResourceMonitorMetricMCResponse.cpp
@@ -69,6 +61,14 @@ set(eis_src
   src/v20210601/model/AbstractRuntimeMC.cpp
   src/v20210601/model/ListRuntimeDeployedInstancesMCResponse.cpp
   src/v20210601/model/RuntimeDeployedInstanceMC.cpp
+  src/v20200715/model/EisConnectionOperation.cpp
+  src/v20200715/model/ListEisConnectorsRequest.cpp
+  src/v20200715/model/EisConnectorSummary.cpp
+  src/v20200715/model/ListEisConnectorOperationsResponse.cpp
+  src/v20200715/model/DescribeEisConnectorConfigResponse.cpp
+  src/v20200715/model/ListEisConnectorOperationsRequest.cpp
+  src/v20200715/model/DescribeEisConnectorConfigRequest.cpp
+  src/v20200715/model/ListEisConnectorsResponse.cpp
   )
 
 set(eis_include
@@ -97,9 +97,9 @@ target_link_libraries(eis
   core)
 
 #install(FILES ${eis_public_header}
-#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/eis/v20210601)
+#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/eis/v20200715)
 #install(FILES ${eis_public_header_model}
-#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/eis/v20210601/model)
+#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/eis/v20200715/model)
 install(DIRECTORY ${eis_include}
   DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud)
 
