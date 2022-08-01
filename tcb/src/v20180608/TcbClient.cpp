@@ -900,6 +900,49 @@ TcbClient::DescribeAuthDomainsOutcomeCallable TcbClient::DescribeAuthDomainsCall
     return task->get_future();
 }
 
+TcbClient::DescribeBaasPackageListOutcome TcbClient::DescribeBaasPackageList(const DescribeBaasPackageListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBaasPackageList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBaasPackageListResponse rsp = DescribeBaasPackageListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBaasPackageListOutcome(rsp);
+        else
+            return DescribeBaasPackageListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBaasPackageListOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::DescribeBaasPackageListAsync(const DescribeBaasPackageListRequest& request, const DescribeBaasPackageListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBaasPackageList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcbClient::DescribeBaasPackageListOutcomeCallable TcbClient::DescribeBaasPackageListCallable(const DescribeBaasPackageListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBaasPackageListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBaasPackageList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcbClient::DescribeCloudBaseBuildServiceOutcome TcbClient::DescribeCloudBaseBuildService(const DescribeCloudBaseBuildServiceRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeCloudBaseBuildService");

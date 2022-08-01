@@ -231,6 +231,8 @@
 #include <tencentcloud/cdb/v20170320/model/ModifyDBInstanceVipVportResponse.h>
 #include <tencentcloud/cdb/v20170320/model/ModifyInstanceParamRequest.h>
 #include <tencentcloud/cdb/v20170320/model/ModifyInstanceParamResponse.h>
+#include <tencentcloud/cdb/v20170320/model/ModifyInstancePasswordComplexityRequest.h>
+#include <tencentcloud/cdb/v20170320/model/ModifyInstancePasswordComplexityResponse.h>
 #include <tencentcloud/cdb/v20170320/model/ModifyInstanceTagRequest.h>
 #include <tencentcloud/cdb/v20170320/model/ModifyInstanceTagResponse.h>
 #include <tencentcloud/cdb/v20170320/model/ModifyLocalBinlogConfigRequest.h>
@@ -617,6 +619,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyInstanceParamResponse> ModifyInstanceParamOutcome;
                 typedef std::future<ModifyInstanceParamOutcome> ModifyInstanceParamOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::ModifyInstanceParamRequest&, ModifyInstanceParamOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstanceParamAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyInstancePasswordComplexityResponse> ModifyInstancePasswordComplexityOutcome;
+                typedef std::future<ModifyInstancePasswordComplexityOutcome> ModifyInstancePasswordComplexityOutcomeCallable;
+                typedef std::function<void(const CdbClient*, const Model::ModifyInstancePasswordComplexityRequest&, ModifyInstancePasswordComplexityOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstancePasswordComplexityAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyInstanceTagResponse> ModifyInstanceTagOutcome;
                 typedef std::future<ModifyInstanceTagOutcome> ModifyInstanceTagOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::ModifyInstanceTagRequest&, ModifyInstanceTagOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstanceTagAsyncHandler;
@@ -1675,6 +1680,15 @@ namespace TencentCloud
                 ModifyInstanceParamOutcome ModifyInstanceParam(const Model::ModifyInstanceParamRequest &request);
                 void ModifyInstanceParamAsync(const Model::ModifyInstanceParamRequest& request, const ModifyInstanceParamAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyInstanceParamOutcomeCallable ModifyInstanceParamCallable(const Model::ModifyInstanceParamRequest& request);
+
+                /**
+                 *本接口(ModifyInstancePasswordComplexity)用于修改云数据库实例的密码复杂度。
+                 * @param req ModifyInstancePasswordComplexityRequest
+                 * @return ModifyInstancePasswordComplexityOutcome
+                 */
+                ModifyInstancePasswordComplexityOutcome ModifyInstancePasswordComplexity(const Model::ModifyInstancePasswordComplexityRequest &request);
+                void ModifyInstancePasswordComplexityAsync(const Model::ModifyInstancePasswordComplexityRequest& request, const ModifyInstancePasswordComplexityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyInstancePasswordComplexityOutcomeCallable ModifyInstancePasswordComplexityCallable(const Model::ModifyInstancePasswordComplexityRequest& request);
 
                 /**
                  *本接口(ModifyInstanceTag)用于对实例标签进行添加、修改或者删除。

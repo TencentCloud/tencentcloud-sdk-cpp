@@ -33,7 +33,8 @@ ShipperInfo::ShipperInfo() :
     m_partitionHasBeenSet(false),
     m_compressHasBeenSet(false),
     m_contentHasBeenSet(false),
-    m_createTimeHasBeenSet(false)
+    m_createTimeHasBeenSet(false),
+    m_filenameModeHasBeenSet(false)
 {
 }
 
@@ -196,6 +197,16 @@ CoreInternalOutcome ShipperInfo::Deserialize(const rapidjson::Value &value)
         m_createTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("FilenameMode") && !value["FilenameMode"].IsNull())
+    {
+        if (!value["FilenameMode"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ShipperInfo.FilenameMode` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_filenameMode = value["FilenameMode"].GetUint64();
+        m_filenameModeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -314,6 +325,14 @@ void ShipperInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_filenameModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FilenameMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_filenameMode, allocator);
     }
 
 }
@@ -525,5 +544,21 @@ void ShipperInfo::SetCreateTime(const string& _createTime)
 bool ShipperInfo::CreateTimeHasBeenSet() const
 {
     return m_createTimeHasBeenSet;
+}
+
+uint64_t ShipperInfo::GetFilenameMode() const
+{
+    return m_filenameMode;
+}
+
+void ShipperInfo::SetFilenameMode(const uint64_t& _filenameMode)
+{
+    m_filenameMode = _filenameMode;
+    m_filenameModeHasBeenSet = true;
+}
+
+bool ShipperInfo::FilenameModeHasBeenSet() const
+{
+    return m_filenameModeHasBeenSet;
 }
 

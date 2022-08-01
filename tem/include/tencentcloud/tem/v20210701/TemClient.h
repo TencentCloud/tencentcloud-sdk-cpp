@@ -39,10 +39,14 @@
 #include <tencentcloud/tem/v20210701/model/DeployApplicationResponse.h>
 #include <tencentcloud/tem/v20210701/model/DescribeApplicationPodsRequest.h>
 #include <tencentcloud/tem/v20210701/model/DescribeApplicationPodsResponse.h>
+#include <tencentcloud/tem/v20210701/model/DescribeApplicationsRequest.h>
+#include <tencentcloud/tem/v20210701/model/DescribeApplicationsResponse.h>
 #include <tencentcloud/tem/v20210701/model/DescribeApplicationsStatusRequest.h>
 #include <tencentcloud/tem/v20210701/model/DescribeApplicationsStatusResponse.h>
 #include <tencentcloud/tem/v20210701/model/DescribeDeployApplicationDetailRequest.h>
 #include <tencentcloud/tem/v20210701/model/DescribeDeployApplicationDetailResponse.h>
+#include <tencentcloud/tem/v20210701/model/DescribeEnvironmentStatusRequest.h>
+#include <tencentcloud/tem/v20210701/model/DescribeEnvironmentStatusResponse.h>
 #include <tencentcloud/tem/v20210701/model/DescribeEnvironmentsRequest.h>
 #include <tencentcloud/tem/v20210701/model/DescribeEnvironmentsResponse.h>
 #include <tencentcloud/tem/v20210701/model/DescribeIngressRequest.h>
@@ -113,12 +117,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeApplicationPodsResponse> DescribeApplicationPodsOutcome;
                 typedef std::future<DescribeApplicationPodsOutcome> DescribeApplicationPodsOutcomeCallable;
                 typedef std::function<void(const TemClient*, const Model::DescribeApplicationPodsRequest&, DescribeApplicationPodsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApplicationPodsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeApplicationsResponse> DescribeApplicationsOutcome;
+                typedef std::future<DescribeApplicationsOutcome> DescribeApplicationsOutcomeCallable;
+                typedef std::function<void(const TemClient*, const Model::DescribeApplicationsRequest&, DescribeApplicationsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApplicationsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeApplicationsStatusResponse> DescribeApplicationsStatusOutcome;
                 typedef std::future<DescribeApplicationsStatusOutcome> DescribeApplicationsStatusOutcomeCallable;
                 typedef std::function<void(const TemClient*, const Model::DescribeApplicationsStatusRequest&, DescribeApplicationsStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApplicationsStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDeployApplicationDetailResponse> DescribeDeployApplicationDetailOutcome;
                 typedef std::future<DescribeDeployApplicationDetailOutcome> DescribeDeployApplicationDetailOutcomeCallable;
                 typedef std::function<void(const TemClient*, const Model::DescribeDeployApplicationDetailRequest&, DescribeDeployApplicationDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDeployApplicationDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeEnvironmentStatusResponse> DescribeEnvironmentStatusOutcome;
+                typedef std::future<DescribeEnvironmentStatusOutcome> DescribeEnvironmentStatusOutcomeCallable;
+                typedef std::function<void(const TemClient*, const Model::DescribeEnvironmentStatusRequest&, DescribeEnvironmentStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEnvironmentStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeEnvironmentsResponse> DescribeEnvironmentsOutcome;
                 typedef std::future<DescribeEnvironmentsOutcome> DescribeEnvironmentsOutcomeCallable;
                 typedef std::function<void(const TemClient*, const Model::DescribeEnvironmentsRequest&, DescribeEnvironmentsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEnvironmentsAsyncHandler;
@@ -246,6 +256,15 @@ namespace TencentCloud
                 DescribeApplicationPodsOutcomeCallable DescribeApplicationPodsCallable(const Model::DescribeApplicationPodsRequest& request);
 
                 /**
+                 *获取运行服务列表
+                 * @param req DescribeApplicationsRequest
+                 * @return DescribeApplicationsOutcome
+                 */
+                DescribeApplicationsOutcome DescribeApplications(const Model::DescribeApplicationsRequest &request);
+                void DescribeApplicationsAsync(const Model::DescribeApplicationsRequest& request, const DescribeApplicationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeApplicationsOutcomeCallable DescribeApplicationsCallable(const Model::DescribeApplicationsRequest& request);
+
+                /**
                  *单环境下所有应用状态查看
                  * @param req DescribeApplicationsStatusRequest
                  * @return DescribeApplicationsStatusOutcome
@@ -262,6 +281,15 @@ namespace TencentCloud
                 DescribeDeployApplicationDetailOutcome DescribeDeployApplicationDetail(const Model::DescribeDeployApplicationDetailRequest &request);
                 void DescribeDeployApplicationDetailAsync(const Model::DescribeDeployApplicationDetailRequest& request, const DescribeDeployApplicationDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDeployApplicationDetailOutcomeCallable DescribeDeployApplicationDetailCallable(const Model::DescribeDeployApplicationDetailRequest& request);
+
+                /**
+                 *获取环境状态
+                 * @param req DescribeEnvironmentStatusRequest
+                 * @return DescribeEnvironmentStatusOutcome
+                 */
+                DescribeEnvironmentStatusOutcome DescribeEnvironmentStatus(const Model::DescribeEnvironmentStatusRequest &request);
+                void DescribeEnvironmentStatusAsync(const Model::DescribeEnvironmentStatusRequest& request, const DescribeEnvironmentStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeEnvironmentStatusOutcomeCallable DescribeEnvironmentStatusCallable(const Model::DescribeEnvironmentStatusRequest& request);
 
                 /**
                  *获取租户环境列表

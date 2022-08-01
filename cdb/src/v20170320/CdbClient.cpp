@@ -4512,6 +4512,49 @@ CdbClient::ModifyInstanceParamOutcomeCallable CdbClient::ModifyInstanceParamCall
     return task->get_future();
 }
 
+CdbClient::ModifyInstancePasswordComplexityOutcome CdbClient::ModifyInstancePasswordComplexity(const ModifyInstancePasswordComplexityRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyInstancePasswordComplexity");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyInstancePasswordComplexityResponse rsp = ModifyInstancePasswordComplexityResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyInstancePasswordComplexityOutcome(rsp);
+        else
+            return ModifyInstancePasswordComplexityOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyInstancePasswordComplexityOutcome(outcome.GetError());
+    }
+}
+
+void CdbClient::ModifyInstancePasswordComplexityAsync(const ModifyInstancePasswordComplexityRequest& request, const ModifyInstancePasswordComplexityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyInstancePasswordComplexity(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdbClient::ModifyInstancePasswordComplexityOutcomeCallable CdbClient::ModifyInstancePasswordComplexityCallable(const ModifyInstancePasswordComplexityRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyInstancePasswordComplexityOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyInstancePasswordComplexity(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdbClient::ModifyInstanceTagOutcome CdbClient::ModifyInstanceTag(const ModifyInstanceTagRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyInstanceTag");

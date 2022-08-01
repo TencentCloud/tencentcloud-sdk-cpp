@@ -63,6 +63,8 @@
 #include <tencentcloud/tcb/v20180608/model/DescribeActivityRecordResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeAuthDomainsRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeAuthDomainsResponse.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeBaasPackageListRequest.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeBaasPackageListResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeCloudBaseBuildServiceRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeCloudBaseBuildServiceResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeCloudBaseProjectLatestVersionListRequest.h>
@@ -253,6 +255,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAuthDomainsResponse> DescribeAuthDomainsOutcome;
                 typedef std::future<DescribeAuthDomainsOutcome> DescribeAuthDomainsOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DescribeAuthDomainsRequest&, DescribeAuthDomainsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAuthDomainsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeBaasPackageListResponse> DescribeBaasPackageListOutcome;
+                typedef std::future<DescribeBaasPackageListOutcome> DescribeBaasPackageListOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::DescribeBaasPackageListRequest&, DescribeBaasPackageListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBaasPackageListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCloudBaseBuildServiceResponse> DescribeCloudBaseBuildServiceOutcome;
                 typedef std::future<DescribeCloudBaseBuildServiceOutcome> DescribeCloudBaseBuildServiceOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DescribeCloudBaseBuildServiceRequest&, DescribeCloudBaseBuildServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudBaseBuildServiceAsyncHandler;
@@ -609,6 +614,15 @@ namespace TencentCloud
                 DescribeAuthDomainsOutcome DescribeAuthDomains(const Model::DescribeAuthDomainsRequest &request);
                 void DescribeAuthDomainsAsync(const Model::DescribeAuthDomainsRequest& request, const DescribeAuthDomainsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAuthDomainsOutcomeCallable DescribeAuthDomainsCallable(const Model::DescribeAuthDomainsRequest& request);
+
+                /**
+                 *获取新套餐列表，含详情，如果传了PackageId，则只获取指定套餐详情
+                 * @param req DescribeBaasPackageListRequest
+                 * @return DescribeBaasPackageListOutcome
+                 */
+                DescribeBaasPackageListOutcome DescribeBaasPackageList(const Model::DescribeBaasPackageListRequest &request);
+                void DescribeBaasPackageListAsync(const Model::DescribeBaasPackageListRequest& request, const DescribeBaasPackageListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBaasPackageListOutcomeCallable DescribeBaasPackageListCallable(const Model::DescribeBaasPackageListRequest& request);
 
                 /**
                  *获取云托管代码上传url

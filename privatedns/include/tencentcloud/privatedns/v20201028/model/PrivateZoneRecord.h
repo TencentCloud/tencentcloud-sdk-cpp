@@ -274,6 +274,28 @@ namespace TencentCloud
                      */
                     bool ExtraHasBeenSet() const;
 
+                    /**
+                     * 获取0暂停，1启用
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Enabled 0暂停，1启用
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetEnabled() const;
+
+                    /**
+                     * 设置0暂停，1启用
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Enabled 0暂停，1启用
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetEnabled(const uint64_t& _enabled);
+
+                    /**
+                     * 判断参数 Enabled 是否已赋值
+                     * @return Enabled 是否已赋值
+                     */
+                    bool EnabledHasBeenSet() const;
+
                 private:
 
                     /**
@@ -350,6 +372,13 @@ namespace TencentCloud
                      */
                     std::string m_extra;
                     bool m_extraHasBeenSet;
+
+                    /**
+                     * 0暂停，1启用
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_enabled;
+                    bool m_enabledHasBeenSet;
 
                 };
             }

@@ -295,6 +295,28 @@ namespace TencentCloud
                      */
                     bool CreateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取投递文件命名配置，0：随机数命名，1：投递时间命名，默认0（随机数命名）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FilenameMode 投递文件命名配置，0：随机数命名，1：投递时间命名，默认0（随机数命名）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetFilenameMode() const;
+
+                    /**
+                     * 设置投递文件命名配置，0：随机数命名，1：投递时间命名，默认0（随机数命名）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param FilenameMode 投递文件命名配置，0：随机数命名，1：投递时间命名，默认0（随机数命名）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetFilenameMode(const uint64_t& _filenameMode);
+
+                    /**
+                     * 判断参数 FilenameMode 是否已赋值
+                     * @return FilenameMode 是否已赋值
+                     */
+                    bool FilenameModeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -377,6 +399,13 @@ namespace TencentCloud
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
+
+                    /**
+                     * 投递文件命名配置，0：随机数命名，1：投递时间命名，默认0（随机数命名）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_filenameMode;
+                    bool m_filenameModeHasBeenSet;
 
                 };
             }

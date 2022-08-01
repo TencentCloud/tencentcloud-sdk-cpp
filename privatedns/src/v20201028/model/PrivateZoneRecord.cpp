@@ -32,7 +32,8 @@ PrivateZoneRecord::PrivateZoneRecord() :
     m_weightHasBeenSet(false),
     m_createdOnHasBeenSet(false),
     m_updatedOnHasBeenSet(false),
-    m_extraHasBeenSet(false)
+    m_extraHasBeenSet(false),
+    m_enabledHasBeenSet(false)
 {
 }
 
@@ -161,6 +162,16 @@ CoreInternalOutcome PrivateZoneRecord::Deserialize(const rapidjson::Value &value
         m_extraHasBeenSet = true;
     }
 
+    if (value.HasMember("Enabled") && !value["Enabled"].IsNull())
+    {
+        if (!value["Enabled"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `PrivateZoneRecord.Enabled` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_enabled = value["Enabled"].GetUint64();
+        m_enabledHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -262,6 +273,14 @@ void PrivateZoneRecord::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "Extra";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_extra.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_enabledHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Enabled";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enabled, allocator);
     }
 
 }
@@ -457,5 +476,21 @@ void PrivateZoneRecord::SetExtra(const string& _extra)
 bool PrivateZoneRecord::ExtraHasBeenSet() const
 {
     return m_extraHasBeenSet;
+}
+
+uint64_t PrivateZoneRecord::GetEnabled() const
+{
+    return m_enabled;
+}
+
+void PrivateZoneRecord::SetEnabled(const uint64_t& _enabled)
+{
+    m_enabled = _enabled;
+    m_enabledHasBeenSet = true;
+}
+
+bool PrivateZoneRecord::EnabledHasBeenSet() const
+{
+    return m_enabledHasBeenSet;
 }
 
