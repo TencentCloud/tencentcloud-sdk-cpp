@@ -21,7 +21,9 @@ using namespace TencentCloud::Tke::V20180525::Model;
 using namespace std;
 
 EdgeClusterAdvancedSettings::EdgeClusterAdvancedSettings() :
-    m_extraArgsHasBeenSet(false)
+    m_extraArgsHasBeenSet(false),
+    m_runtimeHasBeenSet(false),
+    m_proxyModeHasBeenSet(false)
 {
 }
 
@@ -47,6 +49,26 @@ CoreInternalOutcome EdgeClusterAdvancedSettings::Deserialize(const rapidjson::Va
         m_extraArgsHasBeenSet = true;
     }
 
+    if (value.HasMember("Runtime") && !value["Runtime"].IsNull())
+    {
+        if (!value["Runtime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EdgeClusterAdvancedSettings.Runtime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_runtime = string(value["Runtime"].GetString());
+        m_runtimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ProxyMode") && !value["ProxyMode"].IsNull())
+    {
+        if (!value["ProxyMode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EdgeClusterAdvancedSettings.ProxyMode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_proxyMode = string(value["ProxyMode"].GetString());
+        m_proxyModeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -61,6 +83,22 @@ void EdgeClusterAdvancedSettings::ToJsonObject(rapidjson::Value &value, rapidjso
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_extraArgs.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_runtimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Runtime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_runtime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_proxyModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProxyMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_proxyMode.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -80,5 +118,37 @@ void EdgeClusterAdvancedSettings::SetExtraArgs(const EdgeClusterExtraArgs& _extr
 bool EdgeClusterAdvancedSettings::ExtraArgsHasBeenSet() const
 {
     return m_extraArgsHasBeenSet;
+}
+
+string EdgeClusterAdvancedSettings::GetRuntime() const
+{
+    return m_runtime;
+}
+
+void EdgeClusterAdvancedSettings::SetRuntime(const string& _runtime)
+{
+    m_runtime = _runtime;
+    m_runtimeHasBeenSet = true;
+}
+
+bool EdgeClusterAdvancedSettings::RuntimeHasBeenSet() const
+{
+    return m_runtimeHasBeenSet;
+}
+
+string EdgeClusterAdvancedSettings::GetProxyMode() const
+{
+    return m_proxyMode;
+}
+
+void EdgeClusterAdvancedSettings::SetProxyMode(const string& _proxyMode)
+{
+    m_proxyMode = _proxyMode;
+    m_proxyModeHasBeenSet = true;
+}
+
+bool EdgeClusterAdvancedSettings::ProxyModeHasBeenSet() const
+{
+    return m_proxyModeHasBeenSet;
 }
 

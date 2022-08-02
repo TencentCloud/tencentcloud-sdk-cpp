@@ -169,6 +169,49 @@ CatClient::DescribeDetailedSingleProbeDataOutcomeCallable CatClient::DescribeDet
     return task->get_future();
 }
 
+CatClient::DescribeNodesOutcome CatClient::DescribeNodes(const DescribeNodesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeNodes");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeNodesResponse rsp = DescribeNodesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeNodesOutcome(rsp);
+        else
+            return DescribeNodesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeNodesOutcome(outcome.GetError());
+    }
+}
+
+void CatClient::DescribeNodesAsync(const DescribeNodesRequest& request, const DescribeNodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeNodes(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CatClient::DescribeNodesOutcomeCallable CatClient::DescribeNodesCallable(const DescribeNodesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeNodesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeNodes(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CatClient::DescribeProbeMetricDataOutcome CatClient::DescribeProbeMetricData(const DescribeProbeMetricDataRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeProbeMetricData");

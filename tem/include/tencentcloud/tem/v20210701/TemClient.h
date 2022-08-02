@@ -37,6 +37,8 @@
 #include <tencentcloud/tem/v20210701/model/DeleteIngressResponse.h>
 #include <tencentcloud/tem/v20210701/model/DeployApplicationRequest.h>
 #include <tencentcloud/tem/v20210701/model/DeployApplicationResponse.h>
+#include <tencentcloud/tem/v20210701/model/DescribeApplicationInfoRequest.h>
+#include <tencentcloud/tem/v20210701/model/DescribeApplicationInfoResponse.h>
 #include <tencentcloud/tem/v20210701/model/DescribeApplicationPodsRequest.h>
 #include <tencentcloud/tem/v20210701/model/DescribeApplicationPodsResponse.h>
 #include <tencentcloud/tem/v20210701/model/DescribeApplicationsRequest.h>
@@ -114,6 +116,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeployApplicationResponse> DeployApplicationOutcome;
                 typedef std::future<DeployApplicationOutcome> DeployApplicationOutcomeCallable;
                 typedef std::function<void(const TemClient*, const Model::DeployApplicationRequest&, DeployApplicationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeployApplicationAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeApplicationInfoResponse> DescribeApplicationInfoOutcome;
+                typedef std::future<DescribeApplicationInfoOutcome> DescribeApplicationInfoOutcomeCallable;
+                typedef std::function<void(const TemClient*, const Model::DescribeApplicationInfoRequest&, DescribeApplicationInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApplicationInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeApplicationPodsResponse> DescribeApplicationPodsOutcome;
                 typedef std::future<DescribeApplicationPodsOutcome> DescribeApplicationPodsOutcomeCallable;
                 typedef std::function<void(const TemClient*, const Model::DescribeApplicationPodsRequest&, DescribeApplicationPodsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApplicationPodsAsyncHandler;
@@ -245,6 +250,15 @@ namespace TencentCloud
                 DeployApplicationOutcome DeployApplication(const Model::DeployApplicationRequest &request);
                 void DeployApplicationAsync(const Model::DeployApplicationRequest& request, const DeployApplicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeployApplicationOutcomeCallable DeployApplicationCallable(const Model::DeployApplicationRequest& request);
+
+                /**
+                 *服务基本信息查看
+                 * @param req DescribeApplicationInfoRequest
+                 * @return DescribeApplicationInfoOutcome
+                 */
+                DescribeApplicationInfoOutcome DescribeApplicationInfo(const Model::DescribeApplicationInfoRequest &request);
+                void DescribeApplicationInfoAsync(const Model::DescribeApplicationInfoRequest& request, const DescribeApplicationInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeApplicationInfoOutcomeCallable DescribeApplicationInfoCallable(const Model::DescribeApplicationInfoRequest& request);
 
                 /**
                  *获取应用实例列表

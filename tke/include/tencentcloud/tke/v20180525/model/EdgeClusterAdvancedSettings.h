@@ -69,6 +69,50 @@ namespace TencentCloud
                      */
                     bool ExtraArgsHasBeenSet() const;
 
+                    /**
+                     * 获取运行时类型，支持"docker"和"containerd"，默认为docker
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Runtime 运行时类型，支持"docker"和"containerd"，默认为docker
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetRuntime() const;
+
+                    /**
+                     * 设置运行时类型，支持"docker"和"containerd"，默认为docker
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Runtime 运行时类型，支持"docker"和"containerd"，默认为docker
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRuntime(const std::string& _runtime);
+
+                    /**
+                     * 判断参数 Runtime 是否已赋值
+                     * @return Runtime 是否已赋值
+                     */
+                    bool RuntimeHasBeenSet() const;
+
+                    /**
+                     * 获取集群kube-proxy转发模式，支持"iptables"和"ipvs"，默认为iptables
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ProxyMode 集群kube-proxy转发模式，支持"iptables"和"ipvs"，默认为iptables
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetProxyMode() const;
+
+                    /**
+                     * 设置集群kube-proxy转发模式，支持"iptables"和"ipvs"，默认为iptables
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ProxyMode 集群kube-proxy转发模式，支持"iptables"和"ipvs"，默认为iptables
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetProxyMode(const std::string& _proxyMode);
+
+                    /**
+                     * 判断参数 ProxyMode 是否已赋值
+                     * @return ProxyMode 是否已赋值
+                     */
+                    bool ProxyModeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -77,6 +121,20 @@ namespace TencentCloud
                      */
                     EdgeClusterExtraArgs m_extraArgs;
                     bool m_extraArgsHasBeenSet;
+
+                    /**
+                     * 运行时类型，支持"docker"和"containerd"，默认为docker
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_runtime;
+                    bool m_runtimeHasBeenSet;
+
+                    /**
+                     * 集群kube-proxy转发模式，支持"iptables"和"ipvs"，默认为iptables
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_proxyMode;
+                    bool m_proxyModeHasBeenSet;
 
                 };
             }

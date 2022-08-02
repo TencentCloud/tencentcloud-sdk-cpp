@@ -28,7 +28,8 @@ EnvBaseInfo::EnvBaseInfo() :
     m_aliasHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_regionHasBeenSet(false),
-    m_envTypeHasBeenSet(false)
+    m_envTypeHasBeenSet(false),
+    m_subnetIdsHasBeenSet(false)
 {
 }
 
@@ -117,6 +118,16 @@ CoreInternalOutcome EnvBaseInfo::Deserialize(const rapidjson::Value &value)
         m_envTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("SubnetIds") && !value["SubnetIds"].IsNull())
+    {
+        if (!value["SubnetIds"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EnvBaseInfo.SubnetIds` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subnetIds = string(value["SubnetIds"].GetString());
+        m_subnetIdsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -186,6 +197,14 @@ void EnvBaseInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "EnvType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_envType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subnetIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubnetIds";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subnetIds.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -317,5 +336,21 @@ void EnvBaseInfo::SetEnvType(const string& _envType)
 bool EnvBaseInfo::EnvTypeHasBeenSet() const
 {
     return m_envTypeHasBeenSet;
+}
+
+string EnvBaseInfo::GetSubnetIds() const
+{
+    return m_subnetIds;
+}
+
+void EnvBaseInfo::SetSubnetIds(const string& _subnetIds)
+{
+    m_subnetIds = _subnetIds;
+    m_subnetIdsHasBeenSet = true;
+}
+
+bool EnvBaseInfo::SubnetIdsHasBeenSet() const
+{
+    return m_subnetIdsHasBeenSet;
 }
 

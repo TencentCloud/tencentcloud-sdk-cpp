@@ -114,6 +114,24 @@ namespace TencentCloud
                      */
                     bool ConfigHasBeenSet() const;
 
+                    /**
+                     * 获取可以下载某个历史版本的edgectl脚本，默认下载最新版本，edgectl版本信息可以在脚本里查看
+                     * @return ScriptVersion 可以下载某个历史版本的edgectl脚本，默认下载最新版本，edgectl版本信息可以在脚本里查看
+                     */
+                    std::string GetScriptVersion() const;
+
+                    /**
+                     * 设置可以下载某个历史版本的edgectl脚本，默认下载最新版本，edgectl版本信息可以在脚本里查看
+                     * @param ScriptVersion 可以下载某个历史版本的edgectl脚本，默认下载最新版本，edgectl版本信息可以在脚本里查看
+                     */
+                    void SetScriptVersion(const std::string& _scriptVersion);
+
+                    /**
+                     * 判断参数 ScriptVersion 是否已赋值
+                     * @return ScriptVersion 是否已赋值
+                     */
+                    bool ScriptVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -139,6 +157,12 @@ namespace TencentCloud
                      */
                     std::string m_config;
                     bool m_configHasBeenSet;
+
+                    /**
+                     * 可以下载某个历史版本的edgectl脚本，默认下载最新版本，edgectl版本信息可以在脚本里查看
+                     */
+                    std::string m_scriptVersion;
+                    bool m_scriptVersionHasBeenSet;
 
                 };
             }

@@ -40,6 +40,221 @@ BmaClient::BmaClient(const Credential &credential, const string &region, const C
 }
 
 
+BmaClient::CreateBPFakeURLOutcome BmaClient::CreateBPFakeURL(const CreateBPFakeURLRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateBPFakeURL");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateBPFakeURLResponse rsp = CreateBPFakeURLResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateBPFakeURLOutcome(rsp);
+        else
+            return CreateBPFakeURLOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateBPFakeURLOutcome(outcome.GetError());
+    }
+}
+
+void BmaClient::CreateBPFakeURLAsync(const CreateBPFakeURLRequest& request, const CreateBPFakeURLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateBPFakeURL(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BmaClient::CreateBPFakeURLOutcomeCallable BmaClient::CreateBPFakeURLCallable(const CreateBPFakeURLRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateBPFakeURLOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateBPFakeURL(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+BmaClient::CreateBPFalseTicketOutcome BmaClient::CreateBPFalseTicket(const CreateBPFalseTicketRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateBPFalseTicket");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateBPFalseTicketResponse rsp = CreateBPFalseTicketResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateBPFalseTicketOutcome(rsp);
+        else
+            return CreateBPFalseTicketOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateBPFalseTicketOutcome(outcome.GetError());
+    }
+}
+
+void BmaClient::CreateBPFalseTicketAsync(const CreateBPFalseTicketRequest& request, const CreateBPFalseTicketAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateBPFalseTicket(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BmaClient::CreateBPFalseTicketOutcomeCallable BmaClient::CreateBPFalseTicketCallable(const CreateBPFalseTicketRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateBPFalseTicketOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateBPFalseTicket(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+BmaClient::CreateBPOfflineAttachmentOutcome BmaClient::CreateBPOfflineAttachment(const CreateBPOfflineAttachmentRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateBPOfflineAttachment");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateBPOfflineAttachmentResponse rsp = CreateBPOfflineAttachmentResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateBPOfflineAttachmentOutcome(rsp);
+        else
+            return CreateBPOfflineAttachmentOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateBPOfflineAttachmentOutcome(outcome.GetError());
+    }
+}
+
+void BmaClient::CreateBPOfflineAttachmentAsync(const CreateBPOfflineAttachmentRequest& request, const CreateBPOfflineAttachmentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateBPOfflineAttachment(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BmaClient::CreateBPOfflineAttachmentOutcomeCallable BmaClient::CreateBPOfflineAttachmentCallable(const CreateBPOfflineAttachmentRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateBPOfflineAttachmentOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateBPOfflineAttachment(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+BmaClient::CreateBPOfflineTicketOutcome BmaClient::CreateBPOfflineTicket(const CreateBPOfflineTicketRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateBPOfflineTicket");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateBPOfflineTicketResponse rsp = CreateBPOfflineTicketResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateBPOfflineTicketOutcome(rsp);
+        else
+            return CreateBPOfflineTicketOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateBPOfflineTicketOutcome(outcome.GetError());
+    }
+}
+
+void BmaClient::CreateBPOfflineTicketAsync(const CreateBPOfflineTicketRequest& request, const CreateBPOfflineTicketAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateBPOfflineTicket(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BmaClient::CreateBPOfflineTicketOutcomeCallable BmaClient::CreateBPOfflineTicketCallable(const CreateBPOfflineTicketRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateBPOfflineTicketOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateBPOfflineTicket(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+BmaClient::CreateBPProtectURLsOutcome BmaClient::CreateBPProtectURLs(const CreateBPProtectURLsRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateBPProtectURLs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateBPProtectURLsResponse rsp = CreateBPProtectURLsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateBPProtectURLsOutcome(rsp);
+        else
+            return CreateBPProtectURLsOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateBPProtectURLsOutcome(outcome.GetError());
+    }
+}
+
+void BmaClient::CreateBPProtectURLsAsync(const CreateBPProtectURLsRequest& request, const CreateBPProtectURLsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateBPProtectURLs(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BmaClient::CreateBPProtectURLsOutcomeCallable BmaClient::CreateBPProtectURLsCallable(const CreateBPProtectURLsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateBPProtectURLsOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateBPProtectURLs(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 BmaClient::CreateCRBlockOutcome BmaClient::CreateCRBlock(const CreateCRBlockRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateCRBlock");
@@ -212,6 +427,178 @@ BmaClient::CreateCRWorkOutcomeCallable BmaClient::CreateCRWorkCallable(const Cre
     return task->get_future();
 }
 
+BmaClient::DescribeBPCompanyInfoOutcome BmaClient::DescribeBPCompanyInfo(const DescribeBPCompanyInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBPCompanyInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBPCompanyInfoResponse rsp = DescribeBPCompanyInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBPCompanyInfoOutcome(rsp);
+        else
+            return DescribeBPCompanyInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBPCompanyInfoOutcome(outcome.GetError());
+    }
+}
+
+void BmaClient::DescribeBPCompanyInfoAsync(const DescribeBPCompanyInfoRequest& request, const DescribeBPCompanyInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBPCompanyInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BmaClient::DescribeBPCompanyInfoOutcomeCallable BmaClient::DescribeBPCompanyInfoCallable(const DescribeBPCompanyInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBPCompanyInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBPCompanyInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+BmaClient::DescribeBPFakeURLsOutcome BmaClient::DescribeBPFakeURLs(const DescribeBPFakeURLsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBPFakeURLs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBPFakeURLsResponse rsp = DescribeBPFakeURLsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBPFakeURLsOutcome(rsp);
+        else
+            return DescribeBPFakeURLsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBPFakeURLsOutcome(outcome.GetError());
+    }
+}
+
+void BmaClient::DescribeBPFakeURLsAsync(const DescribeBPFakeURLsRequest& request, const DescribeBPFakeURLsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBPFakeURLs(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BmaClient::DescribeBPFakeURLsOutcomeCallable BmaClient::DescribeBPFakeURLsCallable(const DescribeBPFakeURLsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBPFakeURLsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBPFakeURLs(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+BmaClient::DescribeBPProtectURLsOutcome BmaClient::DescribeBPProtectURLs(const DescribeBPProtectURLsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBPProtectURLs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBPProtectURLsResponse rsp = DescribeBPProtectURLsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBPProtectURLsOutcome(rsp);
+        else
+            return DescribeBPProtectURLsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBPProtectURLsOutcome(outcome.GetError());
+    }
+}
+
+void BmaClient::DescribeBPProtectURLsAsync(const DescribeBPProtectURLsRequest& request, const DescribeBPProtectURLsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBPProtectURLs(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BmaClient::DescribeBPProtectURLsOutcomeCallable BmaClient::DescribeBPProtectURLsCallable(const DescribeBPProtectURLsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBPProtectURLsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBPProtectURLs(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+BmaClient::DescribeBPReportFakeURLsOutcome BmaClient::DescribeBPReportFakeURLs(const DescribeBPReportFakeURLsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBPReportFakeURLs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBPReportFakeURLsResponse rsp = DescribeBPReportFakeURLsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBPReportFakeURLsOutcome(rsp);
+        else
+            return DescribeBPReportFakeURLsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBPReportFakeURLsOutcome(outcome.GetError());
+    }
+}
+
+void BmaClient::DescribeBPReportFakeURLsAsync(const DescribeBPReportFakeURLsRequest& request, const DescribeBPReportFakeURLsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBPReportFakeURLs(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BmaClient::DescribeBPReportFakeURLsOutcomeCallable BmaClient::DescribeBPReportFakeURLsCallable(const DescribeBPReportFakeURLsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBPReportFakeURLsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBPReportFakeURLs(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 BmaClient::DescribeCRMonitorDetailOutcome BmaClient::DescribeCRMonitorDetail(const DescribeCRMonitorDetailRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeCRMonitorDetail");
@@ -334,6 +721,49 @@ BmaClient::DescribeCRWorkInfoOutcomeCallable BmaClient::DescribeCRWorkInfoCallab
         [this, request]()
         {
             return this->DescribeCRWorkInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+BmaClient::ModifyBPOfflineAttachmentOutcome BmaClient::ModifyBPOfflineAttachment(const ModifyBPOfflineAttachmentRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyBPOfflineAttachment");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyBPOfflineAttachmentResponse rsp = ModifyBPOfflineAttachmentResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyBPOfflineAttachmentOutcome(rsp);
+        else
+            return ModifyBPOfflineAttachmentOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyBPOfflineAttachmentOutcome(outcome.GetError());
+    }
+}
+
+void BmaClient::ModifyBPOfflineAttachmentAsync(const ModifyBPOfflineAttachmentRequest& request, const ModifyBPOfflineAttachmentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyBPOfflineAttachment(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BmaClient::ModifyBPOfflineAttachmentOutcomeCallable BmaClient::ModifyBPOfflineAttachmentCallable(const ModifyBPOfflineAttachmentRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyBPOfflineAttachmentOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyBPOfflineAttachment(request);
         }
     );
 

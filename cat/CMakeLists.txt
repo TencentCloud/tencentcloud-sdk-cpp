@@ -19,7 +19,7 @@ set(cat_public_header
   )
 
 set(cat_public_header_model
-  include/tencentcloud/cat/v20180409/model/DescribeProbeNodesResponse.h
+  include/tencentcloud/cat/v20180409/model/DescribeNodesRequest.h
   include/tencentcloud/cat/v20180409/model/Label.h
   include/tencentcloud/cat/v20180409/model/Field.h
   include/tencentcloud/cat/v20180409/model/KeyValuePair.h
@@ -33,24 +33,27 @@ set(cat_public_header_model
   include/tencentcloud/cat/v20180409/model/DescribeDetailedSingleProbeDataResponse.h
   include/tencentcloud/cat/v20180409/model/SuspendProbeTaskRequest.h
   include/tencentcloud/cat/v20180409/model/DescribeProbeMetricDataRequest.h
-  include/tencentcloud/cat/v20180409/model/DescribeProbeTasksRequest.h
+  include/tencentcloud/cat/v20180409/model/DescribeProbeNodesResponse.h
   include/tencentcloud/cat/v20180409/model/UpdateProbeTaskConfigurationListRequest.h
   include/tencentcloud/cat/v20180409/model/CreateProbeTasksRequest.h
   include/tencentcloud/cat/v20180409/model/ProbeTask.h
+  include/tencentcloud/cat/v20180409/model/DescribeProbeTasksRequest.h
   include/tencentcloud/cat/v20180409/model/ResumeProbeTaskResponse.h
   include/tencentcloud/cat/v20180409/model/DeleteProbeTaskResponse.h
   include/tencentcloud/cat/v20180409/model/CreateProbeTasksResponse.h
   include/tencentcloud/cat/v20180409/model/ResumeProbeTaskRequest.h
+  include/tencentcloud/cat/v20180409/model/NodeDefineExt.h
   include/tencentcloud/cat/v20180409/model/DescribeProbeNodesRequest.h
   include/tencentcloud/cat/v20180409/model/NodeDefine.h
   include/tencentcloud/cat/v20180409/model/Tag.h
+  include/tencentcloud/cat/v20180409/model/DescribeNodesResponse.h
   include/tencentcloud/cat/v20180409/model/UpdateProbeTaskConfigurationListResponse.h
   include/tencentcloud/cat/v20180409/model/DetailedSingleDataDefine.h
   )
 
 set(cat_src
   src/v20180409/CatClient.cpp
-  src/v20180409/model/DescribeProbeNodesResponse.cpp
+  src/v20180409/model/DescribeNodesRequest.cpp
   src/v20180409/model/Label.cpp
   src/v20180409/model/Field.cpp
   src/v20180409/model/KeyValuePair.cpp
@@ -64,17 +67,20 @@ set(cat_src
   src/v20180409/model/DescribeDetailedSingleProbeDataResponse.cpp
   src/v20180409/model/SuspendProbeTaskRequest.cpp
   src/v20180409/model/DescribeProbeMetricDataRequest.cpp
-  src/v20180409/model/DescribeProbeTasksRequest.cpp
+  src/v20180409/model/DescribeProbeNodesResponse.cpp
   src/v20180409/model/UpdateProbeTaskConfigurationListRequest.cpp
   src/v20180409/model/CreateProbeTasksRequest.cpp
   src/v20180409/model/ProbeTask.cpp
+  src/v20180409/model/DescribeProbeTasksRequest.cpp
   src/v20180409/model/ResumeProbeTaskResponse.cpp
   src/v20180409/model/DeleteProbeTaskResponse.cpp
   src/v20180409/model/CreateProbeTasksResponse.cpp
   src/v20180409/model/ResumeProbeTaskRequest.cpp
+  src/v20180409/model/NodeDefineExt.cpp
   src/v20180409/model/DescribeProbeNodesRequest.cpp
   src/v20180409/model/NodeDefine.cpp
   src/v20180409/model/Tag.cpp
+  src/v20180409/model/DescribeNodesResponse.cpp
   src/v20180409/model/UpdateProbeTaskConfigurationListResponse.cpp
   src/v20180409/model/DetailedSingleDataDefine.cpp
   )

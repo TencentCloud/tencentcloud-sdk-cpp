@@ -19,62 +19,110 @@ set(bma_public_header
   )
 
 set(bma_public_header_model
+  include/tencentcloud/bma/v20210624/model/ProtectURLInfo.h
   include/tencentcloud/bma/v20210624/model/Monitor.h
+  include/tencentcloud/bma/v20210624/model/CreateBPFalseTicketResponse.h
   include/tencentcloud/bma/v20210624/model/DescribeCRWorkInfoResponse.h
   include/tencentcloud/bma/v20210624/model/CreateCRRightResponse.h
   include/tencentcloud/bma/v20210624/model/CreateCRWorkResponse.h
   include/tencentcloud/bma/v20210624/model/CreateCRRightRequest.h
+  include/tencentcloud/bma/v20210624/model/CreateBPOfflineTicketResponse.h
+  include/tencentcloud/bma/v20210624/model/DescribeBPFakeURLsRequest.h
   include/tencentcloud/bma/v20210624/model/ModifyCRBlockStatusResponse.h
   include/tencentcloud/bma/v20210624/model/ModifyCRObtainStatusRequest.h
+  include/tencentcloud/bma/v20210624/model/ReportFakeURLInfo.h
   include/tencentcloud/bma/v20210624/model/DescribeCRWorkInfoRequest.h
+  include/tencentcloud/bma/v20210624/model/ModifyBPOfflineAttachmentRequest.h
+  include/tencentcloud/bma/v20210624/model/DescribeBPFakeURLsResponse.h
+  include/tencentcloud/bma/v20210624/model/CreateBPOfflineAttachmentResponse.h
+  include/tencentcloud/bma/v20210624/model/DescribeBPReportFakeURLsRequest.h
   include/tencentcloud/bma/v20210624/model/MonitorTort.h
-  include/tencentcloud/bma/v20210624/model/UpdateCRWorkResponse.h
+  include/tencentcloud/bma/v20210624/model/CreateBPFakeURLRequest.h
+  include/tencentcloud/bma/v20210624/model/CreateBPProtectURLsResponse.h
+  include/tencentcloud/bma/v20210624/model/DescribeBPProtectURLsResponse.h
   include/tencentcloud/bma/v20210624/model/DescribeCRMonitorsResponse.h
   include/tencentcloud/bma/v20210624/model/CreateCRCompanyVerifyResponse.h
+  include/tencentcloud/bma/v20210624/model/CreateBPOfflineAttachmentRequest.h
+  include/tencentcloud/bma/v20210624/model/CreateBPProtectURLsRequest.h
+  include/tencentcloud/bma/v20210624/model/UpdateCRWorkResponse.h
   include/tencentcloud/bma/v20210624/model/ModifyCRBlockStatusRequest.h
   include/tencentcloud/bma/v20210624/model/ModifyCRMonitorRequest.h
   include/tencentcloud/bma/v20210624/model/DescribeCRMonitorDetailResponse.h
   include/tencentcloud/bma/v20210624/model/CreateCRWorkRequest.h
+  include/tencentcloud/bma/v20210624/model/DescribeBPCompanyInfoRequest.h
+  include/tencentcloud/bma/v20210624/model/DescribeBPReportFakeURLsResponse.h
   include/tencentcloud/bma/v20210624/model/Filter.h
   include/tencentcloud/bma/v20210624/model/CreateCRBlockResponse.h
   include/tencentcloud/bma/v20210624/model/ModifyCRRightStatusRequest.h
   include/tencentcloud/bma/v20210624/model/DescribeCRMonitorsRequest.h
   include/tencentcloud/bma/v20210624/model/UpdateCRWorkRequest.h
+  include/tencentcloud/bma/v20210624/model/FakeURLInfo.h
+  include/tencentcloud/bma/v20210624/model/CreateBPOfflineTicketRequest.h
   include/tencentcloud/bma/v20210624/model/DescribeCRMonitorDetailRequest.h
+  include/tencentcloud/bma/v20210624/model/BrandData.h
   include/tencentcloud/bma/v20210624/model/ModifyCRRightStatusResponse.h
+  include/tencentcloud/bma/v20210624/model/DescribeBPCompanyInfoResponse.h
+  include/tencentcloud/bma/v20210624/model/ModifyBPOfflineAttachmentResponse.h
   include/tencentcloud/bma/v20210624/model/CreateCRBlockRequest.h
+  include/tencentcloud/bma/v20210624/model/CreateBPFakeURLResponse.h
+  include/tencentcloud/bma/v20210624/model/CreateBPFalseTicketRequest.h
   include/tencentcloud/bma/v20210624/model/ModifyCRMonitorResponse.h
+  include/tencentcloud/bma/v20210624/model/DescribeBPProtectURLsRequest.h
   include/tencentcloud/bma/v20210624/model/ModifyCRObtainStatusResponse.h
   include/tencentcloud/bma/v20210624/model/CreateCRCompanyVerifyRequest.h
   )
 
 set(bma_src
   src/v20210624/BmaClient.cpp
+  src/v20210624/model/ProtectURLInfo.cpp
   src/v20210624/model/Monitor.cpp
+  src/v20210624/model/CreateBPFalseTicketResponse.cpp
   src/v20210624/model/DescribeCRWorkInfoResponse.cpp
   src/v20210624/model/CreateCRRightResponse.cpp
   src/v20210624/model/CreateCRWorkResponse.cpp
   src/v20210624/model/CreateCRRightRequest.cpp
+  src/v20210624/model/CreateBPOfflineTicketResponse.cpp
+  src/v20210624/model/DescribeBPFakeURLsRequest.cpp
   src/v20210624/model/ModifyCRBlockStatusResponse.cpp
   src/v20210624/model/ModifyCRObtainStatusRequest.cpp
+  src/v20210624/model/ReportFakeURLInfo.cpp
   src/v20210624/model/DescribeCRWorkInfoRequest.cpp
+  src/v20210624/model/ModifyBPOfflineAttachmentRequest.cpp
+  src/v20210624/model/DescribeBPFakeURLsResponse.cpp
+  src/v20210624/model/CreateBPOfflineAttachmentResponse.cpp
+  src/v20210624/model/DescribeBPReportFakeURLsRequest.cpp
   src/v20210624/model/MonitorTort.cpp
-  src/v20210624/model/UpdateCRWorkResponse.cpp
+  src/v20210624/model/CreateBPFakeURLRequest.cpp
+  src/v20210624/model/CreateBPProtectURLsResponse.cpp
+  src/v20210624/model/DescribeBPProtectURLsResponse.cpp
   src/v20210624/model/DescribeCRMonitorsResponse.cpp
   src/v20210624/model/CreateCRCompanyVerifyResponse.cpp
+  src/v20210624/model/CreateBPOfflineAttachmentRequest.cpp
+  src/v20210624/model/CreateBPProtectURLsRequest.cpp
+  src/v20210624/model/UpdateCRWorkResponse.cpp
   src/v20210624/model/ModifyCRBlockStatusRequest.cpp
   src/v20210624/model/ModifyCRMonitorRequest.cpp
   src/v20210624/model/DescribeCRMonitorDetailResponse.cpp
   src/v20210624/model/CreateCRWorkRequest.cpp
+  src/v20210624/model/DescribeBPCompanyInfoRequest.cpp
+  src/v20210624/model/DescribeBPReportFakeURLsResponse.cpp
   src/v20210624/model/Filter.cpp
   src/v20210624/model/CreateCRBlockResponse.cpp
   src/v20210624/model/ModifyCRRightStatusRequest.cpp
   src/v20210624/model/DescribeCRMonitorsRequest.cpp
   src/v20210624/model/UpdateCRWorkRequest.cpp
+  src/v20210624/model/FakeURLInfo.cpp
+  src/v20210624/model/CreateBPOfflineTicketRequest.cpp
   src/v20210624/model/DescribeCRMonitorDetailRequest.cpp
+  src/v20210624/model/BrandData.cpp
   src/v20210624/model/ModifyCRRightStatusResponse.cpp
+  src/v20210624/model/DescribeBPCompanyInfoResponse.cpp
+  src/v20210624/model/ModifyBPOfflineAttachmentResponse.cpp
   src/v20210624/model/CreateCRBlockRequest.cpp
+  src/v20210624/model/CreateBPFakeURLResponse.cpp
+  src/v20210624/model/CreateBPFalseTicketRequest.cpp
   src/v20210624/model/ModifyCRMonitorResponse.cpp
+  src/v20210624/model/DescribeBPProtectURLsRequest.cpp
   src/v20210624/model/ModifyCRObtainStatusResponse.cpp
   src/v20210624/model/CreateCRCompanyVerifyRequest.cpp
   )

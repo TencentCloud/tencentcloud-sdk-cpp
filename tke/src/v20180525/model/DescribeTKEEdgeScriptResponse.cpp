@@ -26,7 +26,8 @@ using namespace std;
 DescribeTKEEdgeScriptResponse::DescribeTKEEdgeScriptResponse() :
     m_linkHasBeenSet(false),
     m_tokenHasBeenSet(false),
-    m_commandHasBeenSet(false)
+    m_commandHasBeenSet(false),
+    m_scriptVersionHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,16 @@ CoreInternalOutcome DescribeTKEEdgeScriptResponse::Deserialize(const string &pay
         m_commandHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ScriptVersion") && !rsp["ScriptVersion"].IsNull())
+    {
+        if (!rsp["ScriptVersion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ScriptVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_scriptVersion = string(rsp["ScriptVersion"].GetString());
+        m_scriptVersionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -126,6 +137,14 @@ string DescribeTKEEdgeScriptResponse::ToJsonString() const
         string key = "Command";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_command.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_scriptVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScriptVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_scriptVersion.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -168,6 +187,16 @@ string DescribeTKEEdgeScriptResponse::GetCommand() const
 bool DescribeTKEEdgeScriptResponse::CommandHasBeenSet() const
 {
     return m_commandHasBeenSet;
+}
+
+string DescribeTKEEdgeScriptResponse::GetScriptVersion() const
+{
+    return m_scriptVersion;
+}
+
+bool DescribeTKEEdgeScriptResponse::ScriptVersionHasBeenSet() const
+{
+    return m_scriptVersionHasBeenSet;
 }
 
 

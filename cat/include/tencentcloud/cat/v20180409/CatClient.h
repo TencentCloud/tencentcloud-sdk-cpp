@@ -29,6 +29,8 @@
 #include <tencentcloud/cat/v20180409/model/DeleteProbeTaskResponse.h>
 #include <tencentcloud/cat/v20180409/model/DescribeDetailedSingleProbeDataRequest.h>
 #include <tencentcloud/cat/v20180409/model/DescribeDetailedSingleProbeDataResponse.h>
+#include <tencentcloud/cat/v20180409/model/DescribeNodesRequest.h>
+#include <tencentcloud/cat/v20180409/model/DescribeNodesResponse.h>
 #include <tencentcloud/cat/v20180409/model/DescribeProbeMetricDataRequest.h>
 #include <tencentcloud/cat/v20180409/model/DescribeProbeMetricDataResponse.h>
 #include <tencentcloud/cat/v20180409/model/DescribeProbeNodesRequest.h>
@@ -64,6 +66,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDetailedSingleProbeDataResponse> DescribeDetailedSingleProbeDataOutcome;
                 typedef std::future<DescribeDetailedSingleProbeDataOutcome> DescribeDetailedSingleProbeDataOutcomeCallable;
                 typedef std::function<void(const CatClient*, const Model::DescribeDetailedSingleProbeDataRequest&, DescribeDetailedSingleProbeDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDetailedSingleProbeDataAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeNodesResponse> DescribeNodesOutcome;
+                typedef std::future<DescribeNodesOutcome> DescribeNodesOutcomeCallable;
+                typedef std::function<void(const CatClient*, const Model::DescribeNodesRequest&, DescribeNodesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNodesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeProbeMetricDataResponse> DescribeProbeMetricDataOutcome;
                 typedef std::future<DescribeProbeMetricDataOutcome> DescribeProbeMetricDataOutcomeCallable;
                 typedef std::function<void(const CatClient*, const Model::DescribeProbeMetricDataRequest&, DescribeProbeMetricDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProbeMetricDataAsyncHandler;
@@ -111,6 +116,15 @@ namespace TencentCloud
                 DescribeDetailedSingleProbeDataOutcome DescribeDetailedSingleProbeData(const Model::DescribeDetailedSingleProbeDataRequest &request);
                 void DescribeDetailedSingleProbeDataAsync(const Model::DescribeDetailedSingleProbeDataRequest& request, const DescribeDetailedSingleProbeDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDetailedSingleProbeDataOutcomeCallable DescribeDetailedSingleProbeDataCallable(const Model::DescribeDetailedSingleProbeDataRequest& request);
+
+                /**
+                 *获取拨测节点
+                 * @param req DescribeNodesRequest
+                 * @return DescribeNodesOutcome
+                 */
+                DescribeNodesOutcome DescribeNodes(const Model::DescribeNodesRequest &request);
+                void DescribeNodesAsync(const Model::DescribeNodesRequest& request, const DescribeNodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeNodesOutcomeCallable DescribeNodesCallable(const Model::DescribeNodesRequest& request);
 
                 /**
                  *查询云拨测指标数据，指标支持使用sum,avg,max,min聚合函数进行指标数据查询

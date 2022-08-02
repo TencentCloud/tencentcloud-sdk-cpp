@@ -79,6 +79,20 @@ namespace TencentCloud
                      */
                     bool CommandHasBeenSet() const;
 
+                    /**
+                     * 获取edgectl脚本版本，默认拉取最新版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ScriptVersion edgectl脚本版本，默认拉取最新版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetScriptVersion() const;
+
+                    /**
+                     * 判断参数 ScriptVersion 是否已赋值
+                     * @return ScriptVersion 是否已赋值
+                     */
+                    bool ScriptVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -98,6 +112,13 @@ namespace TencentCloud
                      */
                     std::string m_command;
                     bool m_commandHasBeenSet;
+
+                    /**
+                     * edgectl脚本版本，默认拉取最新版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_scriptVersion;
+                    bool m_scriptVersionHasBeenSet;
 
                 };
             }

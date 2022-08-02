@@ -341,6 +341,49 @@ TemClient::DeployApplicationOutcomeCallable TemClient::DeployApplicationCallable
     return task->get_future();
 }
 
+TemClient::DescribeApplicationInfoOutcome TemClient::DescribeApplicationInfo(const DescribeApplicationInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeApplicationInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeApplicationInfoResponse rsp = DescribeApplicationInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeApplicationInfoOutcome(rsp);
+        else
+            return DescribeApplicationInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeApplicationInfoOutcome(outcome.GetError());
+    }
+}
+
+void TemClient::DescribeApplicationInfoAsync(const DescribeApplicationInfoRequest& request, const DescribeApplicationInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeApplicationInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TemClient::DescribeApplicationInfoOutcomeCallable TemClient::DescribeApplicationInfoCallable(const DescribeApplicationInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeApplicationInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeApplicationInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TemClient::DescribeApplicationPodsOutcome TemClient::DescribeApplicationPods(const DescribeApplicationPodsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeApplicationPods");
