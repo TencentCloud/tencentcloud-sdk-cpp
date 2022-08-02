@@ -30,6 +30,7 @@ ChannelCreateMultiFlowSignQRCodeRequest::ChannelCreateMultiFlowSignQRCodeRequest
     m_flowEffectiveDayHasBeenSet(false),
     m_qrEffectiveDayHasBeenSet(false),
     m_callbackUrlHasBeenSet(false),
+    m_approverRestrictionsHasBeenSet(false),
     m_operatorHasBeenSet(false)
 {
 }
@@ -96,6 +97,15 @@ string ChannelCreateMultiFlowSignQRCodeRequest::ToJsonString() const
         string key = "CallbackUrl";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_callbackUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_approverRestrictionsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApproverRestrictions";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_approverRestrictions.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_operatorHasBeenSet)
@@ -225,6 +235,22 @@ void ChannelCreateMultiFlowSignQRCodeRequest::SetCallbackUrl(const string& _call
 bool ChannelCreateMultiFlowSignQRCodeRequest::CallbackUrlHasBeenSet() const
 {
     return m_callbackUrlHasBeenSet;
+}
+
+ApproverRestriction ChannelCreateMultiFlowSignQRCodeRequest::GetApproverRestrictions() const
+{
+    return m_approverRestrictions;
+}
+
+void ChannelCreateMultiFlowSignQRCodeRequest::SetApproverRestrictions(const ApproverRestriction& _approverRestrictions)
+{
+    m_approverRestrictions = _approverRestrictions;
+    m_approverRestrictionsHasBeenSet = true;
+}
+
+bool ChannelCreateMultiFlowSignQRCodeRequest::ApproverRestrictionsHasBeenSet() const
+{
+    return m_approverRestrictionsHasBeenSet;
 }
 
 UserInfo ChannelCreateMultiFlowSignQRCodeRequest::GetOperator() const

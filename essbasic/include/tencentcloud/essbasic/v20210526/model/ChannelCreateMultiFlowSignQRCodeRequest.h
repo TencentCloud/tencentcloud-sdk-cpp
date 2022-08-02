@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/essbasic/v20210526/model/Agent.h>
+#include <tencentcloud/essbasic/v20210526/model/ApproverRestriction.h>
 #include <tencentcloud/essbasic/v20210526/model/UserInfo.h>
 
 
@@ -183,6 +184,24 @@ namespace TencentCloud
                     bool CallbackUrlHasBeenSet() const;
 
                     /**
+                     * 获取限制二维码用户条件
+                     * @return ApproverRestrictions 限制二维码用户条件
+                     */
+                    ApproverRestriction GetApproverRestrictions() const;
+
+                    /**
+                     * 设置限制二维码用户条件
+                     * @param ApproverRestrictions 限制二维码用户条件
+                     */
+                    void SetApproverRestrictions(const ApproverRestriction& _approverRestrictions);
+
+                    /**
+                     * 判断参数 ApproverRestrictions 是否已赋值
+                     * @return ApproverRestrictions 是否已赋值
+                     */
+                    bool ApproverRestrictionsHasBeenSet() const;
+
+                    /**
                      * 获取用户信息
                      * @return Operator 用户信息
                      */
@@ -246,6 +265,12 @@ namespace TencentCloud
                      */
                     std::string m_callbackUrl;
                     bool m_callbackUrlHasBeenSet;
+
+                    /**
+                     * 限制二维码用户条件
+                     */
+                    ApproverRestriction m_approverRestrictions;
+                    bool m_approverRestrictionsHasBeenSet;
 
                     /**
                      * 用户信息

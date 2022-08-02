@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取用户在渠道的编号
-                     * @return OpenId 用户在渠道的编号
+                     * 获取用户在渠道的编号，最大64位字符串
+                     * @return OpenId 用户在渠道的编号，最大64位字符串
                      */
                     std::string GetOpenId() const;
 
                     /**
-                     * 设置用户在渠道的编号
-                     * @param OpenId 用户在渠道的编号
+                     * 设置用户在渠道的编号，最大64位字符串
+                     * @param OpenId 用户在渠道的编号，最大64位字符串
                      */
                     void SetOpenId(const std::string& _openId);
 
@@ -139,7 +139,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 用户在渠道的编号
+                     * 用户在渠道的编号，最大64位字符串
                      */
                     std::string m_openId;
                     bool m_openIdHasBeenSet;

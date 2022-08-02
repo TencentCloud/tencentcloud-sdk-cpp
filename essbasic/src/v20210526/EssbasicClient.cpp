@@ -83,6 +83,49 @@ EssbasicClient::ChannelCancelMultiFlowSignQRCodeOutcomeCallable EssbasicClient::
     return task->get_future();
 }
 
+EssbasicClient::ChannelCreateBatchCancelFlowUrlOutcome EssbasicClient::ChannelCreateBatchCancelFlowUrl(const ChannelCreateBatchCancelFlowUrlRequest &request)
+{
+    auto outcome = MakeRequest(request, "ChannelCreateBatchCancelFlowUrl");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ChannelCreateBatchCancelFlowUrlResponse rsp = ChannelCreateBatchCancelFlowUrlResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ChannelCreateBatchCancelFlowUrlOutcome(rsp);
+        else
+            return ChannelCreateBatchCancelFlowUrlOutcome(o.GetError());
+    }
+    else
+    {
+        return ChannelCreateBatchCancelFlowUrlOutcome(outcome.GetError());
+    }
+}
+
+void EssbasicClient::ChannelCreateBatchCancelFlowUrlAsync(const ChannelCreateBatchCancelFlowUrlRequest& request, const ChannelCreateBatchCancelFlowUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ChannelCreateBatchCancelFlowUrl(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssbasicClient::ChannelCreateBatchCancelFlowUrlOutcomeCallable EssbasicClient::ChannelCreateBatchCancelFlowUrlCallable(const ChannelCreateBatchCancelFlowUrlRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ChannelCreateBatchCancelFlowUrlOutcome()>>(
+        [this, request]()
+        {
+            return this->ChannelCreateBatchCancelFlowUrl(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssbasicClient::ChannelCreateFlowByFilesOutcome EssbasicClient::ChannelCreateFlowByFiles(const ChannelCreateFlowByFilesRequest &request)
 {
     auto outcome = MakeRequest(request, "ChannelCreateFlowByFiles");

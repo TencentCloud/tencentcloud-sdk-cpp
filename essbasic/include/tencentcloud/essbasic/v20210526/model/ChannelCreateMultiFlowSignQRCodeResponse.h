@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/essbasic/v20210526/model/SignQrCode.h>
+#include <tencentcloud/essbasic/v20210526/model/SignUrl.h>
 
 
 namespace TencentCloud
@@ -56,6 +57,18 @@ namespace TencentCloud
                      */
                     bool QrCodeHasBeenSet() const;
 
+                    /**
+                     * 获取签署链接对象
+                     * @return SignUrls 签署链接对象
+                     */
+                    SignUrl GetSignUrls() const;
+
+                    /**
+                     * 判断参数 SignUrls 是否已赋值
+                     * @return SignUrls 是否已赋值
+                     */
+                    bool SignUrlsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -63,6 +76,12 @@ namespace TencentCloud
                      */
                     SignQrCode m_qrCode;
                     bool m_qrCodeHasBeenSet;
+
+                    /**
+                     * 签署链接对象
+                     */
+                    SignUrl m_signUrls;
+                    bool m_signUrlsHasBeenSet;
 
                 };
             }
