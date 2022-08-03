@@ -25,7 +25,8 @@ using namespace std;
 CreateSessionRequest::CreateSessionRequest() :
     m_userIdHasBeenSet(false),
     m_userIpHasBeenSet(false),
-    m_clientSessionHasBeenSet(false)
+    m_clientSessionHasBeenSet(false),
+    m_runModeHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,14 @@ string CreateSessionRequest::ToJsonString() const
         string key = "ClientSession";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_clientSession.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_runModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RunMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_runMode.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -114,6 +123,22 @@ void CreateSessionRequest::SetClientSession(const string& _clientSession)
 bool CreateSessionRequest::ClientSessionHasBeenSet() const
 {
     return m_clientSessionHasBeenSet;
+}
+
+string CreateSessionRequest::GetRunMode() const
+{
+    return m_runMode;
+}
+
+void CreateSessionRequest::SetRunMode(const string& _runMode)
+{
+    m_runMode = _runMode;
+    m_runModeHasBeenSet = true;
+}
+
+bool CreateSessionRequest::RunModeHasBeenSet() const
+{
+    return m_runModeHasBeenSet;
 }
 
 

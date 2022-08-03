@@ -46,18 +46,22 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/DescribeFlowBriefsRequest.h
   include/tencentcloud/ess/v20201111/model/Recipient.h
   include/tencentcloud/ess/v20201111/model/UserInfo.h
+  include/tencentcloud/ess/v20201111/model/SignUrl.h
   include/tencentcloud/ess/v20201111/model/DescribeFileUrlsRequest.h
   include/tencentcloud/ess/v20201111/model/ApproverInfo.h
   include/tencentcloud/ess/v20201111/model/Caller.h
   include/tencentcloud/ess/v20201111/model/DescribeFlowTemplatesResponse.h
-  include/tencentcloud/ess/v20201111/model/Filter.h
+  include/tencentcloud/ess/v20201111/model/CreateBatchCancelFlowUrlResponse.h
+  include/tencentcloud/ess/v20201111/model/StartFlowResponse.h
   include/tencentcloud/ess/v20201111/model/FileInfo.h
+  include/tencentcloud/ess/v20201111/model/CreateBatchCancelFlowUrlRequest.h
   include/tencentcloud/ess/v20201111/model/CreateMultiFlowSignQRCodeRequest.h
   include/tencentcloud/ess/v20201111/model/CreateConvertTaskApiResponse.h
-  include/tencentcloud/ess/v20201111/model/StartFlowResponse.h
+  include/tencentcloud/ess/v20201111/model/Filter.h
   include/tencentcloud/ess/v20201111/model/CreateConvertTaskApiRequest.h
   include/tencentcloud/ess/v20201111/model/CreateSchemeUrlResponse.h
   include/tencentcloud/ess/v20201111/model/CreateFlowByFilesRequest.h
+  include/tencentcloud/ess/v20201111/model/ApproverRestriction.h
   include/tencentcloud/ess/v20201111/model/CancelMultiFlowSignQRCodeResponse.h
   include/tencentcloud/ess/v20201111/model/CreateFlowResponse.h
   include/tencentcloud/ess/v20201111/model/Agent.h
@@ -97,18 +101,22 @@ set(ess_src
   src/v20201111/model/DescribeFlowBriefsRequest.cpp
   src/v20201111/model/Recipient.cpp
   src/v20201111/model/UserInfo.cpp
+  src/v20201111/model/SignUrl.cpp
   src/v20201111/model/DescribeFileUrlsRequest.cpp
   src/v20201111/model/ApproverInfo.cpp
   src/v20201111/model/Caller.cpp
   src/v20201111/model/DescribeFlowTemplatesResponse.cpp
-  src/v20201111/model/Filter.cpp
+  src/v20201111/model/CreateBatchCancelFlowUrlResponse.cpp
+  src/v20201111/model/StartFlowResponse.cpp
   src/v20201111/model/FileInfo.cpp
+  src/v20201111/model/CreateBatchCancelFlowUrlRequest.cpp
   src/v20201111/model/CreateMultiFlowSignQRCodeRequest.cpp
   src/v20201111/model/CreateConvertTaskApiResponse.cpp
-  src/v20201111/model/StartFlowResponse.cpp
+  src/v20201111/model/Filter.cpp
   src/v20201111/model/CreateConvertTaskApiRequest.cpp
   src/v20201111/model/CreateSchemeUrlResponse.cpp
   src/v20201111/model/CreateFlowByFilesRequest.cpp
+  src/v20201111/model/ApproverRestriction.cpp
   src/v20201111/model/CancelMultiFlowSignQRCodeResponse.cpp
   src/v20201111/model/CreateFlowResponse.cpp
   src/v20201111/model/Agent.cpp

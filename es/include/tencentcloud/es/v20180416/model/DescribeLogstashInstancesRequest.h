@@ -168,6 +168,24 @@ namespace TencentCloud
                      */
                     bool OrderByTypeHasBeenSet() const;
 
+                    /**
+                     * 获取VpcId 筛选项
+                     * @return VpcIds VpcId 筛选项
+                     */
+                    std::vector<std::string> GetVpcIds() const;
+
+                    /**
+                     * 设置VpcId 筛选项
+                     * @param VpcIds VpcId 筛选项
+                     */
+                    void SetVpcIds(const std::vector<std::string>& _vpcIds);
+
+                    /**
+                     * 判断参数 VpcIds 是否已赋值
+                     * @return VpcIds 是否已赋值
+                     */
+                    bool VpcIdsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -211,6 +229,12 @@ namespace TencentCloud
                      */
                     uint64_t m_orderByType;
                     bool m_orderByTypeHasBeenSet;
+
+                    /**
+                     * VpcId 筛选项
+                     */
+                    std::vector<std::string> m_vpcIds;
+                    bool m_vpcIdsHasBeenSet;
 
                 };
             }

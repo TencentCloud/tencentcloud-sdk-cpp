@@ -225,6 +225,42 @@ namespace TencentCloud
                      */
                     bool BusinessNameHasBeenSet() const;
 
+                    /**
+                     * 获取页码
+                     * @return PageIndex 页码
+                     */
+                    int64_t GetPageIndex() const;
+
+                    /**
+                     * 设置页码
+                     * @param PageIndex 页码
+                     */
+                    void SetPageIndex(const int64_t& _pageIndex);
+
+                    /**
+                     * 判断参数 PageIndex 是否已赋值
+                     * @return PageIndex 是否已赋值
+                     */
+                    bool PageIndexHasBeenSet() const;
+
+                    /**
+                     * 获取页长
+                     * @return PageSize 页长
+                     */
+                    int64_t GetPageSize() const;
+
+                    /**
+                     * 设置页长
+                     * @param PageSize 页长
+                     */
+                    void SetPageSize(const int64_t& _pageSize);
+
+                    /**
+                     * 判断参数 PageSize 是否已赋值
+                     * @return PageSize 是否已赋值
+                     */
+                    bool PageSizeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -286,6 +322,18 @@ namespace TencentCloud
                      */
                     std::string m_businessName;
                     bool m_businessNameHasBeenSet;
+
+                    /**
+                     * 页码
+                     */
+                    int64_t m_pageIndex;
+                    bool m_pageIndexHasBeenSet;
+
+                    /**
+                     * 页长
+                     */
+                    int64_t m_pageSize;
+                    bool m_pageSizeHasBeenSet;
 
                 };
             }

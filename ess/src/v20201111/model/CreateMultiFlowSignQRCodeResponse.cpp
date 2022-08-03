@@ -24,7 +24,8 @@ using namespace TencentCloud::Ess::V20201111::Model;
 using namespace std;
 
 CreateMultiFlowSignQRCodeResponse::CreateMultiFlowSignQRCodeResponse() :
-    m_qrCodeHasBeenSet(false)
+    m_qrCodeHasBeenSet(false),
+    m_signUrlsHasBeenSet(false)
 {
 }
 
@@ -79,6 +80,23 @@ CoreInternalOutcome CreateMultiFlowSignQRCodeResponse::Deserialize(const string 
         m_qrCodeHasBeenSet = true;
     }
 
+    if (rsp.HasMember("SignUrls") && !rsp["SignUrls"].IsNull())
+    {
+        if (!rsp["SignUrls"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `SignUrls` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_signUrls.Deserialize(rsp["SignUrls"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_signUrlsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -96,6 +114,15 @@ string CreateMultiFlowSignQRCodeResponse::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_qrCode.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_signUrlsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SignUrls";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_signUrls.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -118,6 +145,16 @@ SignQrCode CreateMultiFlowSignQRCodeResponse::GetQrCode() const
 bool CreateMultiFlowSignQRCodeResponse::QrCodeHasBeenSet() const
 {
     return m_qrCodeHasBeenSet;
+}
+
+SignUrl CreateMultiFlowSignQRCodeResponse::GetSignUrls() const
+{
+    return m_signUrls;
+}
+
+bool CreateMultiFlowSignQRCodeResponse::SignUrlsHasBeenSet() const
+{
+    return m_signUrlsHasBeenSet;
 }
 
 

@@ -96,6 +96,32 @@ namespace TencentCloud
                      */
                     bool ClientSessionHasBeenSet() const;
 
+                    /**
+                     * 获取云端运行模式。
+RunWithoutClient：允许无客户端连接的情况下仍保持云端 App 运行
+默认值（空）：要求必须有客户端连接才会保持云端 App 运行。
+                     * @return RunMode 云端运行模式。
+RunWithoutClient：允许无客户端连接的情况下仍保持云端 App 运行
+默认值（空）：要求必须有客户端连接才会保持云端 App 运行。
+                     */
+                    std::string GetRunMode() const;
+
+                    /**
+                     * 设置云端运行模式。
+RunWithoutClient：允许无客户端连接的情况下仍保持云端 App 运行
+默认值（空）：要求必须有客户端连接才会保持云端 App 运行。
+                     * @param RunMode 云端运行模式。
+RunWithoutClient：允许无客户端连接的情况下仍保持云端 App 运行
+默认值（空）：要求必须有客户端连接才会保持云端 App 运行。
+                     */
+                    void SetRunMode(const std::string& _runMode);
+
+                    /**
+                     * 判断参数 RunMode 是否已赋值
+                     * @return RunMode 是否已赋值
+                     */
+                    bool RunModeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -115,6 +141,14 @@ namespace TencentCloud
                      */
                     std::string m_clientSession;
                     bool m_clientSessionHasBeenSet;
+
+                    /**
+                     * 云端运行模式。
+RunWithoutClient：允许无客户端连接的情况下仍保持云端 App 运行
+默认值（空）：要求必须有客户端连接才会保持云端 App 运行。
+                     */
+                    std::string m_runMode;
+                    bool m_runModeHasBeenSet;
 
                 };
             }

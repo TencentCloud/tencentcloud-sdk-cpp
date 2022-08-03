@@ -126,6 +126,49 @@ EssClient::CancelMultiFlowSignQRCodeOutcomeCallable EssClient::CancelMultiFlowSi
     return task->get_future();
 }
 
+EssClient::CreateBatchCancelFlowUrlOutcome EssClient::CreateBatchCancelFlowUrl(const CreateBatchCancelFlowUrlRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateBatchCancelFlowUrl");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateBatchCancelFlowUrlResponse rsp = CreateBatchCancelFlowUrlResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateBatchCancelFlowUrlOutcome(rsp);
+        else
+            return CreateBatchCancelFlowUrlOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateBatchCancelFlowUrlOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::CreateBatchCancelFlowUrlAsync(const CreateBatchCancelFlowUrlRequest& request, const CreateBatchCancelFlowUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateBatchCancelFlowUrl(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssClient::CreateBatchCancelFlowUrlOutcomeCallable EssClient::CreateBatchCancelFlowUrlCallable(const CreateBatchCancelFlowUrlRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateBatchCancelFlowUrlOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateBatchCancelFlowUrl(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssClient::CreateConvertTaskApiOutcome EssClient::CreateConvertTaskApi(const CreateConvertTaskApiRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateConvertTaskApi");

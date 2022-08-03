@@ -29,7 +29,8 @@ DescribeLogstashInstancesRequest::DescribeLogstashInstancesRequest() :
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_orderByKeyHasBeenSet(false),
-    m_orderByTypeHasBeenSet(false)
+    m_orderByTypeHasBeenSet(false),
+    m_vpcIdsHasBeenSet(false)
 {
 }
 
@@ -104,6 +105,19 @@ string DescribeLogstashInstancesRequest::ToJsonString() const
         string key = "OrderByType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_orderByType, allocator);
+    }
+
+    if (m_vpcIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VpcIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_vpcIds.begin(); itr != m_vpcIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -224,6 +238,22 @@ void DescribeLogstashInstancesRequest::SetOrderByType(const uint64_t& _orderByTy
 bool DescribeLogstashInstancesRequest::OrderByTypeHasBeenSet() const
 {
     return m_orderByTypeHasBeenSet;
+}
+
+vector<string> DescribeLogstashInstancesRequest::GetVpcIds() const
+{
+    return m_vpcIds;
+}
+
+void DescribeLogstashInstancesRequest::SetVpcIds(const vector<string>& _vpcIds)
+{
+    m_vpcIds = _vpcIds;
+    m_vpcIdsHasBeenSet = true;
+}
+
+bool DescribeLogstashInstancesRequest::VpcIdsHasBeenSet() const
+{
+    return m_vpcIdsHasBeenSet;
 }
 
 

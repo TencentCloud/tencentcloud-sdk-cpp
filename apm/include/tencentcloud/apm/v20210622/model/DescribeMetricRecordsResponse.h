@@ -58,6 +58,20 @@ namespace TencentCloud
                      */
                     bool RecordsHasBeenSet() const;
 
+                    /**
+                     * 获取查询指标结果集条数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TotalCount 查询指标结果集条数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetTotalCount() const;
+
+                    /**
+                     * 判断参数 TotalCount 是否已赋值
+                     * @return TotalCount 是否已赋值
+                     */
+                    bool TotalCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -66,6 +80,13 @@ namespace TencentCloud
                      */
                     std::vector<ApmMetricRecord> m_records;
                     bool m_recordsHasBeenSet;
+
+                    /**
+                     * 查询指标结果集条数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_totalCount;
+                    bool m_totalCountHasBeenSet;
 
                 };
             }

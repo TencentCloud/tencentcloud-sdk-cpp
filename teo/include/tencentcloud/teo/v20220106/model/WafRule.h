@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取黑名单
-                     * @return BlockRuleIDs 黑名单
+                     * 获取黑名单，ID参考接口 DescribeSecurityPolicyManagedRules
+                     * @return BlockRuleIDs 黑名单，ID参考接口 DescribeSecurityPolicyManagedRules
                      */
                     std::vector<int64_t> GetBlockRuleIDs() const;
 
                     /**
-                     * 设置黑名单
-                     * @param BlockRuleIDs 黑名单
+                     * 设置黑名单，ID参考接口 DescribeSecurityPolicyManagedRules
+                     * @param BlockRuleIDs 黑名单，ID参考接口 DescribeSecurityPolicyManagedRules
                      */
                     void SetBlockRuleIDs(const std::vector<int64_t>& _blockRuleIDs);
 
@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool BlockRuleIDsHasBeenSet() const;
 
                     /**
-                     * 获取id的开关
-                     * @return Switch id的开关
+                     * 获取托管规则 开关
+                     * @return Switch 托管规则 开关
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置id的开关
-                     * @param Switch id的开关
+                     * 设置托管规则 开关
+                     * @param Switch 托管规则 开关
                      */
                     void SetSwitch(const std::string& _switch);
 
@@ -83,17 +83,17 @@ namespace TencentCloud
                     bool SwitchHasBeenSet() const;
 
                     /**
-                     * 获取观察模式
+                     * 获取观察模式，ID参考接口 DescribeSecurityPolicyManagedRules
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ObserveRuleIDs 观察模式
+                     * @return ObserveRuleIDs 观察模式，ID参考接口 DescribeSecurityPolicyManagedRules
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<int64_t> GetObserveRuleIDs() const;
 
                     /**
-                     * 设置观察模式
+                     * 设置观察模式，ID参考接口 DescribeSecurityPolicyManagedRules
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ObserveRuleIDs 观察模式
+                     * @param ObserveRuleIDs 观察模式，ID参考接口 DescribeSecurityPolicyManagedRules
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetObserveRuleIDs(const std::vector<int64_t>& _observeRuleIDs);
@@ -107,19 +107,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 黑名单
+                     * 黑名单，ID参考接口 DescribeSecurityPolicyManagedRules
                      */
                     std::vector<int64_t> m_blockRuleIDs;
                     bool m_blockRuleIDsHasBeenSet;
 
                     /**
-                     * id的开关
+                     * 托管规则 开关
                      */
                     std::string m_switch;
                     bool m_switchHasBeenSet;
 
                     /**
-                     * 观察模式
+                     * 观察模式，ID参考接口 DescribeSecurityPolicyManagedRules
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<int64_t> m_observeRuleIDs;

@@ -30,7 +30,8 @@ CreateMultiFlowSignQRCodeRequest::CreateMultiFlowSignQRCodeRequest() :
     m_callbackUrlHasBeenSet(false),
     m_maxFlowNumHasBeenSet(false),
     m_flowEffectiveDayHasBeenSet(false),
-    m_qrEffectiveDayHasBeenSet(false)
+    m_qrEffectiveDayHasBeenSet(false),
+    m_approverRestrictionsHasBeenSet(false)
 {
 }
 
@@ -105,6 +106,15 @@ string CreateMultiFlowSignQRCodeRequest::ToJsonString() const
         string key = "QrEffectiveDay";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_qrEffectiveDay, allocator);
+    }
+
+    if (m_approverRestrictionsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApproverRestrictions";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_approverRestrictions.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -241,6 +251,22 @@ void CreateMultiFlowSignQRCodeRequest::SetQrEffectiveDay(const int64_t& _qrEffec
 bool CreateMultiFlowSignQRCodeRequest::QrEffectiveDayHasBeenSet() const
 {
     return m_qrEffectiveDayHasBeenSet;
+}
+
+ApproverRestriction CreateMultiFlowSignQRCodeRequest::GetApproverRestrictions() const
+{
+    return m_approverRestrictions;
+}
+
+void CreateMultiFlowSignQRCodeRequest::SetApproverRestrictions(const ApproverRestriction& _approverRestrictions)
+{
+    m_approverRestrictions = _approverRestrictions;
+    m_approverRestrictionsHasBeenSet = true;
+}
+
+bool CreateMultiFlowSignQRCodeRequest::ApproverRestrictionsHasBeenSet() const
+{
+    return m_approverRestrictionsHasBeenSet;
 }
 
 

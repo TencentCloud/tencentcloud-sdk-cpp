@@ -25,6 +25,10 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/tem/v20210701/model/CreateApplicationRequest.h>
 #include <tencentcloud/tem/v20210701/model/CreateApplicationResponse.h>
+#include <tencentcloud/tem/v20210701/model/CreateApplicationAutoscalerRequest.h>
+#include <tencentcloud/tem/v20210701/model/CreateApplicationAutoscalerResponse.h>
+#include <tencentcloud/tem/v20210701/model/CreateConfigDataRequest.h>
+#include <tencentcloud/tem/v20210701/model/CreateConfigDataResponse.h>
 #include <tencentcloud/tem/v20210701/model/CreateCosTokenRequest.h>
 #include <tencentcloud/tem/v20210701/model/CreateCosTokenResponse.h>
 #include <tencentcloud/tem/v20210701/model/CreateEnvironmentRequest.h>
@@ -33,10 +37,14 @@
 #include <tencentcloud/tem/v20210701/model/CreateResourceResponse.h>
 #include <tencentcloud/tem/v20210701/model/DeleteApplicationRequest.h>
 #include <tencentcloud/tem/v20210701/model/DeleteApplicationResponse.h>
+#include <tencentcloud/tem/v20210701/model/DeleteApplicationAutoscalerRequest.h>
+#include <tencentcloud/tem/v20210701/model/DeleteApplicationAutoscalerResponse.h>
 #include <tencentcloud/tem/v20210701/model/DeleteIngressRequest.h>
 #include <tencentcloud/tem/v20210701/model/DeleteIngressResponse.h>
 #include <tencentcloud/tem/v20210701/model/DeployApplicationRequest.h>
 #include <tencentcloud/tem/v20210701/model/DeployApplicationResponse.h>
+#include <tencentcloud/tem/v20210701/model/DescribeApplicationAutoscalerListRequest.h>
+#include <tencentcloud/tem/v20210701/model/DescribeApplicationAutoscalerListResponse.h>
 #include <tencentcloud/tem/v20210701/model/DescribeApplicationInfoRequest.h>
 #include <tencentcloud/tem/v20210701/model/DescribeApplicationInfoResponse.h>
 #include <tencentcloud/tem/v20210701/model/DescribeApplicationPodsRequest.h>
@@ -45,6 +53,10 @@
 #include <tencentcloud/tem/v20210701/model/DescribeApplicationsResponse.h>
 #include <tencentcloud/tem/v20210701/model/DescribeApplicationsStatusRequest.h>
 #include <tencentcloud/tem/v20210701/model/DescribeApplicationsStatusResponse.h>
+#include <tencentcloud/tem/v20210701/model/DescribeConfigDataRequest.h>
+#include <tencentcloud/tem/v20210701/model/DescribeConfigDataResponse.h>
+#include <tencentcloud/tem/v20210701/model/DescribeConfigDataListRequest.h>
+#include <tencentcloud/tem/v20210701/model/DescribeConfigDataListResponse.h>
 #include <tencentcloud/tem/v20210701/model/DescribeDeployApplicationDetailRequest.h>
 #include <tencentcloud/tem/v20210701/model/DescribeDeployApplicationDetailResponse.h>
 #include <tencentcloud/tem/v20210701/model/DescribeEnvironmentStatusRequest.h>
@@ -57,14 +69,20 @@
 #include <tencentcloud/tem/v20210701/model/DescribeIngressesResponse.h>
 #include <tencentcloud/tem/v20210701/model/DescribeRelatedIngressesRequest.h>
 #include <tencentcloud/tem/v20210701/model/DescribeRelatedIngressesResponse.h>
+#include <tencentcloud/tem/v20210701/model/DestroyConfigDataRequest.h>
+#include <tencentcloud/tem/v20210701/model/DestroyConfigDataResponse.h>
 #include <tencentcloud/tem/v20210701/model/DestroyEnvironmentRequest.h>
 #include <tencentcloud/tem/v20210701/model/DestroyEnvironmentResponse.h>
 #include <tencentcloud/tem/v20210701/model/GenerateApplicationPackageDownloadUrlRequest.h>
 #include <tencentcloud/tem/v20210701/model/GenerateApplicationPackageDownloadUrlResponse.h>
+#include <tencentcloud/tem/v20210701/model/ModifyApplicationAutoscalerRequest.h>
+#include <tencentcloud/tem/v20210701/model/ModifyApplicationAutoscalerResponse.h>
 #include <tencentcloud/tem/v20210701/model/ModifyApplicationInfoRequest.h>
 #include <tencentcloud/tem/v20210701/model/ModifyApplicationInfoResponse.h>
 #include <tencentcloud/tem/v20210701/model/ModifyApplicationReplicasRequest.h>
 #include <tencentcloud/tem/v20210701/model/ModifyApplicationReplicasResponse.h>
+#include <tencentcloud/tem/v20210701/model/ModifyConfigDataRequest.h>
+#include <tencentcloud/tem/v20210701/model/ModifyConfigDataResponse.h>
 #include <tencentcloud/tem/v20210701/model/ModifyEnvironmentRequest.h>
 #include <tencentcloud/tem/v20210701/model/ModifyEnvironmentResponse.h>
 #include <tencentcloud/tem/v20210701/model/ModifyIngressRequest.h>
@@ -98,6 +116,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateApplicationResponse> CreateApplicationOutcome;
                 typedef std::future<CreateApplicationOutcome> CreateApplicationOutcomeCallable;
                 typedef std::function<void(const TemClient*, const Model::CreateApplicationRequest&, CreateApplicationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateApplicationAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateApplicationAutoscalerResponse> CreateApplicationAutoscalerOutcome;
+                typedef std::future<CreateApplicationAutoscalerOutcome> CreateApplicationAutoscalerOutcomeCallable;
+                typedef std::function<void(const TemClient*, const Model::CreateApplicationAutoscalerRequest&, CreateApplicationAutoscalerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateApplicationAutoscalerAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateConfigDataResponse> CreateConfigDataOutcome;
+                typedef std::future<CreateConfigDataOutcome> CreateConfigDataOutcomeCallable;
+                typedef std::function<void(const TemClient*, const Model::CreateConfigDataRequest&, CreateConfigDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateConfigDataAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateCosTokenResponse> CreateCosTokenOutcome;
                 typedef std::future<CreateCosTokenOutcome> CreateCosTokenOutcomeCallable;
                 typedef std::function<void(const TemClient*, const Model::CreateCosTokenRequest&, CreateCosTokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCosTokenAsyncHandler;
@@ -110,12 +134,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteApplicationResponse> DeleteApplicationOutcome;
                 typedef std::future<DeleteApplicationOutcome> DeleteApplicationOutcomeCallable;
                 typedef std::function<void(const TemClient*, const Model::DeleteApplicationRequest&, DeleteApplicationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteApplicationAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteApplicationAutoscalerResponse> DeleteApplicationAutoscalerOutcome;
+                typedef std::future<DeleteApplicationAutoscalerOutcome> DeleteApplicationAutoscalerOutcomeCallable;
+                typedef std::function<void(const TemClient*, const Model::DeleteApplicationAutoscalerRequest&, DeleteApplicationAutoscalerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteApplicationAutoscalerAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteIngressResponse> DeleteIngressOutcome;
                 typedef std::future<DeleteIngressOutcome> DeleteIngressOutcomeCallable;
                 typedef std::function<void(const TemClient*, const Model::DeleteIngressRequest&, DeleteIngressOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteIngressAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeployApplicationResponse> DeployApplicationOutcome;
                 typedef std::future<DeployApplicationOutcome> DeployApplicationOutcomeCallable;
                 typedef std::function<void(const TemClient*, const Model::DeployApplicationRequest&, DeployApplicationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeployApplicationAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeApplicationAutoscalerListResponse> DescribeApplicationAutoscalerListOutcome;
+                typedef std::future<DescribeApplicationAutoscalerListOutcome> DescribeApplicationAutoscalerListOutcomeCallable;
+                typedef std::function<void(const TemClient*, const Model::DescribeApplicationAutoscalerListRequest&, DescribeApplicationAutoscalerListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApplicationAutoscalerListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeApplicationInfoResponse> DescribeApplicationInfoOutcome;
                 typedef std::future<DescribeApplicationInfoOutcome> DescribeApplicationInfoOutcomeCallable;
                 typedef std::function<void(const TemClient*, const Model::DescribeApplicationInfoRequest&, DescribeApplicationInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApplicationInfoAsyncHandler;
@@ -128,6 +158,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeApplicationsStatusResponse> DescribeApplicationsStatusOutcome;
                 typedef std::future<DescribeApplicationsStatusOutcome> DescribeApplicationsStatusOutcomeCallable;
                 typedef std::function<void(const TemClient*, const Model::DescribeApplicationsStatusRequest&, DescribeApplicationsStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApplicationsStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeConfigDataResponse> DescribeConfigDataOutcome;
+                typedef std::future<DescribeConfigDataOutcome> DescribeConfigDataOutcomeCallable;
+                typedef std::function<void(const TemClient*, const Model::DescribeConfigDataRequest&, DescribeConfigDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeConfigDataAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeConfigDataListResponse> DescribeConfigDataListOutcome;
+                typedef std::future<DescribeConfigDataListOutcome> DescribeConfigDataListOutcomeCallable;
+                typedef std::function<void(const TemClient*, const Model::DescribeConfigDataListRequest&, DescribeConfigDataListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeConfigDataListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDeployApplicationDetailResponse> DescribeDeployApplicationDetailOutcome;
                 typedef std::future<DescribeDeployApplicationDetailOutcome> DescribeDeployApplicationDetailOutcomeCallable;
                 typedef std::function<void(const TemClient*, const Model::DescribeDeployApplicationDetailRequest&, DescribeDeployApplicationDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDeployApplicationDetailAsyncHandler;
@@ -146,18 +182,27 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeRelatedIngressesResponse> DescribeRelatedIngressesOutcome;
                 typedef std::future<DescribeRelatedIngressesOutcome> DescribeRelatedIngressesOutcomeCallable;
                 typedef std::function<void(const TemClient*, const Model::DescribeRelatedIngressesRequest&, DescribeRelatedIngressesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRelatedIngressesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DestroyConfigDataResponse> DestroyConfigDataOutcome;
+                typedef std::future<DestroyConfigDataOutcome> DestroyConfigDataOutcomeCallable;
+                typedef std::function<void(const TemClient*, const Model::DestroyConfigDataRequest&, DestroyConfigDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DestroyConfigDataAsyncHandler;
                 typedef Outcome<Core::Error, Model::DestroyEnvironmentResponse> DestroyEnvironmentOutcome;
                 typedef std::future<DestroyEnvironmentOutcome> DestroyEnvironmentOutcomeCallable;
                 typedef std::function<void(const TemClient*, const Model::DestroyEnvironmentRequest&, DestroyEnvironmentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DestroyEnvironmentAsyncHandler;
                 typedef Outcome<Core::Error, Model::GenerateApplicationPackageDownloadUrlResponse> GenerateApplicationPackageDownloadUrlOutcome;
                 typedef std::future<GenerateApplicationPackageDownloadUrlOutcome> GenerateApplicationPackageDownloadUrlOutcomeCallable;
                 typedef std::function<void(const TemClient*, const Model::GenerateApplicationPackageDownloadUrlRequest&, GenerateApplicationPackageDownloadUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GenerateApplicationPackageDownloadUrlAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyApplicationAutoscalerResponse> ModifyApplicationAutoscalerOutcome;
+                typedef std::future<ModifyApplicationAutoscalerOutcome> ModifyApplicationAutoscalerOutcomeCallable;
+                typedef std::function<void(const TemClient*, const Model::ModifyApplicationAutoscalerRequest&, ModifyApplicationAutoscalerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyApplicationAutoscalerAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyApplicationInfoResponse> ModifyApplicationInfoOutcome;
                 typedef std::future<ModifyApplicationInfoOutcome> ModifyApplicationInfoOutcomeCallable;
                 typedef std::function<void(const TemClient*, const Model::ModifyApplicationInfoRequest&, ModifyApplicationInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyApplicationInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyApplicationReplicasResponse> ModifyApplicationReplicasOutcome;
                 typedef std::future<ModifyApplicationReplicasOutcome> ModifyApplicationReplicasOutcomeCallable;
                 typedef std::function<void(const TemClient*, const Model::ModifyApplicationReplicasRequest&, ModifyApplicationReplicasOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyApplicationReplicasAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyConfigDataResponse> ModifyConfigDataOutcome;
+                typedef std::future<ModifyConfigDataOutcome> ModifyConfigDataOutcomeCallable;
+                typedef std::function<void(const TemClient*, const Model::ModifyConfigDataRequest&, ModifyConfigDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyConfigDataAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyEnvironmentResponse> ModifyEnvironmentOutcome;
                 typedef std::future<ModifyEnvironmentOutcome> ModifyEnvironmentOutcomeCallable;
                 typedef std::function<void(const TemClient*, const Model::ModifyEnvironmentRequest&, ModifyEnvironmentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyEnvironmentAsyncHandler;
@@ -193,6 +238,24 @@ namespace TencentCloud
                 CreateApplicationOutcome CreateApplication(const Model::CreateApplicationRequest &request);
                 void CreateApplicationAsync(const Model::CreateApplicationRequest& request, const CreateApplicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateApplicationOutcomeCallable CreateApplicationCallable(const Model::CreateApplicationRequest& request);
+
+                /**
+                 *创建弹性伸缩策略组合
+                 * @param req CreateApplicationAutoscalerRequest
+                 * @return CreateApplicationAutoscalerOutcome
+                 */
+                CreateApplicationAutoscalerOutcome CreateApplicationAutoscaler(const Model::CreateApplicationAutoscalerRequest &request);
+                void CreateApplicationAutoscalerAsync(const Model::CreateApplicationAutoscalerRequest& request, const CreateApplicationAutoscalerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateApplicationAutoscalerOutcomeCallable CreateApplicationAutoscalerCallable(const Model::CreateApplicationAutoscalerRequest& request);
+
+                /**
+                 *创建配置
+                 * @param req CreateConfigDataRequest
+                 * @return CreateConfigDataOutcome
+                 */
+                CreateConfigDataOutcome CreateConfigData(const Model::CreateConfigDataRequest &request);
+                void CreateConfigDataAsync(const Model::CreateConfigDataRequest& request, const CreateConfigDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateConfigDataOutcomeCallable CreateConfigDataCallable(const Model::CreateConfigDataRequest& request);
 
                 /**
                  *生成Cos临时秘钥
@@ -234,6 +297,15 @@ namespace TencentCloud
                 DeleteApplicationOutcomeCallable DeleteApplicationCallable(const Model::DeleteApplicationRequest& request);
 
                 /**
+                 *删除应用弹性策略组合
+                 * @param req DeleteApplicationAutoscalerRequest
+                 * @return DeleteApplicationAutoscalerOutcome
+                 */
+                DeleteApplicationAutoscalerOutcome DeleteApplicationAutoscaler(const Model::DeleteApplicationAutoscalerRequest &request);
+                void DeleteApplicationAutoscalerAsync(const Model::DeleteApplicationAutoscalerRequest& request, const DeleteApplicationAutoscalerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteApplicationAutoscalerOutcomeCallable DeleteApplicationAutoscalerCallable(const Model::DeleteApplicationAutoscalerRequest& request);
+
+                /**
                  *删除 Ingress 规则
                  * @param req DeleteIngressRequest
                  * @return DeleteIngressOutcome
@@ -250,6 +322,15 @@ namespace TencentCloud
                 DeployApplicationOutcome DeployApplication(const Model::DeployApplicationRequest &request);
                 void DeployApplicationAsync(const Model::DeployApplicationRequest& request, const DeployApplicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeployApplicationOutcomeCallable DeployApplicationCallable(const Model::DeployApplicationRequest& request);
+
+                /**
+                 *获取应用弹性策略组合
+                 * @param req DescribeApplicationAutoscalerListRequest
+                 * @return DescribeApplicationAutoscalerListOutcome
+                 */
+                DescribeApplicationAutoscalerListOutcome DescribeApplicationAutoscalerList(const Model::DescribeApplicationAutoscalerListRequest &request);
+                void DescribeApplicationAutoscalerListAsync(const Model::DescribeApplicationAutoscalerListRequest& request, const DescribeApplicationAutoscalerListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeApplicationAutoscalerListOutcomeCallable DescribeApplicationAutoscalerListCallable(const Model::DescribeApplicationAutoscalerListRequest& request);
 
                 /**
                  *服务基本信息查看
@@ -286,6 +367,24 @@ namespace TencentCloud
                 DescribeApplicationsStatusOutcome DescribeApplicationsStatus(const Model::DescribeApplicationsStatusRequest &request);
                 void DescribeApplicationsStatusAsync(const Model::DescribeApplicationsStatusRequest& request, const DescribeApplicationsStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeApplicationsStatusOutcomeCallable DescribeApplicationsStatusCallable(const Model::DescribeApplicationsStatusRequest& request);
+
+                /**
+                 *查询配置详情
+                 * @param req DescribeConfigDataRequest
+                 * @return DescribeConfigDataOutcome
+                 */
+                DescribeConfigDataOutcome DescribeConfigData(const Model::DescribeConfigDataRequest &request);
+                void DescribeConfigDataAsync(const Model::DescribeConfigDataRequest& request, const DescribeConfigDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeConfigDataOutcomeCallable DescribeConfigDataCallable(const Model::DescribeConfigDataRequest& request);
+
+                /**
+                 *查询配置列表
+                 * @param req DescribeConfigDataListRequest
+                 * @return DescribeConfigDataListOutcome
+                 */
+                DescribeConfigDataListOutcome DescribeConfigDataList(const Model::DescribeConfigDataListRequest &request);
+                void DescribeConfigDataListAsync(const Model::DescribeConfigDataListRequest& request, const DescribeConfigDataListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeConfigDataListOutcomeCallable DescribeConfigDataListCallable(const Model::DescribeConfigDataListRequest& request);
 
                 /**
                  *获取分批发布详情
@@ -342,6 +441,15 @@ namespace TencentCloud
                 DescribeRelatedIngressesOutcomeCallable DescribeRelatedIngressesCallable(const Model::DescribeRelatedIngressesRequest& request);
 
                 /**
+                 *销毁配置
+                 * @param req DestroyConfigDataRequest
+                 * @return DestroyConfigDataOutcome
+                 */
+                DestroyConfigDataOutcome DestroyConfigData(const Model::DestroyConfigDataRequest &request);
+                void DestroyConfigDataAsync(const Model::DestroyConfigDataRequest& request, const DestroyConfigDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DestroyConfigDataOutcomeCallable DestroyConfigDataCallable(const Model::DestroyConfigDataRequest& request);
+
+                /**
                  *销毁命名空间
                  * @param req DestroyEnvironmentRequest
                  * @return DestroyEnvironmentOutcome
@@ -360,6 +468,15 @@ namespace TencentCloud
                 GenerateApplicationPackageDownloadUrlOutcomeCallable GenerateApplicationPackageDownloadUrlCallable(const Model::GenerateApplicationPackageDownloadUrlRequest& request);
 
                 /**
+                 *修改弹性伸缩策略组合
+                 * @param req ModifyApplicationAutoscalerRequest
+                 * @return ModifyApplicationAutoscalerOutcome
+                 */
+                ModifyApplicationAutoscalerOutcome ModifyApplicationAutoscaler(const Model::ModifyApplicationAutoscalerRequest &request);
+                void ModifyApplicationAutoscalerAsync(const Model::ModifyApplicationAutoscalerRequest& request, const ModifyApplicationAutoscalerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyApplicationAutoscalerOutcomeCallable ModifyApplicationAutoscalerCallable(const Model::ModifyApplicationAutoscalerRequest& request);
+
+                /**
                  *修改应用基本信息
                  * @param req ModifyApplicationInfoRequest
                  * @return ModifyApplicationInfoOutcome
@@ -376,6 +493,15 @@ namespace TencentCloud
                 ModifyApplicationReplicasOutcome ModifyApplicationReplicas(const Model::ModifyApplicationReplicasRequest &request);
                 void ModifyApplicationReplicasAsync(const Model::ModifyApplicationReplicasRequest& request, const ModifyApplicationReplicasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyApplicationReplicasOutcomeCallable ModifyApplicationReplicasCallable(const Model::ModifyApplicationReplicasRequest& request);
+
+                /**
+                 *编辑配置
+                 * @param req ModifyConfigDataRequest
+                 * @return ModifyConfigDataOutcome
+                 */
+                ModifyConfigDataOutcome ModifyConfigData(const Model::ModifyConfigDataRequest &request);
+                void ModifyConfigDataAsync(const Model::ModifyConfigDataRequest& request, const ModifyConfigDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyConfigDataOutcomeCallable ModifyConfigDataCallable(const Model::ModifyConfigDataRequest& request);
 
                 /**
                  *编辑环境

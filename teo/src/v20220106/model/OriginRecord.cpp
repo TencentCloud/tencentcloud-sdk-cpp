@@ -27,7 +27,8 @@ OriginRecord::OriginRecord() :
     m_portHasBeenSet(false),
     m_recordIdHasBeenSet(false),
     m_privateHasBeenSet(false),
-    m_privateParameterHasBeenSet(false)
+    m_privateParameterHasBeenSet(false),
+    m_protoHasBeenSet(false)
 {
 }
 
@@ -119,6 +120,16 @@ CoreInternalOutcome OriginRecord::Deserialize(const rapidjson::Value &value)
         m_privateParameterHasBeenSet = true;
     }
 
+    if (value.HasMember("Proto") && !value["Proto"].IsNull())
+    {
+        if (!value["Proto"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `OriginRecord.Proto` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_proto = string(value["Proto"].GetString());
+        m_protoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -192,6 +203,14 @@ void OriginRecord::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_protoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Proto";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_proto.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -307,5 +326,21 @@ void OriginRecord::SetPrivateParameter(const vector<OriginRecordPrivateParameter
 bool OriginRecord::PrivateParameterHasBeenSet() const
 {
     return m_privateParameterHasBeenSet;
+}
+
+string OriginRecord::GetProto() const
+{
+    return m_proto;
+}
+
+void OriginRecord::SetProto(const string& _proto)
+{
+    m_proto = _proto;
+    m_protoHasBeenSet = true;
+}
+
+bool OriginRecord::ProtoHasBeenSet() const
+{
+    return m_protoHasBeenSet;
 }
 

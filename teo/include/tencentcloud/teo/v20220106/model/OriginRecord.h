@@ -90,20 +90,32 @@ namespace TencentCloud
                     /**
                      * 获取当源站配置类型Type=weight时，表示权重
 取值范围为[1-100]
-源站组内多个源站权重总和应为100
+源站组内多个源站权重总和应为100。
+当源站配置类型Type=proto，表示权重
+取值范围为[1-100]
+源站组内Proto相同的多个源站权重总和应为100。
                      * @return Weight 当源站配置类型Type=weight时，表示权重
 取值范围为[1-100]
-源站组内多个源站权重总和应为100
+源站组内多个源站权重总和应为100。
+当源站配置类型Type=proto，表示权重
+取值范围为[1-100]
+源站组内Proto相同的多个源站权重总和应为100。
                      */
                     uint64_t GetWeight() const;
 
                     /**
                      * 设置当源站配置类型Type=weight时，表示权重
 取值范围为[1-100]
-源站组内多个源站权重总和应为100
+源站组内多个源站权重总和应为100。
+当源站配置类型Type=proto，表示权重
+取值范围为[1-100]
+源站组内Proto相同的多个源站权重总和应为100。
                      * @param Weight 当源站配置类型Type=weight时，表示权重
 取值范围为[1-100]
-源站组内多个源站权重总和应为100
+源站组内多个源站权重总和应为100。
+当源站配置类型Type=proto，表示权重
+取值范围为[1-100]
+源站组内Proto相同的多个源站权重总和应为100。
                      */
                     void SetWeight(const uint64_t& _weight);
 
@@ -201,6 +213,28 @@ namespace TencentCloud
                      */
                     bool PrivateParameterHasBeenSet() const;
 
+                    /**
+                     * 获取当源站配置类型Type=proto时，表示客户端请求协议，取值：http/https
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Proto 当源站配置类型Type=proto时，表示客户端请求协议，取值：http/https
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetProto() const;
+
+                    /**
+                     * 设置当源站配置类型Type=proto时，表示客户端请求协议，取值：http/https
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Proto 当源站配置类型Type=proto时，表示客户端请求协议，取值：http/https
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetProto(const std::string& _proto);
+
+                    /**
+                     * 判断参数 Proto 是否已赋值
+                     * @return Proto 是否已赋值
+                     */
+                    bool ProtoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -219,7 +253,10 @@ namespace TencentCloud
                     /**
                      * 当源站配置类型Type=weight时，表示权重
 取值范围为[1-100]
-源站组内多个源站权重总和应为100
+源站组内多个源站权重总和应为100。
+当源站配置类型Type=proto，表示权重
+取值范围为[1-100]
+源站组内Proto相同的多个源站权重总和应为100。
                      */
                     uint64_t m_weight;
                     bool m_weightHasBeenSet;
@@ -251,6 +288,13 @@ namespace TencentCloud
                      */
                     std::vector<OriginRecordPrivateParameter> m_privateParameter;
                     bool m_privateParameterHasBeenSet;
+
+                    /**
+                     * 当源站配置类型Type=proto时，表示客户端请求协议，取值：http/https
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_proto;
+                    bool m_protoHasBeenSet;
 
                 };
             }

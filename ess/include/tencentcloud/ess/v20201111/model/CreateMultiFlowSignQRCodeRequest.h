@@ -23,6 +23,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/ess/v20201111/model/UserInfo.h>
 #include <tencentcloud/ess/v20201111/model/Agent.h>
+#include <tencentcloud/ess/v20201111/model/ApproverRestriction.h>
 
 
 namespace TencentCloud
@@ -200,6 +201,24 @@ namespace TencentCloud
                      */
                     bool QrEffectiveDayHasBeenSet() const;
 
+                    /**
+                     * 获取限制二维码用户条件
+                     * @return ApproverRestrictions 限制二维码用户条件
+                     */
+                    ApproverRestriction GetApproverRestrictions() const;
+
+                    /**
+                     * 设置限制二维码用户条件
+                     * @param ApproverRestrictions 限制二维码用户条件
+                     */
+                    void SetApproverRestrictions(const ApproverRestriction& _approverRestrictions);
+
+                    /**
+                     * 判断参数 ApproverRestrictions 是否已赋值
+                     * @return ApproverRestrictions 是否已赋值
+                     */
+                    bool ApproverRestrictionsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -252,6 +271,12 @@ namespace TencentCloud
                      */
                     int64_t m_qrEffectiveDay;
                     bool m_qrEffectiveDayHasBeenSet;
+
+                    /**
+                     * 限制二维码用户条件
+                     */
+                    ApproverRestriction m_approverRestrictions;
+                    bool m_approverRestrictionsHasBeenSet;
 
                 };
             }
