@@ -23,7 +23,8 @@ using namespace std;
 KeyPointInfo::KeyPointInfo() :
     m_keyPointTypeHasBeenSet(false),
     m_xHasBeenSet(false),
-    m_yHasBeenSet(false)
+    m_yHasBeenSet(false),
+    m_bodyScoreHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,16 @@ CoreInternalOutcome KeyPointInfo::Deserialize(const rapidjson::Value &value)
         m_yHasBeenSet = true;
     }
 
+    if (value.HasMember("BodyScore") && !value["BodyScore"].IsNull())
+    {
+        if (!value["BodyScore"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `KeyPointInfo.BodyScore` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_bodyScore = value["BodyScore"].GetDouble();
+        m_bodyScoreHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +102,14 @@ void KeyPointInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "Y";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_y, allocator);
+    }
+
+    if (m_bodyScoreHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BodyScore";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_bodyScore, allocator);
     }
 
 }
@@ -142,5 +161,21 @@ void KeyPointInfo::SetY(const double& _y)
 bool KeyPointInfo::YHasBeenSet() const
 {
     return m_yHasBeenSet;
+}
+
+double KeyPointInfo::GetBodyScore() const
+{
+    return m_bodyScore;
+}
+
+void KeyPointInfo::SetBodyScore(const double& _bodyScore)
+{
+    m_bodyScore = _bodyScore;
+    m_bodyScoreHasBeenSet = true;
+}
+
+bool KeyPointInfo::BodyScoreHasBeenSet() const
+{
+    return m_bodyScoreHasBeenSet;
 }
 

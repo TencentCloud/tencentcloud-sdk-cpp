@@ -72,6 +72,28 @@ off：关闭
                      */
                     bool SwitchHasBeenSet() const;
 
+                    /**
+                     * 获取支持的压缩算法列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Algorithms 支持的压缩算法列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> GetAlgorithms() const;
+
+                    /**
+                     * 设置支持的压缩算法列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Algorithms 支持的压缩算法列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAlgorithms(const std::vector<std::string>& _algorithms);
+
+                    /**
+                     * 判断参数 Algorithms 是否已赋值
+                     * @return Algorithms 是否已赋值
+                     */
+                    bool AlgorithmsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -81,6 +103,13 @@ off：关闭
                      */
                     std::string m_switch;
                     bool m_switchHasBeenSet;
+
+                    /**
+                     * 支持的压缩算法列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_algorithms;
+                    bool m_algorithmsHasBeenSet;
 
                 };
             }

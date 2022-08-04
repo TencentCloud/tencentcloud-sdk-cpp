@@ -152,14 +152,14 @@ namespace TencentCloud
                     bool BackupTimeWindowHasBeenSet() const;
 
                     /**
-                     * 获取定期保留开关，off - 不开启定期保留策略，on - 开启定期保留策略，默认为off
-                     * @return EnableBackupPeriodSave 定期保留开关，off - 不开启定期保留策略，on - 开启定期保留策略，默认为off
+                     * 获取定期保留开关，off - 不开启定期保留策略，on - 开启定期保留策略，默认为off。首次开启定期保留策略时，BackupPeriodSaveDays，BackupPeriodSaveInterval，BackupPeriodSaveCount，StartBackupPeriodSaveDate参数为必填项，否则定期保留策略不会生效
+                     * @return EnableBackupPeriodSave 定期保留开关，off - 不开启定期保留策略，on - 开启定期保留策略，默认为off。首次开启定期保留策略时，BackupPeriodSaveDays，BackupPeriodSaveInterval，BackupPeriodSaveCount，StartBackupPeriodSaveDate参数为必填项，否则定期保留策略不会生效
                      */
                     std::string GetEnableBackupPeriodSave() const;
 
                     /**
-                     * 设置定期保留开关，off - 不开启定期保留策略，on - 开启定期保留策略，默认为off
-                     * @param EnableBackupPeriodSave 定期保留开关，off - 不开启定期保留策略，on - 开启定期保留策略，默认为off
+                     * 设置定期保留开关，off - 不开启定期保留策略，on - 开启定期保留策略，默认为off。首次开启定期保留策略时，BackupPeriodSaveDays，BackupPeriodSaveInterval，BackupPeriodSaveCount，StartBackupPeriodSaveDate参数为必填项，否则定期保留策略不会生效
+                     * @param EnableBackupPeriodSave 定期保留开关，off - 不开启定期保留策略，on - 开启定期保留策略，默认为off。首次开启定期保留策略时，BackupPeriodSaveDays，BackupPeriodSaveInterval，BackupPeriodSaveCount，StartBackupPeriodSaveDate参数为必填项，否则定期保留策略不会生效
                      */
                     void SetEnableBackupPeriodSave(const std::string& _enableBackupPeriodSave);
 
@@ -298,7 +298,7 @@ namespace TencentCloud
                     bool m_backupTimeWindowHasBeenSet;
 
                     /**
-                     * 定期保留开关，off - 不开启定期保留策略，on - 开启定期保留策略，默认为off
+                     * 定期保留开关，off - 不开启定期保留策略，on - 开启定期保留策略，默认为off。首次开启定期保留策略时，BackupPeriodSaveDays，BackupPeriodSaveInterval，BackupPeriodSaveCount，StartBackupPeriodSaveDate参数为必填项，否则定期保留策略不会生效
                      */
                     std::string m_enableBackupPeriodSave;
                     bool m_enableBackupPeriodSaveHasBeenSet;

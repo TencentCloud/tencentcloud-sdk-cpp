@@ -100,6 +100,24 @@ namespace TencentCloud
                      */
                     bool YHasBeenSet() const;
 
+                    /**
+                     * 获取关键点坐标置信度，分数取值在0-1之间，阈值建议为0.25，小于0.25认为在图中无人体关键点。
+                     * @return BodyScore 关键点坐标置信度，分数取值在0-1之间，阈值建议为0.25，小于0.25认为在图中无人体关键点。
+                     */
+                    double GetBodyScore() const;
+
+                    /**
+                     * 设置关键点坐标置信度，分数取值在0-1之间，阈值建议为0.25，小于0.25认为在图中无人体关键点。
+                     * @param BodyScore 关键点坐标置信度，分数取值在0-1之间，阈值建议为0.25，小于0.25认为在图中无人体关键点。
+                     */
+                    void SetBodyScore(const double& _bodyScore);
+
+                    /**
+                     * 判断参数 BodyScore 是否已赋值
+                     * @return BodyScore 是否已赋值
+                     */
+                    bool BodyScoreHasBeenSet() const;
+
                 private:
 
                     /**
@@ -119,6 +137,12 @@ namespace TencentCloud
                      */
                     double m_y;
                     bool m_yHasBeenSet;
+
+                    /**
+                     * 关键点坐标置信度，分数取值在0-1之间，阈值建议为0.25，小于0.25认为在图中无人体关键点。
+                     */
+                    double m_bodyScore;
+                    bool m_bodyScoreHasBeenSet;
 
                 };
             }

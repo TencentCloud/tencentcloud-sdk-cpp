@@ -14,21 +14,21 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/cpdp/v20190820/model/QuerySinglePayResponse.h>
+#include <tencentcloud/tem/v20210701/model/DescribeLogConfigResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Cpdp::V20190820::Model;
+using namespace TencentCloud::Tem::V20210701::Model;
 using namespace std;
 
-QuerySinglePayResponse::QuerySinglePayResponse() :
+DescribeLogConfigResponse::DescribeLogConfigResponse() :
     m_resultHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome QuerySinglePayResponse::Deserialize(const string &payload)
+CoreInternalOutcome DescribeLogConfigResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -83,7 +83,7 @@ CoreInternalOutcome QuerySinglePayResponse::Deserialize(const string &payload)
     return CoreInternalOutcome(true);
 }
 
-string QuerySinglePayResponse::ToJsonString() const
+string DescribeLogConfigResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
@@ -110,12 +110,12 @@ string QuerySinglePayResponse::ToJsonString() const
 }
 
 
-QuerySinglePayResult QuerySinglePayResponse::GetResult() const
+LogConfig DescribeLogConfigResponse::GetResult() const
 {
     return m_result;
 }
 
-bool QuerySinglePayResponse::ResultHasBeenSet() const
+bool DescribeLogConfigResponse::ResultHasBeenSet() const
 {
     return m_resultHasBeenSet;
 }

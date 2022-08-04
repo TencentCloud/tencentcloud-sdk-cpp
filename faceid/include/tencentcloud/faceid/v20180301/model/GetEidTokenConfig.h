@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/faceid/v20180301/model/IntentionQuestion.h>
 
 
 namespace TencentCloud
@@ -107,14 +108,32 @@ namespace TencentCloud
                     bool UseIntentionVerifyHasBeenSet() const;
 
                     /**
-                     * 获取意愿核身使用的文案，若未使用意愿核身功能，该字段无需传入。默认为空，最长可接受120的字符串长度。
-                     * @return IntentionVerifyText 意愿核身使用的文案，若未使用意愿核身功能，该字段无需传入。默认为空，最长可接受120的字符串长度。
+                     * 获取意愿核身模式。枚举值：1( 朗读模式)，2（问答模式） 。默认值1
+                     * @return IntentionMode 意愿核身模式。枚举值：1( 朗读模式)，2（问答模式） 。默认值1
+                     */
+                    std::string GetIntentionMode() const;
+
+                    /**
+                     * 设置意愿核身模式。枚举值：1( 朗读模式)，2（问答模式） 。默认值1
+                     * @param IntentionMode 意愿核身模式。枚举值：1( 朗读模式)，2（问答模式） 。默认值1
+                     */
+                    void SetIntentionMode(const std::string& _intentionMode);
+
+                    /**
+                     * 判断参数 IntentionMode 是否已赋值
+                     * @return IntentionMode 是否已赋值
+                     */
+                    bool IntentionModeHasBeenSet() const;
+
+                    /**
+                     * 获取意愿核身朗读模式使用的文案，若未使用意愿核身朗读功能，该字段无需传入。默认为空，最长可接受120的字符串长度。
+                     * @return IntentionVerifyText 意愿核身朗读模式使用的文案，若未使用意愿核身朗读功能，该字段无需传入。默认为空，最长可接受120的字符串长度。
                      */
                     std::string GetIntentionVerifyText() const;
 
                     /**
-                     * 设置意愿核身使用的文案，若未使用意愿核身功能，该字段无需传入。默认为空，最长可接受120的字符串长度。
-                     * @param IntentionVerifyText 意愿核身使用的文案，若未使用意愿核身功能，该字段无需传入。默认为空，最长可接受120的字符串长度。
+                     * 设置意愿核身朗读模式使用的文案，若未使用意愿核身朗读功能，该字段无需传入。默认为空，最长可接受120的字符串长度。
+                     * @param IntentionVerifyText 意愿核身朗读模式使用的文案，若未使用意愿核身朗读功能，该字段无需传入。默认为空，最长可接受120的字符串长度。
                      */
                     void SetIntentionVerifyText(const std::string& _intentionVerifyText);
 
@@ -123,6 +142,24 @@ namespace TencentCloud
                      * @return IntentionVerifyText 是否已赋值
                      */
                     bool IntentionVerifyTextHasBeenSet() const;
+
+                    /**
+                     * 获取意愿核身问答模式的配置列表。当前仅支持一个问答。
+                     * @return IntentionQuestions 意愿核身问答模式的配置列表。当前仅支持一个问答。
+                     */
+                    std::vector<IntentionQuestion> GetIntentionQuestions() const;
+
+                    /**
+                     * 设置意愿核身问答模式的配置列表。当前仅支持一个问答。
+                     * @param IntentionQuestions 意愿核身问答模式的配置列表。当前仅支持一个问答。
+                     */
+                    void SetIntentionQuestions(const std::vector<IntentionQuestion>& _intentionQuestions);
+
+                    /**
+                     * 判断参数 IntentionQuestions 是否已赋值
+                     * @return IntentionQuestions 是否已赋值
+                     */
+                    bool IntentionQuestionsHasBeenSet() const;
 
                 private:
 
@@ -145,10 +182,22 @@ namespace TencentCloud
                     bool m_useIntentionVerifyHasBeenSet;
 
                     /**
-                     * 意愿核身使用的文案，若未使用意愿核身功能，该字段无需传入。默认为空，最长可接受120的字符串长度。
+                     * 意愿核身模式。枚举值：1( 朗读模式)，2（问答模式） 。默认值1
+                     */
+                    std::string m_intentionMode;
+                    bool m_intentionModeHasBeenSet;
+
+                    /**
+                     * 意愿核身朗读模式使用的文案，若未使用意愿核身朗读功能，该字段无需传入。默认为空，最长可接受120的字符串长度。
                      */
                     std::string m_intentionVerifyText;
                     bool m_intentionVerifyTextHasBeenSet;
+
+                    /**
+                     * 意愿核身问答模式的配置列表。当前仅支持一个问答。
+                     */
+                    std::vector<IntentionQuestion> m_intentionQuestions;
+                    bool m_intentionQuestionsHasBeenSet;
 
                 };
             }

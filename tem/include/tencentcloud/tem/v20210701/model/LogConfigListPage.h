@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_TEO_V20220106_MODEL_DDOSGEOIP_H_
-#define TENCENTCLOUD_TEO_V20220106_MODEL_DDOSGEOIP_H_
+#ifndef TENCENTCLOUD_TEM_V20210701_MODEL_LOGCONFIGLISTPAGE_H_
+#define TENCENTCLOUD_TEM_V20210701_MODEL_LOGCONFIGLISTPAGE_H_
 
 #include <string>
 #include <vector>
@@ -24,87 +24,88 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tem/v20210701/model/LogConfig.h>
 
 
 namespace TencentCloud
 {
-    namespace Teo
+    namespace Tem
     {
-        namespace V20220106
+        namespace V20210701
         {
             namespace Model
             {
                 /**
-                * DDoS地域封禁
+                * LogConfig 列表结果
                 */
-                class DDoSGeoIp : public AbstractModel
+                class LogConfigListPage : public AbstractModel
                 {
                 public:
-                    DDoSGeoIp();
-                    ~DDoSGeoIp() = default;
+                    LogConfigListPage();
+                    ~LogConfigListPage() = default;
                     void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
                     CoreInternalOutcome Deserialize(const rapidjson::Value &value);
 
 
                     /**
-                     * 获取地域信息，ID参考接口DescribeSecurityPolicyRegions
+                     * 获取记录
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RegionId 地域信息，ID参考接口DescribeSecurityPolicyRegions
+                     * @return Records 记录
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::vector<int64_t> GetRegionId() const;
+                    std::vector<LogConfig> GetRecords() const;
 
                     /**
-                     * 设置地域信息，ID参考接口DescribeSecurityPolicyRegions
+                     * 设置记录
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RegionId 地域信息，ID参考接口DescribeSecurityPolicyRegions
+                     * @param Records 记录
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    void SetRegionId(const std::vector<int64_t>& _regionId);
+                    void SetRecords(const std::vector<LogConfig>& _records);
 
                     /**
-                     * 判断参数 RegionId 是否已赋值
-                     * @return RegionId 是否已赋值
+                     * 判断参数 Records 是否已赋值
+                     * @return Records 是否已赋值
                      */
-                    bool RegionIdHasBeenSet() const;
+                    bool RecordsHasBeenSet() const;
 
                     /**
-                     * 获取区域封禁清空标识
+                     * 获取翻页游标
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Switch 区域封禁清空标识
+                     * @return ContinueToken 翻页游标
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::string GetSwitch() const;
+                    std::string GetContinueToken() const;
 
                     /**
-                     * 设置区域封禁清空标识
+                     * 设置翻页游标
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Switch 区域封禁清空标识
+                     * @param ContinueToken 翻页游标
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    void SetSwitch(const std::string& _switch);
+                    void SetContinueToken(const std::string& _continueToken);
 
                     /**
-                     * 判断参数 Switch 是否已赋值
-                     * @return Switch 是否已赋值
+                     * 判断参数 ContinueToken 是否已赋值
+                     * @return ContinueToken 是否已赋值
                      */
-                    bool SwitchHasBeenSet() const;
+                    bool ContinueTokenHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 地域信息，ID参考接口DescribeSecurityPolicyRegions
+                     * 记录
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::vector<int64_t> m_regionId;
-                    bool m_regionIdHasBeenSet;
+                    std::vector<LogConfig> m_records;
+                    bool m_recordsHasBeenSet;
 
                     /**
-                     * 区域封禁清空标识
+                     * 翻页游标
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::string m_switch;
-                    bool m_switchHasBeenSet;
+                    std::string m_continueToken;
+                    bool m_continueTokenHasBeenSet;
 
                 };
             }
@@ -112,4 +113,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_TEO_V20220106_MODEL_DDOSGEOIP_H_
+#endif // !TENCENTCLOUD_TEM_V20210701_MODEL_LOGCONFIGLISTPAGE_H_

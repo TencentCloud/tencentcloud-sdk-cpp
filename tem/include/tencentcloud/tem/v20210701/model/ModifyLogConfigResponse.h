@@ -14,41 +14,40 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_CPDP_V20190820_MODEL_QUERYSINGLEPAYRESPONSE_H_
-#define TENCENTCLOUD_CPDP_V20190820_MODEL_QUERYSINGLEPAYRESPONSE_H_
+#ifndef TENCENTCLOUD_TEM_V20210701_MODEL_MODIFYLOGCONFIGRESPONSE_H_
+#define TENCENTCLOUD_TEM_V20210701_MODEL_MODIFYLOGCONFIGRESPONSE_H_
 
 #include <string>
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/cpdp/v20190820/model/QuerySinglePayResult.h>
 
 
 namespace TencentCloud
 {
-    namespace Cpdp
+    namespace Tem
     {
-        namespace V20190820
+        namespace V20210701
         {
             namespace Model
             {
                 /**
-                * QuerySinglePay返回参数结构体
+                * ModifyLogConfig返回参数结构体
                 */
-                class QuerySinglePayResponse : public AbstractModel
+                class ModifyLogConfigResponse : public AbstractModel
                 {
                 public:
-                    QuerySinglePayResponse();
-                    ~QuerySinglePayResponse() = default;
+                    ModifyLogConfigResponse();
+                    ~ModifyLogConfigResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取返回结果
-                     * @return Result 返回结果
+                     * 获取编辑是否成功
+                     * @return Result 编辑是否成功
                      */
-                    QuerySinglePayResult GetResult() const;
+                    bool GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
@@ -59,9 +58,9 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 返回结果
+                     * 编辑是否成功
                      */
-                    QuerySinglePayResult m_result;
+                    bool m_result;
                     bool m_resultHasBeenSet;
 
                 };
@@ -70,4 +69,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_CPDP_V20190820_MODEL_QUERYSINGLEPAYRESPONSE_H_
+#endif // !TENCENTCLOUD_TEM_V20210701_MODEL_MODIFYLOGCONFIGRESPONSE_H_

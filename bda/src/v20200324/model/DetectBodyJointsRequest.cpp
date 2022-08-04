@@ -24,7 +24,8 @@ using namespace std;
 
 DetectBodyJointsRequest::DetectBodyJointsRequest() :
     m_imageHasBeenSet(false),
-    m_urlHasBeenSet(false)
+    m_urlHasBeenSet(false),
+    m_localBodySwitchHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string DetectBodyJointsRequest::ToJsonString() const
         string key = "Url";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_url.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_localBodySwitchHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LocalBodySwitch";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_localBodySwitch, allocator);
     }
 
 
@@ -89,6 +98,22 @@ void DetectBodyJointsRequest::SetUrl(const string& _url)
 bool DetectBodyJointsRequest::UrlHasBeenSet() const
 {
     return m_urlHasBeenSet;
+}
+
+bool DetectBodyJointsRequest::GetLocalBodySwitch() const
+{
+    return m_localBodySwitch;
+}
+
+void DetectBodyJointsRequest::SetLocalBodySwitch(const bool& _localBodySwitch)
+{
+    m_localBodySwitch = _localBodySwitch;
+    m_localBodySwitchHasBeenSet = true;
+}
+
+bool DetectBodyJointsRequest::LocalBodySwitchHasBeenSet() const
+{
+    return m_localBodySwitchHasBeenSet;
 }
 
 

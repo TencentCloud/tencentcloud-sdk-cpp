@@ -23,7 +23,9 @@ using namespace std;
 GetEidTokenConfig::GetEidTokenConfig() :
     m_inputTypeHasBeenSet(false),
     m_useIntentionVerifyHasBeenSet(false),
-    m_intentionVerifyTextHasBeenSet(false)
+    m_intentionModeHasBeenSet(false),
+    m_intentionVerifyTextHasBeenSet(false),
+    m_intentionQuestionsHasBeenSet(false)
 {
 }
 
@@ -52,6 +54,16 @@ CoreInternalOutcome GetEidTokenConfig::Deserialize(const rapidjson::Value &value
         m_useIntentionVerifyHasBeenSet = true;
     }
 
+    if (value.HasMember("IntentionMode") && !value["IntentionMode"].IsNull())
+    {
+        if (!value["IntentionMode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `GetEidTokenConfig.IntentionMode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_intentionMode = string(value["IntentionMode"].GetString());
+        m_intentionModeHasBeenSet = true;
+    }
+
     if (value.HasMember("IntentionVerifyText") && !value["IntentionVerifyText"].IsNull())
     {
         if (!value["IntentionVerifyText"].IsString())
@@ -60,6 +72,26 @@ CoreInternalOutcome GetEidTokenConfig::Deserialize(const rapidjson::Value &value
         }
         m_intentionVerifyText = string(value["IntentionVerifyText"].GetString());
         m_intentionVerifyTextHasBeenSet = true;
+    }
+
+    if (value.HasMember("IntentionQuestions") && !value["IntentionQuestions"].IsNull())
+    {
+        if (!value["IntentionQuestions"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `GetEidTokenConfig.IntentionQuestions` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["IntentionQuestions"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            IntentionQuestion item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_intentionQuestions.push_back(item);
+        }
+        m_intentionQuestionsHasBeenSet = true;
     }
 
 
@@ -85,12 +117,35 @@ void GetEidTokenConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         value.AddMember(iKey, m_useIntentionVerify, allocator);
     }
 
+    if (m_intentionModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IntentionMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_intentionMode.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_intentionVerifyTextHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "IntentionVerifyText";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_intentionVerifyText.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_intentionQuestionsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IntentionQuestions";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_intentionQuestions.begin(); itr != m_intentionQuestions.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -128,6 +183,22 @@ bool GetEidTokenConfig::UseIntentionVerifyHasBeenSet() const
     return m_useIntentionVerifyHasBeenSet;
 }
 
+string GetEidTokenConfig::GetIntentionMode() const
+{
+    return m_intentionMode;
+}
+
+void GetEidTokenConfig::SetIntentionMode(const string& _intentionMode)
+{
+    m_intentionMode = _intentionMode;
+    m_intentionModeHasBeenSet = true;
+}
+
+bool GetEidTokenConfig::IntentionModeHasBeenSet() const
+{
+    return m_intentionModeHasBeenSet;
+}
+
 string GetEidTokenConfig::GetIntentionVerifyText() const
 {
     return m_intentionVerifyText;
@@ -142,5 +213,21 @@ void GetEidTokenConfig::SetIntentionVerifyText(const string& _intentionVerifyTex
 bool GetEidTokenConfig::IntentionVerifyTextHasBeenSet() const
 {
     return m_intentionVerifyTextHasBeenSet;
+}
+
+vector<IntentionQuestion> GetEidTokenConfig::GetIntentionQuestions() const
+{
+    return m_intentionQuestions;
+}
+
+void GetEidTokenConfig::SetIntentionQuestions(const vector<IntentionQuestion>& _intentionQuestions)
+{
+    m_intentionQuestions = _intentionQuestions;
+    m_intentionQuestionsHasBeenSet = true;
+}
+
+bool GetEidTokenConfig::IntentionQuestionsHasBeenSet() const
+{
+    return m_intentionQuestionsHasBeenSet;
 }
 

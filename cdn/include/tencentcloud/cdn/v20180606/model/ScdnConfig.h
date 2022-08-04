@@ -110,6 +110,28 @@ namespace TencentCloud
                      */
                     bool AdvancedRulesHasBeenSet() const;
 
+                    /**
+                     * 获取增强自定义 cc 防护规则， 全局
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return GlobalAdvancedRules 增强自定义 cc 防护规则， 全局
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<AdvancedCCRules> GetGlobalAdvancedRules() const;
+
+                    /**
+                     * 设置增强自定义 cc 防护规则， 全局
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param GlobalAdvancedRules 增强自定义 cc 防护规则， 全局
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetGlobalAdvancedRules(const std::vector<AdvancedCCRules>& _globalAdvancedRules);
+
+                    /**
+                     * 判断参数 GlobalAdvancedRules 是否已赋值
+                     * @return GlobalAdvancedRules 是否已赋值
+                     */
+                    bool GlobalAdvancedRulesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -131,6 +153,13 @@ namespace TencentCloud
                      */
                     std::vector<AdvancedCCRules> m_advancedRules;
                     bool m_advancedRulesHasBeenSet;
+
+                    /**
+                     * 增强自定义 cc 防护规则， 全局
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<AdvancedCCRules> m_globalAdvancedRules;
+                    bool m_globalAdvancedRulesHasBeenSet;
 
                 };
             }

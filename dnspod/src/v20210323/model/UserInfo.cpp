@@ -31,7 +31,8 @@ UserInfo::UserInfo() :
     m_userGradeHasBeenSet(false),
     m_realNameHasBeenSet(false),
     m_wechatBindedHasBeenSet(false),
-    m_uinHasBeenSet(false)
+    m_uinHasBeenSet(false),
+    m_freeNsHasBeenSet(false)
 {
 }
 
@@ -150,6 +151,19 @@ CoreInternalOutcome UserInfo::Deserialize(const rapidjson::Value &value)
         m_uinHasBeenSet = true;
     }
 
+    if (value.HasMember("FreeNs") && !value["FreeNs"].IsNull())
+    {
+        if (!value["FreeNs"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `UserInfo.FreeNs` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["FreeNs"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_freeNs.push_back((*itr).GetString());
+        }
+        m_freeNsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -243,6 +257,19 @@ void UserInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "Uin";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_uin, allocator);
+    }
+
+    if (m_freeNsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FreeNs";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_freeNs.begin(); itr != m_freeNs.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -422,5 +449,21 @@ void UserInfo::SetUin(const int64_t& _uin)
 bool UserInfo::UinHasBeenSet() const
 {
     return m_uinHasBeenSet;
+}
+
+vector<string> UserInfo::GetFreeNs() const
+{
+    return m_freeNs;
+}
+
+void UserInfo::SetFreeNs(const vector<string>& _freeNs)
+{
+    m_freeNs = _freeNs;
+    m_freeNsHasBeenSet = true;
+}
+
+bool UserInfo::FreeNsHasBeenSet() const
+{
+    return m_freeNsHasBeenSet;
 }
 

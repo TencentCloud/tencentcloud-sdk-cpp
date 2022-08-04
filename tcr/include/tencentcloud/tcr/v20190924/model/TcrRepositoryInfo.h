@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool NamespaceHasBeenSet() const;
 
                     /**
-                     * 获取创建时间
-                     * @return CreationTime 创建时间
+                     * 获取创建时间，格式"2006-01-02 15:04:05.999999999 -0700 MST"
+                     * @return CreationTime 创建时间，格式"2006-01-02 15:04:05.999999999 -0700 MST"
                      */
                     std::string GetCreationTime() const;
 
                     /**
-                     * 设置创建时间
-                     * @param CreationTime 创建时间
+                     * 设置创建时间，格式"2006-01-02 15:04:05.999999999 -0700 MST"
+                     * @param CreationTime 创建时间，格式"2006-01-02 15:04:05.999999999 -0700 MST"
                      */
                     void SetCreationTime(const std::string& _creationTime);
 
@@ -163,14 +163,14 @@ namespace TencentCloud
                     bool BriefDescriptionHasBeenSet() const;
 
                     /**
-                     * 获取更新时间
-                     * @return UpdateTime 更新时间
+                     * 获取更新时间，格式"2006-01-02 15:04:05.999999999 -0700 MST"
+                     * @return UpdateTime 更新时间，格式"2006-01-02 15:04:05.999999999 -0700 MST"
                      */
                     std::string GetUpdateTime() const;
 
                     /**
-                     * 设置更新时间
-                     * @param UpdateTime 更新时间
+                     * 设置更新时间，格式"2006-01-02 15:04:05.999999999 -0700 MST"
+                     * @param UpdateTime 更新时间，格式"2006-01-02 15:04:05.999999999 -0700 MST"
                      */
                     void SetUpdateTime(const std::string& _updateTime);
 
@@ -195,7 +195,7 @@ namespace TencentCloud
                     bool m_namespaceHasBeenSet;
 
                     /**
-                     * 创建时间
+                     * 创建时间，格式"2006-01-02 15:04:05.999999999 -0700 MST"
                      */
                     std::string m_creationTime;
                     bool m_creationTimeHasBeenSet;
@@ -221,7 +221,7 @@ namespace TencentCloud
                     bool m_briefDescriptionHasBeenSet;
 
                     /**
-                     * 更新时间
+                     * 更新时间，格式"2006-01-02 15:04:05.999999999 -0700 MST"
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;

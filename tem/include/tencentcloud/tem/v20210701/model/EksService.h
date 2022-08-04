@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tem/v20210701/model/PortMapping.h>
+#include <tencentcloud/tem/v20210701/model/ServicePortMapping.h>
 
 
 namespace TencentCloud
@@ -289,6 +290,116 @@ namespace TencentCloud
                      */
                     bool PortMappingsHasBeenSet() const;
 
+                    /**
+                     * 获取每种类型访问配置详情
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ServicePortMappingList 每种类型访问配置详情
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<ServicePortMapping> GetServicePortMappingList() const;
+
+                    /**
+                     * 设置每种类型访问配置详情
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ServicePortMappingList 每种类型访问配置详情
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetServicePortMappingList(const std::vector<ServicePortMapping>& _servicePortMappingList);
+
+                    /**
+                     * 判断参数 ServicePortMappingList 是否已赋值
+                     * @return ServicePortMappingList 是否已赋值
+                     */
+                    bool ServicePortMappingListHasBeenSet() const;
+
+                    /**
+                     * 获取刷新复写所有类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FlushAll 刷新复写所有类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetFlushAll() const;
+
+                    /**
+                     * 设置刷新复写所有类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param FlushAll 刷新复写所有类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetFlushAll(const bool& _flushAll);
+
+                    /**
+                     * 判断参数 FlushAll 是否已赋值
+                     * @return FlushAll 是否已赋值
+                     */
+                    bool FlushAllHasBeenSet() const;
+
+                    /**
+                     * 获取1: 下次部署自动注入注册中心信息；0：不注入
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EnableRegistryNextDeploy 1: 下次部署自动注入注册中心信息；0：不注入
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetEnableRegistryNextDeploy() const;
+
+                    /**
+                     * 设置1: 下次部署自动注入注册中心信息；0：不注入
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param EnableRegistryNextDeploy 1: 下次部署自动注入注册中心信息；0：不注入
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetEnableRegistryNextDeploy(const int64_t& _enableRegistryNextDeploy);
+
+                    /**
+                     * 判断参数 EnableRegistryNextDeploy 是否已赋值
+                     * @return EnableRegistryNextDeploy 是否已赋值
+                     */
+                    bool EnableRegistryNextDeployHasBeenSet() const;
+
+                    /**
+                     * 获取返回应用id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ApplicationId 返回应用id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetApplicationId() const;
+
+                    /**
+                     * 设置返回应用id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ApplicationId 返回应用id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetApplicationId(const std::string& _applicationId);
+
+                    /**
+                     * 判断参数 ApplicationId 是否已赋值
+                     * @return ApplicationId 是否已赋值
+                     */
+                    bool ApplicationIdHasBeenSet() const;
+
+                    /**
+                     * 获取所有服务IP是否已经ready
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AllIpDone 所有服务IP是否已经ready
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetAllIpDone() const;
+
+                    /**
+                     * 设置所有服务IP是否已经ready
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AllIpDone 所有服务IP是否已经ready
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAllIpDone(const bool& _allIpDone);
+
+                    /**
+                     * 判断参数 AllIpDone 是否已赋值
+                     * @return AllIpDone 是否已赋值
+                     */
+                    bool AllIpDoneHasBeenSet() const;
+
                 private:
 
                     /**
@@ -367,6 +478,41 @@ namespace TencentCloud
                      */
                     std::vector<PortMapping> m_portMappings;
                     bool m_portMappingsHasBeenSet;
+
+                    /**
+                     * 每种类型访问配置详情
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<ServicePortMapping> m_servicePortMappingList;
+                    bool m_servicePortMappingListHasBeenSet;
+
+                    /**
+                     * 刷新复写所有类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_flushAll;
+                    bool m_flushAllHasBeenSet;
+
+                    /**
+                     * 1: 下次部署自动注入注册中心信息；0：不注入
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_enableRegistryNextDeploy;
+                    bool m_enableRegistryNextDeployHasBeenSet;
+
+                    /**
+                     * 返回应用id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_applicationId;
+                    bool m_applicationIdHasBeenSet;
+
+                    /**
+                     * 所有服务IP是否已经ready
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_allIpDone;
+                    bool m_allIpDoneHasBeenSet;
 
                 };
             }

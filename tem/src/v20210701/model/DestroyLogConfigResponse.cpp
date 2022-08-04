@@ -14,21 +14,21 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/cpdp/v20190820/model/CreateSinglePayResponse.h>
+#include <tencentcloud/tem/v20210701/model/DestroyLogConfigResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Cpdp::V20190820::Model;
+using namespace TencentCloud::Tem::V20210701::Model;
 using namespace std;
 
-CreateSinglePayResponse::CreateSinglePayResponse() :
+DestroyLogConfigResponse::DestroyLogConfigResponse() :
     m_resultHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome CreateSinglePayResponse::Deserialize(const string &payload)
+CoreInternalOutcome DestroyLogConfigResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -64,18 +64,11 @@ CoreInternalOutcome CreateSinglePayResponse::Deserialize(const string &payload)
 
     if (rsp.HasMember("Result") && !rsp["Result"].IsNull())
     {
-        if (!rsp["Result"].IsObject())
+        if (!rsp["Result"].IsBool())
         {
-            return CoreInternalOutcome(Core::Error("response `Result` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Result` IsBool=false incorrectly").SetRequestId(requestId));
         }
-
-        CoreInternalOutcome outcome = m_result.Deserialize(rsp["Result"]);
-        if (!outcome.IsSuccess())
-        {
-            outcome.GetError().SetRequestId(requestId);
-            return outcome;
-        }
-
+        m_result = rsp["Result"].GetBool();
         m_resultHasBeenSet = true;
     }
 
@@ -83,7 +76,7 @@ CoreInternalOutcome CreateSinglePayResponse::Deserialize(const string &payload)
     return CoreInternalOutcome(true);
 }
 
-string CreateSinglePayResponse::ToJsonString() const
+string DestroyLogConfigResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
@@ -94,8 +87,7 @@ string CreateSinglePayResponse::ToJsonString() const
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Result";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_result.ToJsonObject(value[key.c_str()], allocator);
+        value.AddMember(iKey, m_result, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -110,12 +102,12 @@ string CreateSinglePayResponse::ToJsonString() const
 }
 
 
-CreateSinglePayResult CreateSinglePayResponse::GetResult() const
+bool DestroyLogConfigResponse::GetResult() const
 {
     return m_result;
 }
 
-bool CreateSinglePayResponse::ResultHasBeenSet() const
+bool DestroyLogConfigResponse::ResultHasBeenSet() const
 {
     return m_resultHasBeenSet;
 }

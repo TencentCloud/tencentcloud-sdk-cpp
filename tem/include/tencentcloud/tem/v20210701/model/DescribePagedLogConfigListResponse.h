@@ -14,41 +14,41 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_CPDP_V20190820_MODEL_CREATESINGLEPAYRESPONSE_H_
-#define TENCENTCLOUD_CPDP_V20190820_MODEL_CREATESINGLEPAYRESPONSE_H_
+#ifndef TENCENTCLOUD_TEM_V20210701_MODEL_DESCRIBEPAGEDLOGCONFIGLISTRESPONSE_H_
+#define TENCENTCLOUD_TEM_V20210701_MODEL_DESCRIBEPAGEDLOGCONFIGLISTRESPONSE_H_
 
 #include <string>
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/cpdp/v20190820/model/CreateSinglePayResult.h>
+#include <tencentcloud/tem/v20210701/model/LogConfigListPage.h>
 
 
 namespace TencentCloud
 {
-    namespace Cpdp
+    namespace Tem
     {
-        namespace V20190820
+        namespace V20210701
         {
             namespace Model
             {
                 /**
-                * CreateSinglePay返回参数结构体
+                * DescribePagedLogConfigList返回参数结构体
                 */
-                class CreateSinglePayResponse : public AbstractModel
+                class DescribePagedLogConfigListResponse : public AbstractModel
                 {
                 public:
-                    CreateSinglePayResponse();
-                    ~CreateSinglePayResponse() = default;
+                    DescribePagedLogConfigListResponse();
+                    ~DescribePagedLogConfigListResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取返回结果
-                     * @return Result 返回结果
+                     * 获取日志收集配置列表
+                     * @return Result 日志收集配置列表
                      */
-                    CreateSinglePayResult GetResult() const;
+                    LogConfigListPage GetResult() const;
 
                     /**
                      * 判断参数 Result 是否已赋值
@@ -59,9 +59,9 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 返回结果
+                     * 日志收集配置列表
                      */
-                    CreateSinglePayResult m_result;
+                    LogConfigListPage m_result;
                     bool m_resultHasBeenSet;
 
                 };
@@ -70,4 +70,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_CPDP_V20190820_MODEL_CREATESINGLEPAYRESPONSE_H_
+#endif // !TENCENTCLOUD_TEM_V20210701_MODEL_DESCRIBEPAGEDLOGCONFIGLISTRESPONSE_H_

@@ -23,7 +23,8 @@ using namespace std;
 ScdnConfig::ScdnConfig() :
     m_switchHasBeenSet(false),
     m_rulesHasBeenSet(false),
-    m_advancedRulesHasBeenSet(false)
+    m_advancedRulesHasBeenSet(false),
+    m_globalAdvancedRulesHasBeenSet(false)
 {
 }
 
@@ -82,6 +83,26 @@ CoreInternalOutcome ScdnConfig::Deserialize(const rapidjson::Value &value)
         m_advancedRulesHasBeenSet = true;
     }
 
+    if (value.HasMember("GlobalAdvancedRules") && !value["GlobalAdvancedRules"].IsNull())
+    {
+        if (!value["GlobalAdvancedRules"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ScdnConfig.GlobalAdvancedRules` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["GlobalAdvancedRules"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            AdvancedCCRules item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_globalAdvancedRules.push_back(item);
+        }
+        m_globalAdvancedRulesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -121,6 +142,21 @@ void ScdnConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
 
         int i=0;
         for (auto itr = m_advancedRules.begin(); itr != m_advancedRules.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_globalAdvancedRulesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GlobalAdvancedRules";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_globalAdvancedRules.begin(); itr != m_globalAdvancedRules.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -176,5 +212,21 @@ void ScdnConfig::SetAdvancedRules(const vector<AdvancedCCRules>& _advancedRules)
 bool ScdnConfig::AdvancedRulesHasBeenSet() const
 {
     return m_advancedRulesHasBeenSet;
+}
+
+vector<AdvancedCCRules> ScdnConfig::GetGlobalAdvancedRules() const
+{
+    return m_globalAdvancedRules;
+}
+
+void ScdnConfig::SetGlobalAdvancedRules(const vector<AdvancedCCRules>& _globalAdvancedRules)
+{
+    m_globalAdvancedRules = _globalAdvancedRules;
+    m_globalAdvancedRulesHasBeenSet = true;
+}
+
+bool ScdnConfig::GlobalAdvancedRulesHasBeenSet() const
+{
+    return m_globalAdvancedRulesHasBeenSet;
 }
 

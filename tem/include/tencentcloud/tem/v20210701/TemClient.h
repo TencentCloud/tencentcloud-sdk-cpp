@@ -33,6 +33,8 @@
 #include <tencentcloud/tem/v20210701/model/CreateCosTokenResponse.h>
 #include <tencentcloud/tem/v20210701/model/CreateEnvironmentRequest.h>
 #include <tencentcloud/tem/v20210701/model/CreateEnvironmentResponse.h>
+#include <tencentcloud/tem/v20210701/model/CreateLogConfigRequest.h>
+#include <tencentcloud/tem/v20210701/model/CreateLogConfigResponse.h>
 #include <tencentcloud/tem/v20210701/model/CreateResourceRequest.h>
 #include <tencentcloud/tem/v20210701/model/CreateResourceResponse.h>
 #include <tencentcloud/tem/v20210701/model/DeleteApplicationRequest.h>
@@ -67,12 +69,18 @@
 #include <tencentcloud/tem/v20210701/model/DescribeIngressResponse.h>
 #include <tencentcloud/tem/v20210701/model/DescribeIngressesRequest.h>
 #include <tencentcloud/tem/v20210701/model/DescribeIngressesResponse.h>
+#include <tencentcloud/tem/v20210701/model/DescribeLogConfigRequest.h>
+#include <tencentcloud/tem/v20210701/model/DescribeLogConfigResponse.h>
+#include <tencentcloud/tem/v20210701/model/DescribePagedLogConfigListRequest.h>
+#include <tencentcloud/tem/v20210701/model/DescribePagedLogConfigListResponse.h>
 #include <tencentcloud/tem/v20210701/model/DescribeRelatedIngressesRequest.h>
 #include <tencentcloud/tem/v20210701/model/DescribeRelatedIngressesResponse.h>
 #include <tencentcloud/tem/v20210701/model/DestroyConfigDataRequest.h>
 #include <tencentcloud/tem/v20210701/model/DestroyConfigDataResponse.h>
 #include <tencentcloud/tem/v20210701/model/DestroyEnvironmentRequest.h>
 #include <tencentcloud/tem/v20210701/model/DestroyEnvironmentResponse.h>
+#include <tencentcloud/tem/v20210701/model/DestroyLogConfigRequest.h>
+#include <tencentcloud/tem/v20210701/model/DestroyLogConfigResponse.h>
 #include <tencentcloud/tem/v20210701/model/GenerateApplicationPackageDownloadUrlRequest.h>
 #include <tencentcloud/tem/v20210701/model/GenerateApplicationPackageDownloadUrlResponse.h>
 #include <tencentcloud/tem/v20210701/model/ModifyApplicationAutoscalerRequest.h>
@@ -87,6 +95,8 @@
 #include <tencentcloud/tem/v20210701/model/ModifyEnvironmentResponse.h>
 #include <tencentcloud/tem/v20210701/model/ModifyIngressRequest.h>
 #include <tencentcloud/tem/v20210701/model/ModifyIngressResponse.h>
+#include <tencentcloud/tem/v20210701/model/ModifyLogConfigRequest.h>
+#include <tencentcloud/tem/v20210701/model/ModifyLogConfigResponse.h>
 #include <tencentcloud/tem/v20210701/model/RestartApplicationRequest.h>
 #include <tencentcloud/tem/v20210701/model/RestartApplicationResponse.h>
 #include <tencentcloud/tem/v20210701/model/RestartApplicationPodRequest.h>
@@ -128,6 +138,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateEnvironmentResponse> CreateEnvironmentOutcome;
                 typedef std::future<CreateEnvironmentOutcome> CreateEnvironmentOutcomeCallable;
                 typedef std::function<void(const TemClient*, const Model::CreateEnvironmentRequest&, CreateEnvironmentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateEnvironmentAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateLogConfigResponse> CreateLogConfigOutcome;
+                typedef std::future<CreateLogConfigOutcome> CreateLogConfigOutcomeCallable;
+                typedef std::function<void(const TemClient*, const Model::CreateLogConfigRequest&, CreateLogConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateLogConfigAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateResourceResponse> CreateResourceOutcome;
                 typedef std::future<CreateResourceOutcome> CreateResourceOutcomeCallable;
                 typedef std::function<void(const TemClient*, const Model::CreateResourceRequest&, CreateResourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateResourceAsyncHandler;
@@ -179,6 +192,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeIngressesResponse> DescribeIngressesOutcome;
                 typedef std::future<DescribeIngressesOutcome> DescribeIngressesOutcomeCallable;
                 typedef std::function<void(const TemClient*, const Model::DescribeIngressesRequest&, DescribeIngressesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIngressesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeLogConfigResponse> DescribeLogConfigOutcome;
+                typedef std::future<DescribeLogConfigOutcome> DescribeLogConfigOutcomeCallable;
+                typedef std::function<void(const TemClient*, const Model::DescribeLogConfigRequest&, DescribeLogConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLogConfigAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribePagedLogConfigListResponse> DescribePagedLogConfigListOutcome;
+                typedef std::future<DescribePagedLogConfigListOutcome> DescribePagedLogConfigListOutcomeCallable;
+                typedef std::function<void(const TemClient*, const Model::DescribePagedLogConfigListRequest&, DescribePagedLogConfigListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePagedLogConfigListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRelatedIngressesResponse> DescribeRelatedIngressesOutcome;
                 typedef std::future<DescribeRelatedIngressesOutcome> DescribeRelatedIngressesOutcomeCallable;
                 typedef std::function<void(const TemClient*, const Model::DescribeRelatedIngressesRequest&, DescribeRelatedIngressesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRelatedIngressesAsyncHandler;
@@ -188,6 +207,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DestroyEnvironmentResponse> DestroyEnvironmentOutcome;
                 typedef std::future<DestroyEnvironmentOutcome> DestroyEnvironmentOutcomeCallable;
                 typedef std::function<void(const TemClient*, const Model::DestroyEnvironmentRequest&, DestroyEnvironmentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DestroyEnvironmentAsyncHandler;
+                typedef Outcome<Core::Error, Model::DestroyLogConfigResponse> DestroyLogConfigOutcome;
+                typedef std::future<DestroyLogConfigOutcome> DestroyLogConfigOutcomeCallable;
+                typedef std::function<void(const TemClient*, const Model::DestroyLogConfigRequest&, DestroyLogConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DestroyLogConfigAsyncHandler;
                 typedef Outcome<Core::Error, Model::GenerateApplicationPackageDownloadUrlResponse> GenerateApplicationPackageDownloadUrlOutcome;
                 typedef std::future<GenerateApplicationPackageDownloadUrlOutcome> GenerateApplicationPackageDownloadUrlOutcomeCallable;
                 typedef std::function<void(const TemClient*, const Model::GenerateApplicationPackageDownloadUrlRequest&, GenerateApplicationPackageDownloadUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GenerateApplicationPackageDownloadUrlAsyncHandler;
@@ -209,6 +231,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyIngressResponse> ModifyIngressOutcome;
                 typedef std::future<ModifyIngressOutcome> ModifyIngressOutcomeCallable;
                 typedef std::function<void(const TemClient*, const Model::ModifyIngressRequest&, ModifyIngressOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyIngressAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyLogConfigResponse> ModifyLogConfigOutcome;
+                typedef std::future<ModifyLogConfigOutcome> ModifyLogConfigOutcomeCallable;
+                typedef std::function<void(const TemClient*, const Model::ModifyLogConfigRequest&, ModifyLogConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLogConfigAsyncHandler;
                 typedef Outcome<Core::Error, Model::RestartApplicationResponse> RestartApplicationOutcome;
                 typedef std::future<RestartApplicationOutcome> RestartApplicationOutcomeCallable;
                 typedef std::function<void(const TemClient*, const Model::RestartApplicationRequest&, RestartApplicationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RestartApplicationAsyncHandler;
@@ -274,6 +299,15 @@ namespace TencentCloud
                 CreateEnvironmentOutcome CreateEnvironment(const Model::CreateEnvironmentRequest &request);
                 void CreateEnvironmentAsync(const Model::CreateEnvironmentRequest& request, const CreateEnvironmentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateEnvironmentOutcomeCallable CreateEnvironmentCallable(const Model::CreateEnvironmentRequest& request);
+
+                /**
+                 *创建日志收集配置
+                 * @param req CreateLogConfigRequest
+                 * @return CreateLogConfigOutcome
+                 */
+                CreateLogConfigOutcome CreateLogConfig(const Model::CreateLogConfigRequest &request);
+                void CreateLogConfigAsync(const Model::CreateLogConfigRequest& request, const CreateLogConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateLogConfigOutcomeCallable CreateLogConfigCallable(const Model::CreateLogConfigRequest& request);
 
                 /**
                  *绑定云资源
@@ -405,7 +439,7 @@ namespace TencentCloud
                 DescribeEnvironmentStatusOutcomeCallable DescribeEnvironmentStatusCallable(const Model::DescribeEnvironmentStatusRequest& request);
 
                 /**
-                 *获取租户环境列表
+                 *获取环境列表
                  * @param req DescribeEnvironmentsRequest
                  * @return DescribeEnvironmentsOutcome
                  */
@@ -432,6 +466,24 @@ namespace TencentCloud
                 DescribeIngressesOutcomeCallable DescribeIngressesCallable(const Model::DescribeIngressesRequest& request);
 
                 /**
+                 *查询日志收集配置详情
+                 * @param req DescribeLogConfigRequest
+                 * @return DescribeLogConfigOutcome
+                 */
+                DescribeLogConfigOutcome DescribeLogConfig(const Model::DescribeLogConfigRequest &request);
+                void DescribeLogConfigAsync(const Model::DescribeLogConfigRequest& request, const DescribeLogConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLogConfigOutcomeCallable DescribeLogConfigCallable(const Model::DescribeLogConfigRequest& request);
+
+                /**
+                 *查询分页的日志收集配置列表
+                 * @param req DescribePagedLogConfigListRequest
+                 * @return DescribePagedLogConfigListOutcome
+                 */
+                DescribePagedLogConfigListOutcome DescribePagedLogConfigList(const Model::DescribePagedLogConfigListRequest &request);
+                void DescribePagedLogConfigListAsync(const Model::DescribePagedLogConfigListRequest& request, const DescribePagedLogConfigListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePagedLogConfigListOutcomeCallable DescribePagedLogConfigListCallable(const Model::DescribePagedLogConfigListRequest& request);
+
+                /**
                  *查询应用关联的 Ingress 规则列表
                  * @param req DescribeRelatedIngressesRequest
                  * @return DescribeRelatedIngressesOutcome
@@ -450,13 +502,22 @@ namespace TencentCloud
                 DestroyConfigDataOutcomeCallable DestroyConfigDataCallable(const Model::DestroyConfigDataRequest& request);
 
                 /**
-                 *销毁命名空间
+                 *销毁环境
                  * @param req DestroyEnvironmentRequest
                  * @return DestroyEnvironmentOutcome
                  */
                 DestroyEnvironmentOutcome DestroyEnvironment(const Model::DestroyEnvironmentRequest &request);
                 void DestroyEnvironmentAsync(const Model::DestroyEnvironmentRequest& request, const DestroyEnvironmentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DestroyEnvironmentOutcomeCallable DestroyEnvironmentCallable(const Model::DestroyEnvironmentRequest& request);
+
+                /**
+                 *销毁日志收集配置
+                 * @param req DestroyLogConfigRequest
+                 * @return DestroyLogConfigOutcome
+                 */
+                DestroyLogConfigOutcome DestroyLogConfig(const Model::DestroyLogConfigRequest &request);
+                void DestroyLogConfigAsync(const Model::DestroyLogConfigRequest& request, const DestroyLogConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DestroyLogConfigOutcomeCallable DestroyLogConfigCallable(const Model::DestroyLogConfigRequest& request);
 
                 /**
                  *生成应用程序包预签名下载链接
@@ -520,6 +581,15 @@ namespace TencentCloud
                 ModifyIngressOutcome ModifyIngress(const Model::ModifyIngressRequest &request);
                 void ModifyIngressAsync(const Model::ModifyIngressRequest& request, const ModifyIngressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyIngressOutcomeCallable ModifyIngressCallable(const Model::ModifyIngressRequest& request);
+
+                /**
+                 *编辑日志收集配置
+                 * @param req ModifyLogConfigRequest
+                 * @return ModifyLogConfigOutcome
+                 */
+                ModifyLogConfigOutcome ModifyLogConfig(const Model::ModifyLogConfigRequest &request);
+                void ModifyLogConfigAsync(const Model::ModifyLogConfigRequest& request, const ModifyLogConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyLogConfigOutcomeCallable ModifyLogConfigCallable(const Model::ModifyLogConfigRequest& request);
 
                 /**
                  *服务重启

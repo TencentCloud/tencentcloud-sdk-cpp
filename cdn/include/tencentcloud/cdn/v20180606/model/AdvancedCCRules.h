@@ -219,6 +219,28 @@ namespace TencentCloud
                      */
                     bool ConfigureHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启改规则 on 开启，off关闭
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Switch 是否开启改规则 on 开启，off关闭
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetSwitch() const;
+
+                    /**
+                     * 设置是否开启改规则 on 开启，off关闭
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Switch 是否开启改规则 on 开启，off关闭
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSwitch(const std::string& _switch);
+
+                    /**
+                     * 判断参数 Switch 是否已赋值
+                     * @return Switch 是否已赋值
+                     */
+                    bool SwitchHasBeenSet() const;
+
                 private:
 
                     /**
@@ -275,6 +297,13 @@ namespace TencentCloud
                      */
                     std::vector<ScdnSevenLayerRules> m_configure;
                     bool m_configureHasBeenSet;
+
+                    /**
+                     * 是否开启改规则 on 开启，off关闭
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_switch;
+                    bool m_switchHasBeenSet;
 
                 };
             }

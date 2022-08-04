@@ -255,6 +255,49 @@ TemClient::CreateEnvironmentOutcomeCallable TemClient::CreateEnvironmentCallable
     return task->get_future();
 }
 
+TemClient::CreateLogConfigOutcome TemClient::CreateLogConfig(const CreateLogConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateLogConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateLogConfigResponse rsp = CreateLogConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateLogConfigOutcome(rsp);
+        else
+            return CreateLogConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateLogConfigOutcome(outcome.GetError());
+    }
+}
+
+void TemClient::CreateLogConfigAsync(const CreateLogConfigRequest& request, const CreateLogConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateLogConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TemClient::CreateLogConfigOutcomeCallable TemClient::CreateLogConfigCallable(const CreateLogConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateLogConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateLogConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TemClient::CreateResourceOutcome TemClient::CreateResource(const CreateResourceRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateResource");
@@ -986,6 +1029,92 @@ TemClient::DescribeIngressesOutcomeCallable TemClient::DescribeIngressesCallable
     return task->get_future();
 }
 
+TemClient::DescribeLogConfigOutcome TemClient::DescribeLogConfig(const DescribeLogConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeLogConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeLogConfigResponse rsp = DescribeLogConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeLogConfigOutcome(rsp);
+        else
+            return DescribeLogConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeLogConfigOutcome(outcome.GetError());
+    }
+}
+
+void TemClient::DescribeLogConfigAsync(const DescribeLogConfigRequest& request, const DescribeLogConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeLogConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TemClient::DescribeLogConfigOutcomeCallable TemClient::DescribeLogConfigCallable(const DescribeLogConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeLogConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeLogConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TemClient::DescribePagedLogConfigListOutcome TemClient::DescribePagedLogConfigList(const DescribePagedLogConfigListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePagedLogConfigList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePagedLogConfigListResponse rsp = DescribePagedLogConfigListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePagedLogConfigListOutcome(rsp);
+        else
+            return DescribePagedLogConfigListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePagedLogConfigListOutcome(outcome.GetError());
+    }
+}
+
+void TemClient::DescribePagedLogConfigListAsync(const DescribePagedLogConfigListRequest& request, const DescribePagedLogConfigListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePagedLogConfigList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TemClient::DescribePagedLogConfigListOutcomeCallable TemClient::DescribePagedLogConfigListCallable(const DescribePagedLogConfigListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePagedLogConfigListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePagedLogConfigList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TemClient::DescribeRelatedIngressesOutcome TemClient::DescribeRelatedIngresses(const DescribeRelatedIngressesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeRelatedIngresses");
@@ -1108,6 +1237,49 @@ TemClient::DestroyEnvironmentOutcomeCallable TemClient::DestroyEnvironmentCallab
         [this, request]()
         {
             return this->DestroyEnvironment(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TemClient::DestroyLogConfigOutcome TemClient::DestroyLogConfig(const DestroyLogConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "DestroyLogConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DestroyLogConfigResponse rsp = DestroyLogConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DestroyLogConfigOutcome(rsp);
+        else
+            return DestroyLogConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return DestroyLogConfigOutcome(outcome.GetError());
+    }
+}
+
+void TemClient::DestroyLogConfigAsync(const DestroyLogConfigRequest& request, const DestroyLogConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DestroyLogConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TemClient::DestroyLogConfigOutcomeCallable TemClient::DestroyLogConfigCallable(const DestroyLogConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DestroyLogConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->DestroyLogConfig(request);
         }
     );
 
@@ -1409,6 +1581,49 @@ TemClient::ModifyIngressOutcomeCallable TemClient::ModifyIngressCallable(const M
         [this, request]()
         {
             return this->ModifyIngress(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TemClient::ModifyLogConfigOutcome TemClient::ModifyLogConfig(const ModifyLogConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyLogConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyLogConfigResponse rsp = ModifyLogConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyLogConfigOutcome(rsp);
+        else
+            return ModifyLogConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyLogConfigOutcome(outcome.GetError());
+    }
+}
+
+void TemClient::ModifyLogConfigAsync(const ModifyLogConfigRequest& request, const ModifyLogConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyLogConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TemClient::ModifyLogConfigOutcomeCallable TemClient::ModifyLogConfigCallable(const ModifyLogConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyLogConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyLogConfig(request);
         }
     );
 

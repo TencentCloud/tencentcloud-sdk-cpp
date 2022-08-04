@@ -98,6 +98,32 @@ Url、Image必须提供一个，如果都提供，只使用 Url。
                      */
                     bool UrlHasBeenSet() const;
 
+                    /**
+                     * 获取人体局部关键点识别，开启后对人体局部图（例如部分身体部位）进行关键点识别，输出人体关键点坐标，默认不开启
+
+注意：若开启人体局部图片关键点识别，则BoundBox、Confidence返回为空。
+                     * @return LocalBodySwitch 人体局部关键点识别，开启后对人体局部图（例如部分身体部位）进行关键点识别，输出人体关键点坐标，默认不开启
+
+注意：若开启人体局部图片关键点识别，则BoundBox、Confidence返回为空。
+                     */
+                    bool GetLocalBodySwitch() const;
+
+                    /**
+                     * 设置人体局部关键点识别，开启后对人体局部图（例如部分身体部位）进行关键点识别，输出人体关键点坐标，默认不开启
+
+注意：若开启人体局部图片关键点识别，则BoundBox、Confidence返回为空。
+                     * @param LocalBodySwitch 人体局部关键点识别，开启后对人体局部图（例如部分身体部位）进行关键点识别，输出人体关键点坐标，默认不开启
+
+注意：若开启人体局部图片关键点识别，则BoundBox、Confidence返回为空。
+                     */
+                    void SetLocalBodySwitch(const bool& _localBodySwitch);
+
+                    /**
+                     * 判断参数 LocalBodySwitch 是否已赋值
+                     * @return LocalBodySwitch 是否已赋值
+                     */
+                    bool LocalBodySwitchHasBeenSet() const;
+
                 private:
 
                     /**
@@ -116,6 +142,14 @@ Url、Image必须提供一个，如果都提供，只使用 Url。
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;
+
+                    /**
+                     * 人体局部关键点识别，开启后对人体局部图（例如部分身体部位）进行关键点识别，输出人体关键点坐标，默认不开启
+
+注意：若开启人体局部图片关键点识别，则BoundBox、Confidence返回为空。
+                     */
+                    bool m_localBodySwitch;
+                    bool m_localBodySwitchHasBeenSet;
 
                 };
             }

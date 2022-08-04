@@ -103,14 +103,14 @@ namespace TencentCloud
                     bool ModeHasBeenSet() const;
 
                     /**
-                     * 获取门神黑白名单
-                     * @return WafRules 门神黑白名单
+                     * 获取托管规则黑白名单
+                     * @return WafRules 托管规则黑白名单
                      */
                     WafRule GetWafRules() const;
 
                     /**
-                     * 设置门神黑白名单
-                     * @param WafRules 门神黑白名单
+                     * 设置托管规则黑白名单
+                     * @param WafRules 托管规则黑白名单
                      */
                     void SetWafRules(const WafRule& _wafRules);
 
@@ -163,7 +163,7 @@ namespace TencentCloud
                     bool m_modeHasBeenSet;
 
                     /**
-                     * 门神黑白名单
+                     * 托管规则黑白名单
                      */
                     WafRule m_wafRules;
                     bool m_wafRulesHasBeenSet;

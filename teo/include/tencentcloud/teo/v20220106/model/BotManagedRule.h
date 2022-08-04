@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Bot 规则
+                * Bot 规则，下列规则ID可参考接口 DescribeBotManagedRules返回的ID信息
                 */
                 class BotManagedRule : public AbstractModel
                 {

@@ -244,6 +244,24 @@ namespace TencentCloud
                      */
                     bool UinHasBeenSet() const;
 
+                    /**
+                     * 获取所属 DNS 服务器
+                     * @return FreeNs 所属 DNS 服务器
+                     */
+                    std::vector<std::string> GetFreeNs() const;
+
+                    /**
+                     * 设置所属 DNS 服务器
+                     * @param FreeNs 所属 DNS 服务器
+                     */
+                    void SetFreeNs(const std::vector<std::string>& _freeNs);
+
+                    /**
+                     * 判断参数 FreeNs 是否已赋值
+                     * @return FreeNs 是否已赋值
+                     */
+                    bool FreeNsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -311,6 +329,12 @@ namespace TencentCloud
                      */
                     int64_t m_uin;
                     bool m_uinHasBeenSet;
+
+                    /**
+                     * 所属 DNS 服务器
+                     */
+                    std::vector<std::string> m_freeNs;
+                    bool m_freeNsHasBeenSet;
 
                 };
             }

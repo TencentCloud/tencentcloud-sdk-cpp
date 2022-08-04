@@ -28,7 +28,8 @@ AdvancedCCRules::AdvancedCCRules() :
     m_punishmentTimeHasBeenSet(false),
     m_actionHasBeenSet(false),
     m_redirectUrlHasBeenSet(false),
-    m_configureHasBeenSet(false)
+    m_configureHasBeenSet(false),
+    m_switchHasBeenSet(false)
 {
 }
 
@@ -127,6 +128,16 @@ CoreInternalOutcome AdvancedCCRules::Deserialize(const rapidjson::Value &value)
         m_configureHasBeenSet = true;
     }
 
+    if (value.HasMember("Switch") && !value["Switch"].IsNull())
+    {
+        if (!value["Switch"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AdvancedCCRules.Switch` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_switch = string(value["Switch"].GetString());
+        m_switchHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -203,6 +214,14 @@ void AdvancedCCRules::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_switchHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Switch";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_switch.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -334,5 +353,21 @@ void AdvancedCCRules::SetConfigure(const vector<ScdnSevenLayerRules>& _configure
 bool AdvancedCCRules::ConfigureHasBeenSet() const
 {
     return m_configureHasBeenSet;
+}
+
+string AdvancedCCRules::GetSwitch() const
+{
+    return m_switch;
+}
+
+void AdvancedCCRules::SetSwitch(const string& _switch)
+{
+    m_switch = _switch;
+    m_switchHasBeenSet = true;
+}
+
+bool AdvancedCCRules::SwitchHasBeenSet() const
+{
+    return m_switchHasBeenSet;
 }
 
