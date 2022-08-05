@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取类型
-                     * @return QueryType 类型
+                     * 获取列表类型，只能是下面三种之一：port、address、ip
+                     * @return QueryType 列表类型，只能是下面三种之一：port、address、ip
                      */
                     std::string GetQueryType() const;
 
                     /**
-                     * 设置类型
-                     * @param QueryType 类型
+                     * 设置列表类型，只能是下面三种之一：port、address、ip
+                     * @param QueryType 列表类型，只能是下面三种之一：port、address、ip
                      */
                     void SetQueryType(const std::string& _queryType);
 
@@ -147,7 +147,7 @@ namespace TencentCloud
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 类型
+                     * 列表类型，只能是下面三种之一：port、address、ip
                      */
                     std::string m_queryType;
                     bool m_queryTypeHasBeenSet;

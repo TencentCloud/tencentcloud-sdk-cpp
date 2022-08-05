@@ -180,14 +180,14 @@ namespace TencentCloud
                     bool BandwidthHasBeenSet() const;
 
                     /**
-                     * 获取并发，单位：个/秒。
-                     * @return Concurrent 并发，单位：个/秒。
+                     * 获取并发，单位：万个/秒。
+                     * @return Concurrent 并发，单位：万个/秒。
                      */
                     int64_t GetConcurrent() const;
 
                     /**
-                     * 设置并发，单位：个/秒。
-                     * @param Concurrent 并发，单位：个/秒。
+                     * 设置并发，单位：万个/秒。
+                     * @param Concurrent 并发，单位：万个/秒。
                      */
                     void SetConcurrent(const int64_t& _concurrent);
 
@@ -913,7 +913,7 @@ CrossBorder表示跨境通道。
                     bool m_bandwidthHasBeenSet;
 
                     /**
-                     * 并发，单位：个/秒。
+                     * 并发，单位：万个/秒。
                      */
                     int64_t m_concurrent;
                     bool m_concurrentHasBeenSet;

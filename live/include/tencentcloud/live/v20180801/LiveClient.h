@@ -125,6 +125,8 @@
 #include <tencentcloud/live/v20180801/model/DescribeLiveDomainResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeLiveDomainCertRequest.h>
 #include <tencentcloud/live/v20180801/model/DescribeLiveDomainCertResponse.h>
+#include <tencentcloud/live/v20180801/model/DescribeLiveDomainCertBindingsRequest.h>
+#include <tencentcloud/live/v20180801/model/DescribeLiveDomainCertBindingsResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeLiveDomainPlayInfoListRequest.h>
 #include <tencentcloud/live/v20180801/model/DescribeLiveDomainPlayInfoListResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeLiveDomainRefererRequest.h>
@@ -223,6 +225,8 @@
 #include <tencentcloud/live/v20180801/model/ForbidLiveStreamResponse.h>
 #include <tencentcloud/live/v20180801/model/ModifyLiveCallbackTemplateRequest.h>
 #include <tencentcloud/live/v20180801/model/ModifyLiveCallbackTemplateResponse.h>
+#include <tencentcloud/live/v20180801/model/ModifyLiveDomainCertBindingsRequest.h>
+#include <tencentcloud/live/v20180801/model/ModifyLiveDomainCertBindingsResponse.h>
 #include <tencentcloud/live/v20180801/model/ModifyLiveDomainRefererRequest.h>
 #include <tencentcloud/live/v20180801/model/ModifyLiveDomainRefererResponse.h>
 #include <tencentcloud/live/v20180801/model/ModifyLivePlayAuthKeyRequest.h>
@@ -424,6 +428,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeLiveDomainCertResponse> DescribeLiveDomainCertOutcome;
                 typedef std::future<DescribeLiveDomainCertOutcome> DescribeLiveDomainCertOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DescribeLiveDomainCertRequest&, DescribeLiveDomainCertOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveDomainCertAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeLiveDomainCertBindingsResponse> DescribeLiveDomainCertBindingsOutcome;
+                typedef std::future<DescribeLiveDomainCertBindingsOutcome> DescribeLiveDomainCertBindingsOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::DescribeLiveDomainCertBindingsRequest&, DescribeLiveDomainCertBindingsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveDomainCertBindingsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeLiveDomainPlayInfoListResponse> DescribeLiveDomainPlayInfoListOutcome;
                 typedef std::future<DescribeLiveDomainPlayInfoListOutcome> DescribeLiveDomainPlayInfoListOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DescribeLiveDomainPlayInfoListRequest&, DescribeLiveDomainPlayInfoListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveDomainPlayInfoListAsyncHandler;
@@ -571,6 +578,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyLiveCallbackTemplateResponse> ModifyLiveCallbackTemplateOutcome;
                 typedef std::future<ModifyLiveCallbackTemplateOutcome> ModifyLiveCallbackTemplateOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::ModifyLiveCallbackTemplateRequest&, ModifyLiveCallbackTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLiveCallbackTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyLiveDomainCertBindingsResponse> ModifyLiveDomainCertBindingsOutcome;
+                typedef std::future<ModifyLiveDomainCertBindingsOutcome> ModifyLiveDomainCertBindingsOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::ModifyLiveDomainCertBindingsRequest&, ModifyLiveDomainCertBindingsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLiveDomainCertBindingsAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyLiveDomainRefererResponse> ModifyLiveDomainRefererOutcome;
                 typedef std::future<ModifyLiveDomainRefererOutcome> ModifyLiveDomainRefererOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::ModifyLiveDomainRefererRequest&, ModifyLiveDomainRefererOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLiveDomainRefererAsyncHandler;
@@ -1146,6 +1156,15 @@ DomainName+AppName+StreamName+TemplateId唯一标识单个转码规则，如需�
                 DescribeLiveDomainCertOutcomeCallable DescribeLiveDomainCertCallable(const Model::DescribeLiveDomainCertRequest& request);
 
                 /**
+                 *查询绑定证书的域名列表。
+                 * @param req DescribeLiveDomainCertBindingsRequest
+                 * @return DescribeLiveDomainCertBindingsOutcome
+                 */
+                DescribeLiveDomainCertBindingsOutcome DescribeLiveDomainCertBindings(const Model::DescribeLiveDomainCertBindingsRequest &request);
+                void DescribeLiveDomainCertBindingsAsync(const Model::DescribeLiveDomainCertBindingsRequest& request, const DescribeLiveDomainCertBindingsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLiveDomainCertBindingsOutcomeCallable DescribeLiveDomainCertBindingsCallable(const Model::DescribeLiveDomainCertBindingsRequest& request);
+
+                /**
                  *查询实时的域名维度下行播放数据，由于数据处理有耗时，接口默认查询4分钟前的准实时数据。
                  * @param req DescribeLiveDomainPlayInfoListRequest
                  * @return DescribeLiveDomainPlayInfoListOutcome
@@ -1623,6 +1642,16 @@ DomainName+AppName+StreamName+TemplateId唯一标识单个转码规则，如需�
                 ModifyLiveCallbackTemplateOutcome ModifyLiveCallbackTemplate(const Model::ModifyLiveCallbackTemplateRequest &request);
                 void ModifyLiveCallbackTemplateAsync(const Model::ModifyLiveCallbackTemplateRequest& request, const ModifyLiveCallbackTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyLiveCallbackTemplateOutcomeCallable ModifyLiveCallbackTemplateCallable(const Model::ModifyLiveCallbackTemplateRequest& request);
+
+                /**
+                 *批量绑定证书对应的播放域名，并更新启用状态。
+新建自有证书将自动上传至腾讯云ssl。
+                 * @param req ModifyLiveDomainCertBindingsRequest
+                 * @return ModifyLiveDomainCertBindingsOutcome
+                 */
+                ModifyLiveDomainCertBindingsOutcome ModifyLiveDomainCertBindings(const Model::ModifyLiveDomainCertBindingsRequest &request);
+                void ModifyLiveDomainCertBindingsAsync(const Model::ModifyLiveDomainCertBindingsRequest& request, const ModifyLiveDomainCertBindingsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyLiveDomainCertBindingsOutcomeCallable ModifyLiveDomainCertBindingsCallable(const Model::ModifyLiveDomainCertBindingsRequest& request);
 
                 /**
                  *设置直播域名 Referer 黑白名单。

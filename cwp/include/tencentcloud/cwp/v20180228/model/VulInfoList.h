@@ -173,14 +173,14 @@ namespace TencentCloud
                     bool HostCountHasBeenSet() const;
 
                     /**
-                     * 获取漏洞等级 1:低 2:中 3:高 4:提示
-                     * @return Level 漏洞等级 1:低 2:中 3:高 4:提示
+                     * 获取漏洞等级 1:低 2:中 3:高 4:严重
+                     * @return Level 漏洞等级 1:低 2:中 3:高 4:严重
                      */
                     uint64_t GetLevel() const;
 
                     /**
-                     * 设置漏洞等级 1:低 2:中 3:高 4:提示
-                     * @param Level 漏洞等级 1:低 2:中 3:高 4:提示
+                     * 设置漏洞等级 1:低 2:中 3:高 4:严重
+                     * @param Level 漏洞等级 1:低 2:中 3:高 4:严重
                      */
                     void SetLevel(const uint64_t& _level);
 
@@ -565,7 +565,7 @@ namespace TencentCloud
                     bool m_hostCountHasBeenSet;
 
                     /**
-                     * 漏洞等级 1:低 2:中 3:高 4:提示
+                     * 漏洞等级 1:低 2:中 3:高 4:严重
                      */
                     uint64_t m_level;
                     bool m_levelHasBeenSet;

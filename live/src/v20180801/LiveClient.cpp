@@ -2233,6 +2233,49 @@ LiveClient::DescribeLiveDomainCertOutcomeCallable LiveClient::DescribeLiveDomain
     return task->get_future();
 }
 
+LiveClient::DescribeLiveDomainCertBindingsOutcome LiveClient::DescribeLiveDomainCertBindings(const DescribeLiveDomainCertBindingsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeLiveDomainCertBindings");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeLiveDomainCertBindingsResponse rsp = DescribeLiveDomainCertBindingsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeLiveDomainCertBindingsOutcome(rsp);
+        else
+            return DescribeLiveDomainCertBindingsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeLiveDomainCertBindingsOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::DescribeLiveDomainCertBindingsAsync(const DescribeLiveDomainCertBindingsRequest& request, const DescribeLiveDomainCertBindingsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeLiveDomainCertBindings(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LiveClient::DescribeLiveDomainCertBindingsOutcomeCallable LiveClient::DescribeLiveDomainCertBindingsCallable(const DescribeLiveDomainCertBindingsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeLiveDomainCertBindingsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeLiveDomainCertBindings(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LiveClient::DescribeLiveDomainPlayInfoListOutcome LiveClient::DescribeLiveDomainPlayInfoList(const DescribeLiveDomainPlayInfoListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeLiveDomainPlayInfoList");
@@ -4333,6 +4376,49 @@ LiveClient::ModifyLiveCallbackTemplateOutcomeCallable LiveClient::ModifyLiveCall
         [this, request]()
         {
             return this->ModifyLiveCallbackTemplate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LiveClient::ModifyLiveDomainCertBindingsOutcome LiveClient::ModifyLiveDomainCertBindings(const ModifyLiveDomainCertBindingsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyLiveDomainCertBindings");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyLiveDomainCertBindingsResponse rsp = ModifyLiveDomainCertBindingsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyLiveDomainCertBindingsOutcome(rsp);
+        else
+            return ModifyLiveDomainCertBindingsOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyLiveDomainCertBindingsOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::ModifyLiveDomainCertBindingsAsync(const ModifyLiveDomainCertBindingsRequest& request, const ModifyLiveDomainCertBindingsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyLiveDomainCertBindings(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LiveClient::ModifyLiveDomainCertBindingsOutcomeCallable LiveClient::ModifyLiveDomainCertBindingsCallable(const ModifyLiveDomainCertBindingsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyLiveDomainCertBindingsOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyLiveDomainCertBindings(request);
         }
     );
 

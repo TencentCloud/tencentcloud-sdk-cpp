@@ -29,6 +29,8 @@
 #include <tencentcloud/ic/v20190307/model/DescribeCardResponse.h>
 #include <tencentcloud/ic/v20190307/model/DescribeCardsRequest.h>
 #include <tencentcloud/ic/v20190307/model/DescribeCardsResponse.h>
+#include <tencentcloud/ic/v20190307/model/DescribeSmsRequest.h>
+#include <tencentcloud/ic/v20190307/model/DescribeSmsResponse.h>
 #include <tencentcloud/ic/v20190307/model/ModifyUserCardRemarkRequest.h>
 #include <tencentcloud/ic/v20190307/model/ModifyUserCardRemarkResponse.h>
 #include <tencentcloud/ic/v20190307/model/RenewCardsRequest.h>
@@ -60,6 +62,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeCardsResponse> DescribeCardsOutcome;
                 typedef std::future<DescribeCardsOutcome> DescribeCardsOutcomeCallable;
                 typedef std::function<void(const IcClient*, const Model::DescribeCardsRequest&, DescribeCardsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCardsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSmsResponse> DescribeSmsOutcome;
+                typedef std::future<DescribeSmsOutcome> DescribeSmsOutcomeCallable;
+                typedef std::function<void(const IcClient*, const Model::DescribeSmsRequest&, DescribeSmsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSmsAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyUserCardRemarkResponse> ModifyUserCardRemarkOutcome;
                 typedef std::future<ModifyUserCardRemarkOutcome> ModifyUserCardRemarkOutcomeCallable;
                 typedef std::function<void(const IcClient*, const Model::ModifyUserCardRemarkRequest&, ModifyUserCardRemarkOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyUserCardRemarkAsyncHandler;
@@ -101,6 +106,15 @@ namespace TencentCloud
                 DescribeCardsOutcome DescribeCards(const Model::DescribeCardsRequest &request);
                 void DescribeCardsAsync(const Model::DescribeCardsRequest& request, const DescribeCardsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeCardsOutcomeCallable DescribeCardsCallable(const Model::DescribeCardsRequest& request);
+
+                /**
+                 *查询短信列表
+                 * @param req DescribeSmsRequest
+                 * @return DescribeSmsOutcome
+                 */
+                DescribeSmsOutcome DescribeSms(const Model::DescribeSmsRequest &request);
+                void DescribeSmsAsync(const Model::DescribeSmsRequest& request, const DescribeSmsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSmsOutcomeCallable DescribeSmsCallable(const Model::DescribeSmsRequest& request);
 
                 /**
                  *编辑卡片备注

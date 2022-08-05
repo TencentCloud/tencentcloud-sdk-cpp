@@ -25,8 +25,6 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/rce/v20201103/model/DescribeRiskAssessmentRequest.h>
 #include <tencentcloud/rce/v20201103/model/DescribeRiskAssessmentResponse.h>
-#include <tencentcloud/rce/v20201103/model/DescribeRiskModelRequest.h>
-#include <tencentcloud/rce/v20201103/model/DescribeRiskModelResponse.h>
 #include <tencentcloud/rce/v20201103/model/DescribeRiskTrendsRequest.h>
 #include <tencentcloud/rce/v20201103/model/DescribeRiskTrendsResponse.h>
 #include <tencentcloud/rce/v20201103/model/ManageMarketingRiskRequest.h>
@@ -48,9 +46,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeRiskAssessmentResponse> DescribeRiskAssessmentOutcome;
                 typedef std::future<DescribeRiskAssessmentOutcome> DescribeRiskAssessmentOutcomeCallable;
                 typedef std::function<void(const RceClient*, const Model::DescribeRiskAssessmentRequest&, DescribeRiskAssessmentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRiskAssessmentAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeRiskModelResponse> DescribeRiskModelOutcome;
-                typedef std::future<DescribeRiskModelOutcome> DescribeRiskModelOutcomeCallable;
-                typedef std::function<void(const RceClient*, const Model::DescribeRiskModelRequest&, DescribeRiskModelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRiskModelAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRiskTrendsResponse> DescribeRiskTrendsOutcome;
                 typedef std::future<DescribeRiskTrendsOutcome> DescribeRiskTrendsOutcomeCallable;
                 typedef std::function<void(const RceClient*, const Model::DescribeRiskTrendsRequest&, DescribeRiskTrendsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRiskTrendsAsyncHandler;
@@ -68,15 +63,6 @@ namespace TencentCloud
                 DescribeRiskAssessmentOutcome DescribeRiskAssessment(const Model::DescribeRiskAssessmentRequest &request);
                 void DescribeRiskAssessmentAsync(const Model::DescribeRiskAssessmentRequest& request, const DescribeRiskAssessmentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeRiskAssessmentOutcomeCallable DescribeRiskAssessmentCallable(const Model::DescribeRiskAssessmentRequest& request);
-
-                /**
-                 *依托人工智能技术和腾讯丰富的风控实战经验，根据用户提供的数据和业务场景，给客户提供定制化模型服务
-                 * @param req DescribeRiskModelRequest
-                 * @return DescribeRiskModelOutcome
-                 */
-                DescribeRiskModelOutcome DescribeRiskModel(const Model::DescribeRiskModelRequest &request);
-                void DescribeRiskModelAsync(const Model::DescribeRiskModelRequest& request, const DescribeRiskModelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeRiskModelOutcomeCallable DescribeRiskModelCallable(const Model::DescribeRiskModelRequest& request);
 
                 /**
                  *以图表形式展示三种请求状态的趋势变化
