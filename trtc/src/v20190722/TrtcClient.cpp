@@ -212,92 +212,6 @@ TrtcClient::DeletePictureOutcomeCallable TrtcClient::DeletePictureCallable(const
     return task->get_future();
 }
 
-TrtcClient::DescribeAbnormalEventOutcome TrtcClient::DescribeAbnormalEvent(const DescribeAbnormalEventRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeAbnormalEvent");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeAbnormalEventResponse rsp = DescribeAbnormalEventResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeAbnormalEventOutcome(rsp);
-        else
-            return DescribeAbnormalEventOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeAbnormalEventOutcome(outcome.GetError());
-    }
-}
-
-void TrtcClient::DescribeAbnormalEventAsync(const DescribeAbnormalEventRequest& request, const DescribeAbnormalEventAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAbnormalEvent(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-TrtcClient::DescribeAbnormalEventOutcomeCallable TrtcClient::DescribeAbnormalEventCallable(const DescribeAbnormalEventRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeAbnormalEventOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAbnormalEvent(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-TrtcClient::DescribeCallDetailOutcome TrtcClient::DescribeCallDetail(const DescribeCallDetailRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeCallDetail");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeCallDetailResponse rsp = DescribeCallDetailResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeCallDetailOutcome(rsp);
-        else
-            return DescribeCallDetailOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeCallDetailOutcome(outcome.GetError());
-    }
-}
-
-void TrtcClient::DescribeCallDetailAsync(const DescribeCallDetailRequest& request, const DescribeCallDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCallDetail(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-TrtcClient::DescribeCallDetailOutcomeCallable TrtcClient::DescribeCallDetailCallable(const DescribeCallDetailRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeCallDetailOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCallDetail(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 TrtcClient::DescribeCallDetailInfoOutcome TrtcClient::DescribeCallDetailInfo(const DescribeCallDetailInfoRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeCallDetailInfo");
@@ -384,49 +298,6 @@ TrtcClient::DescribeCloudRecordingOutcomeCallable TrtcClient::DescribeCloudRecor
     return task->get_future();
 }
 
-TrtcClient::DescribeDetailEventOutcome TrtcClient::DescribeDetailEvent(const DescribeDetailEventRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeDetailEvent");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeDetailEventResponse rsp = DescribeDetailEventResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeDetailEventOutcome(rsp);
-        else
-            return DescribeDetailEventOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeDetailEventOutcome(outcome.GetError());
-    }
-}
-
-void TrtcClient::DescribeDetailEventAsync(const DescribeDetailEventRequest& request, const DescribeDetailEventAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDetailEvent(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-TrtcClient::DescribeDetailEventOutcomeCallable TrtcClient::DescribeDetailEventCallable(const DescribeDetailEventRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeDetailEventOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDetailEvent(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 TrtcClient::DescribeExternalTrtcMeasureOutcome TrtcClient::DescribeExternalTrtcMeasure(const DescribeExternalTrtcMeasureRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeExternalTrtcMeasure");
@@ -463,49 +334,6 @@ TrtcClient::DescribeExternalTrtcMeasureOutcomeCallable TrtcClient::DescribeExter
         [this, request]()
         {
             return this->DescribeExternalTrtcMeasure(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-TrtcClient::DescribeHistoryScaleOutcome TrtcClient::DescribeHistoryScale(const DescribeHistoryScaleRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeHistoryScale");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeHistoryScaleResponse rsp = DescribeHistoryScaleResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeHistoryScaleOutcome(rsp);
-        else
-            return DescribeHistoryScaleOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeHistoryScaleOutcome(outcome.GetError());
-    }
-}
-
-void TrtcClient::DescribeHistoryScaleAsync(const DescribeHistoryScaleRequest& request, const DescribeHistoryScaleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeHistoryScale(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-TrtcClient::DescribeHistoryScaleOutcomeCallable TrtcClient::DescribeHistoryScaleCallable(const DescribeHistoryScaleRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeHistoryScaleOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeHistoryScale(request);
         }
     );
 
@@ -635,49 +463,6 @@ TrtcClient::DescribeRoomInfoOutcomeCallable TrtcClient::DescribeRoomInfoCallable
         [this, request]()
         {
             return this->DescribeRoomInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-TrtcClient::DescribeRoomInformationOutcome TrtcClient::DescribeRoomInformation(const DescribeRoomInformationRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeRoomInformation");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeRoomInformationResponse rsp = DescribeRoomInformationResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeRoomInformationOutcome(rsp);
-        else
-            return DescribeRoomInformationOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeRoomInformationOutcome(outcome.GetError());
-    }
-}
-
-void TrtcClient::DescribeRoomInformationAsync(const DescribeRoomInformationRequest& request, const DescribeRoomInformationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeRoomInformation(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-TrtcClient::DescribeRoomInformationOutcomeCallable TrtcClient::DescribeRoomInformationCallable(const DescribeRoomInformationRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeRoomInformationOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeRoomInformation(request);
         }
     );
 
@@ -893,49 +678,6 @@ TrtcClient::DescribeUserInfoOutcomeCallable TrtcClient::DescribeUserInfoCallable
         [this, request]()
         {
             return this->DescribeUserInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-TrtcClient::DescribeUserInformationOutcome TrtcClient::DescribeUserInformation(const DescribeUserInformationRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeUserInformation");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeUserInformationResponse rsp = DescribeUserInformationResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeUserInformationOutcome(rsp);
-        else
-            return DescribeUserInformationOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeUserInformationOutcome(outcome.GetError());
-    }
-}
-
-void TrtcClient::DescribeUserInformationAsync(const DescribeUserInformationRequest& request, const DescribeUserInformationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeUserInformation(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-TrtcClient::DescribeUserInformationOutcomeCallable TrtcClient::DescribeUserInformationCallable(const DescribeUserInformationRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeUserInformationOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeUserInformation(request);
         }
     );
 

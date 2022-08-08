@@ -31,28 +31,18 @@
 #include <tencentcloud/trtc/v20190722/model/DeleteCloudRecordingResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DeletePictureRequest.h>
 #include <tencentcloud/trtc/v20190722/model/DeletePictureResponse.h>
-#include <tencentcloud/trtc/v20190722/model/DescribeAbnormalEventRequest.h>
-#include <tencentcloud/trtc/v20190722/model/DescribeAbnormalEventResponse.h>
-#include <tencentcloud/trtc/v20190722/model/DescribeCallDetailRequest.h>
-#include <tencentcloud/trtc/v20190722/model/DescribeCallDetailResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeCallDetailInfoRequest.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeCallDetailInfoResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeCloudRecordingRequest.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeCloudRecordingResponse.h>
-#include <tencentcloud/trtc/v20190722/model/DescribeDetailEventRequest.h>
-#include <tencentcloud/trtc/v20190722/model/DescribeDetailEventResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeExternalTrtcMeasureRequest.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeExternalTrtcMeasureResponse.h>
-#include <tencentcloud/trtc/v20190722/model/DescribeHistoryScaleRequest.h>
-#include <tencentcloud/trtc/v20190722/model/DescribeHistoryScaleResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DescribePictureRequest.h>
 #include <tencentcloud/trtc/v20190722/model/DescribePictureResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeRecordStatisticRequest.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeRecordStatisticResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeRoomInfoRequest.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeRoomInfoResponse.h>
-#include <tencentcloud/trtc/v20190722/model/DescribeRoomInformationRequest.h>
-#include <tencentcloud/trtc/v20190722/model/DescribeRoomInformationResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeScaleInfoRequest.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeScaleInfoResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeTrtcMcuTranscodeTimeRequest.h>
@@ -63,8 +53,6 @@
 #include <tencentcloud/trtc/v20190722/model/DescribeUserEventResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeUserInfoRequest.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeUserInfoResponse.h>
-#include <tencentcloud/trtc/v20190722/model/DescribeUserInformationRequest.h>
-#include <tencentcloud/trtc/v20190722/model/DescribeUserInformationResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DismissRoomRequest.h>
 #include <tencentcloud/trtc/v20190722/model/DismissRoomResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DismissRoomByStrRoomIdRequest.h>
@@ -111,27 +99,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeletePictureResponse> DeletePictureOutcome;
                 typedef std::future<DeletePictureOutcome> DeletePictureOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::DeletePictureRequest&, DeletePictureOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeletePictureAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeAbnormalEventResponse> DescribeAbnormalEventOutcome;
-                typedef std::future<DescribeAbnormalEventOutcome> DescribeAbnormalEventOutcomeCallable;
-                typedef std::function<void(const TrtcClient*, const Model::DescribeAbnormalEventRequest&, DescribeAbnormalEventOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAbnormalEventAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeCallDetailResponse> DescribeCallDetailOutcome;
-                typedef std::future<DescribeCallDetailOutcome> DescribeCallDetailOutcomeCallable;
-                typedef std::function<void(const TrtcClient*, const Model::DescribeCallDetailRequest&, DescribeCallDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCallDetailAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCallDetailInfoResponse> DescribeCallDetailInfoOutcome;
                 typedef std::future<DescribeCallDetailInfoOutcome> DescribeCallDetailInfoOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::DescribeCallDetailInfoRequest&, DescribeCallDetailInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCallDetailInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCloudRecordingResponse> DescribeCloudRecordingOutcome;
                 typedef std::future<DescribeCloudRecordingOutcome> DescribeCloudRecordingOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::DescribeCloudRecordingRequest&, DescribeCloudRecordingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudRecordingAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeDetailEventResponse> DescribeDetailEventOutcome;
-                typedef std::future<DescribeDetailEventOutcome> DescribeDetailEventOutcomeCallable;
-                typedef std::function<void(const TrtcClient*, const Model::DescribeDetailEventRequest&, DescribeDetailEventOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDetailEventAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeExternalTrtcMeasureResponse> DescribeExternalTrtcMeasureOutcome;
                 typedef std::future<DescribeExternalTrtcMeasureOutcome> DescribeExternalTrtcMeasureOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::DescribeExternalTrtcMeasureRequest&, DescribeExternalTrtcMeasureOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeExternalTrtcMeasureAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeHistoryScaleResponse> DescribeHistoryScaleOutcome;
-                typedef std::future<DescribeHistoryScaleOutcome> DescribeHistoryScaleOutcomeCallable;
-                typedef std::function<void(const TrtcClient*, const Model::DescribeHistoryScaleRequest&, DescribeHistoryScaleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHistoryScaleAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribePictureResponse> DescribePictureOutcome;
                 typedef std::future<DescribePictureOutcome> DescribePictureOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::DescribePictureRequest&, DescribePictureOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePictureAsyncHandler;
@@ -141,9 +117,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeRoomInfoResponse> DescribeRoomInfoOutcome;
                 typedef std::future<DescribeRoomInfoOutcome> DescribeRoomInfoOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::DescribeRoomInfoRequest&, DescribeRoomInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRoomInfoAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeRoomInformationResponse> DescribeRoomInformationOutcome;
-                typedef std::future<DescribeRoomInformationOutcome> DescribeRoomInformationOutcomeCallable;
-                typedef std::function<void(const TrtcClient*, const Model::DescribeRoomInformationRequest&, DescribeRoomInformationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRoomInformationAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeScaleInfoResponse> DescribeScaleInfoOutcome;
                 typedef std::future<DescribeScaleInfoOutcome> DescribeScaleInfoOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::DescribeScaleInfoRequest&, DescribeScaleInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScaleInfoAsyncHandler;
@@ -159,9 +132,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeUserInfoResponse> DescribeUserInfoOutcome;
                 typedef std::future<DescribeUserInfoOutcome> DescribeUserInfoOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::DescribeUserInfoRequest&, DescribeUserInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserInfoAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeUserInformationResponse> DescribeUserInformationOutcome;
-                typedef std::future<DescribeUserInformationOutcome> DescribeUserInformationOutcomeCallable;
-                typedef std::function<void(const TrtcClient*, const Model::DescribeUserInformationRequest&, DescribeUserInformationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserInformationAsyncHandler;
                 typedef Outcome<Core::Error, Model::DismissRoomResponse> DismissRoomOutcome;
                 typedef std::future<DismissRoomOutcome> DismissRoomOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::DismissRoomRequest&, DismissRoomOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DismissRoomAsyncHandler;
@@ -196,18 +166,18 @@ namespace TencentCloud
 
 
                 /**
-                 *###接口说明：
+                 *接口说明：
 启动云端录制功能，完成房间内的音视频录制，并上传到指定的云存储。您可以通过此 API 接口把TRTC 房间中的每一路音视频流做单独的录制有或者多路视频画面混流一路。
 
-###您可以通过此接口实现如下目标：
+您可以通过此接口实现如下目标：
 * 指定订阅流参数（RecordParams）来指定需要录制的主播的黑名单或者白名单。
 * 指定第三方存储的参数（StorageParams）来指定上传到您希望的云存储
 * 指定混流模式下的音视频转码详细参数（MixTranscodeParams），包括视频分辨率、视频码率、视频帧率、以及声音质量等
 * 指定混流模式各路画面的位置和布局或者也可以指定自动模板的方式来配置。
 
-###关键名词：
-* 单流录制：分别录制房间的订阅UserId的音频和视频。录制服务会实时将录制文件（M3U8/TS）上传至云存储。
-* 混流录制：将房间内订阅UserId的音视频混录成一个音视频文件，并将录制文件（M3U8/TS）上传至云存储。
+关键名词：
+* 单流录制：分别录制房间的订阅UserId的音频和视频。录制服务会实时将录制文件上传至云点播存储。
+* 合流录制：将房间内订阅UserId的音视频混录成一个音视频文件，并将录制文件上传至云点播存储。
                  * @param req CreateCloudRecordingRequest
                  * @return CreateCloudRecordingOutcome
                  */
@@ -225,7 +195,7 @@ namespace TencentCloud
                 CreatePictureOutcomeCallable CreatePictureCallable(const Model::CreatePictureRequest& request);
 
                 /**
-                 *成功开启录制后，可以使用此接口来停止录制任务。仅在录制任务进行时有效，录制退出后更新将会返回错误。停止录制成功后不代表文件全部传输完成，如果未完成后台将会继续上传文件，成功后通过事件回调通知客户文件全部传输完成状态。
+                 *成功开启录制后，可以使用此接口来停止录制任务。停止录制成功后不代表文件全部传输完成，如果未完成后台将会继续上传文件，成功后通过事件回调通知客户文件全部传输完成状态。
                  * @param req DeleteCloudRecordingRequest
                  * @return DeleteCloudRecordingOutcome
                  */
@@ -243,26 +213,6 @@ namespace TencentCloud
                 DeletePictureOutcomeCallable DeletePictureCallable(const Model::DeletePictureRequest& request);
 
                 /**
-                 *查询SdkAppId下任意20条异常体验事件，返回异常体验ID与可能产生异常体验的原因。可查询14天内数据，查询起止时间不超过1个小时。支持跨天查询。
-异常体验ID映射见：https://cloud.tencent.com/document/product/647/44916
-                 * @param req DescribeAbnormalEventRequest
-                 * @return DescribeAbnormalEventOutcome
-                 */
-                DescribeAbnormalEventOutcome DescribeAbnormalEvent(const Model::DescribeAbnormalEventRequest &request);
-                void DescribeAbnormalEventAsync(const Model::DescribeAbnormalEventRequest& request, const DescribeAbnormalEventAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeAbnormalEventOutcomeCallable DescribeAbnormalEventCallable(const Model::DescribeAbnormalEventRequest& request);
-
-                /**
-                 *查询指定时间内的用户列表及用户通话质量数据，可查询14天内数据。DataType 不为null，查询起止时间不超过1个小时，查询用户不超过6个，支持跨天查询。DataType为null时，查询起止时间不超过4个小时， 默认查询6个用户，同时支持每页查询100以内用户个数（PageSize不超过100）。接口用于查询质量问题，不推荐作为计费使用。
-**注意**：该接口只用于历史数据统计或核对数据使用，实时类关键业务逻辑不能使用。
-                 * @param req DescribeCallDetailRequest
-                 * @return DescribeCallDetailOutcome
-                 */
-                DescribeCallDetailOutcome DescribeCallDetail(const Model::DescribeCallDetailRequest &request);
-                void DescribeCallDetailAsync(const Model::DescribeCallDetailRequest& request, const DescribeCallDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeCallDetailOutcomeCallable DescribeCallDetailCallable(const Model::DescribeCallDetailRequest& request);
-
-                /**
                  *查询指定时间内的用户列表及用户通话质量数据，可查询14天内数据。DataType 不为null，查询起止时间不超过1个小时，查询用户不超过6个，支持跨天查询。DataType为null时，查询起止时间不超过4个小时， 默认查询6个用户，同时支持每页查询100以内用户个数（PageSize不超过100）。接口用于查询质量问题，不推荐作为计费使用。（同老接口DescribeCallDetail）
 **注意**：该接口只用于历史数据统计或核对数据使用，实时类关键业务逻辑不能使用。
                  * @param req DescribeCallDetailInfoRequest
@@ -274,21 +224,13 @@ namespace TencentCloud
 
                 /**
                  *成功开启录制后，可以使用此接口来查询录制状态。仅在录制任务进行时有效，录制退出后查询将会返回错误。
+录制文件上传到云点播VOD时，StorageFileList中不会返回录制文件信息，请订阅相关录制文件回调事件，获取录制文件信息。
                  * @param req DescribeCloudRecordingRequest
                  * @return DescribeCloudRecordingOutcome
                  */
                 DescribeCloudRecordingOutcome DescribeCloudRecording(const Model::DescribeCloudRecordingRequest &request);
                 void DescribeCloudRecordingAsync(const Model::DescribeCloudRecordingRequest& request, const DescribeCloudRecordingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeCloudRecordingOutcomeCallable DescribeCloudRecordingCallable(const Model::DescribeCloudRecordingRequest& request);
-
-                /**
-                 *查询用户某次通话内的进退房，视频开关等详细事件。可查询14天内数据。
-                 * @param req DescribeDetailEventRequest
-                 * @return DescribeDetailEventOutcome
-                 */
-                DescribeDetailEventOutcome DescribeDetailEvent(const Model::DescribeDetailEventRequest &request);
-                void DescribeDetailEventAsync(const Model::DescribeDetailEventRequest& request, const DescribeDetailEventAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeDetailEventOutcomeCallable DescribeDetailEventCallable(const Model::DescribeDetailEventRequest& request);
 
                 /**
                  *获取Trtc的用量统计数据。走计费渠道二期 只允许查两天的数据
@@ -298,15 +240,6 @@ namespace TencentCloud
                 DescribeExternalTrtcMeasureOutcome DescribeExternalTrtcMeasure(const Model::DescribeExternalTrtcMeasureRequest &request);
                 void DescribeExternalTrtcMeasureAsync(const Model::DescribeExternalTrtcMeasureRequest& request, const DescribeExternalTrtcMeasureAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeExternalTrtcMeasureOutcomeCallable DescribeExternalTrtcMeasureCallable(const Model::DescribeExternalTrtcMeasureRequest& request);
-
-                /**
-                 *可查询SdkAppId每天的房间数和用户数，按天统计，可查询最近14天的数据。当天未结束，数据未统计完成，无法查到当天的房间数与用户数
-                 * @param req DescribeHistoryScaleRequest
-                 * @return DescribeHistoryScaleOutcome
-                 */
-                DescribeHistoryScaleOutcome DescribeHistoryScale(const Model::DescribeHistoryScaleRequest &request);
-                void DescribeHistoryScaleAsync(const Model::DescribeHistoryScaleRequest& request, const DescribeHistoryScaleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeHistoryScaleOutcomeCallable DescribeHistoryScaleCallable(const Model::DescribeHistoryScaleRequest& request);
 
                 /**
                  *如果您需要在 [云端混流转码](https://cloud.tencent.com/document/product/647/16827) 时频繁查找自定义背景图或水印信息，可通过此接口查找已上传的图片信息。无需频繁查找图片信息的场景，建议直接在 [控制台 > 应用管理 > 素材管理](https://cloud.tencent.com/document/product/647/50769) 中查看。
@@ -340,16 +273,6 @@ namespace TencentCloud
                 DescribeRoomInfoOutcome DescribeRoomInfo(const Model::DescribeRoomInfoRequest &request);
                 void DescribeRoomInfoAsync(const Model::DescribeRoomInfoRequest& request, const DescribeRoomInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeRoomInfoOutcomeCallable DescribeRoomInfoCallable(const Model::DescribeRoomInfoRequest& request);
-
-                /**
-                 *查询SdkAppId下的房间列表。默认返回10条通话，一次最多返回100条通话。可查询14天内的数据。
-**注意**：该接口只用于历史数据统计或核对数据使用，实时类关键业务逻辑不能使用。
-                 * @param req DescribeRoomInformationRequest
-                 * @return DescribeRoomInformationOutcome
-                 */
-                DescribeRoomInformationOutcome DescribeRoomInformation(const Model::DescribeRoomInformationRequest &request);
-                void DescribeRoomInformationAsync(const Model::DescribeRoomInformationRequest& request, const DescribeRoomInformationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeRoomInformationOutcomeCallable DescribeRoomInformationCallable(const Model::DescribeRoomInformationRequest& request);
 
                 /**
                  *可查询SdkAppId每天的房间数和用户数，按天统计，可查询最近14天的数据。当天未结束，数据未统计完成，无法查到当天的房间数与用户数。（同老接口DescribeHistoryScale） 
@@ -401,16 +324,6 @@ namespace TencentCloud
                 DescribeUserInfoOutcome DescribeUserInfo(const Model::DescribeUserInfoRequest &request);
                 void DescribeUserInfoAsync(const Model::DescribeUserInfoRequest& request, const DescribeUserInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeUserInfoOutcomeCallable DescribeUserInfoCallable(const Model::DescribeUserInfoRequest& request);
-
-                /**
-                 *查询指定时间内的用户列表，可查询14天内数据，查询起止时间不超过4小时。默认每页查询6个用户，支持每页最大查询100个用户PageSize不超过100）。
-**注意**：该接口只用于历史数据统计或核对数据使用，实时类关键业务逻辑不能使用。
-                 * @param req DescribeUserInformationRequest
-                 * @return DescribeUserInformationOutcome
-                 */
-                DescribeUserInformationOutcome DescribeUserInformation(const Model::DescribeUserInformationRequest &request);
-                void DescribeUserInformationAsync(const Model::DescribeUserInformationRequest& request, const DescribeUserInformationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeUserInformationOutcomeCallable DescribeUserInformationCallable(const Model::DescribeUserInformationRequest& request);
 
                 /**
                  *接口说明：把房间所有用户从房间移出，解散房间。支持所有平台，Android、iOS、Windows 和 macOS 需升级到 TRTC SDK 6.6及以上版本。

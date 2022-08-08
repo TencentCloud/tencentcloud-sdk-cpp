@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/live/v20180801/model/LiveDomainCertBindings.h>
 
 
 namespace TencentCloud
@@ -43,7 +44,43 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取有绑定证书的域名信息数组。
+                     * @return LiveDomainCertBindings 有绑定证书的域名信息数组。
+                     */
+                    std::vector<LiveDomainCertBindings> GetLiveDomainCertBindings() const;
+
+                    /**
+                     * 判断参数 LiveDomainCertBindings 是否已赋值
+                     * @return LiveDomainCertBindings 是否已赋值
+                     */
+                    bool LiveDomainCertBindingsHasBeenSet() const;
+
+                    /**
+                     * 获取总的记录行数，便于分页。
+                     * @return TotalNum 总的记录行数，便于分页。
+                     */
+                    int64_t GetTotalNum() const;
+
+                    /**
+                     * 判断参数 TotalNum 是否已赋值
+                     * @return TotalNum 是否已赋值
+                     */
+                    bool TotalNumHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 有绑定证书的域名信息数组。
+                     */
+                    std::vector<LiveDomainCertBindings> m_liveDomainCertBindings;
+                    bool m_liveDomainCertBindingsHasBeenSet;
+
+                    /**
+                     * 总的记录行数，便于分页。
+                     */
+                    int64_t m_totalNum;
+                    bool m_totalNumHasBeenSet;
 
                 };
             }

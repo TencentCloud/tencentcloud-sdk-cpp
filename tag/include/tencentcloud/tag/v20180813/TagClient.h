@@ -37,6 +37,8 @@
 #include <tencentcloud/tag/v20180813/model/DeleteTagResponse.h>
 #include <tencentcloud/tag/v20180813/model/DeleteTagsRequest.h>
 #include <tencentcloud/tag/v20180813/model/DeleteTagsResponse.h>
+#include <tencentcloud/tag/v20180813/model/DescribeProjectsRequest.h>
+#include <tencentcloud/tag/v20180813/model/DescribeProjectsResponse.h>
 #include <tencentcloud/tag/v20180813/model/DescribeResourceTagsRequest.h>
 #include <tencentcloud/tag/v20180813/model/DescribeResourceTagsResponse.h>
 #include <tencentcloud/tag/v20180813/model/DescribeResourceTagsByResourceIdsRequest.h>
@@ -114,6 +116,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteTagsResponse> DeleteTagsOutcome;
                 typedef std::future<DeleteTagsOutcome> DeleteTagsOutcomeCallable;
                 typedef std::function<void(const TagClient*, const Model::DeleteTagsRequest&, DeleteTagsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTagsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeProjectsResponse> DescribeProjectsOutcome;
+                typedef std::future<DescribeProjectsOutcome> DescribeProjectsOutcomeCallable;
+                typedef std::function<void(const TagClient*, const Model::DescribeProjectsRequest&, DescribeProjectsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProjectsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeResourceTagsResponse> DescribeResourceTagsOutcome;
                 typedef std::future<DescribeResourceTagsOutcome> DescribeResourceTagsOutcomeCallable;
                 typedef std::function<void(const TagClient*, const Model::DescribeResourceTagsRequest&, DescribeResourceTagsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeResourceTagsAsyncHandler;
@@ -242,6 +247,15 @@ namespace TencentCloud
                 DeleteTagsOutcome DeleteTags(const Model::DeleteTagsRequest &request);
                 void DeleteTagsAsync(const Model::DeleteTagsRequest& request, const DeleteTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteTagsOutcomeCallable DeleteTagsCallable(const Model::DeleteTagsRequest& request);
+
+                /**
+                 *获取项目列表
+                 * @param req DescribeProjectsRequest
+                 * @return DescribeProjectsOutcome
+                 */
+                DescribeProjectsOutcome DescribeProjects(const Model::DescribeProjectsRequest &request);
+                void DescribeProjectsAsync(const Model::DescribeProjectsRequest& request, const DescribeProjectsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeProjectsOutcomeCallable DescribeProjectsCallable(const Model::DescribeProjectsRequest& request);
 
                 /**
                  *查询资源关联标签

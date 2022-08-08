@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/live/v20180801/model/BatchDomainOperateErrors.h>
 
 
 namespace TencentCloud
@@ -55,6 +56,20 @@ namespace TencentCloud
                      */
                     bool MismatchedDomainNamesHasBeenSet() const;
 
+                    /**
+                     * 获取操作失败的域名及错误码，错误信息，包括MismatchedDomainNames中的域名。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Errors 操作失败的域名及错误码，错误信息，包括MismatchedDomainNames中的域名。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<BatchDomainOperateErrors> GetErrors() const;
+
+                    /**
+                     * 判断参数 Errors 是否已赋值
+                     * @return Errors 是否已赋值
+                     */
+                    bool ErrorsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -62,6 +77,13 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_mismatchedDomainNames;
                     bool m_mismatchedDomainNamesHasBeenSet;
+
+                    /**
+                     * 操作失败的域名及错误码，错误信息，包括MismatchedDomainNames中的域名。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<BatchDomainOperateErrors> m_errors;
+                    bool m_errorsHasBeenSet;
 
                 };
             }

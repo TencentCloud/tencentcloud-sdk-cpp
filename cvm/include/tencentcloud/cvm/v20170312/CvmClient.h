@@ -55,6 +55,8 @@
 #include <tencentcloud/cvm/v20170312/model/DeleteLaunchTemplateVersionsResponse.h>
 #include <tencentcloud/cvm/v20170312/model/DescribeAccountQuotaRequest.h>
 #include <tencentcloud/cvm/v20170312/model/DescribeAccountQuotaResponse.h>
+#include <tencentcloud/cvm/v20170312/model/DescribeChcDeniedActionsRequest.h>
+#include <tencentcloud/cvm/v20170312/model/DescribeChcDeniedActionsResponse.h>
 #include <tencentcloud/cvm/v20170312/model/DescribeChcHostsRequest.h>
 #include <tencentcloud/cvm/v20170312/model/DescribeChcHostsResponse.h>
 #include <tencentcloud/cvm/v20170312/model/DescribeDisasterRecoverGroupQuotaRequest.h>
@@ -257,6 +259,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAccountQuotaResponse> DescribeAccountQuotaOutcome;
                 typedef std::future<DescribeAccountQuotaOutcome> DescribeAccountQuotaOutcomeCallable;
                 typedef std::function<void(const CvmClient*, const Model::DescribeAccountQuotaRequest&, DescribeAccountQuotaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccountQuotaAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeChcDeniedActionsResponse> DescribeChcDeniedActionsOutcome;
+                typedef std::future<DescribeChcDeniedActionsOutcome> DescribeChcDeniedActionsOutcomeCallable;
+                typedef std::function<void(const CvmClient*, const Model::DescribeChcDeniedActionsRequest&, DescribeChcDeniedActionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeChcDeniedActionsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeChcHostsResponse> DescribeChcHostsOutcome;
                 typedef std::future<DescribeChcHostsOutcome> DescribeChcHostsOutcomeCallable;
                 typedef std::function<void(const CvmClient*, const Model::DescribeChcHostsRequest&, DescribeChcHostsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeChcHostsAsyncHandler;
@@ -636,6 +641,15 @@ namespace TencentCloud
                 DescribeAccountQuotaOutcome DescribeAccountQuota(const Model::DescribeAccountQuotaRequest &request);
                 void DescribeAccountQuotaAsync(const Model::DescribeAccountQuotaRequest& request, const DescribeAccountQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAccountQuotaOutcomeCallable DescribeAccountQuotaCallable(const Model::DescribeAccountQuotaRequest& request);
+
+                /**
+                 *查询CHC物理服务器禁止做的操作，返回给用户
+                 * @param req DescribeChcDeniedActionsRequest
+                 * @return DescribeChcDeniedActionsOutcome
+                 */
+                DescribeChcDeniedActionsOutcome DescribeChcDeniedActions(const Model::DescribeChcDeniedActionsRequest &request);
+                void DescribeChcDeniedActionsAsync(const Model::DescribeChcDeniedActionsRequest& request, const DescribeChcDeniedActionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeChcDeniedActionsOutcomeCallable DescribeChcDeniedActionsCallable(const Model::DescribeChcDeniedActionsRequest& request);
 
                 /**
                  *本接口 (DescribeChcHosts) 用于查询一个或多个CHC物理服务器详细信息。

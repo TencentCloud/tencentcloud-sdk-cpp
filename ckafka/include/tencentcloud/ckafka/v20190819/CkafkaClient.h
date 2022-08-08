@@ -135,6 +135,8 @@
 #include <tencentcloud/ckafka/v20190819/model/FetchLatestDatahubMessageListResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/FetchMessageByOffsetRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/FetchMessageByOffsetResponse.h>
+#include <tencentcloud/ckafka/v20190819/model/FetchMessageListByOffsetRequest.h>
+#include <tencentcloud/ckafka/v20190819/model/FetchMessageListByOffsetResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/ModifyConnectResourceRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/ModifyConnectResourceResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/ModifyDatahubTaskRequest.h>
@@ -333,6 +335,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::FetchMessageByOffsetResponse> FetchMessageByOffsetOutcome;
                 typedef std::future<FetchMessageByOffsetOutcome> FetchMessageByOffsetOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::FetchMessageByOffsetRequest&, FetchMessageByOffsetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> FetchMessageByOffsetAsyncHandler;
+                typedef Outcome<Core::Error, Model::FetchMessageListByOffsetResponse> FetchMessageListByOffsetOutcome;
+                typedef std::future<FetchMessageListByOffsetOutcome> FetchMessageListByOffsetOutcomeCallable;
+                typedef std::function<void(const CkafkaClient*, const Model::FetchMessageListByOffsetRequest&, FetchMessageListByOffsetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> FetchMessageListByOffsetAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyConnectResourceResponse> ModifyConnectResourceOutcome;
                 typedef std::future<ModifyConnectResourceOutcome> ModifyConnectResourceOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::ModifyConnectResourceRequest&, ModifyConnectResourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyConnectResourceAsyncHandler;
@@ -865,6 +870,15 @@ namespace TencentCloud
                 FetchMessageByOffsetOutcome FetchMessageByOffset(const Model::FetchMessageByOffsetRequest &request);
                 void FetchMessageByOffsetAsync(const Model::FetchMessageByOffsetRequest& request, const FetchMessageByOffsetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 FetchMessageByOffsetOutcomeCallable FetchMessageByOffsetCallable(const Model::FetchMessageByOffsetRequest& request);
+
+                /**
+                 *根据位点查询消息列表
+                 * @param req FetchMessageListByOffsetRequest
+                 * @return FetchMessageListByOffsetOutcome
+                 */
+                FetchMessageListByOffsetOutcome FetchMessageListByOffset(const Model::FetchMessageListByOffsetRequest &request);
+                void FetchMessageListByOffsetAsync(const Model::FetchMessageListByOffsetRequest& request, const FetchMessageListByOffsetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                FetchMessageListByOffsetOutcomeCallable FetchMessageListByOffsetCallable(const Model::FetchMessageListByOffsetRequest& request);
 
                 /**
                  *编辑Datahub连接源

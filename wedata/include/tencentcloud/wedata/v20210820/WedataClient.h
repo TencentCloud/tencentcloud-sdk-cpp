@@ -23,12 +23,82 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/wedata/v20210820/model/BatchDeleteTasksNewRequest.h>
+#include <tencentcloud/wedata/v20210820/model/BatchDeleteTasksNewResponse.h>
+#include <tencentcloud/wedata/v20210820/model/BatchModifyOwnersNewRequest.h>
+#include <tencentcloud/wedata/v20210820/model/BatchModifyOwnersNewResponse.h>
+#include <tencentcloud/wedata/v20210820/model/BatchStopTasksNewRequest.h>
+#include <tencentcloud/wedata/v20210820/model/BatchStopTasksNewResponse.h>
+#include <tencentcloud/wedata/v20210820/model/CreateFolderRequest.h>
+#include <tencentcloud/wedata/v20210820/model/CreateFolderResponse.h>
+#include <tencentcloud/wedata/v20210820/model/CreateTaskRequest.h>
+#include <tencentcloud/wedata/v20210820/model/CreateTaskResponse.h>
+#include <tencentcloud/wedata/v20210820/model/CreateWorkflowRequest.h>
+#include <tencentcloud/wedata/v20210820/model/CreateWorkflowResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DeleteFolderRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DeleteFolderResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DeleteWorkflowNewRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DeleteWorkflowNewResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeDependTasksNewRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeDependTasksNewResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeFolderListRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeFolderListResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeFolderWorkflowListRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeFolderWorkflowListResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeInstanceLogsRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeInstanceLogsResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeProjectRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeProjectResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeRelatedInstancesRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeRelatedInstancesResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeTaskDetailRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeTaskDetailResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeTaskInstancesRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeTaskInstancesResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeTaskScriptRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeTaskScriptResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeTasksByPageRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeTasksByPageResponse.h>
+#include <tencentcloud/wedata/v20210820/model/ForceSucInstancesRequest.h>
+#include <tencentcloud/wedata/v20210820/model/ForceSucInstancesResponse.h>
+#include <tencentcloud/wedata/v20210820/model/FreezeTasksRequest.h>
+#include <tencentcloud/wedata/v20210820/model/FreezeTasksResponse.h>
+#include <tencentcloud/wedata/v20210820/model/FreezeTasksByMultiWorkflowRequest.h>
+#include <tencentcloud/wedata/v20210820/model/FreezeTasksByMultiWorkflowResponse.h>
+#include <tencentcloud/wedata/v20210820/model/KillInstancesRequest.h>
+#include <tencentcloud/wedata/v20210820/model/KillInstancesResponse.h>
+#include <tencentcloud/wedata/v20210820/model/MakeUpTasksNewRequest.h>
+#include <tencentcloud/wedata/v20210820/model/MakeUpTasksNewResponse.h>
+#include <tencentcloud/wedata/v20210820/model/MakeUpWorkflowNewRequest.h>
+#include <tencentcloud/wedata/v20210820/model/MakeUpWorkflowNewResponse.h>
+#include <tencentcloud/wedata/v20210820/model/ModifyFolderRequest.h>
+#include <tencentcloud/wedata/v20210820/model/ModifyFolderResponse.h>
+#include <tencentcloud/wedata/v20210820/model/ModifyTaskInfoRequest.h>
+#include <tencentcloud/wedata/v20210820/model/ModifyTaskInfoResponse.h>
+#include <tencentcloud/wedata/v20210820/model/ModifyTaskLinksRequest.h>
+#include <tencentcloud/wedata/v20210820/model/ModifyTaskLinksResponse.h>
+#include <tencentcloud/wedata/v20210820/model/ModifyTaskScriptRequest.h>
+#include <tencentcloud/wedata/v20210820/model/ModifyTaskScriptResponse.h>
+#include <tencentcloud/wedata/v20210820/model/ModifyWorkflowInfoRequest.h>
+#include <tencentcloud/wedata/v20210820/model/ModifyWorkflowInfoResponse.h>
+#include <tencentcloud/wedata/v20210820/model/ModifyWorkflowScheduleRequest.h>
+#include <tencentcloud/wedata/v20210820/model/ModifyWorkflowScheduleResponse.h>
+#include <tencentcloud/wedata/v20210820/model/RegisterEventRequest.h>
+#include <tencentcloud/wedata/v20210820/model/RegisterEventResponse.h>
+#include <tencentcloud/wedata/v20210820/model/RegisterEventListenerRequest.h>
+#include <tencentcloud/wedata/v20210820/model/RegisterEventListenerResponse.h>
+#include <tencentcloud/wedata/v20210820/model/RerunInstancesRequest.h>
+#include <tencentcloud/wedata/v20210820/model/RerunInstancesResponse.h>
+#include <tencentcloud/wedata/v20210820/model/RunTaskRequest.h>
+#include <tencentcloud/wedata/v20210820/model/RunTaskResponse.h>
+#include <tencentcloud/wedata/v20210820/model/SetTaskAlarmNewRequest.h>
+#include <tencentcloud/wedata/v20210820/model/SetTaskAlarmNewResponse.h>
+#include <tencentcloud/wedata/v20210820/model/SubmitTaskRequest.h>
+#include <tencentcloud/wedata/v20210820/model/SubmitTaskResponse.h>
+#include <tencentcloud/wedata/v20210820/model/SubmitWorkflowRequest.h>
+#include <tencentcloud/wedata/v20210820/model/SubmitWorkflowResponse.h>
+#include <tencentcloud/wedata/v20210820/model/TriggerEventRequest.h>
+#include <tencentcloud/wedata/v20210820/model/TriggerEventResponse.h>
 
 
 namespace TencentCloud
@@ -43,17 +113,231 @@ namespace TencentCloud
                 WedataClient(const Credential &credential, const std::string &region);
                 WedataClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::BatchDeleteTasksNewResponse> BatchDeleteTasksNewOutcome;
+                typedef std::future<BatchDeleteTasksNewOutcome> BatchDeleteTasksNewOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::BatchDeleteTasksNewRequest&, BatchDeleteTasksNewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BatchDeleteTasksNewAsyncHandler;
+                typedef Outcome<Core::Error, Model::BatchModifyOwnersNewResponse> BatchModifyOwnersNewOutcome;
+                typedef std::future<BatchModifyOwnersNewOutcome> BatchModifyOwnersNewOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::BatchModifyOwnersNewRequest&, BatchModifyOwnersNewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BatchModifyOwnersNewAsyncHandler;
+                typedef Outcome<Core::Error, Model::BatchStopTasksNewResponse> BatchStopTasksNewOutcome;
+                typedef std::future<BatchStopTasksNewOutcome> BatchStopTasksNewOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::BatchStopTasksNewRequest&, BatchStopTasksNewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BatchStopTasksNewAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateFolderResponse> CreateFolderOutcome;
+                typedef std::future<CreateFolderOutcome> CreateFolderOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::CreateFolderRequest&, CreateFolderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateFolderAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateTaskResponse> CreateTaskOutcome;
+                typedef std::future<CreateTaskOutcome> CreateTaskOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::CreateTaskRequest&, CreateTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateWorkflowResponse> CreateWorkflowOutcome;
+                typedef std::future<CreateWorkflowOutcome> CreateWorkflowOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::CreateWorkflowRequest&, CreateWorkflowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateWorkflowAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteFolderResponse> DeleteFolderOutcome;
+                typedef std::future<DeleteFolderOutcome> DeleteFolderOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DeleteFolderRequest&, DeleteFolderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteFolderAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteWorkflowNewResponse> DeleteWorkflowNewOutcome;
+                typedef std::future<DeleteWorkflowNewOutcome> DeleteWorkflowNewOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DeleteWorkflowNewRequest&, DeleteWorkflowNewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteWorkflowNewAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDependTasksNewResponse> DescribeDependTasksNewOutcome;
+                typedef std::future<DescribeDependTasksNewOutcome> DescribeDependTasksNewOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeDependTasksNewRequest&, DescribeDependTasksNewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDependTasksNewAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeFolderListResponse> DescribeFolderListOutcome;
+                typedef std::future<DescribeFolderListOutcome> DescribeFolderListOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeFolderListRequest&, DescribeFolderListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFolderListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeFolderWorkflowListResponse> DescribeFolderWorkflowListOutcome;
+                typedef std::future<DescribeFolderWorkflowListOutcome> DescribeFolderWorkflowListOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeFolderWorkflowListRequest&, DescribeFolderWorkflowListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFolderWorkflowListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeInstanceLogsResponse> DescribeInstanceLogsOutcome;
+                typedef std::future<DescribeInstanceLogsOutcome> DescribeInstanceLogsOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeInstanceLogsRequest&, DescribeInstanceLogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceLogsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeProjectResponse> DescribeProjectOutcome;
                 typedef std::future<DescribeProjectOutcome> DescribeProjectOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeProjectRequest&, DescribeProjectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProjectAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRelatedInstancesResponse> DescribeRelatedInstancesOutcome;
                 typedef std::future<DescribeRelatedInstancesOutcome> DescribeRelatedInstancesOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeRelatedInstancesRequest&, DescribeRelatedInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRelatedInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTaskDetailResponse> DescribeTaskDetailOutcome;
+                typedef std::future<DescribeTaskDetailOutcome> DescribeTaskDetailOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeTaskDetailRequest&, DescribeTaskDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTaskDetailAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTaskInstancesResponse> DescribeTaskInstancesOutcome;
                 typedef std::future<DescribeTaskInstancesOutcome> DescribeTaskInstancesOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeTaskInstancesRequest&, DescribeTaskInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTaskInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTaskScriptResponse> DescribeTaskScriptOutcome;
+                typedef std::future<DescribeTaskScriptOutcome> DescribeTaskScriptOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeTaskScriptRequest&, DescribeTaskScriptOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTaskScriptAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTasksByPageResponse> DescribeTasksByPageOutcome;
+                typedef std::future<DescribeTasksByPageOutcome> DescribeTasksByPageOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeTasksByPageRequest&, DescribeTasksByPageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTasksByPageAsyncHandler;
+                typedef Outcome<Core::Error, Model::ForceSucInstancesResponse> ForceSucInstancesOutcome;
+                typedef std::future<ForceSucInstancesOutcome> ForceSucInstancesOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::ForceSucInstancesRequest&, ForceSucInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ForceSucInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::FreezeTasksResponse> FreezeTasksOutcome;
+                typedef std::future<FreezeTasksOutcome> FreezeTasksOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::FreezeTasksRequest&, FreezeTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> FreezeTasksAsyncHandler;
+                typedef Outcome<Core::Error, Model::FreezeTasksByMultiWorkflowResponse> FreezeTasksByMultiWorkflowOutcome;
+                typedef std::future<FreezeTasksByMultiWorkflowOutcome> FreezeTasksByMultiWorkflowOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::FreezeTasksByMultiWorkflowRequest&, FreezeTasksByMultiWorkflowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> FreezeTasksByMultiWorkflowAsyncHandler;
+                typedef Outcome<Core::Error, Model::KillInstancesResponse> KillInstancesOutcome;
+                typedef std::future<KillInstancesOutcome> KillInstancesOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::KillInstancesRequest&, KillInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> KillInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::MakeUpTasksNewResponse> MakeUpTasksNewOutcome;
+                typedef std::future<MakeUpTasksNewOutcome> MakeUpTasksNewOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::MakeUpTasksNewRequest&, MakeUpTasksNewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> MakeUpTasksNewAsyncHandler;
+                typedef Outcome<Core::Error, Model::MakeUpWorkflowNewResponse> MakeUpWorkflowNewOutcome;
+                typedef std::future<MakeUpWorkflowNewOutcome> MakeUpWorkflowNewOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::MakeUpWorkflowNewRequest&, MakeUpWorkflowNewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> MakeUpWorkflowNewAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyFolderResponse> ModifyFolderOutcome;
+                typedef std::future<ModifyFolderOutcome> ModifyFolderOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::ModifyFolderRequest&, ModifyFolderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyFolderAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyTaskInfoResponse> ModifyTaskInfoOutcome;
+                typedef std::future<ModifyTaskInfoOutcome> ModifyTaskInfoOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::ModifyTaskInfoRequest&, ModifyTaskInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTaskInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyTaskLinksResponse> ModifyTaskLinksOutcome;
+                typedef std::future<ModifyTaskLinksOutcome> ModifyTaskLinksOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::ModifyTaskLinksRequest&, ModifyTaskLinksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTaskLinksAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyTaskScriptResponse> ModifyTaskScriptOutcome;
+                typedef std::future<ModifyTaskScriptOutcome> ModifyTaskScriptOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::ModifyTaskScriptRequest&, ModifyTaskScriptOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTaskScriptAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyWorkflowInfoResponse> ModifyWorkflowInfoOutcome;
+                typedef std::future<ModifyWorkflowInfoOutcome> ModifyWorkflowInfoOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::ModifyWorkflowInfoRequest&, ModifyWorkflowInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyWorkflowInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyWorkflowScheduleResponse> ModifyWorkflowScheduleOutcome;
+                typedef std::future<ModifyWorkflowScheduleOutcome> ModifyWorkflowScheduleOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::ModifyWorkflowScheduleRequest&, ModifyWorkflowScheduleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyWorkflowScheduleAsyncHandler;
+                typedef Outcome<Core::Error, Model::RegisterEventResponse> RegisterEventOutcome;
+                typedef std::future<RegisterEventOutcome> RegisterEventOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::RegisterEventRequest&, RegisterEventOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RegisterEventAsyncHandler;
+                typedef Outcome<Core::Error, Model::RegisterEventListenerResponse> RegisterEventListenerOutcome;
+                typedef std::future<RegisterEventListenerOutcome> RegisterEventListenerOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::RegisterEventListenerRequest&, RegisterEventListenerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RegisterEventListenerAsyncHandler;
+                typedef Outcome<Core::Error, Model::RerunInstancesResponse> RerunInstancesOutcome;
+                typedef std::future<RerunInstancesOutcome> RerunInstancesOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::RerunInstancesRequest&, RerunInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RerunInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::RunTaskResponse> RunTaskOutcome;
+                typedef std::future<RunTaskOutcome> RunTaskOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::RunTaskRequest&, RunTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RunTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::SetTaskAlarmNewResponse> SetTaskAlarmNewOutcome;
+                typedef std::future<SetTaskAlarmNewOutcome> SetTaskAlarmNewOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::SetTaskAlarmNewRequest&, SetTaskAlarmNewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetTaskAlarmNewAsyncHandler;
+                typedef Outcome<Core::Error, Model::SubmitTaskResponse> SubmitTaskOutcome;
+                typedef std::future<SubmitTaskOutcome> SubmitTaskOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::SubmitTaskRequest&, SubmitTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SubmitTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::SubmitWorkflowResponse> SubmitWorkflowOutcome;
+                typedef std::future<SubmitWorkflowOutcome> SubmitWorkflowOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::SubmitWorkflowRequest&, SubmitWorkflowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SubmitWorkflowAsyncHandler;
+                typedef Outcome<Core::Error, Model::TriggerEventResponse> TriggerEventOutcome;
+                typedef std::future<TriggerEventOutcome> TriggerEventOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::TriggerEventRequest&, TriggerEventOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TriggerEventAsyncHandler;
 
 
+
+                /**
+                 *批量删除任务，仅对任务状态为”已停止“有效；（Beta版本）
+
+                 * @param req BatchDeleteTasksNewRequest
+                 * @return BatchDeleteTasksNewOutcome
+                 */
+                BatchDeleteTasksNewOutcome BatchDeleteTasksNew(const Model::BatchDeleteTasksNewRequest &request);
+                void BatchDeleteTasksNewAsync(const Model::BatchDeleteTasksNewRequest& request, const BatchDeleteTasksNewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                BatchDeleteTasksNewOutcomeCallable BatchDeleteTasksNewCallable(const Model::BatchDeleteTasksNewRequest& request);
+
+                /**
+                 *批量修改任务责任人（Beta版本）
+                 * @param req BatchModifyOwnersNewRequest
+                 * @return BatchModifyOwnersNewOutcome
+                 */
+                BatchModifyOwnersNewOutcome BatchModifyOwnersNew(const Model::BatchModifyOwnersNewRequest &request);
+                void BatchModifyOwnersNewAsync(const Model::BatchModifyOwnersNewRequest& request, const BatchModifyOwnersNewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                BatchModifyOwnersNewOutcomeCallable BatchModifyOwnersNewCallable(const Model::BatchModifyOwnersNewRequest& request);
+
+                /**
+                 *仅对任务状态为”调度中“和”已暂停“有效，对所选任务的任务实例进行终止，并停止调度（Beta版本）
+                 * @param req BatchStopTasksNewRequest
+                 * @return BatchStopTasksNewOutcome
+                 */
+                BatchStopTasksNewOutcome BatchStopTasksNew(const Model::BatchStopTasksNewRequest &request);
+                void BatchStopTasksNewAsync(const Model::BatchStopTasksNewRequest& request, const BatchStopTasksNewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                BatchStopTasksNewOutcomeCallable BatchStopTasksNewCallable(const Model::BatchStopTasksNewRequest& request);
+
+                /**
+                 *创建文件夹（Beta版本）
+                 * @param req CreateFolderRequest
+                 * @return CreateFolderOutcome
+                 */
+                CreateFolderOutcome CreateFolder(const Model::CreateFolderRequest &request);
+                void CreateFolderAsync(const Model::CreateFolderRequest& request, const CreateFolderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateFolderOutcomeCallable CreateFolderCallable(const Model::CreateFolderRequest& request);
+
+                /**
+                 *创建任务（Beta版本）
+                 * @param req CreateTaskRequest
+                 * @return CreateTaskOutcome
+                 */
+                CreateTaskOutcome CreateTask(const Model::CreateTaskRequest &request);
+                void CreateTaskAsync(const Model::CreateTaskRequest& request, const CreateTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateTaskOutcomeCallable CreateTaskCallable(const Model::CreateTaskRequest& request);
+
+                /**
+                 *创建工作流（Beta版本）
+                 * @param req CreateWorkflowRequest
+                 * @return CreateWorkflowOutcome
+                 */
+                CreateWorkflowOutcome CreateWorkflow(const Model::CreateWorkflowRequest &request);
+                void CreateWorkflowAsync(const Model::CreateWorkflowRequest& request, const CreateWorkflowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateWorkflowOutcomeCallable CreateWorkflowCallable(const Model::CreateWorkflowRequest& request);
+
+                /**
+                 *删除文件夹（Beta版本）
+                 * @param req DeleteFolderRequest
+                 * @return DeleteFolderOutcome
+                 */
+                DeleteFolderOutcome DeleteFolder(const Model::DeleteFolderRequest &request);
+                void DeleteFolderAsync(const Model::DeleteFolderRequest& request, const DeleteFolderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteFolderOutcomeCallable DeleteFolderCallable(const Model::DeleteFolderRequest& request);
+
+                /**
+                 *删除工作流（Beta版本）
+                 * @param req DeleteWorkflowNewRequest
+                 * @return DeleteWorkflowNewOutcome
+                 */
+                DeleteWorkflowNewOutcome DeleteWorkflowNew(const Model::DeleteWorkflowNewRequest &request);
+                void DeleteWorkflowNewAsync(const Model::DeleteWorkflowNewRequest& request, const DeleteWorkflowNewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteWorkflowNewOutcomeCallable DeleteWorkflowNewCallable(const Model::DeleteWorkflowNewRequest& request);
+
+                /**
+                 *根据层级查找上/下游任务节点（Beta版本）
+                 * @param req DescribeDependTasksNewRequest
+                 * @return DescribeDependTasksNewOutcome
+                 */
+                DescribeDependTasksNewOutcome DescribeDependTasksNew(const Model::DescribeDependTasksNewRequest &request);
+                void DescribeDependTasksNewAsync(const Model::DescribeDependTasksNewRequest& request, const DescribeDependTasksNewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDependTasksNewOutcomeCallable DescribeDependTasksNewCallable(const Model::DescribeDependTasksNewRequest& request);
+
+                /**
+                 *拉取文件夹目录（Beta版本）
+                 * @param req DescribeFolderListRequest
+                 * @return DescribeFolderListOutcome
+                 */
+                DescribeFolderListOutcome DescribeFolderList(const Model::DescribeFolderListRequest &request);
+                void DescribeFolderListAsync(const Model::DescribeFolderListRequest& request, const DescribeFolderListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeFolderListOutcomeCallable DescribeFolderListCallable(const Model::DescribeFolderListRequest& request);
+
+                /**
+                 *拉取文件夹下的工作流（Beta版本）
+                 * @param req DescribeFolderWorkflowListRequest
+                 * @return DescribeFolderWorkflowListOutcome
+                 */
+                DescribeFolderWorkflowListOutcome DescribeFolderWorkflowList(const Model::DescribeFolderWorkflowListRequest &request);
+                void DescribeFolderWorkflowListAsync(const Model::DescribeFolderWorkflowListRequest& request, const DescribeFolderWorkflowListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeFolderWorkflowListOutcomeCallable DescribeFolderWorkflowListCallable(const Model::DescribeFolderWorkflowListRequest& request);
+
+                /**
+                 *获取实例日志列表（Beta版本）
+                 * @param req DescribeInstanceLogsRequest
+                 * @return DescribeInstanceLogsOutcome
+                 */
+                DescribeInstanceLogsOutcome DescribeInstanceLogs(const Model::DescribeInstanceLogsRequest &request);
+                void DescribeInstanceLogsAsync(const Model::DescribeInstanceLogsRequest& request, const DescribeInstanceLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeInstanceLogsOutcomeCallable DescribeInstanceLogsCallable(const Model::DescribeInstanceLogsRequest& request);
 
                 /**
                  *获取项目信息
@@ -74,6 +358,15 @@ namespace TencentCloud
                 DescribeRelatedInstancesOutcomeCallable DescribeRelatedInstancesCallable(const Model::DescribeRelatedInstancesRequest& request);
 
                 /**
+                 *查询任务具体详情（Beta版本）
+                 * @param req DescribeTaskDetailRequest
+                 * @return DescribeTaskDetailOutcome
+                 */
+                DescribeTaskDetailOutcome DescribeTaskDetail(const Model::DescribeTaskDetailRequest &request);
+                void DescribeTaskDetailAsync(const Model::DescribeTaskDetailRequest& request, const DescribeTaskDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTaskDetailOutcomeCallable DescribeTaskDetailCallable(const Model::DescribeTaskDetailRequest& request);
+
+                /**
                  *查询任务实例列表
                  * @param req DescribeTaskInstancesRequest
                  * @return DescribeTaskInstancesOutcome
@@ -81,6 +374,205 @@ namespace TencentCloud
                 DescribeTaskInstancesOutcome DescribeTaskInstances(const Model::DescribeTaskInstancesRequest &request);
                 void DescribeTaskInstancesAsync(const Model::DescribeTaskInstancesRequest& request, const DescribeTaskInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeTaskInstancesOutcomeCallable DescribeTaskInstancesCallable(const Model::DescribeTaskInstancesRequest& request);
+
+                /**
+                 *查询任务脚本（Beta版本）
+                 * @param req DescribeTaskScriptRequest
+                 * @return DescribeTaskScriptOutcome
+                 */
+                DescribeTaskScriptOutcome DescribeTaskScript(const Model::DescribeTaskScriptRequest &request);
+                void DescribeTaskScriptAsync(const Model::DescribeTaskScriptRequest& request, const DescribeTaskScriptAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTaskScriptOutcomeCallable DescribeTaskScriptCallable(const Model::DescribeTaskScriptRequest& request);
+
+                /**
+                 *根据工作流分页查询任务（Beta版本）
+                 * @param req DescribeTasksByPageRequest
+                 * @return DescribeTasksByPageOutcome
+                 */
+                DescribeTasksByPageOutcome DescribeTasksByPage(const Model::DescribeTasksByPageRequest &request);
+                void DescribeTasksByPageAsync(const Model::DescribeTasksByPageRequest& request, const DescribeTasksByPageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTasksByPageOutcomeCallable DescribeTasksByPageCallable(const Model::DescribeTasksByPageRequest& request);
+
+                /**
+                 *实例批量置成功（Beta版本）
+                 * @param req ForceSucInstancesRequest
+                 * @return ForceSucInstancesOutcome
+                 */
+                ForceSucInstancesOutcome ForceSucInstances(const Model::ForceSucInstancesRequest &request);
+                void ForceSucInstancesAsync(const Model::ForceSucInstancesRequest& request, const ForceSucInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ForceSucInstancesOutcomeCallable ForceSucInstancesCallable(const Model::ForceSucInstancesRequest& request);
+
+                /**
+                 *批量冻结任务（Beta版本）
+                 * @param req FreezeTasksRequest
+                 * @return FreezeTasksOutcome
+                 */
+                FreezeTasksOutcome FreezeTasks(const Model::FreezeTasksRequest &request);
+                void FreezeTasksAsync(const Model::FreezeTasksRequest& request, const FreezeTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                FreezeTasksOutcomeCallable FreezeTasksCallable(const Model::FreezeTasksRequest& request);
+
+                /**
+                 *基于多个工作流进行批量冻结任务操作（Beta版本）
+                 * @param req FreezeTasksByMultiWorkflowRequest
+                 * @return FreezeTasksByMultiWorkflowOutcome
+                 */
+                FreezeTasksByMultiWorkflowOutcome FreezeTasksByMultiWorkflow(const Model::FreezeTasksByMultiWorkflowRequest &request);
+                void FreezeTasksByMultiWorkflowAsync(const Model::FreezeTasksByMultiWorkflowRequest& request, const FreezeTasksByMultiWorkflowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                FreezeTasksByMultiWorkflowOutcomeCallable FreezeTasksByMultiWorkflowCallable(const Model::FreezeTasksByMultiWorkflowRequest& request);
+
+                /**
+                 *实例批量终止操作（Beta版本）
+                 * @param req KillInstancesRequest
+                 * @return KillInstancesOutcome
+                 */
+                KillInstancesOutcome KillInstances(const Model::KillInstancesRequest &request);
+                void KillInstancesAsync(const Model::KillInstancesRequest& request, const KillInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                KillInstancesOutcomeCallable KillInstancesCallable(const Model::KillInstancesRequest& request);
+
+                /**
+                 *任务批量补录，调度状态任务才可以补录；（Beta版本）
+
+                 * @param req MakeUpTasksNewRequest
+                 * @return MakeUpTasksNewOutcome
+                 */
+                MakeUpTasksNewOutcome MakeUpTasksNew(const Model::MakeUpTasksNewRequest &request);
+                void MakeUpTasksNewAsync(const Model::MakeUpTasksNewRequest& request, const MakeUpTasksNewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                MakeUpTasksNewOutcomeCallable MakeUpTasksNewCallable(const Model::MakeUpTasksNewRequest& request);
+
+                /**
+                 *工作流下所有任务的补录（Beta版本）
+                 * @param req MakeUpWorkflowNewRequest
+                 * @return MakeUpWorkflowNewOutcome
+                 */
+                MakeUpWorkflowNewOutcome MakeUpWorkflowNew(const Model::MakeUpWorkflowNewRequest &request);
+                void MakeUpWorkflowNewAsync(const Model::MakeUpWorkflowNewRequest& request, const MakeUpWorkflowNewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                MakeUpWorkflowNewOutcomeCallable MakeUpWorkflowNewCallable(const Model::MakeUpWorkflowNewRequest& request);
+
+                /**
+                 *文件夹更新（Beta版本）
+                 * @param req ModifyFolderRequest
+                 * @return ModifyFolderOutcome
+                 */
+                ModifyFolderOutcome ModifyFolder(const Model::ModifyFolderRequest &request);
+                void ModifyFolderAsync(const Model::ModifyFolderRequest& request, const ModifyFolderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyFolderOutcomeCallable ModifyFolderCallable(const Model::ModifyFolderRequest& request);
+
+                /**
+                 *更新任务（Beta版本）
+                 * @param req ModifyTaskInfoRequest
+                 * @return ModifyTaskInfoOutcome
+                 */
+                ModifyTaskInfoOutcome ModifyTaskInfo(const Model::ModifyTaskInfoRequest &request);
+                void ModifyTaskInfoAsync(const Model::ModifyTaskInfoRequest& request, const ModifyTaskInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyTaskInfoOutcomeCallable ModifyTaskInfoCallable(const Model::ModifyTaskInfoRequest& request);
+
+                /**
+                 *添加父任务依赖（Beta版本）
+                 * @param req ModifyTaskLinksRequest
+                 * @return ModifyTaskLinksOutcome
+                 */
+                ModifyTaskLinksOutcome ModifyTaskLinks(const Model::ModifyTaskLinksRequest &request);
+                void ModifyTaskLinksAsync(const Model::ModifyTaskLinksRequest& request, const ModifyTaskLinksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyTaskLinksOutcomeCallable ModifyTaskLinksCallable(const Model::ModifyTaskLinksRequest& request);
+
+                /**
+                 *修改任务脚本（Beta版本）
+                 * @param req ModifyTaskScriptRequest
+                 * @return ModifyTaskScriptOutcome
+                 */
+                ModifyTaskScriptOutcome ModifyTaskScript(const Model::ModifyTaskScriptRequest &request);
+                void ModifyTaskScriptAsync(const Model::ModifyTaskScriptRequest& request, const ModifyTaskScriptAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyTaskScriptOutcomeCallable ModifyTaskScriptCallable(const Model::ModifyTaskScriptRequest& request);
+
+                /**
+                 *更新工作流（Beta版本）
+                 * @param req ModifyWorkflowInfoRequest
+                 * @return ModifyWorkflowInfoOutcome
+                 */
+                ModifyWorkflowInfoOutcome ModifyWorkflowInfo(const Model::ModifyWorkflowInfoRequest &request);
+                void ModifyWorkflowInfoAsync(const Model::ModifyWorkflowInfoRequest& request, const ModifyWorkflowInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyWorkflowInfoOutcomeCallable ModifyWorkflowInfoCallable(const Model::ModifyWorkflowInfoRequest& request);
+
+                /**
+                 *更新工作流调度（Beta版本）
+                 * @param req ModifyWorkflowScheduleRequest
+                 * @return ModifyWorkflowScheduleOutcome
+                 */
+                ModifyWorkflowScheduleOutcome ModifyWorkflowSchedule(const Model::ModifyWorkflowScheduleRequest &request);
+                void ModifyWorkflowScheduleAsync(const Model::ModifyWorkflowScheduleRequest& request, const ModifyWorkflowScheduleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyWorkflowScheduleOutcomeCallable ModifyWorkflowScheduleCallable(const Model::ModifyWorkflowScheduleRequest& request);
+
+                /**
+                 *注册事件（Beta版本）
+                 * @param req RegisterEventRequest
+                 * @return RegisterEventOutcome
+                 */
+                RegisterEventOutcome RegisterEvent(const Model::RegisterEventRequest &request);
+                void RegisterEventAsync(const Model::RegisterEventRequest& request, const RegisterEventAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RegisterEventOutcomeCallable RegisterEventCallable(const Model::RegisterEventRequest& request);
+
+                /**
+                 *注册事件监听器（Beta版本）
+                 * @param req RegisterEventListenerRequest
+                 * @return RegisterEventListenerOutcome
+                 */
+                RegisterEventListenerOutcome RegisterEventListener(const Model::RegisterEventListenerRequest &request);
+                void RegisterEventListenerAsync(const Model::RegisterEventListenerRequest& request, const RegisterEventListenerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RegisterEventListenerOutcomeCallable RegisterEventListenerCallable(const Model::RegisterEventListenerRequest& request);
+
+                /**
+                 *实例批量重跑（Beta版本）
+                 * @param req RerunInstancesRequest
+                 * @return RerunInstancesOutcome
+                 */
+                RerunInstancesOutcome RerunInstances(const Model::RerunInstancesRequest &request);
+                void RerunInstancesAsync(const Model::RerunInstancesRequest& request, const RerunInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RerunInstancesOutcomeCallable RerunInstancesCallable(const Model::RerunInstancesRequest& request);
+
+                /**
+                 *运行任务（Beta版本）
+                 * @param req RunTaskRequest
+                 * @return RunTaskOutcome
+                 */
+                RunTaskOutcome RunTask(const Model::RunTaskRequest &request);
+                void RunTaskAsync(const Model::RunTaskRequest& request, const RunTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RunTaskOutcomeCallable RunTaskCallable(const Model::RunTaskRequest& request);
+
+                /**
+                 *设置任务告警，新建/更新告警信息（最新）（Beta版本）
+                 * @param req SetTaskAlarmNewRequest
+                 * @return SetTaskAlarmNewOutcome
+                 */
+                SetTaskAlarmNewOutcome SetTaskAlarmNew(const Model::SetTaskAlarmNewRequest &request);
+                void SetTaskAlarmNewAsync(const Model::SetTaskAlarmNewRequest& request, const SetTaskAlarmNewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SetTaskAlarmNewOutcomeCallable SetTaskAlarmNewCallable(const Model::SetTaskAlarmNewRequest& request);
+
+                /**
+                 *提交任务（Beta版本）
+                 * @param req SubmitTaskRequest
+                 * @return SubmitTaskOutcome
+                 */
+                SubmitTaskOutcome SubmitTask(const Model::SubmitTaskRequest &request);
+                void SubmitTaskAsync(const Model::SubmitTaskRequest& request, const SubmitTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SubmitTaskOutcomeCallable SubmitTaskCallable(const Model::SubmitTaskRequest& request);
+
+                /**
+                 *提交工作流（Beta版本）
+                 * @param req SubmitWorkflowRequest
+                 * @return SubmitWorkflowOutcome
+                 */
+                SubmitWorkflowOutcome SubmitWorkflow(const Model::SubmitWorkflowRequest &request);
+                void SubmitWorkflowAsync(const Model::SubmitWorkflowRequest& request, const SubmitWorkflowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SubmitWorkflowOutcomeCallable SubmitWorkflowCallable(const Model::SubmitWorkflowRequest& request);
+
+                /**
+                 *触发事件（Beta版本）
+                 * @param req TriggerEventRequest
+                 * @return TriggerEventOutcome
+                 */
+                TriggerEventOutcome TriggerEvent(const Model::TriggerEventRequest &request);
+                void TriggerEventAsync(const Model::TriggerEventRequest& request, const TriggerEventAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                TriggerEventOutcomeCallable TriggerEventCallable(const Model::TriggerEventRequest& request);
 
             };
         }

@@ -126,6 +126,49 @@ EssbasicClient::ChannelCreateBatchCancelFlowUrlOutcomeCallable EssbasicClient::C
     return task->get_future();
 }
 
+EssbasicClient::ChannelCreateConvertTaskApiOutcome EssbasicClient::ChannelCreateConvertTaskApi(const ChannelCreateConvertTaskApiRequest &request)
+{
+    auto outcome = MakeRequest(request, "ChannelCreateConvertTaskApi");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ChannelCreateConvertTaskApiResponse rsp = ChannelCreateConvertTaskApiResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ChannelCreateConvertTaskApiOutcome(rsp);
+        else
+            return ChannelCreateConvertTaskApiOutcome(o.GetError());
+    }
+    else
+    {
+        return ChannelCreateConvertTaskApiOutcome(outcome.GetError());
+    }
+}
+
+void EssbasicClient::ChannelCreateConvertTaskApiAsync(const ChannelCreateConvertTaskApiRequest& request, const ChannelCreateConvertTaskApiAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ChannelCreateConvertTaskApi(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssbasicClient::ChannelCreateConvertTaskApiOutcomeCallable EssbasicClient::ChannelCreateConvertTaskApiCallable(const ChannelCreateConvertTaskApiRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ChannelCreateConvertTaskApiOutcome()>>(
+        [this, request]()
+        {
+            return this->ChannelCreateConvertTaskApi(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssbasicClient::ChannelCreateFlowByFilesOutcome EssbasicClient::ChannelCreateFlowByFiles(const ChannelCreateFlowByFilesRequest &request)
 {
     auto outcome = MakeRequest(request, "ChannelCreateFlowByFiles");
@@ -205,6 +248,49 @@ EssbasicClient::ChannelCreateMultiFlowSignQRCodeOutcomeCallable EssbasicClient::
         [this, request]()
         {
             return this->ChannelCreateMultiFlowSignQRCode(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EssbasicClient::ChannelGetTaskResultApiOutcome EssbasicClient::ChannelGetTaskResultApi(const ChannelGetTaskResultApiRequest &request)
+{
+    auto outcome = MakeRequest(request, "ChannelGetTaskResultApi");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ChannelGetTaskResultApiResponse rsp = ChannelGetTaskResultApiResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ChannelGetTaskResultApiOutcome(rsp);
+        else
+            return ChannelGetTaskResultApiOutcome(o.GetError());
+    }
+    else
+    {
+        return ChannelGetTaskResultApiOutcome(outcome.GetError());
+    }
+}
+
+void EssbasicClient::ChannelGetTaskResultApiAsync(const ChannelGetTaskResultApiRequest& request, const ChannelGetTaskResultApiAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ChannelGetTaskResultApi(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssbasicClient::ChannelGetTaskResultApiOutcomeCallable EssbasicClient::ChannelGetTaskResultApiCallable(const ChannelGetTaskResultApiRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ChannelGetTaskResultApiOutcome()>>(
+        [this, request]()
+        {
+            return this->ChannelGetTaskResultApi(request);
         }
     );
 

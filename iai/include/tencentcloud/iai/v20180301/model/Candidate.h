@@ -66,14 +66,14 @@ namespace TencentCloud
                     bool PersonIdHasBeenSet() const;
 
                     /**
-                     * 获取人脸ID
-                     * @return FaceId 人脸ID
+                     * 获取人脸ID，仅在SearchFaces/SearchFacesReturnsByGroup接口返回时有效。人员搜索类接口采用融合特征方式检索，该字段无意义
+                     * @return FaceId 人脸ID，仅在SearchFaces/SearchFacesReturnsByGroup接口返回时有效。人员搜索类接口采用融合特征方式检索，该字段无意义
                      */
                     std::string GetFaceId() const;
 
                     /**
-                     * 设置人脸ID
-                     * @param FaceId 人脸ID
+                     * 设置人脸ID，仅在SearchFaces/SearchFacesReturnsByGroup接口返回时有效。人员搜索类接口采用融合特征方式检索，该字段无意义
+                     * @param FaceId 人脸ID，仅在SearchFaces/SearchFacesReturnsByGroup接口返回时有效。人员搜索类接口采用融合特征方式检索，该字段无意义
                      */
                     void SetFaceId(const std::string& _faceId);
 
@@ -200,7 +200,7 @@ namespace TencentCloud
                     bool m_personIdHasBeenSet;
 
                     /**
-                     * 人脸ID
+                     * 人脸ID，仅在SearchFaces/SearchFacesReturnsByGroup接口返回时有效。人员搜索类接口采用融合特征方式检索，该字段无意义
                      */
                     std::string m_faceId;
                     bool m_faceIdHasBeenSet;

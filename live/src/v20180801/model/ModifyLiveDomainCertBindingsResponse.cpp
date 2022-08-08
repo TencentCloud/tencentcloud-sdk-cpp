@@ -24,7 +24,8 @@ using namespace TencentCloud::Live::V20180801::Model;
 using namespace std;
 
 ModifyLiveDomainCertBindingsResponse::ModifyLiveDomainCertBindingsResponse() :
-    m_mismatchedDomainNamesHasBeenSet(false)
+    m_mismatchedDomainNamesHasBeenSet(false),
+    m_errorsHasBeenSet(false)
 {
 }
 
@@ -75,6 +76,26 @@ CoreInternalOutcome ModifyLiveDomainCertBindingsResponse::Deserialize(const stri
         m_mismatchedDomainNamesHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Errors") && !rsp["Errors"].IsNull())
+    {
+        if (!rsp["Errors"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Errors` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["Errors"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            BatchDomainOperateErrors item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_errors.push_back(item);
+        }
+        m_errorsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -98,6 +119,21 @@ string ModifyLiveDomainCertBindingsResponse::ToJsonString() const
         }
     }
 
+    if (m_errorsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Errors";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_errors.begin(); itr != m_errors.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -118,6 +154,16 @@ vector<string> ModifyLiveDomainCertBindingsResponse::GetMismatchedDomainNames() 
 bool ModifyLiveDomainCertBindingsResponse::MismatchedDomainNamesHasBeenSet() const
 {
     return m_mismatchedDomainNamesHasBeenSet;
+}
+
+vector<BatchDomainOperateErrors> ModifyLiveDomainCertBindingsResponse::GetErrors() const
+{
+    return m_errors;
+}
+
+bool ModifyLiveDomainCertBindingsResponse::ErrorsHasBeenSet() const
+{
+    return m_errorsHasBeenSet;
 }
 
 

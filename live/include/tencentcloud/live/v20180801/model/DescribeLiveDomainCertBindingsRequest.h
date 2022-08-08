@@ -120,21 +120,21 @@ namespace TencentCloud
 
                     /**
                      * 获取可取值：
-ExpireTimeAsc：证书过期时间降序。
-ExpireTimeDesc：证书过期时间升序。
+ExpireTimeAsc：证书过期时间升序。
+ExpireTimeDesc：证书过期时间降序。
                      * @return OrderBy 可取值：
-ExpireTimeAsc：证书过期时间降序。
-ExpireTimeDesc：证书过期时间升序。
+ExpireTimeAsc：证书过期时间升序。
+ExpireTimeDesc：证书过期时间降序。
                      */
                     std::string GetOrderBy() const;
 
                     /**
                      * 设置可取值：
-ExpireTimeAsc：证书过期时间降序。
-ExpireTimeDesc：证书过期时间升序。
+ExpireTimeAsc：证书过期时间升序。
+ExpireTimeDesc：证书过期时间降序。
                      * @param OrderBy 可取值：
-ExpireTimeAsc：证书过期时间降序。
-ExpireTimeDesc：证书过期时间升序。
+ExpireTimeAsc：证书过期时间升序。
+ExpireTimeDesc：证书过期时间降序。
                      */
                     void SetOrderBy(const std::string& _orderBy);
 
@@ -173,8 +173,8 @@ ExpireTimeDesc：证书过期时间升序。
 
                     /**
                      * 可取值：
-ExpireTimeAsc：证书过期时间降序。
-ExpireTimeDesc：证书过期时间升序。
+ExpireTimeAsc：证书过期时间升序。
+ExpireTimeDesc：证书过期时间降序。
                      */
                     std::string m_orderBy;
                     bool m_orderByHasBeenSet;

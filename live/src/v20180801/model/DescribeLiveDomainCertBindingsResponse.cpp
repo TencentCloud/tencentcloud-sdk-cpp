@@ -23,7 +23,9 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Live::V20180801::Model;
 using namespace std;
 
-DescribeLiveDomainCertBindingsResponse::DescribeLiveDomainCertBindingsResponse()
+DescribeLiveDomainCertBindingsResponse::DescribeLiveDomainCertBindingsResponse() :
+    m_liveDomainCertBindingsHasBeenSet(false),
+    m_totalNumHasBeenSet(false)
 {
 }
 
@@ -61,6 +63,36 @@ CoreInternalOutcome DescribeLiveDomainCertBindingsResponse::Deserialize(const st
     }
 
 
+    if (rsp.HasMember("LiveDomainCertBindings") && !rsp["LiveDomainCertBindings"].IsNull())
+    {
+        if (!rsp["LiveDomainCertBindings"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `LiveDomainCertBindings` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["LiveDomainCertBindings"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            LiveDomainCertBindings item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_liveDomainCertBindings.push_back(item);
+        }
+        m_liveDomainCertBindingsHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("TotalNum") && !rsp["TotalNum"].IsNull())
+    {
+        if (!rsp["TotalNum"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TotalNum` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalNum = rsp["TotalNum"].GetInt64();
+        m_totalNumHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +102,29 @@ string DescribeLiveDomainCertBindingsResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_liveDomainCertBindingsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LiveDomainCertBindings";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_liveDomainCertBindings.begin(); itr != m_liveDomainCertBindings.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_totalNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TotalNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_totalNum, allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +137,25 @@ string DescribeLiveDomainCertBindingsResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+vector<LiveDomainCertBindings> DescribeLiveDomainCertBindingsResponse::GetLiveDomainCertBindings() const
+{
+    return m_liveDomainCertBindings;
+}
+
+bool DescribeLiveDomainCertBindingsResponse::LiveDomainCertBindingsHasBeenSet() const
+{
+    return m_liveDomainCertBindingsHasBeenSet;
+}
+
+int64_t DescribeLiveDomainCertBindingsResponse::GetTotalNum() const
+{
+    return m_totalNum;
+}
+
+bool DescribeLiveDomainCertBindingsResponse::TotalNumHasBeenSet() const
+{
+    return m_totalNumHasBeenSet;
+}
 
 

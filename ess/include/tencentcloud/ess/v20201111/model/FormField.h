@@ -47,34 +47,38 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取控件填充value，ComponentType和传入值类型对应关系：
+                     * 获取控件填充vaule，ComponentType和传入值类型对应关系：
 TEXT - 文本内容
 MULTI_LINE_TEXT - 文本内容
 CHECK_BOX - true/false
-ATTACHMENT - 附件的FileId，需要通过UploadFiles接口上传获取
-SELECTOR - 模板中配置的选项值
-                     * @return ComponentValue 控件填充value，ComponentType和传入值类型对应关系：
+FILL_IMAGE、ATTACHMENT - 附件的FileId，需要通过UploadFiles接口上传获取
+SELECTOR - 选项值
+DYNAMIC_TABLE - 传入json格式的表格内容，具体见数据结构FlowInfo：https://cloud.tencent.com/document/api/1420/61525#FlowInfo
+                     * @return ComponentValue 控件填充vaule，ComponentType和传入值类型对应关系：
 TEXT - 文本内容
 MULTI_LINE_TEXT - 文本内容
 CHECK_BOX - true/false
-ATTACHMENT - 附件的FileId，需要通过UploadFiles接口上传获取
-SELECTOR - 模板中配置的选项值
+FILL_IMAGE、ATTACHMENT - 附件的FileId，需要通过UploadFiles接口上传获取
+SELECTOR - 选项值
+DYNAMIC_TABLE - 传入json格式的表格内容，具体见数据结构FlowInfo：https://cloud.tencent.com/document/api/1420/61525#FlowInfo
                      */
                     std::string GetComponentValue() const;
 
                     /**
-                     * 设置控件填充value，ComponentType和传入值类型对应关系：
+                     * 设置控件填充vaule，ComponentType和传入值类型对应关系：
 TEXT - 文本内容
 MULTI_LINE_TEXT - 文本内容
 CHECK_BOX - true/false
-ATTACHMENT - 附件的FileId，需要通过UploadFiles接口上传获取
-SELECTOR - 模板中配置的选项值
-                     * @param ComponentValue 控件填充value，ComponentType和传入值类型对应关系：
+FILL_IMAGE、ATTACHMENT - 附件的FileId，需要通过UploadFiles接口上传获取
+SELECTOR - 选项值
+DYNAMIC_TABLE - 传入json格式的表格内容，具体见数据结构FlowInfo：https://cloud.tencent.com/document/api/1420/61525#FlowInfo
+                     * @param ComponentValue 控件填充vaule，ComponentType和传入值类型对应关系：
 TEXT - 文本内容
 MULTI_LINE_TEXT - 文本内容
 CHECK_BOX - true/false
-ATTACHMENT - 附件的FileId，需要通过UploadFiles接口上传获取
-SELECTOR - 模板中配置的选项值
+FILL_IMAGE、ATTACHMENT - 附件的FileId，需要通过UploadFiles接口上传获取
+SELECTOR - 选项值
+DYNAMIC_TABLE - 传入json格式的表格内容，具体见数据结构FlowInfo：https://cloud.tencent.com/document/api/1420/61525#FlowInfo
                      */
                     void SetComponentValue(const std::string& _componentValue);
 
@@ -123,12 +127,13 @@ SELECTOR - 模板中配置的选项值
                 private:
 
                     /**
-                     * 控件填充value，ComponentType和传入值类型对应关系：
+                     * 控件填充vaule，ComponentType和传入值类型对应关系：
 TEXT - 文本内容
 MULTI_LINE_TEXT - 文本内容
 CHECK_BOX - true/false
-ATTACHMENT - 附件的FileId，需要通过UploadFiles接口上传获取
-SELECTOR - 模板中配置的选项值
+FILL_IMAGE、ATTACHMENT - 附件的FileId，需要通过UploadFiles接口上传获取
+SELECTOR - 选项值
+DYNAMIC_TABLE - 传入json格式的表格内容，具体见数据结构FlowInfo：https://cloud.tencent.com/document/api/1420/61525#FlowInfo
                      */
                     std::string m_componentValue;
                     bool m_componentValueHasBeenSet;

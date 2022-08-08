@@ -24,13 +24,13 @@ using namespace std;
 
 DescribeDiskConfigQuotaRequest::DescribeDiskConfigQuotaRequest() :
     m_inquiryTypeHasBeenSet(false),
-    m_zonesHasBeenSet(false),
     m_diskChargeTypeHasBeenSet(false),
-    m_diskTypesHasBeenSet(false),
-    m_diskUsageHasBeenSet(false),
     m_instanceFamiliesHasBeenSet(false),
-    m_cPUHasBeenSet(false),
-    m_memoryHasBeenSet(false)
+    m_diskTypesHasBeenSet(false),
+    m_zonesHasBeenSet(false),
+    m_memoryHasBeenSet(false),
+    m_diskUsageHasBeenSet(false),
+    m_cPUHasBeenSet(false)
 {
 }
 
@@ -49,46 +49,12 @@ string DescribeDiskConfigQuotaRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_inquiryType.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_zonesHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Zones";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        for (auto itr = m_zones.begin(); itr != m_zones.end(); ++itr)
-        {
-            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
-        }
-    }
-
     if (m_diskChargeTypeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DiskChargeType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_diskChargeType.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_diskTypesHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "DiskTypes";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        for (auto itr = m_diskTypes.begin(); itr != m_diskTypes.end(); ++itr)
-        {
-            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
-        }
-    }
-
-    if (m_diskUsageHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "DiskUsage";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_diskUsage.c_str(), allocator).Move(), allocator);
     }
 
     if (m_instanceFamiliesHasBeenSet)
@@ -104,12 +70,30 @@ string DescribeDiskConfigQuotaRequest::ToJsonString() const
         }
     }
 
-    if (m_cPUHasBeenSet)
+    if (m_diskTypesHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "CPU";
+        string key = "DiskTypes";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_cPU, allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_diskTypes.begin(); itr != m_diskTypes.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_zonesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Zones";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_zones.begin(); itr != m_zones.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
     if (m_memoryHasBeenSet)
@@ -118,6 +102,22 @@ string DescribeDiskConfigQuotaRequest::ToJsonString() const
         string key = "Memory";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_memory, allocator);
+    }
+
+    if (m_diskUsageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DiskUsage";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_diskUsage.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cPUHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CPU";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_cPU, allocator);
     }
 
 
@@ -144,22 +144,6 @@ bool DescribeDiskConfigQuotaRequest::InquiryTypeHasBeenSet() const
     return m_inquiryTypeHasBeenSet;
 }
 
-vector<string> DescribeDiskConfigQuotaRequest::GetZones() const
-{
-    return m_zones;
-}
-
-void DescribeDiskConfigQuotaRequest::SetZones(const vector<string>& _zones)
-{
-    m_zones = _zones;
-    m_zonesHasBeenSet = true;
-}
-
-bool DescribeDiskConfigQuotaRequest::ZonesHasBeenSet() const
-{
-    return m_zonesHasBeenSet;
-}
-
 string DescribeDiskConfigQuotaRequest::GetDiskChargeType() const
 {
     return m_diskChargeType;
@@ -174,38 +158,6 @@ void DescribeDiskConfigQuotaRequest::SetDiskChargeType(const string& _diskCharge
 bool DescribeDiskConfigQuotaRequest::DiskChargeTypeHasBeenSet() const
 {
     return m_diskChargeTypeHasBeenSet;
-}
-
-vector<string> DescribeDiskConfigQuotaRequest::GetDiskTypes() const
-{
-    return m_diskTypes;
-}
-
-void DescribeDiskConfigQuotaRequest::SetDiskTypes(const vector<string>& _diskTypes)
-{
-    m_diskTypes = _diskTypes;
-    m_diskTypesHasBeenSet = true;
-}
-
-bool DescribeDiskConfigQuotaRequest::DiskTypesHasBeenSet() const
-{
-    return m_diskTypesHasBeenSet;
-}
-
-string DescribeDiskConfigQuotaRequest::GetDiskUsage() const
-{
-    return m_diskUsage;
-}
-
-void DescribeDiskConfigQuotaRequest::SetDiskUsage(const string& _diskUsage)
-{
-    m_diskUsage = _diskUsage;
-    m_diskUsageHasBeenSet = true;
-}
-
-bool DescribeDiskConfigQuotaRequest::DiskUsageHasBeenSet() const
-{
-    return m_diskUsageHasBeenSet;
 }
 
 vector<string> DescribeDiskConfigQuotaRequest::GetInstanceFamilies() const
@@ -224,20 +176,36 @@ bool DescribeDiskConfigQuotaRequest::InstanceFamiliesHasBeenSet() const
     return m_instanceFamiliesHasBeenSet;
 }
 
-uint64_t DescribeDiskConfigQuotaRequest::GetCPU() const
+vector<string> DescribeDiskConfigQuotaRequest::GetDiskTypes() const
 {
-    return m_cPU;
+    return m_diskTypes;
 }
 
-void DescribeDiskConfigQuotaRequest::SetCPU(const uint64_t& _cPU)
+void DescribeDiskConfigQuotaRequest::SetDiskTypes(const vector<string>& _diskTypes)
 {
-    m_cPU = _cPU;
-    m_cPUHasBeenSet = true;
+    m_diskTypes = _diskTypes;
+    m_diskTypesHasBeenSet = true;
 }
 
-bool DescribeDiskConfigQuotaRequest::CPUHasBeenSet() const
+bool DescribeDiskConfigQuotaRequest::DiskTypesHasBeenSet() const
 {
-    return m_cPUHasBeenSet;
+    return m_diskTypesHasBeenSet;
+}
+
+vector<string> DescribeDiskConfigQuotaRequest::GetZones() const
+{
+    return m_zones;
+}
+
+void DescribeDiskConfigQuotaRequest::SetZones(const vector<string>& _zones)
+{
+    m_zones = _zones;
+    m_zonesHasBeenSet = true;
+}
+
+bool DescribeDiskConfigQuotaRequest::ZonesHasBeenSet() const
+{
+    return m_zonesHasBeenSet;
 }
 
 uint64_t DescribeDiskConfigQuotaRequest::GetMemory() const
@@ -254,6 +222,38 @@ void DescribeDiskConfigQuotaRequest::SetMemory(const uint64_t& _memory)
 bool DescribeDiskConfigQuotaRequest::MemoryHasBeenSet() const
 {
     return m_memoryHasBeenSet;
+}
+
+string DescribeDiskConfigQuotaRequest::GetDiskUsage() const
+{
+    return m_diskUsage;
+}
+
+void DescribeDiskConfigQuotaRequest::SetDiskUsage(const string& _diskUsage)
+{
+    m_diskUsage = _diskUsage;
+    m_diskUsageHasBeenSet = true;
+}
+
+bool DescribeDiskConfigQuotaRequest::DiskUsageHasBeenSet() const
+{
+    return m_diskUsageHasBeenSet;
+}
+
+uint64_t DescribeDiskConfigQuotaRequest::GetCPU() const
+{
+    return m_cPU;
+}
+
+void DescribeDiskConfigQuotaRequest::SetCPU(const uint64_t& _cPU)
+{
+    m_cPU = _cPU;
+    m_cPUHasBeenSet = true;
+}
+
+bool DescribeDiskConfigQuotaRequest::CPUHasBeenSet() const
+{
+    return m_cPUHasBeenSet;
 }
 
 

@@ -341,6 +341,49 @@ TagClient::DeleteTagsOutcomeCallable TagClient::DeleteTagsCallable(const DeleteT
     return task->get_future();
 }
 
+TagClient::DescribeProjectsOutcome TagClient::DescribeProjects(const DescribeProjectsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeProjects");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeProjectsResponse rsp = DescribeProjectsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeProjectsOutcome(rsp);
+        else
+            return DescribeProjectsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeProjectsOutcome(outcome.GetError());
+    }
+}
+
+void TagClient::DescribeProjectsAsync(const DescribeProjectsRequest& request, const DescribeProjectsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeProjects(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TagClient::DescribeProjectsOutcomeCallable TagClient::DescribeProjectsCallable(const DescribeProjectsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeProjectsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeProjects(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TagClient::DescribeResourceTagsOutcome TagClient::DescribeResourceTags(const DescribeResourceTagsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeResourceTags");

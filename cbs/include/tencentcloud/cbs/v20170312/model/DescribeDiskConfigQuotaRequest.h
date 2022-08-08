@@ -61,24 +61,6 @@ namespace TencentCloud
                     bool InquiryTypeHasBeenSet() const;
 
                     /**
-                     * 获取查询一个或多个[可用区](/document/product/213/15753#ZoneInfo)下的配置。
-                     * @return Zones 查询一个或多个[可用区](/document/product/213/15753#ZoneInfo)下的配置。
-                     */
-                    std::vector<std::string> GetZones() const;
-
-                    /**
-                     * 设置查询一个或多个[可用区](/document/product/213/15753#ZoneInfo)下的配置。
-                     * @param Zones 查询一个或多个[可用区](/document/product/213/15753#ZoneInfo)下的配置。
-                     */
-                    void SetZones(const std::vector<std::string>& _zones);
-
-                    /**
-                     * 判断参数 Zones 是否已赋值
-                     * @return Zones 是否已赋值
-                     */
-                    bool ZonesHasBeenSet() const;
-
-                    /**
                      * 获取付费模式。取值范围：<br><li>PREPAID：预付费<br><li>POSTPAID_BY_HOUR：后付费。
                      * @return DiskChargeType 付费模式。取值范围：<br><li>PREPAID：预付费<br><li>POSTPAID_BY_HOUR：后付费。
                      */
@@ -95,42 +77,6 @@ namespace TencentCloud
                      * @return DiskChargeType 是否已赋值
                      */
                     bool DiskChargeTypeHasBeenSet() const;
-
-                    /**
-                     * 获取硬盘介质类型。取值范围：<br><li>CLOUD_BASIC：表示普通云硬盘<br><li>CLOUD_PREMIUM：表示高性能云硬盘<br><li>CLOUD_SSD：表示SSD云硬盘<br><li>CLOUD_HSSD：表示增强型SSD云硬盘。
-                     * @return DiskTypes 硬盘介质类型。取值范围：<br><li>CLOUD_BASIC：表示普通云硬盘<br><li>CLOUD_PREMIUM：表示高性能云硬盘<br><li>CLOUD_SSD：表示SSD云硬盘<br><li>CLOUD_HSSD：表示增强型SSD云硬盘。
-                     */
-                    std::vector<std::string> GetDiskTypes() const;
-
-                    /**
-                     * 设置硬盘介质类型。取值范围：<br><li>CLOUD_BASIC：表示普通云硬盘<br><li>CLOUD_PREMIUM：表示高性能云硬盘<br><li>CLOUD_SSD：表示SSD云硬盘<br><li>CLOUD_HSSD：表示增强型SSD云硬盘。
-                     * @param DiskTypes 硬盘介质类型。取值范围：<br><li>CLOUD_BASIC：表示普通云硬盘<br><li>CLOUD_PREMIUM：表示高性能云硬盘<br><li>CLOUD_SSD：表示SSD云硬盘<br><li>CLOUD_HSSD：表示增强型SSD云硬盘。
-                     */
-                    void SetDiskTypes(const std::vector<std::string>& _diskTypes);
-
-                    /**
-                     * 判断参数 DiskTypes 是否已赋值
-                     * @return DiskTypes 是否已赋值
-                     */
-                    bool DiskTypesHasBeenSet() const;
-
-                    /**
-                     * 获取系统盘或数据盘。取值范围：<br><li>SYSTEM_DISK：表示系统盘<br><li>DATA_DISK：表示数据盘。
-                     * @return DiskUsage 系统盘或数据盘。取值范围：<br><li>SYSTEM_DISK：表示系统盘<br><li>DATA_DISK：表示数据盘。
-                     */
-                    std::string GetDiskUsage() const;
-
-                    /**
-                     * 设置系统盘或数据盘。取值范围：<br><li>SYSTEM_DISK：表示系统盘<br><li>DATA_DISK：表示数据盘。
-                     * @param DiskUsage 系统盘或数据盘。取值范围：<br><li>SYSTEM_DISK：表示系统盘<br><li>DATA_DISK：表示数据盘。
-                     */
-                    void SetDiskUsage(const std::string& _diskUsage);
-
-                    /**
-                     * 判断参数 DiskUsage 是否已赋值
-                     * @return DiskUsage 是否已赋值
-                     */
-                    bool DiskUsageHasBeenSet() const;
 
                     /**
                      * 获取按照实例机型系列过滤。实例机型系列形如：S1、I1、M1等。详见[实例类型](https://cloud.tencent.com/document/product/213/11518)
@@ -151,22 +97,40 @@ namespace TencentCloud
                     bool InstanceFamiliesHasBeenSet() const;
 
                     /**
-                     * 获取实例CPU核数。
-                     * @return CPU 实例CPU核数。
+                     * 获取硬盘介质类型。取值范围：<br><li>CLOUD_BASIC：表示普通云硬盘<br><li>CLOUD_PREMIUM：表示高性能云硬盘<br><li>CLOUD_SSD：表示SSD云硬盘<br><li>CLOUD_HSSD：表示增强型SSD云硬盘。
+                     * @return DiskTypes 硬盘介质类型。取值范围：<br><li>CLOUD_BASIC：表示普通云硬盘<br><li>CLOUD_PREMIUM：表示高性能云硬盘<br><li>CLOUD_SSD：表示SSD云硬盘<br><li>CLOUD_HSSD：表示增强型SSD云硬盘。
                      */
-                    uint64_t GetCPU() const;
+                    std::vector<std::string> GetDiskTypes() const;
 
                     /**
-                     * 设置实例CPU核数。
-                     * @param CPU 实例CPU核数。
+                     * 设置硬盘介质类型。取值范围：<br><li>CLOUD_BASIC：表示普通云硬盘<br><li>CLOUD_PREMIUM：表示高性能云硬盘<br><li>CLOUD_SSD：表示SSD云硬盘<br><li>CLOUD_HSSD：表示增强型SSD云硬盘。
+                     * @param DiskTypes 硬盘介质类型。取值范围：<br><li>CLOUD_BASIC：表示普通云硬盘<br><li>CLOUD_PREMIUM：表示高性能云硬盘<br><li>CLOUD_SSD：表示SSD云硬盘<br><li>CLOUD_HSSD：表示增强型SSD云硬盘。
                      */
-                    void SetCPU(const uint64_t& _cPU);
+                    void SetDiskTypes(const std::vector<std::string>& _diskTypes);
 
                     /**
-                     * 判断参数 CPU 是否已赋值
-                     * @return CPU 是否已赋值
+                     * 判断参数 DiskTypes 是否已赋值
+                     * @return DiskTypes 是否已赋值
                      */
-                    bool CPUHasBeenSet() const;
+                    bool DiskTypesHasBeenSet() const;
+
+                    /**
+                     * 获取查询一个或多个[可用区](/document/product/213/15753#ZoneInfo)下的配置。
+                     * @return Zones 查询一个或多个[可用区](/document/product/213/15753#ZoneInfo)下的配置。
+                     */
+                    std::vector<std::string> GetZones() const;
+
+                    /**
+                     * 设置查询一个或多个[可用区](/document/product/213/15753#ZoneInfo)下的配置。
+                     * @param Zones 查询一个或多个[可用区](/document/product/213/15753#ZoneInfo)下的配置。
+                     */
+                    void SetZones(const std::vector<std::string>& _zones);
+
+                    /**
+                     * 判断参数 Zones 是否已赋值
+                     * @return Zones 是否已赋值
+                     */
+                    bool ZonesHasBeenSet() const;
 
                     /**
                      * 获取实例内存大小。
@@ -186,6 +150,42 @@ namespace TencentCloud
                      */
                     bool MemoryHasBeenSet() const;
 
+                    /**
+                     * 获取系统盘或数据盘。取值范围：<br><li>SYSTEM_DISK：表示系统盘<br><li>DATA_DISK：表示数据盘。
+                     * @return DiskUsage 系统盘或数据盘。取值范围：<br><li>SYSTEM_DISK：表示系统盘<br><li>DATA_DISK：表示数据盘。
+                     */
+                    std::string GetDiskUsage() const;
+
+                    /**
+                     * 设置系统盘或数据盘。取值范围：<br><li>SYSTEM_DISK：表示系统盘<br><li>DATA_DISK：表示数据盘。
+                     * @param DiskUsage 系统盘或数据盘。取值范围：<br><li>SYSTEM_DISK：表示系统盘<br><li>DATA_DISK：表示数据盘。
+                     */
+                    void SetDiskUsage(const std::string& _diskUsage);
+
+                    /**
+                     * 判断参数 DiskUsage 是否已赋值
+                     * @return DiskUsage 是否已赋值
+                     */
+                    bool DiskUsageHasBeenSet() const;
+
+                    /**
+                     * 获取实例CPU核数。
+                     * @return CPU 实例CPU核数。
+                     */
+                    uint64_t GetCPU() const;
+
+                    /**
+                     * 设置实例CPU核数。
+                     * @param CPU 实例CPU核数。
+                     */
+                    void SetCPU(const uint64_t& _cPU);
+
+                    /**
+                     * 判断参数 CPU 是否已赋值
+                     * @return CPU 是否已赋值
+                     */
+                    bool CPUHasBeenSet() const;
+
                 private:
 
                     /**
@@ -195,28 +195,10 @@ namespace TencentCloud
                     bool m_inquiryTypeHasBeenSet;
 
                     /**
-                     * 查询一个或多个[可用区](/document/product/213/15753#ZoneInfo)下的配置。
-                     */
-                    std::vector<std::string> m_zones;
-                    bool m_zonesHasBeenSet;
-
-                    /**
                      * 付费模式。取值范围：<br><li>PREPAID：预付费<br><li>POSTPAID_BY_HOUR：后付费。
                      */
                     std::string m_diskChargeType;
                     bool m_diskChargeTypeHasBeenSet;
-
-                    /**
-                     * 硬盘介质类型。取值范围：<br><li>CLOUD_BASIC：表示普通云硬盘<br><li>CLOUD_PREMIUM：表示高性能云硬盘<br><li>CLOUD_SSD：表示SSD云硬盘<br><li>CLOUD_HSSD：表示增强型SSD云硬盘。
-                     */
-                    std::vector<std::string> m_diskTypes;
-                    bool m_diskTypesHasBeenSet;
-
-                    /**
-                     * 系统盘或数据盘。取值范围：<br><li>SYSTEM_DISK：表示系统盘<br><li>DATA_DISK：表示数据盘。
-                     */
-                    std::string m_diskUsage;
-                    bool m_diskUsageHasBeenSet;
 
                     /**
                      * 按照实例机型系列过滤。实例机型系列形如：S1、I1、M1等。详见[实例类型](https://cloud.tencent.com/document/product/213/11518)
@@ -225,16 +207,34 @@ namespace TencentCloud
                     bool m_instanceFamiliesHasBeenSet;
 
                     /**
-                     * 实例CPU核数。
+                     * 硬盘介质类型。取值范围：<br><li>CLOUD_BASIC：表示普通云硬盘<br><li>CLOUD_PREMIUM：表示高性能云硬盘<br><li>CLOUD_SSD：表示SSD云硬盘<br><li>CLOUD_HSSD：表示增强型SSD云硬盘。
                      */
-                    uint64_t m_cPU;
-                    bool m_cPUHasBeenSet;
+                    std::vector<std::string> m_diskTypes;
+                    bool m_diskTypesHasBeenSet;
+
+                    /**
+                     * 查询一个或多个[可用区](/document/product/213/15753#ZoneInfo)下的配置。
+                     */
+                    std::vector<std::string> m_zones;
+                    bool m_zonesHasBeenSet;
 
                     /**
                      * 实例内存大小。
                      */
                     uint64_t m_memory;
                     bool m_memoryHasBeenSet;
+
+                    /**
+                     * 系统盘或数据盘。取值范围：<br><li>SYSTEM_DISK：表示系统盘<br><li>DATA_DISK：表示数据盘。
+                     */
+                    std::string m_diskUsage;
+                    bool m_diskUsageHasBeenSet;
+
+                    /**
+                     * 实例CPU核数。
+                     */
+                    uint64_t m_cPU;
+                    bool m_cPUHasBeenSet;
 
                 };
             }

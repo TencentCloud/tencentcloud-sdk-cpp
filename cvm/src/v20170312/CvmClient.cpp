@@ -728,6 +728,49 @@ CvmClient::DescribeAccountQuotaOutcomeCallable CvmClient::DescribeAccountQuotaCa
     return task->get_future();
 }
 
+CvmClient::DescribeChcDeniedActionsOutcome CvmClient::DescribeChcDeniedActions(const DescribeChcDeniedActionsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeChcDeniedActions");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeChcDeniedActionsResponse rsp = DescribeChcDeniedActionsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeChcDeniedActionsOutcome(rsp);
+        else
+            return DescribeChcDeniedActionsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeChcDeniedActionsOutcome(outcome.GetError());
+    }
+}
+
+void CvmClient::DescribeChcDeniedActionsAsync(const DescribeChcDeniedActionsRequest& request, const DescribeChcDeniedActionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeChcDeniedActions(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CvmClient::DescribeChcDeniedActionsOutcomeCallable CvmClient::DescribeChcDeniedActionsCallable(const DescribeChcDeniedActionsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeChcDeniedActionsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeChcDeniedActions(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CvmClient::DescribeChcHostsOutcome CvmClient::DescribeChcHosts(const DescribeChcHostsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeChcHosts");
