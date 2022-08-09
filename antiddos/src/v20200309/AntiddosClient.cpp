@@ -1072,49 +1072,6 @@ AntiddosClient::CreateWaterPrintKeyOutcomeCallable AntiddosClient::CreateWaterPr
     return task->get_future();
 }
 
-AntiddosClient::DeleteBlackWhiteIpListOutcome AntiddosClient::DeleteBlackWhiteIpList(const DeleteBlackWhiteIpListRequest &request)
-{
-    auto outcome = MakeRequest(request, "DeleteBlackWhiteIpList");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DeleteBlackWhiteIpListResponse rsp = DeleteBlackWhiteIpListResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DeleteBlackWhiteIpListOutcome(rsp);
-        else
-            return DeleteBlackWhiteIpListOutcome(o.GetError());
-    }
-    else
-    {
-        return DeleteBlackWhiteIpListOutcome(outcome.GetError());
-    }
-}
-
-void AntiddosClient::DeleteBlackWhiteIpListAsync(const DeleteBlackWhiteIpListRequest& request, const DeleteBlackWhiteIpListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteBlackWhiteIpList(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-AntiddosClient::DeleteBlackWhiteIpListOutcomeCallable AntiddosClient::DeleteBlackWhiteIpListCallable(const DeleteBlackWhiteIpListRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DeleteBlackWhiteIpListOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteBlackWhiteIpList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 AntiddosClient::DeleteCCLevelPolicyOutcome AntiddosClient::DeleteCCLevelPolicy(const DeleteCCLevelPolicyRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteCCLevelPolicy");
@@ -1710,6 +1667,49 @@ AntiddosClient::DescribeBasicDeviceStatusOutcomeCallable AntiddosClient::Describ
         [this, request]()
         {
             return this->DescribeBasicDeviceStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+AntiddosClient::DescribeBgpBizTrendOutcome AntiddosClient::DescribeBgpBizTrend(const DescribeBgpBizTrendRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBgpBizTrend");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBgpBizTrendResponse rsp = DescribeBgpBizTrendResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBgpBizTrendOutcome(rsp);
+        else
+            return DescribeBgpBizTrendOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBgpBizTrendOutcome(outcome.GetError());
+    }
+}
+
+void AntiddosClient::DescribeBgpBizTrendAsync(const DescribeBgpBizTrendRequest& request, const DescribeBgpBizTrendAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBgpBizTrend(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AntiddosClient::DescribeBgpBizTrendOutcomeCallable AntiddosClient::DescribeBgpBizTrendCallable(const DescribeBgpBizTrendRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBgpBizTrendOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBgpBizTrend(request);
         }
     );
 

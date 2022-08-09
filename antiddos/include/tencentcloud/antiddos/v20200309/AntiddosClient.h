@@ -71,8 +71,6 @@
 #include <tencentcloud/antiddos/v20200309/model/CreateWaterPrintConfigResponse.h>
 #include <tencentcloud/antiddos/v20200309/model/CreateWaterPrintKeyRequest.h>
 #include <tencentcloud/antiddos/v20200309/model/CreateWaterPrintKeyResponse.h>
-#include <tencentcloud/antiddos/v20200309/model/DeleteBlackWhiteIpListRequest.h>
-#include <tencentcloud/antiddos/v20200309/model/DeleteBlackWhiteIpListResponse.h>
 #include <tencentcloud/antiddos/v20200309/model/DeleteCCLevelPolicyRequest.h>
 #include <tencentcloud/antiddos/v20200309/model/DeleteCCLevelPolicyResponse.h>
 #include <tencentcloud/antiddos/v20200309/model/DeleteCCPrecisionPolicyRequest.h>
@@ -101,6 +99,8 @@
 #include <tencentcloud/antiddos/v20200309/model/DeleteWaterPrintKeyResponse.h>
 #include <tencentcloud/antiddos/v20200309/model/DescribeBasicDeviceStatusRequest.h>
 #include <tencentcloud/antiddos/v20200309/model/DescribeBasicDeviceStatusResponse.h>
+#include <tencentcloud/antiddos/v20200309/model/DescribeBgpBizTrendRequest.h>
+#include <tencentcloud/antiddos/v20200309/model/DescribeBgpBizTrendResponse.h>
 #include <tencentcloud/antiddos/v20200309/model/DescribeBizTrendRequest.h>
 #include <tencentcloud/antiddos/v20200309/model/DescribeBizTrendResponse.h>
 #include <tencentcloud/antiddos/v20200309/model/DescribeBlackWhiteIpListRequest.h>
@@ -291,9 +291,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateWaterPrintKeyResponse> CreateWaterPrintKeyOutcome;
                 typedef std::future<CreateWaterPrintKeyOutcome> CreateWaterPrintKeyOutcomeCallable;
                 typedef std::function<void(const AntiddosClient*, const Model::CreateWaterPrintKeyRequest&, CreateWaterPrintKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateWaterPrintKeyAsyncHandler;
-                typedef Outcome<Core::Error, Model::DeleteBlackWhiteIpListResponse> DeleteBlackWhiteIpListOutcome;
-                typedef std::future<DeleteBlackWhiteIpListOutcome> DeleteBlackWhiteIpListOutcomeCallable;
-                typedef std::function<void(const AntiddosClient*, const Model::DeleteBlackWhiteIpListRequest&, DeleteBlackWhiteIpListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteBlackWhiteIpListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteCCLevelPolicyResponse> DeleteCCLevelPolicyOutcome;
                 typedef std::future<DeleteCCLevelPolicyOutcome> DeleteCCLevelPolicyOutcomeCallable;
                 typedef std::function<void(const AntiddosClient*, const Model::DeleteCCLevelPolicyRequest&, DeleteCCLevelPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCCLevelPolicyAsyncHandler;
@@ -336,6 +333,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeBasicDeviceStatusResponse> DescribeBasicDeviceStatusOutcome;
                 typedef std::future<DescribeBasicDeviceStatusOutcome> DescribeBasicDeviceStatusOutcomeCallable;
                 typedef std::function<void(const AntiddosClient*, const Model::DescribeBasicDeviceStatusRequest&, DescribeBasicDeviceStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBasicDeviceStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeBgpBizTrendResponse> DescribeBgpBizTrendOutcome;
+                typedef std::future<DescribeBgpBizTrendOutcome> DescribeBgpBizTrendOutcomeCallable;
+                typedef std::function<void(const AntiddosClient*, const Model::DescribeBgpBizTrendRequest&, DescribeBgpBizTrendOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBgpBizTrendAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeBizTrendResponse> DescribeBizTrendOutcome;
                 typedef std::future<DescribeBizTrendOutcome> DescribeBizTrendOutcomeCallable;
                 typedef std::function<void(const AntiddosClient*, const Model::DescribeBizTrendRequest&, DescribeBizTrendOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBizTrendAsyncHandler;
@@ -712,15 +712,6 @@ namespace TencentCloud
                 CreateWaterPrintKeyOutcomeCallable CreateWaterPrintKeyCallable(const Model::CreateWaterPrintKeyRequest& request);
 
                 /**
-                 *删除DDoS防护的IP黑白名单
-                 * @param req DeleteBlackWhiteIpListRequest
-                 * @return DeleteBlackWhiteIpListOutcome
-                 */
-                DeleteBlackWhiteIpListOutcome DeleteBlackWhiteIpList(const Model::DeleteBlackWhiteIpListRequest &request);
-                void DeleteBlackWhiteIpListAsync(const Model::DeleteBlackWhiteIpListRequest& request, const DeleteBlackWhiteIpListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DeleteBlackWhiteIpListOutcomeCallable DeleteBlackWhiteIpListCallable(const Model::DeleteBlackWhiteIpListRequest& request);
-
-                /**
                  *删除CC分级策略
                  * @param req DeleteCCLevelPolicyRequest
                  * @return DeleteCCLevelPolicyOutcome
@@ -845,6 +836,15 @@ namespace TencentCloud
                 DescribeBasicDeviceStatusOutcome DescribeBasicDeviceStatus(const Model::DescribeBasicDeviceStatusRequest &request);
                 void DescribeBasicDeviceStatusAsync(const Model::DescribeBasicDeviceStatusRequest& request, const DescribeBasicDeviceStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeBasicDeviceStatusOutcomeCallable DescribeBasicDeviceStatusCallable(const Model::DescribeBasicDeviceStatusRequest& request);
+
+                /**
+                 *获取高防包流量折线图
+                 * @param req DescribeBgpBizTrendRequest
+                 * @return DescribeBgpBizTrendOutcome
+                 */
+                DescribeBgpBizTrendOutcome DescribeBgpBizTrend(const Model::DescribeBgpBizTrendRequest &request);
+                void DescribeBgpBizTrendAsync(const Model::DescribeBgpBizTrendRequest& request, const DescribeBgpBizTrendAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBgpBizTrendOutcomeCallable DescribeBgpBizTrendCallable(const Model::DescribeBgpBizTrendRequest& request);
 
                 /**
                  *获取业务流量曲线
