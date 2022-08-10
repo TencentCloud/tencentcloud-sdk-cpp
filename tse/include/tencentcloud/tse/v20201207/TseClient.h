@@ -27,6 +27,8 @@
 #include <tencentcloud/tse/v20201207/model/CreateEngineResponse.h>
 #include <tencentcloud/tse/v20201207/model/DeleteEngineRequest.h>
 #include <tencentcloud/tse/v20201207/model/DeleteEngineResponse.h>
+#include <tencentcloud/tse/v20201207/model/DescribeCloudNativeAPIGatewayNodesRequest.h>
+#include <tencentcloud/tse/v20201207/model/DescribeCloudNativeAPIGatewayNodesResponse.h>
 #include <tencentcloud/tse/v20201207/model/DescribeNacosReplicasRequest.h>
 #include <tencentcloud/tse/v20201207/model/DescribeNacosReplicasResponse.h>
 #include <tencentcloud/tse/v20201207/model/DescribeNacosServerInterfacesRequest.h>
@@ -59,6 +61,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteEngineResponse> DeleteEngineOutcome;
                 typedef std::future<DeleteEngineOutcome> DeleteEngineOutcomeCallable;
                 typedef std::function<void(const TseClient*, const Model::DeleteEngineRequest&, DeleteEngineOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteEngineAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCloudNativeAPIGatewayNodesResponse> DescribeCloudNativeAPIGatewayNodesOutcome;
+                typedef std::future<DescribeCloudNativeAPIGatewayNodesOutcome> DescribeCloudNativeAPIGatewayNodesOutcomeCallable;
+                typedef std::function<void(const TseClient*, const Model::DescribeCloudNativeAPIGatewayNodesRequest&, DescribeCloudNativeAPIGatewayNodesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudNativeAPIGatewayNodesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeNacosReplicasResponse> DescribeNacosReplicasOutcome;
                 typedef std::future<DescribeNacosReplicasOutcome> DescribeNacosReplicasOutcomeCallable;
                 typedef std::function<void(const TseClient*, const Model::DescribeNacosReplicasRequest&, DescribeNacosReplicasOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNacosReplicasAsyncHandler;
@@ -97,6 +102,15 @@ namespace TencentCloud
                 DeleteEngineOutcome DeleteEngine(const Model::DeleteEngineRequest &request);
                 void DeleteEngineAsync(const Model::DeleteEngineRequest& request, const DeleteEngineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteEngineOutcomeCallable DeleteEngineCallable(const Model::DeleteEngineRequest& request);
+
+                /**
+                 *获取云原生网关节点列表
+                 * @param req DescribeCloudNativeAPIGatewayNodesRequest
+                 * @return DescribeCloudNativeAPIGatewayNodesOutcome
+                 */
+                DescribeCloudNativeAPIGatewayNodesOutcome DescribeCloudNativeAPIGatewayNodes(const Model::DescribeCloudNativeAPIGatewayNodesRequest &request);
+                void DescribeCloudNativeAPIGatewayNodesAsync(const Model::DescribeCloudNativeAPIGatewayNodesRequest& request, const DescribeCloudNativeAPIGatewayNodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCloudNativeAPIGatewayNodesOutcomeCallable DescribeCloudNativeAPIGatewayNodesCallable(const Model::DescribeCloudNativeAPIGatewayNodesRequest& request);
 
                 /**
                  *查询Nacos类型引擎实例副本信息

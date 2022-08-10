@@ -38,7 +38,9 @@ Disk::Disk() :
     m_latestOperationRequestIdHasBeenSet(false),
     m_createdTimeHasBeenSet(false),
     m_expiredTimeHasBeenSet(false),
-    m_isolatedTimeHasBeenSet(false)
+    m_isolatedTimeHasBeenSet(false),
+    m_diskBackupCountHasBeenSet(false),
+    m_diskBackupQuotaHasBeenSet(false)
 {
 }
 
@@ -227,6 +229,26 @@ CoreInternalOutcome Disk::Deserialize(const rapidjson::Value &value)
         m_isolatedTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("DiskBackupCount") && !value["DiskBackupCount"].IsNull())
+    {
+        if (!value["DiskBackupCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Disk.DiskBackupCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_diskBackupCount = value["DiskBackupCount"].GetInt64();
+        m_diskBackupCountHasBeenSet = true;
+    }
+
+    if (value.HasMember("DiskBackupQuota") && !value["DiskBackupQuota"].IsNull())
+    {
+        if (!value["DiskBackupQuota"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Disk.DiskBackupQuota` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_diskBackupQuota = value["DiskBackupQuota"].GetInt64();
+        m_diskBackupQuotaHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -376,6 +398,22 @@ void Disk::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorT
         string key = "IsolatedTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_isolatedTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_diskBackupCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DiskBackupCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_diskBackupCount, allocator);
+    }
+
+    if (m_diskBackupQuotaHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DiskBackupQuota";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_diskBackupQuota, allocator);
     }
 
 }
@@ -667,5 +705,37 @@ void Disk::SetIsolatedTime(const string& _isolatedTime)
 bool Disk::IsolatedTimeHasBeenSet() const
 {
     return m_isolatedTimeHasBeenSet;
+}
+
+int64_t Disk::GetDiskBackupCount() const
+{
+    return m_diskBackupCount;
+}
+
+void Disk::SetDiskBackupCount(const int64_t& _diskBackupCount)
+{
+    m_diskBackupCount = _diskBackupCount;
+    m_diskBackupCountHasBeenSet = true;
+}
+
+bool Disk::DiskBackupCountHasBeenSet() const
+{
+    return m_diskBackupCountHasBeenSet;
+}
+
+int64_t Disk::GetDiskBackupQuota() const
+{
+    return m_diskBackupQuota;
+}
+
+void Disk::SetDiskBackupQuota(const int64_t& _diskBackupQuota)
+{
+    m_diskBackupQuota = _diskBackupQuota;
+    m_diskBackupQuotaHasBeenSet = true;
+}
+
+bool Disk::DiskBackupQuotaHasBeenSet() const
+{
+    return m_diskBackupQuotaHasBeenSet;
 }
 

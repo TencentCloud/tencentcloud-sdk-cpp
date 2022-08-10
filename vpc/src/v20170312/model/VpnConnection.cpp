@@ -39,7 +39,12 @@ VpnConnection::VpnConnection() :
     m_enableHealthCheckHasBeenSet(false),
     m_healthCheckLocalIpHasBeenSet(false),
     m_healthCheckRemoteIpHasBeenSet(false),
-    m_healthCheckStatusHasBeenSet(false)
+    m_healthCheckStatusHasBeenSet(false),
+    m_dpdEnableHasBeenSet(false),
+    m_dpdTimeoutHasBeenSet(false),
+    m_dpdActionHasBeenSet(false),
+    m_tagSetHasBeenSet(false),
+    m_negotiationTypeHasBeenSet(false)
 {
 }
 
@@ -262,6 +267,66 @@ CoreInternalOutcome VpnConnection::Deserialize(const rapidjson::Value &value)
         m_healthCheckStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("DpdEnable") && !value["DpdEnable"].IsNull())
+    {
+        if (!value["DpdEnable"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `VpnConnection.DpdEnable` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_dpdEnable = value["DpdEnable"].GetInt64();
+        m_dpdEnableHasBeenSet = true;
+    }
+
+    if (value.HasMember("DpdTimeout") && !value["DpdTimeout"].IsNull())
+    {
+        if (!value["DpdTimeout"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VpnConnection.DpdTimeout` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dpdTimeout = string(value["DpdTimeout"].GetString());
+        m_dpdTimeoutHasBeenSet = true;
+    }
+
+    if (value.HasMember("DpdAction") && !value["DpdAction"].IsNull())
+    {
+        if (!value["DpdAction"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VpnConnection.DpdAction` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dpdAction = string(value["DpdAction"].GetString());
+        m_dpdActionHasBeenSet = true;
+    }
+
+    if (value.HasMember("TagSet") && !value["TagSet"].IsNull())
+    {
+        if (!value["TagSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `VpnConnection.TagSet` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["TagSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Tag item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tagSet.push_back(item);
+        }
+        m_tagSetHasBeenSet = true;
+    }
+
+    if (value.HasMember("NegotiationType") && !value["NegotiationType"].IsNull())
+    {
+        if (!value["NegotiationType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VpnConnection.NegotiationType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_negotiationType = string(value["NegotiationType"].GetString());
+        m_negotiationTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -428,6 +493,53 @@ void VpnConnection::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "HealthCheckStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_healthCheckStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dpdEnableHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DpdEnable";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_dpdEnable, allocator);
+    }
+
+    if (m_dpdTimeoutHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DpdTimeout";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dpdTimeout.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dpdActionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DpdAction";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dpdAction.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TagSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tagSet.begin(); itr != m_tagSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_negotiationTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NegotiationType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_negotiationType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -735,5 +847,85 @@ void VpnConnection::SetHealthCheckStatus(const string& _healthCheckStatus)
 bool VpnConnection::HealthCheckStatusHasBeenSet() const
 {
     return m_healthCheckStatusHasBeenSet;
+}
+
+int64_t VpnConnection::GetDpdEnable() const
+{
+    return m_dpdEnable;
+}
+
+void VpnConnection::SetDpdEnable(const int64_t& _dpdEnable)
+{
+    m_dpdEnable = _dpdEnable;
+    m_dpdEnableHasBeenSet = true;
+}
+
+bool VpnConnection::DpdEnableHasBeenSet() const
+{
+    return m_dpdEnableHasBeenSet;
+}
+
+string VpnConnection::GetDpdTimeout() const
+{
+    return m_dpdTimeout;
+}
+
+void VpnConnection::SetDpdTimeout(const string& _dpdTimeout)
+{
+    m_dpdTimeout = _dpdTimeout;
+    m_dpdTimeoutHasBeenSet = true;
+}
+
+bool VpnConnection::DpdTimeoutHasBeenSet() const
+{
+    return m_dpdTimeoutHasBeenSet;
+}
+
+string VpnConnection::GetDpdAction() const
+{
+    return m_dpdAction;
+}
+
+void VpnConnection::SetDpdAction(const string& _dpdAction)
+{
+    m_dpdAction = _dpdAction;
+    m_dpdActionHasBeenSet = true;
+}
+
+bool VpnConnection::DpdActionHasBeenSet() const
+{
+    return m_dpdActionHasBeenSet;
+}
+
+vector<Tag> VpnConnection::GetTagSet() const
+{
+    return m_tagSet;
+}
+
+void VpnConnection::SetTagSet(const vector<Tag>& _tagSet)
+{
+    m_tagSet = _tagSet;
+    m_tagSetHasBeenSet = true;
+}
+
+bool VpnConnection::TagSetHasBeenSet() const
+{
+    return m_tagSetHasBeenSet;
+}
+
+string VpnConnection::GetNegotiationType() const
+{
+    return m_negotiationType;
+}
+
+void VpnConnection::SetNegotiationType(const string& _negotiationType)
+{
+    m_negotiationType = _negotiationType;
+    m_negotiationTypeHasBeenSet = true;
+}
+
+bool VpnConnection::NegotiationTypeHasBeenSet() const
+{
+    return m_negotiationTypeHasBeenSet;
 }
 

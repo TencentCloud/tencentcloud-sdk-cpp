@@ -685,6 +685,49 @@ GmeClient::ModifyRoomInfoOutcomeCallable GmeClient::ModifyRoomInfoCallable(const
     return task->get_future();
 }
 
+GmeClient::ModifyUserMicStatusOutcome GmeClient::ModifyUserMicStatus(const ModifyUserMicStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyUserMicStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyUserMicStatusResponse rsp = ModifyUserMicStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyUserMicStatusOutcome(rsp);
+        else
+            return ModifyUserMicStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyUserMicStatusOutcome(outcome.GetError());
+    }
+}
+
+void GmeClient::ModifyUserMicStatusAsync(const ModifyUserMicStatusRequest& request, const ModifyUserMicStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyUserMicStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GmeClient::ModifyUserMicStatusOutcomeCallable GmeClient::ModifyUserMicStatusCallable(const ModifyUserMicStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyUserMicStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyUserMicStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 GmeClient::ScanVoiceOutcome GmeClient::ScanVoice(const ScanVoiceRequest &request)
 {
     auto outcome = MakeRequest(request, "ScanVoice");

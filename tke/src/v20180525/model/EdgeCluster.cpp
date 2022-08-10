@@ -31,7 +31,8 @@ EdgeCluster::EdgeCluster() :
     m_clusterDescHasBeenSet(false),
     m_createdTimeHasBeenSet(false),
     m_edgeClusterVersionHasBeenSet(false),
-    m_maxNodePodNumHasBeenSet(false)
+    m_maxNodePodNumHasBeenSet(false),
+    m_clusterAdvancedSettingsHasBeenSet(false)
 {
 }
 
@@ -150,6 +151,23 @@ CoreInternalOutcome EdgeCluster::Deserialize(const rapidjson::Value &value)
         m_maxNodePodNumHasBeenSet = true;
     }
 
+    if (value.HasMember("ClusterAdvancedSettings") && !value["ClusterAdvancedSettings"].IsNull())
+    {
+        if (!value["ClusterAdvancedSettings"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `EdgeCluster.ClusterAdvancedSettings` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_clusterAdvancedSettings.Deserialize(value["ClusterAdvancedSettings"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_clusterAdvancedSettingsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -243,6 +261,15 @@ void EdgeCluster::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "MaxNodePodNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxNodePodNum, allocator);
+    }
+
+    if (m_clusterAdvancedSettingsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterAdvancedSettings";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_clusterAdvancedSettings.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -422,5 +449,21 @@ void EdgeCluster::SetMaxNodePodNum(const int64_t& _maxNodePodNum)
 bool EdgeCluster::MaxNodePodNumHasBeenSet() const
 {
     return m_maxNodePodNumHasBeenSet;
+}
+
+EdgeClusterAdvancedSettings EdgeCluster::GetClusterAdvancedSettings() const
+{
+    return m_clusterAdvancedSettings;
+}
+
+void EdgeCluster::SetClusterAdvancedSettings(const EdgeClusterAdvancedSettings& _clusterAdvancedSettings)
+{
+    m_clusterAdvancedSettings = _clusterAdvancedSettings;
+    m_clusterAdvancedSettingsHasBeenSet = true;
+}
+
+bool EdgeCluster::ClusterAdvancedSettingsHasBeenSet() const
+{
+    return m_clusterAdvancedSettingsHasBeenSet;
 }
 

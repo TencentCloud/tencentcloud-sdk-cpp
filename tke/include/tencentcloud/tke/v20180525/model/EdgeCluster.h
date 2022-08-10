@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tke/v20180525/model/EdgeClusterAdvancedSettings.h>
 
 
 namespace TencentCloud
@@ -248,6 +249,28 @@ namespace TencentCloud
                      */
                     bool MaxNodePodNumHasBeenSet() const;
 
+                    /**
+                     * 获取集群高级设置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ClusterAdvancedSettings 集群高级设置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    EdgeClusterAdvancedSettings GetClusterAdvancedSettings() const;
+
+                    /**
+                     * 设置集群高级设置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ClusterAdvancedSettings 集群高级设置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetClusterAdvancedSettings(const EdgeClusterAdvancedSettings& _clusterAdvancedSettings);
+
+                    /**
+                     * 判断参数 ClusterAdvancedSettings 是否已赋值
+                     * @return ClusterAdvancedSettings 是否已赋值
+                     */
+                    bool ClusterAdvancedSettingsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -316,6 +339,13 @@ namespace TencentCloud
                      */
                     int64_t m_maxNodePodNum;
                     bool m_maxNodePodNumHasBeenSet;
+
+                    /**
+                     * 集群高级设置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    EdgeClusterAdvancedSettings m_clusterAdvancedSettings;
+                    bool m_clusterAdvancedSettingsHasBeenSet;
 
                 };
             }

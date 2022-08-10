@@ -76,6 +76,7 @@ set(lighthouse_public_header_model
   include/tencentcloud/lighthouse/v20200324/model/TerminateInstancesResponse.h
   include/tencentcloud/lighthouse/v20200324/model/TrafficPackage.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeInstancesDiskNumRequest.h
+  include/tencentcloud/lighthouse/v20200324/model/DetailPrice.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeBlueprintsRequest.h
   include/tencentcloud/lighthouse/v20200324/model/InstanceReturnable.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeInstancesDeniedActionsResponse.h
@@ -263,6 +264,7 @@ set(lighthouse_src
   src/v20200324/model/TerminateInstancesResponse.cpp
   src/v20200324/model/TrafficPackage.cpp
   src/v20200324/model/DescribeInstancesDiskNumRequest.cpp
+  src/v20200324/model/DetailPrice.cpp
   src/v20200324/model/DescribeBlueprintsRequest.cpp
   src/v20200324/model/InstanceReturnable.cpp
   src/v20200324/model/DescribeInstancesDeniedActionsResponse.cpp

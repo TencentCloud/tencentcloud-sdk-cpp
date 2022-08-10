@@ -24,7 +24,8 @@ using namespace TencentCloud::Monitor::V20180724::Model;
 using namespace std;
 
 DescribeMonitorTypesResponse::DescribeMonitorTypesResponse() :
-    m_monitorTypesHasBeenSet(false)
+    m_monitorTypesHasBeenSet(false),
+    m_monitorTypeInfosHasBeenSet(false)
 {
 }
 
@@ -75,6 +76,26 @@ CoreInternalOutcome DescribeMonitorTypesResponse::Deserialize(const string &payl
         m_monitorTypesHasBeenSet = true;
     }
 
+    if (rsp.HasMember("MonitorTypeInfos") && !rsp["MonitorTypeInfos"].IsNull())
+    {
+        if (!rsp["MonitorTypeInfos"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `MonitorTypeInfos` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["MonitorTypeInfos"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            MonitorTypeInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_monitorTypeInfos.push_back(item);
+        }
+        m_monitorTypeInfosHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -98,6 +119,21 @@ string DescribeMonitorTypesResponse::ToJsonString() const
         }
     }
 
+    if (m_monitorTypeInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MonitorTypeInfos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_monitorTypeInfos.begin(); itr != m_monitorTypeInfos.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -118,6 +154,16 @@ vector<string> DescribeMonitorTypesResponse::GetMonitorTypes() const
 bool DescribeMonitorTypesResponse::MonitorTypesHasBeenSet() const
 {
     return m_monitorTypesHasBeenSet;
+}
+
+vector<MonitorTypeInfo> DescribeMonitorTypesResponse::GetMonitorTypeInfos() const
+{
+    return m_monitorTypeInfos;
+}
+
+bool DescribeMonitorTypesResponse::MonitorTypeInfosHasBeenSet() const
+{
+    return m_monitorTypeInfosHasBeenSet;
 }
 
 

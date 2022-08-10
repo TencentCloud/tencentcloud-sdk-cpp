@@ -29,7 +29,8 @@ ApplyFlexPaymentRequest::ApplyFlexPaymentRequest() :
     m_outOrderIdHasBeenSet(false),
     m_fundingAccountInfoHasBeenSet(false),
     m_remarkHasBeenSet(false),
-    m_environmentHasBeenSet(false)
+    m_environmentHasBeenSet(false),
+    m_notifyUrlHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,14 @@ string ApplyFlexPaymentRequest::ToJsonString() const
         string key = "Environment";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_environment.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_notifyUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NotifyUrl";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_notifyUrl.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -215,6 +224,22 @@ void ApplyFlexPaymentRequest::SetEnvironment(const string& _environment)
 bool ApplyFlexPaymentRequest::EnvironmentHasBeenSet() const
 {
     return m_environmentHasBeenSet;
+}
+
+string ApplyFlexPaymentRequest::GetNotifyUrl() const
+{
+    return m_notifyUrl;
+}
+
+void ApplyFlexPaymentRequest::SetNotifyUrl(const string& _notifyUrl)
+{
+    m_notifyUrl = _notifyUrl;
+    m_notifyUrlHasBeenSet = true;
+}
+
+bool ApplyFlexPaymentRequest::NotifyUrlHasBeenSet() const
+{
+    return m_notifyUrlHasBeenSet;
 }
 
 

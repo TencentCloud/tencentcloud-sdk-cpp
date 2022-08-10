@@ -24,7 +24,8 @@ DiskPrice::DiskPrice() :
     m_originalDiskPriceHasBeenSet(false),
     m_originalPriceHasBeenSet(false),
     m_discountHasBeenSet(false),
-    m_discountPriceHasBeenSet(false)
+    m_discountPriceHasBeenSet(false),
+    m_detailPricesHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,26 @@ CoreInternalOutcome DiskPrice::Deserialize(const rapidjson::Value &value)
         m_discountPriceHasBeenSet = true;
     }
 
+    if (value.HasMember("DetailPrices") && !value["DetailPrices"].IsNull())
+    {
+        if (!value["DetailPrices"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DiskPrice.DetailPrices` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["DetailPrices"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            DetailPrice item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_detailPrices.push_back(item);
+        }
+        m_detailPricesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +131,21 @@ void DiskPrice::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "DiscountPrice";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_discountPrice, allocator);
+    }
+
+    if (m_detailPricesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DetailPrices";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_detailPrices.begin(); itr != m_detailPrices.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -177,5 +213,21 @@ void DiskPrice::SetDiscountPrice(const double& _discountPrice)
 bool DiskPrice::DiscountPriceHasBeenSet() const
 {
     return m_discountPriceHasBeenSet;
+}
+
+vector<DetailPrice> DiskPrice::GetDetailPrices() const
+{
+    return m_detailPrices;
+}
+
+void DiskPrice::SetDetailPrices(const vector<DetailPrice>& _detailPrices)
+{
+    m_detailPrices = _detailPrices;
+    m_detailPricesHasBeenSet = true;
+}
+
+bool DiskPrice::DetailPricesHasBeenSet() const
+{
+    return m_detailPricesHasBeenSet;
 }
 

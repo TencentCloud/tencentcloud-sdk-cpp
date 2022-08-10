@@ -78,6 +78,24 @@ namespace TencentCloud
                      */
                     bool EnableDeleteCosHasBeenSet() const;
 
+                    /**
+                     * 获取删除模型类型，枚举值：NORMAL 普通，ACCELERATE 加速，不传则删除所有
+                     * @return ModelVersionType 删除模型类型，枚举值：NORMAL 普通，ACCELERATE 加速，不传则删除所有
+                     */
+                    std::string GetModelVersionType() const;
+
+                    /**
+                     * 设置删除模型类型，枚举值：NORMAL 普通，ACCELERATE 加速，不传则删除所有
+                     * @param ModelVersionType 删除模型类型，枚举值：NORMAL 普通，ACCELERATE 加速，不传则删除所有
+                     */
+                    void SetModelVersionType(const std::string& _modelVersionType);
+
+                    /**
+                     * 判断参数 ModelVersionType 是否已赋值
+                     * @return ModelVersionType 是否已赋值
+                     */
+                    bool ModelVersionTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -91,6 +109,12 @@ namespace TencentCloud
                      */
                     bool m_enableDeleteCos;
                     bool m_enableDeleteCosHasBeenSet;
+
+                    /**
+                     * 删除模型类型，枚举值：NORMAL 普通，ACCELERATE 加速，不传则删除所有
+                     */
+                    std::string m_modelVersionType;
+                    bool m_modelVersionTypeHasBeenSet;
 
                 };
             }

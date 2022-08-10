@@ -23,9 +23,11 @@ using namespace std;
 PlayerConfig::PlayerConfig() :
     m_nameHasBeenSet(false),
     m_typeHasBeenSet(false),
+    m_audioVideoTypeHasBeenSet(false),
     m_drmSwitchHasBeenSet(false),
     m_adaptiveDynamicStreamingDefinitionHasBeenSet(false),
     m_drmStreamingsInfoHasBeenSet(false),
+    m_transcodeDefinitionHasBeenSet(false),
     m_imageSpriteDefinitionHasBeenSet(false),
     m_resolutionNameSetHasBeenSet(false),
     m_createTimeHasBeenSet(false),
@@ -59,6 +61,16 @@ CoreInternalOutcome PlayerConfig::Deserialize(const rapidjson::Value &value)
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
+    }
+
+    if (value.HasMember("AudioVideoType") && !value["AudioVideoType"].IsNull())
+    {
+        if (!value["AudioVideoType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PlayerConfig.AudioVideoType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_audioVideoType = string(value["AudioVideoType"].GetString());
+        m_audioVideoTypeHasBeenSet = true;
     }
 
     if (value.HasMember("DrmSwitch") && !value["DrmSwitch"].IsNull())
@@ -96,6 +108,16 @@ CoreInternalOutcome PlayerConfig::Deserialize(const rapidjson::Value &value)
         }
 
         m_drmStreamingsInfoHasBeenSet = true;
+    }
+
+    if (value.HasMember("TranscodeDefinition") && !value["TranscodeDefinition"].IsNull())
+    {
+        if (!value["TranscodeDefinition"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `PlayerConfig.TranscodeDefinition` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_transcodeDefinition = value["TranscodeDefinition"].GetUint64();
+        m_transcodeDefinitionHasBeenSet = true;
     }
 
     if (value.HasMember("ImageSpriteDefinition") && !value["ImageSpriteDefinition"].IsNull())
@@ -201,6 +223,14 @@ void PlayerConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         value.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_audioVideoTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AudioVideoType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_audioVideoType.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_drmSwitchHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -224,6 +254,14 @@ void PlayerConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_drmStreamingsInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_transcodeDefinitionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TranscodeDefinition";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_transcodeDefinition, allocator);
     }
 
     if (m_imageSpriteDefinitionHasBeenSet)
@@ -324,6 +362,22 @@ bool PlayerConfig::TypeHasBeenSet() const
     return m_typeHasBeenSet;
 }
 
+string PlayerConfig::GetAudioVideoType() const
+{
+    return m_audioVideoType;
+}
+
+void PlayerConfig::SetAudioVideoType(const string& _audioVideoType)
+{
+    m_audioVideoType = _audioVideoType;
+    m_audioVideoTypeHasBeenSet = true;
+}
+
+bool PlayerConfig::AudioVideoTypeHasBeenSet() const
+{
+    return m_audioVideoTypeHasBeenSet;
+}
+
 string PlayerConfig::GetDrmSwitch() const
 {
     return m_drmSwitch;
@@ -370,6 +424,22 @@ void PlayerConfig::SetDrmStreamingsInfo(const DrmStreamingsInfo& _drmStreamingsI
 bool PlayerConfig::DrmStreamingsInfoHasBeenSet() const
 {
     return m_drmStreamingsInfoHasBeenSet;
+}
+
+uint64_t PlayerConfig::GetTranscodeDefinition() const
+{
+    return m_transcodeDefinition;
+}
+
+void PlayerConfig::SetTranscodeDefinition(const uint64_t& _transcodeDefinition)
+{
+    m_transcodeDefinition = _transcodeDefinition;
+    m_transcodeDefinitionHasBeenSet = true;
+}
+
+bool PlayerConfig::TranscodeDefinitionHasBeenSet() const
+{
+    return m_transcodeDefinitionHasBeenSet;
 }
 
 uint64_t PlayerConfig::GetImageSpriteDefinition() const

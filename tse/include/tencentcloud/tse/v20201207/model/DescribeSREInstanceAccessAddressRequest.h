@@ -114,6 +114,24 @@ namespace TencentCloud
                      */
                     bool WorkloadHasBeenSet() const;
 
+                    /**
+                     * 获取部署地域
+                     * @return EngineRegion 部署地域
+                     */
+                    std::string GetEngineRegion() const;
+
+                    /**
+                     * 设置部署地域
+                     * @param EngineRegion 部署地域
+                     */
+                    void SetEngineRegion(const std::string& _engineRegion);
+
+                    /**
+                     * 判断参数 EngineRegion 是否已赋值
+                     * @return EngineRegion 是否已赋值
+                     */
+                    bool EngineRegionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -139,6 +157,12 @@ namespace TencentCloud
                      */
                     std::string m_workload;
                     bool m_workloadHasBeenSet;
+
+                    /**
+                     * 部署地域
+                     */
+                    std::string m_engineRegion;
+                    bool m_engineRegionHasBeenSet;
 
                 };
             }

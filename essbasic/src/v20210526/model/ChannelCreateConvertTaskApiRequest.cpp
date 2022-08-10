@@ -24,11 +24,11 @@ using namespace std;
 
 ChannelCreateConvertTaskApiRequest::ChannelCreateConvertTaskApiRequest() :
     m_agentHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
     m_resourceTypeHasBeenSet(false),
     m_resourceNameHasBeenSet(false),
-    m_organizationHasBeenSet(false),
-    m_operatorHasBeenSet(false)
+    m_resourceIdHasBeenSet(false),
+    m_operatorHasBeenSet(false),
+    m_organizationHasBeenSet(false)
 {
 }
 
@@ -48,14 +48,6 @@ string ChannelCreateConvertTaskApiRequest::ToJsonString() const
         m_agent.ToJsonObject(d[key.c_str()], allocator);
     }
 
-    if (m_resourceIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ResourceId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_resourceId.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_resourceTypeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -72,13 +64,12 @@ string ChannelCreateConvertTaskApiRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_resourceName.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_organizationHasBeenSet)
+    if (m_resourceIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Organization";
+        string key = "ResourceId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_organization.ToJsonObject(d[key.c_str()], allocator);
+        d.AddMember(iKey, rapidjson::Value(m_resourceId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_operatorHasBeenSet)
@@ -88,6 +79,15 @@ string ChannelCreateConvertTaskApiRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_operator.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_organizationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Organization";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_organization.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -112,22 +112,6 @@ void ChannelCreateConvertTaskApiRequest::SetAgent(const Agent& _agent)
 bool ChannelCreateConvertTaskApiRequest::AgentHasBeenSet() const
 {
     return m_agentHasBeenSet;
-}
-
-string ChannelCreateConvertTaskApiRequest::GetResourceId() const
-{
-    return m_resourceId;
-}
-
-void ChannelCreateConvertTaskApiRequest::SetResourceId(const string& _resourceId)
-{
-    m_resourceId = _resourceId;
-    m_resourceIdHasBeenSet = true;
-}
-
-bool ChannelCreateConvertTaskApiRequest::ResourceIdHasBeenSet() const
-{
-    return m_resourceIdHasBeenSet;
 }
 
 string ChannelCreateConvertTaskApiRequest::GetResourceType() const
@@ -162,20 +146,20 @@ bool ChannelCreateConvertTaskApiRequest::ResourceNameHasBeenSet() const
     return m_resourceNameHasBeenSet;
 }
 
-OrganizationInfo ChannelCreateConvertTaskApiRequest::GetOrganization() const
+string ChannelCreateConvertTaskApiRequest::GetResourceId() const
 {
-    return m_organization;
+    return m_resourceId;
 }
 
-void ChannelCreateConvertTaskApiRequest::SetOrganization(const OrganizationInfo& _organization)
+void ChannelCreateConvertTaskApiRequest::SetResourceId(const string& _resourceId)
 {
-    m_organization = _organization;
-    m_organizationHasBeenSet = true;
+    m_resourceId = _resourceId;
+    m_resourceIdHasBeenSet = true;
 }
 
-bool ChannelCreateConvertTaskApiRequest::OrganizationHasBeenSet() const
+bool ChannelCreateConvertTaskApiRequest::ResourceIdHasBeenSet() const
 {
-    return m_organizationHasBeenSet;
+    return m_resourceIdHasBeenSet;
 }
 
 UserInfo ChannelCreateConvertTaskApiRequest::GetOperator() const
@@ -192,6 +176,22 @@ void ChannelCreateConvertTaskApiRequest::SetOperator(const UserInfo& _operator)
 bool ChannelCreateConvertTaskApiRequest::OperatorHasBeenSet() const
 {
     return m_operatorHasBeenSet;
+}
+
+OrganizationInfo ChannelCreateConvertTaskApiRequest::GetOrganization() const
+{
+    return m_organization;
+}
+
+void ChannelCreateConvertTaskApiRequest::SetOrganization(const OrganizationInfo& _organization)
+{
+    m_organization = _organization;
+    m_organizationHasBeenSet = true;
+}
+
+bool ChannelCreateConvertTaskApiRequest::OrganizationHasBeenSet() const
+{
+    return m_organizationHasBeenSet;
 }
 
 

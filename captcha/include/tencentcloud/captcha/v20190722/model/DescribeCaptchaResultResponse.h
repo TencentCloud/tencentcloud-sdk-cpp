@@ -116,9 +116,15 @@ namespace TencentCloud
                     bool CaptchaMsgHasBeenSet() const;
 
                     /**
-                     * 获取[0,100]，恶意等级
+                     * 获取无感验证模式下，该参数返回验证结果：
+
+EvilLevel=0 请求无恶意
+EvilLevel=100 请求有恶意
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return EvilLevel [0,100]，恶意等级
+                     * @return EvilLevel 无感验证模式下，该参数返回验证结果：
+
+EvilLevel=0 请求无恶意
+EvilLevel=100 请求有恶意
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetEvilLevel() const;
@@ -182,7 +188,10 @@ namespace TencentCloud
                     bool m_captchaMsgHasBeenSet;
 
                     /**
-                     * [0,100]，恶意等级
+                     * 无感验证模式下，该参数返回验证结果：
+
+EvilLevel=0 请求无恶意
+EvilLevel=100 请求有恶意
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_evilLevel;

@@ -41,6 +41,7 @@ set(monitor_public_header_model
   include/tencentcloud/monitor/v20180724/model/DescribePolicyGroupInfoRequest.h
   include/tencentcloud/monitor/v20180724/model/UpdateAlertRuleStateResponse.h
   include/tencentcloud/monitor/v20180724/model/BindingPolicyTagResponse.h
+  include/tencentcloud/monitor/v20180724/model/MonitorTypeInfo.h
   include/tencentcloud/monitor/v20180724/model/DeleteServiceDiscoveryResponse.h
   include/tencentcloud/monitor/v20180724/model/CreatePrometheusScrapeJobResponse.h
   include/tencentcloud/monitor/v20180724/model/DescribePolicyGroupInfoCallback.h
@@ -283,6 +284,7 @@ set(monitor_src
   src/v20180724/model/DescribePolicyGroupInfoRequest.cpp
   src/v20180724/model/UpdateAlertRuleStateResponse.cpp
   src/v20180724/model/BindingPolicyTagResponse.cpp
+  src/v20180724/model/MonitorTypeInfo.cpp
   src/v20180724/model/DeleteServiceDiscoveryResponse.cpp
   src/v20180724/model/CreatePrometheusScrapeJobResponse.cpp
   src/v20180724/model/DescribePolicyGroupInfoCallback.cpp

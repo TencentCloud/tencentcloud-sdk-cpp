@@ -41,7 +41,8 @@ TrainingTaskSetItem::TrainingTaskSetItem() :
     m_updateTimeHasBeenSet(false),
     m_billingInfoHasBeenSet(false),
     m_resourceGroupNameHasBeenSet(false),
-    m_imageInfoHasBeenSet(false)
+    m_imageInfoHasBeenSet(false),
+    m_messageHasBeenSet(false)
 {
 }
 
@@ -294,6 +295,16 @@ CoreInternalOutcome TrainingTaskSetItem::Deserialize(const rapidjson::Value &val
         m_imageInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("Message") && !value["Message"].IsNull())
+    {
+        if (!value["Message"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TrainingTaskSetItem.Message` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_message = string(value["Message"].GetString());
+        m_messageHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -483,6 +494,14 @@ void TrainingTaskSetItem::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_imageInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_messageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Message";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_message.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -822,5 +841,21 @@ void TrainingTaskSetItem::SetImageInfo(const ImageInfo& _imageInfo)
 bool TrainingTaskSetItem::ImageInfoHasBeenSet() const
 {
     return m_imageInfoHasBeenSet;
+}
+
+string TrainingTaskSetItem::GetMessage() const
+{
+    return m_message;
+}
+
+void TrainingTaskSetItem::SetMessage(const string& _message)
+{
+    m_message = _message;
+    m_messageHasBeenSet = true;
+}
+
+bool TrainingTaskSetItem::MessageHasBeenSet() const
+{
+    return m_messageHasBeenSet;
 }
 

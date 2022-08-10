@@ -98,14 +98,14 @@ namespace TencentCloud
                     bool IocActionHasBeenSet() const;
 
                     /**
-                     * 获取时间格式：yyyy-MM-dd HH:mm:ss
-                     * @return StartTime 时间格式：yyyy-MM-dd HH:mm:ss
+                     * 获取时间格式：yyyy-MM-dd HH:mm:ss，IocAction 为edit或add时必填
+                     * @return StartTime 时间格式：yyyy-MM-dd HH:mm:ss，IocAction 为edit或add时必填
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置时间格式：yyyy-MM-dd HH:mm:ss
-                     * @param StartTime 时间格式：yyyy-MM-dd HH:mm:ss
+                     * 设置时间格式：yyyy-MM-dd HH:mm:ss，IocAction 为edit或add时必填
+                     * @param StartTime 时间格式：yyyy-MM-dd HH:mm:ss，IocAction 为edit或add时必填
                      */
                     void SetStartTime(const std::string& _startTime);
 
@@ -116,14 +116,14 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取时间格式：yyyy-MM-dd HH:mm:ss
-                     * @return EndTime 时间格式：yyyy-MM-dd HH:mm:ss
+                     * 获取时间格式：yyyy-MM-dd HH:mm:ss，IocAction 为edit或add时必填
+                     * @return EndTime 时间格式：yyyy-MM-dd HH:mm:ss，IocAction 为edit或add时必填
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置时间格式：yyyy-MM-dd HH:mm:ss
-                     * @param EndTime 时间格式：yyyy-MM-dd HH:mm:ss
+                     * 设置时间格式：yyyy-MM-dd HH:mm:ss，IocAction 为edit或add时必填
+                     * @param EndTime 时间格式：yyyy-MM-dd HH:mm:ss，IocAction 为edit或add时必填
                      */
                     void SetEndTime(const std::string& _endTime);
 
@@ -154,13 +154,13 @@ namespace TencentCloud
                     bool m_iocActionHasBeenSet;
 
                     /**
-                     * 时间格式：yyyy-MM-dd HH:mm:ss
+                     * 时间格式：yyyy-MM-dd HH:mm:ss，IocAction 为edit或add时必填
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 时间格式：yyyy-MM-dd HH:mm:ss
+                     * 时间格式：yyyy-MM-dd HH:mm:ss，IocAction 为edit或add时必填
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;

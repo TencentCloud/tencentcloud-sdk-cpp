@@ -93,6 +93,36 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
+                     * 获取播放的音视频类型，可选值有：
+<li>AdaptiveDynamicStream：自适应码流输出；</li>
+<li>Transcode：转码输出；</li>
+<li>Original：原始音视频。</li>
+                     * @return AudioVideoType 播放的音视频类型，可选值有：
+<li>AdaptiveDynamicStream：自适应码流输出；</li>
+<li>Transcode：转码输出；</li>
+<li>Original：原始音视频。</li>
+                     */
+                    std::string GetAudioVideoType() const;
+
+                    /**
+                     * 设置播放的音视频类型，可选值有：
+<li>AdaptiveDynamicStream：自适应码流输出；</li>
+<li>Transcode：转码输出；</li>
+<li>Original：原始音视频。</li>
+                     * @param AudioVideoType 播放的音视频类型，可选值有：
+<li>AdaptiveDynamicStream：自适应码流输出；</li>
+<li>Transcode：转码输出；</li>
+<li>Original：原始音视频。</li>
+                     */
+                    void SetAudioVideoType(const std::string& _audioVideoType);
+
+                    /**
+                     * 判断参数 AudioVideoType 是否已赋值
+                     * @return AudioVideoType 是否已赋值
+                     */
+                    bool AudioVideoTypeHasBeenSet() const;
+
+                    /**
                      * 获取播放 DRM 保护的自适应码流开关：
 <li>ON：开启，表示仅播放 DRM  保护的自适应码流输出；</li>
 <li>OFF：关闭，表示播放未加密的自适应码流输出。</li>
@@ -157,6 +187,24 @@ namespace TencentCloud
                      * @return DrmStreamingsInfo 是否已赋值
                      */
                     bool DrmStreamingsInfoHasBeenSet() const;
+
+                    /**
+                     * 获取允许输出的转码模板 ID。
+                     * @return TranscodeDefinition 允许输出的转码模板 ID。
+                     */
+                    uint64_t GetTranscodeDefinition() const;
+
+                    /**
+                     * 设置允许输出的转码模板 ID。
+                     * @param TranscodeDefinition 允许输出的转码模板 ID。
+                     */
+                    void SetTranscodeDefinition(const uint64_t& _transcodeDefinition);
+
+                    /**
+                     * 判断参数 TranscodeDefinition 是否已赋值
+                     * @return TranscodeDefinition 是否已赋值
+                     */
+                    bool TranscodeDefinitionHasBeenSet() const;
 
                     /**
                      * 获取允许输出的雪碧图模板 ID。
@@ -313,6 +361,15 @@ namespace TencentCloud
                     bool m_typeHasBeenSet;
 
                     /**
+                     * 播放的音视频类型，可选值有：
+<li>AdaptiveDynamicStream：自适应码流输出；</li>
+<li>Transcode：转码输出；</li>
+<li>Original：原始音视频。</li>
+                     */
+                    std::string m_audioVideoType;
+                    bool m_audioVideoTypeHasBeenSet;
+
+                    /**
                      * 播放 DRM 保护的自适应码流开关：
 <li>ON：开启，表示仅播放 DRM  保护的自适应码流输出；</li>
 <li>OFF：关闭，表示播放未加密的自适应码流输出。</li>
@@ -332,6 +389,12 @@ namespace TencentCloud
                      */
                     DrmStreamingsInfo m_drmStreamingsInfo;
                     bool m_drmStreamingsInfoHasBeenSet;
+
+                    /**
+                     * 允许输出的转码模板 ID。
+                     */
+                    uint64_t m_transcodeDefinition;
+                    bool m_transcodeDefinitionHasBeenSet;
 
                     /**
                      * 允许输出的雪碧图模板 ID。

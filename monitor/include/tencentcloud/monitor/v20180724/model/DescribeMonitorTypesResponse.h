@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/monitor/v20180724/model/MonitorTypeInfo.h>
 
 
 namespace TencentCloud
@@ -55,6 +56,18 @@ namespace TencentCloud
                      */
                     bool MonitorTypesHasBeenSet() const;
 
+                    /**
+                     * 获取监控类型详情
+                     * @return MonitorTypeInfos 监控类型详情
+                     */
+                    std::vector<MonitorTypeInfo> GetMonitorTypeInfos() const;
+
+                    /**
+                     * 判断参数 MonitorTypeInfos 是否已赋值
+                     * @return MonitorTypeInfos 是否已赋值
+                     */
+                    bool MonitorTypeInfosHasBeenSet() const;
+
                 private:
 
                     /**
@@ -62,6 +75,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_monitorTypes;
                     bool m_monitorTypesHasBeenSet;
+
+                    /**
+                     * 监控类型详情
+                     */
+                    std::vector<MonitorTypeInfo> m_monitorTypeInfos;
+                    bool m_monitorTypeInfosHasBeenSet;
 
                 };
             }

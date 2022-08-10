@@ -24,9 +24,9 @@ using namespace std;
 
 GetTaskResultApiRequest::GetTaskResultApiRequest() :
     m_taskIdHasBeenSet(false),
-    m_organizationHasBeenSet(false),
     m_operatorHasBeenSet(false),
-    m_agentHasBeenSet(false)
+    m_agentHasBeenSet(false),
+    m_organizationHasBeenSet(false)
 {
 }
 
@@ -45,15 +45,6 @@ string GetTaskResultApiRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_taskId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_organizationHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Organization";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_organization.ToJsonObject(d[key.c_str()], allocator);
-    }
-
     if (m_operatorHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -70,6 +61,15 @@ string GetTaskResultApiRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_agent.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_organizationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Organization";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_organization.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -94,22 +94,6 @@ void GetTaskResultApiRequest::SetTaskId(const string& _taskId)
 bool GetTaskResultApiRequest::TaskIdHasBeenSet() const
 {
     return m_taskIdHasBeenSet;
-}
-
-OrganizationInfo GetTaskResultApiRequest::GetOrganization() const
-{
-    return m_organization;
-}
-
-void GetTaskResultApiRequest::SetOrganization(const OrganizationInfo& _organization)
-{
-    m_organization = _organization;
-    m_organizationHasBeenSet = true;
-}
-
-bool GetTaskResultApiRequest::OrganizationHasBeenSet() const
-{
-    return m_organizationHasBeenSet;
 }
 
 UserInfo GetTaskResultApiRequest::GetOperator() const
@@ -142,6 +126,22 @@ void GetTaskResultApiRequest::SetAgent(const Agent& _agent)
 bool GetTaskResultApiRequest::AgentHasBeenSet() const
 {
     return m_agentHasBeenSet;
+}
+
+OrganizationInfo GetTaskResultApiRequest::GetOrganization() const
+{
+    return m_organization;
+}
+
+void GetTaskResultApiRequest::SetOrganization(const OrganizationInfo& _organization)
+{
+    m_organization = _organization;
+    m_organizationHasBeenSet = true;
+}
+
+bool GetTaskResultApiRequest::OrganizationHasBeenSet() const
+{
+    return m_organizationHasBeenSet;
 }
 
 

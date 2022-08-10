@@ -27,6 +27,7 @@
 #include <tencentcloud/vpc/v20170312/model/SecurityPolicyDatabase.h>
 #include <tencentcloud/vpc/v20170312/model/IKEOptionsSpecification.h>
 #include <tencentcloud/vpc/v20170312/model/IPSECOptionsSpecification.h>
+#include <tencentcloud/vpc/v20170312/model/Tag.h>
 
 
 namespace TencentCloud
@@ -391,6 +392,112 @@ namespace TencentCloud
                      */
                     bool HealthCheckStatusHasBeenSet() const;
 
+                    /**
+                     * 获取DPD探测开关。默认为0，表示关闭DPD探测。可选值：0（关闭），1（开启）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DpdEnable DPD探测开关。默认为0，表示关闭DPD探测。可选值：0（关闭），1（开启）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetDpdEnable() const;
+
+                    /**
+                     * 设置DPD探测开关。默认为0，表示关闭DPD探测。可选值：0（关闭），1（开启）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DpdEnable DPD探测开关。默认为0，表示关闭DPD探测。可选值：0（关闭），1（开启）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDpdEnable(const int64_t& _dpdEnable);
+
+                    /**
+                     * 判断参数 DpdEnable 是否已赋值
+                     * @return DpdEnable 是否已赋值
+                     */
+                    bool DpdEnableHasBeenSet() const;
+
+                    /**
+                     * 获取DPD超时时间。即探测确认对端不存在需要的时间。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DpdTimeout DPD超时时间。即探测确认对端不存在需要的时间。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetDpdTimeout() const;
+
+                    /**
+                     * 设置DPD超时时间。即探测确认对端不存在需要的时间。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DpdTimeout DPD超时时间。即探测确认对端不存在需要的时间。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDpdTimeout(const std::string& _dpdTimeout);
+
+                    /**
+                     * 判断参数 DpdTimeout 是否已赋值
+                     * @return DpdTimeout 是否已赋值
+                     */
+                    bool DpdTimeoutHasBeenSet() const;
+
+                    /**
+                     * 获取DPD超时后的动作。默认为clear。dpdEnable为1（开启）时有效。可取值为clear（断开）和restart（重试）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DpdAction DPD超时后的动作。默认为clear。dpdEnable为1（开启）时有效。可取值为clear（断开）和restart（重试）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetDpdAction() const;
+
+                    /**
+                     * 设置DPD超时后的动作。默认为clear。dpdEnable为1（开启）时有效。可取值为clear（断开）和restart（重试）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DpdAction DPD超时后的动作。默认为clear。dpdEnable为1（开启）时有效。可取值为clear（断开）和restart（重试）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDpdAction(const std::string& _dpdAction);
+
+                    /**
+                     * 判断参数 DpdAction 是否已赋值
+                     * @return DpdAction 是否已赋值
+                     */
+                    bool DpdActionHasBeenSet() const;
+
+                    /**
+                     * 获取标签键值对数组
+                     * @return TagSet 标签键值对数组
+                     */
+                    std::vector<Tag> GetTagSet() const;
+
+                    /**
+                     * 设置标签键值对数组
+                     * @param TagSet 标签键值对数组
+                     */
+                    void SetTagSet(const std::vector<Tag>& _tagSet);
+
+                    /**
+                     * 判断参数 TagSet 是否已赋值
+                     * @return TagSet 是否已赋值
+                     */
+                    bool TagSetHasBeenSet() const;
+
+                    /**
+                     * 获取协商类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NegotiationType 协商类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetNegotiationType() const;
+
+                    /**
+                     * 设置协商类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param NegotiationType 协商类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetNegotiationType(const std::string& _negotiationType);
+
+                    /**
+                     * 判断参数 NegotiationType 是否已赋值
+                     * @return NegotiationType 是否已赋值
+                     */
+                    bool NegotiationTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -506,6 +613,40 @@ namespace TencentCloud
                      */
                     std::string m_healthCheckStatus;
                     bool m_healthCheckStatusHasBeenSet;
+
+                    /**
+                     * DPD探测开关。默认为0，表示关闭DPD探测。可选值：0（关闭），1（开启）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_dpdEnable;
+                    bool m_dpdEnableHasBeenSet;
+
+                    /**
+                     * DPD超时时间。即探测确认对端不存在需要的时间。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_dpdTimeout;
+                    bool m_dpdTimeoutHasBeenSet;
+
+                    /**
+                     * DPD超时后的动作。默认为clear。dpdEnable为1（开启）时有效。可取值为clear（断开）和restart（重试）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_dpdAction;
+                    bool m_dpdActionHasBeenSet;
+
+                    /**
+                     * 标签键值对数组
+                     */
+                    std::vector<Tag> m_tagSet;
+                    bool m_tagSetHasBeenSet;
+
+                    /**
+                     * 协商类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_negotiationType;
+                    bool m_negotiationTypeHasBeenSet;
 
                 };
             }

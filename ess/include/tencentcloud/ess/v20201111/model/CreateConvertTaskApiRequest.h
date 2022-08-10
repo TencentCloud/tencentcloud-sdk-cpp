@@ -21,9 +21,9 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/ess/v20201111/model/OrganizationInfo.h>
 #include <tencentcloud/ess/v20201111/model/UserInfo.h>
 #include <tencentcloud/ess/v20201111/model/Agent.h>
+#include <tencentcloud/ess/v20201111/model/OrganizationInfo.h>
 
 
 namespace TencentCloud
@@ -46,24 +46,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取资源Id
-                     * @return ResourceId 资源Id
-                     */
-                    std::string GetResourceId() const;
-
-                    /**
-                     * 设置资源Id
-                     * @param ResourceId 资源Id
-                     */
-                    void SetResourceId(const std::string& _resourceId);
-
-                    /**
-                     * 判断参数 ResourceId 是否已赋值
-                     * @return ResourceId 是否已赋值
-                     */
-                    bool ResourceIdHasBeenSet() const;
-
-                    /**
                      * 获取资源类型 取值范围doc,docx,html之一
                      * @return ResourceType 资源类型 取值范围doc,docx,html之一
                      */
@@ -82,14 +64,14 @@ namespace TencentCloud
                     bool ResourceTypeHasBeenSet() const;
 
                     /**
-                     * 获取资源名称
-                     * @return ResourceName 资源名称
+                     * 获取资源名称，长度限制为256字符
+                     * @return ResourceName 资源名称，长度限制为256字符
                      */
                     std::string GetResourceName() const;
 
                     /**
-                     * 设置资源名称
-                     * @param ResourceName 资源名称
+                     * 设置资源名称，长度限制为256字符
+                     * @param ResourceName 资源名称，长度限制为256字符
                      */
                     void SetResourceName(const std::string& _resourceName);
 
@@ -100,32 +82,32 @@ namespace TencentCloud
                     bool ResourceNameHasBeenSet() const;
 
                     /**
-                     * 获取无
-                     * @return Organization 无
+                     * 获取资源Id，通过UploadFiles获取
+                     * @return ResourceId 资源Id，通过UploadFiles获取
                      */
-                    OrganizationInfo GetOrganization() const;
+                    std::string GetResourceId() const;
 
                     /**
-                     * 设置无
-                     * @param Organization 无
+                     * 设置资源Id，通过UploadFiles获取
+                     * @param ResourceId 资源Id，通过UploadFiles获取
                      */
-                    void SetOrganization(const OrganizationInfo& _organization);
+                    void SetResourceId(const std::string& _resourceId);
 
                     /**
-                     * 判断参数 Organization 是否已赋值
-                     * @return Organization 是否已赋值
+                     * 判断参数 ResourceId 是否已赋值
+                     * @return ResourceId 是否已赋值
                      */
-                    bool OrganizationHasBeenSet() const;
+                    bool ResourceIdHasBeenSet() const;
 
                     /**
-                     * 获取无
-                     * @return Operator 无
+                     * 获取操作者信息
+                     * @return Operator 操作者信息
                      */
                     UserInfo GetOperator() const;
 
                     /**
-                     * 设置无
-                     * @param Operator 无
+                     * 设置操作者信息
+                     * @param Operator 操作者信息
                      */
                     void SetOperator(const UserInfo& _operator);
 
@@ -136,14 +118,14 @@ namespace TencentCloud
                     bool OperatorHasBeenSet() const;
 
                     /**
-                     * 获取无
-                     * @return Agent 无
+                     * 获取应用号信息
+                     * @return Agent 应用号信息
                      */
                     Agent GetAgent() const;
 
                     /**
-                     * 设置无
-                     * @param Agent 无
+                     * 设置应用号信息
+                     * @param Agent 应用号信息
                      */
                     void SetAgent(const Agent& _agent);
 
@@ -153,13 +135,25 @@ namespace TencentCloud
                      */
                     bool AgentHasBeenSet() const;
 
-                private:
+                    /**
+                     * 获取暂未开放
+                     * @return Organization 暂未开放
+                     */
+                    OrganizationInfo GetOrganization() const;
 
                     /**
-                     * 资源Id
+                     * 设置暂未开放
+                     * @param Organization 暂未开放
                      */
-                    std::string m_resourceId;
-                    bool m_resourceIdHasBeenSet;
+                    void SetOrganization(const OrganizationInfo& _organization);
+
+                    /**
+                     * 判断参数 Organization 是否已赋值
+                     * @return Organization 是否已赋值
+                     */
+                    bool OrganizationHasBeenSet() const;
+
+                private:
 
                     /**
                      * 资源类型 取值范围doc,docx,html之一
@@ -168,28 +162,34 @@ namespace TencentCloud
                     bool m_resourceTypeHasBeenSet;
 
                     /**
-                     * 资源名称
+                     * 资源名称，长度限制为256字符
                      */
                     std::string m_resourceName;
                     bool m_resourceNameHasBeenSet;
 
                     /**
-                     * 无
+                     * 资源Id，通过UploadFiles获取
                      */
-                    OrganizationInfo m_organization;
-                    bool m_organizationHasBeenSet;
+                    std::string m_resourceId;
+                    bool m_resourceIdHasBeenSet;
 
                     /**
-                     * 无
+                     * 操作者信息
                      */
                     UserInfo m_operator;
                     bool m_operatorHasBeenSet;
 
                     /**
-                     * 无
+                     * 应用号信息
                      */
                     Agent m_agent;
                     bool m_agentHasBeenSet;
+
+                    /**
+                     * 暂未开放
+                     */
+                    OrganizationInfo m_organization;
+                    bool m_organizationHasBeenSet;
 
                 };
             }

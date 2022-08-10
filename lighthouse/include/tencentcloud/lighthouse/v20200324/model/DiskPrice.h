@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/lighthouse/v20200324/model/DetailPrice.h>
 
 
 namespace TencentCloud
@@ -118,6 +119,24 @@ namespace TencentCloud
                      */
                     bool DiscountPriceHasBeenSet() const;
 
+                    /**
+                     * 获取计费项目明细列表。
+                     * @return DetailPrices 计费项目明细列表。
+                     */
+                    std::vector<DetailPrice> GetDetailPrices() const;
+
+                    /**
+                     * 设置计费项目明细列表。
+                     * @param DetailPrices 计费项目明细列表。
+                     */
+                    void SetDetailPrices(const std::vector<DetailPrice>& _detailPrices);
+
+                    /**
+                     * 判断参数 DetailPrices 是否已赋值
+                     * @return DetailPrices 是否已赋值
+                     */
+                    bool DetailPricesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -143,6 +162,12 @@ namespace TencentCloud
                      */
                     double m_discountPrice;
                     bool m_discountPriceHasBeenSet;
+
+                    /**
+                     * 计费项目明细列表。
+                     */
+                    std::vector<DetailPrice> m_detailPrices;
+                    bool m_detailPricesHasBeenSet;
 
                 };
             }

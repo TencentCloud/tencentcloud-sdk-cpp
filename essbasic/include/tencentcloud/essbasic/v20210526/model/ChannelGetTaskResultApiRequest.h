@@ -22,8 +22,8 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/essbasic/v20210526/model/Agent.h>
-#include <tencentcloud/essbasic/v20210526/model/OrganizationInfo.h>
 #include <tencentcloud/essbasic/v20210526/model/UserInfo.h>
+#include <tencentcloud/essbasic/v20210526/model/OrganizationInfo.h>
 
 
 namespace TencentCloud
@@ -46,14 +46,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取渠道信息
-                     * @return Agent 渠道信息
+                     * 获取渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
+                     * @return Agent 渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
                      */
                     Agent GetAgent() const;
 
                     /**
-                     * 设置渠道信息
-                     * @param Agent 渠道信息
+                     * 设置渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
+                     * @param Agent 渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
                      */
                     void SetAgent(const Agent& _agent);
 
@@ -64,14 +64,14 @@ namespace TencentCloud
                     bool AgentHasBeenSet() const;
 
                     /**
-                     * 获取任务Id
-                     * @return TaskId 任务Id
+                     * 获取任务Id，通过ChannelCreateConvertTaskApi接口获得
+                     * @return TaskId 任务Id，通过ChannelCreateConvertTaskApi接口获得
                      */
                     std::string GetTaskId() const;
 
                     /**
-                     * 设置任务Id
-                     * @param TaskId 任务Id
+                     * 设置任务Id，通过ChannelCreateConvertTaskApi接口获得
+                     * @param TaskId 任务Id，通过ChannelCreateConvertTaskApi接口获得
                      */
                     void SetTaskId(const std::string& _taskId);
 
@@ -82,32 +82,14 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取企业信息
-                     * @return Organization 企业信息
-                     */
-                    OrganizationInfo GetOrganization() const;
-
-                    /**
-                     * 设置企业信息
-                     * @param Organization 企业信息
-                     */
-                    void SetOrganization(const OrganizationInfo& _organization);
-
-                    /**
-                     * 判断参数 Organization 是否已赋值
-                     * @return Organization 是否已赋值
-                     */
-                    bool OrganizationHasBeenSet() const;
-
-                    /**
-                     * 获取操作人信息
-                     * @return Operator 操作人信息
+                     * 获取操作者的信息
+                     * @return Operator 操作者的信息
                      */
                     UserInfo GetOperator() const;
 
                     /**
-                     * 设置操作人信息
-                     * @param Operator 操作人信息
+                     * 设置操作者的信息
+                     * @param Operator 操作者的信息
                      */
                     void SetOperator(const UserInfo& _operator);
 
@@ -117,31 +99,49 @@ namespace TencentCloud
                      */
                     bool OperatorHasBeenSet() const;
 
+                    /**
+                     * 获取暂未开放
+                     * @return Organization 暂未开放
+                     */
+                    OrganizationInfo GetOrganization() const;
+
+                    /**
+                     * 设置暂未开放
+                     * @param Organization 暂未开放
+                     */
+                    void SetOrganization(const OrganizationInfo& _organization);
+
+                    /**
+                     * 判断参数 Organization 是否已赋值
+                     * @return Organization 是否已赋值
+                     */
+                    bool OrganizationHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 渠道信息
+                     * 渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
                      */
                     Agent m_agent;
                     bool m_agentHasBeenSet;
 
                     /**
-                     * 任务Id
+                     * 任务Id，通过ChannelCreateConvertTaskApi接口获得
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;
 
                     /**
-                     * 企业信息
-                     */
-                    OrganizationInfo m_organization;
-                    bool m_organizationHasBeenSet;
-
-                    /**
-                     * 操作人信息
+                     * 操作者的信息
                      */
                     UserInfo m_operator;
                     bool m_operatorHasBeenSet;
+
+                    /**
+                     * 暂未开放
+                     */
+                    OrganizationInfo m_organization;
+                    bool m_organizationHasBeenSet;
 
                 };
             }

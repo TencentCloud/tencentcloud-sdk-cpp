@@ -56,8 +56,20 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取任务状态
-                     * @return TaskStatus 任务状态
+                     * 获取任务状态，需要关注的状态
+0  :NeedTranform   - 任务已提交
+4  :Processing     - 文档转换中
+8  :TaskEnd        - 任务处理完成
+-2 :DownloadFailed - 下载失败
+-6 :ProcessFailed  - 转换失败
+-13:ProcessTimeout - 转换文件超时
+                     * @return TaskStatus 任务状态，需要关注的状态
+0  :NeedTranform   - 任务已提交
+4  :Processing     - 文档转换中
+8  :TaskEnd        - 任务处理完成
+-2 :DownloadFailed - 下载失败
+-6 :ProcessFailed  - 转换失败
+-13:ProcessTimeout - 转换文件超时
                      */
                     int64_t GetTaskStatus() const;
 
@@ -68,8 +80,20 @@ namespace TencentCloud
                     bool TaskStatusHasBeenSet() const;
 
                     /**
-                     * 获取状态描述
-                     * @return TaskMessage 状态描述
+                     * 获取状态描述，需要关注的状态
+NeedTranform   - 任务已提交
+Processing     - 文档转换中
+TaskEnd        - 任务处理完成
+DownloadFailed - 下载失败
+ProcessFailed  - 转换失败
+ProcessTimeout - 转换文件超时
+                     * @return TaskMessage 状态描述，需要关注的状态
+NeedTranform   - 任务已提交
+Processing     - 文档转换中
+TaskEnd        - 任务处理完成
+DownloadFailed - 下载失败
+ProcessFailed  - 转换失败
+ProcessTimeout - 转换文件超时
                      */
                     std::string GetTaskMessage() const;
 
@@ -80,8 +104,8 @@ namespace TencentCloud
                     bool TaskMessageHasBeenSet() const;
 
                     /**
-                     * 获取资源Id
-                     * @return ResourceId 资源Id
+                     * 获取资源Id，也是FileId，用于文件发起使用
+                     * @return ResourceId 资源Id，也是FileId，用于文件发起使用
                      */
                     std::string GetResourceId() const;
 
@@ -100,19 +124,31 @@ namespace TencentCloud
                     bool m_taskIdHasBeenSet;
 
                     /**
-                     * 任务状态
+                     * 任务状态，需要关注的状态
+0  :NeedTranform   - 任务已提交
+4  :Processing     - 文档转换中
+8  :TaskEnd        - 任务处理完成
+-2 :DownloadFailed - 下载失败
+-6 :ProcessFailed  - 转换失败
+-13:ProcessTimeout - 转换文件超时
                      */
                     int64_t m_taskStatus;
                     bool m_taskStatusHasBeenSet;
 
                     /**
-                     * 状态描述
+                     * 状态描述，需要关注的状态
+NeedTranform   - 任务已提交
+Processing     - 文档转换中
+TaskEnd        - 任务处理完成
+DownloadFailed - 下载失败
+ProcessFailed  - 转换失败
+ProcessTimeout - 转换文件超时
                      */
                     std::string m_taskMessage;
                     bool m_taskMessageHasBeenSet;
 
                     /**
-                     * 资源Id
+                     * 资源Id，也是FileId，用于文件发起使用
                      */
                     std::string m_resourceId;
                     bool m_resourceIdHasBeenSet;

@@ -881,7 +881,7 @@ namespace TencentCloud
                 CreateSubAppIdOutcomeCallable CreateSubAppIdCallable(const Model::CreateSubAppIdRequest& request);
 
                 /**
-                 *创建超级播放器配置，数量上限：100。
+                 *创建播放器配置，数量上限：100。
                  * @param req CreateSuperPlayerConfigRequest
                  * @return CreateSuperPlayerConfigOutcome
                  */
@@ -1058,7 +1058,7 @@ namespace TencentCloud
                 DeleteSnapshotByTimeOffsetTemplateOutcomeCallable DeleteSnapshotByTimeOffsetTemplateCallable(const Model::DeleteSnapshotByTimeOffsetTemplateRequest& request);
 
                 /**
-                 *删除超级播放器配置。  
+                 *删除播放器配置。  
 *注：系统预置播放器配置不允许删除。*
                  * @param req DeleteSuperPlayerConfigRequest
                  * @return DeleteSuperPlayerConfigOutcome
@@ -1468,7 +1468,7 @@ namespace TencentCloud
                 DescribeSubAppIdsOutcomeCallable DescribeSubAppIdsCallable(const Model::DescribeSubAppIdsRequest& request);
 
                 /**
-                 *查询超级播放器配置，支持根据条件，分页查询。
+                 *查询播放器配置，支持根据条件，分页查询。
                  * @param req DescribeSuperPlayerConfigsRequest
                  * @return DescribeSuperPlayerConfigsOutcome
                  */
@@ -1789,7 +1789,7 @@ namespace TencentCloud
                 ModifySubAppIdStatusOutcomeCallable ModifySubAppIdStatusCallable(const Model::ModifySubAppIdStatusRequest& request);
 
                 /**
-                 *修改超级播放器配置。
+                 *修改播放器配置。
                  * @param req ModifySuperPlayerConfigRequest
                  * @return ModifySuperPlayerConfigOutcome
                  */

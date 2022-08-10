@@ -785,6 +785,28 @@ namespace TencentCloud
                      */
                     bool ResourceGroupNameHasBeenSet() const;
 
+                    /**
+                     * 获取任务信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Message 任务信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetMessage() const;
+
+                    /**
+                     * 设置任务信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Message 任务信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMessage(const std::string& _message);
+
+                    /**
+                     * 判断参数 Message 是否已赋值
+                     * @return Message 是否已赋值
+                     */
+                    bool MessageHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1023,6 +1045,13 @@ namespace TencentCloud
                      */
                     std::string m_resourceGroupName;
                     bool m_resourceGroupNameHasBeenSet;
+
+                    /**
+                     * 任务信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_message;
+                    bool m_messageHasBeenSet;
 
                 };
             }

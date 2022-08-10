@@ -53,6 +53,8 @@
 #include <tencentcloud/gme/v20180711/model/ModifyAppStatusResponse.h>
 #include <tencentcloud/gme/v20180711/model/ModifyRoomInfoRequest.h>
 #include <tencentcloud/gme/v20180711/model/ModifyRoomInfoResponse.h>
+#include <tencentcloud/gme/v20180711/model/ModifyUserMicStatusRequest.h>
+#include <tencentcloud/gme/v20180711/model/ModifyUserMicStatusResponse.h>
 #include <tencentcloud/gme/v20180711/model/ScanVoiceRequest.h>
 #include <tencentcloud/gme/v20180711/model/ScanVoiceResponse.h>
 #include <tencentcloud/gme/v20180711/model/UpdateScanRoomsRequest.h>
@@ -120,6 +122,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyRoomInfoResponse> ModifyRoomInfoOutcome;
                 typedef std::future<ModifyRoomInfoOutcome> ModifyRoomInfoOutcomeCallable;
                 typedef std::function<void(const GmeClient*, const Model::ModifyRoomInfoRequest&, ModifyRoomInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRoomInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyUserMicStatusResponse> ModifyUserMicStatusOutcome;
+                typedef std::future<ModifyUserMicStatusOutcome> ModifyUserMicStatusOutcomeCallable;
+                typedef std::function<void(const GmeClient*, const Model::ModifyUserMicStatusRequest&, ModifyUserMicStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyUserMicStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::ScanVoiceResponse> ScanVoiceOutcome;
                 typedef std::future<ScanVoiceOutcome> ScanVoiceOutcomeCallable;
                 typedef std::function<void(const GmeClient*, const Model::ScanVoiceRequest&, ScanVoiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ScanVoiceAsyncHandler;
@@ -280,6 +285,15 @@ namespace TencentCloud
                 ModifyRoomInfoOutcome ModifyRoomInfo(const Model::ModifyRoomInfoRequest &request);
                 void ModifyRoomInfoAsync(const Model::ModifyRoomInfoRequest& request, const ModifyRoomInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyRoomInfoOutcomeCallable ModifyRoomInfoCallable(const Model::ModifyRoomInfoRequest& request);
+
+                /**
+                 *修改用户麦克风状态。
+                 * @param req ModifyUserMicStatusRequest
+                 * @return ModifyUserMicStatusOutcome
+                 */
+                ModifyUserMicStatusOutcome ModifyUserMicStatus(const Model::ModifyUserMicStatusRequest &request);
+                void ModifyUserMicStatusAsync(const Model::ModifyUserMicStatusRequest& request, const ModifyUserMicStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyUserMicStatusOutcomeCallable ModifyUserMicStatusCallable(const Model::ModifyUserMicStatusRequest& request);
 
                 /**
                  *本接口(ScanVoice)用于提交语音检测任务，检测任务列表最多支持100个。使用前请您登录[控制台 - 服务配置](https://console.cloud.tencent.com/gamegme/conf)开启语音分析服务。

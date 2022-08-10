@@ -63,14 +63,14 @@ namespace TencentCloud
                     bool OperatorHasBeenSet() const;
 
                     /**
-                     * 获取需要查询的流程ID列表
-                     * @return FlowIds 需要查询的流程ID列表
+                     * 获取需要查询的流程ID列表，限制最大20个
+                     * @return FlowIds 需要查询的流程ID列表，限制最大20个
                      */
                     std::vector<std::string> GetFlowIds() const;
 
                     /**
-                     * 设置需要查询的流程ID列表
-                     * @param FlowIds 需要查询的流程ID列表
+                     * 设置需要查询的流程ID列表，限制最大20个
+                     * @param FlowIds 需要查询的流程ID列表，限制最大20个
                      */
                     void SetFlowIds(const std::vector<std::string>& _flowIds);
 
@@ -107,7 +107,7 @@ namespace TencentCloud
                     bool m_operatorHasBeenSet;
 
                     /**
-                     * 需要查询的流程ID列表
+                     * 需要查询的流程ID列表，限制最大20个
                      */
                     std::vector<std::string> m_flowIds;
                     bool m_flowIdsHasBeenSet;

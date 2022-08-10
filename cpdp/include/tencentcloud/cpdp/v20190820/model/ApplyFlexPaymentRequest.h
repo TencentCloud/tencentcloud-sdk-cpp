@@ -193,6 +193,24 @@ __test__:测试环境
                      */
                     bool EnvironmentHasBeenSet() const;
 
+                    /**
+                     * 获取支付结果通知回调地址
+                     * @return NotifyUrl 支付结果通知回调地址
+                     */
+                    std::string GetNotifyUrl() const;
+
+                    /**
+                     * 设置支付结果通知回调地址
+                     * @param NotifyUrl 支付结果通知回调地址
+                     */
+                    void SetNotifyUrl(const std::string& _notifyUrl);
+
+                    /**
+                     * 判断参数 NotifyUrl 是否已赋值
+                     * @return NotifyUrl 是否已赋值
+                     */
+                    bool NotifyUrlHasBeenSet() const;
+
                 private:
 
                     /**
@@ -242,6 +260,12 @@ __test__:测试环境
                      */
                     std::string m_environment;
                     bool m_environmentHasBeenSet;
+
+                    /**
+                     * 支付结果通知回调地址
+                     */
+                    std::string m_notifyUrl;
+                    bool m_notifyUrlHasBeenSet;
 
                 };
             }

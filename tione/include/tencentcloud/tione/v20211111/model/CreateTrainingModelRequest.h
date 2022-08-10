@@ -316,14 +316,14 @@ namespace TencentCloud
                     bool ModelOutputPathHasBeenSet() const;
 
                     /**
-                     * 获取模型来源 （JOB/COS/AUTO_ML）
-                     * @return TrainingModelSource 模型来源 （JOB/COS/AUTO_ML）
+                     * 获取模型来源 （JOB/COS）
+                     * @return TrainingModelSource 模型来源 （JOB/COS）
                      */
                     std::string GetTrainingModelSource() const;
 
                     /**
-                     * 设置模型来源 （JOB/COS/AUTO_ML）
-                     * @param TrainingModelSource 模型来源 （JOB/COS/AUTO_ML）
+                     * 设置模型来源 （JOB/COS）
+                     * @param TrainingModelSource 模型来源 （JOB/COS）
                      */
                     void SetTrainingModelSource(const std::string& _trainingModelSource);
 
@@ -431,6 +431,24 @@ namespace TencentCloud
                      */
                     bool ModelFormatHasBeenSet() const;
 
+                    /**
+                     * 获取推理镜像ID
+                     * @return ReasoningEnvironmentId 推理镜像ID
+                     */
+                    std::string GetReasoningEnvironmentId() const;
+
+                    /**
+                     * 设置推理镜像ID
+                     * @param ReasoningEnvironmentId 推理镜像ID
+                     */
+                    void SetReasoningEnvironmentId(const std::string& _reasoningEnvironmentId);
+
+                    /**
+                     * 判断参数 ReasoningEnvironmentId 是否已赋值
+                     * @return ReasoningEnvironmentId 是否已赋值
+                     */
+                    bool ReasoningEnvironmentIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -524,7 +542,7 @@ namespace TencentCloud
                     bool m_modelOutputPathHasBeenSet;
 
                     /**
-                     * 模型来源 （JOB/COS/AUTO_ML）
+                     * 模型来源 （JOB/COS）
                      */
                     std::string m_trainingModelSource;
                     bool m_trainingModelSourceHasBeenSet;
@@ -560,6 +578,12 @@ namespace TencentCloud
                      */
                     std::string m_modelFormat;
                     bool m_modelFormatHasBeenSet;
+
+                    /**
+                     * 推理镜像ID
+                     */
+                    std::string m_reasoningEnvironmentId;
+                    bool m_reasoningEnvironmentIdHasBeenSet;
 
                 };
             }

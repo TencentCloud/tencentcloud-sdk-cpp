@@ -24,7 +24,8 @@ using namespace std;
 
 DeleteTrainingModelRequest::DeleteTrainingModelRequest() :
     m_trainingModelIdHasBeenSet(false),
-    m_enableDeleteCosHasBeenSet(false)
+    m_enableDeleteCosHasBeenSet(false),
+    m_modelVersionTypeHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string DeleteTrainingModelRequest::ToJsonString() const
         string key = "EnableDeleteCos";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_enableDeleteCos, allocator);
+    }
+
+    if (m_modelVersionTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModelVersionType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_modelVersionType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -89,6 +98,22 @@ void DeleteTrainingModelRequest::SetEnableDeleteCos(const bool& _enableDeleteCos
 bool DeleteTrainingModelRequest::EnableDeleteCosHasBeenSet() const
 {
     return m_enableDeleteCosHasBeenSet;
+}
+
+string DeleteTrainingModelRequest::GetModelVersionType() const
+{
+    return m_modelVersionType;
+}
+
+void DeleteTrainingModelRequest::SetModelVersionType(const string& _modelVersionType)
+{
+    m_modelVersionType = _modelVersionType;
+    m_modelVersionTypeHasBeenSet = true;
+}
+
+bool DeleteTrainingModelRequest::ModelVersionTypeHasBeenSet() const
+{
+    return m_modelVersionTypeHasBeenSet;
 }
 
 

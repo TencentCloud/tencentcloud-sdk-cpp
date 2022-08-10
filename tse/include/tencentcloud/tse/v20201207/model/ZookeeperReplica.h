@@ -166,6 +166,28 @@ namespace TencentCloud
                      */
                     bool ZoneIdHasBeenSet() const;
 
+                    /**
+                     * 获取别名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AliasName 别名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetAliasName() const;
+
+                    /**
+                     * 设置别名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AliasName 别名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAliasName(const std::string& _aliasName);
+
+                    /**
+                     * 判断参数 AliasName 是否已赋值
+                     * @return AliasName 是否已赋值
+                     */
+                    bool AliasNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -206,6 +228,13 @@ namespace TencentCloud
                      */
                     std::string m_zoneId;
                     bool m_zoneIdHasBeenSet;
+
+                    /**
+                     * 别名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_aliasName;
+                    bool m_aliasNameHasBeenSet;
 
                 };
             }

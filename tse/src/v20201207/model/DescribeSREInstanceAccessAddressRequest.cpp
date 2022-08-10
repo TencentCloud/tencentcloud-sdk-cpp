@@ -26,7 +26,8 @@ DescribeSREInstanceAccessAddressRequest::DescribeSREInstanceAccessAddressRequest
     m_instanceIdHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
-    m_workloadHasBeenSet(false)
+    m_workloadHasBeenSet(false),
+    m_engineRegionHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,14 @@ string DescribeSREInstanceAccessAddressRequest::ToJsonString() const
         string key = "Workload";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_workload.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_engineRegionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EngineRegion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_engineRegion.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -139,6 +148,22 @@ void DescribeSREInstanceAccessAddressRequest::SetWorkload(const string& _workloa
 bool DescribeSREInstanceAccessAddressRequest::WorkloadHasBeenSet() const
 {
     return m_workloadHasBeenSet;
+}
+
+string DescribeSREInstanceAccessAddressRequest::GetEngineRegion() const
+{
+    return m_engineRegion;
+}
+
+void DescribeSREInstanceAccessAddressRequest::SetEngineRegion(const string& _engineRegion)
+{
+    m_engineRegion = _engineRegion;
+    m_engineRegionHasBeenSet = true;
+}
+
+bool DescribeSREInstanceAccessAddressRequest::EngineRegionHasBeenSet() const
+{
+    return m_engineRegionHasBeenSet;
 }
 
 

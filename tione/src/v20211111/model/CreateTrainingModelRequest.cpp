@@ -43,7 +43,8 @@ CreateTrainingModelRequest::CreateTrainingModelRequest() :
     m_autoMLTaskIdHasBeenSet(false),
     m_trainingJobVersionHasBeenSet(false),
     m_modelVersionTypeHasBeenSet(false),
-    m_modelFormatHasBeenSet(false)
+    m_modelFormatHasBeenSet(false),
+    m_reasoningEnvironmentIdHasBeenSet(false)
 {
 }
 
@@ -230,6 +231,14 @@ string CreateTrainingModelRequest::ToJsonString() const
         string key = "ModelFormat";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_modelFormat.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_reasoningEnvironmentIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReasoningEnvironmentId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_reasoningEnvironmentId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -574,6 +583,22 @@ void CreateTrainingModelRequest::SetModelFormat(const string& _modelFormat)
 bool CreateTrainingModelRequest::ModelFormatHasBeenSet() const
 {
     return m_modelFormatHasBeenSet;
+}
+
+string CreateTrainingModelRequest::GetReasoningEnvironmentId() const
+{
+    return m_reasoningEnvironmentId;
+}
+
+void CreateTrainingModelRequest::SetReasoningEnvironmentId(const string& _reasoningEnvironmentId)
+{
+    m_reasoningEnvironmentId = _reasoningEnvironmentId;
+    m_reasoningEnvironmentIdHasBeenSet = true;
+}
+
+bool CreateTrainingModelRequest::ReasoningEnvironmentIdHasBeenSet() const
+{
+    return m_reasoningEnvironmentIdHasBeenSet;
 }
 
 

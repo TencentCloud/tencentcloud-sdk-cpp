@@ -56,7 +56,8 @@ TrainingTaskDetail::TrainingTaskDetail() :
     m_updateTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
     m_billingInfoHasBeenSet(false),
-    m_resourceGroupNameHasBeenSet(false)
+    m_resourceGroupNameHasBeenSet(false),
+    m_messageHasBeenSet(false)
 {
 }
 
@@ -490,6 +491,16 @@ CoreInternalOutcome TrainingTaskDetail::Deserialize(const rapidjson::Value &valu
         m_resourceGroupNameHasBeenSet = true;
     }
 
+    if (value.HasMember("Message") && !value["Message"].IsNull())
+    {
+        if (!value["Message"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TrainingTaskDetail.Message` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_message = string(value["Message"].GetString());
+        m_messageHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -809,6 +820,14 @@ void TrainingTaskDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "ResourceGroupName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_resourceGroupName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_messageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Message";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_message.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1388,5 +1407,21 @@ void TrainingTaskDetail::SetResourceGroupName(const string& _resourceGroupName)
 bool TrainingTaskDetail::ResourceGroupNameHasBeenSet() const
 {
     return m_resourceGroupNameHasBeenSet;
+}
+
+string TrainingTaskDetail::GetMessage() const
+{
+    return m_message;
+}
+
+void TrainingTaskDetail::SetMessage(const string& _message)
+{
+    m_message = _message;
+    m_messageHasBeenSet = true;
+}
+
+bool TrainingTaskDetail::MessageHasBeenSet() const
+{
+    return m_messageHasBeenSet;
 }
 

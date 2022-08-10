@@ -21,9 +21,9 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/ess/v20201111/model/OrganizationInfo.h>
 #include <tencentcloud/ess/v20201111/model/UserInfo.h>
 #include <tencentcloud/ess/v20201111/model/Agent.h>
+#include <tencentcloud/ess/v20201111/model/OrganizationInfo.h>
 
 
 namespace TencentCloud
@@ -46,14 +46,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务Id
-                     * @return TaskId 任务Id
+                     * 获取任务Id，通过CreateConvertTaskApi得到
+                     * @return TaskId 任务Id，通过CreateConvertTaskApi得到
                      */
                     std::string GetTaskId() const;
 
                     /**
-                     * 设置任务Id
-                     * @param TaskId 任务Id
+                     * 设置任务Id，通过CreateConvertTaskApi得到
+                     * @param TaskId 任务Id，通过CreateConvertTaskApi得到
                      */
                     void SetTaskId(const std::string& _taskId);
 
@@ -62,24 +62,6 @@ namespace TencentCloud
                      * @return TaskId 是否已赋值
                      */
                     bool TaskIdHasBeenSet() const;
-
-                    /**
-                     * 获取企业信息
-                     * @return Organization 企业信息
-                     */
-                    OrganizationInfo GetOrganization() const;
-
-                    /**
-                     * 设置企业信息
-                     * @param Organization 企业信息
-                     */
-                    void SetOrganization(const OrganizationInfo& _organization);
-
-                    /**
-                     * 判断参数 Organization 是否已赋值
-                     * @return Organization 是否已赋值
-                     */
-                    bool OrganizationHasBeenSet() const;
 
                     /**
                      * 获取操作人信息
@@ -100,14 +82,14 @@ namespace TencentCloud
                     bool OperatorHasBeenSet() const;
 
                     /**
-                     * 获取渠道信息
-                     * @return Agent 渠道信息
+                     * 获取应用号信息
+                     * @return Agent 应用号信息
                      */
                     Agent GetAgent() const;
 
                     /**
-                     * 设置渠道信息
-                     * @param Agent 渠道信息
+                     * 设置应用号信息
+                     * @param Agent 应用号信息
                      */
                     void SetAgent(const Agent& _agent);
 
@@ -117,19 +99,31 @@ namespace TencentCloud
                      */
                     bool AgentHasBeenSet() const;
 
+                    /**
+                     * 获取暂未开放
+                     * @return Organization 暂未开放
+                     */
+                    OrganizationInfo GetOrganization() const;
+
+                    /**
+                     * 设置暂未开放
+                     * @param Organization 暂未开放
+                     */
+                    void SetOrganization(const OrganizationInfo& _organization);
+
+                    /**
+                     * 判断参数 Organization 是否已赋值
+                     * @return Organization 是否已赋值
+                     */
+                    bool OrganizationHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 任务Id
+                     * 任务Id，通过CreateConvertTaskApi得到
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;
-
-                    /**
-                     * 企业信息
-                     */
-                    OrganizationInfo m_organization;
-                    bool m_organizationHasBeenSet;
 
                     /**
                      * 操作人信息
@@ -138,10 +132,16 @@ namespace TencentCloud
                     bool m_operatorHasBeenSet;
 
                     /**
-                     * 渠道信息
+                     * 应用号信息
                      */
                     Agent m_agent;
                     bool m_agentHasBeenSet;
+
+                    /**
+                     * 暂未开放
+                     */
+                    OrganizationInfo m_organization;
+                    bool m_organizationHasBeenSet;
 
                 };
             }

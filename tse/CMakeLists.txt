@@ -27,6 +27,8 @@ set(tse_public_header_model
   include/tencentcloud/tse/v20201207/model/CreateEngineResponse.h
   include/tencentcloud/tse/v20201207/model/DescribeZookeeperReplicasRequest.h
   include/tencentcloud/tse/v20201207/model/DeleteEngineRequest.h
+  include/tencentcloud/tse/v20201207/model/DescribeCloudNativeAPIGatewayNodesRequest.h
+  include/tencentcloud/tse/v20201207/model/DescribeCloudNativeAPIGatewayNodesResult.h
   include/tencentcloud/tse/v20201207/model/ZookeeperReplica.h
   include/tencentcloud/tse/v20201207/model/DescribeNacosServerInterfacesRequest.h
   include/tencentcloud/tse/v20201207/model/SREInstance.h
@@ -34,17 +36,19 @@ set(tse_public_header_model
   include/tencentcloud/tse/v20201207/model/DescribeSREInstancesResponse.h
   include/tencentcloud/tse/v20201207/model/ZookeeperServerInterface.h
   include/tencentcloud/tse/v20201207/model/ServiceGovernanceInfo.h
+  include/tencentcloud/tse/v20201207/model/CloudNativeAPIGatewayNode.h
   include/tencentcloud/tse/v20201207/model/DescribeNacosReplicasResponse.h
   include/tencentcloud/tse/v20201207/model/DescribeZookeeperServerInterfacesResponse.h
   include/tencentcloud/tse/v20201207/model/BoundK8SInfo.h
   include/tencentcloud/tse/v20201207/model/DescribeSREInstancesRequest.h
+  include/tencentcloud/tse/v20201207/model/DescribeCloudNativeAPIGatewayNodesResponse.h
   include/tencentcloud/tse/v20201207/model/DescribeZookeeperReplicasResponse.h
   include/tencentcloud/tse/v20201207/model/VpcInfo.h
-  include/tencentcloud/tse/v20201207/model/Filter.h
+  include/tencentcloud/tse/v20201207/model/EngineAdmin.h
   include/tencentcloud/tse/v20201207/model/CreateEngineRequest.h
   include/tencentcloud/tse/v20201207/model/DescribeSREInstanceAccessAddressRequest.h
   include/tencentcloud/tse/v20201207/model/DescribeNacosServerInterfacesResponse.h
-  include/tencentcloud/tse/v20201207/model/EngineAdmin.h
+  include/tencentcloud/tse/v20201207/model/Filter.h
   include/tencentcloud/tse/v20201207/model/NacosServerInterface.h
   include/tencentcloud/tse/v20201207/model/DescribeZookeeperServerInterfacesRequest.h
   include/tencentcloud/tse/v20201207/model/EnvInfo.h
@@ -62,6 +66,8 @@ set(tse_src
   src/v20201207/model/CreateEngineResponse.cpp
   src/v20201207/model/DescribeZookeeperReplicasRequest.cpp
   src/v20201207/model/DeleteEngineRequest.cpp
+  src/v20201207/model/DescribeCloudNativeAPIGatewayNodesRequest.cpp
+  src/v20201207/model/DescribeCloudNativeAPIGatewayNodesResult.cpp
   src/v20201207/model/ZookeeperReplica.cpp
   src/v20201207/model/DescribeNacosServerInterfacesRequest.cpp
   src/v20201207/model/SREInstance.cpp
@@ -69,17 +75,19 @@ set(tse_src
   src/v20201207/model/DescribeSREInstancesResponse.cpp
   src/v20201207/model/ZookeeperServerInterface.cpp
   src/v20201207/model/ServiceGovernanceInfo.cpp
+  src/v20201207/model/CloudNativeAPIGatewayNode.cpp
   src/v20201207/model/DescribeNacosReplicasResponse.cpp
   src/v20201207/model/DescribeZookeeperServerInterfacesResponse.cpp
   src/v20201207/model/BoundK8SInfo.cpp
   src/v20201207/model/DescribeSREInstancesRequest.cpp
+  src/v20201207/model/DescribeCloudNativeAPIGatewayNodesResponse.cpp
   src/v20201207/model/DescribeZookeeperReplicasResponse.cpp
   src/v20201207/model/VpcInfo.cpp
-  src/v20201207/model/Filter.cpp
+  src/v20201207/model/EngineAdmin.cpp
   src/v20201207/model/CreateEngineRequest.cpp
   src/v20201207/model/DescribeSREInstanceAccessAddressRequest.cpp
   src/v20201207/model/DescribeNacosServerInterfacesResponse.cpp
-  src/v20201207/model/EngineAdmin.cpp
+  src/v20201207/model/Filter.cpp
   src/v20201207/model/NacosServerInterface.cpp
   src/v20201207/model/DescribeZookeeperServerInterfacesRequest.cpp
   src/v20201207/model/EnvInfo.cpp

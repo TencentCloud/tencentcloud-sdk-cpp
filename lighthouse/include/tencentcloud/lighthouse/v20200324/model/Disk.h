@@ -317,14 +317,18 @@ namespace TencentCloud
                     bool LatestOperationRequestIdHasBeenSet() const;
 
                     /**
-                     * 获取创建时间
-                     * @return CreatedTime 创建时间
+                     * 获取创建时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 
+格式为： YYYY-MM-DDThh:mm:ssZ。
+                     * @return CreatedTime 创建时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 
+格式为： YYYY-MM-DDThh:mm:ssZ。
                      */
                     std::string GetCreatedTime() const;
 
                     /**
-                     * 设置创建时间
-                     * @param CreatedTime 创建时间
+                     * 设置创建时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 
+格式为： YYYY-MM-DDThh:mm:ssZ。
+                     * @param CreatedTime 创建时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 
+格式为： YYYY-MM-DDThh:mm:ssZ。
                      */
                     void SetCreatedTime(const std::string& _createdTime);
 
@@ -335,17 +339,21 @@ namespace TencentCloud
                     bool CreatedTimeHasBeenSet() const;
 
                     /**
-                     * 获取到期时间
+                     * 获取到期时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 
+格式为： YYYY-MM-DDThh:mm:ssZ。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ExpiredTime 到期时间
+                     * @return ExpiredTime 到期时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 
+格式为： YYYY-MM-DDThh:mm:ssZ。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetExpiredTime() const;
 
                     /**
-                     * 设置到期时间
+                     * 设置到期时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 
+格式为： YYYY-MM-DDThh:mm:ssZ。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ExpiredTime 到期时间
+                     * @param ExpiredTime 到期时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 
+格式为： YYYY-MM-DDThh:mm:ssZ。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetExpiredTime(const std::string& _expiredTime);
@@ -357,17 +365,21 @@ namespace TencentCloud
                     bool ExpiredTimeHasBeenSet() const;
 
                     /**
-                     * 获取隔离时间
+                     * 获取隔离时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 
+格式为： YYYY-MM-DDThh:mm:ssZ。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IsolatedTime 隔离时间
+                     * @return IsolatedTime 隔离时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 
+格式为： YYYY-MM-DDThh:mm:ssZ。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetIsolatedTime() const;
 
                     /**
-                     * 设置隔离时间
+                     * 设置隔离时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 
+格式为： YYYY-MM-DDThh:mm:ssZ。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IsolatedTime 隔离时间
+                     * @param IsolatedTime 隔离时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 
+格式为： YYYY-MM-DDThh:mm:ssZ。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetIsolatedTime(const std::string& _isolatedTime);
@@ -377,6 +389,42 @@ namespace TencentCloud
                      * @return IsolatedTime 是否已赋值
                      */
                     bool IsolatedTimeHasBeenSet() const;
+
+                    /**
+                     * 获取云硬盘的已有备份点数量。
+                     * @return DiskBackupCount 云硬盘的已有备份点数量。
+                     */
+                    int64_t GetDiskBackupCount() const;
+
+                    /**
+                     * 设置云硬盘的已有备份点数量。
+                     * @param DiskBackupCount 云硬盘的已有备份点数量。
+                     */
+                    void SetDiskBackupCount(const int64_t& _diskBackupCount);
+
+                    /**
+                     * 判断参数 DiskBackupCount 是否已赋值
+                     * @return DiskBackupCount 是否已赋值
+                     */
+                    bool DiskBackupCountHasBeenSet() const;
+
+                    /**
+                     * 获取云硬盘的备份点配额数量。
+                     * @return DiskBackupQuota 云硬盘的备份点配额数量。
+                     */
+                    int64_t GetDiskBackupQuota() const;
+
+                    /**
+                     * 设置云硬盘的备份点配额数量。
+                     * @param DiskBackupQuota 云硬盘的备份点配额数量。
+                     */
+                    void SetDiskBackupQuota(const int64_t& _diskBackupQuota);
+
+                    /**
+                     * 判断参数 DiskBackupQuota 是否已赋值
+                     * @return DiskBackupQuota 是否已赋值
+                     */
+                    bool DiskBackupQuotaHasBeenSet() const;
 
                 private:
 
@@ -471,24 +519,39 @@ namespace TencentCloud
                     bool m_latestOperationRequestIdHasBeenSet;
 
                     /**
-                     * 创建时间
+                     * 创建时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 
+格式为： YYYY-MM-DDThh:mm:ssZ。
                      */
                     std::string m_createdTime;
                     bool m_createdTimeHasBeenSet;
 
                     /**
-                     * 到期时间
+                     * 到期时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 
+格式为： YYYY-MM-DDThh:mm:ssZ。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_expiredTime;
                     bool m_expiredTimeHasBeenSet;
 
                     /**
-                     * 隔离时间
+                     * 隔离时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 
+格式为： YYYY-MM-DDThh:mm:ssZ。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_isolatedTime;
                     bool m_isolatedTimeHasBeenSet;
+
+                    /**
+                     * 云硬盘的已有备份点数量。
+                     */
+                    int64_t m_diskBackupCount;
+                    bool m_diskBackupCountHasBeenSet;
+
+                    /**
+                     * 云硬盘的备份点配额数量。
+                     */
+                    int64_t m_diskBackupQuota;
+                    bool m_diskBackupQuotaHasBeenSet;
 
                 };
             }

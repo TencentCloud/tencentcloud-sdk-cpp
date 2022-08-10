@@ -82,14 +82,14 @@ namespace TencentCloud
                     bool FiltersHasBeenSet() const;
 
                     /**
-                     * 获取查询个数，默认20，最大100
-                     * @return Limit 查询个数，默认20，最大100
+                     * 获取查询个数，默认20，最大200
+                     * @return Limit 查询个数，默认20，最大200
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置查询个数，默认20，最大100
-                     * @param Limit 查询个数，默认20，最大100
+                     * 设置查询个数，默认20，最大200
+                     * @param Limit 查询个数，默认20，最大200
                      */
                     void SetLimit(const uint64_t& _limit);
 
@@ -186,7 +186,7 @@ namespace TencentCloud
                     bool m_filtersHasBeenSet;
 
                     /**
-                     * 查询个数，默认20，最大100
+                     * 查询个数，默认20，最大200
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;

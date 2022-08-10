@@ -271,6 +271,18 @@ namespace TencentCloud
                      */
                     bool ImageUnsafeCntHasBeenSet() const;
 
+                    /**
+                     * 获取主机未安装agent数量
+                     * @return HostUnInstallCnt 主机未安装agent数量
+                     */
+                    uint64_t GetHostUnInstallCnt() const;
+
+                    /**
+                     * 判断参数 HostUnInstallCnt 是否已赋值
+                     * @return HostUnInstallCnt 是否已赋值
+                     */
+                    bool HostUnInstallCntHasBeenSet() const;
+
                 private:
 
                     /**
@@ -386,6 +398,12 @@ namespace TencentCloud
                      */
                     uint64_t m_imageUnsafeCnt;
                     bool m_imageUnsafeCntHasBeenSet;
+
+                    /**
+                     * 主机未安装agent数量
+                     */
+                    uint64_t m_hostUnInstallCnt;
+                    bool m_hostUnInstallCntHasBeenSet;
 
                 };
             }

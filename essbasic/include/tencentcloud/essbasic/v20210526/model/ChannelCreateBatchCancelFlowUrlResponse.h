@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取批量撤回url
-                     * @return BatchCancelFlowUrl 批量撤回url
+                     * 获取批量撤销url
+                     * @return BatchCancelFlowUrl 批量撤销url
                      */
                     std::string GetBatchCancelFlowUrl() const;
 
@@ -56,8 +56,8 @@ namespace TencentCloud
                     bool BatchCancelFlowUrlHasBeenSet() const;
 
                     /**
-                     * 获取签署流程批量撤回失败原因
-                     * @return FailMessages 签署流程批量撤回失败原因
+                     * 获取签署流程批量撤销失败原因
+                     * @return FailMessages 签署流程批量撤销失败原因
                      */
                     std::vector<std::string> GetFailMessages() const;
 
@@ -68,8 +68,8 @@ namespace TencentCloud
                     bool FailMessagesHasBeenSet() const;
 
                     /**
-                     * 获取签署撤回url过期时间-年月日-时分秒
-                     * @return UrlExpireOn 签署撤回url过期时间-年月日-时分秒
+                     * 获取签署撤销url过期时间-年月日-时分秒
+                     * @return UrlExpireOn 签署撤销url过期时间-年月日-时分秒
                      */
                     std::string GetUrlExpireOn() const;
 
@@ -82,19 +82,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 批量撤回url
+                     * 批量撤销url
                      */
                     std::string m_batchCancelFlowUrl;
                     bool m_batchCancelFlowUrlHasBeenSet;
 
                     /**
-                     * 签署流程批量撤回失败原因
+                     * 签署流程批量撤销失败原因
                      */
                     std::vector<std::string> m_failMessages;
                     bool m_failMessagesHasBeenSet;
 
                     /**
-                     * 签署撤回url过期时间-年月日-时分秒
+                     * 签署撤销url过期时间-年月日-时分秒
                      */
                     std::string m_urlExpireOn;
                     bool m_urlExpireOnHasBeenSet;
