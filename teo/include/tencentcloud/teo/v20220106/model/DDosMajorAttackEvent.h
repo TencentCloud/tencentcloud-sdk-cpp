@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取ddos 策略组id
-                     * @return PolicyId ddos 策略组id
+                     * 获取ddos 策略组id。
+                     * @return PolicyId ddos 策略组id。
                      */
                     int64_t GetPolicyId() const;
 
                     /**
-                     * 设置ddos 策略组id
-                     * @param PolicyId ddos 策略组id
+                     * 设置ddos 策略组id。
+                     * @param PolicyId ddos 策略组id。
                      */
                     void SetPolicyId(const int64_t& _policyId);
 
@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool PolicyIdHasBeenSet() const;
 
                     /**
-                     * 获取攻击最大带宽
-                     * @return AttackMaxBandWidth 攻击最大带宽
+                     * 获取攻击最大带宽。
+                     * @return AttackMaxBandWidth 攻击最大带宽。
                      */
                     int64_t GetAttackMaxBandWidth() const;
 
                     /**
-                     * 设置攻击最大带宽
-                     * @param AttackMaxBandWidth 攻击最大带宽
+                     * 设置攻击最大带宽。
+                     * @param AttackMaxBandWidth 攻击最大带宽。
                      */
                     void SetAttackMaxBandWidth(const int64_t& _attackMaxBandWidth);
 
@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool AttackMaxBandWidthHasBeenSet() const;
 
                     /**
-                     * 获取攻击时间 单位为s
-                     * @return AttackTime 攻击时间 单位为s
+                     * 获取攻击请求时间，采用unix秒级时间戳。
+                     * @return AttackTime 攻击请求时间，采用unix秒级时间戳。
                      */
                     int64_t GetAttackTime() const;
 
                     /**
-                     * 设置攻击时间 单位为s
-                     * @param AttackTime 攻击时间 单位为s
+                     * 设置攻击请求时间，采用unix秒级时间戳。
+                     * @param AttackTime 攻击请求时间，采用unix秒级时间戳。
                      */
                     void SetAttackTime(const int64_t& _attackTime);
 
@@ -103,19 +103,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * ddos 策略组id
+                     * ddos 策略组id。
                      */
                     int64_t m_policyId;
                     bool m_policyIdHasBeenSet;
 
                     /**
-                     * 攻击最大带宽
+                     * 攻击最大带宽。
                      */
                     int64_t m_attackMaxBandWidth;
                     bool m_attackMaxBandWidthHasBeenSet;
 
                     /**
-                     * 攻击时间 单位为s
+                     * 攻击请求时间，采用unix秒级时间戳。
                      */
                     int64_t m_attackTime;
                     bool m_attackTimeHasBeenSet;

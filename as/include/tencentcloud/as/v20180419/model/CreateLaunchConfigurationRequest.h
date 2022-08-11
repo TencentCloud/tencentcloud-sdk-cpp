@@ -505,6 +505,28 @@ namespace TencentCloud
                      */
                     bool DiskTypePolicyHasBeenSet() const;
 
+                    /**
+                     * 获取高性能计算集群ID。<br>
+注意：此字段默认为空。
+                     * @return HpcClusterId 高性能计算集群ID。<br>
+注意：此字段默认为空。
+                     */
+                    std::string GetHpcClusterId() const;
+
+                    /**
+                     * 设置高性能计算集群ID。<br>
+注意：此字段默认为空。
+                     * @param HpcClusterId 高性能计算集群ID。<br>
+注意：此字段默认为空。
+                     */
+                    void SetHpcClusterId(const std::string& _hpcClusterId);
+
+                    /**
+                     * 判断参数 HpcClusterId 是否已赋值
+                     * @return HpcClusterId 是否已赋值
+                     */
+                    bool HpcClusterIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -652,6 +674,13 @@ namespace TencentCloud
                      */
                     std::string m_diskTypePolicy;
                     bool m_diskTypePolicyHasBeenSet;
+
+                    /**
+                     * 高性能计算集群ID。<br>
+注意：此字段默认为空。
+                     */
+                    std::string m_hpcClusterId;
+                    bool m_hpcClusterIdHasBeenSet;
 
                 };
             }

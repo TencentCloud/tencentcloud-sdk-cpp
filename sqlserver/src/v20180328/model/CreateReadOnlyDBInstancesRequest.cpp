@@ -42,7 +42,9 @@ CreateReadOnlyDBInstancesRequest::CreateReadOnlyDBInstancesRequest() :
     m_securityGroupListHasBeenSet(false),
     m_autoVoucherHasBeenSet(false),
     m_voucherIdsHasBeenSet(false),
-    m_resourceTagsHasBeenSet(false)
+    m_resourceTagsHasBeenSet(false),
+    m_collationHasBeenSet(false),
+    m_timeZoneHasBeenSet(false)
 {
 }
 
@@ -228,6 +230,22 @@ string CreateReadOnlyDBInstancesRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_collationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Collation";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_collation.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_timeZoneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TimeZone";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_timeZone.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -556,6 +574,38 @@ void CreateReadOnlyDBInstancesRequest::SetResourceTags(const vector<ResourceTag>
 bool CreateReadOnlyDBInstancesRequest::ResourceTagsHasBeenSet() const
 {
     return m_resourceTagsHasBeenSet;
+}
+
+string CreateReadOnlyDBInstancesRequest::GetCollation() const
+{
+    return m_collation;
+}
+
+void CreateReadOnlyDBInstancesRequest::SetCollation(const string& _collation)
+{
+    m_collation = _collation;
+    m_collationHasBeenSet = true;
+}
+
+bool CreateReadOnlyDBInstancesRequest::CollationHasBeenSet() const
+{
+    return m_collationHasBeenSet;
+}
+
+string CreateReadOnlyDBInstancesRequest::GetTimeZone() const
+{
+    return m_timeZone;
+}
+
+void CreateReadOnlyDBInstancesRequest::SetTimeZone(const string& _timeZone)
+{
+    m_timeZone = _timeZone;
+    m_timeZoneHasBeenSet = true;
+}
+
+bool CreateReadOnlyDBInstancesRequest::TimeZoneHasBeenSet() const
+{
+    return m_timeZoneHasBeenSet;
 }
 
 

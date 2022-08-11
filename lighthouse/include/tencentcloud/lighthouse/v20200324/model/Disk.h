@@ -209,14 +209,54 @@ namespace TencentCloud
                     bool RenewFlagHasBeenSet() const;
 
                     /**
-                     * 获取磁盘状态
-                     * @return DiskState 磁盘状态
+                     * 获取磁盘状态，取值范围：
+<li>PENDING：创建中。 </li>
+<li>UNATTACHED：未挂载。</li>
+<li>ATTACHING：挂载中。</li>
+<li>ATTACHED：已挂载。</li>
+<li>DETACHING：卸载中。 </li>
+<li> SHUTDOWN：已隔离。</li>
+<li> CREATED_FAILED：创建失败。</li>
+<li>TERMINATING：销毁中。</li>
+<li> DELETING：删除中。</li>
+<li> FREEZING：冻结中。</li>
+                     * @return DiskState 磁盘状态，取值范围：
+<li>PENDING：创建中。 </li>
+<li>UNATTACHED：未挂载。</li>
+<li>ATTACHING：挂载中。</li>
+<li>ATTACHED：已挂载。</li>
+<li>DETACHING：卸载中。 </li>
+<li> SHUTDOWN：已隔离。</li>
+<li> CREATED_FAILED：创建失败。</li>
+<li>TERMINATING：销毁中。</li>
+<li> DELETING：删除中。</li>
+<li> FREEZING：冻结中。</li>
                      */
                     std::string GetDiskState() const;
 
                     /**
-                     * 设置磁盘状态
-                     * @param DiskState 磁盘状态
+                     * 设置磁盘状态，取值范围：
+<li>PENDING：创建中。 </li>
+<li>UNATTACHED：未挂载。</li>
+<li>ATTACHING：挂载中。</li>
+<li>ATTACHED：已挂载。</li>
+<li>DETACHING：卸载中。 </li>
+<li> SHUTDOWN：已隔离。</li>
+<li> CREATED_FAILED：创建失败。</li>
+<li>TERMINATING：销毁中。</li>
+<li> DELETING：删除中。</li>
+<li> FREEZING：冻结中。</li>
+                     * @param DiskState 磁盘状态，取值范围：
+<li>PENDING：创建中。 </li>
+<li>UNATTACHED：未挂载。</li>
+<li>ATTACHING：挂载中。</li>
+<li>ATTACHED：已挂载。</li>
+<li>DETACHING：卸载中。 </li>
+<li> SHUTDOWN：已隔离。</li>
+<li> CREATED_FAILED：创建失败。</li>
+<li>TERMINATING：销毁中。</li>
+<li> DELETING：删除中。</li>
+<li> FREEZING：冻结中。</li>
                      */
                     void SetDiskState(const std::string& _diskState);
 
@@ -483,7 +523,17 @@ namespace TencentCloud
                     bool m_renewFlagHasBeenSet;
 
                     /**
-                     * 磁盘状态
+                     * 磁盘状态，取值范围：
+<li>PENDING：创建中。 </li>
+<li>UNATTACHED：未挂载。</li>
+<li>ATTACHING：挂载中。</li>
+<li>ATTACHED：已挂载。</li>
+<li>DETACHING：卸载中。 </li>
+<li> SHUTDOWN：已隔离。</li>
+<li> CREATED_FAILED：创建失败。</li>
+<li>TERMINATING：销毁中。</li>
+<li> DELETING：删除中。</li>
+<li> FREEZING：冻结中。</li>
                      */
                     std::string m_diskState;
                     bool m_diskStateHasBeenSet;

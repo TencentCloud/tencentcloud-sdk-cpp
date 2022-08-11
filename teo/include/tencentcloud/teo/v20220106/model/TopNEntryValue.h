@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Entry的name
-                     * @return Name Entry的name
+                     * 获取排序实体名。
+                     * @return Name 排序实体名。
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置Entry的name
-                     * @param Name Entry的name
+                     * 设置排序实体名。
+                     * @param Name 排序实体名。
                      */
                     void SetName(const std::string& _name);
 
@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取数量
-                     * @return Count 数量
+                     * 获取排序实体数量。
+                     * @return Count 排序实体数量。
                      */
                     int64_t GetCount() const;
 
                     /**
-                     * 设置数量
-                     * @param Count 数量
+                     * 设置排序实体数量。
+                     * @param Count 排序实体数量。
                      */
                     void SetCount(const int64_t& _count);
 
@@ -85,13 +85,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Entry的name
+                     * 排序实体名。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 数量
+                     * 排序实体数量。
                      */
                     int64_t m_count;
                     bool m_countHasBeenSet;

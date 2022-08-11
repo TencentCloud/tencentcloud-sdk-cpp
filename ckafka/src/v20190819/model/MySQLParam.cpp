@@ -36,7 +36,9 @@ MySQLParam::MySQLParam() :
     m_dataTargetRecordMappingHasBeenSet(false),
     m_topicRegexHasBeenSet(false),
     m_topicReplacementHasBeenSet(false),
-    m_keyColumnsHasBeenSet(false)
+    m_keyColumnsHasBeenSet(false),
+    m_dropInvalidMessageHasBeenSet(false),
+    m_dropClsHasBeenSet(false)
 {
 }
 
@@ -215,6 +217,33 @@ CoreInternalOutcome MySQLParam::Deserialize(const rapidjson::Value &value)
         m_keyColumnsHasBeenSet = true;
     }
 
+    if (value.HasMember("DropInvalidMessage") && !value["DropInvalidMessage"].IsNull())
+    {
+        if (!value["DropInvalidMessage"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `MySQLParam.DropInvalidMessage` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_dropInvalidMessage = value["DropInvalidMessage"].GetBool();
+        m_dropInvalidMessageHasBeenSet = true;
+    }
+
+    if (value.HasMember("DropCls") && !value["DropCls"].IsNull())
+    {
+        if (!value["DropCls"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `MySQLParam.DropCls` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_dropCls.Deserialize(value["DropCls"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_dropClsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -355,6 +384,23 @@ void MySQLParam::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "KeyColumns";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_keyColumns.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dropInvalidMessageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DropInvalidMessage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_dropInvalidMessage, allocator);
+    }
+
+    if (m_dropClsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DropCls";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_dropCls.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -614,5 +660,37 @@ void MySQLParam::SetKeyColumns(const string& _keyColumns)
 bool MySQLParam::KeyColumnsHasBeenSet() const
 {
     return m_keyColumnsHasBeenSet;
+}
+
+bool MySQLParam::GetDropInvalidMessage() const
+{
+    return m_dropInvalidMessage;
+}
+
+void MySQLParam::SetDropInvalidMessage(const bool& _dropInvalidMessage)
+{
+    m_dropInvalidMessage = _dropInvalidMessage;
+    m_dropInvalidMessageHasBeenSet = true;
+}
+
+bool MySQLParam::DropInvalidMessageHasBeenSet() const
+{
+    return m_dropInvalidMessageHasBeenSet;
+}
+
+DropCls MySQLParam::GetDropCls() const
+{
+    return m_dropCls;
+}
+
+void MySQLParam::SetDropCls(const DropCls& _dropCls)
+{
+    m_dropCls = _dropCls;
+    m_dropClsHasBeenSet = true;
+}
+
+bool MySQLParam::DropClsHasBeenSet() const
+{
+    return m_dropClsHasBeenSet;
 }
 

@@ -44,14 +44,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取起始时间
-                     * @return StartTime 起始时间
+                     * 获取起始时间。
+                     * @return StartTime 起始时间。
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置起始时间
-                     * @param StartTime 起始时间
+                     * 设置起始时间。
+                     * @param StartTime 起始时间。
                      */
                     void SetStartTime(const std::string& _startTime);
 
@@ -62,14 +62,14 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取结束时间
-                     * @return EndTime 结束时间
+                     * 获取结束时间。
+                     * @return EndTime 结束时间。
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置结束时间
-                     * @param EndTime 结束时间
+                     * 设置结束时间。
+                     * @param EndTime 结束时间。
                      */
                     void SetEndTime(const std::string& _endTime);
 
@@ -80,14 +80,14 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取每页条数
-                     * @return PageSize 每页条数
+                     * 获取分页拉取的最大返回结果数。最大值：1000。
+                     * @return PageSize 分页拉取的最大返回结果数。最大值：1000。
                      */
                     int64_t GetPageSize() const;
 
                     /**
-                     * 设置每页条数
-                     * @param PageSize 每页条数
+                     * 设置分页拉取的最大返回结果数。最大值：1000。
+                     * @param PageSize 分页拉取的最大返回结果数。最大值：1000。
                      */
                     void SetPageSize(const int64_t& _pageSize);
 
@@ -98,14 +98,14 @@ namespace TencentCloud
                     bool PageSizeHasBeenSet() const;
 
                     /**
-                     * 获取当前页
-                     * @return PageNo 当前页
+                     * 获取分页拉取的起始页号。最小值：1。
+                     * @return PageNo 分页拉取的起始页号。最小值：1。
                      */
                     int64_t GetPageNo() const;
 
                     /**
-                     * 设置当前页
-                     * @param PageNo 当前页
+                     * 设置分页拉取的起始页号。最小值：1。
+                     * @param PageNo 分页拉取的起始页号。最小值：1。
                      */
                     void SetPageNo(const int64_t& _pageNo);
 
@@ -116,14 +116,14 @@ namespace TencentCloud
                     bool PageNoHasBeenSet() const;
 
                     /**
-                     * 获取站点集合
-                     * @return ZoneIds 站点集合
+                     * 获取站点集合，不填默认查询所有站点。
+                     * @return ZoneIds 站点集合，不填默认查询所有站点。
                      */
                     std::vector<std::string> GetZoneIds() const;
 
                     /**
-                     * 设置站点集合
-                     * @param ZoneIds 站点集合
+                     * 设置站点集合，不填默认查询所有站点。
+                     * @param ZoneIds 站点集合，不填默认查询所有站点。
                      */
                     void SetZoneIds(const std::vector<std::string>& _zoneIds);
 
@@ -134,14 +134,14 @@ namespace TencentCloud
                     bool ZoneIdsHasBeenSet() const;
 
                     /**
-                     * 获取域名集合
-                     * @return Domains 域名集合
+                     * 获取域名集合，不填默认查询所有子域名。
+                     * @return Domains 域名集合，不填默认查询所有子域名。
                      */
                     std::vector<std::string> GetDomains() const;
 
                     /**
-                     * 设置域名集合
-                     * @param Domains 域名集合
+                     * 设置域名集合，不填默认查询所有子域名。
+                     * @param Domains 域名集合，不填默认查询所有子域名。
                      */
                     void SetDomains(const std::vector<std::string>& _domains);
 
@@ -152,14 +152,46 @@ namespace TencentCloud
                     bool DomainsHasBeenSet() const;
 
                     /**
-                     * 获取查询条件
-                     * @return QueryCondition 查询条件
+                     * 获取筛选条件，取值有：
+<li>action ：执行动作（处置方式）；</li>
+<li>sipCountryCode ：ip所在国家 ；</li>
+<li>attackIp ：攻击ip ；</li>
+<li>ruleId ：规则id ；</li>
+<li>eventId ：事件id ；</li>
+<li>ua ：用户代理 ；</li>
+<li>requestMethod ：请求方法 ；</li>
+<li>uri ：统一资源标识符 。</li>
+                     * @return QueryCondition 筛选条件，取值有：
+<li>action ：执行动作（处置方式）；</li>
+<li>sipCountryCode ：ip所在国家 ；</li>
+<li>attackIp ：攻击ip ；</li>
+<li>ruleId ：规则id ；</li>
+<li>eventId ：事件id ；</li>
+<li>ua ：用户代理 ；</li>
+<li>requestMethod ：请求方法 ；</li>
+<li>uri ：统一资源标识符 。</li>
                      */
                     std::vector<QueryCondition> GetQueryCondition() const;
 
                     /**
-                     * 设置查询条件
-                     * @param QueryCondition 查询条件
+                     * 设置筛选条件，取值有：
+<li>action ：执行动作（处置方式）；</li>
+<li>sipCountryCode ：ip所在国家 ；</li>
+<li>attackIp ：攻击ip ；</li>
+<li>ruleId ：规则id ；</li>
+<li>eventId ：事件id ；</li>
+<li>ua ：用户代理 ；</li>
+<li>requestMethod ：请求方法 ；</li>
+<li>uri ：统一资源标识符 。</li>
+                     * @param QueryCondition 筛选条件，取值有：
+<li>action ：执行动作（处置方式）；</li>
+<li>sipCountryCode ：ip所在国家 ；</li>
+<li>attackIp ：攻击ip ；</li>
+<li>ruleId ：规则id ；</li>
+<li>eventId ：事件id ；</li>
+<li>ua ：用户代理 ；</li>
+<li>requestMethod ：请求方法 ；</li>
+<li>uri ：统一资源标识符 。</li>
                      */
                     void SetQueryCondition(const std::vector<QueryCondition>& _queryCondition);
 
@@ -172,43 +204,51 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 起始时间
+                     * 起始时间。
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 结束时间
+                     * 结束时间。
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 每页条数
+                     * 分页拉取的最大返回结果数。最大值：1000。
                      */
                     int64_t m_pageSize;
                     bool m_pageSizeHasBeenSet;
 
                     /**
-                     * 当前页
+                     * 分页拉取的起始页号。最小值：1。
                      */
                     int64_t m_pageNo;
                     bool m_pageNoHasBeenSet;
 
                     /**
-                     * 站点集合
+                     * 站点集合，不填默认查询所有站点。
                      */
                     std::vector<std::string> m_zoneIds;
                     bool m_zoneIdsHasBeenSet;
 
                     /**
-                     * 域名集合
+                     * 域名集合，不填默认查询所有子域名。
                      */
                     std::vector<std::string> m_domains;
                     bool m_domainsHasBeenSet;
 
                     /**
-                     * 查询条件
+                     * 筛选条件，取值有：
+<li>action ：执行动作（处置方式）；</li>
+<li>sipCountryCode ：ip所在国家 ；</li>
+<li>attackIp ：攻击ip ；</li>
+<li>ruleId ：规则id ；</li>
+<li>eventId ：事件id ；</li>
+<li>ua ：用户代理 ；</li>
+<li>requestMethod ：请求方法 ；</li>
+<li>uri ：统一资源标识符 。</li>
                      */
                     std::vector<QueryCondition> m_queryCondition;
                     bool m_queryConditionHasBeenSet;

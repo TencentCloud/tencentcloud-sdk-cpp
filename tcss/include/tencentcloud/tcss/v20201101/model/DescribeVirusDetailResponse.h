@@ -715,6 +715,30 @@ CONTAINER_NOT_FOUND_DEAL_RECOVER:恢复时，容器不存在
                      */
                     bool ContainerIsolateOperationSrcHasBeenSet() const;
 
+                    /**
+                     * 获取检测平台
+1: 云查杀引擎
+2: tav
+3: binaryAi
+4: 异常行为
+5: 威胁情报
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CheckPlatform 检测平台
+1: 云查杀引擎
+2: tav
+3: binaryAi
+4: 异常行为
+5: 威胁情报
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> GetCheckPlatform() const;
+
+                    /**
+                     * 判断参数 CheckPlatform 是否已赋值
+                     * @return CheckPlatform 是否已赋值
+                     */
+                    bool CheckPlatformHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1052,6 +1076,18 @@ CONTAINER_NOT_FOUND_DEAL_RECOVER:恢复时，容器不存在
                      */
                     std::string m_containerIsolateOperationSrc;
                     bool m_containerIsolateOperationSrcHasBeenSet;
+
+                    /**
+                     * 检测平台
+1: 云查杀引擎
+2: tav
+3: binaryAi
+4: 异常行为
+5: 威胁情报
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_checkPlatform;
+                    bool m_checkPlatformHasBeenSet;
 
                 };
             }

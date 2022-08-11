@@ -35,6 +35,7 @@ CreateFlowByFilesRequest::CreateFlowByFilesRequest() :
     m_deadlineHasBeenSet(false),
     m_unorderedHasBeenSet(false),
     m_customShowMapHasBeenSet(false),
+    m_needSignReviewHasBeenSet(false),
     m_agentHasBeenSet(false)
 {
 }
@@ -167,6 +168,14 @@ string CreateFlowByFilesRequest::ToJsonString() const
         string key = "CustomShowMap";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_customShowMap.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_needSignReviewHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NeedSignReview";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_needSignReview, allocator);
     }
 
     if (m_agentHasBeenSet)
@@ -376,6 +385,22 @@ void CreateFlowByFilesRequest::SetCustomShowMap(const string& _customShowMap)
 bool CreateFlowByFilesRequest::CustomShowMapHasBeenSet() const
 {
     return m_customShowMapHasBeenSet;
+}
+
+bool CreateFlowByFilesRequest::GetNeedSignReview() const
+{
+    return m_needSignReview;
+}
+
+void CreateFlowByFilesRequest::SetNeedSignReview(const bool& _needSignReview)
+{
+    m_needSignReview = _needSignReview;
+    m_needSignReviewHasBeenSet = true;
+}
+
+bool CreateFlowByFilesRequest::NeedSignReviewHasBeenSet() const
+{
+    return m_needSignReviewHasBeenSet;
 }
 
 Agent CreateFlowByFilesRequest::GetAgent() const

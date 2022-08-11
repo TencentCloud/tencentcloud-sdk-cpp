@@ -2276,6 +2276,49 @@ VodClient::DescribeCdnLogsOutcomeCallable VodClient::DescribeCdnLogsCallable(con
     return task->get_future();
 }
 
+VodClient::DescribeClientUploadAccelerationUsageDataOutcome VodClient::DescribeClientUploadAccelerationUsageData(const DescribeClientUploadAccelerationUsageDataRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeClientUploadAccelerationUsageData");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeClientUploadAccelerationUsageDataResponse rsp = DescribeClientUploadAccelerationUsageDataResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeClientUploadAccelerationUsageDataOutcome(rsp);
+        else
+            return DescribeClientUploadAccelerationUsageDataOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeClientUploadAccelerationUsageDataOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::DescribeClientUploadAccelerationUsageDataAsync(const DescribeClientUploadAccelerationUsageDataRequest& request, const DescribeClientUploadAccelerationUsageDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeClientUploadAccelerationUsageData(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VodClient::DescribeClientUploadAccelerationUsageDataOutcomeCallable VodClient::DescribeClientUploadAccelerationUsageDataCallable(const DescribeClientUploadAccelerationUsageDataRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeClientUploadAccelerationUsageDataOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeClientUploadAccelerationUsageData(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VodClient::DescribeContentReviewTemplatesOutcome VodClient::DescribeContentReviewTemplates(const DescribeContentReviewTemplatesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeContentReviewTemplates");

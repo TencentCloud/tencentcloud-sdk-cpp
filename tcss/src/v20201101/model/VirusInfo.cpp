@@ -39,7 +39,9 @@ VirusInfo::VirusInfo() :
     m_containerNetStatusHasBeenSet(false),
     m_containerNetSubStatusHasBeenSet(false),
     m_containerIsolateOperationSrcHasBeenSet(false),
-    m_mD5HasBeenSet(false)
+    m_mD5HasBeenSet(false),
+    m_riskLevelHasBeenSet(false),
+    m_checkPlatformHasBeenSet(false)
 {
 }
 
@@ -238,6 +240,29 @@ CoreInternalOutcome VirusInfo::Deserialize(const rapidjson::Value &value)
         m_mD5HasBeenSet = true;
     }
 
+    if (value.HasMember("RiskLevel") && !value["RiskLevel"].IsNull())
+    {
+        if (!value["RiskLevel"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VirusInfo.RiskLevel` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_riskLevel = string(value["RiskLevel"].GetString());
+        m_riskLevelHasBeenSet = true;
+    }
+
+    if (value.HasMember("CheckPlatform") && !value["CheckPlatform"].IsNull())
+    {
+        if (!value["CheckPlatform"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `VirusInfo.CheckPlatform` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["CheckPlatform"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_checkPlatform.push_back((*itr).GetString());
+        }
+        m_checkPlatformHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -395,6 +420,27 @@ void VirusInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "MD5";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_mD5.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_riskLevelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RiskLevel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_riskLevel.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_checkPlatformHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CheckPlatform";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_checkPlatform.begin(); itr != m_checkPlatform.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -702,5 +748,37 @@ void VirusInfo::SetMD5(const string& _mD5)
 bool VirusInfo::MD5HasBeenSet() const
 {
     return m_mD5HasBeenSet;
+}
+
+string VirusInfo::GetRiskLevel() const
+{
+    return m_riskLevel;
+}
+
+void VirusInfo::SetRiskLevel(const string& _riskLevel)
+{
+    m_riskLevel = _riskLevel;
+    m_riskLevelHasBeenSet = true;
+}
+
+bool VirusInfo::RiskLevelHasBeenSet() const
+{
+    return m_riskLevelHasBeenSet;
+}
+
+vector<string> VirusInfo::GetCheckPlatform() const
+{
+    return m_checkPlatform;
+}
+
+void VirusInfo::SetCheckPlatform(const vector<string>& _checkPlatform)
+{
+    m_checkPlatform = _checkPlatform;
+    m_checkPlatformHasBeenSet = true;
+}
+
+bool VirusInfo::CheckPlatformHasBeenSet() const
+{
+    return m_checkPlatformHasBeenSet;
 }
 

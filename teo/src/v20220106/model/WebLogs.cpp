@@ -35,7 +35,8 @@ WebLogs::WebLogs() :
     m_disposalMethodHasBeenSet(false),
     m_httpLogHasBeenSet(false),
     m_uaHasBeenSet(false),
-    m_attackTimeHasBeenSet(false)
+    m_attackTimeHasBeenSet(false),
+    m_ruleDetailListHasBeenSet(false)
 {
 }
 
@@ -194,6 +195,26 @@ CoreInternalOutcome WebLogs::Deserialize(const rapidjson::Value &value)
         m_attackTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("RuleDetailList") && !value["RuleDetailList"].IsNull())
+    {
+        if (!value["RuleDetailList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `WebLogs.RuleDetailList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["RuleDetailList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            SecRuleRelatedInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_ruleDetailList.push_back(item);
+        }
+        m_ruleDetailListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -319,6 +340,21 @@ void WebLogs::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "AttackTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_attackTime, allocator);
+    }
+
+    if (m_ruleDetailListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RuleDetailList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_ruleDetailList.begin(); itr != m_ruleDetailList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -562,5 +598,21 @@ void WebLogs::SetAttackTime(const uint64_t& _attackTime)
 bool WebLogs::AttackTimeHasBeenSet() const
 {
     return m_attackTimeHasBeenSet;
+}
+
+vector<SecRuleRelatedInfo> WebLogs::GetRuleDetailList() const
+{
+    return m_ruleDetailList;
+}
+
+void WebLogs::SetRuleDetailList(const vector<SecRuleRelatedInfo>& _ruleDetailList)
+{
+    m_ruleDetailList = _ruleDetailList;
+    m_ruleDetailListHasBeenSet = true;
+}
+
+bool WebLogs::RuleDetailListHasBeenSet() const
+{
+    return m_ruleDetailListHasBeenSet;
 }
 

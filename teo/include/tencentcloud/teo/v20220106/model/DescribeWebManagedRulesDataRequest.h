@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/teo/v20220106/model/QueryCondition.h>
 
 
 namespace TencentCloud
@@ -43,14 +44,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取开始时间
-                     * @return StartTime 开始时间
+                     * 获取开始时间，RFC3339格式。
+                     * @return StartTime 开始时间，RFC3339格式。
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置开始时间
-                     * @param StartTime 开始时间
+                     * 设置开始时间，RFC3339格式。
+                     * @param StartTime 开始时间，RFC3339格式。
                      */
                     void SetStartTime(const std::string& _startTime);
 
@@ -61,14 +62,14 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取结束时间
-                     * @return EndTime 结束时间
+                     * 获取结束时间，RFC3339格式。
+                     * @return EndTime 结束时间，RFC3339格式。
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置结束时间
-                     * @param EndTime 结束时间
+                     * 设置结束时间，RFC3339格式。
+                     * @param EndTime 结束时间，RFC3339格式。
                      */
                     void SetEndTime(const std::string& _endTime);
 
@@ -79,14 +80,18 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取统计指标列表
-                     * @return MetricNames 统计指标列表
+                     * 获取统计指标列表，取值有：
+<li>waf_interceptNum ：waf拦截次数 。</li>
+                     * @return MetricNames 统计指标列表，取值有：
+<li>waf_interceptNum ：waf拦截次数 。</li>
                      */
                     std::vector<std::string> GetMetricNames() const;
 
                     /**
-                     * 设置统计指标列表
-                     * @param MetricNames 统计指标列表
+                     * 设置统计指标列表，取值有：
+<li>waf_interceptNum ：waf拦截次数 。</li>
+                     * @param MetricNames 统计指标列表，取值有：
+<li>waf_interceptNum ：waf拦截次数 。</li>
                      */
                     void SetMetricNames(const std::vector<std::string>& _metricNames);
 
@@ -97,14 +102,14 @@ namespace TencentCloud
                     bool MetricNamesHasBeenSet() const;
 
                     /**
-                     * 获取站点id列表
-                     * @return ZoneIds 站点id列表
+                     * 获取站点id列表，不填默认选择全部站点。
+                     * @return ZoneIds 站点id列表，不填默认选择全部站点。
                      */
                     std::vector<std::string> GetZoneIds() const;
 
                     /**
-                     * 设置站点id列表
-                     * @param ZoneIds 站点id列表
+                     * 设置站点id列表，不填默认选择全部站点。
+                     * @param ZoneIds 站点id列表，不填默认选择全部站点。
                      */
                     void SetZoneIds(const std::vector<std::string>& _zoneIds);
 
@@ -115,14 +120,14 @@ namespace TencentCloud
                     bool ZoneIdsHasBeenSet() const;
 
                     /**
-                     * 获取子域名列表
-                     * @return Domains 子域名列表
+                     * 获取子域名列表，不填默认选择子域名。
+                     * @return Domains 子域名列表，不填默认选择子域名。
                      */
                     std::vector<std::string> GetDomains() const;
 
                     /**
-                     * 设置子域名列表
-                     * @param Domains 子域名列表
+                     * 设置子域名列表，不填默认选择子域名。
+                     * @param Domains 子域名列表，不填默认选择子域名。
                      */
                     void SetDomains(const std::vector<std::string>& _domains);
 
@@ -133,14 +138,14 @@ namespace TencentCloud
                     bool DomainsHasBeenSet() const;
 
                     /**
-                     * 获取协议类型
-                     * @return ProtocolType 协议类型
+                     * 获取该字段已废弃，请勿传。
+                     * @return ProtocolType 该字段已废弃，请勿传。
                      */
                     std::string GetProtocolType() const;
 
                     /**
-                     * 设置协议类型
-                     * @param ProtocolType 协议类型
+                     * 设置该字段已废弃，请勿传。
+                     * @param ProtocolType 该字段已废弃，请勿传。
                      */
                     void SetProtocolType(const std::string& _protocolType);
 
@@ -151,70 +156,14 @@ namespace TencentCloud
                     bool ProtocolTypeHasBeenSet() const;
 
                     /**
-                     * 获取"webshell" : Webshell检测防护
-"oa" : 常见OA漏洞防护
-"xss" : XSS跨站脚本攻击防护
-"xxe" : XXE攻击防护
-"webscan" : 扫描器攻击漏洞防护
-"cms" : 常见CMS漏洞防护
-"upload" : 恶意文件上传攻击防护
-"sql" : SQL注入攻击防护
-"cmd_inject": 命令/代码注入攻击防护
-"osc" : 开源组件漏洞防护
-"file_read" : 任意文件读取
-"ldap" : LDAP注入攻击防护
-"other" : 其它漏洞防护
-
-"all":"所有"
-                     * @return AttackType "webshell" : Webshell检测防护
-"oa" : 常见OA漏洞防护
-"xss" : XSS跨站脚本攻击防护
-"xxe" : XXE攻击防护
-"webscan" : 扫描器攻击漏洞防护
-"cms" : 常见CMS漏洞防护
-"upload" : 恶意文件上传攻击防护
-"sql" : SQL注入攻击防护
-"cmd_inject": 命令/代码注入攻击防护
-"osc" : 开源组件漏洞防护
-"file_read" : 任意文件读取
-"ldap" : LDAP注入攻击防护
-"other" : 其它漏洞防护
-
-"all":"所有"
+                     * 获取该字段已废弃，请勿传。
+                     * @return AttackType 该字段已废弃，请勿传。
                      */
                     std::string GetAttackType() const;
 
                     /**
-                     * 设置"webshell" : Webshell检测防护
-"oa" : 常见OA漏洞防护
-"xss" : XSS跨站脚本攻击防护
-"xxe" : XXE攻击防护
-"webscan" : 扫描器攻击漏洞防护
-"cms" : 常见CMS漏洞防护
-"upload" : 恶意文件上传攻击防护
-"sql" : SQL注入攻击防护
-"cmd_inject": 命令/代码注入攻击防护
-"osc" : 开源组件漏洞防护
-"file_read" : 任意文件读取
-"ldap" : LDAP注入攻击防护
-"other" : 其它漏洞防护
-
-"all":"所有"
-                     * @param AttackType "webshell" : Webshell检测防护
-"oa" : 常见OA漏洞防护
-"xss" : XSS跨站脚本攻击防护
-"xxe" : XXE攻击防护
-"webscan" : 扫描器攻击漏洞防护
-"cms" : 常见CMS漏洞防护
-"upload" : 恶意文件上传攻击防护
-"sql" : SQL注入攻击防护
-"cmd_inject": 命令/代码注入攻击防护
-"osc" : 开源组件漏洞防护
-"file_read" : 任意文件读取
-"ldap" : LDAP注入攻击防护
-"other" : 其它漏洞防护
-
-"all":"所有"
+                     * 设置该字段已废弃，请勿传。
+                     * @param AttackType 该字段已废弃，请勿传。
                      */
                     void SetAttackType(const std::string& _attackType);
 
@@ -225,14 +174,30 @@ namespace TencentCloud
                     bool AttackTypeHasBeenSet() const;
 
                     /**
-                     * 获取查询时间粒度，可选{min,5min,hour,day}
-                     * @return Interval 查询时间粒度，可选{min,5min,hour,day}
+                     * 获取查询时间粒度，取值有：
+<li>min ：1分钟 ；</li>
+<li>5min ：5分钟 ；</li>
+<li>hour ：1小时 ；</li>
+<li>day ：1天 。</li>
+                     * @return Interval 查询时间粒度，取值有：
+<li>min ：1分钟 ；</li>
+<li>5min ：5分钟 ；</li>
+<li>hour ：1小时 ；</li>
+<li>day ：1天 。</li>
                      */
                     std::string GetInterval() const;
 
                     /**
-                     * 设置查询时间粒度，可选{min,5min,hour,day}
-                     * @param Interval 查询时间粒度，可选{min,5min,hour,day}
+                     * 设置查询时间粒度，取值有：
+<li>min ：1分钟 ；</li>
+<li>5min ：5分钟 ；</li>
+<li>hour ：1小时 ；</li>
+<li>day ：1天 。</li>
+                     * @param Interval 查询时间粒度，取值有：
+<li>min ：1分钟 ；</li>
+<li>5min ：5分钟 ；</li>
+<li>hour ：1小时 ；</li>
+<li>day ：1天 。</li>
                      */
                     void SetInterval(const std::string& _interval);
 
@@ -242,69 +207,89 @@ namespace TencentCloud
                      */
                     bool IntervalHasBeenSet() const;
 
+                    /**
+                     * 获取筛选条件，取值有：
+<li>action ：执行动作 。</li>
+                     * @return QueryCondition 筛选条件，取值有：
+<li>action ：执行动作 。</li>
+                     */
+                    std::vector<QueryCondition> GetQueryCondition() const;
+
+                    /**
+                     * 设置筛选条件，取值有：
+<li>action ：执行动作 。</li>
+                     * @param QueryCondition 筛选条件，取值有：
+<li>action ：执行动作 。</li>
+                     */
+                    void SetQueryCondition(const std::vector<QueryCondition>& _queryCondition);
+
+                    /**
+                     * 判断参数 QueryCondition 是否已赋值
+                     * @return QueryCondition 是否已赋值
+                     */
+                    bool QueryConditionHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 开始时间
+                     * 开始时间，RFC3339格式。
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 结束时间
+                     * 结束时间，RFC3339格式。
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 统计指标列表
+                     * 统计指标列表，取值有：
+<li>waf_interceptNum ：waf拦截次数 。</li>
                      */
                     std::vector<std::string> m_metricNames;
                     bool m_metricNamesHasBeenSet;
 
                     /**
-                     * 站点id列表
+                     * 站点id列表，不填默认选择全部站点。
                      */
                     std::vector<std::string> m_zoneIds;
                     bool m_zoneIdsHasBeenSet;
 
                     /**
-                     * 子域名列表
+                     * 子域名列表，不填默认选择子域名。
                      */
                     std::vector<std::string> m_domains;
                     bool m_domainsHasBeenSet;
 
                     /**
-                     * 协议类型
+                     * 该字段已废弃，请勿传。
                      */
                     std::string m_protocolType;
                     bool m_protocolTypeHasBeenSet;
 
                     /**
-                     * "webshell" : Webshell检测防护
-"oa" : 常见OA漏洞防护
-"xss" : XSS跨站脚本攻击防护
-"xxe" : XXE攻击防护
-"webscan" : 扫描器攻击漏洞防护
-"cms" : 常见CMS漏洞防护
-"upload" : 恶意文件上传攻击防护
-"sql" : SQL注入攻击防护
-"cmd_inject": 命令/代码注入攻击防护
-"osc" : 开源组件漏洞防护
-"file_read" : 任意文件读取
-"ldap" : LDAP注入攻击防护
-"other" : 其它漏洞防护
-
-"all":"所有"
+                     * 该字段已废弃，请勿传。
                      */
                     std::string m_attackType;
                     bool m_attackTypeHasBeenSet;
 
                     /**
-                     * 查询时间粒度，可选{min,5min,hour,day}
+                     * 查询时间粒度，取值有：
+<li>min ：1分钟 ；</li>
+<li>5min ：5分钟 ；</li>
+<li>hour ：1小时 ；</li>
+<li>day ：1天 。</li>
                      */
                     std::string m_interval;
                     bool m_intervalHasBeenSet;
+
+                    /**
+                     * 筛选条件，取值有：
+<li>action ：执行动作 。</li>
+                     */
+                    std::vector<QueryCondition> m_queryCondition;
+                    bool m_queryConditionHasBeenSet;
 
                 };
             }

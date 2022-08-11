@@ -28,7 +28,9 @@ ModifyStaffRequest::ModifyStaffRequest() :
     m_nameHasBeenSet(false),
     m_phoneHasBeenSet(false),
     m_nickHasBeenSet(false),
-    m_skillGroupIdsHasBeenSet(false)
+    m_skillGroupIdsHasBeenSet(false),
+    m_useMobileCallOutHasBeenSet(false),
+    m_useMobileAcceptHasBeenSet(false)
 {
 }
 
@@ -90,6 +92,22 @@ string ModifyStaffRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
+    }
+
+    if (m_useMobileCallOutHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UseMobileCallOut";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_useMobileCallOut, allocator);
+    }
+
+    if (m_useMobileAcceptHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UseMobileAccept";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_useMobileAccept, allocator);
     }
 
 
@@ -194,6 +212,38 @@ void ModifyStaffRequest::SetSkillGroupIds(const vector<int64_t>& _skillGroupIds)
 bool ModifyStaffRequest::SkillGroupIdsHasBeenSet() const
 {
     return m_skillGroupIdsHasBeenSet;
+}
+
+bool ModifyStaffRequest::GetUseMobileCallOut() const
+{
+    return m_useMobileCallOut;
+}
+
+void ModifyStaffRequest::SetUseMobileCallOut(const bool& _useMobileCallOut)
+{
+    m_useMobileCallOut = _useMobileCallOut;
+    m_useMobileCallOutHasBeenSet = true;
+}
+
+bool ModifyStaffRequest::UseMobileCallOutHasBeenSet() const
+{
+    return m_useMobileCallOutHasBeenSet;
+}
+
+int64_t ModifyStaffRequest::GetUseMobileAccept() const
+{
+    return m_useMobileAccept;
+}
+
+void ModifyStaffRequest::SetUseMobileAccept(const int64_t& _useMobileAccept)
+{
+    m_useMobileAccept = _useMobileAccept;
+    m_useMobileAcceptHasBeenSet = true;
+}
+
+bool ModifyStaffRequest::UseMobileAcceptHasBeenSet() const
+{
+    return m_useMobileAcceptHasBeenSet;
 }
 
 

@@ -48,17 +48,17 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取CC拦截日志数据集合
+                     * 获取CC拦截日志数据集合。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return List CC拦截日志数据集合
+                     * @return List CC拦截日志数据集合。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<CCLog> GetList() const;
 
                     /**
-                     * 设置CC拦截日志数据集合
+                     * 设置CC拦截日志数据集合。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param List CC拦截日志数据集合
+                     * @param List CC拦截日志数据集合。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetList(const std::vector<CCLog>& _list);
@@ -70,18 +70,14 @@ namespace TencentCloud
                     bool ListHasBeenSet() const;
 
                     /**
-                     * 获取当前页
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PageNo 当前页
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取分页拉取的起始页号。最小值：1。
+                     * @return PageNo 分页拉取的起始页号。最小值：1。
                      */
                     int64_t GetPageNo() const;
 
                     /**
-                     * 设置当前页
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PageNo 当前页
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置分页拉取的起始页号。最小值：1。
+                     * @param PageNo 分页拉取的起始页号。最小值：1。
                      */
                     void SetPageNo(const int64_t& _pageNo);
 
@@ -92,18 +88,14 @@ namespace TencentCloud
                     bool PageNoHasBeenSet() const;
 
                     /**
-                     * 获取每页展示条数
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PageSize 每页展示条数
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取分页拉取的最大返回结果数。最大值：1000。
+                     * @return PageSize 分页拉取的最大返回结果数。最大值：1000。
                      */
                     int64_t GetPageSize() const;
 
                     /**
-                     * 设置每页展示条数
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PageSize 每页展示条数
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置分页拉取的最大返回结果数。最大值：1000。
+                     * @param PageSize 分页拉取的最大返回结果数。最大值：1000。
                      */
                     void SetPageSize(const int64_t& _pageSize);
 
@@ -114,18 +106,14 @@ namespace TencentCloud
                     bool PageSizeHasBeenSet() const;
 
                     /**
-                     * 获取总页数
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Pages 总页数
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取总页数。
+                     * @return Pages 总页数。
                      */
                     int64_t GetPages() const;
 
                     /**
-                     * 设置总页数
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Pages 总页数
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置总页数。
+                     * @param Pages 总页数。
                      */
                     void SetPages(const int64_t& _pages);
 
@@ -136,18 +124,14 @@ namespace TencentCloud
                     bool PagesHasBeenSet() const;
 
                     /**
-                     * 获取总条数
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TotalSize 总条数
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取总条数。
+                     * @return TotalSize 总条数。
                      */
                     int64_t GetTotalSize() const;
 
                     /**
-                     * 设置总条数
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TotalSize 总条数
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置总条数。
+                     * @param TotalSize 总条数。
                      */
                     void SetTotalSize(const int64_t& _totalSize);
 
@@ -160,36 +144,32 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * CC拦截日志数据集合
+                     * CC拦截日志数据集合。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<CCLog> m_list;
                     bool m_listHasBeenSet;
 
                     /**
-                     * 当前页
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 分页拉取的起始页号。最小值：1。
                      */
                     int64_t m_pageNo;
                     bool m_pageNoHasBeenSet;
 
                     /**
-                     * 每页展示条数
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 分页拉取的最大返回结果数。最大值：1000。
                      */
                     int64_t m_pageSize;
                     bool m_pageSizeHasBeenSet;
 
                     /**
-                     * 总页数
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 总页数。
                      */
                     int64_t m_pages;
                     bool m_pagesHasBeenSet;
 
                     /**
-                     * 总条数
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 总条数。
                      */
                     int64_t m_totalSize;
                     bool m_totalSizeHasBeenSet;

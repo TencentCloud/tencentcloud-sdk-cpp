@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取开始时间
-                     * @return StartTime 开始时间
+                     * 获取开始时间。
+                     * @return StartTime 开始时间。
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置开始时间
-                     * @param StartTime 开始时间
+                     * 设置开始时间。
+                     * @param StartTime 开始时间。
                      */
                     void SetStartTime(const std::string& _startTime);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取结束时间
-                     * @return EndTime 结束时间
+                     * 获取结束时间。
+                     * @return EndTime 结束时间。
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置结束时间
-                     * @param EndTime 结束时间
+                     * 设置结束时间。
+                     * @param EndTime 结束时间。
                      */
                     void SetEndTime(const std::string& _endTime);
 
@@ -79,14 +79,30 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取统计指标列表
-                     * @return MetricNames 统计指标列表
+                     * 获取统计指标列表，取值有：
+<li>ddos_attackMaxBandwidth ：攻击带宽峰值 ；</li>
+<li>ddos_attackMaxPackageRate：攻击包速率峰值  ；</li>
+<li>ddos_attackBandwidth ：攻击带宽曲线 ；</li>
+<li>ddos_attackPackageRate ：攻击包速率曲线 。</li>
+                     * @return MetricNames 统计指标列表，取值有：
+<li>ddos_attackMaxBandwidth ：攻击带宽峰值 ；</li>
+<li>ddos_attackMaxPackageRate：攻击包速率峰值  ；</li>
+<li>ddos_attackBandwidth ：攻击带宽曲线 ；</li>
+<li>ddos_attackPackageRate ：攻击包速率曲线 。</li>
                      */
                     std::vector<std::string> GetMetricNames() const;
 
                     /**
-                     * 设置统计指标列表
-                     * @param MetricNames 统计指标列表
+                     * 设置统计指标列表，取值有：
+<li>ddos_attackMaxBandwidth ：攻击带宽峰值 ；</li>
+<li>ddos_attackMaxPackageRate：攻击包速率峰值  ；</li>
+<li>ddos_attackBandwidth ：攻击带宽曲线 ；</li>
+<li>ddos_attackPackageRate ：攻击包速率曲线 。</li>
+                     * @param MetricNames 统计指标列表，取值有：
+<li>ddos_attackMaxBandwidth ：攻击带宽峰值 ；</li>
+<li>ddos_attackMaxPackageRate：攻击包速率峰值  ；</li>
+<li>ddos_attackBandwidth ：攻击带宽曲线 ；</li>
+<li>ddos_attackPackageRate ：攻击包速率曲线 。</li>
                      */
                     void SetMetricNames(const std::vector<std::string>& _metricNames);
 
@@ -97,14 +113,14 @@ namespace TencentCloud
                     bool MetricNamesHasBeenSet() const;
 
                     /**
-                     * 获取站点id列表
-                     * @return ZoneIds 站点id列表
+                     * 获取站点id列表，不填默认选择全部站点。
+                     * @return ZoneIds 站点id列表，不填默认选择全部站点。
                      */
                     std::vector<std::string> GetZoneIds() const;
 
                     /**
-                     * 设置站点id列表
-                     * @param ZoneIds 站点id列表
+                     * 设置站点id列表，不填默认选择全部站点。
+                     * @param ZoneIds 站点id列表，不填默认选择全部站点。
                      */
                     void SetZoneIds(const std::vector<std::string>& _zoneIds);
 
@@ -115,14 +131,14 @@ namespace TencentCloud
                     bool ZoneIdsHasBeenSet() const;
 
                     /**
-                     * 获取ddos策略组id列表
-                     * @return PolicyIds ddos策略组id列表
+                     * 获取ddos策略组id列表，不填默认选择全部策略id。
+                     * @return PolicyIds ddos策略组id列表，不填默认选择全部策略id。
                      */
                     std::vector<int64_t> GetPolicyIds() const;
 
                     /**
-                     * 设置ddos策略组id列表
-                     * @param PolicyIds ddos策略组id列表
+                     * 设置ddos策略组id列表，不填默认选择全部策略id。
+                     * @param PolicyIds ddos策略组id列表，不填默认选择全部策略id。
                      */
                     void SetPolicyIds(const std::vector<int64_t>& _policyIds);
 
@@ -133,14 +149,14 @@ namespace TencentCloud
                     bool PolicyIdsHasBeenSet() const;
 
                     /**
-                     * 获取端口号
-                     * @return Port 端口号
+                     * 获取端口号。
+                     * @return Port 端口号。
                      */
                     int64_t GetPort() const;
 
                     /**
-                     * 设置端口号
-                     * @param Port 端口号
+                     * 设置端口号。
+                     * @param Port 端口号。
                      */
                     void SetPort(const int64_t& _port);
 
@@ -151,14 +167,26 @@ namespace TencentCloud
                     bool PortHasBeenSet() const;
 
                     /**
-                     * 获取协议类型,tcp,udp,all
-                     * @return ProtocolType 协议类型,tcp,udp,all
+                     * 获取协议类型，取值有：
+<li>tcp ；</li>
+<li>udp ；</li>
+<li>all 。</li>
+                     * @return ProtocolType 协议类型，取值有：
+<li>tcp ；</li>
+<li>udp ；</li>
+<li>all 。</li>
                      */
                     std::string GetProtocolType() const;
 
                     /**
-                     * 设置协议类型,tcp,udp,all
-                     * @param ProtocolType 协议类型,tcp,udp,all
+                     * 设置协议类型，取值有：
+<li>tcp ；</li>
+<li>udp ；</li>
+<li>all 。</li>
+                     * @param ProtocolType 协议类型，取值有：
+<li>tcp ；</li>
+<li>udp ；</li>
+<li>all 。</li>
                      */
                     void SetProtocolType(const std::string& _protocolType);
 
@@ -169,14 +197,26 @@ namespace TencentCloud
                     bool ProtocolTypeHasBeenSet() const;
 
                     /**
-                     * 获取攻击类型,flood,icmpFlood......,all
-                     * @return AttackType 攻击类型,flood,icmpFlood......,all
+                     * 获取攻击类型，取值有：
+<li>flood ；</li>
+<li>icmpFlood ；</li>
+<li>all 。</li>
+                     * @return AttackType 攻击类型，取值有：
+<li>flood ；</li>
+<li>icmpFlood ；</li>
+<li>all 。</li>
                      */
                     std::string GetAttackType() const;
 
                     /**
-                     * 设置攻击类型,flood,icmpFlood......,all
-                     * @param AttackType 攻击类型,flood,icmpFlood......,all
+                     * 设置攻击类型，取值有：
+<li>flood ；</li>
+<li>icmpFlood ；</li>
+<li>all 。</li>
+                     * @param AttackType 攻击类型，取值有：
+<li>flood ；</li>
+<li>icmpFlood ；</li>
+<li>all 。</li>
                      */
                     void SetAttackType(const std::string& _attackType);
 
@@ -187,14 +227,30 @@ namespace TencentCloud
                     bool AttackTypeHasBeenSet() const;
 
                     /**
-                     * 获取查询时间粒度，可选{min,5min,hour,day}
-                     * @return Interval 查询时间粒度，可选{min,5min,hour,day}
+                     * 获取查询时间粒度，取值有：
+<li>min ：1分钟 ；</li>
+<li>5min ：5分钟 ；</li>
+<li>hour ：1小时 ；</li>
+<li>day ：1天 。</li>
+                     * @return Interval 查询时间粒度，取值有：
+<li>min ：1分钟 ；</li>
+<li>5min ：5分钟 ；</li>
+<li>hour ：1小时 ；</li>
+<li>day ：1天 。</li>
                      */
                     std::string GetInterval() const;
 
                     /**
-                     * 设置查询时间粒度，可选{min,5min,hour,day}
-                     * @param Interval 查询时间粒度，可选{min,5min,hour,day}
+                     * 设置查询时间粒度，取值有：
+<li>min ：1分钟 ；</li>
+<li>5min ：5分钟 ；</li>
+<li>hour ：1小时 ；</li>
+<li>day ：1天 。</li>
+                     * @param Interval 查询时间粒度，取值有：
+<li>min ：1分钟 ；</li>
+<li>5min ：5分钟 ；</li>
+<li>hour ：1小时 ；</li>
+<li>day ：1天 。</li>
                      */
                     void SetInterval(const std::string& _interval);
 
@@ -207,55 +263,69 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 开始时间
+                     * 开始时间。
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 结束时间
+                     * 结束时间。
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 统计指标列表
+                     * 统计指标列表，取值有：
+<li>ddos_attackMaxBandwidth ：攻击带宽峰值 ；</li>
+<li>ddos_attackMaxPackageRate：攻击包速率峰值  ；</li>
+<li>ddos_attackBandwidth ：攻击带宽曲线 ；</li>
+<li>ddos_attackPackageRate ：攻击包速率曲线 。</li>
                      */
                     std::vector<std::string> m_metricNames;
                     bool m_metricNamesHasBeenSet;
 
                     /**
-                     * 站点id列表
+                     * 站点id列表，不填默认选择全部站点。
                      */
                     std::vector<std::string> m_zoneIds;
                     bool m_zoneIdsHasBeenSet;
 
                     /**
-                     * ddos策略组id列表
+                     * ddos策略组id列表，不填默认选择全部策略id。
                      */
                     std::vector<int64_t> m_policyIds;
                     bool m_policyIdsHasBeenSet;
 
                     /**
-                     * 端口号
+                     * 端口号。
                      */
                     int64_t m_port;
                     bool m_portHasBeenSet;
 
                     /**
-                     * 协议类型,tcp,udp,all
+                     * 协议类型，取值有：
+<li>tcp ；</li>
+<li>udp ；</li>
+<li>all 。</li>
                      */
                     std::string m_protocolType;
                     bool m_protocolTypeHasBeenSet;
 
                     /**
-                     * 攻击类型,flood,icmpFlood......,all
+                     * 攻击类型，取值有：
+<li>flood ；</li>
+<li>icmpFlood ；</li>
+<li>all 。</li>
                      */
                     std::string m_attackType;
                     bool m_attackTypeHasBeenSet;
 
                     /**
-                     * 查询时间粒度，可选{min,5min,hour,day}
+                     * 查询时间粒度，取值有：
+<li>min ：1分钟 ；</li>
+<li>5min ：5分钟 ；</li>
+<li>hour ：1小时 ；</li>
+<li>day ：1天 。</li>
                      */
                     std::string m_interval;
                     bool m_intervalHasBeenSet;

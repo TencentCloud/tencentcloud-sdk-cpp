@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取开始时间
-                     * @return StartTime 开始时间
+                     * 获取开始时间。
+                     * @return StartTime 开始时间。
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置开始时间
-                     * @param StartTime 开始时间
+                     * 设置开始时间。
+                     * @param StartTime 开始时间。
                      */
                     void SetStartTime(const std::string& _startTime);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取结束时间
-                     * @return EndTime 结束时间
+                     * 获取结束时间。
+                     * @return EndTime 结束时间。
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置结束时间
-                     * @param EndTime 结束时间
+                     * 设置结束时间。
+                     * @param EndTime 结束时间。
                      */
                     void SetEndTime(const std::string& _endTime);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取条数
-                     * @return PageSize 条数
+                     * 获取分页拉取的最大返回结果数。最大值：1000。
+                     * @return PageSize 分页拉取的最大返回结果数。最大值：1000。
                      */
                     int64_t GetPageSize() const;
 
                     /**
-                     * 设置条数
-                     * @param PageSize 条数
+                     * 设置分页拉取的最大返回结果数。最大值：1000。
+                     * @param PageSize 分页拉取的最大返回结果数。最大值：1000。
                      */
                     void SetPageSize(const int64_t& _pageSize);
 
@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool PageSizeHasBeenSet() const;
 
                     /**
-                     * 获取当前页
-                     * @return PageNo 当前页
+                     * 获取分页拉取的起始页号。最小值：1。
+                     * @return PageNo 分页拉取的起始页号。最小值：1。
                      */
                     int64_t GetPageNo() const;
 
                     /**
-                     * 设置当前页
-                     * @param PageNo 当前页
+                     * 设置分页拉取的起始页号。最小值：1。
+                     * @param PageNo 分页拉取的起始页号。最小值：1。
                      */
                     void SetPageNo(const int64_t& _pageNo);
 
@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool PageNoHasBeenSet() const;
 
                     /**
-                     * 获取ddos 策略组id集合
-                     * @return PolicyIds ddos 策略组id集合
+                     * 获取ddos 策略组id集合，不填默认选择全部策略id。
+                     * @return PolicyIds ddos 策略组id集合，不填默认选择全部策略id。
                      */
                     std::vector<int64_t> GetPolicyIds() const;
 
                     /**
-                     * 设置ddos 策略组id集合
-                     * @param PolicyIds ddos 策略组id集合
+                     * 设置ddos 策略组id集合，不填默认选择全部策略id。
+                     * @param PolicyIds ddos 策略组id集合，不填默认选择全部策略id。
                      */
                     void SetPolicyIds(const std::vector<int64_t>& _policyIds);
 
@@ -133,14 +133,26 @@ namespace TencentCloud
                     bool PolicyIdsHasBeenSet() const;
 
                     /**
-                     * 获取协议类型，{tcp,udp,all}
-                     * @return ProtocolType 协议类型，{tcp,udp,all}
+                     * 获取协议类型，取值有：
+<li>tcp ；</li>
+<li>udp ；</li>
+<li>all 。</li>
+                     * @return ProtocolType 协议类型，取值有：
+<li>tcp ；</li>
+<li>udp ；</li>
+<li>all 。</li>
                      */
                     std::string GetProtocolType() const;
 
                     /**
-                     * 设置协议类型，{tcp,udp,all}
-                     * @param ProtocolType 协议类型，{tcp,udp,all}
+                     * 设置协议类型，取值有：
+<li>tcp ；</li>
+<li>udp ；</li>
+<li>all 。</li>
+                     * @param ProtocolType 协议类型，取值有：
+<li>tcp ；</li>
+<li>udp ；</li>
+<li>all 。</li>
                      */
                     void SetProtocolType(const std::string& _protocolType);
 
@@ -151,14 +163,14 @@ namespace TencentCloud
                     bool ProtocolTypeHasBeenSet() const;
 
                     /**
-                     * 获取站点集合
-                     * @return ZoneIds 站点集合
+                     * 获取站点id列表，不填默认选择全部站点。
+                     * @return ZoneIds 站点id列表，不填默认选择全部站点。
                      */
                     std::vector<std::string> GetZoneIds() const;
 
                     /**
-                     * 设置站点集合
-                     * @param ZoneIds 站点集合
+                     * 设置站点id列表，不填默认选择全部站点。
+                     * @param ZoneIds 站点id列表，不填默认选择全部站点。
                      */
                     void SetZoneIds(const std::vector<std::string>& _zoneIds);
 
@@ -171,43 +183,46 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 开始时间
+                     * 开始时间。
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 结束时间
+                     * 结束时间。
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 条数
+                     * 分页拉取的最大返回结果数。最大值：1000。
                      */
                     int64_t m_pageSize;
                     bool m_pageSizeHasBeenSet;
 
                     /**
-                     * 当前页
+                     * 分页拉取的起始页号。最小值：1。
                      */
                     int64_t m_pageNo;
                     bool m_pageNoHasBeenSet;
 
                     /**
-                     * ddos 策略组id集合
+                     * ddos 策略组id集合，不填默认选择全部策略id。
                      */
                     std::vector<int64_t> m_policyIds;
                     bool m_policyIdsHasBeenSet;
 
                     /**
-                     * 协议类型，{tcp,udp,all}
+                     * 协议类型，取值有：
+<li>tcp ；</li>
+<li>udp ；</li>
+<li>all 。</li>
                      */
                     std::string m_protocolType;
                     bool m_protocolTypeHasBeenSet;
 
                     /**
-                     * 站点集合
+                     * 站点id列表，不填默认选择全部站点。
                      */
                     std::vector<std::string> m_zoneIds;
                     bool m_zoneIdsHasBeenSet;

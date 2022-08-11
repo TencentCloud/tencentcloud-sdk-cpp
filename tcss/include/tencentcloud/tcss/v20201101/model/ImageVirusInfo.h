@@ -288,6 +288,48 @@ namespace TencentCloud
                      */
                     bool FileNameHasBeenSet() const;
 
+                    /**
+                     * 获取检测平台
+1: 云查杀引擎
+2: tav
+3: binaryAi
+4: 异常行为
+5: 威胁情报
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CheckPlatform 检测平台
+1: 云查杀引擎
+2: tav
+3: binaryAi
+4: 异常行为
+5: 威胁情报
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> GetCheckPlatform() const;
+
+                    /**
+                     * 设置检测平台
+1: 云查杀引擎
+2: tav
+3: binaryAi
+4: 异常行为
+5: 威胁情报
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param CheckPlatform 检测平台
+1: 云查杀引擎
+2: tav
+3: binaryAi
+4: 异常行为
+5: 威胁情报
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCheckPlatform(const std::vector<std::string>& _checkPlatform);
+
+                    /**
+                     * 判断参数 CheckPlatform 是否已赋值
+                     * @return CheckPlatform 是否已赋值
+                     */
+                    bool CheckPlatformHasBeenSet() const;
+
                 private:
 
                     /**
@@ -366,6 +408,18 @@ namespace TencentCloud
                      */
                     std::string m_fileName;
                     bool m_fileNameHasBeenSet;
+
+                    /**
+                     * 检测平台
+1: 云查杀引擎
+2: tav
+3: binaryAi
+4: 异常行为
+5: 威胁情报
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_checkPlatform;
+                    bool m_checkPlatformHasBeenSet;
 
                 };
             }

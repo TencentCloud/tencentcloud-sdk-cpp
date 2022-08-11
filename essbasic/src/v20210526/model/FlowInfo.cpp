@@ -31,7 +31,8 @@ FlowInfo::FlowInfo() :
     m_flowDescriptionHasBeenSet(false),
     m_customerDataHasBeenSet(false),
     m_customShowMapHasBeenSet(false),
-    m_ccInfosHasBeenSet(false)
+    m_ccInfosHasBeenSet(false),
+    m_needSignReviewHasBeenSet(false)
 {
 }
 
@@ -180,6 +181,16 @@ CoreInternalOutcome FlowInfo::Deserialize(const rapidjson::Value &value)
         m_ccInfosHasBeenSet = true;
     }
 
+    if (value.HasMember("NeedSignReview") && !value["NeedSignReview"].IsNull())
+    {
+        if (!value["NeedSignReview"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `FlowInfo.NeedSignReview` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_needSignReview = value["NeedSignReview"].GetBool();
+        m_needSignReviewHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -294,6 +305,14 @@ void FlowInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_needSignReviewHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NeedSignReview";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_needSignReview, allocator);
     }
 
 }
@@ -473,5 +492,21 @@ void FlowInfo::SetCcInfos(const vector<CcInfo>& _ccInfos)
 bool FlowInfo::CcInfosHasBeenSet() const
 {
     return m_ccInfosHasBeenSet;
+}
+
+bool FlowInfo::GetNeedSignReview() const
+{
+    return m_needSignReview;
+}
+
+void FlowInfo::SetNeedSignReview(const bool& _needSignReview)
+{
+    m_needSignReview = _needSignReview;
+    m_needSignReviewHasBeenSet = true;
+}
+
+bool FlowInfo::NeedSignReviewHasBeenSet() const
+{
+    return m_needSignReviewHasBeenSet;
 }
 

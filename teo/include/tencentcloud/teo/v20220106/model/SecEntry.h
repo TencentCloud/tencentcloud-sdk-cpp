@@ -48,17 +48,17 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Entry的Key
+                     * 获取查询维度值。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Key Entry的Key
+                     * @return Key 查询维度值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetKey() const;
 
                     /**
-                     * 设置Entry的Key
+                     * 设置查询维度值。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Key Entry的Key
+                     * @param Key 查询维度值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetKey(const std::string& _key);
@@ -70,17 +70,17 @@ namespace TencentCloud
                     bool KeyHasBeenSet() const;
 
                     /**
-                     * 获取Entry的Value
+                     * 获取查询维度下详细数据。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Value Entry的Value
+                     * @return Value 查询维度下详细数据。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<SecEntryValue> GetValue() const;
 
                     /**
-                     * 设置Entry的Value
+                     * 设置查询维度下详细数据。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Value Entry的Value
+                     * @param Value 查询维度下详细数据。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetValue(const std::vector<SecEntryValue>& _value);
@@ -94,14 +94,14 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Entry的Key
+                     * 查询维度值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_key;
                     bool m_keyHasBeenSet;
 
                     /**
-                     * Entry的Value
+                     * 查询维度下详细数据。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<SecEntryValue> m_value;

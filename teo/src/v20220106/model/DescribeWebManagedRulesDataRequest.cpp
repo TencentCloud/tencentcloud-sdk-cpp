@@ -30,7 +30,8 @@ DescribeWebManagedRulesDataRequest::DescribeWebManagedRulesDataRequest() :
     m_domainsHasBeenSet(false),
     m_protocolTypeHasBeenSet(false),
     m_attackTypeHasBeenSet(false),
-    m_intervalHasBeenSet(false)
+    m_intervalHasBeenSet(false),
+    m_queryConditionHasBeenSet(false)
 {
 }
 
@@ -118,6 +119,21 @@ string DescribeWebManagedRulesDataRequest::ToJsonString() const
         string key = "Interval";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_interval.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_queryConditionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QueryCondition";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_queryCondition.begin(); itr != m_queryCondition.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -254,6 +270,22 @@ void DescribeWebManagedRulesDataRequest::SetInterval(const string& _interval)
 bool DescribeWebManagedRulesDataRequest::IntervalHasBeenSet() const
 {
     return m_intervalHasBeenSet;
+}
+
+vector<QueryCondition> DescribeWebManagedRulesDataRequest::GetQueryCondition() const
+{
+    return m_queryCondition;
+}
+
+void DescribeWebManagedRulesDataRequest::SetQueryCondition(const vector<QueryCondition>& _queryCondition)
+{
+    m_queryCondition = _queryCondition;
+    m_queryConditionHasBeenSet = true;
+}
+
+bool DescribeWebManagedRulesDataRequest::QueryConditionHasBeenSet() const
+{
+    return m_queryConditionHasBeenSet;
 }
 
 

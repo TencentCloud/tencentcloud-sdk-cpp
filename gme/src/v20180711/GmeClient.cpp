@@ -126,6 +126,49 @@ GmeClient::CreateAppOutcomeCallable GmeClient::CreateAppCallable(const CreateApp
     return task->get_future();
 }
 
+GmeClient::CreateCustomizationOutcome GmeClient::CreateCustomization(const CreateCustomizationRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateCustomization");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateCustomizationResponse rsp = CreateCustomizationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateCustomizationOutcome(rsp);
+        else
+            return CreateCustomizationOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateCustomizationOutcome(outcome.GetError());
+    }
+}
+
+void GmeClient::CreateCustomizationAsync(const CreateCustomizationRequest& request, const CreateCustomizationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateCustomization(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GmeClient::CreateCustomizationOutcomeCallable GmeClient::CreateCustomizationCallable(const CreateCustomizationRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateCustomizationOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateCustomization(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 GmeClient::CreateScanUserOutcome GmeClient::CreateScanUser(const CreateScanUserRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateScanUser");
@@ -162,6 +205,49 @@ GmeClient::CreateScanUserOutcomeCallable GmeClient::CreateScanUserCallable(const
         [this, request]()
         {
             return this->CreateScanUser(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+GmeClient::DeleteCustomizationOutcome GmeClient::DeleteCustomization(const DeleteCustomizationRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteCustomization");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteCustomizationResponse rsp = DeleteCustomizationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteCustomizationOutcome(rsp);
+        else
+            return DeleteCustomizationOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteCustomizationOutcome(outcome.GetError());
+    }
+}
+
+void GmeClient::DeleteCustomizationAsync(const DeleteCustomizationRequest& request, const DeleteCustomizationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteCustomization(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GmeClient::DeleteCustomizationOutcomeCallable GmeClient::DeleteCustomizationCallable(const DeleteCustomizationRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteCustomizationOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteCustomization(request);
         }
     );
 
@@ -599,6 +685,49 @@ GmeClient::DescribeUserInAndOutTimeOutcomeCallable GmeClient::DescribeUserInAndO
     return task->get_future();
 }
 
+GmeClient::GetCustomizationListOutcome GmeClient::GetCustomizationList(const GetCustomizationListRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetCustomizationList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetCustomizationListResponse rsp = GetCustomizationListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetCustomizationListOutcome(rsp);
+        else
+            return GetCustomizationListOutcome(o.GetError());
+    }
+    else
+    {
+        return GetCustomizationListOutcome(outcome.GetError());
+    }
+}
+
+void GmeClient::GetCustomizationListAsync(const GetCustomizationListRequest& request, const GetCustomizationListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetCustomizationList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GmeClient::GetCustomizationListOutcomeCallable GmeClient::GetCustomizationListCallable(const GetCustomizationListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetCustomizationListOutcome()>>(
+        [this, request]()
+        {
+            return this->GetCustomizationList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 GmeClient::ModifyAppStatusOutcome GmeClient::ModifyAppStatus(const ModifyAppStatusRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyAppStatus");
@@ -635,6 +764,92 @@ GmeClient::ModifyAppStatusOutcomeCallable GmeClient::ModifyAppStatusCallable(con
         [this, request]()
         {
             return this->ModifyAppStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+GmeClient::ModifyCustomizationOutcome GmeClient::ModifyCustomization(const ModifyCustomizationRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyCustomization");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyCustomizationResponse rsp = ModifyCustomizationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyCustomizationOutcome(rsp);
+        else
+            return ModifyCustomizationOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyCustomizationOutcome(outcome.GetError());
+    }
+}
+
+void GmeClient::ModifyCustomizationAsync(const ModifyCustomizationRequest& request, const ModifyCustomizationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyCustomization(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GmeClient::ModifyCustomizationOutcomeCallable GmeClient::ModifyCustomizationCallable(const ModifyCustomizationRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyCustomizationOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyCustomization(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+GmeClient::ModifyCustomizationStateOutcome GmeClient::ModifyCustomizationState(const ModifyCustomizationStateRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyCustomizationState");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyCustomizationStateResponse rsp = ModifyCustomizationStateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyCustomizationStateOutcome(rsp);
+        else
+            return ModifyCustomizationStateOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyCustomizationStateOutcome(outcome.GetError());
+    }
+}
+
+void GmeClient::ModifyCustomizationStateAsync(const ModifyCustomizationStateRequest& request, const ModifyCustomizationStateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyCustomizationState(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GmeClient::ModifyCustomizationStateOutcomeCallable GmeClient::ModifyCustomizationStateCallable(const ModifyCustomizationStateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyCustomizationStateOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyCustomizationState(request);
         }
     );
 

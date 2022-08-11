@@ -60,7 +60,8 @@ UnifiedCloudOrderRequest::UnifiedCloudOrderRequest() :
     m_storeInfoHasBeenSet(false),
     m_clientInfoHasBeenSet(false),
     m_externalPromptGroupListHasBeenSet(false),
-    m_orderReceiveModeHasBeenSet(false)
+    m_orderReceiveModeHasBeenSet(false),
+    m_externalUserInfoListHasBeenSet(false)
 {
 }
 
@@ -398,6 +399,21 @@ string UnifiedCloudOrderRequest::ToJsonString() const
         string key = "OrderReceiveMode";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_orderReceiveMode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_externalUserInfoListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExternalUserInfoList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_externalUserInfoList.begin(); itr != m_externalUserInfoList.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -1014,6 +1030,22 @@ void UnifiedCloudOrderRequest::SetOrderReceiveMode(const string& _orderReceiveMo
 bool UnifiedCloudOrderRequest::OrderReceiveModeHasBeenSet() const
 {
     return m_orderReceiveModeHasBeenSet;
+}
+
+vector<CloudExternalUserInfo> UnifiedCloudOrderRequest::GetExternalUserInfoList() const
+{
+    return m_externalUserInfoList;
+}
+
+void UnifiedCloudOrderRequest::SetExternalUserInfoList(const vector<CloudExternalUserInfo>& _externalUserInfoList)
+{
+    m_externalUserInfoList = _externalUserInfoList;
+    m_externalUserInfoListHasBeenSet = true;
+}
+
+bool UnifiedCloudOrderRequest::ExternalUserInfoListHasBeenSet() const
+{
+    return m_externalUserInfoListHasBeenSet;
 }
 
 

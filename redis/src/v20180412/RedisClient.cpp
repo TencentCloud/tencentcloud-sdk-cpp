@@ -3394,6 +3394,49 @@ RedisClient::SwitchInstanceVipOutcomeCallable RedisClient::SwitchInstanceVipCall
     return task->get_future();
 }
 
+RedisClient::SwitchProxyOutcome RedisClient::SwitchProxy(const SwitchProxyRequest &request)
+{
+    auto outcome = MakeRequest(request, "SwitchProxy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SwitchProxyResponse rsp = SwitchProxyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SwitchProxyOutcome(rsp);
+        else
+            return SwitchProxyOutcome(o.GetError());
+    }
+    else
+    {
+        return SwitchProxyOutcome(outcome.GetError());
+    }
+}
+
+void RedisClient::SwitchProxyAsync(const SwitchProxyRequest& request, const SwitchProxyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SwitchProxy(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+RedisClient::SwitchProxyOutcomeCallable RedisClient::SwitchProxyCallable(const SwitchProxyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SwitchProxyOutcome()>>(
+        [this, request]()
+        {
+            return this->SwitchProxy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 RedisClient::UpgradeInstanceOutcome RedisClient::UpgradeInstance(const UpgradeInstanceRequest &request)
 {
     auto outcome = MakeRequest(request, "UpgradeInstance");

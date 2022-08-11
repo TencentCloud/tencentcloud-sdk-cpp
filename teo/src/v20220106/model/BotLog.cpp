@@ -37,7 +37,9 @@ BotLog::BotLog() :
     m_uaHasBeenSet(false),
     m_detectionMethodHasBeenSet(false),
     m_confidenceHasBeenSet(false),
-    m_maliciousnessHasBeenSet(false)
+    m_maliciousnessHasBeenSet(false),
+    m_ruleDetailListHasBeenSet(false),
+    m_labelHasBeenSet(false)
 {
 }
 
@@ -216,6 +218,36 @@ CoreInternalOutcome BotLog::Deserialize(const rapidjson::Value &value)
         m_maliciousnessHasBeenSet = true;
     }
 
+    if (value.HasMember("RuleDetailList") && !value["RuleDetailList"].IsNull())
+    {
+        if (!value["RuleDetailList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `BotLog.RuleDetailList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["RuleDetailList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            SecRuleRelatedInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_ruleDetailList.push_back(item);
+        }
+        m_ruleDetailListHasBeenSet = true;
+    }
+
+    if (value.HasMember("Label") && !value["Label"].IsNull())
+    {
+        if (!value["Label"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BotLog.Label` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_label = string(value["Label"].GetString());
+        m_labelHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -357,6 +389,29 @@ void BotLog::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocato
         string key = "Maliciousness";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_maliciousness.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ruleDetailListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RuleDetailList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_ruleDetailList.begin(); itr != m_ruleDetailList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_labelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Label";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_label.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -632,5 +687,37 @@ void BotLog::SetMaliciousness(const string& _maliciousness)
 bool BotLog::MaliciousnessHasBeenSet() const
 {
     return m_maliciousnessHasBeenSet;
+}
+
+vector<SecRuleRelatedInfo> BotLog::GetRuleDetailList() const
+{
+    return m_ruleDetailList;
+}
+
+void BotLog::SetRuleDetailList(const vector<SecRuleRelatedInfo>& _ruleDetailList)
+{
+    m_ruleDetailList = _ruleDetailList;
+    m_ruleDetailListHasBeenSet = true;
+}
+
+bool BotLog::RuleDetailListHasBeenSet() const
+{
+    return m_ruleDetailListHasBeenSet;
+}
+
+string BotLog::GetLabel() const
+{
+    return m_label;
+}
+
+void BotLog::SetLabel(const string& _label)
+{
+    m_label = _label;
+    m_labelHasBeenSet = true;
+}
+
+bool BotLog::LabelHasBeenSet() const
+{
+    return m_labelHasBeenSet;
 }
 

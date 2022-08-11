@@ -150,6 +150,42 @@ namespace TencentCloud
                      */
                     bool SkillGroupIdsHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启手机外呼开关
+                     * @return UseMobileCallOut 是否开启手机外呼开关
+                     */
+                    bool GetUseMobileCallOut() const;
+
+                    /**
+                     * 设置是否开启手机外呼开关
+                     * @param UseMobileCallOut 是否开启手机外呼开关
+                     */
+                    void SetUseMobileCallOut(const bool& _useMobileCallOut);
+
+                    /**
+                     * 判断参数 UseMobileCallOut 是否已赋值
+                     * @return UseMobileCallOut 是否已赋值
+                     */
+                    bool UseMobileCallOutHasBeenSet() const;
+
+                    /**
+                     * 获取手机接听模式 0 - 关闭 | 1 - 仅离线 | 2 - 始终
+                     * @return UseMobileAccept 手机接听模式 0 - 关闭 | 1 - 仅离线 | 2 - 始终
+                     */
+                    int64_t GetUseMobileAccept() const;
+
+                    /**
+                     * 设置手机接听模式 0 - 关闭 | 1 - 仅离线 | 2 - 始终
+                     * @param UseMobileAccept 手机接听模式 0 - 关闭 | 1 - 仅离线 | 2 - 始终
+                     */
+                    void SetUseMobileAccept(const int64_t& _useMobileAccept);
+
+                    /**
+                     * 判断参数 UseMobileAccept 是否已赋值
+                     * @return UseMobileAccept 是否已赋值
+                     */
+                    bool UseMobileAcceptHasBeenSet() const;
+
                 private:
 
                     /**
@@ -187,6 +223,18 @@ namespace TencentCloud
                      */
                     std::vector<int64_t> m_skillGroupIds;
                     bool m_skillGroupIdsHasBeenSet;
+
+                    /**
+                     * 是否开启手机外呼开关
+                     */
+                    bool m_useMobileCallOut;
+                    bool m_useMobileCallOutHasBeenSet;
+
+                    /**
+                     * 手机接听模式 0 - 关闭 | 1 - 仅离线 | 2 - 始终
+                     */
+                    int64_t m_useMobileAccept;
+                    bool m_useMobileAcceptHasBeenSet;
 
                 };
             }

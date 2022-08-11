@@ -728,49 +728,6 @@ CccClient::DescribeProtectedTelCdrOutcomeCallable CccClient::DescribeProtectedTe
     return task->get_future();
 }
 
-CccClient::DescribeSeatUserListOutcome CccClient::DescribeSeatUserList(const DescribeSeatUserListRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeSeatUserList");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeSeatUserListResponse rsp = DescribeSeatUserListResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeSeatUserListOutcome(rsp);
-        else
-            return DescribeSeatUserListOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeSeatUserListOutcome(outcome.GetError());
-    }
-}
-
-void CccClient::DescribeSeatUserListAsync(const DescribeSeatUserListRequest& request, const DescribeSeatUserListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSeatUserList(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-CccClient::DescribeSeatUserListOutcomeCallable CccClient::DescribeSeatUserListCallable(const DescribeSeatUserListRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeSeatUserListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSeatUserList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 CccClient::DescribeSkillGroupInfoListOutcome CccClient::DescribeSkillGroupInfoList(const DescribeSkillGroupInfoListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeSkillGroupInfoList");

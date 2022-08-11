@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取开始时间
-                     * @return StartTime 开始时间
+                     * 获取开始时间。
+                     * @return StartTime 开始时间。
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置开始时间
-                     * @param StartTime 开始时间
+                     * 设置开始时间。
+                     * @param StartTime 开始时间。
                      */
                     void SetStartTime(const std::string& _startTime);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取结束时间
-                     * @return EndTime 结束时间
+                     * 获取结束时间。
+                     * @return EndTime 结束时间。
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置结束时间
-                     * @param EndTime 结束时间
+                     * 设置结束时间。
+                     * @param EndTime 结束时间。
                      */
                     void SetEndTime(const std::string& _endTime);
 
@@ -79,14 +79,38 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取过滤指标
-                     * @return MetricName 过滤指标
+                     * 获取统计指标列表，取值有：
+<li>ddos_attackFlux_protocol ：攻击总流量协议类型分布排行 ；</li>
+<li>ddos_attackPackageNum_protocol ：攻击总包量协议类型分布排行 ；</li>
+<li>ddos_attackNum_attackType ：攻击总次数攻击类型分布排行 ；</li>
+<li>ddos_attackNum_sregion ：攻击总次数攻击源地区分布排行 ；</li>
+<li>ddos_attackFlux_sip ：攻击总流量攻击源ip分布排行 ；</li>
+<li>ddos_attackFlux_sregion ：攻击总流量攻击源地区分布排行 。</li>
+                     * @return MetricName 统计指标列表，取值有：
+<li>ddos_attackFlux_protocol ：攻击总流量协议类型分布排行 ；</li>
+<li>ddos_attackPackageNum_protocol ：攻击总包量协议类型分布排行 ；</li>
+<li>ddos_attackNum_attackType ：攻击总次数攻击类型分布排行 ；</li>
+<li>ddos_attackNum_sregion ：攻击总次数攻击源地区分布排行 ；</li>
+<li>ddos_attackFlux_sip ：攻击总流量攻击源ip分布排行 ；</li>
+<li>ddos_attackFlux_sregion ：攻击总流量攻击源地区分布排行 。</li>
                      */
                     std::string GetMetricName() const;
 
                     /**
-                     * 设置过滤指标
-                     * @param MetricName 过滤指标
+                     * 设置统计指标列表，取值有：
+<li>ddos_attackFlux_protocol ：攻击总流量协议类型分布排行 ；</li>
+<li>ddos_attackPackageNum_protocol ：攻击总包量协议类型分布排行 ；</li>
+<li>ddos_attackNum_attackType ：攻击总次数攻击类型分布排行 ；</li>
+<li>ddos_attackNum_sregion ：攻击总次数攻击源地区分布排行 ；</li>
+<li>ddos_attackFlux_sip ：攻击总流量攻击源ip分布排行 ；</li>
+<li>ddos_attackFlux_sregion ：攻击总流量攻击源地区分布排行 。</li>
+                     * @param MetricName 统计指标列表，取值有：
+<li>ddos_attackFlux_protocol ：攻击总流量协议类型分布排行 ；</li>
+<li>ddos_attackPackageNum_protocol ：攻击总包量协议类型分布排行 ；</li>
+<li>ddos_attackNum_attackType ：攻击总次数攻击类型分布排行 ；</li>
+<li>ddos_attackNum_sregion ：攻击总次数攻击源地区分布排行 ；</li>
+<li>ddos_attackFlux_sip ：攻击总流量攻击源ip分布排行 ；</li>
+<li>ddos_attackFlux_sregion ：攻击总流量攻击源地区分布排行 。</li>
                      */
                     void SetMetricName(const std::string& _metricName);
 
@@ -97,14 +121,14 @@ namespace TencentCloud
                     bool MetricNameHasBeenSet() const;
 
                     /**
-                     * 获取查询前多少名,传值为0 全量
-                     * @return Limit 查询前多少名,传值为0 全量
+                     * 获取查询前多少个，传值为0返回全量。
+                     * @return Limit 查询前多少个，传值为0返回全量。
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置查询前多少名,传值为0 全量
-                     * @param Limit 查询前多少名,传值为0 全量
+                     * 设置查询前多少个，传值为0返回全量。
+                     * @param Limit 查询前多少个，传值为0返回全量。
                      */
                     void SetLimit(const int64_t& _limit);
 
@@ -115,14 +139,14 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取站点集合
-                     * @return ZoneIds 站点集合
+                     * 获取站点id集合，不填默认选择全部站点。
+                     * @return ZoneIds 站点id集合，不填默认选择全部站点。
                      */
                     std::vector<std::string> GetZoneIds() const;
 
                     /**
-                     * 设置站点集合
-                     * @param ZoneIds 站点集合
+                     * 设置站点id集合，不填默认选择全部站点。
+                     * @param ZoneIds 站点id集合，不填默认选择全部站点。
                      */
                     void SetZoneIds(const std::vector<std::string>& _zoneIds);
 
@@ -133,14 +157,14 @@ namespace TencentCloud
                     bool ZoneIdsHasBeenSet() const;
 
                     /**
-                     * 获取ddos策略组id 集合
-                     * @return PolicyIds ddos策略组id 集合
+                     * 获取ddos策略组id 集合，不填默认选择全部策略id。
+                     * @return PolicyIds ddos策略组id 集合，不填默认选择全部策略id。
                      */
                     std::vector<int64_t> GetPolicyIds() const;
 
                     /**
-                     * 设置ddos策略组id 集合
-                     * @param PolicyIds ddos策略组id 集合
+                     * 设置ddos策略组id 集合，不填默认选择全部策略id。
+                     * @param PolicyIds ddos策略组id 集合，不填默认选择全部策略id。
                      */
                     void SetPolicyIds(const std::vector<int64_t>& _policyIds);
 
@@ -151,14 +175,14 @@ namespace TencentCloud
                     bool PolicyIdsHasBeenSet() const;
 
                     /**
-                     * 获取端口号
-                     * @return Port 端口号
+                     * 获取端口号。
+                     * @return Port 端口号。
                      */
                     int64_t GetPort() const;
 
                     /**
-                     * 设置端口号
-                     * @param Port 端口号
+                     * 设置端口号。
+                     * @param Port 端口号。
                      */
                     void SetPort(const int64_t& _port);
 
@@ -169,14 +193,26 @@ namespace TencentCloud
                     bool PortHasBeenSet() const;
 
                     /**
-                     * 获取协议类型,tcp,udp,all
-                     * @return ProtocolType 协议类型,tcp,udp,all
+                     * 获取协议类型，取值有：
+<li>tcp ；</li>
+<li>udp ；</li>
+<li>all 。</li>
+                     * @return ProtocolType 协议类型，取值有：
+<li>tcp ；</li>
+<li>udp ；</li>
+<li>all 。</li>
                      */
                     std::string GetProtocolType() const;
 
                     /**
-                     * 设置协议类型,tcp,udp,all
-                     * @param ProtocolType 协议类型,tcp,udp,all
+                     * 设置协议类型，取值有：
+<li>tcp ；</li>
+<li>udp ；</li>
+<li>all 。</li>
+                     * @param ProtocolType 协议类型，取值有：
+<li>tcp ；</li>
+<li>udp ；</li>
+<li>all 。</li>
                      */
                     void SetProtocolType(const std::string& _protocolType);
 
@@ -187,14 +223,26 @@ namespace TencentCloud
                     bool ProtocolTypeHasBeenSet() const;
 
                     /**
-                     * 获取攻击类型,flood,icmpFlood......,all
-                     * @return AttackType 攻击类型,flood,icmpFlood......,all
+                     * 获取攻击类型，取值有：
+<li>flood ；</li>
+<li>icmpFlood ；</li>
+<li>all 。</li>
+                     * @return AttackType 攻击类型，取值有：
+<li>flood ；</li>
+<li>icmpFlood ；</li>
+<li>all 。</li>
                      */
                     std::string GetAttackType() const;
 
                     /**
-                     * 设置攻击类型,flood,icmpFlood......,all
-                     * @param AttackType 攻击类型,flood,icmpFlood......,all
+                     * 设置攻击类型，取值有：
+<li>flood ；</li>
+<li>icmpFlood ；</li>
+<li>all 。</li>
+                     * @param AttackType 攻击类型，取值有：
+<li>flood ；</li>
+<li>icmpFlood ；</li>
+<li>all 。</li>
                      */
                     void SetAttackType(const std::string& _attackType);
 
@@ -207,55 +255,67 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 开始时间
+                     * 开始时间。
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 结束时间
+                     * 结束时间。
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 过滤指标
+                     * 统计指标列表，取值有：
+<li>ddos_attackFlux_protocol ：攻击总流量协议类型分布排行 ；</li>
+<li>ddos_attackPackageNum_protocol ：攻击总包量协议类型分布排行 ；</li>
+<li>ddos_attackNum_attackType ：攻击总次数攻击类型分布排行 ；</li>
+<li>ddos_attackNum_sregion ：攻击总次数攻击源地区分布排行 ；</li>
+<li>ddos_attackFlux_sip ：攻击总流量攻击源ip分布排行 ；</li>
+<li>ddos_attackFlux_sregion ：攻击总流量攻击源地区分布排行 。</li>
                      */
                     std::string m_metricName;
                     bool m_metricNameHasBeenSet;
 
                     /**
-                     * 查询前多少名,传值为0 全量
+                     * 查询前多少个，传值为0返回全量。
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 站点集合
+                     * 站点id集合，不填默认选择全部站点。
                      */
                     std::vector<std::string> m_zoneIds;
                     bool m_zoneIdsHasBeenSet;
 
                     /**
-                     * ddos策略组id 集合
+                     * ddos策略组id 集合，不填默认选择全部策略id。
                      */
                     std::vector<int64_t> m_policyIds;
                     bool m_policyIdsHasBeenSet;
 
                     /**
-                     * 端口号
+                     * 端口号。
                      */
                     int64_t m_port;
                     bool m_portHasBeenSet;
 
                     /**
-                     * 协议类型,tcp,udp,all
+                     * 协议类型，取值有：
+<li>tcp ；</li>
+<li>udp ；</li>
+<li>all 。</li>
                      */
                     std::string m_protocolType;
                     bool m_protocolTypeHasBeenSet;
 
                     /**
-                     * 攻击类型,flood,icmpFlood......,all
+                     * 攻击类型，取值有：
+<li>flood ；</li>
+<li>icmpFlood ；</li>
+<li>all 。</li>
                      */
                     std::string m_attackType;
                     bool m_attackTypeHasBeenSet;

@@ -127,6 +127,8 @@
 #include <tencentcloud/vod/v20180717/model/DescribeCDNUsageDataResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeCdnLogsRequest.h>
 #include <tencentcloud/vod/v20180717/model/DescribeCdnLogsResponse.h>
+#include <tencentcloud/vod/v20180717/model/DescribeClientUploadAccelerationUsageDataRequest.h>
+#include <tencentcloud/vod/v20180717/model/DescribeClientUploadAccelerationUsageDataResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeContentReviewTemplatesRequest.h>
 #include <tencentcloud/vod/v20180717/model/DescribeContentReviewTemplatesResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeDailyMediaPlayStatRequest.h>
@@ -449,6 +451,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeCdnLogsResponse> DescribeCdnLogsOutcome;
                 typedef std::future<DescribeCdnLogsOutcome> DescribeCdnLogsOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DescribeCdnLogsRequest&, DescribeCdnLogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCdnLogsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeClientUploadAccelerationUsageDataResponse> DescribeClientUploadAccelerationUsageDataOutcome;
+                typedef std::future<DescribeClientUploadAccelerationUsageDataOutcome> DescribeClientUploadAccelerationUsageDataOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::DescribeClientUploadAccelerationUsageDataRequest&, DescribeClientUploadAccelerationUsageDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClientUploadAccelerationUsageDataAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeContentReviewTemplatesResponse> DescribeContentReviewTemplatesOutcome;
                 typedef std::future<DescribeContentReviewTemplatesOutcome> DescribeContentReviewTemplatesOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DescribeContentReviewTemplatesRequest&, DescribeContentReviewTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeContentReviewTemplatesAsyncHandler;
@@ -1185,6 +1190,19 @@ namespace TencentCloud
                 DescribeCdnLogsOutcome DescribeCdnLogs(const Model::DescribeCdnLogsRequest &request);
                 void DescribeCdnLogsAsync(const Model::DescribeCdnLogsRequest& request, const DescribeCdnLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeCdnLogsOutcomeCallable DescribeCdnLogsCallable(const Model::DescribeCdnLogsRequest& request);
+
+                /**
+                 *该接口返回查询时间范围内客户端上传加速统计信息。
+   1. 可以查询最近365天内的客户端上传加速统计数据。
+   2. 查询时间跨度不超过90天。
+   3. 查询时间跨度超过1天的，返回以天为粒度的数据，否则，返回以5分钟为粒度的数据。
+
+                 * @param req DescribeClientUploadAccelerationUsageDataRequest
+                 * @return DescribeClientUploadAccelerationUsageDataOutcome
+                 */
+                DescribeClientUploadAccelerationUsageDataOutcome DescribeClientUploadAccelerationUsageData(const Model::DescribeClientUploadAccelerationUsageDataRequest &request);
+                void DescribeClientUploadAccelerationUsageDataAsync(const Model::DescribeClientUploadAccelerationUsageDataRequest& request, const DescribeClientUploadAccelerationUsageDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeClientUploadAccelerationUsageDataOutcomeCallable DescribeClientUploadAccelerationUsageDataCallable(const Model::DescribeClientUploadAccelerationUsageDataRequest& request);
 
                 /**
                  *根据音视频内容审核模板唯一标识，获取音视频内容审核模板详情列表。返回结果包含符合条件的所有用户自定义模板及[系统预置内容审核模板](https://cloud.tencent.com/document/product/266/33476#.E9.A2.84.E7.BD.AE.E8.A7.86.E9.A2.91.E5.86.85.E5.AE.B9.E5.AE.A1.E6.A0.B8.E6.A8.A1.E6.9D.BF)。

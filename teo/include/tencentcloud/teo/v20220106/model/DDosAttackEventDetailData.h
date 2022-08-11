@@ -47,14 +47,26 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取攻击状态
-                     * @return AttackStatus 攻击状态
+                     * 获取攻击状态，取值有：
+<li>1 ：观察中 ；</li>
+<li>2 ：攻击开始 ；</li>
+<li>3 ：攻击结束 。</li>
+                     * @return AttackStatus 攻击状态，取值有：
+<li>1 ：观察中 ；</li>
+<li>2 ：攻击开始 ；</li>
+<li>3 ：攻击结束 。</li>
                      */
                     int64_t GetAttackStatus() const;
 
                     /**
-                     * 设置攻击状态
-                     * @param AttackStatus 攻击状态
+                     * 设置攻击状态，取值有：
+<li>1 ：观察中 ；</li>
+<li>2 ：攻击开始 ；</li>
+<li>3 ：攻击结束 。</li>
+                     * @param AttackStatus 攻击状态，取值有：
+<li>1 ：观察中 ；</li>
+<li>2 ：攻击开始 ；</li>
+<li>3 ：攻击结束 。</li>
                      */
                     void SetAttackStatus(const int64_t& _attackStatus);
 
@@ -65,14 +77,14 @@ namespace TencentCloud
                     bool AttackStatusHasBeenSet() const;
 
                     /**
-                     * 获取攻击类型
-                     * @return AttackType 攻击类型
+                     * 获取攻击类型。
+                     * @return AttackType 攻击类型。
                      */
                     std::string GetAttackType() const;
 
                     /**
-                     * 设置攻击类型
-                     * @param AttackType 攻击类型
+                     * 设置攻击类型。
+                     * @param AttackType 攻击类型。
                      */
                     void SetAttackType(const std::string& _attackType);
 
@@ -83,14 +95,14 @@ namespace TencentCloud
                     bool AttackTypeHasBeenSet() const;
 
                     /**
-                     * 获取结束时间
-                     * @return EndTime 结束时间
+                     * 获取结束时间。
+                     * @return EndTime 结束时间。
                      */
                     int64_t GetEndTime() const;
 
                     /**
-                     * 设置结束时间
-                     * @param EndTime 结束时间
+                     * 设置结束时间。
+                     * @param EndTime 结束时间。
                      */
                     void SetEndTime(const int64_t& _endTime);
 
@@ -101,14 +113,14 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取开始时间
-                     * @return StartTime 开始时间
+                     * 获取开始时间。
+                     * @return StartTime 开始时间。
                      */
                     int64_t GetStartTime() const;
 
                     /**
-                     * 设置开始时间
-                     * @param StartTime 开始时间
+                     * 设置开始时间。
+                     * @param StartTime 开始时间。
                      */
                     void SetStartTime(const int64_t& _startTime);
 
@@ -119,14 +131,14 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取最大带宽
-                     * @return MaxBandWidth 最大带宽
+                     * 获取最大带宽。
+                     * @return MaxBandWidth 最大带宽。
                      */
                     int64_t GetMaxBandWidth() const;
 
                     /**
-                     * 设置最大带宽
-                     * @param MaxBandWidth 最大带宽
+                     * 设置最大带宽。
+                     * @param MaxBandWidth 最大带宽。
                      */
                     void SetMaxBandWidth(const int64_t& _maxBandWidth);
 
@@ -137,14 +149,14 @@ namespace TencentCloud
                     bool MaxBandWidthHasBeenSet() const;
 
                     /**
-                     * 获取最大包速率
-                     * @return PacketMaxRate 最大包速率
+                     * 获取最大包速率。
+                     * @return PacketMaxRate 最大包速率。
                      */
                     int64_t GetPacketMaxRate() const;
 
                     /**
-                     * 设置最大包速率
-                     * @param PacketMaxRate 最大包速率
+                     * 设置最大包速率。
+                     * @param PacketMaxRate 最大包速率。
                      */
                     void SetPacketMaxRate(const int64_t& _packetMaxRate);
 
@@ -155,14 +167,14 @@ namespace TencentCloud
                     bool PacketMaxRateHasBeenSet() const;
 
                     /**
-                     * 获取事件Id
-                     * @return EventId 事件Id
+                     * 获取事件Id。
+                     * @return EventId 事件Id。
                      */
                     std::string GetEventId() const;
 
                     /**
-                     * 设置事件Id
-                     * @param EventId 事件Id
+                     * 设置事件Id。
+                     * @param EventId 事件Id。
                      */
                     void SetEventId(const std::string& _eventId);
 
@@ -173,14 +185,14 @@ namespace TencentCloud
                     bool EventIdHasBeenSet() const;
 
                     /**
-                     * 获取ddos 策略组id
-                     * @return PolicyId ddos 策略组id
+                     * 获取ddos 策略组id。
+                     * @return PolicyId ddos 策略组id。
                      */
                     int64_t GetPolicyId() const;
 
                     /**
-                     * 设置ddos 策略组id
-                     * @param PolicyId ddos 策略组id
+                     * 设置ddos 策略组id。
+                     * @param PolicyId ddos 策略组id。
                      */
                     void SetPolicyId(const int64_t& _policyId);
 
@@ -193,49 +205,52 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 攻击状态
+                     * 攻击状态，取值有：
+<li>1 ：观察中 ；</li>
+<li>2 ：攻击开始 ；</li>
+<li>3 ：攻击结束 。</li>
                      */
                     int64_t m_attackStatus;
                     bool m_attackStatusHasBeenSet;
 
                     /**
-                     * 攻击类型
+                     * 攻击类型。
                      */
                     std::string m_attackType;
                     bool m_attackTypeHasBeenSet;
 
                     /**
-                     * 结束时间
+                     * 结束时间。
                      */
                     int64_t m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 开始时间
+                     * 开始时间。
                      */
                     int64_t m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 最大带宽
+                     * 最大带宽。
                      */
                     int64_t m_maxBandWidth;
                     bool m_maxBandWidthHasBeenSet;
 
                     /**
-                     * 最大包速率
+                     * 最大包速率。
                      */
                     int64_t m_packetMaxRate;
                     bool m_packetMaxRateHasBeenSet;
 
                     /**
-                     * 事件Id
+                     * 事件Id。
                      */
                     std::string m_eventId;
                     bool m_eventIdHasBeenSet;
 
                     /**
-                     * ddos 策略组id
+                     * ddos 策略组id。
                      */
                     int64_t m_policyId;
                     bool m_policyIdHasBeenSet;

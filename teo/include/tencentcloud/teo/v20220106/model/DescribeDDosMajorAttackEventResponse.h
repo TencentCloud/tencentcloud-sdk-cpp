@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取DDos查询主攻击事件
-                     * @return Data DDos查询主攻击事件
+                     * 获取DDos查询主攻击事件。
+                     * @return Data DDos查询主攻击事件。
                      */
                     DDosMajorAttackEventData GetData() const;
 
@@ -57,8 +57,12 @@ namespace TencentCloud
                     bool DataHasBeenSet() const;
 
                     /**
-                     * 获取状态，1:失败，0:成功
-                     * @return Status 状态，1:失败，0:成功
+                     * 获取请求响应状态，取值有：
+<li>1 ：失败 ；</li>
+<li>0 ：成功 。</li>
+                     * @return Status 请求响应状态，取值有：
+<li>1 ：失败 ；</li>
+<li>0 ：成功 。</li>
                      */
                     int64_t GetStatus() const;
 
@@ -69,8 +73,8 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取返回消息
-                     * @return Msg 返回消息
+                     * 获取请求响应消息。
+                     * @return Msg 请求响应消息。
                      */
                     std::string GetMsg() const;
 
@@ -83,19 +87,21 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * DDos查询主攻击事件
+                     * DDos查询主攻击事件。
                      */
                     DDosMajorAttackEventData m_data;
                     bool m_dataHasBeenSet;
 
                     /**
-                     * 状态，1:失败，0:成功
+                     * 请求响应状态，取值有：
+<li>1 ：失败 ；</li>
+<li>0 ：成功 。</li>
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 返回消息
+                     * 请求响应消息。
                      */
                     std::string m_msg;
                     bool m_msgHasBeenSet;

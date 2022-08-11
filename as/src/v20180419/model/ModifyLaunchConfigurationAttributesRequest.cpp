@@ -40,7 +40,8 @@ ModifyLaunchConfigurationAttributesRequest::ModifyLaunchConfigurationAttributesR
     m_hostNameSettingsHasBeenSet(false),
     m_instanceNameSettingsHasBeenSet(false),
     m_enhancedServiceHasBeenSet(false),
-    m_camRoleNameHasBeenSet(false)
+    m_camRoleNameHasBeenSet(false),
+    m_hpcClusterIdHasBeenSet(false)
 {
 }
 
@@ -217,6 +218,14 @@ string ModifyLaunchConfigurationAttributesRequest::ToJsonString() const
         string key = "CamRoleName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_camRoleName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_hpcClusterIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HpcClusterId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_hpcClusterId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -513,6 +522,22 @@ void ModifyLaunchConfigurationAttributesRequest::SetCamRoleName(const string& _c
 bool ModifyLaunchConfigurationAttributesRequest::CamRoleNameHasBeenSet() const
 {
     return m_camRoleNameHasBeenSet;
+}
+
+string ModifyLaunchConfigurationAttributesRequest::GetHpcClusterId() const
+{
+    return m_hpcClusterId;
+}
+
+void ModifyLaunchConfigurationAttributesRequest::SetHpcClusterId(const string& _hpcClusterId)
+{
+    m_hpcClusterId = _hpcClusterId;
+    m_hpcClusterIdHasBeenSet = true;
+}
+
+bool ModifyLaunchConfigurationAttributesRequest::HpcClusterIdHasBeenSet() const
+{
+    return m_hpcClusterIdHasBeenSet;
 }
 
 

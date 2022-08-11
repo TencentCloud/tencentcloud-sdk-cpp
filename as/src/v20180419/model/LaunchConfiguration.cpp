@@ -48,7 +48,8 @@ LaunchConfiguration::LaunchConfiguration() :
     m_hostNameSettingsHasBeenSet(false),
     m_instanceNameSettingsHasBeenSet(false),
     m_instanceChargePrepaidHasBeenSet(false),
-    m_diskTypePolicyHasBeenSet(false)
+    m_diskTypePolicyHasBeenSet(false),
+    m_hpcClusterIdHasBeenSet(false)
 {
 }
 
@@ -439,6 +440,16 @@ CoreInternalOutcome LaunchConfiguration::Deserialize(const rapidjson::Value &val
         m_diskTypePolicyHasBeenSet = true;
     }
 
+    if (value.HasMember("HpcClusterId") && !value["HpcClusterId"].IsNull())
+    {
+        if (!value["HpcClusterId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LaunchConfiguration.HpcClusterId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_hpcClusterId = string(value["HpcClusterId"].GetString());
+        m_hpcClusterIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -714,6 +725,14 @@ void LaunchConfiguration::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "DiskTypePolicy";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_diskTypePolicy.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_hpcClusterIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HpcClusterId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_hpcClusterId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1165,5 +1184,21 @@ void LaunchConfiguration::SetDiskTypePolicy(const string& _diskTypePolicy)
 bool LaunchConfiguration::DiskTypePolicyHasBeenSet() const
 {
     return m_diskTypePolicyHasBeenSet;
+}
+
+string LaunchConfiguration::GetHpcClusterId() const
+{
+    return m_hpcClusterId;
+}
+
+void LaunchConfiguration::SetHpcClusterId(const string& _hpcClusterId)
+{
+    m_hpcClusterId = _hpcClusterId;
+    m_hpcClusterIdHasBeenSet = true;
+}
+
+bool LaunchConfiguration::HpcClusterIdHasBeenSet() const
+{
+    return m_hpcClusterIdHasBeenSet;
 }
 

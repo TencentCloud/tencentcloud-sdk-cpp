@@ -44,7 +44,8 @@ CreateLaunchConfigurationRequest::CreateLaunchConfigurationRequest() :
     m_hostNameSettingsHasBeenSet(false),
     m_instanceNameSettingsHasBeenSet(false),
     m_instanceChargePrepaidHasBeenSet(false),
-    m_diskTypePolicyHasBeenSet(false)
+    m_diskTypePolicyHasBeenSet(false),
+    m_hpcClusterIdHasBeenSet(false)
 {
 }
 
@@ -268,6 +269,14 @@ string CreateLaunchConfigurationRequest::ToJsonString() const
         string key = "DiskTypePolicy";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_diskTypePolicy.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_hpcClusterIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HpcClusterId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_hpcClusterId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -628,6 +637,22 @@ void CreateLaunchConfigurationRequest::SetDiskTypePolicy(const string& _diskType
 bool CreateLaunchConfigurationRequest::DiskTypePolicyHasBeenSet() const
 {
     return m_diskTypePolicyHasBeenSet;
+}
+
+string CreateLaunchConfigurationRequest::GetHpcClusterId() const
+{
+    return m_hpcClusterId;
+}
+
+void CreateLaunchConfigurationRequest::SetHpcClusterId(const string& _hpcClusterId)
+{
+    m_hpcClusterId = _hpcClusterId;
+    m_hpcClusterIdHasBeenSet = true;
+}
+
+bool CreateLaunchConfigurationRequest::HpcClusterIdHasBeenSet() const
+{
+    return m_hpcClusterIdHasBeenSet;
 }
 
 

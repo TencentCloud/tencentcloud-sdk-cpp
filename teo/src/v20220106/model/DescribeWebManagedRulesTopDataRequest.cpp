@@ -32,7 +32,9 @@ DescribeWebManagedRulesTopDataRequest::DescribeWebManagedRulesTopDataRequest() :
     m_portHasBeenSet(false),
     m_protocolTypeHasBeenSet(false),
     m_attackTypeHasBeenSet(false),
-    m_domainsHasBeenSet(false)
+    m_domainsHasBeenSet(false),
+    m_intervalHasBeenSet(false),
+    m_queryConditionHasBeenSet(false)
 {
 }
 
@@ -135,6 +137,29 @@ string DescribeWebManagedRulesTopDataRequest::ToJsonString() const
         for (auto itr = m_domains.begin(); itr != m_domains.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_intervalHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Interval";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_interval.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_queryConditionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QueryCondition";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_queryCondition.begin(); itr != m_queryCondition.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
     }
 
@@ -304,6 +329,38 @@ void DescribeWebManagedRulesTopDataRequest::SetDomains(const vector<string>& _do
 bool DescribeWebManagedRulesTopDataRequest::DomainsHasBeenSet() const
 {
     return m_domainsHasBeenSet;
+}
+
+string DescribeWebManagedRulesTopDataRequest::GetInterval() const
+{
+    return m_interval;
+}
+
+void DescribeWebManagedRulesTopDataRequest::SetInterval(const string& _interval)
+{
+    m_interval = _interval;
+    m_intervalHasBeenSet = true;
+}
+
+bool DescribeWebManagedRulesTopDataRequest::IntervalHasBeenSet() const
+{
+    return m_intervalHasBeenSet;
+}
+
+vector<QueryCondition> DescribeWebManagedRulesTopDataRequest::GetQueryCondition() const
+{
+    return m_queryCondition;
+}
+
+void DescribeWebManagedRulesTopDataRequest::SetQueryCondition(const vector<QueryCondition>& _queryCondition)
+{
+    m_queryCondition = _queryCondition;
+    m_queryConditionHasBeenSet = true;
+}
+
+bool DescribeWebManagedRulesTopDataRequest::QueryConditionHasBeenSet() const
+{
+    return m_queryConditionHasBeenSet;
 }
 
 

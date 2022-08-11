@@ -688,7 +688,7 @@ namespace TencentCloud
                 DescribeDDoSPolicyOutcomeCallable DescribeDDoSPolicyCallable(const Model::DescribeDDoSPolicyRequest& request);
 
                 /**
-                 *查询DDos攻击数据
+                 *查询DDos攻击时序数据
                  * @param req DescribeDDosAttackDataRequest
                  * @return DescribeDDosAttackDataOutcome
                  */
@@ -715,7 +715,7 @@ namespace TencentCloud
                 DescribeDDosAttackEventDetailOutcomeCallable DescribeDDosAttackEventDetailCallable(const Model::DescribeDDosAttackEventDetailRequest& request);
 
                 /**
-                 *查询DDos攻击源
+                 *查询DDos攻击源信息
                  * @param req DescribeDDosAttackSourceEventRequest
                  * @return DescribeDDosAttackSourceEventOutcome
                  */
@@ -976,7 +976,7 @@ namespace TencentCloud
                 DescribeWebManagedRulesAttackEventsOutcomeCallable DescribeWebManagedRulesAttackEventsCallable(const Model::DescribeWebManagedRulesAttackEventsRequest& request);
 
                 /**
-                 *查询Web托管规则数据
+                 *查询waf攻击时序数据
                  * @param req DescribeWebManagedRulesDataRequest
                  * @return DescribeWebManagedRulesDataOutcome
                  */
@@ -985,7 +985,7 @@ namespace TencentCloud
                 DescribeWebManagedRulesDataOutcomeCallable DescribeWebManagedRulesDataCallable(const Model::DescribeWebManagedRulesDataRequest& request);
 
                 /**
-                 *查询Web托管日志
+                 *查询waf攻击日志
                  * @param req DescribeWebManagedRulesLogRequest
                  * @return DescribeWebManagedRulesLogOutcome
                  */
@@ -994,7 +994,7 @@ namespace TencentCloud
                 DescribeWebManagedRulesLogOutcomeCallable DescribeWebManagedRulesLogCallable(const Model::DescribeWebManagedRulesLogRequest& request);
 
                 /**
-                 *查询Web托管规则Top数据
+                 *查询waf攻击top数据
                  * @param req DescribeWebManagedRulesTopDataRequest
                  * @return DescribeWebManagedRulesTopDataOutcome
                  */
@@ -1012,7 +1012,7 @@ namespace TencentCloud
                 DescribeWebProtectionAttackEventsOutcomeCallable DescribeWebProtectionAttackEventsCallable(const Model::DescribeWebProtectionAttackEventsRequest& request);
 
                 /**
-                 *查询web防护数据
+                 *查询CC防护时序数据
                  * @param req DescribeWebProtectionDataRequest
                  * @return DescribeWebProtectionDataOutcome
                  */
@@ -1021,7 +1021,7 @@ namespace TencentCloud
                 DescribeWebProtectionDataOutcomeCallable DescribeWebProtectionDataCallable(const Model::DescribeWebProtectionDataRequest& request);
 
                 /**
-                 *查询web防护日志
+                 *查询CC防护日志
                  * @param req DescribeWebProtectionLogRequest
                  * @return DescribeWebProtectionLogOutcome
                  */

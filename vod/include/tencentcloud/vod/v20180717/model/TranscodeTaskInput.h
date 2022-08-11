@@ -26,8 +26,8 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/vod/v20180717/model/WatermarkInput.h>
 #include <tencentcloud/vod/v20180717/model/TraceWatermarkInput.h>
-#include <tencentcloud/vod/v20180717/model/HeadTailTaskInput.h>
 #include <tencentcloud/vod/v20180717/model/MosaicInput.h>
+#include <tencentcloud/vod/v20180717/model/HeadTailTaskInput.h>
 
 
 namespace TencentCloud
@@ -105,24 +105,6 @@ namespace TencentCloud
                     bool TraceWatermarkHasBeenSet() const;
 
                     /**
-                     * 获取片头片尾列表，支持多片头片尾，最大可支持 10 个。
-                     * @return HeadTailSet 片头片尾列表，支持多片头片尾，最大可支持 10 个。
-                     */
-                    std::vector<HeadTailTaskInput> GetHeadTailSet() const;
-
-                    /**
-                     * 设置片头片尾列表，支持多片头片尾，最大可支持 10 个。
-                     * @param HeadTailSet 片头片尾列表，支持多片头片尾，最大可支持 10 个。
-                     */
-                    void SetHeadTailSet(const std::vector<HeadTailTaskInput>& _headTailSet);
-
-                    /**
-                     * 判断参数 HeadTailSet 是否已赋值
-                     * @return HeadTailSet 是否已赋值
-                     */
-                    bool HeadTailSetHasBeenSet() const;
-
-                    /**
                      * 获取马赛克列表，最大可支持 10 张。
                      * @return MosaicSet 马赛克列表，最大可支持 10 张。
                      */
@@ -141,34 +123,22 @@ namespace TencentCloud
                     bool MosaicSetHasBeenSet() const;
 
                     /**
-                     * 获取转码后视频的终止时间偏移，单位：秒。
-<li>不填或填0，表示转码后的视频持续到原始视频的末尾终止；</li>
-<li>当数值大于0时（假设为 n），表示转码后的视频持续到原始视频第 n 秒时终止；</li>
-<li>当数值小于0时（假设为 -n），表示转码后的视频持续到原始视频结束 n 秒前终止。</li>
-                     * @return EndTimeOffset 转码后视频的终止时间偏移，单位：秒。
-<li>不填或填0，表示转码后的视频持续到原始视频的末尾终止；</li>
-<li>当数值大于0时（假设为 n），表示转码后的视频持续到原始视频第 n 秒时终止；</li>
-<li>当数值小于0时（假设为 -n），表示转码后的视频持续到原始视频结束 n 秒前终止。</li>
+                     * 获取片头片尾列表，支持多片头片尾，最大可支持 10 个。
+                     * @return HeadTailSet 片头片尾列表，支持多片头片尾，最大可支持 10 个。
                      */
-                    double GetEndTimeOffset() const;
+                    std::vector<HeadTailTaskInput> GetHeadTailSet() const;
 
                     /**
-                     * 设置转码后视频的终止时间偏移，单位：秒。
-<li>不填或填0，表示转码后的视频持续到原始视频的末尾终止；</li>
-<li>当数值大于0时（假设为 n），表示转码后的视频持续到原始视频第 n 秒时终止；</li>
-<li>当数值小于0时（假设为 -n），表示转码后的视频持续到原始视频结束 n 秒前终止。</li>
-                     * @param EndTimeOffset 转码后视频的终止时间偏移，单位：秒。
-<li>不填或填0，表示转码后的视频持续到原始视频的末尾终止；</li>
-<li>当数值大于0时（假设为 n），表示转码后的视频持续到原始视频第 n 秒时终止；</li>
-<li>当数值小于0时（假设为 -n），表示转码后的视频持续到原始视频结束 n 秒前终止。</li>
+                     * 设置片头片尾列表，支持多片头片尾，最大可支持 10 个。
+                     * @param HeadTailSet 片头片尾列表，支持多片头片尾，最大可支持 10 个。
                      */
-                    void SetEndTimeOffset(const double& _endTimeOffset);
+                    void SetHeadTailSet(const std::vector<HeadTailTaskInput>& _headTailSet);
 
                     /**
-                     * 判断参数 EndTimeOffset 是否已赋值
-                     * @return EndTimeOffset 是否已赋值
+                     * 判断参数 HeadTailSet 是否已赋值
+                     * @return HeadTailSet 是否已赋值
                      */
-                    bool EndTimeOffsetHasBeenSet() const;
+                    bool HeadTailSetHasBeenSet() const;
 
                     /**
                      * 获取转码后的视频的起始时间偏移，单位：秒。
@@ -200,6 +170,36 @@ namespace TencentCloud
                      */
                     bool StartTimeOffsetHasBeenSet() const;
 
+                    /**
+                     * 获取转码后视频的终止时间偏移，单位：秒。
+<li>不填或填0，表示转码后的视频持续到原始视频的末尾终止；</li>
+<li>当数值大于0时（假设为 n），表示转码后的视频持续到原始视频第 n 秒时终止；</li>
+<li>当数值小于0时（假设为 -n），表示转码后的视频持续到原始视频结束 n 秒前终止。</li>
+                     * @return EndTimeOffset 转码后视频的终止时间偏移，单位：秒。
+<li>不填或填0，表示转码后的视频持续到原始视频的末尾终止；</li>
+<li>当数值大于0时（假设为 n），表示转码后的视频持续到原始视频第 n 秒时终止；</li>
+<li>当数值小于0时（假设为 -n），表示转码后的视频持续到原始视频结束 n 秒前终止。</li>
+                     */
+                    double GetEndTimeOffset() const;
+
+                    /**
+                     * 设置转码后视频的终止时间偏移，单位：秒。
+<li>不填或填0，表示转码后的视频持续到原始视频的末尾终止；</li>
+<li>当数值大于0时（假设为 n），表示转码后的视频持续到原始视频第 n 秒时终止；</li>
+<li>当数值小于0时（假设为 -n），表示转码后的视频持续到原始视频结束 n 秒前终止。</li>
+                     * @param EndTimeOffset 转码后视频的终止时间偏移，单位：秒。
+<li>不填或填0，表示转码后的视频持续到原始视频的末尾终止；</li>
+<li>当数值大于0时（假设为 n），表示转码后的视频持续到原始视频第 n 秒时终止；</li>
+<li>当数值小于0时（假设为 -n），表示转码后的视频持续到原始视频结束 n 秒前终止。</li>
+                     */
+                    void SetEndTimeOffset(const double& _endTimeOffset);
+
+                    /**
+                     * 判断参数 EndTimeOffset 是否已赋值
+                     * @return EndTimeOffset 是否已赋值
+                     */
+                    bool EndTimeOffsetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -221,25 +221,16 @@ namespace TencentCloud
                     bool m_traceWatermarkHasBeenSet;
 
                     /**
-                     * 片头片尾列表，支持多片头片尾，最大可支持 10 个。
-                     */
-                    std::vector<HeadTailTaskInput> m_headTailSet;
-                    bool m_headTailSetHasBeenSet;
-
-                    /**
                      * 马赛克列表，最大可支持 10 张。
                      */
                     std::vector<MosaicInput> m_mosaicSet;
                     bool m_mosaicSetHasBeenSet;
 
                     /**
-                     * 转码后视频的终止时间偏移，单位：秒。
-<li>不填或填0，表示转码后的视频持续到原始视频的末尾终止；</li>
-<li>当数值大于0时（假设为 n），表示转码后的视频持续到原始视频第 n 秒时终止；</li>
-<li>当数值小于0时（假设为 -n），表示转码后的视频持续到原始视频结束 n 秒前终止。</li>
+                     * 片头片尾列表，支持多片头片尾，最大可支持 10 个。
                      */
-                    double m_endTimeOffset;
-                    bool m_endTimeOffsetHasBeenSet;
+                    std::vector<HeadTailTaskInput> m_headTailSet;
+                    bool m_headTailSetHasBeenSet;
 
                     /**
                      * 转码后的视频的起始时间偏移，单位：秒。
@@ -249,6 +240,15 @@ namespace TencentCloud
                      */
                     double m_startTimeOffset;
                     bool m_startTimeOffsetHasBeenSet;
+
+                    /**
+                     * 转码后视频的终止时间偏移，单位：秒。
+<li>不填或填0，表示转码后的视频持续到原始视频的末尾终止；</li>
+<li>当数值大于0时（假设为 n），表示转码后的视频持续到原始视频第 n 秒时终止；</li>
+<li>当数值小于0时（假设为 -n），表示转码后的视频持续到原始视频结束 n 秒前终止。</li>
+                     */
+                    double m_endTimeOffset;
+                    bool m_endTimeOffsetHasBeenSet;
 
                 };
             }

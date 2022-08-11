@@ -27,8 +27,12 @@
 #include <tencentcloud/gme/v20180711/model/CreateAgeDetectTaskResponse.h>
 #include <tencentcloud/gme/v20180711/model/CreateAppRequest.h>
 #include <tencentcloud/gme/v20180711/model/CreateAppResponse.h>
+#include <tencentcloud/gme/v20180711/model/CreateCustomizationRequest.h>
+#include <tencentcloud/gme/v20180711/model/CreateCustomizationResponse.h>
 #include <tencentcloud/gme/v20180711/model/CreateScanUserRequest.h>
 #include <tencentcloud/gme/v20180711/model/CreateScanUserResponse.h>
+#include <tencentcloud/gme/v20180711/model/DeleteCustomizationRequest.h>
+#include <tencentcloud/gme/v20180711/model/DeleteCustomizationResponse.h>
 #include <tencentcloud/gme/v20180711/model/DeleteScanUserRequest.h>
 #include <tencentcloud/gme/v20180711/model/DeleteScanUserResponse.h>
 #include <tencentcloud/gme/v20180711/model/DescribeAgeDetectTaskRequest.h>
@@ -49,8 +53,14 @@
 #include <tencentcloud/gme/v20180711/model/DescribeScanResultListResponse.h>
 #include <tencentcloud/gme/v20180711/model/DescribeUserInAndOutTimeRequest.h>
 #include <tencentcloud/gme/v20180711/model/DescribeUserInAndOutTimeResponse.h>
+#include <tencentcloud/gme/v20180711/model/GetCustomizationListRequest.h>
+#include <tencentcloud/gme/v20180711/model/GetCustomizationListResponse.h>
 #include <tencentcloud/gme/v20180711/model/ModifyAppStatusRequest.h>
 #include <tencentcloud/gme/v20180711/model/ModifyAppStatusResponse.h>
+#include <tencentcloud/gme/v20180711/model/ModifyCustomizationRequest.h>
+#include <tencentcloud/gme/v20180711/model/ModifyCustomizationResponse.h>
+#include <tencentcloud/gme/v20180711/model/ModifyCustomizationStateRequest.h>
+#include <tencentcloud/gme/v20180711/model/ModifyCustomizationStateResponse.h>
 #include <tencentcloud/gme/v20180711/model/ModifyRoomInfoRequest.h>
 #include <tencentcloud/gme/v20180711/model/ModifyRoomInfoResponse.h>
 #include <tencentcloud/gme/v20180711/model/ModifyUserMicStatusRequest.h>
@@ -83,9 +93,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateAppResponse> CreateAppOutcome;
                 typedef std::future<CreateAppOutcome> CreateAppOutcomeCallable;
                 typedef std::function<void(const GmeClient*, const Model::CreateAppRequest&, CreateAppOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAppAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateCustomizationResponse> CreateCustomizationOutcome;
+                typedef std::future<CreateCustomizationOutcome> CreateCustomizationOutcomeCallable;
+                typedef std::function<void(const GmeClient*, const Model::CreateCustomizationRequest&, CreateCustomizationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCustomizationAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateScanUserResponse> CreateScanUserOutcome;
                 typedef std::future<CreateScanUserOutcome> CreateScanUserOutcomeCallable;
                 typedef std::function<void(const GmeClient*, const Model::CreateScanUserRequest&, CreateScanUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateScanUserAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteCustomizationResponse> DeleteCustomizationOutcome;
+                typedef std::future<DeleteCustomizationOutcome> DeleteCustomizationOutcomeCallable;
+                typedef std::function<void(const GmeClient*, const Model::DeleteCustomizationRequest&, DeleteCustomizationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCustomizationAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteScanUserResponse> DeleteScanUserOutcome;
                 typedef std::future<DeleteScanUserOutcome> DeleteScanUserOutcomeCallable;
                 typedef std::function<void(const GmeClient*, const Model::DeleteScanUserRequest&, DeleteScanUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteScanUserAsyncHandler;
@@ -116,9 +132,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeUserInAndOutTimeResponse> DescribeUserInAndOutTimeOutcome;
                 typedef std::future<DescribeUserInAndOutTimeOutcome> DescribeUserInAndOutTimeOutcomeCallable;
                 typedef std::function<void(const GmeClient*, const Model::DescribeUserInAndOutTimeRequest&, DescribeUserInAndOutTimeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserInAndOutTimeAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetCustomizationListResponse> GetCustomizationListOutcome;
+                typedef std::future<GetCustomizationListOutcome> GetCustomizationListOutcomeCallable;
+                typedef std::function<void(const GmeClient*, const Model::GetCustomizationListRequest&, GetCustomizationListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetCustomizationListAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyAppStatusResponse> ModifyAppStatusOutcome;
                 typedef std::future<ModifyAppStatusOutcome> ModifyAppStatusOutcomeCallable;
                 typedef std::function<void(const GmeClient*, const Model::ModifyAppStatusRequest&, ModifyAppStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAppStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyCustomizationResponse> ModifyCustomizationOutcome;
+                typedef std::future<ModifyCustomizationOutcome> ModifyCustomizationOutcomeCallable;
+                typedef std::function<void(const GmeClient*, const Model::ModifyCustomizationRequest&, ModifyCustomizationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCustomizationAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyCustomizationStateResponse> ModifyCustomizationStateOutcome;
+                typedef std::future<ModifyCustomizationStateOutcome> ModifyCustomizationStateOutcomeCallable;
+                typedef std::function<void(const GmeClient*, const Model::ModifyCustomizationStateRequest&, ModifyCustomizationStateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCustomizationStateAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyRoomInfoResponse> ModifyRoomInfoOutcome;
                 typedef std::future<ModifyRoomInfoOutcome> ModifyRoomInfoOutcomeCallable;
                 typedef std::function<void(const GmeClient*, const Model::ModifyRoomInfoRequest&, ModifyRoomInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRoomInfoAsyncHandler;
@@ -169,6 +194,15 @@ namespace TencentCloud
                 CreateAppOutcomeCallable CreateAppCallable(const Model::CreateAppRequest& request);
 
                 /**
+                 *用户使用该接口可以创建语音消息转文本自学习模型，以供识别调用
+                 * @param req CreateCustomizationRequest
+                 * @return CreateCustomizationOutcome
+                 */
+                CreateCustomizationOutcome CreateCustomization(const Model::CreateCustomizationRequest &request);
+                void CreateCustomizationAsync(const Model::CreateCustomizationRequest& request, const CreateCustomizationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateCustomizationOutcomeCallable CreateCustomizationCallable(const Model::CreateCustomizationRequest& request);
+
+                /**
                  *新增自定义送检用户
                  * @param req CreateScanUserRequest
                  * @return CreateScanUserOutcome
@@ -176,6 +210,15 @@ namespace TencentCloud
                 CreateScanUserOutcome CreateScanUser(const Model::CreateScanUserRequest &request);
                 void CreateScanUserAsync(const Model::CreateScanUserRequest& request, const CreateScanUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateScanUserOutcomeCallable CreateScanUserCallable(const Model::CreateScanUserRequest& request);
+
+                /**
+                 *用户通过该接口可以删除语音消息转文本自学习模型
+                 * @param req DeleteCustomizationRequest
+                 * @return DeleteCustomizationOutcome
+                 */
+                DeleteCustomizationOutcome DeleteCustomization(const Model::DeleteCustomizationRequest &request);
+                void DeleteCustomizationAsync(const Model::DeleteCustomizationRequest& request, const DeleteCustomizationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteCustomizationOutcomeCallable DeleteCustomizationCallable(const Model::DeleteCustomizationRequest& request);
 
                 /**
                  *删除自定义送检用户
@@ -269,6 +312,15 @@ namespace TencentCloud
                 DescribeUserInAndOutTimeOutcomeCallable DescribeUserInAndOutTimeCallable(const Model::DescribeUserInAndOutTimeRequest& request);
 
                 /**
+                 *查询语音消息转文本自学习模型列表
+                 * @param req GetCustomizationListRequest
+                 * @return GetCustomizationListOutcome
+                 */
+                GetCustomizationListOutcome GetCustomizationList(const Model::GetCustomizationListRequest &request);
+                void GetCustomizationListAsync(const Model::GetCustomizationListRequest& request, const GetCustomizationListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetCustomizationListOutcomeCallable GetCustomizationListCallable(const Model::GetCustomizationListRequest& request);
+
+                /**
                  *本接口(ModifyAppStatus)用于修改应用总开关状态。
                  * @param req ModifyAppStatusRequest
                  * @return ModifyAppStatusOutcome
@@ -276,6 +328,24 @@ namespace TencentCloud
                 ModifyAppStatusOutcome ModifyAppStatus(const Model::ModifyAppStatusRequest &request);
                 void ModifyAppStatusAsync(const Model::ModifyAppStatusRequest& request, const ModifyAppStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyAppStatusOutcomeCallable ModifyAppStatusCallable(const Model::ModifyAppStatusRequest& request);
+
+                /**
+                 *用户通过该接口可以更新语音消息转文本自学习模型。
+                 * @param req ModifyCustomizationRequest
+                 * @return ModifyCustomizationOutcome
+                 */
+                ModifyCustomizationOutcome ModifyCustomization(const Model::ModifyCustomizationRequest &request);
+                void ModifyCustomizationAsync(const Model::ModifyCustomizationRequest& request, const ModifyCustomizationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyCustomizationOutcomeCallable ModifyCustomizationCallable(const Model::ModifyCustomizationRequest& request);
+
+                /**
+                 *通过该接口，用户可以修改语音消息转文本自学习模型状态，上下线自学习模型
+                 * @param req ModifyCustomizationStateRequest
+                 * @return ModifyCustomizationStateOutcome
+                 */
+                ModifyCustomizationStateOutcome ModifyCustomizationState(const Model::ModifyCustomizationStateRequest &request);
+                void ModifyCustomizationStateAsync(const Model::ModifyCustomizationStateRequest& request, const ModifyCustomizationStateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyCustomizationStateOutcomeCallable ModifyCustomizationStateCallable(const Model::ModifyCustomizationStateRequest& request);
 
                 /**
                  *修改房间信息

@@ -32,7 +32,9 @@ StaffStatusMetrics::StaffStatusMetrics() :
     m_afterCallWorkDurationHasBeenSet(false),
     m_reasonHasBeenSet(false),
     m_reserveRestHasBeenSet(false),
-    m_reserveNotReadyHasBeenSet(false)
+    m_reserveNotReadyHasBeenSet(false),
+    m_useMobileAcceptHasBeenSet(false),
+    m_useMobileCallOutHasBeenSet(false)
 {
 }
 
@@ -168,6 +170,26 @@ CoreInternalOutcome StaffStatusMetrics::Deserialize(const rapidjson::Value &valu
         m_reserveNotReadyHasBeenSet = true;
     }
 
+    if (value.HasMember("UseMobileAccept") && !value["UseMobileAccept"].IsNull())
+    {
+        if (!value["UseMobileAccept"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `StaffStatusMetrics.UseMobileAccept` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_useMobileAccept = value["UseMobileAccept"].GetInt64();
+        m_useMobileAcceptHasBeenSet = true;
+    }
+
+    if (value.HasMember("UseMobileCallOut") && !value["UseMobileCallOut"].IsNull())
+    {
+        if (!value["UseMobileCallOut"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `StaffStatusMetrics.UseMobileCallOut` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_useMobileCallOut = value["UseMobileCallOut"].GetBool();
+        m_useMobileCallOutHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -270,6 +292,22 @@ void StaffStatusMetrics::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "ReserveNotReady";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_reserveNotReady, allocator);
+    }
+
+    if (m_useMobileAcceptHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UseMobileAccept";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_useMobileAccept, allocator);
+    }
+
+    if (m_useMobileCallOutHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UseMobileCallOut";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_useMobileCallOut, allocator);
     }
 
 }
@@ -465,5 +503,37 @@ void StaffStatusMetrics::SetReserveNotReady(const bool& _reserveNotReady)
 bool StaffStatusMetrics::ReserveNotReadyHasBeenSet() const
 {
     return m_reserveNotReadyHasBeenSet;
+}
+
+int64_t StaffStatusMetrics::GetUseMobileAccept() const
+{
+    return m_useMobileAccept;
+}
+
+void StaffStatusMetrics::SetUseMobileAccept(const int64_t& _useMobileAccept)
+{
+    m_useMobileAccept = _useMobileAccept;
+    m_useMobileAcceptHasBeenSet = true;
+}
+
+bool StaffStatusMetrics::UseMobileAcceptHasBeenSet() const
+{
+    return m_useMobileAcceptHasBeenSet;
+}
+
+bool StaffStatusMetrics::GetUseMobileCallOut() const
+{
+    return m_useMobileCallOut;
+}
+
+void StaffStatusMetrics::SetUseMobileCallOut(const bool& _useMobileCallOut)
+{
+    m_useMobileCallOut = _useMobileCallOut;
+    m_useMobileCallOutHasBeenSet = true;
+}
+
+bool StaffStatusMetrics::UseMobileCallOutHasBeenSet() const
+{
+    return m_useMobileCallOutHasBeenSet;
 }
 

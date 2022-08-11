@@ -31,7 +31,10 @@ CCLog::CCLog() :
     m_disposalMethodHasBeenSet(false),
     m_httpLogHasBeenSet(false),
     m_ruleIdHasBeenSet(false),
-    m_riskLevelHasBeenSet(false)
+    m_riskLevelHasBeenSet(false),
+    m_uaHasBeenSet(false),
+    m_requestMethodHasBeenSet(false),
+    m_ruleDetailListHasBeenSet(false)
 {
 }
 
@@ -150,6 +153,46 @@ CoreInternalOutcome CCLog::Deserialize(const rapidjson::Value &value)
         m_riskLevelHasBeenSet = true;
     }
 
+    if (value.HasMember("Ua") && !value["Ua"].IsNull())
+    {
+        if (!value["Ua"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CCLog.Ua` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ua = string(value["Ua"].GetString());
+        m_uaHasBeenSet = true;
+    }
+
+    if (value.HasMember("RequestMethod") && !value["RequestMethod"].IsNull())
+    {
+        if (!value["RequestMethod"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CCLog.RequestMethod` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_requestMethod = string(value["RequestMethod"].GetString());
+        m_requestMethodHasBeenSet = true;
+    }
+
+    if (value.HasMember("RuleDetailList") && !value["RuleDetailList"].IsNull())
+    {
+        if (!value["RuleDetailList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `CCLog.RuleDetailList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["RuleDetailList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            SecRuleRelatedInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_ruleDetailList.push_back(item);
+        }
+        m_ruleDetailListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -243,6 +286,37 @@ void CCLog::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocator
         string key = "RiskLevel";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_riskLevel.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_uaHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Ua";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ua.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_requestMethodHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RequestMethod";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_requestMethod.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ruleDetailListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RuleDetailList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_ruleDetailList.begin(); itr != m_ruleDetailList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -422,5 +496,53 @@ void CCLog::SetRiskLevel(const string& _riskLevel)
 bool CCLog::RiskLevelHasBeenSet() const
 {
     return m_riskLevelHasBeenSet;
+}
+
+string CCLog::GetUa() const
+{
+    return m_ua;
+}
+
+void CCLog::SetUa(const string& _ua)
+{
+    m_ua = _ua;
+    m_uaHasBeenSet = true;
+}
+
+bool CCLog::UaHasBeenSet() const
+{
+    return m_uaHasBeenSet;
+}
+
+string CCLog::GetRequestMethod() const
+{
+    return m_requestMethod;
+}
+
+void CCLog::SetRequestMethod(const string& _requestMethod)
+{
+    m_requestMethod = _requestMethod;
+    m_requestMethodHasBeenSet = true;
+}
+
+bool CCLog::RequestMethodHasBeenSet() const
+{
+    return m_requestMethodHasBeenSet;
+}
+
+vector<SecRuleRelatedInfo> CCLog::GetRuleDetailList() const
+{
+    return m_ruleDetailList;
+}
+
+void CCLog::SetRuleDetailList(const vector<SecRuleRelatedInfo>& _ruleDetailList)
+{
+    m_ruleDetailList = _ruleDetailList;
+    m_ruleDetailListHasBeenSet = true;
+}
+
+bool CCLog::RuleDetailListHasBeenSet() const
+{
+    return m_ruleDetailListHasBeenSet;
 }
 

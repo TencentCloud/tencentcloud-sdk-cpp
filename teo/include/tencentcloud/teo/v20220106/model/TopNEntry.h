@@ -48,14 +48,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Entry key
-                     * @return Key Entry key
+                     * 获取top查询维度值。
+                     * @return Key top查询维度值。
                      */
                     std::string GetKey() const;
 
                     /**
-                     * 设置Entry key
-                     * @param Key Entry key
+                     * 设置top查询维度值。
+                     * @param Key top查询维度值。
                      */
                     void SetKey(const std::string& _key);
 
@@ -66,14 +66,14 @@ namespace TencentCloud
                     bool KeyHasBeenSet() const;
 
                     /**
-                     * 获取TopN数据
-                     * @return Value TopN数据
+                     * 获取查询具体数据。
+                     * @return Value 查询具体数据。
                      */
                     std::vector<TopNEntryValue> GetValue() const;
 
                     /**
-                     * 设置TopN数据
-                     * @param Value TopN数据
+                     * 设置查询具体数据。
+                     * @param Value 查询具体数据。
                      */
                     void SetValue(const std::vector<TopNEntryValue>& _value);
 
@@ -86,13 +86,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Entry key
+                     * top查询维度值。
                      */
                     std::string m_key;
                     bool m_keyHasBeenSet;
 
                     /**
-                     * TopN数据
+                     * 查询具体数据。
                      */
                     std::vector<TopNEntryValue> m_value;
                     bool m_valueHasBeenSet;

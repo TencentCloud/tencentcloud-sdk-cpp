@@ -298,49 +298,6 @@ MongodbClient::DescribeAsyncRequestInfoOutcomeCallable MongodbClient::DescribeAs
     return task->get_future();
 }
 
-MongodbClient::DescribeBackupAccessOutcome MongodbClient::DescribeBackupAccess(const DescribeBackupAccessRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeBackupAccess");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeBackupAccessResponse rsp = DescribeBackupAccessResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeBackupAccessOutcome(rsp);
-        else
-            return DescribeBackupAccessOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeBackupAccessOutcome(outcome.GetError());
-    }
-}
-
-void MongodbClient::DescribeBackupAccessAsync(const DescribeBackupAccessRequest& request, const DescribeBackupAccessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBackupAccess(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-MongodbClient::DescribeBackupAccessOutcomeCallable MongodbClient::DescribeBackupAccessCallable(const DescribeBackupAccessRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeBackupAccessOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBackupAccess(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 MongodbClient::DescribeBackupDownloadTaskOutcome MongodbClient::DescribeBackupDownloadTask(const DescribeBackupDownloadTaskRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeBackupDownloadTask");

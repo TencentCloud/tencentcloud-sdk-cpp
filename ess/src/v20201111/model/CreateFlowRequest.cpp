@@ -34,6 +34,7 @@ CreateFlowRequest::CreateFlowRequest() :
     m_flowDescriptionHasBeenSet(false),
     m_unorderedHasBeenSet(false),
     m_customShowMapHasBeenSet(false),
+    m_needSignReviewHasBeenSet(false),
     m_relatedFlowIdHasBeenSet(false),
     m_agentHasBeenSet(false)
 {
@@ -140,6 +141,14 @@ string CreateFlowRequest::ToJsonString() const
         string key = "CustomShowMap";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_customShowMap.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_needSignReviewHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NeedSignReview";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_needSignReview, allocator);
     }
 
     if (m_relatedFlowIdHasBeenSet)
@@ -341,6 +350,22 @@ void CreateFlowRequest::SetCustomShowMap(const string& _customShowMap)
 bool CreateFlowRequest::CustomShowMapHasBeenSet() const
 {
     return m_customShowMapHasBeenSet;
+}
+
+bool CreateFlowRequest::GetNeedSignReview() const
+{
+    return m_needSignReview;
+}
+
+void CreateFlowRequest::SetNeedSignReview(const bool& _needSignReview)
+{
+    m_needSignReview = _needSignReview;
+    m_needSignReviewHasBeenSet = true;
+}
+
+bool CreateFlowRequest::NeedSignReviewHasBeenSet() const
+{
+    return m_needSignReviewHasBeenSet;
 }
 
 string CreateFlowRequest::GetRelatedFlowId() const

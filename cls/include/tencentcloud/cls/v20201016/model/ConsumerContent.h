@@ -69,17 +69,17 @@ namespace TencentCloud
                     bool EnableTagHasBeenSet() const;
 
                     /**
-                     * 获取需要投递的元数据列表，目前仅支持：\_\_SOURCE\_\_，\_\_FILENAME\_\_和\_\_TIMESTAMP\_\_
+                     * 获取需要投递的元数据列表，目前仅支持：\_\_SOURCE\_\_，\_\_FILENAME\_\_，\_\_TIMESTAMP\_\_，\_\_HOSTNAME\_\_和\_\_PKGID\_\_
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MetaFields 需要投递的元数据列表，目前仅支持：\_\_SOURCE\_\_，\_\_FILENAME\_\_和\_\_TIMESTAMP\_\_
+                     * @return MetaFields 需要投递的元数据列表，目前仅支持：\_\_SOURCE\_\_，\_\_FILENAME\_\_，\_\_TIMESTAMP\_\_，\_\_HOSTNAME\_\_和\_\_PKGID\_\_
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> GetMetaFields() const;
 
                     /**
-                     * 设置需要投递的元数据列表，目前仅支持：\_\_SOURCE\_\_，\_\_FILENAME\_\_和\_\_TIMESTAMP\_\_
+                     * 设置需要投递的元数据列表，目前仅支持：\_\_SOURCE\_\_，\_\_FILENAME\_\_，\_\_TIMESTAMP\_\_，\_\_HOSTNAME\_\_和\_\_PKGID\_\_
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MetaFields 需要投递的元数据列表，目前仅支持：\_\_SOURCE\_\_，\_\_FILENAME\_\_和\_\_TIMESTAMP\_\_
+                     * @param MetaFields 需要投递的元数据列表，目前仅支持：\_\_SOURCE\_\_，\_\_FILENAME\_\_，\_\_TIMESTAMP\_\_，\_\_HOSTNAME\_\_和\_\_PKGID\_\_
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetMetaFields(const std::vector<std::string>& _metaFields);
@@ -144,7 +144,7 @@ namespace TencentCloud
                     bool m_enableTagHasBeenSet;
 
                     /**
-                     * 需要投递的元数据列表，目前仅支持：\_\_SOURCE\_\_，\_\_FILENAME\_\_和\_\_TIMESTAMP\_\_
+                     * 需要投递的元数据列表，目前仅支持：\_\_SOURCE\_\_，\_\_FILENAME\_\_，\_\_TIMESTAMP\_\_，\_\_HOSTNAME\_\_和\_\_PKGID\_\_
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_metaFields;

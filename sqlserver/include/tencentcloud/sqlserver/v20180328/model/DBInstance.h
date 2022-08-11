@@ -939,6 +939,42 @@ namespace TencentCloud
                      */
                     bool TgwWanVPortHasBeenSet() const;
 
+                    /**
+                     * 获取系统字符集排序规则，默认：Chinese_PRC_CI_AS
+                     * @return Collation 系统字符集排序规则，默认：Chinese_PRC_CI_AS
+                     */
+                    std::string GetCollation() const;
+
+                    /**
+                     * 设置系统字符集排序规则，默认：Chinese_PRC_CI_AS
+                     * @param Collation 系统字符集排序规则，默认：Chinese_PRC_CI_AS
+                     */
+                    void SetCollation(const std::string& _collation);
+
+                    /**
+                     * 判断参数 Collation 是否已赋值
+                     * @return Collation 是否已赋值
+                     */
+                    bool CollationHasBeenSet() const;
+
+                    /**
+                     * 获取系统时区，默认：China Standard Time
+                     * @return TimeZone 系统时区，默认：China Standard Time
+                     */
+                    std::string GetTimeZone() const;
+
+                    /**
+                     * 设置系统时区，默认：China Standard Time
+                     * @param TimeZone 系统时区，默认：China Standard Time
+                     */
+                    void SetTimeZone(const std::string& _timeZone);
+
+                    /**
+                     * 判断参数 TimeZone 是否已赋值
+                     * @return TimeZone 是否已赋值
+                     */
+                    bool TimeZoneHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1235,6 +1271,18 @@ namespace TencentCloud
                      */
                     int64_t m_tgwWanVPort;
                     bool m_tgwWanVPortHasBeenSet;
+
+                    /**
+                     * 系统字符集排序规则，默认：Chinese_PRC_CI_AS
+                     */
+                    std::string m_collation;
+                    bool m_collationHasBeenSet;
+
+                    /**
+                     * 系统时区，默认：China Standard Time
+                     */
+                    std::string m_timeZone;
+                    bool m_timeZoneHasBeenSet;
 
                 };
             }

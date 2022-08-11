@@ -132,6 +132,24 @@ namespace TencentCloud
                      */
                     bool ModifiedTimeHasBeenSet() const;
 
+                    /**
+                     * 获取技能组名称
+                     * @return SkillGroupName 技能组名称
+                     */
+                    std::string GetSkillGroupName() const;
+
+                    /**
+                     * 设置技能组名称
+                     * @param SkillGroupName 技能组名称
+                     */
+                    void SetSkillGroupName(const std::string& _skillGroupName);
+
+                    /**
+                     * 判断参数 SkillGroupName 是否已赋值
+                     * @return SkillGroupName 是否已赋值
+                     */
+                    bool SkillGroupNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -163,6 +181,12 @@ namespace TencentCloud
                      */
                     int64_t m_modifiedTime;
                     bool m_modifiedTimeHasBeenSet;
+
+                    /**
+                     * 技能组名称
+                     */
+                    std::string m_skillGroupName;
+                    bool m_skillGroupNameHasBeenSet;
 
                 };
             }

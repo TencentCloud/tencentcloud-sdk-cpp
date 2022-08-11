@@ -63,6 +63,7 @@ set(cpdp_public_header_model
   include/tencentcloud/cpdp/v20190820/model/UnbindOpenBankExternalSubMerchantBankAccountRequest.h
   include/tencentcloud/cpdp/v20190820/model/CreateRedInvoiceItem.h
   include/tencentcloud/cpdp/v20190820/model/AddMerchantResult.h
+  include/tencentcloud/cpdp/v20190820/model/CloudExternalUserInfo.h
   include/tencentcloud/cpdp/v20190820/model/QueryOpenBankExternalSubMerchantRegistrationRequest.h
   include/tencentcloud/cpdp/v20190820/model/QueryMerchantInfoForManagementResponse.h
   include/tencentcloud/cpdp/v20190820/model/CreateTransferBatchResponse.h
@@ -693,6 +694,7 @@ set(cpdp_src
   src/v20190820/model/UnbindOpenBankExternalSubMerchantBankAccountRequest.cpp
   src/v20190820/model/CreateRedInvoiceItem.cpp
   src/v20190820/model/AddMerchantResult.cpp
+  src/v20190820/model/CloudExternalUserInfo.cpp
   src/v20190820/model/QueryOpenBankExternalSubMerchantRegistrationRequest.cpp
   src/v20190820/model/QueryMerchantInfoForManagementResponse.cpp
   src/v20190820/model/CreateTransferBatchResponse.cpp

@@ -689,7 +689,7 @@ namespace TencentCloud
                 DescribeZonesOutcomeCallable DescribeZonesCallable(const Model::DescribeZonesRequest& request);
 
                 /**
-                 *本接口 (DestroyDBInstance) 用于彻底下线指定DBInstanceId对应的实例，下线后实例数据将彻底删除，无法找回，只能下线隔离中的实例。
+                 *本接口 (DestroyDBInstance) 用于彻底销毁指定DBInstanceId对应的实例，销毁后实例数据将彻底删除，无法找回，只能销毁隔离中的实例。
                  * @param req DestroyDBInstanceRequest
                  * @return DestroyDBInstanceOutcome
                  */

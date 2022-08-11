@@ -68,7 +68,9 @@ DBInstance::DBInstance() :
     m_crossBackupEnabledHasBeenSet(false),
     m_crossBackupSaveDaysHasBeenSet(false),
     m_dnsPodDomainHasBeenSet(false),
-    m_tgwWanVPortHasBeenSet(false)
+    m_tgwWanVPortHasBeenSet(false),
+    m_collationHasBeenSet(false),
+    m_timeZoneHasBeenSet(false)
 {
 }
 
@@ -573,6 +575,26 @@ CoreInternalOutcome DBInstance::Deserialize(const rapidjson::Value &value)
         m_tgwWanVPortHasBeenSet = true;
     }
 
+    if (value.HasMember("Collation") && !value["Collation"].IsNull())
+    {
+        if (!value["Collation"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DBInstance.Collation` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_collation = string(value["Collation"].GetString());
+        m_collationHasBeenSet = true;
+    }
+
+    if (value.HasMember("TimeZone") && !value["TimeZone"].IsNull())
+    {
+        if (!value["TimeZone"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DBInstance.TimeZone` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_timeZone = string(value["TimeZone"].GetString());
+        m_timeZoneHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -979,6 +1001,22 @@ void DBInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "TgwWanVPort";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_tgwWanVPort, allocator);
+    }
+
+    if (m_collationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Collation";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_collation.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_timeZoneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TimeZone";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_timeZone.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1750,5 +1788,37 @@ void DBInstance::SetTgwWanVPort(const int64_t& _tgwWanVPort)
 bool DBInstance::TgwWanVPortHasBeenSet() const
 {
     return m_tgwWanVPortHasBeenSet;
+}
+
+string DBInstance::GetCollation() const
+{
+    return m_collation;
+}
+
+void DBInstance::SetCollation(const string& _collation)
+{
+    m_collation = _collation;
+    m_collationHasBeenSet = true;
+}
+
+bool DBInstance::CollationHasBeenSet() const
+{
+    return m_collationHasBeenSet;
+}
+
+string DBInstance::GetTimeZone() const
+{
+    return m_timeZone;
+}
+
+void DBInstance::SetTimeZone(const string& _timeZone)
+{
+    m_timeZone = _timeZone;
+    m_timeZoneHasBeenSet = true;
+}
+
+bool DBInstance::TimeZoneHasBeenSet() const
+{
+    return m_timeZoneHasBeenSet;
 }
 

@@ -81,13 +81,13 @@ namespace TencentCloud
                      * 获取服务id
                      * @return ApplicationId 服务id
                      */
-                    bool GetApplicationId() const;
+                    std::string GetApplicationId() const;
 
                     /**
                      * 设置服务id
                      * @param ApplicationId 服务id
                      */
-                    void SetApplicationId(const bool& _applicationId);
+                    void SetApplicationId(const std::string& _applicationId);
 
                     /**
                      * 判断参数 ApplicationId 是否已赋值
@@ -313,13 +313,17 @@ namespace TencentCloud
 
                     /**
                      * 获取弹性配置
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return EsInfo 弹性配置
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     EsInfo GetEsInfo() const;
 
                     /**
                      * 设置弹性配置
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param EsInfo 弹性配置
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetEsInfo(const EsInfo& _esInfo);
 
@@ -835,7 +839,7 @@ namespace TencentCloud
                      * @return MinAliveInstances 最小实例数
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    int64_t GetMinAliveInstances() const;
+                    std::string GetMinAliveInstances() const;
 
                     /**
                      * 设置最小实例数
@@ -843,7 +847,7 @@ namespace TencentCloud
                      * @param MinAliveInstances 最小实例数
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    void SetMinAliveInstances(const int64_t& _minAliveInstances);
+                    void SetMinAliveInstances(const std::string& _minAliveInstances);
 
                     /**
                      * 判断参数 MinAliveInstances 是否已赋值
@@ -1270,17 +1274,17 @@ namespace TencentCloud
                     bool EnableTracingHasBeenSet() const;
 
                     /**
-                     * 获取是否开启调用链上报，只有 EnableTracing=1 时生效
+                     * 获取是否开启调用链上报，只有 EnableTracing=1 时生效（参数已弃用）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return EnableTracingReport 是否开启调用链上报，只有 EnableTracing=1 时生效
+                     * @return EnableTracingReport 是否开启调用链上报，只有 EnableTracing=1 时生效（参数已弃用）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetEnableTracingReport() const;
 
                     /**
-                     * 设置是否开启调用链上报，只有 EnableTracing=1 时生效
+                     * 设置是否开启调用链上报，只有 EnableTracing=1 时生效（参数已弃用）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EnableTracingReport 是否开启调用链上报，只有 EnableTracing=1 时生效
+                     * @param EnableTracingReport 是否开启调用链上报，只有 EnableTracing=1 时生效（参数已弃用）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetEnableTracingReport(const uint64_t& _enableTracingReport);
@@ -1498,17 +1502,17 @@ namespace TencentCloud
                     bool UnderDeployingHasBeenSet() const;
 
                     /**
-                     * 获取是否开启prometheus业务指标监控
+                     * 获取监控业务指标监控
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return EnablePrometheusConf 是否开启prometheus业务指标监控
+                     * @return EnablePrometheusConf 监控业务指标监控
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     EnablePrometheusConf GetEnablePrometheusConf() const;
 
                     /**
-                     * 设置是否开启prometheus业务指标监控
+                     * 设置监控业务指标监控
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EnablePrometheusConf 是否开启prometheus业务指标监控
+                     * @param EnablePrometheusConf 监控业务指标监控
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetEnablePrometheusConf(const EnablePrometheusConf& _enablePrometheusConf);
@@ -1563,6 +1567,32 @@ namespace TencentCloud
                      */
                     bool TcrInstanceIdHasBeenSet() const;
 
+                    /**
+                     * 获取1：开始自动metrics采集（open-telemetry）；
+0：关闭metrics采集；
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EnableMetrics 1：开始自动metrics采集（open-telemetry）；
+0：关闭metrics采集；
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetEnableMetrics() const;
+
+                    /**
+                     * 设置1：开始自动metrics采集（open-telemetry）；
+0：关闭metrics采集；
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param EnableMetrics 1：开始自动metrics采集（open-telemetry）；
+0：关闭metrics采集；
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetEnableMetrics(const int64_t& _enableMetrics);
+
+                    /**
+                     * 判断参数 EnableMetrics 是否已赋值
+                     * @return EnableMetrics 是否已赋值
+                     */
+                    bool EnableMetricsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1574,7 +1604,7 @@ namespace TencentCloud
                     /**
                      * 服务id
                      */
-                    bool m_applicationId;
+                    std::string m_applicationId;
                     bool m_applicationIdHasBeenSet;
 
                     /**
@@ -1651,6 +1681,7 @@ namespace TencentCloud
 
                     /**
                      * 弹性配置
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     EsInfo m_esInfo;
                     bool m_esInfoHasBeenSet;
@@ -1820,7 +1851,7 @@ namespace TencentCloud
                      * 最小实例数
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    int64_t m_minAliveInstances;
+                    std::string m_minAliveInstances;
                     bool m_minAliveInstancesHasBeenSet;
 
                     /**
@@ -1957,7 +1988,7 @@ namespace TencentCloud
                     bool m_enableTracingHasBeenSet;
 
                     /**
-                     * 是否开启调用链上报，只有 EnableTracing=1 时生效
+                     * 是否开启调用链上报，只有 EnableTracing=1 时生效（参数已弃用）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_enableTracingReport;
@@ -2029,7 +2060,7 @@ namespace TencentCloud
                     bool m_underDeployingHasBeenSet;
 
                     /**
-                     * 是否开启prometheus业务指标监控
+                     * 监控业务指标监控
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     EnablePrometheusConf m_enablePrometheusConf;
@@ -2048,6 +2079,14 @@ namespace TencentCloud
                      */
                     std::string m_tcrInstanceId;
                     bool m_tcrInstanceIdHasBeenSet;
+
+                    /**
+                     * 1：开始自动metrics采集（open-telemetry）；
+0：关闭metrics采集；
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_enableMetrics;
+                    bool m_enableMetricsHasBeenSet;
 
                 };
             }

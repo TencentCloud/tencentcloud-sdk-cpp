@@ -47,17 +47,17 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取攻击源ip
+                     * 获取攻击源ip。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AttackSourceIp 攻击源ip
+                     * @return AttackSourceIp 攻击源ip。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetAttackSourceIp() const;
 
                     /**
-                     * 设置攻击源ip
+                     * 设置攻击源ip。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AttackSourceIp 攻击源ip
+                     * @param AttackSourceIp 攻击源ip。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetAttackSourceIp(const std::string& _attackSourceIp);
@@ -69,17 +69,17 @@ namespace TencentCloud
                     bool AttackSourceIpHasBeenSet() const;
 
                     /**
-                     * 获取地区(国家)
+                     * 获取地区（国家）。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AttackRegion 地区(国家)
+                     * @return AttackRegion 地区（国家）。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetAttackRegion() const;
 
                     /**
-                     * 设置地区(国家)
+                     * 设置地区（国家）。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AttackRegion 地区(国家)
+                     * @param AttackRegion 地区（国家）。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetAttackRegion(const std::string& _attackRegion);
@@ -91,17 +91,17 @@ namespace TencentCloud
                     bool AttackRegionHasBeenSet() const;
 
                     /**
-                     * 获取累计攻击流量
+                     * 获取累计攻击流量。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AttackFlow 累计攻击流量
+                     * @return AttackFlow 累计攻击流量。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetAttackFlow() const;
 
                     /**
-                     * 设置累计攻击流量
+                     * 设置累计攻击流量。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AttackFlow 累计攻击流量
+                     * @param AttackFlow 累计攻击流量。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetAttackFlow(const uint64_t& _attackFlow);
@@ -113,17 +113,17 @@ namespace TencentCloud
                     bool AttackFlowHasBeenSet() const;
 
                     /**
-                     * 获取累计攻击包量
+                     * 获取累计攻击包量。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AttackPacketNum 累计攻击包量
+                     * @return AttackPacketNum 累计攻击包量。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetAttackPacketNum() const;
 
                     /**
-                     * 设置累计攻击包量
+                     * 设置累计攻击包量。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AttackPacketNum 累计攻击包量
+                     * @param AttackPacketNum 累计攻击包量。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetAttackPacketNum(const uint64_t& _attackPacketNum);
@@ -137,28 +137,28 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 攻击源ip
+                     * 攻击源ip。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_attackSourceIp;
                     bool m_attackSourceIpHasBeenSet;
 
                     /**
-                     * 地区(国家)
+                     * 地区（国家）。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_attackRegion;
                     bool m_attackRegionHasBeenSet;
 
                     /**
-                     * 累计攻击流量
+                     * 累计攻击流量。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_attackFlow;
                     bool m_attackFlowHasBeenSet;
 
                     /**
-                     * 累计攻击包量
+                     * 累计攻击包量。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_attackPacketNum;

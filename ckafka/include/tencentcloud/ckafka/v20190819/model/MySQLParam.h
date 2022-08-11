@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/ckafka/v20190819/model/RecordMapping.h>
+#include <tencentcloud/ckafka/v20190819/model/DropCls.h>
 
 
 namespace TencentCloud
@@ -335,6 +336,42 @@ namespace TencentCloud
                      */
                     bool KeyColumnsHasBeenSet() const;
 
+                    /**
+                     * 获取Mysql 是否抛弃解析失败的消息，默认为true
+                     * @return DropInvalidMessage Mysql 是否抛弃解析失败的消息，默认为true
+                     */
+                    bool GetDropInvalidMessage() const;
+
+                    /**
+                     * 设置Mysql 是否抛弃解析失败的消息，默认为true
+                     * @param DropInvalidMessage Mysql 是否抛弃解析失败的消息，默认为true
+                     */
+                    void SetDropInvalidMessage(const bool& _dropInvalidMessage);
+
+                    /**
+                     * 判断参数 DropInvalidMessage 是否已赋值
+                     * @return DropInvalidMessage 是否已赋值
+                     */
+                    bool DropInvalidMessageHasBeenSet() const;
+
+                    /**
+                     * 获取当设置成员参数DropInvalidMessageToCls设置为true时,DropInvalidMessage参数失效
+                     * @return DropCls 当设置成员参数DropInvalidMessageToCls设置为true时,DropInvalidMessage参数失效
+                     */
+                    DropCls GetDropCls() const;
+
+                    /**
+                     * 设置当设置成员参数DropInvalidMessageToCls设置为true时,DropInvalidMessage参数失效
+                     * @param DropCls 当设置成员参数DropInvalidMessageToCls设置为true时,DropInvalidMessage参数失效
+                     */
+                    void SetDropCls(const DropCls& _dropCls);
+
+                    /**
+                     * 判断参数 DropCls 是否已赋值
+                     * @return DropCls 是否已赋值
+                     */
+                    bool DropClsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -432,6 +469,18 @@ namespace TencentCloud
                      */
                     std::string m_keyColumns;
                     bool m_keyColumnsHasBeenSet;
+
+                    /**
+                     * Mysql 是否抛弃解析失败的消息，默认为true
+                     */
+                    bool m_dropInvalidMessage;
+                    bool m_dropInvalidMessageHasBeenSet;
+
+                    /**
+                     * 当设置成员参数DropInvalidMessageToCls设置为true时,DropInvalidMessage参数失效
+                     */
+                    DropCls m_dropCls;
+                    bool m_dropClsHasBeenSet;
 
                 };
             }

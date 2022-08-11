@@ -35,8 +35,6 @@
 #include <tencentcloud/mongodb/v20190725/model/CreateDBInstanceHourResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/DescribeAsyncRequestInfoRequest.h>
 #include <tencentcloud/mongodb/v20190725/model/DescribeAsyncRequestInfoResponse.h>
-#include <tencentcloud/mongodb/v20190725/model/DescribeBackupAccessRequest.h>
-#include <tencentcloud/mongodb/v20190725/model/DescribeBackupAccessResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/DescribeBackupDownloadTaskRequest.h>
 #include <tencentcloud/mongodb/v20190725/model/DescribeBackupDownloadTaskResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/DescribeClientConnectionsRequest.h>
@@ -119,9 +117,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAsyncRequestInfoResponse> DescribeAsyncRequestInfoOutcome;
                 typedef std::future<DescribeAsyncRequestInfoOutcome> DescribeAsyncRequestInfoOutcomeCallable;
                 typedef std::function<void(const MongodbClient*, const Model::DescribeAsyncRequestInfoRequest&, DescribeAsyncRequestInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAsyncRequestInfoAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeBackupAccessResponse> DescribeBackupAccessOutcome;
-                typedef std::future<DescribeBackupAccessOutcome> DescribeBackupAccessOutcomeCallable;
-                typedef std::function<void(const MongodbClient*, const Model::DescribeBackupAccessRequest&, DescribeBackupAccessOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBackupAccessAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeBackupDownloadTaskResponse> DescribeBackupDownloadTaskOutcome;
                 typedef std::future<DescribeBackupDownloadTaskOutcome> DescribeBackupDownloadTaskOutcomeCallable;
                 typedef std::function<void(const MongodbClient*, const Model::DescribeBackupDownloadTaskRequest&, DescribeBackupDownloadTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBackupDownloadTaskAsyncHandler;
@@ -254,17 +249,6 @@ namespace TencentCloud
                 DescribeAsyncRequestInfoOutcome DescribeAsyncRequestInfo(const Model::DescribeAsyncRequestInfoRequest &request);
                 void DescribeAsyncRequestInfoAsync(const Model::DescribeAsyncRequestInfoRequest& request, const DescribeAsyncRequestInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAsyncRequestInfoOutcomeCallable DescribeAsyncRequestInfoCallable(const Model::DescribeAsyncRequestInfoRequest& request);
-
-                /**
-                 *备份下载功能已调整，此接口即将下线
-
-本接口（DescribeBackupAccess）用于获取备份文件的下载授权，具体的备份文件信息可通过查询实例备份列表（DescribeDBBackups）接口获取
-                 * @param req DescribeBackupAccessRequest
-                 * @return DescribeBackupAccessOutcome
-                 */
-                DescribeBackupAccessOutcome DescribeBackupAccess(const Model::DescribeBackupAccessRequest &request);
-                void DescribeBackupAccessAsync(const Model::DescribeBackupAccessRequest& request, const DescribeBackupAccessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeBackupAccessOutcomeCallable DescribeBackupAccessCallable(const Model::DescribeBackupAccessRequest& request);
 
                 /**
                  *查询备份下载任务信息

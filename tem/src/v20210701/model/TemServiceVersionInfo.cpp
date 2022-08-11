@@ -92,7 +92,8 @@ TemServiceVersionInfo::TemServiceVersionInfo() :
     m_underDeployingHasBeenSet(false),
     m_enablePrometheusConfHasBeenSet(false),
     m_stoppedManuallyHasBeenSet(false),
-    m_tcrInstanceIdHasBeenSet(false)
+    m_tcrInstanceIdHasBeenSet(false),
+    m_enableMetricsHasBeenSet(false)
 {
 }
 
@@ -113,11 +114,11 @@ CoreInternalOutcome TemServiceVersionInfo::Deserialize(const rapidjson::Value &v
 
     if (value.HasMember("ApplicationId") && !value["ApplicationId"].IsNull())
     {
-        if (!value["ApplicationId"].IsBool())
+        if (!value["ApplicationId"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `TemServiceVersionInfo.ApplicationId` IsBool=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TemServiceVersionInfo.ApplicationId` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_applicationId = value["ApplicationId"].GetBool();
+        m_applicationId = string(value["ApplicationId"].GetString());
         m_applicationIdHasBeenSet = true;
     }
 
@@ -537,11 +538,11 @@ CoreInternalOutcome TemServiceVersionInfo::Deserialize(const rapidjson::Value &v
 
     if (value.HasMember("MinAliveInstances") && !value["MinAliveInstances"].IsNull())
     {
-        if (!value["MinAliveInstances"].IsInt64())
+        if (!value["MinAliveInstances"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `TemServiceVersionInfo.MinAliveInstances` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TemServiceVersionInfo.MinAliveInstances` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_minAliveInstances = value["MinAliveInstances"].GetInt64();
+        m_minAliveInstances = string(value["MinAliveInstances"].GetString());
         m_minAliveInstancesHasBeenSet = true;
     }
 
@@ -959,6 +960,16 @@ CoreInternalOutcome TemServiceVersionInfo::Deserialize(const rapidjson::Value &v
         m_tcrInstanceIdHasBeenSet = true;
     }
 
+    if (value.HasMember("EnableMetrics") && !value["EnableMetrics"].IsNull())
+    {
+        if (!value["EnableMetrics"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TemServiceVersionInfo.EnableMetrics` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableMetrics = value["EnableMetrics"].GetInt64();
+        m_enableMetricsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -979,7 +990,7 @@ void TemServiceVersionInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ApplicationId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_applicationId, allocator);
+        value.AddMember(iKey, rapidjson::Value(m_applicationId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_deployModeHasBeenSet)
@@ -1306,7 +1317,7 @@ void TemServiceVersionInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MinAliveInstances";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_minAliveInstances, allocator);
+        value.AddMember(iKey, rapidjson::Value(m_minAliveInstances.c_str(), allocator).Move(), allocator);
     }
 
     if (m_securityGroupIdsHasBeenSet)
@@ -1619,6 +1630,14 @@ void TemServiceVersionInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         value.AddMember(iKey, rapidjson::Value(m_tcrInstanceId.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_enableMetricsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableMetrics";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableMetrics, allocator);
+    }
+
 }
 
 
@@ -1638,12 +1657,12 @@ bool TemServiceVersionInfo::VersionIdHasBeenSet() const
     return m_versionIdHasBeenSet;
 }
 
-bool TemServiceVersionInfo::GetApplicationId() const
+string TemServiceVersionInfo::GetApplicationId() const
 {
     return m_applicationId;
 }
 
-void TemServiceVersionInfo::SetApplicationId(const bool& _applicationId)
+void TemServiceVersionInfo::SetApplicationId(const string& _applicationId)
 {
     m_applicationId = _applicationId;
     m_applicationIdHasBeenSet = true;
@@ -2246,12 +2265,12 @@ bool TemServiceVersionInfo::LogEnableHasBeenSet() const
     return m_logEnableHasBeenSet;
 }
 
-int64_t TemServiceVersionInfo::GetMinAliveInstances() const
+string TemServiceVersionInfo::GetMinAliveInstances() const
 {
     return m_minAliveInstances;
 }
 
-void TemServiceVersionInfo::SetMinAliveInstances(const int64_t& _minAliveInstances)
+void TemServiceVersionInfo::SetMinAliveInstances(const string& _minAliveInstances)
 {
     m_minAliveInstances = _minAliveInstances;
     m_minAliveInstancesHasBeenSet = true;
@@ -2772,5 +2791,21 @@ void TemServiceVersionInfo::SetTcrInstanceId(const string& _tcrInstanceId)
 bool TemServiceVersionInfo::TcrInstanceIdHasBeenSet() const
 {
     return m_tcrInstanceIdHasBeenSet;
+}
+
+int64_t TemServiceVersionInfo::GetEnableMetrics() const
+{
+    return m_enableMetrics;
+}
+
+void TemServiceVersionInfo::SetEnableMetrics(const int64_t& _enableMetrics)
+{
+    m_enableMetrics = _enableMetrics;
+    m_enableMetricsHasBeenSet = true;
+}
+
+bool TemServiceVersionInfo::EnableMetricsHasBeenSet() const
+{
+    return m_enableMetricsHasBeenSet;
 }
 

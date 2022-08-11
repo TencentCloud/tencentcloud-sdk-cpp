@@ -134,6 +134,24 @@ namespace TencentCloud
                      */
                     bool CkafkaHasBeenSet() const;
 
+                    /**
+                     * 获取投递时压缩方式，取值0，2，3。[0:NONE；2:SNAPPY；3:LZ4]
+                     * @return Compression 投递时压缩方式，取值0，2，3。[0:NONE；2:SNAPPY；3:LZ4]
+                     */
+                    int64_t GetCompression() const;
+
+                    /**
+                     * 设置投递时压缩方式，取值0，2，3。[0:NONE；2:SNAPPY；3:LZ4]
+                     * @param Compression 投递时压缩方式，取值0，2，3。[0:NONE；2:SNAPPY；3:LZ4]
+                     */
+                    void SetCompression(const int64_t& _compression);
+
+                    /**
+                     * 判断参数 Compression 是否已赋值
+                     * @return Compression 是否已赋值
+                     */
+                    bool CompressionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -165,6 +183,12 @@ namespace TencentCloud
                      */
                     Ckafka m_ckafka;
                     bool m_ckafkaHasBeenSet;
+
+                    /**
+                     * 投递时压缩方式，取值0，2，3。[0:NONE；2:SNAPPY；3:LZ4]
+                     */
+                    int64_t m_compression;
+                    bool m_compressionHasBeenSet;
 
                 };
             }

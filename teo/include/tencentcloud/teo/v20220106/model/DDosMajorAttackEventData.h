@@ -48,17 +48,17 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取DDosMajorAttackEvent ddos 攻击事件
+                     * 获取DDosMajorAttackEvent ddos 攻击事件。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return List DDosMajorAttackEvent ddos 攻击事件
+                     * @return List DDosMajorAttackEvent ddos 攻击事件。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DDosMajorAttackEvent> GetList() const;
 
                     /**
-                     * 设置DDosMajorAttackEvent ddos 攻击事件
+                     * 设置DDosMajorAttackEvent ddos 攻击事件。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param List DDosMajorAttackEvent ddos 攻击事件
+                     * @param List DDosMajorAttackEvent ddos 攻击事件。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetList(const std::vector<DDosMajorAttackEvent>& _list);
@@ -70,17 +70,17 @@ namespace TencentCloud
                     bool ListHasBeenSet() const;
 
                     /**
-                     * 获取当前页
+                     * 获取分页拉取的起始页号。最小值：1。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PageNo 当前页
+                     * @return PageNo 分页拉取的起始页号。最小值：1。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetPageNo() const;
 
                     /**
-                     * 设置当前页
+                     * 设置分页拉取的起始页号。最小值：1。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PageNo 当前页
+                     * @param PageNo 分页拉取的起始页号。最小值：1。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetPageNo(const int64_t& _pageNo);
@@ -92,17 +92,17 @@ namespace TencentCloud
                     bool PageNoHasBeenSet() const;
 
                     /**
-                     * 获取每页展示条数
+                     * 获取分页拉取的最大返回结果数。最大值：1000。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PageSize 每页展示条数
+                     * @return PageSize 分页拉取的最大返回结果数。最大值：1000。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetPageSize() const;
 
                     /**
-                     * 设置每页展示条数
+                     * 设置分页拉取的最大返回结果数。最大值：1000。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PageSize 每页展示条数
+                     * @param PageSize 分页拉取的最大返回结果数。最大值：1000。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetPageSize(const int64_t& _pageSize);
@@ -114,17 +114,17 @@ namespace TencentCloud
                     bool PageSizeHasBeenSet() const;
 
                     /**
-                     * 获取总页数
+                     * 获取总页数。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Pages 总页数
+                     * @return Pages 总页数。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetPages() const;
 
                     /**
-                     * 设置总页数
+                     * 设置总页数。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Pages 总页数
+                     * @param Pages 总页数。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetPages(const int64_t& _pages);
@@ -136,17 +136,17 @@ namespace TencentCloud
                     bool PagesHasBeenSet() const;
 
                     /**
-                     * 获取总条数
+                     * 获取总条数。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TotalSize 总条数
+                     * @return TotalSize 总条数。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetTotalSize() const;
 
                     /**
-                     * 设置总条数
+                     * 设置总条数。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TotalSize 总条数
+                     * @param TotalSize 总条数。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetTotalSize(const int64_t& _totalSize);
@@ -160,35 +160,35 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * DDosMajorAttackEvent ddos 攻击事件
+                     * DDosMajorAttackEvent ddos 攻击事件。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DDosMajorAttackEvent> m_list;
                     bool m_listHasBeenSet;
 
                     /**
-                     * 当前页
+                     * 分页拉取的起始页号。最小值：1。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_pageNo;
                     bool m_pageNoHasBeenSet;
 
                     /**
-                     * 每页展示条数
+                     * 分页拉取的最大返回结果数。最大值：1000。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_pageSize;
                     bool m_pageSizeHasBeenSet;
 
                     /**
-                     * 总页数
+                     * 总页数。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_pages;
                     bool m_pagesHasBeenSet;
 
                     /**
-                     * 总条数
+                     * 总条数。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalSize;

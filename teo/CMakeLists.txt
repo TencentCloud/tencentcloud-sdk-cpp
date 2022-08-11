@@ -307,6 +307,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220106/model/OfflineCache.h
   include/tencentcloud/teo/v20220106/model/DescribeOriginGroupDetailRequest.h
   include/tencentcloud/teo/v20220106/model/DescribeDDosAttackEventDetailRequest.h
+  include/tencentcloud/teo/v20220106/model/SecRuleRelatedInfo.h
   include/tencentcloud/teo/v20220106/model/DescribeTimingL4DataResponse.h
   include/tencentcloud/teo/v20220106/model/Sv.h
   include/tencentcloud/teo/v20220106/model/BotConfig.h
@@ -604,6 +605,7 @@ set(teo_src
   src/v20220106/model/OfflineCache.cpp
   src/v20220106/model/DescribeOriginGroupDetailRequest.cpp
   src/v20220106/model/DescribeDDosAttackEventDetailRequest.cpp
+  src/v20220106/model/SecRuleRelatedInfo.cpp
   src/v20220106/model/DescribeTimingL4DataResponse.cpp
   src/v20220106/model/Sv.cpp
   src/v20220106/model/BotConfig.cpp

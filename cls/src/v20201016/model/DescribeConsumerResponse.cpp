@@ -27,7 +27,8 @@ DescribeConsumerResponse::DescribeConsumerResponse() :
     m_effectiveHasBeenSet(false),
     m_needContentHasBeenSet(false),
     m_contentHasBeenSet(false),
-    m_ckafkaHasBeenSet(false)
+    m_ckafkaHasBeenSet(false),
+    m_compressionHasBeenSet(false)
 {
 }
 
@@ -119,6 +120,16 @@ CoreInternalOutcome DescribeConsumerResponse::Deserialize(const string &payload)
         m_ckafkaHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Compression") && !rsp["Compression"].IsNull())
+    {
+        if (!rsp["Compression"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Compression` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_compression = rsp["Compression"].GetInt64();
+        m_compressionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -161,6 +172,14 @@ string DescribeConsumerResponse::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_ckafka.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_compressionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Compression";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_compression, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -213,6 +232,16 @@ Ckafka DescribeConsumerResponse::GetCkafka() const
 bool DescribeConsumerResponse::CkafkaHasBeenSet() const
 {
     return m_ckafkaHasBeenSet;
+}
+
+int64_t DescribeConsumerResponse::GetCompression() const
+{
+    return m_compression;
+}
+
+bool DescribeConsumerResponse::CompressionHasBeenSet() const
+{
+    return m_compressionHasBeenSet;
 }
 
 

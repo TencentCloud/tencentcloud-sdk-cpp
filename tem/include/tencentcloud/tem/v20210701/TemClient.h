@@ -61,6 +61,8 @@
 #include <tencentcloud/tem/v20210701/model/DescribeConfigDataListResponse.h>
 #include <tencentcloud/tem/v20210701/model/DescribeDeployApplicationDetailRequest.h>
 #include <tencentcloud/tem/v20210701/model/DescribeDeployApplicationDetailResponse.h>
+#include <tencentcloud/tem/v20210701/model/DescribeEnvironmentRequest.h>
+#include <tencentcloud/tem/v20210701/model/DescribeEnvironmentResponse.h>
 #include <tencentcloud/tem/v20210701/model/DescribeEnvironmentStatusRequest.h>
 #include <tencentcloud/tem/v20210701/model/DescribeEnvironmentStatusResponse.h>
 #include <tencentcloud/tem/v20210701/model/DescribeEnvironmentsRequest.h>
@@ -180,6 +182,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDeployApplicationDetailResponse> DescribeDeployApplicationDetailOutcome;
                 typedef std::future<DescribeDeployApplicationDetailOutcome> DescribeDeployApplicationDetailOutcomeCallable;
                 typedef std::function<void(const TemClient*, const Model::DescribeDeployApplicationDetailRequest&, DescribeDeployApplicationDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDeployApplicationDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeEnvironmentResponse> DescribeEnvironmentOutcome;
+                typedef std::future<DescribeEnvironmentOutcome> DescribeEnvironmentOutcomeCallable;
+                typedef std::function<void(const TemClient*, const Model::DescribeEnvironmentRequest&, DescribeEnvironmentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEnvironmentAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeEnvironmentStatusResponse> DescribeEnvironmentStatusOutcome;
                 typedef std::future<DescribeEnvironmentStatusOutcome> DescribeEnvironmentStatusOutcomeCallable;
                 typedef std::function<void(const TemClient*, const Model::DescribeEnvironmentStatusRequest&, DescribeEnvironmentStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEnvironmentStatusAsyncHandler;
@@ -428,6 +433,15 @@ namespace TencentCloud
                 DescribeDeployApplicationDetailOutcome DescribeDeployApplicationDetail(const Model::DescribeDeployApplicationDetailRequest &request);
                 void DescribeDeployApplicationDetailAsync(const Model::DescribeDeployApplicationDetailRequest& request, const DescribeDeployApplicationDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDeployApplicationDetailOutcomeCallable DescribeDeployApplicationDetailCallable(const Model::DescribeDeployApplicationDetailRequest& request);
+
+                /**
+                 *获取环境基础信息
+                 * @param req DescribeEnvironmentRequest
+                 * @return DescribeEnvironmentOutcome
+                 */
+                DescribeEnvironmentOutcome DescribeEnvironment(const Model::DescribeEnvironmentRequest &request);
+                void DescribeEnvironmentAsync(const Model::DescribeEnvironmentRequest& request, const DescribeEnvironmentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeEnvironmentOutcomeCallable DescribeEnvironmentCallable(const Model::DescribeEnvironmentRequest& request);
 
                 /**
                  *获取环境状态

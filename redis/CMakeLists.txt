@@ -118,6 +118,7 @@ set(redis_public_header_model
   include/tencentcloud/redis/v20180412/model/DescribeInstanceMonitorTopNCmdTookResponse.h
   include/tencentcloud/redis/v20180412/model/DescribeInstanceMonitorBigKeySizeDistRequest.h
   include/tencentcloud/redis/v20180412/model/DescribeInstanceAccountRequest.h
+  include/tencentcloud/redis/v20180412/model/SwitchProxyRequest.h
   include/tencentcloud/redis/v20180412/model/DescribeInstanceParamRecordsRequest.h
   include/tencentcloud/redis/v20180412/model/DescribeTaskListRequest.h
   include/tencentcloud/redis/v20180412/model/ChangeReplicaToMasterResponse.h
@@ -151,6 +152,7 @@ set(redis_public_header_model
   include/tencentcloud/redis/v20180412/model/ModifyConnectionConfigRequest.h
   include/tencentcloud/redis/v20180412/model/InstanceNode.h
   include/tencentcloud/redis/v20180412/model/TendisNodes.h
+  include/tencentcloud/redis/v20180412/model/SwitchProxyResponse.h
   include/tencentcloud/redis/v20180412/model/StartupInstanceResponse.h
   include/tencentcloud/redis/v20180412/model/DescribeInstanceDTSInstanceInfo.h
   include/tencentcloud/redis/v20180412/model/TradeDealDetail.h
@@ -336,6 +338,7 @@ set(redis_src
   src/v20180412/model/DescribeInstanceMonitorTopNCmdTookResponse.cpp
   src/v20180412/model/DescribeInstanceMonitorBigKeySizeDistRequest.cpp
   src/v20180412/model/DescribeInstanceAccountRequest.cpp
+  src/v20180412/model/SwitchProxyRequest.cpp
   src/v20180412/model/DescribeInstanceParamRecordsRequest.cpp
   src/v20180412/model/DescribeTaskListRequest.cpp
   src/v20180412/model/ChangeReplicaToMasterResponse.cpp
@@ -369,6 +372,7 @@ set(redis_src
   src/v20180412/model/ModifyConnectionConfigRequest.cpp
   src/v20180412/model/InstanceNode.cpp
   src/v20180412/model/TendisNodes.cpp
+  src/v20180412/model/SwitchProxyResponse.cpp
   src/v20180412/model/StartupInstanceResponse.cpp
   src/v20180412/model/DescribeInstanceDTSInstanceInfo.cpp
   src/v20180412/model/TradeDealDetail.cpp

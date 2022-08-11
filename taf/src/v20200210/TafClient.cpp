@@ -126,49 +126,6 @@ TafClient::RecognizeCustomizedAudienceOutcomeCallable TafClient::RecognizeCustom
     return task->get_future();
 }
 
-TafClient::RecognizeEffectiveFlowOutcome TafClient::RecognizeEffectiveFlow(const RecognizeEffectiveFlowRequest &request)
-{
-    auto outcome = MakeRequest(request, "RecognizeEffectiveFlow");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        RecognizeEffectiveFlowResponse rsp = RecognizeEffectiveFlowResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return RecognizeEffectiveFlowOutcome(rsp);
-        else
-            return RecognizeEffectiveFlowOutcome(o.GetError());
-    }
-    else
-    {
-        return RecognizeEffectiveFlowOutcome(outcome.GetError());
-    }
-}
-
-void TafClient::RecognizeEffectiveFlowAsync(const RecognizeEffectiveFlowRequest& request, const RecognizeEffectiveFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RecognizeEffectiveFlow(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-TafClient::RecognizeEffectiveFlowOutcomeCallable TafClient::RecognizeEffectiveFlowCallable(const RecognizeEffectiveFlowRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<RecognizeEffectiveFlowOutcome()>>(
-        [this, request]()
-        {
-            return this->RecognizeEffectiveFlow(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 TafClient::RecognizePreciseTargetAudienceOutcome TafClient::RecognizePreciseTargetAudience(const RecognizePreciseTargetAudienceRequest &request)
 {
     auto outcome = MakeRequest(request, "RecognizePreciseTargetAudience");

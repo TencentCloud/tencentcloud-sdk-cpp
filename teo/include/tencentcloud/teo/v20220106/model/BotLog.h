@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/teo/v20220106/model/SecRuleRelatedInfo.h>
 
 
 namespace TencentCloud
@@ -47,18 +48,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取攻击时间
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AttackTime 攻击时间
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取攻击时间，采用unix秒级时间戳。
+                     * @return AttackTime 攻击时间，采用unix秒级时间戳。
                      */
                     uint64_t GetAttackTime() const;
 
                     /**
-                     * 设置攻击时间
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AttackTime 攻击时间
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置攻击时间，采用unix秒级时间戳。
+                     * @param AttackTime 攻击时间，采用unix秒级时间戳。
                      */
                     void SetAttackTime(const uint64_t& _attackTime);
 
@@ -69,18 +66,14 @@ namespace TencentCloud
                     bool AttackTimeHasBeenSet() const;
 
                     /**
-                     * 获取攻击ip
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AttackIp 攻击ip
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取攻击源（客户端）ip。
+                     * @return AttackIp 攻击源（客户端）ip。
                      */
                     std::string GetAttackIp() const;
 
                     /**
-                     * 设置攻击ip
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AttackIp 攻击ip
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置攻击源（客户端）ip。
+                     * @param AttackIp 攻击源（客户端）ip。
                      */
                     void SetAttackIp(const std::string& _attackIp);
 
@@ -91,18 +84,14 @@ namespace TencentCloud
                     bool AttackIpHasBeenSet() const;
 
                     /**
-                     * 获取域名
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Domain 域名
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取受攻击域名。
+                     * @return Domain 受攻击域名。
                      */
                     std::string GetDomain() const;
 
                     /**
-                     * 设置域名
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Domain 域名
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置受攻击域名。
+                     * @param Domain 受攻击域名。
                      */
                     void SetDomain(const std::string& _domain);
 
@@ -113,18 +102,14 @@ namespace TencentCloud
                     bool DomainHasBeenSet() const;
 
                     /**
-                     * 获取请求uri
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RequestUri 请求uri
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取URI。
+                     * @return RequestUri URI。
                      */
                     std::string GetRequestUri() const;
 
                     /**
-                     * 设置请求uri
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RequestUri 请求uri
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置URI。
+                     * @param RequestUri URI。
                      */
                     void SetRequestUri(const std::string& _requestUri);
 
@@ -135,17 +120,17 @@ namespace TencentCloud
                     bool RequestUriHasBeenSet() const;
 
                     /**
-                     * 获取攻击类型
+                     * 获取当前该字段无效。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AttackType 攻击类型
+                     * @return AttackType 当前该字段无效。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetAttackType() const;
 
                     /**
-                     * 设置攻击类型
+                     * 设置当前该字段无效。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AttackType 攻击类型
+                     * @param AttackType 当前该字段无效。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetAttackType(const std::string& _attackType);
@@ -157,18 +142,14 @@ namespace TencentCloud
                     bool AttackTypeHasBeenSet() const;
 
                     /**
-                     * 获取请求方法
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RequestMethod 请求方法
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取请求方法。
+                     * @return RequestMethod 请求方法。
                      */
                     std::string GetRequestMethod() const;
 
                     /**
-                     * 设置请求方法
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RequestMethod 请求方法
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置请求方法。
+                     * @param RequestMethod 请求方法。
                      */
                     void SetRequestMethod(const std::string& _requestMethod);
 
@@ -179,18 +160,14 @@ namespace TencentCloud
                     bool RequestMethodHasBeenSet() const;
 
                     /**
-                     * 获取攻击内容
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AttackContent 攻击内容
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取攻击内容。
+                     * @return AttackContent 攻击内容。
                      */
                     std::string GetAttackContent() const;
 
                     /**
-                     * 设置攻击内容
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AttackContent 攻击内容
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置攻击内容。
+                     * @param AttackContent 攻击内容。
                      */
                     void SetAttackContent(const std::string& _attackContent);
 
@@ -201,17 +178,17 @@ namespace TencentCloud
                     bool AttackContentHasBeenSet() const;
 
                     /**
-                     * 获取风险等级
+                     * 获取当前该字段无效 。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RiskLevel 风险等级
+                     * @return RiskLevel 当前该字段无效 。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetRiskLevel() const;
 
                     /**
-                     * 设置风险等级
+                     * 设置当前该字段无效 。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RiskLevel 风险等级
+                     * @param RiskLevel 当前该字段无效 。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetRiskLevel(const std::string& _riskLevel);
@@ -223,17 +200,17 @@ namespace TencentCloud
                     bool RiskLevelHasBeenSet() const;
 
                     /**
-                     * 获取规则编号
+                     * 获取当前该字段无效 。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RuleId 规则编号
+                     * @return RuleId 当前该字段无效 。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetRuleId() const;
 
                     /**
-                     * 设置规则编号
+                     * 设置当前该字段无效 。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RuleId 规则编号
+                     * @param RuleId 当前该字段无效 。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetRuleId(const uint64_t& _ruleId);
@@ -245,18 +222,14 @@ namespace TencentCloud
                     bool RuleIdHasBeenSet() const;
 
                     /**
-                     * 获取IP所在国家
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SipCountryCode IP所在国家
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取IP所在国家iso-3166中alpha-2编码，编码信息请参考[ISO-3166](https://git.woa.com/edgeone/iso-3166/blob/master/all/all.json)。
+                     * @return SipCountryCode IP所在国家iso-3166中alpha-2编码，编码信息请参考[ISO-3166](https://git.woa.com/edgeone/iso-3166/blob/master/all/all.json)。
                      */
                     std::string GetSipCountryCode() const;
 
                     /**
-                     * 设置IP所在国家
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SipCountryCode IP所在国家
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置IP所在国家iso-3166中alpha-2编码，编码信息请参考[ISO-3166](https://git.woa.com/edgeone/iso-3166/blob/master/all/all.json)。
+                     * @param SipCountryCode IP所在国家iso-3166中alpha-2编码，编码信息请参考[ISO-3166](https://git.woa.com/edgeone/iso-3166/blob/master/all/all.json)。
                      */
                     void SetSipCountryCode(const std::string& _sipCountryCode);
 
@@ -267,18 +240,14 @@ namespace TencentCloud
                     bool SipCountryCodeHasBeenSet() const;
 
                     /**
-                     * 获取事件id
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return EventId 事件id
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取请求（事件）ID。
+                     * @return EventId 请求（事件）ID。
                      */
                     std::string GetEventId() const;
 
                     /**
-                     * 设置事件id
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EventId 事件id
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置请求（事件）ID。
+                     * @param EventId 请求（事件）ID。
                      */
                     void SetEventId(const std::string& _eventId);
 
@@ -289,17 +258,17 @@ namespace TencentCloud
                     bool EventIdHasBeenSet() const;
 
                     /**
-                     * 获取处置方式
+                     * 获取该字段当前无效。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DisposalMethod 处置方式
+                     * @return DisposalMethod 该字段当前无效。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetDisposalMethod() const;
 
                     /**
-                     * 设置处置方式
+                     * 设置该字段当前无效。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DisposalMethod 处置方式
+                     * @param DisposalMethod 该字段当前无效。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetDisposalMethod(const std::string& _disposalMethod);
@@ -311,17 +280,17 @@ namespace TencentCloud
                     bool DisposalMethodHasBeenSet() const;
 
                     /**
-                     * 获取http_log
+                     * 获取该字段当前无效。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return HttpLog http_log
+                     * @return HttpLog 该字段当前无效。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetHttpLog() const;
 
                     /**
-                     * 设置http_log
+                     * 设置该字段当前无效。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param HttpLog http_log
+                     * @param HttpLog 该字段当前无效。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetHttpLog(const std::string& _httpLog);
@@ -333,18 +302,14 @@ namespace TencentCloud
                     bool HttpLogHasBeenSet() const;
 
                     /**
-                     * 获取user agent
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Ua user agent
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取user agent。
+                     * @return Ua user agent。
                      */
                     std::string GetUa() const;
 
                     /**
-                     * 设置user agent
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Ua user agent
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置user agent。
+                     * @param Ua user agent。
                      */
                     void SetUa(const std::string& _ua);
 
@@ -355,17 +320,17 @@ namespace TencentCloud
                     bool UaHasBeenSet() const;
 
                     /**
-                     * 获取检出方法
+                     * 获取该字段当前无效。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DetectionMethod 检出方法
+                     * @return DetectionMethod 该字段当前无效。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetDetectionMethod() const;
 
                     /**
-                     * 设置检出方法
+                     * 设置该字段当前无效。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DetectionMethod 检出方法
+                     * @param DetectionMethod 该字段当前无效。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetDetectionMethod(const std::string& _detectionMethod);
@@ -377,17 +342,17 @@ namespace TencentCloud
                     bool DetectionMethodHasBeenSet() const;
 
                     /**
-                     * 获取置信度
+                     * 获取该字段当前无效。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Confidence 置信度
+                     * @return Confidence 该字段当前无效。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetConfidence() const;
 
                     /**
-                     * 设置置信度
+                     * 设置该字段当前无效。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Confidence 置信度
+                     * @param Confidence 该字段当前无效。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetConfidence(const std::string& _confidence);
@@ -399,17 +364,17 @@ namespace TencentCloud
                     bool ConfidenceHasBeenSet() const;
 
                     /**
-                     * 获取恶意度
+                     * 获取该字段当前无效。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Maliciousness 恶意度
+                     * @return Maliciousness 该字段当前无效。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetMaliciousness() const;
 
                     /**
-                     * 设置恶意度
+                     * 设置该字段当前无效。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Maliciousness 恶意度
+                     * @param Maliciousness 该字段当前无效。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetMaliciousness(const std::string& _maliciousness);
@@ -420,126 +385,175 @@ namespace TencentCloud
                      */
                     bool MaliciousnessHasBeenSet() const;
 
+                    /**
+                     * 获取规则相关信息列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RuleDetailList 规则相关信息列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<SecRuleRelatedInfo> GetRuleDetailList() const;
+
+                    /**
+                     * 设置规则相关信息列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RuleDetailList 规则相关信息列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRuleDetailList(const std::vector<SecRuleRelatedInfo>& _ruleDetailList);
+
+                    /**
+                     * 判断参数 RuleDetailList 是否已赋值
+                     * @return RuleDetailList 是否已赋值
+                     */
+                    bool RuleDetailListHasBeenSet() const;
+
+                    /**
+                     * 获取Bot标签。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Label Bot标签。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetLabel() const;
+
+                    /**
+                     * 设置Bot标签。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Label Bot标签。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetLabel(const std::string& _label);
+
+                    /**
+                     * 判断参数 Label 是否已赋值
+                     * @return Label 是否已赋值
+                     */
+                    bool LabelHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 攻击时间
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 攻击时间，采用unix秒级时间戳。
                      */
                     uint64_t m_attackTime;
                     bool m_attackTimeHasBeenSet;
 
                     /**
-                     * 攻击ip
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 攻击源（客户端）ip。
                      */
                     std::string m_attackIp;
                     bool m_attackIpHasBeenSet;
 
                     /**
-                     * 域名
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 受攻击域名。
                      */
                     std::string m_domain;
                     bool m_domainHasBeenSet;
 
                     /**
-                     * 请求uri
-注意：此字段可能返回 null，表示取不到有效值。
+                     * URI。
                      */
                     std::string m_requestUri;
                     bool m_requestUriHasBeenSet;
 
                     /**
-                     * 攻击类型
+                     * 当前该字段无效。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_attackType;
                     bool m_attackTypeHasBeenSet;
 
                     /**
-                     * 请求方法
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 请求方法。
                      */
                     std::string m_requestMethod;
                     bool m_requestMethodHasBeenSet;
 
                     /**
-                     * 攻击内容
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 攻击内容。
                      */
                     std::string m_attackContent;
                     bool m_attackContentHasBeenSet;
 
                     /**
-                     * 风险等级
+                     * 当前该字段无效 。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_riskLevel;
                     bool m_riskLevelHasBeenSet;
 
                     /**
-                     * 规则编号
+                     * 当前该字段无效 。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_ruleId;
                     bool m_ruleIdHasBeenSet;
 
                     /**
-                     * IP所在国家
-注意：此字段可能返回 null，表示取不到有效值。
+                     * IP所在国家iso-3166中alpha-2编码，编码信息请参考[ISO-3166](https://git.woa.com/edgeone/iso-3166/blob/master/all/all.json)。
                      */
                     std::string m_sipCountryCode;
                     bool m_sipCountryCodeHasBeenSet;
 
                     /**
-                     * 事件id
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 请求（事件）ID。
                      */
                     std::string m_eventId;
                     bool m_eventIdHasBeenSet;
 
                     /**
-                     * 处置方式
+                     * 该字段当前无效。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_disposalMethod;
                     bool m_disposalMethodHasBeenSet;
 
                     /**
-                     * http_log
+                     * 该字段当前无效。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_httpLog;
                     bool m_httpLogHasBeenSet;
 
                     /**
-                     * user agent
-注意：此字段可能返回 null，表示取不到有效值。
+                     * user agent。
                      */
                     std::string m_ua;
                     bool m_uaHasBeenSet;
 
                     /**
-                     * 检出方法
+                     * 该字段当前无效。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_detectionMethod;
                     bool m_detectionMethodHasBeenSet;
 
                     /**
-                     * 置信度
+                     * 该字段当前无效。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_confidence;
                     bool m_confidenceHasBeenSet;
 
                     /**
-                     * 恶意度
+                     * 该字段当前无效。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_maliciousness;
                     bool m_maliciousnessHasBeenSet;
+
+                    /**
+                     * 规则相关信息列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<SecRuleRelatedInfo> m_ruleDetailList;
+                    bool m_ruleDetailListHasBeenSet;
+
+                    /**
+                     * Bot标签。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_label;
+                    bool m_labelHasBeenSet;
 
                 };
             }

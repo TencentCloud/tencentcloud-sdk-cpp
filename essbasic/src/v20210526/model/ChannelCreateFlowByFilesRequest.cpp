@@ -35,6 +35,7 @@ ChannelCreateFlowByFilesRequest::ChannelCreateFlowByFilesRequest() :
     m_flowDescriptionHasBeenSet(false),
     m_customShowMapHasBeenSet(false),
     m_customerDataHasBeenSet(false),
+    m_needSignReviewHasBeenSet(false),
     m_operatorHasBeenSet(false)
 {
 }
@@ -160,6 +161,14 @@ string ChannelCreateFlowByFilesRequest::ToJsonString() const
         string key = "CustomerData";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_customerData.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_needSignReviewHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NeedSignReview";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_needSignReview, allocator);
     }
 
     if (m_operatorHasBeenSet)
@@ -369,6 +378,22 @@ void ChannelCreateFlowByFilesRequest::SetCustomerData(const string& _customerDat
 bool ChannelCreateFlowByFilesRequest::CustomerDataHasBeenSet() const
 {
     return m_customerDataHasBeenSet;
+}
+
+bool ChannelCreateFlowByFilesRequest::GetNeedSignReview() const
+{
+    return m_needSignReview;
+}
+
+void ChannelCreateFlowByFilesRequest::SetNeedSignReview(const bool& _needSignReview)
+{
+    m_needSignReview = _needSignReview;
+    m_needSignReviewHasBeenSet = true;
+}
+
+bool ChannelCreateFlowByFilesRequest::NeedSignReviewHasBeenSet() const
+{
+    return m_needSignReviewHasBeenSet;
 }
 
 UserInfo ChannelCreateFlowByFilesRequest::GetOperator() const

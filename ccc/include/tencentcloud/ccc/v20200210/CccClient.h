@@ -55,8 +55,6 @@
 #include <tencentcloud/ccc/v20200210/model/DescribePSTNActiveSessionListResponse.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeProtectedTelCdrRequest.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeProtectedTelCdrResponse.h>
-#include <tencentcloud/ccc/v20200210/model/DescribeSeatUserListRequest.h>
-#include <tencentcloud/ccc/v20200210/model/DescribeSeatUserListResponse.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeSkillGroupInfoListRequest.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeSkillGroupInfoListResponse.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeStaffInfoListRequest.h>
@@ -137,9 +135,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeProtectedTelCdrResponse> DescribeProtectedTelCdrOutcome;
                 typedef std::future<DescribeProtectedTelCdrOutcome> DescribeProtectedTelCdrOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::DescribeProtectedTelCdrRequest&, DescribeProtectedTelCdrOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProtectedTelCdrAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeSeatUserListResponse> DescribeSeatUserListOutcome;
-                typedef std::future<DescribeSeatUserListOutcome> DescribeSeatUserListOutcomeCallable;
-                typedef std::function<void(const CccClient*, const Model::DescribeSeatUserListRequest&, DescribeSeatUserListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSeatUserListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSkillGroupInfoListResponse> DescribeSkillGroupInfoListOutcome;
                 typedef std::future<DescribeSkillGroupInfoListOutcome> DescribeSkillGroupInfoListOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::DescribeSkillGroupInfoListRequest&, DescribeSkillGroupInfoListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSkillGroupInfoListAsyncHandler;
@@ -313,17 +308,6 @@ namespace TencentCloud
                 DescribeProtectedTelCdrOutcome DescribeProtectedTelCdr(const Model::DescribeProtectedTelCdrRequest &request);
                 void DescribeProtectedTelCdrAsync(const Model::DescribeProtectedTelCdrRequest& request, const DescribeProtectedTelCdrAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeProtectedTelCdrOutcomeCallable DescribeProtectedTelCdrCallable(const Model::DescribeProtectedTelCdrRequest& request);
-
-                /**
-                 *废弃接口下架
-
-获取坐席用户列表（废弃）
-                 * @param req DescribeSeatUserListRequest
-                 * @return DescribeSeatUserListOutcome
-                 */
-                DescribeSeatUserListOutcome DescribeSeatUserList(const Model::DescribeSeatUserListRequest &request);
-                void DescribeSeatUserListAsync(const Model::DescribeSeatUserListRequest& request, const DescribeSeatUserListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeSeatUserListOutcomeCallable DescribeSeatUserListCallable(const Model::DescribeSeatUserListRequest& request);
 
                 /**
                  *获取技能组信息列表

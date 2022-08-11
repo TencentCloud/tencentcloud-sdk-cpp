@@ -47,17 +47,17 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取秒级时间戳
+                     * 获取返回数据对应时间点，采用unix秒级时间戳
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Timestamp 秒级时间戳
+                     * @return Timestamp 返回数据对应时间点，采用unix秒级时间戳
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetTimestamp() const;
 
                     /**
-                     * 设置秒级时间戳
+                     * 设置返回数据对应时间点，采用unix秒级时间戳
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Timestamp 秒级时间戳
+                     * @param Timestamp 返回数据对应时间点，采用unix秒级时间戳
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetTimestamp(const int64_t& _timestamp);
@@ -69,17 +69,17 @@ namespace TencentCloud
                     bool TimestampHasBeenSet() const;
 
                     /**
-                     * 获取数值
+                     * 获取具体数值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Value 数值
+                     * @return Value 具体数值
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetValue() const;
 
                     /**
-                     * 设置数值
+                     * 设置具体数值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Value 数值
+                     * @param Value 具体数值
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetValue(const int64_t& _value);
@@ -93,14 +93,14 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 秒级时间戳
+                     * 返回数据对应时间点，采用unix秒级时间戳
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_timestamp;
                     bool m_timestampHasBeenSet;
 
                     /**
-                     * 数值
+                     * 具体数值
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_value;

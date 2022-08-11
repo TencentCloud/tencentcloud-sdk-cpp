@@ -28,6 +28,7 @@
 #include <tencentcloud/cpdp/v20190820/model/CloudStoreInfo.h>
 #include <tencentcloud/cpdp/v20190820/model/CloudClientInfo.h>
 #include <tencentcloud/cpdp/v20190820/model/CloudExternalPromptGroup.h>
+#include <tencentcloud/cpdp/v20190820/model/CloudExternalUserInfo.h>
 
 
 namespace TencentCloud
@@ -993,6 +994,24 @@ ORDER_RECEIVE_MODE_V_COMBINE - 虚拟合单支付
                      */
                     bool OrderReceiveModeHasBeenSet() const;
 
+                    /**
+                     * 获取渠道方用户信息列表
+                     * @return ExternalUserInfoList 渠道方用户信息列表
+                     */
+                    std::vector<CloudExternalUserInfo> GetExternalUserInfoList() const;
+
+                    /**
+                     * 设置渠道方用户信息列表
+                     * @param ExternalUserInfoList 渠道方用户信息列表
+                     */
+                    void SetExternalUserInfoList(const std::vector<CloudExternalUserInfo>& _externalUserInfoList);
+
+                    /**
+                     * 判断参数 ExternalUserInfoList 是否已赋值
+                     * @return ExternalUserInfoList 是否已赋值
+                     */
+                    bool ExternalUserInfoListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1287,6 +1306,12 @@ ORDER_RECEIVE_MODE_V_COMBINE - 虚拟合单支付
                      */
                     std::string m_orderReceiveMode;
                     bool m_orderReceiveModeHasBeenSet;
+
+                    /**
+                     * 渠道方用户信息列表
+                     */
+                    std::vector<CloudExternalUserInfo> m_externalUserInfoList;
+                    bool m_externalUserInfoListHasBeenSet;
 
                 };
             }

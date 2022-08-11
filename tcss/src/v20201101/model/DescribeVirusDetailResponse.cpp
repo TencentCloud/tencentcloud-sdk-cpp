@@ -69,7 +69,8 @@ DescribeVirusDetailResponse::DescribeVirusDetailResponse() :
     m_operationTimeHasBeenSet(false),
     m_containerNetStatusHasBeenSet(false),
     m_containerNetSubStatusHasBeenSet(false),
-    m_containerIsolateOperationSrcHasBeenSet(false)
+    m_containerIsolateOperationSrcHasBeenSet(false),
+    m_checkPlatformHasBeenSet(false)
 {
 }
 
@@ -570,6 +571,19 @@ CoreInternalOutcome DescribeVirusDetailResponse::Deserialize(const string &paylo
         m_containerIsolateOperationSrcHasBeenSet = true;
     }
 
+    if (rsp.HasMember("CheckPlatform") && !rsp["CheckPlatform"].IsNull())
+    {
+        if (!rsp["CheckPlatform"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `CheckPlatform` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["CheckPlatform"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_checkPlatform.push_back((*itr).GetString());
+        }
+        m_checkPlatformHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -951,6 +965,19 @@ string DescribeVirusDetailResponse::ToJsonString() const
         string key = "ContainerIsolateOperationSrc";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_containerIsolateOperationSrc.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_checkPlatformHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CheckPlatform";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_checkPlatform.begin(); itr != m_checkPlatform.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -1423,6 +1450,16 @@ string DescribeVirusDetailResponse::GetContainerIsolateOperationSrc() const
 bool DescribeVirusDetailResponse::ContainerIsolateOperationSrcHasBeenSet() const
 {
     return m_containerIsolateOperationSrcHasBeenSet;
+}
+
+vector<string> DescribeVirusDetailResponse::GetCheckPlatform() const
+{
+    return m_checkPlatform;
+}
+
+bool DescribeVirusDetailResponse::CheckPlatformHasBeenSet() const
+{
+    return m_checkPlatformHasBeenSet;
 }
 
 

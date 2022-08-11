@@ -45,9 +45,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取数据详情
+                     * 获取数据详情。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Data 数据详情
+                     * @return Data 数据详情。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<SecEntry> GetData() const;
@@ -59,8 +59,12 @@ namespace TencentCloud
                     bool DataHasBeenSet() const;
 
                     /**
-                     * 获取状态，1:失败，0:成功
-                     * @return Status 状态，1:失败，0:成功
+                     * 获取请求响应状态，取值有：
+<li>1 ：失败 ；</li>
+<li>0 ：成功 。</li>
+                     * @return Status 请求响应状态，取值有：
+<li>1 ：失败 ；</li>
+<li>0 ：成功 。</li>
                      */
                     int64_t GetStatus() const;
 
@@ -71,8 +75,8 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取消息
-                     * @return Msg 消息
+                     * 获取请求响应消息。
+                     * @return Msg 请求响应消息。
                      */
                     std::string GetMsg() const;
 
@@ -83,8 +87,16 @@ namespace TencentCloud
                     bool MsgHasBeenSet() const;
 
                     /**
-                     * 获取查询时间粒度，可选{min,5min,hour,day}
-                     * @return Interval 查询时间粒度，可选{min,5min,hour,day}
+                     * 获取查询时间粒度，取值有：
+<li>min ：1分钟 ；</li>
+<li>5min ：5分钟 ；</li>
+<li>hour ：1小时 ；</li>
+<li>day ：1天 。</li>
+                     * @return Interval 查询时间粒度，取值有：
+<li>min ：1分钟 ；</li>
+<li>5min ：5分钟 ；</li>
+<li>hour ：1小时 ；</li>
+<li>day ：1天 。</li>
                      */
                     std::string GetInterval() const;
 
@@ -97,26 +109,32 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 数据详情
+                     * 数据详情。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<SecEntry> m_data;
                     bool m_dataHasBeenSet;
 
                     /**
-                     * 状态，1:失败，0:成功
+                     * 请求响应状态，取值有：
+<li>1 ：失败 ；</li>
+<li>0 ：成功 。</li>
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 消息
+                     * 请求响应消息。
                      */
                     std::string m_msg;
                     bool m_msgHasBeenSet;
 
                     /**
-                     * 查询时间粒度，可选{min,5min,hour,day}
+                     * 查询时间粒度，取值有：
+<li>min ：1分钟 ；</li>
+<li>5min ：5分钟 ；</li>
+<li>hour ：1小时 ；</li>
+<li>day ：1天 。</li>
                      */
                     std::string m_interval;
                     bool m_intervalHasBeenSet;

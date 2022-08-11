@@ -307,6 +307,36 @@ namespace TencentCloud
                      */
                     bool CcInfosHasBeenSet() const;
 
+                    /**
+                     * 获取发起方企业的签署人进行签署操作是否需要企业内部审批。
+若设置为true,审核结果需通过接口 ChannelCreateFlowSignReview 通知电子签，审核通过后，发起方企业签署人方可进行签署操作，否则会阻塞其签署操作。
+
+注：企业可以通过此功能与企业内部的审批流程进行关联，支持手动、静默签署合同。
+                     * @return NeedSignReview 发起方企业的签署人进行签署操作是否需要企业内部审批。
+若设置为true,审核结果需通过接口 ChannelCreateFlowSignReview 通知电子签，审核通过后，发起方企业签署人方可进行签署操作，否则会阻塞其签署操作。
+
+注：企业可以通过此功能与企业内部的审批流程进行关联，支持手动、静默签署合同。
+                     */
+                    bool GetNeedSignReview() const;
+
+                    /**
+                     * 设置发起方企业的签署人进行签署操作是否需要企业内部审批。
+若设置为true,审核结果需通过接口 ChannelCreateFlowSignReview 通知电子签，审核通过后，发起方企业签署人方可进行签署操作，否则会阻塞其签署操作。
+
+注：企业可以通过此功能与企业内部的审批流程进行关联，支持手动、静默签署合同。
+                     * @param NeedSignReview 发起方企业的签署人进行签署操作是否需要企业内部审批。
+若设置为true,审核结果需通过接口 ChannelCreateFlowSignReview 通知电子签，审核通过后，发起方企业签署人方可进行签署操作，否则会阻塞其签署操作。
+
+注：企业可以通过此功能与企业内部的审批流程进行关联，支持手动、静默签署合同。
+                     */
+                    void SetNeedSignReview(const bool& _needSignReview);
+
+                    /**
+                     * 判断参数 NeedSignReview 是否已赋值
+                     * @return NeedSignReview 是否已赋值
+                     */
+                    bool NeedSignReviewHasBeenSet() const;
+
                 private:
 
                     /**
@@ -374,6 +404,15 @@ namespace TencentCloud
                      */
                     std::vector<CcInfo> m_ccInfos;
                     bool m_ccInfosHasBeenSet;
+
+                    /**
+                     * 发起方企业的签署人进行签署操作是否需要企业内部审批。
+若设置为true,审核结果需通过接口 ChannelCreateFlowSignReview 通知电子签，审核通过后，发起方企业签署人方可进行签署操作，否则会阻塞其签署操作。
+
+注：企业可以通过此功能与企业内部的审批流程进行关联，支持手动、静默签署合同。
+                     */
+                    bool m_needSignReview;
+                    bool m_needSignReviewHasBeenSet;
 
                 };
             }

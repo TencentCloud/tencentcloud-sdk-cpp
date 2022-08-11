@@ -29,7 +29,8 @@ DescribeWebProtectionLogRequest::DescribeWebProtectionLogRequest() :
     m_pageNoHasBeenSet(false),
     m_zoneIdsHasBeenSet(false),
     m_domainsHasBeenSet(false),
-    m_queryConditionHasBeenSet(false)
+    m_queryConditionHasBeenSet(false),
+    m_entityTypeHasBeenSet(false)
 {
 }
 
@@ -111,6 +112,14 @@ string DescribeWebProtectionLogRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_entityTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EntityType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_entityType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -231,6 +240,22 @@ void DescribeWebProtectionLogRequest::SetQueryCondition(const vector<QueryCondit
 bool DescribeWebProtectionLogRequest::QueryConditionHasBeenSet() const
 {
     return m_queryConditionHasBeenSet;
+}
+
+string DescribeWebProtectionLogRequest::GetEntityType() const
+{
+    return m_entityType;
+}
+
+void DescribeWebProtectionLogRequest::SetEntityType(const string& _entityType)
+{
+    m_entityType = _entityType;
+    m_entityTypeHasBeenSet = true;
+}
+
+bool DescribeWebProtectionLogRequest::EntityTypeHasBeenSet() const
+{
+    return m_entityTypeHasBeenSet;
 }
 
 

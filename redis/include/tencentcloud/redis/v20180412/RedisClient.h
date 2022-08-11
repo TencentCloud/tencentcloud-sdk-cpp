@@ -179,6 +179,8 @@
 #include <tencentcloud/redis/v20180412/model/StartupInstanceResponse.h>
 #include <tencentcloud/redis/v20180412/model/SwitchInstanceVipRequest.h>
 #include <tencentcloud/redis/v20180412/model/SwitchInstanceVipResponse.h>
+#include <tencentcloud/redis/v20180412/model/SwitchProxyRequest.h>
+#include <tencentcloud/redis/v20180412/model/SwitchProxyResponse.h>
 #include <tencentcloud/redis/v20180412/model/UpgradeInstanceRequest.h>
 #include <tencentcloud/redis/v20180412/model/UpgradeInstanceResponse.h>
 #include <tencentcloud/redis/v20180412/model/UpgradeInstanceVersionRequest.h>
@@ -437,6 +439,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::SwitchInstanceVipResponse> SwitchInstanceVipOutcome;
                 typedef std::future<SwitchInstanceVipOutcome> SwitchInstanceVipOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::SwitchInstanceVipRequest&, SwitchInstanceVipOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SwitchInstanceVipAsyncHandler;
+                typedef Outcome<Core::Error, Model::SwitchProxyResponse> SwitchProxyOutcome;
+                typedef std::future<SwitchProxyOutcome> SwitchProxyOutcomeCallable;
+                typedef std::function<void(const RedisClient*, const Model::SwitchProxyRequest&, SwitchProxyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SwitchProxyAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpgradeInstanceResponse> UpgradeInstanceOutcome;
                 typedef std::future<UpgradeInstanceOutcome> UpgradeInstanceOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::UpgradeInstanceRequest&, UpgradeInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpgradeInstanceAsyncHandler;
@@ -1156,6 +1161,15 @@ namespace TencentCloud
                 SwitchInstanceVipOutcome SwitchInstanceVip(const Model::SwitchInstanceVipRequest &request);
                 void SwitchInstanceVipAsync(const Model::SwitchInstanceVipRequest& request, const SwitchInstanceVipAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SwitchInstanceVipOutcomeCallable SwitchInstanceVipCallable(const Model::SwitchInstanceVipRequest& request);
+
+                /**
+                 *Proxy模拟故障接口
+                 * @param req SwitchProxyRequest
+                 * @return SwitchProxyOutcome
+                 */
+                SwitchProxyOutcome SwitchProxy(const Model::SwitchProxyRequest &request);
+                void SwitchProxyAsync(const Model::SwitchProxyRequest& request, const SwitchProxyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SwitchProxyOutcomeCallable SwitchProxyCallable(const Model::SwitchProxyRequest& request);
 
                 /**
                  *升级实例
