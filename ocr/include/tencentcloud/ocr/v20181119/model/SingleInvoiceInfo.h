@@ -82,6 +82,24 @@ namespace TencentCloud
                      */
                     bool ValueHasBeenSet() const;
 
+                    /**
+                     * 获取字段属于第几行，用于相同字段的排版，如发票明细表格项目，普通字段使用默认值为-1，表示无列排版。
+                     * @return Row 字段属于第几行，用于相同字段的排版，如发票明细表格项目，普通字段使用默认值为-1，表示无列排版。
+                     */
+                    int64_t GetRow() const;
+
+                    /**
+                     * 设置字段属于第几行，用于相同字段的排版，如发票明细表格项目，普通字段使用默认值为-1，表示无列排版。
+                     * @param Row 字段属于第几行，用于相同字段的排版，如发票明细表格项目，普通字段使用默认值为-1，表示无列排版。
+                     */
+                    void SetRow(const int64_t& _row);
+
+                    /**
+                     * 判断参数 Row 是否已赋值
+                     * @return Row 是否已赋值
+                     */
+                    bool RowHasBeenSet() const;
+
                 private:
 
                     /**
@@ -95,6 +113,12 @@ namespace TencentCloud
                      */
                     std::string m_value;
                     bool m_valueHasBeenSet;
+
+                    /**
+                     * 字段属于第几行，用于相同字段的排版，如发票明细表格项目，普通字段使用默认值为-1，表示无列排版。
+                     */
+                    int64_t m_row;
+                    bool m_rowHasBeenSet;
 
                 };
             }

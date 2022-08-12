@@ -83,6 +83,10 @@
 #include <tencentcloud/tem/v20210701/model/DestroyEnvironmentResponse.h>
 #include <tencentcloud/tem/v20210701/model/DestroyLogConfigRequest.h>
 #include <tencentcloud/tem/v20210701/model/DestroyLogConfigResponse.h>
+#include <tencentcloud/tem/v20210701/model/DisableApplicationAutoscalerRequest.h>
+#include <tencentcloud/tem/v20210701/model/DisableApplicationAutoscalerResponse.h>
+#include <tencentcloud/tem/v20210701/model/EnableApplicationAutoscalerRequest.h>
+#include <tencentcloud/tem/v20210701/model/EnableApplicationAutoscalerResponse.h>
 #include <tencentcloud/tem/v20210701/model/GenerateApplicationPackageDownloadUrlRequest.h>
 #include <tencentcloud/tem/v20210701/model/GenerateApplicationPackageDownloadUrlResponse.h>
 #include <tencentcloud/tem/v20210701/model/ModifyApplicationAutoscalerRequest.h>
@@ -215,6 +219,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DestroyLogConfigResponse> DestroyLogConfigOutcome;
                 typedef std::future<DestroyLogConfigOutcome> DestroyLogConfigOutcomeCallable;
                 typedef std::function<void(const TemClient*, const Model::DestroyLogConfigRequest&, DestroyLogConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DestroyLogConfigAsyncHandler;
+                typedef Outcome<Core::Error, Model::DisableApplicationAutoscalerResponse> DisableApplicationAutoscalerOutcome;
+                typedef std::future<DisableApplicationAutoscalerOutcome> DisableApplicationAutoscalerOutcomeCallable;
+                typedef std::function<void(const TemClient*, const Model::DisableApplicationAutoscalerRequest&, DisableApplicationAutoscalerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisableApplicationAutoscalerAsyncHandler;
+                typedef Outcome<Core::Error, Model::EnableApplicationAutoscalerResponse> EnableApplicationAutoscalerOutcome;
+                typedef std::future<EnableApplicationAutoscalerOutcome> EnableApplicationAutoscalerOutcomeCallable;
+                typedef std::function<void(const TemClient*, const Model::EnableApplicationAutoscalerRequest&, EnableApplicationAutoscalerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnableApplicationAutoscalerAsyncHandler;
                 typedef Outcome<Core::Error, Model::GenerateApplicationPackageDownloadUrlResponse> GenerateApplicationPackageDownloadUrlOutcome;
                 typedef std::future<GenerateApplicationPackageDownloadUrlOutcome> GenerateApplicationPackageDownloadUrlOutcomeCallable;
                 typedef std::function<void(const TemClient*, const Model::GenerateApplicationPackageDownloadUrlRequest&, GenerateApplicationPackageDownloadUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GenerateApplicationPackageDownloadUrlAsyncHandler;
@@ -532,6 +542,24 @@ namespace TencentCloud
                 DestroyLogConfigOutcome DestroyLogConfig(const Model::DestroyLogConfigRequest &request);
                 void DestroyLogConfigAsync(const Model::DestroyLogConfigRequest& request, const DestroyLogConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DestroyLogConfigOutcomeCallable DestroyLogConfigCallable(const Model::DestroyLogConfigRequest& request);
+
+                /**
+                 *关闭应用弹性策略组合
+                 * @param req DisableApplicationAutoscalerRequest
+                 * @return DisableApplicationAutoscalerOutcome
+                 */
+                DisableApplicationAutoscalerOutcome DisableApplicationAutoscaler(const Model::DisableApplicationAutoscalerRequest &request);
+                void DisableApplicationAutoscalerAsync(const Model::DisableApplicationAutoscalerRequest& request, const DisableApplicationAutoscalerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DisableApplicationAutoscalerOutcomeCallable DisableApplicationAutoscalerCallable(const Model::DisableApplicationAutoscalerRequest& request);
+
+                /**
+                 *启用应用弹性策略组合
+                 * @param req EnableApplicationAutoscalerRequest
+                 * @return EnableApplicationAutoscalerOutcome
+                 */
+                EnableApplicationAutoscalerOutcome EnableApplicationAutoscaler(const Model::EnableApplicationAutoscalerRequest &request);
+                void EnableApplicationAutoscalerAsync(const Model::EnableApplicationAutoscalerRequest& request, const EnableApplicationAutoscalerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                EnableApplicationAutoscalerOutcomeCallable EnableApplicationAutoscalerCallable(const Model::EnableApplicationAutoscalerRequest& request);
 
                 /**
                  *生成应用程序包预签名下载链接

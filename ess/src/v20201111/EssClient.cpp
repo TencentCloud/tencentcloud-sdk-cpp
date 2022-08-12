@@ -341,6 +341,49 @@ EssClient::CreateFlowByFilesOutcomeCallable EssClient::CreateFlowByFilesCallable
     return task->get_future();
 }
 
+EssClient::CreateFlowSignReviewOutcome EssClient::CreateFlowSignReview(const CreateFlowSignReviewRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateFlowSignReview");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateFlowSignReviewResponse rsp = CreateFlowSignReviewResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateFlowSignReviewOutcome(rsp);
+        else
+            return CreateFlowSignReviewOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateFlowSignReviewOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::CreateFlowSignReviewAsync(const CreateFlowSignReviewRequest& request, const CreateFlowSignReviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateFlowSignReview(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssClient::CreateFlowSignReviewOutcomeCallable EssClient::CreateFlowSignReviewCallable(const CreateFlowSignReviewRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateFlowSignReviewOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateFlowSignReview(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssClient::CreateMultiFlowSignQRCodeOutcome EssClient::CreateMultiFlowSignQRCode(const CreateMultiFlowSignQRCodeRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateMultiFlowSignQRCode");

@@ -31,6 +31,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/CreateSchemeUrlRequest.h
   include/tencentcloud/ess/v20201111/model/FileUrl.h
   include/tencentcloud/ess/v20201111/model/DescribeThirdPartyAuthCodeRequest.h
+  include/tencentcloud/ess/v20201111/model/Filter.h
   include/tencentcloud/ess/v20201111/model/SignQrCode.h
   include/tencentcloud/ess/v20201111/model/GetTaskResultApiRequest.h
   include/tencentcloud/ess/v20201111/model/UploadFilesRequest.h
@@ -49,6 +50,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/SignUrl.h
   include/tencentcloud/ess/v20201111/model/DescribeFileUrlsRequest.h
   include/tencentcloud/ess/v20201111/model/ApproverInfo.h
+  include/tencentcloud/ess/v20201111/model/CreateFlowSignReviewResponse.h
   include/tencentcloud/ess/v20201111/model/Caller.h
   include/tencentcloud/ess/v20201111/model/DescribeFlowTemplatesResponse.h
   include/tencentcloud/ess/v20201111/model/CreateBatchCancelFlowUrlResponse.h
@@ -57,7 +59,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/CreateBatchCancelFlowUrlRequest.h
   include/tencentcloud/ess/v20201111/model/CreateMultiFlowSignQRCodeRequest.h
   include/tencentcloud/ess/v20201111/model/CreateConvertTaskApiResponse.h
-  include/tencentcloud/ess/v20201111/model/Filter.h
+  include/tencentcloud/ess/v20201111/model/CreateFlowSignReviewRequest.h
   include/tencentcloud/ess/v20201111/model/CreateConvertTaskApiRequest.h
   include/tencentcloud/ess/v20201111/model/CreateSchemeUrlResponse.h
   include/tencentcloud/ess/v20201111/model/CreateFlowByFilesRequest.h
@@ -86,6 +88,7 @@ set(ess_src
   src/v20201111/model/CreateSchemeUrlRequest.cpp
   src/v20201111/model/FileUrl.cpp
   src/v20201111/model/DescribeThirdPartyAuthCodeRequest.cpp
+  src/v20201111/model/Filter.cpp
   src/v20201111/model/SignQrCode.cpp
   src/v20201111/model/GetTaskResultApiRequest.cpp
   src/v20201111/model/UploadFilesRequest.cpp
@@ -104,6 +107,7 @@ set(ess_src
   src/v20201111/model/SignUrl.cpp
   src/v20201111/model/DescribeFileUrlsRequest.cpp
   src/v20201111/model/ApproverInfo.cpp
+  src/v20201111/model/CreateFlowSignReviewResponse.cpp
   src/v20201111/model/Caller.cpp
   src/v20201111/model/DescribeFlowTemplatesResponse.cpp
   src/v20201111/model/CreateBatchCancelFlowUrlResponse.cpp
@@ -112,7 +116,7 @@ set(ess_src
   src/v20201111/model/CreateBatchCancelFlowUrlRequest.cpp
   src/v20201111/model/CreateMultiFlowSignQRCodeRequest.cpp
   src/v20201111/model/CreateConvertTaskApiResponse.cpp
-  src/v20201111/model/Filter.cpp
+  src/v20201111/model/CreateFlowSignReviewRequest.cpp
   src/v20201111/model/CreateConvertTaskApiRequest.cpp
   src/v20201111/model/CreateSchemeUrlResponse.cpp
   src/v20201111/model/CreateFlowByFilesRequest.cpp

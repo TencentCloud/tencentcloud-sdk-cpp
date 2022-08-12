@@ -1330,6 +1330,92 @@ TemClient::DestroyLogConfigOutcomeCallable TemClient::DestroyLogConfigCallable(c
     return task->get_future();
 }
 
+TemClient::DisableApplicationAutoscalerOutcome TemClient::DisableApplicationAutoscaler(const DisableApplicationAutoscalerRequest &request)
+{
+    auto outcome = MakeRequest(request, "DisableApplicationAutoscaler");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DisableApplicationAutoscalerResponse rsp = DisableApplicationAutoscalerResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DisableApplicationAutoscalerOutcome(rsp);
+        else
+            return DisableApplicationAutoscalerOutcome(o.GetError());
+    }
+    else
+    {
+        return DisableApplicationAutoscalerOutcome(outcome.GetError());
+    }
+}
+
+void TemClient::DisableApplicationAutoscalerAsync(const DisableApplicationAutoscalerRequest& request, const DisableApplicationAutoscalerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DisableApplicationAutoscaler(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TemClient::DisableApplicationAutoscalerOutcomeCallable TemClient::DisableApplicationAutoscalerCallable(const DisableApplicationAutoscalerRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DisableApplicationAutoscalerOutcome()>>(
+        [this, request]()
+        {
+            return this->DisableApplicationAutoscaler(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TemClient::EnableApplicationAutoscalerOutcome TemClient::EnableApplicationAutoscaler(const EnableApplicationAutoscalerRequest &request)
+{
+    auto outcome = MakeRequest(request, "EnableApplicationAutoscaler");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        EnableApplicationAutoscalerResponse rsp = EnableApplicationAutoscalerResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return EnableApplicationAutoscalerOutcome(rsp);
+        else
+            return EnableApplicationAutoscalerOutcome(o.GetError());
+    }
+    else
+    {
+        return EnableApplicationAutoscalerOutcome(outcome.GetError());
+    }
+}
+
+void TemClient::EnableApplicationAutoscalerAsync(const EnableApplicationAutoscalerRequest& request, const EnableApplicationAutoscalerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->EnableApplicationAutoscaler(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TemClient::EnableApplicationAutoscalerOutcomeCallable TemClient::EnableApplicationAutoscalerCallable(const EnableApplicationAutoscalerRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<EnableApplicationAutoscalerOutcome()>>(
+        [this, request]()
+        {
+            return this->EnableApplicationAutoscaler(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TemClient::GenerateApplicationPackageDownloadUrlOutcome TemClient::GenerateApplicationPackageDownloadUrl(const GenerateApplicationPackageDownloadUrlRequest &request)
 {
     auto outcome = MakeRequest(request, "GenerateApplicationPackageDownloadUrl");

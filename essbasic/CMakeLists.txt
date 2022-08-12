@@ -26,6 +26,7 @@ set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateConvertTaskApiResponse.h
   include/tencentcloud/essbasic/v20210526/model/OperateChannelTemplateRequest.h
   include/tencentcloud/essbasic/v20210526/model/TemplateInfo.h
+  include/tencentcloud/essbasic/v20210526/model/UploadFilesRequest.h
   include/tencentcloud/essbasic/v20210526/model/GetDownloadFlowUrlResponse.h
   include/tencentcloud/essbasic/v20210526/model/DescribeResourceUrlsByFlowsResponse.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateMultiFlowSignQRCodeResponse.h
@@ -38,7 +39,7 @@ set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/AuthFailMessage.h
   include/tencentcloud/essbasic/v20210526/model/DescribeFlowDetailInfoRequest.h
   include/tencentcloud/essbasic/v20210526/model/ChannelGetTaskResultApiResponse.h
-  include/tencentcloud/essbasic/v20210526/model/UploadFilesRequest.h
+  include/tencentcloud/essbasic/v20210526/model/ProxyOrganizationOperator.h
   include/tencentcloud/essbasic/v20210526/model/ChannelGetTaskResultApiRequest.h
   include/tencentcloud/essbasic/v20210526/model/UploadFile.h
   include/tencentcloud/essbasic/v20210526/model/Component.h
@@ -47,7 +48,7 @@ set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/CreateConsoleLoginUrlRequest.h
   include/tencentcloud/essbasic/v20210526/model/OrganizationInfo.h
   include/tencentcloud/essbasic/v20210526/model/CreateFlowsByTemplatesResponse.h
-  include/tencentcloud/essbasic/v20210526/model/ProxyOrganizationOperator.h
+  include/tencentcloud/essbasic/v20210526/model/ChannelCreateFlowSignReviewRequest.h
   include/tencentcloud/essbasic/v20210526/model/PrepareFlowsRequest.h
   include/tencentcloud/essbasic/v20210526/model/SyncProxyOrganizationOperatorsResponse.h
   include/tencentcloud/essbasic/v20210526/model/CreateSealByImageResponse.h
@@ -74,6 +75,7 @@ set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateFlowByFilesRequest.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateFlowByFilesResponse.h
   include/tencentcloud/essbasic/v20210526/model/UploadFilesResponse.h
+  include/tencentcloud/essbasic/v20210526/model/ChannelCreateFlowSignReviewResponse.h
   include/tencentcloud/essbasic/v20210526/model/Agent.h
   include/tencentcloud/essbasic/v20210526/model/FormField.h
   include/tencentcloud/essbasic/v20210526/model/UserInfo.h
@@ -221,6 +223,7 @@ set(essbasic_src
   src/v20210526/model/ChannelCreateConvertTaskApiResponse.cpp
   src/v20210526/model/OperateChannelTemplateRequest.cpp
   src/v20210526/model/TemplateInfo.cpp
+  src/v20210526/model/UploadFilesRequest.cpp
   src/v20210526/model/GetDownloadFlowUrlResponse.cpp
   src/v20210526/model/DescribeResourceUrlsByFlowsResponse.cpp
   src/v20210526/model/ChannelCreateMultiFlowSignQRCodeResponse.cpp
@@ -233,7 +236,7 @@ set(essbasic_src
   src/v20210526/model/AuthFailMessage.cpp
   src/v20210526/model/DescribeFlowDetailInfoRequest.cpp
   src/v20210526/model/ChannelGetTaskResultApiResponse.cpp
-  src/v20210526/model/UploadFilesRequest.cpp
+  src/v20210526/model/ProxyOrganizationOperator.cpp
   src/v20210526/model/ChannelGetTaskResultApiRequest.cpp
   src/v20210526/model/UploadFile.cpp
   src/v20210526/model/Component.cpp
@@ -242,7 +245,7 @@ set(essbasic_src
   src/v20210526/model/CreateConsoleLoginUrlRequest.cpp
   src/v20210526/model/OrganizationInfo.cpp
   src/v20210526/model/CreateFlowsByTemplatesResponse.cpp
-  src/v20210526/model/ProxyOrganizationOperator.cpp
+  src/v20210526/model/ChannelCreateFlowSignReviewRequest.cpp
   src/v20210526/model/PrepareFlowsRequest.cpp
   src/v20210526/model/SyncProxyOrganizationOperatorsResponse.cpp
   src/v20210526/model/CreateSealByImageResponse.cpp
@@ -269,6 +272,7 @@ set(essbasic_src
   src/v20210526/model/ChannelCreateFlowByFilesRequest.cpp
   src/v20210526/model/ChannelCreateFlowByFilesResponse.cpp
   src/v20210526/model/UploadFilesResponse.cpp
+  src/v20210526/model/ChannelCreateFlowSignReviewResponse.cpp
   src/v20210526/model/Agent.cpp
   src/v20210526/model/FormField.cpp
   src/v20210526/model/UserInfo.cpp

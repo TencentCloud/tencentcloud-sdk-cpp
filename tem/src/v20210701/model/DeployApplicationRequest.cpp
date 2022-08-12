@@ -63,7 +63,8 @@ DeployApplicationRequest::DeployApplicationRequest() :
     m_startupProbeHasBeenSet(false),
     m_osFlavourHasBeenSet(false),
     m_enablePrometheusConfHasBeenSet(false),
-    m_enableTracingHasBeenSet(false)
+    m_enableTracingHasBeenSet(false),
+    m_enableMetricsHasBeenSet(false)
 {
 }
 
@@ -465,6 +466,14 @@ string DeployApplicationRequest::ToJsonString() const
         string key = "EnableTracing";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_enableTracing, allocator);
+    }
+
+    if (m_enableMetricsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableMetrics";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableMetrics, allocator);
     }
 
 
@@ -1129,6 +1138,22 @@ void DeployApplicationRequest::SetEnableTracing(const int64_t& _enableTracing)
 bool DeployApplicationRequest::EnableTracingHasBeenSet() const
 {
     return m_enableTracingHasBeenSet;
+}
+
+int64_t DeployApplicationRequest::GetEnableMetrics() const
+{
+    return m_enableMetrics;
+}
+
+void DeployApplicationRequest::SetEnableMetrics(const int64_t& _enableMetrics)
+{
+    m_enableMetrics = _enableMetrics;
+    m_enableMetricsHasBeenSet = true;
+}
+
+bool DeployApplicationRequest::EnableMetricsHasBeenSet() const
+{
+    return m_enableMetricsHasBeenSet;
 }
 
 

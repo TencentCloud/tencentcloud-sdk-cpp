@@ -37,6 +37,8 @@
 #include <tencentcloud/ess/v20201111/model/CreateFlowResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateFlowByFilesRequest.h>
 #include <tencentcloud/ess/v20201111/model/CreateFlowByFilesResponse.h>
+#include <tencentcloud/ess/v20201111/model/CreateFlowSignReviewRequest.h>
+#include <tencentcloud/ess/v20201111/model/CreateFlowSignReviewResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateMultiFlowSignQRCodeRequest.h>
 #include <tencentcloud/ess/v20201111/model/CreateMultiFlowSignQRCodeResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateSchemeUrlRequest.h>
@@ -90,6 +92,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateFlowByFilesResponse> CreateFlowByFilesOutcome;
                 typedef std::future<CreateFlowByFilesOutcome> CreateFlowByFilesOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::CreateFlowByFilesRequest&, CreateFlowByFilesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateFlowByFilesAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateFlowSignReviewResponse> CreateFlowSignReviewOutcome;
+                typedef std::future<CreateFlowSignReviewOutcome> CreateFlowSignReviewOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::CreateFlowSignReviewRequest&, CreateFlowSignReviewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateFlowSignReviewAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateMultiFlowSignQRCodeResponse> CreateMultiFlowSignQRCodeOutcome;
                 typedef std::future<CreateMultiFlowSignQRCodeOutcome> CreateMultiFlowSignQRCodeOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::CreateMultiFlowSignQRCodeRequest&, CreateMultiFlowSignQRCodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateMultiFlowSignQRCodeAsyncHandler;
@@ -192,6 +197,19 @@ namespace TencentCloud
                 CreateFlowByFilesOutcome CreateFlowByFiles(const Model::CreateFlowByFilesRequest &request);
                 void CreateFlowByFilesAsync(const Model::CreateFlowByFilesRequest& request, const CreateFlowByFilesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateFlowByFilesOutcomeCallable CreateFlowByFilesCallable(const Model::CreateFlowByFilesRequest& request);
+
+                /**
+                 *提交企业签署流程审批结果
+适用场景: 
+在通过接口(CreateFlow 或者CreateFlowByFiles)创建签署流程时，若指定了参数 NeedSignReview 为true,则可以调用此接口提交企业内部签署审批结果。
+若签署流程状态正常，且本企业存在签署方未签署，同一签署流程可以多次提交签署审批结果，签署时的最后一个“审批结果”有效。
+
+                 * @param req CreateFlowSignReviewRequest
+                 * @return CreateFlowSignReviewOutcome
+                 */
+                CreateFlowSignReviewOutcome CreateFlowSignReview(const Model::CreateFlowSignReviewRequest &request);
+                void CreateFlowSignReviewAsync(const Model::CreateFlowSignReviewRequest& request, const CreateFlowSignReviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateFlowSignReviewOutcomeCallable CreateFlowSignReviewCallable(const Model::CreateFlowSignReviewRequest& request);
 
                 /**
                  *此接口（CreateMultiFlowSignQRCode）用于创建一码多扫流程签署二维码。

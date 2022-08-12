@@ -212,6 +212,49 @@ EssbasicClient::ChannelCreateFlowByFilesOutcomeCallable EssbasicClient::ChannelC
     return task->get_future();
 }
 
+EssbasicClient::ChannelCreateFlowSignReviewOutcome EssbasicClient::ChannelCreateFlowSignReview(const ChannelCreateFlowSignReviewRequest &request)
+{
+    auto outcome = MakeRequest(request, "ChannelCreateFlowSignReview");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ChannelCreateFlowSignReviewResponse rsp = ChannelCreateFlowSignReviewResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ChannelCreateFlowSignReviewOutcome(rsp);
+        else
+            return ChannelCreateFlowSignReviewOutcome(o.GetError());
+    }
+    else
+    {
+        return ChannelCreateFlowSignReviewOutcome(outcome.GetError());
+    }
+}
+
+void EssbasicClient::ChannelCreateFlowSignReviewAsync(const ChannelCreateFlowSignReviewRequest& request, const ChannelCreateFlowSignReviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ChannelCreateFlowSignReview(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssbasicClient::ChannelCreateFlowSignReviewOutcomeCallable EssbasicClient::ChannelCreateFlowSignReviewCallable(const ChannelCreateFlowSignReviewRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ChannelCreateFlowSignReviewOutcome()>>(
+        [this, request]()
+        {
+            return this->ChannelCreateFlowSignReview(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssbasicClient::ChannelCreateMultiFlowSignQRCodeOutcome EssbasicClient::ChannelCreateMultiFlowSignQRCode(const ChannelCreateMultiFlowSignQRCodeRequest &request)
 {
     auto outcome = MakeRequest(request, "ChannelCreateMultiFlowSignQRCode");

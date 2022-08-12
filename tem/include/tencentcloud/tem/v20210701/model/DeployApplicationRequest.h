@@ -813,14 +813,14 @@ namespace TencentCloud
                     bool OsFlavourHasBeenSet() const;
 
                     /**
-                     * 获取是否开启prometheus 业务指标监控
-                     * @return EnablePrometheusConf 是否开启prometheus 业务指标监控
+                     * 获取metrics业务指标监控配置
+                     * @return EnablePrometheusConf metrics业务指标监控配置
                      */
                     EnablePrometheusConf GetEnablePrometheusConf() const;
 
                     /**
-                     * 设置是否开启prometheus 业务指标监控
-                     * @param EnablePrometheusConf 是否开启prometheus 业务指标监控
+                     * 设置metrics业务指标监控配置
+                     * @param EnablePrometheusConf metrics业务指标监控配置
                      */
                     void SetEnablePrometheusConf(const EnablePrometheusConf& _enablePrometheusConf);
 
@@ -831,17 +831,17 @@ namespace TencentCloud
                     bool EnablePrometheusConfHasBeenSet() const;
 
                     /**
-                     * 获取1：开始apm采集（skywalking）；
+                     * 获取1：开始自动apm采集（skywalking）；
 0：关闭apm采集；
-                     * @return EnableTracing 1：开始apm采集（skywalking）；
+                     * @return EnableTracing 1：开始自动apm采集（skywalking）；
 0：关闭apm采集；
                      */
                     int64_t GetEnableTracing() const;
 
                     /**
-                     * 设置1：开始apm采集（skywalking）；
+                     * 设置1：开始自动apm采集（skywalking）；
 0：关闭apm采集；
-                     * @param EnableTracing 1：开始apm采集（skywalking）；
+                     * @param EnableTracing 1：开始自动apm采集（skywalking）；
 0：关闭apm采集；
                      */
                     void SetEnableTracing(const int64_t& _enableTracing);
@@ -851,6 +851,28 @@ namespace TencentCloud
                      * @return EnableTracing 是否已赋值
                      */
                     bool EnableTracingHasBeenSet() const;
+
+                    /**
+                     * 获取1：开始自动metrics采集（open-telemetry）；
+0：关闭metrics采集；
+                     * @return EnableMetrics 1：开始自动metrics采集（open-telemetry）；
+0：关闭metrics采集；
+                     */
+                    int64_t GetEnableMetrics() const;
+
+                    /**
+                     * 设置1：开始自动metrics采集（open-telemetry）；
+0：关闭metrics采集；
+                     * @param EnableMetrics 1：开始自动metrics采集（open-telemetry）；
+0：关闭metrics采集；
+                     */
+                    void SetEnableMetrics(const int64_t& _enableMetrics);
+
+                    /**
+                     * 判断参数 EnableMetrics 是否已赋值
+                     * @return EnableMetrics 是否已赋值
+                     */
+                    bool EnableMetricsHasBeenSet() const;
 
                 private:
 
@@ -1103,17 +1125,24 @@ namespace TencentCloud
                     bool m_osFlavourHasBeenSet;
 
                     /**
-                     * 是否开启prometheus 业务指标监控
+                     * metrics业务指标监控配置
                      */
                     EnablePrometheusConf m_enablePrometheusConf;
                     bool m_enablePrometheusConfHasBeenSet;
 
                     /**
-                     * 1：开始apm采集（skywalking）；
+                     * 1：开始自动apm采集（skywalking）；
 0：关闭apm采集；
                      */
                     int64_t m_enableTracing;
                     bool m_enableTracingHasBeenSet;
+
+                    /**
+                     * 1：开始自动metrics采集（open-telemetry）；
+0：关闭metrics采集；
+                     */
+                    int64_t m_enableMetrics;
+                    bool m_enableMetricsHasBeenSet;
 
                 };
             }
