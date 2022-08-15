@@ -208,6 +208,24 @@ namespace TencentCloud
                      */
                     bool TotalCostHasBeenSet() const;
 
+                    /**
+                     * 获取分成金金额
+                     * @return TransferPayAmount 分成金金额
+                     */
+                    std::string GetTransferPayAmount() const;
+
+                    /**
+                     * 设置分成金金额
+                     * @param TransferPayAmount 分成金金额
+                     */
+                    void SetTransferPayAmount(const std::string& _transferPayAmount);
+
+                    /**
+                     * 判断参数 TransferPayAmount 是否已赋值
+                     * @return TransferPayAmount 是否已赋值
+                     */
+                    bool TransferPayAmountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -263,6 +281,12 @@ namespace TencentCloud
                      */
                     std::string m_totalCost;
                     bool m_totalCostHasBeenSet;
+
+                    /**
+                     * 分成金金额
+                     */
+                    std::string m_transferPayAmount;
+                    bool m_transferPayAmountHasBeenSet;
 
                 };
             }

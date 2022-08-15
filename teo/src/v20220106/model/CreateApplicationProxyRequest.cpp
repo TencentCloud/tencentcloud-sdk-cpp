@@ -25,15 +25,16 @@ using namespace std;
 CreateApplicationProxyRequest::CreateApplicationProxyRequest() :
     m_zoneIdHasBeenSet(false),
     m_zoneNameHasBeenSet(false),
+    m_ruleHasBeenSet(false),
     m_proxyNameHasBeenSet(false),
     m_platTypeHasBeenSet(false),
     m_securityTypeHasBeenSet(false),
     m_accelerateTypeHasBeenSet(false),
-    m_forwardClientIpHasBeenSet(false),
     m_sessionPersistHasBeenSet(false),
-    m_ruleHasBeenSet(false),
+    m_forwardClientIpHasBeenSet(false),
+    m_proxyTypeHasBeenSet(false),
     m_sessionPersistTimeHasBeenSet(false),
-    m_proxyTypeHasBeenSet(false)
+    m_ipv6HasBeenSet(false)
 {
 }
 
@@ -58,6 +59,21 @@ string CreateApplicationProxyRequest::ToJsonString() const
         string key = "ZoneName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_zoneName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ruleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Rule";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_rule.begin(); itr != m_rule.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
     if (m_proxyNameHasBeenSet)
@@ -92,14 +108,6 @@ string CreateApplicationProxyRequest::ToJsonString() const
         d.AddMember(iKey, m_accelerateType, allocator);
     }
 
-    if (m_forwardClientIpHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ForwardClientIp";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_forwardClientIp.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_sessionPersistHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -108,19 +116,20 @@ string CreateApplicationProxyRequest::ToJsonString() const
         d.AddMember(iKey, m_sessionPersist, allocator);
     }
 
-    if (m_ruleHasBeenSet)
+    if (m_forwardClientIpHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Rule";
+        string key = "ForwardClientIp";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_forwardClientIp.c_str(), allocator).Move(), allocator);
+    }
 
-        int i=0;
-        for (auto itr = m_rule.begin(); itr != m_rule.end(); ++itr, ++i)
-        {
-            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
-        }
+    if (m_proxyTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProxyType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_proxyType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_sessionPersistTimeHasBeenSet)
@@ -131,12 +140,13 @@ string CreateApplicationProxyRequest::ToJsonString() const
         d.AddMember(iKey, m_sessionPersistTime, allocator);
     }
 
-    if (m_proxyTypeHasBeenSet)
+    if (m_ipv6HasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ProxyType";
+        string key = "Ipv6";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_proxyType.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_ipv6.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -177,6 +187,22 @@ void CreateApplicationProxyRequest::SetZoneName(const string& _zoneName)
 bool CreateApplicationProxyRequest::ZoneNameHasBeenSet() const
 {
     return m_zoneNameHasBeenSet;
+}
+
+vector<ApplicationProxyRule> CreateApplicationProxyRequest::GetRule() const
+{
+    return m_rule;
+}
+
+void CreateApplicationProxyRequest::SetRule(const vector<ApplicationProxyRule>& _rule)
+{
+    m_rule = _rule;
+    m_ruleHasBeenSet = true;
+}
+
+bool CreateApplicationProxyRequest::RuleHasBeenSet() const
+{
+    return m_ruleHasBeenSet;
 }
 
 string CreateApplicationProxyRequest::GetProxyName() const
@@ -243,22 +269,6 @@ bool CreateApplicationProxyRequest::AccelerateTypeHasBeenSet() const
     return m_accelerateTypeHasBeenSet;
 }
 
-string CreateApplicationProxyRequest::GetForwardClientIp() const
-{
-    return m_forwardClientIp;
-}
-
-void CreateApplicationProxyRequest::SetForwardClientIp(const string& _forwardClientIp)
-{
-    m_forwardClientIp = _forwardClientIp;
-    m_forwardClientIpHasBeenSet = true;
-}
-
-bool CreateApplicationProxyRequest::ForwardClientIpHasBeenSet() const
-{
-    return m_forwardClientIpHasBeenSet;
-}
-
 bool CreateApplicationProxyRequest::GetSessionPersist() const
 {
     return m_sessionPersist;
@@ -275,20 +285,36 @@ bool CreateApplicationProxyRequest::SessionPersistHasBeenSet() const
     return m_sessionPersistHasBeenSet;
 }
 
-vector<ApplicationProxyRule> CreateApplicationProxyRequest::GetRule() const
+string CreateApplicationProxyRequest::GetForwardClientIp() const
 {
-    return m_rule;
+    return m_forwardClientIp;
 }
 
-void CreateApplicationProxyRequest::SetRule(const vector<ApplicationProxyRule>& _rule)
+void CreateApplicationProxyRequest::SetForwardClientIp(const string& _forwardClientIp)
 {
-    m_rule = _rule;
-    m_ruleHasBeenSet = true;
+    m_forwardClientIp = _forwardClientIp;
+    m_forwardClientIpHasBeenSet = true;
 }
 
-bool CreateApplicationProxyRequest::RuleHasBeenSet() const
+bool CreateApplicationProxyRequest::ForwardClientIpHasBeenSet() const
 {
-    return m_ruleHasBeenSet;
+    return m_forwardClientIpHasBeenSet;
+}
+
+string CreateApplicationProxyRequest::GetProxyType() const
+{
+    return m_proxyType;
+}
+
+void CreateApplicationProxyRequest::SetProxyType(const string& _proxyType)
+{
+    m_proxyType = _proxyType;
+    m_proxyTypeHasBeenSet = true;
+}
+
+bool CreateApplicationProxyRequest::ProxyTypeHasBeenSet() const
+{
+    return m_proxyTypeHasBeenSet;
 }
 
 uint64_t CreateApplicationProxyRequest::GetSessionPersistTime() const
@@ -307,20 +333,20 @@ bool CreateApplicationProxyRequest::SessionPersistTimeHasBeenSet() const
     return m_sessionPersistTimeHasBeenSet;
 }
 
-string CreateApplicationProxyRequest::GetProxyType() const
+Ipv6Access CreateApplicationProxyRequest::GetIpv6() const
 {
-    return m_proxyType;
+    return m_ipv6;
 }
 
-void CreateApplicationProxyRequest::SetProxyType(const string& _proxyType)
+void CreateApplicationProxyRequest::SetIpv6(const Ipv6Access& _ipv6)
 {
-    m_proxyType = _proxyType;
-    m_proxyTypeHasBeenSet = true;
+    m_ipv6 = _ipv6;
+    m_ipv6HasBeenSet = true;
 }
 
-bool CreateApplicationProxyRequest::ProxyTypeHasBeenSet() const
+bool CreateApplicationProxyRequest::Ipv6HasBeenSet() const
 {
-    return m_proxyTypeHasBeenSet;
+    return m_ipv6HasBeenSet;
 }
 
 

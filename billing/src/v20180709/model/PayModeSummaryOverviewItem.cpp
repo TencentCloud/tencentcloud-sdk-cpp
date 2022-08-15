@@ -29,7 +29,8 @@ PayModeSummaryOverviewItem::PayModeSummaryOverviewItem() :
     m_cashPayAmountHasBeenSet(false),
     m_incentivePayAmountHasBeenSet(false),
     m_voucherPayAmountHasBeenSet(false),
-    m_totalCostHasBeenSet(false)
+    m_totalCostHasBeenSet(false),
+    m_transferPayAmountHasBeenSet(false)
 {
 }
 
@@ -138,6 +139,16 @@ CoreInternalOutcome PayModeSummaryOverviewItem::Deserialize(const rapidjson::Val
         m_totalCostHasBeenSet = true;
     }
 
+    if (value.HasMember("TransferPayAmount") && !value["TransferPayAmount"].IsNull())
+    {
+        if (!value["TransferPayAmount"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PayModeSummaryOverviewItem.TransferPayAmount` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_transferPayAmount = string(value["TransferPayAmount"].GetString());
+        m_transferPayAmountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -222,6 +233,14 @@ void PayModeSummaryOverviewItem::ToJsonObject(rapidjson::Value &value, rapidjson
         string key = "TotalCost";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_totalCost.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_transferPayAmountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TransferPayAmount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_transferPayAmount.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -369,5 +388,21 @@ void PayModeSummaryOverviewItem::SetTotalCost(const string& _totalCost)
 bool PayModeSummaryOverviewItem::TotalCostHasBeenSet() const
 {
     return m_totalCostHasBeenSet;
+}
+
+string PayModeSummaryOverviewItem::GetTransferPayAmount() const
+{
+    return m_transferPayAmount;
+}
+
+void PayModeSummaryOverviewItem::SetTransferPayAmount(const string& _transferPayAmount)
+{
+    m_transferPayAmount = _transferPayAmount;
+    m_transferPayAmountHasBeenSet = true;
+}
+
+bool PayModeSummaryOverviewItem::TransferPayAmountHasBeenSet() const
+{
+    return m_transferPayAmountHasBeenSet;
 }
 

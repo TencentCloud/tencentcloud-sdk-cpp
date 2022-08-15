@@ -118,14 +118,14 @@ namespace TencentCloud
                     bool RemarkHasBeenSet() const;
 
                     /**
-                     * 获取是否开启子域名递归, ENABLED， DISABLED。默认值为DISABLED
-                     * @return DnsForwardStatus 是否开启子域名递归, ENABLED， DISABLED。默认值为DISABLED
+                     * 获取是否开启子域名递归, ENABLED， DISABLED。默认值为ENABLED
+                     * @return DnsForwardStatus 是否开启子域名递归, ENABLED， DISABLED。默认值为ENABLED
                      */
                     std::string GetDnsForwardStatus() const;
 
                     /**
-                     * 设置是否开启子域名递归, ENABLED， DISABLED。默认值为DISABLED
-                     * @param DnsForwardStatus 是否开启子域名递归, ENABLED， DISABLED。默认值为DISABLED
+                     * 设置是否开启子域名递归, ENABLED， DISABLED。默认值为ENABLED
+                     * @param DnsForwardStatus 是否开启子域名递归, ENABLED， DISABLED。默认值为ENABLED
                      */
                     void SetDnsForwardStatus(const std::string& _dnsForwardStatus);
 
@@ -171,6 +171,24 @@ namespace TencentCloud
                      */
                     bool AccountVpcSetHasBeenSet() const;
 
+                    /**
+                     * 获取是否CNAME加速：ENABLED，DISABLED，默认值为ENABLED
+                     * @return CnameSpeedupStatus 是否CNAME加速：ENABLED，DISABLED，默认值为ENABLED
+                     */
+                    std::string GetCnameSpeedupStatus() const;
+
+                    /**
+                     * 设置是否CNAME加速：ENABLED，DISABLED，默认值为ENABLED
+                     * @param CnameSpeedupStatus 是否CNAME加速：ENABLED，DISABLED，默认值为ENABLED
+                     */
+                    void SetCnameSpeedupStatus(const std::string& _cnameSpeedupStatus);
+
+                    /**
+                     * 判断参数 CnameSpeedupStatus 是否已赋值
+                     * @return CnameSpeedupStatus 是否已赋值
+                     */
+                    bool CnameSpeedupStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -198,7 +216,7 @@ namespace TencentCloud
                     bool m_remarkHasBeenSet;
 
                     /**
-                     * 是否开启子域名递归, ENABLED， DISABLED。默认值为DISABLED
+                     * 是否开启子域名递归, ENABLED， DISABLED。默认值为ENABLED
                      */
                     std::string m_dnsForwardStatus;
                     bool m_dnsForwardStatusHasBeenSet;
@@ -214,6 +232,12 @@ namespace TencentCloud
                      */
                     std::vector<AccountVpcInfo> m_accountVpcSet;
                     bool m_accountVpcSetHasBeenSet;
+
+                    /**
+                     * 是否CNAME加速：ENABLED，DISABLED，默认值为ENABLED
+                     */
+                    std::string m_cnameSpeedupStatus;
+                    bool m_cnameSpeedupStatusHasBeenSet;
 
                 };
             }

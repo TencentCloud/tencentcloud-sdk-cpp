@@ -22,7 +22,7 @@ set(ams_public_header
 set(ams_public_header_model
   include/tencentcloud/ams/v20201229/model/TextResult.h
   include/tencentcloud/ams/v20201229/model/DescribeTasksRequest.h
-  include/tencentcloud/ams/v20201229/model/StorageInfo.h
+  include/tencentcloud/ams/v20201229/model/AudioResultDetailSpeakerResult.h
   include/tencentcloud/ams/v20201229/model/CreateAudioModerationSyncTaskRequest.h
   include/tencentcloud/ams/v20201229/model/BucketInfo.h
   include/tencentcloud/ams/v20201229/model/CreateAudioModerationTaskResponse.h
@@ -31,6 +31,7 @@ set(ams_public_header_model
   include/tencentcloud/ams/v20201229/model/DescribeTaskDetailResponse.h
   include/tencentcloud/ams/v20201229/model/CreateAudioModerationTaskRequest.h
   include/tencentcloud/ams/v20201229/model/TaskInput.h
+  include/tencentcloud/ams/v20201229/model/StorageInfo.h
   include/tencentcloud/ams/v20201229/model/DescribeTaskDetailRequest.h
   include/tencentcloud/ams/v20201229/model/CreateAudioModerationSyncTaskResponse.h
   include/tencentcloud/ams/v20201229/model/TaskLabel.h
@@ -94,7 +95,7 @@ set(ams_src
   src/v20200608/AmsClient.cpp
   src/v20201229/model/TextResult.cpp
   src/v20201229/model/DescribeTasksRequest.cpp
-  src/v20201229/model/StorageInfo.cpp
+  src/v20201229/model/AudioResultDetailSpeakerResult.cpp
   src/v20201229/model/CreateAudioModerationSyncTaskRequest.cpp
   src/v20201229/model/BucketInfo.cpp
   src/v20201229/model/CreateAudioModerationTaskResponse.cpp
@@ -103,6 +104,7 @@ set(ams_src
   src/v20201229/model/DescribeTaskDetailResponse.cpp
   src/v20201229/model/CreateAudioModerationTaskRequest.cpp
   src/v20201229/model/TaskInput.cpp
+  src/v20201229/model/StorageInfo.cpp
   src/v20201229/model/DescribeTaskDetailRequest.cpp
   src/v20201229/model/CreateAudioModerationSyncTaskResponse.cpp
   src/v20201229/model/TaskLabel.cpp

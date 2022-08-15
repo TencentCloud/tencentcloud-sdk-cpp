@@ -24,9 +24,9 @@ using namespace std;
 
 ModifyDiskAttributesRequest::ModifyDiskAttributesRequest() :
     m_diskIdsHasBeenSet(false),
-    m_projectIdHasBeenSet(false),
     m_diskNameHasBeenSet(false),
     m_portableHasBeenSet(false),
+    m_projectIdHasBeenSet(false),
     m_deleteWithInstanceHasBeenSet(false),
     m_diskTypeHasBeenSet(false)
 {
@@ -52,14 +52,6 @@ string ModifyDiskAttributesRequest::ToJsonString() const
         }
     }
 
-    if (m_projectIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ProjectId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_projectId, allocator);
-    }
-
     if (m_diskNameHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -74,6 +66,14 @@ string ModifyDiskAttributesRequest::ToJsonString() const
         string key = "Portable";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_portable, allocator);
+    }
+
+    if (m_projectIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProjectId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_projectId, allocator);
     }
 
     if (m_deleteWithInstanceHasBeenSet)
@@ -116,22 +116,6 @@ bool ModifyDiskAttributesRequest::DiskIdsHasBeenSet() const
     return m_diskIdsHasBeenSet;
 }
 
-uint64_t ModifyDiskAttributesRequest::GetProjectId() const
-{
-    return m_projectId;
-}
-
-void ModifyDiskAttributesRequest::SetProjectId(const uint64_t& _projectId)
-{
-    m_projectId = _projectId;
-    m_projectIdHasBeenSet = true;
-}
-
-bool ModifyDiskAttributesRequest::ProjectIdHasBeenSet() const
-{
-    return m_projectIdHasBeenSet;
-}
-
 string ModifyDiskAttributesRequest::GetDiskName() const
 {
     return m_diskName;
@@ -162,6 +146,22 @@ void ModifyDiskAttributesRequest::SetPortable(const bool& _portable)
 bool ModifyDiskAttributesRequest::PortableHasBeenSet() const
 {
     return m_portableHasBeenSet;
+}
+
+uint64_t ModifyDiskAttributesRequest::GetProjectId() const
+{
+    return m_projectId;
+}
+
+void ModifyDiskAttributesRequest::SetProjectId(const uint64_t& _projectId)
+{
+    m_projectId = _projectId;
+    m_projectIdHasBeenSet = true;
+}
+
+bool ModifyDiskAttributesRequest::ProjectIdHasBeenSet() const
+{
+    return m_projectIdHasBeenSet;
 }
 
 bool ModifyDiskAttributesRequest::GetDeleteWithInstance() const

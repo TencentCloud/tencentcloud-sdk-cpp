@@ -47,29 +47,73 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取回源协议配置
-http：强制 http 回源
-follow：协议跟随回源
-https：强制 https 回源，https 回源时仅支持源站 443 端口
+                     * 获取主源站列表。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OriginPullProtocol 回源协议配置
-http：强制 http 回源
-follow：协议跟随回源
-https：强制 https 回源，https 回源时仅支持源站 443 端口
+                     * @return Origins 主源站列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> GetOrigins() const;
+
+                    /**
+                     * 设置主源站列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Origins 主源站列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetOrigins(const std::vector<std::string>& _origins);
+
+                    /**
+                     * 判断参数 Origins 是否已赋值
+                     * @return Origins 是否已赋值
+                     */
+                    bool OriginsHasBeenSet() const;
+
+                    /**
+                     * 获取备源站列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BackupOrigins 备源站列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> GetBackupOrigins() const;
+
+                    /**
+                     * 设置备源站列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param BackupOrigins 备源站列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetBackupOrigins(const std::vector<std::string>& _backupOrigins);
+
+                    /**
+                     * 判断参数 BackupOrigins 是否已赋值
+                     * @return BackupOrigins 是否已赋值
+                     */
+                    bool BackupOriginsHasBeenSet() const;
+
+                    /**
+                     * 获取回源协议配置，取值有：
+<li>http：强制 http 回源；</li>
+<li>follow：协议跟随回源；</li>
+<li>https：强制 https 回源，https 回源时仅支持源站 443 端口。</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OriginPullProtocol 回源协议配置，取值有：
+<li>http：强制 http 回源；</li>
+<li>follow：协议跟随回源；</li>
+<li>https：强制 https 回源，https 回源时仅支持源站 443 端口。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetOriginPullProtocol() const;
 
                     /**
-                     * 设置回源协议配置
-http：强制 http 回源
-follow：协议跟随回源
-https：强制 https 回源，https 回源时仅支持源站 443 端口
+                     * 设置回源协议配置，取值有：
+<li>http：强制 http 回源；</li>
+<li>follow：协议跟随回源；</li>
+<li>https：强制 https 回源，https 回源时仅支持源站 443 端口。</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OriginPullProtocol 回源协议配置
-http：强制 http 回源
-follow：协议跟随回源
-https：强制 https 回源，https 回源时仅支持源站 443 端口
+                     * @param OriginPullProtocol 回源协议配置，取值有：
+<li>http：强制 http 回源；</li>
+<li>follow：协议跟随回源；</li>
+<li>https：强制 https 回源，https 回源时仅支持源站 443 端口。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetOriginPullProtocol(const std::string& _originPullProtocol);
@@ -80,17 +124,60 @@ https：强制 https 回源，https 回源时仅支持源站 443 端口
                      */
                     bool OriginPullProtocolHasBeenSet() const;
 
+                    /**
+                     * 获取OriginType 为对象存储（COS）时，可以指定是否允许访问私有 bucket。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CosPrivateAccess OriginType 为对象存储（COS）时，可以指定是否允许访问私有 bucket。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetCosPrivateAccess() const;
+
+                    /**
+                     * 设置OriginType 为对象存储（COS）时，可以指定是否允许访问私有 bucket。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param CosPrivateAccess OriginType 为对象存储（COS）时，可以指定是否允许访问私有 bucket。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCosPrivateAccess(const std::string& _cosPrivateAccess);
+
+                    /**
+                     * 判断参数 CosPrivateAccess 是否已赋值
+                     * @return CosPrivateAccess 是否已赋值
+                     */
+                    bool CosPrivateAccessHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 回源协议配置
-http：强制 http 回源
-follow：协议跟随回源
-https：强制 https 回源，https 回源时仅支持源站 443 端口
+                     * 主源站列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_origins;
+                    bool m_originsHasBeenSet;
+
+                    /**
+                     * 备源站列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_backupOrigins;
+                    bool m_backupOriginsHasBeenSet;
+
+                    /**
+                     * 回源协议配置，取值有：
+<li>http：强制 http 回源；</li>
+<li>follow：协议跟随回源；</li>
+<li>https：强制 https 回源，https 回源时仅支持源站 443 端口。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_originPullProtocol;
                     bool m_originPullProtocolHasBeenSet;
+
+                    /**
+                     * OriginType 为对象存储（COS）时，可以指定是否允许访问私有 bucket。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_cosPrivateAccess;
+                    bool m_cosPrivateAccessHasBeenSet;
 
                 };
             }

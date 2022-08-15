@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tts/v20190823/model/Subtitle.h>
 
 
 namespace TencentCloud
@@ -67,6 +68,18 @@ namespace TencentCloud
                      */
                     bool SessionIdHasBeenSet() const;
 
+                    /**
+                     * 获取时间戳信息，若未开启时间戳，则返回空数组。
+                     * @return Subtitles 时间戳信息，若未开启时间戳，则返回空数组。
+                     */
+                    std::vector<Subtitle> GetSubtitles() const;
+
+                    /**
+                     * 判断参数 Subtitles 是否已赋值
+                     * @return Subtitles 是否已赋值
+                     */
+                    bool SubtitlesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -80,6 +93,12 @@ namespace TencentCloud
                      */
                     std::string m_sessionId;
                     bool m_sessionIdHasBeenSet;
+
+                    /**
+                     * 时间戳信息，若未开启时间戳，则返回空数组。
+                     */
+                    std::vector<Subtitle> m_subtitles;
+                    bool m_subtitlesHasBeenSet;
 
                 };
             }

@@ -47,25 +47,25 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取不缓存配置开关
-on：开启
-off：关闭
+                     * 获取不缓存配置开关，取值有：
+<li>on：开启；</li>
+<li>off：关闭。</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Switch 不缓存配置开关
-on：开启
-off：关闭
+                     * @return Switch 不缓存配置开关，取值有：
+<li>on：开启；</li>
+<li>off：关闭。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置不缓存配置开关
-on：开启
-off：关闭
+                     * 设置不缓存配置开关，取值有：
+<li>on：开启；</li>
+<li>off：关闭。</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Switch 不缓存配置开关
-on：开启
-off：关闭
+                     * @param Switch 不缓存配置开关，取值有：
+<li>on：开启；</li>
+<li>off：关闭。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetSwitch(const std::string& _switch);
@@ -79,9 +79,9 @@ off：关闭
                 private:
 
                     /**
-                     * 不缓存配置开关
-on：开启
-off：关闭
+                     * 不缓存配置开关，取值有：
+<li>on：开启；</li>
+<li>off：关闭。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_switch;

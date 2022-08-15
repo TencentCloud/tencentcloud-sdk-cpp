@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool DataIdHasBeenSet() const;
 
                     /**
-                     * 获取音频文件资源格式，当前为mp3，wav，请按照实际文件格式填入
-                     * @return FileFormat 音频文件资源格式，当前为mp3，wav，请按照实际文件格式填入
+                     * 获取音频文件资源格式，当前支持格式：wav、mp3、m4a，请按照实际文件格式填入。
+                     * @return FileFormat 音频文件资源格式，当前支持格式：wav、mp3、m4a，请按照实际文件格式填入。
                      */
                     std::string GetFileFormat() const;
 
                     /**
-                     * 设置音频文件资源格式，当前为mp3，wav，请按照实际文件格式填入
-                     * @param FileFormat 音频文件资源格式，当前为mp3，wav，请按照实际文件格式填入
+                     * 设置音频文件资源格式，当前支持格式：wav、mp3、m4a，请按照实际文件格式填入。
+                     * @param FileFormat 音频文件资源格式，当前支持格式：wav、mp3、m4a，请按照实际文件格式填入。
                      */
                     void SetFileFormat(const std::string& _fileFormat);
 
@@ -116,21 +116,21 @@ namespace TencentCloud
 
                     /**
                      * 获取数据Base64编码，短音频同步接口仅传入可音频内容；
-支持范围：文件大小不能超过5M，时长不可超过60s，码率范围为8-16Kbps；
-支持格式：wav、mp3
+支持范围：文件大小不能超过5M，时长不可超过60s；
+支持格式：wav (PCM编码)、mp3、m4a (采样率：16kHz~48kHz，位深：16bit 小端，声道数：单声道/双声道，建议格式：16kHz/16bit/单声道)。
                      * @return FileContent 数据Base64编码，短音频同步接口仅传入可音频内容；
-支持范围：文件大小不能超过5M，时长不可超过60s，码率范围为8-16Kbps；
-支持格式：wav、mp3
+支持范围：文件大小不能超过5M，时长不可超过60s；
+支持格式：wav (PCM编码)、mp3、m4a (采样率：16kHz~48kHz，位深：16bit 小端，声道数：单声道/双声道，建议格式：16kHz/16bit/单声道)。
                      */
                     std::string GetFileContent() const;
 
                     /**
                      * 设置数据Base64编码，短音频同步接口仅传入可音频内容；
-支持范围：文件大小不能超过5M，时长不可超过60s，码率范围为8-16Kbps；
-支持格式：wav、mp3
+支持范围：文件大小不能超过5M，时长不可超过60s；
+支持格式：wav (PCM编码)、mp3、m4a (采样率：16kHz~48kHz，位深：16bit 小端，声道数：单声道/双声道，建议格式：16kHz/16bit/单声道)。
                      * @param FileContent 数据Base64编码，短音频同步接口仅传入可音频内容；
-支持范围：文件大小不能超过5M，时长不可超过60s，码率范围为8-16Kbps；
-支持格式：wav、mp3
+支持范围：文件大小不能超过5M，时长不可超过60s；
+支持格式：wav (PCM编码)、mp3、m4a (采样率：16kHz~48kHz，位深：16bit 小端，声道数：单声道/双声道，建议格式：16kHz/16bit/单声道)。
                      */
                     void SetFileContent(const std::string& _fileContent);
 
@@ -142,17 +142,17 @@ namespace TencentCloud
 
                     /**
                      * 获取音频资源访问链接，与FileContent参数必须二选一输入；
-支持范围：同FileContent；
+支持范围及格式：同FileContent；
                      * @return FileUrl 音频资源访问链接，与FileContent参数必须二选一输入；
-支持范围：同FileContent；
+支持范围及格式：同FileContent；
                      */
                     std::string GetFileUrl() const;
 
                     /**
                      * 设置音频资源访问链接，与FileContent参数必须二选一输入；
-支持范围：同FileContent；
+支持范围及格式：同FileContent；
                      * @param FileUrl 音频资源访问链接，与FileContent参数必须二选一输入；
-支持范围：同FileContent；
+支持范围及格式：同FileContent；
                      */
                     void SetFileUrl(const std::string& _fileUrl);
 
@@ -177,7 +177,7 @@ namespace TencentCloud
                     bool m_dataIdHasBeenSet;
 
                     /**
-                     * 音频文件资源格式，当前为mp3，wav，请按照实际文件格式填入
+                     * 音频文件资源格式，当前支持格式：wav、mp3、m4a，请按照实际文件格式填入。
                      */
                     std::string m_fileFormat;
                     bool m_fileFormatHasBeenSet;
@@ -190,15 +190,15 @@ namespace TencentCloud
 
                     /**
                      * 数据Base64编码，短音频同步接口仅传入可音频内容；
-支持范围：文件大小不能超过5M，时长不可超过60s，码率范围为8-16Kbps；
-支持格式：wav、mp3
+支持范围：文件大小不能超过5M，时长不可超过60s；
+支持格式：wav (PCM编码)、mp3、m4a (采样率：16kHz~48kHz，位深：16bit 小端，声道数：单声道/双声道，建议格式：16kHz/16bit/单声道)。
                      */
                     std::string m_fileContent;
                     bool m_fileContentHasBeenSet;
 
                     /**
                      * 音频资源访问链接，与FileContent参数必须二选一输入；
-支持范围：同FileContent；
+支持范围及格式：同FileContent；
                      */
                     std::string m_fileUrl;
                     bool m_fileUrlHasBeenSet;

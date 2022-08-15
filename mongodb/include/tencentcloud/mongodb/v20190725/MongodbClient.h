@@ -85,6 +85,8 @@
 #include <tencentcloud/mongodb/v20190725/model/ResetDBInstancePasswordResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/SetAccountUserPrivilegeRequest.h>
 #include <tencentcloud/mongodb/v20190725/model/SetAccountUserPrivilegeResponse.h>
+#include <tencentcloud/mongodb/v20190725/model/TerminateDBInstancesRequest.h>
+#include <tencentcloud/mongodb/v20190725/model/TerminateDBInstancesResponse.h>
 
 
 namespace TencentCloud
@@ -192,6 +194,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::SetAccountUserPrivilegeResponse> SetAccountUserPrivilegeOutcome;
                 typedef std::future<SetAccountUserPrivilegeOutcome> SetAccountUserPrivilegeOutcomeCallable;
                 typedef std::function<void(const MongodbClient*, const Model::SetAccountUserPrivilegeRequest&, SetAccountUserPrivilegeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetAccountUserPrivilegeAsyncHandler;
+                typedef Outcome<Core::Error, Model::TerminateDBInstancesResponse> TerminateDBInstancesOutcome;
+                typedef std::future<TerminateDBInstancesOutcome> TerminateDBInstancesOutcomeCallable;
+                typedef std::function<void(const MongodbClient*, const Model::TerminateDBInstancesRequest&, TerminateDBInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TerminateDBInstancesAsyncHandler;
 
 
 
@@ -474,6 +479,15 @@ namespace TencentCloud
                 SetAccountUserPrivilegeOutcome SetAccountUserPrivilege(const Model::SetAccountUserPrivilegeRequest &request);
                 void SetAccountUserPrivilegeAsync(const Model::SetAccountUserPrivilegeRequest& request, const SetAccountUserPrivilegeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SetAccountUserPrivilegeOutcomeCallable SetAccountUserPrivilegeCallable(const Model::SetAccountUserPrivilegeRequest& request);
+
+                /**
+                 *包年包月实例隔离接口
+                 * @param req TerminateDBInstancesRequest
+                 * @return TerminateDBInstancesOutcome
+                 */
+                TerminateDBInstancesOutcome TerminateDBInstances(const Model::TerminateDBInstancesRequest &request);
+                void TerminateDBInstancesAsync(const Model::TerminateDBInstancesRequest& request, const TerminateDBInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                TerminateDBInstancesOutcomeCallable TerminateDBInstancesCallable(const Model::TerminateDBInstancesRequest& request);
 
             };
         }

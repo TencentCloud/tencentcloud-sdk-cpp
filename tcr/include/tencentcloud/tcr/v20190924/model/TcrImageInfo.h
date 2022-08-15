@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool DigestHasBeenSet() const;
 
                     /**
-                     * 获取镜像大小
-                     * @return Size 镜像大小
+                     * 获取镜像体积（单位：字节）
+                     * @return Size 镜像体积（单位：字节）
                      */
                     int64_t GetSize() const;
 
                     /**
-                     * 设置镜像大小
-                     * @param Size 镜像大小
+                     * 设置镜像体积（单位：字节）
+                     * @param Size 镜像体积（单位：字节）
                      */
                     void SetSize(const int64_t& _size);
 
@@ -118,6 +118,50 @@ namespace TencentCloud
                      */
                     bool UpdateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取制品类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Kind 制品类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetKind() const;
+
+                    /**
+                     * 设置制品类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Kind 制品类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetKind(const std::string& _kind);
+
+                    /**
+                     * 判断参数 Kind 是否已赋值
+                     * @return Kind 是否已赋值
+                     */
+                    bool KindHasBeenSet() const;
+
+                    /**
+                     * 获取KMS 签名信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return KmsSignature KMS 签名信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetKmsSignature() const;
+
+                    /**
+                     * 设置KMS 签名信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param KmsSignature KMS 签名信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetKmsSignature(const std::string& _kmsSignature);
+
+                    /**
+                     * 判断参数 KmsSignature 是否已赋值
+                     * @return KmsSignature 是否已赋值
+                     */
+                    bool KmsSignatureHasBeenSet() const;
+
                 private:
 
                     /**
@@ -127,7 +171,7 @@ namespace TencentCloud
                     bool m_digestHasBeenSet;
 
                     /**
-                     * 镜像大小
+                     * 镜像体积（单位：字节）
                      */
                     int64_t m_size;
                     bool m_sizeHasBeenSet;
@@ -143,6 +187,20 @@ namespace TencentCloud
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
+
+                    /**
+                     * 制品类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_kind;
+                    bool m_kindHasBeenSet;
+
+                    /**
+                     * KMS 签名信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_kmsSignature;
+                    bool m_kmsSignatureHasBeenSet;
 
                 };
             }

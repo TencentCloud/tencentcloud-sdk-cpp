@@ -48,25 +48,25 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取是否开启全路径缓存
-on：开启全路径缓存（即关闭参数忽略）
-off：关闭全路径缓存（即开启参数忽略）
+                     * 获取是否开启全路径缓存，取值有：
+<li>on：开启全路径缓存（即关闭参数忽略）；</li>
+<li>off：关闭全路径缓存（即开启参数忽略）。</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FullUrlCache 是否开启全路径缓存
-on：开启全路径缓存（即关闭参数忽略）
-off：关闭全路径缓存（即开启参数忽略）
+                     * @return FullUrlCache 是否开启全路径缓存，取值有：
+<li>on：开启全路径缓存（即关闭参数忽略）；</li>
+<li>off：关闭全路径缓存（即开启参数忽略）。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetFullUrlCache() const;
 
                     /**
-                     * 设置是否开启全路径缓存
-on：开启全路径缓存（即关闭参数忽略）
-off：关闭全路径缓存（即开启参数忽略）
+                     * 设置是否开启全路径缓存，取值有：
+<li>on：开启全路径缓存（即关闭参数忽略）；</li>
+<li>off：关闭全路径缓存（即开启参数忽略）。</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FullUrlCache 是否开启全路径缓存
-on：开启全路径缓存（即关闭参数忽略）
-off：关闭全路径缓存（即开启参数忽略）
+                     * @param FullUrlCache 是否开启全路径缓存，取值有：
+<li>on：开启全路径缓存（即关闭参数忽略）；</li>
+<li>off：关闭全路径缓存（即开启参数忽略）。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetFullUrlCache(const std::string& _fullUrlCache);
@@ -78,17 +78,25 @@ off：关闭全路径缓存（即开启参数忽略）
                     bool FullUrlCacheHasBeenSet() const;
 
                     /**
-                     * 获取是否忽略大小写缓存
+                     * 获取是否忽略大小写缓存，取值有：
+<li>on：忽略；</li>
+<li>off：不忽略。</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IgnoreCase 是否忽略大小写缓存
+                     * @return IgnoreCase 是否忽略大小写缓存，取值有：
+<li>on：忽略；</li>
+<li>off：不忽略。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetIgnoreCase() const;
 
                     /**
-                     * 设置是否忽略大小写缓存
+                     * 设置是否忽略大小写缓存，取值有：
+<li>on：忽略；</li>
+<li>off：不忽略。</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IgnoreCase 是否忽略大小写缓存
+                     * @param IgnoreCase 是否忽略大小写缓存，取值有：
+<li>on：忽略；</li>
+<li>off：不忽略。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetIgnoreCase(const std::string& _ignoreCase);
@@ -100,17 +108,17 @@ off：关闭全路径缓存（即开启参数忽略）
                     bool IgnoreCaseHasBeenSet() const;
 
                     /**
-                     * 获取CacheKey中包含请求参数
+                     * 获取CacheKey中包含请求参数。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return QueryString CacheKey中包含请求参数
+                     * @return QueryString CacheKey中包含请求参数。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     QueryString GetQueryString() const;
 
                     /**
-                     * 设置CacheKey中包含请求参数
+                     * 设置CacheKey中包含请求参数。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param QueryString CacheKey中包含请求参数
+                     * @param QueryString CacheKey中包含请求参数。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetQueryString(const QueryString& _queryString);
@@ -124,23 +132,25 @@ off：关闭全路径缓存（即开启参数忽略）
                 private:
 
                     /**
-                     * 是否开启全路径缓存
-on：开启全路径缓存（即关闭参数忽略）
-off：关闭全路径缓存（即开启参数忽略）
+                     * 是否开启全路径缓存，取值有：
+<li>on：开启全路径缓存（即关闭参数忽略）；</li>
+<li>off：关闭全路径缓存（即开启参数忽略）。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fullUrlCache;
                     bool m_fullUrlCacheHasBeenSet;
 
                     /**
-                     * 是否忽略大小写缓存
+                     * 是否忽略大小写缓存，取值有：
+<li>on：忽略；</li>
+<li>off：不忽略。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ignoreCase;
                     bool m_ignoreCaseHasBeenSet;
 
                     /**
-                     * CacheKey中包含请求参数
+                     * CacheKey中包含请求参数。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     QueryString m_queryString;

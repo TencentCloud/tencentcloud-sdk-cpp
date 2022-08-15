@@ -29,7 +29,11 @@ DescribeClusterSummaryResponse::DescribeClusterSummaryResponse() :
     m_uncheckClusterCountHasBeenSet(false),
     m_managedClusterCountHasBeenSet(false),
     m_independentClusterCountHasBeenSet(false),
-    m_noRiskClusterCountHasBeenSet(false)
+    m_noRiskClusterCountHasBeenSet(false),
+    m_checkedClusterCountHasBeenSet(false),
+    m_autoCheckClusterCountHasBeenSet(false),
+    m_manualCheckClusterCountHasBeenSet(false),
+    m_failedClusterCountHasBeenSet(false)
 {
 }
 
@@ -127,6 +131,46 @@ CoreInternalOutcome DescribeClusterSummaryResponse::Deserialize(const string &pa
         m_noRiskClusterCountHasBeenSet = true;
     }
 
+    if (rsp.HasMember("CheckedClusterCount") && !rsp["CheckedClusterCount"].IsNull())
+    {
+        if (!rsp["CheckedClusterCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CheckedClusterCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_checkedClusterCount = rsp["CheckedClusterCount"].GetUint64();
+        m_checkedClusterCountHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("AutoCheckClusterCount") && !rsp["AutoCheckClusterCount"].IsNull())
+    {
+        if (!rsp["AutoCheckClusterCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AutoCheckClusterCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_autoCheckClusterCount = rsp["AutoCheckClusterCount"].GetUint64();
+        m_autoCheckClusterCountHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ManualCheckClusterCount") && !rsp["ManualCheckClusterCount"].IsNull())
+    {
+        if (!rsp["ManualCheckClusterCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ManualCheckClusterCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_manualCheckClusterCount = rsp["ManualCheckClusterCount"].GetUint64();
+        m_manualCheckClusterCountHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("FailedClusterCount") && !rsp["FailedClusterCount"].IsNull())
+    {
+        if (!rsp["FailedClusterCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `FailedClusterCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_failedClusterCount = rsp["FailedClusterCount"].GetUint64();
+        m_failedClusterCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -183,6 +227,38 @@ string DescribeClusterSummaryResponse::ToJsonString() const
         string key = "NoRiskClusterCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_noRiskClusterCount, allocator);
+    }
+
+    if (m_checkedClusterCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CheckedClusterCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_checkedClusterCount, allocator);
+    }
+
+    if (m_autoCheckClusterCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoCheckClusterCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_autoCheckClusterCount, allocator);
+    }
+
+    if (m_manualCheckClusterCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ManualCheckClusterCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_manualCheckClusterCount, allocator);
+    }
+
+    if (m_failedClusterCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FailedClusterCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_failedClusterCount, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -255,6 +331,46 @@ uint64_t DescribeClusterSummaryResponse::GetNoRiskClusterCount() const
 bool DescribeClusterSummaryResponse::NoRiskClusterCountHasBeenSet() const
 {
     return m_noRiskClusterCountHasBeenSet;
+}
+
+uint64_t DescribeClusterSummaryResponse::GetCheckedClusterCount() const
+{
+    return m_checkedClusterCount;
+}
+
+bool DescribeClusterSummaryResponse::CheckedClusterCountHasBeenSet() const
+{
+    return m_checkedClusterCountHasBeenSet;
+}
+
+uint64_t DescribeClusterSummaryResponse::GetAutoCheckClusterCount() const
+{
+    return m_autoCheckClusterCount;
+}
+
+bool DescribeClusterSummaryResponse::AutoCheckClusterCountHasBeenSet() const
+{
+    return m_autoCheckClusterCountHasBeenSet;
+}
+
+uint64_t DescribeClusterSummaryResponse::GetManualCheckClusterCount() const
+{
+    return m_manualCheckClusterCount;
+}
+
+bool DescribeClusterSummaryResponse::ManualCheckClusterCountHasBeenSet() const
+{
+    return m_manualCheckClusterCountHasBeenSet;
+}
+
+uint64_t DescribeClusterSummaryResponse::GetFailedClusterCount() const
+{
+    return m_failedClusterCount;
+}
+
+bool DescribeClusterSummaryResponse::FailedClusterCountHasBeenSet() const
+{
+    return m_failedClusterCountHasBeenSet;
 }
 
 

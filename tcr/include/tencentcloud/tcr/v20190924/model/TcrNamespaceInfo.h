@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tcr/v20190924/model/TagSpecification.h>
+#include <tencentcloud/tcr/v20190924/model/KeyValueString.h>
 
 
 namespace TencentCloud
@@ -141,6 +142,28 @@ namespace TencentCloud
                      */
                     bool TagSpecificationHasBeenSet() const;
 
+                    /**
+                     * 获取命名空间元数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Metadata 命名空间元数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<KeyValueString> GetMetadata() const;
+
+                    /**
+                     * 设置命名空间元数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Metadata 命名空间元数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMetadata(const std::vector<KeyValueString>& _metadata);
+
+                    /**
+                     * 判断参数 Metadata 是否已赋值
+                     * @return Metadata 是否已赋值
+                     */
+                    bool MetadataHasBeenSet() const;
+
                 private:
 
                     /**
@@ -173,6 +196,13 @@ namespace TencentCloud
                      */
                     TagSpecification m_tagSpecification;
                     bool m_tagSpecificationHasBeenSet;
+
+                    /**
+                     * 命名空间元数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<KeyValueString> m_metadata;
+                    bool m_metadataHasBeenSet;
 
                 };
             }

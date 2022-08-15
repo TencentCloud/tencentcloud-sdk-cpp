@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取站点ID
-                     * @return ZoneId 站点ID
+                     * 获取站点ID。
+                     * @return ZoneId 站点ID。
                      */
                     std::string GetZoneId() const;
 
                     /**
-                     * 设置站点ID
-                     * @param ZoneId 站点ID
+                     * 设置站点ID。
+                     * @param ZoneId 站点ID。
                      */
                     void SetZoneId(const std::string& _zoneId);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool ZoneIdHasBeenSet() const;
 
                     /**
-                     * 获取分页参数Offset
-                     * @return Offset 分页参数Offset
+                     * 获取分页查询偏移量，默认为0。
+                     * @return Offset 分页查询偏移量，默认为0。
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置分页参数Offset
-                     * @param Offset 分页参数Offset
+                     * 设置分页查询偏移量，默认为0。
+                     * @param Offset 分页查询偏移量，默认为0。
                      */
                     void SetOffset(const int64_t& _offset);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取分页参数Limit
-                     * @return Limit 分页参数Limit
+                     * 获取分页查询限制数目，默认为10，最大可设置为1000。
+                     * @return Limit 分页查询限制数目，默认为10，最大可设置为1000。
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置分页参数Limit
-                     * @param Limit 分页参数Limit
+                     * 设置分页查询限制数目，默认为10，最大可设置为1000。
+                     * @param Limit 分页查询限制数目，默认为10，最大可设置为1000。
                      */
                     void SetLimit(const int64_t& _limit);
 
@@ -96,25 +96,54 @@ namespace TencentCloud
                      */
                     bool LimitHasBeenSet() const;
 
+                    /**
+                     * 获取代理ID。
+当ProxyId为空时，表示查询站点下所有应用代理的列表。
+                     * @return ProxyId 代理ID。
+当ProxyId为空时，表示查询站点下所有应用代理的列表。
+                     */
+                    std::string GetProxyId() const;
+
+                    /**
+                     * 设置代理ID。
+当ProxyId为空时，表示查询站点下所有应用代理的列表。
+                     * @param ProxyId 代理ID。
+当ProxyId为空时，表示查询站点下所有应用代理的列表。
+                     */
+                    void SetProxyId(const std::string& _proxyId);
+
+                    /**
+                     * 判断参数 ProxyId 是否已赋值
+                     * @return ProxyId 是否已赋值
+                     */
+                    bool ProxyIdHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 站点ID
+                     * 站点ID。
                      */
                     std::string m_zoneId;
                     bool m_zoneIdHasBeenSet;
 
                     /**
-                     * 分页参数Offset
+                     * 分页查询偏移量，默认为0。
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 分页参数Limit
+                     * 分页查询限制数目，默认为10，最大可设置为1000。
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
+
+                    /**
+                     * 代理ID。
+当ProxyId为空时，表示查询站点下所有应用代理的列表。
+                     */
+                    std::string m_proxyId;
+                    bool m_proxyIdHasBeenSet;
 
                 };
             }

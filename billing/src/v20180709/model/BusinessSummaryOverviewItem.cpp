@@ -29,7 +29,8 @@ BusinessSummaryOverviewItem::BusinessSummaryOverviewItem() :
     m_incentivePayAmountHasBeenSet(false),
     m_voucherPayAmountHasBeenSet(false),
     m_billMonthHasBeenSet(false),
-    m_totalCostHasBeenSet(false)
+    m_totalCostHasBeenSet(false),
+    m_transferPayAmountHasBeenSet(false)
 {
 }
 
@@ -128,6 +129,16 @@ CoreInternalOutcome BusinessSummaryOverviewItem::Deserialize(const rapidjson::Va
         m_totalCostHasBeenSet = true;
     }
 
+    if (value.HasMember("TransferPayAmount") && !value["TransferPayAmount"].IsNull())
+    {
+        if (!value["TransferPayAmount"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BusinessSummaryOverviewItem.TransferPayAmount` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_transferPayAmount = string(value["TransferPayAmount"].GetString());
+        m_transferPayAmountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -205,6 +216,14 @@ void BusinessSummaryOverviewItem::ToJsonObject(rapidjson::Value &value, rapidjso
         string key = "TotalCost";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_totalCost.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_transferPayAmountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TransferPayAmount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_transferPayAmount.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -352,5 +371,21 @@ void BusinessSummaryOverviewItem::SetTotalCost(const string& _totalCost)
 bool BusinessSummaryOverviewItem::TotalCostHasBeenSet() const
 {
     return m_totalCostHasBeenSet;
+}
+
+string BusinessSummaryOverviewItem::GetTransferPayAmount() const
+{
+    return m_transferPayAmount;
+}
+
+void BusinessSummaryOverviewItem::SetTransferPayAmount(const string& _transferPayAmount)
+{
+    m_transferPayAmount = _transferPayAmount;
+    m_transferPayAmountHasBeenSet = true;
+}
+
+bool BusinessSummaryOverviewItem::TransferPayAmountHasBeenSet() const
+{
+    return m_transferPayAmountHasBeenSet;
 }
 

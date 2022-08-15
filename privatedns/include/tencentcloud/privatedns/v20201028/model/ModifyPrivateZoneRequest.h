@@ -96,6 +96,24 @@ namespace TencentCloud
                      */
                     bool DnsForwardStatusHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启CNAME加速：ENABLED， DISABLED
+                     * @return CnameSpeedupStatus 是否开启CNAME加速：ENABLED， DISABLED
+                     */
+                    std::string GetCnameSpeedupStatus() const;
+
+                    /**
+                     * 设置是否开启CNAME加速：ENABLED， DISABLED
+                     * @param CnameSpeedupStatus 是否开启CNAME加速：ENABLED， DISABLED
+                     */
+                    void SetCnameSpeedupStatus(const std::string& _cnameSpeedupStatus);
+
+                    /**
+                     * 判断参数 CnameSpeedupStatus 是否已赋值
+                     * @return CnameSpeedupStatus 是否已赋值
+                     */
+                    bool CnameSpeedupStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -115,6 +133,12 @@ namespace TencentCloud
                      */
                     std::string m_dnsForwardStatus;
                     bool m_dnsForwardStatusHasBeenSet;
+
+                    /**
+                     * 是否开启CNAME加速：ENABLED， DISABLED
+                     */
+                    std::string m_cnameSpeedupStatus;
+                    bool m_cnameSpeedupStatusHasBeenSet;
 
                 };
             }

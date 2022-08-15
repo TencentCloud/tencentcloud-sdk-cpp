@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取站点ID
-                     * @return ZoneId 站点ID
+                     * 获取站点ID。
+                     * @return ZoneId 站点ID。
                      */
                     std::string GetZoneId() const;
 
                     /**
-                     * 设置站点ID
-                     * @param ZoneId 站点ID
+                     * 设置站点ID。
+                     * @param ZoneId 站点ID。
                      */
                     void SetZoneId(const std::string& _zoneId);
 
@@ -63,7 +63,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 站点ID
+                     * 站点ID。
                      */
                     std::string m_zoneId;
                     bool m_zoneIdHasBeenSet;

@@ -29,7 +29,8 @@ RegionSummaryOverviewItem::RegionSummaryOverviewItem() :
     m_incentivePayAmountHasBeenSet(false),
     m_voucherPayAmountHasBeenSet(false),
     m_billMonthHasBeenSet(false),
-    m_totalCostHasBeenSet(false)
+    m_totalCostHasBeenSet(false),
+    m_transferPayAmountHasBeenSet(false)
 {
 }
 
@@ -128,6 +129,16 @@ CoreInternalOutcome RegionSummaryOverviewItem::Deserialize(const rapidjson::Valu
         m_totalCostHasBeenSet = true;
     }
 
+    if (value.HasMember("TransferPayAmount") && !value["TransferPayAmount"].IsNull())
+    {
+        if (!value["TransferPayAmount"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RegionSummaryOverviewItem.TransferPayAmount` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_transferPayAmount = string(value["TransferPayAmount"].GetString());
+        m_transferPayAmountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -205,6 +216,14 @@ void RegionSummaryOverviewItem::ToJsonObject(rapidjson::Value &value, rapidjson:
         string key = "TotalCost";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_totalCost.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_transferPayAmountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TransferPayAmount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_transferPayAmount.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -352,5 +371,21 @@ void RegionSummaryOverviewItem::SetTotalCost(const string& _totalCost)
 bool RegionSummaryOverviewItem::TotalCostHasBeenSet() const
 {
     return m_totalCostHasBeenSet;
+}
+
+string RegionSummaryOverviewItem::GetTransferPayAmount() const
+{
+    return m_transferPayAmount;
+}
+
+void RegionSummaryOverviewItem::SetTransferPayAmount(const string& _transferPayAmount)
+{
+    m_transferPayAmount = _transferPayAmount;
+    m_transferPayAmountHasBeenSet = true;
+}
+
+bool RegionSummaryOverviewItem::TransferPayAmountHasBeenSet() const
+{
+    return m_transferPayAmountHasBeenSet;
 }
 

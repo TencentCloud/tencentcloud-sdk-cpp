@@ -156,6 +156,7 @@ set(tcr_public_header_model
   include/tencentcloud/tcr/v20190924/model/ModifyRepositoryAccessPersonalRequest.h
   include/tencentcloud/tcr/v20190924/model/TagSpecification.h
   include/tencentcloud/tcr/v20190924/model/CreateMultipleSecurityPolicyRequest.h
+  include/tencentcloud/tcr/v20190924/model/KeyValueString.h
   include/tencentcloud/tcr/v20190924/model/DescribeNamespacesRequest.h
   include/tencentcloud/tcr/v20190924/model/DescribeImageLifecycleGlobalPersonalRequest.h
   include/tencentcloud/tcr/v20190924/model/DescribeImageLifecyclePersonalRequest.h
@@ -399,6 +400,7 @@ set(tcr_src
   src/v20190924/model/ModifyRepositoryAccessPersonalRequest.cpp
   src/v20190924/model/TagSpecification.cpp
   src/v20190924/model/CreateMultipleSecurityPolicyRequest.cpp
+  src/v20190924/model/KeyValueString.cpp
   src/v20190924/model/DescribeNamespacesRequest.cpp
   src/v20190924/model/DescribeImageLifecycleGlobalPersonalRequest.cpp
   src/v20190924/model/DescribeImageLifecyclePersonalRequest.cpp

@@ -231,7 +231,8 @@ namespace TencentCloud
 
 
                 /**
-                 *批量删除任务，仅对任务状态为”已停止“有效；（Beta版本）
+                 *<p style="color:red;">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>
+批量删除任务，仅对任务状态为”已停止“有效；
 
                  * @param req BatchDeleteTasksNewRequest
                  * @return BatchDeleteTasksNewOutcome
@@ -241,7 +242,8 @@ namespace TencentCloud
                 BatchDeleteTasksNewOutcomeCallable BatchDeleteTasksNewCallable(const Model::BatchDeleteTasksNewRequest& request);
 
                 /**
-                 *批量修改任务责任人（Beta版本）
+                 *<p style="color:red;">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>
+批量修改任务责任人
                  * @param req BatchModifyOwnersNewRequest
                  * @return BatchModifyOwnersNewOutcome
                  */
@@ -250,7 +252,8 @@ namespace TencentCloud
                 BatchModifyOwnersNewOutcomeCallable BatchModifyOwnersNewCallable(const Model::BatchModifyOwnersNewRequest& request);
 
                 /**
-                 *仅对任务状态为”调度中“和”已暂停“有效，对所选任务的任务实例进行终止，并停止调度（Beta版本）
+                 *<p style="color:red;">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>
+仅对任务状态为”调度中“和”已暂停“有效，对所选任务的任务实例进行终止，并停止调度
                  * @param req BatchStopTasksNewRequest
                  * @return BatchStopTasksNewOutcome
                  */
@@ -259,7 +262,8 @@ namespace TencentCloud
                 BatchStopTasksNewOutcomeCallable BatchStopTasksNewCallable(const Model::BatchStopTasksNewRequest& request);
 
                 /**
-                 *创建文件夹（Beta版本）
+                 *<p style="color:red;">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>
+创建文件夹
                  * @param req CreateFolderRequest
                  * @return CreateFolderOutcome
                  */
@@ -268,7 +272,8 @@ namespace TencentCloud
                 CreateFolderOutcomeCallable CreateFolderCallable(const Model::CreateFolderRequest& request);
 
                 /**
-                 *创建任务（Beta版本）
+                 *<p style="color:red;">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>
+创建任务
                  * @param req CreateTaskRequest
                  * @return CreateTaskOutcome
                  */
@@ -277,7 +282,8 @@ namespace TencentCloud
                 CreateTaskOutcomeCallable CreateTaskCallable(const Model::CreateTaskRequest& request);
 
                 /**
-                 *创建工作流（Beta版本）
+                 *<p style="color:red;">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>
+创建工作流
                  * @param req CreateWorkflowRequest
                  * @return CreateWorkflowOutcome
                  */
@@ -286,7 +292,8 @@ namespace TencentCloud
                 CreateWorkflowOutcomeCallable CreateWorkflowCallable(const Model::CreateWorkflowRequest& request);
 
                 /**
-                 *删除文件夹（Beta版本）
+                 *<p style="color:red;">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>
+删除文件夹
                  * @param req DeleteFolderRequest
                  * @return DeleteFolderOutcome
                  */
@@ -295,7 +302,8 @@ namespace TencentCloud
                 DeleteFolderOutcomeCallable DeleteFolderCallable(const Model::DeleteFolderRequest& request);
 
                 /**
-                 *删除工作流（Beta版本）
+                 *<p style="color:red;">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>
+删除工作流
                  * @param req DeleteWorkflowNewRequest
                  * @return DeleteWorkflowNewOutcome
                  */
@@ -304,7 +312,8 @@ namespace TencentCloud
                 DeleteWorkflowNewOutcomeCallable DeleteWorkflowNewCallable(const Model::DeleteWorkflowNewRequest& request);
 
                 /**
-                 *根据层级查找上/下游任务节点（Beta版本）
+                 *<p style="color:red;">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>
+根据层级查找上/下游任务节点
                  * @param req DescribeDependTasksNewRequest
                  * @return DescribeDependTasksNewOutcome
                  */
@@ -313,7 +322,8 @@ namespace TencentCloud
                 DescribeDependTasksNewOutcomeCallable DescribeDependTasksNewCallable(const Model::DescribeDependTasksNewRequest& request);
 
                 /**
-                 *拉取文件夹目录（Beta版本）
+                 *<p style="color:red;">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>
+拉取文件夹目录
                  * @param req DescribeFolderListRequest
                  * @return DescribeFolderListOutcome
                  */
@@ -322,7 +332,8 @@ namespace TencentCloud
                 DescribeFolderListOutcomeCallable DescribeFolderListCallable(const Model::DescribeFolderListRequest& request);
 
                 /**
-                 *拉取文件夹下的工作流（Beta版本）
+                 *<p style="color:red;">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>
+拉取文件夹下的工作流
                  * @param req DescribeFolderWorkflowListRequest
                  * @return DescribeFolderWorkflowListOutcome
                  */
@@ -331,7 +342,8 @@ namespace TencentCloud
                 DescribeFolderWorkflowListOutcomeCallable DescribeFolderWorkflowListCallable(const Model::DescribeFolderWorkflowListRequest& request);
 
                 /**
-                 *获取实例日志列表（Beta版本）
+                 *<p style="color:red;">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>
+获取实例日志列表
                  * @param req DescribeInstanceLogsRequest
                  * @return DescribeInstanceLogsOutcome
                  */
@@ -358,7 +370,8 @@ namespace TencentCloud
                 DescribeRelatedInstancesOutcomeCallable DescribeRelatedInstancesCallable(const Model::DescribeRelatedInstancesRequest& request);
 
                 /**
-                 *查询任务具体详情（Beta版本）
+                 *<p style="color:red;">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>
+查询任务具体详情
                  * @param req DescribeTaskDetailRequest
                  * @return DescribeTaskDetailOutcome
                  */
@@ -376,7 +389,8 @@ namespace TencentCloud
                 DescribeTaskInstancesOutcomeCallable DescribeTaskInstancesCallable(const Model::DescribeTaskInstancesRequest& request);
 
                 /**
-                 *查询任务脚本（Beta版本）
+                 *<p style="color:red;">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>
+查询任务脚本
                  * @param req DescribeTaskScriptRequest
                  * @return DescribeTaskScriptOutcome
                  */
@@ -385,7 +399,8 @@ namespace TencentCloud
                 DescribeTaskScriptOutcomeCallable DescribeTaskScriptCallable(const Model::DescribeTaskScriptRequest& request);
 
                 /**
-                 *根据工作流分页查询任务（Beta版本）
+                 *<p style="color:red;">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>
+根据工作流分页查询任务
                  * @param req DescribeTasksByPageRequest
                  * @return DescribeTasksByPageOutcome
                  */
@@ -394,7 +409,8 @@ namespace TencentCloud
                 DescribeTasksByPageOutcomeCallable DescribeTasksByPageCallable(const Model::DescribeTasksByPageRequest& request);
 
                 /**
-                 *实例批量置成功（Beta版本）
+                 *<p style="color:red;">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>
+实例批量置成功
                  * @param req ForceSucInstancesRequest
                  * @return ForceSucInstancesOutcome
                  */
@@ -403,7 +419,8 @@ namespace TencentCloud
                 ForceSucInstancesOutcomeCallable ForceSucInstancesCallable(const Model::ForceSucInstancesRequest& request);
 
                 /**
-                 *批量冻结任务（Beta版本）
+                 *<p style="color:red;">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>
+批量冻结任务
                  * @param req FreezeTasksRequest
                  * @return FreezeTasksOutcome
                  */
@@ -412,7 +429,8 @@ namespace TencentCloud
                 FreezeTasksOutcomeCallable FreezeTasksCallable(const Model::FreezeTasksRequest& request);
 
                 /**
-                 *基于多个工作流进行批量冻结任务操作（Beta版本）
+                 *<p style="color:red;">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>
+基于多个工作流进行批量冻结任务操作
                  * @param req FreezeTasksByMultiWorkflowRequest
                  * @return FreezeTasksByMultiWorkflowOutcome
                  */
@@ -421,7 +439,8 @@ namespace TencentCloud
                 FreezeTasksByMultiWorkflowOutcomeCallable FreezeTasksByMultiWorkflowCallable(const Model::FreezeTasksByMultiWorkflowRequest& request);
 
                 /**
-                 *实例批量终止操作（Beta版本）
+                 *<p style="color:red;">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>
+实例批量终止操作
                  * @param req KillInstancesRequest
                  * @return KillInstancesOutcome
                  */
@@ -430,7 +449,10 @@ namespace TencentCloud
                 KillInstancesOutcomeCallable KillInstancesCallable(const Model::KillInstancesRequest& request);
 
                 /**
-                 *任务批量补录，调度状态任务才可以补录；（Beta版本）
+                 *<p style="color:red;">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>
+任务批量补录，调度状态任务才可以补录；
+
+
 
                  * @param req MakeUpTasksNewRequest
                  * @return MakeUpTasksNewOutcome
@@ -440,7 +462,8 @@ namespace TencentCloud
                 MakeUpTasksNewOutcomeCallable MakeUpTasksNewCallable(const Model::MakeUpTasksNewRequest& request);
 
                 /**
-                 *工作流下所有任务的补录（Beta版本）
+                 *<p style="color:red;">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>
+工作流下所有任务的补录
                  * @param req MakeUpWorkflowNewRequest
                  * @return MakeUpWorkflowNewOutcome
                  */
@@ -449,7 +472,8 @@ namespace TencentCloud
                 MakeUpWorkflowNewOutcomeCallable MakeUpWorkflowNewCallable(const Model::MakeUpWorkflowNewRequest& request);
 
                 /**
-                 *文件夹更新（Beta版本）
+                 *<p style="color:red;">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>
+文件夹更新
                  * @param req ModifyFolderRequest
                  * @return ModifyFolderOutcome
                  */
@@ -458,7 +482,8 @@ namespace TencentCloud
                 ModifyFolderOutcomeCallable ModifyFolderCallable(const Model::ModifyFolderRequest& request);
 
                 /**
-                 *更新任务（Beta版本）
+                 *<p style="color:red;">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>
+更新任务
                  * @param req ModifyTaskInfoRequest
                  * @return ModifyTaskInfoOutcome
                  */
@@ -467,7 +492,8 @@ namespace TencentCloud
                 ModifyTaskInfoOutcomeCallable ModifyTaskInfoCallable(const Model::ModifyTaskInfoRequest& request);
 
                 /**
-                 *添加父任务依赖（Beta版本）
+                 *<p style="color:red;">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>
+添加父任务依赖
                  * @param req ModifyTaskLinksRequest
                  * @return ModifyTaskLinksOutcome
                  */
@@ -476,7 +502,8 @@ namespace TencentCloud
                 ModifyTaskLinksOutcomeCallable ModifyTaskLinksCallable(const Model::ModifyTaskLinksRequest& request);
 
                 /**
-                 *修改任务脚本（Beta版本）
+                 *<p style="color:red;">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>
+修改任务脚本
                  * @param req ModifyTaskScriptRequest
                  * @return ModifyTaskScriptOutcome
                  */
@@ -485,7 +512,8 @@ namespace TencentCloud
                 ModifyTaskScriptOutcomeCallable ModifyTaskScriptCallable(const Model::ModifyTaskScriptRequest& request);
 
                 /**
-                 *更新工作流（Beta版本）
+                 *<p style="color:red;">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>
+更新工作流
                  * @param req ModifyWorkflowInfoRequest
                  * @return ModifyWorkflowInfoOutcome
                  */
@@ -494,7 +522,8 @@ namespace TencentCloud
                 ModifyWorkflowInfoOutcomeCallable ModifyWorkflowInfoCallable(const Model::ModifyWorkflowInfoRequest& request);
 
                 /**
-                 *更新工作流调度（Beta版本）
+                 *<p style="color:red;">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>
+更新工作流调度
                  * @param req ModifyWorkflowScheduleRequest
                  * @return ModifyWorkflowScheduleOutcome
                  */
@@ -503,7 +532,8 @@ namespace TencentCloud
                 ModifyWorkflowScheduleOutcomeCallable ModifyWorkflowScheduleCallable(const Model::ModifyWorkflowScheduleRequest& request);
 
                 /**
-                 *注册事件（Beta版本）
+                 *<p style="color:red;">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>
+注册事件
                  * @param req RegisterEventRequest
                  * @return RegisterEventOutcome
                  */
@@ -512,7 +542,8 @@ namespace TencentCloud
                 RegisterEventOutcomeCallable RegisterEventCallable(const Model::RegisterEventRequest& request);
 
                 /**
-                 *注册事件监听器（Beta版本）
+                 *<p style="color:red;">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>
+注册事件监听器
                  * @param req RegisterEventListenerRequest
                  * @return RegisterEventListenerOutcome
                  */
@@ -521,7 +552,8 @@ namespace TencentCloud
                 RegisterEventListenerOutcomeCallable RegisterEventListenerCallable(const Model::RegisterEventListenerRequest& request);
 
                 /**
-                 *实例批量重跑（Beta版本）
+                 *<p style="color:red;">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>
+实例批量重跑
                  * @param req RerunInstancesRequest
                  * @return RerunInstancesOutcome
                  */
@@ -530,7 +562,8 @@ namespace TencentCloud
                 RerunInstancesOutcomeCallable RerunInstancesCallable(const Model::RerunInstancesRequest& request);
 
                 /**
-                 *运行任务（Beta版本）
+                 *<p style="color:red;">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>
+运行任务
                  * @param req RunTaskRequest
                  * @return RunTaskOutcome
                  */
@@ -539,7 +572,8 @@ namespace TencentCloud
                 RunTaskOutcomeCallable RunTaskCallable(const Model::RunTaskRequest& request);
 
                 /**
-                 *设置任务告警，新建/更新告警信息（最新）（Beta版本）
+                 *<p style="color:red;">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>
+设置任务告警，新建/更新告警信息（最新）
                  * @param req SetTaskAlarmNewRequest
                  * @return SetTaskAlarmNewOutcome
                  */
@@ -548,7 +582,8 @@ namespace TencentCloud
                 SetTaskAlarmNewOutcomeCallable SetTaskAlarmNewCallable(const Model::SetTaskAlarmNewRequest& request);
 
                 /**
-                 *提交任务（Beta版本）
+                 *<p style="color:red;">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>
+提交任务
                  * @param req SubmitTaskRequest
                  * @return SubmitTaskOutcome
                  */
@@ -557,7 +592,8 @@ namespace TencentCloud
                 SubmitTaskOutcomeCallable SubmitTaskCallable(const Model::SubmitTaskRequest& request);
 
                 /**
-                 *提交工作流（Beta版本）
+                 *<p style="color:red;">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>
+提交工作流
                  * @param req SubmitWorkflowRequest
                  * @return SubmitWorkflowOutcome
                  */
@@ -566,7 +602,8 @@ namespace TencentCloud
                 SubmitWorkflowOutcomeCallable SubmitWorkflowCallable(const Model::SubmitWorkflowRequest& request);
 
                 /**
-                 *触发事件（Beta版本）
+                 *<p style="color:red;">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>
+触发事件
                  * @param req TriggerEventRequest
                  * @return TriggerEventOutcome
                  */

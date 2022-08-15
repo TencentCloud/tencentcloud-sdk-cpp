@@ -47,17 +47,25 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取on | off CacheKey是否由QueryString组成
+                     * 获取CacheKey是否由QueryString组成，取值有：
+<li>on：是；</li>
+<li>off：否。</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Switch on | off CacheKey是否由QueryString组成
+                     * @return Switch CacheKey是否由QueryString组成，取值有：
+<li>on：是；</li>
+<li>off：否。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置on | off CacheKey是否由QueryString组成
+                     * 设置CacheKey是否由QueryString组成，取值有：
+<li>on：是；</li>
+<li>off：否。</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Switch on | off CacheKey是否由QueryString组成
+                     * @param Switch CacheKey是否由QueryString组成，取值有：
+<li>on：是；</li>
+<li>off：否。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetSwitch(const std::string& _switch);
@@ -69,21 +77,25 @@ namespace TencentCloud
                     bool SwitchHasBeenSet() const;
 
                     /**
-                     * 获取includeCustom:使用部分url参数
-excludeCustom:排除部分url参数
+                     * 获取CacheKey使用QueryString的方式，取值有：
+<li>includeCustom：使用部分url参数；</li>
+<li>excludeCustom：排除部分url参数。</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Action includeCustom:使用部分url参数
-excludeCustom:排除部分url参数
+                     * @return Action CacheKey使用QueryString的方式，取值有：
+<li>includeCustom：使用部分url参数；</li>
+<li>excludeCustom：排除部分url参数。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetAction() const;
 
                     /**
-                     * 设置includeCustom:使用部分url参数
-excludeCustom:排除部分url参数
+                     * 设置CacheKey使用QueryString的方式，取值有：
+<li>includeCustom：使用部分url参数；</li>
+<li>excludeCustom：排除部分url参数。</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Action includeCustom:使用部分url参数
-excludeCustom:排除部分url参数
+                     * @param Action CacheKey使用QueryString的方式，取值有：
+<li>includeCustom：使用部分url参数；</li>
+<li>excludeCustom：排除部分url参数。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetAction(const std::string& _action);
@@ -95,17 +107,17 @@ excludeCustom:排除部分url参数
                     bool ActionHasBeenSet() const;
 
                     /**
-                     * 获取使用/排除的url参数数组
+                     * 获取使用/排除的url参数数组。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Value 使用/排除的url参数数组
+                     * @return Value 使用/排除的url参数数组。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> GetValue() const;
 
                     /**
-                     * 设置使用/排除的url参数数组
+                     * 设置使用/排除的url参数数组。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Value 使用/排除的url参数数组
+                     * @param Value 使用/排除的url参数数组。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetValue(const std::vector<std::string>& _value);
@@ -119,22 +131,25 @@ excludeCustom:排除部分url参数
                 private:
 
                     /**
-                     * on | off CacheKey是否由QueryString组成
+                     * CacheKey是否由QueryString组成，取值有：
+<li>on：是；</li>
+<li>off：否。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_switch;
                     bool m_switchHasBeenSet;
 
                     /**
-                     * includeCustom:使用部分url参数
-excludeCustom:排除部分url参数
+                     * CacheKey使用QueryString的方式，取值有：
+<li>includeCustom：使用部分url参数；</li>
+<li>excludeCustom：排除部分url参数。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_action;
                     bool m_actionHasBeenSet;
 
                     /**
-                     * 使用/排除的url参数数组
+                     * 使用/排除的url参数数组。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_value;

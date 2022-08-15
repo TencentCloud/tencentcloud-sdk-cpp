@@ -151,6 +151,24 @@ namespace TencentCloud
                      */
                     bool FiltersHasBeenSet() const;
 
+                    /**
+                     * 获取仅查询启用了 KMS 镜像签名的空间
+                     * @return KmsSignPolicy 仅查询启用了 KMS 镜像签名的空间
+                     */
+                    bool GetKmsSignPolicy() const;
+
+                    /**
+                     * 设置仅查询启用了 KMS 镜像签名的空间
+                     * @param KmsSignPolicy 仅查询启用了 KMS 镜像签名的空间
+                     */
+                    void SetKmsSignPolicy(const bool& _kmsSignPolicy);
+
+                    /**
+                     * 判断参数 KmsSignPolicy 是否已赋值
+                     * @return KmsSignPolicy 是否已赋值
+                     */
+                    bool KmsSignPolicyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -188,6 +206,12 @@ namespace TencentCloud
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;
+
+                    /**
+                     * 仅查询启用了 KMS 镜像签名的空间
+                     */
+                    bool m_kmsSignPolicy;
+                    bool m_kmsSignPolicyHasBeenSet;
 
                 };
             }

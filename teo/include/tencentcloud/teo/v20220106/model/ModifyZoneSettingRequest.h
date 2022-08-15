@@ -36,6 +36,7 @@
 #include <tencentcloud/teo/v20220106/model/WebSocket.h>
 #include <tencentcloud/teo/v20220106/model/ClientIp.h>
 #include <tencentcloud/teo/v20220106/model/CachePrefresh.h>
+#include <tencentcloud/teo/v20220106/model/Ipv6Access.h>
 
 
 namespace TencentCloud
@@ -58,14 +59,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取待变更的站点ID
-                     * @return ZoneId 待变更的站点ID
+                     * 获取待变更的站点ID。
+                     * @return ZoneId 待变更的站点ID。
                      */
                     std::string GetZoneId() const;
 
                     /**
-                     * 设置待变更的站点ID
-                     * @param ZoneId 待变更的站点ID
+                     * 设置待变更的站点ID。
+                     * @param ZoneId 待变更的站点ID。
                      */
                     void SetZoneId(const std::string& _zoneId);
 
@@ -76,14 +77,18 @@ namespace TencentCloud
                     bool ZoneIdHasBeenSet() const;
 
                     /**
-                     * 获取缓存过期时间配置
-                     * @return Cache 缓存过期时间配置
+                     * 获取缓存过期时间配置。
+不填写表示保持原有配置。
+                     * @return Cache 缓存过期时间配置。
+不填写表示保持原有配置。
                      */
                     CacheConfig GetCache() const;
 
                     /**
-                     * 设置缓存过期时间配置
-                     * @param Cache 缓存过期时间配置
+                     * 设置缓存过期时间配置。
+不填写表示保持原有配置。
+                     * @param Cache 缓存过期时间配置。
+不填写表示保持原有配置。
                      */
                     void SetCache(const CacheConfig& _cache);
 
@@ -94,14 +99,18 @@ namespace TencentCloud
                     bool CacheHasBeenSet() const;
 
                     /**
-                     * 获取节点缓存键配置
-                     * @return CacheKey 节点缓存键配置
+                     * 获取节点缓存键配置。
+不填写表示保持原有配置。
+                     * @return CacheKey 节点缓存键配置。
+不填写表示保持原有配置。
                      */
                     CacheKey GetCacheKey() const;
 
                     /**
-                     * 设置节点缓存键配置
-                     * @param CacheKey 节点缓存键配置
+                     * 设置节点缓存键配置。
+不填写表示保持原有配置。
+                     * @param CacheKey 节点缓存键配置。
+不填写表示保持原有配置。
                      */
                     void SetCacheKey(const CacheKey& _cacheKey);
 
@@ -112,14 +121,18 @@ namespace TencentCloud
                     bool CacheKeyHasBeenSet() const;
 
                     /**
-                     * 获取浏览器缓存配置
-                     * @return MaxAge 浏览器缓存配置
+                     * 获取浏览器缓存配置。
+不填写表示保持原有配置。
+                     * @return MaxAge 浏览器缓存配置。
+不填写表示保持原有配置。
                      */
                     MaxAge GetMaxAge() const;
 
                     /**
-                     * 设置浏览器缓存配置
-                     * @param MaxAge 浏览器缓存配置
+                     * 设置浏览器缓存配置。
+不填写表示保持原有配置。
+                     * @param MaxAge 浏览器缓存配置。
+不填写表示保持原有配置。
                      */
                     void SetMaxAge(const MaxAge& _maxAge);
 
@@ -130,14 +143,18 @@ namespace TencentCloud
                     bool MaxAgeHasBeenSet() const;
 
                     /**
-                     * 获取离线缓存
-                     * @return OfflineCache 离线缓存
+                     * 获取离线缓存配置。
+不填写表示保持原有配置。
+                     * @return OfflineCache 离线缓存配置。
+不填写表示保持原有配置。
                      */
                     OfflineCache GetOfflineCache() const;
 
                     /**
-                     * 设置离线缓存
-                     * @param OfflineCache 离线缓存
+                     * 设置离线缓存配置。
+不填写表示保持原有配置。
+                     * @param OfflineCache 离线缓存配置。
+不填写表示保持原有配置。
                      */
                     void SetOfflineCache(const OfflineCache& _offlineCache);
 
@@ -148,14 +165,18 @@ namespace TencentCloud
                     bool OfflineCacheHasBeenSet() const;
 
                     /**
-                     * 获取Quic访问
-                     * @return Quic Quic访问
+                     * 获取Quic访问配置。
+不填写表示保持原有配置。
+                     * @return Quic Quic访问配置。
+不填写表示保持原有配置。
                      */
                     Quic GetQuic() const;
 
                     /**
-                     * 设置Quic访问
-                     * @param Quic Quic访问
+                     * 设置Quic访问配置。
+不填写表示保持原有配置。
+                     * @param Quic Quic访问配置。
+不填写表示保持原有配置。
                      */
                     void SetQuic(const Quic& _quic);
 
@@ -166,14 +187,18 @@ namespace TencentCloud
                     bool QuicHasBeenSet() const;
 
                     /**
-                     * 获取POST请求传输配置
-                     * @return PostMaxSize POST请求传输配置
+                     * 获取Post请求传输配置。
+不填写表示保持原有配置。
+                     * @return PostMaxSize Post请求传输配置。
+不填写表示保持原有配置。
                      */
                     PostMaxSize GetPostMaxSize() const;
 
                     /**
-                     * 设置POST请求传输配置
-                     * @param PostMaxSize POST请求传输配置
+                     * 设置Post请求传输配置。
+不填写表示保持原有配置。
+                     * @param PostMaxSize Post请求传输配置。
+不填写表示保持原有配置。
                      */
                     void SetPostMaxSize(const PostMaxSize& _postMaxSize);
 
@@ -184,14 +209,18 @@ namespace TencentCloud
                     bool PostMaxSizeHasBeenSet() const;
 
                     /**
-                     * 获取智能压缩配置
-                     * @return Compression 智能压缩配置
+                     * 获取智能压缩配置。
+不填写表示保持原有配置。
+                     * @return Compression 智能压缩配置。
+不填写表示保持原有配置。
                      */
                     Compression GetCompression() const;
 
                     /**
-                     * 设置智能压缩配置
-                     * @param Compression 智能压缩配置
+                     * 设置智能压缩配置。
+不填写表示保持原有配置。
+                     * @param Compression 智能压缩配置。
+不填写表示保持原有配置。
                      */
                     void SetCompression(const Compression& _compression);
 
@@ -202,14 +231,18 @@ namespace TencentCloud
                     bool CompressionHasBeenSet() const;
 
                     /**
-                     * 获取http2回源配置
-                     * @return UpstreamHttp2 http2回源配置
+                     * 获取Http2回源配置。
+不填写表示保持原有配置。
+                     * @return UpstreamHttp2 Http2回源配置。
+不填写表示保持原有配置。
                      */
                     UpstreamHttp2 GetUpstreamHttp2() const;
 
                     /**
-                     * 设置http2回源配置
-                     * @param UpstreamHttp2 http2回源配置
+                     * 设置Http2回源配置。
+不填写表示保持原有配置。
+                     * @param UpstreamHttp2 Http2回源配置。
+不填写表示保持原有配置。
                      */
                     void SetUpstreamHttp2(const UpstreamHttp2& _upstreamHttp2);
 
@@ -220,14 +253,18 @@ namespace TencentCloud
                     bool UpstreamHttp2HasBeenSet() const;
 
                     /**
-                     * 获取访问协议强制https跳转配置
-                     * @return ForceRedirect 访问协议强制https跳转配置
+                     * 获取访问协议强制Https跳转配置。
+不填写表示保持原有配置。
+                     * @return ForceRedirect 访问协议强制Https跳转配置。
+不填写表示保持原有配置。
                      */
                     ForceRedirect GetForceRedirect() const;
 
                     /**
-                     * 设置访问协议强制https跳转配置
-                     * @param ForceRedirect 访问协议强制https跳转配置
+                     * 设置访问协议强制Https跳转配置。
+不填写表示保持原有配置。
+                     * @param ForceRedirect 访问协议强制Https跳转配置。
+不填写表示保持原有配置。
                      */
                     void SetForceRedirect(const ForceRedirect& _forceRedirect);
 
@@ -238,14 +275,18 @@ namespace TencentCloud
                     bool ForceRedirectHasBeenSet() const;
 
                     /**
-                     * 获取Https 加速配置
-                     * @return Https Https 加速配置
+                     * 获取Https加速配置。
+不填写表示保持原有配置。
+                     * @return Https Https加速配置。
+不填写表示保持原有配置。
                      */
                     Https GetHttps() const;
 
                     /**
-                     * 设置Https 加速配置
-                     * @param Https Https 加速配置
+                     * 设置Https加速配置。
+不填写表示保持原有配置。
+                     * @param Https Https加速配置。
+不填写表示保持原有配置。
                      */
                     void SetHttps(const Https& _https);
 
@@ -256,14 +297,18 @@ namespace TencentCloud
                     bool HttpsHasBeenSet() const;
 
                     /**
-                     * 获取源站配置
-                     * @return Origin 源站配置
+                     * 获取源站配置。
+不填写表示保持原有配置。
+                     * @return Origin 源站配置。
+不填写表示保持原有配置。
                      */
                     Origin GetOrigin() const;
 
                     /**
-                     * 设置源站配置
-                     * @param Origin 源站配置
+                     * 设置源站配置。
+不填写表示保持原有配置。
+                     * @param Origin 源站配置。
+不填写表示保持原有配置。
                      */
                     void SetOrigin(const Origin& _origin);
 
@@ -274,14 +319,18 @@ namespace TencentCloud
                     bool OriginHasBeenSet() const;
 
                     /**
-                     * 获取智能加速配置
-                     * @return SmartRouting 智能加速配置
+                     * 获取智能加速配置。
+不填写表示保持原有配置。
+                     * @return SmartRouting 智能加速配置。
+不填写表示保持原有配置。
                      */
                     SmartRouting GetSmartRouting() const;
 
                     /**
-                     * 设置智能加速配置
-                     * @param SmartRouting 智能加速配置
+                     * 设置智能加速配置。
+不填写表示保持原有配置。
+                     * @param SmartRouting 智能加速配置。
+不填写表示保持原有配置。
                      */
                     void SetSmartRouting(const SmartRouting& _smartRouting);
 
@@ -292,14 +341,18 @@ namespace TencentCloud
                     bool SmartRoutingHasBeenSet() const;
 
                     /**
-                     * 获取WebSocket配置
-                     * @return WebSocket WebSocket配置
+                     * 获取WebSocket配置。
+不填写表示保持原有配置。
+                     * @return WebSocket WebSocket配置。
+不填写表示保持原有配置。
                      */
                     WebSocket GetWebSocket() const;
 
                     /**
-                     * 设置WebSocket配置
-                     * @param WebSocket WebSocket配置
+                     * 设置WebSocket配置。
+不填写表示保持原有配置。
+                     * @param WebSocket WebSocket配置。
+不填写表示保持原有配置。
                      */
                     void SetWebSocket(const WebSocket& _webSocket);
 
@@ -310,14 +363,18 @@ namespace TencentCloud
                     bool WebSocketHasBeenSet() const;
 
                     /**
-                     * 获取客户端IP回源请求头配置
-                     * @return ClientIpHeader 客户端IP回源请求头配置
+                     * 获取客户端IP回源请求头配置。
+不填写表示保持原有配置。
+                     * @return ClientIpHeader 客户端IP回源请求头配置。
+不填写表示保持原有配置。
                      */
                     ClientIp GetClientIpHeader() const;
 
                     /**
-                     * 设置客户端IP回源请求头配置
-                     * @param ClientIpHeader 客户端IP回源请求头配置
+                     * 设置客户端IP回源请求头配置。
+不填写表示保持原有配置。
+                     * @param ClientIpHeader 客户端IP回源请求头配置。
+不填写表示保持原有配置。
                      */
                     void SetClientIpHeader(const ClientIp& _clientIpHeader);
 
@@ -328,14 +385,18 @@ namespace TencentCloud
                     bool ClientIpHeaderHasBeenSet() const;
 
                     /**
-                     * 获取缓存预刷新配置
-                     * @return CachePrefresh 缓存预刷新配置
+                     * 获取缓存预刷新配置。
+不填写表示保持原有配置。
+                     * @return CachePrefresh 缓存预刷新配置。
+不填写表示保持原有配置。
                      */
                     CachePrefresh GetCachePrefresh() const;
 
                     /**
-                     * 设置缓存预刷新配置
-                     * @param CachePrefresh 缓存预刷新配置
+                     * 设置缓存预刷新配置。
+不填写表示保持原有配置。
+                     * @param CachePrefresh 缓存预刷新配置。
+不填写表示保持原有配置。
                      */
                     void SetCachePrefresh(const CachePrefresh& _cachePrefresh);
 
@@ -345,103 +406,147 @@ namespace TencentCloud
                      */
                     bool CachePrefreshHasBeenSet() const;
 
+                    /**
+                     * 获取Ipv6访问配置。
+不填写表示保持原有配置。
+                     * @return Ipv6 Ipv6访问配置。
+不填写表示保持原有配置。
+                     */
+                    Ipv6Access GetIpv6() const;
+
+                    /**
+                     * 设置Ipv6访问配置。
+不填写表示保持原有配置。
+                     * @param Ipv6 Ipv6访问配置。
+不填写表示保持原有配置。
+                     */
+                    void SetIpv6(const Ipv6Access& _ipv6);
+
+                    /**
+                     * 判断参数 Ipv6 是否已赋值
+                     * @return Ipv6 是否已赋值
+                     */
+                    bool Ipv6HasBeenSet() const;
+
                 private:
 
                     /**
-                     * 待变更的站点ID
+                     * 待变更的站点ID。
                      */
                     std::string m_zoneId;
                     bool m_zoneIdHasBeenSet;
 
                     /**
-                     * 缓存过期时间配置
+                     * 缓存过期时间配置。
+不填写表示保持原有配置。
                      */
                     CacheConfig m_cache;
                     bool m_cacheHasBeenSet;
 
                     /**
-                     * 节点缓存键配置
+                     * 节点缓存键配置。
+不填写表示保持原有配置。
                      */
                     CacheKey m_cacheKey;
                     bool m_cacheKeyHasBeenSet;
 
                     /**
-                     * 浏览器缓存配置
+                     * 浏览器缓存配置。
+不填写表示保持原有配置。
                      */
                     MaxAge m_maxAge;
                     bool m_maxAgeHasBeenSet;
 
                     /**
-                     * 离线缓存
+                     * 离线缓存配置。
+不填写表示保持原有配置。
                      */
                     OfflineCache m_offlineCache;
                     bool m_offlineCacheHasBeenSet;
 
                     /**
-                     * Quic访问
+                     * Quic访问配置。
+不填写表示保持原有配置。
                      */
                     Quic m_quic;
                     bool m_quicHasBeenSet;
 
                     /**
-                     * POST请求传输配置
+                     * Post请求传输配置。
+不填写表示保持原有配置。
                      */
                     PostMaxSize m_postMaxSize;
                     bool m_postMaxSizeHasBeenSet;
 
                     /**
-                     * 智能压缩配置
+                     * 智能压缩配置。
+不填写表示保持原有配置。
                      */
                     Compression m_compression;
                     bool m_compressionHasBeenSet;
 
                     /**
-                     * http2回源配置
+                     * Http2回源配置。
+不填写表示保持原有配置。
                      */
                     UpstreamHttp2 m_upstreamHttp2;
                     bool m_upstreamHttp2HasBeenSet;
 
                     /**
-                     * 访问协议强制https跳转配置
+                     * 访问协议强制Https跳转配置。
+不填写表示保持原有配置。
                      */
                     ForceRedirect m_forceRedirect;
                     bool m_forceRedirectHasBeenSet;
 
                     /**
-                     * Https 加速配置
+                     * Https加速配置。
+不填写表示保持原有配置。
                      */
                     Https m_https;
                     bool m_httpsHasBeenSet;
 
                     /**
-                     * 源站配置
+                     * 源站配置。
+不填写表示保持原有配置。
                      */
                     Origin m_origin;
                     bool m_originHasBeenSet;
 
                     /**
-                     * 智能加速配置
+                     * 智能加速配置。
+不填写表示保持原有配置。
                      */
                     SmartRouting m_smartRouting;
                     bool m_smartRoutingHasBeenSet;
 
                     /**
-                     * WebSocket配置
+                     * WebSocket配置。
+不填写表示保持原有配置。
                      */
                     WebSocket m_webSocket;
                     bool m_webSocketHasBeenSet;
 
                     /**
-                     * 客户端IP回源请求头配置
+                     * 客户端IP回源请求头配置。
+不填写表示保持原有配置。
                      */
                     ClientIp m_clientIpHeader;
                     bool m_clientIpHeaderHasBeenSet;
 
                     /**
-                     * 缓存预刷新配置
+                     * 缓存预刷新配置。
+不填写表示保持原有配置。
                      */
                     CachePrefresh m_cachePrefresh;
                     bool m_cachePrefreshHasBeenSet;
+
+                    /**
+                     * Ipv6访问配置。
+不填写表示保持原有配置。
+                     */
+                    Ipv6Access m_ipv6;
+                    bool m_ipv6HasBeenSet;
 
                 };
             }

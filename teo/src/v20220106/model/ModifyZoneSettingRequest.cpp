@@ -38,7 +38,8 @@ ModifyZoneSettingRequest::ModifyZoneSettingRequest() :
     m_smartRoutingHasBeenSet(false),
     m_webSocketHasBeenSet(false),
     m_clientIpHeaderHasBeenSet(false),
-    m_cachePrefreshHasBeenSet(false)
+    m_cachePrefreshHasBeenSet(false),
+    m_ipv6HasBeenSet(false)
 {
 }
 
@@ -190,6 +191,15 @@ string ModifyZoneSettingRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_cachePrefresh.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_ipv6HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Ipv6";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_ipv6.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -454,6 +464,22 @@ void ModifyZoneSettingRequest::SetCachePrefresh(const CachePrefresh& _cachePrefr
 bool ModifyZoneSettingRequest::CachePrefreshHasBeenSet() const
 {
     return m_cachePrefreshHasBeenSet;
+}
+
+Ipv6Access ModifyZoneSettingRequest::GetIpv6() const
+{
+    return m_ipv6;
+}
+
+void ModifyZoneSettingRequest::SetIpv6(const Ipv6Access& _ipv6)
+{
+    m_ipv6 = _ipv6;
+    m_ipv6HasBeenSet = true;
+}
+
+bool ModifyZoneSettingRequest::Ipv6HasBeenSet() const
+{
+    return m_ipv6HasBeenSet;
 }
 
 

@@ -47,22 +47,22 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取智能加速配置开关
-on：开启
-off：关闭
-                     * @return Switch 智能加速配置开关
-on：开启
-off：关闭
+                     * 获取智能加速配置开关，取值有：
+<li>on：开启；</li>
+<li>off：关闭。</li>
+                     * @return Switch 智能加速配置开关，取值有：
+<li>on：开启；</li>
+<li>off：关闭。</li>
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置智能加速配置开关
-on：开启
-off：关闭
-                     * @param Switch 智能加速配置开关
-on：开启
-off：关闭
+                     * 设置智能加速配置开关，取值有：
+<li>on：开启；</li>
+<li>off：关闭。</li>
+                     * @param Switch 智能加速配置开关，取值有：
+<li>on：开启；</li>
+<li>off：关闭。</li>
                      */
                     void SetSwitch(const std::string& _switch);
 
@@ -75,9 +75,9 @@ off：关闭
                 private:
 
                     /**
-                     * 智能加速配置开关
-on：开启
-off：关闭
+                     * 智能加速配置开关，取值有：
+<li>on：开启；</li>
+<li>off：关闭。</li>
                      */
                     std::string m_switch;
                     bool m_switchHasBeenSet;

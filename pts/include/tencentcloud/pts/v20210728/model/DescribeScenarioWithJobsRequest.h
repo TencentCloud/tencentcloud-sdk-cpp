@@ -223,6 +223,24 @@ namespace TencentCloud
                      */
                     bool IgnoreScriptHasBeenSet() const;
 
+                    /**
+                     * 获取是否需要返回测试数据文件信息
+                     * @return IgnoreDataset 是否需要返回测试数据文件信息
+                     */
+                    bool GetIgnoreDataset() const;
+
+                    /**
+                     * 设置是否需要返回测试数据文件信息
+                     * @param IgnoreDataset 是否需要返回测试数据文件信息
+                     */
+                    void SetIgnoreDataset(const bool& _ignoreDataset);
+
+                    /**
+                     * 判断参数 IgnoreDataset 是否已赋值
+                     * @return IgnoreDataset 是否已赋值
+                     */
+                    bool IgnoreDatasetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -284,6 +302,12 @@ namespace TencentCloud
                      */
                     bool m_ignoreScript;
                     bool m_ignoreScriptHasBeenSet;
+
+                    /**
+                     * 是否需要返回测试数据文件信息
+                     */
+                    bool m_ignoreDataset;
+                    bool m_ignoreDatasetHasBeenSet;
 
                 };
             }

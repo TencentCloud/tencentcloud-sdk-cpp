@@ -295,6 +295,24 @@ namespace TencentCloud
                      */
                     bool IsCustomTldHasBeenSet() const;
 
+                    /**
+                     * 获取CNAME加速状态：开通：ENABLED, 关闭，DISABLED
+                     * @return CnameSpeedupStatus CNAME加速状态：开通：ENABLED, 关闭，DISABLED
+                     */
+                    std::string GetCnameSpeedupStatus() const;
+
+                    /**
+                     * 设置CNAME加速状态：开通：ENABLED, 关闭，DISABLED
+                     * @param CnameSpeedupStatus CNAME加速状态：开通：ENABLED, 关闭，DISABLED
+                     */
+                    void SetCnameSpeedupStatus(const std::string& _cnameSpeedupStatus);
+
+                    /**
+                     * 判断参数 CnameSpeedupStatus 是否已赋值
+                     * @return CnameSpeedupStatus 是否已赋值
+                     */
+                    bool CnameSpeedupStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -377,6 +395,12 @@ namespace TencentCloud
                      */
                     bool m_isCustomTld;
                     bool m_isCustomTldHasBeenSet;
+
+                    /**
+                     * CNAME加速状态：开通：ENABLED, 关闭，DISABLED
+                     */
+                    std::string m_cnameSpeedupStatus;
+                    bool m_cnameSpeedupStatusHasBeenSet;
 
                 };
             }

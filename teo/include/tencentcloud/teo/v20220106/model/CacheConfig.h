@@ -50,17 +50,17 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取缓存配置
+                     * 获取缓存配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Cache 缓存配置
+                     * @return Cache 缓存配置。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     CacheConfigCache GetCache() const;
 
                     /**
-                     * 设置缓存配置
+                     * 设置缓存配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Cache 缓存配置
+                     * @param Cache 缓存配置。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetCache(const CacheConfigCache& _cache);
@@ -72,17 +72,17 @@ namespace TencentCloud
                     bool CacheHasBeenSet() const;
 
                     /**
-                     * 获取不缓存配置
+                     * 获取不缓存配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return NoCache 不缓存配置
+                     * @return NoCache 不缓存配置。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     CacheConfigNoCache GetNoCache() const;
 
                     /**
-                     * 设置不缓存配置
+                     * 设置不缓存配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NoCache 不缓存配置
+                     * @param NoCache 不缓存配置。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetNoCache(const CacheConfigNoCache& _noCache);
@@ -94,17 +94,17 @@ namespace TencentCloud
                     bool NoCacheHasBeenSet() const;
 
                     /**
-                     * 获取遵循源站配置
+                     * 获取遵循源站配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FollowOrigin 遵循源站配置
+                     * @return FollowOrigin 遵循源站配置。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     CacheConfigFollowOrigin GetFollowOrigin() const;
 
                     /**
-                     * 设置遵循源站配置
+                     * 设置遵循源站配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FollowOrigin 遵循源站配置
+                     * @param FollowOrigin 遵循源站配置。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetFollowOrigin(const CacheConfigFollowOrigin& _followOrigin);
@@ -118,21 +118,21 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 缓存配置
+                     * 缓存配置。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     CacheConfigCache m_cache;
                     bool m_cacheHasBeenSet;
 
                     /**
-                     * 不缓存配置
+                     * 不缓存配置。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     CacheConfigNoCache m_noCache;
                     bool m_noCacheHasBeenSet;
 
                     /**
-                     * 遵循源站配置
+                     * 遵循源站配置。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     CacheConfigFollowOrigin m_followOrigin;

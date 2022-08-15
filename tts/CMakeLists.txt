@@ -24,6 +24,7 @@ set(tts_public_header_model
   include/tencentcloud/tts/v20190823/model/DescribeTtsTaskStatusResponse.h
   include/tencentcloud/tts/v20190823/model/CreateTtsTaskRespData.h
   include/tencentcloud/tts/v20190823/model/DescribeTtsTaskStatusRespData.h
+  include/tencentcloud/tts/v20190823/model/Subtitle.h
   include/tencentcloud/tts/v20190823/model/DescribeTtsTaskStatusRequest.h
   include/tencentcloud/tts/v20190823/model/CreateTtsTaskRequest.h
   include/tencentcloud/tts/v20190823/model/TextToVoiceRequest.h
@@ -36,6 +37,7 @@ set(tts_src
   src/v20190823/model/DescribeTtsTaskStatusResponse.cpp
   src/v20190823/model/CreateTtsTaskRespData.cpp
   src/v20190823/model/DescribeTtsTaskStatusRespData.cpp
+  src/v20190823/model/Subtitle.cpp
   src/v20190823/model/DescribeTtsTaskStatusRequest.cpp
   src/v20190823/model/CreateTtsTaskRequest.cpp
   src/v20190823/model/TextToVoiceRequest.cpp

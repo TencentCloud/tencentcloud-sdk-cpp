@@ -63,6 +63,7 @@ set(mongodb_public_header_model
   include/tencentcloud/mongodb/v20190725/model/ModifyDBInstanceSecurityGroupRequest.h
   include/tencentcloud/mongodb/v20190725/model/DescribeBackupDownloadTaskRequest.h
   include/tencentcloud/mongodb/v20190725/model/DescribeClientConnectionsResponse.h
+  include/tencentcloud/mongodb/v20190725/model/TerminateDBInstancesRequest.h
   include/tencentcloud/mongodb/v20190725/model/DescribeDBBackupsResponse.h
   include/tencentcloud/mongodb/v20190725/model/ModifyDBInstanceSecurityGroupResponse.h
   include/tencentcloud/mongodb/v20190725/model/DescribeInstanceParamsRequest.h
@@ -82,6 +83,7 @@ set(mongodb_public_header_model
   include/tencentcloud/mongodb/v20190725/model/DescribeDBBackupsRequest.h
   include/tencentcloud/mongodb/v20190725/model/DescribeClientConnectionsRequest.h
   include/tencentcloud/mongodb/v20190725/model/ShardInfo.h
+  include/tencentcloud/mongodb/v20190725/model/TerminateDBInstancesResponse.h
   include/tencentcloud/mongodb/v20190725/model/RenameInstanceRequest.h
   include/tencentcloud/mongodb/v20190725/model/RenewDBInstancesResponse.h
   include/tencentcloud/mongodb/v20190725/model/InstanceEnumParam.h
@@ -187,6 +189,7 @@ set(mongodb_src
   src/v20190725/model/ModifyDBInstanceSecurityGroupRequest.cpp
   src/v20190725/model/DescribeBackupDownloadTaskRequest.cpp
   src/v20190725/model/DescribeClientConnectionsResponse.cpp
+  src/v20190725/model/TerminateDBInstancesRequest.cpp
   src/v20190725/model/DescribeDBBackupsResponse.cpp
   src/v20190725/model/ModifyDBInstanceSecurityGroupResponse.cpp
   src/v20190725/model/DescribeInstanceParamsRequest.cpp
@@ -206,6 +209,7 @@ set(mongodb_src
   src/v20190725/model/DescribeDBBackupsRequest.cpp
   src/v20190725/model/DescribeClientConnectionsRequest.cpp
   src/v20190725/model/ShardInfo.cpp
+  src/v20190725/model/TerminateDBInstancesResponse.cpp
   src/v20190725/model/RenameInstanceRequest.cpp
   src/v20190725/model/RenewDBInstancesResponse.cpp
   src/v20190725/model/InstanceEnumParam.cpp

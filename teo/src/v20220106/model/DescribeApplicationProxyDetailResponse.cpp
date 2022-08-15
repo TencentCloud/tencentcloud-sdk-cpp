@@ -39,7 +39,8 @@ DescribeApplicationProxyDetailResponse::DescribeApplicationProxyDetailResponse()
     m_zoneNameHasBeenSet(false),
     m_sessionPersistTimeHasBeenSet(false),
     m_proxyTypeHasBeenSet(false),
-    m_hostIdHasBeenSet(false)
+    m_hostIdHasBeenSet(false),
+    m_ipv6HasBeenSet(false)
 {
 }
 
@@ -250,6 +251,23 @@ CoreInternalOutcome DescribeApplicationProxyDetailResponse::Deserialize(const st
         m_hostIdHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Ipv6") && !rsp["Ipv6"].IsNull())
+    {
+        if (!rsp["Ipv6"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Ipv6` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_ipv6.Deserialize(rsp["Ipv6"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_ipv6HasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -398,6 +416,15 @@ string DescribeApplicationProxyDetailResponse::ToJsonString() const
         string key = "HostId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_hostId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ipv6HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Ipv6";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_ipv6.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -570,6 +597,16 @@ string DescribeApplicationProxyDetailResponse::GetHostId() const
 bool DescribeApplicationProxyDetailResponse::HostIdHasBeenSet() const
 {
     return m_hostIdHasBeenSet;
+}
+
+Ipv6Access DescribeApplicationProxyDetailResponse::GetIpv6() const
+{
+    return m_ipv6;
+}
+
+bool DescribeApplicationProxyDetailResponse::Ipv6HasBeenSet() const
+{
+    return m_ipv6HasBeenSet;
 }
 
 

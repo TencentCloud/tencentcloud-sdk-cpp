@@ -21,8 +21,8 @@ using namespace TencentCloud::Teo::V20220106::Model;
 using namespace std;
 
 MaxAge::MaxAge() :
-    m_maxAgeTimeHasBeenSet(false),
-    m_followOriginHasBeenSet(false)
+    m_followOriginHasBeenSet(false),
+    m_maxAgeTimeHasBeenSet(false)
 {
 }
 
@@ -30,16 +30,6 @@ CoreInternalOutcome MaxAge::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
-
-    if (value.HasMember("MaxAgeTime") && !value["MaxAgeTime"].IsNull())
-    {
-        if (!value["MaxAgeTime"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `MaxAge.MaxAgeTime` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_maxAgeTime = value["MaxAgeTime"].GetInt64();
-        m_maxAgeTimeHasBeenSet = true;
-    }
 
     if (value.HasMember("FollowOrigin") && !value["FollowOrigin"].IsNull())
     {
@@ -51,20 +41,22 @@ CoreInternalOutcome MaxAge::Deserialize(const rapidjson::Value &value)
         m_followOriginHasBeenSet = true;
     }
 
+    if (value.HasMember("MaxAgeTime") && !value["MaxAgeTime"].IsNull())
+    {
+        if (!value["MaxAgeTime"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `MaxAge.MaxAgeTime` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_maxAgeTime = value["MaxAgeTime"].GetInt64();
+        m_maxAgeTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
 void MaxAge::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
-
-    if (m_maxAgeTimeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "MaxAgeTime";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_maxAgeTime, allocator);
-    }
 
     if (m_followOriginHasBeenSet)
     {
@@ -74,24 +66,16 @@ void MaxAge::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocato
         value.AddMember(iKey, rapidjson::Value(m_followOrigin.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_maxAgeTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxAgeTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_maxAgeTime, allocator);
+    }
+
 }
 
-
-int64_t MaxAge::GetMaxAgeTime() const
-{
-    return m_maxAgeTime;
-}
-
-void MaxAge::SetMaxAgeTime(const int64_t& _maxAgeTime)
-{
-    m_maxAgeTime = _maxAgeTime;
-    m_maxAgeTimeHasBeenSet = true;
-}
-
-bool MaxAge::MaxAgeTimeHasBeenSet() const
-{
-    return m_maxAgeTimeHasBeenSet;
-}
 
 string MaxAge::GetFollowOrigin() const
 {
@@ -107,5 +91,21 @@ void MaxAge::SetFollowOrigin(const string& _followOrigin)
 bool MaxAge::FollowOriginHasBeenSet() const
 {
     return m_followOriginHasBeenSet;
+}
+
+int64_t MaxAge::GetMaxAgeTime() const
+{
+    return m_maxAgeTime;
+}
+
+void MaxAge::SetMaxAgeTime(const int64_t& _maxAgeTime)
+{
+    m_maxAgeTime = _maxAgeTime;
+    m_maxAgeTimeHasBeenSet = true;
+}
+
+bool MaxAge::MaxAgeTimeHasBeenSet() const
+{
+    return m_maxAgeTimeHasBeenSet;
 }
 

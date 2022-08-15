@@ -47,22 +47,22 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取访问强制跳转配置开关
-on：开启
-off：关闭
-                     * @return Switch 访问强制跳转配置开关
-on：开启
-off：关闭
+                     * 获取访问强制跳转配置开关，取值有：
+<li>on：开启；</li>
+<li>off：关闭。</li>
+                     * @return Switch 访问强制跳转配置开关，取值有：
+<li>on：开启；</li>
+<li>off：关闭。</li>
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置访问强制跳转配置开关
-on：开启
-off：关闭
-                     * @param Switch 访问强制跳转配置开关
-on：开启
-off：关闭
+                     * 设置访问强制跳转配置开关，取值有：
+<li>on：开启；</li>
+<li>off：关闭。</li>
+                     * @param Switch 访问强制跳转配置开关，取值有：
+<li>on：开启；</li>
+<li>off：关闭。</li>
                      */
                     void SetSwitch(const std::string& _switch);
 
@@ -73,25 +73,25 @@ off：关闭
                     bool SwitchHasBeenSet() const;
 
                     /**
-                     * 获取重定向状态码
-301
-302
+                     * 获取重定向状态码，取值有：
+<li>301：301跳转；</li>
+<li>302：302跳转。</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RedirectStatusCode 重定向状态码
-301
-302
+                     * @return RedirectStatusCode 重定向状态码，取值有：
+<li>301：301跳转；</li>
+<li>302：302跳转。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetRedirectStatusCode() const;
 
                     /**
-                     * 设置重定向状态码
-301
-302
+                     * 设置重定向状态码，取值有：
+<li>301：301跳转；</li>
+<li>302：302跳转。</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RedirectStatusCode 重定向状态码
-301
-302
+                     * @param RedirectStatusCode 重定向状态码，取值有：
+<li>301：301跳转；</li>
+<li>302：302跳转。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetRedirectStatusCode(const int64_t& _redirectStatusCode);
@@ -105,17 +105,17 @@ off：关闭
                 private:
 
                     /**
-                     * 访问强制跳转配置开关
-on：开启
-off：关闭
+                     * 访问强制跳转配置开关，取值有：
+<li>on：开启；</li>
+<li>off：关闭。</li>
                      */
                     std::string m_switch;
                     bool m_switchHasBeenSet;
 
                     /**
-                     * 重定向状态码
-301
-302
+                     * 重定向状态码，取值有：
+<li>301：301跳转；</li>
+<li>302：302跳转。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_redirectStatusCode;

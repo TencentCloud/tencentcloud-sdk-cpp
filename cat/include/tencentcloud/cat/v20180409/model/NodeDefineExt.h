@@ -200,12 +200,12 @@ namespace TencentCloud
                      * 获取区域
 <li> 1 = 中国大陆 </li>
 <li> 2 = 港澳台 </li>
-<li> 3 = 国外 </li>
+<li> 3 = 境外 </li>
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Location 区域
 <li> 1 = 中国大陆 </li>
 <li> 2 = 港澳台 </li>
-<li> 3 = 国外 </li>
+<li> 3 = 境外 </li>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetLocation() const;
@@ -214,12 +214,12 @@ namespace TencentCloud
                      * 设置区域
 <li> 1 = 中国大陆 </li>
 <li> 2 = 港澳台 </li>
-<li> 3 = 国外 </li>
+<li> 3 = 境外 </li>
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param Location 区域
 <li> 1 = 中国大陆 </li>
 <li> 2 = 港澳台 </li>
-<li> 3 = 国外 </li>
+<li> 3 = 境外 </li>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetLocation(const int64_t& _location);
@@ -328,7 +328,7 @@ namespace TencentCloud
                      * 区域
 <li> 1 = 中国大陆 </li>
 <li> 2 = 港澳台 </li>
-<li> 3 = 国外 </li>
+<li> 3 = 境外 </li>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_location;

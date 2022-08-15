@@ -47,22 +47,22 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取是调整POST请求限制，平台默认为32MB。
-关闭：off，
-开启：on。
-                     * @return Switch 是调整POST请求限制，平台默认为32MB。
-关闭：off，
-开启：on。
+                     * 获取是否开启POST请求上传文件限制，平台默认为限制为32MB，取值有：
+<li>on：开启限制；</li>
+<li>off：关闭限制。</li>
+                     * @return Switch 是否开启POST请求上传文件限制，平台默认为限制为32MB，取值有：
+<li>on：开启限制；</li>
+<li>off：关闭限制。</li>
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置是调整POST请求限制，平台默认为32MB。
-关闭：off，
-开启：on。
-                     * @param Switch 是调整POST请求限制，平台默认为32MB。
-关闭：off，
-开启：on。
+                     * 设置是否开启POST请求上传文件限制，平台默认为限制为32MB，取值有：
+<li>on：开启限制；</li>
+<li>off：关闭限制。</li>
+                     * @param Switch 是否开启POST请求上传文件限制，平台默认为限制为32MB，取值有：
+<li>on：开启限制；</li>
+<li>off：关闭限制。</li>
                      */
                     void SetSwitch(const std::string& _switch);
 
@@ -73,17 +73,17 @@ namespace TencentCloud
                     bool SwitchHasBeenSet() const;
 
                     /**
-                     * 获取最大限制，取值在1MB和500MB之间。单位字节
+                     * 获取最大限制，取值在1MB和500MB之间。单位字节。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MaxSize 最大限制，取值在1MB和500MB之间。单位字节
+                     * @return MaxSize 最大限制，取值在1MB和500MB之间。单位字节。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetMaxSize() const;
 
                     /**
-                     * 设置最大限制，取值在1MB和500MB之间。单位字节
+                     * 设置最大限制，取值在1MB和500MB之间。单位字节。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MaxSize 最大限制，取值在1MB和500MB之间。单位字节
+                     * @param MaxSize 最大限制，取值在1MB和500MB之间。单位字节。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetMaxSize(const int64_t& _maxSize);
@@ -97,15 +97,15 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 是调整POST请求限制，平台默认为32MB。
-关闭：off，
-开启：on。
+                     * 是否开启POST请求上传文件限制，平台默认为限制为32MB，取值有：
+<li>on：开启限制；</li>
+<li>off：关闭限制。</li>
                      */
                     std::string m_switch;
                     bool m_switchHasBeenSet;
 
                     /**
-                     * 最大限制，取值在1MB和500MB之间。单位字节
+                     * 最大限制，取值在1MB和500MB之间。单位字节。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_maxSize;

@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 客户端IP头部
+                * 存储客户端请求IP的头部信息配置
                 */
                 class ClientIp : public AbstractModel
                 {
@@ -47,17 +47,25 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取客户端IP头部配置开关
+                     * 获取配置开关，取值有：
+<li>on：开启；</li>
+<li>off：关闭。</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Switch 客户端IP头部配置开关
+                     * @return Switch 配置开关，取值有：
+<li>on：开启；</li>
+<li>off：关闭。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置客户端IP头部配置开关
+                     * 设置配置开关，取值有：
+<li>on：开启；</li>
+<li>off：关闭。</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Switch 客户端IP头部配置开关
+                     * @param Switch 配置开关，取值有：
+<li>on：开启；</li>
+<li>off：关闭。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetSwitch(const std::string& _switch);
@@ -69,17 +77,21 @@ namespace TencentCloud
                     bool SwitchHasBeenSet() const;
 
                     /**
-                     * 获取回源客户端IP请求头名称
+                     * 获取回源时，存放客户端IP的请求头名称。
+为空则使用默认值：X-Forwarded-IP。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return HeaderName 回源客户端IP请求头名称
+                     * @return HeaderName 回源时，存放客户端IP的请求头名称。
+为空则使用默认值：X-Forwarded-IP。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetHeaderName() const;
 
                     /**
-                     * 设置回源客户端IP请求头名称
+                     * 设置回源时，存放客户端IP的请求头名称。
+为空则使用默认值：X-Forwarded-IP。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param HeaderName 回源客户端IP请求头名称
+                     * @param HeaderName 回源时，存放客户端IP的请求头名称。
+为空则使用默认值：X-Forwarded-IP。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetHeaderName(const std::string& _headerName);
@@ -93,14 +105,17 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 客户端IP头部配置开关
+                     * 配置开关，取值有：
+<li>on：开启；</li>
+<li>off：关闭。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_switch;
                     bool m_switchHasBeenSet;
 
                     /**
-                     * 回源客户端IP请求头名称
+                     * 回源时，存放客户端IP的请求头名称。
+为空则使用默认值：X-Forwarded-IP。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_headerName;

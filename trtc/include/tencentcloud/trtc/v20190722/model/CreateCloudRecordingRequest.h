@@ -157,20 +157,20 @@ namespace TencentCloud
                     /**
                      * 获取TRTC房间号的类型，必须和录制的房间所对应的RoomId类型相同:
 0: 字符串类型的RoomId
-1: 32位整型的RoomId（默认）
+1: 32位整型的RoomId
                      * @return RoomIdType TRTC房间号的类型，必须和录制的房间所对应的RoomId类型相同:
 0: 字符串类型的RoomId
-1: 32位整型的RoomId（默认）
+1: 32位整型的RoomId
                      */
                     uint64_t GetRoomIdType() const;
 
                     /**
                      * 设置TRTC房间号的类型，必须和录制的房间所对应的RoomId类型相同:
 0: 字符串类型的RoomId
-1: 32位整型的RoomId（默认）
+1: 32位整型的RoomId
                      * @param RoomIdType TRTC房间号的类型，必须和录制的房间所对应的RoomId类型相同:
 0: 字符串类型的RoomId
-1: 32位整型的RoomId（默认）
+1: 32位整型的RoomId
                      */
                     void SetRoomIdType(const uint64_t& _roomIdType);
 
@@ -293,7 +293,7 @@ namespace TencentCloud
                     /**
                      * TRTC房间号的类型，必须和录制的房间所对应的RoomId类型相同:
 0: 字符串类型的RoomId
-1: 32位整型的RoomId（默认）
+1: 32位整型的RoomId
                      */
                     uint64_t m_roomIdType;
                     bool m_roomIdTypeHasBeenSet;

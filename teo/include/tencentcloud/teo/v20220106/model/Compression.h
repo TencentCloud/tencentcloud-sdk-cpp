@@ -47,22 +47,22 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取智能压缩配置开关
-on：开启
-off：关闭
-                     * @return Switch 智能压缩配置开关
-on：开启
-off：关闭
+                     * 获取智能压缩配置开关，取值有：
+<li>on：开启；</li>
+<li>off：关闭。</li>
+                     * @return Switch 智能压缩配置开关，取值有：
+<li>on：开启；</li>
+<li>off：关闭。</li>
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置智能压缩配置开关
-on：开启
-off：关闭
-                     * @param Switch 智能压缩配置开关
-on：开启
-off：关闭
+                     * 设置智能压缩配置开关，取值有：
+<li>on：开启；</li>
+<li>off：关闭。</li>
+                     * @param Switch 智能压缩配置开关，取值有：
+<li>on：开启；</li>
+<li>off：关闭。</li>
                      */
                     void SetSwitch(const std::string& _switch);
 
@@ -73,17 +73,25 @@ off：关闭
                     bool SwitchHasBeenSet() const;
 
                     /**
-                     * 获取支持的压缩算法列表
+                     * 获取支持的压缩算法列表，取值有：
+<li>brotli：brotli算法；</li>
+<li>gzip：gzip算法。</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Algorithms 支持的压缩算法列表
+                     * @return Algorithms 支持的压缩算法列表，取值有：
+<li>brotli：brotli算法；</li>
+<li>gzip：gzip算法。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> GetAlgorithms() const;
 
                     /**
-                     * 设置支持的压缩算法列表
+                     * 设置支持的压缩算法列表，取值有：
+<li>brotli：brotli算法；</li>
+<li>gzip：gzip算法。</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Algorithms 支持的压缩算法列表
+                     * @param Algorithms 支持的压缩算法列表，取值有：
+<li>brotli：brotli算法；</li>
+<li>gzip：gzip算法。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetAlgorithms(const std::vector<std::string>& _algorithms);
@@ -97,15 +105,17 @@ off：关闭
                 private:
 
                     /**
-                     * 智能压缩配置开关
-on：开启
-off：关闭
+                     * 智能压缩配置开关，取值有：
+<li>on：开启；</li>
+<li>off：关闭。</li>
                      */
                     std::string m_switch;
                     bool m_switchHasBeenSet;
 
                     /**
-                     * 支持的压缩算法列表
+                     * 支持的压缩算法列表，取值有：
+<li>brotli：brotli算法；</li>
+<li>gzip：gzip算法。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_algorithms;

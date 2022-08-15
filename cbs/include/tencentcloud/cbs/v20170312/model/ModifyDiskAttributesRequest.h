@@ -61,24 +61,6 @@ namespace TencentCloud
                     bool DiskIdsHasBeenSet() const;
 
                     /**
-                     * 获取新的云硬盘项目ID，只支持修改弹性云盘的项目ID。通过[DescribeProject](/document/api/378/4400)接口查询可用项目及其ID。
-                     * @return ProjectId 新的云硬盘项目ID，只支持修改弹性云盘的项目ID。通过[DescribeProject](/document/api/378/4400)接口查询可用项目及其ID。
-                     */
-                    uint64_t GetProjectId() const;
-
-                    /**
-                     * 设置新的云硬盘项目ID，只支持修改弹性云盘的项目ID。通过[DescribeProject](/document/api/378/4400)接口查询可用项目及其ID。
-                     * @param ProjectId 新的云硬盘项目ID，只支持修改弹性云盘的项目ID。通过[DescribeProject](/document/api/378/4400)接口查询可用项目及其ID。
-                     */
-                    void SetProjectId(const uint64_t& _projectId);
-
-                    /**
-                     * 判断参数 ProjectId 是否已赋值
-                     * @return ProjectId 是否已赋值
-                     */
-                    bool ProjectIdHasBeenSet() const;
-
-                    /**
                      * 获取新的云硬盘名称。
                      * @return DiskName 新的云硬盘名称。
                      */
@@ -113,6 +95,24 @@ namespace TencentCloud
                      * @return Portable 是否已赋值
                      */
                     bool PortableHasBeenSet() const;
+
+                    /**
+                     * 获取新的云硬盘项目ID，只支持修改弹性云盘的项目ID。通过[DescribeProject](/document/api/378/4400)接口查询可用项目及其ID。
+                     * @return ProjectId 新的云硬盘项目ID，只支持修改弹性云盘的项目ID。通过[DescribeProject](/document/api/378/4400)接口查询可用项目及其ID。
+                     */
+                    uint64_t GetProjectId() const;
+
+                    /**
+                     * 设置新的云硬盘项目ID，只支持修改弹性云盘的项目ID。通过[DescribeProject](/document/api/378/4400)接口查询可用项目及其ID。
+                     * @param ProjectId 新的云硬盘项目ID，只支持修改弹性云盘的项目ID。通过[DescribeProject](/document/api/378/4400)接口查询可用项目及其ID。
+                     */
+                    void SetProjectId(const uint64_t& _projectId);
+
+                    /**
+                     * 判断参数 ProjectId 是否已赋值
+                     * @return ProjectId 是否已赋值
+                     */
+                    bool ProjectIdHasBeenSet() const;
 
                     /**
                      * 获取成功挂载到云主机后该云硬盘是否随云主机销毁，TRUE表示随云主机销毁，FALSE表示不随云主机销毁。仅支持按量计费云硬盘数据盘。
@@ -159,12 +159,6 @@ namespace TencentCloud
                     bool m_diskIdsHasBeenSet;
 
                     /**
-                     * 新的云硬盘项目ID，只支持修改弹性云盘的项目ID。通过[DescribeProject](/document/api/378/4400)接口查询可用项目及其ID。
-                     */
-                    uint64_t m_projectId;
-                    bool m_projectIdHasBeenSet;
-
-                    /**
                      * 新的云硬盘名称。
                      */
                     std::string m_diskName;
@@ -175,6 +169,12 @@ namespace TencentCloud
                      */
                     bool m_portable;
                     bool m_portableHasBeenSet;
+
+                    /**
+                     * 新的云硬盘项目ID，只支持修改弹性云盘的项目ID。通过[DescribeProject](/document/api/378/4400)接口查询可用项目及其ID。
+                     */
+                    uint64_t m_projectId;
+                    bool m_projectIdHasBeenSet;
 
                     /**
                      * 成功挂载到云主机后该云硬盘是否随云主机销毁，TRUE表示随云主机销毁，FALSE表示不随云主机销毁。仅支持按量计费云硬盘数据盘。

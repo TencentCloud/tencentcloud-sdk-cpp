@@ -32,7 +32,8 @@ DescribeScenarioWithJobsRequest::DescribeScenarioWithJobsRequest() :
     m_orderByHasBeenSet(false),
     m_ascendHasBeenSet(false),
     m_scenarioRelatedJobsParamsHasBeenSet(false),
-    m_ignoreScriptHasBeenSet(false)
+    m_ignoreScriptHasBeenSet(false),
+    m_ignoreDatasetHasBeenSet(false)
 {
 }
 
@@ -132,6 +133,14 @@ string DescribeScenarioWithJobsRequest::ToJsonString() const
         string key = "IgnoreScript";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_ignoreScript, allocator);
+    }
+
+    if (m_ignoreDatasetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IgnoreDataset";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_ignoreDataset, allocator);
     }
 
 
@@ -300,6 +309,22 @@ void DescribeScenarioWithJobsRequest::SetIgnoreScript(const bool& _ignoreScript)
 bool DescribeScenarioWithJobsRequest::IgnoreScriptHasBeenSet() const
 {
     return m_ignoreScriptHasBeenSet;
+}
+
+bool DescribeScenarioWithJobsRequest::GetIgnoreDataset() const
+{
+    return m_ignoreDataset;
+}
+
+void DescribeScenarioWithJobsRequest::SetIgnoreDataset(const bool& _ignoreDataset)
+{
+    m_ignoreDataset = _ignoreDataset;
+    m_ignoreDatasetHasBeenSet = true;
+}
+
+bool DescribeScenarioWithJobsRequest::IgnoreDatasetHasBeenSet() const
+{
+    return m_ignoreDatasetHasBeenSet;
 }
 
 

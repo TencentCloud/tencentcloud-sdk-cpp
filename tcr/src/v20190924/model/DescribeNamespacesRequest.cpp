@@ -28,7 +28,8 @@ DescribeNamespacesRequest::DescribeNamespacesRequest() :
     m_limitHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_allHasBeenSet(false),
-    m_filtersHasBeenSet(false)
+    m_filtersHasBeenSet(false),
+    m_kmsSignPolicyHasBeenSet(false)
 {
 }
 
@@ -92,6 +93,14 @@ string DescribeNamespacesRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_kmsSignPolicyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KmsSignPolicy";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_kmsSignPolicy, allocator);
     }
 
 
@@ -196,6 +205,22 @@ void DescribeNamespacesRequest::SetFilters(const vector<Filter>& _filters)
 bool DescribeNamespacesRequest::FiltersHasBeenSet() const
 {
     return m_filtersHasBeenSet;
+}
+
+bool DescribeNamespacesRequest::GetKmsSignPolicy() const
+{
+    return m_kmsSignPolicy;
+}
+
+void DescribeNamespacesRequest::SetKmsSignPolicy(const bool& _kmsSignPolicy)
+{
+    m_kmsSignPolicy = _kmsSignPolicy;
+    m_kmsSignPolicyHasBeenSet = true;
+}
+
+bool DescribeNamespacesRequest::KmsSignPolicyHasBeenSet() const
+{
+    return m_kmsSignPolicyHasBeenSet;
 }
 
 

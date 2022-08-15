@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/teo/v20220106/model/Ipv6Access.h>
 
 
 namespace TencentCloud
@@ -43,14 +44,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取站点ID
-                     * @return ZoneId 站点ID
+                     * 获取站点ID。
+                     * @return ZoneId 站点ID。
                      */
                     std::string GetZoneId() const;
 
                     /**
-                     * 设置站点ID
-                     * @param ZoneId 站点ID
+                     * 设置站点ID。
+                     * @param ZoneId 站点ID。
                      */
                     void SetZoneId(const std::string& _zoneId);
 
@@ -61,14 +62,14 @@ namespace TencentCloud
                     bool ZoneIdHasBeenSet() const;
 
                     /**
-                     * 获取代理ID
-                     * @return ProxyId 代理ID
+                     * 获取代理ID。
+                     * @return ProxyId 代理ID。
                      */
                     std::string GetProxyId() const;
 
                     /**
-                     * 设置代理ID
-                     * @param ProxyId 代理ID
+                     * 设置代理ID。
+                     * @param ProxyId 代理ID。
                      */
                     void SetProxyId(const std::string& _proxyId);
 
@@ -79,22 +80,18 @@ namespace TencentCloud
                     bool ProxyIdHasBeenSet() const;
 
                     /**
-                     * 获取代理名称
-当ProxyType=hostname时，表示域名或者子域名
-当ProxyType=instance时，表示实例名称
-                     * @return ProxyName 代理名称
-当ProxyType=hostname时，表示域名或者子域名
-当ProxyType=instance时，表示实例名称
+                     * 获取当ProxyType=hostname时，表示域名或子域名；
+当ProxyType=instance时，表示代理名称。
+                     * @return ProxyName 当ProxyType=hostname时，表示域名或子域名；
+当ProxyType=instance时，表示代理名称。
                      */
                     std::string GetProxyName() const;
 
                     /**
-                     * 设置代理名称
-当ProxyType=hostname时，表示域名或者子域名
-当ProxyType=instance时，表示实例名称
-                     * @param ProxyName 代理名称
-当ProxyType=hostname时，表示域名或者子域名
-当ProxyType=instance时，表示实例名称
+                     * 设置当ProxyType=hostname时，表示域名或子域名；
+当ProxyType=instance时，表示代理名称。
+                     * @param ProxyName 当ProxyType=hostname时，表示域名或子域名；
+当ProxyType=instance时，表示代理名称。
                      */
                     void SetProxyName(const std::string& _proxyName);
 
@@ -105,14 +102,14 @@ namespace TencentCloud
                     bool ProxyNameHasBeenSet() const;
 
                     /**
-                     * 获取参数已经废弃
-                     * @return ForwardClientIp 参数已经废弃
+                     * 获取参数已经废弃。
+                     * @return ForwardClientIp 参数已经废弃。
                      */
                     std::string GetForwardClientIp() const;
 
                     /**
-                     * 设置参数已经废弃
-                     * @param ForwardClientIp 参数已经废弃
+                     * 设置参数已经废弃。
+                     * @param ForwardClientIp 参数已经废弃。
                      */
                     void SetForwardClientIp(const std::string& _forwardClientIp);
 
@@ -123,14 +120,14 @@ namespace TencentCloud
                     bool ForwardClientIpHasBeenSet() const;
 
                     /**
-                     * 获取参数已经废弃
-                     * @return SessionPersist 参数已经废弃
+                     * 获取参数已经废弃。
+                     * @return SessionPersist 参数已经废弃。
                      */
                     bool GetSessionPersist() const;
 
                     /**
-                     * 设置参数已经废弃
-                     * @param SessionPersist 参数已经废弃
+                     * 设置参数已经废弃。
+                     * @param SessionPersist 参数已经废弃。
                      */
                     void SetSessionPersist(const bool& _sessionPersist);
 
@@ -141,14 +138,14 @@ namespace TencentCloud
                     bool SessionPersistHasBeenSet() const;
 
                     /**
-                     * 获取会话保持时间，取值范围：30-3600，单位：秒
-                     * @return SessionPersistTime 会话保持时间，取值范围：30-3600，单位：秒
+                     * 获取会话保持时间，不填写保持原有配置。取值范围：30-3600，单位：秒。
+                     * @return SessionPersistTime 会话保持时间，不填写保持原有配置。取值范围：30-3600，单位：秒。
                      */
                     uint64_t GetSessionPersistTime() const;
 
                     /**
-                     * 设置会话保持时间，取值范围：30-3600，单位：秒
-                     * @param SessionPersistTime 会话保持时间，取值范围：30-3600，单位：秒
+                     * 设置会话保持时间，不填写保持原有配置。取值范围：30-3600，单位：秒。
+                     * @param SessionPersistTime 会话保持时间，不填写保持原有配置。取值范围：30-3600，单位：秒。
                      */
                     void SetSessionPersistTime(const uint64_t& _sessionPersistTime);
 
@@ -159,22 +156,22 @@ namespace TencentCloud
                     bool SessionPersistTimeHasBeenSet() const;
 
                     /**
-                     * 获取服务类型
-hostname：子域名模式
-instance：实例模式
-                     * @return ProxyType 服务类型
-hostname：子域名模式
-instance：实例模式
+                     * 获取四层代理模式，取值有：
+<li>hostname：表示子域名模式；</li>
+<li>instance：表示实例模式。</li>不填写保持原有配置。
+                     * @return ProxyType 四层代理模式，取值有：
+<li>hostname：表示子域名模式；</li>
+<li>instance：表示实例模式。</li>不填写保持原有配置。
                      */
                     std::string GetProxyType() const;
 
                     /**
-                     * 设置服务类型
-hostname：子域名模式
-instance：实例模式
-                     * @param ProxyType 服务类型
-hostname：子域名模式
-instance：实例模式
+                     * 设置四层代理模式，取值有：
+<li>hostname：表示子域名模式；</li>
+<li>instance：表示实例模式。</li>不填写保持原有配置。
+                     * @param ProxyType 四层代理模式，取值有：
+<li>hostname：表示子域名模式；</li>
+<li>instance：表示实例模式。</li>不填写保持原有配置。
                      */
                     void SetProxyType(const std::string& _proxyType);
 
@@ -184,53 +181,76 @@ instance：实例模式
                      */
                     bool ProxyTypeHasBeenSet() const;
 
+                    /**
+                     * 获取Ipv6访问配置，不填写保持原有配置。
+                     * @return Ipv6 Ipv6访问配置，不填写保持原有配置。
+                     */
+                    Ipv6Access GetIpv6() const;
+
+                    /**
+                     * 设置Ipv6访问配置，不填写保持原有配置。
+                     * @param Ipv6 Ipv6访问配置，不填写保持原有配置。
+                     */
+                    void SetIpv6(const Ipv6Access& _ipv6);
+
+                    /**
+                     * 判断参数 Ipv6 是否已赋值
+                     * @return Ipv6 是否已赋值
+                     */
+                    bool Ipv6HasBeenSet() const;
+
                 private:
 
                     /**
-                     * 站点ID
+                     * 站点ID。
                      */
                     std::string m_zoneId;
                     bool m_zoneIdHasBeenSet;
 
                     /**
-                     * 代理ID
+                     * 代理ID。
                      */
                     std::string m_proxyId;
                     bool m_proxyIdHasBeenSet;
 
                     /**
-                     * 代理名称
-当ProxyType=hostname时，表示域名或者子域名
-当ProxyType=instance时，表示实例名称
+                     * 当ProxyType=hostname时，表示域名或子域名；
+当ProxyType=instance时，表示代理名称。
                      */
                     std::string m_proxyName;
                     bool m_proxyNameHasBeenSet;
 
                     /**
-                     * 参数已经废弃
+                     * 参数已经废弃。
                      */
                     std::string m_forwardClientIp;
                     bool m_forwardClientIpHasBeenSet;
 
                     /**
-                     * 参数已经废弃
+                     * 参数已经废弃。
                      */
                     bool m_sessionPersist;
                     bool m_sessionPersistHasBeenSet;
 
                     /**
-                     * 会话保持时间，取值范围：30-3600，单位：秒
+                     * 会话保持时间，不填写保持原有配置。取值范围：30-3600，单位：秒。
                      */
                     uint64_t m_sessionPersistTime;
                     bool m_sessionPersistTimeHasBeenSet;
 
                     /**
-                     * 服务类型
-hostname：子域名模式
-instance：实例模式
+                     * 四层代理模式，取值有：
+<li>hostname：表示子域名模式；</li>
+<li>instance：表示实例模式。</li>不填写保持原有配置。
                      */
                     std::string m_proxyType;
                     bool m_proxyTypeHasBeenSet;
+
+                    /**
+                     * Ipv6访问配置，不填写保持原有配置。
+                     */
+                    Ipv6Access m_ipv6;
+                    bool m_ipv6HasBeenSet;
 
                 };
             }

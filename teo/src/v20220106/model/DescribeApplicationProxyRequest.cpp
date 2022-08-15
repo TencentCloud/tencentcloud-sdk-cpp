@@ -25,7 +25,8 @@ using namespace std;
 DescribeApplicationProxyRequest::DescribeApplicationProxyRequest() :
     m_zoneIdHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_limitHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_proxyIdHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,14 @@ string DescribeApplicationProxyRequest::ToJsonString() const
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_proxyIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProxyId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_proxyId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -114,6 +123,22 @@ void DescribeApplicationProxyRequest::SetLimit(const int64_t& _limit)
 bool DescribeApplicationProxyRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+string DescribeApplicationProxyRequest::GetProxyId() const
+{
+    return m_proxyId;
+}
+
+void DescribeApplicationProxyRequest::SetProxyId(const string& _proxyId)
+{
+    m_proxyId = _proxyId;
+    m_proxyIdHasBeenSet = true;
+}
+
+bool DescribeApplicationProxyRequest::ProxyIdHasBeenSet() const
+{
+    return m_proxyIdHasBeenSet;
 }
 
 

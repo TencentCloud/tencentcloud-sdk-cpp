@@ -36,7 +36,8 @@ ApplicationProxy::ApplicationProxy() :
     m_zoneNameHasBeenSet(false),
     m_sessionPersistTimeHasBeenSet(false),
     m_proxyTypeHasBeenSet(false),
-    m_hostIdHasBeenSet(false)
+    m_hostIdHasBeenSet(false),
+    m_ipv6HasBeenSet(false)
 {
 }
 
@@ -218,6 +219,23 @@ CoreInternalOutcome ApplicationProxy::Deserialize(const rapidjson::Value &value)
         m_hostIdHasBeenSet = true;
     }
 
+    if (value.HasMember("Ipv6") && !value["Ipv6"].IsNull())
+    {
+        if (!value["Ipv6"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApplicationProxy.Ipv6` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_ipv6.Deserialize(value["Ipv6"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_ipv6HasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -363,6 +381,15 @@ void ApplicationProxy::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "HostId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_hostId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ipv6HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Ipv6";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_ipv6.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -622,5 +649,21 @@ void ApplicationProxy::SetHostId(const string& _hostId)
 bool ApplicationProxy::HostIdHasBeenSet() const
 {
     return m_hostIdHasBeenSet;
+}
+
+Ipv6Access ApplicationProxy::GetIpv6() const
+{
+    return m_ipv6;
+}
+
+void ApplicationProxy::SetIpv6(const Ipv6Access& _ipv6)
+{
+    m_ipv6 = _ipv6;
+    m_ipv6HasBeenSet = true;
+}
+
+bool ApplicationProxy::Ipv6HasBeenSet() const
+{
+    return m_ipv6HasBeenSet;
 }
 

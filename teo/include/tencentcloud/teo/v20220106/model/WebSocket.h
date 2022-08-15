@@ -47,14 +47,22 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取WebSocket 超时配置开关, 开关为off时，平台仍支持WebSocket连接，此时超时时间默认为15秒，若需要调整超时时间，将开关置为on.
-                     * @return Switch WebSocket 超时配置开关, 开关为off时，平台仍支持WebSocket连接，此时超时时间默认为15秒，若需要调整超时时间，将开关置为on.
+                     * 获取WebSocket 超时时间配置开关，取值有：
+<li>on：使用Timeout作为WebSocket超时时间；</li>
+<li>off：平台仍支持WebSocket连接，此时使用系统默认的15秒为超时时间。</li>
+                     * @return Switch WebSocket 超时时间配置开关，取值有：
+<li>on：使用Timeout作为WebSocket超时时间；</li>
+<li>off：平台仍支持WebSocket连接，此时使用系统默认的15秒为超时时间。</li>
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置WebSocket 超时配置开关, 开关为off时，平台仍支持WebSocket连接，此时超时时间默认为15秒，若需要调整超时时间，将开关置为on.
-                     * @param Switch WebSocket 超时配置开关, 开关为off时，平台仍支持WebSocket连接，此时超时时间默认为15秒，若需要调整超时时间，将开关置为on.
+                     * 设置WebSocket 超时时间配置开关，取值有：
+<li>on：使用Timeout作为WebSocket超时时间；</li>
+<li>off：平台仍支持WebSocket连接，此时使用系统默认的15秒为超时时间。</li>
+                     * @param Switch WebSocket 超时时间配置开关，取值有：
+<li>on：使用Timeout作为WebSocket超时时间；</li>
+<li>off：平台仍支持WebSocket连接，此时使用系统默认的15秒为超时时间。</li>
                      */
                     void SetSwitch(const std::string& _switch);
 
@@ -65,14 +73,14 @@ namespace TencentCloud
                     bool SwitchHasBeenSet() const;
 
                     /**
-                     * 获取设置超时时间，单位为秒，最大超时时间120秒。
-                     * @return Timeout 设置超时时间，单位为秒，最大超时时间120秒。
+                     * 获取超时时间，单位为秒，最大超时时间120秒。
+                     * @return Timeout 超时时间，单位为秒，最大超时时间120秒。
                      */
                     int64_t GetTimeout() const;
 
                     /**
-                     * 设置设置超时时间，单位为秒，最大超时时间120秒。
-                     * @param Timeout 设置超时时间，单位为秒，最大超时时间120秒。
+                     * 设置超时时间，单位为秒，最大超时时间120秒。
+                     * @param Timeout 超时时间，单位为秒，最大超时时间120秒。
                      */
                     void SetTimeout(const int64_t& _timeout);
 
@@ -85,13 +93,15 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * WebSocket 超时配置开关, 开关为off时，平台仍支持WebSocket连接，此时超时时间默认为15秒，若需要调整超时时间，将开关置为on.
+                     * WebSocket 超时时间配置开关，取值有：
+<li>on：使用Timeout作为WebSocket超时时间；</li>
+<li>off：平台仍支持WebSocket连接，此时使用系统默认的15秒为超时时间。</li>
                      */
                     std::string m_switch;
                     bool m_switchHasBeenSet;
 
                     /**
-                     * 设置超时时间，单位为秒，最大超时时间120秒。
+                     * 超时时间，单位为秒，最大超时时间120秒。
                      */
                     int64_t m_timeout;
                     bool m_timeoutHasBeenSet;

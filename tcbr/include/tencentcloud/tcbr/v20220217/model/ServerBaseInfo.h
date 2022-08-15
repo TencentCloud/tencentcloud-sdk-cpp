@@ -136,6 +136,24 @@ namespace TencentCloud
                      */
                     bool UpdateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取公网访问类型
+                     * @return AccessTypes 公网访问类型
+                     */
+                    std::vector<std::string> GetAccessTypes() const;
+
+                    /**
+                     * 设置公网访问类型
+                     * @param AccessTypes 公网访问类型
+                     */
+                    void SetAccessTypes(const std::vector<std::string>& _accessTypes);
+
+                    /**
+                     * 判断参数 AccessTypes 是否已赋值
+                     * @return AccessTypes 是否已赋值
+                     */
+                    bool AccessTypesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -167,6 +185,12 @@ namespace TencentCloud
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
+
+                    /**
+                     * 公网访问类型
+                     */
+                    std::vector<std::string> m_accessTypes;
+                    bool m_accessTypesHasBeenSet;
 
                 };
             }

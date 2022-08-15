@@ -23,6 +23,9 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/ams/v20201229/model/TextResult.h>
 #include <tencentcloud/ams/v20201229/model/MoanResult.h>
+#include <tencentcloud/ams/v20201229/model/AudioResultDetailLanguageResult.h>
+#include <tencentcloud/ams/v20201229/model/AudioResultDetailSpeakerResult.h>
+#include <tencentcloud/ams/v20201229/model/RecognitionResult.h>
 
 
 namespace TencentCloud
@@ -161,6 +164,64 @@ Block 建议屏蔽；
                      */
                     bool MoanResultsHasBeenSet() const;
 
+                    /**
+                     * 获取该字段用于返回当前标签（Lable）下的二级标签。
+注意：此字段可能返回null，表示取不到有效值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SubLabel 该字段用于返回当前标签（Lable）下的二级标签。
+注意：此字段可能返回null，表示取不到有效值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetSubLabel() const;
+
+                    /**
+                     * 判断参数 SubLabel 是否已赋值
+                     * @return SubLabel 是否已赋值
+                     */
+                    bool SubLabelHasBeenSet() const;
+
+                    /**
+                     * 获取该字段用于返回音频小语种检测的详细审核结果。具体结果内容请参见AudioResultDetailLanguageResult数据结构的细节描述。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LanguageResults 该字段用于返回音频小语种检测的详细审核结果。具体结果内容请参见AudioResultDetailLanguageResult数据结构的细节描述。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<AudioResultDetailLanguageResult> GetLanguageResults() const;
+
+                    /**
+                     * 判断参数 LanguageResults 是否已赋值
+                     * @return LanguageResults 是否已赋值
+                     */
+                    bool LanguageResultsHasBeenSet() const;
+
+                    /**
+                     * 获取音频中说话人识别返回结果；
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SpeakerResults 音频中说话人识别返回结果；
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<AudioResultDetailSpeakerResult> GetSpeakerResults() const;
+
+                    /**
+                     * 判断参数 SpeakerResults 是否已赋值
+                     * @return SpeakerResults 是否已赋值
+                     */
+                    bool SpeakerResultsHasBeenSet() const;
+
+                    /**
+                     * 获取识别类标签结果信息列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RecognitionResults 识别类标签结果信息列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<RecognitionResult> GetRecognitionResults() const;
+
+                    /**
+                     * 判断参数 RecognitionResults 是否已赋值
+                     * @return RecognitionResults 是否已赋值
+                     */
+                    bool RecognitionResultsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -220,6 +281,35 @@ Block 建议屏蔽；
                      */
                     std::vector<MoanResult> m_moanResults;
                     bool m_moanResultsHasBeenSet;
+
+                    /**
+                     * 该字段用于返回当前标签（Lable）下的二级标签。
+注意：此字段可能返回null，表示取不到有效值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_subLabel;
+                    bool m_subLabelHasBeenSet;
+
+                    /**
+                     * 该字段用于返回音频小语种检测的详细审核结果。具体结果内容请参见AudioResultDetailLanguageResult数据结构的细节描述。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<AudioResultDetailLanguageResult> m_languageResults;
+                    bool m_languageResultsHasBeenSet;
+
+                    /**
+                     * 音频中说话人识别返回结果；
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<AudioResultDetailSpeakerResult> m_speakerResults;
+                    bool m_speakerResultsHasBeenSet;
+
+                    /**
+                     * 识别类标签结果信息列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<RecognitionResult> m_recognitionResults;
+                    bool m_recognitionResultsHasBeenSet;
 
                 };
             }

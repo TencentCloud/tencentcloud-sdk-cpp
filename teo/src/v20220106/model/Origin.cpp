@@ -21,7 +21,10 @@ using namespace TencentCloud::Teo::V20220106::Model;
 using namespace std;
 
 Origin::Origin() :
-    m_originPullProtocolHasBeenSet(false)
+    m_originsHasBeenSet(false),
+    m_backupOriginsHasBeenSet(false),
+    m_originPullProtocolHasBeenSet(false),
+    m_cosPrivateAccessHasBeenSet(false)
 {
 }
 
@@ -29,6 +32,32 @@ CoreInternalOutcome Origin::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
+
+    if (value.HasMember("Origins") && !value["Origins"].IsNull())
+    {
+        if (!value["Origins"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Origin.Origins` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Origins"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_origins.push_back((*itr).GetString());
+        }
+        m_originsHasBeenSet = true;
+    }
+
+    if (value.HasMember("BackupOrigins") && !value["BackupOrigins"].IsNull())
+    {
+        if (!value["BackupOrigins"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Origin.BackupOrigins` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["BackupOrigins"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_backupOrigins.push_back((*itr).GetString());
+        }
+        m_backupOriginsHasBeenSet = true;
+    }
 
     if (value.HasMember("OriginPullProtocol") && !value["OriginPullProtocol"].IsNull())
     {
@@ -40,12 +69,48 @@ CoreInternalOutcome Origin::Deserialize(const rapidjson::Value &value)
         m_originPullProtocolHasBeenSet = true;
     }
 
+    if (value.HasMember("CosPrivateAccess") && !value["CosPrivateAccess"].IsNull())
+    {
+        if (!value["CosPrivateAccess"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Origin.CosPrivateAccess` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cosPrivateAccess = string(value["CosPrivateAccess"].GetString());
+        m_cosPrivateAccessHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
 void Origin::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
+
+    if (m_originsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Origins";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_origins.begin(); itr != m_origins.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_backupOriginsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BackupOrigins";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_backupOrigins.begin(); itr != m_backupOrigins.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
 
     if (m_originPullProtocolHasBeenSet)
     {
@@ -55,8 +120,48 @@ void Origin::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocato
         value.AddMember(iKey, rapidjson::Value(m_originPullProtocol.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_cosPrivateAccessHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CosPrivateAccess";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cosPrivateAccess.c_str(), allocator).Move(), allocator);
+    }
+
 }
 
+
+vector<string> Origin::GetOrigins() const
+{
+    return m_origins;
+}
+
+void Origin::SetOrigins(const vector<string>& _origins)
+{
+    m_origins = _origins;
+    m_originsHasBeenSet = true;
+}
+
+bool Origin::OriginsHasBeenSet() const
+{
+    return m_originsHasBeenSet;
+}
+
+vector<string> Origin::GetBackupOrigins() const
+{
+    return m_backupOrigins;
+}
+
+void Origin::SetBackupOrigins(const vector<string>& _backupOrigins)
+{
+    m_backupOrigins = _backupOrigins;
+    m_backupOriginsHasBeenSet = true;
+}
+
+bool Origin::BackupOriginsHasBeenSet() const
+{
+    return m_backupOriginsHasBeenSet;
+}
 
 string Origin::GetOriginPullProtocol() const
 {
@@ -72,5 +177,21 @@ void Origin::SetOriginPullProtocol(const string& _originPullProtocol)
 bool Origin::OriginPullProtocolHasBeenSet() const
 {
     return m_originPullProtocolHasBeenSet;
+}
+
+string Origin::GetCosPrivateAccess() const
+{
+    return m_cosPrivateAccess;
+}
+
+void Origin::SetCosPrivateAccess(const string& _cosPrivateAccess)
+{
+    m_cosPrivateAccess = _cosPrivateAccess;
+    m_cosPrivateAccessHasBeenSet = true;
+}
+
+bool Origin::CosPrivateAccessHasBeenSet() const
+{
+    return m_cosPrivateAccessHasBeenSet;
 }
 

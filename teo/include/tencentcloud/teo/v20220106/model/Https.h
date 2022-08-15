@@ -48,25 +48,25 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取http2 配置开关
-on：开启
-off：关闭
+                     * 获取http2 配置开关，取值有：
+<li>on：开启；</li>
+<li>off：关闭。</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Http2 http2 配置开关
-on：开启
-off：关闭
+                     * @return Http2 http2 配置开关，取值有：
+<li>on：开启；</li>
+<li>off：关闭。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetHttp2() const;
 
                     /**
-                     * 设置http2 配置开关
-on：开启
-off：关闭
+                     * 设置http2 配置开关，取值有：
+<li>on：开启；</li>
+<li>off：关闭。</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Http2 http2 配置开关
-on：开启
-off：关闭
+                     * @param Http2 http2 配置开关，取值有：
+<li>on：开启；</li>
+<li>off：关闭。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetHttp2(const std::string& _http2);
@@ -78,29 +78,25 @@ off：关闭
                     bool Http2HasBeenSet() const;
 
                     /**
-                     * 获取OCSP 配置开关
-on：开启
-off：关闭
-默认为关闭状态
+                     * 获取OCSP 配置开关，取值有：
+<li>on：开启；</li>
+<li>off：关闭。</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OcspStapling OCSP 配置开关
-on：开启
-off：关闭
-默认为关闭状态
+                     * @return OcspStapling OCSP 配置开关，取值有：
+<li>on：开启；</li>
+<li>off：关闭。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetOcspStapling() const;
 
                     /**
-                     * 设置OCSP 配置开关
-on：开启
-off：关闭
-默认为关闭状态
+                     * 设置OCSP 配置开关，取值有：
+<li>on：开启；</li>
+<li>off：关闭。</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OcspStapling OCSP 配置开关
-on：开启
-off：关闭
-默认为关闭状态
+                     * @param OcspStapling OCSP 配置开关，取值有：
+<li>on：开启；</li>
+<li>off：关闭。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetOcspStapling(const std::string& _ocspStapling);
@@ -112,17 +108,33 @@ off：关闭
                     bool OcspStaplingHasBeenSet() const;
 
                     /**
-                     * 获取Tls版本设置，支持设置 TLSv1, TLSV1.1, TLSV1.2, TLSv1.3，修改时必须开启连续的版本
+                     * 获取Tls版本设置，取值有：
+<li>TLSv1：TLSv1版本；</li>
+<li>TLSV1.1：TLSv1.1版本；</li>
+<li>TLSV1.2：TLSv1.2版本；</li>
+<li>TLSv1.3：TLSv1.3版本。</li>修改时必须开启连续的版本。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TlsVersion Tls版本设置，支持设置 TLSv1, TLSV1.1, TLSV1.2, TLSv1.3，修改时必须开启连续的版本
+                     * @return TlsVersion Tls版本设置，取值有：
+<li>TLSv1：TLSv1版本；</li>
+<li>TLSV1.1：TLSv1.1版本；</li>
+<li>TLSV1.2：TLSv1.2版本；</li>
+<li>TLSv1.3：TLSv1.3版本。</li>修改时必须开启连续的版本。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> GetTlsVersion() const;
 
                     /**
-                     * 设置Tls版本设置，支持设置 TLSv1, TLSV1.1, TLSV1.2, TLSv1.3，修改时必须开启连续的版本
+                     * 设置Tls版本设置，取值有：
+<li>TLSv1：TLSv1版本；</li>
+<li>TLSV1.1：TLSv1.1版本；</li>
+<li>TLSV1.2：TLSv1.2版本；</li>
+<li>TLSv1.3：TLSv1.3版本。</li>修改时必须开启连续的版本。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TlsVersion Tls版本设置，支持设置 TLSv1, TLSV1.1, TLSV1.2, TLSv1.3，修改时必须开启连续的版本
+                     * @param TlsVersion Tls版本设置，取值有：
+<li>TLSv1：TLSv1版本；</li>
+<li>TLSV1.1：TLSv1.1版本；</li>
+<li>TLSV1.2：TLSv1.2版本；</li>
+<li>TLSv1.3：TLSv1.3版本。</li>修改时必须开启连续的版本。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetTlsVersion(const std::vector<std::string>& _tlsVersion);
@@ -158,26 +170,29 @@ off：关闭
                 private:
 
                     /**
-                     * http2 配置开关
-on：开启
-off：关闭
+                     * http2 配置开关，取值有：
+<li>on：开启；</li>
+<li>off：关闭。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_http2;
                     bool m_http2HasBeenSet;
 
                     /**
-                     * OCSP 配置开关
-on：开启
-off：关闭
-默认为关闭状态
+                     * OCSP 配置开关，取值有：
+<li>on：开启；</li>
+<li>off：关闭。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ocspStapling;
                     bool m_ocspStaplingHasBeenSet;
 
                     /**
-                     * Tls版本设置，支持设置 TLSv1, TLSV1.1, TLSV1.2, TLSv1.3，修改时必须开启连续的版本
+                     * Tls版本设置，取值有：
+<li>TLSv1：TLSv1版本；</li>
+<li>TLSV1.1：TLSv1.1版本；</li>
+<li>TLSV1.2：TLSv1.2版本；</li>
+<li>TLSv1.3：TLSv1.3版本。</li>修改时必须开启连续的版本。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_tlsVersion;

@@ -25,7 +25,8 @@ using namespace std;
 ModifyPrivateZoneRequest::ModifyPrivateZoneRequest() :
     m_zoneIdHasBeenSet(false),
     m_remarkHasBeenSet(false),
-    m_dnsForwardStatusHasBeenSet(false)
+    m_dnsForwardStatusHasBeenSet(false),
+    m_cnameSpeedupStatusHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,14 @@ string ModifyPrivateZoneRequest::ToJsonString() const
         string key = "DnsForwardStatus";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_dnsForwardStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cnameSpeedupStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CnameSpeedupStatus";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_cnameSpeedupStatus.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -114,6 +123,22 @@ void ModifyPrivateZoneRequest::SetDnsForwardStatus(const string& _dnsForwardStat
 bool ModifyPrivateZoneRequest::DnsForwardStatusHasBeenSet() const
 {
     return m_dnsForwardStatusHasBeenSet;
+}
+
+string ModifyPrivateZoneRequest::GetCnameSpeedupStatus() const
+{
+    return m_cnameSpeedupStatus;
+}
+
+void ModifyPrivateZoneRequest::SetCnameSpeedupStatus(const string& _cnameSpeedupStatus)
+{
+    m_cnameSpeedupStatus = _cnameSpeedupStatus;
+    m_cnameSpeedupStatusHasBeenSet = true;
+}
+
+bool ModifyPrivateZoneRequest::CnameSpeedupStatusHasBeenSet() const
+{
+    return m_cnameSpeedupStatusHasBeenSet;
 }
 
 

@@ -24,10 +24,10 @@ using namespace TencentCloud::Teo::V20220106::Model;
 using namespace std;
 
 DescribeZoneSettingResponse::DescribeZoneSettingResponse() :
+    m_zoneIdHasBeenSet(false),
+    m_zoneHasBeenSet(false),
     m_cacheHasBeenSet(false),
     m_cacheKeyHasBeenSet(false),
-    m_maxAgeHasBeenSet(false),
-    m_offlineCacheHasBeenSet(false),
     m_quicHasBeenSet(false),
     m_postMaxSizeHasBeenSet(false),
     m_compressionHasBeenSet(false),
@@ -36,11 +36,12 @@ DescribeZoneSettingResponse::DescribeZoneSettingResponse() :
     m_httpsHasBeenSet(false),
     m_originHasBeenSet(false),
     m_smartRoutingHasBeenSet(false),
-    m_zoneIdHasBeenSet(false),
-    m_zoneHasBeenSet(false),
+    m_maxAgeHasBeenSet(false),
+    m_offlineCacheHasBeenSet(false),
     m_webSocketHasBeenSet(false),
     m_clientIpHeaderHasBeenSet(false),
-    m_cachePrefreshHasBeenSet(false)
+    m_cachePrefreshHasBeenSet(false),
+    m_ipv6HasBeenSet(false)
 {
 }
 
@@ -78,6 +79,26 @@ CoreInternalOutcome DescribeZoneSettingResponse::Deserialize(const string &paylo
     }
 
 
+    if (rsp.HasMember("ZoneId") && !rsp["ZoneId"].IsNull())
+    {
+        if (!rsp["ZoneId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ZoneId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_zoneId = string(rsp["ZoneId"].GetString());
+        m_zoneIdHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Zone") && !rsp["Zone"].IsNull())
+    {
+        if (!rsp["Zone"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Zone` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_zone = string(rsp["Zone"].GetString());
+        m_zoneHasBeenSet = true;
+    }
+
     if (rsp.HasMember("Cache") && !rsp["Cache"].IsNull())
     {
         if (!rsp["Cache"].IsObject())
@@ -110,40 +131,6 @@ CoreInternalOutcome DescribeZoneSettingResponse::Deserialize(const string &paylo
         }
 
         m_cacheKeyHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("MaxAge") && !rsp["MaxAge"].IsNull())
-    {
-        if (!rsp["MaxAge"].IsObject())
-        {
-            return CoreInternalOutcome(Core::Error("response `MaxAge` is not object type").SetRequestId(requestId));
-        }
-
-        CoreInternalOutcome outcome = m_maxAge.Deserialize(rsp["MaxAge"]);
-        if (!outcome.IsSuccess())
-        {
-            outcome.GetError().SetRequestId(requestId);
-            return outcome;
-        }
-
-        m_maxAgeHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("OfflineCache") && !rsp["OfflineCache"].IsNull())
-    {
-        if (!rsp["OfflineCache"].IsObject())
-        {
-            return CoreInternalOutcome(Core::Error("response `OfflineCache` is not object type").SetRequestId(requestId));
-        }
-
-        CoreInternalOutcome outcome = m_offlineCache.Deserialize(rsp["OfflineCache"]);
-        if (!outcome.IsSuccess())
-        {
-            outcome.GetError().SetRequestId(requestId);
-            return outcome;
-        }
-
-        m_offlineCacheHasBeenSet = true;
     }
 
     if (rsp.HasMember("Quic") && !rsp["Quic"].IsNull())
@@ -282,24 +269,38 @@ CoreInternalOutcome DescribeZoneSettingResponse::Deserialize(const string &paylo
         m_smartRoutingHasBeenSet = true;
     }
 
-    if (rsp.HasMember("ZoneId") && !rsp["ZoneId"].IsNull())
+    if (rsp.HasMember("MaxAge") && !rsp["MaxAge"].IsNull())
     {
-        if (!rsp["ZoneId"].IsString())
+        if (!rsp["MaxAge"].IsObject())
         {
-            return CoreInternalOutcome(Core::Error("response `ZoneId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MaxAge` is not object type").SetRequestId(requestId));
         }
-        m_zoneId = string(rsp["ZoneId"].GetString());
-        m_zoneIdHasBeenSet = true;
+
+        CoreInternalOutcome outcome = m_maxAge.Deserialize(rsp["MaxAge"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_maxAgeHasBeenSet = true;
     }
 
-    if (rsp.HasMember("Zone") && !rsp["Zone"].IsNull())
+    if (rsp.HasMember("OfflineCache") && !rsp["OfflineCache"].IsNull())
     {
-        if (!rsp["Zone"].IsString())
+        if (!rsp["OfflineCache"].IsObject())
         {
-            return CoreInternalOutcome(Core::Error("response `Zone` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OfflineCache` is not object type").SetRequestId(requestId));
         }
-        m_zone = string(rsp["Zone"].GetString());
-        m_zoneHasBeenSet = true;
+
+        CoreInternalOutcome outcome = m_offlineCache.Deserialize(rsp["OfflineCache"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_offlineCacheHasBeenSet = true;
     }
 
     if (rsp.HasMember("WebSocket") && !rsp["WebSocket"].IsNull())
@@ -353,6 +354,23 @@ CoreInternalOutcome DescribeZoneSettingResponse::Deserialize(const string &paylo
         m_cachePrefreshHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Ipv6") && !rsp["Ipv6"].IsNull())
+    {
+        if (!rsp["Ipv6"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Ipv6` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_ipv6.Deserialize(rsp["Ipv6"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_ipv6HasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -362,6 +380,22 @@ string DescribeZoneSettingResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_zoneIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ZoneId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_zoneId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_zoneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Zone";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_zone.c_str(), allocator).Move(), allocator);
+    }
 
     if (m_cacheHasBeenSet)
     {
@@ -379,24 +413,6 @@ string DescribeZoneSettingResponse::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_cacheKey.ToJsonObject(value[key.c_str()], allocator);
-    }
-
-    if (m_maxAgeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "MaxAge";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_maxAge.ToJsonObject(value[key.c_str()], allocator);
-    }
-
-    if (m_offlineCacheHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "OfflineCache";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_offlineCache.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_quicHasBeenSet)
@@ -471,20 +487,22 @@ string DescribeZoneSettingResponse::ToJsonString() const
         m_smartRouting.ToJsonObject(value[key.c_str()], allocator);
     }
 
-    if (m_zoneIdHasBeenSet)
+    if (m_maxAgeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ZoneId";
+        string key = "MaxAge";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_zoneId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_maxAge.ToJsonObject(value[key.c_str()], allocator);
     }
 
-    if (m_zoneHasBeenSet)
+    if (m_offlineCacheHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Zone";
+        string key = "OfflineCache";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_zone.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_offlineCache.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_webSocketHasBeenSet)
@@ -514,6 +532,15 @@ string DescribeZoneSettingResponse::ToJsonString() const
         m_cachePrefresh.ToJsonObject(value[key.c_str()], allocator);
     }
 
+    if (m_ipv6HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Ipv6";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_ipv6.ToJsonObject(value[key.c_str()], allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -525,6 +552,26 @@ string DescribeZoneSettingResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string DescribeZoneSettingResponse::GetZoneId() const
+{
+    return m_zoneId;
+}
+
+bool DescribeZoneSettingResponse::ZoneIdHasBeenSet() const
+{
+    return m_zoneIdHasBeenSet;
+}
+
+string DescribeZoneSettingResponse::GetZone() const
+{
+    return m_zone;
+}
+
+bool DescribeZoneSettingResponse::ZoneHasBeenSet() const
+{
+    return m_zoneHasBeenSet;
+}
 
 CacheConfig DescribeZoneSettingResponse::GetCache() const
 {
@@ -544,26 +591,6 @@ CacheKey DescribeZoneSettingResponse::GetCacheKey() const
 bool DescribeZoneSettingResponse::CacheKeyHasBeenSet() const
 {
     return m_cacheKeyHasBeenSet;
-}
-
-MaxAge DescribeZoneSettingResponse::GetMaxAge() const
-{
-    return m_maxAge;
-}
-
-bool DescribeZoneSettingResponse::MaxAgeHasBeenSet() const
-{
-    return m_maxAgeHasBeenSet;
-}
-
-OfflineCache DescribeZoneSettingResponse::GetOfflineCache() const
-{
-    return m_offlineCache;
-}
-
-bool DescribeZoneSettingResponse::OfflineCacheHasBeenSet() const
-{
-    return m_offlineCacheHasBeenSet;
 }
 
 Quic DescribeZoneSettingResponse::GetQuic() const
@@ -646,24 +673,24 @@ bool DescribeZoneSettingResponse::SmartRoutingHasBeenSet() const
     return m_smartRoutingHasBeenSet;
 }
 
-string DescribeZoneSettingResponse::GetZoneId() const
+MaxAge DescribeZoneSettingResponse::GetMaxAge() const
 {
-    return m_zoneId;
+    return m_maxAge;
 }
 
-bool DescribeZoneSettingResponse::ZoneIdHasBeenSet() const
+bool DescribeZoneSettingResponse::MaxAgeHasBeenSet() const
 {
-    return m_zoneIdHasBeenSet;
+    return m_maxAgeHasBeenSet;
 }
 
-string DescribeZoneSettingResponse::GetZone() const
+OfflineCache DescribeZoneSettingResponse::GetOfflineCache() const
 {
-    return m_zone;
+    return m_offlineCache;
 }
 
-bool DescribeZoneSettingResponse::ZoneHasBeenSet() const
+bool DescribeZoneSettingResponse::OfflineCacheHasBeenSet() const
 {
-    return m_zoneHasBeenSet;
+    return m_offlineCacheHasBeenSet;
 }
 
 WebSocket DescribeZoneSettingResponse::GetWebSocket() const
@@ -694,6 +721,16 @@ CachePrefresh DescribeZoneSettingResponse::GetCachePrefresh() const
 bool DescribeZoneSettingResponse::CachePrefreshHasBeenSet() const
 {
     return m_cachePrefreshHasBeenSet;
+}
+
+Ipv6Access DescribeZoneSettingResponse::GetIpv6() const
+{
+    return m_ipv6;
+}
+
+bool DescribeZoneSettingResponse::Ipv6HasBeenSet() const
+{
+    return m_ipv6HasBeenSet;
 }
 
 

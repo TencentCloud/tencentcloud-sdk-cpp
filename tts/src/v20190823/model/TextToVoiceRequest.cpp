@@ -32,7 +32,8 @@ TextToVoiceRequest::TextToVoiceRequest() :
     m_voiceTypeHasBeenSet(false),
     m_primaryLanguageHasBeenSet(false),
     m_sampleRateHasBeenSet(false),
-    m_codecHasBeenSet(false)
+    m_codecHasBeenSet(false),
+    m_enableSubtitleHasBeenSet(false)
 {
 }
 
@@ -121,6 +122,14 @@ string TextToVoiceRequest::ToJsonString() const
         string key = "Codec";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_codec.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_enableSubtitleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableSubtitle";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableSubtitle, allocator);
     }
 
 
@@ -289,6 +298,22 @@ void TextToVoiceRequest::SetCodec(const string& _codec)
 bool TextToVoiceRequest::CodecHasBeenSet() const
 {
     return m_codecHasBeenSet;
+}
+
+bool TextToVoiceRequest::GetEnableSubtitle() const
+{
+    return m_enableSubtitle;
+}
+
+void TextToVoiceRequest::SetEnableSubtitle(const bool& _enableSubtitle)
+{
+    m_enableSubtitle = _enableSubtitle;
+    m_enableSubtitleHasBeenSet = true;
+}
+
+bool TextToVoiceRequest::EnableSubtitleHasBeenSet() const
+{
+    return m_enableSubtitleHasBeenSet;
 }
 
 

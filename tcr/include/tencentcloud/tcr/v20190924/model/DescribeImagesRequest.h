@@ -150,6 +150,24 @@ namespace TencentCloud
                      */
                     bool OffsetHasBeenSet() const;
 
+                    /**
+                     * 获取指定镜像 Digest 进行查找
+                     * @return Digest 指定镜像 Digest 进行查找
+                     */
+                    std::string GetDigest() const;
+
+                    /**
+                     * 设置指定镜像 Digest 进行查找
+                     * @param Digest 指定镜像 Digest 进行查找
+                     */
+                    void SetDigest(const std::string& _digest);
+
+                    /**
+                     * 判断参数 Digest 是否已赋值
+                     * @return Digest 是否已赋值
+                     */
+                    bool DigestHasBeenSet() const;
+
                 private:
 
                     /**
@@ -187,6 +205,12 @@ namespace TencentCloud
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
+
+                    /**
+                     * 指定镜像 Digest 进行查找
+                     */
+                    std::string m_digest;
+                    bool m_digestHasBeenSet;
 
                 };
             }

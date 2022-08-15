@@ -24,7 +24,9 @@ TcrImageInfo::TcrImageInfo() :
     m_digestHasBeenSet(false),
     m_sizeHasBeenSet(false),
     m_imageVersionHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
+    m_updateTimeHasBeenSet(false),
+    m_kindHasBeenSet(false),
+    m_kmsSignatureHasBeenSet(false)
 {
 }
 
@@ -73,6 +75,26 @@ CoreInternalOutcome TcrImageInfo::Deserialize(const rapidjson::Value &value)
         m_updateTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("Kind") && !value["Kind"].IsNull())
+    {
+        if (!value["Kind"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TcrImageInfo.Kind` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_kind = string(value["Kind"].GetString());
+        m_kindHasBeenSet = true;
+    }
+
+    if (value.HasMember("KmsSignature") && !value["KmsSignature"].IsNull())
+    {
+        if (!value["KmsSignature"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TcrImageInfo.KmsSignature` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_kmsSignature = string(value["KmsSignature"].GetString());
+        m_kmsSignatureHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +132,22 @@ void TcrImageInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "UpdateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_updateTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_kindHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Kind";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_kind.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_kmsSignatureHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KmsSignature";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_kmsSignature.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -177,5 +215,37 @@ void TcrImageInfo::SetUpdateTime(const string& _updateTime)
 bool TcrImageInfo::UpdateTimeHasBeenSet() const
 {
     return m_updateTimeHasBeenSet;
+}
+
+string TcrImageInfo::GetKind() const
+{
+    return m_kind;
+}
+
+void TcrImageInfo::SetKind(const string& _kind)
+{
+    m_kind = _kind;
+    m_kindHasBeenSet = true;
+}
+
+bool TcrImageInfo::KindHasBeenSet() const
+{
+    return m_kindHasBeenSet;
+}
+
+string TcrImageInfo::GetKmsSignature() const
+{
+    return m_kmsSignature;
+}
+
+void TcrImageInfo::SetKmsSignature(const string& _kmsSignature)
+{
+    m_kmsSignature = _kmsSignature;
+    m_kmsSignatureHasBeenSet = true;
+}
+
+bool TcrImageInfo::KmsSignatureHasBeenSet() const
+{
+    return m_kmsSignatureHasBeenSet;
 }
 

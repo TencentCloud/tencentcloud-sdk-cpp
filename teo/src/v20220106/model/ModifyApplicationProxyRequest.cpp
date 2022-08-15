@@ -29,7 +29,8 @@ ModifyApplicationProxyRequest::ModifyApplicationProxyRequest() :
     m_forwardClientIpHasBeenSet(false),
     m_sessionPersistHasBeenSet(false),
     m_sessionPersistTimeHasBeenSet(false),
-    m_proxyTypeHasBeenSet(false)
+    m_proxyTypeHasBeenSet(false),
+    m_ipv6HasBeenSet(false)
 {
 }
 
@@ -94,6 +95,15 @@ string ModifyApplicationProxyRequest::ToJsonString() const
         string key = "ProxyType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_proxyType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ipv6HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Ipv6";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_ipv6.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -214,6 +224,22 @@ void ModifyApplicationProxyRequest::SetProxyType(const string& _proxyType)
 bool ModifyApplicationProxyRequest::ProxyTypeHasBeenSet() const
 {
     return m_proxyTypeHasBeenSet;
+}
+
+Ipv6Access ModifyApplicationProxyRequest::GetIpv6() const
+{
+    return m_ipv6;
+}
+
+void ModifyApplicationProxyRequest::SetIpv6(const Ipv6Access& _ipv6)
+{
+    m_ipv6 = _ipv6;
+    m_ipv6HasBeenSet = true;
+}
+
+bool ModifyApplicationProxyRequest::Ipv6HasBeenSet() const
+{
+    return m_ipv6HasBeenSet;
 }
 
 

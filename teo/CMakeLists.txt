@@ -141,6 +141,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220106/model/DescribeBotManagedRulesResponse.h
   include/tencentcloud/teo/v20220106/model/DnsRecord.h
   include/tencentcloud/teo/v20220106/model/TopDataRecord.h
+  include/tencentcloud/teo/v20220106/model/Ipv6Access.h
   include/tencentcloud/teo/v20220106/model/DDoSAntiPly.h
   include/tencentcloud/teo/v20220106/model/DescribeWebManagedRulesDataRequest.h
   include/tencentcloud/teo/v20220106/model/DDosAttackSourceEventData.h
@@ -439,6 +440,7 @@ set(teo_src
   src/v20220106/model/DescribeBotManagedRulesResponse.cpp
   src/v20220106/model/DnsRecord.cpp
   src/v20220106/model/TopDataRecord.cpp
+  src/v20220106/model/Ipv6Access.cpp
   src/v20220106/model/DDoSAntiPly.cpp
   src/v20220106/model/DescribeWebManagedRulesDataRequest.cpp
   src/v20220106/model/DDosAttackSourceEventData.cpp

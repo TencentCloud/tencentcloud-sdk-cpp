@@ -33,7 +33,8 @@ PrivateZone::PrivateZone() :
     m_dnsForwardStatusHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_accountVpcSetHasBeenSet(false),
-    m_isCustomTldHasBeenSet(false)
+    m_isCustomTldHasBeenSet(false),
+    m_cnameSpeedupStatusHasBeenSet(false)
 {
 }
 
@@ -202,6 +203,16 @@ CoreInternalOutcome PrivateZone::Deserialize(const rapidjson::Value &value)
         m_isCustomTldHasBeenSet = true;
     }
 
+    if (value.HasMember("CnameSpeedupStatus") && !value["CnameSpeedupStatus"].IsNull())
+    {
+        if (!value["CnameSpeedupStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PrivateZone.CnameSpeedupStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cnameSpeedupStatus = string(value["CnameSpeedupStatus"].GetString());
+        m_cnameSpeedupStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -332,6 +343,14 @@ void PrivateZone::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "IsCustomTld";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isCustomTld, allocator);
+    }
+
+    if (m_cnameSpeedupStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CnameSpeedupStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cnameSpeedupStatus.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -543,5 +562,21 @@ void PrivateZone::SetIsCustomTld(const bool& _isCustomTld)
 bool PrivateZone::IsCustomTldHasBeenSet() const
 {
     return m_isCustomTldHasBeenSet;
+}
+
+string PrivateZone::GetCnameSpeedupStatus() const
+{
+    return m_cnameSpeedupStatus;
+}
+
+void PrivateZone::SetCnameSpeedupStatus(const string& _cnameSpeedupStatus)
+{
+    m_cnameSpeedupStatus = _cnameSpeedupStatus;
+    m_cnameSpeedupStatusHasBeenSet = true;
+}
+
+bool PrivateZone::CnameSpeedupStatusHasBeenSet() const
+{
+    return m_cnameSpeedupStatusHasBeenSet;
 }
 

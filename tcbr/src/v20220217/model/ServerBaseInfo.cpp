@@ -25,7 +25,8 @@ ServerBaseInfo::ServerBaseInfo() :
     m_defaultDomainNameHasBeenSet(false),
     m_customDomainNameHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
+    m_updateTimeHasBeenSet(false),
+    m_accessTypesHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,19 @@ CoreInternalOutcome ServerBaseInfo::Deserialize(const rapidjson::Value &value)
         m_updateTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("AccessTypes") && !value["AccessTypes"].IsNull())
+    {
+        if (!value["AccessTypes"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ServerBaseInfo.AccessTypes` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["AccessTypes"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_accessTypes.push_back((*itr).GetString());
+        }
+        m_accessTypesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +143,19 @@ void ServerBaseInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "UpdateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_updateTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_accessTypesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AccessTypes";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_accessTypes.begin(); itr != m_accessTypes.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -212,5 +239,21 @@ void ServerBaseInfo::SetUpdateTime(const string& _updateTime)
 bool ServerBaseInfo::UpdateTimeHasBeenSet() const
 {
     return m_updateTimeHasBeenSet;
+}
+
+vector<string> ServerBaseInfo::GetAccessTypes() const
+{
+    return m_accessTypes;
+}
+
+void ServerBaseInfo::SetAccessTypes(const vector<string>& _accessTypes)
+{
+    m_accessTypes = _accessTypes;
+    m_accessTypesHasBeenSet = true;
+}
+
+bool ServerBaseInfo::AccessTypesHasBeenSet() const
+{
+    return m_accessTypesHasBeenSet;
 }
 

@@ -1373,3 +1373,46 @@ MongodbClient::SetAccountUserPrivilegeOutcomeCallable MongodbClient::SetAccountU
     return task->get_future();
 }
 
+MongodbClient::TerminateDBInstancesOutcome MongodbClient::TerminateDBInstances(const TerminateDBInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "TerminateDBInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        TerminateDBInstancesResponse rsp = TerminateDBInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return TerminateDBInstancesOutcome(rsp);
+        else
+            return TerminateDBInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return TerminateDBInstancesOutcome(outcome.GetError());
+    }
+}
+
+void MongodbClient::TerminateDBInstancesAsync(const TerminateDBInstancesRequest& request, const TerminateDBInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->TerminateDBInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MongodbClient::TerminateDBInstancesOutcomeCallable MongodbClient::TerminateDBInstancesCallable(const TerminateDBInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<TerminateDBInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->TerminateDBInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+

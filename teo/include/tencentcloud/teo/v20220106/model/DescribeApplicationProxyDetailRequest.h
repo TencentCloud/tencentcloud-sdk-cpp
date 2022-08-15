@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取站点ID
-                     * @return ZoneId 站点ID
+                     * 获取站点ID。
+                     * @return ZoneId 站点ID。
                      */
                     std::string GetZoneId() const;
 
                     /**
-                     * 设置站点ID
-                     * @param ZoneId 站点ID
+                     * 设置站点ID。
+                     * @param ZoneId 站点ID。
                      */
                     void SetZoneId(const std::string& _zoneId);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool ZoneIdHasBeenSet() const;
 
                     /**
-                     * 获取实例ID
-                     * @return ProxyId 实例ID
+                     * 获取实例ID。
+                     * @return ProxyId 实例ID。
                      */
                     std::string GetProxyId() const;
 
                     /**
-                     * 设置实例ID
-                     * @param ProxyId 实例ID
+                     * 设置实例ID。
+                     * @param ProxyId 实例ID。
                      */
                     void SetProxyId(const std::string& _proxyId);
 
@@ -81,13 +81,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 站点ID
+                     * 站点ID。
                      */
                     std::string m_zoneId;
                     bool m_zoneIdHasBeenSet;
 
                     /**
-                     * 实例ID
+                     * 实例ID。
                      */
                     std::string m_proxyId;
                     bool m_proxyIdHasBeenSet;

@@ -47,44 +47,22 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取MaxAge 时间设置，单位秒，最大365天
-注意：时间为0，即不缓存。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MaxAgeTime MaxAge 时间设置，单位秒，最大365天
-注意：时间为0，即不缓存。
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    int64_t GetMaxAgeTime() const;
-
-                    /**
-                     * 设置MaxAge 时间设置，单位秒，最大365天
-注意：时间为0，即不缓存。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MaxAgeTime MaxAge 时间设置，单位秒，最大365天
-注意：时间为0，即不缓存。
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    void SetMaxAgeTime(const int64_t& _maxAgeTime);
-
-                    /**
-                     * 判断参数 MaxAgeTime 是否已赋值
-                     * @return MaxAgeTime 是否已赋值
-                     */
-                    bool MaxAgeTimeHasBeenSet() const;
-
-                    /**
-                     * 获取是否遵循源站，on或off，开启时忽略时间设置。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FollowOrigin 是否遵循源站，on或off，开启时忽略时间设置。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取是否遵循源站，取值有：
+<li>on：遵循源站，忽略MaxAge 时间设置；</li>
+<li>off：不遵循源站，使用MaxAge 时间设置。</li>
+                     * @return FollowOrigin 是否遵循源站，取值有：
+<li>on：遵循源站，忽略MaxAge 时间设置；</li>
+<li>off：不遵循源站，使用MaxAge 时间设置。</li>
                      */
                     std::string GetFollowOrigin() const;
 
                     /**
-                     * 设置是否遵循源站，on或off，开启时忽略时间设置。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FollowOrigin 是否遵循源站，on或off，开启时忽略时间设置。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置是否遵循源站，取值有：
+<li>on：遵循源站，忽略MaxAge 时间设置；</li>
+<li>off：不遵循源站，使用MaxAge 时间设置。</li>
+                     * @param FollowOrigin 是否遵循源站，取值有：
+<li>on：遵循源站，忽略MaxAge 时间设置；</li>
+<li>off：不遵循源站，使用MaxAge 时间设置。</li>
                      */
                     void SetFollowOrigin(const std::string& _followOrigin);
 
@@ -94,22 +72,44 @@ namespace TencentCloud
                      */
                     bool FollowOriginHasBeenSet() const;
 
+                    /**
+                     * 获取MaxAge 时间设置，单位秒，最大365天。
+注意：时间为0，即不缓存。
+                     * @return MaxAgeTime MaxAge 时间设置，单位秒，最大365天。
+注意：时间为0，即不缓存。
+                     */
+                    int64_t GetMaxAgeTime() const;
+
+                    /**
+                     * 设置MaxAge 时间设置，单位秒，最大365天。
+注意：时间为0，即不缓存。
+                     * @param MaxAgeTime MaxAge 时间设置，单位秒，最大365天。
+注意：时间为0，即不缓存。
+                     */
+                    void SetMaxAgeTime(const int64_t& _maxAgeTime);
+
+                    /**
+                     * 判断参数 MaxAgeTime 是否已赋值
+                     * @return MaxAgeTime 是否已赋值
+                     */
+                    bool MaxAgeTimeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * MaxAge 时间设置，单位秒，最大365天
-注意：时间为0，即不缓存。
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    int64_t m_maxAgeTime;
-                    bool m_maxAgeTimeHasBeenSet;
-
-                    /**
-                     * 是否遵循源站，on或off，开启时忽略时间设置。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 是否遵循源站，取值有：
+<li>on：遵循源站，忽略MaxAge 时间设置；</li>
+<li>off：不遵循源站，使用MaxAge 时间设置。</li>
                      */
                     std::string m_followOrigin;
                     bool m_followOriginHasBeenSet;
+
+                    /**
+                     * MaxAge 时间设置，单位秒，最大365天。
+注意：时间为0，即不缓存。
+                     */
+                    int64_t m_maxAgeTime;
+                    bool m_maxAgeTimeHasBeenSet;
 
                 };
             }

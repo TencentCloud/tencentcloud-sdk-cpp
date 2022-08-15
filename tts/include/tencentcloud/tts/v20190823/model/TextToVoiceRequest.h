@@ -226,6 +226,24 @@ namespace TencentCloud
                      */
                     bool CodecHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启时间戳功能，默认为false。
+                     * @return EnableSubtitle 是否开启时间戳功能，默认为false。
+                     */
+                    bool GetEnableSubtitle() const;
+
+                    /**
+                     * 设置是否开启时间戳功能，默认为false。
+                     * @param EnableSubtitle 是否开启时间戳功能，默认为false。
+                     */
+                    void SetEnableSubtitle(const bool& _enableSubtitle);
+
+                    /**
+                     * 判断参数 EnableSubtitle 是否已赋值
+                     * @return EnableSubtitle 是否已赋值
+                     */
+                    bool EnableSubtitleHasBeenSet() const;
+
                 private:
 
                     /**
@@ -288,6 +306,12 @@ namespace TencentCloud
                      */
                     std::string m_codec;
                     bool m_codecHasBeenSet;
+
+                    /**
+                     * 是否开启时间戳功能，默认为false。
+                     */
+                    bool m_enableSubtitle;
+                    bool m_enableSubtitleHasBeenSet;
 
                 };
             }

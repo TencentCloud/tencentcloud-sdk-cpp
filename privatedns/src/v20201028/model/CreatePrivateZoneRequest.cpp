@@ -29,7 +29,8 @@ CreatePrivateZoneRequest::CreatePrivateZoneRequest() :
     m_remarkHasBeenSet(false),
     m_dnsForwardStatusHasBeenSet(false),
     m_vpcsHasBeenSet(false),
-    m_accountVpcSetHasBeenSet(false)
+    m_accountVpcSetHasBeenSet(false),
+    m_cnameSpeedupStatusHasBeenSet(false)
 {
 }
 
@@ -122,6 +123,14 @@ string CreatePrivateZoneRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_cnameSpeedupStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CnameSpeedupStatus";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_cnameSpeedupStatus.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -242,6 +251,22 @@ void CreatePrivateZoneRequest::SetAccountVpcSet(const vector<AccountVpcInfo>& _a
 bool CreatePrivateZoneRequest::AccountVpcSetHasBeenSet() const
 {
     return m_accountVpcSetHasBeenSet;
+}
+
+string CreatePrivateZoneRequest::GetCnameSpeedupStatus() const
+{
+    return m_cnameSpeedupStatus;
+}
+
+void CreatePrivateZoneRequest::SetCnameSpeedupStatus(const string& _cnameSpeedupStatus)
+{
+    m_cnameSpeedupStatus = _cnameSpeedupStatus;
+    m_cnameSpeedupStatusHasBeenSet = true;
+}
+
+bool CreatePrivateZoneRequest::CnameSpeedupStatusHasBeenSet() const
+{
+    return m_cnameSpeedupStatusHasBeenSet;
 }
 
 

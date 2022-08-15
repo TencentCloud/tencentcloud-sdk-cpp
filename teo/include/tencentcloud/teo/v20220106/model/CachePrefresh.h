@@ -47,14 +47,22 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取缓存预刷新配置开关
-                     * @return Switch 缓存预刷新配置开关
+                     * 获取缓存预刷新配置开关，取值有：
+<li>on：开启；</li>
+<li>off：关闭。</li>
+                     * @return Switch 缓存预刷新配置开关，取值有：
+<li>on：开启；</li>
+<li>off：关闭。</li>
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置缓存预刷新配置开关
-                     * @param Switch 缓存预刷新配置开关
+                     * 设置缓存预刷新配置开关，取值有：
+<li>on：开启；</li>
+<li>off：关闭。</li>
+                     * @param Switch 缓存预刷新配置开关，取值有：
+<li>on：开启；</li>
+<li>off：关闭。</li>
                      */
                     void SetSwitch(const std::string& _switch);
 
@@ -65,17 +73,17 @@ namespace TencentCloud
                     bool SwitchHasBeenSet() const;
 
                     /**
-                     * 获取缓存预刷新百分比：1-99
+                     * 获取缓存预刷新百分比，取值范围：1-99。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Percent 缓存预刷新百分比：1-99
+                     * @return Percent 缓存预刷新百分比，取值范围：1-99。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetPercent() const;
 
                     /**
-                     * 设置缓存预刷新百分比：1-99
+                     * 设置缓存预刷新百分比，取值范围：1-99。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Percent 缓存预刷新百分比：1-99
+                     * @param Percent 缓存预刷新百分比，取值范围：1-99。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetPercent(const int64_t& _percent);
@@ -89,13 +97,15 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 缓存预刷新配置开关
+                     * 缓存预刷新配置开关，取值有：
+<li>on：开启；</li>
+<li>off：关闭。</li>
                      */
                     std::string m_switch;
                     bool m_switchHasBeenSet;
 
                     /**
-                     * 缓存预刷新百分比：1-99
+                     * 缓存预刷新百分比，取值范围：1-99。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_percent;

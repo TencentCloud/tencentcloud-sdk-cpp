@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取新增的四层代理应用ID
-                     * @return ProxyId 新增的四层代理应用ID
+                     * 获取新增的四层代理应用ID。
+                     * @return ProxyId 新增的四层代理应用ID。
                      */
                     std::string GetProxyId() const;
 
@@ -58,7 +58,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 新增的四层代理应用ID
+                     * 新增的四层代理应用ID。
                      */
                     std::string m_proxyId;
                     bool m_proxyIdHasBeenSet;

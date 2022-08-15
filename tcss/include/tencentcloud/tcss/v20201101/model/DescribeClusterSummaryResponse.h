@@ -115,6 +115,54 @@ namespace TencentCloud
                      */
                     bool NoRiskClusterCountHasBeenSet() const;
 
+                    /**
+                     * 获取已经检查集群数
+                     * @return CheckedClusterCount 已经检查集群数
+                     */
+                    uint64_t GetCheckedClusterCount() const;
+
+                    /**
+                     * 判断参数 CheckedClusterCount 是否已赋值
+                     * @return CheckedClusterCount 是否已赋值
+                     */
+                    bool CheckedClusterCountHasBeenSet() const;
+
+                    /**
+                     * 获取自动检查集群数
+                     * @return AutoCheckClusterCount 自动检查集群数
+                     */
+                    uint64_t GetAutoCheckClusterCount() const;
+
+                    /**
+                     * 判断参数 AutoCheckClusterCount 是否已赋值
+                     * @return AutoCheckClusterCount 是否已赋值
+                     */
+                    bool AutoCheckClusterCountHasBeenSet() const;
+
+                    /**
+                     * 获取手动检查集群数
+                     * @return ManualCheckClusterCount 手动检查集群数
+                     */
+                    uint64_t GetManualCheckClusterCount() const;
+
+                    /**
+                     * 判断参数 ManualCheckClusterCount 是否已赋值
+                     * @return ManualCheckClusterCount 是否已赋值
+                     */
+                    bool ManualCheckClusterCountHasBeenSet() const;
+
+                    /**
+                     * 获取检查失败集群数
+                     * @return FailedClusterCount 检查失败集群数
+                     */
+                    uint64_t GetFailedClusterCount() const;
+
+                    /**
+                     * 判断参数 FailedClusterCount 是否已赋值
+                     * @return FailedClusterCount 是否已赋值
+                     */
+                    bool FailedClusterCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -152,6 +200,30 @@ namespace TencentCloud
                      */
                     uint64_t m_noRiskClusterCount;
                     bool m_noRiskClusterCountHasBeenSet;
+
+                    /**
+                     * 已经检查集群数
+                     */
+                    uint64_t m_checkedClusterCount;
+                    bool m_checkedClusterCountHasBeenSet;
+
+                    /**
+                     * 自动检查集群数
+                     */
+                    uint64_t m_autoCheckClusterCount;
+                    bool m_autoCheckClusterCountHasBeenSet;
+
+                    /**
+                     * 手动检查集群数
+                     */
+                    uint64_t m_manualCheckClusterCount;
+                    bool m_manualCheckClusterCountHasBeenSet;
+
+                    /**
+                     * 检查失败集群数
+                     */
+                    uint64_t m_failedClusterCount;
+                    bool m_failedClusterCountHasBeenSet;
 
                 };
             }

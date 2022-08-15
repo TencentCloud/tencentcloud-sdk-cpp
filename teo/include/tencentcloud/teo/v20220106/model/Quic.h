@@ -47,14 +47,22 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取是否启动Quic配置
-                     * @return Switch 是否启动Quic配置
+                     * 获取是否开启Quic配置，取值有：
+<li>on：开启；</li>
+<li>off：关闭。</li>
+                     * @return Switch 是否开启Quic配置，取值有：
+<li>on：开启；</li>
+<li>off：关闭。</li>
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置是否启动Quic配置
-                     * @param Switch 是否启动Quic配置
+                     * 设置是否开启Quic配置，取值有：
+<li>on：开启；</li>
+<li>off：关闭。</li>
+                     * @param Switch 是否开启Quic配置，取值有：
+<li>on：开启；</li>
+<li>off：关闭。</li>
                      */
                     void SetSwitch(const std::string& _switch);
 
@@ -67,7 +75,9 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 是否启动Quic配置
+                     * 是否开启Quic配置，取值有：
+<li>on：开启；</li>
+<li>off：关闭。</li>
                      */
                     std::string m_switch;
                     bool m_switchHasBeenSet;

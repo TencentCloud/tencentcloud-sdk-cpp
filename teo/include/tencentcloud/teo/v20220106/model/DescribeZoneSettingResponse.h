@@ -23,8 +23,6 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/teo/v20220106/model/CacheConfig.h>
 #include <tencentcloud/teo/v20220106/model/CacheKey.h>
-#include <tencentcloud/teo/v20220106/model/MaxAge.h>
-#include <tencentcloud/teo/v20220106/model/OfflineCache.h>
 #include <tencentcloud/teo/v20220106/model/Quic.h>
 #include <tencentcloud/teo/v20220106/model/PostMaxSize.h>
 #include <tencentcloud/teo/v20220106/model/Compression.h>
@@ -33,9 +31,12 @@
 #include <tencentcloud/teo/v20220106/model/Https.h>
 #include <tencentcloud/teo/v20220106/model/Origin.h>
 #include <tencentcloud/teo/v20220106/model/SmartRouting.h>
+#include <tencentcloud/teo/v20220106/model/MaxAge.h>
+#include <tencentcloud/teo/v20220106/model/OfflineCache.h>
 #include <tencentcloud/teo/v20220106/model/WebSocket.h>
 #include <tencentcloud/teo/v20220106/model/ClientIp.h>
 #include <tencentcloud/teo/v20220106/model/CachePrefresh.h>
+#include <tencentcloud/teo/v20220106/model/Ipv6Access.h>
 
 
 namespace TencentCloud
@@ -59,9 +60,33 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取缓存过期时间配置
+                     * 获取站点ID。
+                     * @return ZoneId 站点ID。
+                     */
+                    std::string GetZoneId() const;
+
+                    /**
+                     * 判断参数 ZoneId 是否已赋值
+                     * @return ZoneId 是否已赋值
+                     */
+                    bool ZoneIdHasBeenSet() const;
+
+                    /**
+                     * 获取站点名称。
+                     * @return Zone 站点名称。
+                     */
+                    std::string GetZone() const;
+
+                    /**
+                     * 判断参数 Zone 是否已赋值
+                     * @return Zone 是否已赋值
+                     */
+                    bool ZoneHasBeenSet() const;
+
+                    /**
+                     * 获取缓存过期时间配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Cache 缓存过期时间配置
+                     * @return Cache 缓存过期时间配置。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     CacheConfig GetCache() const;
@@ -73,9 +98,9 @@ namespace TencentCloud
                     bool CacheHasBeenSet() const;
 
                     /**
-                     * 获取节点缓存键配置
+                     * 获取节点缓存键配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CacheKey 节点缓存键配置
+                     * @return CacheKey 节点缓存键配置。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     CacheKey GetCacheKey() const;
@@ -87,37 +112,9 @@ namespace TencentCloud
                     bool CacheKeyHasBeenSet() const;
 
                     /**
-                     * 获取浏览器缓存配置
+                     * 获取Quic访问配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MaxAge 浏览器缓存配置
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    MaxAge GetMaxAge() const;
-
-                    /**
-                     * 判断参数 MaxAge 是否已赋值
-                     * @return MaxAge 是否已赋值
-                     */
-                    bool MaxAgeHasBeenSet() const;
-
-                    /**
-                     * 获取离线缓存
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OfflineCache 离线缓存
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    OfflineCache GetOfflineCache() const;
-
-                    /**
-                     * 判断参数 OfflineCache 是否已赋值
-                     * @return OfflineCache 是否已赋值
-                     */
-                    bool OfflineCacheHasBeenSet() const;
-
-                    /**
-                     * 获取Quic访问
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Quic Quic访问
+                     * @return Quic Quic访问配置。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Quic GetQuic() const;
@@ -129,9 +126,9 @@ namespace TencentCloud
                     bool QuicHasBeenSet() const;
 
                     /**
-                     * 获取POST请求传输配置
+                     * 获取POST请求传输配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PostMaxSize POST请求传输配置
+                     * @return PostMaxSize POST请求传输配置。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     PostMaxSize GetPostMaxSize() const;
@@ -143,9 +140,9 @@ namespace TencentCloud
                     bool PostMaxSizeHasBeenSet() const;
 
                     /**
-                     * 获取智能压缩配置
+                     * 获取智能压缩配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Compression 智能压缩配置
+                     * @return Compression 智能压缩配置。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Compression GetCompression() const;
@@ -157,9 +154,9 @@ namespace TencentCloud
                     bool CompressionHasBeenSet() const;
 
                     /**
-                     * 获取http2回源配置
+                     * 获取Http2回源配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return UpstreamHttp2 http2回源配置
+                     * @return UpstreamHttp2 Http2回源配置。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     UpstreamHttp2 GetUpstreamHttp2() const;
@@ -171,9 +168,9 @@ namespace TencentCloud
                     bool UpstreamHttp2HasBeenSet() const;
 
                     /**
-                     * 获取访问协议强制https跳转配置
+                     * 获取访问协议强制Https跳转配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ForceRedirect 访问协议强制https跳转配置
+                     * @return ForceRedirect 访问协议强制Https跳转配置。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ForceRedirect GetForceRedirect() const;
@@ -185,9 +182,9 @@ namespace TencentCloud
                     bool ForceRedirectHasBeenSet() const;
 
                     /**
-                     * 获取Https 加速配置
+                     * 获取Https 加速配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Https Https 加速配置
+                     * @return Https Https 加速配置。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Https GetHttps() const;
@@ -199,9 +196,9 @@ namespace TencentCloud
                     bool HttpsHasBeenSet() const;
 
                     /**
-                     * 获取源站配置
+                     * 获取源站配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Origin 源站配置
+                     * @return Origin 源站配置。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Origin GetOrigin() const;
@@ -213,9 +210,9 @@ namespace TencentCloud
                     bool OriginHasBeenSet() const;
 
                     /**
-                     * 获取动态加速配置
+                     * 获取智能加速配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SmartRouting 动态加速配置
+                     * @return SmartRouting 智能加速配置。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     SmartRouting GetSmartRouting() const;
@@ -227,33 +224,37 @@ namespace TencentCloud
                     bool SmartRoutingHasBeenSet() const;
 
                     /**
-                     * 获取站点ID
-                     * @return ZoneId 站点ID
-                     */
-                    std::string GetZoneId() const;
-
-                    /**
-                     * 判断参数 ZoneId 是否已赋值
-                     * @return ZoneId 是否已赋值
-                     */
-                    bool ZoneIdHasBeenSet() const;
-
-                    /**
-                     * 获取站点域名
-                     * @return Zone 站点域名
-                     */
-                    std::string GetZone() const;
-
-                    /**
-                     * 判断参数 Zone 是否已赋值
-                     * @return Zone 是否已赋值
-                     */
-                    bool ZoneHasBeenSet() const;
-
-                    /**
-                     * 获取WebSocket配置
+                     * 获取浏览器缓存配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return WebSocket WebSocket配置
+                     * @return MaxAge 浏览器缓存配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    MaxAge GetMaxAge() const;
+
+                    /**
+                     * 判断参数 MaxAge 是否已赋值
+                     * @return MaxAge 是否已赋值
+                     */
+                    bool MaxAgeHasBeenSet() const;
+
+                    /**
+                     * 获取离线缓存配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OfflineCache 离线缓存配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    OfflineCache GetOfflineCache() const;
+
+                    /**
+                     * 判断参数 OfflineCache 是否已赋值
+                     * @return OfflineCache 是否已赋值
+                     */
+                    bool OfflineCacheHasBeenSet() const;
+
+                    /**
+                     * 获取WebSocket配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return WebSocket WebSocket配置。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     WebSocket GetWebSocket() const;
@@ -265,9 +266,9 @@ namespace TencentCloud
                     bool WebSocketHasBeenSet() const;
 
                     /**
-                     * 获取客户端IP回源请求头配置
+                     * 获取客户端IP回源请求头配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ClientIpHeader 客户端IP回源请求头配置
+                     * @return ClientIpHeader 客户端IP回源请求头配置。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ClientIp GetClientIpHeader() const;
@@ -279,9 +280,9 @@ namespace TencentCloud
                     bool ClientIpHeaderHasBeenSet() const;
 
                     /**
-                     * 获取缓存预刷新配置
+                     * 获取缓存预刷新配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CachePrefresh 缓存预刷新配置
+                     * @return CachePrefresh 缓存预刷新配置。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     CachePrefresh GetCachePrefresh() const;
@@ -292,124 +293,145 @@ namespace TencentCloud
                      */
                     bool CachePrefreshHasBeenSet() const;
 
+                    /**
+                     * 获取Ipv6访问配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Ipv6 Ipv6访问配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    Ipv6Access GetIpv6() const;
+
+                    /**
+                     * 判断参数 Ipv6 是否已赋值
+                     * @return Ipv6 是否已赋值
+                     */
+                    bool Ipv6HasBeenSet() const;
+
                 private:
 
                     /**
-                     * 缓存过期时间配置
+                     * 站点ID。
+                     */
+                    std::string m_zoneId;
+                    bool m_zoneIdHasBeenSet;
+
+                    /**
+                     * 站点名称。
+                     */
+                    std::string m_zone;
+                    bool m_zoneHasBeenSet;
+
+                    /**
+                     * 缓存过期时间配置。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     CacheConfig m_cache;
                     bool m_cacheHasBeenSet;
 
                     /**
-                     * 节点缓存键配置
+                     * 节点缓存键配置。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     CacheKey m_cacheKey;
                     bool m_cacheKeyHasBeenSet;
 
                     /**
-                     * 浏览器缓存配置
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    MaxAge m_maxAge;
-                    bool m_maxAgeHasBeenSet;
-
-                    /**
-                     * 离线缓存
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    OfflineCache m_offlineCache;
-                    bool m_offlineCacheHasBeenSet;
-
-                    /**
-                     * Quic访问
+                     * Quic访问配置。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Quic m_quic;
                     bool m_quicHasBeenSet;
 
                     /**
-                     * POST请求传输配置
+                     * POST请求传输配置。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     PostMaxSize m_postMaxSize;
                     bool m_postMaxSizeHasBeenSet;
 
                     /**
-                     * 智能压缩配置
+                     * 智能压缩配置。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Compression m_compression;
                     bool m_compressionHasBeenSet;
 
                     /**
-                     * http2回源配置
+                     * Http2回源配置。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     UpstreamHttp2 m_upstreamHttp2;
                     bool m_upstreamHttp2HasBeenSet;
 
                     /**
-                     * 访问协议强制https跳转配置
+                     * 访问协议强制Https跳转配置。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ForceRedirect m_forceRedirect;
                     bool m_forceRedirectHasBeenSet;
 
                     /**
-                     * Https 加速配置
+                     * Https 加速配置。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Https m_https;
                     bool m_httpsHasBeenSet;
 
                     /**
-                     * 源站配置
+                     * 源站配置。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Origin m_origin;
                     bool m_originHasBeenSet;
 
                     /**
-                     * 动态加速配置
+                     * 智能加速配置。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     SmartRouting m_smartRouting;
                     bool m_smartRoutingHasBeenSet;
 
                     /**
-                     * 站点ID
+                     * 浏览器缓存配置。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::string m_zoneId;
-                    bool m_zoneIdHasBeenSet;
+                    MaxAge m_maxAge;
+                    bool m_maxAgeHasBeenSet;
 
                     /**
-                     * 站点域名
+                     * 离线缓存配置。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::string m_zone;
-                    bool m_zoneHasBeenSet;
+                    OfflineCache m_offlineCache;
+                    bool m_offlineCacheHasBeenSet;
 
                     /**
-                     * WebSocket配置
+                     * WebSocket配置。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     WebSocket m_webSocket;
                     bool m_webSocketHasBeenSet;
 
                     /**
-                     * 客户端IP回源请求头配置
+                     * 客户端IP回源请求头配置。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ClientIp m_clientIpHeader;
                     bool m_clientIpHeaderHasBeenSet;
 
                     /**
-                     * 缓存预刷新配置
+                     * 缓存预刷新配置。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     CachePrefresh m_cachePrefresh;
                     bool m_cachePrefreshHasBeenSet;
+
+                    /**
+                     * Ipv6访问配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    Ipv6Access m_ipv6;
+                    bool m_ipv6HasBeenSet;
 
                 };
             }

@@ -24,7 +24,11 @@ TagSummaryOverviewItem::TagSummaryOverviewItem() :
     m_tagValueHasBeenSet(false),
     m_realTotalCostHasBeenSet(false),
     m_realTotalCostRatioHasBeenSet(false),
-    m_totalCostHasBeenSet(false)
+    m_totalCostHasBeenSet(false),
+    m_cashPayAmountHasBeenSet(false),
+    m_incentivePayAmountHasBeenSet(false),
+    m_voucherPayAmountHasBeenSet(false),
+    m_transferPayAmountHasBeenSet(false)
 {
 }
 
@@ -73,6 +77,46 @@ CoreInternalOutcome TagSummaryOverviewItem::Deserialize(const rapidjson::Value &
         m_totalCostHasBeenSet = true;
     }
 
+    if (value.HasMember("CashPayAmount") && !value["CashPayAmount"].IsNull())
+    {
+        if (!value["CashPayAmount"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TagSummaryOverviewItem.CashPayAmount` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cashPayAmount = string(value["CashPayAmount"].GetString());
+        m_cashPayAmountHasBeenSet = true;
+    }
+
+    if (value.HasMember("IncentivePayAmount") && !value["IncentivePayAmount"].IsNull())
+    {
+        if (!value["IncentivePayAmount"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TagSummaryOverviewItem.IncentivePayAmount` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_incentivePayAmount = string(value["IncentivePayAmount"].GetString());
+        m_incentivePayAmountHasBeenSet = true;
+    }
+
+    if (value.HasMember("VoucherPayAmount") && !value["VoucherPayAmount"].IsNull())
+    {
+        if (!value["VoucherPayAmount"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TagSummaryOverviewItem.VoucherPayAmount` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_voucherPayAmount = string(value["VoucherPayAmount"].GetString());
+        m_voucherPayAmountHasBeenSet = true;
+    }
+
+    if (value.HasMember("TransferPayAmount") && !value["TransferPayAmount"].IsNull())
+    {
+        if (!value["TransferPayAmount"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TagSummaryOverviewItem.TransferPayAmount` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_transferPayAmount = string(value["TransferPayAmount"].GetString());
+        m_transferPayAmountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +154,38 @@ void TagSummaryOverviewItem::ToJsonObject(rapidjson::Value &value, rapidjson::Do
         string key = "TotalCost";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_totalCost.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cashPayAmountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CashPayAmount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cashPayAmount.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_incentivePayAmountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IncentivePayAmount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_incentivePayAmount.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_voucherPayAmountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VoucherPayAmount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_voucherPayAmount.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_transferPayAmountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TransferPayAmount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_transferPayAmount.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -177,5 +253,69 @@ void TagSummaryOverviewItem::SetTotalCost(const string& _totalCost)
 bool TagSummaryOverviewItem::TotalCostHasBeenSet() const
 {
     return m_totalCostHasBeenSet;
+}
+
+string TagSummaryOverviewItem::GetCashPayAmount() const
+{
+    return m_cashPayAmount;
+}
+
+void TagSummaryOverviewItem::SetCashPayAmount(const string& _cashPayAmount)
+{
+    m_cashPayAmount = _cashPayAmount;
+    m_cashPayAmountHasBeenSet = true;
+}
+
+bool TagSummaryOverviewItem::CashPayAmountHasBeenSet() const
+{
+    return m_cashPayAmountHasBeenSet;
+}
+
+string TagSummaryOverviewItem::GetIncentivePayAmount() const
+{
+    return m_incentivePayAmount;
+}
+
+void TagSummaryOverviewItem::SetIncentivePayAmount(const string& _incentivePayAmount)
+{
+    m_incentivePayAmount = _incentivePayAmount;
+    m_incentivePayAmountHasBeenSet = true;
+}
+
+bool TagSummaryOverviewItem::IncentivePayAmountHasBeenSet() const
+{
+    return m_incentivePayAmountHasBeenSet;
+}
+
+string TagSummaryOverviewItem::GetVoucherPayAmount() const
+{
+    return m_voucherPayAmount;
+}
+
+void TagSummaryOverviewItem::SetVoucherPayAmount(const string& _voucherPayAmount)
+{
+    m_voucherPayAmount = _voucherPayAmount;
+    m_voucherPayAmountHasBeenSet = true;
+}
+
+bool TagSummaryOverviewItem::VoucherPayAmountHasBeenSet() const
+{
+    return m_voucherPayAmountHasBeenSet;
+}
+
+string TagSummaryOverviewItem::GetTransferPayAmount() const
+{
+    return m_transferPayAmount;
+}
+
+void TagSummaryOverviewItem::SetTransferPayAmount(const string& _transferPayAmount)
+{
+    m_transferPayAmount = _transferPayAmount;
+    m_transferPayAmountHasBeenSet = true;
+}
+
+bool TagSummaryOverviewItem::TransferPayAmountHasBeenSet() const
+{
+    return m_transferPayAmountHasBeenSet;
 }
 

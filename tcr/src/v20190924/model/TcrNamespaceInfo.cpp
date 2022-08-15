@@ -25,7 +25,8 @@ TcrNamespaceInfo::TcrNamespaceInfo() :
     m_creationTimeHasBeenSet(false),
     m_publicHasBeenSet(false),
     m_namespaceIdHasBeenSet(false),
-    m_tagSpecificationHasBeenSet(false)
+    m_tagSpecificationHasBeenSet(false),
+    m_metadataHasBeenSet(false)
 {
 }
 
@@ -91,6 +92,26 @@ CoreInternalOutcome TcrNamespaceInfo::Deserialize(const rapidjson::Value &value)
         m_tagSpecificationHasBeenSet = true;
     }
 
+    if (value.HasMember("Metadata") && !value["Metadata"].IsNull())
+    {
+        if (!value["Metadata"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `TcrNamespaceInfo.Metadata` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Metadata"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            KeyValueString item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_metadata.push_back(item);
+        }
+        m_metadataHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -137,6 +158,21 @@ void TcrNamespaceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_tagSpecification.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_metadataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Metadata";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_metadata.begin(); itr != m_metadata.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -220,5 +256,21 @@ void TcrNamespaceInfo::SetTagSpecification(const TagSpecification& _tagSpecifica
 bool TcrNamespaceInfo::TagSpecificationHasBeenSet() const
 {
     return m_tagSpecificationHasBeenSet;
+}
+
+vector<KeyValueString> TcrNamespaceInfo::GetMetadata() const
+{
+    return m_metadata;
+}
+
+void TcrNamespaceInfo::SetMetadata(const vector<KeyValueString>& _metadata)
+{
+    m_metadata = _metadata;
+    m_metadataHasBeenSet = true;
+}
+
+bool TcrNamespaceInfo::MetadataHasBeenSet() const
+{
+    return m_metadataHasBeenSet;
 }
 

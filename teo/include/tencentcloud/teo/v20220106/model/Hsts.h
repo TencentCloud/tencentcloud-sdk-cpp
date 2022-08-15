@@ -47,14 +47,22 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取是否开启，on或off。
-                     * @return Switch 是否开启，on或off。
+                     * 获取是否开启，取值有：
+<li>on：开启；</li>
+<li>off：关闭。</li>
+                     * @return Switch 是否开启，取值有：
+<li>on：开启；</li>
+<li>off：关闭。</li>
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置是否开启，on或off。
-                     * @param Switch 是否开启，on或off。
+                     * 设置是否开启，取值有：
+<li>on：开启；</li>
+<li>off：关闭。</li>
+                     * @param Switch 是否开启，取值有：
+<li>on：开启；</li>
+<li>off：关闭。</li>
                      */
                     void SetSwitch(const std::string& _switch);
 
@@ -65,17 +73,17 @@ namespace TencentCloud
                     bool SwitchHasBeenSet() const;
 
                     /**
-                     * 获取MaxAge数值。
+                     * 获取MaxAge数值。单位为秒，最大值为1天。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MaxAge MaxAge数值。
+                     * @return MaxAge MaxAge数值。单位为秒，最大值为1天。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetMaxAge() const;
 
                     /**
-                     * 设置MaxAge数值。
+                     * 设置MaxAge数值。单位为秒，最大值为1天。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MaxAge MaxAge数值。
+                     * @param MaxAge MaxAge数值。单位为秒，最大值为1天。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetMaxAge(const int64_t& _maxAge);
@@ -87,17 +95,25 @@ namespace TencentCloud
                     bool MaxAgeHasBeenSet() const;
 
                     /**
-                     * 获取是否包含子域名，on或off。
+                     * 获取是否包含子域名，取值有：
+<li>on：开启；</li>
+<li>off：关闭。</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IncludeSubDomains 是否包含子域名，on或off。
+                     * @return IncludeSubDomains 是否包含子域名，取值有：
+<li>on：开启；</li>
+<li>off：关闭。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetIncludeSubDomains() const;
 
                     /**
-                     * 设置是否包含子域名，on或off。
+                     * 设置是否包含子域名，取值有：
+<li>on：开启；</li>
+<li>off：关闭。</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IncludeSubDomains 是否包含子域名，on或off。
+                     * @param IncludeSubDomains 是否包含子域名，取值有：
+<li>on：开启；</li>
+<li>off：关闭。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetIncludeSubDomains(const std::string& _includeSubDomains);
@@ -109,17 +125,25 @@ namespace TencentCloud
                     bool IncludeSubDomainsHasBeenSet() const;
 
                     /**
-                     * 获取是否预加载，on或off。
+                     * 获取是否开启预加载，取值有：
+<li>on：开启；</li>
+<li>off：关闭。</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Preload 是否预加载，on或off。
+                     * @return Preload 是否开启预加载，取值有：
+<li>on：开启；</li>
+<li>off：关闭。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetPreload() const;
 
                     /**
-                     * 设置是否预加载，on或off。
+                     * 设置是否开启预加载，取值有：
+<li>on：开启；</li>
+<li>off：关闭。</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Preload 是否预加载，on或off。
+                     * @param Preload 是否开启预加载，取值有：
+<li>on：开启；</li>
+<li>off：关闭。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetPreload(const std::string& _preload);
@@ -133,27 +157,33 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 是否开启，on或off。
+                     * 是否开启，取值有：
+<li>on：开启；</li>
+<li>off：关闭。</li>
                      */
                     std::string m_switch;
                     bool m_switchHasBeenSet;
 
                     /**
-                     * MaxAge数值。
+                     * MaxAge数值。单位为秒，最大值为1天。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_maxAge;
                     bool m_maxAgeHasBeenSet;
 
                     /**
-                     * 是否包含子域名，on或off。
+                     * 是否包含子域名，取值有：
+<li>on：开启；</li>
+<li>off：关闭。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_includeSubDomains;
                     bool m_includeSubDomainsHasBeenSet;
 
                     /**
-                     * 是否预加载，on或off。
+                     * 是否开启预加载，取值有：
+<li>on：开启；</li>
+<li>off：关闭。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_preload;

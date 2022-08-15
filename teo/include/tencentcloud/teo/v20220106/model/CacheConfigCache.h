@@ -47,25 +47,25 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取缓存配置开关
-on：开启
-off：关闭
+                     * 获取缓存配置开关，取值有：
+<li>on：开启；</li>
+<li>off：关闭。</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Switch 缓存配置开关
-on：开启
-off：关闭
+                     * @return Switch 缓存配置开关，取值有：
+<li>on：开启；</li>
+<li>off：关闭。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置缓存配置开关
-on：开启
-off：关闭
+                     * 设置缓存配置开关，取值有：
+<li>on：开启；</li>
+<li>off：关闭。</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Switch 缓存配置开关
-on：开启
-off：关闭
+                     * @param Switch 缓存配置开关，取值有：
+<li>on：开启；</li>
+<li>off：关闭。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetSwitch(const std::string& _switch);
@@ -77,21 +77,21 @@ off：关闭
                     bool SwitchHasBeenSet() const;
 
                     /**
-                     * 获取缓存过期时间设置
-单位为秒，最大可设置为 365 天
+                     * 获取缓存过期时间设置。
+单位为秒，最大可设置为 365 天。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CacheTime 缓存过期时间设置
-单位为秒，最大可设置为 365 天
+                     * @return CacheTime 缓存过期时间设置。
+单位为秒，最大可设置为 365 天。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetCacheTime() const;
 
                     /**
-                     * 设置缓存过期时间设置
-单位为秒，最大可设置为 365 天
+                     * 设置缓存过期时间设置。
+单位为秒，最大可设置为 365 天。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CacheTime 缓存过期时间设置
-单位为秒，最大可设置为 365 天
+                     * @param CacheTime 缓存过期时间设置。
+单位为秒，最大可设置为 365 天。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetCacheTime(const int64_t& _cacheTime);
@@ -103,25 +103,25 @@ off：关闭
                     bool CacheTimeHasBeenSet() const;
 
                     /**
-                     * 获取是否开启强制缓存
-开启：on
-关闭：off
+                     * 获取是否开启强制缓存，取值有：
+<li>on：开启；</li>
+<li>off：关闭。</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IgnoreCacheControl 是否开启强制缓存
-开启：on
-关闭：off
+                     * @return IgnoreCacheControl 是否开启强制缓存，取值有：
+<li>on：开启；</li>
+<li>off：关闭。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetIgnoreCacheControl() const;
 
                     /**
-                     * 设置是否开启强制缓存
-开启：on
-关闭：off
+                     * 设置是否开启强制缓存，取值有：
+<li>on：开启；</li>
+<li>off：关闭。</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IgnoreCacheControl 是否开启强制缓存
-开启：on
-关闭：off
+                     * @param IgnoreCacheControl 是否开启强制缓存，取值有：
+<li>on：开启；</li>
+<li>off：关闭。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetIgnoreCacheControl(const std::string& _ignoreCacheControl);
@@ -135,26 +135,26 @@ off：关闭
                 private:
 
                     /**
-                     * 缓存配置开关
-on：开启
-off：关闭
+                     * 缓存配置开关，取值有：
+<li>on：开启；</li>
+<li>off：关闭。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_switch;
                     bool m_switchHasBeenSet;
 
                     /**
-                     * 缓存过期时间设置
-单位为秒，最大可设置为 365 天
+                     * 缓存过期时间设置。
+单位为秒，最大可设置为 365 天。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_cacheTime;
                     bool m_cacheTimeHasBeenSet;
 
                     /**
-                     * 是否开启强制缓存
-开启：on
-关闭：off
+                     * 是否开启强制缓存，取值有：
+<li>on：开启；</li>
+<li>off：关闭。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ignoreCacheControl;

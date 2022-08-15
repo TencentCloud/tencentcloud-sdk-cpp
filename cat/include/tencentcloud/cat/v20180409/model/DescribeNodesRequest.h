@@ -76,11 +76,11 @@ namespace TencentCloud
                      * 获取节点区域
 <li> 1 = 中国大陆 </li>
 <li> 2 = 港澳台 </li>
-<li> 3 = 海外 </li>
+<li> 3 = 境外</li>
                      * @return Location 节点区域
 <li> 1 = 中国大陆 </li>
 <li> 2 = 港澳台 </li>
-<li> 3 = 海外 </li>
+<li> 3 = 境外</li>
                      */
                     int64_t GetLocation() const;
 
@@ -88,11 +88,11 @@ namespace TencentCloud
                      * 设置节点区域
 <li> 1 = 中国大陆 </li>
 <li> 2 = 港澳台 </li>
-<li> 3 = 海外 </li>
+<li> 3 = 境外</li>
                      * @param Location 节点区域
 <li> 1 = 中国大陆 </li>
 <li> 2 = 港澳台 </li>
-<li> 3 = 海外 </li>
+<li> 3 = 境外</li>
                      */
                     void SetLocation(const int64_t& _location);
 
@@ -221,7 +221,7 @@ namespace TencentCloud
                      * 节点区域
 <li> 1 = 中国大陆 </li>
 <li> 2 = 港澳台 </li>
-<li> 3 = 海外 </li>
+<li> 3 = 境外</li>
                      */
                     int64_t m_location;
                     bool m_locationHasBeenSet;

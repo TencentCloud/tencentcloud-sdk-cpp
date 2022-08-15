@@ -45,10 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取数据列表
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Data 数据列表
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取应用代理列表。
+                     * @return Data 应用代理列表。
                      */
                     std::vector<ApplicationProxy> GetData() const;
 
@@ -59,10 +57,8 @@ namespace TencentCloud
                     bool DataHasBeenSet() const;
 
                     /**
-                     * 获取记录总数
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TotalCount 记录总数
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取记录总数。
+                     * @return TotalCount 记录总数。
                      */
                     uint64_t GetTotalCount() const;
 
@@ -73,10 +69,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取字段已废弃
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Quota 字段已废弃
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取字段已废弃。
+                     * @return Quota 字段已废弃。
                      */
                     int64_t GetQuota() const;
 
@@ -87,10 +81,8 @@ namespace TencentCloud
                     bool QuotaHasBeenSet() const;
 
                     /**
-                     * 获取表示套餐内PlatType为ip的Anycast IP实例数量
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IpCount 表示套餐内PlatType为ip的Anycast IP实例数量
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取当ProxyId为空时，表示套餐内PlatType为ip的Anycast IP的实例数量。
+                     * @return IpCount 当ProxyId为空时，表示套餐内PlatType为ip的Anycast IP的实例数量。
                      */
                     uint64_t GetIpCount() const;
 
@@ -101,10 +93,8 @@ namespace TencentCloud
                     bool IpCountHasBeenSet() const;
 
                     /**
-                     * 获取表示套餐内PlatType为domain的CNAME实例数量
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DomainCount 表示套餐内PlatType为domain的CNAME实例数量
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取当ProxyId为空时，表示套餐内PlatType为domain的CNAME的实例数量。
+                     * @return DomainCount 当ProxyId为空时，表示套餐内PlatType为domain的CNAME的实例数量。
                      */
                     uint64_t GetDomainCount() const;
 
@@ -117,36 +107,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 数据列表
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 应用代理列表。
                      */
                     std::vector<ApplicationProxy> m_data;
                     bool m_dataHasBeenSet;
 
                     /**
-                     * 记录总数
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 记录总数。
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 字段已废弃
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 字段已废弃。
                      */
                     int64_t m_quota;
                     bool m_quotaHasBeenSet;
 
                     /**
-                     * 表示套餐内PlatType为ip的Anycast IP实例数量
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 当ProxyId为空时，表示套餐内PlatType为ip的Anycast IP的实例数量。
                      */
                     uint64_t m_ipCount;
                     bool m_ipCountHasBeenSet;
 
                     /**
-                     * 表示套餐内PlatType为domain的CNAME实例数量
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 当ProxyId为空时，表示套餐内PlatType为domain的CNAME的实例数量。
                      */
                     uint64_t m_domainCount;
                     bool m_domainCountHasBeenSet;
