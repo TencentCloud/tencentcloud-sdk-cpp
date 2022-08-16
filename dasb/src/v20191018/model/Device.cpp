@@ -34,7 +34,8 @@ Device::Device() :
     m_accountCountHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
-    m_resourceHasBeenSet(false)
+    m_resourceHasBeenSet(false),
+    m_departmentHasBeenSet(false)
 {
 }
 
@@ -200,6 +201,23 @@ CoreInternalOutcome Device::Deserialize(const rapidjson::Value &value)
         m_resourceHasBeenSet = true;
     }
 
+    if (value.HasMember("Department") && !value["Department"].IsNull())
+    {
+        if (!value["Department"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Device.Department` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_department.Deserialize(value["Department"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_departmentHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -325,6 +343,15 @@ void Device::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocato
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_resource.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_departmentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Department";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_department.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -552,5 +579,21 @@ void Device::SetResource(const Resource& _resource)
 bool Device::ResourceHasBeenSet() const
 {
     return m_resourceHasBeenSet;
+}
+
+Department Device::GetDepartment() const
+{
+    return m_department;
+}
+
+void Device::SetDepartment(const Department& _department)
+{
+    m_department = _department;
+    m_departmentHasBeenSet = true;
+}
+
+bool Device::DepartmentHasBeenSet() const
+{
+    return m_departmentHasBeenSet;
 }
 

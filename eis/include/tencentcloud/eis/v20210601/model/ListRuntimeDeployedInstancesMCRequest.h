@@ -168,6 +168,54 @@ namespace TencentCloud
                      */
                     bool ApiVersionHasBeenSet() const;
 
+                    /**
+                     * 获取-1:不按项目筛选，获取所有
+>=0: 按项目id筛选
+                     * @return GroupId -1:不按项目筛选，获取所有
+>=0: 按项目id筛选
+                     */
+                    int64_t GetGroupId() const;
+
+                    /**
+                     * 设置-1:不按项目筛选，获取所有
+>=0: 按项目id筛选
+                     * @param GroupId -1:不按项目筛选，获取所有
+>=0: 按项目id筛选
+                     */
+                    void SetGroupId(const int64_t& _groupId);
+
+                    /**
+                     * 判断参数 GroupId 是否已赋值
+                     * @return GroupId 是否已赋值
+                     */
+                    bool GroupIdHasBeenSet() const;
+
+                    /**
+                     * 获取-2: 不按状态筛选，获取所有
+0: 运行中
+2: 已停止
+                     * @return Status -2: 不按状态筛选，获取所有
+0: 运行中
+2: 已停止
+                     */
+                    int64_t GetStatus() const;
+
+                    /**
+                     * 设置-2: 不按状态筛选，获取所有
+0: 运行中
+2: 已停止
+                     * @param Status -2: 不按状态筛选，获取所有
+0: 运行中
+2: 已停止
+                     */
+                    void SetStatus(const int64_t& _status);
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     */
+                    bool StatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -211,6 +259,21 @@ namespace TencentCloud
                      */
                     int64_t m_apiVersion;
                     bool m_apiVersionHasBeenSet;
+
+                    /**
+                     * -1:不按项目筛选，获取所有
+>=0: 按项目id筛选
+                     */
+                    int64_t m_groupId;
+                    bool m_groupIdHasBeenSet;
+
+                    /**
+                     * -2: 不按状态筛选，获取所有
+0: 运行中
+2: 已停止
+                     */
+                    int64_t m_status;
+                    bool m_statusHasBeenSet;
 
                 };
             }

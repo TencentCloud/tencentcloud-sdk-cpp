@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取服务器Quuid
-                     * @return Quuid 服务器Quuid
+                     * 获取云服务器UUID
+                     * @return Quuid 云服务器UUID
                      */
                     std::string GetQuuid() const;
 
                     /**
-                     * 设置服务器Quuid
-                     * @param Quuid 服务器Quuid
+                     * 设置云服务器UUID
+                     * @param Quuid 云服务器UUID
                      */
                     void SetQuuid(const std::string& _quuid);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool QuuidHasBeenSet() const;
 
                     /**
-                     * 获取服务器Uuid
-                     * @return Uuid 服务器Uuid
+                     * 获取主机安全UUID
+                     * @return Uuid 主机安全UUID
                      */
                     std::string GetUuid() const;
 
                     /**
-                     * 设置服务器Uuid
-                     * @param Uuid 服务器Uuid
+                     * 设置主机安全UUID
+                     * @param Uuid 主机安全UUID
                      */
                     void SetUuid(const std::string& _uuid);
 
@@ -99,13 +99,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 服务器Quuid
+                     * 云服务器UUID
                      */
                     std::string m_quuid;
                     bool m_quuidHasBeenSet;
 
                     /**
-                     * 服务器Uuid
+                     * 主机安全UUID
                      */
                     std::string m_uuid;
                     bool m_uuidHasBeenSet;

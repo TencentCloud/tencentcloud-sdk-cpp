@@ -23,7 +23,8 @@ using namespace TencentCloud::Dasb::V20191018::Model;
 using namespace std;
 
 CreateUserGroupRequest::CreateUserGroupRequest() :
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_departmentIdHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,14 @@ string CreateUserGroupRequest::ToJsonString() const
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_departmentIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DepartmentId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_departmentId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -64,6 +73,22 @@ void CreateUserGroupRequest::SetName(const string& _name)
 bool CreateUserGroupRequest::NameHasBeenSet() const
 {
     return m_nameHasBeenSet;
+}
+
+string CreateUserGroupRequest::GetDepartmentId() const
+{
+    return m_departmentId;
+}
+
+void CreateUserGroupRequest::SetDepartmentId(const string& _departmentId)
+{
+    m_departmentId = _departmentId;
+    m_departmentIdHasBeenSet = true;
+}
+
+bool CreateUserGroupRequest::DepartmentIdHasBeenSet() const
+{
+    return m_departmentIdHasBeenSet;
 }
 
 

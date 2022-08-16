@@ -28,7 +28,8 @@ PostgreSQLConnectParam::PostgreSQLConnectParam() :
     m_serviceVipHasBeenSet(false),
     m_uniqVpcIdHasBeenSet(false),
     m_clusterIdHasBeenSet(false),
-    m_isUpdateHasBeenSet(false)
+    m_isUpdateHasBeenSet(false),
+    m_selfBuiltHasBeenSet(false)
 {
 }
 
@@ -117,6 +118,16 @@ CoreInternalOutcome PostgreSQLConnectParam::Deserialize(const rapidjson::Value &
         m_isUpdateHasBeenSet = true;
     }
 
+    if (value.HasMember("SelfBuilt") && !value["SelfBuilt"].IsNull())
+    {
+        if (!value["SelfBuilt"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `PostgreSQLConnectParam.SelfBuilt` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_selfBuilt = value["SelfBuilt"].GetBool();
+        m_selfBuiltHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -186,6 +197,14 @@ void PostgreSQLConnectParam::ToJsonObject(rapidjson::Value &value, rapidjson::Do
         string key = "IsUpdate";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isUpdate, allocator);
+    }
+
+    if (m_selfBuiltHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SelfBuilt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_selfBuilt, allocator);
     }
 
 }
@@ -317,5 +336,21 @@ void PostgreSQLConnectParam::SetIsUpdate(const bool& _isUpdate)
 bool PostgreSQLConnectParam::IsUpdateHasBeenSet() const
 {
     return m_isUpdateHasBeenSet;
+}
+
+bool PostgreSQLConnectParam::GetSelfBuilt() const
+{
+    return m_selfBuilt;
+}
+
+void PostgreSQLConnectParam::SetSelfBuilt(const bool& _selfBuilt)
+{
+    m_selfBuilt = _selfBuilt;
+    m_selfBuiltHasBeenSet = true;
+}
+
+bool PostgreSQLConnectParam::SelfBuiltHasBeenSet() const
+{
+    return m_selfBuiltHasBeenSet;
 }
 

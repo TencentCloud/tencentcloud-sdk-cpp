@@ -222,6 +222,28 @@ namespace TencentCloud
                      */
                     bool IsUpdateHasBeenSet() const;
 
+                    /**
+                     * 获取PostgreSQL连接源是否为自建集群
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SelfBuilt PostgreSQL连接源是否为自建集群
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetSelfBuilt() const;
+
+                    /**
+                     * 设置PostgreSQL连接源是否为自建集群
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SelfBuilt PostgreSQL连接源是否为自建集群
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSelfBuilt(const bool& _selfBuilt);
+
+                    /**
+                     * 判断参数 SelfBuilt 是否已赋值
+                     * @return SelfBuilt 是否已赋值
+                     */
+                    bool SelfBuiltHasBeenSet() const;
+
                 private:
 
                     /**
@@ -279,6 +301,13 @@ namespace TencentCloud
                      */
                     bool m_isUpdate;
                     bool m_isUpdateHasBeenSet;
+
+                    /**
+                     * PostgreSQL连接源是否为自建集群
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_selfBuilt;
+                    bool m_selfBuiltHasBeenSet;
 
                 };
             }

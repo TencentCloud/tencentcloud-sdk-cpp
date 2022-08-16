@@ -150,6 +150,24 @@ namespace TencentCloud
                      */
                     bool KindHasBeenSet() const;
 
+                    /**
+                     * 获取所属部门ID
+                     * @return DepartmentId 所属部门ID
+                     */
+                    std::string GetDepartmentId() const;
+
+                    /**
+                     * 设置所属部门ID
+                     * @param DepartmentId 所属部门ID
+                     */
+                    void SetDepartmentId(const std::string& _departmentId);
+
+                    /**
+                     * 判断参数 DepartmentId 是否已赋值
+                     * @return DepartmentId 是否已赋值
+                     */
+                    bool DepartmentIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -187,6 +205,12 @@ namespace TencentCloud
                      */
                     uint64_t m_kind;
                     bool m_kindHasBeenSet;
+
+                    /**
+                     * 所属部门ID
+                     */
+                    std::string m_departmentId;
+                    bool m_departmentIdHasBeenSet;
 
                 };
             }

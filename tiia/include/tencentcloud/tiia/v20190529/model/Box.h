@@ -83,6 +83,24 @@ namespace TencentCloud
                      */
                     bool ScoreHasBeenSet() const;
 
+                    /**
+                     * 获取主体区域类目ID
+                     * @return CategoryId 主体区域类目ID
+                     */
+                    int64_t GetCategoryId() const;
+
+                    /**
+                     * 设置主体区域类目ID
+                     * @param CategoryId 主体区域类目ID
+                     */
+                    void SetCategoryId(const int64_t& _categoryId);
+
+                    /**
+                     * 判断参数 CategoryId 是否已赋值
+                     * @return CategoryId 是否已赋值
+                     */
+                    bool CategoryIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -96,6 +114,12 @@ namespace TencentCloud
                      */
                     double m_score;
                     bool m_scoreHasBeenSet;
+
+                    /**
+                     * 主体区域类目ID
+                     */
+                    int64_t m_categoryId;
+                    bool m_categoryIdHasBeenSet;
 
                 };
             }

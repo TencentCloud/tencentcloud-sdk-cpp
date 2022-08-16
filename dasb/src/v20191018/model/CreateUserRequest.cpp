@@ -31,7 +31,8 @@ CreateUserRequest::CreateUserRequest() :
     m_validateToHasBeenSet(false),
     m_groupIdSetHasBeenSet(false),
     m_authTypeHasBeenSet(false),
-    m_validateTimeHasBeenSet(false)
+    m_validateTimeHasBeenSet(false),
+    m_departmentIdHasBeenSet(false)
 {
 }
 
@@ -117,6 +118,14 @@ string CreateUserRequest::ToJsonString() const
         string key = "ValidateTime";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_validateTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_departmentIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DepartmentId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_departmentId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -269,6 +278,22 @@ void CreateUserRequest::SetValidateTime(const string& _validateTime)
 bool CreateUserRequest::ValidateTimeHasBeenSet() const
 {
     return m_validateTimeHasBeenSet;
+}
+
+string CreateUserRequest::GetDepartmentId() const
+{
+    return m_departmentId;
+}
+
+void CreateUserRequest::SetDepartmentId(const string& _departmentId)
+{
+    m_departmentId = _departmentId;
+    m_departmentIdHasBeenSet = true;
+}
+
+bool CreateUserRequest::DepartmentIdHasBeenSet() const
+{
+    return m_departmentIdHasBeenSet;
 }
 
 

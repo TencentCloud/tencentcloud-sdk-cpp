@@ -63,15 +63,9 @@ namespace TencentCloud
 <li>ComposeMedia：制作媒体文件任务；</li>
 <li>WechatPublish：微信发布任务；</li>
 <li>WechatMiniProgramPublish：微信小程序视频发布任务；</li>
-<li>PullUpload：拉取上传媒体文件任务。</li>
-<li>FastClipMedia：快速剪辑任务。</li>
-
-兼容 2017 版的任务类型：
-<li>Transcode：视频转码任务；</li>
-<li>SnapshotByTimeOffset：视频截图任务；</li>
-<li>Concat：视频拼接任务；</li>
-<li>Clip：视频剪辑任务；</li>
-<li>ImageSprites：截取雪碧图任务。</li>
+<li>PullUpload：拉取上传媒体文件任务；</li>
+<li>FastClipMedia：快速剪辑任务；</li>
+<li>ReduceMediaBitrate：降码率任务。</li>
                      * @return TaskType 任务类型，取值：
 <li>Procedure：视频处理任务；</li>
 <li>EditMedia：视频编辑任务；</li>
@@ -79,15 +73,9 @@ namespace TencentCloud
 <li>ComposeMedia：制作媒体文件任务；</li>
 <li>WechatPublish：微信发布任务；</li>
 <li>WechatMiniProgramPublish：微信小程序视频发布任务；</li>
-<li>PullUpload：拉取上传媒体文件任务。</li>
-<li>FastClipMedia：快速剪辑任务。</li>
-
-兼容 2017 版的任务类型：
-<li>Transcode：视频转码任务；</li>
-<li>SnapshotByTimeOffset：视频截图任务；</li>
-<li>Concat：视频拼接任务；</li>
-<li>Clip：视频剪辑任务；</li>
-<li>ImageSprites：截取雪碧图任务。</li>
+<li>PullUpload：拉取上传媒体文件任务；</li>
+<li>FastClipMedia：快速剪辑任务；</li>
+<li>ReduceMediaBitrate：降码率任务。</li>
                      */
                     std::string GetTaskType() const;
 
@@ -329,15 +317,9 @@ namespace TencentCloud
 <li>ComposeMedia：制作媒体文件任务；</li>
 <li>WechatPublish：微信发布任务；</li>
 <li>WechatMiniProgramPublish：微信小程序视频发布任务；</li>
-<li>PullUpload：拉取上传媒体文件任务。</li>
-<li>FastClipMedia：快速剪辑任务。</li>
-
-兼容 2017 版的任务类型：
-<li>Transcode：视频转码任务；</li>
-<li>SnapshotByTimeOffset：视频截图任务；</li>
-<li>Concat：视频拼接任务；</li>
-<li>Clip：视频剪辑任务；</li>
-<li>ImageSprites：截取雪碧图任务。</li>
+<li>PullUpload：拉取上传媒体文件任务；</li>
+<li>FastClipMedia：快速剪辑任务；</li>
+<li>ReduceMediaBitrate：降码率任务。</li>
                      */
                     std::string m_taskType;
                     bool m_taskTypeHasBeenSet;

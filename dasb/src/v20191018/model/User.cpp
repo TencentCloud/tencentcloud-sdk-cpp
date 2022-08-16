@@ -30,7 +30,9 @@ User::User() :
     m_validateToHasBeenSet(false),
     m_groupSetHasBeenSet(false),
     m_authTypeHasBeenSet(false),
-    m_validateTimeHasBeenSet(false)
+    m_validateTimeHasBeenSet(false),
+    m_departmentHasBeenSet(false),
+    m_departmentIdHasBeenSet(false)
 {
 }
 
@@ -149,6 +151,33 @@ CoreInternalOutcome User::Deserialize(const rapidjson::Value &value)
         m_validateTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("Department") && !value["Department"].IsNull())
+    {
+        if (!value["Department"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `User.Department` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_department.Deserialize(value["Department"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_departmentHasBeenSet = true;
+    }
+
+    if (value.HasMember("DepartmentId") && !value["DepartmentId"].IsNull())
+    {
+        if (!value["DepartmentId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `User.DepartmentId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_departmentId = string(value["DepartmentId"].GetString());
+        m_departmentIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -241,6 +270,23 @@ void User::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorT
         string key = "ValidateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_validateTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_departmentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Department";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_department.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_departmentIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DepartmentId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_departmentId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -404,5 +450,37 @@ void User::SetValidateTime(const string& _validateTime)
 bool User::ValidateTimeHasBeenSet() const
 {
     return m_validateTimeHasBeenSet;
+}
+
+Department User::GetDepartment() const
+{
+    return m_department;
+}
+
+void User::SetDepartment(const Department& _department)
+{
+    m_department = _department;
+    m_departmentHasBeenSet = true;
+}
+
+bool User::DepartmentHasBeenSet() const
+{
+    return m_departmentHasBeenSet;
+}
+
+string User::GetDepartmentId() const
+{
+    return m_departmentId;
+}
+
+void User::SetDepartmentId(const string& _departmentId)
+{
+    m_departmentId = _departmentId;
+    m_departmentIdHasBeenSet = true;
+}
+
+bool User::DepartmentIdHasBeenSet() const
+{
+    return m_departmentIdHasBeenSet;
 }
 

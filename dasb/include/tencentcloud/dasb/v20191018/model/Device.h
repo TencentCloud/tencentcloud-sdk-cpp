@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/dasb/v20191018/model/Group.h>
 #include <tencentcloud/dasb/v20191018/model/Resource.h>
+#include <tencentcloud/dasb/v20191018/model/Department.h>
 
 
 namespace TencentCloud
@@ -304,6 +305,28 @@ namespace TencentCloud
                      */
                     bool ResourceHasBeenSet() const;
 
+                    /**
+                     * 获取资产所属部门
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Department 资产所属部门
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    Department GetDepartment() const;
+
+                    /**
+                     * 设置资产所属部门
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Department 资产所属部门
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDepartment(const Department& _department);
+
+                    /**
+                     * 判断参数 Department 是否已赋值
+                     * @return Department 是否已赋值
+                     */
+                    bool DepartmentHasBeenSet() const;
+
                 private:
 
                     /**
@@ -390,6 +413,13 @@ namespace TencentCloud
                      */
                     Resource m_resource;
                     bool m_resourceHasBeenSet;
+
+                    /**
+                     * 资产所属部门
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    Department m_department;
+                    bool m_departmentHasBeenSet;
 
                 };
             }

@@ -26,7 +26,8 @@ DescribeUserGroupsRequest::DescribeUserGroupsRequest() :
     m_idSetHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_limitHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_departmentIdHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,14 @@ string DescribeUserGroupsRequest::ToJsonString() const
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_departmentIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DepartmentId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_departmentId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -144,6 +153,22 @@ void DescribeUserGroupsRequest::SetLimit(const uint64_t& _limit)
 bool DescribeUserGroupsRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+string DescribeUserGroupsRequest::GetDepartmentId() const
+{
+    return m_departmentId;
+}
+
+void DescribeUserGroupsRequest::SetDepartmentId(const string& _departmentId)
+{
+    m_departmentId = _departmentId;
+    m_departmentIdHasBeenSet = true;
+}
+
+bool DescribeUserGroupsRequest::DepartmentIdHasBeenSet() const
+{
+    return m_departmentIdHasBeenSet;
 }
 
 

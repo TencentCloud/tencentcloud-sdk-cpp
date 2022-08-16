@@ -129,6 +129,7 @@ set(es_public_header_model
   include/tencentcloud/es/v20180416/model/UpgradeInstanceRequest.h
   include/tencentcloud/es/v20180416/model/DescribeViewsResponse.h
   include/tencentcloud/es/v20180416/model/RestartLogstashInstanceResponse.h
+  include/tencentcloud/es/v20180416/model/OptionalWebServiceInfo.h
   )
 
 set(es_src
@@ -243,6 +244,7 @@ set(es_src
   src/v20180416/model/UpgradeInstanceRequest.cpp
   src/v20180416/model/DescribeViewsResponse.cpp
   src/v20180416/model/RestartLogstashInstanceResponse.cpp
+  src/v20180416/model/OptionalWebServiceInfo.cpp
   )
 
 set(es_include

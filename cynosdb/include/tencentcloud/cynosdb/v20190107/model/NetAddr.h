@@ -156,6 +156,72 @@ namespace TencentCloud
                      */
                     bool NetTypeHasBeenSet() const;
 
+                    /**
+                     * 获取子网ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UniqSubnetId 子网ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetUniqSubnetId() const;
+
+                    /**
+                     * 设置子网ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param UniqSubnetId 子网ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetUniqSubnetId(const std::string& _uniqSubnetId);
+
+                    /**
+                     * 判断参数 UniqSubnetId 是否已赋值
+                     * @return UniqSubnetId 是否已赋值
+                     */
+                    bool UniqSubnetIdHasBeenSet() const;
+
+                    /**
+                     * 获取私有网络ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UniqVpcId 私有网络ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetUniqVpcId() const;
+
+                    /**
+                     * 设置私有网络ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param UniqVpcId 私有网络ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetUniqVpcId(const std::string& _uniqVpcId);
+
+                    /**
+                     * 判断参数 UniqVpcId 是否已赋值
+                     * @return UniqVpcId 是否已赋值
+                     */
+                    bool UniqVpcIdHasBeenSet() const;
+
+                    /**
+                     * 获取描述信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Description 描述信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetDescription() const;
+
+                    /**
+                     * 设置描述信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Description 描述信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDescription(const std::string& _description);
+
+                    /**
+                     * 判断参数 Description 是否已赋值
+                     * @return Description 是否已赋值
+                     */
+                    bool DescriptionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -192,6 +258,27 @@ namespace TencentCloud
                      */
                     std::string m_netType;
                     bool m_netTypeHasBeenSet;
+
+                    /**
+                     * 子网ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_uniqSubnetId;
+                    bool m_uniqSubnetIdHasBeenSet;
+
+                    /**
+                     * 私有网络ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_uniqVpcId;
+                    bool m_uniqVpcIdHasBeenSet;
+
+                    /**
+                     * 描述信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_description;
+                    bool m_descriptionHasBeenSet;
 
                 };
             }

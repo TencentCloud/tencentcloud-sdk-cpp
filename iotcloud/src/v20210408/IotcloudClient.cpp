@@ -556,6 +556,49 @@ IotcloudClient::DeleteDeviceResourceOutcomeCallable IotcloudClient::DeleteDevice
     return task->get_future();
 }
 
+IotcloudClient::DeleteDeviceShadowOutcome IotcloudClient::DeleteDeviceShadow(const DeleteDeviceShadowRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteDeviceShadow");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteDeviceShadowResponse rsp = DeleteDeviceShadowResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteDeviceShadowOutcome(rsp);
+        else
+            return DeleteDeviceShadowOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteDeviceShadowOutcome(outcome.GetError());
+    }
+}
+
+void IotcloudClient::DeleteDeviceShadowAsync(const DeleteDeviceShadowRequest& request, const DeleteDeviceShadowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteDeviceShadow(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotcloudClient::DeleteDeviceShadowOutcomeCallable IotcloudClient::DeleteDeviceShadowCallable(const DeleteDeviceShadowRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteDeviceShadowOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteDeviceShadow(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotcloudClient::DeletePrivateCAOutcome IotcloudClient::DeletePrivateCA(const DeletePrivateCARequest &request)
 {
     auto outcome = MakeRequest(request, "DeletePrivateCA");

@@ -114,6 +114,24 @@ namespace TencentCloud
                      */
                     bool LimitHasBeenSet() const;
 
+                    /**
+                     * 获取部门ID，用于过滤属于某个部门的资产组
+                     * @return DepartmentId 部门ID，用于过滤属于某个部门的资产组
+                     */
+                    std::string GetDepartmentId() const;
+
+                    /**
+                     * 设置部门ID，用于过滤属于某个部门的资产组
+                     * @param DepartmentId 部门ID，用于过滤属于某个部门的资产组
+                     */
+                    void SetDepartmentId(const std::string& _departmentId);
+
+                    /**
+                     * 判断参数 DepartmentId 是否已赋值
+                     * @return DepartmentId 是否已赋值
+                     */
+                    bool DepartmentIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -139,6 +157,12 @@ namespace TencentCloud
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
+
+                    /**
+                     * 部门ID，用于过滤属于某个部门的资产组
+                     */
+                    std::string m_departmentId;
+                    bool m_departmentIdHasBeenSet;
 
                 };
             }

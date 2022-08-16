@@ -372,6 +372,78 @@ namespace TencentCloud
                      */
                     bool DropClsHasBeenSet() const;
 
+                    /**
+                     * 获取输出格式，DEFAULT、CANAL_1、CANAL_2
+                     * @return OutputFormat 输出格式，DEFAULT、CANAL_1、CANAL_2
+                     */
+                    std::string GetOutputFormat() const;
+
+                    /**
+                     * 设置输出格式，DEFAULT、CANAL_1、CANAL_2
+                     * @param OutputFormat 输出格式，DEFAULT、CANAL_1、CANAL_2
+                     */
+                    void SetOutputFormat(const std::string& _outputFormat);
+
+                    /**
+                     * 判断参数 OutputFormat 是否已赋值
+                     * @return OutputFormat 是否已赋值
+                     */
+                    bool OutputFormatHasBeenSet() const;
+
+                    /**
+                     * 获取当Table输入的是前缀时，该项值为true，否则为false
+                     * @return IsTablePrefix 当Table输入的是前缀时，该项值为true，否则为false
+                     */
+                    bool GetIsTablePrefix() const;
+
+                    /**
+                     * 设置当Table输入的是前缀时，该项值为true，否则为false
+                     * @param IsTablePrefix 当Table输入的是前缀时，该项值为true，否则为false
+                     */
+                    void SetIsTablePrefix(const bool& _isTablePrefix);
+
+                    /**
+                     * 判断参数 IsTablePrefix 是否已赋值
+                     * @return IsTablePrefix 是否已赋值
+                     */
+                    bool IsTablePrefixHasBeenSet() const;
+
+                    /**
+                     * 获取如果该值为all，则DDL数据以及DML数据也会写入到选中的topic；若该值为dml，则只有DML数据写入到选中的topic
+                     * @return IncludeContentChanges 如果该值为all，则DDL数据以及DML数据也会写入到选中的topic；若该值为dml，则只有DML数据写入到选中的topic
+                     */
+                    std::string GetIncludeContentChanges() const;
+
+                    /**
+                     * 设置如果该值为all，则DDL数据以及DML数据也会写入到选中的topic；若该值为dml，则只有DML数据写入到选中的topic
+                     * @param IncludeContentChanges 如果该值为all，则DDL数据以及DML数据也会写入到选中的topic；若该值为dml，则只有DML数据写入到选中的topic
+                     */
+                    void SetIncludeContentChanges(const std::string& _includeContentChanges);
+
+                    /**
+                     * 判断参数 IncludeContentChanges 是否已赋值
+                     * @return IncludeContentChanges 是否已赋值
+                     */
+                    bool IncludeContentChangesHasBeenSet() const;
+
+                    /**
+                     * 获取如果该值为true，且MySQL中"binlog_rows_query_log_events"配置项的值为"ON"，则流入到topic的数据包含原SQL语句；若该值为false，流入到topic的数据不包含原SQL语句
+                     * @return IncludeQuery 如果该值为true，且MySQL中"binlog_rows_query_log_events"配置项的值为"ON"，则流入到topic的数据包含原SQL语句；若该值为false，流入到topic的数据不包含原SQL语句
+                     */
+                    bool GetIncludeQuery() const;
+
+                    /**
+                     * 设置如果该值为true，且MySQL中"binlog_rows_query_log_events"配置项的值为"ON"，则流入到topic的数据包含原SQL语句；若该值为false，流入到topic的数据不包含原SQL语句
+                     * @param IncludeQuery 如果该值为true，且MySQL中"binlog_rows_query_log_events"配置项的值为"ON"，则流入到topic的数据包含原SQL语句；若该值为false，流入到topic的数据不包含原SQL语句
+                     */
+                    void SetIncludeQuery(const bool& _includeQuery);
+
+                    /**
+                     * 判断参数 IncludeQuery 是否已赋值
+                     * @return IncludeQuery 是否已赋值
+                     */
+                    bool IncludeQueryHasBeenSet() const;
+
                 private:
 
                     /**
@@ -481,6 +553,30 @@ namespace TencentCloud
                      */
                     DropCls m_dropCls;
                     bool m_dropClsHasBeenSet;
+
+                    /**
+                     * 输出格式，DEFAULT、CANAL_1、CANAL_2
+                     */
+                    std::string m_outputFormat;
+                    bool m_outputFormatHasBeenSet;
+
+                    /**
+                     * 当Table输入的是前缀时，该项值为true，否则为false
+                     */
+                    bool m_isTablePrefix;
+                    bool m_isTablePrefixHasBeenSet;
+
+                    /**
+                     * 如果该值为all，则DDL数据以及DML数据也会写入到选中的topic；若该值为dml，则只有DML数据写入到选中的topic
+                     */
+                    std::string m_includeContentChanges;
+                    bool m_includeContentChangesHasBeenSet;
+
+                    /**
+                     * 如果该值为true，且MySQL中"binlog_rows_query_log_events"配置项的值为"ON"，则流入到topic的数据包含原SQL语句；若该值为false，流入到topic的数据不包含原SQL语句
+                     */
+                    bool m_includeQuery;
+                    bool m_includeQueryHasBeenSet;
 
                 };
             }

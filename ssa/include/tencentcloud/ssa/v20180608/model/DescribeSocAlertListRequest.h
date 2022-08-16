@@ -81,14 +81,14 @@ namespace TencentCloud
                     bool PageIndexHasBeenSet() const;
 
                     /**
-                     * 获取业务场景 参考ScenesType
-                     * @return Scenes 业务场景 参考ScenesType
+                     * 获取1:急需关注 2.重保监控 3.全量告警
+                     * @return Scenes 1:急需关注 2.重保监控 3.全量告警
                      */
                     int64_t GetScenes() const;
 
                     /**
-                     * 设置业务场景 参考ScenesType
-                     * @param Scenes 业务场景 参考ScenesType
+                     * 设置1:急需关注 2.重保监控 3.全量告警
+                     * @param Scenes 1:急需关注 2.重保监控 3.全量告警
                      */
                     void SetScenes(const int64_t& _scenes);
 
@@ -167,7 +167,7 @@ namespace TencentCloud
                     bool m_pageIndexHasBeenSet;
 
                     /**
-                     * 业务场景 参考ScenesType
+                     * 1:急需关注 2.重保监控 3.全量告警
                      */
                     int64_t m_scenes;
                     bool m_scenesHasBeenSet;

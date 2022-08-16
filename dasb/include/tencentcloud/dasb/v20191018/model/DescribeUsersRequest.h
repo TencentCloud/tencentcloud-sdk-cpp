@@ -190,6 +190,24 @@ namespace TencentCloud
                      */
                     bool AuthTypeSetHasBeenSet() const;
 
+                    /**
+                     * 获取部门ID，用于过滤属于某个部门的用户
+                     * @return DepartmentId 部门ID，用于过滤属于某个部门的用户
+                     */
+                    std::string GetDepartmentId() const;
+
+                    /**
+                     * 设置部门ID，用于过滤属于某个部门的用户
+                     * @param DepartmentId 部门ID，用于过滤属于某个部门的用户
+                     */
+                    void SetDepartmentId(const std::string& _departmentId);
+
+                    /**
+                     * 判断参数 DepartmentId 是否已赋值
+                     * @return DepartmentId 是否已赋值
+                     */
+                    bool DepartmentIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -240,6 +258,12 @@ namespace TencentCloud
                      */
                     std::vector<uint64_t> m_authTypeSet;
                     bool m_authTypeSetHasBeenSet;
+
+                    /**
+                     * 部门ID，用于过滤属于某个部门的用户
+                     */
+                    std::string m_departmentId;
+                    bool m_departmentIdHasBeenSet;
 
                 };
             }

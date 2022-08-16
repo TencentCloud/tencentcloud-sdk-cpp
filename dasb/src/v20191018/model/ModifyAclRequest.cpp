@@ -47,7 +47,8 @@ ModifyAclRequest::ModifyAclRequest() :
     m_allowShellFileDownHasBeenSet(false),
     m_allowFileDelHasBeenSet(false),
     m_validateFromHasBeenSet(false),
-    m_validateToHasBeenSet(false)
+    m_validateToHasBeenSet(false),
+    m_departmentIdHasBeenSet(false)
 {
 }
 
@@ -286,6 +287,14 @@ string ModifyAclRequest::ToJsonString() const
         string key = "ValidateTo";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_validateTo.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_departmentIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DepartmentId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_departmentId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -694,6 +703,22 @@ void ModifyAclRequest::SetValidateTo(const string& _validateTo)
 bool ModifyAclRequest::ValidateToHasBeenSet() const
 {
     return m_validateToHasBeenSet;
+}
+
+string ModifyAclRequest::GetDepartmentId() const
+{
+    return m_departmentId;
+}
+
+void ModifyAclRequest::SetDepartmentId(const string& _departmentId)
+{
+    m_departmentId = _departmentId;
+    m_departmentIdHasBeenSet = true;
+}
+
+bool ModifyAclRequest::DepartmentIdHasBeenSet() const
+{
+    return m_departmentIdHasBeenSet;
 }
 
 

@@ -26,7 +26,8 @@ AudioResultDetailMoanResult::AudioResultDetailMoanResult() :
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
     m_subLabelCodeHasBeenSet(false),
-    m_subLabelHasBeenSet(false)
+    m_subLabelHasBeenSet(false),
+    m_suggestionHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,16 @@ CoreInternalOutcome AudioResultDetailMoanResult::Deserialize(const rapidjson::Va
         m_subLabelHasBeenSet = true;
     }
 
+    if (value.HasMember("Suggestion") && !value["Suggestion"].IsNull())
+    {
+        if (!value["Suggestion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AudioResultDetailMoanResult.Suggestion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_suggestion = string(value["Suggestion"].GetString());
+        m_suggestionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +159,14 @@ void AudioResultDetailMoanResult::ToJsonObject(rapidjson::Value &value, rapidjso
         string key = "SubLabel";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_subLabel.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_suggestionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Suggestion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_suggestion.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -247,5 +266,21 @@ void AudioResultDetailMoanResult::SetSubLabel(const string& _subLabel)
 bool AudioResultDetailMoanResult::SubLabelHasBeenSet() const
 {
     return m_subLabelHasBeenSet;
+}
+
+string AudioResultDetailMoanResult::GetSuggestion() const
+{
+    return m_suggestion;
+}
+
+void AudioResultDetailMoanResult::SetSuggestion(const string& _suggestion)
+{
+    m_suggestion = _suggestion;
+    m_suggestionHasBeenSet = true;
+}
+
+bool AudioResultDetailMoanResult::SuggestionHasBeenSet() const
+{
+    return m_suggestionHasBeenSet;
 }
 

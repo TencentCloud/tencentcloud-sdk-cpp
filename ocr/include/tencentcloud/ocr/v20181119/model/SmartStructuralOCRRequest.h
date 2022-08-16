@@ -168,6 +168,24 @@ ItemNames=["姓名","性别"]
                      */
                     bool PdfPageNumberHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启全文字段识别，默认值为false，开启后可返回全文字段识别结果。
+                     * @return ReturnFullText 是否开启全文字段识别，默认值为false，开启后可返回全文字段识别结果。
+                     */
+                    bool GetReturnFullText() const;
+
+                    /**
+                     * 设置是否开启全文字段识别，默认值为false，开启后可返回全文字段识别结果。
+                     * @param ReturnFullText 是否开启全文字段识别，默认值为false，开启后可返回全文字段识别结果。
+                     */
+                    void SetReturnFullText(const bool& _returnFullText);
+
+                    /**
+                     * 判断参数 ReturnFullText 是否已赋值
+                     * @return ReturnFullText 是否已赋值
+                     */
+                    bool ReturnFullTextHasBeenSet() const;
+
                 private:
 
                     /**
@@ -208,6 +226,12 @@ ItemNames=["姓名","性别"]
                      */
                     uint64_t m_pdfPageNumber;
                     bool m_pdfPageNumberHasBeenSet;
+
+                    /**
+                     * 是否开启全文字段识别，默认值为false，开启后可返回全文字段识别结果。
+                     */
+                    bool m_returnFullText;
+                    bool m_returnFullTextHasBeenSet;
 
                 };
             }

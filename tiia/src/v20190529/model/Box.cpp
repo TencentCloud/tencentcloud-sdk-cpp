@@ -22,7 +22,8 @@ using namespace std;
 
 Box::Box() :
     m_rectHasBeenSet(false),
-    m_scoreHasBeenSet(false)
+    m_scoreHasBeenSet(false),
+    m_categoryIdHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,16 @@ CoreInternalOutcome Box::Deserialize(const rapidjson::Value &value)
         m_scoreHasBeenSet = true;
     }
 
+    if (value.HasMember("CategoryId") && !value["CategoryId"].IsNull())
+    {
+        if (!value["CategoryId"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Box.CategoryId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_categoryId = value["CategoryId"].GetInt64();
+        m_categoryIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -80,6 +91,14 @@ void Box::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorTy
         string key = "Score";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_score, allocator);
+    }
+
+    if (m_categoryIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CategoryId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_categoryId, allocator);
     }
 
 }
@@ -115,5 +134,21 @@ void Box::SetScore(const double& _score)
 bool Box::ScoreHasBeenSet() const
 {
     return m_scoreHasBeenSet;
+}
+
+int64_t Box::GetCategoryId() const
+{
+    return m_categoryId;
+}
+
+void Box::SetCategoryId(const int64_t& _categoryId)
+{
+    m_categoryId = _categoryId;
+    m_categoryIdHasBeenSet = true;
+}
+
+bool Box::CategoryIdHasBeenSet() const
+{
+    return m_categoryIdHasBeenSet;
 }
 

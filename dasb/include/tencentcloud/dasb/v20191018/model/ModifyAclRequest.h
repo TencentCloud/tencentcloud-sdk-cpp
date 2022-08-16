@@ -500,6 +500,24 @@ namespace TencentCloud
                      */
                     bool ValidateToHasBeenSet() const;
 
+                    /**
+                     * 获取权限所属部门的ID，如：1.2.3
+                     * @return DepartmentId 权限所属部门的ID，如：1.2.3
+                     */
+                    std::string GetDepartmentId() const;
+
+                    /**
+                     * 设置权限所属部门的ID，如：1.2.3
+                     * @param DepartmentId 权限所属部门的ID，如：1.2.3
+                     */
+                    void SetDepartmentId(const std::string& _departmentId);
+
+                    /**
+                     * 判断参数 DepartmentId 是否已赋值
+                     * @return DepartmentId 是否已赋值
+                     */
+                    bool DepartmentIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -653,6 +671,12 @@ namespace TencentCloud
                      */
                     std::string m_validateTo;
                     bool m_validateToHasBeenSet;
+
+                    /**
+                     * 权限所属部门的ID，如：1.2.3
+                     */
+                    std::string m_departmentId;
+                    bool m_departmentIdHasBeenSet;
 
                 };
             }

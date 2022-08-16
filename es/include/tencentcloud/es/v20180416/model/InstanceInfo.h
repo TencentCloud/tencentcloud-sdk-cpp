@@ -35,6 +35,7 @@
 #include <tencentcloud/es/v20180416/model/WebNodeTypeInfo.h>
 #include <tencentcloud/es/v20180416/model/EsConfigSetInfo.h>
 #include <tencentcloud/es/v20180416/model/OperationDuration.h>
+#include <tencentcloud/es/v20180416/model/OptionalWebServiceInfo.h>
 
 
 namespace TencentCloud
@@ -1605,6 +1606,50 @@ RENEW_FLAG_DEFAULT：不自动续费
                      */
                     bool OperationDurationHasBeenSet() const;
 
+                    /**
+                     * 获取web节点列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OptionalWebServiceInfos web节点列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<OptionalWebServiceInfo> GetOptionalWebServiceInfos() const;
+
+                    /**
+                     * 设置web节点列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param OptionalWebServiceInfos web节点列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetOptionalWebServiceInfos(const std::vector<OptionalWebServiceInfo>& _optionalWebServiceInfos);
+
+                    /**
+                     * 判断参数 OptionalWebServiceInfos 是否已赋值
+                     * @return OptionalWebServiceInfos 是否已赋值
+                     */
+                    bool OptionalWebServiceInfosHasBeenSet() const;
+
+                    /**
+                     * 获取自治索引开关
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AutoIndexEnabled 自治索引开关
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetAutoIndexEnabled() const;
+
+                    /**
+                     * 设置自治索引开关
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AutoIndexEnabled 自治索引开关
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAutoIndexEnabled(const bool& _autoIndexEnabled);
+
+                    /**
+                     * 判断参数 AutoIndexEnabled 是否已赋值
+                     * @return AutoIndexEnabled 是否已赋值
+                     */
+                    bool AutoIndexEnabledHasBeenSet() const;
+
                 private:
 
                     /**
@@ -2107,6 +2152,20 @@ RENEW_FLAG_DEFAULT：不自动续费
                      */
                     OperationDuration m_operationDuration;
                     bool m_operationDurationHasBeenSet;
+
+                    /**
+                     * web节点列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<OptionalWebServiceInfo> m_optionalWebServiceInfos;
+                    bool m_optionalWebServiceInfosHasBeenSet;
+
+                    /**
+                     * 自治索引开关
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_autoIndexEnabled;
+                    bool m_autoIndexEnabledHasBeenSet;
 
                 };
             }

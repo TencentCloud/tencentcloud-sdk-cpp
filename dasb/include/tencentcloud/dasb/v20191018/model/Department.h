@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_DASB_V20191018_MODEL_GROUP_H_
-#define TENCENTCLOUD_DASB_V20191018_MODEL_GROUP_H_
+#ifndef TENCENTCLOUD_DASB_V20191018_MODEL_DEPARTMENT_H_
+#define TENCENTCLOUD_DASB_V20191018_MODEL_DEPARTMENT_H_
 
 #include <string>
 #include <vector>
@@ -24,7 +24,6 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/dasb/v20191018/model/Department.h>
 
 
 namespace TencentCloud
@@ -36,28 +35,28 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 组信息，用于用户组、主机组
+                * 部门信息
                 */
-                class Group : public AbstractModel
+                class Department : public AbstractModel
                 {
                 public:
-                    Group();
-                    ~Group() = default;
+                    Department();
+                    ~Department() = default;
                     void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
                     CoreInternalOutcome Deserialize(const rapidjson::Value &value);
 
 
                     /**
-                     * 获取组ID
-                     * @return Id 组ID
+                     * 获取部门ID
+                     * @return Id 部门ID
                      */
-                    uint64_t GetId() const;
+                    std::string GetId() const;
 
                     /**
-                     * 设置组ID
-                     * @param Id 组ID
+                     * 设置部门ID
+                     * @param Id 部门ID
                      */
-                    void SetId(const uint64_t& _id);
+                    void SetId(const std::string& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
@@ -66,14 +65,14 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取组名称
-                     * @return Name 组名称
+                     * 获取部门名称，1 - 256个字符
+                     * @return Name 部门名称，1 - 256个字符
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置组名称
-                     * @param Name 组名称
+                     * 设置部门名称，1 - 256个字符
+                     * @param Name 部门名称，1 - 256个字符
                      */
                     void SetName(const std::string& _name);
 
@@ -84,47 +83,47 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取所属部门信息
+                     * 获取部门管理员账号ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Department 所属部门信息
+                     * @return Managers 部门管理员账号ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    Department GetDepartment() const;
+                    std::vector<std::string> GetManagers() const;
 
                     /**
-                     * 设置所属部门信息
+                     * 设置部门管理员账号ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Department 所属部门信息
+                     * @param Managers 部门管理员账号ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    void SetDepartment(const Department& _department);
+                    void SetManagers(const std::vector<std::string>& _managers);
 
                     /**
-                     * 判断参数 Department 是否已赋值
-                     * @return Department 是否已赋值
+                     * 判断参数 Managers 是否已赋值
+                     * @return Managers 是否已赋值
                      */
-                    bool DepartmentHasBeenSet() const;
+                    bool ManagersHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 组ID
+                     * 部门ID
                      */
-                    uint64_t m_id;
+                    std::string m_id;
                     bool m_idHasBeenSet;
 
                     /**
-                     * 组名称
+                     * 部门名称，1 - 256个字符
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 所属部门信息
+                     * 部门管理员账号ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    Department m_department;
-                    bool m_departmentHasBeenSet;
+                    std::vector<std::string> m_managers;
+                    bool m_managersHasBeenSet;
 
                 };
             }
@@ -132,4 +131,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_DASB_V20191018_MODEL_GROUP_H_
+#endif // !TENCENTCLOUD_DASB_V20191018_MODEL_DEPARTMENT_H_

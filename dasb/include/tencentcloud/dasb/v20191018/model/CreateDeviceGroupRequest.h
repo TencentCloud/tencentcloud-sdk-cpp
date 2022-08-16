@@ -60,6 +60,24 @@ namespace TencentCloud
                      */
                     bool NameHasBeenSet() const;
 
+                    /**
+                     * 获取资产组所属部门ID，如：1.2.3
+                     * @return DepartmentId 资产组所属部门ID，如：1.2.3
+                     */
+                    std::string GetDepartmentId() const;
+
+                    /**
+                     * 设置资产组所属部门ID，如：1.2.3
+                     * @param DepartmentId 资产组所属部门ID，如：1.2.3
+                     */
+                    void SetDepartmentId(const std::string& _departmentId);
+
+                    /**
+                     * 判断参数 DepartmentId 是否已赋值
+                     * @return DepartmentId 是否已赋值
+                     */
+                    bool DepartmentIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -67,6 +85,12 @@ namespace TencentCloud
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
+
+                    /**
+                     * 资产组所属部门ID，如：1.2.3
+                     */
+                    std::string m_departmentId;
+                    bool m_departmentIdHasBeenSet;
 
                 };
             }

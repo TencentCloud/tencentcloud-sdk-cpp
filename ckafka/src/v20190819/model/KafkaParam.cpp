@@ -31,7 +31,9 @@ KafkaParam::KafkaParam() :
     m_topicIdHasBeenSet(false),
     m_partitionNumHasBeenSet(false),
     m_enableTolerationHasBeenSet(false),
-    m_qpsLimitHasBeenSet(false)
+    m_qpsLimitHasBeenSet(false),
+    m_tableMappingsHasBeenSet(false),
+    m_useTableMappingHasBeenSet(false)
 {
 }
 
@@ -150,6 +152,36 @@ CoreInternalOutcome KafkaParam::Deserialize(const rapidjson::Value &value)
         m_qpsLimitHasBeenSet = true;
     }
 
+    if (value.HasMember("TableMappings") && !value["TableMappings"].IsNull())
+    {
+        if (!value["TableMappings"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `KafkaParam.TableMappings` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["TableMappings"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            TableMapping item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tableMappings.push_back(item);
+        }
+        m_tableMappingsHasBeenSet = true;
+    }
+
+    if (value.HasMember("UseTableMapping") && !value["UseTableMapping"].IsNull())
+    {
+        if (!value["UseTableMapping"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `KafkaParam.UseTableMapping` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_useTableMapping = value["UseTableMapping"].GetBool();
+        m_useTableMappingHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -243,6 +275,29 @@ void KafkaParam::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "QpsLimit";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_qpsLimit, allocator);
+    }
+
+    if (m_tableMappingsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TableMappings";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tableMappings.begin(); itr != m_tableMappings.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_useTableMappingHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UseTableMapping";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_useTableMapping, allocator);
     }
 
 }
@@ -422,5 +477,37 @@ void KafkaParam::SetQpsLimit(const uint64_t& _qpsLimit)
 bool KafkaParam::QpsLimitHasBeenSet() const
 {
     return m_qpsLimitHasBeenSet;
+}
+
+vector<TableMapping> KafkaParam::GetTableMappings() const
+{
+    return m_tableMappings;
+}
+
+void KafkaParam::SetTableMappings(const vector<TableMapping>& _tableMappings)
+{
+    m_tableMappings = _tableMappings;
+    m_tableMappingsHasBeenSet = true;
+}
+
+bool KafkaParam::TableMappingsHasBeenSet() const
+{
+    return m_tableMappingsHasBeenSet;
+}
+
+bool KafkaParam::GetUseTableMapping() const
+{
+    return m_useTableMapping;
+}
+
+void KafkaParam::SetUseTableMapping(const bool& _useTableMapping)
+{
+    m_useTableMapping = _useTableMapping;
+    m_useTableMappingHasBeenSet = true;
+}
+
+bool KafkaParam::UseTableMappingHasBeenSet() const
+{
+    return m_useTableMappingHasBeenSet;
 }
 

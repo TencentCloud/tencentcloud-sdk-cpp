@@ -186,6 +186,24 @@ namespace TencentCloud
                      */
                     bool StatusHasBeenSet() const;
 
+                    /**
+                     * 获取部门ID，用于过滤属于某个部门的访问权限
+                     * @return DepartmentId 部门ID，用于过滤属于某个部门的访问权限
+                     */
+                    std::string GetDepartmentId() const;
+
+                    /**
+                     * 设置部门ID，用于过滤属于某个部门的访问权限
+                     * @param DepartmentId 部门ID，用于过滤属于某个部门的访问权限
+                     */
+                    void SetDepartmentId(const std::string& _departmentId);
+
+                    /**
+                     * 判断参数 DepartmentId 是否已赋值
+                     * @return DepartmentId 是否已赋值
+                     */
+                    bool DepartmentIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -235,6 +253,12 @@ namespace TencentCloud
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * 部门ID，用于过滤属于某个部门的访问权限
+                     */
+                    std::string m_departmentId;
+                    bool m_departmentIdHasBeenSet;
 
                 };
             }

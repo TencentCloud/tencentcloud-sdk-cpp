@@ -30,7 +30,8 @@ DescribeUsersRequest::DescribeUsersRequest() :
     m_userNameHasBeenSet(false),
     m_phoneHasBeenSet(false),
     m_authorizedDeviceIdSetHasBeenSet(false),
-    m_authTypeSetHasBeenSet(false)
+    m_authTypeSetHasBeenSet(false),
+    m_departmentIdHasBeenSet(false)
 {
 }
 
@@ -118,6 +119,14 @@ string DescribeUsersRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
         }
+    }
+
+    if (m_departmentIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DepartmentId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_departmentId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -254,6 +263,22 @@ void DescribeUsersRequest::SetAuthTypeSet(const vector<uint64_t>& _authTypeSet)
 bool DescribeUsersRequest::AuthTypeSetHasBeenSet() const
 {
     return m_authTypeSetHasBeenSet;
+}
+
+string DescribeUsersRequest::GetDepartmentId() const
+{
+    return m_departmentId;
+}
+
+void DescribeUsersRequest::SetDepartmentId(const string& _departmentId)
+{
+    m_departmentId = _departmentId;
+    m_departmentIdHasBeenSet = true;
+}
+
+bool DescribeUsersRequest::DepartmentIdHasBeenSet() const
+{
+    return m_departmentIdHasBeenSet;
 }
 
 

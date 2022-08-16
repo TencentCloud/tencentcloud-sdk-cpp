@@ -14,41 +14,41 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/dasb/v20191018/model/CreateDeviceGroupRequest.h>
+#include <tencentcloud/iotcloud/v20210408/model/DeleteDeviceShadowRequest.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
-using namespace TencentCloud::Dasb::V20191018::Model;
+using namespace TencentCloud::Iotcloud::V20210408::Model;
 using namespace std;
 
-CreateDeviceGroupRequest::CreateDeviceGroupRequest() :
-    m_nameHasBeenSet(false),
-    m_departmentIdHasBeenSet(false)
+DeleteDeviceShadowRequest::DeleteDeviceShadowRequest() :
+    m_productIdHasBeenSet(false),
+    m_deviceNameHasBeenSet(false)
 {
 }
 
-string CreateDeviceGroupRequest::ToJsonString() const
+string DeleteDeviceShadowRequest::ToJsonString() const
 {
     rapidjson::Document d;
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_nameHasBeenSet)
+    if (m_productIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Name";
+        string key = "ProductId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_productId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_departmentIdHasBeenSet)
+    if (m_deviceNameHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "DepartmentId";
+        string key = "DeviceName";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_departmentId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_deviceName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -59,36 +59,36 @@ string CreateDeviceGroupRequest::ToJsonString() const
 }
 
 
-string CreateDeviceGroupRequest::GetName() const
+string DeleteDeviceShadowRequest::GetProductId() const
 {
-    return m_name;
+    return m_productId;
 }
 
-void CreateDeviceGroupRequest::SetName(const string& _name)
+void DeleteDeviceShadowRequest::SetProductId(const string& _productId)
 {
-    m_name = _name;
-    m_nameHasBeenSet = true;
+    m_productId = _productId;
+    m_productIdHasBeenSet = true;
 }
 
-bool CreateDeviceGroupRequest::NameHasBeenSet() const
+bool DeleteDeviceShadowRequest::ProductIdHasBeenSet() const
 {
-    return m_nameHasBeenSet;
+    return m_productIdHasBeenSet;
 }
 
-string CreateDeviceGroupRequest::GetDepartmentId() const
+string DeleteDeviceShadowRequest::GetDeviceName() const
 {
-    return m_departmentId;
+    return m_deviceName;
 }
 
-void CreateDeviceGroupRequest::SetDepartmentId(const string& _departmentId)
+void DeleteDeviceShadowRequest::SetDeviceName(const string& _deviceName)
 {
-    m_departmentId = _departmentId;
-    m_departmentIdHasBeenSet = true;
+    m_deviceName = _deviceName;
+    m_deviceNameHasBeenSet = true;
 }
 
-bool CreateDeviceGroupRequest::DepartmentIdHasBeenSet() const
+bool DeleteDeviceShadowRequest::DeviceNameHasBeenSet() const
 {
-    return m_departmentIdHasBeenSet;
+    return m_deviceNameHasBeenSet;
 }
 
 

@@ -38,7 +38,11 @@ MySQLParam::MySQLParam() :
     m_topicReplacementHasBeenSet(false),
     m_keyColumnsHasBeenSet(false),
     m_dropInvalidMessageHasBeenSet(false),
-    m_dropClsHasBeenSet(false)
+    m_dropClsHasBeenSet(false),
+    m_outputFormatHasBeenSet(false),
+    m_isTablePrefixHasBeenSet(false),
+    m_includeContentChangesHasBeenSet(false),
+    m_includeQueryHasBeenSet(false)
 {
 }
 
@@ -244,6 +248,46 @@ CoreInternalOutcome MySQLParam::Deserialize(const rapidjson::Value &value)
         m_dropClsHasBeenSet = true;
     }
 
+    if (value.HasMember("OutputFormat") && !value["OutputFormat"].IsNull())
+    {
+        if (!value["OutputFormat"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MySQLParam.OutputFormat` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_outputFormat = string(value["OutputFormat"].GetString());
+        m_outputFormatHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsTablePrefix") && !value["IsTablePrefix"].IsNull())
+    {
+        if (!value["IsTablePrefix"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `MySQLParam.IsTablePrefix` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isTablePrefix = value["IsTablePrefix"].GetBool();
+        m_isTablePrefixHasBeenSet = true;
+    }
+
+    if (value.HasMember("IncludeContentChanges") && !value["IncludeContentChanges"].IsNull())
+    {
+        if (!value["IncludeContentChanges"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MySQLParam.IncludeContentChanges` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_includeContentChanges = string(value["IncludeContentChanges"].GetString());
+        m_includeContentChangesHasBeenSet = true;
+    }
+
+    if (value.HasMember("IncludeQuery") && !value["IncludeQuery"].IsNull())
+    {
+        if (!value["IncludeQuery"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `MySQLParam.IncludeQuery` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_includeQuery = value["IncludeQuery"].GetBool();
+        m_includeQueryHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -401,6 +445,38 @@ void MySQLParam::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_dropCls.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_outputFormatHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OutputFormat";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_outputFormat.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isTablePrefixHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsTablePrefix";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isTablePrefix, allocator);
+    }
+
+    if (m_includeContentChangesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IncludeContentChanges";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_includeContentChanges.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_includeQueryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IncludeQuery";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_includeQuery, allocator);
     }
 
 }
@@ -692,5 +768,69 @@ void MySQLParam::SetDropCls(const DropCls& _dropCls)
 bool MySQLParam::DropClsHasBeenSet() const
 {
     return m_dropClsHasBeenSet;
+}
+
+string MySQLParam::GetOutputFormat() const
+{
+    return m_outputFormat;
+}
+
+void MySQLParam::SetOutputFormat(const string& _outputFormat)
+{
+    m_outputFormat = _outputFormat;
+    m_outputFormatHasBeenSet = true;
+}
+
+bool MySQLParam::OutputFormatHasBeenSet() const
+{
+    return m_outputFormatHasBeenSet;
+}
+
+bool MySQLParam::GetIsTablePrefix() const
+{
+    return m_isTablePrefix;
+}
+
+void MySQLParam::SetIsTablePrefix(const bool& _isTablePrefix)
+{
+    m_isTablePrefix = _isTablePrefix;
+    m_isTablePrefixHasBeenSet = true;
+}
+
+bool MySQLParam::IsTablePrefixHasBeenSet() const
+{
+    return m_isTablePrefixHasBeenSet;
+}
+
+string MySQLParam::GetIncludeContentChanges() const
+{
+    return m_includeContentChanges;
+}
+
+void MySQLParam::SetIncludeContentChanges(const string& _includeContentChanges)
+{
+    m_includeContentChanges = _includeContentChanges;
+    m_includeContentChangesHasBeenSet = true;
+}
+
+bool MySQLParam::IncludeContentChangesHasBeenSet() const
+{
+    return m_includeContentChangesHasBeenSet;
+}
+
+bool MySQLParam::GetIncludeQuery() const
+{
+    return m_includeQuery;
+}
+
+void MySQLParam::SetIncludeQuery(const bool& _includeQuery)
+{
+    m_includeQuery = _includeQuery;
+    m_includeQueryHasBeenSet = true;
+}
+
+bool MySQLParam::IncludeQueryHasBeenSet() const
+{
+    return m_includeQueryHasBeenSet;
 }
 

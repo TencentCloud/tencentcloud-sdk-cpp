@@ -26,6 +26,7 @@ set(dasb_public_header_model
   include/tencentcloud/dasb/v20191018/model/ModifyUserRequest.h
   include/tencentcloud/dasb/v20191018/model/DeleteUsersRequest.h
   include/tencentcloud/dasb/v20191018/model/DeleteDeviceGroupMembersResponse.h
+  include/tencentcloud/dasb/v20191018/model/Department.h
   include/tencentcloud/dasb/v20191018/model/AddUserGroupMembersResponse.h
   include/tencentcloud/dasb/v20191018/model/DescribeDasbImageIdsResponse.h
   include/tencentcloud/dasb/v20191018/model/CreateUserResponse.h
@@ -84,6 +85,7 @@ set(dasb_src
   src/v20191018/model/ModifyUserRequest.cpp
   src/v20191018/model/DeleteUsersRequest.cpp
   src/v20191018/model/DeleteDeviceGroupMembersResponse.cpp
+  src/v20191018/model/Department.cpp
   src/v20191018/model/AddUserGroupMembersResponse.cpp
   src/v20191018/model/DescribeDasbImageIdsResponse.cpp
   src/v20191018/model/CreateUserResponse.cpp

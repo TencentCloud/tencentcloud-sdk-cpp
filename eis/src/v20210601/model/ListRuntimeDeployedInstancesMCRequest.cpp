@@ -29,7 +29,9 @@ ListRuntimeDeployedInstancesMCRequest::ListRuntimeDeployedInstancesMCRequest() :
     m_sortTypeHasBeenSet(false),
     m_sortHasBeenSet(false),
     m_zoneHasBeenSet(false),
-    m_apiVersionHasBeenSet(false)
+    m_apiVersionHasBeenSet(false),
+    m_groupIdHasBeenSet(false),
+    m_statusHasBeenSet(false)
 {
 }
 
@@ -94,6 +96,22 @@ string ListRuntimeDeployedInstancesMCRequest::ToJsonString() const
         string key = "ApiVersion";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_apiVersion, allocator);
+    }
+
+    if (m_groupIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GroupId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_groupId, allocator);
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_status, allocator);
     }
 
 
@@ -214,6 +232,38 @@ void ListRuntimeDeployedInstancesMCRequest::SetApiVersion(const int64_t& _apiVer
 bool ListRuntimeDeployedInstancesMCRequest::ApiVersionHasBeenSet() const
 {
     return m_apiVersionHasBeenSet;
+}
+
+int64_t ListRuntimeDeployedInstancesMCRequest::GetGroupId() const
+{
+    return m_groupId;
+}
+
+void ListRuntimeDeployedInstancesMCRequest::SetGroupId(const int64_t& _groupId)
+{
+    m_groupId = _groupId;
+    m_groupIdHasBeenSet = true;
+}
+
+bool ListRuntimeDeployedInstancesMCRequest::GroupIdHasBeenSet() const
+{
+    return m_groupIdHasBeenSet;
+}
+
+int64_t ListRuntimeDeployedInstancesMCRequest::GetStatus() const
+{
+    return m_status;
+}
+
+void ListRuntimeDeployedInstancesMCRequest::SetStatus(const int64_t& _status)
+{
+    m_status = _status;
+    m_statusHasBeenSet = true;
+}
+
+bool ListRuntimeDeployedInstancesMCRequest::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
 }
 
 

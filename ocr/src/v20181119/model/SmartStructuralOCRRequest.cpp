@@ -27,7 +27,8 @@ SmartStructuralOCRRequest::SmartStructuralOCRRequest() :
     m_imageBase64HasBeenSet(false),
     m_itemNamesHasBeenSet(false),
     m_isPdfHasBeenSet(false),
-    m_pdfPageNumberHasBeenSet(false)
+    m_pdfPageNumberHasBeenSet(false),
+    m_returnFullTextHasBeenSet(false)
 {
 }
 
@@ -81,6 +82,14 @@ string SmartStructuralOCRRequest::ToJsonString() const
         string key = "PdfPageNumber";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_pdfPageNumber, allocator);
+    }
+
+    if (m_returnFullTextHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReturnFullText";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_returnFullText, allocator);
     }
 
 
@@ -169,6 +178,22 @@ void SmartStructuralOCRRequest::SetPdfPageNumber(const uint64_t& _pdfPageNumber)
 bool SmartStructuralOCRRequest::PdfPageNumberHasBeenSet() const
 {
     return m_pdfPageNumberHasBeenSet;
+}
+
+bool SmartStructuralOCRRequest::GetReturnFullText() const
+{
+    return m_returnFullText;
+}
+
+void SmartStructuralOCRRequest::SetReturnFullText(const bool& _returnFullText)
+{
+    m_returnFullText = _returnFullText;
+    m_returnFullTextHasBeenSet = true;
+}
+
+bool SmartStructuralOCRRequest::ReturnFullTextHasBeenSet() const
+{
+    return m_returnFullTextHasBeenSet;
 }
 
 

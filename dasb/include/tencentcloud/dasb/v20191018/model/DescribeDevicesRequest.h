@@ -222,6 +222,24 @@ namespace TencentCloud
                      */
                     bool KindSetHasBeenSet() const;
 
+                    /**
+                     * 获取过滤条件，可按照部门ID进行过滤
+                     * @return DepartmentId 过滤条件，可按照部门ID进行过滤
+                     */
+                    std::string GetDepartmentId() const;
+
+                    /**
+                     * 设置过滤条件，可按照部门ID进行过滤
+                     * @param DepartmentId 过滤条件，可按照部门ID进行过滤
+                     */
+                    void SetDepartmentId(const std::string& _departmentId);
+
+                    /**
+                     * 判断参数 DepartmentId 是否已赋值
+                     * @return DepartmentId 是否已赋值
+                     */
+                    bool DepartmentIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -283,6 +301,12 @@ namespace TencentCloud
                      */
                     std::vector<uint64_t> m_kindSet;
                     bool m_kindSetHasBeenSet;
+
+                    /**
+                     * 过滤条件，可按照部门ID进行过滤
+                     */
+                    std::string m_departmentId;
+                    bool m_departmentIdHasBeenSet;
 
                 };
             }

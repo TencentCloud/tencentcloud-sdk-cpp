@@ -134,6 +134,7 @@ set(ckafka_public_header_model
   include/tencentcloud/ckafka/v20190819/model/TransformParam.h
   include/tencentcloud/ckafka/v20190819/model/DescribeTopicSubscribeGroupRequest.h
   include/tencentcloud/ckafka/v20190819/model/DeleteInstancePreResponse.h
+  include/tencentcloud/ckafka/v20190819/model/TableMapping.h
   include/tencentcloud/ckafka/v20190819/model/DescribeInstanceAttributesRequest.h
   include/tencentcloud/ckafka/v20190819/model/TopicInSyncReplicaInfo.h
   include/tencentcloud/ckafka/v20190819/model/DeleteConnectResourceResponse.h
@@ -393,6 +394,7 @@ set(ckafka_src
   src/v20190819/model/TransformParam.cpp
   src/v20190819/model/DescribeTopicSubscribeGroupRequest.cpp
   src/v20190819/model/DeleteInstancePreResponse.cpp
+  src/v20190819/model/TableMapping.cpp
   src/v20190819/model/DescribeInstanceAttributesRequest.cpp
   src/v20190819/model/TopicInSyncReplicaInfo.cpp
   src/v20190819/model/DeleteConnectResourceResponse.cpp

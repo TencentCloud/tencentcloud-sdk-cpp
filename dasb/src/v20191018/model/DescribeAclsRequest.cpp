@@ -30,7 +30,8 @@ DescribeAclsRequest::DescribeAclsRequest() :
     m_exactHasBeenSet(false),
     m_authorizedUserIdSetHasBeenSet(false),
     m_authorizedDeviceIdSetHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_departmentIdHasBeenSet(false)
 {
 }
 
@@ -118,6 +119,14 @@ string DescribeAclsRequest::ToJsonString() const
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_status, allocator);
+    }
+
+    if (m_departmentIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DepartmentId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_departmentId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -254,6 +263,22 @@ void DescribeAclsRequest::SetStatus(const uint64_t& _status)
 bool DescribeAclsRequest::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+string DescribeAclsRequest::GetDepartmentId() const
+{
+    return m_departmentId;
+}
+
+void DescribeAclsRequest::SetDepartmentId(const string& _departmentId)
+{
+    m_departmentId = _departmentId;
+    m_departmentIdHasBeenSet = true;
+}
+
+bool DescribeAclsRequest::DepartmentIdHasBeenSet() const
+{
+    return m_departmentIdHasBeenSet;
 }
 
 

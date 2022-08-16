@@ -28,7 +28,8 @@ UpdateIndexRequest::UpdateIndexRequest() :
     m_indexNameHasBeenSet(false),
     m_updateMetaJsonHasBeenSet(false),
     m_usernameHasBeenSet(false),
-    m_passwordHasBeenSet(false)
+    m_passwordHasBeenSet(false),
+    m_rolloverBackingIndexHasBeenSet(false)
 {
 }
 
@@ -85,6 +86,14 @@ string UpdateIndexRequest::ToJsonString() const
         string key = "Password";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_password.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_rolloverBackingIndexHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RolloverBackingIndex";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_rolloverBackingIndex, allocator);
     }
 
 
@@ -189,6 +198,22 @@ void UpdateIndexRequest::SetPassword(const string& _password)
 bool UpdateIndexRequest::PasswordHasBeenSet() const
 {
     return m_passwordHasBeenSet;
+}
+
+bool UpdateIndexRequest::GetRolloverBackingIndex() const
+{
+    return m_rolloverBackingIndex;
+}
+
+void UpdateIndexRequest::SetRolloverBackingIndex(const bool& _rolloverBackingIndex)
+{
+    m_rolloverBackingIndex = _rolloverBackingIndex;
+    m_rolloverBackingIndexHasBeenSet = true;
+}
+
+bool UpdateIndexRequest::RolloverBackingIndexHasBeenSet() const
+{
+    return m_rolloverBackingIndexHasBeenSet;
 }
 
 

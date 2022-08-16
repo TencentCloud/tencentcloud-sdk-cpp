@@ -28,7 +28,8 @@ DescribeDeviceGroupMembersRequest::DescribeDeviceGroupMembersRequest() :
     m_nameHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_kindHasBeenSet(false)
+    m_kindHasBeenSet(false),
+    m_departmentIdHasBeenSet(false)
 {
 }
 
@@ -85,6 +86,14 @@ string DescribeDeviceGroupMembersRequest::ToJsonString() const
         string key = "Kind";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_kind, allocator);
+    }
+
+    if (m_departmentIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DepartmentId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_departmentId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -189,6 +198,22 @@ void DescribeDeviceGroupMembersRequest::SetKind(const uint64_t& _kind)
 bool DescribeDeviceGroupMembersRequest::KindHasBeenSet() const
 {
     return m_kindHasBeenSet;
+}
+
+string DescribeDeviceGroupMembersRequest::GetDepartmentId() const
+{
+    return m_departmentId;
+}
+
+void DescribeDeviceGroupMembersRequest::SetDepartmentId(const string& _departmentId)
+{
+    m_departmentId = _departmentId;
+    m_departmentIdHasBeenSet = true;
+}
+
+bool DescribeDeviceGroupMembersRequest::DepartmentIdHasBeenSet() const
+{
+    return m_departmentIdHasBeenSet;
 }
 
 

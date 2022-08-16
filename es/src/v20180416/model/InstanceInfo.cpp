@@ -96,7 +96,9 @@ InstanceInfo::InstanceInfo() :
     m_esPrivateUrlHasBeenSet(false),
     m_esPrivateDomainHasBeenSet(false),
     m_esConfigSetsHasBeenSet(false),
-    m_operationDurationHasBeenSet(false)
+    m_operationDurationHasBeenSet(false),
+    m_optionalWebServiceInfosHasBeenSet(false),
+    m_autoIndexEnabledHasBeenSet(false)
 {
 }
 
@@ -964,6 +966,36 @@ CoreInternalOutcome InstanceInfo::Deserialize(const rapidjson::Value &value)
         m_operationDurationHasBeenSet = true;
     }
 
+    if (value.HasMember("OptionalWebServiceInfos") && !value["OptionalWebServiceInfos"].IsNull())
+    {
+        if (!value["OptionalWebServiceInfos"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.OptionalWebServiceInfos` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["OptionalWebServiceInfos"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            OptionalWebServiceInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_optionalWebServiceInfos.push_back(item);
+        }
+        m_optionalWebServiceInfosHasBeenSet = true;
+    }
+
+    if (value.HasMember("AutoIndexEnabled") && !value["AutoIndexEnabled"].IsNull())
+    {
+        if (!value["AutoIndexEnabled"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.AutoIndexEnabled` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_autoIndexEnabled = value["AutoIndexEnabled"].GetBool();
+        m_autoIndexEnabledHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1618,6 +1650,29 @@ void InstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_operationDuration.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_optionalWebServiceInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OptionalWebServiceInfos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_optionalWebServiceInfos.begin(); itr != m_optionalWebServiceInfos.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_autoIndexEnabledHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoIndexEnabled";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_autoIndexEnabled, allocator);
     }
 
 }
@@ -2837,5 +2892,37 @@ void InstanceInfo::SetOperationDuration(const OperationDuration& _operationDurat
 bool InstanceInfo::OperationDurationHasBeenSet() const
 {
     return m_operationDurationHasBeenSet;
+}
+
+vector<OptionalWebServiceInfo> InstanceInfo::GetOptionalWebServiceInfos() const
+{
+    return m_optionalWebServiceInfos;
+}
+
+void InstanceInfo::SetOptionalWebServiceInfos(const vector<OptionalWebServiceInfo>& _optionalWebServiceInfos)
+{
+    m_optionalWebServiceInfos = _optionalWebServiceInfos;
+    m_optionalWebServiceInfosHasBeenSet = true;
+}
+
+bool InstanceInfo::OptionalWebServiceInfosHasBeenSet() const
+{
+    return m_optionalWebServiceInfosHasBeenSet;
+}
+
+bool InstanceInfo::GetAutoIndexEnabled() const
+{
+    return m_autoIndexEnabled;
+}
+
+void InstanceInfo::SetAutoIndexEnabled(const bool& _autoIndexEnabled)
+{
+    m_autoIndexEnabled = _autoIndexEnabled;
+    m_autoIndexEnabledHasBeenSet = true;
+}
+
+bool InstanceInfo::AutoIndexEnabledHasBeenSet() const
+{
+    return m_autoIndexEnabledHasBeenSet;
 }
 

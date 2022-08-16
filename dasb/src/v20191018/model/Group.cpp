@@ -22,7 +22,8 @@ using namespace std;
 
 Group::Group() :
     m_idHasBeenSet(false),
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_departmentHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,23 @@ CoreInternalOutcome Group::Deserialize(const rapidjson::Value &value)
         m_nameHasBeenSet = true;
     }
 
+    if (value.HasMember("Department") && !value["Department"].IsNull())
+    {
+        if (!value["Department"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Group.Department` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_department.Deserialize(value["Department"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_departmentHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +90,15 @@ void Group::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocator
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_departmentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Department";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_department.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -107,5 +134,21 @@ void Group::SetName(const string& _name)
 bool Group::NameHasBeenSet() const
 {
     return m_nameHasBeenSet;
+}
+
+Department Group::GetDepartment() const
+{
+    return m_department;
+}
+
+void Group::SetDepartment(const Department& _department)
+{
+    m_department = _department;
+    m_departmentHasBeenSet = true;
+}
+
+bool Group::DepartmentHasBeenSet() const
+{
+    return m_departmentHasBeenSet;
 }
 

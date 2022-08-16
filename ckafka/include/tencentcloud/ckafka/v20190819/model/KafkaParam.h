@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/ckafka/v20190819/model/TableMapping.h>
 
 
 namespace TencentCloud
@@ -276,6 +277,50 @@ namespace TencentCloud
                      */
                     bool QpsLimitHasBeenSet() const;
 
+                    /**
+                     * 获取Table到Topic的路由，「分发到多个topic」开关打开时必传
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TableMappings Table到Topic的路由，「分发到多个topic」开关打开时必传
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<TableMapping> GetTableMappings() const;
+
+                    /**
+                     * 设置Table到Topic的路由，「分发到多个topic」开关打开时必传
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TableMappings Table到Topic的路由，「分发到多个topic」开关打开时必传
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTableMappings(const std::vector<TableMapping>& _tableMappings);
+
+                    /**
+                     * 判断参数 TableMappings 是否已赋值
+                     * @return TableMappings 是否已赋值
+                     */
+                    bool TableMappingsHasBeenSet() const;
+
+                    /**
+                     * 获取「分发到多个topic」开关，默认为false
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UseTableMapping 「分发到多个topic」开关，默认为false
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetUseTableMapping() const;
+
+                    /**
+                     * 设置「分发到多个topic」开关，默认为false
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param UseTableMapping 「分发到多个topic」开关，默认为false
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetUseTableMapping(const bool& _useTableMapping);
+
+                    /**
+                     * 判断参数 UseTableMapping 是否已赋值
+                     * @return UseTableMapping 是否已赋值
+                     */
+                    bool UseTableMappingHasBeenSet() const;
+
                 private:
 
                     /**
@@ -351,6 +396,20 @@ namespace TencentCloud
                      */
                     uint64_t m_qpsLimit;
                     bool m_qpsLimitHasBeenSet;
+
+                    /**
+                     * Table到Topic的路由，「分发到多个topic」开关打开时必传
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<TableMapping> m_tableMappings;
+                    bool m_tableMappingsHasBeenSet;
+
+                    /**
+                     * 「分发到多个topic」开关，默认为false
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_useTableMapping;
+                    bool m_useTableMappingHasBeenSet;
 
                 };
             }

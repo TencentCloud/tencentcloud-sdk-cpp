@@ -46,7 +46,8 @@ Acl::Acl() :
     m_allowFileDelHasBeenSet(false),
     m_validateFromHasBeenSet(false),
     m_validateToHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_departmentHasBeenSet(false)
 {
 }
 
@@ -368,6 +369,23 @@ CoreInternalOutcome Acl::Deserialize(const rapidjson::Value &value)
         m_statusHasBeenSet = true;
     }
 
+    if (value.HasMember("Department") && !value["Department"].IsNull())
+    {
+        if (!value["Department"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Acl.Department` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_department.Deserialize(value["Department"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_departmentHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -621,6 +639,15 @@ void Acl::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorTy
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_status, allocator);
+    }
+
+    if (m_departmentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Department";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_department.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -1040,5 +1067,21 @@ void Acl::SetStatus(const uint64_t& _status)
 bool Acl::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+Department Acl::GetDepartment() const
+{
+    return m_department;
+}
+
+void Acl::SetDepartment(const Department& _department)
+{
+    m_department = _department;
+    m_departmentHasBeenSet = true;
+}
+
+bool Acl::DepartmentHasBeenSet() const
+{
+    return m_departmentHasBeenSet;
 }
 

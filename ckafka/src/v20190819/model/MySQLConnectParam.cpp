@@ -28,7 +28,8 @@ MySQLConnectParam::MySQLConnectParam() :
     m_serviceVipHasBeenSet(false),
     m_uniqVpcIdHasBeenSet(false),
     m_isUpdateHasBeenSet(false),
-    m_clusterIdHasBeenSet(false)
+    m_clusterIdHasBeenSet(false),
+    m_selfBuiltHasBeenSet(false)
 {
 }
 
@@ -117,6 +118,16 @@ CoreInternalOutcome MySQLConnectParam::Deserialize(const rapidjson::Value &value
         m_clusterIdHasBeenSet = true;
     }
 
+    if (value.HasMember("SelfBuilt") && !value["SelfBuilt"].IsNull())
+    {
+        if (!value["SelfBuilt"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `MySQLConnectParam.SelfBuilt` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_selfBuilt = value["SelfBuilt"].GetBool();
+        m_selfBuiltHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -186,6 +197,14 @@ void MySQLConnectParam::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "ClusterId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_clusterId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_selfBuiltHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SelfBuilt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_selfBuilt, allocator);
     }
 
 }
@@ -317,5 +336,21 @@ void MySQLConnectParam::SetClusterId(const string& _clusterId)
 bool MySQLConnectParam::ClusterIdHasBeenSet() const
 {
     return m_clusterIdHasBeenSet;
+}
+
+bool MySQLConnectParam::GetSelfBuilt() const
+{
+    return m_selfBuilt;
+}
+
+void MySQLConnectParam::SetSelfBuilt(const bool& _selfBuilt)
+{
+    m_selfBuilt = _selfBuilt;
+    m_selfBuiltHasBeenSet = true;
+}
+
+bool MySQLConnectParam::SelfBuiltHasBeenSet() const
+{
+    return m_selfBuiltHasBeenSet;
 }
 
