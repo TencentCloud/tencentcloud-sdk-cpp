@@ -14,54 +14,55 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_TEO_V20220106_MODEL_MODIFYDDOSPOLICYRESPONSE_H_
-#define TENCENTCLOUD_TEO_V20220106_MODEL_MODIFYDDOSPOLICYRESPONSE_H_
+#ifndef TENCENTCLOUD_SMS_V20210111_MODEL_REPORTCONVERSIONRESPONSE_H_
+#define TENCENTCLOUD_SMS_V20210111_MODEL_REPORTCONVERSIONRESPONSE_H_
 
 #include <string>
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/sms/v20210111/model/ReportConversionStatus.h>
 
 
 namespace TencentCloud
 {
-    namespace Teo
+    namespace Sms
     {
-        namespace V20220106
+        namespace V20210111
         {
             namespace Model
             {
                 /**
-                * ModifyDDoSPolicy返回参数结构体
+                * ReportConversion返回参数结构体
                 */
-                class ModifyDDoSPolicyResponse : public AbstractModel
+                class ReportConversionResponse : public AbstractModel
                 {
                 public:
-                    ModifyDDoSPolicyResponse();
-                    ~ModifyDDoSPolicyResponse() = default;
+                    ReportConversionResponse();
+                    ~ReportConversionResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取策略id。
-                     * @return PolicyId 策略id。
+                     * 获取转化率上报响应包体。
+                     * @return ReportConversionStatus 转化率上报响应包体。
                      */
-                    int64_t GetPolicyId() const;
+                    ReportConversionStatus GetReportConversionStatus() const;
 
                     /**
-                     * 判断参数 PolicyId 是否已赋值
-                     * @return PolicyId 是否已赋值
+                     * 判断参数 ReportConversionStatus 是否已赋值
+                     * @return ReportConversionStatus 是否已赋值
                      */
-                    bool PolicyIdHasBeenSet() const;
+                    bool ReportConversionStatusHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 策略id。
+                     * 转化率上报响应包体。
                      */
-                    int64_t m_policyId;
-                    bool m_policyIdHasBeenSet;
+                    ReportConversionStatus m_reportConversionStatus;
+                    bool m_reportConversionStatusHasBeenSet;
 
                 };
             }
@@ -69,4 +70,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_TEO_V20220106_MODEL_MODIFYDDOSPOLICYRESPONSE_H_
+#endif // !TENCENTCLOUD_SMS_V20210111_MODEL_REPORTCONVERSIONRESPONSE_H_

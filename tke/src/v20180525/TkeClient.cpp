@@ -814,6 +814,49 @@ TkeClient::CreateEKSContainerInstancesOutcomeCallable TkeClient::CreateEKSContai
     return task->get_future();
 }
 
+TkeClient::CreateEdgeCVMInstancesOutcome TkeClient::CreateEdgeCVMInstances(const CreateEdgeCVMInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateEdgeCVMInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateEdgeCVMInstancesResponse rsp = CreateEdgeCVMInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateEdgeCVMInstancesOutcome(rsp);
+        else
+            return CreateEdgeCVMInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateEdgeCVMInstancesOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::CreateEdgeCVMInstancesAsync(const CreateEdgeCVMInstancesRequest& request, const CreateEdgeCVMInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateEdgeCVMInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::CreateEdgeCVMInstancesOutcomeCallable TkeClient::CreateEdgeCVMInstancesCallable(const CreateEdgeCVMInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateEdgeCVMInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateEdgeCVMInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TkeClient::CreateEdgeLogConfigOutcome TkeClient::CreateEdgeLogConfig(const CreateEdgeLogConfigRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateEdgeLogConfig");

@@ -14,22 +14,22 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/gme/v20180711/model/DescribeFilterResultListResponse.h>
+#include <tencentcloud/bma/v20210624/model/CreateCRUserVerifyResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Gme::V20180711::Model;
+using namespace TencentCloud::Bma::V20210624::Model;
 using namespace std;
 
-DescribeFilterResultListResponse::DescribeFilterResultListResponse() :
-    m_totalCountHasBeenSet(false),
-    m_dataHasBeenSet(false)
+CreateCRUserVerifyResponse::CreateCRUserVerifyResponse() :
+    m_statusHasBeenSet(false),
+    m_noteHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome DescribeFilterResultListResponse::Deserialize(const string &payload)
+CoreInternalOutcome CreateCRUserVerifyResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -63,67 +63,50 @@ CoreInternalOutcome DescribeFilterResultListResponse::Deserialize(const string &
     }
 
 
-    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
+    if (rsp.HasMember("Status") && !rsp["Status"].IsNull())
     {
-        if (!rsp["TotalCount"].IsUint64())
+        if (!rsp["Status"].IsInt64())
         {
-            return CoreInternalOutcome(Core::Error("response `TotalCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Status` IsInt64=false incorrectly").SetRequestId(requestId));
         }
-        m_totalCount = rsp["TotalCount"].GetUint64();
-        m_totalCountHasBeenSet = true;
+        m_status = rsp["Status"].GetInt64();
+        m_statusHasBeenSet = true;
     }
 
-    if (rsp.HasMember("Data") && !rsp["Data"].IsNull())
+    if (rsp.HasMember("Note") && !rsp["Note"].IsNull())
     {
-        if (!rsp["Data"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `Data` is not array type"));
-
-        const rapidjson::Value &tmpValue = rsp["Data"];
-        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        if (!rsp["Note"].IsString())
         {
-            VoiceFilterInfo item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
-            if (!outcome.IsSuccess())
-            {
-                outcome.GetError().SetRequestId(requestId);
-                return outcome;
-            }
-            m_data.push_back(item);
+            return CoreInternalOutcome(Core::Error("response `Note` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_dataHasBeenSet = true;
+        m_note = string(rsp["Note"].GetString());
+        m_noteHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string DescribeFilterResultListResponse::ToJsonString() const
+string CreateCRUserVerifyResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_totalCountHasBeenSet)
+    if (m_statusHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "TotalCount";
+        string key = "Status";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_totalCount, allocator);
+        value.AddMember(iKey, m_status, allocator);
     }
 
-    if (m_dataHasBeenSet)
+    if (m_noteHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Data";
+        string key = "Note";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        int i=0;
-        for (auto itr = m_data.begin(); itr != m_data.end(); ++itr, ++i)
-        {
-            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
-        }
+        value.AddMember(iKey, rapidjson::Value(m_note.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -138,24 +121,24 @@ string DescribeFilterResultListResponse::ToJsonString() const
 }
 
 
-uint64_t DescribeFilterResultListResponse::GetTotalCount() const
+int64_t CreateCRUserVerifyResponse::GetStatus() const
 {
-    return m_totalCount;
+    return m_status;
 }
 
-bool DescribeFilterResultListResponse::TotalCountHasBeenSet() const
+bool CreateCRUserVerifyResponse::StatusHasBeenSet() const
 {
-    return m_totalCountHasBeenSet;
+    return m_statusHasBeenSet;
 }
 
-vector<VoiceFilterInfo> DescribeFilterResultListResponse::GetData() const
+string CreateCRUserVerifyResponse::GetNote() const
 {
-    return m_data;
+    return m_note;
 }
 
-bool DescribeFilterResultListResponse::DataHasBeenSet() const
+bool CreateCRUserVerifyResponse::NoteHasBeenSet() const
 {
-    return m_dataHasBeenSet;
+    return m_noteHasBeenSet;
 }
 
 

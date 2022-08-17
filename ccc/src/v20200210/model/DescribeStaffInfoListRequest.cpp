@@ -27,7 +27,8 @@ DescribeStaffInfoListRequest::DescribeStaffInfoListRequest() :
     m_pageSizeHasBeenSet(false),
     m_pageNumberHasBeenSet(false),
     m_staffMailHasBeenSet(false),
-    m_modifiedTimeHasBeenSet(false)
+    m_modifiedTimeHasBeenSet(false),
+    m_skillGroupIdHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,14 @@ string DescribeStaffInfoListRequest::ToJsonString() const
         string key = "ModifiedTime";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_modifiedTime, allocator);
+    }
+
+    if (m_skillGroupIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SkillGroupId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_skillGroupId, allocator);
     }
 
 
@@ -164,6 +173,22 @@ void DescribeStaffInfoListRequest::SetModifiedTime(const int64_t& _modifiedTime)
 bool DescribeStaffInfoListRequest::ModifiedTimeHasBeenSet() const
 {
     return m_modifiedTimeHasBeenSet;
+}
+
+int64_t DescribeStaffInfoListRequest::GetSkillGroupId() const
+{
+    return m_skillGroupId;
+}
+
+void DescribeStaffInfoListRequest::SetSkillGroupId(const int64_t& _skillGroupId)
+{
+    m_skillGroupId = _skillGroupId;
+    m_skillGroupIdHasBeenSet = true;
+}
+
+bool DescribeStaffInfoListRequest::SkillGroupIdHasBeenSet() const
+{
+    return m_skillGroupIdHasBeenSet;
 }
 
 

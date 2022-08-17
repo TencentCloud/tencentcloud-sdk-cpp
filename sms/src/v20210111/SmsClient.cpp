@@ -642,6 +642,49 @@ SmsClient::PullSmsSendStatusByPhoneNumberOutcomeCallable SmsClient::PullSmsSendS
     return task->get_future();
 }
 
+SmsClient::ReportConversionOutcome SmsClient::ReportConversion(const ReportConversionRequest &request)
+{
+    auto outcome = MakeRequest(request, "ReportConversion");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ReportConversionResponse rsp = ReportConversionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ReportConversionOutcome(rsp);
+        else
+            return ReportConversionOutcome(o.GetError());
+    }
+    else
+    {
+        return ReportConversionOutcome(outcome.GetError());
+    }
+}
+
+void SmsClient::ReportConversionAsync(const ReportConversionRequest& request, const ReportConversionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ReportConversion(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SmsClient::ReportConversionOutcomeCallable SmsClient::ReportConversionCallable(const ReportConversionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ReportConversionOutcome()>>(
+        [this, request]()
+        {
+            return this->ReportConversion(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 SmsClient::SendSmsOutcome SmsClient::SendSms(const SendSmsRequest &request)
 {
     auto outcome = MakeRequest(request, "SendSms");

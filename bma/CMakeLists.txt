@@ -20,7 +20,7 @@ set(bma_public_header
 
 set(bma_public_header_model
   include/tencentcloud/bma/v20210624/model/ProtectURLInfo.h
-  include/tencentcloud/bma/v20210624/model/Monitor.h
+  include/tencentcloud/bma/v20210624/model/CreateCRUserVerifyRequest.h
   include/tencentcloud/bma/v20210624/model/CreateBPFalseTicketResponse.h
   include/tencentcloud/bma/v20210624/model/DescribeCRWorkInfoResponse.h
   include/tencentcloud/bma/v20210624/model/CreateCRRightResponse.h
@@ -29,6 +29,7 @@ set(bma_public_header_model
   include/tencentcloud/bma/v20210624/model/CreateBPOfflineTicketResponse.h
   include/tencentcloud/bma/v20210624/model/DescribeBPFakeURLsRequest.h
   include/tencentcloud/bma/v20210624/model/ModifyCRBlockStatusResponse.h
+  include/tencentcloud/bma/v20210624/model/Monitor.h
   include/tencentcloud/bma/v20210624/model/ModifyCRObtainStatusRequest.h
   include/tencentcloud/bma/v20210624/model/ReportFakeURLInfo.h
   include/tencentcloud/bma/v20210624/model/DescribeCRWorkInfoRequest.h
@@ -51,6 +52,7 @@ set(bma_public_header_model
   include/tencentcloud/bma/v20210624/model/CreateCRWorkRequest.h
   include/tencentcloud/bma/v20210624/model/DescribeBPCompanyInfoRequest.h
   include/tencentcloud/bma/v20210624/model/DescribeBPReportFakeURLsResponse.h
+  include/tencentcloud/bma/v20210624/model/DescribeCRMonitorDetailRequest.h
   include/tencentcloud/bma/v20210624/model/Filter.h
   include/tencentcloud/bma/v20210624/model/CreateCRBlockResponse.h
   include/tencentcloud/bma/v20210624/model/ModifyCRRightStatusRequest.h
@@ -58,7 +60,7 @@ set(bma_public_header_model
   include/tencentcloud/bma/v20210624/model/UpdateCRWorkRequest.h
   include/tencentcloud/bma/v20210624/model/FakeURLInfo.h
   include/tencentcloud/bma/v20210624/model/CreateBPOfflineTicketRequest.h
-  include/tencentcloud/bma/v20210624/model/DescribeCRMonitorDetailRequest.h
+  include/tencentcloud/bma/v20210624/model/CreateCRUserVerifyResponse.h
   include/tencentcloud/bma/v20210624/model/BrandData.h
   include/tencentcloud/bma/v20210624/model/ModifyCRRightStatusResponse.h
   include/tencentcloud/bma/v20210624/model/DescribeBPCompanyInfoResponse.h
@@ -75,7 +77,7 @@ set(bma_public_header_model
 set(bma_src
   src/v20210624/BmaClient.cpp
   src/v20210624/model/ProtectURLInfo.cpp
-  src/v20210624/model/Monitor.cpp
+  src/v20210624/model/CreateCRUserVerifyRequest.cpp
   src/v20210624/model/CreateBPFalseTicketResponse.cpp
   src/v20210624/model/DescribeCRWorkInfoResponse.cpp
   src/v20210624/model/CreateCRRightResponse.cpp
@@ -84,6 +86,7 @@ set(bma_src
   src/v20210624/model/CreateBPOfflineTicketResponse.cpp
   src/v20210624/model/DescribeBPFakeURLsRequest.cpp
   src/v20210624/model/ModifyCRBlockStatusResponse.cpp
+  src/v20210624/model/Monitor.cpp
   src/v20210624/model/ModifyCRObtainStatusRequest.cpp
   src/v20210624/model/ReportFakeURLInfo.cpp
   src/v20210624/model/DescribeCRWorkInfoRequest.cpp
@@ -106,6 +109,7 @@ set(bma_src
   src/v20210624/model/CreateCRWorkRequest.cpp
   src/v20210624/model/DescribeBPCompanyInfoRequest.cpp
   src/v20210624/model/DescribeBPReportFakeURLsResponse.cpp
+  src/v20210624/model/DescribeCRMonitorDetailRequest.cpp
   src/v20210624/model/Filter.cpp
   src/v20210624/model/CreateCRBlockResponse.cpp
   src/v20210624/model/ModifyCRRightStatusRequest.cpp
@@ -113,7 +117,7 @@ set(bma_src
   src/v20210624/model/UpdateCRWorkRequest.cpp
   src/v20210624/model/FakeURLInfo.cpp
   src/v20210624/model/CreateBPOfflineTicketRequest.cpp
-  src/v20210624/model/DescribeCRMonitorDetailRequest.cpp
+  src/v20210624/model/CreateCRUserVerifyResponse.cpp
   src/v20210624/model/BrandData.cpp
   src/v20210624/model/ModifyCRRightStatusResponse.cpp
   src/v20210624/model/DescribeBPCompanyInfoResponse.cpp

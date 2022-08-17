@@ -71,11 +71,13 @@ set(sms_public_header_model
   include/tencentcloud/sms/v20210111/model/ModifySmsTemplateResponse.h
   include/tencentcloud/sms/v20210111/model/ModifySmsSignRequest.h
   include/tencentcloud/sms/v20210111/model/SmsPackagesStatisticsRequest.h
+  include/tencentcloud/sms/v20210111/model/ReportConversionStatus.h
   include/tencentcloud/sms/v20210111/model/AddSmsSignRequest.h
   include/tencentcloud/sms/v20210111/model/AddTemplateStatus.h
   include/tencentcloud/sms/v20210111/model/DescribeSmsTemplateListResponse.h
   include/tencentcloud/sms/v20210111/model/DescribePhoneNumberInfoRequest.h
   include/tencentcloud/sms/v20210111/model/PullSmsSendStatusByPhoneNumberRequest.h
+  include/tencentcloud/sms/v20210111/model/ReportConversionResponse.h
   include/tencentcloud/sms/v20210111/model/AddSmsTemplateRequest.h
   include/tencentcloud/sms/v20210111/model/ModifySmsTemplateRequest.h
   include/tencentcloud/sms/v20210111/model/PullSmsReplyStatus.h
@@ -109,6 +111,7 @@ set(sms_public_header_model
   include/tencentcloud/sms/v20210111/model/DeleteSmsSignRequest.h
   include/tencentcloud/sms/v20210111/model/PullSmsReplyStatusByPhoneNumberRequest.h
   include/tencentcloud/sms/v20210111/model/ModifySmsSignResponse.h
+  include/tencentcloud/sms/v20210111/model/ReportConversionRequest.h
   include/tencentcloud/sms/v20210111/model/AddSignStatus.h
   include/tencentcloud/sms/v20210111/model/ModifyTemplateStatus.h
   include/tencentcloud/sms/v20210111/model/PullSmsSendStatusResponse.h
@@ -171,11 +174,13 @@ set(sms_src
   src/v20210111/model/ModifySmsTemplateResponse.cpp
   src/v20210111/model/ModifySmsSignRequest.cpp
   src/v20210111/model/SmsPackagesStatisticsRequest.cpp
+  src/v20210111/model/ReportConversionStatus.cpp
   src/v20210111/model/AddSmsSignRequest.cpp
   src/v20210111/model/AddTemplateStatus.cpp
   src/v20210111/model/DescribeSmsTemplateListResponse.cpp
   src/v20210111/model/DescribePhoneNumberInfoRequest.cpp
   src/v20210111/model/PullSmsSendStatusByPhoneNumberRequest.cpp
+  src/v20210111/model/ReportConversionResponse.cpp
   src/v20210111/model/AddSmsTemplateRequest.cpp
   src/v20210111/model/ModifySmsTemplateRequest.cpp
   src/v20210111/model/PullSmsReplyStatus.cpp
@@ -209,6 +214,7 @@ set(sms_src
   src/v20210111/model/DeleteSmsSignRequest.cpp
   src/v20210111/model/PullSmsReplyStatusByPhoneNumberRequest.cpp
   src/v20210111/model/ModifySmsSignResponse.cpp
+  src/v20210111/model/ReportConversionRequest.cpp
   src/v20210111/model/AddSignStatus.cpp
   src/v20210111/model/ModifyTemplateStatus.cpp
   src/v20210111/model/PullSmsSendStatusResponse.cpp

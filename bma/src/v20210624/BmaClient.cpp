@@ -384,6 +384,49 @@ BmaClient::CreateCRRightOutcomeCallable BmaClient::CreateCRRightCallable(const C
     return task->get_future();
 }
 
+BmaClient::CreateCRUserVerifyOutcome BmaClient::CreateCRUserVerify(const CreateCRUserVerifyRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateCRUserVerify");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateCRUserVerifyResponse rsp = CreateCRUserVerifyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateCRUserVerifyOutcome(rsp);
+        else
+            return CreateCRUserVerifyOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateCRUserVerifyOutcome(outcome.GetError());
+    }
+}
+
+void BmaClient::CreateCRUserVerifyAsync(const CreateCRUserVerifyRequest& request, const CreateCRUserVerifyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateCRUserVerify(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BmaClient::CreateCRUserVerifyOutcomeCallable BmaClient::CreateCRUserVerifyCallable(const CreateCRUserVerifyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateCRUserVerifyOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateCRUserVerify(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 BmaClient::CreateCRWorkOutcome BmaClient::CreateCRWork(const CreateCRWorkRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateCRWork");

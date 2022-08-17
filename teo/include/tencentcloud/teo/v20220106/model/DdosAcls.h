@@ -48,32 +48,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取开关 off清空规则标识
-                     * @return Switch 开关 off清空规则标识
-                     */
-                    std::string GetSwitch() const;
-
-                    /**
-                     * 设置开关 off清空规则标识
-                     * @param Switch 开关 off清空规则标识
-                     */
-                    void SetSwitch(const std::string& _switch);
-
-                    /**
-                     * 判断参数 Switch 是否已赋值
-                     * @return Switch 是否已赋值
-                     */
-                    bool SwitchHasBeenSet() const;
-
-                    /**
-                     * 获取端口过了详细参数
-                     * @return Acl 端口过了详细参数
+                     * 获取端口过滤规则数组。
+                     * @return Acl 端口过滤规则数组。
                      */
                     std::vector<DDoSAcl> GetAcl() const;
 
                     /**
-                     * 设置端口过了详细参数
-                     * @param Acl 端口过了详细参数
+                     * 设置端口过滤规则数组。
+                     * @param Acl 端口过滤规则数组。
                      */
                     void SetAcl(const std::vector<DDoSAcl>& _acl);
 
@@ -83,19 +65,47 @@ namespace TencentCloud
                      */
                     bool AclHasBeenSet() const;
 
+                    /**
+                     * 获取清空规则标识，取值有：
+<li>off ：清空端口过滤规则列表，Acl无需填写。 ；</li>
+<li>on ：配置端口过滤规则，需填写Acl参数。</li>默认值为on。
+                     * @return Switch 清空规则标识，取值有：
+<li>off ：清空端口过滤规则列表，Acl无需填写。 ；</li>
+<li>on ：配置端口过滤规则，需填写Acl参数。</li>默认值为on。
+                     */
+                    std::string GetSwitch() const;
+
+                    /**
+                     * 设置清空规则标识，取值有：
+<li>off ：清空端口过滤规则列表，Acl无需填写。 ；</li>
+<li>on ：配置端口过滤规则，需填写Acl参数。</li>默认值为on。
+                     * @param Switch 清空规则标识，取值有：
+<li>off ：清空端口过滤规则列表，Acl无需填写。 ；</li>
+<li>on ：配置端口过滤规则，需填写Acl参数。</li>默认值为on。
+                     */
+                    void SetSwitch(const std::string& _switch);
+
+                    /**
+                     * 判断参数 Switch 是否已赋值
+                     * @return Switch 是否已赋值
+                     */
+                    bool SwitchHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 开关 off清空规则标识
-                     */
-                    std::string m_switch;
-                    bool m_switchHasBeenSet;
-
-                    /**
-                     * 端口过了详细参数
+                     * 端口过滤规则数组。
                      */
                     std::vector<DDoSAcl> m_acl;
                     bool m_aclHasBeenSet;
+
+                    /**
+                     * 清空规则标识，取值有：
+<li>off ：清空端口过滤规则列表，Acl无需填写。 ；</li>
+<li>on ：配置端口过滤规则，需填写Acl参数。</li>默认值为on。
+                     */
+                    std::string m_switch;
+                    bool m_switchHasBeenSet;
 
                 };
             }

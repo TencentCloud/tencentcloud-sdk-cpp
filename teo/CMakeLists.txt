@@ -88,7 +88,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220106/model/ModifyHostsCertificateRequest.h
   include/tencentcloud/teo/v20220106/model/ApplicationProxyRule.h
   include/tencentcloud/teo/v20220106/model/SmartRouting.h
-  include/tencentcloud/teo/v20220106/model/DescribeDnsDataResponse.h
+  include/tencentcloud/teo/v20220106/model/DdosSpeedLimit.h
   include/tencentcloud/teo/v20220106/model/Zone.h
   include/tencentcloud/teo/v20220106/model/ZoneFilter.h
   include/tencentcloud/teo/v20220106/model/DescribeSecurityPolicyManagedRulesIdRequest.h
@@ -171,7 +171,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220106/model/CreateApplicationProxyRuleRequest.h
   include/tencentcloud/teo/v20220106/model/BotManagedRuleDetail.h
   include/tencentcloud/teo/v20220106/model/ForceRedirect.h
-  include/tencentcloud/teo/v20220106/model/ModifyApplicationProxyRequest.h
+  include/tencentcloud/teo/v20220106/model/DescribeDnsDataResponse.h
   include/tencentcloud/teo/v20220106/model/ModifyApplicationProxyStatusResponse.h
   include/tencentcloud/teo/v20220106/model/IdentifyZoneRequest.h
   include/tencentcloud/teo/v20220106/model/DetailHost.h
@@ -295,6 +295,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220106/model/DescribeBotLogResponse.h
   include/tencentcloud/teo/v20220106/model/DescribeLoadBalancingResponse.h
   include/tencentcloud/teo/v20220106/model/DescribeWebProtectionDataResponse.h
+  include/tencentcloud/teo/v20220106/model/ModifyApplicationProxyRequest.h
   include/tencentcloud/teo/v20220106/model/ModifyDnssecResponse.h
   include/tencentcloud/teo/v20220106/model/ScanDnsRecordsRequest.h
   include/tencentcloud/teo/v20220106/model/VanityNameServers.h
@@ -387,7 +388,7 @@ set(teo_src
   src/v20220106/model/ModifyHostsCertificateRequest.cpp
   src/v20220106/model/ApplicationProxyRule.cpp
   src/v20220106/model/SmartRouting.cpp
-  src/v20220106/model/DescribeDnsDataResponse.cpp
+  src/v20220106/model/DdosSpeedLimit.cpp
   src/v20220106/model/Zone.cpp
   src/v20220106/model/ZoneFilter.cpp
   src/v20220106/model/DescribeSecurityPolicyManagedRulesIdRequest.cpp
@@ -470,7 +471,7 @@ set(teo_src
   src/v20220106/model/CreateApplicationProxyRuleRequest.cpp
   src/v20220106/model/BotManagedRuleDetail.cpp
   src/v20220106/model/ForceRedirect.cpp
-  src/v20220106/model/ModifyApplicationProxyRequest.cpp
+  src/v20220106/model/DescribeDnsDataResponse.cpp
   src/v20220106/model/ModifyApplicationProxyStatusResponse.cpp
   src/v20220106/model/IdentifyZoneRequest.cpp
   src/v20220106/model/DetailHost.cpp
@@ -594,6 +595,7 @@ set(teo_src
   src/v20220106/model/DescribeBotLogResponse.cpp
   src/v20220106/model/DescribeLoadBalancingResponse.cpp
   src/v20220106/model/DescribeWebProtectionDataResponse.cpp
+  src/v20220106/model/ModifyApplicationProxyRequest.cpp
   src/v20220106/model/ModifyDnssecResponse.cpp
   src/v20220106/model/ScanDnsRecordsRequest.cpp
   src/v20220106/model/VanityNameServers.cpp

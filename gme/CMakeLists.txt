@@ -27,7 +27,6 @@ set(gme_public_header_model
   include/tencentcloud/gme/v20180711/model/DescribeScanResultListResponse.h
   include/tencentcloud/gme/v20180711/model/DescribeApplicationDataRequest.h
   include/tencentcloud/gme/v20180711/model/UserMicStatus.h
-  include/tencentcloud/gme/v20180711/model/VoiceFilterRequest.h
   include/tencentcloud/gme/v20180711/model/CreateScanUserResponse.h
   include/tencentcloud/gme/v20180711/model/DescribeRealtimeScanConfigResponse.h
   include/tencentcloud/gme/v20180711/model/ModifyUserMicStatusRequest.h
@@ -37,7 +36,7 @@ set(gme_public_header_model
   include/tencentcloud/gme/v20180711/model/CreateCustomizationRequest.h
   include/tencentcloud/gme/v20180711/model/DescribeRoomInfoRequest.h
   include/tencentcloud/gme/v20180711/model/UpdateScanRoomsRequest.h
-  include/tencentcloud/gme/v20180711/model/DescribeFilterResultResponse.h
+  include/tencentcloud/gme/v20180711/model/ModifyCustomizationResponse.h
   include/tencentcloud/gme/v20180711/model/DescribeRealtimeScanConfigRequest.h
   include/tencentcloud/gme/v20180711/model/DescribeScanResultListRequest.h
   include/tencentcloud/gme/v20180711/model/ModifyCustomizationStateResponse.h
@@ -48,7 +47,6 @@ set(gme_public_header_model
   include/tencentcloud/gme/v20180711/model/ModifyCustomizationStateRequest.h
   include/tencentcloud/gme/v20180711/model/Task.h
   include/tencentcloud/gme/v20180711/model/Tag.h
-  include/tencentcloud/gme/v20180711/model/DescribeFilterResultListRequest.h
   include/tencentcloud/gme/v20180711/model/DescribeAgeDetectTaskResponse.h
   include/tencentcloud/gme/v20180711/model/VoiceMessageConf.h
   include/tencentcloud/gme/v20180711/model/ModifyUserMicStatusResponse.h
@@ -67,19 +65,14 @@ set(gme_public_header_model
   include/tencentcloud/gme/v20180711/model/DescribeRoomInfoResponse.h
   include/tencentcloud/gme/v20180711/model/DescribeAgeDetectTaskRequest.h
   include/tencentcloud/gme/v20180711/model/DeleteCustomizationResponse.h
-  include/tencentcloud/gme/v20180711/model/VoiceFilterResponse.h
   include/tencentcloud/gme/v20180711/model/GetCustomizationListRequest.h
-  include/tencentcloud/gme/v20180711/model/ModifyCustomizationResponse.h
   include/tencentcloud/gme/v20180711/model/DescribeUserInAndOutTimeResponse.h
-  include/tencentcloud/gme/v20180711/model/VoiceFilterInfo.h
   include/tencentcloud/gme/v20180711/model/AgeDetectTaskResult.h
   include/tencentcloud/gme/v20180711/model/ModifyRoomInfoResponse.h
   include/tencentcloud/gme/v20180711/model/DescribeScanResult.h
   include/tencentcloud/gme/v20180711/model/AgeDetectTask.h
-  include/tencentcloud/gme/v20180711/model/ModifyRoomInfoRequest.h
-  include/tencentcloud/gme/v20180711/model/VoiceFilter.h
   include/tencentcloud/gme/v20180711/model/ScanDetail.h
-  include/tencentcloud/gme/v20180711/model/DescribeFilterResultListResponse.h
+  include/tencentcloud/gme/v20180711/model/ModifyRoomInfoRequest.h
   include/tencentcloud/gme/v20180711/model/CreateAgeDetectTaskResponse.h
   include/tencentcloud/gme/v20180711/model/CreateAppRequest.h
   include/tencentcloud/gme/v20180711/model/RealtimeSpeechConf.h
@@ -89,11 +82,10 @@ set(gme_public_header_model
   include/tencentcloud/gme/v20180711/model/DeleteCustomizationRequest.h
   include/tencentcloud/gme/v20180711/model/ScanPiece.h
   include/tencentcloud/gme/v20180711/model/ModifyAppStatusResponse.h
-  include/tencentcloud/gme/v20180711/model/ScanVoiceRequest.h
   include/tencentcloud/gme/v20180711/model/VoiceFilterConf.h
   include/tencentcloud/gme/v20180711/model/UpdateScanUsersRequest.h
   include/tencentcloud/gme/v20180711/model/StatisticsItem.h
-  include/tencentcloud/gme/v20180711/model/DescribeFilterResultRequest.h
+  include/tencentcloud/gme/v20180711/model/ScanVoiceRequest.h
   include/tencentcloud/gme/v20180711/model/DescribeUserInAndOutTimeRequest.h
   )
 
@@ -107,7 +99,6 @@ set(gme_src
   src/v20180711/model/DescribeScanResultListResponse.cpp
   src/v20180711/model/DescribeApplicationDataRequest.cpp
   src/v20180711/model/UserMicStatus.cpp
-  src/v20180711/model/VoiceFilterRequest.cpp
   src/v20180711/model/CreateScanUserResponse.cpp
   src/v20180711/model/DescribeRealtimeScanConfigResponse.cpp
   src/v20180711/model/ModifyUserMicStatusRequest.cpp
@@ -117,7 +108,7 @@ set(gme_src
   src/v20180711/model/CreateCustomizationRequest.cpp
   src/v20180711/model/DescribeRoomInfoRequest.cpp
   src/v20180711/model/UpdateScanRoomsRequest.cpp
-  src/v20180711/model/DescribeFilterResultResponse.cpp
+  src/v20180711/model/ModifyCustomizationResponse.cpp
   src/v20180711/model/DescribeRealtimeScanConfigRequest.cpp
   src/v20180711/model/DescribeScanResultListRequest.cpp
   src/v20180711/model/ModifyCustomizationStateResponse.cpp
@@ -128,7 +119,6 @@ set(gme_src
   src/v20180711/model/ModifyCustomizationStateRequest.cpp
   src/v20180711/model/Task.cpp
   src/v20180711/model/Tag.cpp
-  src/v20180711/model/DescribeFilterResultListRequest.cpp
   src/v20180711/model/DescribeAgeDetectTaskResponse.cpp
   src/v20180711/model/VoiceMessageConf.cpp
   src/v20180711/model/ModifyUserMicStatusResponse.cpp
@@ -147,19 +137,14 @@ set(gme_src
   src/v20180711/model/DescribeRoomInfoResponse.cpp
   src/v20180711/model/DescribeAgeDetectTaskRequest.cpp
   src/v20180711/model/DeleteCustomizationResponse.cpp
-  src/v20180711/model/VoiceFilterResponse.cpp
   src/v20180711/model/GetCustomizationListRequest.cpp
-  src/v20180711/model/ModifyCustomizationResponse.cpp
   src/v20180711/model/DescribeUserInAndOutTimeResponse.cpp
-  src/v20180711/model/VoiceFilterInfo.cpp
   src/v20180711/model/AgeDetectTaskResult.cpp
   src/v20180711/model/ModifyRoomInfoResponse.cpp
   src/v20180711/model/DescribeScanResult.cpp
   src/v20180711/model/AgeDetectTask.cpp
-  src/v20180711/model/ModifyRoomInfoRequest.cpp
-  src/v20180711/model/VoiceFilter.cpp
   src/v20180711/model/ScanDetail.cpp
-  src/v20180711/model/DescribeFilterResultListResponse.cpp
+  src/v20180711/model/ModifyRoomInfoRequest.cpp
   src/v20180711/model/CreateAgeDetectTaskResponse.cpp
   src/v20180711/model/CreateAppRequest.cpp
   src/v20180711/model/RealtimeSpeechConf.cpp
@@ -169,11 +154,10 @@ set(gme_src
   src/v20180711/model/DeleteCustomizationRequest.cpp
   src/v20180711/model/ScanPiece.cpp
   src/v20180711/model/ModifyAppStatusResponse.cpp
-  src/v20180711/model/ScanVoiceRequest.cpp
   src/v20180711/model/VoiceFilterConf.cpp
   src/v20180711/model/UpdateScanUsersRequest.cpp
   src/v20180711/model/StatisticsItem.cpp
-  src/v20180711/model/DescribeFilterResultRequest.cpp
+  src/v20180711/model/ScanVoiceRequest.cpp
   src/v20180711/model/DescribeUserInAndOutTimeRequest.cpp
   )
 

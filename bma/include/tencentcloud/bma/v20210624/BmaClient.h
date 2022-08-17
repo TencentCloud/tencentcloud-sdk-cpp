@@ -39,6 +39,8 @@
 #include <tencentcloud/bma/v20210624/model/CreateCRCompanyVerifyResponse.h>
 #include <tencentcloud/bma/v20210624/model/CreateCRRightRequest.h>
 #include <tencentcloud/bma/v20210624/model/CreateCRRightResponse.h>
+#include <tencentcloud/bma/v20210624/model/CreateCRUserVerifyRequest.h>
+#include <tencentcloud/bma/v20210624/model/CreateCRUserVerifyResponse.h>
 #include <tencentcloud/bma/v20210624/model/CreateCRWorkRequest.h>
 #include <tencentcloud/bma/v20210624/model/CreateCRWorkResponse.h>
 #include <tencentcloud/bma/v20210624/model/DescribeBPCompanyInfoRequest.h>
@@ -105,6 +107,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateCRRightResponse> CreateCRRightOutcome;
                 typedef std::future<CreateCRRightOutcome> CreateCRRightOutcomeCallable;
                 typedef std::function<void(const BmaClient*, const Model::CreateCRRightRequest&, CreateCRRightOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCRRightAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateCRUserVerifyResponse> CreateCRUserVerifyOutcome;
+                typedef std::future<CreateCRUserVerifyOutcome> CreateCRUserVerifyOutcomeCallable;
+                typedef std::function<void(const BmaClient*, const Model::CreateCRUserVerifyRequest&, CreateCRUserVerifyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCRUserVerifyAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateCRWorkResponse> CreateCRWorkOutcome;
                 typedef std::future<CreateCRWorkOutcome> CreateCRWorkOutcomeCallable;
                 typedef std::function<void(const BmaClient*, const Model::CreateCRWorkRequest&, CreateCRWorkOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCRWorkAsyncHandler;
@@ -221,6 +226,15 @@ namespace TencentCloud
                 CreateCRRightOutcome CreateCRRight(const Model::CreateCRRightRequest &request);
                 void CreateCRRightAsync(const Model::CreateCRRightRequest& request, const CreateCRRightAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateCRRightOutcomeCallable CreateCRRightCallable(const Model::CreateCRRightRequest& request);
+
+                /**
+                 *品牌经营管家-版权保护个人认证接口
+                 * @param req CreateCRUserVerifyRequest
+                 * @return CreateCRUserVerifyOutcome
+                 */
+                CreateCRUserVerifyOutcome CreateCRUserVerify(const Model::CreateCRUserVerifyRequest &request);
+                void CreateCRUserVerifyAsync(const Model::CreateCRUserVerifyRequest& request, const CreateCRUserVerifyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateCRUserVerifyOutcomeCallable CreateCRUserVerifyCallable(const Model::CreateCRUserVerifyRequest& request);
 
                 /**
                  *版权保护-添加作品接口

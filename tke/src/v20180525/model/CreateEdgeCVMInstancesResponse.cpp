@@ -14,21 +14,21 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/gme/v20180711/model/DescribeFilterResultResponse.h>
+#include <tencentcloud/tke/v20180525/model/CreateEdgeCVMInstancesResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Gme::V20180711::Model;
+using namespace TencentCloud::Tke::V20180525::Model;
 using namespace std;
 
-DescribeFilterResultResponse::DescribeFilterResultResponse() :
-    m_dataHasBeenSet(false)
+CreateEdgeCVMInstancesResponse::CreateEdgeCVMInstancesResponse() :
+    m_cvmIdSetHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome DescribeFilterResultResponse::Deserialize(const string &payload)
+CoreInternalOutcome CreateEdgeCVMInstancesResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -62,40 +62,40 @@ CoreInternalOutcome DescribeFilterResultResponse::Deserialize(const string &payl
     }
 
 
-    if (rsp.HasMember("Data") && !rsp["Data"].IsNull())
+    if (rsp.HasMember("CvmIdSet") && !rsp["CvmIdSet"].IsNull())
     {
-        if (!rsp["Data"].IsObject())
-        {
-            return CoreInternalOutcome(Core::Error("response `Data` is not object type").SetRequestId(requestId));
-        }
+        if (!rsp["CvmIdSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `CvmIdSet` is not array type"));
 
-        CoreInternalOutcome outcome = m_data.Deserialize(rsp["Data"]);
-        if (!outcome.IsSuccess())
+        const rapidjson::Value &tmpValue = rsp["CvmIdSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            outcome.GetError().SetRequestId(requestId);
-            return outcome;
+            m_cvmIdSet.push_back((*itr).GetString());
         }
-
-        m_dataHasBeenSet = true;
+        m_cvmIdSetHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string DescribeFilterResultResponse::ToJsonString() const
+string CreateEdgeCVMInstancesResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_dataHasBeenSet)
+    if (m_cvmIdSetHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Data";
+        string key = "CvmIdSet";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_data.ToJsonObject(value[key.c_str()], allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_cvmIdSet.begin(); itr != m_cvmIdSet.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -110,14 +110,14 @@ string DescribeFilterResultResponse::ToJsonString() const
 }
 
 
-VoiceFilterInfo DescribeFilterResultResponse::GetData() const
+vector<string> CreateEdgeCVMInstancesResponse::GetCvmIdSet() const
 {
-    return m_data;
+    return m_cvmIdSet;
 }
 
-bool DescribeFilterResultResponse::DataHasBeenSet() const
+bool CreateEdgeCVMInstancesResponse::CvmIdSetHasBeenSet() const
 {
-    return m_dataHasBeenSet;
+    return m_cvmIdSetHasBeenSet;
 }
 
 

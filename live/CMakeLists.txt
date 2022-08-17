@@ -154,7 +154,7 @@ set(live_public_header_model
   include/tencentcloud/live/v20180801/model/CreateLiveTranscodeRuleRequest.h
   include/tencentcloud/live/v20180801/model/DescribeLiveWatermarkRulesRequest.h
   include/tencentcloud/live/v20180801/model/DropLiveStreamRequest.h
-  include/tencentcloud/live/v20180801/model/StopLiveRecordResponse.h
+  include/tencentcloud/live/v20180801/model/PullPushWatermarkInfo.h
   include/tencentcloud/live/v20180801/model/CreateCommonMixStreamRequest.h
   include/tencentcloud/live/v20180801/model/RefererAuthConfig.h
   include/tencentcloud/live/v20180801/model/ProIspPlaySumInfo.h
@@ -193,6 +193,7 @@ set(live_public_header_model
   include/tencentcloud/live/v20180801/model/ModifyPullStreamConfigRequest.h
   include/tencentcloud/live/v20180801/model/DescribeStreamPushInfoListResponse.h
   include/tencentcloud/live/v20180801/model/DescribeLiveStreamPushInfoListRequest.h
+  include/tencentcloud/live/v20180801/model/StopLiveRecordResponse.h
   include/tencentcloud/live/v20180801/model/DescribeLiveWatermarksResponse.h
   include/tencentcloud/live/v20180801/model/TimeShiftBillData.h
   include/tencentcloud/live/v20180801/model/DescribeLiveForbidStreamListRequest.h
@@ -462,7 +463,7 @@ set(live_src
   src/v20180801/model/CreateLiveTranscodeRuleRequest.cpp
   src/v20180801/model/DescribeLiveWatermarkRulesRequest.cpp
   src/v20180801/model/DropLiveStreamRequest.cpp
-  src/v20180801/model/StopLiveRecordResponse.cpp
+  src/v20180801/model/PullPushWatermarkInfo.cpp
   src/v20180801/model/CreateCommonMixStreamRequest.cpp
   src/v20180801/model/RefererAuthConfig.cpp
   src/v20180801/model/ProIspPlaySumInfo.cpp
@@ -501,6 +502,7 @@ set(live_src
   src/v20180801/model/ModifyPullStreamConfigRequest.cpp
   src/v20180801/model/DescribeStreamPushInfoListResponse.cpp
   src/v20180801/model/DescribeLiveStreamPushInfoListRequest.cpp
+  src/v20180801/model/StopLiveRecordResponse.cpp
   src/v20180801/model/DescribeLiveWatermarksResponse.cpp
   src/v20180801/model/TimeShiftBillData.cpp
   src/v20180801/model/DescribeLiveForbidStreamListRequest.cpp

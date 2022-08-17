@@ -41,10 +41,6 @@
 #include <tencentcloud/gme/v20180711/model/DescribeAppStatisticsResponse.h>
 #include <tencentcloud/gme/v20180711/model/DescribeApplicationDataRequest.h>
 #include <tencentcloud/gme/v20180711/model/DescribeApplicationDataResponse.h>
-#include <tencentcloud/gme/v20180711/model/DescribeFilterResultRequest.h>
-#include <tencentcloud/gme/v20180711/model/DescribeFilterResultResponse.h>
-#include <tencentcloud/gme/v20180711/model/DescribeFilterResultListRequest.h>
-#include <tencentcloud/gme/v20180711/model/DescribeFilterResultListResponse.h>
 #include <tencentcloud/gme/v20180711/model/DescribeRealtimeScanConfigRequest.h>
 #include <tencentcloud/gme/v20180711/model/DescribeRealtimeScanConfigResponse.h>
 #include <tencentcloud/gme/v20180711/model/DescribeRoomInfoRequest.h>
@@ -71,8 +67,6 @@
 #include <tencentcloud/gme/v20180711/model/UpdateScanRoomsResponse.h>
 #include <tencentcloud/gme/v20180711/model/UpdateScanUsersRequest.h>
 #include <tencentcloud/gme/v20180711/model/UpdateScanUsersResponse.h>
-#include <tencentcloud/gme/v20180711/model/VoiceFilterRequest.h>
-#include <tencentcloud/gme/v20180711/model/VoiceFilterResponse.h>
 
 
 namespace TencentCloud
@@ -114,12 +108,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeApplicationDataResponse> DescribeApplicationDataOutcome;
                 typedef std::future<DescribeApplicationDataOutcome> DescribeApplicationDataOutcomeCallable;
                 typedef std::function<void(const GmeClient*, const Model::DescribeApplicationDataRequest&, DescribeApplicationDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApplicationDataAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeFilterResultResponse> DescribeFilterResultOutcome;
-                typedef std::future<DescribeFilterResultOutcome> DescribeFilterResultOutcomeCallable;
-                typedef std::function<void(const GmeClient*, const Model::DescribeFilterResultRequest&, DescribeFilterResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFilterResultAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeFilterResultListResponse> DescribeFilterResultListOutcome;
-                typedef std::future<DescribeFilterResultListOutcome> DescribeFilterResultListOutcomeCallable;
-                typedef std::function<void(const GmeClient*, const Model::DescribeFilterResultListRequest&, DescribeFilterResultListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFilterResultListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRealtimeScanConfigResponse> DescribeRealtimeScanConfigOutcome;
                 typedef std::future<DescribeRealtimeScanConfigOutcome> DescribeRealtimeScanConfigOutcomeCallable;
                 typedef std::function<void(const GmeClient*, const Model::DescribeRealtimeScanConfigRequest&, DescribeRealtimeScanConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRealtimeScanConfigAsyncHandler;
@@ -159,9 +147,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UpdateScanUsersResponse> UpdateScanUsersOutcome;
                 typedef std::future<UpdateScanUsersOutcome> UpdateScanUsersOutcomeCallable;
                 typedef std::function<void(const GmeClient*, const Model::UpdateScanUsersRequest&, UpdateScanUsersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateScanUsersAsyncHandler;
-                typedef Outcome<Core::Error, Model::VoiceFilterResponse> VoiceFilterOutcome;
-                typedef std::future<VoiceFilterOutcome> VoiceFilterOutcomeCallable;
-                typedef std::function<void(const GmeClient*, const Model::VoiceFilterRequest&, VoiceFilterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> VoiceFilterAsyncHandler;
 
 
 
@@ -255,24 +240,6 @@ namespace TencentCloud
                 DescribeApplicationDataOutcome DescribeApplicationData(const Model::DescribeApplicationDataRequest &request);
                 void DescribeApplicationDataAsync(const Model::DescribeApplicationDataRequest& request, const DescribeApplicationDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeApplicationDataOutcomeCallable DescribeApplicationDataCallable(const Model::DescribeApplicationDataRequest& request);
-
-                /**
-                 *根据应用ID和文件ID查询识别结果
-                 * @param req DescribeFilterResultRequest
-                 * @return DescribeFilterResultOutcome
-                 */
-                DescribeFilterResultOutcome DescribeFilterResult(const Model::DescribeFilterResultRequest &request);
-                void DescribeFilterResultAsync(const Model::DescribeFilterResultRequest& request, const DescribeFilterResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeFilterResultOutcomeCallable DescribeFilterResultCallable(const Model::DescribeFilterResultRequest& request);
-
-                /**
-                 *根据日期查询识别结果列表
-                 * @param req DescribeFilterResultListRequest
-                 * @return DescribeFilterResultListOutcome
-                 */
-                DescribeFilterResultListOutcome DescribeFilterResultList(const Model::DescribeFilterResultListRequest &request);
-                void DescribeFilterResultListAsync(const Model::DescribeFilterResultListRequest& request, const DescribeFilterResultListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeFilterResultListOutcomeCallable DescribeFilterResultListCallable(const Model::DescribeFilterResultListRequest& request);
 
                 /**
                  *获取用户自定义送检信息
@@ -525,17 +492,6 @@ namespace TencentCloud
                 UpdateScanUsersOutcome UpdateScanUsers(const Model::UpdateScanUsersRequest &request);
                 void UpdateScanUsersAsync(const Model::UpdateScanUsersRequest& request, const UpdateScanUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UpdateScanUsersOutcomeCallable UpdateScanUsersCallable(const Model::UpdateScanUsersRequest& request);
-
-                /**
-                 *本接口用于识别涉黄等违规音频，成功会回调配置在应用的回调地址。回调示例如下：
-{"BizId":0,"FileId":"test_file_id","FileName":"test_file_name","FileUrl":"test_file_url","OpenId":"test_open_id","TimeStamp":"0000-00-00 00:00:00","Data":[{"Type":1,"Word":"xx"}]}
-Type表示过滤类型，1：色情，2：谩骂
-                 * @param req VoiceFilterRequest
-                 * @return VoiceFilterOutcome
-                 */
-                VoiceFilterOutcome VoiceFilter(const Model::VoiceFilterRequest &request);
-                void VoiceFilterAsync(const Model::VoiceFilterRequest& request, const VoiceFilterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                VoiceFilterOutcomeCallable VoiceFilterCallable(const Model::VoiceFilterRequest& request);
 
             };
         }

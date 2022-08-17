@@ -21,8 +21,8 @@ using namespace TencentCloud::Teo::V20220106::Model;
 using namespace std;
 
 DdosAcls::DdosAcls() :
-    m_switchHasBeenSet(false),
-    m_aclHasBeenSet(false)
+    m_aclHasBeenSet(false),
+    m_switchHasBeenSet(false)
 {
 }
 
@@ -30,16 +30,6 @@ CoreInternalOutcome DdosAcls::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
-
-    if (value.HasMember("Switch") && !value["Switch"].IsNull())
-    {
-        if (!value["Switch"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `DdosAcls.Switch` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_switch = string(value["Switch"].GetString());
-        m_switchHasBeenSet = true;
-    }
 
     if (value.HasMember("Acl") && !value["Acl"].IsNull())
     {
@@ -61,20 +51,22 @@ CoreInternalOutcome DdosAcls::Deserialize(const rapidjson::Value &value)
         m_aclHasBeenSet = true;
     }
 
+    if (value.HasMember("Switch") && !value["Switch"].IsNull())
+    {
+        if (!value["Switch"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DdosAcls.Switch` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_switch = string(value["Switch"].GetString());
+        m_switchHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
 void DdosAcls::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
-
-    if (m_switchHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Switch";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_switch.c_str(), allocator).Move(), allocator);
-    }
 
     if (m_aclHasBeenSet)
     {
@@ -91,24 +83,16 @@ void DdosAcls::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         }
     }
 
+    if (m_switchHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Switch";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_switch.c_str(), allocator).Move(), allocator);
+    }
+
 }
 
-
-string DdosAcls::GetSwitch() const
-{
-    return m_switch;
-}
-
-void DdosAcls::SetSwitch(const string& _switch)
-{
-    m_switch = _switch;
-    m_switchHasBeenSet = true;
-}
-
-bool DdosAcls::SwitchHasBeenSet() const
-{
-    return m_switchHasBeenSet;
-}
 
 vector<DDoSAcl> DdosAcls::GetAcl() const
 {
@@ -124,5 +108,21 @@ void DdosAcls::SetAcl(const vector<DDoSAcl>& _acl)
 bool DdosAcls::AclHasBeenSet() const
 {
     return m_aclHasBeenSet;
+}
+
+string DdosAcls::GetSwitch() const
+{
+    return m_switch;
+}
+
+void DdosAcls::SetSwitch(const string& _switch)
+{
+    m_switch = _switch;
+    m_switchHasBeenSet = true;
+}
+
+bool DdosAcls::SwitchHasBeenSet() const
+{
+    return m_switchHasBeenSet;
 }
 

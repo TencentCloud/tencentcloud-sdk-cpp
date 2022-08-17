@@ -44,14 +44,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取策略组ID
-                     * @return PolicyId 策略组ID
+                     * 获取策略id。
+                     * @return PolicyId 策略id。
                      */
                     int64_t GetPolicyId() const;
 
                     /**
-                     * 设置策略组ID
-                     * @param PolicyId 策略组ID
+                     * 设置策略id。
+                     * @param PolicyId 策略id。
                      */
                     void SetPolicyId(const int64_t& _policyId);
 
@@ -62,14 +62,14 @@ namespace TencentCloud
                     bool PolicyIdHasBeenSet() const;
 
                     /**
-                     * 获取一级域名
-                     * @return ZoneId 一级域名
+                     * 获取站点id。
+                     * @return ZoneId 站点id。
                      */
                     std::string GetZoneId() const;
 
                     /**
-                     * 设置一级域名
-                     * @param ZoneId 一级域名
+                     * 设置站点id。
+                     * @param ZoneId 站点id。
                      */
                     void SetZoneId(const std::string& _zoneId);
 
@@ -80,14 +80,14 @@ namespace TencentCloud
                     bool ZoneIdHasBeenSet() const;
 
                     /**
-                     * 获取DDoS具体防护配置
-                     * @return DdosRule DDoS具体防护配置
+                     * 获取DDoS防护配置详情。
+                     * @return DdosRule DDoS防护配置详情。
                      */
                     DdosRule GetDdosRule() const;
 
                     /**
-                     * 设置DDoS具体防护配置
-                     * @param DdosRule DDoS具体防护配置
+                     * 设置DDoS防护配置详情。
+                     * @param DdosRule DDoS防护配置详情。
                      */
                     void SetDdosRule(const DdosRule& _ddosRule);
 
@@ -100,19 +100,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 策略组ID
+                     * 策略id。
                      */
                     int64_t m_policyId;
                     bool m_policyIdHasBeenSet;
 
                     /**
-                     * 一级域名
+                     * 站点id。
                      */
                     std::string m_zoneId;
                     bool m_zoneIdHasBeenSet;
 
                     /**
-                     * DDoS具体防护配置
+                     * DDoS防护配置详情。
                      */
                     DdosRule m_ddosRule;
                     bool m_ddosRuleHasBeenSet;

@@ -48,32 +48,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取特征过滤清空标识，off清空处理
-                     * @return Switch 特征过滤清空标识，off清空处理
-                     */
-                    std::string GetSwitch() const;
-
-                    /**
-                     * 设置特征过滤清空标识，off清空处理
-                     * @param Switch 特征过滤清空标识，off清空处理
-                     */
-                    void SetSwitch(const std::string& _switch);
-
-                    /**
-                     * 判断参数 Switch 是否已赋值
-                     * @return Switch 是否已赋值
-                     */
-                    bool SwitchHasBeenSet() const;
-
-                    /**
-                     * 获取特征过滤数组
-                     * @return PacketFilter 特征过滤数组
+                     * 获取特征过滤规则数组。
+                     * @return PacketFilter 特征过滤规则数组。
                      */
                     std::vector<DDoSFeaturesFilter> GetPacketFilter() const;
 
                     /**
-                     * 设置特征过滤数组
-                     * @param PacketFilter 特征过滤数组
+                     * 设置特征过滤规则数组。
+                     * @param PacketFilter 特征过滤规则数组。
                      */
                     void SetPacketFilter(const std::vector<DDoSFeaturesFilter>& _packetFilter);
 
@@ -83,19 +65,47 @@ namespace TencentCloud
                      */
                     bool PacketFilterHasBeenSet() const;
 
+                    /**
+                     * 获取特征过滤清空标识，取值有：
+<li>off ：清空特征过滤规则，无需填写 PacketFilter 参数 ；</li>
+<li>on ：配置特征过滤规则，需填写 PacketFilter 参数。</li>默认值为on。
+                     * @return Switch 特征过滤清空标识，取值有：
+<li>off ：清空特征过滤规则，无需填写 PacketFilter 参数 ；</li>
+<li>on ：配置特征过滤规则，需填写 PacketFilter 参数。</li>默认值为on。
+                     */
+                    std::string GetSwitch() const;
+
+                    /**
+                     * 设置特征过滤清空标识，取值有：
+<li>off ：清空特征过滤规则，无需填写 PacketFilter 参数 ；</li>
+<li>on ：配置特征过滤规则，需填写 PacketFilter 参数。</li>默认值为on。
+                     * @param Switch 特征过滤清空标识，取值有：
+<li>off ：清空特征过滤规则，无需填写 PacketFilter 参数 ；</li>
+<li>on ：配置特征过滤规则，需填写 PacketFilter 参数。</li>默认值为on。
+                     */
+                    void SetSwitch(const std::string& _switch);
+
+                    /**
+                     * 判断参数 Switch 是否已赋值
+                     * @return Switch 是否已赋值
+                     */
+                    bool SwitchHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 特征过滤清空标识，off清空处理
-                     */
-                    std::string m_switch;
-                    bool m_switchHasBeenSet;
-
-                    /**
-                     * 特征过滤数组
+                     * 特征过滤规则数组。
                      */
                     std::vector<DDoSFeaturesFilter> m_packetFilter;
                     bool m_packetFilterHasBeenSet;
+
+                    /**
+                     * 特征过滤清空标识，取值有：
+<li>off ：清空特征过滤规则，无需填写 PacketFilter 参数 ；</li>
+<li>on ：配置特征过滤规则，需填写 PacketFilter 参数。</li>默认值为on。
+                     */
+                    std::string m_switch;
+                    bool m_switchHasBeenSet;
 
                 };
             }

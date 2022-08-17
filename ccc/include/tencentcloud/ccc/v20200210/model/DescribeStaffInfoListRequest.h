@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool SdkAppIdHasBeenSet() const;
 
                     /**
-                     * 获取分页尺寸，上限 100
-                     * @return PageSize 分页尺寸，上限 100
+                     * 获取分页尺寸，上限 9999
+                     * @return PageSize 分页尺寸，上限 9999
                      */
                     int64_t GetPageSize() const;
 
                     /**
-                     * 设置分页尺寸，上限 100
-                     * @param PageSize 分页尺寸，上限 100
+                     * 设置分页尺寸，上限 9999
+                     * @param PageSize 分页尺寸，上限 9999
                      */
                     void SetPageSize(const int64_t& _pageSize);
 
@@ -132,6 +132,24 @@ namespace TencentCloud
                      */
                     bool ModifiedTimeHasBeenSet() const;
 
+                    /**
+                     * 获取技能组ID
+                     * @return SkillGroupId 技能组ID
+                     */
+                    int64_t GetSkillGroupId() const;
+
+                    /**
+                     * 设置技能组ID
+                     * @param SkillGroupId 技能组ID
+                     */
+                    void SetSkillGroupId(const int64_t& _skillGroupId);
+
+                    /**
+                     * 判断参数 SkillGroupId 是否已赋值
+                     * @return SkillGroupId 是否已赋值
+                     */
+                    bool SkillGroupIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -141,7 +159,7 @@ namespace TencentCloud
                     bool m_sdkAppIdHasBeenSet;
 
                     /**
-                     * 分页尺寸，上限 100
+                     * 分页尺寸，上限 9999
                      */
                     int64_t m_pageSize;
                     bool m_pageSizeHasBeenSet;
@@ -163,6 +181,12 @@ namespace TencentCloud
                      */
                     int64_t m_modifiedTime;
                     bool m_modifiedTimeHasBeenSet;
+
+                    /**
+                     * 技能组ID
+                     */
+                    int64_t m_skillGroupId;
+                    bool m_skillGroupIdHasBeenSet;
 
                 };
             }

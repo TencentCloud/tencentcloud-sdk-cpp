@@ -37,7 +37,8 @@ ModifyLivePullStreamTaskRequest::ModifyLivePullStreamTaskRequest() :
     m_offsetTimeHasBeenSet(false),
     m_commentHasBeenSet(false),
     m_backupSourceTypeHasBeenSet(false),
-    m_backupSourceUrlHasBeenSet(false)
+    m_backupSourceUrlHasBeenSet(false),
+    m_watermarkListHasBeenSet(false)
 {
 }
 
@@ -176,6 +177,21 @@ string ModifyLivePullStreamTaskRequest::ToJsonString() const
         string key = "BackupSourceUrl";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_backupSourceUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_watermarkListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WatermarkList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_watermarkList.begin(); itr != m_watermarkList.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -424,6 +440,22 @@ void ModifyLivePullStreamTaskRequest::SetBackupSourceUrl(const string& _backupSo
 bool ModifyLivePullStreamTaskRequest::BackupSourceUrlHasBeenSet() const
 {
     return m_backupSourceUrlHasBeenSet;
+}
+
+vector<PullPushWatermarkInfo> ModifyLivePullStreamTaskRequest::GetWatermarkList() const
+{
+    return m_watermarkList;
+}
+
+void ModifyLivePullStreamTaskRequest::SetWatermarkList(const vector<PullPushWatermarkInfo>& _watermarkList)
+{
+    m_watermarkList = _watermarkList;
+    m_watermarkListHasBeenSet = true;
+}
+
+bool ModifyLivePullStreamTaskRequest::WatermarkListHasBeenSet() const
+{
+    return m_watermarkListHasBeenSet;
 }
 
 

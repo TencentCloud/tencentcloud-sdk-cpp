@@ -14,20 +14,21 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/gme/v20180711/model/VoiceFilterResponse.h>
+#include <tencentcloud/sms/v20210111/model/ReportConversionResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Gme::V20180711::Model;
+using namespace TencentCloud::Sms::V20210111::Model;
 using namespace std;
 
-VoiceFilterResponse::VoiceFilterResponse()
+ReportConversionResponse::ReportConversionResponse() :
+    m_reportConversionStatusHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome VoiceFilterResponse::Deserialize(const string &payload)
+CoreInternalOutcome ReportConversionResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -61,15 +62,41 @@ CoreInternalOutcome VoiceFilterResponse::Deserialize(const string &payload)
     }
 
 
+    if (rsp.HasMember("ReportConversionStatus") && !rsp["ReportConversionStatus"].IsNull())
+    {
+        if (!rsp["ReportConversionStatus"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ReportConversionStatus` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_reportConversionStatus.Deserialize(rsp["ReportConversionStatus"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_reportConversionStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
-string VoiceFilterResponse::ToJsonString() const
+string ReportConversionResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_reportConversionStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReportConversionStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_reportConversionStatus.ToJsonObject(value[key.c_str()], allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +109,15 @@ string VoiceFilterResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+ReportConversionStatus ReportConversionResponse::GetReportConversionStatus() const
+{
+    return m_reportConversionStatus;
+}
+
+bool ReportConversionResponse::ReportConversionStatusHasBeenSet() const
+{
+    return m_reportConversionStatusHasBeenSet;
+}
 
 

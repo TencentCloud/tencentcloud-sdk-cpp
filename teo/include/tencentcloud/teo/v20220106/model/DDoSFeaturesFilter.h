@@ -47,14 +47,30 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取动作 drop-丢弃；transmit-放行；drop_block-丢弃并拉黑；forward-继续防护
-                     * @return Action 动作 drop-丢弃；transmit-放行；drop_block-丢弃并拉黑；forward-继续防护
+                     * 获取执行动作，取值有：
+<li>drop ：丢弃 ；</li>
+<li>transmit ：放行 ；</li>
+<li>drop_block ：丢弃并拉黑 ；</li>
+<li>forward ：继续防护 。</li>
+                     * @return Action 执行动作，取值有：
+<li>drop ：丢弃 ；</li>
+<li>transmit ：放行 ；</li>
+<li>drop_block ：丢弃并拉黑 ；</li>
+<li>forward ：继续防护 。</li>
                      */
                     std::string GetAction() const;
 
                     /**
-                     * 设置动作 drop-丢弃；transmit-放行；drop_block-丢弃并拉黑；forward-继续防护
-                     * @param Action 动作 drop-丢弃；transmit-放行；drop_block-丢弃并拉黑；forward-继续防护
+                     * 设置执行动作，取值有：
+<li>drop ：丢弃 ；</li>
+<li>transmit ：放行 ；</li>
+<li>drop_block ：丢弃并拉黑 ；</li>
+<li>forward ：继续防护 。</li>
+                     * @param Action 执行动作，取值有：
+<li>drop ：丢弃 ；</li>
+<li>transmit ：放行 ；</li>
+<li>drop_block ：丢弃并拉黑 ；</li>
+<li>forward ：继续防护 。</li>
                      */
                     void SetAction(const std::string& _action);
 
@@ -65,248 +81,30 @@ namespace TencentCloud
                     bool ActionHasBeenSet() const;
 
                     /**
-                     * 获取深度值1
-                     * @return Depth 深度值1
-                     */
-                    int64_t GetDepth() const;
-
-                    /**
-                     * 设置深度值1
-                     * @param Depth 深度值1
-                     */
-                    void SetDepth(const int64_t& _depth);
-
-                    /**
-                     * 判断参数 Depth 是否已赋值
-                     * @return Depth 是否已赋值
-                     */
-                    bool DepthHasBeenSet() const;
-
-                    /**
-                     * 获取深度值2
-                     * @return Depth2 深度值2
-                     */
-                    int64_t GetDepth2() const;
-
-                    /**
-                     * 设置深度值2
-                     * @param Depth2 深度值2
-                     */
-                    void SetDepth2(const int64_t& _depth2);
-
-                    /**
-                     * 判断参数 Depth2 是否已赋值
-                     * @return Depth2 是否已赋值
-                     */
-                    bool Depth2HasBeenSet() const;
-
-                    /**
-                     * 获取目标端口结束
-                     * @return DportEnd 目标端口结束
-                     */
-                    int64_t GetDportEnd() const;
-
-                    /**
-                     * 设置目标端口结束
-                     * @param DportEnd 目标端口结束
-                     */
-                    void SetDportEnd(const int64_t& _dportEnd);
-
-                    /**
-                     * 判断参数 DportEnd 是否已赋值
-                     * @return DportEnd 是否已赋值
-                     */
-                    bool DportEndHasBeenSet() const;
-
-                    /**
-                     * 获取目标端口开始
-                     * @return DportStart 目标端口开始
-                     */
-                    int64_t GetDportStart() const;
-
-                    /**
-                     * 设置目标端口开始
-                     * @param DportStart 目标端口开始
-                     */
-                    void SetDportStart(const int64_t& _dportStart);
-
-                    /**
-                     * 判断参数 DportStart 是否已赋值
-                     * @return DportStart 是否已赋值
-                     */
-                    bool DportStartHasBeenSet() const;
-
-                    /**
-                     * 获取取非判断1
-                     * @return IsNot 取非判断1
-                     */
-                    int64_t GetIsNot() const;
-
-                    /**
-                     * 设置取非判断1
-                     * @param IsNot 取非判断1
-                     */
-                    void SetIsNot(const int64_t& _isNot);
-
-                    /**
-                     * 判断参数 IsNot 是否已赋值
-                     * @return IsNot 是否已赋值
-                     */
-                    bool IsNotHasBeenSet() const;
-
-                    /**
-                     * 获取取非判断2
-                     * @return IsNot2 取非判断2
-                     */
-                    int64_t GetIsNot2() const;
-
-                    /**
-                     * 设置取非判断2
-                     * @param IsNot2 取非判断2
-                     */
-                    void SetIsNot2(const int64_t& _isNot2);
-
-                    /**
-                     * 判断参数 IsNot2 是否已赋值
-                     * @return IsNot2 是否已赋值
-                     */
-                    bool IsNot2HasBeenSet() const;
-
-                    /**
-                     * 获取多特征关系（单特征时(none)，第二特征相关配置可不填） none；and；or
-                     * @return MatchLogic 多特征关系（单特征时(none)，第二特征相关配置可不填） none；and；or
-                     */
-                    std::string GetMatchLogic() const;
-
-                    /**
-                     * 设置多特征关系（单特征时(none)，第二特征相关配置可不填） none；and；or
-                     * @param MatchLogic 多特征关系（单特征时(none)，第二特征相关配置可不填） none；and；or
-                     */
-                    void SetMatchLogic(const std::string& _matchLogic);
-
-                    /**
-                     * 判断参数 MatchLogic 是否已赋值
-                     * @return MatchLogic 是否已赋值
-                     */
-                    bool MatchLogicHasBeenSet() const;
-
-                    /**
-                     * 获取匹配方式1 pcre-正则匹配, sunday-字符串匹配
-                     * @return MatchType 匹配方式1 pcre-正则匹配, sunday-字符串匹配
-                     */
-                    std::string GetMatchType() const;
-
-                    /**
-                     * 设置匹配方式1 pcre-正则匹配, sunday-字符串匹配
-                     * @param MatchType 匹配方式1 pcre-正则匹配, sunday-字符串匹配
-                     */
-                    void SetMatchType(const std::string& _matchType);
-
-                    /**
-                     * 判断参数 MatchType 是否已赋值
-                     * @return MatchType 是否已赋值
-                     */
-                    bool MatchTypeHasBeenSet() const;
-
-                    /**
-                     * 获取匹配方式2 pcre-正则匹配, sunday-字符串匹配
-                     * @return MatchType2 匹配方式2 pcre-正则匹配, sunday-字符串匹配
-                     */
-                    std::string GetMatchType2() const;
-
-                    /**
-                     * 设置匹配方式2 pcre-正则匹配, sunday-字符串匹配
-                     * @param MatchType2 匹配方式2 pcre-正则匹配, sunday-字符串匹配
-                     */
-                    void SetMatchType2(const std::string& _matchType2);
-
-                    /**
-                     * 判断参数 MatchType2 是否已赋值
-                     * @return MatchType2 是否已赋值
-                     */
-                    bool MatchType2HasBeenSet() const;
-
-                    /**
-                     * 获取偏移量1
-                     * @return Offset 偏移量1
-                     */
-                    int64_t GetOffset() const;
-
-                    /**
-                     * 设置偏移量1
-                     * @param Offset 偏移量1
-                     */
-                    void SetOffset(const int64_t& _offset);
-
-                    /**
-                     * 判断参数 Offset 是否已赋值
-                     * @return Offset 是否已赋值
-                     */
-                    bool OffsetHasBeenSet() const;
-
-                    /**
-                     * 获取偏移量2
-                     * @return Offset2 偏移量2
-                     */
-                    int64_t GetOffset2() const;
-
-                    /**
-                     * 设置偏移量2
-                     * @param Offset2 偏移量2
-                     */
-                    void SetOffset2(const int64_t& _offset2);
-
-                    /**
-                     * 判断参数 Offset2 是否已赋值
-                     * @return Offset2 是否已赋值
-                     */
-                    bool Offset2HasBeenSet() const;
-
-                    /**
-                     * 获取最大包长
-                     * @return PacketMax 最大包长
-                     */
-                    int64_t GetPacketMax() const;
-
-                    /**
-                     * 设置最大包长
-                     * @param PacketMax 最大包长
-                     */
-                    void SetPacketMax(const int64_t& _packetMax);
-
-                    /**
-                     * 判断参数 PacketMax 是否已赋值
-                     * @return PacketMax 是否已赋值
-                     */
-                    bool PacketMaxHasBeenSet() const;
-
-                    /**
-                     * 获取最小包长
-                     * @return PacketMin 最小包长
-                     */
-                    int64_t GetPacketMin() const;
-
-                    /**
-                     * 设置最小包长
-                     * @param PacketMin 最小包长
-                     */
-                    void SetPacketMin(const int64_t& _packetMin);
-
-                    /**
-                     * 判断参数 PacketMin 是否已赋值
-                     * @return PacketMin 是否已赋值
-                     */
-                    bool PacketMinHasBeenSet() const;
-
-                    /**
-                     * 获取协议 tcp；udp；icmp；all
-                     * @return Protocol 协议 tcp；udp；icmp；all
+                     * 获取协议，取值有：
+<li>tcp ：tcp协议 ；</li>
+<li>udp ：udp协议 ；</li>
+<li>icmp ：icmp协议 ；</li>
+<li>all ：全部协议 。</li>
+                     * @return Protocol 协议，取值有：
+<li>tcp ：tcp协议 ；</li>
+<li>udp ：udp协议 ；</li>
+<li>icmp ：icmp协议 ；</li>
+<li>all ：全部协议 。</li>
                      */
                     std::string GetProtocol() const;
 
                     /**
-                     * 设置协议 tcp；udp；icmp；all
-                     * @param Protocol 协议 tcp；udp；icmp；all
+                     * 设置协议，取值有：
+<li>tcp ：tcp协议 ；</li>
+<li>udp ：udp协议 ；</li>
+<li>icmp ：icmp协议 ；</li>
+<li>all ：全部协议 。</li>
+                     * @param Protocol 协议，取值有：
+<li>tcp ：tcp协议 ；</li>
+<li>udp ：udp协议 ；</li>
+<li>icmp ：icmp协议 ；</li>
+<li>all ：全部协议 。</li>
                      */
                     void SetProtocol(const std::string& _protocol);
 
@@ -317,32 +115,86 @@ namespace TencentCloud
                     bool ProtocolHasBeenSet() const;
 
                     /**
-                     * 获取源端口结束
-                     * @return SportEnd 源端口结束
+                     * 获取目标端口开始，取值范围0-65535。
+                     * @return DportStart 目标端口开始，取值范围0-65535。
                      */
-                    int64_t GetSportEnd() const;
+                    int64_t GetDportStart() const;
 
                     /**
-                     * 设置源端口结束
-                     * @param SportEnd 源端口结束
+                     * 设置目标端口开始，取值范围0-65535。
+                     * @param DportStart 目标端口开始，取值范围0-65535。
                      */
-                    void SetSportEnd(const int64_t& _sportEnd);
+                    void SetDportStart(const int64_t& _dportStart);
 
                     /**
-                     * 判断参数 SportEnd 是否已赋值
-                     * @return SportEnd 是否已赋值
+                     * 判断参数 DportStart 是否已赋值
+                     * @return DportStart 是否已赋值
                      */
-                    bool SportEndHasBeenSet() const;
+                    bool DportStartHasBeenSet() const;
 
                     /**
-                     * 获取源端口开始
-                     * @return SportStart 源端口开始
+                     * 获取目标端口结束，取值范围0-65535。
+                     * @return DportEnd 目标端口结束，取值范围0-65535。
+                     */
+                    int64_t GetDportEnd() const;
+
+                    /**
+                     * 设置目标端口结束，取值范围0-65535。
+                     * @param DportEnd 目标端口结束，取值范围0-65535。
+                     */
+                    void SetDportEnd(const int64_t& _dportEnd);
+
+                    /**
+                     * 判断参数 DportEnd 是否已赋值
+                     * @return DportEnd 是否已赋值
+                     */
+                    bool DportEndHasBeenSet() const;
+
+                    /**
+                     * 获取最小包长，取值范围0-1500。
+                     * @return PacketMin 最小包长，取值范围0-1500。
+                     */
+                    int64_t GetPacketMin() const;
+
+                    /**
+                     * 设置最小包长，取值范围0-1500。
+                     * @param PacketMin 最小包长，取值范围0-1500。
+                     */
+                    void SetPacketMin(const int64_t& _packetMin);
+
+                    /**
+                     * 判断参数 PacketMin 是否已赋值
+                     * @return PacketMin 是否已赋值
+                     */
+                    bool PacketMinHasBeenSet() const;
+
+                    /**
+                     * 获取最大包长，取值范围0-1500。
+                     * @return PacketMax 最大包长，取值范围0-1500。
+                     */
+                    int64_t GetPacketMax() const;
+
+                    /**
+                     * 设置最大包长，取值范围0-1500。
+                     * @param PacketMax 最大包长，取值范围0-1500。
+                     */
+                    void SetPacketMax(const int64_t& _packetMax);
+
+                    /**
+                     * 判断参数 PacketMax 是否已赋值
+                     * @return PacketMax 是否已赋值
+                     */
+                    bool PacketMaxHasBeenSet() const;
+
+                    /**
+                     * 获取源端口开始，取值范围0-65535。
+                     * @return SportStart 源端口开始，取值范围0-65535。
                      */
                     int64_t GetSportStart() const;
 
                     /**
-                     * 设置源端口开始
-                     * @param SportStart 源端口开始
+                     * 设置源端口开始，取值范围0-65535。
+                     * @param SportStart 源端口开始，取值范围0-65535。
                      */
                     void SetSportStart(const int64_t& _sportStart);
 
@@ -353,50 +205,132 @@ namespace TencentCloud
                     bool SportStartHasBeenSet() const;
 
                     /**
-                     * 获取匹配字符串1
-                     * @return Str 匹配字符串1
+                     * 获取源端口结束，取值范围0-65535。
+                     * @return SportEnd 源端口结束，取值范围0-65535。
                      */
-                    std::string GetStr() const;
+                    int64_t GetSportEnd() const;
 
                     /**
-                     * 设置匹配字符串1
-                     * @param Str 匹配字符串1
+                     * 设置源端口结束，取值范围0-65535。
+                     * @param SportEnd 源端口结束，取值范围0-65535。
                      */
-                    void SetStr(const std::string& _str);
+                    void SetSportEnd(const int64_t& _sportEnd);
 
                     /**
-                     * 判断参数 Str 是否已赋值
-                     * @return Str 是否已赋值
+                     * 判断参数 SportEnd 是否已赋值
+                     * @return SportEnd 是否已赋值
                      */
-                    bool StrHasBeenSet() const;
+                    bool SportEndHasBeenSet() const;
 
                     /**
-                     * 获取匹配字符串2
-                     * @return Str2 匹配字符串2
+                     * 获取匹配方式1，【特征1】，取值有：
+<li>pcre ：正则匹配 ；</li>
+<li>sunday ：字符串匹配 。</li>默认为空字符串。
+                     * @return MatchType 匹配方式1，【特征1】，取值有：
+<li>pcre ：正则匹配 ；</li>
+<li>sunday ：字符串匹配 。</li>默认为空字符串。
                      */
-                    std::string GetStr2() const;
+                    std::string GetMatchType() const;
 
                     /**
-                     * 设置匹配字符串2
-                     * @param Str2 匹配字符串2
+                     * 设置匹配方式1，【特征1】，取值有：
+<li>pcre ：正则匹配 ；</li>
+<li>sunday ：字符串匹配 。</li>默认为空字符串。
+                     * @param MatchType 匹配方式1，【特征1】，取值有：
+<li>pcre ：正则匹配 ；</li>
+<li>sunday ：字符串匹配 。</li>默认为空字符串。
                      */
-                    void SetStr2(const std::string& _str2);
+                    void SetMatchType(const std::string& _matchType);
 
                     /**
-                     * 判断参数 Str2 是否已赋值
-                     * @return Str2 是否已赋值
+                     * 判断参数 MatchType 是否已赋值
+                     * @return MatchType 是否已赋值
                      */
-                    bool Str2HasBeenSet() const;
+                    bool MatchTypeHasBeenSet() const;
 
                     /**
-                     * 获取匹配开始层级，层级参考计算机网络结构 begin_l5, no_match, begin_l3, begin_l4
-                     * @return MatchBegin 匹配开始层级，层级参考计算机网络结构 begin_l5, no_match, begin_l3, begin_l4
+                     * 获取取非判断，该参数对MatchType配合使用，【特征1】，取值有：
+<li>0 ：匹配 ；</li>
+<li>1 ：不匹配 。</li>
+                     * @return IsNot 取非判断，该参数对MatchType配合使用，【特征1】，取值有：
+<li>0 ：匹配 ；</li>
+<li>1 ：不匹配 。</li>
+                     */
+                    int64_t GetIsNot() const;
+
+                    /**
+                     * 设置取非判断，该参数对MatchType配合使用，【特征1】，取值有：
+<li>0 ：匹配 ；</li>
+<li>1 ：不匹配 。</li>
+                     * @param IsNot 取非判断，该参数对MatchType配合使用，【特征1】，取值有：
+<li>0 ：匹配 ；</li>
+<li>1 ：不匹配 。</li>
+                     */
+                    void SetIsNot(const int64_t& _isNot);
+
+                    /**
+                     * 判断参数 IsNot 是否已赋值
+                     * @return IsNot 是否已赋值
+                     */
+                    bool IsNotHasBeenSet() const;
+
+                    /**
+                     * 获取偏移量1，【特征1】，取值范围0-1500。
+                     * @return Offset 偏移量1，【特征1】，取值范围0-1500。
+                     */
+                    int64_t GetOffset() const;
+
+                    /**
+                     * 设置偏移量1，【特征1】，取值范围0-1500。
+                     * @param Offset 偏移量1，【特征1】，取值范围0-1500。
+                     */
+                    void SetOffset(const int64_t& _offset);
+
+                    /**
+                     * 判断参数 Offset 是否已赋值
+                     * @return Offset 是否已赋值
+                     */
+                    bool OffsetHasBeenSet() const;
+
+                    /**
+                     * 获取检测包字符深度，【特征1】，取值范围1-1500。
+                     * @return Depth 检测包字符深度，【特征1】，取值范围1-1500。
+                     */
+                    int64_t GetDepth() const;
+
+                    /**
+                     * 设置检测包字符深度，【特征1】，取值范围1-1500。
+                     * @param Depth 检测包字符深度，【特征1】，取值范围1-1500。
+                     */
+                    void SetDepth(const int64_t& _depth);
+
+                    /**
+                     * 判断参数 Depth 是否已赋值
+                     * @return Depth 是否已赋值
+                     */
+                    bool DepthHasBeenSet() const;
+
+                    /**
+                     * 获取匹配开始层级，层级参考计算机网络结构，取值有：
+<li>begin_l5 ：载荷开始检测 ；</li>
+<li>begin_l4 ：tcp/udp首部开始检测 ；</li>
+<li>begin_l3 ：ip首部开始检测 。</li>
+                     * @return MatchBegin 匹配开始层级，层级参考计算机网络结构，取值有：
+<li>begin_l5 ：载荷开始检测 ；</li>
+<li>begin_l4 ：tcp/udp首部开始检测 ；</li>
+<li>begin_l3 ：ip首部开始检测 。</li>
                      */
                     std::string GetMatchBegin() const;
 
                     /**
-                     * 设置匹配开始层级，层级参考计算机网络结构 begin_l5, no_match, begin_l3, begin_l4
-                     * @param MatchBegin 匹配开始层级，层级参考计算机网络结构 begin_l5, no_match, begin_l3, begin_l4
+                     * 设置匹配开始层级，层级参考计算机网络结构，取值有：
+<li>begin_l5 ：载荷开始检测 ；</li>
+<li>begin_l4 ：tcp/udp首部开始检测 ；</li>
+<li>begin_l3 ：ip首部开始检测 。</li>
+                     * @param MatchBegin 匹配开始层级，层级参考计算机网络结构，取值有：
+<li>begin_l5 ：载荷开始检测 ；</li>
+<li>begin_l4 ：tcp/udp首部开始检测 ；</li>
+<li>begin_l3 ：ip首部开始检测 。</li>
                      */
                     void SetMatchBegin(const std::string& _matchBegin);
 
@@ -407,14 +341,132 @@ namespace TencentCloud
                     bool MatchBeginHasBeenSet() const;
 
                     /**
-                     * 获取匹配开始层级，层级参考计算机网络结构 begin_l5, no_match, begin_l3, begin_l4
-                     * @return MatchBegin2 匹配开始层级，层级参考计算机网络结构 begin_l5, no_match, begin_l3, begin_l4
+                     * 获取正则或字符串匹配的内容，【特征1】。
+                     * @return Str 正则或字符串匹配的内容，【特征1】。
+                     */
+                    std::string GetStr() const;
+
+                    /**
+                     * 设置正则或字符串匹配的内容，【特征1】。
+                     * @param Str 正则或字符串匹配的内容，【特征1】。
+                     */
+                    void SetStr(const std::string& _str);
+
+                    /**
+                     * 判断参数 Str 是否已赋值
+                     * @return Str 是否已赋值
+                     */
+                    bool StrHasBeenSet() const;
+
+                    /**
+                     * 获取匹配方式2，【特征2】，取值有：
+<li>pcre ：正则匹配 ；</li>
+<li>sunday ：字符串匹配 。</li>默认为空字符串。
+                     * @return MatchType2 匹配方式2，【特征2】，取值有：
+<li>pcre ：正则匹配 ；</li>
+<li>sunday ：字符串匹配 。</li>默认为空字符串。
+                     */
+                    std::string GetMatchType2() const;
+
+                    /**
+                     * 设置匹配方式2，【特征2】，取值有：
+<li>pcre ：正则匹配 ；</li>
+<li>sunday ：字符串匹配 。</li>默认为空字符串。
+                     * @param MatchType2 匹配方式2，【特征2】，取值有：
+<li>pcre ：正则匹配 ；</li>
+<li>sunday ：字符串匹配 。</li>默认为空字符串。
+                     */
+                    void SetMatchType2(const std::string& _matchType2);
+
+                    /**
+                     * 判断参数 MatchType2 是否已赋值
+                     * @return MatchType2 是否已赋值
+                     */
+                    bool MatchType2HasBeenSet() const;
+
+                    /**
+                     * 获取取非判断2，该参数对MatchType2配合使用，【特征2】，取值有：
+<li>0 ：匹配 ；</li>
+<li>1 ：不匹配 。</li>
+                     * @return IsNot2 取非判断2，该参数对MatchType2配合使用，【特征2】，取值有：
+<li>0 ：匹配 ；</li>
+<li>1 ：不匹配 。</li>
+                     */
+                    int64_t GetIsNot2() const;
+
+                    /**
+                     * 设置取非判断2，该参数对MatchType2配合使用，【特征2】，取值有：
+<li>0 ：匹配 ；</li>
+<li>1 ：不匹配 。</li>
+                     * @param IsNot2 取非判断2，该参数对MatchType2配合使用，【特征2】，取值有：
+<li>0 ：匹配 ；</li>
+<li>1 ：不匹配 。</li>
+                     */
+                    void SetIsNot2(const int64_t& _isNot2);
+
+                    /**
+                     * 判断参数 IsNot2 是否已赋值
+                     * @return IsNot2 是否已赋值
+                     */
+                    bool IsNot2HasBeenSet() const;
+
+                    /**
+                     * 获取偏移量2，【特征2】，取值范围0-1500。
+                     * @return Offset2 偏移量2，【特征2】，取值范围0-1500。
+                     */
+                    int64_t GetOffset2() const;
+
+                    /**
+                     * 设置偏移量2，【特征2】，取值范围0-1500。
+                     * @param Offset2 偏移量2，【特征2】，取值范围0-1500。
+                     */
+                    void SetOffset2(const int64_t& _offset2);
+
+                    /**
+                     * 判断参数 Offset2 是否已赋值
+                     * @return Offset2 是否已赋值
+                     */
+                    bool Offset2HasBeenSet() const;
+
+                    /**
+                     * 获取检测包字符深度，【特征2】，取值范围1-1500。
+                     * @return Depth2 检测包字符深度，【特征2】，取值范围1-1500。
+                     */
+                    int64_t GetDepth2() const;
+
+                    /**
+                     * 设置检测包字符深度，【特征2】，取值范围1-1500。
+                     * @param Depth2 检测包字符深度，【特征2】，取值范围1-1500。
+                     */
+                    void SetDepth2(const int64_t& _depth2);
+
+                    /**
+                     * 判断参数 Depth2 是否已赋值
+                     * @return Depth2 是否已赋值
+                     */
+                    bool Depth2HasBeenSet() const;
+
+                    /**
+                     * 获取匹配开始层级，层级参考计算机网络结构，取值有：
+<li>begin_l5 ：载荷开始检测 ；</li>
+<li>begin_l4 ：tcp/udp首部开始检测；</li>
+<li>begin_l3 ：ip首部开始检测 。</li>
+                     * @return MatchBegin2 匹配开始层级，层级参考计算机网络结构，取值有：
+<li>begin_l5 ：载荷开始检测 ；</li>
+<li>begin_l4 ：tcp/udp首部开始检测；</li>
+<li>begin_l3 ：ip首部开始检测 。</li>
                      */
                     std::string GetMatchBegin2() const;
 
                     /**
-                     * 设置匹配开始层级，层级参考计算机网络结构 begin_l5, no_match, begin_l3, begin_l4
-                     * @param MatchBegin2 匹配开始层级，层级参考计算机网络结构 begin_l5, no_match, begin_l3, begin_l4
+                     * 设置匹配开始层级，层级参考计算机网络结构，取值有：
+<li>begin_l5 ：载荷开始检测 ；</li>
+<li>begin_l4 ：tcp/udp首部开始检测；</li>
+<li>begin_l3 ：ip首部开始检测 。</li>
+                     * @param MatchBegin2 匹配开始层级，层级参考计算机网络结构，取值有：
+<li>begin_l5 ：载荷开始检测 ；</li>
+<li>begin_l4 ：tcp/udp首部开始检测；</li>
+<li>begin_l3 ：ip首部开始检测 。</li>
                      */
                     void SetMatchBegin2(const std::string& _matchBegin2);
 
@@ -424,133 +476,191 @@ namespace TencentCloud
                      */
                     bool MatchBegin2HasBeenSet() const;
 
+                    /**
+                     * 获取正则或字符串匹配的内容，【特征2】。
+                     * @return Str2 正则或字符串匹配的内容，【特征2】。
+                     */
+                    std::string GetStr2() const;
+
+                    /**
+                     * 设置正则或字符串匹配的内容，【特征2】。
+                     * @param Str2 正则或字符串匹配的内容，【特征2】。
+                     */
+                    void SetStr2(const std::string& _str2);
+
+                    /**
+                     * 判断参数 Str2 是否已赋值
+                     * @return Str2 是否已赋值
+                     */
+                    bool Str2HasBeenSet() const;
+
+                    /**
+                     * 获取多特征关系，仅配置【特征1】时填 none，存在【特征2】配置可不填。
+                     * @return MatchLogic 多特征关系，仅配置【特征1】时填 none，存在【特征2】配置可不填。
+                     */
+                    std::string GetMatchLogic() const;
+
+                    /**
+                     * 设置多特征关系，仅配置【特征1】时填 none，存在【特征2】配置可不填。
+                     * @param MatchLogic 多特征关系，仅配置【特征1】时填 none，存在【特征2】配置可不填。
+                     */
+                    void SetMatchLogic(const std::string& _matchLogic);
+
+                    /**
+                     * 判断参数 MatchLogic 是否已赋值
+                     * @return MatchLogic 是否已赋值
+                     */
+                    bool MatchLogicHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 动作 drop-丢弃；transmit-放行；drop_block-丢弃并拉黑；forward-继续防护
+                     * 执行动作，取值有：
+<li>drop ：丢弃 ；</li>
+<li>transmit ：放行 ；</li>
+<li>drop_block ：丢弃并拉黑 ；</li>
+<li>forward ：继续防护 。</li>
                      */
                     std::string m_action;
                     bool m_actionHasBeenSet;
 
                     /**
-                     * 深度值1
-                     */
-                    int64_t m_depth;
-                    bool m_depthHasBeenSet;
-
-                    /**
-                     * 深度值2
-                     */
-                    int64_t m_depth2;
-                    bool m_depth2HasBeenSet;
-
-                    /**
-                     * 目标端口结束
-                     */
-                    int64_t m_dportEnd;
-                    bool m_dportEndHasBeenSet;
-
-                    /**
-                     * 目标端口开始
-                     */
-                    int64_t m_dportStart;
-                    bool m_dportStartHasBeenSet;
-
-                    /**
-                     * 取非判断1
-                     */
-                    int64_t m_isNot;
-                    bool m_isNotHasBeenSet;
-
-                    /**
-                     * 取非判断2
-                     */
-                    int64_t m_isNot2;
-                    bool m_isNot2HasBeenSet;
-
-                    /**
-                     * 多特征关系（单特征时(none)，第二特征相关配置可不填） none；and；or
-                     */
-                    std::string m_matchLogic;
-                    bool m_matchLogicHasBeenSet;
-
-                    /**
-                     * 匹配方式1 pcre-正则匹配, sunday-字符串匹配
-                     */
-                    std::string m_matchType;
-                    bool m_matchTypeHasBeenSet;
-
-                    /**
-                     * 匹配方式2 pcre-正则匹配, sunday-字符串匹配
-                     */
-                    std::string m_matchType2;
-                    bool m_matchType2HasBeenSet;
-
-                    /**
-                     * 偏移量1
-                     */
-                    int64_t m_offset;
-                    bool m_offsetHasBeenSet;
-
-                    /**
-                     * 偏移量2
-                     */
-                    int64_t m_offset2;
-                    bool m_offset2HasBeenSet;
-
-                    /**
-                     * 最大包长
-                     */
-                    int64_t m_packetMax;
-                    bool m_packetMaxHasBeenSet;
-
-                    /**
-                     * 最小包长
-                     */
-                    int64_t m_packetMin;
-                    bool m_packetMinHasBeenSet;
-
-                    /**
-                     * 协议 tcp；udp；icmp；all
+                     * 协议，取值有：
+<li>tcp ：tcp协议 ；</li>
+<li>udp ：udp协议 ；</li>
+<li>icmp ：icmp协议 ；</li>
+<li>all ：全部协议 。</li>
                      */
                     std::string m_protocol;
                     bool m_protocolHasBeenSet;
 
                     /**
-                     * 源端口结束
+                     * 目标端口开始，取值范围0-65535。
                      */
-                    int64_t m_sportEnd;
-                    bool m_sportEndHasBeenSet;
+                    int64_t m_dportStart;
+                    bool m_dportStartHasBeenSet;
 
                     /**
-                     * 源端口开始
+                     * 目标端口结束，取值范围0-65535。
+                     */
+                    int64_t m_dportEnd;
+                    bool m_dportEndHasBeenSet;
+
+                    /**
+                     * 最小包长，取值范围0-1500。
+                     */
+                    int64_t m_packetMin;
+                    bool m_packetMinHasBeenSet;
+
+                    /**
+                     * 最大包长，取值范围0-1500。
+                     */
+                    int64_t m_packetMax;
+                    bool m_packetMaxHasBeenSet;
+
+                    /**
+                     * 源端口开始，取值范围0-65535。
                      */
                     int64_t m_sportStart;
                     bool m_sportStartHasBeenSet;
 
                     /**
-                     * 匹配字符串1
+                     * 源端口结束，取值范围0-65535。
                      */
-                    std::string m_str;
-                    bool m_strHasBeenSet;
+                    int64_t m_sportEnd;
+                    bool m_sportEndHasBeenSet;
 
                     /**
-                     * 匹配字符串2
+                     * 匹配方式1，【特征1】，取值有：
+<li>pcre ：正则匹配 ；</li>
+<li>sunday ：字符串匹配 。</li>默认为空字符串。
                      */
-                    std::string m_str2;
-                    bool m_str2HasBeenSet;
+                    std::string m_matchType;
+                    bool m_matchTypeHasBeenSet;
 
                     /**
-                     * 匹配开始层级，层级参考计算机网络结构 begin_l5, no_match, begin_l3, begin_l4
+                     * 取非判断，该参数对MatchType配合使用，【特征1】，取值有：
+<li>0 ：匹配 ；</li>
+<li>1 ：不匹配 。</li>
+                     */
+                    int64_t m_isNot;
+                    bool m_isNotHasBeenSet;
+
+                    /**
+                     * 偏移量1，【特征1】，取值范围0-1500。
+                     */
+                    int64_t m_offset;
+                    bool m_offsetHasBeenSet;
+
+                    /**
+                     * 检测包字符深度，【特征1】，取值范围1-1500。
+                     */
+                    int64_t m_depth;
+                    bool m_depthHasBeenSet;
+
+                    /**
+                     * 匹配开始层级，层级参考计算机网络结构，取值有：
+<li>begin_l5 ：载荷开始检测 ；</li>
+<li>begin_l4 ：tcp/udp首部开始检测 ；</li>
+<li>begin_l3 ：ip首部开始检测 。</li>
                      */
                     std::string m_matchBegin;
                     bool m_matchBeginHasBeenSet;
 
                     /**
-                     * 匹配开始层级，层级参考计算机网络结构 begin_l5, no_match, begin_l3, begin_l4
+                     * 正则或字符串匹配的内容，【特征1】。
+                     */
+                    std::string m_str;
+                    bool m_strHasBeenSet;
+
+                    /**
+                     * 匹配方式2，【特征2】，取值有：
+<li>pcre ：正则匹配 ；</li>
+<li>sunday ：字符串匹配 。</li>默认为空字符串。
+                     */
+                    std::string m_matchType2;
+                    bool m_matchType2HasBeenSet;
+
+                    /**
+                     * 取非判断2，该参数对MatchType2配合使用，【特征2】，取值有：
+<li>0 ：匹配 ；</li>
+<li>1 ：不匹配 。</li>
+                     */
+                    int64_t m_isNot2;
+                    bool m_isNot2HasBeenSet;
+
+                    /**
+                     * 偏移量2，【特征2】，取值范围0-1500。
+                     */
+                    int64_t m_offset2;
+                    bool m_offset2HasBeenSet;
+
+                    /**
+                     * 检测包字符深度，【特征2】，取值范围1-1500。
+                     */
+                    int64_t m_depth2;
+                    bool m_depth2HasBeenSet;
+
+                    /**
+                     * 匹配开始层级，层级参考计算机网络结构，取值有：
+<li>begin_l5 ：载荷开始检测 ；</li>
+<li>begin_l4 ：tcp/udp首部开始检测；</li>
+<li>begin_l3 ：ip首部开始检测 。</li>
                      */
                     std::string m_matchBegin2;
                     bool m_matchBegin2HasBeenSet;
+
+                    /**
+                     * 正则或字符串匹配的内容，【特征2】。
+                     */
+                    std::string m_str2;
+                    bool m_str2HasBeenSet;
+
+                    /**
+                     * 多特征关系，仅配置【特征1】时填 none，存在【特征2】配置可不填。
+                     */
+                    std::string m_matchLogic;
+                    bool m_matchLogicHasBeenSet;
 
                 };
             }

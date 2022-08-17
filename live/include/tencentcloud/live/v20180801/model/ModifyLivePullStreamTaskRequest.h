@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/live/v20180801/model/PullPushWatermarkInfo.h>
 
 
 namespace TencentCloud
@@ -456,6 +457,56 @@ PullVodPushLive -点播。
                      */
                     bool BackupSourceUrlHasBeenSet() const;
 
+                    /**
+                     * 获取水印信息列表。
+注意：
+1. 最多支持4个不同位置的水印。
+2. 水印图片 URL 请使用合法外网可访问地址。
+3. 支持的水印图片格式：png，jpg等。
+4. 轮播任务修改水印后，轮播到下一个文件时新水印生效。
+5. 直播源任务修改水印后，水印立即生效。
+6. 清除水印时，需携带该水印列表参数，内容为空数组。
+7. 暂不支持动图水印。
+                     * @return WatermarkList 水印信息列表。
+注意：
+1. 最多支持4个不同位置的水印。
+2. 水印图片 URL 请使用合法外网可访问地址。
+3. 支持的水印图片格式：png，jpg等。
+4. 轮播任务修改水印后，轮播到下一个文件时新水印生效。
+5. 直播源任务修改水印后，水印立即生效。
+6. 清除水印时，需携带该水印列表参数，内容为空数组。
+7. 暂不支持动图水印。
+                     */
+                    std::vector<PullPushWatermarkInfo> GetWatermarkList() const;
+
+                    /**
+                     * 设置水印信息列表。
+注意：
+1. 最多支持4个不同位置的水印。
+2. 水印图片 URL 请使用合法外网可访问地址。
+3. 支持的水印图片格式：png，jpg等。
+4. 轮播任务修改水印后，轮播到下一个文件时新水印生效。
+5. 直播源任务修改水印后，水印立即生效。
+6. 清除水印时，需携带该水印列表参数，内容为空数组。
+7. 暂不支持动图水印。
+                     * @param WatermarkList 水印信息列表。
+注意：
+1. 最多支持4个不同位置的水印。
+2. 水印图片 URL 请使用合法外网可访问地址。
+3. 支持的水印图片格式：png，jpg等。
+4. 轮播任务修改水印后，轮播到下一个文件时新水印生效。
+5. 直播源任务修改水印后，水印立即生效。
+6. 清除水印时，需携带该水印列表参数，内容为空数组。
+7. 暂不支持动图水印。
+                     */
+                    void SetWatermarkList(const std::vector<PullPushWatermarkInfo>& _watermarkList);
+
+                    /**
+                     * 判断参数 WatermarkList 是否已赋值
+                     * @return WatermarkList 是否已赋值
+                     */
+                    bool WatermarkListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -583,6 +634,20 @@ PullVodPushLive -点播。
                      */
                     std::string m_backupSourceUrl;
                     bool m_backupSourceUrlHasBeenSet;
+
+                    /**
+                     * 水印信息列表。
+注意：
+1. 最多支持4个不同位置的水印。
+2. 水印图片 URL 请使用合法外网可访问地址。
+3. 支持的水印图片格式：png，jpg等。
+4. 轮播任务修改水印后，轮播到下一个文件时新水印生效。
+5. 直播源任务修改水印后，水印立即生效。
+6. 清除水印时，需携带该水印列表参数，内容为空数组。
+7. 暂不支持动图水印。
+                     */
+                    std::vector<PullPushWatermarkInfo> m_watermarkList;
+                    bool m_watermarkListHasBeenSet;
 
                 };
             }

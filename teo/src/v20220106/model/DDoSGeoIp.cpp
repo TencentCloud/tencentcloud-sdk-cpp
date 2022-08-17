@@ -21,8 +21,8 @@ using namespace TencentCloud::Teo::V20220106::Model;
 using namespace std;
 
 DDoSGeoIp::DDoSGeoIp() :
-    m_regionIdHasBeenSet(false),
-    m_switchHasBeenSet(false)
+    m_switchHasBeenSet(false),
+    m_regionIdHasBeenSet(false)
 {
 }
 
@@ -30,6 +30,16 @@ CoreInternalOutcome DDoSGeoIp::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
+
+    if (value.HasMember("Switch") && !value["Switch"].IsNull())
+    {
+        if (!value["Switch"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DDoSGeoIp.Switch` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_switch = string(value["Switch"].GetString());
+        m_switchHasBeenSet = true;
+    }
 
     if (value.HasMember("RegionId") && !value["RegionId"].IsNull())
     {
@@ -44,22 +54,20 @@ CoreInternalOutcome DDoSGeoIp::Deserialize(const rapidjson::Value &value)
         m_regionIdHasBeenSet = true;
     }
 
-    if (value.HasMember("Switch") && !value["Switch"].IsNull())
-    {
-        if (!value["Switch"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `DDoSGeoIp.Switch` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_switch = string(value["Switch"].GetString());
-        m_switchHasBeenSet = true;
-    }
-
 
     return CoreInternalOutcome(true);
 }
 
 void DDoSGeoIp::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
+
+    if (m_switchHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Switch";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_switch.c_str(), allocator).Move(), allocator);
+    }
 
     if (m_regionIdHasBeenSet)
     {
@@ -74,32 +82,8 @@ void DDoSGeoIp::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         }
     }
 
-    if (m_switchHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Switch";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_switch.c_str(), allocator).Move(), allocator);
-    }
-
 }
 
-
-vector<int64_t> DDoSGeoIp::GetRegionId() const
-{
-    return m_regionId;
-}
-
-void DDoSGeoIp::SetRegionId(const vector<int64_t>& _regionId)
-{
-    m_regionId = _regionId;
-    m_regionIdHasBeenSet = true;
-}
-
-bool DDoSGeoIp::RegionIdHasBeenSet() const
-{
-    return m_regionIdHasBeenSet;
-}
 
 string DDoSGeoIp::GetSwitch() const
 {
@@ -115,5 +99,21 @@ void DDoSGeoIp::SetSwitch(const string& _switch)
 bool DDoSGeoIp::SwitchHasBeenSet() const
 {
     return m_switchHasBeenSet;
+}
+
+vector<int64_t> DDoSGeoIp::GetRegionId() const
+{
+    return m_regionId;
+}
+
+void DDoSGeoIp::SetRegionId(const vector<int64_t>& _regionId)
+{
+    m_regionId = _regionId;
+    m_regionIdHasBeenSet = true;
+}
+
+bool DDoSGeoIp::RegionIdHasBeenSet() const
+{
+    return m_regionIdHasBeenSet;
 }
 

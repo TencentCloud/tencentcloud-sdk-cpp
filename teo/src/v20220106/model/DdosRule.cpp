@@ -28,7 +28,8 @@ DdosRule::DdosRule() :
     m_ddosPacketFilterHasBeenSet(false),
     m_ddosAclHasBeenSet(false),
     m_switchHasBeenSet(false),
-    m_udpShardOpenHasBeenSet(false)
+    m_udpShardOpenHasBeenSet(false),
+    m_ddosSpeedLimitHasBeenSet(false)
 {
 }
 
@@ -159,6 +160,23 @@ CoreInternalOutcome DdosRule::Deserialize(const rapidjson::Value &value)
         m_udpShardOpenHasBeenSet = true;
     }
 
+    if (value.HasMember("DdosSpeedLimit") && !value["DdosSpeedLimit"].IsNull())
+    {
+        if (!value["DdosSpeedLimit"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `DdosRule.DdosSpeedLimit` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_ddosSpeedLimit.Deserialize(value["DdosSpeedLimit"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_ddosSpeedLimitHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -234,6 +252,15 @@ void DdosRule::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "UdpShardOpen";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_udpShardOpen.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ddosSpeedLimitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DdosSpeedLimit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_ddosSpeedLimit.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -365,5 +392,21 @@ void DdosRule::SetUdpShardOpen(const string& _udpShardOpen)
 bool DdosRule::UdpShardOpenHasBeenSet() const
 {
     return m_udpShardOpenHasBeenSet;
+}
+
+DdosSpeedLimit DdosRule::GetDdosSpeedLimit() const
+{
+    return m_ddosSpeedLimit;
+}
+
+void DdosRule::SetDdosSpeedLimit(const DdosSpeedLimit& _ddosSpeedLimit)
+{
+    m_ddosSpeedLimit = _ddosSpeedLimit;
+    m_ddosSpeedLimitHasBeenSet = true;
+}
+
+bool DdosRule::DdosSpeedLimitHasBeenSet() const
+{
+    return m_ddosSpeedLimitHasBeenSet;
 }
 

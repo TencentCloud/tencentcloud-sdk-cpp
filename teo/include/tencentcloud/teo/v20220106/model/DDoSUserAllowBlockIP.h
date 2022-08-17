@@ -47,18 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取用户ip
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Ip 用户ip
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取客户端IP。
+                     * @return Ip 客户端IP。
                      */
                     std::string GetIp() const;
 
                     /**
-                     * 设置用户ip
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Ip 用户ip
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置客户端IP。
+                     * @param Ip 客户端IP。
                      */
                     void SetIp(const std::string& _ip);
 
@@ -69,18 +65,14 @@ namespace TencentCloud
                     bool IpHasBeenSet() const;
 
                     /**
-                     * 获取掩码
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Mask 掩码
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取掩码。
+                     * @return Mask 掩码。
                      */
                     int64_t GetMask() const;
 
                     /**
-                     * 设置掩码
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Mask 掩码
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置掩码。
+                     * @param Mask 掩码。
                      */
                     void SetMask(const int64_t& _mask);
 
@@ -91,18 +83,22 @@ namespace TencentCloud
                     bool MaskHasBeenSet() const;
 
                     /**
-                     * 获取类型 block-丢弃；allow-允许
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Type 类型 block-丢弃；allow-允许
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取类型，取值有：
+<li>block ：丢弃 ；</li>
+<li>allow ：允许。</li>
+                     * @return Type 类型，取值有：
+<li>block ：丢弃 ；</li>
+<li>allow ：允许。</li>
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置类型 block-丢弃；allow-允许
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Type 类型 block-丢弃；allow-允许
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置类型，取值有：
+<li>block ：丢弃 ；</li>
+<li>allow ：允许。</li>
+                     * @param Type 类型，取值有：
+<li>block ：丢弃 ；</li>
+<li>allow ：允许。</li>
                      */
                     void SetType(const std::string& _type);
 
@@ -113,18 +109,14 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取时间戳
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return UpdateTime 时间戳
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取10位时间戳，例如1199116800。
+                     * @return UpdateTime 10位时间戳，例如1199116800。
                      */
                     int64_t GetUpdateTime() const;
 
                     /**
-                     * 设置时间戳
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UpdateTime 时间戳
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置10位时间戳，例如1199116800。
+                     * @param UpdateTime 10位时间戳，例如1199116800。
                      */
                     void SetUpdateTime(const int64_t& _updateTime);
 
@@ -135,18 +127,14 @@ namespace TencentCloud
                     bool UpdateTimeHasBeenSet() const;
 
                     /**
-                     * 获取用户ip范围截止
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Ip2 用户ip范围截止
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取客户端IP2，设置IP范围时使用，例如 1.1.1.1-1.1.1.2。
+                     * @return Ip2 客户端IP2，设置IP范围时使用，例如 1.1.1.1-1.1.1.2。
                      */
                     std::string GetIp2() const;
 
                     /**
-                     * 设置用户ip范围截止
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Ip2 用户ip范围截止
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置客户端IP2，设置IP范围时使用，例如 1.1.1.1-1.1.1.2。
+                     * @param Ip2 客户端IP2，设置IP范围时使用，例如 1.1.1.1-1.1.1.2。
                      */
                     void SetIp2(const std::string& _ip2);
 
@@ -157,18 +145,14 @@ namespace TencentCloud
                     bool Ip2HasBeenSet() const;
 
                     /**
-                     * 获取掩码截止范围
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Mask2 掩码截止范围
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取掩码2，设置IP网段范围时使用，例如 1.1.1.0/24-1.1.2.0/24。
+                     * @return Mask2 掩码2，设置IP网段范围时使用，例如 1.1.1.0/24-1.1.2.0/24。
                      */
                     int64_t GetMask2() const;
 
                     /**
-                     * 设置掩码截止范围
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Mask2 掩码截止范围
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置掩码2，设置IP网段范围时使用，例如 1.1.1.0/24-1.1.2.0/24。
+                     * @param Mask2 掩码2，设置IP网段范围时使用，例如 1.1.1.0/24-1.1.2.0/24。
                      */
                     void SetMask2(const int64_t& _mask2);
 
@@ -181,43 +165,39 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 用户ip
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 客户端IP。
                      */
                     std::string m_ip;
                     bool m_ipHasBeenSet;
 
                     /**
-                     * 掩码
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 掩码。
                      */
                     int64_t m_mask;
                     bool m_maskHasBeenSet;
 
                     /**
-                     * 类型 block-丢弃；allow-允许
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 类型，取值有：
+<li>block ：丢弃 ；</li>
+<li>allow ：允许。</li>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 时间戳
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 10位时间戳，例如1199116800。
                      */
                     int64_t m_updateTime;
                     bool m_updateTimeHasBeenSet;
 
                     /**
-                     * 用户ip范围截止
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 客户端IP2，设置IP范围时使用，例如 1.1.1.1-1.1.1.2。
                      */
                     std::string m_ip2;
                     bool m_ip2HasBeenSet;
 
                     /**
-                     * 掩码截止范围
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 掩码2，设置IP网段范围时使用，例如 1.1.1.0/24-1.1.2.0/24。
                      */
                     int64_t m_mask2;
                     bool m_mask2HasBeenSet;

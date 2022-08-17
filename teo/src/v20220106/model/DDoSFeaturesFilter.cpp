@@ -22,26 +22,26 @@ using namespace std;
 
 DDoSFeaturesFilter::DDoSFeaturesFilter() :
     m_actionHasBeenSet(false),
-    m_depthHasBeenSet(false),
-    m_depth2HasBeenSet(false),
-    m_dportEndHasBeenSet(false),
-    m_dportStartHasBeenSet(false),
-    m_isNotHasBeenSet(false),
-    m_isNot2HasBeenSet(false),
-    m_matchLogicHasBeenSet(false),
-    m_matchTypeHasBeenSet(false),
-    m_matchType2HasBeenSet(false),
-    m_offsetHasBeenSet(false),
-    m_offset2HasBeenSet(false),
-    m_packetMaxHasBeenSet(false),
-    m_packetMinHasBeenSet(false),
     m_protocolHasBeenSet(false),
-    m_sportEndHasBeenSet(false),
+    m_dportStartHasBeenSet(false),
+    m_dportEndHasBeenSet(false),
+    m_packetMinHasBeenSet(false),
+    m_packetMaxHasBeenSet(false),
     m_sportStartHasBeenSet(false),
-    m_strHasBeenSet(false),
-    m_str2HasBeenSet(false),
+    m_sportEndHasBeenSet(false),
+    m_matchTypeHasBeenSet(false),
+    m_isNotHasBeenSet(false),
+    m_offsetHasBeenSet(false),
+    m_depthHasBeenSet(false),
     m_matchBeginHasBeenSet(false),
-    m_matchBegin2HasBeenSet(false)
+    m_strHasBeenSet(false),
+    m_matchType2HasBeenSet(false),
+    m_isNot2HasBeenSet(false),
+    m_offset2HasBeenSet(false),
+    m_depth2HasBeenSet(false),
+    m_matchBegin2HasBeenSet(false),
+    m_str2HasBeenSet(false),
+    m_matchLogicHasBeenSet(false)
 {
 }
 
@@ -60,34 +60,14 @@ CoreInternalOutcome DDoSFeaturesFilter::Deserialize(const rapidjson::Value &valu
         m_actionHasBeenSet = true;
     }
 
-    if (value.HasMember("Depth") && !value["Depth"].IsNull())
+    if (value.HasMember("Protocol") && !value["Protocol"].IsNull())
     {
-        if (!value["Depth"].IsInt64())
+        if (!value["Protocol"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `DDoSFeaturesFilter.Depth` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DDoSFeaturesFilter.Protocol` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_depth = value["Depth"].GetInt64();
-        m_depthHasBeenSet = true;
-    }
-
-    if (value.HasMember("Depth2") && !value["Depth2"].IsNull())
-    {
-        if (!value["Depth2"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `DDoSFeaturesFilter.Depth2` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_depth2 = value["Depth2"].GetInt64();
-        m_depth2HasBeenSet = true;
-    }
-
-    if (value.HasMember("DportEnd") && !value["DportEnd"].IsNull())
-    {
-        if (!value["DportEnd"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `DDoSFeaturesFilter.DportEnd` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_dportEnd = value["DportEnd"].GetInt64();
-        m_dportEndHasBeenSet = true;
+        m_protocol = string(value["Protocol"].GetString());
+        m_protocolHasBeenSet = true;
     }
 
     if (value.HasMember("DportStart") && !value["DportStart"].IsNull())
@@ -100,84 +80,14 @@ CoreInternalOutcome DDoSFeaturesFilter::Deserialize(const rapidjson::Value &valu
         m_dportStartHasBeenSet = true;
     }
 
-    if (value.HasMember("IsNot") && !value["IsNot"].IsNull())
+    if (value.HasMember("DportEnd") && !value["DportEnd"].IsNull())
     {
-        if (!value["IsNot"].IsInt64())
+        if (!value["DportEnd"].IsInt64())
         {
-            return CoreInternalOutcome(Core::Error("response `DDoSFeaturesFilter.IsNot` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DDoSFeaturesFilter.DportEnd` IsInt64=false incorrectly").SetRequestId(requestId));
         }
-        m_isNot = value["IsNot"].GetInt64();
-        m_isNotHasBeenSet = true;
-    }
-
-    if (value.HasMember("IsNot2") && !value["IsNot2"].IsNull())
-    {
-        if (!value["IsNot2"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `DDoSFeaturesFilter.IsNot2` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_isNot2 = value["IsNot2"].GetInt64();
-        m_isNot2HasBeenSet = true;
-    }
-
-    if (value.HasMember("MatchLogic") && !value["MatchLogic"].IsNull())
-    {
-        if (!value["MatchLogic"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `DDoSFeaturesFilter.MatchLogic` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_matchLogic = string(value["MatchLogic"].GetString());
-        m_matchLogicHasBeenSet = true;
-    }
-
-    if (value.HasMember("MatchType") && !value["MatchType"].IsNull())
-    {
-        if (!value["MatchType"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `DDoSFeaturesFilter.MatchType` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_matchType = string(value["MatchType"].GetString());
-        m_matchTypeHasBeenSet = true;
-    }
-
-    if (value.HasMember("MatchType2") && !value["MatchType2"].IsNull())
-    {
-        if (!value["MatchType2"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `DDoSFeaturesFilter.MatchType2` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_matchType2 = string(value["MatchType2"].GetString());
-        m_matchType2HasBeenSet = true;
-    }
-
-    if (value.HasMember("Offset") && !value["Offset"].IsNull())
-    {
-        if (!value["Offset"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `DDoSFeaturesFilter.Offset` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_offset = value["Offset"].GetInt64();
-        m_offsetHasBeenSet = true;
-    }
-
-    if (value.HasMember("Offset2") && !value["Offset2"].IsNull())
-    {
-        if (!value["Offset2"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `DDoSFeaturesFilter.Offset2` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_offset2 = value["Offset2"].GetInt64();
-        m_offset2HasBeenSet = true;
-    }
-
-    if (value.HasMember("PacketMax") && !value["PacketMax"].IsNull())
-    {
-        if (!value["PacketMax"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `DDoSFeaturesFilter.PacketMax` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_packetMax = value["PacketMax"].GetInt64();
-        m_packetMaxHasBeenSet = true;
+        m_dportEnd = value["DportEnd"].GetInt64();
+        m_dportEndHasBeenSet = true;
     }
 
     if (value.HasMember("PacketMin") && !value["PacketMin"].IsNull())
@@ -190,24 +100,14 @@ CoreInternalOutcome DDoSFeaturesFilter::Deserialize(const rapidjson::Value &valu
         m_packetMinHasBeenSet = true;
     }
 
-    if (value.HasMember("Protocol") && !value["Protocol"].IsNull())
+    if (value.HasMember("PacketMax") && !value["PacketMax"].IsNull())
     {
-        if (!value["Protocol"].IsString())
+        if (!value["PacketMax"].IsInt64())
         {
-            return CoreInternalOutcome(Core::Error("response `DDoSFeaturesFilter.Protocol` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DDoSFeaturesFilter.PacketMax` IsInt64=false incorrectly").SetRequestId(requestId));
         }
-        m_protocol = string(value["Protocol"].GetString());
-        m_protocolHasBeenSet = true;
-    }
-
-    if (value.HasMember("SportEnd") && !value["SportEnd"].IsNull())
-    {
-        if (!value["SportEnd"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `DDoSFeaturesFilter.SportEnd` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_sportEnd = value["SportEnd"].GetInt64();
-        m_sportEndHasBeenSet = true;
+        m_packetMax = value["PacketMax"].GetInt64();
+        m_packetMaxHasBeenSet = true;
     }
 
     if (value.HasMember("SportStart") && !value["SportStart"].IsNull())
@@ -220,24 +120,54 @@ CoreInternalOutcome DDoSFeaturesFilter::Deserialize(const rapidjson::Value &valu
         m_sportStartHasBeenSet = true;
     }
 
-    if (value.HasMember("Str") && !value["Str"].IsNull())
+    if (value.HasMember("SportEnd") && !value["SportEnd"].IsNull())
     {
-        if (!value["Str"].IsString())
+        if (!value["SportEnd"].IsInt64())
         {
-            return CoreInternalOutcome(Core::Error("response `DDoSFeaturesFilter.Str` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DDoSFeaturesFilter.SportEnd` IsInt64=false incorrectly").SetRequestId(requestId));
         }
-        m_str = string(value["Str"].GetString());
-        m_strHasBeenSet = true;
+        m_sportEnd = value["SportEnd"].GetInt64();
+        m_sportEndHasBeenSet = true;
     }
 
-    if (value.HasMember("Str2") && !value["Str2"].IsNull())
+    if (value.HasMember("MatchType") && !value["MatchType"].IsNull())
     {
-        if (!value["Str2"].IsString())
+        if (!value["MatchType"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `DDoSFeaturesFilter.Str2` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DDoSFeaturesFilter.MatchType` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_str2 = string(value["Str2"].GetString());
-        m_str2HasBeenSet = true;
+        m_matchType = string(value["MatchType"].GetString());
+        m_matchTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsNot") && !value["IsNot"].IsNull())
+    {
+        if (!value["IsNot"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DDoSFeaturesFilter.IsNot` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isNot = value["IsNot"].GetInt64();
+        m_isNotHasBeenSet = true;
+    }
+
+    if (value.HasMember("Offset") && !value["Offset"].IsNull())
+    {
+        if (!value["Offset"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DDoSFeaturesFilter.Offset` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_offset = value["Offset"].GetInt64();
+        m_offsetHasBeenSet = true;
+    }
+
+    if (value.HasMember("Depth") && !value["Depth"].IsNull())
+    {
+        if (!value["Depth"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DDoSFeaturesFilter.Depth` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_depth = value["Depth"].GetInt64();
+        m_depthHasBeenSet = true;
     }
 
     if (value.HasMember("MatchBegin") && !value["MatchBegin"].IsNull())
@@ -250,6 +180,56 @@ CoreInternalOutcome DDoSFeaturesFilter::Deserialize(const rapidjson::Value &valu
         m_matchBeginHasBeenSet = true;
     }
 
+    if (value.HasMember("Str") && !value["Str"].IsNull())
+    {
+        if (!value["Str"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DDoSFeaturesFilter.Str` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_str = string(value["Str"].GetString());
+        m_strHasBeenSet = true;
+    }
+
+    if (value.HasMember("MatchType2") && !value["MatchType2"].IsNull())
+    {
+        if (!value["MatchType2"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DDoSFeaturesFilter.MatchType2` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_matchType2 = string(value["MatchType2"].GetString());
+        m_matchType2HasBeenSet = true;
+    }
+
+    if (value.HasMember("IsNot2") && !value["IsNot2"].IsNull())
+    {
+        if (!value["IsNot2"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DDoSFeaturesFilter.IsNot2` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isNot2 = value["IsNot2"].GetInt64();
+        m_isNot2HasBeenSet = true;
+    }
+
+    if (value.HasMember("Offset2") && !value["Offset2"].IsNull())
+    {
+        if (!value["Offset2"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DDoSFeaturesFilter.Offset2` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_offset2 = value["Offset2"].GetInt64();
+        m_offset2HasBeenSet = true;
+    }
+
+    if (value.HasMember("Depth2") && !value["Depth2"].IsNull())
+    {
+        if (!value["Depth2"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DDoSFeaturesFilter.Depth2` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_depth2 = value["Depth2"].GetInt64();
+        m_depth2HasBeenSet = true;
+    }
+
     if (value.HasMember("MatchBegin2") && !value["MatchBegin2"].IsNull())
     {
         if (!value["MatchBegin2"].IsString())
@@ -258,6 +238,26 @@ CoreInternalOutcome DDoSFeaturesFilter::Deserialize(const rapidjson::Value &valu
         }
         m_matchBegin2 = string(value["MatchBegin2"].GetString());
         m_matchBegin2HasBeenSet = true;
+    }
+
+    if (value.HasMember("Str2") && !value["Str2"].IsNull())
+    {
+        if (!value["Str2"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DDoSFeaturesFilter.Str2` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_str2 = string(value["Str2"].GetString());
+        m_str2HasBeenSet = true;
+    }
+
+    if (value.HasMember("MatchLogic") && !value["MatchLogic"].IsNull())
+    {
+        if (!value["MatchLogic"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DDoSFeaturesFilter.MatchLogic` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_matchLogic = string(value["MatchLogic"].GetString());
+        m_matchLogicHasBeenSet = true;
     }
 
 
@@ -275,28 +275,12 @@ void DDoSFeaturesFilter::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         value.AddMember(iKey, rapidjson::Value(m_action.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_depthHasBeenSet)
+    if (m_protocolHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Depth";
+        string key = "Protocol";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_depth, allocator);
-    }
-
-    if (m_depth2HasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Depth2";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_depth2, allocator);
-    }
-
-    if (m_dportEndHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "DportEnd";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_dportEnd, allocator);
+        value.AddMember(iKey, rapidjson::Value(m_protocol.c_str(), allocator).Move(), allocator);
     }
 
     if (m_dportStartHasBeenSet)
@@ -307,68 +291,12 @@ void DDoSFeaturesFilter::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         value.AddMember(iKey, m_dportStart, allocator);
     }
 
-    if (m_isNotHasBeenSet)
+    if (m_dportEndHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "IsNot";
+        string key = "DportEnd";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_isNot, allocator);
-    }
-
-    if (m_isNot2HasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "IsNot2";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_isNot2, allocator);
-    }
-
-    if (m_matchLogicHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "MatchLogic";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_matchLogic.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_matchTypeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "MatchType";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_matchType.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_matchType2HasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "MatchType2";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_matchType2.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_offsetHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Offset";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_offset, allocator);
-    }
-
-    if (m_offset2HasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Offset2";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_offset2, allocator);
-    }
-
-    if (m_packetMaxHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "PacketMax";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_packetMax, allocator);
+        value.AddMember(iKey, m_dportEnd, allocator);
     }
 
     if (m_packetMinHasBeenSet)
@@ -379,20 +307,12 @@ void DDoSFeaturesFilter::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         value.AddMember(iKey, m_packetMin, allocator);
     }
 
-    if (m_protocolHasBeenSet)
+    if (m_packetMaxHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Protocol";
+        string key = "PacketMax";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_protocol.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_sportEndHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SportEnd";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_sportEnd, allocator);
+        value.AddMember(iKey, m_packetMax, allocator);
     }
 
     if (m_sportStartHasBeenSet)
@@ -403,20 +323,44 @@ void DDoSFeaturesFilter::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         value.AddMember(iKey, m_sportStart, allocator);
     }
 
-    if (m_strHasBeenSet)
+    if (m_sportEndHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Str";
+        string key = "SportEnd";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_str.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, m_sportEnd, allocator);
     }
 
-    if (m_str2HasBeenSet)
+    if (m_matchTypeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Str2";
+        string key = "MatchType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_str2.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_matchType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isNotHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsNot";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isNot, allocator);
+    }
+
+    if (m_offsetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Offset";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_depthHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Depth";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_depth, allocator);
     }
 
     if (m_matchBeginHasBeenSet)
@@ -427,12 +371,68 @@ void DDoSFeaturesFilter::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         value.AddMember(iKey, rapidjson::Value(m_matchBegin.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_strHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Str";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_str.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_matchType2HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MatchType2";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_matchType2.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isNot2HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsNot2";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isNot2, allocator);
+    }
+
+    if (m_offset2HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Offset2";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_offset2, allocator);
+    }
+
+    if (m_depth2HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Depth2";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_depth2, allocator);
+    }
+
     if (m_matchBegin2HasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MatchBegin2";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_matchBegin2.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_str2HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Str2";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_str2.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_matchLogicHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MatchLogic";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_matchLogic.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -454,52 +454,20 @@ bool DDoSFeaturesFilter::ActionHasBeenSet() const
     return m_actionHasBeenSet;
 }
 
-int64_t DDoSFeaturesFilter::GetDepth() const
+string DDoSFeaturesFilter::GetProtocol() const
 {
-    return m_depth;
+    return m_protocol;
 }
 
-void DDoSFeaturesFilter::SetDepth(const int64_t& _depth)
+void DDoSFeaturesFilter::SetProtocol(const string& _protocol)
 {
-    m_depth = _depth;
-    m_depthHasBeenSet = true;
+    m_protocol = _protocol;
+    m_protocolHasBeenSet = true;
 }
 
-bool DDoSFeaturesFilter::DepthHasBeenSet() const
+bool DDoSFeaturesFilter::ProtocolHasBeenSet() const
 {
-    return m_depthHasBeenSet;
-}
-
-int64_t DDoSFeaturesFilter::GetDepth2() const
-{
-    return m_depth2;
-}
-
-void DDoSFeaturesFilter::SetDepth2(const int64_t& _depth2)
-{
-    m_depth2 = _depth2;
-    m_depth2HasBeenSet = true;
-}
-
-bool DDoSFeaturesFilter::Depth2HasBeenSet() const
-{
-    return m_depth2HasBeenSet;
-}
-
-int64_t DDoSFeaturesFilter::GetDportEnd() const
-{
-    return m_dportEnd;
-}
-
-void DDoSFeaturesFilter::SetDportEnd(const int64_t& _dportEnd)
-{
-    m_dportEnd = _dportEnd;
-    m_dportEndHasBeenSet = true;
-}
-
-bool DDoSFeaturesFilter::DportEndHasBeenSet() const
-{
-    return m_dportEndHasBeenSet;
+    return m_protocolHasBeenSet;
 }
 
 int64_t DDoSFeaturesFilter::GetDportStart() const
@@ -518,132 +486,20 @@ bool DDoSFeaturesFilter::DportStartHasBeenSet() const
     return m_dportStartHasBeenSet;
 }
 
-int64_t DDoSFeaturesFilter::GetIsNot() const
+int64_t DDoSFeaturesFilter::GetDportEnd() const
 {
-    return m_isNot;
+    return m_dportEnd;
 }
 
-void DDoSFeaturesFilter::SetIsNot(const int64_t& _isNot)
+void DDoSFeaturesFilter::SetDportEnd(const int64_t& _dportEnd)
 {
-    m_isNot = _isNot;
-    m_isNotHasBeenSet = true;
+    m_dportEnd = _dportEnd;
+    m_dportEndHasBeenSet = true;
 }
 
-bool DDoSFeaturesFilter::IsNotHasBeenSet() const
+bool DDoSFeaturesFilter::DportEndHasBeenSet() const
 {
-    return m_isNotHasBeenSet;
-}
-
-int64_t DDoSFeaturesFilter::GetIsNot2() const
-{
-    return m_isNot2;
-}
-
-void DDoSFeaturesFilter::SetIsNot2(const int64_t& _isNot2)
-{
-    m_isNot2 = _isNot2;
-    m_isNot2HasBeenSet = true;
-}
-
-bool DDoSFeaturesFilter::IsNot2HasBeenSet() const
-{
-    return m_isNot2HasBeenSet;
-}
-
-string DDoSFeaturesFilter::GetMatchLogic() const
-{
-    return m_matchLogic;
-}
-
-void DDoSFeaturesFilter::SetMatchLogic(const string& _matchLogic)
-{
-    m_matchLogic = _matchLogic;
-    m_matchLogicHasBeenSet = true;
-}
-
-bool DDoSFeaturesFilter::MatchLogicHasBeenSet() const
-{
-    return m_matchLogicHasBeenSet;
-}
-
-string DDoSFeaturesFilter::GetMatchType() const
-{
-    return m_matchType;
-}
-
-void DDoSFeaturesFilter::SetMatchType(const string& _matchType)
-{
-    m_matchType = _matchType;
-    m_matchTypeHasBeenSet = true;
-}
-
-bool DDoSFeaturesFilter::MatchTypeHasBeenSet() const
-{
-    return m_matchTypeHasBeenSet;
-}
-
-string DDoSFeaturesFilter::GetMatchType2() const
-{
-    return m_matchType2;
-}
-
-void DDoSFeaturesFilter::SetMatchType2(const string& _matchType2)
-{
-    m_matchType2 = _matchType2;
-    m_matchType2HasBeenSet = true;
-}
-
-bool DDoSFeaturesFilter::MatchType2HasBeenSet() const
-{
-    return m_matchType2HasBeenSet;
-}
-
-int64_t DDoSFeaturesFilter::GetOffset() const
-{
-    return m_offset;
-}
-
-void DDoSFeaturesFilter::SetOffset(const int64_t& _offset)
-{
-    m_offset = _offset;
-    m_offsetHasBeenSet = true;
-}
-
-bool DDoSFeaturesFilter::OffsetHasBeenSet() const
-{
-    return m_offsetHasBeenSet;
-}
-
-int64_t DDoSFeaturesFilter::GetOffset2() const
-{
-    return m_offset2;
-}
-
-void DDoSFeaturesFilter::SetOffset2(const int64_t& _offset2)
-{
-    m_offset2 = _offset2;
-    m_offset2HasBeenSet = true;
-}
-
-bool DDoSFeaturesFilter::Offset2HasBeenSet() const
-{
-    return m_offset2HasBeenSet;
-}
-
-int64_t DDoSFeaturesFilter::GetPacketMax() const
-{
-    return m_packetMax;
-}
-
-void DDoSFeaturesFilter::SetPacketMax(const int64_t& _packetMax)
-{
-    m_packetMax = _packetMax;
-    m_packetMaxHasBeenSet = true;
-}
-
-bool DDoSFeaturesFilter::PacketMaxHasBeenSet() const
-{
-    return m_packetMaxHasBeenSet;
+    return m_dportEndHasBeenSet;
 }
 
 int64_t DDoSFeaturesFilter::GetPacketMin() const
@@ -662,36 +518,20 @@ bool DDoSFeaturesFilter::PacketMinHasBeenSet() const
     return m_packetMinHasBeenSet;
 }
 
-string DDoSFeaturesFilter::GetProtocol() const
+int64_t DDoSFeaturesFilter::GetPacketMax() const
 {
-    return m_protocol;
+    return m_packetMax;
 }
 
-void DDoSFeaturesFilter::SetProtocol(const string& _protocol)
+void DDoSFeaturesFilter::SetPacketMax(const int64_t& _packetMax)
 {
-    m_protocol = _protocol;
-    m_protocolHasBeenSet = true;
+    m_packetMax = _packetMax;
+    m_packetMaxHasBeenSet = true;
 }
 
-bool DDoSFeaturesFilter::ProtocolHasBeenSet() const
+bool DDoSFeaturesFilter::PacketMaxHasBeenSet() const
 {
-    return m_protocolHasBeenSet;
-}
-
-int64_t DDoSFeaturesFilter::GetSportEnd() const
-{
-    return m_sportEnd;
-}
-
-void DDoSFeaturesFilter::SetSportEnd(const int64_t& _sportEnd)
-{
-    m_sportEnd = _sportEnd;
-    m_sportEndHasBeenSet = true;
-}
-
-bool DDoSFeaturesFilter::SportEndHasBeenSet() const
-{
-    return m_sportEndHasBeenSet;
+    return m_packetMaxHasBeenSet;
 }
 
 int64_t DDoSFeaturesFilter::GetSportStart() const
@@ -710,36 +550,84 @@ bool DDoSFeaturesFilter::SportStartHasBeenSet() const
     return m_sportStartHasBeenSet;
 }
 
-string DDoSFeaturesFilter::GetStr() const
+int64_t DDoSFeaturesFilter::GetSportEnd() const
 {
-    return m_str;
+    return m_sportEnd;
 }
 
-void DDoSFeaturesFilter::SetStr(const string& _str)
+void DDoSFeaturesFilter::SetSportEnd(const int64_t& _sportEnd)
 {
-    m_str = _str;
-    m_strHasBeenSet = true;
+    m_sportEnd = _sportEnd;
+    m_sportEndHasBeenSet = true;
 }
 
-bool DDoSFeaturesFilter::StrHasBeenSet() const
+bool DDoSFeaturesFilter::SportEndHasBeenSet() const
 {
-    return m_strHasBeenSet;
+    return m_sportEndHasBeenSet;
 }
 
-string DDoSFeaturesFilter::GetStr2() const
+string DDoSFeaturesFilter::GetMatchType() const
 {
-    return m_str2;
+    return m_matchType;
 }
 
-void DDoSFeaturesFilter::SetStr2(const string& _str2)
+void DDoSFeaturesFilter::SetMatchType(const string& _matchType)
 {
-    m_str2 = _str2;
-    m_str2HasBeenSet = true;
+    m_matchType = _matchType;
+    m_matchTypeHasBeenSet = true;
 }
 
-bool DDoSFeaturesFilter::Str2HasBeenSet() const
+bool DDoSFeaturesFilter::MatchTypeHasBeenSet() const
 {
-    return m_str2HasBeenSet;
+    return m_matchTypeHasBeenSet;
+}
+
+int64_t DDoSFeaturesFilter::GetIsNot() const
+{
+    return m_isNot;
+}
+
+void DDoSFeaturesFilter::SetIsNot(const int64_t& _isNot)
+{
+    m_isNot = _isNot;
+    m_isNotHasBeenSet = true;
+}
+
+bool DDoSFeaturesFilter::IsNotHasBeenSet() const
+{
+    return m_isNotHasBeenSet;
+}
+
+int64_t DDoSFeaturesFilter::GetOffset() const
+{
+    return m_offset;
+}
+
+void DDoSFeaturesFilter::SetOffset(const int64_t& _offset)
+{
+    m_offset = _offset;
+    m_offsetHasBeenSet = true;
+}
+
+bool DDoSFeaturesFilter::OffsetHasBeenSet() const
+{
+    return m_offsetHasBeenSet;
+}
+
+int64_t DDoSFeaturesFilter::GetDepth() const
+{
+    return m_depth;
+}
+
+void DDoSFeaturesFilter::SetDepth(const int64_t& _depth)
+{
+    m_depth = _depth;
+    m_depthHasBeenSet = true;
+}
+
+bool DDoSFeaturesFilter::DepthHasBeenSet() const
+{
+    return m_depthHasBeenSet;
 }
 
 string DDoSFeaturesFilter::GetMatchBegin() const
@@ -758,6 +646,86 @@ bool DDoSFeaturesFilter::MatchBeginHasBeenSet() const
     return m_matchBeginHasBeenSet;
 }
 
+string DDoSFeaturesFilter::GetStr() const
+{
+    return m_str;
+}
+
+void DDoSFeaturesFilter::SetStr(const string& _str)
+{
+    m_str = _str;
+    m_strHasBeenSet = true;
+}
+
+bool DDoSFeaturesFilter::StrHasBeenSet() const
+{
+    return m_strHasBeenSet;
+}
+
+string DDoSFeaturesFilter::GetMatchType2() const
+{
+    return m_matchType2;
+}
+
+void DDoSFeaturesFilter::SetMatchType2(const string& _matchType2)
+{
+    m_matchType2 = _matchType2;
+    m_matchType2HasBeenSet = true;
+}
+
+bool DDoSFeaturesFilter::MatchType2HasBeenSet() const
+{
+    return m_matchType2HasBeenSet;
+}
+
+int64_t DDoSFeaturesFilter::GetIsNot2() const
+{
+    return m_isNot2;
+}
+
+void DDoSFeaturesFilter::SetIsNot2(const int64_t& _isNot2)
+{
+    m_isNot2 = _isNot2;
+    m_isNot2HasBeenSet = true;
+}
+
+bool DDoSFeaturesFilter::IsNot2HasBeenSet() const
+{
+    return m_isNot2HasBeenSet;
+}
+
+int64_t DDoSFeaturesFilter::GetOffset2() const
+{
+    return m_offset2;
+}
+
+void DDoSFeaturesFilter::SetOffset2(const int64_t& _offset2)
+{
+    m_offset2 = _offset2;
+    m_offset2HasBeenSet = true;
+}
+
+bool DDoSFeaturesFilter::Offset2HasBeenSet() const
+{
+    return m_offset2HasBeenSet;
+}
+
+int64_t DDoSFeaturesFilter::GetDepth2() const
+{
+    return m_depth2;
+}
+
+void DDoSFeaturesFilter::SetDepth2(const int64_t& _depth2)
+{
+    m_depth2 = _depth2;
+    m_depth2HasBeenSet = true;
+}
+
+bool DDoSFeaturesFilter::Depth2HasBeenSet() const
+{
+    return m_depth2HasBeenSet;
+}
+
 string DDoSFeaturesFilter::GetMatchBegin2() const
 {
     return m_matchBegin2;
@@ -772,5 +740,37 @@ void DDoSFeaturesFilter::SetMatchBegin2(const string& _matchBegin2)
 bool DDoSFeaturesFilter::MatchBegin2HasBeenSet() const
 {
     return m_matchBegin2HasBeenSet;
+}
+
+string DDoSFeaturesFilter::GetStr2() const
+{
+    return m_str2;
+}
+
+void DDoSFeaturesFilter::SetStr2(const string& _str2)
+{
+    m_str2 = _str2;
+    m_str2HasBeenSet = true;
+}
+
+bool DDoSFeaturesFilter::Str2HasBeenSet() const
+{
+    return m_str2HasBeenSet;
+}
+
+string DDoSFeaturesFilter::GetMatchLogic() const
+{
+    return m_matchLogic;
+}
+
+void DDoSFeaturesFilter::SetMatchLogic(const string& _matchLogic)
+{
+    m_matchLogic = _matchLogic;
+    m_matchLogicHasBeenSet = true;
+}
+
+bool DDoSFeaturesFilter::MatchLogicHasBeenSet() const
+{
+    return m_matchLogicHasBeenSet;
 }
 

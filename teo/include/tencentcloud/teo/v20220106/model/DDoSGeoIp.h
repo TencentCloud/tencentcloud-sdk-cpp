@@ -47,40 +47,22 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取地域信息，ID参考接口DescribeSecurityPolicyRegions
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RegionId 地域信息，ID参考接口DescribeSecurityPolicyRegions
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::vector<int64_t> GetRegionId() const;
-
-                    /**
-                     * 设置地域信息，ID参考接口DescribeSecurityPolicyRegions
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RegionId 地域信息，ID参考接口DescribeSecurityPolicyRegions
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    void SetRegionId(const std::vector<int64_t>& _regionId);
-
-                    /**
-                     * 判断参数 RegionId 是否已赋值
-                     * @return RegionId 是否已赋值
-                     */
-                    bool RegionIdHasBeenSet() const;
-
-                    /**
-                     * 获取区域封禁清空标识
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Switch 区域封禁清空标识
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取区域封禁清空标识，取值有：
+<li>off ：清空地域封禁列表 ；</li>
+<li>on ：不做处理 。</li>
+                     * @return Switch 区域封禁清空标识，取值有：
+<li>off ：清空地域封禁列表 ；</li>
+<li>on ：不做处理 。</li>
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置区域封禁清空标识
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Switch 区域封禁清空标识
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置区域封禁清空标识，取值有：
+<li>off ：清空地域封禁列表 ；</li>
+<li>on ：不做处理 。</li>
+                     * @param Switch 区域封禁清空标识，取值有：
+<li>off ：清空地域封禁列表 ；</li>
+<li>on ：不做处理 。</li>
                      */
                     void SetSwitch(const std::string& _switch);
 
@@ -90,21 +72,39 @@ namespace TencentCloud
                      */
                     bool SwitchHasBeenSet() const;
 
+                    /**
+                     * 获取地域信息，ID参考[DescribeSecurityPolicyRegions](https://tcloud4api.woa.com/document/product/1657/76031?!preview&!document=1)。
+                     * @return RegionId 地域信息，ID参考[DescribeSecurityPolicyRegions](https://tcloud4api.woa.com/document/product/1657/76031?!preview&!document=1)。
+                     */
+                    std::vector<int64_t> GetRegionId() const;
+
+                    /**
+                     * 设置地域信息，ID参考[DescribeSecurityPolicyRegions](https://tcloud4api.woa.com/document/product/1657/76031?!preview&!document=1)。
+                     * @param RegionId 地域信息，ID参考[DescribeSecurityPolicyRegions](https://tcloud4api.woa.com/document/product/1657/76031?!preview&!document=1)。
+                     */
+                    void SetRegionId(const std::vector<int64_t>& _regionId);
+
+                    /**
+                     * 判断参数 RegionId 是否已赋值
+                     * @return RegionId 是否已赋值
+                     */
+                    bool RegionIdHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 地域信息，ID参考接口DescribeSecurityPolicyRegions
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::vector<int64_t> m_regionId;
-                    bool m_regionIdHasBeenSet;
-
-                    /**
-                     * 区域封禁清空标识
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 区域封禁清空标识，取值有：
+<li>off ：清空地域封禁列表 ；</li>
+<li>on ：不做处理 。</li>
                      */
                     std::string m_switch;
                     bool m_switchHasBeenSet;
+
+                    /**
+                     * 地域信息，ID参考[DescribeSecurityPolicyRegions](https://tcloud4api.woa.com/document/product/1657/76031?!preview&!document=1)。
+                     */
+                    std::vector<int64_t> m_regionId;
+                    bool m_regionIdHasBeenSet;
 
                 };
             }

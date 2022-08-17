@@ -21,8 +21,8 @@ using namespace TencentCloud::Teo::V20220106::Model;
 using namespace std;
 
 DdosPacketFilter::DdosPacketFilter() :
-    m_switchHasBeenSet(false),
-    m_packetFilterHasBeenSet(false)
+    m_packetFilterHasBeenSet(false),
+    m_switchHasBeenSet(false)
 {
 }
 
@@ -30,16 +30,6 @@ CoreInternalOutcome DdosPacketFilter::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
-
-    if (value.HasMember("Switch") && !value["Switch"].IsNull())
-    {
-        if (!value["Switch"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `DdosPacketFilter.Switch` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_switch = string(value["Switch"].GetString());
-        m_switchHasBeenSet = true;
-    }
 
     if (value.HasMember("PacketFilter") && !value["PacketFilter"].IsNull())
     {
@@ -61,20 +51,22 @@ CoreInternalOutcome DdosPacketFilter::Deserialize(const rapidjson::Value &value)
         m_packetFilterHasBeenSet = true;
     }
 
+    if (value.HasMember("Switch") && !value["Switch"].IsNull())
+    {
+        if (!value["Switch"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DdosPacketFilter.Switch` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_switch = string(value["Switch"].GetString());
+        m_switchHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
 void DdosPacketFilter::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
-
-    if (m_switchHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Switch";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_switch.c_str(), allocator).Move(), allocator);
-    }
 
     if (m_packetFilterHasBeenSet)
     {
@@ -91,24 +83,16 @@ void DdosPacketFilter::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         }
     }
 
+    if (m_switchHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Switch";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_switch.c_str(), allocator).Move(), allocator);
+    }
+
 }
 
-
-string DdosPacketFilter::GetSwitch() const
-{
-    return m_switch;
-}
-
-void DdosPacketFilter::SetSwitch(const string& _switch)
-{
-    m_switch = _switch;
-    m_switchHasBeenSet = true;
-}
-
-bool DdosPacketFilter::SwitchHasBeenSet() const
-{
-    return m_switchHasBeenSet;
-}
 
 vector<DDoSFeaturesFilter> DdosPacketFilter::GetPacketFilter() const
 {
@@ -124,5 +108,21 @@ void DdosPacketFilter::SetPacketFilter(const vector<DDoSFeaturesFilter>& _packet
 bool DdosPacketFilter::PacketFilterHasBeenSet() const
 {
     return m_packetFilterHasBeenSet;
+}
+
+string DdosPacketFilter::GetSwitch() const
+{
+    return m_switch;
+}
+
+void DdosPacketFilter::SetSwitch(const string& _switch)
+{
+    m_switch = _switch;
+    m_switchHasBeenSet = true;
+}
+
+bool DdosPacketFilter::SwitchHasBeenSet() const
+{
+    return m_switchHasBeenSet;
 }
 

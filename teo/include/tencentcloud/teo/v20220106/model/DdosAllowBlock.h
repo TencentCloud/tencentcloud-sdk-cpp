@@ -48,32 +48,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取开关标识防护是否清空
-                     * @return Switch 开关标识防护是否清空
-                     */
-                    std::string GetSwitch() const;
-
-                    /**
-                     * 设置开关标识防护是否清空
-                     * @param Switch 开关标识防护是否清空
-                     */
-                    void SetSwitch(const std::string& _switch);
-
-                    /**
-                     * 判断参数 Switch 是否已赋值
-                     * @return Switch 是否已赋值
-                     */
-                    bool SwitchHasBeenSet() const;
-
-                    /**
-                     * 获取黑白名单数组
-                     * @return UserAllowBlockIp 黑白名单数组
+                     * 获取黑白名单数组。
+                     * @return UserAllowBlockIp 黑白名单数组。
                      */
                     std::vector<DDoSUserAllowBlockIP> GetUserAllowBlockIp() const;
 
                     /**
-                     * 设置黑白名单数组
-                     * @param UserAllowBlockIp 黑白名单数组
+                     * 设置黑白名单数组。
+                     * @param UserAllowBlockIp 黑白名单数组。
                      */
                     void SetUserAllowBlockIp(const std::vector<DDoSUserAllowBlockIP>& _userAllowBlockIp);
 
@@ -83,19 +65,47 @@ namespace TencentCloud
                      */
                     bool UserAllowBlockIpHasBeenSet() const;
 
+                    /**
+                     * 获取开关标识防护是否清空，取值有：
+<li>off ：清空黑白名单列表，UserAllowBlockIp无需填写。 ；</li>
+<li>on ：配置黑白名单，需填写UserAllowBlockIp参数。</li>默认值为on。
+                     * @return Switch 开关标识防护是否清空，取值有：
+<li>off ：清空黑白名单列表，UserAllowBlockIp无需填写。 ；</li>
+<li>on ：配置黑白名单，需填写UserAllowBlockIp参数。</li>默认值为on。
+                     */
+                    std::string GetSwitch() const;
+
+                    /**
+                     * 设置开关标识防护是否清空，取值有：
+<li>off ：清空黑白名单列表，UserAllowBlockIp无需填写。 ；</li>
+<li>on ：配置黑白名单，需填写UserAllowBlockIp参数。</li>默认值为on。
+                     * @param Switch 开关标识防护是否清空，取值有：
+<li>off ：清空黑白名单列表，UserAllowBlockIp无需填写。 ；</li>
+<li>on ：配置黑白名单，需填写UserAllowBlockIp参数。</li>默认值为on。
+                     */
+                    void SetSwitch(const std::string& _switch);
+
+                    /**
+                     * 判断参数 Switch 是否已赋值
+                     * @return Switch 是否已赋值
+                     */
+                    bool SwitchHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 开关标识防护是否清空
-                     */
-                    std::string m_switch;
-                    bool m_switchHasBeenSet;
-
-                    /**
-                     * 黑白名单数组
+                     * 黑白名单数组。
                      */
                     std::vector<DDoSUserAllowBlockIP> m_userAllowBlockIp;
                     bool m_userAllowBlockIpHasBeenSet;
+
+                    /**
+                     * 开关标识防护是否清空，取值有：
+<li>off ：清空黑白名单列表，UserAllowBlockIp无需填写。 ；</li>
+<li>on ：配置黑白名单，需填写UserAllowBlockIp参数。</li>默认值为on。
+                     */
+                    std::string m_switch;
+                    bool m_switchHasBeenSet;
 
                 };
             }

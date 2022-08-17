@@ -47,14 +47,22 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取tcp协议封禁 on-开；off-关
-                     * @return DropTcp tcp协议封禁 on-开；off-关
+                     * 获取tcp协议封禁，取值有：
+<li>off ：关闭 ；</li>
+<li>on ：开启 。</li>
+                     * @return DropTcp tcp协议封禁，取值有：
+<li>off ：关闭 ；</li>
+<li>on ：开启 。</li>
                      */
                     std::string GetDropTcp() const;
 
                     /**
-                     * 设置tcp协议封禁 on-开；off-关
-                     * @param DropTcp tcp协议封禁 on-开；off-关
+                     * 设置tcp协议封禁，取值有：
+<li>off ：关闭 ；</li>
+<li>on ：开启 。</li>
+                     * @param DropTcp tcp协议封禁，取值有：
+<li>off ：关闭 ；</li>
+<li>on ：开启 。</li>
                      */
                     void SetDropTcp(const std::string& _dropTcp);
 
@@ -65,14 +73,22 @@ namespace TencentCloud
                     bool DropTcpHasBeenSet() const;
 
                     /**
-                     * 获取udp协议封禁 on-开；off-关
-                     * @return DropUdp udp协议封禁 on-开；off-关
+                     * 获取udp协议封禁，取值有：
+<li>off ：关闭 ；</li>
+<li>on ：开启 。</li>
+                     * @return DropUdp udp协议封禁，取值有：
+<li>off ：关闭 ；</li>
+<li>on ：开启 。</li>
                      */
                     std::string GetDropUdp() const;
 
                     /**
-                     * 设置udp协议封禁 on-开；off-关
-                     * @param DropUdp udp协议封禁 on-开；off-关
+                     * 设置udp协议封禁，取值有：
+<li>off ：关闭 ；</li>
+<li>on ：开启 。</li>
+                     * @param DropUdp udp协议封禁，取值有：
+<li>off ：关闭 ；</li>
+<li>on ：开启 。</li>
                      */
                     void SetDropUdp(const std::string& _dropUdp);
 
@@ -83,14 +99,22 @@ namespace TencentCloud
                     bool DropUdpHasBeenSet() const;
 
                     /**
-                     * 获取icmp协议封禁 on-开；off-关
-                     * @return DropIcmp icmp协议封禁 on-开；off-关
+                     * 获取icmp协议封禁，取值有：
+<li>off ：关闭 ；</li>
+<li>on ：开启 。</li>
+                     * @return DropIcmp icmp协议封禁，取值有：
+<li>off ：关闭 ；</li>
+<li>on ：开启 。</li>
                      */
                     std::string GetDropIcmp() const;
 
                     /**
-                     * 设置icmp协议封禁 on-开；off-关
-                     * @param DropIcmp icmp协议封禁 on-开；off-关
+                     * 设置icmp协议封禁，取值有：
+<li>off ：关闭 ；</li>
+<li>on ：开启 。</li>
+                     * @param DropIcmp icmp协议封禁，取值有：
+<li>off ：关闭 ；</li>
+<li>on ：开启 。</li>
                      */
                     void SetDropIcmp(const std::string& _dropIcmp);
 
@@ -101,14 +125,22 @@ namespace TencentCloud
                     bool DropIcmpHasBeenSet() const;
 
                     /**
-                     * 获取其他协议封禁 on-开；off-关
-                     * @return DropOther 其他协议封禁 on-开；off-关
+                     * 获取其他协议封禁，取值有：
+<li>off ：关闭 ；</li>
+<li>on ：开启 。</li>
+                     * @return DropOther 其他协议封禁，取值有：
+<li>off ：关闭 ；</li>
+<li>on ：开启 。</li>
                      */
                     std::string GetDropOther() const;
 
                     /**
-                     * 设置其他协议封禁 on-开；off-关
-                     * @param DropOther 其他协议封禁 on-开；off-关
+                     * 设置其他协议封禁，取值有：
+<li>off ：关闭 ；</li>
+<li>on ：开启 。</li>
+                     * @param DropOther 其他协议封禁，取值有：
+<li>off ：关闭 ；</li>
+<li>on ：开启 。</li>
                      */
                     void SetDropOther(const std::string& _dropOther);
 
@@ -119,14 +151,14 @@ namespace TencentCloud
                     bool DropOtherHasBeenSet() const;
 
                     /**
-                     * 获取源每秒新建数限制  0-4294967295
-                     * @return SourceCreateLimit 源每秒新建数限制  0-4294967295
+                     * 获取源站每秒新连接限速，取值范围0-4294967295。
+                     * @return SourceCreateLimit 源站每秒新连接限速，取值范围0-4294967295。
                      */
                     int64_t GetSourceCreateLimit() const;
 
                     /**
-                     * 设置源每秒新建数限制  0-4294967295
-                     * @param SourceCreateLimit 源每秒新建数限制  0-4294967295
+                     * 设置源站每秒新连接限速，取值范围0-4294967295。
+                     * @param SourceCreateLimit 源站每秒新连接限速，取值范围0-4294967295。
                      */
                     void SetSourceCreateLimit(const int64_t& _sourceCreateLimit);
 
@@ -137,14 +169,14 @@ namespace TencentCloud
                     bool SourceCreateLimitHasBeenSet() const;
 
                     /**
-                     * 获取源并发连接控制 0-4294967295
-                     * @return SourceConnectLimit 源并发连接控制 0-4294967295
+                     * 获取源站并发连接控制，取值范围0-4294967295。
+                     * @return SourceConnectLimit 源站并发连接控制，取值范围0-4294967295。
                      */
                     int64_t GetSourceConnectLimit() const;
 
                     /**
-                     * 设置源并发连接控制 0-4294967295
-                     * @param SourceConnectLimit 源并发连接控制 0-4294967295
+                     * 设置源站并发连接控制，取值范围0-4294967295。
+                     * @param SourceConnectLimit 源站并发连接控制，取值范围0-4294967295。
                      */
                     void SetSourceConnectLimit(const int64_t& _sourceConnectLimit);
 
@@ -155,14 +187,14 @@ namespace TencentCloud
                     bool SourceConnectLimitHasBeenSet() const;
 
                     /**
-                     * 获取目的每秒新建数限制 0-4294967295
-                     * @return DestinationCreateLimit 目的每秒新建数限制 0-4294967295
+                     * 获取目的端口每秒新连接限速，取值范围0-4294967295。
+                     * @return DestinationCreateLimit 目的端口每秒新连接限速，取值范围0-4294967295。
                      */
                     int64_t GetDestinationCreateLimit() const;
 
                     /**
-                     * 设置目的每秒新建数限制 0-4294967295
-                     * @param DestinationCreateLimit 目的每秒新建数限制 0-4294967295
+                     * 设置目的端口每秒新连接限速，取值范围0-4294967295。
+                     * @param DestinationCreateLimit 目的端口每秒新连接限速，取值范围0-4294967295。
                      */
                     void SetDestinationCreateLimit(const int64_t& _destinationCreateLimit);
 
@@ -173,14 +205,14 @@ namespace TencentCloud
                     bool DestinationCreateLimitHasBeenSet() const;
 
                     /**
-                     * 获取目的端口的并发连接控制 0-4294967295
-                     * @return DestinationConnectLimit 目的端口的并发连接控制 0-4294967295
+                     * 获取目的端口并发连接控制，取值范围0-4294967295。
+                     * @return DestinationConnectLimit 目的端口并发连接控制，取值范围0-4294967295。
                      */
                     int64_t GetDestinationConnectLimit() const;
 
                     /**
-                     * 设置目的端口的并发连接控制 0-4294967295
-                     * @param DestinationConnectLimit 目的端口的并发连接控制 0-4294967295
+                     * 设置目的端口并发连接控制，取值范围0-4294967295。
+                     * @param DestinationConnectLimit 目的端口并发连接控制，取值范围0-4294967295。
                      */
                     void SetDestinationConnectLimit(const int64_t& _destinationConnectLimit);
 
@@ -191,14 +223,14 @@ namespace TencentCloud
                     bool DestinationConnectLimitHasBeenSet() const;
 
                     /**
-                     * 获取异常连接数阈值  0-4294967295
-                     * @return AbnormalConnectNum 异常连接数阈值  0-4294967295
+                     * 获取每秒异常连接数阈值，取值范围0-4294967295。
+                     * @return AbnormalConnectNum 每秒异常连接数阈值，取值范围0-4294967295。
                      */
                     int64_t GetAbnormalConnectNum() const;
 
                     /**
-                     * 设置异常连接数阈值  0-4294967295
-                     * @param AbnormalConnectNum 异常连接数阈值  0-4294967295
+                     * 设置每秒异常连接数阈值，取值范围0-4294967295。
+                     * @param AbnormalConnectNum 每秒异常连接数阈值，取值范围0-4294967295。
                      */
                     void SetAbnormalConnectNum(const int64_t& _abnormalConnectNum);
 
@@ -209,14 +241,14 @@ namespace TencentCloud
                     bool AbnormalConnectNumHasBeenSet() const;
 
                     /**
-                     * 获取syn占比异常阈值 0-100
-                     * @return AbnormalSynRatio syn占比异常阈值 0-100
+                     * 获取异常syn报文百分比阈值，取值范围0-100。
+                     * @return AbnormalSynRatio 异常syn报文百分比阈值，取值范围0-100。
                      */
                     int64_t GetAbnormalSynRatio() const;
 
                     /**
-                     * 设置syn占比异常阈值 0-100
-                     * @param AbnormalSynRatio syn占比异常阈值 0-100
+                     * 设置异常syn报文百分比阈值，取值范围0-100。
+                     * @param AbnormalSynRatio 异常syn报文百分比阈值，取值范围0-100。
                      */
                     void SetAbnormalSynRatio(const int64_t& _abnormalSynRatio);
 
@@ -227,14 +259,14 @@ namespace TencentCloud
                     bool AbnormalSynRatioHasBeenSet() const;
 
                     /**
-                     * 获取syn个数异常阈值 0-65535
-                     * @return AbnormalSynNum syn个数异常阈值 0-65535
+                     * 获取异常syn报文阈值，取值范围0-65535。
+                     * @return AbnormalSynNum 异常syn报文阈值，取值范围0-65535。
                      */
                     int64_t GetAbnormalSynNum() const;
 
                     /**
-                     * 设置syn个数异常阈值 0-65535
-                     * @param AbnormalSynNum syn个数异常阈值 0-65535
+                     * 设置异常syn报文阈值，取值范围0-65535。
+                     * @param AbnormalSynNum 异常syn报文阈值，取值范围0-65535。
                      */
                     void SetAbnormalSynNum(const int64_t& _abnormalSynNum);
 
@@ -245,14 +277,14 @@ namespace TencentCloud
                     bool AbnormalSynNumHasBeenSet() const;
 
                     /**
-                     * 获取连接超时检测 0-65535
-                     * @return ConnectTimeout 连接超时检测 0-65535
+                     * 获取每秒连接超时检测，取值范围0-65535。
+                     * @return ConnectTimeout 每秒连接超时检测，取值范围0-65535。
                      */
                     int64_t GetConnectTimeout() const;
 
                     /**
-                     * 设置连接超时检测 0-65535
-                     * @param ConnectTimeout 连接超时检测 0-65535
+                     * 设置每秒连接超时检测，取值范围0-65535。
+                     * @param ConnectTimeout 每秒连接超时检测，取值范围0-65535。
                      */
                     void SetConnectTimeout(const int64_t& _connectTimeout);
 
@@ -263,14 +295,22 @@ namespace TencentCloud
                     bool ConnectTimeoutHasBeenSet() const;
 
                     /**
-                     * 获取空连接防护开启 0-1
-                     * @return EmptyConnectProtect 空连接防护开启 0-1
+                     * 获取空连接防护开启，取值有：
+<li>off ：关闭 ；</li>
+<li>on ：开启 。</li>
+                     * @return EmptyConnectProtect 空连接防护开启，取值有：
+<li>off ：关闭 ；</li>
+<li>on ：开启 。</li>
                      */
                     std::string GetEmptyConnectProtect() const;
 
                     /**
-                     * 设置空连接防护开启 0-1
-                     * @param EmptyConnectProtect 空连接防护开启 0-1
+                     * 设置空连接防护开启，取值有：
+<li>off ：关闭 ；</li>
+<li>on ：开启 。</li>
+                     * @param EmptyConnectProtect 空连接防护开启，取值有：
+<li>off ：关闭 ；</li>
+<li>on ：开启 。</li>
                      */
                     void SetEmptyConnectProtect(const std::string& _emptyConnectProtect);
 
@@ -281,18 +321,22 @@ namespace TencentCloud
                     bool EmptyConnectProtectHasBeenSet() const;
 
                     /**
-                     * 获取UDP分片开关；off-关闭，on-开启
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return UdpShard UDP分片开关；off-关闭，on-开启
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取UDP分片开关，取值有：
+<li>off ：关闭 ；</li>
+<li>on ：开启 。</li>
+                     * @return UdpShard UDP分片开关，取值有：
+<li>off ：关闭 ；</li>
+<li>on ：开启 。</li>
                      */
                     std::string GetUdpShard() const;
 
                     /**
-                     * 设置UDP分片开关；off-关闭，on-开启
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UdpShard UDP分片开关；off-关闭，on-开启
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置UDP分片开关，取值有：
+<li>off ：关闭 ；</li>
+<li>on ：开启 。</li>
+                     * @param UdpShard UDP分片开关，取值有：
+<li>off ：关闭 ；</li>
+<li>on ：开启 。</li>
                      */
                     void SetUdpShard(const std::string& _udpShard);
 
@@ -305,86 +349,97 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * tcp协议封禁 on-开；off-关
+                     * tcp协议封禁，取值有：
+<li>off ：关闭 ；</li>
+<li>on ：开启 。</li>
                      */
                     std::string m_dropTcp;
                     bool m_dropTcpHasBeenSet;
 
                     /**
-                     * udp协议封禁 on-开；off-关
+                     * udp协议封禁，取值有：
+<li>off ：关闭 ；</li>
+<li>on ：开启 。</li>
                      */
                     std::string m_dropUdp;
                     bool m_dropUdpHasBeenSet;
 
                     /**
-                     * icmp协议封禁 on-开；off-关
+                     * icmp协议封禁，取值有：
+<li>off ：关闭 ；</li>
+<li>on ：开启 。</li>
                      */
                     std::string m_dropIcmp;
                     bool m_dropIcmpHasBeenSet;
 
                     /**
-                     * 其他协议封禁 on-开；off-关
+                     * 其他协议封禁，取值有：
+<li>off ：关闭 ；</li>
+<li>on ：开启 。</li>
                      */
                     std::string m_dropOther;
                     bool m_dropOtherHasBeenSet;
 
                     /**
-                     * 源每秒新建数限制  0-4294967295
+                     * 源站每秒新连接限速，取值范围0-4294967295。
                      */
                     int64_t m_sourceCreateLimit;
                     bool m_sourceCreateLimitHasBeenSet;
 
                     /**
-                     * 源并发连接控制 0-4294967295
+                     * 源站并发连接控制，取值范围0-4294967295。
                      */
                     int64_t m_sourceConnectLimit;
                     bool m_sourceConnectLimitHasBeenSet;
 
                     /**
-                     * 目的每秒新建数限制 0-4294967295
+                     * 目的端口每秒新连接限速，取值范围0-4294967295。
                      */
                     int64_t m_destinationCreateLimit;
                     bool m_destinationCreateLimitHasBeenSet;
 
                     /**
-                     * 目的端口的并发连接控制 0-4294967295
+                     * 目的端口并发连接控制，取值范围0-4294967295。
                      */
                     int64_t m_destinationConnectLimit;
                     bool m_destinationConnectLimitHasBeenSet;
 
                     /**
-                     * 异常连接数阈值  0-4294967295
+                     * 每秒异常连接数阈值，取值范围0-4294967295。
                      */
                     int64_t m_abnormalConnectNum;
                     bool m_abnormalConnectNumHasBeenSet;
 
                     /**
-                     * syn占比异常阈值 0-100
+                     * 异常syn报文百分比阈值，取值范围0-100。
                      */
                     int64_t m_abnormalSynRatio;
                     bool m_abnormalSynRatioHasBeenSet;
 
                     /**
-                     * syn个数异常阈值 0-65535
+                     * 异常syn报文阈值，取值范围0-65535。
                      */
                     int64_t m_abnormalSynNum;
                     bool m_abnormalSynNumHasBeenSet;
 
                     /**
-                     * 连接超时检测 0-65535
+                     * 每秒连接超时检测，取值范围0-65535。
                      */
                     int64_t m_connectTimeout;
                     bool m_connectTimeoutHasBeenSet;
 
                     /**
-                     * 空连接防护开启 0-1
+                     * 空连接防护开启，取值有：
+<li>off ：关闭 ；</li>
+<li>on ：开启 。</li>
                      */
                     std::string m_emptyConnectProtect;
                     bool m_emptyConnectProtectHasBeenSet;
 
                     /**
-                     * UDP分片开关；off-关闭，on-开启
-注意：此字段可能返回 null，表示取不到有效值。
+                     * UDP分片开关，取值有：
+<li>off ：关闭 ；</li>
+<li>on ：开启 。</li>
                      */
                     std::string m_udpShard;
                     bool m_udpShardHasBeenSet;

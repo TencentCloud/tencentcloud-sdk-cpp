@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/live/v20180801/model/PullPushWatermarkInfo.h>
 
 
 namespace TencentCloud
@@ -518,11 +519,11 @@ ContinueBreakPoint：播放完当前正在播放的点播 url 后再使用新的
 
                     /**
                      * 获取完整目标 URL 地址。
-用法注意：如果使用该参数来传完整目标地址，则 DomainName, AppName, StreamName 需要传入空值，任务将会使用该 ToUrl 参数指定的目标地址。
+用法注意：如果使用该参数来传完整目标地址，则 DomainName, AppName, StreamName 需要传入空字符串，任务将会使用该 ToUrl 参数指定的目标地址。
 
 注意：签名时间需要超过任务结束时间，避免因签名过期造成任务失败。
                      * @return ToUrl 完整目标 URL 地址。
-用法注意：如果使用该参数来传完整目标地址，则 DomainName, AppName, StreamName 需要传入空值，任务将会使用该 ToUrl 参数指定的目标地址。
+用法注意：如果使用该参数来传完整目标地址，则 DomainName, AppName, StreamName 需要传入空字符串，任务将会使用该 ToUrl 参数指定的目标地址。
 
 注意：签名时间需要超过任务结束时间，避免因签名过期造成任务失败。
                      */
@@ -530,11 +531,11 @@ ContinueBreakPoint：播放完当前正在播放的点播 url 后再使用新的
 
                     /**
                      * 设置完整目标 URL 地址。
-用法注意：如果使用该参数来传完整目标地址，则 DomainName, AppName, StreamName 需要传入空值，任务将会使用该 ToUrl 参数指定的目标地址。
+用法注意：如果使用该参数来传完整目标地址，则 DomainName, AppName, StreamName 需要传入空字符串，任务将会使用该 ToUrl 参数指定的目标地址。
 
 注意：签名时间需要超过任务结束时间，避免因签名过期造成任务失败。
                      * @param ToUrl 完整目标 URL 地址。
-用法注意：如果使用该参数来传完整目标地址，则 DomainName, AppName, StreamName 需要传入空值，任务将会使用该 ToUrl 参数指定的目标地址。
+用法注意：如果使用该参数来传完整目标地址，则 DomainName, AppName, StreamName 需要传入空字符串，任务将会使用该 ToUrl 参数指定的目标地址。
 
 注意：签名时间需要超过任务结束时间，避免因签名过期造成任务失败。
                      */
@@ -609,6 +610,40 @@ PullVodPushLive -点播。
                      * @return BackupSourceUrl 是否已赋值
                      */
                     bool BackupSourceUrlHasBeenSet() const;
+
+                    /**
+                     * 获取水印信息列表。
+注意：
+1. 最多支持4个不同位置的水印。
+2. 水印图片 URL 请使用合法外网可访问地址。
+3. 支持的水印图片格式：png，jpg，gif 等。
+                     * @return WatermarkList 水印信息列表。
+注意：
+1. 最多支持4个不同位置的水印。
+2. 水印图片 URL 请使用合法外网可访问地址。
+3. 支持的水印图片格式：png，jpg，gif 等。
+                     */
+                    std::vector<PullPushWatermarkInfo> GetWatermarkList() const;
+
+                    /**
+                     * 设置水印信息列表。
+注意：
+1. 最多支持4个不同位置的水印。
+2. 水印图片 URL 请使用合法外网可访问地址。
+3. 支持的水印图片格式：png，jpg，gif 等。
+                     * @param WatermarkList 水印信息列表。
+注意：
+1. 最多支持4个不同位置的水印。
+2. 水印图片 URL 请使用合法外网可访问地址。
+3. 支持的水印图片格式：png，jpg，gif 等。
+                     */
+                    void SetWatermarkList(const std::vector<PullPushWatermarkInfo>& _watermarkList);
+
+                    /**
+                     * 判断参数 WatermarkList 是否已赋值
+                     * @return WatermarkList 是否已赋值
+                     */
+                    bool WatermarkListHasBeenSet() const;
 
                 private:
 
@@ -755,7 +790,7 @@ ContinueBreakPoint：播放完当前正在播放的点播 url 后再使用新的
 
                     /**
                      * 完整目标 URL 地址。
-用法注意：如果使用该参数来传完整目标地址，则 DomainName, AppName, StreamName 需要传入空值，任务将会使用该 ToUrl 参数指定的目标地址。
+用法注意：如果使用该参数来传完整目标地址，则 DomainName, AppName, StreamName 需要传入空字符串，任务将会使用该 ToUrl 参数指定的目标地址。
 
 注意：签名时间需要超过任务结束时间，避免因签名过期造成任务失败。
                      */
@@ -780,6 +815,16 @@ PullVodPushLive -点播。
                      */
                     std::string m_backupSourceUrl;
                     bool m_backupSourceUrlHasBeenSet;
+
+                    /**
+                     * 水印信息列表。
+注意：
+1. 最多支持4个不同位置的水印。
+2. 水印图片 URL 请使用合法外网可访问地址。
+3. 支持的水印图片格式：png，jpg，gif 等。
+                     */
+                    std::vector<PullPushWatermarkInfo> m_watermarkList;
+                    bool m_watermarkListHasBeenSet;
 
                 };
             }

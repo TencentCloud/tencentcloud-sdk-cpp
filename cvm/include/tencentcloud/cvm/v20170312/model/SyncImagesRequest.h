@@ -62,13 +62,21 @@ namespace TencentCloud
 
                     /**
                      * 获取目的同步地域列表；必须满足限制：<br><li>不能为源地域，<br><li>必须是一个合法的Region。<br><li>暂不支持部分地域同步。<br>具体地域参数请参考[Region](https://cloud.tencent.com/document/product/213/6091)。
+
+如果是共享镜像，则目的同步地域仅支持源地域，表示将共享镜像复制为同地域的自定义镜像。
                      * @return DestinationRegions 目的同步地域列表；必须满足限制：<br><li>不能为源地域，<br><li>必须是一个合法的Region。<br><li>暂不支持部分地域同步。<br>具体地域参数请参考[Region](https://cloud.tencent.com/document/product/213/6091)。
+
+如果是共享镜像，则目的同步地域仅支持源地域，表示将共享镜像复制为同地域的自定义镜像。
                      */
                     std::vector<std::string> GetDestinationRegions() const;
 
                     /**
                      * 设置目的同步地域列表；必须满足限制：<br><li>不能为源地域，<br><li>必须是一个合法的Region。<br><li>暂不支持部分地域同步。<br>具体地域参数请参考[Region](https://cloud.tencent.com/document/product/213/6091)。
+
+如果是共享镜像，则目的同步地域仅支持源地域，表示将共享镜像复制为同地域的自定义镜像。
                      * @param DestinationRegions 目的同步地域列表；必须满足限制：<br><li>不能为源地域，<br><li>必须是一个合法的Region。<br><li>暂不支持部分地域同步。<br>具体地域参数请参考[Region](https://cloud.tencent.com/document/product/213/6091)。
+
+如果是共享镜像，则目的同步地域仅支持源地域，表示将共享镜像复制为同地域的自定义镜像。
                      */
                     void SetDestinationRegions(const std::vector<std::string>& _destinationRegions);
 
@@ -79,14 +87,14 @@ namespace TencentCloud
                     bool DestinationRegionsHasBeenSet() const;
 
                     /**
-                     * 获取检测是否支持发起同步镜像
-                     * @return DryRun 检测是否支持发起同步镜像
+                     * 获取检测是否支持发起同步镜像。
+                     * @return DryRun 检测是否支持发起同步镜像。
                      */
                     bool GetDryRun() const;
 
                     /**
-                     * 设置检测是否支持发起同步镜像
-                     * @param DryRun 检测是否支持发起同步镜像
+                     * 设置检测是否支持发起同步镜像。
+                     * @param DryRun 检测是否支持发起同步镜像。
                      */
                     void SetDryRun(const bool& _dryRun);
 
@@ -95,6 +103,24 @@ namespace TencentCloud
                      * @return DryRun 是否已赋值
                      */
                     bool DryRunHasBeenSet() const;
+
+                    /**
+                     * 获取目标镜像名称。
+                     * @return ImageName 目标镜像名称。
+                     */
+                    std::string GetImageName() const;
+
+                    /**
+                     * 设置目标镜像名称。
+                     * @param ImageName 目标镜像名称。
+                     */
+                    void SetImageName(const std::string& _imageName);
+
+                    /**
+                     * 判断参数 ImageName 是否已赋值
+                     * @return ImageName 是否已赋值
+                     */
+                    bool ImageNameHasBeenSet() const;
 
                 private:
 
@@ -106,15 +132,23 @@ namespace TencentCloud
 
                     /**
                      * 目的同步地域列表；必须满足限制：<br><li>不能为源地域，<br><li>必须是一个合法的Region。<br><li>暂不支持部分地域同步。<br>具体地域参数请参考[Region](https://cloud.tencent.com/document/product/213/6091)。
+
+如果是共享镜像，则目的同步地域仅支持源地域，表示将共享镜像复制为同地域的自定义镜像。
                      */
                     std::vector<std::string> m_destinationRegions;
                     bool m_destinationRegionsHasBeenSet;
 
                     /**
-                     * 检测是否支持发起同步镜像
+                     * 检测是否支持发起同步镜像。
                      */
                     bool m_dryRun;
                     bool m_dryRunHasBeenSet;
+
+                    /**
+                     * 目标镜像名称。
+                     */
+                    std::string m_imageName;
+                    bool m_imageNameHasBeenSet;
 
                 };
             }

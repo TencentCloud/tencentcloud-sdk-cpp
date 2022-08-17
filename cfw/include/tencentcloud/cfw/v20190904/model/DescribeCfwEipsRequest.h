@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取0：cfw新增模式，1：cfw接入模式
-                     * @return Mode 0：cfw新增模式，1：cfw接入模式
+                     * 获取1：cfw接入模式，目前仅支持接入模式实例
+                     * @return Mode 1：cfw接入模式，目前仅支持接入模式实例
                      */
                     uint64_t GetMode() const;
 
                     /**
-                     * 设置0：cfw新增模式，1：cfw接入模式
-                     * @param Mode 0：cfw新增模式，1：cfw接入模式
+                     * 设置1：cfw接入模式，目前仅支持接入模式实例
+                     * @param Mode 1：cfw接入模式，目前仅支持接入模式实例
                      */
                     void SetMode(const uint64_t& _mode);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool NatGatewayIdHasBeenSet() const;
 
                     /**
-                     * 获取防火墙实例id
-                     * @return CfwInstance 防火墙实例id
+                     * 获取防火墙实例id，当前仅支持接入模式的实例
+                     * @return CfwInstance 防火墙实例id，当前仅支持接入模式的实例
                      */
                     std::string GetCfwInstance() const;
 
                     /**
-                     * 设置防火墙实例id
-                     * @param CfwInstance 防火墙实例id
+                     * 设置防火墙实例id，当前仅支持接入模式的实例
+                     * @param CfwInstance 防火墙实例id，当前仅支持接入模式的实例
                      */
                     void SetCfwInstance(const std::string& _cfwInstance);
 
@@ -99,7 +99,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 0：cfw新增模式，1：cfw接入模式
+                     * 1：cfw接入模式，目前仅支持接入模式实例
                      */
                     uint64_t m_mode;
                     bool m_modeHasBeenSet;
@@ -111,7 +111,7 @@ namespace TencentCloud
                     bool m_natGatewayIdHasBeenSet;
 
                     /**
-                     * 防火墙实例id
+                     * 防火墙实例id，当前仅支持接入模式的实例
                      */
                     std::string m_cfwInstance;
                     bool m_cfwInstanceHasBeenSet;

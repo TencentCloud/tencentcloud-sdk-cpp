@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取目的端口end
-                     * @return DportEnd 目的端口end
+                     * 获取目的端口结束，取值范围0-65535。
+                     * @return DportEnd 目的端口结束，取值范围0-65535。
                      */
                     int64_t GetDportEnd() const;
 
                     /**
-                     * 设置目的端口end
-                     * @param DportEnd 目的端口end
+                     * 设置目的端口结束，取值范围0-65535。
+                     * @param DportEnd 目的端口结束，取值范围0-65535。
                      */
                     void SetDportEnd(const int64_t& _dportEnd);
 
@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool DportEndHasBeenSet() const;
 
                     /**
-                     * 获取目的端口start
-                     * @return DportStart 目的端口start
+                     * 获取目的端口开始，取值范围0-65535。
+                     * @return DportStart 目的端口开始，取值范围0-65535。
                      */
                     int64_t GetDportStart() const;
 
                     /**
-                     * 设置目的端口start
-                     * @param DportStart 目的端口start
+                     * 设置目的端口开始，取值范围0-65535。
+                     * @param DportStart 目的端口开始，取值范围0-65535。
                      */
                     void SetDportStart(const int64_t& _dportStart);
 
@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool DportStartHasBeenSet() const;
 
                     /**
-                     * 获取源端口end
-                     * @return SportEnd 源端口end
+                     * 获取源端口结束，取值范围0-65535。
+                     * @return SportEnd 源端口结束，取值范围0-65535。
                      */
                     int64_t GetSportEnd() const;
 
                     /**
-                     * 设置源端口end
-                     * @param SportEnd 源端口end
+                     * 设置源端口结束，取值范围0-65535。
+                     * @param SportEnd 源端口结束，取值范围0-65535。
                      */
                     void SetSportEnd(const int64_t& _sportEnd);
 
@@ -101,14 +101,14 @@ namespace TencentCloud
                     bool SportEndHasBeenSet() const;
 
                     /**
-                     * 获取源端口start
-                     * @return SportStart 源端口start
+                     * 获取源端口开始，取值范围0-65535。
+                     * @return SportStart 源端口开始，取值范围0-65535。
                      */
                     int64_t GetSportStart() const;
 
                     /**
-                     * 设置源端口start
-                     * @param SportStart 源端口start
+                     * 设置源端口开始，取值范围0-65535。
+                     * @param SportStart 源端口开始，取值范围0-65535。
                      */
                     void SetSportStart(const int64_t& _sportStart);
 
@@ -119,14 +119,26 @@ namespace TencentCloud
                     bool SportStartHasBeenSet() const;
 
                     /**
-                     * 获取协议 'tcp', 'udp', 'all'
-                     * @return Protocol 协议 'tcp', 'udp', 'all'
+                     * 获取协议，取值有：
+<li>tcp ：tcp协议 ；</li>
+<li>udp ：udp协议 ；</li>
+<li>all ：全部协议 。</li>
+                     * @return Protocol 协议，取值有：
+<li>tcp ：tcp协议 ；</li>
+<li>udp ：udp协议 ；</li>
+<li>all ：全部协议 。</li>
                      */
                     std::string GetProtocol() const;
 
                     /**
-                     * 设置协议 'tcp', 'udp', 'all'
-                     * @param Protocol 协议 'tcp', 'udp', 'all'
+                     * 设置协议，取值有：
+<li>tcp ：tcp协议 ；</li>
+<li>udp ：udp协议 ；</li>
+<li>all ：全部协议 。</li>
+                     * @param Protocol 协议，取值有：
+<li>tcp ：tcp协议 ；</li>
+<li>udp ：udp协议 ；</li>
+<li>all ：全部协议 。</li>
                      */
                     void SetProtocol(const std::string& _protocol);
 
@@ -137,14 +149,26 @@ namespace TencentCloud
                     bool ProtocolHasBeenSet() const;
 
                     /**
-                     * 获取动作  drop-丢弃,；transmit-放行； forward-继续防护
-                     * @return Action 动作  drop-丢弃,；transmit-放行； forward-继续防护
+                     * 获取执行动作，取值为：
+<li>drop ：丢弃 ；</li>
+<li>transmit ：放行 ；</li>
+<li>forward ：继续防护 。</li>
+                     * @return Action 执行动作，取值为：
+<li>drop ：丢弃 ；</li>
+<li>transmit ：放行 ；</li>
+<li>forward ：继续防护 。</li>
                      */
                     std::string GetAction() const;
 
                     /**
-                     * 设置动作  drop-丢弃,；transmit-放行； forward-继续防护
-                     * @param Action 动作  drop-丢弃,；transmit-放行； forward-继续防护
+                     * 设置执行动作，取值为：
+<li>drop ：丢弃 ；</li>
+<li>transmit ：放行 ；</li>
+<li>forward ：继续防护 。</li>
+                     * @param Action 执行动作，取值为：
+<li>drop ：丢弃 ；</li>
+<li>transmit ：放行 ；</li>
+<li>forward ：继续防护 。</li>
                      */
                     void SetAction(const std::string& _action);
 
@@ -155,14 +179,22 @@ namespace TencentCloud
                     bool ActionHasBeenSet() const;
 
                     /**
-                     * 获取是否为系统配置 0-人工配置；1-系统配置
-                     * @return Default 是否为系统配置 0-人工配置；1-系统配置
+                     * 获取是否为系统配置，取值为：
+<li>0 ：修改配置 ；</li>
+<li>1 ：系统默认配置 。</li>
+                     * @return Default 是否为系统配置，取值为：
+<li>0 ：修改配置 ；</li>
+<li>1 ：系统默认配置 。</li>
                      */
                     int64_t GetDefault() const;
 
                     /**
-                     * 设置是否为系统配置 0-人工配置；1-系统配置
-                     * @param Default 是否为系统配置 0-人工配置；1-系统配置
+                     * 设置是否为系统配置，取值为：
+<li>0 ：修改配置 ；</li>
+<li>1 ：系统默认配置 。</li>
+                     * @param Default 是否为系统配置，取值为：
+<li>0 ：修改配置 ；</li>
+<li>1 ：系统默认配置 。</li>
                      */
                     void SetDefault(const int64_t& _default);
 
@@ -175,43 +207,51 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 目的端口end
+                     * 目的端口结束，取值范围0-65535。
                      */
                     int64_t m_dportEnd;
                     bool m_dportEndHasBeenSet;
 
                     /**
-                     * 目的端口start
+                     * 目的端口开始，取值范围0-65535。
                      */
                     int64_t m_dportStart;
                     bool m_dportStartHasBeenSet;
 
                     /**
-                     * 源端口end
+                     * 源端口结束，取值范围0-65535。
                      */
                     int64_t m_sportEnd;
                     bool m_sportEndHasBeenSet;
 
                     /**
-                     * 源端口start
+                     * 源端口开始，取值范围0-65535。
                      */
                     int64_t m_sportStart;
                     bool m_sportStartHasBeenSet;
 
                     /**
-                     * 协议 'tcp', 'udp', 'all'
+                     * 协议，取值有：
+<li>tcp ：tcp协议 ；</li>
+<li>udp ：udp协议 ；</li>
+<li>all ：全部协议 。</li>
                      */
                     std::string m_protocol;
                     bool m_protocolHasBeenSet;
 
                     /**
-                     * 动作  drop-丢弃,；transmit-放行； forward-继续防护
+                     * 执行动作，取值为：
+<li>drop ：丢弃 ；</li>
+<li>transmit ：放行 ；</li>
+<li>forward ：继续防护 。</li>
                      */
                     std::string m_action;
                     bool m_actionHasBeenSet;
 
                     /**
-                     * 是否为系统配置 0-人工配置；1-系统配置
+                     * 是否为系统配置，取值为：
+<li>0 ：修改配置 ；</li>
+<li>1 ：系统默认配置 。</li>
                      */
                     int64_t m_default;
                     bool m_defaultHasBeenSet;

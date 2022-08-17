@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取不支持，填off
-                     * @return AiStatus 不支持，填off
+                     * 获取暂不支持，默认值off。
+                     * @return AiStatus 暂不支持，默认值off。
                      */
                     std::string GetAiStatus() const;
 
                     /**
-                     * 设置不支持，填off
-                     * @param AiStatus 不支持，填off
+                     * 设置暂不支持，默认值off。
+                     * @param AiStatus 暂不支持，默认值off。
                      */
                     void SetAiStatus(const std::string& _aiStatus);
 
@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool AiStatusHasBeenSet() const;
 
                     /**
-                     * 获取用户appid
-                     * @return Appid 用户appid
+                     * 获取废弃字段。
+                     * @return Appid 废弃字段。
                      */
                     std::string GetAppid() const;
 
                     /**
-                     * 设置用户appid
-                     * @param Appid 用户appid
+                     * 设置废弃字段。
+                     * @param Appid 废弃字段。
                      */
                     void SetAppid(const std::string& _appid);
 
@@ -83,14 +83,26 @@ namespace TencentCloud
                     bool AppidHasBeenSet() const;
 
                     /**
-                     * 获取策略等级 low, middle, high
-                     * @return PlyLevel 策略等级 low, middle, high
+                     * 获取策略等级，取值有:
+<li>low ：宽松 ；</li>
+<li>middle ：适中 ；</li>
+<li>high : 严格。 </li>
+                     * @return PlyLevel 策略等级，取值有:
+<li>low ：宽松 ；</li>
+<li>middle ：适中 ；</li>
+<li>high : 严格。 </li>
                      */
                     std::string GetPlyLevel() const;
 
                     /**
-                     * 设置策略等级 low, middle, high
-                     * @param PlyLevel 策略等级 low, middle, high
+                     * 设置策略等级，取值有:
+<li>low ：宽松 ；</li>
+<li>middle ：适中 ；</li>
+<li>high : 严格。 </li>
+                     * @param PlyLevel 策略等级，取值有:
+<li>low ：宽松 ；</li>
+<li>middle ：适中 ；</li>
+<li>high : 严格。 </li>
                      */
                     void SetPlyLevel(const std::string& _plyLevel);
 
@@ -103,19 +115,22 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 不支持，填off
+                     * 暂不支持，默认值off。
                      */
                     std::string m_aiStatus;
                     bool m_aiStatusHasBeenSet;
 
                     /**
-                     * 用户appid
+                     * 废弃字段。
                      */
                     std::string m_appid;
                     bool m_appidHasBeenSet;
 
                     /**
-                     * 策略等级 low, middle, high
+                     * 策略等级，取值有:
+<li>low ：宽松 ；</li>
+<li>middle ：适中 ；</li>
+<li>high : 严格。 </li>
                      */
                     std::string m_plyLevel;
                     bool m_plyLevelHasBeenSet;

@@ -14,58 +14,54 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_GME_V20180711_MODEL_DESCRIBEFILTERRESULTRESPONSE_H_
-#define TENCENTCLOUD_GME_V20180711_MODEL_DESCRIBEFILTERRESULTRESPONSE_H_
+#ifndef TENCENTCLOUD_TKE_V20180525_MODEL_CREATEEDGECVMINSTANCESRESPONSE_H_
+#define TENCENTCLOUD_TKE_V20180525_MODEL_CREATEEDGECVMINSTANCESRESPONSE_H_
 
 #include <string>
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/gme/v20180711/model/VoiceFilterInfo.h>
 
 
 namespace TencentCloud
 {
-    namespace Gme
+    namespace Tke
     {
-        namespace V20180711
+        namespace V20180525
         {
             namespace Model
             {
                 /**
-                * DescribeFilterResult返回参数结构体
+                * CreateEdgeCVMInstances返回参数结构体
                 */
-                class DescribeFilterResultResponse : public AbstractModel
+                class CreateEdgeCVMInstancesResponse : public AbstractModel
                 {
                 public:
-                    DescribeFilterResultResponse();
-                    ~DescribeFilterResultResponse() = default;
+                    CreateEdgeCVMInstancesResponse();
+                    ~CreateEdgeCVMInstancesResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取过滤结果
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Data 过滤结果
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取cvm id 列表
+                     * @return CvmIdSet cvm id 列表
                      */
-                    VoiceFilterInfo GetData() const;
+                    std::vector<std::string> GetCvmIdSet() const;
 
                     /**
-                     * 判断参数 Data 是否已赋值
-                     * @return Data 是否已赋值
+                     * 判断参数 CvmIdSet 是否已赋值
+                     * @return CvmIdSet 是否已赋值
                      */
-                    bool DataHasBeenSet() const;
+                    bool CvmIdSetHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 过滤结果
-注意：此字段可能返回 null，表示取不到有效值。
+                     * cvm id 列表
                      */
-                    VoiceFilterInfo m_data;
-                    bool m_dataHasBeenSet;
+                    std::vector<std::string> m_cvmIdSet;
+                    bool m_cvmIdSetHasBeenSet;
 
                 };
             }
@@ -73,4 +69,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_GME_V20180711_MODEL_DESCRIBEFILTERRESULTRESPONSE_H_
+#endif // !TENCENTCLOUD_TKE_V20180525_MODEL_CREATEEDGECVMINSTANCESRESPONSE_H_

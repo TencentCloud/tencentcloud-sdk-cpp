@@ -30,6 +30,7 @@
 #include <tencentcloud/teo/v20220106/model/DDoSAntiPly.h>
 #include <tencentcloud/teo/v20220106/model/DdosPacketFilter.h>
 #include <tencentcloud/teo/v20220106/model/DdosAcls.h>
+#include <tencentcloud/teo/v20220106/model/DdosSpeedLimit.h>
 
 
 namespace TencentCloud
@@ -53,17 +54,17 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取DDoS防护等级
+                     * 获取DDoS防护等级。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DdosStatusInfo DDoS防护等级
+                     * @return DdosStatusInfo DDoS防护等级。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DDoSStatusInfo GetDdosStatusInfo() const;
 
                     /**
-                     * 设置DDoS防护等级
+                     * 设置DDoS防护等级。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DdosStatusInfo DDoS防护等级
+                     * @param DdosStatusInfo DDoS防护等级。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetDdosStatusInfo(const DDoSStatusInfo& _ddosStatusInfo);
@@ -75,17 +76,17 @@ namespace TencentCloud
                     bool DdosStatusInfoHasBeenSet() const;
 
                     /**
-                     * 获取DDoS地域封禁
+                     * 获取DDoS地域封禁。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DdosGeoIp DDoS地域封禁
+                     * @return DdosGeoIp DDoS地域封禁。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DDoSGeoIp GetDdosGeoIp() const;
 
                     /**
-                     * 设置DDoS地域封禁
+                     * 设置DDoS地域封禁。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DdosGeoIp DDoS地域封禁
+                     * @param DdosGeoIp DDoS地域封禁。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetDdosGeoIp(const DDoSGeoIp& _ddosGeoIp);
@@ -97,17 +98,17 @@ namespace TencentCloud
                     bool DdosGeoIpHasBeenSet() const;
 
                     /**
-                     * 获取DDoS黑白名单
+                     * 获取DDoS黑白名单。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DdosAllowBlock DDoS黑白名单
+                     * @return DdosAllowBlock DDoS黑白名单。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DdosAllowBlock GetDdosAllowBlock() const;
 
                     /**
-                     * 设置DDoS黑白名单
+                     * 设置DDoS黑白名单。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DdosAllowBlock DDoS黑白名单
+                     * @param DdosAllowBlock DDoS黑白名单。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetDdosAllowBlock(const DdosAllowBlock& _ddosAllowBlock);
@@ -119,17 +120,17 @@ namespace TencentCloud
                     bool DdosAllowBlockHasBeenSet() const;
 
                     /**
-                     * 获取DDoS 协议封禁+连接防护
+                     * 获取DDoS 协议封禁+连接防护。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DdosAntiPly DDoS 协议封禁+连接防护
+                     * @return DdosAntiPly DDoS 协议封禁+连接防护。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DDoSAntiPly GetDdosAntiPly() const;
 
                     /**
-                     * 设置DDoS 协议封禁+连接防护
+                     * 设置DDoS 协议封禁+连接防护。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DdosAntiPly DDoS 协议封禁+连接防护
+                     * @param DdosAntiPly DDoS 协议封禁+连接防护。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetDdosAntiPly(const DDoSAntiPly& _ddosAntiPly);
@@ -141,17 +142,17 @@ namespace TencentCloud
                     bool DdosAntiPlyHasBeenSet() const;
 
                     /**
-                     * 获取DDoS特征过滤
+                     * 获取DDoS特征过滤。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DdosPacketFilter DDoS特征过滤
+                     * @return DdosPacketFilter DDoS特征过滤。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DdosPacketFilter GetDdosPacketFilter() const;
 
                     /**
-                     * 设置DDoS特征过滤
+                     * 设置DDoS特征过滤。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DdosPacketFilter DDoS特征过滤
+                     * @param DdosPacketFilter DDoS特征过滤。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetDdosPacketFilter(const DdosPacketFilter& _ddosPacketFilter);
@@ -163,17 +164,17 @@ namespace TencentCloud
                     bool DdosPacketFilterHasBeenSet() const;
 
                     /**
-                     * 获取DDoS端口过滤
+                     * 获取DDoS端口过滤。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DdosAcl DDoS端口过滤
+                     * @return DdosAcl DDoS端口过滤。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DdosAcls GetDdosAcl() const;
 
                     /**
-                     * 设置DDoS端口过滤
+                     * 设置DDoS端口过滤。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DdosAcl DDoS端口过滤
+                     * @param DdosAcl DDoS端口过滤。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetDdosAcl(const DdosAcls& _ddosAcl);
@@ -185,18 +186,22 @@ namespace TencentCloud
                     bool DdosAclHasBeenSet() const;
 
                     /**
-                     * 获取DDoS开关 on-开启；off-关闭
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Switch DDoS开关 on-开启；off-关闭
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取DDoS开关，取值有:
+<li>on ：开启 ；</li>
+<li>off ：关闭 。</li>
+                     * @return Switch DDoS开关，取值有:
+<li>on ：开启 ；</li>
+<li>off ：关闭 。</li>
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置DDoS开关 on-开启；off-关闭
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Switch DDoS开关 on-开启；off-关闭
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置DDoS开关，取值有:
+<li>on ：开启 ；</li>
+<li>off ：关闭 。</li>
+                     * @param Switch DDoS开关，取值有:
+<li>on ：开启 ；</li>
+<li>off ：关闭 。</li>
                      */
                     void SetSwitch(const std::string& _switch);
 
@@ -207,18 +212,22 @@ namespace TencentCloud
                     bool SwitchHasBeenSet() const;
 
                     /**
-                     * 获取UDP分片功能是否支持，off-不支持，on-支持
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return UdpShardOpen UDP分片功能是否支持，off-不支持，on-支持
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取UDP分片功能是否支持，取值有:
+<li>on ：支持 ；</li>
+<li>off ：不支持 。</li>
+                     * @return UdpShardOpen UDP分片功能是否支持，取值有:
+<li>on ：支持 ；</li>
+<li>off ：不支持 。</li>
                      */
                     std::string GetUdpShardOpen() const;
 
                     /**
-                     * 设置UDP分片功能是否支持，off-不支持，on-支持
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UdpShardOpen UDP分片功能是否支持，off-不支持，on-支持
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置UDP分片功能是否支持，取值有:
+<li>on ：支持 ；</li>
+<li>off ：不支持 。</li>
+                     * @param UdpShardOpen UDP分片功能是否支持，取值有:
+<li>on ：支持 ；</li>
+<li>off ：不支持 。</li>
                      */
                     void SetUdpShardOpen(const std::string& _udpShardOpen);
 
@@ -228,63 +237,94 @@ namespace TencentCloud
                      */
                     bool UdpShardOpenHasBeenSet() const;
 
+                    /**
+                     * 获取DDoS源站访问速率限制。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DdosSpeedLimit DDoS源站访问速率限制。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    DdosSpeedLimit GetDdosSpeedLimit() const;
+
+                    /**
+                     * 设置DDoS源站访问速率限制。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DdosSpeedLimit DDoS源站访问速率限制。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDdosSpeedLimit(const DdosSpeedLimit& _ddosSpeedLimit);
+
+                    /**
+                     * 判断参数 DdosSpeedLimit 是否已赋值
+                     * @return DdosSpeedLimit 是否已赋值
+                     */
+                    bool DdosSpeedLimitHasBeenSet() const;
+
                 private:
 
                     /**
-                     * DDoS防护等级
+                     * DDoS防护等级。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DDoSStatusInfo m_ddosStatusInfo;
                     bool m_ddosStatusInfoHasBeenSet;
 
                     /**
-                     * DDoS地域封禁
+                     * DDoS地域封禁。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DDoSGeoIp m_ddosGeoIp;
                     bool m_ddosGeoIpHasBeenSet;
 
                     /**
-                     * DDoS黑白名单
+                     * DDoS黑白名单。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DdosAllowBlock m_ddosAllowBlock;
                     bool m_ddosAllowBlockHasBeenSet;
 
                     /**
-                     * DDoS 协议封禁+连接防护
+                     * DDoS 协议封禁+连接防护。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DDoSAntiPly m_ddosAntiPly;
                     bool m_ddosAntiPlyHasBeenSet;
 
                     /**
-                     * DDoS特征过滤
+                     * DDoS特征过滤。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DdosPacketFilter m_ddosPacketFilter;
                     bool m_ddosPacketFilterHasBeenSet;
 
                     /**
-                     * DDoS端口过滤
+                     * DDoS端口过滤。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DdosAcls m_ddosAcl;
                     bool m_ddosAclHasBeenSet;
 
                     /**
-                     * DDoS开关 on-开启；off-关闭
-注意：此字段可能返回 null，表示取不到有效值。
+                     * DDoS开关，取值有:
+<li>on ：开启 ；</li>
+<li>off ：关闭 。</li>
                      */
                     std::string m_switch;
                     bool m_switchHasBeenSet;
 
                     /**
-                     * UDP分片功能是否支持，off-不支持，on-支持
-注意：此字段可能返回 null，表示取不到有效值。
+                     * UDP分片功能是否支持，取值有:
+<li>on ：支持 ；</li>
+<li>off ：不支持 。</li>
                      */
                     std::string m_udpShardOpen;
                     bool m_udpShardOpenHasBeenSet;
+
+                    /**
+                     * DDoS源站访问速率限制。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    DdosSpeedLimit m_ddosSpeedLimit;
+                    bool m_ddosSpeedLimitHasBeenSet;
 
                 };
             }

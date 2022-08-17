@@ -59,6 +59,8 @@
 #include <tencentcloud/tke/v20180525/model/CreateEKSClusterResponse.h>
 #include <tencentcloud/tke/v20180525/model/CreateEKSContainerInstancesRequest.h>
 #include <tencentcloud/tke/v20180525/model/CreateEKSContainerInstancesResponse.h>
+#include <tencentcloud/tke/v20180525/model/CreateEdgeCVMInstancesRequest.h>
+#include <tencentcloud/tke/v20180525/model/CreateEdgeCVMInstancesResponse.h>
 #include <tencentcloud/tke/v20180525/model/CreateEdgeLogConfigRequest.h>
 #include <tencentcloud/tke/v20180525/model/CreateEdgeLogConfigResponse.h>
 #include <tencentcloud/tke/v20180525/model/CreateImageCacheRequest.h>
@@ -429,6 +431,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateEKSContainerInstancesResponse> CreateEKSContainerInstancesOutcome;
                 typedef std::future<CreateEKSContainerInstancesOutcome> CreateEKSContainerInstancesOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::CreateEKSContainerInstancesRequest&, CreateEKSContainerInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateEKSContainerInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateEdgeCVMInstancesResponse> CreateEdgeCVMInstancesOutcome;
+                typedef std::future<CreateEdgeCVMInstancesOutcome> CreateEdgeCVMInstancesOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::CreateEdgeCVMInstancesRequest&, CreateEdgeCVMInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateEdgeCVMInstancesAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateEdgeLogConfigResponse> CreateEdgeLogConfigOutcome;
                 typedef std::future<CreateEdgeLogConfigOutcome> CreateEdgeLogConfigOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::CreateEdgeLogConfigRequest&, CreateEdgeLogConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateEdgeLogConfigAsyncHandler;
@@ -1046,6 +1051,15 @@ namespace TencentCloud
                 CreateEKSContainerInstancesOutcome CreateEKSContainerInstances(const Model::CreateEKSContainerInstancesRequest &request);
                 void CreateEKSContainerInstancesAsync(const Model::CreateEKSContainerInstancesRequest& request, const CreateEKSContainerInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateEKSContainerInstancesOutcomeCallable CreateEKSContainerInstancesCallable(const Model::CreateEKSContainerInstancesRequest& request);
+
+                /**
+                 *创建边缘容器CVM机器
+                 * @param req CreateEdgeCVMInstancesRequest
+                 * @return CreateEdgeCVMInstancesOutcome
+                 */
+                CreateEdgeCVMInstancesOutcome CreateEdgeCVMInstances(const Model::CreateEdgeCVMInstancesRequest &request);
+                void CreateEdgeCVMInstancesAsync(const Model::CreateEdgeCVMInstancesRequest& request, const CreateEdgeCVMInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateEdgeCVMInstancesOutcomeCallable CreateEdgeCVMInstancesCallable(const Model::CreateEdgeCVMInstancesRequest& request);
 
                 /**
                  *创建边缘集群日志采集配置

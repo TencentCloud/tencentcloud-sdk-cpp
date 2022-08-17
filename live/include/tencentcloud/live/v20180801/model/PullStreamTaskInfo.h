@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/live/v20180801/model/RecentPullInfo.h>
+#include <tencentcloud/live/v20180801/model/PullPushWatermarkInfo.h>
 
 
 namespace TencentCloud
@@ -645,6 +646,80 @@ pause：暂停中。
                      */
                     bool CommentHasBeenSet() const;
 
+                    /**
+                     * 获取备源类型：
+PullLivePushLive -直播，
+PullVodPushLive -点播。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BackupSourceType 备源类型：
+PullLivePushLive -直播，
+PullVodPushLive -点播。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetBackupSourceType() const;
+
+                    /**
+                     * 设置备源类型：
+PullLivePushLive -直播，
+PullVodPushLive -点播。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param BackupSourceType 备源类型：
+PullLivePushLive -直播，
+PullVodPushLive -点播。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetBackupSourceType(const std::string& _backupSourceType);
+
+                    /**
+                     * 判断参数 BackupSourceType 是否已赋值
+                     * @return BackupSourceType 是否已赋值
+                     */
+                    bool BackupSourceTypeHasBeenSet() const;
+
+                    /**
+                     * 获取备源URL。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BackupSourceUrl 备源URL。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetBackupSourceUrl() const;
+
+                    /**
+                     * 设置备源URL。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param BackupSourceUrl 备源URL。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetBackupSourceUrl(const std::string& _backupSourceUrl);
+
+                    /**
+                     * 判断参数 BackupSourceUrl 是否已赋值
+                     * @return BackupSourceUrl 是否已赋值
+                     */
+                    bool BackupSourceUrlHasBeenSet() const;
+
+                    /**
+                     * 获取水印信息列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return WatermarkList 水印信息列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<PullPushWatermarkInfo> GetWatermarkList() const;
+
+                    /**
+                     * 设置水印信息列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param WatermarkList 水印信息列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetWatermarkList(const std::vector<PullPushWatermarkInfo>& _watermarkList);
+
+                    /**
+                     * 判断参数 WatermarkList 是否已赋值
+                     * @return WatermarkList 是否已赋值
+                     */
+                    bool WatermarkListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -830,6 +905,29 @@ pause：暂停中。
                      */
                     std::string m_comment;
                     bool m_commentHasBeenSet;
+
+                    /**
+                     * 备源类型：
+PullLivePushLive -直播，
+PullVodPushLive -点播。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_backupSourceType;
+                    bool m_backupSourceTypeHasBeenSet;
+
+                    /**
+                     * 备源URL。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_backupSourceUrl;
+                    bool m_backupSourceUrlHasBeenSet;
+
+                    /**
+                     * 水印信息列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<PullPushWatermarkInfo> m_watermarkList;
+                    bool m_watermarkListHasBeenSet;
 
                 };
             }
