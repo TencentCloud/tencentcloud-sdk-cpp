@@ -102,14 +102,14 @@ namespace TencentCloud
                     bool ApproversHasBeenSet() const;
 
                     /**
-                     * 获取签署pdf文件的资源编号列表，通过UploadFiles接口获取
-                     * @return FileIds 签署pdf文件的资源编号列表，通过UploadFiles接口获取
+                     * 获取签署pdf文件的资源编号列表，通过UploadFiles接口获取，暂时仅支持单文件发起
+                     * @return FileIds 签署pdf文件的资源编号列表，通过UploadFiles接口获取，暂时仅支持单文件发起
                      */
                     std::vector<std::string> GetFileIds() const;
 
                     /**
-                     * 设置签署pdf文件的资源编号列表，通过UploadFiles接口获取
-                     * @param FileIds 签署pdf文件的资源编号列表，通过UploadFiles接口获取
+                     * 设置签署pdf文件的资源编号列表，通过UploadFiles接口获取，暂时仅支持单文件发起
+                     * @param FileIds 签署pdf文件的资源编号列表，通过UploadFiles接口获取，暂时仅支持单文件发起
                      */
                     void SetFileIds(const std::vector<std::string>& _fileIds);
 
@@ -356,7 +356,7 @@ false：有序签
                     bool m_approversHasBeenSet;
 
                     /**
-                     * 签署pdf文件的资源编号列表，通过UploadFiles接口获取
+                     * 签署pdf文件的资源编号列表，通过UploadFiles接口获取，暂时仅支持单文件发起
                      */
                     std::vector<std::string> m_fileIds;
                     bool m_fileIdsHasBeenSet;

@@ -24,10 +24,10 @@ using namespace std;
 
 DeleteExporterIntegrationRequest::DeleteExporterIntegrationRequest() :
     m_instanceIdHasBeenSet(false),
-    m_kubeTypeHasBeenSet(false),
-    m_clusterIdHasBeenSet(false),
     m_kindHasBeenSet(false),
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_kubeTypeHasBeenSet(false),
+    m_clusterIdHasBeenSet(false)
 {
 }
 
@@ -46,22 +46,6 @@ string DeleteExporterIntegrationRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_kubeTypeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "KubeType";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_kubeType, allocator);
-    }
-
-    if (m_clusterIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ClusterId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_clusterId.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_kindHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -76,6 +60,22 @@ string DeleteExporterIntegrationRequest::ToJsonString() const
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_kubeTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KubeType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_kubeType, allocator);
+    }
+
+    if (m_clusterIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_clusterId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -100,38 +100,6 @@ void DeleteExporterIntegrationRequest::SetInstanceId(const string& _instanceId)
 bool DeleteExporterIntegrationRequest::InstanceIdHasBeenSet() const
 {
     return m_instanceIdHasBeenSet;
-}
-
-int64_t DeleteExporterIntegrationRequest::GetKubeType() const
-{
-    return m_kubeType;
-}
-
-void DeleteExporterIntegrationRequest::SetKubeType(const int64_t& _kubeType)
-{
-    m_kubeType = _kubeType;
-    m_kubeTypeHasBeenSet = true;
-}
-
-bool DeleteExporterIntegrationRequest::KubeTypeHasBeenSet() const
-{
-    return m_kubeTypeHasBeenSet;
-}
-
-string DeleteExporterIntegrationRequest::GetClusterId() const
-{
-    return m_clusterId;
-}
-
-void DeleteExporterIntegrationRequest::SetClusterId(const string& _clusterId)
-{
-    m_clusterId = _clusterId;
-    m_clusterIdHasBeenSet = true;
-}
-
-bool DeleteExporterIntegrationRequest::ClusterIdHasBeenSet() const
-{
-    return m_clusterIdHasBeenSet;
 }
 
 string DeleteExporterIntegrationRequest::GetKind() const
@@ -164,6 +132,38 @@ void DeleteExporterIntegrationRequest::SetName(const string& _name)
 bool DeleteExporterIntegrationRequest::NameHasBeenSet() const
 {
     return m_nameHasBeenSet;
+}
+
+int64_t DeleteExporterIntegrationRequest::GetKubeType() const
+{
+    return m_kubeType;
+}
+
+void DeleteExporterIntegrationRequest::SetKubeType(const int64_t& _kubeType)
+{
+    m_kubeType = _kubeType;
+    m_kubeTypeHasBeenSet = true;
+}
+
+bool DeleteExporterIntegrationRequest::KubeTypeHasBeenSet() const
+{
+    return m_kubeTypeHasBeenSet;
+}
+
+string DeleteExporterIntegrationRequest::GetClusterId() const
+{
+    return m_clusterId;
+}
+
+void DeleteExporterIntegrationRequest::SetClusterId(const string& _clusterId)
+{
+    m_clusterId = _clusterId;
+    m_clusterIdHasBeenSet = true;
+}
+
+bool DeleteExporterIntegrationRequest::ClusterIdHasBeenSet() const
+{
+    return m_clusterIdHasBeenSet;
 }
 
 

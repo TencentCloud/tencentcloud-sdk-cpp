@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取账户可用余额，单位分 （可用余额 = 现金余额 - 冻结金额）
-                     * @return Balance 账户可用余额，单位分 （可用余额 = 现金余额 - 冻结金额）
+                     * 获取账户可用余额，单位分 （可用余额 = 现金余额 - 冻结金额）  【注：该数据准确性存疑，请切换至DescribeClientBalanceNew取值】
+                     * @return Balance 账户可用余额，单位分 （可用余额 = 现金余额 - 冻结金额）  【注：该数据准确性存疑，请切换至DescribeClientBalanceNew取值】
                      */
                     uint64_t GetBalance() const;
 
@@ -70,7 +70,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 账户可用余额，单位分 （可用余额 = 现金余额 - 冻结金额）
+                     * 账户可用余额，单位分 （可用余额 = 现金余额 - 冻结金额）  【注：该数据准确性存疑，请切换至DescribeClientBalanceNew取值】
                      */
                     uint64_t m_balance;
                     bool m_balanceHasBeenSet;

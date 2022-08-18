@@ -61,6 +61,42 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
+                     * 获取类型
+                     * @return Kind 类型
+                     */
+                    std::string GetKind() const;
+
+                    /**
+                     * 设置类型
+                     * @param Kind 类型
+                     */
+                    void SetKind(const std::string& _kind);
+
+                    /**
+                     * 判断参数 Kind 是否已赋值
+                     * @return Kind 是否已赋值
+                     */
+                    bool KindHasBeenSet() const;
+
+                    /**
+                     * 获取名字
+                     * @return Name 名字
+                     */
+                    std::string GetName() const;
+
+                    /**
+                     * 设置名字
+                     * @param Name 名字
+                     */
+                    void SetName(const std::string& _name);
+
+                    /**
+                     * 判断参数 Name 是否已赋值
+                     * @return Name 是否已赋值
+                     */
+                    bool NameHasBeenSet() const;
+
+                    /**
                      * 获取Kubernetes 集群类型，取值如下：
 <li> 1= 容器集群(TKE) </li>
 <li> 2=弹性集群<EKS> </li>
@@ -108,42 +144,6 @@ namespace TencentCloud
                      */
                     bool ClusterIdHasBeenSet() const;
 
-                    /**
-                     * 获取类型
-                     * @return Kind 类型
-                     */
-                    std::string GetKind() const;
-
-                    /**
-                     * 设置类型
-                     * @param Kind 类型
-                     */
-                    void SetKind(const std::string& _kind);
-
-                    /**
-                     * 判断参数 Kind 是否已赋值
-                     * @return Kind 是否已赋值
-                     */
-                    bool KindHasBeenSet() const;
-
-                    /**
-                     * 获取名字
-                     * @return Name 名字
-                     */
-                    std::string GetName() const;
-
-                    /**
-                     * 设置名字
-                     * @param Name 名字
-                     */
-                    void SetName(const std::string& _name);
-
-                    /**
-                     * 判断参数 Name 是否已赋值
-                     * @return Name 是否已赋值
-                     */
-                    bool NameHasBeenSet() const;
-
                 private:
 
                     /**
@@ -151,6 +151,18 @@ namespace TencentCloud
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
+
+                    /**
+                     * 类型
+                     */
+                    std::string m_kind;
+                    bool m_kindHasBeenSet;
+
+                    /**
+                     * 名字
+                     */
+                    std::string m_name;
+                    bool m_nameHasBeenSet;
 
                     /**
                      * Kubernetes 集群类型，取值如下：
@@ -166,18 +178,6 @@ namespace TencentCloud
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
-
-                    /**
-                     * 类型
-                     */
-                    std::string m_kind;
-                    bool m_kindHasBeenSet;
-
-                    /**
-                     * 名字
-                     */
-                    std::string m_name;
-                    bool m_nameHasBeenSet;
 
                 };
             }

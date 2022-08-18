@@ -155,14 +155,14 @@ namespace TencentCloud
                     bool ClientNameHasBeenSet() const;
 
                     /**
-                     * 获取认证类型, 0：个人，1：企业；其他：未认证
-                     * @return AuthType 认证类型, 0：个人，1：企业；其他：未认证
+                     * 获取认证类型, 0：个人，1：企业；其他：未认证或无效值
+                     * @return AuthType 认证类型, 0：个人，1：企业；其他：未认证或无效值
                      */
                     std::string GetAuthType() const;
 
                     /**
-                     * 设置认证类型, 0：个人，1：企业；其他：未认证
-                     * @param AuthType 认证类型, 0：个人，1：企业；其他：未认证
+                     * 设置认证类型, 0：个人，1：企业；其他：未认证或无效值
+                     * @param AuthType 认证类型, 0：个人，1：企业；其他：未认证或无效值
                      */
                     void SetAuthType(const std::string& _authType);
 
@@ -385,7 +385,7 @@ namespace TencentCloud
                     bool m_clientNameHasBeenSet;
 
                     /**
-                     * 认证类型, 0：个人，1：企业；其他：未认证
+                     * 认证类型, 0：个人，1：企业；其他：未认证或无效值
                      */
                     std::string m_authType;
                     bool m_authTypeHasBeenSet;

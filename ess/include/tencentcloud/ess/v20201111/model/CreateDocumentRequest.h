@@ -100,14 +100,14 @@ namespace TencentCloud
                     bool TemplateIdHasBeenSet() const;
 
                     /**
-                     * 获取文件名列表,单个文件名最大长度200个字符
-                     * @return FileNames 文件名列表,单个文件名最大长度200个字符
+                     * 获取文件名列表，单个文件名最大长度200个字符，暂时仅支持单文件发起
+                     * @return FileNames 文件名列表，单个文件名最大长度200个字符，暂时仅支持单文件发起
                      */
                     std::vector<std::string> GetFileNames() const;
 
                     /**
-                     * 设置文件名列表,单个文件名最大长度200个字符
-                     * @param FileNames 文件名列表,单个文件名最大长度200个字符
+                     * 设置文件名列表，单个文件名最大长度200个字符，暂时仅支持单文件发起
+                     * @param FileNames 文件名列表，单个文件名最大长度200个字符，暂时仅支持单文件发起
                      */
                     void SetFileNames(const std::vector<std::string>& _fileNames);
 
@@ -214,7 +214,7 @@ namespace TencentCloud
                     bool m_templateIdHasBeenSet;
 
                     /**
-                     * 文件名列表,单个文件名最大长度200个字符
+                     * 文件名列表，单个文件名最大长度200个字符，暂时仅支持单文件发起
                      */
                     std::vector<std::string> m_fileNames;
                     bool m_fileNamesHasBeenSet;

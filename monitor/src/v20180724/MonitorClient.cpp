@@ -169,6 +169,49 @@ MonitorClient::BindingPolicyTagOutcomeCallable MonitorClient::BindingPolicyTagCa
     return task->get_future();
 }
 
+MonitorClient::CleanGrafanaInstanceOutcome MonitorClient::CleanGrafanaInstance(const CleanGrafanaInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "CleanGrafanaInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CleanGrafanaInstanceResponse rsp = CleanGrafanaInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CleanGrafanaInstanceOutcome(rsp);
+        else
+            return CleanGrafanaInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return CleanGrafanaInstanceOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::CleanGrafanaInstanceAsync(const CleanGrafanaInstanceRequest& request, const CleanGrafanaInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CleanGrafanaInstance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::CleanGrafanaInstanceOutcomeCallable MonitorClient::CleanGrafanaInstanceCallable(const CleanGrafanaInstanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CleanGrafanaInstanceOutcome()>>(
+        [this, request]()
+        {
+            return this->CleanGrafanaInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MonitorClient::CreateAlarmNoticeOutcome MonitorClient::CreateAlarmNotice(const CreateAlarmNoticeRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateAlarmNotice");
@@ -334,6 +377,135 @@ MonitorClient::CreateExporterIntegrationOutcomeCallable MonitorClient::CreateExp
         [this, request]()
         {
             return this->CreateExporterIntegration(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MonitorClient::CreateGrafanaInstanceOutcome MonitorClient::CreateGrafanaInstance(const CreateGrafanaInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateGrafanaInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateGrafanaInstanceResponse rsp = CreateGrafanaInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateGrafanaInstanceOutcome(rsp);
+        else
+            return CreateGrafanaInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateGrafanaInstanceOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::CreateGrafanaInstanceAsync(const CreateGrafanaInstanceRequest& request, const CreateGrafanaInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateGrafanaInstance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::CreateGrafanaInstanceOutcomeCallable MonitorClient::CreateGrafanaInstanceCallable(const CreateGrafanaInstanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateGrafanaInstanceOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateGrafanaInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MonitorClient::CreateGrafanaIntegrationOutcome MonitorClient::CreateGrafanaIntegration(const CreateGrafanaIntegrationRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateGrafanaIntegration");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateGrafanaIntegrationResponse rsp = CreateGrafanaIntegrationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateGrafanaIntegrationOutcome(rsp);
+        else
+            return CreateGrafanaIntegrationOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateGrafanaIntegrationOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::CreateGrafanaIntegrationAsync(const CreateGrafanaIntegrationRequest& request, const CreateGrafanaIntegrationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateGrafanaIntegration(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::CreateGrafanaIntegrationOutcomeCallable MonitorClient::CreateGrafanaIntegrationCallable(const CreateGrafanaIntegrationRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateGrafanaIntegrationOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateGrafanaIntegration(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MonitorClient::CreateGrafanaNotificationChannelOutcome MonitorClient::CreateGrafanaNotificationChannel(const CreateGrafanaNotificationChannelRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateGrafanaNotificationChannel");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateGrafanaNotificationChannelResponse rsp = CreateGrafanaNotificationChannelResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateGrafanaNotificationChannelOutcome(rsp);
+        else
+            return CreateGrafanaNotificationChannelOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateGrafanaNotificationChannelOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::CreateGrafanaNotificationChannelAsync(const CreateGrafanaNotificationChannelRequest& request, const CreateGrafanaNotificationChannelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateGrafanaNotificationChannel(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::CreateGrafanaNotificationChannelOutcomeCallable MonitorClient::CreateGrafanaNotificationChannelCallable(const CreateGrafanaNotificationChannelRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateGrafanaNotificationChannelOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateGrafanaNotificationChannel(request);
         }
     );
 
@@ -556,6 +728,49 @@ MonitorClient::CreateRecordingRuleOutcomeCallable MonitorClient::CreateRecording
     return task->get_future();
 }
 
+MonitorClient::CreateSSOAccountOutcome MonitorClient::CreateSSOAccount(const CreateSSOAccountRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateSSOAccount");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateSSOAccountResponse rsp = CreateSSOAccountResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateSSOAccountOutcome(rsp);
+        else
+            return CreateSSOAccountOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateSSOAccountOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::CreateSSOAccountAsync(const CreateSSOAccountRequest& request, const CreateSSOAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateSSOAccount(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::CreateSSOAccountOutcomeCallable MonitorClient::CreateSSOAccountCallable(const CreateSSOAccountRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateSSOAccountOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateSSOAccount(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MonitorClient::CreateServiceDiscoveryOutcome MonitorClient::CreateServiceDiscovery(const CreateServiceDiscoveryRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateServiceDiscovery");
@@ -771,6 +986,135 @@ MonitorClient::DeleteExporterIntegrationOutcomeCallable MonitorClient::DeleteExp
     return task->get_future();
 }
 
+MonitorClient::DeleteGrafanaInstanceOutcome MonitorClient::DeleteGrafanaInstance(const DeleteGrafanaInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteGrafanaInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteGrafanaInstanceResponse rsp = DeleteGrafanaInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteGrafanaInstanceOutcome(rsp);
+        else
+            return DeleteGrafanaInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteGrafanaInstanceOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::DeleteGrafanaInstanceAsync(const DeleteGrafanaInstanceRequest& request, const DeleteGrafanaInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteGrafanaInstance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::DeleteGrafanaInstanceOutcomeCallable MonitorClient::DeleteGrafanaInstanceCallable(const DeleteGrafanaInstanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteGrafanaInstanceOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteGrafanaInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MonitorClient::DeleteGrafanaIntegrationOutcome MonitorClient::DeleteGrafanaIntegration(const DeleteGrafanaIntegrationRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteGrafanaIntegration");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteGrafanaIntegrationResponse rsp = DeleteGrafanaIntegrationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteGrafanaIntegrationOutcome(rsp);
+        else
+            return DeleteGrafanaIntegrationOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteGrafanaIntegrationOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::DeleteGrafanaIntegrationAsync(const DeleteGrafanaIntegrationRequest& request, const DeleteGrafanaIntegrationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteGrafanaIntegration(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::DeleteGrafanaIntegrationOutcomeCallable MonitorClient::DeleteGrafanaIntegrationCallable(const DeleteGrafanaIntegrationRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteGrafanaIntegrationOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteGrafanaIntegration(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MonitorClient::DeleteGrafanaNotificationChannelOutcome MonitorClient::DeleteGrafanaNotificationChannel(const DeleteGrafanaNotificationChannelRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteGrafanaNotificationChannel");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteGrafanaNotificationChannelResponse rsp = DeleteGrafanaNotificationChannelResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteGrafanaNotificationChannelOutcome(rsp);
+        else
+            return DeleteGrafanaNotificationChannelOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteGrafanaNotificationChannelOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::DeleteGrafanaNotificationChannelAsync(const DeleteGrafanaNotificationChannelRequest& request, const DeleteGrafanaNotificationChannelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteGrafanaNotificationChannel(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::DeleteGrafanaNotificationChannelOutcomeCallable MonitorClient::DeleteGrafanaNotificationChannelCallable(const DeleteGrafanaNotificationChannelRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteGrafanaNotificationChannelOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteGrafanaNotificationChannel(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MonitorClient::DeletePolicyGroupOutcome MonitorClient::DeletePolicyGroup(const DeletePolicyGroupRequest &request)
 {
     auto outcome = MakeRequest(request, "DeletePolicyGroup");
@@ -893,6 +1237,49 @@ MonitorClient::DeleteRecordingRulesOutcomeCallable MonitorClient::DeleteRecordin
         [this, request]()
         {
             return this->DeleteRecordingRules(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MonitorClient::DeleteSSOAccountOutcome MonitorClient::DeleteSSOAccount(const DeleteSSOAccountRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteSSOAccount");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteSSOAccountResponse rsp = DeleteSSOAccountResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteSSOAccountOutcome(rsp);
+        else
+            return DeleteSSOAccountOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteSSOAccountOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::DeleteSSOAccountAsync(const DeleteSSOAccountRequest& request, const DeleteSSOAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteSSOAccount(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::DeleteSSOAccountOutcomeCallable MonitorClient::DeleteSSOAccountCallable(const DeleteSSOAccountRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteSSOAccountOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteSSOAccount(request);
         }
     );
 
@@ -1588,6 +1975,49 @@ MonitorClient::DescribeConditionsTemplateListOutcomeCallable MonitorClient::Desc
     return task->get_future();
 }
 
+MonitorClient::DescribeDNSConfigOutcome MonitorClient::DescribeDNSConfig(const DescribeDNSConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDNSConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDNSConfigResponse rsp = DescribeDNSConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDNSConfigOutcome(rsp);
+        else
+            return DescribeDNSConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDNSConfigOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::DescribeDNSConfigAsync(const DescribeDNSConfigRequest& request, const DescribeDNSConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDNSConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::DescribeDNSConfigOutcomeCallable MonitorClient::DescribeDNSConfigCallable(const DescribeDNSConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDNSConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDNSConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MonitorClient::DescribeExporterIntegrationsOutcome MonitorClient::DescribeExporterIntegrations(const DescribeExporterIntegrationsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeExporterIntegrations");
@@ -1631,6 +2061,307 @@ MonitorClient::DescribeExporterIntegrationsOutcomeCallable MonitorClient::Descri
     return task->get_future();
 }
 
+MonitorClient::DescribeGrafanaConfigOutcome MonitorClient::DescribeGrafanaConfig(const DescribeGrafanaConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeGrafanaConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeGrafanaConfigResponse rsp = DescribeGrafanaConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeGrafanaConfigOutcome(rsp);
+        else
+            return DescribeGrafanaConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeGrafanaConfigOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::DescribeGrafanaConfigAsync(const DescribeGrafanaConfigRequest& request, const DescribeGrafanaConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeGrafanaConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::DescribeGrafanaConfigOutcomeCallable MonitorClient::DescribeGrafanaConfigCallable(const DescribeGrafanaConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeGrafanaConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeGrafanaConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MonitorClient::DescribeGrafanaEnvironmentsOutcome MonitorClient::DescribeGrafanaEnvironments(const DescribeGrafanaEnvironmentsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeGrafanaEnvironments");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeGrafanaEnvironmentsResponse rsp = DescribeGrafanaEnvironmentsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeGrafanaEnvironmentsOutcome(rsp);
+        else
+            return DescribeGrafanaEnvironmentsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeGrafanaEnvironmentsOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::DescribeGrafanaEnvironmentsAsync(const DescribeGrafanaEnvironmentsRequest& request, const DescribeGrafanaEnvironmentsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeGrafanaEnvironments(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::DescribeGrafanaEnvironmentsOutcomeCallable MonitorClient::DescribeGrafanaEnvironmentsCallable(const DescribeGrafanaEnvironmentsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeGrafanaEnvironmentsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeGrafanaEnvironments(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MonitorClient::DescribeGrafanaInstancesOutcome MonitorClient::DescribeGrafanaInstances(const DescribeGrafanaInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeGrafanaInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeGrafanaInstancesResponse rsp = DescribeGrafanaInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeGrafanaInstancesOutcome(rsp);
+        else
+            return DescribeGrafanaInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeGrafanaInstancesOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::DescribeGrafanaInstancesAsync(const DescribeGrafanaInstancesRequest& request, const DescribeGrafanaInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeGrafanaInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::DescribeGrafanaInstancesOutcomeCallable MonitorClient::DescribeGrafanaInstancesCallable(const DescribeGrafanaInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeGrafanaInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeGrafanaInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MonitorClient::DescribeGrafanaIntegrationsOutcome MonitorClient::DescribeGrafanaIntegrations(const DescribeGrafanaIntegrationsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeGrafanaIntegrations");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeGrafanaIntegrationsResponse rsp = DescribeGrafanaIntegrationsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeGrafanaIntegrationsOutcome(rsp);
+        else
+            return DescribeGrafanaIntegrationsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeGrafanaIntegrationsOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::DescribeGrafanaIntegrationsAsync(const DescribeGrafanaIntegrationsRequest& request, const DescribeGrafanaIntegrationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeGrafanaIntegrations(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::DescribeGrafanaIntegrationsOutcomeCallable MonitorClient::DescribeGrafanaIntegrationsCallable(const DescribeGrafanaIntegrationsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeGrafanaIntegrationsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeGrafanaIntegrations(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MonitorClient::DescribeGrafanaNotificationChannelsOutcome MonitorClient::DescribeGrafanaNotificationChannels(const DescribeGrafanaNotificationChannelsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeGrafanaNotificationChannels");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeGrafanaNotificationChannelsResponse rsp = DescribeGrafanaNotificationChannelsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeGrafanaNotificationChannelsOutcome(rsp);
+        else
+            return DescribeGrafanaNotificationChannelsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeGrafanaNotificationChannelsOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::DescribeGrafanaNotificationChannelsAsync(const DescribeGrafanaNotificationChannelsRequest& request, const DescribeGrafanaNotificationChannelsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeGrafanaNotificationChannels(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::DescribeGrafanaNotificationChannelsOutcomeCallable MonitorClient::DescribeGrafanaNotificationChannelsCallable(const DescribeGrafanaNotificationChannelsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeGrafanaNotificationChannelsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeGrafanaNotificationChannels(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MonitorClient::DescribeGrafanaWhiteListOutcome MonitorClient::DescribeGrafanaWhiteList(const DescribeGrafanaWhiteListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeGrafanaWhiteList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeGrafanaWhiteListResponse rsp = DescribeGrafanaWhiteListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeGrafanaWhiteListOutcome(rsp);
+        else
+            return DescribeGrafanaWhiteListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeGrafanaWhiteListOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::DescribeGrafanaWhiteListAsync(const DescribeGrafanaWhiteListRequest& request, const DescribeGrafanaWhiteListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeGrafanaWhiteList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::DescribeGrafanaWhiteListOutcomeCallable MonitorClient::DescribeGrafanaWhiteListCallable(const DescribeGrafanaWhiteListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeGrafanaWhiteListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeGrafanaWhiteList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MonitorClient::DescribeInstalledPluginsOutcome MonitorClient::DescribeInstalledPlugins(const DescribeInstalledPluginsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeInstalledPlugins");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeInstalledPluginsResponse rsp = DescribeInstalledPluginsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeInstalledPluginsOutcome(rsp);
+        else
+            return DescribeInstalledPluginsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeInstalledPluginsOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::DescribeInstalledPluginsAsync(const DescribeInstalledPluginsRequest& request, const DescribeInstalledPluginsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeInstalledPlugins(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::DescribeInstalledPluginsOutcomeCallable MonitorClient::DescribeInstalledPluginsCallable(const DescribeInstalledPluginsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeInstalledPluginsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeInstalledPlugins(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MonitorClient::DescribeMonitorTypesOutcome MonitorClient::DescribeMonitorTypes(const DescribeMonitorTypesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeMonitorTypes");
@@ -1667,6 +2398,49 @@ MonitorClient::DescribeMonitorTypesOutcomeCallable MonitorClient::DescribeMonito
         [this, request]()
         {
             return this->DescribeMonitorTypes(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MonitorClient::DescribePluginOverviewsOutcome MonitorClient::DescribePluginOverviews(const DescribePluginOverviewsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePluginOverviews");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePluginOverviewsResponse rsp = DescribePluginOverviewsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePluginOverviewsOutcome(rsp);
+        else
+            return DescribePluginOverviewsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePluginOverviewsOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::DescribePluginOverviewsAsync(const DescribePluginOverviewsRequest& request, const DescribePluginOverviewsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePluginOverviews(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::DescribePluginOverviewsOutcomeCallable MonitorClient::DescribePluginOverviewsCallable(const DescribePluginOverviewsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePluginOverviewsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePluginOverviews(request);
         }
     );
 
@@ -2061,6 +2835,49 @@ MonitorClient::DescribeRecordingRulesOutcomeCallable MonitorClient::DescribeReco
     return task->get_future();
 }
 
+MonitorClient::DescribeSSOAccountOutcome MonitorClient::DescribeSSOAccount(const DescribeSSOAccountRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSSOAccount");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSSOAccountResponse rsp = DescribeSSOAccountResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSSOAccountOutcome(rsp);
+        else
+            return DescribeSSOAccountOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSSOAccountOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::DescribeSSOAccountAsync(const DescribeSSOAccountRequest& request, const DescribeSSOAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSSOAccount(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::DescribeSSOAccountOutcomeCallable MonitorClient::DescribeSSOAccountCallable(const DescribeSSOAccountRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSSOAccountOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSSOAccount(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MonitorClient::DescribeServiceDiscoveryOutcome MonitorClient::DescribeServiceDiscovery(const DescribeServiceDiscoveryRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeServiceDiscovery");
@@ -2190,6 +3007,135 @@ MonitorClient::DestroyPrometheusInstanceOutcomeCallable MonitorClient::DestroyPr
     return task->get_future();
 }
 
+MonitorClient::EnableGrafanaInternetOutcome MonitorClient::EnableGrafanaInternet(const EnableGrafanaInternetRequest &request)
+{
+    auto outcome = MakeRequest(request, "EnableGrafanaInternet");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        EnableGrafanaInternetResponse rsp = EnableGrafanaInternetResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return EnableGrafanaInternetOutcome(rsp);
+        else
+            return EnableGrafanaInternetOutcome(o.GetError());
+    }
+    else
+    {
+        return EnableGrafanaInternetOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::EnableGrafanaInternetAsync(const EnableGrafanaInternetRequest& request, const EnableGrafanaInternetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->EnableGrafanaInternet(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::EnableGrafanaInternetOutcomeCallable MonitorClient::EnableGrafanaInternetCallable(const EnableGrafanaInternetRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<EnableGrafanaInternetOutcome()>>(
+        [this, request]()
+        {
+            return this->EnableGrafanaInternet(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MonitorClient::EnableGrafanaSSOOutcome MonitorClient::EnableGrafanaSSO(const EnableGrafanaSSORequest &request)
+{
+    auto outcome = MakeRequest(request, "EnableGrafanaSSO");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        EnableGrafanaSSOResponse rsp = EnableGrafanaSSOResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return EnableGrafanaSSOOutcome(rsp);
+        else
+            return EnableGrafanaSSOOutcome(o.GetError());
+    }
+    else
+    {
+        return EnableGrafanaSSOOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::EnableGrafanaSSOAsync(const EnableGrafanaSSORequest& request, const EnableGrafanaSSOAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->EnableGrafanaSSO(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::EnableGrafanaSSOOutcomeCallable MonitorClient::EnableGrafanaSSOCallable(const EnableGrafanaSSORequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<EnableGrafanaSSOOutcome()>>(
+        [this, request]()
+        {
+            return this->EnableGrafanaSSO(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MonitorClient::EnableSSOCamCheckOutcome MonitorClient::EnableSSOCamCheck(const EnableSSOCamCheckRequest &request)
+{
+    auto outcome = MakeRequest(request, "EnableSSOCamCheck");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        EnableSSOCamCheckResponse rsp = EnableSSOCamCheckResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return EnableSSOCamCheckOutcome(rsp);
+        else
+            return EnableSSOCamCheckOutcome(o.GetError());
+    }
+    else
+    {
+        return EnableSSOCamCheckOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::EnableSSOCamCheckAsync(const EnableSSOCamCheckRequest& request, const EnableSSOCamCheckAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->EnableSSOCamCheck(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::EnableSSOCamCheckOutcomeCallable MonitorClient::EnableSSOCamCheckCallable(const EnableSSOCamCheckRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<EnableSSOCamCheckOutcome()>>(
+        [this, request]()
+        {
+            return this->EnableSSOCamCheck(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MonitorClient::GetMonitorDataOutcome MonitorClient::GetMonitorData(const GetMonitorDataRequest &request)
 {
     auto outcome = MakeRequest(request, "GetMonitorData");
@@ -2269,6 +3215,49 @@ MonitorClient::GetPrometheusAgentManagementCommandOutcomeCallable MonitorClient:
         [this, request]()
         {
             return this->GetPrometheusAgentManagementCommand(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MonitorClient::InstallPluginsOutcome MonitorClient::InstallPlugins(const InstallPluginsRequest &request)
+{
+    auto outcome = MakeRequest(request, "InstallPlugins");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        InstallPluginsResponse rsp = InstallPluginsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return InstallPluginsOutcome(rsp);
+        else
+            return InstallPluginsOutcome(o.GetError());
+    }
+    else
+    {
+        return InstallPluginsOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::InstallPluginsAsync(const InstallPluginsRequest& request, const InstallPluginsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->InstallPlugins(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::InstallPluginsOutcomeCallable MonitorClient::InstallPluginsCallable(const InstallPluginsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<InstallPluginsOutcome()>>(
+        [this, request]()
+        {
+            return this->InstallPlugins(request);
         }
     );
 
@@ -2577,6 +3566,49 @@ MonitorClient::ModifyAlarmReceiversOutcomeCallable MonitorClient::ModifyAlarmRec
     return task->get_future();
 }
 
+MonitorClient::ModifyGrafanaInstanceOutcome MonitorClient::ModifyGrafanaInstance(const ModifyGrafanaInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyGrafanaInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyGrafanaInstanceResponse rsp = ModifyGrafanaInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyGrafanaInstanceOutcome(rsp);
+        else
+            return ModifyGrafanaInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyGrafanaInstanceOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::ModifyGrafanaInstanceAsync(const ModifyGrafanaInstanceRequest& request, const ModifyGrafanaInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyGrafanaInstance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::ModifyGrafanaInstanceOutcomeCallable MonitorClient::ModifyGrafanaInstanceCallable(const ModifyGrafanaInstanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyGrafanaInstanceOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyGrafanaInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MonitorClient::ModifyPolicyGroupOutcome MonitorClient::ModifyPolicyGroup(const ModifyPolicyGroupRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyPolicyGroup");
@@ -2699,6 +3731,49 @@ MonitorClient::PutMonitorDataOutcomeCallable MonitorClient::PutMonitorDataCallab
         [this, request]()
         {
             return this->PutMonitorData(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MonitorClient::ResumeGrafanaInstanceOutcome MonitorClient::ResumeGrafanaInstance(const ResumeGrafanaInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "ResumeGrafanaInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ResumeGrafanaInstanceResponse rsp = ResumeGrafanaInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ResumeGrafanaInstanceOutcome(rsp);
+        else
+            return ResumeGrafanaInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return ResumeGrafanaInstanceOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::ResumeGrafanaInstanceAsync(const ResumeGrafanaInstanceRequest& request, const ResumeGrafanaInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ResumeGrafanaInstance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::ResumeGrafanaInstanceOutcomeCallable MonitorClient::ResumeGrafanaInstanceCallable(const ResumeGrafanaInstanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ResumeGrafanaInstanceOutcome()>>(
+        [this, request]()
+        {
+            return this->ResumeGrafanaInstance(request);
         }
     );
 
@@ -3007,6 +4082,49 @@ MonitorClient::UninstallGrafanaDashboardOutcomeCallable MonitorClient::Uninstall
     return task->get_future();
 }
 
+MonitorClient::UninstallGrafanaPluginsOutcome MonitorClient::UninstallGrafanaPlugins(const UninstallGrafanaPluginsRequest &request)
+{
+    auto outcome = MakeRequest(request, "UninstallGrafanaPlugins");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UninstallGrafanaPluginsResponse rsp = UninstallGrafanaPluginsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UninstallGrafanaPluginsOutcome(rsp);
+        else
+            return UninstallGrafanaPluginsOutcome(o.GetError());
+    }
+    else
+    {
+        return UninstallGrafanaPluginsOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::UninstallGrafanaPluginsAsync(const UninstallGrafanaPluginsRequest& request, const UninstallGrafanaPluginsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UninstallGrafanaPlugins(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::UninstallGrafanaPluginsOutcomeCallable MonitorClient::UninstallGrafanaPluginsCallable(const UninstallGrafanaPluginsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UninstallGrafanaPluginsOutcome()>>(
+        [this, request]()
+        {
+            return this->UninstallGrafanaPlugins(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MonitorClient::UpdateAlertRuleOutcome MonitorClient::UpdateAlertRule(const UpdateAlertRuleRequest &request)
 {
     auto outcome = MakeRequest(request, "UpdateAlertRule");
@@ -3093,6 +4211,49 @@ MonitorClient::UpdateAlertRuleStateOutcomeCallable MonitorClient::UpdateAlertRul
     return task->get_future();
 }
 
+MonitorClient::UpdateDNSConfigOutcome MonitorClient::UpdateDNSConfig(const UpdateDNSConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateDNSConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateDNSConfigResponse rsp = UpdateDNSConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateDNSConfigOutcome(rsp);
+        else
+            return UpdateDNSConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateDNSConfigOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::UpdateDNSConfigAsync(const UpdateDNSConfigRequest& request, const UpdateDNSConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateDNSConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::UpdateDNSConfigOutcomeCallable MonitorClient::UpdateDNSConfigCallable(const UpdateDNSConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateDNSConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateDNSConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MonitorClient::UpdateExporterIntegrationOutcome MonitorClient::UpdateExporterIntegration(const UpdateExporterIntegrationRequest &request)
 {
     auto outcome = MakeRequest(request, "UpdateExporterIntegration");
@@ -3129,6 +4290,221 @@ MonitorClient::UpdateExporterIntegrationOutcomeCallable MonitorClient::UpdateExp
         [this, request]()
         {
             return this->UpdateExporterIntegration(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MonitorClient::UpdateGrafanaConfigOutcome MonitorClient::UpdateGrafanaConfig(const UpdateGrafanaConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateGrafanaConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateGrafanaConfigResponse rsp = UpdateGrafanaConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateGrafanaConfigOutcome(rsp);
+        else
+            return UpdateGrafanaConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateGrafanaConfigOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::UpdateGrafanaConfigAsync(const UpdateGrafanaConfigRequest& request, const UpdateGrafanaConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateGrafanaConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::UpdateGrafanaConfigOutcomeCallable MonitorClient::UpdateGrafanaConfigCallable(const UpdateGrafanaConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateGrafanaConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateGrafanaConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MonitorClient::UpdateGrafanaEnvironmentsOutcome MonitorClient::UpdateGrafanaEnvironments(const UpdateGrafanaEnvironmentsRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateGrafanaEnvironments");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateGrafanaEnvironmentsResponse rsp = UpdateGrafanaEnvironmentsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateGrafanaEnvironmentsOutcome(rsp);
+        else
+            return UpdateGrafanaEnvironmentsOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateGrafanaEnvironmentsOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::UpdateGrafanaEnvironmentsAsync(const UpdateGrafanaEnvironmentsRequest& request, const UpdateGrafanaEnvironmentsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateGrafanaEnvironments(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::UpdateGrafanaEnvironmentsOutcomeCallable MonitorClient::UpdateGrafanaEnvironmentsCallable(const UpdateGrafanaEnvironmentsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateGrafanaEnvironmentsOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateGrafanaEnvironments(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MonitorClient::UpdateGrafanaIntegrationOutcome MonitorClient::UpdateGrafanaIntegration(const UpdateGrafanaIntegrationRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateGrafanaIntegration");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateGrafanaIntegrationResponse rsp = UpdateGrafanaIntegrationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateGrafanaIntegrationOutcome(rsp);
+        else
+            return UpdateGrafanaIntegrationOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateGrafanaIntegrationOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::UpdateGrafanaIntegrationAsync(const UpdateGrafanaIntegrationRequest& request, const UpdateGrafanaIntegrationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateGrafanaIntegration(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::UpdateGrafanaIntegrationOutcomeCallable MonitorClient::UpdateGrafanaIntegrationCallable(const UpdateGrafanaIntegrationRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateGrafanaIntegrationOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateGrafanaIntegration(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MonitorClient::UpdateGrafanaNotificationChannelOutcome MonitorClient::UpdateGrafanaNotificationChannel(const UpdateGrafanaNotificationChannelRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateGrafanaNotificationChannel");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateGrafanaNotificationChannelResponse rsp = UpdateGrafanaNotificationChannelResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateGrafanaNotificationChannelOutcome(rsp);
+        else
+            return UpdateGrafanaNotificationChannelOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateGrafanaNotificationChannelOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::UpdateGrafanaNotificationChannelAsync(const UpdateGrafanaNotificationChannelRequest& request, const UpdateGrafanaNotificationChannelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateGrafanaNotificationChannel(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::UpdateGrafanaNotificationChannelOutcomeCallable MonitorClient::UpdateGrafanaNotificationChannelCallable(const UpdateGrafanaNotificationChannelRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateGrafanaNotificationChannelOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateGrafanaNotificationChannel(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MonitorClient::UpdateGrafanaWhiteListOutcome MonitorClient::UpdateGrafanaWhiteList(const UpdateGrafanaWhiteListRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateGrafanaWhiteList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateGrafanaWhiteListResponse rsp = UpdateGrafanaWhiteListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateGrafanaWhiteListOutcome(rsp);
+        else
+            return UpdateGrafanaWhiteListOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateGrafanaWhiteListOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::UpdateGrafanaWhiteListAsync(const UpdateGrafanaWhiteListRequest& request, const UpdateGrafanaWhiteListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateGrafanaWhiteList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::UpdateGrafanaWhiteListOutcomeCallable MonitorClient::UpdateGrafanaWhiteListCallable(const UpdateGrafanaWhiteListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateGrafanaWhiteListOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateGrafanaWhiteList(request);
         }
     );
 
@@ -3265,6 +4641,49 @@ MonitorClient::UpdateRecordingRuleOutcomeCallable MonitorClient::UpdateRecording
     return task->get_future();
 }
 
+MonitorClient::UpdateSSOAccountOutcome MonitorClient::UpdateSSOAccount(const UpdateSSOAccountRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateSSOAccount");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateSSOAccountResponse rsp = UpdateSSOAccountResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateSSOAccountOutcome(rsp);
+        else
+            return UpdateSSOAccountOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateSSOAccountOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::UpdateSSOAccountAsync(const UpdateSSOAccountRequest& request, const UpdateSSOAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateSSOAccount(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::UpdateSSOAccountOutcomeCallable MonitorClient::UpdateSSOAccountCallable(const UpdateSSOAccountRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateSSOAccountOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateSSOAccount(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MonitorClient::UpdateServiceDiscoveryOutcome MonitorClient::UpdateServiceDiscovery(const UpdateServiceDiscoveryRequest &request)
 {
     auto outcome = MakeRequest(request, "UpdateServiceDiscovery");
@@ -3344,6 +4763,49 @@ MonitorClient::UpgradeGrafanaDashboardOutcomeCallable MonitorClient::UpgradeGraf
         [this, request]()
         {
             return this->UpgradeGrafanaDashboard(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MonitorClient::UpgradeGrafanaInstanceOutcome MonitorClient::UpgradeGrafanaInstance(const UpgradeGrafanaInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpgradeGrafanaInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpgradeGrafanaInstanceResponse rsp = UpgradeGrafanaInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpgradeGrafanaInstanceOutcome(rsp);
+        else
+            return UpgradeGrafanaInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return UpgradeGrafanaInstanceOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::UpgradeGrafanaInstanceAsync(const UpgradeGrafanaInstanceRequest& request, const UpgradeGrafanaInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpgradeGrafanaInstance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::UpgradeGrafanaInstanceOutcomeCallable MonitorClient::UpgradeGrafanaInstanceCallable(const UpgradeGrafanaInstanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpgradeGrafanaInstanceOutcome()>>(
+        [this, request]()
+        {
+            return this->UpgradeGrafanaInstance(request);
         }
     );
 

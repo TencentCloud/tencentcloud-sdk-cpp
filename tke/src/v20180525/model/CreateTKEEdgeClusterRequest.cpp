@@ -31,7 +31,10 @@ CreateTKEEdgeClusterRequest::CreateTKEEdgeClusterRequest() :
     m_clusterDescHasBeenSet(false),
     m_clusterAdvancedSettingsHasBeenSet(false),
     m_maxNodePodNumHasBeenSet(false),
-    m_publicLBHasBeenSet(false)
+    m_publicLBHasBeenSet(false),
+    m_clusterLevelHasBeenSet(false),
+    m_autoUpgradeClusterLevelHasBeenSet(false),
+    m_chargeTypeHasBeenSet(false)
 {
 }
 
@@ -114,6 +117,30 @@ string CreateTKEEdgeClusterRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_publicLB.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_clusterLevelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterLevel";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_clusterLevel.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_autoUpgradeClusterLevelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoUpgradeClusterLevel";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_autoUpgradeClusterLevel, allocator);
+    }
+
+    if (m_chargeTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ChargeType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_chargeType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -266,6 +293,54 @@ void CreateTKEEdgeClusterRequest::SetPublicLB(const EdgeClusterPublicLB& _public
 bool CreateTKEEdgeClusterRequest::PublicLBHasBeenSet() const
 {
     return m_publicLBHasBeenSet;
+}
+
+string CreateTKEEdgeClusterRequest::GetClusterLevel() const
+{
+    return m_clusterLevel;
+}
+
+void CreateTKEEdgeClusterRequest::SetClusterLevel(const string& _clusterLevel)
+{
+    m_clusterLevel = _clusterLevel;
+    m_clusterLevelHasBeenSet = true;
+}
+
+bool CreateTKEEdgeClusterRequest::ClusterLevelHasBeenSet() const
+{
+    return m_clusterLevelHasBeenSet;
+}
+
+bool CreateTKEEdgeClusterRequest::GetAutoUpgradeClusterLevel() const
+{
+    return m_autoUpgradeClusterLevel;
+}
+
+void CreateTKEEdgeClusterRequest::SetAutoUpgradeClusterLevel(const bool& _autoUpgradeClusterLevel)
+{
+    m_autoUpgradeClusterLevel = _autoUpgradeClusterLevel;
+    m_autoUpgradeClusterLevelHasBeenSet = true;
+}
+
+bool CreateTKEEdgeClusterRequest::AutoUpgradeClusterLevelHasBeenSet() const
+{
+    return m_autoUpgradeClusterLevelHasBeenSet;
+}
+
+string CreateTKEEdgeClusterRequest::GetChargeType() const
+{
+    return m_chargeType;
+}
+
+void CreateTKEEdgeClusterRequest::SetChargeType(const string& _chargeType)
+{
+    m_chargeType = _chargeType;
+    m_chargeTypeHasBeenSet = true;
+}
+
+bool CreateTKEEdgeClusterRequest::ChargeTypeHasBeenSet() const
+{
+    return m_chargeTypeHasBeenSet;
 }
 
 

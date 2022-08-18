@@ -29,6 +29,8 @@
 #include <tencentcloud/monitor/v20180724/model/BindingPolicyObjectResponse.h>
 #include <tencentcloud/monitor/v20180724/model/BindingPolicyTagRequest.h>
 #include <tencentcloud/monitor/v20180724/model/BindingPolicyTagResponse.h>
+#include <tencentcloud/monitor/v20180724/model/CleanGrafanaInstanceRequest.h>
+#include <tencentcloud/monitor/v20180724/model/CleanGrafanaInstanceResponse.h>
 #include <tencentcloud/monitor/v20180724/model/CreateAlarmNoticeRequest.h>
 #include <tencentcloud/monitor/v20180724/model/CreateAlarmNoticeResponse.h>
 #include <tencentcloud/monitor/v20180724/model/CreateAlarmPolicyRequest.h>
@@ -37,6 +39,12 @@
 #include <tencentcloud/monitor/v20180724/model/CreateAlertRuleResponse.h>
 #include <tencentcloud/monitor/v20180724/model/CreateExporterIntegrationRequest.h>
 #include <tencentcloud/monitor/v20180724/model/CreateExporterIntegrationResponse.h>
+#include <tencentcloud/monitor/v20180724/model/CreateGrafanaInstanceRequest.h>
+#include <tencentcloud/monitor/v20180724/model/CreateGrafanaInstanceResponse.h>
+#include <tencentcloud/monitor/v20180724/model/CreateGrafanaIntegrationRequest.h>
+#include <tencentcloud/monitor/v20180724/model/CreateGrafanaIntegrationResponse.h>
+#include <tencentcloud/monitor/v20180724/model/CreateGrafanaNotificationChannelRequest.h>
+#include <tencentcloud/monitor/v20180724/model/CreateGrafanaNotificationChannelResponse.h>
 #include <tencentcloud/monitor/v20180724/model/CreatePolicyGroupRequest.h>
 #include <tencentcloud/monitor/v20180724/model/CreatePolicyGroupResponse.h>
 #include <tencentcloud/monitor/v20180724/model/CreatePrometheusAgentRequest.h>
@@ -47,6 +55,8 @@
 #include <tencentcloud/monitor/v20180724/model/CreatePrometheusScrapeJobResponse.h>
 #include <tencentcloud/monitor/v20180724/model/CreateRecordingRuleRequest.h>
 #include <tencentcloud/monitor/v20180724/model/CreateRecordingRuleResponse.h>
+#include <tencentcloud/monitor/v20180724/model/CreateSSOAccountRequest.h>
+#include <tencentcloud/monitor/v20180724/model/CreateSSOAccountResponse.h>
 #include <tencentcloud/monitor/v20180724/model/CreateServiceDiscoveryRequest.h>
 #include <tencentcloud/monitor/v20180724/model/CreateServiceDiscoveryResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DeleteAlarmNoticesRequest.h>
@@ -57,12 +67,20 @@
 #include <tencentcloud/monitor/v20180724/model/DeleteAlertRulesResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DeleteExporterIntegrationRequest.h>
 #include <tencentcloud/monitor/v20180724/model/DeleteExporterIntegrationResponse.h>
+#include <tencentcloud/monitor/v20180724/model/DeleteGrafanaInstanceRequest.h>
+#include <tencentcloud/monitor/v20180724/model/DeleteGrafanaInstanceResponse.h>
+#include <tencentcloud/monitor/v20180724/model/DeleteGrafanaIntegrationRequest.h>
+#include <tencentcloud/monitor/v20180724/model/DeleteGrafanaIntegrationResponse.h>
+#include <tencentcloud/monitor/v20180724/model/DeleteGrafanaNotificationChannelRequest.h>
+#include <tencentcloud/monitor/v20180724/model/DeleteGrafanaNotificationChannelResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DeletePolicyGroupRequest.h>
 #include <tencentcloud/monitor/v20180724/model/DeletePolicyGroupResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DeletePrometheusScrapeJobsRequest.h>
 #include <tencentcloud/monitor/v20180724/model/DeletePrometheusScrapeJobsResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DeleteRecordingRulesRequest.h>
 #include <tencentcloud/monitor/v20180724/model/DeleteRecordingRulesResponse.h>
+#include <tencentcloud/monitor/v20180724/model/DeleteSSOAccountRequest.h>
+#include <tencentcloud/monitor/v20180724/model/DeleteSSOAccountResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DeleteServiceDiscoveryRequest.h>
 #include <tencentcloud/monitor/v20180724/model/DeleteServiceDiscoveryResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DescribeAccidentEventListRequest.h>
@@ -95,10 +113,28 @@
 #include <tencentcloud/monitor/v20180724/model/DescribeBindingPolicyObjectListResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DescribeConditionsTemplateListRequest.h>
 #include <tencentcloud/monitor/v20180724/model/DescribeConditionsTemplateListResponse.h>
+#include <tencentcloud/monitor/v20180724/model/DescribeDNSConfigRequest.h>
+#include <tencentcloud/monitor/v20180724/model/DescribeDNSConfigResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DescribeExporterIntegrationsRequest.h>
 #include <tencentcloud/monitor/v20180724/model/DescribeExporterIntegrationsResponse.h>
+#include <tencentcloud/monitor/v20180724/model/DescribeGrafanaConfigRequest.h>
+#include <tencentcloud/monitor/v20180724/model/DescribeGrafanaConfigResponse.h>
+#include <tencentcloud/monitor/v20180724/model/DescribeGrafanaEnvironmentsRequest.h>
+#include <tencentcloud/monitor/v20180724/model/DescribeGrafanaEnvironmentsResponse.h>
+#include <tencentcloud/monitor/v20180724/model/DescribeGrafanaInstancesRequest.h>
+#include <tencentcloud/monitor/v20180724/model/DescribeGrafanaInstancesResponse.h>
+#include <tencentcloud/monitor/v20180724/model/DescribeGrafanaIntegrationsRequest.h>
+#include <tencentcloud/monitor/v20180724/model/DescribeGrafanaIntegrationsResponse.h>
+#include <tencentcloud/monitor/v20180724/model/DescribeGrafanaNotificationChannelsRequest.h>
+#include <tencentcloud/monitor/v20180724/model/DescribeGrafanaNotificationChannelsResponse.h>
+#include <tencentcloud/monitor/v20180724/model/DescribeGrafanaWhiteListRequest.h>
+#include <tencentcloud/monitor/v20180724/model/DescribeGrafanaWhiteListResponse.h>
+#include <tencentcloud/monitor/v20180724/model/DescribeInstalledPluginsRequest.h>
+#include <tencentcloud/monitor/v20180724/model/DescribeInstalledPluginsResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DescribeMonitorTypesRequest.h>
 #include <tencentcloud/monitor/v20180724/model/DescribeMonitorTypesResponse.h>
+#include <tencentcloud/monitor/v20180724/model/DescribePluginOverviewsRequest.h>
+#include <tencentcloud/monitor/v20180724/model/DescribePluginOverviewsResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DescribePolicyConditionListRequest.h>
 #include <tencentcloud/monitor/v20180724/model/DescribePolicyConditionListResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DescribePolicyGroupInfoRequest.h>
@@ -117,16 +153,26 @@
 #include <tencentcloud/monitor/v20180724/model/DescribePrometheusScrapeJobsResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DescribeRecordingRulesRequest.h>
 #include <tencentcloud/monitor/v20180724/model/DescribeRecordingRulesResponse.h>
+#include <tencentcloud/monitor/v20180724/model/DescribeSSOAccountRequest.h>
+#include <tencentcloud/monitor/v20180724/model/DescribeSSOAccountResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DescribeServiceDiscoveryRequest.h>
 #include <tencentcloud/monitor/v20180724/model/DescribeServiceDiscoveryResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DescribeStatisticDataRequest.h>
 #include <tencentcloud/monitor/v20180724/model/DescribeStatisticDataResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DestroyPrometheusInstanceRequest.h>
 #include <tencentcloud/monitor/v20180724/model/DestroyPrometheusInstanceResponse.h>
+#include <tencentcloud/monitor/v20180724/model/EnableGrafanaInternetRequest.h>
+#include <tencentcloud/monitor/v20180724/model/EnableGrafanaInternetResponse.h>
+#include <tencentcloud/monitor/v20180724/model/EnableGrafanaSSORequest.h>
+#include <tencentcloud/monitor/v20180724/model/EnableGrafanaSSOResponse.h>
+#include <tencentcloud/monitor/v20180724/model/EnableSSOCamCheckRequest.h>
+#include <tencentcloud/monitor/v20180724/model/EnableSSOCamCheckResponse.h>
 #include <tencentcloud/monitor/v20180724/model/GetMonitorDataRequest.h>
 #include <tencentcloud/monitor/v20180724/model/GetMonitorDataResponse.h>
 #include <tencentcloud/monitor/v20180724/model/GetPrometheusAgentManagementCommandRequest.h>
 #include <tencentcloud/monitor/v20180724/model/GetPrometheusAgentManagementCommandResponse.h>
+#include <tencentcloud/monitor/v20180724/model/InstallPluginsRequest.h>
+#include <tencentcloud/monitor/v20180724/model/InstallPluginsResponse.h>
 #include <tencentcloud/monitor/v20180724/model/ModifyAlarmNoticeRequest.h>
 #include <tencentcloud/monitor/v20180724/model/ModifyAlarmNoticeResponse.h>
 #include <tencentcloud/monitor/v20180724/model/ModifyAlarmPolicyConditionRequest.h>
@@ -141,12 +187,16 @@
 #include <tencentcloud/monitor/v20180724/model/ModifyAlarmPolicyTasksResponse.h>
 #include <tencentcloud/monitor/v20180724/model/ModifyAlarmReceiversRequest.h>
 #include <tencentcloud/monitor/v20180724/model/ModifyAlarmReceiversResponse.h>
+#include <tencentcloud/monitor/v20180724/model/ModifyGrafanaInstanceRequest.h>
+#include <tencentcloud/monitor/v20180724/model/ModifyGrafanaInstanceResponse.h>
 #include <tencentcloud/monitor/v20180724/model/ModifyPolicyGroupRequest.h>
 #include <tencentcloud/monitor/v20180724/model/ModifyPolicyGroupResponse.h>
 #include <tencentcloud/monitor/v20180724/model/ModifyPrometheusInstanceAttributesRequest.h>
 #include <tencentcloud/monitor/v20180724/model/ModifyPrometheusInstanceAttributesResponse.h>
 #include <tencentcloud/monitor/v20180724/model/PutMonitorDataRequest.h>
 #include <tencentcloud/monitor/v20180724/model/PutMonitorDataResponse.h>
+#include <tencentcloud/monitor/v20180724/model/ResumeGrafanaInstanceRequest.h>
+#include <tencentcloud/monitor/v20180724/model/ResumeGrafanaInstanceResponse.h>
 #include <tencentcloud/monitor/v20180724/model/SendCustomAlarmMsgRequest.h>
 #include <tencentcloud/monitor/v20180724/model/SendCustomAlarmMsgResponse.h>
 #include <tencentcloud/monitor/v20180724/model/SetDefaultAlarmPolicyRequest.h>
@@ -161,22 +211,40 @@
 #include <tencentcloud/monitor/v20180724/model/UnbindPrometheusManagedGrafanaResponse.h>
 #include <tencentcloud/monitor/v20180724/model/UninstallGrafanaDashboardRequest.h>
 #include <tencentcloud/monitor/v20180724/model/UninstallGrafanaDashboardResponse.h>
+#include <tencentcloud/monitor/v20180724/model/UninstallGrafanaPluginsRequest.h>
+#include <tencentcloud/monitor/v20180724/model/UninstallGrafanaPluginsResponse.h>
 #include <tencentcloud/monitor/v20180724/model/UpdateAlertRuleRequest.h>
 #include <tencentcloud/monitor/v20180724/model/UpdateAlertRuleResponse.h>
 #include <tencentcloud/monitor/v20180724/model/UpdateAlertRuleStateRequest.h>
 #include <tencentcloud/monitor/v20180724/model/UpdateAlertRuleStateResponse.h>
+#include <tencentcloud/monitor/v20180724/model/UpdateDNSConfigRequest.h>
+#include <tencentcloud/monitor/v20180724/model/UpdateDNSConfigResponse.h>
 #include <tencentcloud/monitor/v20180724/model/UpdateExporterIntegrationRequest.h>
 #include <tencentcloud/monitor/v20180724/model/UpdateExporterIntegrationResponse.h>
+#include <tencentcloud/monitor/v20180724/model/UpdateGrafanaConfigRequest.h>
+#include <tencentcloud/monitor/v20180724/model/UpdateGrafanaConfigResponse.h>
+#include <tencentcloud/monitor/v20180724/model/UpdateGrafanaEnvironmentsRequest.h>
+#include <tencentcloud/monitor/v20180724/model/UpdateGrafanaEnvironmentsResponse.h>
+#include <tencentcloud/monitor/v20180724/model/UpdateGrafanaIntegrationRequest.h>
+#include <tencentcloud/monitor/v20180724/model/UpdateGrafanaIntegrationResponse.h>
+#include <tencentcloud/monitor/v20180724/model/UpdateGrafanaNotificationChannelRequest.h>
+#include <tencentcloud/monitor/v20180724/model/UpdateGrafanaNotificationChannelResponse.h>
+#include <tencentcloud/monitor/v20180724/model/UpdateGrafanaWhiteListRequest.h>
+#include <tencentcloud/monitor/v20180724/model/UpdateGrafanaWhiteListResponse.h>
 #include <tencentcloud/monitor/v20180724/model/UpdatePrometheusAgentStatusRequest.h>
 #include <tencentcloud/monitor/v20180724/model/UpdatePrometheusAgentStatusResponse.h>
 #include <tencentcloud/monitor/v20180724/model/UpdatePrometheusScrapeJobRequest.h>
 #include <tencentcloud/monitor/v20180724/model/UpdatePrometheusScrapeJobResponse.h>
 #include <tencentcloud/monitor/v20180724/model/UpdateRecordingRuleRequest.h>
 #include <tencentcloud/monitor/v20180724/model/UpdateRecordingRuleResponse.h>
+#include <tencentcloud/monitor/v20180724/model/UpdateSSOAccountRequest.h>
+#include <tencentcloud/monitor/v20180724/model/UpdateSSOAccountResponse.h>
 #include <tencentcloud/monitor/v20180724/model/UpdateServiceDiscoveryRequest.h>
 #include <tencentcloud/monitor/v20180724/model/UpdateServiceDiscoveryResponse.h>
 #include <tencentcloud/monitor/v20180724/model/UpgradeGrafanaDashboardRequest.h>
 #include <tencentcloud/monitor/v20180724/model/UpgradeGrafanaDashboardResponse.h>
+#include <tencentcloud/monitor/v20180724/model/UpgradeGrafanaInstanceRequest.h>
+#include <tencentcloud/monitor/v20180724/model/UpgradeGrafanaInstanceResponse.h>
 
 
 namespace TencentCloud
@@ -200,6 +268,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::BindingPolicyTagResponse> BindingPolicyTagOutcome;
                 typedef std::future<BindingPolicyTagOutcome> BindingPolicyTagOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::BindingPolicyTagRequest&, BindingPolicyTagOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BindingPolicyTagAsyncHandler;
+                typedef Outcome<Core::Error, Model::CleanGrafanaInstanceResponse> CleanGrafanaInstanceOutcome;
+                typedef std::future<CleanGrafanaInstanceOutcome> CleanGrafanaInstanceOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::CleanGrafanaInstanceRequest&, CleanGrafanaInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CleanGrafanaInstanceAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateAlarmNoticeResponse> CreateAlarmNoticeOutcome;
                 typedef std::future<CreateAlarmNoticeOutcome> CreateAlarmNoticeOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::CreateAlarmNoticeRequest&, CreateAlarmNoticeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAlarmNoticeAsyncHandler;
@@ -212,6 +283,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateExporterIntegrationResponse> CreateExporterIntegrationOutcome;
                 typedef std::future<CreateExporterIntegrationOutcome> CreateExporterIntegrationOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::CreateExporterIntegrationRequest&, CreateExporterIntegrationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateExporterIntegrationAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateGrafanaInstanceResponse> CreateGrafanaInstanceOutcome;
+                typedef std::future<CreateGrafanaInstanceOutcome> CreateGrafanaInstanceOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::CreateGrafanaInstanceRequest&, CreateGrafanaInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateGrafanaInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateGrafanaIntegrationResponse> CreateGrafanaIntegrationOutcome;
+                typedef std::future<CreateGrafanaIntegrationOutcome> CreateGrafanaIntegrationOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::CreateGrafanaIntegrationRequest&, CreateGrafanaIntegrationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateGrafanaIntegrationAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateGrafanaNotificationChannelResponse> CreateGrafanaNotificationChannelOutcome;
+                typedef std::future<CreateGrafanaNotificationChannelOutcome> CreateGrafanaNotificationChannelOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::CreateGrafanaNotificationChannelRequest&, CreateGrafanaNotificationChannelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateGrafanaNotificationChannelAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreatePolicyGroupResponse> CreatePolicyGroupOutcome;
                 typedef std::future<CreatePolicyGroupOutcome> CreatePolicyGroupOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::CreatePolicyGroupRequest&, CreatePolicyGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePolicyGroupAsyncHandler;
@@ -227,6 +307,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateRecordingRuleResponse> CreateRecordingRuleOutcome;
                 typedef std::future<CreateRecordingRuleOutcome> CreateRecordingRuleOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::CreateRecordingRuleRequest&, CreateRecordingRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRecordingRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateSSOAccountResponse> CreateSSOAccountOutcome;
+                typedef std::future<CreateSSOAccountOutcome> CreateSSOAccountOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::CreateSSOAccountRequest&, CreateSSOAccountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSSOAccountAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateServiceDiscoveryResponse> CreateServiceDiscoveryOutcome;
                 typedef std::future<CreateServiceDiscoveryOutcome> CreateServiceDiscoveryOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::CreateServiceDiscoveryRequest&, CreateServiceDiscoveryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateServiceDiscoveryAsyncHandler;
@@ -242,6 +325,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteExporterIntegrationResponse> DeleteExporterIntegrationOutcome;
                 typedef std::future<DeleteExporterIntegrationOutcome> DeleteExporterIntegrationOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::DeleteExporterIntegrationRequest&, DeleteExporterIntegrationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteExporterIntegrationAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteGrafanaInstanceResponse> DeleteGrafanaInstanceOutcome;
+                typedef std::future<DeleteGrafanaInstanceOutcome> DeleteGrafanaInstanceOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::DeleteGrafanaInstanceRequest&, DeleteGrafanaInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteGrafanaInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteGrafanaIntegrationResponse> DeleteGrafanaIntegrationOutcome;
+                typedef std::future<DeleteGrafanaIntegrationOutcome> DeleteGrafanaIntegrationOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::DeleteGrafanaIntegrationRequest&, DeleteGrafanaIntegrationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteGrafanaIntegrationAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteGrafanaNotificationChannelResponse> DeleteGrafanaNotificationChannelOutcome;
+                typedef std::future<DeleteGrafanaNotificationChannelOutcome> DeleteGrafanaNotificationChannelOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::DeleteGrafanaNotificationChannelRequest&, DeleteGrafanaNotificationChannelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteGrafanaNotificationChannelAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeletePolicyGroupResponse> DeletePolicyGroupOutcome;
                 typedef std::future<DeletePolicyGroupOutcome> DeletePolicyGroupOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::DeletePolicyGroupRequest&, DeletePolicyGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeletePolicyGroupAsyncHandler;
@@ -251,6 +343,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteRecordingRulesResponse> DeleteRecordingRulesOutcome;
                 typedef std::future<DeleteRecordingRulesOutcome> DeleteRecordingRulesOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::DeleteRecordingRulesRequest&, DeleteRecordingRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRecordingRulesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteSSOAccountResponse> DeleteSSOAccountOutcome;
+                typedef std::future<DeleteSSOAccountOutcome> DeleteSSOAccountOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::DeleteSSOAccountRequest&, DeleteSSOAccountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSSOAccountAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteServiceDiscoveryResponse> DeleteServiceDiscoveryOutcome;
                 typedef std::future<DeleteServiceDiscoveryOutcome> DeleteServiceDiscoveryOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::DeleteServiceDiscoveryRequest&, DeleteServiceDiscoveryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteServiceDiscoveryAsyncHandler;
@@ -299,12 +394,39 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeConditionsTemplateListResponse> DescribeConditionsTemplateListOutcome;
                 typedef std::future<DescribeConditionsTemplateListOutcome> DescribeConditionsTemplateListOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::DescribeConditionsTemplateListRequest&, DescribeConditionsTemplateListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeConditionsTemplateListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDNSConfigResponse> DescribeDNSConfigOutcome;
+                typedef std::future<DescribeDNSConfigOutcome> DescribeDNSConfigOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::DescribeDNSConfigRequest&, DescribeDNSConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDNSConfigAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeExporterIntegrationsResponse> DescribeExporterIntegrationsOutcome;
                 typedef std::future<DescribeExporterIntegrationsOutcome> DescribeExporterIntegrationsOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::DescribeExporterIntegrationsRequest&, DescribeExporterIntegrationsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeExporterIntegrationsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeGrafanaConfigResponse> DescribeGrafanaConfigOutcome;
+                typedef std::future<DescribeGrafanaConfigOutcome> DescribeGrafanaConfigOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::DescribeGrafanaConfigRequest&, DescribeGrafanaConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGrafanaConfigAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeGrafanaEnvironmentsResponse> DescribeGrafanaEnvironmentsOutcome;
+                typedef std::future<DescribeGrafanaEnvironmentsOutcome> DescribeGrafanaEnvironmentsOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::DescribeGrafanaEnvironmentsRequest&, DescribeGrafanaEnvironmentsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGrafanaEnvironmentsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeGrafanaInstancesResponse> DescribeGrafanaInstancesOutcome;
+                typedef std::future<DescribeGrafanaInstancesOutcome> DescribeGrafanaInstancesOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::DescribeGrafanaInstancesRequest&, DescribeGrafanaInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGrafanaInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeGrafanaIntegrationsResponse> DescribeGrafanaIntegrationsOutcome;
+                typedef std::future<DescribeGrafanaIntegrationsOutcome> DescribeGrafanaIntegrationsOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::DescribeGrafanaIntegrationsRequest&, DescribeGrafanaIntegrationsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGrafanaIntegrationsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeGrafanaNotificationChannelsResponse> DescribeGrafanaNotificationChannelsOutcome;
+                typedef std::future<DescribeGrafanaNotificationChannelsOutcome> DescribeGrafanaNotificationChannelsOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::DescribeGrafanaNotificationChannelsRequest&, DescribeGrafanaNotificationChannelsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGrafanaNotificationChannelsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeGrafanaWhiteListResponse> DescribeGrafanaWhiteListOutcome;
+                typedef std::future<DescribeGrafanaWhiteListOutcome> DescribeGrafanaWhiteListOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::DescribeGrafanaWhiteListRequest&, DescribeGrafanaWhiteListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGrafanaWhiteListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeInstalledPluginsResponse> DescribeInstalledPluginsOutcome;
+                typedef std::future<DescribeInstalledPluginsOutcome> DescribeInstalledPluginsOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::DescribeInstalledPluginsRequest&, DescribeInstalledPluginsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstalledPluginsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeMonitorTypesResponse> DescribeMonitorTypesOutcome;
                 typedef std::future<DescribeMonitorTypesOutcome> DescribeMonitorTypesOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::DescribeMonitorTypesRequest&, DescribeMonitorTypesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMonitorTypesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribePluginOverviewsResponse> DescribePluginOverviewsOutcome;
+                typedef std::future<DescribePluginOverviewsOutcome> DescribePluginOverviewsOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::DescribePluginOverviewsRequest&, DescribePluginOverviewsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePluginOverviewsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribePolicyConditionListResponse> DescribePolicyConditionListOutcome;
                 typedef std::future<DescribePolicyConditionListOutcome> DescribePolicyConditionListOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::DescribePolicyConditionListRequest&, DescribePolicyConditionListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePolicyConditionListAsyncHandler;
@@ -332,6 +454,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeRecordingRulesResponse> DescribeRecordingRulesOutcome;
                 typedef std::future<DescribeRecordingRulesOutcome> DescribeRecordingRulesOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::DescribeRecordingRulesRequest&, DescribeRecordingRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRecordingRulesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSSOAccountResponse> DescribeSSOAccountOutcome;
+                typedef std::future<DescribeSSOAccountOutcome> DescribeSSOAccountOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::DescribeSSOAccountRequest&, DescribeSSOAccountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSSOAccountAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeServiceDiscoveryResponse> DescribeServiceDiscoveryOutcome;
                 typedef std::future<DescribeServiceDiscoveryOutcome> DescribeServiceDiscoveryOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::DescribeServiceDiscoveryRequest&, DescribeServiceDiscoveryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeServiceDiscoveryAsyncHandler;
@@ -341,12 +466,24 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DestroyPrometheusInstanceResponse> DestroyPrometheusInstanceOutcome;
                 typedef std::future<DestroyPrometheusInstanceOutcome> DestroyPrometheusInstanceOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::DestroyPrometheusInstanceRequest&, DestroyPrometheusInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DestroyPrometheusInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::EnableGrafanaInternetResponse> EnableGrafanaInternetOutcome;
+                typedef std::future<EnableGrafanaInternetOutcome> EnableGrafanaInternetOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::EnableGrafanaInternetRequest&, EnableGrafanaInternetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnableGrafanaInternetAsyncHandler;
+                typedef Outcome<Core::Error, Model::EnableGrafanaSSOResponse> EnableGrafanaSSOOutcome;
+                typedef std::future<EnableGrafanaSSOOutcome> EnableGrafanaSSOOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::EnableGrafanaSSORequest&, EnableGrafanaSSOOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnableGrafanaSSOAsyncHandler;
+                typedef Outcome<Core::Error, Model::EnableSSOCamCheckResponse> EnableSSOCamCheckOutcome;
+                typedef std::future<EnableSSOCamCheckOutcome> EnableSSOCamCheckOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::EnableSSOCamCheckRequest&, EnableSSOCamCheckOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnableSSOCamCheckAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetMonitorDataResponse> GetMonitorDataOutcome;
                 typedef std::future<GetMonitorDataOutcome> GetMonitorDataOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::GetMonitorDataRequest&, GetMonitorDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetMonitorDataAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetPrometheusAgentManagementCommandResponse> GetPrometheusAgentManagementCommandOutcome;
                 typedef std::future<GetPrometheusAgentManagementCommandOutcome> GetPrometheusAgentManagementCommandOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::GetPrometheusAgentManagementCommandRequest&, GetPrometheusAgentManagementCommandOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetPrometheusAgentManagementCommandAsyncHandler;
+                typedef Outcome<Core::Error, Model::InstallPluginsResponse> InstallPluginsOutcome;
+                typedef std::future<InstallPluginsOutcome> InstallPluginsOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::InstallPluginsRequest&, InstallPluginsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InstallPluginsAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyAlarmNoticeResponse> ModifyAlarmNoticeOutcome;
                 typedef std::future<ModifyAlarmNoticeOutcome> ModifyAlarmNoticeOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::ModifyAlarmNoticeRequest&, ModifyAlarmNoticeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAlarmNoticeAsyncHandler;
@@ -368,6 +505,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyAlarmReceiversResponse> ModifyAlarmReceiversOutcome;
                 typedef std::future<ModifyAlarmReceiversOutcome> ModifyAlarmReceiversOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::ModifyAlarmReceiversRequest&, ModifyAlarmReceiversOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAlarmReceiversAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyGrafanaInstanceResponse> ModifyGrafanaInstanceOutcome;
+                typedef std::future<ModifyGrafanaInstanceOutcome> ModifyGrafanaInstanceOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::ModifyGrafanaInstanceRequest&, ModifyGrafanaInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyGrafanaInstanceAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyPolicyGroupResponse> ModifyPolicyGroupOutcome;
                 typedef std::future<ModifyPolicyGroupOutcome> ModifyPolicyGroupOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::ModifyPolicyGroupRequest&, ModifyPolicyGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPolicyGroupAsyncHandler;
@@ -377,6 +517,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::PutMonitorDataResponse> PutMonitorDataOutcome;
                 typedef std::future<PutMonitorDataOutcome> PutMonitorDataOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::PutMonitorDataRequest&, PutMonitorDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PutMonitorDataAsyncHandler;
+                typedef Outcome<Core::Error, Model::ResumeGrafanaInstanceResponse> ResumeGrafanaInstanceOutcome;
+                typedef std::future<ResumeGrafanaInstanceOutcome> ResumeGrafanaInstanceOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::ResumeGrafanaInstanceRequest&, ResumeGrafanaInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResumeGrafanaInstanceAsyncHandler;
                 typedef Outcome<Core::Error, Model::SendCustomAlarmMsgResponse> SendCustomAlarmMsgOutcome;
                 typedef std::future<SendCustomAlarmMsgOutcome> SendCustomAlarmMsgOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::SendCustomAlarmMsgRequest&, SendCustomAlarmMsgOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SendCustomAlarmMsgAsyncHandler;
@@ -398,15 +541,36 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UninstallGrafanaDashboardResponse> UninstallGrafanaDashboardOutcome;
                 typedef std::future<UninstallGrafanaDashboardOutcome> UninstallGrafanaDashboardOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::UninstallGrafanaDashboardRequest&, UninstallGrafanaDashboardOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UninstallGrafanaDashboardAsyncHandler;
+                typedef Outcome<Core::Error, Model::UninstallGrafanaPluginsResponse> UninstallGrafanaPluginsOutcome;
+                typedef std::future<UninstallGrafanaPluginsOutcome> UninstallGrafanaPluginsOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::UninstallGrafanaPluginsRequest&, UninstallGrafanaPluginsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UninstallGrafanaPluginsAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpdateAlertRuleResponse> UpdateAlertRuleOutcome;
                 typedef std::future<UpdateAlertRuleOutcome> UpdateAlertRuleOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::UpdateAlertRuleRequest&, UpdateAlertRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateAlertRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpdateAlertRuleStateResponse> UpdateAlertRuleStateOutcome;
                 typedef std::future<UpdateAlertRuleStateOutcome> UpdateAlertRuleStateOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::UpdateAlertRuleStateRequest&, UpdateAlertRuleStateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateAlertRuleStateAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateDNSConfigResponse> UpdateDNSConfigOutcome;
+                typedef std::future<UpdateDNSConfigOutcome> UpdateDNSConfigOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::UpdateDNSConfigRequest&, UpdateDNSConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateDNSConfigAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpdateExporterIntegrationResponse> UpdateExporterIntegrationOutcome;
                 typedef std::future<UpdateExporterIntegrationOutcome> UpdateExporterIntegrationOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::UpdateExporterIntegrationRequest&, UpdateExporterIntegrationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateExporterIntegrationAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateGrafanaConfigResponse> UpdateGrafanaConfigOutcome;
+                typedef std::future<UpdateGrafanaConfigOutcome> UpdateGrafanaConfigOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::UpdateGrafanaConfigRequest&, UpdateGrafanaConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateGrafanaConfigAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateGrafanaEnvironmentsResponse> UpdateGrafanaEnvironmentsOutcome;
+                typedef std::future<UpdateGrafanaEnvironmentsOutcome> UpdateGrafanaEnvironmentsOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::UpdateGrafanaEnvironmentsRequest&, UpdateGrafanaEnvironmentsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateGrafanaEnvironmentsAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateGrafanaIntegrationResponse> UpdateGrafanaIntegrationOutcome;
+                typedef std::future<UpdateGrafanaIntegrationOutcome> UpdateGrafanaIntegrationOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::UpdateGrafanaIntegrationRequest&, UpdateGrafanaIntegrationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateGrafanaIntegrationAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateGrafanaNotificationChannelResponse> UpdateGrafanaNotificationChannelOutcome;
+                typedef std::future<UpdateGrafanaNotificationChannelOutcome> UpdateGrafanaNotificationChannelOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::UpdateGrafanaNotificationChannelRequest&, UpdateGrafanaNotificationChannelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateGrafanaNotificationChannelAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateGrafanaWhiteListResponse> UpdateGrafanaWhiteListOutcome;
+                typedef std::future<UpdateGrafanaWhiteListOutcome> UpdateGrafanaWhiteListOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::UpdateGrafanaWhiteListRequest&, UpdateGrafanaWhiteListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateGrafanaWhiteListAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpdatePrometheusAgentStatusResponse> UpdatePrometheusAgentStatusOutcome;
                 typedef std::future<UpdatePrometheusAgentStatusOutcome> UpdatePrometheusAgentStatusOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::UpdatePrometheusAgentStatusRequest&, UpdatePrometheusAgentStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdatePrometheusAgentStatusAsyncHandler;
@@ -416,12 +580,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UpdateRecordingRuleResponse> UpdateRecordingRuleOutcome;
                 typedef std::future<UpdateRecordingRuleOutcome> UpdateRecordingRuleOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::UpdateRecordingRuleRequest&, UpdateRecordingRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateRecordingRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateSSOAccountResponse> UpdateSSOAccountOutcome;
+                typedef std::future<UpdateSSOAccountOutcome> UpdateSSOAccountOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::UpdateSSOAccountRequest&, UpdateSSOAccountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateSSOAccountAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpdateServiceDiscoveryResponse> UpdateServiceDiscoveryOutcome;
                 typedef std::future<UpdateServiceDiscoveryOutcome> UpdateServiceDiscoveryOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::UpdateServiceDiscoveryRequest&, UpdateServiceDiscoveryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateServiceDiscoveryAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpgradeGrafanaDashboardResponse> UpgradeGrafanaDashboardOutcome;
                 typedef std::future<UpgradeGrafanaDashboardOutcome> UpgradeGrafanaDashboardOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::UpgradeGrafanaDashboardRequest&, UpgradeGrafanaDashboardOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpgradeGrafanaDashboardAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpgradeGrafanaInstanceResponse> UpgradeGrafanaInstanceOutcome;
+                typedef std::future<UpgradeGrafanaInstanceOutcome> UpgradeGrafanaInstanceOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::UpgradeGrafanaInstanceRequest&, UpgradeGrafanaInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpgradeGrafanaInstanceAsyncHandler;
 
 
 
@@ -451,6 +621,15 @@ namespace TencentCloud
                 BindingPolicyTagOutcome BindingPolicyTag(const Model::BindingPolicyTagRequest &request);
                 void BindingPolicyTagAsync(const Model::BindingPolicyTagRequest& request, const BindingPolicyTagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 BindingPolicyTagOutcomeCallable BindingPolicyTagCallable(const Model::BindingPolicyTagRequest& request);
+
+                /**
+                 *强制销毁 Grafana 实例
+                 * @param req CleanGrafanaInstanceRequest
+                 * @return CleanGrafanaInstanceOutcome
+                 */
+                CleanGrafanaInstanceOutcome CleanGrafanaInstance(const Model::CleanGrafanaInstanceRequest &request);
+                void CleanGrafanaInstanceAsync(const Model::CleanGrafanaInstanceRequest& request, const CleanGrafanaInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CleanGrafanaInstanceOutcomeCallable CleanGrafanaInstanceCallable(const Model::CleanGrafanaInstanceRequest& request);
 
                 /**
                  *创建通知模板
@@ -489,6 +668,33 @@ namespace TencentCloud
                 CreateExporterIntegrationOutcome CreateExporterIntegration(const Model::CreateExporterIntegrationRequest &request);
                 void CreateExporterIntegrationAsync(const Model::CreateExporterIntegrationRequest& request, const CreateExporterIntegrationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateExporterIntegrationOutcomeCallable CreateExporterIntegrationCallable(const Model::CreateExporterIntegrationRequest& request);
+
+                /**
+                 *创建 Grafana 实例
+                 * @param req CreateGrafanaInstanceRequest
+                 * @return CreateGrafanaInstanceOutcome
+                 */
+                CreateGrafanaInstanceOutcome CreateGrafanaInstance(const Model::CreateGrafanaInstanceRequest &request);
+                void CreateGrafanaInstanceAsync(const Model::CreateGrafanaInstanceRequest& request, const CreateGrafanaInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateGrafanaInstanceOutcomeCallable CreateGrafanaInstanceCallable(const Model::CreateGrafanaInstanceRequest& request);
+
+                /**
+                 *创建 Grafana 集成配置
+                 * @param req CreateGrafanaIntegrationRequest
+                 * @return CreateGrafanaIntegrationOutcome
+                 */
+                CreateGrafanaIntegrationOutcome CreateGrafanaIntegration(const Model::CreateGrafanaIntegrationRequest &request);
+                void CreateGrafanaIntegrationAsync(const Model::CreateGrafanaIntegrationRequest& request, const CreateGrafanaIntegrationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateGrafanaIntegrationOutcomeCallable CreateGrafanaIntegrationCallable(const Model::CreateGrafanaIntegrationRequest& request);
+
+                /**
+                 *创建 Grafana 告警通道
+                 * @param req CreateGrafanaNotificationChannelRequest
+                 * @return CreateGrafanaNotificationChannelOutcome
+                 */
+                CreateGrafanaNotificationChannelOutcome CreateGrafanaNotificationChannel(const Model::CreateGrafanaNotificationChannelRequest &request);
+                void CreateGrafanaNotificationChannelAsync(const Model::CreateGrafanaNotificationChannelRequest& request, const CreateGrafanaNotificationChannelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateGrafanaNotificationChannelOutcomeCallable CreateGrafanaNotificationChannelCallable(const Model::CreateGrafanaNotificationChannelRequest& request);
 
                 /**
                  *增加策略组
@@ -534,6 +740,15 @@ namespace TencentCloud
                 CreateRecordingRuleOutcome CreateRecordingRule(const Model::CreateRecordingRuleRequest &request);
                 void CreateRecordingRuleAsync(const Model::CreateRecordingRuleRequest& request, const CreateRecordingRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateRecordingRuleOutcomeCallable CreateRecordingRuleCallable(const Model::CreateRecordingRuleRequest& request);
+
+                /**
+                 *Grafana实例授权其他腾讯云用户
+                 * @param req CreateSSOAccountRequest
+                 * @return CreateSSOAccountOutcome
+                 */
+                CreateSSOAccountOutcome CreateSSOAccount(const Model::CreateSSOAccountRequest &request);
+                void CreateSSOAccountAsync(const Model::CreateSSOAccountRequest& request, const CreateSSOAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateSSOAccountOutcomeCallable CreateSSOAccountCallable(const Model::CreateSSOAccountRequest& request);
 
                 /**
                  *在腾讯云容器服务下创建 Prometheus 服务发现。
@@ -583,6 +798,33 @@ namespace TencentCloud
                 DeleteExporterIntegrationOutcomeCallable DeleteExporterIntegrationCallable(const Model::DeleteExporterIntegrationRequest& request);
 
                 /**
+                 *删除 Grafana 实例
+                 * @param req DeleteGrafanaInstanceRequest
+                 * @return DeleteGrafanaInstanceOutcome
+                 */
+                DeleteGrafanaInstanceOutcome DeleteGrafanaInstance(const Model::DeleteGrafanaInstanceRequest &request);
+                void DeleteGrafanaInstanceAsync(const Model::DeleteGrafanaInstanceRequest& request, const DeleteGrafanaInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteGrafanaInstanceOutcomeCallable DeleteGrafanaInstanceCallable(const Model::DeleteGrafanaInstanceRequest& request);
+
+                /**
+                 *删除 Grafana 集成配置
+                 * @param req DeleteGrafanaIntegrationRequest
+                 * @return DeleteGrafanaIntegrationOutcome
+                 */
+                DeleteGrafanaIntegrationOutcome DeleteGrafanaIntegration(const Model::DeleteGrafanaIntegrationRequest &request);
+                void DeleteGrafanaIntegrationAsync(const Model::DeleteGrafanaIntegrationRequest& request, const DeleteGrafanaIntegrationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteGrafanaIntegrationOutcomeCallable DeleteGrafanaIntegrationCallable(const Model::DeleteGrafanaIntegrationRequest& request);
+
+                /**
+                 *删除 Grafana 告警通道
+                 * @param req DeleteGrafanaNotificationChannelRequest
+                 * @return DeleteGrafanaNotificationChannelOutcome
+                 */
+                DeleteGrafanaNotificationChannelOutcome DeleteGrafanaNotificationChannel(const Model::DeleteGrafanaNotificationChannelRequest &request);
+                void DeleteGrafanaNotificationChannelAsync(const Model::DeleteGrafanaNotificationChannelRequest& request, const DeleteGrafanaNotificationChannelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteGrafanaNotificationChannelOutcomeCallable DeleteGrafanaNotificationChannelCallable(const Model::DeleteGrafanaNotificationChannelRequest& request);
+
+                /**
                  *删除告警策略组
                  * @param req DeletePolicyGroupRequest
                  * @return DeletePolicyGroupOutcome
@@ -608,6 +850,15 @@ namespace TencentCloud
                 DeleteRecordingRulesOutcome DeleteRecordingRules(const Model::DeleteRecordingRulesRequest &request);
                 void DeleteRecordingRulesAsync(const Model::DeleteRecordingRulesRequest& request, const DeleteRecordingRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteRecordingRulesOutcomeCallable DeleteRecordingRulesCallable(const Model::DeleteRecordingRulesRequest& request);
+
+                /**
+                 *Grafana可视化服务 删除授权用户
+                 * @param req DeleteSSOAccountRequest
+                 * @return DeleteSSOAccountOutcome
+                 */
+                DeleteSSOAccountOutcome DeleteSSOAccount(const Model::DeleteSSOAccountRequest &request);
+                void DeleteSSOAccountAsync(const Model::DeleteSSOAccountRequest& request, const DeleteSSOAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteSSOAccountOutcomeCallable DeleteSSOAccountCallable(const Model::DeleteSSOAccountRequest& request);
 
                 /**
                  *删除在腾讯云容器服务下创建的 Prometheus 服务发现。
@@ -758,6 +1009,15 @@ namespace TencentCloud
                 DescribeConditionsTemplateListOutcomeCallable DescribeConditionsTemplateListCallable(const Model::DescribeConditionsTemplateListRequest& request);
 
                 /**
+                 *列出 Grafana DNS 配置
+                 * @param req DescribeDNSConfigRequest
+                 * @return DescribeDNSConfigOutcome
+                 */
+                DescribeDNSConfigOutcome DescribeDNSConfig(const Model::DescribeDNSConfigRequest &request);
+                void DescribeDNSConfigAsync(const Model::DescribeDNSConfigRequest& request, const DescribeDNSConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDNSConfigOutcomeCallable DescribeDNSConfigCallable(const Model::DescribeDNSConfigRequest& request);
+
+                /**
                  *查询 exporter 集成列表
                  * @param req DescribeExporterIntegrationsRequest
                  * @return DescribeExporterIntegrationsOutcome
@@ -767,6 +1027,69 @@ namespace TencentCloud
                 DescribeExporterIntegrationsOutcomeCallable DescribeExporterIntegrationsCallable(const Model::DescribeExporterIntegrationsRequest& request);
 
                 /**
+                 *列出 Grafana 的设置，即 grafana.ini 文件内容
+                 * @param req DescribeGrafanaConfigRequest
+                 * @return DescribeGrafanaConfigOutcome
+                 */
+                DescribeGrafanaConfigOutcome DescribeGrafanaConfig(const Model::DescribeGrafanaConfigRequest &request);
+                void DescribeGrafanaConfigAsync(const Model::DescribeGrafanaConfigRequest& request, const DescribeGrafanaConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeGrafanaConfigOutcomeCallable DescribeGrafanaConfigCallable(const Model::DescribeGrafanaConfigRequest& request);
+
+                /**
+                 *列出 Grafana 环境变量
+                 * @param req DescribeGrafanaEnvironmentsRequest
+                 * @return DescribeGrafanaEnvironmentsOutcome
+                 */
+                DescribeGrafanaEnvironmentsOutcome DescribeGrafanaEnvironments(const Model::DescribeGrafanaEnvironmentsRequest &request);
+                void DescribeGrafanaEnvironmentsAsync(const Model::DescribeGrafanaEnvironmentsRequest& request, const DescribeGrafanaEnvironmentsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeGrafanaEnvironmentsOutcomeCallable DescribeGrafanaEnvironmentsCallable(const Model::DescribeGrafanaEnvironmentsRequest& request);
+
+                /**
+                 *列出用户所有的 Grafana 服务
+                 * @param req DescribeGrafanaInstancesRequest
+                 * @return DescribeGrafanaInstancesOutcome
+                 */
+                DescribeGrafanaInstancesOutcome DescribeGrafanaInstances(const Model::DescribeGrafanaInstancesRequest &request);
+                void DescribeGrafanaInstancesAsync(const Model::DescribeGrafanaInstancesRequest& request, const DescribeGrafanaInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeGrafanaInstancesOutcomeCallable DescribeGrafanaInstancesCallable(const Model::DescribeGrafanaInstancesRequest& request);
+
+                /**
+                 *列出 Grafana 已安装的集成
+                 * @param req DescribeGrafanaIntegrationsRequest
+                 * @return DescribeGrafanaIntegrationsOutcome
+                 */
+                DescribeGrafanaIntegrationsOutcome DescribeGrafanaIntegrations(const Model::DescribeGrafanaIntegrationsRequest &request);
+                void DescribeGrafanaIntegrationsAsync(const Model::DescribeGrafanaIntegrationsRequest& request, const DescribeGrafanaIntegrationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeGrafanaIntegrationsOutcomeCallable DescribeGrafanaIntegrationsCallable(const Model::DescribeGrafanaIntegrationsRequest& request);
+
+                /**
+                 *列出 Grafana 告警通道
+                 * @param req DescribeGrafanaNotificationChannelsRequest
+                 * @return DescribeGrafanaNotificationChannelsOutcome
+                 */
+                DescribeGrafanaNotificationChannelsOutcome DescribeGrafanaNotificationChannels(const Model::DescribeGrafanaNotificationChannelsRequest &request);
+                void DescribeGrafanaNotificationChannelsAsync(const Model::DescribeGrafanaNotificationChannelsRequest& request, const DescribeGrafanaNotificationChannelsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeGrafanaNotificationChannelsOutcomeCallable DescribeGrafanaNotificationChannelsCallable(const Model::DescribeGrafanaNotificationChannelsRequest& request);
+
+                /**
+                 *列出 Grafana 白名单
+                 * @param req DescribeGrafanaWhiteListRequest
+                 * @return DescribeGrafanaWhiteListOutcome
+                 */
+                DescribeGrafanaWhiteListOutcome DescribeGrafanaWhiteList(const Model::DescribeGrafanaWhiteListRequest &request);
+                void DescribeGrafanaWhiteListAsync(const Model::DescribeGrafanaWhiteListRequest& request, const DescribeGrafanaWhiteListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeGrafanaWhiteListOutcomeCallable DescribeGrafanaWhiteListCallable(const Model::DescribeGrafanaWhiteListRequest& request);
+
+                /**
+                 *列出实例已安装的插件
+                 * @param req DescribeInstalledPluginsRequest
+                 * @return DescribeInstalledPluginsOutcome
+                 */
+                DescribeInstalledPluginsOutcome DescribeInstalledPlugins(const Model::DescribeInstalledPluginsRequest &request);
+                void DescribeInstalledPluginsAsync(const Model::DescribeInstalledPluginsRequest& request, const DescribeInstalledPluginsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeInstalledPluginsOutcomeCallable DescribeInstalledPluginsCallable(const Model::DescribeInstalledPluginsRequest& request);
+
+                /**
                  *云监控支持多种类型的监控，此接口列出支持的所有类型
                  * @param req DescribeMonitorTypesRequest
                  * @return DescribeMonitorTypesOutcome
@@ -774,6 +1097,15 @@ namespace TencentCloud
                 DescribeMonitorTypesOutcome DescribeMonitorTypes(const Model::DescribeMonitorTypesRequest &request);
                 void DescribeMonitorTypesAsync(const Model::DescribeMonitorTypesRequest& request, const DescribeMonitorTypesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeMonitorTypesOutcomeCallable DescribeMonitorTypesCallable(const Model::DescribeMonitorTypesRequest& request);
+
+                /**
+                 *列出可安装的所有 Grafana 插件
+                 * @param req DescribePluginOverviewsRequest
+                 * @return DescribePluginOverviewsOutcome
+                 */
+                DescribePluginOverviewsOutcome DescribePluginOverviews(const Model::DescribePluginOverviewsRequest &request);
+                void DescribePluginOverviewsAsync(const Model::DescribePluginOverviewsRequest& request, const DescribePluginOverviewsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePluginOverviewsOutcomeCallable DescribePluginOverviewsCallable(const Model::DescribePluginOverviewsRequest& request);
 
                 /**
                  *获取基础告警策略条件
@@ -861,6 +1193,15 @@ namespace TencentCloud
                 DescribeRecordingRulesOutcomeCallable DescribeRecordingRulesCallable(const Model::DescribeRecordingRulesRequest& request);
 
                 /**
+                 *列出当前grafana实例的所有授权账号
+                 * @param req DescribeSSOAccountRequest
+                 * @return DescribeSSOAccountOutcome
+                 */
+                DescribeSSOAccountOutcome DescribeSSOAccount(const Model::DescribeSSOAccountRequest &request);
+                void DescribeSSOAccountAsync(const Model::DescribeSSOAccountRequest& request, const DescribeSSOAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSSOAccountOutcomeCallable DescribeSSOAccountCallable(const Model::DescribeSSOAccountRequest& request);
+
+                /**
                  *列出在腾讯云容器服务下创建的 Prometheus 服务发现。
 <p>注意：前提条件，已经通过 Prometheus 控制台集成了对应的腾讯云容器服务，具体请参考
 <a href="https://cloud.tencent.com/document/product/248/48859" target="_blank">Agent 安装</a>。</p>
@@ -890,6 +1231,33 @@ namespace TencentCloud
                 DestroyPrometheusInstanceOutcomeCallable DestroyPrometheusInstanceCallable(const Model::DestroyPrometheusInstanceRequest& request);
 
                 /**
+                 *设置 Grafana 公网访问
+                 * @param req EnableGrafanaInternetRequest
+                 * @return EnableGrafanaInternetOutcome
+                 */
+                EnableGrafanaInternetOutcome EnableGrafanaInternet(const Model::EnableGrafanaInternetRequest &request);
+                void EnableGrafanaInternetAsync(const Model::EnableGrafanaInternetRequest& request, const EnableGrafanaInternetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                EnableGrafanaInternetOutcomeCallable EnableGrafanaInternetCallable(const Model::EnableGrafanaInternetRequest& request);
+
+                /**
+                 *设置 Grafana 单点登录，使用腾讯云账号
+                 * @param req EnableGrafanaSSORequest
+                 * @return EnableGrafanaSSOOutcome
+                 */
+                EnableGrafanaSSOOutcome EnableGrafanaSSO(const Model::EnableGrafanaSSORequest &request);
+                void EnableGrafanaSSOAsync(const Model::EnableGrafanaSSORequest& request, const EnableGrafanaSSOAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                EnableGrafanaSSOOutcomeCallable EnableGrafanaSSOCallable(const Model::EnableGrafanaSSORequest& request);
+
+                /**
+                 *SSO单点登录时，设置是否cam鉴权
+                 * @param req EnableSSOCamCheckRequest
+                 * @return EnableSSOCamCheckOutcome
+                 */
+                EnableSSOCamCheckOutcome EnableSSOCamCheck(const Model::EnableSSOCamCheckRequest &request);
+                void EnableSSOCamCheckAsync(const Model::EnableSSOCamCheckRequest& request, const EnableSSOCamCheckAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                EnableSSOCamCheckOutcomeCallable EnableSSOCamCheckCallable(const Model::EnableSSOCamCheckRequest& request);
+
+                /**
                  *获取云产品的监控数据。此接口不适用于拉取容器服务监控数据，如需拉取容器服务监控数据，请使用[根据维度条件查询监控数据](https://cloud.tencent.com/document/product/248/51845)接口。
 传入产品的命名空间、对象维度描述和监控指标即可获得相应的监控数据。
 接口调用频率限制为：20次/秒，1200次/分钟。单请求最多可支持批量拉取10个实例的监控数据，单请求的数据点数限制为1440个。
@@ -909,6 +1277,15 @@ namespace TencentCloud
                 GetPrometheusAgentManagementCommandOutcome GetPrometheusAgentManagementCommand(const Model::GetPrometheusAgentManagementCommandRequest &request);
                 void GetPrometheusAgentManagementCommandAsync(const Model::GetPrometheusAgentManagementCommandRequest& request, const GetPrometheusAgentManagementCommandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GetPrometheusAgentManagementCommandOutcomeCallable GetPrometheusAgentManagementCommandCallable(const Model::GetPrometheusAgentManagementCommandRequest& request);
+
+                /**
+                 *安装 Grafana Plugin
+                 * @param req InstallPluginsRequest
+                 * @return InstallPluginsOutcome
+                 */
+                InstallPluginsOutcome InstallPlugins(const Model::InstallPluginsRequest &request);
+                void InstallPluginsAsync(const Model::InstallPluginsRequest& request, const InstallPluginsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                InstallPluginsOutcomeCallable InstallPluginsCallable(const Model::InstallPluginsRequest& request);
 
                 /**
                  *云监控告警编辑告警通知模板
@@ -974,6 +1351,15 @@ namespace TencentCloud
                 ModifyAlarmReceiversOutcomeCallable ModifyAlarmReceiversCallable(const Model::ModifyAlarmReceiversRequest& request);
 
                 /**
+                 *修改 Grafana 实例属性
+                 * @param req ModifyGrafanaInstanceRequest
+                 * @return ModifyGrafanaInstanceOutcome
+                 */
+                ModifyGrafanaInstanceOutcome ModifyGrafanaInstance(const Model::ModifyGrafanaInstanceRequest &request);
+                void ModifyGrafanaInstanceAsync(const Model::ModifyGrafanaInstanceRequest& request, const ModifyGrafanaInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyGrafanaInstanceOutcomeCallable ModifyGrafanaInstanceCallable(const Model::ModifyGrafanaInstanceRequest& request);
+
+                /**
                  *更新策略组
                  * @param req ModifyPolicyGroupRequest
                  * @return ModifyPolicyGroupOutcome
@@ -1005,6 +1391,15 @@ namespace TencentCloud
                 PutMonitorDataOutcome PutMonitorData(const Model::PutMonitorDataRequest &request);
                 void PutMonitorDataAsync(const Model::PutMonitorDataRequest& request, const PutMonitorDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 PutMonitorDataOutcomeCallable PutMonitorDataCallable(const Model::PutMonitorDataRequest& request);
+
+                /**
+                 *恢复 Grafana 实例
+                 * @param req ResumeGrafanaInstanceRequest
+                 * @return ResumeGrafanaInstanceOutcome
+                 */
+                ResumeGrafanaInstanceOutcome ResumeGrafanaInstance(const Model::ResumeGrafanaInstanceRequest &request);
+                void ResumeGrafanaInstanceAsync(const Model::ResumeGrafanaInstanceRequest& request, const ResumeGrafanaInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ResumeGrafanaInstanceOutcomeCallable ResumeGrafanaInstanceCallable(const Model::ResumeGrafanaInstanceRequest& request);
 
                 /**
                  *发送自定义消息告警
@@ -1071,6 +1466,15 @@ namespace TencentCloud
                 UninstallGrafanaDashboardOutcomeCallable UninstallGrafanaDashboardCallable(const Model::UninstallGrafanaDashboardRequest& request);
 
                 /**
+                 *删除已安装的插件
+                 * @param req UninstallGrafanaPluginsRequest
+                 * @return UninstallGrafanaPluginsOutcome
+                 */
+                UninstallGrafanaPluginsOutcome UninstallGrafanaPlugins(const Model::UninstallGrafanaPluginsRequest &request);
+                void UninstallGrafanaPluginsAsync(const Model::UninstallGrafanaPluginsRequest& request, const UninstallGrafanaPluginsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UninstallGrafanaPluginsOutcomeCallable UninstallGrafanaPluginsCallable(const Model::UninstallGrafanaPluginsRequest& request);
+
+                /**
                  *更新 Prometheus 的报警规则。
 
 请注意，**告警对象和告警消息是 Prometheus Rule Annotations 的特殊字段，需要通过 annotations 来传递，对应的 Key 分别为summary/description**，，请参考 [Prometheus Rule更多配置请参考](https://prometheus.io/docs/prometheus/latest/configuration/alerting_rules/)。
@@ -1091,6 +1495,15 @@ namespace TencentCloud
                 UpdateAlertRuleStateOutcomeCallable UpdateAlertRuleStateCallable(const Model::UpdateAlertRuleStateRequest& request);
 
                 /**
+                 *更新 Grafana 的 DNS 配置
+                 * @param req UpdateDNSConfigRequest
+                 * @return UpdateDNSConfigOutcome
+                 */
+                UpdateDNSConfigOutcome UpdateDNSConfig(const Model::UpdateDNSConfigRequest &request);
+                void UpdateDNSConfigAsync(const Model::UpdateDNSConfigRequest& request, const UpdateDNSConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateDNSConfigOutcomeCallable UpdateDNSConfigCallable(const Model::UpdateDNSConfigRequest& request);
+
+                /**
                  *更新 exporter 集成配置
                  * @param req UpdateExporterIntegrationRequest
                  * @return UpdateExporterIntegrationOutcome
@@ -1098,6 +1511,51 @@ namespace TencentCloud
                 UpdateExporterIntegrationOutcome UpdateExporterIntegration(const Model::UpdateExporterIntegrationRequest &request);
                 void UpdateExporterIntegrationAsync(const Model::UpdateExporterIntegrationRequest& request, const UpdateExporterIntegrationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UpdateExporterIntegrationOutcomeCallable UpdateExporterIntegrationCallable(const Model::UpdateExporterIntegrationRequest& request);
+
+                /**
+                 *更新 Grafana 配置
+                 * @param req UpdateGrafanaConfigRequest
+                 * @return UpdateGrafanaConfigOutcome
+                 */
+                UpdateGrafanaConfigOutcome UpdateGrafanaConfig(const Model::UpdateGrafanaConfigRequest &request);
+                void UpdateGrafanaConfigAsync(const Model::UpdateGrafanaConfigRequest& request, const UpdateGrafanaConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateGrafanaConfigOutcomeCallable UpdateGrafanaConfigCallable(const Model::UpdateGrafanaConfigRequest& request);
+
+                /**
+                 *更新 Grafana 环境变量
+                 * @param req UpdateGrafanaEnvironmentsRequest
+                 * @return UpdateGrafanaEnvironmentsOutcome
+                 */
+                UpdateGrafanaEnvironmentsOutcome UpdateGrafanaEnvironments(const Model::UpdateGrafanaEnvironmentsRequest &request);
+                void UpdateGrafanaEnvironmentsAsync(const Model::UpdateGrafanaEnvironmentsRequest& request, const UpdateGrafanaEnvironmentsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateGrafanaEnvironmentsOutcomeCallable UpdateGrafanaEnvironmentsCallable(const Model::UpdateGrafanaEnvironmentsRequest& request);
+
+                /**
+                 *更新 Grafana 集成配置
+                 * @param req UpdateGrafanaIntegrationRequest
+                 * @return UpdateGrafanaIntegrationOutcome
+                 */
+                UpdateGrafanaIntegrationOutcome UpdateGrafanaIntegration(const Model::UpdateGrafanaIntegrationRequest &request);
+                void UpdateGrafanaIntegrationAsync(const Model::UpdateGrafanaIntegrationRequest& request, const UpdateGrafanaIntegrationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateGrafanaIntegrationOutcomeCallable UpdateGrafanaIntegrationCallable(const Model::UpdateGrafanaIntegrationRequest& request);
+
+                /**
+                 *更新 Grafana 告警通道
+                 * @param req UpdateGrafanaNotificationChannelRequest
+                 * @return UpdateGrafanaNotificationChannelOutcome
+                 */
+                UpdateGrafanaNotificationChannelOutcome UpdateGrafanaNotificationChannel(const Model::UpdateGrafanaNotificationChannelRequest &request);
+                void UpdateGrafanaNotificationChannelAsync(const Model::UpdateGrafanaNotificationChannelRequest& request, const UpdateGrafanaNotificationChannelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateGrafanaNotificationChannelOutcomeCallable UpdateGrafanaNotificationChannelCallable(const Model::UpdateGrafanaNotificationChannelRequest& request);
+
+                /**
+                 *更新 Grafana 白名单
+                 * @param req UpdateGrafanaWhiteListRequest
+                 * @return UpdateGrafanaWhiteListOutcome
+                 */
+                UpdateGrafanaWhiteListOutcome UpdateGrafanaWhiteList(const Model::UpdateGrafanaWhiteListRequest &request);
+                void UpdateGrafanaWhiteListAsync(const Model::UpdateGrafanaWhiteListRequest& request, const UpdateGrafanaWhiteListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateGrafanaWhiteListOutcomeCallable UpdateGrafanaWhiteListCallable(const Model::UpdateGrafanaWhiteListRequest& request);
 
                 /**
                  *更新 Prometheus CVM Agent 状态
@@ -1127,6 +1585,15 @@ namespace TencentCloud
                 UpdateRecordingRuleOutcomeCallable UpdateRecordingRuleCallable(const Model::UpdateRecordingRuleRequest& request);
 
                 /**
+                 *更新已授权账号的备注、权限信息，会直接覆盖原有的信息，不传则不会更新。
+                 * @param req UpdateSSOAccountRequest
+                 * @return UpdateSSOAccountOutcome
+                 */
+                UpdateSSOAccountOutcome UpdateSSOAccount(const Model::UpdateSSOAccountRequest &request);
+                void UpdateSSOAccountAsync(const Model::UpdateSSOAccountRequest& request, const UpdateSSOAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateSSOAccountOutcomeCallable UpdateSSOAccountCallable(const Model::UpdateSSOAccountRequest& request);
+
+                /**
                  *在腾讯云容器服务下更新 Prometheus 服务发现。
 <p>注意：前提条件，已经通过 Prometheus 控制台集成了对应的腾讯云容器服务，具体请参考
 <a href="https://cloud.tencent.com/document/product/248/48859" target="_blank">Agent 安装</a>。</p>
@@ -1145,6 +1612,15 @@ namespace TencentCloud
                 UpgradeGrafanaDashboardOutcome UpgradeGrafanaDashboard(const Model::UpgradeGrafanaDashboardRequest &request);
                 void UpgradeGrafanaDashboardAsync(const Model::UpgradeGrafanaDashboardRequest& request, const UpgradeGrafanaDashboardAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UpgradeGrafanaDashboardOutcomeCallable UpgradeGrafanaDashboardCallable(const Model::UpgradeGrafanaDashboardRequest& request);
+
+                /**
+                 *升级 Grafana 实例
+                 * @param req UpgradeGrafanaInstanceRequest
+                 * @return UpgradeGrafanaInstanceOutcome
+                 */
+                UpgradeGrafanaInstanceOutcome UpgradeGrafanaInstance(const Model::UpgradeGrafanaInstanceRequest &request);
+                void UpgradeGrafanaInstanceAsync(const Model::UpgradeGrafanaInstanceRequest& request, const UpgradeGrafanaInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpgradeGrafanaInstanceOutcomeCallable UpgradeGrafanaInstanceCallable(const Model::UpgradeGrafanaInstanceRequest& request);
 
             };
         }

@@ -206,6 +206,60 @@ namespace TencentCloud
                      */
                     bool PublicLBHasBeenSet() const;
 
+                    /**
+                     * 获取集群的级别
+                     * @return ClusterLevel 集群的级别
+                     */
+                    std::string GetClusterLevel() const;
+
+                    /**
+                     * 设置集群的级别
+                     * @param ClusterLevel 集群的级别
+                     */
+                    void SetClusterLevel(const std::string& _clusterLevel);
+
+                    /**
+                     * 判断参数 ClusterLevel 是否已赋值
+                     * @return ClusterLevel 是否已赋值
+                     */
+                    bool ClusterLevelHasBeenSet() const;
+
+                    /**
+                     * 获取集群是否支持自动升配
+                     * @return AutoUpgradeClusterLevel 集群是否支持自动升配
+                     */
+                    bool GetAutoUpgradeClusterLevel() const;
+
+                    /**
+                     * 设置集群是否支持自动升配
+                     * @param AutoUpgradeClusterLevel 集群是否支持自动升配
+                     */
+                    void SetAutoUpgradeClusterLevel(const bool& _autoUpgradeClusterLevel);
+
+                    /**
+                     * 判断参数 AutoUpgradeClusterLevel 是否已赋值
+                     * @return AutoUpgradeClusterLevel 是否已赋值
+                     */
+                    bool AutoUpgradeClusterLevelHasBeenSet() const;
+
+                    /**
+                     * 获取集群计费方式
+                     * @return ChargeType 集群计费方式
+                     */
+                    std::string GetChargeType() const;
+
+                    /**
+                     * 设置集群计费方式
+                     * @param ChargeType 集群计费方式
+                     */
+                    void SetChargeType(const std::string& _chargeType);
+
+                    /**
+                     * 判断参数 ChargeType 是否已赋值
+                     * @return ChargeType 是否已赋值
+                     */
+                    bool ChargeTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -261,6 +315,24 @@ namespace TencentCloud
                      */
                     EdgeClusterPublicLB m_publicLB;
                     bool m_publicLBHasBeenSet;
+
+                    /**
+                     * 集群的级别
+                     */
+                    std::string m_clusterLevel;
+                    bool m_clusterLevelHasBeenSet;
+
+                    /**
+                     * 集群是否支持自动升配
+                     */
+                    bool m_autoUpgradeClusterLevel;
+                    bool m_autoUpgradeClusterLevelHasBeenSet;
+
+                    /**
+                     * 集群计费方式
+                     */
+                    std::string m_chargeType;
+                    bool m_chargeTypeHasBeenSet;
 
                 };
             }

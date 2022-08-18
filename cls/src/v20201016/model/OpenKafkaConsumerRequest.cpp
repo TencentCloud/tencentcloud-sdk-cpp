@@ -23,7 +23,8 @@ using namespace TencentCloud::Cls::V20201016::Model;
 using namespace std;
 
 OpenKafkaConsumerRequest::OpenKafkaConsumerRequest() :
-    m_fromTopicIdHasBeenSet(false)
+    m_fromTopicIdHasBeenSet(false),
+    m_compressionHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,14 @@ string OpenKafkaConsumerRequest::ToJsonString() const
         string key = "FromTopicId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_fromTopicId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_compressionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Compression";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_compression, allocator);
     }
 
 
@@ -64,6 +73,22 @@ void OpenKafkaConsumerRequest::SetFromTopicId(const string& _fromTopicId)
 bool OpenKafkaConsumerRequest::FromTopicIdHasBeenSet() const
 {
     return m_fromTopicIdHasBeenSet;
+}
+
+int64_t OpenKafkaConsumerRequest::GetCompression() const
+{
+    return m_compression;
+}
+
+void OpenKafkaConsumerRequest::SetCompression(const int64_t& _compression)
+{
+    m_compression = _compression;
+    m_compressionHasBeenSet = true;
+}
+
+bool OpenKafkaConsumerRequest::CompressionHasBeenSet() const
+{
+    return m_compressionHasBeenSet;
 }
 
 
