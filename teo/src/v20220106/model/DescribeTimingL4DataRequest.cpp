@@ -32,7 +32,8 @@ DescribeTimingL4DataRequest::DescribeTimingL4DataRequest() :
     m_intervalHasBeenSet(false),
     m_ruleIdHasBeenSet(false),
     m_filtersHasBeenSet(false),
-    m_proxyIdsHasBeenSet(false)
+    m_proxyIdsHasBeenSet(false),
+    m_areaHasBeenSet(false)
 {
 }
 
@@ -148,6 +149,14 @@ string DescribeTimingL4DataRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_areaHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Area";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_area.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -316,6 +325,22 @@ void DescribeTimingL4DataRequest::SetProxyIds(const vector<string>& _proxyIds)
 bool DescribeTimingL4DataRequest::ProxyIdsHasBeenSet() const
 {
     return m_proxyIdsHasBeenSet;
+}
+
+string DescribeTimingL4DataRequest::GetArea() const
+{
+    return m_area;
+}
+
+void DescribeTimingL4DataRequest::SetArea(const string& _area)
+{
+    m_area = _area;
+    m_areaHasBeenSet = true;
+}
+
+bool DescribeTimingL4DataRequest::AreaHasBeenSet() const
+{
+    return m_areaHasBeenSet;
 }
 
 

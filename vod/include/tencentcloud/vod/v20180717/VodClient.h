@@ -267,6 +267,8 @@
 #include <tencentcloud/vod/v20180717/model/PushUrlCacheResponse.h>
 #include <tencentcloud/vod/v20180717/model/RefreshUrlCacheRequest.h>
 #include <tencentcloud/vod/v20180717/model/RefreshUrlCacheResponse.h>
+#include <tencentcloud/vod/v20180717/model/RemoveWatermarkRequest.h>
+#include <tencentcloud/vod/v20180717/model/RemoveWatermarkResponse.h>
 #include <tencentcloud/vod/v20180717/model/ResetProcedureTemplateRequest.h>
 #include <tencentcloud/vod/v20180717/model/ResetProcedureTemplateResponse.h>
 #include <tencentcloud/vod/v20180717/model/RestoreMediaRequest.h>
@@ -661,6 +663,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RefreshUrlCacheResponse> RefreshUrlCacheOutcome;
                 typedef std::future<RefreshUrlCacheOutcome> RefreshUrlCacheOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::RefreshUrlCacheRequest&, RefreshUrlCacheOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RefreshUrlCacheAsyncHandler;
+                typedef Outcome<Core::Error, Model::RemoveWatermarkResponse> RemoveWatermarkOutcome;
+                typedef std::future<RemoveWatermarkOutcome> RemoveWatermarkOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::RemoveWatermarkRequest&, RemoveWatermarkOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RemoveWatermarkAsyncHandler;
                 typedef Outcome<Core::Error, Model::ResetProcedureTemplateResponse> ResetProcedureTemplateOutcome;
                 typedef std::future<ResetProcedureTemplateOutcome> ResetProcedureTemplateOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::ResetProcedureTemplateRequest&, ResetProcedureTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetProcedureTemplateAsyncHandler;
@@ -1987,6 +1992,15 @@ namespace TencentCloud
                 RefreshUrlCacheOutcomeCallable RefreshUrlCacheCallable(const Model::RefreshUrlCacheRequest& request);
 
                 /**
+                 *智能去除水印
+                 * @param req RemoveWatermarkRequest
+                 * @return RemoveWatermarkOutcome
+                 */
+                RemoveWatermarkOutcome RemoveWatermark(const Model::RemoveWatermarkRequest &request);
+                void RemoveWatermarkAsync(const Model::RemoveWatermarkRequest& request, const RemoveWatermarkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RemoveWatermarkOutcomeCallable RemoveWatermarkCallable(const Model::RemoveWatermarkRequest& request);
+
+                /**
                  *重新设置用户自定义任务流模板的内容。  
                  * @param req ResetProcedureTemplateRequest
                  * @return ResetProcedureTemplateOutcome
@@ -2071,14 +2085,14 @@ namespace TencentCloud
 - 剪辑是基于输入 m3u8 文件进行的，故而其最小剪辑精度为一个 ts 切片，无法实现秒级或者更为精确的剪辑精度。
 
 
-###剪辑固化
+### 剪辑固化
 所谓剪辑固化，是指将剪辑出来的视频保存成一个独立的视频（拥有独立的 FileId）。其生命周期不受原始输入视频影响（即使原始输入视频被删除，剪辑结果也不会受到任何影响）；也可以对其进行转码、微信发布等二次处理。
 
 举例如下：一场完整的足球比赛，原始视频可能长达 2 个小时，客户出于节省成本的目的可以对这个视频存储 2 个月，但对于剪辑的「精彩时刻」视频却可以指定存储更长时间，同时可以单独对「精彩时刻」视频进行转码、微信发布等额外的点播操作，这时候可以选择剪辑并且固化的方案。
 
 剪辑固化的优势在于其生命周期与原始输入视频相互独立，可以独立管理、长久保存。
 
-###剪辑不固化
+### 剪辑不固化
 所谓剪辑不固化，是指剪辑所得到的结果（m3u8 文件）与原始输入视频共享相同的 ts 分片，新生成的视频不是一个独立完整的视频（没有独立 FileId，只有播放 URL），其有效期与原始输入的完整视频有效期是一致的。一旦原始输入的视频被删除，也会导致该片段无法播放。
 
 剪辑不固化，由于其剪辑结果不是一个独立的视频，因而也不会纳入点播媒资视频管理（例如控制台的视频总数不会统计这一片段）中，也无法单独针对这个片段做转码、微信发布等任何视频处理操作。

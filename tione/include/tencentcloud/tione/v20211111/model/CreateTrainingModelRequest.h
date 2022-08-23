@@ -154,14 +154,14 @@ namespace TencentCloud
                     bool TrainingJobNameHasBeenSet() const;
 
                     /**
-                     * 获取算法框架 （PYTORCH/TENSORFLOW/DETECTRON2/PMML)
-                     * @return AlgorithmFramework 算法框架 （PYTORCH/TENSORFLOW/DETECTRON2/PMML)
+                     * 获取算法框架 （PYTORCH/TENSORFLOW/DETECTRON2/PMML/MMDETECTION)
+                     * @return AlgorithmFramework 算法框架 （PYTORCH/TENSORFLOW/DETECTRON2/PMML/MMDETECTION)
                      */
                     std::string GetAlgorithmFramework() const;
 
                     /**
-                     * 设置算法框架 （PYTORCH/TENSORFLOW/DETECTRON2/PMML)
-                     * @param AlgorithmFramework 算法框架 （PYTORCH/TENSORFLOW/DETECTRON2/PMML)
+                     * 设置算法框架 （PYTORCH/TENSORFLOW/DETECTRON2/PMML/MMDETECTION)
+                     * @param AlgorithmFramework 算法框架 （PYTORCH/TENSORFLOW/DETECTRON2/PMML/MMDETECTION)
                      */
                     void SetAlgorithmFramework(const std::string& _algorithmFramework);
 
@@ -352,14 +352,14 @@ namespace TencentCloud
                     bool TrainingPreferenceHasBeenSet() const;
 
                     /**
-                     * 获取自动学习任务ID
-                     * @return AutoMLTaskId 自动学习任务ID
+                     * 获取自动学习任务ID（已废弃）
+                     * @return AutoMLTaskId 自动学习任务ID（已废弃）
                      */
                     std::string GetAutoMLTaskId() const;
 
                     /**
-                     * 设置自动学习任务ID
-                     * @param AutoMLTaskId 自动学习任务ID
+                     * 设置自动学习任务ID（已废弃）
+                     * @param AutoMLTaskId 自动学习任务ID（已废弃）
                      */
                     void SetAutoMLTaskId(const std::string& _autoMLTaskId);
 
@@ -488,7 +488,7 @@ namespace TencentCloud
                     bool m_trainingJobNameHasBeenSet;
 
                     /**
-                     * 算法框架 （PYTORCH/TENSORFLOW/DETECTRON2/PMML)
+                     * 算法框架 （PYTORCH/TENSORFLOW/DETECTRON2/PMML/MMDETECTION)
                      */
                     std::string m_algorithmFramework;
                     bool m_algorithmFrameworkHasBeenSet;
@@ -554,7 +554,7 @@ namespace TencentCloud
                     bool m_trainingPreferenceHasBeenSet;
 
                     /**
-                     * 自动学习任务ID
+                     * 自动学习任务ID（已废弃）
                      */
                     std::string m_autoMLTaskId;
                     bool m_autoMLTaskIdHasBeenSet;

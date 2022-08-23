@@ -30,8 +30,12 @@ LiveRealTimeClipRequest::LiveRealTimeClipRequest() :
     m_isPersistenceHasBeenSet(false),
     m_expireTimeHasBeenSet(false),
     m_procedureHasBeenSet(false),
+    m_classIdHasBeenSet(false),
+    m_sourceContextHasBeenSet(false),
+    m_sessionContextHasBeenSet(false),
     m_metaDataRequiredHasBeenSet(false),
     m_hostHasBeenSet(false),
+    m_streamInfoHasBeenSet(false),
     m_extInfoHasBeenSet(false)
 {
 }
@@ -99,6 +103,30 @@ string LiveRealTimeClipRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_procedure.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_classIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClassId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_classId, allocator);
+    }
+
+    if (m_sourceContextHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SourceContext";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_sourceContext.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sessionContextHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SessionContext";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_sessionContext.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_metaDataRequiredHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -113,6 +141,15 @@ string LiveRealTimeClipRequest::ToJsonString() const
         string key = "Host";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_host.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_streamInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StreamInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_streamInfo.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_extInfoHasBeenSet)
@@ -243,6 +280,54 @@ bool LiveRealTimeClipRequest::ProcedureHasBeenSet() const
     return m_procedureHasBeenSet;
 }
 
+int64_t LiveRealTimeClipRequest::GetClassId() const
+{
+    return m_classId;
+}
+
+void LiveRealTimeClipRequest::SetClassId(const int64_t& _classId)
+{
+    m_classId = _classId;
+    m_classIdHasBeenSet = true;
+}
+
+bool LiveRealTimeClipRequest::ClassIdHasBeenSet() const
+{
+    return m_classIdHasBeenSet;
+}
+
+string LiveRealTimeClipRequest::GetSourceContext() const
+{
+    return m_sourceContext;
+}
+
+void LiveRealTimeClipRequest::SetSourceContext(const string& _sourceContext)
+{
+    m_sourceContext = _sourceContext;
+    m_sourceContextHasBeenSet = true;
+}
+
+bool LiveRealTimeClipRequest::SourceContextHasBeenSet() const
+{
+    return m_sourceContextHasBeenSet;
+}
+
+string LiveRealTimeClipRequest::GetSessionContext() const
+{
+    return m_sessionContext;
+}
+
+void LiveRealTimeClipRequest::SetSessionContext(const string& _sessionContext)
+{
+    m_sessionContext = _sessionContext;
+    m_sessionContextHasBeenSet = true;
+}
+
+bool LiveRealTimeClipRequest::SessionContextHasBeenSet() const
+{
+    return m_sessionContextHasBeenSet;
+}
+
 uint64_t LiveRealTimeClipRequest::GetMetaDataRequired() const
 {
     return m_metaDataRequired;
@@ -273,6 +358,22 @@ void LiveRealTimeClipRequest::SetHost(const string& _host)
 bool LiveRealTimeClipRequest::HostHasBeenSet() const
 {
     return m_hostHasBeenSet;
+}
+
+LiveRealTimeClipStreamInfo LiveRealTimeClipRequest::GetStreamInfo() const
+{
+    return m_streamInfo;
+}
+
+void LiveRealTimeClipRequest::SetStreamInfo(const LiveRealTimeClipStreamInfo& _streamInfo)
+{
+    m_streamInfo = _streamInfo;
+    m_streamInfoHasBeenSet = true;
+}
+
+bool LiveRealTimeClipRequest::StreamInfoHasBeenSet() const
+{
+    return m_streamInfoHasBeenSet;
 }
 
 string LiveRealTimeClipRequest::GetExtInfo() const

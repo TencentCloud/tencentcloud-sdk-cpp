@@ -38,7 +38,9 @@ DescribeVulInfoCvssResponse::DescribeVulInfoCvssResponse() :
     m_cveInfoHasBeenSet(false),
     m_cvssScoreFloatHasBeenSet(false),
     m_labelsHasBeenSet(false),
-    m_defenseAttackCountHasBeenSet(false)
+    m_defenseAttackCountHasBeenSet(false),
+    m_successFixCountHasBeenSet(false),
+    m_fixSwitchHasBeenSet(false)
 {
 }
 
@@ -226,6 +228,26 @@ CoreInternalOutcome DescribeVulInfoCvssResponse::Deserialize(const string &paylo
         m_defenseAttackCountHasBeenSet = true;
     }
 
+    if (rsp.HasMember("SuccessFixCount") && !rsp["SuccessFixCount"].IsNull())
+    {
+        if (!rsp["SuccessFixCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SuccessFixCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_successFixCount = rsp["SuccessFixCount"].GetUint64();
+        m_successFixCountHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("FixSwitch") && !rsp["FixSwitch"].IsNull())
+    {
+        if (!rsp["FixSwitch"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `FixSwitch` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_fixSwitch = rsp["FixSwitch"].GetInt64();
+        m_fixSwitchHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -354,6 +376,22 @@ string DescribeVulInfoCvssResponse::ToJsonString() const
         string key = "DefenseAttackCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_defenseAttackCount, allocator);
+    }
+
+    if (m_successFixCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SuccessFixCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_successFixCount, allocator);
+    }
+
+    if (m_fixSwitchHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FixSwitch";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_fixSwitch, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -516,6 +554,26 @@ uint64_t DescribeVulInfoCvssResponse::GetDefenseAttackCount() const
 bool DescribeVulInfoCvssResponse::DefenseAttackCountHasBeenSet() const
 {
     return m_defenseAttackCountHasBeenSet;
+}
+
+uint64_t DescribeVulInfoCvssResponse::GetSuccessFixCount() const
+{
+    return m_successFixCount;
+}
+
+bool DescribeVulInfoCvssResponse::SuccessFixCountHasBeenSet() const
+{
+    return m_successFixCountHasBeenSet;
+}
+
+int64_t DescribeVulInfoCvssResponse::GetFixSwitch() const
+{
+    return m_fixSwitch;
+}
+
+bool DescribeVulInfoCvssResponse::FixSwitchHasBeenSet() const
+{
+    return m_fixSwitchHasBeenSet;
 }
 
 

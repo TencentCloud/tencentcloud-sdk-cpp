@@ -27,7 +27,8 @@ DescribeAllNamespacesResponse::DescribeAllNamespacesResponse() :
     m_qceNamespacesHasBeenSet(false),
     m_customNamespacesHasBeenSet(false),
     m_qceNamespacesNewHasBeenSet(false),
-    m_customNamespacesNewHasBeenSet(false)
+    m_customNamespacesNewHasBeenSet(false),
+    m_commonNamespacesHasBeenSet(false)
 {
 }
 
@@ -139,6 +140,26 @@ CoreInternalOutcome DescribeAllNamespacesResponse::Deserialize(const string &pay
         m_customNamespacesNewHasBeenSet = true;
     }
 
+    if (rsp.HasMember("CommonNamespaces") && !rsp["CommonNamespaces"].IsNull())
+    {
+        if (!rsp["CommonNamespaces"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `CommonNamespaces` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["CommonNamespaces"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            CommonNamespaceNew item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_commonNamespaces.push_back(item);
+        }
+        m_commonNamespacesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -197,6 +218,21 @@ string DescribeAllNamespacesResponse::ToJsonString() const
         }
     }
 
+    if (m_commonNamespacesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CommonNamespaces";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_commonNamespaces.begin(); itr != m_commonNamespaces.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -247,6 +283,16 @@ vector<CommonNamespace> DescribeAllNamespacesResponse::GetCustomNamespacesNew() 
 bool DescribeAllNamespacesResponse::CustomNamespacesNewHasBeenSet() const
 {
     return m_customNamespacesNewHasBeenSet;
+}
+
+vector<CommonNamespaceNew> DescribeAllNamespacesResponse::GetCommonNamespaces() const
+{
+    return m_commonNamespaces;
+}
+
+bool DescribeAllNamespacesResponse::CommonNamespacesHasBeenSet() const
+{
+    return m_commonNamespacesHasBeenSet;
 }
 
 

@@ -25,7 +25,9 @@ using namespace std;
 ModifyEscapeEventStatusRequest::ModifyEscapeEventStatusRequest() :
     m_eventIdSetHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_remarkHasBeenSet(false)
+    m_remarkHasBeenSet(false),
+    m_imageIDsHasBeenSet(false),
+    m_eventTypeHasBeenSet(false)
 {
 }
 
@@ -63,6 +65,32 @@ string ModifyEscapeEventStatusRequest::ToJsonString() const
         string key = "Remark";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_remark.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_imageIDsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ImageIDs";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_imageIDs.begin(); itr != m_imageIDs.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_eventTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EventType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_eventType.begin(); itr != m_eventType.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -119,6 +147,38 @@ void ModifyEscapeEventStatusRequest::SetRemark(const string& _remark)
 bool ModifyEscapeEventStatusRequest::RemarkHasBeenSet() const
 {
     return m_remarkHasBeenSet;
+}
+
+vector<string> ModifyEscapeEventStatusRequest::GetImageIDs() const
+{
+    return m_imageIDs;
+}
+
+void ModifyEscapeEventStatusRequest::SetImageIDs(const vector<string>& _imageIDs)
+{
+    m_imageIDs = _imageIDs;
+    m_imageIDsHasBeenSet = true;
+}
+
+bool ModifyEscapeEventStatusRequest::ImageIDsHasBeenSet() const
+{
+    return m_imageIDsHasBeenSet;
+}
+
+vector<string> ModifyEscapeEventStatusRequest::GetEventType() const
+{
+    return m_eventType;
+}
+
+void ModifyEscapeEventStatusRequest::SetEventType(const vector<string>& _eventType)
+{
+    m_eventType = _eventType;
+    m_eventTypeHasBeenSet = true;
+}
+
+bool ModifyEscapeEventStatusRequest::EventTypeHasBeenSet() const
+{
+    return m_eventTypeHasBeenSet;
 }
 
 

@@ -345,6 +345,7 @@ set(cwp_public_header_model
   include/tencentcloud/cwp/v20180228/model/AssetWebLocationBaseInfo.h
   include/tencentcloud/cwp/v20180228/model/DescribeMalwareTimingScanSettingRequest.h
   include/tencentcloud/cwp/v20180228/model/BashRule.h
+  include/tencentcloud/cwp/v20180228/model/Tags.h
   include/tencentcloud/cwp/v20180228/model/CreateSearchLogResponse.h
   include/tencentcloud/cwp/v20180228/model/DescribeSecurityTrendsResponse.h
   include/tencentcloud/cwp/v20180228/model/AssetSystemPackageInfo.h
@@ -874,6 +875,7 @@ set(cwp_src
   src/v20180228/model/AssetWebLocationBaseInfo.cpp
   src/v20180228/model/DescribeMalwareTimingScanSettingRequest.cpp
   src/v20180228/model/BashRule.cpp
+  src/v20180228/model/Tags.cpp
   src/v20180228/model/CreateSearchLogResponse.cpp
   src/v20180228/model/DescribeSecurityTrendsResponse.cpp
   src/v20180228/model/AssetSystemPackageInfo.cpp

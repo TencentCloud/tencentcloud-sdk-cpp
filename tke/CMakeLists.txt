@@ -190,6 +190,7 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/NodePoolOption.h
   include/tencentcloud/tke/v20180525/model/DescribeEdgeClusterExtraArgsRequest.h
   include/tencentcloud/tke/v20180525/model/DescribePrometheusGlobalConfigResponse.h
+  include/tencentcloud/tke/v20180525/model/PrometheusAgentInfo.h
   include/tencentcloud/tke/v20180525/model/CreateEdgeCVMInstancesResponse.h
   include/tencentcloud/tke/v20180525/model/DescribeEdgeLogSwitchesResponse.h
   include/tencentcloud/tke/v20180525/model/CreatePrometheusClusterAgentResponse.h
@@ -662,6 +663,7 @@ set(tke_src
   src/v20180525/model/NodePoolOption.cpp
   src/v20180525/model/DescribeEdgeClusterExtraArgsRequest.cpp
   src/v20180525/model/DescribePrometheusGlobalConfigResponse.cpp
+  src/v20180525/model/PrometheusAgentInfo.cpp
   src/v20180525/model/CreateEdgeCVMInstancesResponse.cpp
   src/v20180525/model/DescribeEdgeLogSwitchesResponse.cpp
   src/v20180525/model/CreatePrometheusClusterAgentResponse.cpp

@@ -83,10 +83,12 @@ namespace TencentCloud
 l7Flow_outFlux: 访问流量
 l7Flow_request: 访问请求数
 l7Flow_outBandwidth: 访问带宽
+ l7Flow_hit_outFlux: 缓存命中流量
                      * @return MetricNames 指标列表，支持的指标
 l7Flow_outFlux: 访问流量
 l7Flow_request: 访问请求数
 l7Flow_outBandwidth: 访问带宽
+ l7Flow_hit_outFlux: 缓存命中流量
                      */
                     std::vector<std::string> GetMetricNames() const;
 
@@ -95,10 +97,12 @@ l7Flow_outBandwidth: 访问带宽
 l7Flow_outFlux: 访问流量
 l7Flow_request: 访问请求数
 l7Flow_outBandwidth: 访问带宽
+ l7Flow_hit_outFlux: 缓存命中流量
                      * @param MetricNames 指标列表，支持的指标
 l7Flow_outFlux: 访问流量
 l7Flow_request: 访问请求数
 l7Flow_outBandwidth: 访问带宽
+ l7Flow_hit_outFlux: 缓存命中流量
                      */
                     void SetMetricNames(const std::vector<std::string>& _metricNames);
 
@@ -180,6 +184,32 @@ l7Flow_outBandwidth: 访问带宽
                      */
                     bool ProtocolHasBeenSet() const;
 
+                    /**
+                     * 获取加速区域，取值有：
+<li>mainland：中国大陆境内;</li>
+<li>overseas：全球（不含中国大陆）。</li>
+                     * @return Area 加速区域，取值有：
+<li>mainland：中国大陆境内;</li>
+<li>overseas：全球（不含中国大陆）。</li>
+                     */
+                    std::string GetArea() const;
+
+                    /**
+                     * 设置加速区域，取值有：
+<li>mainland：中国大陆境内;</li>
+<li>overseas：全球（不含中国大陆）。</li>
+                     * @param Area 加速区域，取值有：
+<li>mainland：中国大陆境内;</li>
+<li>overseas：全球（不含中国大陆）。</li>
+                     */
+                    void SetArea(const std::string& _area);
+
+                    /**
+                     * 判断参数 Area 是否已赋值
+                     * @return Area 是否已赋值
+                     */
+                    bool AreaHasBeenSet() const;
+
                 private:
 
                     /**
@@ -199,6 +229,7 @@ l7Flow_outBandwidth: 访问带宽
 l7Flow_outFlux: 访问流量
 l7Flow_request: 访问请求数
 l7Flow_outBandwidth: 访问带宽
+ l7Flow_hit_outFlux: 缓存命中流量
                      */
                     std::vector<std::string> m_metricNames;
                     bool m_metricNamesHasBeenSet;
@@ -226,6 +257,14 @@ l7Flow_outBandwidth: 访问带宽
                      */
                     std::string m_protocol;
                     bool m_protocolHasBeenSet;
+
+                    /**
+                     * 加速区域，取值有：
+<li>mainland：中国大陆境内;</li>
+<li>overseas：全球（不含中国大陆）。</li>
+                     */
+                    std::string m_area;
+                    bool m_areaHasBeenSet;
 
                 };
             }

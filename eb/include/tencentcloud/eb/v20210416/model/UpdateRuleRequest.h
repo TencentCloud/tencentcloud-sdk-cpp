@@ -115,6 +115,24 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
+                     * 获取参考：[事件模式](https://cloud.tencent.com/document/product/1359/56084)
+                     * @return EventPattern 参考：[事件模式](https://cloud.tencent.com/document/product/1359/56084)
+                     */
+                    std::string GetEventPattern() const;
+
+                    /**
+                     * 设置参考：[事件模式](https://cloud.tencent.com/document/product/1359/56084)
+                     * @param EventPattern 参考：[事件模式](https://cloud.tencent.com/document/product/1359/56084)
+                     */
+                    void SetEventPattern(const std::string& _eventPattern);
+
+                    /**
+                     * 判断参数 EventPattern 是否已赋值
+                     * @return EventPattern 是否已赋值
+                     */
+                    bool EventPatternHasBeenSet() const;
+
+                    /**
                      * 获取事件规则名称，只能包含字母、数字、下划线、连字符，以字母开头，以数字或字母结尾，2~60个字符
                      * @return RuleName 事件规则名称，只能包含字母、数字、下划线、连字符，以字母开头，以数字或字母结尾，2~60个字符
                      */
@@ -157,6 +175,12 @@ namespace TencentCloud
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
+
+                    /**
+                     * 参考：[事件模式](https://cloud.tencent.com/document/product/1359/56084)
+                     */
+                    std::string m_eventPattern;
+                    bool m_eventPatternHasBeenSet;
 
                     /**
                      * 事件规则名称，只能包含字母、数字、下划线、连字符，以字母开头，以数字或字母结尾，2~60个字符

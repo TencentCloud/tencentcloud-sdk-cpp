@@ -37,7 +37,9 @@ ApplicationProxy::ApplicationProxy() :
     m_sessionPersistTimeHasBeenSet(false),
     m_proxyTypeHasBeenSet(false),
     m_hostIdHasBeenSet(false),
-    m_ipv6HasBeenSet(false)
+    m_ipv6HasBeenSet(false),
+    m_areaHasBeenSet(false),
+    m_banStatusHasBeenSet(false)
 {
 }
 
@@ -236,6 +238,26 @@ CoreInternalOutcome ApplicationProxy::Deserialize(const rapidjson::Value &value)
         m_ipv6HasBeenSet = true;
     }
 
+    if (value.HasMember("Area") && !value["Area"].IsNull())
+    {
+        if (!value["Area"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApplicationProxy.Area` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_area = string(value["Area"].GetString());
+        m_areaHasBeenSet = true;
+    }
+
+    if (value.HasMember("BanStatus") && !value["BanStatus"].IsNull())
+    {
+        if (!value["BanStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApplicationProxy.BanStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_banStatus = string(value["BanStatus"].GetString());
+        m_banStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -390,6 +412,22 @@ void ApplicationProxy::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_ipv6.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_areaHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Area";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_area.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_banStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BanStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_banStatus.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -665,5 +703,37 @@ void ApplicationProxy::SetIpv6(const Ipv6Access& _ipv6)
 bool ApplicationProxy::Ipv6HasBeenSet() const
 {
     return m_ipv6HasBeenSet;
+}
+
+string ApplicationProxy::GetArea() const
+{
+    return m_area;
+}
+
+void ApplicationProxy::SetArea(const string& _area)
+{
+    m_area = _area;
+    m_areaHasBeenSet = true;
+}
+
+bool ApplicationProxy::AreaHasBeenSet() const
+{
+    return m_areaHasBeenSet;
+}
+
+string ApplicationProxy::GetBanStatus() const
+{
+    return m_banStatus;
+}
+
+void ApplicationProxy::SetBanStatus(const string& _banStatus)
+{
+    m_banStatus = _banStatus;
+    m_banStatusHasBeenSet = true;
+}
+
+bool ApplicationProxy::BanStatusHasBeenSet() const
+{
+    return m_banStatusHasBeenSet;
 }
 

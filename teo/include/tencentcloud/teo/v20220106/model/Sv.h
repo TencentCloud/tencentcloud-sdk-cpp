@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取询价参数 key
-                     * @return Key 询价参数 key
+                     * 获取询价参数键。
+                     * @return Key 询价参数键。
                      */
                     std::string GetKey() const;
 
                     /**
-                     * 设置询价参数 key
-                     * @param Key 询价参数 key
+                     * 设置询价参数键。
+                     * @param Key 询价参数键。
                      */
                     void SetKey(const std::string& _key);
 
@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool KeyHasBeenSet() const;
 
                     /**
-                     * 获取询价参数 value
-                     * @return Value 询价参数 value
+                     * 获取询价参数值。
+                     * @return Value 询价参数值。
                      */
                     std::string GetValue() const;
 
                     /**
-                     * 设置询价参数 value
-                     * @param Value 询价参数 value
+                     * 设置询价参数值。
+                     * @param Value 询价参数值。
                      */
                     void SetValue(const std::string& _value);
 
@@ -85,13 +85,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 询价参数 key
+                     * 询价参数键。
                      */
                     std::string m_key;
                     bool m_keyHasBeenSet;
 
                     /**
-                     * 询价参数 value
+                     * 询价参数值。
                      */
                     std::string m_value;
                     bool m_valueHasBeenSet;

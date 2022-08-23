@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cwp/v20180228/model/MachineTag.h>
 #include <tencentcloud/cwp/v20180228/model/RegionInfo.h>
+#include <tencentcloud/cwp/v20180228/model/Tags.h>
 
 
 namespace TencentCloud
@@ -507,14 +508,14 @@ namespace TencentCloud
                     bool KernelVersionHasBeenSet() const;
 
                     /**
-                     * 获取防护版本 BASIC_VERSION 基础版, PRO_VERSION 专业版 Flagship 旗舰版.
-                     * @return ProtectType 防护版本 BASIC_VERSION 基础版, PRO_VERSION 专业版 Flagship 旗舰版.
+                     * 获取防护版本：BASIC_VERSION 基础版， PRO_VERSION 专业版，Flagship 旗舰版，GENERAL_DISCOUNT 普惠版
+                     * @return ProtectType 防护版本：BASIC_VERSION 基础版， PRO_VERSION 专业版，Flagship 旗舰版，GENERAL_DISCOUNT 普惠版
                      */
                     std::string GetProtectType() const;
 
                     /**
-                     * 设置防护版本 BASIC_VERSION 基础版, PRO_VERSION 专业版 Flagship 旗舰版.
-                     * @param ProtectType 防护版本 BASIC_VERSION 基础版, PRO_VERSION 专业版 Flagship 旗舰版.
+                     * 设置防护版本：BASIC_VERSION 基础版， PRO_VERSION 专业版，Flagship 旗舰版，GENERAL_DISCOUNT 普惠版
+                     * @param ProtectType 防护版本：BASIC_VERSION 基础版， PRO_VERSION 专业版，Flagship 旗舰版，GENERAL_DISCOUNT 普惠版
                      */
                     void SetProtectType(const std::string& _protectType);
 
@@ -523,6 +524,28 @@ namespace TencentCloud
                      * @return ProtectType 是否已赋值
                      */
                     bool ProtectTypeHasBeenSet() const;
+
+                    /**
+                     * 获取云标签信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CloudTags 云标签信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Tags> GetCloudTags() const;
+
+                    /**
+                     * 设置云标签信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param CloudTags 云标签信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCloudTags(const std::vector<Tags>& _cloudTags);
+
+                    /**
+                     * 判断参数 CloudTags 是否已赋值
+                     * @return CloudTags 是否已赋值
+                     */
+                    bool CloudTagsHasBeenSet() const;
 
                 private:
 
@@ -676,10 +699,17 @@ namespace TencentCloud
                     bool m_kernelVersionHasBeenSet;
 
                     /**
-                     * 防护版本 BASIC_VERSION 基础版, PRO_VERSION 专业版 Flagship 旗舰版.
+                     * 防护版本：BASIC_VERSION 基础版， PRO_VERSION 专业版，Flagship 旗舰版，GENERAL_DISCOUNT 普惠版
                      */
                     std::string m_protectType;
                     bool m_protectTypeHasBeenSet;
+
+                    /**
+                     * 云标签信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Tags> m_cloudTags;
+                    bool m_cloudTagsHasBeenSet;
 
                 };
             }

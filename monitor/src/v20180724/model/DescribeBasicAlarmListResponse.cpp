@@ -25,7 +25,8 @@ using namespace std;
 
 DescribeBasicAlarmListResponse::DescribeBasicAlarmListResponse() :
     m_alarmsHasBeenSet(false),
-    m_totalHasBeenSet(false)
+    m_totalHasBeenSet(false),
+    m_warningHasBeenSet(false)
 {
 }
 
@@ -93,6 +94,16 @@ CoreInternalOutcome DescribeBasicAlarmListResponse::Deserialize(const string &pa
         m_totalHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Warning") && !rsp["Warning"].IsNull())
+    {
+        if (!rsp["Warning"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Warning` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_warning = string(rsp["Warning"].GetString());
+        m_warningHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -126,6 +137,14 @@ string DescribeBasicAlarmListResponse::ToJsonString() const
         value.AddMember(iKey, m_total, allocator);
     }
 
+    if (m_warningHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Warning";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_warning.c_str(), allocator).Move(), allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -156,6 +175,16 @@ int64_t DescribeBasicAlarmListResponse::GetTotal() const
 bool DescribeBasicAlarmListResponse::TotalHasBeenSet() const
 {
     return m_totalHasBeenSet;
+}
+
+string DescribeBasicAlarmListResponse::GetWarning() const
+{
+    return m_warning;
+}
+
+bool DescribeBasicAlarmListResponse::WarningHasBeenSet() const
+{
+    return m_warningHasBeenSet;
 }
 
 

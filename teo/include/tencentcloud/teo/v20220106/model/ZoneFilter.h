@@ -48,29 +48,29 @@ namespace TencentCloud
 
                     /**
                      * 获取过滤字段名，支持的列表如下：
-- name: 站点名。
-- status: 站点状态
-- tagKey: 标签键
-- tagValue: 标签值
+<li> name：站点名；</li>
+<li> status：站点状态；</li>
+<li> tagKey：标签键；</li>
+<li> tagValue: 标签值。</li>
                      * @return Name 过滤字段名，支持的列表如下：
-- name: 站点名。
-- status: 站点状态
-- tagKey: 标签键
-- tagValue: 标签值
+<li> name：站点名；</li>
+<li> status：站点状态；</li>
+<li> tagKey：标签键；</li>
+<li> tagValue: 标签值。</li>
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置过滤字段名，支持的列表如下：
-- name: 站点名。
-- status: 站点状态
-- tagKey: 标签键
-- tagValue: 标签值
+<li> name：站点名；</li>
+<li> status：站点状态；</li>
+<li> tagKey：标签键；</li>
+<li> tagValue: 标签值。</li>
                      * @param Name 过滤字段名，支持的列表如下：
-- name: 站点名。
-- status: 站点状态
-- tagKey: 标签键
-- tagValue: 标签值
+<li> name：站点名；</li>
+<li> status：站点状态；</li>
+<li> tagKey：标签键；</li>
+<li> tagValue: 标签值。</li>
                      */
                     void SetName(const std::string& _name);
 
@@ -81,14 +81,14 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取过滤字段值
-                     * @return Values 过滤字段值
+                     * 获取过滤字段值。
+                     * @return Values 过滤字段值。
                      */
                     std::vector<std::string> GetValues() const;
 
                     /**
-                     * 设置过滤字段值
-                     * @param Values 过滤字段值
+                     * 设置过滤字段值。
+                     * @param Values 过滤字段值。
                      */
                     void SetValues(const std::vector<std::string>& _values);
 
@@ -99,14 +99,14 @@ namespace TencentCloud
                     bool ValuesHasBeenSet() const;
 
                     /**
-                     * 获取是否启用模糊查询，仅支持过滤字段名为name。模糊查询时，Values长度最大为1
-                     * @return Fuzzy 是否启用模糊查询，仅支持过滤字段名为name。模糊查询时，Values长度最大为1
+                     * 获取是否启用模糊查询，仅支持过滤字段名为name。模糊查询时，Values长度最大为1。默认为false。
+                     * @return Fuzzy 是否启用模糊查询，仅支持过滤字段名为name。模糊查询时，Values长度最大为1。默认为false。
                      */
                     bool GetFuzzy() const;
 
                     /**
-                     * 设置是否启用模糊查询，仅支持过滤字段名为name。模糊查询时，Values长度最大为1
-                     * @param Fuzzy 是否启用模糊查询，仅支持过滤字段名为name。模糊查询时，Values长度最大为1
+                     * 设置是否启用模糊查询，仅支持过滤字段名为name。模糊查询时，Values长度最大为1。默认为false。
+                     * @param Fuzzy 是否启用模糊查询，仅支持过滤字段名为name。模糊查询时，Values长度最大为1。默认为false。
                      */
                     void SetFuzzy(const bool& _fuzzy);
 
@@ -120,22 +120,22 @@ namespace TencentCloud
 
                     /**
                      * 过滤字段名，支持的列表如下：
-- name: 站点名。
-- status: 站点状态
-- tagKey: 标签键
-- tagValue: 标签值
+<li> name：站点名；</li>
+<li> status：站点状态；</li>
+<li> tagKey：标签键；</li>
+<li> tagValue: 标签值。</li>
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 过滤字段值
+                     * 过滤字段值。
                      */
                     std::vector<std::string> m_values;
                     bool m_valuesHasBeenSet;
 
                     /**
-                     * 是否启用模糊查询，仅支持过滤字段名为name。模糊查询时，Values长度最大为1
+                     * 是否启用模糊查询，仅支持过滤字段名为name。模糊查询时，Values长度最大为1。默认为false。
                      */
                     bool m_fuzzy;
                     bool m_fuzzyHasBeenSet;

@@ -40,7 +40,7 @@ set(monitor_public_header_model
   include/tencentcloud/monitor/v20180724/model/DescribeAlertRulesRequest.h
   include/tencentcloud/monitor/v20180724/model/DescribePrometheusInstancesResponse.h
   include/tencentcloud/monitor/v20180724/model/DescribePolicyGroupListResponse.h
-  include/tencentcloud/monitor/v20180724/model/UpdateGrafanaWhiteListRequest.h
+  include/tencentcloud/monitor/v20180724/model/PrometheusAgent.h
   include/tencentcloud/monitor/v20180724/model/BindingPolicyObjectRequest.h
   include/tencentcloud/monitor/v20180724/model/CreateServiceDiscoveryResponse.h
   include/tencentcloud/monitor/v20180724/model/UpdateGrafanaWhiteListResponse.h
@@ -61,7 +61,7 @@ set(monitor_public_header_model
   include/tencentcloud/monitor/v20180724/model/DescribeAlarmEventsResponse.h
   include/tencentcloud/monitor/v20180724/model/DescribeProductEventListDimensions.h
   include/tencentcloud/monitor/v20180724/model/DescribePolicyGroupInfoResponse.h
-  include/tencentcloud/monitor/v20180724/model/PrometheusAgent.h
+  include/tencentcloud/monitor/v20180724/model/Operator.h
   include/tencentcloud/monitor/v20180724/model/ModifyAlarmPolicyNoticeRequest.h
   include/tencentcloud/monitor/v20180724/model/DeleteAlarmPolicyRequest.h
   include/tencentcloud/monitor/v20180724/model/UpdatePrometheusAgentStatusResponse.h
@@ -74,11 +74,12 @@ set(monitor_public_header_model
   include/tencentcloud/monitor/v20180724/model/CreatePolicyGroupResponse.h
   include/tencentcloud/monitor/v20180724/model/ModifyAlarmPolicyTasksResponse.h
   include/tencentcloud/monitor/v20180724/model/DescribeBaseMetricsResponse.h
-  include/tencentcloud/monitor/v20180724/model/PrometheusScrapeJob.h
+  include/tencentcloud/monitor/v20180724/model/DimensionNew.h
   include/tencentcloud/monitor/v20180724/model/CreatePrometheusMultiTenantInstancePostPayModeRequest.h
   include/tencentcloud/monitor/v20180724/model/MetricDataPoint.h
   include/tencentcloud/monitor/v20180724/model/DescribePolicyConditionListConfigManualContinueTime.h
   include/tencentcloud/monitor/v20180724/model/DeleteAlertRulesResponse.h
+  include/tencentcloud/monitor/v20180724/model/CommonNamespaceNew.h
   include/tencentcloud/monitor/v20180724/model/DeleteGrafanaNotificationChannelResponse.h
   include/tencentcloud/monitor/v20180724/model/GetMonitorDataRequest.h
   include/tencentcloud/monitor/v20180724/model/CreateSSOAccountResponse.h
@@ -176,6 +177,7 @@ set(monitor_public_header_model
   include/tencentcloud/monitor/v20180724/model/UpdateExporterIntegrationResponse.h
   include/tencentcloud/monitor/v20180724/model/ModifyAlarmPolicyConditionRequest.h
   include/tencentcloud/monitor/v20180724/model/DeleteSSOAccountRequest.h
+  include/tencentcloud/monitor/v20180724/model/PrometheusScrapeJob.h
   include/tencentcloud/monitor/v20180724/model/CreateGrafanaIntegrationResponse.h
   include/tencentcloud/monitor/v20180724/model/BindPrometheusManagedGrafanaRequest.h
   include/tencentcloud/monitor/v20180724/model/ResumeGrafanaInstanceResponse.h
@@ -318,6 +320,7 @@ set(monitor_public_header_model
   include/tencentcloud/monitor/v20180724/model/DescribeDNSConfigRequest.h
   include/tencentcloud/monitor/v20180724/model/UpdateDNSConfigResponse.h
   include/tencentcloud/monitor/v20180724/model/DescribePolicyConditionListCondition.h
+  include/tencentcloud/monitor/v20180724/model/UpdateGrafanaWhiteListRequest.h
   include/tencentcloud/monitor/v20180724/model/PrometheusInstancesItem.h
   include/tencentcloud/monitor/v20180724/model/DeleteServiceDiscoveryRequest.h
   include/tencentcloud/monitor/v20180724/model/UpdateSSOAccountResponse.h
@@ -357,7 +360,7 @@ set(monitor_src
   src/v20180724/model/DescribeAlertRulesRequest.cpp
   src/v20180724/model/DescribePrometheusInstancesResponse.cpp
   src/v20180724/model/DescribePolicyGroupListResponse.cpp
-  src/v20180724/model/UpdateGrafanaWhiteListRequest.cpp
+  src/v20180724/model/PrometheusAgent.cpp
   src/v20180724/model/BindingPolicyObjectRequest.cpp
   src/v20180724/model/CreateServiceDiscoveryResponse.cpp
   src/v20180724/model/UpdateGrafanaWhiteListResponse.cpp
@@ -378,7 +381,7 @@ set(monitor_src
   src/v20180724/model/DescribeAlarmEventsResponse.cpp
   src/v20180724/model/DescribeProductEventListDimensions.cpp
   src/v20180724/model/DescribePolicyGroupInfoResponse.cpp
-  src/v20180724/model/PrometheusAgent.cpp
+  src/v20180724/model/Operator.cpp
   src/v20180724/model/ModifyAlarmPolicyNoticeRequest.cpp
   src/v20180724/model/DeleteAlarmPolicyRequest.cpp
   src/v20180724/model/UpdatePrometheusAgentStatusResponse.cpp
@@ -391,11 +394,12 @@ set(monitor_src
   src/v20180724/model/CreatePolicyGroupResponse.cpp
   src/v20180724/model/ModifyAlarmPolicyTasksResponse.cpp
   src/v20180724/model/DescribeBaseMetricsResponse.cpp
-  src/v20180724/model/PrometheusScrapeJob.cpp
+  src/v20180724/model/DimensionNew.cpp
   src/v20180724/model/CreatePrometheusMultiTenantInstancePostPayModeRequest.cpp
   src/v20180724/model/MetricDataPoint.cpp
   src/v20180724/model/DescribePolicyConditionListConfigManualContinueTime.cpp
   src/v20180724/model/DeleteAlertRulesResponse.cpp
+  src/v20180724/model/CommonNamespaceNew.cpp
   src/v20180724/model/DeleteGrafanaNotificationChannelResponse.cpp
   src/v20180724/model/GetMonitorDataRequest.cpp
   src/v20180724/model/CreateSSOAccountResponse.cpp
@@ -493,6 +497,7 @@ set(monitor_src
   src/v20180724/model/UpdateExporterIntegrationResponse.cpp
   src/v20180724/model/ModifyAlarmPolicyConditionRequest.cpp
   src/v20180724/model/DeleteSSOAccountRequest.cpp
+  src/v20180724/model/PrometheusScrapeJob.cpp
   src/v20180724/model/CreateGrafanaIntegrationResponse.cpp
   src/v20180724/model/BindPrometheusManagedGrafanaRequest.cpp
   src/v20180724/model/ResumeGrafanaInstanceResponse.cpp
@@ -635,6 +640,7 @@ set(monitor_src
   src/v20180724/model/DescribeDNSConfigRequest.cpp
   src/v20180724/model/UpdateDNSConfigResponse.cpp
   src/v20180724/model/DescribePolicyConditionListCondition.cpp
+  src/v20180724/model/UpdateGrafanaWhiteListRequest.cpp
   src/v20180724/model/PrometheusInstancesItem.cpp
   src/v20180724/model/DeleteServiceDiscoveryRequest.cpp
   src/v20180724/model/UpdateSSOAccountResponse.cpp

@@ -29,7 +29,8 @@ DescribeDDosMajorAttackEventRequest::DescribeDDosMajorAttackEventRequest() :
     m_pageNoHasBeenSet(false),
     m_policyIdsHasBeenSet(false),
     m_protocolTypeHasBeenSet(false),
-    m_zoneIdsHasBeenSet(false)
+    m_zoneIdsHasBeenSet(false),
+    m_areaHasBeenSet(false)
 {
 }
 
@@ -104,6 +105,14 @@ string DescribeDDosMajorAttackEventRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_areaHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Area";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_area.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -224,6 +233,22 @@ void DescribeDDosMajorAttackEventRequest::SetZoneIds(const vector<string>& _zone
 bool DescribeDDosMajorAttackEventRequest::ZoneIdsHasBeenSet() const
 {
     return m_zoneIdsHasBeenSet;
+}
+
+string DescribeDDosMajorAttackEventRequest::GetArea() const
+{
+    return m_area;
+}
+
+void DescribeDDosMajorAttackEventRequest::SetArea(const string& _area)
+{
+    m_area = _area;
+    m_areaHasBeenSet = true;
+}
+
+bool DescribeDDosMajorAttackEventRequest::AreaHasBeenSet() const
+{
+    return m_areaHasBeenSet;
 }
 
 

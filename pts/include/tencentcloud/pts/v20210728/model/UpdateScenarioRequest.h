@@ -28,6 +28,7 @@
 #include <tencentcloud/pts/v20210728/model/FileInfo.h>
 #include <tencentcloud/pts/v20210728/model/SLAPolicy.h>
 #include <tencentcloud/pts/v20210728/model/DomainNameConfig.h>
+#include <tencentcloud/pts/v20210728/model/Notification.h>
 
 
 namespace TencentCloud
@@ -391,6 +392,24 @@ namespace TencentCloud
                      */
                     bool DomainNameConfigHasBeenSet() const;
 
+                    /**
+                     * 获取WebHook请求配置
+                     * @return NotificationHooks WebHook请求配置
+                     */
+                    std::vector<Notification> GetNotificationHooks() const;
+
+                    /**
+                     * 设置WebHook请求配置
+                     * @param NotificationHooks WebHook请求配置
+                     */
+                    void SetNotificationHooks(const std::vector<Notification>& _notificationHooks);
+
+                    /**
+                     * 判断参数 NotificationHooks 是否已赋值
+                     * @return NotificationHooks 是否已赋值
+                     */
+                    bool NotificationHooksHasBeenSet() const;
+
                 private:
 
                     /**
@@ -506,6 +525,12 @@ namespace TencentCloud
                      */
                     DomainNameConfig m_domainNameConfig;
                     bool m_domainNameConfigHasBeenSet;
+
+                    /**
+                     * WebHook请求配置
+                     */
+                    std::vector<Notification> m_notificationHooks;
+                    bool m_notificationHooksHasBeenSet;
 
                 };
             }

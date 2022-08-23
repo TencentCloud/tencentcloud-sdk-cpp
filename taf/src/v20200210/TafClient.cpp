@@ -40,49 +40,6 @@ TafClient::TafClient(const Credential &credential, const string &region, const C
 }
 
 
-TafClient::DetectFraudKOLOutcome TafClient::DetectFraudKOL(const DetectFraudKOLRequest &request)
-{
-    auto outcome = MakeRequest(request, "DetectFraudKOL");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DetectFraudKOLResponse rsp = DetectFraudKOLResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DetectFraudKOLOutcome(rsp);
-        else
-            return DetectFraudKOLOutcome(o.GetError());
-    }
-    else
-    {
-        return DetectFraudKOLOutcome(outcome.GetError());
-    }
-}
-
-void TafClient::DetectFraudKOLAsync(const DetectFraudKOLRequest& request, const DetectFraudKOLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DetectFraudKOL(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-TafClient::DetectFraudKOLOutcomeCallable TafClient::DetectFraudKOLCallable(const DetectFraudKOLRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DetectFraudKOLOutcome()>>(
-        [this, request]()
-        {
-            return this->DetectFraudKOL(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 TafClient::RecognizeCustomizedAudienceOutcome TafClient::RecognizeCustomizedAudience(const RecognizeCustomizedAudienceRequest &request)
 {
     auto outcome = MakeRequest(request, "RecognizeCustomizedAudience");

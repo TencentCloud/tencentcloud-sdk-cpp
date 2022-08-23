@@ -30,7 +30,8 @@ ModifyInstanceAttributesRequest::ModifyInstanceAttributesRequest() :
     m_dynamicRetentionConfigHasBeenSet(false),
     m_rebalanceTimeHasBeenSet(false),
     m_publicNetworkHasBeenSet(false),
-    m_dynamicDiskConfigHasBeenSet(false)
+    m_dynamicDiskConfigHasBeenSet(false),
+    m_maxMessageByteHasBeenSet(false)
 {
 }
 
@@ -106,6 +107,14 @@ string ModifyInstanceAttributesRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_dynamicDiskConfig.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_maxMessageByteHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxMessageByte";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_maxMessageByte, allocator);
     }
 
 
@@ -242,6 +251,22 @@ void ModifyInstanceAttributesRequest::SetDynamicDiskConfig(const DynamicDiskConf
 bool ModifyInstanceAttributesRequest::DynamicDiskConfigHasBeenSet() const
 {
     return m_dynamicDiskConfigHasBeenSet;
+}
+
+uint64_t ModifyInstanceAttributesRequest::GetMaxMessageByte() const
+{
+    return m_maxMessageByte;
+}
+
+void ModifyInstanceAttributesRequest::SetMaxMessageByte(const uint64_t& _maxMessageByte)
+{
+    m_maxMessageByte = _maxMessageByte;
+    m_maxMessageByteHasBeenSet = true;
+}
+
+bool ModifyInstanceAttributesRequest::MaxMessageByteHasBeenSet() const
+{
+    return m_maxMessageByteHasBeenSet;
 }
 
 

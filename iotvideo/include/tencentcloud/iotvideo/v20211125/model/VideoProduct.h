@@ -266,6 +266,28 @@ namespace TencentCloud
                      */
                     bool NetTypeHasBeenSet() const;
 
+                    /**
+                     * 获取产品品类,113:摄像头,567:儿童手表,595:可视对讲门锁
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CategoryId 产品品类,113:摄像头,567:儿童手表,595:可视对讲门锁
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetCategoryId() const;
+
+                    /**
+                     * 设置产品品类,113:摄像头,567:儿童手表,595:可视对讲门锁
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param CategoryId 产品品类,113:摄像头,567:儿童手表,595:可视对讲门锁
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCategoryId(const uint64_t& _categoryId);
+
+                    /**
+                     * 判断参数 CategoryId 是否已赋值
+                     * @return CategoryId 是否已赋值
+                     */
+                    bool CategoryIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -340,6 +362,13 @@ namespace TencentCloud
                      */
                     std::string m_netType;
                     bool m_netTypeHasBeenSet;
+
+                    /**
+                     * 产品品类,113:摄像头,567:儿童手表,595:可视对讲门锁
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_categoryId;
+                    bool m_categoryIdHasBeenSet;
 
                 };
             }

@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/IdlFileInfo.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/ErrorInfo.h>
+#include <tencentcloud/tcaplusdb/v20190823/model/SyncTableInfo.h>
 
 
 namespace TencentCloud
@@ -664,6 +665,28 @@ namespace TencentCloud
                      */
                     bool TxhBackupExpireDayHasBeenSet() const;
 
+                    /**
+                     * 获取表格的缓写信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SyncTableInfo 表格的缓写信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    SyncTableInfo GetSyncTableInfo() const;
+
+                    /**
+                     * 设置表格的缓写信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SyncTableInfo 表格的缓写信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSyncTableInfo(const SyncTableInfo& _syncTableInfo);
+
+                    /**
+                     * 判断参数 SyncTableInfo 是否已赋值
+                     * @return SyncTableInfo 是否已赋值
+                     */
+                    bool SyncTableInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -861,6 +884,13 @@ namespace TencentCloud
                      */
                     uint64_t m_txhBackupExpireDay;
                     bool m_txhBackupExpireDayHasBeenSet;
+
+                    /**
+                     * 表格的缓写信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    SyncTableInfo m_syncTableInfo;
+                    bool m_syncTableInfoHasBeenSet;
 
                 };
             }

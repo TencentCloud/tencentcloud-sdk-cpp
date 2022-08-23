@@ -48,7 +48,8 @@ TableInfoNew::TableInfoNew() :
     m_sortFieldNumHasBeenSet(false),
     m_sortRuleHasBeenSet(false),
     m_dbClusterInfoStructHasBeenSet(false),
-    m_txhBackupExpireDayHasBeenSet(false)
+    m_txhBackupExpireDayHasBeenSet(false),
+    m_syncTableInfoHasBeenSet(false)
 {
 }
 
@@ -354,6 +355,23 @@ CoreInternalOutcome TableInfoNew::Deserialize(const rapidjson::Value &value)
         m_txhBackupExpireDayHasBeenSet = true;
     }
 
+    if (value.HasMember("SyncTableInfo") && !value["SyncTableInfo"].IsNull())
+    {
+        if (!value["SyncTableInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `TableInfoNew.SyncTableInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_syncTableInfo.Deserialize(value["SyncTableInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_syncTableInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -591,6 +609,15 @@ void TableInfoNew::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "TxhBackupExpireDay";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_txhBackupExpireDay, allocator);
+    }
+
+    if (m_syncTableInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SyncTableInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_syncTableInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -1042,5 +1069,21 @@ void TableInfoNew::SetTxhBackupExpireDay(const uint64_t& _txhBackupExpireDay)
 bool TableInfoNew::TxhBackupExpireDayHasBeenSet() const
 {
     return m_txhBackupExpireDayHasBeenSet;
+}
+
+SyncTableInfo TableInfoNew::GetSyncTableInfo() const
+{
+    return m_syncTableInfo;
+}
+
+void TableInfoNew::SetSyncTableInfo(const SyncTableInfo& _syncTableInfo)
+{
+    m_syncTableInfo = _syncTableInfo;
+    m_syncTableInfoHasBeenSet = true;
+}
+
+bool TableInfoNew::SyncTableInfoHasBeenSet() const
+{
+    return m_syncTableInfoHasBeenSet;
 }
 

@@ -27,7 +27,8 @@ TransformsParam::TransformsParam() :
     m_failureParamHasBeenSet(false),
     m_resultHasBeenSet(false),
     m_sourceTypeHasBeenSet(false),
-    m_outputFormatHasBeenSet(false)
+    m_outputFormatHasBeenSet(false),
+    m_rowParamHasBeenSet(false)
 {
 }
 
@@ -133,6 +134,23 @@ CoreInternalOutcome TransformsParam::Deserialize(const rapidjson::Value &value)
         m_outputFormatHasBeenSet = true;
     }
 
+    if (value.HasMember("RowParam") && !value["RowParam"].IsNull())
+    {
+        if (!value["RowParam"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `TransformsParam.RowParam` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_rowParam.Deserialize(value["RowParam"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_rowParamHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -209,6 +227,15 @@ void TransformsParam::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "OutputFormat";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_outputFormat.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_rowParamHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RowParam";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_rowParam.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -324,5 +351,21 @@ void TransformsParam::SetOutputFormat(const string& _outputFormat)
 bool TransformsParam::OutputFormatHasBeenSet() const
 {
     return m_outputFormatHasBeenSet;
+}
+
+RowParam TransformsParam::GetRowParam() const
+{
+    return m_rowParam;
+}
+
+void TransformsParam::SetRowParam(const RowParam& _rowParam)
+{
+    m_rowParam = _rowParam;
+    m_rowParamHasBeenSet = true;
+}
+
+bool TransformsParam::RowParamHasBeenSet() const
+{
+    return m_rowParamHasBeenSet;
 }
 

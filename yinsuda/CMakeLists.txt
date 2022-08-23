@@ -19,44 +19,54 @@ set(yinsuda_public_header
   )
 
 set(yinsuda_public_header_model
-  include/tencentcloud/yinsuda/v20220527/model/DescribeKTVPlaylistsResponse.h
-  include/tencentcloud/yinsuda/v20220527/model/SearchKTVMusicsRequest.h
-  include/tencentcloud/yinsuda/v20220527/model/DescribeKTVPlaylistsRequest.h
   include/tencentcloud/yinsuda/v20220527/model/DescribeKTVSuggestionsResponse.h
-  include/tencentcloud/yinsuda/v20220527/model/DescribeKTVPlaylistDetailResponse.h
-  include/tencentcloud/yinsuda/v20220527/model/KTVPlaylistBaseInfo.h
+  include/tencentcloud/yinsuda/v20220527/model/ChorusClip.h
   include/tencentcloud/yinsuda/v20220527/model/MusicAlbumCoverInfo.h
-  include/tencentcloud/yinsuda/v20220527/model/KTVMusicBaseInfo.h
   include/tencentcloud/yinsuda/v20220527/model/KTVSuggestionInfo.h
   include/tencentcloud/yinsuda/v20220527/model/DescribeKTVPlaylistDetailRequest.h
-  include/tencentcloud/yinsuda/v20220527/model/MusicAlbumInfo.h
-  include/tencentcloud/yinsuda/v20220527/model/KTVMusicDetailInfo.h
-  include/tencentcloud/yinsuda/v20220527/model/ChorusClip.h
-  include/tencentcloud/yinsuda/v20220527/model/SearchKTVMusicsResponse.h
   include/tencentcloud/yinsuda/v20220527/model/DescribeKTVSuggestionsRequest.h
-  include/tencentcloud/yinsuda/v20220527/model/BatchDescribeKTVMusicDetailsResponse.h
+  include/tencentcloud/yinsuda/v20220527/model/DescribeKTVMatchMusicsRequest.h
+  include/tencentcloud/yinsuda/v20220527/model/DescribeKTVPlaylistsResponse.h
+  include/tencentcloud/yinsuda/v20220527/model/DescribeKTVPlaylistsRequest.h
+  include/tencentcloud/yinsuda/v20220527/model/DescribeKTVPlaylistDetailResponse.h
+  include/tencentcloud/yinsuda/v20220527/model/KTVMatchMusic.h
+  include/tencentcloud/yinsuda/v20220527/model/SearchKTVMusicsResponse.h
   include/tencentcloud/yinsuda/v20220527/model/BatchDescribeKTVMusicDetailsRequest.h
+  include/tencentcloud/yinsuda/v20220527/model/KTVMusicDetailInfo.h
+  include/tencentcloud/yinsuda/v20220527/model/MusicAlbumInfo.h
+  include/tencentcloud/yinsuda/v20220527/model/DescribeKTVMatchMusicsResponse.h
+  include/tencentcloud/yinsuda/v20220527/model/KTVMatchRuleMusicInfo.h
+  include/tencentcloud/yinsuda/v20220527/model/BatchDescribeKTVMusicDetailsResponse.h
+  include/tencentcloud/yinsuda/v20220527/model/KTVMusicBaseInfo.h
+  include/tencentcloud/yinsuda/v20220527/model/SearchKTVMusicsRequest.h
+  include/tencentcloud/yinsuda/v20220527/model/KTVPlaylistBaseInfo.h
+  include/tencentcloud/yinsuda/v20220527/model/KTVMatchRule.h
   )
 
 set(yinsuda_src
   src/v20220527/YinsudaClient.cpp
-  src/v20220527/model/DescribeKTVPlaylistsResponse.cpp
-  src/v20220527/model/SearchKTVMusicsRequest.cpp
-  src/v20220527/model/DescribeKTVPlaylistsRequest.cpp
   src/v20220527/model/DescribeKTVSuggestionsResponse.cpp
-  src/v20220527/model/DescribeKTVPlaylistDetailResponse.cpp
-  src/v20220527/model/KTVPlaylistBaseInfo.cpp
+  src/v20220527/model/ChorusClip.cpp
   src/v20220527/model/MusicAlbumCoverInfo.cpp
-  src/v20220527/model/KTVMusicBaseInfo.cpp
   src/v20220527/model/KTVSuggestionInfo.cpp
   src/v20220527/model/DescribeKTVPlaylistDetailRequest.cpp
-  src/v20220527/model/MusicAlbumInfo.cpp
-  src/v20220527/model/KTVMusicDetailInfo.cpp
-  src/v20220527/model/ChorusClip.cpp
-  src/v20220527/model/SearchKTVMusicsResponse.cpp
   src/v20220527/model/DescribeKTVSuggestionsRequest.cpp
-  src/v20220527/model/BatchDescribeKTVMusicDetailsResponse.cpp
+  src/v20220527/model/DescribeKTVMatchMusicsRequest.cpp
+  src/v20220527/model/DescribeKTVPlaylistsResponse.cpp
+  src/v20220527/model/DescribeKTVPlaylistsRequest.cpp
+  src/v20220527/model/DescribeKTVPlaylistDetailResponse.cpp
+  src/v20220527/model/KTVMatchMusic.cpp
+  src/v20220527/model/SearchKTVMusicsResponse.cpp
   src/v20220527/model/BatchDescribeKTVMusicDetailsRequest.cpp
+  src/v20220527/model/KTVMusicDetailInfo.cpp
+  src/v20220527/model/MusicAlbumInfo.cpp
+  src/v20220527/model/DescribeKTVMatchMusicsResponse.cpp
+  src/v20220527/model/KTVMatchRuleMusicInfo.cpp
+  src/v20220527/model/BatchDescribeKTVMusicDetailsResponse.cpp
+  src/v20220527/model/KTVMusicBaseInfo.cpp
+  src/v20220527/model/SearchKTVMusicsRequest.cpp
+  src/v20220527/model/KTVPlaylistBaseInfo.cpp
+  src/v20220527/model/KTVMatchRule.cpp
   )
 
 set(yinsuda_include

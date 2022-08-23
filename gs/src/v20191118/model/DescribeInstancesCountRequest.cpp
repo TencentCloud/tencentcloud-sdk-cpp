@@ -24,7 +24,8 @@ using namespace std;
 
 DescribeInstancesCountRequest::DescribeInstancesCountRequest() :
     m_gameIdHasBeenSet(false),
-    m_groupIdHasBeenSet(false)
+    m_groupIdHasBeenSet(false),
+    m_gameRegionHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string DescribeInstancesCountRequest::ToJsonString() const
         string key = "GroupId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_groupId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_gameRegionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GameRegion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_gameRegion.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -89,6 +98,22 @@ void DescribeInstancesCountRequest::SetGroupId(const string& _groupId)
 bool DescribeInstancesCountRequest::GroupIdHasBeenSet() const
 {
     return m_groupIdHasBeenSet;
+}
+
+string DescribeInstancesCountRequest::GetGameRegion() const
+{
+    return m_gameRegion;
+}
+
+void DescribeInstancesCountRequest::SetGameRegion(const string& _gameRegion)
+{
+    m_gameRegion = _gameRegion;
+    m_gameRegionHasBeenSet = true;
+}
+
+bool DescribeInstancesCountRequest::GameRegionHasBeenSet() const
+{
+    return m_gameRegionHasBeenSet;
 }
 
 

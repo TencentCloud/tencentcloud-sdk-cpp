@@ -222,6 +222,28 @@ namespace TencentCloud
                      */
                     bool ClusterIdHasBeenSet() const;
 
+                    /**
+                     * 获取是否是自建的集群
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SelfBuilt 是否是自建的集群
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetSelfBuilt() const;
+
+                    /**
+                     * 设置是否是自建的集群
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SelfBuilt 是否是自建的集群
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSelfBuilt(const bool& _selfBuilt);
+
+                    /**
+                     * 判断参数 SelfBuilt 是否已赋值
+                     * @return SelfBuilt 是否已赋值
+                     */
+                    bool SelfBuiltHasBeenSet() const;
+
                 private:
 
                     /**
@@ -279,6 +301,13 @@ namespace TencentCloud
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
+
+                    /**
+                     * 是否是自建的集群
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_selfBuilt;
+                    bool m_selfBuiltHasBeenSet;
 
                 };
             }

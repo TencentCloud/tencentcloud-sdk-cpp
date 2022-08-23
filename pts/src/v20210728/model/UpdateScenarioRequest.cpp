@@ -41,7 +41,8 @@ UpdateScenarioRequest::UpdateScenarioRequest() :
     m_requestFilesHasBeenSet(false),
     m_sLAPolicyHasBeenSet(false),
     m_pluginsHasBeenSet(false),
-    m_domainNameConfigHasBeenSet(false)
+    m_domainNameConfigHasBeenSet(false),
+    m_notificationHooksHasBeenSet(false)
 {
 }
 
@@ -250,6 +251,21 @@ string UpdateScenarioRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_domainNameConfig.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_notificationHooksHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NotificationHooks";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_notificationHooks.begin(); itr != m_notificationHooks.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -562,6 +578,22 @@ void UpdateScenarioRequest::SetDomainNameConfig(const DomainNameConfig& _domainN
 bool UpdateScenarioRequest::DomainNameConfigHasBeenSet() const
 {
     return m_domainNameConfigHasBeenSet;
+}
+
+vector<Notification> UpdateScenarioRequest::GetNotificationHooks() const
+{
+    return m_notificationHooks;
+}
+
+void UpdateScenarioRequest::SetNotificationHooks(const vector<Notification>& _notificationHooks)
+{
+    m_notificationHooks = _notificationHooks;
+    m_notificationHooksHasBeenSet = true;
+}
+
+bool UpdateScenarioRequest::NotificationHooksHasBeenSet() const
+{
+    return m_notificationHooksHasBeenSet;
 }
 
 

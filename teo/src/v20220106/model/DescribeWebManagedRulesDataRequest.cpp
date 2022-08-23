@@ -31,7 +31,8 @@ DescribeWebManagedRulesDataRequest::DescribeWebManagedRulesDataRequest() :
     m_protocolTypeHasBeenSet(false),
     m_attackTypeHasBeenSet(false),
     m_intervalHasBeenSet(false),
-    m_queryConditionHasBeenSet(false)
+    m_queryConditionHasBeenSet(false),
+    m_areaHasBeenSet(false)
 {
 }
 
@@ -134,6 +135,14 @@ string DescribeWebManagedRulesDataRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_areaHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Area";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_area.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -286,6 +295,22 @@ void DescribeWebManagedRulesDataRequest::SetQueryCondition(const vector<QueryCon
 bool DescribeWebManagedRulesDataRequest::QueryConditionHasBeenSet() const
 {
     return m_queryConditionHasBeenSet;
+}
+
+string DescribeWebManagedRulesDataRequest::GetArea() const
+{
+    return m_area;
+}
+
+void DescribeWebManagedRulesDataRequest::SetArea(const string& _area)
+{
+    m_area = _area;
+    m_areaHasBeenSet = true;
+}
+
+bool DescribeWebManagedRulesDataRequest::AreaHasBeenSet() const
+{
+    return m_areaHasBeenSet;
 }
 
 

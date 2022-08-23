@@ -108,6 +108,7 @@ set(tcaplusdb_public_header_model
   include/tencentcloud/tcaplusdb/v20190823/model/ServerDetailInfo.h
   include/tencentcloud/tcaplusdb/v20190823/model/TableInfoNew.h
   include/tencentcloud/tcaplusdb/v20190823/model/TaskInfoNew.h
+  include/tencentcloud/tcaplusdb/v20190823/model/SyncTableInfo.h
   include/tencentcloud/tcaplusdb/v20190823/model/DeleteIdlFilesRequest.h
   include/tencentcloud/tcaplusdb/v20190823/model/CreateBackupResponse.h
   include/tencentcloud/tcaplusdb/v20190823/model/KeyFile.h
@@ -153,6 +154,7 @@ set(tcaplusdb_public_header_model
   include/tencentcloud/tcaplusdb/v20190823/model/Filter.h
   include/tencentcloud/tcaplusdb/v20190823/model/ModifySnapshotsRequest.h
   include/tencentcloud/tcaplusdb/v20190823/model/ImportSnapshotsRequest.h
+  include/tencentcloud/tcaplusdb/v20190823/model/SyncTableField.h
   include/tencentcloud/tcaplusdb/v20190823/model/ErrorInfo.h
   include/tencentcloud/tcaplusdb/v20190823/model/TableGroupInfo.h
   )
@@ -248,6 +250,7 @@ set(tcaplusdb_src
   src/v20190823/model/ServerDetailInfo.cpp
   src/v20190823/model/TableInfoNew.cpp
   src/v20190823/model/TaskInfoNew.cpp
+  src/v20190823/model/SyncTableInfo.cpp
   src/v20190823/model/DeleteIdlFilesRequest.cpp
   src/v20190823/model/CreateBackupResponse.cpp
   src/v20190823/model/KeyFile.cpp
@@ -293,6 +296,7 @@ set(tcaplusdb_src
   src/v20190823/model/Filter.cpp
   src/v20190823/model/ModifySnapshotsRequest.cpp
   src/v20190823/model/ImportSnapshotsRequest.cpp
+  src/v20190823/model/SyncTableField.cpp
   src/v20190823/model/ErrorInfo.cpp
   src/v20190823/model/TableGroupInfo.cpp
   )

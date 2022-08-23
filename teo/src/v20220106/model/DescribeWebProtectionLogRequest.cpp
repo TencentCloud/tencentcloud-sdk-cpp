@@ -30,7 +30,8 @@ DescribeWebProtectionLogRequest::DescribeWebProtectionLogRequest() :
     m_zoneIdsHasBeenSet(false),
     m_domainsHasBeenSet(false),
     m_queryConditionHasBeenSet(false),
-    m_entityTypeHasBeenSet(false)
+    m_entityTypeHasBeenSet(false),
+    m_areaHasBeenSet(false)
 {
 }
 
@@ -120,6 +121,14 @@ string DescribeWebProtectionLogRequest::ToJsonString() const
         string key = "EntityType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_entityType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_areaHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Area";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_area.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -256,6 +265,22 @@ void DescribeWebProtectionLogRequest::SetEntityType(const string& _entityType)
 bool DescribeWebProtectionLogRequest::EntityTypeHasBeenSet() const
 {
     return m_entityTypeHasBeenSet;
+}
+
+string DescribeWebProtectionLogRequest::GetArea() const
+{
+    return m_area;
+}
+
+void DescribeWebProtectionLogRequest::SetArea(const string& _area)
+{
+    m_area = _area;
+    m_areaHasBeenSet = true;
+}
+
+bool DescribeWebProtectionLogRequest::AreaHasBeenSet() const
+{
+    return m_areaHasBeenSet;
 }
 
 

@@ -253,6 +253,34 @@ namespace TencentCloud
                      */
                     bool DefenseAttackCountHasBeenSet() const;
 
+                    /**
+                     * 获取全网修复成功次数, 不支持自动修复的漏洞默认返回0
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SuccessFixCount 全网修复成功次数, 不支持自动修复的漏洞默认返回0
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetSuccessFixCount() const;
+
+                    /**
+                     * 判断参数 SuccessFixCount 是否已赋值
+                     * @return SuccessFixCount 是否已赋值
+                     */
+                    bool SuccessFixCountHasBeenSet() const;
+
+                    /**
+                     * 获取修复是否支持：0-windows/linux均不支持修复 ;1-windows/linux 均支持修复 ;2-仅linux支持修复;3-仅windows支持修复
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FixSwitch 修复是否支持：0-windows/linux均不支持修复 ;1-windows/linux 均支持修复 ;2-仅linux支持修复;3-仅windows支持修复
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetFixSwitch() const;
+
+                    /**
+                     * 判断参数 FixSwitch 是否已赋值
+                     * @return FixSwitch 是否已赋值
+                     */
+                    bool FixSwitchHasBeenSet() const;
+
                 private:
 
                     /**
@@ -359,6 +387,20 @@ namespace TencentCloud
                      */
                     uint64_t m_defenseAttackCount;
                     bool m_defenseAttackCountHasBeenSet;
+
+                    /**
+                     * 全网修复成功次数, 不支持自动修复的漏洞默认返回0
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_successFixCount;
+                    bool m_successFixCountHasBeenSet;
+
+                    /**
+                     * 修复是否支持：0-windows/linux均不支持修复 ;1-windows/linux 均支持修复 ;2-仅linux支持修复;3-仅windows支持修复
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_fixSwitch;
+                    bool m_fixSwitchHasBeenSet;
 
                 };
             }

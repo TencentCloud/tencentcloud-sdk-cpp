@@ -29,7 +29,8 @@ DescribeOverviewL7DataRequest::DescribeOverviewL7DataRequest() :
     m_intervalHasBeenSet(false),
     m_zoneIdsHasBeenSet(false),
     m_domainsHasBeenSet(false),
-    m_protocolHasBeenSet(false)
+    m_protocolHasBeenSet(false),
+    m_areaHasBeenSet(false)
 {
 }
 
@@ -109,6 +110,14 @@ string DescribeOverviewL7DataRequest::ToJsonString() const
         string key = "Protocol";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_protocol.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_areaHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Area";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_area.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -229,6 +238,22 @@ void DescribeOverviewL7DataRequest::SetProtocol(const string& _protocol)
 bool DescribeOverviewL7DataRequest::ProtocolHasBeenSet() const
 {
     return m_protocolHasBeenSet;
+}
+
+string DescribeOverviewL7DataRequest::GetArea() const
+{
+    return m_area;
+}
+
+void DescribeOverviewL7DataRequest::SetArea(const string& _area)
+{
+    m_area = _area;
+    m_areaHasBeenSet = true;
+}
+
+bool DescribeOverviewL7DataRequest::AreaHasBeenSet() const
+{
+    return m_areaHasBeenSet;
 }
 
 

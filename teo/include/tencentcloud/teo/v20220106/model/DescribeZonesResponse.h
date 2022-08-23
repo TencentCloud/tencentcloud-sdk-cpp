@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取符合条件的站点数
-                     * @return TotalCount 符合条件的站点数
+                     * 获取符合条件的站点个数。
+                     * @return TotalCount 符合条件的站点个数。
                      */
                     int64_t GetTotalCount() const;
 
@@ -57,10 +57,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取站点详细信息列表
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Zones 站点详细信息列表
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取站点详细信息列表。
+                     * @return Zones 站点详细信息列表。
                      */
                     std::vector<Zone> GetZones() const;
 
@@ -73,14 +71,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 符合条件的站点数
+                     * 符合条件的站点个数。
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 站点详细信息列表
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 站点详细信息列表。
                      */
                     std::vector<Zone> m_zones;
                     bool m_zonesHasBeenSet;

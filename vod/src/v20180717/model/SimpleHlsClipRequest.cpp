@@ -27,7 +27,12 @@ SimpleHlsClipRequest::SimpleHlsClipRequest() :
     m_subAppIdHasBeenSet(false),
     m_startTimeOffsetHasBeenSet(false),
     m_endTimeOffsetHasBeenSet(false),
-    m_isPersistenceHasBeenSet(false)
+    m_isPersistenceHasBeenSet(false),
+    m_expireTimeHasBeenSet(false),
+    m_procedureHasBeenSet(false),
+    m_classIdHasBeenSet(false),
+    m_sourceContextHasBeenSet(false),
+    m_sessionContextHasBeenSet(false)
 {
 }
 
@@ -76,6 +81,46 @@ string SimpleHlsClipRequest::ToJsonString() const
         string key = "IsPersistence";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_isPersistence, allocator);
+    }
+
+    if (m_expireTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExpireTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_expireTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_procedureHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Procedure";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_procedure.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_classIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClassId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_classId, allocator);
+    }
+
+    if (m_sourceContextHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SourceContext";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_sourceContext.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sessionContextHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SessionContext";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_sessionContext.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -164,6 +209,86 @@ void SimpleHlsClipRequest::SetIsPersistence(const int64_t& _isPersistence)
 bool SimpleHlsClipRequest::IsPersistenceHasBeenSet() const
 {
     return m_isPersistenceHasBeenSet;
+}
+
+string SimpleHlsClipRequest::GetExpireTime() const
+{
+    return m_expireTime;
+}
+
+void SimpleHlsClipRequest::SetExpireTime(const string& _expireTime)
+{
+    m_expireTime = _expireTime;
+    m_expireTimeHasBeenSet = true;
+}
+
+bool SimpleHlsClipRequest::ExpireTimeHasBeenSet() const
+{
+    return m_expireTimeHasBeenSet;
+}
+
+string SimpleHlsClipRequest::GetProcedure() const
+{
+    return m_procedure;
+}
+
+void SimpleHlsClipRequest::SetProcedure(const string& _procedure)
+{
+    m_procedure = _procedure;
+    m_procedureHasBeenSet = true;
+}
+
+bool SimpleHlsClipRequest::ProcedureHasBeenSet() const
+{
+    return m_procedureHasBeenSet;
+}
+
+int64_t SimpleHlsClipRequest::GetClassId() const
+{
+    return m_classId;
+}
+
+void SimpleHlsClipRequest::SetClassId(const int64_t& _classId)
+{
+    m_classId = _classId;
+    m_classIdHasBeenSet = true;
+}
+
+bool SimpleHlsClipRequest::ClassIdHasBeenSet() const
+{
+    return m_classIdHasBeenSet;
+}
+
+string SimpleHlsClipRequest::GetSourceContext() const
+{
+    return m_sourceContext;
+}
+
+void SimpleHlsClipRequest::SetSourceContext(const string& _sourceContext)
+{
+    m_sourceContext = _sourceContext;
+    m_sourceContextHasBeenSet = true;
+}
+
+bool SimpleHlsClipRequest::SourceContextHasBeenSet() const
+{
+    return m_sourceContextHasBeenSet;
+}
+
+string SimpleHlsClipRequest::GetSessionContext() const
+{
+    return m_sessionContext;
+}
+
+void SimpleHlsClipRequest::SetSessionContext(const string& _sessionContext)
+{
+    m_sessionContext = _sessionContext;
+    m_sessionContextHasBeenSet = true;
+}
+
+bool SimpleHlsClipRequest::SessionContextHasBeenSet() const
+{
+    return m_sessionContextHasBeenSet;
 }
 
 

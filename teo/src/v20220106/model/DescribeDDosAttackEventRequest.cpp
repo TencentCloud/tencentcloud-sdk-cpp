@@ -30,7 +30,8 @@ DescribeDDosAttackEventRequest::DescribeDDosAttackEventRequest() :
     m_policyIdsHasBeenSet(false),
     m_zoneIdsHasBeenSet(false),
     m_protocolTypeHasBeenSet(false),
-    m_isShowDetailHasBeenSet(false)
+    m_isShowDetailHasBeenSet(false),
+    m_areaHasBeenSet(false)
 {
 }
 
@@ -113,6 +114,14 @@ string DescribeDDosAttackEventRequest::ToJsonString() const
         string key = "IsShowDetail";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_isShowDetail.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_areaHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Area";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_area.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -249,6 +258,22 @@ void DescribeDDosAttackEventRequest::SetIsShowDetail(const string& _isShowDetail
 bool DescribeDDosAttackEventRequest::IsShowDetailHasBeenSet() const
 {
     return m_isShowDetailHasBeenSet;
+}
+
+string DescribeDDosAttackEventRequest::GetArea() const
+{
+    return m_area;
+}
+
+void DescribeDDosAttackEventRequest::SetArea(const string& _area)
+{
+    m_area = _area;
+    m_areaHasBeenSet = true;
+}
+
+bool DescribeDDosAttackEventRequest::AreaHasBeenSet() const
+{
+    return m_areaHasBeenSet;
 }
 
 

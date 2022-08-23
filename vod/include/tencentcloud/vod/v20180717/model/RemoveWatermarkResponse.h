@@ -14,58 +14,54 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_TAF_V20200210_MODEL_DETECTFRAUDKOLRESPONSE_H_
-#define TENCENTCLOUD_TAF_V20200210_MODEL_DETECTFRAUDKOLRESPONSE_H_
+#ifndef TENCENTCLOUD_VOD_V20180717_MODEL_REMOVEWATERMARKRESPONSE_H_
+#define TENCENTCLOUD_VOD_V20180717_MODEL_REMOVEWATERMARKRESPONSE_H_
 
 #include <string>
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/taf/v20200210/model/OutputKolData.h>
 
 
 namespace TencentCloud
 {
-    namespace Taf
+    namespace Vod
     {
-        namespace V20200210
+        namespace V20180717
         {
             namespace Model
             {
                 /**
-                * DetectFraudKOL返回参数结构体
+                * RemoveWatermark返回参数结构体
                 */
-                class DetectFraudKOLResponse : public AbstractModel
+                class RemoveWatermarkResponse : public AbstractModel
                 {
                 public:
-                    DetectFraudKOLResponse();
-                    ~DetectFraudKOLResponse() = default;
+                    RemoveWatermarkResponse();
+                    ~RemoveWatermarkResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取回包数据
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Data 回包数据
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取任务 ID 。
+                     * @return TaskId 任务 ID 。
                      */
-                    OutputKolData GetData() const;
+                    std::string GetTaskId() const;
 
                     /**
-                     * 判断参数 Data 是否已赋值
-                     * @return Data 是否已赋值
+                     * 判断参数 TaskId 是否已赋值
+                     * @return TaskId 是否已赋值
                      */
-                    bool DataHasBeenSet() const;
+                    bool TaskIdHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 回包数据
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 任务 ID 。
                      */
-                    OutputKolData m_data;
-                    bool m_dataHasBeenSet;
+                    std::string m_taskId;
+                    bool m_taskIdHasBeenSet;
 
                 };
             }
@@ -73,4 +69,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_TAF_V20200210_MODEL_DETECTFRAUDKOLRESPONSE_H_
+#endif // !TENCENTCLOUD_VOD_V20180717_MODEL_REMOVEWATERMARKRESPONSE_H_

@@ -31,7 +31,8 @@ DescribeDDosAttackTopDataRequest::DescribeDDosAttackTopDataRequest() :
     m_policyIdsHasBeenSet(false),
     m_portHasBeenSet(false),
     m_protocolTypeHasBeenSet(false),
-    m_attackTypeHasBeenSet(false)
+    m_attackTypeHasBeenSet(false),
+    m_areaHasBeenSet(false)
 {
 }
 
@@ -122,6 +123,14 @@ string DescribeDDosAttackTopDataRequest::ToJsonString() const
         string key = "AttackType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_attackType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_areaHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Area";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_area.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -274,6 +283,22 @@ void DescribeDDosAttackTopDataRequest::SetAttackType(const string& _attackType)
 bool DescribeDDosAttackTopDataRequest::AttackTypeHasBeenSet() const
 {
     return m_attackTypeHasBeenSet;
+}
+
+string DescribeDDosAttackTopDataRequest::GetArea() const
+{
+    return m_area;
+}
+
+void DescribeDDosAttackTopDataRequest::SetArea(const string& _area)
+{
+    m_area = _area;
+    m_areaHasBeenSet = true;
+}
+
+bool DescribeDDosAttackTopDataRequest::AreaHasBeenSet() const
+{
+    return m_areaHasBeenSet;
 }
 
 

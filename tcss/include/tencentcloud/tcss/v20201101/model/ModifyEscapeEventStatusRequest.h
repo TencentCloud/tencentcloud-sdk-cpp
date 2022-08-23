@@ -61,14 +61,34 @@ namespace TencentCloud
                     bool EventIdSetHasBeenSet() const;
 
                     /**
-                     * 获取标记事件的状态：EVENT_UNDEAL:未处理（取消忽略），EVENT_DEALED:已处理，EVENT_IGNORE:忽略，EVENT_DELETE：已删除
-                     * @return Status 标记事件的状态：EVENT_UNDEAL:未处理（取消忽略），EVENT_DEALED:已处理，EVENT_IGNORE:忽略，EVENT_DELETE：已删除
+                     * 获取标记事件的状态：
+EVENT_UNDEAL:未处理（取消忽略），
+EVENT_DEALED:已处理，
+EVENT_IGNORE:忽略，
+EVENT_DELETE：已删除
+EVENT_ADD_WHITE：加白
+                     * @return Status 标记事件的状态：
+EVENT_UNDEAL:未处理（取消忽略），
+EVENT_DEALED:已处理，
+EVENT_IGNORE:忽略，
+EVENT_DELETE：已删除
+EVENT_ADD_WHITE：加白
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置标记事件的状态：EVENT_UNDEAL:未处理（取消忽略），EVENT_DEALED:已处理，EVENT_IGNORE:忽略，EVENT_DELETE：已删除
-                     * @param Status 标记事件的状态：EVENT_UNDEAL:未处理（取消忽略），EVENT_DEALED:已处理，EVENT_IGNORE:忽略，EVENT_DELETE：已删除
+                     * 设置标记事件的状态：
+EVENT_UNDEAL:未处理（取消忽略），
+EVENT_DEALED:已处理，
+EVENT_IGNORE:忽略，
+EVENT_DELETE：已删除
+EVENT_ADD_WHITE：加白
+                     * @param Status 标记事件的状态：
+EVENT_UNDEAL:未处理（取消忽略），
+EVENT_DEALED:已处理，
+EVENT_IGNORE:忽略，
+EVENT_DELETE：已删除
+EVENT_ADD_WHITE：加白
                      */
                     void SetStatus(const std::string& _status);
 
@@ -96,6 +116,70 @@ namespace TencentCloud
                      */
                     bool RemarkHasBeenSet() const;
 
+                    /**
+                     * 获取加白镜像ID数组
+                     * @return ImageIDs 加白镜像ID数组
+                     */
+                    std::vector<std::string> GetImageIDs() const;
+
+                    /**
+                     * 设置加白镜像ID数组
+                     * @param ImageIDs 加白镜像ID数组
+                     */
+                    void SetImageIDs(const std::vector<std::string>& _imageIDs);
+
+                    /**
+                     * 判断参数 ImageIDs 是否已赋值
+                     * @return ImageIDs 是否已赋值
+                     */
+                    bool ImageIDsHasBeenSet() const;
+
+                    /**
+                     * 获取加白事件类型
+   ESCAPE_CGROUPS：利用cgroup机制逃逸
+   ESCAPE_TAMPER_SENSITIVE_FILE：篡改敏感文件逃逸
+   ESCAPE_DOCKER_API：访问Docker API接口逃逸
+   ESCAPE_VUL_OCCURRED：逃逸漏洞利用
+   MOUNT_SENSITIVE_PTAH：敏感路径挂载
+   PRIVILEGE_CONTAINER_START：特权容器
+   PRIVILEGE：程序提权逃逸
+                     * @return EventType 加白事件类型
+   ESCAPE_CGROUPS：利用cgroup机制逃逸
+   ESCAPE_TAMPER_SENSITIVE_FILE：篡改敏感文件逃逸
+   ESCAPE_DOCKER_API：访问Docker API接口逃逸
+   ESCAPE_VUL_OCCURRED：逃逸漏洞利用
+   MOUNT_SENSITIVE_PTAH：敏感路径挂载
+   PRIVILEGE_CONTAINER_START：特权容器
+   PRIVILEGE：程序提权逃逸
+                     */
+                    std::vector<std::string> GetEventType() const;
+
+                    /**
+                     * 设置加白事件类型
+   ESCAPE_CGROUPS：利用cgroup机制逃逸
+   ESCAPE_TAMPER_SENSITIVE_FILE：篡改敏感文件逃逸
+   ESCAPE_DOCKER_API：访问Docker API接口逃逸
+   ESCAPE_VUL_OCCURRED：逃逸漏洞利用
+   MOUNT_SENSITIVE_PTAH：敏感路径挂载
+   PRIVILEGE_CONTAINER_START：特权容器
+   PRIVILEGE：程序提权逃逸
+                     * @param EventType 加白事件类型
+   ESCAPE_CGROUPS：利用cgroup机制逃逸
+   ESCAPE_TAMPER_SENSITIVE_FILE：篡改敏感文件逃逸
+   ESCAPE_DOCKER_API：访问Docker API接口逃逸
+   ESCAPE_VUL_OCCURRED：逃逸漏洞利用
+   MOUNT_SENSITIVE_PTAH：敏感路径挂载
+   PRIVILEGE_CONTAINER_START：特权容器
+   PRIVILEGE：程序提权逃逸
+                     */
+                    void SetEventType(const std::vector<std::string>& _eventType);
+
+                    /**
+                     * 判断参数 EventType 是否已赋值
+                     * @return EventType 是否已赋值
+                     */
+                    bool EventTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -105,7 +189,12 @@ namespace TencentCloud
                     bool m_eventIdSetHasBeenSet;
 
                     /**
-                     * 标记事件的状态：EVENT_UNDEAL:未处理（取消忽略），EVENT_DEALED:已处理，EVENT_IGNORE:忽略，EVENT_DELETE：已删除
+                     * 标记事件的状态：
+EVENT_UNDEAL:未处理（取消忽略），
+EVENT_DEALED:已处理，
+EVENT_IGNORE:忽略，
+EVENT_DELETE：已删除
+EVENT_ADD_WHITE：加白
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
@@ -115,6 +204,25 @@ namespace TencentCloud
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
+
+                    /**
+                     * 加白镜像ID数组
+                     */
+                    std::vector<std::string> m_imageIDs;
+                    bool m_imageIDsHasBeenSet;
+
+                    /**
+                     * 加白事件类型
+   ESCAPE_CGROUPS：利用cgroup机制逃逸
+   ESCAPE_TAMPER_SENSITIVE_FILE：篡改敏感文件逃逸
+   ESCAPE_DOCKER_API：访问Docker API接口逃逸
+   ESCAPE_VUL_OCCURRED：逃逸漏洞利用
+   MOUNT_SENSITIVE_PTAH：敏感路径挂载
+   PRIVILEGE_CONTAINER_START：特权容器
+   PRIVILEGE：程序提权逃逸
+                     */
+                    std::vector<std::string> m_eventType;
+                    bool m_eventTypeHasBeenSet;
 
                 };
             }

@@ -26,7 +26,8 @@ using namespace std;
 SimpleHlsClipResponse::SimpleHlsClipResponse() :
     m_urlHasBeenSet(false),
     m_metaDataHasBeenSet(false),
-    m_fileIdHasBeenSet(false)
+    m_fileIdHasBeenSet(false),
+    m_taskIdHasBeenSet(false)
 {
 }
 
@@ -101,6 +102,16 @@ CoreInternalOutcome SimpleHlsClipResponse::Deserialize(const string &payload)
         m_fileIdHasBeenSet = true;
     }
 
+    if (rsp.HasMember("TaskId") && !rsp["TaskId"].IsNull())
+    {
+        if (!rsp["TaskId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_taskId = string(rsp["TaskId"].GetString());
+        m_taskIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -134,6 +145,14 @@ string SimpleHlsClipResponse::ToJsonString() const
         string key = "FileId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_fileId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_taskIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_taskId.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -176,6 +195,16 @@ string SimpleHlsClipResponse::GetFileId() const
 bool SimpleHlsClipResponse::FileIdHasBeenSet() const
 {
     return m_fileIdHasBeenSet;
+}
+
+string SimpleHlsClipResponse::GetTaskId() const
+{
+    return m_taskId;
+}
+
+bool SimpleHlsClipResponse::TaskIdHasBeenSet() const
+{
+    return m_taskIdHasBeenSet;
 }
 
 

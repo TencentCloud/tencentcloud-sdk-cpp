@@ -32,7 +32,8 @@ VideoProduct::VideoProduct() :
     m_productDescriptionHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
-    m_netTypeHasBeenSet(false)
+    m_netTypeHasBeenSet(false),
+    m_categoryIdHasBeenSet(false)
 {
 }
 
@@ -164,6 +165,16 @@ CoreInternalOutcome VideoProduct::Deserialize(const rapidjson::Value &value)
         m_netTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("CategoryId") && !value["CategoryId"].IsNull())
+    {
+        if (!value["CategoryId"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `VideoProduct.CategoryId` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_categoryId = value["CategoryId"].GetUint64();
+        m_categoryIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -270,6 +281,14 @@ void VideoProduct::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "NetType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_netType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_categoryIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CategoryId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_categoryId, allocator);
     }
 
 }
@@ -465,5 +484,21 @@ void VideoProduct::SetNetType(const string& _netType)
 bool VideoProduct::NetTypeHasBeenSet() const
 {
     return m_netTypeHasBeenSet;
+}
+
+uint64_t VideoProduct::GetCategoryId() const
+{
+    return m_categoryId;
+}
+
+void VideoProduct::SetCategoryId(const uint64_t& _categoryId)
+{
+    m_categoryId = _categoryId;
+    m_categoryIdHasBeenSet = true;
+}
+
+bool VideoProduct::CategoryIdHasBeenSet() const
+{
+    return m_categoryIdHasBeenSet;
 }
 

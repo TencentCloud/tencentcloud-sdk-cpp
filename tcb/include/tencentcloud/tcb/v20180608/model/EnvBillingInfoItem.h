@@ -321,6 +321,50 @@ namespace TencentCloud
                      */
                     bool FreeQuotaHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启 `超过套餐额度部分转按量付费`
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EnableOverrun 是否开启 `超过套餐额度部分转按量付费`
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetEnableOverrun() const;
+
+                    /**
+                     * 设置是否开启 `超过套餐额度部分转按量付费`
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param EnableOverrun 是否开启 `超过套餐额度部分转按量付费`
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetEnableOverrun(const bool& _enableOverrun);
+
+                    /**
+                     * 判断参数 EnableOverrun 是否已赋值
+                     * @return EnableOverrun 是否已赋值
+                     */
+                    bool EnableOverrunHasBeenSet() const;
+
+                    /**
+                     * 获取环境套餐类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ExtPackageType 环境套餐类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetExtPackageType() const;
+
+                    /**
+                     * 设置环境套餐类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ExtPackageType 环境套餐类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetExtPackageType(const std::string& _extPackageType);
+
+                    /**
+                     * 判断参数 ExtPackageType 是否已赋值
+                     * @return ExtPackageType 是否已赋值
+                     */
+                    bool ExtPackageTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -410,6 +454,20 @@ namespace TencentCloud
                      */
                     std::string m_freeQuota;
                     bool m_freeQuotaHasBeenSet;
+
+                    /**
+                     * 是否开启 `超过套餐额度部分转按量付费`
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_enableOverrun;
+                    bool m_enableOverrunHasBeenSet;
+
+                    /**
+                     * 环境套餐类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_extPackageType;
+                    bool m_extPackageTypeHasBeenSet;
 
                 };
             }

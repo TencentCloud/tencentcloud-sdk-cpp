@@ -44,7 +44,8 @@ Machine::Machine() :
     m_hasAssetScanHasBeenSet(false),
     m_machineTypeHasBeenSet(false),
     m_kernelVersionHasBeenSet(false),
-    m_protectTypeHasBeenSet(false)
+    m_protectTypeHasBeenSet(false),
+    m_cloudTagsHasBeenSet(false)
 {
 }
 
@@ -310,6 +311,26 @@ CoreInternalOutcome Machine::Deserialize(const rapidjson::Value &value)
         m_protectTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("CloudTags") && !value["CloudTags"].IsNull())
+    {
+        if (!value["CloudTags"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Machine.CloudTags` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["CloudTags"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Tags item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_cloudTags.push_back(item);
+        }
+        m_cloudTagsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -515,6 +536,21 @@ void Machine::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "ProtectType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_protectType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cloudTagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CloudTags";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_cloudTags.begin(); itr != m_cloudTags.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -902,5 +938,21 @@ void Machine::SetProtectType(const string& _protectType)
 bool Machine::ProtectTypeHasBeenSet() const
 {
     return m_protectTypeHasBeenSet;
+}
+
+vector<Tags> Machine::GetCloudTags() const
+{
+    return m_cloudTags;
+}
+
+void Machine::SetCloudTags(const vector<Tags>& _cloudTags)
+{
+    m_cloudTags = _cloudTags;
+    m_cloudTagsHasBeenSet = true;
+}
+
+bool Machine::CloudTagsHasBeenSet() const
+{
+    return m_cloudTagsHasBeenSet;
 }
 

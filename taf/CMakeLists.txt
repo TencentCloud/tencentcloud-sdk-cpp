@@ -19,52 +19,40 @@ set(taf_public_header
   )
 
 set(taf_public_header_model
-  include/tencentcloud/taf/v20200210/model/InputKolBspData.h
-  include/tencentcloud/taf/v20200210/model/OutputSendTrafficSecuritySmsMsg.h
-  include/tencentcloud/taf/v20200210/model/DetectFraudKOLRequest.h
+  include/tencentcloud/taf/v20200210/model/SendTrafficSecuritySmsMessageResponse.h
+  include/tencentcloud/taf/v20200210/model/InputBusinessEncryptData.h
   include/tencentcloud/taf/v20200210/model/RecognizeCustomizedAudienceRequest.h
-  include/tencentcloud/taf/v20200210/model/RecognizeTargetAudienceRequest.h
   include/tencentcloud/taf/v20200210/model/RecognizeTargetAudienceResponse.h
   include/tencentcloud/taf/v20200210/model/OutputRecognizeTargetAudienceValue.h
   include/tencentcloud/taf/v20200210/model/SendTrafficSecuritySmsMessageRequest.h
   include/tencentcloud/taf/v20200210/model/RecognizePreciseTargetAudienceResponse.h
   include/tencentcloud/taf/v20200210/model/OutputRecognizeTargetAudience.h
-  include/tencentcloud/taf/v20200210/model/DetectFraudKOLResponse.h
   include/tencentcloud/taf/v20200210/model/RecognizeCustomizedAudienceResponse.h
-  include/tencentcloud/taf/v20200210/model/OutputKolValue.h
   include/tencentcloud/taf/v20200210/model/InputRecognizeTargetAudience.h
-  include/tencentcloud/taf/v20200210/model/OutputKolData.h
   include/tencentcloud/taf/v20200210/model/Device.h
-  include/tencentcloud/taf/v20200210/model/SendTrafficSecuritySmsMessageResponse.h
-  include/tencentcloud/taf/v20200210/model/InputSendTrafficSecuritySmsMsg.h
+  include/tencentcloud/taf/v20200210/model/OutputSendTrafficSecuritySmsMsg.h
   include/tencentcloud/taf/v20200210/model/RecognizePreciseTargetAudienceRequest.h
-  include/tencentcloud/taf/v20200210/model/InputKolDataList.h
-  include/tencentcloud/taf/v20200210/model/InputBusinessEncryptData.h
+  include/tencentcloud/taf/v20200210/model/RecognizeTargetAudienceRequest.h
+  include/tencentcloud/taf/v20200210/model/InputSendTrafficSecuritySmsMsg.h
   )
 
 set(taf_src
   src/v20200210/TafClient.cpp
-  src/v20200210/model/InputKolBspData.cpp
-  src/v20200210/model/OutputSendTrafficSecuritySmsMsg.cpp
-  src/v20200210/model/DetectFraudKOLRequest.cpp
+  src/v20200210/model/SendTrafficSecuritySmsMessageResponse.cpp
+  src/v20200210/model/InputBusinessEncryptData.cpp
   src/v20200210/model/RecognizeCustomizedAudienceRequest.cpp
-  src/v20200210/model/RecognizeTargetAudienceRequest.cpp
   src/v20200210/model/RecognizeTargetAudienceResponse.cpp
   src/v20200210/model/OutputRecognizeTargetAudienceValue.cpp
   src/v20200210/model/SendTrafficSecuritySmsMessageRequest.cpp
   src/v20200210/model/RecognizePreciseTargetAudienceResponse.cpp
   src/v20200210/model/OutputRecognizeTargetAudience.cpp
-  src/v20200210/model/DetectFraudKOLResponse.cpp
   src/v20200210/model/RecognizeCustomizedAudienceResponse.cpp
-  src/v20200210/model/OutputKolValue.cpp
   src/v20200210/model/InputRecognizeTargetAudience.cpp
-  src/v20200210/model/OutputKolData.cpp
   src/v20200210/model/Device.cpp
-  src/v20200210/model/SendTrafficSecuritySmsMessageResponse.cpp
-  src/v20200210/model/InputSendTrafficSecuritySmsMsg.cpp
+  src/v20200210/model/OutputSendTrafficSecuritySmsMsg.cpp
   src/v20200210/model/RecognizePreciseTargetAudienceRequest.cpp
-  src/v20200210/model/InputKolDataList.cpp
-  src/v20200210/model/InputBusinessEncryptData.cpp
+  src/v20200210/model/RecognizeTargetAudienceRequest.cpp
+  src/v20200210/model/InputSendTrafficSecuritySmsMsg.cpp
   )
 
 set(taf_include

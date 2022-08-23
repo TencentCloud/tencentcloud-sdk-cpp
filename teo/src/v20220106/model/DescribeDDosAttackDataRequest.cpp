@@ -31,7 +31,8 @@ DescribeDDosAttackDataRequest::DescribeDDosAttackDataRequest() :
     m_portHasBeenSet(false),
     m_protocolTypeHasBeenSet(false),
     m_attackTypeHasBeenSet(false),
-    m_intervalHasBeenSet(false)
+    m_intervalHasBeenSet(false),
+    m_areaHasBeenSet(false)
 {
 }
 
@@ -127,6 +128,14 @@ string DescribeDDosAttackDataRequest::ToJsonString() const
         string key = "Interval";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_interval.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_areaHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Area";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_area.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -279,6 +288,22 @@ void DescribeDDosAttackDataRequest::SetInterval(const string& _interval)
 bool DescribeDDosAttackDataRequest::IntervalHasBeenSet() const
 {
     return m_intervalHasBeenSet;
+}
+
+string DescribeDDosAttackDataRequest::GetArea() const
+{
+    return m_area;
+}
+
+void DescribeDDosAttackDataRequest::SetArea(const string& _area)
+{
+    m_area = _area;
+    m_areaHasBeenSet = true;
+}
+
+bool DescribeDDosAttackDataRequest::AreaHasBeenSet() const
+{
+    return m_areaHasBeenSet;
 }
 
 

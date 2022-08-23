@@ -83,6 +83,49 @@ YinsudaClient::BatchDescribeKTVMusicDetailsOutcomeCallable YinsudaClient::BatchD
     return task->get_future();
 }
 
+YinsudaClient::DescribeKTVMatchMusicsOutcome YinsudaClient::DescribeKTVMatchMusics(const DescribeKTVMatchMusicsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeKTVMatchMusics");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeKTVMatchMusicsResponse rsp = DescribeKTVMatchMusicsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeKTVMatchMusicsOutcome(rsp);
+        else
+            return DescribeKTVMatchMusicsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeKTVMatchMusicsOutcome(outcome.GetError());
+    }
+}
+
+void YinsudaClient::DescribeKTVMatchMusicsAsync(const DescribeKTVMatchMusicsRequest& request, const DescribeKTVMatchMusicsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeKTVMatchMusics(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+YinsudaClient::DescribeKTVMatchMusicsOutcomeCallable YinsudaClient::DescribeKTVMatchMusicsCallable(const DescribeKTVMatchMusicsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeKTVMatchMusicsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeKTVMatchMusics(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 YinsudaClient::DescribeKTVPlaylistDetailOutcome YinsudaClient::DescribeKTVPlaylistDetail(const DescribeKTVPlaylistDetailRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeKTVPlaylistDetail");

@@ -25,13 +25,13 @@ using namespace std;
 CreateApplicationProxyRequest::CreateApplicationProxyRequest() :
     m_zoneIdHasBeenSet(false),
     m_zoneNameHasBeenSet(false),
-    m_ruleHasBeenSet(false),
     m_proxyNameHasBeenSet(false),
     m_platTypeHasBeenSet(false),
     m_securityTypeHasBeenSet(false),
     m_accelerateTypeHasBeenSet(false),
     m_sessionPersistHasBeenSet(false),
     m_forwardClientIpHasBeenSet(false),
+    m_ruleHasBeenSet(false),
     m_proxyTypeHasBeenSet(false),
     m_sessionPersistTimeHasBeenSet(false),
     m_ipv6HasBeenSet(false)
@@ -59,21 +59,6 @@ string CreateApplicationProxyRequest::ToJsonString() const
         string key = "ZoneName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_zoneName.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_ruleHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Rule";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        int i=0;
-        for (auto itr = m_rule.begin(); itr != m_rule.end(); ++itr, ++i)
-        {
-            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
-        }
     }
 
     if (m_proxyNameHasBeenSet)
@@ -122,6 +107,21 @@ string CreateApplicationProxyRequest::ToJsonString() const
         string key = "ForwardClientIp";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_forwardClientIp.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ruleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Rule";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_rule.begin(); itr != m_rule.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
     if (m_proxyTypeHasBeenSet)
@@ -187,22 +187,6 @@ void CreateApplicationProxyRequest::SetZoneName(const string& _zoneName)
 bool CreateApplicationProxyRequest::ZoneNameHasBeenSet() const
 {
     return m_zoneNameHasBeenSet;
-}
-
-vector<ApplicationProxyRule> CreateApplicationProxyRequest::GetRule() const
-{
-    return m_rule;
-}
-
-void CreateApplicationProxyRequest::SetRule(const vector<ApplicationProxyRule>& _rule)
-{
-    m_rule = _rule;
-    m_ruleHasBeenSet = true;
-}
-
-bool CreateApplicationProxyRequest::RuleHasBeenSet() const
-{
-    return m_ruleHasBeenSet;
 }
 
 string CreateApplicationProxyRequest::GetProxyName() const
@@ -299,6 +283,22 @@ void CreateApplicationProxyRequest::SetForwardClientIp(const string& _forwardCli
 bool CreateApplicationProxyRequest::ForwardClientIpHasBeenSet() const
 {
     return m_forwardClientIpHasBeenSet;
+}
+
+vector<ApplicationProxyRule> CreateApplicationProxyRequest::GetRule() const
+{
+    return m_rule;
+}
+
+void CreateApplicationProxyRequest::SetRule(const vector<ApplicationProxyRule>& _rule)
+{
+    m_rule = _rule;
+    m_ruleHasBeenSet = true;
+}
+
+bool CreateApplicationProxyRequest::RuleHasBeenSet() const
+{
+    return m_ruleHasBeenSet;
 }
 
 string CreateApplicationProxyRequest::GetProxyType() const

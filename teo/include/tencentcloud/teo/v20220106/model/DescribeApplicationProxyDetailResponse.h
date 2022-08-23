@@ -275,6 +275,22 @@ namespace TencentCloud
                      */
                     bool Ipv6HasBeenSet() const;
 
+                    /**
+                     * 获取加速区域，取值有：
+<li>mainland：中国大陆境内;</li>
+<li>overseas：全球（不含中国大陆）。</li>
+                     * @return Area 加速区域，取值有：
+<li>mainland：中国大陆境内;</li>
+<li>overseas：全球（不含中国大陆）。</li>
+                     */
+                    std::string GetArea() const;
+
+                    /**
+                     * 判断参数 Area 是否已赋值
+                     * @return Area 是否已赋值
+                     */
+                    bool AreaHasBeenSet() const;
+
                 private:
 
                     /**
@@ -391,6 +407,14 @@ namespace TencentCloud
                      */
                     Ipv6Access m_ipv6;
                     bool m_ipv6HasBeenSet;
+
+                    /**
+                     * 加速区域，取值有：
+<li>mainland：中国大陆境内;</li>
+<li>overseas：全球（不含中国大陆）。</li>
+                     */
+                    std::string m_area;
+                    bool m_areaHasBeenSet;
 
                 };
             }

@@ -1314,7 +1314,7 @@ namespace TencentCloud
                 DeletePrometheusAlertRuleOutcomeCallable DeletePrometheusAlertRuleCallable(const Model::DeletePrometheusAlertRuleRequest& request);
 
                 /**
-                 *解除2.0实例的集群关联
+                 *解除TMP实例的集群关联
                  * @param req DeletePrometheusClusterAgentRequest
                  * @return DeletePrometheusClusterAgentOutcome
                  */

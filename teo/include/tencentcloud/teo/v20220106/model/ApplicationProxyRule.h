@@ -168,17 +168,13 @@ OriginValue=["origin-537f5b41-162a-11ed-abaa-525400c5da15"]。
 
                     /**
                      * 获取规则ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleId 规则ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetRuleId() const;
 
                     /**
                      * 设置规则ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param RuleId 规则ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetRuleId(const std::string& _ruleId);
 
@@ -326,7 +322,6 @@ OriginValue=["origin-537f5b41-162a-11ed-abaa-525400c5da15"]。
 
                     /**
                      * 规则ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ruleId;
                     bool m_ruleIdHasBeenSet;

@@ -23,7 +23,8 @@ using namespace TencentCloud::Teo::V20220106::Model;
 using namespace std;
 
 DescribeDDosAttackEventDetailRequest::DescribeDDosAttackEventDetailRequest() :
-    m_eventIdHasBeenSet(false)
+    m_eventIdHasBeenSet(false),
+    m_areaHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,14 @@ string DescribeDDosAttackEventDetailRequest::ToJsonString() const
         string key = "EventId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_eventId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_areaHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Area";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_area.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -64,6 +73,22 @@ void DescribeDDosAttackEventDetailRequest::SetEventId(const string& _eventId)
 bool DescribeDDosAttackEventDetailRequest::EventIdHasBeenSet() const
 {
     return m_eventIdHasBeenSet;
+}
+
+string DescribeDDosAttackEventDetailRequest::GetArea() const
+{
+    return m_area;
+}
+
+void DescribeDDosAttackEventDetailRequest::SetArea(const string& _area)
+{
+    m_area = _area;
+    m_areaHasBeenSet = true;
+}
+
+bool DescribeDDosAttackEventDetailRequest::AreaHasBeenSet() const
+{
+    return m_areaHasBeenSet;
 }
 
 

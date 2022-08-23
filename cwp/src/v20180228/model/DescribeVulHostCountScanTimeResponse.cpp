@@ -28,7 +28,9 @@ DescribeVulHostCountScanTimeResponse::DescribeVulHostCountScanTimeResponse() :
     m_vulHostCountHasBeenSet(false),
     m_scanTimeHasBeenSet(false),
     m_ifFirstScanHasBeenSet(false),
-    m_taskIdHasBeenSet(false)
+    m_taskIdHasBeenSet(false),
+    m_lastFixTimeHasBeenSet(false),
+    m_hadAutoFixVulHasBeenSet(false)
 {
 }
 
@@ -116,6 +118,26 @@ CoreInternalOutcome DescribeVulHostCountScanTimeResponse::Deserialize(const stri
         m_taskIdHasBeenSet = true;
     }
 
+    if (rsp.HasMember("LastFixTime") && !rsp["LastFixTime"].IsNull())
+    {
+        if (!rsp["LastFixTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LastFixTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_lastFixTime = string(rsp["LastFixTime"].GetString());
+        m_lastFixTimeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("hadAutoFixVul") && !rsp["hadAutoFixVul"].IsNull())
+    {
+        if (!rsp["hadAutoFixVul"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `hadAutoFixVul` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_hadAutoFixVul = rsp["hadAutoFixVul"].GetBool();
+        m_hadAutoFixVulHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -164,6 +186,22 @@ string DescribeVulHostCountScanTimeResponse::ToJsonString() const
         string key = "TaskId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_taskId, allocator);
+    }
+
+    if (m_lastFixTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LastFixTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_lastFixTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_hadAutoFixVulHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "hadAutoFixVul";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_hadAutoFixVul, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -226,6 +264,26 @@ uint64_t DescribeVulHostCountScanTimeResponse::GetTaskId() const
 bool DescribeVulHostCountScanTimeResponse::TaskIdHasBeenSet() const
 {
     return m_taskIdHasBeenSet;
+}
+
+string DescribeVulHostCountScanTimeResponse::GetLastFixTime() const
+{
+    return m_lastFixTime;
+}
+
+bool DescribeVulHostCountScanTimeResponse::LastFixTimeHasBeenSet() const
+{
+    return m_lastFixTimeHasBeenSet;
+}
+
+bool DescribeVulHostCountScanTimeResponse::GethadAutoFixVul() const
+{
+    return m_hadAutoFixVul;
+}
+
+bool DescribeVulHostCountScanTimeResponse::hadAutoFixVulHasBeenSet() const
+{
+    return m_hadAutoFixVulHasBeenSet;
 }
 
 

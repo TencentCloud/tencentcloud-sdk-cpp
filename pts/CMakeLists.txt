@@ -89,6 +89,7 @@ set(pts_public_header_model
   include/tencentcloud/pts/v20210728/model/SampleLog.h
   include/tencentcloud/pts/v20210728/model/DomainNameConfig.h
   include/tencentcloud/pts/v20210728/model/DescribeNormalLogsResponse.h
+  include/tencentcloud/pts/v20210728/model/Notification.h
   include/tencentcloud/pts/v20210728/model/DescribeSampleBatchQueryRequest.h
   include/tencentcloud/pts/v20210728/model/RestartCronJobsRequest.h
   include/tencentcloud/pts/v20210728/model/DeleteScenariosRequest.h
@@ -229,6 +230,7 @@ set(pts_src
   src/v20210728/model/SampleLog.cpp
   src/v20210728/model/DomainNameConfig.cpp
   src/v20210728/model/DescribeNormalLogsResponse.cpp
+  src/v20210728/model/Notification.cpp
   src/v20210728/model/DescribeSampleBatchQueryRequest.cpp
   src/v20210728/model/RestartCronJobsRequest.cpp
   src/v20210728/model/DeleteScenariosRequest.cpp

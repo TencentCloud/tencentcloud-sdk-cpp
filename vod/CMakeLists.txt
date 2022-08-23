@@ -209,6 +209,7 @@ set(vod_public_header_model
   include/tencentcloud/vod/v20180717/model/ObjectConfigureInfo.h
   include/tencentcloud/vod/v20180717/model/AsrFullTextConfigureInfoForUpdate.h
   include/tencentcloud/vod/v20180717/model/DeleteHeadTailTemplateResponse.h
+  include/tencentcloud/vod/v20180717/model/RemoveWatermarkResponse.h
   include/tencentcloud/vod/v20180717/model/TranscodeTask2017.h
   include/tencentcloud/vod/v20180717/model/CreatePersonSampleResponse.h
   include/tencentcloud/vod/v20180717/model/CreateContentReviewTemplateResponse.h
@@ -459,6 +460,7 @@ set(vod_public_header_model
   include/tencentcloud/vod/v20180717/model/WatermarkInput.h
   include/tencentcloud/vod/v20180717/model/AiSampleWordInfo.h
   include/tencentcloud/vod/v20180717/model/AdaptiveDynamicStreamingInfoItem.h
+  include/tencentcloud/vod/v20180717/model/LiveRealTimeClipStreamInfo.h
   include/tencentcloud/vod/v20180717/model/ProhibitedOcrReviewTemplateInfo.h
   include/tencentcloud/vod/v20180717/model/DeleteClassResponse.h
   include/tencentcloud/vod/v20180717/model/ModifyTranscodeTemplateResponse.h
@@ -541,6 +543,7 @@ set(vod_public_header_model
   include/tencentcloud/vod/v20180717/model/ImageTransform.h
   include/tencentcloud/vod/v20180717/model/CreateAnimatedGraphicsTemplateRequest.h
   include/tencentcloud/vod/v20180717/model/FrameTagConfigureInfo.h
+  include/tencentcloud/vod/v20180717/model/RemoveWatermarkRequest.h
   include/tencentcloud/vod/v20180717/model/ExecuteFunctionRequest.h
   include/tencentcloud/vod/v20180717/model/ConfirmEventsResponse.h
   include/tencentcloud/vod/v20180717/model/ModifyPersonSampleResponse.h
@@ -809,6 +812,7 @@ set(vod_src
   src/v20180717/model/ObjectConfigureInfo.cpp
   src/v20180717/model/AsrFullTextConfigureInfoForUpdate.cpp
   src/v20180717/model/DeleteHeadTailTemplateResponse.cpp
+  src/v20180717/model/RemoveWatermarkResponse.cpp
   src/v20180717/model/TranscodeTask2017.cpp
   src/v20180717/model/CreatePersonSampleResponse.cpp
   src/v20180717/model/CreateContentReviewTemplateResponse.cpp
@@ -1059,6 +1063,7 @@ set(vod_src
   src/v20180717/model/WatermarkInput.cpp
   src/v20180717/model/AiSampleWordInfo.cpp
   src/v20180717/model/AdaptiveDynamicStreamingInfoItem.cpp
+  src/v20180717/model/LiveRealTimeClipStreamInfo.cpp
   src/v20180717/model/ProhibitedOcrReviewTemplateInfo.cpp
   src/v20180717/model/DeleteClassResponse.cpp
   src/v20180717/model/ModifyTranscodeTemplateResponse.cpp
@@ -1141,6 +1146,7 @@ set(vod_src
   src/v20180717/model/ImageTransform.cpp
   src/v20180717/model/CreateAnimatedGraphicsTemplateRequest.cpp
   src/v20180717/model/FrameTagConfigureInfo.cpp
+  src/v20180717/model/RemoveWatermarkRequest.cpp
   src/v20180717/model/ExecuteFunctionRequest.cpp
   src/v20180717/model/ConfirmEventsResponse.cpp
   src/v20180717/model/ModifyPersonSampleResponse.cpp

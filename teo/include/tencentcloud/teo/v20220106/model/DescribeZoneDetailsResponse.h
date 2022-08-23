@@ -21,10 +21,10 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/teo/v20220106/model/VanityNameServers.h>
-#include <tencentcloud/teo/v20220106/model/VanityNameServersIps.h>
 #include <tencentcloud/teo/v20220106/model/Tag.h>
 #include <tencentcloud/teo/v20220106/model/Resource.h>
+#include <tencentcloud/teo/v20220106/model/VanityNameServers.h>
+#include <tencentcloud/teo/v20220106/model/VanityNameServersIps.h>
 
 
 namespace TencentCloud
@@ -73,9 +73,7 @@ namespace TencentCloud
 
                     /**
                      * 获取用户当前使用的 NS 列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OriginalNameServers 用户当前使用的 NS 列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> GetOriginalNameServers() const;
 
@@ -87,9 +85,7 @@ namespace TencentCloud
 
                     /**
                      * 获取腾讯云分配给用户的 NS 列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NameServers 腾讯云分配给用户的 NS 列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> GetNameServers() const;
 
@@ -148,16 +144,82 @@ namespace TencentCloud
                     bool PausedHasBeenSet() const;
 
                     /**
-                     * 获取站点创建时间
-                     * @return CreatedOn 站点创建时间
+                     * 获取是否开启 CNAME 加速
+- enabled：开启
+- disabled：关闭
+                     * @return CnameSpeedUp 是否开启 CNAME 加速
+- enabled：开启
+- disabled：关闭
                      */
-                    std::string GetCreatedOn() const;
+                    std::string GetCnameSpeedUp() const;
 
                     /**
-                     * 判断参数 CreatedOn 是否已赋值
-                     * @return CreatedOn 是否已赋值
+                     * 判断参数 CnameSpeedUp 是否已赋值
+                     * @return CnameSpeedUp 是否已赋值
                      */
-                    bool CreatedOnHasBeenSet() const;
+                    bool CnameSpeedUpHasBeenSet() const;
+
+                    /**
+                     * 获取cname切换验证状态
+- finished 切换完成
+- pending 切换验证中
+                     * @return CnameStatus cname切换验证状态
+- finished 切换完成
+- pending 切换验证中
+                     */
+                    std::string GetCnameStatus() const;
+
+                    /**
+                     * 判断参数 CnameStatus 是否已赋值
+                     * @return CnameStatus 是否已赋值
+                     */
+                    bool CnameStatusHasBeenSet() const;
+
+                    /**
+                     * 获取资源标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Tags 资源标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Tag> GetTags() const;
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     */
+                    bool TagsHasBeenSet() const;
+
+                    /**
+                     * 获取站点接入地域，取值为：
+<li> global：全球；</li>
+<li> mainland：中国大陆；</li>
+<li> overseas：境外区域。</li>
+                     * @return Area 站点接入地域，取值为：
+<li> global：全球；</li>
+<li> mainland：中国大陆；</li>
+<li> overseas：境外区域。</li>
+                     */
+                    std::string GetArea() const;
+
+                    /**
+                     * 判断参数 Area 是否已赋值
+                     * @return Area 是否已赋值
+                     */
+                    bool AreaHasBeenSet() const;
+
+                    /**
+                     * 获取计费资源
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Resources 计费资源
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Resource> GetResources() const;
+
+                    /**
+                     * 判断参数 Resources 是否已赋值
+                     * @return Resources 是否已赋值
+                     */
+                    bool ResourcesHasBeenSet() const;
 
                     /**
                      * 获取站点修改时间
@@ -170,6 +232,18 @@ namespace TencentCloud
                      * @return ModifiedOn 是否已赋值
                      */
                     bool ModifiedOnHasBeenSet() const;
+
+                    /**
+                     * 获取站点创建时间
+                     * @return CreatedOn 站点创建时间
+                     */
+                    std::string GetCreatedOn() const;
+
+                    /**
+                     * 判断参数 CreatedOn 是否已赋值
+                     * @return CreatedOn 是否已赋值
+                     */
+                    bool CreatedOnHasBeenSet() const;
 
                     /**
                      * 获取用户自定义 NS 信息
@@ -199,68 +273,6 @@ namespace TencentCloud
                      */
                     bool VanityNameServersIpsHasBeenSet() const;
 
-                    /**
-                     * 获取是否开启 CNAME 加速
-- enabled：开启
-- disabled：关闭
-                     * @return CnameSpeedUp 是否开启 CNAME 加速
-- enabled：开启
-- disabled：关闭
-                     */
-                    std::string GetCnameSpeedUp() const;
-
-                    /**
-                     * 判断参数 CnameSpeedUp 是否已赋值
-                     * @return CnameSpeedUp 是否已赋值
-                     */
-                    bool CnameSpeedUpHasBeenSet() const;
-
-                    /**
-                     * 获取cname切换验证状态
-- finished 切换完成
-- pending 切换验证中
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CnameStatus cname切换验证状态
-- finished 切换完成
-- pending 切换验证中
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string GetCnameStatus() const;
-
-                    /**
-                     * 判断参数 CnameStatus 是否已赋值
-                     * @return CnameStatus 是否已赋值
-                     */
-                    bool CnameStatusHasBeenSet() const;
-
-                    /**
-                     * 获取资源标签
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Tags 资源标签
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::vector<Tag> GetTags() const;
-
-                    /**
-                     * 判断参数 Tags 是否已赋值
-                     * @return Tags 是否已赋值
-                     */
-                    bool TagsHasBeenSet() const;
-
-                    /**
-                     * 获取计费资源
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Resources 计费资源
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::vector<Resource> GetResources() const;
-
-                    /**
-                     * 判断参数 Resources 是否已赋值
-                     * @return Resources 是否已赋值
-                     */
-                    bool ResourcesHasBeenSet() const;
-
                 private:
 
                     /**
@@ -277,14 +289,12 @@ namespace TencentCloud
 
                     /**
                      * 用户当前使用的 NS 列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_originalNameServers;
                     bool m_originalNameServersHasBeenSet;
 
                     /**
                      * 腾讯云分配给用户的 NS 列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_nameServers;
                     bool m_nameServersHasBeenSet;
@@ -314,16 +324,55 @@ namespace TencentCloud
                     bool m_pausedHasBeenSet;
 
                     /**
-                     * 站点创建时间
+                     * 是否开启 CNAME 加速
+- enabled：开启
+- disabled：关闭
                      */
-                    std::string m_createdOn;
-                    bool m_createdOnHasBeenSet;
+                    std::string m_cnameSpeedUp;
+                    bool m_cnameSpeedUpHasBeenSet;
+
+                    /**
+                     * cname切换验证状态
+- finished 切换完成
+- pending 切换验证中
+                     */
+                    std::string m_cnameStatus;
+                    bool m_cnameStatusHasBeenSet;
+
+                    /**
+                     * 资源标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Tag> m_tags;
+                    bool m_tagsHasBeenSet;
+
+                    /**
+                     * 站点接入地域，取值为：
+<li> global：全球；</li>
+<li> mainland：中国大陆；</li>
+<li> overseas：境外区域。</li>
+                     */
+                    std::string m_area;
+                    bool m_areaHasBeenSet;
+
+                    /**
+                     * 计费资源
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Resource> m_resources;
+                    bool m_resourcesHasBeenSet;
 
                     /**
                      * 站点修改时间
                      */
                     std::string m_modifiedOn;
                     bool m_modifiedOnHasBeenSet;
+
+                    /**
+                     * 站点创建时间
+                     */
+                    std::string m_createdOn;
+                    bool m_createdOnHasBeenSet;
 
                     /**
                      * 用户自定义 NS 信息
@@ -338,37 +387,6 @@ namespace TencentCloud
                      */
                     std::vector<VanityNameServersIps> m_vanityNameServersIps;
                     bool m_vanityNameServersIpsHasBeenSet;
-
-                    /**
-                     * 是否开启 CNAME 加速
-- enabled：开启
-- disabled：关闭
-                     */
-                    std::string m_cnameSpeedUp;
-                    bool m_cnameSpeedUpHasBeenSet;
-
-                    /**
-                     * cname切换验证状态
-- finished 切换完成
-- pending 切换验证中
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string m_cnameStatus;
-                    bool m_cnameStatusHasBeenSet;
-
-                    /**
-                     * 资源标签
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::vector<Tag> m_tags;
-                    bool m_tagsHasBeenSet;
-
-                    /**
-                     * 计费资源
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::vector<Resource> m_resources;
-                    bool m_resourcesHasBeenSet;
 
                 };
             }

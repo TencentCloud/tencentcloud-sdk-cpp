@@ -154,6 +154,24 @@ namespace TencentCloud
                      */
                     bool AccessTypesHasBeenSet() const;
 
+                    /**
+                     * 获取展示自定义域名
+                     * @return CustomDomainNames 展示自定义域名
+                     */
+                    std::vector<std::string> GetCustomDomainNames() const;
+
+                    /**
+                     * 设置展示自定义域名
+                     * @param CustomDomainNames 展示自定义域名
+                     */
+                    void SetCustomDomainNames(const std::vector<std::string>& _customDomainNames);
+
+                    /**
+                     * 判断参数 CustomDomainNames 是否已赋值
+                     * @return CustomDomainNames 是否已赋值
+                     */
+                    bool CustomDomainNamesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -191,6 +209,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_accessTypes;
                     bool m_accessTypesHasBeenSet;
+
+                    /**
+                     * 展示自定义域名
+                     */
+                    std::vector<std::string> m_customDomainNames;
+                    bool m_customDomainNamesHasBeenSet;
 
                 };
             }

@@ -41,7 +41,8 @@ DescribeZoneSettingResponse::DescribeZoneSettingResponse() :
     m_webSocketHasBeenSet(false),
     m_clientIpHeaderHasBeenSet(false),
     m_cachePrefreshHasBeenSet(false),
-    m_ipv6HasBeenSet(false)
+    m_ipv6HasBeenSet(false),
+    m_areaHasBeenSet(false)
 {
 }
 
@@ -371,6 +372,16 @@ CoreInternalOutcome DescribeZoneSettingResponse::Deserialize(const string &paylo
         m_ipv6HasBeenSet = true;
     }
 
+    if (rsp.HasMember("Area") && !rsp["Area"].IsNull())
+    {
+        if (!rsp["Area"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Area` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_area = string(rsp["Area"].GetString());
+        m_areaHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -539,6 +550,14 @@ string DescribeZoneSettingResponse::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_ipv6.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_areaHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Area";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_area.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -731,6 +750,16 @@ Ipv6Access DescribeZoneSettingResponse::GetIpv6() const
 bool DescribeZoneSettingResponse::Ipv6HasBeenSet() const
 {
     return m_ipv6HasBeenSet;
+}
+
+string DescribeZoneSettingResponse::GetArea() const
+{
+    return m_area;
+}
+
+bool DescribeZoneSettingResponse::AreaHasBeenSet() const
+{
+    return m_areaHasBeenSet;
 }
 
 

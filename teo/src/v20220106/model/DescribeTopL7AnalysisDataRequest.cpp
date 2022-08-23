@@ -29,7 +29,8 @@ DescribeTopL7AnalysisDataRequest::DescribeTopL7AnalysisDataRequest() :
     m_limitHasBeenSet(false),
     m_intervalHasBeenSet(false),
     m_zoneIdsHasBeenSet(false),
-    m_filtersHasBeenSet(false)
+    m_filtersHasBeenSet(false),
+    m_areaHasBeenSet(false)
 {
 }
 
@@ -106,6 +107,14 @@ string DescribeTopL7AnalysisDataRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_areaHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Area";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_area.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -226,6 +235,22 @@ void DescribeTopL7AnalysisDataRequest::SetFilters(const vector<Filter>& _filters
 bool DescribeTopL7AnalysisDataRequest::FiltersHasBeenSet() const
 {
     return m_filtersHasBeenSet;
+}
+
+string DescribeTopL7AnalysisDataRequest::GetArea() const
+{
+    return m_area;
+}
+
+void DescribeTopL7AnalysisDataRequest::SetArea(const string& _area)
+{
+    m_area = _area;
+    m_areaHasBeenSet = true;
+}
+
+bool DescribeTopL7AnalysisDataRequest::AreaHasBeenSet() const
+{
+    return m_areaHasBeenSet;
 }
 
 

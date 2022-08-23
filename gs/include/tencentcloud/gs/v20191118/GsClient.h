@@ -90,7 +90,7 @@ namespace TencentCloud
                 CreateSessionOutcomeCallable CreateSessionCallable(const Model::CreateSessionRequest& request);
 
                 /**
-                 *获取实例总数和运行数
+                 *获取并发总数和运行数
                  * @param req DescribeInstancesCountRequest
                  * @return DescribeInstancesCountOutcome
                  */

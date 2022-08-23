@@ -414,6 +414,70 @@ namespace TencentCloud
                      */
                     bool Ipv6HasBeenSet() const;
 
+                    /**
+                     * 获取加速区域，取值有：
+<li>mainland：中国大陆境内;</li>
+<li>overseas：全球（不含中国大陆）。</li>
+默认值：overseas
+                     * @return Area 加速区域，取值有：
+<li>mainland：中国大陆境内;</li>
+<li>overseas：全球（不含中国大陆）。</li>
+默认值：overseas
+                     */
+                    std::string GetArea() const;
+
+                    /**
+                     * 设置加速区域，取值有：
+<li>mainland：中国大陆境内;</li>
+<li>overseas：全球（不含中国大陆）。</li>
+默认值：overseas
+                     * @param Area 加速区域，取值有：
+<li>mainland：中国大陆境内;</li>
+<li>overseas：全球（不含中国大陆）。</li>
+默认值：overseas
+                     */
+                    void SetArea(const std::string& _area);
+
+                    /**
+                     * 判断参数 Area 是否已赋值
+                     * @return Area 是否已赋值
+                     */
+                    bool AreaHasBeenSet() const;
+
+                    /**
+                     * 获取封禁状态，取值有：
+<li>banned：已封禁;</li>
+<li>banning：封禁中；</li>
+<li>recover：已解封；</li>
+<li>recovering：解封禁中。</li>
+                     * @return BanStatus 封禁状态，取值有：
+<li>banned：已封禁;</li>
+<li>banning：封禁中；</li>
+<li>recover：已解封；</li>
+<li>recovering：解封禁中。</li>
+                     */
+                    std::string GetBanStatus() const;
+
+                    /**
+                     * 设置封禁状态，取值有：
+<li>banned：已封禁;</li>
+<li>banning：封禁中；</li>
+<li>recover：已解封；</li>
+<li>recovering：解封禁中。</li>
+                     * @param BanStatus 封禁状态，取值有：
+<li>banned：已封禁;</li>
+<li>banning：封禁中；</li>
+<li>recover：已解封；</li>
+<li>recovering：解封禁中。</li>
+                     */
+                    void SetBanStatus(const std::string& _banStatus);
+
+                    /**
+                     * 判断参数 BanStatus 是否已赋值
+                     * @return BanStatus 是否已赋值
+                     */
+                    bool BanStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -532,6 +596,25 @@ namespace TencentCloud
                      */
                     Ipv6Access m_ipv6;
                     bool m_ipv6HasBeenSet;
+
+                    /**
+                     * 加速区域，取值有：
+<li>mainland：中国大陆境内;</li>
+<li>overseas：全球（不含中国大陆）。</li>
+默认值：overseas
+                     */
+                    std::string m_area;
+                    bool m_areaHasBeenSet;
+
+                    /**
+                     * 封禁状态，取值有：
+<li>banned：已封禁;</li>
+<li>banning：封禁中；</li>
+<li>recover：已解封；</li>
+<li>recovering：解封禁中。</li>
+                     */
+                    std::string m_banStatus;
+                    bool m_banStatusHasBeenSet;
 
                 };
             }

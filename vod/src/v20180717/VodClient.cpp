@@ -5286,6 +5286,49 @@ VodClient::RefreshUrlCacheOutcomeCallable VodClient::RefreshUrlCacheCallable(con
     return task->get_future();
 }
 
+VodClient::RemoveWatermarkOutcome VodClient::RemoveWatermark(const RemoveWatermarkRequest &request)
+{
+    auto outcome = MakeRequest(request, "RemoveWatermark");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RemoveWatermarkResponse rsp = RemoveWatermarkResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RemoveWatermarkOutcome(rsp);
+        else
+            return RemoveWatermarkOutcome(o.GetError());
+    }
+    else
+    {
+        return RemoveWatermarkOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::RemoveWatermarkAsync(const RemoveWatermarkRequest& request, const RemoveWatermarkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RemoveWatermark(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VodClient::RemoveWatermarkOutcomeCallable VodClient::RemoveWatermarkCallable(const RemoveWatermarkRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RemoveWatermarkOutcome()>>(
+        [this, request]()
+        {
+            return this->RemoveWatermark(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VodClient::ResetProcedureTemplateOutcome VodClient::ResetProcedureTemplate(const ResetProcedureTemplateRequest &request)
 {
     auto outcome = MakeRequest(request, "ResetProcedureTemplate");

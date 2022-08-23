@@ -103,6 +103,30 @@ namespace TencentCloud
                      */
                     bool TaskIdHasBeenSet() const;
 
+                    /**
+                     * 获取最后一次修复漏洞的时间
+                     * @return LastFixTime 最后一次修复漏洞的时间
+                     */
+                    std::string GetLastFixTime() const;
+
+                    /**
+                     * 判断参数 LastFixTime 是否已赋值
+                     * @return LastFixTime 是否已赋值
+                     */
+                    bool LastFixTimeHasBeenSet() const;
+
+                    /**
+                     * 获取是否有支持自动修复的漏洞事件
+                     * @return hadAutoFixVul 是否有支持自动修复的漏洞事件
+                     */
+                    bool GethadAutoFixVul() const;
+
+                    /**
+                     * 判断参数 hadAutoFixVul 是否已赋值
+                     * @return hadAutoFixVul 是否已赋值
+                     */
+                    bool hadAutoFixVulHasBeenSet() const;
+
                 private:
 
                     /**
@@ -134,6 +158,18 @@ namespace TencentCloud
                      */
                     uint64_t m_taskId;
                     bool m_taskIdHasBeenSet;
+
+                    /**
+                     * 最后一次修复漏洞的时间
+                     */
+                    std::string m_lastFixTime;
+                    bool m_lastFixTimeHasBeenSet;
+
+                    /**
+                     * 是否有支持自动修复的漏洞事件
+                     */
+                    bool m_hadAutoFixVul;
+                    bool m_hadAutoFixVulHasBeenSet;
 
                 };
             }

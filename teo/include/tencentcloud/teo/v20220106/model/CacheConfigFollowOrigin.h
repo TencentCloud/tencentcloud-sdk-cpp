@@ -50,11 +50,9 @@ namespace TencentCloud
                      * 获取遵循源站配置开关，取值有：
 <li>on：开启；</li>
 <li>off：关闭。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Switch 遵循源站配置开关，取值有：
 <li>on：开启；</li>
 <li>off：关闭。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetSwitch() const;
 
@@ -62,11 +60,9 @@ namespace TencentCloud
                      * 设置遵循源站配置开关，取值有：
 <li>on：开启；</li>
 <li>off：关闭。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Switch 遵循源站配置开关，取值有：
 <li>on：开启；</li>
 <li>off：关闭。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetSwitch(const std::string& _switch);
 
@@ -82,7 +78,6 @@ namespace TencentCloud
                      * 遵循源站配置开关，取值有：
 <li>on：开启；</li>
 <li>off：关闭。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_switch;
                     bool m_switchHasBeenSet;

@@ -28,12 +28,13 @@ Zone::Zone() :
     m_statusHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_pausedHasBeenSet(false),
-    m_createdOnHasBeenSet(false),
-    m_modifiedOnHasBeenSet(false),
+    m_cnameSpeedUpHasBeenSet(false),
     m_cnameStatusHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_resourcesHasBeenSet(false),
-    m_cnameSpeedUpHasBeenSet(false)
+    m_createdOnHasBeenSet(false),
+    m_modifiedOnHasBeenSet(false),
+    m_areaHasBeenSet(false)
 {
 }
 
@@ -118,24 +119,14 @@ CoreInternalOutcome Zone::Deserialize(const rapidjson::Value &value)
         m_pausedHasBeenSet = true;
     }
 
-    if (value.HasMember("CreatedOn") && !value["CreatedOn"].IsNull())
+    if (value.HasMember("CnameSpeedUp") && !value["CnameSpeedUp"].IsNull())
     {
-        if (!value["CreatedOn"].IsString())
+        if (!value["CnameSpeedUp"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `Zone.CreatedOn` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Zone.CnameSpeedUp` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_createdOn = string(value["CreatedOn"].GetString());
-        m_createdOnHasBeenSet = true;
-    }
-
-    if (value.HasMember("ModifiedOn") && !value["ModifiedOn"].IsNull())
-    {
-        if (!value["ModifiedOn"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `Zone.ModifiedOn` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_modifiedOn = string(value["ModifiedOn"].GetString());
-        m_modifiedOnHasBeenSet = true;
+        m_cnameSpeedUp = string(value["CnameSpeedUp"].GetString());
+        m_cnameSpeedUpHasBeenSet = true;
     }
 
     if (value.HasMember("CnameStatus") && !value["CnameStatus"].IsNull())
@@ -188,14 +179,34 @@ CoreInternalOutcome Zone::Deserialize(const rapidjson::Value &value)
         m_resourcesHasBeenSet = true;
     }
 
-    if (value.HasMember("CnameSpeedUp") && !value["CnameSpeedUp"].IsNull())
+    if (value.HasMember("CreatedOn") && !value["CreatedOn"].IsNull())
     {
-        if (!value["CnameSpeedUp"].IsString())
+        if (!value["CreatedOn"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `Zone.CnameSpeedUp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Zone.CreatedOn` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_cnameSpeedUp = string(value["CnameSpeedUp"].GetString());
-        m_cnameSpeedUpHasBeenSet = true;
+        m_createdOn = string(value["CreatedOn"].GetString());
+        m_createdOnHasBeenSet = true;
+    }
+
+    if (value.HasMember("ModifiedOn") && !value["ModifiedOn"].IsNull())
+    {
+        if (!value["ModifiedOn"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Zone.ModifiedOn` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_modifiedOn = string(value["ModifiedOn"].GetString());
+        m_modifiedOnHasBeenSet = true;
+    }
+
+    if (value.HasMember("Area") && !value["Area"].IsNull())
+    {
+        if (!value["Area"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Zone.Area` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_area = string(value["Area"].GetString());
+        m_areaHasBeenSet = true;
     }
 
 
@@ -271,20 +282,12 @@ void Zone::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorT
         value.AddMember(iKey, m_paused, allocator);
     }
 
-    if (m_createdOnHasBeenSet)
+    if (m_cnameSpeedUpHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "CreatedOn";
+        string key = "CnameSpeedUp";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_createdOn.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_modifiedOnHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ModifiedOn";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_modifiedOn.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cnameSpeedUp.c_str(), allocator).Move(), allocator);
     }
 
     if (m_cnameStatusHasBeenSet)
@@ -325,12 +328,28 @@ void Zone::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorT
         }
     }
 
-    if (m_cnameSpeedUpHasBeenSet)
+    if (m_createdOnHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "CnameSpeedUp";
+        string key = "CreatedOn";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_cnameSpeedUp.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createdOn.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_modifiedOnHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModifiedOn";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_modifiedOn.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_areaHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Area";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_area.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -448,36 +467,20 @@ bool Zone::PausedHasBeenSet() const
     return m_pausedHasBeenSet;
 }
 
-string Zone::GetCreatedOn() const
+string Zone::GetCnameSpeedUp() const
 {
-    return m_createdOn;
+    return m_cnameSpeedUp;
 }
 
-void Zone::SetCreatedOn(const string& _createdOn)
+void Zone::SetCnameSpeedUp(const string& _cnameSpeedUp)
 {
-    m_createdOn = _createdOn;
-    m_createdOnHasBeenSet = true;
+    m_cnameSpeedUp = _cnameSpeedUp;
+    m_cnameSpeedUpHasBeenSet = true;
 }
 
-bool Zone::CreatedOnHasBeenSet() const
+bool Zone::CnameSpeedUpHasBeenSet() const
 {
-    return m_createdOnHasBeenSet;
-}
-
-string Zone::GetModifiedOn() const
-{
-    return m_modifiedOn;
-}
-
-void Zone::SetModifiedOn(const string& _modifiedOn)
-{
-    m_modifiedOn = _modifiedOn;
-    m_modifiedOnHasBeenSet = true;
-}
-
-bool Zone::ModifiedOnHasBeenSet() const
-{
-    return m_modifiedOnHasBeenSet;
+    return m_cnameSpeedUpHasBeenSet;
 }
 
 string Zone::GetCnameStatus() const
@@ -528,19 +531,51 @@ bool Zone::ResourcesHasBeenSet() const
     return m_resourcesHasBeenSet;
 }
 
-string Zone::GetCnameSpeedUp() const
+string Zone::GetCreatedOn() const
 {
-    return m_cnameSpeedUp;
+    return m_createdOn;
 }
 
-void Zone::SetCnameSpeedUp(const string& _cnameSpeedUp)
+void Zone::SetCreatedOn(const string& _createdOn)
 {
-    m_cnameSpeedUp = _cnameSpeedUp;
-    m_cnameSpeedUpHasBeenSet = true;
+    m_createdOn = _createdOn;
+    m_createdOnHasBeenSet = true;
 }
 
-bool Zone::CnameSpeedUpHasBeenSet() const
+bool Zone::CreatedOnHasBeenSet() const
 {
-    return m_cnameSpeedUpHasBeenSet;
+    return m_createdOnHasBeenSet;
+}
+
+string Zone::GetModifiedOn() const
+{
+    return m_modifiedOn;
+}
+
+void Zone::SetModifiedOn(const string& _modifiedOn)
+{
+    m_modifiedOn = _modifiedOn;
+    m_modifiedOnHasBeenSet = true;
+}
+
+bool Zone::ModifiedOnHasBeenSet() const
+{
+    return m_modifiedOnHasBeenSet;
+}
+
+string Zone::GetArea() const
+{
+    return m_area;
+}
+
+void Zone::SetArea(const string& _area)
+{
+    m_area = _area;
+    m_areaHasBeenSet = true;
+}
+
+bool Zone::AreaHasBeenSet() const
+{
+    return m_areaHasBeenSet;
 }
 

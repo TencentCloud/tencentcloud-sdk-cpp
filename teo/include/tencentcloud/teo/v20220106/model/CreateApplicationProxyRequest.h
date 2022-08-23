@@ -81,24 +81,6 @@ namespace TencentCloud
                     bool ZoneNameHasBeenSet() const;
 
                     /**
-                     * 获取规则详细信息。
-                     * @return Rule 规则详细信息。
-                     */
-                    std::vector<ApplicationProxyRule> GetRule() const;
-
-                    /**
-                     * 设置规则详细信息。
-                     * @param Rule 规则详细信息。
-                     */
-                    void SetRule(const std::vector<ApplicationProxyRule>& _rule);
-
-                    /**
-                     * 判断参数 Rule 是否已赋值
-                     * @return Rule 是否已赋值
-                     */
-                    bool RuleHasBeenSet() const;
-
-                    /**
                      * 获取当ProxyType=hostname时，表示域名或子域名；
 当ProxyType=instance时，表示代理名称。
                      * @return ProxyName 当ProxyType=hostname时，表示域名或子域名；
@@ -235,6 +217,24 @@ namespace TencentCloud
                     bool ForwardClientIpHasBeenSet() const;
 
                     /**
+                     * 获取规则详细信息。
+                     * @return Rule 规则详细信息。
+                     */
+                    std::vector<ApplicationProxyRule> GetRule() const;
+
+                    /**
+                     * 设置规则详细信息。
+                     * @param Rule 规则详细信息。
+                     */
+                    void SetRule(const std::vector<ApplicationProxyRule>& _rule);
+
+                    /**
+                     * 判断参数 Rule 是否已赋值
+                     * @return Rule 是否已赋值
+                     */
+                    bool RuleHasBeenSet() const;
+
+                    /**
                      * 获取四层代理模式，取值有：
 <li>hostname：表示子域名模式；</li>
 <li>instance：表示实例模式。</li>不填写使用默认值instance。
@@ -319,12 +319,6 @@ namespace TencentCloud
                     bool m_zoneNameHasBeenSet;
 
                     /**
-                     * 规则详细信息。
-                     */
-                    std::vector<ApplicationProxyRule> m_rule;
-                    bool m_ruleHasBeenSet;
-
-                    /**
                      * 当ProxyType=hostname时，表示域名或子域名；
 当ProxyType=instance时，表示代理名称。
                      */
@@ -366,6 +360,12 @@ namespace TencentCloud
                      */
                     std::string m_forwardClientIp;
                     bool m_forwardClientIpHasBeenSet;
+
+                    /**
+                     * 规则详细信息。
+                     */
+                    std::vector<ApplicationProxyRule> m_rule;
+                    bool m_ruleHasBeenSet;
 
                     /**
                      * 四层代理模式，取值有：

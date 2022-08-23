@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/vod/v20180717/model/LiveRealTimeClipStreamInfo.h>
 
 
 namespace TencentCloud
@@ -169,6 +170,68 @@ namespace TencentCloud
                     bool ProcedureHasBeenSet() const;
 
                     /**
+                     * 获取分类ID，用于对媒体进行分类管理，可通过 [创建分类](/document/product/266/7812) 接口，创建分类，获得分类 ID。
+<li>默认值：0，表示其他分类。</li>
+仅 IsPersistence 为 1 时有效。
+                     * @return ClassId 分类ID，用于对媒体进行分类管理，可通过 [创建分类](/document/product/266/7812) 接口，创建分类，获得分类 ID。
+<li>默认值：0，表示其他分类。</li>
+仅 IsPersistence 为 1 时有效。
+                     */
+                    int64_t GetClassId() const;
+
+                    /**
+                     * 设置分类ID，用于对媒体进行分类管理，可通过 [创建分类](/document/product/266/7812) 接口，创建分类，获得分类 ID。
+<li>默认值：0，表示其他分类。</li>
+仅 IsPersistence 为 1 时有效。
+                     * @param ClassId 分类ID，用于对媒体进行分类管理，可通过 [创建分类](/document/product/266/7812) 接口，创建分类，获得分类 ID。
+<li>默认值：0，表示其他分类。</li>
+仅 IsPersistence 为 1 时有效。
+                     */
+                    void SetClassId(const int64_t& _classId);
+
+                    /**
+                     * 判断参数 ClassId 是否已赋值
+                     * @return ClassId 是否已赋值
+                     */
+                    bool ClassIdHasBeenSet() const;
+
+                    /**
+                     * 获取来源上下文，用于透传用户请求信息，[上传完成回调](/document/product/266/7830) 将返回该字段值，最长 250 个字符。仅 IsPersistence 为 1 时有效。
+                     * @return SourceContext 来源上下文，用于透传用户请求信息，[上传完成回调](/document/product/266/7830) 将返回该字段值，最长 250 个字符。仅 IsPersistence 为 1 时有效。
+                     */
+                    std::string GetSourceContext() const;
+
+                    /**
+                     * 设置来源上下文，用于透传用户请求信息，[上传完成回调](/document/product/266/7830) 将返回该字段值，最长 250 个字符。仅 IsPersistence 为 1 时有效。
+                     * @param SourceContext 来源上下文，用于透传用户请求信息，[上传完成回调](/document/product/266/7830) 将返回该字段值，最长 250 个字符。仅 IsPersistence 为 1 时有效。
+                     */
+                    void SetSourceContext(const std::string& _sourceContext);
+
+                    /**
+                     * 判断参数 SourceContext 是否已赋值
+                     * @return SourceContext 是否已赋值
+                     */
+                    bool SourceContextHasBeenSet() const;
+
+                    /**
+                     * 获取会话上下文，用于透传用户请求信息，当指定 Procedure 参数后，[任务流状态变更回调](/document/product/266/9636) 将返回该字段值，最长 1000 个字符。仅 IsPersistence 为 1 时有效。
+                     * @return SessionContext 会话上下文，用于透传用户请求信息，当指定 Procedure 参数后，[任务流状态变更回调](/document/product/266/9636) 将返回该字段值，最长 1000 个字符。仅 IsPersistence 为 1 时有效。
+                     */
+                    std::string GetSessionContext() const;
+
+                    /**
+                     * 设置会话上下文，用于透传用户请求信息，当指定 Procedure 参数后，[任务流状态变更回调](/document/product/266/9636) 将返回该字段值，最长 1000 个字符。仅 IsPersistence 为 1 时有效。
+                     * @param SessionContext 会话上下文，用于透传用户请求信息，当指定 Procedure 参数后，[任务流状态变更回调](/document/product/266/9636) 将返回该字段值，最长 1000 个字符。仅 IsPersistence 为 1 时有效。
+                     */
+                    void SetSessionContext(const std::string& _sessionContext);
+
+                    /**
+                     * 判断参数 SessionContext 是否已赋值
+                     * @return SessionContext 是否已赋值
+                     */
+                    bool SessionContextHasBeenSet() const;
+
+                    /**
                      * 获取是否需要返回剪辑后的视频元信息。0 不需要，1 需要。默认不需要。
                      * @return MetaDataRequired 是否需要返回剪辑后的视频元信息。0 不需要，1 需要。默认不需要。
                      */
@@ -203,6 +266,32 @@ namespace TencentCloud
                      * @return Host 是否已赋值
                      */
                     bool HostHasBeenSet() const;
+
+                    /**
+                     * 获取剪辑的直播流信息：
+<li>默认剪辑直播原始流。</li>
+<li>当StreamInfo中指定的Type为Transcoding，则剪辑TemplateId对应的直播转码流。</li>
+                     * @return StreamInfo 剪辑的直播流信息：
+<li>默认剪辑直播原始流。</li>
+<li>当StreamInfo中指定的Type为Transcoding，则剪辑TemplateId对应的直播转码流。</li>
+                     */
+                    LiveRealTimeClipStreamInfo GetStreamInfo() const;
+
+                    /**
+                     * 设置剪辑的直播流信息：
+<li>默认剪辑直播原始流。</li>
+<li>当StreamInfo中指定的Type为Transcoding，则剪辑TemplateId对应的直播转码流。</li>
+                     * @param StreamInfo 剪辑的直播流信息：
+<li>默认剪辑直播原始流。</li>
+<li>当StreamInfo中指定的Type为Transcoding，则剪辑TemplateId对应的直播转码流。</li>
+                     */
+                    void SetStreamInfo(const LiveRealTimeClipStreamInfo& _streamInfo);
+
+                    /**
+                     * 判断参数 StreamInfo 是否已赋值
+                     * @return StreamInfo 是否已赋值
+                     */
+                    bool StreamInfoHasBeenSet() const;
 
                     /**
                      * 获取系统保留字段，请勿填写。
@@ -267,6 +356,26 @@ namespace TencentCloud
                     bool m_procedureHasBeenSet;
 
                     /**
+                     * 分类ID，用于对媒体进行分类管理，可通过 [创建分类](/document/product/266/7812) 接口，创建分类，获得分类 ID。
+<li>默认值：0，表示其他分类。</li>
+仅 IsPersistence 为 1 时有效。
+                     */
+                    int64_t m_classId;
+                    bool m_classIdHasBeenSet;
+
+                    /**
+                     * 来源上下文，用于透传用户请求信息，[上传完成回调](/document/product/266/7830) 将返回该字段值，最长 250 个字符。仅 IsPersistence 为 1 时有效。
+                     */
+                    std::string m_sourceContext;
+                    bool m_sourceContextHasBeenSet;
+
+                    /**
+                     * 会话上下文，用于透传用户请求信息，当指定 Procedure 参数后，[任务流状态变更回调](/document/product/266/9636) 将返回该字段值，最长 1000 个字符。仅 IsPersistence 为 1 时有效。
+                     */
+                    std::string m_sessionContext;
+                    bool m_sessionContextHasBeenSet;
+
+                    /**
                      * 是否需要返回剪辑后的视频元信息。0 不需要，1 需要。默认不需要。
                      */
                     uint64_t m_metaDataRequired;
@@ -277,6 +386,14 @@ namespace TencentCloud
                      */
                     std::string m_host;
                     bool m_hostHasBeenSet;
+
+                    /**
+                     * 剪辑的直播流信息：
+<li>默认剪辑直播原始流。</li>
+<li>当StreamInfo中指定的Type为Transcoding，则剪辑TemplateId对应的直播转码流。</li>
+                     */
+                    LiveRealTimeClipStreamInfo m_streamInfo;
+                    bool m_streamInfoHasBeenSet;
 
                     /**
                      * 系统保留字段，请勿填写。

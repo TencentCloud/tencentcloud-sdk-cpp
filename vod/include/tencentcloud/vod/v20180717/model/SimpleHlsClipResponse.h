@@ -80,6 +80,18 @@ namespace TencentCloud
                      */
                     bool FileIdHasBeenSet() const;
 
+                    /**
+                     * 获取剪辑固化后的视频任务流 ID。
+                     * @return TaskId 剪辑固化后的视频任务流 ID。
+                     */
+                    std::string GetTaskId() const;
+
+                    /**
+                     * 判断参数 TaskId 是否已赋值
+                     * @return TaskId 是否已赋值
+                     */
+                    bool TaskIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -99,6 +111,12 @@ namespace TencentCloud
                      */
                     std::string m_fileId;
                     bool m_fileIdHasBeenSet;
+
+                    /**
+                     * 剪辑固化后的视频任务流 ID。
+                     */
+                    std::string m_taskId;
+                    bool m_taskIdHasBeenSet;
 
                 };
             }

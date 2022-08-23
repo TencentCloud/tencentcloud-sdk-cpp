@@ -70,6 +70,20 @@ namespace TencentCloud
                      */
                     bool TotalHasBeenSet() const;
 
+                    /**
+                     * 获取备注信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Warning 备注信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetWarning() const;
+
+                    /**
+                     * 判断参数 Warning 是否已赋值
+                     * @return Warning 是否已赋值
+                     */
+                    bool WarningHasBeenSet() const;
+
                 private:
 
                     /**
@@ -84,6 +98,13 @@ namespace TencentCloud
                      */
                     int64_t m_total;
                     bool m_totalHasBeenSet;
+
+                    /**
+                     * 备注信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_warning;
+                    bool m_warningHasBeenSet;
 
                 };
             }

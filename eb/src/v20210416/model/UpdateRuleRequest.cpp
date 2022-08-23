@@ -27,6 +27,7 @@ UpdateRuleRequest::UpdateRuleRequest() :
     m_eventBusIdHasBeenSet(false),
     m_enableHasBeenSet(false),
     m_descriptionHasBeenSet(false),
+    m_eventPatternHasBeenSet(false),
     m_ruleNameHasBeenSet(false)
 {
 }
@@ -68,6 +69,14 @@ string UpdateRuleRequest::ToJsonString() const
         string key = "Description";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_eventPatternHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EventPattern";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_eventPattern.c_str(), allocator).Move(), allocator);
     }
 
     if (m_ruleNameHasBeenSet)
@@ -148,6 +157,22 @@ void UpdateRuleRequest::SetDescription(const string& _description)
 bool UpdateRuleRequest::DescriptionHasBeenSet() const
 {
     return m_descriptionHasBeenSet;
+}
+
+string UpdateRuleRequest::GetEventPattern() const
+{
+    return m_eventPattern;
+}
+
+void UpdateRuleRequest::SetEventPattern(const string& _eventPattern)
+{
+    m_eventPattern = _eventPattern;
+    m_eventPatternHasBeenSet = true;
+}
+
+bool UpdateRuleRequest::EventPatternHasBeenSet() const
+{
+    return m_eventPatternHasBeenSet;
 }
 
 string UpdateRuleRequest::GetRuleName() const

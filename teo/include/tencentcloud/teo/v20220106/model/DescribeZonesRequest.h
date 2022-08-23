@@ -44,14 +44,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取分页参数，页偏移
-                     * @return Offset 分页参数，页偏移
+                     * 获取分页查询偏移量。默认值：0，最小值：0。
+                     * @return Offset 分页查询偏移量。默认值：0，最小值：0。
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置分页参数，页偏移
-                     * @param Offset 分页参数，页偏移
+                     * 设置分页查询偏移量。默认值：0，最小值：0。
+                     * @param Offset 分页查询偏移量。默认值：0，最小值：0。
                      */
                     void SetOffset(const int64_t& _offset);
 
@@ -62,14 +62,14 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取分页参数，每页返回的站点个数
-                     * @return Limit 分页参数，每页返回的站点个数
+                     * 获取分页查询限制数目。默认值：1000，最大值：1000。
+                     * @return Limit 分页查询限制数目。默认值：1000，最大值：1000。
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置分页参数，每页返回的站点个数
-                     * @param Limit 分页参数，每页返回的站点个数
+                     * 设置分页查询限制数目。默认值：1000，最大值：1000。
+                     * @param Limit 分页查询限制数目。默认值：1000，最大值：1000。
                      */
                     void SetLimit(const int64_t& _limit);
 
@@ -80,14 +80,14 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取查询条件过滤器，复杂类型
-                     * @return Filters 查询条件过滤器，复杂类型
+                     * 获取查询条件过滤器，复杂类型。
+                     * @return Filters 查询条件过滤器，复杂类型。
                      */
                     std::vector<ZoneFilter> GetFilters() const;
 
                     /**
-                     * 设置查询条件过滤器，复杂类型
-                     * @param Filters 查询条件过滤器，复杂类型
+                     * 设置查询条件过滤器，复杂类型。
+                     * @param Filters 查询条件过滤器，复杂类型。
                      */
                     void SetFilters(const std::vector<ZoneFilter>& _filters);
 
@@ -100,19 +100,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 分页参数，页偏移
+                     * 分页查询偏移量。默认值：0，最小值：0。
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 分页参数，每页返回的站点个数
+                     * 分页查询限制数目。默认值：1000，最大值：1000。
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 查询条件过滤器，复杂类型
+                     * 查询条件过滤器，复杂类型。
                      */
                     std::vector<ZoneFilter> m_filters;
                     bool m_filtersHasBeenSet;

@@ -48,14 +48,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取资源 ID
-                     * @return Id 资源 ID
+                     * 获取资源 ID。
+                     * @return Id 资源 ID。
                      */
                     std::string GetId() const;
 
                     /**
-                     * 设置资源 ID
-                     * @param Id 资源 ID
+                     * 设置资源 ID。
+                     * @param Id 资源 ID。
                      */
                     void SetId(const std::string& _id);
 
@@ -66,22 +66,18 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取付费模式
-0 为后付费
-1 为预付费
-                     * @return PayMode 付费模式
-0 为后付费
-1 为预付费
+                     * 获取付费模式，取值有：
+<li>0：后付费。</li>
+                     * @return PayMode 付费模式，取值有：
+<li>0：后付费。</li>
                      */
                     int64_t GetPayMode() const;
 
                     /**
-                     * 设置付费模式
-0 为后付费
-1 为预付费
-                     * @param PayMode 付费模式
-0 为后付费
-1 为预付费
+                     * 设置付费模式，取值有：
+<li>0：后付费。</li>
+                     * @param PayMode 付费模式，取值有：
+<li>0：后付费。</li>
                      */
                     void SetPayMode(const int64_t& _payMode);
 
@@ -92,14 +88,14 @@ namespace TencentCloud
                     bool PayModeHasBeenSet() const;
 
                     /**
-                     * 获取创建时间
-                     * @return CreateTime 创建时间
+                     * 获取创建时间。
+                     * @return CreateTime 创建时间。
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置创建时间
-                     * @param CreateTime 创建时间
+                     * 设置创建时间。
+                     * @param CreateTime 创建时间。
                      */
                     void SetCreateTime(const std::string& _createTime);
 
@@ -110,14 +106,14 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取生效时间
-                     * @return EnableTime 生效时间
+                     * 获取生效时间。
+                     * @return EnableTime 生效时间。
                      */
                     std::string GetEnableTime() const;
 
                     /**
-                     * 设置生效时间
-                     * @param EnableTime 生效时间
+                     * 设置生效时间。
+                     * @param EnableTime 生效时间。
                      */
                     void SetEnableTime(const std::string& _enableTime);
 
@@ -128,14 +124,14 @@ namespace TencentCloud
                     bool EnableTimeHasBeenSet() const;
 
                     /**
-                     * 获取失效时间
-                     * @return ExpireTime 失效时间
+                     * 获取失效时间。
+                     * @return ExpireTime 失效时间。
                      */
                     std::string GetExpireTime() const;
 
                     /**
-                     * 设置失效时间
-                     * @param ExpireTime 失效时间
+                     * 设置失效时间。
+                     * @param ExpireTime 失效时间。
                      */
                     void SetExpireTime(const std::string& _expireTime);
 
@@ -146,14 +142,26 @@ namespace TencentCloud
                     bool ExpireTimeHasBeenSet() const;
 
                     /**
-                     * 获取套餐状态
-                     * @return Status 套餐状态
+                     * 获取套餐状态，取值有：
+<li>normal：正常；</li>
+<li>isolated：隔离；</li>
+<li>destroyed：销毁。</li>
+                     * @return Status 套餐状态，取值有：
+<li>normal：正常；</li>
+<li>isolated：隔离；</li>
+<li>destroyed：销毁。</li>
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置套餐状态
-                     * @param Status 套餐状态
+                     * 设置套餐状态，取值有：
+<li>normal：正常；</li>
+<li>isolated：隔离；</li>
+<li>destroyed：销毁。</li>
+                     * @param Status 套餐状态，取值有：
+<li>normal：正常；</li>
+<li>isolated：隔离；</li>
+<li>destroyed：销毁。</li>
                      */
                     void SetStatus(const std::string& _status);
 
@@ -164,14 +172,14 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取询价参数
-                     * @return Sv 询价参数
+                     * 获取询价参数。
+                     * @return Sv 询价参数。
                      */
                     std::vector<Sv> GetSv() const;
 
                     /**
-                     * 设置询价参数
-                     * @param Sv 询价参数
+                     * 设置询价参数。
+                     * @param Sv 询价参数。
                      */
                     void SetSv(const std::vector<Sv>& _sv);
 
@@ -182,26 +190,26 @@ namespace TencentCloud
                     bool SvHasBeenSet() const;
 
                     /**
-                     * 获取是否自动续费
-0 表示默认状态
-1 表示自动续费
-2 表示不自动续费
-                     * @return AutoRenewFlag 是否自动续费
-0 表示默认状态
-1 表示自动续费
-2 表示不自动续费
+                     * 获取是否自动续费，取值有：
+<li>0：默认状态；</li>
+<li>1：自动续费；</li>
+<li>2：不自动续费。</li>
+                     * @return AutoRenewFlag 是否自动续费，取值有：
+<li>0：默认状态；</li>
+<li>1：自动续费；</li>
+<li>2：不自动续费。</li>
                      */
                     int64_t GetAutoRenewFlag() const;
 
                     /**
-                     * 设置是否自动续费
-0 表示默认状态
-1 表示自动续费
-2 表示不自动续费
-                     * @param AutoRenewFlag 是否自动续费
-0 表示默认状态
-1 表示自动续费
-2 表示不自动续费
+                     * 设置是否自动续费，取值有：
+<li>0：默认状态；</li>
+<li>1：自动续费；</li>
+<li>2：不自动续费。</li>
+                     * @param AutoRenewFlag 是否自动续费，取值有：
+<li>0：默认状态；</li>
+<li>1：自动续费；</li>
+<li>2：不自动续费。</li>
                      */
                     void SetAutoRenewFlag(const int64_t& _autoRenewFlag);
 
@@ -212,14 +220,14 @@ namespace TencentCloud
                     bool AutoRenewFlagHasBeenSet() const;
 
                     /**
-                     * 获取套餐关联资源ID
-                     * @return PlanId 套餐关联资源ID
+                     * 获取套餐关联资源 ID。
+                     * @return PlanId 套餐关联资源 ID。
                      */
                     std::string GetPlanId() const;
 
                     /**
-                     * 设置套餐关联资源ID
-                     * @param PlanId 套餐关联资源ID
+                     * 设置套餐关联资源 ID。
+                     * @param PlanId 套餐关联资源 ID。
                      */
                     void SetPlanId(const std::string& _planId);
 
@@ -229,66 +237,102 @@ namespace TencentCloud
                      */
                     bool PlanIdHasBeenSet() const;
 
+                    /**
+                     * 获取地域，取值有：
+<li>mainland：国内；</li>
+<li>overseas：海外。</li>
+                     * @return Area 地域，取值有：
+<li>mainland：国内；</li>
+<li>overseas：海外。</li>
+                     */
+                    std::string GetArea() const;
+
+                    /**
+                     * 设置地域，取值有：
+<li>mainland：国内；</li>
+<li>overseas：海外。</li>
+                     * @param Area 地域，取值有：
+<li>mainland：国内；</li>
+<li>overseas：海外。</li>
+                     */
+                    void SetArea(const std::string& _area);
+
+                    /**
+                     * 判断参数 Area 是否已赋值
+                     * @return Area 是否已赋值
+                     */
+                    bool AreaHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 资源 ID
+                     * 资源 ID。
                      */
                     std::string m_id;
                     bool m_idHasBeenSet;
 
                     /**
-                     * 付费模式
-0 为后付费
-1 为预付费
+                     * 付费模式，取值有：
+<li>0：后付费。</li>
                      */
                     int64_t m_payMode;
                     bool m_payModeHasBeenSet;
 
                     /**
-                     * 创建时间
+                     * 创建时间。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 生效时间
+                     * 生效时间。
                      */
                     std::string m_enableTime;
                     bool m_enableTimeHasBeenSet;
 
                     /**
-                     * 失效时间
+                     * 失效时间。
                      */
                     std::string m_expireTime;
                     bool m_expireTimeHasBeenSet;
 
                     /**
-                     * 套餐状态
+                     * 套餐状态，取值有：
+<li>normal：正常；</li>
+<li>isolated：隔离；</li>
+<li>destroyed：销毁。</li>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 询价参数
+                     * 询价参数。
                      */
                     std::vector<Sv> m_sv;
                     bool m_svHasBeenSet;
 
                     /**
-                     * 是否自动续费
-0 表示默认状态
-1 表示自动续费
-2 表示不自动续费
+                     * 是否自动续费，取值有：
+<li>0：默认状态；</li>
+<li>1：自动续费；</li>
+<li>2：不自动续费。</li>
                      */
                     int64_t m_autoRenewFlag;
                     bool m_autoRenewFlagHasBeenSet;
 
                     /**
-                     * 套餐关联资源ID
+                     * 套餐关联资源 ID。
                      */
                     std::string m_planId;
                     bool m_planIdHasBeenSet;
+
+                    /**
+                     * 地域，取值有：
+<li>mainland：国内；</li>
+<li>overseas：海外。</li>
+                     */
+                    std::string m_area;
+                    bool m_areaHasBeenSet;
 
                 };
             }

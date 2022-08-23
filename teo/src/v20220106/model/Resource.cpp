@@ -29,7 +29,8 @@ Resource::Resource() :
     m_statusHasBeenSet(false),
     m_svHasBeenSet(false),
     m_autoRenewFlagHasBeenSet(false),
-    m_planIdHasBeenSet(false)
+    m_planIdHasBeenSet(false),
+    m_areaHasBeenSet(false)
 {
 }
 
@@ -138,6 +139,16 @@ CoreInternalOutcome Resource::Deserialize(const rapidjson::Value &value)
         m_planIdHasBeenSet = true;
     }
 
+    if (value.HasMember("Area") && !value["Area"].IsNull())
+    {
+        if (!value["Area"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Resource.Area` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_area = string(value["Area"].GetString());
+        m_areaHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -222,6 +233,14 @@ void Resource::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "PlanId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_planId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_areaHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Area";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_area.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -369,5 +388,21 @@ void Resource::SetPlanId(const string& _planId)
 bool Resource::PlanIdHasBeenSet() const
 {
     return m_planIdHasBeenSet;
+}
+
+string Resource::GetArea() const
+{
+    return m_area;
+}
+
+void Resource::SetArea(const string& _area)
+{
+    m_area = _area;
+    m_areaHasBeenSet = true;
+}
+
+bool Resource::AreaHasBeenSet() const
+{
+    return m_areaHasBeenSet;
 }
 

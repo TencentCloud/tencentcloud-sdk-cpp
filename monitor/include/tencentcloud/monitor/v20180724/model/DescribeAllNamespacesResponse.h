@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/monitor/v20180724/model/CommonNamespace.h>
+#include <tencentcloud/monitor/v20180724/model/CommonNamespaceNew.h>
 
 
 namespace TencentCloud
@@ -92,6 +93,20 @@ namespace TencentCloud
                      */
                     bool CustomNamespacesNewHasBeenSet() const;
 
+                    /**
+                     * 获取通用告警策略类型(包括：应用性能监控，前端性能监控，云拨测)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CommonNamespaces 通用告警策略类型(包括：应用性能监控，前端性能监控，云拨测)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<CommonNamespaceNew> GetCommonNamespaces() const;
+
+                    /**
+                     * 判断参数 CommonNamespaces 是否已赋值
+                     * @return CommonNamespaces 是否已赋值
+                     */
+                    bool CommonNamespacesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -117,6 +132,13 @@ namespace TencentCloud
                      */
                     std::vector<CommonNamespace> m_customNamespacesNew;
                     bool m_customNamespacesNewHasBeenSet;
+
+                    /**
+                     * 通用告警策略类型(包括：应用性能监控，前端性能监控，云拨测)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<CommonNamespaceNew> m_commonNamespaces;
+                    bool m_commonNamespacesHasBeenSet;
 
                 };
             }

@@ -27,6 +27,7 @@
 #include <tencentcloud/ckafka/v20190819/model/FieldParam.h>
 #include <tencentcloud/ckafka/v20190819/model/FilterMapParam.h>
 #include <tencentcloud/ckafka/v20190819/model/FailureParam.h>
+#include <tencentcloud/ckafka/v20190819/model/RowParam.h>
 
 
 namespace TencentCloud
@@ -174,17 +175,17 @@ namespace TencentCloud
                     bool SourceTypeHasBeenSet() const;
 
                     /**
-                     * 获取输出格式
+                     * 获取输出格式，JSON，ROW，默认为JSON
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OutputFormat 输出格式
+                     * @return OutputFormat 输出格式，JSON，ROW，默认为JSON
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetOutputFormat() const;
 
                     /**
-                     * 设置输出格式
+                     * 设置输出格式，JSON，ROW，默认为JSON
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OutputFormat 输出格式
+                     * @param OutputFormat 输出格式，JSON，ROW，默认为JSON
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetOutputFormat(const std::string& _outputFormat);
@@ -194,6 +195,28 @@ namespace TencentCloud
                      * @return OutputFormat 是否已赋值
                      */
                     bool OutputFormatHasBeenSet() const;
+
+                    /**
+                     * 获取输出格式为ROW必填
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RowParam 输出格式为ROW必填
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    RowParam GetRowParam() const;
+
+                    /**
+                     * 设置输出格式为ROW必填
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RowParam 输出格式为ROW必填
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRowParam(const RowParam& _rowParam);
+
+                    /**
+                     * 判断参数 RowParam 是否已赋值
+                     * @return RowParam 是否已赋值
+                     */
+                    bool RowParamHasBeenSet() const;
 
                 private:
 
@@ -238,11 +261,18 @@ namespace TencentCloud
                     bool m_sourceTypeHasBeenSet;
 
                     /**
-                     * 输出格式
+                     * 输出格式，JSON，ROW，默认为JSON
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_outputFormat;
                     bool m_outputFormatHasBeenSet;
+
+                    /**
+                     * 输出格式为ROW必填
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    RowParam m_rowParam;
+                    bool m_rowParamHasBeenSet;
 
                 };
             }

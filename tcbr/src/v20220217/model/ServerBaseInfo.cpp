@@ -26,7 +26,8 @@ ServerBaseInfo::ServerBaseInfo() :
     m_customDomainNameHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
-    m_accessTypesHasBeenSet(false)
+    m_accessTypesHasBeenSet(false),
+    m_customDomainNamesHasBeenSet(false)
 {
 }
 
@@ -98,6 +99,19 @@ CoreInternalOutcome ServerBaseInfo::Deserialize(const rapidjson::Value &value)
         m_accessTypesHasBeenSet = true;
     }
 
+    if (value.HasMember("CustomDomainNames") && !value["CustomDomainNames"].IsNull())
+    {
+        if (!value["CustomDomainNames"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ServerBaseInfo.CustomDomainNames` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["CustomDomainNames"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_customDomainNames.push_back((*itr).GetString());
+        }
+        m_customDomainNamesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -153,6 +167,19 @@ void ServerBaseInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_accessTypes.begin(); itr != m_accessTypes.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_customDomainNamesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CustomDomainNames";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_customDomainNames.begin(); itr != m_customDomainNames.end(); ++itr)
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
@@ -255,5 +282,21 @@ void ServerBaseInfo::SetAccessTypes(const vector<string>& _accessTypes)
 bool ServerBaseInfo::AccessTypesHasBeenSet() const
 {
     return m_accessTypesHasBeenSet;
+}
+
+vector<string> ServerBaseInfo::GetCustomDomainNames() const
+{
+    return m_customDomainNames;
+}
+
+void ServerBaseInfo::SetCustomDomainNames(const vector<string>& _customDomainNames)
+{
+    m_customDomainNames = _customDomainNames;
+    m_customDomainNamesHasBeenSet = true;
+}
+
+bool ServerBaseInfo::CustomDomainNamesHasBeenSet() const
+{
+    return m_customDomainNamesHasBeenSet;
 }
 

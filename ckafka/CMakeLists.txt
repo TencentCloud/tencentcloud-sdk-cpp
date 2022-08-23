@@ -213,6 +213,7 @@ set(ckafka_public_header_model
   include/tencentcloud/ckafka/v20190819/model/FetchMessageByOffsetResponse.h
   include/tencentcloud/ckafka/v20190819/model/CreateConsumerRequest.h
   include/tencentcloud/ckafka/v20190819/model/DescribeRouteRequest.h
+  include/tencentcloud/ckafka/v20190819/model/RowParam.h
   include/tencentcloud/ckafka/v20190819/model/DateParam.h
   include/tencentcloud/ckafka/v20190819/model/ValueParam.h
   include/tencentcloud/ckafka/v20190819/model/DescribeDatahubTasksResponse.h
@@ -473,6 +474,7 @@ set(ckafka_src
   src/v20190819/model/FetchMessageByOffsetResponse.cpp
   src/v20190819/model/CreateConsumerRequest.cpp
   src/v20190819/model/DescribeRouteRequest.cpp
+  src/v20190819/model/RowParam.cpp
   src/v20190819/model/DateParam.cpp
   src/v20190819/model/ValueParam.cpp
   src/v20190819/model/DescribeDatahubTasksResponse.cpp

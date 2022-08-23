@@ -25,7 +25,8 @@ L7OfflineLog::L7OfflineLog() :
     m_domainHasBeenSet(false),
     m_sizeHasBeenSet(false),
     m_urlHasBeenSet(false),
-    m_logPacketNameHasBeenSet(false)
+    m_logPacketNameHasBeenSet(false),
+    m_areaHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,16 @@ CoreInternalOutcome L7OfflineLog::Deserialize(const rapidjson::Value &value)
         m_logPacketNameHasBeenSet = true;
     }
 
+    if (value.HasMember("Area") && !value["Area"].IsNull())
+    {
+        if (!value["Area"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `L7OfflineLog.Area` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_area = string(value["Area"].GetString());
+        m_areaHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +140,14 @@ void L7OfflineLog::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "LogPacketName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_logPacketName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_areaHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Area";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_area.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -212,5 +231,21 @@ void L7OfflineLog::SetLogPacketName(const string& _logPacketName)
 bool L7OfflineLog::LogPacketNameHasBeenSet() const
 {
     return m_logPacketNameHasBeenSet;
+}
+
+string L7OfflineLog::GetArea() const
+{
+    return m_area;
+}
+
+void L7OfflineLog::SetArea(const string& _area)
+{
+    m_area = _area;
+    m_areaHasBeenSet = true;
+}
+
+bool L7OfflineLog::AreaHasBeenSet() const
+{
+    return m_areaHasBeenSet;
 }
 

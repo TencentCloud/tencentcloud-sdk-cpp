@@ -78,6 +78,24 @@ namespace TencentCloud
                      */
                     bool GroupIdHasBeenSet() const;
 
+                    /**
+                     * 获取游戏区域
+                     * @return GameRegion 游戏区域
+                     */
+                    std::string GetGameRegion() const;
+
+                    /**
+                     * 设置游戏区域
+                     * @param GameRegion 游戏区域
+                     */
+                    void SetGameRegion(const std::string& _gameRegion);
+
+                    /**
+                     * 判断参数 GameRegion 是否已赋值
+                     * @return GameRegion 是否已赋值
+                     */
+                    bool GameRegionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -91,6 +109,12 @@ namespace TencentCloud
                      */
                     std::string m_groupId;
                     bool m_groupIdHasBeenSet;
+
+                    /**
+                     * 游戏区域
+                     */
+                    std::string m_gameRegion;
+                    bool m_gameRegionHasBeenSet;
 
                 };
             }
