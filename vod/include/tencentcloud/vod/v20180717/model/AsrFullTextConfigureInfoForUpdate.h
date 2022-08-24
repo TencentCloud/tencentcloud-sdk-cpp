@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/vod/v20180717/model/SubtitleFormatsOperation.h>
 
 
 namespace TencentCloud
@@ -73,18 +74,44 @@ namespace TencentCloud
                     bool SwitchHasBeenSet() const;
 
                     /**
-                     * 获取生成的字幕文件格式，填空字符串表示不生成字幕文件，可选值：
-<li>vtt：生成 WebVTT 字幕文件。</li>
-                     * @return SubtitleFormat 生成的字幕文件格式，填空字符串表示不生成字幕文件，可选值：
-<li>vtt：生成 WebVTT 字幕文件。</li>
+                     * 获取字幕格式列表操作信息。
+                     * @return SubtitleFormatsOperation 字幕格式列表操作信息。
+                     */
+                    SubtitleFormatsOperation GetSubtitleFormatsOperation() const;
+
+                    /**
+                     * 设置字幕格式列表操作信息。
+                     * @param SubtitleFormatsOperation 字幕格式列表操作信息。
+                     */
+                    void SetSubtitleFormatsOperation(const SubtitleFormatsOperation& _subtitleFormatsOperation);
+
+                    /**
+                     * 判断参数 SubtitleFormatsOperation 是否已赋值
+                     * @return SubtitleFormatsOperation 是否已赋值
+                     */
+                    bool SubtitleFormatsOperationHasBeenSet() const;
+
+                    /**
+                     * 获取生成的字幕文件格式，<font color='red'>填空字符串</font>表示不生成字幕文件，可选值：
+<li>vtt：生成 WebVTT 字幕文件；</li>
+<li>srt：生成 SRT 字幕文件。</li>
+<font color='red'>注意：此字段已废弃，建议使用 SubtitleFormatsOperation。</font>
+                     * @return SubtitleFormat 生成的字幕文件格式，<font color='red'>填空字符串</font>表示不生成字幕文件，可选值：
+<li>vtt：生成 WebVTT 字幕文件；</li>
+<li>srt：生成 SRT 字幕文件。</li>
+<font color='red'>注意：此字段已废弃，建议使用 SubtitleFormatsOperation。</font>
                      */
                     std::string GetSubtitleFormat() const;
 
                     /**
-                     * 设置生成的字幕文件格式，填空字符串表示不生成字幕文件，可选值：
-<li>vtt：生成 WebVTT 字幕文件。</li>
-                     * @param SubtitleFormat 生成的字幕文件格式，填空字符串表示不生成字幕文件，可选值：
-<li>vtt：生成 WebVTT 字幕文件。</li>
+                     * 设置生成的字幕文件格式，<font color='red'>填空字符串</font>表示不生成字幕文件，可选值：
+<li>vtt：生成 WebVTT 字幕文件；</li>
+<li>srt：生成 SRT 字幕文件。</li>
+<font color='red'>注意：此字段已废弃，建议使用 SubtitleFormatsOperation。</font>
+                     * @param SubtitleFormat 生成的字幕文件格式，<font color='red'>填空字符串</font>表示不生成字幕文件，可选值：
+<li>vtt：生成 WebVTT 字幕文件；</li>
+<li>srt：生成 SRT 字幕文件。</li>
+<font color='red'>注意：此字段已废弃，建议使用 SubtitleFormatsOperation。</font>
                      */
                     void SetSubtitleFormat(const std::string& _subtitleFormat);
 
@@ -105,8 +132,16 @@ namespace TencentCloud
                     bool m_switchHasBeenSet;
 
                     /**
-                     * 生成的字幕文件格式，填空字符串表示不生成字幕文件，可选值：
-<li>vtt：生成 WebVTT 字幕文件。</li>
+                     * 字幕格式列表操作信息。
+                     */
+                    SubtitleFormatsOperation m_subtitleFormatsOperation;
+                    bool m_subtitleFormatsOperationHasBeenSet;
+
+                    /**
+                     * 生成的字幕文件格式，<font color='red'>填空字符串</font>表示不生成字幕文件，可选值：
+<li>vtt：生成 WebVTT 字幕文件；</li>
+<li>srt：生成 SRT 字幕文件。</li>
+<font color='red'>注意：此字段已废弃，建议使用 SubtitleFormatsOperation。</font>
                      */
                     std::string m_subtitleFormat;
                     bool m_subtitleFormatHasBeenSet;

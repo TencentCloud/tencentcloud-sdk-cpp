@@ -28,8 +28,9 @@ ProjectInfo::ProjectInfo() :
     m_ownerHasBeenSet(false),
     m_coverUrlHasBeenSet(false),
     m_streamConnectProjectInfoHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
+    m_mediaCastProjectInfoHasBeenSet(false),
+    m_updateTimeHasBeenSet(false),
+    m_createTimeHasBeenSet(false)
 {
 }
 
@@ -122,14 +123,21 @@ CoreInternalOutcome ProjectInfo::Deserialize(const rapidjson::Value &value)
         m_streamConnectProjectInfoHasBeenSet = true;
     }
 
-    if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
+    if (value.HasMember("MediaCastProjectInfo") && !value["MediaCastProjectInfo"].IsNull())
     {
-        if (!value["CreateTime"].IsString())
+        if (!value["MediaCastProjectInfo"].IsObject())
         {
-            return CoreInternalOutcome(Core::Error("response `ProjectInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ProjectInfo.MediaCastProjectInfo` is not object type").SetRequestId(requestId));
         }
-        m_createTime = string(value["CreateTime"].GetString());
-        m_createTimeHasBeenSet = true;
+
+        CoreInternalOutcome outcome = m_mediaCastProjectInfo.Deserialize(value["MediaCastProjectInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_mediaCastProjectInfoHasBeenSet = true;
     }
 
     if (value.HasMember("UpdateTime") && !value["UpdateTime"].IsNull())
@@ -140,6 +148,16 @@ CoreInternalOutcome ProjectInfo::Deserialize(const rapidjson::Value &value)
         }
         m_updateTime = string(value["UpdateTime"].GetString());
         m_updateTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
+    {
+        if (!value["CreateTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProjectInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_createTime = string(value["CreateTime"].GetString());
+        m_createTimeHasBeenSet = true;
     }
 
 
@@ -207,12 +225,13 @@ void ProjectInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         m_streamConnectProjectInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
-    if (m_createTimeHasBeenSet)
+    if (m_mediaCastProjectInfoHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "CreateTime";
+        string key = "MediaCastProjectInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_mediaCastProjectInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_updateTimeHasBeenSet)
@@ -221,6 +240,14 @@ void ProjectInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "UpdateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_updateTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_createTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -338,20 +365,20 @@ bool ProjectInfo::StreamConnectProjectInfoHasBeenSet() const
     return m_streamConnectProjectInfoHasBeenSet;
 }
 
-string ProjectInfo::GetCreateTime() const
+MediaCastProjectInfo ProjectInfo::GetMediaCastProjectInfo() const
 {
-    return m_createTime;
+    return m_mediaCastProjectInfo;
 }
 
-void ProjectInfo::SetCreateTime(const string& _createTime)
+void ProjectInfo::SetMediaCastProjectInfo(const MediaCastProjectInfo& _mediaCastProjectInfo)
 {
-    m_createTime = _createTime;
-    m_createTimeHasBeenSet = true;
+    m_mediaCastProjectInfo = _mediaCastProjectInfo;
+    m_mediaCastProjectInfoHasBeenSet = true;
 }
 
-bool ProjectInfo::CreateTimeHasBeenSet() const
+bool ProjectInfo::MediaCastProjectInfoHasBeenSet() const
 {
-    return m_createTimeHasBeenSet;
+    return m_mediaCastProjectInfoHasBeenSet;
 }
 
 string ProjectInfo::GetUpdateTime() const
@@ -368,5 +395,21 @@ void ProjectInfo::SetUpdateTime(const string& _updateTime)
 bool ProjectInfo::UpdateTimeHasBeenSet() const
 {
     return m_updateTimeHasBeenSet;
+}
+
+string ProjectInfo::GetCreateTime() const
+{
+    return m_createTime;
+}
+
+void ProjectInfo::SetCreateTime(const string& _createTime)
+{
+    m_createTime = _createTime;
+    m_createTimeHasBeenSet = true;
+}
+
+bool ProjectInfo::CreateTimeHasBeenSet() const
+{
+    return m_createTimeHasBeenSet;
 }
 

@@ -38,6 +38,7 @@
 #include <tencentcloud/vod/v20180717/model/SnapshotByTimeOffsetTask2017.h>
 #include <tencentcloud/vod/v20180717/model/WechatPublishTask.h>
 #include <tencentcloud/vod/v20180717/model/WechatMiniProgramPublishTask.h>
+#include <tencentcloud/vod/v20180717/model/RemoveWatermarkTask.h>
 #include <tencentcloud/vod/v20180717/model/RestoreMediaTask.h>
 
 
@@ -470,6 +471,28 @@ namespace TencentCloud
                     bool WechatMiniProgramPublishCompleteEventHasBeenSet() const;
 
                     /**
+                     * 获取智能去除水印任务完成事件，当事件类型为 RemoveWatermark 有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RemoveWatermarkCompleteEvent 智能去除水印任务完成事件，当事件类型为 RemoveWatermark 有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    RemoveWatermarkTask GetRemoveWatermarkCompleteEvent() const;
+
+                    /**
+                     * 设置智能去除水印任务完成事件，当事件类型为 RemoveWatermark 有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RemoveWatermarkCompleteEvent 智能去除水印任务完成事件，当事件类型为 RemoveWatermark 有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRemoveWatermarkCompleteEvent(const RemoveWatermarkTask& _removeWatermarkCompleteEvent);
+
+                    /**
+                     * 判断参数 RemoveWatermarkCompleteEvent 是否已赋值
+                     * @return RemoveWatermarkCompleteEvent 是否已赋值
+                     */
+                    bool RemoveWatermarkCompleteEventHasBeenSet() const;
+
+                    /**
                      * 获取视频取回完成事件，当事件类型为RestoreMediaComplete 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RestoreMediaCompleteEvent 视频取回完成事件，当事件类型为RestoreMediaComplete 时有效。
@@ -618,6 +641,13 @@ namespace TencentCloud
                      */
                     WechatMiniProgramPublishTask m_wechatMiniProgramPublishCompleteEvent;
                     bool m_wechatMiniProgramPublishCompleteEventHasBeenSet;
+
+                    /**
+                     * 智能去除水印任务完成事件，当事件类型为 RemoveWatermark 有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    RemoveWatermarkTask m_removeWatermarkCompleteEvent;
+                    bool m_removeWatermarkCompleteEventHasBeenSet;
 
                     /**
                      * 视频取回完成事件，当事件类型为RestoreMediaComplete 时有效。

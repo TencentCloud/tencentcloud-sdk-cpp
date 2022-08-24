@@ -40,7 +40,8 @@ DescribeTaskDetailResponse::DescribeTaskDetailResponse() :
     m_concatTaskHasBeenSet(false),
     m_clipTaskHasBeenSet(false),
     m_createImageSpriteTaskHasBeenSet(false),
-    m_snapshotByTimeOffsetTaskHasBeenSet(false)
+    m_snapshotByTimeOffsetTaskHasBeenSet(false),
+    m_removeWatermarkTaskHasBeenSet(false)
 {
 }
 
@@ -332,6 +333,23 @@ CoreInternalOutcome DescribeTaskDetailResponse::Deserialize(const string &payloa
         m_snapshotByTimeOffsetTaskHasBeenSet = true;
     }
 
+    if (rsp.HasMember("RemoveWatermarkTask") && !rsp["RemoveWatermarkTask"].IsNull())
+    {
+        if (!rsp["RemoveWatermarkTask"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `RemoveWatermarkTask` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_removeWatermarkTask.Deserialize(rsp["RemoveWatermarkTask"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_removeWatermarkTaskHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -488,6 +506,15 @@ string DescribeTaskDetailResponse::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_snapshotByTimeOffsetTask.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_removeWatermarkTaskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RemoveWatermarkTask";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_removeWatermarkTask.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -670,6 +697,16 @@ SnapshotByTimeOffsetTask2017 DescribeTaskDetailResponse::GetSnapshotByTimeOffset
 bool DescribeTaskDetailResponse::SnapshotByTimeOffsetTaskHasBeenSet() const
 {
     return m_snapshotByTimeOffsetTaskHasBeenSet;
+}
+
+RemoveWatermarkTask DescribeTaskDetailResponse::GetRemoveWatermarkTask() const
+{
+    return m_removeWatermarkTask;
+}
+
+bool DescribeTaskDetailResponse::RemoveWatermarkTaskHasBeenSet() const
+{
+    return m_removeWatermarkTaskHasBeenSet;
 }
 
 

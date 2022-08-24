@@ -83,6 +83,20 @@ namespace TencentCloud
                      */
                     bool ReportTitleHasBeenSet() const;
 
+                    /**
+                     * 获取诊断json结果内容
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ReportResult 诊断json结果内容
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetReportResult() const;
+
+                    /**
+                     * 判断参数 ReportResult 是否已赋值
+                     * @return ReportResult 是否已赋值
+                     */
+                    bool ReportResultHasBeenSet() const;
+
                 private:
 
                     /**
@@ -104,6 +118,13 @@ namespace TencentCloud
                      */
                     std::string m_reportTitle;
                     bool m_reportTitleHasBeenSet;
+
+                    /**
+                     * 诊断json结果内容
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_reportResult;
+                    bool m_reportResultHasBeenSet;
 
                 };
             }

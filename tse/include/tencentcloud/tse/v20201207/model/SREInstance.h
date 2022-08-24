@@ -28,6 +28,7 @@
 #include <tencentcloud/tse/v20201207/model/VpcInfo.h>
 #include <tencentcloud/tse/v20201207/model/ServiceGovernanceInfo.h>
 #include <tencentcloud/tse/v20201207/model/KVPair.h>
+#include <tencentcloud/tse/v20201207/model/DescribeInstanceRegionInfo.h>
 
 
 namespace TencentCloud
@@ -656,6 +657,28 @@ namespace TencentCloud
                      */
                     bool IsolateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取实例地域相关的描述信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RegionInfos 实例地域相关的描述信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<DescribeInstanceRegionInfo> GetRegionInfos() const;
+
+                    /**
+                     * 设置实例地域相关的描述信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RegionInfos 实例地域相关的描述信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRegionInfos(const std::vector<DescribeInstanceRegionInfo>& _regionInfos);
+
+                    /**
+                     * 判断参数 RegionInfos 是否已赋值
+                     * @return RegionInfos 是否已赋值
+                     */
+                    bool RegionInfosHasBeenSet() const;
+
                 private:
 
                     /**
@@ -852,6 +875,13 @@ namespace TencentCloud
                      */
                     std::string m_isolateTime;
                     bool m_isolateTimeHasBeenSet;
+
+                    /**
+                     * 实例地域相关的描述信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<DescribeInstanceRegionInfo> m_regionInfos;
+                    bool m_regionInfosHasBeenSet;
 
                 };
             }

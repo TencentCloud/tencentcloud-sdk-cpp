@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/vod/v20180717/model/TrtcRecordInfo.h>
 
 
 namespace TencentCloud
@@ -102,6 +103,28 @@ namespace TencentCloud
                      */
                     bool SourceContextHasBeenSet() const;
 
+                    /**
+                     * 获取TRTC 伴生录制信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TrtcRecordInfo TRTC 伴生录制信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    TrtcRecordInfo GetTrtcRecordInfo() const;
+
+                    /**
+                     * 设置TRTC 伴生录制信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TrtcRecordInfo TRTC 伴生录制信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTrtcRecordInfo(const TrtcRecordInfo& _trtcRecordInfo);
+
+                    /**
+                     * 判断参数 TrtcRecordInfo 是否已赋值
+                     * @return TrtcRecordInfo 是否已赋值
+                     */
+                    bool TrtcRecordInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -120,6 +143,13 @@ namespace TencentCloud
                      */
                     std::string m_sourceContext;
                     bool m_sourceContextHasBeenSet;
+
+                    /**
+                     * TRTC 伴生录制信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    TrtcRecordInfo m_trtcRecordInfo;
+                    bool m_trtcRecordInfoHasBeenSet;
 
                 };
             }

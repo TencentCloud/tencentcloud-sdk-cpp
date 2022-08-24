@@ -37,6 +37,7 @@ EventContent::EventContent() :
     m_snapshotByTimeOffsetCompleteEventHasBeenSet(false),
     m_wechatPublishCompleteEventHasBeenSet(false),
     m_wechatMiniProgramPublishCompleteEventHasBeenSet(false),
+    m_removeWatermarkCompleteEventHasBeenSet(false),
     m_restoreMediaCompleteEventHasBeenSet(false)
 {
 }
@@ -304,6 +305,23 @@ CoreInternalOutcome EventContent::Deserialize(const rapidjson::Value &value)
         m_wechatMiniProgramPublishCompleteEventHasBeenSet = true;
     }
 
+    if (value.HasMember("RemoveWatermarkCompleteEvent") && !value["RemoveWatermarkCompleteEvent"].IsNull())
+    {
+        if (!value["RemoveWatermarkCompleteEvent"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `EventContent.RemoveWatermarkCompleteEvent` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_removeWatermarkCompleteEvent.Deserialize(value["RemoveWatermarkCompleteEvent"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_removeWatermarkCompleteEventHasBeenSet = true;
+    }
+
     if (value.HasMember("RestoreMediaCompleteEvent") && !value["RestoreMediaCompleteEvent"].IsNull())
     {
         if (!value["RestoreMediaCompleteEvent"].IsObject())
@@ -468,6 +486,15 @@ void EventContent::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_wechatMiniProgramPublishCompleteEvent.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_removeWatermarkCompleteEventHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RemoveWatermarkCompleteEvent";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_removeWatermarkCompleteEvent.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_restoreMediaCompleteEventHasBeenSet)
@@ -736,6 +763,22 @@ void EventContent::SetWechatMiniProgramPublishCompleteEvent(const WechatMiniProg
 bool EventContent::WechatMiniProgramPublishCompleteEventHasBeenSet() const
 {
     return m_wechatMiniProgramPublishCompleteEventHasBeenSet;
+}
+
+RemoveWatermarkTask EventContent::GetRemoveWatermarkCompleteEvent() const
+{
+    return m_removeWatermarkCompleteEvent;
+}
+
+void EventContent::SetRemoveWatermarkCompleteEvent(const RemoveWatermarkTask& _removeWatermarkCompleteEvent)
+{
+    m_removeWatermarkCompleteEvent = _removeWatermarkCompleteEvent;
+    m_removeWatermarkCompleteEventHasBeenSet = true;
+}
+
+bool EventContent::RemoveWatermarkCompleteEventHasBeenSet() const
+{
+    return m_removeWatermarkCompleteEventHasBeenSet;
 }
 
 RestoreMediaTask EventContent::GetRestoreMediaCompleteEvent() const

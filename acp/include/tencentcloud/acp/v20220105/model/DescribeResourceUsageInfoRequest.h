@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取资源计费项名称(为空时，则根据TaskType和Platform进行查询)
-                     * @return PriceName 资源计费项名称(为空时，则根据TaskType和Platform进行查询)
+                     * 获取资源计费项名称(为空时，则根据Source，TaskType和Platform进行查询)
+                     * @return PriceName 资源计费项名称(为空时，则根据Source，TaskType和Platform进行查询)
                      */
                     std::string GetPriceName() const;
 
                     /**
-                     * 设置资源计费项名称(为空时，则根据TaskType和Platform进行查询)
-                     * @param PriceName 资源计费项名称(为空时，则根据TaskType和Platform进行查询)
+                     * 设置资源计费项名称(为空时，则根据Source，TaskType和Platform进行查询)
+                     * @param PriceName 资源计费项名称(为空时，则根据Source，TaskType和Platform进行查询)
                      */
                     void SetPriceName(const std::string& _priceName);
 
@@ -96,10 +96,28 @@ namespace TencentCloud
                      */
                     bool PlatformHasBeenSet() const;
 
+                    /**
+                     * 获取任务来源, 0:小程序诊断, 1:预留字段(暂未使用), 2:app诊断(android), 3:app漏洞扫描;
+                     * @return Source 任务来源, 0:小程序诊断, 1:预留字段(暂未使用), 2:app诊断(android), 3:app漏洞扫描;
+                     */
+                    int64_t GetSource() const;
+
+                    /**
+                     * 设置任务来源, 0:小程序诊断, 1:预留字段(暂未使用), 2:app诊断(android), 3:app漏洞扫描;
+                     * @param Source 任务来源, 0:小程序诊断, 1:预留字段(暂未使用), 2:app诊断(android), 3:app漏洞扫描;
+                     */
+                    void SetSource(const int64_t& _source);
+
+                    /**
+                     * 判断参数 Source 是否已赋值
+                     * @return Source 是否已赋值
+                     */
+                    bool SourceHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 资源计费项名称(为空时，则根据TaskType和Platform进行查询)
+                     * 资源计费项名称(为空时，则根据Source，TaskType和Platform进行查询)
                      */
                     std::string m_priceName;
                     bool m_priceNameHasBeenSet;
@@ -115,6 +133,12 @@ namespace TencentCloud
                      */
                     int64_t m_platform;
                     bool m_platformHasBeenSet;
+
+                    /**
+                     * 任务来源, 0:小程序诊断, 1:预留字段(暂未使用), 2:app诊断(android), 3:app漏洞扫描;
+                     */
+                    int64_t m_source;
+                    bool m_sourceHasBeenSet;
 
                 };
             }

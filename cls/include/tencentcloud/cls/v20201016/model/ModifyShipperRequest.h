@@ -243,6 +243,24 @@ namespace TencentCloud
                      */
                     bool ContentHasBeenSet() const;
 
+                    /**
+                     * 获取投递文件命名配置，0：随机数命名，1：投递时间命名，默认0（随机数命名）
+                     * @return FilenameMode 投递文件命名配置，0：随机数命名，1：投递时间命名，默认0（随机数命名）
+                     */
+                    uint64_t GetFilenameMode() const;
+
+                    /**
+                     * 设置投递文件命名配置，0：随机数命名，1：投递时间命名，默认0（随机数命名）
+                     * @param FilenameMode 投递文件命名配置，0：随机数命名，1：投递时间命名，默认0（随机数命名）
+                     */
+                    void SetFilenameMode(const uint64_t& _filenameMode);
+
+                    /**
+                     * 判断参数 FilenameMode 是否已赋值
+                     * @return FilenameMode 是否已赋值
+                     */
+                    bool FilenameModeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -310,6 +328,12 @@ namespace TencentCloud
                      */
                     ContentInfo m_content;
                     bool m_contentHasBeenSet;
+
+                    /**
+                     * 投递文件命名配置，0：随机数命名，1：投递时间命名，默认0（随机数命名）
+                     */
+                    uint64_t m_filenameMode;
+                    bool m_filenameModeHasBeenSet;
 
                 };
             }

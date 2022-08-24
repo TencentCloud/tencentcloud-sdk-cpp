@@ -34,7 +34,8 @@ EventContent::EventContent() :
     m_classCreatedEventHasBeenSet(false),
     m_classMovedEventHasBeenSet(false),
     m_classDeletedEventHasBeenSet(false),
-    m_videoExportCompletedEventHasBeenSet(false)
+    m_videoExportCompletedEventHasBeenSet(false),
+    m_projectMediaCastStatusChangedEventHasBeenSet(false)
 {
 }
 
@@ -267,6 +268,23 @@ CoreInternalOutcome EventContent::Deserialize(const rapidjson::Value &value)
         m_videoExportCompletedEventHasBeenSet = true;
     }
 
+    if (value.HasMember("ProjectMediaCastStatusChangedEvent") && !value["ProjectMediaCastStatusChangedEvent"].IsNull())
+    {
+        if (!value["ProjectMediaCastStatusChangedEvent"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `EventContent.ProjectMediaCastStatusChangedEvent` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_projectMediaCastStatusChangedEvent.Deserialize(value["ProjectMediaCastStatusChangedEvent"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_projectMediaCastStatusChangedEventHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -396,6 +414,15 @@ void EventContent::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_videoExportCompletedEvent.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_projectMediaCastStatusChangedEventHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProjectMediaCastStatusChangedEvent";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_projectMediaCastStatusChangedEvent.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -623,5 +650,21 @@ void EventContent::SetVideoExportCompletedEvent(const VideoExportCompletedEvent&
 bool EventContent::VideoExportCompletedEventHasBeenSet() const
 {
     return m_videoExportCompletedEventHasBeenSet;
+}
+
+ProjectMediaCastStatusChangedEvent EventContent::GetProjectMediaCastStatusChangedEvent() const
+{
+    return m_projectMediaCastStatusChangedEvent;
+}
+
+void EventContent::SetProjectMediaCastStatusChangedEvent(const ProjectMediaCastStatusChangedEvent& _projectMediaCastStatusChangedEvent)
+{
+    m_projectMediaCastStatusChangedEvent = _projectMediaCastStatusChangedEvent;
+    m_projectMediaCastStatusChangedEventHasBeenSet = true;
+}
+
+bool EventContent::ProjectMediaCastStatusChangedEventHasBeenSet() const
+{
+    return m_projectMediaCastStatusChangedEventHasBeenSet;
 }
 

@@ -26,7 +26,8 @@ using namespace std;
 DescribeScanTaskReportUrlResponse::DescribeScanTaskReportUrlResponse() :
     m_resultHasBeenSet(false),
     m_reportUrlHasBeenSet(false),
-    m_reportTitleHasBeenSet(false)
+    m_reportTitleHasBeenSet(false),
+    m_reportResultHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,16 @@ CoreInternalOutcome DescribeScanTaskReportUrlResponse::Deserialize(const string 
         m_reportTitleHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ReportResult") && !rsp["ReportResult"].IsNull())
+    {
+        if (!rsp["ReportResult"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ReportResult` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_reportResult = string(rsp["ReportResult"].GetString());
+        m_reportResultHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -126,6 +137,14 @@ string DescribeScanTaskReportUrlResponse::ToJsonString() const
         string key = "ReportTitle";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_reportTitle.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_reportResultHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReportResult";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_reportResult.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -168,6 +187,16 @@ string DescribeScanTaskReportUrlResponse::GetReportTitle() const
 bool DescribeScanTaskReportUrlResponse::ReportTitleHasBeenSet() const
 {
     return m_reportTitleHasBeenSet;
+}
+
+string DescribeScanTaskReportUrlResponse::GetReportResult() const
+{
+    return m_reportResult;
+}
+
+bool DescribeScanTaskReportUrlResponse::ReportResultHasBeenSet() const
+{
+    return m_reportResultHasBeenSet;
 }
 
 

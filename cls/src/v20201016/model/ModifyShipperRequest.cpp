@@ -33,7 +33,8 @@ ModifyShipperRequest::ModifyShipperRequest() :
     m_filterRulesHasBeenSet(false),
     m_partitionHasBeenSet(false),
     m_compressHasBeenSet(false),
-    m_contentHasBeenSet(false)
+    m_contentHasBeenSet(false),
+    m_filenameModeHasBeenSet(false)
 {
 }
 
@@ -139,6 +140,14 @@ string ModifyShipperRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_content.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_filenameModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FilenameMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_filenameMode, allocator);
     }
 
 
@@ -323,6 +332,22 @@ void ModifyShipperRequest::SetContent(const ContentInfo& _content)
 bool ModifyShipperRequest::ContentHasBeenSet() const
 {
     return m_contentHasBeenSet;
+}
+
+uint64_t ModifyShipperRequest::GetFilenameMode() const
+{
+    return m_filenameMode;
+}
+
+void ModifyShipperRequest::SetFilenameMode(const uint64_t& _filenameMode)
+{
+    m_filenameMode = _filenameMode;
+    m_filenameModeHasBeenSet = true;
+}
+
+bool ModifyShipperRequest::FilenameModeHasBeenSet() const
+{
+    return m_filenameModeHasBeenSet;
 }
 
 

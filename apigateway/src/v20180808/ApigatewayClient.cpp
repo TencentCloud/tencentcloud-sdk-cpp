@@ -3093,6 +3093,49 @@ ApigatewayClient::GenerateApiDocumentOutcomeCallable ApigatewayClient::GenerateA
     return task->get_future();
 }
 
+ApigatewayClient::ImportOpenApiOutcome ApigatewayClient::ImportOpenApi(const ImportOpenApiRequest &request)
+{
+    auto outcome = MakeRequest(request, "ImportOpenApi");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ImportOpenApiResponse rsp = ImportOpenApiResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ImportOpenApiOutcome(rsp);
+        else
+            return ImportOpenApiOutcome(o.GetError());
+    }
+    else
+    {
+        return ImportOpenApiOutcome(outcome.GetError());
+    }
+}
+
+void ApigatewayClient::ImportOpenApiAsync(const ImportOpenApiRequest& request, const ImportOpenApiAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ImportOpenApi(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ApigatewayClient::ImportOpenApiOutcomeCallable ApigatewayClient::ImportOpenApiCallable(const ImportOpenApiRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ImportOpenApiOutcome()>>(
+        [this, request]()
+        {
+            return this->ImportOpenApi(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ApigatewayClient::ModifyAPIDocOutcome ApigatewayClient::ModifyAPIDoc(const ModifyAPIDocRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyAPIDoc");

@@ -36,6 +36,7 @@
 #include <tencentcloud/cme/v20191029/model/ClassMovedEvent.h>
 #include <tencentcloud/cme/v20191029/model/ClassDeletedEvent.h>
 #include <tencentcloud/cme/v20191029/model/VideoExportCompletedEvent.h>
+#include <tencentcloud/cme/v20191029/model/ProjectMediaCastStatusChangedEvent.h>
 
 
 namespace TencentCloud
@@ -71,7 +72,8 @@ namespace TencentCloud
 <li>Class.Created：分类新增事件；</li>
 <li>Class.Moved：分类移动事件；</li>
 <li>Class.Deleted：分类删除事件；</li>
-<li>Task.VideoExportCompleted：视频导出完成事件。 </li>
+<li>Task.VideoExportCompleted：视频导出完成事件； </li>
+<li>Project.MediaCast.StatusChanged：点播转直播项目状态变更事件。 </li>
                      * @return EventType 事件类型，可取值有：
 <li>Storage.NewFileCreated：新文件产生事件；</li>
 <li>Project.StreamConnect.StatusChanged：云转推项目状态变更事件；</li>
@@ -84,7 +86,8 @@ namespace TencentCloud
 <li>Class.Created：分类新增事件；</li>
 <li>Class.Moved：分类移动事件；</li>
 <li>Class.Deleted：分类删除事件；</li>
-<li>Task.VideoExportCompleted：视频导出完成事件。 </li>
+<li>Task.VideoExportCompleted：视频导出完成事件； </li>
+<li>Project.MediaCast.StatusChanged：点播转直播项目状态变更事件。 </li>
                      */
                     std::string GetEventType() const;
 
@@ -101,7 +104,8 @@ namespace TencentCloud
 <li>Class.Created：分类新增事件；</li>
 <li>Class.Moved：分类移动事件；</li>
 <li>Class.Deleted：分类删除事件；</li>
-<li>Task.VideoExportCompleted：视频导出完成事件。 </li>
+<li>Task.VideoExportCompleted：视频导出完成事件； </li>
+<li>Project.MediaCast.StatusChanged：点播转直播项目状态变更事件。 </li>
                      * @param EventType 事件类型，可取值有：
 <li>Storage.NewFileCreated：新文件产生事件；</li>
 <li>Project.StreamConnect.StatusChanged：云转推项目状态变更事件；</li>
@@ -114,7 +118,8 @@ namespace TencentCloud
 <li>Class.Created：分类新增事件；</li>
 <li>Class.Moved：分类移动事件；</li>
 <li>Class.Deleted：分类删除事件；</li>
-<li>Task.VideoExportCompleted：视频导出完成事件。 </li>
+<li>Task.VideoExportCompleted：视频导出完成事件； </li>
+<li>Project.MediaCast.StatusChanged：点播转直播项目状态变更事件。 </li>
                      */
                     void SetEventType(const std::string& _eventType);
 
@@ -398,6 +403,28 @@ namespace TencentCloud
                      */
                     bool VideoExportCompletedEventHasBeenSet() const;
 
+                    /**
+                     * 获取点播转直播项目状态变更事件。仅当 EventType 为 Project.MediaCast.StatusChanged 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ProjectMediaCastStatusChangedEvent 点播转直播项目状态变更事件。仅当 EventType 为 Project.MediaCast.StatusChanged 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ProjectMediaCastStatusChangedEvent GetProjectMediaCastStatusChangedEvent() const;
+
+                    /**
+                     * 设置点播转直播项目状态变更事件。仅当 EventType 为 Project.MediaCast.StatusChanged 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ProjectMediaCastStatusChangedEvent 点播转直播项目状态变更事件。仅当 EventType 为 Project.MediaCast.StatusChanged 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetProjectMediaCastStatusChangedEvent(const ProjectMediaCastStatusChangedEvent& _projectMediaCastStatusChangedEvent);
+
+                    /**
+                     * 判断参数 ProjectMediaCastStatusChangedEvent 是否已赋值
+                     * @return ProjectMediaCastStatusChangedEvent 是否已赋值
+                     */
+                    bool ProjectMediaCastStatusChangedEventHasBeenSet() const;
+
                 private:
 
                     /**
@@ -413,7 +440,8 @@ namespace TencentCloud
 <li>Class.Created：分类新增事件；</li>
 <li>Class.Moved：分类移动事件；</li>
 <li>Class.Deleted：分类删除事件；</li>
-<li>Task.VideoExportCompleted：视频导出完成事件。 </li>
+<li>Task.VideoExportCompleted：视频导出完成事件； </li>
+<li>Project.MediaCast.StatusChanged：点播转直播项目状态变更事件。 </li>
                      */
                     std::string m_eventType;
                     bool m_eventTypeHasBeenSet;
@@ -505,6 +533,13 @@ namespace TencentCloud
                      */
                     VideoExportCompletedEvent m_videoExportCompletedEvent;
                     bool m_videoExportCompletedEventHasBeenSet;
+
+                    /**
+                     * 点播转直播项目状态变更事件。仅当 EventType 为 Project.MediaCast.StatusChanged 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ProjectMediaCastStatusChangedEvent m_projectMediaCastStatusChangedEvent;
+                    bool m_projectMediaCastStatusChangedEventHasBeenSet;
 
                 };
             }

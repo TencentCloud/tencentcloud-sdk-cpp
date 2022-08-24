@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cme/v20191029/model/Entity.h>
 #include <tencentcloud/cme/v20191029/model/StreamConnectProjectInfo.h>
+#include <tencentcloud/cme/v20191029/model/MediaCastProjectInfo.h>
 
 
 namespace TencentCloud
@@ -199,22 +200,26 @@ namespace TencentCloud
                     bool StreamConnectProjectInfoHasBeenSet() const;
 
                     /**
-                     * 获取项目创建时间，格式按照 ISO 8601 标准表示。
-                     * @return CreateTime 项目创建时间，格式按照 ISO 8601 标准表示。
+                     * 获取点播转直播项目信息，仅当项目类别取值为 MEDIA_CAST 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MediaCastProjectInfo 点播转直播项目信息，仅当项目类别取值为 MEDIA_CAST 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::string GetCreateTime() const;
+                    MediaCastProjectInfo GetMediaCastProjectInfo() const;
 
                     /**
-                     * 设置项目创建时间，格式按照 ISO 8601 标准表示。
-                     * @param CreateTime 项目创建时间，格式按照 ISO 8601 标准表示。
+                     * 设置点播转直播项目信息，仅当项目类别取值为 MEDIA_CAST 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param MediaCastProjectInfo 点播转直播项目信息，仅当项目类别取值为 MEDIA_CAST 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    void SetCreateTime(const std::string& _createTime);
+                    void SetMediaCastProjectInfo(const MediaCastProjectInfo& _mediaCastProjectInfo);
 
                     /**
-                     * 判断参数 CreateTime 是否已赋值
-                     * @return CreateTime 是否已赋值
+                     * 判断参数 MediaCastProjectInfo 是否已赋值
+                     * @return MediaCastProjectInfo 是否已赋值
                      */
-                    bool CreateTimeHasBeenSet() const;
+                    bool MediaCastProjectInfoHasBeenSet() const;
 
                     /**
                      * 获取项目更新时间，格式按照 ISO 8601 标准表示。
@@ -233,6 +238,24 @@ namespace TencentCloud
                      * @return UpdateTime 是否已赋值
                      */
                     bool UpdateTimeHasBeenSet() const;
+
+                    /**
+                     * 获取项目创建时间，格式按照 ISO 8601 标准表示。
+                     * @return CreateTime 项目创建时间，格式按照 ISO 8601 标准表示。
+                     */
+                    std::string GetCreateTime() const;
+
+                    /**
+                     * 设置项目创建时间，格式按照 ISO 8601 标准表示。
+                     * @param CreateTime 项目创建时间，格式按照 ISO 8601 标准表示。
+                     */
+                    void SetCreateTime(const std::string& _createTime);
+
+                    /**
+                     * 判断参数 CreateTime 是否已赋值
+                     * @return CreateTime 是否已赋值
+                     */
+                    bool CreateTimeHasBeenSet() const;
 
                 private:
 
@@ -285,16 +308,23 @@ namespace TencentCloud
                     bool m_streamConnectProjectInfoHasBeenSet;
 
                     /**
-                     * 项目创建时间，格式按照 ISO 8601 标准表示。
+                     * 点播转直播项目信息，仅当项目类别取值为 MEDIA_CAST 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::string m_createTime;
-                    bool m_createTimeHasBeenSet;
+                    MediaCastProjectInfo m_mediaCastProjectInfo;
+                    bool m_mediaCastProjectInfoHasBeenSet;
 
                     /**
                      * 项目更新时间，格式按照 ISO 8601 标准表示。
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
+
+                    /**
+                     * 项目创建时间，格式按照 ISO 8601 标准表示。
+                     */
+                    std::string m_createTime;
+                    bool m_createTimeHasBeenSet;
 
                 };
             }

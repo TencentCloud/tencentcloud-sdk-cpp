@@ -27,6 +27,7 @@ AdaptiveDynamicStreamingTemplate::AdaptiveDynamicStreamingTemplate() :
     m_commentHasBeenSet(false),
     m_formatHasBeenSet(false),
     m_drmTypeHasBeenSet(false),
+    m_drmKeyProviderHasBeenSet(false),
     m_streamInfosHasBeenSet(false),
     m_disableHigherVideoBitrateHasBeenSet(false),
     m_disableHigherVideoResolutionHasBeenSet(false),
@@ -98,6 +99,16 @@ CoreInternalOutcome AdaptiveDynamicStreamingTemplate::Deserialize(const rapidjso
         }
         m_drmType = string(value["DrmType"].GetString());
         m_drmTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("DrmKeyProvider") && !value["DrmKeyProvider"].IsNull())
+    {
+        if (!value["DrmKeyProvider"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AdaptiveDynamicStreamingTemplate.DrmKeyProvider` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_drmKeyProvider = string(value["DrmKeyProvider"].GetString());
+        m_drmKeyProviderHasBeenSet = true;
     }
 
     if (value.HasMember("StreamInfos") && !value["StreamInfos"].IsNull())
@@ -213,6 +224,14 @@ void AdaptiveDynamicStreamingTemplate::ToJsonObject(rapidjson::Value &value, rap
         string key = "DrmType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_drmType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_drmKeyProviderHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DrmKeyProvider";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_drmKeyProvider.c_str(), allocator).Move(), allocator);
     }
 
     if (m_streamInfosHasBeenSet)
@@ -359,6 +378,22 @@ void AdaptiveDynamicStreamingTemplate::SetDrmType(const string& _drmType)
 bool AdaptiveDynamicStreamingTemplate::DrmTypeHasBeenSet() const
 {
     return m_drmTypeHasBeenSet;
+}
+
+string AdaptiveDynamicStreamingTemplate::GetDrmKeyProvider() const
+{
+    return m_drmKeyProvider;
+}
+
+void AdaptiveDynamicStreamingTemplate::SetDrmKeyProvider(const string& _drmKeyProvider)
+{
+    m_drmKeyProvider = _drmKeyProvider;
+    m_drmKeyProviderHasBeenSet = true;
+}
+
+bool AdaptiveDynamicStreamingTemplate::DrmKeyProviderHasBeenSet() const
+{
+    return m_drmKeyProviderHasBeenSet;
 }
 
 vector<AdaptiveStreamTemplate> AdaptiveDynamicStreamingTemplate::GetStreamInfos() const

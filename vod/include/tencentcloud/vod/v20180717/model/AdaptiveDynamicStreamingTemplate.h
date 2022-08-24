@@ -184,6 +184,36 @@ namespace TencentCloud
                     bool DrmTypeHasBeenSet() const;
 
                     /**
+                     * 获取DRM 的密钥提供商，取值范围：
+<li>SDMC：华曦达；</li>
+<li>VOD：云点播。</li>
+默认值为 VOD 。
+                     * @return DrmKeyProvider DRM 的密钥提供商，取值范围：
+<li>SDMC：华曦达；</li>
+<li>VOD：云点播。</li>
+默认值为 VOD 。
+                     */
+                    std::string GetDrmKeyProvider() const;
+
+                    /**
+                     * 设置DRM 的密钥提供商，取值范围：
+<li>SDMC：华曦达；</li>
+<li>VOD：云点播。</li>
+默认值为 VOD 。
+                     * @param DrmKeyProvider DRM 的密钥提供商，取值范围：
+<li>SDMC：华曦达；</li>
+<li>VOD：云点播。</li>
+默认值为 VOD 。
+                     */
+                    void SetDrmKeyProvider(const std::string& _drmKeyProvider);
+
+                    /**
+                     * 判断参数 DrmKeyProvider 是否已赋值
+                     * @return DrmKeyProvider 是否已赋值
+                     */
+                    bool DrmKeyProviderHasBeenSet() const;
+
+                    /**
                      * 获取自适应转码输入流参数信息，最多输入10路流。
                      * @return StreamInfos 自适应转码输入流参数信息，最多输入10路流。
                      */
@@ -333,6 +363,15 @@ namespace TencentCloud
                      */
                     std::string m_drmType;
                     bool m_drmTypeHasBeenSet;
+
+                    /**
+                     * DRM 的密钥提供商，取值范围：
+<li>SDMC：华曦达；</li>
+<li>VOD：云点播。</li>
+默认值为 VOD 。
+                     */
+                    std::string m_drmKeyProvider;
+                    bool m_drmKeyProviderHasBeenSet;
 
                     /**
                      * 自适应转码输入流参数信息，最多输入10路流。

@@ -22,6 +22,7 @@ using namespace std;
 
 AsrFullTextConfigureInfoForUpdate::AsrFullTextConfigureInfoForUpdate() :
     m_switchHasBeenSet(false),
+    m_subtitleFormatsOperationHasBeenSet(false),
     m_subtitleFormatHasBeenSet(false)
 {
 }
@@ -39,6 +40,23 @@ CoreInternalOutcome AsrFullTextConfigureInfoForUpdate::Deserialize(const rapidjs
         }
         m_switch = string(value["Switch"].GetString());
         m_switchHasBeenSet = true;
+    }
+
+    if (value.HasMember("SubtitleFormatsOperation") && !value["SubtitleFormatsOperation"].IsNull())
+    {
+        if (!value["SubtitleFormatsOperation"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AsrFullTextConfigureInfoForUpdate.SubtitleFormatsOperation` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_subtitleFormatsOperation.Deserialize(value["SubtitleFormatsOperation"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_subtitleFormatsOperationHasBeenSet = true;
     }
 
     if (value.HasMember("SubtitleFormat") && !value["SubtitleFormat"].IsNull())
@@ -66,6 +84,15 @@ void AsrFullTextConfigureInfoForUpdate::ToJsonObject(rapidjson::Value &value, ra
         value.AddMember(iKey, rapidjson::Value(m_switch.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_subtitleFormatsOperationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubtitleFormatsOperation";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_subtitleFormatsOperation.ToJsonObject(value[key.c_str()], allocator);
+    }
+
     if (m_subtitleFormatHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -91,6 +118,22 @@ void AsrFullTextConfigureInfoForUpdate::SetSwitch(const string& _switch)
 bool AsrFullTextConfigureInfoForUpdate::SwitchHasBeenSet() const
 {
     return m_switchHasBeenSet;
+}
+
+SubtitleFormatsOperation AsrFullTextConfigureInfoForUpdate::GetSubtitleFormatsOperation() const
+{
+    return m_subtitleFormatsOperation;
+}
+
+void AsrFullTextConfigureInfoForUpdate::SetSubtitleFormatsOperation(const SubtitleFormatsOperation& _subtitleFormatsOperation)
+{
+    m_subtitleFormatsOperation = _subtitleFormatsOperation;
+    m_subtitleFormatsOperationHasBeenSet = true;
+}
+
+bool AsrFullTextConfigureInfoForUpdate::SubtitleFormatsOperationHasBeenSet() const
+{
+    return m_subtitleFormatsOperationHasBeenSet;
 }
 
 string AsrFullTextConfigureInfoForUpdate::GetSubtitleFormat() const

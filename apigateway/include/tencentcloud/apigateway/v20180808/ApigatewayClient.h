@@ -165,6 +165,8 @@
 #include <tencentcloud/apigateway/v20180808/model/EnableApiKeyResponse.h>
 #include <tencentcloud/apigateway/v20180808/model/GenerateApiDocumentRequest.h>
 #include <tencentcloud/apigateway/v20180808/model/GenerateApiDocumentResponse.h>
+#include <tencentcloud/apigateway/v20180808/model/ImportOpenApiRequest.h>
+#include <tencentcloud/apigateway/v20180808/model/ImportOpenApiResponse.h>
 #include <tencentcloud/apigateway/v20180808/model/ModifyAPIDocRequest.h>
 #include <tencentcloud/apigateway/v20180808/model/ModifyAPIDocResponse.h>
 #include <tencentcloud/apigateway/v20180808/model/ModifyApiRequest.h>
@@ -440,6 +442,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GenerateApiDocumentResponse> GenerateApiDocumentOutcome;
                 typedef std::future<GenerateApiDocumentOutcome> GenerateApiDocumentOutcomeCallable;
                 typedef std::function<void(const ApigatewayClient*, const Model::GenerateApiDocumentRequest&, GenerateApiDocumentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GenerateApiDocumentAsyncHandler;
+                typedef Outcome<Core::Error, Model::ImportOpenApiResponse> ImportOpenApiOutcome;
+                typedef std::future<ImportOpenApiOutcome> ImportOpenApiOutcomeCallable;
+                typedef std::function<void(const ApigatewayClient*, const Model::ImportOpenApiRequest&, ImportOpenApiOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ImportOpenApiAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyAPIDocResponse> ModifyAPIDocOutcome;
                 typedef std::future<ModifyAPIDocOutcome> ModifyAPIDocOutcomeCallable;
                 typedef std::function<void(const ApigatewayClient*, const Model::ModifyAPIDocRequest&, ModifyAPIDocOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAPIDocAsyncHandler;
@@ -1172,6 +1177,15 @@ API 网关可绑定自定义域名到服务，用于服务调用。此接口用�
                 GenerateApiDocumentOutcome GenerateApiDocument(const Model::GenerateApiDocumentRequest &request);
                 void GenerateApiDocumentAsync(const Model::GenerateApiDocumentRequest& request, const GenerateApiDocumentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GenerateApiDocumentOutcomeCallable GenerateApiDocumentCallable(const Model::GenerateApiDocumentRequest& request);
+
+                /**
+                 *本接口（ImportOpenApi）用于将OpenAPI规范定义的API导入到API网关。 
+                 * @param req ImportOpenApiRequest
+                 * @return ImportOpenApiOutcome
+                 */
+                ImportOpenApiOutcome ImportOpenApi(const Model::ImportOpenApiRequest &request);
+                void ImportOpenApiAsync(const Model::ImportOpenApiRequest& request, const ImportOpenApiAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ImportOpenApiOutcomeCallable ImportOpenApiCallable(const Model::ImportOpenApiRequest& request);
 
                 /**
                  *修改 API 文档

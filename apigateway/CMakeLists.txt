@@ -29,6 +29,7 @@ set(apigateway_public_header_model
   include/tencentcloud/apigateway/v20180808/model/AttachedApiSummary.h
   include/tencentcloud/apigateway/v20180808/model/DescribeUsagePlanRequest.h
   include/tencentcloud/apigateway/v20180808/model/DeleteUsagePlanResponse.h
+  include/tencentcloud/apigateway/v20180808/model/ImportOpenApiResponse.h
   include/tencentcloud/apigateway/v20180808/model/DisableApiKeyResponse.h
   include/tencentcloud/apigateway/v20180808/model/DescribeApiResponse.h
   include/tencentcloud/apigateway/v20180808/model/UnReleaseServiceRequest.h
@@ -40,6 +41,7 @@ set(apigateway_public_header_model
   include/tencentcloud/apigateway/v20180808/model/DescribeApiAppBindApisStatusRequest.h
   include/tencentcloud/apigateway/v20180808/model/ModifyApiResponse.h
   include/tencentcloud/apigateway/v20180808/model/ServiceEnvironmentStrategy.h
+  include/tencentcloud/apigateway/v20180808/model/CreateApiRspSet.h
   include/tencentcloud/apigateway/v20180808/model/ApiInfo.h
   include/tencentcloud/apigateway/v20180808/model/TargetServicesReq.h
   include/tencentcloud/apigateway/v20180808/model/DescribeUsagePlansStatusRequest.h
@@ -260,6 +262,7 @@ set(apigateway_public_header_model
   include/tencentcloud/apigateway/v20180808/model/EnvironmentStrategy.h
   include/tencentcloud/apigateway/v20180808/model/InstanceParameterInput.h
   include/tencentcloud/apigateway/v20180808/model/DescribeUsagePlanEnvironmentsRequest.h
+  include/tencentcloud/apigateway/v20180808/model/ImportOpenApiRequest.h
   include/tencentcloud/apigateway/v20180808/model/DescribeServiceReleaseVersionResponse.h
   include/tencentcloud/apigateway/v20180808/model/UpstreamNode.h
   include/tencentcloud/apigateway/v20180808/model/ApiAppApiInfos.h
@@ -314,6 +317,7 @@ set(apigateway_src
   src/v20180808/model/AttachedApiSummary.cpp
   src/v20180808/model/DescribeUsagePlanRequest.cpp
   src/v20180808/model/DeleteUsagePlanResponse.cpp
+  src/v20180808/model/ImportOpenApiResponse.cpp
   src/v20180808/model/DisableApiKeyResponse.cpp
   src/v20180808/model/DescribeApiResponse.cpp
   src/v20180808/model/UnReleaseServiceRequest.cpp
@@ -325,6 +329,7 @@ set(apigateway_src
   src/v20180808/model/DescribeApiAppBindApisStatusRequest.cpp
   src/v20180808/model/ModifyApiResponse.cpp
   src/v20180808/model/ServiceEnvironmentStrategy.cpp
+  src/v20180808/model/CreateApiRspSet.cpp
   src/v20180808/model/ApiInfo.cpp
   src/v20180808/model/TargetServicesReq.cpp
   src/v20180808/model/DescribeUsagePlansStatusRequest.cpp
@@ -545,6 +550,7 @@ set(apigateway_src
   src/v20180808/model/EnvironmentStrategy.cpp
   src/v20180808/model/InstanceParameterInput.cpp
   src/v20180808/model/DescribeUsagePlanEnvironmentsRequest.cpp
+  src/v20180808/model/ImportOpenApiRequest.cpp
   src/v20180808/model/DescribeServiceReleaseVersionResponse.cpp
   src/v20180808/model/UpstreamNode.cpp
   src/v20180808/model/ApiAppApiInfos.cpp

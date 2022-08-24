@@ -28,6 +28,7 @@ CreateAdaptiveDynamicStreamingTemplateRequest::CreateAdaptiveDynamicStreamingTem
     m_subAppIdHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_drmTypeHasBeenSet(false),
+    m_drmKeyProviderHasBeenSet(false),
     m_disableHigherVideoBitrateHasBeenSet(false),
     m_disableHigherVideoResolutionHasBeenSet(false),
     m_commentHasBeenSet(false)
@@ -86,6 +87,14 @@ string CreateAdaptiveDynamicStreamingTemplateRequest::ToJsonString() const
         string key = "DrmType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_drmType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_drmKeyProviderHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DrmKeyProvider";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_drmKeyProvider.c_str(), allocator).Move(), allocator);
     }
 
     if (m_disableHigherVideoBitrateHasBeenSet)
@@ -198,6 +207,22 @@ void CreateAdaptiveDynamicStreamingTemplateRequest::SetDrmType(const string& _dr
 bool CreateAdaptiveDynamicStreamingTemplateRequest::DrmTypeHasBeenSet() const
 {
     return m_drmTypeHasBeenSet;
+}
+
+string CreateAdaptiveDynamicStreamingTemplateRequest::GetDrmKeyProvider() const
+{
+    return m_drmKeyProvider;
+}
+
+void CreateAdaptiveDynamicStreamingTemplateRequest::SetDrmKeyProvider(const string& _drmKeyProvider)
+{
+    m_drmKeyProvider = _drmKeyProvider;
+    m_drmKeyProviderHasBeenSet = true;
+}
+
+bool CreateAdaptiveDynamicStreamingTemplateRequest::DrmKeyProviderHasBeenSet() const
+{
+    return m_drmKeyProviderHasBeenSet;
 }
 
 uint64_t CreateAdaptiveDynamicStreamingTemplateRequest::GetDisableHigherVideoBitrate() const

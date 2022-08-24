@@ -22,7 +22,8 @@ using namespace std;
 
 MediaSourceData::MediaSourceData() :
     m_sourceTypeHasBeenSet(false),
-    m_sourceContextHasBeenSet(false)
+    m_sourceContextHasBeenSet(false),
+    m_trtcRecordInfoHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,23 @@ CoreInternalOutcome MediaSourceData::Deserialize(const rapidjson::Value &value)
         m_sourceContextHasBeenSet = true;
     }
 
+    if (value.HasMember("TrtcRecordInfo") && !value["TrtcRecordInfo"].IsNull())
+    {
+        if (!value["TrtcRecordInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `MediaSourceData.TrtcRecordInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_trtcRecordInfo.Deserialize(value["TrtcRecordInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_trtcRecordInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +90,15 @@ void MediaSourceData::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "SourceContext";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_sourceContext.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_trtcRecordInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TrtcRecordInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_trtcRecordInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -107,5 +134,21 @@ void MediaSourceData::SetSourceContext(const string& _sourceContext)
 bool MediaSourceData::SourceContextHasBeenSet() const
 {
     return m_sourceContextHasBeenSet;
+}
+
+TrtcRecordInfo MediaSourceData::GetTrtcRecordInfo() const
+{
+    return m_trtcRecordInfo;
+}
+
+void MediaSourceData::SetTrtcRecordInfo(const TrtcRecordInfo& _trtcRecordInfo)
+{
+    m_trtcRecordInfo = _trtcRecordInfo;
+    m_trtcRecordInfoHasBeenSet = true;
+}
+
+bool MediaSourceData::TrtcRecordInfoHasBeenSet() const
+{
+    return m_trtcRecordInfoHasBeenSet;
 }
 

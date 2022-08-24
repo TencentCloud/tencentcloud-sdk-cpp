@@ -24,6 +24,7 @@ AiRecognitionTaskAsrFullTextResultOutput::AiRecognitionTaskAsrFullTextResultOutp
     m_segmentSetHasBeenSet(false),
     m_segmentSetFileUrlHasBeenSet(false),
     m_segmentSetFileUrlExpireTimeHasBeenSet(false),
+    m_subtitleSetHasBeenSet(false),
     m_subtitleUrlHasBeenSet(false)
 {
 }
@@ -73,6 +74,26 @@ CoreInternalOutcome AiRecognitionTaskAsrFullTextResultOutput::Deserialize(const 
         m_segmentSetFileUrlExpireTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("SubtitleSet") && !value["SubtitleSet"].IsNull())
+    {
+        if (!value["SubtitleSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `AiRecognitionTaskAsrFullTextResultOutput.SubtitleSet` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["SubtitleSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            AiRecognitionTaskAsrFullTextResultOutputSubtitleItem item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_subtitleSet.push_back(item);
+        }
+        m_subtitleSetHasBeenSet = true;
+    }
+
     if (value.HasMember("SubtitleUrl") && !value["SubtitleUrl"].IsNull())
     {
         if (!value["SubtitleUrl"].IsString())
@@ -119,6 +140,21 @@ void AiRecognitionTaskAsrFullTextResultOutput::ToJsonObject(rapidjson::Value &va
         string key = "SegmentSetFileUrlExpireTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_segmentSetFileUrlExpireTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subtitleSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubtitleSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_subtitleSet.begin(); itr != m_subtitleSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     if (m_subtitleUrlHasBeenSet)
@@ -178,6 +214,22 @@ void AiRecognitionTaskAsrFullTextResultOutput::SetSegmentSetFileUrlExpireTime(co
 bool AiRecognitionTaskAsrFullTextResultOutput::SegmentSetFileUrlExpireTimeHasBeenSet() const
 {
     return m_segmentSetFileUrlExpireTimeHasBeenSet;
+}
+
+vector<AiRecognitionTaskAsrFullTextResultOutputSubtitleItem> AiRecognitionTaskAsrFullTextResultOutput::GetSubtitleSet() const
+{
+    return m_subtitleSet;
+}
+
+void AiRecognitionTaskAsrFullTextResultOutput::SetSubtitleSet(const vector<AiRecognitionTaskAsrFullTextResultOutputSubtitleItem>& _subtitleSet)
+{
+    m_subtitleSet = _subtitleSet;
+    m_subtitleSetHasBeenSet = true;
+}
+
+bool AiRecognitionTaskAsrFullTextResultOutput::SubtitleSetHasBeenSet() const
+{
+    return m_subtitleSetHasBeenSet;
 }
 
 string AiRecognitionTaskAsrFullTextResultOutput::GetSubtitleUrl() const

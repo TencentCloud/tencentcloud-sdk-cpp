@@ -46,6 +46,7 @@ set(tse_public_header_model
   include/tencentcloud/tse/v20201207/model/VpcInfo.h
   include/tencentcloud/tse/v20201207/model/EngineAdmin.h
   include/tencentcloud/tse/v20201207/model/CreateEngineRequest.h
+  include/tencentcloud/tse/v20201207/model/DescribeInstanceRegionInfo.h
   include/tencentcloud/tse/v20201207/model/DescribeSREInstanceAccessAddressRequest.h
   include/tencentcloud/tse/v20201207/model/DescribeNacosServerInterfacesResponse.h
   include/tencentcloud/tse/v20201207/model/Filter.h
@@ -85,6 +86,7 @@ set(tse_src
   src/v20201207/model/VpcInfo.cpp
   src/v20201207/model/EngineAdmin.cpp
   src/v20201207/model/CreateEngineRequest.cpp
+  src/v20201207/model/DescribeInstanceRegionInfo.cpp
   src/v20201207/model/DescribeSREInstanceAccessAddressRequest.cpp
   src/v20201207/model/DescribeNacosServerInterfacesResponse.cpp
   src/v20201207/model/Filter.cpp

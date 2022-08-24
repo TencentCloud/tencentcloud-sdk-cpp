@@ -33,6 +33,7 @@
 #include <tencentcloud/vod/v20180717/model/ClipTask2017.h>
 #include <tencentcloud/vod/v20180717/model/CreateImageSpriteTask2017.h>
 #include <tencentcloud/vod/v20180717/model/SnapshotByTimeOffsetTask2017.h>
+#include <tencentcloud/vod/v20180717/model/RemoveWatermarkTask.h>
 
 
 namespace TencentCloud
@@ -65,7 +66,7 @@ namespace TencentCloud
 <li>WechatMiniProgramPublish：微信小程序视频发布任务；</li>
 <li>PullUpload：拉取上传媒体文件任务；</li>
 <li>FastClipMedia：快速剪辑任务；</li>
-<li>ReduceMediaBitrate：降码率任务。</li>
+<li>RemoveWatermarkTask：智能去除水印任务。</li>
                      * @return TaskType 任务类型，取值：
 <li>Procedure：视频处理任务；</li>
 <li>EditMedia：视频编辑任务；</li>
@@ -75,7 +76,7 @@ namespace TencentCloud
 <li>WechatMiniProgramPublish：微信小程序视频发布任务；</li>
 <li>PullUpload：拉取上传媒体文件任务；</li>
 <li>FastClipMedia：快速剪辑任务；</li>
-<li>ReduceMediaBitrate：降码率任务。</li>
+<li>RemoveWatermarkTask：智能去除水印任务。</li>
                      */
                     std::string GetTaskType() const;
 
@@ -307,6 +308,20 @@ namespace TencentCloud
                      */
                     bool SnapshotByTimeOffsetTaskHasBeenSet() const;
 
+                    /**
+                     * 获取智能去除水印任务信息，仅当 TaskType 为 RemoveWatermark，该字段有值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RemoveWatermarkTask 智能去除水印任务信息，仅当 TaskType 为 RemoveWatermark，该字段有值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    RemoveWatermarkTask GetRemoveWatermarkTask() const;
+
+                    /**
+                     * 判断参数 RemoveWatermarkTask 是否已赋值
+                     * @return RemoveWatermarkTask 是否已赋值
+                     */
+                    bool RemoveWatermarkTaskHasBeenSet() const;
+
                 private:
 
                     /**
@@ -319,7 +334,7 @@ namespace TencentCloud
 <li>WechatMiniProgramPublish：微信小程序视频发布任务；</li>
 <li>PullUpload：拉取上传媒体文件任务；</li>
 <li>FastClipMedia：快速剪辑任务；</li>
-<li>ReduceMediaBitrate：降码率任务。</li>
+<li>RemoveWatermarkTask：智能去除水印任务。</li>
                      */
                     std::string m_taskType;
                     bool m_taskTypeHasBeenSet;
@@ -434,6 +449,13 @@ namespace TencentCloud
                      */
                     SnapshotByTimeOffsetTask2017 m_snapshotByTimeOffsetTask;
                     bool m_snapshotByTimeOffsetTaskHasBeenSet;
+
+                    /**
+                     * 智能去除水印任务信息，仅当 TaskType 为 RemoveWatermark，该字段有值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    RemoveWatermarkTask m_removeWatermarkTask;
+                    bool m_removeWatermarkTaskHasBeenSet;
 
                 };
             }

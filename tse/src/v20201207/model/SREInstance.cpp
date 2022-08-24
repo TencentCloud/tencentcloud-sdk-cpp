@@ -49,7 +49,8 @@ SREInstance::SREInstance() :
     m_tradeTypeHasBeenSet(false),
     m_autoRenewFlagHasBeenSet(false),
     m_curDeadlineHasBeenSet(false),
-    m_isolateTimeHasBeenSet(false)
+    m_isolateTimeHasBeenSet(false),
+    m_regionInfosHasBeenSet(false)
 {
 }
 
@@ -391,6 +392,26 @@ CoreInternalOutcome SREInstance::Deserialize(const rapidjson::Value &value)
         m_isolateTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("RegionInfos") && !value["RegionInfos"].IsNull())
+    {
+        if (!value["RegionInfos"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `SREInstance.RegionInfos` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["RegionInfos"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            DescribeInstanceRegionInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_regionInfos.push_back(item);
+        }
+        m_regionInfosHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -661,6 +682,21 @@ void SREInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "IsolateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_isolateTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_regionInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RegionInfos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_regionInfos.begin(); itr != m_regionInfos.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -1128,5 +1164,21 @@ void SREInstance::SetIsolateTime(const string& _isolateTime)
 bool SREInstance::IsolateTimeHasBeenSet() const
 {
     return m_isolateTimeHasBeenSet;
+}
+
+vector<DescribeInstanceRegionInfo> SREInstance::GetRegionInfos() const
+{
+    return m_regionInfos;
+}
+
+void SREInstance::SetRegionInfos(const vector<DescribeInstanceRegionInfo>& _regionInfos)
+{
+    m_regionInfos = _regionInfos;
+    m_regionInfosHasBeenSet = true;
+}
+
+bool SREInstance::RegionInfosHasBeenSet() const
+{
+    return m_regionInfosHasBeenSet;
 }
 

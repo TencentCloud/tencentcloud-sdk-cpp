@@ -22,6 +22,7 @@ using namespace std;
 
 AsrFullTextConfigureInfo::AsrFullTextConfigureInfo() :
     m_switchHasBeenSet(false),
+    m_subtitleFormatsHasBeenSet(false),
     m_subtitleFormatHasBeenSet(false)
 {
 }
@@ -39,6 +40,19 @@ CoreInternalOutcome AsrFullTextConfigureInfo::Deserialize(const rapidjson::Value
         }
         m_switch = string(value["Switch"].GetString());
         m_switchHasBeenSet = true;
+    }
+
+    if (value.HasMember("SubtitleFormats") && !value["SubtitleFormats"].IsNull())
+    {
+        if (!value["SubtitleFormats"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `AsrFullTextConfigureInfo.SubtitleFormats` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["SubtitleFormats"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_subtitleFormats.push_back((*itr).GetString());
+        }
+        m_subtitleFormatsHasBeenSet = true;
     }
 
     if (value.HasMember("SubtitleFormat") && !value["SubtitleFormat"].IsNull())
@@ -66,6 +80,19 @@ void AsrFullTextConfigureInfo::ToJsonObject(rapidjson::Value &value, rapidjson::
         value.AddMember(iKey, rapidjson::Value(m_switch.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_subtitleFormatsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubtitleFormats";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_subtitleFormats.begin(); itr != m_subtitleFormats.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
     if (m_subtitleFormatHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -91,6 +118,22 @@ void AsrFullTextConfigureInfo::SetSwitch(const string& _switch)
 bool AsrFullTextConfigureInfo::SwitchHasBeenSet() const
 {
     return m_switchHasBeenSet;
+}
+
+vector<string> AsrFullTextConfigureInfo::GetSubtitleFormats() const
+{
+    return m_subtitleFormats;
+}
+
+void AsrFullTextConfigureInfo::SetSubtitleFormats(const vector<string>& _subtitleFormats)
+{
+    m_subtitleFormats = _subtitleFormats;
+    m_subtitleFormatsHasBeenSet = true;
+}
+
+bool AsrFullTextConfigureInfo::SubtitleFormatsHasBeenSet() const
+{
+    return m_subtitleFormatsHasBeenSet;
 }
 
 string AsrFullTextConfigureInfo::GetSubtitleFormat() const

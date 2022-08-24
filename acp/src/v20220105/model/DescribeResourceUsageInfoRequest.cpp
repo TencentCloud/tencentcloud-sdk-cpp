@@ -25,7 +25,8 @@ using namespace std;
 DescribeResourceUsageInfoRequest::DescribeResourceUsageInfoRequest() :
     m_priceNameHasBeenSet(false),
     m_taskTypeHasBeenSet(false),
-    m_platformHasBeenSet(false)
+    m_platformHasBeenSet(false),
+    m_sourceHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,14 @@ string DescribeResourceUsageInfoRequest::ToJsonString() const
         string key = "Platform";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_platform, allocator);
+    }
+
+    if (m_sourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Source";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_source, allocator);
     }
 
 
@@ -114,6 +123,22 @@ void DescribeResourceUsageInfoRequest::SetPlatform(const int64_t& _platform)
 bool DescribeResourceUsageInfoRequest::PlatformHasBeenSet() const
 {
     return m_platformHasBeenSet;
+}
+
+int64_t DescribeResourceUsageInfoRequest::GetSource() const
+{
+    return m_source;
+}
+
+void DescribeResourceUsageInfoRequest::SetSource(const int64_t& _source)
+{
+    m_source = _source;
+    m_sourceHasBeenSet = true;
+}
+
+bool DescribeResourceUsageInfoRequest::SourceHasBeenSet() const
+{
+    return m_sourceHasBeenSet;
 }
 
 
