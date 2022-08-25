@@ -24,7 +24,9 @@ Docker::Docker() :
     m_userHasBeenSet(false),
     m_passwordHasBeenSet(false),
     m_imageHasBeenSet(false),
-    m_serverHasBeenSet(false)
+    m_serverHasBeenSet(false),
+    m_maxRetryCountHasBeenSet(false),
+    m_delayOnRetryHasBeenSet(false)
 {
 }
 
@@ -73,6 +75,26 @@ CoreInternalOutcome Docker::Deserialize(const rapidjson::Value &value)
         m_serverHasBeenSet = true;
     }
 
+    if (value.HasMember("MaxRetryCount") && !value["MaxRetryCount"].IsNull())
+    {
+        if (!value["MaxRetryCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Docker.MaxRetryCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_maxRetryCount = value["MaxRetryCount"].GetUint64();
+        m_maxRetryCountHasBeenSet = true;
+    }
+
+    if (value.HasMember("DelayOnRetry") && !value["DelayOnRetry"].IsNull())
+    {
+        if (!value["DelayOnRetry"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Docker.DelayOnRetry` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_delayOnRetry = value["DelayOnRetry"].GetUint64();
+        m_delayOnRetryHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +132,22 @@ void Docker::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocato
         string key = "Server";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_server.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_maxRetryCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxRetryCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_maxRetryCount, allocator);
+    }
+
+    if (m_delayOnRetryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DelayOnRetry";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_delayOnRetry, allocator);
     }
 
 }
@@ -177,5 +215,37 @@ void Docker::SetServer(const string& _server)
 bool Docker::ServerHasBeenSet() const
 {
     return m_serverHasBeenSet;
+}
+
+uint64_t Docker::GetMaxRetryCount() const
+{
+    return m_maxRetryCount;
+}
+
+void Docker::SetMaxRetryCount(const uint64_t& _maxRetryCount)
+{
+    m_maxRetryCount = _maxRetryCount;
+    m_maxRetryCountHasBeenSet = true;
+}
+
+bool Docker::MaxRetryCountHasBeenSet() const
+{
+    return m_maxRetryCountHasBeenSet;
+}
+
+uint64_t Docker::GetDelayOnRetry() const
+{
+    return m_delayOnRetry;
+}
+
+void Docker::SetDelayOnRetry(const uint64_t& _delayOnRetry)
+{
+    m_delayOnRetry = _delayOnRetry;
+    m_delayOnRetryHasBeenSet = true;
+}
+
+bool Docker::DelayOnRetryHasBeenSet() const
+{
+    return m_delayOnRetryHasBeenSet;
 }
 

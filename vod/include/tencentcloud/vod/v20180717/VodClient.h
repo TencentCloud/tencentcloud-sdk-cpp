@@ -139,6 +139,8 @@
 #include <tencentcloud/vod/v20180717/model/DescribeDailyPlayStatFileListResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeDrmDataKeyRequest.h>
 #include <tencentcloud/vod/v20180717/model/DescribeDrmDataKeyResponse.h>
+#include <tencentcloud/vod/v20180717/model/DescribeDrmKeyProviderInfoRequest.h>
+#include <tencentcloud/vod/v20180717/model/DescribeDrmKeyProviderInfoResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeEventConfigRequest.h>
 #include <tencentcloud/vod/v20180717/model/DescribeEventConfigResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeEventsStateRequest.h>
@@ -277,6 +279,8 @@
 #include <tencentcloud/vod/v20180717/model/ReviewImageResponse.h>
 #include <tencentcloud/vod/v20180717/model/SearchMediaRequest.h>
 #include <tencentcloud/vod/v20180717/model/SearchMediaResponse.h>
+#include <tencentcloud/vod/v20180717/model/SetDrmKeyProviderInfoRequest.h>
+#include <tencentcloud/vod/v20180717/model/SetDrmKeyProviderInfoResponse.h>
 #include <tencentcloud/vod/v20180717/model/SimpleHlsClipRequest.h>
 #include <tencentcloud/vod/v20180717/model/SimpleHlsClipResponse.h>
 #include <tencentcloud/vod/v20180717/model/SplitMediaRequest.h>
@@ -471,6 +475,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDrmDataKeyResponse> DescribeDrmDataKeyOutcome;
                 typedef std::future<DescribeDrmDataKeyOutcome> DescribeDrmDataKeyOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DescribeDrmDataKeyRequest&, DescribeDrmDataKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDrmDataKeyAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDrmKeyProviderInfoResponse> DescribeDrmKeyProviderInfoOutcome;
+                typedef std::future<DescribeDrmKeyProviderInfoOutcome> DescribeDrmKeyProviderInfoOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::DescribeDrmKeyProviderInfoRequest&, DescribeDrmKeyProviderInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDrmKeyProviderInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeEventConfigResponse> DescribeEventConfigOutcome;
                 typedef std::future<DescribeEventConfigOutcome> DescribeEventConfigOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DescribeEventConfigRequest&, DescribeEventConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEventConfigAsyncHandler;
@@ -678,6 +685,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::SearchMediaResponse> SearchMediaOutcome;
                 typedef std::future<SearchMediaOutcome> SearchMediaOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::SearchMediaRequest&, SearchMediaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SearchMediaAsyncHandler;
+                typedef Outcome<Core::Error, Model::SetDrmKeyProviderInfoResponse> SetDrmKeyProviderInfoOutcome;
+                typedef std::future<SetDrmKeyProviderInfoOutcome> SetDrmKeyProviderInfoOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::SetDrmKeyProviderInfoRequest&, SetDrmKeyProviderInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetDrmKeyProviderInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::SimpleHlsClipResponse> SimpleHlsClipOutcome;
                 typedef std::future<SimpleHlsClipOutcome> SimpleHlsClipOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::SimpleHlsClipRequest&, SimpleHlsClipOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SimpleHlsClipAsyncHandler;
@@ -1268,6 +1278,15 @@ namespace TencentCloud
                 DescribeDrmDataKeyOutcome DescribeDrmDataKey(const Model::DescribeDrmDataKeyRequest &request);
                 void DescribeDrmDataKeyAsync(const Model::DescribeDrmDataKeyRequest& request, const DescribeDrmDataKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDrmDataKeyOutcomeCallable DescribeDrmDataKeyCallable(const Model::DescribeDrmDataKeyRequest& request);
+
+                /**
+                 *查询 DRM 密钥提供商信息。
+                 * @param req DescribeDrmKeyProviderInfoRequest
+                 * @return DescribeDrmKeyProviderInfoOutcome
+                 */
+                DescribeDrmKeyProviderInfoOutcome DescribeDrmKeyProviderInfo(const Model::DescribeDrmKeyProviderInfoRequest &request);
+                void DescribeDrmKeyProviderInfoAsync(const Model::DescribeDrmKeyProviderInfoRequest& request, const DescribeDrmKeyProviderInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDrmKeyProviderInfoOutcomeCallable DescribeDrmKeyProviderInfoCallable(const Model::DescribeDrmKeyProviderInfoRequest& request);
 
                 /**
                  *腾讯云点播为客户提供了媒体上传、媒体管理、媒体处理等等服务，在这些服务执行过程或执行结束时，腾讯云点播也提供各种对应的事件通知，方便开发者感知服务处理状态，并做下一步的业务操作。
@@ -2044,6 +2063,8 @@ namespace TencentCloud
 - 指定直播推流码集合 StreamIds（见输入参数）筛选直播录制的媒体。
 - 指定视频 ID 集合 Vids （见输入参数）筛选直播录制的媒体。
 - 指定媒体的创建时间范围筛选媒体。
+- 指定 TRTC 应用 ID 集合筛选媒体。
+- 指定 TRTC 房间 ID 集合筛选媒体。
 - （不推荐：应使用 Names、NamePrefixes 或 Descriptions 替代）指定单个文本 Text 对媒体文件名或描述信息进行模糊搜索。
 - （不推荐：应使用 SourceTypes 替代）指定单个媒体文件来源 SourceType 进行搜索。
 - （不推荐：应使用 StreamIds 替代）指定单个推流直播码 StreamId 进行搜索。
@@ -2073,6 +2094,15 @@ namespace TencentCloud
                 SearchMediaOutcome SearchMedia(const Model::SearchMediaRequest &request);
                 void SearchMediaAsync(const Model::SearchMediaRequest& request, const SearchMediaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SearchMediaOutcomeCallable SearchMediaCallable(const Model::SearchMediaRequest& request);
+
+                /**
+                 *设置 DRM 密钥提供商信息。
+                 * @param req SetDrmKeyProviderInfoRequest
+                 * @return SetDrmKeyProviderInfoOutcome
+                 */
+                SetDrmKeyProviderInfoOutcome SetDrmKeyProviderInfo(const Model::SetDrmKeyProviderInfoRequest &request);
+                void SetDrmKeyProviderInfoAsync(const Model::SetDrmKeyProviderInfoRequest& request, const SetDrmKeyProviderInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SetDrmKeyProviderInfoOutcomeCallable SetDrmKeyProviderInfoCallable(const Model::SetDrmKeyProviderInfoRequest& request);
 
                 /**
                  *对 HLS 视频进行按时间段裁剪，实时生成一个新的视频（HLS 格式），开发者可以将其立即分享出去，或者长久保存起来。

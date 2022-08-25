@@ -63,6 +63,8 @@
 #include <tencentcloud/oceanus/v20190422/model/DescribeSystemResourcesResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/DescribeTreeJobsRequest.h>
 #include <tencentcloud/oceanus/v20190422/model/DescribeTreeJobsResponse.h>
+#include <tencentcloud/oceanus/v20190422/model/DescribeTreeResourcesRequest.h>
+#include <tencentcloud/oceanus/v20190422/model/DescribeTreeResourcesResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/ModifyJobRequest.h>
 #include <tencentcloud/oceanus/v20190422/model/ModifyJobResponse.h>
 #include <tencentcloud/oceanus/v20190422/model/RunJobsRequest.h>
@@ -145,6 +147,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeTreeJobsResponse> DescribeTreeJobsOutcome;
                 typedef std::future<DescribeTreeJobsOutcome> DescribeTreeJobsOutcomeCallable;
                 typedef std::function<void(const OceanusClient*, const Model::DescribeTreeJobsRequest&, DescribeTreeJobsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTreeJobsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTreeResourcesResponse> DescribeTreeResourcesOutcome;
+                typedef std::future<DescribeTreeResourcesOutcome> DescribeTreeResourcesOutcomeCallable;
+                typedef std::function<void(const OceanusClient*, const Model::DescribeTreeResourcesRequest&, DescribeTreeResourcesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTreeResourcesAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyJobResponse> ModifyJobOutcome;
                 typedef std::future<ModifyJobOutcome> ModifyJobOutcomeCallable;
                 typedef std::function<void(const OceanusClient*, const Model::ModifyJobRequest&, ModifyJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyJobAsyncHandler;
@@ -339,6 +344,15 @@ namespace TencentCloud
                 DescribeTreeJobsOutcome DescribeTreeJobs(const Model::DescribeTreeJobsRequest &request);
                 void DescribeTreeJobsAsync(const Model::DescribeTreeJobsRequest& request, const DescribeTreeJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeTreeJobsOutcomeCallable DescribeTreeJobsCallable(const Model::DescribeTreeJobsRequest& request);
+
+                /**
+                 *查询树状结构资源列表
+                 * @param req DescribeTreeResourcesRequest
+                 * @return DescribeTreeResourcesOutcome
+                 */
+                DescribeTreeResourcesOutcome DescribeTreeResources(const Model::DescribeTreeResourcesRequest &request);
+                void DescribeTreeResourcesAsync(const Model::DescribeTreeResourcesRequest& request, const DescribeTreeResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTreeResourcesOutcomeCallable DescribeTreeResourcesCallable(const Model::DescribeTreeResourcesRequest& request);
 
                 /**
                  *更新作业属性，仅允许以下3种操作，不支持组合操作：

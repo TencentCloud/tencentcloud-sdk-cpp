@@ -49,6 +49,10 @@
 #include <tencentcloud/gaap/v20180529/model/CreateDomainErrorPageInfoResponse.h>
 #include <tencentcloud/gaap/v20180529/model/CreateFirstLinkSessionRequest.h>
 #include <tencentcloud/gaap/v20180529/model/CreateFirstLinkSessionResponse.h>
+#include <tencentcloud/gaap/v20180529/model/CreateGlobalDomainRequest.h>
+#include <tencentcloud/gaap/v20180529/model/CreateGlobalDomainResponse.h>
+#include <tencentcloud/gaap/v20180529/model/CreateGlobalDomainDnsRequest.h>
+#include <tencentcloud/gaap/v20180529/model/CreateGlobalDomainDnsResponse.h>
 #include <tencentcloud/gaap/v20180529/model/CreateHTTPListenerRequest.h>
 #include <tencentcloud/gaap/v20180529/model/CreateHTTPListenerResponse.h>
 #include <tencentcloud/gaap/v20180529/model/CreateHTTPSListenerRequest.h>
@@ -77,6 +81,10 @@
 #include <tencentcloud/gaap/v20180529/model/DeleteDomainErrorPageInfoResponse.h>
 #include <tencentcloud/gaap/v20180529/model/DeleteFirstLinkSessionRequest.h>
 #include <tencentcloud/gaap/v20180529/model/DeleteFirstLinkSessionResponse.h>
+#include <tencentcloud/gaap/v20180529/model/DeleteGlobalDomainRequest.h>
+#include <tencentcloud/gaap/v20180529/model/DeleteGlobalDomainResponse.h>
+#include <tencentcloud/gaap/v20180529/model/DeleteGlobalDomainDnsRequest.h>
+#include <tencentcloud/gaap/v20180529/model/DeleteGlobalDomainDnsResponse.h>
 #include <tencentcloud/gaap/v20180529/model/DeleteListenersRequest.h>
 #include <tencentcloud/gaap/v20180529/model/DeleteListenersResponse.h>
 #include <tencentcloud/gaap/v20180529/model/DeleteProxyGroupRequest.h>
@@ -111,6 +119,10 @@
 #include <tencentcloud/gaap/v20180529/model/DescribeDomainErrorPageInfoByIdsResponse.h>
 #include <tencentcloud/gaap/v20180529/model/DescribeFirstLinkSessionRequest.h>
 #include <tencentcloud/gaap/v20180529/model/DescribeFirstLinkSessionResponse.h>
+#include <tencentcloud/gaap/v20180529/model/DescribeGlobalDomainDnsRequest.h>
+#include <tencentcloud/gaap/v20180529/model/DescribeGlobalDomainDnsResponse.h>
+#include <tencentcloud/gaap/v20180529/model/DescribeGlobalDomainsRequest.h>
+#include <tencentcloud/gaap/v20180529/model/DescribeGlobalDomainsResponse.h>
 #include <tencentcloud/gaap/v20180529/model/DescribeGroupAndStatisticsProxyRequest.h>
 #include <tencentcloud/gaap/v20180529/model/DescribeGroupAndStatisticsProxyResponse.h>
 #include <tencentcloud/gaap/v20180529/model/DescribeGroupDomainConfigRequest.h>
@@ -165,6 +177,10 @@
 #include <tencentcloud/gaap/v20180529/model/DescribeUDPListenersResponse.h>
 #include <tencentcloud/gaap/v20180529/model/DestroyProxiesRequest.h>
 #include <tencentcloud/gaap/v20180529/model/DestroyProxiesResponse.h>
+#include <tencentcloud/gaap/v20180529/model/DisableGlobalDomainRequest.h>
+#include <tencentcloud/gaap/v20180529/model/DisableGlobalDomainResponse.h>
+#include <tencentcloud/gaap/v20180529/model/EnableGlobalDomainRequest.h>
+#include <tencentcloud/gaap/v20180529/model/EnableGlobalDomainResponse.h>
 #include <tencentcloud/gaap/v20180529/model/InquiryPriceCreateProxyRequest.h>
 #include <tencentcloud/gaap/v20180529/model/InquiryPriceCreateProxyResponse.h>
 #include <tencentcloud/gaap/v20180529/model/ModifyCertificateRequest.h>
@@ -173,6 +189,10 @@
 #include <tencentcloud/gaap/v20180529/model/ModifyCertificateAttributesResponse.h>
 #include <tencentcloud/gaap/v20180529/model/ModifyDomainRequest.h>
 #include <tencentcloud/gaap/v20180529/model/ModifyDomainResponse.h>
+#include <tencentcloud/gaap/v20180529/model/ModifyGlobalDomainAttributeRequest.h>
+#include <tencentcloud/gaap/v20180529/model/ModifyGlobalDomainAttributeResponse.h>
+#include <tencentcloud/gaap/v20180529/model/ModifyGlobalDomainDnsRequest.h>
+#include <tencentcloud/gaap/v20180529/model/ModifyGlobalDomainDnsResponse.h>
 #include <tencentcloud/gaap/v20180529/model/ModifyGroupDomainConfigRequest.h>
 #include <tencentcloud/gaap/v20180529/model/ModifyGroupDomainConfigResponse.h>
 #include <tencentcloud/gaap/v20180529/model/ModifyHTTPListenerAttributeRequest.h>
@@ -260,6 +280,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateFirstLinkSessionResponse> CreateFirstLinkSessionOutcome;
                 typedef std::future<CreateFirstLinkSessionOutcome> CreateFirstLinkSessionOutcomeCallable;
                 typedef std::function<void(const GaapClient*, const Model::CreateFirstLinkSessionRequest&, CreateFirstLinkSessionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateFirstLinkSessionAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateGlobalDomainResponse> CreateGlobalDomainOutcome;
+                typedef std::future<CreateGlobalDomainOutcome> CreateGlobalDomainOutcomeCallable;
+                typedef std::function<void(const GaapClient*, const Model::CreateGlobalDomainRequest&, CreateGlobalDomainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateGlobalDomainAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateGlobalDomainDnsResponse> CreateGlobalDomainDnsOutcome;
+                typedef std::future<CreateGlobalDomainDnsOutcome> CreateGlobalDomainDnsOutcomeCallable;
+                typedef std::function<void(const GaapClient*, const Model::CreateGlobalDomainDnsRequest&, CreateGlobalDomainDnsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateGlobalDomainDnsAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateHTTPListenerResponse> CreateHTTPListenerOutcome;
                 typedef std::future<CreateHTTPListenerOutcome> CreateHTTPListenerOutcomeCallable;
                 typedef std::function<void(const GaapClient*, const Model::CreateHTTPListenerRequest&, CreateHTTPListenerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateHTTPListenerAsyncHandler;
@@ -302,6 +328,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteFirstLinkSessionResponse> DeleteFirstLinkSessionOutcome;
                 typedef std::future<DeleteFirstLinkSessionOutcome> DeleteFirstLinkSessionOutcomeCallable;
                 typedef std::function<void(const GaapClient*, const Model::DeleteFirstLinkSessionRequest&, DeleteFirstLinkSessionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteFirstLinkSessionAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteGlobalDomainResponse> DeleteGlobalDomainOutcome;
+                typedef std::future<DeleteGlobalDomainOutcome> DeleteGlobalDomainOutcomeCallable;
+                typedef std::function<void(const GaapClient*, const Model::DeleteGlobalDomainRequest&, DeleteGlobalDomainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteGlobalDomainAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteGlobalDomainDnsResponse> DeleteGlobalDomainDnsOutcome;
+                typedef std::future<DeleteGlobalDomainDnsOutcome> DeleteGlobalDomainDnsOutcomeCallable;
+                typedef std::function<void(const GaapClient*, const Model::DeleteGlobalDomainDnsRequest&, DeleteGlobalDomainDnsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteGlobalDomainDnsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteListenersResponse> DeleteListenersOutcome;
                 typedef std::future<DeleteListenersOutcome> DeleteListenersOutcomeCallable;
                 typedef std::function<void(const GaapClient*, const Model::DeleteListenersRequest&, DeleteListenersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteListenersAsyncHandler;
@@ -353,6 +385,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeFirstLinkSessionResponse> DescribeFirstLinkSessionOutcome;
                 typedef std::future<DescribeFirstLinkSessionOutcome> DescribeFirstLinkSessionOutcomeCallable;
                 typedef std::function<void(const GaapClient*, const Model::DescribeFirstLinkSessionRequest&, DescribeFirstLinkSessionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFirstLinkSessionAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeGlobalDomainDnsResponse> DescribeGlobalDomainDnsOutcome;
+                typedef std::future<DescribeGlobalDomainDnsOutcome> DescribeGlobalDomainDnsOutcomeCallable;
+                typedef std::function<void(const GaapClient*, const Model::DescribeGlobalDomainDnsRequest&, DescribeGlobalDomainDnsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGlobalDomainDnsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeGlobalDomainsResponse> DescribeGlobalDomainsOutcome;
+                typedef std::future<DescribeGlobalDomainsOutcome> DescribeGlobalDomainsOutcomeCallable;
+                typedef std::function<void(const GaapClient*, const Model::DescribeGlobalDomainsRequest&, DescribeGlobalDomainsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGlobalDomainsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeGroupAndStatisticsProxyResponse> DescribeGroupAndStatisticsProxyOutcome;
                 typedef std::future<DescribeGroupAndStatisticsProxyOutcome> DescribeGroupAndStatisticsProxyOutcomeCallable;
                 typedef std::function<void(const GaapClient*, const Model::DescribeGroupAndStatisticsProxyRequest&, DescribeGroupAndStatisticsProxyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGroupAndStatisticsProxyAsyncHandler;
@@ -434,6 +472,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DestroyProxiesResponse> DestroyProxiesOutcome;
                 typedef std::future<DestroyProxiesOutcome> DestroyProxiesOutcomeCallable;
                 typedef std::function<void(const GaapClient*, const Model::DestroyProxiesRequest&, DestroyProxiesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DestroyProxiesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DisableGlobalDomainResponse> DisableGlobalDomainOutcome;
+                typedef std::future<DisableGlobalDomainOutcome> DisableGlobalDomainOutcomeCallable;
+                typedef std::function<void(const GaapClient*, const Model::DisableGlobalDomainRequest&, DisableGlobalDomainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisableGlobalDomainAsyncHandler;
+                typedef Outcome<Core::Error, Model::EnableGlobalDomainResponse> EnableGlobalDomainOutcome;
+                typedef std::future<EnableGlobalDomainOutcome> EnableGlobalDomainOutcomeCallable;
+                typedef std::function<void(const GaapClient*, const Model::EnableGlobalDomainRequest&, EnableGlobalDomainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnableGlobalDomainAsyncHandler;
                 typedef Outcome<Core::Error, Model::InquiryPriceCreateProxyResponse> InquiryPriceCreateProxyOutcome;
                 typedef std::future<InquiryPriceCreateProxyOutcome> InquiryPriceCreateProxyOutcomeCallable;
                 typedef std::function<void(const GaapClient*, const Model::InquiryPriceCreateProxyRequest&, InquiryPriceCreateProxyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InquiryPriceCreateProxyAsyncHandler;
@@ -446,6 +490,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyDomainResponse> ModifyDomainOutcome;
                 typedef std::future<ModifyDomainOutcome> ModifyDomainOutcomeCallable;
                 typedef std::function<void(const GaapClient*, const Model::ModifyDomainRequest&, ModifyDomainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDomainAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyGlobalDomainAttributeResponse> ModifyGlobalDomainAttributeOutcome;
+                typedef std::future<ModifyGlobalDomainAttributeOutcome> ModifyGlobalDomainAttributeOutcomeCallable;
+                typedef std::function<void(const GaapClient*, const Model::ModifyGlobalDomainAttributeRequest&, ModifyGlobalDomainAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyGlobalDomainAttributeAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyGlobalDomainDnsResponse> ModifyGlobalDomainDnsOutcome;
+                typedef std::future<ModifyGlobalDomainDnsOutcome> ModifyGlobalDomainDnsOutcomeCallable;
+                typedef std::function<void(const GaapClient*, const Model::ModifyGlobalDomainDnsRequest&, ModifyGlobalDomainDnsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyGlobalDomainDnsAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyGroupDomainConfigResponse> ModifyGroupDomainConfigOutcome;
                 typedef std::future<ModifyGroupDomainConfigOutcome> ModifyGroupDomainConfigOutcomeCallable;
                 typedef std::function<void(const GaapClient*, const Model::ModifyGroupDomainConfigRequest&, ModifyGroupDomainConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyGroupDomainConfigAsyncHandler;
@@ -620,6 +670,24 @@ namespace TencentCloud
                 CreateFirstLinkSessionOutcomeCallable CreateFirstLinkSessionCallable(const Model::CreateFirstLinkSessionRequest& request);
 
                 /**
+                 *用来创建统一域名
+                 * @param req CreateGlobalDomainRequest
+                 * @return CreateGlobalDomainOutcome
+                 */
+                CreateGlobalDomainOutcome CreateGlobalDomain(const Model::CreateGlobalDomainRequest &request);
+                void CreateGlobalDomainAsync(const Model::CreateGlobalDomainRequest& request, const CreateGlobalDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateGlobalDomainOutcomeCallable CreateGlobalDomainCallable(const Model::CreateGlobalDomainRequest& request);
+
+                /**
+                 *创建域名解析记录
+                 * @param req CreateGlobalDomainDnsRequest
+                 * @return CreateGlobalDomainDnsOutcome
+                 */
+                CreateGlobalDomainDnsOutcome CreateGlobalDomainDns(const Model::CreateGlobalDomainDnsRequest &request);
+                void CreateGlobalDomainDnsAsync(const Model::CreateGlobalDomainDnsRequest& request, const CreateGlobalDomainDnsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateGlobalDomainDnsOutcomeCallable CreateGlobalDomainDnsCallable(const Model::CreateGlobalDomainDnsRequest& request);
+
+                /**
                  *该接口（CreateHTTPListener）用于在通道实例下创建HTTP协议类型的监听器。
                  * @param req CreateHTTPListenerRequest
                  * @return CreateHTTPListenerOutcome
@@ -744,6 +812,24 @@ namespace TencentCloud
                 DeleteFirstLinkSessionOutcome DeleteFirstLinkSession(const Model::DeleteFirstLinkSessionRequest &request);
                 void DeleteFirstLinkSessionAsync(const Model::DeleteFirstLinkSessionRequest& request, const DeleteFirstLinkSessionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteFirstLinkSessionOutcomeCallable DeleteFirstLinkSessionCallable(const Model::DeleteFirstLinkSessionRequest& request);
+
+                /**
+                 *删除统一域名
+                 * @param req DeleteGlobalDomainRequest
+                 * @return DeleteGlobalDomainOutcome
+                 */
+                DeleteGlobalDomainOutcome DeleteGlobalDomain(const Model::DeleteGlobalDomainRequest &request);
+                void DeleteGlobalDomainAsync(const Model::DeleteGlobalDomainRequest& request, const DeleteGlobalDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteGlobalDomainOutcomeCallable DeleteGlobalDomainCallable(const Model::DeleteGlobalDomainRequest& request);
+
+                /**
+                 *删除域名的某条解析记录
+                 * @param req DeleteGlobalDomainDnsRequest
+                 * @return DeleteGlobalDomainDnsOutcome
+                 */
+                DeleteGlobalDomainDnsOutcome DeleteGlobalDomainDns(const Model::DeleteGlobalDomainDnsRequest &request);
+                void DeleteGlobalDomainDnsAsync(const Model::DeleteGlobalDomainDnsRequest& request, const DeleteGlobalDomainDnsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteGlobalDomainDnsOutcomeCallable DeleteGlobalDomainDnsCallable(const Model::DeleteGlobalDomainDnsRequest& request);
 
                 /**
                  *该接口（DeleteListeners）用于批量删除通道或通道组的监听器，包括4/7层监听器。
@@ -897,6 +983,24 @@ namespace TencentCloud
                 DescribeFirstLinkSessionOutcome DescribeFirstLinkSession(const Model::DescribeFirstLinkSessionRequest &request);
                 void DescribeFirstLinkSessionAsync(const Model::DescribeFirstLinkSessionRequest& request, const DescribeFirstLinkSessionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeFirstLinkSessionOutcomeCallable DescribeFirstLinkSessionCallable(const Model::DescribeFirstLinkSessionRequest& request);
+
+                /**
+                 *查询域名解析列表
+                 * @param req DescribeGlobalDomainDnsRequest
+                 * @return DescribeGlobalDomainDnsOutcome
+                 */
+                DescribeGlobalDomainDnsOutcome DescribeGlobalDomainDns(const Model::DescribeGlobalDomainDnsRequest &request);
+                void DescribeGlobalDomainDnsAsync(const Model::DescribeGlobalDomainDnsRequest& request, const DescribeGlobalDomainDnsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeGlobalDomainDnsOutcomeCallable DescribeGlobalDomainDnsCallable(const Model::DescribeGlobalDomainDnsRequest& request);
+
+                /**
+                 *查询域名列表
+                 * @param req DescribeGlobalDomainsRequest
+                 * @return DescribeGlobalDomainsOutcome
+                 */
+                DescribeGlobalDomainsOutcome DescribeGlobalDomains(const Model::DescribeGlobalDomainsRequest &request);
+                void DescribeGlobalDomainsAsync(const Model::DescribeGlobalDomainsRequest& request, const DescribeGlobalDomainsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeGlobalDomainsOutcomeCallable DescribeGlobalDomainsCallable(const Model::DescribeGlobalDomainsRequest& request);
 
                 /**
                  *该接口为内部接口，用于查询可以获取统计数据的通道组和通道信息
@@ -1142,6 +1246,24 @@ namespace TencentCloud
                 DestroyProxiesOutcomeCallable DestroyProxiesCallable(const Model::DestroyProxiesRequest& request);
 
                 /**
+                 *暂停域名解析
+                 * @param req DisableGlobalDomainRequest
+                 * @return DisableGlobalDomainOutcome
+                 */
+                DisableGlobalDomainOutcome DisableGlobalDomain(const Model::DisableGlobalDomainRequest &request);
+                void DisableGlobalDomainAsync(const Model::DisableGlobalDomainRequest& request, const DisableGlobalDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DisableGlobalDomainOutcomeCallable DisableGlobalDomainCallable(const Model::DisableGlobalDomainRequest& request);
+
+                /**
+                 *开启域名解析
+                 * @param req EnableGlobalDomainRequest
+                 * @return EnableGlobalDomainOutcome
+                 */
+                EnableGlobalDomainOutcome EnableGlobalDomain(const Model::EnableGlobalDomainRequest &request);
+                void EnableGlobalDomainAsync(const Model::EnableGlobalDomainRequest& request, const EnableGlobalDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                EnableGlobalDomainOutcomeCallable EnableGlobalDomainCallable(const Model::EnableGlobalDomainRequest& request);
+
+                /**
                  *本接口（InquiryPriceCreateProxy）用于创建加速通道询价。
                  * @param req InquiryPriceCreateProxyRequest
                  * @return InquiryPriceCreateProxyOutcome
@@ -1176,6 +1298,24 @@ namespace TencentCloud
                 ModifyDomainOutcome ModifyDomain(const Model::ModifyDomainRequest &request);
                 void ModifyDomainAsync(const Model::ModifyDomainRequest& request, const ModifyDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyDomainOutcomeCallable ModifyDomainCallable(const Model::ModifyDomainRequest& request);
+
+                /**
+                 *修改域名属性
+                 * @param req ModifyGlobalDomainAttributeRequest
+                 * @return ModifyGlobalDomainAttributeOutcome
+                 */
+                ModifyGlobalDomainAttributeOutcome ModifyGlobalDomainAttribute(const Model::ModifyGlobalDomainAttributeRequest &request);
+                void ModifyGlobalDomainAttributeAsync(const Model::ModifyGlobalDomainAttributeRequest& request, const ModifyGlobalDomainAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyGlobalDomainAttributeOutcomeCallable ModifyGlobalDomainAttributeCallable(const Model::ModifyGlobalDomainAttributeRequest& request);
+
+                /**
+                 *修改域名解析记录
+                 * @param req ModifyGlobalDomainDnsRequest
+                 * @return ModifyGlobalDomainDnsOutcome
+                 */
+                ModifyGlobalDomainDnsOutcome ModifyGlobalDomainDns(const Model::ModifyGlobalDomainDnsRequest &request);
+                void ModifyGlobalDomainDnsAsync(const Model::ModifyGlobalDomainDnsRequest& request, const ModifyGlobalDomainDnsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyGlobalDomainDnsOutcomeCallable ModifyGlobalDomainDnsCallable(const Model::ModifyGlobalDomainDnsRequest& request);
 
                 /**
                  *本接口（ModifyGroupDomainConfig）用于配置通道组就近接入域名。

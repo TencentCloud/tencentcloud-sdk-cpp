@@ -25,6 +25,8 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/cynosdb/v20190107/model/ActivateInstanceRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/ActivateInstanceResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/AddClusterSlaveZoneRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/AddClusterSlaveZoneResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/AddInstancesRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/AddInstancesResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/AssociateSecurityGroupsRequest.h>
@@ -55,6 +57,8 @@
 #include <tencentcloud/cynosdb/v20190107/model/DescribeClusterInstanceGrpsResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeClusterParamLogsRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeClusterParamLogsResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/DescribeClusterParamsRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/DescribeClusterParamsResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeClustersRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeClustersResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeDBSecurityGroupsRequest.h>
@@ -103,6 +107,8 @@
 #include <tencentcloud/cynosdb/v20190107/model/ModifyClusterNameResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/ModifyClusterParamRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/ModifyClusterParamResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/ModifyClusterSlaveZoneRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/ModifyClusterSlaveZoneResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/ModifyDBInstanceSecurityGroupsRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/ModifyDBInstanceSecurityGroupsResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/ModifyInstanceNameRequest.h>
@@ -115,6 +121,8 @@
 #include <tencentcloud/cynosdb/v20190107/model/OfflineInstanceResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/PauseServerlessRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/PauseServerlessResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/RemoveClusterSlaveZoneRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/RemoveClusterSlaveZoneResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/ResumeServerlessRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/ResumeServerlessResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/RevokeAccountPrivilegesRequest.h>
@@ -123,6 +131,8 @@
 #include <tencentcloud/cynosdb/v20190107/model/RollBackClusterResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/SetRenewFlagRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/SetRenewFlagResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/SwitchClusterZoneRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/SwitchClusterZoneResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/UpgradeInstanceRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/UpgradeInstanceResponse.h>
 
@@ -142,6 +152,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ActivateInstanceResponse> ActivateInstanceOutcome;
                 typedef std::future<ActivateInstanceOutcome> ActivateInstanceOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::ActivateInstanceRequest&, ActivateInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ActivateInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::AddClusterSlaveZoneResponse> AddClusterSlaveZoneOutcome;
+                typedef std::future<AddClusterSlaveZoneOutcome> AddClusterSlaveZoneOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::AddClusterSlaveZoneRequest&, AddClusterSlaveZoneOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddClusterSlaveZoneAsyncHandler;
                 typedef Outcome<Core::Error, Model::AddInstancesResponse> AddInstancesOutcome;
                 typedef std::future<AddInstancesOutcome> AddInstancesOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::AddInstancesRequest&, AddInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddInstancesAsyncHandler;
@@ -187,6 +200,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeClusterParamLogsResponse> DescribeClusterParamLogsOutcome;
                 typedef std::future<DescribeClusterParamLogsOutcome> DescribeClusterParamLogsOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::DescribeClusterParamLogsRequest&, DescribeClusterParamLogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterParamLogsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeClusterParamsResponse> DescribeClusterParamsOutcome;
+                typedef std::future<DescribeClusterParamsOutcome> DescribeClusterParamsOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::DescribeClusterParamsRequest&, DescribeClusterParamsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterParamsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeClustersResponse> DescribeClustersOutcome;
                 typedef std::future<DescribeClustersOutcome> DescribeClustersOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::DescribeClustersRequest&, DescribeClustersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClustersAsyncHandler;
@@ -259,6 +275,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyClusterParamResponse> ModifyClusterParamOutcome;
                 typedef std::future<ModifyClusterParamOutcome> ModifyClusterParamOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::ModifyClusterParamRequest&, ModifyClusterParamOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyClusterParamAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyClusterSlaveZoneResponse> ModifyClusterSlaveZoneOutcome;
+                typedef std::future<ModifyClusterSlaveZoneOutcome> ModifyClusterSlaveZoneOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::ModifyClusterSlaveZoneRequest&, ModifyClusterSlaveZoneOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyClusterSlaveZoneAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyDBInstanceSecurityGroupsResponse> ModifyDBInstanceSecurityGroupsOutcome;
                 typedef std::future<ModifyDBInstanceSecurityGroupsOutcome> ModifyDBInstanceSecurityGroupsOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::ModifyDBInstanceSecurityGroupsRequest&, ModifyDBInstanceSecurityGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBInstanceSecurityGroupsAsyncHandler;
@@ -277,6 +296,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::PauseServerlessResponse> PauseServerlessOutcome;
                 typedef std::future<PauseServerlessOutcome> PauseServerlessOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::PauseServerlessRequest&, PauseServerlessOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PauseServerlessAsyncHandler;
+                typedef Outcome<Core::Error, Model::RemoveClusterSlaveZoneResponse> RemoveClusterSlaveZoneOutcome;
+                typedef std::future<RemoveClusterSlaveZoneOutcome> RemoveClusterSlaveZoneOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::RemoveClusterSlaveZoneRequest&, RemoveClusterSlaveZoneOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RemoveClusterSlaveZoneAsyncHandler;
                 typedef Outcome<Core::Error, Model::ResumeServerlessResponse> ResumeServerlessOutcome;
                 typedef std::future<ResumeServerlessOutcome> ResumeServerlessOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::ResumeServerlessRequest&, ResumeServerlessOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResumeServerlessAsyncHandler;
@@ -289,6 +311,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::SetRenewFlagResponse> SetRenewFlagOutcome;
                 typedef std::future<SetRenewFlagOutcome> SetRenewFlagOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::SetRenewFlagRequest&, SetRenewFlagOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetRenewFlagAsyncHandler;
+                typedef Outcome<Core::Error, Model::SwitchClusterZoneResponse> SwitchClusterZoneOutcome;
+                typedef std::future<SwitchClusterZoneOutcome> SwitchClusterZoneOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::SwitchClusterZoneRequest&, SwitchClusterZoneOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SwitchClusterZoneAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpgradeInstanceResponse> UpgradeInstanceOutcome;
                 typedef std::future<UpgradeInstanceOutcome> UpgradeInstanceOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::UpgradeInstanceRequest&, UpgradeInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpgradeInstanceAsyncHandler;
@@ -303,6 +328,15 @@ namespace TencentCloud
                 ActivateInstanceOutcome ActivateInstance(const Model::ActivateInstanceRequest &request);
                 void ActivateInstanceAsync(const Model::ActivateInstanceRequest& request, const ActivateInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ActivateInstanceOutcomeCallable ActivateInstanceCallable(const Model::ActivateInstanceRequest& request);
+
+                /**
+                 *增加从可用区
+                 * @param req AddClusterSlaveZoneRequest
+                 * @return AddClusterSlaveZoneOutcome
+                 */
+                AddClusterSlaveZoneOutcome AddClusterSlaveZone(const Model::AddClusterSlaveZoneRequest &request);
+                void AddClusterSlaveZoneAsync(const Model::AddClusterSlaveZoneRequest& request, const AddClusterSlaveZoneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AddClusterSlaveZoneOutcomeCallable AddClusterSlaveZoneCallable(const Model::AddClusterSlaveZoneRequest& request);
 
                 /**
                  *本接口（AddInstances）用于集群添加实例
@@ -438,6 +472,15 @@ namespace TencentCloud
                 DescribeClusterParamLogsOutcome DescribeClusterParamLogs(const Model::DescribeClusterParamLogsRequest &request);
                 void DescribeClusterParamLogsAsync(const Model::DescribeClusterParamLogsRequest& request, const DescribeClusterParamLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeClusterParamLogsOutcomeCallable DescribeClusterParamLogsCallable(const Model::DescribeClusterParamLogsRequest& request);
+
+                /**
+                 *本接口（DescribeClusterParams）用于查询集群参数
+                 * @param req DescribeClusterParamsRequest
+                 * @return DescribeClusterParamsOutcome
+                 */
+                DescribeClusterParamsOutcome DescribeClusterParams(const Model::DescribeClusterParamsRequest &request);
+                void DescribeClusterParamsAsync(const Model::DescribeClusterParamsRequest& request, const DescribeClusterParamsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeClusterParamsOutcomeCallable DescribeClusterParamsCallable(const Model::DescribeClusterParamsRequest& request);
 
                 /**
                  *查询集群列表
@@ -656,6 +699,15 @@ namespace TencentCloud
                 ModifyClusterParamOutcomeCallable ModifyClusterParamCallable(const Model::ModifyClusterParamRequest& request);
 
                 /**
+                 *修改从可用区
+                 * @param req ModifyClusterSlaveZoneRequest
+                 * @return ModifyClusterSlaveZoneOutcome
+                 */
+                ModifyClusterSlaveZoneOutcome ModifyClusterSlaveZone(const Model::ModifyClusterSlaveZoneRequest &request);
+                void ModifyClusterSlaveZoneAsync(const Model::ModifyClusterSlaveZoneRequest& request, const ModifyClusterSlaveZoneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyClusterSlaveZoneOutcomeCallable ModifyClusterSlaveZoneCallable(const Model::ModifyClusterSlaveZoneRequest& request);
+
+                /**
                  *本接口(ModifyDBInstanceSecurityGroups)用于修改实例绑定的安全组。
                  * @param req ModifyDBInstanceSecurityGroupsRequest
                  * @return ModifyDBInstanceSecurityGroupsOutcome
@@ -710,6 +762,15 @@ namespace TencentCloud
                 PauseServerlessOutcomeCallable PauseServerlessCallable(const Model::PauseServerlessRequest& request);
 
                 /**
+                 *删除从可用区
+                 * @param req RemoveClusterSlaveZoneRequest
+                 * @return RemoveClusterSlaveZoneOutcome
+                 */
+                RemoveClusterSlaveZoneOutcome RemoveClusterSlaveZone(const Model::RemoveClusterSlaveZoneRequest &request);
+                void RemoveClusterSlaveZoneAsync(const Model::RemoveClusterSlaveZoneRequest& request, const RemoveClusterSlaveZoneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RemoveClusterSlaveZoneOutcomeCallable RemoveClusterSlaveZoneCallable(const Model::RemoveClusterSlaveZoneRequest& request);
+
+                /**
                  *恢复serverless集群
                  * @param req ResumeServerlessRequest
                  * @return ResumeServerlessOutcome
@@ -744,6 +805,15 @@ namespace TencentCloud
                 SetRenewFlagOutcome SetRenewFlag(const Model::SetRenewFlagRequest &request);
                 void SetRenewFlagAsync(const Model::SetRenewFlagRequest& request, const SetRenewFlagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SetRenewFlagOutcomeCallable SetRenewFlagCallable(const Model::SetRenewFlagRequest& request);
+
+                /**
+                 *切换到从可用区
+                 * @param req SwitchClusterZoneRequest
+                 * @return SwitchClusterZoneOutcome
+                 */
+                SwitchClusterZoneOutcome SwitchClusterZone(const Model::SwitchClusterZoneRequest &request);
+                void SwitchClusterZoneAsync(const Model::SwitchClusterZoneRequest& request, const SwitchClusterZoneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SwitchClusterZoneOutcomeCallable SwitchClusterZoneCallable(const Model::SwitchClusterZoneRequest& request);
 
                 /**
                  *升级实例

@@ -599,6 +599,92 @@ GaapClient::CreateFirstLinkSessionOutcomeCallable GaapClient::CreateFirstLinkSes
     return task->get_future();
 }
 
+GaapClient::CreateGlobalDomainOutcome GaapClient::CreateGlobalDomain(const CreateGlobalDomainRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateGlobalDomain");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateGlobalDomainResponse rsp = CreateGlobalDomainResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateGlobalDomainOutcome(rsp);
+        else
+            return CreateGlobalDomainOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateGlobalDomainOutcome(outcome.GetError());
+    }
+}
+
+void GaapClient::CreateGlobalDomainAsync(const CreateGlobalDomainRequest& request, const CreateGlobalDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateGlobalDomain(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GaapClient::CreateGlobalDomainOutcomeCallable GaapClient::CreateGlobalDomainCallable(const CreateGlobalDomainRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateGlobalDomainOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateGlobalDomain(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+GaapClient::CreateGlobalDomainDnsOutcome GaapClient::CreateGlobalDomainDns(const CreateGlobalDomainDnsRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateGlobalDomainDns");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateGlobalDomainDnsResponse rsp = CreateGlobalDomainDnsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateGlobalDomainDnsOutcome(rsp);
+        else
+            return CreateGlobalDomainDnsOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateGlobalDomainDnsOutcome(outcome.GetError());
+    }
+}
+
+void GaapClient::CreateGlobalDomainDnsAsync(const CreateGlobalDomainDnsRequest& request, const CreateGlobalDomainDnsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateGlobalDomainDns(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GaapClient::CreateGlobalDomainDnsOutcomeCallable GaapClient::CreateGlobalDomainDnsCallable(const CreateGlobalDomainDnsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateGlobalDomainDnsOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateGlobalDomainDns(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 GaapClient::CreateHTTPListenerOutcome GaapClient::CreateHTTPListener(const CreateHTTPListenerRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateHTTPListener");
@@ -1194,6 +1280,92 @@ GaapClient::DeleteFirstLinkSessionOutcomeCallable GaapClient::DeleteFirstLinkSes
         [this, request]()
         {
             return this->DeleteFirstLinkSession(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+GaapClient::DeleteGlobalDomainOutcome GaapClient::DeleteGlobalDomain(const DeleteGlobalDomainRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteGlobalDomain");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteGlobalDomainResponse rsp = DeleteGlobalDomainResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteGlobalDomainOutcome(rsp);
+        else
+            return DeleteGlobalDomainOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteGlobalDomainOutcome(outcome.GetError());
+    }
+}
+
+void GaapClient::DeleteGlobalDomainAsync(const DeleteGlobalDomainRequest& request, const DeleteGlobalDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteGlobalDomain(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GaapClient::DeleteGlobalDomainOutcomeCallable GaapClient::DeleteGlobalDomainCallable(const DeleteGlobalDomainRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteGlobalDomainOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteGlobalDomain(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+GaapClient::DeleteGlobalDomainDnsOutcome GaapClient::DeleteGlobalDomainDns(const DeleteGlobalDomainDnsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteGlobalDomainDns");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteGlobalDomainDnsResponse rsp = DeleteGlobalDomainDnsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteGlobalDomainDnsOutcome(rsp);
+        else
+            return DeleteGlobalDomainDnsOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteGlobalDomainDnsOutcome(outcome.GetError());
+    }
+}
+
+void GaapClient::DeleteGlobalDomainDnsAsync(const DeleteGlobalDomainDnsRequest& request, const DeleteGlobalDomainDnsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteGlobalDomainDns(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GaapClient::DeleteGlobalDomainDnsOutcomeCallable GaapClient::DeleteGlobalDomainDnsCallable(const DeleteGlobalDomainDnsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteGlobalDomainDnsOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteGlobalDomainDns(request);
         }
     );
 
@@ -1925,6 +2097,92 @@ GaapClient::DescribeFirstLinkSessionOutcomeCallable GaapClient::DescribeFirstLin
         [this, request]()
         {
             return this->DescribeFirstLinkSession(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+GaapClient::DescribeGlobalDomainDnsOutcome GaapClient::DescribeGlobalDomainDns(const DescribeGlobalDomainDnsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeGlobalDomainDns");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeGlobalDomainDnsResponse rsp = DescribeGlobalDomainDnsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeGlobalDomainDnsOutcome(rsp);
+        else
+            return DescribeGlobalDomainDnsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeGlobalDomainDnsOutcome(outcome.GetError());
+    }
+}
+
+void GaapClient::DescribeGlobalDomainDnsAsync(const DescribeGlobalDomainDnsRequest& request, const DescribeGlobalDomainDnsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeGlobalDomainDns(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GaapClient::DescribeGlobalDomainDnsOutcomeCallable GaapClient::DescribeGlobalDomainDnsCallable(const DescribeGlobalDomainDnsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeGlobalDomainDnsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeGlobalDomainDns(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+GaapClient::DescribeGlobalDomainsOutcome GaapClient::DescribeGlobalDomains(const DescribeGlobalDomainsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeGlobalDomains");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeGlobalDomainsResponse rsp = DescribeGlobalDomainsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeGlobalDomainsOutcome(rsp);
+        else
+            return DescribeGlobalDomainsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeGlobalDomainsOutcome(outcome.GetError());
+    }
+}
+
+void GaapClient::DescribeGlobalDomainsAsync(const DescribeGlobalDomainsRequest& request, const DescribeGlobalDomainsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeGlobalDomains(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GaapClient::DescribeGlobalDomainsOutcomeCallable GaapClient::DescribeGlobalDomainsCallable(const DescribeGlobalDomainsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeGlobalDomainsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeGlobalDomains(request);
         }
     );
 
@@ -3093,6 +3351,92 @@ GaapClient::DestroyProxiesOutcomeCallable GaapClient::DestroyProxiesCallable(con
     return task->get_future();
 }
 
+GaapClient::DisableGlobalDomainOutcome GaapClient::DisableGlobalDomain(const DisableGlobalDomainRequest &request)
+{
+    auto outcome = MakeRequest(request, "DisableGlobalDomain");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DisableGlobalDomainResponse rsp = DisableGlobalDomainResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DisableGlobalDomainOutcome(rsp);
+        else
+            return DisableGlobalDomainOutcome(o.GetError());
+    }
+    else
+    {
+        return DisableGlobalDomainOutcome(outcome.GetError());
+    }
+}
+
+void GaapClient::DisableGlobalDomainAsync(const DisableGlobalDomainRequest& request, const DisableGlobalDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DisableGlobalDomain(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GaapClient::DisableGlobalDomainOutcomeCallable GaapClient::DisableGlobalDomainCallable(const DisableGlobalDomainRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DisableGlobalDomainOutcome()>>(
+        [this, request]()
+        {
+            return this->DisableGlobalDomain(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+GaapClient::EnableGlobalDomainOutcome GaapClient::EnableGlobalDomain(const EnableGlobalDomainRequest &request)
+{
+    auto outcome = MakeRequest(request, "EnableGlobalDomain");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        EnableGlobalDomainResponse rsp = EnableGlobalDomainResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return EnableGlobalDomainOutcome(rsp);
+        else
+            return EnableGlobalDomainOutcome(o.GetError());
+    }
+    else
+    {
+        return EnableGlobalDomainOutcome(outcome.GetError());
+    }
+}
+
+void GaapClient::EnableGlobalDomainAsync(const EnableGlobalDomainRequest& request, const EnableGlobalDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->EnableGlobalDomain(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GaapClient::EnableGlobalDomainOutcomeCallable GaapClient::EnableGlobalDomainCallable(const EnableGlobalDomainRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<EnableGlobalDomainOutcome()>>(
+        [this, request]()
+        {
+            return this->EnableGlobalDomain(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 GaapClient::InquiryPriceCreateProxyOutcome GaapClient::InquiryPriceCreateProxy(const InquiryPriceCreateProxyRequest &request)
 {
     auto outcome = MakeRequest(request, "InquiryPriceCreateProxy");
@@ -3258,6 +3602,92 @@ GaapClient::ModifyDomainOutcomeCallable GaapClient::ModifyDomainCallable(const M
         [this, request]()
         {
             return this->ModifyDomain(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+GaapClient::ModifyGlobalDomainAttributeOutcome GaapClient::ModifyGlobalDomainAttribute(const ModifyGlobalDomainAttributeRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyGlobalDomainAttribute");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyGlobalDomainAttributeResponse rsp = ModifyGlobalDomainAttributeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyGlobalDomainAttributeOutcome(rsp);
+        else
+            return ModifyGlobalDomainAttributeOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyGlobalDomainAttributeOutcome(outcome.GetError());
+    }
+}
+
+void GaapClient::ModifyGlobalDomainAttributeAsync(const ModifyGlobalDomainAttributeRequest& request, const ModifyGlobalDomainAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyGlobalDomainAttribute(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GaapClient::ModifyGlobalDomainAttributeOutcomeCallable GaapClient::ModifyGlobalDomainAttributeCallable(const ModifyGlobalDomainAttributeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyGlobalDomainAttributeOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyGlobalDomainAttribute(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+GaapClient::ModifyGlobalDomainDnsOutcome GaapClient::ModifyGlobalDomainDns(const ModifyGlobalDomainDnsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyGlobalDomainDns");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyGlobalDomainDnsResponse rsp = ModifyGlobalDomainDnsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyGlobalDomainDnsOutcome(rsp);
+        else
+            return ModifyGlobalDomainDnsOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyGlobalDomainDnsOutcome(outcome.GetError());
+    }
+}
+
+void GaapClient::ModifyGlobalDomainDnsAsync(const ModifyGlobalDomainDnsRequest& request, const ModifyGlobalDomainDnsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyGlobalDomainDns(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GaapClient::ModifyGlobalDomainDnsOutcomeCallable GaapClient::ModifyGlobalDomainDnsCallable(const ModifyGlobalDomainDnsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyGlobalDomainDnsOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyGlobalDomainDns(request);
         }
     );
 

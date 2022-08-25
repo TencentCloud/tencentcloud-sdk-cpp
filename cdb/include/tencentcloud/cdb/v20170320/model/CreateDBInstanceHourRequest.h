@@ -226,14 +226,14 @@ namespace TencentCloud
                     bool InstanceRoleHasBeenSet() const;
 
                     /**
-                     * 获取主实例的可用区信息，购买灾备实例时必填。
-                     * @return MasterRegion 主实例的可用区信息，购买灾备实例时必填。
+                     * 获取主实例的可用区信息，购买灾备、RO实例时必填。
+                     * @return MasterRegion 主实例的可用区信息，购买灾备、RO实例时必填。
                      */
                     std::string GetMasterRegion() const;
 
                     /**
-                     * 设置主实例的可用区信息，购买灾备实例时必填。
-                     * @param MasterRegion 主实例的可用区信息，购买灾备实例时必填。
+                     * 设置主实例的可用区信息，购买灾备、RO实例时必填。
+                     * @param MasterRegion 主实例的可用区信息，购买灾备、RO实例时必填。
                      */
                     void SetMasterRegion(const std::string& _masterRegion);
 
@@ -532,14 +532,14 @@ namespace TencentCloud
                     bool ParamTemplateIdHasBeenSet() const;
 
                     /**
-                     * 获取告警策略id数组。
-                     * @return AlarmPolicyList 告警策略id数组。
+                     * 获取告警策略id数组。云监控DescribeAlarmPolicy接口返回的OriginId。
+                     * @return AlarmPolicyList 告警策略id数组。云监控DescribeAlarmPolicy接口返回的OriginId。
                      */
                     std::vector<int64_t> GetAlarmPolicyList() const;
 
                     /**
-                     * 设置告警策略id数组。
-                     * @param AlarmPolicyList 告警策略id数组。
+                     * 设置告警策略id数组。云监控DescribeAlarmPolicy接口返回的OriginId。
+                     * @param AlarmPolicyList 告警策略id数组。云监控DescribeAlarmPolicy接口返回的OriginId。
                      */
                     void SetAlarmPolicyList(const std::vector<int64_t>& _alarmPolicyList);
 
@@ -774,7 +774,7 @@ namespace TencentCloud
                     bool m_instanceRoleHasBeenSet;
 
                     /**
-                     * 主实例的可用区信息，购买灾备实例时必填。
+                     * 主实例的可用区信息，购买灾备、RO实例时必填。
                      */
                     std::string m_masterRegion;
                     bool m_masterRegionHasBeenSet;
@@ -876,7 +876,7 @@ namespace TencentCloud
                     bool m_paramTemplateIdHasBeenSet;
 
                     /**
-                     * 告警策略id数组。
+                     * 告警策略id数组。云监控DescribeAlarmPolicy接口返回的OriginId。
                      */
                     std::vector<int64_t> m_alarmPolicyList;
                     bool m_alarmPolicyListHasBeenSet;

@@ -2534,6 +2534,49 @@ VodClient::DescribeDrmDataKeyOutcomeCallable VodClient::DescribeDrmDataKeyCallab
     return task->get_future();
 }
 
+VodClient::DescribeDrmKeyProviderInfoOutcome VodClient::DescribeDrmKeyProviderInfo(const DescribeDrmKeyProviderInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDrmKeyProviderInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDrmKeyProviderInfoResponse rsp = DescribeDrmKeyProviderInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDrmKeyProviderInfoOutcome(rsp);
+        else
+            return DescribeDrmKeyProviderInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDrmKeyProviderInfoOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::DescribeDrmKeyProviderInfoAsync(const DescribeDrmKeyProviderInfoRequest& request, const DescribeDrmKeyProviderInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDrmKeyProviderInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VodClient::DescribeDrmKeyProviderInfoOutcomeCallable VodClient::DescribeDrmKeyProviderInfoCallable(const DescribeDrmKeyProviderInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDrmKeyProviderInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDrmKeyProviderInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VodClient::DescribeEventConfigOutcome VodClient::DescribeEventConfig(const DescribeEventConfigRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeEventConfig");
@@ -5494,6 +5537,49 @@ VodClient::SearchMediaOutcomeCallable VodClient::SearchMediaCallable(const Searc
         [this, request]()
         {
             return this->SearchMedia(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VodClient::SetDrmKeyProviderInfoOutcome VodClient::SetDrmKeyProviderInfo(const SetDrmKeyProviderInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "SetDrmKeyProviderInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SetDrmKeyProviderInfoResponse rsp = SetDrmKeyProviderInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SetDrmKeyProviderInfoOutcome(rsp);
+        else
+            return SetDrmKeyProviderInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return SetDrmKeyProviderInfoOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::SetDrmKeyProviderInfoAsync(const SetDrmKeyProviderInfoRequest& request, const SetDrmKeyProviderInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SetDrmKeyProviderInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VodClient::SetDrmKeyProviderInfoOutcomeCallable VodClient::SetDrmKeyProviderInfoCallable(const SetDrmKeyProviderInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SetDrmKeyProviderInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->SetDrmKeyProviderInfo(request);
         }
     );
 

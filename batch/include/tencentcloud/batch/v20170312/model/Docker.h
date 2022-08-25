@@ -118,6 +118,42 @@ namespace TencentCloud
                      */
                     bool ServerHasBeenSet() const;
 
+                    /**
+                     * 获取拉取Docker镜像重试次数。默认值：0。
+                     * @return MaxRetryCount 拉取Docker镜像重试次数。默认值：0。
+                     */
+                    uint64_t GetMaxRetryCount() const;
+
+                    /**
+                     * 设置拉取Docker镜像重试次数。默认值：0。
+                     * @param MaxRetryCount 拉取Docker镜像重试次数。默认值：0。
+                     */
+                    void SetMaxRetryCount(const uint64_t& _maxRetryCount);
+
+                    /**
+                     * 判断参数 MaxRetryCount 是否已赋值
+                     * @return MaxRetryCount 是否已赋值
+                     */
+                    bool MaxRetryCountHasBeenSet() const;
+
+                    /**
+                     * 获取拉取Docker镜像失败时延迟时间。单位：秒。
+                     * @return DelayOnRetry 拉取Docker镜像失败时延迟时间。单位：秒。
+                     */
+                    uint64_t GetDelayOnRetry() const;
+
+                    /**
+                     * 设置拉取Docker镜像失败时延迟时间。单位：秒。
+                     * @param DelayOnRetry 拉取Docker镜像失败时延迟时间。单位：秒。
+                     */
+                    void SetDelayOnRetry(const uint64_t& _delayOnRetry);
+
+                    /**
+                     * 判断参数 DelayOnRetry 是否已赋值
+                     * @return DelayOnRetry 是否已赋值
+                     */
+                    bool DelayOnRetryHasBeenSet() const;
+
                 private:
 
                     /**
@@ -143,6 +179,18 @@ namespace TencentCloud
                      */
                     std::string m_server;
                     bool m_serverHasBeenSet;
+
+                    /**
+                     * 拉取Docker镜像重试次数。默认值：0。
+                     */
+                    uint64_t m_maxRetryCount;
+                    bool m_maxRetryCountHasBeenSet;
+
+                    /**
+                     * 拉取Docker镜像失败时延迟时间。单位：秒。
+                     */
+                    uint64_t m_delayOnRetry;
+                    bool m_delayOnRetryHasBeenSet;
 
                 };
             }

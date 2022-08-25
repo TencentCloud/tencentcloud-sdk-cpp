@@ -42,6 +42,8 @@ SearchMediaRequest::SearchMediaRequest() :
     m_filtersHasBeenSet(false),
     m_storageRegionsHasBeenSet(false),
     m_storageClassesHasBeenSet(false),
+    m_trtcSdkAppIdsHasBeenSet(false),
+    m_trtcRoomIdsHasBeenSet(false),
     m_textHasBeenSet(false),
     m_sourceTypeHasBeenSet(false),
     m_streamIdHasBeenSet(false),
@@ -273,6 +275,32 @@ string SearchMediaRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_storageClasses.begin(); itr != m_storageClasses.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_trtcSdkAppIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TrtcSdkAppIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_trtcSdkAppIds.begin(); itr != m_trtcSdkAppIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
+        }
+    }
+
+    if (m_trtcRoomIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TrtcRoomIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_trtcRoomIds.begin(); itr != m_trtcRoomIds.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
@@ -636,6 +664,38 @@ void SearchMediaRequest::SetStorageClasses(const vector<string>& _storageClasses
 bool SearchMediaRequest::StorageClassesHasBeenSet() const
 {
     return m_storageClassesHasBeenSet;
+}
+
+vector<uint64_t> SearchMediaRequest::GetTrtcSdkAppIds() const
+{
+    return m_trtcSdkAppIds;
+}
+
+void SearchMediaRequest::SetTrtcSdkAppIds(const vector<uint64_t>& _trtcSdkAppIds)
+{
+    m_trtcSdkAppIds = _trtcSdkAppIds;
+    m_trtcSdkAppIdsHasBeenSet = true;
+}
+
+bool SearchMediaRequest::TrtcSdkAppIdsHasBeenSet() const
+{
+    return m_trtcSdkAppIdsHasBeenSet;
+}
+
+vector<string> SearchMediaRequest::GetTrtcRoomIds() const
+{
+    return m_trtcRoomIds;
+}
+
+void SearchMediaRequest::SetTrtcRoomIds(const vector<string>& _trtcRoomIds)
+{
+    m_trtcRoomIds = _trtcRoomIds;
+    m_trtcRoomIdsHasBeenSet = true;
+}
+
+bool SearchMediaRequest::TrtcRoomIdsHasBeenSet() const
+{
+    return m_trtcRoomIdsHasBeenSet;
 }
 
 string SearchMediaRequest::GetText() const

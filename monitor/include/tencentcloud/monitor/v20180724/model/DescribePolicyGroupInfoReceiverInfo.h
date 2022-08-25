@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool ReceiverUserListHasBeenSet() const;
 
                     /**
-                     * 获取告警时间段开始时间。范围[0,86400)，作为unix时间戳转成北京时间后去掉日期，例如7200表示"10:0:0"
-                     * @return StartTime 告警时间段开始时间。范围[0,86400)，作为unix时间戳转成北京时间后去掉日期，例如7200表示"10:0:0"
+                     * 获取告警时间段开始时间。范围[0,86400)，作为 UNIX 时间戳转成北京时间后去掉日期，例如7200表示"10:0:0"
+                     * @return StartTime 告警时间段开始时间。范围[0,86400)，作为 UNIX 时间戳转成北京时间后去掉日期，例如7200表示"10:0:0"
                      */
                     int64_t GetStartTime() const;
 
                     /**
-                     * 设置告警时间段开始时间。范围[0,86400)，作为unix时间戳转成北京时间后去掉日期，例如7200表示"10:0:0"
-                     * @param StartTime 告警时间段开始时间。范围[0,86400)，作为unix时间戳转成北京时间后去掉日期，例如7200表示"10:0:0"
+                     * 设置告警时间段开始时间。范围[0,86400)，作为 UNIX 时间戳转成北京时间后去掉日期，例如7200表示"10:0:0"
+                     * @param StartTime 告警时间段开始时间。范围[0,86400)，作为 UNIX 时间戳转成北京时间后去掉日期，例如7200表示"10:0:0"
                      */
                     void SetStartTime(const int64_t& _startTime);
 
@@ -321,7 +321,7 @@ namespace TencentCloud
                     bool m_receiverUserListHasBeenSet;
 
                     /**
-                     * 告警时间段开始时间。范围[0,86400)，作为unix时间戳转成北京时间后去掉日期，例如7200表示"10:0:0"
+                     * 告警时间段开始时间。范围[0,86400)，作为 UNIX 时间戳转成北京时间后去掉日期，例如7200表示"10:0:0"
                      */
                     int64_t m_startTime;
                     bool m_startTimeHasBeenSet;

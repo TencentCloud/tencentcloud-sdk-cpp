@@ -48,7 +48,9 @@ CreateDedicatedClusterDCDBInstanceRequest::CreateDedicatedClusterDCDBInstanceReq
     m_pidHasBeenSet(false),
     m_initParamsHasBeenSet(false),
     m_masterHostIdHasBeenSet(false),
-    m_slaveHostIdsHasBeenSet(false)
+    m_slaveHostIdsHasBeenSet(false),
+    m_rollbackInstanceIdHasBeenSet(false),
+    m_rollbackTimeHasBeenSet(false)
 {
 }
 
@@ -278,6 +280,22 @@ string CreateDedicatedClusterDCDBInstanceRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_rollbackInstanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RollbackInstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_rollbackInstanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_rollbackTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RollbackTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_rollbackTime.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -702,6 +720,38 @@ void CreateDedicatedClusterDCDBInstanceRequest::SetSlaveHostIds(const vector<str
 bool CreateDedicatedClusterDCDBInstanceRequest::SlaveHostIdsHasBeenSet() const
 {
     return m_slaveHostIdsHasBeenSet;
+}
+
+string CreateDedicatedClusterDCDBInstanceRequest::GetRollbackInstanceId() const
+{
+    return m_rollbackInstanceId;
+}
+
+void CreateDedicatedClusterDCDBInstanceRequest::SetRollbackInstanceId(const string& _rollbackInstanceId)
+{
+    m_rollbackInstanceId = _rollbackInstanceId;
+    m_rollbackInstanceIdHasBeenSet = true;
+}
+
+bool CreateDedicatedClusterDCDBInstanceRequest::RollbackInstanceIdHasBeenSet() const
+{
+    return m_rollbackInstanceIdHasBeenSet;
+}
+
+string CreateDedicatedClusterDCDBInstanceRequest::GetRollbackTime() const
+{
+    return m_rollbackTime;
+}
+
+void CreateDedicatedClusterDCDBInstanceRequest::SetRollbackTime(const string& _rollbackTime)
+{
+    m_rollbackTime = _rollbackTime;
+    m_rollbackTimeHasBeenSet = true;
+}
+
+bool CreateDedicatedClusterDCDBInstanceRequest::RollbackTimeHasBeenSet() const
+{
+    return m_rollbackTimeHasBeenSet;
 }
 
 

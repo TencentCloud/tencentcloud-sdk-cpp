@@ -255,6 +255,49 @@ TcrClient::CreateApplicationTriggerPersonalOutcomeCallable TcrClient::CreateAppl
     return task->get_future();
 }
 
+TcrClient::CreateImageAccelerationServiceOutcome TcrClient::CreateImageAccelerationService(const CreateImageAccelerationServiceRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateImageAccelerationService");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateImageAccelerationServiceResponse rsp = CreateImageAccelerationServiceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateImageAccelerationServiceOutcome(rsp);
+        else
+            return CreateImageAccelerationServiceOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateImageAccelerationServiceOutcome(outcome.GetError());
+    }
+}
+
+void TcrClient::CreateImageAccelerationServiceAsync(const CreateImageAccelerationServiceRequest& request, const CreateImageAccelerationServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateImageAccelerationService(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcrClient::CreateImageAccelerationServiceOutcomeCallable TcrClient::CreateImageAccelerationServiceCallable(const CreateImageAccelerationServiceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateImageAccelerationServiceOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateImageAccelerationService(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcrClient::CreateImageLifecyclePersonalOutcome TcrClient::CreateImageLifecyclePersonal(const CreateImageLifecyclePersonalRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateImageLifecyclePersonal");
@@ -377,6 +420,49 @@ TcrClient::CreateInstanceOutcomeCallable TcrClient::CreateInstanceCallable(const
         [this, request]()
         {
             return this->CreateInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcrClient::CreateInstanceCustomizedDomainOutcome TcrClient::CreateInstanceCustomizedDomain(const CreateInstanceCustomizedDomainRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateInstanceCustomizedDomain");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateInstanceCustomizedDomainResponse rsp = CreateInstanceCustomizedDomainResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateInstanceCustomizedDomainOutcome(rsp);
+        else
+            return CreateInstanceCustomizedDomainOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateInstanceCustomizedDomainOutcome(outcome.GetError());
+    }
+}
+
+void TcrClient::CreateInstanceCustomizedDomainAsync(const CreateInstanceCustomizedDomainRequest& request, const CreateInstanceCustomizedDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateInstanceCustomizedDomain(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcrClient::CreateInstanceCustomizedDomainOutcomeCallable TcrClient::CreateInstanceCustomizedDomainCallable(const CreateInstanceCustomizedDomainRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateInstanceCustomizedDomainOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateInstanceCustomizedDomain(request);
         }
     );
 
@@ -728,6 +814,49 @@ TcrClient::CreateRepositoryPersonalOutcomeCallable TcrClient::CreateRepositoryPe
     return task->get_future();
 }
 
+TcrClient::CreateSecurityPoliciesOutcome TcrClient::CreateSecurityPolicies(const CreateSecurityPoliciesRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateSecurityPolicies");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateSecurityPoliciesResponse rsp = CreateSecurityPoliciesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateSecurityPoliciesOutcome(rsp);
+        else
+            return CreateSecurityPoliciesOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateSecurityPoliciesOutcome(outcome.GetError());
+    }
+}
+
+void TcrClient::CreateSecurityPoliciesAsync(const CreateSecurityPoliciesRequest& request, const CreateSecurityPoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateSecurityPolicies(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcrClient::CreateSecurityPoliciesOutcomeCallable TcrClient::CreateSecurityPoliciesCallable(const CreateSecurityPoliciesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateSecurityPoliciesOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateSecurityPolicies(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcrClient::CreateSecurityPolicyOutcome TcrClient::CreateSecurityPolicy(const CreateSecurityPolicyRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateSecurityPolicy");
@@ -764,6 +893,92 @@ TcrClient::CreateSecurityPolicyOutcomeCallable TcrClient::CreateSecurityPolicyCa
         [this, request]()
         {
             return this->CreateSecurityPolicy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcrClient::CreateSignatureOutcome TcrClient::CreateSignature(const CreateSignatureRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateSignature");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateSignatureResponse rsp = CreateSignatureResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateSignatureOutcome(rsp);
+        else
+            return CreateSignatureOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateSignatureOutcome(outcome.GetError());
+    }
+}
+
+void TcrClient::CreateSignatureAsync(const CreateSignatureRequest& request, const CreateSignatureAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateSignature(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcrClient::CreateSignatureOutcomeCallable TcrClient::CreateSignatureCallable(const CreateSignatureRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateSignatureOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateSignature(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcrClient::CreateSignaturePolicyOutcome TcrClient::CreateSignaturePolicy(const CreateSignaturePolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateSignaturePolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateSignaturePolicyResponse rsp = CreateSignaturePolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateSignaturePolicyOutcome(rsp);
+        else
+            return CreateSignaturePolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateSignaturePolicyOutcome(outcome.GetError());
+    }
+}
+
+void TcrClient::CreateSignaturePolicyAsync(const CreateSignaturePolicyRequest& request, const CreateSignaturePolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateSignaturePolicy(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcrClient::CreateSignaturePolicyOutcomeCallable TcrClient::CreateSignaturePolicyCallable(const CreateSignaturePolicyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateSignaturePolicyOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateSignaturePolicy(request);
         }
     );
 
@@ -1029,6 +1244,49 @@ TcrClient::DeleteImageOutcomeCallable TcrClient::DeleteImageCallable(const Delet
     return task->get_future();
 }
 
+TcrClient::DeleteImageAccelerateServiceOutcome TcrClient::DeleteImageAccelerateService(const DeleteImageAccelerateServiceRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteImageAccelerateService");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteImageAccelerateServiceResponse rsp = DeleteImageAccelerateServiceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteImageAccelerateServiceOutcome(rsp);
+        else
+            return DeleteImageAccelerateServiceOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteImageAccelerateServiceOutcome(outcome.GetError());
+    }
+}
+
+void TcrClient::DeleteImageAccelerateServiceAsync(const DeleteImageAccelerateServiceRequest& request, const DeleteImageAccelerateServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteImageAccelerateService(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcrClient::DeleteImageAccelerateServiceOutcomeCallable TcrClient::DeleteImageAccelerateServiceCallable(const DeleteImageAccelerateServiceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteImageAccelerateServiceOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteImageAccelerateService(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcrClient::DeleteImageLifecycleGlobalPersonalOutcome TcrClient::DeleteImageLifecycleGlobalPersonal(const DeleteImageLifecycleGlobalPersonalRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteImageLifecycleGlobalPersonal");
@@ -1237,6 +1495,49 @@ TcrClient::DeleteInstanceOutcomeCallable TcrClient::DeleteInstanceCallable(const
         [this, request]()
         {
             return this->DeleteInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcrClient::DeleteInstanceCustomizedDomainOutcome TcrClient::DeleteInstanceCustomizedDomain(const DeleteInstanceCustomizedDomainRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteInstanceCustomizedDomain");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteInstanceCustomizedDomainResponse rsp = DeleteInstanceCustomizedDomainResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteInstanceCustomizedDomainOutcome(rsp);
+        else
+            return DeleteInstanceCustomizedDomainOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteInstanceCustomizedDomainOutcome(outcome.GetError());
+    }
+}
+
+void TcrClient::DeleteInstanceCustomizedDomainAsync(const DeleteInstanceCustomizedDomainRequest& request, const DeleteInstanceCustomizedDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteInstanceCustomizedDomain(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcrClient::DeleteInstanceCustomizedDomainOutcomeCallable TcrClient::DeleteInstanceCustomizedDomainCallable(const DeleteInstanceCustomizedDomainRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteInstanceCustomizedDomainOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteInstanceCustomizedDomain(request);
         }
     );
 
@@ -1459,6 +1760,49 @@ TcrClient::DeleteNamespacePersonalOutcomeCallable TcrClient::DeleteNamespacePers
     return task->get_future();
 }
 
+TcrClient::DeleteReplicationInstanceOutcome TcrClient::DeleteReplicationInstance(const DeleteReplicationInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteReplicationInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteReplicationInstanceResponse rsp = DeleteReplicationInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteReplicationInstanceOutcome(rsp);
+        else
+            return DeleteReplicationInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteReplicationInstanceOutcome(outcome.GetError());
+    }
+}
+
+void TcrClient::DeleteReplicationInstanceAsync(const DeleteReplicationInstanceRequest& request, const DeleteReplicationInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteReplicationInstance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcrClient::DeleteReplicationInstanceOutcomeCallable TcrClient::DeleteReplicationInstanceCallable(const DeleteReplicationInstanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteReplicationInstanceOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteReplicationInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcrClient::DeleteRepositoryOutcome TcrClient::DeleteRepository(const DeleteRepositoryRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteRepository");
@@ -1545,6 +1889,49 @@ TcrClient::DeleteRepositoryPersonalOutcomeCallable TcrClient::DeleteRepositoryPe
     return task->get_future();
 }
 
+TcrClient::DeleteRepositoryTagsOutcome TcrClient::DeleteRepositoryTags(const DeleteRepositoryTagsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteRepositoryTags");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteRepositoryTagsResponse rsp = DeleteRepositoryTagsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteRepositoryTagsOutcome(rsp);
+        else
+            return DeleteRepositoryTagsOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteRepositoryTagsOutcome(outcome.GetError());
+    }
+}
+
+void TcrClient::DeleteRepositoryTagsAsync(const DeleteRepositoryTagsRequest& request, const DeleteRepositoryTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteRepositoryTags(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcrClient::DeleteRepositoryTagsOutcomeCallable TcrClient::DeleteRepositoryTagsCallable(const DeleteRepositoryTagsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteRepositoryTagsOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteRepositoryTags(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcrClient::DeleteSecurityPolicyOutcome TcrClient::DeleteSecurityPolicy(const DeleteSecurityPolicyRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteSecurityPolicy");
@@ -1581,6 +1968,49 @@ TcrClient::DeleteSecurityPolicyOutcomeCallable TcrClient::DeleteSecurityPolicyCa
         [this, request]()
         {
             return this->DeleteSecurityPolicy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcrClient::DeleteSignaturePolicyOutcome TcrClient::DeleteSignaturePolicy(const DeleteSignaturePolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteSignaturePolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteSignaturePolicyResponse rsp = DeleteSignaturePolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteSignaturePolicyOutcome(rsp);
+        else
+            return DeleteSignaturePolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteSignaturePolicyOutcome(outcome.GetError());
+    }
+}
+
+void TcrClient::DeleteSignaturePolicyAsync(const DeleteSignaturePolicyRequest& request, const DeleteSignaturePolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteSignaturePolicy(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcrClient::DeleteSignaturePolicyOutcomeCallable TcrClient::DeleteSignaturePolicyCallable(const DeleteSignaturePolicyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteSignaturePolicyOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteSignaturePolicy(request);
         }
     );
 
@@ -1889,6 +2319,92 @@ TcrClient::DescribeFavorRepositoryPersonalOutcomeCallable TcrClient::DescribeFav
     return task->get_future();
 }
 
+TcrClient::DescribeGCJobsOutcome TcrClient::DescribeGCJobs(const DescribeGCJobsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeGCJobs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeGCJobsResponse rsp = DescribeGCJobsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeGCJobsOutcome(rsp);
+        else
+            return DescribeGCJobsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeGCJobsOutcome(outcome.GetError());
+    }
+}
+
+void TcrClient::DescribeGCJobsAsync(const DescribeGCJobsRequest& request, const DescribeGCJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeGCJobs(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcrClient::DescribeGCJobsOutcomeCallable TcrClient::DescribeGCJobsCallable(const DescribeGCJobsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeGCJobsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeGCJobs(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcrClient::DescribeImageAccelerateServiceOutcome TcrClient::DescribeImageAccelerateService(const DescribeImageAccelerateServiceRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeImageAccelerateService");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeImageAccelerateServiceResponse rsp = DescribeImageAccelerateServiceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeImageAccelerateServiceOutcome(rsp);
+        else
+            return DescribeImageAccelerateServiceOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeImageAccelerateServiceOutcome(outcome.GetError());
+    }
+}
+
+void TcrClient::DescribeImageAccelerateServiceAsync(const DescribeImageAccelerateServiceRequest& request, const DescribeImageAccelerateServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeImageAccelerateService(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcrClient::DescribeImageAccelerateServiceOutcomeCallable TcrClient::DescribeImageAccelerateServiceCallable(const DescribeImageAccelerateServiceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeImageAccelerateServiceOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeImageAccelerateService(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcrClient::DescribeImageFilterPersonalOutcome TcrClient::DescribeImageFilterPersonal(const DescribeImageFilterPersonalRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeImageFilterPersonal");
@@ -2190,6 +2706,135 @@ TcrClient::DescribeImmutableTagRulesOutcomeCallable TcrClient::DescribeImmutable
     return task->get_future();
 }
 
+TcrClient::DescribeInstanceAllOutcome TcrClient::DescribeInstanceAll(const DescribeInstanceAllRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeInstanceAll");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeInstanceAllResponse rsp = DescribeInstanceAllResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeInstanceAllOutcome(rsp);
+        else
+            return DescribeInstanceAllOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeInstanceAllOutcome(outcome.GetError());
+    }
+}
+
+void TcrClient::DescribeInstanceAllAsync(const DescribeInstanceAllRequest& request, const DescribeInstanceAllAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeInstanceAll(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcrClient::DescribeInstanceAllOutcomeCallable TcrClient::DescribeInstanceAllCallable(const DescribeInstanceAllRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeInstanceAllOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeInstanceAll(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcrClient::DescribeInstanceAllNamespacesOutcome TcrClient::DescribeInstanceAllNamespaces(const DescribeInstanceAllNamespacesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeInstanceAllNamespaces");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeInstanceAllNamespacesResponse rsp = DescribeInstanceAllNamespacesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeInstanceAllNamespacesOutcome(rsp);
+        else
+            return DescribeInstanceAllNamespacesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeInstanceAllNamespacesOutcome(outcome.GetError());
+    }
+}
+
+void TcrClient::DescribeInstanceAllNamespacesAsync(const DescribeInstanceAllNamespacesRequest& request, const DescribeInstanceAllNamespacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeInstanceAllNamespaces(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcrClient::DescribeInstanceAllNamespacesOutcomeCallable TcrClient::DescribeInstanceAllNamespacesCallable(const DescribeInstanceAllNamespacesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeInstanceAllNamespacesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeInstanceAllNamespaces(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcrClient::DescribeInstanceCustomizedDomainOutcome TcrClient::DescribeInstanceCustomizedDomain(const DescribeInstanceCustomizedDomainRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeInstanceCustomizedDomain");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeInstanceCustomizedDomainResponse rsp = DescribeInstanceCustomizedDomainResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeInstanceCustomizedDomainOutcome(rsp);
+        else
+            return DescribeInstanceCustomizedDomainOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeInstanceCustomizedDomainOutcome(outcome.GetError());
+    }
+}
+
+void TcrClient::DescribeInstanceCustomizedDomainAsync(const DescribeInstanceCustomizedDomainRequest& request, const DescribeInstanceCustomizedDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeInstanceCustomizedDomain(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcrClient::DescribeInstanceCustomizedDomainOutcomeCallable TcrClient::DescribeInstanceCustomizedDomainCallable(const DescribeInstanceCustomizedDomainRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeInstanceCustomizedDomainOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeInstanceCustomizedDomain(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcrClient::DescribeInstanceStatusOutcome TcrClient::DescribeInstanceStatus(const DescribeInstanceStatusRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeInstanceStatus");
@@ -2484,6 +3129,49 @@ TcrClient::DescribeNamespacesOutcomeCallable TcrClient::DescribeNamespacesCallab
         [this, request]()
         {
             return this->DescribeNamespaces(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcrClient::DescribeRegionsOutcome TcrClient::DescribeRegions(const DescribeRegionsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRegions");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRegionsResponse rsp = DescribeRegionsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRegionsOutcome(rsp);
+        else
+            return DescribeRegionsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRegionsOutcome(outcome.GetError());
+    }
+}
+
+void TcrClient::DescribeRegionsAsync(const DescribeRegionsRequest& request, const DescribeRegionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRegions(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcrClient::DescribeRegionsOutcomeCallable TcrClient::DescribeRegionsCallable(const DescribeRegionsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRegionsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRegions(request);
         }
     );
 

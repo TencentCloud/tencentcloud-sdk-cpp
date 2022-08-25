@@ -543,6 +543,54 @@ namespace TencentCloud
                     bool StorageClassesHasBeenSet() const;
 
                     /**
+                     * 获取TRTC 应用 ID 集合。匹配集合中的任意元素。
+<li>数组长度限制：10。</li>
+                     * @return TrtcSdkAppIds TRTC 应用 ID 集合。匹配集合中的任意元素。
+<li>数组长度限制：10。</li>
+                     */
+                    std::vector<uint64_t> GetTrtcSdkAppIds() const;
+
+                    /**
+                     * 设置TRTC 应用 ID 集合。匹配集合中的任意元素。
+<li>数组长度限制：10。</li>
+                     * @param TrtcSdkAppIds TRTC 应用 ID 集合。匹配集合中的任意元素。
+<li>数组长度限制：10。</li>
+                     */
+                    void SetTrtcSdkAppIds(const std::vector<uint64_t>& _trtcSdkAppIds);
+
+                    /**
+                     * 判断参数 TrtcSdkAppIds 是否已赋值
+                     * @return TrtcSdkAppIds 是否已赋值
+                     */
+                    bool TrtcSdkAppIdsHasBeenSet() const;
+
+                    /**
+                     * 获取TRTC 房间 ID 集合。匹配集合中的任意元素。
+<li>单个房间 ID 长度限制：64个字符；</li>
+<li>数组长度限制：10。</li>
+                     * @return TrtcRoomIds TRTC 房间 ID 集合。匹配集合中的任意元素。
+<li>单个房间 ID 长度限制：64个字符；</li>
+<li>数组长度限制：10。</li>
+                     */
+                    std::vector<std::string> GetTrtcRoomIds() const;
+
+                    /**
+                     * 设置TRTC 房间 ID 集合。匹配集合中的任意元素。
+<li>单个房间 ID 长度限制：64个字符；</li>
+<li>数组长度限制：10。</li>
+                     * @param TrtcRoomIds TRTC 房间 ID 集合。匹配集合中的任意元素。
+<li>单个房间 ID 长度限制：64个字符；</li>
+<li>数组长度限制：10。</li>
+                     */
+                    void SetTrtcRoomIds(const std::vector<std::string>& _trtcRoomIds);
+
+                    /**
+                     * 判断参数 TrtcRoomIds 是否已赋值
+                     * @return TrtcRoomIds 是否已赋值
+                     */
+                    bool TrtcRoomIdsHasBeenSet() const;
+
+                    /**
                      * 获取（不推荐：应使用 Names、NamePrefixes 或 Descriptions 替代）
 搜索文本，模糊匹配媒体文件名称或描述信息，匹配项越多，匹配度越高，排序越优先。长度限制：64个字符。
                      * @return Text （不推荐：应使用 Names、NamePrefixes 或 Descriptions 替代）
@@ -852,6 +900,21 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_storageClasses;
                     bool m_storageClassesHasBeenSet;
+
+                    /**
+                     * TRTC 应用 ID 集合。匹配集合中的任意元素。
+<li>数组长度限制：10。</li>
+                     */
+                    std::vector<uint64_t> m_trtcSdkAppIds;
+                    bool m_trtcSdkAppIdsHasBeenSet;
+
+                    /**
+                     * TRTC 房间 ID 集合。匹配集合中的任意元素。
+<li>单个房间 ID 长度限制：64个字符；</li>
+<li>数组长度限制：10。</li>
+                     */
+                    std::vector<std::string> m_trtcRoomIds;
+                    bool m_trtcRoomIdsHasBeenSet;
 
                     /**
                      * （不推荐：应使用 Names、NamePrefixes 或 Descriptions 替代）

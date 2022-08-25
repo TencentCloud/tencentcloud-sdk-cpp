@@ -33,12 +33,16 @@
 #include <tencentcloud/tcr/v20190924/model/CheckInstanceNameResponse.h>
 #include <tencentcloud/tcr/v20190924/model/CreateApplicationTriggerPersonalRequest.h>
 #include <tencentcloud/tcr/v20190924/model/CreateApplicationTriggerPersonalResponse.h>
+#include <tencentcloud/tcr/v20190924/model/CreateImageAccelerationServiceRequest.h>
+#include <tencentcloud/tcr/v20190924/model/CreateImageAccelerationServiceResponse.h>
 #include <tencentcloud/tcr/v20190924/model/CreateImageLifecyclePersonalRequest.h>
 #include <tencentcloud/tcr/v20190924/model/CreateImageLifecyclePersonalResponse.h>
 #include <tencentcloud/tcr/v20190924/model/CreateImmutableTagRulesRequest.h>
 #include <tencentcloud/tcr/v20190924/model/CreateImmutableTagRulesResponse.h>
 #include <tencentcloud/tcr/v20190924/model/CreateInstanceRequest.h>
 #include <tencentcloud/tcr/v20190924/model/CreateInstanceResponse.h>
+#include <tencentcloud/tcr/v20190924/model/CreateInstanceCustomizedDomainRequest.h>
+#include <tencentcloud/tcr/v20190924/model/CreateInstanceCustomizedDomainResponse.h>
 #include <tencentcloud/tcr/v20190924/model/CreateInstanceTokenRequest.h>
 #include <tencentcloud/tcr/v20190924/model/CreateInstanceTokenResponse.h>
 #include <tencentcloud/tcr/v20190924/model/CreateInternalEndpointDnsRequest.h>
@@ -55,8 +59,14 @@
 #include <tencentcloud/tcr/v20190924/model/CreateRepositoryResponse.h>
 #include <tencentcloud/tcr/v20190924/model/CreateRepositoryPersonalRequest.h>
 #include <tencentcloud/tcr/v20190924/model/CreateRepositoryPersonalResponse.h>
+#include <tencentcloud/tcr/v20190924/model/CreateSecurityPoliciesRequest.h>
+#include <tencentcloud/tcr/v20190924/model/CreateSecurityPoliciesResponse.h>
 #include <tencentcloud/tcr/v20190924/model/CreateSecurityPolicyRequest.h>
 #include <tencentcloud/tcr/v20190924/model/CreateSecurityPolicyResponse.h>
+#include <tencentcloud/tcr/v20190924/model/CreateSignatureRequest.h>
+#include <tencentcloud/tcr/v20190924/model/CreateSignatureResponse.h>
+#include <tencentcloud/tcr/v20190924/model/CreateSignaturePolicyRequest.h>
+#include <tencentcloud/tcr/v20190924/model/CreateSignaturePolicyResponse.h>
 #include <tencentcloud/tcr/v20190924/model/CreateTagRetentionExecutionRequest.h>
 #include <tencentcloud/tcr/v20190924/model/CreateTagRetentionExecutionResponse.h>
 #include <tencentcloud/tcr/v20190924/model/CreateTagRetentionRuleRequest.h>
@@ -69,6 +79,8 @@
 #include <tencentcloud/tcr/v20190924/model/DeleteApplicationTriggerPersonalResponse.h>
 #include <tencentcloud/tcr/v20190924/model/DeleteImageRequest.h>
 #include <tencentcloud/tcr/v20190924/model/DeleteImageResponse.h>
+#include <tencentcloud/tcr/v20190924/model/DeleteImageAccelerateServiceRequest.h>
+#include <tencentcloud/tcr/v20190924/model/DeleteImageAccelerateServiceResponse.h>
 #include <tencentcloud/tcr/v20190924/model/DeleteImageLifecycleGlobalPersonalRequest.h>
 #include <tencentcloud/tcr/v20190924/model/DeleteImageLifecycleGlobalPersonalResponse.h>
 #include <tencentcloud/tcr/v20190924/model/DeleteImageLifecyclePersonalRequest.h>
@@ -79,6 +91,8 @@
 #include <tencentcloud/tcr/v20190924/model/DeleteImmutableTagRulesResponse.h>
 #include <tencentcloud/tcr/v20190924/model/DeleteInstanceRequest.h>
 #include <tencentcloud/tcr/v20190924/model/DeleteInstanceResponse.h>
+#include <tencentcloud/tcr/v20190924/model/DeleteInstanceCustomizedDomainRequest.h>
+#include <tencentcloud/tcr/v20190924/model/DeleteInstanceCustomizedDomainResponse.h>
 #include <tencentcloud/tcr/v20190924/model/DeleteInstanceTokenRequest.h>
 #include <tencentcloud/tcr/v20190924/model/DeleteInstanceTokenResponse.h>
 #include <tencentcloud/tcr/v20190924/model/DeleteInternalEndpointDnsRequest.h>
@@ -89,12 +103,18 @@
 #include <tencentcloud/tcr/v20190924/model/DeleteNamespaceResponse.h>
 #include <tencentcloud/tcr/v20190924/model/DeleteNamespacePersonalRequest.h>
 #include <tencentcloud/tcr/v20190924/model/DeleteNamespacePersonalResponse.h>
+#include <tencentcloud/tcr/v20190924/model/DeleteReplicationInstanceRequest.h>
+#include <tencentcloud/tcr/v20190924/model/DeleteReplicationInstanceResponse.h>
 #include <tencentcloud/tcr/v20190924/model/DeleteRepositoryRequest.h>
 #include <tencentcloud/tcr/v20190924/model/DeleteRepositoryResponse.h>
 #include <tencentcloud/tcr/v20190924/model/DeleteRepositoryPersonalRequest.h>
 #include <tencentcloud/tcr/v20190924/model/DeleteRepositoryPersonalResponse.h>
+#include <tencentcloud/tcr/v20190924/model/DeleteRepositoryTagsRequest.h>
+#include <tencentcloud/tcr/v20190924/model/DeleteRepositoryTagsResponse.h>
 #include <tencentcloud/tcr/v20190924/model/DeleteSecurityPolicyRequest.h>
 #include <tencentcloud/tcr/v20190924/model/DeleteSecurityPolicyResponse.h>
+#include <tencentcloud/tcr/v20190924/model/DeleteSignaturePolicyRequest.h>
+#include <tencentcloud/tcr/v20190924/model/DeleteSignaturePolicyResponse.h>
 #include <tencentcloud/tcr/v20190924/model/DeleteTagRetentionRuleRequest.h>
 #include <tencentcloud/tcr/v20190924/model/DeleteTagRetentionRuleResponse.h>
 #include <tencentcloud/tcr/v20190924/model/DeleteWebhookTriggerRequest.h>
@@ -109,6 +129,10 @@
 #include <tencentcloud/tcr/v20190924/model/DescribeExternalEndpointStatusResponse.h>
 #include <tencentcloud/tcr/v20190924/model/DescribeFavorRepositoryPersonalRequest.h>
 #include <tencentcloud/tcr/v20190924/model/DescribeFavorRepositoryPersonalResponse.h>
+#include <tencentcloud/tcr/v20190924/model/DescribeGCJobsRequest.h>
+#include <tencentcloud/tcr/v20190924/model/DescribeGCJobsResponse.h>
+#include <tencentcloud/tcr/v20190924/model/DescribeImageAccelerateServiceRequest.h>
+#include <tencentcloud/tcr/v20190924/model/DescribeImageAccelerateServiceResponse.h>
 #include <tencentcloud/tcr/v20190924/model/DescribeImageFilterPersonalRequest.h>
 #include <tencentcloud/tcr/v20190924/model/DescribeImageFilterPersonalResponse.h>
 #include <tencentcloud/tcr/v20190924/model/DescribeImageLifecycleGlobalPersonalRequest.h>
@@ -123,6 +147,12 @@
 #include <tencentcloud/tcr/v20190924/model/DescribeImagesResponse.h>
 #include <tencentcloud/tcr/v20190924/model/DescribeImmutableTagRulesRequest.h>
 #include <tencentcloud/tcr/v20190924/model/DescribeImmutableTagRulesResponse.h>
+#include <tencentcloud/tcr/v20190924/model/DescribeInstanceAllRequest.h>
+#include <tencentcloud/tcr/v20190924/model/DescribeInstanceAllResponse.h>
+#include <tencentcloud/tcr/v20190924/model/DescribeInstanceAllNamespacesRequest.h>
+#include <tencentcloud/tcr/v20190924/model/DescribeInstanceAllNamespacesResponse.h>
+#include <tencentcloud/tcr/v20190924/model/DescribeInstanceCustomizedDomainRequest.h>
+#include <tencentcloud/tcr/v20190924/model/DescribeInstanceCustomizedDomainResponse.h>
 #include <tencentcloud/tcr/v20190924/model/DescribeInstanceStatusRequest.h>
 #include <tencentcloud/tcr/v20190924/model/DescribeInstanceStatusResponse.h>
 #include <tencentcloud/tcr/v20190924/model/DescribeInstanceTokenRequest.h>
@@ -137,6 +167,8 @@
 #include <tencentcloud/tcr/v20190924/model/DescribeNamespacePersonalResponse.h>
 #include <tencentcloud/tcr/v20190924/model/DescribeNamespacesRequest.h>
 #include <tencentcloud/tcr/v20190924/model/DescribeNamespacesResponse.h>
+#include <tencentcloud/tcr/v20190924/model/DescribeRegionsRequest.h>
+#include <tencentcloud/tcr/v20190924/model/DescribeRegionsResponse.h>
 #include <tencentcloud/tcr/v20190924/model/DescribeReplicationInstanceCreateTasksRequest.h>
 #include <tencentcloud/tcr/v20190924/model/DescribeReplicationInstanceCreateTasksResponse.h>
 #include <tencentcloud/tcr/v20190924/model/DescribeReplicationInstanceSyncStatusRequest.h>
@@ -236,6 +268,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateApplicationTriggerPersonalResponse> CreateApplicationTriggerPersonalOutcome;
                 typedef std::future<CreateApplicationTriggerPersonalOutcome> CreateApplicationTriggerPersonalOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::CreateApplicationTriggerPersonalRequest&, CreateApplicationTriggerPersonalOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateApplicationTriggerPersonalAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateImageAccelerationServiceResponse> CreateImageAccelerationServiceOutcome;
+                typedef std::future<CreateImageAccelerationServiceOutcome> CreateImageAccelerationServiceOutcomeCallable;
+                typedef std::function<void(const TcrClient*, const Model::CreateImageAccelerationServiceRequest&, CreateImageAccelerationServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateImageAccelerationServiceAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateImageLifecyclePersonalResponse> CreateImageLifecyclePersonalOutcome;
                 typedef std::future<CreateImageLifecyclePersonalOutcome> CreateImageLifecyclePersonalOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::CreateImageLifecyclePersonalRequest&, CreateImageLifecyclePersonalOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateImageLifecyclePersonalAsyncHandler;
@@ -245,6 +280,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateInstanceResponse> CreateInstanceOutcome;
                 typedef std::future<CreateInstanceOutcome> CreateInstanceOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::CreateInstanceRequest&, CreateInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateInstanceCustomizedDomainResponse> CreateInstanceCustomizedDomainOutcome;
+                typedef std::future<CreateInstanceCustomizedDomainOutcome> CreateInstanceCustomizedDomainOutcomeCallable;
+                typedef std::function<void(const TcrClient*, const Model::CreateInstanceCustomizedDomainRequest&, CreateInstanceCustomizedDomainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateInstanceCustomizedDomainAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateInstanceTokenResponse> CreateInstanceTokenOutcome;
                 typedef std::future<CreateInstanceTokenOutcome> CreateInstanceTokenOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::CreateInstanceTokenRequest&, CreateInstanceTokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateInstanceTokenAsyncHandler;
@@ -269,9 +307,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateRepositoryPersonalResponse> CreateRepositoryPersonalOutcome;
                 typedef std::future<CreateRepositoryPersonalOutcome> CreateRepositoryPersonalOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::CreateRepositoryPersonalRequest&, CreateRepositoryPersonalOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRepositoryPersonalAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateSecurityPoliciesResponse> CreateSecurityPoliciesOutcome;
+                typedef std::future<CreateSecurityPoliciesOutcome> CreateSecurityPoliciesOutcomeCallable;
+                typedef std::function<void(const TcrClient*, const Model::CreateSecurityPoliciesRequest&, CreateSecurityPoliciesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSecurityPoliciesAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateSecurityPolicyResponse> CreateSecurityPolicyOutcome;
                 typedef std::future<CreateSecurityPolicyOutcome> CreateSecurityPolicyOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::CreateSecurityPolicyRequest&, CreateSecurityPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSecurityPolicyAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateSignatureResponse> CreateSignatureOutcome;
+                typedef std::future<CreateSignatureOutcome> CreateSignatureOutcomeCallable;
+                typedef std::function<void(const TcrClient*, const Model::CreateSignatureRequest&, CreateSignatureOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSignatureAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateSignaturePolicyResponse> CreateSignaturePolicyOutcome;
+                typedef std::future<CreateSignaturePolicyOutcome> CreateSignaturePolicyOutcomeCallable;
+                typedef std::function<void(const TcrClient*, const Model::CreateSignaturePolicyRequest&, CreateSignaturePolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSignaturePolicyAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateTagRetentionExecutionResponse> CreateTagRetentionExecutionOutcome;
                 typedef std::future<CreateTagRetentionExecutionOutcome> CreateTagRetentionExecutionOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::CreateTagRetentionExecutionRequest&, CreateTagRetentionExecutionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTagRetentionExecutionAsyncHandler;
@@ -290,6 +337,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteImageResponse> DeleteImageOutcome;
                 typedef std::future<DeleteImageOutcome> DeleteImageOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::DeleteImageRequest&, DeleteImageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteImageAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteImageAccelerateServiceResponse> DeleteImageAccelerateServiceOutcome;
+                typedef std::future<DeleteImageAccelerateServiceOutcome> DeleteImageAccelerateServiceOutcomeCallable;
+                typedef std::function<void(const TcrClient*, const Model::DeleteImageAccelerateServiceRequest&, DeleteImageAccelerateServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteImageAccelerateServiceAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteImageLifecycleGlobalPersonalResponse> DeleteImageLifecycleGlobalPersonalOutcome;
                 typedef std::future<DeleteImageLifecycleGlobalPersonalOutcome> DeleteImageLifecycleGlobalPersonalOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::DeleteImageLifecycleGlobalPersonalRequest&, DeleteImageLifecycleGlobalPersonalOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteImageLifecycleGlobalPersonalAsyncHandler;
@@ -305,6 +355,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteInstanceResponse> DeleteInstanceOutcome;
                 typedef std::future<DeleteInstanceOutcome> DeleteInstanceOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::DeleteInstanceRequest&, DeleteInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteInstanceCustomizedDomainResponse> DeleteInstanceCustomizedDomainOutcome;
+                typedef std::future<DeleteInstanceCustomizedDomainOutcome> DeleteInstanceCustomizedDomainOutcomeCallable;
+                typedef std::function<void(const TcrClient*, const Model::DeleteInstanceCustomizedDomainRequest&, DeleteInstanceCustomizedDomainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteInstanceCustomizedDomainAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteInstanceTokenResponse> DeleteInstanceTokenOutcome;
                 typedef std::future<DeleteInstanceTokenOutcome> DeleteInstanceTokenOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::DeleteInstanceTokenRequest&, DeleteInstanceTokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteInstanceTokenAsyncHandler;
@@ -320,15 +373,24 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteNamespacePersonalResponse> DeleteNamespacePersonalOutcome;
                 typedef std::future<DeleteNamespacePersonalOutcome> DeleteNamespacePersonalOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::DeleteNamespacePersonalRequest&, DeleteNamespacePersonalOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteNamespacePersonalAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteReplicationInstanceResponse> DeleteReplicationInstanceOutcome;
+                typedef std::future<DeleteReplicationInstanceOutcome> DeleteReplicationInstanceOutcomeCallable;
+                typedef std::function<void(const TcrClient*, const Model::DeleteReplicationInstanceRequest&, DeleteReplicationInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteReplicationInstanceAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteRepositoryResponse> DeleteRepositoryOutcome;
                 typedef std::future<DeleteRepositoryOutcome> DeleteRepositoryOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::DeleteRepositoryRequest&, DeleteRepositoryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRepositoryAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteRepositoryPersonalResponse> DeleteRepositoryPersonalOutcome;
                 typedef std::future<DeleteRepositoryPersonalOutcome> DeleteRepositoryPersonalOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::DeleteRepositoryPersonalRequest&, DeleteRepositoryPersonalOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRepositoryPersonalAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteRepositoryTagsResponse> DeleteRepositoryTagsOutcome;
+                typedef std::future<DeleteRepositoryTagsOutcome> DeleteRepositoryTagsOutcomeCallable;
+                typedef std::function<void(const TcrClient*, const Model::DeleteRepositoryTagsRequest&, DeleteRepositoryTagsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRepositoryTagsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteSecurityPolicyResponse> DeleteSecurityPolicyOutcome;
                 typedef std::future<DeleteSecurityPolicyOutcome> DeleteSecurityPolicyOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::DeleteSecurityPolicyRequest&, DeleteSecurityPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSecurityPolicyAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteSignaturePolicyResponse> DeleteSignaturePolicyOutcome;
+                typedef std::future<DeleteSignaturePolicyOutcome> DeleteSignaturePolicyOutcomeCallable;
+                typedef std::function<void(const TcrClient*, const Model::DeleteSignaturePolicyRequest&, DeleteSignaturePolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSignaturePolicyAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteTagRetentionRuleResponse> DeleteTagRetentionRuleOutcome;
                 typedef std::future<DeleteTagRetentionRuleOutcome> DeleteTagRetentionRuleOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::DeleteTagRetentionRuleRequest&, DeleteTagRetentionRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTagRetentionRuleAsyncHandler;
@@ -350,6 +412,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeFavorRepositoryPersonalResponse> DescribeFavorRepositoryPersonalOutcome;
                 typedef std::future<DescribeFavorRepositoryPersonalOutcome> DescribeFavorRepositoryPersonalOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::DescribeFavorRepositoryPersonalRequest&, DescribeFavorRepositoryPersonalOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFavorRepositoryPersonalAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeGCJobsResponse> DescribeGCJobsOutcome;
+                typedef std::future<DescribeGCJobsOutcome> DescribeGCJobsOutcomeCallable;
+                typedef std::function<void(const TcrClient*, const Model::DescribeGCJobsRequest&, DescribeGCJobsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGCJobsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeImageAccelerateServiceResponse> DescribeImageAccelerateServiceOutcome;
+                typedef std::future<DescribeImageAccelerateServiceOutcome> DescribeImageAccelerateServiceOutcomeCallable;
+                typedef std::function<void(const TcrClient*, const Model::DescribeImageAccelerateServiceRequest&, DescribeImageAccelerateServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImageAccelerateServiceAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeImageFilterPersonalResponse> DescribeImageFilterPersonalOutcome;
                 typedef std::future<DescribeImageFilterPersonalOutcome> DescribeImageFilterPersonalOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::DescribeImageFilterPersonalRequest&, DescribeImageFilterPersonalOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImageFilterPersonalAsyncHandler;
@@ -371,6 +439,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeImmutableTagRulesResponse> DescribeImmutableTagRulesOutcome;
                 typedef std::future<DescribeImmutableTagRulesOutcome> DescribeImmutableTagRulesOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::DescribeImmutableTagRulesRequest&, DescribeImmutableTagRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImmutableTagRulesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeInstanceAllResponse> DescribeInstanceAllOutcome;
+                typedef std::future<DescribeInstanceAllOutcome> DescribeInstanceAllOutcomeCallable;
+                typedef std::function<void(const TcrClient*, const Model::DescribeInstanceAllRequest&, DescribeInstanceAllOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceAllAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeInstanceAllNamespacesResponse> DescribeInstanceAllNamespacesOutcome;
+                typedef std::future<DescribeInstanceAllNamespacesOutcome> DescribeInstanceAllNamespacesOutcomeCallable;
+                typedef std::function<void(const TcrClient*, const Model::DescribeInstanceAllNamespacesRequest&, DescribeInstanceAllNamespacesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceAllNamespacesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeInstanceCustomizedDomainResponse> DescribeInstanceCustomizedDomainOutcome;
+                typedef std::future<DescribeInstanceCustomizedDomainOutcome> DescribeInstanceCustomizedDomainOutcomeCallable;
+                typedef std::function<void(const TcrClient*, const Model::DescribeInstanceCustomizedDomainRequest&, DescribeInstanceCustomizedDomainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceCustomizedDomainAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeInstanceStatusResponse> DescribeInstanceStatusOutcome;
                 typedef std::future<DescribeInstanceStatusOutcome> DescribeInstanceStatusOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::DescribeInstanceStatusRequest&, DescribeInstanceStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceStatusAsyncHandler;
@@ -392,6 +469,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeNamespacesResponse> DescribeNamespacesOutcome;
                 typedef std::future<DescribeNamespacesOutcome> DescribeNamespacesOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::DescribeNamespacesRequest&, DescribeNamespacesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNamespacesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRegionsResponse> DescribeRegionsOutcome;
+                typedef std::future<DescribeRegionsOutcome> DescribeRegionsOutcomeCallable;
+                typedef std::function<void(const TcrClient*, const Model::DescribeRegionsRequest&, DescribeRegionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRegionsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeReplicationInstanceCreateTasksResponse> DescribeReplicationInstanceCreateTasksOutcome;
                 typedef std::future<DescribeReplicationInstanceCreateTasksOutcome> DescribeReplicationInstanceCreateTasksOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::DescribeReplicationInstanceCreateTasksRequest&, DescribeReplicationInstanceCreateTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeReplicationInstanceCreateTasksAsyncHandler;
@@ -546,6 +626,15 @@ namespace TencentCloud
                 CreateApplicationTriggerPersonalOutcomeCallable CreateApplicationTriggerPersonalCallable(const Model::CreateApplicationTriggerPersonalRequest& request);
 
                 /**
+                 *创建镜像加速服务
+                 * @param req CreateImageAccelerationServiceRequest
+                 * @return CreateImageAccelerationServiceOutcome
+                 */
+                CreateImageAccelerationServiceOutcome CreateImageAccelerationService(const Model::CreateImageAccelerationServiceRequest &request);
+                void CreateImageAccelerationServiceAsync(const Model::CreateImageAccelerationServiceRequest& request, const CreateImageAccelerationServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateImageAccelerationServiceOutcomeCallable CreateImageAccelerationServiceCallable(const Model::CreateImageAccelerationServiceRequest& request);
+
+                /**
                  *用于在个人版中创建清理策略
                  * @param req CreateImageLifecyclePersonalRequest
                  * @return CreateImageLifecyclePersonalOutcome
@@ -571,6 +660,15 @@ namespace TencentCloud
                 CreateInstanceOutcome CreateInstance(const Model::CreateInstanceRequest &request);
                 void CreateInstanceAsync(const Model::CreateInstanceRequest& request, const CreateInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateInstanceOutcomeCallable CreateInstanceCallable(const Model::CreateInstanceRequest& request);
+
+                /**
+                 *创建自定义域名
+                 * @param req CreateInstanceCustomizedDomainRequest
+                 * @return CreateInstanceCustomizedDomainOutcome
+                 */
+                CreateInstanceCustomizedDomainOutcome CreateInstanceCustomizedDomain(const Model::CreateInstanceCustomizedDomainRequest &request);
+                void CreateInstanceCustomizedDomainAsync(const Model::CreateInstanceCustomizedDomainRequest& request, const CreateInstanceCustomizedDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateInstanceCustomizedDomainOutcomeCallable CreateInstanceCustomizedDomainCallable(const Model::CreateInstanceCustomizedDomainRequest& request);
 
                 /**
                  *创建实例的临时或长期访问凭证
@@ -646,12 +744,39 @@ namespace TencentCloud
 
                 /**
                  *创建实例公网访问白名单策略
+                 * @param req CreateSecurityPoliciesRequest
+                 * @return CreateSecurityPoliciesOutcome
+                 */
+                CreateSecurityPoliciesOutcome CreateSecurityPolicies(const Model::CreateSecurityPoliciesRequest &request);
+                void CreateSecurityPoliciesAsync(const Model::CreateSecurityPoliciesRequest& request, const CreateSecurityPoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateSecurityPoliciesOutcomeCallable CreateSecurityPoliciesCallable(const Model::CreateSecurityPoliciesRequest& request);
+
+                /**
+                 *创建实例公网访问白名单策略
                  * @param req CreateSecurityPolicyRequest
                  * @return CreateSecurityPolicyOutcome
                  */
                 CreateSecurityPolicyOutcome CreateSecurityPolicy(const Model::CreateSecurityPolicyRequest &request);
                 void CreateSecurityPolicyAsync(const Model::CreateSecurityPolicyRequest& request, const CreateSecurityPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateSecurityPolicyOutcomeCallable CreateSecurityPolicyCallable(const Model::CreateSecurityPolicyRequest& request);
+
+                /**
+                 *为一个镜像版本创建签名
+                 * @param req CreateSignatureRequest
+                 * @return CreateSignatureOutcome
+                 */
+                CreateSignatureOutcome CreateSignature(const Model::CreateSignatureRequest &request);
+                void CreateSignatureAsync(const Model::CreateSignatureRequest& request, const CreateSignatureAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateSignatureOutcomeCallable CreateSignatureCallable(const Model::CreateSignatureRequest& request);
+
+                /**
+                 *创建镜像签名策略
+                 * @param req CreateSignaturePolicyRequest
+                 * @return CreateSignaturePolicyOutcome
+                 */
+                CreateSignaturePolicyOutcome CreateSignaturePolicy(const Model::CreateSignaturePolicyRequest &request);
+                void CreateSignaturePolicyAsync(const Model::CreateSignaturePolicyRequest& request, const CreateSignaturePolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateSignaturePolicyOutcomeCallable CreateSignaturePolicyCallable(const Model::CreateSignaturePolicyRequest& request);
 
                 /**
                  *手动执行版本保留
@@ -708,6 +833,15 @@ namespace TencentCloud
                 DeleteImageOutcomeCallable DeleteImageCallable(const Model::DeleteImageRequest& request);
 
                 /**
+                 *删除镜像加速服务
+                 * @param req DeleteImageAccelerateServiceRequest
+                 * @return DeleteImageAccelerateServiceOutcome
+                 */
+                DeleteImageAccelerateServiceOutcome DeleteImageAccelerateService(const Model::DeleteImageAccelerateServiceRequest &request);
+                void DeleteImageAccelerateServiceAsync(const Model::DeleteImageAccelerateServiceRequest& request, const DeleteImageAccelerateServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteImageAccelerateServiceOutcomeCallable DeleteImageAccelerateServiceCallable(const Model::DeleteImageAccelerateServiceRequest& request);
+
+                /**
                  *用于删除个人版全局镜像版本自动清理策略
                  * @param req DeleteImageLifecycleGlobalPersonalRequest
                  * @return DeleteImageLifecycleGlobalPersonalOutcome
@@ -751,6 +885,15 @@ namespace TencentCloud
                 DeleteInstanceOutcome DeleteInstance(const Model::DeleteInstanceRequest &request);
                 void DeleteInstanceAsync(const Model::DeleteInstanceRequest& request, const DeleteInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteInstanceOutcomeCallable DeleteInstanceCallable(const Model::DeleteInstanceRequest& request);
+
+                /**
+                 *删除自定义域名
+                 * @param req DeleteInstanceCustomizedDomainRequest
+                 * @return DeleteInstanceCustomizedDomainOutcome
+                 */
+                DeleteInstanceCustomizedDomainOutcome DeleteInstanceCustomizedDomain(const Model::DeleteInstanceCustomizedDomainRequest &request);
+                void DeleteInstanceCustomizedDomainAsync(const Model::DeleteInstanceCustomizedDomainRequest& request, const DeleteInstanceCustomizedDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteInstanceCustomizedDomainOutcomeCallable DeleteInstanceCustomizedDomainCallable(const Model::DeleteInstanceCustomizedDomainRequest& request);
 
                 /**
                  *删除长期访问凭证
@@ -798,6 +941,15 @@ namespace TencentCloud
                 DeleteNamespacePersonalOutcomeCallable DeleteNamespacePersonalCallable(const Model::DeleteNamespacePersonalRequest& request);
 
                 /**
+                 *删除从实例
+                 * @param req DeleteReplicationInstanceRequest
+                 * @return DeleteReplicationInstanceOutcome
+                 */
+                DeleteReplicationInstanceOutcome DeleteReplicationInstance(const Model::DeleteReplicationInstanceRequest &request);
+                void DeleteReplicationInstanceAsync(const Model::DeleteReplicationInstanceRequest& request, const DeleteReplicationInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteReplicationInstanceOutcomeCallable DeleteReplicationInstanceCallable(const Model::DeleteReplicationInstanceRequest& request);
+
+                /**
                  *删除镜像仓库
                  * @param req DeleteRepositoryRequest
                  * @return DeleteRepositoryOutcome
@@ -816,6 +968,15 @@ namespace TencentCloud
                 DeleteRepositoryPersonalOutcomeCallable DeleteRepositoryPersonalCallable(const Model::DeleteRepositoryPersonalRequest& request);
 
                 /**
+                 *用于企业版批量删除Repository Tag
+                 * @param req DeleteRepositoryTagsRequest
+                 * @return DeleteRepositoryTagsOutcome
+                 */
+                DeleteRepositoryTagsOutcome DeleteRepositoryTags(const Model::DeleteRepositoryTagsRequest &request);
+                void DeleteRepositoryTagsAsync(const Model::DeleteRepositoryTagsRequest& request, const DeleteRepositoryTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteRepositoryTagsOutcomeCallable DeleteRepositoryTagsCallable(const Model::DeleteRepositoryTagsRequest& request);
+
+                /**
                  *删除实例公网访问白名单策略
                  * @param req DeleteSecurityPolicyRequest
                  * @return DeleteSecurityPolicyOutcome
@@ -823,6 +984,15 @@ namespace TencentCloud
                 DeleteSecurityPolicyOutcome DeleteSecurityPolicy(const Model::DeleteSecurityPolicyRequest &request);
                 void DeleteSecurityPolicyAsync(const Model::DeleteSecurityPolicyRequest& request, const DeleteSecurityPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteSecurityPolicyOutcomeCallable DeleteSecurityPolicyCallable(const Model::DeleteSecurityPolicyRequest& request);
+
+                /**
+                 *删除命名空间加签策略
+                 * @param req DeleteSignaturePolicyRequest
+                 * @return DeleteSignaturePolicyOutcome
+                 */
+                DeleteSignaturePolicyOutcome DeleteSignaturePolicy(const Model::DeleteSignaturePolicyRequest &request);
+                void DeleteSignaturePolicyAsync(const Model::DeleteSignaturePolicyRequest& request, const DeleteSignaturePolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteSignaturePolicyOutcomeCallable DeleteSignaturePolicyCallable(const Model::DeleteSignaturePolicyRequest& request);
 
                 /**
                  *删除版本保留规则
@@ -888,6 +1058,24 @@ namespace TencentCloud
                 DescribeFavorRepositoryPersonalOutcomeCallable DescribeFavorRepositoryPersonalCallable(const Model::DescribeFavorRepositoryPersonalRequest& request);
 
                 /**
+                 *GC 最近10条历史
+                 * @param req DescribeGCJobsRequest
+                 * @return DescribeGCJobsOutcome
+                 */
+                DescribeGCJobsOutcome DescribeGCJobs(const Model::DescribeGCJobsRequest &request);
+                void DescribeGCJobsAsync(const Model::DescribeGCJobsRequest& request, const DescribeGCJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeGCJobsOutcomeCallable DescribeGCJobsCallable(const Model::DescribeGCJobsRequest& request);
+
+                /**
+                 *查询镜像加速服务状态
+                 * @param req DescribeImageAccelerateServiceRequest
+                 * @return DescribeImageAccelerateServiceOutcome
+                 */
+                DescribeImageAccelerateServiceOutcome DescribeImageAccelerateService(const Model::DescribeImageAccelerateServiceRequest &request);
+                void DescribeImageAccelerateServiceAsync(const Model::DescribeImageAccelerateServiceRequest& request, const DescribeImageAccelerateServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeImageAccelerateServiceOutcomeCallable DescribeImageAccelerateServiceCallable(const Model::DescribeImageAccelerateServiceRequest& request);
+
+                /**
                  *用于在个人版中查询与指定tag镜像内容相同的tag列表
                  * @param req DescribeImageFilterPersonalRequest
                  * @return DescribeImageFilterPersonalOutcome
@@ -951,6 +1139,33 @@ namespace TencentCloud
                 DescribeImmutableTagRulesOutcomeCallable DescribeImmutableTagRulesCallable(const Model::DescribeImmutableTagRulesRequest& request);
 
                 /**
+                 *查询全部实例信息
+                 * @param req DescribeInstanceAllRequest
+                 * @return DescribeInstanceAllOutcome
+                 */
+                DescribeInstanceAllOutcome DescribeInstanceAll(const Model::DescribeInstanceAllRequest &request);
+                void DescribeInstanceAllAsync(const Model::DescribeInstanceAllRequest& request, const DescribeInstanceAllAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeInstanceAllOutcomeCallable DescribeInstanceAllCallable(const Model::DescribeInstanceAllRequest& request);
+
+                /**
+                 *查询所有有实例命名空间列表
+                 * @param req DescribeInstanceAllNamespacesRequest
+                 * @return DescribeInstanceAllNamespacesOutcome
+                 */
+                DescribeInstanceAllNamespacesOutcome DescribeInstanceAllNamespaces(const Model::DescribeInstanceAllNamespacesRequest &request);
+                void DescribeInstanceAllNamespacesAsync(const Model::DescribeInstanceAllNamespacesRequest& request, const DescribeInstanceAllNamespacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeInstanceAllNamespacesOutcomeCallable DescribeInstanceAllNamespacesCallable(const Model::DescribeInstanceAllNamespacesRequest& request);
+
+                /**
+                 *查询实例自定义域名列表
+                 * @param req DescribeInstanceCustomizedDomainRequest
+                 * @return DescribeInstanceCustomizedDomainOutcome
+                 */
+                DescribeInstanceCustomizedDomainOutcome DescribeInstanceCustomizedDomain(const Model::DescribeInstanceCustomizedDomainRequest &request);
+                void DescribeInstanceCustomizedDomainAsync(const Model::DescribeInstanceCustomizedDomainRequest& request, const DescribeInstanceCustomizedDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeInstanceCustomizedDomainOutcomeCallable DescribeInstanceCustomizedDomainCallable(const Model::DescribeInstanceCustomizedDomainRequest& request);
+
+                /**
                  *查询实例当前状态以及过程信息
                  * @param req DescribeInstanceStatusRequest
                  * @return DescribeInstanceStatusOutcome
@@ -1012,6 +1227,15 @@ namespace TencentCloud
                 DescribeNamespacesOutcome DescribeNamespaces(const Model::DescribeNamespacesRequest &request);
                 void DescribeNamespacesAsync(const Model::DescribeNamespacesRequest& request, const DescribeNamespacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeNamespacesOutcomeCallable DescribeNamespacesCallable(const Model::DescribeNamespacesRequest& request);
+
+                /**
+                 *用于在TCR中获取可用区域
+                 * @param req DescribeRegionsRequest
+                 * @return DescribeRegionsOutcome
+                 */
+                DescribeRegionsOutcome DescribeRegions(const Model::DescribeRegionsRequest &request);
+                void DescribeRegionsAsync(const Model::DescribeRegionsRequest& request, const DescribeRegionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRegionsOutcomeCallable DescribeRegionsCallable(const Model::DescribeRegionsRequest& request);
 
                 /**
                  *查询创建从实例任务状态

@@ -83,6 +83,49 @@ CynosdbClient::ActivateInstanceOutcomeCallable CynosdbClient::ActivateInstanceCa
     return task->get_future();
 }
 
+CynosdbClient::AddClusterSlaveZoneOutcome CynosdbClient::AddClusterSlaveZone(const AddClusterSlaveZoneRequest &request)
+{
+    auto outcome = MakeRequest(request, "AddClusterSlaveZone");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AddClusterSlaveZoneResponse rsp = AddClusterSlaveZoneResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AddClusterSlaveZoneOutcome(rsp);
+        else
+            return AddClusterSlaveZoneOutcome(o.GetError());
+    }
+    else
+    {
+        return AddClusterSlaveZoneOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::AddClusterSlaveZoneAsync(const AddClusterSlaveZoneRequest& request, const AddClusterSlaveZoneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AddClusterSlaveZone(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CynosdbClient::AddClusterSlaveZoneOutcomeCallable CynosdbClient::AddClusterSlaveZoneCallable(const AddClusterSlaveZoneRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AddClusterSlaveZoneOutcome()>>(
+        [this, request]()
+        {
+            return this->AddClusterSlaveZone(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CynosdbClient::AddInstancesOutcome CynosdbClient::AddInstances(const AddInstancesRequest &request)
 {
     auto outcome = MakeRequest(request, "AddInstances");
@@ -721,6 +764,49 @@ CynosdbClient::DescribeClusterParamLogsOutcomeCallable CynosdbClient::DescribeCl
         [this, request]()
         {
             return this->DescribeClusterParamLogs(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CynosdbClient::DescribeClusterParamsOutcome CynosdbClient::DescribeClusterParams(const DescribeClusterParamsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeClusterParams");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeClusterParamsResponse rsp = DescribeClusterParamsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeClusterParamsOutcome(rsp);
+        else
+            return DescribeClusterParamsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeClusterParamsOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::DescribeClusterParamsAsync(const DescribeClusterParamsRequest& request, const DescribeClusterParamsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeClusterParams(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CynosdbClient::DescribeClusterParamsOutcomeCallable CynosdbClient::DescribeClusterParamsCallable(const DescribeClusterParamsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeClusterParamsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeClusterParams(request);
         }
     );
 
@@ -1760,6 +1846,49 @@ CynosdbClient::ModifyClusterParamOutcomeCallable CynosdbClient::ModifyClusterPar
     return task->get_future();
 }
 
+CynosdbClient::ModifyClusterSlaveZoneOutcome CynosdbClient::ModifyClusterSlaveZone(const ModifyClusterSlaveZoneRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyClusterSlaveZone");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyClusterSlaveZoneResponse rsp = ModifyClusterSlaveZoneResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyClusterSlaveZoneOutcome(rsp);
+        else
+            return ModifyClusterSlaveZoneOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyClusterSlaveZoneOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::ModifyClusterSlaveZoneAsync(const ModifyClusterSlaveZoneRequest& request, const ModifyClusterSlaveZoneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyClusterSlaveZone(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CynosdbClient::ModifyClusterSlaveZoneOutcomeCallable CynosdbClient::ModifyClusterSlaveZoneCallable(const ModifyClusterSlaveZoneRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyClusterSlaveZoneOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyClusterSlaveZone(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CynosdbClient::ModifyDBInstanceSecurityGroupsOutcome CynosdbClient::ModifyDBInstanceSecurityGroups(const ModifyDBInstanceSecurityGroupsRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyDBInstanceSecurityGroups");
@@ -2018,6 +2147,49 @@ CynosdbClient::PauseServerlessOutcomeCallable CynosdbClient::PauseServerlessCall
     return task->get_future();
 }
 
+CynosdbClient::RemoveClusterSlaveZoneOutcome CynosdbClient::RemoveClusterSlaveZone(const RemoveClusterSlaveZoneRequest &request)
+{
+    auto outcome = MakeRequest(request, "RemoveClusterSlaveZone");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RemoveClusterSlaveZoneResponse rsp = RemoveClusterSlaveZoneResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RemoveClusterSlaveZoneOutcome(rsp);
+        else
+            return RemoveClusterSlaveZoneOutcome(o.GetError());
+    }
+    else
+    {
+        return RemoveClusterSlaveZoneOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::RemoveClusterSlaveZoneAsync(const RemoveClusterSlaveZoneRequest& request, const RemoveClusterSlaveZoneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RemoveClusterSlaveZone(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CynosdbClient::RemoveClusterSlaveZoneOutcomeCallable CynosdbClient::RemoveClusterSlaveZoneCallable(const RemoveClusterSlaveZoneRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RemoveClusterSlaveZoneOutcome()>>(
+        [this, request]()
+        {
+            return this->RemoveClusterSlaveZone(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CynosdbClient::ResumeServerlessOutcome CynosdbClient::ResumeServerless(const ResumeServerlessRequest &request)
 {
     auto outcome = MakeRequest(request, "ResumeServerless");
@@ -2183,6 +2355,49 @@ CynosdbClient::SetRenewFlagOutcomeCallable CynosdbClient::SetRenewFlagCallable(c
         [this, request]()
         {
             return this->SetRenewFlag(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CynosdbClient::SwitchClusterZoneOutcome CynosdbClient::SwitchClusterZone(const SwitchClusterZoneRequest &request)
+{
+    auto outcome = MakeRequest(request, "SwitchClusterZone");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SwitchClusterZoneResponse rsp = SwitchClusterZoneResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SwitchClusterZoneOutcome(rsp);
+        else
+            return SwitchClusterZoneOutcome(o.GetError());
+    }
+    else
+    {
+        return SwitchClusterZoneOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::SwitchClusterZoneAsync(const SwitchClusterZoneRequest& request, const SwitchClusterZoneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SwitchClusterZone(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CynosdbClient::SwitchClusterZoneOutcomeCallable CynosdbClient::SwitchClusterZoneCallable(const SwitchClusterZoneRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SwitchClusterZoneOutcome()>>(
+        [this, request]()
+        {
+            return this->SwitchClusterZone(request);
         }
     );
 
