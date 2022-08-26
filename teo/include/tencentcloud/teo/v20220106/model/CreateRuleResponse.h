@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_CFW_V20190904_MODEL_RUNSYNCASSETRESPONSE_H_
-#define TENCENTCLOUD_CFW_V20190904_MODEL_RUNSYNCASSETRESPONSE_H_
+#ifndef TENCENTCLOUD_TEO_V20220106_MODEL_CREATERULERESPONSE_H_
+#define TENCENTCLOUD_TEO_V20220106_MODEL_CREATERULERESPONSE_H_
 
 #include <string>
 #include <vector>
@@ -25,43 +25,43 @@
 
 namespace TencentCloud
 {
-    namespace Cfw
+    namespace Teo
     {
-        namespace V20190904
+        namespace V20220106
         {
             namespace Model
             {
                 /**
-                * RunSyncAsset返回参数结构体
+                * CreateRule返回参数结构体
                 */
-                class RunSyncAssetResponse : public AbstractModel
+                class CreateRuleResponse : public AbstractModel
                 {
                 public:
-                    RunSyncAssetResponse();
-                    ~RunSyncAssetResponse() = default;
+                    CreateRuleResponse();
+                    ~CreateRuleResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取0：同步成功，1：资产更新中，2：后台同步调用失败
-                     * @return Status 0：同步成功，1：资产更新中，2：后台同步调用失败
+                     * 获取规则 ID。
+                     * @return RuleId 规则 ID。
                      */
-                    int64_t GetStatus() const;
+                    std::string GetRuleId() const;
 
                     /**
-                     * 判断参数 Status 是否已赋值
-                     * @return Status 是否已赋值
+                     * 判断参数 RuleId 是否已赋值
+                     * @return RuleId 是否已赋值
                      */
-                    bool StatusHasBeenSet() const;
+                    bool RuleIdHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 0：同步成功，1：资产更新中，2：后台同步调用失败
+                     * 规则 ID。
                      */
-                    int64_t m_status;
-                    bool m_statusHasBeenSet;
+                    std::string m_ruleId;
+                    bool m_ruleIdHasBeenSet;
 
                 };
             }
@@ -69,4 +69,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_CFW_V20190904_MODEL_RUNSYNCASSETRESPONSE_H_
+#endif // !TENCENTCLOUD_TEO_V20220106_MODEL_CREATERULERESPONSE_H_

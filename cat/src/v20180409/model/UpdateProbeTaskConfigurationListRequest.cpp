@@ -27,7 +27,8 @@ UpdateProbeTaskConfigurationListRequest::UpdateProbeTaskConfigurationListRequest
     m_nodesHasBeenSet(false),
     m_intervalHasBeenSet(false),
     m_parametersHasBeenSet(false),
-    m_cronHasBeenSet(false)
+    m_cronHasBeenSet(false),
+    m_resourceIDsHasBeenSet(false)
 {
 }
 
@@ -86,6 +87,19 @@ string UpdateProbeTaskConfigurationListRequest::ToJsonString() const
         string key = "Cron";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_cron.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resourceIDsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceIDs";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_resourceIDs.begin(); itr != m_resourceIDs.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -174,6 +188,22 @@ void UpdateProbeTaskConfigurationListRequest::SetCron(const string& _cron)
 bool UpdateProbeTaskConfigurationListRequest::CronHasBeenSet() const
 {
     return m_cronHasBeenSet;
+}
+
+vector<string> UpdateProbeTaskConfigurationListRequest::GetResourceIDs() const
+{
+    return m_resourceIDs;
+}
+
+void UpdateProbeTaskConfigurationListRequest::SetResourceIDs(const vector<string>& _resourceIDs)
+{
+    m_resourceIDs = _resourceIDs;
+    m_resourceIDsHasBeenSet = true;
+}
+
+bool UpdateProbeTaskConfigurationListRequest::ResourceIDsHasBeenSet() const
+{
+    return m_resourceIDsHasBeenSet;
 }
 
 

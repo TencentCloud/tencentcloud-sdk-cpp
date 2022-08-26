@@ -83,7 +83,6 @@ set(cfw_public_header_model
   include/tencentcloud/cfw/v20190904/model/DescribeSecurityGroupListResponse.h
   include/tencentcloud/cfw/v20190904/model/AssetZone.h
   include/tencentcloud/cfw/v20190904/model/DescribeAddrTemplateListResponse.h
-  include/tencentcloud/cfw/v20190904/model/RunSyncAssetRequest.h
   include/tencentcloud/cfw/v20190904/model/DescribeTLogIpListRequest.h
   include/tencentcloud/cfw/v20190904/model/DescribeNatFwInstancesInfoRequest.h
   include/tencentcloud/cfw/v20190904/model/DescribeTableStatusRequest.h
@@ -131,7 +130,6 @@ set(cfw_public_header_model
   include/tencentcloud/cfw/v20190904/model/InstanceInfo.h
   include/tencentcloud/cfw/v20190904/model/DescribeIPStatusListRequest.h
   include/tencentcloud/cfw/v20190904/model/ModifyNatFwSwitchResponse.h
-  include/tencentcloud/cfw/v20190904/model/RunSyncAssetResponse.h
   include/tencentcloud/cfw/v20190904/model/DescribeBlockByIpTimesListResponse.h
   include/tencentcloud/cfw/v20190904/model/SetNatFwDnatRuleResponse.h
   include/tencentcloud/cfw/v20190904/model/DescribeRuleOverviewRequest.h
@@ -263,7 +261,6 @@ set(cfw_src
   src/v20190904/model/DescribeSecurityGroupListResponse.cpp
   src/v20190904/model/AssetZone.cpp
   src/v20190904/model/DescribeAddrTemplateListResponse.cpp
-  src/v20190904/model/RunSyncAssetRequest.cpp
   src/v20190904/model/DescribeTLogIpListRequest.cpp
   src/v20190904/model/DescribeNatFwInstancesInfoRequest.cpp
   src/v20190904/model/DescribeTableStatusRequest.cpp
@@ -311,7 +308,6 @@ set(cfw_src
   src/v20190904/model/InstanceInfo.cpp
   src/v20190904/model/DescribeIPStatusListRequest.cpp
   src/v20190904/model/ModifyNatFwSwitchResponse.cpp
-  src/v20190904/model/RunSyncAssetResponse.cpp
   src/v20190904/model/DescribeBlockByIpTimesListResponse.cpp
   src/v20190904/model/SetNatFwDnatRuleResponse.cpp
   src/v20190904/model/DescribeRuleOverviewRequest.cpp

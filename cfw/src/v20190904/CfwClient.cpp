@@ -2964,49 +2964,6 @@ CfwClient::RemoveEnterpriseSecurityGroupRuleOutcomeCallable CfwClient::RemoveEnt
     return task->get_future();
 }
 
-CfwClient::RunSyncAssetOutcome CfwClient::RunSyncAsset(const RunSyncAssetRequest &request)
-{
-    auto outcome = MakeRequest(request, "RunSyncAsset");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        RunSyncAssetResponse rsp = RunSyncAssetResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return RunSyncAssetOutcome(rsp);
-        else
-            return RunSyncAssetOutcome(o.GetError());
-    }
-    else
-    {
-        return RunSyncAssetOutcome(outcome.GetError());
-    }
-}
-
-void CfwClient::RunSyncAssetAsync(const RunSyncAssetRequest& request, const RunSyncAssetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->RunSyncAsset(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-CfwClient::RunSyncAssetOutcomeCallable CfwClient::RunSyncAssetCallable(const RunSyncAssetRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<RunSyncAssetOutcome()>>(
-        [this, request]()
-        {
-            return this->RunSyncAsset(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 CfwClient::SetNatFwDnatRuleOutcome CfwClient::SetNatFwDnatRule(const SetNatFwDnatRuleRequest &request)
 {
     auto outcome = MakeRequest(request, "SetNatFwDnatRule");

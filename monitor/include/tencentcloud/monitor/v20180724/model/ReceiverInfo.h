@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取告警时间段开始时间。范围[0,86400)，作为unix时间戳转成北京时间后去掉日期，例如7200表示"10:0:0"
-                     * @return StartTime 告警时间段开始时间。范围[0,86400)，作为unix时间戳转成北京时间后去掉日期，例如7200表示"10:0:0"
+                     * 获取告警时间段开始时间。范围[0,86400)，作为 UNIX 时间戳转成北京时间后去掉日期，例如7200表示"10:0:0"
+                     * @return StartTime 告警时间段开始时间。范围[0,86400)，作为 UNIX 时间戳转成北京时间后去掉日期，例如7200表示"10:0:0"
                      */
                     int64_t GetStartTime() const;
 
                     /**
-                     * 设置告警时间段开始时间。范围[0,86400)，作为unix时间戳转成北京时间后去掉日期，例如7200表示"10:0:0"
-                     * @param StartTime 告警时间段开始时间。范围[0,86400)，作为unix时间戳转成北京时间后去掉日期，例如7200表示"10:0:0"
+                     * 设置告警时间段开始时间。范围[0,86400)，作为 UNIX 时间戳转成北京时间后去掉日期，例如7200表示"10:0:0"
+                     * @param StartTime 告警时间段开始时间。范围[0,86400)，作为 UNIX 时间戳转成北京时间后去掉日期，例如7200表示"10:0:0"
                      */
                     void SetStartTime(const int64_t& _startTime);
 
@@ -155,14 +155,14 @@ namespace TencentCloud
                     bool SendForHasBeenSet() const;
 
                     /**
-                     * 获取电话告警接收者uid
-                     * @return UidList 电话告警接收者uid
+                     * 获取电话告警接收者 UID
+                     * @return UidList 电话告警接收者 UID
                      */
                     std::vector<int64_t> GetUidList() const;
 
                     /**
-                     * 设置电话告警接收者uid
-                     * @param UidList 电话告警接收者uid
+                     * 设置电话告警接收者 UID
+                     * @param UidList 电话告警接收者 UID
                      */
                     void SetUidList(const std::vector<int64_t>& _uidList);
 
@@ -263,14 +263,14 @@ namespace TencentCloud
                     bool NeedSendNoticeHasBeenSet() const;
 
                     /**
-                     * 获取接收组列表。通过平台接口查询到的接收组id列表
-                     * @return ReceiverGroupList 接收组列表。通过平台接口查询到的接收组id列表
+                     * 获取接收组列表。通过平台接口查询到的接收组 ID 列表
+                     * @return ReceiverGroupList 接收组列表。通过平台接口查询到的接收组 ID 列表
                      */
                     std::vector<int64_t> GetReceiverGroupList() const;
 
                     /**
-                     * 设置接收组列表。通过平台接口查询到的接收组id列表
-                     * @param ReceiverGroupList 接收组列表。通过平台接口查询到的接收组id列表
+                     * 设置接收组列表。通过平台接口查询到的接收组 ID 列表
+                     * @param ReceiverGroupList 接收组列表。通过平台接口查询到的接收组 ID 列表
                      */
                     void SetReceiverGroupList(const std::vector<int64_t>& _receiverGroupList);
 
@@ -281,14 +281,14 @@ namespace TencentCloud
                     bool ReceiverGroupListHasBeenSet() const;
 
                     /**
-                     * 获取接收人列表。通过平台接口查询到的接收人id列表
-                     * @return ReceiverUserList 接收人列表。通过平台接口查询到的接收人id列表
+                     * 获取接收人列表。通过平台接口查询到的接收人 ID 列表
+                     * @return ReceiverUserList 接收人列表。通过平台接口查询到的接收人 ID 列表
                      */
                     std::vector<int64_t> GetReceiverUserList() const;
 
                     /**
-                     * 设置接收人列表。通过平台接口查询到的接收人id列表
-                     * @param ReceiverUserList 接收人列表。通过平台接口查询到的接收人id列表
+                     * 设置接收人列表。通过平台接口查询到的接收人 ID 列表
+                     * @param ReceiverUserList 接收人列表。通过平台接口查询到的接收人 ID 列表
                      */
                     void SetReceiverUserList(const std::vector<int64_t>& _receiverUserList);
 
@@ -319,7 +319,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 告警时间段开始时间。范围[0,86400)，作为unix时间戳转成北京时间后去掉日期，例如7200表示"10:0:0"
+                     * 告警时间段开始时间。范围[0,86400)，作为 UNIX 时间戳转成北京时间后去掉日期，例如7200表示"10:0:0"
                      */
                     int64_t m_startTime;
                     bool m_startTimeHasBeenSet;
@@ -355,7 +355,7 @@ namespace TencentCloud
                     bool m_sendForHasBeenSet;
 
                     /**
-                     * 电话告警接收者uid
+                     * 电话告警接收者 UID
                      */
                     std::vector<int64_t> m_uidList;
                     bool m_uidListHasBeenSet;
@@ -391,13 +391,13 @@ namespace TencentCloud
                     bool m_needSendNoticeHasBeenSet;
 
                     /**
-                     * 接收组列表。通过平台接口查询到的接收组id列表
+                     * 接收组列表。通过平台接口查询到的接收组 ID 列表
                      */
                     std::vector<int64_t> m_receiverGroupList;
                     bool m_receiverGroupListHasBeenSet;
 
                     /**
-                     * 接收人列表。通过平台接口查询到的接收人id列表
+                     * 接收人列表。通过平台接口查询到的接收人 ID 列表
                      */
                     std::vector<int64_t> m_receiverUserList;
                     bool m_receiverUserListHasBeenSet;

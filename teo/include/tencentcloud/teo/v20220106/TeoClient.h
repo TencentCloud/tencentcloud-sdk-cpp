@@ -39,10 +39,14 @@
 #include <tencentcloud/teo/v20220106/model/CreateLoadBalancingResponse.h>
 #include <tencentcloud/teo/v20220106/model/CreateOriginGroupRequest.h>
 #include <tencentcloud/teo/v20220106/model/CreateOriginGroupResponse.h>
+#include <tencentcloud/teo/v20220106/model/CreatePlanForZoneRequest.h>
+#include <tencentcloud/teo/v20220106/model/CreatePlanForZoneResponse.h>
 #include <tencentcloud/teo/v20220106/model/CreatePrefetchTaskRequest.h>
 #include <tencentcloud/teo/v20220106/model/CreatePrefetchTaskResponse.h>
 #include <tencentcloud/teo/v20220106/model/CreatePurgeTaskRequest.h>
 #include <tencentcloud/teo/v20220106/model/CreatePurgeTaskResponse.h>
+#include <tencentcloud/teo/v20220106/model/CreateRuleRequest.h>
+#include <tencentcloud/teo/v20220106/model/CreateRuleResponse.h>
 #include <tencentcloud/teo/v20220106/model/CreateZoneRequest.h>
 #include <tencentcloud/teo/v20220106/model/CreateZoneResponse.h>
 #include <tencentcloud/teo/v20220106/model/DeleteApplicationProxyRequest.h>
@@ -55,12 +59,16 @@
 #include <tencentcloud/teo/v20220106/model/DeleteLoadBalancingResponse.h>
 #include <tencentcloud/teo/v20220106/model/DeleteOriginGroupRequest.h>
 #include <tencentcloud/teo/v20220106/model/DeleteOriginGroupResponse.h>
+#include <tencentcloud/teo/v20220106/model/DeleteRulesRequest.h>
+#include <tencentcloud/teo/v20220106/model/DeleteRulesResponse.h>
 #include <tencentcloud/teo/v20220106/model/DeleteZoneRequest.h>
 #include <tencentcloud/teo/v20220106/model/DeleteZoneResponse.h>
 #include <tencentcloud/teo/v20220106/model/DescribeApplicationProxyRequest.h>
 #include <tencentcloud/teo/v20220106/model/DescribeApplicationProxyResponse.h>
 #include <tencentcloud/teo/v20220106/model/DescribeApplicationProxyDetailRequest.h>
 #include <tencentcloud/teo/v20220106/model/DescribeApplicationProxyDetailResponse.h>
+#include <tencentcloud/teo/v20220106/model/DescribeAvailablePlansRequest.h>
+#include <tencentcloud/teo/v20220106/model/DescribeAvailablePlansResponse.h>
 #include <tencentcloud/teo/v20220106/model/DescribeBotLogRequest.h>
 #include <tencentcloud/teo/v20220106/model/DescribeBotLogResponse.h>
 #include <tencentcloud/teo/v20220106/model/DescribeBotManagedRulesRequest.h>
@@ -109,6 +117,10 @@
 #include <tencentcloud/teo/v20220106/model/DescribePrefetchTasksResponse.h>
 #include <tencentcloud/teo/v20220106/model/DescribePurgeTasksRequest.h>
 #include <tencentcloud/teo/v20220106/model/DescribePurgeTasksResponse.h>
+#include <tencentcloud/teo/v20220106/model/DescribeRulesRequest.h>
+#include <tencentcloud/teo/v20220106/model/DescribeRulesResponse.h>
+#include <tencentcloud/teo/v20220106/model/DescribeRulesSettingRequest.h>
+#include <tencentcloud/teo/v20220106/model/DescribeRulesSettingResponse.h>
 #include <tencentcloud/teo/v20220106/model/DescribeSecurityPolicyRequest.h>
 #include <tencentcloud/teo/v20220106/model/DescribeSecurityPolicyResponse.h>
 #include <tencentcloud/teo/v20220106/model/DescribeSecurityPolicyListRequest.h>
@@ -185,6 +197,10 @@
 #include <tencentcloud/teo/v20220106/model/ModifyLoadBalancingStatusResponse.h>
 #include <tencentcloud/teo/v20220106/model/ModifyOriginGroupRequest.h>
 #include <tencentcloud/teo/v20220106/model/ModifyOriginGroupResponse.h>
+#include <tencentcloud/teo/v20220106/model/ModifyRuleRequest.h>
+#include <tencentcloud/teo/v20220106/model/ModifyRuleResponse.h>
+#include <tencentcloud/teo/v20220106/model/ModifyRulePriorityRequest.h>
+#include <tencentcloud/teo/v20220106/model/ModifyRulePriorityResponse.h>
 #include <tencentcloud/teo/v20220106/model/ModifySecurityPolicyRequest.h>
 #include <tencentcloud/teo/v20220106/model/ModifySecurityPolicyResponse.h>
 #include <tencentcloud/teo/v20220106/model/ModifyZoneRequest.h>
@@ -237,12 +253,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateOriginGroupResponse> CreateOriginGroupOutcome;
                 typedef std::future<CreateOriginGroupOutcome> CreateOriginGroupOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::CreateOriginGroupRequest&, CreateOriginGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateOriginGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreatePlanForZoneResponse> CreatePlanForZoneOutcome;
+                typedef std::future<CreatePlanForZoneOutcome> CreatePlanForZoneOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::CreatePlanForZoneRequest&, CreatePlanForZoneOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePlanForZoneAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreatePrefetchTaskResponse> CreatePrefetchTaskOutcome;
                 typedef std::future<CreatePrefetchTaskOutcome> CreatePrefetchTaskOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::CreatePrefetchTaskRequest&, CreatePrefetchTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePrefetchTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreatePurgeTaskResponse> CreatePurgeTaskOutcome;
                 typedef std::future<CreatePurgeTaskOutcome> CreatePurgeTaskOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::CreatePurgeTaskRequest&, CreatePurgeTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePurgeTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateRuleResponse> CreateRuleOutcome;
+                typedef std::future<CreateRuleOutcome> CreateRuleOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::CreateRuleRequest&, CreateRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateZoneResponse> CreateZoneOutcome;
                 typedef std::future<CreateZoneOutcome> CreateZoneOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::CreateZoneRequest&, CreateZoneOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateZoneAsyncHandler;
@@ -261,6 +283,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteOriginGroupResponse> DeleteOriginGroupOutcome;
                 typedef std::future<DeleteOriginGroupOutcome> DeleteOriginGroupOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DeleteOriginGroupRequest&, DeleteOriginGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteOriginGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteRulesResponse> DeleteRulesOutcome;
+                typedef std::future<DeleteRulesOutcome> DeleteRulesOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::DeleteRulesRequest&, DeleteRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRulesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteZoneResponse> DeleteZoneOutcome;
                 typedef std::future<DeleteZoneOutcome> DeleteZoneOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DeleteZoneRequest&, DeleteZoneOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteZoneAsyncHandler;
@@ -270,6 +295,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeApplicationProxyDetailResponse> DescribeApplicationProxyDetailOutcome;
                 typedef std::future<DescribeApplicationProxyDetailOutcome> DescribeApplicationProxyDetailOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribeApplicationProxyDetailRequest&, DescribeApplicationProxyDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApplicationProxyDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAvailablePlansResponse> DescribeAvailablePlansOutcome;
+                typedef std::future<DescribeAvailablePlansOutcome> DescribeAvailablePlansOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::DescribeAvailablePlansRequest&, DescribeAvailablePlansOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAvailablePlansAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeBotLogResponse> DescribeBotLogOutcome;
                 typedef std::future<DescribeBotLogOutcome> DescribeBotLogOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribeBotLogRequest&, DescribeBotLogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBotLogAsyncHandler;
@@ -342,6 +370,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribePurgeTasksResponse> DescribePurgeTasksOutcome;
                 typedef std::future<DescribePurgeTasksOutcome> DescribePurgeTasksOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribePurgeTasksRequest&, DescribePurgeTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePurgeTasksAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRulesResponse> DescribeRulesOutcome;
+                typedef std::future<DescribeRulesOutcome> DescribeRulesOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::DescribeRulesRequest&, DescribeRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRulesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRulesSettingResponse> DescribeRulesSettingOutcome;
+                typedef std::future<DescribeRulesSettingOutcome> DescribeRulesSettingOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::DescribeRulesSettingRequest&, DescribeRulesSettingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRulesSettingAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSecurityPolicyResponse> DescribeSecurityPolicyOutcome;
                 typedef std::future<DescribeSecurityPolicyOutcome> DescribeSecurityPolicyOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribeSecurityPolicyRequest&, DescribeSecurityPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSecurityPolicyAsyncHandler;
@@ -456,6 +490,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyOriginGroupResponse> ModifyOriginGroupOutcome;
                 typedef std::future<ModifyOriginGroupOutcome> ModifyOriginGroupOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::ModifyOriginGroupRequest&, ModifyOriginGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyOriginGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyRuleResponse> ModifyRuleOutcome;
+                typedef std::future<ModifyRuleOutcome> ModifyRuleOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::ModifyRuleRequest&, ModifyRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyRulePriorityResponse> ModifyRulePriorityOutcome;
+                typedef std::future<ModifyRulePriorityOutcome> ModifyRulePriorityOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::ModifyRulePriorityRequest&, ModifyRulePriorityOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRulePriorityAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifySecurityPolicyResponse> ModifySecurityPolicyOutcome;
                 typedef std::future<ModifySecurityPolicyOutcome> ModifySecurityPolicyOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::ModifySecurityPolicyRequest&, ModifySecurityPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySecurityPolicyAsyncHandler;
@@ -553,6 +593,15 @@ namespace TencentCloud
                 CreateOriginGroupOutcomeCallable CreateOriginGroupCallable(const Model::CreateOriginGroupRequest& request);
 
                 /**
+                 *为未购买套餐的站点购买套餐
+                 * @param req CreatePlanForZoneRequest
+                 * @return CreatePlanForZoneOutcome
+                 */
+                CreatePlanForZoneOutcome CreatePlanForZone(const Model::CreatePlanForZoneRequest &request);
+                void CreatePlanForZoneAsync(const Model::CreatePlanForZoneRequest& request, const CreatePlanForZoneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreatePlanForZoneOutcomeCallable CreatePlanForZoneCallable(const Model::CreatePlanForZoneRequest& request);
+
+                /**
                  *创建预热任务
                  * @param req CreatePrefetchTaskRequest
                  * @return CreatePrefetchTaskOutcome
@@ -569,6 +618,15 @@ namespace TencentCloud
                 CreatePurgeTaskOutcome CreatePurgeTask(const Model::CreatePurgeTaskRequest &request);
                 void CreatePurgeTaskAsync(const Model::CreatePurgeTaskRequest& request, const CreatePurgeTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreatePurgeTaskOutcomeCallable CreatePurgeTaskCallable(const Model::CreatePurgeTaskRequest& request);
+
+                /**
+                 *规则引擎创建规则。
+                 * @param req CreateRuleRequest
+                 * @return CreateRuleOutcome
+                 */
+                CreateRuleOutcome CreateRule(const Model::CreateRuleRequest &request);
+                void CreateRuleAsync(const Model::CreateRuleRequest& request, const CreateRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateRuleOutcomeCallable CreateRuleCallable(const Model::CreateRuleRequest& request);
 
                 /**
                  *用于用户接入新的站点
@@ -625,6 +683,15 @@ namespace TencentCloud
                 DeleteOriginGroupOutcomeCallable DeleteOriginGroupCallable(const Model::DeleteOriginGroupRequest& request);
 
                 /**
+                 *批量删除规则引擎规则。
+                 * @param req DeleteRulesRequest
+                 * @return DeleteRulesOutcome
+                 */
+                DeleteRulesOutcome DeleteRules(const Model::DeleteRulesRequest &request);
+                void DeleteRulesAsync(const Model::DeleteRulesRequest& request, const DeleteRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteRulesOutcomeCallable DeleteRulesCallable(const Model::DeleteRulesRequest& request);
+
+                /**
                  *删除站点
                  * @param req DeleteZoneRequest
                  * @return DeleteZoneOutcome
@@ -650,6 +717,15 @@ namespace TencentCloud
                 DescribeApplicationProxyDetailOutcome DescribeApplicationProxyDetail(const Model::DescribeApplicationProxyDetailRequest &request);
                 void DescribeApplicationProxyDetailAsync(const Model::DescribeApplicationProxyDetailRequest& request, const DescribeApplicationProxyDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeApplicationProxyDetailOutcomeCallable DescribeApplicationProxyDetailCallable(const Model::DescribeApplicationProxyDetailRequest& request);
+
+                /**
+                 *查询当前账户可用套餐信息列表
+                 * @param req DescribeAvailablePlansRequest
+                 * @return DescribeAvailablePlansOutcome
+                 */
+                DescribeAvailablePlansOutcome DescribeAvailablePlans(const Model::DescribeAvailablePlansRequest &request);
+                void DescribeAvailablePlansAsync(const Model::DescribeAvailablePlansRequest& request, const DescribeAvailablePlansAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAvailablePlansOutcomeCallable DescribeAvailablePlansCallable(const Model::DescribeAvailablePlansRequest& request);
 
                 /**
                  *查询Bot攻击日志
@@ -866,6 +942,24 @@ namespace TencentCloud
                 DescribePurgeTasksOutcome DescribePurgeTasks(const Model::DescribePurgeTasksRequest &request);
                 void DescribePurgeTasksAsync(const Model::DescribePurgeTasksRequest& request, const DescribePurgeTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribePurgeTasksOutcomeCallable DescribePurgeTasksCallable(const Model::DescribePurgeTasksRequest& request);
+
+                /**
+                 *查询规则引擎规则。
+                 * @param req DescribeRulesRequest
+                 * @return DescribeRulesOutcome
+                 */
+                DescribeRulesOutcome DescribeRules(const Model::DescribeRulesRequest &request);
+                void DescribeRulesAsync(const Model::DescribeRulesRequest& request, const DescribeRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRulesOutcomeCallable DescribeRulesCallable(const Model::DescribeRulesRequest& request);
+
+                /**
+                 *返回规则引擎可应用匹配请求的设置列表及其详细建议配置信息
+                 * @param req DescribeRulesSettingRequest
+                 * @return DescribeRulesSettingOutcome
+                 */
+                DescribeRulesSettingOutcome DescribeRulesSetting(const Model::DescribeRulesSettingRequest &request);
+                void DescribeRulesSettingAsync(const Model::DescribeRulesSettingRequest& request, const DescribeRulesSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRulesSettingOutcomeCallable DescribeRulesSettingCallable(const Model::DescribeRulesSettingRequest& request);
 
                 /**
                  *查询安全防护配置详情
@@ -1208,6 +1302,24 @@ namespace TencentCloud
                 ModifyOriginGroupOutcome ModifyOriginGroup(const Model::ModifyOriginGroupRequest &request);
                 void ModifyOriginGroupAsync(const Model::ModifyOriginGroupRequest& request, const ModifyOriginGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyOriginGroupOutcomeCallable ModifyOriginGroupCallable(const Model::ModifyOriginGroupRequest& request);
+
+                /**
+                 *修改规则引擎规则。
+                 * @param req ModifyRuleRequest
+                 * @return ModifyRuleOutcome
+                 */
+                ModifyRuleOutcome ModifyRule(const Model::ModifyRuleRequest &request);
+                void ModifyRuleAsync(const Model::ModifyRuleRequest& request, const ModifyRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyRuleOutcomeCallable ModifyRuleCallable(const Model::ModifyRuleRequest& request);
+
+                /**
+                 *修改规则引擎规则优先级
+                 * @param req ModifyRulePriorityRequest
+                 * @return ModifyRulePriorityOutcome
+                 */
+                ModifyRulePriorityOutcome ModifyRulePriority(const Model::ModifyRulePriorityRequest &request);
+                void ModifyRulePriorityAsync(const Model::ModifyRulePriorityRequest& request, const ModifyRulePriorityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyRulePriorityOutcomeCallable ModifyRulePriorityCallable(const Model::ModifyRulePriorityRequest& request);
 
                 /**
                  *修改Web&Bot安全配置

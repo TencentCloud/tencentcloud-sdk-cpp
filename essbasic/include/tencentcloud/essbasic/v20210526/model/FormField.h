@@ -90,17 +90,21 @@ DYNAMIC_TABLE - 传入json格式的表格内容，具体见数据结构FlowInfo�
                     bool ComponentValueHasBeenSet() const;
 
                     /**
-                     * 获取表单域或控件的ID，跟ComponentName二选一，不能全为空
+                     * 获取表单域或控件的ID，跟ComponentName二选一，不能全为空；
+CreateFlowsByTemplates 接口不使用此字段。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ComponentId 表单域或控件的ID，跟ComponentName二选一，不能全为空
+                     * @return ComponentId 表单域或控件的ID，跟ComponentName二选一，不能全为空；
+CreateFlowsByTemplates 接口不使用此字段。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetComponentId() const;
 
                     /**
-                     * 设置表单域或控件的ID，跟ComponentName二选一，不能全为空
+                     * 设置表单域或控件的ID，跟ComponentName二选一，不能全为空；
+CreateFlowsByTemplates 接口不使用此字段。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ComponentId 表单域或控件的ID，跟ComponentName二选一，不能全为空
+                     * @param ComponentId 表单域或控件的ID，跟ComponentName二选一，不能全为空；
+CreateFlowsByTemplates 接口不使用此字段。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetComponentId(const std::string& _componentId);
@@ -148,7 +152,8 @@ DYNAMIC_TABLE - 传入json格式的表格内容，具体见数据结构FlowInfo�
                     bool m_componentValueHasBeenSet;
 
                     /**
-                     * 表单域或控件的ID，跟ComponentName二选一，不能全为空
+                     * 表单域或控件的ID，跟ComponentName二选一，不能全为空；
+CreateFlowsByTemplates 接口不使用此字段。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_componentId;

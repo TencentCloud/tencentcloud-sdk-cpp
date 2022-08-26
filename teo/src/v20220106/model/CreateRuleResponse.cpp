@@ -14,21 +14,21 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/cfw/v20190904/model/RunSyncAssetResponse.h>
+#include <tencentcloud/teo/v20220106/model/CreateRuleResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Cfw::V20190904::Model;
+using namespace TencentCloud::Teo::V20220106::Model;
 using namespace std;
 
-RunSyncAssetResponse::RunSyncAssetResponse() :
-    m_statusHasBeenSet(false)
+CreateRuleResponse::CreateRuleResponse() :
+    m_ruleIdHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome RunSyncAssetResponse::Deserialize(const string &payload)
+CoreInternalOutcome CreateRuleResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -62,32 +62,32 @@ CoreInternalOutcome RunSyncAssetResponse::Deserialize(const string &payload)
     }
 
 
-    if (rsp.HasMember("Status") && !rsp["Status"].IsNull())
+    if (rsp.HasMember("RuleId") && !rsp["RuleId"].IsNull())
     {
-        if (!rsp["Status"].IsInt64())
+        if (!rsp["RuleId"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `Status` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `RuleId` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_status = rsp["Status"].GetInt64();
-        m_statusHasBeenSet = true;
+        m_ruleId = string(rsp["RuleId"].GetString());
+        m_ruleIdHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string RunSyncAssetResponse::ToJsonString() const
+string CreateRuleResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_statusHasBeenSet)
+    if (m_ruleIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Status";
+        string key = "RuleId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_status, allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ruleId.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -102,14 +102,14 @@ string RunSyncAssetResponse::ToJsonString() const
 }
 
 
-int64_t RunSyncAssetResponse::GetStatus() const
+string CreateRuleResponse::GetRuleId() const
 {
-    return m_status;
+    return m_ruleId;
 }
 
-bool RunSyncAssetResponse::StatusHasBeenSet() const
+bool CreateRuleResponse::RuleIdHasBeenSet() const
 {
-    return m_statusHasBeenSet;
+    return m_ruleIdHasBeenSet;
 }
 
 

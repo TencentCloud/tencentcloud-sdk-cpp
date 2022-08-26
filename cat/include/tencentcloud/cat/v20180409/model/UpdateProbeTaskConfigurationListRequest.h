@@ -132,6 +132,28 @@ namespace TencentCloud
                      */
                     bool CronHasBeenSet() const;
 
+                    /**
+                     * 获取预付费套餐id
+需要与taskId对应
+                     * @return ResourceIDs 预付费套餐id
+需要与taskId对应
+                     */
+                    std::vector<std::string> GetResourceIDs() const;
+
+                    /**
+                     * 设置预付费套餐id
+需要与taskId对应
+                     * @param ResourceIDs 预付费套餐id
+需要与taskId对应
+                     */
+                    void SetResourceIDs(const std::vector<std::string>& _resourceIDs);
+
+                    /**
+                     * 判断参数 ResourceIDs 是否已赋值
+                     * @return ResourceIDs 是否已赋值
+                     */
+                    bool ResourceIDsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -163,6 +185,13 @@ namespace TencentCloud
                      */
                     std::string m_cron;
                     bool m_cronHasBeenSet;
+
+                    /**
+                     * 预付费套餐id
+需要与taskId对应
+                     */
+                    std::vector<std::string> m_resourceIDs;
+                    bool m_resourceIDsHasBeenSet;
 
                 };
             }

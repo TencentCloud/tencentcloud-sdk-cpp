@@ -14,33 +14,24 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/cfw/v20190904/model/RunSyncAssetRequest.h>
+#include <tencentcloud/teo/v20220106/model/DescribeRulesSettingRequest.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
-using namespace TencentCloud::Cfw::V20190904::Model;
+using namespace TencentCloud::Teo::V20220106::Model;
 using namespace std;
 
-RunSyncAssetRequest::RunSyncAssetRequest() :
-    m_typeHasBeenSet(false)
+DescribeRulesSettingRequest::DescribeRulesSettingRequest()
 {
 }
 
-string RunSyncAssetRequest::ToJsonString() const
+string DescribeRulesSettingRequest::ToJsonString() const
 {
     rapidjson::Document d;
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
-
-    if (m_typeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Type";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_type, allocator);
-    }
 
 
     rapidjson::StringBuffer buffer;
@@ -49,21 +40,5 @@ string RunSyncAssetRequest::ToJsonString() const
     return buffer.GetString();
 }
 
-
-uint64_t RunSyncAssetRequest::GetType() const
-{
-    return m_type;
-}
-
-void RunSyncAssetRequest::SetType(const uint64_t& _type)
-{
-    m_type = _type;
-    m_typeHasBeenSet = true;
-}
-
-bool RunSyncAssetRequest::TypeHasBeenSet() const
-{
-    return m_typeHasBeenSet;
-}
 
 

@@ -159,8 +159,6 @@
 #include <tencentcloud/cfw/v20190904/model/RemoveAcRuleResponse.h>
 #include <tencentcloud/cfw/v20190904/model/RemoveEnterpriseSecurityGroupRuleRequest.h>
 #include <tencentcloud/cfw/v20190904/model/RemoveEnterpriseSecurityGroupRuleResponse.h>
-#include <tencentcloud/cfw/v20190904/model/RunSyncAssetRequest.h>
-#include <tencentcloud/cfw/v20190904/model/RunSyncAssetResponse.h>
 #include <tencentcloud/cfw/v20190904/model/SetNatFwDnatRuleRequest.h>
 #include <tencentcloud/cfw/v20190904/model/SetNatFwDnatRuleResponse.h>
 #include <tencentcloud/cfw/v20190904/model/SetNatFwEipRequest.h>
@@ -385,9 +383,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RemoveEnterpriseSecurityGroupRuleResponse> RemoveEnterpriseSecurityGroupRuleOutcome;
                 typedef std::future<RemoveEnterpriseSecurityGroupRuleOutcome> RemoveEnterpriseSecurityGroupRuleOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::RemoveEnterpriseSecurityGroupRuleRequest&, RemoveEnterpriseSecurityGroupRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RemoveEnterpriseSecurityGroupRuleAsyncHandler;
-                typedef Outcome<Core::Error, Model::RunSyncAssetResponse> RunSyncAssetOutcome;
-                typedef std::future<RunSyncAssetOutcome> RunSyncAssetOutcomeCallable;
-                typedef std::function<void(const CfwClient*, const Model::RunSyncAssetRequest&, RunSyncAssetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RunSyncAssetAsyncHandler;
                 typedef Outcome<Core::Error, Model::SetNatFwDnatRuleResponse> SetNatFwDnatRuleOutcome;
                 typedef std::future<SetNatFwDnatRuleOutcome> SetNatFwDnatRuleOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::SetNatFwDnatRuleRequest&, SetNatFwDnatRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetNatFwDnatRuleAsyncHandler;
@@ -1022,15 +1017,6 @@ namespace TencentCloud
                 RemoveEnterpriseSecurityGroupRuleOutcome RemoveEnterpriseSecurityGroupRule(const Model::RemoveEnterpriseSecurityGroupRuleRequest &request);
                 void RemoveEnterpriseSecurityGroupRuleAsync(const Model::RemoveEnterpriseSecurityGroupRuleRequest& request, const RemoveEnterpriseSecurityGroupRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RemoveEnterpriseSecurityGroupRuleOutcomeCallable RemoveEnterpriseSecurityGroupRuleCallable(const Model::RemoveEnterpriseSecurityGroupRuleRequest& request);
-
-                /**
-                 *同步资产-互联网&VPC
-                 * @param req RunSyncAssetRequest
-                 * @return RunSyncAssetOutcome
-                 */
-                RunSyncAssetOutcome RunSyncAsset(const Model::RunSyncAssetRequest &request);
-                void RunSyncAssetAsync(const Model::RunSyncAssetRequest& request, const RunSyncAssetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                RunSyncAssetOutcomeCallable RunSyncAssetCallable(const Model::RunSyncAssetRequest& request);
 
                 /**
                  *配置防火墙Dnat规则

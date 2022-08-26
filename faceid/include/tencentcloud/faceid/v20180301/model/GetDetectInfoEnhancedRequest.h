@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/faceid/v20180301/model/Encryption.h>
 
 
 namespace TencentCloud
@@ -159,14 +160,14 @@ namespace TencentCloud
                     bool IsNeedIdCardAvatarHasBeenSet() const;
 
                     /**
-                     * 获取是否需要对返回中的敏感信息进行加密。其中敏感信息包括：Response.Text.IdCard、Response.Text.Name、Response.Text.OcrIdCard、Response.Text.OcrName
-                     * @return IsEncrypt 是否需要对返回中的敏感信息进行加密。其中敏感信息包括：Response.Text.IdCard、Response.Text.Name、Response.Text.OcrIdCard、Response.Text.OcrName
+                     * 获取已弃用。
+                     * @return IsEncrypt 已弃用。
                      */
                     bool GetIsEncrypt() const;
 
                     /**
-                     * 设置是否需要对返回中的敏感信息进行加密。其中敏感信息包括：Response.Text.IdCard、Response.Text.Name、Response.Text.OcrIdCard、Response.Text.OcrName
-                     * @param IsEncrypt 是否需要对返回中的敏感信息进行加密。其中敏感信息包括：Response.Text.IdCard、Response.Text.Name、Response.Text.OcrIdCard、Response.Text.OcrName
+                     * 设置已弃用。
+                     * @param IsEncrypt 已弃用。
                      */
                     void SetIsEncrypt(const bool& _isEncrypt);
 
@@ -175,6 +176,24 @@ namespace TencentCloud
                      * @return IsEncrypt 是否已赋值
                      */
                     bool IsEncryptHasBeenSet() const;
+
+                    /**
+                     * 获取是否需要对返回中的敏感信息进行加密。仅指定加密算法Algorithm即可，其余字段传入默认值。其中敏感信息包括：Response.Text.IdCard、Response.Text.Name、Response.Text.OcrIdCard、Response.Text.OcrName
+                     * @return Encryption 是否需要对返回中的敏感信息进行加密。仅指定加密算法Algorithm即可，其余字段传入默认值。其中敏感信息包括：Response.Text.IdCard、Response.Text.Name、Response.Text.OcrIdCard、Response.Text.OcrName
+                     */
+                    Encryption GetEncryption() const;
+
+                    /**
+                     * 设置是否需要对返回中的敏感信息进行加密。仅指定加密算法Algorithm即可，其余字段传入默认值。其中敏感信息包括：Response.Text.IdCard、Response.Text.Name、Response.Text.OcrIdCard、Response.Text.OcrName
+                     * @param Encryption 是否需要对返回中的敏感信息进行加密。仅指定加密算法Algorithm即可，其余字段传入默认值。其中敏感信息包括：Response.Text.IdCard、Response.Text.Name、Response.Text.OcrIdCard、Response.Text.OcrName
+                     */
+                    void SetEncryption(const Encryption& _encryption);
+
+                    /**
+                     * 判断参数 Encryption 是否已赋值
+                     * @return Encryption 是否已赋值
+                     */
+                    bool EncryptionHasBeenSet() const;
 
                 private:
 
@@ -217,10 +236,16 @@ namespace TencentCloud
                     bool m_isNeedIdCardAvatarHasBeenSet;
 
                     /**
-                     * 是否需要对返回中的敏感信息进行加密。其中敏感信息包括：Response.Text.IdCard、Response.Text.Name、Response.Text.OcrIdCard、Response.Text.OcrName
+                     * 已弃用。
                      */
                     bool m_isEncrypt;
                     bool m_isEncryptHasBeenSet;
+
+                    /**
+                     * 是否需要对返回中的敏感信息进行加密。仅指定加密算法Algorithm即可，其余字段传入默认值。其中敏感信息包括：Response.Text.IdCard、Response.Text.Name、Response.Text.OcrIdCard、Response.Text.OcrName
+                     */
+                    Encryption m_encryption;
+                    bool m_encryptionHasBeenSet;
 
                 };
             }
