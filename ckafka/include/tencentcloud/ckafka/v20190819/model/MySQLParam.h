@@ -444,6 +444,24 @@ namespace TencentCloud
                      */
                     bool IncludeQueryHasBeenSet() const;
 
+                    /**
+                     * 获取如果该值为 true，则消息中会携带消息结构体对应的schema，如果该值为false则不会携带
+                     * @return RecordWithSchema 如果该值为 true，则消息中会携带消息结构体对应的schema，如果该值为false则不会携带
+                     */
+                    bool GetRecordWithSchema() const;
+
+                    /**
+                     * 设置如果该值为 true，则消息中会携带消息结构体对应的schema，如果该值为false则不会携带
+                     * @param RecordWithSchema 如果该值为 true，则消息中会携带消息结构体对应的schema，如果该值为false则不会携带
+                     */
+                    void SetRecordWithSchema(const bool& _recordWithSchema);
+
+                    /**
+                     * 判断参数 RecordWithSchema 是否已赋值
+                     * @return RecordWithSchema 是否已赋值
+                     */
+                    bool RecordWithSchemaHasBeenSet() const;
+
                 private:
 
                     /**
@@ -577,6 +595,12 @@ namespace TencentCloud
                      */
                     bool m_includeQuery;
                     bool m_includeQueryHasBeenSet;
+
+                    /**
+                     * 如果该值为 true，则消息中会携带消息结构体对应的schema，如果该值为false则不会携带
+                     */
+                    bool m_recordWithSchema;
+                    bool m_recordWithSchemaHasBeenSet;
 
                 };
             }

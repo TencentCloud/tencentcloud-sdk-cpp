@@ -38,7 +38,8 @@ VehicleInvoiceInfo::VehicleInvoiceInfo() :
     m_motorBankNameHasBeenSet(false),
     m_motorBankAccountHasBeenSet(false),
     m_sellerAddressHasBeenSet(false),
-    m_sellerTelHasBeenSet(false)
+    m_sellerTelHasBeenSet(false),
+    m_buyerNoHasBeenSet(false)
 {
 }
 
@@ -227,6 +228,16 @@ CoreInternalOutcome VehicleInvoiceInfo::Deserialize(const rapidjson::Value &valu
         m_sellerTelHasBeenSet = true;
     }
 
+    if (value.HasMember("BuyerNo") && !value["BuyerNo"].IsNull())
+    {
+        if (!value["BuyerNo"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VehicleInvoiceInfo.BuyerNo` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_buyerNo = string(value["BuyerNo"].GetString());
+        m_buyerNoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -376,6 +387,14 @@ void VehicleInvoiceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "SellerTel";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_sellerTel.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_buyerNoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BuyerNo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_buyerNo.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -667,5 +686,21 @@ void VehicleInvoiceInfo::SetSellerTel(const string& _sellerTel)
 bool VehicleInvoiceInfo::SellerTelHasBeenSet() const
 {
     return m_sellerTelHasBeenSet;
+}
+
+string VehicleInvoiceInfo::GetBuyerNo() const
+{
+    return m_buyerNo;
+}
+
+void VehicleInvoiceInfo::SetBuyerNo(const string& _buyerNo)
+{
+    m_buyerNo = _buyerNo;
+    m_buyerNoHasBeenSet = true;
+}
+
+bool VehicleInvoiceInfo::BuyerNoHasBeenSet() const
+{
+    return m_buyerNoHasBeenSet;
 }
 

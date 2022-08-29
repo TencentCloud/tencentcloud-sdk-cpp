@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_CFS_V20190719_MODEL_SIGNUPCFSSERVICERESPONSE_H_
-#define TENCENTCLOUD_CFS_V20190719_MODEL_SIGNUPCFSSERVICERESPONSE_H_
+#ifndef TENCENTCLOUD_ESS_V20201111_MODEL_CREATEFLOWEVIDENCEREPORTRESPONSE_H_
+#define TENCENTCLOUD_ESS_V20201111_MODEL_CREATEFLOWEVIDENCEREPORTRESPONSE_H_
 
 #include <string>
 #include <vector>
@@ -25,43 +25,43 @@
 
 namespace TencentCloud
 {
-    namespace Cfs
+    namespace Ess
     {
-        namespace V20190719
+        namespace V20201111
         {
             namespace Model
             {
                 /**
-                * SignUpCfsService返回参数结构体
+                * CreateFlowEvidenceReport返回参数结构体
                 */
-                class SignUpCfsServiceResponse : public AbstractModel
+                class CreateFlowEvidenceReportResponse : public AbstractModel
                 {
                 public:
-                    SignUpCfsServiceResponse();
-                    ~SignUpCfsServiceResponse() = default;
+                    CreateFlowEvidenceReportResponse();
+                    ~CreateFlowEvidenceReportResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取该用户当前 CFS 服务的状态，creating 是开通中，created 是已开通
-                     * @return CfsServiceStatus 该用户当前 CFS 服务的状态，creating 是开通中，created 是已开通
+                     * 获取出证报告 URL（有效期5分钟）
+                     * @return ReportUrl 出证报告 URL（有效期5分钟）
                      */
-                    std::string GetCfsServiceStatus() const;
+                    std::string GetReportUrl() const;
 
                     /**
-                     * 判断参数 CfsServiceStatus 是否已赋值
-                     * @return CfsServiceStatus 是否已赋值
+                     * 判断参数 ReportUrl 是否已赋值
+                     * @return ReportUrl 是否已赋值
                      */
-                    bool CfsServiceStatusHasBeenSet() const;
+                    bool ReportUrlHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 该用户当前 CFS 服务的状态，creating 是开通中，created 是已开通
+                     * 出证报告 URL（有效期5分钟）
                      */
-                    std::string m_cfsServiceStatus;
-                    bool m_cfsServiceStatusHasBeenSet;
+                    std::string m_reportUrl;
+                    bool m_reportUrlHasBeenSet;
 
                 };
             }
@@ -69,4 +69,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_CFS_V20190719_MODEL_SIGNUPCFSSERVICERESPONSE_H_
+#endif // !TENCENTCLOUD_ESS_V20201111_MODEL_CREATEFLOWEVIDENCEREPORTRESPONSE_H_

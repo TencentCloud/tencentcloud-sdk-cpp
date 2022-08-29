@@ -21,6 +21,7 @@ set(ess_public_header
 set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/UploadFile.h
   include/tencentcloud/ess/v20201111/model/CancelMultiFlowSignQRCodeRequest.h
+  include/tencentcloud/ess/v20201111/model/CreateFlowEvidenceReportResponse.h
   include/tencentcloud/ess/v20201111/model/DescribeFileUrlsResponse.h
   include/tencentcloud/ess/v20201111/model/TemplateInfo.h
   include/tencentcloud/ess/v20201111/model/CreateDocumentResponse.h
@@ -53,6 +54,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/CreateFlowSignReviewResponse.h
   include/tencentcloud/ess/v20201111/model/Caller.h
   include/tencentcloud/ess/v20201111/model/DescribeFlowTemplatesResponse.h
+  include/tencentcloud/ess/v20201111/model/CreateFlowEvidenceReportRequest.h
   include/tencentcloud/ess/v20201111/model/CreateBatchCancelFlowUrlResponse.h
   include/tencentcloud/ess/v20201111/model/StartFlowResponse.h
   include/tencentcloud/ess/v20201111/model/FileInfo.h
@@ -78,6 +80,7 @@ set(ess_src
   src/v20201111/EssClient.cpp
   src/v20201111/model/UploadFile.cpp
   src/v20201111/model/CancelMultiFlowSignQRCodeRequest.cpp
+  src/v20201111/model/CreateFlowEvidenceReportResponse.cpp
   src/v20201111/model/DescribeFileUrlsResponse.cpp
   src/v20201111/model/TemplateInfo.cpp
   src/v20201111/model/CreateDocumentResponse.cpp
@@ -110,6 +113,7 @@ set(ess_src
   src/v20201111/model/CreateFlowSignReviewResponse.cpp
   src/v20201111/model/Caller.cpp
   src/v20201111/model/DescribeFlowTemplatesResponse.cpp
+  src/v20201111/model/CreateFlowEvidenceReportRequest.cpp
   src/v20201111/model/CreateBatchCancelFlowUrlResponse.cpp
   src/v20201111/model/StartFlowResponse.cpp
   src/v20201111/model/FileInfo.cpp

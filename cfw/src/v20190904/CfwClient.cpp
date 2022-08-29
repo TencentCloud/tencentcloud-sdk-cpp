@@ -599,49 +599,6 @@ CfwClient::DeleteResourceGroupOutcomeCallable CfwClient::DeleteResourceGroupCall
     return task->get_future();
 }
 
-CfwClient::DeleteSecurityGroupAllRuleOutcome CfwClient::DeleteSecurityGroupAllRule(const DeleteSecurityGroupAllRuleRequest &request)
-{
-    auto outcome = MakeRequest(request, "DeleteSecurityGroupAllRule");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DeleteSecurityGroupAllRuleResponse rsp = DeleteSecurityGroupAllRuleResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DeleteSecurityGroupAllRuleOutcome(rsp);
-        else
-            return DeleteSecurityGroupAllRuleOutcome(o.GetError());
-    }
-    else
-    {
-        return DeleteSecurityGroupAllRuleOutcome(outcome.GetError());
-    }
-}
-
-void CfwClient::DeleteSecurityGroupAllRuleAsync(const DeleteSecurityGroupAllRuleRequest& request, const DeleteSecurityGroupAllRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteSecurityGroupAllRule(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-CfwClient::DeleteSecurityGroupAllRuleOutcomeCallable CfwClient::DeleteSecurityGroupAllRuleCallable(const DeleteSecurityGroupAllRuleRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DeleteSecurityGroupAllRuleOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteSecurityGroupAllRule(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 CfwClient::DeleteSecurityGroupRuleOutcome CfwClient::DeleteSecurityGroupRule(const DeleteSecurityGroupRuleRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteSecurityGroupRule");
@@ -1323,49 +1280,6 @@ CfwClient::DescribeNatFwVpcDnsLstOutcomeCallable CfwClient::DescribeNatFwVpcDnsL
         [this, request]()
         {
             return this->DescribeNatFwVpcDnsLst(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-CfwClient::DescribeNatRuleOverviewOutcome CfwClient::DescribeNatRuleOverview(const DescribeNatRuleOverviewRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeNatRuleOverview");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeNatRuleOverviewResponse rsp = DescribeNatRuleOverviewResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeNatRuleOverviewOutcome(rsp);
-        else
-            return DescribeNatRuleOverviewOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeNatRuleOverviewOutcome(outcome.GetError());
-    }
-}
-
-void CfwClient::DescribeNatRuleOverviewAsync(const DescribeNatRuleOverviewRequest& request, const DescribeNatRuleOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeNatRuleOverview(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-CfwClient::DescribeNatRuleOverviewOutcomeCallable CfwClient::DescribeNatRuleOverviewCallable(const DescribeNatRuleOverviewRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeNatRuleOverviewOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeNatRuleOverview(request);
         }
     );
 

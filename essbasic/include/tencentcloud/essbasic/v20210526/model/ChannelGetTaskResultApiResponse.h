@@ -115,6 +115,20 @@ ProcessTimeout - 转换文件超时
                      */
                     bool ResourceIdHasBeenSet() const;
 
+                    /**
+                     * 获取预览文件Url，有效期30分钟
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PreviewUrl 预览文件Url，有效期30分钟
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetPreviewUrl() const;
+
+                    /**
+                     * 判断参数 PreviewUrl 是否已赋值
+                     * @return PreviewUrl 是否已赋值
+                     */
+                    bool PreviewUrlHasBeenSet() const;
+
                 private:
 
                     /**
@@ -152,6 +166,13 @@ ProcessTimeout - 转换文件超时
                      */
                     std::string m_resourceId;
                     bool m_resourceIdHasBeenSet;
+
+                    /**
+                     * 预览文件Url，有效期30分钟
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_previewUrl;
+                    bool m_previewUrlHasBeenSet;
 
                 };
             }

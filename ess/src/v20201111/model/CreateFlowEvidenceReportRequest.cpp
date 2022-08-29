@@ -14,41 +14,42 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/cfw/v20190904/model/DeleteSecurityGroupAllRuleRequest.h>
+#include <tencentcloud/ess/v20201111/model/CreateFlowEvidenceReportRequest.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
-using namespace TencentCloud::Cfw::V20190904::Model;
+using namespace TencentCloud::Ess::V20201111::Model;
 using namespace std;
 
-DeleteSecurityGroupAllRuleRequest::DeleteSecurityGroupAllRuleRequest() :
-    m_directionHasBeenSet(false),
-    m_areaHasBeenSet(false)
+CreateFlowEvidenceReportRequest::CreateFlowEvidenceReportRequest() :
+    m_operatorHasBeenSet(false),
+    m_flowIdHasBeenSet(false)
 {
 }
 
-string DeleteSecurityGroupAllRuleRequest::ToJsonString() const
+string CreateFlowEvidenceReportRequest::ToJsonString() const
 {
     rapidjson::Document d;
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_directionHasBeenSet)
+    if (m_operatorHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Direction";
+        string key = "Operator";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_direction, allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_operator.ToJsonObject(d[key.c_str()], allocator);
     }
 
-    if (m_areaHasBeenSet)
+    if (m_flowIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Area";
+        string key = "FlowId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_area.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_flowId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -59,36 +60,36 @@ string DeleteSecurityGroupAllRuleRequest::ToJsonString() const
 }
 
 
-uint64_t DeleteSecurityGroupAllRuleRequest::GetDirection() const
+UserInfo CreateFlowEvidenceReportRequest::GetOperator() const
 {
-    return m_direction;
+    return m_operator;
 }
 
-void DeleteSecurityGroupAllRuleRequest::SetDirection(const uint64_t& _direction)
+void CreateFlowEvidenceReportRequest::SetOperator(const UserInfo& _operator)
 {
-    m_direction = _direction;
-    m_directionHasBeenSet = true;
+    m_operator = _operator;
+    m_operatorHasBeenSet = true;
 }
 
-bool DeleteSecurityGroupAllRuleRequest::DirectionHasBeenSet() const
+bool CreateFlowEvidenceReportRequest::OperatorHasBeenSet() const
 {
-    return m_directionHasBeenSet;
+    return m_operatorHasBeenSet;
 }
 
-string DeleteSecurityGroupAllRuleRequest::GetArea() const
+string CreateFlowEvidenceReportRequest::GetFlowId() const
 {
-    return m_area;
+    return m_flowId;
 }
 
-void DeleteSecurityGroupAllRuleRequest::SetArea(const string& _area)
+void CreateFlowEvidenceReportRequest::SetFlowId(const string& _flowId)
 {
-    m_area = _area;
-    m_areaHasBeenSet = true;
+    m_flowId = _flowId;
+    m_flowIdHasBeenSet = true;
 }
 
-bool DeleteSecurityGroupAllRuleRequest::AreaHasBeenSet() const
+bool CreateFlowEvidenceReportRequest::FlowIdHasBeenSet() const
 {
-    return m_areaHasBeenSet;
+    return m_flowIdHasBeenSet;
 }
 
 

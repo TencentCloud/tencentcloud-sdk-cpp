@@ -14,22 +14,21 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/cfw/v20190904/model/DeleteSecurityGroupAllRuleResponse.h>
+#include <tencentcloud/ess/v20201111/model/CreateFlowEvidenceReportResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Cfw::V20190904::Model;
+using namespace TencentCloud::Ess::V20201111::Model;
 using namespace std;
 
-DeleteSecurityGroupAllRuleResponse::DeleteSecurityGroupAllRuleResponse() :
-    m_statusHasBeenSet(false),
-    m_infoHasBeenSet(false)
+CreateFlowEvidenceReportResponse::CreateFlowEvidenceReportResponse() :
+    m_reportUrlHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome DeleteSecurityGroupAllRuleResponse::Deserialize(const string &payload)
+CoreInternalOutcome CreateFlowEvidenceReportResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -63,50 +62,32 @@ CoreInternalOutcome DeleteSecurityGroupAllRuleResponse::Deserialize(const string
     }
 
 
-    if (rsp.HasMember("Status") && !rsp["Status"].IsNull())
+    if (rsp.HasMember("ReportUrl") && !rsp["ReportUrl"].IsNull())
     {
-        if (!rsp["Status"].IsInt64())
+        if (!rsp["ReportUrl"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `Status` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ReportUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_status = rsp["Status"].GetInt64();
-        m_statusHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("Info") && !rsp["Info"].IsNull())
-    {
-        if (!rsp["Info"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `Info` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_info = rsp["Info"].GetInt64();
-        m_infoHasBeenSet = true;
+        m_reportUrl = string(rsp["ReportUrl"].GetString());
+        m_reportUrlHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string DeleteSecurityGroupAllRuleResponse::ToJsonString() const
+string CreateFlowEvidenceReportResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_statusHasBeenSet)
+    if (m_reportUrlHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Status";
+        string key = "ReportUrl";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_status, allocator);
-    }
-
-    if (m_infoHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Info";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_info, allocator);
+        value.AddMember(iKey, rapidjson::Value(m_reportUrl.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -121,24 +102,14 @@ string DeleteSecurityGroupAllRuleResponse::ToJsonString() const
 }
 
 
-int64_t DeleteSecurityGroupAllRuleResponse::GetStatus() const
+string CreateFlowEvidenceReportResponse::GetReportUrl() const
 {
-    return m_status;
+    return m_reportUrl;
 }
 
-bool DeleteSecurityGroupAllRuleResponse::StatusHasBeenSet() const
+bool CreateFlowEvidenceReportResponse::ReportUrlHasBeenSet() const
 {
-    return m_statusHasBeenSet;
-}
-
-int64_t DeleteSecurityGroupAllRuleResponse::GetInfo() const
-{
-    return m_info;
-}
-
-bool DeleteSecurityGroupAllRuleResponse::InfoHasBeenSet() const
-{
-    return m_infoHasBeenSet;
+    return m_reportUrlHasBeenSet;
 }
 
 

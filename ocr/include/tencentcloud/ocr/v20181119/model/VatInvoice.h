@@ -513,6 +513,42 @@ Y: 有清单 N：无清单
                      */
                     bool ItemsHasBeenSet() const;
 
+                    /**
+                     * 获取所属税局
+                     * @return TaxBureau 所属税局
+                     */
+                    std::string GetTaxBureau() const;
+
+                    /**
+                     * 设置所属税局
+                     * @param TaxBureau 所属税局
+                     */
+                    void SetTaxBureau(const std::string& _taxBureau);
+
+                    /**
+                     * 判断参数 TaxBureau 是否已赋值
+                     * @return TaxBureau 是否已赋值
+                     */
+                    bool TaxBureauHasBeenSet() const;
+
+                    /**
+                     * 获取通行费标志:Y、是;N、否
+                     * @return TrafficFreeFlag 通行费标志:Y、是;N、否
+                     */
+                    std::string GetTrafficFreeFlag() const;
+
+                    /**
+                     * 设置通行费标志:Y、是;N、否
+                     * @param TrafficFreeFlag 通行费标志:Y、是;N、否
+                     */
+                    void SetTrafficFreeFlag(const std::string& _trafficFreeFlag);
+
+                    /**
+                     * 判断参数 TrafficFreeFlag 是否已赋值
+                     * @return TrafficFreeFlag 是否已赋值
+                     */
+                    bool TrafficFreeFlagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -665,6 +701,18 @@ Y: 有清单 N：无清单
                      */
                     std::vector<VatInvoiceItem> m_items;
                     bool m_itemsHasBeenSet;
+
+                    /**
+                     * 所属税局
+                     */
+                    std::string m_taxBureau;
+                    bool m_taxBureauHasBeenSet;
+
+                    /**
+                     * 通行费标志:Y、是;N、否
+                     */
+                    std::string m_trafficFreeFlag;
+                    bool m_trafficFreeFlagHasBeenSet;
 
                 };
             }

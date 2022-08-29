@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/essbasic/v20210526/model/TaskInfo.h>
 
 
 namespace TencentCloud
@@ -93,6 +94,18 @@ namespace TencentCloud
                      */
                     bool PreviewUrlsHasBeenSet() const;
 
+                    /**
+                     * 获取复杂文档合成任务的任务信息数组
+                     * @return TaskInfos 复杂文档合成任务的任务信息数组
+                     */
+                    std::vector<TaskInfo> GetTaskInfos() const;
+
+                    /**
+                     * 判断参数 TaskInfos 是否已赋值
+                     * @return TaskInfos 是否已赋值
+                     */
+                    bool TaskInfosHasBeenSet() const;
+
                 private:
 
                     /**
@@ -119,6 +132,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_previewUrls;
                     bool m_previewUrlsHasBeenSet;
+
+                    /**
+                     * 复杂文档合成任务的任务信息数组
+                     */
+                    std::vector<TaskInfo> m_taskInfos;
+                    bool m_taskInfosHasBeenSet;
 
                 };
             }

@@ -27,7 +27,8 @@ ChannelGetTaskResultApiResponse::ChannelGetTaskResultApiResponse() :
     m_taskIdHasBeenSet(false),
     m_taskStatusHasBeenSet(false),
     m_taskMessageHasBeenSet(false),
-    m_resourceIdHasBeenSet(false)
+    m_resourceIdHasBeenSet(false),
+    m_previewUrlHasBeenSet(false)
 {
 }
 
@@ -105,6 +106,16 @@ CoreInternalOutcome ChannelGetTaskResultApiResponse::Deserialize(const string &p
         m_resourceIdHasBeenSet = true;
     }
 
+    if (rsp.HasMember("PreviewUrl") && !rsp["PreviewUrl"].IsNull())
+    {
+        if (!rsp["PreviewUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PreviewUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_previewUrl = string(rsp["PreviewUrl"].GetString());
+        m_previewUrlHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -145,6 +156,14 @@ string ChannelGetTaskResultApiResponse::ToJsonString() const
         string key = "ResourceId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_resourceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_previewUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PreviewUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_previewUrl.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -197,6 +216,16 @@ string ChannelGetTaskResultApiResponse::GetResourceId() const
 bool ChannelGetTaskResultApiResponse::ResourceIdHasBeenSet() const
 {
     return m_resourceIdHasBeenSet;
+}
+
+string ChannelGetTaskResultApiResponse::GetPreviewUrl() const
+{
+    return m_previewUrl;
+}
+
+bool ChannelGetTaskResultApiResponse::PreviewUrlHasBeenSet() const
+{
+    return m_previewUrlHasBeenSet;
 }
 
 

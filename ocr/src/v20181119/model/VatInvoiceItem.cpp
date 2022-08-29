@@ -29,7 +29,8 @@ VatInvoiceItem::VatInvoiceItem() :
     m_unitPriceHasBeenSet(false),
     m_amountWithoutTaxHasBeenSet(false),
     m_taxRateHasBeenSet(false),
-    m_taxAmountHasBeenSet(false)
+    m_taxAmountHasBeenSet(false),
+    m_taxClassifyCodeHasBeenSet(false)
 {
 }
 
@@ -128,6 +129,16 @@ CoreInternalOutcome VatInvoiceItem::Deserialize(const rapidjson::Value &value)
         m_taxAmountHasBeenSet = true;
     }
 
+    if (value.HasMember("TaxClassifyCode") && !value["TaxClassifyCode"].IsNull())
+    {
+        if (!value["TaxClassifyCode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VatInvoiceItem.TaxClassifyCode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_taxClassifyCode = string(value["TaxClassifyCode"].GetString());
+        m_taxClassifyCodeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -205,6 +216,14 @@ void VatInvoiceItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "TaxAmount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_taxAmount.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_taxClassifyCodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaxClassifyCode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_taxClassifyCode.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -352,5 +371,21 @@ void VatInvoiceItem::SetTaxAmount(const string& _taxAmount)
 bool VatInvoiceItem::TaxAmountHasBeenSet() const
 {
     return m_taxAmountHasBeenSet;
+}
+
+string VatInvoiceItem::GetTaxClassifyCode() const
+{
+    return m_taxClassifyCode;
+}
+
+void VatInvoiceItem::SetTaxClassifyCode(const string& _taxClassifyCode)
+{
+    m_taxClassifyCode = _taxClassifyCode;
+    m_taxClassifyCodeHasBeenSet = true;
+}
+
+bool VatInvoiceItem::TaxClassifyCodeHasBeenSet() const
+{
+    return m_taxClassifyCodeHasBeenSet;
 }
 

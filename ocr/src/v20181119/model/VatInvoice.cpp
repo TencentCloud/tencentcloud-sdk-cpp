@@ -43,7 +43,9 @@ VatInvoice::VatInvoice() :
     m_amountWithoutTaxHasBeenSet(false),
     m_taxAmountHasBeenSet(false),
     m_amountWithTaxHasBeenSet(false),
-    m_itemsHasBeenSet(false)
+    m_itemsHasBeenSet(false),
+    m_taxBureauHasBeenSet(false),
+    m_trafficFreeFlagHasBeenSet(false)
 {
 }
 
@@ -292,6 +294,26 @@ CoreInternalOutcome VatInvoice::Deserialize(const rapidjson::Value &value)
         m_itemsHasBeenSet = true;
     }
 
+    if (value.HasMember("TaxBureau") && !value["TaxBureau"].IsNull())
+    {
+        if (!value["TaxBureau"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VatInvoice.TaxBureau` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_taxBureau = string(value["TaxBureau"].GetString());
+        m_taxBureauHasBeenSet = true;
+    }
+
+    if (value.HasMember("TrafficFreeFlag") && !value["TrafficFreeFlag"].IsNull())
+    {
+        if (!value["TrafficFreeFlag"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VatInvoice.TrafficFreeFlag` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_trafficFreeFlag = string(value["TrafficFreeFlag"].GetString());
+        m_trafficFreeFlagHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -488,6 +510,22 @@ void VatInvoice::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_taxBureauHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaxBureau";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_taxBureau.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_trafficFreeFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TrafficFreeFlag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_trafficFreeFlag.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -859,5 +897,37 @@ void VatInvoice::SetItems(const vector<VatInvoiceItem>& _items)
 bool VatInvoice::ItemsHasBeenSet() const
 {
     return m_itemsHasBeenSet;
+}
+
+string VatInvoice::GetTaxBureau() const
+{
+    return m_taxBureau;
+}
+
+void VatInvoice::SetTaxBureau(const string& _taxBureau)
+{
+    m_taxBureau = _taxBureau;
+    m_taxBureauHasBeenSet = true;
+}
+
+bool VatInvoice::TaxBureauHasBeenSet() const
+{
+    return m_taxBureauHasBeenSet;
+}
+
+string VatInvoice::GetTrafficFreeFlag() const
+{
+    return m_trafficFreeFlag;
+}
+
+void VatInvoice::SetTrafficFreeFlag(const string& _trafficFreeFlag)
+{
+    m_trafficFreeFlag = _trafficFreeFlag;
+    m_trafficFreeFlagHasBeenSet = true;
+}
+
+bool VatInvoice::TrafficFreeFlagHasBeenSet() const
+{
+    return m_trafficFreeFlagHasBeenSet;
 }
 

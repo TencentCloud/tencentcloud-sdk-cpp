@@ -42,7 +42,8 @@ MySQLParam::MySQLParam() :
     m_outputFormatHasBeenSet(false),
     m_isTablePrefixHasBeenSet(false),
     m_includeContentChangesHasBeenSet(false),
-    m_includeQueryHasBeenSet(false)
+    m_includeQueryHasBeenSet(false),
+    m_recordWithSchemaHasBeenSet(false)
 {
 }
 
@@ -288,6 +289,16 @@ CoreInternalOutcome MySQLParam::Deserialize(const rapidjson::Value &value)
         m_includeQueryHasBeenSet = true;
     }
 
+    if (value.HasMember("RecordWithSchema") && !value["RecordWithSchema"].IsNull())
+    {
+        if (!value["RecordWithSchema"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `MySQLParam.RecordWithSchema` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_recordWithSchema = value["RecordWithSchema"].GetBool();
+        m_recordWithSchemaHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -477,6 +488,14 @@ void MySQLParam::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "IncludeQuery";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_includeQuery, allocator);
+    }
+
+    if (m_recordWithSchemaHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RecordWithSchema";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_recordWithSchema, allocator);
     }
 
 }
@@ -832,5 +851,21 @@ void MySQLParam::SetIncludeQuery(const bool& _includeQuery)
 bool MySQLParam::IncludeQueryHasBeenSet() const
 {
     return m_includeQueryHasBeenSet;
+}
+
+bool MySQLParam::GetRecordWithSchema() const
+{
+    return m_recordWithSchema;
+}
+
+void MySQLParam::SetRecordWithSchema(const bool& _recordWithSchema)
+{
+    m_recordWithSchema = _recordWithSchema;
+    m_recordWithSchemaHasBeenSet = true;
+}
+
+bool MySQLParam::RecordWithSchemaHasBeenSet() const
+{
+    return m_recordWithSchemaHasBeenSet;
 }
 

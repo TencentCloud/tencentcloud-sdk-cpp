@@ -25,7 +25,12 @@ PostgreSQLParam::PostgreSQLParam() :
     m_tableHasBeenSet(false),
     m_resourceHasBeenSet(false),
     m_pluginNameHasBeenSet(false),
-    m_snapshotModeHasBeenSet(false)
+    m_snapshotModeHasBeenSet(false),
+    m_dataFormatHasBeenSet(false),
+    m_dataTargetInsertModeHasBeenSet(false),
+    m_dataTargetPrimaryKeyFieldHasBeenSet(false),
+    m_dataTargetRecordMappingHasBeenSet(false),
+    m_dropInvalidMessageHasBeenSet(false)
 {
 }
 
@@ -84,6 +89,66 @@ CoreInternalOutcome PostgreSQLParam::Deserialize(const rapidjson::Value &value)
         m_snapshotModeHasBeenSet = true;
     }
 
+    if (value.HasMember("DataFormat") && !value["DataFormat"].IsNull())
+    {
+        if (!value["DataFormat"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PostgreSQLParam.DataFormat` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dataFormat = string(value["DataFormat"].GetString());
+        m_dataFormatHasBeenSet = true;
+    }
+
+    if (value.HasMember("DataTargetInsertMode") && !value["DataTargetInsertMode"].IsNull())
+    {
+        if (!value["DataTargetInsertMode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PostgreSQLParam.DataTargetInsertMode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dataTargetInsertMode = string(value["DataTargetInsertMode"].GetString());
+        m_dataTargetInsertModeHasBeenSet = true;
+    }
+
+    if (value.HasMember("DataTargetPrimaryKeyField") && !value["DataTargetPrimaryKeyField"].IsNull())
+    {
+        if (!value["DataTargetPrimaryKeyField"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PostgreSQLParam.DataTargetPrimaryKeyField` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dataTargetPrimaryKeyField = string(value["DataTargetPrimaryKeyField"].GetString());
+        m_dataTargetPrimaryKeyFieldHasBeenSet = true;
+    }
+
+    if (value.HasMember("DataTargetRecordMapping") && !value["DataTargetRecordMapping"].IsNull())
+    {
+        if (!value["DataTargetRecordMapping"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `PostgreSQLParam.DataTargetRecordMapping` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["DataTargetRecordMapping"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            RecordMapping item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_dataTargetRecordMapping.push_back(item);
+        }
+        m_dataTargetRecordMappingHasBeenSet = true;
+    }
+
+    if (value.HasMember("DropInvalidMessage") && !value["DropInvalidMessage"].IsNull())
+    {
+        if (!value["DropInvalidMessage"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `PostgreSQLParam.DropInvalidMessage` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_dropInvalidMessage = value["DropInvalidMessage"].GetBool();
+        m_dropInvalidMessageHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +194,53 @@ void PostgreSQLParam::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "SnapshotMode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_snapshotMode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dataFormatHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DataFormat";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dataFormat.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dataTargetInsertModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DataTargetInsertMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dataTargetInsertMode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dataTargetPrimaryKeyFieldHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DataTargetPrimaryKeyField";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dataTargetPrimaryKeyField.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dataTargetRecordMappingHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DataTargetRecordMapping";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_dataTargetRecordMapping.begin(); itr != m_dataTargetRecordMapping.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_dropInvalidMessageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DropInvalidMessage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_dropInvalidMessage, allocator);
     }
 
 }
@@ -212,5 +324,85 @@ void PostgreSQLParam::SetSnapshotMode(const string& _snapshotMode)
 bool PostgreSQLParam::SnapshotModeHasBeenSet() const
 {
     return m_snapshotModeHasBeenSet;
+}
+
+string PostgreSQLParam::GetDataFormat() const
+{
+    return m_dataFormat;
+}
+
+void PostgreSQLParam::SetDataFormat(const string& _dataFormat)
+{
+    m_dataFormat = _dataFormat;
+    m_dataFormatHasBeenSet = true;
+}
+
+bool PostgreSQLParam::DataFormatHasBeenSet() const
+{
+    return m_dataFormatHasBeenSet;
+}
+
+string PostgreSQLParam::GetDataTargetInsertMode() const
+{
+    return m_dataTargetInsertMode;
+}
+
+void PostgreSQLParam::SetDataTargetInsertMode(const string& _dataTargetInsertMode)
+{
+    m_dataTargetInsertMode = _dataTargetInsertMode;
+    m_dataTargetInsertModeHasBeenSet = true;
+}
+
+bool PostgreSQLParam::DataTargetInsertModeHasBeenSet() const
+{
+    return m_dataTargetInsertModeHasBeenSet;
+}
+
+string PostgreSQLParam::GetDataTargetPrimaryKeyField() const
+{
+    return m_dataTargetPrimaryKeyField;
+}
+
+void PostgreSQLParam::SetDataTargetPrimaryKeyField(const string& _dataTargetPrimaryKeyField)
+{
+    m_dataTargetPrimaryKeyField = _dataTargetPrimaryKeyField;
+    m_dataTargetPrimaryKeyFieldHasBeenSet = true;
+}
+
+bool PostgreSQLParam::DataTargetPrimaryKeyFieldHasBeenSet() const
+{
+    return m_dataTargetPrimaryKeyFieldHasBeenSet;
+}
+
+vector<RecordMapping> PostgreSQLParam::GetDataTargetRecordMapping() const
+{
+    return m_dataTargetRecordMapping;
+}
+
+void PostgreSQLParam::SetDataTargetRecordMapping(const vector<RecordMapping>& _dataTargetRecordMapping)
+{
+    m_dataTargetRecordMapping = _dataTargetRecordMapping;
+    m_dataTargetRecordMappingHasBeenSet = true;
+}
+
+bool PostgreSQLParam::DataTargetRecordMappingHasBeenSet() const
+{
+    return m_dataTargetRecordMappingHasBeenSet;
+}
+
+bool PostgreSQLParam::GetDropInvalidMessage() const
+{
+    return m_dropInvalidMessage;
+}
+
+void PostgreSQLParam::SetDropInvalidMessage(const bool& _dropInvalidMessage)
+{
+    m_dropInvalidMessage = _dropInvalidMessage;
+    m_dropInvalidMessageHasBeenSet = true;
+}
+
+bool PostgreSQLParam::DropInvalidMessageHasBeenSet() const
+{
+    return m_dropInvalidMessageHasBeenSet;
 }
 

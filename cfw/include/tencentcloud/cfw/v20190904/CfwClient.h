@@ -49,8 +49,6 @@
 #include <tencentcloud/cfw/v20190904/model/DeleteNatFwInstanceResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DeleteResourceGroupRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DeleteResourceGroupResponse.h>
-#include <tencentcloud/cfw/v20190904/model/DeleteSecurityGroupAllRuleRequest.h>
-#include <tencentcloud/cfw/v20190904/model/DeleteSecurityGroupAllRuleResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DeleteSecurityGroupRuleRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DeleteSecurityGroupRuleResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DeleteVpcInstanceRequest.h>
@@ -83,8 +81,6 @@
 #include <tencentcloud/cfw/v20190904/model/DescribeNatFwInstancesInfoResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeNatFwVpcDnsLstRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeNatFwVpcDnsLstResponse.h>
-#include <tencentcloud/cfw/v20190904/model/DescribeNatRuleOverviewRequest.h>
-#include <tencentcloud/cfw/v20190904/model/DescribeNatRuleOverviewResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeResourceGroupRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeResourceGroupResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeResourceGroupNewRequest.h>
@@ -218,9 +214,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteResourceGroupResponse> DeleteResourceGroupOutcome;
                 typedef std::future<DeleteResourceGroupOutcome> DeleteResourceGroupOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DeleteResourceGroupRequest&, DeleteResourceGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteResourceGroupAsyncHandler;
-                typedef Outcome<Core::Error, Model::DeleteSecurityGroupAllRuleResponse> DeleteSecurityGroupAllRuleOutcome;
-                typedef std::future<DeleteSecurityGroupAllRuleOutcome> DeleteSecurityGroupAllRuleOutcomeCallable;
-                typedef std::function<void(const CfwClient*, const Model::DeleteSecurityGroupAllRuleRequest&, DeleteSecurityGroupAllRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSecurityGroupAllRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteSecurityGroupRuleResponse> DeleteSecurityGroupRuleOutcome;
                 typedef std::future<DeleteSecurityGroupRuleOutcome> DeleteSecurityGroupRuleOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DeleteSecurityGroupRuleRequest&, DeleteSecurityGroupRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSecurityGroupRuleAsyncHandler;
@@ -269,9 +262,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeNatFwVpcDnsLstResponse> DescribeNatFwVpcDnsLstOutcome;
                 typedef std::future<DescribeNatFwVpcDnsLstOutcome> DescribeNatFwVpcDnsLstOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DescribeNatFwVpcDnsLstRequest&, DescribeNatFwVpcDnsLstOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNatFwVpcDnsLstAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeNatRuleOverviewResponse> DescribeNatRuleOverviewOutcome;
-                typedef std::future<DescribeNatRuleOverviewOutcome> DescribeNatRuleOverviewOutcomeCallable;
-                typedef std::function<void(const CfwClient*, const Model::DescribeNatRuleOverviewRequest&, DescribeNatRuleOverviewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNatRuleOverviewAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeResourceGroupResponse> DescribeResourceGroupOutcome;
                 typedef std::future<DescribeResourceGroupOutcome> DescribeResourceGroupOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DescribeResourceGroupRequest&, DescribeResourceGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeResourceGroupAsyncHandler;
@@ -513,15 +503,6 @@ namespace TencentCloud
                 DeleteResourceGroupOutcomeCallable DeleteResourceGroupCallable(const Model::DeleteResourceGroupRequest& request);
 
                 /**
-                 *删除全部规则
-                 * @param req DeleteSecurityGroupAllRuleRequest
-                 * @return DeleteSecurityGroupAllRuleOutcome
-                 */
-                DeleteSecurityGroupAllRuleOutcome DeleteSecurityGroupAllRule(const Model::DeleteSecurityGroupAllRuleRequest &request);
-                void DeleteSecurityGroupAllRuleAsync(const Model::DeleteSecurityGroupAllRuleRequest& request, const DeleteSecurityGroupAllRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DeleteSecurityGroupAllRuleOutcomeCallable DeleteSecurityGroupAllRuleCallable(const Model::DeleteSecurityGroupAllRuleRequest& request);
-
-                /**
                  *删除规则
                  * @param req DeleteSecurityGroupRuleRequest
                  * @return DeleteSecurityGroupRuleOutcome
@@ -666,15 +647,6 @@ namespace TencentCloud
                 DescribeNatFwVpcDnsLstOutcome DescribeNatFwVpcDnsLst(const Model::DescribeNatFwVpcDnsLstRequest &request);
                 void DescribeNatFwVpcDnsLstAsync(const Model::DescribeNatFwVpcDnsLstRequest& request, const DescribeNatFwVpcDnsLstAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeNatFwVpcDnsLstOutcomeCallable DescribeNatFwVpcDnsLstCallable(const Model::DescribeNatFwVpcDnsLstRequest& request);
-
-                /**
-                 *nat规则列表概况
-                 * @param req DescribeNatRuleOverviewRequest
-                 * @return DescribeNatRuleOverviewOutcome
-                 */
-                DescribeNatRuleOverviewOutcome DescribeNatRuleOverview(const Model::DescribeNatRuleOverviewRequest &request);
-                void DescribeNatRuleOverviewAsync(const Model::DescribeNatRuleOverviewRequest& request, const DescribeNatRuleOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeNatRuleOverviewOutcomeCallable DescribeNatRuleOverviewCallable(const Model::DescribeNatRuleOverviewRequest& request);
 
                 /**
                  *DescribeResourceGroup资产中心资产树信息

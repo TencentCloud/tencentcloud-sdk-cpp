@@ -341,6 +341,49 @@ EssClient::CreateFlowByFilesOutcomeCallable EssClient::CreateFlowByFilesCallable
     return task->get_future();
 }
 
+EssClient::CreateFlowEvidenceReportOutcome EssClient::CreateFlowEvidenceReport(const CreateFlowEvidenceReportRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateFlowEvidenceReport");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateFlowEvidenceReportResponse rsp = CreateFlowEvidenceReportResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateFlowEvidenceReportOutcome(rsp);
+        else
+            return CreateFlowEvidenceReportOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateFlowEvidenceReportOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::CreateFlowEvidenceReportAsync(const CreateFlowEvidenceReportRequest& request, const CreateFlowEvidenceReportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateFlowEvidenceReport(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssClient::CreateFlowEvidenceReportOutcomeCallable EssClient::CreateFlowEvidenceReportCallable(const CreateFlowEvidenceReportRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateFlowEvidenceReportOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateFlowEvidenceReport(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssClient::CreateFlowSignReviewOutcome EssClient::CreateFlowSignReview(const CreateFlowSignReviewRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateFlowSignReview");

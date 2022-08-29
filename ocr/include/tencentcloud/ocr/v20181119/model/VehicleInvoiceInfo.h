@@ -370,6 +370,24 @@ namespace TencentCloud
                      */
                     bool SellerTelHasBeenSet() const;
 
+                    /**
+                     * 获取购方身份证
+                     * @return BuyerNo 购方身份证
+                     */
+                    std::string GetBuyerNo() const;
+
+                    /**
+                     * 设置购方身份证
+                     * @param BuyerNo 购方身份证
+                     */
+                    void SetBuyerNo(const std::string& _buyerNo);
+
+                    /**
+                     * 判断参数 BuyerNo 是否已赋值
+                     * @return BuyerNo 是否已赋值
+                     */
+                    bool BuyerNoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -479,6 +497,12 @@ namespace TencentCloud
                      */
                     std::string m_sellerTel;
                     bool m_sellerTelHasBeenSet;
+
+                    /**
+                     * 购方身份证
+                     */
+                    std::string m_buyerNo;
+                    bool m_buyerNoHasBeenSet;
 
                 };
             }

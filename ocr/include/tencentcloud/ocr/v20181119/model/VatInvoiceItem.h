@@ -208,6 +208,24 @@ namespace TencentCloud
                      */
                     bool TaxAmountHasBeenSet() const;
 
+                    /**
+                     * 获取税收分类编码
+                     * @return TaxClassifyCode 税收分类编码
+                     */
+                    std::string GetTaxClassifyCode() const;
+
+                    /**
+                     * 设置税收分类编码
+                     * @param TaxClassifyCode 税收分类编码
+                     */
+                    void SetTaxClassifyCode(const std::string& _taxClassifyCode);
+
+                    /**
+                     * 判断参数 TaxClassifyCode 是否已赋值
+                     * @return TaxClassifyCode 是否已赋值
+                     */
+                    bool TaxClassifyCodeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -263,6 +281,12 @@ namespace TencentCloud
                      */
                     std::string m_taxAmount;
                     bool m_taxAmountHasBeenSet;
+
+                    /**
+                     * 税收分类编码
+                     */
+                    std::string m_taxClassifyCode;
+                    bool m_taxClassifyCodeHasBeenSet;
 
                 };
             }

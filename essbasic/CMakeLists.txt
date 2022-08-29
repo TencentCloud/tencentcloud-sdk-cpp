@@ -37,6 +37,7 @@ set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/CreateSignUrlsRequest.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateMultiFlowSignQRCodeRequest.h
   include/tencentcloud/essbasic/v20210526/model/AuthFailMessage.h
+  include/tencentcloud/essbasic/v20210526/model/CreateChannelFlowEvidenceReportRequest.h
   include/tencentcloud/essbasic/v20210526/model/DescribeFlowDetailInfoRequest.h
   include/tencentcloud/essbasic/v20210526/model/ChannelGetTaskResultApiResponse.h
   include/tencentcloud/essbasic/v20210526/model/ProxyOrganizationOperator.h
@@ -67,6 +68,7 @@ set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/DescribeResourceUrlsByFlowsRequest.h
   include/tencentcloud/essbasic/v20210526/model/DownloadFlowInfo.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCancelMultiFlowSignQRCodeRequest.h
+  include/tencentcloud/essbasic/v20210526/model/CreateChannelFlowEvidenceReportResponse.h
   include/tencentcloud/essbasic/v20210526/model/SyncFailReason.h
   include/tencentcloud/essbasic/v20210526/model/PrepareFlowsResponse.h
   include/tencentcloud/essbasic/v20210526/model/DescribeUsageRequest.h
@@ -83,6 +85,7 @@ set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/FlowApproverDetail.h
   include/tencentcloud/essbasic/v20210526/model/FlowInfo.h
   include/tencentcloud/essbasic/v20210526/model/SignUrlInfo.h
+  include/tencentcloud/essbasic/v20210526/model/TaskInfo.h
   include/tencentcloud/essbasic/v20210526/model/CcInfo.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCancelMultiFlowSignQRCodeResponse.h
   include/tencentcloud/essbasic/v20210526/model/DescribeFlowDetailInfoResponse.h
@@ -234,6 +237,7 @@ set(essbasic_src
   src/v20210526/model/CreateSignUrlsRequest.cpp
   src/v20210526/model/ChannelCreateMultiFlowSignQRCodeRequest.cpp
   src/v20210526/model/AuthFailMessage.cpp
+  src/v20210526/model/CreateChannelFlowEvidenceReportRequest.cpp
   src/v20210526/model/DescribeFlowDetailInfoRequest.cpp
   src/v20210526/model/ChannelGetTaskResultApiResponse.cpp
   src/v20210526/model/ProxyOrganizationOperator.cpp
@@ -264,6 +268,7 @@ set(essbasic_src
   src/v20210526/model/DescribeResourceUrlsByFlowsRequest.cpp
   src/v20210526/model/DownloadFlowInfo.cpp
   src/v20210526/model/ChannelCancelMultiFlowSignQRCodeRequest.cpp
+  src/v20210526/model/CreateChannelFlowEvidenceReportResponse.cpp
   src/v20210526/model/SyncFailReason.cpp
   src/v20210526/model/PrepareFlowsResponse.cpp
   src/v20210526/model/DescribeUsageRequest.cpp
@@ -280,6 +285,7 @@ set(essbasic_src
   src/v20210526/model/FlowApproverDetail.cpp
   src/v20210526/model/FlowInfo.cpp
   src/v20210526/model/SignUrlInfo.cpp
+  src/v20210526/model/TaskInfo.cpp
   src/v20210526/model/CcInfo.cpp
   src/v20210526/model/ChannelCancelMultiFlowSignQRCodeResponse.cpp
   src/v20210526/model/DescribeFlowDetailInfoResponse.cpp

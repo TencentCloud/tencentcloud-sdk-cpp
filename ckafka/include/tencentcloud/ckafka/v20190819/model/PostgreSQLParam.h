@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/ckafka/v20190819/model/RecordMapping.h>
 
 
 namespace TencentCloud
@@ -136,6 +137,96 @@ namespace TencentCloud
                      */
                     bool SnapshotModeHasBeenSet() const;
 
+                    /**
+                     * 获取上游数据格式(JSON/Debezium), 当数据库同步模式为默认字段匹配时,必填
+                     * @return DataFormat 上游数据格式(JSON/Debezium), 当数据库同步模式为默认字段匹配时,必填
+                     */
+                    std::string GetDataFormat() const;
+
+                    /**
+                     * 设置上游数据格式(JSON/Debezium), 当数据库同步模式为默认字段匹配时,必填
+                     * @param DataFormat 上游数据格式(JSON/Debezium), 当数据库同步模式为默认字段匹配时,必填
+                     */
+                    void SetDataFormat(const std::string& _dataFormat);
+
+                    /**
+                     * 判断参数 DataFormat 是否已赋值
+                     * @return DataFormat 是否已赋值
+                     */
+                    bool DataFormatHasBeenSet() const;
+
+                    /**
+                     * 获取"INSERT" 表示使用 Insert 模式插入，"UPSERT" 表示使用 Upsert 模式插入
+                     * @return DataTargetInsertMode "INSERT" 表示使用 Insert 模式插入，"UPSERT" 表示使用 Upsert 模式插入
+                     */
+                    std::string GetDataTargetInsertMode() const;
+
+                    /**
+                     * 设置"INSERT" 表示使用 Insert 模式插入，"UPSERT" 表示使用 Upsert 模式插入
+                     * @param DataTargetInsertMode "INSERT" 表示使用 Insert 模式插入，"UPSERT" 表示使用 Upsert 模式插入
+                     */
+                    void SetDataTargetInsertMode(const std::string& _dataTargetInsertMode);
+
+                    /**
+                     * 判断参数 DataTargetInsertMode 是否已赋值
+                     * @return DataTargetInsertMode 是否已赋值
+                     */
+                    bool DataTargetInsertModeHasBeenSet() const;
+
+                    /**
+                     * 获取当 "DataInsertMode"="UPSERT" 时，传入当前 upsert 时依赖的主键
+                     * @return DataTargetPrimaryKeyField 当 "DataInsertMode"="UPSERT" 时，传入当前 upsert 时依赖的主键
+                     */
+                    std::string GetDataTargetPrimaryKeyField() const;
+
+                    /**
+                     * 设置当 "DataInsertMode"="UPSERT" 时，传入当前 upsert 时依赖的主键
+                     * @param DataTargetPrimaryKeyField 当 "DataInsertMode"="UPSERT" 时，传入当前 upsert 时依赖的主键
+                     */
+                    void SetDataTargetPrimaryKeyField(const std::string& _dataTargetPrimaryKeyField);
+
+                    /**
+                     * 判断参数 DataTargetPrimaryKeyField 是否已赋值
+                     * @return DataTargetPrimaryKeyField 是否已赋值
+                     */
+                    bool DataTargetPrimaryKeyFieldHasBeenSet() const;
+
+                    /**
+                     * 获取表与消息间的映射关系
+                     * @return DataTargetRecordMapping 表与消息间的映射关系
+                     */
+                    std::vector<RecordMapping> GetDataTargetRecordMapping() const;
+
+                    /**
+                     * 设置表与消息间的映射关系
+                     * @param DataTargetRecordMapping 表与消息间的映射关系
+                     */
+                    void SetDataTargetRecordMapping(const std::vector<RecordMapping>& _dataTargetRecordMapping);
+
+                    /**
+                     * 判断参数 DataTargetRecordMapping 是否已赋值
+                     * @return DataTargetRecordMapping 是否已赋值
+                     */
+                    bool DataTargetRecordMappingHasBeenSet() const;
+
+                    /**
+                     * 获取是否抛弃解析失败的消息，默认为true
+                     * @return DropInvalidMessage 是否抛弃解析失败的消息，默认为true
+                     */
+                    bool GetDropInvalidMessage() const;
+
+                    /**
+                     * 设置是否抛弃解析失败的消息，默认为true
+                     * @param DropInvalidMessage 是否抛弃解析失败的消息，默认为true
+                     */
+                    void SetDropInvalidMessage(const bool& _dropInvalidMessage);
+
+                    /**
+                     * 判断参数 DropInvalidMessage 是否已赋值
+                     * @return DropInvalidMessage 是否已赋值
+                     */
+                    bool DropInvalidMessageHasBeenSet() const;
+
                 private:
 
                     /**
@@ -167,6 +258,36 @@ namespace TencentCloud
                      */
                     std::string m_snapshotMode;
                     bool m_snapshotModeHasBeenSet;
+
+                    /**
+                     * 上游数据格式(JSON/Debezium), 当数据库同步模式为默认字段匹配时,必填
+                     */
+                    std::string m_dataFormat;
+                    bool m_dataFormatHasBeenSet;
+
+                    /**
+                     * "INSERT" 表示使用 Insert 模式插入，"UPSERT" 表示使用 Upsert 模式插入
+                     */
+                    std::string m_dataTargetInsertMode;
+                    bool m_dataTargetInsertModeHasBeenSet;
+
+                    /**
+                     * 当 "DataInsertMode"="UPSERT" 时，传入当前 upsert 时依赖的主键
+                     */
+                    std::string m_dataTargetPrimaryKeyField;
+                    bool m_dataTargetPrimaryKeyFieldHasBeenSet;
+
+                    /**
+                     * 表与消息间的映射关系
+                     */
+                    std::vector<RecordMapping> m_dataTargetRecordMapping;
+                    bool m_dataTargetRecordMappingHasBeenSet;
+
+                    /**
+                     * 是否抛弃解析失败的消息，默认为true
+                     */
+                    bool m_dropInvalidMessage;
+                    bool m_dropInvalidMessageHasBeenSet;
 
                 };
             }
