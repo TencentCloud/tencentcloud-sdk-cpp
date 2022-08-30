@@ -84,6 +84,7 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/DescribePrometheusInstanceInitStatusResponse.h
   include/tencentcloud/tke/v20180525/model/DisableEventPersistenceResponse.h
   include/tencentcloud/tke/v20180525/model/UpdateEKSContainerInstanceRequest.h
+  include/tencentcloud/tke/v20180525/model/CUDNN.h
   include/tencentcloud/tke/v20180525/model/GetMostSuitableImageCacheResponse.h
   include/tencentcloud/tke/v20180525/model/DescribeEdgeAvailableExtraArgsResponse.h
   include/tencentcloud/tke/v20180525/model/CreatePrometheusRecordRuleYamlRequest.h
@@ -111,6 +112,7 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/DescribePrometheusTemplateSyncRequest.h
   include/tencentcloud/tke/v20180525/model/UpgradeAbleInstancesItem.h
   include/tencentcloud/tke/v20180525/model/UpgradeClusterInstancesResponse.h
+  include/tencentcloud/tke/v20180525/model/CustomDriver.h
   include/tencentcloud/tke/v20180525/model/DescribeClusterAsGroupOptionRequest.h
   include/tencentcloud/tke/v20180525/model/DescribePrometheusAgentInstancesResponse.h
   include/tencentcloud/tke/v20180525/model/AddExistedInstancesRequest.h
@@ -180,6 +182,7 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/RouteTableConflict.h
   include/tencentcloud/tke/v20180525/model/DeleteClusterInstancesRequest.h
   include/tencentcloud/tke/v20180525/model/UpgradeNodeResetParam.h
+  include/tencentcloud/tke/v20180525/model/DriverVersion.h
   include/tencentcloud/tke/v20180525/model/CreateClusterInstancesRequest.h
   include/tencentcloud/tke/v20180525/model/ClusterCIDRSettings.h
   include/tencentcloud/tke/v20180525/model/Taint.h
@@ -485,6 +488,7 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/DescribeClusterCommonNamesResponse.h
   include/tencentcloud/tke/v20180525/model/DeleteECMInstancesResponse.h
   include/tencentcloud/tke/v20180525/model/PrometheusTemplate.h
+  include/tencentcloud/tke/v20180525/model/GPUArgs.h
   include/tencentcloud/tke/v20180525/model/PrometheusInstanceOverview.h
   include/tencentcloud/tke/v20180525/model/ScaleInMaster.h
   include/tencentcloud/tke/v20180525/model/RunPrometheusInstanceRequest.h
@@ -557,6 +561,7 @@ set(tke_src
   src/v20180525/model/DescribePrometheusInstanceInitStatusResponse.cpp
   src/v20180525/model/DisableEventPersistenceResponse.cpp
   src/v20180525/model/UpdateEKSContainerInstanceRequest.cpp
+  src/v20180525/model/CUDNN.cpp
   src/v20180525/model/GetMostSuitableImageCacheResponse.cpp
   src/v20180525/model/DescribeEdgeAvailableExtraArgsResponse.cpp
   src/v20180525/model/CreatePrometheusRecordRuleYamlRequest.cpp
@@ -584,6 +589,7 @@ set(tke_src
   src/v20180525/model/DescribePrometheusTemplateSyncRequest.cpp
   src/v20180525/model/UpgradeAbleInstancesItem.cpp
   src/v20180525/model/UpgradeClusterInstancesResponse.cpp
+  src/v20180525/model/CustomDriver.cpp
   src/v20180525/model/DescribeClusterAsGroupOptionRequest.cpp
   src/v20180525/model/DescribePrometheusAgentInstancesResponse.cpp
   src/v20180525/model/AddExistedInstancesRequest.cpp
@@ -653,6 +659,7 @@ set(tke_src
   src/v20180525/model/RouteTableConflict.cpp
   src/v20180525/model/DeleteClusterInstancesRequest.cpp
   src/v20180525/model/UpgradeNodeResetParam.cpp
+  src/v20180525/model/DriverVersion.cpp
   src/v20180525/model/CreateClusterInstancesRequest.cpp
   src/v20180525/model/ClusterCIDRSettings.cpp
   src/v20180525/model/Taint.cpp
@@ -958,6 +965,7 @@ set(tke_src
   src/v20180525/model/DescribeClusterCommonNamesResponse.cpp
   src/v20180525/model/DeleteECMInstancesResponse.cpp
   src/v20180525/model/PrometheusTemplate.cpp
+  src/v20180525/model/GPUArgs.cpp
   src/v20180525/model/PrometheusInstanceOverview.cpp
   src/v20180525/model/ScaleInMaster.cpp
   src/v20180525/model/RunPrometheusInstanceRequest.cpp

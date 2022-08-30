@@ -23,7 +23,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Teo::V20220106::Model;
 using namespace std;
 
-DescribeDDoSPolicyResponse::DescribeDDoSPolicyResponse()
+DescribeDDoSPolicyResponse::DescribeDDoSPolicyResponse() :
+    m_ddosRuleHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,23 @@ CoreInternalOutcome DescribeDDoSPolicyResponse::Deserialize(const string &payloa
     }
 
 
+    if (rsp.HasMember("DdosRule") && !rsp["DdosRule"].IsNull())
+    {
+        if (!rsp["DdosRule"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `DdosRule` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_ddosRule.Deserialize(rsp["DdosRule"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_ddosRuleHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +88,15 @@ string DescribeDDoSPolicyResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_ddosRuleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DdosRule";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_ddosRule.ToJsonObject(value[key.c_str()], allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +109,15 @@ string DescribeDDoSPolicyResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+DdosRule DescribeDDoSPolicyResponse::GetDdosRule() const
+{
+    return m_ddosRule;
+}
+
+bool DescribeDDoSPolicyResponse::DdosRuleHasBeenSet() const
+{
+    return m_ddosRuleHasBeenSet;
+}
 
 

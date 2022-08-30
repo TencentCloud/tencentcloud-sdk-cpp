@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 任务实例
+                * 任务实例。
                 */
                 class TaskResponseInfo : public AbstractModel
                 {
@@ -101,14 +101,14 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取计算时长，单位： ms。
-                     * @return UsedTime 计算时长，单位： ms。
+                     * 获取计算耗时，单位： ms
+                     * @return UsedTime 计算耗时，单位： ms
                      */
                     int64_t GetUsedTime() const;
 
                     /**
-                     * 设置计算时长，单位： ms。
-                     * @param UsedTime 计算时长，单位： ms。
+                     * 设置计算耗时，单位： ms
+                     * @param UsedTime 计算耗时，单位： ms
                      */
                     void SetUsedTime(const int64_t& _usedTime);
 
@@ -646,6 +646,28 @@ namespace TencentCloud
                      */
                     bool UiUrlHasBeenSet() const;
 
+                    /**
+                     * 获取任务耗时，单位： ms
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TotalTime 任务耗时，单位： ms
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetTotalTime() const;
+
+                    /**
+                     * 设置任务耗时，单位： ms
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TotalTime 任务耗时，单位： ms
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTotalTime(const int64_t& _totalTime);
+
+                    /**
+                     * 判断参数 TotalTime 是否已赋值
+                     * @return TotalTime 是否已赋值
+                     */
+                    bool TotalTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -667,7 +689,7 @@ namespace TencentCloud
                     bool m_idHasBeenSet;
 
                     /**
-                     * 计算时长，单位： ms。
+                     * 计算耗时，单位： ms
                      */
                     int64_t m_usedTime;
                     bool m_usedTimeHasBeenSet;
@@ -842,6 +864,13 @@ namespace TencentCloud
                      */
                     std::string m_uiUrl;
                     bool m_uiUrlHasBeenSet;
+
+                    /**
+                     * 任务耗时，单位： ms
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_totalTime;
+                    bool m_totalTimeHasBeenSet;
 
                 };
             }

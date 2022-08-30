@@ -30,7 +30,8 @@ CreateLifecycleHookRequest::CreateLifecycleHookRequest() :
     m_heartbeatTimeoutHasBeenSet(false),
     m_notificationMetadataHasBeenSet(false),
     m_notificationTargetHasBeenSet(false),
-    m_lifecycleTransitionTypeHasBeenSet(false)
+    m_lifecycleTransitionTypeHasBeenSet(false),
+    m_lifecycleCommandHasBeenSet(false)
 {
 }
 
@@ -104,6 +105,15 @@ string CreateLifecycleHookRequest::ToJsonString() const
         string key = "LifecycleTransitionType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_lifecycleTransitionType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_lifecycleCommandHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LifecycleCommand";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_lifecycleCommand.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -240,6 +250,22 @@ void CreateLifecycleHookRequest::SetLifecycleTransitionType(const string& _lifec
 bool CreateLifecycleHookRequest::LifecycleTransitionTypeHasBeenSet() const
 {
     return m_lifecycleTransitionTypeHasBeenSet;
+}
+
+LifecycleCommand CreateLifecycleHookRequest::GetLifecycleCommand() const
+{
+    return m_lifecycleCommand;
+}
+
+void CreateLifecycleHookRequest::SetLifecycleCommand(const LifecycleCommand& _lifecycleCommand)
+{
+    m_lifecycleCommand = _lifecycleCommand;
+    m_lifecycleCommandHasBeenSet = true;
+}
+
+bool CreateLifecycleHookRequest::LifecycleCommandHasBeenSet() const
+{
+    return m_lifecycleCommandHasBeenSet;
 }
 
 

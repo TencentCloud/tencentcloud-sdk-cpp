@@ -161,6 +161,8 @@
 #include <tencentcloud/antiddos/v20200309/model/DescribeListWaterPrintConfigResponse.h>
 #include <tencentcloud/antiddos/v20200309/model/DescribeNewL7RulesRequest.h>
 #include <tencentcloud/antiddos/v20200309/model/DescribeNewL7RulesResponse.h>
+#include <tencentcloud/antiddos/v20200309/model/DescribeNewL7RulesErrHealthRequest.h>
+#include <tencentcloud/antiddos/v20200309/model/DescribeNewL7RulesErrHealthResponse.h>
 #include <tencentcloud/antiddos/v20200309/model/DescribeOverviewAttackTrendRequest.h>
 #include <tencentcloud/antiddos/v20200309/model/DescribeOverviewAttackTrendResponse.h>
 #include <tencentcloud/antiddos/v20200309/model/DescribeOverviewCCTrendRequest.h>
@@ -426,6 +428,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeNewL7RulesResponse> DescribeNewL7RulesOutcome;
                 typedef std::future<DescribeNewL7RulesOutcome> DescribeNewL7RulesOutcomeCallable;
                 typedef std::function<void(const AntiddosClient*, const Model::DescribeNewL7RulesRequest&, DescribeNewL7RulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNewL7RulesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeNewL7RulesErrHealthResponse> DescribeNewL7RulesErrHealthOutcome;
+                typedef std::future<DescribeNewL7RulesErrHealthOutcome> DescribeNewL7RulesErrHealthOutcomeCallable;
+                typedef std::function<void(const AntiddosClient*, const Model::DescribeNewL7RulesErrHealthRequest&, DescribeNewL7RulesErrHealthOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNewL7RulesErrHealthAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeOverviewAttackTrendResponse> DescribeOverviewAttackTrendOutcome;
                 typedef std::future<DescribeOverviewAttackTrendOutcome> DescribeOverviewAttackTrendOutcomeCallable;
                 typedef std::function<void(const AntiddosClient*, const Model::DescribeOverviewAttackTrendRequest&, DescribeOverviewAttackTrendOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOverviewAttackTrendAsyncHandler;
@@ -1117,6 +1122,15 @@ namespace TencentCloud
                 DescribeNewL7RulesOutcome DescribeNewL7Rules(const Model::DescribeNewL7RulesRequest &request);
                 void DescribeNewL7RulesAsync(const Model::DescribeNewL7RulesRequest& request, const DescribeNewL7RulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeNewL7RulesOutcomeCallable DescribeNewL7RulesCallable(const Model::DescribeNewL7RulesRequest& request);
+
+                /**
+                 *获取L7转发规则健康检查异常结果
+                 * @param req DescribeNewL7RulesErrHealthRequest
+                 * @return DescribeNewL7RulesErrHealthOutcome
+                 */
+                DescribeNewL7RulesErrHealthOutcome DescribeNewL7RulesErrHealth(const Model::DescribeNewL7RulesErrHealthRequest &request);
+                void DescribeNewL7RulesErrHealthAsync(const Model::DescribeNewL7RulesErrHealthRequest& request, const DescribeNewL7RulesErrHealthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeNewL7RulesErrHealthOutcomeCallable DescribeNewL7RulesErrHealthCallable(const Model::DescribeNewL7RulesErrHealthRequest& request);
 
                 /**
                  *拉取防护概览攻击趋势

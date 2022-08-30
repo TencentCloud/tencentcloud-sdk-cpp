@@ -30,7 +30,8 @@ LifecycleHook::LifecycleHook() :
     m_notificationMetadataHasBeenSet(false),
     m_createdTimeHasBeenSet(false),
     m_notificationTargetHasBeenSet(false),
-    m_lifecycleTransitionTypeHasBeenSet(false)
+    m_lifecycleTransitionTypeHasBeenSet(false),
+    m_lifecycleCommandHasBeenSet(false)
 {
 }
 
@@ -146,6 +147,23 @@ CoreInternalOutcome LifecycleHook::Deserialize(const rapidjson::Value &value)
         m_lifecycleTransitionTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("LifecycleCommand") && !value["LifecycleCommand"].IsNull())
+    {
+        if (!value["LifecycleCommand"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `LifecycleHook.LifecycleCommand` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_lifecycleCommand.Deserialize(value["LifecycleCommand"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_lifecycleCommandHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -232,6 +250,15 @@ void LifecycleHook::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "LifecycleTransitionType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_lifecycleTransitionType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_lifecycleCommandHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LifecycleCommand";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_lifecycleCommand.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -395,5 +422,21 @@ void LifecycleHook::SetLifecycleTransitionType(const string& _lifecycleTransitio
 bool LifecycleHook::LifecycleTransitionTypeHasBeenSet() const
 {
     return m_lifecycleTransitionTypeHasBeenSet;
+}
+
+LifecycleCommand LifecycleHook::GetLifecycleCommand() const
+{
+    return m_lifecycleCommand;
+}
+
+void LifecycleHook::SetLifecycleCommand(const LifecycleCommand& _lifecycleCommand)
+{
+    m_lifecycleCommand = _lifecycleCommand;
+    m_lifecycleCommandHasBeenSet = true;
+}
+
+bool LifecycleHook::LifecycleCommandHasBeenSet() const
+{
+    return m_lifecycleCommandHasBeenSet;
 }
 

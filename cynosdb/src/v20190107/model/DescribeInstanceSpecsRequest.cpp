@@ -23,7 +23,8 @@ using namespace TencentCloud::Cynosdb::V20190107::Model;
 using namespace std;
 
 DescribeInstanceSpecsRequest::DescribeInstanceSpecsRequest() :
-    m_dbTypeHasBeenSet(false)
+    m_dbTypeHasBeenSet(false),
+    m_includeZoneStocksHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,14 @@ string DescribeInstanceSpecsRequest::ToJsonString() const
         string key = "DbType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_dbType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_includeZoneStocksHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IncludeZoneStocks";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_includeZoneStocks, allocator);
     }
 
 
@@ -64,6 +73,22 @@ void DescribeInstanceSpecsRequest::SetDbType(const string& _dbType)
 bool DescribeInstanceSpecsRequest::DbTypeHasBeenSet() const
 {
     return m_dbTypeHasBeenSet;
+}
+
+bool DescribeInstanceSpecsRequest::GetIncludeZoneStocks() const
+{
+    return m_includeZoneStocks;
+}
+
+void DescribeInstanceSpecsRequest::SetIncludeZoneStocks(const bool& _includeZoneStocks)
+{
+    m_includeZoneStocks = _includeZoneStocks;
+    m_includeZoneStocksHasBeenSet = true;
+}
+
+bool DescribeInstanceSpecsRequest::IncludeZoneStocksHasBeenSet() const
+{
+    return m_includeZoneStocksHasBeenSet;
 }
 
 

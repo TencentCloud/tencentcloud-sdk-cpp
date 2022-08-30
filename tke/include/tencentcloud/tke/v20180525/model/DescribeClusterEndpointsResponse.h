@@ -107,6 +107,48 @@ namespace TencentCloud
                      */
                     bool ClusterExternalACLHasBeenSet() const;
 
+                    /**
+                     * 获取外网域名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ClusterExternalDomain 外网域名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetClusterExternalDomain() const;
+
+                    /**
+                     * 判断参数 ClusterExternalDomain 是否已赋值
+                     * @return ClusterExternalDomain 是否已赋值
+                     */
+                    bool ClusterExternalDomainHasBeenSet() const;
+
+                    /**
+                     * 获取内网域名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ClusterIntranetDomain 内网域名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetClusterIntranetDomain() const;
+
+                    /**
+                     * 判断参数 ClusterIntranetDomain 是否已赋值
+                     * @return ClusterIntranetDomain 是否已赋值
+                     */
+                    bool ClusterIntranetDomainHasBeenSet() const;
+
+                    /**
+                     * 获取外网安全组
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SecurityGroup 外网安全组
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetSecurityGroup() const;
+
+                    /**
+                     * 判断参数 SecurityGroup 是否已赋值
+                     * @return SecurityGroup 是否已赋值
+                     */
+                    bool SecurityGroupHasBeenSet() const;
+
                 private:
 
                     /**
@@ -140,6 +182,27 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_clusterExternalACL;
                     bool m_clusterExternalACLHasBeenSet;
+
+                    /**
+                     * 外网域名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_clusterExternalDomain;
+                    bool m_clusterExternalDomainHasBeenSet;
+
+                    /**
+                     * 内网域名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_clusterIntranetDomain;
+                    bool m_clusterIntranetDomainHasBeenSet;
+
+                    /**
+                     * 外网安全组
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_securityGroup;
+                    bool m_securityGroupHasBeenSet;
 
                 };
             }

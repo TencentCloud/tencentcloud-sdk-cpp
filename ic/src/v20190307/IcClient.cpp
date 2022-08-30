@@ -255,6 +255,49 @@ IcClient::ModifyUserCardRemarkOutcomeCallable IcClient::ModifyUserCardRemarkCall
     return task->get_future();
 }
 
+IcClient::PayForExtendDataOutcome IcClient::PayForExtendData(const PayForExtendDataRequest &request)
+{
+    auto outcome = MakeRequest(request, "PayForExtendData");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        PayForExtendDataResponse rsp = PayForExtendDataResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return PayForExtendDataOutcome(rsp);
+        else
+            return PayForExtendDataOutcome(o.GetError());
+    }
+    else
+    {
+        return PayForExtendDataOutcome(outcome.GetError());
+    }
+}
+
+void IcClient::PayForExtendDataAsync(const PayForExtendDataRequest& request, const PayForExtendDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->PayForExtendData(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IcClient::PayForExtendDataOutcomeCallable IcClient::PayForExtendDataCallable(const PayForExtendDataRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<PayForExtendDataOutcome()>>(
+        [this, request]()
+        {
+            return this->PayForExtendData(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IcClient::RenewCardsOutcome IcClient::RenewCards(const RenewCardsRequest &request)
 {
     auto outcome = MakeRequest(request, "RenewCards");

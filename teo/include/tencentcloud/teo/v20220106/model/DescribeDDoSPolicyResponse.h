@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/teo/v20220106/model/DdosRule.h>
 
 
 namespace TencentCloud
@@ -43,7 +44,25 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取DDoS防护配置
+                     * @return DdosRule DDoS防护配置
+                     */
+                    DdosRule GetDdosRule() const;
+
+                    /**
+                     * 判断参数 DdosRule 是否已赋值
+                     * @return DdosRule 是否已赋值
+                     */
+                    bool DdosRuleHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * DDoS防护配置
+                     */
+                    DdosRule m_ddosRule;
+                    bool m_ddosRuleHasBeenSet;
 
                 };
             }

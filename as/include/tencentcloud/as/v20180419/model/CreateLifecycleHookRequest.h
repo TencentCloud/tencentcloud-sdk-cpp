@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/as/v20180419/model/NotificationTarget.h>
+#include <tencentcloud/as/v20180419/model/LifecycleCommand.h>
 
 
 namespace TencentCloud
@@ -187,6 +188,24 @@ namespace TencentCloud
                      */
                     bool LifecycleTransitionTypeHasBeenSet() const;
 
+                    /**
+                     * 获取远程命令执行对象。NotificationTarget和CommandInfo参数互斥，二者不可同时指定。
+                     * @return LifecycleCommand 远程命令执行对象。NotificationTarget和CommandInfo参数互斥，二者不可同时指定。
+                     */
+                    LifecycleCommand GetLifecycleCommand() const;
+
+                    /**
+                     * 设置远程命令执行对象。NotificationTarget和CommandInfo参数互斥，二者不可同时指定。
+                     * @param LifecycleCommand 远程命令执行对象。NotificationTarget和CommandInfo参数互斥，二者不可同时指定。
+                     */
+                    void SetLifecycleCommand(const LifecycleCommand& _lifecycleCommand);
+
+                    /**
+                     * 判断参数 LifecycleCommand 是否已赋值
+                     * @return LifecycleCommand 是否已赋值
+                     */
+                    bool LifecycleCommandHasBeenSet() const;
+
                 private:
 
                     /**
@@ -236,6 +255,12 @@ namespace TencentCloud
                      */
                     std::string m_lifecycleTransitionType;
                     bool m_lifecycleTransitionTypeHasBeenSet;
+
+                    /**
+                     * 远程命令执行对象。NotificationTarget和CommandInfo参数互斥，二者不可同时指定。
+                     */
+                    LifecycleCommand m_lifecycleCommand;
+                    bool m_lifecycleCommandHasBeenSet;
 
                 };
             }

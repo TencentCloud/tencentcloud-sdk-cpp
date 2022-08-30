@@ -39,7 +39,9 @@ JobConfig::JobConfig() :
     m_taskManagerSpecHasBeenSet(false),
     m_clsLogsetIdHasBeenSet(false),
     m_clsTopicIdHasBeenSet(false),
-    m_pythonVersionHasBeenSet(false)
+    m_pythonVersionHasBeenSet(false),
+    m_autoRecoverHasBeenSet(false),
+    m_logLevelHasBeenSet(false)
 {
 }
 
@@ -258,6 +260,26 @@ CoreInternalOutcome JobConfig::Deserialize(const rapidjson::Value &value)
         m_pythonVersionHasBeenSet = true;
     }
 
+    if (value.HasMember("AutoRecover") && !value["AutoRecover"].IsNull())
+    {
+        if (!value["AutoRecover"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `JobConfig.AutoRecover` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_autoRecover = value["AutoRecover"].GetInt64();
+        m_autoRecoverHasBeenSet = true;
+    }
+
+    if (value.HasMember("LogLevel") && !value["LogLevel"].IsNull())
+    {
+        if (!value["LogLevel"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `JobConfig.LogLevel` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_logLevel = string(value["LogLevel"].GetString());
+        m_logLevelHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -429,6 +451,22 @@ void JobConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "PythonVersion";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_pythonVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_autoRecoverHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoRecover";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_autoRecover, allocator);
+    }
+
+    if (m_logLevelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LogLevel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_logLevel.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -736,5 +774,37 @@ void JobConfig::SetPythonVersion(const string& _pythonVersion)
 bool JobConfig::PythonVersionHasBeenSet() const
 {
     return m_pythonVersionHasBeenSet;
+}
+
+int64_t JobConfig::GetAutoRecover() const
+{
+    return m_autoRecover;
+}
+
+void JobConfig::SetAutoRecover(const int64_t& _autoRecover)
+{
+    m_autoRecover = _autoRecover;
+    m_autoRecoverHasBeenSet = true;
+}
+
+bool JobConfig::AutoRecoverHasBeenSet() const
+{
+    return m_autoRecoverHasBeenSet;
+}
+
+string JobConfig::GetLogLevel() const
+{
+    return m_logLevel;
+}
+
+void JobConfig::SetLogLevel(const string& _logLevel)
+{
+    m_logLevel = _logLevel;
+    m_logLevelHasBeenSet = true;
+}
+
+bool JobConfig::LogLevelHasBeenSet() const
+{
+    return m_logLevelHasBeenSet;
 }
 

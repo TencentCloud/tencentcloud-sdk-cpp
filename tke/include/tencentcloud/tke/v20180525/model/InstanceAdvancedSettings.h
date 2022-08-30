@@ -27,6 +27,7 @@
 #include <tencentcloud/tke/v20180525/model/Label.h>
 #include <tencentcloud/tke/v20180525/model/DataDisk.h>
 #include <tencentcloud/tke/v20180525/model/InstanceExtraArgs.h>
+#include <tencentcloud/tke/v20180525/model/GPUArgs.h>
 #include <tencentcloud/tke/v20180525/model/Taint.h>
 
 
@@ -227,6 +228,28 @@ namespace TencentCloud
                     bool DesiredPodNumberHasBeenSet() const;
 
                     /**
+                     * 获取GPU驱动相关参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return GPUArgs GPU驱动相关参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    GPUArgs GetGPUArgs() const;
+
+                    /**
+                     * 设置GPU驱动相关参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param GPUArgs GPU驱动相关参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetGPUArgs(const GPUArgs& _gPUArgs);
+
+                    /**
+                     * 判断参数 GPUArgs 是否已赋值
+                     * @return GPUArgs 是否已赋值
+                     */
+                    bool GPUArgsHasBeenSet() const;
+
+                    /**
                      * 获取base64 编码的用户脚本，在初始化节点之前执行，目前只对添加已有节点生效
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PreStartUserScript base64 编码的用户脚本，在初始化节点之前执行，目前只对添加已有节点生效
@@ -327,6 +350,13 @@ namespace TencentCloud
                      */
                     int64_t m_desiredPodNumber;
                     bool m_desiredPodNumberHasBeenSet;
+
+                    /**
+                     * GPU驱动相关参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    GPUArgs m_gPUArgs;
+                    bool m_gPUArgsHasBeenSet;
 
                     /**
                      * base64 编码的用户脚本，在初始化节点之前执行，目前只对添加已有节点生效

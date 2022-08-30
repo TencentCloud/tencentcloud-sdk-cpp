@@ -23,6 +23,8 @@ using namespace std;
 LifecycleActionResultInfo::LifecycleActionResultInfo() :
     m_lifecycleHookIdHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
+    m_invocationIdHasBeenSet(false),
+    m_invokeCommandResultHasBeenSet(false),
     m_notificationResultHasBeenSet(false),
     m_lifecycleActionResultHasBeenSet(false),
     m_resultReasonHasBeenSet(false)
@@ -52,6 +54,26 @@ CoreInternalOutcome LifecycleActionResultInfo::Deserialize(const rapidjson::Valu
         }
         m_instanceId = string(value["InstanceId"].GetString());
         m_instanceIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("InvocationId") && !value["InvocationId"].IsNull())
+    {
+        if (!value["InvocationId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LifecycleActionResultInfo.InvocationId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_invocationId = string(value["InvocationId"].GetString());
+        m_invocationIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("InvokeCommandResult") && !value["InvokeCommandResult"].IsNull())
+    {
+        if (!value["InvokeCommandResult"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LifecycleActionResultInfo.InvokeCommandResult` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_invokeCommandResult = string(value["InvokeCommandResult"].GetString());
+        m_invokeCommandResultHasBeenSet = true;
     }
 
     if (value.HasMember("NotificationResult") && !value["NotificationResult"].IsNull())
@@ -105,6 +127,22 @@ void LifecycleActionResultInfo::ToJsonObject(rapidjson::Value &value, rapidjson:
         string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_invocationIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InvocationId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_invocationId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_invokeCommandResultHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InvokeCommandResult";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_invokeCommandResult.c_str(), allocator).Move(), allocator);
     }
 
     if (m_notificationResultHasBeenSet)
@@ -164,6 +202,38 @@ void LifecycleActionResultInfo::SetInstanceId(const string& _instanceId)
 bool LifecycleActionResultInfo::InstanceIdHasBeenSet() const
 {
     return m_instanceIdHasBeenSet;
+}
+
+string LifecycleActionResultInfo::GetInvocationId() const
+{
+    return m_invocationId;
+}
+
+void LifecycleActionResultInfo::SetInvocationId(const string& _invocationId)
+{
+    m_invocationId = _invocationId;
+    m_invocationIdHasBeenSet = true;
+}
+
+bool LifecycleActionResultInfo::InvocationIdHasBeenSet() const
+{
+    return m_invocationIdHasBeenSet;
+}
+
+string LifecycleActionResultInfo::GetInvokeCommandResult() const
+{
+    return m_invokeCommandResult;
+}
+
+void LifecycleActionResultInfo::SetInvokeCommandResult(const string& _invokeCommandResult)
+{
+    m_invokeCommandResult = _invokeCommandResult;
+    m_invokeCommandResultHasBeenSet = true;
+}
+
+bool LifecycleActionResultInfo::InvokeCommandResultHasBeenSet() const
+{
+    return m_invokeCommandResultHasBeenSet;
 }
 
 string LifecycleActionResultInfo::GetNotificationResult() const

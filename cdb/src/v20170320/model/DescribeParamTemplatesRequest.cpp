@@ -23,7 +23,10 @@ using namespace TencentCloud::Cdb::V20170320::Model;
 using namespace std;
 
 DescribeParamTemplatesRequest::DescribeParamTemplatesRequest() :
-    m_engineVersionsHasBeenSet(false)
+    m_engineVersionsHasBeenSet(false),
+    m_engineTypesHasBeenSet(false),
+    m_templateNamesHasBeenSet(false),
+    m_templateIdsHasBeenSet(false)
 {
 }
 
@@ -44,6 +47,45 @@ string DescribeParamTemplatesRequest::ToJsonString() const
         for (auto itr = m_engineVersions.begin(); itr != m_engineVersions.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_engineTypesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EngineTypes";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_engineTypes.begin(); itr != m_engineTypes.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_templateNamesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TemplateNames";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_templateNames.begin(); itr != m_templateNames.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_templateIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TemplateIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_templateIds.begin(); itr != m_templateIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
     }
 
@@ -69,6 +111,54 @@ void DescribeParamTemplatesRequest::SetEngineVersions(const vector<string>& _eng
 bool DescribeParamTemplatesRequest::EngineVersionsHasBeenSet() const
 {
     return m_engineVersionsHasBeenSet;
+}
+
+vector<string> DescribeParamTemplatesRequest::GetEngineTypes() const
+{
+    return m_engineTypes;
+}
+
+void DescribeParamTemplatesRequest::SetEngineTypes(const vector<string>& _engineTypes)
+{
+    m_engineTypes = _engineTypes;
+    m_engineTypesHasBeenSet = true;
+}
+
+bool DescribeParamTemplatesRequest::EngineTypesHasBeenSet() const
+{
+    return m_engineTypesHasBeenSet;
+}
+
+vector<string> DescribeParamTemplatesRequest::GetTemplateNames() const
+{
+    return m_templateNames;
+}
+
+void DescribeParamTemplatesRequest::SetTemplateNames(const vector<string>& _templateNames)
+{
+    m_templateNames = _templateNames;
+    m_templateNamesHasBeenSet = true;
+}
+
+bool DescribeParamTemplatesRequest::TemplateNamesHasBeenSet() const
+{
+    return m_templateNamesHasBeenSet;
+}
+
+vector<int64_t> DescribeParamTemplatesRequest::GetTemplateIds() const
+{
+    return m_templateIds;
+}
+
+void DescribeParamTemplatesRequest::SetTemplateIds(const vector<int64_t>& _templateIds)
+{
+    m_templateIds = _templateIds;
+    m_templateIdsHasBeenSet = true;
+}
+
+bool DescribeParamTemplatesRequest::TemplateIdsHasBeenSet() const
+{
+    return m_templateIdsHasBeenSet;
 }
 
 

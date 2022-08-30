@@ -40,7 +40,8 @@ CreateJobConfigRequest::CreateJobConfigRequest() :
     m_logCollectTypeHasBeenSet(false),
     m_pythonVersionHasBeenSet(false),
     m_workSpaceIdHasBeenSet(false),
-    m_logLevelHasBeenSet(false)
+    m_logLevelHasBeenSet(false),
+    m_autoRecoverHasBeenSet(false)
 {
 }
 
@@ -207,6 +208,14 @@ string CreateJobConfigRequest::ToJsonString() const
         string key = "LogLevel";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_logLevel.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_autoRecoverHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoRecover";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_autoRecover, allocator);
     }
 
 
@@ -503,6 +512,22 @@ void CreateJobConfigRequest::SetLogLevel(const string& _logLevel)
 bool CreateJobConfigRequest::LogLevelHasBeenSet() const
 {
     return m_logLevelHasBeenSet;
+}
+
+int64_t CreateJobConfigRequest::GetAutoRecover() const
+{
+    return m_autoRecover;
+}
+
+void CreateJobConfigRequest::SetAutoRecover(const int64_t& _autoRecover)
+{
+    m_autoRecover = _autoRecover;
+    m_autoRecoverHasBeenSet = true;
+}
+
+bool CreateJobConfigRequest::AutoRecoverHasBeenSet() const
+{
+    return m_autoRecoverHasBeenSet;
 }
 
 

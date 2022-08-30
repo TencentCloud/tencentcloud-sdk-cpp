@@ -130,6 +130,28 @@ namespace TencentCloud
                      */
                     bool ContentKeyHasBeenSet() const;
 
+                    /**
+                     * 获取指定消息中的某字段内容作为cls日志的时间。
+字段内容格式需要是秒级时间戳
+                     * @return TimeField 指定消息中的某字段内容作为cls日志的时间。
+字段内容格式需要是秒级时间戳
+                     */
+                    std::string GetTimeField() const;
+
+                    /**
+                     * 设置指定消息中的某字段内容作为cls日志的时间。
+字段内容格式需要是秒级时间戳
+                     * @param TimeField 指定消息中的某字段内容作为cls日志的时间。
+字段内容格式需要是秒级时间戳
+                     */
+                    void SetTimeField(const std::string& _timeField);
+
+                    /**
+                     * 判断参数 TimeField 是否已赋值
+                     * @return TimeField 是否已赋值
+                     */
+                    bool TimeFieldHasBeenSet() const;
+
                 private:
 
                     /**
@@ -158,6 +180,13 @@ namespace TencentCloud
                      */
                     std::string m_contentKey;
                     bool m_contentKeyHasBeenSet;
+
+                    /**
+                     * 指定消息中的某字段内容作为cls日志的时间。
+字段内容格式需要是秒级时间戳
+                     */
+                    std::string m_timeField;
+                    bool m_timeFieldHasBeenSet;
 
                 };
             }

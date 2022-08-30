@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cynosdb/v20190107/model/ZoneStockInfo.h>
 
 
 namespace TencentCloud
@@ -118,6 +119,100 @@ namespace TencentCloud
                      */
                     bool MinStorageSizeHasBeenSet() const;
 
+                    /**
+                     * 获取是否有库存
+                     * @return HasStock 是否有库存
+                     */
+                    bool GetHasStock() const;
+
+                    /**
+                     * 设置是否有库存
+                     * @param HasStock 是否有库存
+                     */
+                    void SetHasStock(const bool& _hasStock);
+
+                    /**
+                     * 判断参数 HasStock 是否已赋值
+                     * @return HasStock 是否已赋值
+                     */
+                    bool HasStockHasBeenSet() const;
+
+                    /**
+                     * 获取机器类型
+                     * @return MachineType 机器类型
+                     */
+                    std::string GetMachineType() const;
+
+                    /**
+                     * 设置机器类型
+                     * @param MachineType 机器类型
+                     */
+                    void SetMachineType(const std::string& _machineType);
+
+                    /**
+                     * 判断参数 MachineType 是否已赋值
+                     * @return MachineType 是否已赋值
+                     */
+                    bool MachineTypeHasBeenSet() const;
+
+                    /**
+                     * 获取最大IOPS
+                     * @return MaxIops 最大IOPS
+                     */
+                    int64_t GetMaxIops() const;
+
+                    /**
+                     * 设置最大IOPS
+                     * @param MaxIops 最大IOPS
+                     */
+                    void SetMaxIops(const int64_t& _maxIops);
+
+                    /**
+                     * 判断参数 MaxIops 是否已赋值
+                     * @return MaxIops 是否已赋值
+                     */
+                    bool MaxIopsHasBeenSet() const;
+
+                    /**
+                     * 获取最大IO带宽
+                     * @return MaxIoBandWidth 最大IO带宽
+                     */
+                    int64_t GetMaxIoBandWidth() const;
+
+                    /**
+                     * 设置最大IO带宽
+                     * @param MaxIoBandWidth 最大IO带宽
+                     */
+                    void SetMaxIoBandWidth(const int64_t& _maxIoBandWidth);
+
+                    /**
+                     * 判断参数 MaxIoBandWidth 是否已赋值
+                     * @return MaxIoBandWidth 是否已赋值
+                     */
+                    bool MaxIoBandWidthHasBeenSet() const;
+
+                    /**
+                     * 获取地域库存信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ZoneStockInfos 地域库存信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<ZoneStockInfo> GetZoneStockInfos() const;
+
+                    /**
+                     * 设置地域库存信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ZoneStockInfos 地域库存信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetZoneStockInfos(const std::vector<ZoneStockInfo>& _zoneStockInfos);
+
+                    /**
+                     * 判断参数 ZoneStockInfos 是否已赋值
+                     * @return ZoneStockInfos 是否已赋值
+                     */
+                    bool ZoneStockInfosHasBeenSet() const;
+
                 private:
 
                     /**
@@ -143,6 +238,37 @@ namespace TencentCloud
                      */
                     uint64_t m_minStorageSize;
                     bool m_minStorageSizeHasBeenSet;
+
+                    /**
+                     * 是否有库存
+                     */
+                    bool m_hasStock;
+                    bool m_hasStockHasBeenSet;
+
+                    /**
+                     * 机器类型
+                     */
+                    std::string m_machineType;
+                    bool m_machineTypeHasBeenSet;
+
+                    /**
+                     * 最大IOPS
+                     */
+                    int64_t m_maxIops;
+                    bool m_maxIopsHasBeenSet;
+
+                    /**
+                     * 最大IO带宽
+                     */
+                    int64_t m_maxIoBandWidth;
+                    bool m_maxIoBandWidthHasBeenSet;
+
+                    /**
+                     * 地域库存信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<ZoneStockInfo> m_zoneStockInfos;
+                    bool m_zoneStockInfosHasBeenSet;
 
                 };
             }

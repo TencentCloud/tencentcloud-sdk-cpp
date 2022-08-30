@@ -1631,6 +1631,49 @@ IotvideoClient::DescribeCloudStoragePackageConsumeStatsOutcomeCallable IotvideoC
     return task->get_future();
 }
 
+IotvideoClient::DescribeCloudStorageStreamDataOutcome IotvideoClient::DescribeCloudStorageStreamData(const DescribeCloudStorageStreamDataRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCloudStorageStreamData");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCloudStorageStreamDataResponse rsp = DescribeCloudStorageStreamDataResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCloudStorageStreamDataOutcome(rsp);
+        else
+            return DescribeCloudStorageStreamDataOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCloudStorageStreamDataOutcome(outcome.GetError());
+    }
+}
+
+void IotvideoClient::DescribeCloudStorageStreamDataAsync(const DescribeCloudStorageStreamDataRequest& request, const DescribeCloudStorageStreamDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCloudStorageStreamData(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotvideoClient::DescribeCloudStorageStreamDataOutcomeCallable IotvideoClient::DescribeCloudStorageStreamDataCallable(const DescribeCloudStorageStreamDataRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCloudStorageStreamDataOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCloudStorageStreamData(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotvideoClient::DescribeCloudStorageThumbnailOutcome IotvideoClient::DescribeCloudStorageThumbnail(const DescribeCloudStorageThumbnailRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeCloudStorageThumbnail");

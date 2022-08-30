@@ -41,6 +41,8 @@ CreateOpenBankPaymentOrderRequest::CreateOpenBankPaymentOrderRequest() :
     m_attachmentHasBeenSet(false),
     m_profitShareFlagHasBeenSet(false),
     m_profitShareInfoListHasBeenSet(false),
+    m_settlementRulesInfoHasBeenSet(false),
+    m_externalPaymentDataHasBeenSet(false),
     m_remarkHasBeenSet(false),
     m_environmentHasBeenSet(false)
 {
@@ -206,6 +208,23 @@ string CreateOpenBankPaymentOrderRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_settlementRulesInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SettlementRulesInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_settlementRulesInfo.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_externalPaymentDataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExternalPaymentData";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_externalPaymentData.c_str(), allocator).Move(), allocator);
     }
 
     if (m_remarkHasBeenSet)
@@ -518,6 +537,38 @@ void CreateOpenBankPaymentOrderRequest::SetProfitShareInfoList(const vector<Open
 bool CreateOpenBankPaymentOrderRequest::ProfitShareInfoListHasBeenSet() const
 {
     return m_profitShareInfoListHasBeenSet;
+}
+
+OpenBankSettlementRulesInfo CreateOpenBankPaymentOrderRequest::GetSettlementRulesInfo() const
+{
+    return m_settlementRulesInfo;
+}
+
+void CreateOpenBankPaymentOrderRequest::SetSettlementRulesInfo(const OpenBankSettlementRulesInfo& _settlementRulesInfo)
+{
+    m_settlementRulesInfo = _settlementRulesInfo;
+    m_settlementRulesInfoHasBeenSet = true;
+}
+
+bool CreateOpenBankPaymentOrderRequest::SettlementRulesInfoHasBeenSet() const
+{
+    return m_settlementRulesInfoHasBeenSet;
+}
+
+string CreateOpenBankPaymentOrderRequest::GetExternalPaymentData() const
+{
+    return m_externalPaymentData;
+}
+
+void CreateOpenBankPaymentOrderRequest::SetExternalPaymentData(const string& _externalPaymentData)
+{
+    m_externalPaymentData = _externalPaymentData;
+    m_externalPaymentDataHasBeenSet = true;
+}
+
+bool CreateOpenBankPaymentOrderRequest::ExternalPaymentDataHasBeenSet() const
+{
+    return m_externalPaymentDataHasBeenSet;
 }
 
 string CreateOpenBankPaymentOrderRequest::GetRemark() const

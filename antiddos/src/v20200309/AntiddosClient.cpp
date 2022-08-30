@@ -3007,6 +3007,49 @@ AntiddosClient::DescribeNewL7RulesOutcomeCallable AntiddosClient::DescribeNewL7R
     return task->get_future();
 }
 
+AntiddosClient::DescribeNewL7RulesErrHealthOutcome AntiddosClient::DescribeNewL7RulesErrHealth(const DescribeNewL7RulesErrHealthRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeNewL7RulesErrHealth");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeNewL7RulesErrHealthResponse rsp = DescribeNewL7RulesErrHealthResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeNewL7RulesErrHealthOutcome(rsp);
+        else
+            return DescribeNewL7RulesErrHealthOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeNewL7RulesErrHealthOutcome(outcome.GetError());
+    }
+}
+
+void AntiddosClient::DescribeNewL7RulesErrHealthAsync(const DescribeNewL7RulesErrHealthRequest& request, const DescribeNewL7RulesErrHealthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeNewL7RulesErrHealth(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AntiddosClient::DescribeNewL7RulesErrHealthOutcomeCallable AntiddosClient::DescribeNewL7RulesErrHealthCallable(const DescribeNewL7RulesErrHealthRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeNewL7RulesErrHealthOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeNewL7RulesErrHealth(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 AntiddosClient::DescribeOverviewAttackTrendOutcome AntiddosClient::DescribeOverviewAttackTrend(const DescribeOverviewAttackTrendRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeOverviewAttackTrend");

@@ -126,6 +126,7 @@ set(antiddos_public_header_model
   include/tencentcloud/antiddos/v20200309/model/CreateCcGeoIPBlockConfigRequest.h
   include/tencentcloud/antiddos/v20200309/model/DeletePortAclConfigResponse.h
   include/tencentcloud/antiddos/v20200309/model/CreateDDoSSpeedLimitConfigResponse.h
+  include/tencentcloud/antiddos/v20200309/model/DescribeNewL7RulesErrHealthResponse.h
   include/tencentcloud/antiddos/v20200309/model/DeletePacketFilterConfigRequest.h
   include/tencentcloud/antiddos/v20200309/model/ModifyL7RulesEdgeRequest.h
   include/tencentcloud/antiddos/v20200309/model/DescribeListDDoSGeoIPBlockConfigResponse.h
@@ -204,6 +205,7 @@ set(antiddos_public_header_model
   include/tencentcloud/antiddos/v20200309/model/InsL7Rules.h
   include/tencentcloud/antiddos/v20200309/model/DescribeCCReqLimitPolicyListResponse.h
   include/tencentcloud/antiddos/v20200309/model/DescribeListDDoSAIResponse.h
+  include/tencentcloud/antiddos/v20200309/model/DescribeNewL7RulesErrHealthRequest.h
   include/tencentcloud/antiddos/v20200309/model/ModifyCCPrecisionPolicyResponse.h
   include/tencentcloud/antiddos/v20200309/model/CcGeoIPBlockConfig.h
   include/tencentcloud/antiddos/v20200309/model/ModifyDDoSSpeedLimitConfigRequest.h
@@ -380,6 +382,7 @@ set(antiddos_src
   src/v20200309/model/CreateCcGeoIPBlockConfigRequest.cpp
   src/v20200309/model/DeletePortAclConfigResponse.cpp
   src/v20200309/model/CreateDDoSSpeedLimitConfigResponse.cpp
+  src/v20200309/model/DescribeNewL7RulesErrHealthResponse.cpp
   src/v20200309/model/DeletePacketFilterConfigRequest.cpp
   src/v20200309/model/ModifyL7RulesEdgeRequest.cpp
   src/v20200309/model/DescribeListDDoSGeoIPBlockConfigResponse.cpp
@@ -458,6 +461,7 @@ set(antiddos_src
   src/v20200309/model/InsL7Rules.cpp
   src/v20200309/model/DescribeCCReqLimitPolicyListResponse.cpp
   src/v20200309/model/DescribeListDDoSAIResponse.cpp
+  src/v20200309/model/DescribeNewL7RulesErrHealthRequest.cpp
   src/v20200309/model/ModifyCCPrecisionPolicyResponse.cpp
   src/v20200309/model/CcGeoIPBlockConfig.cpp
   src/v20200309/model/ModifyDDoSSpeedLimitConfigRequest.cpp

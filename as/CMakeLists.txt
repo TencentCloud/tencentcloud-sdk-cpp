@@ -86,6 +86,7 @@ set(as_public_header_model
   include/tencentcloud/as/v20180419/model/UpgradeLifecycleHookResponse.h
   include/tencentcloud/as/v20180419/model/InstanceTag.h
   include/tencentcloud/as/v20180419/model/ModifyLifecycleHookResponse.h
+  include/tencentcloud/as/v20180419/model/LifecycleCommand.h
   include/tencentcloud/as/v20180419/model/DescribeAutoScalingAdvicesResponse.h
   include/tencentcloud/as/v20180419/model/CreateAutoScalingGroupRequest.h
   include/tencentcloud/as/v20180419/model/DeleteScheduledActionResponse.h
@@ -228,6 +229,7 @@ set(as_src
   src/v20180419/model/UpgradeLifecycleHookResponse.cpp
   src/v20180419/model/InstanceTag.cpp
   src/v20180419/model/ModifyLifecycleHookResponse.cpp
+  src/v20180419/model/LifecycleCommand.cpp
   src/v20180419/model/DescribeAutoScalingAdvicesResponse.cpp
   src/v20180419/model/CreateAutoScalingGroupRequest.cpp
   src/v20180419/model/DeleteScheduledActionResponse.cpp

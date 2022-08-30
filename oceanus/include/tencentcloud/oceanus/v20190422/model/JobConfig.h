@@ -454,6 +454,50 @@ namespace TencentCloud
                      */
                     bool PythonVersionHasBeenSet() const;
 
+                    /**
+                     * 获取Oceanus 平台恢复作业开关 1:开启 -1: 关闭
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AutoRecover Oceanus 平台恢复作业开关 1:开启 -1: 关闭
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetAutoRecover() const;
+
+                    /**
+                     * 设置Oceanus 平台恢复作业开关 1:开启 -1: 关闭
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AutoRecover Oceanus 平台恢复作业开关 1:开启 -1: 关闭
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAutoRecover(const int64_t& _autoRecover);
+
+                    /**
+                     * 判断参数 AutoRecover 是否已赋值
+                     * @return AutoRecover 是否已赋值
+                     */
+                    bool AutoRecoverHasBeenSet() const;
+
+                    /**
+                     * 获取日志级别
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LogLevel 日志级别
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetLogLevel() const;
+
+                    /**
+                     * 设置日志级别
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param LogLevel 日志级别
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetLogLevel(const std::string& _logLevel);
+
+                    /**
+                     * 判断参数 LogLevel 是否已赋值
+                     * @return LogLevel 是否已赋值
+                     */
+                    bool LogLevelHasBeenSet() const;
+
                 private:
 
                     /**
@@ -585,6 +629,20 @@ namespace TencentCloud
                      */
                     std::string m_pythonVersion;
                     bool m_pythonVersionHasBeenSet;
+
+                    /**
+                     * Oceanus 平台恢复作业开关 1:开启 -1: 关闭
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_autoRecover;
+                    bool m_autoRecoverHasBeenSet;
+
+                    /**
+                     * 日志级别
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_logLevel;
+                    bool m_logLevelHasBeenSet;
 
                 };
             }

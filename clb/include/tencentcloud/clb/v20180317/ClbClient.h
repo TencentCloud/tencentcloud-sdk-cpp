@@ -93,6 +93,8 @@
 #include <tencentcloud/clb/v20180317/model/DescribeCustomizedConfigListResponse.h>
 #include <tencentcloud/clb/v20180317/model/DescribeExclusiveClustersRequest.h>
 #include <tencentcloud/clb/v20180317/model/DescribeExclusiveClustersResponse.h>
+#include <tencentcloud/clb/v20180317/model/DescribeIdleLoadBalancersRequest.h>
+#include <tencentcloud/clb/v20180317/model/DescribeIdleLoadBalancersResponse.h>
 #include <tencentcloud/clb/v20180317/model/DescribeLBListenersRequest.h>
 #include <tencentcloud/clb/v20180317/model/DescribeLBListenersResponse.h>
 #include <tencentcloud/clb/v20180317/model/DescribeListenersRequest.h>
@@ -292,6 +294,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeExclusiveClustersResponse> DescribeExclusiveClustersOutcome;
                 typedef std::future<DescribeExclusiveClustersOutcome> DescribeExclusiveClustersOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::DescribeExclusiveClustersRequest&, DescribeExclusiveClustersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeExclusiveClustersAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeIdleLoadBalancersResponse> DescribeIdleLoadBalancersOutcome;
+                typedef std::future<DescribeIdleLoadBalancersOutcome> DescribeIdleLoadBalancersOutcomeCallable;
+                typedef std::function<void(const ClbClient*, const Model::DescribeIdleLoadBalancersRequest&, DescribeIdleLoadBalancersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIdleLoadBalancersAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeLBListenersResponse> DescribeLBListenersOutcome;
                 typedef std::future<DescribeLBListenersOutcome> DescribeLBListenersOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::DescribeLBListenersRequest&, DescribeLBListenersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLBListenersAsyncHandler;
@@ -757,6 +762,15 @@ BGP带宽包必须传带宽包id
                 DescribeExclusiveClustersOutcome DescribeExclusiveClusters(const Model::DescribeExclusiveClustersRequest &request);
                 void DescribeExclusiveClustersAsync(const Model::DescribeExclusiveClustersRequest& request, const DescribeExclusiveClustersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeExclusiveClustersOutcomeCallable DescribeExclusiveClustersCallable(const Model::DescribeExclusiveClustersRequest& request);
+
+                /**
+                 *闲置实例是指创建超过7天后付费实例，且没有创建规则或创建规则没有绑定子机的负载均衡实例。
+                 * @param req DescribeIdleLoadBalancersRequest
+                 * @return DescribeIdleLoadBalancersOutcome
+                 */
+                DescribeIdleLoadBalancersOutcome DescribeIdleLoadBalancers(const Model::DescribeIdleLoadBalancersRequest &request);
+                void DescribeIdleLoadBalancersAsync(const Model::DescribeIdleLoadBalancersRequest& request, const DescribeIdleLoadBalancersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeIdleLoadBalancersOutcomeCallable DescribeIdleLoadBalancersCallable(const Model::DescribeIdleLoadBalancersRequest& request);
 
                 /**
                  *查询后端云主机或弹性网卡绑定的负载均衡，支持弹性网卡和cvm查询。

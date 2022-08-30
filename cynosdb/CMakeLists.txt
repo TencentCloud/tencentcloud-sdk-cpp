@@ -164,6 +164,7 @@ set(cynosdb_public_header_model
   include/tencentcloud/cynosdb/v20190107/model/DescribeBinlogsRequest.h
   include/tencentcloud/cynosdb/v20190107/model/InputAccount.h
   include/tencentcloud/cynosdb/v20190107/model/DisassociateSecurityGroupsResponse.h
+  include/tencentcloud/cynosdb/v20190107/model/ZoneStockInfo.h
   include/tencentcloud/cynosdb/v20190107/model/InquirePriceRenewResponse.h
   )
 
@@ -314,6 +315,7 @@ set(cynosdb_src
   src/v20190107/model/DescribeBinlogsRequest.cpp
   src/v20190107/model/InputAccount.cpp
   src/v20190107/model/DisassociateSecurityGroupsResponse.cpp
+  src/v20190107/model/ZoneStockInfo.cpp
   src/v20190107/model/InquirePriceRenewResponse.cpp
   )
 

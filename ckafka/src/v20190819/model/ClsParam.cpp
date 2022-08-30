@@ -24,7 +24,8 @@ ClsParam::ClsParam() :
     m_decodeJsonHasBeenSet(false),
     m_resourceHasBeenSet(false),
     m_logSetHasBeenSet(false),
-    m_contentKeyHasBeenSet(false)
+    m_contentKeyHasBeenSet(false),
+    m_timeFieldHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome ClsParam::Deserialize(const rapidjson::Value &value)
         m_contentKeyHasBeenSet = true;
     }
 
+    if (value.HasMember("TimeField") && !value["TimeField"].IsNull())
+    {
+        if (!value["TimeField"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClsParam.TimeField` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_timeField = string(value["TimeField"].GetString());
+        m_timeFieldHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +121,14 @@ void ClsParam::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "ContentKey";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_contentKey.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_timeFieldHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TimeField";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_timeField.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -177,5 +196,21 @@ void ClsParam::SetContentKey(const string& _contentKey)
 bool ClsParam::ContentKeyHasBeenSet() const
 {
     return m_contentKeyHasBeenSet;
+}
+
+string ClsParam::GetTimeField() const
+{
+    return m_timeField;
+}
+
+void ClsParam::SetTimeField(const string& _timeField)
+{
+    m_timeField = _timeField;
+    m_timeFieldHasBeenSet = true;
+}
+
+bool ClsParam::TimeFieldHasBeenSet() const
+{
+    return m_timeFieldHasBeenSet;
 }
 

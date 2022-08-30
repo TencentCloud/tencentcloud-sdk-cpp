@@ -29,6 +29,7 @@ InstanceAdvancedSettings::InstanceAdvancedSettings() :
     m_dataDisksHasBeenSet(false),
     m_extraArgsHasBeenSet(false),
     m_desiredPodNumberHasBeenSet(false),
+    m_gPUArgsHasBeenSet(false),
     m_preStartUserScriptHasBeenSet(false),
     m_taintsHasBeenSet(false)
 {
@@ -146,6 +147,23 @@ CoreInternalOutcome InstanceAdvancedSettings::Deserialize(const rapidjson::Value
         m_desiredPodNumberHasBeenSet = true;
     }
 
+    if (value.HasMember("GPUArgs") && !value["GPUArgs"].IsNull())
+    {
+        if (!value["GPUArgs"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceAdvancedSettings.GPUArgs` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_gPUArgs.Deserialize(value["GPUArgs"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_gPUArgsHasBeenSet = true;
+    }
+
     if (value.HasMember("PreStartUserScript") && !value["PreStartUserScript"].IsNull())
     {
         if (!value["PreStartUserScript"].IsString())
@@ -260,6 +278,15 @@ void InstanceAdvancedSettings::ToJsonObject(rapidjson::Value &value, rapidjson::
         string key = "DesiredPodNumber";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_desiredPodNumber, allocator);
+    }
+
+    if (m_gPUArgsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GPUArgs";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_gPUArgs.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_preStartUserScriptHasBeenSet)
@@ -414,6 +441,22 @@ void InstanceAdvancedSettings::SetDesiredPodNumber(const int64_t& _desiredPodNum
 bool InstanceAdvancedSettings::DesiredPodNumberHasBeenSet() const
 {
     return m_desiredPodNumberHasBeenSet;
+}
+
+GPUArgs InstanceAdvancedSettings::GetGPUArgs() const
+{
+    return m_gPUArgs;
+}
+
+void InstanceAdvancedSettings::SetGPUArgs(const GPUArgs& _gPUArgs)
+{
+    m_gPUArgs = _gPUArgs;
+    m_gPUArgsHasBeenSet = true;
+}
+
+bool InstanceAdvancedSettings::GPUArgsHasBeenSet() const
+{
+    return m_gPUArgsHasBeenSet;
 }
 
 string InstanceAdvancedSettings::GetPreStartUserScript() const

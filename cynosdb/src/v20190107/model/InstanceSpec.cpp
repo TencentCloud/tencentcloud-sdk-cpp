@@ -24,7 +24,12 @@ InstanceSpec::InstanceSpec() :
     m_cpuHasBeenSet(false),
     m_memoryHasBeenSet(false),
     m_maxStorageSizeHasBeenSet(false),
-    m_minStorageSizeHasBeenSet(false)
+    m_minStorageSizeHasBeenSet(false),
+    m_hasStockHasBeenSet(false),
+    m_machineTypeHasBeenSet(false),
+    m_maxIopsHasBeenSet(false),
+    m_maxIoBandWidthHasBeenSet(false),
+    m_zoneStockInfosHasBeenSet(false)
 {
 }
 
@@ -73,6 +78,66 @@ CoreInternalOutcome InstanceSpec::Deserialize(const rapidjson::Value &value)
         m_minStorageSizeHasBeenSet = true;
     }
 
+    if (value.HasMember("HasStock") && !value["HasStock"].IsNull())
+    {
+        if (!value["HasStock"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceSpec.HasStock` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_hasStock = value["HasStock"].GetBool();
+        m_hasStockHasBeenSet = true;
+    }
+
+    if (value.HasMember("MachineType") && !value["MachineType"].IsNull())
+    {
+        if (!value["MachineType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceSpec.MachineType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_machineType = string(value["MachineType"].GetString());
+        m_machineTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("MaxIops") && !value["MaxIops"].IsNull())
+    {
+        if (!value["MaxIops"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceSpec.MaxIops` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_maxIops = value["MaxIops"].GetInt64();
+        m_maxIopsHasBeenSet = true;
+    }
+
+    if (value.HasMember("MaxIoBandWidth") && !value["MaxIoBandWidth"].IsNull())
+    {
+        if (!value["MaxIoBandWidth"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceSpec.MaxIoBandWidth` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_maxIoBandWidth = value["MaxIoBandWidth"].GetInt64();
+        m_maxIoBandWidthHasBeenSet = true;
+    }
+
+    if (value.HasMember("ZoneStockInfos") && !value["ZoneStockInfos"].IsNull())
+    {
+        if (!value["ZoneStockInfos"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `InstanceSpec.ZoneStockInfos` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ZoneStockInfos"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ZoneStockInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_zoneStockInfos.push_back(item);
+        }
+        m_zoneStockInfosHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +175,53 @@ void InstanceSpec::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "MinStorageSize";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_minStorageSize, allocator);
+    }
+
+    if (m_hasStockHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HasStock";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_hasStock, allocator);
+    }
+
+    if (m_machineTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MachineType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_machineType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_maxIopsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxIops";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_maxIops, allocator);
+    }
+
+    if (m_maxIoBandWidthHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxIoBandWidth";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_maxIoBandWidth, allocator);
+    }
+
+    if (m_zoneStockInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ZoneStockInfos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_zoneStockInfos.begin(); itr != m_zoneStockInfos.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -177,5 +289,85 @@ void InstanceSpec::SetMinStorageSize(const uint64_t& _minStorageSize)
 bool InstanceSpec::MinStorageSizeHasBeenSet() const
 {
     return m_minStorageSizeHasBeenSet;
+}
+
+bool InstanceSpec::GetHasStock() const
+{
+    return m_hasStock;
+}
+
+void InstanceSpec::SetHasStock(const bool& _hasStock)
+{
+    m_hasStock = _hasStock;
+    m_hasStockHasBeenSet = true;
+}
+
+bool InstanceSpec::HasStockHasBeenSet() const
+{
+    return m_hasStockHasBeenSet;
+}
+
+string InstanceSpec::GetMachineType() const
+{
+    return m_machineType;
+}
+
+void InstanceSpec::SetMachineType(const string& _machineType)
+{
+    m_machineType = _machineType;
+    m_machineTypeHasBeenSet = true;
+}
+
+bool InstanceSpec::MachineTypeHasBeenSet() const
+{
+    return m_machineTypeHasBeenSet;
+}
+
+int64_t InstanceSpec::GetMaxIops() const
+{
+    return m_maxIops;
+}
+
+void InstanceSpec::SetMaxIops(const int64_t& _maxIops)
+{
+    m_maxIops = _maxIops;
+    m_maxIopsHasBeenSet = true;
+}
+
+bool InstanceSpec::MaxIopsHasBeenSet() const
+{
+    return m_maxIopsHasBeenSet;
+}
+
+int64_t InstanceSpec::GetMaxIoBandWidth() const
+{
+    return m_maxIoBandWidth;
+}
+
+void InstanceSpec::SetMaxIoBandWidth(const int64_t& _maxIoBandWidth)
+{
+    m_maxIoBandWidth = _maxIoBandWidth;
+    m_maxIoBandWidthHasBeenSet = true;
+}
+
+bool InstanceSpec::MaxIoBandWidthHasBeenSet() const
+{
+    return m_maxIoBandWidthHasBeenSet;
+}
+
+vector<ZoneStockInfo> InstanceSpec::GetZoneStockInfos() const
+{
+    return m_zoneStockInfos;
+}
+
+void InstanceSpec::SetZoneStockInfos(const vector<ZoneStockInfo>& _zoneStockInfos)
+{
+    m_zoneStockInfos = _zoneStockInfos;
+    m_zoneStockInfosHasBeenSet = true;
+}
+
+bool InstanceSpec::ZoneStockInfosHasBeenSet() const
+{
+    return m_zoneStockInfosHasBeenSet;
 }
 

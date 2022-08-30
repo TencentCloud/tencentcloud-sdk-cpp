@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/dlc/v20210125/model/TaskResponseInfo.h>
+#include <tencentcloud/dlc/v20210125/model/TasksOverview.h>
 
 
 namespace TencentCloud
@@ -68,6 +69,20 @@ namespace TencentCloud
                      */
                     bool TotalCountHasBeenSet() const;
 
+                    /**
+                     * 获取任务概览信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TasksOverview 任务概览信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    TasksOverview GetTasksOverview() const;
+
+                    /**
+                     * 判断参数 TasksOverview 是否已赋值
+                     * @return TasksOverview 是否已赋值
+                     */
+                    bool TasksOverviewHasBeenSet() const;
+
                 private:
 
                     /**
@@ -81,6 +96,13 @@ namespace TencentCloud
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
+
+                    /**
+                     * 任务概览信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    TasksOverview m_tasksOverview;
+                    bool m_tasksOverviewHasBeenSet;
 
                 };
             }

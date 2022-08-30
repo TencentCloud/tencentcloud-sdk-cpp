@@ -23,9 +23,11 @@ set(ic_public_header_model
   include/tencentcloud/ic/v20190307/model/DescribeCardResponse.h
   include/tencentcloud/ic/v20190307/model/CardInfo.h
   include/tencentcloud/ic/v20190307/model/DescribeAppRequest.h
+  include/tencentcloud/ic/v20190307/model/PayForExtendDataResponse.h
   include/tencentcloud/ic/v20190307/model/ModifyUserCardRemarkRequest.h
   include/tencentcloud/ic/v20190307/model/SendMultiSmsRequest.h
   include/tencentcloud/ic/v20190307/model/ResRenew.h
+  include/tencentcloud/ic/v20190307/model/ResOrderIds.h
   include/tencentcloud/ic/v20190307/model/DescribeSmsResponse.h
   include/tencentcloud/ic/v20190307/model/ResSms.h
   include/tencentcloud/ic/v20190307/model/DescribeAppResponse.h
@@ -35,6 +37,7 @@ set(ic_public_header_model
   include/tencentcloud/ic/v20190307/model/SmsRet.h
   include/tencentcloud/ic/v20190307/model/AppInfo.h
   include/tencentcloud/ic/v20190307/model/RenewCardsResponse.h
+  include/tencentcloud/ic/v20190307/model/PayForExtendDataRequest.h
   include/tencentcloud/ic/v20190307/model/SmsSid.h
   include/tencentcloud/ic/v20190307/model/SendMultiSmsResponse.h
   include/tencentcloud/ic/v20190307/model/CardList.h
@@ -50,9 +53,11 @@ set(ic_src
   src/v20190307/model/DescribeCardResponse.cpp
   src/v20190307/model/CardInfo.cpp
   src/v20190307/model/DescribeAppRequest.cpp
+  src/v20190307/model/PayForExtendDataResponse.cpp
   src/v20190307/model/ModifyUserCardRemarkRequest.cpp
   src/v20190307/model/SendMultiSmsRequest.cpp
   src/v20190307/model/ResRenew.cpp
+  src/v20190307/model/ResOrderIds.cpp
   src/v20190307/model/DescribeSmsResponse.cpp
   src/v20190307/model/ResSms.cpp
   src/v20190307/model/DescribeAppResponse.cpp
@@ -62,6 +67,7 @@ set(ic_src
   src/v20190307/model/SmsRet.cpp
   src/v20190307/model/AppInfo.cpp
   src/v20190307/model/RenewCardsResponse.cpp
+  src/v20190307/model/PayForExtendDataRequest.cpp
   src/v20190307/model/SmsSid.cpp
   src/v20190307/model/SendMultiSmsResponse.cpp
   src/v20190307/model/CardList.cpp

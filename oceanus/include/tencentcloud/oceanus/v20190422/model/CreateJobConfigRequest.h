@@ -368,6 +368,24 @@ namespace TencentCloud
                      */
                     bool LogLevelHasBeenSet() const;
 
+                    /**
+                     * 获取Oceanus 平台恢复作业开关 1:开启 -1: 关闭
+                     * @return AutoRecover Oceanus 平台恢复作业开关 1:开启 -1: 关闭
+                     */
+                    int64_t GetAutoRecover() const;
+
+                    /**
+                     * 设置Oceanus 平台恢复作业开关 1:开启 -1: 关闭
+                     * @param AutoRecover Oceanus 平台恢复作业开关 1:开启 -1: 关闭
+                     */
+                    void SetAutoRecover(const int64_t& _autoRecover);
+
+                    /**
+                     * 判断参数 AutoRecover 是否已赋值
+                     * @return AutoRecover 是否已赋值
+                     */
+                    bool AutoRecoverHasBeenSet() const;
+
                 private:
 
                     /**
@@ -477,6 +495,12 @@ namespace TencentCloud
                      */
                     std::string m_logLevel;
                     bool m_logLevelHasBeenSet;
+
+                    /**
+                     * Oceanus 平台恢复作业开关 1:开启 -1: 关闭
+                     */
+                    int64_t m_autoRecover;
+                    bool m_autoRecoverHasBeenSet;
 
                 };
             }

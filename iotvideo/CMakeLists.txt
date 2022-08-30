@@ -232,7 +232,7 @@ set(iotvideo_public_header_model
   include/tencentcloud/iotvideo/v20211125/model/ModifyModelDefinitionRequest.h
   include/tencentcloud/iotvideo/v20211125/model/DescribeBatchsResponse.h
   include/tencentcloud/iotvideo/v20211125/model/CancelAIModelApplicationRequest.h
-  include/tencentcloud/iotvideo/v20211125/model/TransferCloudStorageResponse.h
+  include/tencentcloud/iotvideo/v20211125/model/SDKLogItem.h
   include/tencentcloud/iotvideo/v20211125/model/DescribeUserRequest.h
   include/tencentcloud/iotvideo/v20211125/model/DescribeForwardRuleResponse.h
   include/tencentcloud/iotvideo/v20211125/model/CallDeviceActionSyncRequest.h
@@ -291,6 +291,7 @@ set(iotvideo_public_header_model
   include/tencentcloud/iotvideo/v20211125/model/DescribeDeviceCommLogRequest.h
   include/tencentcloud/iotvideo/v20211125/model/WakeUpDeviceResponse.h
   include/tencentcloud/iotvideo/v20211125/model/DeleteForwardRuleRequest.h
+  include/tencentcloud/iotvideo/v20211125/model/DescribeCloudStorageStreamDataResponse.h
   include/tencentcloud/iotvideo/v20211125/model/UpdateAIModelChannelResponse.h
   include/tencentcloud/iotvideo/v20211125/model/DeviceUpdateStatus.h
   include/tencentcloud/iotvideo/v20211125/model/DescribeAIModelUsageResponse.h
@@ -352,6 +353,7 @@ set(iotvideo_public_header_model
   include/tencentcloud/iotvideo/v20211125/model/CloudStorageEvent.h
   include/tencentcloud/iotvideo/v20211125/model/DeviceDataHistoryItem.h
   include/tencentcloud/iotvideo/v20211125/model/DescribeCloudStorageDateResponse.h
+  include/tencentcloud/iotvideo/v20211125/model/TransferCloudStorageResponse.h
   include/tencentcloud/iotvideo/v20211125/model/ModifyDataForwardStatusResponse.h
   include/tencentcloud/iotvideo/v20211125/model/CloudStorageTimeInfo.h
   include/tencentcloud/iotvideo/v20211125/model/ModifyDeviceResponse.h
@@ -389,7 +391,7 @@ set(iotvideo_public_header_model
   include/tencentcloud/iotvideo/v20211125/model/DescribeCloudStorageResponse.h
   include/tencentcloud/iotvideo/v20211125/model/ResetCloudStorageRequest.h
   include/tencentcloud/iotvideo/v20211125/model/DescribeProductResponse.h
-  include/tencentcloud/iotvideo/v20211125/model/SDKLogItem.h
+  include/tencentcloud/iotvideo/v20211125/model/DescribeCloudStorageStreamDataRequest.h
   include/tencentcloud/iotvideo/v20211125/model/DescribeAIModelsResponse.h
   include/tencentcloud/iotvideo/v20211125/model/InheritCloudStorageUserRequest.h
   include/tencentcloud/iotvideo/v20211125/model/DescribeAIModelChannelRequest.h
@@ -792,7 +794,7 @@ set(iotvideo_src
   src/v20211125/model/ModifyModelDefinitionRequest.cpp
   src/v20211125/model/DescribeBatchsResponse.cpp
   src/v20211125/model/CancelAIModelApplicationRequest.cpp
-  src/v20211125/model/TransferCloudStorageResponse.cpp
+  src/v20211125/model/SDKLogItem.cpp
   src/v20211125/model/DescribeUserRequest.cpp
   src/v20211125/model/DescribeForwardRuleResponse.cpp
   src/v20211125/model/CallDeviceActionSyncRequest.cpp
@@ -851,6 +853,7 @@ set(iotvideo_src
   src/v20211125/model/DescribeDeviceCommLogRequest.cpp
   src/v20211125/model/WakeUpDeviceResponse.cpp
   src/v20211125/model/DeleteForwardRuleRequest.cpp
+  src/v20211125/model/DescribeCloudStorageStreamDataResponse.cpp
   src/v20211125/model/UpdateAIModelChannelResponse.cpp
   src/v20211125/model/DeviceUpdateStatus.cpp
   src/v20211125/model/DescribeAIModelUsageResponse.cpp
@@ -912,6 +915,7 @@ set(iotvideo_src
   src/v20211125/model/CloudStorageEvent.cpp
   src/v20211125/model/DeviceDataHistoryItem.cpp
   src/v20211125/model/DescribeCloudStorageDateResponse.cpp
+  src/v20211125/model/TransferCloudStorageResponse.cpp
   src/v20211125/model/ModifyDataForwardStatusResponse.cpp
   src/v20211125/model/CloudStorageTimeInfo.cpp
   src/v20211125/model/ModifyDeviceResponse.cpp
@@ -949,7 +953,7 @@ set(iotvideo_src
   src/v20211125/model/DescribeCloudStorageResponse.cpp
   src/v20211125/model/ResetCloudStorageRequest.cpp
   src/v20211125/model/DescribeProductResponse.cpp
-  src/v20211125/model/SDKLogItem.cpp
+  src/v20211125/model/DescribeCloudStorageStreamDataRequest.cpp
   src/v20211125/model/DescribeAIModelsResponse.cpp
   src/v20211125/model/InheritCloudStorageUserRequest.cpp
   src/v20211125/model/DescribeAIModelChannelRequest.cpp

@@ -26,6 +26,7 @@
 #include <tencentcloud/cpdp/v20190820/model/OpenBankSceneInfo.h>
 #include <tencentcloud/cpdp/v20190820/model/OpenBankGoodsInfo.h>
 #include <tencentcloud/cpdp/v20190820/model/OpenBankProfitShareInfo.h>
+#include <tencentcloud/cpdp/v20190820/model/OpenBankSettlementRulesInfo.h>
 
 
 namespace TencentCloud
@@ -432,6 +433,42 @@ __SHARE_BY_API__：后续调用分润接口决定分润金额
                     bool ProfitShareInfoListHasBeenSet() const;
 
                     /**
+                     * 获取商企付-担保支付（PaymentMode为 FREEZE ）时需设置该参数
+                     * @return SettlementRulesInfo 商企付-担保支付（PaymentMode为 FREEZE ）时需设置该参数
+                     */
+                    OpenBankSettlementRulesInfo GetSettlementRulesInfo() const;
+
+                    /**
+                     * 设置商企付-担保支付（PaymentMode为 FREEZE ）时需设置该参数
+                     * @param SettlementRulesInfo 商企付-担保支付（PaymentMode为 FREEZE ）时需设置该参数
+                     */
+                    void SetSettlementRulesInfo(const OpenBankSettlementRulesInfo& _settlementRulesInfo);
+
+                    /**
+                     * 判断参数 SettlementRulesInfo 是否已赋值
+                     * @return SettlementRulesInfo 是否已赋值
+                     */
+                    bool SettlementRulesInfoHasBeenSet() const;
+
+                    /**
+                     * 获取底层支付渠道特殊字段，若无特殊说明时，可以为空
+                     * @return ExternalPaymentData 底层支付渠道特殊字段，若无特殊说明时，可以为空
+                     */
+                    std::string GetExternalPaymentData() const;
+
+                    /**
+                     * 设置底层支付渠道特殊字段，若无特殊说明时，可以为空
+                     * @param ExternalPaymentData 底层支付渠道特殊字段，若无特殊说明时，可以为空
+                     */
+                    void SetExternalPaymentData(const std::string& _externalPaymentData);
+
+                    /**
+                     * 判断参数 ExternalPaymentData 是否已赋值
+                     * @return ExternalPaymentData 是否已赋值
+                     */
+                    bool ExternalPaymentDataHasBeenSet() const;
+
+                    /**
                      * 获取备注信息。
                      * @return Remark 备注信息。
                      */
@@ -603,6 +640,18 @@ __SHARE_BY_API__：后续调用分润接口决定分润金额
                      */
                     std::vector<OpenBankProfitShareInfo> m_profitShareInfoList;
                     bool m_profitShareInfoListHasBeenSet;
+
+                    /**
+                     * 商企付-担保支付（PaymentMode为 FREEZE ）时需设置该参数
+                     */
+                    OpenBankSettlementRulesInfo m_settlementRulesInfo;
+                    bool m_settlementRulesInfoHasBeenSet;
+
+                    /**
+                     * 底层支付渠道特殊字段，若无特殊说明时，可以为空
+                     */
+                    std::string m_externalPaymentData;
+                    bool m_externalPaymentDataHasBeenSet;
 
                     /**
                      * 备注信息。

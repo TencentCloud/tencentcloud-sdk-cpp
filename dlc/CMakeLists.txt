@@ -160,6 +160,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/LockMetaDataRequest.h
   include/tencentcloud/dlc/v20210125/model/DetachUserPolicyResponse.h
   include/tencentcloud/dlc/v20210125/model/DescribeWorkGroupsRequest.h
+  include/tencentcloud/dlc/v20210125/model/TasksOverview.h
   include/tencentcloud/dlc/v20210125/model/CreateTasksResponse.h
   include/tencentcloud/dlc/v20210125/model/CreateSparkAppRequest.h
   include/tencentcloud/dlc/v20210125/model/UnbindWorkGroupsFromUserResponse.h
@@ -326,6 +327,7 @@ set(dlc_src
   src/v20210125/model/LockMetaDataRequest.cpp
   src/v20210125/model/DetachUserPolicyResponse.cpp
   src/v20210125/model/DescribeWorkGroupsRequest.cpp
+  src/v20210125/model/TasksOverview.cpp
   src/v20210125/model/CreateTasksResponse.cpp
   src/v20210125/model/CreateSparkAppRequest.cpp
   src/v20210125/model/UnbindWorkGroupsFromUserResponse.cpp

@@ -28,7 +28,10 @@ DescribeClusterEndpointsResponse::DescribeClusterEndpointsResponse() :
     m_clusterExternalEndpointHasBeenSet(false),
     m_clusterIntranetEndpointHasBeenSet(false),
     m_clusterDomainHasBeenSet(false),
-    m_clusterExternalACLHasBeenSet(false)
+    m_clusterExternalACLHasBeenSet(false),
+    m_clusterExternalDomainHasBeenSet(false),
+    m_clusterIntranetDomainHasBeenSet(false),
+    m_securityGroupHasBeenSet(false)
 {
 }
 
@@ -119,6 +122,36 @@ CoreInternalOutcome DescribeClusterEndpointsResponse::Deserialize(const string &
         m_clusterExternalACLHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ClusterExternalDomain") && !rsp["ClusterExternalDomain"].IsNull())
+    {
+        if (!rsp["ClusterExternalDomain"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterExternalDomain` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clusterExternalDomain = string(rsp["ClusterExternalDomain"].GetString());
+        m_clusterExternalDomainHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ClusterIntranetDomain") && !rsp["ClusterIntranetDomain"].IsNull())
+    {
+        if (!rsp["ClusterIntranetDomain"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterIntranetDomain` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clusterIntranetDomain = string(rsp["ClusterIntranetDomain"].GetString());
+        m_clusterIntranetDomainHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("SecurityGroup") && !rsp["SecurityGroup"].IsNull())
+    {
+        if (!rsp["SecurityGroup"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SecurityGroup` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_securityGroup = string(rsp["SecurityGroup"].GetString());
+        m_securityGroupHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -172,6 +205,30 @@ string DescribeClusterEndpointsResponse::ToJsonString() const
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_clusterExternalDomainHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterExternalDomain";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clusterExternalDomain.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clusterIntranetDomainHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterIntranetDomain";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clusterIntranetDomain.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_securityGroupHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SecurityGroup";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_securityGroup.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -234,6 +291,36 @@ vector<string> DescribeClusterEndpointsResponse::GetClusterExternalACL() const
 bool DescribeClusterEndpointsResponse::ClusterExternalACLHasBeenSet() const
 {
     return m_clusterExternalACLHasBeenSet;
+}
+
+string DescribeClusterEndpointsResponse::GetClusterExternalDomain() const
+{
+    return m_clusterExternalDomain;
+}
+
+bool DescribeClusterEndpointsResponse::ClusterExternalDomainHasBeenSet() const
+{
+    return m_clusterExternalDomainHasBeenSet;
+}
+
+string DescribeClusterEndpointsResponse::GetClusterIntranetDomain() const
+{
+    return m_clusterIntranetDomain;
+}
+
+bool DescribeClusterEndpointsResponse::ClusterIntranetDomainHasBeenSet() const
+{
+    return m_clusterIntranetDomainHasBeenSet;
+}
+
+string DescribeClusterEndpointsResponse::GetSecurityGroup() const
+{
+    return m_securityGroup;
+}
+
+bool DescribeClusterEndpointsResponse::SecurityGroupHasBeenSet() const
+{
+    return m_securityGroupHasBeenSet;
 }
 
 

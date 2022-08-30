@@ -22,7 +22,8 @@ using namespace std;
 
 SubnetInfos::SubnetInfos() :
     m_subnetIdHasBeenSet(false),
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_securityGroupsHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,19 @@ CoreInternalOutcome SubnetInfos::Deserialize(const rapidjson::Value &value)
         m_nameHasBeenSet = true;
     }
 
+    if (value.HasMember("SecurityGroups") && !value["SecurityGroups"].IsNull())
+    {
+        if (!value["SecurityGroups"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `SubnetInfos.SecurityGroups` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["SecurityGroups"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_securityGroups.push_back((*itr).GetString());
+        }
+        m_securityGroupsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +86,19 @@ void SubnetInfos::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_securityGroupsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SecurityGroups";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_securityGroups.begin(); itr != m_securityGroups.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -107,5 +134,21 @@ void SubnetInfos::SetName(const string& _name)
 bool SubnetInfos::NameHasBeenSet() const
 {
     return m_nameHasBeenSet;
+}
+
+vector<string> SubnetInfos::GetSecurityGroups() const
+{
+    return m_securityGroups;
+}
+
+void SubnetInfos::SetSecurityGroups(const vector<string>& _securityGroups)
+{
+    m_securityGroups = _securityGroups;
+    m_securityGroupsHasBeenSet = true;
+}
+
+bool SubnetInfos::SecurityGroupsHasBeenSet() const
+{
+    return m_securityGroupsHasBeenSet;
 }
 

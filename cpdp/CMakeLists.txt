@@ -147,6 +147,7 @@ set(cpdp_public_header_model
   include/tencentcloud/cpdp/v20190820/model/OpenBankSceneInfo.h
   include/tencentcloud/cpdp/v20190820/model/ModifyFlexPayeeAccountRightStatusRequest.h
   include/tencentcloud/cpdp/v20190820/model/QueryMaliciousRegistrationResponse.h
+  include/tencentcloud/cpdp/v20190820/model/OpenBankSettlementRulesInfo.h
   include/tencentcloud/cpdp/v20190820/model/RefundCloudOrderResponse.h
   include/tencentcloud/cpdp/v20190820/model/QueryPayerinfoResult.h
   include/tencentcloud/cpdp/v20190820/model/QueryBankClearRequest.h
@@ -778,6 +779,7 @@ set(cpdp_src
   src/v20190820/model/OpenBankSceneInfo.cpp
   src/v20190820/model/ModifyFlexPayeeAccountRightStatusRequest.cpp
   src/v20190820/model/QueryMaliciousRegistrationResponse.cpp
+  src/v20190820/model/OpenBankSettlementRulesInfo.cpp
   src/v20190820/model/RefundCloudOrderResponse.cpp
   src/v20190820/model/QueryPayerinfoResult.cpp
   src/v20190820/model/QueryBankClearRequest.cpp

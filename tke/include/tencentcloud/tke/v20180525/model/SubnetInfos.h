@@ -82,6 +82,24 @@ namespace TencentCloud
                      */
                     bool NameHasBeenSet() const;
 
+                    /**
+                     * 获取安全组id
+                     * @return SecurityGroups 安全组id
+                     */
+                    std::vector<std::string> GetSecurityGroups() const;
+
+                    /**
+                     * 设置安全组id
+                     * @param SecurityGroups 安全组id
+                     */
+                    void SetSecurityGroups(const std::vector<std::string>& _securityGroups);
+
+                    /**
+                     * 判断参数 SecurityGroups 是否已赋值
+                     * @return SecurityGroups 是否已赋值
+                     */
+                    bool SecurityGroupsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -95,6 +113,12 @@ namespace TencentCloud
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
+
+                    /**
+                     * 安全组id
+                     */
+                    std::vector<std::string> m_securityGroups;
+                    bool m_securityGroupsHasBeenSet;
 
                 };
             }

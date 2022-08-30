@@ -1545,6 +1545,49 @@ ClbClient::DescribeExclusiveClustersOutcomeCallable ClbClient::DescribeExclusive
     return task->get_future();
 }
 
+ClbClient::DescribeIdleLoadBalancersOutcome ClbClient::DescribeIdleLoadBalancers(const DescribeIdleLoadBalancersRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeIdleLoadBalancers");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeIdleLoadBalancersResponse rsp = DescribeIdleLoadBalancersResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeIdleLoadBalancersOutcome(rsp);
+        else
+            return DescribeIdleLoadBalancersOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeIdleLoadBalancersOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::DescribeIdleLoadBalancersAsync(const DescribeIdleLoadBalancersRequest& request, const DescribeIdleLoadBalancersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeIdleLoadBalancers(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClbClient::DescribeIdleLoadBalancersOutcomeCallable ClbClient::DescribeIdleLoadBalancersCallable(const DescribeIdleLoadBalancersRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeIdleLoadBalancersOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeIdleLoadBalancers(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ClbClient::DescribeLBListenersOutcome ClbClient::DescribeLBListeners(const DescribeLBListenersRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeLBListeners");
