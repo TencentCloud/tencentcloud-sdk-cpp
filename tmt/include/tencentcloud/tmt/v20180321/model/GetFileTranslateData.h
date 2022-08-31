@@ -126,6 +126,28 @@ namespace TencentCloud
                      */
                     bool MessageHasBeenSet() const;
 
+                    /**
+                     * 获取翻译进度
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Progress 翻译进度
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetProgress() const;
+
+                    /**
+                     * 设置翻译进度
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Progress 翻译进度
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetProgress(const int64_t& _progress);
+
+                    /**
+                     * 判断参数 Progress 是否已赋值
+                     * @return Progress 是否已赋值
+                     */
+                    bool ProgressHasBeenSet() const;
+
                 private:
 
                     /**
@@ -153,6 +175,13 @@ namespace TencentCloud
                      */
                     std::string m_message;
                     bool m_messageHasBeenSet;
+
+                    /**
+                     * 翻译进度
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_progress;
+                    bool m_progressHasBeenSet;
 
                 };
             }

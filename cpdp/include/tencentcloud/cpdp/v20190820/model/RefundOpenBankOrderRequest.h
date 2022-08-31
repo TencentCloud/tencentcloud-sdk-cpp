@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cpdp/v20190820/model/OpenBankProfitShareInfo.h>
 
 
 namespace TencentCloud
@@ -242,6 +243,24 @@ _不填默认为生产环境_
                      */
                     bool EnvironmentHasBeenSet() const;
 
+                    /**
+                     * 获取分账信息列表。
+                     * @return ProfitShareInfoList 分账信息列表。
+                     */
+                    std::vector<OpenBankProfitShareInfo> GetProfitShareInfoList() const;
+
+                    /**
+                     * 设置分账信息列表。
+                     * @param ProfitShareInfoList 分账信息列表。
+                     */
+                    void SetProfitShareInfoList(const std::vector<OpenBankProfitShareInfo>& _profitShareInfoList);
+
+                    /**
+                     * 判断参数 ProfitShareInfoList 是否已赋值
+                     * @return ProfitShareInfoList 是否已赋值
+                     */
+                    bool ProfitShareInfoListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -308,6 +327,12 @@ _不填默认为生产环境_
                      */
                     std::string m_environment;
                     bool m_environmentHasBeenSet;
+
+                    /**
+                     * 分账信息列表。
+                     */
+                    std::vector<OpenBankProfitShareInfo> m_profitShareInfoList;
+                    bool m_profitShareInfoListHasBeenSet;
 
                 };
             }

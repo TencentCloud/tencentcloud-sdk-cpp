@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cpdp/v20190820/model/OpenBankRedirectInfo.h>
 #include <tencentcloud/cpdp/v20190820/model/OpenBankApprovalGuideInfo.h>
+#include <tencentcloud/cpdp/v20190820/model/OpenBankProfitShareRespInfo.h>
 
 
 namespace TencentCloud
@@ -400,6 +401,28 @@ OPENBANK_PAYMENT
                      */
                     bool FeeRateHasBeenSet() const;
 
+                    /**
+                     * 获取分账信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ProfitShareRespInfoList 分账信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<OpenBankProfitShareRespInfo> GetProfitShareRespInfoList() const;
+
+                    /**
+                     * 设置分账信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ProfitShareRespInfoList 分账信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetProfitShareRespInfoList(const std::vector<OpenBankProfitShareRespInfo>& _profitShareRespInfoList);
+
+                    /**
+                     * 判断参数 ProfitShareRespInfoList 是否已赋值
+                     * @return ProfitShareRespInfoList 是否已赋值
+                     */
+                    bool ProfitShareRespInfoListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -513,6 +536,13 @@ OPENBANK_PAYMENT
                      */
                     int64_t m_feeRate;
                     bool m_feeRateHasBeenSet;
+
+                    /**
+                     * 分账信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<OpenBankProfitShareRespInfo> m_profitShareRespInfoList;
+                    bool m_profitShareRespInfoListHasBeenSet;
 
                 };
             }

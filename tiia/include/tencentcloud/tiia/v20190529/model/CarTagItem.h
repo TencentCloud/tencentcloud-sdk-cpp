@@ -262,6 +262,50 @@ namespace TencentCloud
                      */
                     bool ColorConfidenceHasBeenSet() const;
 
+                    /**
+                     * 获取车辆朝向，仅车辆识别（增强版）支持
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Orientation 车辆朝向，仅车辆识别（增强版）支持
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetOrientation() const;
+
+                    /**
+                     * 设置车辆朝向，仅车辆识别（增强版）支持
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Orientation 车辆朝向，仅车辆识别（增强版）支持
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetOrientation(const std::string& _orientation);
+
+                    /**
+                     * 判断参数 Orientation 是否已赋值
+                     * @return Orientation 是否已赋值
+                     */
+                    bool OrientationHasBeenSet() const;
+
+                    /**
+                     * 获取车辆朝向置信度，0-100，仅车辆识别（增强版）支持
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OrientationConfidence 车辆朝向置信度，0-100，仅车辆识别（增强版）支持
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetOrientationConfidence() const;
+
+                    /**
+                     * 设置车辆朝向置信度，0-100，仅车辆识别（增强版）支持
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param OrientationConfidence 车辆朝向置信度，0-100，仅车辆识别（增强版）支持
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetOrientationConfidence(const int64_t& _orientationConfidence);
+
+                    /**
+                     * 判断参数 OrientationConfidence 是否已赋值
+                     * @return OrientationConfidence 是否已赋值
+                     */
+                    bool OrientationConfidenceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -333,6 +377,20 @@ namespace TencentCloud
                      */
                     int64_t m_colorConfidence;
                     bool m_colorConfidenceHasBeenSet;
+
+                    /**
+                     * 车辆朝向，仅车辆识别（增强版）支持
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_orientation;
+                    bool m_orientationHasBeenSet;
+
+                    /**
+                     * 车辆朝向置信度，0-100，仅车辆识别（增强版）支持
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_orientationConfidence;
+                    bool m_orientationConfidenceHasBeenSet;
 
                 };
             }

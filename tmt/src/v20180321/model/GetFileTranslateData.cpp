@@ -24,7 +24,8 @@ GetFileTranslateData::GetFileTranslateData() :
     m_taskIdHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_fileDataHasBeenSet(false),
-    m_messageHasBeenSet(false)
+    m_messageHasBeenSet(false),
+    m_progressHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome GetFileTranslateData::Deserialize(const rapidjson::Value &va
         m_messageHasBeenSet = true;
     }
 
+    if (value.HasMember("Progress") && !value["Progress"].IsNull())
+    {
+        if (!value["Progress"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `GetFileTranslateData.Progress` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_progress = value["Progress"].GetInt64();
+        m_progressHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +121,14 @@ void GetFileTranslateData::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "Message";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_message.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_progressHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Progress";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_progress, allocator);
     }
 
 }
@@ -177,5 +196,21 @@ void GetFileTranslateData::SetMessage(const string& _message)
 bool GetFileTranslateData::MessageHasBeenSet() const
 {
     return m_messageHasBeenSet;
+}
+
+int64_t GetFileTranslateData::GetProgress() const
+{
+    return m_progress;
+}
+
+void GetFileTranslateData::SetProgress(const int64_t& _progress)
+{
+    m_progress = _progress;
+    m_progressHasBeenSet = true;
+}
+
+bool GetFileTranslateData::ProgressHasBeenSet() const
+{
+    return m_progressHasBeenSet;
 }
 

@@ -24,7 +24,10 @@ CarPlateContent::CarPlateContent() :
     m_plateHasBeenSet(false),
     m_colorHasBeenSet(false),
     m_typeHasBeenSet(false),
-    m_plateLocationHasBeenSet(false)
+    m_plateLocationHasBeenSet(false),
+    m_plateStatusHasBeenSet(false),
+    m_plateStatusConfidenceHasBeenSet(false),
+    m_plateAngleHasBeenSet(false)
 {
 }
 
@@ -83,6 +86,36 @@ CoreInternalOutcome CarPlateContent::Deserialize(const rapidjson::Value &value)
         m_plateLocationHasBeenSet = true;
     }
 
+    if (value.HasMember("PlateStatus") && !value["PlateStatus"].IsNull())
+    {
+        if (!value["PlateStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CarPlateContent.PlateStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_plateStatus = string(value["PlateStatus"].GetString());
+        m_plateStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("PlateStatusConfidence") && !value["PlateStatusConfidence"].IsNull())
+    {
+        if (!value["PlateStatusConfidence"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CarPlateContent.PlateStatusConfidence` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_plateStatusConfidence = value["PlateStatusConfidence"].GetInt64();
+        m_plateStatusConfidenceHasBeenSet = true;
+    }
+
+    if (value.HasMember("PlateAngle") && !value["PlateAngle"].IsNull())
+    {
+        if (!value["PlateAngle"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `CarPlateContent.PlateAngle` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_plateAngle = value["PlateAngle"].GetDouble();
+        m_plateAngleHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -127,6 +160,30 @@ void CarPlateContent::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_plateStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PlateStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_plateStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_plateStatusConfidenceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PlateStatusConfidence";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_plateStatusConfidence, allocator);
+    }
+
+    if (m_plateAngleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PlateAngle";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_plateAngle, allocator);
     }
 
 }
@@ -194,5 +251,53 @@ void CarPlateContent::SetPlateLocation(const vector<Coord>& _plateLocation)
 bool CarPlateContent::PlateLocationHasBeenSet() const
 {
     return m_plateLocationHasBeenSet;
+}
+
+string CarPlateContent::GetPlateStatus() const
+{
+    return m_plateStatus;
+}
+
+void CarPlateContent::SetPlateStatus(const string& _plateStatus)
+{
+    m_plateStatus = _plateStatus;
+    m_plateStatusHasBeenSet = true;
+}
+
+bool CarPlateContent::PlateStatusHasBeenSet() const
+{
+    return m_plateStatusHasBeenSet;
+}
+
+int64_t CarPlateContent::GetPlateStatusConfidence() const
+{
+    return m_plateStatusConfidence;
+}
+
+void CarPlateContent::SetPlateStatusConfidence(const int64_t& _plateStatusConfidence)
+{
+    m_plateStatusConfidence = _plateStatusConfidence;
+    m_plateStatusConfidenceHasBeenSet = true;
+}
+
+bool CarPlateContent::PlateStatusConfidenceHasBeenSet() const
+{
+    return m_plateStatusConfidenceHasBeenSet;
+}
+
+double CarPlateContent::GetPlateAngle() const
+{
+    return m_plateAngle;
+}
+
+void CarPlateContent::SetPlateAngle(const double& _plateAngle)
+{
+    m_plateAngle = _plateAngle;
+    m_plateAngleHasBeenSet = true;
+}
+
+bool CarPlateContent::PlateAngleHasBeenSet() const
+{
+    return m_plateAngleHasBeenSet;
 }
 

@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cpdp/v20190820/model/OpenBankProfitShareRespInfo.h>
 
 
 namespace TencentCloud
@@ -288,6 +289,28 @@ namespace TencentCloud
                      */
                     bool RefundMessageHasBeenSet() const;
 
+                    /**
+                     * 获取分账信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ProfitShareRespInfoList 分账信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<OpenBankProfitShareRespInfo> GetProfitShareRespInfoList() const;
+
+                    /**
+                     * 设置分账信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ProfitShareRespInfoList 分账信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetProfitShareRespInfoList(const std::vector<OpenBankProfitShareRespInfo>& _profitShareRespInfoList);
+
+                    /**
+                     * 判断参数 ProfitShareRespInfoList 是否已赋值
+                     * @return ProfitShareRespInfoList 是否已赋值
+                     */
+                    bool ProfitShareRespInfoListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -366,6 +389,13 @@ namespace TencentCloud
                      */
                     std::string m_refundMessage;
                     bool m_refundMessageHasBeenSet;
+
+                    /**
+                     * 分账信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<OpenBankProfitShareRespInfo> m_profitShareRespInfoList;
+                    bool m_profitShareRespInfoListHasBeenSet;
 
                 };
             }

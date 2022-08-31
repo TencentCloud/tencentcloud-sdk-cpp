@@ -58,7 +58,6 @@ set(dcdb_public_header_model
   include/tencentcloud/dcdb/v20180411/model/DatabaseView.h
   include/tencentcloud/dcdb/v20180411/model/DescribeDBLogFilesRequest.h
   include/tencentcloud/dcdb/v20180411/model/DescribeOrdersResponse.h
-  include/tencentcloud/dcdb/v20180411/model/CreateDedicatedClusterDCDBInstanceRequest.h
   include/tencentcloud/dcdb/v20180411/model/CreateHourDCDBInstanceRequest.h
   include/tencentcloud/dcdb/v20180411/model/ResetAccountPasswordRequest.h
   include/tencentcloud/dcdb/v20180411/model/CopyAccountPrivilegesResponse.h
@@ -139,7 +138,6 @@ set(dcdb_public_header_model
   include/tencentcloud/dcdb/v20180411/model/DescribeFlowRequest.h
   include/tencentcloud/dcdb/v20180411/model/CreateDCDBInstanceRequest.h
   include/tencentcloud/dcdb/v20180411/model/DescribeDCDBUpgradePriceRequest.h
-  include/tencentcloud/dcdb/v20180411/model/CreateDedicatedClusterDCDBInstanceResponse.h
   include/tencentcloud/dcdb/v20180411/model/UserTaskInfo.h
   include/tencentcloud/dcdb/v20180411/model/DescribeProjectsRequest.h
   include/tencentcloud/dcdb/v20180411/model/AddShardConfig.h
@@ -212,7 +210,6 @@ set(dcdb_src
   src/v20180411/model/DatabaseView.cpp
   src/v20180411/model/DescribeDBLogFilesRequest.cpp
   src/v20180411/model/DescribeOrdersResponse.cpp
-  src/v20180411/model/CreateDedicatedClusterDCDBInstanceRequest.cpp
   src/v20180411/model/CreateHourDCDBInstanceRequest.cpp
   src/v20180411/model/ResetAccountPasswordRequest.cpp
   src/v20180411/model/CopyAccountPrivilegesResponse.cpp
@@ -293,7 +290,6 @@ set(dcdb_src
   src/v20180411/model/DescribeFlowRequest.cpp
   src/v20180411/model/CreateDCDBInstanceRequest.cpp
   src/v20180411/model/DescribeDCDBUpgradePriceRequest.cpp
-  src/v20180411/model/CreateDedicatedClusterDCDBInstanceResponse.cpp
   src/v20180411/model/UserTaskInfo.cpp
   src/v20180411/model/DescribeProjectsRequest.cpp
   src/v20180411/model/AddShardConfig.cpp

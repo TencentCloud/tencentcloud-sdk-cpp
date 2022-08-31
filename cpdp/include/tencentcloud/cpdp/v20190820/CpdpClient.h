@@ -41,6 +41,10 @@
 #include <tencentcloud/cpdp/v20190820/model/ApplyFlexSettlementResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/ApplyOpenBankOrderDetailReceiptRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/ApplyOpenBankOrderDetailReceiptResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/ApplyOpenBankSettleOrderRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/ApplyOpenBankSettleOrderResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/ApplyOpenBankSubMerchantSignOnlineRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/ApplyOpenBankSubMerchantSignOnlineResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/ApplyOutwardOrderRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/ApplyOutwardOrderResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/ApplyPayerInfoRequest.h>
@@ -323,10 +327,14 @@
 #include <tencentcloud/cpdp/v20190820/model/QueryOpenBankPaymentOrderResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryOpenBankRefundOrderRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryOpenBankRefundOrderResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryOpenBankSettleOrderRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryOpenBankSettleOrderResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryOpenBankSubMerchantCredentialRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryOpenBankSubMerchantCredentialResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryOpenBankSubMerchantRateConfigureRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryOpenBankSubMerchantRateConfigureResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryOpenBankSubMerchantSignOnlineRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryOpenBankSubMerchantSignOnlineResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryOpenBankSupportBankListRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryOpenBankSupportBankListResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryOpenBankUnbindExternalSubMerchantBankAccountRequest.h>
@@ -474,6 +482,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ApplyOpenBankOrderDetailReceiptResponse> ApplyOpenBankOrderDetailReceiptOutcome;
                 typedef std::future<ApplyOpenBankOrderDetailReceiptOutcome> ApplyOpenBankOrderDetailReceiptOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::ApplyOpenBankOrderDetailReceiptRequest&, ApplyOpenBankOrderDetailReceiptOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ApplyOpenBankOrderDetailReceiptAsyncHandler;
+                typedef Outcome<Core::Error, Model::ApplyOpenBankSettleOrderResponse> ApplyOpenBankSettleOrderOutcome;
+                typedef std::future<ApplyOpenBankSettleOrderOutcome> ApplyOpenBankSettleOrderOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::ApplyOpenBankSettleOrderRequest&, ApplyOpenBankSettleOrderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ApplyOpenBankSettleOrderAsyncHandler;
+                typedef Outcome<Core::Error, Model::ApplyOpenBankSubMerchantSignOnlineResponse> ApplyOpenBankSubMerchantSignOnlineOutcome;
+                typedef std::future<ApplyOpenBankSubMerchantSignOnlineOutcome> ApplyOpenBankSubMerchantSignOnlineOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::ApplyOpenBankSubMerchantSignOnlineRequest&, ApplyOpenBankSubMerchantSignOnlineOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ApplyOpenBankSubMerchantSignOnlineAsyncHandler;
                 typedef Outcome<Core::Error, Model::ApplyOutwardOrderResponse> ApplyOutwardOrderOutcome;
                 typedef std::future<ApplyOutwardOrderOutcome> ApplyOutwardOrderOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::ApplyOutwardOrderRequest&, ApplyOutwardOrderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ApplyOutwardOrderAsyncHandler;
@@ -897,12 +911,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::QueryOpenBankRefundOrderResponse> QueryOpenBankRefundOrderOutcome;
                 typedef std::future<QueryOpenBankRefundOrderOutcome> QueryOpenBankRefundOrderOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::QueryOpenBankRefundOrderRequest&, QueryOpenBankRefundOrderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryOpenBankRefundOrderAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryOpenBankSettleOrderResponse> QueryOpenBankSettleOrderOutcome;
+                typedef std::future<QueryOpenBankSettleOrderOutcome> QueryOpenBankSettleOrderOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::QueryOpenBankSettleOrderRequest&, QueryOpenBankSettleOrderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryOpenBankSettleOrderAsyncHandler;
                 typedef Outcome<Core::Error, Model::QueryOpenBankSubMerchantCredentialResponse> QueryOpenBankSubMerchantCredentialOutcome;
                 typedef std::future<QueryOpenBankSubMerchantCredentialOutcome> QueryOpenBankSubMerchantCredentialOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::QueryOpenBankSubMerchantCredentialRequest&, QueryOpenBankSubMerchantCredentialOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryOpenBankSubMerchantCredentialAsyncHandler;
                 typedef Outcome<Core::Error, Model::QueryOpenBankSubMerchantRateConfigureResponse> QueryOpenBankSubMerchantRateConfigureOutcome;
                 typedef std::future<QueryOpenBankSubMerchantRateConfigureOutcome> QueryOpenBankSubMerchantRateConfigureOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::QueryOpenBankSubMerchantRateConfigureRequest&, QueryOpenBankSubMerchantRateConfigureOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryOpenBankSubMerchantRateConfigureAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryOpenBankSubMerchantSignOnlineResponse> QueryOpenBankSubMerchantSignOnlineOutcome;
+                typedef std::future<QueryOpenBankSubMerchantSignOnlineOutcome> QueryOpenBankSubMerchantSignOnlineOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::QueryOpenBankSubMerchantSignOnlineRequest&, QueryOpenBankSubMerchantSignOnlineOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryOpenBankSubMerchantSignOnlineAsyncHandler;
                 typedef Outcome<Core::Error, Model::QueryOpenBankSupportBankListResponse> QueryOpenBankSupportBankListOutcome;
                 typedef std::future<QueryOpenBankSupportBankListOutcome> QueryOpenBankSupportBankListOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::QueryOpenBankSupportBankListRequest&, QueryOpenBankSupportBankListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryOpenBankSupportBankListAsyncHandler;
@@ -1145,6 +1165,24 @@ namespace TencentCloud
                 ApplyOpenBankOrderDetailReceiptOutcome ApplyOpenBankOrderDetailReceipt(const Model::ApplyOpenBankOrderDetailReceiptRequest &request);
                 void ApplyOpenBankOrderDetailReceiptAsync(const Model::ApplyOpenBankOrderDetailReceiptRequest& request, const ApplyOpenBankOrderDetailReceiptAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ApplyOpenBankOrderDetailReceiptOutcomeCallable ApplyOpenBankOrderDetailReceiptCallable(const Model::ApplyOpenBankOrderDetailReceiptRequest& request);
+
+                /**
+                 *云企付结算申请接口
+                 * @param req ApplyOpenBankSettleOrderRequest
+                 * @return ApplyOpenBankSettleOrderOutcome
+                 */
+                ApplyOpenBankSettleOrderOutcome ApplyOpenBankSettleOrder(const Model::ApplyOpenBankSettleOrderRequest &request);
+                void ApplyOpenBankSettleOrderAsync(const Model::ApplyOpenBankSettleOrderRequest& request, const ApplyOpenBankSettleOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ApplyOpenBankSettleOrderOutcomeCallable ApplyOpenBankSettleOrderCallable(const Model::ApplyOpenBankSettleOrderRequest& request);
+
+                /**
+                 *子商户在线签约
+                 * @param req ApplyOpenBankSubMerchantSignOnlineRequest
+                 * @return ApplyOpenBankSubMerchantSignOnlineOutcome
+                 */
+                ApplyOpenBankSubMerchantSignOnlineOutcome ApplyOpenBankSubMerchantSignOnline(const Model::ApplyOpenBankSubMerchantSignOnlineRequest &request);
+                void ApplyOpenBankSubMerchantSignOnlineAsync(const Model::ApplyOpenBankSubMerchantSignOnlineRequest& request, const ApplyOpenBankSubMerchantSignOnlineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ApplyOpenBankSubMerchantSignOnlineOutcomeCallable ApplyOpenBankSubMerchantSignOnlineCallable(const Model::ApplyOpenBankSubMerchantSignOnlineRequest& request);
 
                 /**
                  *跨境-汇出指令申请。通过该接口可将对接方账户中的人民币余额汇兑成外币，再汇出至指定银行账户。
@@ -2427,6 +2465,15 @@ namespace TencentCloud
                 QueryOpenBankRefundOrderOutcomeCallable QueryOpenBankRefundOrderCallable(const Model::QueryOpenBankRefundOrderRequest& request);
 
                 /**
+                 *云企付结算单查询结果
+                 * @param req QueryOpenBankSettleOrderRequest
+                 * @return QueryOpenBankSettleOrderOutcome
+                 */
+                QueryOpenBankSettleOrderOutcome QueryOpenBankSettleOrder(const Model::QueryOpenBankSettleOrderRequest &request);
+                void QueryOpenBankSettleOrderAsync(const Model::QueryOpenBankSettleOrderRequest& request, const QueryOpenBankSettleOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryOpenBankSettleOrderOutcomeCallable QueryOpenBankSettleOrderCallable(const Model::QueryOpenBankSettleOrderRequest& request);
+
+                /**
                  *云企付-子商户资质文件查询
                  * @param req QueryOpenBankSubMerchantCredentialRequest
                  * @return QueryOpenBankSubMerchantCredentialOutcome
@@ -2443,6 +2490,15 @@ namespace TencentCloud
                 QueryOpenBankSubMerchantRateConfigureOutcome QueryOpenBankSubMerchantRateConfigure(const Model::QueryOpenBankSubMerchantRateConfigureRequest &request);
                 void QueryOpenBankSubMerchantRateConfigureAsync(const Model::QueryOpenBankSubMerchantRateConfigureRequest& request, const QueryOpenBankSubMerchantRateConfigureAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 QueryOpenBankSubMerchantRateConfigureOutcomeCallable QueryOpenBankSubMerchantRateConfigureCallable(const Model::QueryOpenBankSubMerchantRateConfigureRequest& request);
+
+                /**
+                 *子商户在线签约查询
+                 * @param req QueryOpenBankSubMerchantSignOnlineRequest
+                 * @return QueryOpenBankSubMerchantSignOnlineOutcome
+                 */
+                QueryOpenBankSubMerchantSignOnlineOutcome QueryOpenBankSubMerchantSignOnline(const Model::QueryOpenBankSubMerchantSignOnlineRequest &request);
+                void QueryOpenBankSubMerchantSignOnlineAsync(const Model::QueryOpenBankSubMerchantSignOnlineRequest& request, const QueryOpenBankSubMerchantSignOnlineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryOpenBankSubMerchantSignOnlineOutcomeCallable QueryOpenBankSubMerchantSignOnlineCallable(const Model::QueryOpenBankSubMerchantSignOnlineRequest& request);
 
                 /**
                  *云企付-查询支持银行列表

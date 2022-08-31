@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool VoiceUserNumHasBeenSet() const;
 
                     /**
-                     * 获取音视频通话时长。单位：秒。
-                     * @return VideoTime 音视频通话时长。单位：秒。
+                     * 获取音视频通话收费时长。单位：秒。
+                     * @return VideoTime 音视频通话收费时长。单位：秒。
                      */
                     uint64_t GetVideoTime() const;
 
                     /**
-                     * 设置音视频通话时长。单位：秒。
-                     * @param VideoTime 音视频通话时长。单位：秒。
+                     * 设置音视频通话收费时长。单位：秒。
+                     * @param VideoTime 音视频通话收费时长。单位：秒。
                      */
                     void SetVideoTime(const uint64_t& _videoTime);
 
@@ -101,14 +101,14 @@ namespace TencentCloud
                     bool VideoTimeHasBeenSet() const;
 
                     /**
-                     * 获取标清视频通话时长。单位：秒。
-                     * @return Class1VideoTime 标清视频通话时长。单位：秒。
+                     * 获取标清视频通话收费时长。单位：秒。
+                     * @return Class1VideoTime 标清视频通话收费时长。单位：秒。
                      */
                     uint64_t GetClass1VideoTime() const;
 
                     /**
-                     * 设置标清视频通话时长。单位：秒。
-                     * @param Class1VideoTime 标清视频通话时长。单位：秒。
+                     * 设置标清视频通话收费时长。单位：秒。
+                     * @param Class1VideoTime 标清视频通话收费时长。单位：秒。
                      */
                     void SetClass1VideoTime(const uint64_t& _class1VideoTime);
 
@@ -119,14 +119,14 @@ namespace TencentCloud
                     bool Class1VideoTimeHasBeenSet() const;
 
                     /**
-                     * 获取高清视频通话时长。单位：秒。
-                     * @return Class2VideoTime 高清视频通话时长。单位：秒。
+                     * 获取高清视频通话收费时长。单位：秒。
+                     * @return Class2VideoTime 高清视频通话收费时长。单位：秒。
                      */
                     uint64_t GetClass2VideoTime() const;
 
                     /**
-                     * 设置高清视频通话时长。单位：秒。
-                     * @param Class2VideoTime 高清视频通话时长。单位：秒。
+                     * 设置高清视频通话收费时长。单位：秒。
+                     * @param Class2VideoTime 高清视频通话收费时长。单位：秒。
                      */
                     void SetClass2VideoTime(const uint64_t& _class2VideoTime);
 
@@ -137,14 +137,14 @@ namespace TencentCloud
                     bool Class2VideoTimeHasBeenSet() const;
 
                     /**
-                     * 获取超高清视频通话时长。单位：秒。
-                     * @return Class3VideoTime 超高清视频通话时长。单位：秒。
+                     * 获取超高清视频通话收费时长。单位：秒。
+                     * @return Class3VideoTime 超高清视频通话收费时长。单位：秒。
                      */
                     uint64_t GetClass3VideoTime() const;
 
                     /**
-                     * 设置超高清视频通话时长。单位：秒。
-                     * @param Class3VideoTime 超高清视频通话时长。单位：秒。
+                     * 设置超高清视频通话收费时长。单位：秒。
+                     * @param Class3VideoTime 超高清视频通话收费时长。单位：秒。
                      */
                     void SetClass3VideoTime(const uint64_t& _class3VideoTime);
 
@@ -155,14 +155,14 @@ namespace TencentCloud
                     bool Class3VideoTimeHasBeenSet() const;
 
                     /**
-                     * 获取音频通话时长。单位：秒。
-                     * @return AudioTime 音频通话时长。单位：秒。
+                     * 获取音频通话收费时长。单位：秒。
+                     * @return AudioTime 音频通话收费时长。单位：秒。
                      */
                     uint64_t GetAudioTime() const;
 
                     /**
-                     * 设置音频通话时长。单位：秒。
-                     * @param AudioTime 音频通话时长。单位：秒。
+                     * 设置音频通话收费时长。单位：秒。
+                     * @param AudioTime 音频通话收费时长。单位：秒。
                      */
                     void SetAudioTime(const uint64_t& _audioTime);
 
@@ -191,14 +191,14 @@ namespace TencentCloud
                     bool BandwidthHasBeenSet() const;
 
                     /**
-                     * 获取2k视频通话时长。单位：秒。
-                     * @return Video2KTime 2k视频通话时长。单位：秒。
+                     * 获取2k视频通话收费时长。单位：秒。
+                     * @return Video2KTime 2k视频通话收费时长。单位：秒。
                      */
                     uint64_t GetVideo2KTime() const;
 
                     /**
-                     * 设置2k视频通话时长。单位：秒。
-                     * @param Video2KTime 2k视频通话时长。单位：秒。
+                     * 设置2k视频通话收费时长。单位：秒。
+                     * @param Video2KTime 2k视频通话收费时长。单位：秒。
                      */
                     void SetVideo2KTime(const uint64_t& _video2KTime);
 
@@ -209,14 +209,14 @@ namespace TencentCloud
                     bool Video2KTimeHasBeenSet() const;
 
                     /**
-                     * 获取4k视频通话时长。单位：秒。
-                     * @return Video4KTime 4k视频通话时长。单位：秒。
+                     * 获取4k视频通话收费时长。单位：秒。
+                     * @return Video4KTime 4k视频通话收费时长。单位：秒。
                      */
                     uint64_t GetVideo4KTime() const;
 
                     /**
-                     * 设置4k视频通话时长。单位：秒。
-                     * @param Video4KTime 4k视频通话时长。单位：秒。
+                     * 设置4k视频通话收费时长。单位：秒。
+                     * @param Video4KTime 4k视频通话收费时长。单位：秒。
                      */
                     void SetVideo4KTime(const uint64_t& _video4KTime);
 
@@ -241,31 +241,31 @@ namespace TencentCloud
                     bool m_voiceUserNumHasBeenSet;
 
                     /**
-                     * 音视频通话时长。单位：秒。
+                     * 音视频通话收费时长。单位：秒。
                      */
                     uint64_t m_videoTime;
                     bool m_videoTimeHasBeenSet;
 
                     /**
-                     * 标清视频通话时长。单位：秒。
+                     * 标清视频通话收费时长。单位：秒。
                      */
                     uint64_t m_class1VideoTime;
                     bool m_class1VideoTimeHasBeenSet;
 
                     /**
-                     * 高清视频通话时长。单位：秒。
+                     * 高清视频通话收费时长。单位：秒。
                      */
                     uint64_t m_class2VideoTime;
                     bool m_class2VideoTimeHasBeenSet;
 
                     /**
-                     * 超高清视频通话时长。单位：秒。
+                     * 超高清视频通话收费时长。单位：秒。
                      */
                     uint64_t m_class3VideoTime;
                     bool m_class3VideoTimeHasBeenSet;
 
                     /**
-                     * 音频通话时长。单位：秒。
+                     * 音频通话收费时长。单位：秒。
                      */
                     uint64_t m_audioTime;
                     bool m_audioTimeHasBeenSet;
@@ -277,13 +277,13 @@ namespace TencentCloud
                     bool m_bandwidthHasBeenSet;
 
                     /**
-                     * 2k视频通话时长。单位：秒。
+                     * 2k视频通话收费时长。单位：秒。
                      */
                     uint64_t m_video2KTime;
                     bool m_video2KTimeHasBeenSet;
 
                     /**
-                     * 4k视频通话时长。单位：秒。
+                     * 4k视频通话收费时长。单位：秒。
                      */
                     uint64_t m_video4KTime;
                     bool m_video4KTimeHasBeenSet;

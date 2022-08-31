@@ -31,7 +31,9 @@ CarTagItem::CarTagItem() :
     m_plateContentHasBeenSet(false),
     m_plateConfidenceHasBeenSet(false),
     m_typeConfidenceHasBeenSet(false),
-    m_colorConfidenceHasBeenSet(false)
+    m_colorConfidenceHasBeenSet(false),
+    m_orientationHasBeenSet(false),
+    m_orientationConfidenceHasBeenSet(false)
 {
 }
 
@@ -167,6 +169,26 @@ CoreInternalOutcome CarTagItem::Deserialize(const rapidjson::Value &value)
         m_colorConfidenceHasBeenSet = true;
     }
 
+    if (value.HasMember("Orientation") && !value["Orientation"].IsNull())
+    {
+        if (!value["Orientation"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CarTagItem.Orientation` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_orientation = string(value["Orientation"].GetString());
+        m_orientationHasBeenSet = true;
+    }
+
+    if (value.HasMember("OrientationConfidence") && !value["OrientationConfidence"].IsNull())
+    {
+        if (!value["OrientationConfidence"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CarTagItem.OrientationConfidence` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_orientationConfidence = value["OrientationConfidence"].GetInt64();
+        m_orientationConfidenceHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -268,6 +290,22 @@ void CarTagItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "ColorConfidence";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_colorConfidence, allocator);
+    }
+
+    if (m_orientationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Orientation";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_orientation.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_orientationConfidenceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OrientationConfidence";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_orientationConfidence, allocator);
     }
 
 }
@@ -447,5 +485,37 @@ void CarTagItem::SetColorConfidence(const int64_t& _colorConfidence)
 bool CarTagItem::ColorConfidenceHasBeenSet() const
 {
     return m_colorConfidenceHasBeenSet;
+}
+
+string CarTagItem::GetOrientation() const
+{
+    return m_orientation;
+}
+
+void CarTagItem::SetOrientation(const string& _orientation)
+{
+    m_orientation = _orientation;
+    m_orientationHasBeenSet = true;
+}
+
+bool CarTagItem::OrientationHasBeenSet() const
+{
+    return m_orientationHasBeenSet;
+}
+
+int64_t CarTagItem::GetOrientationConfidence() const
+{
+    return m_orientationConfidence;
+}
+
+void CarTagItem::SetOrientationConfidence(const int64_t& _orientationConfidence)
+{
+    m_orientationConfidence = _orientationConfidence;
+    m_orientationConfidenceHasBeenSet = true;
+}
+
+bool CarTagItem::OrientationConfidenceHasBeenSet() const
+{
+    return m_orientationConfidenceHasBeenSet;
 }
 

@@ -135,6 +135,72 @@ namespace TencentCloud
                      */
                     bool PlateLocationHasBeenSet() const;
 
+                    /**
+                     * 获取判断车牌是否遮挡。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PlateStatus 判断车牌是否遮挡。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetPlateStatus() const;
+
+                    /**
+                     * 设置判断车牌是否遮挡。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param PlateStatus 判断车牌是否遮挡。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPlateStatus(const std::string& _plateStatus);
+
+                    /**
+                     * 判断参数 PlateStatus 是否已赋值
+                     * @return PlateStatus 是否已赋值
+                     */
+                    bool PlateStatusHasBeenSet() const;
+
+                    /**
+                     * 获取车牌遮挡的置信度，0-100。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PlateStatusConfidence 车牌遮挡的置信度，0-100。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetPlateStatusConfidence() const;
+
+                    /**
+                     * 设置车牌遮挡的置信度，0-100。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param PlateStatusConfidence 车牌遮挡的置信度，0-100。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPlateStatusConfidence(const int64_t& _plateStatusConfidence);
+
+                    /**
+                     * 判断参数 PlateStatusConfidence 是否已赋值
+                     * @return PlateStatusConfidence 是否已赋值
+                     */
+                    bool PlateStatusConfidenceHasBeenSet() const;
+
+                    /**
+                     * 获取车牌角度。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PlateAngle 车牌角度。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double GetPlateAngle() const;
+
+                    /**
+                     * 设置车牌角度。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param PlateAngle 车牌角度。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPlateAngle(const double& _plateAngle);
+
+                    /**
+                     * 判断参数 PlateAngle 是否已赋值
+                     * @return PlateAngle 是否已赋值
+                     */
+                    bool PlateAngleHasBeenSet() const;
+
                 private:
 
                     /**
@@ -164,6 +230,27 @@ namespace TencentCloud
                      */
                     std::vector<Coord> m_plateLocation;
                     bool m_plateLocationHasBeenSet;
+
+                    /**
+                     * 判断车牌是否遮挡。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_plateStatus;
+                    bool m_plateStatusHasBeenSet;
+
+                    /**
+                     * 车牌遮挡的置信度，0-100。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_plateStatusConfidence;
+                    bool m_plateStatusConfidenceHasBeenSet;
+
+                    /**
+                     * 车牌角度。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double m_plateAngle;
+                    bool m_plateAngleHasBeenSet;
 
                 };
             }

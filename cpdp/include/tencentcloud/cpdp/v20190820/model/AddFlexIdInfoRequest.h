@@ -138,6 +138,24 @@ __test__:测试环境
                      */
                     bool EnvironmentHasBeenSet() const;
 
+                    /**
+                     * 获取姓名
+                     * @return Name 姓名
+                     */
+                    std::string GetName() const;
+
+                    /**
+                     * 设置姓名
+                     * @param Name 姓名
+                     */
+                    void SetName(const std::string& _name);
+
+                    /**
+                     * 判断参数 Name 是否已赋值
+                     * @return Name 是否已赋值
+                     */
+                    bool NameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -169,6 +187,12 @@ __test__:测试环境
                      */
                     std::string m_environment;
                     bool m_environmentHasBeenSet;
+
+                    /**
+                     * 姓名
+                     */
+                    std::string m_name;
+                    bool m_nameHasBeenSet;
 
                 };
             }

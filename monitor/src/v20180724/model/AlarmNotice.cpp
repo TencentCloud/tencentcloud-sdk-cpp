@@ -31,6 +31,7 @@ AlarmNotice::AlarmNotice() :
     m_isPresetHasBeenSet(false),
     m_noticeLanguageHasBeenSet(false),
     m_policyIdsHasBeenSet(false),
+    m_aMPConsumerIdHasBeenSet(false),
     m_cLSNoticesHasBeenSet(false)
 {
 }
@@ -163,6 +164,16 @@ CoreInternalOutcome AlarmNotice::Deserialize(const rapidjson::Value &value)
         m_policyIdsHasBeenSet = true;
     }
 
+    if (value.HasMember("AMPConsumerId") && !value["AMPConsumerId"].IsNull())
+    {
+        if (!value["AMPConsumerId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AlarmNotice.AMPConsumerId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_aMPConsumerId = string(value["AMPConsumerId"].GetString());
+        m_aMPConsumerIdHasBeenSet = true;
+    }
+
     if (value.HasMember("CLSNotices") && !value["CLSNotices"].IsNull())
     {
         if (!value["CLSNotices"].IsArray())
@@ -287,6 +298,14 @@ void AlarmNotice::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_aMPConsumerIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AMPConsumerId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_aMPConsumerId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_cLSNoticesHasBeenSet)
@@ -465,6 +484,22 @@ void AlarmNotice::SetPolicyIds(const vector<string>& _policyIds)
 bool AlarmNotice::PolicyIdsHasBeenSet() const
 {
     return m_policyIdsHasBeenSet;
+}
+
+string AlarmNotice::GetAMPConsumerId() const
+{
+    return m_aMPConsumerId;
+}
+
+void AlarmNotice::SetAMPConsumerId(const string& _aMPConsumerId)
+{
+    m_aMPConsumerId = _aMPConsumerId;
+    m_aMPConsumerIdHasBeenSet = true;
+}
+
+bool AlarmNotice::AMPConsumerIdHasBeenSet() const
+{
+    return m_aMPConsumerIdHasBeenSet;
 }
 
 vector<CLSNotice> AlarmNotice::GetCLSNotices() const

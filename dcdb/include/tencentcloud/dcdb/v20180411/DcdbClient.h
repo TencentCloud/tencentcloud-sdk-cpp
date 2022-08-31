@@ -39,8 +39,6 @@
 #include <tencentcloud/dcdb/v20180411/model/CreateAccountResponse.h>
 #include <tencentcloud/dcdb/v20180411/model/CreateDCDBInstanceRequest.h>
 #include <tencentcloud/dcdb/v20180411/model/CreateDCDBInstanceResponse.h>
-#include <tencentcloud/dcdb/v20180411/model/CreateDedicatedClusterDCDBInstanceRequest.h>
-#include <tencentcloud/dcdb/v20180411/model/CreateDedicatedClusterDCDBInstanceResponse.h>
 #include <tencentcloud/dcdb/v20180411/model/CreateHourDCDBInstanceRequest.h>
 #include <tencentcloud/dcdb/v20180411/model/CreateHourDCDBInstanceResponse.h>
 #include <tencentcloud/dcdb/v20180411/model/DeleteAccountRequest.h>
@@ -177,9 +175,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateDCDBInstanceResponse> CreateDCDBInstanceOutcome;
                 typedef std::future<CreateDCDBInstanceOutcome> CreateDCDBInstanceOutcomeCallable;
                 typedef std::function<void(const DcdbClient*, const Model::CreateDCDBInstanceRequest&, CreateDCDBInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDCDBInstanceAsyncHandler;
-                typedef Outcome<Core::Error, Model::CreateDedicatedClusterDCDBInstanceResponse> CreateDedicatedClusterDCDBInstanceOutcome;
-                typedef std::future<CreateDedicatedClusterDCDBInstanceOutcome> CreateDedicatedClusterDCDBInstanceOutcomeCallable;
-                typedef std::function<void(const DcdbClient*, const Model::CreateDedicatedClusterDCDBInstanceRequest&, CreateDedicatedClusterDCDBInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDedicatedClusterDCDBInstanceAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateHourDCDBInstanceResponse> CreateHourDCDBInstanceOutcome;
                 typedef std::future<CreateHourDCDBInstanceOutcome> CreateHourDCDBInstanceOutcomeCallable;
                 typedef std::function<void(const DcdbClient*, const Model::CreateHourDCDBInstanceRequest&, CreateHourDCDBInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateHourDCDBInstanceAsyncHandler;
@@ -402,15 +397,6 @@ namespace TencentCloud
                 CreateDCDBInstanceOutcome CreateDCDBInstance(const Model::CreateDCDBInstanceRequest &request);
                 void CreateDCDBInstanceAsync(const Model::CreateDCDBInstanceRequest& request, const CreateDCDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateDCDBInstanceOutcomeCallable CreateDCDBInstanceCallable(const Model::CreateDCDBInstanceRequest& request);
-
-                /**
-                 *创建独享集群DCDB实例
-                 * @param req CreateDedicatedClusterDCDBInstanceRequest
-                 * @return CreateDedicatedClusterDCDBInstanceOutcome
-                 */
-                CreateDedicatedClusterDCDBInstanceOutcome CreateDedicatedClusterDCDBInstance(const Model::CreateDedicatedClusterDCDBInstanceRequest &request);
-                void CreateDedicatedClusterDCDBInstanceAsync(const Model::CreateDedicatedClusterDCDBInstanceRequest& request, const CreateDedicatedClusterDCDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                CreateDedicatedClusterDCDBInstanceOutcomeCallable CreateDedicatedClusterDCDBInstanceCallable(const Model::CreateDedicatedClusterDCDBInstanceRequest& request);
 
                 /**
                  *创建DCDB后付费实例

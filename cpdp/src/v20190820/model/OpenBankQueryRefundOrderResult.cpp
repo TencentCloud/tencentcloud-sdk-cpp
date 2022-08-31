@@ -31,7 +31,8 @@ OpenBankQueryRefundOrderResult::OpenBankQueryRefundOrderResult() :
     m_refundStatusHasBeenSet(false),
     m_refundInfoHasBeenSet(false),
     m_feeAmountHasBeenSet(false),
-    m_refundMessageHasBeenSet(false)
+    m_refundMessageHasBeenSet(false),
+    m_profitShareRespInfoListHasBeenSet(false)
 {
 }
 
@@ -150,6 +151,26 @@ CoreInternalOutcome OpenBankQueryRefundOrderResult::Deserialize(const rapidjson:
         m_refundMessageHasBeenSet = true;
     }
 
+    if (value.HasMember("ProfitShareRespInfoList") && !value["ProfitShareRespInfoList"].IsNull())
+    {
+        if (!value["ProfitShareRespInfoList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `OpenBankQueryRefundOrderResult.ProfitShareRespInfoList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ProfitShareRespInfoList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            OpenBankProfitShareRespInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_profitShareRespInfoList.push_back(item);
+        }
+        m_profitShareRespInfoListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -243,6 +264,21 @@ void OpenBankQueryRefundOrderResult::ToJsonObject(rapidjson::Value &value, rapid
         string key = "RefundMessage";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_refundMessage.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_profitShareRespInfoListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProfitShareRespInfoList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_profitShareRespInfoList.begin(); itr != m_profitShareRespInfoList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -422,5 +458,21 @@ void OpenBankQueryRefundOrderResult::SetRefundMessage(const string& _refundMessa
 bool OpenBankQueryRefundOrderResult::RefundMessageHasBeenSet() const
 {
     return m_refundMessageHasBeenSet;
+}
+
+vector<OpenBankProfitShareRespInfo> OpenBankQueryRefundOrderResult::GetProfitShareRespInfoList() const
+{
+    return m_profitShareRespInfoList;
+}
+
+void OpenBankQueryRefundOrderResult::SetProfitShareRespInfoList(const vector<OpenBankProfitShareRespInfo>& _profitShareRespInfoList)
+{
+    m_profitShareRespInfoList = _profitShareRespInfoList;
+    m_profitShareRespInfoListHasBeenSet = true;
+}
+
+bool OpenBankQueryRefundOrderResult::ProfitShareRespInfoListHasBeenSet() const
+{
+    return m_profitShareRespInfoListHasBeenSet;
 }
 

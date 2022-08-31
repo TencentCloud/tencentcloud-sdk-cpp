@@ -270,6 +270,28 @@ namespace TencentCloud
                     bool PolicyIdsHasBeenSet() const;
 
                     /**
+                     * 获取后台 amp consumer id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AMPConsumerId 后台 amp consumer id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetAMPConsumerId() const;
+
+                    /**
+                     * 设置后台 amp consumer id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AMPConsumerId 后台 amp consumer id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAMPConsumerId(const std::string& _aMPConsumerId);
+
+                    /**
+                     * 判断参数 AMPConsumerId 是否已赋值
+                     * @return AMPConsumerId 是否已赋值
+                     */
+                    bool AMPConsumerIdHasBeenSet() const;
+
+                    /**
                      * 获取推送cls渠道
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CLSNotices 推送cls渠道
@@ -362,6 +384,13 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_policyIds;
                     bool m_policyIdsHasBeenSet;
+
+                    /**
+                     * 后台 amp consumer id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_aMPConsumerId;
+                    bool m_aMPConsumerIdHasBeenSet;
 
                     /**
                      * 推送cls渠道

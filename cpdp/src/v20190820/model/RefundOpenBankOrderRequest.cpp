@@ -32,7 +32,8 @@ RefundOpenBankOrderRequest::RefundOpenBankOrderRequest() :
     m_refundReasonHasBeenSet(false),
     m_externalRefundDataHasBeenSet(false),
     m_remarkHasBeenSet(false),
-    m_environmentHasBeenSet(false)
+    m_environmentHasBeenSet(false),
+    m_profitShareInfoListHasBeenSet(false)
 {
 }
 
@@ -121,6 +122,21 @@ string RefundOpenBankOrderRequest::ToJsonString() const
         string key = "Environment";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_environment.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_profitShareInfoListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProfitShareInfoList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_profitShareInfoList.begin(); itr != m_profitShareInfoList.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -289,6 +305,22 @@ void RefundOpenBankOrderRequest::SetEnvironment(const string& _environment)
 bool RefundOpenBankOrderRequest::EnvironmentHasBeenSet() const
 {
     return m_environmentHasBeenSet;
+}
+
+vector<OpenBankProfitShareInfo> RefundOpenBankOrderRequest::GetProfitShareInfoList() const
+{
+    return m_profitShareInfoList;
+}
+
+void RefundOpenBankOrderRequest::SetProfitShareInfoList(const vector<OpenBankProfitShareInfo>& _profitShareInfoList)
+{
+    m_profitShareInfoList = _profitShareInfoList;
+    m_profitShareInfoListHasBeenSet = true;
+}
+
+bool RefundOpenBankOrderRequest::ProfitShareInfoListHasBeenSet() const
+{
+    return m_profitShareInfoListHasBeenSet;
 }
 
 
