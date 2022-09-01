@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool LocationIdsHasBeenSet() const;
 
                     /**
-                     * 获取要删除的转发规则的域名，如果是多域名，可以指定多域名列表中的任意一个。已提供LocationIds参数时本参数不生效。
-                     * @return Domain 要删除的转发规则的域名，如果是多域名，可以指定多域名列表中的任意一个。已提供LocationIds参数时本参数不生效。
+                     * 获取要删除的转发规则的域名，如果是多域名，可以指定多域名列表中的任意一个。
+                     * @return Domain 要删除的转发规则的域名，如果是多域名，可以指定多域名列表中的任意一个。
                      */
                     std::string GetDomain() const;
 
                     /**
-                     * 设置要删除的转发规则的域名，如果是多域名，可以指定多域名列表中的任意一个。已提供LocationIds参数时本参数不生效。
-                     * @param Domain 要删除的转发规则的域名，如果是多域名，可以指定多域名列表中的任意一个。已提供LocationIds参数时本参数不生效。
+                     * 设置要删除的转发规则的域名，如果是多域名，可以指定多域名列表中的任意一个。
+                     * @param Domain 要删除的转发规则的域名，如果是多域名，可以指定多域名列表中的任意一个。
                      */
                     void SetDomain(const std::string& _domain);
 
@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool DomainHasBeenSet() const;
 
                     /**
-                     * 获取要删除的转发规则的转发路径，已提供LocationIds参数时本参数不生效。
-                     * @return Url 要删除的转发规则的转发路径，已提供LocationIds参数时本参数不生效。
+                     * 获取要删除的转发规则的转发路径。
+                     * @return Url 要删除的转发规则的转发路径。
                      */
                     std::string GetUrl() const;
 
                     /**
-                     * 设置要删除的转发规则的转发路径，已提供LocationIds参数时本参数不生效。
-                     * @param Url 要删除的转发规则的转发路径，已提供LocationIds参数时本参数不生效。
+                     * 设置要删除的转发规则的转发路径。
+                     * @param Url 要删除的转发规则的转发路径。
                      */
                     void SetUrl(const std::string& _url);
 
@@ -171,13 +171,13 @@ namespace TencentCloud
                     bool m_locationIdsHasBeenSet;
 
                     /**
-                     * 要删除的转发规则的域名，如果是多域名，可以指定多域名列表中的任意一个。已提供LocationIds参数时本参数不生效。
+                     * 要删除的转发规则的域名，如果是多域名，可以指定多域名列表中的任意一个。
                      */
                     std::string m_domain;
                     bool m_domainHasBeenSet;
 
                     /**
-                     * 要删除的转发规则的转发路径，已提供LocationIds参数时本参数不生效。
+                     * 要删除的转发规则的转发路径。
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;

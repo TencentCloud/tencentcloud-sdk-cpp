@@ -38,7 +38,8 @@ ModifyTraceDataRequest::ModifyTraceDataRequest() :
     m_chainTimeHasBeenSet(false),
     m_chainDataHasBeenSet(false),
     m_corpIdHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_phaseDataHasBeenSet(false)
 {
 }
 
@@ -183,6 +184,15 @@ string ModifyTraceDataRequest::ToJsonString() const
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_status, allocator);
+    }
+
+    if (m_phaseDataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PhaseData";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_phaseData.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -447,6 +457,22 @@ void ModifyTraceDataRequest::SetStatus(const uint64_t& _status)
 bool ModifyTraceDataRequest::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+PhaseData ModifyTraceDataRequest::GetPhaseData() const
+{
+    return m_phaseData;
+}
+
+void ModifyTraceDataRequest::SetPhaseData(const PhaseData& _phaseData)
+{
+    m_phaseData = _phaseData;
+    m_phaseDataHasBeenSet = true;
+}
+
+bool ModifyTraceDataRequest::PhaseDataHasBeenSet() const
+{
+    return m_phaseDataHasBeenSet;
 }
 
 

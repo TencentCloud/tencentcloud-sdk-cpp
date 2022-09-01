@@ -34,6 +34,7 @@
 #include <tencentcloud/vod/v20180717/model/CreateImageSpriteTask2017.h>
 #include <tencentcloud/vod/v20180717/model/SnapshotByTimeOffsetTask2017.h>
 #include <tencentcloud/vod/v20180717/model/RemoveWatermarkTask.h>
+#include <tencentcloud/vod/v20180717/model/ReviewAudioVideoTask.h>
 
 
 namespace TencentCloud
@@ -66,7 +67,8 @@ namespace TencentCloud
 <li>WechatMiniProgramPublish：微信小程序视频发布任务；</li>
 <li>PullUpload：拉取上传媒体文件任务；</li>
 <li>FastClipMedia：快速剪辑任务；</li>
-<li>RemoveWatermarkTask：智能去除水印任务。</li>
+<li>RemoveWatermarkTask：智能去除水印任务；</li>
+<li> ReviewAudioVideo：音视频审核任务。</li>
                      * @return TaskType 任务类型，取值：
 <li>Procedure：视频处理任务；</li>
 <li>EditMedia：视频编辑任务；</li>
@@ -76,7 +78,8 @@ namespace TencentCloud
 <li>WechatMiniProgramPublish：微信小程序视频发布任务；</li>
 <li>PullUpload：拉取上传媒体文件任务；</li>
 <li>FastClipMedia：快速剪辑任务；</li>
-<li>RemoveWatermarkTask：智能去除水印任务。</li>
+<li>RemoveWatermarkTask：智能去除水印任务；</li>
+<li> ReviewAudioVideo：音视频审核任务。</li>
                      */
                     std::string GetTaskType() const;
 
@@ -322,6 +325,20 @@ namespace TencentCloud
                      */
                     bool RemoveWatermarkTaskHasBeenSet() const;
 
+                    /**
+                     * 获取音视频审核任务信息，仅当 TaskType 为 ReviewAudioVideo，该字段有值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ReviewAudioVideoTask 音视频审核任务信息，仅当 TaskType 为 ReviewAudioVideo，该字段有值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ReviewAudioVideoTask GetReviewAudioVideoTask() const;
+
+                    /**
+                     * 判断参数 ReviewAudioVideoTask 是否已赋值
+                     * @return ReviewAudioVideoTask 是否已赋值
+                     */
+                    bool ReviewAudioVideoTaskHasBeenSet() const;
+
                 private:
 
                     /**
@@ -334,7 +351,8 @@ namespace TencentCloud
 <li>WechatMiniProgramPublish：微信小程序视频发布任务；</li>
 <li>PullUpload：拉取上传媒体文件任务；</li>
 <li>FastClipMedia：快速剪辑任务；</li>
-<li>RemoveWatermarkTask：智能去除水印任务。</li>
+<li>RemoveWatermarkTask：智能去除水印任务；</li>
+<li> ReviewAudioVideo：音视频审核任务。</li>
                      */
                     std::string m_taskType;
                     bool m_taskTypeHasBeenSet;
@@ -456,6 +474,13 @@ namespace TencentCloud
                      */
                     RemoveWatermarkTask m_removeWatermarkTask;
                     bool m_removeWatermarkTaskHasBeenSet;
+
+                    /**
+                     * 音视频审核任务信息，仅当 TaskType 为 ReviewAudioVideo，该字段有值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ReviewAudioVideoTask m_reviewAudioVideoTask;
+                    bool m_reviewAudioVideoTaskHasBeenSet;
 
                 };
             }

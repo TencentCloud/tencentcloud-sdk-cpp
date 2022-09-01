@@ -42,7 +42,8 @@ Cluster::Cluster() :
     m_enableExternalNodeHasBeenSet(false),
     m_clusterLevelHasBeenSet(false),
     m_autoUpgradeClusterLevelHasBeenSet(false),
-    m_qGPUShareEnableHasBeenSet(false)
+    m_qGPUShareEnableHasBeenSet(false),
+    m_runtimeVersionHasBeenSet(false)
 {
 }
 
@@ -288,6 +289,16 @@ CoreInternalOutcome Cluster::Deserialize(const rapidjson::Value &value)
         m_qGPUShareEnableHasBeenSet = true;
     }
 
+    if (value.HasMember("RuntimeVersion") && !value["RuntimeVersion"].IsNull())
+    {
+        if (!value["RuntimeVersion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Cluster.RuntimeVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_runtimeVersion = string(value["RuntimeVersion"].GetString());
+        m_runtimeVersionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -477,6 +488,14 @@ void Cluster::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "QGPUShareEnable";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_qGPUShareEnable, allocator);
+    }
+
+    if (m_runtimeVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RuntimeVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_runtimeVersion.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -832,5 +851,21 @@ void Cluster::SetQGPUShareEnable(const bool& _qGPUShareEnable)
 bool Cluster::QGPUShareEnableHasBeenSet() const
 {
     return m_qGPUShareEnableHasBeenSet;
+}
+
+string Cluster::GetRuntimeVersion() const
+{
+    return m_runtimeVersion;
+}
+
+void Cluster::SetRuntimeVersion(const string& _runtimeVersion)
+{
+    m_runtimeVersion = _runtimeVersion;
+    m_runtimeVersionHasBeenSet = true;
+}
+
+bool Cluster::RuntimeVersionHasBeenSet() const
+{
+    return m_runtimeVersionHasBeenSet;
 }
 

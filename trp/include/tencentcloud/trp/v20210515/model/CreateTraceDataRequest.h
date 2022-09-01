@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/trp/v20210515/model/TraceItem.h>
+#include <tencentcloud/trp/v20210515/model/PhaseData.h>
 
 
 namespace TencentCloud
@@ -205,6 +206,42 @@ namespace TencentCloud
                      */
                     bool TraceItemsHasBeenSet() const;
 
+                    /**
+                     * 获取溯源状态 0: 无效, 1: 有效
+                     * @return Status 溯源状态 0: 无效, 1: 有效
+                     */
+                    uint64_t GetStatus() const;
+
+                    /**
+                     * 设置溯源状态 0: 无效, 1: 有效
+                     * @param Status 溯源状态 0: 无效, 1: 有效
+                     */
+                    void SetStatus(const uint64_t& _status);
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     */
+                    bool StatusHasBeenSet() const;
+
+                    /**
+                     * 获取环节数据
+                     * @return PhaseData 环节数据
+                     */
+                    PhaseData GetPhaseData() const;
+
+                    /**
+                     * 设置环节数据
+                     * @param PhaseData 环节数据
+                     */
+                    void SetPhaseData(const PhaseData& _phaseData);
+
+                    /**
+                     * 判断参数 PhaseData 是否已赋值
+                     * @return PhaseData 是否已赋值
+                     */
+                    bool PhaseDataHasBeenSet() const;
+
                 private:
 
                     /**
@@ -260,6 +297,18 @@ namespace TencentCloud
                      */
                     std::vector<TraceItem> m_traceItems;
                     bool m_traceItemsHasBeenSet;
+
+                    /**
+                     * 溯源状态 0: 无效, 1: 有效
+                     */
+                    uint64_t m_status;
+                    bool m_statusHasBeenSet;
+
+                    /**
+                     * 环节数据
+                     */
+                    PhaseData m_phaseData;
+                    bool m_phaseDataHasBeenSet;
 
                 };
             }

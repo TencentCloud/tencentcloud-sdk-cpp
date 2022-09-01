@@ -323,14 +323,14 @@ namespace TencentCloud
                     bool FilterDirtyHasBeenSet() const;
 
                     /**
-                     * 获取热词表id。如不设置该参数，自动生效默认热词表；如果设置了该参数，那么将生效对应的热词表。
-                     * @return HotwordId 热词表id。如不设置该参数，自动生效默认热词表；如果设置了该参数，那么将生效对应的热词表。
+                     * 获取热词表id。如不设置该参数，自动生效默认热词表；如设置了该参数，那么将生效对应的热词表。
+                     * @return HotwordId 热词表id。如不设置该参数，自动生效默认热词表；如设置了该参数，那么将生效对应的热词表。
                      */
                     std::string GetHotwordId() const;
 
                     /**
-                     * 设置热词表id。如不设置该参数，自动生效默认热词表；如果设置了该参数，那么将生效对应的热词表。
-                     * @param HotwordId 热词表id。如不设置该参数，自动生效默认热词表；如果设置了该参数，那么将生效对应的热词表。
+                     * 设置热词表id。如不设置该参数，自动生效默认热词表；如设置了该参数，那么将生效对应的热词表。
+                     * @param HotwordId 热词表id。如不设置该参数，自动生效默认热词表；如设置了该参数，那么将生效对应的热词表。
                      */
                     void SetHotwordId(const std::string& _hotwordId);
 
@@ -341,14 +341,14 @@ namespace TencentCloud
                     bool HotwordIdHasBeenSet() const;
 
                     /**
-                     * 获取自学习模型 id。如不设置该参数，自动生效最后一次上线的自学习模型；如果设置了该参数，那么将生效对应的自学习模型。
-                     * @return CustomizationId 自学习模型 id。如不设置该参数，自动生效最后一次上线的自学习模型；如果设置了该参数，那么将生效对应的自学习模型。
+                     * 获取自学习模型 id。如设置了该参数，将生效对应的自学习模型。
+                     * @return CustomizationId 自学习模型 id。如设置了该参数，将生效对应的自学习模型。
                      */
                     std::string GetCustomizationId() const;
 
                     /**
-                     * 设置自学习模型 id。如不设置该参数，自动生效最后一次上线的自学习模型；如果设置了该参数，那么将生效对应的自学习模型。
-                     * @param CustomizationId 自学习模型 id。如不设置该参数，自动生效最后一次上线的自学习模型；如果设置了该参数，那么将生效对应的自学习模型。
+                     * 设置自学习模型 id。如设置了该参数，将生效对应的自学习模型。
+                     * @param CustomizationId 自学习模型 id。如设置了该参数，将生效对应的自学习模型。
                      */
                     void SetCustomizationId(const std::string& _customizationId);
 
@@ -503,13 +503,13 @@ namespace TencentCloud
                     bool m_filterDirtyHasBeenSet;
 
                     /**
-                     * 热词表id。如不设置该参数，自动生效默认热词表；如果设置了该参数，那么将生效对应的热词表。
+                     * 热词表id。如不设置该参数，自动生效默认热词表；如设置了该参数，那么将生效对应的热词表。
                      */
                     std::string m_hotwordId;
                     bool m_hotwordIdHasBeenSet;
 
                     /**
-                     * 自学习模型 id。如不设置该参数，自动生效最后一次上线的自学习模型；如果设置了该参数，那么将生效对应的自学习模型。
+                     * 自学习模型 id。如设置了该参数，将生效对应的自学习模型。
                      */
                     std::string m_customizationId;
                     bool m_customizationIdHasBeenSet;

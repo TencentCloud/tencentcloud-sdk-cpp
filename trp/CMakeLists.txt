@@ -83,6 +83,7 @@ set(trp_public_header_model
   include/tencentcloud/trp/v20210515/model/DescribeTraceCodesRequest.h
   include/tencentcloud/trp/v20210515/model/ModifyTraceCodeResponse.h
   include/tencentcloud/trp/v20210515/model/ChainData.h
+  include/tencentcloud/trp/v20210515/model/PhaseData.h
   include/tencentcloud/trp/v20210515/model/DeleteMerchantRequest.h
   include/tencentcloud/trp/v20210515/model/ModifyTraceDataResponse.h
   )
@@ -153,6 +154,7 @@ set(trp_src
   src/v20210515/model/DescribeTraceCodesRequest.cpp
   src/v20210515/model/ModifyTraceCodeResponse.cpp
   src/v20210515/model/ChainData.cpp
+  src/v20210515/model/PhaseData.cpp
   src/v20210515/model/DeleteMerchantRequest.cpp
   src/v20210515/model/ModifyTraceDataResponse.cpp
   )

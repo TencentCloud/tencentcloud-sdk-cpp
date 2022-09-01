@@ -119,14 +119,14 @@ namespace TencentCloud
                     bool FileIdsHasBeenSet() const;
 
                     /**
-                     * 获取签署文件中的控件，如：填写控件等
-                     * @return Components 签署文件中的控件，如：填写控件等
+                     * 获取签署文件中的发起方的填写控件，需要在发起的时候进行填充
+                     * @return Components 签署文件中的发起方的填写控件，需要在发起的时候进行填充
                      */
                     std::vector<Component> GetComponents() const;
 
                     /**
-                     * 设置签署文件中的控件，如：填写控件等
-                     * @param Components 签署文件中的控件，如：填写控件等
+                     * 设置签署文件中的发起方的填写控件，需要在发起的时候进行填充
+                     * @param Components 签署文件中的发起方的填写控件，需要在发起的时候进行填充
                      */
                     void SetComponents(const std::vector<Component>& _components);
 
@@ -325,7 +325,7 @@ namespace TencentCloud
                     bool m_fileIdsHasBeenSet;
 
                     /**
-                     * 签署文件中的控件，如：填写控件等
+                     * 签署文件中的发起方的填写控件，需要在发起的时候进行填充
                      */
                     std::vector<Component> m_components;
                     bool m_componentsHasBeenSet;

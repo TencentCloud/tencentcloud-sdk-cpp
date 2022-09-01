@@ -488,6 +488,28 @@ namespace TencentCloud
                      */
                     bool QGPUShareEnableHasBeenSet() const;
 
+                    /**
+                     * 获取运行时版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RuntimeVersion 运行时版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetRuntimeVersion() const;
+
+                    /**
+                     * 设置运行时版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RuntimeVersion 运行时版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRuntimeVersion(const std::string& _runtimeVersion);
+
+                    /**
+                     * 判断参数 RuntimeVersion 是否已赋值
+                     * @return RuntimeVersion 是否已赋值
+                     */
+                    bool RuntimeVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -632,6 +654,13 @@ namespace TencentCloud
                      */
                     bool m_qGPUShareEnable;
                     bool m_qGPUShareEnableHasBeenSet;
+
+                    /**
+                     * 运行时版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_runtimeVersion;
+                    bool m_runtimeVersionHasBeenSet;
 
                 };
             }

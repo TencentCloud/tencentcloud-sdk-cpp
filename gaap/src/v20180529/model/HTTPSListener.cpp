@@ -33,7 +33,8 @@ HTTPSListener::HTTPSListener() :
     m_clientCertificateIdHasBeenSet(false),
     m_authTypeHasBeenSet(false),
     m_clientCertificateAliasHasBeenSet(false),
-    m_polyClientCertificateAliasInfoHasBeenSet(false)
+    m_polyClientCertificateAliasInfoHasBeenSet(false),
+    m_http3SupportedHasBeenSet(false)
 {
 }
 
@@ -182,6 +183,16 @@ CoreInternalOutcome HTTPSListener::Deserialize(const rapidjson::Value &value)
         m_polyClientCertificateAliasInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("Http3Supported") && !value["Http3Supported"].IsNull())
+    {
+        if (!value["Http3Supported"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `HTTPSListener.Http3Supported` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_http3Supported = value["Http3Supported"].GetInt64();
+        m_http3SupportedHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -298,6 +309,14 @@ void HTTPSListener::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_http3SupportedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Http3Supported";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_http3Supported, allocator);
     }
 
 }
@@ -509,5 +528,21 @@ void HTTPSListener::SetPolyClientCertificateAliasInfo(const vector<CertificateAl
 bool HTTPSListener::PolyClientCertificateAliasInfoHasBeenSet() const
 {
     return m_polyClientCertificateAliasInfoHasBeenSet;
+}
+
+int64_t HTTPSListener::GetHttp3Supported() const
+{
+    return m_http3Supported;
+}
+
+void HTTPSListener::SetHttp3Supported(const int64_t& _http3Supported)
+{
+    m_http3Supported = _http3Supported;
+    m_http3SupportedHasBeenSet = true;
+}
+
+bool HTTPSListener::Http3SupportedHasBeenSet() const
+{
+    return m_http3SupportedHasBeenSet;
 }
 

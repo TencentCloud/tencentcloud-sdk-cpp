@@ -329,6 +329,40 @@ namespace TencentCloud
                      */
                     bool PolyClientCertificateAliasInfoHasBeenSet() const;
 
+                    /**
+                     * 获取是否支持Http3，其中：
+0，不支持Http3接入；
+1，持Http3接入。
+注意：如果支持了Http3的功能，那么该监听器会占用对应的UDP接入端口，不可再创建相同端口的UDP监听器。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Http3Supported 是否支持Http3，其中：
+0，不支持Http3接入；
+1，持Http3接入。
+注意：如果支持了Http3的功能，那么该监听器会占用对应的UDP接入端口，不可再创建相同端口的UDP监听器。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetHttp3Supported() const;
+
+                    /**
+                     * 设置是否支持Http3，其中：
+0，不支持Http3接入；
+1，持Http3接入。
+注意：如果支持了Http3的功能，那么该监听器会占用对应的UDP接入端口，不可再创建相同端口的UDP监听器。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Http3Supported 是否支持Http3，其中：
+0，不支持Http3接入；
+1，持Http3接入。
+注意：如果支持了Http3的功能，那么该监听器会占用对应的UDP接入端口，不可再创建相同端口的UDP监听器。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetHttp3Supported(const int64_t& _http3Supported);
+
+                    /**
+                     * 判断参数 Http3Supported 是否已赋值
+                     * @return Http3Supported 是否已赋值
+                     */
+                    bool Http3SupportedHasBeenSet() const;
+
                 private:
 
                     /**
@@ -420,6 +454,16 @@ namespace TencentCloud
                      */
                     std::vector<CertificateAliasInfo> m_polyClientCertificateAliasInfo;
                     bool m_polyClientCertificateAliasInfoHasBeenSet;
+
+                    /**
+                     * 是否支持Http3，其中：
+0，不支持Http3接入；
+1，持Http3接入。
+注意：如果支持了Http3的功能，那么该监听器会占用对应的UDP接入端口，不可再创建相同端口的UDP监听器。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_http3Supported;
+                    bool m_http3SupportedHasBeenSet;
 
                 };
             }

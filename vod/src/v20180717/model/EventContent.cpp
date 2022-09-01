@@ -38,7 +38,8 @@ EventContent::EventContent() :
     m_wechatPublishCompleteEventHasBeenSet(false),
     m_wechatMiniProgramPublishCompleteEventHasBeenSet(false),
     m_removeWatermarkCompleteEventHasBeenSet(false),
-    m_restoreMediaCompleteEventHasBeenSet(false)
+    m_restoreMediaCompleteEventHasBeenSet(false),
+    m_reviewAudioVideoCompleteEventHasBeenSet(false)
 {
 }
 
@@ -339,6 +340,23 @@ CoreInternalOutcome EventContent::Deserialize(const rapidjson::Value &value)
         m_restoreMediaCompleteEventHasBeenSet = true;
     }
 
+    if (value.HasMember("ReviewAudioVideoCompleteEvent") && !value["ReviewAudioVideoCompleteEvent"].IsNull())
+    {
+        if (!value["ReviewAudioVideoCompleteEvent"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `EventContent.ReviewAudioVideoCompleteEvent` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_reviewAudioVideoCompleteEvent.Deserialize(value["ReviewAudioVideoCompleteEvent"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_reviewAudioVideoCompleteEventHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -504,6 +522,15 @@ void EventContent::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_restoreMediaCompleteEvent.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_reviewAudioVideoCompleteEventHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReviewAudioVideoCompleteEvent";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_reviewAudioVideoCompleteEvent.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -795,5 +822,21 @@ void EventContent::SetRestoreMediaCompleteEvent(const RestoreMediaTask& _restore
 bool EventContent::RestoreMediaCompleteEventHasBeenSet() const
 {
     return m_restoreMediaCompleteEventHasBeenSet;
+}
+
+ReviewAudioVideoTask EventContent::GetReviewAudioVideoCompleteEvent() const
+{
+    return m_reviewAudioVideoCompleteEvent;
+}
+
+void EventContent::SetReviewAudioVideoCompleteEvent(const ReviewAudioVideoTask& _reviewAudioVideoCompleteEvent)
+{
+    m_reviewAudioVideoCompleteEvent = _reviewAudioVideoCompleteEvent;
+    m_reviewAudioVideoCompleteEventHasBeenSet = true;
+}
+
+bool EventContent::ReviewAudioVideoCompleteEventHasBeenSet() const
+{
+    return m_reviewAudioVideoCompleteEventHasBeenSet;
 }
 

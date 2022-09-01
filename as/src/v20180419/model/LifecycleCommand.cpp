@@ -43,14 +43,11 @@ CoreInternalOutcome LifecycleCommand::Deserialize(const rapidjson::Value &value)
 
     if (value.HasMember("Parameters") && !value["Parameters"].IsNull())
     {
-        if (!value["Parameters"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `LifecycleCommand.Parameters` is not array type"));
-
-        const rapidjson::Value &tmpValue = value["Parameters"];
-        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        if (!value["Parameters"].IsString())
         {
-            m_parameters.push_back((*itr).GetString());
+            return CoreInternalOutcome(Core::Error("response `LifecycleCommand.Parameters` IsString=false incorrectly").SetRequestId(requestId));
         }
+        m_parameters = string(value["Parameters"].GetString());
         m_parametersHasBeenSet = true;
     }
 
@@ -74,12 +71,7 @@ void LifecycleCommand::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Parameters";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        for (auto itr = m_parameters.begin(); itr != m_parameters.end(); ++itr)
-        {
-            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
-        }
+        value.AddMember(iKey, rapidjson::Value(m_parameters.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -101,12 +93,12 @@ bool LifecycleCommand::CommandIdHasBeenSet() const
     return m_commandIdHasBeenSet;
 }
 
-vector<string> LifecycleCommand::GetParameters() const
+string LifecycleCommand::GetParameters() const
 {
     return m_parameters;
 }
 
-void LifecycleCommand::SetParameters(const vector<string>& _parameters)
+void LifecycleCommand::SetParameters(const string& _parameters)
 {
     m_parameters = _parameters;
     m_parametersHasBeenSet = true;

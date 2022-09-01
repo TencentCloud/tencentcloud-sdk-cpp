@@ -178,6 +178,28 @@ namespace TencentCloud
                      */
                     bool ValuesHasBeenSet() const;
 
+                    /**
+                     * 获取类型标识
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Key 类型标识
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetKey() const;
+
+                    /**
+                     * 设置类型标识
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Key 类型标识
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetKey(const std::string& _key);
+
+                    /**
+                     * 判断参数 Key 是否已赋值
+                     * @return Key 是否已赋值
+                     */
+                    bool KeyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -221,6 +243,13 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_values;
                     bool m_valuesHasBeenSet;
+
+                    /**
+                     * 类型标识
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_key;
+                    bool m_keyHasBeenSet;
 
                 };
             }

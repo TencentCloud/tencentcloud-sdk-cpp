@@ -31,7 +31,9 @@ CreateTraceDataRequest::CreateTraceDataRequest() :
     m_chainStatusHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_traceIdHasBeenSet(false),
-    m_traceItemsHasBeenSet(false)
+    m_traceItemsHasBeenSet(false),
+    m_statusHasBeenSet(false),
+    m_phaseDataHasBeenSet(false)
 {
 }
 
@@ -119,6 +121,23 @@ string CreateTraceDataRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_status, allocator);
+    }
+
+    if (m_phaseDataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PhaseData";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_phaseData.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -271,6 +290,38 @@ void CreateTraceDataRequest::SetTraceItems(const vector<TraceItem>& _traceItems)
 bool CreateTraceDataRequest::TraceItemsHasBeenSet() const
 {
     return m_traceItemsHasBeenSet;
+}
+
+uint64_t CreateTraceDataRequest::GetStatus() const
+{
+    return m_status;
+}
+
+void CreateTraceDataRequest::SetStatus(const uint64_t& _status)
+{
+    m_status = _status;
+    m_statusHasBeenSet = true;
+}
+
+bool CreateTraceDataRequest::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
+}
+
+PhaseData CreateTraceDataRequest::GetPhaseData() const
+{
+    return m_phaseData;
+}
+
+void CreateTraceDataRequest::SetPhaseData(const PhaseData& _phaseData)
+{
+    m_phaseData = _phaseData;
+    m_phaseDataHasBeenSet = true;
+}
+
+bool CreateTraceDataRequest::PhaseDataHasBeenSet() const
+{
+    return m_phaseDataHasBeenSet;
 }
 
 

@@ -41,7 +41,8 @@ DescribeTaskDetailResponse::DescribeTaskDetailResponse() :
     m_clipTaskHasBeenSet(false),
     m_createImageSpriteTaskHasBeenSet(false),
     m_snapshotByTimeOffsetTaskHasBeenSet(false),
-    m_removeWatermarkTaskHasBeenSet(false)
+    m_removeWatermarkTaskHasBeenSet(false),
+    m_reviewAudioVideoTaskHasBeenSet(false)
 {
 }
 
@@ -350,6 +351,23 @@ CoreInternalOutcome DescribeTaskDetailResponse::Deserialize(const string &payloa
         m_removeWatermarkTaskHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ReviewAudioVideoTask") && !rsp["ReviewAudioVideoTask"].IsNull())
+    {
+        if (!rsp["ReviewAudioVideoTask"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ReviewAudioVideoTask` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_reviewAudioVideoTask.Deserialize(rsp["ReviewAudioVideoTask"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_reviewAudioVideoTaskHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -515,6 +533,15 @@ string DescribeTaskDetailResponse::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_removeWatermarkTask.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_reviewAudioVideoTaskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReviewAudioVideoTask";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_reviewAudioVideoTask.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -707,6 +734,16 @@ RemoveWatermarkTask DescribeTaskDetailResponse::GetRemoveWatermarkTask() const
 bool DescribeTaskDetailResponse::RemoveWatermarkTaskHasBeenSet() const
 {
     return m_removeWatermarkTaskHasBeenSet;
+}
+
+ReviewAudioVideoTask DescribeTaskDetailResponse::GetReviewAudioVideoTask() const
+{
+    return m_reviewAudioVideoTask;
+}
+
+bool DescribeTaskDetailResponse::ReviewAudioVideoTaskHasBeenSet() const
+{
+    return m_reviewAudioVideoTaskHasBeenSet;
 }
 
 
