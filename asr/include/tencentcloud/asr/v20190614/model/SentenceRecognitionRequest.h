@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取腾讯云项目 ID，可填 0，总长度不超过 1024 字节。
-                     * @return ProjectId 腾讯云项目 ID，可填 0，总长度不超过 1024 字节。
+                     * 获取腾讯云项目 ID，废弃参数，默认填写0即可。
+                     * @return ProjectId 腾讯云项目 ID，废弃参数，默认填写0即可。
                      */
                     uint64_t GetProjectId() const;
 
                     /**
-                     * 设置腾讯云项目 ID，可填 0，总长度不超过 1024 字节。
-                     * @param ProjectId 腾讯云项目 ID，可填 0，总长度不超过 1024 字节。
+                     * 设置腾讯云项目 ID，废弃参数，默认填写0即可。
+                     * @param ProjectId 腾讯云项目 ID，废弃参数，默认填写0即可。
                      */
                     void SetProjectId(const uint64_t& _projectId);
 
@@ -89,7 +89,6 @@ namespace TencentCloud
 • 16k_ca：16k 粤语；
 • 16k_ja：16k 日语；
 • 16k_zh_medical：16k 医疗；
-• 16k_zh_dialect：多方言，支持23种方言。
                      * @return EngSerViceType 引擎模型类型。
 电话场景：
 • 8k_en：电话 8k 英语；
@@ -100,7 +99,6 @@ namespace TencentCloud
 • 16k_ca：16k 粤语；
 • 16k_ja：16k 日语；
 • 16k_zh_medical：16k 医疗；
-• 16k_zh_dialect：多方言，支持23种方言。
                      */
                     std::string GetEngSerViceType() const;
 
@@ -115,7 +113,6 @@ namespace TencentCloud
 • 16k_ca：16k 粤语；
 • 16k_ja：16k 日语；
 • 16k_zh_medical：16k 医疗；
-• 16k_zh_dialect：多方言，支持23种方言。
                      * @param EngSerViceType 引擎模型类型。
 电话场景：
 • 8k_en：电话 8k 英语；
@@ -126,7 +123,6 @@ namespace TencentCloud
 • 16k_ca：16k 粤语；
 • 16k_ja：16k 日语；
 • 16k_zh_medical：16k 医疗；
-• 16k_zh_dialect：多方言，支持23种方言。
                      */
                     void SetEngSerViceType(const std::string& _engSerViceType);
 
@@ -173,14 +169,14 @@ namespace TencentCloud
                     bool VoiceFormatHasBeenSet() const;
 
                     /**
-                     * 获取用户端对此任务的唯一标识，用户自助生成，用于用户查找识别结果。
-                     * @return UsrAudioKey 用户端对此任务的唯一标识，用户自助生成，用于用户查找识别结果。
+                     * 获取用户端对此任务的唯一标识。废弃参数，忽略即可。
+                     * @return UsrAudioKey 用户端对此任务的唯一标识。废弃参数，忽略即可。
                      */
                     std::string GetUsrAudioKey() const;
 
                     /**
-                     * 设置用户端对此任务的唯一标识，用户自助生成，用于用户查找识别结果。
-                     * @param UsrAudioKey 用户端对此任务的唯一标识，用户自助生成，用于用户查找识别结果。
+                     * 设置用户端对此任务的唯一标识。废弃参数，忽略即可。
+                     * @param UsrAudioKey 用户端对此任务的唯一标识。废弃参数，忽略即可。
                      */
                     void SetUsrAudioKey(const std::string& _usrAudioKey);
 
@@ -245,22 +241,22 @@ namespace TencentCloud
                     bool DataLenHasBeenSet() const;
 
                     /**
-                     * 获取热词id。用于调用对应的热词表，如果在调用语音识别服务时，不进行单独的热词id设置，自动生效默认热词；如果进行了单独的热词id设置，那么将生效单独设置的热词id。
-                     * @return HotwordId 热词id。用于调用对应的热词表，如果在调用语音识别服务时，不进行单独的热词id设置，自动生效默认热词；如果进行了单独的热词id设置，那么将生效单独设置的热词id。
+                     * 获取是否显示词级别时间戳。0：不显示；1：显示，不包含标点时间戳，2：显示，包含标点时间戳。默认值为 0。
+                     * @return WordInfo 是否显示词级别时间戳。0：不显示；1：显示，不包含标点时间戳，2：显示，包含标点时间戳。默认值为 0。
                      */
-                    std::string GetHotwordId() const;
+                    int64_t GetWordInfo() const;
 
                     /**
-                     * 设置热词id。用于调用对应的热词表，如果在调用语音识别服务时，不进行单独的热词id设置，自动生效默认热词；如果进行了单独的热词id设置，那么将生效单独设置的热词id。
-                     * @param HotwordId 热词id。用于调用对应的热词表，如果在调用语音识别服务时，不进行单独的热词id设置，自动生效默认热词；如果进行了单独的热词id设置，那么将生效单独设置的热词id。
+                     * 设置是否显示词级别时间戳。0：不显示；1：显示，不包含标点时间戳，2：显示，包含标点时间戳。默认值为 0。
+                     * @param WordInfo 是否显示词级别时间戳。0：不显示；1：显示，不包含标点时间戳，2：显示，包含标点时间戳。默认值为 0。
                      */
-                    void SetHotwordId(const std::string& _hotwordId);
+                    void SetWordInfo(const int64_t& _wordInfo);
 
                     /**
-                     * 判断参数 HotwordId 是否已赋值
-                     * @return HotwordId 是否已赋值
+                     * 判断参数 WordInfo 是否已赋值
+                     * @return WordInfo 是否已赋值
                      */
-                    bool HotwordIdHasBeenSet() const;
+                    bool WordInfoHasBeenSet() const;
 
                     /**
                      * 获取是否过滤脏词（目前支持中文普通话引擎）。0：不过滤脏词；1：过滤脏词；2：将脏词替换为 * 。默认值为 0。
@@ -335,27 +331,45 @@ namespace TencentCloud
                     bool ConvertNumModeHasBeenSet() const;
 
                     /**
-                     * 获取是否显示词级别时间戳。0：不显示；1：显示，不包含标点时间戳，2：显示，包含标点时间戳。默认值为 0。
-                     * @return WordInfo 是否显示词级别时间戳。0：不显示；1：显示，不包含标点时间戳，2：显示，包含标点时间戳。默认值为 0。
+                     * 获取热词id。用于调用对应的热词表，如果在调用语音识别服务时，不进行单独的热词id设置，自动生效默认热词；如果进行了单独的热词id设置，那么将生效单独设置的热词id。
+                     * @return HotwordId 热词id。用于调用对应的热词表，如果在调用语音识别服务时，不进行单独的热词id设置，自动生效默认热词；如果进行了单独的热词id设置，那么将生效单独设置的热词id。
                      */
-                    int64_t GetWordInfo() const;
+                    std::string GetHotwordId() const;
 
                     /**
-                     * 设置是否显示词级别时间戳。0：不显示；1：显示，不包含标点时间戳，2：显示，包含标点时间戳。默认值为 0。
-                     * @param WordInfo 是否显示词级别时间戳。0：不显示；1：显示，不包含标点时间戳，2：显示，包含标点时间戳。默认值为 0。
+                     * 设置热词id。用于调用对应的热词表，如果在调用语音识别服务时，不进行单独的热词id设置，自动生效默认热词；如果进行了单独的热词id设置，那么将生效单独设置的热词id。
+                     * @param HotwordId 热词id。用于调用对应的热词表，如果在调用语音识别服务时，不进行单独的热词id设置，自动生效默认热词；如果进行了单独的热词id设置，那么将生效单独设置的热词id。
                      */
-                    void SetWordInfo(const int64_t& _wordInfo);
+                    void SetHotwordId(const std::string& _hotwordId);
 
                     /**
-                     * 判断参数 WordInfo 是否已赋值
-                     * @return WordInfo 是否已赋值
+                     * 判断参数 HotwordId 是否已赋值
+                     * @return HotwordId 是否已赋值
                      */
-                    bool WordInfoHasBeenSet() const;
+                    bool HotwordIdHasBeenSet() const;
+
+                    /**
+                     * 获取自学习模型 id。如设置了该参数，将生效对应的自学习模型。
+                     * @return CustomizationId 自学习模型 id。如设置了该参数，将生效对应的自学习模型。
+                     */
+                    std::string GetCustomizationId() const;
+
+                    /**
+                     * 设置自学习模型 id。如设置了该参数，将生效对应的自学习模型。
+                     * @param CustomizationId 自学习模型 id。如设置了该参数，将生效对应的自学习模型。
+                     */
+                    void SetCustomizationId(const std::string& _customizationId);
+
+                    /**
+                     * 判断参数 CustomizationId 是否已赋值
+                     * @return CustomizationId 是否已赋值
+                     */
+                    bool CustomizationIdHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 腾讯云项目 ID，可填 0，总长度不超过 1024 字节。
+                     * 腾讯云项目 ID，废弃参数，默认填写0即可。
                      */
                     uint64_t m_projectId;
                     bool m_projectIdHasBeenSet;
@@ -377,7 +391,6 @@ namespace TencentCloud
 • 16k_ca：16k 粤语；
 • 16k_ja：16k 日语；
 • 16k_zh_medical：16k 医疗；
-• 16k_zh_dialect：多方言，支持23种方言。
                      */
                     std::string m_engSerViceType;
                     bool m_engSerViceTypeHasBeenSet;
@@ -395,7 +408,7 @@ namespace TencentCloud
                     bool m_voiceFormatHasBeenSet;
 
                     /**
-                     * 用户端对此任务的唯一标识，用户自助生成，用于用户查找识别结果。
+                     * 用户端对此任务的唯一标识。废弃参数，忽略即可。
                      */
                     std::string m_usrAudioKey;
                     bool m_usrAudioKeyHasBeenSet;
@@ -419,10 +432,10 @@ namespace TencentCloud
                     bool m_dataLenHasBeenSet;
 
                     /**
-                     * 热词id。用于调用对应的热词表，如果在调用语音识别服务时，不进行单独的热词id设置，自动生效默认热词；如果进行了单独的热词id设置，那么将生效单独设置的热词id。
+                     * 是否显示词级别时间戳。0：不显示；1：显示，不包含标点时间戳，2：显示，包含标点时间戳。默认值为 0。
                      */
-                    std::string m_hotwordId;
-                    bool m_hotwordIdHasBeenSet;
+                    int64_t m_wordInfo;
+                    bool m_wordInfoHasBeenSet;
 
                     /**
                      * 是否过滤脏词（目前支持中文普通话引擎）。0：不过滤脏词；1：过滤脏词；2：将脏词替换为 * 。默认值为 0。
@@ -449,10 +462,16 @@ namespace TencentCloud
                     bool m_convertNumModeHasBeenSet;
 
                     /**
-                     * 是否显示词级别时间戳。0：不显示；1：显示，不包含标点时间戳，2：显示，包含标点时间戳。默认值为 0。
+                     * 热词id。用于调用对应的热词表，如果在调用语音识别服务时，不进行单独的热词id设置，自动生效默认热词；如果进行了单独的热词id设置，那么将生效单独设置的热词id。
                      */
-                    int64_t m_wordInfo;
-                    bool m_wordInfoHasBeenSet;
+                    std::string m_hotwordId;
+                    bool m_hotwordIdHasBeenSet;
+
+                    /**
+                     * 自学习模型 id。如设置了该参数，将生效对应的自学习模型。
+                     */
+                    std::string m_customizationId;
+                    bool m_customizationIdHasBeenSet;
 
                 };
             }

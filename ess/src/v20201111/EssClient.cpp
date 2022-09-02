@@ -298,6 +298,49 @@ EssClient::CreateFlowOutcomeCallable EssClient::CreateFlowCallable(const CreateF
     return task->get_future();
 }
 
+EssClient::CreateFlowApproversOutcome EssClient::CreateFlowApprovers(const CreateFlowApproversRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateFlowApprovers");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateFlowApproversResponse rsp = CreateFlowApproversResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateFlowApproversOutcome(rsp);
+        else
+            return CreateFlowApproversOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateFlowApproversOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::CreateFlowApproversAsync(const CreateFlowApproversRequest& request, const CreateFlowApproversAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateFlowApprovers(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssClient::CreateFlowApproversOutcomeCallable EssClient::CreateFlowApproversCallable(const CreateFlowApproversRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateFlowApproversOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateFlowApprovers(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssClient::CreateFlowByFilesOutcome EssClient::CreateFlowByFiles(const CreateFlowByFilesRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateFlowByFiles");
@@ -592,6 +635,49 @@ EssClient::DescribeFlowBriefsOutcomeCallable EssClient::DescribeFlowBriefsCallab
         [this, request]()
         {
             return this->DescribeFlowBriefs(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EssClient::DescribeFlowInfoOutcome EssClient::DescribeFlowInfo(const DescribeFlowInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeFlowInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeFlowInfoResponse rsp = DescribeFlowInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeFlowInfoOutcome(rsp);
+        else
+            return DescribeFlowInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeFlowInfoOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::DescribeFlowInfoAsync(const DescribeFlowInfoRequest& request, const DescribeFlowInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeFlowInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssClient::DescribeFlowInfoOutcomeCallable EssClient::DescribeFlowInfoCallable(const DescribeFlowInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeFlowInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeFlowInfo(request);
         }
     );
 

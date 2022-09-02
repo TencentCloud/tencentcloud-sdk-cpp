@@ -31,7 +31,10 @@ ApproverInfo::ApproverInfo() :
     m_notifyTypeHasBeenSet(false),
     m_approverRoleHasBeenSet(false),
     m_verifyChannelHasBeenSet(false),
-    m_preReadTimeHasBeenSet(false)
+    m_preReadTimeHasBeenSet(false),
+    m_userIdHasBeenSet(false),
+    m_approverSourceHasBeenSet(false),
+    m_customApproverTagHasBeenSet(false)
 {
 }
 
@@ -163,6 +166,36 @@ CoreInternalOutcome ApproverInfo::Deserialize(const rapidjson::Value &value)
         m_preReadTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("UserId") && !value["UserId"].IsNull())
+    {
+        if (!value["UserId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApproverInfo.UserId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_userId = string(value["UserId"].GetString());
+        m_userIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("ApproverSource") && !value["ApproverSource"].IsNull())
+    {
+        if (!value["ApproverSource"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApproverInfo.ApproverSource` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_approverSource = string(value["ApproverSource"].GetString());
+        m_approverSourceHasBeenSet = true;
+    }
+
+    if (value.HasMember("CustomApproverTag") && !value["CustomApproverTag"].IsNull())
+    {
+        if (!value["CustomApproverTag"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApproverInfo.CustomApproverTag` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_customApproverTag = string(value["CustomApproverTag"].GetString());
+        m_customApproverTagHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -268,6 +301,30 @@ void ApproverInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "PreReadTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_preReadTime, allocator);
+    }
+
+    if (m_userIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_userId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_approverSourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApproverSource";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_approverSource.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_customApproverTagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CustomApproverTag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_customApproverTag.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -447,5 +504,53 @@ void ApproverInfo::SetPreReadTime(const int64_t& _preReadTime)
 bool ApproverInfo::PreReadTimeHasBeenSet() const
 {
     return m_preReadTimeHasBeenSet;
+}
+
+string ApproverInfo::GetUserId() const
+{
+    return m_userId;
+}
+
+void ApproverInfo::SetUserId(const string& _userId)
+{
+    m_userId = _userId;
+    m_userIdHasBeenSet = true;
+}
+
+bool ApproverInfo::UserIdHasBeenSet() const
+{
+    return m_userIdHasBeenSet;
+}
+
+string ApproverInfo::GetApproverSource() const
+{
+    return m_approverSource;
+}
+
+void ApproverInfo::SetApproverSource(const string& _approverSource)
+{
+    m_approverSource = _approverSource;
+    m_approverSourceHasBeenSet = true;
+}
+
+bool ApproverInfo::ApproverSourceHasBeenSet() const
+{
+    return m_approverSourceHasBeenSet;
+}
+
+string ApproverInfo::GetCustomApproverTag() const
+{
+    return m_customApproverTag;
+}
+
+void ApproverInfo::SetCustomApproverTag(const string& _customApproverTag)
+{
+    m_customApproverTag = _customApproverTag;
+    m_customApproverTagHasBeenSet = true;
+}
+
+bool ApproverInfo::CustomApproverTagHasBeenSet() const
+{
+    return m_customApproverTagHasBeenSet;
 }
 

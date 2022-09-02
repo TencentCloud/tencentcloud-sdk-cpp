@@ -41,7 +41,8 @@ InstanceInfo::InstanceInfo() :
     m_appIdHasBeenSet(false),
     m_editionHasBeenSet(false),
     m_fraudPkgHasBeenSet(false),
-    m_botPkgHasBeenSet(false)
+    m_botPkgHasBeenSet(false),
+    m_botQPSHasBeenSet(false)
 {
 }
 
@@ -288,6 +289,23 @@ CoreInternalOutcome InstanceInfo::Deserialize(const rapidjson::Value &value)
         m_botPkgHasBeenSet = true;
     }
 
+    if (value.HasMember("BotQPS") && !value["BotQPS"].IsNull())
+    {
+        if (!value["BotQPS"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.BotQPS` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_botQPS.Deserialize(value["BotQPS"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_botQPSHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -465,6 +483,15 @@ void InstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_botPkg.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_botQPSHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BotQPS";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_botQPS.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -804,5 +831,21 @@ void InstanceInfo::SetBotPkg(const BotPkg& _botPkg)
 bool InstanceInfo::BotPkgHasBeenSet() const
 {
     return m_botPkgHasBeenSet;
+}
+
+BotQPS InstanceInfo::GetBotQPS() const
+{
+    return m_botQPS;
+}
+
+void InstanceInfo::SetBotQPS(const BotQPS& _botQPS)
+{
+    m_botQPS = _botQPS;
+    m_botQPSHasBeenSet = true;
+}
+
+bool InstanceInfo::BotQPSHasBeenSet() const
+{
+    return m_botQPSHasBeenSet;
 }
 

@@ -32,12 +32,13 @@ SentenceRecognitionRequest::SentenceRecognitionRequest() :
     m_urlHasBeenSet(false),
     m_dataHasBeenSet(false),
     m_dataLenHasBeenSet(false),
-    m_hotwordIdHasBeenSet(false),
+    m_wordInfoHasBeenSet(false),
     m_filterDirtyHasBeenSet(false),
     m_filterModalHasBeenSet(false),
     m_filterPuncHasBeenSet(false),
     m_convertNumModeHasBeenSet(false),
-    m_wordInfoHasBeenSet(false)
+    m_hotwordIdHasBeenSet(false),
+    m_customizationIdHasBeenSet(false)
 {
 }
 
@@ -120,12 +121,12 @@ string SentenceRecognitionRequest::ToJsonString() const
         d.AddMember(iKey, m_dataLen, allocator);
     }
 
-    if (m_hotwordIdHasBeenSet)
+    if (m_wordInfoHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "HotwordId";
+        string key = "WordInfo";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_hotwordId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, m_wordInfo, allocator);
     }
 
     if (m_filterDirtyHasBeenSet)
@@ -160,12 +161,20 @@ string SentenceRecognitionRequest::ToJsonString() const
         d.AddMember(iKey, m_convertNumMode, allocator);
     }
 
-    if (m_wordInfoHasBeenSet)
+    if (m_hotwordIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "WordInfo";
+        string key = "HotwordId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_wordInfo, allocator);
+        d.AddMember(iKey, rapidjson::Value(m_hotwordId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_customizationIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CustomizationId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_customizationId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -320,20 +329,20 @@ bool SentenceRecognitionRequest::DataLenHasBeenSet() const
     return m_dataLenHasBeenSet;
 }
 
-string SentenceRecognitionRequest::GetHotwordId() const
+int64_t SentenceRecognitionRequest::GetWordInfo() const
 {
-    return m_hotwordId;
+    return m_wordInfo;
 }
 
-void SentenceRecognitionRequest::SetHotwordId(const string& _hotwordId)
+void SentenceRecognitionRequest::SetWordInfo(const int64_t& _wordInfo)
 {
-    m_hotwordId = _hotwordId;
-    m_hotwordIdHasBeenSet = true;
+    m_wordInfo = _wordInfo;
+    m_wordInfoHasBeenSet = true;
 }
 
-bool SentenceRecognitionRequest::HotwordIdHasBeenSet() const
+bool SentenceRecognitionRequest::WordInfoHasBeenSet() const
 {
-    return m_hotwordIdHasBeenSet;
+    return m_wordInfoHasBeenSet;
 }
 
 int64_t SentenceRecognitionRequest::GetFilterDirty() const
@@ -400,20 +409,36 @@ bool SentenceRecognitionRequest::ConvertNumModeHasBeenSet() const
     return m_convertNumModeHasBeenSet;
 }
 
-int64_t SentenceRecognitionRequest::GetWordInfo() const
+string SentenceRecognitionRequest::GetHotwordId() const
 {
-    return m_wordInfo;
+    return m_hotwordId;
 }
 
-void SentenceRecognitionRequest::SetWordInfo(const int64_t& _wordInfo)
+void SentenceRecognitionRequest::SetHotwordId(const string& _hotwordId)
 {
-    m_wordInfo = _wordInfo;
-    m_wordInfoHasBeenSet = true;
+    m_hotwordId = _hotwordId;
+    m_hotwordIdHasBeenSet = true;
 }
 
-bool SentenceRecognitionRequest::WordInfoHasBeenSet() const
+bool SentenceRecognitionRequest::HotwordIdHasBeenSet() const
 {
-    return m_wordInfoHasBeenSet;
+    return m_hotwordIdHasBeenSet;
+}
+
+string SentenceRecognitionRequest::GetCustomizationId() const
+{
+    return m_customizationId;
+}
+
+void SentenceRecognitionRequest::SetCustomizationId(const string& _customizationId)
+{
+    m_customizationId = _customizationId;
+    m_customizationIdHasBeenSet = true;
+}
+
+bool SentenceRecognitionRequest::CustomizationIdHasBeenSet() const
+{
+    return m_customizationIdHasBeenSet;
 }
 
 

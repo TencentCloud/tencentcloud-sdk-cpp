@@ -29,7 +29,8 @@ CreateCodeBatchRequest::CreateCodeBatchRequest() :
     m_batchTypeHasBeenSet(false),
     m_batchIdHasBeenSet(false),
     m_remarkHasBeenSet(false),
-    m_mpTplHasBeenSet(false)
+    m_mpTplHasBeenSet(false),
+    m_cloneIdHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,14 @@ string CreateCodeBatchRequest::ToJsonString() const
         string key = "MpTpl";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_mpTpl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cloneIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CloneId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_cloneId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -214,6 +223,22 @@ void CreateCodeBatchRequest::SetMpTpl(const string& _mpTpl)
 bool CreateCodeBatchRequest::MpTplHasBeenSet() const
 {
     return m_mpTplHasBeenSet;
+}
+
+string CreateCodeBatchRequest::GetCloneId() const
+{
+    return m_cloneId;
+}
+
+void CreateCodeBatchRequest::SetCloneId(const string& _cloneId)
+{
+    m_cloneId = _cloneId;
+    m_cloneIdHasBeenSet = true;
+}
+
+bool CreateCodeBatchRequest::CloneIdHasBeenSet() const
+{
+    return m_cloneIdHasBeenSet;
 }
 
 

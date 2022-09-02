@@ -33,7 +33,9 @@ FlowCreateApprover::FlowCreateApprover() :
     m_isFullTextHasBeenSet(false),
     m_preReadTimeHasBeenSet(false),
     m_userIdHasBeenSet(false),
-    m_requiredHasBeenSet(false)
+    m_requiredHasBeenSet(false),
+    m_approverSourceHasBeenSet(false),
+    m_customApproverTagHasBeenSet(false)
 {
 }
 
@@ -175,6 +177,26 @@ CoreInternalOutcome FlowCreateApprover::Deserialize(const rapidjson::Value &valu
         m_requiredHasBeenSet = true;
     }
 
+    if (value.HasMember("ApproverSource") && !value["ApproverSource"].IsNull())
+    {
+        if (!value["ApproverSource"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `FlowCreateApprover.ApproverSource` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_approverSource = string(value["ApproverSource"].GetString());
+        m_approverSourceHasBeenSet = true;
+    }
+
+    if (value.HasMember("CustomApproverTag") && !value["CustomApproverTag"].IsNull())
+    {
+        if (!value["CustomApproverTag"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `FlowCreateApprover.CustomApproverTag` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_customApproverTag = string(value["CustomApproverTag"].GetString());
+        m_customApproverTagHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -289,6 +311,22 @@ void FlowCreateApprover::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "Required";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_required, allocator);
+    }
+
+    if (m_approverSourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApproverSource";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_approverSource.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_customApproverTagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CustomApproverTag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_customApproverTag.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -500,5 +538,37 @@ void FlowCreateApprover::SetRequired(const bool& _required)
 bool FlowCreateApprover::RequiredHasBeenSet() const
 {
     return m_requiredHasBeenSet;
+}
+
+string FlowCreateApprover::GetApproverSource() const
+{
+    return m_approverSource;
+}
+
+void FlowCreateApprover::SetApproverSource(const string& _approverSource)
+{
+    m_approverSource = _approverSource;
+    m_approverSourceHasBeenSet = true;
+}
+
+bool FlowCreateApprover::ApproverSourceHasBeenSet() const
+{
+    return m_approverSourceHasBeenSet;
+}
+
+string FlowCreateApprover::GetCustomApproverTag() const
+{
+    return m_customApproverTag;
+}
+
+void FlowCreateApprover::SetCustomApproverTag(const string& _customApproverTag)
+{
+    m_customApproverTag = _customApproverTag;
+    m_customApproverTagHasBeenSet = true;
+}
+
+bool FlowCreateApprover::CustomApproverTagHasBeenSet() const
+{
+    return m_customApproverTagHasBeenSet;
 }
 

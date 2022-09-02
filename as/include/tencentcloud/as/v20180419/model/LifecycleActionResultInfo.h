@@ -131,11 +131,11 @@ namespace TencentCloud
                     bool InvokeCommandResultHasBeenSet() const;
 
                     /**
-                     * 获取通知的结果，表示通知CMQ/TCMQ是否成功。<br>
+                     * 获取通知的结果，表示通知CMQ/TDMQ是否成功。<br>
 <li>SUCCESSFUL 通知成功</li>
 <li>FAILED 通知失败</li>
 <li>NONE</li>
-                     * @return NotificationResult 通知的结果，表示通知CMQ/TCMQ是否成功。<br>
+                     * @return NotificationResult 通知的结果，表示通知CMQ/TDMQ是否成功。<br>
 <li>SUCCESSFUL 通知成功</li>
 <li>FAILED 通知失败</li>
 <li>NONE</li>
@@ -143,11 +143,11 @@ namespace TencentCloud
                     std::string GetNotificationResult() const;
 
                     /**
-                     * 设置通知的结果，表示通知CMQ/TCMQ是否成功。<br>
+                     * 设置通知的结果，表示通知CMQ/TDMQ是否成功。<br>
 <li>SUCCESSFUL 通知成功</li>
 <li>FAILED 通知失败</li>
 <li>NONE</li>
-                     * @param NotificationResult 通知的结果，表示通知CMQ/TCMQ是否成功。<br>
+                     * @param NotificationResult 通知的结果，表示通知CMQ/TDMQ是否成功。<br>
 <li>SUCCESSFUL 通知成功</li>
 <li>FAILED 通知失败</li>
 <li>NONE</li>
@@ -258,7 +258,7 @@ namespace TencentCloud
                     bool m_invokeCommandResultHasBeenSet;
 
                     /**
-                     * 通知的结果，表示通知CMQ/TCMQ是否成功。<br>
+                     * 通知的结果，表示通知CMQ/TDMQ是否成功。<br>
 <li>SUCCESSFUL 通知成功</li>
 <li>FAILED 通知失败</li>
 <li>NONE</li>

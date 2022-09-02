@@ -30,7 +30,8 @@ ModifyLifecycleHookRequest::ModifyLifecycleHookRequest() :
     m_heartbeatTimeoutHasBeenSet(false),
     m_notificationMetadataHasBeenSet(false),
     m_lifecycleTransitionTypeHasBeenSet(false),
-    m_notificationTargetHasBeenSet(false)
+    m_notificationTargetHasBeenSet(false),
+    m_lifecycleCommandHasBeenSet(false)
 {
 }
 
@@ -104,6 +105,15 @@ string ModifyLifecycleHookRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_notificationTarget.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_lifecycleCommandHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LifecycleCommand";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_lifecycleCommand.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -240,6 +250,22 @@ void ModifyLifecycleHookRequest::SetNotificationTarget(const NotificationTarget&
 bool ModifyLifecycleHookRequest::NotificationTargetHasBeenSet() const
 {
     return m_notificationTargetHasBeenSet;
+}
+
+LifecycleCommand ModifyLifecycleHookRequest::GetLifecycleCommand() const
+{
+    return m_lifecycleCommand;
+}
+
+void ModifyLifecycleHookRequest::SetLifecycleCommand(const LifecycleCommand& _lifecycleCommand)
+{
+    m_lifecycleCommand = _lifecycleCommand;
+    m_lifecycleCommandHasBeenSet = true;
+}
+
+bool ModifyLifecycleHookRequest::LifecycleCommandHasBeenSet() const
+{
+    return m_lifecycleCommandHasBeenSet;
 }
 
 

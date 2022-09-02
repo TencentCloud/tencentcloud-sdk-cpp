@@ -25,7 +25,8 @@ GetEidTokenConfig::GetEidTokenConfig() :
     m_useIntentionVerifyHasBeenSet(false),
     m_intentionModeHasBeenSet(false),
     m_intentionVerifyTextHasBeenSet(false),
-    m_intentionQuestionsHasBeenSet(false)
+    m_intentionQuestionsHasBeenSet(false),
+    m_intentionRecognitionHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,16 @@ CoreInternalOutcome GetEidTokenConfig::Deserialize(const rapidjson::Value &value
         m_intentionQuestionsHasBeenSet = true;
     }
 
+    if (value.HasMember("IntentionRecognition") && !value["IntentionRecognition"].IsNull())
+    {
+        if (!value["IntentionRecognition"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `GetEidTokenConfig.IntentionRecognition` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_intentionRecognition = value["IntentionRecognition"].GetBool();
+        m_intentionRecognitionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -146,6 +157,14 @@ void GetEidTokenConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_intentionRecognitionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IntentionRecognition";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_intentionRecognition, allocator);
     }
 
 }
@@ -229,5 +248,21 @@ void GetEidTokenConfig::SetIntentionQuestions(const vector<IntentionQuestion>& _
 bool GetEidTokenConfig::IntentionQuestionsHasBeenSet() const
 {
     return m_intentionQuestionsHasBeenSet;
+}
+
+bool GetEidTokenConfig::GetIntentionRecognition() const
+{
+    return m_intentionRecognition;
+}
+
+void GetEidTokenConfig::SetIntentionRecognition(const bool& _intentionRecognition)
+{
+    m_intentionRecognition = _intentionRecognition;
+    m_intentionRecognitionHasBeenSet = true;
+}
+
+bool GetEidTokenConfig::IntentionRecognitionHasBeenSet() const
+{
+    return m_intentionRecognitionHasBeenSet;
 }
 

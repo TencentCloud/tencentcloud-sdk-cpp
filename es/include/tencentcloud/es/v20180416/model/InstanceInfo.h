@@ -1650,6 +1650,28 @@ RENEW_FLAG_DEFAULT：不自动续费
                      */
                     bool AutoIndexEnabledHasBeenSet() const;
 
+                    /**
+                     * 获取是否支持存储计算分离
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EnableHybridStorage 是否支持存储计算分离
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetEnableHybridStorage() const;
+
+                    /**
+                     * 设置是否支持存储计算分离
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param EnableHybridStorage 是否支持存储计算分离
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetEnableHybridStorage(const bool& _enableHybridStorage);
+
+                    /**
+                     * 判断参数 EnableHybridStorage 是否已赋值
+                     * @return EnableHybridStorage 是否已赋值
+                     */
+                    bool EnableHybridStorageHasBeenSet() const;
+
                 private:
 
                     /**
@@ -2166,6 +2188,13 @@ RENEW_FLAG_DEFAULT：不自动续费
                      */
                     bool m_autoIndexEnabled;
                     bool m_autoIndexEnabledHasBeenSet;
+
+                    /**
+                     * 是否支持存储计算分离
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_enableHybridStorage;
+                    bool m_enableHybridStorageHasBeenSet;
 
                 };
             }

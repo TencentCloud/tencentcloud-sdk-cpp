@@ -27,7 +27,8 @@ BotPkg::BotPkg() :
     m_beginTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
     m_inquireNumHasBeenSet(false),
-    m_usedNumHasBeenSet(false)
+    m_usedNumHasBeenSet(false),
+    m_typeHasBeenSet(false)
 {
 }
 
@@ -106,6 +107,16 @@ CoreInternalOutcome BotPkg::Deserialize(const rapidjson::Value &value)
         m_usedNumHasBeenSet = true;
     }
 
+    if (value.HasMember("Type") && !value["Type"].IsNull())
+    {
+        if (!value["Type"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BotPkg.Type` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_type = string(value["Type"].GetString());
+        m_typeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +178,14 @@ void BotPkg::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocato
         string key = "UsedNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_usedNum, allocator);
+    }
+
+    if (m_typeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Type";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -282,5 +301,21 @@ void BotPkg::SetUsedNum(const int64_t& _usedNum)
 bool BotPkg::UsedNumHasBeenSet() const
 {
     return m_usedNumHasBeenSet;
+}
+
+string BotPkg::GetType() const
+{
+    return m_type;
+}
+
+void BotPkg::SetType(const string& _type)
+{
+    m_type = _type;
+    m_typeHasBeenSet = true;
+}
+
+bool BotPkg::TypeHasBeenSet() const
+{
+    return m_typeHasBeenSet;
 }
 

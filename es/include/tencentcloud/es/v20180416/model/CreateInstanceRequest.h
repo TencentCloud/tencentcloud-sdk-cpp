@@ -637,6 +637,24 @@ namespace TencentCloud
                      */
                     bool OperationDurationHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启存算分离
+                     * @return EnableHybridStorage 是否开启存算分离
+                     */
+                    bool GetEnableHybridStorage() const;
+
+                    /**
+                     * 设置是否开启存算分离
+                     * @param EnableHybridStorage 是否开启存算分离
+                     */
+                    void SetEnableHybridStorage(const bool& _enableHybridStorage);
+
+                    /**
+                     * 判断参数 EnableHybridStorage 是否已赋值
+                     * @return EnableHybridStorage 是否已赋值
+                     */
+                    bool EnableHybridStorageHasBeenSet() const;
+
                 private:
 
                     /**
@@ -832,6 +850,12 @@ namespace TencentCloud
                      */
                     OperationDuration m_operationDuration;
                     bool m_operationDurationHasBeenSet;
+
+                    /**
+                     * 是否开启存算分离
+                     */
+                    bool m_enableHybridStorage;
+                    bool m_enableHybridStorageHasBeenSet;
 
                 };
             }

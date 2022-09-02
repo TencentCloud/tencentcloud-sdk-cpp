@@ -135,14 +135,14 @@ namespace TencentCloud
                     bool HeartbeatTimeoutHasBeenSet() const;
 
                     /**
-                     * 获取弹性伸缩向通知目标发送的附加信息，默认值为空字符串""。最大长度不能超过1024个字节。
-                     * @return NotificationMetadata 弹性伸缩向通知目标发送的附加信息，默认值为空字符串""。最大长度不能超过1024个字节。
+                     * 获取弹性伸缩向通知目标发送的附加信息，配置通知时使用,默认值为空字符串""。最大长度不能超过1024个字节。
+                     * @return NotificationMetadata 弹性伸缩向通知目标发送的附加信息，配置通知时使用,默认值为空字符串""。最大长度不能超过1024个字节。
                      */
                     std::string GetNotificationMetadata() const;
 
                     /**
-                     * 设置弹性伸缩向通知目标发送的附加信息，默认值为空字符串""。最大长度不能超过1024个字节。
-                     * @param NotificationMetadata 弹性伸缩向通知目标发送的附加信息，默认值为空字符串""。最大长度不能超过1024个字节。
+                     * 设置弹性伸缩向通知目标发送的附加信息，配置通知时使用,默认值为空字符串""。最大长度不能超过1024个字节。
+                     * @param NotificationMetadata 弹性伸缩向通知目标发送的附加信息，配置通知时使用,默认值为空字符串""。最大长度不能超过1024个字节。
                      */
                     void SetNotificationMetadata(const std::string& _notificationMetadata);
 
@@ -153,14 +153,14 @@ namespace TencentCloud
                     bool NotificationMetadataHasBeenSet() const;
 
                     /**
-                     * 获取通知目标
-                     * @return NotificationTarget 通知目标
+                     * 获取通知目标。NotificationTarget和LifecycleCommand参数互斥，二者不可同时指定。
+                     * @return NotificationTarget 通知目标。NotificationTarget和LifecycleCommand参数互斥，二者不可同时指定。
                      */
                     NotificationTarget GetNotificationTarget() const;
 
                     /**
-                     * 设置通知目标
-                     * @param NotificationTarget 通知目标
+                     * 设置通知目标。NotificationTarget和LifecycleCommand参数互斥，二者不可同时指定。
+                     * @param NotificationTarget 通知目标。NotificationTarget和LifecycleCommand参数互斥，二者不可同时指定。
                      */
                     void SetNotificationTarget(const NotificationTarget& _notificationTarget);
 
@@ -189,14 +189,14 @@ namespace TencentCloud
                     bool LifecycleTransitionTypeHasBeenSet() const;
 
                     /**
-                     * 获取远程命令执行对象。NotificationTarget和CommandInfo参数互斥，二者不可同时指定。
-                     * @return LifecycleCommand 远程命令执行对象。NotificationTarget和CommandInfo参数互斥，二者不可同时指定。
+                     * 获取远程命令执行对象。NotificationTarget和LifecycleCommand参数互斥，二者不可同时指定。
+                     * @return LifecycleCommand 远程命令执行对象。NotificationTarget和LifecycleCommand参数互斥，二者不可同时指定。
                      */
                     LifecycleCommand GetLifecycleCommand() const;
 
                     /**
-                     * 设置远程命令执行对象。NotificationTarget和CommandInfo参数互斥，二者不可同时指定。
-                     * @param LifecycleCommand 远程命令执行对象。NotificationTarget和CommandInfo参数互斥，二者不可同时指定。
+                     * 设置远程命令执行对象。NotificationTarget和LifecycleCommand参数互斥，二者不可同时指定。
+                     * @param LifecycleCommand 远程命令执行对象。NotificationTarget和LifecycleCommand参数互斥，二者不可同时指定。
                      */
                     void SetLifecycleCommand(const LifecycleCommand& _lifecycleCommand);
 
@@ -239,13 +239,13 @@ namespace TencentCloud
                     bool m_heartbeatTimeoutHasBeenSet;
 
                     /**
-                     * 弹性伸缩向通知目标发送的附加信息，默认值为空字符串""。最大长度不能超过1024个字节。
+                     * 弹性伸缩向通知目标发送的附加信息，配置通知时使用,默认值为空字符串""。最大长度不能超过1024个字节。
                      */
                     std::string m_notificationMetadata;
                     bool m_notificationMetadataHasBeenSet;
 
                     /**
-                     * 通知目标
+                     * 通知目标。NotificationTarget和LifecycleCommand参数互斥，二者不可同时指定。
                      */
                     NotificationTarget m_notificationTarget;
                     bool m_notificationTargetHasBeenSet;
@@ -257,7 +257,7 @@ namespace TencentCloud
                     bool m_lifecycleTransitionTypeHasBeenSet;
 
                     /**
-                     * 远程命令执行对象。NotificationTarget和CommandInfo参数互斥，二者不可同时指定。
+                     * 远程命令执行对象。NotificationTarget和LifecycleCommand参数互斥，二者不可同时指定。
                      */
                     LifecycleCommand m_lifecycleCommand;
                     bool m_lifecycleCommandHasBeenSet;

@@ -35,6 +35,8 @@
 #include <tencentcloud/ess/v20201111/model/CreateDocumentResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateFlowRequest.h>
 #include <tencentcloud/ess/v20201111/model/CreateFlowResponse.h>
+#include <tencentcloud/ess/v20201111/model/CreateFlowApproversRequest.h>
+#include <tencentcloud/ess/v20201111/model/CreateFlowApproversResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateFlowByFilesRequest.h>
 #include <tencentcloud/ess/v20201111/model/CreateFlowByFilesResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateFlowEvidenceReportRequest.h>
@@ -49,6 +51,8 @@
 #include <tencentcloud/ess/v20201111/model/DescribeFileUrlsResponse.h>
 #include <tencentcloud/ess/v20201111/model/DescribeFlowBriefsRequest.h>
 #include <tencentcloud/ess/v20201111/model/DescribeFlowBriefsResponse.h>
+#include <tencentcloud/ess/v20201111/model/DescribeFlowInfoRequest.h>
+#include <tencentcloud/ess/v20201111/model/DescribeFlowInfoResponse.h>
 #include <tencentcloud/ess/v20201111/model/DescribeFlowTemplatesRequest.h>
 #include <tencentcloud/ess/v20201111/model/DescribeFlowTemplatesResponse.h>
 #include <tencentcloud/ess/v20201111/model/DescribeThirdPartyAuthCodeRequest.h>
@@ -91,6 +95,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateFlowResponse> CreateFlowOutcome;
                 typedef std::future<CreateFlowOutcome> CreateFlowOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::CreateFlowRequest&, CreateFlowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateFlowAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateFlowApproversResponse> CreateFlowApproversOutcome;
+                typedef std::future<CreateFlowApproversOutcome> CreateFlowApproversOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::CreateFlowApproversRequest&, CreateFlowApproversOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateFlowApproversAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateFlowByFilesResponse> CreateFlowByFilesOutcome;
                 typedef std::future<CreateFlowByFilesOutcome> CreateFlowByFilesOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::CreateFlowByFilesRequest&, CreateFlowByFilesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateFlowByFilesAsyncHandler;
@@ -112,6 +119,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeFlowBriefsResponse> DescribeFlowBriefsOutcome;
                 typedef std::future<DescribeFlowBriefsOutcome> DescribeFlowBriefsOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::DescribeFlowBriefsRequest&, DescribeFlowBriefsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFlowBriefsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeFlowInfoResponse> DescribeFlowInfoOutcome;
+                typedef std::future<DescribeFlowInfoOutcome> DescribeFlowInfoOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::DescribeFlowInfoRequest&, DescribeFlowInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFlowInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeFlowTemplatesResponse> DescribeFlowTemplatesOutcome;
                 typedef std::future<DescribeFlowTemplatesOutcome> DescribeFlowTemplatesOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::DescribeFlowTemplatesRequest&, DescribeFlowTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFlowTemplatesAsyncHandler;
@@ -190,6 +200,19 @@ namespace TencentCloud
                 CreateFlowOutcome CreateFlow(const Model::CreateFlowRequest &request);
                 void CreateFlowAsync(const Model::CreateFlowRequest& request, const CreateFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateFlowOutcomeCallable CreateFlowCallable(const Model::CreateFlowRequest& request);
+
+                /**
+                 *补充签署流程本企业签署人信息
+适用场景：在通过模版或者文件发起合同时，若未指定本企业签署人信息，则流程发起后，可以调用此接口补充签署人。
+同一签署人可以补充多个员工作为候选签署人,最终签署人取决于谁先领取合同完成签署。
+
+注：目前暂时只支持补充来源于企业微信的员工作为候选签署人
+                 * @param req CreateFlowApproversRequest
+                 * @return CreateFlowApproversOutcome
+                 */
+                CreateFlowApproversOutcome CreateFlowApprovers(const Model::CreateFlowApproversRequest &request);
+                void CreateFlowApproversAsync(const Model::CreateFlowApproversRequest& request, const CreateFlowApproversAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateFlowApproversOutcomeCallable CreateFlowApproversCallable(const Model::CreateFlowApproversRequest& request);
 
                 /**
                  *此接口（CreateFlowByFiles）用来通过上传后的pdf资源编号来创建待签署的合同流程。
@@ -275,6 +298,16 @@ namespace TencentCloud
                 DescribeFlowBriefsOutcome DescribeFlowBriefs(const Model::DescribeFlowBriefsRequest &request);
                 void DescribeFlowBriefsAsync(const Model::DescribeFlowBriefsRequest& request, const DescribeFlowBriefsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeFlowBriefsOutcomeCallable DescribeFlowBriefsCallable(const Model::DescribeFlowBriefsRequest& request);
+
+                /**
+                 *查询合同详情
+适用场景：可用于主动查询某个合同详情信息。
+                 * @param req DescribeFlowInfoRequest
+                 * @return DescribeFlowInfoOutcome
+                 */
+                DescribeFlowInfoOutcome DescribeFlowInfo(const Model::DescribeFlowInfoRequest &request);
+                void DescribeFlowInfoAsync(const Model::DescribeFlowInfoRequest& request, const DescribeFlowInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeFlowInfoOutcomeCallable DescribeFlowInfoCallable(const Model::DescribeFlowInfoRequest& request);
 
                 /**
                  *二期接口-查询模板

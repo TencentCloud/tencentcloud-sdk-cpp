@@ -77,13 +77,14 @@ set(waf_public_header_model
   include/tencentcloud/waf/v20180125/model/ModifyCustomRuleStatusRequest.h
   include/tencentcloud/waf/v20180125/model/DeleteDownloadRecordResponse.h
   include/tencentcloud/waf/v20180125/model/ModifyAccessPeriodRequest.h
-  include/tencentcloud/waf/v20180125/model/InstanceInfo.h
+  include/tencentcloud/waf/v20180125/model/BotQPS.h
   include/tencentcloud/waf/v20180125/model/ModifyWafAutoDenyRulesResponse.h
   include/tencentcloud/waf/v20180125/model/DescribeInstancesRequest.h
   include/tencentcloud/waf/v20180125/model/CdcRegion.h
   include/tencentcloud/waf/v20180125/model/AccessValueInfo.h
   include/tencentcloud/waf/v20180125/model/DeleteIpAccessControlResponse.h
   include/tencentcloud/waf/v20180125/model/AccessLogInfo.h
+  include/tencentcloud/waf/v20180125/model/InstanceInfo.h
   include/tencentcloud/waf/v20180125/model/AccessKeyValueInfo.h
   include/tencentcloud/waf/v20180125/model/AddCustomRuleRequest.h
   include/tencentcloud/waf/v20180125/model/FraudPkg.h
@@ -182,13 +183,14 @@ set(waf_src
   src/v20180125/model/ModifyCustomRuleStatusRequest.cpp
   src/v20180125/model/DeleteDownloadRecordResponse.cpp
   src/v20180125/model/ModifyAccessPeriodRequest.cpp
-  src/v20180125/model/InstanceInfo.cpp
+  src/v20180125/model/BotQPS.cpp
   src/v20180125/model/ModifyWafAutoDenyRulesResponse.cpp
   src/v20180125/model/DescribeInstancesRequest.cpp
   src/v20180125/model/CdcRegion.cpp
   src/v20180125/model/AccessValueInfo.cpp
   src/v20180125/model/DeleteIpAccessControlResponse.cpp
   src/v20180125/model/AccessLogInfo.cpp
+  src/v20180125/model/InstanceInfo.cpp
   src/v20180125/model/AccessKeyValueInfo.cpp
   src/v20180125/model/AddCustomRuleRequest.cpp
   src/v20180125/model/FraudPkg.cpp

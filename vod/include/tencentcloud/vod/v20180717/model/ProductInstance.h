@@ -245,6 +245,40 @@ namespace TencentCloud
                      */
                     bool RefundStatusHasBeenSet() const;
 
+                    /**
+                     * 获取自动续费状态，取值有：
+<li>Never：不自动续费。</li>
+<li>Expire：到期自动续费。</li>
+<li>ExpireOrUseOut：到期或用完自动续费。</li>
+<li>NotSupport：不支持。</li>
+                     * @return RenewStatus 自动续费状态，取值有：
+<li>Never：不自动续费。</li>
+<li>Expire：到期自动续费。</li>
+<li>ExpireOrUseOut：到期或用完自动续费。</li>
+<li>NotSupport：不支持。</li>
+                     */
+                    std::string GetRenewStatus() const;
+
+                    /**
+                     * 设置自动续费状态，取值有：
+<li>Never：不自动续费。</li>
+<li>Expire：到期自动续费。</li>
+<li>ExpireOrUseOut：到期或用完自动续费。</li>
+<li>NotSupport：不支持。</li>
+                     * @param RenewStatus 自动续费状态，取值有：
+<li>Never：不自动续费。</li>
+<li>Expire：到期自动续费。</li>
+<li>ExpireOrUseOut：到期或用完自动续费。</li>
+<li>NotSupport：不支持。</li>
+                     */
+                    void SetRenewStatus(const std::string& _renewStatus);
+
+                    /**
+                     * 判断参数 RenewStatus 是否已赋值
+                     * @return RenewStatus 是否已赋值
+                     */
+                    bool RenewStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -309,6 +343,16 @@ namespace TencentCloud
                      */
                     std::string m_refundStatus;
                     bool m_refundStatusHasBeenSet;
+
+                    /**
+                     * 自动续费状态，取值有：
+<li>Never：不自动续费。</li>
+<li>Expire：到期自动续费。</li>
+<li>ExpireOrUseOut：到期或用完自动续费。</li>
+<li>NotSupport：不支持。</li>
+                     */
+                    std::string m_renewStatus;
+                    bool m_renewStatusHasBeenSet;
 
                 };
             }

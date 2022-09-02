@@ -29,7 +29,8 @@ ProductInstance::ProductInstance() :
     m_bindStatusHasBeenSet(false),
     m_productInstanceResourceSetHasBeenSet(false),
     m_productInstanceStatusHasBeenSet(false),
-    m_refundStatusHasBeenSet(false)
+    m_refundStatusHasBeenSet(false),
+    m_renewStatusHasBeenSet(false)
 {
 }
 
@@ -138,6 +139,16 @@ CoreInternalOutcome ProductInstance::Deserialize(const rapidjson::Value &value)
         m_refundStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("RenewStatus") && !value["RenewStatus"].IsNull())
+    {
+        if (!value["RenewStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProductInstance.RenewStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_renewStatus = string(value["RenewStatus"].GetString());
+        m_renewStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -222,6 +233,14 @@ void ProductInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "RefundStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_refundStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_renewStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RenewStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_renewStatus.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -369,5 +388,21 @@ void ProductInstance::SetRefundStatus(const string& _refundStatus)
 bool ProductInstance::RefundStatusHasBeenSet() const
 {
     return m_refundStatusHasBeenSet;
+}
+
+string ProductInstance::GetRenewStatus() const
+{
+    return m_renewStatus;
+}
+
+void ProductInstance::SetRenewStatus(const string& _renewStatus)
+{
+    m_renewStatus = _renewStatus;
+    m_renewStatusHasBeenSet = true;
+}
+
+bool ProductInstance::RenewStatusHasBeenSet() const
+{
+    return m_renewStatusHasBeenSet;
 }
 

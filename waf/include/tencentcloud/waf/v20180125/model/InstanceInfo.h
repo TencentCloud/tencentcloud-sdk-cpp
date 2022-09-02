@@ -28,6 +28,7 @@
 #include <tencentcloud/waf/v20180125/model/DomainPackageNew.h>
 #include <tencentcloud/waf/v20180125/model/FraudPkg.h>
 #include <tencentcloud/waf/v20180125/model/BotPkg.h>
+#include <tencentcloud/waf/v20180125/model/BotQPS.h>
 
 
 namespace TencentCloud
@@ -436,6 +437,28 @@ namespace TencentCloud
                      */
                     bool BotPkgHasBeenSet() const;
 
+                    /**
+                     * 获取bot的qps详情
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BotQPS bot的qps详情
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    BotQPS GetBotQPS() const;
+
+                    /**
+                     * 设置bot的qps详情
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param BotQPS bot的qps详情
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetBotQPS(const BotQPS& _botQPS);
+
+                    /**
+                     * 判断参数 BotQPS 是否已赋值
+                     * @return BotQPS 是否已赋值
+                     */
+                    bool BotQPSHasBeenSet() const;
+
                 private:
 
                     /**
@@ -565,6 +588,13 @@ namespace TencentCloud
                      */
                     BotPkg m_botPkg;
                     bool m_botPkgHasBeenSet;
+
+                    /**
+                     * bot的qps详情
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    BotQPS m_botQPS;
+                    bool m_botQPSHasBeenSet;
 
                 };
             }

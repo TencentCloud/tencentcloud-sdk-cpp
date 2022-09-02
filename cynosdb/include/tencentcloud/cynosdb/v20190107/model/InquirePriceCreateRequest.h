@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool ZoneHasBeenSet() const;
 
                     /**
-                     * 获取购买商品数量
-                     * @return GoodsNum 购买商品数量
+                     * 获取购买计算节点个数
+                     * @return GoodsNum 购买计算节点个数
                      */
                     int64_t GetGoodsNum() const;
 
                     /**
-                     * 设置购买商品数量
-                     * @param GoodsNum 购买商品数量
+                     * 设置购买计算节点个数
+                     * @param GoodsNum 购买计算节点个数
                      */
                     void SetGoodsNum(const int64_t& _goodsNum);
 
@@ -231,7 +231,7 @@ namespace TencentCloud
                     bool m_zoneHasBeenSet;
 
                     /**
-                     * 购买商品数量
+                     * 购买计算节点个数
                      */
                     int64_t m_goodsNum;
                     bool m_goodsNumHasBeenSet;

@@ -273,6 +273,60 @@ HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)
                      */
                     bool PreReadTimeHasBeenSet() const;
 
+                    /**
+                     * 获取签署人userId，非企微场景不使用此字段
+                     * @return UserId 签署人userId，非企微场景不使用此字段
+                     */
+                    std::string GetUserId() const;
+
+                    /**
+                     * 设置签署人userId，非企微场景不使用此字段
+                     * @param UserId 签署人userId，非企微场景不使用此字段
+                     */
+                    void SetUserId(const std::string& _userId);
+
+                    /**
+                     * 判断参数 UserId 是否已赋值
+                     * @return UserId 是否已赋值
+                     */
+                    bool UserIdHasBeenSet() const;
+
+                    /**
+                     * 获取签署人用户来源,企微侧用户请传入：WEWORKAPP
+                     * @return ApproverSource 签署人用户来源,企微侧用户请传入：WEWORKAPP
+                     */
+                    std::string GetApproverSource() const;
+
+                    /**
+                     * 设置签署人用户来源,企微侧用户请传入：WEWORKAPP
+                     * @param ApproverSource 签署人用户来源,企微侧用户请传入：WEWORKAPP
+                     */
+                    void SetApproverSource(const std::string& _approverSource);
+
+                    /**
+                     * 判断参数 ApproverSource 是否已赋值
+                     * @return ApproverSource 是否已赋值
+                     */
+                    bool ApproverSourceHasBeenSet() const;
+
+                    /**
+                     * 获取客户自定义签署人标识，64位长度，保证唯一，非企微场景不使用此字段
+                     * @return CustomApproverTag 客户自定义签署人标识，64位长度，保证唯一，非企微场景不使用此字段
+                     */
+                    std::string GetCustomApproverTag() const;
+
+                    /**
+                     * 设置客户自定义签署人标识，64位长度，保证唯一，非企微场景不使用此字段
+                     * @param CustomApproverTag 客户自定义签署人标识，64位长度，保证唯一，非企微场景不使用此字段
+                     */
+                    void SetCustomApproverTag(const std::string& _customApproverTag);
+
+                    /**
+                     * 判断参数 CustomApproverTag 是否已赋值
+                     * @return CustomApproverTag 是否已赋值
+                     */
+                    bool CustomApproverTagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -347,6 +401,24 @@ HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)
                      */
                     int64_t m_preReadTime;
                     bool m_preReadTimeHasBeenSet;
+
+                    /**
+                     * 签署人userId，非企微场景不使用此字段
+                     */
+                    std::string m_userId;
+                    bool m_userIdHasBeenSet;
+
+                    /**
+                     * 签署人用户来源,企微侧用户请传入：WEWORKAPP
+                     */
+                    std::string m_approverSource;
+                    bool m_approverSourceHasBeenSet;
+
+                    /**
+                     * 客户自定义签署人标识，64位长度，保证唯一，非企微场景不使用此字段
+                     */
+                    std::string m_customApproverTag;
+                    bool m_customApproverTagHasBeenSet;
 
                 };
             }

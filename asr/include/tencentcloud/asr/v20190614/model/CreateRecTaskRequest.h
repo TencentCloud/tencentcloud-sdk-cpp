@@ -57,7 +57,6 @@ namespace TencentCloud
 • 16k_en_edu 英文教育；
 • 16k_zh_medical  医疗；
 • 16k_th 泰语；
-• 16k_zh_dialect：多方言，支持23种方言。
                      * @return EngineModelType 引擎模型类型。注意：非电话场景请务必使用16k的引擎。
 电话场景：
 • 8k_en：电话 8k 英语；
@@ -72,7 +71,6 @@ namespace TencentCloud
 • 16k_en_edu 英文教育；
 • 16k_zh_medical  医疗；
 • 16k_th 泰语；
-• 16k_zh_dialect：多方言，支持23种方言。
                      */
                     std::string GetEngineModelType() const;
 
@@ -91,7 +89,6 @@ namespace TencentCloud
 • 16k_en_edu 英文教育；
 • 16k_zh_medical  医疗；
 • 16k_th 泰语；
-• 16k_zh_dialect：多方言，支持23种方言。
                      * @param EngineModelType 引擎模型类型。注意：非电话场景请务必使用16k的引擎。
 电话场景：
 • 8k_en：电话 8k 英语；
@@ -106,7 +103,6 @@ namespace TencentCloud
 • 16k_en_edu 英文教育；
 • 16k_zh_medical  医疗；
 • 16k_th 泰语；
-• 16k_zh_dialect：多方言，支持23种方言。
                      */
                     void SetEngineModelType(const std::string& _engineModelType);
 
@@ -429,7 +425,6 @@ namespace TencentCloud
 • 16k_en_edu 英文教育；
 • 16k_zh_medical  医疗；
 • 16k_th 泰语；
-• 16k_zh_dialect：多方言，支持23种方言。
                      */
                     std::string m_engineModelType;
                     bool m_engineModelTypeHasBeenSet;

@@ -168,6 +168,24 @@ namespace TencentCloud
                      */
                     bool MpTplHasBeenSet() const;
 
+                    /**
+                     * 获取克隆批次ID
+                     * @return CloneId 克隆批次ID
+                     */
+                    std::string GetCloneId() const;
+
+                    /**
+                     * 设置克隆批次ID
+                     * @param CloneId 克隆批次ID
+                     */
+                    void SetCloneId(const std::string& _cloneId);
+
+                    /**
+                     * 判断参数 CloneId 是否已赋值
+                     * @return CloneId 是否已赋值
+                     */
+                    bool CloneIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -211,6 +229,12 @@ namespace TencentCloud
                      */
                     std::string m_mpTpl;
                     bool m_mpTplHasBeenSet;
+
+                    /**
+                     * 克隆批次ID
+                     */
+                    std::string m_cloneId;
+                    bool m_cloneIdHasBeenSet;
 
                 };
             }

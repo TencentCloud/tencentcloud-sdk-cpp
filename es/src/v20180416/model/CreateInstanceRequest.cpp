@@ -53,7 +53,8 @@ CreateInstanceRequest::CreateInstanceRequest() :
     m_sceneTypeHasBeenSet(false),
     m_webNodeTypeInfoHasBeenSet(false),
     m_protocolHasBeenSet(false),
-    m_operationDurationHasBeenSet(false)
+    m_operationDurationHasBeenSet(false),
+    m_enableHybridStorageHasBeenSet(false)
 {
 }
 
@@ -338,6 +339,14 @@ string CreateInstanceRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_operationDuration.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_enableHybridStorageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableHybridStorage";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableHybridStorage, allocator);
     }
 
 
@@ -842,6 +851,22 @@ void CreateInstanceRequest::SetOperationDuration(const OperationDuration& _opera
 bool CreateInstanceRequest::OperationDurationHasBeenSet() const
 {
     return m_operationDurationHasBeenSet;
+}
+
+bool CreateInstanceRequest::GetEnableHybridStorage() const
+{
+    return m_enableHybridStorage;
+}
+
+void CreateInstanceRequest::SetEnableHybridStorage(const bool& _enableHybridStorage)
+{
+    m_enableHybridStorage = _enableHybridStorage;
+    m_enableHybridStorageHasBeenSet = true;
+}
+
+bool CreateInstanceRequest::EnableHybridStorageHasBeenSet() const
+{
+    return m_enableHybridStorageHasBeenSet;
 }
 
 

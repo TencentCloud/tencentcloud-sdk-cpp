@@ -770,6 +770,50 @@ namespace TencentCloud
                      */
                     bool GrafanaInstanceIdHasBeenSet() const;
 
+                    /**
+                     * 获取告警规则限制
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AlertRuleLimit 告警规则限制
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetAlertRuleLimit() const;
+
+                    /**
+                     * 设置告警规则限制
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AlertRuleLimit 告警规则限制
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAlertRuleLimit(const int64_t& _alertRuleLimit);
+
+                    /**
+                     * 判断参数 AlertRuleLimit 是否已赋值
+                     * @return AlertRuleLimit 是否已赋值
+                     */
+                    bool AlertRuleLimitHasBeenSet() const;
+
+                    /**
+                     * 获取预聚合规则限制
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RecordingRuleLimit 预聚合规则限制
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetRecordingRuleLimit() const;
+
+                    /**
+                     * 设置预聚合规则限制
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RecordingRuleLimit 预聚合规则限制
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRecordingRuleLimit(const int64_t& _recordingRuleLimit);
+
+                    /**
+                     * 判断参数 RecordingRuleLimit 是否已赋值
+                     * @return RecordingRuleLimit 是否已赋值
+                     */
+                    bool RecordingRuleLimitHasBeenSet() const;
+
                 private:
 
                     /**
@@ -992,6 +1036,20 @@ namespace TencentCloud
                      */
                     std::string m_grafanaInstanceId;
                     bool m_grafanaInstanceIdHasBeenSet;
+
+                    /**
+                     * 告警规则限制
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_alertRuleLimit;
+                    bool m_alertRuleLimitHasBeenSet;
+
+                    /**
+                     * 预聚合规则限制
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_recordingRuleLimit;
+                    bool m_recordingRuleLimitHasBeenSet;
 
                 };
             }

@@ -200,6 +200,28 @@ namespace TencentCloud
                      */
                     bool UsedNumHasBeenSet() const;
 
+                    /**
+                     * 获取子产品code
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Type 子产品code
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetType() const;
+
+                    /**
+                     * 设置子产品code
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Type 子产品code
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetType(const std::string& _type);
+
+                    /**
+                     * 判断参数 Type 是否已赋值
+                     * @return Type 是否已赋值
+                     */
+                    bool TypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -250,6 +272,13 @@ namespace TencentCloud
                      */
                     int64_t m_usedNum;
                     bool m_usedNumHasBeenSet;
+
+                    /**
+                     * 子产品code
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_type;
+                    bool m_typeHasBeenSet;
 
                 };
             }

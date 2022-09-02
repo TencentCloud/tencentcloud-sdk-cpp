@@ -98,7 +98,8 @@ InstanceInfo::InstanceInfo() :
     m_esConfigSetsHasBeenSet(false),
     m_operationDurationHasBeenSet(false),
     m_optionalWebServiceInfosHasBeenSet(false),
-    m_autoIndexEnabledHasBeenSet(false)
+    m_autoIndexEnabledHasBeenSet(false),
+    m_enableHybridStorageHasBeenSet(false)
 {
 }
 
@@ -996,6 +997,16 @@ CoreInternalOutcome InstanceInfo::Deserialize(const rapidjson::Value &value)
         m_autoIndexEnabledHasBeenSet = true;
     }
 
+    if (value.HasMember("EnableHybridStorage") && !value["EnableHybridStorage"].IsNull())
+    {
+        if (!value["EnableHybridStorage"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.EnableHybridStorage` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableHybridStorage = value["EnableHybridStorage"].GetBool();
+        m_enableHybridStorageHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1673,6 +1684,14 @@ void InstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "AutoIndexEnabled";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_autoIndexEnabled, allocator);
+    }
+
+    if (m_enableHybridStorageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableHybridStorage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableHybridStorage, allocator);
     }
 
 }
@@ -2924,5 +2943,21 @@ void InstanceInfo::SetAutoIndexEnabled(const bool& _autoIndexEnabled)
 bool InstanceInfo::AutoIndexEnabledHasBeenSet() const
 {
     return m_autoIndexEnabledHasBeenSet;
+}
+
+bool InstanceInfo::GetEnableHybridStorage() const
+{
+    return m_enableHybridStorage;
+}
+
+void InstanceInfo::SetEnableHybridStorage(const bool& _enableHybridStorage)
+{
+    m_enableHybridStorage = _enableHybridStorage;
+    m_enableHybridStorageHasBeenSet = true;
+}
+
+bool InstanceInfo::EnableHybridStorageHasBeenSet() const
+{
+    return m_enableHybridStorageHasBeenSet;
 }
 
