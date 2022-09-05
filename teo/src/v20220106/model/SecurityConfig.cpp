@@ -27,7 +27,9 @@ SecurityConfig::SecurityConfig() :
     m_aclConfigHasBeenSet(false),
     m_botConfigHasBeenSet(false),
     m_switchConfigHasBeenSet(false),
-    m_ipTableConfigHasBeenSet(false)
+    m_ipTableConfigHasBeenSet(false),
+    m_exceptConfigHasBeenSet(false),
+    m_dropPageConfigHasBeenSet(false)
 {
 }
 
@@ -155,6 +157,40 @@ CoreInternalOutcome SecurityConfig::Deserialize(const rapidjson::Value &value)
         m_ipTableConfigHasBeenSet = true;
     }
 
+    if (value.HasMember("ExceptConfig") && !value["ExceptConfig"].IsNull())
+    {
+        if (!value["ExceptConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `SecurityConfig.ExceptConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_exceptConfig.Deserialize(value["ExceptConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_exceptConfigHasBeenSet = true;
+    }
+
+    if (value.HasMember("DropPageConfig") && !value["DropPageConfig"].IsNull())
+    {
+        if (!value["DropPageConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `SecurityConfig.DropPageConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_dropPageConfig.Deserialize(value["DropPageConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_dropPageConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -223,6 +259,24 @@ void SecurityConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_ipTableConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_exceptConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExceptConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_exceptConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_dropPageConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DropPageConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_dropPageConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -338,5 +392,37 @@ void SecurityConfig::SetIpTableConfig(const IpTableConfig& _ipTableConfig)
 bool SecurityConfig::IpTableConfigHasBeenSet() const
 {
     return m_ipTableConfigHasBeenSet;
+}
+
+ExceptConfig SecurityConfig::GetExceptConfig() const
+{
+    return m_exceptConfig;
+}
+
+void SecurityConfig::SetExceptConfig(const ExceptConfig& _exceptConfig)
+{
+    m_exceptConfig = _exceptConfig;
+    m_exceptConfigHasBeenSet = true;
+}
+
+bool SecurityConfig::ExceptConfigHasBeenSet() const
+{
+    return m_exceptConfigHasBeenSet;
+}
+
+DropPageConfig SecurityConfig::GetDropPageConfig() const
+{
+    return m_dropPageConfig;
+}
+
+void SecurityConfig::SetDropPageConfig(const DropPageConfig& _dropPageConfig)
+{
+    m_dropPageConfig = _dropPageConfig;
+    m_dropPageConfigHasBeenSet = true;
+}
+
+bool SecurityConfig::DropPageConfigHasBeenSet() const
+{
+    return m_dropPageConfigHasBeenSet;
 }
 

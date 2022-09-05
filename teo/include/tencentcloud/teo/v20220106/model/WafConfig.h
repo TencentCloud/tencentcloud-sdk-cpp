@@ -37,7 +37,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 门神配置
+                * Waf配置。
                 */
                 class WafConfig : public AbstractModel
                 {
@@ -49,14 +49,22 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取开关
-                     * @return Switch 开关
+                     * 获取WafConfig开关，取值有：
+<li> on：开启；</li>
+<li> off：关闭。</li>开关仅与配置是否生效有关，即使为off（关闭），也可以正常修改配置的内容。
+                     * @return Switch WafConfig开关，取值有：
+<li> on：开启；</li>
+<li> off：关闭。</li>开关仅与配置是否生效有关，即使为off（关闭），也可以正常修改配置的内容。
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置开关
-                     * @param Switch 开关
+                     * 设置WafConfig开关，取值有：
+<li> on：开启；</li>
+<li> off：关闭。</li>开关仅与配置是否生效有关，即使为off（关闭），也可以正常修改配置的内容。
+                     * @param Switch WafConfig开关，取值有：
+<li> on：开启；</li>
+<li> off：关闭。</li>开关仅与配置是否生效有关，即使为off（关闭），也可以正常修改配置的内容。
                      */
                     void SetSwitch(const std::string& _switch);
 
@@ -67,14 +75,34 @@ namespace TencentCloud
                     bool SwitchHasBeenSet() const;
 
                     /**
-                     * 获取防护级别，loose/normal/strict/stricter/custom
-                     * @return Level 防护级别，loose/normal/strict/stricter/custom
+                     * 获取防护级别，取值有：
+<li> loose：宽松；</li>
+<li> normal：正常；</li>
+<li> strict：严格；</li>
+<li> stricter：超严格；</li>
+<li> custom：自定义。</li>
+                     * @return Level 防护级别，取值有：
+<li> loose：宽松；</li>
+<li> normal：正常；</li>
+<li> strict：严格；</li>
+<li> stricter：超严格；</li>
+<li> custom：自定义。</li>
                      */
                     std::string GetLevel() const;
 
                     /**
-                     * 设置防护级别，loose/normal/strict/stricter/custom
-                     * @param Level 防护级别，loose/normal/strict/stricter/custom
+                     * 设置防护级别，取值有：
+<li> loose：宽松；</li>
+<li> normal：正常；</li>
+<li> strict：严格；</li>
+<li> stricter：超严格；</li>
+<li> custom：自定义。</li>
+                     * @param Level 防护级别，取值有：
+<li> loose：宽松；</li>
+<li> normal：正常；</li>
+<li> strict：严格；</li>
+<li> stricter：超严格；</li>
+<li> custom：自定义。</li>
                      */
                     void SetLevel(const std::string& _level);
 
@@ -85,14 +113,22 @@ namespace TencentCloud
                     bool LevelHasBeenSet() const;
 
                     /**
-                     * 获取模式 block-阻断；observe-观察模式；close-关闭
-                     * @return Mode 模式 block-阻断；observe-观察模式；close-关闭
+                     * 获取全局WAF模式，取值有：
+<li> block：阻断（全局阻断，但可对详细规则配置观察）；</li>
+<li> observe：观察（无论详细规则配置什么，都为观察）。</li>
+                     * @return Mode 全局WAF模式，取值有：
+<li> block：阻断（全局阻断，但可对详细规则配置观察）；</li>
+<li> observe：观察（无论详细规则配置什么，都为观察）。</li>
                      */
                     std::string GetMode() const;
 
                     /**
-                     * 设置模式 block-阻断；observe-观察模式；close-关闭
-                     * @param Mode 模式 block-阻断；observe-观察模式；close-关闭
+                     * 设置全局WAF模式，取值有：
+<li> block：阻断（全局阻断，但可对详细规则配置观察）；</li>
+<li> observe：观察（无论详细规则配置什么，都为观察）。</li>
+                     * @param Mode 全局WAF模式，取值有：
+<li> block：阻断（全局阻断，但可对详细规则配置观察）；</li>
+<li> observe：观察（无论详细规则配置什么，都为观察）。</li>
                      */
                     void SetMode(const std::string& _mode);
 
@@ -103,14 +139,14 @@ namespace TencentCloud
                     bool ModeHasBeenSet() const;
 
                     /**
-                     * 获取托管规则黑白名单
-                     * @return WafRules 托管规则黑白名单
+                     * 获取托管规则详细配置。
+                     * @return WafRules 托管规则详细配置。
                      */
                     WafRule GetWafRules() const;
 
                     /**
-                     * 设置托管规则黑白名单
-                     * @param WafRules 托管规则黑白名单
+                     * 设置托管规则详细配置。
+                     * @param WafRules 托管规则详细配置。
                      */
                     void SetWafRules(const WafRule& _wafRules);
 
@@ -121,17 +157,17 @@ namespace TencentCloud
                     bool WafRulesHasBeenSet() const;
 
                     /**
-                     * 获取AI规则引擎防护
+                     * 获取AI规则引擎防护配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AiRule AI规则引擎防护
+                     * @return AiRule AI规则引擎防护配置。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AiRule GetAiRule() const;
 
                     /**
-                     * 设置AI规则引擎防护
+                     * 设置AI规则引擎防护配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AiRule AI规则引擎防护
+                     * @param AiRule AI规则引擎防护配置。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetAiRule(const AiRule& _aiRule);
@@ -145,31 +181,40 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 开关
+                     * WafConfig开关，取值有：
+<li> on：开启；</li>
+<li> off：关闭。</li>开关仅与配置是否生效有关，即使为off（关闭），也可以正常修改配置的内容。
                      */
                     std::string m_switch;
                     bool m_switchHasBeenSet;
 
                     /**
-                     * 防护级别，loose/normal/strict/stricter/custom
+                     * 防护级别，取值有：
+<li> loose：宽松；</li>
+<li> normal：正常；</li>
+<li> strict：严格；</li>
+<li> stricter：超严格；</li>
+<li> custom：自定义。</li>
                      */
                     std::string m_level;
                     bool m_levelHasBeenSet;
 
                     /**
-                     * 模式 block-阻断；observe-观察模式；close-关闭
+                     * 全局WAF模式，取值有：
+<li> block：阻断（全局阻断，但可对详细规则配置观察）；</li>
+<li> observe：观察（无论详细规则配置什么，都为观察）。</li>
                      */
                     std::string m_mode;
                     bool m_modeHasBeenSet;
 
                     /**
-                     * 托管规则黑白名单
+                     * 托管规则详细配置。
                      */
                     WafRule m_wafRules;
                     bool m_wafRulesHasBeenSet;
 
                     /**
-                     * AI规则引擎防护
+                     * AI规则引擎防护配置。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AiRule m_aiRule;

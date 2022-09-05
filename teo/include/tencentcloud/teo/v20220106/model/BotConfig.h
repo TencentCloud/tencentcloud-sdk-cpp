@@ -50,14 +50,22 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取bot开关
-                     * @return Switch bot开关
+                     * 获取开关。
+1. on 开启
+2. off 关闭
+                     * @return Switch 开关。
+1. on 开启
+2. off 关闭
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置bot开关
-                     * @param Switch bot开关
+                     * 设置开关。
+1. on 开启
+2. off 关闭
+                     * @param Switch 开关。
+1. on 开启
+2. off 关闭
                      */
                     void SetSwitch(const std::string& _switch);
 
@@ -68,14 +76,14 @@ namespace TencentCloud
                     bool SwitchHasBeenSet() const;
 
                     /**
-                     * 获取预置规则
-                     * @return ManagedRule 预置规则
+                     * 获取通用详细基础规则。
+                     * @return ManagedRule 通用详细基础规则。
                      */
                     BotManagedRule GetManagedRule() const;
 
                     /**
-                     * 设置预置规则
-                     * @param ManagedRule 预置规则
+                     * 设置通用详细基础规则。
+                     * @param ManagedRule 通用详细基础规则。
                      */
                     void SetManagedRule(const BotManagedRule& _managedRule);
 
@@ -86,14 +94,14 @@ namespace TencentCloud
                     bool ManagedRuleHasBeenSet() const;
 
                     /**
-                     * 获取保留
-                     * @return UaBotRule 保留
+                     * 获取ua基础规则。
+                     * @return UaBotRule ua基础规则。
                      */
                     BotManagedRule GetUaBotRule() const;
 
                     /**
-                     * 设置保留
-                     * @param UaBotRule 保留
+                     * 设置ua基础规则。
+                     * @param UaBotRule ua基础规则。
                      */
                     void SetUaBotRule(const BotManagedRule& _uaBotRule);
 
@@ -104,14 +112,14 @@ namespace TencentCloud
                     bool UaBotRuleHasBeenSet() const;
 
                     /**
-                     * 获取保留
-                     * @return IspBotRule 保留
+                     * 获取isp基础规则。
+                     * @return IspBotRule isp基础规则。
                      */
                     BotManagedRule GetIspBotRule() const;
 
                     /**
-                     * 设置保留
-                     * @param IspBotRule 保留
+                     * 设置isp基础规则。
+                     * @param IspBotRule isp基础规则。
                      */
                     void SetIspBotRule(const BotManagedRule& _ispBotRule);
 
@@ -122,14 +130,14 @@ namespace TencentCloud
                     bool IspBotRuleHasBeenSet() const;
 
                     /**
-                     * 获取用户画像规则
-                     * @return PortraitRule 用户画像规则
+                     * 获取用户画像规则。
+                     * @return PortraitRule 用户画像规则。
                      */
                     BotPortraitRule GetPortraitRule() const;
 
                     /**
-                     * 设置用户画像规则
-                     * @param PortraitRule 用户画像规则
+                     * 设置用户画像规则。
+                     * @param PortraitRule 用户画像规则。
                      */
                     void SetPortraitRule(const BotPortraitRule& _portraitRule);
 
@@ -140,17 +148,17 @@ namespace TencentCloud
                     bool PortraitRuleHasBeenSet() const;
 
                     /**
-                     * 获取Bot智能分析
+                     * 获取Bot智能分析。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IntelligenceRule Bot智能分析
+                     * @return IntelligenceRule Bot智能分析。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     IntelligenceRule GetIntelligenceRule() const;
 
                     /**
-                     * 设置Bot智能分析
+                     * 设置Bot智能分析。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IntelligenceRule Bot智能分析
+                     * @param IntelligenceRule Bot智能分析。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetIntelligenceRule(const IntelligenceRule& _intelligenceRule);
@@ -164,37 +172,39 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * bot开关
+                     * 开关。
+1. on 开启
+2. off 关闭
                      */
                     std::string m_switch;
                     bool m_switchHasBeenSet;
 
                     /**
-                     * 预置规则
+                     * 通用详细基础规则。
                      */
                     BotManagedRule m_managedRule;
                     bool m_managedRuleHasBeenSet;
 
                     /**
-                     * 保留
+                     * ua基础规则。
                      */
                     BotManagedRule m_uaBotRule;
                     bool m_uaBotRuleHasBeenSet;
 
                     /**
-                     * 保留
+                     * isp基础规则。
                      */
                     BotManagedRule m_ispBotRule;
                     bool m_ispBotRuleHasBeenSet;
 
                     /**
-                     * 用户画像规则
+                     * 用户画像规则。
                      */
                     BotPortraitRule m_portraitRule;
                     bool m_portraitRuleHasBeenSet;
 
                     /**
-                     * Bot智能分析
+                     * Bot智能分析。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     IntelligenceRule m_intelligenceRule;

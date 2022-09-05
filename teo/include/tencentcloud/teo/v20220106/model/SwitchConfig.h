@@ -47,14 +47,22 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Web类型的安全总开关：Web基础防护，自定义规则，速率限制
-                     * @return WebSwitch Web类型的安全总开关：Web基础防护，自定义规则，速率限制
+                     * 获取Web类型的安全总开关生效范围，Waf，自定义规则，速率限制。
+1. on 开启
+2. off 关闭
+                     * @return WebSwitch Web类型的安全总开关生效范围，Waf，自定义规则，速率限制。
+1. on 开启
+2. off 关闭
                      */
                     std::string GetWebSwitch() const;
 
                     /**
-                     * 设置Web类型的安全总开关：Web基础防护，自定义规则，速率限制
-                     * @param WebSwitch Web类型的安全总开关：Web基础防护，自定义规则，速率限制
+                     * 设置Web类型的安全总开关生效范围，Waf，自定义规则，速率限制。
+1. on 开启
+2. off 关闭
+                     * @param WebSwitch Web类型的安全总开关生效范围，Waf，自定义规则，速率限制。
+1. on 开启
+2. off 关闭
                      */
                     void SetWebSwitch(const std::string& _webSwitch);
 
@@ -67,7 +75,9 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Web类型的安全总开关：Web基础防护，自定义规则，速率限制
+                     * Web类型的安全总开关生效范围，Waf，自定义规则，速率限制。
+1. on 开启
+2. off 关闭
                      */
                     std::string m_webSwitch;
                     bool m_webSwitchHasBeenSet;

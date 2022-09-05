@@ -50,14 +50,22 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取开关
-                     * @return Switch 开关
+                     * 获取开关。
+1. on 开启RateLimit；
+2. off 关闭RateLimit
+                     * @return Switch 开关。
+1. on 开启RateLimit；
+2. off 关闭RateLimit
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置开关
-                     * @param Switch 开关
+                     * 设置开关。
+1. on 开启RateLimit；
+2. off 关闭RateLimit
+                     * @param Switch 开关。
+1. on 开启RateLimit；
+2. off 关闭RateLimit
                      */
                     void SetSwitch(const std::string& _switch);
 
@@ -68,14 +76,14 @@ namespace TencentCloud
                     bool SwitchHasBeenSet() const;
 
                     /**
-                     * 获取用户规则
-                     * @return UserRules 用户规则
+                     * 获取速率限制-用户规则列表。
+                     * @return UserRules 速率限制-用户规则列表。
                      */
                     std::vector<RateLimitUserRule> GetUserRules() const;
 
                     /**
-                     * 设置用户规则
-                     * @param UserRules 用户规则
+                     * 设置速率限制-用户规则列表。
+                     * @param UserRules 速率限制-用户规则列表。
                      */
                     void SetUserRules(const std::vector<RateLimitUserRule>& _userRules);
 
@@ -86,17 +94,17 @@ namespace TencentCloud
                     bool UserRulesHasBeenSet() const;
 
                     /**
-                     * 获取默认模板
+                     * 获取速率限制模板功能。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Template 默认模板
+                     * @return Template 速率限制模板功能。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     RateLimitTemplate GetTemplate() const;
 
                     /**
-                     * 设置默认模板
+                     * 设置速率限制模板功能。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Template 默认模板
+                     * @param Template 速率限制模板功能。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetTemplate(const RateLimitTemplate& _template);
@@ -108,17 +116,17 @@ namespace TencentCloud
                     bool TemplateHasBeenSet() const;
 
                     /**
-                     * 获取智能客户端过滤
+                     * 获取智能客户端过滤。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Intelligence 智能客户端过滤
+                     * @return Intelligence 智能客户端过滤。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     RateLimitIntelligence GetIntelligence() const;
 
                     /**
-                     * 设置智能客户端过滤
+                     * 设置智能客户端过滤。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Intelligence 智能客户端过滤
+                     * @param Intelligence 智能客户端过滤。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetIntelligence(const RateLimitIntelligence& _intelligence);
@@ -132,26 +140,28 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 开关
+                     * 开关。
+1. on 开启RateLimit；
+2. off 关闭RateLimit
                      */
                     std::string m_switch;
                     bool m_switchHasBeenSet;
 
                     /**
-                     * 用户规则
+                     * 速率限制-用户规则列表。
                      */
                     std::vector<RateLimitUserRule> m_userRules;
                     bool m_userRulesHasBeenSet;
 
                     /**
-                     * 默认模板
+                     * 速率限制模板功能。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     RateLimitTemplate m_template;
                     bool m_templateHasBeenSet;
 
                     /**
-                     * 智能客户端过滤
+                     * 智能客户端过滤。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     RateLimitIntelligence m_intelligence;

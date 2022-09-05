@@ -21,10 +21,10 @@ using namespace TencentCloud::Teo::V20220106::Model;
 using namespace std;
 
 IpTableRule::IpTableRule() :
+    m_ruleIDHasBeenSet(false),
     m_actionHasBeenSet(false),
     m_matchFromHasBeenSet(false),
     m_matchContentHasBeenSet(false),
-    m_ruleIDHasBeenSet(false),
     m_updateTimeHasBeenSet(false)
 {
 }
@@ -33,6 +33,16 @@ CoreInternalOutcome IpTableRule::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
+
+    if (value.HasMember("RuleID") && !value["RuleID"].IsNull())
+    {
+        if (!value["RuleID"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `IpTableRule.RuleID` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_ruleID = value["RuleID"].GetInt64();
+        m_ruleIDHasBeenSet = true;
+    }
 
     if (value.HasMember("Action") && !value["Action"].IsNull())
     {
@@ -64,16 +74,6 @@ CoreInternalOutcome IpTableRule::Deserialize(const rapidjson::Value &value)
         m_matchContentHasBeenSet = true;
     }
 
-    if (value.HasMember("RuleID") && !value["RuleID"].IsNull())
-    {
-        if (!value["RuleID"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `IpTableRule.RuleID` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_ruleID = value["RuleID"].GetInt64();
-        m_ruleIDHasBeenSet = true;
-    }
-
     if (value.HasMember("UpdateTime") && !value["UpdateTime"].IsNull())
     {
         if (!value["UpdateTime"].IsString())
@@ -90,6 +90,14 @@ CoreInternalOutcome IpTableRule::Deserialize(const rapidjson::Value &value)
 
 void IpTableRule::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
+
+    if (m_ruleIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RuleID";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_ruleID, allocator);
+    }
 
     if (m_actionHasBeenSet)
     {
@@ -115,14 +123,6 @@ void IpTableRule::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         value.AddMember(iKey, rapidjson::Value(m_matchContent.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_ruleIDHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "RuleID";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_ruleID, allocator);
-    }
-
     if (m_updateTimeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -133,6 +133,22 @@ void IpTableRule::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
 
 }
 
+
+int64_t IpTableRule::GetRuleID() const
+{
+    return m_ruleID;
+}
+
+void IpTableRule::SetRuleID(const int64_t& _ruleID)
+{
+    m_ruleID = _ruleID;
+    m_ruleIDHasBeenSet = true;
+}
+
+bool IpTableRule::RuleIDHasBeenSet() const
+{
+    return m_ruleIDHasBeenSet;
+}
 
 string IpTableRule::GetAction() const
 {
@@ -180,22 +196,6 @@ void IpTableRule::SetMatchContent(const string& _matchContent)
 bool IpTableRule::MatchContentHasBeenSet() const
 {
     return m_matchContentHasBeenSet;
-}
-
-int64_t IpTableRule::GetRuleID() const
-{
-    return m_ruleID;
-}
-
-void IpTableRule::SetRuleID(const int64_t& _ruleID)
-{
-    m_ruleID = _ruleID;
-    m_ruleIDHasBeenSet = true;
-}
-
-bool IpTableRule::RuleIDHasBeenSet() const
-{
-    return m_ruleIDHasBeenSet;
 }
 
 string IpTableRule::GetUpdateTime() const

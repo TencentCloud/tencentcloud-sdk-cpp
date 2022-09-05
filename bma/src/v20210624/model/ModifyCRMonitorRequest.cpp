@@ -24,7 +24,8 @@ using namespace std;
 
 ModifyCRMonitorRequest::ModifyCRMonitorRequest() :
     m_workIdHasBeenSet(false),
-    m_monitorStatusHasBeenSet(false)
+    m_monitorStatusHasBeenSet(false),
+    m_monitorEndHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string ModifyCRMonitorRequest::ToJsonString() const
         string key = "MonitorStatus";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_monitorStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_monitorEndHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MonitorEnd";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_monitorEnd.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -89,6 +98,22 @@ void ModifyCRMonitorRequest::SetMonitorStatus(const string& _monitorStatus)
 bool ModifyCRMonitorRequest::MonitorStatusHasBeenSet() const
 {
     return m_monitorStatusHasBeenSet;
+}
+
+string ModifyCRMonitorRequest::GetMonitorEnd() const
+{
+    return m_monitorEnd;
+}
+
+void ModifyCRMonitorRequest::SetMonitorEnd(const string& _monitorEnd)
+{
+    m_monitorEnd = _monitorEnd;
+    m_monitorEndHasBeenSet = true;
+}
+
+bool ModifyCRMonitorRequest::MonitorEndHasBeenSet() const
+{
+    return m_monitorEndHasBeenSet;
 }
 
 

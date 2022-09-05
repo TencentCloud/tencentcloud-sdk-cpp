@@ -48,17 +48,41 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取模板名称
+                     * 获取模板等级名称。
+1. sup_loose 自适应 - 超级宽松
+2. loose     自适应 - 宽松
+3. emergency 自适应 - 紧急
+4. normal    自适应 - 适中
+5. strict    固定阈值 - 严格
+6. close     关闭 - 仅精准速率限制生效
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Mode 模板名称
+                     * @return Mode 模板等级名称。
+1. sup_loose 自适应 - 超级宽松
+2. loose     自适应 - 宽松
+3. emergency 自适应 - 紧急
+4. normal    自适应 - 适中
+5. strict    固定阈值 - 严格
+6. close     关闭 - 仅精准速率限制生效
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetMode() const;
 
                     /**
-                     * 设置模板名称
+                     * 设置模板等级名称。
+1. sup_loose 自适应 - 超级宽松
+2. loose     自适应 - 宽松
+3. emergency 自适应 - 紧急
+4. normal    自适应 - 适中
+5. strict    固定阈值 - 严格
+6. close     关闭 - 仅精准速率限制生效
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Mode 模板名称
+                     * @param Mode 模板等级名称。
+1. sup_loose 自适应 - 超级宽松
+2. loose     自适应 - 宽松
+3. emergency 自适应 - 紧急
+4. normal    自适应 - 适中
+5. strict    固定阈值 - 严格
+6. close     关闭 - 仅精准速率限制生效
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetMode(const std::string& _mode);
@@ -70,17 +94,17 @@ namespace TencentCloud
                     bool ModeHasBeenSet() const;
 
                     /**
-                     * 获取模板值详情
+                     * 获取模板值详情。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Detail 模板值详情
+                     * @return Detail 模板值详情。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     RateLimitTemplateDetail GetDetail() const;
 
                     /**
-                     * 设置模板值详情
+                     * 设置模板值详情。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Detail 模板值详情
+                     * @param Detail 模板值详情。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetDetail(const RateLimitTemplateDetail& _detail);
@@ -94,14 +118,20 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 模板名称
+                     * 模板等级名称。
+1. sup_loose 自适应 - 超级宽松
+2. loose     自适应 - 宽松
+3. emergency 自适应 - 紧急
+4. normal    自适应 - 适中
+5. strict    固定阈值 - 严格
+6. close     关闭 - 仅精准速率限制生效
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_mode;
                     bool m_modeHasBeenSet;
 
                     /**
-                     * 模板值详情
+                     * 模板值详情。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     RateLimitTemplateDetail m_detail;

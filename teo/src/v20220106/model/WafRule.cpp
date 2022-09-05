@@ -21,8 +21,8 @@ using namespace TencentCloud::Teo::V20220106::Model;
 using namespace std;
 
 WafRule::WafRule() :
-    m_blockRuleIDsHasBeenSet(false),
     m_switchHasBeenSet(false),
+    m_blockRuleIDsHasBeenSet(false),
     m_observeRuleIDsHasBeenSet(false)
 {
 }
@@ -31,6 +31,16 @@ CoreInternalOutcome WafRule::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
+
+    if (value.HasMember("Switch") && !value["Switch"].IsNull())
+    {
+        if (!value["Switch"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `WafRule.Switch` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_switch = string(value["Switch"].GetString());
+        m_switchHasBeenSet = true;
+    }
 
     if (value.HasMember("BlockRuleIDs") && !value["BlockRuleIDs"].IsNull())
     {
@@ -43,16 +53,6 @@ CoreInternalOutcome WafRule::Deserialize(const rapidjson::Value &value)
             m_blockRuleIDs.push_back((*itr).GetInt64());
         }
         m_blockRuleIDsHasBeenSet = true;
-    }
-
-    if (value.HasMember("Switch") && !value["Switch"].IsNull())
-    {
-        if (!value["Switch"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `WafRule.Switch` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_switch = string(value["Switch"].GetString());
-        m_switchHasBeenSet = true;
     }
 
     if (value.HasMember("ObserveRuleIDs") && !value["ObserveRuleIDs"].IsNull())
@@ -75,6 +75,14 @@ CoreInternalOutcome WafRule::Deserialize(const rapidjson::Value &value)
 void WafRule::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
+    if (m_switchHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Switch";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_switch.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_blockRuleIDsHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -86,14 +94,6 @@ void WafRule::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
-    }
-
-    if (m_switchHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Switch";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_switch.c_str(), allocator).Move(), allocator);
     }
 
     if (m_observeRuleIDsHasBeenSet)
@@ -112,22 +112,6 @@ void WafRule::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
 }
 
 
-vector<int64_t> WafRule::GetBlockRuleIDs() const
-{
-    return m_blockRuleIDs;
-}
-
-void WafRule::SetBlockRuleIDs(const vector<int64_t>& _blockRuleIDs)
-{
-    m_blockRuleIDs = _blockRuleIDs;
-    m_blockRuleIDsHasBeenSet = true;
-}
-
-bool WafRule::BlockRuleIDsHasBeenSet() const
-{
-    return m_blockRuleIDsHasBeenSet;
-}
-
 string WafRule::GetSwitch() const
 {
     return m_switch;
@@ -142,6 +126,22 @@ void WafRule::SetSwitch(const string& _switch)
 bool WafRule::SwitchHasBeenSet() const
 {
     return m_switchHasBeenSet;
+}
+
+vector<int64_t> WafRule::GetBlockRuleIDs() const
+{
+    return m_blockRuleIDs;
+}
+
+void WafRule::SetBlockRuleIDs(const vector<int64_t>& _blockRuleIDs)
+{
+    m_blockRuleIDs = _blockRuleIDs;
+    m_blockRuleIDsHasBeenSet = true;
+}
+
+bool WafRule::BlockRuleIDsHasBeenSet() const
+{
+    return m_blockRuleIDsHasBeenSet;
 }
 
 vector<int64_t> WafRule::GetObserveRuleIDs() const

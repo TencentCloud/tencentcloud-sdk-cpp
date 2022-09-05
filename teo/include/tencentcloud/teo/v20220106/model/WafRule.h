@@ -47,32 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取黑名单，ID参考接口 DescribeSecurityPolicyManagedRules
-                     * @return BlockRuleIDs 黑名单，ID参考接口 DescribeSecurityPolicyManagedRules
-                     */
-                    std::vector<int64_t> GetBlockRuleIDs() const;
-
-                    /**
-                     * 设置黑名单，ID参考接口 DescribeSecurityPolicyManagedRules
-                     * @param BlockRuleIDs 黑名单，ID参考接口 DescribeSecurityPolicyManagedRules
-                     */
-                    void SetBlockRuleIDs(const std::vector<int64_t>& _blockRuleIDs);
-
-                    /**
-                     * 判断参数 BlockRuleIDs 是否已赋值
-                     * @return BlockRuleIDs 是否已赋值
-                     */
-                    bool BlockRuleIDsHasBeenSet() const;
-
-                    /**
-                     * 获取托管规则 开关
-                     * @return Switch 托管规则 开关
+                     * 获取托管规则开关。 on为开启
+                     * @return Switch 托管规则开关。 on为开启
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置托管规则 开关
-                     * @param Switch 托管规则 开关
+                     * 设置托管规则开关。 on为开启
+                     * @param Switch 托管规则开关。 on为开启
                      */
                     void SetSwitch(const std::string& _switch);
 
@@ -83,17 +65,35 @@ namespace TencentCloud
                     bool SwitchHasBeenSet() const;
 
                     /**
-                     * 获取观察模式，ID参考接口 DescribeSecurityPolicyManagedRules
+                     * 获取黑名单ID列表，将规则ID加入本参数列表中代表该ID关闭，即该规则ID不再生效。ID参考接口 [DescribeSecurityPolicyManagedRules](https://tcloud4api.woa.com/document/product/1657/76030?!preview&!document=1)。
+                     * @return BlockRuleIDs 黑名单ID列表，将规则ID加入本参数列表中代表该ID关闭，即该规则ID不再生效。ID参考接口 [DescribeSecurityPolicyManagedRules](https://tcloud4api.woa.com/document/product/1657/76030?!preview&!document=1)。
+                     */
+                    std::vector<int64_t> GetBlockRuleIDs() const;
+
+                    /**
+                     * 设置黑名单ID列表，将规则ID加入本参数列表中代表该ID关闭，即该规则ID不再生效。ID参考接口 [DescribeSecurityPolicyManagedRules](https://tcloud4api.woa.com/document/product/1657/76030?!preview&!document=1)。
+                     * @param BlockRuleIDs 黑名单ID列表，将规则ID加入本参数列表中代表该ID关闭，即该规则ID不再生效。ID参考接口 [DescribeSecurityPolicyManagedRules](https://tcloud4api.woa.com/document/product/1657/76030?!preview&!document=1)。
+                     */
+                    void SetBlockRuleIDs(const std::vector<int64_t>& _blockRuleIDs);
+
+                    /**
+                     * 判断参数 BlockRuleIDs 是否已赋值
+                     * @return BlockRuleIDs 是否已赋值
+                     */
+                    bool BlockRuleIDsHasBeenSet() const;
+
+                    /**
+                     * 获取观察模式ID列表，将规则ID加入本参数列表中代表该ID使用观察模式生效，即该规则ID进入观察模式。ID参考接口 [DescribeSecurityPolicyManagedRules](https://tcloud4api.woa.com/document/product/1657/76030?!preview&!document=1)。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ObserveRuleIDs 观察模式，ID参考接口 DescribeSecurityPolicyManagedRules
+                     * @return ObserveRuleIDs 观察模式ID列表，将规则ID加入本参数列表中代表该ID使用观察模式生效，即该规则ID进入观察模式。ID参考接口 [DescribeSecurityPolicyManagedRules](https://tcloud4api.woa.com/document/product/1657/76030?!preview&!document=1)。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<int64_t> GetObserveRuleIDs() const;
 
                     /**
-                     * 设置观察模式，ID参考接口 DescribeSecurityPolicyManagedRules
+                     * 设置观察模式ID列表，将规则ID加入本参数列表中代表该ID使用观察模式生效，即该规则ID进入观察模式。ID参考接口 [DescribeSecurityPolicyManagedRules](https://tcloud4api.woa.com/document/product/1657/76030?!preview&!document=1)。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ObserveRuleIDs 观察模式，ID参考接口 DescribeSecurityPolicyManagedRules
+                     * @param ObserveRuleIDs 观察模式ID列表，将规则ID加入本参数列表中代表该ID使用观察模式生效，即该规则ID进入观察模式。ID参考接口 [DescribeSecurityPolicyManagedRules](https://tcloud4api.woa.com/document/product/1657/76030?!preview&!document=1)。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetObserveRuleIDs(const std::vector<int64_t>& _observeRuleIDs);
@@ -107,19 +107,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 黑名单，ID参考接口 DescribeSecurityPolicyManagedRules
-                     */
-                    std::vector<int64_t> m_blockRuleIDs;
-                    bool m_blockRuleIDsHasBeenSet;
-
-                    /**
-                     * 托管规则 开关
+                     * 托管规则开关。 on为开启
                      */
                     std::string m_switch;
                     bool m_switchHasBeenSet;
 
                     /**
-                     * 观察模式，ID参考接口 DescribeSecurityPolicyManagedRules
+                     * 黑名单ID列表，将规则ID加入本参数列表中代表该ID关闭，即该规则ID不再生效。ID参考接口 [DescribeSecurityPolicyManagedRules](https://tcloud4api.woa.com/document/product/1657/76030?!preview&!document=1)。
+                     */
+                    std::vector<int64_t> m_blockRuleIDs;
+                    bool m_blockRuleIDsHasBeenSet;
+
+                    /**
+                     * 观察模式ID列表，将规则ID加入本参数列表中代表该ID使用观察模式生效，即该规则ID进入观察模式。ID参考接口 [DescribeSecurityPolicyManagedRules](https://tcloud4api.woa.com/document/product/1657/76030?!preview&!document=1)。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<int64_t> m_observeRuleIDs;

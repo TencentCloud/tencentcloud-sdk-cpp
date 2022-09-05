@@ -31,6 +31,8 @@
 #include <tencentcloud/teo/v20220106/model/BotConfig.h>
 #include <tencentcloud/teo/v20220106/model/SwitchConfig.h>
 #include <tencentcloud/teo/v20220106/model/IpTableConfig.h>
+#include <tencentcloud/teo/v20220106/model/ExceptConfig.h>
+#include <tencentcloud/teo/v20220106/model/DropPageConfig.h>
 
 
 namespace TencentCloud
@@ -42,7 +44,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 安全配置
+                * 安全配置。
                 */
                 class SecurityConfig : public AbstractModel
                 {
@@ -54,17 +56,17 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取门神配置
+                     * 获取托管规则。如果为null，默认使用历史配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return WafConfig 门神配置
+                     * @return WafConfig 托管规则。如果为null，默认使用历史配置。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     WafConfig GetWafConfig() const;
 
                     /**
-                     * 设置门神配置
+                     * 设置托管规则。如果为null，默认使用历史配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param WafConfig 门神配置
+                     * @param WafConfig 托管规则。如果为null，默认使用历史配置。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetWafConfig(const WafConfig& _wafConfig);
@@ -76,17 +78,17 @@ namespace TencentCloud
                     bool WafConfigHasBeenSet() const;
 
                     /**
-                     * 获取RateLimit配置
+                     * 获取速率限制。如果为null，默认使用历史配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RateLimitConfig RateLimit配置
+                     * @return RateLimitConfig 速率限制。如果为null，默认使用历史配置。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     RateLimitConfig GetRateLimitConfig() const;
 
                     /**
-                     * 设置RateLimit配置
+                     * 设置速率限制。如果为null，默认使用历史配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RateLimitConfig RateLimit配置
+                     * @param RateLimitConfig 速率限制。如果为null，默认使用历史配置。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetRateLimitConfig(const RateLimitConfig& _rateLimitConfig);
@@ -98,17 +100,17 @@ namespace TencentCloud
                     bool RateLimitConfigHasBeenSet() const;
 
                     /**
-                     * 获取DDoS配置
+                     * 获取DDoS配置。如果为null，默认使用历史配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DdosConfig DDoS配置
+                     * @return DdosConfig DDoS配置。如果为null，默认使用历史配置。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DDoSConfig GetDdosConfig() const;
 
                     /**
-                     * 设置DDoS配置
+                     * 设置DDoS配置。如果为null，默认使用历史配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DdosConfig DDoS配置
+                     * @param DdosConfig DDoS配置。如果为null，默认使用历史配置。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetDdosConfig(const DDoSConfig& _ddosConfig);
@@ -120,17 +122,17 @@ namespace TencentCloud
                     bool DdosConfigHasBeenSet() const;
 
                     /**
-                     * 获取ACL配置
+                     * 获取自定义规则。如果为null，默认使用历史配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AclConfig ACL配置
+                     * @return AclConfig 自定义规则。如果为null，默认使用历史配置。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AclConfig GetAclConfig() const;
 
                     /**
-                     * 设置ACL配置
+                     * 设置自定义规则。如果为null，默认使用历史配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AclConfig ACL配置
+                     * @param AclConfig 自定义规则。如果为null，默认使用历史配置。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetAclConfig(const AclConfig& _aclConfig);
@@ -142,17 +144,17 @@ namespace TencentCloud
                     bool AclConfigHasBeenSet() const;
 
                     /**
-                     * 获取Bot配置
+                     * 获取Bot配置。如果为null，默认使用历史配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return BotConfig Bot配置
+                     * @return BotConfig Bot配置。如果为null，默认使用历史配置。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BotConfig GetBotConfig() const;
 
                     /**
-                     * 设置Bot配置
+                     * 设置Bot配置。如果为null，默认使用历史配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BotConfig Bot配置
+                     * @param BotConfig Bot配置。如果为null，默认使用历史配置。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetBotConfig(const BotConfig& _botConfig);
@@ -164,17 +166,17 @@ namespace TencentCloud
                     bool BotConfigHasBeenSet() const;
 
                     /**
-                     * 获取总开关
+                     * 获取七层防护总开关。如果为null，默认使用历史配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SwitchConfig 总开关
+                     * @return SwitchConfig 七层防护总开关。如果为null，默认使用历史配置。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     SwitchConfig GetSwitchConfig() const;
 
                     /**
-                     * 设置总开关
+                     * 设置七层防护总开关。如果为null，默认使用历史配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SwitchConfig 总开关
+                     * @param SwitchConfig 七层防护总开关。如果为null，默认使用历史配置。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetSwitchConfig(const SwitchConfig& _switchConfig);
@@ -186,17 +188,17 @@ namespace TencentCloud
                     bool SwitchConfigHasBeenSet() const;
 
                     /**
-                     * 获取IP黑白名单
+                     * 获取基础访问管控。如果为null，默认使用历史配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IpTableConfig IP黑白名单
+                     * @return IpTableConfig 基础访问管控。如果为null，默认使用历史配置。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     IpTableConfig GetIpTableConfig() const;
 
                     /**
-                     * 设置IP黑白名单
+                     * 设置基础访问管控。如果为null，默认使用历史配置。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IpTableConfig IP黑白名单
+                     * @param IpTableConfig 基础访问管控。如果为null，默认使用历史配置。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetIpTableConfig(const IpTableConfig& _ipTableConfig);
@@ -207,56 +209,114 @@ namespace TencentCloud
                      */
                     bool IpTableConfigHasBeenSet() const;
 
+                    /**
+                     * 获取例外规则配置。如果为null，默认使用历史配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ExceptConfig 例外规则配置。如果为null，默认使用历史配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ExceptConfig GetExceptConfig() const;
+
+                    /**
+                     * 设置例外规则配置。如果为null，默认使用历史配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ExceptConfig 例外规则配置。如果为null，默认使用历史配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetExceptConfig(const ExceptConfig& _exceptConfig);
+
+                    /**
+                     * 判断参数 ExceptConfig 是否已赋值
+                     * @return ExceptConfig 是否已赋值
+                     */
+                    bool ExceptConfigHasBeenSet() const;
+
+                    /**
+                     * 获取自定义拦截页面配置。如果为null，默认使用历史配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DropPageConfig 自定义拦截页面配置。如果为null，默认使用历史配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    DropPageConfig GetDropPageConfig() const;
+
+                    /**
+                     * 设置自定义拦截页面配置。如果为null，默认使用历史配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DropPageConfig 自定义拦截页面配置。如果为null，默认使用历史配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDropPageConfig(const DropPageConfig& _dropPageConfig);
+
+                    /**
+                     * 判断参数 DropPageConfig 是否已赋值
+                     * @return DropPageConfig 是否已赋值
+                     */
+                    bool DropPageConfigHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 门神配置
+                     * 托管规则。如果为null，默认使用历史配置。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     WafConfig m_wafConfig;
                     bool m_wafConfigHasBeenSet;
 
                     /**
-                     * RateLimit配置
+                     * 速率限制。如果为null，默认使用历史配置。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     RateLimitConfig m_rateLimitConfig;
                     bool m_rateLimitConfigHasBeenSet;
 
                     /**
-                     * DDoS配置
+                     * DDoS配置。如果为null，默认使用历史配置。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DDoSConfig m_ddosConfig;
                     bool m_ddosConfigHasBeenSet;
 
                     /**
-                     * ACL配置
+                     * 自定义规则。如果为null，默认使用历史配置。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AclConfig m_aclConfig;
                     bool m_aclConfigHasBeenSet;
 
                     /**
-                     * Bot配置
+                     * Bot配置。如果为null，默认使用历史配置。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BotConfig m_botConfig;
                     bool m_botConfigHasBeenSet;
 
                     /**
-                     * 总开关
+                     * 七层防护总开关。如果为null，默认使用历史配置。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     SwitchConfig m_switchConfig;
                     bool m_switchConfigHasBeenSet;
 
                     /**
-                     * IP黑白名单
+                     * 基础访问管控。如果为null，默认使用历史配置。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     IpTableConfig m_ipTableConfig;
                     bool m_ipTableConfigHasBeenSet;
+
+                    /**
+                     * 例外规则配置。如果为null，默认使用历史配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ExceptConfig m_exceptConfig;
+                    bool m_exceptConfigHasBeenSet;
+
+                    /**
+                     * 自定义拦截页面配置。如果为null，默认使用历史配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    DropPageConfig m_dropPageConfig;
+                    bool m_dropPageConfigHasBeenSet;
 
                 };
             }

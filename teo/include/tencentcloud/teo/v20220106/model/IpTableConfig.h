@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * IP黑白名单及IP区域控制配置
+                * 基础管控规则配置。
                 */
                 class IpTableConfig : public AbstractModel
                 {
@@ -48,17 +48,25 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取开关
+                     * 获取开关。
+1. on 开启
+2. off 关闭
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Switch 开关
+                     * @return Switch 开关。
+1. on 开启
+2. off 关闭
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置开关
+                     * 设置开关。
+1. on 开启
+2. off 关闭
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Switch 开关
+                     * @param Switch 开关。
+1. on 开启
+2. off 关闭
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetSwitch(const std::string& _switch);
@@ -70,17 +78,17 @@ namespace TencentCloud
                     bool SwitchHasBeenSet() const;
 
                     /**
-                     * 获取[]
+                     * 获取基础管控规则。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Rules []
+                     * @return Rules 基础管控规则。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<IpTableRule> GetRules() const;
 
                     /**
-                     * 设置[]
+                     * 设置基础管控规则。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Rules []
+                     * @param Rules 基础管控规则。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetRules(const std::vector<IpTableRule>& _rules);
@@ -94,14 +102,16 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 开关
+                     * 开关。
+1. on 开启
+2. off 关闭
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_switch;
                     bool m_switchHasBeenSet;
 
                     /**
-                     * []
+                     * 基础管控规则。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<IpTableRule> m_rules;

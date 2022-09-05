@@ -39,6 +39,10 @@
 #include <tencentcloud/bma/v20210624/model/CreateCRCompanyVerifyResponse.h>
 #include <tencentcloud/bma/v20210624/model/CreateCRRightRequest.h>
 #include <tencentcloud/bma/v20210624/model/CreateCRRightResponse.h>
+#include <tencentcloud/bma/v20210624/model/CreateCRRightFileRequest.h>
+#include <tencentcloud/bma/v20210624/model/CreateCRRightFileResponse.h>
+#include <tencentcloud/bma/v20210624/model/CreateCRTortRequest.h>
+#include <tencentcloud/bma/v20210624/model/CreateCRTortResponse.h>
 #include <tencentcloud/bma/v20210624/model/CreateCRUserVerifyRequest.h>
 #include <tencentcloud/bma/v20210624/model/CreateCRUserVerifyResponse.h>
 #include <tencentcloud/bma/v20210624/model/CreateCRWorkRequest.h>
@@ -67,6 +71,8 @@
 #include <tencentcloud/bma/v20210624/model/ModifyCRObtainStatusResponse.h>
 #include <tencentcloud/bma/v20210624/model/ModifyCRRightStatusRequest.h>
 #include <tencentcloud/bma/v20210624/model/ModifyCRRightStatusResponse.h>
+#include <tencentcloud/bma/v20210624/model/ModifyCRWhiteListRequest.h>
+#include <tencentcloud/bma/v20210624/model/ModifyCRWhiteListResponse.h>
 #include <tencentcloud/bma/v20210624/model/UpdateCRWorkRequest.h>
 #include <tencentcloud/bma/v20210624/model/UpdateCRWorkResponse.h>
 
@@ -107,6 +113,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateCRRightResponse> CreateCRRightOutcome;
                 typedef std::future<CreateCRRightOutcome> CreateCRRightOutcomeCallable;
                 typedef std::function<void(const BmaClient*, const Model::CreateCRRightRequest&, CreateCRRightOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCRRightAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateCRRightFileResponse> CreateCRRightFileOutcome;
+                typedef std::future<CreateCRRightFileOutcome> CreateCRRightFileOutcomeCallable;
+                typedef std::function<void(const BmaClient*, const Model::CreateCRRightFileRequest&, CreateCRRightFileOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCRRightFileAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateCRTortResponse> CreateCRTortOutcome;
+                typedef std::future<CreateCRTortOutcome> CreateCRTortOutcomeCallable;
+                typedef std::function<void(const BmaClient*, const Model::CreateCRTortRequest&, CreateCRTortOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCRTortAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateCRUserVerifyResponse> CreateCRUserVerifyOutcome;
                 typedef std::future<CreateCRUserVerifyOutcome> CreateCRUserVerifyOutcomeCallable;
                 typedef std::function<void(const BmaClient*, const Model::CreateCRUserVerifyRequest&, CreateCRUserVerifyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCRUserVerifyAsyncHandler;
@@ -149,6 +161,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyCRRightStatusResponse> ModifyCRRightStatusOutcome;
                 typedef std::future<ModifyCRRightStatusOutcome> ModifyCRRightStatusOutcomeCallable;
                 typedef std::function<void(const BmaClient*, const Model::ModifyCRRightStatusRequest&, ModifyCRRightStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCRRightStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyCRWhiteListResponse> ModifyCRWhiteListOutcome;
+                typedef std::future<ModifyCRWhiteListOutcome> ModifyCRWhiteListOutcomeCallable;
+                typedef std::function<void(const BmaClient*, const Model::ModifyCRWhiteListRequest&, ModifyCRWhiteListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCRWhiteListAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpdateCRWorkResponse> UpdateCRWorkOutcome;
                 typedef std::future<UpdateCRWorkOutcome> UpdateCRWorkOutcomeCallable;
                 typedef std::function<void(const BmaClient*, const Model::UpdateCRWorkRequest&, UpdateCRWorkOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateCRWorkAsyncHandler;
@@ -226,6 +241,24 @@ namespace TencentCloud
                 CreateCRRightOutcome CreateCRRight(const Model::CreateCRRightRequest &request);
                 void CreateCRRightAsync(const Model::CreateCRRightRequest& request, const CreateCRRightAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateCRRightOutcomeCallable CreateCRRightCallable(const Model::CreateCRRightRequest& request);
+
+                /**
+                 *新增权属文件
+                 * @param req CreateCRRightFileRequest
+                 * @return CreateCRRightFileOutcome
+                 */
+                CreateCRRightFileOutcome CreateCRRightFile(const Model::CreateCRRightFileRequest &request);
+                void CreateCRRightFileAsync(const Model::CreateCRRightFileRequest& request, const CreateCRRightFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateCRRightFileOutcomeCallable CreateCRRightFileCallable(const Model::CreateCRRightFileRequest& request);
+
+                /**
+                 *举报侵权链接
+                 * @param req CreateCRTortRequest
+                 * @return CreateCRTortOutcome
+                 */
+                CreateCRTortOutcome CreateCRTort(const Model::CreateCRTortRequest &request);
+                void CreateCRTortAsync(const Model::CreateCRTortRequest& request, const CreateCRTortAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateCRTortOutcomeCallable CreateCRTortCallable(const Model::CreateCRTortRequest& request);
 
                 /**
                  *品牌经营管家-版权保护个人认证接口
@@ -352,6 +385,15 @@ namespace TencentCloud
                 ModifyCRRightStatusOutcome ModifyCRRightStatus(const Model::ModifyCRRightStatusRequest &request);
                 void ModifyCRRightStatusAsync(const Model::ModifyCRRightStatusRequest& request, const ModifyCRRightStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyCRRightStatusOutcomeCallable ModifyCRRightStatusCallable(const Model::ModifyCRRightStatusRequest& request);
+
+                /**
+                 *版权保护-白名单修改接口
+                 * @param req ModifyCRWhiteListRequest
+                 * @return ModifyCRWhiteListOutcome
+                 */
+                ModifyCRWhiteListOutcome ModifyCRWhiteList(const Model::ModifyCRWhiteListRequest &request);
+                void ModifyCRWhiteListAsync(const Model::ModifyCRWhiteListRequest& request, const ModifyCRWhiteListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyCRWhiteListOutcomeCallable ModifyCRWhiteListCallable(const Model::ModifyCRWhiteListRequest& request);
 
                 /**
                  *更新作品

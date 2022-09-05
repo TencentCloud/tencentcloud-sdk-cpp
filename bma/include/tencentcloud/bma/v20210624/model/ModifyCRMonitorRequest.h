@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool WorkIdHasBeenSet() const;
 
                     /**
-                     * 获取监测状态 1-开启监测 2-关闭监测 默认为1
-                     * @return MonitorStatus 监测状态 1-开启监测 2-关闭监测 默认为1
+                     * 获取监测状态 1-开启监测 2-关闭监测
+                     * @return MonitorStatus 监测状态 1-开启监测 2-关闭监测
                      */
                     std::string GetMonitorStatus() const;
 
                     /**
-                     * 设置监测状态 1-开启监测 2-关闭监测 默认为1
-                     * @param MonitorStatus 监测状态 1-开启监测 2-关闭监测 默认为1
+                     * 设置监测状态 1-开启监测 2-关闭监测
+                     * @param MonitorStatus 监测状态 1-开启监测 2-关闭监测
                      */
                     void SetMonitorStatus(const std::string& _monitorStatus);
 
@@ -77,6 +77,24 @@ namespace TencentCloud
                      * @return MonitorStatus 是否已赋值
                      */
                     bool MonitorStatusHasBeenSet() const;
+
+                    /**
+                     * 获取默认不停止，支持续期
+                     * @return MonitorEnd 默认不停止，支持续期
+                     */
+                    std::string GetMonitorEnd() const;
+
+                    /**
+                     * 设置默认不停止，支持续期
+                     * @param MonitorEnd 默认不停止，支持续期
+                     */
+                    void SetMonitorEnd(const std::string& _monitorEnd);
+
+                    /**
+                     * 判断参数 MonitorEnd 是否已赋值
+                     * @return MonitorEnd 是否已赋值
+                     */
+                    bool MonitorEndHasBeenSet() const;
 
                 private:
 
@@ -87,10 +105,16 @@ namespace TencentCloud
                     bool m_workIdHasBeenSet;
 
                     /**
-                     * 监测状态 1-开启监测 2-关闭监测 默认为1
+                     * 监测状态 1-开启监测 2-关闭监测
                      */
                     std::string m_monitorStatus;
                     bool m_monitorStatusHasBeenSet;
+
+                    /**
+                     * 默认不停止，支持续期
+                     */
+                    std::string m_monitorEnd;
+                    bool m_monitorEndHasBeenSet;
 
                 };
             }

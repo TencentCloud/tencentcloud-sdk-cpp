@@ -21,20 +21,20 @@ using namespace TencentCloud::Teo::V20220106::Model;
 using namespace std;
 
 BotManagedRule::BotManagedRule() :
-    m_managedIdsHasBeenSet(false),
     m_ruleIDHasBeenSet(false),
+    m_managedIdsHasBeenSet(false),
     m_actionHasBeenSet(false),
     m_punishTimeHasBeenSet(false),
     m_punishTimeUnitHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_pageIdHasBeenSet(false),
-    m_redirectUrlHasBeenSet(false),
-    m_responseCodeHasBeenSet(false),
     m_transManagedIdsHasBeenSet(false),
     m_algManagedIdsHasBeenSet(false),
     m_capManagedIdsHasBeenSet(false),
     m_monManagedIdsHasBeenSet(false),
-    m_dropManagedIdsHasBeenSet(false)
+    m_dropManagedIdsHasBeenSet(false),
+    m_pageIdHasBeenSet(false),
+    m_nameHasBeenSet(false),
+    m_redirectUrlHasBeenSet(false),
+    m_responseCodeHasBeenSet(false)
 {
 }
 
@@ -42,6 +42,16 @@ CoreInternalOutcome BotManagedRule::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
+
+    if (value.HasMember("RuleID") && !value["RuleID"].IsNull())
+    {
+        if (!value["RuleID"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `BotManagedRule.RuleID` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_ruleID = value["RuleID"].GetInt64();
+        m_ruleIDHasBeenSet = true;
+    }
 
     if (value.HasMember("ManagedIds") && !value["ManagedIds"].IsNull())
     {
@@ -54,16 +64,6 @@ CoreInternalOutcome BotManagedRule::Deserialize(const rapidjson::Value &value)
             m_managedIds.push_back((*itr).GetInt64());
         }
         m_managedIdsHasBeenSet = true;
-    }
-
-    if (value.HasMember("RuleID") && !value["RuleID"].IsNull())
-    {
-        if (!value["RuleID"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `BotManagedRule.RuleID` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_ruleID = value["RuleID"].GetInt64();
-        m_ruleIDHasBeenSet = true;
     }
 
     if (value.HasMember("Action") && !value["Action"].IsNull())
@@ -94,46 +94,6 @@ CoreInternalOutcome BotManagedRule::Deserialize(const rapidjson::Value &value)
         }
         m_punishTimeUnit = string(value["PunishTimeUnit"].GetString());
         m_punishTimeUnitHasBeenSet = true;
-    }
-
-    if (value.HasMember("Name") && !value["Name"].IsNull())
-    {
-        if (!value["Name"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `BotManagedRule.Name` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_name = string(value["Name"].GetString());
-        m_nameHasBeenSet = true;
-    }
-
-    if (value.HasMember("PageId") && !value["PageId"].IsNull())
-    {
-        if (!value["PageId"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `BotManagedRule.PageId` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_pageId = value["PageId"].GetInt64();
-        m_pageIdHasBeenSet = true;
-    }
-
-    if (value.HasMember("RedirectUrl") && !value["RedirectUrl"].IsNull())
-    {
-        if (!value["RedirectUrl"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `BotManagedRule.RedirectUrl` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_redirectUrl = string(value["RedirectUrl"].GetString());
-        m_redirectUrlHasBeenSet = true;
-    }
-
-    if (value.HasMember("ResponseCode") && !value["ResponseCode"].IsNull())
-    {
-        if (!value["ResponseCode"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `BotManagedRule.ResponseCode` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_responseCode = value["ResponseCode"].GetInt64();
-        m_responseCodeHasBeenSet = true;
     }
 
     if (value.HasMember("TransManagedIds") && !value["TransManagedIds"].IsNull())
@@ -201,12 +161,60 @@ CoreInternalOutcome BotManagedRule::Deserialize(const rapidjson::Value &value)
         m_dropManagedIdsHasBeenSet = true;
     }
 
+    if (value.HasMember("PageId") && !value["PageId"].IsNull())
+    {
+        if (!value["PageId"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `BotManagedRule.PageId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_pageId = value["PageId"].GetInt64();
+        m_pageIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("Name") && !value["Name"].IsNull())
+    {
+        if (!value["Name"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BotManagedRule.Name` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_name = string(value["Name"].GetString());
+        m_nameHasBeenSet = true;
+    }
+
+    if (value.HasMember("RedirectUrl") && !value["RedirectUrl"].IsNull())
+    {
+        if (!value["RedirectUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BotManagedRule.RedirectUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_redirectUrl = string(value["RedirectUrl"].GetString());
+        m_redirectUrlHasBeenSet = true;
+    }
+
+    if (value.HasMember("ResponseCode") && !value["ResponseCode"].IsNull())
+    {
+        if (!value["ResponseCode"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `BotManagedRule.ResponseCode` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_responseCode = value["ResponseCode"].GetInt64();
+        m_responseCodeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
 void BotManagedRule::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
+
+    if (m_ruleIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RuleID";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_ruleID, allocator);
+    }
 
     if (m_managedIdsHasBeenSet)
     {
@@ -219,14 +227,6 @@ void BotManagedRule::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
-    }
-
-    if (m_ruleIDHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "RuleID";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_ruleID, allocator);
     }
 
     if (m_actionHasBeenSet)
@@ -251,38 +251,6 @@ void BotManagedRule::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "PunishTimeUnit";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_punishTimeUnit.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_nameHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Name";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_pageIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "PageId";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_pageId, allocator);
-    }
-
-    if (m_redirectUrlHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "RedirectUrl";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_redirectUrl.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_responseCodeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ResponseCode";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_responseCode, allocator);
     }
 
     if (m_transManagedIdsHasBeenSet)
@@ -350,24 +318,40 @@ void BotManagedRule::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         }
     }
 
+    if (m_pageIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PageId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_pageId, allocator);
+    }
+
+    if (m_nameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Name";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_redirectUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RedirectUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_redirectUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_responseCodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResponseCode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_responseCode, allocator);
+    }
+
 }
 
-
-vector<int64_t> BotManagedRule::GetManagedIds() const
-{
-    return m_managedIds;
-}
-
-void BotManagedRule::SetManagedIds(const vector<int64_t>& _managedIds)
-{
-    m_managedIds = _managedIds;
-    m_managedIdsHasBeenSet = true;
-}
-
-bool BotManagedRule::ManagedIdsHasBeenSet() const
-{
-    return m_managedIdsHasBeenSet;
-}
 
 int64_t BotManagedRule::GetRuleID() const
 {
@@ -383,6 +367,22 @@ void BotManagedRule::SetRuleID(const int64_t& _ruleID)
 bool BotManagedRule::RuleIDHasBeenSet() const
 {
     return m_ruleIDHasBeenSet;
+}
+
+vector<int64_t> BotManagedRule::GetManagedIds() const
+{
+    return m_managedIds;
+}
+
+void BotManagedRule::SetManagedIds(const vector<int64_t>& _managedIds)
+{
+    m_managedIds = _managedIds;
+    m_managedIdsHasBeenSet = true;
+}
+
+bool BotManagedRule::ManagedIdsHasBeenSet() const
+{
+    return m_managedIdsHasBeenSet;
 }
 
 string BotManagedRule::GetAction() const
@@ -431,70 +431,6 @@ void BotManagedRule::SetPunishTimeUnit(const string& _punishTimeUnit)
 bool BotManagedRule::PunishTimeUnitHasBeenSet() const
 {
     return m_punishTimeUnitHasBeenSet;
-}
-
-string BotManagedRule::GetName() const
-{
-    return m_name;
-}
-
-void BotManagedRule::SetName(const string& _name)
-{
-    m_name = _name;
-    m_nameHasBeenSet = true;
-}
-
-bool BotManagedRule::NameHasBeenSet() const
-{
-    return m_nameHasBeenSet;
-}
-
-int64_t BotManagedRule::GetPageId() const
-{
-    return m_pageId;
-}
-
-void BotManagedRule::SetPageId(const int64_t& _pageId)
-{
-    m_pageId = _pageId;
-    m_pageIdHasBeenSet = true;
-}
-
-bool BotManagedRule::PageIdHasBeenSet() const
-{
-    return m_pageIdHasBeenSet;
-}
-
-string BotManagedRule::GetRedirectUrl() const
-{
-    return m_redirectUrl;
-}
-
-void BotManagedRule::SetRedirectUrl(const string& _redirectUrl)
-{
-    m_redirectUrl = _redirectUrl;
-    m_redirectUrlHasBeenSet = true;
-}
-
-bool BotManagedRule::RedirectUrlHasBeenSet() const
-{
-    return m_redirectUrlHasBeenSet;
-}
-
-int64_t BotManagedRule::GetResponseCode() const
-{
-    return m_responseCode;
-}
-
-void BotManagedRule::SetResponseCode(const int64_t& _responseCode)
-{
-    m_responseCode = _responseCode;
-    m_responseCodeHasBeenSet = true;
-}
-
-bool BotManagedRule::ResponseCodeHasBeenSet() const
-{
-    return m_responseCodeHasBeenSet;
 }
 
 vector<int64_t> BotManagedRule::GetTransManagedIds() const
@@ -575,5 +511,69 @@ void BotManagedRule::SetDropManagedIds(const vector<int64_t>& _dropManagedIds)
 bool BotManagedRule::DropManagedIdsHasBeenSet() const
 {
     return m_dropManagedIdsHasBeenSet;
+}
+
+int64_t BotManagedRule::GetPageId() const
+{
+    return m_pageId;
+}
+
+void BotManagedRule::SetPageId(const int64_t& _pageId)
+{
+    m_pageId = _pageId;
+    m_pageIdHasBeenSet = true;
+}
+
+bool BotManagedRule::PageIdHasBeenSet() const
+{
+    return m_pageIdHasBeenSet;
+}
+
+string BotManagedRule::GetName() const
+{
+    return m_name;
+}
+
+void BotManagedRule::SetName(const string& _name)
+{
+    m_name = _name;
+    m_nameHasBeenSet = true;
+}
+
+bool BotManagedRule::NameHasBeenSet() const
+{
+    return m_nameHasBeenSet;
+}
+
+string BotManagedRule::GetRedirectUrl() const
+{
+    return m_redirectUrl;
+}
+
+void BotManagedRule::SetRedirectUrl(const string& _redirectUrl)
+{
+    m_redirectUrl = _redirectUrl;
+    m_redirectUrlHasBeenSet = true;
+}
+
+bool BotManagedRule::RedirectUrlHasBeenSet() const
+{
+    return m_redirectUrlHasBeenSet;
+}
+
+int64_t BotManagedRule::GetResponseCode() const
+{
+    return m_responseCode;
+}
+
+void BotManagedRule::SetResponseCode(const int64_t& _responseCode)
+{
+    m_responseCode = _responseCode;
+    m_responseCodeHasBeenSet = true;
+}
+
+bool BotManagedRule::ResponseCodeHasBeenSet() const
+{
+    return m_responseCodeHasBeenSet;
 }
 

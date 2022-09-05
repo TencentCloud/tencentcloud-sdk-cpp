@@ -47,17 +47,25 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取功能开关
+                     * 获取功能开关。
+1. on 开启
+2. off 关闭
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Switch 功能开关
+                     * @return Switch 功能开关。
+1. on 开启
+2. off 关闭
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置功能开关
+                     * 设置功能开关。
+1. on 开启
+2. off 关闭
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Switch 功能开关
+                     * @param Switch 功能开关。
+1. on 开启
+2. off 关闭
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetSwitch(const std::string& _switch);
@@ -69,17 +77,25 @@ namespace TencentCloud
                     bool SwitchHasBeenSet() const;
 
                     /**
-                     * 获取执行动作 monitor(观察), alg(挑战)
+                     * 获取执行动作 
+1. monitor(观察)
+2. alg(挑战)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Action 执行动作 monitor(观察), alg(挑战)
+                     * @return Action 执行动作 
+1. monitor(观察)
+2. alg(挑战)
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetAction() const;
 
                     /**
-                     * 设置执行动作 monitor(观察), alg(挑战)
+                     * 设置执行动作 
+1. monitor(观察)
+2. alg(挑战)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Action 执行动作 monitor(观察), alg(挑战)
+                     * @param Action 执行动作 
+1. monitor(观察)
+2. alg(挑战)
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetAction(const std::string& _action);
@@ -93,14 +109,18 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 功能开关
+                     * 功能开关。
+1. on 开启
+2. off 关闭
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_switch;
                     bool m_switchHasBeenSet;
 
                     /**
-                     * 执行动作 monitor(观察), alg(挑战)
+                     * 执行动作 
+1. monitor(观察)
+2. alg(挑战)
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_action;

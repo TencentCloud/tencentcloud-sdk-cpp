@@ -384,6 +384,92 @@ BmaClient::CreateCRRightOutcomeCallable BmaClient::CreateCRRightCallable(const C
     return task->get_future();
 }
 
+BmaClient::CreateCRRightFileOutcome BmaClient::CreateCRRightFile(const CreateCRRightFileRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateCRRightFile");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateCRRightFileResponse rsp = CreateCRRightFileResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateCRRightFileOutcome(rsp);
+        else
+            return CreateCRRightFileOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateCRRightFileOutcome(outcome.GetError());
+    }
+}
+
+void BmaClient::CreateCRRightFileAsync(const CreateCRRightFileRequest& request, const CreateCRRightFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateCRRightFile(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BmaClient::CreateCRRightFileOutcomeCallable BmaClient::CreateCRRightFileCallable(const CreateCRRightFileRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateCRRightFileOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateCRRightFile(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+BmaClient::CreateCRTortOutcome BmaClient::CreateCRTort(const CreateCRTortRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateCRTort");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateCRTortResponse rsp = CreateCRTortResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateCRTortOutcome(rsp);
+        else
+            return CreateCRTortOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateCRTortOutcome(outcome.GetError());
+    }
+}
+
+void BmaClient::CreateCRTortAsync(const CreateCRTortRequest& request, const CreateCRTortAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateCRTort(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BmaClient::CreateCRTortOutcomeCallable BmaClient::CreateCRTortCallable(const CreateCRTortRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateCRTortOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateCRTort(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 BmaClient::CreateCRUserVerifyOutcome BmaClient::CreateCRUserVerify(const CreateCRUserVerifyRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateCRUserVerify");
@@ -979,6 +1065,49 @@ BmaClient::ModifyCRRightStatusOutcomeCallable BmaClient::ModifyCRRightStatusCall
         [this, request]()
         {
             return this->ModifyCRRightStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+BmaClient::ModifyCRWhiteListOutcome BmaClient::ModifyCRWhiteList(const ModifyCRWhiteListRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyCRWhiteList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyCRWhiteListResponse rsp = ModifyCRWhiteListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyCRWhiteListOutcome(rsp);
+        else
+            return ModifyCRWhiteListOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyCRWhiteListOutcome(outcome.GetError());
+    }
+}
+
+void BmaClient::ModifyCRWhiteListAsync(const ModifyCRWhiteListRequest& request, const ModifyCRWhiteListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyCRWhiteList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BmaClient::ModifyCRWhiteListOutcomeCallable BmaClient::ModifyCRWhiteListCallable(const ModifyCRWhiteListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyCRWhiteListOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyCRWhiteList(request);
         }
     );
 

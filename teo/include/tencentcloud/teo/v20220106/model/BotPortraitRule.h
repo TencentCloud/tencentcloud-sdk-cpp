@@ -47,17 +47,47 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取本规则的id
+                     * 获取本功能的开关。
+1. on 开启
+2. off 关闭
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RuleID 本规则的id
+                     * @return Switch 本功能的开关。
+1. on 开启
+2. off 关闭
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetSwitch() const;
+
+                    /**
+                     * 设置本功能的开关。
+1. on 开启
+2. off 关闭
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Switch 本功能的开关。
+1. on 开启
+2. off 关闭
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSwitch(const std::string& _switch);
+
+                    /**
+                     * 判断参数 Switch 是否已赋值
+                     * @return Switch 是否已赋值
+                     */
+                    bool SwitchHasBeenSet() const;
+
+                    /**
+                     * 获取本规则的ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RuleID 本规则的ID。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetRuleID() const;
 
                     /**
-                     * 设置本规则的id
+                     * 设置本规则的ID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RuleID 本规则的id
+                     * @param RuleID 本规则的ID。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetRuleID(const int64_t& _ruleID);
@@ -69,17 +99,17 @@ namespace TencentCloud
                     bool RuleIDHasBeenSet() const;
 
                     /**
-                     * 获取JS挑战的规则ID
+                     * 获取JS挑战的规则ID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AlgManagedIds JS挑战的规则ID
+                     * @return AlgManagedIds JS挑战的规则ID。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<int64_t> GetAlgManagedIds() const;
 
                     /**
-                     * 设置JS挑战的规则ID
+                     * 设置JS挑战的规则ID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AlgManagedIds JS挑战的规则ID
+                     * @param AlgManagedIds JS挑战的规则ID。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetAlgManagedIds(const std::vector<int64_t>& _algManagedIds);
@@ -91,17 +121,17 @@ namespace TencentCloud
                     bool AlgManagedIdsHasBeenSet() const;
 
                     /**
-                     * 获取数字验证码的规则ID
+                     * 获取数字验证码的规则ID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CapManagedIds 数字验证码的规则ID
+                     * @return CapManagedIds 数字验证码的规则ID。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<int64_t> GetCapManagedIds() const;
 
                     /**
-                     * 设置数字验证码的规则ID
+                     * 设置数字验证码的规则ID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CapManagedIds 数字验证码的规则ID
+                     * @param CapManagedIds 数字验证码的规则ID。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetCapManagedIds(const std::vector<int64_t>& _capManagedIds);
@@ -113,17 +143,17 @@ namespace TencentCloud
                     bool CapManagedIdsHasBeenSet() const;
 
                     /**
-                     * 获取观察的规则ID
+                     * 获取观察的规则ID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MonManagedIds 观察的规则ID
+                     * @return MonManagedIds 观察的规则ID。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<int64_t> GetMonManagedIds() const;
 
                     /**
-                     * 设置观察的规则ID
+                     * 设置观察的规则ID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MonManagedIds 观察的规则ID
+                     * @param MonManagedIds 观察的规则ID。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetMonManagedIds(const std::vector<int64_t>& _monManagedIds);
@@ -135,17 +165,17 @@ namespace TencentCloud
                     bool MonManagedIdsHasBeenSet() const;
 
                     /**
-                     * 获取拦截的规则ID
+                     * 获取拦截的规则ID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DropManagedIds 拦截的规则ID
+                     * @return DropManagedIds 拦截的规则ID。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<int64_t> GetDropManagedIds() const;
 
                     /**
-                     * 设置拦截的规则ID
+                     * 设置拦截的规则ID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DropManagedIds 拦截的规则ID
+                     * @param DropManagedIds 拦截的规则ID。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetDropManagedIds(const std::vector<int64_t>& _dropManagedIds);
@@ -157,70 +187,108 @@ namespace TencentCloud
                     bool DropManagedIdsHasBeenSet() const;
 
                     /**
-                     * 获取本功能的开关
+                     * 获取保留。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Switch 本功能的开关
+                     * @return ManagedIds 保留。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::string GetSwitch() const;
+                    std::vector<int64_t> GetManagedIds() const;
 
                     /**
-                     * 设置本功能的开关
+                     * 设置保留。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Switch 本功能的开关
+                     * @param ManagedIds 保留。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    void SetSwitch(const std::string& _switch);
+                    void SetManagedIds(const std::vector<int64_t>& _managedIds);
 
                     /**
-                     * 判断参数 Switch 是否已赋值
-                     * @return Switch 是否已赋值
+                     * 判断参数 ManagedIds 是否已赋值
+                     * @return ManagedIds 是否已赋值
                      */
-                    bool SwitchHasBeenSet() const;
+                    bool ManagedIdsHasBeenSet() const;
+
+                    /**
+                     * 获取保留。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TransManagedIds 保留。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<int64_t> GetTransManagedIds() const;
+
+                    /**
+                     * 设置保留。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TransManagedIds 保留。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTransManagedIds(const std::vector<int64_t>& _transManagedIds);
+
+                    /**
+                     * 判断参数 TransManagedIds 是否已赋值
+                     * @return TransManagedIds 是否已赋值
+                     */
+                    bool TransManagedIdsHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 本规则的id
+                     * 本功能的开关。
+1. on 开启
+2. off 关闭
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_switch;
+                    bool m_switchHasBeenSet;
+
+                    /**
+                     * 本规则的ID。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_ruleID;
                     bool m_ruleIDHasBeenSet;
 
                     /**
-                     * JS挑战的规则ID
+                     * JS挑战的规则ID。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<int64_t> m_algManagedIds;
                     bool m_algManagedIdsHasBeenSet;
 
                     /**
-                     * 数字验证码的规则ID
+                     * 数字验证码的规则ID。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<int64_t> m_capManagedIds;
                     bool m_capManagedIdsHasBeenSet;
 
                     /**
-                     * 观察的规则ID
+                     * 观察的规则ID。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<int64_t> m_monManagedIds;
                     bool m_monManagedIdsHasBeenSet;
 
                     /**
-                     * 拦截的规则ID
+                     * 拦截的规则ID。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<int64_t> m_dropManagedIds;
                     bool m_dropManagedIdsHasBeenSet;
 
                     /**
-                     * 本功能的开关
+                     * 保留。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::string m_switch;
-                    bool m_switchHasBeenSet;
+                    std::vector<int64_t> m_managedIds;
+                    bool m_managedIdsHasBeenSet;
+
+                    /**
+                     * 保留。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<int64_t> m_transManagedIds;
+                    bool m_transManagedIdsHasBeenSet;
 
                 };
             }

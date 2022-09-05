@@ -465,6 +465,78 @@ development: 开发环境
                      */
                     bool OrganizationInfoHasBeenSet() const;
 
+                    /**
+                     * 获取子商户证件类型
+1 - 身份证
+3 - 回乡证
+4 - 中国护照
+5 - 台胞证
+19 - 外国护照
+52 - 组织机构代码证
+68 - 营业执照 
+73 - 统一社会信用代码
+                     * @return SubMerchantIdType 子商户证件类型
+1 - 身份证
+3 - 回乡证
+4 - 中国护照
+5 - 台胞证
+19 - 外国护照
+52 - 组织机构代码证
+68 - 营业执照 
+73 - 统一社会信用代码
+                     */
+                    std::string GetSubMerchantIdType() const;
+
+                    /**
+                     * 设置子商户证件类型
+1 - 身份证
+3 - 回乡证
+4 - 中国护照
+5 - 台胞证
+19 - 外国护照
+52 - 组织机构代码证
+68 - 营业执照 
+73 - 统一社会信用代码
+                     * @param SubMerchantIdType 子商户证件类型
+1 - 身份证
+3 - 回乡证
+4 - 中国护照
+5 - 台胞证
+19 - 外国护照
+52 - 组织机构代码证
+68 - 营业执照 
+73 - 统一社会信用代码
+                     */
+                    void SetSubMerchantIdType(const std::string& _subMerchantIdType);
+
+                    /**
+                     * 判断参数 SubMerchantIdType 是否已赋值
+                     * @return SubMerchantIdType 是否已赋值
+                     */
+                    bool SubMerchantIdTypeHasBeenSet() const;
+
+                    /**
+                     * 获取子商户证件号码
+<敏感信息>加密详见<a href="https://cloud.tencent.com/document/product/1122/48979" target="_blank">《商户端接口敏感信息加密说明》</a>
+                     * @return SubMerchantIdCode 子商户证件号码
+<敏感信息>加密详见<a href="https://cloud.tencent.com/document/product/1122/48979" target="_blank">《商户端接口敏感信息加密说明》</a>
+                     */
+                    std::string GetSubMerchantIdCode() const;
+
+                    /**
+                     * 设置子商户证件号码
+<敏感信息>加密详见<a href="https://cloud.tencent.com/document/product/1122/48979" target="_blank">《商户端接口敏感信息加密说明》</a>
+                     * @param SubMerchantIdCode 子商户证件号码
+<敏感信息>加密详见<a href="https://cloud.tencent.com/document/product/1122/48979" target="_blank">《商户端接口敏感信息加密说明》</a>
+                     */
+                    void SetSubMerchantIdCode(const std::string& _subMerchantIdCode);
+
+                    /**
+                     * 判断参数 SubMerchantIdCode 是否已赋值
+                     * @return SubMerchantIdCode 是否已赋值
+                     */
+                    bool SubMerchantIdCodeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -600,6 +672,27 @@ development: 开发环境
                      */
                     OrganizationInfo m_organizationInfo;
                     bool m_organizationInfoHasBeenSet;
+
+                    /**
+                     * 子商户证件类型
+1 - 身份证
+3 - 回乡证
+4 - 中国护照
+5 - 台胞证
+19 - 外国护照
+52 - 组织机构代码证
+68 - 营业执照 
+73 - 统一社会信用代码
+                     */
+                    std::string m_subMerchantIdType;
+                    bool m_subMerchantIdTypeHasBeenSet;
+
+                    /**
+                     * 子商户证件号码
+<敏感信息>加密详见<a href="https://cloud.tencent.com/document/product/1122/48979" target="_blank">《商户端接口敏感信息加密说明》</a>
+                     */
+                    std::string m_subMerchantIdCode;
+                    bool m_subMerchantIdCodeHasBeenSet;
 
                 };
             }

@@ -130,6 +130,8 @@ SUCCESS：支付成功
 CLOSED：关单
 PAY_FAIL：支付失败
 REVOKE：退票
+PART_REFUND：部分退款
+FULL_REFUND：全部退款
                      * @return OrderStatus 订单状态。
 INIT：初始化
 PAYING：支付中
@@ -138,6 +140,8 @@ SUCCESS：支付成功
 CLOSED：关单
 PAY_FAIL：支付失败
 REVOKE：退票
+PART_REFUND：部分退款
+FULL_REFUND：全部退款
                      */
                     std::string GetOrderStatus() const;
 
@@ -150,6 +154,8 @@ SUCCESS：支付成功
 CLOSED：关单
 PAY_FAIL：支付失败
 REVOKE：退票
+PART_REFUND：部分退款
+FULL_REFUND：全部退款
                      * @param OrderStatus 订单状态。
 INIT：初始化
 PAYING：支付中
@@ -158,6 +164,8 @@ SUCCESS：支付成功
 CLOSED：关单
 PAY_FAIL：支付失败
 REVOKE：退票
+PART_REFUND：部分退款
+FULL_REFUND：全部退款
                      */
                     void SetOrderStatus(const std::string& _orderStatus);
 
@@ -458,6 +466,8 @@ SUCCESS：支付成功
 CLOSED：关单
 PAY_FAIL：支付失败
 REVOKE：退票
+PART_REFUND：部分退款
+FULL_REFUND：全部退款
                      */
                     std::string m_orderStatus;
                     bool m_orderStatusHasBeenSet;

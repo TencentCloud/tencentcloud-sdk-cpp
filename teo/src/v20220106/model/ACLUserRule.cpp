@@ -30,8 +30,8 @@ ACLUserRule::ACLUserRule() :
     m_updateTimeHasBeenSet(false),
     m_punishTimeHasBeenSet(false),
     m_punishTimeUnitHasBeenSet(false),
-    m_nameHasBeenSet(false),
     m_pageIdHasBeenSet(false),
+    m_nameHasBeenSet(false),
     m_redirectUrlHasBeenSet(false),
     m_responseCodeHasBeenSet(false)
 {
@@ -142,16 +142,6 @@ CoreInternalOutcome ACLUserRule::Deserialize(const rapidjson::Value &value)
         m_punishTimeUnitHasBeenSet = true;
     }
 
-    if (value.HasMember("Name") && !value["Name"].IsNull())
-    {
-        if (!value["Name"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `ACLUserRule.Name` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_name = string(value["Name"].GetString());
-        m_nameHasBeenSet = true;
-    }
-
     if (value.HasMember("PageId") && !value["PageId"].IsNull())
     {
         if (!value["PageId"].IsInt64())
@@ -160,6 +150,16 @@ CoreInternalOutcome ACLUserRule::Deserialize(const rapidjson::Value &value)
         }
         m_pageId = value["PageId"].GetInt64();
         m_pageIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("Name") && !value["Name"].IsNull())
+    {
+        if (!value["Name"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ACLUserRule.Name` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_name = string(value["Name"].GetString());
+        m_nameHasBeenSet = true;
     }
 
     if (value.HasMember("RedirectUrl") && !value["RedirectUrl"].IsNull())
@@ -268,20 +268,20 @@ void ACLUserRule::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         value.AddMember(iKey, rapidjson::Value(m_punishTimeUnit.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_nameHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Name";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_pageIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "PageId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_pageId, allocator);
+    }
+
+    if (m_nameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Name";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
     if (m_redirectUrlHasBeenSet)
@@ -447,22 +447,6 @@ bool ACLUserRule::PunishTimeUnitHasBeenSet() const
     return m_punishTimeUnitHasBeenSet;
 }
 
-string ACLUserRule::GetName() const
-{
-    return m_name;
-}
-
-void ACLUserRule::SetName(const string& _name)
-{
-    m_name = _name;
-    m_nameHasBeenSet = true;
-}
-
-bool ACLUserRule::NameHasBeenSet() const
-{
-    return m_nameHasBeenSet;
-}
-
 int64_t ACLUserRule::GetPageId() const
 {
     return m_pageId;
@@ -477,6 +461,22 @@ void ACLUserRule::SetPageId(const int64_t& _pageId)
 bool ACLUserRule::PageIdHasBeenSet() const
 {
     return m_pageIdHasBeenSet;
+}
+
+string ACLUserRule::GetName() const
+{
+    return m_name;
+}
+
+void ACLUserRule::SetName(const string& _name)
+{
+    m_name = _name;
+    m_nameHasBeenSet = true;
+}
+
+bool ACLUserRule::NameHasBeenSet() const
+{
+    return m_nameHasBeenSet;
 }
 
 string ACLUserRule::GetRedirectUrl() const

@@ -47,17 +47,33 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取恶意BOT
+                     * 获取智能分析标签。
+1. evil_bot 恶意
+2. suspect_bot 疑似恶意
+3. good_bot 好的
+4. normal 正常
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Label 恶意BOT
+                     * @return Label 智能分析标签。
+1. evil_bot 恶意
+2. suspect_bot 疑似恶意
+3. good_bot 好的
+4. normal 正常
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetLabel() const;
 
                     /**
-                     * 设置恶意BOT
+                     * 设置智能分析标签。
+1. evil_bot 恶意
+2. suspect_bot 疑似恶意
+3. good_bot 好的
+4. normal 正常
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Label 恶意BOT
+                     * @param Label 智能分析标签。
+1. evil_bot 恶意
+2. suspect_bot 疑似恶意
+3. good_bot 好的
+4. normal 正常
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetLabel(const std::string& _label);
@@ -69,17 +85,37 @@ namespace TencentCloud
                     bool LabelHasBeenSet() const;
 
                     /**
-                     * 获取动作
+                     * 获取触发智能分析标签对应的处置方式。
+1. drop 拦截
+2. trans 放行
+3. monitor 监控
+4. alg Javascript挑战
+5. captcha 数字验证码
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Action 动作
+                     * @return Action 触发智能分析标签对应的处置方式。
+1. drop 拦截
+2. trans 放行
+3. monitor 监控
+4. alg Javascript挑战
+5. captcha 数字验证码
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetAction() const;
 
                     /**
-                     * 设置动作
+                     * 设置触发智能分析标签对应的处置方式。
+1. drop 拦截
+2. trans 放行
+3. monitor 监控
+4. alg Javascript挑战
+5. captcha 数字验证码
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Action 动作
+                     * @param Action 触发智能分析标签对应的处置方式。
+1. drop 拦截
+2. trans 放行
+3. monitor 监控
+4. alg Javascript挑战
+5. captcha 数字验证码
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetAction(const std::string& _action);
@@ -93,14 +129,23 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 恶意BOT
+                     * 智能分析标签。
+1. evil_bot 恶意
+2. suspect_bot 疑似恶意
+3. good_bot 好的
+4. normal 正常
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_label;
                     bool m_labelHasBeenSet;
 
                     /**
-                     * 动作
+                     * 触发智能分析标签对应的处置方式。
+1. drop 拦截
+2. trans 放行
+3. monitor 监控
+4. alg Javascript挑战
+5. captcha 数字验证码
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_action;

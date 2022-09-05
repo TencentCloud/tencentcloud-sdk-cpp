@@ -48,14 +48,22 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取开关
-                     * @return Switch 开关
+                     * 获取开关。
+1. on 开启
+2. off 关闭
+                     * @return Switch 开关。
+1. on 开启
+2. off 关闭
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置开关
-                     * @param Switch 开关
+                     * 设置开关。
+1. on 开启
+2. off 关闭
+                     * @param Switch 开关。
+1. on 开启
+2. off 关闭
                      */
                     void SetSwitch(const std::string& _switch);
 
@@ -66,14 +74,14 @@ namespace TencentCloud
                     bool SwitchHasBeenSet() const;
 
                     /**
-                     * 获取ACL用户规则
-                     * @return UserRules ACL用户规则
+                     * 获取自定义-用户规则。
+                     * @return UserRules 自定义-用户规则。
                      */
                     std::vector<ACLUserRule> GetUserRules() const;
 
                     /**
-                     * 设置ACL用户规则
-                     * @param UserRules ACL用户规则
+                     * 设置自定义-用户规则。
+                     * @param UserRules 自定义-用户规则。
                      */
                     void SetUserRules(const std::vector<ACLUserRule>& _userRules);
 
@@ -86,13 +94,15 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 开关
+                     * 开关。
+1. on 开启
+2. off 关闭
                      */
                     std::string m_switch;
                     bool m_switchHasBeenSet;
 
                     /**
-                     * ACL用户规则
+                     * 自定义-用户规则。
                      */
                     std::vector<ACLUserRule> m_userRules;
                     bool m_userRulesHasBeenSet;

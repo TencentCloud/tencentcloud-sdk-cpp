@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 模板当前详细配置
+                * 模板当前详细配置。
                 */
                 class RateLimitTemplateDetail : public AbstractModel
                 {
@@ -47,17 +47,41 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取模板名称
+                     * 获取模板等级名称。
+1. sup_loose 自适应 - 超级宽松
+2. loose     自适应 - 宽松
+3. emergency 自适应 - 紧急
+4. normal    自适应 - 适中
+5. strict    固定阈值 - 严格
+6. close     关闭 - 仅精准速率限制生效
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Mode 模板名称
+                     * @return Mode 模板等级名称。
+1. sup_loose 自适应 - 超级宽松
+2. loose     自适应 - 宽松
+3. emergency 自适应 - 紧急
+4. normal    自适应 - 适中
+5. strict    固定阈值 - 严格
+6. close     关闭 - 仅精准速率限制生效
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetMode() const;
 
                     /**
-                     * 设置模板名称
+                     * 设置模板等级名称。
+1. sup_loose 自适应 - 超级宽松
+2. loose     自适应 - 宽松
+3. emergency 自适应 - 紧急
+4. normal    自适应 - 适中
+5. strict    固定阈值 - 严格
+6. close     关闭 - 仅精准速率限制生效
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Mode 模板名称
+                     * @param Mode 模板等级名称。
+1. sup_loose 自适应 - 超级宽松
+2. loose     自适应 - 宽松
+3. emergency 自适应 - 紧急
+4. normal    自适应 - 适中
+5. strict    固定阈值 - 严格
+6. close     关闭 - 仅精准速率限制生效
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetMode(const std::string& _mode);
@@ -69,17 +93,17 @@ namespace TencentCloud
                     bool ModeHasBeenSet() const;
 
                     /**
-                     * 获取唯一id
+                     * 获取唯一id。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ID 唯一id
+                     * @return ID 唯一id。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetID() const;
 
                     /**
-                     * 设置唯一id
+                     * 设置唯一id。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ID 唯一id
+                     * @param ID 唯一id。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetID(const int64_t& _iD);
@@ -91,17 +115,17 @@ namespace TencentCloud
                     bool IDHasBeenSet() const;
 
                     /**
-                     * 获取处置动作
+                     * 获取处置动作。模板阀值触发后的处罚行为。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Action 处置动作
+                     * @return Action 处置动作。模板阀值触发后的处罚行为。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetAction() const;
 
                     /**
-                     * 设置处置动作
+                     * 设置处置动作。模板阀值触发后的处罚行为。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Action 处置动作
+                     * @param Action 处置动作。模板阀值触发后的处罚行为。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetAction(const std::string& _action);
@@ -113,17 +137,17 @@ namespace TencentCloud
                     bool ActionHasBeenSet() const;
 
                     /**
-                     * 获取惩罚时间，秒
+                     * 获取惩罚时间，单位是秒。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PunishTime 惩罚时间，秒
+                     * @return PunishTime 惩罚时间，单位是秒。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetPunishTime() const;
 
                     /**
-                     * 设置惩罚时间，秒
+                     * 设置惩罚时间，单位是秒。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PunishTime 惩罚时间，秒
+                     * @param PunishTime 惩罚时间，单位是秒。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetPunishTime(const int64_t& _punishTime);
@@ -135,17 +159,17 @@ namespace TencentCloud
                     bool PunishTimeHasBeenSet() const;
 
                     /**
-                     * 获取阈值
+                     * 获取阈值。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Threshold 阈值
+                     * @return Threshold 阈值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetThreshold() const;
 
                     /**
-                     * 设置阈值
+                     * 设置阈值。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Threshold 阈值
+                     * @param Threshold 阈值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetThreshold(const int64_t& _threshold);
@@ -157,17 +181,17 @@ namespace TencentCloud
                     bool ThresholdHasBeenSet() const;
 
                     /**
-                     * 获取统计周期
+                     * 获取统计周期。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Period 统计周期
+                     * @return Period 统计周期。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetPeriod() const;
 
                     /**
-                     * 设置统计周期
+                     * 设置统计周期。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Period 统计周期
+                     * @param Period 统计周期。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetPeriod(const int64_t& _period);
@@ -181,42 +205,48 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 模板名称
+                     * 模板等级名称。
+1. sup_loose 自适应 - 超级宽松
+2. loose     自适应 - 宽松
+3. emergency 自适应 - 紧急
+4. normal    自适应 - 适中
+5. strict    固定阈值 - 严格
+6. close     关闭 - 仅精准速率限制生效
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_mode;
                     bool m_modeHasBeenSet;
 
                     /**
-                     * 唯一id
+                     * 唯一id。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_iD;
                     bool m_iDHasBeenSet;
 
                     /**
-                     * 处置动作
+                     * 处置动作。模板阀值触发后的处罚行为。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_action;
                     bool m_actionHasBeenSet;
 
                     /**
-                     * 惩罚时间，秒
+                     * 惩罚时间，单位是秒。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_punishTime;
                     bool m_punishTimeHasBeenSet;
 
                     /**
-                     * 阈值
+                     * 阈值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_threshold;
                     bool m_thresholdHasBeenSet;
 
                     /**
-                     * 统计周期
+                     * 统计周期。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_period;

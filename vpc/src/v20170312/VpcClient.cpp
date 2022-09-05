@@ -6920,6 +6920,49 @@ VpcClient::DescribeTenantCcnsOutcomeCallable VpcClient::DescribeTenantCcnsCallab
     return task->get_future();
 }
 
+VpcClient::DescribeTrafficPackagesOutcome VpcClient::DescribeTrafficPackages(const DescribeTrafficPackagesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTrafficPackages");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTrafficPackagesResponse rsp = DescribeTrafficPackagesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTrafficPackagesOutcome(rsp);
+        else
+            return DescribeTrafficPackagesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTrafficPackagesOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DescribeTrafficPackagesAsync(const DescribeTrafficPackagesRequest& request, const DescribeTrafficPackagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTrafficPackages(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DescribeTrafficPackagesOutcomeCallable VpcClient::DescribeTrafficPackagesCallable(const DescribeTrafficPackagesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTrafficPackagesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTrafficPackages(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VpcClient::DescribeVpcEndPointOutcome VpcClient::DescribeVpcEndPoint(const DescribeVpcEndPointRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeVpcEndPoint");

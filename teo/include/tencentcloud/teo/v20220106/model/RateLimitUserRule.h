@@ -48,14 +48,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取RateLimit统计阈值
-                     * @return Threshold RateLimit统计阈值
+                     * 获取RateLimit统计阈值，单位是次，取值范围0-4294967294。
+                     * @return Threshold RateLimit统计阈值，单位是次，取值范围0-4294967294。
                      */
                     int64_t GetThreshold() const;
 
                     /**
-                     * 设置RateLimit统计阈值
-                     * @param Threshold RateLimit统计阈值
+                     * 设置RateLimit统计阈值，单位是次，取值范围0-4294967294。
+                     * @param Threshold RateLimit统计阈值，单位是次，取值范围0-4294967294。
                      */
                     void SetThreshold(const int64_t& _threshold);
 
@@ -66,14 +66,14 @@ namespace TencentCloud
                     bool ThresholdHasBeenSet() const;
 
                     /**
-                     * 获取RateLimit统计时间
-                     * @return Period RateLimit统计时间
+                     * 获取RateLimit统计时间，取值范围 10/20/30/40/50/60 单位是秒。
+                     * @return Period RateLimit统计时间，取值范围 10/20/30/40/50/60 单位是秒。
                      */
                     int64_t GetPeriod() const;
 
                     /**
-                     * 设置RateLimit统计时间
-                     * @param Period RateLimit统计时间
+                     * 设置RateLimit统计时间，取值范围 10/20/30/40/50/60 单位是秒。
+                     * @param Period RateLimit统计时间，取值范围 10/20/30/40/50/60 单位是秒。
                      */
                     void SetPeriod(const int64_t& _period);
 
@@ -84,14 +84,14 @@ namespace TencentCloud
                     bool PeriodHasBeenSet() const;
 
                     /**
-                     * 获取规则名
-                     * @return RuleName 规则名
+                     * 获取规则名，只能以英文字符，数字，下划线组合，且不能以下划线开头。
+                     * @return RuleName 规则名，只能以英文字符，数字，下划线组合，且不能以下划线开头。
                      */
                     std::string GetRuleName() const;
 
                     /**
-                     * 设置规则名
-                     * @param RuleName 规则名
+                     * 设置规则名，只能以英文字符，数字，下划线组合，且不能以下划线开头。
+                     * @param RuleName 规则名，只能以英文字符，数字，下划线组合，且不能以下划线开头。
                      */
                     void SetRuleName(const std::string& _ruleName);
 
@@ -102,14 +102,26 @@ namespace TencentCloud
                     bool RuleNameHasBeenSet() const;
 
                     /**
-                     * 获取动作：monitor(观察), drop(拦截)
-                     * @return Action 动作：monitor(观察), drop(拦截)
+                     * 获取处置动作。
+1. monitor(观察)；
+2. drop(拦截)；
+3. alg(Javascript挑战)
+                     * @return Action 处置动作。
+1. monitor(观察)；
+2. drop(拦截)；
+3. alg(Javascript挑战)
                      */
                     std::string GetAction() const;
 
                     /**
-                     * 设置动作：monitor(观察), drop(拦截)
-                     * @param Action 动作：monitor(观察), drop(拦截)
+                     * 设置处置动作。
+1. monitor(观察)；
+2. drop(拦截)；
+3. alg(Javascript挑战)
+                     * @param Action 处置动作。
+1. monitor(观察)；
+2. drop(拦截)；
+3. alg(Javascript挑战)
                      */
                     void SetAction(const std::string& _action);
 
@@ -120,14 +132,14 @@ namespace TencentCloud
                     bool ActionHasBeenSet() const;
 
                     /**
-                     * 获取惩罚时长
-                     * @return PunishTime 惩罚时长
+                     * 获取惩罚时长，0-100。
+                     * @return PunishTime 惩罚时长，0-100。
                      */
                     int64_t GetPunishTime() const;
 
                     /**
-                     * 设置惩罚时长
-                     * @param PunishTime 惩罚时长
+                     * 设置惩罚时长，0-100。
+                     * @param PunishTime 惩罚时长，0-100。
                      */
                     void SetPunishTime(const int64_t& _punishTime);
 
@@ -138,14 +150,26 @@ namespace TencentCloud
                     bool PunishTimeHasBeenSet() const;
 
                     /**
-                     * 获取处罚时长单位，second
-                     * @return PunishTimeUnit 处罚时长单位，second
+                     * 获取处罚时长单位。
+1. second 秒; 
+2. minutes 分钟
+3. hour 小时
+                     * @return PunishTimeUnit 处罚时长单位。
+1. second 秒; 
+2. minutes 分钟
+3. hour 小时
                      */
                     std::string GetPunishTimeUnit() const;
 
                     /**
-                     * 设置处罚时长单位，second
-                     * @param PunishTimeUnit 处罚时长单位，second
+                     * 设置处罚时长单位。
+1. second 秒; 
+2. minutes 分钟
+3. hour 小时
+                     * @param PunishTimeUnit 处罚时长单位。
+1. second 秒; 
+2. minutes 分钟
+3. hour 小时
                      */
                     void SetPunishTimeUnit(const std::string& _punishTimeUnit);
 
@@ -156,14 +180,22 @@ namespace TencentCloud
                     bool PunishTimeUnitHasBeenSet() const;
 
                     /**
-                     * 获取规则状态
-                     * @return RuleStatus 规则状态
+                     * 获取规则状态。
+1. on 生效
+2. off 不生效
+                     * @return RuleStatus 规则状态。
+1. on 生效
+2. off 不生效
                      */
                     std::string GetRuleStatus() const;
 
                     /**
-                     * 设置规则状态
-                     * @param RuleStatus 规则状态
+                     * 设置规则状态。
+1. on 生效
+2. off 不生效
+                     * @param RuleStatus 规则状态。
+1. on 生效
+2. off 不生效
                      */
                     void SetRuleStatus(const std::string& _ruleStatus);
 
@@ -174,14 +206,14 @@ namespace TencentCloud
                     bool RuleStatusHasBeenSet() const;
 
                     /**
-                     * 获取规则
-                     * @return Conditions 规则
+                     * 获取规则。
+                     * @return Conditions 规则。
                      */
                     std::vector<ACLCondition> GetConditions() const;
 
                     /**
-                     * 设置规则
-                     * @param Conditions 规则
+                     * 设置规则。
+                     * @param Conditions 规则。
                      */
                     void SetConditions(const std::vector<ACLCondition>& _conditions);
 
@@ -192,14 +224,14 @@ namespace TencentCloud
                     bool ConditionsHasBeenSet() const;
 
                     /**
-                     * 获取规则权重
-                     * @return RulePriority 规则权重
+                     * 获取规则权重，取值范围0-100。
+                     * @return RulePriority 规则权重，取值范围0-100。
                      */
                     int64_t GetRulePriority() const;
 
                     /**
-                     * 设置规则权重
-                     * @param RulePriority 规则权重
+                     * 设置规则权重，取值范围0-100。
+                     * @param RulePriority 规则权重，取值范围0-100。
                      */
                     void SetRulePriority(const int64_t& _rulePriority);
 
@@ -210,17 +242,17 @@ namespace TencentCloud
                     bool RulePriorityHasBeenSet() const;
 
                     /**
-                     * 获取规则id
+                     * 获取规则id。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RuleID 规则id
+                     * @return RuleID 规则id。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetRuleID() const;
 
                     /**
-                     * 设置规则id
+                     * 设置规则id。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RuleID 规则id
+                     * @param RuleID 规则id。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetRuleID(const int64_t& _ruleID);
@@ -232,17 +264,17 @@ namespace TencentCloud
                     bool RuleIDHasBeenSet() const;
 
                     /**
-                     * 获取过滤词
+                     * 获取过滤词。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FreqFields 过滤词
+                     * @return FreqFields 过滤词。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> GetFreqFields() const;
 
                     /**
-                     * 设置过滤词
+                     * 设置过滤词。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FreqFields 过滤词
+                     * @param FreqFields 过滤词。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetFreqFields(const std::vector<std::string>& _freqFields);
@@ -254,17 +286,17 @@ namespace TencentCloud
                     bool FreqFieldsHasBeenSet() const;
 
                     /**
-                     * 获取更新时间
+                     * 获取更新时间.
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return UpdateTime 更新时间
+                     * @return UpdateTime 更新时间.
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetUpdateTime() const;
 
                     /**
-                     * 设置更新时间
+                     * 设置更新时间.
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param UpdateTime 更新时间
+                     * @param UpdateTime 更新时间.
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetUpdateTime(const std::string& _updateTime);
@@ -278,75 +310,83 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * RateLimit统计阈值
+                     * RateLimit统计阈值，单位是次，取值范围0-4294967294。
                      */
                     int64_t m_threshold;
                     bool m_thresholdHasBeenSet;
 
                     /**
-                     * RateLimit统计时间
+                     * RateLimit统计时间，取值范围 10/20/30/40/50/60 单位是秒。
                      */
                     int64_t m_period;
                     bool m_periodHasBeenSet;
 
                     /**
-                     * 规则名
+                     * 规则名，只能以英文字符，数字，下划线组合，且不能以下划线开头。
                      */
                     std::string m_ruleName;
                     bool m_ruleNameHasBeenSet;
 
                     /**
-                     * 动作：monitor(观察), drop(拦截)
+                     * 处置动作。
+1. monitor(观察)；
+2. drop(拦截)；
+3. alg(Javascript挑战)
                      */
                     std::string m_action;
                     bool m_actionHasBeenSet;
 
                     /**
-                     * 惩罚时长
+                     * 惩罚时长，0-100。
                      */
                     int64_t m_punishTime;
                     bool m_punishTimeHasBeenSet;
 
                     /**
-                     * 处罚时长单位，second
+                     * 处罚时长单位。
+1. second 秒; 
+2. minutes 分钟
+3. hour 小时
                      */
                     std::string m_punishTimeUnit;
                     bool m_punishTimeUnitHasBeenSet;
 
                     /**
-                     * 规则状态
+                     * 规则状态。
+1. on 生效
+2. off 不生效
                      */
                     std::string m_ruleStatus;
                     bool m_ruleStatusHasBeenSet;
 
                     /**
-                     * 规则
+                     * 规则。
                      */
                     std::vector<ACLCondition> m_conditions;
                     bool m_conditionsHasBeenSet;
 
                     /**
-                     * 规则权重
+                     * 规则权重，取值范围0-100。
                      */
                     int64_t m_rulePriority;
                     bool m_rulePriorityHasBeenSet;
 
                     /**
-                     * 规则id
+                     * 规则id。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_ruleID;
                     bool m_ruleIDHasBeenSet;
 
                     /**
-                     * 过滤词
+                     * 过滤词。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_freqFields;
                     bool m_freqFieldsHasBeenSet;
 
                     /**
-                     * 更新时间
+                     * 更新时间.
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_updateTime;

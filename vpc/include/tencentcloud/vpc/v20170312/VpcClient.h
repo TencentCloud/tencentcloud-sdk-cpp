@@ -343,6 +343,8 @@
 #include <tencentcloud/vpc/v20170312/model/DescribeTemplateLimitsResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeTenantCcnsRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeTenantCcnsResponse.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeTrafficPackagesRequest.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeTrafficPackagesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeVpcEndPointRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeVpcEndPointResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeVpcEndPointServiceRequest.h>
@@ -1083,6 +1085,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeTenantCcnsResponse> DescribeTenantCcnsOutcome;
                 typedef std::future<DescribeTenantCcnsOutcome> DescribeTenantCcnsOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DescribeTenantCcnsRequest&, DescribeTenantCcnsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTenantCcnsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTrafficPackagesResponse> DescribeTrafficPackagesOutcome;
+                typedef std::future<DescribeTrafficPackagesOutcome> DescribeTrafficPackagesOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::DescribeTrafficPackagesRequest&, DescribeTrafficPackagesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTrafficPackagesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeVpcEndPointResponse> DescribeVpcEndPointOutcome;
                 typedef std::future<DescribeVpcEndPointOutcome> DescribeVpcEndPointOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DescribeVpcEndPointRequest&, DescribeVpcEndPointOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVpcEndPointAsyncHandler;
@@ -3055,6 +3060,15 @@ namespace TencentCloud
                 DescribeTenantCcnsOutcome DescribeTenantCcns(const Model::DescribeTenantCcnsRequest &request);
                 void DescribeTenantCcnsAsync(const Model::DescribeTenantCcnsRequest& request, const DescribeTenantCcnsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeTenantCcnsOutcomeCallable DescribeTenantCcnsCallable(const Model::DescribeTenantCcnsRequest& request);
+
+                /**
+                 *本接口 (DescribeTrafficPackages)  用于查询共享流量包详细信息，包括共享流量包唯一标识ID，名称，流量使用信息等
+                 * @param req DescribeTrafficPackagesRequest
+                 * @return DescribeTrafficPackagesOutcome
+                 */
+                DescribeTrafficPackagesOutcome DescribeTrafficPackages(const Model::DescribeTrafficPackagesRequest &request);
+                void DescribeTrafficPackagesAsync(const Model::DescribeTrafficPackagesRequest& request, const DescribeTrafficPackagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTrafficPackagesOutcomeCallable DescribeTrafficPackagesCallable(const Model::DescribeTrafficPackagesRequest& request);
 
                 /**
                  *查询终端节点列表。

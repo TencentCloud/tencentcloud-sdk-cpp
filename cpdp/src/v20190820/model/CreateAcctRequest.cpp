@@ -41,7 +41,9 @@ CreateAcctRequest::CreateAcctRequest() :
     m_subAcctNoHasBeenSet(false),
     m_midasEnvironmentHasBeenSet(false),
     m_subMerchantStoreNameHasBeenSet(false),
-    m_organizationInfoHasBeenSet(false)
+    m_organizationInfoHasBeenSet(false),
+    m_subMerchantIdTypeHasBeenSet(false),
+    m_subMerchantIdCodeHasBeenSet(false)
 {
 }
 
@@ -203,6 +205,22 @@ string CreateAcctRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_organizationInfo.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_subMerchantIdTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubMerchantIdType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_subMerchantIdType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subMerchantIdCodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubMerchantIdCode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_subMerchantIdCode.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -515,6 +533,38 @@ void CreateAcctRequest::SetOrganizationInfo(const OrganizationInfo& _organizatio
 bool CreateAcctRequest::OrganizationInfoHasBeenSet() const
 {
     return m_organizationInfoHasBeenSet;
+}
+
+string CreateAcctRequest::GetSubMerchantIdType() const
+{
+    return m_subMerchantIdType;
+}
+
+void CreateAcctRequest::SetSubMerchantIdType(const string& _subMerchantIdType)
+{
+    m_subMerchantIdType = _subMerchantIdType;
+    m_subMerchantIdTypeHasBeenSet = true;
+}
+
+bool CreateAcctRequest::SubMerchantIdTypeHasBeenSet() const
+{
+    return m_subMerchantIdTypeHasBeenSet;
+}
+
+string CreateAcctRequest::GetSubMerchantIdCode() const
+{
+    return m_subMerchantIdCode;
+}
+
+void CreateAcctRequest::SetSubMerchantIdCode(const string& _subMerchantIdCode)
+{
+    m_subMerchantIdCode = _subMerchantIdCode;
+    m_subMerchantIdCodeHasBeenSet = true;
+}
+
+bool CreateAcctRequest::SubMerchantIdCodeHasBeenSet() const
+{
+    return m_subMerchantIdCodeHasBeenSet;
 }
 
 
