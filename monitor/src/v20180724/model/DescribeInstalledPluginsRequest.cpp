@@ -23,7 +23,8 @@ using namespace TencentCloud::Monitor::V20180724::Model;
 using namespace std;
 
 DescribeInstalledPluginsRequest::DescribeInstalledPluginsRequest() :
-    m_instanceIdHasBeenSet(false)
+    m_instanceIdHasBeenSet(false),
+    m_pluginIdHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,14 @@ string DescribeInstalledPluginsRequest::ToJsonString() const
         string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_pluginIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PluginId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_pluginId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -64,6 +73,22 @@ void DescribeInstalledPluginsRequest::SetInstanceId(const string& _instanceId)
 bool DescribeInstalledPluginsRequest::InstanceIdHasBeenSet() const
 {
     return m_instanceIdHasBeenSet;
+}
+
+string DescribeInstalledPluginsRequest::GetPluginId() const
+{
+    return m_pluginId;
+}
+
+void DescribeInstalledPluginsRequest::SetPluginId(const string& _pluginId)
+{
+    m_pluginId = _pluginId;
+    m_pluginIdHasBeenSet = true;
+}
+
+bool DescribeInstalledPluginsRequest::PluginIdHasBeenSet() const
+{
+    return m_pluginIdHasBeenSet;
 }
 
 

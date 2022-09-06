@@ -96,6 +96,42 @@ namespace TencentCloud
                      */
                     bool UserIdHasBeenSet() const;
 
+                    /**
+                     * 获取字符串类型用户ID
+                     * @return UserIdStr 字符串类型用户ID
+                     */
+                    std::string GetUserIdStr() const;
+
+                    /**
+                     * 设置字符串类型用户ID
+                     * @param UserIdStr 字符串类型用户ID
+                     */
+                    void SetUserIdStr(const std::string& _userIdStr);
+
+                    /**
+                     * 判断参数 UserIdStr 是否已赋值
+                     * @return UserIdStr 是否已赋值
+                     */
+                    bool UserIdStrHasBeenSet() const;
+
+                    /**
+                     * 获取字符串类型房间ID
+                     * @return RoomIdStr 字符串类型房间ID
+                     */
+                    std::string GetRoomIdStr() const;
+
+                    /**
+                     * 设置字符串类型房间ID
+                     * @param RoomIdStr 字符串类型房间ID
+                     */
+                    void SetRoomIdStr(const std::string& _roomIdStr);
+
+                    /**
+                     * 判断参数 RoomIdStr 是否已赋值
+                     * @return RoomIdStr 是否已赋值
+                     */
+                    bool RoomIdStrHasBeenSet() const;
+
                 private:
 
                     /**
@@ -115,6 +151,18 @@ namespace TencentCloud
                      */
                     int64_t m_userId;
                     bool m_userIdHasBeenSet;
+
+                    /**
+                     * 字符串类型用户ID
+                     */
+                    std::string m_userIdStr;
+                    bool m_userIdStrHasBeenSet;
+
+                    /**
+                     * 字符串类型房间ID
+                     */
+                    std::string m_roomIdStr;
+                    bool m_roomIdStrHasBeenSet;
 
                 };
             }

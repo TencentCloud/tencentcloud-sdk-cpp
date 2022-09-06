@@ -23,7 +23,8 @@ using namespace TencentCloud::Monitor::V20180724::Model;
 using namespace std;
 
 DescribeSSOAccountRequest::DescribeSSOAccountRequest() :
-    m_instanceIdHasBeenSet(false)
+    m_instanceIdHasBeenSet(false),
+    m_userIdHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,14 @@ string DescribeSSOAccountRequest::ToJsonString() const
         string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_userIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_userId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -64,6 +73,22 @@ void DescribeSSOAccountRequest::SetInstanceId(const string& _instanceId)
 bool DescribeSSOAccountRequest::InstanceIdHasBeenSet() const
 {
     return m_instanceIdHasBeenSet;
+}
+
+string DescribeSSOAccountRequest::GetUserId() const
+{
+    return m_userId;
+}
+
+void DescribeSSOAccountRequest::SetUserId(const string& _userId)
+{
+    m_userId = _userId;
+    m_userIdHasBeenSet = true;
+}
+
+bool DescribeSSOAccountRequest::UserIdHasBeenSet() const
+{
+    return m_userIdHasBeenSet;
 }
 
 

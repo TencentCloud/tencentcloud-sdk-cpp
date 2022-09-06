@@ -197,8 +197,6 @@
 #include <tencentcloud/antiddos/v20200309/model/ModifyDDoSThresholdResponse.h>
 #include <tencentcloud/antiddos/v20200309/model/ModifyDomainUsrNameRequest.h>
 #include <tencentcloud/antiddos/v20200309/model/ModifyDomainUsrNameResponse.h>
-#include <tencentcloud/antiddos/v20200309/model/ModifyL7RulesEdgeRequest.h>
-#include <tencentcloud/antiddos/v20200309/model/ModifyL7RulesEdgeResponse.h>
 #include <tencentcloud/antiddos/v20200309/model/ModifyNewDomainRulesRequest.h>
 #include <tencentcloud/antiddos/v20200309/model/ModifyNewDomainRulesResponse.h>
 #include <tencentcloud/antiddos/v20200309/model/ModifyPacketFilterConfigRequest.h>
@@ -482,9 +480,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyDomainUsrNameResponse> ModifyDomainUsrNameOutcome;
                 typedef std::future<ModifyDomainUsrNameOutcome> ModifyDomainUsrNameOutcomeCallable;
                 typedef std::function<void(const AntiddosClient*, const Model::ModifyDomainUsrNameRequest&, ModifyDomainUsrNameOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDomainUsrNameAsyncHandler;
-                typedef Outcome<Core::Error, Model::ModifyL7RulesEdgeResponse> ModifyL7RulesEdgeOutcome;
-                typedef std::future<ModifyL7RulesEdgeOutcome> ModifyL7RulesEdgeOutcomeCallable;
-                typedef std::function<void(const AntiddosClient*, const Model::ModifyL7RulesEdgeRequest&, ModifyL7RulesEdgeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyL7RulesEdgeAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyNewDomainRulesResponse> ModifyNewDomainRulesOutcome;
                 typedef std::future<ModifyNewDomainRulesOutcome> ModifyNewDomainRulesOutcomeCallable;
                 typedef std::function<void(const AntiddosClient*, const Model::ModifyNewDomainRulesRequest&, ModifyNewDomainRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyNewDomainRulesAsyncHandler;
@@ -1284,15 +1279,6 @@ namespace TencentCloud
                 ModifyDomainUsrNameOutcome ModifyDomainUsrName(const Model::ModifyDomainUsrNameRequest &request);
                 void ModifyDomainUsrNameAsync(const Model::ModifyDomainUsrNameRequest& request, const ModifyDomainUsrNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyDomainUsrNameOutcomeCallable ModifyDomainUsrNameCallable(const Model::ModifyDomainUsrNameRequest& request);
-
-                /**
-                 *修改边界防护L7转发规则
-                 * @param req ModifyL7RulesEdgeRequest
-                 * @return ModifyL7RulesEdgeOutcome
-                 */
-                ModifyL7RulesEdgeOutcome ModifyL7RulesEdge(const Model::ModifyL7RulesEdgeRequest &request);
-                void ModifyL7RulesEdgeAsync(const Model::ModifyL7RulesEdgeRequest& request, const ModifyL7RulesEdgeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                ModifyL7RulesEdgeOutcomeCallable ModifyL7RulesEdgeCallable(const Model::ModifyL7RulesEdgeRequest& request);
 
                 /**
                  *修改7层转发规则

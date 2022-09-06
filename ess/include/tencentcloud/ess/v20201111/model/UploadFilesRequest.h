@@ -111,14 +111,14 @@ namespace TencentCloud
                     bool FileInfosHasBeenSet() const;
 
                     /**
-                     * 获取上传文件链接数组，最多支持20个URL
-                     * @return FileUrls 上传文件链接数组，最多支持20个URL
+                     * 获取不再使用，上传文件链接数组，最多支持20个URL
+                     * @return FileUrls 不再使用，上传文件链接数组，最多支持20个URL
                      */
                     std::string GetFileUrls() const;
 
                     /**
-                     * 设置上传文件链接数组，最多支持20个URL
-                     * @param FileUrls 上传文件链接数组，最多支持20个URL
+                     * 设置不再使用，上传文件链接数组，最多支持20个URL
+                     * @param FileUrls 不再使用，上传文件链接数组，最多支持20个URL
                      */
                     void SetFileUrls(const std::string& _fileUrls);
 
@@ -218,7 +218,7 @@ false--否，不处理
                     bool m_fileInfosHasBeenSet;
 
                     /**
-                     * 上传文件链接数组，最多支持20个URL
+                     * 不再使用，上传文件链接数组，最多支持20个URL
                      */
                     std::string m_fileUrls;
                     bool m_fileUrlsHasBeenSet;

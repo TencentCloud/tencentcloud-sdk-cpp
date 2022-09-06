@@ -82,6 +82,24 @@ namespace TencentCloud
                      */
                     bool StateHasBeenSet() const;
 
+                    /**
+                     * 获取会话ID列表
+                     * @return Sessions 会话ID列表
+                     */
+                    std::vector<std::string> GetSessions() const;
+
+                    /**
+                     * 设置会话ID列表
+                     * @param Sessions 会话ID列表
+                     */
+                    void SetSessions(const std::vector<std::string>& _sessions);
+
+                    /**
+                     * 判断参数 Sessions 是否已赋值
+                     * @return Sessions 是否已赋值
+                     */
+                    bool SessionsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -95,6 +113,12 @@ namespace TencentCloud
                      */
                     uint64_t m_state;
                     bool m_stateHasBeenSet;
+
+                    /**
+                     * 会话ID列表
+                     */
+                    std::vector<std::string> m_sessions;
+                    bool m_sessionsHasBeenSet;
 
                 };
             }

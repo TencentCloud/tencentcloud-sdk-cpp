@@ -177,7 +177,7 @@ vendor：云厂商
 当SourceType为net时，SourceContent为源IP地址或者CIDR地址。
 例如：1.1.1.0/24
 
-当SourceType为template时，SourceContent为源地址模板名称。
+当SourceType为template时，SourceContent为源地址模板id。
 
 当SourceType为location时，SourceContent为源区域。
 例如["BJ11", "ZB"]
@@ -191,7 +191,7 @@ vendor：云厂商
 当SourceType为net时，SourceContent为源IP地址或者CIDR地址。
 例如：1.1.1.0/24
 
-当SourceType为template时，SourceContent为源地址模板名称。
+当SourceType为template时，SourceContent为源地址模板id。
 
 当SourceType为location时，SourceContent为源区域。
 例如["BJ11", "ZB"]
@@ -209,7 +209,7 @@ vendor：云厂商
 当SourceType为net时，SourceContent为源IP地址或者CIDR地址。
 例如：1.1.1.0/24
 
-当SourceType为template时，SourceContent为源地址模板名称。
+当SourceType为template时，SourceContent为源地址模板id。
 
 当SourceType为location时，SourceContent为源区域。
 例如["BJ11", "ZB"]
@@ -223,7 +223,7 @@ vendor：云厂商
 当SourceType为net时，SourceContent为源IP地址或者CIDR地址。
 例如：1.1.1.0/24
 
-当SourceType为template时，SourceContent为源地址模板名称。
+当SourceType为template时，SourceContent为源地址模板id。
 
 当SourceType为location时，SourceContent为源区域。
 例如["BJ11", "ZB"]
@@ -289,7 +289,7 @@ domain: 域名或者ip
 当DestType为net时，DestContent为源IP地址或者CIDR地址。
 例如：1.1.1.0/24
 
-当DestType为template时，DestContent为源地址模板名称。
+当DestType为template时，DestContent为源地址模板id。
 
 当DestType为location时，DestContent为源区域。
 例如["BJ11", "ZB"]
@@ -306,7 +306,7 @@ domain: 域名或者ip
 当DestType为net时，DestContent为源IP地址或者CIDR地址。
 例如：1.1.1.0/24
 
-当DestType为template时，DestContent为源地址模板名称。
+当DestType为template时，DestContent为源地址模板id。
 
 当DestType为location时，DestContent为源区域。
 例如["BJ11", "ZB"]
@@ -327,7 +327,7 @@ domain: 域名或者ip
 当DestType为net时，DestContent为源IP地址或者CIDR地址。
 例如：1.1.1.0/24
 
-当DestType为template时，DestContent为源地址模板名称。
+当DestType为template时，DestContent为源地址模板id。
 
 当DestType为location时，DestContent为源区域。
 例如["BJ11", "ZB"]
@@ -344,7 +344,7 @@ domain: 域名或者ip
 当DestType为net时，DestContent为源IP地址或者CIDR地址。
 例如：1.1.1.0/24
 
-当DestType为template时，DestContent为源地址模板名称。
+当DestType为template时，DestContent为源地址模板id。
 
 当DestType为location时，DestContent为源区域。
 例如["BJ11", "ZB"]
@@ -505,7 +505,7 @@ vendor：云厂商
 当SourceType为net时，SourceContent为源IP地址或者CIDR地址。
 例如：1.1.1.0/24
 
-当SourceType为template时，SourceContent为源地址模板名称。
+当SourceType为template时，SourceContent为源地址模板id。
 
 当SourceType为location时，SourceContent为源区域。
 例如["BJ11", "ZB"]
@@ -536,7 +536,7 @@ domain: 域名或者ip
 当DestType为net时，DestContent为源IP地址或者CIDR地址。
 例如：1.1.1.0/24
 
-当DestType为template时，DestContent为源地址模板名称。
+当DestType为template时，DestContent为源地址模板id。
 
 当DestType为location时，DestContent为源区域。
 例如["BJ11", "ZB"]

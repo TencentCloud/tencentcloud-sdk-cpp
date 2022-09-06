@@ -25,7 +25,10 @@ GrafanaNotificationChannel::GrafanaNotificationChannel() :
     m_channelNameHasBeenSet(false),
     m_receiversHasBeenSet(false),
     m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+    m_updatedAtHasBeenSet(false),
+    m_orgIdHasBeenSet(false),
+    m_extraOrgIdsHasBeenSet(false),
+    m_orgIdsHasBeenSet(false)
 {
 }
 
@@ -87,6 +90,39 @@ CoreInternalOutcome GrafanaNotificationChannel::Deserialize(const rapidjson::Val
         m_updatedAtHasBeenSet = true;
     }
 
+    if (value.HasMember("OrgId") && !value["OrgId"].IsNull())
+    {
+        if (!value["OrgId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `GrafanaNotificationChannel.OrgId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_orgId = string(value["OrgId"].GetString());
+        m_orgIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("ExtraOrgIds") && !value["ExtraOrgIds"].IsNull())
+    {
+        if (!value["ExtraOrgIds"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `GrafanaNotificationChannel.ExtraOrgIds` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ExtraOrgIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_extraOrgIds.push_back((*itr).GetString());
+        }
+        m_extraOrgIdsHasBeenSet = true;
+    }
+
+    if (value.HasMember("OrgIds") && !value["OrgIds"].IsNull())
+    {
+        if (!value["OrgIds"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `GrafanaNotificationChannel.OrgIds` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_orgIds = string(value["OrgIds"].GetString());
+        m_orgIdsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -137,6 +173,35 @@ void GrafanaNotificationChannel::ToJsonObject(rapidjson::Value &value, rapidjson
         string key = "UpdatedAt";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_updatedAt.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_orgIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OrgId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_orgId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_extraOrgIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExtraOrgIds";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_extraOrgIds.begin(); itr != m_extraOrgIds.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_orgIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OrgIds";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_orgIds.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -220,5 +285,53 @@ void GrafanaNotificationChannel::SetUpdatedAt(const string& _updatedAt)
 bool GrafanaNotificationChannel::UpdatedAtHasBeenSet() const
 {
     return m_updatedAtHasBeenSet;
+}
+
+string GrafanaNotificationChannel::GetOrgId() const
+{
+    return m_orgId;
+}
+
+void GrafanaNotificationChannel::SetOrgId(const string& _orgId)
+{
+    m_orgId = _orgId;
+    m_orgIdHasBeenSet = true;
+}
+
+bool GrafanaNotificationChannel::OrgIdHasBeenSet() const
+{
+    return m_orgIdHasBeenSet;
+}
+
+vector<string> GrafanaNotificationChannel::GetExtraOrgIds() const
+{
+    return m_extraOrgIds;
+}
+
+void GrafanaNotificationChannel::SetExtraOrgIds(const vector<string>& _extraOrgIds)
+{
+    m_extraOrgIds = _extraOrgIds;
+    m_extraOrgIdsHasBeenSet = true;
+}
+
+bool GrafanaNotificationChannel::ExtraOrgIdsHasBeenSet() const
+{
+    return m_extraOrgIdsHasBeenSet;
+}
+
+string GrafanaNotificationChannel::GetOrgIds() const
+{
+    return m_orgIds;
+}
+
+void GrafanaNotificationChannel::SetOrgIds(const string& _orgIds)
+{
+    m_orgIds = _orgIds;
+    m_orgIdsHasBeenSet = true;
+}
+
+bool GrafanaNotificationChannel::OrgIdsHasBeenSet() const
+{
+    return m_orgIdsHasBeenSet;
 }
 

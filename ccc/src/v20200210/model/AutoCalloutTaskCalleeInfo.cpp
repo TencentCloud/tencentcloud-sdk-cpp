@@ -22,7 +22,8 @@ using namespace std;
 
 AutoCalloutTaskCalleeInfo::AutoCalloutTaskCalleeInfo() :
     m_calleeHasBeenSet(false),
-    m_stateHasBeenSet(false)
+    m_stateHasBeenSet(false),
+    m_sessionsHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,19 @@ CoreInternalOutcome AutoCalloutTaskCalleeInfo::Deserialize(const rapidjson::Valu
         m_stateHasBeenSet = true;
     }
 
+    if (value.HasMember("Sessions") && !value["Sessions"].IsNull())
+    {
+        if (!value["Sessions"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `AutoCalloutTaskCalleeInfo.Sessions` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Sessions"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_sessions.push_back((*itr).GetString());
+        }
+        m_sessionsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +86,19 @@ void AutoCalloutTaskCalleeInfo::ToJsonObject(rapidjson::Value &value, rapidjson:
         string key = "State";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_state, allocator);
+    }
+
+    if (m_sessionsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Sessions";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_sessions.begin(); itr != m_sessions.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -107,5 +134,21 @@ void AutoCalloutTaskCalleeInfo::SetState(const uint64_t& _state)
 bool AutoCalloutTaskCalleeInfo::StateHasBeenSet() const
 {
     return m_stateHasBeenSet;
+}
+
+vector<string> AutoCalloutTaskCalleeInfo::GetSessions() const
+{
+    return m_sessions;
+}
+
+void AutoCalloutTaskCalleeInfo::SetSessions(const vector<string>& _sessions)
+{
+    m_sessions = _sessions;
+    m_sessionsHasBeenSet = true;
+}
+
+bool AutoCalloutTaskCalleeInfo::SessionsHasBeenSet() const
+{
+    return m_sessionsHasBeenSet;
 }
 

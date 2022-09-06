@@ -28,7 +28,9 @@ DescribeClusterNodesRequest::DescribeClusterNodesRequest() :
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_hardwareResourceTypeHasBeenSet(false),
-    m_searchFieldsHasBeenSet(false)
+    m_searchFieldsHasBeenSet(false),
+    m_orderFieldHasBeenSet(false),
+    m_ascHasBeenSet(false)
 {
 }
 
@@ -92,6 +94,22 @@ string DescribeClusterNodesRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_orderFieldHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OrderField";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_orderField.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ascHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Asc";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_asc, allocator);
     }
 
 
@@ -196,6 +214,38 @@ void DescribeClusterNodesRequest::SetSearchFields(const vector<SearchItem>& _sea
 bool DescribeClusterNodesRequest::SearchFieldsHasBeenSet() const
 {
     return m_searchFieldsHasBeenSet;
+}
+
+string DescribeClusterNodesRequest::GetOrderField() const
+{
+    return m_orderField;
+}
+
+void DescribeClusterNodesRequest::SetOrderField(const string& _orderField)
+{
+    m_orderField = _orderField;
+    m_orderFieldHasBeenSet = true;
+}
+
+bool DescribeClusterNodesRequest::OrderFieldHasBeenSet() const
+{
+    return m_orderFieldHasBeenSet;
+}
+
+int64_t DescribeClusterNodesRequest::GetAsc() const
+{
+    return m_asc;
+}
+
+void DescribeClusterNodesRequest::SetAsc(const int64_t& _asc)
+{
+    m_asc = _asc;
+    m_ascHasBeenSet = true;
+}
+
+bool DescribeClusterNodesRequest::AscHasBeenSet() const
+{
+    return m_ascHasBeenSet;
 }
 
 

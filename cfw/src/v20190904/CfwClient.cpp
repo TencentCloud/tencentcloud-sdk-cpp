@@ -2749,49 +2749,6 @@ CfwClient::ModifyTableStatusOutcomeCallable CfwClient::ModifyTableStatusCallable
     return task->get_future();
 }
 
-CfwClient::ModifyVPCSwitchStatusOutcome CfwClient::ModifyVPCSwitchStatus(const ModifyVPCSwitchStatusRequest &request)
-{
-    auto outcome = MakeRequest(request, "ModifyVPCSwitchStatus");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        ModifyVPCSwitchStatusResponse rsp = ModifyVPCSwitchStatusResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return ModifyVPCSwitchStatusOutcome(rsp);
-        else
-            return ModifyVPCSwitchStatusOutcome(o.GetError());
-    }
-    else
-    {
-        return ModifyVPCSwitchStatusOutcome(outcome.GetError());
-    }
-}
-
-void CfwClient::ModifyVPCSwitchStatusAsync(const ModifyVPCSwitchStatusRequest& request, const ModifyVPCSwitchStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyVPCSwitchStatus(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-CfwClient::ModifyVPCSwitchStatusOutcomeCallable CfwClient::ModifyVPCSwitchStatusCallable(const ModifyVPCSwitchStatusRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<ModifyVPCSwitchStatusOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyVPCSwitchStatus(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 CfwClient::RemoveAcRuleOutcome CfwClient::RemoveAcRule(const RemoveAcRuleRequest &request)
 {
     auto outcome = MakeRequest(request, "RemoveAcRule");

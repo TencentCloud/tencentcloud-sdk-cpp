@@ -169,14 +169,14 @@ POSTPAID_BY_HOUR 按量计费，默认方式。
                     bool LoginSettingsHasBeenSet() const;
 
                     /**
-                     * 获取实例标签。
-                     * @return TagSpecification 实例标签。
+                     * 获取实例标签，示例：["{\"TagKey\":\"test-tag1\",\"TagValue\":\"001\"}","{\"TagKey\":\"test-tag2\",\"TagValue\":\"002\"}"]。
+                     * @return TagSpecification 实例标签，示例：["{\"TagKey\":\"test-tag1\",\"TagValue\":\"001\"}","{\"TagKey\":\"test-tag2\",\"TagValue\":\"002\"}"]。
                      */
                     std::vector<std::string> GetTagSpecification() const;
 
                     /**
-                     * 设置实例标签。
-                     * @param TagSpecification 实例标签。
+                     * 设置实例标签，示例：["{\"TagKey\":\"test-tag1\",\"TagValue\":\"001\"}","{\"TagKey\":\"test-tag2\",\"TagValue\":\"002\"}"]。
+                     * @param TagSpecification 实例标签，示例：["{\"TagKey\":\"test-tag1\",\"TagValue\":\"001\"}","{\"TagKey\":\"test-tag2\",\"TagValue\":\"002\"}"]。
                      */
                     void SetTagSpecification(const std::vector<std::string>& _tagSpecification);
 
@@ -353,7 +353,7 @@ POSTPAID_BY_HOUR 按量计费，默认方式。
                     bool m_loginSettingsHasBeenSet;
 
                     /**
-                     * 实例标签。
+                     * 实例标签，示例：["{\"TagKey\":\"test-tag1\",\"TagValue\":\"001\"}","{\"TagKey\":\"test-tag2\",\"TagValue\":\"002\"}"]。
                      */
                     std::vector<std::string> m_tagSpecification;
                     bool m_tagSpecificationHasBeenSet;

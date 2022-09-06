@@ -128,7 +128,6 @@ set(antiddos_public_header_model
   include/tencentcloud/antiddos/v20200309/model/CreateDDoSSpeedLimitConfigResponse.h
   include/tencentcloud/antiddos/v20200309/model/DescribeNewL7RulesErrHealthResponse.h
   include/tencentcloud/antiddos/v20200309/model/DeletePacketFilterConfigRequest.h
-  include/tencentcloud/antiddos/v20200309/model/ModifyL7RulesEdgeRequest.h
   include/tencentcloud/antiddos/v20200309/model/DescribeListDDoSGeoIPBlockConfigResponse.h
   include/tencentcloud/antiddos/v20200309/model/DescribeBasicDeviceStatusResponse.h
   include/tencentcloud/antiddos/v20200309/model/DescribeBgpBizTrendResponse.h
@@ -184,7 +183,6 @@ set(antiddos_public_header_model
   include/tencentcloud/antiddos/v20200309/model/ModifyDDoSBlackWhiteIpListResponse.h
   include/tencentcloud/antiddos/v20200309/model/CCReqLimitPolicy.h
   include/tencentcloud/antiddos/v20200309/model/DescribeCCPrecisionPlyListRequest.h
-  include/tencentcloud/antiddos/v20200309/model/ModifyL7RulesEdgeResponse.h
   include/tencentcloud/antiddos/v20200309/model/ProtocolPort.h
   include/tencentcloud/antiddos/v20200309/model/DescribeCCLevelListRequest.h
   include/tencentcloud/antiddos/v20200309/model/ModifyCCThresholdPolicyRequest.h
@@ -384,7 +382,6 @@ set(antiddos_src
   src/v20200309/model/CreateDDoSSpeedLimitConfigResponse.cpp
   src/v20200309/model/DescribeNewL7RulesErrHealthResponse.cpp
   src/v20200309/model/DeletePacketFilterConfigRequest.cpp
-  src/v20200309/model/ModifyL7RulesEdgeRequest.cpp
   src/v20200309/model/DescribeListDDoSGeoIPBlockConfigResponse.cpp
   src/v20200309/model/DescribeBasicDeviceStatusResponse.cpp
   src/v20200309/model/DescribeBgpBizTrendResponse.cpp
@@ -440,7 +437,6 @@ set(antiddos_src
   src/v20200309/model/ModifyDDoSBlackWhiteIpListResponse.cpp
   src/v20200309/model/CCReqLimitPolicy.cpp
   src/v20200309/model/DescribeCCPrecisionPlyListRequest.cpp
-  src/v20200309/model/ModifyL7RulesEdgeResponse.cpp
   src/v20200309/model/ProtocolPort.cpp
   src/v20200309/model/DescribeCCLevelListRequest.cpp
   src/v20200309/model/ModifyCCThresholdPolicyRequest.cpp

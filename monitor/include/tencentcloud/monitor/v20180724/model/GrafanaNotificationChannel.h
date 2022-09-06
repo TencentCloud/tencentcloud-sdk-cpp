@@ -136,6 +136,68 @@ namespace TencentCloud
                      */
                     bool UpdatedAtHasBeenSet() const;
 
+                    /**
+                     * 获取默认生效组织
+                     * @return OrgId 默认生效组织
+                     */
+                    std::string GetOrgId() const;
+
+                    /**
+                     * 设置默认生效组织
+                     * @param OrgId 默认生效组织
+                     */
+                    void SetOrgId(const std::string& _orgId);
+
+                    /**
+                     * 判断参数 OrgId 是否已赋值
+                     * @return OrgId 是否已赋值
+                     */
+                    bool OrgIdHasBeenSet() const;
+
+                    /**
+                     * 获取额外生效组织
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ExtraOrgIds 额外生效组织
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> GetExtraOrgIds() const;
+
+                    /**
+                     * 设置额外生效组织
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ExtraOrgIds 额外生效组织
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetExtraOrgIds(const std::vector<std::string>& _extraOrgIds);
+
+                    /**
+                     * 判断参数 ExtraOrgIds 是否已赋值
+                     * @return ExtraOrgIds 是否已赋值
+                     */
+                    bool ExtraOrgIdsHasBeenSet() const;
+
+                    /**
+                     * 获取生效组织
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OrgIds 生效组织
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetOrgIds() const;
+
+                    /**
+                     * 设置生效组织
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param OrgIds 生效组织
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetOrgIds(const std::string& _orgIds);
+
+                    /**
+                     * 判断参数 OrgIds 是否已赋值
+                     * @return OrgIds 是否已赋值
+                     */
+                    bool OrgIdsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -167,6 +229,26 @@ namespace TencentCloud
                      */
                     std::string m_updatedAt;
                     bool m_updatedAtHasBeenSet;
+
+                    /**
+                     * 默认生效组织
+                     */
+                    std::string m_orgId;
+                    bool m_orgIdHasBeenSet;
+
+                    /**
+                     * 额外生效组织
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_extraOrgIds;
+                    bool m_extraOrgIdsHasBeenSet;
+
+                    /**
+                     * 生效组织
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_orgIds;
+                    bool m_orgIdsHasBeenSet;
 
                 };
             }

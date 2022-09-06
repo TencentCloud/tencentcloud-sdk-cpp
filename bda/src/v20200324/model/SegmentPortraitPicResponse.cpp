@@ -25,7 +25,10 @@ using namespace std;
 
 SegmentPortraitPicResponse::SegmentPortraitPicResponse() :
     m_resultImageHasBeenSet(false),
-    m_resultMaskHasBeenSet(false)
+    m_resultMaskHasBeenSet(false),
+    m_hasForegroundHasBeenSet(false),
+    m_resultImageUrlHasBeenSet(false),
+    m_resultMaskUrlHasBeenSet(false)
 {
 }
 
@@ -83,6 +86,36 @@ CoreInternalOutcome SegmentPortraitPicResponse::Deserialize(const string &payloa
         m_resultMaskHasBeenSet = true;
     }
 
+    if (rsp.HasMember("HasForeground") && !rsp["HasForeground"].IsNull())
+    {
+        if (!rsp["HasForeground"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `HasForeground` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_hasForeground = rsp["HasForeground"].GetBool();
+        m_hasForegroundHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ResultImageUrl") && !rsp["ResultImageUrl"].IsNull())
+    {
+        if (!rsp["ResultImageUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ResultImageUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_resultImageUrl = string(rsp["ResultImageUrl"].GetString());
+        m_resultImageUrlHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ResultMaskUrl") && !rsp["ResultMaskUrl"].IsNull())
+    {
+        if (!rsp["ResultMaskUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ResultMaskUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_resultMaskUrl = string(rsp["ResultMaskUrl"].GetString());
+        m_resultMaskUrlHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -107,6 +140,30 @@ string SegmentPortraitPicResponse::ToJsonString() const
         string key = "ResultMask";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_resultMask.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_hasForegroundHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HasForeground";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_hasForeground, allocator);
+    }
+
+    if (m_resultImageUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResultImageUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_resultImageUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resultMaskUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResultMaskUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_resultMaskUrl.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -139,6 +196,36 @@ string SegmentPortraitPicResponse::GetResultMask() const
 bool SegmentPortraitPicResponse::ResultMaskHasBeenSet() const
 {
     return m_resultMaskHasBeenSet;
+}
+
+bool SegmentPortraitPicResponse::GetHasForeground() const
+{
+    return m_hasForeground;
+}
+
+bool SegmentPortraitPicResponse::HasForegroundHasBeenSet() const
+{
+    return m_hasForegroundHasBeenSet;
+}
+
+string SegmentPortraitPicResponse::GetResultImageUrl() const
+{
+    return m_resultImageUrl;
+}
+
+bool SegmentPortraitPicResponse::ResultImageUrlHasBeenSet() const
+{
+    return m_resultImageUrlHasBeenSet;
+}
+
+string SegmentPortraitPicResponse::GetResultMaskUrl() const
+{
+    return m_resultMaskUrl;
+}
+
+bool SegmentPortraitPicResponse::ResultMaskUrlHasBeenSet() const
+{
+    return m_resultMaskUrlHasBeenSet;
 }
 
 

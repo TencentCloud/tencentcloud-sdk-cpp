@@ -107,13 +107,37 @@ namespace TencentCloud
 
                     /**
                      * 获取合同(流程)的状态
+1：未签署
+2：部分签署
+3：已退回
+4：完成签署
+5：已过期
+6：已取消
                      * @return FlowStatus 合同(流程)的状态
+1：未签署
+2：部分签署
+3：已退回
+4：完成签署
+5：已过期
+6：已取消
                      */
                     int64_t GetFlowStatus() const;
 
                     /**
                      * 设置合同(流程)的状态
+1：未签署
+2：部分签署
+3：已退回
+4：完成签署
+5：已过期
+6：已取消
                      * @param FlowStatus 合同(流程)的状态
+1：未签署
+2：部分签署
+3：已退回
+4：完成签署
+5：已过期
+6：已取消
                      */
                     void SetFlowStatus(const int64_t& _flowStatus);
 
@@ -226,6 +250,12 @@ namespace TencentCloud
 
                     /**
                      * 合同(流程)的状态
+1：未签署
+2：部分签署
+3：已退回
+4：完成签署
+5：已过期
+6：已取消
                      */
                     int64_t m_flowStatus;
                     bool m_flowStatusHasBeenSet;

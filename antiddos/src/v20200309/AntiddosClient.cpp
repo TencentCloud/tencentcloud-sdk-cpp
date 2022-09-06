@@ -3781,49 +3781,6 @@ AntiddosClient::ModifyDomainUsrNameOutcomeCallable AntiddosClient::ModifyDomainU
     return task->get_future();
 }
 
-AntiddosClient::ModifyL7RulesEdgeOutcome AntiddosClient::ModifyL7RulesEdge(const ModifyL7RulesEdgeRequest &request)
-{
-    auto outcome = MakeRequest(request, "ModifyL7RulesEdge");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        ModifyL7RulesEdgeResponse rsp = ModifyL7RulesEdgeResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return ModifyL7RulesEdgeOutcome(rsp);
-        else
-            return ModifyL7RulesEdgeOutcome(o.GetError());
-    }
-    else
-    {
-        return ModifyL7RulesEdgeOutcome(outcome.GetError());
-    }
-}
-
-void AntiddosClient::ModifyL7RulesEdgeAsync(const ModifyL7RulesEdgeRequest& request, const ModifyL7RulesEdgeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyL7RulesEdge(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-AntiddosClient::ModifyL7RulesEdgeOutcomeCallable AntiddosClient::ModifyL7RulesEdgeCallable(const ModifyL7RulesEdgeRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<ModifyL7RulesEdgeOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyL7RulesEdge(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 AntiddosClient::ModifyNewDomainRulesOutcome AntiddosClient::ModifyNewDomainRules(const ModifyNewDomainRulesRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyNewDomainRules");

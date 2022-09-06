@@ -115,7 +115,6 @@ set(cfw_public_header_model
   include/tencentcloud/cfw/v20190904/model/RemoveEnterpriseSecurityGroupRuleRequest.h
   include/tencentcloud/cfw/v20190904/model/DeleteResourceGroupRequest.h
   include/tencentcloud/cfw/v20190904/model/DescribeBlockByIpTimesListRequest.h
-  include/tencentcloud/cfw/v20190904/model/ModifyVPCSwitchStatusResponse.h
   include/tencentcloud/cfw/v20190904/model/RemoveEnterpriseSecurityGroupRuleResponse.h
   include/tencentcloud/cfw/v20190904/model/ModifyAllVPCSwitchStatusRequest.h
   include/tencentcloud/cfw/v20190904/model/ModifySequenceRulesResponse.h
@@ -178,7 +177,6 @@ set(cfw_public_header_model
   include/tencentcloud/cfw/v20190904/model/ModifyAssetScanResponse.h
   include/tencentcloud/cfw/v20190904/model/ModifyAcRuleRequest.h
   include/tencentcloud/cfw/v20190904/model/DescribeNatFwInstancesInfoResponse.h
-  include/tencentcloud/cfw/v20190904/model/ModifyVPCSwitchStatusRequest.h
   include/tencentcloud/cfw/v20190904/model/ModifyBlockIgnoreListResponse.h
   include/tencentcloud/cfw/v20190904/model/DescribeNatFwInstanceResponse.h
   include/tencentcloud/cfw/v20190904/model/ModifySecurityGroupRuleResponse.h
@@ -289,7 +287,6 @@ set(cfw_src
   src/v20190904/model/RemoveEnterpriseSecurityGroupRuleRequest.cpp
   src/v20190904/model/DeleteResourceGroupRequest.cpp
   src/v20190904/model/DescribeBlockByIpTimesListRequest.cpp
-  src/v20190904/model/ModifyVPCSwitchStatusResponse.cpp
   src/v20190904/model/RemoveEnterpriseSecurityGroupRuleResponse.cpp
   src/v20190904/model/ModifyAllVPCSwitchStatusRequest.cpp
   src/v20190904/model/ModifySequenceRulesResponse.cpp
@@ -352,7 +349,6 @@ set(cfw_src
   src/v20190904/model/ModifyAssetScanResponse.cpp
   src/v20190904/model/ModifyAcRuleRequest.cpp
   src/v20190904/model/DescribeNatFwInstancesInfoResponse.cpp
-  src/v20190904/model/ModifyVPCSwitchStatusRequest.cpp
   src/v20190904/model/ModifyBlockIgnoreListResponse.cpp
   src/v20190904/model/DescribeNatFwInstanceResponse.cpp
   src/v20190904/model/ModifySecurityGroupRuleResponse.cpp

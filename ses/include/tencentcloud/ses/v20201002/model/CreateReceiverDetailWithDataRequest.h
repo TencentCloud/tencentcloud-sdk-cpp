@@ -62,14 +62,14 @@ namespace TencentCloud
                     bool ReceiverIdHasBeenSet() const;
 
                     /**
-                     * 获取收信人邮箱以及模板参数，数组形式
-                     * @return Datas 收信人邮箱以及模板参数，数组形式
+                     * 获取收信人邮箱以及模板参数，数组形式。收件人个数限制20000个以内。
+                     * @return Datas 收信人邮箱以及模板参数，数组形式。收件人个数限制20000个以内。
                      */
                     std::vector<ReceiverInputData> GetDatas() const;
 
                     /**
-                     * 设置收信人邮箱以及模板参数，数组形式
-                     * @param Datas 收信人邮箱以及模板参数，数组形式
+                     * 设置收信人邮箱以及模板参数，数组形式。收件人个数限制20000个以内。
+                     * @param Datas 收信人邮箱以及模板参数，数组形式。收件人个数限制20000个以内。
                      */
                     void SetDatas(const std::vector<ReceiverInputData>& _datas);
 
@@ -88,7 +88,7 @@ namespace TencentCloud
                     bool m_receiverIdHasBeenSet;
 
                     /**
-                     * 收信人邮箱以及模板参数，数组形式
+                     * 收信人邮箱以及模板参数，数组形式。收件人个数限制20000个以内。
                      */
                     std::vector<ReceiverInputData> m_datas;
                     bool m_datasHasBeenSet;

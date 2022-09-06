@@ -23,7 +23,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Monitor::V20180724::Model;
 using namespace std;
 
-CreateGrafanaNotificationChannelResponse::CreateGrafanaNotificationChannelResponse()
+CreateGrafanaNotificationChannelResponse::CreateGrafanaNotificationChannelResponse() :
+    m_channelIdHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,16 @@ CoreInternalOutcome CreateGrafanaNotificationChannelResponse::Deserialize(const 
     }
 
 
+    if (rsp.HasMember("ChannelId") && !rsp["ChannelId"].IsNull())
+    {
+        if (!rsp["ChannelId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ChannelId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_channelId = string(rsp["ChannelId"].GetString());
+        m_channelIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +81,14 @@ string CreateGrafanaNotificationChannelResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_channelIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ChannelId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_channelId.c_str(), allocator).Move(), allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +101,15 @@ string CreateGrafanaNotificationChannelResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string CreateGrafanaNotificationChannelResponse::GetChannelId() const
+{
+    return m_channelId;
+}
+
+bool CreateGrafanaNotificationChannelResponse::ChannelIdHasBeenSet() const
+{
+    return m_channelIdHasBeenSet;
+}
 
 

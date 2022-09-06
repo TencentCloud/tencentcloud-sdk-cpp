@@ -1022,6 +1022,94 @@ namespace TencentCloud
                      */
                     bool ClientsHasBeenSet() const;
 
+                    /**
+                     * 获取系统当前时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CurrentTime 系统当前时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetCurrentTime() const;
+
+                    /**
+                     * 设置系统当前时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param CurrentTime 系统当前时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCurrentTime(const std::string& _currentTime);
+
+                    /**
+                     * 判断参数 CurrentTime 是否已赋值
+                     * @return CurrentTime 是否已赋值
+                     */
+                    bool CurrentTimeHasBeenSet() const;
+
+                    /**
+                     * 获取是否用于联邦
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsFederation 是否用于联邦
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetIsFederation() const;
+
+                    /**
+                     * 设置是否用于联邦
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param IsFederation 是否用于联邦
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIsFederation(const int64_t& _isFederation);
+
+                    /**
+                     * 判断参数 IsFederation 是否已赋值
+                     * @return IsFederation 是否已赋值
+                     */
+                    bool IsFederationHasBeenSet() const;
+
+                    /**
+                     * 获取设备名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DeviceName 设备名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetDeviceName() const;
+
+                    /**
+                     * 设置设备名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DeviceName 设备名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDeviceName(const std::string& _deviceName);
+
+                    /**
+                     * 判断参数 DeviceName 是否已赋值
+                     * @return DeviceName 是否已赋值
+                     */
+                    bool DeviceNameHasBeenSet() const;
+
+                    /**
+                     * 获取服务
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ServiceClient 服务
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetServiceClient() const;
+
+                    /**
+                     * 设置服务
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ServiceClient 服务
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetServiceClient(const std::string& _serviceClient);
+
+                    /**
+                     * 判断参数 ServiceClient 是否已赋值
+                     * @return ServiceClient 是否已赋值
+                     */
+                    bool ServiceClientHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1332,6 +1420,34 @@ namespace TencentCloud
                      */
                     std::string m_clients;
                     bool m_clientsHasBeenSet;
+
+                    /**
+                     * 系统当前时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_currentTime;
+                    bool m_currentTimeHasBeenSet;
+
+                    /**
+                     * 是否用于联邦
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_isFederation;
+                    bool m_isFederationHasBeenSet;
+
+                    /**
+                     * 设备名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_deviceName;
+                    bool m_deviceNameHasBeenSet;
+
+                    /**
+                     * 服务
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_serviceClient;
+                    bool m_serviceClientHasBeenSet;
 
                 };
             }

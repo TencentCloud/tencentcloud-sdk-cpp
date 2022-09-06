@@ -191,6 +191,42 @@ namespace TencentCloud
                      */
                     bool SearchFieldsHasBeenSet() const;
 
+                    /**
+                     * 获取无
+                     * @return OrderField 无
+                     */
+                    std::string GetOrderField() const;
+
+                    /**
+                     * 设置无
+                     * @param OrderField 无
+                     */
+                    void SetOrderField(const std::string& _orderField);
+
+                    /**
+                     * 判断参数 OrderField 是否已赋值
+                     * @return OrderField 是否已赋值
+                     */
+                    bool OrderFieldHasBeenSet() const;
+
+                    /**
+                     * 获取无
+                     * @return Asc 无
+                     */
+                    int64_t GetAsc() const;
+
+                    /**
+                     * 设置无
+                     * @param Asc 无
+                     */
+                    void SetAsc(const int64_t& _asc);
+
+                    /**
+                     * 判断参数 Asc 是否已赋值
+                     * @return Asc 是否已赋值
+                     */
+                    bool AscHasBeenSet() const;
+
                 private:
 
                     /**
@@ -238,6 +274,18 @@ namespace TencentCloud
                      */
                     std::vector<SearchItem> m_searchFields;
                     bool m_searchFieldsHasBeenSet;
+
+                    /**
+                     * 无
+                     */
+                    std::string m_orderField;
+                    bool m_orderFieldHasBeenSet;
+
+                    /**
+                     * 无
+                     */
+                    int64_t m_asc;
+                    bool m_ascHasBeenSet;
 
                 };
             }

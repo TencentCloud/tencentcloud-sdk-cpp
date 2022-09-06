@@ -43,7 +43,28 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取通道 ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ChannelId 通道 ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetChannelId() const;
+
+                    /**
+                     * 判断参数 ChannelId 是否已赋值
+                     * @return ChannelId 是否已赋值
+                     */
+                    bool ChannelIdHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 通道 ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_channelId;
+                    bool m_channelIdHasBeenSet;
 
                 };
             }

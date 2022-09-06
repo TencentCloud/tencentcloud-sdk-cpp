@@ -106,6 +106,24 @@ Url、Image必须提供一个，如果都提供，只使用 Url。
                      */
                     bool UrlHasBeenSet() const;
 
+                    /**
+                     * 获取返回图像方式（base64 或 url ) ，二选一。url有效期为30分钟。
+                     * @return RspImgType 返回图像方式（base64 或 url ) ，二选一。url有效期为30分钟。
+                     */
+                    std::string GetRspImgType() const;
+
+                    /**
+                     * 设置返回图像方式（base64 或 url ) ，二选一。url有效期为30分钟。
+                     * @param RspImgType 返回图像方式（base64 或 url ) ，二选一。url有效期为30分钟。
+                     */
+                    void SetRspImgType(const std::string& _rspImgType);
+
+                    /**
+                     * 判断参数 RspImgType 是否已赋值
+                     * @return RspImgType 是否已赋值
+                     */
+                    bool RspImgTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -126,6 +144,12 @@ Url、Image必须提供一个，如果都提供，只使用 Url。
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;
+
+                    /**
+                     * 返回图像方式（base64 或 url ) ，二选一。url有效期为30分钟。
+                     */
+                    std::string m_rspImgType;
+                    bool m_rspImgTypeHasBeenSet;
 
                 };
             }

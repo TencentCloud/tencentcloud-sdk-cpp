@@ -126,14 +126,14 @@ namespace TencentCloud
                     bool ReplyToAddressesHasBeenSet() const;
 
                     /**
-                     * 获取使用模板发送时，填写的模板相关参数
-                     * @return Template 使用模板发送时，填写的模板相关参数
+                     * 获取使用模板发送时，填写的模板相关参数。因 Simple 已经废除使用，Template 为必填项
+                     * @return Template 使用模板发送时，填写的模板相关参数。因 Simple 已经废除使用，Template 为必填项
                      */
                     Template GetTemplate() const;
 
                     /**
-                     * 设置使用模板发送时，填写的模板相关参数
-                     * @param Template 使用模板发送时，填写的模板相关参数
+                     * 设置使用模板发送时，填写的模板相关参数。因 Simple 已经废除使用，Template 为必填项
+                     * @param Template 使用模板发送时，填写的模板相关参数。因 Simple 已经废除使用，Template 为必填项
                      */
                     void SetTemplate(const Template& _template);
 
@@ -162,14 +162,14 @@ namespace TencentCloud
                     bool SimpleHasBeenSet() const;
 
                     /**
-                     * 获取需要发送附件时，填写附件相关参数。
-                     * @return Attachments 需要发送附件时，填写附件相关参数。
+                     * 获取需要发送附件时，填写附件相关参数。腾讯云接口请求最大支持 8M 的请求包，附件内容经过 Base64 预期扩大1.5倍，应该控制所有附件的总大小最大在 4M 以内，整体请求超出 8M 时接口会返回错误
+                     * @return Attachments 需要发送附件时，填写附件相关参数。腾讯云接口请求最大支持 8M 的请求包，附件内容经过 Base64 预期扩大1.5倍，应该控制所有附件的总大小最大在 4M 以内，整体请求超出 8M 时接口会返回错误
                      */
                     std::vector<Attachment> GetAttachments() const;
 
                     /**
-                     * 设置需要发送附件时，填写附件相关参数。
-                     * @param Attachments 需要发送附件时，填写附件相关参数。
+                     * 设置需要发送附件时，填写附件相关参数。腾讯云接口请求最大支持 8M 的请求包，附件内容经过 Base64 预期扩大1.5倍，应该控制所有附件的总大小最大在 4M 以内，整体请求超出 8M 时接口会返回错误
+                     * @param Attachments 需要发送附件时，填写附件相关参数。腾讯云接口请求最大支持 8M 的请求包，附件内容经过 Base64 预期扩大1.5倍，应该控制所有附件的总大小最大在 4M 以内，整体请求超出 8M 时接口会返回错误
                      */
                     void SetAttachments(const std::vector<Attachment>& _attachments);
 
@@ -244,7 +244,7 @@ namespace TencentCloud
                     bool m_replyToAddressesHasBeenSet;
 
                     /**
-                     * 使用模板发送时，填写的模板相关参数
+                     * 使用模板发送时，填写的模板相关参数。因 Simple 已经废除使用，Template 为必填项
                      */
                     Template m_template;
                     bool m_templateHasBeenSet;
@@ -256,7 +256,7 @@ namespace TencentCloud
                     bool m_simpleHasBeenSet;
 
                     /**
-                     * 需要发送附件时，填写附件相关参数。
+                     * 需要发送附件时，填写附件相关参数。腾讯云接口请求最大支持 8M 的请求包，附件内容经过 Base64 预期扩大1.5倍，应该控制所有附件的总大小最大在 4M 以内，整体请求超出 8M 时接口会返回错误
                      */
                     std::vector<Attachment> m_attachments;
                     bool m_attachmentsHasBeenSet;

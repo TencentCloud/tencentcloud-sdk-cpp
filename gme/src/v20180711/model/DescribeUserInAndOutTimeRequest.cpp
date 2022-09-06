@@ -25,7 +25,9 @@ using namespace std;
 DescribeUserInAndOutTimeRequest::DescribeUserInAndOutTimeRequest() :
     m_bizIdHasBeenSet(false),
     m_roomIdHasBeenSet(false),
-    m_userIdHasBeenSet(false)
+    m_userIdHasBeenSet(false),
+    m_userIdStrHasBeenSet(false),
+    m_roomIdStrHasBeenSet(false)
 {
 }
 
@@ -58,6 +60,22 @@ string DescribeUserInAndOutTimeRequest::ToJsonString() const
         string key = "UserId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_userId, allocator);
+    }
+
+    if (m_userIdStrHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserIdStr";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_userIdStr.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_roomIdStrHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RoomIdStr";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_roomIdStr.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -114,6 +132,38 @@ void DescribeUserInAndOutTimeRequest::SetUserId(const int64_t& _userId)
 bool DescribeUserInAndOutTimeRequest::UserIdHasBeenSet() const
 {
     return m_userIdHasBeenSet;
+}
+
+string DescribeUserInAndOutTimeRequest::GetUserIdStr() const
+{
+    return m_userIdStr;
+}
+
+void DescribeUserInAndOutTimeRequest::SetUserIdStr(const string& _userIdStr)
+{
+    m_userIdStr = _userIdStr;
+    m_userIdStrHasBeenSet = true;
+}
+
+bool DescribeUserInAndOutTimeRequest::UserIdStrHasBeenSet() const
+{
+    return m_userIdStrHasBeenSet;
+}
+
+string DescribeUserInAndOutTimeRequest::GetRoomIdStr() const
+{
+    return m_roomIdStr;
+}
+
+void DescribeUserInAndOutTimeRequest::SetRoomIdStr(const string& _roomIdStr)
+{
+    m_roomIdStr = _roomIdStr;
+    m_roomIdStrHasBeenSet = true;
+}
+
+bool DescribeUserInAndOutTimeRequest::RoomIdStrHasBeenSet() const
+{
+    return m_roomIdStrHasBeenSet;
 }
 
 

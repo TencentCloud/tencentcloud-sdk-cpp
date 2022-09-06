@@ -64,7 +64,11 @@ NodeHardwareInfo::NodeHardwareInfo() :
     m_rootStorageTypeHasBeenSet(false),
     m_zoneHasBeenSet(false),
     m_subnetInfoHasBeenSet(false),
-    m_clientsHasBeenSet(false)
+    m_clientsHasBeenSet(false),
+    m_currentTimeHasBeenSet(false),
+    m_isFederationHasBeenSet(false),
+    m_deviceNameHasBeenSet(false),
+    m_serviceClientHasBeenSet(false)
 {
 }
 
@@ -547,6 +551,46 @@ CoreInternalOutcome NodeHardwareInfo::Deserialize(const rapidjson::Value &value)
         m_clientsHasBeenSet = true;
     }
 
+    if (value.HasMember("CurrentTime") && !value["CurrentTime"].IsNull())
+    {
+        if (!value["CurrentTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NodeHardwareInfo.CurrentTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_currentTime = string(value["CurrentTime"].GetString());
+        m_currentTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsFederation") && !value["IsFederation"].IsNull())
+    {
+        if (!value["IsFederation"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `NodeHardwareInfo.IsFederation` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isFederation = value["IsFederation"].GetInt64();
+        m_isFederationHasBeenSet = true;
+    }
+
+    if (value.HasMember("DeviceName") && !value["DeviceName"].IsNull())
+    {
+        if (!value["DeviceName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NodeHardwareInfo.DeviceName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_deviceName = string(value["DeviceName"].GetString());
+        m_deviceNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("ServiceClient") && !value["ServiceClient"].IsNull())
+    {
+        if (!value["ServiceClient"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NodeHardwareInfo.ServiceClient` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_serviceClient = string(value["ServiceClient"].GetString());
+        m_serviceClientHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -920,6 +964,38 @@ void NodeHardwareInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "Clients";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_clients.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_currentTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CurrentTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_currentTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isFederationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsFederation";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isFederation, allocator);
+    }
+
+    if (m_deviceNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeviceName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_deviceName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_serviceClientHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServiceClient";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_serviceClient.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1627,5 +1703,69 @@ void NodeHardwareInfo::SetClients(const string& _clients)
 bool NodeHardwareInfo::ClientsHasBeenSet() const
 {
     return m_clientsHasBeenSet;
+}
+
+string NodeHardwareInfo::GetCurrentTime() const
+{
+    return m_currentTime;
+}
+
+void NodeHardwareInfo::SetCurrentTime(const string& _currentTime)
+{
+    m_currentTime = _currentTime;
+    m_currentTimeHasBeenSet = true;
+}
+
+bool NodeHardwareInfo::CurrentTimeHasBeenSet() const
+{
+    return m_currentTimeHasBeenSet;
+}
+
+int64_t NodeHardwareInfo::GetIsFederation() const
+{
+    return m_isFederation;
+}
+
+void NodeHardwareInfo::SetIsFederation(const int64_t& _isFederation)
+{
+    m_isFederation = _isFederation;
+    m_isFederationHasBeenSet = true;
+}
+
+bool NodeHardwareInfo::IsFederationHasBeenSet() const
+{
+    return m_isFederationHasBeenSet;
+}
+
+string NodeHardwareInfo::GetDeviceName() const
+{
+    return m_deviceName;
+}
+
+void NodeHardwareInfo::SetDeviceName(const string& _deviceName)
+{
+    m_deviceName = _deviceName;
+    m_deviceNameHasBeenSet = true;
+}
+
+bool NodeHardwareInfo::DeviceNameHasBeenSet() const
+{
+    return m_deviceNameHasBeenSet;
+}
+
+string NodeHardwareInfo::GetServiceClient() const
+{
+    return m_serviceClient;
+}
+
+void NodeHardwareInfo::SetServiceClient(const string& _serviceClient)
+{
+    m_serviceClient = _serviceClient;
+    m_serviceClientHasBeenSet = true;
+}
+
+bool NodeHardwareInfo::ServiceClientHasBeenSet() const
+{
+    return m_serviceClientHasBeenSet;
 }
 

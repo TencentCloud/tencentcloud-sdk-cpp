@@ -149,8 +149,6 @@
 #include <tencentcloud/cfw/v20190904/model/ModifySequenceRulesResponse.h>
 #include <tencentcloud/cfw/v20190904/model/ModifyTableStatusRequest.h>
 #include <tencentcloud/cfw/v20190904/model/ModifyTableStatusResponse.h>
-#include <tencentcloud/cfw/v20190904/model/ModifyVPCSwitchStatusRequest.h>
-#include <tencentcloud/cfw/v20190904/model/ModifyVPCSwitchStatusResponse.h>
 #include <tencentcloud/cfw/v20190904/model/RemoveAcRuleRequest.h>
 #include <tencentcloud/cfw/v20190904/model/RemoveAcRuleResponse.h>
 #include <tencentcloud/cfw/v20190904/model/RemoveEnterpriseSecurityGroupRuleRequest.h>
@@ -364,9 +362,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyTableStatusResponse> ModifyTableStatusOutcome;
                 typedef std::future<ModifyTableStatusOutcome> ModifyTableStatusOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::ModifyTableStatusRequest&, ModifyTableStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTableStatusAsyncHandler;
-                typedef Outcome<Core::Error, Model::ModifyVPCSwitchStatusResponse> ModifyVPCSwitchStatusOutcome;
-                typedef std::future<ModifyVPCSwitchStatusOutcome> ModifyVPCSwitchStatusOutcomeCallable;
-                typedef std::function<void(const CfwClient*, const Model::ModifyVPCSwitchStatusRequest&, ModifyVPCSwitchStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyVPCSwitchStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::RemoveAcRuleResponse> RemoveAcRuleOutcome;
                 typedef std::future<RemoveAcRuleOutcome> RemoveAcRuleOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::RemoveAcRuleRequest&, RemoveAcRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RemoveAcRuleAsyncHandler;
@@ -962,15 +957,6 @@ namespace TencentCloud
                 ModifyTableStatusOutcome ModifyTableStatus(const Model::ModifyTableStatusRequest &request);
                 void ModifyTableStatusAsync(const Model::ModifyTableStatusRequest& request, const ModifyTableStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyTableStatusOutcomeCallable ModifyTableStatusCallable(const Model::ModifyTableStatusRequest& request);
-
-                /**
-                 *单个修改VPC火墙开关
-                 * @param req ModifyVPCSwitchStatusRequest
-                 * @return ModifyVPCSwitchStatusOutcome
-                 */
-                ModifyVPCSwitchStatusOutcome ModifyVPCSwitchStatus(const Model::ModifyVPCSwitchStatusRequest &request);
-                void ModifyVPCSwitchStatusAsync(const Model::ModifyVPCSwitchStatusRequest& request, const ModifyVPCSwitchStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                ModifyVPCSwitchStatusOutcomeCallable ModifyVPCSwitchStatusCallable(const Model::ModifyVPCSwitchStatusRequest& request);
 
                 /**
                  *删除互联网边界规则

@@ -23,7 +23,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Monitor::V20180724::Model;
 using namespace std;
 
-InstallPluginsResponse::InstallPluginsResponse()
+InstallPluginsResponse::InstallPluginsResponse() :
+    m_pluginIdsHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,19 @@ CoreInternalOutcome InstallPluginsResponse::Deserialize(const string &payload)
     }
 
 
+    if (rsp.HasMember("PluginIds") && !rsp["PluginIds"].IsNull())
+    {
+        if (!rsp["PluginIds"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `PluginIds` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["PluginIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_pluginIds.push_back((*itr).GetString());
+        }
+        m_pluginIdsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +84,19 @@ string InstallPluginsResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_pluginIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PluginIds";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_pluginIds.begin(); itr != m_pluginIds.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +109,15 @@ string InstallPluginsResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+vector<string> InstallPluginsResponse::GetPluginIds() const
+{
+    return m_pluginIds;
+}
+
+bool InstallPluginsResponse::PluginIdsHasBeenSet() const
+{
+    return m_pluginIdsHasBeenSet;
+}
 
 

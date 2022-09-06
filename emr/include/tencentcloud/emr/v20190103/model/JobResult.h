@@ -140,6 +140,28 @@ namespace TencentCloud
                      */
                     bool JobStateHasBeenSet() const;
 
+                    /**
+                     * 获取YARN任务ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ApplicationId YARN任务ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetApplicationId() const;
+
+                    /**
+                     * 设置YARN任务ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ApplicationId YARN任务ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetApplicationId(const std::string& _applicationId);
+
+                    /**
+                     * 判断参数 ApplicationId 是否已赋值
+                     * @return ApplicationId 是否已赋值
+                     */
+                    bool ApplicationIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -169,6 +191,13 @@ namespace TencentCloud
                      */
                     std::string m_jobState;
                     bool m_jobStateHasBeenSet;
+
+                    /**
+                     * YARN任务ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_applicationId;
+                    bool m_applicationIdHasBeenSet;
 
                 };
             }
