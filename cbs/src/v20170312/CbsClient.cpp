@@ -40,6 +40,49 @@ CbsClient::CbsClient(const Credential &credential, const string &region, const C
 }
 
 
+CbsClient::ApplyDiskBackupOutcome CbsClient::ApplyDiskBackup(const ApplyDiskBackupRequest &request)
+{
+    auto outcome = MakeRequest(request, "ApplyDiskBackup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ApplyDiskBackupResponse rsp = ApplyDiskBackupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ApplyDiskBackupOutcome(rsp);
+        else
+            return ApplyDiskBackupOutcome(o.GetError());
+    }
+    else
+    {
+        return ApplyDiskBackupOutcome(outcome.GetError());
+    }
+}
+
+void CbsClient::ApplyDiskBackupAsync(const ApplyDiskBackupRequest& request, const ApplyDiskBackupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ApplyDiskBackup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CbsClient::ApplyDiskBackupOutcomeCallable CbsClient::ApplyDiskBackupCallable(const ApplyDiskBackupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ApplyDiskBackupOutcome()>>(
+        [this, request]()
+        {
+            return this->ApplyDiskBackup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CbsClient::ApplySnapshotOutcome CbsClient::ApplySnapshot(const ApplySnapshotRequest &request)
 {
     auto outcome = MakeRequest(request, "ApplySnapshot");
@@ -384,6 +427,49 @@ CbsClient::DeleteAutoSnapshotPoliciesOutcomeCallable CbsClient::DeleteAutoSnapsh
     return task->get_future();
 }
 
+CbsClient::DeleteDiskBackupsOutcome CbsClient::DeleteDiskBackups(const DeleteDiskBackupsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteDiskBackups");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteDiskBackupsResponse rsp = DeleteDiskBackupsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteDiskBackupsOutcome(rsp);
+        else
+            return DeleteDiskBackupsOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteDiskBackupsOutcome(outcome.GetError());
+    }
+}
+
+void CbsClient::DeleteDiskBackupsAsync(const DeleteDiskBackupsRequest& request, const DeleteDiskBackupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteDiskBackups(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CbsClient::DeleteDiskBackupsOutcomeCallable CbsClient::DeleteDiskBackupsCallable(const DeleteDiskBackupsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteDiskBackupsOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteDiskBackups(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CbsClient::DeleteSnapshotsOutcome CbsClient::DeleteSnapshots(const DeleteSnapshotsRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteSnapshots");
@@ -506,6 +592,49 @@ CbsClient::DescribeDiskAssociatedAutoSnapshotPolicyOutcomeCallable CbsClient::De
         [this, request]()
         {
             return this->DescribeDiskAssociatedAutoSnapshotPolicy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CbsClient::DescribeDiskBackupsOutcome CbsClient::DescribeDiskBackups(const DescribeDiskBackupsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDiskBackups");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDiskBackupsResponse rsp = DescribeDiskBackupsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDiskBackupsOutcome(rsp);
+        else
+            return DescribeDiskBackupsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDiskBackupsOutcome(outcome.GetError());
+    }
+}
+
+void CbsClient::DescribeDiskBackupsAsync(const DescribeDiskBackupsRequest& request, const DescribeDiskBackupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDiskBackups(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CbsClient::DescribeDiskBackupsOutcomeCallable CbsClient::DescribeDiskBackupsCallable(const DescribeDiskBackupsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDiskBackupsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDiskBackups(request);
         }
     );
 
@@ -986,6 +1115,49 @@ CbsClient::InitializeDisksOutcomeCallable CbsClient::InitializeDisksCallable(con
     return task->get_future();
 }
 
+CbsClient::InquirePriceModifyDiskBackupQuotaOutcome CbsClient::InquirePriceModifyDiskBackupQuota(const InquirePriceModifyDiskBackupQuotaRequest &request)
+{
+    auto outcome = MakeRequest(request, "InquirePriceModifyDiskBackupQuota");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        InquirePriceModifyDiskBackupQuotaResponse rsp = InquirePriceModifyDiskBackupQuotaResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return InquirePriceModifyDiskBackupQuotaOutcome(rsp);
+        else
+            return InquirePriceModifyDiskBackupQuotaOutcome(o.GetError());
+    }
+    else
+    {
+        return InquirePriceModifyDiskBackupQuotaOutcome(outcome.GetError());
+    }
+}
+
+void CbsClient::InquirePriceModifyDiskBackupQuotaAsync(const InquirePriceModifyDiskBackupQuotaRequest& request, const InquirePriceModifyDiskBackupQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->InquirePriceModifyDiskBackupQuota(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CbsClient::InquirePriceModifyDiskBackupQuotaOutcomeCallable CbsClient::InquirePriceModifyDiskBackupQuotaCallable(const InquirePriceModifyDiskBackupQuotaRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<InquirePriceModifyDiskBackupQuotaOutcome()>>(
+        [this, request]()
+        {
+            return this->InquirePriceModifyDiskBackupQuota(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CbsClient::InquirePriceModifyDiskExtraPerformanceOutcome CbsClient::InquirePriceModifyDiskExtraPerformance(const InquirePriceModifyDiskExtraPerformanceRequest &request)
 {
     auto outcome = MakeRequest(request, "InquirePriceModifyDiskExtraPerformance");
@@ -1237,6 +1409,49 @@ CbsClient::ModifyDiskAttributesOutcomeCallable CbsClient::ModifyDiskAttributesCa
         [this, request]()
         {
             return this->ModifyDiskAttributes(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CbsClient::ModifyDiskBackupQuotaOutcome CbsClient::ModifyDiskBackupQuota(const ModifyDiskBackupQuotaRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyDiskBackupQuota");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyDiskBackupQuotaResponse rsp = ModifyDiskBackupQuotaResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyDiskBackupQuotaOutcome(rsp);
+        else
+            return ModifyDiskBackupQuotaOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyDiskBackupQuotaOutcome(outcome.GetError());
+    }
+}
+
+void CbsClient::ModifyDiskBackupQuotaAsync(const ModifyDiskBackupQuotaRequest& request, const ModifyDiskBackupQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyDiskBackupQuota(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CbsClient::ModifyDiskBackupQuotaOutcomeCallable CbsClient::ModifyDiskBackupQuotaCallable(const ModifyDiskBackupQuotaRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyDiskBackupQuotaOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyDiskBackupQuota(request);
         }
     );
 

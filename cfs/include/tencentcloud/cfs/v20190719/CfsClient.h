@@ -23,20 +23,32 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/cfs/v20190719/model/BindAutoSnapshotPolicyRequest.h>
+#include <tencentcloud/cfs/v20190719/model/BindAutoSnapshotPolicyResponse.h>
+#include <tencentcloud/cfs/v20190719/model/CreateAutoSnapshotPolicyRequest.h>
+#include <tencentcloud/cfs/v20190719/model/CreateAutoSnapshotPolicyResponse.h>
 #include <tencentcloud/cfs/v20190719/model/CreateCfsFileSystemRequest.h>
 #include <tencentcloud/cfs/v20190719/model/CreateCfsFileSystemResponse.h>
 #include <tencentcloud/cfs/v20190719/model/CreateCfsPGroupRequest.h>
 #include <tencentcloud/cfs/v20190719/model/CreateCfsPGroupResponse.h>
 #include <tencentcloud/cfs/v20190719/model/CreateCfsRuleRequest.h>
 #include <tencentcloud/cfs/v20190719/model/CreateCfsRuleResponse.h>
+#include <tencentcloud/cfs/v20190719/model/CreateCfsSnapshotRequest.h>
+#include <tencentcloud/cfs/v20190719/model/CreateCfsSnapshotResponse.h>
+#include <tencentcloud/cfs/v20190719/model/DeleteAutoSnapshotPolicyRequest.h>
+#include <tencentcloud/cfs/v20190719/model/DeleteAutoSnapshotPolicyResponse.h>
 #include <tencentcloud/cfs/v20190719/model/DeleteCfsFileSystemRequest.h>
 #include <tencentcloud/cfs/v20190719/model/DeleteCfsFileSystemResponse.h>
 #include <tencentcloud/cfs/v20190719/model/DeleteCfsPGroupRequest.h>
 #include <tencentcloud/cfs/v20190719/model/DeleteCfsPGroupResponse.h>
 #include <tencentcloud/cfs/v20190719/model/DeleteCfsRuleRequest.h>
 #include <tencentcloud/cfs/v20190719/model/DeleteCfsRuleResponse.h>
+#include <tencentcloud/cfs/v20190719/model/DeleteCfsSnapshotRequest.h>
+#include <tencentcloud/cfs/v20190719/model/DeleteCfsSnapshotResponse.h>
 #include <tencentcloud/cfs/v20190719/model/DeleteMountTargetRequest.h>
 #include <tencentcloud/cfs/v20190719/model/DeleteMountTargetResponse.h>
+#include <tencentcloud/cfs/v20190719/model/DescribeAutoSnapshotPoliciesRequest.h>
+#include <tencentcloud/cfs/v20190719/model/DescribeAutoSnapshotPoliciesResponse.h>
 #include <tencentcloud/cfs/v20190719/model/DescribeAvailableZoneInfoRequest.h>
 #include <tencentcloud/cfs/v20190719/model/DescribeAvailableZoneInfoResponse.h>
 #include <tencentcloud/cfs/v20190719/model/DescribeCfsFileSystemClientsRequest.h>
@@ -49,10 +61,20 @@
 #include <tencentcloud/cfs/v20190719/model/DescribeCfsRulesResponse.h>
 #include <tencentcloud/cfs/v20190719/model/DescribeCfsServiceStatusRequest.h>
 #include <tencentcloud/cfs/v20190719/model/DescribeCfsServiceStatusResponse.h>
+#include <tencentcloud/cfs/v20190719/model/DescribeCfsSnapshotOverviewRequest.h>
+#include <tencentcloud/cfs/v20190719/model/DescribeCfsSnapshotOverviewResponse.h>
+#include <tencentcloud/cfs/v20190719/model/DescribeCfsSnapshotsRequest.h>
+#include <tencentcloud/cfs/v20190719/model/DescribeCfsSnapshotsResponse.h>
 #include <tencentcloud/cfs/v20190719/model/DescribeMountTargetsRequest.h>
 #include <tencentcloud/cfs/v20190719/model/DescribeMountTargetsResponse.h>
+#include <tencentcloud/cfs/v20190719/model/DescribeSnapshotOperationLogsRequest.h>
+#include <tencentcloud/cfs/v20190719/model/DescribeSnapshotOperationLogsResponse.h>
 #include <tencentcloud/cfs/v20190719/model/SignUpCfsServiceRequest.h>
 #include <tencentcloud/cfs/v20190719/model/SignUpCfsServiceResponse.h>
+#include <tencentcloud/cfs/v20190719/model/UnbindAutoSnapshotPolicyRequest.h>
+#include <tencentcloud/cfs/v20190719/model/UnbindAutoSnapshotPolicyResponse.h>
+#include <tencentcloud/cfs/v20190719/model/UpdateAutoSnapshotPolicyRequest.h>
+#include <tencentcloud/cfs/v20190719/model/UpdateAutoSnapshotPolicyResponse.h>
 #include <tencentcloud/cfs/v20190719/model/UpdateCfsFileSystemNameRequest.h>
 #include <tencentcloud/cfs/v20190719/model/UpdateCfsFileSystemNameResponse.h>
 #include <tencentcloud/cfs/v20190719/model/UpdateCfsFileSystemPGroupRequest.h>
@@ -63,6 +85,8 @@
 #include <tencentcloud/cfs/v20190719/model/UpdateCfsPGroupResponse.h>
 #include <tencentcloud/cfs/v20190719/model/UpdateCfsRuleRequest.h>
 #include <tencentcloud/cfs/v20190719/model/UpdateCfsRuleResponse.h>
+#include <tencentcloud/cfs/v20190719/model/UpdateCfsSnapshotAttributeRequest.h>
+#include <tencentcloud/cfs/v20190719/model/UpdateCfsSnapshotAttributeResponse.h>
 
 
 namespace TencentCloud
@@ -77,6 +101,12 @@ namespace TencentCloud
                 CfsClient(const Credential &credential, const std::string &region);
                 CfsClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::BindAutoSnapshotPolicyResponse> BindAutoSnapshotPolicyOutcome;
+                typedef std::future<BindAutoSnapshotPolicyOutcome> BindAutoSnapshotPolicyOutcomeCallable;
+                typedef std::function<void(const CfsClient*, const Model::BindAutoSnapshotPolicyRequest&, BindAutoSnapshotPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BindAutoSnapshotPolicyAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateAutoSnapshotPolicyResponse> CreateAutoSnapshotPolicyOutcome;
+                typedef std::future<CreateAutoSnapshotPolicyOutcome> CreateAutoSnapshotPolicyOutcomeCallable;
+                typedef std::function<void(const CfsClient*, const Model::CreateAutoSnapshotPolicyRequest&, CreateAutoSnapshotPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAutoSnapshotPolicyAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateCfsFileSystemResponse> CreateCfsFileSystemOutcome;
                 typedef std::future<CreateCfsFileSystemOutcome> CreateCfsFileSystemOutcomeCallable;
                 typedef std::function<void(const CfsClient*, const Model::CreateCfsFileSystemRequest&, CreateCfsFileSystemOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCfsFileSystemAsyncHandler;
@@ -86,6 +116,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateCfsRuleResponse> CreateCfsRuleOutcome;
                 typedef std::future<CreateCfsRuleOutcome> CreateCfsRuleOutcomeCallable;
                 typedef std::function<void(const CfsClient*, const Model::CreateCfsRuleRequest&, CreateCfsRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCfsRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateCfsSnapshotResponse> CreateCfsSnapshotOutcome;
+                typedef std::future<CreateCfsSnapshotOutcome> CreateCfsSnapshotOutcomeCallable;
+                typedef std::function<void(const CfsClient*, const Model::CreateCfsSnapshotRequest&, CreateCfsSnapshotOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCfsSnapshotAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteAutoSnapshotPolicyResponse> DeleteAutoSnapshotPolicyOutcome;
+                typedef std::future<DeleteAutoSnapshotPolicyOutcome> DeleteAutoSnapshotPolicyOutcomeCallable;
+                typedef std::function<void(const CfsClient*, const Model::DeleteAutoSnapshotPolicyRequest&, DeleteAutoSnapshotPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAutoSnapshotPolicyAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteCfsFileSystemResponse> DeleteCfsFileSystemOutcome;
                 typedef std::future<DeleteCfsFileSystemOutcome> DeleteCfsFileSystemOutcomeCallable;
                 typedef std::function<void(const CfsClient*, const Model::DeleteCfsFileSystemRequest&, DeleteCfsFileSystemOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCfsFileSystemAsyncHandler;
@@ -95,9 +131,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteCfsRuleResponse> DeleteCfsRuleOutcome;
                 typedef std::future<DeleteCfsRuleOutcome> DeleteCfsRuleOutcomeCallable;
                 typedef std::function<void(const CfsClient*, const Model::DeleteCfsRuleRequest&, DeleteCfsRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCfsRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteCfsSnapshotResponse> DeleteCfsSnapshotOutcome;
+                typedef std::future<DeleteCfsSnapshotOutcome> DeleteCfsSnapshotOutcomeCallable;
+                typedef std::function<void(const CfsClient*, const Model::DeleteCfsSnapshotRequest&, DeleteCfsSnapshotOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCfsSnapshotAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteMountTargetResponse> DeleteMountTargetOutcome;
                 typedef std::future<DeleteMountTargetOutcome> DeleteMountTargetOutcomeCallable;
                 typedef std::function<void(const CfsClient*, const Model::DeleteMountTargetRequest&, DeleteMountTargetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteMountTargetAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAutoSnapshotPoliciesResponse> DescribeAutoSnapshotPoliciesOutcome;
+                typedef std::future<DescribeAutoSnapshotPoliciesOutcome> DescribeAutoSnapshotPoliciesOutcomeCallable;
+                typedef std::function<void(const CfsClient*, const Model::DescribeAutoSnapshotPoliciesRequest&, DescribeAutoSnapshotPoliciesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAutoSnapshotPoliciesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAvailableZoneInfoResponse> DescribeAvailableZoneInfoOutcome;
                 typedef std::future<DescribeAvailableZoneInfoOutcome> DescribeAvailableZoneInfoOutcomeCallable;
                 typedef std::function<void(const CfsClient*, const Model::DescribeAvailableZoneInfoRequest&, DescribeAvailableZoneInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAvailableZoneInfoAsyncHandler;
@@ -116,12 +158,27 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeCfsServiceStatusResponse> DescribeCfsServiceStatusOutcome;
                 typedef std::future<DescribeCfsServiceStatusOutcome> DescribeCfsServiceStatusOutcomeCallable;
                 typedef std::function<void(const CfsClient*, const Model::DescribeCfsServiceStatusRequest&, DescribeCfsServiceStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCfsServiceStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCfsSnapshotOverviewResponse> DescribeCfsSnapshotOverviewOutcome;
+                typedef std::future<DescribeCfsSnapshotOverviewOutcome> DescribeCfsSnapshotOverviewOutcomeCallable;
+                typedef std::function<void(const CfsClient*, const Model::DescribeCfsSnapshotOverviewRequest&, DescribeCfsSnapshotOverviewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCfsSnapshotOverviewAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCfsSnapshotsResponse> DescribeCfsSnapshotsOutcome;
+                typedef std::future<DescribeCfsSnapshotsOutcome> DescribeCfsSnapshotsOutcomeCallable;
+                typedef std::function<void(const CfsClient*, const Model::DescribeCfsSnapshotsRequest&, DescribeCfsSnapshotsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCfsSnapshotsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeMountTargetsResponse> DescribeMountTargetsOutcome;
                 typedef std::future<DescribeMountTargetsOutcome> DescribeMountTargetsOutcomeCallable;
                 typedef std::function<void(const CfsClient*, const Model::DescribeMountTargetsRequest&, DescribeMountTargetsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMountTargetsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSnapshotOperationLogsResponse> DescribeSnapshotOperationLogsOutcome;
+                typedef std::future<DescribeSnapshotOperationLogsOutcome> DescribeSnapshotOperationLogsOutcomeCallable;
+                typedef std::function<void(const CfsClient*, const Model::DescribeSnapshotOperationLogsRequest&, DescribeSnapshotOperationLogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSnapshotOperationLogsAsyncHandler;
                 typedef Outcome<Core::Error, Model::SignUpCfsServiceResponse> SignUpCfsServiceOutcome;
                 typedef std::future<SignUpCfsServiceOutcome> SignUpCfsServiceOutcomeCallable;
                 typedef std::function<void(const CfsClient*, const Model::SignUpCfsServiceRequest&, SignUpCfsServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SignUpCfsServiceAsyncHandler;
+                typedef Outcome<Core::Error, Model::UnbindAutoSnapshotPolicyResponse> UnbindAutoSnapshotPolicyOutcome;
+                typedef std::future<UnbindAutoSnapshotPolicyOutcome> UnbindAutoSnapshotPolicyOutcomeCallable;
+                typedef std::function<void(const CfsClient*, const Model::UnbindAutoSnapshotPolicyRequest&, UnbindAutoSnapshotPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UnbindAutoSnapshotPolicyAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateAutoSnapshotPolicyResponse> UpdateAutoSnapshotPolicyOutcome;
+                typedef std::future<UpdateAutoSnapshotPolicyOutcome> UpdateAutoSnapshotPolicyOutcomeCallable;
+                typedef std::function<void(const CfsClient*, const Model::UpdateAutoSnapshotPolicyRequest&, UpdateAutoSnapshotPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateAutoSnapshotPolicyAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpdateCfsFileSystemNameResponse> UpdateCfsFileSystemNameOutcome;
                 typedef std::future<UpdateCfsFileSystemNameOutcome> UpdateCfsFileSystemNameOutcomeCallable;
                 typedef std::function<void(const CfsClient*, const Model::UpdateCfsFileSystemNameRequest&, UpdateCfsFileSystemNameOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateCfsFileSystemNameAsyncHandler;
@@ -137,8 +194,29 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UpdateCfsRuleResponse> UpdateCfsRuleOutcome;
                 typedef std::future<UpdateCfsRuleOutcome> UpdateCfsRuleOutcomeCallable;
                 typedef std::function<void(const CfsClient*, const Model::UpdateCfsRuleRequest&, UpdateCfsRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateCfsRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateCfsSnapshotAttributeResponse> UpdateCfsSnapshotAttributeOutcome;
+                typedef std::future<UpdateCfsSnapshotAttributeOutcome> UpdateCfsSnapshotAttributeOutcomeCallable;
+                typedef std::function<void(const CfsClient*, const Model::UpdateCfsSnapshotAttributeRequest&, UpdateCfsSnapshotAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateCfsSnapshotAttributeAsyncHandler;
 
 
+
+                /**
+                 *文件系统绑定快照策略，可以同时绑定多个fs，一个fs 只能跟一个策略绑定
+                 * @param req BindAutoSnapshotPolicyRequest
+                 * @return BindAutoSnapshotPolicyOutcome
+                 */
+                BindAutoSnapshotPolicyOutcome BindAutoSnapshotPolicy(const Model::BindAutoSnapshotPolicyRequest &request);
+                void BindAutoSnapshotPolicyAsync(const Model::BindAutoSnapshotPolicyRequest& request, const BindAutoSnapshotPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                BindAutoSnapshotPolicyOutcomeCallable BindAutoSnapshotPolicyCallable(const Model::BindAutoSnapshotPolicyRequest& request);
+
+                /**
+                 *创建定期快照策略
+                 * @param req CreateAutoSnapshotPolicyRequest
+                 * @return CreateAutoSnapshotPolicyOutcome
+                 */
+                CreateAutoSnapshotPolicyOutcome CreateAutoSnapshotPolicy(const Model::CreateAutoSnapshotPolicyRequest &request);
+                void CreateAutoSnapshotPolicyAsync(const Model::CreateAutoSnapshotPolicyRequest& request, const CreateAutoSnapshotPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateAutoSnapshotPolicyOutcomeCallable CreateAutoSnapshotPolicyCallable(const Model::CreateAutoSnapshotPolicyRequest& request);
 
                 /**
                  *用于添加新文件系统
@@ -168,6 +246,24 @@ namespace TencentCloud
                 CreateCfsRuleOutcomeCallable CreateCfsRuleCallable(const Model::CreateCfsRuleRequest& request);
 
                 /**
+                 *创建文件系统快照
+                 * @param req CreateCfsSnapshotRequest
+                 * @return CreateCfsSnapshotOutcome
+                 */
+                CreateCfsSnapshotOutcome CreateCfsSnapshot(const Model::CreateCfsSnapshotRequest &request);
+                void CreateCfsSnapshotAsync(const Model::CreateCfsSnapshotRequest& request, const CreateCfsSnapshotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateCfsSnapshotOutcomeCallable CreateCfsSnapshotCallable(const Model::CreateCfsSnapshotRequest& request);
+
+                /**
+                 *删除快照定期策略
+                 * @param req DeleteAutoSnapshotPolicyRequest
+                 * @return DeleteAutoSnapshotPolicyOutcome
+                 */
+                DeleteAutoSnapshotPolicyOutcome DeleteAutoSnapshotPolicy(const Model::DeleteAutoSnapshotPolicyRequest &request);
+                void DeleteAutoSnapshotPolicyAsync(const Model::DeleteAutoSnapshotPolicyRequest& request, const DeleteAutoSnapshotPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteAutoSnapshotPolicyOutcomeCallable DeleteAutoSnapshotPolicyCallable(const Model::DeleteAutoSnapshotPolicyRequest& request);
+
+                /**
                  *用于删除文件系统
                  * @param req DeleteCfsFileSystemRequest
                  * @return DeleteCfsFileSystemOutcome
@@ -195,6 +291,15 @@ namespace TencentCloud
                 DeleteCfsRuleOutcomeCallable DeleteCfsRuleCallable(const Model::DeleteCfsRuleRequest& request);
 
                 /**
+                 *删除文件系统快照
+                 * @param req DeleteCfsSnapshotRequest
+                 * @return DeleteCfsSnapshotOutcome
+                 */
+                DeleteCfsSnapshotOutcome DeleteCfsSnapshot(const Model::DeleteCfsSnapshotRequest &request);
+                void DeleteCfsSnapshotAsync(const Model::DeleteCfsSnapshotRequest& request, const DeleteCfsSnapshotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteCfsSnapshotOutcomeCallable DeleteCfsSnapshotCallable(const Model::DeleteCfsSnapshotRequest& request);
+
+                /**
                  *本接口（DeleteMountTarget）用于删除挂载点
                  * @param req DeleteMountTargetRequest
                  * @return DeleteMountTargetOutcome
@@ -202,6 +307,15 @@ namespace TencentCloud
                 DeleteMountTargetOutcome DeleteMountTarget(const Model::DeleteMountTargetRequest &request);
                 void DeleteMountTargetAsync(const Model::DeleteMountTargetRequest& request, const DeleteMountTargetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteMountTargetOutcomeCallable DeleteMountTargetCallable(const Model::DeleteMountTargetRequest& request);
+
+                /**
+                 *查询文件系统快照d定期策略列表信息
+                 * @param req DescribeAutoSnapshotPoliciesRequest
+                 * @return DescribeAutoSnapshotPoliciesOutcome
+                 */
+                DescribeAutoSnapshotPoliciesOutcome DescribeAutoSnapshotPolicies(const Model::DescribeAutoSnapshotPoliciesRequest &request);
+                void DescribeAutoSnapshotPoliciesAsync(const Model::DescribeAutoSnapshotPoliciesRequest& request, const DescribeAutoSnapshotPoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAutoSnapshotPoliciesOutcomeCallable DescribeAutoSnapshotPoliciesCallable(const Model::DescribeAutoSnapshotPoliciesRequest& request);
 
                 /**
                  *本接口（DescribeAvailableZoneInfo）用于查询区域的可用情况。
@@ -258,6 +372,24 @@ namespace TencentCloud
                 DescribeCfsServiceStatusOutcomeCallable DescribeCfsServiceStatusCallable(const Model::DescribeCfsServiceStatusRequest& request);
 
                 /**
+                 *文件系统快照概览
+                 * @param req DescribeCfsSnapshotOverviewRequest
+                 * @return DescribeCfsSnapshotOverviewOutcome
+                 */
+                DescribeCfsSnapshotOverviewOutcome DescribeCfsSnapshotOverview(const Model::DescribeCfsSnapshotOverviewRequest &request);
+                void DescribeCfsSnapshotOverviewAsync(const Model::DescribeCfsSnapshotOverviewRequest& request, const DescribeCfsSnapshotOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCfsSnapshotOverviewOutcomeCallable DescribeCfsSnapshotOverviewCallable(const Model::DescribeCfsSnapshotOverviewRequest& request);
+
+                /**
+                 *查询文件系统快照列表
+                 * @param req DescribeCfsSnapshotsRequest
+                 * @return DescribeCfsSnapshotsOutcome
+                 */
+                DescribeCfsSnapshotsOutcome DescribeCfsSnapshots(const Model::DescribeCfsSnapshotsRequest &request);
+                void DescribeCfsSnapshotsAsync(const Model::DescribeCfsSnapshotsRequest& request, const DescribeCfsSnapshotsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCfsSnapshotsOutcomeCallable DescribeCfsSnapshotsCallable(const Model::DescribeCfsSnapshotsRequest& request);
+
+                /**
                  *本接口（DescribeMountTargets）用于查询文件系统挂载点信息
                  * @param req DescribeMountTargetsRequest
                  * @return DescribeMountTargetsOutcome
@@ -267,6 +399,15 @@ namespace TencentCloud
                 DescribeMountTargetsOutcomeCallable DescribeMountTargetsCallable(const Model::DescribeMountTargetsRequest& request);
 
                 /**
+                 *查询快照操作日志
+                 * @param req DescribeSnapshotOperationLogsRequest
+                 * @return DescribeSnapshotOperationLogsOutcome
+                 */
+                DescribeSnapshotOperationLogsOutcome DescribeSnapshotOperationLogs(const Model::DescribeSnapshotOperationLogsRequest &request);
+                void DescribeSnapshotOperationLogsAsync(const Model::DescribeSnapshotOperationLogsRequest& request, const DescribeSnapshotOperationLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSnapshotOperationLogsOutcomeCallable DescribeSnapshotOperationLogsCallable(const Model::DescribeSnapshotOperationLogsRequest& request);
+
+                /**
                  *本接口（SignUpCfsService）用于开通CFS服务。
                  * @param req SignUpCfsServiceRequest
                  * @return SignUpCfsServiceOutcome
@@ -274,6 +415,24 @@ namespace TencentCloud
                 SignUpCfsServiceOutcome SignUpCfsService(const Model::SignUpCfsServiceRequest &request);
                 void SignUpCfsServiceAsync(const Model::SignUpCfsServiceRequest& request, const SignUpCfsServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SignUpCfsServiceOutcomeCallable SignUpCfsServiceCallable(const Model::SignUpCfsServiceRequest& request);
+
+                /**
+                 *解除文件系统绑定的快照策略
+                 * @param req UnbindAutoSnapshotPolicyRequest
+                 * @return UnbindAutoSnapshotPolicyOutcome
+                 */
+                UnbindAutoSnapshotPolicyOutcome UnbindAutoSnapshotPolicy(const Model::UnbindAutoSnapshotPolicyRequest &request);
+                void UnbindAutoSnapshotPolicyAsync(const Model::UnbindAutoSnapshotPolicyRequest& request, const UnbindAutoSnapshotPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UnbindAutoSnapshotPolicyOutcomeCallable UnbindAutoSnapshotPolicyCallable(const Model::UnbindAutoSnapshotPolicyRequest& request);
+
+                /**
+                 *更新定期自动快照策略
+                 * @param req UpdateAutoSnapshotPolicyRequest
+                 * @return UpdateAutoSnapshotPolicyOutcome
+                 */
+                UpdateAutoSnapshotPolicyOutcome UpdateAutoSnapshotPolicy(const Model::UpdateAutoSnapshotPolicyRequest &request);
+                void UpdateAutoSnapshotPolicyAsync(const Model::UpdateAutoSnapshotPolicyRequest& request, const UpdateAutoSnapshotPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateAutoSnapshotPolicyOutcomeCallable UpdateAutoSnapshotPolicyCallable(const Model::UpdateAutoSnapshotPolicyRequest& request);
 
                 /**
                  *本接口（UpdateCfsFileSystemName）用于更新文件系统名
@@ -319,6 +478,15 @@ namespace TencentCloud
                 UpdateCfsRuleOutcome UpdateCfsRule(const Model::UpdateCfsRuleRequest &request);
                 void UpdateCfsRuleAsync(const Model::UpdateCfsRuleRequest& request, const UpdateCfsRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UpdateCfsRuleOutcomeCallable UpdateCfsRuleCallable(const Model::UpdateCfsRuleRequest& request);
+
+                /**
+                 *更新文件系统快照名称及保留时长
+                 * @param req UpdateCfsSnapshotAttributeRequest
+                 * @return UpdateCfsSnapshotAttributeOutcome
+                 */
+                UpdateCfsSnapshotAttributeOutcome UpdateCfsSnapshotAttribute(const Model::UpdateCfsSnapshotAttributeRequest &request);
+                void UpdateCfsSnapshotAttributeAsync(const Model::UpdateCfsSnapshotAttributeRequest& request, const UpdateCfsSnapshotAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateCfsSnapshotAttributeOutcomeCallable UpdateCfsSnapshotAttributeCallable(const Model::UpdateCfsSnapshotAttributeRequest& request);
 
             };
         }

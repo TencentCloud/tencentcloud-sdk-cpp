@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool ReceiversHasBeenSet() const;
 
                     /**
-                     * 获取额外组织 ID 数组
-                     * @return ExtraOrgIds 额外组织 ID 数组
+                     * 获取已废弃，请使用 OrganizationIds
+                     * @return ExtraOrgIds 已废弃，请使用 OrganizationIds
                      */
                     std::vector<std::string> GetExtraOrgIds() const;
 
                     /**
-                     * 设置额外组织 ID 数组
-                     * @param ExtraOrgIds 额外组织 ID 数组
+                     * 设置已废弃，请使用 OrganizationIds
+                     * @param ExtraOrgIds 已废弃，请使用 OrganizationIds
                      */
                     void SetExtraOrgIds(const std::vector<std::string>& _extraOrgIds);
 
@@ -131,6 +131,24 @@ namespace TencentCloud
                      * @return ExtraOrgIds 是否已赋值
                      */
                     bool ExtraOrgIdsHasBeenSet() const;
+
+                    /**
+                     * 获取生效的组织 ID 数组
+                     * @return OrganizationIds 生效的组织 ID 数组
+                     */
+                    std::vector<std::string> GetOrganizationIds() const;
+
+                    /**
+                     * 设置生效的组织 ID 数组
+                     * @param OrganizationIds 生效的组织 ID 数组
+                     */
+                    void SetOrganizationIds(const std::vector<std::string>& _organizationIds);
+
+                    /**
+                     * 判断参数 OrganizationIds 是否已赋值
+                     * @return OrganizationIds 是否已赋值
+                     */
+                    bool OrganizationIdsHasBeenSet() const;
 
                 private:
 
@@ -159,10 +177,16 @@ namespace TencentCloud
                     bool m_receiversHasBeenSet;
 
                     /**
-                     * 额外组织 ID 数组
+                     * 已废弃，请使用 OrganizationIds
                      */
                     std::vector<std::string> m_extraOrgIds;
                     bool m_extraOrgIdsHasBeenSet;
+
+                    /**
+                     * 生效的组织 ID 数组
+                     */
+                    std::vector<std::string> m_organizationIds;
+                    bool m_organizationIdsHasBeenSet;
 
                 };
             }

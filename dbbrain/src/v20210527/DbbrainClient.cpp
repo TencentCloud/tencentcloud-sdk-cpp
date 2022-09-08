@@ -1158,6 +1158,49 @@ DbbrainClient::DescribeRedisTopBigKeysOutcomeCallable DbbrainClient::DescribeRed
     return task->get_future();
 }
 
+DbbrainClient::DescribeRedisTopKeyPrefixListOutcome DbbrainClient::DescribeRedisTopKeyPrefixList(const DescribeRedisTopKeyPrefixListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRedisTopKeyPrefixList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRedisTopKeyPrefixListResponse rsp = DescribeRedisTopKeyPrefixListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRedisTopKeyPrefixListOutcome(rsp);
+        else
+            return DescribeRedisTopKeyPrefixListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRedisTopKeyPrefixListOutcome(outcome.GetError());
+    }
+}
+
+void DbbrainClient::DescribeRedisTopKeyPrefixListAsync(const DescribeRedisTopKeyPrefixListRequest& request, const DescribeRedisTopKeyPrefixListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRedisTopKeyPrefixList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DbbrainClient::DescribeRedisTopKeyPrefixListOutcomeCallable DbbrainClient::DescribeRedisTopKeyPrefixListCallable(const DescribeRedisTopKeyPrefixListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRedisTopKeyPrefixListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRedisTopKeyPrefixList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DbbrainClient::DescribeSecurityAuditLogDownloadUrlsOutcome DbbrainClient::DescribeSecurityAuditLogDownloadUrls(const DescribeSecurityAuditLogDownloadUrlsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeSecurityAuditLogDownloadUrls");

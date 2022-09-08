@@ -50,7 +50,8 @@ CreateCRWorkRequest::CreateCRWorkRequest() :
     m_authorizationStartTimeHasBeenSet(false),
     m_authorizationEndTimeHasBeenSet(false),
     m_contentTypeHasBeenSet(false),
-    m_contentHasBeenSet(false)
+    m_contentHasBeenSet(false),
+    m_monitorEndTimeHasBeenSet(false)
 {
 }
 
@@ -288,6 +289,14 @@ string CreateCRWorkRequest::ToJsonString() const
         string key = "Content";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_content.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_monitorEndTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MonitorEndTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_monitorEndTime.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -744,6 +753,22 @@ void CreateCRWorkRequest::SetContent(const string& _content)
 bool CreateCRWorkRequest::ContentHasBeenSet() const
 {
     return m_contentHasBeenSet;
+}
+
+string CreateCRWorkRequest::GetMonitorEndTime() const
+{
+    return m_monitorEndTime;
+}
+
+void CreateCRWorkRequest::SetMonitorEndTime(const string& _monitorEndTime)
+{
+    m_monitorEndTime = _monitorEndTime;
+    m_monitorEndTimeHasBeenSet = true;
+}
+
+bool CreateCRWorkRequest::MonitorEndTimeHasBeenSet() const
+{
+    return m_monitorEndTimeHasBeenSet;
 }
 
 

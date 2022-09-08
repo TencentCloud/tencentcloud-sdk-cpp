@@ -203,6 +203,20 @@ namespace TencentCloud
                      */
                     bool ProtectDaysHasBeenSet() const;
 
+                    /**
+                     * 获取15天内新增的主机数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AddedOnTheFifteen 15天内新增的主机数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetAddedOnTheFifteen() const;
+
+                    /**
+                     * 判断参数 AddedOnTheFifteen 是否已赋值
+                     * @return AddedOnTheFifteen 是否已赋值
+                     */
+                    bool AddedOnTheFifteenHasBeenSet() const;
+
                 private:
 
                     /**
@@ -284,6 +298,13 @@ namespace TencentCloud
                      */
                     uint64_t m_protectDays;
                     bool m_protectDaysHasBeenSet;
+
+                    /**
+                     * 15天内新增的主机数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_addedOnTheFifteen;
+                    bool m_addedOnTheFifteenHasBeenSet;
 
                 };
             }

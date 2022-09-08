@@ -25,6 +25,7 @@ ReviewAudioVideoTask::ReviewAudioVideoTask() :
     m_statusHasBeenSet(false),
     m_errCodeExtHasBeenSet(false),
     m_messageHasBeenSet(false),
+    m_inputHasBeenSet(false),
     m_outputHasBeenSet(false),
     m_sessionIdHasBeenSet(false),
     m_sessionContextHasBeenSet(false)
@@ -74,6 +75,23 @@ CoreInternalOutcome ReviewAudioVideoTask::Deserialize(const rapidjson::Value &va
         }
         m_message = string(value["Message"].GetString());
         m_messageHasBeenSet = true;
+    }
+
+    if (value.HasMember("Input") && !value["Input"].IsNull())
+    {
+        if (!value["Input"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ReviewAudioVideoTask.Input` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_input.Deserialize(value["Input"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_inputHasBeenSet = true;
     }
 
     if (value.HasMember("Output") && !value["Output"].IsNull())
@@ -150,6 +168,15 @@ void ReviewAudioVideoTask::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "Message";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_message.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_inputHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Input";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_input.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_outputHasBeenSet)
@@ -242,6 +269,22 @@ void ReviewAudioVideoTask::SetMessage(const string& _message)
 bool ReviewAudioVideoTask::MessageHasBeenSet() const
 {
     return m_messageHasBeenSet;
+}
+
+ReviewAudioVideoTaskInput ReviewAudioVideoTask::GetInput() const
+{
+    return m_input;
+}
+
+void ReviewAudioVideoTask::SetInput(const ReviewAudioVideoTaskInput& _input)
+{
+    m_input = _input;
+    m_inputHasBeenSet = true;
+}
+
+bool ReviewAudioVideoTask::InputHasBeenSet() const
+{
+    return m_inputHasBeenSet;
 }
 
 ReviewAudioVideoTaskOutput ReviewAudioVideoTask::GetOutput() const

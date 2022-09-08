@@ -33,6 +33,8 @@
 #include <tencentcloud/cynosdb/v20190107/model/AssociateSecurityGroupsResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/CreateAccountsRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/CreateAccountsResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/CreateBackupRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/CreateBackupResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/CreateClustersRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/CreateClustersResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeAccountAllGrantPrivilegesRequest.h>
@@ -109,6 +111,8 @@
 #include <tencentcloud/cynosdb/v20190107/model/ModifyClusterParamResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/ModifyClusterSlaveZoneRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/ModifyClusterSlaveZoneResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/ModifyClusterStorageRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/ModifyClusterStorageResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/ModifyDBInstanceSecurityGroupsRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/ModifyDBInstanceSecurityGroupsResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/ModifyInstanceNameRequest.h>
@@ -164,6 +168,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateAccountsResponse> CreateAccountsOutcome;
                 typedef std::future<CreateAccountsOutcome> CreateAccountsOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::CreateAccountsRequest&, CreateAccountsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAccountsAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateBackupResponse> CreateBackupOutcome;
+                typedef std::future<CreateBackupOutcome> CreateBackupOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::CreateBackupRequest&, CreateBackupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateBackupAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateClustersResponse> CreateClustersOutcome;
                 typedef std::future<CreateClustersOutcome> CreateClustersOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::CreateClustersRequest&, CreateClustersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateClustersAsyncHandler;
@@ -278,6 +285,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyClusterSlaveZoneResponse> ModifyClusterSlaveZoneOutcome;
                 typedef std::future<ModifyClusterSlaveZoneOutcome> ModifyClusterSlaveZoneOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::ModifyClusterSlaveZoneRequest&, ModifyClusterSlaveZoneOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyClusterSlaveZoneAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyClusterStorageResponse> ModifyClusterStorageOutcome;
+                typedef std::future<ModifyClusterStorageOutcome> ModifyClusterStorageOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::ModifyClusterStorageRequest&, ModifyClusterStorageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyClusterStorageAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyDBInstanceSecurityGroupsResponse> ModifyDBInstanceSecurityGroupsOutcome;
                 typedef std::future<ModifyDBInstanceSecurityGroupsOutcome> ModifyDBInstanceSecurityGroupsOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::ModifyDBInstanceSecurityGroupsRequest&, ModifyDBInstanceSecurityGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBInstanceSecurityGroupsAsyncHandler;
@@ -364,6 +374,15 @@ namespace TencentCloud
                 CreateAccountsOutcome CreateAccounts(const Model::CreateAccountsRequest &request);
                 void CreateAccountsAsync(const Model::CreateAccountsRequest& request, const CreateAccountsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateAccountsOutcomeCallable CreateAccountsCallable(const Model::CreateAccountsRequest& request);
+
+                /**
+                 *为集群创建手动备份
+                 * @param req CreateBackupRequest
+                 * @return CreateBackupOutcome
+                 */
+                CreateBackupOutcome CreateBackup(const Model::CreateBackupRequest &request);
+                void CreateBackupAsync(const Model::CreateBackupRequest& request, const CreateBackupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateBackupOutcomeCallable CreateBackupCallable(const Model::CreateBackupRequest& request);
 
                 /**
                  *创建集群
@@ -706,6 +725,15 @@ namespace TencentCloud
                 ModifyClusterSlaveZoneOutcome ModifyClusterSlaveZone(const Model::ModifyClusterSlaveZoneRequest &request);
                 void ModifyClusterSlaveZoneAsync(const Model::ModifyClusterSlaveZoneRequest& request, const ModifyClusterSlaveZoneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyClusterSlaveZoneOutcomeCallable ModifyClusterSlaveZoneCallable(const Model::ModifyClusterSlaveZoneRequest& request);
+
+                /**
+                 *升级预付费存储
+                 * @param req ModifyClusterStorageRequest
+                 * @return ModifyClusterStorageOutcome
+                 */
+                ModifyClusterStorageOutcome ModifyClusterStorage(const Model::ModifyClusterStorageRequest &request);
+                void ModifyClusterStorageAsync(const Model::ModifyClusterStorageRequest& request, const ModifyClusterStorageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyClusterStorageOutcomeCallable ModifyClusterStorageCallable(const Model::ModifyClusterStorageRequest& request);
 
                 /**
                  *本接口(ModifyDBInstanceSecurityGroups)用于修改实例绑定的安全组。

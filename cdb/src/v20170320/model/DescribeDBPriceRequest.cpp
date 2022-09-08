@@ -34,7 +34,8 @@ DescribeDBPriceRequest::DescribeDBPriceRequest() :
     m_deviceTypeHasBeenSet(false),
     m_instanceNodesHasBeenSet(false),
     m_cpuHasBeenSet(false),
-    m_instanceIdHasBeenSet(false)
+    m_instanceIdHasBeenSet(false),
+    m_ladderHasBeenSet(false)
 {
 }
 
@@ -139,6 +140,14 @@ string DescribeDBPriceRequest::ToJsonString() const
         string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ladderHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Ladder";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_ladder, allocator);
     }
 
 
@@ -339,6 +348,22 @@ void DescribeDBPriceRequest::SetInstanceId(const string& _instanceId)
 bool DescribeDBPriceRequest::InstanceIdHasBeenSet() const
 {
     return m_instanceIdHasBeenSet;
+}
+
+uint64_t DescribeDBPriceRequest::GetLadder() const
+{
+    return m_ladder;
+}
+
+void DescribeDBPriceRequest::SetLadder(const uint64_t& _ladder)
+{
+    m_ladder = _ladder;
+    m_ladderHasBeenSet = true;
+}
+
+bool DescribeDBPriceRequest::LadderHasBeenSet() const
+{
+    return m_ladderHasBeenSet;
 }
 
 

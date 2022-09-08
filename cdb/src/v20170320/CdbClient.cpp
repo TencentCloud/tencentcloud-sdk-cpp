@@ -1889,6 +1889,49 @@ CdbClient::DescribeCDBProxyOutcomeCallable CdbClient::DescribeCDBProxyCallable(c
     return task->get_future();
 }
 
+CdbClient::DescribeCdbZoneConfigOutcome CdbClient::DescribeCdbZoneConfig(const DescribeCdbZoneConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCdbZoneConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCdbZoneConfigResponse rsp = DescribeCdbZoneConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCdbZoneConfigOutcome(rsp);
+        else
+            return DescribeCdbZoneConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCdbZoneConfigOutcome(outcome.GetError());
+    }
+}
+
+void CdbClient::DescribeCdbZoneConfigAsync(const DescribeCdbZoneConfigRequest& request, const DescribeCdbZoneConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCdbZoneConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdbClient::DescribeCdbZoneConfigOutcomeCallable CdbClient::DescribeCdbZoneConfigCallable(const DescribeCdbZoneConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCdbZoneConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCdbZoneConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdbClient::DescribeCloneListOutcome CdbClient::DescribeCloneList(const DescribeCloneListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeCloneList");

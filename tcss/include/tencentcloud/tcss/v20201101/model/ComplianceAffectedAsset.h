@@ -272,6 +272,28 @@ RESULT_PASSED: 通过
                      */
                     bool ImageTagHasBeenSet() const;
 
+                    /**
+                     * 获取检查项验证信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return VerifyInfo 检查项验证信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetVerifyInfo() const;
+
+                    /**
+                     * 设置检查项验证信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param VerifyInfo 检查项验证信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetVerifyInfo(const std::string& _verifyInfo);
+
+                    /**
+                     * 判断参数 VerifyInfo 是否已赋值
+                     * @return VerifyInfo 是否已赋值
+                     */
+                    bool VerifyInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -343,6 +365,13 @@ RESULT_PASSED: 通过
                      */
                     std::string m_imageTag;
                     bool m_imageTagHasBeenSet;
+
+                    /**
+                     * 检查项验证信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_verifyInfo;
+                    bool m_verifyInfoHasBeenSet;
 
                 };
             }

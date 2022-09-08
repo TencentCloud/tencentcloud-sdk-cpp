@@ -242,6 +242,24 @@ namespace TencentCloud
                      */
                     bool GridDaemonHasBeenSet() const;
 
+                    /**
+                     * 获取边缘集群开启自动升配
+                     * @return AutoUpgradeClusterLevel 边缘集群开启自动升配
+                     */
+                    bool GetAutoUpgradeClusterLevel() const;
+
+                    /**
+                     * 设置边缘集群开启自动升配
+                     * @param AutoUpgradeClusterLevel 边缘集群开启自动升配
+                     */
+                    void SetAutoUpgradeClusterLevel(const bool& _autoUpgradeClusterLevel);
+
+                    /**
+                     * 判断参数 AutoUpgradeClusterLevel 是否已赋值
+                     * @return AutoUpgradeClusterLevel 是否已赋值
+                     */
+                    bool AutoUpgradeClusterLevelHasBeenSet() const;
+
                 private:
 
                     /**
@@ -309,6 +327,12 @@ namespace TencentCloud
                      */
                     std::string m_gridDaemon;
                     bool m_gridDaemonHasBeenSet;
+
+                    /**
+                     * 边缘集群开启自动升配
+                     */
+                    bool m_autoUpgradeClusterLevel;
+                    bool m_autoUpgradeClusterLevelHasBeenSet;
 
                 };
             }

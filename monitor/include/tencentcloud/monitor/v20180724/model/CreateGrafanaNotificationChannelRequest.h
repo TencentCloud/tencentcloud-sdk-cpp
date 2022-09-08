@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool ChannelNameHasBeenSet() const;
 
                     /**
-                     * 获取组织 ID
-                     * @return OrgId 组织 ID
+                     * 获取默认为1，已废弃，请使用 OrganizationIds
+                     * @return OrgId 默认为1，已废弃，请使用 OrganizationIds
                      */
                     int64_t GetOrgId() const;
 
                     /**
-                     * 设置组织 ID
-                     * @param OrgId 组织 ID
+                     * 设置默认为1，已废弃，请使用 OrganizationIds
+                     * @param OrgId 默认为1，已废弃，请使用 OrganizationIds
                      */
                     void SetOrgId(const int64_t& _orgId);
 
@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool ReceiversHasBeenSet() const;
 
                     /**
-                     * 获取额外组织 ID 数组
-                     * @return ExtraOrgIds 额外组织 ID 数组
+                     * 获取额外组织 ID 数组，已废弃，请使用 OrganizationIds
+                     * @return ExtraOrgIds 额外组织 ID 数组，已废弃，请使用 OrganizationIds
                      */
                     std::vector<std::string> GetExtraOrgIds() const;
 
                     /**
-                     * 设置额外组织 ID 数组
-                     * @param ExtraOrgIds 额外组织 ID 数组
+                     * 设置额外组织 ID 数组，已废弃，请使用 OrganizationIds
+                     * @param ExtraOrgIds 额外组织 ID 数组，已废弃，请使用 OrganizationIds
                      */
                     void SetExtraOrgIds(const std::vector<std::string>& _extraOrgIds);
 
@@ -131,6 +131,24 @@ namespace TencentCloud
                      * @return ExtraOrgIds 是否已赋值
                      */
                     bool ExtraOrgIdsHasBeenSet() const;
+
+                    /**
+                     * 获取生效的所有组织 ID 数组，默认为 ["1"]
+                     * @return OrganizationIds 生效的所有组织 ID 数组，默认为 ["1"]
+                     */
+                    std::vector<std::string> GetOrganizationIds() const;
+
+                    /**
+                     * 设置生效的所有组织 ID 数组，默认为 ["1"]
+                     * @param OrganizationIds 生效的所有组织 ID 数组，默认为 ["1"]
+                     */
+                    void SetOrganizationIds(const std::vector<std::string>& _organizationIds);
+
+                    /**
+                     * 判断参数 OrganizationIds 是否已赋值
+                     * @return OrganizationIds 是否已赋值
+                     */
+                    bool OrganizationIdsHasBeenSet() const;
 
                 private:
 
@@ -147,7 +165,7 @@ namespace TencentCloud
                     bool m_channelNameHasBeenSet;
 
                     /**
-                     * 组织 ID
+                     * 默认为1，已废弃，请使用 OrganizationIds
                      */
                     int64_t m_orgId;
                     bool m_orgIdHasBeenSet;
@@ -159,10 +177,16 @@ namespace TencentCloud
                     bool m_receiversHasBeenSet;
 
                     /**
-                     * 额外组织 ID 数组
+                     * 额外组织 ID 数组，已废弃，请使用 OrganizationIds
                      */
                     std::vector<std::string> m_extraOrgIds;
                     bool m_extraOrgIdsHasBeenSet;
+
+                    /**
+                     * 生效的所有组织 ID 数组，默认为 ["1"]
+                     */
+                    std::vector<std::string> m_organizationIds;
+                    bool m_organizationIdsHasBeenSet;
 
                 };
             }

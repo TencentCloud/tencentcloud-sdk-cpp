@@ -46,14 +46,26 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取导入方式（MODEL/VERSION）
-                     * @return ImportMethod 导入方式（MODEL/VERSION）
+                     * 获取导入方式
+MODEL：导入新模型
+VERSION：导入新版本
+EXIST：导入现有版本
+                     * @return ImportMethod 导入方式
+MODEL：导入新模型
+VERSION：导入新版本
+EXIST：导入现有版本
                      */
                     std::string GetImportMethod() const;
 
                     /**
-                     * 设置导入方式（MODEL/VERSION）
-                     * @param ImportMethod 导入方式（MODEL/VERSION）
+                     * 设置导入方式
+MODEL：导入新模型
+VERSION：导入新版本
+EXIST：导入现有版本
+                     * @param ImportMethod 导入方式
+MODEL：导入新模型
+VERSION：导入新版本
+EXIST：导入现有版本
                      */
                     void SetImportMethod(const std::string& _importMethod);
 
@@ -449,10 +461,67 @@ namespace TencentCloud
                      */
                     bool ReasoningEnvironmentIdHasBeenSet() const;
 
+                    /**
+                     * 获取模型自动清理开关(true/false)，当前版本仅支持SAVED_MODEL格式模型
+                     * @return AutoClean 模型自动清理开关(true/false)，当前版本仅支持SAVED_MODEL格式模型
+                     */
+                    std::string GetAutoClean() const;
+
+                    /**
+                     * 设置模型自动清理开关(true/false)，当前版本仅支持SAVED_MODEL格式模型
+                     * @param AutoClean 模型自动清理开关(true/false)，当前版本仅支持SAVED_MODEL格式模型
+                     */
+                    void SetAutoClean(const std::string& _autoClean);
+
+                    /**
+                     * 判断参数 AutoClean 是否已赋值
+                     * @return AutoClean 是否已赋值
+                     */
+                    bool AutoCleanHasBeenSet() const;
+
+                    /**
+                     * 获取模型数量保留上限(默认值为24个，上限为24，下限为1，步长为1)
+                     * @return MaxReservedModels 模型数量保留上限(默认值为24个，上限为24，下限为1，步长为1)
+                     */
+                    uint64_t GetMaxReservedModels() const;
+
+                    /**
+                     * 设置模型数量保留上限(默认值为24个，上限为24，下限为1，步长为1)
+                     * @param MaxReservedModels 模型数量保留上限(默认值为24个，上限为24，下限为1，步长为1)
+                     */
+                    void SetMaxReservedModels(const uint64_t& _maxReservedModels);
+
+                    /**
+                     * 判断参数 MaxReservedModels 是否已赋值
+                     * @return MaxReservedModels 是否已赋值
+                     */
+                    bool MaxReservedModelsHasBeenSet() const;
+
+                    /**
+                     * 获取模型清理周期(默认值为1分钟，上限为1440，下限为1分钟，步长为1)
+                     * @return ModelCleanPeriod 模型清理周期(默认值为1分钟，上限为1440，下限为1分钟，步长为1)
+                     */
+                    uint64_t GetModelCleanPeriod() const;
+
+                    /**
+                     * 设置模型清理周期(默认值为1分钟，上限为1440，下限为1分钟，步长为1)
+                     * @param ModelCleanPeriod 模型清理周期(默认值为1分钟，上限为1440，下限为1分钟，步长为1)
+                     */
+                    void SetModelCleanPeriod(const uint64_t& _modelCleanPeriod);
+
+                    /**
+                     * 判断参数 ModelCleanPeriod 是否已赋值
+                     * @return ModelCleanPeriod 是否已赋值
+                     */
+                    bool ModelCleanPeriodHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 导入方式（MODEL/VERSION）
+                     * 导入方式
+MODEL：导入新模型
+VERSION：导入新版本
+EXIST：导入现有版本
                      */
                     std::string m_importMethod;
                     bool m_importMethodHasBeenSet;
@@ -584,6 +653,24 @@ namespace TencentCloud
                      */
                     std::string m_reasoningEnvironmentId;
                     bool m_reasoningEnvironmentIdHasBeenSet;
+
+                    /**
+                     * 模型自动清理开关(true/false)，当前版本仅支持SAVED_MODEL格式模型
+                     */
+                    std::string m_autoClean;
+                    bool m_autoCleanHasBeenSet;
+
+                    /**
+                     * 模型数量保留上限(默认值为24个，上限为24，下限为1，步长为1)
+                     */
+                    uint64_t m_maxReservedModels;
+                    bool m_maxReservedModelsHasBeenSet;
+
+                    /**
+                     * 模型清理周期(默认值为1分钟，上限为1440，下限为1分钟，步长为1)
+                     */
+                    uint64_t m_modelCleanPeriod;
+                    bool m_modelCleanPeriodHasBeenSet;
 
                 };
             }

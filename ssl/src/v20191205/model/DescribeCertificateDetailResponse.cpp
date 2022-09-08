@@ -62,7 +62,8 @@ DescribeCertificateDetailResponse::DescribeCertificateDetailResponse() :
     m_encryptCertHasBeenSet(false),
     m_encryptPrivateKeyHasBeenSet(false),
     m_certFingerprintHasBeenSet(false),
-    m_encryptCertFingerprintHasBeenSet(false)
+    m_encryptCertFingerprintHasBeenSet(false),
+    m_encryptAlgorithmHasBeenSet(false)
 {
 }
 
@@ -531,6 +532,16 @@ CoreInternalOutcome DescribeCertificateDetailResponse::Deserialize(const string 
         m_encryptCertFingerprintHasBeenSet = true;
     }
 
+    if (rsp.HasMember("EncryptAlgorithm") && !rsp["EncryptAlgorithm"].IsNull())
+    {
+        if (!rsp["EncryptAlgorithm"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EncryptAlgorithm` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_encryptAlgorithm = string(rsp["EncryptAlgorithm"].GetString());
+        m_encryptAlgorithmHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -867,6 +878,14 @@ string DescribeCertificateDetailResponse::ToJsonString() const
         string key = "EncryptCertFingerprint";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_encryptCertFingerprint.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_encryptAlgorithmHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EncryptAlgorithm";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_encryptAlgorithm.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -1269,6 +1288,16 @@ string DescribeCertificateDetailResponse::GetEncryptCertFingerprint() const
 bool DescribeCertificateDetailResponse::EncryptCertFingerprintHasBeenSet() const
 {
     return m_encryptCertFingerprintHasBeenSet;
+}
+
+string DescribeCertificateDetailResponse::GetEncryptAlgorithm() const
+{
+    return m_encryptAlgorithm;
+}
+
+bool DescribeCertificateDetailResponse::EncryptAlgorithmHasBeenSet() const
+{
+    return m_encryptAlgorithmHasBeenSet;
 }
 
 

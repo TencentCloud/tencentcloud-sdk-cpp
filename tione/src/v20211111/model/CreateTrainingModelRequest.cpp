@@ -44,7 +44,10 @@ CreateTrainingModelRequest::CreateTrainingModelRequest() :
     m_trainingJobVersionHasBeenSet(false),
     m_modelVersionTypeHasBeenSet(false),
     m_modelFormatHasBeenSet(false),
-    m_reasoningEnvironmentIdHasBeenSet(false)
+    m_reasoningEnvironmentIdHasBeenSet(false),
+    m_autoCleanHasBeenSet(false),
+    m_maxReservedModelsHasBeenSet(false),
+    m_modelCleanPeriodHasBeenSet(false)
 {
 }
 
@@ -239,6 +242,30 @@ string CreateTrainingModelRequest::ToJsonString() const
         string key = "ReasoningEnvironmentId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_reasoningEnvironmentId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_autoCleanHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoClean";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_autoClean.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_maxReservedModelsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxReservedModels";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_maxReservedModels, allocator);
+    }
+
+    if (m_modelCleanPeriodHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModelCleanPeriod";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_modelCleanPeriod, allocator);
     }
 
 
@@ -599,6 +626,54 @@ void CreateTrainingModelRequest::SetReasoningEnvironmentId(const string& _reason
 bool CreateTrainingModelRequest::ReasoningEnvironmentIdHasBeenSet() const
 {
     return m_reasoningEnvironmentIdHasBeenSet;
+}
+
+string CreateTrainingModelRequest::GetAutoClean() const
+{
+    return m_autoClean;
+}
+
+void CreateTrainingModelRequest::SetAutoClean(const string& _autoClean)
+{
+    m_autoClean = _autoClean;
+    m_autoCleanHasBeenSet = true;
+}
+
+bool CreateTrainingModelRequest::AutoCleanHasBeenSet() const
+{
+    return m_autoCleanHasBeenSet;
+}
+
+uint64_t CreateTrainingModelRequest::GetMaxReservedModels() const
+{
+    return m_maxReservedModels;
+}
+
+void CreateTrainingModelRequest::SetMaxReservedModels(const uint64_t& _maxReservedModels)
+{
+    m_maxReservedModels = _maxReservedModels;
+    m_maxReservedModelsHasBeenSet = true;
+}
+
+bool CreateTrainingModelRequest::MaxReservedModelsHasBeenSet() const
+{
+    return m_maxReservedModelsHasBeenSet;
+}
+
+uint64_t CreateTrainingModelRequest::GetModelCleanPeriod() const
+{
+    return m_modelCleanPeriod;
+}
+
+void CreateTrainingModelRequest::SetModelCleanPeriod(const uint64_t& _modelCleanPeriod)
+{
+    m_modelCleanPeriod = _modelCleanPeriod;
+    m_modelCleanPeriodHasBeenSet = true;
+}
+
+bool CreateTrainingModelRequest::ModelCleanPeriodHasBeenSet() const
+{
+    return m_modelCleanPeriodHasBeenSet;
 }
 
 

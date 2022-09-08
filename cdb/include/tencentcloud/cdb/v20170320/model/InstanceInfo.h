@@ -862,6 +862,50 @@ namespace TencentCloud
                      */
                     bool TagListHasBeenSet() const;
 
+                    /**
+                     * 获取引擎类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EngineType 引擎类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetEngineType() const;
+
+                    /**
+                     * 设置引擎类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param EngineType 引擎类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetEngineType(const std::string& _engineType);
+
+                    /**
+                     * 判断参数 EngineType 是否已赋值
+                     * @return EngineType 是否已赋值
+                     */
+                    bool EngineTypeHasBeenSet() const;
+
+                    /**
+                     * 获取最大延迟阈值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MaxDelayTime 最大延迟阈值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetMaxDelayTime() const;
+
+                    /**
+                     * 设置最大延迟阈值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param MaxDelayTime 最大延迟阈值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMaxDelayTime(const int64_t& _maxDelayTime);
+
+                    /**
+                     * 判断参数 MaxDelayTime 是否已赋值
+                     * @return MaxDelayTime 是否已赋值
+                     */
+                    bool MaxDelayTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1130,6 +1174,20 @@ namespace TencentCloud
                      */
                     std::vector<TagInfoItem> m_tagList;
                     bool m_tagListHasBeenSet;
+
+                    /**
+                     * 引擎类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_engineType;
+                    bool m_engineTypeHasBeenSet;
+
+                    /**
+                     * 最大延迟阈值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_maxDelayTime;
+                    bool m_maxDelayTimeHasBeenSet;
 
                 };
             }

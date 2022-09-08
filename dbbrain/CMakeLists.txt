@@ -161,6 +161,7 @@ set(dbbrain_public_header_model
   include/tencentcloud/dbbrain/v20210527/model/DescribeSqlFiltersResponse.h
   include/tencentcloud/dbbrain/v20210527/model/CreateDBDiagReportUrlRequest.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeSecurityAuditLogExportTasksResponse.h
+  include/tencentcloud/dbbrain/v20210527/model/DescribeRedisTopKeyPrefixListRequest.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeSqlTemplateResponse.h
   include/tencentcloud/dbbrain/v20210527/model/HealthScoreInfo.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeTopSpaceTableTimeSeriesResponse.h
@@ -201,12 +202,14 @@ set(dbbrain_public_header_model
   include/tencentcloud/dbbrain/v20210527/model/CreateProxySessionKillTaskResponse.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeSlowLogTimeSeriesStatsResponse.h
   include/tencentcloud/dbbrain/v20210527/model/MonitorFloatMetric.h
+  include/tencentcloud/dbbrain/v20210527/model/DescribeRedisTopKeyPrefixListResponse.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeAllUserGroupResponse.h
   include/tencentcloud/dbbrain/v20210527/model/ModifyDiagDBInstanceConfResponse.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeUserSqlAdviceResponse.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeDBSpaceStatusResponse.h
   include/tencentcloud/dbbrain/v20210527/model/SQLFilter.h
   include/tencentcloud/dbbrain/v20210527/model/GroupItem.h
+  include/tencentcloud/dbbrain/v20210527/model/RedisPreKeySpaceData.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeTopSpaceTableTimeSeriesRequest.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeDBDiagReportTasksRequest.h
   include/tencentcloud/dbbrain/v20210527/model/MonitorMetricSeriesData.h
@@ -367,6 +370,7 @@ set(dbbrain_src
   src/v20210527/model/DescribeSqlFiltersResponse.cpp
   src/v20210527/model/CreateDBDiagReportUrlRequest.cpp
   src/v20210527/model/DescribeSecurityAuditLogExportTasksResponse.cpp
+  src/v20210527/model/DescribeRedisTopKeyPrefixListRequest.cpp
   src/v20210527/model/DescribeSqlTemplateResponse.cpp
   src/v20210527/model/HealthScoreInfo.cpp
   src/v20210527/model/DescribeTopSpaceTableTimeSeriesResponse.cpp
@@ -407,12 +411,14 @@ set(dbbrain_src
   src/v20210527/model/CreateProxySessionKillTaskResponse.cpp
   src/v20210527/model/DescribeSlowLogTimeSeriesStatsResponse.cpp
   src/v20210527/model/MonitorFloatMetric.cpp
+  src/v20210527/model/DescribeRedisTopKeyPrefixListResponse.cpp
   src/v20210527/model/DescribeAllUserGroupResponse.cpp
   src/v20210527/model/ModifyDiagDBInstanceConfResponse.cpp
   src/v20210527/model/DescribeUserSqlAdviceResponse.cpp
   src/v20210527/model/DescribeDBSpaceStatusResponse.cpp
   src/v20210527/model/SQLFilter.cpp
   src/v20210527/model/GroupItem.cpp
+  src/v20210527/model/RedisPreKeySpaceData.cpp
   src/v20210527/model/DescribeTopSpaceTableTimeSeriesRequest.cpp
   src/v20210527/model/DescribeDBDiagReportTasksRequest.cpp
   src/v20210527/model/MonitorMetricSeriesData.cpp

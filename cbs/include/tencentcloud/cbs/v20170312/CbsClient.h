@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/cbs/v20170312/model/ApplyDiskBackupRequest.h>
+#include <tencentcloud/cbs/v20170312/model/ApplyDiskBackupResponse.h>
 #include <tencentcloud/cbs/v20170312/model/ApplySnapshotRequest.h>
 #include <tencentcloud/cbs/v20170312/model/ApplySnapshotResponse.h>
 #include <tencentcloud/cbs/v20170312/model/AttachDisksRequest.h>
@@ -39,12 +41,16 @@
 #include <tencentcloud/cbs/v20170312/model/CreateSnapshotResponse.h>
 #include <tencentcloud/cbs/v20170312/model/DeleteAutoSnapshotPoliciesRequest.h>
 #include <tencentcloud/cbs/v20170312/model/DeleteAutoSnapshotPoliciesResponse.h>
+#include <tencentcloud/cbs/v20170312/model/DeleteDiskBackupsRequest.h>
+#include <tencentcloud/cbs/v20170312/model/DeleteDiskBackupsResponse.h>
 #include <tencentcloud/cbs/v20170312/model/DeleteSnapshotsRequest.h>
 #include <tencentcloud/cbs/v20170312/model/DeleteSnapshotsResponse.h>
 #include <tencentcloud/cbs/v20170312/model/DescribeAutoSnapshotPoliciesRequest.h>
 #include <tencentcloud/cbs/v20170312/model/DescribeAutoSnapshotPoliciesResponse.h>
 #include <tencentcloud/cbs/v20170312/model/DescribeDiskAssociatedAutoSnapshotPolicyRequest.h>
 #include <tencentcloud/cbs/v20170312/model/DescribeDiskAssociatedAutoSnapshotPolicyResponse.h>
+#include <tencentcloud/cbs/v20170312/model/DescribeDiskBackupsRequest.h>
+#include <tencentcloud/cbs/v20170312/model/DescribeDiskBackupsResponse.h>
 #include <tencentcloud/cbs/v20170312/model/DescribeDiskConfigQuotaRequest.h>
 #include <tencentcloud/cbs/v20170312/model/DescribeDiskConfigQuotaResponse.h>
 #include <tencentcloud/cbs/v20170312/model/DescribeDiskOperationLogsRequest.h>
@@ -67,6 +73,8 @@
 #include <tencentcloud/cbs/v20170312/model/GetSnapOverviewResponse.h>
 #include <tencentcloud/cbs/v20170312/model/InitializeDisksRequest.h>
 #include <tencentcloud/cbs/v20170312/model/InitializeDisksResponse.h>
+#include <tencentcloud/cbs/v20170312/model/InquirePriceModifyDiskBackupQuotaRequest.h>
+#include <tencentcloud/cbs/v20170312/model/InquirePriceModifyDiskBackupQuotaResponse.h>
 #include <tencentcloud/cbs/v20170312/model/InquirePriceModifyDiskExtraPerformanceRequest.h>
 #include <tencentcloud/cbs/v20170312/model/InquirePriceModifyDiskExtraPerformanceResponse.h>
 #include <tencentcloud/cbs/v20170312/model/InquiryPriceCreateDisksRequest.h>
@@ -79,6 +87,8 @@
 #include <tencentcloud/cbs/v20170312/model/ModifyAutoSnapshotPolicyAttributeResponse.h>
 #include <tencentcloud/cbs/v20170312/model/ModifyDiskAttributesRequest.h>
 #include <tencentcloud/cbs/v20170312/model/ModifyDiskAttributesResponse.h>
+#include <tencentcloud/cbs/v20170312/model/ModifyDiskBackupQuotaRequest.h>
+#include <tencentcloud/cbs/v20170312/model/ModifyDiskBackupQuotaResponse.h>
 #include <tencentcloud/cbs/v20170312/model/ModifyDiskExtraPerformanceRequest.h>
 #include <tencentcloud/cbs/v20170312/model/ModifyDiskExtraPerformanceResponse.h>
 #include <tencentcloud/cbs/v20170312/model/ModifyDisksChargeTypeRequest.h>
@@ -111,6 +121,9 @@ namespace TencentCloud
                 CbsClient(const Credential &credential, const std::string &region);
                 CbsClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::ApplyDiskBackupResponse> ApplyDiskBackupOutcome;
+                typedef std::future<ApplyDiskBackupOutcome> ApplyDiskBackupOutcomeCallable;
+                typedef std::function<void(const CbsClient*, const Model::ApplyDiskBackupRequest&, ApplyDiskBackupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ApplyDiskBackupAsyncHandler;
                 typedef Outcome<Core::Error, Model::ApplySnapshotResponse> ApplySnapshotOutcome;
                 typedef std::future<ApplySnapshotOutcome> ApplySnapshotOutcomeCallable;
                 typedef std::function<void(const CbsClient*, const Model::ApplySnapshotRequest&, ApplySnapshotOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ApplySnapshotAsyncHandler;
@@ -135,6 +148,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteAutoSnapshotPoliciesResponse> DeleteAutoSnapshotPoliciesOutcome;
                 typedef std::future<DeleteAutoSnapshotPoliciesOutcome> DeleteAutoSnapshotPoliciesOutcomeCallable;
                 typedef std::function<void(const CbsClient*, const Model::DeleteAutoSnapshotPoliciesRequest&, DeleteAutoSnapshotPoliciesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAutoSnapshotPoliciesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteDiskBackupsResponse> DeleteDiskBackupsOutcome;
+                typedef std::future<DeleteDiskBackupsOutcome> DeleteDiskBackupsOutcomeCallable;
+                typedef std::function<void(const CbsClient*, const Model::DeleteDiskBackupsRequest&, DeleteDiskBackupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDiskBackupsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteSnapshotsResponse> DeleteSnapshotsOutcome;
                 typedef std::future<DeleteSnapshotsOutcome> DeleteSnapshotsOutcomeCallable;
                 typedef std::function<void(const CbsClient*, const Model::DeleteSnapshotsRequest&, DeleteSnapshotsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSnapshotsAsyncHandler;
@@ -144,6 +160,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDiskAssociatedAutoSnapshotPolicyResponse> DescribeDiskAssociatedAutoSnapshotPolicyOutcome;
                 typedef std::future<DescribeDiskAssociatedAutoSnapshotPolicyOutcome> DescribeDiskAssociatedAutoSnapshotPolicyOutcomeCallable;
                 typedef std::function<void(const CbsClient*, const Model::DescribeDiskAssociatedAutoSnapshotPolicyRequest&, DescribeDiskAssociatedAutoSnapshotPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDiskAssociatedAutoSnapshotPolicyAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDiskBackupsResponse> DescribeDiskBackupsOutcome;
+                typedef std::future<DescribeDiskBackupsOutcome> DescribeDiskBackupsOutcomeCallable;
+                typedef std::function<void(const CbsClient*, const Model::DescribeDiskBackupsRequest&, DescribeDiskBackupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDiskBackupsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDiskConfigQuotaResponse> DescribeDiskConfigQuotaOutcome;
                 typedef std::future<DescribeDiskConfigQuotaOutcome> DescribeDiskConfigQuotaOutcomeCallable;
                 typedef std::function<void(const CbsClient*, const Model::DescribeDiskConfigQuotaRequest&, DescribeDiskConfigQuotaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDiskConfigQuotaAsyncHandler;
@@ -177,6 +196,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::InitializeDisksResponse> InitializeDisksOutcome;
                 typedef std::future<InitializeDisksOutcome> InitializeDisksOutcomeCallable;
                 typedef std::function<void(const CbsClient*, const Model::InitializeDisksRequest&, InitializeDisksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InitializeDisksAsyncHandler;
+                typedef Outcome<Core::Error, Model::InquirePriceModifyDiskBackupQuotaResponse> InquirePriceModifyDiskBackupQuotaOutcome;
+                typedef std::future<InquirePriceModifyDiskBackupQuotaOutcome> InquirePriceModifyDiskBackupQuotaOutcomeCallable;
+                typedef std::function<void(const CbsClient*, const Model::InquirePriceModifyDiskBackupQuotaRequest&, InquirePriceModifyDiskBackupQuotaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InquirePriceModifyDiskBackupQuotaAsyncHandler;
                 typedef Outcome<Core::Error, Model::InquirePriceModifyDiskExtraPerformanceResponse> InquirePriceModifyDiskExtraPerformanceOutcome;
                 typedef std::future<InquirePriceModifyDiskExtraPerformanceOutcome> InquirePriceModifyDiskExtraPerformanceOutcomeCallable;
                 typedef std::function<void(const CbsClient*, const Model::InquirePriceModifyDiskExtraPerformanceRequest&, InquirePriceModifyDiskExtraPerformanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InquirePriceModifyDiskExtraPerformanceAsyncHandler;
@@ -195,6 +217,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyDiskAttributesResponse> ModifyDiskAttributesOutcome;
                 typedef std::future<ModifyDiskAttributesOutcome> ModifyDiskAttributesOutcomeCallable;
                 typedef std::function<void(const CbsClient*, const Model::ModifyDiskAttributesRequest&, ModifyDiskAttributesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDiskAttributesAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyDiskBackupQuotaResponse> ModifyDiskBackupQuotaOutcome;
+                typedef std::future<ModifyDiskBackupQuotaOutcome> ModifyDiskBackupQuotaOutcomeCallable;
+                typedef std::function<void(const CbsClient*, const Model::ModifyDiskBackupQuotaRequest&, ModifyDiskBackupQuotaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDiskBackupQuotaAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyDiskExtraPerformanceResponse> ModifyDiskExtraPerformanceOutcome;
                 typedef std::future<ModifyDiskExtraPerformanceOutcome> ModifyDiskExtraPerformanceOutcomeCallable;
                 typedef std::function<void(const CbsClient*, const Model::ModifyDiskExtraPerformanceRequest&, ModifyDiskExtraPerformanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDiskExtraPerformanceAsyncHandler;
@@ -224,6 +249,19 @@ namespace TencentCloud
                 typedef std::function<void(const CbsClient*, const Model::UnbindAutoSnapshotPolicyRequest&, UnbindAutoSnapshotPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UnbindAutoSnapshotPolicyAsyncHandler;
 
 
+
+                /**
+                 *本接口（ApplyDiskBackup）用于回滚备份点到原云硬盘。
+
+* 仅支持回滚到原云硬盘上。对于数据盘备份点，如果您需要复制备份点数据到其它云硬盘上，请先使用 CreateSnapshot 将备份点转换为快照，然后使用 CreateDisks 接口创建新的弹性云硬盘，将快照数据复制到新购云硬盘上。
+* 用于回滚的备份点必须处于NORMAL状态。备份点状态可以通过DescribeDiskBackups接口查询，见输出参数中BackupState字段解释。
+* 如果是弹性云硬盘，则云硬盘必须处于未挂载状态，云硬盘挂载状态可以通过DescribeDisks接口查询，见Attached字段解释；如果是随实例一起购买的非弹性云硬盘，则实例必须处于关机状态，实例状态可以通过DescribeInstancesStatus接口查询。
+                 * @param req ApplyDiskBackupRequest
+                 * @return ApplyDiskBackupOutcome
+                 */
+                ApplyDiskBackupOutcome ApplyDiskBackup(const Model::ApplyDiskBackupRequest &request);
+                void ApplyDiskBackupAsync(const Model::ApplyDiskBackupRequest& request, const ApplyDiskBackupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ApplyDiskBackupOutcomeCallable ApplyDiskBackupCallable(const Model::ApplyDiskBackupRequest& request);
 
                 /**
                  *本接口（ApplySnapshot）用于回滚快照到原云硬盘。
@@ -324,6 +362,15 @@ namespace TencentCloud
                 DeleteAutoSnapshotPoliciesOutcomeCallable DeleteAutoSnapshotPoliciesCallable(const Model::DeleteAutoSnapshotPoliciesRequest& request);
 
                 /**
+                 *批量删除指定的云硬盘备份点。
+                 * @param req DeleteDiskBackupsRequest
+                 * @return DeleteDiskBackupsOutcome
+                 */
+                DeleteDiskBackupsOutcome DeleteDiskBackups(const Model::DeleteDiskBackupsRequest &request);
+                void DeleteDiskBackupsAsync(const Model::DeleteDiskBackupsRequest& request, const DeleteDiskBackupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteDiskBackupsOutcomeCallable DeleteDiskBackupsCallable(const Model::DeleteDiskBackupsRequest& request);
+
+                /**
                  *本接口（DeleteSnapshots）用于删除快照。
 
 * 快照必须处于NORMAL状态，快照状态可以通过[DescribeSnapshots](/document/product/362/15647)接口查询，见输出参数中SnapshotState字段解释。
@@ -356,6 +403,18 @@ namespace TencentCloud
                 DescribeDiskAssociatedAutoSnapshotPolicyOutcome DescribeDiskAssociatedAutoSnapshotPolicy(const Model::DescribeDiskAssociatedAutoSnapshotPolicyRequest &request);
                 void DescribeDiskAssociatedAutoSnapshotPolicyAsync(const Model::DescribeDiskAssociatedAutoSnapshotPolicyRequest& request, const DescribeDiskAssociatedAutoSnapshotPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDiskAssociatedAutoSnapshotPolicyOutcomeCallable DescribeDiskAssociatedAutoSnapshotPolicyCallable(const Model::DescribeDiskAssociatedAutoSnapshotPolicyRequest& request);
+
+                /**
+                 *本接口（DescribeDiskBackups）用于查询备份点的详细信息。
+
+根据备份点ID、创建备份点的云硬盘ID、创建备份点的云硬盘类型等对结果进行过滤，不同条件之间为与(AND)的关系，过滤信息详细请见过滤器Filter。
+如果参数为空，返回当前用户一定数量（Limit所指定的数量，默认为20）的备份点列表。
+                 * @param req DescribeDiskBackupsRequest
+                 * @return DescribeDiskBackupsOutcome
+                 */
+                DescribeDiskBackupsOutcome DescribeDiskBackups(const Model::DescribeDiskBackupsRequest &request);
+                void DescribeDiskBackupsAsync(const Model::DescribeDiskBackupsRequest& request, const DescribeDiskBackupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDiskBackupsOutcomeCallable DescribeDiskBackupsCallable(const Model::DescribeDiskBackupsRequest& request);
 
                 /**
                  *本接口（DescribeDiskConfigQuota）用于查询云硬盘配额。
@@ -478,6 +537,15 @@ namespace TencentCloud
                 InitializeDisksOutcomeCallable InitializeDisksCallable(const Model::InitializeDisksRequest& request);
 
                 /**
+                 *本接口（InquirePricePriceModifyDiskBackupQuota）用于修改云硬盘备份点配额询价。
+                 * @param req InquirePriceModifyDiskBackupQuotaRequest
+                 * @return InquirePriceModifyDiskBackupQuotaOutcome
+                 */
+                InquirePriceModifyDiskBackupQuotaOutcome InquirePriceModifyDiskBackupQuota(const Model::InquirePriceModifyDiskBackupQuotaRequest &request);
+                void InquirePriceModifyDiskBackupQuotaAsync(const Model::InquirePriceModifyDiskBackupQuotaRequest& request, const InquirePriceModifyDiskBackupQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                InquirePriceModifyDiskBackupQuotaOutcomeCallable InquirePriceModifyDiskBackupQuotaCallable(const Model::InquirePriceModifyDiskBackupQuotaRequest& request);
+
+                /**
                  *本接口（InquirePriceModifyDiskExtraPerformance）用于调整云硬盘额外性能询价。
                  * @param req InquirePriceModifyDiskExtraPerformanceRequest
                  * @return InquirePriceModifyDiskExtraPerformanceOutcome
@@ -543,6 +611,15 @@ namespace TencentCloud
                 ModifyDiskAttributesOutcome ModifyDiskAttributes(const Model::ModifyDiskAttributesRequest &request);
                 void ModifyDiskAttributesAsync(const Model::ModifyDiskAttributesRequest& request, const ModifyDiskAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyDiskAttributesOutcomeCallable ModifyDiskAttributesCallable(const Model::ModifyDiskAttributesRequest& request);
+
+                /**
+                 *此接口 (ModifyDiskBackupQuota) 用于修改云硬盘备份点配额。
+                 * @param req ModifyDiskBackupQuotaRequest
+                 * @return ModifyDiskBackupQuotaOutcome
+                 */
+                ModifyDiskBackupQuotaOutcome ModifyDiskBackupQuota(const Model::ModifyDiskBackupQuotaRequest &request);
+                void ModifyDiskBackupQuotaAsync(const Model::ModifyDiskBackupQuotaRequest& request, const ModifyDiskBackupQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDiskBackupQuotaOutcomeCallable ModifyDiskBackupQuotaCallable(const Model::ModifyDiskBackupQuotaRequest& request);
 
                 /**
                  *本接口（ModifyDiskExtraPerformance）用于调整云硬盘额外的性能。

@@ -278,6 +278,72 @@ namespace TencentCloud
                      */
                     bool StatusHasBeenSet() const;
 
+                    /**
+                     * 获取地域区域信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RegionDetail 地域区域信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetRegionDetail() const;
+
+                    /**
+                     * 设置地域区域信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RegionDetail 地域区域信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRegionDetail(const std::string& _regionDetail);
+
+                    /**
+                     * 判断参数 RegionDetail 是否已赋值
+                     * @return RegionDetail 是否已赋值
+                     */
+                    bool RegionDetailHasBeenSet() const;
+
+                    /**
+                     * 获取实例所在可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ZoneZh 实例所在可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetZoneZh() const;
+
+                    /**
+                     * 设置实例所在可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ZoneZh 实例所在可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetZoneZh(const std::string& _zoneZh);
+
+                    /**
+                     * 判断参数 ZoneZh 是否已赋值
+                     * @return ZoneZh 是否已赋值
+                     */
+                    bool ZoneZhHasBeenSet() const;
+
+                    /**
+                     * 获取实例所在可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ZoneZhBak 实例所在可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetZoneZhBak() const;
+
+                    /**
+                     * 设置实例所在可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ZoneZhBak 实例所在可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetZoneZhBak(const std::string& _zoneZhBak);
+
+                    /**
+                     * 判断参数 ZoneZhBak 是否已赋值
+                     * @return ZoneZhBak 是否已赋值
+                     */
+                    bool ZoneZhBakHasBeenSet() const;
+
                 private:
 
                     /**
@@ -355,6 +421,27 @@ namespace TencentCloud
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * 地域区域信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_regionDetail;
+                    bool m_regionDetailHasBeenSet;
+
+                    /**
+                     * 实例所在可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_zoneZh;
+                    bool m_zoneZhHasBeenSet;
+
+                    /**
+                     * 实例所在可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_zoneZhBak;
+                    bool m_zoneZhBakHasBeenSet;
 
                 };
             }

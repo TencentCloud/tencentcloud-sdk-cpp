@@ -52,7 +52,8 @@ Certificates::Certificates() :
     m_deployableHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_isIgnoreHasBeenSet(false),
-    m_isSMHasBeenSet(false)
+    m_isSMHasBeenSet(false),
+    m_encryptAlgorithmHasBeenSet(false)
 {
 }
 
@@ -411,6 +412,16 @@ CoreInternalOutcome Certificates::Deserialize(const rapidjson::Value &value)
         m_isSMHasBeenSet = true;
     }
 
+    if (value.HasMember("EncryptAlgorithm") && !value["EncryptAlgorithm"].IsNull())
+    {
+        if (!value["EncryptAlgorithm"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Certificates.EncryptAlgorithm` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_encryptAlgorithm = string(value["EncryptAlgorithm"].GetString());
+        m_encryptAlgorithmHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -691,6 +702,14 @@ void Certificates::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "IsSM";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isSM, allocator);
+    }
+
+    if (m_encryptAlgorithmHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EncryptAlgorithm";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_encryptAlgorithm.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1206,5 +1225,21 @@ void Certificates::SetIsSM(const bool& _isSM)
 bool Certificates::IsSMHasBeenSet() const
 {
     return m_isSMHasBeenSet;
+}
+
+string Certificates::GetEncryptAlgorithm() const
+{
+    return m_encryptAlgorithm;
+}
+
+void Certificates::SetEncryptAlgorithm(const string& _encryptAlgorithm)
+{
+    m_encryptAlgorithm = _encryptAlgorithm;
+    m_encryptAlgorithmHasBeenSet = true;
+}
+
+bool Certificates::EncryptAlgorithmHasBeenSet() const
+{
+    return m_encryptAlgorithmHasBeenSet;
 }
 

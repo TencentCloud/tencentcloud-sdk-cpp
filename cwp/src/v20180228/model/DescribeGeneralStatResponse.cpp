@@ -36,7 +36,8 @@ DescribeGeneralStatResponse::DescribeGeneralStatResponse() :
     m_shutdownHasBeenSet(false),
     m_offlineHasBeenSet(false),
     m_flagshipMachineCntHasBeenSet(false),
-    m_protectDaysHasBeenSet(false)
+    m_protectDaysHasBeenSet(false),
+    m_addedOnTheFifteenHasBeenSet(false)
 {
 }
 
@@ -204,6 +205,16 @@ CoreInternalOutcome DescribeGeneralStatResponse::Deserialize(const string &paylo
         m_protectDaysHasBeenSet = true;
     }
 
+    if (rsp.HasMember("AddedOnTheFifteen") && !rsp["AddedOnTheFifteen"].IsNull())
+    {
+        if (!rsp["AddedOnTheFifteen"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AddedOnTheFifteen` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_addedOnTheFifteen = rsp["AddedOnTheFifteen"].GetUint64();
+        m_addedOnTheFifteenHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -316,6 +327,14 @@ string DescribeGeneralStatResponse::ToJsonString() const
         string key = "ProtectDays";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_protectDays, allocator);
+    }
+
+    if (m_addedOnTheFifteenHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AddedOnTheFifteen";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_addedOnTheFifteen, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -458,6 +477,16 @@ uint64_t DescribeGeneralStatResponse::GetProtectDays() const
 bool DescribeGeneralStatResponse::ProtectDaysHasBeenSet() const
 {
     return m_protectDaysHasBeenSet;
+}
+
+uint64_t DescribeGeneralStatResponse::GetAddedOnTheFifteen() const
+{
+    return m_addedOnTheFifteen;
+}
+
+bool DescribeGeneralStatResponse::AddedOnTheFifteenHasBeenSet() const
+{
+    return m_addedOnTheFifteenHasBeenSet;
 }
 
 

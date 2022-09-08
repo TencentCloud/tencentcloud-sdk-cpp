@@ -29,7 +29,8 @@ ComplianceAffectedAsset::ComplianceAffectedAsset() :
     m_lastCheckTimeHasBeenSet(false),
     m_checkResultHasBeenSet(false),
     m_hostIPHasBeenSet(false),
-    m_imageTagHasBeenSet(false)
+    m_imageTagHasBeenSet(false),
+    m_verifyInfoHasBeenSet(false)
 {
 }
 
@@ -128,6 +129,16 @@ CoreInternalOutcome ComplianceAffectedAsset::Deserialize(const rapidjson::Value 
         m_imageTagHasBeenSet = true;
     }
 
+    if (value.HasMember("VerifyInfo") && !value["VerifyInfo"].IsNull())
+    {
+        if (!value["VerifyInfo"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ComplianceAffectedAsset.VerifyInfo` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_verifyInfo = string(value["VerifyInfo"].GetString());
+        m_verifyInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -205,6 +216,14 @@ void ComplianceAffectedAsset::ToJsonObject(rapidjson::Value &value, rapidjson::D
         string key = "ImageTag";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_imageTag.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_verifyInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VerifyInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_verifyInfo.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -352,5 +371,21 @@ void ComplianceAffectedAsset::SetImageTag(const string& _imageTag)
 bool ComplianceAffectedAsset::ImageTagHasBeenSet() const
 {
     return m_imageTagHasBeenSet;
+}
+
+string ComplianceAffectedAsset::GetVerifyInfo() const
+{
+    return m_verifyInfo;
+}
+
+void ComplianceAffectedAsset::SetVerifyInfo(const string& _verifyInfo)
+{
+    m_verifyInfo = _verifyInfo;
+    m_verifyInfoHasBeenSet = true;
+}
+
+bool ComplianceAffectedAsset::VerifyInfoHasBeenSet() const
+{
+    return m_verifyInfoHasBeenSet;
 }
 

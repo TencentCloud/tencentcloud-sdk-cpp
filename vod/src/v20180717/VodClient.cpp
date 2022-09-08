@@ -5458,6 +5458,49 @@ VodClient::RestoreMediaOutcomeCallable VodClient::RestoreMediaCallable(const Res
     return task->get_future();
 }
 
+VodClient::ReviewAudioVideoOutcome VodClient::ReviewAudioVideo(const ReviewAudioVideoRequest &request)
+{
+    auto outcome = MakeRequest(request, "ReviewAudioVideo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ReviewAudioVideoResponse rsp = ReviewAudioVideoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ReviewAudioVideoOutcome(rsp);
+        else
+            return ReviewAudioVideoOutcome(o.GetError());
+    }
+    else
+    {
+        return ReviewAudioVideoOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::ReviewAudioVideoAsync(const ReviewAudioVideoRequest& request, const ReviewAudioVideoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ReviewAudioVideo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VodClient::ReviewAudioVideoOutcomeCallable VodClient::ReviewAudioVideoCallable(const ReviewAudioVideoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ReviewAudioVideoOutcome()>>(
+        [this, request]()
+        {
+            return this->ReviewAudioVideo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VodClient::ReviewImageOutcome VodClient::ReviewImage(const ReviewImageRequest &request)
 {
     auto outcome = MakeRequest(request, "ReviewImage");

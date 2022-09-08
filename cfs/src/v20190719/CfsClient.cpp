@@ -40,6 +40,92 @@ CfsClient::CfsClient(const Credential &credential, const string &region, const C
 }
 
 
+CfsClient::BindAutoSnapshotPolicyOutcome CfsClient::BindAutoSnapshotPolicy(const BindAutoSnapshotPolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "BindAutoSnapshotPolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        BindAutoSnapshotPolicyResponse rsp = BindAutoSnapshotPolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return BindAutoSnapshotPolicyOutcome(rsp);
+        else
+            return BindAutoSnapshotPolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return BindAutoSnapshotPolicyOutcome(outcome.GetError());
+    }
+}
+
+void CfsClient::BindAutoSnapshotPolicyAsync(const BindAutoSnapshotPolicyRequest& request, const BindAutoSnapshotPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->BindAutoSnapshotPolicy(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CfsClient::BindAutoSnapshotPolicyOutcomeCallable CfsClient::BindAutoSnapshotPolicyCallable(const BindAutoSnapshotPolicyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<BindAutoSnapshotPolicyOutcome()>>(
+        [this, request]()
+        {
+            return this->BindAutoSnapshotPolicy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CfsClient::CreateAutoSnapshotPolicyOutcome CfsClient::CreateAutoSnapshotPolicy(const CreateAutoSnapshotPolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAutoSnapshotPolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAutoSnapshotPolicyResponse rsp = CreateAutoSnapshotPolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAutoSnapshotPolicyOutcome(rsp);
+        else
+            return CreateAutoSnapshotPolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAutoSnapshotPolicyOutcome(outcome.GetError());
+    }
+}
+
+void CfsClient::CreateAutoSnapshotPolicyAsync(const CreateAutoSnapshotPolicyRequest& request, const CreateAutoSnapshotPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateAutoSnapshotPolicy(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CfsClient::CreateAutoSnapshotPolicyOutcomeCallable CfsClient::CreateAutoSnapshotPolicyCallable(const CreateAutoSnapshotPolicyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateAutoSnapshotPolicyOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateAutoSnapshotPolicy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CfsClient::CreateCfsFileSystemOutcome CfsClient::CreateCfsFileSystem(const CreateCfsFileSystemRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateCfsFileSystem");
@@ -162,6 +248,92 @@ CfsClient::CreateCfsRuleOutcomeCallable CfsClient::CreateCfsRuleCallable(const C
         [this, request]()
         {
             return this->CreateCfsRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CfsClient::CreateCfsSnapshotOutcome CfsClient::CreateCfsSnapshot(const CreateCfsSnapshotRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateCfsSnapshot");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateCfsSnapshotResponse rsp = CreateCfsSnapshotResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateCfsSnapshotOutcome(rsp);
+        else
+            return CreateCfsSnapshotOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateCfsSnapshotOutcome(outcome.GetError());
+    }
+}
+
+void CfsClient::CreateCfsSnapshotAsync(const CreateCfsSnapshotRequest& request, const CreateCfsSnapshotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateCfsSnapshot(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CfsClient::CreateCfsSnapshotOutcomeCallable CfsClient::CreateCfsSnapshotCallable(const CreateCfsSnapshotRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateCfsSnapshotOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateCfsSnapshot(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CfsClient::DeleteAutoSnapshotPolicyOutcome CfsClient::DeleteAutoSnapshotPolicy(const DeleteAutoSnapshotPolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteAutoSnapshotPolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteAutoSnapshotPolicyResponse rsp = DeleteAutoSnapshotPolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteAutoSnapshotPolicyOutcome(rsp);
+        else
+            return DeleteAutoSnapshotPolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteAutoSnapshotPolicyOutcome(outcome.GetError());
+    }
+}
+
+void CfsClient::DeleteAutoSnapshotPolicyAsync(const DeleteAutoSnapshotPolicyRequest& request, const DeleteAutoSnapshotPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteAutoSnapshotPolicy(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CfsClient::DeleteAutoSnapshotPolicyOutcomeCallable CfsClient::DeleteAutoSnapshotPolicyCallable(const DeleteAutoSnapshotPolicyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteAutoSnapshotPolicyOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteAutoSnapshotPolicy(request);
         }
     );
 
@@ -298,6 +470,49 @@ CfsClient::DeleteCfsRuleOutcomeCallable CfsClient::DeleteCfsRuleCallable(const D
     return task->get_future();
 }
 
+CfsClient::DeleteCfsSnapshotOutcome CfsClient::DeleteCfsSnapshot(const DeleteCfsSnapshotRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteCfsSnapshot");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteCfsSnapshotResponse rsp = DeleteCfsSnapshotResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteCfsSnapshotOutcome(rsp);
+        else
+            return DeleteCfsSnapshotOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteCfsSnapshotOutcome(outcome.GetError());
+    }
+}
+
+void CfsClient::DeleteCfsSnapshotAsync(const DeleteCfsSnapshotRequest& request, const DeleteCfsSnapshotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteCfsSnapshot(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CfsClient::DeleteCfsSnapshotOutcomeCallable CfsClient::DeleteCfsSnapshotCallable(const DeleteCfsSnapshotRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteCfsSnapshotOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteCfsSnapshot(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CfsClient::DeleteMountTargetOutcome CfsClient::DeleteMountTarget(const DeleteMountTargetRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteMountTarget");
@@ -334,6 +549,49 @@ CfsClient::DeleteMountTargetOutcomeCallable CfsClient::DeleteMountTargetCallable
         [this, request]()
         {
             return this->DeleteMountTarget(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CfsClient::DescribeAutoSnapshotPoliciesOutcome CfsClient::DescribeAutoSnapshotPolicies(const DescribeAutoSnapshotPoliciesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAutoSnapshotPolicies");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAutoSnapshotPoliciesResponse rsp = DescribeAutoSnapshotPoliciesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAutoSnapshotPoliciesOutcome(rsp);
+        else
+            return DescribeAutoSnapshotPoliciesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAutoSnapshotPoliciesOutcome(outcome.GetError());
+    }
+}
+
+void CfsClient::DescribeAutoSnapshotPoliciesAsync(const DescribeAutoSnapshotPoliciesRequest& request, const DescribeAutoSnapshotPoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAutoSnapshotPolicies(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CfsClient::DescribeAutoSnapshotPoliciesOutcomeCallable CfsClient::DescribeAutoSnapshotPoliciesCallable(const DescribeAutoSnapshotPoliciesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAutoSnapshotPoliciesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAutoSnapshotPolicies(request);
         }
     );
 
@@ -599,6 +857,92 @@ CfsClient::DescribeCfsServiceStatusOutcomeCallable CfsClient::DescribeCfsService
     return task->get_future();
 }
 
+CfsClient::DescribeCfsSnapshotOverviewOutcome CfsClient::DescribeCfsSnapshotOverview(const DescribeCfsSnapshotOverviewRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCfsSnapshotOverview");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCfsSnapshotOverviewResponse rsp = DescribeCfsSnapshotOverviewResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCfsSnapshotOverviewOutcome(rsp);
+        else
+            return DescribeCfsSnapshotOverviewOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCfsSnapshotOverviewOutcome(outcome.GetError());
+    }
+}
+
+void CfsClient::DescribeCfsSnapshotOverviewAsync(const DescribeCfsSnapshotOverviewRequest& request, const DescribeCfsSnapshotOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCfsSnapshotOverview(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CfsClient::DescribeCfsSnapshotOverviewOutcomeCallable CfsClient::DescribeCfsSnapshotOverviewCallable(const DescribeCfsSnapshotOverviewRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCfsSnapshotOverviewOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCfsSnapshotOverview(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CfsClient::DescribeCfsSnapshotsOutcome CfsClient::DescribeCfsSnapshots(const DescribeCfsSnapshotsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCfsSnapshots");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCfsSnapshotsResponse rsp = DescribeCfsSnapshotsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCfsSnapshotsOutcome(rsp);
+        else
+            return DescribeCfsSnapshotsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCfsSnapshotsOutcome(outcome.GetError());
+    }
+}
+
+void CfsClient::DescribeCfsSnapshotsAsync(const DescribeCfsSnapshotsRequest& request, const DescribeCfsSnapshotsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCfsSnapshots(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CfsClient::DescribeCfsSnapshotsOutcomeCallable CfsClient::DescribeCfsSnapshotsCallable(const DescribeCfsSnapshotsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCfsSnapshotsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCfsSnapshots(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CfsClient::DescribeMountTargetsOutcome CfsClient::DescribeMountTargets(const DescribeMountTargetsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeMountTargets");
@@ -642,6 +986,49 @@ CfsClient::DescribeMountTargetsOutcomeCallable CfsClient::DescribeMountTargetsCa
     return task->get_future();
 }
 
+CfsClient::DescribeSnapshotOperationLogsOutcome CfsClient::DescribeSnapshotOperationLogs(const DescribeSnapshotOperationLogsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSnapshotOperationLogs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSnapshotOperationLogsResponse rsp = DescribeSnapshotOperationLogsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSnapshotOperationLogsOutcome(rsp);
+        else
+            return DescribeSnapshotOperationLogsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSnapshotOperationLogsOutcome(outcome.GetError());
+    }
+}
+
+void CfsClient::DescribeSnapshotOperationLogsAsync(const DescribeSnapshotOperationLogsRequest& request, const DescribeSnapshotOperationLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSnapshotOperationLogs(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CfsClient::DescribeSnapshotOperationLogsOutcomeCallable CfsClient::DescribeSnapshotOperationLogsCallable(const DescribeSnapshotOperationLogsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSnapshotOperationLogsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSnapshotOperationLogs(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CfsClient::SignUpCfsServiceOutcome CfsClient::SignUpCfsService(const SignUpCfsServiceRequest &request)
 {
     auto outcome = MakeRequest(request, "SignUpCfsService");
@@ -678,6 +1065,92 @@ CfsClient::SignUpCfsServiceOutcomeCallable CfsClient::SignUpCfsServiceCallable(c
         [this, request]()
         {
             return this->SignUpCfsService(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CfsClient::UnbindAutoSnapshotPolicyOutcome CfsClient::UnbindAutoSnapshotPolicy(const UnbindAutoSnapshotPolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "UnbindAutoSnapshotPolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UnbindAutoSnapshotPolicyResponse rsp = UnbindAutoSnapshotPolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UnbindAutoSnapshotPolicyOutcome(rsp);
+        else
+            return UnbindAutoSnapshotPolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return UnbindAutoSnapshotPolicyOutcome(outcome.GetError());
+    }
+}
+
+void CfsClient::UnbindAutoSnapshotPolicyAsync(const UnbindAutoSnapshotPolicyRequest& request, const UnbindAutoSnapshotPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UnbindAutoSnapshotPolicy(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CfsClient::UnbindAutoSnapshotPolicyOutcomeCallable CfsClient::UnbindAutoSnapshotPolicyCallable(const UnbindAutoSnapshotPolicyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UnbindAutoSnapshotPolicyOutcome()>>(
+        [this, request]()
+        {
+            return this->UnbindAutoSnapshotPolicy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CfsClient::UpdateAutoSnapshotPolicyOutcome CfsClient::UpdateAutoSnapshotPolicy(const UpdateAutoSnapshotPolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateAutoSnapshotPolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateAutoSnapshotPolicyResponse rsp = UpdateAutoSnapshotPolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateAutoSnapshotPolicyOutcome(rsp);
+        else
+            return UpdateAutoSnapshotPolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateAutoSnapshotPolicyOutcome(outcome.GetError());
+    }
+}
+
+void CfsClient::UpdateAutoSnapshotPolicyAsync(const UpdateAutoSnapshotPolicyRequest& request, const UpdateAutoSnapshotPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateAutoSnapshotPolicy(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CfsClient::UpdateAutoSnapshotPolicyOutcomeCallable CfsClient::UpdateAutoSnapshotPolicyCallable(const UpdateAutoSnapshotPolicyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateAutoSnapshotPolicyOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateAutoSnapshotPolicy(request);
         }
     );
 
@@ -893,6 +1366,49 @@ CfsClient::UpdateCfsRuleOutcomeCallable CfsClient::UpdateCfsRuleCallable(const U
         [this, request]()
         {
             return this->UpdateCfsRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CfsClient::UpdateCfsSnapshotAttributeOutcome CfsClient::UpdateCfsSnapshotAttribute(const UpdateCfsSnapshotAttributeRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateCfsSnapshotAttribute");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateCfsSnapshotAttributeResponse rsp = UpdateCfsSnapshotAttributeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateCfsSnapshotAttributeOutcome(rsp);
+        else
+            return UpdateCfsSnapshotAttributeOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateCfsSnapshotAttributeOutcome(outcome.GetError());
+    }
+}
+
+void CfsClient::UpdateCfsSnapshotAttributeAsync(const UpdateCfsSnapshotAttributeRequest& request, const UpdateCfsSnapshotAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateCfsSnapshotAttribute(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CfsClient::UpdateCfsSnapshotAttributeOutcomeCallable CfsClient::UpdateCfsSnapshotAttributeCallable(const UpdateCfsSnapshotAttributeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateCfsSnapshotAttributeOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateCfsSnapshotAttribute(request);
         }
     );
 

@@ -874,6 +874,60 @@ namespace TencentCloud
                      */
                     bool EnableMetricsHasBeenSet() const;
 
+                    /**
+                     * 获取镜像部署时，选择的tcr实例id
+                     * @return TcrInstanceId 镜像部署时，选择的tcr实例id
+                     */
+                    std::string GetTcrInstanceId() const;
+
+                    /**
+                     * 设置镜像部署时，选择的tcr实例id
+                     * @param TcrInstanceId 镜像部署时，选择的tcr实例id
+                     */
+                    void SetTcrInstanceId(const std::string& _tcrInstanceId);
+
+                    /**
+                     * 判断参数 TcrInstanceId 是否已赋值
+                     * @return TcrInstanceId 是否已赋值
+                     */
+                    bool TcrInstanceIdHasBeenSet() const;
+
+                    /**
+                     * 获取镜像部署时，选择的镜像服务器地址
+                     * @return RepoServer 镜像部署时，选择的镜像服务器地址
+                     */
+                    std::string GetRepoServer() const;
+
+                    /**
+                     * 设置镜像部署时，选择的镜像服务器地址
+                     * @param RepoServer 镜像部署时，选择的镜像服务器地址
+                     */
+                    void SetRepoServer(const std::string& _repoServer);
+
+                    /**
+                     * 判断参数 RepoServer 是否已赋值
+                     * @return RepoServer 是否已赋值
+                     */
+                    bool RepoServerHasBeenSet() const;
+
+                    /**
+                     * 获取镜像部署时，仓库类型：0：个人仓库；1：企业版；2：公共仓库；3：tem托管仓库；4：demo仓库
+                     * @return RepoType 镜像部署时，仓库类型：0：个人仓库；1：企业版；2：公共仓库；3：tem托管仓库；4：demo仓库
+                     */
+                    int64_t GetRepoType() const;
+
+                    /**
+                     * 设置镜像部署时，仓库类型：0：个人仓库；1：企业版；2：公共仓库；3：tem托管仓库；4：demo仓库
+                     * @param RepoType 镜像部署时，仓库类型：0：个人仓库；1：企业版；2：公共仓库；3：tem托管仓库；4：demo仓库
+                     */
+                    void SetRepoType(const int64_t& _repoType);
+
+                    /**
+                     * 判断参数 RepoType 是否已赋值
+                     * @return RepoType 是否已赋值
+                     */
+                    bool RepoTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1143,6 +1197,24 @@ namespace TencentCloud
                      */
                     int64_t m_enableMetrics;
                     bool m_enableMetricsHasBeenSet;
+
+                    /**
+                     * 镜像部署时，选择的tcr实例id
+                     */
+                    std::string m_tcrInstanceId;
+                    bool m_tcrInstanceIdHasBeenSet;
+
+                    /**
+                     * 镜像部署时，选择的镜像服务器地址
+                     */
+                    std::string m_repoServer;
+                    bool m_repoServerHasBeenSet;
+
+                    /**
+                     * 镜像部署时，仓库类型：0：个人仓库；1：企业版；2：公共仓库；3：tem托管仓库；4：demo仓库
+                     */
+                    int64_t m_repoType;
+                    bool m_repoTypeHasBeenSet;
 
                 };
             }

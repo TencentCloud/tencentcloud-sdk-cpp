@@ -32,7 +32,10 @@ NatInstanceInfo::NatInstanceInfo() :
     m_eipAddressHasBeenSet(false),
     m_vpcIpHasBeenSet(false),
     m_subnetsHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_regionDetailHasBeenSet(false),
+    m_zoneZhHasBeenSet(false),
+    m_zoneZhBakHasBeenSet(false)
 {
 }
 
@@ -170,6 +173,36 @@ CoreInternalOutcome NatInstanceInfo::Deserialize(const rapidjson::Value &value)
         m_statusHasBeenSet = true;
     }
 
+    if (value.HasMember("RegionDetail") && !value["RegionDetail"].IsNull())
+    {
+        if (!value["RegionDetail"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NatInstanceInfo.RegionDetail` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_regionDetail = string(value["RegionDetail"].GetString());
+        m_regionDetailHasBeenSet = true;
+    }
+
+    if (value.HasMember("ZoneZh") && !value["ZoneZh"].IsNull())
+    {
+        if (!value["ZoneZh"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NatInstanceInfo.ZoneZh` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_zoneZh = string(value["ZoneZh"].GetString());
+        m_zoneZhHasBeenSet = true;
+    }
+
+    if (value.HasMember("ZoneZhBak") && !value["ZoneZhBak"].IsNull())
+    {
+        if (!value["ZoneZhBak"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NatInstanceInfo.ZoneZhBak` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_zoneZhBak = string(value["ZoneZhBak"].GetString());
+        m_zoneZhBakHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -286,6 +319,30 @@ void NatInstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_status, allocator);
+    }
+
+    if (m_regionDetailHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RegionDetail";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_regionDetail.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_zoneZhHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ZoneZh";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_zoneZh.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_zoneZhBakHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ZoneZhBak";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_zoneZhBak.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -481,5 +538,53 @@ void NatInstanceInfo::SetStatus(const int64_t& _status)
 bool NatInstanceInfo::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+string NatInstanceInfo::GetRegionDetail() const
+{
+    return m_regionDetail;
+}
+
+void NatInstanceInfo::SetRegionDetail(const string& _regionDetail)
+{
+    m_regionDetail = _regionDetail;
+    m_regionDetailHasBeenSet = true;
+}
+
+bool NatInstanceInfo::RegionDetailHasBeenSet() const
+{
+    return m_regionDetailHasBeenSet;
+}
+
+string NatInstanceInfo::GetZoneZh() const
+{
+    return m_zoneZh;
+}
+
+void NatInstanceInfo::SetZoneZh(const string& _zoneZh)
+{
+    m_zoneZh = _zoneZh;
+    m_zoneZhHasBeenSet = true;
+}
+
+bool NatInstanceInfo::ZoneZhHasBeenSet() const
+{
+    return m_zoneZhHasBeenSet;
+}
+
+string NatInstanceInfo::GetZoneZhBak() const
+{
+    return m_zoneZhBak;
+}
+
+void NatInstanceInfo::SetZoneZhBak(const string& _zoneZhBak)
+{
+    m_zoneZhBak = _zoneZhBak;
+    m_zoneZhBakHasBeenSet = true;
+}
+
+bool NatInstanceInfo::ZoneZhBakHasBeenSet() const
+{
+    return m_zoneZhBakHasBeenSet;
 }
 

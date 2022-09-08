@@ -23,7 +23,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Monitor::V20180724::Model;
 using namespace std;
 
-CreateGrafanaIntegrationResponse::CreateGrafanaIntegrationResponse()
+CreateGrafanaIntegrationResponse::CreateGrafanaIntegrationResponse() :
+    m_integrationIdHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,16 @@ CoreInternalOutcome CreateGrafanaIntegrationResponse::Deserialize(const string &
     }
 
 
+    if (rsp.HasMember("IntegrationId") && !rsp["IntegrationId"].IsNull())
+    {
+        if (!rsp["IntegrationId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `IntegrationId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_integrationId = string(rsp["IntegrationId"].GetString());
+        m_integrationIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +81,14 @@ string CreateGrafanaIntegrationResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_integrationIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IntegrationId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_integrationId.c_str(), allocator).Move(), allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +101,15 @@ string CreateGrafanaIntegrationResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string CreateGrafanaIntegrationResponse::GetIntegrationId() const
+{
+    return m_integrationId;
+}
+
+bool CreateGrafanaIntegrationResponse::IntegrationIdHasBeenSet() const
+{
+    return m_integrationIdHasBeenSet;
+}
 
 

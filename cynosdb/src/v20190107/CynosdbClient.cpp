@@ -255,6 +255,49 @@ CynosdbClient::CreateAccountsOutcomeCallable CynosdbClient::CreateAccountsCallab
     return task->get_future();
 }
 
+CynosdbClient::CreateBackupOutcome CynosdbClient::CreateBackup(const CreateBackupRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateBackup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateBackupResponse rsp = CreateBackupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateBackupOutcome(rsp);
+        else
+            return CreateBackupOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateBackupOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::CreateBackupAsync(const CreateBackupRequest& request, const CreateBackupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateBackup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CynosdbClient::CreateBackupOutcomeCallable CynosdbClient::CreateBackupCallable(const CreateBackupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateBackupOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateBackup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CynosdbClient::CreateClustersOutcome CynosdbClient::CreateClusters(const CreateClustersRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateClusters");
@@ -1882,6 +1925,49 @@ CynosdbClient::ModifyClusterSlaveZoneOutcomeCallable CynosdbClient::ModifyCluste
         [this, request]()
         {
             return this->ModifyClusterSlaveZone(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CynosdbClient::ModifyClusterStorageOutcome CynosdbClient::ModifyClusterStorage(const ModifyClusterStorageRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyClusterStorage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyClusterStorageResponse rsp = ModifyClusterStorageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyClusterStorageOutcome(rsp);
+        else
+            return ModifyClusterStorageOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyClusterStorageOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::ModifyClusterStorageAsync(const ModifyClusterStorageRequest& request, const ModifyClusterStorageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyClusterStorage(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CynosdbClient::ModifyClusterStorageOutcomeCallable CynosdbClient::ModifyClusterStorageCallable(const ModifyClusterStorageRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyClusterStorageOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyClusterStorage(request);
         }
     );
 

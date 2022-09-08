@@ -28,7 +28,9 @@ DescribeTemplatesRequest::DescribeTemplatesRequest() :
     m_contentTypeHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_operatorHasBeenSet(false)
+    m_operatorHasBeenSet(false),
+    m_queryAllComponentsHasBeenSet(false),
+    m_templateNameHasBeenSet(false)
 {
 }
 
@@ -87,6 +89,22 @@ string DescribeTemplatesRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_operator.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_queryAllComponentsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QueryAllComponents";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_queryAllComponents, allocator);
+    }
+
+    if (m_templateNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TemplateName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_templateName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -191,6 +209,38 @@ void DescribeTemplatesRequest::SetOperator(const UserInfo& _operator)
 bool DescribeTemplatesRequest::OperatorHasBeenSet() const
 {
     return m_operatorHasBeenSet;
+}
+
+bool DescribeTemplatesRequest::GetQueryAllComponents() const
+{
+    return m_queryAllComponents;
+}
+
+void DescribeTemplatesRequest::SetQueryAllComponents(const bool& _queryAllComponents)
+{
+    m_queryAllComponents = _queryAllComponents;
+    m_queryAllComponentsHasBeenSet = true;
+}
+
+bool DescribeTemplatesRequest::QueryAllComponentsHasBeenSet() const
+{
+    return m_queryAllComponentsHasBeenSet;
+}
+
+string DescribeTemplatesRequest::GetTemplateName() const
+{
+    return m_templateName;
+}
+
+void DescribeTemplatesRequest::SetTemplateName(const string& _templateName)
+{
+    m_templateName = _templateName;
+    m_templateNameHasBeenSet = true;
+}
+
+bool DescribeTemplatesRequest::TemplateNameHasBeenSet() const
+{
+    return m_templateNameHasBeenSet;
 }
 
 

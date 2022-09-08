@@ -27,7 +27,8 @@ UpdateGrafanaNotificationChannelRequest::UpdateGrafanaNotificationChannelRequest
     m_instanceIdHasBeenSet(false),
     m_channelNameHasBeenSet(false),
     m_receiversHasBeenSet(false),
-    m_extraOrgIdsHasBeenSet(false)
+    m_extraOrgIdsHasBeenSet(false),
+    m_organizationIdsHasBeenSet(false)
 {
 }
 
@@ -83,6 +84,19 @@ string UpdateGrafanaNotificationChannelRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_extraOrgIds.begin(); itr != m_extraOrgIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_organizationIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OrganizationIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_organizationIds.begin(); itr != m_organizationIds.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
@@ -174,6 +188,22 @@ void UpdateGrafanaNotificationChannelRequest::SetExtraOrgIds(const vector<string
 bool UpdateGrafanaNotificationChannelRequest::ExtraOrgIdsHasBeenSet() const
 {
     return m_extraOrgIdsHasBeenSet;
+}
+
+vector<string> UpdateGrafanaNotificationChannelRequest::GetOrganizationIds() const
+{
+    return m_organizationIds;
+}
+
+void UpdateGrafanaNotificationChannelRequest::SetOrganizationIds(const vector<string>& _organizationIds)
+{
+    m_organizationIds = _organizationIds;
+    m_organizationIdsHasBeenSet = true;
+}
+
+bool UpdateGrafanaNotificationChannelRequest::OrganizationIdsHasBeenSet() const
+{
+    return m_organizationIdsHasBeenSet;
 }
 
 

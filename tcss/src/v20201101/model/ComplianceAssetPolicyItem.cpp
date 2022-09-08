@@ -32,7 +32,8 @@ ComplianceAssetPolicyItem::ComplianceAssetPolicyItem() :
     m_checkResultHasBeenSet(false),
     m_whitelistIdHasBeenSet(false),
     m_fixSuggestionHasBeenSet(false),
-    m_lastCheckTimeHasBeenSet(false)
+    m_lastCheckTimeHasBeenSet(false),
+    m_verifyInfoHasBeenSet(false)
 {
 }
 
@@ -161,6 +162,16 @@ CoreInternalOutcome ComplianceAssetPolicyItem::Deserialize(const rapidjson::Valu
         m_lastCheckTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("VerifyInfo") && !value["VerifyInfo"].IsNull())
+    {
+        if (!value["VerifyInfo"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ComplianceAssetPolicyItem.VerifyInfo` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_verifyInfo = string(value["VerifyInfo"].GetString());
+        m_verifyInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -262,6 +273,14 @@ void ComplianceAssetPolicyItem::ToJsonObject(rapidjson::Value &value, rapidjson:
         string key = "LastCheckTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_lastCheckTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_verifyInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VerifyInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_verifyInfo.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -457,5 +476,21 @@ void ComplianceAssetPolicyItem::SetLastCheckTime(const string& _lastCheckTime)
 bool ComplianceAssetPolicyItem::LastCheckTimeHasBeenSet() const
 {
     return m_lastCheckTimeHasBeenSet;
+}
+
+string ComplianceAssetPolicyItem::GetVerifyInfo() const
+{
+    return m_verifyInfo;
+}
+
+void ComplianceAssetPolicyItem::SetVerifyInfo(const string& _verifyInfo)
+{
+    m_verifyInfo = _verifyInfo;
+    m_verifyInfoHasBeenSet = true;
+}
+
+bool ComplianceAssetPolicyItem::VerifyInfoHasBeenSet() const
+{
+    return m_verifyInfoHasBeenSet;
 }
 

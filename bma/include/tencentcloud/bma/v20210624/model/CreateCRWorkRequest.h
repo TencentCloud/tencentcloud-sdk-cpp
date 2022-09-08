@@ -546,6 +546,24 @@ namespace TencentCloud
                      */
                     bool ContentHasBeenSet() const;
 
+                    /**
+                     * 获取x
+                     * @return MonitorEndTime x
+                     */
+                    std::string GetMonitorEndTime() const;
+
+                    /**
+                     * 设置x
+                     * @param MonitorEndTime x
+                     */
+                    void SetMonitorEndTime(const std::string& _monitorEndTime);
+
+                    /**
+                     * 判断参数 MonitorEndTime 是否已赋值
+                     * @return MonitorEndTime 是否已赋值
+                     */
+                    bool MonitorEndTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -715,6 +733,12 @@ namespace TencentCloud
                      */
                     std::string m_content;
                     bool m_contentHasBeenSet;
+
+                    /**
+                     * x
+                     */
+                    std::string m_monitorEndTime;
+                    bool m_monitorEndTimeHasBeenSet;
 
                 };
             }

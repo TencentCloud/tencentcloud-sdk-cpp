@@ -152,6 +152,42 @@ namespace TencentCloud
                      */
                     bool OperatorHasBeenSet() const;
 
+                    /**
+                     * 获取是否返回所有组件信息
+                     * @return QueryAllComponents 是否返回所有组件信息
+                     */
+                    bool GetQueryAllComponents() const;
+
+                    /**
+                     * 设置是否返回所有组件信息
+                     * @param QueryAllComponents 是否返回所有组件信息
+                     */
+                    void SetQueryAllComponents(const bool& _queryAllComponents);
+
+                    /**
+                     * 判断参数 QueryAllComponents 是否已赋值
+                     * @return QueryAllComponents 是否已赋值
+                     */
+                    bool QueryAllComponentsHasBeenSet() const;
+
+                    /**
+                     * 获取模糊搜索模版名称
+                     * @return TemplateName 模糊搜索模版名称
+                     */
+                    std::string GetTemplateName() const;
+
+                    /**
+                     * 设置模糊搜索模版名称
+                     * @param TemplateName 模糊搜索模版名称
+                     */
+                    void SetTemplateName(const std::string& _templateName);
+
+                    /**
+                     * 判断参数 TemplateName 是否已赋值
+                     * @return TemplateName 是否已赋值
+                     */
+                    bool TemplateNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -189,6 +225,18 @@ namespace TencentCloud
                      */
                     UserInfo m_operator;
                     bool m_operatorHasBeenSet;
+
+                    /**
+                     * 是否返回所有组件信息
+                     */
+                    bool m_queryAllComponents;
+                    bool m_queryAllComponentsHasBeenSet;
+
+                    /**
+                     * 模糊搜索模版名称
+                     */
+                    std::string m_templateName;
+                    bool m_templateNameHasBeenSet;
 
                 };
             }

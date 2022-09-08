@@ -594,6 +594,20 @@ namespace TencentCloud
                      */
                     bool EncryptCertFingerprintHasBeenSet() const;
 
+                    /**
+                     * 获取证书算法
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EncryptAlgorithm 证书算法
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetEncryptAlgorithm() const;
+
+                    /**
+                     * 判断参数 EncryptAlgorithm 是否已赋值
+                     * @return EncryptAlgorithm 是否已赋值
+                     */
+                    bool EncryptAlgorithmHasBeenSet() const;
+
                 private:
 
                     /**
@@ -868,6 +882,13 @@ namespace TencentCloud
                      */
                     std::string m_encryptCertFingerprint;
                     bool m_encryptCertFingerprintHasBeenSet;
+
+                    /**
+                     * 证书算法
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_encryptAlgorithm;
+                    bool m_encryptAlgorithmHasBeenSet;
 
                 };
             }

@@ -45,7 +45,8 @@ Machine::Machine() :
     m_machineTypeHasBeenSet(false),
     m_kernelVersionHasBeenSet(false),
     m_protectTypeHasBeenSet(false),
-    m_cloudTagsHasBeenSet(false)
+    m_cloudTagsHasBeenSet(false),
+    m_isAddedOnTheFifteenHasBeenSet(false)
 {
 }
 
@@ -331,6 +332,16 @@ CoreInternalOutcome Machine::Deserialize(const rapidjson::Value &value)
         m_cloudTagsHasBeenSet = true;
     }
 
+    if (value.HasMember("IsAddedOnTheFifteen") && !value["IsAddedOnTheFifteen"].IsNull())
+    {
+        if (!value["IsAddedOnTheFifteen"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Machine.IsAddedOnTheFifteen` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isAddedOnTheFifteen = value["IsAddedOnTheFifteen"].GetUint64();
+        m_isAddedOnTheFifteenHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -551,6 +562,14 @@ void Machine::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_isAddedOnTheFifteenHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsAddedOnTheFifteen";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isAddedOnTheFifteen, allocator);
     }
 
 }
@@ -954,5 +973,21 @@ void Machine::SetCloudTags(const vector<Tags>& _cloudTags)
 bool Machine::CloudTagsHasBeenSet() const
 {
     return m_cloudTagsHasBeenSet;
+}
+
+uint64_t Machine::GetIsAddedOnTheFifteen() const
+{
+    return m_isAddedOnTheFifteen;
+}
+
+void Machine::SetIsAddedOnTheFifteen(const uint64_t& _isAddedOnTheFifteen)
+{
+    m_isAddedOnTheFifteen = _isAddedOnTheFifteen;
+    m_isAddedOnTheFifteenHasBeenSet = true;
+}
+
+bool Machine::IsAddedOnTheFifteenHasBeenSet() const
+{
+    return m_isAddedOnTheFifteenHasBeenSet;
 }
 

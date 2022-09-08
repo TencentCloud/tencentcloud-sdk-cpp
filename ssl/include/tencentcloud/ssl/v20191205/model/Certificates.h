@@ -753,6 +753,28 @@ namespace TencentCloud
                      */
                     bool IsSMHasBeenSet() const;
 
+                    /**
+                     * 获取证书算法
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EncryptAlgorithm 证书算法
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetEncryptAlgorithm() const;
+
+                    /**
+                     * 设置证书算法
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param EncryptAlgorithm 证书算法
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetEncryptAlgorithm(const std::string& _encryptAlgorithm);
+
+                    /**
+                     * 判断参数 EncryptAlgorithm 是否已赋值
+                     * @return EncryptAlgorithm 是否已赋值
+                     */
+                    bool EncryptAlgorithmHasBeenSet() const;
+
                 private:
 
                     /**
@@ -978,6 +1000,13 @@ namespace TencentCloud
                      */
                     bool m_isSM;
                     bool m_isSMHasBeenSet;
+
+                    /**
+                     * 证书算法
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_encryptAlgorithm;
+                    bool m_encryptAlgorithmHasBeenSet;
 
                 };
             }

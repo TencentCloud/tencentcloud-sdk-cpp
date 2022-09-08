@@ -40,6 +40,49 @@ TioneClient::TioneClient(const Credential &credential, const string &region, con
 }
 
 
+TioneClient::CreateBatchTaskOutcome TioneClient::CreateBatchTask(const CreateBatchTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateBatchTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateBatchTaskResponse rsp = CreateBatchTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateBatchTaskOutcome(rsp);
+        else
+            return CreateBatchTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateBatchTaskOutcome(outcome.GetError());
+    }
+}
+
+void TioneClient::CreateBatchTaskAsync(const CreateBatchTaskRequest& request, const CreateBatchTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateBatchTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TioneClient::CreateBatchTaskOutcomeCallable TioneClient::CreateBatchTaskCallable(const CreateBatchTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateBatchTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateBatchTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TioneClient::CreateDatasetOutcome TioneClient::CreateDataset(const CreateDatasetRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateDataset");
@@ -162,6 +205,49 @@ TioneClient::CreateTrainingTaskOutcomeCallable TioneClient::CreateTrainingTaskCa
         [this, request]()
         {
             return this->CreateTrainingTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TioneClient::DeleteBatchTaskOutcome TioneClient::DeleteBatchTask(const DeleteBatchTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteBatchTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteBatchTaskResponse rsp = DeleteBatchTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteBatchTaskOutcome(rsp);
+        else
+            return DeleteBatchTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteBatchTaskOutcome(outcome.GetError());
+    }
+}
+
+void TioneClient::DeleteBatchTaskAsync(const DeleteBatchTaskRequest& request, const DeleteBatchTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteBatchTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TioneClient::DeleteBatchTaskOutcomeCallable TioneClient::DeleteBatchTaskCallable(const DeleteBatchTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteBatchTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteBatchTask(request);
         }
     );
 
@@ -341,6 +427,135 @@ TioneClient::DeleteTrainingTaskOutcomeCallable TioneClient::DeleteTrainingTaskCa
     return task->get_future();
 }
 
+TioneClient::DescribeBatchTaskOutcome TioneClient::DescribeBatchTask(const DescribeBatchTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBatchTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBatchTaskResponse rsp = DescribeBatchTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBatchTaskOutcome(rsp);
+        else
+            return DescribeBatchTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBatchTaskOutcome(outcome.GetError());
+    }
+}
+
+void TioneClient::DescribeBatchTaskAsync(const DescribeBatchTaskRequest& request, const DescribeBatchTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBatchTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TioneClient::DescribeBatchTaskOutcomeCallable TioneClient::DescribeBatchTaskCallable(const DescribeBatchTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBatchTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBatchTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TioneClient::DescribeBatchTaskInstancesOutcome TioneClient::DescribeBatchTaskInstances(const DescribeBatchTaskInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBatchTaskInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBatchTaskInstancesResponse rsp = DescribeBatchTaskInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBatchTaskInstancesOutcome(rsp);
+        else
+            return DescribeBatchTaskInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBatchTaskInstancesOutcome(outcome.GetError());
+    }
+}
+
+void TioneClient::DescribeBatchTaskInstancesAsync(const DescribeBatchTaskInstancesRequest& request, const DescribeBatchTaskInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBatchTaskInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TioneClient::DescribeBatchTaskInstancesOutcomeCallable TioneClient::DescribeBatchTaskInstancesCallable(const DescribeBatchTaskInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBatchTaskInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBatchTaskInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TioneClient::DescribeBatchTasksOutcome TioneClient::DescribeBatchTasks(const DescribeBatchTasksRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBatchTasks");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBatchTasksResponse rsp = DescribeBatchTasksResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBatchTasksOutcome(rsp);
+        else
+            return DescribeBatchTasksOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBatchTasksOutcome(outcome.GetError());
+    }
+}
+
+void TioneClient::DescribeBatchTasksAsync(const DescribeBatchTasksRequest& request, const DescribeBatchTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBatchTasks(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TioneClient::DescribeBatchTasksOutcomeCallable TioneClient::DescribeBatchTasksCallable(const DescribeBatchTasksRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBatchTasksOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBatchTasks(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TioneClient::DescribeBillingResourceGroupsOutcome TioneClient::DescribeBillingResourceGroups(const DescribeBillingResourceGroupsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeBillingResourceGroups");
@@ -377,6 +592,49 @@ TioneClient::DescribeBillingResourceGroupsOutcomeCallable TioneClient::DescribeB
         [this, request]()
         {
             return this->DescribeBillingResourceGroups(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TioneClient::DescribeBillingSpecsOutcome TioneClient::DescribeBillingSpecs(const DescribeBillingSpecsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBillingSpecs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBillingSpecsResponse rsp = DescribeBillingSpecsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBillingSpecsOutcome(rsp);
+        else
+            return DescribeBillingSpecsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBillingSpecsOutcome(outcome.GetError());
+    }
+}
+
+void TioneClient::DescribeBillingSpecsAsync(const DescribeBillingSpecsRequest& request, const DescribeBillingSpecsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBillingSpecs(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TioneClient::DescribeBillingSpecsOutcomeCallable TioneClient::DescribeBillingSpecsCallable(const DescribeBillingSpecsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBillingSpecsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBillingSpecs(request);
         }
     );
 
@@ -1108,6 +1366,49 @@ TioneClient::StartTrainingTaskOutcomeCallable TioneClient::StartTrainingTaskCall
         [this, request]()
         {
             return this->StartTrainingTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TioneClient::StopBatchTaskOutcome TioneClient::StopBatchTask(const StopBatchTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "StopBatchTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        StopBatchTaskResponse rsp = StopBatchTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return StopBatchTaskOutcome(rsp);
+        else
+            return StopBatchTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return StopBatchTaskOutcome(outcome.GetError());
+    }
+}
+
+void TioneClient::StopBatchTaskAsync(const StopBatchTaskRequest& request, const StopBatchTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->StopBatchTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TioneClient::StopBatchTaskOutcomeCallable TioneClient::StopBatchTaskCallable(const StopBatchTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<StopBatchTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->StopBatchTask(request);
         }
     );
 

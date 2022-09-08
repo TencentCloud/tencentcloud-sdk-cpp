@@ -23,12 +23,16 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/tione/v20211111/model/CreateBatchTaskRequest.h>
+#include <tencentcloud/tione/v20211111/model/CreateBatchTaskResponse.h>
 #include <tencentcloud/tione/v20211111/model/CreateDatasetRequest.h>
 #include <tencentcloud/tione/v20211111/model/CreateDatasetResponse.h>
 #include <tencentcloud/tione/v20211111/model/CreateTrainingModelRequest.h>
 #include <tencentcloud/tione/v20211111/model/CreateTrainingModelResponse.h>
 #include <tencentcloud/tione/v20211111/model/CreateTrainingTaskRequest.h>
 #include <tencentcloud/tione/v20211111/model/CreateTrainingTaskResponse.h>
+#include <tencentcloud/tione/v20211111/model/DeleteBatchTaskRequest.h>
+#include <tencentcloud/tione/v20211111/model/DeleteBatchTaskResponse.h>
 #include <tencentcloud/tione/v20211111/model/DeleteDatasetRequest.h>
 #include <tencentcloud/tione/v20211111/model/DeleteDatasetResponse.h>
 #include <tencentcloud/tione/v20211111/model/DeleteTrainingModelRequest.h>
@@ -37,8 +41,16 @@
 #include <tencentcloud/tione/v20211111/model/DeleteTrainingModelVersionResponse.h>
 #include <tencentcloud/tione/v20211111/model/DeleteTrainingTaskRequest.h>
 #include <tencentcloud/tione/v20211111/model/DeleteTrainingTaskResponse.h>
+#include <tencentcloud/tione/v20211111/model/DescribeBatchTaskRequest.h>
+#include <tencentcloud/tione/v20211111/model/DescribeBatchTaskResponse.h>
+#include <tencentcloud/tione/v20211111/model/DescribeBatchTaskInstancesRequest.h>
+#include <tencentcloud/tione/v20211111/model/DescribeBatchTaskInstancesResponse.h>
+#include <tencentcloud/tione/v20211111/model/DescribeBatchTasksRequest.h>
+#include <tencentcloud/tione/v20211111/model/DescribeBatchTasksResponse.h>
 #include <tencentcloud/tione/v20211111/model/DescribeBillingResourceGroupsRequest.h>
 #include <tencentcloud/tione/v20211111/model/DescribeBillingResourceGroupsResponse.h>
+#include <tencentcloud/tione/v20211111/model/DescribeBillingSpecsRequest.h>
+#include <tencentcloud/tione/v20211111/model/DescribeBillingSpecsResponse.h>
 #include <tencentcloud/tione/v20211111/model/DescribeBillingSpecsPriceRequest.h>
 #include <tencentcloud/tione/v20211111/model/DescribeBillingSpecsPriceResponse.h>
 #include <tencentcloud/tione/v20211111/model/DescribeDatasetDetailStructuredRequest.h>
@@ -73,6 +85,8 @@
 #include <tencentcloud/tione/v20211111/model/PushTrainingMetricsResponse.h>
 #include <tencentcloud/tione/v20211111/model/StartTrainingTaskRequest.h>
 #include <tencentcloud/tione/v20211111/model/StartTrainingTaskResponse.h>
+#include <tencentcloud/tione/v20211111/model/StopBatchTaskRequest.h>
+#include <tencentcloud/tione/v20211111/model/StopBatchTaskResponse.h>
 #include <tencentcloud/tione/v20211111/model/StopTrainingTaskRequest.h>
 #include <tencentcloud/tione/v20211111/model/StopTrainingTaskResponse.h>
 
@@ -89,6 +103,9 @@ namespace TencentCloud
                 TioneClient(const Credential &credential, const std::string &region);
                 TioneClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::CreateBatchTaskResponse> CreateBatchTaskOutcome;
+                typedef std::future<CreateBatchTaskOutcome> CreateBatchTaskOutcomeCallable;
+                typedef std::function<void(const TioneClient*, const Model::CreateBatchTaskRequest&, CreateBatchTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateBatchTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateDatasetResponse> CreateDatasetOutcome;
                 typedef std::future<CreateDatasetOutcome> CreateDatasetOutcomeCallable;
                 typedef std::function<void(const TioneClient*, const Model::CreateDatasetRequest&, CreateDatasetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDatasetAsyncHandler;
@@ -98,6 +115,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateTrainingTaskResponse> CreateTrainingTaskOutcome;
                 typedef std::future<CreateTrainingTaskOutcome> CreateTrainingTaskOutcomeCallable;
                 typedef std::function<void(const TioneClient*, const Model::CreateTrainingTaskRequest&, CreateTrainingTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTrainingTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteBatchTaskResponse> DeleteBatchTaskOutcome;
+                typedef std::future<DeleteBatchTaskOutcome> DeleteBatchTaskOutcomeCallable;
+                typedef std::function<void(const TioneClient*, const Model::DeleteBatchTaskRequest&, DeleteBatchTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteBatchTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteDatasetResponse> DeleteDatasetOutcome;
                 typedef std::future<DeleteDatasetOutcome> DeleteDatasetOutcomeCallable;
                 typedef std::function<void(const TioneClient*, const Model::DeleteDatasetRequest&, DeleteDatasetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDatasetAsyncHandler;
@@ -110,9 +130,21 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteTrainingTaskResponse> DeleteTrainingTaskOutcome;
                 typedef std::future<DeleteTrainingTaskOutcome> DeleteTrainingTaskOutcomeCallable;
                 typedef std::function<void(const TioneClient*, const Model::DeleteTrainingTaskRequest&, DeleteTrainingTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTrainingTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeBatchTaskResponse> DescribeBatchTaskOutcome;
+                typedef std::future<DescribeBatchTaskOutcome> DescribeBatchTaskOutcomeCallable;
+                typedef std::function<void(const TioneClient*, const Model::DescribeBatchTaskRequest&, DescribeBatchTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBatchTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeBatchTaskInstancesResponse> DescribeBatchTaskInstancesOutcome;
+                typedef std::future<DescribeBatchTaskInstancesOutcome> DescribeBatchTaskInstancesOutcomeCallable;
+                typedef std::function<void(const TioneClient*, const Model::DescribeBatchTaskInstancesRequest&, DescribeBatchTaskInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBatchTaskInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeBatchTasksResponse> DescribeBatchTasksOutcome;
+                typedef std::future<DescribeBatchTasksOutcome> DescribeBatchTasksOutcomeCallable;
+                typedef std::function<void(const TioneClient*, const Model::DescribeBatchTasksRequest&, DescribeBatchTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBatchTasksAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeBillingResourceGroupsResponse> DescribeBillingResourceGroupsOutcome;
                 typedef std::future<DescribeBillingResourceGroupsOutcome> DescribeBillingResourceGroupsOutcomeCallable;
                 typedef std::function<void(const TioneClient*, const Model::DescribeBillingResourceGroupsRequest&, DescribeBillingResourceGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBillingResourceGroupsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeBillingSpecsResponse> DescribeBillingSpecsOutcome;
+                typedef std::future<DescribeBillingSpecsOutcome> DescribeBillingSpecsOutcomeCallable;
+                typedef std::function<void(const TioneClient*, const Model::DescribeBillingSpecsRequest&, DescribeBillingSpecsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBillingSpecsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeBillingSpecsPriceResponse> DescribeBillingSpecsPriceOutcome;
                 typedef std::future<DescribeBillingSpecsPriceOutcome> DescribeBillingSpecsPriceOutcomeCallable;
                 typedef std::function<void(const TioneClient*, const Model::DescribeBillingSpecsPriceRequest&, DescribeBillingSpecsPriceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBillingSpecsPriceAsyncHandler;
@@ -164,11 +196,23 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::StartTrainingTaskResponse> StartTrainingTaskOutcome;
                 typedef std::future<StartTrainingTaskOutcome> StartTrainingTaskOutcomeCallable;
                 typedef std::function<void(const TioneClient*, const Model::StartTrainingTaskRequest&, StartTrainingTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartTrainingTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::StopBatchTaskResponse> StopBatchTaskOutcome;
+                typedef std::future<StopBatchTaskOutcome> StopBatchTaskOutcomeCallable;
+                typedef std::function<void(const TioneClient*, const Model::StopBatchTaskRequest&, StopBatchTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopBatchTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::StopTrainingTaskResponse> StopTrainingTaskOutcome;
                 typedef std::future<StopTrainingTaskOutcome> StopTrainingTaskOutcomeCallable;
                 typedef std::function<void(const TioneClient*, const Model::StopTrainingTaskRequest&, StopTrainingTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopTrainingTaskAsyncHandler;
 
 
+
+                /**
+                 *创建跑批任务
+                 * @param req CreateBatchTaskRequest
+                 * @return CreateBatchTaskOutcome
+                 */
+                CreateBatchTaskOutcome CreateBatchTask(const Model::CreateBatchTaskRequest &request);
+                void CreateBatchTaskAsync(const Model::CreateBatchTaskRequest& request, const CreateBatchTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateBatchTaskOutcomeCallable CreateBatchTaskCallable(const Model::CreateBatchTaskRequest& request);
 
                 /**
                  *创建数据集
@@ -196,6 +240,15 @@ namespace TencentCloud
                 CreateTrainingTaskOutcome CreateTrainingTask(const Model::CreateTrainingTaskRequest &request);
                 void CreateTrainingTaskAsync(const Model::CreateTrainingTaskRequest& request, const CreateTrainingTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateTrainingTaskOutcomeCallable CreateTrainingTaskCallable(const Model::CreateTrainingTaskRequest& request);
+
+                /**
+                 *删除跑批任务
+                 * @param req DeleteBatchTaskRequest
+                 * @return DeleteBatchTaskOutcome
+                 */
+                DeleteBatchTaskOutcome DeleteBatchTask(const Model::DeleteBatchTaskRequest &request);
+                void DeleteBatchTaskAsync(const Model::DeleteBatchTaskRequest& request, const DeleteBatchTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteBatchTaskOutcomeCallable DeleteBatchTaskCallable(const Model::DeleteBatchTaskRequest& request);
 
                 /**
                  *删除数据集
@@ -234,6 +287,33 @@ namespace TencentCloud
                 DeleteTrainingTaskOutcomeCallable DeleteTrainingTaskCallable(const Model::DeleteTrainingTaskRequest& request);
 
                 /**
+                 *查询跑批任务
+                 * @param req DescribeBatchTaskRequest
+                 * @return DescribeBatchTaskOutcome
+                 */
+                DescribeBatchTaskOutcome DescribeBatchTask(const Model::DescribeBatchTaskRequest &request);
+                void DescribeBatchTaskAsync(const Model::DescribeBatchTaskRequest& request, const DescribeBatchTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBatchTaskOutcomeCallable DescribeBatchTaskCallable(const Model::DescribeBatchTaskRequest& request);
+
+                /**
+                 *查询跑批实例列表
+                 * @param req DescribeBatchTaskInstancesRequest
+                 * @return DescribeBatchTaskInstancesOutcome
+                 */
+                DescribeBatchTaskInstancesOutcome DescribeBatchTaskInstances(const Model::DescribeBatchTaskInstancesRequest &request);
+                void DescribeBatchTaskInstancesAsync(const Model::DescribeBatchTaskInstancesRequest& request, const DescribeBatchTaskInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBatchTaskInstancesOutcomeCallable DescribeBatchTaskInstancesCallable(const Model::DescribeBatchTaskInstancesRequest& request);
+
+                /**
+                 *批量预测任务列表信息
+                 * @param req DescribeBatchTasksRequest
+                 * @return DescribeBatchTasksOutcome
+                 */
+                DescribeBatchTasksOutcome DescribeBatchTasks(const Model::DescribeBatchTasksRequest &request);
+                void DescribeBatchTasksAsync(const Model::DescribeBatchTasksRequest& request, const DescribeBatchTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBatchTasksOutcomeCallable DescribeBatchTasksCallable(const Model::DescribeBatchTasksRequest& request);
+
+                /**
                  *查询资源组详情
                  * @param req DescribeBillingResourceGroupsRequest
                  * @return DescribeBillingResourceGroupsOutcome
@@ -241,6 +321,15 @@ namespace TencentCloud
                 DescribeBillingResourceGroupsOutcome DescribeBillingResourceGroups(const Model::DescribeBillingResourceGroupsRequest &request);
                 void DescribeBillingResourceGroupsAsync(const Model::DescribeBillingResourceGroupsRequest& request, const DescribeBillingResourceGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeBillingResourceGroupsOutcomeCallable DescribeBillingResourceGroupsCallable(const Model::DescribeBillingResourceGroupsRequest& request);
+
+                /**
+                 *本接口(DescribeBillingSpecs)用于查询计费项列表
+                 * @param req DescribeBillingSpecsRequest
+                 * @return DescribeBillingSpecsOutcome
+                 */
+                DescribeBillingSpecsOutcome DescribeBillingSpecs(const Model::DescribeBillingSpecsRequest &request);
+                void DescribeBillingSpecsAsync(const Model::DescribeBillingSpecsRequest& request, const DescribeBillingSpecsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBillingSpecsOutcomeCallable DescribeBillingSpecsCallable(const Model::DescribeBillingSpecsRequest& request);
 
                 /**
                  *本接口(DescribeBillingSpecsPrice)用于查询计费项价格。
@@ -394,6 +483,15 @@ namespace TencentCloud
                 StartTrainingTaskOutcome StartTrainingTask(const Model::StartTrainingTaskRequest &request);
                 void StartTrainingTaskAsync(const Model::StartTrainingTaskRequest& request, const StartTrainingTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 StartTrainingTaskOutcomeCallable StartTrainingTaskCallable(const Model::StartTrainingTaskRequest& request);
+
+                /**
+                 *停止跑批任务
+                 * @param req StopBatchTaskRequest
+                 * @return StopBatchTaskOutcome
+                 */
+                StopBatchTaskOutcome StopBatchTask(const Model::StopBatchTaskRequest &request);
+                void StopBatchTaskAsync(const Model::StopBatchTaskRequest& request, const StopBatchTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                StopBatchTaskOutcomeCallable StopBatchTaskCallable(const Model::StopBatchTaskRequest& request);
 
                 /**
                  *停止模型训练任务

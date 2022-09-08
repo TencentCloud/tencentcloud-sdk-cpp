@@ -63,7 +63,9 @@ InstanceInfo::InstanceInfo() :
     m_deployGroupIdHasBeenSet(false),
     m_zoneIdHasBeenSet(false),
     m_instanceNodesHasBeenSet(false),
-    m_tagListHasBeenSet(false)
+    m_tagListHasBeenSet(false),
+    m_engineTypeHasBeenSet(false),
+    m_maxDelayTimeHasBeenSet(false)
 {
 }
 
@@ -553,6 +555,26 @@ CoreInternalOutcome InstanceInfo::Deserialize(const rapidjson::Value &value)
         m_tagListHasBeenSet = true;
     }
 
+    if (value.HasMember("EngineType") && !value["EngineType"].IsNull())
+    {
+        if (!value["EngineType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.EngineType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_engineType = string(value["EngineType"].GetString());
+        m_engineTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("MaxDelayTime") && !value["MaxDelayTime"].IsNull())
+    {
+        if (!value["MaxDelayTime"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.MaxDelayTime` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_maxDelayTime = value["MaxDelayTime"].GetInt64();
+        m_maxDelayTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -926,6 +948,22 @@ void InstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_engineTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EngineType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_engineType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_maxDelayTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxDelayTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_maxDelayTime, allocator);
     }
 
 }
@@ -1617,5 +1655,37 @@ void InstanceInfo::SetTagList(const vector<TagInfoItem>& _tagList)
 bool InstanceInfo::TagListHasBeenSet() const
 {
     return m_tagListHasBeenSet;
+}
+
+string InstanceInfo::GetEngineType() const
+{
+    return m_engineType;
+}
+
+void InstanceInfo::SetEngineType(const string& _engineType)
+{
+    m_engineType = _engineType;
+    m_engineTypeHasBeenSet = true;
+}
+
+bool InstanceInfo::EngineTypeHasBeenSet() const
+{
+    return m_engineTypeHasBeenSet;
+}
+
+int64_t InstanceInfo::GetMaxDelayTime() const
+{
+    return m_maxDelayTime;
+}
+
+void InstanceInfo::SetMaxDelayTime(const int64_t& _maxDelayTime)
+{
+    m_maxDelayTime = _maxDelayTime;
+    m_maxDelayTimeHasBeenSet = true;
+}
+
+bool InstanceInfo::MaxDelayTimeHasBeenSet() const
+{
+    return m_maxDelayTimeHasBeenSet;
 }
 

@@ -31,7 +31,9 @@ AudioResult::AudioResult() :
     m_extraHasBeenSet(false),
     m_textResultsHasBeenSet(false),
     m_moanResultsHasBeenSet(false),
-    m_languageResultsHasBeenSet(false)
+    m_languageResultsHasBeenSet(false),
+    m_subLabelHasBeenSet(false),
+    m_recognitionResultsHasBeenSet(false)
 {
 }
 
@@ -180,6 +182,36 @@ CoreInternalOutcome AudioResult::Deserialize(const rapidjson::Value &value)
         m_languageResultsHasBeenSet = true;
     }
 
+    if (value.HasMember("SubLabel") && !value["SubLabel"].IsNull())
+    {
+        if (!value["SubLabel"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AudioResult.SubLabel` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subLabel = string(value["SubLabel"].GetString());
+        m_subLabelHasBeenSet = true;
+    }
+
+    if (value.HasMember("RecognitionResults") && !value["RecognitionResults"].IsNull())
+    {
+        if (!value["RecognitionResults"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `AudioResult.RecognitionResults` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["RecognitionResults"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            RecognitionResult item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_recognitionResults.push_back(item);
+        }
+        m_recognitionResultsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -290,6 +322,29 @@ void AudioResult::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
 
         int i=0;
         for (auto itr = m_languageResults.begin(); itr != m_languageResults.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_subLabelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubLabel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subLabel.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_recognitionResultsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RecognitionResults";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_recognitionResults.begin(); itr != m_recognitionResults.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -473,5 +528,37 @@ void AudioResult::SetLanguageResults(const vector<AudioResultDetailLanguageResul
 bool AudioResult::LanguageResultsHasBeenSet() const
 {
     return m_languageResultsHasBeenSet;
+}
+
+string AudioResult::GetSubLabel() const
+{
+    return m_subLabel;
+}
+
+void AudioResult::SetSubLabel(const string& _subLabel)
+{
+    m_subLabel = _subLabel;
+    m_subLabelHasBeenSet = true;
+}
+
+bool AudioResult::SubLabelHasBeenSet() const
+{
+    return m_subLabelHasBeenSet;
+}
+
+vector<RecognitionResult> AudioResult::GetRecognitionResults() const
+{
+    return m_recognitionResults;
+}
+
+void AudioResult::SetRecognitionResults(const vector<RecognitionResult>& _recognitionResults)
+{
+    m_recognitionResults = _recognitionResults;
+    m_recognitionResultsHasBeenSet = true;
+}
+
+bool AudioResult::RecognitionResultsHasBeenSet() const
+{
+    return m_recognitionResultsHasBeenSet;
 }
 

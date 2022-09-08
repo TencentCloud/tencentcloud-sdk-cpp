@@ -275,6 +275,8 @@
 #include <tencentcloud/vod/v20180717/model/ResetProcedureTemplateResponse.h>
 #include <tencentcloud/vod/v20180717/model/RestoreMediaRequest.h>
 #include <tencentcloud/vod/v20180717/model/RestoreMediaResponse.h>
+#include <tencentcloud/vod/v20180717/model/ReviewAudioVideoRequest.h>
+#include <tencentcloud/vod/v20180717/model/ReviewAudioVideoResponse.h>
 #include <tencentcloud/vod/v20180717/model/ReviewImageRequest.h>
 #include <tencentcloud/vod/v20180717/model/ReviewImageResponse.h>
 #include <tencentcloud/vod/v20180717/model/SearchMediaRequest.h>
@@ -679,6 +681,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RestoreMediaResponse> RestoreMediaOutcome;
                 typedef std::future<RestoreMediaOutcome> RestoreMediaOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::RestoreMediaRequest&, RestoreMediaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RestoreMediaAsyncHandler;
+                typedef Outcome<Core::Error, Model::ReviewAudioVideoResponse> ReviewAudioVideoOutcome;
+                typedef std::future<ReviewAudioVideoOutcome> ReviewAudioVideoOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::ReviewAudioVideoRequest&, ReviewAudioVideoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReviewAudioVideoAsyncHandler;
                 typedef Outcome<Core::Error, Model::ReviewImageResponse> ReviewImageOutcome;
                 typedef std::future<ReviewImageOutcome> ReviewImageOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::ReviewImageRequest&, ReviewImageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReviewImageAsyncHandler;
@@ -2036,6 +2041,18 @@ namespace TencentCloud
                 RestoreMediaOutcome RestoreMedia(const Model::RestoreMediaRequest &request);
                 void RestoreMediaAsync(const Model::RestoreMediaRequest& request, const RestoreMediaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RestoreMediaOutcomeCallable RestoreMediaCallable(const Model::RestoreMediaRequest& request);
+
+                /**
+                 *对点播中的音视频媒体发起审核任务，智能检测视频画面、画面中的文字、语音中的文字出现的违规内容。
+
+如使用事件通知，事件通知的类型为 [任务流状态变更](https://cloud.tencent.com/document/product/266/9636)。
+
+                 * @param req ReviewAudioVideoRequest
+                 * @return ReviewAudioVideoOutcome
+                 */
+                ReviewAudioVideoOutcome ReviewAudioVideo(const Model::ReviewAudioVideoRequest &request);
+                void ReviewAudioVideoAsync(const Model::ReviewAudioVideoRequest& request, const ReviewAudioVideoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ReviewAudioVideoOutcomeCallable ReviewAudioVideoCallable(const Model::ReviewAudioVideoRequest& request);
 
                 /**
                  *对点播中的图片文件发起审核（令人反感的信息、不安全的信息、不适宜的信息）任务。

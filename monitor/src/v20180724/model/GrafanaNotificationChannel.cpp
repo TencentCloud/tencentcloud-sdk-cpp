@@ -28,7 +28,8 @@ GrafanaNotificationChannel::GrafanaNotificationChannel() :
     m_updatedAtHasBeenSet(false),
     m_orgIdHasBeenSet(false),
     m_extraOrgIdsHasBeenSet(false),
-    m_orgIdsHasBeenSet(false)
+    m_orgIdsHasBeenSet(false),
+    m_organizationIdsHasBeenSet(false)
 {
 }
 
@@ -123,6 +124,16 @@ CoreInternalOutcome GrafanaNotificationChannel::Deserialize(const rapidjson::Val
         m_orgIdsHasBeenSet = true;
     }
 
+    if (value.HasMember("OrganizationIds") && !value["OrganizationIds"].IsNull())
+    {
+        if (!value["OrganizationIds"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `GrafanaNotificationChannel.OrganizationIds` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_organizationIds = string(value["OrganizationIds"].GetString());
+        m_organizationIdsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -202,6 +213,14 @@ void GrafanaNotificationChannel::ToJsonObject(rapidjson::Value &value, rapidjson
         string key = "OrgIds";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_orgIds.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_organizationIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OrganizationIds";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_organizationIds.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -333,5 +352,21 @@ void GrafanaNotificationChannel::SetOrgIds(const string& _orgIds)
 bool GrafanaNotificationChannel::OrgIdsHasBeenSet() const
 {
     return m_orgIdsHasBeenSet;
+}
+
+string GrafanaNotificationChannel::GetOrganizationIds() const
+{
+    return m_organizationIds;
+}
+
+void GrafanaNotificationChannel::SetOrganizationIds(const string& _organizationIds)
+{
+    m_organizationIds = _organizationIds;
+    m_organizationIdsHasBeenSet = true;
+}
+
+bool GrafanaNotificationChannel::OrganizationIdsHasBeenSet() const
+{
+    return m_organizationIdsHasBeenSet;
 }
 

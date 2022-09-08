@@ -547,6 +547,28 @@ namespace TencentCloud
                      */
                     bool CloudTagsHasBeenSet() const;
 
+                    /**
+                     * 获取是否15天内新增的主机 0：非15天内新增的主机，1：15天内增加的主机
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsAddedOnTheFifteen 是否15天内新增的主机 0：非15天内新增的主机，1：15天内增加的主机
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetIsAddedOnTheFifteen() const;
+
+                    /**
+                     * 设置是否15天内新增的主机 0：非15天内新增的主机，1：15天内增加的主机
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param IsAddedOnTheFifteen 是否15天内新增的主机 0：非15天内新增的主机，1：15天内增加的主机
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIsAddedOnTheFifteen(const uint64_t& _isAddedOnTheFifteen);
+
+                    /**
+                     * 判断参数 IsAddedOnTheFifteen 是否已赋值
+                     * @return IsAddedOnTheFifteen 是否已赋值
+                     */
+                    bool IsAddedOnTheFifteenHasBeenSet() const;
+
                 private:
 
                     /**
@@ -710,6 +732,13 @@ namespace TencentCloud
                      */
                     std::vector<Tags> m_cloudTags;
                     bool m_cloudTagsHasBeenSet;
+
+                    /**
+                     * 是否15天内新增的主机 0：非15天内新增的主机，1：15天内增加的主机
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_isAddedOnTheFifteen;
+                    bool m_isAddedOnTheFifteenHasBeenSet;
 
                 };
             }

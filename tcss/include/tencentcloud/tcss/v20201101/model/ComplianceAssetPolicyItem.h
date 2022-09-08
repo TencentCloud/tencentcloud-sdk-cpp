@@ -298,6 +298,28 @@ RESULT_FAILED: 未通过
                      */
                     bool LastCheckTimeHasBeenSet() const;
 
+                    /**
+                     * 获取验证信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return VerifyInfo 验证信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetVerifyInfo() const;
+
+                    /**
+                     * 设置验证信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param VerifyInfo 验证信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetVerifyInfo(const std::string& _verifyInfo);
+
+                    /**
+                     * 判断参数 VerifyInfo 是否已赋值
+                     * @return VerifyInfo 是否已赋值
+                     */
+                    bool VerifyInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -380,6 +402,13 @@ RESULT_FAILED: 未通过
                      */
                     std::string m_lastCheckTime;
                     bool m_lastCheckTimeHasBeenSet;
+
+                    /**
+                     * 验证信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_verifyInfo;
+                    bool m_verifyInfoHasBeenSet;
 
                 };
             }

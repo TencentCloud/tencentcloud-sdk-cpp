@@ -40,7 +40,13 @@ TrainingModelVersionDTO::TrainingModelVersionDTO() :
     m_trainingModelStatusHasBeenSet(false),
     m_trainingModelProgressHasBeenSet(false),
     m_trainingModelErrorMsgHasBeenSet(false),
-    m_trainingModelFormatHasBeenSet(false)
+    m_trainingModelFormatHasBeenSet(false),
+    m_versionTypeHasBeenSet(false),
+    m_gPUTypeHasBeenSet(false),
+    m_autoCleanHasBeenSet(false),
+    m_modelCleanPeriodHasBeenSet(false),
+    m_maxReservedModelsHasBeenSet(false),
+    m_modelHotUpdatePathHasBeenSet(false)
 {
 }
 
@@ -263,6 +269,73 @@ CoreInternalOutcome TrainingModelVersionDTO::Deserialize(const rapidjson::Value 
         m_trainingModelFormatHasBeenSet = true;
     }
 
+    if (value.HasMember("VersionType") && !value["VersionType"].IsNull())
+    {
+        if (!value["VersionType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TrainingModelVersionDTO.VersionType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_versionType = string(value["VersionType"].GetString());
+        m_versionTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("GPUType") && !value["GPUType"].IsNull())
+    {
+        if (!value["GPUType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TrainingModelVersionDTO.GPUType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_gPUType = string(value["GPUType"].GetString());
+        m_gPUTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("AutoClean") && !value["AutoClean"].IsNull())
+    {
+        if (!value["AutoClean"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TrainingModelVersionDTO.AutoClean` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_autoClean = string(value["AutoClean"].GetString());
+        m_autoCleanHasBeenSet = true;
+    }
+
+    if (value.HasMember("ModelCleanPeriod") && !value["ModelCleanPeriod"].IsNull())
+    {
+        if (!value["ModelCleanPeriod"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TrainingModelVersionDTO.ModelCleanPeriod` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_modelCleanPeriod = value["ModelCleanPeriod"].GetUint64();
+        m_modelCleanPeriodHasBeenSet = true;
+    }
+
+    if (value.HasMember("MaxReservedModels") && !value["MaxReservedModels"].IsNull())
+    {
+        if (!value["MaxReservedModels"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TrainingModelVersionDTO.MaxReservedModels` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_maxReservedModels = value["MaxReservedModels"].GetUint64();
+        m_maxReservedModelsHasBeenSet = true;
+    }
+
+    if (value.HasMember("ModelHotUpdatePath") && !value["ModelHotUpdatePath"].IsNull())
+    {
+        if (!value["ModelHotUpdatePath"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `TrainingModelVersionDTO.ModelHotUpdatePath` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_modelHotUpdatePath.Deserialize(value["ModelHotUpdatePath"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_modelHotUpdatePathHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -430,6 +503,55 @@ void TrainingModelVersionDTO::ToJsonObject(rapidjson::Value &value, rapidjson::D
         string key = "TrainingModelFormat";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_trainingModelFormat.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_versionTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VersionType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_versionType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_gPUTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GPUType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_gPUType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_autoCleanHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoClean";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_autoClean.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_modelCleanPeriodHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModelCleanPeriod";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_modelCleanPeriod, allocator);
+    }
+
+    if (m_maxReservedModelsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxReservedModels";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_maxReservedModels, allocator);
+    }
+
+    if (m_modelHotUpdatePathHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModelHotUpdatePath";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_modelHotUpdatePath.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -753,5 +875,101 @@ void TrainingModelVersionDTO::SetTrainingModelFormat(const string& _trainingMode
 bool TrainingModelVersionDTO::TrainingModelFormatHasBeenSet() const
 {
     return m_trainingModelFormatHasBeenSet;
+}
+
+string TrainingModelVersionDTO::GetVersionType() const
+{
+    return m_versionType;
+}
+
+void TrainingModelVersionDTO::SetVersionType(const string& _versionType)
+{
+    m_versionType = _versionType;
+    m_versionTypeHasBeenSet = true;
+}
+
+bool TrainingModelVersionDTO::VersionTypeHasBeenSet() const
+{
+    return m_versionTypeHasBeenSet;
+}
+
+string TrainingModelVersionDTO::GetGPUType() const
+{
+    return m_gPUType;
+}
+
+void TrainingModelVersionDTO::SetGPUType(const string& _gPUType)
+{
+    m_gPUType = _gPUType;
+    m_gPUTypeHasBeenSet = true;
+}
+
+bool TrainingModelVersionDTO::GPUTypeHasBeenSet() const
+{
+    return m_gPUTypeHasBeenSet;
+}
+
+string TrainingModelVersionDTO::GetAutoClean() const
+{
+    return m_autoClean;
+}
+
+void TrainingModelVersionDTO::SetAutoClean(const string& _autoClean)
+{
+    m_autoClean = _autoClean;
+    m_autoCleanHasBeenSet = true;
+}
+
+bool TrainingModelVersionDTO::AutoCleanHasBeenSet() const
+{
+    return m_autoCleanHasBeenSet;
+}
+
+uint64_t TrainingModelVersionDTO::GetModelCleanPeriod() const
+{
+    return m_modelCleanPeriod;
+}
+
+void TrainingModelVersionDTO::SetModelCleanPeriod(const uint64_t& _modelCleanPeriod)
+{
+    m_modelCleanPeriod = _modelCleanPeriod;
+    m_modelCleanPeriodHasBeenSet = true;
+}
+
+bool TrainingModelVersionDTO::ModelCleanPeriodHasBeenSet() const
+{
+    return m_modelCleanPeriodHasBeenSet;
+}
+
+uint64_t TrainingModelVersionDTO::GetMaxReservedModels() const
+{
+    return m_maxReservedModels;
+}
+
+void TrainingModelVersionDTO::SetMaxReservedModels(const uint64_t& _maxReservedModels)
+{
+    m_maxReservedModels = _maxReservedModels;
+    m_maxReservedModelsHasBeenSet = true;
+}
+
+bool TrainingModelVersionDTO::MaxReservedModelsHasBeenSet() const
+{
+    return m_maxReservedModelsHasBeenSet;
+}
+
+CosPathInfo TrainingModelVersionDTO::GetModelHotUpdatePath() const
+{
+    return m_modelHotUpdatePath;
+}
+
+void TrainingModelVersionDTO::SetModelHotUpdatePath(const CosPathInfo& _modelHotUpdatePath)
+{
+    m_modelHotUpdatePath = _modelHotUpdatePath;
+    m_modelHotUpdatePathHasBeenSet = true;
+}
+
+bool TrainingModelVersionDTO::ModelHotUpdatePathHasBeenSet() const
+{
+    return m_modelHotUpdatePathHasBeenSet;
 }
 

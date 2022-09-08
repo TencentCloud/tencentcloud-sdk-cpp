@@ -87,9 +87,10 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20191022/model/DataSource.h
   include/tencentcloud/tione/v20191022/model/ModelArtifacts.h
   include/tencentcloud/tione/v20191022/model/DeleteCodeRepositoryResponse.h
+  include/tencentcloud/tione/v20211111/model/ModelInfo.h
   include/tencentcloud/tione/v20211111/model/DescribeLogsRequest.h
-  include/tencentcloud/tione/v20211111/model/DeleteTrainingModelVersionResponse.h
-  include/tencentcloud/tione/v20211111/model/PointInfo.h
+  include/tencentcloud/tione/v20211111/model/DescribeDatasetDetailUnstructuredRequest.h
+  include/tencentcloud/tione/v20211111/model/BatchTaskDetail.h
   include/tencentcloud/tione/v20211111/model/StartTrainingTaskRequest.h
   include/tencentcloud/tione/v20211111/model/DescribeDatasetDetailStructuredResponse.h
   include/tencentcloud/tione/v20211111/model/DescribeBillingResourceGroupsRequest.h
@@ -98,55 +99,70 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/SpecUnit.h
   include/tencentcloud/tione/v20211111/model/CreateDatasetResponse.h
   include/tencentcloud/tione/v20211111/model/DescribeTrainingTasksRequest.h
-  include/tencentcloud/tione/v20211111/model/DescribeDatasetDetailUnstructuredRequest.h
+  include/tencentcloud/tione/v20211111/model/DescribeBatchTaskRequest.h
+  include/tencentcloud/tione/v20211111/model/DeleteTrainingModelVersionResponse.h
   include/tencentcloud/tione/v20211111/model/CosPathInfo.h
   include/tencentcloud/tione/v20211111/model/DescribeBillingResourceGroupsResponse.h
   include/tencentcloud/tione/v20211111/model/SpecPrice.h
   include/tencentcloud/tione/v20211111/model/DescribeTrainingMetricsRequest.h
   include/tencentcloud/tione/v20211111/model/DescribeTrainingTaskPodsRequest.h
-  include/tencentcloud/tione/v20211111/model/DescribeTrainingModelVersionRequest.h
+  include/tencentcloud/tione/v20211111/model/CreateBatchTaskRequest.h
   include/tencentcloud/tione/v20211111/model/DescribeLatestTrainingMetricsResponse.h
   include/tencentcloud/tione/v20211111/model/DescribeDatasetDetailUnstructuredResponse.h
   include/tencentcloud/tione/v20211111/model/FilterLabelInfo.h
   include/tencentcloud/tione/v20211111/model/CFSConfig.h
   include/tencentcloud/tione/v20211111/model/PushTrainingMetricsRequest.h
   include/tencentcloud/tione/v20211111/model/InferTemplate.h
-  include/tencentcloud/tione/v20211111/model/FrameworkVersion.h
+  include/tencentcloud/tione/v20211111/model/StopBatchTaskRequest.h
+  include/tencentcloud/tione/v20211111/model/DeleteTrainingModelResponse.h
   include/tencentcloud/tione/v20211111/model/DataPoint.h
   include/tencentcloud/tione/v20211111/model/CreateTrainingModelRequest.h
-  include/tencentcloud/tione/v20211111/model/DescribeTrainingModelVersionsResponse.h
+  include/tencentcloud/tione/v20211111/model/SchemaInfo.h
   include/tencentcloud/tione/v20211111/model/StartCmdInfo.h
+  include/tencentcloud/tione/v20211111/model/DeleteBatchTaskRequest.h
   include/tencentcloud/tione/v20211111/model/DescribeTrainingModelsResponse.h
+  include/tencentcloud/tione/v20211111/model/DescribeBatchTaskInstancesResponse.h
   include/tencentcloud/tione/v20211111/model/ResourceConfigInfo.h
+  include/tencentcloud/tione/v20211111/model/Spec.h
   include/tencentcloud/tione/v20211111/model/TrainingMetric.h
   include/tencentcloud/tione/v20211111/model/Tag.h
   include/tencentcloud/tione/v20211111/model/DescribeDatasetsRequest.h
-  include/tencentcloud/tione/v20211111/model/DeleteTrainingModelResponse.h
+  include/tencentcloud/tione/v20211111/model/FrameworkVersion.h
   include/tencentcloud/tione/v20211111/model/DescribeInferTemplatesResponse.h
+  include/tencentcloud/tione/v20211111/model/DescribeBillingSpecsRequest.h
   include/tencentcloud/tione/v20211111/model/DescribeInferTemplatesRequest.h
+  include/tencentcloud/tione/v20211111/model/DescribeBatchTaskInstancesRequest.h
   include/tencentcloud/tione/v20211111/model/GpuDetail.h
   include/tencentcloud/tione/v20211111/model/DescribeTrainingFrameworksRequest.h
+  include/tencentcloud/tione/v20211111/model/DescribeBatchTasksResponse.h
   include/tencentcloud/tione/v20211111/model/DetectionLabelInfo.h
   include/tencentcloud/tione/v20211111/model/InferTemplateGroup.h
   include/tencentcloud/tione/v20211111/model/DatasetInfo.h
   include/tencentcloud/tione/v20211111/model/TagFilter.h
+  include/tencentcloud/tione/v20211111/model/BatchTaskSetItem.h
   include/tencentcloud/tione/v20211111/model/ImageInfo.h
   include/tencentcloud/tione/v20211111/model/CreateTrainingTaskResponse.h
   include/tencentcloud/tione/v20211111/model/CreateTrainingTaskRequest.h
   include/tencentcloud/tione/v20211111/model/DescribeDatasetsResponse.h
   include/tencentcloud/tione/v20211111/model/DescribeBillingSpecsPriceRequest.h
   include/tencentcloud/tione/v20211111/model/Instance.h
-  include/tencentcloud/tione/v20211111/model/DeleteTrainingModelRequest.h
+  include/tencentcloud/tione/v20211111/model/DescribeBillingSpecsResponse.h
   include/tencentcloud/tione/v20211111/model/DeleteTrainingTaskResponse.h
+  include/tencentcloud/tione/v20211111/model/BatchTaskInstance.h
+  include/tencentcloud/tione/v20211111/model/CreateBatchTaskResponse.h
   include/tencentcloud/tione/v20211111/model/DatasetGroup.h
+  include/tencentcloud/tione/v20211111/model/DataSetConfig.h
   include/tencentcloud/tione/v20211111/model/TrainingDataPoint.h
   include/tencentcloud/tione/v20211111/model/DescribeLatestTrainingMetricsRequest.h
   include/tencentcloud/tione/v20211111/model/ResourceInfo.h
   include/tencentcloud/tione/v20211111/model/GroupResource.h
-  include/tencentcloud/tione/v20211111/model/DataSetConfig.h
+  include/tencentcloud/tione/v20211111/model/DeleteTrainingModelRequest.h
   include/tencentcloud/tione/v20211111/model/DeleteTrainingTaskRequest.h
   include/tencentcloud/tione/v20211111/model/Filter.h
+  include/tencentcloud/tione/v20211111/model/DeleteBatchTaskResponse.h
+  include/tencentcloud/tione/v20211111/model/DescribeBatchTasksRequest.h
   include/tencentcloud/tione/v20211111/model/CreateDatasetRequest.h
+  include/tencentcloud/tione/v20211111/model/StopBatchTaskResponse.h
   include/tencentcloud/tione/v20211111/model/TrainingModelDTO.h
   include/tencentcloud/tione/v20211111/model/CustomTrainingData.h
   include/tencentcloud/tione/v20211111/model/RowItem.h
@@ -158,16 +174,18 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/CustomTrainingPoint.h
   include/tencentcloud/tione/v20211111/model/TrainingTaskDetail.h
   include/tencentcloud/tione/v20211111/model/DescribeTrainingTasksResponse.h
+  include/tencentcloud/tione/v20211111/model/CronInfo.h
   include/tencentcloud/tione/v20211111/model/FrameworkInfo.h
   include/tencentcloud/tione/v20211111/model/DescribeLogsResponse.h
   include/tencentcloud/tione/v20211111/model/TrainingModelVersionDTO.h
   include/tencentcloud/tione/v20211111/model/DescribeTrainingTaskRequest.h
   include/tencentcloud/tione/v20211111/model/RowValue.h
   include/tencentcloud/tione/v20211111/model/TrainingTaskSetItem.h
-  include/tencentcloud/tione/v20211111/model/SchemaInfo.h
+  include/tencentcloud/tione/v20211111/model/DescribeTrainingModelVersionsResponse.h
   include/tencentcloud/tione/v20211111/model/DeleteDatasetRequest.h
   include/tencentcloud/tione/v20211111/model/CustomTrainingMetric.h
   include/tencentcloud/tione/v20211111/model/DataConfig.h
+  include/tencentcloud/tione/v20211111/model/DescribeTrainingModelVersionRequest.h
   include/tencentcloud/tione/v20211111/model/PushTrainingMetricsResponse.h
   include/tencentcloud/tione/v20211111/model/StopTrainingTaskResponse.h
   include/tencentcloud/tione/v20211111/model/HDFSConfig.h
@@ -175,8 +193,10 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/DescribeTrainingTaskPodsResponse.h
   include/tencentcloud/tione/v20211111/model/OcrLabelInfo.h
   include/tencentcloud/tione/v20211111/model/DescribeTrainingModelsRequest.h
+  include/tencentcloud/tione/v20211111/model/PointInfo.h
   include/tencentcloud/tione/v20211111/model/ResourceGroup.h
   include/tencentcloud/tione/v20211111/model/DescribeTrainingTaskResponse.h
+  include/tencentcloud/tione/v20211111/model/DescribeBatchTaskResponse.h
   include/tencentcloud/tione/v20211111/model/MetricData.h
   include/tencentcloud/tione/v20211111/model/DeleteTrainingModelVersionRequest.h
   include/tencentcloud/tione/v20211111/model/DescribeBillingSpecsPriceResponse.h
@@ -256,9 +276,10 @@ set(tione_src
   src/v20191022/model/DataSource.cpp
   src/v20191022/model/ModelArtifacts.cpp
   src/v20191022/model/DeleteCodeRepositoryResponse.cpp
+  src/v20211111/model/ModelInfo.cpp
   src/v20211111/model/DescribeLogsRequest.cpp
-  src/v20211111/model/DeleteTrainingModelVersionResponse.cpp
-  src/v20211111/model/PointInfo.cpp
+  src/v20211111/model/DescribeDatasetDetailUnstructuredRequest.cpp
+  src/v20211111/model/BatchTaskDetail.cpp
   src/v20211111/model/StartTrainingTaskRequest.cpp
   src/v20211111/model/DescribeDatasetDetailStructuredResponse.cpp
   src/v20211111/model/DescribeBillingResourceGroupsRequest.cpp
@@ -267,55 +288,70 @@ set(tione_src
   src/v20211111/model/SpecUnit.cpp
   src/v20211111/model/CreateDatasetResponse.cpp
   src/v20211111/model/DescribeTrainingTasksRequest.cpp
-  src/v20211111/model/DescribeDatasetDetailUnstructuredRequest.cpp
+  src/v20211111/model/DescribeBatchTaskRequest.cpp
+  src/v20211111/model/DeleteTrainingModelVersionResponse.cpp
   src/v20211111/model/CosPathInfo.cpp
   src/v20211111/model/DescribeBillingResourceGroupsResponse.cpp
   src/v20211111/model/SpecPrice.cpp
   src/v20211111/model/DescribeTrainingMetricsRequest.cpp
   src/v20211111/model/DescribeTrainingTaskPodsRequest.cpp
-  src/v20211111/model/DescribeTrainingModelVersionRequest.cpp
+  src/v20211111/model/CreateBatchTaskRequest.cpp
   src/v20211111/model/DescribeLatestTrainingMetricsResponse.cpp
   src/v20211111/model/DescribeDatasetDetailUnstructuredResponse.cpp
   src/v20211111/model/FilterLabelInfo.cpp
   src/v20211111/model/CFSConfig.cpp
   src/v20211111/model/PushTrainingMetricsRequest.cpp
   src/v20211111/model/InferTemplate.cpp
-  src/v20211111/model/FrameworkVersion.cpp
+  src/v20211111/model/StopBatchTaskRequest.cpp
+  src/v20211111/model/DeleteTrainingModelResponse.cpp
   src/v20211111/model/DataPoint.cpp
   src/v20211111/model/CreateTrainingModelRequest.cpp
-  src/v20211111/model/DescribeTrainingModelVersionsResponse.cpp
+  src/v20211111/model/SchemaInfo.cpp
   src/v20211111/model/StartCmdInfo.cpp
+  src/v20211111/model/DeleteBatchTaskRequest.cpp
   src/v20211111/model/DescribeTrainingModelsResponse.cpp
+  src/v20211111/model/DescribeBatchTaskInstancesResponse.cpp
   src/v20211111/model/ResourceConfigInfo.cpp
+  src/v20211111/model/Spec.cpp
   src/v20211111/model/TrainingMetric.cpp
   src/v20211111/model/Tag.cpp
   src/v20211111/model/DescribeDatasetsRequest.cpp
-  src/v20211111/model/DeleteTrainingModelResponse.cpp
+  src/v20211111/model/FrameworkVersion.cpp
   src/v20211111/model/DescribeInferTemplatesResponse.cpp
+  src/v20211111/model/DescribeBillingSpecsRequest.cpp
   src/v20211111/model/DescribeInferTemplatesRequest.cpp
+  src/v20211111/model/DescribeBatchTaskInstancesRequest.cpp
   src/v20211111/model/GpuDetail.cpp
   src/v20211111/model/DescribeTrainingFrameworksRequest.cpp
+  src/v20211111/model/DescribeBatchTasksResponse.cpp
   src/v20211111/model/DetectionLabelInfo.cpp
   src/v20211111/model/InferTemplateGroup.cpp
   src/v20211111/model/DatasetInfo.cpp
   src/v20211111/model/TagFilter.cpp
+  src/v20211111/model/BatchTaskSetItem.cpp
   src/v20211111/model/ImageInfo.cpp
   src/v20211111/model/CreateTrainingTaskResponse.cpp
   src/v20211111/model/CreateTrainingTaskRequest.cpp
   src/v20211111/model/DescribeDatasetsResponse.cpp
   src/v20211111/model/DescribeBillingSpecsPriceRequest.cpp
   src/v20211111/model/Instance.cpp
-  src/v20211111/model/DeleteTrainingModelRequest.cpp
+  src/v20211111/model/DescribeBillingSpecsResponse.cpp
   src/v20211111/model/DeleteTrainingTaskResponse.cpp
+  src/v20211111/model/BatchTaskInstance.cpp
+  src/v20211111/model/CreateBatchTaskResponse.cpp
   src/v20211111/model/DatasetGroup.cpp
+  src/v20211111/model/DataSetConfig.cpp
   src/v20211111/model/TrainingDataPoint.cpp
   src/v20211111/model/DescribeLatestTrainingMetricsRequest.cpp
   src/v20211111/model/ResourceInfo.cpp
   src/v20211111/model/GroupResource.cpp
-  src/v20211111/model/DataSetConfig.cpp
+  src/v20211111/model/DeleteTrainingModelRequest.cpp
   src/v20211111/model/DeleteTrainingTaskRequest.cpp
   src/v20211111/model/Filter.cpp
+  src/v20211111/model/DeleteBatchTaskResponse.cpp
+  src/v20211111/model/DescribeBatchTasksRequest.cpp
   src/v20211111/model/CreateDatasetRequest.cpp
+  src/v20211111/model/StopBatchTaskResponse.cpp
   src/v20211111/model/TrainingModelDTO.cpp
   src/v20211111/model/CustomTrainingData.cpp
   src/v20211111/model/RowItem.cpp
@@ -327,16 +363,18 @@ set(tione_src
   src/v20211111/model/CustomTrainingPoint.cpp
   src/v20211111/model/TrainingTaskDetail.cpp
   src/v20211111/model/DescribeTrainingTasksResponse.cpp
+  src/v20211111/model/CronInfo.cpp
   src/v20211111/model/FrameworkInfo.cpp
   src/v20211111/model/DescribeLogsResponse.cpp
   src/v20211111/model/TrainingModelVersionDTO.cpp
   src/v20211111/model/DescribeTrainingTaskRequest.cpp
   src/v20211111/model/RowValue.cpp
   src/v20211111/model/TrainingTaskSetItem.cpp
-  src/v20211111/model/SchemaInfo.cpp
+  src/v20211111/model/DescribeTrainingModelVersionsResponse.cpp
   src/v20211111/model/DeleteDatasetRequest.cpp
   src/v20211111/model/CustomTrainingMetric.cpp
   src/v20211111/model/DataConfig.cpp
+  src/v20211111/model/DescribeTrainingModelVersionRequest.cpp
   src/v20211111/model/PushTrainingMetricsResponse.cpp
   src/v20211111/model/StopTrainingTaskResponse.cpp
   src/v20211111/model/HDFSConfig.cpp
@@ -344,8 +382,10 @@ set(tione_src
   src/v20211111/model/DescribeTrainingTaskPodsResponse.cpp
   src/v20211111/model/OcrLabelInfo.cpp
   src/v20211111/model/DescribeTrainingModelsRequest.cpp
+  src/v20211111/model/PointInfo.cpp
   src/v20211111/model/ResourceGroup.cpp
   src/v20211111/model/DescribeTrainingTaskResponse.cpp
+  src/v20211111/model/DescribeBatchTaskResponse.cpp
   src/v20211111/model/MetricData.cpp
   src/v20211111/model/DeleteTrainingModelVersionRequest.cpp
   src/v20211111/model/DescribeBillingSpecsPriceResponse.cpp

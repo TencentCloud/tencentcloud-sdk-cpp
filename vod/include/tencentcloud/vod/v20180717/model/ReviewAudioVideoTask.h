@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/vod/v20180717/model/ReviewAudioVideoTaskInput.h>
 #include <tencentcloud/vod/v20180717/model/ReviewAudioVideoTaskOutput.h>
 
 
@@ -128,6 +129,28 @@ namespace TencentCloud
                     bool MessageHasBeenSet() const;
 
                     /**
+                     * 获取音视频审核任务的输入。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Input 音视频审核任务的输入。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ReviewAudioVideoTaskInput GetInput() const;
+
+                    /**
+                     * 设置音视频审核任务的输入。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Input 音视频审核任务的输入。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetInput(const ReviewAudioVideoTaskInput& _input);
+
+                    /**
+                     * 判断参数 Input 是否已赋值
+                     * @return Input 是否已赋值
+                     */
+                    bool InputHasBeenSet() const;
+
+                    /**
                      * 获取音视频审核任务的输出。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Output 音视频审核任务的输出。
@@ -212,6 +235,13 @@ namespace TencentCloud
                      */
                     std::string m_message;
                     bool m_messageHasBeenSet;
+
+                    /**
+                     * 音视频审核任务的输入。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ReviewAudioVideoTaskInput m_input;
+                    bool m_inputHasBeenSet;
 
                     /**
                      * 音视频审核任务的输出。

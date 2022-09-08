@@ -424,6 +424,138 @@ namespace TencentCloud
                      */
                     bool TrainingModelFormatHasBeenSet() const;
 
+                    /**
+                     * 获取模型版本类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return VersionType 模型版本类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetVersionType() const;
+
+                    /**
+                     * 设置模型版本类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param VersionType 模型版本类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetVersionType(const std::string& _versionType);
+
+                    /**
+                     * 判断参数 VersionType 是否已赋值
+                     * @return VersionType 是否已赋值
+                     */
+                    bool VersionTypeHasBeenSet() const;
+
+                    /**
+                     * 获取GPU类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return GPUType GPU类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetGPUType() const;
+
+                    /**
+                     * 设置GPU类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param GPUType GPU类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetGPUType(const std::string& _gPUType);
+
+                    /**
+                     * 判断参数 GPUType 是否已赋值
+                     * @return GPUType 是否已赋值
+                     */
+                    bool GPUTypeHasBeenSet() const;
+
+                    /**
+                     * 获取模型自动清理开关
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AutoClean 模型自动清理开关
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetAutoClean() const;
+
+                    /**
+                     * 设置模型自动清理开关
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AutoClean 模型自动清理开关
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAutoClean(const std::string& _autoClean);
+
+                    /**
+                     * 判断参数 AutoClean 是否已赋值
+                     * @return AutoClean 是否已赋值
+                     */
+                    bool AutoCleanHasBeenSet() const;
+
+                    /**
+                     * 获取模型清理周期
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ModelCleanPeriod 模型清理周期
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetModelCleanPeriod() const;
+
+                    /**
+                     * 设置模型清理周期
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ModelCleanPeriod 模型清理周期
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetModelCleanPeriod(const uint64_t& _modelCleanPeriod);
+
+                    /**
+                     * 判断参数 ModelCleanPeriod 是否已赋值
+                     * @return ModelCleanPeriod 是否已赋值
+                     */
+                    bool ModelCleanPeriodHasBeenSet() const;
+
+                    /**
+                     * 获取模型数量保留上限
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MaxReservedModels 模型数量保留上限
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetMaxReservedModels() const;
+
+                    /**
+                     * 设置模型数量保留上限
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param MaxReservedModels 模型数量保留上限
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMaxReservedModels(const uint64_t& _maxReservedModels);
+
+                    /**
+                     * 判断参数 MaxReservedModels 是否已赋值
+                     * @return MaxReservedModels 是否已赋值
+                     */
+                    bool MaxReservedModelsHasBeenSet() const;
+
+                    /**
+                     * 获取模型热更新目录
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ModelHotUpdatePath 模型热更新目录
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    CosPathInfo GetModelHotUpdatePath() const;
+
+                    /**
+                     * 设置模型热更新目录
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ModelHotUpdatePath 模型热更新目录
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetModelHotUpdatePath(const CosPathInfo& _modelHotUpdatePath);
+
+                    /**
+                     * 判断参数 ModelHotUpdatePath 是否已赋值
+                     * @return ModelHotUpdatePath 是否已赋值
+                     */
+                    bool ModelHotUpdatePathHasBeenSet() const;
+
                 private:
 
                     /**
@@ -549,6 +681,48 @@ namespace TencentCloud
                      */
                     std::string m_trainingModelFormat;
                     bool m_trainingModelFormatHasBeenSet;
+
+                    /**
+                     * 模型版本类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_versionType;
+                    bool m_versionTypeHasBeenSet;
+
+                    /**
+                     * GPU类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_gPUType;
+                    bool m_gPUTypeHasBeenSet;
+
+                    /**
+                     * 模型自动清理开关
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_autoClean;
+                    bool m_autoCleanHasBeenSet;
+
+                    /**
+                     * 模型清理周期
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_modelCleanPeriod;
+                    bool m_modelCleanPeriodHasBeenSet;
+
+                    /**
+                     * 模型数量保留上限
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_maxReservedModels;
+                    bool m_maxReservedModelsHasBeenSet;
+
+                    /**
+                     * 模型热更新目录
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    CosPathInfo m_modelHotUpdatePath;
+                    bool m_modelHotUpdatePathHasBeenSet;
 
                 };
             }

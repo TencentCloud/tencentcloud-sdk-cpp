@@ -137,14 +137,14 @@ namespace TencentCloud
                     bool UpdatedAtHasBeenSet() const;
 
                     /**
-                     * 获取默认生效组织
-                     * @return OrgId 默认生效组织
+                     * 获取默认生效组织，已废弃，请使用 OrganizationIds
+                     * @return OrgId 默认生效组织，已废弃，请使用 OrganizationIds
                      */
                     std::string GetOrgId() const;
 
                     /**
-                     * 设置默认生效组织
-                     * @param OrgId 默认生效组织
+                     * 设置默认生效组织，已废弃，请使用 OrganizationIds
+                     * @param OrgId 默认生效组织，已废弃，请使用 OrganizationIds
                      */
                     void SetOrgId(const std::string& _orgId);
 
@@ -155,17 +155,17 @@ namespace TencentCloud
                     bool OrgIdHasBeenSet() const;
 
                     /**
-                     * 获取额外生效组织
+                     * 获取额外生效组织，已废弃，请使用 OrganizationIds
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ExtraOrgIds 额外生效组织
+                     * @return ExtraOrgIds 额外生效组织，已废弃，请使用 OrganizationIds
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> GetExtraOrgIds() const;
 
                     /**
-                     * 设置额外生效组织
+                     * 设置额外生效组织，已废弃，请使用 OrganizationIds
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ExtraOrgIds 额外生效组织
+                     * @param ExtraOrgIds 额外生效组织，已废弃，请使用 OrganizationIds
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetExtraOrgIds(const std::vector<std::string>& _extraOrgIds);
@@ -177,17 +177,17 @@ namespace TencentCloud
                     bool ExtraOrgIdsHasBeenSet() const;
 
                     /**
-                     * 获取生效组织
+                     * 获取生效组织，已废弃，请使用 OrganizationIds
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OrgIds 生效组织
+                     * @return OrgIds 生效组织，已废弃，请使用 OrganizationIds
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetOrgIds() const;
 
                     /**
-                     * 设置生效组织
+                     * 设置生效组织，已废弃，请使用 OrganizationIds
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OrgIds 生效组织
+                     * @param OrgIds 生效组织，已废弃，请使用 OrganizationIds
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetOrgIds(const std::string& _orgIds);
@@ -197,6 +197,28 @@ namespace TencentCloud
                      * @return OrgIds 是否已赋值
                      */
                     bool OrgIdsHasBeenSet() const;
+
+                    /**
+                     * 获取告警渠道的所有生效组织
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OrganizationIds 告警渠道的所有生效组织
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetOrganizationIds() const;
+
+                    /**
+                     * 设置告警渠道的所有生效组织
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param OrganizationIds 告警渠道的所有生效组织
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetOrganizationIds(const std::string& _organizationIds);
+
+                    /**
+                     * 判断参数 OrganizationIds 是否已赋值
+                     * @return OrganizationIds 是否已赋值
+                     */
+                    bool OrganizationIdsHasBeenSet() const;
 
                 private:
 
@@ -231,24 +253,31 @@ namespace TencentCloud
                     bool m_updatedAtHasBeenSet;
 
                     /**
-                     * 默认生效组织
+                     * 默认生效组织，已废弃，请使用 OrganizationIds
                      */
                     std::string m_orgId;
                     bool m_orgIdHasBeenSet;
 
                     /**
-                     * 额外生效组织
+                     * 额外生效组织，已废弃，请使用 OrganizationIds
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_extraOrgIds;
                     bool m_extraOrgIdsHasBeenSet;
 
                     /**
-                     * 生效组织
+                     * 生效组织，已废弃，请使用 OrganizationIds
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_orgIds;
                     bool m_orgIdsHasBeenSet;
+
+                    /**
+                     * 告警渠道的所有生效组织
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_organizationIds;
+                    bool m_organizationIdsHasBeenSet;
 
                 };
             }
