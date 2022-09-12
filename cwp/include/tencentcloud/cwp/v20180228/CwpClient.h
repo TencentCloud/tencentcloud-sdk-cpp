@@ -33,6 +33,8 @@
 #include <tencentcloud/cwp/v20180228/model/CreateBaselineStrategyResponse.h>
 #include <tencentcloud/cwp/v20180228/model/CreateEmergencyVulScanRequest.h>
 #include <tencentcloud/cwp/v20180228/model/CreateEmergencyVulScanResponse.h>
+#include <tencentcloud/cwp/v20180228/model/CreateLicenseOrderRequest.h>
+#include <tencentcloud/cwp/v20180228/model/CreateLicenseOrderResponse.h>
 #include <tencentcloud/cwp/v20180228/model/CreateProtectServerRequest.h>
 #include <tencentcloud/cwp/v20180228/model/CreateProtectServerResponse.h>
 #include <tencentcloud/cwp/v20180228/model/CreateScanMalwareSettingRequest.h>
@@ -51,6 +53,8 @@
 #include <tencentcloud/cwp/v20180228/model/DeleteBashRulesResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DeleteBruteAttacksRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DeleteBruteAttacksResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DeleteLicenseRecordRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DeleteLicenseRecordResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DeleteLoginWhiteListRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DeleteLoginWhiteListResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DeleteMachineRequest.h>
@@ -215,6 +219,14 @@
 #include <tencentcloud/cwp/v20180228/model/DescribeImportMachineInfoResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeIndexListRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeIndexListResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeLicenseBindListRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeLicenseBindListResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeLicenseBindScheduleRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeLicenseBindScheduleResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeLicenseGeneralRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeLicenseGeneralResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeLicenseListRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeLicenseListResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeLogStorageStatisticRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeLogStorageStatisticResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeLoginWhiteCombinedListRequest.h>
@@ -341,6 +353,8 @@
 #include <tencentcloud/cwp/v20180228/model/DescribeWebPageProtectStatResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeWebPageServiceInfoRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeWebPageServiceInfoResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DestroyOrderRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DestroyOrderResponse.h>
 #include <tencentcloud/cwp/v20180228/model/EditBashRulesRequest.h>
 #include <tencentcloud/cwp/v20180228/model/EditBashRulesResponse.h>
 #include <tencentcloud/cwp/v20180228/model/EditTagsRequest.h>
@@ -363,6 +377,8 @@
 #include <tencentcloud/cwp/v20180228/model/ExportIgnoreBaselineRuleResponse.h>
 #include <tencentcloud/cwp/v20180228/model/ExportIgnoreRuleEffectHostListRequest.h>
 #include <tencentcloud/cwp/v20180228/model/ExportIgnoreRuleEffectHostListResponse.h>
+#include <tencentcloud/cwp/v20180228/model/ExportLicenseDetailRequest.h>
+#include <tencentcloud/cwp/v20180228/model/ExportLicenseDetailResponse.h>
 #include <tencentcloud/cwp/v20180228/model/ExportMaliciousRequestsRequest.h>
 #include <tencentcloud/cwp/v20180228/model/ExportMaliciousRequestsResponse.h>
 #include <tencentcloud/cwp/v20180228/model/ExportMalwaresRequest.h>
@@ -401,8 +417,14 @@
 #include <tencentcloud/cwp/v20180228/model/ModifyBanStatusResponse.h>
 #include <tencentcloud/cwp/v20180228/model/ModifyBruteAttackRulesRequest.h>
 #include <tencentcloud/cwp/v20180228/model/ModifyBruteAttackRulesResponse.h>
+#include <tencentcloud/cwp/v20180228/model/ModifyLicenseBindsRequest.h>
+#include <tencentcloud/cwp/v20180228/model/ModifyLicenseBindsResponse.h>
+#include <tencentcloud/cwp/v20180228/model/ModifyLicenseUnBindsRequest.h>
+#include <tencentcloud/cwp/v20180228/model/ModifyLicenseUnBindsResponse.h>
 #include <tencentcloud/cwp/v20180228/model/ModifyMalwareTimingScanSettingsRequest.h>
 #include <tencentcloud/cwp/v20180228/model/ModifyMalwareTimingScanSettingsResponse.h>
+#include <tencentcloud/cwp/v20180228/model/ModifyOrderAttributeRequest.h>
+#include <tencentcloud/cwp/v20180228/model/ModifyOrderAttributeResponse.h>
 #include <tencentcloud/cwp/v20180228/model/ModifyWarningSettingRequest.h>
 #include <tencentcloud/cwp/v20180228/model/ModifyWarningSettingResponse.h>
 #include <tencentcloud/cwp/v20180228/model/ModifyWebPageProtectDirRequest.h>
@@ -468,6 +490,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateEmergencyVulScanResponse> CreateEmergencyVulScanOutcome;
                 typedef std::future<CreateEmergencyVulScanOutcome> CreateEmergencyVulScanOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::CreateEmergencyVulScanRequest&, CreateEmergencyVulScanOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateEmergencyVulScanAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateLicenseOrderResponse> CreateLicenseOrderOutcome;
+                typedef std::future<CreateLicenseOrderOutcome> CreateLicenseOrderOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::CreateLicenseOrderRequest&, CreateLicenseOrderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateLicenseOrderAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateProtectServerResponse> CreateProtectServerOutcome;
                 typedef std::future<CreateProtectServerOutcome> CreateProtectServerOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::CreateProtectServerRequest&, CreateProtectServerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateProtectServerAsyncHandler;
@@ -495,6 +520,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteBruteAttacksResponse> DeleteBruteAttacksOutcome;
                 typedef std::future<DeleteBruteAttacksOutcome> DeleteBruteAttacksOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DeleteBruteAttacksRequest&, DeleteBruteAttacksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteBruteAttacksAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteLicenseRecordResponse> DeleteLicenseRecordOutcome;
+                typedef std::future<DeleteLicenseRecordOutcome> DeleteLicenseRecordOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DeleteLicenseRecordRequest&, DeleteLicenseRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLicenseRecordAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteLoginWhiteListResponse> DeleteLoginWhiteListOutcome;
                 typedef std::future<DeleteLoginWhiteListOutcome> DeleteLoginWhiteListOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DeleteLoginWhiteListRequest&, DeleteLoginWhiteListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLoginWhiteListAsyncHandler;
@@ -741,6 +769,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeIndexListResponse> DescribeIndexListOutcome;
                 typedef std::future<DescribeIndexListOutcome> DescribeIndexListOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeIndexListRequest&, DescribeIndexListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIndexListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeLicenseBindListResponse> DescribeLicenseBindListOutcome;
+                typedef std::future<DescribeLicenseBindListOutcome> DescribeLicenseBindListOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeLicenseBindListRequest&, DescribeLicenseBindListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLicenseBindListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeLicenseBindScheduleResponse> DescribeLicenseBindScheduleOutcome;
+                typedef std::future<DescribeLicenseBindScheduleOutcome> DescribeLicenseBindScheduleOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeLicenseBindScheduleRequest&, DescribeLicenseBindScheduleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLicenseBindScheduleAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeLicenseGeneralResponse> DescribeLicenseGeneralOutcome;
+                typedef std::future<DescribeLicenseGeneralOutcome> DescribeLicenseGeneralOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeLicenseGeneralRequest&, DescribeLicenseGeneralOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLicenseGeneralAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeLicenseListResponse> DescribeLicenseListOutcome;
+                typedef std::future<DescribeLicenseListOutcome> DescribeLicenseListOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeLicenseListRequest&, DescribeLicenseListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLicenseListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeLogStorageStatisticResponse> DescribeLogStorageStatisticOutcome;
                 typedef std::future<DescribeLogStorageStatisticOutcome> DescribeLogStorageStatisticOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeLogStorageStatisticRequest&, DescribeLogStorageStatisticOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLogStorageStatisticAsyncHandler;
@@ -930,6 +970,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeWebPageServiceInfoResponse> DescribeWebPageServiceInfoOutcome;
                 typedef std::future<DescribeWebPageServiceInfoOutcome> DescribeWebPageServiceInfoOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeWebPageServiceInfoRequest&, DescribeWebPageServiceInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWebPageServiceInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::DestroyOrderResponse> DestroyOrderOutcome;
+                typedef std::future<DestroyOrderOutcome> DestroyOrderOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DestroyOrderRequest&, DestroyOrderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DestroyOrderAsyncHandler;
                 typedef Outcome<Core::Error, Model::EditBashRulesResponse> EditBashRulesOutcome;
                 typedef std::future<EditBashRulesOutcome> EditBashRulesOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::EditBashRulesRequest&, EditBashRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EditBashRulesAsyncHandler;
@@ -963,6 +1006,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ExportIgnoreRuleEffectHostListResponse> ExportIgnoreRuleEffectHostListOutcome;
                 typedef std::future<ExportIgnoreRuleEffectHostListOutcome> ExportIgnoreRuleEffectHostListOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::ExportIgnoreRuleEffectHostListRequest&, ExportIgnoreRuleEffectHostListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExportIgnoreRuleEffectHostListAsyncHandler;
+                typedef Outcome<Core::Error, Model::ExportLicenseDetailResponse> ExportLicenseDetailOutcome;
+                typedef std::future<ExportLicenseDetailOutcome> ExportLicenseDetailOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::ExportLicenseDetailRequest&, ExportLicenseDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExportLicenseDetailAsyncHandler;
                 typedef Outcome<Core::Error, Model::ExportMaliciousRequestsResponse> ExportMaliciousRequestsOutcome;
                 typedef std::future<ExportMaliciousRequestsOutcome> ExportMaliciousRequestsOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::ExportMaliciousRequestsRequest&, ExportMaliciousRequestsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExportMaliciousRequestsAsyncHandler;
@@ -1020,9 +1066,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyBruteAttackRulesResponse> ModifyBruteAttackRulesOutcome;
                 typedef std::future<ModifyBruteAttackRulesOutcome> ModifyBruteAttackRulesOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::ModifyBruteAttackRulesRequest&, ModifyBruteAttackRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBruteAttackRulesAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyLicenseBindsResponse> ModifyLicenseBindsOutcome;
+                typedef std::future<ModifyLicenseBindsOutcome> ModifyLicenseBindsOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::ModifyLicenseBindsRequest&, ModifyLicenseBindsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLicenseBindsAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyLicenseUnBindsResponse> ModifyLicenseUnBindsOutcome;
+                typedef std::future<ModifyLicenseUnBindsOutcome> ModifyLicenseUnBindsOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::ModifyLicenseUnBindsRequest&, ModifyLicenseUnBindsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLicenseUnBindsAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyMalwareTimingScanSettingsResponse> ModifyMalwareTimingScanSettingsOutcome;
                 typedef std::future<ModifyMalwareTimingScanSettingsOutcome> ModifyMalwareTimingScanSettingsOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::ModifyMalwareTimingScanSettingsRequest&, ModifyMalwareTimingScanSettingsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyMalwareTimingScanSettingsAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyOrderAttributeResponse> ModifyOrderAttributeOutcome;
+                typedef std::future<ModifyOrderAttributeOutcome> ModifyOrderAttributeOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::ModifyOrderAttributeRequest&, ModifyOrderAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyOrderAttributeAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyWarningSettingResponse> ModifyWarningSettingOutcome;
                 typedef std::future<ModifyWarningSettingOutcome> ModifyWarningSettingOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::ModifyWarningSettingRequest&, ModifyWarningSettingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyWarningSettingAsyncHandler;
@@ -1126,6 +1181,18 @@ namespace TencentCloud
                 CreateEmergencyVulScanOutcomeCallable CreateEmergencyVulScanCallable(const Model::CreateEmergencyVulScanRequest& request);
 
                 /**
+                 *CreateLicenseOrder 该接口可以创建专业版/旗舰版订单
+支持预付费后付费创建
+后付费订单直接闯将成功
+预付费订单仅下单不支付,需要调用计费支付接口进行支付
+                 * @param req CreateLicenseOrderRequest
+                 * @return CreateLicenseOrderOutcome
+                 */
+                CreateLicenseOrderOutcome CreateLicenseOrder(const Model::CreateLicenseOrderRequest &request);
+                void CreateLicenseOrderAsync(const Model::CreateLicenseOrderRequest& request, const CreateLicenseOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateLicenseOrderOutcomeCallable CreateLicenseOrderCallable(const Model::CreateLicenseOrderRequest& request);
+
+                /**
                  *添加网站防护服务器
                  * @param req CreateProtectServerRequest
                  * @return CreateProtectServerOutcome
@@ -1205,6 +1272,15 @@ namespace TencentCloud
                 DeleteBruteAttacksOutcome DeleteBruteAttacks(const Model::DeleteBruteAttacksRequest &request);
                 void DeleteBruteAttacksAsync(const Model::DeleteBruteAttacksRequest& request, const DeleteBruteAttacksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteBruteAttacksOutcomeCallable DeleteBruteAttacksCallable(const Model::DeleteBruteAttacksRequest& request);
+
+                /**
+                 *对授权管理-订单列表内已过期的订单进行删除.(删除后的订单不在统计范畴内)
+                 * @param req DeleteLicenseRecordRequest
+                 * @return DeleteLicenseRecordOutcome
+                 */
+                DeleteLicenseRecordOutcome DeleteLicenseRecord(const Model::DeleteLicenseRecordRequest &request);
+                void DeleteLicenseRecordAsync(const Model::DeleteLicenseRecordRequest& request, const DeleteLicenseRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteLicenseRecordOutcomeCallable DeleteLicenseRecordCallable(const Model::DeleteLicenseRecordRequest& request);
 
                 /**
                  *本接口用于删除异地登录白名单规则。
@@ -1945,6 +2021,42 @@ namespace TencentCloud
                 DescribeIndexListOutcomeCallable DescribeIndexListCallable(const Model::DescribeIndexListRequest& request);
 
                 /**
+                 *该接口可以获取设置中心-授权管理,某个授权下已绑定的授权机器列表
+                 * @param req DescribeLicenseBindListRequest
+                 * @return DescribeLicenseBindListOutcome
+                 */
+                DescribeLicenseBindListOutcome DescribeLicenseBindList(const Model::DescribeLicenseBindListRequest &request);
+                void DescribeLicenseBindListAsync(const Model::DescribeLicenseBindListRequest& request, const DescribeLicenseBindListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLicenseBindListOutcomeCallable DescribeLicenseBindListCallable(const Model::DescribeLicenseBindListRequest& request);
+
+                /**
+                 *查询授权绑定任务的进度
+                 * @param req DescribeLicenseBindScheduleRequest
+                 * @return DescribeLicenseBindScheduleOutcome
+                 */
+                DescribeLicenseBindScheduleOutcome DescribeLicenseBindSchedule(const Model::DescribeLicenseBindScheduleRequest &request);
+                void DescribeLicenseBindScheduleAsync(const Model::DescribeLicenseBindScheduleRequest& request, const DescribeLicenseBindScheduleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLicenseBindScheduleOutcomeCallable DescribeLicenseBindScheduleCallable(const Model::DescribeLicenseBindScheduleRequest& request);
+
+                /**
+                 *授权管理-授权概览信息
+                 * @param req DescribeLicenseGeneralRequest
+                 * @return DescribeLicenseGeneralOutcome
+                 */
+                DescribeLicenseGeneralOutcome DescribeLicenseGeneral(const Model::DescribeLicenseGeneralRequest &request);
+                void DescribeLicenseGeneralAsync(const Model::DescribeLicenseGeneralRequest& request, const DescribeLicenseGeneralAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLicenseGeneralOutcomeCallable DescribeLicenseGeneralCallable(const Model::DescribeLicenseGeneralRequest& request);
+
+                /**
+                 *获取用户所有授权订单信息
+                 * @param req DescribeLicenseListRequest
+                 * @return DescribeLicenseListOutcome
+                 */
+                DescribeLicenseListOutcome DescribeLicenseList(const Model::DescribeLicenseListRequest &request);
+                void DescribeLicenseListAsync(const Model::DescribeLicenseListRequest& request, const DescribeLicenseListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLicenseListOutcomeCallable DescribeLicenseListCallable(const Model::DescribeLicenseListRequest& request);
+
+                /**
                  *获取日志检索容量使用统计
                  * @param req DescribeLogStorageStatisticRequest
                  * @return DescribeLogStorageStatisticOutcome
@@ -2512,6 +2624,15 @@ namespace TencentCloud
                 DescribeWebPageServiceInfoOutcomeCallable DescribeWebPageServiceInfoCallable(const Model::DescribeWebPageServiceInfoRequest& request);
 
                 /**
+                 *DestroyOrder  该接口可以对资源销毁.
+                 * @param req DestroyOrderRequest
+                 * @return DestroyOrderOutcome
+                 */
+                DestroyOrderOutcome DestroyOrder(const Model::DestroyOrderRequest &request);
+                void DestroyOrderAsync(const Model::DestroyOrderRequest& request, const DestroyOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DestroyOrderOutcomeCallable DestroyOrderCallable(const Model::DestroyOrderRequest& request);
+
+                /**
                  *新增或修改高危命令规则
                  * @param req EditBashRulesRequest
                  * @return EditBashRulesOutcome
@@ -2609,6 +2730,15 @@ namespace TencentCloud
                 ExportIgnoreRuleEffectHostListOutcome ExportIgnoreRuleEffectHostList(const Model::ExportIgnoreRuleEffectHostListRequest &request);
                 void ExportIgnoreRuleEffectHostListAsync(const Model::ExportIgnoreRuleEffectHostListRequest& request, const ExportIgnoreRuleEffectHostListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ExportIgnoreRuleEffectHostListOutcomeCallable ExportIgnoreRuleEffectHostListCallable(const Model::ExportIgnoreRuleEffectHostListRequest& request);
+
+                /**
+                 *导出授权列表对应的绑定信息
+                 * @param req ExportLicenseDetailRequest
+                 * @return ExportLicenseDetailOutcome
+                 */
+                ExportLicenseDetailOutcome ExportLicenseDetail(const Model::ExportLicenseDetailRequest &request);
+                void ExportLicenseDetailAsync(const Model::ExportLicenseDetailRequest& request, const ExportLicenseDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ExportLicenseDetailOutcomeCallable ExportLicenseDetailCallable(const Model::ExportLicenseDetailRequest& request);
 
                 /**
                  *本接口 (ExportMaliciousRequests) 用于导出下载恶意请求文件。
@@ -2782,6 +2912,24 @@ namespace TencentCloud
                 ModifyBruteAttackRulesOutcomeCallable ModifyBruteAttackRulesCallable(const Model::ModifyBruteAttackRulesRequest& request);
 
                 /**
+                 *设置中心-授权管理 对某个授权批量绑定机器
+                 * @param req ModifyLicenseBindsRequest
+                 * @return ModifyLicenseBindsOutcome
+                 */
+                ModifyLicenseBindsOutcome ModifyLicenseBinds(const Model::ModifyLicenseBindsRequest &request);
+                void ModifyLicenseBindsAsync(const Model::ModifyLicenseBindsRequest& request, const ModifyLicenseBindsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyLicenseBindsOutcomeCallable ModifyLicenseBindsCallable(const Model::ModifyLicenseBindsRequest& request);
+
+                /**
+                 *设置中心-授权管理 对某个授权批量解绑机器
+                 * @param req ModifyLicenseUnBindsRequest
+                 * @return ModifyLicenseUnBindsOutcome
+                 */
+                ModifyLicenseUnBindsOutcome ModifyLicenseUnBinds(const Model::ModifyLicenseUnBindsRequest &request);
+                void ModifyLicenseUnBindsAsync(const Model::ModifyLicenseUnBindsRequest& request, const ModifyLicenseUnBindsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyLicenseUnBindsOutcomeCallable ModifyLicenseUnBindsCallable(const Model::ModifyLicenseUnBindsRequest& request);
+
+                /**
                  *定时扫描设置
                  * @param req ModifyMalwareTimingScanSettingsRequest
                  * @return ModifyMalwareTimingScanSettingsOutcome
@@ -2789,6 +2937,15 @@ namespace TencentCloud
                 ModifyMalwareTimingScanSettingsOutcome ModifyMalwareTimingScanSettings(const Model::ModifyMalwareTimingScanSettingsRequest &request);
                 void ModifyMalwareTimingScanSettingsAsync(const Model::ModifyMalwareTimingScanSettingsRequest& request, const ModifyMalwareTimingScanSettingsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyMalwareTimingScanSettingsOutcomeCallable ModifyMalwareTimingScanSettingsCallable(const Model::ModifyMalwareTimingScanSettingsRequest& request);
+
+                /**
+                 *对订单属性编辑
+                 * @param req ModifyOrderAttributeRequest
+                 * @return ModifyOrderAttributeOutcome
+                 */
+                ModifyOrderAttributeOutcome ModifyOrderAttribute(const Model::ModifyOrderAttributeRequest &request);
+                void ModifyOrderAttributeAsync(const Model::ModifyOrderAttributeRequest& request, const ModifyOrderAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyOrderAttributeOutcomeCallable ModifyOrderAttributeCallable(const Model::ModifyOrderAttributeRequest& request);
 
                 /**
                  *修改告警设置

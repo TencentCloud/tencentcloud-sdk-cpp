@@ -25,9 +25,9 @@ using namespace std;
 DescribeAssetSystemPackageListRequest::DescribeAssetSystemPackageListRequest() :
     m_uuidHasBeenSet(false),
     m_quuidHasBeenSet(false),
-    m_limitHasBeenSet(false),
-    m_offsetHasBeenSet(false),
     m_filtersHasBeenSet(false),
+    m_offsetHasBeenSet(false),
+    m_limitHasBeenSet(false),
     m_orderHasBeenSet(false),
     m_byHasBeenSet(false)
 {
@@ -56,22 +56,6 @@ string DescribeAssetSystemPackageListRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_quuid.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_limitHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Limit";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_limit, allocator);
-    }
-
-    if (m_offsetHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Offset";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_offset, allocator);
-    }
-
     if (m_filtersHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -85,6 +69,22 @@ string DescribeAssetSystemPackageListRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_offsetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Offset";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_limitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Limit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_limit, allocator);
     }
 
     if (m_orderHasBeenSet)
@@ -143,20 +143,20 @@ bool DescribeAssetSystemPackageListRequest::QuuidHasBeenSet() const
     return m_quuidHasBeenSet;
 }
 
-uint64_t DescribeAssetSystemPackageListRequest::GetLimit() const
+vector<Filter> DescribeAssetSystemPackageListRequest::GetFilters() const
 {
-    return m_limit;
+    return m_filters;
 }
 
-void DescribeAssetSystemPackageListRequest::SetLimit(const uint64_t& _limit)
+void DescribeAssetSystemPackageListRequest::SetFilters(const vector<Filter>& _filters)
 {
-    m_limit = _limit;
-    m_limitHasBeenSet = true;
+    m_filters = _filters;
+    m_filtersHasBeenSet = true;
 }
 
-bool DescribeAssetSystemPackageListRequest::LimitHasBeenSet() const
+bool DescribeAssetSystemPackageListRequest::FiltersHasBeenSet() const
 {
-    return m_limitHasBeenSet;
+    return m_filtersHasBeenSet;
 }
 
 uint64_t DescribeAssetSystemPackageListRequest::GetOffset() const
@@ -175,20 +175,20 @@ bool DescribeAssetSystemPackageListRequest::OffsetHasBeenSet() const
     return m_offsetHasBeenSet;
 }
 
-vector<Filter> DescribeAssetSystemPackageListRequest::GetFilters() const
+uint64_t DescribeAssetSystemPackageListRequest::GetLimit() const
 {
-    return m_filters;
+    return m_limit;
 }
 
-void DescribeAssetSystemPackageListRequest::SetFilters(const vector<Filter>& _filters)
+void DescribeAssetSystemPackageListRequest::SetLimit(const uint64_t& _limit)
 {
-    m_filters = _filters;
-    m_filtersHasBeenSet = true;
+    m_limit = _limit;
+    m_limitHasBeenSet = true;
 }
 
-bool DescribeAssetSystemPackageListRequest::FiltersHasBeenSet() const
+bool DescribeAssetSystemPackageListRequest::LimitHasBeenSet() const
 {
-    return m_filtersHasBeenSet;
+    return m_limitHasBeenSet;
 }
 
 string DescribeAssetSystemPackageListRequest::GetOrder() const

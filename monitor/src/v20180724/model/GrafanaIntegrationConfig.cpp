@@ -24,7 +24,8 @@ GrafanaIntegrationConfig::GrafanaIntegrationConfig() :
     m_integrationIdHasBeenSet(false),
     m_kindHasBeenSet(false),
     m_contentHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_grafanaURLHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome GrafanaIntegrationConfig::Deserialize(const rapidjson::Value
         m_descriptionHasBeenSet = true;
     }
 
+    if (value.HasMember("GrafanaURL") && !value["GrafanaURL"].IsNull())
+    {
+        if (!value["GrafanaURL"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `GrafanaIntegrationConfig.GrafanaURL` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_grafanaURL = string(value["GrafanaURL"].GetString());
+        m_grafanaURLHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +121,14 @@ void GrafanaIntegrationConfig::ToJsonObject(rapidjson::Value &value, rapidjson::
         string key = "Description";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_grafanaURLHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GrafanaURL";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_grafanaURL.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -177,5 +196,21 @@ void GrafanaIntegrationConfig::SetDescription(const string& _description)
 bool GrafanaIntegrationConfig::DescriptionHasBeenSet() const
 {
     return m_descriptionHasBeenSet;
+}
+
+string GrafanaIntegrationConfig::GetGrafanaURL() const
+{
+    return m_grafanaURL;
+}
+
+void GrafanaIntegrationConfig::SetGrafanaURL(const string& _grafanaURL)
+{
+    m_grafanaURL = _grafanaURL;
+    m_grafanaURLHasBeenSet = true;
+}
+
+bool GrafanaIntegrationConfig::GrafanaURLHasBeenSet() const
+{
+    return m_grafanaURLHasBeenSet;
 }
 

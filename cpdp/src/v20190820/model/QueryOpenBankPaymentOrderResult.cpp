@@ -37,7 +37,8 @@ QueryOpenBankPaymentOrderResult::QueryOpenBankPaymentOrderResult() :
     m_bankApprovalGuideInfoHasBeenSet(false),
     m_feeAmountHasBeenSet(false),
     m_feeRateHasBeenSet(false),
-    m_profitShareRespInfoListHasBeenSet(false)
+    m_profitShareRespInfoListHasBeenSet(false),
+    m_timeFinishHasBeenSet(false)
 {
 }
 
@@ -240,6 +241,16 @@ CoreInternalOutcome QueryOpenBankPaymentOrderResult::Deserialize(const rapidjson
         m_profitShareRespInfoListHasBeenSet = true;
     }
 
+    if (value.HasMember("TimeFinish") && !value["TimeFinish"].IsNull())
+    {
+        if (!value["TimeFinish"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `QueryOpenBankPaymentOrderResult.TimeFinish` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_timeFinish = string(value["TimeFinish"].GetString());
+        m_timeFinishHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -390,6 +401,14 @@ void QueryOpenBankPaymentOrderResult::ToJsonObject(rapidjson::Value &value, rapi
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_timeFinishHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TimeFinish";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_timeFinish.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -665,5 +684,21 @@ void QueryOpenBankPaymentOrderResult::SetProfitShareRespInfoList(const vector<Op
 bool QueryOpenBankPaymentOrderResult::ProfitShareRespInfoListHasBeenSet() const
 {
     return m_profitShareRespInfoListHasBeenSet;
+}
+
+string QueryOpenBankPaymentOrderResult::GetTimeFinish() const
+{
+    return m_timeFinish;
+}
+
+void QueryOpenBankPaymentOrderResult::SetTimeFinish(const string& _timeFinish)
+{
+    m_timeFinish = _timeFinish;
+    m_timeFinishHasBeenSet = true;
+}
+
+bool QueryOpenBankPaymentOrderResult::TimeFinishHasBeenSet() const
+{
+    return m_timeFinishHasBeenSet;
 }
 

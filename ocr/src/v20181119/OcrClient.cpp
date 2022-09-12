@@ -2018,6 +2018,49 @@ OcrClient::RecognizeIndonesiaIDCardOCROutcomeCallable OcrClient::RecognizeIndone
     return task->get_future();
 }
 
+OcrClient::RecognizeMedicalInvoiceOCROutcome OcrClient::RecognizeMedicalInvoiceOCR(const RecognizeMedicalInvoiceOCRRequest &request)
+{
+    auto outcome = MakeRequest(request, "RecognizeMedicalInvoiceOCR");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RecognizeMedicalInvoiceOCRResponse rsp = RecognizeMedicalInvoiceOCRResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RecognizeMedicalInvoiceOCROutcome(rsp);
+        else
+            return RecognizeMedicalInvoiceOCROutcome(o.GetError());
+    }
+    else
+    {
+        return RecognizeMedicalInvoiceOCROutcome(outcome.GetError());
+    }
+}
+
+void OcrClient::RecognizeMedicalInvoiceOCRAsync(const RecognizeMedicalInvoiceOCRRequest& request, const RecognizeMedicalInvoiceOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RecognizeMedicalInvoiceOCR(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OcrClient::RecognizeMedicalInvoiceOCROutcomeCallable OcrClient::RecognizeMedicalInvoiceOCRCallable(const RecognizeMedicalInvoiceOCRRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RecognizeMedicalInvoiceOCROutcome()>>(
+        [this, request]()
+        {
+            return this->RecognizeMedicalInvoiceOCR(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 OcrClient::RecognizeOnlineTaxiItineraryOCROutcome OcrClient::RecognizeOnlineTaxiItineraryOCR(const RecognizeOnlineTaxiItineraryOCRRequest &request)
 {
     auto outcome = MakeRequest(request, "RecognizeOnlineTaxiItineraryOCR");

@@ -23,10 +23,10 @@ using namespace TencentCloud::Cwp::V20180228::Model;
 using namespace std;
 
 DescribeAssetProcessInfoListRequest::DescribeAssetProcessInfoListRequest() :
+    m_quuidHasBeenSet(false),
+    m_filtersHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_quuidHasBeenSet(false),
     m_orderHasBeenSet(false),
     m_byHasBeenSet(false)
 {
@@ -39,20 +39,12 @@ string DescribeAssetProcessInfoListRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_limitHasBeenSet)
+    if (m_quuidHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Limit";
+        string key = "Quuid";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_limit, allocator);
-    }
-
-    if (m_offsetHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Offset";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_offset, allocator);
+        d.AddMember(iKey, rapidjson::Value(m_quuid.c_str(), allocator).Move(), allocator);
     }
 
     if (m_filtersHasBeenSet)
@@ -70,12 +62,20 @@ string DescribeAssetProcessInfoListRequest::ToJsonString() const
         }
     }
 
-    if (m_quuidHasBeenSet)
+    if (m_limitHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Quuid";
+        string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_quuid.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_offsetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Offset";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_offset, allocator);
     }
 
     if (m_orderHasBeenSet)
@@ -101,6 +101,38 @@ string DescribeAssetProcessInfoListRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string DescribeAssetProcessInfoListRequest::GetQuuid() const
+{
+    return m_quuid;
+}
+
+void DescribeAssetProcessInfoListRequest::SetQuuid(const string& _quuid)
+{
+    m_quuid = _quuid;
+    m_quuidHasBeenSet = true;
+}
+
+bool DescribeAssetProcessInfoListRequest::QuuidHasBeenSet() const
+{
+    return m_quuidHasBeenSet;
+}
+
+vector<Filter> DescribeAssetProcessInfoListRequest::GetFilters() const
+{
+    return m_filters;
+}
+
+void DescribeAssetProcessInfoListRequest::SetFilters(const vector<Filter>& _filters)
+{
+    m_filters = _filters;
+    m_filtersHasBeenSet = true;
+}
+
+bool DescribeAssetProcessInfoListRequest::FiltersHasBeenSet() const
+{
+    return m_filtersHasBeenSet;
+}
 
 uint64_t DescribeAssetProcessInfoListRequest::GetLimit() const
 {
@@ -132,38 +164,6 @@ void DescribeAssetProcessInfoListRequest::SetOffset(const uint64_t& _offset)
 bool DescribeAssetProcessInfoListRequest::OffsetHasBeenSet() const
 {
     return m_offsetHasBeenSet;
-}
-
-vector<Filter> DescribeAssetProcessInfoListRequest::GetFilters() const
-{
-    return m_filters;
-}
-
-void DescribeAssetProcessInfoListRequest::SetFilters(const vector<Filter>& _filters)
-{
-    m_filters = _filters;
-    m_filtersHasBeenSet = true;
-}
-
-bool DescribeAssetProcessInfoListRequest::FiltersHasBeenSet() const
-{
-    return m_filtersHasBeenSet;
-}
-
-string DescribeAssetProcessInfoListRequest::GetQuuid() const
-{
-    return m_quuid;
-}
-
-void DescribeAssetProcessInfoListRequest::SetQuuid(const string& _quuid)
-{
-    m_quuid = _quuid;
-    m_quuidHasBeenSet = true;
-}
-
-bool DescribeAssetProcessInfoListRequest::QuuidHasBeenSet() const
-{
-    return m_quuidHasBeenSet;
 }
 
 string DescribeAssetProcessInfoListRequest::GetOrder() const

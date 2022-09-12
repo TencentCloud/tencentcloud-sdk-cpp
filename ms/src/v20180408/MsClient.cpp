@@ -384,6 +384,49 @@ MsClient::DeleteShieldInstancesOutcomeCallable MsClient::DeleteShieldInstancesCa
     return task->get_future();
 }
 
+MsClient::DescribeApkDetectionResultOutcome MsClient::DescribeApkDetectionResult(const DescribeApkDetectionResultRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeApkDetectionResult");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeApkDetectionResultResponse rsp = DescribeApkDetectionResultResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeApkDetectionResultOutcome(rsp);
+        else
+            return DescribeApkDetectionResultOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeApkDetectionResultOutcome(outcome.GetError());
+    }
+}
+
+void MsClient::DescribeApkDetectionResultAsync(const DescribeApkDetectionResultRequest& request, const DescribeApkDetectionResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeApkDetectionResult(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MsClient::DescribeApkDetectionResultOutcomeCallable MsClient::DescribeApkDetectionResultCallable(const DescribeApkDetectionResultRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeApkDetectionResultOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeApkDetectionResult(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MsClient::DescribeResourceInstancesOutcome MsClient::DescribeResourceInstances(const DescribeResourceInstancesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeResourceInstances");

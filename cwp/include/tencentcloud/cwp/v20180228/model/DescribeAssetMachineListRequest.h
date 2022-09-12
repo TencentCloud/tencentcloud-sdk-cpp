@@ -44,42 +44,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取需要返回的数量，默认为10，最大值为100
-                     * @return Limit 需要返回的数量，默认为10，最大值为100
-                     */
-                    uint64_t GetLimit() const;
-
-                    /**
-                     * 设置需要返回的数量，默认为10，最大值为100
-                     * @param Limit 需要返回的数量，默认为10，最大值为100
-                     */
-                    void SetLimit(const uint64_t& _limit);
-
-                    /**
-                     * 判断参数 Limit 是否已赋值
-                     * @return Limit 是否已赋值
-                     */
-                    bool LimitHasBeenSet() const;
-
-                    /**
-                     * 获取偏移量，默认为0。
-                     * @return Offset 偏移量，默认为0。
-                     */
-                    uint64_t GetOffset() const;
-
-                    /**
-                     * 设置偏移量，默认为0。
-                     * @param Offset 偏移量，默认为0。
-                     */
-                    void SetOffset(const uint64_t& _offset);
-
-                    /**
-                     * 判断参数 Offset 是否已赋值
-                     * @return Offset 是否已赋值
-                     */
-                    bool OffsetHasBeenSet() const;
-
-                    /**
                      * 获取过滤条件。
 <li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li>
 <li>OsType - String - 是否必填：否 - windows或linux</li>
@@ -158,22 +122,40 @@ namespace TencentCloud
                     bool FiltersHasBeenSet() const;
 
                     /**
-                     * 获取可选排序：PartitionCount
-                     * @return By 可选排序：PartitionCount
+                     * 获取需要返回的数量，默认为10，最大值为100
+                     * @return Limit 需要返回的数量，默认为10，最大值为100
                      */
-                    std::string GetBy() const;
+                    uint64_t GetLimit() const;
 
                     /**
-                     * 设置可选排序：PartitionCount
-                     * @param By 可选排序：PartitionCount
+                     * 设置需要返回的数量，默认为10，最大值为100
+                     * @param Limit 需要返回的数量，默认为10，最大值为100
                      */
-                    void SetBy(const std::string& _by);
+                    void SetLimit(const uint64_t& _limit);
 
                     /**
-                     * 判断参数 By 是否已赋值
-                     * @return By 是否已赋值
+                     * 判断参数 Limit 是否已赋值
+                     * @return Limit 是否已赋值
                      */
-                    bool ByHasBeenSet() const;
+                    bool LimitHasBeenSet() const;
+
+                    /**
+                     * 获取偏移量，默认为0。
+                     * @return Offset 偏移量，默认为0。
+                     */
+                    uint64_t GetOffset() const;
+
+                    /**
+                     * 设置偏移量，默认为0。
+                     * @param Offset 偏移量，默认为0。
+                     */
+                    void SetOffset(const uint64_t& _offset);
+
+                    /**
+                     * 判断参数 Offset 是否已赋值
+                     * @return Offset 是否已赋值
+                     */
+                    bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取排序方式，asc升序 或 desc降序
@@ -193,19 +175,25 @@ namespace TencentCloud
                      */
                     bool OrderHasBeenSet() const;
 
+                    /**
+                     * 获取可选排序[FirstTime|PartitionCount]
+                     * @return By 可选排序[FirstTime|PartitionCount]
+                     */
+                    std::string GetBy() const;
+
+                    /**
+                     * 设置可选排序[FirstTime|PartitionCount]
+                     * @param By 可选排序[FirstTime|PartitionCount]
+                     */
+                    void SetBy(const std::string& _by);
+
+                    /**
+                     * 判断参数 By 是否已赋值
+                     * @return By 是否已赋值
+                     */
+                    bool ByHasBeenSet() const;
+
                 private:
-
-                    /**
-                     * 需要返回的数量，默认为10，最大值为100
-                     */
-                    uint64_t m_limit;
-                    bool m_limitHasBeenSet;
-
-                    /**
-                     * 偏移量，默认为0。
-                     */
-                    uint64_t m_offset;
-                    bool m_offsetHasBeenSet;
 
                     /**
                      * 过滤条件。
@@ -229,16 +217,28 @@ namespace TencentCloud
                     bool m_filtersHasBeenSet;
 
                     /**
-                     * 可选排序：PartitionCount
+                     * 需要返回的数量，默认为10，最大值为100
                      */
-                    std::string m_by;
-                    bool m_byHasBeenSet;
+                    uint64_t m_limit;
+                    bool m_limitHasBeenSet;
+
+                    /**
+                     * 偏移量，默认为0。
+                     */
+                    uint64_t m_offset;
+                    bool m_offsetHasBeenSet;
 
                     /**
                      * 排序方式，asc升序 或 desc降序
                      */
                     std::string m_order;
                     bool m_orderHasBeenSet;
+
+                    /**
+                     * 可选排序[FirstTime|PartitionCount]
+                     */
+                    std::string m_by;
+                    bool m_byHasBeenSet;
 
                 };
             }

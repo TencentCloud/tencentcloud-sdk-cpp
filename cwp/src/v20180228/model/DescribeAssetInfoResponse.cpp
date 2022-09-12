@@ -33,7 +33,17 @@ DescribeAssetInfoResponse::DescribeAssetInfoResponse() :
     m_webAppCountHasBeenSet(false),
     m_webFrameCountHasBeenSet(false),
     m_webServiceCountHasBeenSet(false),
-    m_webLocationCountHasBeenSet(false)
+    m_webLocationCountHasBeenSet(false),
+    m_accountNewCountHasBeenSet(false),
+    m_portNewCountHasBeenSet(false),
+    m_processNewCountHasBeenSet(false),
+    m_softwareNewCountHasBeenSet(false),
+    m_databaseNewCountHasBeenSet(false),
+    m_webAppNewCountHasBeenSet(false),
+    m_webFrameNewCountHasBeenSet(false),
+    m_webServiceNewCountHasBeenSet(false),
+    m_webLocationNewCountHasBeenSet(false),
+    m_machineNewCountHasBeenSet(false)
 {
 }
 
@@ -171,6 +181,106 @@ CoreInternalOutcome DescribeAssetInfoResponse::Deserialize(const string &payload
         m_webLocationCountHasBeenSet = true;
     }
 
+    if (rsp.HasMember("AccountNewCount") && !rsp["AccountNewCount"].IsNull())
+    {
+        if (!rsp["AccountNewCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AccountNewCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_accountNewCount = rsp["AccountNewCount"].GetInt64();
+        m_accountNewCountHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("PortNewCount") && !rsp["PortNewCount"].IsNull())
+    {
+        if (!rsp["PortNewCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `PortNewCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_portNewCount = rsp["PortNewCount"].GetInt64();
+        m_portNewCountHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ProcessNewCount") && !rsp["ProcessNewCount"].IsNull())
+    {
+        if (!rsp["ProcessNewCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProcessNewCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_processNewCount = rsp["ProcessNewCount"].GetInt64();
+        m_processNewCountHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("SoftwareNewCount") && !rsp["SoftwareNewCount"].IsNull())
+    {
+        if (!rsp["SoftwareNewCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SoftwareNewCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_softwareNewCount = rsp["SoftwareNewCount"].GetInt64();
+        m_softwareNewCountHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("DatabaseNewCount") && !rsp["DatabaseNewCount"].IsNull())
+    {
+        if (!rsp["DatabaseNewCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DatabaseNewCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_databaseNewCount = rsp["DatabaseNewCount"].GetInt64();
+        m_databaseNewCountHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("WebAppNewCount") && !rsp["WebAppNewCount"].IsNull())
+    {
+        if (!rsp["WebAppNewCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `WebAppNewCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_webAppNewCount = rsp["WebAppNewCount"].GetInt64();
+        m_webAppNewCountHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("WebFrameNewCount") && !rsp["WebFrameNewCount"].IsNull())
+    {
+        if (!rsp["WebFrameNewCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `WebFrameNewCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_webFrameNewCount = rsp["WebFrameNewCount"].GetInt64();
+        m_webFrameNewCountHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("WebServiceNewCount") && !rsp["WebServiceNewCount"].IsNull())
+    {
+        if (!rsp["WebServiceNewCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `WebServiceNewCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_webServiceNewCount = rsp["WebServiceNewCount"].GetInt64();
+        m_webServiceNewCountHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("WebLocationNewCount") && !rsp["WebLocationNewCount"].IsNull())
+    {
+        if (!rsp["WebLocationNewCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `WebLocationNewCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_webLocationNewCount = rsp["WebLocationNewCount"].GetInt64();
+        m_webLocationNewCountHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("MachineNewCount") && !rsp["MachineNewCount"].IsNull())
+    {
+        if (!rsp["MachineNewCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `MachineNewCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_machineNewCount = rsp["MachineNewCount"].GetInt64();
+        m_machineNewCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -259,6 +369,86 @@ string DescribeAssetInfoResponse::ToJsonString() const
         string key = "WebLocationCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_webLocationCount, allocator);
+    }
+
+    if (m_accountNewCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AccountNewCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_accountNewCount, allocator);
+    }
+
+    if (m_portNewCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PortNewCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_portNewCount, allocator);
+    }
+
+    if (m_processNewCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProcessNewCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_processNewCount, allocator);
+    }
+
+    if (m_softwareNewCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SoftwareNewCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_softwareNewCount, allocator);
+    }
+
+    if (m_databaseNewCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DatabaseNewCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_databaseNewCount, allocator);
+    }
+
+    if (m_webAppNewCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WebAppNewCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_webAppNewCount, allocator);
+    }
+
+    if (m_webFrameNewCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WebFrameNewCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_webFrameNewCount, allocator);
+    }
+
+    if (m_webServiceNewCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WebServiceNewCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_webServiceNewCount, allocator);
+    }
+
+    if (m_webLocationNewCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WebLocationNewCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_webLocationNewCount, allocator);
+    }
+
+    if (m_machineNewCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MachineNewCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_machineNewCount, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -371,6 +561,106 @@ uint64_t DescribeAssetInfoResponse::GetWebLocationCount() const
 bool DescribeAssetInfoResponse::WebLocationCountHasBeenSet() const
 {
     return m_webLocationCountHasBeenSet;
+}
+
+int64_t DescribeAssetInfoResponse::GetAccountNewCount() const
+{
+    return m_accountNewCount;
+}
+
+bool DescribeAssetInfoResponse::AccountNewCountHasBeenSet() const
+{
+    return m_accountNewCountHasBeenSet;
+}
+
+int64_t DescribeAssetInfoResponse::GetPortNewCount() const
+{
+    return m_portNewCount;
+}
+
+bool DescribeAssetInfoResponse::PortNewCountHasBeenSet() const
+{
+    return m_portNewCountHasBeenSet;
+}
+
+int64_t DescribeAssetInfoResponse::GetProcessNewCount() const
+{
+    return m_processNewCount;
+}
+
+bool DescribeAssetInfoResponse::ProcessNewCountHasBeenSet() const
+{
+    return m_processNewCountHasBeenSet;
+}
+
+int64_t DescribeAssetInfoResponse::GetSoftwareNewCount() const
+{
+    return m_softwareNewCount;
+}
+
+bool DescribeAssetInfoResponse::SoftwareNewCountHasBeenSet() const
+{
+    return m_softwareNewCountHasBeenSet;
+}
+
+int64_t DescribeAssetInfoResponse::GetDatabaseNewCount() const
+{
+    return m_databaseNewCount;
+}
+
+bool DescribeAssetInfoResponse::DatabaseNewCountHasBeenSet() const
+{
+    return m_databaseNewCountHasBeenSet;
+}
+
+int64_t DescribeAssetInfoResponse::GetWebAppNewCount() const
+{
+    return m_webAppNewCount;
+}
+
+bool DescribeAssetInfoResponse::WebAppNewCountHasBeenSet() const
+{
+    return m_webAppNewCountHasBeenSet;
+}
+
+int64_t DescribeAssetInfoResponse::GetWebFrameNewCount() const
+{
+    return m_webFrameNewCount;
+}
+
+bool DescribeAssetInfoResponse::WebFrameNewCountHasBeenSet() const
+{
+    return m_webFrameNewCountHasBeenSet;
+}
+
+int64_t DescribeAssetInfoResponse::GetWebServiceNewCount() const
+{
+    return m_webServiceNewCount;
+}
+
+bool DescribeAssetInfoResponse::WebServiceNewCountHasBeenSet() const
+{
+    return m_webServiceNewCountHasBeenSet;
+}
+
+int64_t DescribeAssetInfoResponse::GetWebLocationNewCount() const
+{
+    return m_webLocationNewCount;
+}
+
+bool DescribeAssetInfoResponse::WebLocationNewCountHasBeenSet() const
+{
+    return m_webLocationNewCountHasBeenSet;
+}
+
+int64_t DescribeAssetInfoResponse::GetMachineNewCount() const
+{
+    return m_machineNewCount;
+}
+
+bool DescribeAssetInfoResponse::MachineNewCountHasBeenSet() const
+{
+    return m_machineNewCountHasBeenSet;
 }
 
 

@@ -119,6 +119,46 @@ namespace TencentCloud
                      */
                     bool CreateAtHasBeenSet() const;
 
+                    /**
+                     * 获取实例 ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InstanceId 实例 ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetInstanceId() const;
+
+                    /**
+                     * 设置实例 ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param InstanceId 实例 ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetInstanceId(const std::string& _instanceId);
+
+                    /**
+                     * 判断参数 InstanceId 是否已赋值
+                     * @return InstanceId 是否已赋值
+                     */
+                    bool InstanceIdHasBeenSet() const;
+
+                    /**
+                     * 获取用户主账号 UIN
+                     * @return Uin 用户主账号 UIN
+                     */
+                    std::string GetUin() const;
+
+                    /**
+                     * 设置用户主账号 UIN
+                     * @param Uin 用户主账号 UIN
+                     */
+                    void SetUin(const std::string& _uin);
+
+                    /**
+                     * 判断参数 Uin 是否已赋值
+                     * @return Uin 是否已赋值
+                     */
+                    bool UinHasBeenSet() const;
+
                 private:
 
                     /**
@@ -144,6 +184,19 @@ namespace TencentCloud
                      */
                     std::string m_createAt;
                     bool m_createAtHasBeenSet;
+
+                    /**
+                     * 实例 ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_instanceId;
+                    bool m_instanceIdHasBeenSet;
+
+                    /**
+                     * 用户主账号 UIN
+                     */
+                    std::string m_uin;
+                    bool m_uinHasBeenSet;
 
                 };
             }

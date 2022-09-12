@@ -118,6 +118,28 @@ namespace TencentCloud
                      */
                     bool DescriptionHasBeenSet() const;
 
+                    /**
+                     * 获取Grafana 跳转地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return GrafanaURL Grafana 跳转地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetGrafanaURL() const;
+
+                    /**
+                     * 设置Grafana 跳转地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param GrafanaURL Grafana 跳转地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetGrafanaURL(const std::string& _grafanaURL);
+
+                    /**
+                     * 判断参数 GrafanaURL 是否已赋值
+                     * @return GrafanaURL 是否已赋值
+                     */
+                    bool GrafanaURLHasBeenSet() const;
+
                 private:
 
                     /**
@@ -143,6 +165,13 @@ namespace TencentCloud
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
+
+                    /**
+                     * Grafana 跳转地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_grafanaURL;
+                    bool m_grafanaURLHasBeenSet;
 
                 };
             }

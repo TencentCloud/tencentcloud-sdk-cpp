@@ -318,6 +318,28 @@ PERSON 自然人
                      */
                     bool OpenIdHasBeenSet() const;
 
+                    /**
+                     * 获取合同组签署链接对应的合同组id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FlowGroupId 合同组签署链接对应的合同组id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetFlowGroupId() const;
+
+                    /**
+                     * 设置合同组签署链接对应的合同组id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param FlowGroupId 合同组签署链接对应的合同组id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetFlowGroupId(const std::string& _flowGroupId);
+
+                    /**
+                     * 判断参数 FlowGroupId 是否已赋值
+                     * @return FlowGroupId 是否已赋值
+                     */
+                    bool FlowGroupIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -405,6 +427,13 @@ PERSON 自然人
                      */
                     std::string m_openId;
                     bool m_openIdHasBeenSet;
+
+                    /**
+                     * 合同组签署链接对应的合同组id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_flowGroupId;
+                    bool m_flowGroupIdHasBeenSet;
 
                 };
             }

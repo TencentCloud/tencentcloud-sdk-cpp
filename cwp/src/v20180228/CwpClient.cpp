@@ -255,6 +255,49 @@ CwpClient::CreateEmergencyVulScanOutcomeCallable CwpClient::CreateEmergencyVulSc
     return task->get_future();
 }
 
+CwpClient::CreateLicenseOrderOutcome CwpClient::CreateLicenseOrder(const CreateLicenseOrderRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateLicenseOrder");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateLicenseOrderResponse rsp = CreateLicenseOrderResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateLicenseOrderOutcome(rsp);
+        else
+            return CreateLicenseOrderOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateLicenseOrderOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::CreateLicenseOrderAsync(const CreateLicenseOrderRequest& request, const CreateLicenseOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateLicenseOrder(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::CreateLicenseOrderOutcomeCallable CwpClient::CreateLicenseOrderCallable(const CreateLicenseOrderRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateLicenseOrderOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateLicenseOrder(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CwpClient::CreateProtectServerOutcome CwpClient::CreateProtectServer(const CreateProtectServerRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateProtectServer");
@@ -635,6 +678,49 @@ CwpClient::DeleteBruteAttacksOutcomeCallable CwpClient::DeleteBruteAttacksCallab
         [this, request]()
         {
             return this->DeleteBruteAttacks(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CwpClient::DeleteLicenseRecordOutcome CwpClient::DeleteLicenseRecord(const DeleteLicenseRecordRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteLicenseRecord");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteLicenseRecordResponse rsp = DeleteLicenseRecordResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteLicenseRecordOutcome(rsp);
+        else
+            return DeleteLicenseRecordOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteLicenseRecordOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DeleteLicenseRecordAsync(const DeleteLicenseRecordRequest& request, const DeleteLicenseRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteLicenseRecord(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::DeleteLicenseRecordOutcomeCallable CwpClient::DeleteLicenseRecordCallable(const DeleteLicenseRecordRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteLicenseRecordOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteLicenseRecord(request);
         }
     );
 
@@ -4168,6 +4254,178 @@ CwpClient::DescribeIndexListOutcomeCallable CwpClient::DescribeIndexListCallable
     return task->get_future();
 }
 
+CwpClient::DescribeLicenseBindListOutcome CwpClient::DescribeLicenseBindList(const DescribeLicenseBindListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeLicenseBindList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeLicenseBindListResponse rsp = DescribeLicenseBindListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeLicenseBindListOutcome(rsp);
+        else
+            return DescribeLicenseBindListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeLicenseBindListOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DescribeLicenseBindListAsync(const DescribeLicenseBindListRequest& request, const DescribeLicenseBindListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeLicenseBindList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::DescribeLicenseBindListOutcomeCallable CwpClient::DescribeLicenseBindListCallable(const DescribeLicenseBindListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeLicenseBindListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeLicenseBindList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CwpClient::DescribeLicenseBindScheduleOutcome CwpClient::DescribeLicenseBindSchedule(const DescribeLicenseBindScheduleRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeLicenseBindSchedule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeLicenseBindScheduleResponse rsp = DescribeLicenseBindScheduleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeLicenseBindScheduleOutcome(rsp);
+        else
+            return DescribeLicenseBindScheduleOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeLicenseBindScheduleOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DescribeLicenseBindScheduleAsync(const DescribeLicenseBindScheduleRequest& request, const DescribeLicenseBindScheduleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeLicenseBindSchedule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::DescribeLicenseBindScheduleOutcomeCallable CwpClient::DescribeLicenseBindScheduleCallable(const DescribeLicenseBindScheduleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeLicenseBindScheduleOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeLicenseBindSchedule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CwpClient::DescribeLicenseGeneralOutcome CwpClient::DescribeLicenseGeneral(const DescribeLicenseGeneralRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeLicenseGeneral");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeLicenseGeneralResponse rsp = DescribeLicenseGeneralResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeLicenseGeneralOutcome(rsp);
+        else
+            return DescribeLicenseGeneralOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeLicenseGeneralOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DescribeLicenseGeneralAsync(const DescribeLicenseGeneralRequest& request, const DescribeLicenseGeneralAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeLicenseGeneral(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::DescribeLicenseGeneralOutcomeCallable CwpClient::DescribeLicenseGeneralCallable(const DescribeLicenseGeneralRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeLicenseGeneralOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeLicenseGeneral(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CwpClient::DescribeLicenseListOutcome CwpClient::DescribeLicenseList(const DescribeLicenseListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeLicenseList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeLicenseListResponse rsp = DescribeLicenseListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeLicenseListOutcome(rsp);
+        else
+            return DescribeLicenseListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeLicenseListOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DescribeLicenseListAsync(const DescribeLicenseListRequest& request, const DescribeLicenseListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeLicenseList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::DescribeLicenseListOutcomeCallable CwpClient::DescribeLicenseListCallable(const DescribeLicenseListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeLicenseListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeLicenseList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CwpClient::DescribeLogStorageStatisticOutcome CwpClient::DescribeLogStorageStatistic(const DescribeLogStorageStatisticRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeLogStorageStatistic");
@@ -6877,6 +7135,49 @@ CwpClient::DescribeWebPageServiceInfoOutcomeCallable CwpClient::DescribeWebPageS
     return task->get_future();
 }
 
+CwpClient::DestroyOrderOutcome CwpClient::DestroyOrder(const DestroyOrderRequest &request)
+{
+    auto outcome = MakeRequest(request, "DestroyOrder");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DestroyOrderResponse rsp = DestroyOrderResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DestroyOrderOutcome(rsp);
+        else
+            return DestroyOrderOutcome(o.GetError());
+    }
+    else
+    {
+        return DestroyOrderOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DestroyOrderAsync(const DestroyOrderRequest& request, const DestroyOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DestroyOrder(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::DestroyOrderOutcomeCallable CwpClient::DestroyOrderCallable(const DestroyOrderRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DestroyOrderOutcome()>>(
+        [this, request]()
+        {
+            return this->DestroyOrder(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CwpClient::EditBashRulesOutcome CwpClient::EditBashRules(const EditBashRulesRequest &request)
 {
     auto outcome = MakeRequest(request, "EditBashRules");
@@ -7343,6 +7644,49 @@ CwpClient::ExportIgnoreRuleEffectHostListOutcomeCallable CwpClient::ExportIgnore
         [this, request]()
         {
             return this->ExportIgnoreRuleEffectHostList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CwpClient::ExportLicenseDetailOutcome CwpClient::ExportLicenseDetail(const ExportLicenseDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "ExportLicenseDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ExportLicenseDetailResponse rsp = ExportLicenseDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ExportLicenseDetailOutcome(rsp);
+        else
+            return ExportLicenseDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return ExportLicenseDetailOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::ExportLicenseDetailAsync(const ExportLicenseDetailRequest& request, const ExportLicenseDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ExportLicenseDetail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::ExportLicenseDetailOutcomeCallable CwpClient::ExportLicenseDetailCallable(const ExportLicenseDetailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ExportLicenseDetailOutcome()>>(
+        [this, request]()
+        {
+            return this->ExportLicenseDetail(request);
         }
     );
 
@@ -8167,6 +8511,92 @@ CwpClient::ModifyBruteAttackRulesOutcomeCallable CwpClient::ModifyBruteAttackRul
     return task->get_future();
 }
 
+CwpClient::ModifyLicenseBindsOutcome CwpClient::ModifyLicenseBinds(const ModifyLicenseBindsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyLicenseBinds");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyLicenseBindsResponse rsp = ModifyLicenseBindsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyLicenseBindsOutcome(rsp);
+        else
+            return ModifyLicenseBindsOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyLicenseBindsOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::ModifyLicenseBindsAsync(const ModifyLicenseBindsRequest& request, const ModifyLicenseBindsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyLicenseBinds(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::ModifyLicenseBindsOutcomeCallable CwpClient::ModifyLicenseBindsCallable(const ModifyLicenseBindsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyLicenseBindsOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyLicenseBinds(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CwpClient::ModifyLicenseUnBindsOutcome CwpClient::ModifyLicenseUnBinds(const ModifyLicenseUnBindsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyLicenseUnBinds");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyLicenseUnBindsResponse rsp = ModifyLicenseUnBindsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyLicenseUnBindsOutcome(rsp);
+        else
+            return ModifyLicenseUnBindsOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyLicenseUnBindsOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::ModifyLicenseUnBindsAsync(const ModifyLicenseUnBindsRequest& request, const ModifyLicenseUnBindsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyLicenseUnBinds(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::ModifyLicenseUnBindsOutcomeCallable CwpClient::ModifyLicenseUnBindsCallable(const ModifyLicenseUnBindsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyLicenseUnBindsOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyLicenseUnBinds(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CwpClient::ModifyMalwareTimingScanSettingsOutcome CwpClient::ModifyMalwareTimingScanSettings(const ModifyMalwareTimingScanSettingsRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyMalwareTimingScanSettings");
@@ -8203,6 +8633,49 @@ CwpClient::ModifyMalwareTimingScanSettingsOutcomeCallable CwpClient::ModifyMalwa
         [this, request]()
         {
             return this->ModifyMalwareTimingScanSettings(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CwpClient::ModifyOrderAttributeOutcome CwpClient::ModifyOrderAttribute(const ModifyOrderAttributeRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyOrderAttribute");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyOrderAttributeResponse rsp = ModifyOrderAttributeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyOrderAttributeOutcome(rsp);
+        else
+            return ModifyOrderAttributeOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyOrderAttributeOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::ModifyOrderAttributeAsync(const ModifyOrderAttributeRequest& request, const ModifyOrderAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyOrderAttribute(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::ModifyOrderAttributeOutcomeCallable CwpClient::ModifyOrderAttributeCallable(const ModifyOrderAttributeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyOrderAttributeOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyOrderAttribute(request);
         }
     );
 

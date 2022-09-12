@@ -24,7 +24,9 @@ CreateOpenBankOrderPaymentResult::CreateOpenBankOrderPaymentResult() :
     m_channelOrderIdHasBeenSet(false),
     m_thirdPayOrderIdHasBeenSet(false),
     m_redirectInfoHasBeenSet(false),
-    m_outOrderIdHasBeenSet(false)
+    m_outOrderIdHasBeenSet(false),
+    m_payInfoHasBeenSet(false),
+    m_payInfoTypeHasBeenSet(false)
 {
 }
 
@@ -80,6 +82,26 @@ CoreInternalOutcome CreateOpenBankOrderPaymentResult::Deserialize(const rapidjso
         m_outOrderIdHasBeenSet = true;
     }
 
+    if (value.HasMember("PayInfo") && !value["PayInfo"].IsNull())
+    {
+        if (!value["PayInfo"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CreateOpenBankOrderPaymentResult.PayInfo` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_payInfo = string(value["PayInfo"].GetString());
+        m_payInfoHasBeenSet = true;
+    }
+
+    if (value.HasMember("PayInfoType") && !value["PayInfoType"].IsNull())
+    {
+        if (!value["PayInfoType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CreateOpenBankOrderPaymentResult.PayInfoType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_payInfoType = string(value["PayInfoType"].GetString());
+        m_payInfoTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -118,6 +140,22 @@ void CreateOpenBankOrderPaymentResult::ToJsonObject(rapidjson::Value &value, rap
         string key = "OutOrderId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_outOrderId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_payInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PayInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_payInfo.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_payInfoTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PayInfoType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_payInfoType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -185,5 +223,37 @@ void CreateOpenBankOrderPaymentResult::SetOutOrderId(const string& _outOrderId)
 bool CreateOpenBankOrderPaymentResult::OutOrderIdHasBeenSet() const
 {
     return m_outOrderIdHasBeenSet;
+}
+
+string CreateOpenBankOrderPaymentResult::GetPayInfo() const
+{
+    return m_payInfo;
+}
+
+void CreateOpenBankOrderPaymentResult::SetPayInfo(const string& _payInfo)
+{
+    m_payInfo = _payInfo;
+    m_payInfoHasBeenSet = true;
+}
+
+bool CreateOpenBankOrderPaymentResult::PayInfoHasBeenSet() const
+{
+    return m_payInfoHasBeenSet;
+}
+
+string CreateOpenBankOrderPaymentResult::GetPayInfoType() const
+{
+    return m_payInfoType;
+}
+
+void CreateOpenBankOrderPaymentResult::SetPayInfoType(const string& _payInfoType)
+{
+    m_payInfoType = _payInfoType;
+    m_payInfoTypeHasBeenSet = true;
+}
+
+bool CreateOpenBankOrderPaymentResult::PayInfoTypeHasBeenSet() const
+{
+    return m_payInfoTypeHasBeenSet;
 }
 

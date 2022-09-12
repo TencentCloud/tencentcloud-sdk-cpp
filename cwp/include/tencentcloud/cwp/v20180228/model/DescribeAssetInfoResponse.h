@@ -163,6 +163,126 @@ namespace TencentCloud
                      */
                     bool WebLocationCountHasBeenSet() const;
 
+                    /**
+                     * 获取账号今日新增
+                     * @return AccountNewCount 账号今日新增
+                     */
+                    int64_t GetAccountNewCount() const;
+
+                    /**
+                     * 判断参数 AccountNewCount 是否已赋值
+                     * @return AccountNewCount 是否已赋值
+                     */
+                    bool AccountNewCountHasBeenSet() const;
+
+                    /**
+                     * 获取端口今日新增
+                     * @return PortNewCount 端口今日新增
+                     */
+                    int64_t GetPortNewCount() const;
+
+                    /**
+                     * 判断参数 PortNewCount 是否已赋值
+                     * @return PortNewCount 是否已赋值
+                     */
+                    bool PortNewCountHasBeenSet() const;
+
+                    /**
+                     * 获取进程今日新增
+                     * @return ProcessNewCount 进程今日新增
+                     */
+                    int64_t GetProcessNewCount() const;
+
+                    /**
+                     * 判断参数 ProcessNewCount 是否已赋值
+                     * @return ProcessNewCount 是否已赋值
+                     */
+                    bool ProcessNewCountHasBeenSet() const;
+
+                    /**
+                     * 获取软件今日新增
+                     * @return SoftwareNewCount 软件今日新增
+                     */
+                    int64_t GetSoftwareNewCount() const;
+
+                    /**
+                     * 判断参数 SoftwareNewCount 是否已赋值
+                     * @return SoftwareNewCount 是否已赋值
+                     */
+                    bool SoftwareNewCountHasBeenSet() const;
+
+                    /**
+                     * 获取数据库今日新增
+                     * @return DatabaseNewCount 数据库今日新增
+                     */
+                    int64_t GetDatabaseNewCount() const;
+
+                    /**
+                     * 判断参数 DatabaseNewCount 是否已赋值
+                     * @return DatabaseNewCount 是否已赋值
+                     */
+                    bool DatabaseNewCountHasBeenSet() const;
+
+                    /**
+                     * 获取Web应用今日新增
+                     * @return WebAppNewCount Web应用今日新增
+                     */
+                    int64_t GetWebAppNewCount() const;
+
+                    /**
+                     * 判断参数 WebAppNewCount 是否已赋值
+                     * @return WebAppNewCount 是否已赋值
+                     */
+                    bool WebAppNewCountHasBeenSet() const;
+
+                    /**
+                     * 获取Web框架今日新增
+                     * @return WebFrameNewCount Web框架今日新增
+                     */
+                    int64_t GetWebFrameNewCount() const;
+
+                    /**
+                     * 判断参数 WebFrameNewCount 是否已赋值
+                     * @return WebFrameNewCount 是否已赋值
+                     */
+                    bool WebFrameNewCountHasBeenSet() const;
+
+                    /**
+                     * 获取Web服务今日新增
+                     * @return WebServiceNewCount Web服务今日新增
+                     */
+                    int64_t GetWebServiceNewCount() const;
+
+                    /**
+                     * 判断参数 WebServiceNewCount 是否已赋值
+                     * @return WebServiceNewCount 是否已赋值
+                     */
+                    bool WebServiceNewCountHasBeenSet() const;
+
+                    /**
+                     * 获取Web站点今日新增
+                     * @return WebLocationNewCount Web站点今日新增
+                     */
+                    int64_t GetWebLocationNewCount() const;
+
+                    /**
+                     * 判断参数 WebLocationNewCount 是否已赋值
+                     * @return WebLocationNewCount 是否已赋值
+                     */
+                    bool WebLocationNewCountHasBeenSet() const;
+
+                    /**
+                     * 获取主机今日新增
+                     * @return MachineNewCount 主机今日新增
+                     */
+                    int64_t GetMachineNewCount() const;
+
+                    /**
+                     * 判断参数 MachineNewCount 是否已赋值
+                     * @return MachineNewCount 是否已赋值
+                     */
+                    bool MachineNewCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -224,6 +344,66 @@ namespace TencentCloud
                      */
                     uint64_t m_webLocationCount;
                     bool m_webLocationCountHasBeenSet;
+
+                    /**
+                     * 账号今日新增
+                     */
+                    int64_t m_accountNewCount;
+                    bool m_accountNewCountHasBeenSet;
+
+                    /**
+                     * 端口今日新增
+                     */
+                    int64_t m_portNewCount;
+                    bool m_portNewCountHasBeenSet;
+
+                    /**
+                     * 进程今日新增
+                     */
+                    int64_t m_processNewCount;
+                    bool m_processNewCountHasBeenSet;
+
+                    /**
+                     * 软件今日新增
+                     */
+                    int64_t m_softwareNewCount;
+                    bool m_softwareNewCountHasBeenSet;
+
+                    /**
+                     * 数据库今日新增
+                     */
+                    int64_t m_databaseNewCount;
+                    bool m_databaseNewCountHasBeenSet;
+
+                    /**
+                     * Web应用今日新增
+                     */
+                    int64_t m_webAppNewCount;
+                    bool m_webAppNewCountHasBeenSet;
+
+                    /**
+                     * Web框架今日新增
+                     */
+                    int64_t m_webFrameNewCount;
+                    bool m_webFrameNewCountHasBeenSet;
+
+                    /**
+                     * Web服务今日新增
+                     */
+                    int64_t m_webServiceNewCount;
+                    bool m_webServiceNewCountHasBeenSet;
+
+                    /**
+                     * Web站点今日新增
+                     */
+                    int64_t m_webLocationNewCount;
+                    bool m_webLocationNewCountHasBeenSet;
+
+                    /**
+                     * 主机今日新增
+                     */
+                    int64_t m_machineNewCount;
+                    bool m_machineNewCountHasBeenSet;
 
                 };
             }

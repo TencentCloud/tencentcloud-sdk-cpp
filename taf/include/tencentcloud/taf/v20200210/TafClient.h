@@ -29,8 +29,6 @@
 #include <tencentcloud/taf/v20200210/model/RecognizePreciseTargetAudienceResponse.h>
 #include <tencentcloud/taf/v20200210/model/RecognizeTargetAudienceRequest.h>
 #include <tencentcloud/taf/v20200210/model/RecognizeTargetAudienceResponse.h>
-#include <tencentcloud/taf/v20200210/model/SendTrafficSecuritySmsMessageRequest.h>
-#include <tencentcloud/taf/v20200210/model/SendTrafficSecuritySmsMessageResponse.h>
 
 
 namespace TencentCloud
@@ -54,9 +52,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RecognizeTargetAudienceResponse> RecognizeTargetAudienceOutcome;
                 typedef std::future<RecognizeTargetAudienceOutcome> RecognizeTargetAudienceOutcomeCallable;
                 typedef std::function<void(const TafClient*, const Model::RecognizeTargetAudienceRequest&, RecognizeTargetAudienceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeTargetAudienceAsyncHandler;
-                typedef Outcome<Core::Error, Model::SendTrafficSecuritySmsMessageResponse> SendTrafficSecuritySmsMessageOutcome;
-                typedef std::future<SendTrafficSecuritySmsMessageOutcome> SendTrafficSecuritySmsMessageOutcomeCallable;
-                typedef std::function<void(const TafClient*, const Model::SendTrafficSecuritySmsMessageRequest&, SendTrafficSecuritySmsMessageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SendTrafficSecuritySmsMessageAsyncHandler;
 
 
 
@@ -86,15 +81,6 @@ namespace TencentCloud
                 RecognizeTargetAudienceOutcome RecognizeTargetAudience(const Model::RecognizeTargetAudienceRequest &request);
                 void RecognizeTargetAudienceAsync(const Model::RecognizeTargetAudienceRequest& request, const RecognizeTargetAudienceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RecognizeTargetAudienceOutcomeCallable RecognizeTargetAudienceCallable(const Model::RecognizeTargetAudienceRequest& request);
-
-                /**
-                 *流量安选产品，短信发送接口
-                 * @param req SendTrafficSecuritySmsMessageRequest
-                 * @return SendTrafficSecuritySmsMessageOutcome
-                 */
-                SendTrafficSecuritySmsMessageOutcome SendTrafficSecuritySmsMessage(const Model::SendTrafficSecuritySmsMessageRequest &request);
-                void SendTrafficSecuritySmsMessageAsync(const Model::SendTrafficSecuritySmsMessageRequest& request, const SendTrafficSecuritySmsMessageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                SendTrafficSecuritySmsMessageOutcomeCallable SendTrafficSecuritySmsMessageCallable(const Model::SendTrafficSecuritySmsMessageRequest& request);
 
             };
         }

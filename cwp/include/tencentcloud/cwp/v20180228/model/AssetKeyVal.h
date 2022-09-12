@@ -104,6 +104,28 @@ namespace TencentCloud
                      */
                     bool DescHasBeenSet() const;
 
+                    /**
+                     * 获取今日新增数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NewCount 今日新增数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetNewCount() const;
+
+                    /**
+                     * 设置今日新增数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param NewCount 今日新增数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetNewCount(const int64_t& _newCount);
+
+                    /**
+                     * 判断参数 NewCount 是否已赋值
+                     * @return NewCount 是否已赋值
+                     */
+                    bool NewCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -124,6 +146,13 @@ namespace TencentCloud
                      */
                     std::string m_desc;
                     bool m_descHasBeenSet;
+
+                    /**
+                     * 今日新增数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_newCount;
+                    bool m_newCountHasBeenSet;
 
                 };
             }

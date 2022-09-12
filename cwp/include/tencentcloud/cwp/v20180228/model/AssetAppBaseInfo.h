@@ -66,6 +66,24 @@ namespace TencentCloud
                     bool MachineIpHasBeenSet() const;
 
                     /**
+                     * 获取主机名称
+                     * @return MachineName 主机名称
+                     */
+                    std::string GetMachineName() const;
+
+                    /**
+                     * 设置主机名称
+                     * @param MachineName 主机名称
+                     */
+                    void SetMachineName(const std::string& _machineName);
+
+                    /**
+                     * 判断参数 MachineName 是否已赋值
+                     * @return MachineName 是否已赋值
+                     */
+                    bool MachineNameHasBeenSet() const;
+
+                    /**
                      * 获取主机外网IP
                      * @return MachineWanIp 主机外网IP
                      */
@@ -82,24 +100,6 @@ namespace TencentCloud
                      * @return MachineWanIp 是否已赋值
                      */
                     bool MachineWanIpHasBeenSet() const;
-
-                    /**
-                     * 获取主机Quuid
-                     * @return Quuid 主机Quuid
-                     */
-                    std::string GetQuuid() const;
-
-                    /**
-                     * 设置主机Quuid
-                     * @param Quuid 主机Quuid
-                     */
-                    void SetQuuid(const std::string& _quuid);
-
-                    /**
-                     * 判断参数 Quuid 是否已赋值
-                     * @return Quuid 是否已赋值
-                     */
-                    bool QuuidHasBeenSet() const;
 
                     /**
                      * 获取主机Uuid
@@ -120,22 +120,22 @@ namespace TencentCloud
                     bool UuidHasBeenSet() const;
 
                     /**
-                     * 获取操作系统信息
-                     * @return OsInfo 操作系统信息
+                     * 获取主机Quuid
+                     * @return Quuid 主机Quuid
                      */
-                    std::string GetOsInfo() const;
+                    std::string GetQuuid() const;
 
                     /**
-                     * 设置操作系统信息
-                     * @param OsInfo 操作系统信息
+                     * 设置主机Quuid
+                     * @param Quuid 主机Quuid
                      */
-                    void SetOsInfo(const std::string& _osInfo);
+                    void SetQuuid(const std::string& _quuid);
 
                     /**
-                     * 判断参数 OsInfo 是否已赋值
-                     * @return OsInfo 是否已赋值
+                     * 判断参数 Quuid 是否已赋值
+                     * @return Quuid 是否已赋值
                      */
-                    bool OsInfoHasBeenSet() const;
+                    bool QuuidHasBeenSet() const;
 
                     /**
                      * 获取主机业务组ID
@@ -264,22 +264,22 @@ namespace TencentCloud
                     bool BinPathHasBeenSet() const;
 
                     /**
-                     * 获取配置文件路径
-                     * @return ConfigPath 配置文件路径
+                     * 获取操作系统信息
+                     * @return OsInfo 操作系统信息
                      */
-                    std::string GetConfigPath() const;
+                    std::string GetOsInfo() const;
 
                     /**
-                     * 设置配置文件路径
-                     * @param ConfigPath 配置文件路径
+                     * 设置操作系统信息
+                     * @param OsInfo 操作系统信息
                      */
-                    void SetConfigPath(const std::string& _configPath);
+                    void SetOsInfo(const std::string& _osInfo);
 
                     /**
-                     * 判断参数 ConfigPath 是否已赋值
-                     * @return ConfigPath 是否已赋值
+                     * 判断参数 OsInfo 是否已赋值
+                     * @return OsInfo 是否已赋值
                      */
-                    bool ConfigPathHasBeenSet() const;
+                    bool OsInfoHasBeenSet() const;
 
                     /**
                      * 获取关联进程数
@@ -336,6 +336,42 @@ namespace TencentCloud
                     bool VersionHasBeenSet() const;
 
                     /**
+                     * 获取配置文件路径
+                     * @return ConfigPath 配置文件路径
+                     */
+                    std::string GetConfigPath() const;
+
+                    /**
+                     * 设置配置文件路径
+                     * @param ConfigPath 配置文件路径
+                     */
+                    void SetConfigPath(const std::string& _configPath);
+
+                    /**
+                     * 判断参数 ConfigPath 是否已赋值
+                     * @return ConfigPath 是否已赋值
+                     */
+                    bool ConfigPathHasBeenSet() const;
+
+                    /**
+                     * 获取首次采集时间
+                     * @return FirstTime 首次采集时间
+                     */
+                    std::string GetFirstTime() const;
+
+                    /**
+                     * 设置首次采集时间
+                     * @param FirstTime 首次采集时间
+                     */
+                    void SetFirstTime(const std::string& _firstTime);
+
+                    /**
+                     * 判断参数 FirstTime 是否已赋值
+                     * @return FirstTime 是否已赋值
+                     */
+                    bool FirstTimeHasBeenSet() const;
+
+                    /**
                      * 获取数据更新时间
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdateTime 数据更新时间
@@ -357,6 +393,28 @@ namespace TencentCloud
                      */
                     bool UpdateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取是否新增[0:否|1:是]
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsNew 是否新增[0:否|1:是]
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetIsNew() const;
+
+                    /**
+                     * 设置是否新增[0:否|1:是]
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param IsNew 是否新增[0:否|1:是]
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIsNew(const int64_t& _isNew);
+
+                    /**
+                     * 判断参数 IsNew 是否已赋值
+                     * @return IsNew 是否已赋值
+                     */
+                    bool IsNewHasBeenSet() const;
+
                 private:
 
                     /**
@@ -366,16 +424,16 @@ namespace TencentCloud
                     bool m_machineIpHasBeenSet;
 
                     /**
+                     * 主机名称
+                     */
+                    std::string m_machineName;
+                    bool m_machineNameHasBeenSet;
+
+                    /**
                      * 主机外网IP
                      */
                     std::string m_machineWanIp;
                     bool m_machineWanIpHasBeenSet;
-
-                    /**
-                     * 主机Quuid
-                     */
-                    std::string m_quuid;
-                    bool m_quuidHasBeenSet;
 
                     /**
                      * 主机Uuid
@@ -384,10 +442,10 @@ namespace TencentCloud
                     bool m_uuidHasBeenSet;
 
                     /**
-                     * 操作系统信息
+                     * 主机Quuid
                      */
-                    std::string m_osInfo;
-                    bool m_osInfoHasBeenSet;
+                    std::string m_quuid;
+                    bool m_quuidHasBeenSet;
 
                     /**
                      * 主机业务组ID
@@ -429,10 +487,10 @@ namespace TencentCloud
                     bool m_binPathHasBeenSet;
 
                     /**
-                     * 配置文件路径
+                     * 操作系统信息
                      */
-                    std::string m_configPath;
-                    bool m_configPathHasBeenSet;
+                    std::string m_osInfo;
+                    bool m_osInfoHasBeenSet;
 
                     /**
                      * 关联进程数
@@ -453,11 +511,30 @@ namespace TencentCloud
                     bool m_versionHasBeenSet;
 
                     /**
+                     * 配置文件路径
+                     */
+                    std::string m_configPath;
+                    bool m_configPathHasBeenSet;
+
+                    /**
+                     * 首次采集时间
+                     */
+                    std::string m_firstTime;
+                    bool m_firstTimeHasBeenSet;
+
+                    /**
                      * 数据更新时间
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
+
+                    /**
+                     * 是否新增[0:否|1:是]
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_isNew;
+                    bool m_isNewHasBeenSet;
 
                 };
             }

@@ -26,7 +26,8 @@ CreateTopicRequest::CreateTopicRequest() :
     m_topicNameHasBeenSet(false),
     m_partitionCountHasBeenSet(false),
     m_topicTypeHasBeenSet(false),
-    m_periodHasBeenSet(false)
+    m_periodHasBeenSet(false),
+    m_storageTypeHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,14 @@ string CreateTopicRequest::ToJsonString() const
         string key = "Period";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_period, allocator);
+    }
+
+    if (m_storageTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StorageType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_storageType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -139,6 +148,22 @@ void CreateTopicRequest::SetPeriod(const uint64_t& _period)
 bool CreateTopicRequest::PeriodHasBeenSet() const
 {
     return m_periodHasBeenSet;
+}
+
+string CreateTopicRequest::GetStorageType() const
+{
+    return m_storageType;
+}
+
+void CreateTopicRequest::SetStorageType(const string& _storageType)
+{
+    m_storageType = _storageType;
+    m_storageTypeHasBeenSet = true;
+}
+
+bool CreateTopicRequest::StorageTypeHasBeenSet() const
+{
+    return m_storageTypeHasBeenSet;
 }
 
 

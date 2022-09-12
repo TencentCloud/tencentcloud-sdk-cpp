@@ -26,7 +26,8 @@ DescribePriceRunInstanceRequest::DescribePriceRunInstanceRequest() :
     m_instanceTypeHasBeenSet(false),
     m_systemDiskHasBeenSet(false),
     m_instanceCountHasBeenSet(false),
-    m_dataDiskHasBeenSet(false)
+    m_dataDiskHasBeenSet(false),
+    m_instanceChargeTypeHasBeenSet(false)
 {
 }
 
@@ -75,6 +76,14 @@ string DescribePriceRunInstanceRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_instanceChargeTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceChargeType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_instanceChargeType, allocator);
     }
 
 
@@ -147,6 +156,22 @@ void DescribePriceRunInstanceRequest::SetDataDisk(const vector<DataDisk>& _dataD
 bool DescribePriceRunInstanceRequest::DataDiskHasBeenSet() const
 {
     return m_dataDiskHasBeenSet;
+}
+
+int64_t DescribePriceRunInstanceRequest::GetInstanceChargeType() const
+{
+    return m_instanceChargeType;
+}
+
+void DescribePriceRunInstanceRequest::SetInstanceChargeType(const int64_t& _instanceChargeType)
+{
+    m_instanceChargeType = _instanceChargeType;
+    m_instanceChargeTypeHasBeenSet = true;
+}
+
+bool DescribePriceRunInstanceRequest::InstanceChargeTypeHasBeenSet() const
+{
+    return m_instanceChargeTypeHasBeenSet;
 }
 
 

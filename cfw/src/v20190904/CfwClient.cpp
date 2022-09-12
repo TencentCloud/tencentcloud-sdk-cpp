@@ -943,6 +943,49 @@ CfwClient::DescribeCfwEipsOutcomeCallable CfwClient::DescribeCfwEipsCallable(con
     return task->get_future();
 }
 
+CfwClient::DescribeDefenseSwitchOutcome CfwClient::DescribeDefenseSwitch(const DescribeDefenseSwitchRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDefenseSwitch");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDefenseSwitchResponse rsp = DescribeDefenseSwitchResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDefenseSwitchOutcome(rsp);
+        else
+            return DescribeDefenseSwitchOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDefenseSwitchOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::DescribeDefenseSwitchAsync(const DescribeDefenseSwitchRequest& request, const DescribeDefenseSwitchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDefenseSwitch(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CfwClient::DescribeDefenseSwitchOutcomeCallable CfwClient::DescribeDefenseSwitchCallable(const DescribeDefenseSwitchRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDefenseSwitchOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDefenseSwitch(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CfwClient::DescribeEnterpriseSecurityGroupRuleOutcome CfwClient::DescribeEnterpriseSecurityGroupRule(const DescribeEnterpriseSecurityGroupRuleRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeEnterpriseSecurityGroupRule");

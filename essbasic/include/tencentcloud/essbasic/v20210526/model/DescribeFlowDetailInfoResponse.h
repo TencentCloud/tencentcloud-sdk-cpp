@@ -82,6 +82,34 @@ namespace TencentCloud
                      */
                     bool FlowInfoHasBeenSet() const;
 
+                    /**
+                     * 获取合同组编号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FlowGroupId 合同组编号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetFlowGroupId() const;
+
+                    /**
+                     * 判断参数 FlowGroupId 是否已赋值
+                     * @return FlowGroupId 是否已赋值
+                     */
+                    bool FlowGroupIdHasBeenSet() const;
+
+                    /**
+                     * 获取合同组名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FlowGroupName 合同组名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetFlowGroupName() const;
+
+                    /**
+                     * 判断参数 FlowGroupName 是否已赋值
+                     * @return FlowGroupName 是否已赋值
+                     */
+                    bool FlowGroupNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -102,6 +130,20 @@ namespace TencentCloud
                      */
                     std::vector<FlowDetailInfo> m_flowInfo;
                     bool m_flowInfoHasBeenSet;
+
+                    /**
+                     * 合同组编号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_flowGroupId;
+                    bool m_flowGroupIdHasBeenSet;
+
+                    /**
+                     * 合同组名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_flowGroupName;
+                    bool m_flowGroupNameHasBeenSet;
 
                 };
             }

@@ -40,6 +40,49 @@ EssbasicClient::EssbasicClient(const Credential &credential, const string &regio
 }
 
 
+EssbasicClient::ChannelBatchCancelFlowsOutcome EssbasicClient::ChannelBatchCancelFlows(const ChannelBatchCancelFlowsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ChannelBatchCancelFlows");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ChannelBatchCancelFlowsResponse rsp = ChannelBatchCancelFlowsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ChannelBatchCancelFlowsOutcome(rsp);
+        else
+            return ChannelBatchCancelFlowsOutcome(o.GetError());
+    }
+    else
+    {
+        return ChannelBatchCancelFlowsOutcome(outcome.GetError());
+    }
+}
+
+void EssbasicClient::ChannelBatchCancelFlowsAsync(const ChannelBatchCancelFlowsRequest& request, const ChannelBatchCancelFlowsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ChannelBatchCancelFlows(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssbasicClient::ChannelBatchCancelFlowsOutcomeCallable EssbasicClient::ChannelBatchCancelFlowsCallable(const ChannelBatchCancelFlowsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ChannelBatchCancelFlowsOutcome()>>(
+        [this, request]()
+        {
+            return this->ChannelBatchCancelFlows(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssbasicClient::ChannelCancelMultiFlowSignQRCodeOutcome EssbasicClient::ChannelCancelMultiFlowSignQRCode(const ChannelCancelMultiFlowSignQRCodeRequest &request)
 {
     auto outcome = MakeRequest(request, "ChannelCancelMultiFlowSignQRCode");
@@ -205,6 +248,49 @@ EssbasicClient::ChannelCreateFlowByFilesOutcomeCallable EssbasicClient::ChannelC
         [this, request]()
         {
             return this->ChannelCreateFlowByFiles(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EssbasicClient::ChannelCreateFlowGroupByFilesOutcome EssbasicClient::ChannelCreateFlowGroupByFiles(const ChannelCreateFlowGroupByFilesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ChannelCreateFlowGroupByFiles");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ChannelCreateFlowGroupByFilesResponse rsp = ChannelCreateFlowGroupByFilesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ChannelCreateFlowGroupByFilesOutcome(rsp);
+        else
+            return ChannelCreateFlowGroupByFilesOutcome(o.GetError());
+    }
+    else
+    {
+        return ChannelCreateFlowGroupByFilesOutcome(outcome.GetError());
+    }
+}
+
+void EssbasicClient::ChannelCreateFlowGroupByFilesAsync(const ChannelCreateFlowGroupByFilesRequest& request, const ChannelCreateFlowGroupByFilesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ChannelCreateFlowGroupByFiles(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssbasicClient::ChannelCreateFlowGroupByFilesOutcomeCallable EssbasicClient::ChannelCreateFlowGroupByFilesCallable(const ChannelCreateFlowGroupByFilesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ChannelCreateFlowGroupByFilesOutcome()>>(
+        [this, request]()
+        {
+            return this->ChannelCreateFlowGroupByFiles(request);
         }
     );
 

@@ -44,6 +44,24 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取查询指定Quuid主机的信息
+                     * @return Quuid 查询指定Quuid主机的信息
+                     */
+                    std::string GetQuuid() const;
+
+                    /**
+                     * 设置查询指定Quuid主机的信息
+                     * @param Quuid 查询指定Quuid主机的信息
+                     */
+                    void SetQuuid(const std::string& _quuid);
+
+                    /**
+                     * 判断参数 Quuid 是否已赋值
+                     * @return Quuid 是否已赋值
+                     */
+                    bool QuuidHasBeenSet() const;
+
+                    /**
                      * 获取过滤条件。
 <li>User- string - 是否必填：否 - 运行用户</li>
 <li>Name- string - 是否必填：否 - Web服务名：
@@ -132,14 +150,14 @@ namespace TencentCloud
                     bool OrderHasBeenSet() const;
 
                     /**
-                     * 获取可选排序：ProcessCount
-                     * @return By 可选排序：ProcessCount
+                     * 获取可选排序：[FirstTime|ProcessCount]
+                     * @return By 可选排序：[FirstTime|ProcessCount]
                      */
                     std::string GetBy() const;
 
                     /**
-                     * 设置可选排序：ProcessCount
-                     * @param By 可选排序：ProcessCount
+                     * 设置可选排序：[FirstTime|ProcessCount]
+                     * @param By 可选排序：[FirstTime|ProcessCount]
                      */
                     void SetBy(const std::string& _by);
 
@@ -149,25 +167,13 @@ namespace TencentCloud
                      */
                     bool ByHasBeenSet() const;
 
-                    /**
-                     * 获取查询指定Quuid主机的信息
-                     * @return Quuid 查询指定Quuid主机的信息
-                     */
-                    std::string GetQuuid() const;
-
-                    /**
-                     * 设置查询指定Quuid主机的信息
-                     * @param Quuid 查询指定Quuid主机的信息
-                     */
-                    void SetQuuid(const std::string& _quuid);
-
-                    /**
-                     * 判断参数 Quuid 是否已赋值
-                     * @return Quuid 是否已赋值
-                     */
-                    bool QuuidHasBeenSet() const;
-
                 private:
+
+                    /**
+                     * 查询指定Quuid主机的信息
+                     */
+                    std::string m_quuid;
+                    bool m_quuidHasBeenSet;
 
                     /**
                      * 过滤条件。
@@ -195,16 +201,10 @@ namespace TencentCloud
                     bool m_orderHasBeenSet;
 
                     /**
-                     * 可选排序：ProcessCount
+                     * 可选排序：[FirstTime|ProcessCount]
                      */
                     std::string m_by;
                     bool m_byHasBeenSet;
-
-                    /**
-                     * 查询指定Quuid主机的信息
-                     */
-                    std::string m_quuid;
-                    bool m_quuidHasBeenSet;
 
                 };
             }

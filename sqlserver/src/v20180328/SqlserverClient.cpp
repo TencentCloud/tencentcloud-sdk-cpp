@@ -126,6 +126,49 @@ SqlserverClient::CloneDBOutcomeCallable SqlserverClient::CloneDBCallable(const C
     return task->get_future();
 }
 
+SqlserverClient::CloseInterCommunicationOutcome SqlserverClient::CloseInterCommunication(const CloseInterCommunicationRequest &request)
+{
+    auto outcome = MakeRequest(request, "CloseInterCommunication");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CloseInterCommunicationResponse rsp = CloseInterCommunicationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CloseInterCommunicationOutcome(rsp);
+        else
+            return CloseInterCommunicationOutcome(o.GetError());
+    }
+    else
+    {
+        return CloseInterCommunicationOutcome(outcome.GetError());
+    }
+}
+
+void SqlserverClient::CloseInterCommunicationAsync(const CloseInterCommunicationRequest& request, const CloseInterCommunicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CloseInterCommunication(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SqlserverClient::CloseInterCommunicationOutcomeCallable SqlserverClient::CloseInterCommunicationCallable(const CloseInterCommunicationRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CloseInterCommunicationOutcome()>>(
+        [this, request]()
+        {
+            return this->CloseInterCommunication(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 SqlserverClient::CompleteExpansionOutcome SqlserverClient::CompleteExpansion(const CompleteExpansionRequest &request)
 {
     auto outcome = MakeRequest(request, "CompleteExpansion");
@@ -377,6 +420,92 @@ SqlserverClient::CreateBasicDBInstancesOutcomeCallable SqlserverClient::CreateBa
         [this, request]()
         {
             return this->CreateBasicDBInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+SqlserverClient::CreateBusinessDBInstancesOutcome SqlserverClient::CreateBusinessDBInstances(const CreateBusinessDBInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateBusinessDBInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateBusinessDBInstancesResponse rsp = CreateBusinessDBInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateBusinessDBInstancesOutcome(rsp);
+        else
+            return CreateBusinessDBInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateBusinessDBInstancesOutcome(outcome.GetError());
+    }
+}
+
+void SqlserverClient::CreateBusinessDBInstancesAsync(const CreateBusinessDBInstancesRequest& request, const CreateBusinessDBInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateBusinessDBInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SqlserverClient::CreateBusinessDBInstancesOutcomeCallable SqlserverClient::CreateBusinessDBInstancesCallable(const CreateBusinessDBInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateBusinessDBInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateBusinessDBInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+SqlserverClient::CreateBusinessIntelligenceFileOutcome SqlserverClient::CreateBusinessIntelligenceFile(const CreateBusinessIntelligenceFileRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateBusinessIntelligenceFile");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateBusinessIntelligenceFileResponse rsp = CreateBusinessIntelligenceFileResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateBusinessIntelligenceFileOutcome(rsp);
+        else
+            return CreateBusinessIntelligenceFileOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateBusinessIntelligenceFileOutcome(outcome.GetError());
+    }
+}
+
+void SqlserverClient::CreateBusinessIntelligenceFileAsync(const CreateBusinessIntelligenceFileRequest& request, const CreateBusinessIntelligenceFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateBusinessIntelligenceFile(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SqlserverClient::CreateBusinessIntelligenceFileOutcomeCallable SqlserverClient::CreateBusinessIntelligenceFileCallable(const CreateBusinessIntelligenceFileRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateBusinessIntelligenceFileOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateBusinessIntelligenceFile(request);
         }
     );
 
@@ -721,6 +850,49 @@ SqlserverClient::DeleteBackupMigrationOutcomeCallable SqlserverClient::DeleteBac
         [this, request]()
         {
             return this->DeleteBackupMigration(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+SqlserverClient::DeleteBusinessIntelligenceFileOutcome SqlserverClient::DeleteBusinessIntelligenceFile(const DeleteBusinessIntelligenceFileRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteBusinessIntelligenceFile");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteBusinessIntelligenceFileResponse rsp = DeleteBusinessIntelligenceFileResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteBusinessIntelligenceFileOutcome(rsp);
+        else
+            return DeleteBusinessIntelligenceFileOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteBusinessIntelligenceFileOutcome(outcome.GetError());
+    }
+}
+
+void SqlserverClient::DeleteBusinessIntelligenceFileAsync(const DeleteBusinessIntelligenceFileRequest& request, const DeleteBusinessIntelligenceFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteBusinessIntelligenceFile(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SqlserverClient::DeleteBusinessIntelligenceFileOutcomeCallable SqlserverClient::DeleteBusinessIntelligenceFileCallable(const DeleteBusinessIntelligenceFileRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteBusinessIntelligenceFileOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteBusinessIntelligenceFile(request);
         }
     );
 
@@ -1244,6 +1416,49 @@ SqlserverClient::DescribeBackupsOutcomeCallable SqlserverClient::DescribeBackups
     return task->get_future();
 }
 
+SqlserverClient::DescribeBusinessIntelligenceFileOutcome SqlserverClient::DescribeBusinessIntelligenceFile(const DescribeBusinessIntelligenceFileRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBusinessIntelligenceFile");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBusinessIntelligenceFileResponse rsp = DescribeBusinessIntelligenceFileResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBusinessIntelligenceFileOutcome(rsp);
+        else
+            return DescribeBusinessIntelligenceFileOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBusinessIntelligenceFileOutcome(outcome.GetError());
+    }
+}
+
+void SqlserverClient::DescribeBusinessIntelligenceFileAsync(const DescribeBusinessIntelligenceFileRequest& request, const DescribeBusinessIntelligenceFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBusinessIntelligenceFile(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SqlserverClient::DescribeBusinessIntelligenceFileOutcomeCallable SqlserverClient::DescribeBusinessIntelligenceFileCallable(const DescribeBusinessIntelligenceFileRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBusinessIntelligenceFileOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBusinessIntelligenceFile(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 SqlserverClient::DescribeCrossRegionZoneOutcome SqlserverClient::DescribeCrossRegionZone(const DescribeCrossRegionZoneRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeCrossRegionZone");
@@ -1323,6 +1538,49 @@ SqlserverClient::DescribeDBCharsetsOutcomeCallable SqlserverClient::DescribeDBCh
         [this, request]()
         {
             return this->DescribeDBCharsets(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+SqlserverClient::DescribeDBInstanceInterOutcome SqlserverClient::DescribeDBInstanceInter(const DescribeDBInstanceInterRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDBInstanceInter");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDBInstanceInterResponse rsp = DescribeDBInstanceInterResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDBInstanceInterOutcome(rsp);
+        else
+            return DescribeDBInstanceInterOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDBInstanceInterOutcome(outcome.GetError());
+    }
+}
+
+void SqlserverClient::DescribeDBInstanceInterAsync(const DescribeDBInstanceInterRequest& request, const DescribeDBInstanceInterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDBInstanceInter(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SqlserverClient::DescribeDBInstanceInterOutcomeCallable SqlserverClient::DescribeDBInstanceInterCallable(const DescribeDBInstanceInterRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDBInstanceInterOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDBInstanceInter(request);
         }
     );
 
@@ -3473,6 +3731,49 @@ SqlserverClient::ModifyReadOnlyGroupDetailsOutcomeCallable SqlserverClient::Modi
         [this, request]()
         {
             return this->ModifyReadOnlyGroupDetails(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+SqlserverClient::OpenInterCommunicationOutcome SqlserverClient::OpenInterCommunication(const OpenInterCommunicationRequest &request)
+{
+    auto outcome = MakeRequest(request, "OpenInterCommunication");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        OpenInterCommunicationResponse rsp = OpenInterCommunicationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return OpenInterCommunicationOutcome(rsp);
+        else
+            return OpenInterCommunicationOutcome(o.GetError());
+    }
+    else
+    {
+        return OpenInterCommunicationOutcome(outcome.GetError());
+    }
+}
+
+void SqlserverClient::OpenInterCommunicationAsync(const OpenInterCommunicationRequest& request, const OpenInterCommunicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->OpenInterCommunication(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SqlserverClient::OpenInterCommunicationOutcomeCallable SqlserverClient::OpenInterCommunicationCallable(const OpenInterCommunicationRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<OpenInterCommunicationOutcome()>>(
+        [this, request]()
+        {
+            return this->OpenInterCommunication(request);
         }
     );
 

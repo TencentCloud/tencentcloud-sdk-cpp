@@ -114,6 +114,24 @@ namespace TencentCloud
                      */
                     bool PeriodHasBeenSet() const;
 
+                    /**
+                     * 获取日志主题的存储类型，可选值 HOT（标准存储），COLD（低频存储）；默认为HOT。
+                     * @return StorageType 日志主题的存储类型，可选值 HOT（标准存储），COLD（低频存储）；默认为HOT。
+                     */
+                    std::string GetStorageType() const;
+
+                    /**
+                     * 设置日志主题的存储类型，可选值 HOT（标准存储），COLD（低频存储）；默认为HOT。
+                     * @param StorageType 日志主题的存储类型，可选值 HOT（标准存储），COLD（低频存储）；默认为HOT。
+                     */
+                    void SetStorageType(const std::string& _storageType);
+
+                    /**
+                     * 判断参数 StorageType 是否已赋值
+                     * @return StorageType 是否已赋值
+                     */
+                    bool StorageTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -139,6 +157,12 @@ namespace TencentCloud
                      */
                     uint64_t m_period;
                     bool m_periodHasBeenSet;
+
+                    /**
+                     * 日志主题的存储类型，可选值 HOT（标准存储），COLD（低频存储）；默认为HOT。
+                     */
+                    std::string m_storageType;
+                    bool m_storageTypeHasBeenSet;
 
                 };
             }

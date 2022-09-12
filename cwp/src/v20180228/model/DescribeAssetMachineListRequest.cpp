@@ -23,11 +23,11 @@ using namespace TencentCloud::Cwp::V20180228::Model;
 using namespace std;
 
 DescribeAssetMachineListRequest::DescribeAssetMachineListRequest() :
+    m_filtersHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_byHasBeenSet(false),
-    m_orderHasBeenSet(false)
+    m_orderHasBeenSet(false),
+    m_byHasBeenSet(false)
 {
 }
 
@@ -37,6 +37,21 @@ string DescribeAssetMachineListRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
+
+    if (m_filtersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Filters";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_filters.begin(); itr != m_filters.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
 
     if (m_limitHasBeenSet)
     {
@@ -54,19 +69,12 @@ string DescribeAssetMachineListRequest::ToJsonString() const
         d.AddMember(iKey, m_offset, allocator);
     }
 
-    if (m_filtersHasBeenSet)
+    if (m_orderHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Filters";
+        string key = "Order";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        int i=0;
-        for (auto itr = m_filters.begin(); itr != m_filters.end(); ++itr, ++i)
-        {
-            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
-        }
+        d.AddMember(iKey, rapidjson::Value(m_order.c_str(), allocator).Move(), allocator);
     }
 
     if (m_byHasBeenSet)
@@ -77,14 +85,6 @@ string DescribeAssetMachineListRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_by.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_orderHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Order";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_order.c_str(), allocator).Move(), allocator);
-    }
-
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -92,6 +92,22 @@ string DescribeAssetMachineListRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+vector<Filter> DescribeAssetMachineListRequest::GetFilters() const
+{
+    return m_filters;
+}
+
+void DescribeAssetMachineListRequest::SetFilters(const vector<Filter>& _filters)
+{
+    m_filters = _filters;
+    m_filtersHasBeenSet = true;
+}
+
+bool DescribeAssetMachineListRequest::FiltersHasBeenSet() const
+{
+    return m_filtersHasBeenSet;
+}
 
 uint64_t DescribeAssetMachineListRequest::GetLimit() const
 {
@@ -125,20 +141,20 @@ bool DescribeAssetMachineListRequest::OffsetHasBeenSet() const
     return m_offsetHasBeenSet;
 }
 
-vector<Filter> DescribeAssetMachineListRequest::GetFilters() const
+string DescribeAssetMachineListRequest::GetOrder() const
 {
-    return m_filters;
+    return m_order;
 }
 
-void DescribeAssetMachineListRequest::SetFilters(const vector<Filter>& _filters)
+void DescribeAssetMachineListRequest::SetOrder(const string& _order)
 {
-    m_filters = _filters;
-    m_filtersHasBeenSet = true;
+    m_order = _order;
+    m_orderHasBeenSet = true;
 }
 
-bool DescribeAssetMachineListRequest::FiltersHasBeenSet() const
+bool DescribeAssetMachineListRequest::OrderHasBeenSet() const
 {
-    return m_filtersHasBeenSet;
+    return m_orderHasBeenSet;
 }
 
 string DescribeAssetMachineListRequest::GetBy() const
@@ -155,22 +171,6 @@ void DescribeAssetMachineListRequest::SetBy(const string& _by)
 bool DescribeAssetMachineListRequest::ByHasBeenSet() const
 {
     return m_byHasBeenSet;
-}
-
-string DescribeAssetMachineListRequest::GetOrder() const
-{
-    return m_order;
-}
-
-void DescribeAssetMachineListRequest::SetOrder(const string& _order)
-{
-    m_order = _order;
-    m_orderHasBeenSet = true;
-}
-
-bool DescribeAssetMachineListRequest::OrderHasBeenSet() const
-{
-    return m_orderHasBeenSet;
 }
 
 

@@ -393,6 +393,46 @@ namespace TencentCloud
                      */
                     bool UpdateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取首次采集时间
+                     * @return FirstTime 首次采集时间
+                     */
+                    std::string GetFirstTime() const;
+
+                    /**
+                     * 设置首次采集时间
+                     * @param FirstTime 首次采集时间
+                     */
+                    void SetFirstTime(const std::string& _firstTime);
+
+                    /**
+                     * 判断参数 FirstTime 是否已赋值
+                     * @return FirstTime 是否已赋值
+                     */
+                    bool FirstTimeHasBeenSet() const;
+
+                    /**
+                     * 获取是否新增[0:否|1:是]
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsNew 是否新增[0:否|1:是]
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetIsNew() const;
+
+                    /**
+                     * 设置是否新增[0:否|1:是]
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param IsNew 是否新增[0:否|1:是]
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIsNew(const int64_t& _isNew);
+
+                    /**
+                     * 判断参数 IsNew 是否已赋值
+                     * @return IsNew 是否已赋值
+                     */
+                    bool IsNewHasBeenSet() const;
+
                 private:
 
                     /**
@@ -509,6 +549,19 @@ namespace TencentCloud
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
+
+                    /**
+                     * 首次采集时间
+                     */
+                    std::string m_firstTime;
+                    bool m_firstTimeHasBeenSet;
+
+                    /**
+                     * 是否新增[0:否|1:是]
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_isNew;
+                    bool m_isNewHasBeenSet;
 
                 };
             }

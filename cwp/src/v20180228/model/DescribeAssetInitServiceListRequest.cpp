@@ -23,11 +23,13 @@ using namespace TencentCloud::Cwp::V20180228::Model;
 using namespace std;
 
 DescribeAssetInitServiceListRequest::DescribeAssetInitServiceListRequest() :
-    m_limitHasBeenSet(false),
-    m_offsetHasBeenSet(false),
-    m_filtersHasBeenSet(false),
     m_uuidHasBeenSet(false),
-    m_quuidHasBeenSet(false)
+    m_quuidHasBeenSet(false),
+    m_filtersHasBeenSet(false),
+    m_offsetHasBeenSet(false),
+    m_limitHasBeenSet(false),
+    m_orderHasBeenSet(false),
+    m_byHasBeenSet(false)
 {
 }
 
@@ -37,37 +39,6 @@ string DescribeAssetInitServiceListRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
-
-    if (m_limitHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Limit";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_limit, allocator);
-    }
-
-    if (m_offsetHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Offset";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_offset, allocator);
-    }
-
-    if (m_filtersHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Filters";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        int i=0;
-        for (auto itr = m_filters.begin(); itr != m_filters.end(); ++itr, ++i)
-        {
-            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
-        }
-    }
 
     if (m_uuidHasBeenSet)
     {
@@ -85,6 +56,53 @@ string DescribeAssetInitServiceListRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_quuid.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_filtersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Filters";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_filters.begin(); itr != m_filters.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_offsetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Offset";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_limitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Limit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_orderHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Order";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_order.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_byHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "By";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_by.c_str(), allocator).Move(), allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -92,54 +110,6 @@ string DescribeAssetInitServiceListRequest::ToJsonString() const
     return buffer.GetString();
 }
 
-
-uint64_t DescribeAssetInitServiceListRequest::GetLimit() const
-{
-    return m_limit;
-}
-
-void DescribeAssetInitServiceListRequest::SetLimit(const uint64_t& _limit)
-{
-    m_limit = _limit;
-    m_limitHasBeenSet = true;
-}
-
-bool DescribeAssetInitServiceListRequest::LimitHasBeenSet() const
-{
-    return m_limitHasBeenSet;
-}
-
-uint64_t DescribeAssetInitServiceListRequest::GetOffset() const
-{
-    return m_offset;
-}
-
-void DescribeAssetInitServiceListRequest::SetOffset(const uint64_t& _offset)
-{
-    m_offset = _offset;
-    m_offsetHasBeenSet = true;
-}
-
-bool DescribeAssetInitServiceListRequest::OffsetHasBeenSet() const
-{
-    return m_offsetHasBeenSet;
-}
-
-vector<AssetFilters> DescribeAssetInitServiceListRequest::GetFilters() const
-{
-    return m_filters;
-}
-
-void DescribeAssetInitServiceListRequest::SetFilters(const vector<AssetFilters>& _filters)
-{
-    m_filters = _filters;
-    m_filtersHasBeenSet = true;
-}
-
-bool DescribeAssetInitServiceListRequest::FiltersHasBeenSet() const
-{
-    return m_filtersHasBeenSet;
-}
 
 string DescribeAssetInitServiceListRequest::GetUuid() const
 {
@@ -171,6 +141,86 @@ void DescribeAssetInitServiceListRequest::SetQuuid(const string& _quuid)
 bool DescribeAssetInitServiceListRequest::QuuidHasBeenSet() const
 {
     return m_quuidHasBeenSet;
+}
+
+vector<AssetFilters> DescribeAssetInitServiceListRequest::GetFilters() const
+{
+    return m_filters;
+}
+
+void DescribeAssetInitServiceListRequest::SetFilters(const vector<AssetFilters>& _filters)
+{
+    m_filters = _filters;
+    m_filtersHasBeenSet = true;
+}
+
+bool DescribeAssetInitServiceListRequest::FiltersHasBeenSet() const
+{
+    return m_filtersHasBeenSet;
+}
+
+uint64_t DescribeAssetInitServiceListRequest::GetOffset() const
+{
+    return m_offset;
+}
+
+void DescribeAssetInitServiceListRequest::SetOffset(const uint64_t& _offset)
+{
+    m_offset = _offset;
+    m_offsetHasBeenSet = true;
+}
+
+bool DescribeAssetInitServiceListRequest::OffsetHasBeenSet() const
+{
+    return m_offsetHasBeenSet;
+}
+
+uint64_t DescribeAssetInitServiceListRequest::GetLimit() const
+{
+    return m_limit;
+}
+
+void DescribeAssetInitServiceListRequest::SetLimit(const uint64_t& _limit)
+{
+    m_limit = _limit;
+    m_limitHasBeenSet = true;
+}
+
+bool DescribeAssetInitServiceListRequest::LimitHasBeenSet() const
+{
+    return m_limitHasBeenSet;
+}
+
+string DescribeAssetInitServiceListRequest::GetOrder() const
+{
+    return m_order;
+}
+
+void DescribeAssetInitServiceListRequest::SetOrder(const string& _order)
+{
+    m_order = _order;
+    m_orderHasBeenSet = true;
+}
+
+bool DescribeAssetInitServiceListRequest::OrderHasBeenSet() const
+{
+    return m_orderHasBeenSet;
+}
+
+string DescribeAssetInitServiceListRequest::GetBy() const
+{
+    return m_by;
+}
+
+void DescribeAssetInitServiceListRequest::SetBy(const string& _by)
+{
+    m_by = _by;
+    m_byHasBeenSet = true;
+}
+
+bool DescribeAssetInitServiceListRequest::ByHasBeenSet() const
+{
+    return m_byHasBeenSet;
 }
 
 

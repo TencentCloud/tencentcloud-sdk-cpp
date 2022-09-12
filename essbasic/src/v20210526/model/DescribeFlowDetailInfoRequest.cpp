@@ -25,7 +25,8 @@ using namespace std;
 DescribeFlowDetailInfoRequest::DescribeFlowDetailInfoRequest() :
     m_agentHasBeenSet(false),
     m_flowIdsHasBeenSet(false),
-    m_operatorHasBeenSet(false)
+    m_operatorHasBeenSet(false),
+    m_flowGroupIdHasBeenSet(false)
 {
 }
 
@@ -65,6 +66,14 @@ string DescribeFlowDetailInfoRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_operator.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_flowGroupIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FlowGroupId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_flowGroupId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -121,6 +130,22 @@ void DescribeFlowDetailInfoRequest::SetOperator(const UserInfo& _operator)
 bool DescribeFlowDetailInfoRequest::OperatorHasBeenSet() const
 {
     return m_operatorHasBeenSet;
+}
+
+string DescribeFlowDetailInfoRequest::GetFlowGroupId() const
+{
+    return m_flowGroupId;
+}
+
+void DescribeFlowDetailInfoRequest::SetFlowGroupId(const string& _flowGroupId)
+{
+    m_flowGroupId = _flowGroupId;
+    m_flowGroupIdHasBeenSet = true;
+}
+
+bool DescribeFlowDetailInfoRequest::FlowGroupIdHasBeenSet() const
+{
+    return m_flowGroupIdHasBeenSet;
 }
 
 

@@ -32,6 +32,7 @@ set(gme_public_header_model
   include/tencentcloud/gme/v20180711/model/ModifyUserMicStatusRequest.h
   include/tencentcloud/gme/v20180711/model/CustomizationConfigs.h
   include/tencentcloud/gme/v20180711/model/VoiceMessageStatisticsItem.h
+  include/tencentcloud/gme/v20180711/model/DeleteRoomMemberRequest.h
   include/tencentcloud/gme/v20180711/model/RoomUser.h
   include/tencentcloud/gme/v20180711/model/CreateCustomizationRequest.h
   include/tencentcloud/gme/v20180711/model/DescribeRoomInfoRequest.h
@@ -48,7 +49,7 @@ set(gme_public_header_model
   include/tencentcloud/gme/v20180711/model/Task.h
   include/tencentcloud/gme/v20180711/model/Tag.h
   include/tencentcloud/gme/v20180711/model/DescribeAgeDetectTaskResponse.h
-  include/tencentcloud/gme/v20180711/model/VoiceMessageConf.h
+  include/tencentcloud/gme/v20180711/model/GetCustomizationListResponse.h
   include/tencentcloud/gme/v20180711/model/ModifyUserMicStatusResponse.h
   include/tencentcloud/gme/v20180711/model/ApplicationDataStatistics.h
   include/tencentcloud/gme/v20180711/model/DeleteScanUserRequest.h
@@ -57,9 +58,10 @@ set(gme_public_header_model
   include/tencentcloud/gme/v20180711/model/UpdateScanRoomsResponse.h
   include/tencentcloud/gme/v20180711/model/UpdateScanUsersResponse.h
   include/tencentcloud/gme/v20180711/model/DescribeApplicationDataResponse.h
-  include/tencentcloud/gme/v20180711/model/GetCustomizationListResponse.h
+  include/tencentcloud/gme/v20180711/model/DeleteRoomMemberResponse.h
   include/tencentcloud/gme/v20180711/model/DeleteScanUserResponse.h
   include/tencentcloud/gme/v20180711/model/ModifyCustomizationRequest.h
+  include/tencentcloud/gme/v20180711/model/VoiceMessageConf.h
   include/tencentcloud/gme/v20180711/model/VoiceFilterStatisticsItem.h
   include/tencentcloud/gme/v20180711/model/CreateAppResp.h
   include/tencentcloud/gme/v20180711/model/DescribeRoomInfoResponse.h
@@ -67,6 +69,7 @@ set(gme_public_header_model
   include/tencentcloud/gme/v20180711/model/DeleteCustomizationResponse.h
   include/tencentcloud/gme/v20180711/model/GetCustomizationListRequest.h
   include/tencentcloud/gme/v20180711/model/DescribeUserInAndOutTimeResponse.h
+  include/tencentcloud/gme/v20180711/model/DeleteResult.h
   include/tencentcloud/gme/v20180711/model/AgeDetectTaskResult.h
   include/tencentcloud/gme/v20180711/model/ModifyRoomInfoResponse.h
   include/tencentcloud/gme/v20180711/model/DescribeScanResult.h
@@ -104,6 +107,7 @@ set(gme_src
   src/v20180711/model/ModifyUserMicStatusRequest.cpp
   src/v20180711/model/CustomizationConfigs.cpp
   src/v20180711/model/VoiceMessageStatisticsItem.cpp
+  src/v20180711/model/DeleteRoomMemberRequest.cpp
   src/v20180711/model/RoomUser.cpp
   src/v20180711/model/CreateCustomizationRequest.cpp
   src/v20180711/model/DescribeRoomInfoRequest.cpp
@@ -120,7 +124,7 @@ set(gme_src
   src/v20180711/model/Task.cpp
   src/v20180711/model/Tag.cpp
   src/v20180711/model/DescribeAgeDetectTaskResponse.cpp
-  src/v20180711/model/VoiceMessageConf.cpp
+  src/v20180711/model/GetCustomizationListResponse.cpp
   src/v20180711/model/ModifyUserMicStatusResponse.cpp
   src/v20180711/model/ApplicationDataStatistics.cpp
   src/v20180711/model/DeleteScanUserRequest.cpp
@@ -129,9 +133,10 @@ set(gme_src
   src/v20180711/model/UpdateScanRoomsResponse.cpp
   src/v20180711/model/UpdateScanUsersResponse.cpp
   src/v20180711/model/DescribeApplicationDataResponse.cpp
-  src/v20180711/model/GetCustomizationListResponse.cpp
+  src/v20180711/model/DeleteRoomMemberResponse.cpp
   src/v20180711/model/DeleteScanUserResponse.cpp
   src/v20180711/model/ModifyCustomizationRequest.cpp
+  src/v20180711/model/VoiceMessageConf.cpp
   src/v20180711/model/VoiceFilterStatisticsItem.cpp
   src/v20180711/model/CreateAppResp.cpp
   src/v20180711/model/DescribeRoomInfoResponse.cpp
@@ -139,6 +144,7 @@ set(gme_src
   src/v20180711/model/DeleteCustomizationResponse.cpp
   src/v20180711/model/GetCustomizationListRequest.cpp
   src/v20180711/model/DescribeUserInAndOutTimeResponse.cpp
+  src/v20180711/model/DeleteResult.cpp
   src/v20180711/model/AgeDetectTaskResult.cpp
   src/v20180711/model/ModifyRoomInfoResponse.cpp
   src/v20180711/model/DescribeScanResult.cpp

@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool RuleStateHasBeenSet() const;
 
                     /**
-                     * 获取规则名称
-                     * @return Name 规则名称
+                     * 获取分组名称
+                     * @return Name 分组名称
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置规则名称
-                     * @param Name 规则名称
+                     * 设置分组名称
+                     * @param Name 分组名称
                      */
                     void SetName(const std::string& _name);
 
@@ -172,6 +172,28 @@ namespace TencentCloud
                      */
                     bool UpdatedAtHasBeenSet() const;
 
+                    /**
+                     * 获取规则名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RuleName 规则名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetRuleName() const;
+
+                    /**
+                     * 设置规则名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RuleName 规则名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRuleName(const std::string& _ruleName);
+
+                    /**
+                     * 判断参数 RuleName 是否已赋值
+                     * @return RuleName 是否已赋值
+                     */
+                    bool RuleNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -187,7 +209,7 @@ namespace TencentCloud
                     bool m_ruleStateHasBeenSet;
 
                     /**
-                     * 规则名称
+                     * 分组名称
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
@@ -215,6 +237,13 @@ namespace TencentCloud
                      */
                     std::string m_updatedAt;
                     bool m_updatedAtHasBeenSet;
+
+                    /**
+                     * 规则名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_ruleName;
+                    bool m_ruleNameHasBeenSet;
 
                 };
             }

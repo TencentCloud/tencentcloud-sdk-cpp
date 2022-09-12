@@ -52,14 +52,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取暴漏漏洞数量
-                     * @return LeakNum 暴漏漏洞数量
+                     * 获取暴露漏洞数量
+                     * @return LeakNum 暴露漏洞数量
                      */
                     uint64_t GetLeakNum() const;
 
                     /**
-                     * 设置暴漏漏洞数量
-                     * @param LeakNum 暴漏漏洞数量
+                     * 设置暴露漏洞数量
+                     * @param LeakNum 暴露漏洞数量
                      */
                     void SetLeakNum(const uint64_t& _leakNum);
 
@@ -88,14 +88,14 @@ namespace TencentCloud
                     bool IPNumHasBeenSet() const;
 
                     /**
-                     * 获取暴漏端口数量
-                     * @return PortNum 暴漏端口数量
+                     * 获取暴露端口数量
+                     * @return PortNum 暴露端口数量
                      */
                     uint64_t GetPortNum() const;
 
                     /**
-                     * 设置暴漏端口数量
-                     * @param PortNum 暴漏端口数量
+                     * 设置暴露端口数量
+                     * @param PortNum 暴露端口数量
                      */
                     void SetPortNum(const uint64_t& _portNum);
 
@@ -162,7 +162,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 暴漏漏洞数量
+                     * 暴露漏洞数量
                      */
                     uint64_t m_leakNum;
                     bool m_leakNumHasBeenSet;
@@ -174,7 +174,7 @@ namespace TencentCloud
                     bool m_iPNumHasBeenSet;
 
                     /**
-                     * 暴漏端口数量
+                     * 暴露端口数量
                      */
                     uint64_t m_portNum;
                     bool m_portNumHasBeenSet;

@@ -39,6 +39,8 @@
 #include <tencentcloud/ms/v20180408/model/DeleteScanInstancesResponse.h>
 #include <tencentcloud/ms/v20180408/model/DeleteShieldInstancesRequest.h>
 #include <tencentcloud/ms/v20180408/model/DeleteShieldInstancesResponse.h>
+#include <tencentcloud/ms/v20180408/model/DescribeApkDetectionResultRequest.h>
+#include <tencentcloud/ms/v20180408/model/DescribeApkDetectionResultResponse.h>
 #include <tencentcloud/ms/v20180408/model/DescribeResourceInstancesRequest.h>
 #include <tencentcloud/ms/v20180408/model/DescribeResourceInstancesResponse.h>
 #include <tencentcloud/ms/v20180408/model/DescribeScanInstancesRequest.h>
@@ -93,6 +95,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteShieldInstancesResponse> DeleteShieldInstancesOutcome;
                 typedef std::future<DeleteShieldInstancesOutcome> DeleteShieldInstancesOutcomeCallable;
                 typedef std::function<void(const MsClient*, const Model::DeleteShieldInstancesRequest&, DeleteShieldInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteShieldInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeApkDetectionResultResponse> DescribeApkDetectionResultOutcome;
+                typedef std::future<DescribeApkDetectionResultOutcome> DescribeApkDetectionResultOutcomeCallable;
+                typedef std::function<void(const MsClient*, const Model::DescribeApkDetectionResultRequest&, DescribeApkDetectionResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApkDetectionResultAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeResourceInstancesResponse> DescribeResourceInstancesOutcome;
                 typedef std::future<DescribeResourceInstancesOutcome> DescribeResourceInstancesOutcomeCallable;
                 typedef std::function<void(const MsClient*, const Model::DescribeResourceInstancesRequest&, DescribeResourceInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeResourceInstancesAsyncHandler;
@@ -191,6 +196,15 @@ namespace TencentCloud
                 DeleteShieldInstancesOutcome DeleteShieldInstances(const Model::DeleteShieldInstancesRequest &request);
                 void DeleteShieldInstancesAsync(const Model::DeleteShieldInstancesRequest& request, const DeleteShieldInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteShieldInstancesOutcomeCallable DeleteShieldInstancesCallable(const Model::DeleteShieldInstancesRequest& request);
+
+                /**
+                 *该接口采用同步模式请求腾讯APK云检测服务，即时返回检测数据，需要用户用轮询的方式调用本接口来进行样本送检并获取检测结果(每隔60s发送一次请求，传相同的参数，重试30次)，一般情况下0.5h内会出检测结果，最长时间是3h。当Result为ok并且ResultList数组非空有值时，代表检测完毕，若长时间获取不到检测结果，请联系客服。
+                 * @param req DescribeApkDetectionResultRequest
+                 * @return DescribeApkDetectionResultOutcome
+                 */
+                DescribeApkDetectionResultOutcome DescribeApkDetectionResult(const Model::DescribeApkDetectionResultRequest &request);
+                void DescribeApkDetectionResultAsync(const Model::DescribeApkDetectionResultRequest& request, const DescribeApkDetectionResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeApkDetectionResultOutcomeCallable DescribeApkDetectionResultCallable(const Model::DescribeApkDetectionResultRequest& request);
 
                 /**
                  *获取某个用户的所有资源信息

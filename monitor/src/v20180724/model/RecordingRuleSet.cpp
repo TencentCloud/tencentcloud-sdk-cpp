@@ -27,7 +27,8 @@ RecordingRuleSet::RecordingRuleSet() :
     m_groupHasBeenSet(false),
     m_totalHasBeenSet(false),
     m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+    m_updatedAtHasBeenSet(false),
+    m_ruleNameHasBeenSet(false)
 {
 }
 
@@ -106,6 +107,16 @@ CoreInternalOutcome RecordingRuleSet::Deserialize(const rapidjson::Value &value)
         m_updatedAtHasBeenSet = true;
     }
 
+    if (value.HasMember("RuleName") && !value["RuleName"].IsNull())
+    {
+        if (!value["RuleName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RecordingRuleSet.RuleName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ruleName = string(value["RuleName"].GetString());
+        m_ruleNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +178,14 @@ void RecordingRuleSet::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "UpdatedAt";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_updatedAt.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ruleNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RuleName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ruleName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -282,5 +301,21 @@ void RecordingRuleSet::SetUpdatedAt(const string& _updatedAt)
 bool RecordingRuleSet::UpdatedAtHasBeenSet() const
 {
     return m_updatedAtHasBeenSet;
+}
+
+string RecordingRuleSet::GetRuleName() const
+{
+    return m_ruleName;
+}
+
+void RecordingRuleSet::SetRuleName(const string& _ruleName)
+{
+    m_ruleName = _ruleName;
+    m_ruleNameHasBeenSet = true;
+}
+
+bool RecordingRuleSet::RuleNameHasBeenSet() const
+{
+    return m_ruleNameHasBeenSet;
 }
 

@@ -23,12 +23,12 @@ using namespace TencentCloud::Cwp::V20180228::Model;
 using namespace std;
 
 DescribeAssetWebServiceInfoListRequest::DescribeAssetWebServiceInfoListRequest() :
-    m_limitHasBeenSet(false),
-    m_offsetHasBeenSet(false),
+    m_quuidHasBeenSet(false),
     m_filtersHasBeenSet(false),
+    m_offsetHasBeenSet(false),
+    m_limitHasBeenSet(false),
     m_orderHasBeenSet(false),
-    m_byHasBeenSet(false),
-    m_quuidHasBeenSet(false)
+    m_byHasBeenSet(false)
 {
 }
 
@@ -39,20 +39,12 @@ string DescribeAssetWebServiceInfoListRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_limitHasBeenSet)
+    if (m_quuidHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Limit";
+        string key = "Quuid";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_limit, allocator);
-    }
-
-    if (m_offsetHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Offset";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_offset, allocator);
+        d.AddMember(iKey, rapidjson::Value(m_quuid.c_str(), allocator).Move(), allocator);
     }
 
     if (m_filtersHasBeenSet)
@@ -68,6 +60,22 @@ string DescribeAssetWebServiceInfoListRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_offsetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Offset";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_limitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Limit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_limit, allocator);
     }
 
     if (m_orderHasBeenSet)
@@ -86,14 +94,6 @@ string DescribeAssetWebServiceInfoListRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_by.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_quuidHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Quuid";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_quuid.c_str(), allocator).Move(), allocator);
-    }
-
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -102,20 +102,36 @@ string DescribeAssetWebServiceInfoListRequest::ToJsonString() const
 }
 
 
-uint64_t DescribeAssetWebServiceInfoListRequest::GetLimit() const
+string DescribeAssetWebServiceInfoListRequest::GetQuuid() const
 {
-    return m_limit;
+    return m_quuid;
 }
 
-void DescribeAssetWebServiceInfoListRequest::SetLimit(const uint64_t& _limit)
+void DescribeAssetWebServiceInfoListRequest::SetQuuid(const string& _quuid)
 {
-    m_limit = _limit;
-    m_limitHasBeenSet = true;
+    m_quuid = _quuid;
+    m_quuidHasBeenSet = true;
 }
 
-bool DescribeAssetWebServiceInfoListRequest::LimitHasBeenSet() const
+bool DescribeAssetWebServiceInfoListRequest::QuuidHasBeenSet() const
 {
-    return m_limitHasBeenSet;
+    return m_quuidHasBeenSet;
+}
+
+vector<AssetFilters> DescribeAssetWebServiceInfoListRequest::GetFilters() const
+{
+    return m_filters;
+}
+
+void DescribeAssetWebServiceInfoListRequest::SetFilters(const vector<AssetFilters>& _filters)
+{
+    m_filters = _filters;
+    m_filtersHasBeenSet = true;
+}
+
+bool DescribeAssetWebServiceInfoListRequest::FiltersHasBeenSet() const
+{
+    return m_filtersHasBeenSet;
 }
 
 uint64_t DescribeAssetWebServiceInfoListRequest::GetOffset() const
@@ -134,20 +150,20 @@ bool DescribeAssetWebServiceInfoListRequest::OffsetHasBeenSet() const
     return m_offsetHasBeenSet;
 }
 
-vector<AssetFilters> DescribeAssetWebServiceInfoListRequest::GetFilters() const
+uint64_t DescribeAssetWebServiceInfoListRequest::GetLimit() const
 {
-    return m_filters;
+    return m_limit;
 }
 
-void DescribeAssetWebServiceInfoListRequest::SetFilters(const vector<AssetFilters>& _filters)
+void DescribeAssetWebServiceInfoListRequest::SetLimit(const uint64_t& _limit)
 {
-    m_filters = _filters;
-    m_filtersHasBeenSet = true;
+    m_limit = _limit;
+    m_limitHasBeenSet = true;
 }
 
-bool DescribeAssetWebServiceInfoListRequest::FiltersHasBeenSet() const
+bool DescribeAssetWebServiceInfoListRequest::LimitHasBeenSet() const
 {
-    return m_filtersHasBeenSet;
+    return m_limitHasBeenSet;
 }
 
 string DescribeAssetWebServiceInfoListRequest::GetOrder() const
@@ -180,22 +196,6 @@ void DescribeAssetWebServiceInfoListRequest::SetBy(const string& _by)
 bool DescribeAssetWebServiceInfoListRequest::ByHasBeenSet() const
 {
     return m_byHasBeenSet;
-}
-
-string DescribeAssetWebServiceInfoListRequest::GetQuuid() const
-{
-    return m_quuid;
-}
-
-void DescribeAssetWebServiceInfoListRequest::SetQuuid(const string& _quuid)
-{
-    m_quuid = _quuid;
-    m_quuidHasBeenSet = true;
-}
-
-bool DescribeAssetWebServiceInfoListRequest::QuuidHasBeenSet() const
-{
-    return m_quuidHasBeenSet;
 }
 
 

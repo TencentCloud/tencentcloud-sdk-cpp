@@ -91,6 +91,7 @@ set(cfw_public_header_model
   include/tencentcloud/cfw/v20190904/model/ModifyAllSwitchStatusResponse.h
   include/tencentcloud/cfw/v20190904/model/NewModeItems.h
   include/tencentcloud/cfw/v20190904/model/DescribeNatFwInfoCountResponse.h
+  include/tencentcloud/cfw/v20190904/model/DescribeDefenseSwitchRequest.h
   include/tencentcloud/cfw/v20190904/model/SecurityGroupListData.h
   include/tencentcloud/cfw/v20190904/model/CreateNatFwInstanceWithDomainResponse.h
   include/tencentcloud/cfw/v20190904/model/RemoveAcRuleRequest.h
@@ -130,6 +131,7 @@ set(cfw_public_header_model
   include/tencentcloud/cfw/v20190904/model/DescribeBlockByIpTimesListResponse.h
   include/tencentcloud/cfw/v20190904/model/SetNatFwDnatRuleResponse.h
   include/tencentcloud/cfw/v20190904/model/DescribeRuleOverviewRequest.h
+  include/tencentcloud/cfw/v20190904/model/DescribeDefenseSwitchResponse.h
   include/tencentcloud/cfw/v20190904/model/DescribeAcListsRequest.h
   include/tencentcloud/cfw/v20190904/model/DescribeVpcRuleOverviewRequest.h
   include/tencentcloud/cfw/v20190904/model/UnHandleEvent.h
@@ -263,6 +265,7 @@ set(cfw_src
   src/v20190904/model/ModifyAllSwitchStatusResponse.cpp
   src/v20190904/model/NewModeItems.cpp
   src/v20190904/model/DescribeNatFwInfoCountResponse.cpp
+  src/v20190904/model/DescribeDefenseSwitchRequest.cpp
   src/v20190904/model/SecurityGroupListData.cpp
   src/v20190904/model/CreateNatFwInstanceWithDomainResponse.cpp
   src/v20190904/model/RemoveAcRuleRequest.cpp
@@ -302,6 +305,7 @@ set(cfw_src
   src/v20190904/model/DescribeBlockByIpTimesListResponse.cpp
   src/v20190904/model/SetNatFwDnatRuleResponse.cpp
   src/v20190904/model/DescribeRuleOverviewRequest.cpp
+  src/v20190904/model/DescribeDefenseSwitchResponse.cpp
   src/v20190904/model/DescribeAcListsRequest.cpp
   src/v20190904/model/DescribeVpcRuleOverviewRequest.cpp
   src/v20190904/model/UnHandleEvent.cpp

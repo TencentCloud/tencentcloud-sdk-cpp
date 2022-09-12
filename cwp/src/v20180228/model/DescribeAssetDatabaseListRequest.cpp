@@ -23,10 +23,12 @@ using namespace TencentCloud::Cwp::V20180228::Model;
 using namespace std;
 
 DescribeAssetDatabaseListRequest::DescribeAssetDatabaseListRequest() :
-    m_limitHasBeenSet(false),
-    m_offsetHasBeenSet(false),
+    m_quuidHasBeenSet(false),
     m_filtersHasBeenSet(false),
-    m_quuidHasBeenSet(false)
+    m_offsetHasBeenSet(false),
+    m_limitHasBeenSet(false),
+    m_orderHasBeenSet(false),
+    m_byHasBeenSet(false)
 {
 }
 
@@ -37,20 +39,12 @@ string DescribeAssetDatabaseListRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_limitHasBeenSet)
+    if (m_quuidHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Limit";
+        string key = "Quuid";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_limit, allocator);
-    }
-
-    if (m_offsetHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Offset";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_offset, allocator);
+        d.AddMember(iKey, rapidjson::Value(m_quuid.c_str(), allocator).Move(), allocator);
     }
 
     if (m_filtersHasBeenSet)
@@ -68,12 +62,36 @@ string DescribeAssetDatabaseListRequest::ToJsonString() const
         }
     }
 
-    if (m_quuidHasBeenSet)
+    if (m_offsetHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Quuid";
+        string key = "Offset";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_quuid.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_limitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Limit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_orderHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Order";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_order.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_byHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "By";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_by.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -84,36 +102,20 @@ string DescribeAssetDatabaseListRequest::ToJsonString() const
 }
 
 
-uint64_t DescribeAssetDatabaseListRequest::GetLimit() const
+string DescribeAssetDatabaseListRequest::GetQuuid() const
 {
-    return m_limit;
+    return m_quuid;
 }
 
-void DescribeAssetDatabaseListRequest::SetLimit(const uint64_t& _limit)
+void DescribeAssetDatabaseListRequest::SetQuuid(const string& _quuid)
 {
-    m_limit = _limit;
-    m_limitHasBeenSet = true;
+    m_quuid = _quuid;
+    m_quuidHasBeenSet = true;
 }
 
-bool DescribeAssetDatabaseListRequest::LimitHasBeenSet() const
+bool DescribeAssetDatabaseListRequest::QuuidHasBeenSet() const
 {
-    return m_limitHasBeenSet;
-}
-
-uint64_t DescribeAssetDatabaseListRequest::GetOffset() const
-{
-    return m_offset;
-}
-
-void DescribeAssetDatabaseListRequest::SetOffset(const uint64_t& _offset)
-{
-    m_offset = _offset;
-    m_offsetHasBeenSet = true;
-}
-
-bool DescribeAssetDatabaseListRequest::OffsetHasBeenSet() const
-{
-    return m_offsetHasBeenSet;
+    return m_quuidHasBeenSet;
 }
 
 vector<AssetFilters> DescribeAssetDatabaseListRequest::GetFilters() const
@@ -132,20 +134,68 @@ bool DescribeAssetDatabaseListRequest::FiltersHasBeenSet() const
     return m_filtersHasBeenSet;
 }
 
-string DescribeAssetDatabaseListRequest::GetQuuid() const
+uint64_t DescribeAssetDatabaseListRequest::GetOffset() const
 {
-    return m_quuid;
+    return m_offset;
 }
 
-void DescribeAssetDatabaseListRequest::SetQuuid(const string& _quuid)
+void DescribeAssetDatabaseListRequest::SetOffset(const uint64_t& _offset)
 {
-    m_quuid = _quuid;
-    m_quuidHasBeenSet = true;
+    m_offset = _offset;
+    m_offsetHasBeenSet = true;
 }
 
-bool DescribeAssetDatabaseListRequest::QuuidHasBeenSet() const
+bool DescribeAssetDatabaseListRequest::OffsetHasBeenSet() const
 {
-    return m_quuidHasBeenSet;
+    return m_offsetHasBeenSet;
+}
+
+uint64_t DescribeAssetDatabaseListRequest::GetLimit() const
+{
+    return m_limit;
+}
+
+void DescribeAssetDatabaseListRequest::SetLimit(const uint64_t& _limit)
+{
+    m_limit = _limit;
+    m_limitHasBeenSet = true;
+}
+
+bool DescribeAssetDatabaseListRequest::LimitHasBeenSet() const
+{
+    return m_limitHasBeenSet;
+}
+
+string DescribeAssetDatabaseListRequest::GetOrder() const
+{
+    return m_order;
+}
+
+void DescribeAssetDatabaseListRequest::SetOrder(const string& _order)
+{
+    m_order = _order;
+    m_orderHasBeenSet = true;
+}
+
+bool DescribeAssetDatabaseListRequest::OrderHasBeenSet() const
+{
+    return m_orderHasBeenSet;
+}
+
+string DescribeAssetDatabaseListRequest::GetBy() const
+{
+    return m_by;
+}
+
+void DescribeAssetDatabaseListRequest::SetBy(const string& _by)
+{
+    m_by = _by;
+    m_byHasBeenSet = true;
+}
+
+bool DescribeAssetDatabaseListRequest::ByHasBeenSet() const
+{
+    return m_byHasBeenSet;
 }
 
 

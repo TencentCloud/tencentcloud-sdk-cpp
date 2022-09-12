@@ -26,7 +26,8 @@ ServerCertInfo::ServerCertInfo() :
     m_typeHasBeenSet(false),
     m_expireTimeHasBeenSet(false),
     m_deployTimeHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_signAlgoHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,16 @@ CoreInternalOutcome ServerCertInfo::Deserialize(const rapidjson::Value &value)
         m_statusHasBeenSet = true;
     }
 
+    if (value.HasMember("SignAlgo") && !value["SignAlgo"].IsNull())
+    {
+        if (!value["SignAlgo"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServerCertInfo.SignAlgo` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_signAlgo = string(value["SignAlgo"].GetString());
+        m_signAlgoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +159,14 @@ void ServerCertInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_signAlgoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SignAlgo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_signAlgo.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -247,5 +266,21 @@ void ServerCertInfo::SetStatus(const string& _status)
 bool ServerCertInfo::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+string ServerCertInfo::GetSignAlgo() const
+{
+    return m_signAlgo;
+}
+
+void ServerCertInfo::SetSignAlgo(const string& _signAlgo)
+{
+    m_signAlgo = _signAlgo;
+    m_signAlgoHasBeenSet = true;
+}
+
+bool ServerCertInfo::SignAlgoHasBeenSet() const
+{
+    return m_signAlgoHasBeenSet;
 }
 

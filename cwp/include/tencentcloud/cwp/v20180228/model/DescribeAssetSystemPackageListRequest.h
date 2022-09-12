@@ -80,42 +80,6 @@ namespace TencentCloud
                     bool QuuidHasBeenSet() const;
 
                     /**
-                     * 获取需要返回的数量，默认为10，最大值为100
-                     * @return Limit 需要返回的数量，默认为10，最大值为100
-                     */
-                    uint64_t GetLimit() const;
-
-                    /**
-                     * 设置需要返回的数量，默认为10，最大值为100
-                     * @param Limit 需要返回的数量，默认为10，最大值为100
-                     */
-                    void SetLimit(const uint64_t& _limit);
-
-                    /**
-                     * 判断参数 Limit 是否已赋值
-                     * @return Limit 是否已赋值
-                     */
-                    bool LimitHasBeenSet() const;
-
-                    /**
-                     * 获取偏移量，默认为0。
-                     * @return Offset 偏移量，默认为0。
-                     */
-                    uint64_t GetOffset() const;
-
-                    /**
-                     * 设置偏移量，默认为0。
-                     * @param Offset 偏移量，默认为0。
-                     */
-                    void SetOffset(const uint64_t& _offset);
-
-                    /**
-                     * 判断参数 Offset 是否已赋值
-                     * @return Offset 是否已赋值
-                     */
-                    bool OffsetHasBeenSet() const;
-
-                    /**
                      * 获取过滤条件。
 <li>Name - String - 是否必填：否 - 包 名</li>
 <li>StartTime - String - 是否必填：否 - 安装开始时间</li>
@@ -166,6 +130,42 @@ namespace TencentCloud
                     bool FiltersHasBeenSet() const;
 
                     /**
+                     * 获取偏移量，默认为0。
+                     * @return Offset 偏移量，默认为0。
+                     */
+                    uint64_t GetOffset() const;
+
+                    /**
+                     * 设置偏移量，默认为0。
+                     * @param Offset 偏移量，默认为0。
+                     */
+                    void SetOffset(const uint64_t& _offset);
+
+                    /**
+                     * 判断参数 Offset 是否已赋值
+                     * @return Offset 是否已赋值
+                     */
+                    bool OffsetHasBeenSet() const;
+
+                    /**
+                     * 获取需要返回的数量，默认为10，最大值为100
+                     * @return Limit 需要返回的数量，默认为10，最大值为100
+                     */
+                    uint64_t GetLimit() const;
+
+                    /**
+                     * 设置需要返回的数量，默认为10，最大值为100
+                     * @param Limit 需要返回的数量，默认为10，最大值为100
+                     */
+                    void SetLimit(const uint64_t& _limit);
+
+                    /**
+                     * 判断参数 Limit 是否已赋值
+                     * @return Limit 是否已赋值
+                     */
+                    bool LimitHasBeenSet() const;
+
+                    /**
                      * 获取排序方式，asc-升序 或 desc-降序。默认：desc-降序
                      * @return Order 排序方式，asc-升序 或 desc-降序。默认：desc-降序
                      */
@@ -184,14 +184,14 @@ namespace TencentCloud
                     bool OrderHasBeenSet() const;
 
                     /**
-                     * 获取排序方式可选：InstallTime 安装时间
-                     * @return By 排序方式可选：InstallTime 安装时间
+                     * 获取排序方式可选：[FistTime|InstallTime:安装时间]
+                     * @return By 排序方式可选：[FistTime|InstallTime:安装时间]
                      */
                     std::string GetBy() const;
 
                     /**
-                     * 设置排序方式可选：InstallTime 安装时间
-                     * @param By 排序方式可选：InstallTime 安装时间
+                     * 设置排序方式可选：[FistTime|InstallTime:安装时间]
+                     * @param By 排序方式可选：[FistTime|InstallTime:安装时间]
                      */
                     void SetBy(const std::string& _by);
 
@@ -216,18 +216,6 @@ namespace TencentCloud
                     bool m_quuidHasBeenSet;
 
                     /**
-                     * 需要返回的数量，默认为10，最大值为100
-                     */
-                    uint64_t m_limit;
-                    bool m_limitHasBeenSet;
-
-                    /**
-                     * 偏移量，默认为0。
-                     */
-                    uint64_t m_offset;
-                    bool m_offsetHasBeenSet;
-
-                    /**
                      * 过滤条件。
 <li>Name - String - 是否必填：否 - 包 名</li>
 <li>StartTime - String - 是否必填：否 - 安装开始时间</li>
@@ -242,13 +230,25 @@ namespace TencentCloud
                     bool m_filtersHasBeenSet;
 
                     /**
+                     * 偏移量，默认为0。
+                     */
+                    uint64_t m_offset;
+                    bool m_offsetHasBeenSet;
+
+                    /**
+                     * 需要返回的数量，默认为10，最大值为100
+                     */
+                    uint64_t m_limit;
+                    bool m_limitHasBeenSet;
+
+                    /**
                      * 排序方式，asc-升序 或 desc-降序。默认：desc-降序
                      */
                     std::string m_order;
                     bool m_orderHasBeenSet;
 
                     /**
-                     * 排序方式可选：InstallTime 安装时间
+                     * 排序方式可选：[FistTime|InstallTime:安装时间]
                      */
                     std::string m_by;
                     bool m_byHasBeenSet;

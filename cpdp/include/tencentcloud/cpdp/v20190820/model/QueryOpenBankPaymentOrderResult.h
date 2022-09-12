@@ -431,6 +431,28 @@ OPENBANK_PAYMENT
                      */
                     bool ProfitShareRespInfoListHasBeenSet() const;
 
+                    /**
+                     * 获取支付完成时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TimeFinish 支付完成时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetTimeFinish() const;
+
+                    /**
+                     * 设置支付完成时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TimeFinish 支付完成时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTimeFinish(const std::string& _timeFinish);
+
+                    /**
+                     * 判断参数 TimeFinish 是否已赋值
+                     * @return TimeFinish 是否已赋值
+                     */
+                    bool TimeFinishHasBeenSet() const;
+
                 private:
 
                     /**
@@ -553,6 +575,13 @@ OPENBANK_PAYMENT
                      */
                     std::vector<OpenBankProfitShareRespInfo> m_profitShareRespInfoList;
                     bool m_profitShareRespInfoListHasBeenSet;
+
+                    /**
+                     * 支付完成时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_timeFinish;
+                    bool m_timeFinishHasBeenSet;
 
                 };
             }

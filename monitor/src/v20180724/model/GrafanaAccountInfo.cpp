@@ -24,7 +24,9 @@ GrafanaAccountInfo::GrafanaAccountInfo() :
     m_userIdHasBeenSet(false),
     m_roleHasBeenSet(false),
     m_notesHasBeenSet(false),
-    m_createAtHasBeenSet(false)
+    m_createAtHasBeenSet(false),
+    m_instanceIdHasBeenSet(false),
+    m_uinHasBeenSet(false)
 {
 }
 
@@ -83,6 +85,26 @@ CoreInternalOutcome GrafanaAccountInfo::Deserialize(const rapidjson::Value &valu
         m_createAtHasBeenSet = true;
     }
 
+    if (value.HasMember("InstanceId") && !value["InstanceId"].IsNull())
+    {
+        if (!value["InstanceId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `GrafanaAccountInfo.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceId = string(value["InstanceId"].GetString());
+        m_instanceIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("Uin") && !value["Uin"].IsNull())
+    {
+        if (!value["Uin"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `GrafanaAccountInfo.Uin` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_uin = string(value["Uin"].GetString());
+        m_uinHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -127,6 +149,22 @@ void GrafanaAccountInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "CreateAt";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_createAt.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_uinHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Uin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_uin.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -194,5 +232,37 @@ void GrafanaAccountInfo::SetCreateAt(const string& _createAt)
 bool GrafanaAccountInfo::CreateAtHasBeenSet() const
 {
     return m_createAtHasBeenSet;
+}
+
+string GrafanaAccountInfo::GetInstanceId() const
+{
+    return m_instanceId;
+}
+
+void GrafanaAccountInfo::SetInstanceId(const string& _instanceId)
+{
+    m_instanceId = _instanceId;
+    m_instanceIdHasBeenSet = true;
+}
+
+bool GrafanaAccountInfo::InstanceIdHasBeenSet() const
+{
+    return m_instanceIdHasBeenSet;
+}
+
+string GrafanaAccountInfo::GetUin() const
+{
+    return m_uin;
+}
+
+void GrafanaAccountInfo::SetUin(const string& _uin)
+{
+    m_uin = _uin;
+    m_uinHasBeenSet = true;
+}
+
+bool GrafanaAccountInfo::UinHasBeenSet() const
+{
+    return m_uinHasBeenSet;
 }
 

@@ -38,7 +38,9 @@ AssetWebServiceBaseInfo::AssetWebServiceBaseInfo() :
     m_idHasBeenSet(false),
     m_machineNameHasBeenSet(false),
     m_descHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
+    m_updateTimeHasBeenSet(false),
+    m_firstTimeHasBeenSet(false),
+    m_isNewHasBeenSet(false)
 {
 }
 
@@ -237,6 +239,26 @@ CoreInternalOutcome AssetWebServiceBaseInfo::Deserialize(const rapidjson::Value 
         m_updateTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("FirstTime") && !value["FirstTime"].IsNull())
+    {
+        if (!value["FirstTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AssetWebServiceBaseInfo.FirstTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_firstTime = string(value["FirstTime"].GetString());
+        m_firstTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsNew") && !value["IsNew"].IsNull())
+    {
+        if (!value["IsNew"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AssetWebServiceBaseInfo.IsNew` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isNew = value["IsNew"].GetInt64();
+        m_isNewHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -393,6 +415,22 @@ void AssetWebServiceBaseInfo::ToJsonObject(rapidjson::Value &value, rapidjson::D
         string key = "UpdateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_updateTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_firstTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FirstTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_firstTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isNewHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsNew";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isNew, allocator);
     }
 
 }
@@ -684,5 +722,37 @@ void AssetWebServiceBaseInfo::SetUpdateTime(const string& _updateTime)
 bool AssetWebServiceBaseInfo::UpdateTimeHasBeenSet() const
 {
     return m_updateTimeHasBeenSet;
+}
+
+string AssetWebServiceBaseInfo::GetFirstTime() const
+{
+    return m_firstTime;
+}
+
+void AssetWebServiceBaseInfo::SetFirstTime(const string& _firstTime)
+{
+    m_firstTime = _firstTime;
+    m_firstTimeHasBeenSet = true;
+}
+
+bool AssetWebServiceBaseInfo::FirstTimeHasBeenSet() const
+{
+    return m_firstTimeHasBeenSet;
+}
+
+int64_t AssetWebServiceBaseInfo::GetIsNew() const
+{
+    return m_isNew;
+}
+
+void AssetWebServiceBaseInfo::SetIsNew(const int64_t& _isNew)
+{
+    m_isNew = _isNew;
+    m_isNewHasBeenSet = true;
+}
+
+bool AssetWebServiceBaseInfo::IsNewHasBeenSet() const
+{
+    return m_isNewHasBeenSet;
 }
 

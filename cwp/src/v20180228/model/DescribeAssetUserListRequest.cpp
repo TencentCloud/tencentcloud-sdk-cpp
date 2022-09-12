@@ -23,12 +23,12 @@ using namespace TencentCloud::Cwp::V20180228::Model;
 using namespace std;
 
 DescribeAssetUserListRequest::DescribeAssetUserListRequest() :
+    m_quuidHasBeenSet(false),
+    m_filtersHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_filtersHasBeenSet(false),
     m_orderHasBeenSet(false),
-    m_byHasBeenSet(false),
-    m_quuidHasBeenSet(false)
+    m_byHasBeenSet(false)
 {
 }
 
@@ -39,20 +39,12 @@ string DescribeAssetUserListRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_limitHasBeenSet)
+    if (m_quuidHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Limit";
+        string key = "Quuid";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_limit, allocator);
-    }
-
-    if (m_offsetHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Offset";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_offset, allocator);
+        d.AddMember(iKey, rapidjson::Value(m_quuid.c_str(), allocator).Move(), allocator);
     }
 
     if (m_filtersHasBeenSet)
@@ -68,6 +60,22 @@ string DescribeAssetUserListRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_limitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Limit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_offsetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Offset";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_offset, allocator);
     }
 
     if (m_orderHasBeenSet)
@@ -86,14 +94,6 @@ string DescribeAssetUserListRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_by.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_quuidHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Quuid";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_quuid.c_str(), allocator).Move(), allocator);
-    }
-
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -101,6 +101,38 @@ string DescribeAssetUserListRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string DescribeAssetUserListRequest::GetQuuid() const
+{
+    return m_quuid;
+}
+
+void DescribeAssetUserListRequest::SetQuuid(const string& _quuid)
+{
+    m_quuid = _quuid;
+    m_quuidHasBeenSet = true;
+}
+
+bool DescribeAssetUserListRequest::QuuidHasBeenSet() const
+{
+    return m_quuidHasBeenSet;
+}
+
+vector<Filter> DescribeAssetUserListRequest::GetFilters() const
+{
+    return m_filters;
+}
+
+void DescribeAssetUserListRequest::SetFilters(const vector<Filter>& _filters)
+{
+    m_filters = _filters;
+    m_filtersHasBeenSet = true;
+}
+
+bool DescribeAssetUserListRequest::FiltersHasBeenSet() const
+{
+    return m_filtersHasBeenSet;
+}
 
 uint64_t DescribeAssetUserListRequest::GetLimit() const
 {
@@ -134,22 +166,6 @@ bool DescribeAssetUserListRequest::OffsetHasBeenSet() const
     return m_offsetHasBeenSet;
 }
 
-vector<Filter> DescribeAssetUserListRequest::GetFilters() const
-{
-    return m_filters;
-}
-
-void DescribeAssetUserListRequest::SetFilters(const vector<Filter>& _filters)
-{
-    m_filters = _filters;
-    m_filtersHasBeenSet = true;
-}
-
-bool DescribeAssetUserListRequest::FiltersHasBeenSet() const
-{
-    return m_filtersHasBeenSet;
-}
-
 string DescribeAssetUserListRequest::GetOrder() const
 {
     return m_order;
@@ -180,22 +196,6 @@ void DescribeAssetUserListRequest::SetBy(const string& _by)
 bool DescribeAssetUserListRequest::ByHasBeenSet() const
 {
     return m_byHasBeenSet;
-}
-
-string DescribeAssetUserListRequest::GetQuuid() const
-{
-    return m_quuid;
-}
-
-void DescribeAssetUserListRequest::SetQuuid(const string& _quuid)
-{
-    m_quuid = _quuid;
-    m_quuidHasBeenSet = true;
-}
-
-bool DescribeAssetUserListRequest::QuuidHasBeenSet() const
-{
-    return m_quuidHasBeenSet;
 }
 
 

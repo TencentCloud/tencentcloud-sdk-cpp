@@ -43,7 +43,10 @@ AssetDatabaseBaseInfo::AssetDatabaseBaseInfo() :
     m_binPathHasBeenSet(false),
     m_paramHasBeenSet(false),
     m_idHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
+    m_updateTimeHasBeenSet(false),
+    m_firstTimeHasBeenSet(false),
+    m_isNewHasBeenSet(false),
+    m_machineNameHasBeenSet(false)
 {
 }
 
@@ -292,6 +295,36 @@ CoreInternalOutcome AssetDatabaseBaseInfo::Deserialize(const rapidjson::Value &v
         m_updateTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("FirstTime") && !value["FirstTime"].IsNull())
+    {
+        if (!value["FirstTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AssetDatabaseBaseInfo.FirstTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_firstTime = string(value["FirstTime"].GetString());
+        m_firstTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsNew") && !value["IsNew"].IsNull())
+    {
+        if (!value["IsNew"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AssetDatabaseBaseInfo.IsNew` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isNew = value["IsNew"].GetInt64();
+        m_isNewHasBeenSet = true;
+    }
+
+    if (value.HasMember("MachineName") && !value["MachineName"].IsNull())
+    {
+        if (!value["MachineName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AssetDatabaseBaseInfo.MachineName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_machineName = string(value["MachineName"].GetString());
+        m_machineNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -488,6 +521,30 @@ void AssetDatabaseBaseInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "UpdateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_updateTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_firstTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FirstTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_firstTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isNewHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsNew";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isNew, allocator);
+    }
+
+    if (m_machineNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MachineName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_machineName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -859,5 +916,53 @@ void AssetDatabaseBaseInfo::SetUpdateTime(const string& _updateTime)
 bool AssetDatabaseBaseInfo::UpdateTimeHasBeenSet() const
 {
     return m_updateTimeHasBeenSet;
+}
+
+string AssetDatabaseBaseInfo::GetFirstTime() const
+{
+    return m_firstTime;
+}
+
+void AssetDatabaseBaseInfo::SetFirstTime(const string& _firstTime)
+{
+    m_firstTime = _firstTime;
+    m_firstTimeHasBeenSet = true;
+}
+
+bool AssetDatabaseBaseInfo::FirstTimeHasBeenSet() const
+{
+    return m_firstTimeHasBeenSet;
+}
+
+int64_t AssetDatabaseBaseInfo::GetIsNew() const
+{
+    return m_isNew;
+}
+
+void AssetDatabaseBaseInfo::SetIsNew(const int64_t& _isNew)
+{
+    m_isNew = _isNew;
+    m_isNewHasBeenSet = true;
+}
+
+bool AssetDatabaseBaseInfo::IsNewHasBeenSet() const
+{
+    return m_isNewHasBeenSet;
+}
+
+string AssetDatabaseBaseInfo::GetMachineName() const
+{
+    return m_machineName;
+}
+
+void AssetDatabaseBaseInfo::SetMachineName(const string& _machineName)
+{
+    m_machineName = _machineName;
+    m_machineNameHasBeenSet = true;
+}
+
+bool AssetDatabaseBaseInfo::MachineNameHasBeenSet() const
+{
+    return m_machineNameHasBeenSet;
 }
 

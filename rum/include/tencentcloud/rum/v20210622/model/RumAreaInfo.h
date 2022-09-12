@@ -118,6 +118,60 @@ namespace TencentCloud
                      */
                     bool AreaKeyHasBeenSet() const;
 
+                    /**
+                     * 获取地域码表 id
+                     * @return AreaRegionID 地域码表 id
+                     */
+                    std::string GetAreaRegionID() const;
+
+                    /**
+                     * 设置地域码表 id
+                     * @param AreaRegionID 地域码表 id
+                     */
+                    void SetAreaRegionID(const std::string& _areaRegionID);
+
+                    /**
+                     * 判断参数 AreaRegionID 是否已赋值
+                     * @return AreaRegionID 是否已赋值
+                     */
+                    bool AreaRegionIDHasBeenSet() const;
+
+                    /**
+                     * 获取地域码表 code 如 ap-xxx（xxx 为地域词）
+                     * @return AreaRegionCode 地域码表 code 如 ap-xxx（xxx 为地域词）
+                     */
+                    std::string GetAreaRegionCode() const;
+
+                    /**
+                     * 设置地域码表 code 如 ap-xxx（xxx 为地域词）
+                     * @param AreaRegionCode 地域码表 code 如 ap-xxx（xxx 为地域词）
+                     */
+                    void SetAreaRegionCode(const std::string& _areaRegionCode);
+
+                    /**
+                     * 判断参数 AreaRegionCode 是否已赋值
+                     * @return AreaRegionCode 是否已赋值
+                     */
+                    bool AreaRegionCodeHasBeenSet() const;
+
+                    /**
+                     * 获取地域缩写
+                     * @return AreaAbbr 地域缩写
+                     */
+                    std::string GetAreaAbbr() const;
+
+                    /**
+                     * 设置地域缩写
+                     * @param AreaAbbr 地域缩写
+                     */
+                    void SetAreaAbbr(const std::string& _areaAbbr);
+
+                    /**
+                     * 判断参数 AreaAbbr 是否已赋值
+                     * @return AreaAbbr 是否已赋值
+                     */
+                    bool AreaAbbrHasBeenSet() const;
+
                 private:
 
                     /**
@@ -143,6 +197,24 @@ namespace TencentCloud
                      */
                     std::string m_areaKey;
                     bool m_areaKeyHasBeenSet;
+
+                    /**
+                     * 地域码表 id
+                     */
+                    std::string m_areaRegionID;
+                    bool m_areaRegionIDHasBeenSet;
+
+                    /**
+                     * 地域码表 code 如 ap-xxx（xxx 为地域词）
+                     */
+                    std::string m_areaRegionCode;
+                    bool m_areaRegionCodeHasBeenSet;
+
+                    /**
+                     * 地域缩写
+                     */
+                    std::string m_areaAbbr;
+                    bool m_areaAbbrHasBeenSet;
 
                 };
             }

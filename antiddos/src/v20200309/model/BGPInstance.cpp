@@ -35,7 +35,8 @@ BGPInstance::BGPInstance() :
     m_dDoSLevelHasBeenSet(false),
     m_cCEnableHasBeenSet(false),
     m_tagInfoListHasBeenSet(false),
-    m_ipCountNewFlagHasBeenSet(false)
+    m_ipCountNewFlagHasBeenSet(false),
+    m_vitalityVersionHasBeenSet(false)
 {
 }
 
@@ -249,6 +250,16 @@ CoreInternalOutcome BGPInstance::Deserialize(const rapidjson::Value &value)
         m_ipCountNewFlagHasBeenSet = true;
     }
 
+    if (value.HasMember("VitalityVersion") && !value["VitalityVersion"].IsNull())
+    {
+        if (!value["VitalityVersion"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `BGPInstance.VitalityVersion` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_vitalityVersion = value["VitalityVersion"].GetUint64();
+        m_vitalityVersionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -393,6 +404,14 @@ void BGPInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "IpCountNewFlag";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_ipCountNewFlag, allocator);
+    }
+
+    if (m_vitalityVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VitalityVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_vitalityVersion, allocator);
     }
 
 }
@@ -636,5 +655,21 @@ void BGPInstance::SetIpCountNewFlag(const uint64_t& _ipCountNewFlag)
 bool BGPInstance::IpCountNewFlagHasBeenSet() const
 {
     return m_ipCountNewFlagHasBeenSet;
+}
+
+uint64_t BGPInstance::GetVitalityVersion() const
+{
+    return m_vitalityVersion;
+}
+
+void BGPInstance::SetVitalityVersion(const uint64_t& _vitalityVersion)
+{
+    m_vitalityVersion = _vitalityVersion;
+    m_vitalityVersionHasBeenSet = true;
+}
+
+bool BGPInstance::VitalityVersionHasBeenSet() const
+{
+    return m_vitalityVersionHasBeenSet;
 }
 

@@ -24,7 +24,10 @@ RumAreaInfo::RumAreaInfo() :
     m_areaIdHasBeenSet(false),
     m_areaStatusHasBeenSet(false),
     m_areaNameHasBeenSet(false),
-    m_areaKeyHasBeenSet(false)
+    m_areaKeyHasBeenSet(false),
+    m_areaRegionIDHasBeenSet(false),
+    m_areaRegionCodeHasBeenSet(false),
+    m_areaAbbrHasBeenSet(false)
 {
 }
 
@@ -73,6 +76,36 @@ CoreInternalOutcome RumAreaInfo::Deserialize(const rapidjson::Value &value)
         m_areaKeyHasBeenSet = true;
     }
 
+    if (value.HasMember("AreaRegionID") && !value["AreaRegionID"].IsNull())
+    {
+        if (!value["AreaRegionID"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RumAreaInfo.AreaRegionID` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_areaRegionID = string(value["AreaRegionID"].GetString());
+        m_areaRegionIDHasBeenSet = true;
+    }
+
+    if (value.HasMember("AreaRegionCode") && !value["AreaRegionCode"].IsNull())
+    {
+        if (!value["AreaRegionCode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RumAreaInfo.AreaRegionCode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_areaRegionCode = string(value["AreaRegionCode"].GetString());
+        m_areaRegionCodeHasBeenSet = true;
+    }
+
+    if (value.HasMember("AreaAbbr") && !value["AreaAbbr"].IsNull())
+    {
+        if (!value["AreaAbbr"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RumAreaInfo.AreaAbbr` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_areaAbbr = string(value["AreaAbbr"].GetString());
+        m_areaAbbrHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +143,30 @@ void RumAreaInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "AreaKey";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_areaKey.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_areaRegionIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AreaRegionID";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_areaRegionID.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_areaRegionCodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AreaRegionCode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_areaRegionCode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_areaAbbrHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AreaAbbr";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_areaAbbr.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -177,5 +234,53 @@ void RumAreaInfo::SetAreaKey(const string& _areaKey)
 bool RumAreaInfo::AreaKeyHasBeenSet() const
 {
     return m_areaKeyHasBeenSet;
+}
+
+string RumAreaInfo::GetAreaRegionID() const
+{
+    return m_areaRegionID;
+}
+
+void RumAreaInfo::SetAreaRegionID(const string& _areaRegionID)
+{
+    m_areaRegionID = _areaRegionID;
+    m_areaRegionIDHasBeenSet = true;
+}
+
+bool RumAreaInfo::AreaRegionIDHasBeenSet() const
+{
+    return m_areaRegionIDHasBeenSet;
+}
+
+string RumAreaInfo::GetAreaRegionCode() const
+{
+    return m_areaRegionCode;
+}
+
+void RumAreaInfo::SetAreaRegionCode(const string& _areaRegionCode)
+{
+    m_areaRegionCode = _areaRegionCode;
+    m_areaRegionCodeHasBeenSet = true;
+}
+
+bool RumAreaInfo::AreaRegionCodeHasBeenSet() const
+{
+    return m_areaRegionCodeHasBeenSet;
+}
+
+string RumAreaInfo::GetAreaAbbr() const
+{
+    return m_areaAbbr;
+}
+
+void RumAreaInfo::SetAreaAbbr(const string& _areaAbbr)
+{
+    m_areaAbbr = _areaAbbr;
+    m_areaAbbrHasBeenSet = true;
+}
+
+bool RumAreaInfo::AreaAbbrHasBeenSet() const
+{
+    return m_areaAbbrHasBeenSet;
 }
 

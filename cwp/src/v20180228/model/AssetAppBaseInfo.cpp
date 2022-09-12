@@ -22,20 +22,23 @@ using namespace std;
 
 AssetAppBaseInfo::AssetAppBaseInfo() :
     m_machineIpHasBeenSet(false),
+    m_machineNameHasBeenSet(false),
     m_machineWanIpHasBeenSet(false),
-    m_quuidHasBeenSet(false),
     m_uuidHasBeenSet(false),
-    m_osInfoHasBeenSet(false),
+    m_quuidHasBeenSet(false),
     m_projectIdHasBeenSet(false),
     m_tagHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_binPathHasBeenSet(false),
-    m_configPathHasBeenSet(false),
+    m_osInfoHasBeenSet(false),
     m_processCountHasBeenSet(false),
     m_descHasBeenSet(false),
     m_versionHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
+    m_configPathHasBeenSet(false),
+    m_firstTimeHasBeenSet(false),
+    m_updateTimeHasBeenSet(false),
+    m_isNewHasBeenSet(false)
 {
 }
 
@@ -54,6 +57,16 @@ CoreInternalOutcome AssetAppBaseInfo::Deserialize(const rapidjson::Value &value)
         m_machineIpHasBeenSet = true;
     }
 
+    if (value.HasMember("MachineName") && !value["MachineName"].IsNull())
+    {
+        if (!value["MachineName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AssetAppBaseInfo.MachineName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_machineName = string(value["MachineName"].GetString());
+        m_machineNameHasBeenSet = true;
+    }
+
     if (value.HasMember("MachineWanIp") && !value["MachineWanIp"].IsNull())
     {
         if (!value["MachineWanIp"].IsString())
@@ -62,16 +75,6 @@ CoreInternalOutcome AssetAppBaseInfo::Deserialize(const rapidjson::Value &value)
         }
         m_machineWanIp = string(value["MachineWanIp"].GetString());
         m_machineWanIpHasBeenSet = true;
-    }
-
-    if (value.HasMember("Quuid") && !value["Quuid"].IsNull())
-    {
-        if (!value["Quuid"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `AssetAppBaseInfo.Quuid` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_quuid = string(value["Quuid"].GetString());
-        m_quuidHasBeenSet = true;
     }
 
     if (value.HasMember("Uuid") && !value["Uuid"].IsNull())
@@ -84,14 +87,14 @@ CoreInternalOutcome AssetAppBaseInfo::Deserialize(const rapidjson::Value &value)
         m_uuidHasBeenSet = true;
     }
 
-    if (value.HasMember("OsInfo") && !value["OsInfo"].IsNull())
+    if (value.HasMember("Quuid") && !value["Quuid"].IsNull())
     {
-        if (!value["OsInfo"].IsString())
+        if (!value["Quuid"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `AssetAppBaseInfo.OsInfo` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AssetAppBaseInfo.Quuid` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_osInfo = string(value["OsInfo"].GetString());
-        m_osInfoHasBeenSet = true;
+        m_quuid = string(value["Quuid"].GetString());
+        m_quuidHasBeenSet = true;
     }
 
     if (value.HasMember("ProjectId") && !value["ProjectId"].IsNull())
@@ -154,14 +157,14 @@ CoreInternalOutcome AssetAppBaseInfo::Deserialize(const rapidjson::Value &value)
         m_binPathHasBeenSet = true;
     }
 
-    if (value.HasMember("ConfigPath") && !value["ConfigPath"].IsNull())
+    if (value.HasMember("OsInfo") && !value["OsInfo"].IsNull())
     {
-        if (!value["ConfigPath"].IsString())
+        if (!value["OsInfo"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `AssetAppBaseInfo.ConfigPath` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `AssetAppBaseInfo.OsInfo` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_configPath = string(value["ConfigPath"].GetString());
-        m_configPathHasBeenSet = true;
+        m_osInfo = string(value["OsInfo"].GetString());
+        m_osInfoHasBeenSet = true;
     }
 
     if (value.HasMember("ProcessCount") && !value["ProcessCount"].IsNull())
@@ -194,6 +197,26 @@ CoreInternalOutcome AssetAppBaseInfo::Deserialize(const rapidjson::Value &value)
         m_versionHasBeenSet = true;
     }
 
+    if (value.HasMember("ConfigPath") && !value["ConfigPath"].IsNull())
+    {
+        if (!value["ConfigPath"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AssetAppBaseInfo.ConfigPath` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_configPath = string(value["ConfigPath"].GetString());
+        m_configPathHasBeenSet = true;
+    }
+
+    if (value.HasMember("FirstTime") && !value["FirstTime"].IsNull())
+    {
+        if (!value["FirstTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AssetAppBaseInfo.FirstTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_firstTime = string(value["FirstTime"].GetString());
+        m_firstTimeHasBeenSet = true;
+    }
+
     if (value.HasMember("UpdateTime") && !value["UpdateTime"].IsNull())
     {
         if (!value["UpdateTime"].IsString())
@@ -202,6 +225,16 @@ CoreInternalOutcome AssetAppBaseInfo::Deserialize(const rapidjson::Value &value)
         }
         m_updateTime = string(value["UpdateTime"].GetString());
         m_updateTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsNew") && !value["IsNew"].IsNull())
+    {
+        if (!value["IsNew"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AssetAppBaseInfo.IsNew` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isNew = value["IsNew"].GetInt64();
+        m_isNewHasBeenSet = true;
     }
 
 
@@ -219,20 +252,20 @@ void AssetAppBaseInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         value.AddMember(iKey, rapidjson::Value(m_machineIp.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_machineNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MachineName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_machineName.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_machineWanIpHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MachineWanIp";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_machineWanIp.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_quuidHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Quuid";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_quuid.c_str(), allocator).Move(), allocator);
     }
 
     if (m_uuidHasBeenSet)
@@ -243,12 +276,12 @@ void AssetAppBaseInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         value.AddMember(iKey, rapidjson::Value(m_uuid.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_osInfoHasBeenSet)
+    if (m_quuidHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "OsInfo";
+        string key = "Quuid";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_osInfo.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_quuid.c_str(), allocator).Move(), allocator);
     }
 
     if (m_projectIdHasBeenSet)
@@ -298,12 +331,12 @@ void AssetAppBaseInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         value.AddMember(iKey, rapidjson::Value(m_binPath.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_configPathHasBeenSet)
+    if (m_osInfoHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ConfigPath";
+        string key = "OsInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_configPath.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_osInfo.c_str(), allocator).Move(), allocator);
     }
 
     if (m_processCountHasBeenSet)
@@ -330,12 +363,36 @@ void AssetAppBaseInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         value.AddMember(iKey, rapidjson::Value(m_version.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_configPathHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConfigPath";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_configPath.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_firstTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FirstTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_firstTime.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_updateTimeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "UpdateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_updateTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isNewHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsNew";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isNew, allocator);
     }
 
 }
@@ -357,6 +414,22 @@ bool AssetAppBaseInfo::MachineIpHasBeenSet() const
     return m_machineIpHasBeenSet;
 }
 
+string AssetAppBaseInfo::GetMachineName() const
+{
+    return m_machineName;
+}
+
+void AssetAppBaseInfo::SetMachineName(const string& _machineName)
+{
+    m_machineName = _machineName;
+    m_machineNameHasBeenSet = true;
+}
+
+bool AssetAppBaseInfo::MachineNameHasBeenSet() const
+{
+    return m_machineNameHasBeenSet;
+}
+
 string AssetAppBaseInfo::GetMachineWanIp() const
 {
     return m_machineWanIp;
@@ -371,22 +444,6 @@ void AssetAppBaseInfo::SetMachineWanIp(const string& _machineWanIp)
 bool AssetAppBaseInfo::MachineWanIpHasBeenSet() const
 {
     return m_machineWanIpHasBeenSet;
-}
-
-string AssetAppBaseInfo::GetQuuid() const
-{
-    return m_quuid;
-}
-
-void AssetAppBaseInfo::SetQuuid(const string& _quuid)
-{
-    m_quuid = _quuid;
-    m_quuidHasBeenSet = true;
-}
-
-bool AssetAppBaseInfo::QuuidHasBeenSet() const
-{
-    return m_quuidHasBeenSet;
 }
 
 string AssetAppBaseInfo::GetUuid() const
@@ -405,20 +462,20 @@ bool AssetAppBaseInfo::UuidHasBeenSet() const
     return m_uuidHasBeenSet;
 }
 
-string AssetAppBaseInfo::GetOsInfo() const
+string AssetAppBaseInfo::GetQuuid() const
 {
-    return m_osInfo;
+    return m_quuid;
 }
 
-void AssetAppBaseInfo::SetOsInfo(const string& _osInfo)
+void AssetAppBaseInfo::SetQuuid(const string& _quuid)
 {
-    m_osInfo = _osInfo;
-    m_osInfoHasBeenSet = true;
+    m_quuid = _quuid;
+    m_quuidHasBeenSet = true;
 }
 
-bool AssetAppBaseInfo::OsInfoHasBeenSet() const
+bool AssetAppBaseInfo::QuuidHasBeenSet() const
 {
-    return m_osInfoHasBeenSet;
+    return m_quuidHasBeenSet;
 }
 
 uint64_t AssetAppBaseInfo::GetProjectId() const
@@ -501,20 +558,20 @@ bool AssetAppBaseInfo::BinPathHasBeenSet() const
     return m_binPathHasBeenSet;
 }
 
-string AssetAppBaseInfo::GetConfigPath() const
+string AssetAppBaseInfo::GetOsInfo() const
 {
-    return m_configPath;
+    return m_osInfo;
 }
 
-void AssetAppBaseInfo::SetConfigPath(const string& _configPath)
+void AssetAppBaseInfo::SetOsInfo(const string& _osInfo)
 {
-    m_configPath = _configPath;
-    m_configPathHasBeenSet = true;
+    m_osInfo = _osInfo;
+    m_osInfoHasBeenSet = true;
 }
 
-bool AssetAppBaseInfo::ConfigPathHasBeenSet() const
+bool AssetAppBaseInfo::OsInfoHasBeenSet() const
 {
-    return m_configPathHasBeenSet;
+    return m_osInfoHasBeenSet;
 }
 
 uint64_t AssetAppBaseInfo::GetProcessCount() const
@@ -565,6 +622,38 @@ bool AssetAppBaseInfo::VersionHasBeenSet() const
     return m_versionHasBeenSet;
 }
 
+string AssetAppBaseInfo::GetConfigPath() const
+{
+    return m_configPath;
+}
+
+void AssetAppBaseInfo::SetConfigPath(const string& _configPath)
+{
+    m_configPath = _configPath;
+    m_configPathHasBeenSet = true;
+}
+
+bool AssetAppBaseInfo::ConfigPathHasBeenSet() const
+{
+    return m_configPathHasBeenSet;
+}
+
+string AssetAppBaseInfo::GetFirstTime() const
+{
+    return m_firstTime;
+}
+
+void AssetAppBaseInfo::SetFirstTime(const string& _firstTime)
+{
+    m_firstTime = _firstTime;
+    m_firstTimeHasBeenSet = true;
+}
+
+bool AssetAppBaseInfo::FirstTimeHasBeenSet() const
+{
+    return m_firstTimeHasBeenSet;
+}
+
 string AssetAppBaseInfo::GetUpdateTime() const
 {
     return m_updateTime;
@@ -579,5 +668,21 @@ void AssetAppBaseInfo::SetUpdateTime(const string& _updateTime)
 bool AssetAppBaseInfo::UpdateTimeHasBeenSet() const
 {
     return m_updateTimeHasBeenSet;
+}
+
+int64_t AssetAppBaseInfo::GetIsNew() const
+{
+    return m_isNew;
+}
+
+void AssetAppBaseInfo::SetIsNew(const int64_t& _isNew)
+{
+    m_isNew = _isNew;
+    m_isNewHasBeenSet = true;
+}
+
+bool AssetAppBaseInfo::IsNewHasBeenSet() const
+{
+    return m_isNewHasBeenSet;
 }
 

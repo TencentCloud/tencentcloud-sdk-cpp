@@ -23,10 +23,10 @@ using namespace TencentCloud::Cwp::V20180228::Model;
 using namespace std;
 
 ExportAssetWebServiceInfoListRequest::ExportAssetWebServiceInfoListRequest() :
+    m_quuidHasBeenSet(false),
     m_filtersHasBeenSet(false),
     m_orderHasBeenSet(false),
-    m_byHasBeenSet(false),
-    m_quuidHasBeenSet(false)
+    m_byHasBeenSet(false)
 {
 }
 
@@ -36,6 +36,14 @@ string ExportAssetWebServiceInfoListRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
+
+    if (m_quuidHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Quuid";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_quuid.c_str(), allocator).Move(), allocator);
+    }
 
     if (m_filtersHasBeenSet)
     {
@@ -68,14 +76,6 @@ string ExportAssetWebServiceInfoListRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_by.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_quuidHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Quuid";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_quuid.c_str(), allocator).Move(), allocator);
-    }
-
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -83,6 +83,22 @@ string ExportAssetWebServiceInfoListRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string ExportAssetWebServiceInfoListRequest::GetQuuid() const
+{
+    return m_quuid;
+}
+
+void ExportAssetWebServiceInfoListRequest::SetQuuid(const string& _quuid)
+{
+    m_quuid = _quuid;
+    m_quuidHasBeenSet = true;
+}
+
+bool ExportAssetWebServiceInfoListRequest::QuuidHasBeenSet() const
+{
+    return m_quuidHasBeenSet;
+}
 
 vector<AssetFilters> ExportAssetWebServiceInfoListRequest::GetFilters() const
 {
@@ -130,22 +146,6 @@ void ExportAssetWebServiceInfoListRequest::SetBy(const string& _by)
 bool ExportAssetWebServiceInfoListRequest::ByHasBeenSet() const
 {
     return m_byHasBeenSet;
-}
-
-string ExportAssetWebServiceInfoListRequest::GetQuuid() const
-{
-    return m_quuid;
-}
-
-void ExportAssetWebServiceInfoListRequest::SetQuuid(const string& _quuid)
-{
-    m_quuid = _quuid;
-    m_quuidHasBeenSet = true;
-}
-
-bool ExportAssetWebServiceInfoListRequest::QuuidHasBeenSet() const
-{
-    return m_quuidHasBeenSet;
 }
 
 

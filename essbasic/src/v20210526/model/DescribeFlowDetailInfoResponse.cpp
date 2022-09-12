@@ -26,7 +26,9 @@ using namespace std;
 DescribeFlowDetailInfoResponse::DescribeFlowDetailInfoResponse() :
     m_applicationIdHasBeenSet(false),
     m_proxyOrganizationOpenIdHasBeenSet(false),
-    m_flowInfoHasBeenSet(false)
+    m_flowInfoHasBeenSet(false),
+    m_flowGroupIdHasBeenSet(false),
+    m_flowGroupNameHasBeenSet(false)
 {
 }
 
@@ -104,6 +106,26 @@ CoreInternalOutcome DescribeFlowDetailInfoResponse::Deserialize(const string &pa
         m_flowInfoHasBeenSet = true;
     }
 
+    if (rsp.HasMember("FlowGroupId") && !rsp["FlowGroupId"].IsNull())
+    {
+        if (!rsp["FlowGroupId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `FlowGroupId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_flowGroupId = string(rsp["FlowGroupId"].GetString());
+        m_flowGroupIdHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("FlowGroupName") && !rsp["FlowGroupName"].IsNull())
+    {
+        if (!rsp["FlowGroupName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `FlowGroupName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_flowGroupName = string(rsp["FlowGroupName"].GetString());
+        m_flowGroupNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -143,6 +165,22 @@ string DescribeFlowDetailInfoResponse::ToJsonString() const
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_flowGroupIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FlowGroupId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_flowGroupId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_flowGroupNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FlowGroupName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_flowGroupName.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -185,6 +223,26 @@ vector<FlowDetailInfo> DescribeFlowDetailInfoResponse::GetFlowInfo() const
 bool DescribeFlowDetailInfoResponse::FlowInfoHasBeenSet() const
 {
     return m_flowInfoHasBeenSet;
+}
+
+string DescribeFlowDetailInfoResponse::GetFlowGroupId() const
+{
+    return m_flowGroupId;
+}
+
+bool DescribeFlowDetailInfoResponse::FlowGroupIdHasBeenSet() const
+{
+    return m_flowGroupIdHasBeenSet;
+}
+
+string DescribeFlowDetailInfoResponse::GetFlowGroupName() const
+{
+    return m_flowGroupName;
+}
+
+bool DescribeFlowDetailInfoResponse::FlowGroupNameHasBeenSet() const
+{
+    return m_flowGroupNameHasBeenSet;
 }
 
 

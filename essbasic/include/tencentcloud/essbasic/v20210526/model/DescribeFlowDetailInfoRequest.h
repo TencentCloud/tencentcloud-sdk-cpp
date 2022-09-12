@@ -64,13 +64,17 @@ namespace TencentCloud
 
                     /**
                      * 获取合同(流程)编号数组，最多支持100个。
+（备注：该参数和合同组编号必须二选一）
                      * @return FlowIds 合同(流程)编号数组，最多支持100个。
+（备注：该参数和合同组编号必须二选一）
                      */
                     std::vector<std::string> GetFlowIds() const;
 
                     /**
                      * 设置合同(流程)编号数组，最多支持100个。
+（备注：该参数和合同组编号必须二选一）
                      * @param FlowIds 合同(流程)编号数组，最多支持100个。
+（备注：该参数和合同组编号必须二选一）
                      */
                     void SetFlowIds(const std::vector<std::string>& _flowIds);
 
@@ -98,6 +102,24 @@ namespace TencentCloud
                      */
                     bool OperatorHasBeenSet() const;
 
+                    /**
+                     * 获取合同组编号（备注：该参数和合同(流程)编号数组必须二选一）
+                     * @return FlowGroupId 合同组编号（备注：该参数和合同(流程)编号数组必须二选一）
+                     */
+                    std::string GetFlowGroupId() const;
+
+                    /**
+                     * 设置合同组编号（备注：该参数和合同(流程)编号数组必须二选一）
+                     * @param FlowGroupId 合同组编号（备注：该参数和合同(流程)编号数组必须二选一）
+                     */
+                    void SetFlowGroupId(const std::string& _flowGroupId);
+
+                    /**
+                     * 判断参数 FlowGroupId 是否已赋值
+                     * @return FlowGroupId 是否已赋值
+                     */
+                    bool FlowGroupIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -108,6 +130,7 @@ namespace TencentCloud
 
                     /**
                      * 合同(流程)编号数组，最多支持100个。
+（备注：该参数和合同组编号必须二选一）
                      */
                     std::vector<std::string> m_flowIds;
                     bool m_flowIdsHasBeenSet;
@@ -117,6 +140,12 @@ namespace TencentCloud
                      */
                     UserInfo m_operator;
                     bool m_operatorHasBeenSet;
+
+                    /**
+                     * 合同组编号（备注：该参数和合同(流程)编号数组必须二选一）
+                     */
+                    std::string m_flowGroupId;
+                    bool m_flowGroupIdHasBeenSet;
 
                 };
             }

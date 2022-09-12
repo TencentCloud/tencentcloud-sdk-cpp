@@ -255,6 +255,49 @@ GmeClient::DeleteCustomizationOutcomeCallable GmeClient::DeleteCustomizationCall
     return task->get_future();
 }
 
+GmeClient::DeleteRoomMemberOutcome GmeClient::DeleteRoomMember(const DeleteRoomMemberRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteRoomMember");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteRoomMemberResponse rsp = DeleteRoomMemberResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteRoomMemberOutcome(rsp);
+        else
+            return DeleteRoomMemberOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteRoomMemberOutcome(outcome.GetError());
+    }
+}
+
+void GmeClient::DeleteRoomMemberAsync(const DeleteRoomMemberRequest& request, const DeleteRoomMemberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteRoomMember(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GmeClient::DeleteRoomMemberOutcomeCallable GmeClient::DeleteRoomMemberCallable(const DeleteRoomMemberRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteRoomMemberOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteRoomMember(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 GmeClient::DeleteScanUserOutcome GmeClient::DeleteScanUser(const DeleteScanUserRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteScanUser");

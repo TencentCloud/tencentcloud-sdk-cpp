@@ -47,24 +47,27 @@ set(ms_public_header_model
   include/tencentcloud/ms/v20180408/model/DescribeUrlDetectionResultRequest.h
   include/tencentcloud/ms/v20180408/model/VulInfo.h
   include/tencentcloud/ms/v20180408/model/AppInfo.h
+  include/tencentcloud/ms/v20180408/model/DescribeShieldPlanInstanceResponse.h
   include/tencentcloud/ms/v20180408/model/ServiceInfo.h
   include/tencentcloud/ms/v20180408/model/SoInfo.h
-  include/tencentcloud/ms/v20180408/model/DescribeShieldPlanInstanceResponse.h
   include/tencentcloud/ms/v20180408/model/ScanSensitiveInfo.h
+  include/tencentcloud/ms/v20180408/model/PluginListItem.h
+  include/tencentcloud/ms/v20180408/model/DescribeApkDetectionResultRequest.h
+  include/tencentcloud/ms/v20180408/model/ResultListItem.h
   include/tencentcloud/ms/v20180408/model/ResourceServiceInfo.h
   include/tencentcloud/ms/v20180408/model/DescribeResourceInstancesRequest.h
   include/tencentcloud/ms/v20180408/model/AdInfo.h
   include/tencentcloud/ms/v20180408/model/DescribeUrlDetectionResultResponse.h
   include/tencentcloud/ms/v20180408/model/DescribeShieldPlanInstanceRequest.h
   include/tencentcloud/ms/v20180408/model/ShieldInfo.h
-  include/tencentcloud/ms/v20180408/model/ScanPermissionList.h
+  include/tencentcloud/ms/v20180408/model/DescribeUserBaseInfoInstanceRequest.h
   include/tencentcloud/ms/v20180408/model/CreateResourceInstancesResponse.h
   include/tencentcloud/ms/v20180408/model/AppDetailInfo.h
   include/tencentcloud/ms/v20180408/model/DeleteScanInstancesResponse.h
   include/tencentcloud/ms/v20180408/model/Filter.h
   include/tencentcloud/ms/v20180408/model/DeleteShieldInstancesResponse.h
   include/tencentcloud/ms/v20180408/model/DescribeScanInstancesRequest.h
-  include/tencentcloud/ms/v20180408/model/DescribeUserBaseInfoInstanceRequest.h
+  include/tencentcloud/ms/v20180408/model/DescribeApkDetectionResultResponse.h
   include/tencentcloud/ms/v20180408/model/DescribeResourceInstancesResponse.h
   include/tencentcloud/ms/v20180408/model/DescribeScanResultsRequest.h
   include/tencentcloud/ms/v20180408/model/CreateCosSecKeyInstanceResponse.h
@@ -75,6 +78,8 @@ set(ms_public_header_model
   include/tencentcloud/ms/v20180408/model/CreateBindInstanceResponse.h
   include/tencentcloud/ms/v20180408/model/VulList.h
   include/tencentcloud/ms/v20180408/model/BindInfo.h
+  include/tencentcloud/ms/v20180408/model/ScanPermissionList.h
+  include/tencentcloud/ms/v20180408/model/OptPluginListItem.h
   include/tencentcloud/ms/v20180408/model/DeleteScanInstancesRequest.h
   )
 
@@ -108,24 +113,27 @@ set(ms_src
   src/v20180408/model/DescribeUrlDetectionResultRequest.cpp
   src/v20180408/model/VulInfo.cpp
   src/v20180408/model/AppInfo.cpp
+  src/v20180408/model/DescribeShieldPlanInstanceResponse.cpp
   src/v20180408/model/ServiceInfo.cpp
   src/v20180408/model/SoInfo.cpp
-  src/v20180408/model/DescribeShieldPlanInstanceResponse.cpp
   src/v20180408/model/ScanSensitiveInfo.cpp
+  src/v20180408/model/PluginListItem.cpp
+  src/v20180408/model/DescribeApkDetectionResultRequest.cpp
+  src/v20180408/model/ResultListItem.cpp
   src/v20180408/model/ResourceServiceInfo.cpp
   src/v20180408/model/DescribeResourceInstancesRequest.cpp
   src/v20180408/model/AdInfo.cpp
   src/v20180408/model/DescribeUrlDetectionResultResponse.cpp
   src/v20180408/model/DescribeShieldPlanInstanceRequest.cpp
   src/v20180408/model/ShieldInfo.cpp
-  src/v20180408/model/ScanPermissionList.cpp
+  src/v20180408/model/DescribeUserBaseInfoInstanceRequest.cpp
   src/v20180408/model/CreateResourceInstancesResponse.cpp
   src/v20180408/model/AppDetailInfo.cpp
   src/v20180408/model/DeleteScanInstancesResponse.cpp
   src/v20180408/model/Filter.cpp
   src/v20180408/model/DeleteShieldInstancesResponse.cpp
   src/v20180408/model/DescribeScanInstancesRequest.cpp
-  src/v20180408/model/DescribeUserBaseInfoInstanceRequest.cpp
+  src/v20180408/model/DescribeApkDetectionResultResponse.cpp
   src/v20180408/model/DescribeResourceInstancesResponse.cpp
   src/v20180408/model/DescribeScanResultsRequest.cpp
   src/v20180408/model/CreateCosSecKeyInstanceResponse.cpp
@@ -136,6 +144,8 @@ set(ms_src
   src/v20180408/model/CreateBindInstanceResponse.cpp
   src/v20180408/model/VulList.cpp
   src/v20180408/model/BindInfo.cpp
+  src/v20180408/model/ScanPermissionList.cpp
+  src/v20180408/model/OptPluginListItem.cpp
   src/v20180408/model/DeleteScanInstancesRequest.cpp
   )
 

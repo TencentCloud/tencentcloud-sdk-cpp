@@ -23,12 +23,12 @@ using namespace TencentCloud::Cwp::V20180228::Model;
 using namespace std;
 
 DescribeAssetAppListRequest::DescribeAssetAppListRequest() :
+    m_quuidHasBeenSet(false),
+    m_filtersHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_byHasBeenSet(false),
     m_orderHasBeenSet(false),
-    m_quuidHasBeenSet(false)
+    m_byHasBeenSet(false)
 {
 }
 
@@ -39,20 +39,12 @@ string DescribeAssetAppListRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_limitHasBeenSet)
+    if (m_quuidHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Limit";
+        string key = "Quuid";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_limit, allocator);
-    }
-
-    if (m_offsetHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Offset";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_offset, allocator);
+        d.AddMember(iKey, rapidjson::Value(m_quuid.c_str(), allocator).Move(), allocator);
     }
 
     if (m_filtersHasBeenSet)
@@ -70,12 +62,20 @@ string DescribeAssetAppListRequest::ToJsonString() const
         }
     }
 
-    if (m_byHasBeenSet)
+    if (m_limitHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "By";
+        string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_by.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_offsetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Offset";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_offset, allocator);
     }
 
     if (m_orderHasBeenSet)
@@ -86,12 +86,12 @@ string DescribeAssetAppListRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_order.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_quuidHasBeenSet)
+    if (m_byHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Quuid";
+        string key = "By";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_quuid.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_by.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -101,6 +101,38 @@ string DescribeAssetAppListRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string DescribeAssetAppListRequest::GetQuuid() const
+{
+    return m_quuid;
+}
+
+void DescribeAssetAppListRequest::SetQuuid(const string& _quuid)
+{
+    m_quuid = _quuid;
+    m_quuidHasBeenSet = true;
+}
+
+bool DescribeAssetAppListRequest::QuuidHasBeenSet() const
+{
+    return m_quuidHasBeenSet;
+}
+
+vector<AssetFilters> DescribeAssetAppListRequest::GetFilters() const
+{
+    return m_filters;
+}
+
+void DescribeAssetAppListRequest::SetFilters(const vector<AssetFilters>& _filters)
+{
+    m_filters = _filters;
+    m_filtersHasBeenSet = true;
+}
+
+bool DescribeAssetAppListRequest::FiltersHasBeenSet() const
+{
+    return m_filtersHasBeenSet;
+}
 
 uint64_t DescribeAssetAppListRequest::GetLimit() const
 {
@@ -134,38 +166,6 @@ bool DescribeAssetAppListRequest::OffsetHasBeenSet() const
     return m_offsetHasBeenSet;
 }
 
-vector<AssetFilters> DescribeAssetAppListRequest::GetFilters() const
-{
-    return m_filters;
-}
-
-void DescribeAssetAppListRequest::SetFilters(const vector<AssetFilters>& _filters)
-{
-    m_filters = _filters;
-    m_filtersHasBeenSet = true;
-}
-
-bool DescribeAssetAppListRequest::FiltersHasBeenSet() const
-{
-    return m_filtersHasBeenSet;
-}
-
-string DescribeAssetAppListRequest::GetBy() const
-{
-    return m_by;
-}
-
-void DescribeAssetAppListRequest::SetBy(const string& _by)
-{
-    m_by = _by;
-    m_byHasBeenSet = true;
-}
-
-bool DescribeAssetAppListRequest::ByHasBeenSet() const
-{
-    return m_byHasBeenSet;
-}
-
 string DescribeAssetAppListRequest::GetOrder() const
 {
     return m_order;
@@ -182,20 +182,20 @@ bool DescribeAssetAppListRequest::OrderHasBeenSet() const
     return m_orderHasBeenSet;
 }
 
-string DescribeAssetAppListRequest::GetQuuid() const
+string DescribeAssetAppListRequest::GetBy() const
 {
-    return m_quuid;
+    return m_by;
 }
 
-void DescribeAssetAppListRequest::SetQuuid(const string& _quuid)
+void DescribeAssetAppListRequest::SetBy(const string& _by)
 {
-    m_quuid = _quuid;
-    m_quuidHasBeenSet = true;
+    m_by = _by;
+    m_byHasBeenSet = true;
 }
 
-bool DescribeAssetAppListRequest::QuuidHasBeenSet() const
+bool DescribeAssetAppListRequest::ByHasBeenSet() const
 {
-    return m_quuidHasBeenSet;
+    return m_byHasBeenSet;
 }
 
 

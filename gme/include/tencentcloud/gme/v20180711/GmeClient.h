@@ -33,6 +33,8 @@
 #include <tencentcloud/gme/v20180711/model/CreateScanUserResponse.h>
 #include <tencentcloud/gme/v20180711/model/DeleteCustomizationRequest.h>
 #include <tencentcloud/gme/v20180711/model/DeleteCustomizationResponse.h>
+#include <tencentcloud/gme/v20180711/model/DeleteRoomMemberRequest.h>
+#include <tencentcloud/gme/v20180711/model/DeleteRoomMemberResponse.h>
 #include <tencentcloud/gme/v20180711/model/DeleteScanUserRequest.h>
 #include <tencentcloud/gme/v20180711/model/DeleteScanUserResponse.h>
 #include <tencentcloud/gme/v20180711/model/DescribeAgeDetectTaskRequest.h>
@@ -96,6 +98,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteCustomizationResponse> DeleteCustomizationOutcome;
                 typedef std::future<DeleteCustomizationOutcome> DeleteCustomizationOutcomeCallable;
                 typedef std::function<void(const GmeClient*, const Model::DeleteCustomizationRequest&, DeleteCustomizationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCustomizationAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteRoomMemberResponse> DeleteRoomMemberOutcome;
+                typedef std::future<DeleteRoomMemberOutcome> DeleteRoomMemberOutcomeCallable;
+                typedef std::function<void(const GmeClient*, const Model::DeleteRoomMemberRequest&, DeleteRoomMemberOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRoomMemberAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteScanUserResponse> DeleteScanUserOutcome;
                 typedef std::future<DeleteScanUserOutcome> DeleteScanUserOutcomeCallable;
                 typedef std::function<void(const GmeClient*, const Model::DeleteScanUserRequest&, DeleteScanUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteScanUserAsyncHandler;
@@ -204,6 +209,15 @@ namespace TencentCloud
                 DeleteCustomizationOutcome DeleteCustomization(const Model::DeleteCustomizationRequest &request);
                 void DeleteCustomizationAsync(const Model::DeleteCustomizationRequest& request, const DeleteCustomizationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteCustomizationOutcomeCallable DeleteCustomizationCallable(const Model::DeleteCustomizationRequest& request);
+
+                /**
+                 *本接口(DeleteRoomMember)用户删除房间或者剔除房间内用户
+                 * @param req DeleteRoomMemberRequest
+                 * @return DeleteRoomMemberOutcome
+                 */
+                DeleteRoomMemberOutcome DeleteRoomMember(const Model::DeleteRoomMemberRequest &request);
+                void DeleteRoomMemberAsync(const Model::DeleteRoomMemberRequest& request, const DeleteRoomMemberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteRoomMemberOutcomeCallable DeleteRoomMemberCallable(const Model::DeleteRoomMemberRequest& request);
 
                 /**
                  *删除自定义送检用户

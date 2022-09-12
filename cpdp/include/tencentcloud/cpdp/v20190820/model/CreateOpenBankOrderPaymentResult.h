@@ -127,6 +127,50 @@ namespace TencentCloud
                      */
                     bool OutOrderIdHasBeenSet() const;
 
+                    /**
+                     * 获取渠道扩展支付信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PayInfo 渠道扩展支付信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetPayInfo() const;
+
+                    /**
+                     * 设置渠道扩展支付信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param PayInfo 渠道扩展支付信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPayInfo(const std::string& _payInfo);
+
+                    /**
+                     * 判断参数 PayInfo 是否已赋值
+                     * @return PayInfo 是否已赋值
+                     */
+                    bool PayInfoHasBeenSet() const;
+
+                    /**
+                     * 获取渠道扩展支付信息类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PayInfoType 渠道扩展支付信息类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetPayInfoType() const;
+
+                    /**
+                     * 设置渠道扩展支付信息类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param PayInfoType 渠道扩展支付信息类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPayInfoType(const std::string& _payInfoType);
+
+                    /**
+                     * 判断参数 PayInfoType 是否已赋值
+                     * @return PayInfoType 是否已赋值
+                     */
+                    bool PayInfoTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -154,6 +198,20 @@ namespace TencentCloud
                      */
                     std::string m_outOrderId;
                     bool m_outOrderIdHasBeenSet;
+
+                    /**
+                     * 渠道扩展支付信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_payInfo;
+                    bool m_payInfoHasBeenSet;
+
+                    /**
+                     * 渠道扩展支付信息类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_payInfoType;
+                    bool m_payInfoTypeHasBeenSet;
 
                 };
             }

@@ -371,6 +371,24 @@ namespace TencentCloud
                      */
                     bool IpCountNewFlagHasBeenSet() const;
 
+                    /**
+                     * 获取攻击封堵套餐标记
+                     * @return VitalityVersion 攻击封堵套餐标记
+                     */
+                    uint64_t GetVitalityVersion() const;
+
+                    /**
+                     * 设置攻击封堵套餐标记
+                     * @param VitalityVersion 攻击封堵套餐标记
+                     */
+                    void SetVitalityVersion(const uint64_t& _vitalityVersion);
+
+                    /**
+                     * 判断参数 VitalityVersion 是否已赋值
+                     * @return VitalityVersion 是否已赋值
+                     */
+                    bool VitalityVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -474,6 +492,12 @@ namespace TencentCloud
                      */
                     uint64_t m_ipCountNewFlag;
                     bool m_ipCountNewFlagHasBeenSet;
+
+                    /**
+                     * 攻击封堵套餐标记
+                     */
+                    uint64_t m_vitalityVersion;
+                    bool m_vitalityVersionHasBeenSet;
 
                 };
             }

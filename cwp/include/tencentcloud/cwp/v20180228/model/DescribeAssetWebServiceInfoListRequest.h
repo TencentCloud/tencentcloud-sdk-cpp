@@ -44,44 +44,22 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取需要返回的数量，默认为10，最大值为100
-                     * @return Limit 需要返回的数量，默认为10，最大值为100
+                     * 获取查询指定Quuid主机的信息
+                     * @return Quuid 查询指定Quuid主机的信息
                      */
-                    uint64_t GetLimit() const;
+                    std::string GetQuuid() const;
 
                     /**
-                     * 设置需要返回的数量，默认为10，最大值为100
-                     * @param Limit 需要返回的数量，默认为10，最大值为100
+                     * 设置查询指定Quuid主机的信息
+                     * @param Quuid 查询指定Quuid主机的信息
                      */
-                    void SetLimit(const uint64_t& _limit);
+                    void SetQuuid(const std::string& _quuid);
 
                     /**
-                     * 判断参数 Limit 是否已赋值
-                     * @return Limit 是否已赋值
+                     * 判断参数 Quuid 是否已赋值
+                     * @return Quuid 是否已赋值
                      */
-                    bool LimitHasBeenSet() const;
-
-                    /**
-                     * 获取偏移量，默认为0。
-<li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li>
-                     * @return Offset 偏移量，默认为0。
-<li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li>
-                     */
-                    uint64_t GetOffset() const;
-
-                    /**
-                     * 设置偏移量，默认为0。
-<li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li>
-                     * @param Offset 偏移量，默认为0。
-<li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li>
-                     */
-                    void SetOffset(const uint64_t& _offset);
-
-                    /**
-                     * 判断参数 Offset 是否已赋值
-                     * @return Offset 是否已赋值
-                     */
-                    bool OffsetHasBeenSet() const;
+                    bool QuuidHasBeenSet() const;
 
                     /**
                      * 获取过滤条件。
@@ -158,6 +136,46 @@ namespace TencentCloud
                     bool FiltersHasBeenSet() const;
 
                     /**
+                     * 获取偏移量，默认为0。
+<li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li>
+                     * @return Offset 偏移量，默认为0。
+<li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li>
+                     */
+                    uint64_t GetOffset() const;
+
+                    /**
+                     * 设置偏移量，默认为0。
+<li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li>
+                     * @param Offset 偏移量，默认为0。
+<li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li>
+                     */
+                    void SetOffset(const uint64_t& _offset);
+
+                    /**
+                     * 判断参数 Offset 是否已赋值
+                     * @return Offset 是否已赋值
+                     */
+                    bool OffsetHasBeenSet() const;
+
+                    /**
+                     * 获取需要返回的数量，默认为10，最大值为100
+                     * @return Limit 需要返回的数量，默认为10，最大值为100
+                     */
+                    uint64_t GetLimit() const;
+
+                    /**
+                     * 设置需要返回的数量，默认为10，最大值为100
+                     * @param Limit 需要返回的数量，默认为10，最大值为100
+                     */
+                    void SetLimit(const uint64_t& _limit);
+
+                    /**
+                     * 判断参数 Limit 是否已赋值
+                     * @return Limit 是否已赋值
+                     */
+                    bool LimitHasBeenSet() const;
+
+                    /**
                      * 获取排序方式，asc升序 或 desc降序
                      * @return Order 排序方式，asc升序 或 desc降序
                      */
@@ -176,14 +194,14 @@ namespace TencentCloud
                     bool OrderHasBeenSet() const;
 
                     /**
-                     * 获取可选排序：ProcessCount
-                     * @return By 可选排序：ProcessCount
+                     * 获取可选排序：[FirstTime|ProcessCount]
+                     * @return By 可选排序：[FirstTime|ProcessCount]
                      */
                     std::string GetBy() const;
 
                     /**
-                     * 设置可选排序：ProcessCount
-                     * @param By 可选排序：ProcessCount
+                     * 设置可选排序：[FirstTime|ProcessCount]
+                     * @param By 可选排序：[FirstTime|ProcessCount]
                      */
                     void SetBy(const std::string& _by);
 
@@ -193,38 +211,13 @@ namespace TencentCloud
                      */
                     bool ByHasBeenSet() const;
 
-                    /**
-                     * 获取查询指定Quuid主机的信息
-                     * @return Quuid 查询指定Quuid主机的信息
-                     */
-                    std::string GetQuuid() const;
-
-                    /**
-                     * 设置查询指定Quuid主机的信息
-                     * @param Quuid 查询指定Quuid主机的信息
-                     */
-                    void SetQuuid(const std::string& _quuid);
-
-                    /**
-                     * 判断参数 Quuid 是否已赋值
-                     * @return Quuid 是否已赋值
-                     */
-                    bool QuuidHasBeenSet() const;
-
                 private:
 
                     /**
-                     * 需要返回的数量，默认为10，最大值为100
+                     * 查询指定Quuid主机的信息
                      */
-                    uint64_t m_limit;
-                    bool m_limitHasBeenSet;
-
-                    /**
-                     * 偏移量，默认为0。
-<li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li>
-                     */
-                    uint64_t m_offset;
-                    bool m_offsetHasBeenSet;
+                    std::string m_quuid;
+                    bool m_quuidHasBeenSet;
 
                     /**
                      * 过滤条件。
@@ -247,22 +240,29 @@ namespace TencentCloud
                     bool m_filtersHasBeenSet;
 
                     /**
+                     * 偏移量，默认为0。
+<li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li>
+                     */
+                    uint64_t m_offset;
+                    bool m_offsetHasBeenSet;
+
+                    /**
+                     * 需要返回的数量，默认为10，最大值为100
+                     */
+                    uint64_t m_limit;
+                    bool m_limitHasBeenSet;
+
+                    /**
                      * 排序方式，asc升序 或 desc降序
                      */
                     std::string m_order;
                     bool m_orderHasBeenSet;
 
                     /**
-                     * 可选排序：ProcessCount
+                     * 可选排序：[FirstTime|ProcessCount]
                      */
                     std::string m_by;
                     bool m_byHasBeenSet;
-
-                    /**
-                     * 查询指定Quuid主机的信息
-                     */
-                    std::string m_quuid;
-                    bool m_quuidHasBeenSet;
 
                 };
             }

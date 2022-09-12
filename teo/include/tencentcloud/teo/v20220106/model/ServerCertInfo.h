@@ -47,17 +47,17 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取服务器证书 ID, 默认证书ID, 或在 SSL 证书管理进行证书托管时自动生成
+                     * 获取服务器证书 ID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CertId 服务器证书 ID, 默认证书ID, 或在 SSL 证书管理进行证书托管时自动生成
+                     * @return CertId 服务器证书 ID。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetCertId() const;
 
                     /**
-                     * 设置服务器证书 ID, 默认证书ID, 或在 SSL 证书管理进行证书托管时自动生成
+                     * 设置服务器证书 ID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CertId 服务器证书 ID, 默认证书ID, 或在 SSL 证书管理进行证书托管时自动生成
+                     * @param CertId 服务器证书 ID。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetCertId(const std::string& _certId);
@@ -69,17 +69,17 @@ namespace TencentCloud
                     bool CertIdHasBeenSet() const;
 
                     /**
-                     * 获取证书备注名
+                     * 获取证书备注名。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Alias 证书备注名
+                     * @return Alias 证书备注名。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetAlias() const;
 
                     /**
-                     * 设置证书备注名
+                     * 设置证书备注名。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Alias 证书备注名
+                     * @param Alias 证书备注名。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetAlias(const std::string& _alias);
@@ -91,29 +91,29 @@ namespace TencentCloud
                     bool AliasHasBeenSet() const;
 
                     /**
-                     * 获取证书类型:
-default: 默认证书
-upload:用户上传
-managed:腾讯云托管
+                     * 获取证书类型，取值有：
+<li>default: 默认证书;</li>
+<li>upload:用户上传;</li>
+<li>managed:腾讯云托管。</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Type 证书类型:
-default: 默认证书
-upload:用户上传
-managed:腾讯云托管
+                     * @return Type 证书类型，取值有：
+<li>default: 默认证书;</li>
+<li>upload:用户上传;</li>
+<li>managed:腾讯云托管。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置证书类型:
-default: 默认证书
-upload:用户上传
-managed:腾讯云托管
+                     * 设置证书类型，取值有：
+<li>default: 默认证书;</li>
+<li>upload:用户上传;</li>
+<li>managed:腾讯云托管。</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Type 证书类型:
-default: 默认证书
-upload:用户上传
-managed:腾讯云托管
+                     * @param Type 证书类型，取值有：
+<li>default: 默认证书;</li>
+<li>upload:用户上传;</li>
+<li>managed:腾讯云托管。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetType(const std::string& _type);
@@ -125,17 +125,17 @@ managed:腾讯云托管
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取证书过期时间
+                     * 获取证书过期时间。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ExpireTime 证书过期时间
+                     * @return ExpireTime 证书过期时间。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetExpireTime() const;
 
                     /**
-                     * 设置证书过期时间
+                     * 设置证书过期时间。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ExpireTime 证书过期时间
+                     * @param ExpireTime 证书过期时间。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetExpireTime(const std::string& _expireTime);
@@ -147,17 +147,17 @@ managed:腾讯云托管
                     bool ExpireTimeHasBeenSet() const;
 
                     /**
-                     * 获取证书部署时间
+                     * 获取证书部署时间。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DeployTime 证书部署时间
+                     * @return DeployTime 证书部署时间。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetDeployTime() const;
 
                     /**
-                     * 设置证书部署时间
+                     * 设置证书部署时间。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DeployTime 证书部署时间
+                     * @param DeployTime 证书部署时间。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetDeployTime(const std::string& _deployTime);
@@ -169,25 +169,25 @@ managed:腾讯云托管
                     bool DeployTimeHasBeenSet() const;
 
                     /**
-                     * 获取部署状态:
-processing: 部署中
-deployed: 已部署
+                     * 获取部署状态，取值有：
+<li>processing: 部署中;</li>
+<li>deployed: 已部署。</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Status 部署状态:
-processing: 部署中
-deployed: 已部署
+                     * @return Status 部署状态，取值有：
+<li>processing: 部署中;</li>
+<li>deployed: 已部署。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置部署状态:
-processing: 部署中
-deployed: 已部署
+                     * 设置部署状态，取值有：
+<li>processing: 部署中;</li>
+<li>deployed: 已部署。</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Status 部署状态:
-processing: 部署中
-deployed: 已部署
+                     * @param Status 部署状态，取值有：
+<li>processing: 部署中;</li>
+<li>deployed: 已部署。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetStatus(const std::string& _status);
@@ -198,54 +198,83 @@ deployed: 已部署
                      */
                     bool StatusHasBeenSet() const;
 
+                    /**
+                     * 获取证书算法。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SignAlgo 证书算法。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetSignAlgo() const;
+
+                    /**
+                     * 设置证书算法。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SignAlgo 证书算法。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSignAlgo(const std::string& _signAlgo);
+
+                    /**
+                     * 判断参数 SignAlgo 是否已赋值
+                     * @return SignAlgo 是否已赋值
+                     */
+                    bool SignAlgoHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 服务器证书 ID, 默认证书ID, 或在 SSL 证书管理进行证书托管时自动生成
+                     * 服务器证书 ID。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_certId;
                     bool m_certIdHasBeenSet;
 
                     /**
-                     * 证书备注名
+                     * 证书备注名。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_alias;
                     bool m_aliasHasBeenSet;
 
                     /**
-                     * 证书类型:
-default: 默认证书
-upload:用户上传
-managed:腾讯云托管
+                     * 证书类型，取值有：
+<li>default: 默认证书;</li>
+<li>upload:用户上传;</li>
+<li>managed:腾讯云托管。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 证书过期时间
+                     * 证书过期时间。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_expireTime;
                     bool m_expireTimeHasBeenSet;
 
                     /**
-                     * 证书部署时间
+                     * 证书部署时间。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_deployTime;
                     bool m_deployTimeHasBeenSet;
 
                     /**
-                     * 部署状态:
-processing: 部署中
-deployed: 已部署
+                     * 部署状态，取值有：
+<li>processing: 部署中;</li>
+<li>deployed: 已部署。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * 证书算法。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_signAlgo;
+                    bool m_signAlgoHasBeenSet;
 
                 };
             }
