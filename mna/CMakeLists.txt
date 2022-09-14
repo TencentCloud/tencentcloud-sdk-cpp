@@ -19,36 +19,68 @@ set(mna_public_header
   )
 
 set(mna_public_header_model
+  include/tencentcloud/mna/v20210119/model/GetDeviceResponse.h
   include/tencentcloud/mna/v20210119/model/Capacity.h
-  include/tencentcloud/mna/v20210119/model/DescribeQosRequest.h
   include/tencentcloud/mna/v20210119/model/DestAddressInfo.h
-  include/tencentcloud/mna/v20210119/model/NetworkData.h
-  include/tencentcloud/mna/v20210119/model/SrcAddressInfo.h
   include/tencentcloud/mna/v20210119/model/DeleteQosRequest.h
-  include/tencentcloud/mna/v20210119/model/DeviceInfo.h
+  include/tencentcloud/mna/v20210119/model/DeviceNetInfo.h
+  include/tencentcloud/mna/v20210119/model/SrcAddressInfo.h
+  include/tencentcloud/mna/v20210119/model/UpdateNetInfo.h
+  include/tencentcloud/mna/v20210119/model/CreateQosResponse.h
+  include/tencentcloud/mna/v20210119/model/DescribeQosResponse.h
+  include/tencentcloud/mna/v20210119/model/DeleteDeviceRequest.h
+  include/tencentcloud/mna/v20210119/model/UpdateDeviceResponse.h
+  include/tencentcloud/mna/v20210119/model/DeviceDetails.h
+  include/tencentcloud/mna/v20210119/model/CreateQosRequest.h
+  include/tencentcloud/mna/v20210119/model/GetStatisticDataRequest.h
+  include/tencentcloud/mna/v20210119/model/UpdateDeviceRequest.h
+  include/tencentcloud/mna/v20210119/model/DeviceBaseInfo.h
   include/tencentcloud/mna/v20210119/model/ExpectedThreshold.h
   include/tencentcloud/mna/v20210119/model/DeleteQosResponse.h
   include/tencentcloud/mna/v20210119/model/Context.h
-  include/tencentcloud/mna/v20210119/model/CreateQosResponse.h
-  include/tencentcloud/mna/v20210119/model/DescribeQosResponse.h
-  include/tencentcloud/mna/v20210119/model/CreateQosRequest.h
+  include/tencentcloud/mna/v20210119/model/AddDeviceResponse.h
+  include/tencentcloud/mna/v20210119/model/GetDeviceRequest.h
+  include/tencentcloud/mna/v20210119/model/GetDevicesResponse.h
+  include/tencentcloud/mna/v20210119/model/DescribeQosRequest.h
+  include/tencentcloud/mna/v20210119/model/NetworkData.h
+  include/tencentcloud/mna/v20210119/model/DeleteDeviceResponse.h
+  include/tencentcloud/mna/v20210119/model/GetStatisticDataResponse.h
+  include/tencentcloud/mna/v20210119/model/DeviceInfo.h
+  include/tencentcloud/mna/v20210119/model/GetDevicesRequest.h
+  include/tencentcloud/mna/v20210119/model/AddDeviceRequest.h
   )
 
 set(mna_src
   src/v20210119/MnaClient.cpp
+  src/v20210119/model/GetDeviceResponse.cpp
   src/v20210119/model/Capacity.cpp
-  src/v20210119/model/DescribeQosRequest.cpp
   src/v20210119/model/DestAddressInfo.cpp
-  src/v20210119/model/NetworkData.cpp
-  src/v20210119/model/SrcAddressInfo.cpp
   src/v20210119/model/DeleteQosRequest.cpp
-  src/v20210119/model/DeviceInfo.cpp
+  src/v20210119/model/DeviceNetInfo.cpp
+  src/v20210119/model/SrcAddressInfo.cpp
+  src/v20210119/model/UpdateNetInfo.cpp
+  src/v20210119/model/CreateQosResponse.cpp
+  src/v20210119/model/DescribeQosResponse.cpp
+  src/v20210119/model/DeleteDeviceRequest.cpp
+  src/v20210119/model/UpdateDeviceResponse.cpp
+  src/v20210119/model/DeviceDetails.cpp
+  src/v20210119/model/CreateQosRequest.cpp
+  src/v20210119/model/GetStatisticDataRequest.cpp
+  src/v20210119/model/UpdateDeviceRequest.cpp
+  src/v20210119/model/DeviceBaseInfo.cpp
   src/v20210119/model/ExpectedThreshold.cpp
   src/v20210119/model/DeleteQosResponse.cpp
   src/v20210119/model/Context.cpp
-  src/v20210119/model/CreateQosResponse.cpp
-  src/v20210119/model/DescribeQosResponse.cpp
-  src/v20210119/model/CreateQosRequest.cpp
+  src/v20210119/model/AddDeviceResponse.cpp
+  src/v20210119/model/GetDeviceRequest.cpp
+  src/v20210119/model/GetDevicesResponse.cpp
+  src/v20210119/model/DescribeQosRequest.cpp
+  src/v20210119/model/NetworkData.cpp
+  src/v20210119/model/DeleteDeviceResponse.cpp
+  src/v20210119/model/GetStatisticDataResponse.cpp
+  src/v20210119/model/DeviceInfo.cpp
+  src/v20210119/model/GetDevicesRequest.cpp
+  src/v20210119/model/AddDeviceRequest.cpp
   )
 
 set(mna_include

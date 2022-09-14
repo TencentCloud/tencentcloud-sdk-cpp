@@ -14,24 +14,33 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/cdb/v20170320/model/DescribeDBZoneConfigRequest.h>
+#include <tencentcloud/mna/v20210119/model/DeleteDeviceRequest.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
-using namespace TencentCloud::Cdb::V20170320::Model;
+using namespace TencentCloud::Mna::V20210119::Model;
 using namespace std;
 
-DescribeDBZoneConfigRequest::DescribeDBZoneConfigRequest()
+DeleteDeviceRequest::DeleteDeviceRequest() :
+    m_deviceIdHasBeenSet(false)
 {
 }
 
-string DescribeDBZoneConfigRequest::ToJsonString() const
+string DeleteDeviceRequest::ToJsonString() const
 {
     rapidjson::Document d;
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
+
+    if (m_deviceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeviceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_deviceId.c_str(), allocator).Move(), allocator);
+    }
 
 
     rapidjson::StringBuffer buffer;
@@ -40,5 +49,21 @@ string DescribeDBZoneConfigRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string DeleteDeviceRequest::GetDeviceId() const
+{
+    return m_deviceId;
+}
+
+void DeleteDeviceRequest::SetDeviceId(const string& _deviceId)
+{
+    m_deviceId = _deviceId;
+    m_deviceIdHasBeenSet = true;
+}
+
+bool DeleteDeviceRequest::DeviceIdHasBeenSet() const
+{
+    return m_deviceIdHasBeenSet;
+}
 
 

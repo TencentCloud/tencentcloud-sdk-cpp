@@ -4082,6 +4082,49 @@ LiveClient::DescribeTopClientIpSumInfoListOutcomeCallable LiveClient::DescribeTo
     return task->get_future();
 }
 
+LiveClient::DescribeTranscodeTaskNumOutcome LiveClient::DescribeTranscodeTaskNum(const DescribeTranscodeTaskNumRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTranscodeTaskNum");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTranscodeTaskNumResponse rsp = DescribeTranscodeTaskNumResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTranscodeTaskNumOutcome(rsp);
+        else
+            return DescribeTranscodeTaskNumOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTranscodeTaskNumOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::DescribeTranscodeTaskNumAsync(const DescribeTranscodeTaskNumRequest& request, const DescribeTranscodeTaskNumAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTranscodeTaskNum(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LiveClient::DescribeTranscodeTaskNumOutcomeCallable LiveClient::DescribeTranscodeTaskNumCallable(const DescribeTranscodeTaskNumRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTranscodeTaskNumOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTranscodeTaskNum(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LiveClient::DescribeUploadStreamNumsOutcome LiveClient::DescribeUploadStreamNums(const DescribeUploadStreamNumsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeUploadStreamNums");

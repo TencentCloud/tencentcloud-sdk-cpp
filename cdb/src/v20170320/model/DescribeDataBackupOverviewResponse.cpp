@@ -29,7 +29,9 @@ DescribeDataBackupOverviewResponse::DescribeDataBackupOverviewResponse() :
     m_autoBackupVolumeHasBeenSet(false),
     m_autoBackupCountHasBeenSet(false),
     m_manualBackupVolumeHasBeenSet(false),
-    m_manualBackupCountHasBeenSet(false)
+    m_manualBackupCountHasBeenSet(false),
+    m_remoteBackupVolumeHasBeenSet(false),
+    m_remoteBackupCountHasBeenSet(false)
 {
 }
 
@@ -127,6 +129,26 @@ CoreInternalOutcome DescribeDataBackupOverviewResponse::Deserialize(const string
         m_manualBackupCountHasBeenSet = true;
     }
 
+    if (rsp.HasMember("RemoteBackupVolume") && !rsp["RemoteBackupVolume"].IsNull())
+    {
+        if (!rsp["RemoteBackupVolume"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RemoteBackupVolume` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_remoteBackupVolume = rsp["RemoteBackupVolume"].GetInt64();
+        m_remoteBackupVolumeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("RemoteBackupCount") && !rsp["RemoteBackupCount"].IsNull())
+    {
+        if (!rsp["RemoteBackupCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RemoteBackupCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_remoteBackupCount = rsp["RemoteBackupCount"].GetInt64();
+        m_remoteBackupCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -183,6 +205,22 @@ string DescribeDataBackupOverviewResponse::ToJsonString() const
         string key = "ManualBackupCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_manualBackupCount, allocator);
+    }
+
+    if (m_remoteBackupVolumeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RemoteBackupVolume";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_remoteBackupVolume, allocator);
+    }
+
+    if (m_remoteBackupCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RemoteBackupCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_remoteBackupCount, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -255,6 +293,26 @@ int64_t DescribeDataBackupOverviewResponse::GetManualBackupCount() const
 bool DescribeDataBackupOverviewResponse::ManualBackupCountHasBeenSet() const
 {
     return m_manualBackupCountHasBeenSet;
+}
+
+int64_t DescribeDataBackupOverviewResponse::GetRemoteBackupVolume() const
+{
+    return m_remoteBackupVolume;
+}
+
+bool DescribeDataBackupOverviewResponse::RemoteBackupVolumeHasBeenSet() const
+{
+    return m_remoteBackupVolumeHasBeenSet;
+}
+
+int64_t DescribeDataBackupOverviewResponse::GetRemoteBackupCount() const
+{
+    return m_remoteBackupCount;
+}
+
+bool DescribeDataBackupOverviewResponse::RemoteBackupCountHasBeenSet() const
+{
+    return m_remoteBackupCountHasBeenSet;
 }
 
 

@@ -36,7 +36,10 @@ Blueprint::Blueprint() :
     m_blueprintNameHasBeenSet(false),
     m_supportAutomationToolsHasBeenSet(false),
     m_requiredMemorySizeHasBeenSet(false),
-    m_imageIdHasBeenSet(false)
+    m_imageIdHasBeenSet(false),
+    m_communityUrlHasBeenSet(false),
+    m_guideUrlHasBeenSet(false),
+    m_sceneIdSetHasBeenSet(false)
 {
 }
 
@@ -205,6 +208,39 @@ CoreInternalOutcome Blueprint::Deserialize(const rapidjson::Value &value)
         m_imageIdHasBeenSet = true;
     }
 
+    if (value.HasMember("CommunityUrl") && !value["CommunityUrl"].IsNull())
+    {
+        if (!value["CommunityUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Blueprint.CommunityUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_communityUrl = string(value["CommunityUrl"].GetString());
+        m_communityUrlHasBeenSet = true;
+    }
+
+    if (value.HasMember("GuideUrl") && !value["GuideUrl"].IsNull())
+    {
+        if (!value["GuideUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Blueprint.GuideUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_guideUrl = string(value["GuideUrl"].GetString());
+        m_guideUrlHasBeenSet = true;
+    }
+
+    if (value.HasMember("SceneIdSet") && !value["SceneIdSet"].IsNull())
+    {
+        if (!value["SceneIdSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Blueprint.SceneIdSet` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["SceneIdSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_sceneIdSet.push_back((*itr).GetString());
+        }
+        m_sceneIdSetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -338,6 +374,35 @@ void Blueprint::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "ImageId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_imageId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_communityUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CommunityUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_communityUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_guideUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GuideUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_guideUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sceneIdSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SceneIdSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_sceneIdSet.begin(); itr != m_sceneIdSet.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -597,5 +662,53 @@ void Blueprint::SetImageId(const string& _imageId)
 bool Blueprint::ImageIdHasBeenSet() const
 {
     return m_imageIdHasBeenSet;
+}
+
+string Blueprint::GetCommunityUrl() const
+{
+    return m_communityUrl;
+}
+
+void Blueprint::SetCommunityUrl(const string& _communityUrl)
+{
+    m_communityUrl = _communityUrl;
+    m_communityUrlHasBeenSet = true;
+}
+
+bool Blueprint::CommunityUrlHasBeenSet() const
+{
+    return m_communityUrlHasBeenSet;
+}
+
+string Blueprint::GetGuideUrl() const
+{
+    return m_guideUrl;
+}
+
+void Blueprint::SetGuideUrl(const string& _guideUrl)
+{
+    m_guideUrl = _guideUrl;
+    m_guideUrlHasBeenSet = true;
+}
+
+bool Blueprint::GuideUrlHasBeenSet() const
+{
+    return m_guideUrlHasBeenSet;
+}
+
+vector<string> Blueprint::GetSceneIdSet() const
+{
+    return m_sceneIdSet;
+}
+
+void Blueprint::SetSceneIdSet(const vector<string>& _sceneIdSet)
+{
+    m_sceneIdSet = _sceneIdSet;
+    m_sceneIdSetHasBeenSet = true;
+}
+
+bool Blueprint::SceneIdSetHasBeenSet() const
+{
+    return m_sceneIdSetHasBeenSet;
 }
 

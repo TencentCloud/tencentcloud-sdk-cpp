@@ -133,8 +133,6 @@
 #include <tencentcloud/cdb/v20170320/model/DescribeDBSecurityGroupsResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeDBSwitchRecordsRequest.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeDBSwitchRecordsResponse.h>
-#include <tencentcloud/cdb/v20170320/model/DescribeDBZoneConfigRequest.h>
-#include <tencentcloud/cdb/v20170320/model/DescribeDBZoneConfigResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeDataBackupOverviewRequest.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeDataBackupOverviewResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeDatabasesRequest.h>
@@ -474,9 +472,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDBSwitchRecordsResponse> DescribeDBSwitchRecordsOutcome;
                 typedef std::future<DescribeDBSwitchRecordsOutcome> DescribeDBSwitchRecordsOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::DescribeDBSwitchRecordsRequest&, DescribeDBSwitchRecordsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBSwitchRecordsAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeDBZoneConfigResponse> DescribeDBZoneConfigOutcome;
-                typedef std::future<DescribeDBZoneConfigOutcome> DescribeDBZoneConfigOutcomeCallable;
-                typedef std::function<void(const CdbClient*, const Model::DescribeDBZoneConfigRequest&, DescribeDBZoneConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBZoneConfigAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDataBackupOverviewResponse> DescribeDataBackupOverviewOutcome;
                 typedef std::future<DescribeDataBackupOverviewOutcome> DescribeDataBackupOverviewOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::DescribeDataBackupOverviewRequest&, DescribeDataBackupOverviewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDataBackupOverviewAsyncHandler;
@@ -1239,15 +1234,6 @@ namespace TencentCloud
                 DescribeDBSwitchRecordsOutcome DescribeDBSwitchRecords(const Model::DescribeDBSwitchRecordsRequest &request);
                 void DescribeDBSwitchRecordsAsync(const Model::DescribeDBSwitchRecordsRequest& request, const DescribeDBSwitchRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDBSwitchRecordsOutcomeCallable DescribeDBSwitchRecordsCallable(const Model::DescribeDBSwitchRecordsRequest& request);
-
-                /**
-                 *本接口(DescribeDBZoneConfig)用于查询可创建的云数据库各地域可售卖的规格配置。
-                 * @param req DescribeDBZoneConfigRequest
-                 * @return DescribeDBZoneConfigOutcome
-                 */
-                DescribeDBZoneConfigOutcome DescribeDBZoneConfig(const Model::DescribeDBZoneConfigRequest &request);
-                void DescribeDBZoneConfigAsync(const Model::DescribeDBZoneConfigRequest& request, const DescribeDBZoneConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeDBZoneConfigOutcomeCallable DescribeDBZoneConfigCallable(const Model::DescribeDBZoneConfigRequest& request);
 
                 /**
                  *本接口(DescribeDataBackupOverview)用于查询用户在当前地域总的数据备份概览。

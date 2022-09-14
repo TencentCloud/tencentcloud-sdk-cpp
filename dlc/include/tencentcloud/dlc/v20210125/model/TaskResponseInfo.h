@@ -668,6 +668,28 @@ namespace TencentCloud
                      */
                     bool TotalTimeHasBeenSet() const;
 
+                    /**
+                     * 获取spark app job执行task的程序入口参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CmdArgs spark app job执行task的程序入口参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetCmdArgs() const;
+
+                    /**
+                     * 设置spark app job执行task的程序入口参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param CmdArgs spark app job执行task的程序入口参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCmdArgs(const std::string& _cmdArgs);
+
+                    /**
+                     * 判断参数 CmdArgs 是否已赋值
+                     * @return CmdArgs 是否已赋值
+                     */
+                    bool CmdArgsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -871,6 +893,13 @@ namespace TencentCloud
                      */
                     int64_t m_totalTime;
                     bool m_totalTimeHasBeenSet;
+
+                    /**
+                     * spark app job执行task的程序入口参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_cmdArgs;
+                    bool m_cmdArgsHasBeenSet;
 
                 };
             }

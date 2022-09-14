@@ -140,14 +140,14 @@ namespace TencentCloud
                     bool SubscribeStreamUserIdsHasBeenSet() const;
 
                     /**
-                     * 获取输出文件的格式，上传到云点播时此参数无效。0：(默认)输出文件为hls格式。1：输出文件格式为hls+mp4（hls录制完成后转mp4文件）
-                     * @return OutputFormat 输出文件的格式，上传到云点播时此参数无效。0：(默认)输出文件为hls格式。1：输出文件格式为hls+mp4（hls录制完成后转mp4文件）
+                     * 获取输出文件的格式，上传到云点播时此参数无效，存储到云点播时请关注TencentVod内的MediaType参数。0：(默认)输出文件为hls格式。1：输出文件格式为hls+mp4（hls录制完成后转mp4文件）。
+                     * @return OutputFormat 输出文件的格式，上传到云点播时此参数无效，存储到云点播时请关注TencentVod内的MediaType参数。0：(默认)输出文件为hls格式。1：输出文件格式为hls+mp4（hls录制完成后转mp4文件）。
                      */
                     uint64_t GetOutputFormat() const;
 
                     /**
-                     * 设置输出文件的格式，上传到云点播时此参数无效。0：(默认)输出文件为hls格式。1：输出文件格式为hls+mp4（hls录制完成后转mp4文件）
-                     * @param OutputFormat 输出文件的格式，上传到云点播时此参数无效。0：(默认)输出文件为hls格式。1：输出文件格式为hls+mp4（hls录制完成后转mp4文件）
+                     * 设置输出文件的格式，上传到云点播时此参数无效，存储到云点播时请关注TencentVod内的MediaType参数。0：(默认)输出文件为hls格式。1：输出文件格式为hls+mp4（hls录制完成后转mp4文件）。
+                     * @param OutputFormat 输出文件的格式，上传到云点播时此参数无效，存储到云点播时请关注TencentVod内的MediaType参数。0：(默认)输出文件为hls格式。1：输出文件格式为hls+mp4（hls录制完成后转mp4文件）。
                      */
                     void SetOutputFormat(const uint64_t& _outputFormat);
 
@@ -156,6 +156,24 @@ namespace TencentCloud
                      * @return OutputFormat 是否已赋值
                      */
                     bool OutputFormatHasBeenSet() const;
+
+                    /**
+                     * 获取单流录制模式下，用户的音视频是否合并，0：单流音视频不合并（默认）。1：单流音视频合并成一个ts。混流录制此参数无需设置，默认音视频合并。
+                     * @return AvMerge 单流录制模式下，用户的音视频是否合并，0：单流音视频不合并（默认）。1：单流音视频合并成一个ts。混流录制此参数无需设置，默认音视频合并。
+                     */
+                    uint64_t GetAvMerge() const;
+
+                    /**
+                     * 设置单流录制模式下，用户的音视频是否合并，0：单流音视频不合并（默认）。1：单流音视频合并成一个ts。混流录制此参数无需设置，默认音视频合并。
+                     * @param AvMerge 单流录制模式下，用户的音视频是否合并，0：单流音视频不合并（默认）。1：单流音视频合并成一个ts。混流录制此参数无需设置，默认音视频合并。
+                     */
+                    void SetAvMerge(const uint64_t& _avMerge);
+
+                    /**
+                     * 判断参数 AvMerge 是否已赋值
+                     * @return AvMerge 是否已赋值
+                     */
+                    bool AvMergeHasBeenSet() const;
 
                 private:
 
@@ -189,10 +207,16 @@ namespace TencentCloud
                     bool m_subscribeStreamUserIdsHasBeenSet;
 
                     /**
-                     * 输出文件的格式，上传到云点播时此参数无效。0：(默认)输出文件为hls格式。1：输出文件格式为hls+mp4（hls录制完成后转mp4文件）
+                     * 输出文件的格式，上传到云点播时此参数无效，存储到云点播时请关注TencentVod内的MediaType参数。0：(默认)输出文件为hls格式。1：输出文件格式为hls+mp4（hls录制完成后转mp4文件）。
                      */
                     uint64_t m_outputFormat;
                     bool m_outputFormatHasBeenSet;
+
+                    /**
+                     * 单流录制模式下，用户的音视频是否合并，0：单流音视频不合并（默认）。1：单流音视频合并成一个ts。混流录制此参数无需设置，默认音视频合并。
+                     */
+                    uint64_t m_avMerge;
+                    bool m_avMergeHasBeenSet;
 
                 };
             }

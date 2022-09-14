@@ -30,7 +30,8 @@ DescribeOverviewL7DataRequest::DescribeOverviewL7DataRequest() :
     m_zoneIdsHasBeenSet(false),
     m_domainsHasBeenSet(false),
     m_protocolHasBeenSet(false),
-    m_areaHasBeenSet(false)
+    m_areaHasBeenSet(false),
+    m_filtersHasBeenSet(false)
 {
 }
 
@@ -118,6 +119,21 @@ string DescribeOverviewL7DataRequest::ToJsonString() const
         string key = "Area";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_area.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_filtersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Filters";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_filters.begin(); itr != m_filters.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -254,6 +270,22 @@ void DescribeOverviewL7DataRequest::SetArea(const string& _area)
 bool DescribeOverviewL7DataRequest::AreaHasBeenSet() const
 {
     return m_areaHasBeenSet;
+}
+
+vector<QueryCondition> DescribeOverviewL7DataRequest::GetFilters() const
+{
+    return m_filters;
+}
+
+void DescribeOverviewL7DataRequest::SetFilters(const vector<QueryCondition>& _filters)
+{
+    m_filters = _filters;
+    m_filtersHasBeenSet = true;
+}
+
+bool DescribeOverviewL7DataRequest::FiltersHasBeenSet() const
+{
+    return m_filtersHasBeenSet;
 }
 
 

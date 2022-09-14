@@ -2405,49 +2405,6 @@ CdbClient::DescribeDBSwitchRecordsOutcomeCallable CdbClient::DescribeDBSwitchRec
     return task->get_future();
 }
 
-CdbClient::DescribeDBZoneConfigOutcome CdbClient::DescribeDBZoneConfig(const DescribeDBZoneConfigRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeDBZoneConfig");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeDBZoneConfigResponse rsp = DescribeDBZoneConfigResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeDBZoneConfigOutcome(rsp);
-        else
-            return DescribeDBZoneConfigOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeDBZoneConfigOutcome(outcome.GetError());
-    }
-}
-
-void CdbClient::DescribeDBZoneConfigAsync(const DescribeDBZoneConfigRequest& request, const DescribeDBZoneConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDBZoneConfig(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-CdbClient::DescribeDBZoneConfigOutcomeCallable CdbClient::DescribeDBZoneConfigCallable(const DescribeDBZoneConfigRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeDBZoneConfigOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDBZoneConfig(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 CdbClient::DescribeDataBackupOverviewOutcome CdbClient::DescribeDataBackupOverview(const DescribeDataBackupOverviewRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDataBackupOverview");

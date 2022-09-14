@@ -176,6 +176,24 @@ namespace TencentCloud
                      */
                     bool SourceContextHasBeenSet() const;
 
+                    /**
+                     * 获取上传到vod平台的录制文件格式类型，0：mp4(默认), 1: hls。
+                     * @return MediaType 上传到vod平台的录制文件格式类型，0：mp4(默认), 1: hls。
+                     */
+                    uint64_t GetMediaType() const;
+
+                    /**
+                     * 设置上传到vod平台的录制文件格式类型，0：mp4(默认), 1: hls。
+                     * @param MediaType 上传到vod平台的录制文件格式类型，0：mp4(默认), 1: hls。
+                     */
+                    void SetMediaType(const uint64_t& _mediaType);
+
+                    /**
+                     * 判断参数 MediaType 是否已赋值
+                     * @return MediaType 是否已赋值
+                     */
+                    bool MediaTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -220,6 +238,12 @@ namespace TencentCloud
                      */
                     std::string m_sourceContext;
                     bool m_sourceContextHasBeenSet;
+
+                    /**
+                     * 上传到vod平台的录制文件格式类型，0：mp4(默认), 1: hls。
+                     */
+                    uint64_t m_mediaType;
+                    bool m_mediaTypeHasBeenSet;
 
                 };
             }

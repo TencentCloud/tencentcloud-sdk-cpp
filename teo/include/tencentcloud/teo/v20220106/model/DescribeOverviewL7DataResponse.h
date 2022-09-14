@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取查询维度
-                     * @return Type 查询维度
+                     * 获取查询维度。
+                     * @return Type 查询维度。
                      */
                     std::string GetType() const;
 
@@ -57,8 +57,8 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取时间间隔
-                     * @return Interval 时间间隔
+                     * 获取查询时间间隔。
+                     * @return Interval 查询时间间隔。
                      */
                     std::string GetInterval() const;
 
@@ -69,8 +69,8 @@ namespace TencentCloud
                     bool IntervalHasBeenSet() const;
 
                     /**
-                     * 获取详细数据
-                     * @return Data 详细数据
+                     * 获取七层监控类时序流量数据列表。
+                     * @return Data 七层监控类时序流量数据列表。
                      */
                     std::vector<TimingDataRecord> GetData() const;
 
@@ -83,19 +83,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 查询维度
+                     * 查询维度。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 时间间隔
+                     * 查询时间间隔。
                      */
                     std::string m_interval;
                     bool m_intervalHasBeenSet;
 
                     /**
-                     * 详细数据
+                     * 七层监控类时序流量数据列表。
                      */
                     std::vector<TimingDataRecord> m_data;
                     bool m_dataHasBeenSet;

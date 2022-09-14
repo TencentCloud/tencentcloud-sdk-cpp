@@ -122,6 +122,24 @@ namespace TencentCloud
                      */
                     bool HeightHasBeenSet() const;
 
+                    /**
+                     * 获取封面
+                     * @return Thumbnail 封面
+                     */
+                    std::string GetThumbnail() const;
+
+                    /**
+                     * 设置封面
+                     * @param Thumbnail 封面
+                     */
+                    void SetThumbnail(const std::string& _thumbnail);
+
+                    /**
+                     * 判断参数 Thumbnail 是否已赋值
+                     * @return Thumbnail 是否已赋值
+                     */
+                    bool ThumbnailHasBeenSet() const;
+
                 private:
 
                     /**
@@ -148,6 +166,12 @@ namespace TencentCloud
                      */
                     int64_t m_height;
                     bool m_heightHasBeenSet;
+
+                    /**
+                     * 封面
+                     */
+                    std::string m_thumbnail;
+                    bool m_thumbnailHasBeenSet;
 
                 };
             }

@@ -139,6 +139,18 @@ namespace TencentCloud
                      */
                     bool VaccinationHasBeenSet() const;
 
+                    /**
+                     * 获取场所名称（允许返回空值）
+                     * @return SpotName 场所名称（允许返回空值）
+                     */
+                    std::string GetSpotName() const;
+
+                    /**
+                     * 判断参数 SpotName 是否已赋值
+                     * @return SpotName 是否已赋值
+                     */
+                    bool SpotNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -188,6 +200,12 @@ namespace TencentCloud
                      */
                     std::string m_vaccination;
                     bool m_vaccinationHasBeenSet;
+
+                    /**
+                     * 场所名称（允许返回空值）
+                     */
+                    std::string m_spotName;
+                    bool m_spotNameHasBeenSet;
 
                 };
             }

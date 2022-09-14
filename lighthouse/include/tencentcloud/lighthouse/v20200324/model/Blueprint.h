@@ -346,6 +346,64 @@ namespace TencentCloud
                      */
                     bool ImageIdHasBeenSet() const;
 
+                    /**
+                     * 获取官方网站Url。
+                     * @return CommunityUrl 官方网站Url。
+                     */
+                    std::string GetCommunityUrl() const;
+
+                    /**
+                     * 设置官方网站Url。
+                     * @param CommunityUrl 官方网站Url。
+                     */
+                    void SetCommunityUrl(const std::string& _communityUrl);
+
+                    /**
+                     * 判断参数 CommunityUrl 是否已赋值
+                     * @return CommunityUrl 是否已赋值
+                     */
+                    bool CommunityUrlHasBeenSet() const;
+
+                    /**
+                     * 获取指导文章Url。
+                     * @return GuideUrl 指导文章Url。
+                     */
+                    std::string GetGuideUrl() const;
+
+                    /**
+                     * 设置指导文章Url。
+                     * @param GuideUrl 指导文章Url。
+                     */
+                    void SetGuideUrl(const std::string& _guideUrl);
+
+                    /**
+                     * 判断参数 GuideUrl 是否已赋值
+                     * @return GuideUrl 是否已赋值
+                     */
+                    bool GuideUrlHasBeenSet() const;
+
+                    /**
+                     * 获取镜像关联使用场景Id列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SceneIdSet 镜像关联使用场景Id列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> GetSceneIdSet() const;
+
+                    /**
+                     * 设置镜像关联使用场景Id列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SceneIdSet 镜像关联使用场景Id列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSceneIdSet(const std::vector<std::string>& _sceneIdSet);
+
+                    /**
+                     * 判断参数 SceneIdSet 是否已赋值
+                     * @return SceneIdSet 是否已赋值
+                     */
+                    bool SceneIdSetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -446,6 +504,25 @@ namespace TencentCloud
                      */
                     std::string m_imageId;
                     bool m_imageIdHasBeenSet;
+
+                    /**
+                     * 官方网站Url。
+                     */
+                    std::string m_communityUrl;
+                    bool m_communityUrlHasBeenSet;
+
+                    /**
+                     * 指导文章Url。
+                     */
+                    std::string m_guideUrl;
+                    bool m_guideUrlHasBeenSet;
+
+                    /**
+                     * 镜像关联使用场景Id列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_sceneIdSet;
+                    bool m_sceneIdSetHasBeenSet;
 
                 };
             }

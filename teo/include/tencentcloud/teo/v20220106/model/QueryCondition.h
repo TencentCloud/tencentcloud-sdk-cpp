@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取维度
-                     * @return Key 维度
+                     * 获取筛选条件的key。
+                     * @return Key 筛选条件的key。
                      */
                     std::string GetKey() const;
 
                     /**
-                     * 设置维度
-                     * @param Key 维度
+                     * 设置筛选条件的key。
+                     * @param Key 筛选条件的key。
                      */
                     void SetKey(const std::string& _key);
 
@@ -65,14 +65,46 @@ namespace TencentCloud
                     bool KeyHasBeenSet() const;
 
                     /**
-                     * 获取操作符
-                     * @return Operator 操作符
+                     * 获取查询条件操作符，操作类型有：
+<li>equals: 等于；</li>
+<li>notEquals: 不等于；</li>
+<li>include: 包含；</li>
+<li>notInclude: 不包含; </li>
+<li>startWith: 开始于；</li>
+<li>notStartWith: 不开始于；</li>
+<li>endWith: 结尾是；</li>
+<li>notEndWith: 不结尾是。</li>
+                     * @return Operator 查询条件操作符，操作类型有：
+<li>equals: 等于；</li>
+<li>notEquals: 不等于；</li>
+<li>include: 包含；</li>
+<li>notInclude: 不包含; </li>
+<li>startWith: 开始于；</li>
+<li>notStartWith: 不开始于；</li>
+<li>endWith: 结尾是；</li>
+<li>notEndWith: 不结尾是。</li>
                      */
                     std::string GetOperator() const;
 
                     /**
-                     * 设置操作符
-                     * @param Operator 操作符
+                     * 设置查询条件操作符，操作类型有：
+<li>equals: 等于；</li>
+<li>notEquals: 不等于；</li>
+<li>include: 包含；</li>
+<li>notInclude: 不包含; </li>
+<li>startWith: 开始于；</li>
+<li>notStartWith: 不开始于；</li>
+<li>endWith: 结尾是；</li>
+<li>notEndWith: 不结尾是。</li>
+                     * @param Operator 查询条件操作符，操作类型有：
+<li>equals: 等于；</li>
+<li>notEquals: 不等于；</li>
+<li>include: 包含；</li>
+<li>notInclude: 不包含; </li>
+<li>startWith: 开始于；</li>
+<li>notStartWith: 不开始于；</li>
+<li>endWith: 结尾是；</li>
+<li>notEndWith: 不结尾是。</li>
                      */
                     void SetOperator(const std::string& _operator);
 
@@ -83,14 +115,14 @@ namespace TencentCloud
                     bool OperatorHasBeenSet() const;
 
                     /**
-                     * 获取维度值
-                     * @return Value 维度值
+                     * 获取筛选条件的值。
+                     * @return Value 筛选条件的值。
                      */
                     std::vector<std::string> GetValue() const;
 
                     /**
-                     * 设置维度值
-                     * @param Value 维度值
+                     * 设置筛选条件的值。
+                     * @param Value 筛选条件的值。
                      */
                     void SetValue(const std::vector<std::string>& _value);
 
@@ -103,19 +135,27 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 维度
+                     * 筛选条件的key。
                      */
                     std::string m_key;
                     bool m_keyHasBeenSet;
 
                     /**
-                     * 操作符
+                     * 查询条件操作符，操作类型有：
+<li>equals: 等于；</li>
+<li>notEquals: 不等于；</li>
+<li>include: 包含；</li>
+<li>notInclude: 不包含; </li>
+<li>startWith: 开始于；</li>
+<li>notStartWith: 不开始于；</li>
+<li>endWith: 结尾是；</li>
+<li>notEndWith: 不结尾是。</li>
                      */
                     std::string m_operator;
                     bool m_operatorHasBeenSet;
 
                     /**
-                     * 维度值
+                     * 筛选条件的值。
                      */
                     std::vector<std::string> m_value;
                     bool m_valueHasBeenSet;

@@ -40,7 +40,10 @@ DescribeTaskDetailResponse::DescribeTaskDetailResponse() :
     m_imageSegmentsHasBeenSet(false),
     m_audioSegmentsHasBeenSet(false),
     m_errorTypeHasBeenSet(false),
-    m_errorDescriptionHasBeenSet(false)
+    m_errorDescriptionHasBeenSet(false),
+    m_labelHasBeenSet(false),
+    m_audioTextHasBeenSet(false),
+    m_asrsHasBeenSet(false)
 {
 }
 
@@ -292,6 +295,46 @@ CoreInternalOutcome DescribeTaskDetailResponse::Deserialize(const string &payloa
         m_errorDescriptionHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Label") && !rsp["Label"].IsNull())
+    {
+        if (!rsp["Label"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Label` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_label = string(rsp["Label"].GetString());
+        m_labelHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("AudioText") && !rsp["AudioText"].IsNull())
+    {
+        if (!rsp["AudioText"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AudioText` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_audioText = string(rsp["AudioText"].GetString());
+        m_audioTextHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Asrs") && !rsp["Asrs"].IsNull())
+    {
+        if (!rsp["Asrs"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Asrs` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["Asrs"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            RcbAsr item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_asrs.push_back(item);
+        }
+        m_asrsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -459,6 +502,37 @@ string DescribeTaskDetailResponse::ToJsonString() const
         string key = "ErrorDescription";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_errorDescription.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_labelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Label";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_label.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_audioTextHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AudioText";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_audioText.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_asrsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Asrs";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_asrs.begin(); itr != m_asrs.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -641,6 +715,36 @@ string DescribeTaskDetailResponse::GetErrorDescription() const
 bool DescribeTaskDetailResponse::ErrorDescriptionHasBeenSet() const
 {
     return m_errorDescriptionHasBeenSet;
+}
+
+string DescribeTaskDetailResponse::GetLabel() const
+{
+    return m_label;
+}
+
+bool DescribeTaskDetailResponse::LabelHasBeenSet() const
+{
+    return m_labelHasBeenSet;
+}
+
+string DescribeTaskDetailResponse::GetAudioText() const
+{
+    return m_audioText;
+}
+
+bool DescribeTaskDetailResponse::AudioTextHasBeenSet() const
+{
+    return m_audioTextHasBeenSet;
+}
+
+vector<RcbAsr> DescribeTaskDetailResponse::GetAsrs() const
+{
+    return m_asrs;
+}
+
+bool DescribeTaskDetailResponse::AsrsHasBeenSet() const
+{
+    return m_asrsHasBeenSet;
 }
 
 

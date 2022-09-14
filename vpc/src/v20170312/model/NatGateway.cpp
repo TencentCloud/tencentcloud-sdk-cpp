@@ -38,7 +38,8 @@ NatGateway::NatGateway() :
     m_securityGroupSetHasBeenSet(false),
     m_sourceIpTranslationNatRuleSetHasBeenSet(false),
     m_isExclusiveHasBeenSet(false),
-    m_exclusiveGatewayBandwidthHasBeenSet(false)
+    m_exclusiveGatewayBandwidthHasBeenSet(false),
+    m_restrictStateHasBeenSet(false)
 {
 }
 
@@ -273,6 +274,16 @@ CoreInternalOutcome NatGateway::Deserialize(const rapidjson::Value &value)
         m_exclusiveGatewayBandwidthHasBeenSet = true;
     }
 
+    if (value.HasMember("RestrictState") && !value["RestrictState"].IsNull())
+    {
+        if (!value["RestrictState"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NatGateway.RestrictState` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_restrictState = string(value["RestrictState"].GetString());
+        m_restrictStateHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -460,6 +471,14 @@ void NatGateway::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "ExclusiveGatewayBandwidth";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_exclusiveGatewayBandwidth, allocator);
+    }
+
+    if (m_restrictStateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RestrictState";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_restrictState.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -751,5 +770,21 @@ void NatGateway::SetExclusiveGatewayBandwidth(const uint64_t& _exclusiveGatewayB
 bool NatGateway::ExclusiveGatewayBandwidthHasBeenSet() const
 {
     return m_exclusiveGatewayBandwidthHasBeenSet;
+}
+
+string NatGateway::GetRestrictState() const
+{
+    return m_restrictState;
+}
+
+void NatGateway::SetRestrictState(const string& _restrictState)
+{
+    m_restrictState = _restrictState;
+    m_restrictStateHasBeenSet = true;
+}
+
+bool NatGateway::RestrictStateHasBeenSet() const
+{
+    return m_restrictStateHasBeenSet;
 }
 

@@ -25,7 +25,8 @@ RecordParams::RecordParams() :
     m_maxIdleTimeHasBeenSet(false),
     m_streamTypeHasBeenSet(false),
     m_subscribeStreamUserIdsHasBeenSet(false),
-    m_outputFormatHasBeenSet(false)
+    m_outputFormatHasBeenSet(false),
+    m_avMergeHasBeenSet(false)
 {
 }
 
@@ -91,6 +92,16 @@ CoreInternalOutcome RecordParams::Deserialize(const rapidjson::Value &value)
         m_outputFormatHasBeenSet = true;
     }
 
+    if (value.HasMember("AvMerge") && !value["AvMerge"].IsNull())
+    {
+        if (!value["AvMerge"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RecordParams.AvMerge` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_avMerge = value["AvMerge"].GetUint64();
+        m_avMergeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -137,6 +148,14 @@ void RecordParams::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "OutputFormat";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_outputFormat, allocator);
+    }
+
+    if (m_avMergeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AvMerge";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_avMerge, allocator);
     }
 
 }
@@ -220,5 +239,21 @@ void RecordParams::SetOutputFormat(const uint64_t& _outputFormat)
 bool RecordParams::OutputFormatHasBeenSet() const
 {
     return m_outputFormatHasBeenSet;
+}
+
+uint64_t RecordParams::GetAvMerge() const
+{
+    return m_avMerge;
+}
+
+void RecordParams::SetAvMerge(const uint64_t& _avMerge)
+{
+    m_avMerge = _avMerge;
+    m_avMergeHasBeenSet = true;
+}
+
+bool RecordParams::AvMergeHasBeenSet() const
+{
+    return m_avMergeHasBeenSet;
 }
 

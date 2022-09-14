@@ -26,7 +26,15 @@ DescribeBackupListRequest::DescribeBackupListRequest() :
     m_clusterIdHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_dbTypeHasBeenSet(false)
+    m_dbTypeHasBeenSet(false),
+    m_backupIdsHasBeenSet(false),
+    m_backupTypeHasBeenSet(false),
+    m_backupMethodHasBeenSet(false),
+    m_snapShotTypeHasBeenSet(false),
+    m_startTimeHasBeenSet(false),
+    m_endTimeHasBeenSet(false),
+    m_fileNamesHasBeenSet(false),
+    m_backupNamesHasBeenSet(false)
 {
 }
 
@@ -67,6 +75,85 @@ string DescribeBackupListRequest::ToJsonString() const
         string key = "DbType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_dbType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_backupIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BackupIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_backupIds.begin(); itr != m_backupIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
+    }
+
+    if (m_backupTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BackupType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_backupType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_backupMethodHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BackupMethod";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_backupMethod.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_snapShotTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SnapShotType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_snapShotType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_startTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StartTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_startTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_endTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EndTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_endTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fileNamesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileNames";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_fileNames.begin(); itr != m_fileNames.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_backupNamesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BackupNames";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_backupNames.begin(); itr != m_backupNames.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -139,6 +226,134 @@ void DescribeBackupListRequest::SetDbType(const string& _dbType)
 bool DescribeBackupListRequest::DbTypeHasBeenSet() const
 {
     return m_dbTypeHasBeenSet;
+}
+
+vector<int64_t> DescribeBackupListRequest::GetBackupIds() const
+{
+    return m_backupIds;
+}
+
+void DescribeBackupListRequest::SetBackupIds(const vector<int64_t>& _backupIds)
+{
+    m_backupIds = _backupIds;
+    m_backupIdsHasBeenSet = true;
+}
+
+bool DescribeBackupListRequest::BackupIdsHasBeenSet() const
+{
+    return m_backupIdsHasBeenSet;
+}
+
+string DescribeBackupListRequest::GetBackupType() const
+{
+    return m_backupType;
+}
+
+void DescribeBackupListRequest::SetBackupType(const string& _backupType)
+{
+    m_backupType = _backupType;
+    m_backupTypeHasBeenSet = true;
+}
+
+bool DescribeBackupListRequest::BackupTypeHasBeenSet() const
+{
+    return m_backupTypeHasBeenSet;
+}
+
+string DescribeBackupListRequest::GetBackupMethod() const
+{
+    return m_backupMethod;
+}
+
+void DescribeBackupListRequest::SetBackupMethod(const string& _backupMethod)
+{
+    m_backupMethod = _backupMethod;
+    m_backupMethodHasBeenSet = true;
+}
+
+bool DescribeBackupListRequest::BackupMethodHasBeenSet() const
+{
+    return m_backupMethodHasBeenSet;
+}
+
+string DescribeBackupListRequest::GetSnapShotType() const
+{
+    return m_snapShotType;
+}
+
+void DescribeBackupListRequest::SetSnapShotType(const string& _snapShotType)
+{
+    m_snapShotType = _snapShotType;
+    m_snapShotTypeHasBeenSet = true;
+}
+
+bool DescribeBackupListRequest::SnapShotTypeHasBeenSet() const
+{
+    return m_snapShotTypeHasBeenSet;
+}
+
+string DescribeBackupListRequest::GetStartTime() const
+{
+    return m_startTime;
+}
+
+void DescribeBackupListRequest::SetStartTime(const string& _startTime)
+{
+    m_startTime = _startTime;
+    m_startTimeHasBeenSet = true;
+}
+
+bool DescribeBackupListRequest::StartTimeHasBeenSet() const
+{
+    return m_startTimeHasBeenSet;
+}
+
+string DescribeBackupListRequest::GetEndTime() const
+{
+    return m_endTime;
+}
+
+void DescribeBackupListRequest::SetEndTime(const string& _endTime)
+{
+    m_endTime = _endTime;
+    m_endTimeHasBeenSet = true;
+}
+
+bool DescribeBackupListRequest::EndTimeHasBeenSet() const
+{
+    return m_endTimeHasBeenSet;
+}
+
+vector<string> DescribeBackupListRequest::GetFileNames() const
+{
+    return m_fileNames;
+}
+
+void DescribeBackupListRequest::SetFileNames(const vector<string>& _fileNames)
+{
+    m_fileNames = _fileNames;
+    m_fileNamesHasBeenSet = true;
+}
+
+bool DescribeBackupListRequest::FileNamesHasBeenSet() const
+{
+    return m_fileNamesHasBeenSet;
+}
+
+vector<string> DescribeBackupListRequest::GetBackupNames() const
+{
+    return m_backupNames;
+}
+
+void DescribeBackupListRequest::SetBackupNames(const vector<string>& _backupNames)
+{
+    m_backupNames = _backupNames;
+    m_backupNamesHasBeenSet = true;
+}
+
+bool DescribeBackupListRequest::BackupNamesHasBeenSet() const
+{
+    return m_backupNamesHasBeenSet;
 }
 
 

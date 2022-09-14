@@ -103,6 +103,210 @@ namespace TencentCloud
                      */
                     bool IsProducerHasBeenSet() const;
 
+                    /**
+                     * 获取xxx
+                     * @return EvidenceStatus xxx
+                     */
+                    int64_t GetEvidenceStatus() const;
+
+                    /**
+                     * 判断参数 EvidenceStatus 是否已赋值
+                     * @return EvidenceStatus 是否已赋值
+                     */
+                    bool EvidenceStatusHasBeenSet() const;
+
+                    /**
+                     * 获取xxx
+                     * @return WorkCategory xxx
+                     */
+                    std::string GetWorkCategory() const;
+
+                    /**
+                     * 判断参数 WorkCategory 是否已赋值
+                     * @return WorkCategory 是否已赋值
+                     */
+                    bool WorkCategoryHasBeenSet() const;
+
+                    /**
+                     * 获取xxx
+                     * @return IsOriginal xxx
+                     */
+                    std::string GetIsOriginal() const;
+
+                    /**
+                     * 判断参数 IsOriginal 是否已赋值
+                     * @return IsOriginal 是否已赋值
+                     */
+                    bool IsOriginalHasBeenSet() const;
+
+                    /**
+                     * 获取xxx
+                     * @return IsRelease xxx
+                     */
+                    std::string GetIsRelease() const;
+
+                    /**
+                     * 判断参数 IsRelease 是否已赋值
+                     * @return IsRelease 是否已赋值
+                     */
+                    bool IsReleaseHasBeenSet() const;
+
+                    /**
+                     * 获取xxx
+                     * @return ProducerName xxx
+                     */
+                    std::string GetProducerName() const;
+
+                    /**
+                     * 判断参数 ProducerName 是否已赋值
+                     * @return ProducerName 是否已赋值
+                     */
+                    bool ProducerNameHasBeenSet() const;
+
+                    /**
+                     * 获取xxx
+                     * @return ProduceTime xxx
+                     */
+                    std::string GetProduceTime() const;
+
+                    /**
+                     * 判断参数 ProduceTime 是否已赋值
+                     * @return ProduceTime 是否已赋值
+                     */
+                    bool ProduceTimeHasBeenSet() const;
+
+                    /**
+                     * 获取xxx
+                     * @return WhiteLists xxx
+                     */
+                    std::vector<std::string> GetWhiteLists() const;
+
+                    /**
+                     * 判断参数 WhiteLists 是否已赋值
+                     * @return WhiteLists 是否已赋值
+                     */
+                    bool WhiteListsHasBeenSet() const;
+
+                    /**
+                     * 获取xxx
+                     * @return WorkDesc xxx
+                     */
+                    std::string GetWorkDesc() const;
+
+                    /**
+                     * 判断参数 WorkDesc 是否已赋值
+                     * @return WorkDesc 是否已赋值
+                     */
+                    bool WorkDescHasBeenSet() const;
+
+                    /**
+                     * 获取xxx
+                     * @return Authorization xxx
+                     */
+                    std::string GetAuthorization() const;
+
+                    /**
+                     * 判断参数 Authorization 是否已赋值
+                     * @return Authorization 是否已赋值
+                     */
+                    bool AuthorizationHasBeenSet() const;
+
+                    /**
+                     * 获取xxx
+                     * @return AuthorizationStartTime xxx
+                     */
+                    std::string GetAuthorizationStartTime() const;
+
+                    /**
+                     * 判断参数 AuthorizationStartTime 是否已赋值
+                     * @return AuthorizationStartTime 是否已赋值
+                     */
+                    bool AuthorizationStartTimeHasBeenSet() const;
+
+                    /**
+                     * 获取xxx
+                     * @return AuthorizationEndTime xxx
+                     */
+                    std::string GetAuthorizationEndTime() const;
+
+                    /**
+                     * 判断参数 AuthorizationEndTime 是否已赋值
+                     * @return AuthorizationEndTime 是否已赋值
+                     */
+                    bool AuthorizationEndTimeHasBeenSet() const;
+
+                    /**
+                     * 获取xxx
+                     * @return Commission xxx
+                     */
+                    std::string GetCommission() const;
+
+                    /**
+                     * 判断参数 Commission 是否已赋值
+                     * @return Commission 是否已赋值
+                     */
+                    bool CommissionHasBeenSet() const;
+
+                    /**
+                     * 获取xxx
+                     * @return CommissionStartTime xxx
+                     */
+                    std::string GetCommissionStartTime() const;
+
+                    /**
+                     * 判断参数 CommissionStartTime 是否已赋值
+                     * @return CommissionStartTime 是否已赋值
+                     */
+                    bool CommissionStartTimeHasBeenSet() const;
+
+                    /**
+                     * 获取xxx
+                     * @return CommissionEndTime xxx
+                     */
+                    std::string GetCommissionEndTime() const;
+
+                    /**
+                     * 判断参数 CommissionEndTime 是否已赋值
+                     * @return CommissionEndTime 是否已赋值
+                     */
+                    bool CommissionEndTimeHasBeenSet() const;
+
+                    /**
+                     * 获取xxx
+                     * @return EvidenceUrl xxx
+                     */
+                    std::string GetEvidenceUrl() const;
+
+                    /**
+                     * 判断参数 EvidenceUrl 是否已赋值
+                     * @return EvidenceUrl 是否已赋值
+                     */
+                    bool EvidenceUrlHasBeenSet() const;
+
+                    /**
+                     * 获取xxx
+                     * @return EvidenceStartTime xxx
+                     */
+                    std::string GetEvidenceStartTime() const;
+
+                    /**
+                     * 判断参数 EvidenceStartTime 是否已赋值
+                     * @return EvidenceStartTime 是否已赋值
+                     */
+                    bool EvidenceStartTimeHasBeenSet() const;
+
+                    /**
+                     * 获取xxx
+                     * @return EvidenceEndTime xxx
+                     */
+                    std::string GetEvidenceEndTime() const;
+
+                    /**
+                     * 判断参数 EvidenceEndTime 是否已赋值
+                     * @return EvidenceEndTime 是否已赋值
+                     */
+                    bool EvidenceEndTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -134,6 +338,108 @@ namespace TencentCloud
                      */
                     int64_t m_isProducer;
                     bool m_isProducerHasBeenSet;
+
+                    /**
+                     * xxx
+                     */
+                    int64_t m_evidenceStatus;
+                    bool m_evidenceStatusHasBeenSet;
+
+                    /**
+                     * xxx
+                     */
+                    std::string m_workCategory;
+                    bool m_workCategoryHasBeenSet;
+
+                    /**
+                     * xxx
+                     */
+                    std::string m_isOriginal;
+                    bool m_isOriginalHasBeenSet;
+
+                    /**
+                     * xxx
+                     */
+                    std::string m_isRelease;
+                    bool m_isReleaseHasBeenSet;
+
+                    /**
+                     * xxx
+                     */
+                    std::string m_producerName;
+                    bool m_producerNameHasBeenSet;
+
+                    /**
+                     * xxx
+                     */
+                    std::string m_produceTime;
+                    bool m_produceTimeHasBeenSet;
+
+                    /**
+                     * xxx
+                     */
+                    std::vector<std::string> m_whiteLists;
+                    bool m_whiteListsHasBeenSet;
+
+                    /**
+                     * xxx
+                     */
+                    std::string m_workDesc;
+                    bool m_workDescHasBeenSet;
+
+                    /**
+                     * xxx
+                     */
+                    std::string m_authorization;
+                    bool m_authorizationHasBeenSet;
+
+                    /**
+                     * xxx
+                     */
+                    std::string m_authorizationStartTime;
+                    bool m_authorizationStartTimeHasBeenSet;
+
+                    /**
+                     * xxx
+                     */
+                    std::string m_authorizationEndTime;
+                    bool m_authorizationEndTimeHasBeenSet;
+
+                    /**
+                     * xxx
+                     */
+                    std::string m_commission;
+                    bool m_commissionHasBeenSet;
+
+                    /**
+                     * xxx
+                     */
+                    std::string m_commissionStartTime;
+                    bool m_commissionStartTimeHasBeenSet;
+
+                    /**
+                     * xxx
+                     */
+                    std::string m_commissionEndTime;
+                    bool m_commissionEndTimeHasBeenSet;
+
+                    /**
+                     * xxx
+                     */
+                    std::string m_evidenceUrl;
+                    bool m_evidenceUrlHasBeenSet;
+
+                    /**
+                     * xxx
+                     */
+                    std::string m_evidenceStartTime;
+                    bool m_evidenceStartTimeHasBeenSet;
+
+                    /**
+                     * xxx
+                     */
+                    std::string m_evidenceEndTime;
+                    bool m_evidenceEndTimeHasBeenSet;
 
                 };
             }

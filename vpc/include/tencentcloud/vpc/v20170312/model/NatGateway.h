@@ -406,6 +406,28 @@ namespace TencentCloud
                      */
                     bool ExclusiveGatewayBandwidthHasBeenSet() const;
 
+                    /**
+                     * 获取NAT网关是否被封禁。“NORMAL”：未被封禁，“RESTRICTED”：已被封禁。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RestrictState NAT网关是否被封禁。“NORMAL”：未被封禁，“RESTRICTED”：已被封禁。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetRestrictState() const;
+
+                    /**
+                     * 设置NAT网关是否被封禁。“NORMAL”：未被封禁，“RESTRICTED”：已被封禁。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RestrictState NAT网关是否被封禁。“NORMAL”：未被封禁，“RESTRICTED”：已被封禁。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRestrictState(const std::string& _restrictState);
+
+                    /**
+                     * 判断参数 RestrictState 是否已赋值
+                     * @return RestrictState 是否已赋值
+                     */
+                    bool RestrictStateHasBeenSet() const;
+
                 private:
 
                     /**
@@ -523,6 +545,13 @@ namespace TencentCloud
                      */
                     uint64_t m_exclusiveGatewayBandwidth;
                     bool m_exclusiveGatewayBandwidthHasBeenSet;
+
+                    /**
+                     * NAT网关是否被封禁。“NORMAL”：未被封禁，“RESTRICTED”：已被封禁。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_restrictState;
+                    bool m_restrictStateHasBeenSet;
 
                 };
             }

@@ -917,7 +917,7 @@ namespace TencentCloud
                 DescribeOriginGroupDetailOutcomeCallable DescribeOriginGroupDetailCallable(const Model::DescribeOriginGroupDetailRequest& request);
 
                 /**
-                 *查询七层监控类时序流量数据
+                 *本接口（DescribeOverviewL7Data）用于查询七层监控类时序流量数据。
                  * @param req DescribeOverviewL7DataRequest
                  * @return DescribeOverviewL7DataOutcome
                  */

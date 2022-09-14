@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取总的日志备份容量（单位为字节）。
-                     * @return BinlogBackupVolume 总的日志备份容量（单位为字节）。
+                     * 获取总的日志备份容量，包含异地日志备份（单位为字节）。
+                     * @return BinlogBackupVolume 总的日志备份容量，包含异地日志备份（单位为字节）。
                      */
                     int64_t GetBinlogBackupVolume() const;
 
@@ -56,8 +56,8 @@ namespace TencentCloud
                     bool BinlogBackupVolumeHasBeenSet() const;
 
                     /**
-                     * 获取总的日志备份个数。
-                     * @return BinlogBackupCount 总的日志备份个数。
+                     * 获取总的日志备份个数，包含异地日志备份。
+                     * @return BinlogBackupCount 总的日志备份个数，包含异地日志备份。
                      */
                     int64_t GetBinlogBackupCount() const;
 
@@ -67,19 +67,55 @@ namespace TencentCloud
                      */
                     bool BinlogBackupCountHasBeenSet() const;
 
+                    /**
+                     * 获取异地日志备份容量（单位为字节）。
+                     * @return RemoteBinlogVolume 异地日志备份容量（单位为字节）。
+                     */
+                    int64_t GetRemoteBinlogVolume() const;
+
+                    /**
+                     * 判断参数 RemoteBinlogVolume 是否已赋值
+                     * @return RemoteBinlogVolume 是否已赋值
+                     */
+                    bool RemoteBinlogVolumeHasBeenSet() const;
+
+                    /**
+                     * 获取异地日志备份个数。
+                     * @return RemoteBinlogCount 异地日志备份个数。
+                     */
+                    int64_t GetRemoteBinlogCount() const;
+
+                    /**
+                     * 判断参数 RemoteBinlogCount 是否已赋值
+                     * @return RemoteBinlogCount 是否已赋值
+                     */
+                    bool RemoteBinlogCountHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 总的日志备份容量（单位为字节）。
+                     * 总的日志备份容量，包含异地日志备份（单位为字节）。
                      */
                     int64_t m_binlogBackupVolume;
                     bool m_binlogBackupVolumeHasBeenSet;
 
                     /**
-                     * 总的日志备份个数。
+                     * 总的日志备份个数，包含异地日志备份。
                      */
                     int64_t m_binlogBackupCount;
                     bool m_binlogBackupCountHasBeenSet;
+
+                    /**
+                     * 异地日志备份容量（单位为字节）。
+                     */
+                    int64_t m_remoteBinlogVolume;
+                    bool m_remoteBinlogVolumeHasBeenSet;
+
+                    /**
+                     * 异地日志备份个数。
+                     */
+                    int64_t m_remoteBinlogCount;
+                    bool m_remoteBinlogCountHasBeenSet;
 
                 };
             }

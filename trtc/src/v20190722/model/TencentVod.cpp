@@ -27,7 +27,8 @@ TencentVod::TencentVod() :
     m_classIdHasBeenSet(false),
     m_subAppIdHasBeenSet(false),
     m_sessionContextHasBeenSet(false),
-    m_sourceContextHasBeenSet(false)
+    m_sourceContextHasBeenSet(false),
+    m_mediaTypeHasBeenSet(false)
 {
 }
 
@@ -106,6 +107,16 @@ CoreInternalOutcome TencentVod::Deserialize(const rapidjson::Value &value)
         m_sourceContextHasBeenSet = true;
     }
 
+    if (value.HasMember("MediaType") && !value["MediaType"].IsNull())
+    {
+        if (!value["MediaType"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TencentVod.MediaType` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_mediaType = value["MediaType"].GetUint64();
+        m_mediaTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +178,14 @@ void TencentVod::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "SourceContext";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_sourceContext.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_mediaTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MediaType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_mediaType, allocator);
     }
 
 }
@@ -282,5 +301,21 @@ void TencentVod::SetSourceContext(const string& _sourceContext)
 bool TencentVod::SourceContextHasBeenSet() const
 {
     return m_sourceContextHasBeenSet;
+}
+
+uint64_t TencentVod::GetMediaType() const
+{
+    return m_mediaType;
+}
+
+void TencentVod::SetMediaType(const uint64_t& _mediaType)
+{
+    m_mediaType = _mediaType;
+    m_mediaTypeHasBeenSet = true;
+}
+
+bool TencentVod::MediaTypeHasBeenSet() const
+{
+    return m_mediaTypeHasBeenSet;
 }
 

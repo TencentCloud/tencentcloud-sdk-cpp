@@ -19,7 +19,6 @@ set(cdb_public_header
   )
 
 set(cdb_public_header_model
-  include/tencentcloud/cdb/v20170320/model/SellType.h
   include/tencentcloud/cdb/v20170320/model/TaskDetail.h
   include/tencentcloud/cdb/v20170320/model/CdbZoneSellConf.h
   include/tencentcloud/cdb/v20170320/model/CreateDBImportJobRequest.h
@@ -78,7 +77,6 @@ set(cdb_public_header_model
   include/tencentcloud/cdb/v20170320/model/UpgradeDBInstanceRequest.h
   include/tencentcloud/cdb/v20170320/model/ModifyParamTemplateRequest.h
   include/tencentcloud/cdb/v20170320/model/StartReplicationResponse.h
-  include/tencentcloud/cdb/v20170320/model/ZoneSellConf.h
   include/tencentcloud/cdb/v20170320/model/ModifyCDBProxyVipVPortRequest.h
   include/tencentcloud/cdb/v20170320/model/DescribeBinlogBackupOverviewResponse.h
   include/tencentcloud/cdb/v20170320/model/InitDBInstancesRequest.h
@@ -103,7 +101,7 @@ set(cdb_public_header_model
   include/tencentcloud/cdb/v20170320/model/ReleaseResult.h
   include/tencentcloud/cdb/v20170320/model/ProxyGroups.h
   include/tencentcloud/cdb/v20170320/model/AuditRule.h
-  include/tencentcloud/cdb/v20170320/model/RegionSellConf.h
+  include/tencentcloud/cdb/v20170320/model/DescribeBinlogsRequest.h
   include/tencentcloud/cdb/v20170320/model/RollbackDBName.h
   include/tencentcloud/cdb/v20170320/model/CreateAuditRuleResponse.h
   include/tencentcloud/cdb/v20170320/model/DescribeDBInstanceInfoResponse.h
@@ -121,7 +119,6 @@ set(cdb_public_header_model
   include/tencentcloud/cdb/v20170320/model/DescribeDBInstanceGTIDResponse.h
   include/tencentcloud/cdb/v20170320/model/DeleteParamTemplateRequest.h
   include/tencentcloud/cdb/v20170320/model/DrInfo.h
-  include/tencentcloud/cdb/v20170320/model/DescribeBinlogsRequest.h
   include/tencentcloud/cdb/v20170320/model/ModifyBackupDownloadRestrictionRequest.h
   include/tencentcloud/cdb/v20170320/model/CreateParamTemplateResponse.h
   include/tencentcloud/cdb/v20170320/model/ModifyAccountPasswordResponse.h
@@ -215,7 +212,6 @@ set(cdb_public_header_model
   include/tencentcloud/cdb/v20170320/model/Inbound.h
   include/tencentcloud/cdb/v20170320/model/CreateAccountsResponse.h
   include/tencentcloud/cdb/v20170320/model/CreateDeployGroupResponse.h
-  include/tencentcloud/cdb/v20170320/model/SellConfig.h
   include/tencentcloud/cdb/v20170320/model/MasterInfo.h
   include/tencentcloud/cdb/v20170320/model/ResetRootAccountResponse.h
   include/tencentcloud/cdb/v20170320/model/ProxyNodeInfo.h
@@ -291,7 +287,6 @@ set(cdb_public_header_model
   include/tencentcloud/cdb/v20170320/model/DescribeDataBackupOverviewRequest.h
   include/tencentcloud/cdb/v20170320/model/DescribeDBInstanceInfoRequest.h
   include/tencentcloud/cdb/v20170320/model/BackupLimitVpcItem.h
-  include/tencentcloud/cdb/v20170320/model/DescribeDBZoneConfigResponse.h
   include/tencentcloud/cdb/v20170320/model/ModifyDBInstanceProjectRequest.h
   include/tencentcloud/cdb/v20170320/model/SwitchForUpgradeResponse.h
   include/tencentcloud/cdb/v20170320/model/DescribeCDBProxyRequest.h
@@ -320,7 +315,6 @@ set(cdb_public_header_model
   include/tencentcloud/cdb/v20170320/model/DescribeTasksResponse.h
   include/tencentcloud/cdb/v20170320/model/DescribeAuditPoliciesResponse.h
   include/tencentcloud/cdb/v20170320/model/IsolateDBInstanceResponse.h
-  include/tencentcloud/cdb/v20170320/model/DescribeDBZoneConfigRequest.h
   include/tencentcloud/cdb/v20170320/model/ModifyAccountDescriptionResponse.h
   include/tencentcloud/cdb/v20170320/model/CommonTimeWindow.h
   include/tencentcloud/cdb/v20170320/model/ModifyAccountMaxUserConnectionsRequest.h
@@ -388,7 +382,6 @@ set(cdb_public_header_model
 
 set(cdb_src
   src/v20170320/CdbClient.cpp
-  src/v20170320/model/SellType.cpp
   src/v20170320/model/TaskDetail.cpp
   src/v20170320/model/CdbZoneSellConf.cpp
   src/v20170320/model/CreateDBImportJobRequest.cpp
@@ -447,7 +440,6 @@ set(cdb_src
   src/v20170320/model/UpgradeDBInstanceRequest.cpp
   src/v20170320/model/ModifyParamTemplateRequest.cpp
   src/v20170320/model/StartReplicationResponse.cpp
-  src/v20170320/model/ZoneSellConf.cpp
   src/v20170320/model/ModifyCDBProxyVipVPortRequest.cpp
   src/v20170320/model/DescribeBinlogBackupOverviewResponse.cpp
   src/v20170320/model/InitDBInstancesRequest.cpp
@@ -472,7 +464,7 @@ set(cdb_src
   src/v20170320/model/ReleaseResult.cpp
   src/v20170320/model/ProxyGroups.cpp
   src/v20170320/model/AuditRule.cpp
-  src/v20170320/model/RegionSellConf.cpp
+  src/v20170320/model/DescribeBinlogsRequest.cpp
   src/v20170320/model/RollbackDBName.cpp
   src/v20170320/model/CreateAuditRuleResponse.cpp
   src/v20170320/model/DescribeDBInstanceInfoResponse.cpp
@@ -490,7 +482,6 @@ set(cdb_src
   src/v20170320/model/DescribeDBInstanceGTIDResponse.cpp
   src/v20170320/model/DeleteParamTemplateRequest.cpp
   src/v20170320/model/DrInfo.cpp
-  src/v20170320/model/DescribeBinlogsRequest.cpp
   src/v20170320/model/ModifyBackupDownloadRestrictionRequest.cpp
   src/v20170320/model/CreateParamTemplateResponse.cpp
   src/v20170320/model/ModifyAccountPasswordResponse.cpp
@@ -584,7 +575,6 @@ set(cdb_src
   src/v20170320/model/Inbound.cpp
   src/v20170320/model/CreateAccountsResponse.cpp
   src/v20170320/model/CreateDeployGroupResponse.cpp
-  src/v20170320/model/SellConfig.cpp
   src/v20170320/model/MasterInfo.cpp
   src/v20170320/model/ResetRootAccountResponse.cpp
   src/v20170320/model/ProxyNodeInfo.cpp
@@ -660,7 +650,6 @@ set(cdb_src
   src/v20170320/model/DescribeDataBackupOverviewRequest.cpp
   src/v20170320/model/DescribeDBInstanceInfoRequest.cpp
   src/v20170320/model/BackupLimitVpcItem.cpp
-  src/v20170320/model/DescribeDBZoneConfigResponse.cpp
   src/v20170320/model/ModifyDBInstanceProjectRequest.cpp
   src/v20170320/model/SwitchForUpgradeResponse.cpp
   src/v20170320/model/DescribeCDBProxyRequest.cpp
@@ -689,7 +678,6 @@ set(cdb_src
   src/v20170320/model/DescribeTasksResponse.cpp
   src/v20170320/model/DescribeAuditPoliciesResponse.cpp
   src/v20170320/model/IsolateDBInstanceResponse.cpp
-  src/v20170320/model/DescribeDBZoneConfigRequest.cpp
   src/v20170320/model/ModifyAccountDescriptionResponse.cpp
   src/v20170320/model/CommonTimeWindow.cpp
   src/v20170320/model/ModifyAccountMaxUserConnectionsRequest.cpp

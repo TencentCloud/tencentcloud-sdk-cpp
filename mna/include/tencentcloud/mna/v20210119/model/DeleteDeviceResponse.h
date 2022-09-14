@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_CDB_V20170320_MODEL_DESCRIBEDBZONECONFIGREQUEST_H_
-#define TENCENTCLOUD_CDB_V20170320_MODEL_DESCRIBEDBZONECONFIGREQUEST_H_
+#ifndef TENCENTCLOUD_MNA_V20210119_MODEL_DELETEDEVICERESPONSE_H_
+#define TENCENTCLOUD_MNA_V20210119_MODEL_DELETEDEVICERESPONSE_H_
 
 #include <string>
 #include <vector>
@@ -25,20 +25,21 @@
 
 namespace TencentCloud
 {
-    namespace Cdb
+    namespace Mna
     {
-        namespace V20170320
+        namespace V20210119
         {
             namespace Model
             {
                 /**
-                * DescribeDBZoneConfig请求参数结构体
+                * DeleteDevice返回参数结构体
                 */
-                class DescribeDBZoneConfigRequest : public AbstractModel
+                class DeleteDeviceResponse : public AbstractModel
                 {
                 public:
-                    DescribeDBZoneConfigRequest();
-                    ~DescribeDBZoneConfigRequest() = default;
+                    DeleteDeviceResponse();
+                    ~DeleteDeviceResponse() = default;
+                    CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
@@ -50,4 +51,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_CDB_V20170320_MODEL_DESCRIBEDBZONECONFIGREQUEST_H_
+#endif // !TENCENTCLOUD_MNA_V20210119_MODEL_DELETEDEVICERESPONSE_H_

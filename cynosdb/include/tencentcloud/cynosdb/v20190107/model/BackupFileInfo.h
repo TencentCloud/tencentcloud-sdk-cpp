@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取快照文件ID，用于回滚
-                     * @return SnapshotId 快照文件ID，用于回滚
+                     * 获取快照文件ID，已废弃，请使用BackupId
+                     * @return SnapshotId 快照文件ID，已废弃，请使用BackupId
                      */
                     uint64_t GetSnapshotId() const;
 
                     /**
-                     * 设置快照文件ID，用于回滚
-                     * @param SnapshotId 快照文件ID，用于回滚
+                     * 设置快照文件ID，已废弃，请使用BackupId
+                     * @param SnapshotId 快照文件ID，已废弃，请使用BackupId
                      */
                     void SetSnapshotId(const uint64_t& _snapshotId);
 
@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool SnapshotIdHasBeenSet() const;
 
                     /**
-                     * 获取快照文件名
-                     * @return FileName 快照文件名
+                     * 获取备份文件名
+                     * @return FileName 备份文件名
                      */
                     std::string GetFileName() const;
 
                     /**
-                     * 设置快照文件名
-                     * @param FileName 快照文件名
+                     * 设置备份文件名
+                     * @param FileName 备份文件名
                      */
                     void SetFileName(const std::string& _fileName);
 
@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool FileNameHasBeenSet() const;
 
                     /**
-                     * 获取快照文件大小
-                     * @return FileSize 快照文件大小
+                     * 获取备份文件大小
+                     * @return FileSize 备份文件大小
                      */
                     uint64_t GetFileSize() const;
 
                     /**
-                     * 设置快照文件大小
-                     * @param FileSize 快照文件大小
+                     * 设置备份文件大小
+                     * @param FileSize 备份文件大小
                      */
                     void SetFileSize(const uint64_t& _fileSize);
 
@@ -101,14 +101,14 @@ namespace TencentCloud
                     bool FileSizeHasBeenSet() const;
 
                     /**
-                     * 获取快照备份开始时间
-                     * @return StartTime 快照备份开始时间
+                     * 获取备份开始时间
+                     * @return StartTime 备份开始时间
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置快照备份开始时间
-                     * @param StartTime 快照备份开始时间
+                     * 设置备份开始时间
+                     * @param StartTime 备份开始时间
                      */
                     void SetStartTime(const std::string& _startTime);
 
@@ -119,14 +119,14 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取快照备份完成时间
-                     * @return FinishTime 快照备份完成时间
+                     * 获取备份完成时间
+                     * @return FinishTime 备份完成时间
                      */
                     std::string GetFinishTime() const;
 
                     /**
-                     * 设置快照备份完成时间
-                     * @param FinishTime 快照备份完成时间
+                     * 设置备份完成时间
+                     * @param FinishTime 备份完成时间
                      */
                     void SetFinishTime(const std::string& _finishTime);
 
@@ -137,14 +137,14 @@ namespace TencentCloud
                     bool FinishTimeHasBeenSet() const;
 
                     /**
-                     * 获取备份类型：snapshot，快照备份；timepoint，时间点备份
-                     * @return BackupType 备份类型：snapshot，快照备份；timepoint，时间点备份
+                     * 获取备份类型：snapshot，快照备份；logic，逻辑备份
+                     * @return BackupType 备份类型：snapshot，快照备份；logic，逻辑备份
                      */
                     std::string GetBackupType() const;
 
                     /**
-                     * 设置备份类型：snapshot，快照备份；timepoint，时间点备份
-                     * @param BackupType 备份类型：snapshot，快照备份；timepoint，时间点备份
+                     * 设置备份类型：snapshot，快照备份；logic，逻辑备份
+                     * @param BackupType 备份类型：snapshot，快照备份；logic，逻辑备份
                      */
                     void SetBackupType(const std::string& _backupType);
 
@@ -208,40 +208,106 @@ namespace TencentCloud
                      */
                     bool SnapshotTimeHasBeenSet() const;
 
+                    /**
+                     * 获取备份ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BackupId 备份ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetBackupId() const;
+
+                    /**
+                     * 设置备份ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param BackupId 备份ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetBackupId(const int64_t& _backupId);
+
+                    /**
+                     * 判断参数 BackupId 是否已赋值
+                     * @return BackupId 是否已赋值
+                     */
+                    bool BackupIdHasBeenSet() const;
+
+                    /**
+                     * 获取快照类型，可选值：full，全量；increment，增量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SnapShotType 快照类型，可选值：full，全量；increment，增量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetSnapShotType() const;
+
+                    /**
+                     * 设置快照类型，可选值：full，全量；increment，增量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SnapShotType 快照类型，可选值：full，全量；increment，增量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSnapShotType(const std::string& _snapShotType);
+
+                    /**
+                     * 判断参数 SnapShotType 是否已赋值
+                     * @return SnapShotType 是否已赋值
+                     */
+                    bool SnapShotTypeHasBeenSet() const;
+
+                    /**
+                     * 获取备份文件备注
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BackupName 备份文件备注
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetBackupName() const;
+
+                    /**
+                     * 设置备份文件备注
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param BackupName 备份文件备注
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetBackupName(const std::string& _backupName);
+
+                    /**
+                     * 判断参数 BackupName 是否已赋值
+                     * @return BackupName 是否已赋值
+                     */
+                    bool BackupNameHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 快照文件ID，用于回滚
+                     * 快照文件ID，已废弃，请使用BackupId
                      */
                     uint64_t m_snapshotId;
                     bool m_snapshotIdHasBeenSet;
 
                     /**
-                     * 快照文件名
+                     * 备份文件名
                      */
                     std::string m_fileName;
                     bool m_fileNameHasBeenSet;
 
                     /**
-                     * 快照文件大小
+                     * 备份文件大小
                      */
                     uint64_t m_fileSize;
                     bool m_fileSizeHasBeenSet;
 
                     /**
-                     * 快照备份开始时间
+                     * 备份开始时间
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 快照备份完成时间
+                     * 备份完成时间
                      */
                     std::string m_finishTime;
                     bool m_finishTimeHasBeenSet;
 
                     /**
-                     * 备份类型：snapshot，快照备份；timepoint，时间点备份
+                     * 备份类型：snapshot，快照备份；logic，逻辑备份
                      */
                     std::string m_backupType;
                     bool m_backupTypeHasBeenSet;
@@ -263,6 +329,27 @@ namespace TencentCloud
                      */
                     std::string m_snapshotTime;
                     bool m_snapshotTimeHasBeenSet;
+
+                    /**
+                     * 备份ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_backupId;
+                    bool m_backupIdHasBeenSet;
+
+                    /**
+                     * 快照类型，可选值：full，全量；increment，增量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_snapShotType;
+                    bool m_snapShotTypeHasBeenSet;
+
+                    /**
+                     * 备份文件备注
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_backupName;
+                    bool m_backupNameHasBeenSet;
 
                 };
             }

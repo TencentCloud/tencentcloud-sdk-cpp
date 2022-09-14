@@ -29,7 +29,10 @@ BackupFileInfo::BackupFileInfo() :
     m_backupTypeHasBeenSet(false),
     m_backupMethodHasBeenSet(false),
     m_backupStatusHasBeenSet(false),
-    m_snapshotTimeHasBeenSet(false)
+    m_snapshotTimeHasBeenSet(false),
+    m_backupIdHasBeenSet(false),
+    m_snapShotTypeHasBeenSet(false),
+    m_backupNameHasBeenSet(false)
 {
 }
 
@@ -128,6 +131,36 @@ CoreInternalOutcome BackupFileInfo::Deserialize(const rapidjson::Value &value)
         m_snapshotTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("BackupId") && !value["BackupId"].IsNull())
+    {
+        if (!value["BackupId"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `BackupFileInfo.BackupId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_backupId = value["BackupId"].GetInt64();
+        m_backupIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("SnapShotType") && !value["SnapShotType"].IsNull())
+    {
+        if (!value["SnapShotType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BackupFileInfo.SnapShotType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_snapShotType = string(value["SnapShotType"].GetString());
+        m_snapShotTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("BackupName") && !value["BackupName"].IsNull())
+    {
+        if (!value["BackupName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BackupFileInfo.BackupName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_backupName = string(value["BackupName"].GetString());
+        m_backupNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -205,6 +238,30 @@ void BackupFileInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "SnapshotTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_snapshotTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_backupIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BackupId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_backupId, allocator);
+    }
+
+    if (m_snapShotTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SnapShotType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_snapShotType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_backupNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BackupName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_backupName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -352,5 +409,53 @@ void BackupFileInfo::SetSnapshotTime(const string& _snapshotTime)
 bool BackupFileInfo::SnapshotTimeHasBeenSet() const
 {
     return m_snapshotTimeHasBeenSet;
+}
+
+int64_t BackupFileInfo::GetBackupId() const
+{
+    return m_backupId;
+}
+
+void BackupFileInfo::SetBackupId(const int64_t& _backupId)
+{
+    m_backupId = _backupId;
+    m_backupIdHasBeenSet = true;
+}
+
+bool BackupFileInfo::BackupIdHasBeenSet() const
+{
+    return m_backupIdHasBeenSet;
+}
+
+string BackupFileInfo::GetSnapShotType() const
+{
+    return m_snapShotType;
+}
+
+void BackupFileInfo::SetSnapShotType(const string& _snapShotType)
+{
+    m_snapShotType = _snapShotType;
+    m_snapShotTypeHasBeenSet = true;
+}
+
+bool BackupFileInfo::SnapShotTypeHasBeenSet() const
+{
+    return m_snapShotTypeHasBeenSet;
+}
+
+string BackupFileInfo::GetBackupName() const
+{
+    return m_backupName;
+}
+
+void BackupFileInfo::SetBackupName(const string& _backupName)
+{
+    m_backupName = _backupName;
+    m_backupNameHasBeenSet = true;
+}
+
+bool BackupFileInfo::BackupNameHasBeenSet() const
+{
+    return m_backupNameHasBeenSet;
 }
 

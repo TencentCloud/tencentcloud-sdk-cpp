@@ -50,11 +50,11 @@ namespace TencentCloud
                      * 获取处理状态
   SUCCESS：签约成功
   FAILED：签约失败
-  PROCESSING“签约中
+  PROCESSING：签约中
                      * @return SignStatus 处理状态
   SUCCESS：签约成功
   FAILED：签约失败
-  PROCESSING“签约中
+  PROCESSING：签约中
                      */
                     std::string GetSignStatus() const;
 
@@ -62,11 +62,11 @@ namespace TencentCloud
                      * 设置处理状态
   SUCCESS：签约成功
   FAILED：签约失败
-  PROCESSING“签约中
+  PROCESSING：签约中
                      * @param SignStatus 处理状态
   SUCCESS：签约成功
   FAILED：签约失败
-  PROCESSING“签约中
+  PROCESSING：签约中
                      */
                     void SetSignStatus(const std::string& _signStatus);
 
@@ -126,7 +126,7 @@ namespace TencentCloud
                      * 处理状态
   SUCCESS：签约成功
   FAILED：签约失败
-  PROCESSING“签约中
+  PROCESSING：签约中
                      */
                     std::string m_signStatus;
                     bool m_signStatusHasBeenSet;
