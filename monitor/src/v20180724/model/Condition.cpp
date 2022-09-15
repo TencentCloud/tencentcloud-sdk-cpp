@@ -30,7 +30,10 @@ Condition::Condition() :
     m_metricDisplayNameHasBeenSet(false),
     m_periodHasBeenSet(false),
     m_ruleIDHasBeenSet(false),
-    m_unitHasBeenSet(false)
+    m_unitHasBeenSet(false),
+    m_isAdvancedHasBeenSet(false),
+    m_isOpenHasBeenSet(false),
+    m_productIdHasBeenSet(false)
 {
 }
 
@@ -139,6 +142,36 @@ CoreInternalOutcome Condition::Deserialize(const rapidjson::Value &value)
         m_unitHasBeenSet = true;
     }
 
+    if (value.HasMember("IsAdvanced") && !value["IsAdvanced"].IsNull())
+    {
+        if (!value["IsAdvanced"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Condition.IsAdvanced` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isAdvanced = value["IsAdvanced"].GetInt64();
+        m_isAdvancedHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsOpen") && !value["IsOpen"].IsNull())
+    {
+        if (!value["IsOpen"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Condition.IsOpen` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isOpen = value["IsOpen"].GetInt64();
+        m_isOpenHasBeenSet = true;
+    }
+
+    if (value.HasMember("ProductId") && !value["ProductId"].IsNull())
+    {
+        if (!value["ProductId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Condition.ProductId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_productId = string(value["ProductId"].GetString());
+        m_productIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -224,6 +257,30 @@ void Condition::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "Unit";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_unit.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isAdvancedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsAdvanced";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isAdvanced, allocator);
+    }
+
+    if (m_isOpenHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsOpen";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isOpen, allocator);
+    }
+
+    if (m_productIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProductId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_productId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -387,5 +444,53 @@ void Condition::SetUnit(const string& _unit)
 bool Condition::UnitHasBeenSet() const
 {
     return m_unitHasBeenSet;
+}
+
+int64_t Condition::GetIsAdvanced() const
+{
+    return m_isAdvanced;
+}
+
+void Condition::SetIsAdvanced(const int64_t& _isAdvanced)
+{
+    m_isAdvanced = _isAdvanced;
+    m_isAdvancedHasBeenSet = true;
+}
+
+bool Condition::IsAdvancedHasBeenSet() const
+{
+    return m_isAdvancedHasBeenSet;
+}
+
+int64_t Condition::GetIsOpen() const
+{
+    return m_isOpen;
+}
+
+void Condition::SetIsOpen(const int64_t& _isOpen)
+{
+    m_isOpen = _isOpen;
+    m_isOpenHasBeenSet = true;
+}
+
+bool Condition::IsOpenHasBeenSet() const
+{
+    return m_isOpenHasBeenSet;
+}
+
+string Condition::GetProductId() const
+{
+    return m_productId;
+}
+
+void Condition::SetProductId(const string& _productId)
+{
+    m_productId = _productId;
+    m_productIdHasBeenSet = true;
+}
+
+bool Condition::ProductIdHasBeenSet() const
+{
+    return m_productIdHasBeenSet;
 }
 

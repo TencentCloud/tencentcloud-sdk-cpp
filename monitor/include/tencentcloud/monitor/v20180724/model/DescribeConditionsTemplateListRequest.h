@@ -168,6 +168,24 @@ namespace TencentCloud
                      */
                     bool UpdateTimeOrderHasBeenSet() const;
 
+                    /**
+                     * 获取指定按绑定策略数目的排序方式，asc=升序, desc=降序
+                     * @return PolicyCountOrder 指定按绑定策略数目的排序方式，asc=升序, desc=降序
+                     */
+                    std::string GetPolicyCountOrder() const;
+
+                    /**
+                     * 设置指定按绑定策略数目的排序方式，asc=升序, desc=降序
+                     * @param PolicyCountOrder 指定按绑定策略数目的排序方式，asc=升序, desc=降序
+                     */
+                    void SetPolicyCountOrder(const std::string& _policyCountOrder);
+
+                    /**
+                     * 判断参数 PolicyCountOrder 是否已赋值
+                     * @return PolicyCountOrder 是否已赋值
+                     */
+                    bool PolicyCountOrderHasBeenSet() const;
+
                 private:
 
                     /**
@@ -211,6 +229,12 @@ namespace TencentCloud
                      */
                     std::string m_updateTimeOrder;
                     bool m_updateTimeOrderHasBeenSet;
+
+                    /**
+                     * 指定按绑定策略数目的排序方式，asc=升序, desc=降序
+                     */
+                    std::string m_policyCountOrder;
+                    bool m_policyCountOrderHasBeenSet;
 
                 };
             }

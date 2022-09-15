@@ -96,6 +96,24 @@ namespace TencentCloud
                      */
                     bool EditionHasBeenSet() const;
 
+                    /**
+                     * 获取是否为多域名黑白名单
+                     * @return SourceType 是否为多域名黑白名单
+                     */
+                    std::string GetSourceType() const;
+
+                    /**
+                     * 设置是否为多域名黑白名单
+                     * @param SourceType 是否为多域名黑白名单
+                     */
+                    void SetSourceType(const std::string& _sourceType);
+
+                    /**
+                     * 判断参数 SourceType 是否已赋值
+                     * @return SourceType 是否已赋值
+                     */
+                    bool SourceTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -115,6 +133,12 @@ namespace TencentCloud
                      */
                     std::string m_edition;
                     bool m_editionHasBeenSet;
+
+                    /**
+                     * 是否为多域名黑白名单
+                     */
+                    std::string m_sourceType;
+                    bool m_sourceTypeHasBeenSet;
 
                 };
             }

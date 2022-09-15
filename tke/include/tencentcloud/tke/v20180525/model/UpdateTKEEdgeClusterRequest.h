@@ -260,6 +260,24 @@ namespace TencentCloud
                      */
                     bool AutoUpgradeClusterLevelHasBeenSet() const;
 
+                    /**
+                     * 获取边缘集群的集群规模
+                     * @return ClusterLevel 边缘集群的集群规模
+                     */
+                    std::string GetClusterLevel() const;
+
+                    /**
+                     * 设置边缘集群的集群规模
+                     * @param ClusterLevel 边缘集群的集群规模
+                     */
+                    void SetClusterLevel(const std::string& _clusterLevel);
+
+                    /**
+                     * 判断参数 ClusterLevel 是否已赋值
+                     * @return ClusterLevel 是否已赋值
+                     */
+                    bool ClusterLevelHasBeenSet() const;
+
                 private:
 
                     /**
@@ -333,6 +351,12 @@ namespace TencentCloud
                      */
                     bool m_autoUpgradeClusterLevel;
                     bool m_autoUpgradeClusterLevelHasBeenSet;
+
+                    /**
+                     * 边缘集群的集群规模
+                     */
+                    std::string m_clusterLevel;
+                    bool m_clusterLevelHasBeenSet;
 
                 };
             }

@@ -14,23 +14,24 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/cfw/v20190904/model/DescribeAddrTemplateListResponse.h>
+#include <tencentcloud/mna/v20210119/model/GetFlowStatisticResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Cfw::V20190904::Model;
+using namespace TencentCloud::Mna::V20210119::Model;
 using namespace std;
 
-DescribeAddrTemplateListResponse::DescribeAddrTemplateListResponse() :
-    m_totalHasBeenSet(false),
-    m_dataHasBeenSet(false),
-    m_nameListHasBeenSet(false)
+GetFlowStatisticResponse::GetFlowStatisticResponse() :
+    m_netDetailsHasBeenSet(false),
+    m_maxValueHasBeenSet(false),
+    m_avgValueHasBeenSet(false),
+    m_totalValueHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome DescribeAddrTemplateListResponse::Deserialize(const string &payload)
+CoreInternalOutcome GetFlowStatisticResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -64,93 +65,103 @@ CoreInternalOutcome DescribeAddrTemplateListResponse::Deserialize(const string &
     }
 
 
-    if (rsp.HasMember("Total") && !rsp["Total"].IsNull())
+    if (rsp.HasMember("NetDetails") && !rsp["NetDetails"].IsNull())
     {
-        if (!rsp["Total"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `Total` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_total = rsp["Total"].GetInt64();
-        m_totalHasBeenSet = true;
-    }
+        if (!rsp["NetDetails"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `NetDetails` is not array type"));
 
-    if (rsp.HasMember("Data") && !rsp["Data"].IsNull())
-    {
-        if (!rsp["Data"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `Data` is not array type"));
-
-        const rapidjson::Value &tmpValue = rsp["Data"];
+        const rapidjson::Value &tmpValue = rsp["NetDetails"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            TemplateListInfo item;
+            NetDetails item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
             if (!outcome.IsSuccess())
             {
                 outcome.GetError().SetRequestId(requestId);
                 return outcome;
             }
-            m_data.push_back(item);
+            m_netDetails.push_back(item);
         }
-        m_dataHasBeenSet = true;
+        m_netDetailsHasBeenSet = true;
     }
 
-    if (rsp.HasMember("NameList") && !rsp["NameList"].IsNull())
+    if (rsp.HasMember("MaxValue") && !rsp["MaxValue"].IsNull())
     {
-        if (!rsp["NameList"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `NameList` is not array type"));
-
-        const rapidjson::Value &tmpValue = rsp["NameList"];
-        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        if (!rsp["MaxValue"].IsLosslessDouble())
         {
-            m_nameList.push_back((*itr).GetString());
+            return CoreInternalOutcome(Core::Error("response `MaxValue` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
-        m_nameListHasBeenSet = true;
+        m_maxValue = rsp["MaxValue"].GetDouble();
+        m_maxValueHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("AvgValue") && !rsp["AvgValue"].IsNull())
+    {
+        if (!rsp["AvgValue"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `AvgValue` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_avgValue = rsp["AvgValue"].GetDouble();
+        m_avgValueHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("TotalValue") && !rsp["TotalValue"].IsNull())
+    {
+        if (!rsp["TotalValue"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `TotalValue` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalValue = rsp["TotalValue"].GetDouble();
+        m_totalValueHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string DescribeAddrTemplateListResponse::ToJsonString() const
+string GetFlowStatisticResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_totalHasBeenSet)
+    if (m_netDetailsHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Total";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_total, allocator);
-    }
-
-    if (m_dataHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Data";
+        string key = "NetDetails";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
-        for (auto itr = m_data.begin(); itr != m_data.end(); ++itr, ++i)
+        for (auto itr = m_netDetails.begin(); itr != m_netDetails.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
-    if (m_nameListHasBeenSet)
+    if (m_maxValueHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "NameList";
+        string key = "MaxValue";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+        value.AddMember(iKey, m_maxValue, allocator);
+    }
 
-        for (auto itr = m_nameList.begin(); itr != m_nameList.end(); ++itr)
-        {
-            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
-        }
+    if (m_avgValueHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AvgValue";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_avgValue, allocator);
+    }
+
+    if (m_totalValueHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TotalValue";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_totalValue, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -165,34 +176,44 @@ string DescribeAddrTemplateListResponse::ToJsonString() const
 }
 
 
-int64_t DescribeAddrTemplateListResponse::GetTotal() const
+vector<NetDetails> GetFlowStatisticResponse::GetNetDetails() const
 {
-    return m_total;
+    return m_netDetails;
 }
 
-bool DescribeAddrTemplateListResponse::TotalHasBeenSet() const
+bool GetFlowStatisticResponse::NetDetailsHasBeenSet() const
 {
-    return m_totalHasBeenSet;
+    return m_netDetailsHasBeenSet;
 }
 
-vector<TemplateListInfo> DescribeAddrTemplateListResponse::GetData() const
+double GetFlowStatisticResponse::GetMaxValue() const
 {
-    return m_data;
+    return m_maxValue;
 }
 
-bool DescribeAddrTemplateListResponse::DataHasBeenSet() const
+bool GetFlowStatisticResponse::MaxValueHasBeenSet() const
 {
-    return m_dataHasBeenSet;
+    return m_maxValueHasBeenSet;
 }
 
-vector<string> DescribeAddrTemplateListResponse::GetNameList() const
+double GetFlowStatisticResponse::GetAvgValue() const
 {
-    return m_nameList;
+    return m_avgValue;
 }
 
-bool DescribeAddrTemplateListResponse::NameListHasBeenSet() const
+bool GetFlowStatisticResponse::AvgValueHasBeenSet() const
 {
-    return m_nameListHasBeenSet;
+    return m_avgValueHasBeenSet;
+}
+
+double GetFlowStatisticResponse::GetTotalValue() const
+{
+    return m_totalValue;
+}
+
+bool GetFlowStatisticResponse::TotalValueHasBeenSet() const
+{
+    return m_totalValueHasBeenSet;
 }
 
 

@@ -42,7 +42,8 @@ InstanceInfo::InstanceInfo() :
     m_editionHasBeenSet(false),
     m_fraudPkgHasBeenSet(false),
     m_botPkgHasBeenSet(false),
-    m_botQPSHasBeenSet(false)
+    m_botQPSHasBeenSet(false),
+    m_elasticBillingHasBeenSet(false)
 {
 }
 
@@ -306,6 +307,16 @@ CoreInternalOutcome InstanceInfo::Deserialize(const rapidjson::Value &value)
         m_botQPSHasBeenSet = true;
     }
 
+    if (value.HasMember("ElasticBilling") && !value["ElasticBilling"].IsNull())
+    {
+        if (!value["ElasticBilling"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.ElasticBilling` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_elasticBilling = value["ElasticBilling"].GetUint64();
+        m_elasticBillingHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -492,6 +503,14 @@ void InstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_botQPS.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_elasticBillingHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ElasticBilling";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_elasticBilling, allocator);
     }
 
 }
@@ -847,5 +866,21 @@ void InstanceInfo::SetBotQPS(const BotQPS& _botQPS)
 bool InstanceInfo::BotQPSHasBeenSet() const
 {
     return m_botQPSHasBeenSet;
+}
+
+uint64_t InstanceInfo::GetElasticBilling() const
+{
+    return m_elasticBilling;
+}
+
+void InstanceInfo::SetElasticBilling(const uint64_t& _elasticBilling)
+{
+    m_elasticBilling = _elasticBilling;
+    m_elasticBillingHasBeenSet = true;
+}
+
+bool InstanceInfo::ElasticBillingHasBeenSet() const
+{
+    return m_elasticBillingHasBeenSet;
 }
 

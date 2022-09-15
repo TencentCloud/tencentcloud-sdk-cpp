@@ -341,6 +341,49 @@ MnaClient::GetDevicesOutcomeCallable MnaClient::GetDevicesCallable(const GetDevi
     return task->get_future();
 }
 
+MnaClient::GetFlowStatisticOutcome MnaClient::GetFlowStatistic(const GetFlowStatisticRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetFlowStatistic");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetFlowStatisticResponse rsp = GetFlowStatisticResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetFlowStatisticOutcome(rsp);
+        else
+            return GetFlowStatisticOutcome(o.GetError());
+    }
+    else
+    {
+        return GetFlowStatisticOutcome(outcome.GetError());
+    }
+}
+
+void MnaClient::GetFlowStatisticAsync(const GetFlowStatisticRequest& request, const GetFlowStatisticAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetFlowStatistic(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MnaClient::GetFlowStatisticOutcomeCallable MnaClient::GetFlowStatisticCallable(const GetFlowStatisticRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetFlowStatisticOutcome()>>(
+        [this, request]()
+        {
+            return this->GetFlowStatistic(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MnaClient::GetStatisticDataOutcome MnaClient::GetStatisticData(const GetStatisticDataRequest &request)
 {
     auto outcome = MakeRequest(request, "GetStatisticData");

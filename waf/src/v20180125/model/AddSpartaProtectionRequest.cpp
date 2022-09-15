@@ -46,7 +46,11 @@ AddSpartaProtectionRequest::AddSpartaProtectionRequest() :
     m_isKeepAliveHasBeenSet(false),
     m_instanceIDHasBeenSet(false),
     m_anycastHasBeenSet(false),
-    m_weightsHasBeenSet(false)
+    m_weightsHasBeenSet(false),
+    m_activeCheckHasBeenSet(false),
+    m_tLSVersionHasBeenSet(false),
+    m_ciphersHasBeenSet(false),
+    m_cipherTemplateHasBeenSet(false)
 {
 }
 
@@ -269,6 +273,43 @@ string AddSpartaProtectionRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
+    }
+
+    if (m_activeCheckHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ActiveCheck";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_activeCheck, allocator);
+    }
+
+    if (m_tLSVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TLSVersion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_tLSVersion, allocator);
+    }
+
+    if (m_ciphersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Ciphers";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_ciphers.begin(); itr != m_ciphers.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
+    }
+
+    if (m_cipherTemplateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CipherTemplate";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_cipherTemplate, allocator);
     }
 
 
@@ -661,6 +702,70 @@ void AddSpartaProtectionRequest::SetWeights(const vector<int64_t>& _weights)
 bool AddSpartaProtectionRequest::WeightsHasBeenSet() const
 {
     return m_weightsHasBeenSet;
+}
+
+int64_t AddSpartaProtectionRequest::GetActiveCheck() const
+{
+    return m_activeCheck;
+}
+
+void AddSpartaProtectionRequest::SetActiveCheck(const int64_t& _activeCheck)
+{
+    m_activeCheck = _activeCheck;
+    m_activeCheckHasBeenSet = true;
+}
+
+bool AddSpartaProtectionRequest::ActiveCheckHasBeenSet() const
+{
+    return m_activeCheckHasBeenSet;
+}
+
+int64_t AddSpartaProtectionRequest::GetTLSVersion() const
+{
+    return m_tLSVersion;
+}
+
+void AddSpartaProtectionRequest::SetTLSVersion(const int64_t& _tLSVersion)
+{
+    m_tLSVersion = _tLSVersion;
+    m_tLSVersionHasBeenSet = true;
+}
+
+bool AddSpartaProtectionRequest::TLSVersionHasBeenSet() const
+{
+    return m_tLSVersionHasBeenSet;
+}
+
+vector<int64_t> AddSpartaProtectionRequest::GetCiphers() const
+{
+    return m_ciphers;
+}
+
+void AddSpartaProtectionRequest::SetCiphers(const vector<int64_t>& _ciphers)
+{
+    m_ciphers = _ciphers;
+    m_ciphersHasBeenSet = true;
+}
+
+bool AddSpartaProtectionRequest::CiphersHasBeenSet() const
+{
+    return m_ciphersHasBeenSet;
+}
+
+int64_t AddSpartaProtectionRequest::GetCipherTemplate() const
+{
+    return m_cipherTemplate;
+}
+
+void AddSpartaProtectionRequest::SetCipherTemplate(const int64_t& _cipherTemplate)
+{
+    m_cipherTemplate = _cipherTemplate;
+    m_cipherTemplateHasBeenSet = true;
+}
+
+bool AddSpartaProtectionRequest::CipherTemplateHasBeenSet() const
+{
+    return m_cipherTemplateHasBeenSet;
 }
 
 

@@ -475,6 +475,78 @@ namespace TencentCloud
                      */
                     bool WeightsHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启主动健康检测，1表示开启，0表示不开启
+                     * @return ActiveCheck 是否开启主动健康检测，1表示开启，0表示不开启
+                     */
+                    int64_t GetActiveCheck() const;
+
+                    /**
+                     * 设置是否开启主动健康检测，1表示开启，0表示不开启
+                     * @param ActiveCheck 是否开启主动健康检测，1表示开启，0表示不开启
+                     */
+                    void SetActiveCheck(const int64_t& _activeCheck);
+
+                    /**
+                     * 判断参数 ActiveCheck 是否已赋值
+                     * @return ActiveCheck 是否已赋值
+                     */
+                    bool ActiveCheckHasBeenSet() const;
+
+                    /**
+                     * 获取TLS版本信息
+                     * @return TLSVersion TLS版本信息
+                     */
+                    int64_t GetTLSVersion() const;
+
+                    /**
+                     * 设置TLS版本信息
+                     * @param TLSVersion TLS版本信息
+                     */
+                    void SetTLSVersion(const int64_t& _tLSVersion);
+
+                    /**
+                     * 判断参数 TLSVersion 是否已赋值
+                     * @return TLSVersion 是否已赋值
+                     */
+                    bool TLSVersionHasBeenSet() const;
+
+                    /**
+                     * 获取加密套件信息
+                     * @return Ciphers 加密套件信息
+                     */
+                    std::vector<int64_t> GetCiphers() const;
+
+                    /**
+                     * 设置加密套件信息
+                     * @param Ciphers 加密套件信息
+                     */
+                    void SetCiphers(const std::vector<int64_t>& _ciphers);
+
+                    /**
+                     * 判断参数 Ciphers 是否已赋值
+                     * @return Ciphers 是否已赋值
+                     */
+                    bool CiphersHasBeenSet() const;
+
+                    /**
+                     * 获取0:不支持选择：默认模版  1:通用型模版 2:安全型模版 3:自定义模版
+                     * @return CipherTemplate 0:不支持选择：默认模版  1:通用型模版 2:安全型模版 3:自定义模版
+                     */
+                    int64_t GetCipherTemplate() const;
+
+                    /**
+                     * 设置0:不支持选择：默认模版  1:通用型模版 2:安全型模版 3:自定义模版
+                     * @param CipherTemplate 0:不支持选择：默认模版  1:通用型模版 2:安全型模版 3:自定义模版
+                     */
+                    void SetCipherTemplate(const int64_t& _cipherTemplate);
+
+                    /**
+                     * 判断参数 CipherTemplate 是否已赋值
+                     * @return CipherTemplate 是否已赋值
+                     */
+                    bool CipherTemplateHasBeenSet() const;
+
                 private:
 
                     /**
@@ -620,6 +692,30 @@ namespace TencentCloud
                      */
                     std::vector<int64_t> m_weights;
                     bool m_weightsHasBeenSet;
+
+                    /**
+                     * 是否开启主动健康检测，1表示开启，0表示不开启
+                     */
+                    int64_t m_activeCheck;
+                    bool m_activeCheckHasBeenSet;
+
+                    /**
+                     * TLS版本信息
+                     */
+                    int64_t m_tLSVersion;
+                    bool m_tLSVersionHasBeenSet;
+
+                    /**
+                     * 加密套件信息
+                     */
+                    std::vector<int64_t> m_ciphers;
+                    bool m_ciphersHasBeenSet;
+
+                    /**
+                     * 0:不支持选择：默认模版  1:通用型模版 2:安全型模版 3:自定义模版
+                     */
+                    int64_t m_cipherTemplate;
+                    bool m_cipherTemplateHasBeenSet;
 
                 };
             }

@@ -25,7 +25,8 @@ using namespace std;
 UpsertIpAccessControlRequest::UpsertIpAccessControlRequest() :
     m_domainHasBeenSet(false),
     m_itemsHasBeenSet(false),
-    m_editionHasBeenSet(false)
+    m_editionHasBeenSet(false),
+    m_sourceTypeHasBeenSet(false)
 {
 }
 
@@ -63,6 +64,14 @@ string UpsertIpAccessControlRequest::ToJsonString() const
         string key = "Edition";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_edition.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sourceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SourceType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_sourceType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -119,6 +128,22 @@ void UpsertIpAccessControlRequest::SetEdition(const string& _edition)
 bool UpsertIpAccessControlRequest::EditionHasBeenSet() const
 {
     return m_editionHasBeenSet;
+}
+
+string UpsertIpAccessControlRequest::GetSourceType() const
+{
+    return m_sourceType;
+}
+
+void UpsertIpAccessControlRequest::SetSourceType(const string& _sourceType)
+{
+    m_sourceType = _sourceType;
+    m_sourceTypeHasBeenSet = true;
+}
+
+bool UpsertIpAccessControlRequest::SourceTypeHasBeenSet() const
+{
+    return m_sourceTypeHasBeenSet;
 }
 
 

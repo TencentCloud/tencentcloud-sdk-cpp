@@ -21,7 +21,8 @@ using namespace TencentCloud::Mps::V20190612::Model;
 using namespace std;
 
 EditMediaOutputConfig::EditMediaOutputConfig() :
-    m_containerHasBeenSet(false)
+    m_containerHasBeenSet(false),
+    m_typeHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,16 @@ CoreInternalOutcome EditMediaOutputConfig::Deserialize(const rapidjson::Value &v
         m_containerHasBeenSet = true;
     }
 
+    if (value.HasMember("Type") && !value["Type"].IsNull())
+    {
+        if (!value["Type"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EditMediaOutputConfig.Type` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_type = string(value["Type"].GetString());
+        m_typeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -53,6 +64,14 @@ void EditMediaOutputConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "Container";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_container.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_typeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Type";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -72,5 +91,21 @@ void EditMediaOutputConfig::SetContainer(const string& _container)
 bool EditMediaOutputConfig::ContainerHasBeenSet() const
 {
     return m_containerHasBeenSet;
+}
+
+string EditMediaOutputConfig::GetType() const
+{
+    return m_type;
+}
+
+void EditMediaOutputConfig::SetType(const string& _type)
+{
+    m_type = _type;
+    m_typeHasBeenSet = true;
+}
+
+bool EditMediaOutputConfig::TypeHasBeenSet() const
+{
+    return m_typeHasBeenSet;
 }
 

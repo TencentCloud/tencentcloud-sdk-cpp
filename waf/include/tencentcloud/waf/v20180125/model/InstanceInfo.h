@@ -459,6 +459,28 @@ namespace TencentCloud
                      */
                     bool BotQPSHasBeenSet() const;
 
+                    /**
+                     * 获取qps弹性计费上限
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ElasticBilling qps弹性计费上限
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetElasticBilling() const;
+
+                    /**
+                     * 设置qps弹性计费上限
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ElasticBilling qps弹性计费上限
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetElasticBilling(const uint64_t& _elasticBilling);
+
+                    /**
+                     * 判断参数 ElasticBilling 是否已赋值
+                     * @return ElasticBilling 是否已赋值
+                     */
+                    bool ElasticBillingHasBeenSet() const;
+
                 private:
 
                     /**
@@ -595,6 +617,13 @@ namespace TencentCloud
                      */
                     BotQPS m_botQPS;
                     bool m_botQPSHasBeenSet;
+
+                    /**
+                     * qps弹性计费上限
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_elasticBilling;
+                    bool m_elasticBillingHasBeenSet;
 
                 };
             }

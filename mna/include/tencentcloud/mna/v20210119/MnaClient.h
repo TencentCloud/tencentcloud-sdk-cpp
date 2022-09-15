@@ -37,6 +37,8 @@
 #include <tencentcloud/mna/v20210119/model/GetDeviceResponse.h>
 #include <tencentcloud/mna/v20210119/model/GetDevicesRequest.h>
 #include <tencentcloud/mna/v20210119/model/GetDevicesResponse.h>
+#include <tencentcloud/mna/v20210119/model/GetFlowStatisticRequest.h>
+#include <tencentcloud/mna/v20210119/model/GetFlowStatisticResponse.h>
 #include <tencentcloud/mna/v20210119/model/GetStatisticDataRequest.h>
 #include <tencentcloud/mna/v20210119/model/GetStatisticDataResponse.h>
 #include <tencentcloud/mna/v20210119/model/UpdateDeviceRequest.h>
@@ -76,6 +78,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetDevicesResponse> GetDevicesOutcome;
                 typedef std::future<GetDevicesOutcome> GetDevicesOutcomeCallable;
                 typedef std::function<void(const MnaClient*, const Model::GetDevicesRequest&, GetDevicesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetDevicesAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetFlowStatisticResponse> GetFlowStatisticOutcome;
+                typedef std::future<GetFlowStatisticOutcome> GetFlowStatisticOutcomeCallable;
+                typedef std::function<void(const MnaClient*, const Model::GetFlowStatisticRequest&, GetFlowStatisticOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetFlowStatisticAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetStatisticDataResponse> GetStatisticDataOutcome;
                 typedef std::future<GetStatisticDataOutcome> GetStatisticDataOutcomeCallable;
                 typedef std::function<void(const MnaClient*, const Model::GetStatisticDataRequest&, GetStatisticDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetStatisticDataAsyncHandler;
@@ -147,6 +152,15 @@ namespace TencentCloud
                 GetDevicesOutcome GetDevices(const Model::GetDevicesRequest &request);
                 void GetDevicesAsync(const Model::GetDevicesRequest& request, const GetDevicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GetDevicesOutcomeCallable GetDevicesCallable(const Model::GetDevicesRequest& request);
+
+                /**
+                 *获取指定设备Id，指定时间点数据流量使用情况
+                 * @param req GetFlowStatisticRequest
+                 * @return GetFlowStatisticOutcome
+                 */
+                GetFlowStatisticOutcome GetFlowStatistic(const Model::GetFlowStatisticRequest &request);
+                void GetFlowStatisticAsync(const Model::GetFlowStatisticRequest& request, const GetFlowStatisticAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetFlowStatisticOutcomeCallable GetFlowStatisticCallable(const Model::GetFlowStatisticRequest& request);
 
                 /**
                  *在用量统计页面下载流量数据

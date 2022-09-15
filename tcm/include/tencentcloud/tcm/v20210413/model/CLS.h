@@ -100,6 +100,24 @@ namespace TencentCloud
                      */
                     bool TopicHasBeenSet() const;
 
+                    /**
+                     * 获取是否删除
+                     * @return NeedDelete 是否删除
+                     */
+                    bool GetNeedDelete() const;
+
+                    /**
+                     * 设置是否删除
+                     * @param NeedDelete 是否删除
+                     */
+                    void SetNeedDelete(const bool& _needDelete);
+
+                    /**
+                     * 判断参数 NeedDelete 是否已赋值
+                     * @return NeedDelete 是否已赋值
+                     */
+                    bool NeedDeleteHasBeenSet() const;
+
                 private:
 
                     /**
@@ -119,6 +137,12 @@ namespace TencentCloud
                      */
                     std::string m_topic;
                     bool m_topicHasBeenSet;
+
+                    /**
+                     * 是否删除
+                     */
+                    bool m_needDelete;
+                    bool m_needDeleteHasBeenSet;
 
                 };
             }

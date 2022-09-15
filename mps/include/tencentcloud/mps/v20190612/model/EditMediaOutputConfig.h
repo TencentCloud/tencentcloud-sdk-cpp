@@ -64,6 +64,24 @@ namespace TencentCloud
                      */
                     bool ContainerHasBeenSet() const;
 
+                    /**
+                     * 获取剪辑模式，可选值 normal、fast。默认是精确剪辑 normal
+                     * @return Type 剪辑模式，可选值 normal、fast。默认是精确剪辑 normal
+                     */
+                    std::string GetType() const;
+
+                    /**
+                     * 设置剪辑模式，可选值 normal、fast。默认是精确剪辑 normal
+                     * @param Type 剪辑模式，可选值 normal、fast。默认是精确剪辑 normal
+                     */
+                    void SetType(const std::string& _type);
+
+                    /**
+                     * 判断参数 Type 是否已赋值
+                     * @return Type 是否已赋值
+                     */
+                    bool TypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -71,6 +89,12 @@ namespace TencentCloud
                      */
                     std::string m_container;
                     bool m_containerHasBeenSet;
+
+                    /**
+                     * 剪辑模式，可选值 normal、fast。默认是精确剪辑 normal
+                     */
+                    std::string m_type;
+                    bool m_typeHasBeenSet;
 
                 };
             }

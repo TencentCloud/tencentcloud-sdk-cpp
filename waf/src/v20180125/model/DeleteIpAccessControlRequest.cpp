@@ -25,7 +25,8 @@ using namespace std;
 DeleteIpAccessControlRequest::DeleteIpAccessControlRequest() :
     m_domainHasBeenSet(false),
     m_itemsHasBeenSet(false),
-    m_deleteAllHasBeenSet(false)
+    m_deleteAllHasBeenSet(false),
+    m_sourceTypeHasBeenSet(false)
 {
 }
 
@@ -63,6 +64,14 @@ string DeleteIpAccessControlRequest::ToJsonString() const
         string key = "DeleteAll";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_deleteAll, allocator);
+    }
+
+    if (m_sourceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SourceType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_sourceType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -119,6 +128,22 @@ void DeleteIpAccessControlRequest::SetDeleteAll(const bool& _deleteAll)
 bool DeleteIpAccessControlRequest::DeleteAllHasBeenSet() const
 {
     return m_deleteAllHasBeenSet;
+}
+
+string DeleteIpAccessControlRequest::GetSourceType() const
+{
+    return m_sourceType;
+}
+
+void DeleteIpAccessControlRequest::SetSourceType(const string& _sourceType)
+{
+    m_sourceType = _sourceType;
+    m_sourceTypeHasBeenSet = true;
+}
+
+bool DeleteIpAccessControlRequest::SourceTypeHasBeenSet() const
+{
+    return m_sourceTypeHasBeenSet;
 }
 
 

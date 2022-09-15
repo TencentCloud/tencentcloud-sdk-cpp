@@ -23,7 +23,10 @@ using namespace std;
 IstioConfig::IstioConfig() :
     m_outboundTrafficPolicyHasBeenSet(false),
     m_tracingHasBeenSet(false),
-    m_disablePolicyChecksHasBeenSet(false)
+    m_disablePolicyChecksHasBeenSet(false),
+    m_enablePilotHTTPHasBeenSet(false),
+    m_disableHTTPRetryHasBeenSet(false),
+    m_smartDNSHasBeenSet(false)
 {
 }
 
@@ -69,6 +72,43 @@ CoreInternalOutcome IstioConfig::Deserialize(const rapidjson::Value &value)
         m_disablePolicyChecksHasBeenSet = true;
     }
 
+    if (value.HasMember("EnablePilotHTTP") && !value["EnablePilotHTTP"].IsNull())
+    {
+        if (!value["EnablePilotHTTP"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `IstioConfig.EnablePilotHTTP` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_enablePilotHTTP = value["EnablePilotHTTP"].GetBool();
+        m_enablePilotHTTPHasBeenSet = true;
+    }
+
+    if (value.HasMember("DisableHTTPRetry") && !value["DisableHTTPRetry"].IsNull())
+    {
+        if (!value["DisableHTTPRetry"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `IstioConfig.DisableHTTPRetry` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_disableHTTPRetry = value["DisableHTTPRetry"].GetBool();
+        m_disableHTTPRetryHasBeenSet = true;
+    }
+
+    if (value.HasMember("SmartDNS") && !value["SmartDNS"].IsNull())
+    {
+        if (!value["SmartDNS"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `IstioConfig.SmartDNS` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_smartDNS.Deserialize(value["SmartDNS"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_smartDNSHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -99,6 +139,31 @@ void IstioConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "DisablePolicyChecks";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_disablePolicyChecks, allocator);
+    }
+
+    if (m_enablePilotHTTPHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnablePilotHTTP";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enablePilotHTTP, allocator);
+    }
+
+    if (m_disableHTTPRetryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DisableHTTPRetry";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_disableHTTPRetry, allocator);
+    }
+
+    if (m_smartDNSHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SmartDNS";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_smartDNS.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -150,5 +215,53 @@ void IstioConfig::SetDisablePolicyChecks(const bool& _disablePolicyChecks)
 bool IstioConfig::DisablePolicyChecksHasBeenSet() const
 {
     return m_disablePolicyChecksHasBeenSet;
+}
+
+bool IstioConfig::GetEnablePilotHTTP() const
+{
+    return m_enablePilotHTTP;
+}
+
+void IstioConfig::SetEnablePilotHTTP(const bool& _enablePilotHTTP)
+{
+    m_enablePilotHTTP = _enablePilotHTTP;
+    m_enablePilotHTTPHasBeenSet = true;
+}
+
+bool IstioConfig::EnablePilotHTTPHasBeenSet() const
+{
+    return m_enablePilotHTTPHasBeenSet;
+}
+
+bool IstioConfig::GetDisableHTTPRetry() const
+{
+    return m_disableHTTPRetry;
+}
+
+void IstioConfig::SetDisableHTTPRetry(const bool& _disableHTTPRetry)
+{
+    m_disableHTTPRetry = _disableHTTPRetry;
+    m_disableHTTPRetryHasBeenSet = true;
+}
+
+bool IstioConfig::DisableHTTPRetryHasBeenSet() const
+{
+    return m_disableHTTPRetryHasBeenSet;
+}
+
+SmartDNSConfig IstioConfig::GetSmartDNS() const
+{
+    return m_smartDNS;
+}
+
+void IstioConfig::SetSmartDNS(const SmartDNSConfig& _smartDNS)
+{
+    m_smartDNS = _smartDNS;
+    m_smartDNSHasBeenSet = true;
+}
+
+bool IstioConfig::SmartDNSHasBeenSet() const
+{
+    return m_smartDNSHasBeenSet;
 }
 

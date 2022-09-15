@@ -34,7 +34,8 @@ UpdateTKEEdgeClusterRequest::UpdateTKEEdgeClusterRequest() :
     m_healthRegionHasBeenSet(false),
     m_healthHasBeenSet(false),
     m_gridDaemonHasBeenSet(false),
-    m_autoUpgradeClusterLevelHasBeenSet(false)
+    m_autoUpgradeClusterLevelHasBeenSet(false),
+    m_clusterLevelHasBeenSet(false)
 {
 }
 
@@ -141,6 +142,14 @@ string UpdateTKEEdgeClusterRequest::ToJsonString() const
         string key = "AutoUpgradeClusterLevel";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_autoUpgradeClusterLevel, allocator);
+    }
+
+    if (m_clusterLevelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterLevel";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_clusterLevel.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -341,6 +350,22 @@ void UpdateTKEEdgeClusterRequest::SetAutoUpgradeClusterLevel(const bool& _autoUp
 bool UpdateTKEEdgeClusterRequest::AutoUpgradeClusterLevelHasBeenSet() const
 {
     return m_autoUpgradeClusterLevelHasBeenSet;
+}
+
+string UpdateTKEEdgeClusterRequest::GetClusterLevel() const
+{
+    return m_clusterLevel;
+}
+
+void UpdateTKEEdgeClusterRequest::SetClusterLevel(const string& _clusterLevel)
+{
+    m_clusterLevel = _clusterLevel;
+    m_clusterLevelHasBeenSet = true;
+}
+
+bool UpdateTKEEdgeClusterRequest::ClusterLevelHasBeenSet() const
+{
+    return m_clusterLevelHasBeenSet;
 }
 
 

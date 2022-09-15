@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tcm/v20210413/model/TracingConfig.h>
+#include <tencentcloud/tcm/v20210413/model/SmartDNSConfig.h>
 
 
 namespace TencentCloud
@@ -105,6 +106,72 @@ namespace TencentCloud
                      */
                     bool DisablePolicyChecksHasBeenSet() const;
 
+                    /**
+                     * 获取支持HTTP1.0协议
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EnablePilotHTTP 支持HTTP1.0协议
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetEnablePilotHTTP() const;
+
+                    /**
+                     * 设置支持HTTP1.0协议
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param EnablePilotHTTP 支持HTTP1.0协议
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetEnablePilotHTTP(const bool& _enablePilotHTTP);
+
+                    /**
+                     * 判断参数 EnablePilotHTTP 是否已赋值
+                     * @return EnablePilotHTTP 是否已赋值
+                     */
+                    bool EnablePilotHTTPHasBeenSet() const;
+
+                    /**
+                     * 获取禁用HTTP重试策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DisableHTTPRetry 禁用HTTP重试策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetDisableHTTPRetry() const;
+
+                    /**
+                     * 设置禁用HTTP重试策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DisableHTTPRetry 禁用HTTP重试策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDisableHTTPRetry(const bool& _disableHTTPRetry);
+
+                    /**
+                     * 判断参数 DisableHTTPRetry 是否已赋值
+                     * @return DisableHTTPRetry 是否已赋值
+                     */
+                    bool DisableHTTPRetryHasBeenSet() const;
+
+                    /**
+                     * 获取SmartDNS策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SmartDNS SmartDNS策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    SmartDNSConfig GetSmartDNS() const;
+
+                    /**
+                     * 设置SmartDNS策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SmartDNS SmartDNS策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSmartDNS(const SmartDNSConfig& _smartDNS);
+
+                    /**
+                     * 判断参数 SmartDNS 是否已赋值
+                     * @return SmartDNS 是否已赋值
+                     */
+                    bool SmartDNSHasBeenSet() const;
+
                 private:
 
                     /**
@@ -125,6 +192,27 @@ namespace TencentCloud
                      */
                     bool m_disablePolicyChecks;
                     bool m_disablePolicyChecksHasBeenSet;
+
+                    /**
+                     * 支持HTTP1.0协议
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_enablePilotHTTP;
+                    bool m_enablePilotHTTPHasBeenSet;
+
+                    /**
+                     * 禁用HTTP重试策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_disableHTTPRetry;
+                    bool m_disableHTTPRetryHasBeenSet;
+
+                    /**
+                     * SmartDNS策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    SmartDNSConfig m_smartDNS;
+                    bool m_smartDNSHasBeenSet;
 
                 };
             }

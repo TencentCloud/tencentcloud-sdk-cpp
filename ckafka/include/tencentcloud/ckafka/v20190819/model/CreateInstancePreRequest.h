@@ -62,14 +62,14 @@ namespace TencentCloud
                     bool InstanceNameHasBeenSet() const;
 
                     /**
-                     * 获取可用区
-                     * @return ZoneId 可用区
+                     * 获取可用区，购买多可用区实例时，填写ZoneIds.N字段中的任意一个值
+                     * @return ZoneId 可用区，购买多可用区实例时，填写ZoneIds.N字段中的任意一个值
                      */
                     int64_t GetZoneId() const;
 
                     /**
-                     * 设置可用区
-                     * @param ZoneId 可用区
+                     * 设置可用区，购买多可用区实例时，填写ZoneIds.N字段中的任意一个值
+                     * @param ZoneId 可用区，购买多可用区实例时，填写ZoneIds.N字段中的任意一个值
                      */
                     void SetZoneId(const int64_t& _zoneId);
 
@@ -354,14 +354,14 @@ namespace TencentCloud
                     bool MultiZoneFlagHasBeenSet() const;
 
                     /**
-                     * 获取可用区列表
-                     * @return ZoneIds 可用区列表
+                     * 获取可用区列表，购买多可用区实例时为必填项
+                     * @return ZoneIds 可用区列表，购买多可用区实例时为必填项
                      */
                     std::vector<int64_t> GetZoneIds() const;
 
                     /**
-                     * 设置可用区列表
-                     * @param ZoneIds 可用区列表
+                     * 设置可用区列表，购买多可用区实例时为必填项
+                     * @param ZoneIds 可用区列表，购买多可用区实例时为必填项
                      */
                     void SetZoneIds(const std::vector<int64_t>& _zoneIds);
 
@@ -380,7 +380,7 @@ namespace TencentCloud
                     bool m_instanceNameHasBeenSet;
 
                     /**
-                     * 可用区
+                     * 可用区，购买多可用区实例时，填写ZoneIds.N字段中的任意一个值
                      */
                     int64_t m_zoneId;
                     bool m_zoneIdHasBeenSet;
@@ -477,7 +477,7 @@ namespace TencentCloud
                     bool m_multiZoneFlagHasBeenSet;
 
                     /**
-                     * 可用区列表
+                     * 可用区列表，购买多可用区实例时为必填项
                      */
                     std::vector<int64_t> m_zoneIds;
                     bool m_zoneIdsHasBeenSet;

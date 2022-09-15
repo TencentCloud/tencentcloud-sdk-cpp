@@ -23,7 +23,8 @@ using namespace std;
 CLS::CLS() :
     m_enableHasBeenSet(false),
     m_logSetHasBeenSet(false),
-    m_topicHasBeenSet(false)
+    m_topicHasBeenSet(false),
+    m_needDeleteHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,16 @@ CoreInternalOutcome CLS::Deserialize(const rapidjson::Value &value)
         m_topicHasBeenSet = true;
     }
 
+    if (value.HasMember("NeedDelete") && !value["NeedDelete"].IsNull())
+    {
+        if (!value["NeedDelete"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `CLS.NeedDelete` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_needDelete = value["NeedDelete"].GetBool();
+        m_needDeleteHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +102,14 @@ void CLS::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorTy
         string key = "Topic";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_topic.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_needDeleteHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NeedDelete";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_needDelete, allocator);
     }
 
 }
@@ -142,5 +161,21 @@ void CLS::SetTopic(const string& _topic)
 bool CLS::TopicHasBeenSet() const
 {
     return m_topicHasBeenSet;
+}
+
+bool CLS::GetNeedDelete() const
+{
+    return m_needDelete;
+}
+
+void CLS::SetNeedDelete(const bool& _needDelete)
+{
+    m_needDelete = _needDelete;
+    m_needDeleteHasBeenSet = true;
+}
+
+bool CLS::NeedDeleteHasBeenSet() const
+{
+    return m_needDeleteHasBeenSet;
 }
 

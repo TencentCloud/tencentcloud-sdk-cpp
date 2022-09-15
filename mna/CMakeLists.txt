@@ -20,10 +20,13 @@ set(mna_public_header
 
 set(mna_public_header_model
   include/tencentcloud/mna/v20210119/model/GetDeviceResponse.h
+  include/tencentcloud/mna/v20210119/model/GetFlowStatisticResponse.h
   include/tencentcloud/mna/v20210119/model/Capacity.h
+  include/tencentcloud/mna/v20210119/model/GetFlowStatisticRequest.h
   include/tencentcloud/mna/v20210119/model/DestAddressInfo.h
   include/tencentcloud/mna/v20210119/model/DeleteQosRequest.h
   include/tencentcloud/mna/v20210119/model/DeviceNetInfo.h
+  include/tencentcloud/mna/v20210119/model/NetDetails.h
   include/tencentcloud/mna/v20210119/model/SrcAddressInfo.h
   include/tencentcloud/mna/v20210119/model/UpdateNetInfo.h
   include/tencentcloud/mna/v20210119/model/CreateQosResponse.h
@@ -53,10 +56,13 @@ set(mna_public_header_model
 set(mna_src
   src/v20210119/MnaClient.cpp
   src/v20210119/model/GetDeviceResponse.cpp
+  src/v20210119/model/GetFlowStatisticResponse.cpp
   src/v20210119/model/Capacity.cpp
+  src/v20210119/model/GetFlowStatisticRequest.cpp
   src/v20210119/model/DestAddressInfo.cpp
   src/v20210119/model/DeleteQosRequest.cpp
   src/v20210119/model/DeviceNetInfo.cpp
+  src/v20210119/model/NetDetails.cpp
   src/v20210119/model/SrcAddressInfo.cpp
   src/v20210119/model/UpdateNetInfo.cpp
   src/v20210119/model/CreateQosResponse.cpp

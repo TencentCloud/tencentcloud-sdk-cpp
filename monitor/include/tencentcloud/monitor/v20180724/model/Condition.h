@@ -127,17 +127,17 @@ namespace TencentCloud
                     bool CalcValueHasBeenSet() const;
 
                     /**
-                     * 获取持续时间
+                     * 获取持续时间，单位秒
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ContinueTime 持续时间
+                     * @return ContinueTime 持续时间，单位秒
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetContinueTime() const;
 
                     /**
-                     * 设置持续时间
+                     * 设置持续时间，单位秒
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ContinueTime 持续时间
+                     * @param ContinueTime 持续时间，单位秒
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetContinueTime(const std::string& _continueTime);
@@ -238,6 +238,64 @@ namespace TencentCloud
                      */
                     bool UnitHasBeenSet() const;
 
+                    /**
+                     * 获取是否为高级指标，0：否；1：是
+                     * @return IsAdvanced 是否为高级指标，0：否；1：是
+                     */
+                    int64_t GetIsAdvanced() const;
+
+                    /**
+                     * 设置是否为高级指标，0：否；1：是
+                     * @param IsAdvanced 是否为高级指标，0：否；1：是
+                     */
+                    void SetIsAdvanced(const int64_t& _isAdvanced);
+
+                    /**
+                     * 判断参数 IsAdvanced 是否已赋值
+                     * @return IsAdvanced 是否已赋值
+                     */
+                    bool IsAdvancedHasBeenSet() const;
+
+                    /**
+                     * 获取是否开通高级指标，0：否；1：是
+                     * @return IsOpen 是否开通高级指标，0：否；1：是
+                     */
+                    int64_t GetIsOpen() const;
+
+                    /**
+                     * 设置是否开通高级指标，0：否；1：是
+                     * @param IsOpen 是否开通高级指标，0：否；1：是
+                     */
+                    void SetIsOpen(const int64_t& _isOpen);
+
+                    /**
+                     * 判断参数 IsOpen 是否已赋值
+                     * @return IsOpen 是否已赋值
+                     */
+                    bool IsOpenHasBeenSet() const;
+
+                    /**
+                     * 获取产品ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ProductId 产品ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetProductId() const;
+
+                    /**
+                     * 设置产品ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ProductId 产品ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetProductId(const std::string& _productId);
+
+                    /**
+                     * 判断参数 ProductId 是否已赋值
+                     * @return ProductId 是否已赋值
+                     */
+                    bool ProductIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -267,7 +325,7 @@ namespace TencentCloud
                     bool m_calcValueHasBeenSet;
 
                     /**
-                     * 持续时间
+                     * 持续时间，单位秒
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_continueTime;
@@ -302,6 +360,25 @@ namespace TencentCloud
                      */
                     std::string m_unit;
                     bool m_unitHasBeenSet;
+
+                    /**
+                     * 是否为高级指标，0：否；1：是
+                     */
+                    int64_t m_isAdvanced;
+                    bool m_isAdvancedHasBeenSet;
+
+                    /**
+                     * 是否开通高级指标，0：否；1：是
+                     */
+                    int64_t m_isOpen;
+                    bool m_isOpenHasBeenSet;
+
+                    /**
+                     * 产品ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_productId;
+                    bool m_productIdHasBeenSet;
 
                 };
             }

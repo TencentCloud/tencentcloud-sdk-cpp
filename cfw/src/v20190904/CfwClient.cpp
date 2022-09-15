@@ -341,49 +341,6 @@ CfwClient::CreateNatFwInstanceWithDomainOutcomeCallable CfwClient::CreateNatFwIn
     return task->get_future();
 }
 
-CfwClient::CreateSecurityGroupApiRulesOutcome CfwClient::CreateSecurityGroupApiRules(const CreateSecurityGroupApiRulesRequest &request)
-{
-    auto outcome = MakeRequest(request, "CreateSecurityGroupApiRules");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        CreateSecurityGroupApiRulesResponse rsp = CreateSecurityGroupApiRulesResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return CreateSecurityGroupApiRulesOutcome(rsp);
-        else
-            return CreateSecurityGroupApiRulesOutcome(o.GetError());
-    }
-    else
-    {
-        return CreateSecurityGroupApiRulesOutcome(outcome.GetError());
-    }
-}
-
-void CfwClient::CreateSecurityGroupApiRulesAsync(const CreateSecurityGroupApiRulesRequest& request, const CreateSecurityGroupApiRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateSecurityGroupApiRules(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-CfwClient::CreateSecurityGroupApiRulesOutcomeCallable CfwClient::CreateSecurityGroupApiRulesCallable(const CreateSecurityGroupApiRulesRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<CreateSecurityGroupApiRulesOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateSecurityGroupApiRules(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 CfwClient::CreateSecurityGroupRulesOutcome CfwClient::CreateSecurityGroupRules(const CreateSecurityGroupRulesRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateSecurityGroupRules");
@@ -721,49 +678,6 @@ CfwClient::DescribeAcListsOutcomeCallable CfwClient::DescribeAcListsCallable(con
         [this, request]()
         {
             return this->DescribeAcLists(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-CfwClient::DescribeAddrTemplateListOutcome CfwClient::DescribeAddrTemplateList(const DescribeAddrTemplateListRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeAddrTemplateList");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeAddrTemplateListResponse rsp = DescribeAddrTemplateListResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeAddrTemplateListOutcome(rsp);
-        else
-            return DescribeAddrTemplateListOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeAddrTemplateListOutcome(outcome.GetError());
-    }
-}
-
-void CfwClient::DescribeAddrTemplateListAsync(const DescribeAddrTemplateListRequest& request, const DescribeAddrTemplateListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAddrTemplateList(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-CfwClient::DescribeAddrTemplateListOutcomeCallable CfwClient::DescribeAddrTemplateListCallable(const DescribeAddrTemplateListRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeAddrTemplateListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAddrTemplateList(request);
         }
     );
 
@@ -1588,49 +1502,6 @@ CfwClient::DescribeSwitchListsOutcomeCallable CfwClient::DescribeSwitchListsCall
     return task->get_future();
 }
 
-CfwClient::DescribeSyncAssetStatusOutcome CfwClient::DescribeSyncAssetStatus(const DescribeSyncAssetStatusRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeSyncAssetStatus");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeSyncAssetStatusResponse rsp = DescribeSyncAssetStatusResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeSyncAssetStatusOutcome(rsp);
-        else
-            return DescribeSyncAssetStatusOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeSyncAssetStatusOutcome(outcome.GetError());
-    }
-}
-
-void CfwClient::DescribeSyncAssetStatusAsync(const DescribeSyncAssetStatusRequest& request, const DescribeSyncAssetStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSyncAssetStatus(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-CfwClient::DescribeSyncAssetStatusOutcomeCallable CfwClient::DescribeSyncAssetStatusCallable(const DescribeSyncAssetStatusRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeSyncAssetStatusOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSyncAssetStatus(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 CfwClient::DescribeTLogInfoOutcome CfwClient::DescribeTLogInfo(const DescribeTLogInfoRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeTLogInfo");
@@ -2018,49 +1889,6 @@ CfwClient::ModifyAllRuleStatusOutcomeCallable CfwClient::ModifyAllRuleStatusCall
     return task->get_future();
 }
 
-CfwClient::ModifyAllSwitchStatusOutcome CfwClient::ModifyAllSwitchStatus(const ModifyAllSwitchStatusRequest &request)
-{
-    auto outcome = MakeRequest(request, "ModifyAllSwitchStatus");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        ModifyAllSwitchStatusResponse rsp = ModifyAllSwitchStatusResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return ModifyAllSwitchStatusOutcome(rsp);
-        else
-            return ModifyAllSwitchStatusOutcome(o.GetError());
-    }
-    else
-    {
-        return ModifyAllSwitchStatusOutcome(outcome.GetError());
-    }
-}
-
-void CfwClient::ModifyAllSwitchStatusAsync(const ModifyAllSwitchStatusRequest& request, const ModifyAllSwitchStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyAllSwitchStatus(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-CfwClient::ModifyAllSwitchStatusOutcomeCallable CfwClient::ModifyAllSwitchStatusCallable(const ModifyAllSwitchStatusRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<ModifyAllSwitchStatusOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyAllSwitchStatus(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 CfwClient::ModifyAllVPCSwitchStatusOutcome CfwClient::ModifyAllVPCSwitchStatus(const ModifyAllVPCSwitchStatusRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyAllVPCSwitchStatus");
@@ -2226,49 +2054,6 @@ CfwClient::ModifyBlockTopOutcomeCallable CfwClient::ModifyBlockTopCallable(const
         [this, request]()
         {
             return this->ModifyBlockTop(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-CfwClient::ModifyItemSwitchStatusOutcome CfwClient::ModifyItemSwitchStatus(const ModifyItemSwitchStatusRequest &request)
-{
-    auto outcome = MakeRequest(request, "ModifyItemSwitchStatus");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        ModifyItemSwitchStatusResponse rsp = ModifyItemSwitchStatusResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return ModifyItemSwitchStatusOutcome(rsp);
-        else
-            return ModifyItemSwitchStatusOutcome(o.GetError());
-    }
-    else
-    {
-        return ModifyItemSwitchStatusOutcome(outcome.GetError());
-    }
-}
-
-void CfwClient::ModifyItemSwitchStatusAsync(const ModifyItemSwitchStatusRequest& request, const ModifyItemSwitchStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyItemSwitchStatus(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-CfwClient::ModifyItemSwitchStatusOutcomeCallable CfwClient::ModifyItemSwitchStatusCallable(const ModifyItemSwitchStatusRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<ModifyItemSwitchStatusOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyItemSwitchStatus(request);
         }
     );
 
@@ -2527,49 +2312,6 @@ CfwClient::ModifyRunSyncAssetOutcomeCallable CfwClient::ModifyRunSyncAssetCallab
         [this, request]()
         {
             return this->ModifyRunSyncAsset(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-CfwClient::ModifySecurityGroupAllRuleStatusOutcome CfwClient::ModifySecurityGroupAllRuleStatus(const ModifySecurityGroupAllRuleStatusRequest &request)
-{
-    auto outcome = MakeRequest(request, "ModifySecurityGroupAllRuleStatus");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        ModifySecurityGroupAllRuleStatusResponse rsp = ModifySecurityGroupAllRuleStatusResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return ModifySecurityGroupAllRuleStatusOutcome(rsp);
-        else
-            return ModifySecurityGroupAllRuleStatusOutcome(o.GetError());
-    }
-    else
-    {
-        return ModifySecurityGroupAllRuleStatusOutcome(outcome.GetError());
-    }
-}
-
-void CfwClient::ModifySecurityGroupAllRuleStatusAsync(const ModifySecurityGroupAllRuleStatusRequest& request, const ModifySecurityGroupAllRuleStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifySecurityGroupAllRuleStatus(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-CfwClient::ModifySecurityGroupAllRuleStatusOutcomeCallable CfwClient::ModifySecurityGroupAllRuleStatusCallable(const ModifySecurityGroupAllRuleStatusRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<ModifySecurityGroupAllRuleStatusOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifySecurityGroupAllRuleStatus(request);
         }
     );
 

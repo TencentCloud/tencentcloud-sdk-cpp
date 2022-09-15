@@ -47,6 +47,7 @@ set(tcm_public_header_model
   include/tencentcloud/tcm/v20210413/model/Filter.h
   include/tencentcloud/tcm/v20210413/model/PrometheusConfig.h
   include/tencentcloud/tcm/v20210413/model/ExtensiveCluster.h
+  include/tencentcloud/tcm/v20210413/model/SmartDNSConfig.h
   include/tencentcloud/tcm/v20210413/model/IstioConfig.h
   include/tencentcloud/tcm/v20210413/model/CLS.h
   include/tencentcloud/tcm/v20210413/model/TracingConfig.h
@@ -95,6 +96,7 @@ set(tcm_src
   src/v20210413/model/Filter.cpp
   src/v20210413/model/PrometheusConfig.cpp
   src/v20210413/model/ExtensiveCluster.cpp
+  src/v20210413/model/SmartDNSConfig.cpp
   src/v20210413/model/IstioConfig.cpp
   src/v20210413/model/CLS.cpp
   src/v20210413/model/TracingConfig.cpp
