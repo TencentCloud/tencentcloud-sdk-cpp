@@ -30,7 +30,8 @@ UpdateLogstashInstanceRequest::UpdateLogstashInstanceRequest() :
     m_instanceNameHasBeenSet(false),
     m_extendedFilesHasBeenSet(false),
     m_nodeTypeHasBeenSet(false),
-    m_diskSizeHasBeenSet(false)
+    m_diskSizeHasBeenSet(false),
+    m_operationDurationHasBeenSet(false)
 {
 }
 
@@ -111,6 +112,15 @@ string UpdateLogstashInstanceRequest::ToJsonString() const
         string key = "DiskSize";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_diskSize, allocator);
+    }
+
+    if (m_operationDurationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OperationDuration";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_operationDuration.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -247,6 +257,22 @@ void UpdateLogstashInstanceRequest::SetDiskSize(const uint64_t& _diskSize)
 bool UpdateLogstashInstanceRequest::DiskSizeHasBeenSet() const
 {
     return m_diskSizeHasBeenSet;
+}
+
+OperationDurationUpdated UpdateLogstashInstanceRequest::GetOperationDuration() const
+{
+    return m_operationDuration;
+}
+
+void UpdateLogstashInstanceRequest::SetOperationDuration(const OperationDurationUpdated& _operationDuration)
+{
+    m_operationDuration = _operationDuration;
+    m_operationDurationHasBeenSet = true;
+}
+
+bool UpdateLogstashInstanceRequest::OperationDurationHasBeenSet() const
+{
+    return m_operationDurationHasBeenSet;
 }
 
 

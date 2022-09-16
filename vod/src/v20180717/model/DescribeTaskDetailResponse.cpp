@@ -42,7 +42,9 @@ DescribeTaskDetailResponse::DescribeTaskDetailResponse() :
     m_createImageSpriteTaskHasBeenSet(false),
     m_snapshotByTimeOffsetTaskHasBeenSet(false),
     m_removeWatermarkTaskHasBeenSet(false),
-    m_reviewAudioVideoTaskHasBeenSet(false)
+    m_extractTraceWatermarkTaskHasBeenSet(false),
+    m_reviewAudioVideoTaskHasBeenSet(false),
+    m_reduceMediaBitrateTaskHasBeenSet(false)
 {
 }
 
@@ -351,6 +353,23 @@ CoreInternalOutcome DescribeTaskDetailResponse::Deserialize(const string &payloa
         m_removeWatermarkTaskHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ExtractTraceWatermarkTask") && !rsp["ExtractTraceWatermarkTask"].IsNull())
+    {
+        if (!rsp["ExtractTraceWatermarkTask"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ExtractTraceWatermarkTask` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_extractTraceWatermarkTask.Deserialize(rsp["ExtractTraceWatermarkTask"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_extractTraceWatermarkTaskHasBeenSet = true;
+    }
+
     if (rsp.HasMember("ReviewAudioVideoTask") && !rsp["ReviewAudioVideoTask"].IsNull())
     {
         if (!rsp["ReviewAudioVideoTask"].IsObject())
@@ -366,6 +385,23 @@ CoreInternalOutcome DescribeTaskDetailResponse::Deserialize(const string &payloa
         }
 
         m_reviewAudioVideoTaskHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ReduceMediaBitrateTask") && !rsp["ReduceMediaBitrateTask"].IsNull())
+    {
+        if (!rsp["ReduceMediaBitrateTask"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ReduceMediaBitrateTask` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_reduceMediaBitrateTask.Deserialize(rsp["ReduceMediaBitrateTask"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_reduceMediaBitrateTaskHasBeenSet = true;
     }
 
 
@@ -535,6 +571,15 @@ string DescribeTaskDetailResponse::ToJsonString() const
         m_removeWatermarkTask.ToJsonObject(value[key.c_str()], allocator);
     }
 
+    if (m_extractTraceWatermarkTaskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExtractTraceWatermarkTask";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_extractTraceWatermarkTask.ToJsonObject(value[key.c_str()], allocator);
+    }
+
     if (m_reviewAudioVideoTaskHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -542,6 +587,15 @@ string DescribeTaskDetailResponse::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_reviewAudioVideoTask.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_reduceMediaBitrateTaskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReduceMediaBitrateTask";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_reduceMediaBitrateTask.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -736,6 +790,16 @@ bool DescribeTaskDetailResponse::RemoveWatermarkTaskHasBeenSet() const
     return m_removeWatermarkTaskHasBeenSet;
 }
 
+ExtractTraceWatermarkTask DescribeTaskDetailResponse::GetExtractTraceWatermarkTask() const
+{
+    return m_extractTraceWatermarkTask;
+}
+
+bool DescribeTaskDetailResponse::ExtractTraceWatermarkTaskHasBeenSet() const
+{
+    return m_extractTraceWatermarkTaskHasBeenSet;
+}
+
 ReviewAudioVideoTask DescribeTaskDetailResponse::GetReviewAudioVideoTask() const
 {
     return m_reviewAudioVideoTask;
@@ -744,6 +808,16 @@ ReviewAudioVideoTask DescribeTaskDetailResponse::GetReviewAudioVideoTask() const
 bool DescribeTaskDetailResponse::ReviewAudioVideoTaskHasBeenSet() const
 {
     return m_reviewAudioVideoTaskHasBeenSet;
+}
+
+ReduceMediaBitrateTask DescribeTaskDetailResponse::GetReduceMediaBitrateTask() const
+{
+    return m_reduceMediaBitrateTask;
+}
+
+bool DescribeTaskDetailResponse::ReduceMediaBitrateTaskHasBeenSet() const
+{
+    return m_reduceMediaBitrateTaskHasBeenSet;
 }
 
 

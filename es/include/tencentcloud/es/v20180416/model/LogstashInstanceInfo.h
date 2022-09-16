@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/es/v20180416/model/LogstashNodeInfo.h>
 #include <tencentcloud/es/v20180416/model/LogstashExtendedFile.h>
+#include <tencentcloud/es/v20180416/model/OperationDuration.h>
 
 
 namespace TencentCloud
@@ -506,6 +507,28 @@ namespace TencentCloud
                      */
                     bool ExtendedFilesHasBeenSet() const;
 
+                    /**
+                     * 获取可维护时间段
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OperationDuration 可维护时间段
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    OperationDuration GetOperationDuration() const;
+
+                    /**
+                     * 设置可维护时间段
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param OperationDuration 可维护时间段
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetOperationDuration(const OperationDuration& _operationDuration);
+
+                    /**
+                     * 判断参数 OperationDuration 是否已赋值
+                     * @return OperationDuration 是否已赋值
+                     */
+                    bool OperationDurationHasBeenSet() const;
+
                 private:
 
                     /**
@@ -659,6 +682,13 @@ namespace TencentCloud
                      */
                     std::vector<LogstashExtendedFile> m_extendedFiles;
                     bool m_extendedFilesHasBeenSet;
+
+                    /**
+                     * 可维护时间段
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    OperationDuration m_operationDuration;
+                    bool m_operationDurationHasBeenSet;
 
                 };
             }

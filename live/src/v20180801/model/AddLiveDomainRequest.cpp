@@ -27,7 +27,8 @@ AddLiveDomainRequest::AddLiveDomainRequest() :
     m_domainTypeHasBeenSet(false),
     m_playTypeHasBeenSet(false),
     m_isDelayLiveHasBeenSet(false),
-    m_isMiniProgramLiveHasBeenSet(false)
+    m_isMiniProgramLiveHasBeenSet(false),
+    m_verifyOwnerTypeHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,14 @@ string AddLiveDomainRequest::ToJsonString() const
         string key = "IsMiniProgramLive";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_isMiniProgramLive, allocator);
+    }
+
+    if (m_verifyOwnerTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VerifyOwnerType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_verifyOwnerType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -164,6 +173,22 @@ void AddLiveDomainRequest::SetIsMiniProgramLive(const int64_t& _isMiniProgramLiv
 bool AddLiveDomainRequest::IsMiniProgramLiveHasBeenSet() const
 {
     return m_isMiniProgramLiveHasBeenSet;
+}
+
+string AddLiveDomainRequest::GetVerifyOwnerType() const
+{
+    return m_verifyOwnerType;
+}
+
+void AddLiveDomainRequest::SetVerifyOwnerType(const string& _verifyOwnerType)
+{
+    m_verifyOwnerType = _verifyOwnerType;
+    m_verifyOwnerTypeHasBeenSet = true;
+}
+
+bool AddLiveDomainRequest::VerifyOwnerTypeHasBeenSet() const
+{
+    return m_verifyOwnerTypeHasBeenSet;
 }
 
 

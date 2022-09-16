@@ -5200,6 +5200,49 @@ VpcClient::DescribeCrossBorderComplianceOutcomeCallable VpcClient::DescribeCross
     return task->get_future();
 }
 
+VpcClient::DescribeCrossBorderFlowMonitorOutcome VpcClient::DescribeCrossBorderFlowMonitor(const DescribeCrossBorderFlowMonitorRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCrossBorderFlowMonitor");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCrossBorderFlowMonitorResponse rsp = DescribeCrossBorderFlowMonitorResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCrossBorderFlowMonitorOutcome(rsp);
+        else
+            return DescribeCrossBorderFlowMonitorOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCrossBorderFlowMonitorOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DescribeCrossBorderFlowMonitorAsync(const DescribeCrossBorderFlowMonitorRequest& request, const DescribeCrossBorderFlowMonitorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCrossBorderFlowMonitor(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DescribeCrossBorderFlowMonitorOutcomeCallable VpcClient::DescribeCrossBorderFlowMonitorCallable(const DescribeCrossBorderFlowMonitorRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCrossBorderFlowMonitorOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCrossBorderFlowMonitor(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VpcClient::DescribeCustomerGatewayVendorsOutcome VpcClient::DescribeCustomerGatewayVendors(const DescribeCustomerGatewayVendorsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeCustomerGatewayVendors");

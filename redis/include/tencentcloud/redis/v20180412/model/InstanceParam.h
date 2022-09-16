@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取设置参数的名字
-                     * @return Key 设置参数的名字
+                     * 获取设置参数的名称。例如timeout。
+                     * @return Key 设置参数的名称。例如timeout。
                      */
                     std::string GetKey() const;
 
                     /**
-                     * 设置设置参数的名字
-                     * @param Key 设置参数的名字
+                     * 设置设置参数的名称。例如timeout。
+                     * @param Key 设置参数的名称。例如timeout。
                      */
                     void SetKey(const std::string& _key);
 
@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool KeyHasBeenSet() const;
 
                     /**
-                     * 获取设置参数的值
-                     * @return Value 设置参数的值
+                     * 获取设置参数名称对应的运行值。例如timeout对应运行值可设置为120， 单位为秒（s）。指当客户端连接闲置时间达到120 s时，将关闭连接。
+                     * @return Value 设置参数名称对应的运行值。例如timeout对应运行值可设置为120， 单位为秒（s）。指当客户端连接闲置时间达到120 s时，将关闭连接。
                      */
                     std::string GetValue() const;
 
                     /**
-                     * 设置设置参数的值
-                     * @param Value 设置参数的值
+                     * 设置设置参数名称对应的运行值。例如timeout对应运行值可设置为120， 单位为秒（s）。指当客户端连接闲置时间达到120 s时，将关闭连接。
+                     * @param Value 设置参数名称对应的运行值。例如timeout对应运行值可设置为120， 单位为秒（s）。指当客户端连接闲置时间达到120 s时，将关闭连接。
                      */
                     void SetValue(const std::string& _value);
 
@@ -85,13 +85,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 设置参数的名字
+                     * 设置参数的名称。例如timeout。
                      */
                     std::string m_key;
                     bool m_keyHasBeenSet;
 
                     /**
-                     * 设置参数的值
+                     * 设置参数名称对应的运行值。例如timeout对应运行值可设置为120， 单位为秒（s）。指当客户端连接闲置时间达到120 s时，将关闭连接。
                      */
                     std::string m_value;
                     bool m_valueHasBeenSet;

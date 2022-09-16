@@ -40,7 +40,9 @@
 #include <tencentcloud/vod/v20180717/model/WechatMiniProgramPublishTask.h>
 #include <tencentcloud/vod/v20180717/model/RemoveWatermarkTask.h>
 #include <tencentcloud/vod/v20180717/model/RestoreMediaTask.h>
+#include <tencentcloud/vod/v20180717/model/ExtractTraceWatermarkTask.h>
 #include <tencentcloud/vod/v20180717/model/ReviewAudioVideoTask.h>
+#include <tencentcloud/vod/v20180717/model/ReduceMediaBitrateTask.h>
 
 
 namespace TencentCloud
@@ -94,6 +96,7 @@ namespace TencentCloud
 <li>WechatMiniProgramPublishComplete：微信小程序发布完成。</li>
 <li>FastClipMediaComplete：快速剪辑完成；</li>
 <li>ReviewAudioVideoComplete：音视频审核完成。</li>
+<li>ExtractTraceWatermarkComplete：提取溯源水印完成。</li>
 <b>兼容 2017 版的事件类型：</b>
 <li>TranscodeComplete：视频转码完成；</li>
 <li>ConcatComplete：视频拼接完成；</li>
@@ -112,6 +115,7 @@ namespace TencentCloud
 <li>WechatMiniProgramPublishComplete：微信小程序发布完成。</li>
 <li>FastClipMediaComplete：快速剪辑完成；</li>
 <li>ReviewAudioVideoComplete：音视频审核完成。</li>
+<li>ExtractTraceWatermarkComplete：提取溯源水印完成。</li>
 <b>兼容 2017 版的事件类型：</b>
 <li>TranscodeComplete：视频转码完成；</li>
 <li>ConcatComplete：视频拼接完成；</li>
@@ -134,6 +138,7 @@ namespace TencentCloud
 <li>WechatMiniProgramPublishComplete：微信小程序发布完成。</li>
 <li>FastClipMediaComplete：快速剪辑完成；</li>
 <li>ReviewAudioVideoComplete：音视频审核完成。</li>
+<li>ExtractTraceWatermarkComplete：提取溯源水印完成。</li>
 <b>兼容 2017 版的事件类型：</b>
 <li>TranscodeComplete：视频转码完成；</li>
 <li>ConcatComplete：视频拼接完成；</li>
@@ -152,6 +157,7 @@ namespace TencentCloud
 <li>WechatMiniProgramPublishComplete：微信小程序发布完成。</li>
 <li>FastClipMediaComplete：快速剪辑完成；</li>
 <li>ReviewAudioVideoComplete：音视频审核完成。</li>
+<li>ExtractTraceWatermarkComplete：提取溯源水印完成。</li>
 <b>兼容 2017 版的事件类型：</b>
 <li>TranscodeComplete：视频转码完成；</li>
 <li>ConcatComplete：视频拼接完成；</li>
@@ -520,6 +526,28 @@ namespace TencentCloud
                     bool RestoreMediaCompleteEventHasBeenSet() const;
 
                     /**
+                     * 获取溯源水印提取完成事件，当事件类型为ExtractTraceWatermarkComplete 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ExtractTraceWatermarkCompleteEvent 溯源水印提取完成事件，当事件类型为ExtractTraceWatermarkComplete 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ExtractTraceWatermarkTask GetExtractTraceWatermarkCompleteEvent() const;
+
+                    /**
+                     * 设置溯源水印提取完成事件，当事件类型为ExtractTraceWatermarkComplete 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ExtractTraceWatermarkCompleteEvent 溯源水印提取完成事件，当事件类型为ExtractTraceWatermarkComplete 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetExtractTraceWatermarkCompleteEvent(const ExtractTraceWatermarkTask& _extractTraceWatermarkCompleteEvent);
+
+                    /**
+                     * 判断参数 ExtractTraceWatermarkCompleteEvent 是否已赋值
+                     * @return ExtractTraceWatermarkCompleteEvent 是否已赋值
+                     */
+                    bool ExtractTraceWatermarkCompleteEventHasBeenSet() const;
+
+                    /**
                      * 获取音视频审核完成事件，当事件类型为 ReviewAudioVideoComplete 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReviewAudioVideoCompleteEvent 音视频审核完成事件，当事件类型为 ReviewAudioVideoComplete 时有效。
@@ -540,6 +568,28 @@ namespace TencentCloud
                      * @return ReviewAudioVideoCompleteEvent 是否已赋值
                      */
                     bool ReviewAudioVideoCompleteEventHasBeenSet() const;
+
+                    /**
+                     * 获取降码率完成事件，当事件类型为 ReduceMediaBitrateComplete 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ReduceMediaBitrateCompleteEvent 降码率完成事件，当事件类型为 ReduceMediaBitrateComplete 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ReduceMediaBitrateTask GetReduceMediaBitrateCompleteEvent() const;
+
+                    /**
+                     * 设置降码率完成事件，当事件类型为 ReduceMediaBitrateComplete 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ReduceMediaBitrateCompleteEvent 降码率完成事件，当事件类型为 ReduceMediaBitrateComplete 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetReduceMediaBitrateCompleteEvent(const ReduceMediaBitrateTask& _reduceMediaBitrateCompleteEvent);
+
+                    /**
+                     * 判断参数 ReduceMediaBitrateCompleteEvent 是否已赋值
+                     * @return ReduceMediaBitrateCompleteEvent 是否已赋值
+                     */
+                    bool ReduceMediaBitrateCompleteEventHasBeenSet() const;
 
                 private:
 
@@ -562,6 +612,7 @@ namespace TencentCloud
 <li>WechatMiniProgramPublishComplete：微信小程序发布完成。</li>
 <li>FastClipMediaComplete：快速剪辑完成；</li>
 <li>ReviewAudioVideoComplete：音视频审核完成。</li>
+<li>ExtractTraceWatermarkComplete：提取溯源水印完成。</li>
 <b>兼容 2017 版的事件类型：</b>
 <li>TranscodeComplete：视频转码完成；</li>
 <li>ConcatComplete：视频拼接完成；</li>
@@ -685,11 +736,25 @@ namespace TencentCloud
                     bool m_restoreMediaCompleteEventHasBeenSet;
 
                     /**
+                     * 溯源水印提取完成事件，当事件类型为ExtractTraceWatermarkComplete 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ExtractTraceWatermarkTask m_extractTraceWatermarkCompleteEvent;
+                    bool m_extractTraceWatermarkCompleteEventHasBeenSet;
+
+                    /**
                      * 音视频审核完成事件，当事件类型为 ReviewAudioVideoComplete 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ReviewAudioVideoTask m_reviewAudioVideoCompleteEvent;
                     bool m_reviewAudioVideoCompleteEventHasBeenSet;
+
+                    /**
+                     * 降码率完成事件，当事件类型为 ReduceMediaBitrateComplete 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ReduceMediaBitrateTask m_reduceMediaBitrateCompleteEvent;
+                    bool m_reduceMediaBitrateCompleteEventHasBeenSet;
 
                 };
             }

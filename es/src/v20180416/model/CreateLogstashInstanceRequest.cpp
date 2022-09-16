@@ -39,7 +39,8 @@ CreateLogstashInstanceRequest::CreateLogstashInstanceRequest() :
     m_diskTypeHasBeenSet(false),
     m_diskSizeHasBeenSet(false),
     m_licenseTypeHasBeenSet(false),
-    m_tagListHasBeenSet(false)
+    m_tagListHasBeenSet(false),
+    m_operationDurationHasBeenSet(false)
 {
 }
 
@@ -196,6 +197,15 @@ string CreateLogstashInstanceRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_operationDurationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OperationDuration";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_operationDuration.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -476,6 +486,22 @@ void CreateLogstashInstanceRequest::SetTagList(const vector<TagInfo>& _tagList)
 bool CreateLogstashInstanceRequest::TagListHasBeenSet() const
 {
     return m_tagListHasBeenSet;
+}
+
+OperationDuration CreateLogstashInstanceRequest::GetOperationDuration() const
+{
+    return m_operationDuration;
+}
+
+void CreateLogstashInstanceRequest::SetOperationDuration(const OperationDuration& _operationDuration)
+{
+    m_operationDuration = _operationDuration;
+    m_operationDurationHasBeenSet = true;
+}
+
+bool CreateLogstashInstanceRequest::OperationDurationHasBeenSet() const
+{
+    return m_operationDurationHasBeenSet;
 }
 
 

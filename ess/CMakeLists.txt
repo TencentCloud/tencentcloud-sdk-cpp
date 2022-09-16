@@ -36,6 +36,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/SignQrCode.h
   include/tencentcloud/ess/v20201111/model/CreateFlowApproversResponse.h
   include/tencentcloud/ess/v20201111/model/DescribeFlowInfoRequest.h
+  include/tencentcloud/ess/v20201111/model/RegisterInfo.h
   include/tencentcloud/ess/v20201111/model/CancelFlowRequest.h
   include/tencentcloud/ess/v20201111/model/DescribeFlowBriefsResponse.h
   include/tencentcloud/ess/v20201111/model/Component.h
@@ -102,6 +103,7 @@ set(ess_src
   src/v20201111/model/SignQrCode.cpp
   src/v20201111/model/CreateFlowApproversResponse.cpp
   src/v20201111/model/DescribeFlowInfoRequest.cpp
+  src/v20201111/model/RegisterInfo.cpp
   src/v20201111/model/CancelFlowRequest.cpp
   src/v20201111/model/DescribeFlowBriefsResponse.cpp
   src/v20201111/model/Component.cpp

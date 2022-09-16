@@ -23,6 +23,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/es/v20180416/model/LogstashBindedES.h>
 #include <tencentcloud/es/v20180416/model/LogstashExtendedFile.h>
+#include <tencentcloud/es/v20180416/model/OperationDurationUpdated.h>
 
 
 namespace TencentCloud
@@ -188,6 +189,24 @@ namespace TencentCloud
                      */
                     bool DiskSizeHasBeenSet() const;
 
+                    /**
+                     * 获取可维护时间段
+                     * @return OperationDuration 可维护时间段
+                     */
+                    OperationDurationUpdated GetOperationDuration() const;
+
+                    /**
+                     * 设置可维护时间段
+                     * @param OperationDuration 可维护时间段
+                     */
+                    void SetOperationDuration(const OperationDurationUpdated& _operationDuration);
+
+                    /**
+                     * 判断参数 OperationDuration 是否已赋值
+                     * @return OperationDuration 是否已赋值
+                     */
+                    bool OperationDurationHasBeenSet() const;
+
                 private:
 
                     /**
@@ -237,6 +256,12 @@ namespace TencentCloud
                      */
                     uint64_t m_diskSize;
                     bool m_diskSizeHasBeenSet;
+
+                    /**
+                     * 可维护时间段
+                     */
+                    OperationDurationUpdated m_operationDuration;
+                    bool m_operationDurationHasBeenSet;
 
                 };
             }

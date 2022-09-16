@@ -83,12 +83,10 @@ off：关闭
                      * 获取http2 配置开关
 on：开启
 off：关闭
-初次启用 https 加速会默认开启 http2 配置
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Http2 http2 配置开关
 on：开启
 off：关闭
-初次启用 https 加速会默认开启 http2 配置
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetHttp2() const;
@@ -97,12 +95,10 @@ off：关闭
                      * 设置http2 配置开关
 on：开启
 off：关闭
-初次启用 https 加速会默认开启 http2 配置
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param Http2 http2 配置开关
 on：开启
 off：关闭
-初次启用 https 加速会默认开启 http2 配置
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetHttp2(const std::string& _http2);
@@ -356,7 +352,6 @@ off：关闭
                      * http2 配置开关
 on：开启
 off：关闭
-初次启用 https 加速会默认开启 http2 配置
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_http2;

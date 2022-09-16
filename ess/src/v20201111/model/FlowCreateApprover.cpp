@@ -35,7 +35,8 @@ FlowCreateApprover::FlowCreateApprover() :
     m_userIdHasBeenSet(false),
     m_requiredHasBeenSet(false),
     m_approverSourceHasBeenSet(false),
-    m_customApproverTagHasBeenSet(false)
+    m_customApproverTagHasBeenSet(false),
+    m_registerInfoHasBeenSet(false)
 {
 }
 
@@ -197,6 +198,23 @@ CoreInternalOutcome FlowCreateApprover::Deserialize(const rapidjson::Value &valu
         m_customApproverTagHasBeenSet = true;
     }
 
+    if (value.HasMember("RegisterInfo") && !value["RegisterInfo"].IsNull())
+    {
+        if (!value["RegisterInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `FlowCreateApprover.RegisterInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_registerInfo.Deserialize(value["RegisterInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_registerInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -327,6 +345,15 @@ void FlowCreateApprover::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "CustomApproverTag";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_customApproverTag.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_registerInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RegisterInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_registerInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -570,5 +597,21 @@ void FlowCreateApprover::SetCustomApproverTag(const string& _customApproverTag)
 bool FlowCreateApprover::CustomApproverTagHasBeenSet() const
 {
     return m_customApproverTagHasBeenSet;
+}
+
+RegisterInfo FlowCreateApprover::GetRegisterInfo() const
+{
+    return m_registerInfo;
+}
+
+void FlowCreateApprover::SetRegisterInfo(const RegisterInfo& _registerInfo)
+{
+    m_registerInfo = _registerInfo;
+    m_registerInfoHasBeenSet = true;
+}
+
+bool FlowCreateApprover::RegisterInfoHasBeenSet() const
+{
+    return m_registerInfoHasBeenSet;
 }
 

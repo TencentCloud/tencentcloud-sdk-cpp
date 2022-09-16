@@ -29,6 +29,8 @@
 #include <tencentcloud/yinsuda/v20220527/model/CreateKTVRobotResponse.h>
 #include <tencentcloud/yinsuda/v20220527/model/DescribeKTVMatchMusicsRequest.h>
 #include <tencentcloud/yinsuda/v20220527/model/DescribeKTVMatchMusicsResponse.h>
+#include <tencentcloud/yinsuda/v20220527/model/DescribeKTVMusicsByTagRequest.h>
+#include <tencentcloud/yinsuda/v20220527/model/DescribeKTVMusicsByTagResponse.h>
 #include <tencentcloud/yinsuda/v20220527/model/DescribeKTVPlaylistDetailRequest.h>
 #include <tencentcloud/yinsuda/v20220527/model/DescribeKTVPlaylistDetailResponse.h>
 #include <tencentcloud/yinsuda/v20220527/model/DescribeKTVPlaylistsRequest.h>
@@ -37,6 +39,8 @@
 #include <tencentcloud/yinsuda/v20220527/model/DescribeKTVRobotsResponse.h>
 #include <tencentcloud/yinsuda/v20220527/model/DescribeKTVSuggestionsRequest.h>
 #include <tencentcloud/yinsuda/v20220527/model/DescribeKTVSuggestionsResponse.h>
+#include <tencentcloud/yinsuda/v20220527/model/DescribeKTVTagsRequest.h>
+#include <tencentcloud/yinsuda/v20220527/model/DescribeKTVTagsResponse.h>
 #include <tencentcloud/yinsuda/v20220527/model/DestroyKTVRobotRequest.h>
 #include <tencentcloud/yinsuda/v20220527/model/DestroyKTVRobotResponse.h>
 #include <tencentcloud/yinsuda/v20220527/model/SearchKTVMusicsRequest.h>
@@ -66,6 +70,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeKTVMatchMusicsResponse> DescribeKTVMatchMusicsOutcome;
                 typedef std::future<DescribeKTVMatchMusicsOutcome> DescribeKTVMatchMusicsOutcomeCallable;
                 typedef std::function<void(const YinsudaClient*, const Model::DescribeKTVMatchMusicsRequest&, DescribeKTVMatchMusicsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeKTVMatchMusicsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeKTVMusicsByTagResponse> DescribeKTVMusicsByTagOutcome;
+                typedef std::future<DescribeKTVMusicsByTagOutcome> DescribeKTVMusicsByTagOutcomeCallable;
+                typedef std::function<void(const YinsudaClient*, const Model::DescribeKTVMusicsByTagRequest&, DescribeKTVMusicsByTagOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeKTVMusicsByTagAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeKTVPlaylistDetailResponse> DescribeKTVPlaylistDetailOutcome;
                 typedef std::future<DescribeKTVPlaylistDetailOutcome> DescribeKTVPlaylistDetailOutcomeCallable;
                 typedef std::function<void(const YinsudaClient*, const Model::DescribeKTVPlaylistDetailRequest&, DescribeKTVPlaylistDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeKTVPlaylistDetailAsyncHandler;
@@ -78,6 +85,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeKTVSuggestionsResponse> DescribeKTVSuggestionsOutcome;
                 typedef std::future<DescribeKTVSuggestionsOutcome> DescribeKTVSuggestionsOutcomeCallable;
                 typedef std::function<void(const YinsudaClient*, const Model::DescribeKTVSuggestionsRequest&, DescribeKTVSuggestionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeKTVSuggestionsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeKTVTagsResponse> DescribeKTVTagsOutcome;
+                typedef std::future<DescribeKTVTagsOutcome> DescribeKTVTagsOutcomeCallable;
+                typedef std::function<void(const YinsudaClient*, const Model::DescribeKTVTagsRequest&, DescribeKTVTagsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeKTVTagsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DestroyKTVRobotResponse> DestroyKTVRobotOutcome;
                 typedef std::future<DestroyKTVRobotOutcome> DestroyKTVRobotOutcomeCallable;
                 typedef std::function<void(const YinsudaClient*, const Model::DestroyKTVRobotRequest&, DestroyKTVRobotOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DestroyKTVRobotAsyncHandler;
@@ -118,6 +128,15 @@ namespace TencentCloud
                 DescribeKTVMatchMusicsOutcomeCallable DescribeKTVMatchMusicsCallable(const Model::DescribeKTVMatchMusicsRequest& request);
 
                 /**
+                 *通过标签过滤歌曲列表。
+                 * @param req DescribeKTVMusicsByTagRequest
+                 * @return DescribeKTVMusicsByTagOutcome
+                 */
+                DescribeKTVMusicsByTagOutcome DescribeKTVMusicsByTag(const Model::DescribeKTVMusicsByTagRequest &request);
+                void DescribeKTVMusicsByTagAsync(const Model::DescribeKTVMusicsByTagRequest& request, const DescribeKTVMusicsByTagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeKTVMusicsByTagOutcomeCallable DescribeKTVMusicsByTagCallable(const Model::DescribeKTVMusicsByTagRequest& request);
+
+                /**
                  *根据歌单 Id 获取歌单详情。
                  * @param req DescribeKTVPlaylistDetailRequest
                  * @return DescribeKTVPlaylistDetailOutcome
@@ -152,6 +171,15 @@ namespace TencentCloud
                 DescribeKTVSuggestionsOutcome DescribeKTVSuggestions(const Model::DescribeKTVSuggestionsRequest &request);
                 void DescribeKTVSuggestionsAsync(const Model::DescribeKTVSuggestionsRequest& request, const DescribeKTVSuggestionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeKTVSuggestionsOutcomeCallable DescribeKTVSuggestionsCallable(const Model::DescribeKTVSuggestionsRequest& request);
+
+                /**
+                 *获取标签分组及分组下的标签列表信息。
+                 * @param req DescribeKTVTagsRequest
+                 * @return DescribeKTVTagsOutcome
+                 */
+                DescribeKTVTagsOutcome DescribeKTVTags(const Model::DescribeKTVTagsRequest &request);
+                void DescribeKTVTagsAsync(const Model::DescribeKTVTagsRequest& request, const DescribeKTVTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeKTVTagsOutcomeCallable DescribeKTVTagsCallable(const Model::DescribeKTVTagsRequest& request);
 
                 /**
                  *销毁机器人，机器人退出 RTC 房间。

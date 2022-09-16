@@ -233,14 +233,14 @@ namespace TencentCloud
                     bool PluginSourceHasBeenSet() const;
 
                     /**
-                     * 获取客户度ID
-                     * @return ClientNum 客户度ID
+                     * 获取客户端ID
+                     * @return ClientNum 客户端ID
                      */
                     std::string GetClientNum() const;
 
                     /**
-                     * 设置客户度ID
-                     * @param ClientNum 客户度ID
+                     * 设置客户端ID
+                     * @param ClientNum 客户端ID
                      */
                     void SetClientNum(const std::string& _clientNum);
 
@@ -315,7 +315,7 @@ namespace TencentCloud
                     bool m_pluginSourceHasBeenSet;
 
                     /**
-                     * 客户度ID
+                     * 客户端ID
                      */
                     std::string m_clientNum;
                     bool m_clientNumHasBeenSet;

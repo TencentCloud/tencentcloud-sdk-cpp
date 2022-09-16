@@ -263,6 +263,8 @@
 #include <tencentcloud/vpc/v20170312/model/DescribeCrossBorderCcnRegionBandwidthLimitsResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeCrossBorderComplianceRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeCrossBorderComplianceResponse.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeCrossBorderFlowMonitorRequest.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeCrossBorderFlowMonitorResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeCustomerGatewayVendorsRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeCustomerGatewayVendorsResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeCustomerGatewaysRequest.h>
@@ -965,6 +967,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeCrossBorderComplianceResponse> DescribeCrossBorderComplianceOutcome;
                 typedef std::future<DescribeCrossBorderComplianceOutcome> DescribeCrossBorderComplianceOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DescribeCrossBorderComplianceRequest&, DescribeCrossBorderComplianceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCrossBorderComplianceAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCrossBorderFlowMonitorResponse> DescribeCrossBorderFlowMonitorOutcome;
+                typedef std::future<DescribeCrossBorderFlowMonitorOutcome> DescribeCrossBorderFlowMonitorOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::DescribeCrossBorderFlowMonitorRequest&, DescribeCrossBorderFlowMonitorOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCrossBorderFlowMonitorAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCustomerGatewayVendorsResponse> DescribeCustomerGatewayVendorsOutcome;
                 typedef std::future<DescribeCustomerGatewayVendorsOutcome> DescribeCustomerGatewayVendorsOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DescribeCustomerGatewayVendorsRequest&, DescribeCustomerGatewayVendorsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCustomerGatewayVendorsAsyncHandler;
@@ -2694,6 +2699,15 @@ namespace TencentCloud
                 DescribeCrossBorderComplianceOutcome DescribeCrossBorderCompliance(const Model::DescribeCrossBorderComplianceRequest &request);
                 void DescribeCrossBorderComplianceAsync(const Model::DescribeCrossBorderComplianceRequest& request, const DescribeCrossBorderComplianceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeCrossBorderComplianceOutcomeCallable DescribeCrossBorderComplianceCallable(const Model::DescribeCrossBorderComplianceRequest& request);
+
+                /**
+                 *查询跨境带宽监控数据，该接口特提供给联通使用
+                 * @param req DescribeCrossBorderFlowMonitorRequest
+                 * @return DescribeCrossBorderFlowMonitorOutcome
+                 */
+                DescribeCrossBorderFlowMonitorOutcome DescribeCrossBorderFlowMonitor(const Model::DescribeCrossBorderFlowMonitorRequest &request);
+                void DescribeCrossBorderFlowMonitorAsync(const Model::DescribeCrossBorderFlowMonitorRequest& request, const DescribeCrossBorderFlowMonitorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCrossBorderFlowMonitorOutcomeCallable DescribeCrossBorderFlowMonitorCallable(const Model::DescribeCrossBorderFlowMonitorRequest& request);
 
                 /**
                  *本接口（DescribeCustomerGatewayVendors）用于查询可支持的对端网关厂商信息。

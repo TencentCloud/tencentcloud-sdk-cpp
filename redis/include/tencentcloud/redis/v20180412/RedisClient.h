@@ -1064,7 +1064,7 @@ namespace TencentCloud
                 ModifyInstanceAccountOutcomeCallable ModifyInstanceAccountCallable(const Model::ModifyInstanceAccountRequest& request);
 
                 /**
-                 *本接口(ModifyInstanceParams)用于修改实例参数。
+                 *本接口(ModifyInstanceParams)用于修改Redis实例的参数配置。
                  * @param req ModifyInstanceParamsRequest
                  * @return ModifyInstanceParamsOutcome
                  */

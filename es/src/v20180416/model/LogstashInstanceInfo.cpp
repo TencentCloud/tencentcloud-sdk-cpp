@@ -45,7 +45,8 @@ LogstashInstanceInfo::LogstashInstanceInfo() :
     m_nodesHasBeenSet(false),
     m_bindedESInstanceIdHasBeenSet(false),
     m_yMLConfigHasBeenSet(false),
-    m_extendedFilesHasBeenSet(false)
+    m_extendedFilesHasBeenSet(false),
+    m_operationDurationHasBeenSet(false)
 {
 }
 
@@ -324,6 +325,23 @@ CoreInternalOutcome LogstashInstanceInfo::Deserialize(const rapidjson::Value &va
         m_extendedFilesHasBeenSet = true;
     }
 
+    if (value.HasMember("OperationDuration") && !value["OperationDuration"].IsNull())
+    {
+        if (!value["OperationDuration"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `LogstashInstanceInfo.OperationDuration` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_operationDuration.Deserialize(value["OperationDuration"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_operationDurationHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -543,6 +561,15 @@ void LogstashInstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_operationDurationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OperationDuration";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_operationDuration.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -946,5 +973,21 @@ void LogstashInstanceInfo::SetExtendedFiles(const vector<LogstashExtendedFile>& 
 bool LogstashInstanceInfo::ExtendedFilesHasBeenSet() const
 {
     return m_extendedFilesHasBeenSet;
+}
+
+OperationDuration LogstashInstanceInfo::GetOperationDuration() const
+{
+    return m_operationDuration;
+}
+
+void LogstashInstanceInfo::SetOperationDuration(const OperationDuration& _operationDuration)
+{
+    m_operationDuration = _operationDuration;
+    m_operationDurationHasBeenSet = true;
+}
+
+bool LogstashInstanceInfo::OperationDurationHasBeenSet() const
+{
+    return m_operationDurationHasBeenSet;
 }
 

@@ -3824,6 +3824,49 @@ VodClient::ExecuteFunctionOutcomeCallable VodClient::ExecuteFunctionCallable(con
     return task->get_future();
 }
 
+VodClient::ExtractTraceWatermarkOutcome VodClient::ExtractTraceWatermark(const ExtractTraceWatermarkRequest &request)
+{
+    auto outcome = MakeRequest(request, "ExtractTraceWatermark");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ExtractTraceWatermarkResponse rsp = ExtractTraceWatermarkResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ExtractTraceWatermarkOutcome(rsp);
+        else
+            return ExtractTraceWatermarkOutcome(o.GetError());
+    }
+    else
+    {
+        return ExtractTraceWatermarkOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::ExtractTraceWatermarkAsync(const ExtractTraceWatermarkRequest& request, const ExtractTraceWatermarkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ExtractTraceWatermark(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VodClient::ExtractTraceWatermarkOutcomeCallable VodClient::ExtractTraceWatermarkCallable(const ExtractTraceWatermarkRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ExtractTraceWatermarkOutcome()>>(
+        [this, request]()
+        {
+            return this->ExtractTraceWatermark(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VodClient::ForbidMediaDistributionOutcome VodClient::ForbidMediaDistribution(const ForbidMediaDistributionRequest &request)
 {
     auto outcome = MakeRequest(request, "ForbidMediaDistribution");

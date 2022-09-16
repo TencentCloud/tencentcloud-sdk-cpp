@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取控制台url，此链接5分钟内有效，且只能访问一次
-                     * @return ConsoleUrl 控制台url，此链接5分钟内有效，且只能访问一次
+                     * 获取子客Web控制台url，此链接5分钟内有效，且只能访问一次
+                     * @return ConsoleUrl 子客Web控制台url，此链接5分钟内有效，且只能访问一次
                      */
                     std::string GetConsoleUrl() const;
 
@@ -56,10 +56,8 @@ namespace TencentCloud
                     bool ConsoleUrlHasBeenSet() const;
 
                     /**
-                     * 获取渠道合作企业是否认证开通腾讯电子签。
-当渠道合作企业未完成认证开通腾讯电子签,建议先调用同步企业信息(SyncProxyOrganization)和同步经办人信息(SyncProxyOrganizationOperators)接口成功后再跳转到登录页面。
-                     * @return IsActivated 渠道合作企业是否认证开通腾讯电子签。
-当渠道合作企业未完成认证开通腾讯电子签,建议先调用同步企业信息(SyncProxyOrganization)和同步经办人信息(SyncProxyOrganizationOperators)接口成功后再跳转到登录页面。
+                     * 获取渠道子客企业是否已开通腾讯电子签。
+                     * @return IsActivated 渠道子客企业是否已开通腾讯电子签。
                      */
                     bool GetIsActivated() const;
 
@@ -72,14 +70,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 控制台url，此链接5分钟内有效，且只能访问一次
+                     * 子客Web控制台url，此链接5分钟内有效，且只能访问一次
                      */
                     std::string m_consoleUrl;
                     bool m_consoleUrlHasBeenSet;
 
                     /**
-                     * 渠道合作企业是否认证开通腾讯电子签。
-当渠道合作企业未完成认证开通腾讯电子签,建议先调用同步企业信息(SyncProxyOrganization)和同步经办人信息(SyncProxyOrganizationOperators)接口成功后再跳转到登录页面。
+                     * 渠道子客企业是否已开通腾讯电子签。
                      */
                     bool m_isActivated;
                     bool m_isActivatedHasBeenSet;

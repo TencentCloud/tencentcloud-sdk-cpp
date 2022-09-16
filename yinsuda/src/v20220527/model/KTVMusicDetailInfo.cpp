@@ -27,7 +27,8 @@ KTVMusicDetailInfo::KTVMusicDetailInfo() :
     m_midiUrlHasBeenSet(false),
     m_chorusClipSetHasBeenSet(false),
     m_preludeIntervalHasBeenSet(false),
-    m_genreSetHasBeenSet(false)
+    m_genreSetHasBeenSet(false),
+    m_bPMInfoHasBeenSet(false)
 {
 }
 
@@ -126,6 +127,23 @@ CoreInternalOutcome KTVMusicDetailInfo::Deserialize(const rapidjson::Value &valu
         m_genreSetHasBeenSet = true;
     }
 
+    if (value.HasMember("BPMInfo") && !value["BPMInfo"].IsNull())
+    {
+        if (!value["BPMInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `KTVMusicDetailInfo.BPMInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_bPMInfo.Deserialize(value["BPMInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_bPMInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -200,6 +218,15 @@ void KTVMusicDetailInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_bPMInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BPMInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_bPMInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -315,5 +342,21 @@ void KTVMusicDetailInfo::SetGenreSet(const vector<string>& _genreSet)
 bool KTVMusicDetailInfo::GenreSetHasBeenSet() const
 {
     return m_genreSetHasBeenSet;
+}
+
+KTVBPMInfo KTVMusicDetailInfo::GetBPMInfo() const
+{
+    return m_bPMInfo;
+}
+
+void KTVMusicDetailInfo::SetBPMInfo(const KTVBPMInfo& _bPMInfo)
+{
+    m_bPMInfo = _bPMInfo;
+    m_bPMInfoHasBeenSet = true;
+}
+
+bool KTVMusicDetailInfo::BPMInfoHasBeenSet() const
+{
+    return m_bPMInfoHasBeenSet;
 }
 

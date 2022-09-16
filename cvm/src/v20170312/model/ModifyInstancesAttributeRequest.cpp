@@ -27,6 +27,7 @@ ModifyInstancesAttributeRequest::ModifyInstancesAttributeRequest() :
     m_instanceNameHasBeenSet(false),
     m_securityGroupsHasBeenSet(false),
     m_camRoleNameHasBeenSet(false),
+    m_hostNameHasBeenSet(false),
     m_disableApiTerminationHasBeenSet(false),
     m_camRoleTypeHasBeenSet(false)
 {
@@ -79,6 +80,14 @@ string ModifyInstancesAttributeRequest::ToJsonString() const
         string key = "CamRoleName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_camRoleName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_hostNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HostName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_hostName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_disableApiTerminationHasBeenSet)
@@ -167,6 +176,22 @@ void ModifyInstancesAttributeRequest::SetCamRoleName(const string& _camRoleName)
 bool ModifyInstancesAttributeRequest::CamRoleNameHasBeenSet() const
 {
     return m_camRoleNameHasBeenSet;
+}
+
+string ModifyInstancesAttributeRequest::GetHostName() const
+{
+    return m_hostName;
+}
+
+void ModifyInstancesAttributeRequest::SetHostName(const string& _hostName)
+{
+    m_hostName = _hostName;
+    m_hostNameHasBeenSet = true;
+}
+
+bool ModifyInstancesAttributeRequest::HostNameHasBeenSet() const
+{
+    return m_hostNameHasBeenSet;
 }
 
 bool ModifyInstancesAttributeRequest::GetDisableApiTermination() const

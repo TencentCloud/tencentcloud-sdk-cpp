@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/es/v20180416/model/TagInfo.h>
+#include <tencentcloud/es/v20180416/model/OperationDuration.h>
 
 
 namespace TencentCloud
@@ -349,6 +350,24 @@ namespace TencentCloud
                      */
                     bool TagListHasBeenSet() const;
 
+                    /**
+                     * 获取可维护时间段
+                     * @return OperationDuration 可维护时间段
+                     */
+                    OperationDuration GetOperationDuration() const;
+
+                    /**
+                     * 设置可维护时间段
+                     * @param OperationDuration 可维护时间段
+                     */
+                    void SetOperationDuration(const OperationDuration& _operationDuration);
+
+                    /**
+                     * 判断参数 OperationDuration 是否已赋值
+                     * @return OperationDuration 是否已赋值
+                     */
+                    bool OperationDurationHasBeenSet() const;
+
                 private:
 
                     /**
@@ -452,6 +471,12 @@ namespace TencentCloud
                      */
                     std::vector<TagInfo> m_tagList;
                     bool m_tagListHasBeenSet;
+
+                    /**
+                     * 可维护时间段
+                     */
+                    OperationDuration m_operationDuration;
+                    bool m_operationDurationHasBeenSet;
 
                 };
             }

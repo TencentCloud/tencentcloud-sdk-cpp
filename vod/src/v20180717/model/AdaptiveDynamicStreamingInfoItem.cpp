@@ -25,7 +25,8 @@ AdaptiveDynamicStreamingInfoItem::AdaptiveDynamicStreamingInfoItem() :
     m_packageHasBeenSet(false),
     m_drmTypeHasBeenSet(false),
     m_urlHasBeenSet(false),
-    m_sizeHasBeenSet(false)
+    m_sizeHasBeenSet(false),
+    m_digitalWatermarkTypeHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,16 @@ CoreInternalOutcome AdaptiveDynamicStreamingInfoItem::Deserialize(const rapidjso
         m_sizeHasBeenSet = true;
     }
 
+    if (value.HasMember("DigitalWatermarkType") && !value["DigitalWatermarkType"].IsNull())
+    {
+        if (!value["DigitalWatermarkType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AdaptiveDynamicStreamingInfoItem.DigitalWatermarkType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_digitalWatermarkType = string(value["DigitalWatermarkType"].GetString());
+        m_digitalWatermarkTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +140,14 @@ void AdaptiveDynamicStreamingInfoItem::ToJsonObject(rapidjson::Value &value, rap
         string key = "Size";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_size, allocator);
+    }
+
+    if (m_digitalWatermarkTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DigitalWatermarkType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_digitalWatermarkType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -212,5 +231,21 @@ void AdaptiveDynamicStreamingInfoItem::SetSize(const int64_t& _size)
 bool AdaptiveDynamicStreamingInfoItem::SizeHasBeenSet() const
 {
     return m_sizeHasBeenSet;
+}
+
+string AdaptiveDynamicStreamingInfoItem::GetDigitalWatermarkType() const
+{
+    return m_digitalWatermarkType;
+}
+
+void AdaptiveDynamicStreamingInfoItem::SetDigitalWatermarkType(const string& _digitalWatermarkType)
+{
+    m_digitalWatermarkType = _digitalWatermarkType;
+    m_digitalWatermarkTypeHasBeenSet = true;
+}
+
+bool AdaptiveDynamicStreamingInfoItem::DigitalWatermarkTypeHasBeenSet() const
+{
+    return m_digitalWatermarkTypeHasBeenSet;
 }
 

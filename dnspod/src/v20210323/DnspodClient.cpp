@@ -685,6 +685,49 @@ DnspodClient::DescribeDomainAnalyticsOutcomeCallable DnspodClient::DescribeDomai
     return task->get_future();
 }
 
+DnspodClient::DescribeDomainGroupListOutcome DnspodClient::DescribeDomainGroupList(const DescribeDomainGroupListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDomainGroupList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDomainGroupListResponse rsp = DescribeDomainGroupListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDomainGroupListOutcome(rsp);
+        else
+            return DescribeDomainGroupListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDomainGroupListOutcome(outcome.GetError());
+    }
+}
+
+void DnspodClient::DescribeDomainGroupListAsync(const DescribeDomainGroupListRequest& request, const DescribeDomainGroupListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDomainGroupList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DnspodClient::DescribeDomainGroupListOutcomeCallable DnspodClient::DescribeDomainGroupListCallable(const DescribeDomainGroupListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDomainGroupListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDomainGroupList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DnspodClient::DescribeDomainListOutcome DnspodClient::DescribeDomainList(const DescribeDomainListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDomainList");

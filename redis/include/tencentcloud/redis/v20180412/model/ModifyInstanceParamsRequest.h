@@ -44,14 +44,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID
-                     * @return InstanceId 实例ID
+                     * 获取实例ID。
+                     * @return InstanceId 实例ID。
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID
-                     * @param InstanceId 实例ID
+                     * 设置实例ID。
+                     * @param InstanceId 实例ID。
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
@@ -62,14 +62,14 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取实例修改的参数列表
-                     * @return InstanceParams 实例修改的参数列表
+                     * 获取实例修改的参数列表。
+                     * @return InstanceParams 实例修改的参数列表。
                      */
                     std::vector<InstanceParam> GetInstanceParams() const;
 
                     /**
-                     * 设置实例修改的参数列表
-                     * @param InstanceParams 实例修改的参数列表
+                     * 设置实例修改的参数列表。
+                     * @param InstanceParams 实例修改的参数列表。
                      */
                     void SetInstanceParams(const std::vector<InstanceParam>& _instanceParams);
 
@@ -82,13 +82,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例ID
+                     * 实例ID。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 实例修改的参数列表
+                     * 实例修改的参数列表。
                      */
                     std::vector<InstanceParam> m_instanceParams;
                     bool m_instanceParamsHasBeenSet;

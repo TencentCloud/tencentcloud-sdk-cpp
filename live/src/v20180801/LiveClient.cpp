@@ -169,6 +169,49 @@ LiveClient::AddLiveWatermarkOutcomeCallable LiveClient::AddLiveWatermarkCallable
     return task->get_future();
 }
 
+LiveClient::AuthenticateDomainOwnerOutcome LiveClient::AuthenticateDomainOwner(const AuthenticateDomainOwnerRequest &request)
+{
+    auto outcome = MakeRequest(request, "AuthenticateDomainOwner");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AuthenticateDomainOwnerResponse rsp = AuthenticateDomainOwnerResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AuthenticateDomainOwnerOutcome(rsp);
+        else
+            return AuthenticateDomainOwnerOutcome(o.GetError());
+    }
+    else
+    {
+        return AuthenticateDomainOwnerOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::AuthenticateDomainOwnerAsync(const AuthenticateDomainOwnerRequest& request, const AuthenticateDomainOwnerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AuthenticateDomainOwner(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LiveClient::AuthenticateDomainOwnerOutcomeCallable LiveClient::AuthenticateDomainOwnerCallable(const AuthenticateDomainOwnerRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AuthenticateDomainOwnerOutcome()>>(
+        [this, request]()
+        {
+            return this->AuthenticateDomainOwner(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LiveClient::CancelCommonMixStreamOutcome LiveClient::CancelCommonMixStream(const CancelCommonMixStreamRequest &request)
 {
     auto outcome = MakeRequest(request, "CancelCommonMixStream");

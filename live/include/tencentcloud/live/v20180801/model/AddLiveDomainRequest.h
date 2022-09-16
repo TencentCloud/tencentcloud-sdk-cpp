@@ -180,6 +180,44 @@ namespace TencentCloud
                      */
                     bool IsMiniProgramLiveHasBeenSet() const;
 
+                    /**
+                     * 获取域名归属校验类型。
+可取值（与 AuthenticateDomainOwner 接口的 VerifyType 参数一致。）：
+dnsCheck ：立即验证配置 dns 的解析记录是否与待验证内容一致，成功则保存记录。
+fileCheck ：立即验证 web 文件是否与待验证内容一致，成功则保存记录。
+dbCheck :  检查是否已经验证成功过。
+若不传默认为 dbCheck 。
+                     * @return VerifyOwnerType 域名归属校验类型。
+可取值（与 AuthenticateDomainOwner 接口的 VerifyType 参数一致。）：
+dnsCheck ：立即验证配置 dns 的解析记录是否与待验证内容一致，成功则保存记录。
+fileCheck ：立即验证 web 文件是否与待验证内容一致，成功则保存记录。
+dbCheck :  检查是否已经验证成功过。
+若不传默认为 dbCheck 。
+                     */
+                    std::string GetVerifyOwnerType() const;
+
+                    /**
+                     * 设置域名归属校验类型。
+可取值（与 AuthenticateDomainOwner 接口的 VerifyType 参数一致。）：
+dnsCheck ：立即验证配置 dns 的解析记录是否与待验证内容一致，成功则保存记录。
+fileCheck ：立即验证 web 文件是否与待验证内容一致，成功则保存记录。
+dbCheck :  检查是否已经验证成功过。
+若不传默认为 dbCheck 。
+                     * @param VerifyOwnerType 域名归属校验类型。
+可取值（与 AuthenticateDomainOwner 接口的 VerifyType 参数一致。）：
+dnsCheck ：立即验证配置 dns 的解析记录是否与待验证内容一致，成功则保存记录。
+fileCheck ：立即验证 web 文件是否与待验证内容一致，成功则保存记录。
+dbCheck :  检查是否已经验证成功过。
+若不传默认为 dbCheck 。
+                     */
+                    void SetVerifyOwnerType(const std::string& _verifyOwnerType);
+
+                    /**
+                     * 判断参数 VerifyOwnerType 是否已赋值
+                     * @return VerifyOwnerType 是否已赋值
+                     */
+                    bool VerifyOwnerTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -223,6 +261,17 @@ namespace TencentCloud
                      */
                     int64_t m_isMiniProgramLive;
                     bool m_isMiniProgramLiveHasBeenSet;
+
+                    /**
+                     * 域名归属校验类型。
+可取值（与 AuthenticateDomainOwner 接口的 VerifyType 参数一致。）：
+dnsCheck ：立即验证配置 dns 的解析记录是否与待验证内容一致，成功则保存记录。
+fileCheck ：立即验证 web 文件是否与待验证内容一致，成功则保存记录。
+dbCheck :  检查是否已经验证成功过。
+若不传默认为 dbCheck 。
+                     */
+                    std::string m_verifyOwnerType;
+                    bool m_verifyOwnerTypeHasBeenSet;
 
                 };
             }

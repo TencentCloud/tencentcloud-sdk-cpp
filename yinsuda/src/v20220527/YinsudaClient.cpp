@@ -169,6 +169,49 @@ YinsudaClient::DescribeKTVMatchMusicsOutcomeCallable YinsudaClient::DescribeKTVM
     return task->get_future();
 }
 
+YinsudaClient::DescribeKTVMusicsByTagOutcome YinsudaClient::DescribeKTVMusicsByTag(const DescribeKTVMusicsByTagRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeKTVMusicsByTag");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeKTVMusicsByTagResponse rsp = DescribeKTVMusicsByTagResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeKTVMusicsByTagOutcome(rsp);
+        else
+            return DescribeKTVMusicsByTagOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeKTVMusicsByTagOutcome(outcome.GetError());
+    }
+}
+
+void YinsudaClient::DescribeKTVMusicsByTagAsync(const DescribeKTVMusicsByTagRequest& request, const DescribeKTVMusicsByTagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeKTVMusicsByTag(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+YinsudaClient::DescribeKTVMusicsByTagOutcomeCallable YinsudaClient::DescribeKTVMusicsByTagCallable(const DescribeKTVMusicsByTagRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeKTVMusicsByTagOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeKTVMusicsByTag(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 YinsudaClient::DescribeKTVPlaylistDetailOutcome YinsudaClient::DescribeKTVPlaylistDetail(const DescribeKTVPlaylistDetailRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeKTVPlaylistDetail");
@@ -334,6 +377,49 @@ YinsudaClient::DescribeKTVSuggestionsOutcomeCallable YinsudaClient::DescribeKTVS
         [this, request]()
         {
             return this->DescribeKTVSuggestions(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+YinsudaClient::DescribeKTVTagsOutcome YinsudaClient::DescribeKTVTags(const DescribeKTVTagsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeKTVTags");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeKTVTagsResponse rsp = DescribeKTVTagsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeKTVTagsOutcome(rsp);
+        else
+            return DescribeKTVTagsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeKTVTagsOutcome(outcome.GetError());
+    }
+}
+
+void YinsudaClient::DescribeKTVTagsAsync(const DescribeKTVTagsRequest& request, const DescribeKTVTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeKTVTags(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+YinsudaClient::DescribeKTVTagsOutcomeCallable YinsudaClient::DescribeKTVTagsCallable(const DescribeKTVTagsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeKTVTagsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeKTVTags(request);
         }
     );
 

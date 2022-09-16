@@ -67,14 +67,14 @@ namespace TencentCloud
                     bool AgentHasBeenSet() const;
 
                     /**
-                     * 获取渠道侧合作企业名称，最大长度64个字符
-                     * @return ProxyOrganizationName 渠道侧合作企业名称，最大长度64个字符
+                     * 获取渠道子客企业名称，最大长度64个字符
+                     * @return ProxyOrganizationName 渠道子客企业名称，最大长度64个字符
                      */
                     std::string GetProxyOrganizationName() const;
 
                     /**
-                     * 设置渠道侧合作企业名称，最大长度64个字符
-                     * @param ProxyOrganizationName 渠道侧合作企业名称，最大长度64个字符
+                     * 设置渠道子客企业名称，最大长度64个字符
+                     * @param ProxyOrganizationName 渠道子客企业名称，最大长度64个字符
                      */
                     void SetProxyOrganizationName(const std::string& _proxyOrganizationName);
 
@@ -85,14 +85,14 @@ namespace TencentCloud
                     bool ProxyOrganizationNameHasBeenSet() const;
 
                     /**
-                     * 获取渠道侧合作企业经办人的姓名，最大长度50个字符
-                     * @return ProxyOperatorName 渠道侧合作企业经办人的姓名，最大长度50个字符
+                     * 获取渠道子客企业经办人的姓名，最大长度50个字符
+                     * @return ProxyOperatorName 渠道子客企业经办人的姓名，最大长度50个字符
                      */
                     std::string GetProxyOperatorName() const;
 
                     /**
-                     * 设置渠道侧合作企业经办人的姓名，最大长度50个字符
-                     * @param ProxyOperatorName 渠道侧合作企业经办人的姓名，最大长度50个字符
+                     * 设置渠道子客企业经办人的姓名，最大长度50个字符
+                     * @param ProxyOperatorName 渠道子客企业经办人的姓名，最大长度50个字符
                      */
                     void SetProxyOperatorName(const std::string& _proxyOperatorName);
 
@@ -139,14 +139,14 @@ namespace TencentCloud
                     bool ModuleIdHasBeenSet() const;
 
                     /**
-                     * 获取渠道侧合作企业统一社会信用代码，最大长度200个字符
-                     * @return UniformSocialCreditCode 渠道侧合作企业统一社会信用代码，最大长度200个字符
+                     * 获取渠道子客企业统一社会信用代码，最大长度200个字符
+                     * @return UniformSocialCreditCode 渠道子客企业统一社会信用代码，最大长度200个字符
                      */
                     std::string GetUniformSocialCreditCode() const;
 
                     /**
-                     * 设置渠道侧合作企业统一社会信用代码，最大长度200个字符
-                     * @param UniformSocialCreditCode 渠道侧合作企业统一社会信用代码，最大长度200个字符
+                     * 设置渠道子客企业统一社会信用代码，最大长度200个字符
+                     * @param UniformSocialCreditCode 渠道子客企业统一社会信用代码，最大长度200个字符
                      */
                     void SetUniformSocialCreditCode(const std::string& _uniformSocialCreditCode);
 
@@ -202,13 +202,13 @@ namespace TencentCloud
                     bool m_agentHasBeenSet;
 
                     /**
-                     * 渠道侧合作企业名称，最大长度64个字符
+                     * 渠道子客企业名称，最大长度64个字符
                      */
                     std::string m_proxyOrganizationName;
                     bool m_proxyOrganizationNameHasBeenSet;
 
                     /**
-                     * 渠道侧合作企业经办人的姓名，最大长度50个字符
+                     * 渠道子客企业经办人的姓名，最大长度50个字符
                      */
                     std::string m_proxyOperatorName;
                     bool m_proxyOperatorNameHasBeenSet;
@@ -226,7 +226,7 @@ namespace TencentCloud
                     bool m_moduleIdHasBeenSet;
 
                     /**
-                     * 渠道侧合作企业统一社会信用代码，最大长度200个字符
+                     * 渠道子客企业统一社会信用代码，最大长度200个字符
                      */
                     std::string m_uniformSocialCreditCode;
                     bool m_uniformSocialCreditCodeHasBeenSet;

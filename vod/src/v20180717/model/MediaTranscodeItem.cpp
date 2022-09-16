@@ -31,7 +31,8 @@ MediaTranscodeItem::MediaTranscodeItem() :
     m_md5HasBeenSet(false),
     m_containerHasBeenSet(false),
     m_videoStreamSetHasBeenSet(false),
-    m_audioStreamSetHasBeenSet(false)
+    m_audioStreamSetHasBeenSet(false),
+    m_digitalWatermarkTypeHasBeenSet(false)
 {
 }
 
@@ -170,6 +171,16 @@ CoreInternalOutcome MediaTranscodeItem::Deserialize(const rapidjson::Value &valu
         m_audioStreamSetHasBeenSet = true;
     }
 
+    if (value.HasMember("DigitalWatermarkType") && !value["DigitalWatermarkType"].IsNull())
+    {
+        if (!value["DigitalWatermarkType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MediaTranscodeItem.DigitalWatermarkType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_digitalWatermarkType = string(value["DigitalWatermarkType"].GetString());
+        m_digitalWatermarkTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -277,6 +288,14 @@ void MediaTranscodeItem::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_digitalWatermarkTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DigitalWatermarkType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_digitalWatermarkType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -456,5 +475,21 @@ void MediaTranscodeItem::SetAudioStreamSet(const vector<MediaAudioStreamItem>& _
 bool MediaTranscodeItem::AudioStreamSetHasBeenSet() const
 {
     return m_audioStreamSetHasBeenSet;
+}
+
+string MediaTranscodeItem::GetDigitalWatermarkType() const
+{
+    return m_digitalWatermarkType;
+}
+
+void MediaTranscodeItem::SetDigitalWatermarkType(const string& _digitalWatermarkType)
+{
+    m_digitalWatermarkType = _digitalWatermarkType;
+    m_digitalWatermarkTypeHasBeenSet = true;
+}
+
+bool MediaTranscodeItem::DigitalWatermarkTypeHasBeenSet() const
+{
+    return m_digitalWatermarkTypeHasBeenSet;
 }
 

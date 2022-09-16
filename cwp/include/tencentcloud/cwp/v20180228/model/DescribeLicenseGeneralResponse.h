@@ -116,8 +116,8 @@ namespace TencentCloud
                     bool ExpireLicenseCntHasBeenSet() const;
 
                     /**
-                     * 获取自动升级开关状态,默认 false,  ture 开启, false 关闭
-                     * @return AutoOpenStatus 自动升级开关状态,默认 false,  ture 开启, false 关闭
+                     * 获取自动升级开关状态,默认 false,  true 开启, false 关闭
+                     * @return AutoOpenStatus 自动升级开关状态,默认 false,  true 开启, false 关闭
                      */
                     bool GetAutoOpenStatus() const;
 
@@ -262,7 +262,7 @@ namespace TencentCloud
                     bool m_expireLicenseCntHasBeenSet;
 
                     /**
-                     * 自动升级开关状态,默认 false,  ture 开启, false 关闭
+                     * 自动升级开关状态,默认 false,  true 开启, false 关闭
                      */
                     bool m_autoOpenStatus;
                     bool m_autoOpenStatusHasBeenSet;

@@ -29,6 +29,8 @@
 #include <tencentcloud/live/v20180801/model/AddLiveDomainResponse.h>
 #include <tencentcloud/live/v20180801/model/AddLiveWatermarkRequest.h>
 #include <tencentcloud/live/v20180801/model/AddLiveWatermarkResponse.h>
+#include <tencentcloud/live/v20180801/model/AuthenticateDomainOwnerRequest.h>
+#include <tencentcloud/live/v20180801/model/AuthenticateDomainOwnerResponse.h>
 #include <tencentcloud/live/v20180801/model/CancelCommonMixStreamRequest.h>
 #include <tencentcloud/live/v20180801/model/CancelCommonMixStreamResponse.h>
 #include <tencentcloud/live/v20180801/model/CreateCommonMixStreamRequest.h>
@@ -286,6 +288,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::AddLiveWatermarkResponse> AddLiveWatermarkOutcome;
                 typedef std::future<AddLiveWatermarkOutcome> AddLiveWatermarkOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::AddLiveWatermarkRequest&, AddLiveWatermarkOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddLiveWatermarkAsyncHandler;
+                typedef Outcome<Core::Error, Model::AuthenticateDomainOwnerResponse> AuthenticateDomainOwnerOutcome;
+                typedef std::future<AuthenticateDomainOwnerOutcome> AuthenticateDomainOwnerOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::AuthenticateDomainOwnerRequest&, AuthenticateDomainOwnerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AuthenticateDomainOwnerAsyncHandler;
                 typedef Outcome<Core::Error, Model::CancelCommonMixStreamResponse> CancelCommonMixStreamOutcome;
                 typedef std::future<CancelCommonMixStreamOutcome> CancelCommonMixStreamOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::CancelCommonMixStreamRequest&, CancelCommonMixStreamOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CancelCommonMixStreamAsyncHandler;
@@ -669,6 +674,15 @@ namespace TencentCloud
                 AddLiveWatermarkOutcome AddLiveWatermark(const Model::AddLiveWatermarkRequest &request);
                 void AddLiveWatermarkAsync(const Model::AddLiveWatermarkRequest& request, const AddLiveWatermarkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 AddLiveWatermarkOutcomeCallable AddLiveWatermarkCallable(const Model::AddLiveWatermarkRequest& request);
+
+                /**
+                 *验证用户是否拥有特定直播域名。
+                 * @param req AuthenticateDomainOwnerRequest
+                 * @return AuthenticateDomainOwnerOutcome
+                 */
+                AuthenticateDomainOwnerOutcome AuthenticateDomainOwner(const Model::AuthenticateDomainOwnerRequest &request);
+                void AuthenticateDomainOwnerAsync(const Model::AuthenticateDomainOwnerRequest& request, const AuthenticateDomainOwnerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AuthenticateDomainOwnerOutcomeCallable AuthenticateDomainOwnerCallable(const Model::AuthenticateDomainOwnerRequest& request);
 
                 /**
                  *该接口用来取消混流。用法与 mix_streamv2.cancel_mix_stream 基本一致。

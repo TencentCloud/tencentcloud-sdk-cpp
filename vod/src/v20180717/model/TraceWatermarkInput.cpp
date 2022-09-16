@@ -21,6 +21,7 @@ using namespace TencentCloud::Vod::V20180717::Model;
 using namespace std;
 
 TraceWatermarkInput::TraceWatermarkInput() :
+    m_switchHasBeenSet(false),
     m_definitionHasBeenSet(false)
 {
 }
@@ -29,6 +30,16 @@ CoreInternalOutcome TraceWatermarkInput::Deserialize(const rapidjson::Value &val
 {
     string requestId = "";
 
+
+    if (value.HasMember("Switch") && !value["Switch"].IsNull())
+    {
+        if (!value["Switch"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TraceWatermarkInput.Switch` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_switch = string(value["Switch"].GetString());
+        m_switchHasBeenSet = true;
+    }
 
     if (value.HasMember("Definition") && !value["Definition"].IsNull())
     {
@@ -47,6 +58,14 @@ CoreInternalOutcome TraceWatermarkInput::Deserialize(const rapidjson::Value &val
 void TraceWatermarkInput::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
+    if (m_switchHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Switch";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_switch.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_definitionHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -57,6 +76,22 @@ void TraceWatermarkInput::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
 
 }
 
+
+string TraceWatermarkInput::GetSwitch() const
+{
+    return m_switch;
+}
+
+void TraceWatermarkInput::SetSwitch(const string& _switch)
+{
+    m_switch = _switch;
+    m_switchHasBeenSet = true;
+}
+
+bool TraceWatermarkInput::SwitchHasBeenSet() const
+{
+    return m_switchHasBeenSet;
+}
 
 uint64_t TraceWatermarkInput::GetDefinition() const
 {

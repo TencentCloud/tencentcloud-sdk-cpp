@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/yinsuda/v20220527/model/KTVMusicBaseInfo.h>
 #include <tencentcloud/yinsuda/v20220527/model/ChorusClip.h>
+#include <tencentcloud/yinsuda/v20220527/model/KTVBPMInfo.h>
 
 
 namespace TencentCloud
@@ -174,6 +175,28 @@ namespace TencentCloud
                      */
                     bool GenreSetHasBeenSet() const;
 
+                    /**
+                     * 获取节拍信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BPMInfo 节拍信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    KTVBPMInfo GetBPMInfo() const;
+
+                    /**
+                     * 设置节拍信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param BPMInfo 节拍信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetBPMInfo(const KTVBPMInfo& _bPMInfo);
+
+                    /**
+                     * 判断参数 BPMInfo 是否已赋值
+                     * @return BPMInfo 是否已赋值
+                     */
+                    bool BPMInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -217,6 +240,13 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_genreSet;
                     bool m_genreSetHasBeenSet;
+
+                    /**
+                     * 节拍信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    KTVBPMInfo m_bPMInfo;
+                    bool m_bPMInfoHasBeenSet;
 
                 };
             }

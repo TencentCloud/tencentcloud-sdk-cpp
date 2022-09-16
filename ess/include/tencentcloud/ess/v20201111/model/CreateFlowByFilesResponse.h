@@ -44,8 +44,12 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取签署流程编号
-                     * @return FlowId 签署流程编号
+                     * 获取签署流程编号。
+
+注：如入参 是否需要预览 NeedPreview 设置为 true，不会正式发起合同，此处不会有值返回；如入参 是否需要预览 NeedPreview 设置为 false，此处会正常返回签署流程编号 FlowId。
+                     * @return FlowId 签署流程编号。
+
+注：如入参 是否需要预览 NeedPreview 设置为 true，不会正式发起合同，此处不会有值返回；如入参 是否需要预览 NeedPreview 设置为 false，此处会正常返回签署流程编号 FlowId。
                      */
                     std::string GetFlowId() const;
 
@@ -56,9 +60,13 @@ namespace TencentCloud
                     bool FlowIdHasBeenSet() const;
 
                     /**
-                     * 获取合同预览链接
+                     * 获取合同预览链接。
+
+注：如入参 是否需要预览 NeedPreview 设置为 true，会开启“预览模式”，此处会返回预览链接；如入参 是否需要预览 NeedPreview 设置为 false，此处不会有值返回。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PreviewUrl 合同预览链接
+                     * @return PreviewUrl 合同预览链接。
+
+注：如入参 是否需要预览 NeedPreview 设置为 true，会开启“预览模式”，此处会返回预览链接；如入参 是否需要预览 NeedPreview 设置为 false，此处不会有值返回。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetPreviewUrl() const;
@@ -72,13 +80,17 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 签署流程编号
+                     * 签署流程编号。
+
+注：如入参 是否需要预览 NeedPreview 设置为 true，不会正式发起合同，此处不会有值返回；如入参 是否需要预览 NeedPreview 设置为 false，此处会正常返回签署流程编号 FlowId。
                      */
                     std::string m_flowId;
                     bool m_flowIdHasBeenSet;
 
                     /**
-                     * 合同预览链接
+                     * 合同预览链接。
+
+注：如入参 是否需要预览 NeedPreview 设置为 true，会开启“预览模式”，此处会返回预览链接；如入参 是否需要预览 NeedPreview 设置为 false，此处不会有值返回。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_previewUrl;

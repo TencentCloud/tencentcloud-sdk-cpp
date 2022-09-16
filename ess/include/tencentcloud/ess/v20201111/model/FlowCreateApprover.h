@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/ess/v20201111/model/RegisterInfo.h>
 
 
 namespace TencentCloud
@@ -51,12 +52,12 @@ namespace TencentCloud
 0：企业
 1：个人
 3：企业静默签署
-注：类型为3（企业静默签署）时，此接口会默认完成该签署方的签署。
+注：类型为3（企业静默签署）时，此接口会默认完成该签署方的签署。静默签署仅进行盖章操作，不能自动签名。
                      * @return ApproverType 参与者类型：
 0：企业
 1：个人
 3：企业静默签署
-注：类型为3（企业静默签署）时，此接口会默认完成该签署方的签署。
+注：类型为3（企业静默签署）时，此接口会默认完成该签署方的签署。静默签署仅进行盖章操作，不能自动签名。
                      */
                     int64_t GetApproverType() const;
 
@@ -65,12 +66,12 @@ namespace TencentCloud
 0：企业
 1：个人
 3：企业静默签署
-注：类型为3（企业静默签署）时，此接口会默认完成该签署方的签署。
+注：类型为3（企业静默签署）时，此接口会默认完成该签署方的签署。静默签署仅进行盖章操作，不能自动签名。
                      * @param ApproverType 参与者类型：
 0：企业
 1：个人
 3：企业静默签署
-注：类型为3（企业静默签署）时，此接口会默认完成该签署方的签署。
+注：类型为3（企业静默签署）时，此接口会默认完成该签署方的签署。静默签署仅进行盖章操作，不能自动签名。
                      */
                     void SetApproverType(const int64_t& _approverType);
 
@@ -340,6 +341,24 @@ HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)
                      */
                     bool CustomApproverTagHasBeenSet() const;
 
+                    /**
+                     * 获取快速注册相关信息，目前暂未开放！
+                     * @return RegisterInfo 快速注册相关信息，目前暂未开放！
+                     */
+                    RegisterInfo GetRegisterInfo() const;
+
+                    /**
+                     * 设置快速注册相关信息，目前暂未开放！
+                     * @param RegisterInfo 快速注册相关信息，目前暂未开放！
+                     */
+                    void SetRegisterInfo(const RegisterInfo& _registerInfo);
+
+                    /**
+                     * 判断参数 RegisterInfo 是否已赋值
+                     * @return RegisterInfo 是否已赋值
+                     */
+                    bool RegisterInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -347,7 +366,7 @@ HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)
 0：企业
 1：个人
 3：企业静默签署
-注：类型为3（企业静默签署）时，此接口会默认完成该签署方的签署。
+注：类型为3（企业静默签署）时，此接口会默认完成该签署方的签署。静默签署仅进行盖章操作，不能自动签名。
                      */
                     int64_t m_approverType;
                     bool m_approverTypeHasBeenSet;
@@ -437,6 +456,12 @@ HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)
                      */
                     std::string m_customApproverTag;
                     bool m_customApproverTagHasBeenSet;
+
+                    /**
+                     * 快速注册相关信息，目前暂未开放！
+                     */
+                    RegisterInfo m_registerInfo;
+                    bool m_registerInfoHasBeenSet;
 
                 };
             }

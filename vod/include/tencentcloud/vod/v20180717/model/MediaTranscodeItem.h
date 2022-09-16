@@ -250,6 +250,32 @@ namespace TencentCloud
                      */
                     bool AudioStreamSetHasBeenSet() const;
 
+                    /**
+                     * 获取数字水印类型。可选值：
+<li>Trace 表示经过溯源水印处理；</li>
+<li>None 表示没有经过数字水印处理。</li>
+                     * @return DigitalWatermarkType 数字水印类型。可选值：
+<li>Trace 表示经过溯源水印处理；</li>
+<li>None 表示没有经过数字水印处理。</li>
+                     */
+                    std::string GetDigitalWatermarkType() const;
+
+                    /**
+                     * 设置数字水印类型。可选值：
+<li>Trace 表示经过溯源水印处理；</li>
+<li>None 表示没有经过数字水印处理。</li>
+                     * @param DigitalWatermarkType 数字水印类型。可选值：
+<li>Trace 表示经过溯源水印处理；</li>
+<li>None 表示没有经过数字水印处理。</li>
+                     */
+                    void SetDigitalWatermarkType(const std::string& _digitalWatermarkType);
+
+                    /**
+                     * 判断参数 DigitalWatermarkType 是否已赋值
+                     * @return DigitalWatermarkType 是否已赋值
+                     */
+                    bool DigitalWatermarkTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -318,6 +344,14 @@ namespace TencentCloud
                      */
                     std::vector<MediaAudioStreamItem> m_audioStreamSet;
                     bool m_audioStreamSetHasBeenSet;
+
+                    /**
+                     * 数字水印类型。可选值：
+<li>Trace 表示经过溯源水印处理；</li>
+<li>None 表示没有经过数字水印处理。</li>
+                     */
+                    std::string m_digitalWatermarkType;
+                    bool m_digitalWatermarkTypeHasBeenSet;
 
                 };
             }
