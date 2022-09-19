@@ -23,7 +23,8 @@ using namespace std;
 MetricData::MetricData() :
     m_resourceHasBeenSet(false),
     m_metricHasBeenSet(false),
-    m_dataSetHasBeenSet(false)
+    m_dataSetHasBeenSet(false),
+    m_metricCountHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,16 @@ CoreInternalOutcome MetricData::Deserialize(const rapidjson::Value &value)
         m_dataSetHasBeenSet = true;
     }
 
+    if (value.HasMember("MetricCount") && !value["MetricCount"].IsNull())
+    {
+        if (!value["MetricCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `MetricData.MetricCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_metricCount = value["MetricCount"].GetInt64();
+        m_metricCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -108,6 +119,14 @@ void MetricData::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_metricCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MetricCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_metricCount, allocator);
     }
 
 }
@@ -159,5 +178,21 @@ void MetricData::SetDataSet(const vector<DatePoint>& _dataSet)
 bool MetricData::DataSetHasBeenSet() const
 {
     return m_dataSetHasBeenSet;
+}
+
+int64_t MetricData::GetMetricCount() const
+{
+    return m_metricCount;
+}
+
+void MetricData::SetMetricCount(const int64_t& _metricCount)
+{
+    m_metricCount = _metricCount;
+    m_metricCountHasBeenSet = true;
+}
+
+bool MetricData::MetricCountHasBeenSet() const
+{
+    return m_metricCountHasBeenSet;
 }
 

@@ -29,7 +29,10 @@ RequestSummary::RequestSummary() :
     m_p95HasBeenSet(false),
     m_minHasBeenSet(false),
     m_maxHasBeenSet(false),
-    m_errorPercentageHasBeenSet(false)
+    m_errorPercentageHasBeenSet(false),
+    m_p99HasBeenSet(false),
+    m_statusHasBeenSet(false),
+    m_resultHasBeenSet(false)
 {
 }
 
@@ -128,6 +131,36 @@ CoreInternalOutcome RequestSummary::Deserialize(const rapidjson::Value &value)
         m_errorPercentageHasBeenSet = true;
     }
 
+    if (value.HasMember("P99") && !value["P99"].IsNull())
+    {
+        if (!value["P99"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `RequestSummary.P99` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_p99 = value["P99"].GetDouble();
+        m_p99HasBeenSet = true;
+    }
+
+    if (value.HasMember("Status") && !value["Status"].IsNull())
+    {
+        if (!value["Status"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RequestSummary.Status` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_status = string(value["Status"].GetString());
+        m_statusHasBeenSet = true;
+    }
+
+    if (value.HasMember("Result") && !value["Result"].IsNull())
+    {
+        if (!value["Result"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RequestSummary.Result` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_result = string(value["Result"].GetString());
+        m_resultHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -205,6 +238,30 @@ void RequestSummary::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "ErrorPercentage";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_errorPercentage, allocator);
+    }
+
+    if (m_p99HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "P99";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_p99, allocator);
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resultHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Result";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_result.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -352,5 +409,53 @@ void RequestSummary::SetErrorPercentage(const double& _errorPercentage)
 bool RequestSummary::ErrorPercentageHasBeenSet() const
 {
     return m_errorPercentageHasBeenSet;
+}
+
+double RequestSummary::GetP99() const
+{
+    return m_p99;
+}
+
+void RequestSummary::SetP99(const double& _p99)
+{
+    m_p99 = _p99;
+    m_p99HasBeenSet = true;
+}
+
+bool RequestSummary::P99HasBeenSet() const
+{
+    return m_p99HasBeenSet;
+}
+
+string RequestSummary::GetStatus() const
+{
+    return m_status;
+}
+
+void RequestSummary::SetStatus(const string& _status)
+{
+    m_status = _status;
+    m_statusHasBeenSet = true;
+}
+
+bool RequestSummary::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
+}
+
+string RequestSummary::GetResult() const
+{
+    return m_result;
+}
+
+void RequestSummary::SetResult(const string& _result)
+{
+    m_result = _result;
+    m_resultHasBeenSet = true;
+}
+
+bool RequestSummary::ResultHasBeenSet() const
+{
+    return m_resultHasBeenSet;
 }
 

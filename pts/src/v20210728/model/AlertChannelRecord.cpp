@@ -26,7 +26,10 @@ AlertChannelRecord::AlertChannelRecord() :
     m_projectIdHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+    m_updatedAtHasBeenSet(false),
+    m_appIdHasBeenSet(false),
+    m_uinHasBeenSet(false),
+    m_subAccountUinHasBeenSet(false)
 {
 }
 
@@ -95,6 +98,36 @@ CoreInternalOutcome AlertChannelRecord::Deserialize(const rapidjson::Value &valu
         m_updatedAtHasBeenSet = true;
     }
 
+    if (value.HasMember("AppId") && !value["AppId"].IsNull())
+    {
+        if (!value["AppId"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AlertChannelRecord.AppId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_appId = value["AppId"].GetInt64();
+        m_appIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("Uin") && !value["Uin"].IsNull())
+    {
+        if (!value["Uin"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AlertChannelRecord.Uin` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_uin = string(value["Uin"].GetString());
+        m_uinHasBeenSet = true;
+    }
+
+    if (value.HasMember("SubAccountUin") && !value["SubAccountUin"].IsNull())
+    {
+        if (!value["SubAccountUin"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AlertChannelRecord.SubAccountUin` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subAccountUin = string(value["SubAccountUin"].GetString());
+        m_subAccountUinHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +181,30 @@ void AlertChannelRecord::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "UpdatedAt";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_updatedAt.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_appIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AppId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_appId, allocator);
+    }
+
+    if (m_uinHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Uin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_uin.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subAccountUinHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubAccountUin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subAccountUin.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -247,5 +304,53 @@ void AlertChannelRecord::SetUpdatedAt(const string& _updatedAt)
 bool AlertChannelRecord::UpdatedAtHasBeenSet() const
 {
     return m_updatedAtHasBeenSet;
+}
+
+int64_t AlertChannelRecord::GetAppId() const
+{
+    return m_appId;
+}
+
+void AlertChannelRecord::SetAppId(const int64_t& _appId)
+{
+    m_appId = _appId;
+    m_appIdHasBeenSet = true;
+}
+
+bool AlertChannelRecord::AppIdHasBeenSet() const
+{
+    return m_appIdHasBeenSet;
+}
+
+string AlertChannelRecord::GetUin() const
+{
+    return m_uin;
+}
+
+void AlertChannelRecord::SetUin(const string& _uin)
+{
+    m_uin = _uin;
+    m_uinHasBeenSet = true;
+}
+
+bool AlertChannelRecord::UinHasBeenSet() const
+{
+    return m_uinHasBeenSet;
+}
+
+string AlertChannelRecord::GetSubAccountUin() const
+{
+    return m_subAccountUin;
+}
+
+void AlertChannelRecord::SetSubAccountUin(const string& _subAccountUin)
+{
+    m_subAccountUin = _subAccountUin;
+    m_subAccountUinHasBeenSet = true;
+}
+
+bool AlertChannelRecord::SubAccountUinHasBeenSet() const
+{
+    return m_subAccountUinHasBeenSet;
 }
 

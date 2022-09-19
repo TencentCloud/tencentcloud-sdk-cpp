@@ -81,14 +81,32 @@ namespace TencentCloud
                     bool FlowIdsHasBeenSet() const;
 
                     /**
-                     * 获取签署链接类型：“WEIXINAPP”-直接跳小程序；“CHANNEL”-跳转H5页面；“APP”-第三方APP或小程序跳转电子签小程序；默认“WEIXINAPP”类型，即跳转至小程序；
-                     * @return Endpoint 签署链接类型：“WEIXINAPP”-直接跳小程序；“CHANNEL”-跳转H5页面；“APP”-第三方APP或小程序跳转电子签小程序；默认“WEIXINAPP”类型，即跳转至小程序；
+                     * 获取合同组编号(备注：该参数和合同(流程)编号数组必须二选一)
+                     * @return FlowGroupId 合同组编号(备注：该参数和合同(流程)编号数组必须二选一)
+                     */
+                    std::string GetFlowGroupId() const;
+
+                    /**
+                     * 设置合同组编号(备注：该参数和合同(流程)编号数组必须二选一)
+                     * @param FlowGroupId 合同组编号(备注：该参数和合同(流程)编号数组必须二选一)
+                     */
+                    void SetFlowGroupId(const std::string& _flowGroupId);
+
+                    /**
+                     * 判断参数 FlowGroupId 是否已赋值
+                     * @return FlowGroupId 是否已赋值
+                     */
+                    bool FlowGroupIdHasBeenSet() const;
+
+                    /**
+                     * 获取签署链接类型：“WEIXINAPP”-短链直接跳小程序；“CHANNEL”-跳转H5页面；“APP”-第三方APP或小程序跳转电子签小程序；"LONGURL2WEIXINAPP"-长链接跳转小程序；默认“WEIXINAPP”类型，即跳转至小程序；
+                     * @return Endpoint 签署链接类型：“WEIXINAPP”-短链直接跳小程序；“CHANNEL”-跳转H5页面；“APP”-第三方APP或小程序跳转电子签小程序；"LONGURL2WEIXINAPP"-长链接跳转小程序；默认“WEIXINAPP”类型，即跳转至小程序；
                      */
                     std::string GetEndpoint() const;
 
                     /**
-                     * 设置签署链接类型：“WEIXINAPP”-直接跳小程序；“CHANNEL”-跳转H5页面；“APP”-第三方APP或小程序跳转电子签小程序；默认“WEIXINAPP”类型，即跳转至小程序；
-                     * @param Endpoint 签署链接类型：“WEIXINAPP”-直接跳小程序；“CHANNEL”-跳转H5页面；“APP”-第三方APP或小程序跳转电子签小程序；默认“WEIXINAPP”类型，即跳转至小程序；
+                     * 设置签署链接类型：“WEIXINAPP”-短链直接跳小程序；“CHANNEL”-跳转H5页面；“APP”-第三方APP或小程序跳转电子签小程序；"LONGURL2WEIXINAPP"-长链接跳转小程序；默认“WEIXINAPP”类型，即跳转至小程序；
+                     * @param Endpoint 签署链接类型：“WEIXINAPP”-短链直接跳小程序；“CHANNEL”-跳转H5页面；“APP”-第三方APP或小程序跳转电子签小程序；"LONGURL2WEIXINAPP"-长链接跳转小程序；默认“WEIXINAPP”类型，即跳转至小程序；
                      */
                     void SetEndpoint(const std::string& _endpoint);
 
@@ -284,24 +302,6 @@ GenerateType为"PERSON"或"FOLLOWER"时必填
                      */
                     bool OperatorHasBeenSet() const;
 
-                    /**
-                     * 获取合同组编号(备注：该参数和合同(流程)编号数组必须二选一)
-                     * @return FlowGroupId 合同组编号(备注：该参数和合同(流程)编号数组必须二选一)
-                     */
-                    std::string GetFlowGroupId() const;
-
-                    /**
-                     * 设置合同组编号(备注：该参数和合同(流程)编号数组必须二选一)
-                     * @param FlowGroupId 合同组编号(备注：该参数和合同(流程)编号数组必须二选一)
-                     */
-                    void SetFlowGroupId(const std::string& _flowGroupId);
-
-                    /**
-                     * 判断参数 FlowGroupId 是否已赋值
-                     * @return FlowGroupId 是否已赋值
-                     */
-                    bool FlowGroupIdHasBeenSet() const;
-
                 private:
 
                     /**
@@ -317,7 +317,13 @@ GenerateType为"PERSON"或"FOLLOWER"时必填
                     bool m_flowIdsHasBeenSet;
 
                     /**
-                     * 签署链接类型：“WEIXINAPP”-直接跳小程序；“CHANNEL”-跳转H5页面；“APP”-第三方APP或小程序跳转电子签小程序；默认“WEIXINAPP”类型，即跳转至小程序；
+                     * 合同组编号(备注：该参数和合同(流程)编号数组必须二选一)
+                     */
+                    std::string m_flowGroupId;
+                    bool m_flowGroupIdHasBeenSet;
+
+                    /**
+                     * 签署链接类型：“WEIXINAPP”-短链直接跳小程序；“CHANNEL”-跳转H5页面；“APP”-第三方APP或小程序跳转电子签小程序；"LONGURL2WEIXINAPP"-长链接跳转小程序；默认“WEIXINAPP”类型，即跳转至小程序；
                      */
                     std::string m_endpoint;
                     bool m_endpointHasBeenSet;
@@ -381,12 +387,6 @@ GenerateType为"PERSON"或"FOLLOWER"时必填
                      */
                     UserInfo m_operator;
                     bool m_operatorHasBeenSet;
-
-                    /**
-                     * 合同组编号(备注：该参数和合同(流程)编号数组必须二选一)
-                     */
-                    std::string m_flowGroupId;
-                    bool m_flowGroupIdHasBeenSet;
 
                 };
             }

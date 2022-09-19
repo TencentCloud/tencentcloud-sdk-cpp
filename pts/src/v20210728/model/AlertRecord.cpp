@@ -27,7 +27,14 @@ AlertRecord::AlertRecord() :
     m_statusHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_updatedAtHasBeenSet(false),
-    m_jobIdHasBeenSet(false)
+    m_jobIdHasBeenSet(false),
+    m_appIdHasBeenSet(false),
+    m_uinHasBeenSet(false),
+    m_subAccountUinHasBeenSet(false),
+    m_scenarioNameHasBeenSet(false),
+    m_targetHasBeenSet(false),
+    m_jobSLAIdHasBeenSet(false),
+    m_jobSLADescriptionHasBeenSet(false)
 {
 }
 
@@ -113,6 +120,76 @@ CoreInternalOutcome AlertRecord::Deserialize(const rapidjson::Value &value)
         m_jobIdHasBeenSet = true;
     }
 
+    if (value.HasMember("AppId") && !value["AppId"].IsNull())
+    {
+        if (!value["AppId"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AlertRecord.AppId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_appId = value["AppId"].GetInt64();
+        m_appIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("Uin") && !value["Uin"].IsNull())
+    {
+        if (!value["Uin"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AlertRecord.Uin` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_uin = string(value["Uin"].GetString());
+        m_uinHasBeenSet = true;
+    }
+
+    if (value.HasMember("SubAccountUin") && !value["SubAccountUin"].IsNull())
+    {
+        if (!value["SubAccountUin"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AlertRecord.SubAccountUin` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subAccountUin = string(value["SubAccountUin"].GetString());
+        m_subAccountUinHasBeenSet = true;
+    }
+
+    if (value.HasMember("ScenarioName") && !value["ScenarioName"].IsNull())
+    {
+        if (!value["ScenarioName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AlertRecord.ScenarioName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_scenarioName = string(value["ScenarioName"].GetString());
+        m_scenarioNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("Target") && !value["Target"].IsNull())
+    {
+        if (!value["Target"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AlertRecord.Target` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_target = string(value["Target"].GetString());
+        m_targetHasBeenSet = true;
+    }
+
+    if (value.HasMember("JobSLAId") && !value["JobSLAId"].IsNull())
+    {
+        if (!value["JobSLAId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AlertRecord.JobSLAId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_jobSLAId = string(value["JobSLAId"].GetString());
+        m_jobSLAIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("JobSLADescription") && !value["JobSLADescription"].IsNull())
+    {
+        if (!value["JobSLADescription"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AlertRecord.JobSLADescription` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_jobSLADescription = string(value["JobSLADescription"].GetString());
+        m_jobSLADescriptionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -175,6 +252,62 @@ void AlertRecord::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "JobId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_jobId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_appIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AppId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_appId, allocator);
+    }
+
+    if (m_uinHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Uin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_uin.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subAccountUinHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubAccountUin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subAccountUin.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_scenarioNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScenarioName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_scenarioName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_targetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Target";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_target.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_jobSLAIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "JobSLAId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_jobSLAId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_jobSLADescriptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "JobSLADescription";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_jobSLADescription.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -290,5 +423,117 @@ void AlertRecord::SetJobId(const string& _jobId)
 bool AlertRecord::JobIdHasBeenSet() const
 {
     return m_jobIdHasBeenSet;
+}
+
+int64_t AlertRecord::GetAppId() const
+{
+    return m_appId;
+}
+
+void AlertRecord::SetAppId(const int64_t& _appId)
+{
+    m_appId = _appId;
+    m_appIdHasBeenSet = true;
+}
+
+bool AlertRecord::AppIdHasBeenSet() const
+{
+    return m_appIdHasBeenSet;
+}
+
+string AlertRecord::GetUin() const
+{
+    return m_uin;
+}
+
+void AlertRecord::SetUin(const string& _uin)
+{
+    m_uin = _uin;
+    m_uinHasBeenSet = true;
+}
+
+bool AlertRecord::UinHasBeenSet() const
+{
+    return m_uinHasBeenSet;
+}
+
+string AlertRecord::GetSubAccountUin() const
+{
+    return m_subAccountUin;
+}
+
+void AlertRecord::SetSubAccountUin(const string& _subAccountUin)
+{
+    m_subAccountUin = _subAccountUin;
+    m_subAccountUinHasBeenSet = true;
+}
+
+bool AlertRecord::SubAccountUinHasBeenSet() const
+{
+    return m_subAccountUinHasBeenSet;
+}
+
+string AlertRecord::GetScenarioName() const
+{
+    return m_scenarioName;
+}
+
+void AlertRecord::SetScenarioName(const string& _scenarioName)
+{
+    m_scenarioName = _scenarioName;
+    m_scenarioNameHasBeenSet = true;
+}
+
+bool AlertRecord::ScenarioNameHasBeenSet() const
+{
+    return m_scenarioNameHasBeenSet;
+}
+
+string AlertRecord::GetTarget() const
+{
+    return m_target;
+}
+
+void AlertRecord::SetTarget(const string& _target)
+{
+    m_target = _target;
+    m_targetHasBeenSet = true;
+}
+
+bool AlertRecord::TargetHasBeenSet() const
+{
+    return m_targetHasBeenSet;
+}
+
+string AlertRecord::GetJobSLAId() const
+{
+    return m_jobSLAId;
+}
+
+void AlertRecord::SetJobSLAId(const string& _jobSLAId)
+{
+    m_jobSLAId = _jobSLAId;
+    m_jobSLAIdHasBeenSet = true;
+}
+
+bool AlertRecord::JobSLAIdHasBeenSet() const
+{
+    return m_jobSLAIdHasBeenSet;
+}
+
+string AlertRecord::GetJobSLADescription() const
+{
+    return m_jobSLADescription;
+}
+
+void AlertRecord::SetJobSLADescription(const string& _jobSLADescription)
+{
+    m_jobSLADescription = _jobSLADescription;
+    m_jobSLADescriptionHasBeenSet = true;
+}
+
+bool AlertRecord::JobSLADescriptionHasBeenSet() const
+{
+    return m_jobSLADescriptionHasBeenSet;
 }
 

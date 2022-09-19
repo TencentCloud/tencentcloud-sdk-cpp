@@ -34,7 +34,9 @@ File::File() :
     m_headerColumnsHasBeenSet(false),
     m_fileInfosHasBeenSet(false),
     m_scenarioSetHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_createdAtHasBeenSet(false),
+    m_projectIdHasBeenSet(false)
 {
 }
 
@@ -212,6 +214,26 @@ CoreInternalOutcome File::Deserialize(const rapidjson::Value &value)
         m_statusHasBeenSet = true;
     }
 
+    if (value.HasMember("CreatedAt") && !value["CreatedAt"].IsNull())
+    {
+        if (!value["CreatedAt"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `File.CreatedAt` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_createdAt = string(value["CreatedAt"].GetString());
+        m_createdAtHasBeenSet = true;
+    }
+
+    if (value.HasMember("ProjectId") && !value["ProjectId"].IsNull())
+    {
+        if (!value["ProjectId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `File.ProjectId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_projectId = string(value["ProjectId"].GetString());
+        m_projectIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -358,6 +380,22 @@ void File::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorT
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_status, allocator);
+    }
+
+    if (m_createdAtHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreatedAt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createdAt.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_projectIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProjectId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_projectId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -585,5 +623,37 @@ void File::SetStatus(const int64_t& _status)
 bool File::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+string File::GetCreatedAt() const
+{
+    return m_createdAt;
+}
+
+void File::SetCreatedAt(const string& _createdAt)
+{
+    m_createdAt = _createdAt;
+    m_createdAtHasBeenSet = true;
+}
+
+bool File::CreatedAtHasBeenSet() const
+{
+    return m_createdAtHasBeenSet;
+}
+
+string File::GetProjectId() const
+{
+    return m_projectId;
+}
+
+void File::SetProjectId(const string& _projectId)
+{
+    m_projectId = _projectId;
+    m_projectIdHasBeenSet = true;
+}
+
+bool File::ProjectIdHasBeenSet() const
+{
+    return m_projectIdHasBeenSet;
 }
 

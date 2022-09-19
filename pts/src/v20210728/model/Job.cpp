@@ -51,7 +51,14 @@ Job::Job() :
     m_protocolsHasBeenSet(false),
     m_requestFilesHasBeenSet(false),
     m_pluginsHasBeenSet(false),
-    m_cronIdHasBeenSet(false)
+    m_cronIdHasBeenSet(false),
+    m_typeHasBeenSet(false),
+    m_domainNameConfigHasBeenSet(false),
+    m_debugHasBeenSet(false),
+    m_abortReasonHasBeenSet(false),
+    m_createdAtHasBeenSet(false),
+    m_projectIdHasBeenSet(false),
+    m_notificationHooksHasBeenSet(false)
 {
 }
 
@@ -453,6 +460,93 @@ CoreInternalOutcome Job::Deserialize(const rapidjson::Value &value)
         m_cronIdHasBeenSet = true;
     }
 
+    if (value.HasMember("Type") && !value["Type"].IsNull())
+    {
+        if (!value["Type"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Job.Type` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_type = string(value["Type"].GetString());
+        m_typeHasBeenSet = true;
+    }
+
+    if (value.HasMember("DomainNameConfig") && !value["DomainNameConfig"].IsNull())
+    {
+        if (!value["DomainNameConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Job.DomainNameConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_domainNameConfig.Deserialize(value["DomainNameConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_domainNameConfigHasBeenSet = true;
+    }
+
+    if (value.HasMember("Debug") && !value["Debug"].IsNull())
+    {
+        if (!value["Debug"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `Job.Debug` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_debug = value["Debug"].GetBool();
+        m_debugHasBeenSet = true;
+    }
+
+    if (value.HasMember("AbortReason") && !value["AbortReason"].IsNull())
+    {
+        if (!value["AbortReason"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Job.AbortReason` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_abortReason = value["AbortReason"].GetInt64();
+        m_abortReasonHasBeenSet = true;
+    }
+
+    if (value.HasMember("CreatedAt") && !value["CreatedAt"].IsNull())
+    {
+        if (!value["CreatedAt"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Job.CreatedAt` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_createdAt = string(value["CreatedAt"].GetString());
+        m_createdAtHasBeenSet = true;
+    }
+
+    if (value.HasMember("ProjectId") && !value["ProjectId"].IsNull())
+    {
+        if (!value["ProjectId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Job.ProjectId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_projectId = string(value["ProjectId"].GetString());
+        m_projectIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("NotificationHooks") && !value["NotificationHooks"].IsNull())
+    {
+        if (!value["NotificationHooks"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Job.NotificationHooks` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["NotificationHooks"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            NotificationHook item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_notificationHooks.push_back(item);
+        }
+        m_notificationHooksHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -765,6 +859,70 @@ void Job::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorTy
         string key = "CronId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_cronId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_typeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Type";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_domainNameConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DomainNameConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_domainNameConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_debugHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Debug";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_debug, allocator);
+    }
+
+    if (m_abortReasonHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AbortReason";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_abortReason, allocator);
+    }
+
+    if (m_createdAtHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreatedAt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createdAt.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_projectIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProjectId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_projectId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_notificationHooksHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NotificationHooks";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_notificationHooks.begin(); itr != m_notificationHooks.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -1264,5 +1422,117 @@ void Job::SetCronId(const string& _cronId)
 bool Job::CronIdHasBeenSet() const
 {
     return m_cronIdHasBeenSet;
+}
+
+string Job::GetType() const
+{
+    return m_type;
+}
+
+void Job::SetType(const string& _type)
+{
+    m_type = _type;
+    m_typeHasBeenSet = true;
+}
+
+bool Job::TypeHasBeenSet() const
+{
+    return m_typeHasBeenSet;
+}
+
+DomainNameConfig Job::GetDomainNameConfig() const
+{
+    return m_domainNameConfig;
+}
+
+void Job::SetDomainNameConfig(const DomainNameConfig& _domainNameConfig)
+{
+    m_domainNameConfig = _domainNameConfig;
+    m_domainNameConfigHasBeenSet = true;
+}
+
+bool Job::DomainNameConfigHasBeenSet() const
+{
+    return m_domainNameConfigHasBeenSet;
+}
+
+bool Job::GetDebug() const
+{
+    return m_debug;
+}
+
+void Job::SetDebug(const bool& _debug)
+{
+    m_debug = _debug;
+    m_debugHasBeenSet = true;
+}
+
+bool Job::DebugHasBeenSet() const
+{
+    return m_debugHasBeenSet;
+}
+
+int64_t Job::GetAbortReason() const
+{
+    return m_abortReason;
+}
+
+void Job::SetAbortReason(const int64_t& _abortReason)
+{
+    m_abortReason = _abortReason;
+    m_abortReasonHasBeenSet = true;
+}
+
+bool Job::AbortReasonHasBeenSet() const
+{
+    return m_abortReasonHasBeenSet;
+}
+
+string Job::GetCreatedAt() const
+{
+    return m_createdAt;
+}
+
+void Job::SetCreatedAt(const string& _createdAt)
+{
+    m_createdAt = _createdAt;
+    m_createdAtHasBeenSet = true;
+}
+
+bool Job::CreatedAtHasBeenSet() const
+{
+    return m_createdAtHasBeenSet;
+}
+
+string Job::GetProjectId() const
+{
+    return m_projectId;
+}
+
+void Job::SetProjectId(const string& _projectId)
+{
+    m_projectId = _projectId;
+    m_projectIdHasBeenSet = true;
+}
+
+bool Job::ProjectIdHasBeenSet() const
+{
+    return m_projectIdHasBeenSet;
+}
+
+vector<NotificationHook> Job::GetNotificationHooks() const
+{
+    return m_notificationHooks;
+}
+
+void Job::SetNotificationHooks(const vector<NotificationHook>& _notificationHooks)
+{
+    m_notificationHooks = _notificationHooks;
+    m_notificationHooksHasBeenSet = true;
+}
+
+bool Job::NotificationHooksHasBeenSet() const
+{
+    return m_notificationHooksHasBeenSet;
 }
 

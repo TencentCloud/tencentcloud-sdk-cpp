@@ -44,7 +44,8 @@ Scenario::Scenario() :
     m_requestFilesHasBeenSet(false),
     m_sLAPolicyHasBeenSet(false),
     m_pluginsHasBeenSet(false),
-    m_domainNameConfigHasBeenSet(false)
+    m_domainNameConfigHasBeenSet(false),
+    m_notificationHooksHasBeenSet(false)
 {
 }
 
@@ -370,6 +371,26 @@ CoreInternalOutcome Scenario::Deserialize(const rapidjson::Value &value)
         m_domainNameConfigHasBeenSet = true;
     }
 
+    if (value.HasMember("NotificationHooks") && !value["NotificationHooks"].IsNull())
+    {
+        if (!value["NotificationHooks"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Scenario.NotificationHooks` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["NotificationHooks"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            NotificationHook item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_notificationHooks.push_back(item);
+        }
+        m_notificationHooksHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -615,6 +636,21 @@ void Scenario::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_domainNameConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_notificationHooksHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NotificationHooks";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_notificationHooks.begin(); itr != m_notificationHooks.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -1002,5 +1038,21 @@ void Scenario::SetDomainNameConfig(const DomainNameConfig& _domainNameConfig)
 bool Scenario::DomainNameConfigHasBeenSet() const
 {
     return m_domainNameConfigHasBeenSet;
+}
+
+vector<NotificationHook> Scenario::GetNotificationHooks() const
+{
+    return m_notificationHooks;
+}
+
+void Scenario::SetNotificationHooks(const vector<NotificationHook>& _notificationHooks)
+{
+    m_notificationHooks = _notificationHooks;
+    m_notificationHooksHasBeenSet = true;
+}
+
+bool Scenario::NotificationHooksHasBeenSet() const
+{
+    return m_notificationHooksHasBeenSet;
 }
 

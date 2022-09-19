@@ -30,6 +30,8 @@
 #include <tencentcloud/pts/v20210728/model/ScriptInfo.h>
 #include <tencentcloud/pts/v20210728/model/ProtocolInfo.h>
 #include <tencentcloud/pts/v20210728/model/FileInfo.h>
+#include <tencentcloud/pts/v20210728/model/DomainNameConfig.h>
+#include <tencentcloud/pts/v20210728/model/NotificationHook.h>
 
 
 namespace TencentCloud
@@ -742,6 +744,160 @@ JobSelectClusterException:19,JobCreateTaskException:20,JobSyncTaskException:21
                      */
                     bool CronIdHasBeenSet() const;
 
+                    /**
+                     * 获取场景类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Type 场景类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetType() const;
+
+                    /**
+                     * 设置场景类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Type 场景类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetType(const std::string& _type);
+
+                    /**
+                     * 判断参数 Type 是否已赋值
+                     * @return Type 是否已赋值
+                     */
+                    bool TypeHasBeenSet() const;
+
+                    /**
+                     * 获取域名绑定配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DomainNameConfig 域名绑定配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    DomainNameConfig GetDomainNameConfig() const;
+
+                    /**
+                     * 设置域名绑定配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DomainNameConfig 域名绑定配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDomainNameConfig(const DomainNameConfig& _domainNameConfig);
+
+                    /**
+                     * 判断参数 DomainNameConfig 是否已赋值
+                     * @return DomainNameConfig 是否已赋值
+                     */
+                    bool DomainNameConfigHasBeenSet() const;
+
+                    /**
+                     * 获取false
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Debug false
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetDebug() const;
+
+                    /**
+                     * 设置false
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Debug false
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDebug(const bool& _debug);
+
+                    /**
+                     * 判断参数 Debug 是否已赋值
+                     * @return Debug 是否已赋值
+                     */
+                    bool DebugHasBeenSet() const;
+
+                    /**
+                     * 获取中断原因
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AbortReason 中断原因
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetAbortReason() const;
+
+                    /**
+                     * 设置中断原因
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AbortReason 中断原因
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAbortReason(const int64_t& _abortReason);
+
+                    /**
+                     * 判断参数 AbortReason 是否已赋值
+                     * @return AbortReason 是否已赋值
+                     */
+                    bool AbortReasonHasBeenSet() const;
+
+                    /**
+                     * 获取任务的创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CreatedAt 任务的创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetCreatedAt() const;
+
+                    /**
+                     * 设置任务的创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param CreatedAt 任务的创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCreatedAt(const std::string& _createdAt);
+
+                    /**
+                     * 判断参数 CreatedAt 是否已赋值
+                     * @return CreatedAt 是否已赋值
+                     */
+                    bool CreatedAtHasBeenSet() const;
+
+                    /**
+                     * 获取项目ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ProjectId 项目ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetProjectId() const;
+
+                    /**
+                     * 设置项目ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ProjectId 项目ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetProjectId(const std::string& _projectId);
+
+                    /**
+                     * 判断参数 ProjectId 是否已赋值
+                     * @return ProjectId 是否已赋值
+                     */
+                    bool ProjectIdHasBeenSet() const;
+
+                    /**
+                     * 获取通知事件回调
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NotificationHooks 通知事件回调
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<NotificationHook> GetNotificationHooks() const;
+
+                    /**
+                     * 设置通知事件回调
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param NotificationHooks 通知事件回调
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetNotificationHooks(const std::vector<NotificationHook>& _notificationHooks);
+
+                    /**
+                     * 判断参数 NotificationHooks 是否已赋值
+                     * @return NotificationHooks 是否已赋值
+                     */
+                    bool NotificationHooksHasBeenSet() const;
+
                 private:
 
                     /**
@@ -962,6 +1118,55 @@ JobSelectClusterException:19,JobCreateTaskException:20,JobSyncTaskException:21
                      */
                     std::string m_cronId;
                     bool m_cronIdHasBeenSet;
+
+                    /**
+                     * 场景类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_type;
+                    bool m_typeHasBeenSet;
+
+                    /**
+                     * 域名绑定配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    DomainNameConfig m_domainNameConfig;
+                    bool m_domainNameConfigHasBeenSet;
+
+                    /**
+                     * false
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_debug;
+                    bool m_debugHasBeenSet;
+
+                    /**
+                     * 中断原因
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_abortReason;
+                    bool m_abortReasonHasBeenSet;
+
+                    /**
+                     * 任务的创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_createdAt;
+                    bool m_createdAtHasBeenSet;
+
+                    /**
+                     * 项目ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_projectId;
+                    bool m_projectIdHasBeenSet;
+
+                    /**
+                     * 通知事件回调
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<NotificationHook> m_notificationHooks;
+                    bool m_notificationHooksHasBeenSet;
 
                 };
             }

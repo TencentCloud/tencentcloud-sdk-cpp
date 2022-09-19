@@ -38,6 +38,7 @@
 #include <tencentcloud/ckafka/v20190819/model/TopicParam.h>
 #include <tencentcloud/ckafka/v20190819/model/MariaDBParam.h>
 #include <tencentcloud/ckafka/v20190819/model/SQLServerParam.h>
+#include <tencentcloud/ckafka/v20190819/model/CtsdbParam.h>
 
 
 namespace TencentCloud
@@ -386,6 +387,28 @@ namespace TencentCloud
                      */
                     bool SQLServerParamHasBeenSet() const;
 
+                    /**
+                     * 获取Ctsdb配置，Type为CTSDB时必填
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CtsdbParam Ctsdb配置，Type为CTSDB时必填
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    CtsdbParam GetCtsdbParam() const;
+
+                    /**
+                     * 设置Ctsdb配置，Type为CTSDB时必填
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param CtsdbParam Ctsdb配置，Type为CTSDB时必填
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCtsdbParam(const CtsdbParam& _ctsdbParam);
+
+                    /**
+                     * 判断参数 CtsdbParam 是否已赋值
+                     * @return CtsdbParam 是否已赋值
+                     */
+                    bool CtsdbParamHasBeenSet() const;
+
                 private:
 
                     /**
@@ -491,6 +514,13 @@ namespace TencentCloud
                      */
                     SQLServerParam m_sQLServerParam;
                     bool m_sQLServerParamHasBeenSet;
+
+                    /**
+                     * Ctsdb配置，Type为CTSDB时必填
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    CtsdbParam m_ctsdbParam;
+                    bool m_ctsdbParamHasBeenSet;
 
                 };
             }

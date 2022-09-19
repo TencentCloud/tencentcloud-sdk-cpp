@@ -101,6 +101,28 @@ namespace TencentCloud
                      */
                     bool DataSetHasBeenSet() const;
 
+                    /**
+                     * 获取查询范围内的请求总量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MetricCount 查询范围内的请求总量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetMetricCount() const;
+
+                    /**
+                     * 设置查询范围内的请求总量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param MetricCount 查询范围内的请求总量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMetricCount(const int64_t& _metricCount);
+
+                    /**
+                     * 判断参数 MetricCount 是否已赋值
+                     * @return MetricCount 是否已赋值
+                     */
+                    bool MetricCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -120,6 +142,13 @@ namespace TencentCloud
                      */
                     std::vector<DatePoint> m_dataSet;
                     bool m_dataSetHasBeenSet;
+
+                    /**
+                     * 查询范围内的请求总量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_metricCount;
+                    bool m_metricCountHasBeenSet;
 
                 };
             }

@@ -64,8 +64,8 @@ namespace TencentCloud
                     bool ScoreHasBeenSet() const;
 
                     /**
-                     * 获取是否为同一人的判断。
-                     * @return IsMatch 是否为同一人的判断。
+                     * 获取是否为同一人判断，固定阈值分数为60分，若想更灵活地调整阈值可取Score参数返回进行判断
+                     * @return IsMatch 是否为同一人判断，固定阈值分数为60分，若想更灵活地调整阈值可取Score参数返回进行判断
                      */
                     bool GetIsMatch() const;
 
@@ -100,7 +100,7 @@ namespace TencentCloud
                     bool m_scoreHasBeenSet;
 
                     /**
-                     * 是否为同一人的判断。
+                     * 是否为同一人判断，固定阈值分数为60分，若想更灵活地调整阈值可取Score参数返回进行判断
                      */
                     bool m_isMatch;
                     bool m_isMatchHasBeenSet;

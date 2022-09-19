@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cdn/v20180606/model/HTTPHeader.h>
 
 
 namespace TencentCloud
@@ -199,6 +200,24 @@ global：预热全球节点
                     bool DisableRangeHasBeenSet() const;
 
                     /**
+                     * 获取自定义 HTTP 请求头。最多定义 20 个，Name 长度不超过 128 字节，Value 长度不超过 1024 字节
+                     * @return Headers 自定义 HTTP 请求头。最多定义 20 个，Name 长度不超过 128 字节，Value 长度不超过 1024 字节
+                     */
+                    std::vector<HTTPHeader> GetHeaders() const;
+
+                    /**
+                     * 设置自定义 HTTP 请求头。最多定义 20 个，Name 长度不超过 128 字节，Value 长度不超过 1024 字节
+                     * @param Headers 自定义 HTTP 请求头。最多定义 20 个，Name 长度不超过 128 字节，Value 长度不超过 1024 字节
+                     */
+                    void SetHeaders(const std::vector<HTTPHeader>& _headers);
+
+                    /**
+                     * 判断参数 Headers 是否已赋值
+                     * @return Headers 是否已赋值
+                     */
+                    bool HeadersHasBeenSet() const;
+
+                    /**
                      * 获取是否对URL进行编码
                      * @return UrlEncode 是否对URL进行编码
                      */
@@ -265,6 +284,12 @@ global：预热全球节点
                      */
                     bool m_disableRange;
                     bool m_disableRangeHasBeenSet;
+
+                    /**
+                     * 自定义 HTTP 请求头。最多定义 20 个，Name 长度不超过 128 字节，Value 长度不超过 1024 字节
+                     */
+                    std::vector<HTTPHeader> m_headers;
+                    bool m_headersHasBeenSet;
 
                     /**
                      * 是否对URL进行编码

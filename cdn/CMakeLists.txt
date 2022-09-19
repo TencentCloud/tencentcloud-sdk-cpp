@@ -104,6 +104,7 @@ set(cdn_public_header_model
   include/tencentcloud/cdn/v20180606/model/OfflineCache.h
   include/tencentcloud/cdn/v20180606/model/TopDataMore.h
   include/tencentcloud/cdn/v20180606/model/DiagnoseList.h
+  include/tencentcloud/cdn/v20180606/model/HTTPHeader.h
   include/tencentcloud/cdn/v20180606/model/IpFilterPathRule.h
   include/tencentcloud/cdn/v20180606/model/ReportData.h
   include/tencentcloud/cdn/v20180606/model/AdvanceHttps.h
@@ -450,6 +451,7 @@ set(cdn_src
   src/v20180606/model/OfflineCache.cpp
   src/v20180606/model/TopDataMore.cpp
   src/v20180606/model/DiagnoseList.cpp
+  src/v20180606/model/HTTPHeader.cpp
   src/v20180606/model/IpFilterPathRule.cpp
   src/v20180606/model/ReportData.cpp
   src/v20180606/model/AdvanceHttps.cpp

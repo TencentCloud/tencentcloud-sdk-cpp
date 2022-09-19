@@ -28,6 +28,8 @@
 #include <tencentcloud/ckafka/v20190819/model/SubstrParam.h>
 #include <tencentcloud/ckafka/v20190819/model/DateParam.h>
 #include <tencentcloud/ckafka/v20190819/model/RegexReplaceParam.h>
+#include <tencentcloud/ckafka/v20190819/model/SplitParam.h>
+#include <tencentcloud/ckafka/v20190819/model/KVParam.h>
 
 
 namespace TencentCloud
@@ -51,14 +53,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取处理模式，REPLACE替换，SUBSTR截取，DATE日期转换，TRIM去除前后空格，REGEX_REPLACE正则替换
-                     * @return Type 处理模式，REPLACE替换，SUBSTR截取，DATE日期转换，TRIM去除前后空格，REGEX_REPLACE正则替换
+                     * 获取处理模式，REPLACE替换，SUBSTR截取，DATE日期转换，TRIM去除前后空格，REGEX_REPLACE正则替换，URL_DECODE，LOWERCASE转换为小写
+                     * @return Type 处理模式，REPLACE替换，SUBSTR截取，DATE日期转换，TRIM去除前后空格，REGEX_REPLACE正则替换，URL_DECODE，LOWERCASE转换为小写
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置处理模式，REPLACE替换，SUBSTR截取，DATE日期转换，TRIM去除前后空格，REGEX_REPLACE正则替换
-                     * @param Type 处理模式，REPLACE替换，SUBSTR截取，DATE日期转换，TRIM去除前后空格，REGEX_REPLACE正则替换
+                     * 设置处理模式，REPLACE替换，SUBSTR截取，DATE日期转换，TRIM去除前后空格，REGEX_REPLACE正则替换，URL_DECODE，LOWERCASE转换为小写
+                     * @param Type 处理模式，REPLACE替换，SUBSTR截取，DATE日期转换，TRIM去除前后空格，REGEX_REPLACE正则替换，URL_DECODE，LOWERCASE转换为小写
                      */
                     void SetType(const std::string& _type);
 
@@ -156,10 +158,76 @@ namespace TencentCloud
                      */
                     bool RegexReplaceHasBeenSet() const;
 
+                    /**
+                     * 获取值支持一拆多，TYPE=SPLIT时必传
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Split 值支持一拆多，TYPE=SPLIT时必传
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    SplitParam GetSplit() const;
+
+                    /**
+                     * 设置值支持一拆多，TYPE=SPLIT时必传
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Split 值支持一拆多，TYPE=SPLIT时必传
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSplit(const SplitParam& _split);
+
+                    /**
+                     * 判断参数 Split 是否已赋值
+                     * @return Split 是否已赋值
+                     */
+                    bool SplitHasBeenSet() const;
+
+                    /**
+                     * 获取key-value二次解析，TYPE=KV时必传
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return KV key-value二次解析，TYPE=KV时必传
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    KVParam GetKV() const;
+
+                    /**
+                     * 设置key-value二次解析，TYPE=KV时必传
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param KV key-value二次解析，TYPE=KV时必传
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetKV(const KVParam& _kV);
+
+                    /**
+                     * 判断参数 KV 是否已赋值
+                     * @return KV 是否已赋值
+                     */
+                    bool KVHasBeenSet() const;
+
+                    /**
+                     * 获取处理结果
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Result 处理结果
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetResult() const;
+
+                    /**
+                     * 设置处理结果
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Result 处理结果
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetResult(const std::string& _result);
+
+                    /**
+                     * 判断参数 Result 是否已赋值
+                     * @return Result 是否已赋值
+                     */
+                    bool ResultHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 处理模式，REPLACE替换，SUBSTR截取，DATE日期转换，TRIM去除前后空格，REGEX_REPLACE正则替换
+                     * 处理模式，REPLACE替换，SUBSTR截取，DATE日期转换，TRIM去除前后空格，REGEX_REPLACE正则替换，URL_DECODE，LOWERCASE转换为小写
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
@@ -191,6 +259,27 @@ namespace TencentCloud
                      */
                     RegexReplaceParam m_regexReplace;
                     bool m_regexReplaceHasBeenSet;
+
+                    /**
+                     * 值支持一拆多，TYPE=SPLIT时必传
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    SplitParam m_split;
+                    bool m_splitHasBeenSet;
+
+                    /**
+                     * key-value二次解析，TYPE=KV时必传
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    KVParam m_kV;
+                    bool m_kVHasBeenSet;
+
+                    /**
+                     * 处理结果
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_result;
+                    bool m_resultHasBeenSet;
 
                 };
             }

@@ -313,14 +313,14 @@ namespace TencentCloud
                     bool IsMonitorHasBeenSet() const;
 
                     /**
-                     * 获取是否启用存证0：不启用 1：启用 默认为1
-                     * @return IsCert 是否启用存证0：不启用 1：启用 默认为1
+                     * 获取是否启用存证0：不存证  2：存证 默认为0
+                     * @return IsCert 是否启用存证0：不存证  2：存证 默认为0
                      */
                     std::string GetIsCert() const;
 
                     /**
-                     * 设置是否启用存证0：不启用 1：启用 默认为1
-                     * @param IsCert 是否启用存证0：不启用 1：启用 默认为1
+                     * 设置是否启用存证0：不存证  2：存证 默认为0
+                     * @param IsCert 是否启用存证0：不存证  2：存证 默认为0
                      */
                     void SetIsCert(const std::string& _isCert);
 
@@ -385,14 +385,14 @@ namespace TencentCloud
                     bool ProduceTypeHasBeenSet() const;
 
                     /**
-                     * 获取xxx
-                     * @return WhiteLists xxx
+                     * 获取白名单
+                     * @return WhiteLists 白名单
                      */
                     std::vector<std::string> GetWhiteLists() const;
 
                     /**
-                     * 设置xxx
-                     * @param WhiteLists xxx
+                     * 设置白名单
+                     * @param WhiteLists 白名单
                      */
                     void SetWhiteLists(const std::vector<std::string>& _whiteLists);
 
@@ -403,14 +403,14 @@ namespace TencentCloud
                     bool WhiteListsHasBeenSet() const;
 
                     /**
-                     * 获取x
-                     * @return WorkId x
+                     * 获取作品ID
+                     * @return WorkId 作品ID
                      */
                     int64_t GetWorkId() const;
 
                     /**
-                     * 设置x
-                     * @param WorkId x
+                     * 设置作品ID
+                     * @param WorkId 作品ID
                      */
                     void SetWorkId(const int64_t& _workId);
 
@@ -421,14 +421,14 @@ namespace TencentCloud
                     bool WorkIdHasBeenSet() const;
 
                     /**
-                     * 获取xx
-                     * @return ProducerName xx
+                     * 获取著作权人姓名
+                     * @return ProducerName 著作权人姓名
                      */
                     std::string GetProducerName() const;
 
                     /**
-                     * 设置xx
-                     * @param ProducerName xx
+                     * 设置著作权人姓名
+                     * @param ProducerName 著作权人姓名
                      */
                     void SetProducerName(const std::string& _producerName);
 
@@ -439,14 +439,14 @@ namespace TencentCloud
                     bool ProducerNameHasBeenSet() const;
 
                     /**
-                     * 获取xx
-                     * @return Nickname xx
+                     * 获取作者
+                     * @return Nickname 作者
                      */
                     std::string GetNickname() const;
 
                     /**
-                     * 设置xx
-                     * @param Nickname xx
+                     * 设置作者
+                     * @param Nickname 作者
                      */
                     void SetNickname(const std::string& _nickname);
 
@@ -457,14 +457,14 @@ namespace TencentCloud
                     bool NicknameHasBeenSet() const;
 
                     /**
-                     * 获取x
-                     * @return Authorization x
+                     * 获取授权书
+                     * @return Authorization 授权书
                      */
                     std::string GetAuthorization() const;
 
                     /**
-                     * 设置x
-                     * @param Authorization x
+                     * 设置授权书
+                     * @param Authorization 授权书
                      */
                     void SetAuthorization(const std::string& _authorization);
 
@@ -475,14 +475,14 @@ namespace TencentCloud
                     bool AuthorizationHasBeenSet() const;
 
                     /**
-                     * 获取x
-                     * @return AuthorizationStartTime x
+                     * 获取授权书开始时间
+                     * @return AuthorizationStartTime 授权书开始时间
                      */
                     std::string GetAuthorizationStartTime() const;
 
                     /**
-                     * 设置x
-                     * @param AuthorizationStartTime x
+                     * 设置授权书开始时间
+                     * @param AuthorizationStartTime 授权书开始时间
                      */
                     void SetAuthorizationStartTime(const std::string& _authorizationStartTime);
 
@@ -493,14 +493,14 @@ namespace TencentCloud
                     bool AuthorizationStartTimeHasBeenSet() const;
 
                     /**
-                     * 获取x
-                     * @return AuthorizationEndTime x
+                     * 获取授权书结束时间
+                     * @return AuthorizationEndTime 授权书结束时间
                      */
                     std::string GetAuthorizationEndTime() const;
 
                     /**
-                     * 设置x
-                     * @param AuthorizationEndTime x
+                     * 设置授权书结束时间
+                     * @param AuthorizationEndTime 授权书结束时间
                      */
                     void SetAuthorizationEndTime(const std::string& _authorizationEndTime);
 
@@ -511,14 +511,14 @@ namespace TencentCloud
                     bool AuthorizationEndTimeHasBeenSet() const;
 
                     /**
-                     * 获取x
-                     * @return ContentType x
+                     * 获取内容格式
+                     * @return ContentType 内容格式
                      */
                     std::string GetContentType() const;
 
                     /**
-                     * 设置x
-                     * @param ContentType x
+                     * 设置内容格式
+                     * @param ContentType 内容格式
                      */
                     void SetContentType(const std::string& _contentType);
 
@@ -529,14 +529,14 @@ namespace TencentCloud
                     bool ContentTypeHasBeenSet() const;
 
                     /**
-                     * 获取x
-                     * @return Content x
+                     * 获取文件内容
+                     * @return Content 文件内容
                      */
                     std::string GetContent() const;
 
                     /**
-                     * 设置x
-                     * @param Content x
+                     * 设置文件内容
+                     * @param Content 文件内容
                      */
                     void SetContent(const std::string& _content);
 
@@ -547,14 +547,14 @@ namespace TencentCloud
                     bool ContentHasBeenSet() const;
 
                     /**
-                     * 获取x
-                     * @return MonitorEndTime x
+                     * 获取监测结束时间
+                     * @return MonitorEndTime 监测结束时间
                      */
                     std::string GetMonitorEndTime() const;
 
                     /**
-                     * 设置x
-                     * @param MonitorEndTime x
+                     * 设置监测结束时间
+                     * @param MonitorEndTime 监测结束时间
                      */
                     void SetMonitorEndTime(const std::string& _monitorEndTime);
 
@@ -657,7 +657,7 @@ namespace TencentCloud
                     bool m_isMonitorHasBeenSet;
 
                     /**
-                     * 是否启用存证0：不启用 1：启用 默认为1
+                     * 是否启用存证0：不存证  2：存证 默认为0
                      */
                     std::string m_isCert;
                     bool m_isCertHasBeenSet;
@@ -681,61 +681,61 @@ namespace TencentCloud
                     bool m_produceTypeHasBeenSet;
 
                     /**
-                     * xxx
+                     * 白名单
                      */
                     std::vector<std::string> m_whiteLists;
                     bool m_whiteListsHasBeenSet;
 
                     /**
-                     * x
+                     * 作品ID
                      */
                     int64_t m_workId;
                     bool m_workIdHasBeenSet;
 
                     /**
-                     * xx
+                     * 著作权人姓名
                      */
                     std::string m_producerName;
                     bool m_producerNameHasBeenSet;
 
                     /**
-                     * xx
+                     * 作者
                      */
                     std::string m_nickname;
                     bool m_nicknameHasBeenSet;
 
                     /**
-                     * x
+                     * 授权书
                      */
                     std::string m_authorization;
                     bool m_authorizationHasBeenSet;
 
                     /**
-                     * x
+                     * 授权书开始时间
                      */
                     std::string m_authorizationStartTime;
                     bool m_authorizationStartTimeHasBeenSet;
 
                     /**
-                     * x
+                     * 授权书结束时间
                      */
                     std::string m_authorizationEndTime;
                     bool m_authorizationEndTimeHasBeenSet;
 
                     /**
-                     * x
+                     * 内容格式
                      */
                     std::string m_contentType;
                     bool m_contentTypeHasBeenSet;
 
                     /**
-                     * x
+                     * 文件内容
                      */
                     std::string m_content;
                     bool m_contentHasBeenSet;
 
                     /**
-                     * x
+                     * 监测结束时间
                      */
                     std::string m_monitorEndTime;
                     bool m_monitorEndTimeHasBeenSet;

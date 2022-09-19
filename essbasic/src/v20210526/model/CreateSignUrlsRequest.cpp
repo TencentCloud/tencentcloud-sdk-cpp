@@ -25,6 +25,7 @@ using namespace std;
 CreateSignUrlsRequest::CreateSignUrlsRequest() :
     m_agentHasBeenSet(false),
     m_flowIdsHasBeenSet(false),
+    m_flowGroupIdHasBeenSet(false),
     m_endpointHasBeenSet(false),
     m_generateTypeHasBeenSet(false),
     m_organizationNameHasBeenSet(false),
@@ -34,8 +35,7 @@ CreateSignUrlsRequest::CreateSignUrlsRequest() :
     m_openIdHasBeenSet(false),
     m_autoJumpBackHasBeenSet(false),
     m_jumpUrlHasBeenSet(false),
-    m_operatorHasBeenSet(false),
-    m_flowGroupIdHasBeenSet(false)
+    m_operatorHasBeenSet(false)
 {
 }
 
@@ -66,6 +66,14 @@ string CreateSignUrlsRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_flowGroupIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FlowGroupId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_flowGroupId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_endpointHasBeenSet)
@@ -149,14 +157,6 @@ string CreateSignUrlsRequest::ToJsonString() const
         m_operator.ToJsonObject(d[key.c_str()], allocator);
     }
 
-    if (m_flowGroupIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "FlowGroupId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_flowGroupId.c_str(), allocator).Move(), allocator);
-    }
-
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -195,6 +195,22 @@ void CreateSignUrlsRequest::SetFlowIds(const vector<string>& _flowIds)
 bool CreateSignUrlsRequest::FlowIdsHasBeenSet() const
 {
     return m_flowIdsHasBeenSet;
+}
+
+string CreateSignUrlsRequest::GetFlowGroupId() const
+{
+    return m_flowGroupId;
+}
+
+void CreateSignUrlsRequest::SetFlowGroupId(const string& _flowGroupId)
+{
+    m_flowGroupId = _flowGroupId;
+    m_flowGroupIdHasBeenSet = true;
+}
+
+bool CreateSignUrlsRequest::FlowGroupIdHasBeenSet() const
+{
+    return m_flowGroupIdHasBeenSet;
 }
 
 string CreateSignUrlsRequest::GetEndpoint() const
@@ -355,22 +371,6 @@ void CreateSignUrlsRequest::SetOperator(const UserInfo& _operator)
 bool CreateSignUrlsRequest::OperatorHasBeenSet() const
 {
     return m_operatorHasBeenSet;
-}
-
-string CreateSignUrlsRequest::GetFlowGroupId() const
-{
-    return m_flowGroupId;
-}
-
-void CreateSignUrlsRequest::SetFlowGroupId(const string& _flowGroupId)
-{
-    m_flowGroupId = _flowGroupId;
-    m_flowGroupIdHasBeenSet = true;
-}
-
-bool CreateSignUrlsRequest::FlowGroupIdHasBeenSet() const
-{
-    return m_flowGroupIdHasBeenSet;
 }
 
 

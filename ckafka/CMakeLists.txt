@@ -35,6 +35,7 @@ set(ckafka_public_header_model
   include/tencentcloud/ckafka/v20190819/model/SubscribedInfo.h
   include/tencentcloud/ckafka/v20190819/model/DescribeTopicAttributesRequest.h
   include/tencentcloud/ckafka/v20190819/model/DescribeDatahubGroupOffsetsResponse.h
+  include/tencentcloud/ckafka/v20190819/model/SplitParam.h
   include/tencentcloud/ckafka/v20190819/model/ConsumerGroup.h
   include/tencentcloud/ckafka/v20190819/model/Assignment.h
   include/tencentcloud/ckafka/v20190819/model/DescribeConnectResourceResp.h
@@ -51,6 +52,7 @@ set(ckafka_public_header_model
   include/tencentcloud/ckafka/v20190819/model/CreateRouteRequest.h
   include/tencentcloud/ckafka/v20190819/model/SQLServerModifyConnectParam.h
   include/tencentcloud/ckafka/v20190819/model/DeleteTopicRequest.h
+  include/tencentcloud/ckafka/v20190819/model/DescribeDatahubTasksRequest.h
   include/tencentcloud/ckafka/v20190819/model/DescribeInstancesResponse.h
   include/tencentcloud/ckafka/v20190819/model/DatahubResource.h
   include/tencentcloud/ckafka/v20190819/model/BatchModifyTopicAttributesResponse.h
@@ -72,7 +74,7 @@ set(ckafka_public_header_model
   include/tencentcloud/ckafka/v20190819/model/AclRule.h
   include/tencentcloud/ckafka/v20190819/model/SMTParam.h
   include/tencentcloud/ckafka/v20190819/model/CheckCdcClusterResponse.h
-  include/tencentcloud/ckafka/v20190819/model/DescribeDatahubTasksRequest.h
+  include/tencentcloud/ckafka/v20190819/model/CtsdbModifyConnectParam.h
   include/tencentcloud/ckafka/v20190819/model/DescribeACLResponse.h
   include/tencentcloud/ckafka/v20190819/model/DynamicDiskConfig.h
   include/tencentcloud/ckafka/v20190819/model/JgwOperateResponse.h
@@ -93,6 +95,7 @@ set(ckafka_public_header_model
   include/tencentcloud/ckafka/v20190819/model/DescribeTopicResponse.h
   include/tencentcloud/ckafka/v20190819/model/MongoDBModifyConnectParam.h
   include/tencentcloud/ckafka/v20190819/model/TdwParam.h
+  include/tencentcloud/ckafka/v20190819/model/ModifyGroupOffsetsRequest.h
   include/tencentcloud/ckafka/v20190819/model/DescribeCkafkaZoneRequest.h
   include/tencentcloud/ckafka/v20190819/model/FetchDatahubMessageByOffsetResponse.h
   include/tencentcloud/ckafka/v20190819/model/CreateConsumerResponse.h
@@ -169,6 +172,7 @@ set(ckafka_public_header_model
   include/tencentcloud/ckafka/v20190819/model/TopicSubscribeGroup.h
   include/tencentcloud/ckafka/v20190819/model/Config.h
   include/tencentcloud/ckafka/v20190819/model/ClickHouseSchema.h
+  include/tencentcloud/ckafka/v20190819/model/CtsdbConnectParam.h
   include/tencentcloud/ckafka/v20190819/model/ModifyPasswordRequest.h
   include/tencentcloud/ckafka/v20190819/model/MariaDBModifyConnectParam.h
   include/tencentcloud/ckafka/v20190819/model/ModifyInstanceAttributesRequest.h
@@ -244,10 +248,11 @@ set(ckafka_public_header_model
   include/tencentcloud/ckafka/v20190819/model/TopicResult.h
   include/tencentcloud/ckafka/v20190819/model/DescribeTopicDetailRequest.h
   include/tencentcloud/ckafka/v20190819/model/DescribeGroupOffsetsResponse.h
+  include/tencentcloud/ckafka/v20190819/model/CtsdbParam.h
   include/tencentcloud/ckafka/v20190819/model/SendMessageRequest.h
   include/tencentcloud/ckafka/v20190819/model/ConsumerRecord.h
   include/tencentcloud/ckafka/v20190819/model/PostgreSQLConnectParam.h
-  include/tencentcloud/ckafka/v20190819/model/ModifyGroupOffsetsRequest.h
+  include/tencentcloud/ckafka/v20190819/model/KVParam.h
   include/tencentcloud/ckafka/v20190819/model/BatchModifyTopicAttributesRequest.h
   include/tencentcloud/ckafka/v20190819/model/DeleteGroupResponse.h
   include/tencentcloud/ckafka/v20190819/model/CreateTopicIpWhiteListRequest.h
@@ -296,6 +301,7 @@ set(ckafka_src
   src/v20190819/model/SubscribedInfo.cpp
   src/v20190819/model/DescribeTopicAttributesRequest.cpp
   src/v20190819/model/DescribeDatahubGroupOffsetsResponse.cpp
+  src/v20190819/model/SplitParam.cpp
   src/v20190819/model/ConsumerGroup.cpp
   src/v20190819/model/Assignment.cpp
   src/v20190819/model/DescribeConnectResourceResp.cpp
@@ -312,6 +318,7 @@ set(ckafka_src
   src/v20190819/model/CreateRouteRequest.cpp
   src/v20190819/model/SQLServerModifyConnectParam.cpp
   src/v20190819/model/DeleteTopicRequest.cpp
+  src/v20190819/model/DescribeDatahubTasksRequest.cpp
   src/v20190819/model/DescribeInstancesResponse.cpp
   src/v20190819/model/DatahubResource.cpp
   src/v20190819/model/BatchModifyTopicAttributesResponse.cpp
@@ -333,7 +340,7 @@ set(ckafka_src
   src/v20190819/model/AclRule.cpp
   src/v20190819/model/SMTParam.cpp
   src/v20190819/model/CheckCdcClusterResponse.cpp
-  src/v20190819/model/DescribeDatahubTasksRequest.cpp
+  src/v20190819/model/CtsdbModifyConnectParam.cpp
   src/v20190819/model/DescribeACLResponse.cpp
   src/v20190819/model/DynamicDiskConfig.cpp
   src/v20190819/model/JgwOperateResponse.cpp
@@ -354,6 +361,7 @@ set(ckafka_src
   src/v20190819/model/DescribeTopicResponse.cpp
   src/v20190819/model/MongoDBModifyConnectParam.cpp
   src/v20190819/model/TdwParam.cpp
+  src/v20190819/model/ModifyGroupOffsetsRequest.cpp
   src/v20190819/model/DescribeCkafkaZoneRequest.cpp
   src/v20190819/model/FetchDatahubMessageByOffsetResponse.cpp
   src/v20190819/model/CreateConsumerResponse.cpp
@@ -430,6 +438,7 @@ set(ckafka_src
   src/v20190819/model/TopicSubscribeGroup.cpp
   src/v20190819/model/Config.cpp
   src/v20190819/model/ClickHouseSchema.cpp
+  src/v20190819/model/CtsdbConnectParam.cpp
   src/v20190819/model/ModifyPasswordRequest.cpp
   src/v20190819/model/MariaDBModifyConnectParam.cpp
   src/v20190819/model/ModifyInstanceAttributesRequest.cpp
@@ -505,10 +514,11 @@ set(ckafka_src
   src/v20190819/model/TopicResult.cpp
   src/v20190819/model/DescribeTopicDetailRequest.cpp
   src/v20190819/model/DescribeGroupOffsetsResponse.cpp
+  src/v20190819/model/CtsdbParam.cpp
   src/v20190819/model/SendMessageRequest.cpp
   src/v20190819/model/ConsumerRecord.cpp
   src/v20190819/model/PostgreSQLConnectParam.cpp
-  src/v20190819/model/ModifyGroupOffsetsRequest.cpp
+  src/v20190819/model/KVParam.cpp
   src/v20190819/model/BatchModifyTopicAttributesRequest.cpp
   src/v20190819/model/DeleteGroupResponse.cpp
   src/v20190819/model/CreateTopicIpWhiteListRequest.cpp

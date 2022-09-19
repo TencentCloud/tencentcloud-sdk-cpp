@@ -28,7 +28,8 @@ TransformsParam::TransformsParam() :
     m_resultHasBeenSet(false),
     m_sourceTypeHasBeenSet(false),
     m_outputFormatHasBeenSet(false),
-    m_rowParamHasBeenSet(false)
+    m_rowParamHasBeenSet(false),
+    m_keepMetadataHasBeenSet(false)
 {
 }
 
@@ -151,6 +152,16 @@ CoreInternalOutcome TransformsParam::Deserialize(const rapidjson::Value &value)
         m_rowParamHasBeenSet = true;
     }
 
+    if (value.HasMember("KeepMetadata") && !value["KeepMetadata"].IsNull())
+    {
+        if (!value["KeepMetadata"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `TransformsParam.KeepMetadata` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_keepMetadata = value["KeepMetadata"].GetBool();
+        m_keepMetadataHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -236,6 +247,14 @@ void TransformsParam::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_rowParam.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_keepMetadataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KeepMetadata";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_keepMetadata, allocator);
     }
 
 }
@@ -367,5 +386,21 @@ void TransformsParam::SetRowParam(const RowParam& _rowParam)
 bool TransformsParam::RowParamHasBeenSet() const
 {
     return m_rowParamHasBeenSet;
+}
+
+bool TransformsParam::GetKeepMetadata() const
+{
+    return m_keepMetadata;
+}
+
+void TransformsParam::SetKeepMetadata(const bool& _keepMetadata)
+{
+    m_keepMetadata = _keepMetadata;
+    m_keepMetadataHasBeenSet = true;
+}
+
+bool TransformsParam::KeepMetadataHasBeenSet() const
+{
+    return m_keepMetadataHasBeenSet;
 }
 

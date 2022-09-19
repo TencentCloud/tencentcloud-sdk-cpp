@@ -34,7 +34,8 @@ ModifyConnectResourceRequest::ModifyConnectResourceRequest() :
     m_mySQLConnectParamHasBeenSet(false),
     m_postgreSQLConnectParamHasBeenSet(false),
     m_mariaDBConnectParamHasBeenSet(false),
-    m_sQLServerConnectParamHasBeenSet(false)
+    m_sQLServerConnectParamHasBeenSet(false),
+    m_ctsdbConnectParamHasBeenSet(false)
 {
 }
 
@@ -147,6 +148,15 @@ string ModifyConnectResourceRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_sQLServerConnectParam.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_ctsdbConnectParamHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CtsdbConnectParam";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_ctsdbConnectParam.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -347,6 +357,22 @@ void ModifyConnectResourceRequest::SetSQLServerConnectParam(const SQLServerModif
 bool ModifyConnectResourceRequest::SQLServerConnectParamHasBeenSet() const
 {
     return m_sQLServerConnectParamHasBeenSet;
+}
+
+CtsdbModifyConnectParam ModifyConnectResourceRequest::GetCtsdbConnectParam() const
+{
+    return m_ctsdbConnectParam;
+}
+
+void ModifyConnectResourceRequest::SetCtsdbConnectParam(const CtsdbModifyConnectParam& _ctsdbConnectParam)
+{
+    m_ctsdbConnectParam = _ctsdbConnectParam;
+    m_ctsdbConnectParamHasBeenSet = true;
+}
+
+bool ModifyConnectResourceRequest::CtsdbConnectParamHasBeenSet() const
+{
+    return m_ctsdbConnectParamHasBeenSet;
 }
 
 

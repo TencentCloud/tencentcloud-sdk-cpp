@@ -218,6 +218,28 @@ namespace TencentCloud
                      */
                     bool RowParamHasBeenSet() const;
 
+                    /**
+                     * 获取是否保留数据源Topic元数据信息（源Topic、Partition、Offset），默认为false
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return KeepMetadata 是否保留数据源Topic元数据信息（源Topic、Partition、Offset），默认为false
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetKeepMetadata() const;
+
+                    /**
+                     * 设置是否保留数据源Topic元数据信息（源Topic、Partition、Offset），默认为false
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param KeepMetadata 是否保留数据源Topic元数据信息（源Topic、Partition、Offset），默认为false
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetKeepMetadata(const bool& _keepMetadata);
+
+                    /**
+                     * 判断参数 KeepMetadata 是否已赋值
+                     * @return KeepMetadata 是否已赋值
+                     */
+                    bool KeepMetadataHasBeenSet() const;
+
                 private:
 
                     /**
@@ -273,6 +295,13 @@ namespace TencentCloud
                      */
                     RowParam m_rowParam;
                     bool m_rowParamHasBeenSet;
+
+                    /**
+                     * 是否保留数据源Topic元数据信息（源Topic、Partition、Offset），默认为false
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_keepMetadata;
+                    bool m_keepMetadataHasBeenSet;
 
                 };
             }

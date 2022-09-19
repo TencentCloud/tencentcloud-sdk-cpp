@@ -201,6 +201,160 @@ namespace TencentCloud
                      */
                     bool JobIdHasBeenSet() const;
 
+                    /**
+                     * 获取App ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AppId App ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetAppId() const;
+
+                    /**
+                     * 设置App ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AppId App ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAppId(const int64_t& _appId);
+
+                    /**
+                     * 判断参数 AppId 是否已赋值
+                     * @return AppId 是否已赋值
+                     */
+                    bool AppIdHasBeenSet() const;
+
+                    /**
+                     * 获取主账号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Uin 主账号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetUin() const;
+
+                    /**
+                     * 设置主账号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Uin 主账号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetUin(const std::string& _uin);
+
+                    /**
+                     * 判断参数 Uin 是否已赋值
+                     * @return Uin 是否已赋值
+                     */
+                    bool UinHasBeenSet() const;
+
+                    /**
+                     * 获取子账号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SubAccountUin 子账号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetSubAccountUin() const;
+
+                    /**
+                     * 设置子账号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SubAccountUin 子账号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSubAccountUin(const std::string& _subAccountUin);
+
+                    /**
+                     * 判断参数 SubAccountUin 是否已赋值
+                     * @return SubAccountUin 是否已赋值
+                     */
+                    bool SubAccountUinHasBeenSet() const;
+
+                    /**
+                     * 获取场景名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ScenarioName 场景名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetScenarioName() const;
+
+                    /**
+                     * 设置场景名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ScenarioName 场景名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetScenarioName(const std::string& _scenarioName);
+
+                    /**
+                     * 判断参数 ScenarioName 是否已赋值
+                     * @return ScenarioName 是否已赋值
+                     */
+                    bool ScenarioNameHasBeenSet() const;
+
+                    /**
+                     * 获取告警对象
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Target 告警对象
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetTarget() const;
+
+                    /**
+                     * 设置告警对象
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Target 告警对象
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTarget(const std::string& _target);
+
+                    /**
+                     * 判断参数 Target 是否已赋值
+                     * @return Target 是否已赋值
+                     */
+                    bool TargetHasBeenSet() const;
+
+                    /**
+                     * 获取告警规则 ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return JobSLAId 告警规则 ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetJobSLAId() const;
+
+                    /**
+                     * 设置告警规则 ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param JobSLAId 告警规则 ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetJobSLAId(const std::string& _jobSLAId);
+
+                    /**
+                     * 判断参数 JobSLAId 是否已赋值
+                     * @return JobSLAId 是否已赋值
+                     */
+                    bool JobSLAIdHasBeenSet() const;
+
+                    /**
+                     * 获取告警规则描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return JobSLADescription 告警规则描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetJobSLADescription() const;
+
+                    /**
+                     * 设置告警规则描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param JobSLADescription 告警规则描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetJobSLADescription(const std::string& _jobSLADescription);
+
+                    /**
+                     * 判断参数 JobSLADescription 是否已赋值
+                     * @return JobSLADescription 是否已赋值
+                     */
+                    bool JobSLADescriptionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -251,6 +405,55 @@ namespace TencentCloud
                      */
                     std::string m_jobId;
                     bool m_jobIdHasBeenSet;
+
+                    /**
+                     * App ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_appId;
+                    bool m_appIdHasBeenSet;
+
+                    /**
+                     * 主账号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_uin;
+                    bool m_uinHasBeenSet;
+
+                    /**
+                     * 子账号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_subAccountUin;
+                    bool m_subAccountUinHasBeenSet;
+
+                    /**
+                     * 场景名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_scenarioName;
+                    bool m_scenarioNameHasBeenSet;
+
+                    /**
+                     * 告警对象
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_target;
+                    bool m_targetHasBeenSet;
+
+                    /**
+                     * 告警规则 ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_jobSLAId;
+                    bool m_jobSLAIdHasBeenSet;
+
+                    /**
+                     * 告警规则描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_jobSLADescription;
+                    bool m_jobSLADescriptionHasBeenSet;
 
                 };
             }

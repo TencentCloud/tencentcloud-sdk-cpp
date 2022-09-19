@@ -30,6 +30,9 @@
 #include <tencentcloud/ckafka/v20190819/model/ClickHouseConnectParam.h>
 #include <tencentcloud/ckafka/v20190819/model/MySQLConnectParam.h>
 #include <tencentcloud/ckafka/v20190819/model/PostgreSQLConnectParam.h>
+#include <tencentcloud/ckafka/v20190819/model/MariaDBConnectParam.h>
+#include <tencentcloud/ckafka/v20190819/model/SQLServerConnectParam.h>
+#include <tencentcloud/ckafka/v20190819/model/CtsdbConnectParam.h>
 
 
 namespace TencentCloud
@@ -339,17 +342,17 @@ namespace TencentCloud
                     bool ClickHouseConnectParamHasBeenSet() const;
 
                     /**
-                     * 获取MySQL配置，Type为MYSQL时必填
+                     * 获取MySQL配置，Type为MYSQL或TDSQL_C_MYSQL时返回
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MySQLConnectParam MySQL配置，Type为MYSQL时必填
+                     * @return MySQLConnectParam MySQL配置，Type为MYSQL或TDSQL_C_MYSQL时返回
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     MySQLConnectParam GetMySQLConnectParam() const;
 
                     /**
-                     * 设置MySQL配置，Type为MYSQL时必填
+                     * 设置MySQL配置，Type为MYSQL或TDSQL_C_MYSQL时返回
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MySQLConnectParam MySQL配置，Type为MYSQL时必填
+                     * @param MySQLConnectParam MySQL配置，Type为MYSQL或TDSQL_C_MYSQL时返回
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetMySQLConnectParam(const MySQLConnectParam& _mySQLConnectParam);
@@ -361,17 +364,17 @@ namespace TencentCloud
                     bool MySQLConnectParamHasBeenSet() const;
 
                     /**
-                     * 获取PostgreSQL配置，Type为POSTGRESQL或TDSQL_C_POSTGRESQL时必填
+                     * 获取PostgreSQL配置，Type为POSTGRESQL或TDSQL_C_POSTGRESQL时返回
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PostgreSQLConnectParam PostgreSQL配置，Type为POSTGRESQL或TDSQL_C_POSTGRESQL时必填
+                     * @return PostgreSQLConnectParam PostgreSQL配置，Type为POSTGRESQL或TDSQL_C_POSTGRESQL时返回
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     PostgreSQLConnectParam GetPostgreSQLConnectParam() const;
 
                     /**
-                     * 设置PostgreSQL配置，Type为POSTGRESQL或TDSQL_C_POSTGRESQL时必填
+                     * 设置PostgreSQL配置，Type为POSTGRESQL或TDSQL_C_POSTGRESQL时返回
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PostgreSQLConnectParam PostgreSQL配置，Type为POSTGRESQL或TDSQL_C_POSTGRESQL时必填
+                     * @param PostgreSQLConnectParam PostgreSQL配置，Type为POSTGRESQL或TDSQL_C_POSTGRESQL时返回
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetPostgreSQLConnectParam(const PostgreSQLConnectParam& _postgreSQLConnectParam);
@@ -381,6 +384,72 @@ namespace TencentCloud
                      * @return PostgreSQLConnectParam 是否已赋值
                      */
                     bool PostgreSQLConnectParamHasBeenSet() const;
+
+                    /**
+                     * 获取MariaDB配置，Type为MARIADB时返回
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MariaDBConnectParam MariaDB配置，Type为MARIADB时返回
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    MariaDBConnectParam GetMariaDBConnectParam() const;
+
+                    /**
+                     * 设置MariaDB配置，Type为MARIADB时返回
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param MariaDBConnectParam MariaDB配置，Type为MARIADB时返回
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMariaDBConnectParam(const MariaDBConnectParam& _mariaDBConnectParam);
+
+                    /**
+                     * 判断参数 MariaDBConnectParam 是否已赋值
+                     * @return MariaDBConnectParam 是否已赋值
+                     */
+                    bool MariaDBConnectParamHasBeenSet() const;
+
+                    /**
+                     * 获取SQLServer配置，Type为SQLSERVER时返回
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SQLServerConnectParam SQLServer配置，Type为SQLSERVER时返回
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    SQLServerConnectParam GetSQLServerConnectParam() const;
+
+                    /**
+                     * 设置SQLServer配置，Type为SQLSERVER时返回
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SQLServerConnectParam SQLServer配置，Type为SQLSERVER时返回
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSQLServerConnectParam(const SQLServerConnectParam& _sQLServerConnectParam);
+
+                    /**
+                     * 判断参数 SQLServerConnectParam 是否已赋值
+                     * @return SQLServerConnectParam 是否已赋值
+                     */
+                    bool SQLServerConnectParamHasBeenSet() const;
+
+                    /**
+                     * 获取Ctsdb配置，Type为CTSDB时返回
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CtsdbConnectParam Ctsdb配置，Type为CTSDB时返回
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    CtsdbConnectParam GetCtsdbConnectParam() const;
+
+                    /**
+                     * 设置Ctsdb配置，Type为CTSDB时返回
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param CtsdbConnectParam Ctsdb配置，Type为CTSDB时返回
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCtsdbConnectParam(const CtsdbConnectParam& _ctsdbConnectParam);
+
+                    /**
+                     * 判断参数 CtsdbConnectParam 是否已赋值
+                     * @return CtsdbConnectParam 是否已赋值
+                     */
+                    bool CtsdbConnectParamHasBeenSet() const;
 
                 private:
 
@@ -476,18 +545,39 @@ namespace TencentCloud
                     bool m_clickHouseConnectParamHasBeenSet;
 
                     /**
-                     * MySQL配置，Type为MYSQL时必填
+                     * MySQL配置，Type为MYSQL或TDSQL_C_MYSQL时返回
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     MySQLConnectParam m_mySQLConnectParam;
                     bool m_mySQLConnectParamHasBeenSet;
 
                     /**
-                     * PostgreSQL配置，Type为POSTGRESQL或TDSQL_C_POSTGRESQL时必填
+                     * PostgreSQL配置，Type为POSTGRESQL或TDSQL_C_POSTGRESQL时返回
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     PostgreSQLConnectParam m_postgreSQLConnectParam;
                     bool m_postgreSQLConnectParamHasBeenSet;
+
+                    /**
+                     * MariaDB配置，Type为MARIADB时返回
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    MariaDBConnectParam m_mariaDBConnectParam;
+                    bool m_mariaDBConnectParamHasBeenSet;
+
+                    /**
+                     * SQLServer配置，Type为SQLSERVER时返回
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    SQLServerConnectParam m_sQLServerConnectParam;
+                    bool m_sQLServerConnectParamHasBeenSet;
+
+                    /**
+                     * Ctsdb配置，Type为CTSDB时返回
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    CtsdbConnectParam m_ctsdbConnectParam;
+                    bool m_ctsdbConnectParamHasBeenSet;
 
                 };
             }

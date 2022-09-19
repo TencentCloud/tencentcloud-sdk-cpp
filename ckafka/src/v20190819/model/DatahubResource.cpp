@@ -35,7 +35,8 @@ DatahubResource::DatahubResource() :
     m_postgreSQLParamHasBeenSet(false),
     m_topicParamHasBeenSet(false),
     m_mariaDBParamHasBeenSet(false),
-    m_sQLServerParamHasBeenSet(false)
+    m_sQLServerParamHasBeenSet(false),
+    m_ctsdbParamHasBeenSet(false)
 {
 }
 
@@ -292,6 +293,23 @@ CoreInternalOutcome DatahubResource::Deserialize(const rapidjson::Value &value)
         m_sQLServerParamHasBeenSet = true;
     }
 
+    if (value.HasMember("CtsdbParam") && !value["CtsdbParam"].IsNull())
+    {
+        if (!value["CtsdbParam"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `DatahubResource.CtsdbParam` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_ctsdbParam.Deserialize(value["CtsdbParam"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_ctsdbParamHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -431,6 +449,15 @@ void DatahubResource::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_sQLServerParam.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_ctsdbParamHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CtsdbParam";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_ctsdbParam.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -674,5 +701,21 @@ void DatahubResource::SetSQLServerParam(const SQLServerParam& _sQLServerParam)
 bool DatahubResource::SQLServerParamHasBeenSet() const
 {
     return m_sQLServerParamHasBeenSet;
+}
+
+CtsdbParam DatahubResource::GetCtsdbParam() const
+{
+    return m_ctsdbParam;
+}
+
+void DatahubResource::SetCtsdbParam(const CtsdbParam& _ctsdbParam)
+{
+    m_ctsdbParam = _ctsdbParam;
+    m_ctsdbParamHasBeenSet = true;
+}
+
+bool DatahubResource::CtsdbParamHasBeenSet() const
+{
+    return m_ctsdbParamHasBeenSet;
 }
 

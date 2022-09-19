@@ -35,7 +35,10 @@ DescribeConnectResourceResp::DescribeConnectResourceResp() :
     m_dtsConnectParamHasBeenSet(false),
     m_mongoDBConnectParamHasBeenSet(false),
     m_esConnectParamHasBeenSet(false),
-    m_clickHouseConnectParamHasBeenSet(false)
+    m_clickHouseConnectParamHasBeenSet(false),
+    m_mariaDBConnectParamHasBeenSet(false),
+    m_sQLServerConnectParamHasBeenSet(false),
+    m_ctsdbConnectParamHasBeenSet(false)
 {
 }
 
@@ -239,6 +242,57 @@ CoreInternalOutcome DescribeConnectResourceResp::Deserialize(const rapidjson::Va
         m_clickHouseConnectParamHasBeenSet = true;
     }
 
+    if (value.HasMember("MariaDBConnectParam") && !value["MariaDBConnectParam"].IsNull())
+    {
+        if (!value["MariaDBConnectParam"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeConnectResourceResp.MariaDBConnectParam` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_mariaDBConnectParam.Deserialize(value["MariaDBConnectParam"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_mariaDBConnectParamHasBeenSet = true;
+    }
+
+    if (value.HasMember("SQLServerConnectParam") && !value["SQLServerConnectParam"].IsNull())
+    {
+        if (!value["SQLServerConnectParam"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeConnectResourceResp.SQLServerConnectParam` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_sQLServerConnectParam.Deserialize(value["SQLServerConnectParam"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_sQLServerConnectParamHasBeenSet = true;
+    }
+
+    if (value.HasMember("CtsdbConnectParam") && !value["CtsdbConnectParam"].IsNull())
+    {
+        if (!value["CtsdbConnectParam"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeConnectResourceResp.CtsdbConnectParam` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_ctsdbConnectParam.Deserialize(value["CtsdbConnectParam"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_ctsdbConnectParamHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -375,6 +429,33 @@ void DescribeConnectResourceResp::ToJsonObject(rapidjson::Value &value, rapidjso
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_clickHouseConnectParam.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_mariaDBConnectParamHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MariaDBConnectParam";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_mariaDBConnectParam.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_sQLServerConnectParamHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SQLServerConnectParam";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_sQLServerConnectParam.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_ctsdbConnectParamHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CtsdbConnectParam";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_ctsdbConnectParam.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -618,5 +699,53 @@ void DescribeConnectResourceResp::SetClickHouseConnectParam(const ClickHouseConn
 bool DescribeConnectResourceResp::ClickHouseConnectParamHasBeenSet() const
 {
     return m_clickHouseConnectParamHasBeenSet;
+}
+
+MariaDBConnectParam DescribeConnectResourceResp::GetMariaDBConnectParam() const
+{
+    return m_mariaDBConnectParam;
+}
+
+void DescribeConnectResourceResp::SetMariaDBConnectParam(const MariaDBConnectParam& _mariaDBConnectParam)
+{
+    m_mariaDBConnectParam = _mariaDBConnectParam;
+    m_mariaDBConnectParamHasBeenSet = true;
+}
+
+bool DescribeConnectResourceResp::MariaDBConnectParamHasBeenSet() const
+{
+    return m_mariaDBConnectParamHasBeenSet;
+}
+
+SQLServerConnectParam DescribeConnectResourceResp::GetSQLServerConnectParam() const
+{
+    return m_sQLServerConnectParam;
+}
+
+void DescribeConnectResourceResp::SetSQLServerConnectParam(const SQLServerConnectParam& _sQLServerConnectParam)
+{
+    m_sQLServerConnectParam = _sQLServerConnectParam;
+    m_sQLServerConnectParamHasBeenSet = true;
+}
+
+bool DescribeConnectResourceResp::SQLServerConnectParamHasBeenSet() const
+{
+    return m_sQLServerConnectParamHasBeenSet;
+}
+
+CtsdbConnectParam DescribeConnectResourceResp::GetCtsdbConnectParam() const
+{
+    return m_ctsdbConnectParam;
+}
+
+void DescribeConnectResourceResp::SetCtsdbConnectParam(const CtsdbConnectParam& _ctsdbConnectParam)
+{
+    m_ctsdbConnectParam = _ctsdbConnectParam;
+    m_ctsdbConnectParamHasBeenSet = true;
+}
+
+bool DescribeConnectResourceResp::CtsdbConnectParamHasBeenSet() const
+{
+    return m_ctsdbConnectParamHasBeenSet;
 }
 

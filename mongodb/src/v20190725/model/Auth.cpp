@@ -21,8 +21,8 @@ using namespace TencentCloud::Mongodb::V20190725::Model;
 using namespace std;
 
 Auth::Auth() :
-    m_nameSpaceHasBeenSet(false),
-    m_maskHasBeenSet(false)
+    m_maskHasBeenSet(false),
+    m_nameSpaceHasBeenSet(false)
 {
 }
 
@@ -30,16 +30,6 @@ CoreInternalOutcome Auth::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
-
-    if (value.HasMember("NameSpace") && !value["NameSpace"].IsNull())
-    {
-        if (!value["NameSpace"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `Auth.NameSpace` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_nameSpace = string(value["NameSpace"].GetString());
-        m_nameSpaceHasBeenSet = true;
-    }
 
     if (value.HasMember("Mask") && !value["Mask"].IsNull())
     {
@@ -51,20 +41,22 @@ CoreInternalOutcome Auth::Deserialize(const rapidjson::Value &value)
         m_maskHasBeenSet = true;
     }
 
+    if (value.HasMember("NameSpace") && !value["NameSpace"].IsNull())
+    {
+        if (!value["NameSpace"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Auth.NameSpace` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_nameSpace = string(value["NameSpace"].GetString());
+        m_nameSpaceHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
 void Auth::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
-
-    if (m_nameSpaceHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "NameSpace";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_nameSpace.c_str(), allocator).Move(), allocator);
-    }
 
     if (m_maskHasBeenSet)
     {
@@ -74,24 +66,16 @@ void Auth::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorT
         value.AddMember(iKey, m_mask, allocator);
     }
 
+    if (m_nameSpaceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NameSpace";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_nameSpace.c_str(), allocator).Move(), allocator);
+    }
+
 }
 
-
-string Auth::GetNameSpace() const
-{
-    return m_nameSpace;
-}
-
-void Auth::SetNameSpace(const string& _nameSpace)
-{
-    m_nameSpace = _nameSpace;
-    m_nameSpaceHasBeenSet = true;
-}
-
-bool Auth::NameSpaceHasBeenSet() const
-{
-    return m_nameSpaceHasBeenSet;
-}
 
 int64_t Auth::GetMask() const
 {
@@ -107,5 +91,21 @@ void Auth::SetMask(const int64_t& _mask)
 bool Auth::MaskHasBeenSet() const
 {
     return m_maskHasBeenSet;
+}
+
+string Auth::GetNameSpace() const
+{
+    return m_nameSpace;
+}
+
+void Auth::SetNameSpace(const string& _nameSpace)
+{
+    m_nameSpace = _nameSpace;
+    m_nameSpaceHasBeenSet = true;
+}
+
+bool Auth::NameSpaceHasBeenSet() const
+{
+    return m_nameSpaceHasBeenSet;
 }
 

@@ -332,6 +332,50 @@ namespace TencentCloud
                      */
                     bool StatusHasBeenSet() const;
 
+                    /**
+                     * 获取创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CreatedAt 创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetCreatedAt() const;
+
+                    /**
+                     * 设置创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param CreatedAt 创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCreatedAt(const std::string& _createdAt);
+
+                    /**
+                     * 判断参数 CreatedAt 是否已赋值
+                     * @return CreatedAt 是否已赋值
+                     */
+                    bool CreatedAtHasBeenSet() const;
+
+                    /**
+                     * 获取项目 ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ProjectId 项目 ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetProjectId() const;
+
+                    /**
+                     * 设置项目 ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ProjectId 项目 ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetProjectId(const std::string& _projectId);
+
+                    /**
+                     * 判断参数 ProjectId 是否已赋值
+                     * @return ProjectId 是否已赋值
+                     */
+                    bool ProjectIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -425,6 +469,20 @@ namespace TencentCloud
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * 创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_createdAt;
+                    bool m_createdAtHasBeenSet;
+
+                    /**
+                     * 项目 ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_projectId;
+                    bool m_projectIdHasBeenSet;
 
                 };
             }

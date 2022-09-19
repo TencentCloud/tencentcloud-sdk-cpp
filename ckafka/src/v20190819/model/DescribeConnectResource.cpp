@@ -35,7 +35,10 @@ DescribeConnectResource::DescribeConnectResource() :
     m_esConnectParamHasBeenSet(false),
     m_clickHouseConnectParamHasBeenSet(false),
     m_mySQLConnectParamHasBeenSet(false),
-    m_postgreSQLConnectParamHasBeenSet(false)
+    m_postgreSQLConnectParamHasBeenSet(false),
+    m_mariaDBConnectParamHasBeenSet(false),
+    m_sQLServerConnectParamHasBeenSet(false),
+    m_ctsdbConnectParamHasBeenSet(false)
 {
 }
 
@@ -236,6 +239,57 @@ CoreInternalOutcome DescribeConnectResource::Deserialize(const rapidjson::Value 
         m_postgreSQLConnectParamHasBeenSet = true;
     }
 
+    if (value.HasMember("MariaDBConnectParam") && !value["MariaDBConnectParam"].IsNull())
+    {
+        if (!value["MariaDBConnectParam"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeConnectResource.MariaDBConnectParam` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_mariaDBConnectParam.Deserialize(value["MariaDBConnectParam"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_mariaDBConnectParamHasBeenSet = true;
+    }
+
+    if (value.HasMember("SQLServerConnectParam") && !value["SQLServerConnectParam"].IsNull())
+    {
+        if (!value["SQLServerConnectParam"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeConnectResource.SQLServerConnectParam` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_sQLServerConnectParam.Deserialize(value["SQLServerConnectParam"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_sQLServerConnectParamHasBeenSet = true;
+    }
+
+    if (value.HasMember("CtsdbConnectParam") && !value["CtsdbConnectParam"].IsNull())
+    {
+        if (!value["CtsdbConnectParam"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeConnectResource.CtsdbConnectParam` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_ctsdbConnectParam.Deserialize(value["CtsdbConnectParam"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_ctsdbConnectParamHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -367,6 +421,33 @@ void DescribeConnectResource::ToJsonObject(rapidjson::Value &value, rapidjson::D
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_postgreSQLConnectParam.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_mariaDBConnectParamHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MariaDBConnectParam";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_mariaDBConnectParam.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_sQLServerConnectParamHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SQLServerConnectParam";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_sQLServerConnectParam.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_ctsdbConnectParamHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CtsdbConnectParam";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_ctsdbConnectParam.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -610,5 +691,53 @@ void DescribeConnectResource::SetPostgreSQLConnectParam(const PostgreSQLConnectP
 bool DescribeConnectResource::PostgreSQLConnectParamHasBeenSet() const
 {
     return m_postgreSQLConnectParamHasBeenSet;
+}
+
+MariaDBConnectParam DescribeConnectResource::GetMariaDBConnectParam() const
+{
+    return m_mariaDBConnectParam;
+}
+
+void DescribeConnectResource::SetMariaDBConnectParam(const MariaDBConnectParam& _mariaDBConnectParam)
+{
+    m_mariaDBConnectParam = _mariaDBConnectParam;
+    m_mariaDBConnectParamHasBeenSet = true;
+}
+
+bool DescribeConnectResource::MariaDBConnectParamHasBeenSet() const
+{
+    return m_mariaDBConnectParamHasBeenSet;
+}
+
+SQLServerConnectParam DescribeConnectResource::GetSQLServerConnectParam() const
+{
+    return m_sQLServerConnectParam;
+}
+
+void DescribeConnectResource::SetSQLServerConnectParam(const SQLServerConnectParam& _sQLServerConnectParam)
+{
+    m_sQLServerConnectParam = _sQLServerConnectParam;
+    m_sQLServerConnectParamHasBeenSet = true;
+}
+
+bool DescribeConnectResource::SQLServerConnectParamHasBeenSet() const
+{
+    return m_sQLServerConnectParamHasBeenSet;
+}
+
+CtsdbConnectParam DescribeConnectResource::GetCtsdbConnectParam() const
+{
+    return m_ctsdbConnectParam;
+}
+
+void DescribeConnectResource::SetCtsdbConnectParam(const CtsdbConnectParam& _ctsdbConnectParam)
+{
+    m_ctsdbConnectParam = _ctsdbConnectParam;
+    m_ctsdbConnectParamHasBeenSet = true;
+}
+
+bool DescribeConnectResource::CtsdbConnectParamHasBeenSet() const
+{
+    return m_ctsdbConnectParamHasBeenSet;
 }
 

@@ -29,6 +29,7 @@ PushUrlsCacheRequest::PushUrlsCacheRequest() :
     m_layerHasBeenSet(false),
     m_parseM3U8HasBeenSet(false),
     m_disableRangeHasBeenSet(false),
+    m_headersHasBeenSet(false),
     m_urlEncodeHasBeenSet(false)
 {
 }
@@ -91,6 +92,21 @@ string PushUrlsCacheRequest::ToJsonString() const
         string key = "DisableRange";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_disableRange, allocator);
+    }
+
+    if (m_headersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Headers";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_headers.begin(); itr != m_headers.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
     if (m_urlEncodeHasBeenSet)
@@ -203,6 +219,22 @@ void PushUrlsCacheRequest::SetDisableRange(const bool& _disableRange)
 bool PushUrlsCacheRequest::DisableRangeHasBeenSet() const
 {
     return m_disableRangeHasBeenSet;
+}
+
+vector<HTTPHeader> PushUrlsCacheRequest::GetHeaders() const
+{
+    return m_headers;
+}
+
+void PushUrlsCacheRequest::SetHeaders(const vector<HTTPHeader>& _headers)
+{
+    m_headers = _headers;
+    m_headersHasBeenSet = true;
+}
+
+bool PushUrlsCacheRequest::HeadersHasBeenSet() const
+{
+    return m_headersHasBeenSet;
 }
 
 bool PushUrlsCacheRequest::GetUrlEncode() const

@@ -29,6 +29,7 @@
 #include <tencentcloud/ckafka/v20190819/model/PostgreSQLModifyConnectParam.h>
 #include <tencentcloud/ckafka/v20190819/model/MariaDBModifyConnectParam.h>
 #include <tencentcloud/ckafka/v20190819/model/SQLServerModifyConnectParam.h>
+#include <tencentcloud/ckafka/v20190819/model/CtsdbModifyConnectParam.h>
 
 
 namespace TencentCloud
@@ -266,6 +267,24 @@ namespace TencentCloud
                      */
                     bool SQLServerConnectParamHasBeenSet() const;
 
+                    /**
+                     * 获取Ctsdb配置，Type为CTSDB
+                     * @return CtsdbConnectParam Ctsdb配置，Type为CTSDB
+                     */
+                    CtsdbModifyConnectParam GetCtsdbConnectParam() const;
+
+                    /**
+                     * 设置Ctsdb配置，Type为CTSDB
+                     * @param CtsdbConnectParam Ctsdb配置，Type为CTSDB
+                     */
+                    void SetCtsdbConnectParam(const CtsdbModifyConnectParam& _ctsdbConnectParam);
+
+                    /**
+                     * 判断参数 CtsdbConnectParam 是否已赋值
+                     * @return CtsdbConnectParam 是否已赋值
+                     */
+                    bool CtsdbConnectParamHasBeenSet() const;
+
                 private:
 
                     /**
@@ -339,6 +358,12 @@ namespace TencentCloud
                      */
                     SQLServerModifyConnectParam m_sQLServerConnectParam;
                     bool m_sQLServerConnectParamHasBeenSet;
+
+                    /**
+                     * Ctsdb配置，Type为CTSDB
+                     */
+                    CtsdbModifyConnectParam m_ctsdbConnectParam;
+                    bool m_ctsdbConnectParamHasBeenSet;
 
                 };
             }

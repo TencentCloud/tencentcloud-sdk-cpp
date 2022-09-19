@@ -208,6 +208,60 @@ namespace TencentCloud
                      */
                     bool ErrorPercentageHasBeenSet() const;
 
+                    /**
+                     * 获取请求p99耗时，单位秒
+                     * @return P99 请求p99耗时，单位秒
+                     */
+                    double GetP99() const;
+
+                    /**
+                     * 设置请求p99耗时，单位秒
+                     * @param P99 请求p99耗时，单位秒
+                     */
+                    void SetP99(const double& _p99);
+
+                    /**
+                     * 判断参数 P99 是否已赋值
+                     * @return P99 是否已赋值
+                     */
+                    bool P99HasBeenSet() const;
+
+                    /**
+                     * 获取响应状态码
+                     * @return Status 响应状态码
+                     */
+                    std::string GetStatus() const;
+
+                    /**
+                     * 设置响应状态码
+                     * @param Status 响应状态码
+                     */
+                    void SetStatus(const std::string& _status);
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     */
+                    bool StatusHasBeenSet() const;
+
+                    /**
+                     * 获取响应详情
+                     * @return Result 响应详情
+                     */
+                    std::string GetResult() const;
+
+                    /**
+                     * 设置响应详情
+                     * @param Result 响应详情
+                     */
+                    void SetResult(const std::string& _result);
+
+                    /**
+                     * 判断参数 Result 是否已赋值
+                     * @return Result 是否已赋值
+                     */
+                    bool ResultHasBeenSet() const;
+
                 private:
 
                     /**
@@ -263,6 +317,24 @@ namespace TencentCloud
                      */
                     double m_errorPercentage;
                     bool m_errorPercentageHasBeenSet;
+
+                    /**
+                     * 请求p99耗时，单位秒
+                     */
+                    double m_p99;
+                    bool m_p99HasBeenSet;
+
+                    /**
+                     * 响应状态码
+                     */
+                    std::string m_status;
+                    bool m_statusHasBeenSet;
+
+                    /**
+                     * 响应详情
+                     */
+                    std::string m_result;
+                    bool m_resultHasBeenSet;
 
                 };
             }

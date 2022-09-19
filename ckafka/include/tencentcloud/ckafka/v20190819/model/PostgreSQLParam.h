@@ -227,6 +227,60 @@ namespace TencentCloud
                      */
                     bool DropInvalidMessageHasBeenSet() const;
 
+                    /**
+                     * 获取输入的table是否为正则表达式
+                     * @return IsTableRegular 输入的table是否为正则表达式
+                     */
+                    bool GetIsTableRegular() const;
+
+                    /**
+                     * 设置输入的table是否为正则表达式
+                     * @param IsTableRegular 输入的table是否为正则表达式
+                     */
+                    void SetIsTableRegular(const bool& _isTableRegular);
+
+                    /**
+                     * 判断参数 IsTableRegular 是否已赋值
+                     * @return IsTableRegular 是否已赋值
+                     */
+                    bool IsTableRegularHasBeenSet() const;
+
+                    /**
+                     * 获取格式：库1.表1:字段1,字段2;库2.表2:字段2，表之间;（分号）隔开，字段之间,（逗号）隔开。不指定的表默认取表的主键
+                     * @return KeyColumns 格式：库1.表1:字段1,字段2;库2.表2:字段2，表之间;（分号）隔开，字段之间,（逗号）隔开。不指定的表默认取表的主键
+                     */
+                    std::string GetKeyColumns() const;
+
+                    /**
+                     * 设置格式：库1.表1:字段1,字段2;库2.表2:字段2，表之间;（分号）隔开，字段之间,（逗号）隔开。不指定的表默认取表的主键
+                     * @param KeyColumns 格式：库1.表1:字段1,字段2;库2.表2:字段2，表之间;（分号）隔开，字段之间,（逗号）隔开。不指定的表默认取表的主键
+                     */
+                    void SetKeyColumns(const std::string& _keyColumns);
+
+                    /**
+                     * 判断参数 KeyColumns 是否已赋值
+                     * @return KeyColumns 是否已赋值
+                     */
+                    bool KeyColumnsHasBeenSet() const;
+
+                    /**
+                     * 获取如果该值为 true，则消息中会携带消息结构体对应的schema，如果该值为false则不会携带
+                     * @return RecordWithSchema 如果该值为 true，则消息中会携带消息结构体对应的schema，如果该值为false则不会携带
+                     */
+                    bool GetRecordWithSchema() const;
+
+                    /**
+                     * 设置如果该值为 true，则消息中会携带消息结构体对应的schema，如果该值为false则不会携带
+                     * @param RecordWithSchema 如果该值为 true，则消息中会携带消息结构体对应的schema，如果该值为false则不会携带
+                     */
+                    void SetRecordWithSchema(const bool& _recordWithSchema);
+
+                    /**
+                     * 判断参数 RecordWithSchema 是否已赋值
+                     * @return RecordWithSchema 是否已赋值
+                     */
+                    bool RecordWithSchemaHasBeenSet() const;
+
                 private:
 
                     /**
@@ -288,6 +342,24 @@ namespace TencentCloud
                      */
                     bool m_dropInvalidMessage;
                     bool m_dropInvalidMessageHasBeenSet;
+
+                    /**
+                     * 输入的table是否为正则表达式
+                     */
+                    bool m_isTableRegular;
+                    bool m_isTableRegularHasBeenSet;
+
+                    /**
+                     * 格式：库1.表1:字段1,字段2;库2.表2:字段2，表之间;（分号）隔开，字段之间,（逗号）隔开。不指定的表默认取表的主键
+                     */
+                    std::string m_keyColumns;
+                    bool m_keyColumnsHasBeenSet;
+
+                    /**
+                     * 如果该值为 true，则消息中会携带消息结构体对应的schema，如果该值为false则不会携带
+                     */
+                    bool m_recordWithSchema;
+                    bool m_recordWithSchemaHasBeenSet;
 
                 };
             }

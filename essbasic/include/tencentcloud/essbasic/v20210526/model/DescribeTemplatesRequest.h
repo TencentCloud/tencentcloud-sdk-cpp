@@ -99,14 +99,14 @@ namespace TencentCloud
                     bool ContentTypeHasBeenSet() const;
 
                     /**
-                     * 获取查询个数，默认20，最大100
-                     * @return Limit 查询个数，默认20，最大100
+                     * 获取查询个数，默认20，最大100；在查询列表的时候有效
+                     * @return Limit 查询个数，默认20，最大100；在查询列表的时候有效
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置查询个数，默认20，最大100
-                     * @param Limit 查询个数，默认20，最大100
+                     * 设置查询个数，默认20，最大100；在查询列表的时候有效
+                     * @param Limit 查询个数，默认20，最大100；在查询列表的时候有效
                      */
                     void SetLimit(const uint64_t& _limit);
 
@@ -117,14 +117,14 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取查询偏移位置，默认0
-                     * @return Offset 查询偏移位置，默认0
+                     * 获取查询偏移位置，默认0；在查询列表的时候有效
+                     * @return Offset 查询偏移位置，默认0；在查询列表的时候有效
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置查询偏移位置，默认0
-                     * @param Offset 查询偏移位置，默认0
+                     * 设置查询偏移位置，默认0；在查询列表的时候有效
+                     * @param Offset 查询偏移位置，默认0；在查询列表的时候有效
                      */
                     void SetOffset(const uint64_t& _offset);
 
@@ -171,14 +171,14 @@ namespace TencentCloud
                     bool QueryAllComponentsHasBeenSet() const;
 
                     /**
-                     * 获取模糊搜索模版名称
-                     * @return TemplateName 模糊搜索模版名称
+                     * 获取模糊搜索模板名称
+                     * @return TemplateName 模糊搜索模板名称
                      */
                     std::string GetTemplateName() const;
 
                     /**
-                     * 设置模糊搜索模版名称
-                     * @param TemplateName 模糊搜索模版名称
+                     * 设置模糊搜索模板名称
+                     * @param TemplateName 模糊搜索模板名称
                      */
                     void SetTemplateName(const std::string& _templateName);
 
@@ -209,13 +209,13 @@ namespace TencentCloud
                     bool m_contentTypeHasBeenSet;
 
                     /**
-                     * 查询个数，默认20，最大100
+                     * 查询个数，默认20，最大100；在查询列表的时候有效
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 查询偏移位置，默认0
+                     * 查询偏移位置，默认0；在查询列表的时候有效
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
@@ -233,7 +233,7 @@ namespace TencentCloud
                     bool m_queryAllComponentsHasBeenSet;
 
                     /**
-                     * 模糊搜索模版名称
+                     * 模糊搜索模板名称
                      */
                     std::string m_templateName;
                     bool m_templateNameHasBeenSet;

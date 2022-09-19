@@ -143,6 +143,7 @@ set(pts_public_header_model
   include/tencentcloud/pts/v20210728/model/CreateScenarioResponse.h
   include/tencentcloud/pts/v20210728/model/AbortJobRequest.h
   include/tencentcloud/pts/v20210728/model/CheckSummary.h
+  include/tencentcloud/pts/v20210728/model/NotificationHook.h
   include/tencentcloud/pts/v20210728/model/DescribeJobsResponse.h
   include/tencentcloud/pts/v20210728/model/GenerateTmpKeyRequest.h
   include/tencentcloud/pts/v20210728/model/DescribeSampleBatchQueryResponse.h
@@ -284,6 +285,7 @@ set(pts_src
   src/v20210728/model/CreateScenarioResponse.cpp
   src/v20210728/model/AbortJobRequest.cpp
   src/v20210728/model/CheckSummary.cpp
+  src/v20210728/model/NotificationHook.cpp
   src/v20210728/model/DescribeJobsResponse.cpp
   src/v20210728/model/GenerateTmpKeyRequest.cpp
   src/v20210728/model/DescribeSampleBatchQueryResponse.cpp

@@ -30,7 +30,10 @@ PostgreSQLParam::PostgreSQLParam() :
     m_dataTargetInsertModeHasBeenSet(false),
     m_dataTargetPrimaryKeyFieldHasBeenSet(false),
     m_dataTargetRecordMappingHasBeenSet(false),
-    m_dropInvalidMessageHasBeenSet(false)
+    m_dropInvalidMessageHasBeenSet(false),
+    m_isTableRegularHasBeenSet(false),
+    m_keyColumnsHasBeenSet(false),
+    m_recordWithSchemaHasBeenSet(false)
 {
 }
 
@@ -149,6 +152,36 @@ CoreInternalOutcome PostgreSQLParam::Deserialize(const rapidjson::Value &value)
         m_dropInvalidMessageHasBeenSet = true;
     }
 
+    if (value.HasMember("IsTableRegular") && !value["IsTableRegular"].IsNull())
+    {
+        if (!value["IsTableRegular"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `PostgreSQLParam.IsTableRegular` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isTableRegular = value["IsTableRegular"].GetBool();
+        m_isTableRegularHasBeenSet = true;
+    }
+
+    if (value.HasMember("KeyColumns") && !value["KeyColumns"].IsNull())
+    {
+        if (!value["KeyColumns"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PostgreSQLParam.KeyColumns` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_keyColumns = string(value["KeyColumns"].GetString());
+        m_keyColumnsHasBeenSet = true;
+    }
+
+    if (value.HasMember("RecordWithSchema") && !value["RecordWithSchema"].IsNull())
+    {
+        if (!value["RecordWithSchema"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `PostgreSQLParam.RecordWithSchema` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_recordWithSchema = value["RecordWithSchema"].GetBool();
+        m_recordWithSchemaHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -241,6 +274,30 @@ void PostgreSQLParam::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "DropInvalidMessage";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_dropInvalidMessage, allocator);
+    }
+
+    if (m_isTableRegularHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsTableRegular";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isTableRegular, allocator);
+    }
+
+    if (m_keyColumnsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KeyColumns";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_keyColumns.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_recordWithSchemaHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RecordWithSchema";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_recordWithSchema, allocator);
     }
 
 }
@@ -404,5 +461,53 @@ void PostgreSQLParam::SetDropInvalidMessage(const bool& _dropInvalidMessage)
 bool PostgreSQLParam::DropInvalidMessageHasBeenSet() const
 {
     return m_dropInvalidMessageHasBeenSet;
+}
+
+bool PostgreSQLParam::GetIsTableRegular() const
+{
+    return m_isTableRegular;
+}
+
+void PostgreSQLParam::SetIsTableRegular(const bool& _isTableRegular)
+{
+    m_isTableRegular = _isTableRegular;
+    m_isTableRegularHasBeenSet = true;
+}
+
+bool PostgreSQLParam::IsTableRegularHasBeenSet() const
+{
+    return m_isTableRegularHasBeenSet;
+}
+
+string PostgreSQLParam::GetKeyColumns() const
+{
+    return m_keyColumns;
+}
+
+void PostgreSQLParam::SetKeyColumns(const string& _keyColumns)
+{
+    m_keyColumns = _keyColumns;
+    m_keyColumnsHasBeenSet = true;
+}
+
+bool PostgreSQLParam::KeyColumnsHasBeenSet() const
+{
+    return m_keyColumnsHasBeenSet;
+}
+
+bool PostgreSQLParam::GetRecordWithSchema() const
+{
+    return m_recordWithSchema;
+}
+
+void PostgreSQLParam::SetRecordWithSchema(const bool& _recordWithSchema)
+{
+    m_recordWithSchema = _recordWithSchema;
+    m_recordWithSchemaHasBeenSet = true;
+}
+
+bool PostgreSQLParam::RecordWithSchemaHasBeenSet() const
+{
+    return m_recordWithSchemaHasBeenSet;
 }
 

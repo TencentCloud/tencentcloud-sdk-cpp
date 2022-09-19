@@ -25,7 +25,10 @@ ValueParam::ValueParam() :
     m_replaceHasBeenSet(false),
     m_substrHasBeenSet(false),
     m_dateHasBeenSet(false),
-    m_regexReplaceHasBeenSet(false)
+    m_regexReplaceHasBeenSet(false),
+    m_splitHasBeenSet(false),
+    m_kVHasBeenSet(false),
+    m_resultHasBeenSet(false)
 {
 }
 
@@ -112,6 +115,50 @@ CoreInternalOutcome ValueParam::Deserialize(const rapidjson::Value &value)
         m_regexReplaceHasBeenSet = true;
     }
 
+    if (value.HasMember("Split") && !value["Split"].IsNull())
+    {
+        if (!value["Split"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ValueParam.Split` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_split.Deserialize(value["Split"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_splitHasBeenSet = true;
+    }
+
+    if (value.HasMember("KV") && !value["KV"].IsNull())
+    {
+        if (!value["KV"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ValueParam.KV` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_kV.Deserialize(value["KV"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_kVHasBeenSet = true;
+    }
+
+    if (value.HasMember("Result") && !value["Result"].IsNull())
+    {
+        if (!value["Result"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ValueParam.Result` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_result = string(value["Result"].GetString());
+        m_resultHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -161,6 +208,32 @@ void ValueParam::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_regexReplace.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_splitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Split";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_split.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_kVHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KV";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_kV.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_resultHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Result";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_result.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -244,5 +317,53 @@ void ValueParam::SetRegexReplace(const RegexReplaceParam& _regexReplace)
 bool ValueParam::RegexReplaceHasBeenSet() const
 {
     return m_regexReplaceHasBeenSet;
+}
+
+SplitParam ValueParam::GetSplit() const
+{
+    return m_split;
+}
+
+void ValueParam::SetSplit(const SplitParam& _split)
+{
+    m_split = _split;
+    m_splitHasBeenSet = true;
+}
+
+bool ValueParam::SplitHasBeenSet() const
+{
+    return m_splitHasBeenSet;
+}
+
+KVParam ValueParam::GetKV() const
+{
+    return m_kV;
+}
+
+void ValueParam::SetKV(const KVParam& _kV)
+{
+    m_kV = _kV;
+    m_kVHasBeenSet = true;
+}
+
+bool ValueParam::KVHasBeenSet() const
+{
+    return m_kVHasBeenSet;
+}
+
+string ValueParam::GetResult() const
+{
+    return m_result;
+}
+
+void ValueParam::SetResult(const string& _result)
+{
+    m_result = _result;
+    m_resultHasBeenSet = true;
+}
+
+bool ValueParam::ResultHasBeenSet() const
+{
+    return m_resultHasBeenSet;
 }
 

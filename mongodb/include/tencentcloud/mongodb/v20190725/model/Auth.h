@@ -47,32 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取*表示所有数据库,db.name表示特定的name数据库。
-                     * @return NameSpace *表示所有数据库,db.name表示特定的name数据库。
-                     */
-                    std::string GetNameSpace() const;
-
-                    /**
-                     * 设置*表示所有数据库,db.name表示特定的name数据库。
-                     * @param NameSpace *表示所有数据库,db.name表示特定的name数据库。
-                     */
-                    void SetNameSpace(const std::string& _nameSpace);
-
-                    /**
-                     * 判断参数 NameSpace 是否已赋值
-                     * @return NameSpace 是否已赋值
-                     */
-                    bool NameSpaceHasBeenSet() const;
-
-                    /**
-                     * 获取用于控制权限,0无权限，1只读，2只写，3读写。
-                     * @return Mask 用于控制权限,0无权限，1只读，2只写，3读写。
+                     * 获取当前账号具有的权限信息。<ul><li>0：无权限。</li><li>1：只读。</li><li>2：只写。</li><li>3：读写。</li></ul>
+                     * @return Mask 当前账号具有的权限信息。<ul><li>0：无权限。</li><li>1：只读。</li><li>2：只写。</li><li>3：读写。</li></ul>
                      */
                     int64_t GetMask() const;
 
                     /**
-                     * 设置用于控制权限,0无权限，1只读，2只写，3读写。
-                     * @param Mask 用于控制权限,0无权限，1只读，2只写，3读写。
+                     * 设置当前账号具有的权限信息。<ul><li>0：无权限。</li><li>1：只读。</li><li>2：只写。</li><li>3：读写。</li></ul>
+                     * @param Mask 当前账号具有的权限信息。<ul><li>0：无权限。</li><li>1：只读。</li><li>2：只写。</li><li>3：读写。</li></ul>
                      */
                     void SetMask(const int64_t& _mask);
 
@@ -82,19 +64,42 @@ namespace TencentCloud
                      */
                     bool MaskHasBeenSet() const;
 
+                    /**
+                     * 获取指具有当前账号权限的数据库名。
+<ul><li>* ：表示所有数据库。</li><li>db.name：表示特定name的数据库。</li></ul>
+                     * @return NameSpace 指具有当前账号权限的数据库名。
+<ul><li>* ：表示所有数据库。</li><li>db.name：表示特定name的数据库。</li></ul>
+                     */
+                    std::string GetNameSpace() const;
+
+                    /**
+                     * 设置指具有当前账号权限的数据库名。
+<ul><li>* ：表示所有数据库。</li><li>db.name：表示特定name的数据库。</li></ul>
+                     * @param NameSpace 指具有当前账号权限的数据库名。
+<ul><li>* ：表示所有数据库。</li><li>db.name：表示特定name的数据库。</li></ul>
+                     */
+                    void SetNameSpace(const std::string& _nameSpace);
+
+                    /**
+                     * 判断参数 NameSpace 是否已赋值
+                     * @return NameSpace 是否已赋值
+                     */
+                    bool NameSpaceHasBeenSet() const;
+
                 private:
 
                     /**
-                     * *表示所有数据库,db.name表示特定的name数据库。
-                     */
-                    std::string m_nameSpace;
-                    bool m_nameSpaceHasBeenSet;
-
-                    /**
-                     * 用于控制权限,0无权限，1只读，2只写，3读写。
+                     * 当前账号具有的权限信息。<ul><li>0：无权限。</li><li>1：只读。</li><li>2：只写。</li><li>3：读写。</li></ul>
                      */
                     int64_t m_mask;
                     bool m_maskHasBeenSet;
+
+                    /**
+                     * 指具有当前账号权限的数据库名。
+<ul><li>* ：表示所有数据库。</li><li>db.name：表示特定name的数据库。</li></ul>
+                     */
+                    std::string m_nameSpace;
+                    bool m_nameSpaceHasBeenSet;
 
                 };
             }
