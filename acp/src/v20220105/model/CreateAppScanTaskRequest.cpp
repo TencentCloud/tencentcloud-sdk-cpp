@@ -39,7 +39,9 @@ CreateAppScanTaskRequest::CreateAppScanTaskRequest() :
     m_salesPersonHasBeenSet(false),
     m_remarkHasBeenSet(false),
     m_isAgreePrivacyHasBeenSet(false),
-    m_privacyTextNameHasBeenSet(false)
+    m_privacyTextNameHasBeenSet(false),
+    m_appSha1HasBeenSet(false),
+    m_privacyTextMD5HasBeenSet(false)
 {
 }
 
@@ -184,6 +186,22 @@ string CreateAppScanTaskRequest::ToJsonString() const
         string key = "PrivacyTextName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_privacyTextName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_appSha1HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AppSha1";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_appSha1.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_privacyTextMD5HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PrivacyTextMD5";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_privacyTextMD5.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -464,6 +482,38 @@ void CreateAppScanTaskRequest::SetPrivacyTextName(const string& _privacyTextName
 bool CreateAppScanTaskRequest::PrivacyTextNameHasBeenSet() const
 {
     return m_privacyTextNameHasBeenSet;
+}
+
+string CreateAppScanTaskRequest::GetAppSha1() const
+{
+    return m_appSha1;
+}
+
+void CreateAppScanTaskRequest::SetAppSha1(const string& _appSha1)
+{
+    m_appSha1 = _appSha1;
+    m_appSha1HasBeenSet = true;
+}
+
+bool CreateAppScanTaskRequest::AppSha1HasBeenSet() const
+{
+    return m_appSha1HasBeenSet;
+}
+
+string CreateAppScanTaskRequest::GetPrivacyTextMD5() const
+{
+    return m_privacyTextMD5;
+}
+
+void CreateAppScanTaskRequest::SetPrivacyTextMD5(const string& _privacyTextMD5)
+{
+    m_privacyTextMD5 = _privacyTextMD5;
+    m_privacyTextMD5HasBeenSet = true;
+}
+
+bool CreateAppScanTaskRequest::PrivacyTextMD5HasBeenSet() const
+{
+    return m_privacyTextMD5HasBeenSet;
 }
 
 

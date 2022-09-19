@@ -32,7 +32,9 @@ CreateAppScanTaskRepeatRequest::CreateAppScanTaskRepeatRequest() :
     m_appDownloadUrlHasBeenSet(false),
     m_privacyTextUrlHasBeenSet(false),
     m_appNameHasBeenSet(false),
-    m_privacyTextNameHasBeenSet(false)
+    m_privacyTextNameHasBeenSet(false),
+    m_appSha1HasBeenSet(false),
+    m_privacyTextMD5HasBeenSet(false)
 {
 }
 
@@ -121,6 +123,22 @@ string CreateAppScanTaskRepeatRequest::ToJsonString() const
         string key = "PrivacyTextName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_privacyTextName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_appSha1HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AppSha1";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_appSha1.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_privacyTextMD5HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PrivacyTextMD5";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_privacyTextMD5.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -289,6 +307,38 @@ void CreateAppScanTaskRepeatRequest::SetPrivacyTextName(const string& _privacyTe
 bool CreateAppScanTaskRepeatRequest::PrivacyTextNameHasBeenSet() const
 {
     return m_privacyTextNameHasBeenSet;
+}
+
+string CreateAppScanTaskRepeatRequest::GetAppSha1() const
+{
+    return m_appSha1;
+}
+
+void CreateAppScanTaskRepeatRequest::SetAppSha1(const string& _appSha1)
+{
+    m_appSha1 = _appSha1;
+    m_appSha1HasBeenSet = true;
+}
+
+bool CreateAppScanTaskRepeatRequest::AppSha1HasBeenSet() const
+{
+    return m_appSha1HasBeenSet;
+}
+
+string CreateAppScanTaskRepeatRequest::GetPrivacyTextMD5() const
+{
+    return m_privacyTextMD5;
+}
+
+void CreateAppScanTaskRepeatRequest::SetPrivacyTextMD5(const string& _privacyTextMD5)
+{
+    m_privacyTextMD5 = _privacyTextMD5;
+    m_privacyTextMD5HasBeenSet = true;
+}
+
+bool CreateAppScanTaskRepeatRequest::PrivacyTextMD5HasBeenSet() const
+{
+    return m_privacyTextMD5HasBeenSet;
 }
 
 

@@ -222,6 +222,42 @@ namespace TencentCloud
                      */
                     bool PrivacyTextNameHasBeenSet() const;
 
+                    /**
+                     * 获取软件Sha1值(PrivacyTextMD5不为空时必填)
+                     * @return AppSha1 软件Sha1值(PrivacyTextMD5不为空时必填)
+                     */
+                    std::string GetAppSha1() const;
+
+                    /**
+                     * 设置软件Sha1值(PrivacyTextMD5不为空时必填)
+                     * @param AppSha1 软件Sha1值(PrivacyTextMD5不为空时必填)
+                     */
+                    void SetAppSha1(const std::string& _appSha1);
+
+                    /**
+                     * 判断参数 AppSha1 是否已赋值
+                     * @return AppSha1 是否已赋值
+                     */
+                    bool AppSha1HasBeenSet() const;
+
+                    /**
+                     * 获取隐私申明文本md5(AppSha1不为空时必填)
+                     * @return PrivacyTextMD5 隐私申明文本md5(AppSha1不为空时必填)
+                     */
+                    std::string GetPrivacyTextMD5() const;
+
+                    /**
+                     * 设置隐私申明文本md5(AppSha1不为空时必填)
+                     * @param PrivacyTextMD5 隐私申明文本md5(AppSha1不为空时必填)
+                     */
+                    void SetPrivacyTextMD5(const std::string& _privacyTextMD5);
+
+                    /**
+                     * 判断参数 PrivacyTextMD5 是否已赋值
+                     * @return PrivacyTextMD5 是否已赋值
+                     */
+                    bool PrivacyTextMD5HasBeenSet() const;
+
                 private:
 
                     /**
@@ -283,6 +319,18 @@ namespace TencentCloud
                      */
                     std::string m_privacyTextName;
                     bool m_privacyTextNameHasBeenSet;
+
+                    /**
+                     * 软件Sha1值(PrivacyTextMD5不为空时必填)
+                     */
+                    std::string m_appSha1;
+                    bool m_appSha1HasBeenSet;
+
+                    /**
+                     * 隐私申明文本md5(AppSha1不为空时必填)
+                     */
+                    std::string m_privacyTextMD5;
+                    bool m_privacyTextMD5HasBeenSet;
 
                 };
             }
