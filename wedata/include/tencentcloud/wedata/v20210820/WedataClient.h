@@ -29,16 +29,22 @@
 #include <tencentcloud/wedata/v20210820/model/BatchModifyOwnersNewResponse.h>
 #include <tencentcloud/wedata/v20210820/model/BatchStopTasksNewRequest.h>
 #include <tencentcloud/wedata/v20210820/model/BatchStopTasksNewResponse.h>
+#include <tencentcloud/wedata/v20210820/model/CreateDataSourceRequest.h>
+#include <tencentcloud/wedata/v20210820/model/CreateDataSourceResponse.h>
 #include <tencentcloud/wedata/v20210820/model/CreateFolderRequest.h>
 #include <tencentcloud/wedata/v20210820/model/CreateFolderResponse.h>
 #include <tencentcloud/wedata/v20210820/model/CreateTaskRequest.h>
 #include <tencentcloud/wedata/v20210820/model/CreateTaskResponse.h>
 #include <tencentcloud/wedata/v20210820/model/CreateWorkflowRequest.h>
 #include <tencentcloud/wedata/v20210820/model/CreateWorkflowResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DeleteDataSourcesRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DeleteDataSourcesResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DeleteFolderRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DeleteFolderResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DeleteWorkflowNewRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DeleteWorkflowNewResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeDatasourceRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeDatasourceResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeDependTasksNewRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeDependTasksNewResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeFolderListRequest.h>
@@ -71,6 +77,8 @@
 #include <tencentcloud/wedata/v20210820/model/MakeUpTasksNewResponse.h>
 #include <tencentcloud/wedata/v20210820/model/MakeUpWorkflowNewRequest.h>
 #include <tencentcloud/wedata/v20210820/model/MakeUpWorkflowNewResponse.h>
+#include <tencentcloud/wedata/v20210820/model/ModifyDataSourceRequest.h>
+#include <tencentcloud/wedata/v20210820/model/ModifyDataSourceResponse.h>
 #include <tencentcloud/wedata/v20210820/model/ModifyFolderRequest.h>
 #include <tencentcloud/wedata/v20210820/model/ModifyFolderResponse.h>
 #include <tencentcloud/wedata/v20210820/model/ModifyTaskInfoRequest.h>
@@ -122,6 +130,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::BatchStopTasksNewResponse> BatchStopTasksNewOutcome;
                 typedef std::future<BatchStopTasksNewOutcome> BatchStopTasksNewOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::BatchStopTasksNewRequest&, BatchStopTasksNewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BatchStopTasksNewAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateDataSourceResponse> CreateDataSourceOutcome;
+                typedef std::future<CreateDataSourceOutcome> CreateDataSourceOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::CreateDataSourceRequest&, CreateDataSourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDataSourceAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateFolderResponse> CreateFolderOutcome;
                 typedef std::future<CreateFolderOutcome> CreateFolderOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::CreateFolderRequest&, CreateFolderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateFolderAsyncHandler;
@@ -131,12 +142,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateWorkflowResponse> CreateWorkflowOutcome;
                 typedef std::future<CreateWorkflowOutcome> CreateWorkflowOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::CreateWorkflowRequest&, CreateWorkflowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateWorkflowAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteDataSourcesResponse> DeleteDataSourcesOutcome;
+                typedef std::future<DeleteDataSourcesOutcome> DeleteDataSourcesOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DeleteDataSourcesRequest&, DeleteDataSourcesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDataSourcesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteFolderResponse> DeleteFolderOutcome;
                 typedef std::future<DeleteFolderOutcome> DeleteFolderOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DeleteFolderRequest&, DeleteFolderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteFolderAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteWorkflowNewResponse> DeleteWorkflowNewOutcome;
                 typedef std::future<DeleteWorkflowNewOutcome> DeleteWorkflowNewOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DeleteWorkflowNewRequest&, DeleteWorkflowNewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteWorkflowNewAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDatasourceResponse> DescribeDatasourceOutcome;
+                typedef std::future<DescribeDatasourceOutcome> DescribeDatasourceOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeDatasourceRequest&, DescribeDatasourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDatasourceAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDependTasksNewResponse> DescribeDependTasksNewOutcome;
                 typedef std::future<DescribeDependTasksNewOutcome> DescribeDependTasksNewOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeDependTasksNewRequest&, DescribeDependTasksNewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDependTasksNewAsyncHandler;
@@ -185,6 +202,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::MakeUpWorkflowNewResponse> MakeUpWorkflowNewOutcome;
                 typedef std::future<MakeUpWorkflowNewOutcome> MakeUpWorkflowNewOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::MakeUpWorkflowNewRequest&, MakeUpWorkflowNewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> MakeUpWorkflowNewAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyDataSourceResponse> ModifyDataSourceOutcome;
+                typedef std::future<ModifyDataSourceOutcome> ModifyDataSourceOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::ModifyDataSourceRequest&, ModifyDataSourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDataSourceAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyFolderResponse> ModifyFolderOutcome;
                 typedef std::future<ModifyFolderOutcome> ModifyFolderOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::ModifyFolderRequest&, ModifyFolderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyFolderAsyncHandler;
@@ -263,6 +283,16 @@ namespace TencentCloud
 
                 /**
                  *<p style="color:red;">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>
+创建数据源
+                 * @param req CreateDataSourceRequest
+                 * @return CreateDataSourceOutcome
+                 */
+                CreateDataSourceOutcome CreateDataSource(const Model::CreateDataSourceRequest &request);
+                void CreateDataSourceAsync(const Model::CreateDataSourceRequest& request, const CreateDataSourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateDataSourceOutcomeCallable CreateDataSourceCallable(const Model::CreateDataSourceRequest& request);
+
+                /**
+                 *<p style="color:red;">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>
 创建文件夹
                  * @param req CreateFolderRequest
                  * @return CreateFolderOutcome
@@ -293,6 +323,16 @@ namespace TencentCloud
 
                 /**
                  *<p style="color:red;">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>
+删除数据源
+                 * @param req DeleteDataSourcesRequest
+                 * @return DeleteDataSourcesOutcome
+                 */
+                DeleteDataSourcesOutcome DeleteDataSources(const Model::DeleteDataSourcesRequest &request);
+                void DeleteDataSourcesAsync(const Model::DeleteDataSourcesRequest& request, const DeleteDataSourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteDataSourcesOutcomeCallable DeleteDataSourcesCallable(const Model::DeleteDataSourcesRequest& request);
+
+                /**
+                 *<p style="color:red;">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>
 删除文件夹
                  * @param req DeleteFolderRequest
                  * @return DeleteFolderOutcome
@@ -310,6 +350,16 @@ namespace TencentCloud
                 DeleteWorkflowNewOutcome DeleteWorkflowNew(const Model::DeleteWorkflowNewRequest &request);
                 void DeleteWorkflowNewAsync(const Model::DeleteWorkflowNewRequest& request, const DeleteWorkflowNewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteWorkflowNewOutcomeCallable DeleteWorkflowNewCallable(const Model::DeleteWorkflowNewRequest& request);
+
+                /**
+                 *<p style="color:red;">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>
+数据源详情
+                 * @param req DescribeDatasourceRequest
+                 * @return DescribeDatasourceOutcome
+                 */
+                DescribeDatasourceOutcome DescribeDatasource(const Model::DescribeDatasourceRequest &request);
+                void DescribeDatasourceAsync(const Model::DescribeDatasourceRequest& request, const DescribeDatasourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDatasourceOutcomeCallable DescribeDatasourceCallable(const Model::DescribeDatasourceRequest& request);
 
                 /**
                  *<p style="color:red;">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>
@@ -470,6 +520,16 @@ namespace TencentCloud
                 MakeUpWorkflowNewOutcome MakeUpWorkflowNew(const Model::MakeUpWorkflowNewRequest &request);
                 void MakeUpWorkflowNewAsync(const Model::MakeUpWorkflowNewRequest& request, const MakeUpWorkflowNewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 MakeUpWorkflowNewOutcomeCallable MakeUpWorkflowNewCallable(const Model::MakeUpWorkflowNewRequest& request);
+
+                /**
+                 *<p style="color:red;">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>
+修改数据源
+                 * @param req ModifyDataSourceRequest
+                 * @return ModifyDataSourceOutcome
+                 */
+                ModifyDataSourceOutcome ModifyDataSource(const Model::ModifyDataSourceRequest &request);
+                void ModifyDataSourceAsync(const Model::ModifyDataSourceRequest& request, const ModifyDataSourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDataSourceOutcomeCallable ModifyDataSourceCallable(const Model::ModifyDataSourceRequest& request);
 
                 /**
                  *<p style="color:red;">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>

@@ -25,7 +25,8 @@ TaskSimpleInfo::TaskSimpleInfo() :
     m_taskTypeHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_beginProcessTimeHasBeenSet(false),
-    m_finishTimeHasBeenSet(false)
+    m_finishTimeHasBeenSet(false),
+    m_subTaskTypesHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,19 @@ CoreInternalOutcome TaskSimpleInfo::Deserialize(const rapidjson::Value &value)
         m_finishTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("SubTaskTypes") && !value["SubTaskTypes"].IsNull())
+    {
+        if (!value["SubTaskTypes"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `TaskSimpleInfo.SubTaskTypes` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["SubTaskTypes"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_subTaskTypes.push_back((*itr).GetString());
+        }
+        m_subTaskTypesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +143,19 @@ void TaskSimpleInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "FinishTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_finishTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subTaskTypesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubTaskTypes";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_subTaskTypes.begin(); itr != m_subTaskTypes.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -212,5 +239,21 @@ void TaskSimpleInfo::SetFinishTime(const string& _finishTime)
 bool TaskSimpleInfo::FinishTimeHasBeenSet() const
 {
     return m_finishTimeHasBeenSet;
+}
+
+vector<string> TaskSimpleInfo::GetSubTaskTypes() const
+{
+    return m_subTaskTypes;
+}
+
+void TaskSimpleInfo::SetSubTaskTypes(const vector<string>& _subTaskTypes)
+{
+    m_subTaskTypes = _subTaskTypes;
+    m_subTaskTypesHasBeenSet = true;
+}
+
+bool TaskSimpleInfo::SubTaskTypesHasBeenSet() const
+{
+    return m_subTaskTypesHasBeenSet;
 }
 

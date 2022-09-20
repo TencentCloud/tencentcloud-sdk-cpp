@@ -99,8 +99,6 @@
 #include <tencentcloud/cfw/v20190904/model/DescribeTableStatusResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeUnHandleEventTabListRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeUnHandleEventTabListResponse.h>
-#include <tencentcloud/cfw/v20190904/model/DescribeVpcRuleOverviewRequest.h>
-#include <tencentcloud/cfw/v20190904/model/DescribeVpcRuleOverviewResponse.h>
 #include <tencentcloud/cfw/v20190904/model/ExpandCfwVerticalRequest.h>
 #include <tencentcloud/cfw/v20190904/model/ExpandCfwVerticalResponse.h>
 #include <tencentcloud/cfw/v20190904/model/ModifyAcRuleRequest.h>
@@ -277,9 +275,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeUnHandleEventTabListResponse> DescribeUnHandleEventTabListOutcome;
                 typedef std::future<DescribeUnHandleEventTabListOutcome> DescribeUnHandleEventTabListOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DescribeUnHandleEventTabListRequest&, DescribeUnHandleEventTabListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUnHandleEventTabListAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeVpcRuleOverviewResponse> DescribeVpcRuleOverviewOutcome;
-                typedef std::future<DescribeVpcRuleOverviewOutcome> DescribeVpcRuleOverviewOutcomeCallable;
-                typedef std::function<void(const CfwClient*, const Model::DescribeVpcRuleOverviewRequest&, DescribeVpcRuleOverviewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVpcRuleOverviewAsyncHandler;
                 typedef Outcome<Core::Error, Model::ExpandCfwVerticalResponse> ExpandCfwVerticalOutcome;
                 typedef std::future<ExpandCfwVerticalOutcome> ExpandCfwVerticalOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::ExpandCfwVerticalRequest&, ExpandCfwVerticalOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExpandCfwVerticalAsyncHandler;
@@ -702,15 +697,6 @@ namespace TencentCloud
                 DescribeUnHandleEventTabListOutcome DescribeUnHandleEventTabList(const Model::DescribeUnHandleEventTabListRequest &request);
                 void DescribeUnHandleEventTabListAsync(const Model::DescribeUnHandleEventTabListRequest& request, const DescribeUnHandleEventTabListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeUnHandleEventTabListOutcomeCallable DescribeUnHandleEventTabListCallable(const Model::DescribeUnHandleEventTabListRequest& request);
-
-                /**
-                 *vpc规则列表概况
-                 * @param req DescribeVpcRuleOverviewRequest
-                 * @return DescribeVpcRuleOverviewOutcome
-                 */
-                DescribeVpcRuleOverviewOutcome DescribeVpcRuleOverview(const Model::DescribeVpcRuleOverviewRequest &request);
-                void DescribeVpcRuleOverviewAsync(const Model::DescribeVpcRuleOverviewRequest& request, const DescribeVpcRuleOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeVpcRuleOverviewOutcomeCallable DescribeVpcRuleOverviewCallable(const Model::DescribeVpcRuleOverviewRequest& request);
 
                 /**
                  *防火墙垂直扩容

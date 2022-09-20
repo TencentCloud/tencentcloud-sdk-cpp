@@ -148,6 +148,24 @@ namespace TencentCloud
                      */
                     bool FinishTimeHasBeenSet() const;
 
+                    /**
+                     * 获取子任务类型。
+                     * @return SubTaskTypes 子任务类型。
+                     */
+                    std::vector<std::string> GetSubTaskTypes() const;
+
+                    /**
+                     * 设置子任务类型。
+                     * @param SubTaskTypes 子任务类型。
+                     */
+                    void SetSubTaskTypes(const std::vector<std::string>& _subTaskTypes);
+
+                    /**
+                     * 判断参数 SubTaskTypes 是否已赋值
+                     * @return SubTaskTypes 是否已赋值
+                     */
+                    bool SubTaskTypesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -182,6 +200,12 @@ namespace TencentCloud
                      */
                     std::string m_finishTime;
                     bool m_finishTimeHasBeenSet;
+
+                    /**
+                     * 子任务类型。
+                     */
+                    std::vector<std::string> m_subTaskTypes;
+                    bool m_subTaskTypesHasBeenSet;
 
                 };
             }

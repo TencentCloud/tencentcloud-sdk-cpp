@@ -67,14 +67,14 @@ namespace TencentCloud
                     bool CloudStorageHasBeenSet() const;
 
                     /**
-                     * 获取第三方云点播的账号信息。
-                     * @return CloudVod 第三方云点播的账号信息。
+                     * 获取腾讯云云点播的账号信息（必填，目前仅支持存储至腾讯云云点播）。
+                     * @return CloudVod 腾讯云云点播的账号信息（必填，目前仅支持存储至腾讯云云点播）。
                      */
                     CloudVod GetCloudVod() const;
 
                     /**
-                     * 设置第三方云点播的账号信息。
-                     * @param CloudVod 第三方云点播的账号信息。
+                     * 设置腾讯云云点播的账号信息（必填，目前仅支持存储至腾讯云云点播）。
+                     * @param CloudVod 腾讯云云点播的账号信息（必填，目前仅支持存储至腾讯云云点播）。
                      */
                     void SetCloudVod(const CloudVod& _cloudVod);
 
@@ -93,7 +93,7 @@ namespace TencentCloud
                     bool m_cloudStorageHasBeenSet;
 
                     /**
-                     * 第三方云点播的账号信息。
+                     * 腾讯云云点播的账号信息（必填，目前仅支持存储至腾讯云云点播）。
                      */
                     CloudVod m_cloudVod;
                     bool m_cloudVodHasBeenSet;

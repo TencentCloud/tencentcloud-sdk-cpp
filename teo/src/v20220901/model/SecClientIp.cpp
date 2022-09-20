@@ -1,0 +1,146 @@
+/*
+ * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include <tencentcloud/teo/v20220901/model/SecClientIp.h>
+
+using TencentCloud::CoreInternalOutcome;
+using namespace TencentCloud::Teo::V20220901::Model;
+using namespace std;
+
+SecClientIp::SecClientIp() :
+    m_clientIpHasBeenSet(false),
+    m_requestMaxQpsHasBeenSet(false),
+    m_requestNumHasBeenSet(false)
+{
+}
+
+CoreInternalOutcome SecClientIp::Deserialize(const rapidjson::Value &value)
+{
+    string requestId = "";
+
+
+    if (value.HasMember("ClientIp") && !value["ClientIp"].IsNull())
+    {
+        if (!value["ClientIp"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SecClientIp.ClientIp` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clientIp = string(value["ClientIp"].GetString());
+        m_clientIpHasBeenSet = true;
+    }
+
+    if (value.HasMember("RequestMaxQps") && !value["RequestMaxQps"].IsNull())
+    {
+        if (!value["RequestMaxQps"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SecClientIp.RequestMaxQps` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_requestMaxQps = value["RequestMaxQps"].GetInt64();
+        m_requestMaxQpsHasBeenSet = true;
+    }
+
+    if (value.HasMember("RequestNum") && !value["RequestNum"].IsNull())
+    {
+        if (!value["RequestNum"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SecClientIp.RequestNum` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_requestNum = value["RequestNum"].GetInt64();
+        m_requestNumHasBeenSet = true;
+    }
+
+
+    return CoreInternalOutcome(true);
+}
+
+void SecClientIp::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
+{
+
+    if (m_clientIpHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClientIp";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clientIp.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_requestMaxQpsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RequestMaxQps";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_requestMaxQps, allocator);
+    }
+
+    if (m_requestNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RequestNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_requestNum, allocator);
+    }
+
+}
+
+
+string SecClientIp::GetClientIp() const
+{
+    return m_clientIp;
+}
+
+void SecClientIp::SetClientIp(const string& _clientIp)
+{
+    m_clientIp = _clientIp;
+    m_clientIpHasBeenSet = true;
+}
+
+bool SecClientIp::ClientIpHasBeenSet() const
+{
+    return m_clientIpHasBeenSet;
+}
+
+int64_t SecClientIp::GetRequestMaxQps() const
+{
+    return m_requestMaxQps;
+}
+
+void SecClientIp::SetRequestMaxQps(const int64_t& _requestMaxQps)
+{
+    m_requestMaxQps = _requestMaxQps;
+    m_requestMaxQpsHasBeenSet = true;
+}
+
+bool SecClientIp::RequestMaxQpsHasBeenSet() const
+{
+    return m_requestMaxQpsHasBeenSet;
+}
+
+int64_t SecClientIp::GetRequestNum() const
+{
+    return m_requestNum;
+}
+
+void SecClientIp::SetRequestNum(const int64_t& _requestNum)
+{
+    m_requestNum = _requestNum;
+    m_requestNumHasBeenSet = true;
+}
+
+bool SecClientIp::RequestNumHasBeenSet() const
+{
+    return m_requestNumHasBeenSet;
+}
+

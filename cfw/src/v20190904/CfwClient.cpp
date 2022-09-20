@@ -1674,49 +1674,6 @@ CfwClient::DescribeUnHandleEventTabListOutcomeCallable CfwClient::DescribeUnHand
     return task->get_future();
 }
 
-CfwClient::DescribeVpcRuleOverviewOutcome CfwClient::DescribeVpcRuleOverview(const DescribeVpcRuleOverviewRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeVpcRuleOverview");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeVpcRuleOverviewResponse rsp = DescribeVpcRuleOverviewResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeVpcRuleOverviewOutcome(rsp);
-        else
-            return DescribeVpcRuleOverviewOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeVpcRuleOverviewOutcome(outcome.GetError());
-    }
-}
-
-void CfwClient::DescribeVpcRuleOverviewAsync(const DescribeVpcRuleOverviewRequest& request, const DescribeVpcRuleOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeVpcRuleOverview(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-CfwClient::DescribeVpcRuleOverviewOutcomeCallable CfwClient::DescribeVpcRuleOverviewCallable(const DescribeVpcRuleOverviewRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeVpcRuleOverviewOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeVpcRuleOverview(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 CfwClient::ExpandCfwVerticalOutcome CfwClient::ExpandCfwVertical(const ExpandCfwVerticalRequest &request)
 {
     auto outcome = MakeRequest(request, "ExpandCfwVertical");

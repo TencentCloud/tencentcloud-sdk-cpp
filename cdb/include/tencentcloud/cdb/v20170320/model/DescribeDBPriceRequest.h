@@ -241,14 +241,14 @@ namespace TencentCloud
                     bool CpuHasBeenSet() const;
 
                     /**
-                     * 获取续费询价实例ID。如需查询实例续费价格，填写InstanceId和Period即可。
-                     * @return InstanceId 续费询价实例ID。如需查询实例续费价格，填写InstanceId和Period即可。
+                     * 获取询价续费实例ID。如需查询实例续费价格，填写InstanceId和Period即可。
+                     * @return InstanceId 询价续费实例ID。如需查询实例续费价格，填写InstanceId和Period即可。
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置续费询价实例ID。如需查询实例续费价格，填写InstanceId和Period即可。
-                     * @param InstanceId 续费询价实例ID。如需查询实例续费价格，填写InstanceId和Period即可。
+                     * 设置询价续费实例ID。如需查询实例续费价格，填写InstanceId和Period即可。
+                     * @param InstanceId 询价续费实例ID。如需查询实例续费价格，填写InstanceId和Period即可。
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
@@ -345,7 +345,7 @@ namespace TencentCloud
                     bool m_cpuHasBeenSet;
 
                     /**
-                     * 续费询价实例ID。如需查询实例续费价格，填写InstanceId和Period即可。
+                     * 询价续费实例ID。如需查询实例续费价格，填写InstanceId和Period即可。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;

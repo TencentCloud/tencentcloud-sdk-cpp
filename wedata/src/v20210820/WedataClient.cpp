@@ -169,6 +169,49 @@ WedataClient::BatchStopTasksNewOutcomeCallable WedataClient::BatchStopTasksNewCa
     return task->get_future();
 }
 
+WedataClient::CreateDataSourceOutcome WedataClient::CreateDataSource(const CreateDataSourceRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateDataSource");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateDataSourceResponse rsp = CreateDataSourceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateDataSourceOutcome(rsp);
+        else
+            return CreateDataSourceOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateDataSourceOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::CreateDataSourceAsync(const CreateDataSourceRequest& request, const CreateDataSourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateDataSource(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WedataClient::CreateDataSourceOutcomeCallable WedataClient::CreateDataSourceCallable(const CreateDataSourceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateDataSourceOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateDataSource(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WedataClient::CreateFolderOutcome WedataClient::CreateFolder(const CreateFolderRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateFolder");
@@ -298,6 +341,49 @@ WedataClient::CreateWorkflowOutcomeCallable WedataClient::CreateWorkflowCallable
     return task->get_future();
 }
 
+WedataClient::DeleteDataSourcesOutcome WedataClient::DeleteDataSources(const DeleteDataSourcesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteDataSources");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteDataSourcesResponse rsp = DeleteDataSourcesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteDataSourcesOutcome(rsp);
+        else
+            return DeleteDataSourcesOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteDataSourcesOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::DeleteDataSourcesAsync(const DeleteDataSourcesRequest& request, const DeleteDataSourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteDataSources(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WedataClient::DeleteDataSourcesOutcomeCallable WedataClient::DeleteDataSourcesCallable(const DeleteDataSourcesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteDataSourcesOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteDataSources(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WedataClient::DeleteFolderOutcome WedataClient::DeleteFolder(const DeleteFolderRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteFolder");
@@ -377,6 +463,49 @@ WedataClient::DeleteWorkflowNewOutcomeCallable WedataClient::DeleteWorkflowNewCa
         [this, request]()
         {
             return this->DeleteWorkflowNew(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WedataClient::DescribeDatasourceOutcome WedataClient::DescribeDatasource(const DescribeDatasourceRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDatasource");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDatasourceResponse rsp = DescribeDatasourceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDatasourceOutcome(rsp);
+        else
+            return DescribeDatasourceOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDatasourceOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::DescribeDatasourceAsync(const DescribeDatasourceRequest& request, const DescribeDatasourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDatasource(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WedataClient::DescribeDatasourceOutcomeCallable WedataClient::DescribeDatasourceCallable(const DescribeDatasourceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDatasourceOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDatasource(request);
         }
     );
 
@@ -1065,6 +1194,49 @@ WedataClient::MakeUpWorkflowNewOutcomeCallable WedataClient::MakeUpWorkflowNewCa
         [this, request]()
         {
             return this->MakeUpWorkflowNew(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WedataClient::ModifyDataSourceOutcome WedataClient::ModifyDataSource(const ModifyDataSourceRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyDataSource");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyDataSourceResponse rsp = ModifyDataSourceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyDataSourceOutcome(rsp);
+        else
+            return ModifyDataSourceOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyDataSourceOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::ModifyDataSourceAsync(const ModifyDataSourceRequest& request, const ModifyDataSourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyDataSource(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WedataClient::ModifyDataSourceOutcomeCallable WedataClient::ModifyDataSourceCallable(const ModifyDataSourceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyDataSourceOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyDataSource(request);
         }
     );
 

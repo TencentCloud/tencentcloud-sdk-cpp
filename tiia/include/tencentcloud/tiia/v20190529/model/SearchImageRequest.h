@@ -197,7 +197,7 @@ ImageUrl和ImageBase64必须提供一个，如果都提供，只使用ImageUrl�
 • 商品图像搜索：28。
 • 相似图像搜索：56。
 建议：
-可以手动调整MatchThreshold值来控制输出结果的范围。入股发现无检索结果，建议调整为较低的阈值。
+可以手动调整MatchThreshold值来控制输出结果的范围。如果发现无检索结果，建议调整为较低的阈值。
                      * @return MatchThreshold 匹配阈值。
 只有图片相似度分数超过MatchThreshold值的结果才会返回。
 默认值：
@@ -205,7 +205,7 @@ ImageUrl和ImageBase64必须提供一个，如果都提供，只使用ImageUrl�
 • 商品图像搜索：28。
 • 相似图像搜索：56。
 建议：
-可以手动调整MatchThreshold值来控制输出结果的范围。入股发现无检索结果，建议调整为较低的阈值。
+可以手动调整MatchThreshold值来控制输出结果的范围。如果发现无检索结果，建议调整为较低的阈值。
                      */
                     int64_t GetMatchThreshold() const;
 
@@ -217,7 +217,7 @@ ImageUrl和ImageBase64必须提供一个，如果都提供，只使用ImageUrl�
 • 商品图像搜索：28。
 • 相似图像搜索：56。
 建议：
-可以手动调整MatchThreshold值来控制输出结果的范围。入股发现无检索结果，建议调整为较低的阈值。
+可以手动调整MatchThreshold值来控制输出结果的范围。如果发现无检索结果，建议调整为较低的阈值。
                      * @param MatchThreshold 匹配阈值。
 只有图片相似度分数超过MatchThreshold值的结果才会返回。
 默认值：
@@ -225,7 +225,7 @@ ImageUrl和ImageBase64必须提供一个，如果都提供，只使用ImageUrl�
 • 商品图像搜索：28。
 • 相似图像搜索：56。
 建议：
-可以手动调整MatchThreshold值来控制输出结果的范围。入股发现无检索结果，建议调整为较低的阈值。
+可以手动调整MatchThreshold值来控制输出结果的范围。如果发现无检索结果，建议调整为较低的阈值。
                      */
                     void SetMatchThreshold(const int64_t& _matchThreshold);
 
@@ -417,7 +417,7 @@ ImageUrl和ImageBase64必须提供一个，如果都提供，只使用ImageUrl�
 • 商品图像搜索：28。
 • 相似图像搜索：56。
 建议：
-可以手动调整MatchThreshold值来控制输出结果的范围。入股发现无检索结果，建议调整为较低的阈值。
+可以手动调整MatchThreshold值来控制输出结果的范围。如果发现无检索结果，建议调整为较低的阈值。
                      */
                     int64_t m_matchThreshold;
                     bool m_matchThresholdHasBeenSet;

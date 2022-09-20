@@ -42,7 +42,8 @@ DetectInfoText::DetectInfoText() :
     m_extraHasBeenSet(false),
     m_livenessDetailHasBeenSet(false),
     m_mobileHasBeenSet(false),
-    m_compareLibTypeHasBeenSet(false)
+    m_compareLibTypeHasBeenSet(false),
+    m_livenessModeHasBeenSet(false)
 {
 }
 
@@ -281,6 +282,16 @@ CoreInternalOutcome DetectInfoText::Deserialize(const rapidjson::Value &value)
         m_compareLibTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("LivenessMode") && !value["LivenessMode"].IsNull())
+    {
+        if (!value["LivenessMode"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DetectInfoText.LivenessMode` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_livenessMode = value["LivenessMode"].GetUint64();
+        m_livenessModeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -469,6 +480,14 @@ void DetectInfoText::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "CompareLibType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_compareLibType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_livenessModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LivenessMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_livenessMode, allocator);
     }
 
 }
@@ -824,5 +843,21 @@ void DetectInfoText::SetCompareLibType(const string& _compareLibType)
 bool DetectInfoText::CompareLibTypeHasBeenSet() const
 {
     return m_compareLibTypeHasBeenSet;
+}
+
+uint64_t DetectInfoText::GetLivenessMode() const
+{
+    return m_livenessMode;
+}
+
+void DetectInfoText::SetLivenessMode(const uint64_t& _livenessMode)
+{
+    m_livenessMode = _livenessMode;
+    m_livenessModeHasBeenSet = true;
+}
+
+bool DetectInfoText::LivenessModeHasBeenSet() const
+{
+    return m_livenessModeHasBeenSet;
 }
 
