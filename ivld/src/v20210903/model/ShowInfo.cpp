@@ -35,7 +35,9 @@ ShowInfo::ShowInfo() :
     m_frameTagSetHasBeenSet(false),
     m_webMediaURLHasBeenSet(false),
     m_mediaClassifierSetHasBeenSet(false),
-    m_summaryTagSetHasBeenSet(false)
+    m_summaryTagSetHasBeenSet(false),
+    m_unknownPersonSetHasBeenSet(false),
+    m_multiLevelPersonInfoSetHasBeenSet(false)
 {
 }
 
@@ -250,6 +252,46 @@ CoreInternalOutcome ShowInfo::Deserialize(const rapidjson::Value &value)
         m_summaryTagSetHasBeenSet = true;
     }
 
+    if (value.HasMember("UnknownPersonSet") && !value["UnknownPersonSet"].IsNull())
+    {
+        if (!value["UnknownPersonSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ShowInfo.UnknownPersonSet` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["UnknownPersonSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            UnknownPerson item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_unknownPersonSet.push_back(item);
+        }
+        m_unknownPersonSetHasBeenSet = true;
+    }
+
+    if (value.HasMember("MultiLevelPersonInfoSet") && !value["MultiLevelPersonInfoSet"].IsNull())
+    {
+        if (!value["MultiLevelPersonInfoSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ShowInfo.MultiLevelPersonInfoSet` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["MultiLevelPersonInfoSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            MultiLevelPersonInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_multiLevelPersonInfoSet.push_back(item);
+        }
+        m_multiLevelPersonInfoSetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -417,6 +459,36 @@ void ShowInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         for (auto itr = m_summaryTagSet.begin(); itr != m_summaryTagSet.end(); ++itr)
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_unknownPersonSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UnknownPersonSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_unknownPersonSet.begin(); itr != m_unknownPersonSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_multiLevelPersonInfoSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MultiLevelPersonInfoSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_multiLevelPersonInfoSet.begin(); itr != m_multiLevelPersonInfoSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
@@ -661,5 +733,37 @@ void ShowInfo::SetSummaryTagSet(const vector<string>& _summaryTagSet)
 bool ShowInfo::SummaryTagSetHasBeenSet() const
 {
     return m_summaryTagSetHasBeenSet;
+}
+
+vector<UnknownPerson> ShowInfo::GetUnknownPersonSet() const
+{
+    return m_unknownPersonSet;
+}
+
+void ShowInfo::SetUnknownPersonSet(const vector<UnknownPerson>& _unknownPersonSet)
+{
+    m_unknownPersonSet = _unknownPersonSet;
+    m_unknownPersonSetHasBeenSet = true;
+}
+
+bool ShowInfo::UnknownPersonSetHasBeenSet() const
+{
+    return m_unknownPersonSetHasBeenSet;
+}
+
+vector<MultiLevelPersonInfo> ShowInfo::GetMultiLevelPersonInfoSet() const
+{
+    return m_multiLevelPersonInfoSet;
+}
+
+void ShowInfo::SetMultiLevelPersonInfoSet(const vector<MultiLevelPersonInfo>& _multiLevelPersonInfoSet)
+{
+    m_multiLevelPersonInfoSet = _multiLevelPersonInfoSet;
+    m_multiLevelPersonInfoSetHasBeenSet = true;
+}
+
+bool ShowInfo::MultiLevelPersonInfoSetHasBeenSet() const
+{
+    return m_multiLevelPersonInfoSetHasBeenSet;
 }
 

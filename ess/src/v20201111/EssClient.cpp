@@ -900,3 +900,46 @@ EssClient::UploadFilesOutcomeCallable EssClient::UploadFilesCallable(const Uploa
     return task->get_future();
 }
 
+EssClient::VerifyPdfOutcome EssClient::VerifyPdf(const VerifyPdfRequest &request)
+{
+    auto outcome = MakeRequest(request, "VerifyPdf");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        VerifyPdfResponse rsp = VerifyPdfResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return VerifyPdfOutcome(rsp);
+        else
+            return VerifyPdfOutcome(o.GetError());
+    }
+    else
+    {
+        return VerifyPdfOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::VerifyPdfAsync(const VerifyPdfRequest& request, const VerifyPdfAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->VerifyPdf(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssClient::VerifyPdfOutcomeCallable EssClient::VerifyPdfCallable(const VerifyPdfRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<VerifyPdfOutcome()>>(
+        [this, request]()
+        {
+            return this->VerifyPdf(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+

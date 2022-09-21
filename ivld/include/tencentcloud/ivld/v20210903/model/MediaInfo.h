@@ -25,6 +25,9 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/ivld/v20210903/model/MediaMetadata.h>
+#include <tencentcloud/ivld/v20210903/model/AudioMetadata.h>
+#include <tencentcloud/ivld/v20210903/model/ImageMetadata.h>
+#include <tencentcloud/ivld/v20210903/model/TextMetadata.h>
 
 
 namespace TencentCloud
@@ -170,17 +173,17 @@ namespace TencentCloud
                     bool FailedReasonHasBeenSet() const;
 
                     /**
-                     * 获取媒资视频元信息
+                     * 获取媒资视频元信息，仅在MediaType=VIDEO时有效
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Metadata 媒资视频元信息
+                     * @return Metadata 媒资视频元信息，仅在MediaType=VIDEO时有效
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     MediaMetadata GetMetadata() const;
 
                     /**
-                     * 设置媒资视频元信息
+                     * 设置媒资视频元信息，仅在MediaType=VIDEO时有效
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Metadata 媒资视频元信息
+                     * @param Metadata 媒资视频元信息，仅在MediaType=VIDEO时有效
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetMetadata(const MediaMetadata& _metadata);
@@ -257,6 +260,94 @@ namespace TencentCloud
                      */
                     bool CallbackURLHasBeenSet() const;
 
+                    /**
+                     * 获取媒资文件类型，具体参看[MediaPreknownInfo](https://cloud.tencent.com/document/product/1509/65063#MediaPreknownInfo)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MediaType 媒资文件类型，具体参看[MediaPreknownInfo](https://cloud.tencent.com/document/product/1509/65063#MediaPreknownInfo)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetMediaType() const;
+
+                    /**
+                     * 设置媒资文件类型，具体参看[MediaPreknownInfo](https://cloud.tencent.com/document/product/1509/65063#MediaPreknownInfo)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param MediaType 媒资文件类型，具体参看[MediaPreknownInfo](https://cloud.tencent.com/document/product/1509/65063#MediaPreknownInfo)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMediaType(const int64_t& _mediaType);
+
+                    /**
+                     * 判断参数 MediaType 是否已赋值
+                     * @return MediaType 是否已赋值
+                     */
+                    bool MediaTypeHasBeenSet() const;
+
+                    /**
+                     * 获取媒资音频元信息，仅在MediaType=Audio时有效
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AudioMetadata 媒资音频元信息，仅在MediaType=Audio时有效
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    AudioMetadata GetAudioMetadata() const;
+
+                    /**
+                     * 设置媒资音频元信息，仅在MediaType=Audio时有效
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AudioMetadata 媒资音频元信息，仅在MediaType=Audio时有效
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAudioMetadata(const AudioMetadata& _audioMetadata);
+
+                    /**
+                     * 判断参数 AudioMetadata 是否已赋值
+                     * @return AudioMetadata 是否已赋值
+                     */
+                    bool AudioMetadataHasBeenSet() const;
+
+                    /**
+                     * 获取媒资图片文件元信息，仅在MediaType=Image时有效
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ImageMetadata 媒资图片文件元信息，仅在MediaType=Image时有效
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ImageMetadata GetImageMetadata() const;
+
+                    /**
+                     * 设置媒资图片文件元信息，仅在MediaType=Image时有效
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ImageMetadata 媒资图片文件元信息，仅在MediaType=Image时有效
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetImageMetadata(const ImageMetadata& _imageMetadata);
+
+                    /**
+                     * 判断参数 ImageMetadata 是否已赋值
+                     * @return ImageMetadata 是否已赋值
+                     */
+                    bool ImageMetadataHasBeenSet() const;
+
+                    /**
+                     * 获取媒资文本文件元信息，仅在MediaType=Text时有效
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TextMetadata 媒资文本文件元信息，仅在MediaType=Text时有效
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    TextMetadata GetTextMetadata() const;
+
+                    /**
+                     * 设置媒资文本文件元信息，仅在MediaType=Text时有效
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TextMetadata 媒资文本文件元信息，仅在MediaType=Text时有效
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTextMetadata(const TextMetadata& _textMetadata);
+
+                    /**
+                     * 判断参数 TextMetadata 是否已赋值
+                     * @return TextMetadata 是否已赋值
+                     */
+                    bool TextMetadataHasBeenSet() const;
+
                 private:
 
                     /**
@@ -294,7 +385,7 @@ namespace TencentCloud
                     bool m_failedReasonHasBeenSet;
 
                     /**
-                     * 媒资视频元信息
+                     * 媒资视频元信息，仅在MediaType=VIDEO时有效
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     MediaMetadata m_metadata;
@@ -320,6 +411,34 @@ namespace TencentCloud
                      */
                     std::string m_callbackURL;
                     bool m_callbackURLHasBeenSet;
+
+                    /**
+                     * 媒资文件类型，具体参看[MediaPreknownInfo](https://cloud.tencent.com/document/product/1509/65063#MediaPreknownInfo)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_mediaType;
+                    bool m_mediaTypeHasBeenSet;
+
+                    /**
+                     * 媒资音频元信息，仅在MediaType=Audio时有效
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    AudioMetadata m_audioMetadata;
+                    bool m_audioMetadataHasBeenSet;
+
+                    /**
+                     * 媒资图片文件元信息，仅在MediaType=Image时有效
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ImageMetadata m_imageMetadata;
+                    bool m_imageMetadataHasBeenSet;
+
+                    /**
+                     * 媒资文本文件元信息，仅在MediaType=Text时有效
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    TextMetadata m_textMetadata;
+                    bool m_textMetadataHasBeenSet;
 
                 };
             }

@@ -49,14 +49,17 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/OrganizationInfo.h
   include/tencentcloud/ess/v20201111/model/DescribeFlowBriefsRequest.h
   include/tencentcloud/ess/v20201111/model/Recipient.h
+  include/tencentcloud/ess/v20201111/model/VerifyPdfRequest.h
   include/tencentcloud/ess/v20201111/model/UserInfo.h
   include/tencentcloud/ess/v20201111/model/FillApproverInfo.h
   include/tencentcloud/ess/v20201111/model/SignUrl.h
+  include/tencentcloud/ess/v20201111/model/VerifyPdfResponse.h
   include/tencentcloud/ess/v20201111/model/DescribeFileUrlsRequest.h
   include/tencentcloud/ess/v20201111/model/ApproverInfo.h
   include/tencentcloud/ess/v20201111/model/CreateFlowSignReviewResponse.h
   include/tencentcloud/ess/v20201111/model/Caller.h
   include/tencentcloud/ess/v20201111/model/DescribeFlowTemplatesResponse.h
+  include/tencentcloud/ess/v20201111/model/PdfVerifyResult.h
   include/tencentcloud/ess/v20201111/model/CreateFlowEvidenceReportRequest.h
   include/tencentcloud/ess/v20201111/model/CreateBatchCancelFlowUrlResponse.h
   include/tencentcloud/ess/v20201111/model/UploadFilesRequest.h
@@ -116,14 +119,17 @@ set(ess_src
   src/v20201111/model/OrganizationInfo.cpp
   src/v20201111/model/DescribeFlowBriefsRequest.cpp
   src/v20201111/model/Recipient.cpp
+  src/v20201111/model/VerifyPdfRequest.cpp
   src/v20201111/model/UserInfo.cpp
   src/v20201111/model/FillApproverInfo.cpp
   src/v20201111/model/SignUrl.cpp
+  src/v20201111/model/VerifyPdfResponse.cpp
   src/v20201111/model/DescribeFileUrlsRequest.cpp
   src/v20201111/model/ApproverInfo.cpp
   src/v20201111/model/CreateFlowSignReviewResponse.cpp
   src/v20201111/model/Caller.cpp
   src/v20201111/model/DescribeFlowTemplatesResponse.cpp
+  src/v20201111/model/PdfVerifyResult.cpp
   src/v20201111/model/CreateFlowEvidenceReportRequest.cpp
   src/v20201111/model/CreateBatchCancelFlowUrlResponse.cpp
   src/v20201111/model/UploadFilesRequest.cpp

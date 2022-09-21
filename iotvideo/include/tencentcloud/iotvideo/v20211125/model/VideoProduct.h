@@ -288,6 +288,28 @@ namespace TencentCloud
                      */
                     bool CategoryIdHasBeenSet() const;
 
+                    /**
+                     * 获取产品有效年限
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ProductVaildYears 产品有效年限
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetProductVaildYears() const;
+
+                    /**
+                     * 设置产品有效年限
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ProductVaildYears 产品有效年限
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetProductVaildYears(const uint64_t& _productVaildYears);
+
+                    /**
+                     * 判断参数 ProductVaildYears 是否已赋值
+                     * @return ProductVaildYears 是否已赋值
+                     */
+                    bool ProductVaildYearsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -369,6 +391,13 @@ namespace TencentCloud
                      */
                     uint64_t m_categoryId;
                     bool m_categoryIdHasBeenSet;
+
+                    /**
+                     * 产品有效年限
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_productVaildYears;
+                    bool m_productVaildYearsHasBeenSet;
 
                 };
             }

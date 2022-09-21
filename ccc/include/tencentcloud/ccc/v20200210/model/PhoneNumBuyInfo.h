@@ -137,14 +137,14 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取号码状态，1正常|2停用
-                     * @return State 号码状态，1正常|2停用
+                     * 获取号码状态，1正常|2欠费停用|4管理员停用|5违规停用
+                     * @return State 号码状态，1正常|2欠费停用|4管理员停用|5违规停用
                      */
                     int64_t GetState() const;
 
                     /**
-                     * 设置号码状态，1正常|2停用
-                     * @param State 号码状态，1正常|2停用
+                     * 设置号码状态，1正常|2欠费停用|4管理员停用|5违规停用
+                     * @param State 号码状态，1正常|2欠费停用|4管理员停用|5违规停用
                      */
                     void SetState(const int64_t& _state);
 
@@ -187,7 +187,7 @@ namespace TencentCloud
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 号码状态，1正常|2停用
+                     * 号码状态，1正常|2欠费停用|4管理员停用|5违规停用
                      */
                     int64_t m_state;
                     bool m_stateHasBeenSet;

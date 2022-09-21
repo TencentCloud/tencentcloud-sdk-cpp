@@ -61,22 +61,14 @@ namespace TencentCloud
                     bool ImageIdsHasBeenSet() const;
 
                     /**
-                     * 获取目的同步地域列表；必须满足限制：<br><li>不能为源地域，<br><li>必须是一个合法的Region。<br><li>暂不支持部分地域同步。<br>具体地域参数请参考[Region](https://cloud.tencent.com/document/product/213/6091)。
-
-如果是共享镜像，则目的同步地域仅支持源地域，表示将共享镜像复制为同地域的自定义镜像。
-                     * @return DestinationRegions 目的同步地域列表；必须满足限制：<br><li>不能为源地域，<br><li>必须是一个合法的Region。<br><li>暂不支持部分地域同步。<br>具体地域参数请参考[Region](https://cloud.tencent.com/document/product/213/6091)。
-
-如果是共享镜像，则目的同步地域仅支持源地域，表示将共享镜像复制为同地域的自定义镜像。
+                     * 获取目的同步地域列表，必须满足如下限制：<br><li>必须是一个合法的Region。<br><li>如果是自定义镜像，则目标同步地域不能为源地域。<br><li>如果是共享镜像，则目的同步地域仅支持源地域，表示将共享镜像复制为源地域的自定义镜像。<br><li>暂不支持部分地域同步。<br>具体地域参数请参考[Region](https://cloud.tencent.com/document/product/213/6091)。
+                     * @return DestinationRegions 目的同步地域列表，必须满足如下限制：<br><li>必须是一个合法的Region。<br><li>如果是自定义镜像，则目标同步地域不能为源地域。<br><li>如果是共享镜像，则目的同步地域仅支持源地域，表示将共享镜像复制为源地域的自定义镜像。<br><li>暂不支持部分地域同步。<br>具体地域参数请参考[Region](https://cloud.tencent.com/document/product/213/6091)。
                      */
                     std::vector<std::string> GetDestinationRegions() const;
 
                     /**
-                     * 设置目的同步地域列表；必须满足限制：<br><li>不能为源地域，<br><li>必须是一个合法的Region。<br><li>暂不支持部分地域同步。<br>具体地域参数请参考[Region](https://cloud.tencent.com/document/product/213/6091)。
-
-如果是共享镜像，则目的同步地域仅支持源地域，表示将共享镜像复制为同地域的自定义镜像。
-                     * @param DestinationRegions 目的同步地域列表；必须满足限制：<br><li>不能为源地域，<br><li>必须是一个合法的Region。<br><li>暂不支持部分地域同步。<br>具体地域参数请参考[Region](https://cloud.tencent.com/document/product/213/6091)。
-
-如果是共享镜像，则目的同步地域仅支持源地域，表示将共享镜像复制为同地域的自定义镜像。
+                     * 设置目的同步地域列表，必须满足如下限制：<br><li>必须是一个合法的Region。<br><li>如果是自定义镜像，则目标同步地域不能为源地域。<br><li>如果是共享镜像，则目的同步地域仅支持源地域，表示将共享镜像复制为源地域的自定义镜像。<br><li>暂不支持部分地域同步。<br>具体地域参数请参考[Region](https://cloud.tencent.com/document/product/213/6091)。
+                     * @param DestinationRegions 目的同步地域列表，必须满足如下限制：<br><li>必须是一个合法的Region。<br><li>如果是自定义镜像，则目标同步地域不能为源地域。<br><li>如果是共享镜像，则目的同步地域仅支持源地域，表示将共享镜像复制为源地域的自定义镜像。<br><li>暂不支持部分地域同步。<br>具体地域参数请参考[Region](https://cloud.tencent.com/document/product/213/6091)。
                      */
                     void SetDestinationRegions(const std::vector<std::string>& _destinationRegions);
 
@@ -131,9 +123,7 @@ namespace TencentCloud
                     bool m_imageIdsHasBeenSet;
 
                     /**
-                     * 目的同步地域列表；必须满足限制：<br><li>不能为源地域，<br><li>必须是一个合法的Region。<br><li>暂不支持部分地域同步。<br>具体地域参数请参考[Region](https://cloud.tencent.com/document/product/213/6091)。
-
-如果是共享镜像，则目的同步地域仅支持源地域，表示将共享镜像复制为同地域的自定义镜像。
+                     * 目的同步地域列表，必须满足如下限制：<br><li>必须是一个合法的Region。<br><li>如果是自定义镜像，则目标同步地域不能为源地域。<br><li>如果是共享镜像，则目的同步地域仅支持源地域，表示将共享镜像复制为源地域的自定义镜像。<br><li>暂不支持部分地域同步。<br>具体地域参数请参考[Region](https://cloud.tencent.com/document/product/213/6091)。
                      */
                     std::vector<std::string> m_destinationRegions;
                     bool m_destinationRegionsHasBeenSet;

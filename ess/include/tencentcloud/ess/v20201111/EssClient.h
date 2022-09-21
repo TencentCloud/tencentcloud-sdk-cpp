@@ -63,6 +63,8 @@
 #include <tencentcloud/ess/v20201111/model/StartFlowResponse.h>
 #include <tencentcloud/ess/v20201111/model/UploadFilesRequest.h>
 #include <tencentcloud/ess/v20201111/model/UploadFilesResponse.h>
+#include <tencentcloud/ess/v20201111/model/VerifyPdfRequest.h>
+#include <tencentcloud/ess/v20201111/model/VerifyPdfResponse.h>
 
 
 namespace TencentCloud
@@ -137,6 +139,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UploadFilesResponse> UploadFilesOutcome;
                 typedef std::future<UploadFilesOutcome> UploadFilesOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::UploadFilesRequest&, UploadFilesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UploadFilesAsyncHandler;
+                typedef Outcome<Core::Error, Model::VerifyPdfResponse> VerifyPdfOutcome;
+                typedef std::future<VerifyPdfOutcome> VerifyPdfOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::VerifyPdfRequest&, VerifyPdfOutcome, const std::shared_ptr<const AsyncCallerContext>&)> VerifyPdfAsyncHandler;
 
 
 
@@ -359,6 +364,15 @@ namespace TencentCloud
                 UploadFilesOutcome UploadFiles(const Model::UploadFilesRequest &request);
                 void UploadFilesAsync(const Model::UploadFilesRequest& request, const UploadFilesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UploadFilesOutcomeCallable UploadFilesCallable(const Model::UploadFilesRequest& request);
+
+                /**
+                 *验证合同文件
+                 * @param req VerifyPdfRequest
+                 * @return VerifyPdfOutcome
+                 */
+                VerifyPdfOutcome VerifyPdf(const Model::VerifyPdfRequest &request);
+                void VerifyPdfAsync(const Model::VerifyPdfRequest& request, const VerifyPdfAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                VerifyPdfOutcomeCallable VerifyPdfCallable(const Model::VerifyPdfRequest& request);
 
             };
         }

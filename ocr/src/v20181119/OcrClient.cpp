@@ -1201,6 +1201,49 @@ OcrClient::IDCardOCROutcomeCallable OcrClient::IDCardOCRCallable(const IDCardOCR
     return task->get_future();
 }
 
+OcrClient::ImageEnhancementOutcome OcrClient::ImageEnhancement(const ImageEnhancementRequest &request)
+{
+    auto outcome = MakeRequest(request, "ImageEnhancement");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ImageEnhancementResponse rsp = ImageEnhancementResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ImageEnhancementOutcome(rsp);
+        else
+            return ImageEnhancementOutcome(o.GetError());
+    }
+    else
+    {
+        return ImageEnhancementOutcome(outcome.GetError());
+    }
+}
+
+void OcrClient::ImageEnhancementAsync(const ImageEnhancementRequest& request, const ImageEnhancementAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ImageEnhancement(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OcrClient::ImageEnhancementOutcomeCallable OcrClient::ImageEnhancementCallable(const ImageEnhancementRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ImageEnhancementOutcome()>>(
+        [this, request]()
+        {
+            return this->ImageEnhancement(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 OcrClient::InstitutionOCROutcome OcrClient::InstitutionOCR(const InstitutionOCRRequest &request)
 {
     auto outcome = MakeRequest(request, "InstitutionOCR");

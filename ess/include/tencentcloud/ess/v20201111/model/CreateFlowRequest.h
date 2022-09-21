@@ -137,21 +137,21 @@ namespace TencentCloud
 
                     /**
                      * 获取暂未开放
-                     * @return CallbackUrl 暂未开放
+                     * @return RelatedFlowId 暂未开放
                      */
-                    std::string GetCallbackUrl() const;
+                    std::string GetRelatedFlowId() const;
 
                     /**
                      * 设置暂未开放
-                     * @param CallbackUrl 暂未开放
+                     * @param RelatedFlowId 暂未开放
                      */
-                    void SetCallbackUrl(const std::string& _callbackUrl);
+                    void SetRelatedFlowId(const std::string& _relatedFlowId);
 
                     /**
-                     * 判断参数 CallbackUrl 是否已赋值
-                     * @return CallbackUrl 是否已赋值
+                     * 判断参数 RelatedFlowId 是否已赋值
+                     * @return RelatedFlowId 是否已赋值
                      */
-                    bool CallbackUrlHasBeenSet() const;
+                    bool RelatedFlowIdHasBeenSet() const;
 
                     /**
                      * 获取签署流程的签署截止时间。
@@ -291,21 +291,21 @@ false：有序签
 
                     /**
                      * 获取暂未开放
-                     * @return RelatedFlowId 暂未开放
+                     * @return CallbackUrl 暂未开放
                      */
-                    std::string GetRelatedFlowId() const;
+                    std::string GetCallbackUrl() const;
 
                     /**
                      * 设置暂未开放
-                     * @param RelatedFlowId 暂未开放
+                     * @param CallbackUrl 暂未开放
                      */
-                    void SetRelatedFlowId(const std::string& _relatedFlowId);
+                    void SetCallbackUrl(const std::string& _callbackUrl);
 
                     /**
-                     * 判断参数 RelatedFlowId 是否已赋值
-                     * @return RelatedFlowId 是否已赋值
+                     * 判断参数 CallbackUrl 是否已赋值
+                     * @return CallbackUrl 是否已赋值
                      */
-                    bool RelatedFlowIdHasBeenSet() const;
+                    bool CallbackUrlHasBeenSet() const;
 
                     /**
                      * 获取应用相关信息
@@ -360,8 +360,8 @@ false：有序签
                     /**
                      * 暂未开放
                      */
-                    std::string m_callbackUrl;
-                    bool m_callbackUrlHasBeenSet;
+                    std::string m_relatedFlowId;
+                    bool m_relatedFlowIdHasBeenSet;
 
                     /**
                      * 签署流程的签署截止时间。
@@ -409,8 +409,8 @@ false：有序签
                     /**
                      * 暂未开放
                      */
-                    std::string m_relatedFlowId;
-                    bool m_relatedFlowIdHasBeenSet;
+                    std::string m_callbackUrl;
+                    bool m_callbackUrlHasBeenSet;
 
                     /**
                      * 应用相关信息

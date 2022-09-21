@@ -33,6 +33,8 @@
 #include <tencentcloud/mongodb/v20190725/model/CreateDBInstanceResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/CreateDBInstanceHourRequest.h>
 #include <tencentcloud/mongodb/v20190725/model/CreateDBInstanceHourResponse.h>
+#include <tencentcloud/mongodb/v20190725/model/DescribeAccountUsersRequest.h>
+#include <tencentcloud/mongodb/v20190725/model/DescribeAccountUsersResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/DescribeAsyncRequestInfoRequest.h>
 #include <tencentcloud/mongodb/v20190725/model/DescribeAsyncRequestInfoResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/DescribeBackupDownloadTaskRequest.h>
@@ -116,6 +118,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateDBInstanceHourResponse> CreateDBInstanceHourOutcome;
                 typedef std::future<CreateDBInstanceHourOutcome> CreateDBInstanceHourOutcomeCallable;
                 typedef std::function<void(const MongodbClient*, const Model::CreateDBInstanceHourRequest&, CreateDBInstanceHourOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDBInstanceHourAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAccountUsersResponse> DescribeAccountUsersOutcome;
+                typedef std::future<DescribeAccountUsersOutcome> DescribeAccountUsersOutcomeCallable;
+                typedef std::function<void(const MongodbClient*, const Model::DescribeAccountUsersRequest&, DescribeAccountUsersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccountUsersAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAsyncRequestInfoResponse> DescribeAsyncRequestInfoOutcome;
                 typedef std::future<DescribeAsyncRequestInfoOutcome> DescribeAsyncRequestInfoOutcomeCallable;
                 typedef std::function<void(const MongodbClient*, const Model::DescribeAsyncRequestInfoRequest&, DescribeAsyncRequestInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAsyncRequestInfoAsyncHandler;
@@ -245,6 +250,15 @@ namespace TencentCloud
                 CreateDBInstanceHourOutcome CreateDBInstanceHour(const Model::CreateDBInstanceHourRequest &request);
                 void CreateDBInstanceHourAsync(const Model::CreateDBInstanceHourRequest& request, const CreateDBInstanceHourAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateDBInstanceHourOutcomeCallable CreateDBInstanceHourCallable(const Model::CreateDBInstanceHourRequest& request);
+
+                /**
+                 *本接口(DescribeAccountUsers)用于获取当前实例的全部账号列表。
+                 * @param req DescribeAccountUsersRequest
+                 * @return DescribeAccountUsersOutcome
+                 */
+                DescribeAccountUsersOutcome DescribeAccountUsers(const Model::DescribeAccountUsersRequest &request);
+                void DescribeAccountUsersAsync(const Model::DescribeAccountUsersRequest& request, const DescribeAccountUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAccountUsersOutcomeCallable DescribeAccountUsersCallable(const Model::DescribeAccountUsersRequest& request);
 
                 /**
                  *查询异步任务状态接口

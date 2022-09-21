@@ -98,13 +98,17 @@ namespace TencentCloud
 
                     /**
                      * 获取设备功能码 ypsxth音频双向通话 spdxth视频单向通话 sxysp双向音视频
+注意：此字段只支持创建'摄像头'和'儿童手表'，摄像头传["ypsxth","spdxth"]，儿童手表传["ypsxth","spdxth","sxysp"]，创建其它品类的产品需要传递CategoryId字段，通过云api调用此接口时，如果传了CategoryId字段，将忽略Features字段,但Features仍需传值(可传任意字符串数组)
                      * @return Features 设备功能码 ypsxth音频双向通话 spdxth视频单向通话 sxysp双向音视频
+注意：此字段只支持创建'摄像头'和'儿童手表'，摄像头传["ypsxth","spdxth"]，儿童手表传["ypsxth","spdxth","sxysp"]，创建其它品类的产品需要传递CategoryId字段，通过云api调用此接口时，如果传了CategoryId字段，将忽略Features字段,但Features仍需传值(可传任意字符串数组)
                      */
                     std::vector<std::string> GetFeatures() const;
 
                     /**
                      * 设置设备功能码 ypsxth音频双向通话 spdxth视频单向通话 sxysp双向音视频
+注意：此字段只支持创建'摄像头'和'儿童手表'，摄像头传["ypsxth","spdxth"]，儿童手表传["ypsxth","spdxth","sxysp"]，创建其它品类的产品需要传递CategoryId字段，通过云api调用此接口时，如果传了CategoryId字段，将忽略Features字段,但Features仍需传值(可传任意字符串数组)
                      * @param Features 设备功能码 ypsxth音频双向通话 spdxth视频单向通话 sxysp双向音视频
+注意：此字段只支持创建'摄像头'和'儿童手表'，摄像头传["ypsxth","spdxth"]，儿童手表传["ypsxth","spdxth","sxysp"]，创建其它品类的产品需要传递CategoryId字段，通过云api调用此接口时，如果传了CategoryId字段，将忽略Features字段,但Features仍需传值(可传任意字符串数组)
                      */
                     void SetFeatures(const std::vector<std::string>& _features);
 
@@ -113,24 +117,6 @@ namespace TencentCloud
                      * @return Features 是否已赋值
                      */
                     bool FeaturesHasBeenSet() const;
-
-                    /**
-                     * 获取设备操作系统，通用设备填default
-                     * @return ChipOs 设备操作系统，通用设备填default
-                     */
-                    std::string GetChipOs() const;
-
-                    /**
-                     * 设置设备操作系统，通用设备填default
-                     * @param ChipOs 设备操作系统，通用设备填default
-                     */
-                    void SetChipOs(const std::string& _chipOs);
-
-                    /**
-                     * 判断参数 ChipOs 是否已赋值
-                     * @return ChipOs 是否已赋值
-                     */
-                    bool ChipOsHasBeenSet() const;
 
                     /**
                      * 获取芯片厂商id，通用设备填default
@@ -187,6 +173,24 @@ namespace TencentCloud
                     bool ProductDescriptionHasBeenSet() const;
 
                     /**
+                     * 获取设备操作系统，通用设备填default
+                     * @return ChipOs 设备操作系统，通用设备填default
+                     */
+                    std::string GetChipOs() const;
+
+                    /**
+                     * 设置设备操作系统，通用设备填default
+                     * @param ChipOs 设备操作系统，通用设备填default
+                     */
+                    void SetChipOs(const std::string& _chipOs);
+
+                    /**
+                     * 判断参数 ChipOs 是否已赋值
+                     * @return ChipOs 是否已赋值
+                     */
+                    bool ChipOsHasBeenSet() const;
+
+                    /**
                      * 获取认证方式 只支持取值为2 psk认证
                      * @return EncryptionType 认证方式 只支持取值为2 psk认证
                      */
@@ -203,6 +207,28 @@ namespace TencentCloud
                      * @return EncryptionType 是否已赋值
                      */
                     bool EncryptionTypeHasBeenSet() const;
+
+                    /**
+                     * 获取产品品类id,113:摄像头,567:儿童手表,595:可视对讲门锁
+注意：通过云api调用此接口时，如果传了CategoryId字段，将忽略Features字段,但Features仍需传值(可传任意字符串数组)
+                     * @return CategoryId 产品品类id,113:摄像头,567:儿童手表,595:可视对讲门锁
+注意：通过云api调用此接口时，如果传了CategoryId字段，将忽略Features字段,但Features仍需传值(可传任意字符串数组)
+                     */
+                    uint64_t GetCategoryId() const;
+
+                    /**
+                     * 设置产品品类id,113:摄像头,567:儿童手表,595:可视对讲门锁
+注意：通过云api调用此接口时，如果传了CategoryId字段，将忽略Features字段,但Features仍需传值(可传任意字符串数组)
+                     * @param CategoryId 产品品类id,113:摄像头,567:儿童手表,595:可视对讲门锁
+注意：通过云api调用此接口时，如果传了CategoryId字段，将忽略Features字段,但Features仍需传值(可传任意字符串数组)
+                     */
+                    void SetCategoryId(const uint64_t& _categoryId);
+
+                    /**
+                     * 判断参数 CategoryId 是否已赋值
+                     * @return CategoryId 是否已赋值
+                     */
+                    bool CategoryIdHasBeenSet() const;
 
                     /**
                      * 获取连接类型，wifi表示WIFI连接，cellular表示4G连接
@@ -244,15 +270,10 @@ namespace TencentCloud
 
                     /**
                      * 设备功能码 ypsxth音频双向通话 spdxth视频单向通话 sxysp双向音视频
+注意：此字段只支持创建'摄像头'和'儿童手表'，摄像头传["ypsxth","spdxth"]，儿童手表传["ypsxth","spdxth","sxysp"]，创建其它品类的产品需要传递CategoryId字段，通过云api调用此接口时，如果传了CategoryId字段，将忽略Features字段,但Features仍需传值(可传任意字符串数组)
                      */
                     std::vector<std::string> m_features;
                     bool m_featuresHasBeenSet;
-
-                    /**
-                     * 设备操作系统，通用设备填default
-                     */
-                    std::string m_chipOs;
-                    bool m_chipOsHasBeenSet;
 
                     /**
                      * 芯片厂商id，通用设备填default
@@ -273,10 +294,23 @@ namespace TencentCloud
                     bool m_productDescriptionHasBeenSet;
 
                     /**
+                     * 设备操作系统，通用设备填default
+                     */
+                    std::string m_chipOs;
+                    bool m_chipOsHasBeenSet;
+
+                    /**
                      * 认证方式 只支持取值为2 psk认证
                      */
                     uint64_t m_encryptionType;
                     bool m_encryptionTypeHasBeenSet;
+
+                    /**
+                     * 产品品类id,113:摄像头,567:儿童手表,595:可视对讲门锁
+注意：通过云api调用此接口时，如果传了CategoryId字段，将忽略Features字段,但Features仍需传值(可传任意字符串数组)
+                     */
+                    uint64_t m_categoryId;
+                    bool m_categoryIdHasBeenSet;
 
                     /**
                      * 连接类型，wifi表示WIFI连接，cellular表示4G连接

@@ -136,6 +136,28 @@ namespace TencentCloud
                      */
                     bool LabelSetHasBeenSet() const;
 
+                    /**
+                     * 获取媒资文件类型，定义参见[MediaPreknownInfo.MediaType](https://cloud.tencent.com/document/product/1509/65063#MediaPreknownInfo)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MediaType 媒资文件类型，定义参见[MediaPreknownInfo.MediaType](https://cloud.tencent.com/document/product/1509/65063#MediaPreknownInfo)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetMediaType() const;
+
+                    /**
+                     * 设置媒资文件类型，定义参见[MediaPreknownInfo.MediaType](https://cloud.tencent.com/document/product/1509/65063#MediaPreknownInfo)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param MediaType 媒资文件类型，定义参见[MediaPreknownInfo.MediaType](https://cloud.tencent.com/document/product/1509/65063#MediaPreknownInfo)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMediaType(const int64_t& _mediaType);
+
+                    /**
+                     * 判断参数 MediaType 是否已赋值
+                     * @return MediaType 是否已赋值
+                     */
+                    bool MediaTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -165,6 +187,13 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_labelSet;
                     bool m_labelSetHasBeenSet;
+
+                    /**
+                     * 媒资文件类型，定义参见[MediaPreknownInfo.MediaType](https://cloud.tencent.com/document/product/1509/65063#MediaPreknownInfo)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_mediaType;
+                    bool m_mediaTypeHasBeenSet;
 
                 };
             }

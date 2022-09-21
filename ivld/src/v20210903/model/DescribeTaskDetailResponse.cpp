@@ -25,7 +25,10 @@ using namespace std;
 
 DescribeTaskDetailResponse::DescribeTaskDetailResponse() :
     m_taskInfoHasBeenSet(false),
-    m_taskDataHasBeenSet(false)
+    m_taskDataHasBeenSet(false),
+    m_imageTaskDataHasBeenSet(false),
+    m_audioTaskDataHasBeenSet(false),
+    m_textTaskDataHasBeenSet(false)
 {
 }
 
@@ -97,6 +100,57 @@ CoreInternalOutcome DescribeTaskDetailResponse::Deserialize(const string &payloa
         m_taskDataHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ImageTaskData") && !rsp["ImageTaskData"].IsNull())
+    {
+        if (!rsp["ImageTaskData"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImageTaskData` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_imageTaskData.Deserialize(rsp["ImageTaskData"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_imageTaskDataHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("AudioTaskData") && !rsp["AudioTaskData"].IsNull())
+    {
+        if (!rsp["AudioTaskData"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AudioTaskData` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_audioTaskData.Deserialize(rsp["AudioTaskData"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_audioTaskDataHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("TextTaskData") && !rsp["TextTaskData"].IsNull())
+    {
+        if (!rsp["TextTaskData"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `TextTaskData` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_textTaskData.Deserialize(rsp["TextTaskData"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_textTaskDataHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -123,6 +177,33 @@ string DescribeTaskDetailResponse::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_taskData.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_imageTaskDataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ImageTaskData";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_imageTaskData.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_audioTaskDataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AudioTaskData";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_audioTaskData.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_textTaskDataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TextTaskData";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_textTaskData.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -155,6 +236,36 @@ Data DescribeTaskDetailResponse::GetTaskData() const
 bool DescribeTaskDetailResponse::TaskDataHasBeenSet() const
 {
     return m_taskDataHasBeenSet;
+}
+
+ImageData DescribeTaskDetailResponse::GetImageTaskData() const
+{
+    return m_imageTaskData;
+}
+
+bool DescribeTaskDetailResponse::ImageTaskDataHasBeenSet() const
+{
+    return m_imageTaskDataHasBeenSet;
+}
+
+AudioData DescribeTaskDetailResponse::GetAudioTaskData() const
+{
+    return m_audioTaskData;
+}
+
+bool DescribeTaskDetailResponse::AudioTaskDataHasBeenSet() const
+{
+    return m_audioTaskDataHasBeenSet;
+}
+
+TextData DescribeTaskDetailResponse::GetTextTaskData() const
+{
+    return m_textTaskData;
+}
+
+bool DescribeTaskDetailResponse::TextTaskDataHasBeenSet() const
+{
+    return m_textTaskDataHasBeenSet;
 }
 
 

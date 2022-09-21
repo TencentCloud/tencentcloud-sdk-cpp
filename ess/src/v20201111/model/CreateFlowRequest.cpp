@@ -28,14 +28,14 @@ CreateFlowRequest::CreateFlowRequest() :
     m_approversHasBeenSet(false),
     m_flowTypeHasBeenSet(false),
     m_clientTokenHasBeenSet(false),
-    m_callbackUrlHasBeenSet(false),
+    m_relatedFlowIdHasBeenSet(false),
     m_deadLineHasBeenSet(false),
     m_userDataHasBeenSet(false),
     m_flowDescriptionHasBeenSet(false),
     m_unorderedHasBeenSet(false),
     m_customShowMapHasBeenSet(false),
     m_needSignReviewHasBeenSet(false),
-    m_relatedFlowIdHasBeenSet(false),
+    m_callbackUrlHasBeenSet(false),
     m_agentHasBeenSet(false)
 {
 }
@@ -95,12 +95,12 @@ string CreateFlowRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_clientToken.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_callbackUrlHasBeenSet)
+    if (m_relatedFlowIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "CallbackUrl";
+        string key = "RelatedFlowId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_callbackUrl.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_relatedFlowId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_deadLineHasBeenSet)
@@ -151,12 +151,12 @@ string CreateFlowRequest::ToJsonString() const
         d.AddMember(iKey, m_needSignReview, allocator);
     }
 
-    if (m_relatedFlowIdHasBeenSet)
+    if (m_callbackUrlHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "RelatedFlowId";
+        string key = "CallbackUrl";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_relatedFlowId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_callbackUrl.c_str(), allocator).Move(), allocator);
     }
 
     if (m_agentHasBeenSet)
@@ -256,20 +256,20 @@ bool CreateFlowRequest::ClientTokenHasBeenSet() const
     return m_clientTokenHasBeenSet;
 }
 
-string CreateFlowRequest::GetCallbackUrl() const
+string CreateFlowRequest::GetRelatedFlowId() const
 {
-    return m_callbackUrl;
+    return m_relatedFlowId;
 }
 
-void CreateFlowRequest::SetCallbackUrl(const string& _callbackUrl)
+void CreateFlowRequest::SetRelatedFlowId(const string& _relatedFlowId)
 {
-    m_callbackUrl = _callbackUrl;
-    m_callbackUrlHasBeenSet = true;
+    m_relatedFlowId = _relatedFlowId;
+    m_relatedFlowIdHasBeenSet = true;
 }
 
-bool CreateFlowRequest::CallbackUrlHasBeenSet() const
+bool CreateFlowRequest::RelatedFlowIdHasBeenSet() const
 {
-    return m_callbackUrlHasBeenSet;
+    return m_relatedFlowIdHasBeenSet;
 }
 
 int64_t CreateFlowRequest::GetDeadLine() const
@@ -368,20 +368,20 @@ bool CreateFlowRequest::NeedSignReviewHasBeenSet() const
     return m_needSignReviewHasBeenSet;
 }
 
-string CreateFlowRequest::GetRelatedFlowId() const
+string CreateFlowRequest::GetCallbackUrl() const
 {
-    return m_relatedFlowId;
+    return m_callbackUrl;
 }
 
-void CreateFlowRequest::SetRelatedFlowId(const string& _relatedFlowId)
+void CreateFlowRequest::SetCallbackUrl(const string& _callbackUrl)
 {
-    m_relatedFlowId = _relatedFlowId;
-    m_relatedFlowIdHasBeenSet = true;
+    m_callbackUrl = _callbackUrl;
+    m_callbackUrlHasBeenSet = true;
 }
 
-bool CreateFlowRequest::RelatedFlowIdHasBeenSet() const
+bool CreateFlowRequest::CallbackUrlHasBeenSet() const
 {
-    return m_relatedFlowIdHasBeenSet;
+    return m_callbackUrlHasBeenSet;
 }
 
 Agent CreateFlowRequest::GetAgent() const

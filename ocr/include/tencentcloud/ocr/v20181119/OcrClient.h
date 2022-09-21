@@ -77,6 +77,8 @@
 #include <tencentcloud/ocr/v20181119/model/HmtResidentPermitOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/IDCardOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/IDCardOCRResponse.h>
+#include <tencentcloud/ocr/v20181119/model/ImageEnhancementRequest.h>
+#include <tencentcloud/ocr/v20181119/model/ImageEnhancementResponse.h>
 #include <tencentcloud/ocr/v20181119/model/InstitutionOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/InstitutionOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/InsuranceBillOCRRequest.h>
@@ -270,6 +272,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::IDCardOCRResponse> IDCardOCROutcome;
                 typedef std::future<IDCardOCROutcome> IDCardOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::IDCardOCRRequest&, IDCardOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> IDCardOCRAsyncHandler;
+                typedef Outcome<Core::Error, Model::ImageEnhancementResponse> ImageEnhancementOutcome;
+                typedef std::future<ImageEnhancementOutcome> ImageEnhancementOutcomeCallable;
+                typedef std::function<void(const OcrClient*, const Model::ImageEnhancementRequest&, ImageEnhancementOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ImageEnhancementAsyncHandler;
                 typedef Outcome<Core::Error, Model::InstitutionOCRResponse> InstitutionOCROutcome;
                 typedef std::future<InstitutionOCROutcome> InstitutionOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::InstitutionOCRRequest&, InstitutionOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> InstitutionOCRAsyncHandler;
@@ -923,6 +928,15 @@ namespace TencentCloud
                 IDCardOCROutcome IDCardOCR(const Model::IDCardOCRRequest &request);
                 void IDCardOCRAsync(const Model::IDCardOCRRequest& request, const IDCardOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 IDCardOCROutcomeCallable IDCardOCRCallable(const Model::IDCardOCRRequest& request);
+
+                /**
+                 *图像增强
+                 * @param req ImageEnhancementRequest
+                 * @return ImageEnhancementOutcome
+                 */
+                ImageEnhancementOutcome ImageEnhancement(const Model::ImageEnhancementRequest &request);
+                void ImageEnhancementAsync(const Model::ImageEnhancementRequest& request, const ImageEnhancementAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ImageEnhancementOutcomeCallable ImageEnhancementCallable(const Model::ImageEnhancementRequest& request);
 
                 /**
                  *本接口支持事业单位法人证书关键字段识别，包括注册号、有效期、住所、名称、法定代表人等。

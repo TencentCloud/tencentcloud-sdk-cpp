@@ -25,6 +25,10 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/ivld/v20210903/model/MediaPreknownInfo.h>
+#include <tencentcloud/ivld/v20210903/model/AudioMetadata.h>
+#include <tencentcloud/ivld/v20210903/model/ImageMetadata.h>
+#include <tencentcloud/ivld/v20210903/model/TextMetadata.h>
+#include <tencentcloud/ivld/v20210903/model/MediaMetadata.h>
 
 
 namespace TencentCloud
@@ -328,6 +332,94 @@ TaskStatus定义如下:
                      */
                     bool CallbackURLHasBeenSet() const;
 
+                    /**
+                     * 获取任务对应的媒资文件元信息，仅在MediaType为Audio时有效
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AudioMetadata 任务对应的媒资文件元信息，仅在MediaType为Audio时有效
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    AudioMetadata GetAudioMetadata() const;
+
+                    /**
+                     * 设置任务对应的媒资文件元信息，仅在MediaType为Audio时有效
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AudioMetadata 任务对应的媒资文件元信息，仅在MediaType为Audio时有效
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAudioMetadata(const AudioMetadata& _audioMetadata);
+
+                    /**
+                     * 判断参数 AudioMetadata 是否已赋值
+                     * @return AudioMetadata 是否已赋值
+                     */
+                    bool AudioMetadataHasBeenSet() const;
+
+                    /**
+                     * 获取任务对应的媒资文件元信息，仅在MediaType为Audio时有效
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ImageMetadata 任务对应的媒资文件元信息，仅在MediaType为Audio时有效
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ImageMetadata GetImageMetadata() const;
+
+                    /**
+                     * 设置任务对应的媒资文件元信息，仅在MediaType为Audio时有效
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ImageMetadata 任务对应的媒资文件元信息，仅在MediaType为Audio时有效
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetImageMetadata(const ImageMetadata& _imageMetadata);
+
+                    /**
+                     * 判断参数 ImageMetadata 是否已赋值
+                     * @return ImageMetadata 是否已赋值
+                     */
+                    bool ImageMetadataHasBeenSet() const;
+
+                    /**
+                     * 获取任务对应的媒资文件元信息，仅在MediaType为Text时有效
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TextMetadata 任务对应的媒资文件元信息，仅在MediaType为Text时有效
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    TextMetadata GetTextMetadata() const;
+
+                    /**
+                     * 设置任务对应的媒资文件元信息，仅在MediaType为Text时有效
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TextMetadata 任务对应的媒资文件元信息，仅在MediaType为Text时有效
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTextMetadata(const TextMetadata& _textMetadata);
+
+                    /**
+                     * 判断参数 TextMetadata 是否已赋值
+                     * @return TextMetadata 是否已赋值
+                     */
+                    bool TextMetadataHasBeenSet() const;
+
+                    /**
+                     * 获取任务对应的媒资文件元信息，仅在MediaType为Video时有效
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Metadata 任务对应的媒资文件元信息，仅在MediaType为Video时有效
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    MediaMetadata GetMetadata() const;
+
+                    /**
+                     * 设置任务对应的媒资文件元信息，仅在MediaType为Video时有效
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Metadata 任务对应的媒资文件元信息，仅在MediaType为Video时有效
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMetadata(const MediaMetadata& _metadata);
+
+                    /**
+                     * 判断参数 Metadata 是否已赋值
+                     * @return Metadata 是否已赋值
+                     */
+                    bool MetadataHasBeenSet() const;
+
                 private:
 
                     /**
@@ -415,6 +507,34 @@ TaskStatus定义如下:
                      */
                     std::string m_callbackURL;
                     bool m_callbackURLHasBeenSet;
+
+                    /**
+                     * 任务对应的媒资文件元信息，仅在MediaType为Audio时有效
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    AudioMetadata m_audioMetadata;
+                    bool m_audioMetadataHasBeenSet;
+
+                    /**
+                     * 任务对应的媒资文件元信息，仅在MediaType为Audio时有效
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ImageMetadata m_imageMetadata;
+                    bool m_imageMetadataHasBeenSet;
+
+                    /**
+                     * 任务对应的媒资文件元信息，仅在MediaType为Text时有效
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    TextMetadata m_textMetadata;
+                    bool m_textMetadataHasBeenSet;
+
+                    /**
+                     * 任务对应的媒资文件元信息，仅在MediaType为Video时有效
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    MediaMetadata m_metadata;
+                    bool m_metadataHasBeenSet;
 
                 };
             }

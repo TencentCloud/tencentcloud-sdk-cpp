@@ -255,6 +255,49 @@ MongodbClient::CreateDBInstanceHourOutcomeCallable MongodbClient::CreateDBInstan
     return task->get_future();
 }
 
+MongodbClient::DescribeAccountUsersOutcome MongodbClient::DescribeAccountUsers(const DescribeAccountUsersRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAccountUsers");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAccountUsersResponse rsp = DescribeAccountUsersResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAccountUsersOutcome(rsp);
+        else
+            return DescribeAccountUsersOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAccountUsersOutcome(outcome.GetError());
+    }
+}
+
+void MongodbClient::DescribeAccountUsersAsync(const DescribeAccountUsersRequest& request, const DescribeAccountUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAccountUsers(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MongodbClient::DescribeAccountUsersOutcomeCallable MongodbClient::DescribeAccountUsersCallable(const DescribeAccountUsersRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAccountUsersOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAccountUsers(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MongodbClient::DescribeAsyncRequestInfoOutcome MongodbClient::DescribeAsyncRequestInfo(const DescribeAsyncRequestInfoRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeAsyncRequestInfo");

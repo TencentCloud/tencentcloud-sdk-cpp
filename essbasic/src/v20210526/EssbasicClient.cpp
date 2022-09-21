@@ -427,6 +427,49 @@ EssbasicClient::ChannelGetTaskResultApiOutcomeCallable EssbasicClient::ChannelGe
     return task->get_future();
 }
 
+EssbasicClient::ChannelVerifyPdfOutcome EssbasicClient::ChannelVerifyPdf(const ChannelVerifyPdfRequest &request)
+{
+    auto outcome = MakeRequest(request, "ChannelVerifyPdf");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ChannelVerifyPdfResponse rsp = ChannelVerifyPdfResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ChannelVerifyPdfOutcome(rsp);
+        else
+            return ChannelVerifyPdfOutcome(o.GetError());
+    }
+    else
+    {
+        return ChannelVerifyPdfOutcome(outcome.GetError());
+    }
+}
+
+void EssbasicClient::ChannelVerifyPdfAsync(const ChannelVerifyPdfRequest& request, const ChannelVerifyPdfAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ChannelVerifyPdf(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssbasicClient::ChannelVerifyPdfOutcomeCallable EssbasicClient::ChannelVerifyPdfCallable(const ChannelVerifyPdfRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ChannelVerifyPdfOutcome()>>(
+        [this, request]()
+        {
+            return this->ChannelVerifyPdf(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssbasicClient::CreateChannelFlowEvidenceReportOutcome EssbasicClient::CreateChannelFlowEvidenceReport(const CreateChannelFlowEvidenceReportRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateChannelFlowEvidenceReport");

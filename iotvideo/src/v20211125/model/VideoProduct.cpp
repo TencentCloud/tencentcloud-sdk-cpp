@@ -33,7 +33,8 @@ VideoProduct::VideoProduct() :
     m_createTimeHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
     m_netTypeHasBeenSet(false),
-    m_categoryIdHasBeenSet(false)
+    m_categoryIdHasBeenSet(false),
+    m_productVaildYearsHasBeenSet(false)
 {
 }
 
@@ -175,6 +176,16 @@ CoreInternalOutcome VideoProduct::Deserialize(const rapidjson::Value &value)
         m_categoryIdHasBeenSet = true;
     }
 
+    if (value.HasMember("ProductVaildYears") && !value["ProductVaildYears"].IsNull())
+    {
+        if (!value["ProductVaildYears"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `VideoProduct.ProductVaildYears` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_productVaildYears = value["ProductVaildYears"].GetUint64();
+        m_productVaildYearsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -289,6 +300,14 @@ void VideoProduct::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "CategoryId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_categoryId, allocator);
+    }
+
+    if (m_productVaildYearsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProductVaildYears";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_productVaildYears, allocator);
     }
 
 }
@@ -500,5 +519,21 @@ void VideoProduct::SetCategoryId(const uint64_t& _categoryId)
 bool VideoProduct::CategoryIdHasBeenSet() const
 {
     return m_categoryIdHasBeenSet;
+}
+
+uint64_t VideoProduct::GetProductVaildYears() const
+{
+    return m_productVaildYears;
+}
+
+void VideoProduct::SetProductVaildYears(const uint64_t& _productVaildYears)
+{
+    m_productVaildYears = _productVaildYears;
+    m_productVaildYearsHasBeenSet = true;
+}
+
+bool VideoProduct::ProductVaildYearsHasBeenSet() const
+{
+    return m_productVaildYearsHasBeenSet;
 }
 

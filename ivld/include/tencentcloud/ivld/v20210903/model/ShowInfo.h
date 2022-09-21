@@ -28,6 +28,8 @@
 #include <tencentcloud/ivld/v20210903/model/TextInfo.h>
 #include <tencentcloud/ivld/v20210903/model/ClassifiedPersonInfo.h>
 #include <tencentcloud/ivld/v20210903/model/MultiLevelTag.h>
+#include <tencentcloud/ivld/v20210903/model/UnknownPerson.h>
+#include <tencentcloud/ivld/v20210903/model/MultiLevelPersonInfo.h>
 
 
 namespace TencentCloud
@@ -380,6 +382,50 @@ namespace TencentCloud
                      */
                     bool SummaryTagSetHasBeenSet() const;
 
+                    /**
+                     * 获取未知人物信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UnknownPersonSet 未知人物信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<UnknownPerson> GetUnknownPersonSet() const;
+
+                    /**
+                     * 设置未知人物信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param UnknownPersonSet 未知人物信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetUnknownPersonSet(const std::vector<UnknownPerson>& _unknownPersonSet);
+
+                    /**
+                     * 判断参数 UnknownPersonSet 是否已赋值
+                     * @return UnknownPersonSet 是否已赋值
+                     */
+                    bool UnknownPersonSetHasBeenSet() const;
+
+                    /**
+                     * 获取树状已分类人物信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MultiLevelPersonInfoSet 树状已分类人物信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<MultiLevelPersonInfo> GetMultiLevelPersonInfoSet() const;
+
+                    /**
+                     * 设置树状已分类人物信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param MultiLevelPersonInfoSet 树状已分类人物信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMultiLevelPersonInfoSet(const std::vector<MultiLevelPersonInfo>& _multiLevelPersonInfoSet);
+
+                    /**
+                     * 判断参数 MultiLevelPersonInfoSet 是否已赋值
+                     * @return MultiLevelPersonInfoSet 是否已赋值
+                     */
+                    bool MultiLevelPersonInfoSetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -486,6 +532,20 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_summaryTagSet;
                     bool m_summaryTagSetHasBeenSet;
+
+                    /**
+                     * 未知人物信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<UnknownPerson> m_unknownPersonSet;
+                    bool m_unknownPersonSetHasBeenSet;
+
+                    /**
+                     * 树状已分类人物信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<MultiLevelPersonInfo> m_multiLevelPersonInfoSet;
+                    bool m_multiLevelPersonInfoSetHasBeenSet;
 
                 };
             }

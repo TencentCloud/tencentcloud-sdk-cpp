@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool MD5HasBeenSet() const;
 
                     /**
-                     * 获取待分析视频的名称，指定后可支持筛选，最多100个中文字符
-                     * @return Name 待分析视频的名称，指定后可支持筛选，最多100个中文字符
+                     * 获取待分析视频的名称，指定后可支持筛选，最多64B
+                     * @return Name 待分析视频的名称，指定后可支持筛选，最多64B
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置待分析视频的名称，指定后可支持筛选，最多100个中文字符
-                     * @param Name 待分析视频的名称，指定后可支持筛选，最多100个中文字符
+                     * 设置待分析视频的名称，指定后可支持筛选，最多64B
+                     * @param Name 待分析视频的名称，指定后可支持筛选，最多64B
                      */
                     void SetName(const std::string& _name);
 
@@ -154,6 +154,28 @@ namespace TencentCloud
                      */
                     bool CallbackURLHasBeenSet() const;
 
+                    /**
+                     * 获取媒资文件类型，详细定义参见[MediaPreknownInfo.MediaType](https://cloud.tencent.com/document/product/1509/65063#MediaPreknownInfo)
+默认为2(视频)
+                     * @return MediaType 媒资文件类型，详细定义参见[MediaPreknownInfo.MediaType](https://cloud.tencent.com/document/product/1509/65063#MediaPreknownInfo)
+默认为2(视频)
+                     */
+                    int64_t GetMediaType() const;
+
+                    /**
+                     * 设置媒资文件类型，详细定义参见[MediaPreknownInfo.MediaType](https://cloud.tencent.com/document/product/1509/65063#MediaPreknownInfo)
+默认为2(视频)
+                     * @param MediaType 媒资文件类型，详细定义参见[MediaPreknownInfo.MediaType](https://cloud.tencent.com/document/product/1509/65063#MediaPreknownInfo)
+默认为2(视频)
+                     */
+                    void SetMediaType(const int64_t& _mediaType);
+
+                    /**
+                     * 判断参数 MediaType 是否已赋值
+                     * @return MediaType 是否已赋值
+                     */
+                    bool MediaTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -169,7 +191,7 @@ namespace TencentCloud
                     bool m_mD5HasBeenSet;
 
                     /**
-                     * 待分析视频的名称，指定后可支持筛选，最多100个中文字符
+                     * 待分析视频的名称，指定后可支持筛选，最多64B
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
@@ -192,6 +214,13 @@ namespace TencentCloud
                      */
                     std::string m_callbackURL;
                     bool m_callbackURLHasBeenSet;
+
+                    /**
+                     * 媒资文件类型，详细定义参见[MediaPreknownInfo.MediaType](https://cloud.tencent.com/document/product/1509/65063#MediaPreknownInfo)
+默认为2(视频)
+                     */
+                    int64_t m_mediaType;
+                    bool m_mediaTypeHasBeenSet;
 
                 };
             }

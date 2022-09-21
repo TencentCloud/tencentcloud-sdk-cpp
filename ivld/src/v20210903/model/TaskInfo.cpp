@@ -33,7 +33,11 @@ TaskInfo::TaskInfo() :
     m_mediaPreknownInfoHasBeenSet(false),
     m_mediaNameHasBeenSet(false),
     m_labelHasBeenSet(false),
-    m_callbackURLHasBeenSet(false)
+    m_callbackURLHasBeenSet(false),
+    m_audioMetadataHasBeenSet(false),
+    m_imageMetadataHasBeenSet(false),
+    m_textMetadataHasBeenSet(false),
+    m_metadataHasBeenSet(false)
 {
 }
 
@@ -179,6 +183,74 @@ CoreInternalOutcome TaskInfo::Deserialize(const rapidjson::Value &value)
         m_callbackURLHasBeenSet = true;
     }
 
+    if (value.HasMember("AudioMetadata") && !value["AudioMetadata"].IsNull())
+    {
+        if (!value["AudioMetadata"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskInfo.AudioMetadata` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_audioMetadata.Deserialize(value["AudioMetadata"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_audioMetadataHasBeenSet = true;
+    }
+
+    if (value.HasMember("ImageMetadata") && !value["ImageMetadata"].IsNull())
+    {
+        if (!value["ImageMetadata"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskInfo.ImageMetadata` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_imageMetadata.Deserialize(value["ImageMetadata"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_imageMetadataHasBeenSet = true;
+    }
+
+    if (value.HasMember("TextMetadata") && !value["TextMetadata"].IsNull())
+    {
+        if (!value["TextMetadata"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskInfo.TextMetadata` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_textMetadata.Deserialize(value["TextMetadata"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_textMetadataHasBeenSet = true;
+    }
+
+    if (value.HasMember("Metadata") && !value["Metadata"].IsNull())
+    {
+        if (!value["Metadata"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskInfo.Metadata` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_metadata.Deserialize(value["Metadata"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_metadataHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -289,6 +361,42 @@ void TaskInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "CallbackURL";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_callbackURL.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_audioMetadataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AudioMetadata";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_audioMetadata.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_imageMetadataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ImageMetadata";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_imageMetadata.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_textMetadataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TextMetadata";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_textMetadata.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_metadataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Metadata";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_metadata.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -500,5 +608,69 @@ void TaskInfo::SetCallbackURL(const string& _callbackURL)
 bool TaskInfo::CallbackURLHasBeenSet() const
 {
     return m_callbackURLHasBeenSet;
+}
+
+AudioMetadata TaskInfo::GetAudioMetadata() const
+{
+    return m_audioMetadata;
+}
+
+void TaskInfo::SetAudioMetadata(const AudioMetadata& _audioMetadata)
+{
+    m_audioMetadata = _audioMetadata;
+    m_audioMetadataHasBeenSet = true;
+}
+
+bool TaskInfo::AudioMetadataHasBeenSet() const
+{
+    return m_audioMetadataHasBeenSet;
+}
+
+ImageMetadata TaskInfo::GetImageMetadata() const
+{
+    return m_imageMetadata;
+}
+
+void TaskInfo::SetImageMetadata(const ImageMetadata& _imageMetadata)
+{
+    m_imageMetadata = _imageMetadata;
+    m_imageMetadataHasBeenSet = true;
+}
+
+bool TaskInfo::ImageMetadataHasBeenSet() const
+{
+    return m_imageMetadataHasBeenSet;
+}
+
+TextMetadata TaskInfo::GetTextMetadata() const
+{
+    return m_textMetadata;
+}
+
+void TaskInfo::SetTextMetadata(const TextMetadata& _textMetadata)
+{
+    m_textMetadata = _textMetadata;
+    m_textMetadataHasBeenSet = true;
+}
+
+bool TaskInfo::TextMetadataHasBeenSet() const
+{
+    return m_textMetadataHasBeenSet;
+}
+
+MediaMetadata TaskInfo::GetMetadata() const
+{
+    return m_metadata;
+}
+
+void TaskInfo::SetMetadata(const MediaMetadata& _metadata)
+{
+    m_metadata = _metadata;
+    m_metadataHasBeenSet = true;
+}
+
+bool TaskInfo::MetadataHasBeenSet() const
+{
+    return m_metadataHasBeenSet;
 }
 

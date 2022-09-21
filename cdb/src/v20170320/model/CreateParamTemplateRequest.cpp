@@ -28,7 +28,8 @@ CreateParamTemplateRequest::CreateParamTemplateRequest() :
     m_engineVersionHasBeenSet(false),
     m_templateIdHasBeenSet(false),
     m_paramListHasBeenSet(false),
-    m_templateTypeHasBeenSet(false)
+    m_templateTypeHasBeenSet(false),
+    m_engineTypeHasBeenSet(false)
 {
 }
 
@@ -92,6 +93,14 @@ string CreateParamTemplateRequest::ToJsonString() const
         string key = "TemplateType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_templateType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_engineTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EngineType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_engineType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -196,6 +205,22 @@ void CreateParamTemplateRequest::SetTemplateType(const string& _templateType)
 bool CreateParamTemplateRequest::TemplateTypeHasBeenSet() const
 {
     return m_templateTypeHasBeenSet;
+}
+
+string CreateParamTemplateRequest::GetEngineType() const
+{
+    return m_engineType;
+}
+
+void CreateParamTemplateRequest::SetEngineType(const string& _engineType)
+{
+    m_engineType = _engineType;
+    m_engineTypeHasBeenSet = true;
+}
+
+bool CreateParamTemplateRequest::EngineTypeHasBeenSet() const
+{
+    return m_engineTypeHasBeenSet;
 }
 
 

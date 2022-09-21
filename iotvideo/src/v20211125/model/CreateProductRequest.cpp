@@ -27,11 +27,12 @@ CreateProductRequest::CreateProductRequest() :
     m_deviceTypeHasBeenSet(false),
     m_productVaildYearsHasBeenSet(false),
     m_featuresHasBeenSet(false),
-    m_chipOsHasBeenSet(false),
     m_chipManufactureIdHasBeenSet(false),
     m_chipIdHasBeenSet(false),
     m_productDescriptionHasBeenSet(false),
+    m_chipOsHasBeenSet(false),
     m_encryptionTypeHasBeenSet(false),
+    m_categoryIdHasBeenSet(false),
     m_netTypeHasBeenSet(false)
 {
 }
@@ -80,14 +81,6 @@ string CreateProductRequest::ToJsonString() const
         }
     }
 
-    if (m_chipOsHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ChipOs";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_chipOs.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_chipManufactureIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -112,12 +105,28 @@ string CreateProductRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_productDescription.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_chipOsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ChipOs";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_chipOs.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_encryptionTypeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EncryptionType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_encryptionType, allocator);
+    }
+
+    if (m_categoryIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CategoryId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_categoryId, allocator);
     }
 
     if (m_netTypeHasBeenSet)
@@ -200,22 +209,6 @@ bool CreateProductRequest::FeaturesHasBeenSet() const
     return m_featuresHasBeenSet;
 }
 
-string CreateProductRequest::GetChipOs() const
-{
-    return m_chipOs;
-}
-
-void CreateProductRequest::SetChipOs(const string& _chipOs)
-{
-    m_chipOs = _chipOs;
-    m_chipOsHasBeenSet = true;
-}
-
-bool CreateProductRequest::ChipOsHasBeenSet() const
-{
-    return m_chipOsHasBeenSet;
-}
-
 string CreateProductRequest::GetChipManufactureId() const
 {
     return m_chipManufactureId;
@@ -264,6 +257,22 @@ bool CreateProductRequest::ProductDescriptionHasBeenSet() const
     return m_productDescriptionHasBeenSet;
 }
 
+string CreateProductRequest::GetChipOs() const
+{
+    return m_chipOs;
+}
+
+void CreateProductRequest::SetChipOs(const string& _chipOs)
+{
+    m_chipOs = _chipOs;
+    m_chipOsHasBeenSet = true;
+}
+
+bool CreateProductRequest::ChipOsHasBeenSet() const
+{
+    return m_chipOsHasBeenSet;
+}
+
 uint64_t CreateProductRequest::GetEncryptionType() const
 {
     return m_encryptionType;
@@ -278,6 +287,22 @@ void CreateProductRequest::SetEncryptionType(const uint64_t& _encryptionType)
 bool CreateProductRequest::EncryptionTypeHasBeenSet() const
 {
     return m_encryptionTypeHasBeenSet;
+}
+
+uint64_t CreateProductRequest::GetCategoryId() const
+{
+    return m_categoryId;
+}
+
+void CreateProductRequest::SetCategoryId(const uint64_t& _categoryId)
+{
+    m_categoryId = _categoryId;
+    m_categoryIdHasBeenSet = true;
+}
+
+bool CreateProductRequest::CategoryIdHasBeenSet() const
+{
+    return m_categoryIdHasBeenSet;
 }
 
 string CreateProductRequest::GetNetType() const

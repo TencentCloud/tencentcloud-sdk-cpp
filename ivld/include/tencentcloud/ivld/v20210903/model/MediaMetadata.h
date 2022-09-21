@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取媒资视频文件大小
-                     * @return FileSize 媒资视频文件大小
+                     * 获取媒资视频文件大小，单位为字节
+                     * @return FileSize 媒资视频文件大小，单位为字节
                      */
                     int64_t GetFileSize() const;
 
                     /**
-                     * 设置媒资视频文件大小
-                     * @param FileSize 媒资视频文件大小
+                     * 设置媒资视频文件大小，单位为字节
+                     * @param FileSize 媒资视频文件大小，单位为字节
                      */
                     void SetFileSize(const int64_t& _fileSize);
 
@@ -217,7 +217,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 媒资视频文件大小
+                     * 媒资视频文件大小，单位为字节
                      */
                     int64_t m_fileSize;
                     bool m_fileSizeHasBeenSet;

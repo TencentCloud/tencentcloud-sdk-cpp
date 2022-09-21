@@ -24,7 +24,8 @@ MediaFilter::MediaFilter() :
     m_mediaNameSetHasBeenSet(false),
     m_statusSetHasBeenSet(false),
     m_mediaIdSetHasBeenSet(false),
-    m_labelSetHasBeenSet(false)
+    m_labelSetHasBeenSet(false),
+    m_mediaTypeHasBeenSet(false)
 {
 }
 
@@ -85,6 +86,16 @@ CoreInternalOutcome MediaFilter::Deserialize(const rapidjson::Value &value)
         m_labelSetHasBeenSet = true;
     }
 
+    if (value.HasMember("MediaType") && !value["MediaType"].IsNull())
+    {
+        if (!value["MediaType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `MediaFilter.MediaType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_mediaType = value["MediaType"].GetInt64();
+        m_mediaTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -142,6 +153,14 @@ void MediaFilter::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_mediaTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MediaType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_mediaType, allocator);
     }
 
 }
@@ -209,5 +228,21 @@ void MediaFilter::SetLabelSet(const vector<string>& _labelSet)
 bool MediaFilter::LabelSetHasBeenSet() const
 {
     return m_labelSetHasBeenSet;
+}
+
+int64_t MediaFilter::GetMediaType() const
+{
+    return m_mediaType;
+}
+
+void MediaFilter::SetMediaType(const int64_t& _mediaType)
+{
+    m_mediaType = _mediaType;
+    m_mediaTypeHasBeenSet = true;
+}
+
+bool MediaFilter::MediaTypeHasBeenSet() const
+{
+    return m_mediaTypeHasBeenSet;
 }
 

@@ -41,6 +41,8 @@
 #include <tencentcloud/essbasic/v20210526/model/ChannelCreateMultiFlowSignQRCodeResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelGetTaskResultApiRequest.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelGetTaskResultApiResponse.h>
+#include <tencentcloud/essbasic/v20210526/model/ChannelVerifyPdfRequest.h>
+#include <tencentcloud/essbasic/v20210526/model/ChannelVerifyPdfResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/CreateChannelFlowEvidenceReportRequest.h>
 #include <tencentcloud/essbasic/v20210526/model/CreateChannelFlowEvidenceReportResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/CreateConsoleLoginUrlRequest.h>
@@ -112,6 +114,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ChannelGetTaskResultApiResponse> ChannelGetTaskResultApiOutcome;
                 typedef std::future<ChannelGetTaskResultApiOutcome> ChannelGetTaskResultApiOutcomeCallable;
                 typedef std::function<void(const EssbasicClient*, const Model::ChannelGetTaskResultApiRequest&, ChannelGetTaskResultApiOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChannelGetTaskResultApiAsyncHandler;
+                typedef Outcome<Core::Error, Model::ChannelVerifyPdfResponse> ChannelVerifyPdfOutcome;
+                typedef std::future<ChannelVerifyPdfOutcome> ChannelVerifyPdfOutcomeCallable;
+                typedef std::function<void(const EssbasicClient*, const Model::ChannelVerifyPdfRequest&, ChannelVerifyPdfOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChannelVerifyPdfAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateChannelFlowEvidenceReportResponse> CreateChannelFlowEvidenceReportOutcome;
                 typedef std::future<CreateChannelFlowEvidenceReportOutcome> CreateChannelFlowEvidenceReportOutcomeCallable;
                 typedef std::function<void(const EssbasicClient*, const Model::CreateChannelFlowEvidenceReportRequest&, CreateChannelFlowEvidenceReportOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateChannelFlowEvidenceReportAsyncHandler;
@@ -163,6 +168,8 @@ namespace TencentCloud
                 /**
                  *指定需要批量撤销的签署流程Id，批量撤销合同
 客户指定需要撤销的签署流程Id，最多100个，超过100不处理；接口失败后返回错误信息
+注意:
+能撤回合同的只能是合同的发起人或者发起企业的超管、法人
                  * @param req ChannelBatchCancelFlowsRequest
                  * @return ChannelBatchCancelFlowsOutcome
                  */
@@ -181,7 +188,10 @@ namespace TencentCloud
 
                 /**
                  *指定需要批量撤销的签署流程Id，获取批量撤销链接
-客户指定需要撤销的签署流程Id，最多100个，超过100不处理；接口调用成功返回批量撤销合同的链接，通过链接跳转到电子签小程序完成批量撤销
+客户指定需要撤销的签署流程Id，最多100个，超过100不处理；
+接口调用成功返回批量撤销合同的链接，通过链接跳转到电子签小程序完成批量撤销;
+注意:
+能撤回合同的只能是合同的发起人或者发起企业的超管、法人
                  * @param req ChannelCreateBatchCancelFlowUrlRequest
                  * @return ChannelCreateBatchCancelFlowUrlOutcome
                  */
@@ -246,6 +256,15 @@ namespace TencentCloud
                 ChannelGetTaskResultApiOutcome ChannelGetTaskResultApi(const Model::ChannelGetTaskResultApiRequest &request);
                 void ChannelGetTaskResultApiAsync(const Model::ChannelGetTaskResultApiRequest& request, const ChannelGetTaskResultApiAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ChannelGetTaskResultApiOutcomeCallable ChannelGetTaskResultApiCallable(const Model::ChannelGetTaskResultApiRequest& request);
+
+                /**
+                 *合同文件验签
+                 * @param req ChannelVerifyPdfRequest
+                 * @return ChannelVerifyPdfOutcome
+                 */
+                ChannelVerifyPdfOutcome ChannelVerifyPdf(const Model::ChannelVerifyPdfRequest &request);
+                void ChannelVerifyPdfAsync(const Model::ChannelVerifyPdfRequest& request, const ChannelVerifyPdfAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ChannelVerifyPdfOutcomeCallable ChannelVerifyPdfCallable(const Model::ChannelVerifyPdfRequest& request);
 
                 /**
                  *【描述】：创建出证报告，返回报告 URL
