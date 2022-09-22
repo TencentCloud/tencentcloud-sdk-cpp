@@ -44,14 +44,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取负载均衡实例ID。
-                     * @return LoadBalancerIds 负载均衡实例ID。
+                     * 获取负载均衡实例ID。实例ID数量上限为20个。
+                     * @return LoadBalancerIds 负载均衡实例ID。实例ID数量上限为20个。
                      */
                     std::vector<std::string> GetLoadBalancerIds() const;
 
                     /**
-                     * 设置负载均衡实例ID。
-                     * @param LoadBalancerIds 负载均衡实例ID。
+                     * 设置负载均衡实例ID。实例ID数量上限为20个。
+                     * @param LoadBalancerIds 负载均衡实例ID。实例ID数量上限为20个。
                      */
                     void SetLoadBalancerIds(const std::vector<std::string>& _loadBalancerIds);
 
@@ -432,7 +432,7 @@ OPEN：公网属性， INTERNAL：内网属性。
                 private:
 
                     /**
-                     * 负载均衡实例ID。
+                     * 负载均衡实例ID。实例ID数量上限为20个。
                      */
                     std::vector<std::string> m_loadBalancerIds;
                     bool m_loadBalancerIdsHasBeenSet;

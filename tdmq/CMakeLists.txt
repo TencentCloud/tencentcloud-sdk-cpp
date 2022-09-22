@@ -38,6 +38,7 @@ set(tdmq_public_header_model
   include/tencentcloud/tdmq/v20200217/model/BindCluster.h
   include/tencentcloud/tdmq/v20200217/model/ModifyClusterResponse.h
   include/tencentcloud/tdmq/v20200217/model/RocketMQClusterRecentStats.h
+  include/tencentcloud/tdmq/v20200217/model/RocketMQVipInstance.h
   include/tencentcloud/tdmq/v20200217/model/DescribeCmqQueuesResponse.h
   include/tencentcloud/tdmq/v20200217/model/DescribeAllTenantsResponse.h
   include/tencentcloud/tdmq/v20200217/model/DescribeNamespaceBundlesOptResponse.h
@@ -173,6 +174,7 @@ set(tdmq_public_header_model
   include/tencentcloud/tdmq/v20200217/model/DescribeAMQPRouteRelationsResponse.h
   include/tencentcloud/tdmq/v20200217/model/DeleteTopicsResponse.h
   include/tencentcloud/tdmq/v20200217/model/CreateAMQPClusterResponse.h
+  include/tencentcloud/tdmq/v20200217/model/DescribeRocketMQVipInstancesRequest.h
   include/tencentcloud/tdmq/v20200217/model/DeleteAMQPExchangeRequest.h
   include/tencentcloud/tdmq/v20200217/model/DeleteRocketMQClusterResponse.h
   include/tencentcloud/tdmq/v20200217/model/CreateCmqTopicResponse.h
@@ -251,6 +253,7 @@ set(tdmq_public_header_model
   include/tencentcloud/tdmq/v20200217/model/SendCmqMsgRequest.h
   include/tencentcloud/tdmq/v20200217/model/ModifyCmqQueueAttributeRequest.h
   include/tencentcloud/tdmq/v20200217/model/ModifyRocketMQGroupResponse.h
+  include/tencentcloud/tdmq/v20200217/model/DescribeRocketMQVipInstancesResponse.h
   include/tencentcloud/tdmq/v20200217/model/AMQPClusterDetail.h
   include/tencentcloud/tdmq/v20200217/model/DescribeClusterDetailResponse.h
   include/tencentcloud/tdmq/v20200217/model/SendMessagesRequest.h
@@ -280,6 +283,7 @@ set(tdmq_src
   src/v20200217/model/BindCluster.cpp
   src/v20200217/model/ModifyClusterResponse.cpp
   src/v20200217/model/RocketMQClusterRecentStats.cpp
+  src/v20200217/model/RocketMQVipInstance.cpp
   src/v20200217/model/DescribeCmqQueuesResponse.cpp
   src/v20200217/model/DescribeAllTenantsResponse.cpp
   src/v20200217/model/DescribeNamespaceBundlesOptResponse.cpp
@@ -415,6 +419,7 @@ set(tdmq_src
   src/v20200217/model/DescribeAMQPRouteRelationsResponse.cpp
   src/v20200217/model/DeleteTopicsResponse.cpp
   src/v20200217/model/CreateAMQPClusterResponse.cpp
+  src/v20200217/model/DescribeRocketMQVipInstancesRequest.cpp
   src/v20200217/model/DeleteAMQPExchangeRequest.cpp
   src/v20200217/model/DeleteRocketMQClusterResponse.cpp
   src/v20200217/model/CreateCmqTopicResponse.cpp
@@ -493,6 +498,7 @@ set(tdmq_src
   src/v20200217/model/SendCmqMsgRequest.cpp
   src/v20200217/model/ModifyCmqQueueAttributeRequest.cpp
   src/v20200217/model/ModifyRocketMQGroupResponse.cpp
+  src/v20200217/model/DescribeRocketMQVipInstancesResponse.cpp
   src/v20200217/model/AMQPClusterDetail.cpp
   src/v20200217/model/DescribeClusterDetailResponse.cpp
   src/v20200217/model/SendMessagesRequest.cpp

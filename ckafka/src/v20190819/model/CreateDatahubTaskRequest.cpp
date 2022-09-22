@@ -31,7 +31,8 @@ CreateDatahubTaskRequest::CreateDatahubTaskRequest() :
     m_privateLinkParamHasBeenSet(false),
     m_schemaIdHasBeenSet(false),
     m_transformsParamHasBeenSet(false),
-    m_taskIdHasBeenSet(false)
+    m_taskIdHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -117,6 +118,21 @@ string CreateDatahubTaskRequest::ToJsonString() const
         string key = "TaskId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_taskId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -269,6 +285,22 @@ void CreateDatahubTaskRequest::SetTaskId(const string& _taskId)
 bool CreateDatahubTaskRequest::TaskIdHasBeenSet() const
 {
     return m_taskIdHasBeenSet;
+}
+
+vector<Tag> CreateDatahubTaskRequest::GetTags() const
+{
+    return m_tags;
+}
+
+void CreateDatahubTaskRequest::SetTags(const vector<Tag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool CreateDatahubTaskRequest::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 
 

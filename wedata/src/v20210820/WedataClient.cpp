@@ -470,6 +470,92 @@ WedataClient::DeleteWorkflowNewOutcomeCallable WedataClient::DeleteWorkflowNewCa
     return task->get_future();
 }
 
+WedataClient::DescribeDataSourceListOutcome WedataClient::DescribeDataSourceList(const DescribeDataSourceListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDataSourceList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDataSourceListResponse rsp = DescribeDataSourceListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDataSourceListOutcome(rsp);
+        else
+            return DescribeDataSourceListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDataSourceListOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::DescribeDataSourceListAsync(const DescribeDataSourceListRequest& request, const DescribeDataSourceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDataSourceList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WedataClient::DescribeDataSourceListOutcomeCallable WedataClient::DescribeDataSourceListCallable(const DescribeDataSourceListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDataSourceListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDataSourceList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WedataClient::DescribeDataSourceWithoutInfoOutcome WedataClient::DescribeDataSourceWithoutInfo(const DescribeDataSourceWithoutInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDataSourceWithoutInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDataSourceWithoutInfoResponse rsp = DescribeDataSourceWithoutInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDataSourceWithoutInfoOutcome(rsp);
+        else
+            return DescribeDataSourceWithoutInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDataSourceWithoutInfoOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::DescribeDataSourceWithoutInfoAsync(const DescribeDataSourceWithoutInfoRequest& request, const DescribeDataSourceWithoutInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDataSourceWithoutInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WedataClient::DescribeDataSourceWithoutInfoOutcomeCallable WedataClient::DescribeDataSourceWithoutInfoCallable(const DescribeDataSourceWithoutInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDataSourceWithoutInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDataSourceWithoutInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WedataClient::DescribeDatasourceOutcome WedataClient::DescribeDatasource(const DescribeDatasourceRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDatasource");

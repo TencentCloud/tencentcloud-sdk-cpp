@@ -33,6 +33,7 @@ set(ccc_public_header_model
   include/tencentcloud/ccc/v20200210/model/TelCdrInfo.h
   include/tencentcloud/ccc/v20200210/model/CreateUserSigRequest.h
   include/tencentcloud/ccc/v20200210/model/PhoneNumBuyInfo.h
+  include/tencentcloud/ccc/v20200210/model/DisableCCCPhoneNumberResponse.h
   include/tencentcloud/ccc/v20200210/model/CreateCCCSkillGroupRequest.h
   include/tencentcloud/ccc/v20200210/model/DescribeIMCdrsRequest.h
   include/tencentcloud/ccc/v20200210/model/DescribeAutoCalloutTaskResponse.h
@@ -58,6 +59,7 @@ set(ccc_public_header_model
   include/tencentcloud/ccc/v20200210/model/DescribePSTNActiveSessionListResponse.h
   include/tencentcloud/ccc/v20200210/model/CreateCallOutSessionResponse.h
   include/tencentcloud/ccc/v20200210/model/IMCdrInfo.h
+  include/tencentcloud/ccc/v20200210/model/DisableCCCPhoneNumberRequest.h
   include/tencentcloud/ccc/v20200210/model/StaffBuyInfo.h
   include/tencentcloud/ccc/v20200210/model/DescribeProtectedTelCdrResponse.h
   include/tencentcloud/ccc/v20200210/model/DescribeAutoCalloutTasksRequest.h
@@ -111,6 +113,7 @@ set(ccc_src
   src/v20200210/model/TelCdrInfo.cpp
   src/v20200210/model/CreateUserSigRequest.cpp
   src/v20200210/model/PhoneNumBuyInfo.cpp
+  src/v20200210/model/DisableCCCPhoneNumberResponse.cpp
   src/v20200210/model/CreateCCCSkillGroupRequest.cpp
   src/v20200210/model/DescribeIMCdrsRequest.cpp
   src/v20200210/model/DescribeAutoCalloutTaskResponse.cpp
@@ -136,6 +139,7 @@ set(ccc_src
   src/v20200210/model/DescribePSTNActiveSessionListResponse.cpp
   src/v20200210/model/CreateCallOutSessionResponse.cpp
   src/v20200210/model/IMCdrInfo.cpp
+  src/v20200210/model/DisableCCCPhoneNumberRequest.cpp
   src/v20200210/model/StaffBuyInfo.cpp
   src/v20200210/model/DescribeProtectedTelCdrResponse.cpp
   src/v20200210/model/DescribeAutoCalloutTasksRequest.cpp

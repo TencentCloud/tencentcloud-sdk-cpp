@@ -30,6 +30,7 @@
 #include <tencentcloud/ckafka/v20190819/model/RegexReplaceParam.h>
 #include <tencentcloud/ckafka/v20190819/model/SplitParam.h>
 #include <tencentcloud/ckafka/v20190819/model/KVParam.h>
+#include <tencentcloud/ckafka/v20190819/model/JsonPathReplaceParam.h>
 
 
 namespace TencentCloud
@@ -224,6 +225,28 @@ namespace TencentCloud
                      */
                     bool ResultHasBeenSet() const;
 
+                    /**
+                     * 获取JsonPath替换，TYPE=JSON_PATH_REPLACE时必传
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return JsonPathReplace JsonPath替换，TYPE=JSON_PATH_REPLACE时必传
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    JsonPathReplaceParam GetJsonPathReplace() const;
+
+                    /**
+                     * 设置JsonPath替换，TYPE=JSON_PATH_REPLACE时必传
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param JsonPathReplace JsonPath替换，TYPE=JSON_PATH_REPLACE时必传
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetJsonPathReplace(const JsonPathReplaceParam& _jsonPathReplace);
+
+                    /**
+                     * 判断参数 JsonPathReplace 是否已赋值
+                     * @return JsonPathReplace 是否已赋值
+                     */
+                    bool JsonPathReplaceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -280,6 +303,13 @@ namespace TencentCloud
                      */
                     std::string m_result;
                     bool m_resultHasBeenSet;
+
+                    /**
+                     * JsonPath替换，TYPE=JSON_PATH_REPLACE时必传
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    JsonPathReplaceParam m_jsonPathReplace;
+                    bool m_jsonPathReplaceHasBeenSet;
 
                 };
             }

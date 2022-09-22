@@ -311,6 +311,92 @@ namespace TencentCloud
                      */
                     bool JsonStandardHasBeenSet() const;
 
+                    /**
+                     * 获取syslog传输协议，取值为tcp或者udp。
+该接口适用于：创建采集规则配置、修改采集规则配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Protocol syslog传输协议，取值为tcp或者udp。
+该接口适用于：创建采集规则配置、修改采集规则配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetProtocol() const;
+
+                    /**
+                     * 设置syslog传输协议，取值为tcp或者udp。
+该接口适用于：创建采集规则配置、修改采集规则配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Protocol syslog传输协议，取值为tcp或者udp。
+该接口适用于：创建采集规则配置、修改采集规则配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetProtocol(const std::string& _protocol);
+
+                    /**
+                     * 判断参数 Protocol 是否已赋值
+                     * @return Protocol 是否已赋值
+                     */
+                    bool ProtocolHasBeenSet() const;
+
+                    /**
+                     * 获取syslog系统日志采集指定采集器监听的地址和端口 ，形式：[ip]:[port]。举例：127.0.0.1:9000
+该接口适用于：创建采集规则配置、修改采集规则配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Address syslog系统日志采集指定采集器监听的地址和端口 ，形式：[ip]:[port]。举例：127.0.0.1:9000
+该接口适用于：创建采集规则配置、修改采集规则配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetAddress() const;
+
+                    /**
+                     * 设置syslog系统日志采集指定采集器监听的地址和端口 ，形式：[ip]:[port]。举例：127.0.0.1:9000
+该接口适用于：创建采集规则配置、修改采集规则配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Address syslog系统日志采集指定采集器监听的地址和端口 ，形式：[ip]:[port]。举例：127.0.0.1:9000
+该接口适用于：创建采集规则配置、修改采集规则配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAddress(const std::string& _address);
+
+                    /**
+                     * 判断参数 Address 是否已赋值
+                     * @return Address 是否已赋值
+                     */
+                    bool AddressHasBeenSet() const;
+
+                    /**
+                     * 获取rfc3164：指定系统日志采集使用RFC3164协议解析日志。
+rfc5424：指定系统日志采集使用RFC5424协议解析日志。
+auto：自动匹配rfc3164或者rfc5424其中一种协议
+该接口适用于：创建采集规则配置、修改采集规则配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ParseProtocol rfc3164：指定系统日志采集使用RFC3164协议解析日志。
+rfc5424：指定系统日志采集使用RFC5424协议解析日志。
+auto：自动匹配rfc3164或者rfc5424其中一种协议
+该接口适用于：创建采集规则配置、修改采集规则配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetParseProtocol() const;
+
+                    /**
+                     * 设置rfc3164：指定系统日志采集使用RFC3164协议解析日志。
+rfc5424：指定系统日志采集使用RFC5424协议解析日志。
+auto：自动匹配rfc3164或者rfc5424其中一种协议
+该接口适用于：创建采集规则配置、修改采集规则配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ParseProtocol rfc3164：指定系统日志采集使用RFC3164协议解析日志。
+rfc5424：指定系统日志采集使用RFC5424协议解析日志。
+auto：自动匹配rfc3164或者rfc5424其中一种协议
+该接口适用于：创建采集规则配置、修改采集规则配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetParseProtocol(const std::string& _parseProtocol);
+
+                    /**
+                     * 判断参数 ParseProtocol 是否已赋值
+                     * @return ParseProtocol 是否已赋值
+                     */
+                    bool ParseProtocolHasBeenSet() const;
+
                 private:
 
                     /**
@@ -396,6 +482,32 @@ namespace TencentCloud
                      */
                     int64_t m_jsonStandard;
                     bool m_jsonStandardHasBeenSet;
+
+                    /**
+                     * syslog传输协议，取值为tcp或者udp。
+该接口适用于：创建采集规则配置、修改采集规则配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_protocol;
+                    bool m_protocolHasBeenSet;
+
+                    /**
+                     * syslog系统日志采集指定采集器监听的地址和端口 ，形式：[ip]:[port]。举例：127.0.0.1:9000
+该接口适用于：创建采集规则配置、修改采集规则配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_address;
+                    bool m_addressHasBeenSet;
+
+                    /**
+                     * rfc3164：指定系统日志采集使用RFC3164协议解析日志。
+rfc5424：指定系统日志采集使用RFC5424协议解析日志。
+auto：自动匹配rfc3164或者rfc5424其中一种协议
+该接口适用于：创建采集规则配置、修改采集规则配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_parseProtocol;
+                    bool m_parseProtocolHasBeenSet;
 
                 };
             }

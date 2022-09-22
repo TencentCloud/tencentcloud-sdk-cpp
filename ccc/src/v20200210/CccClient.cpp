@@ -986,6 +986,49 @@ CccClient::DescribeTelSessionOutcomeCallable CccClient::DescribeTelSessionCallab
     return task->get_future();
 }
 
+CccClient::DisableCCCPhoneNumberOutcome CccClient::DisableCCCPhoneNumber(const DisableCCCPhoneNumberRequest &request)
+{
+    auto outcome = MakeRequest(request, "DisableCCCPhoneNumber");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DisableCCCPhoneNumberResponse rsp = DisableCCCPhoneNumberResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DisableCCCPhoneNumberOutcome(rsp);
+        else
+            return DisableCCCPhoneNumberOutcome(o.GetError());
+    }
+    else
+    {
+        return DisableCCCPhoneNumberOutcome(outcome.GetError());
+    }
+}
+
+void CccClient::DisableCCCPhoneNumberAsync(const DisableCCCPhoneNumberRequest& request, const DisableCCCPhoneNumberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DisableCCCPhoneNumber(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CccClient::DisableCCCPhoneNumberOutcomeCallable CccClient::DisableCCCPhoneNumberCallable(const DisableCCCPhoneNumberRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DisableCCCPhoneNumberOutcome()>>(
+        [this, request]()
+        {
+            return this->DisableCCCPhoneNumber(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CccClient::ModifyStaffOutcome CccClient::ModifyStaff(const ModifyStaffRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyStaff");

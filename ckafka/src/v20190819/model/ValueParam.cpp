@@ -28,7 +28,8 @@ ValueParam::ValueParam() :
     m_regexReplaceHasBeenSet(false),
     m_splitHasBeenSet(false),
     m_kVHasBeenSet(false),
-    m_resultHasBeenSet(false)
+    m_resultHasBeenSet(false),
+    m_jsonPathReplaceHasBeenSet(false)
 {
 }
 
@@ -159,6 +160,23 @@ CoreInternalOutcome ValueParam::Deserialize(const rapidjson::Value &value)
         m_resultHasBeenSet = true;
     }
 
+    if (value.HasMember("JsonPathReplace") && !value["JsonPathReplace"].IsNull())
+    {
+        if (!value["JsonPathReplace"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ValueParam.JsonPathReplace` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_jsonPathReplace.Deserialize(value["JsonPathReplace"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_jsonPathReplaceHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -234,6 +252,15 @@ void ValueParam::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "Result";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_result.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_jsonPathReplaceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "JsonPathReplace";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_jsonPathReplace.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -365,5 +392,21 @@ void ValueParam::SetResult(const string& _result)
 bool ValueParam::ResultHasBeenSet() const
 {
     return m_resultHasBeenSet;
+}
+
+JsonPathReplaceParam ValueParam::GetJsonPathReplace() const
+{
+    return m_jsonPathReplace;
+}
+
+void ValueParam::SetJsonPathReplace(const JsonPathReplaceParam& _jsonPathReplace)
+{
+    m_jsonPathReplace = _jsonPathReplace;
+    m_jsonPathReplaceHasBeenSet = true;
+}
+
+bool ValueParam::JsonPathReplaceHasBeenSet() const
+{
+    return m_jsonPathReplaceHasBeenSet;
 }
 

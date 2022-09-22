@@ -43,6 +43,10 @@
 #include <tencentcloud/wedata/v20210820/model/DeleteFolderResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DeleteWorkflowNewRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DeleteWorkflowNewResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeDataSourceListRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeDataSourceListResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeDataSourceWithoutInfoRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeDataSourceWithoutInfoResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeDatasourceRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeDatasourceResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeDependTasksNewRequest.h>
@@ -151,6 +155,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteWorkflowNewResponse> DeleteWorkflowNewOutcome;
                 typedef std::future<DeleteWorkflowNewOutcome> DeleteWorkflowNewOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DeleteWorkflowNewRequest&, DeleteWorkflowNewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteWorkflowNewAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDataSourceListResponse> DescribeDataSourceListOutcome;
+                typedef std::future<DescribeDataSourceListOutcome> DescribeDataSourceListOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeDataSourceListRequest&, DescribeDataSourceListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDataSourceListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDataSourceWithoutInfoResponse> DescribeDataSourceWithoutInfoOutcome;
+                typedef std::future<DescribeDataSourceWithoutInfoOutcome> DescribeDataSourceWithoutInfoOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeDataSourceWithoutInfoRequest&, DescribeDataSourceWithoutInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDataSourceWithoutInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDatasourceResponse> DescribeDatasourceOutcome;
                 typedef std::future<DescribeDatasourceOutcome> DescribeDatasourceOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeDatasourceRequest&, DescribeDatasourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDatasourceAsyncHandler;
@@ -350,6 +360,26 @@ namespace TencentCloud
                 DeleteWorkflowNewOutcome DeleteWorkflowNew(const Model::DeleteWorkflowNewRequest &request);
                 void DeleteWorkflowNewAsync(const Model::DeleteWorkflowNewRequest& request, const DeleteWorkflowNewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteWorkflowNewOutcomeCallable DeleteWorkflowNewCallable(const Model::DeleteWorkflowNewRequest& request);
+
+                /**
+                 *<p style="color:red;">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>
+数据源详情
+                 * @param req DescribeDataSourceListRequest
+                 * @return DescribeDataSourceListOutcome
+                 */
+                DescribeDataSourceListOutcome DescribeDataSourceList(const Model::DescribeDataSourceListRequest &request);
+                void DescribeDataSourceListAsync(const Model::DescribeDataSourceListRequest& request, const DescribeDataSourceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDataSourceListOutcomeCallable DescribeDataSourceListCallable(const Model::DescribeDataSourceListRequest& request);
+
+                /**
+                 *<p style="color:red;">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>
+数据源列表
+                 * @param req DescribeDataSourceWithoutInfoRequest
+                 * @return DescribeDataSourceWithoutInfoOutcome
+                 */
+                DescribeDataSourceWithoutInfoOutcome DescribeDataSourceWithoutInfo(const Model::DescribeDataSourceWithoutInfoRequest &request);
+                void DescribeDataSourceWithoutInfoAsync(const Model::DescribeDataSourceWithoutInfoRequest& request, const DescribeDataSourceWithoutInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDataSourceWithoutInfoOutcomeCallable DescribeDataSourceWithoutInfoCallable(const Model::DescribeDataSourceWithoutInfoRequest& request);
 
                 /**
                  *<p style="color:red;">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>

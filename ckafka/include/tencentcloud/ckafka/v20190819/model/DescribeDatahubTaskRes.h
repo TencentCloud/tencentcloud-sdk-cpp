@@ -28,6 +28,7 @@
 #include <tencentcloud/ckafka/v20190819/model/Connection.h>
 #include <tencentcloud/ckafka/v20190819/model/TransformParam.h>
 #include <tencentcloud/ckafka/v20190819/model/TransformsParam.h>
+#include <tencentcloud/ckafka/v20190819/model/Tag.h>
 
 
 namespace TencentCloud
@@ -342,6 +343,28 @@ namespace TencentCloud
                      */
                     bool ErrorMessageHasBeenSet() const;
 
+                    /**
+                     * 获取任务标签列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Tags 任务标签列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Tag> GetTags() const;
+
+                    /**
+                     * 设置任务标签列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Tags 任务标签列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTags(const std::vector<Tag>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     */
+                    bool TagsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -437,6 +460,13 @@ namespace TencentCloud
                      */
                     std::string m_errorMessage;
                     bool m_errorMessageHasBeenSet;
+
+                    /**
+                     * 任务标签列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Tag> m_tags;
+                    bool m_tagsHasBeenSet;
 
                 };
             }

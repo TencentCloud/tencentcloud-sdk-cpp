@@ -481,7 +481,7 @@ namespace TencentCloud
                 DescribeDataEventUrlOutcomeCallable DescribeDataEventUrlCallable(const Model::DescribeDataEventUrlRequest& request);
 
                 /**
-                 *获取DescribeDataFetchProject信息
+                 *获取DescribeDataFetchProject信息。已下线，请使用DescribeDataFetchUrl
                  * @param req DescribeDataFetchProjectRequest
                  * @return DescribeDataFetchProjectOutcome
                  */

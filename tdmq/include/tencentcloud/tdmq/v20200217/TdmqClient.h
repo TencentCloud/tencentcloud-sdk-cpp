@@ -161,6 +161,8 @@
 #include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQNamespacesResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQTopicsRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQTopicsResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQVipInstancesRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQVipInstancesResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeRolesRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeRolesResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeSubscriptionsRequest.h>
@@ -440,6 +442,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeRocketMQTopicsResponse> DescribeRocketMQTopicsOutcome;
                 typedef std::future<DescribeRocketMQTopicsOutcome> DescribeRocketMQTopicsOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::DescribeRocketMQTopicsRequest&, DescribeRocketMQTopicsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRocketMQTopicsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRocketMQVipInstancesResponse> DescribeRocketMQVipInstancesOutcome;
+                typedef std::future<DescribeRocketMQVipInstancesOutcome> DescribeRocketMQVipInstancesOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::DescribeRocketMQVipInstancesRequest&, DescribeRocketMQVipInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRocketMQVipInstancesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRolesResponse> DescribeRolesOutcome;
                 typedef std::future<DescribeRolesOutcome> DescribeRolesOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::DescribeRolesRequest&, DescribeRolesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRolesAsyncHandler;
@@ -1150,6 +1155,15 @@ namespace TencentCloud
                 DescribeRocketMQTopicsOutcome DescribeRocketMQTopics(const Model::DescribeRocketMQTopicsRequest &request);
                 void DescribeRocketMQTopicsAsync(const Model::DescribeRocketMQTopicsRequest& request, const DescribeRocketMQTopicsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeRocketMQTopicsOutcomeCallable DescribeRocketMQTopicsCallable(const Model::DescribeRocketMQTopicsRequest& request);
+
+                /**
+                 *查询用户已购的RocketMQ专享实例列表
+                 * @param req DescribeRocketMQVipInstancesRequest
+                 * @return DescribeRocketMQVipInstancesOutcome
+                 */
+                DescribeRocketMQVipInstancesOutcome DescribeRocketMQVipInstances(const Model::DescribeRocketMQVipInstancesRequest &request);
+                void DescribeRocketMQVipInstancesAsync(const Model::DescribeRocketMQVipInstancesRequest& request, const DescribeRocketMQVipInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRocketMQVipInstancesOutcomeCallable DescribeRocketMQVipInstancesCallable(const Model::DescribeRocketMQVipInstancesRequest& request);
 
                 /**
                  *获取角色列表

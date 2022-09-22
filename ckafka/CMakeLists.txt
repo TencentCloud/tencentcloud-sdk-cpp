@@ -111,6 +111,7 @@ set(ckafka_public_header_model
   include/tencentcloud/ckafka/v20190819/model/CreateUserResponse.h
   include/tencentcloud/ckafka/v20190819/model/DescribeDatahubTaskRes.h
   include/tencentcloud/ckafka/v20190819/model/CreatePartitionResponse.h
+  include/tencentcloud/ckafka/v20190819/model/MongoDBConnectParam.h
   include/tencentcloud/ckafka/v20190819/model/ClusterInfo.h
   include/tencentcloud/ckafka/v20190819/model/DeleteGroupRequest.h
   include/tencentcloud/ckafka/v20190819/model/DescribeConsumerGroupRequest.h
@@ -212,7 +213,7 @@ set(ckafka_public_header_model
   include/tencentcloud/ckafka/v20190819/model/CheckCdcClusterRequest.h
   include/tencentcloud/ckafka/v20190819/model/FetchMessageByOffsetRequest.h
   include/tencentcloud/ckafka/v20190819/model/DescribeInstancesDetailRequest.h
-  include/tencentcloud/ckafka/v20190819/model/MongoDBConnectParam.h
+  include/tencentcloud/ckafka/v20190819/model/JsonPathReplaceParam.h
   include/tencentcloud/ckafka/v20190819/model/SubstrParam.h
   include/tencentcloud/ckafka/v20190819/model/FetchMessageByOffsetResponse.h
   include/tencentcloud/ckafka/v20190819/model/CreateConsumerRequest.h
@@ -377,6 +378,7 @@ set(ckafka_src
   src/v20190819/model/CreateUserResponse.cpp
   src/v20190819/model/DescribeDatahubTaskRes.cpp
   src/v20190819/model/CreatePartitionResponse.cpp
+  src/v20190819/model/MongoDBConnectParam.cpp
   src/v20190819/model/ClusterInfo.cpp
   src/v20190819/model/DeleteGroupRequest.cpp
   src/v20190819/model/DescribeConsumerGroupRequest.cpp
@@ -478,7 +480,7 @@ set(ckafka_src
   src/v20190819/model/CheckCdcClusterRequest.cpp
   src/v20190819/model/FetchMessageByOffsetRequest.cpp
   src/v20190819/model/DescribeInstancesDetailRequest.cpp
-  src/v20190819/model/MongoDBConnectParam.cpp
+  src/v20190819/model/JsonPathReplaceParam.cpp
   src/v20190819/model/SubstrParam.cpp
   src/v20190819/model/FetchMessageByOffsetResponse.cpp
   src/v20190819/model/CreateConsumerRequest.cpp

@@ -32,7 +32,10 @@ ExtractRuleInfo::ExtractRuleInfo() :
     m_unMatchLogKeyHasBeenSet(false),
     m_backtrackingHasBeenSet(false),
     m_isGBKHasBeenSet(false),
-    m_jsonStandardHasBeenSet(false)
+    m_jsonStandardHasBeenSet(false),
+    m_protocolHasBeenSet(false),
+    m_addressHasBeenSet(false),
+    m_parseProtocolHasBeenSet(false)
 {
 }
 
@@ -174,6 +177,36 @@ CoreInternalOutcome ExtractRuleInfo::Deserialize(const rapidjson::Value &value)
         m_jsonStandardHasBeenSet = true;
     }
 
+    if (value.HasMember("Protocol") && !value["Protocol"].IsNull())
+    {
+        if (!value["Protocol"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ExtractRuleInfo.Protocol` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_protocol = string(value["Protocol"].GetString());
+        m_protocolHasBeenSet = true;
+    }
+
+    if (value.HasMember("Address") && !value["Address"].IsNull())
+    {
+        if (!value["Address"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ExtractRuleInfo.Address` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_address = string(value["Address"].GetString());
+        m_addressHasBeenSet = true;
+    }
+
+    if (value.HasMember("ParseProtocol") && !value["ParseProtocol"].IsNull())
+    {
+        if (!value["ParseProtocol"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ExtractRuleInfo.ParseProtocol` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_parseProtocol = string(value["ParseProtocol"].GetString());
+        m_parseProtocolHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -287,6 +320,30 @@ void ExtractRuleInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "JsonStandard";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_jsonStandard, allocator);
+    }
+
+    if (m_protocolHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Protocol";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_protocol.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_addressHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Address";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_address.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_parseProtocolHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ParseProtocol";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_parseProtocol.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -482,5 +539,53 @@ void ExtractRuleInfo::SetJsonStandard(const int64_t& _jsonStandard)
 bool ExtractRuleInfo::JsonStandardHasBeenSet() const
 {
     return m_jsonStandardHasBeenSet;
+}
+
+string ExtractRuleInfo::GetProtocol() const
+{
+    return m_protocol;
+}
+
+void ExtractRuleInfo::SetProtocol(const string& _protocol)
+{
+    m_protocol = _protocol;
+    m_protocolHasBeenSet = true;
+}
+
+bool ExtractRuleInfo::ProtocolHasBeenSet() const
+{
+    return m_protocolHasBeenSet;
+}
+
+string ExtractRuleInfo::GetAddress() const
+{
+    return m_address;
+}
+
+void ExtractRuleInfo::SetAddress(const string& _address)
+{
+    m_address = _address;
+    m_addressHasBeenSet = true;
+}
+
+bool ExtractRuleInfo::AddressHasBeenSet() const
+{
+    return m_addressHasBeenSet;
+}
+
+string ExtractRuleInfo::GetParseProtocol() const
+{
+    return m_parseProtocol;
+}
+
+void ExtractRuleInfo::SetParseProtocol(const string& _parseProtocol)
+{
+    m_parseProtocol = _parseProtocol;
+    m_parseProtocolHasBeenSet = true;
+}
+
+bool ExtractRuleInfo::ParseProtocolHasBeenSet() const
+{
+    return m_parseProtocolHasBeenSet;
 }
 

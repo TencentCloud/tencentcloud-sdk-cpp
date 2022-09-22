@@ -67,6 +67,8 @@
 #include <tencentcloud/ccc/v20200210/model/DescribeTelCdrResponse.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeTelSessionRequest.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeTelSessionResponse.h>
+#include <tencentcloud/ccc/v20200210/model/DisableCCCPhoneNumberRequest.h>
+#include <tencentcloud/ccc/v20200210/model/DisableCCCPhoneNumberResponse.h>
 #include <tencentcloud/ccc/v20200210/model/ModifyStaffRequest.h>
 #include <tencentcloud/ccc/v20200210/model/ModifyStaffResponse.h>
 #include <tencentcloud/ccc/v20200210/model/StopAutoCalloutTaskRequest.h>
@@ -153,6 +155,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeTelSessionResponse> DescribeTelSessionOutcome;
                 typedef std::future<DescribeTelSessionOutcome> DescribeTelSessionOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::DescribeTelSessionRequest&, DescribeTelSessionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTelSessionAsyncHandler;
+                typedef Outcome<Core::Error, Model::DisableCCCPhoneNumberResponse> DisableCCCPhoneNumberOutcome;
+                typedef std::future<DisableCCCPhoneNumberOutcome> DisableCCCPhoneNumberOutcomeCallable;
+                typedef std::function<void(const CccClient*, const Model::DisableCCCPhoneNumberRequest&, DisableCCCPhoneNumberOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisableCCCPhoneNumberAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyStaffResponse> ModifyStaffOutcome;
                 typedef std::future<ModifyStaffOutcome> ModifyStaffOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::ModifyStaffRequest&, ModifyStaffOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyStaffAsyncHandler;
@@ -362,6 +367,15 @@ namespace TencentCloud
                 DescribeTelSessionOutcome DescribeTelSession(const Model::DescribeTelSessionRequest &request);
                 void DescribeTelSessionAsync(const Model::DescribeTelSessionRequest& request, const DescribeTelSessionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeTelSessionOutcomeCallable DescribeTelSessionCallable(const Model::DescribeTelSessionRequest& request);
+
+                /**
+                 *停用号码
+                 * @param req DisableCCCPhoneNumberRequest
+                 * @return DisableCCCPhoneNumberOutcome
+                 */
+                DisableCCCPhoneNumberOutcome DisableCCCPhoneNumber(const Model::DisableCCCPhoneNumberRequest &request);
+                void DisableCCCPhoneNumberAsync(const Model::DisableCCCPhoneNumberRequest& request, const DisableCCCPhoneNumberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DisableCCCPhoneNumberOutcomeCallable DisableCCCPhoneNumberCallable(const Model::DisableCCCPhoneNumberRequest& request);
 
                 /**
                  *修改客服账号
