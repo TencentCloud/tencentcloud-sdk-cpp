@@ -49,7 +49,9 @@ CreateInstancesRequest::CreateInstancesRequest() :
     m_dBNodeSetHasBeenSet(false),
     m_needSupportTDEHasBeenSet(false),
     m_kMSKeyIdHasBeenSet(false),
-    m_kMSRegionHasBeenSet(false)
+    m_kMSRegionHasBeenSet(false),
+    m_dBEngineHasBeenSet(false),
+    m_dBEngineConfigHasBeenSet(false)
 {
 }
 
@@ -298,6 +300,22 @@ string CreateInstancesRequest::ToJsonString() const
         string key = "KMSRegion";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_kMSRegion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dBEngineHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DBEngine";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_dBEngine.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dBEngineConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DBEngineConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_dBEngineConfig.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -738,6 +756,38 @@ void CreateInstancesRequest::SetKMSRegion(const string& _kMSRegion)
 bool CreateInstancesRequest::KMSRegionHasBeenSet() const
 {
     return m_kMSRegionHasBeenSet;
+}
+
+string CreateInstancesRequest::GetDBEngine() const
+{
+    return m_dBEngine;
+}
+
+void CreateInstancesRequest::SetDBEngine(const string& _dBEngine)
+{
+    m_dBEngine = _dBEngine;
+    m_dBEngineHasBeenSet = true;
+}
+
+bool CreateInstancesRequest::DBEngineHasBeenSet() const
+{
+    return m_dBEngineHasBeenSet;
+}
+
+string CreateInstancesRequest::GetDBEngineConfig() const
+{
+    return m_dBEngineConfig;
+}
+
+void CreateInstancesRequest::SetDBEngineConfig(const string& _dBEngineConfig)
+{
+    m_dBEngineConfig = _dBEngineConfig;
+    m_dBEngineConfigHasBeenSet = true;
+}
+
+bool CreateInstancesRequest::DBEngineConfigHasBeenSet() const
+{
+    return m_dBEngineConfigHasBeenSet;
 }
 
 

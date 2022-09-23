@@ -24,13 +24,13 @@ using namespace std;
 
 CreateReadOnlyDBInstanceRequest::CreateReadOnlyDBInstanceRequest() :
     m_specCodeHasBeenSet(false),
-    m_dBVersionHasBeenSet(false),
     m_storageHasBeenSet(false),
     m_instanceCountHasBeenSet(false),
     m_periodHasBeenSet(false),
     m_masterDBInstanceIdHasBeenSet(false),
     m_zoneHasBeenSet(false),
     m_projectIdHasBeenSet(false),
+    m_dBVersionHasBeenSet(false),
     m_instanceChargeTypeHasBeenSet(false),
     m_autoVoucherHasBeenSet(false),
     m_voucherIdsHasBeenSet(false),
@@ -59,14 +59,6 @@ string CreateReadOnlyDBInstanceRequest::ToJsonString() const
         string key = "SpecCode";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_specCode.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_dBVersionHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "DBVersion";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_dBVersion.c_str(), allocator).Move(), allocator);
     }
 
     if (m_storageHasBeenSet)
@@ -115,6 +107,14 @@ string CreateReadOnlyDBInstanceRequest::ToJsonString() const
         string key = "ProjectId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_projectId, allocator);
+    }
+
+    if (m_dBVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DBVersion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_dBVersion.c_str(), allocator).Move(), allocator);
     }
 
     if (m_instanceChargeTypeHasBeenSet)
@@ -248,22 +248,6 @@ bool CreateReadOnlyDBInstanceRequest::SpecCodeHasBeenSet() const
     return m_specCodeHasBeenSet;
 }
 
-string CreateReadOnlyDBInstanceRequest::GetDBVersion() const
-{
-    return m_dBVersion;
-}
-
-void CreateReadOnlyDBInstanceRequest::SetDBVersion(const string& _dBVersion)
-{
-    m_dBVersion = _dBVersion;
-    m_dBVersionHasBeenSet = true;
-}
-
-bool CreateReadOnlyDBInstanceRequest::DBVersionHasBeenSet() const
-{
-    return m_dBVersionHasBeenSet;
-}
-
 uint64_t CreateReadOnlyDBInstanceRequest::GetStorage() const
 {
     return m_storage;
@@ -358,6 +342,22 @@ void CreateReadOnlyDBInstanceRequest::SetProjectId(const uint64_t& _projectId)
 bool CreateReadOnlyDBInstanceRequest::ProjectIdHasBeenSet() const
 {
     return m_projectIdHasBeenSet;
+}
+
+string CreateReadOnlyDBInstanceRequest::GetDBVersion() const
+{
+    return m_dBVersion;
+}
+
+void CreateReadOnlyDBInstanceRequest::SetDBVersion(const string& _dBVersion)
+{
+    m_dBVersion = _dBVersion;
+    m_dBVersionHasBeenSet = true;
+}
+
+bool CreateReadOnlyDBInstanceRequest::DBVersionHasBeenSet() const
+{
+    return m_dBVersionHasBeenSet;
 }
 
 string CreateReadOnlyDBInstanceRequest::GetInstanceChargeType() const

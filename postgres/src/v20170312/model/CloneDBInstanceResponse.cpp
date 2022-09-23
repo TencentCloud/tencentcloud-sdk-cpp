@@ -25,7 +25,8 @@ using namespace std;
 
 CloneDBInstanceResponse::CloneDBInstanceResponse() :
     m_dealNameHasBeenSet(false),
-    m_billIdHasBeenSet(false)
+    m_billIdHasBeenSet(false),
+    m_dBInstanceIdHasBeenSet(false)
 {
 }
 
@@ -83,6 +84,16 @@ CoreInternalOutcome CloneDBInstanceResponse::Deserialize(const string &payload)
         m_billIdHasBeenSet = true;
     }
 
+    if (rsp.HasMember("DBInstanceId") && !rsp["DBInstanceId"].IsNull())
+    {
+        if (!rsp["DBInstanceId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DBInstanceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dBInstanceId = string(rsp["DBInstanceId"].GetString());
+        m_dBInstanceIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -107,6 +118,14 @@ string CloneDBInstanceResponse::ToJsonString() const
         string key = "BillId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_billId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dBInstanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DBInstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dBInstanceId.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -139,6 +158,16 @@ string CloneDBInstanceResponse::GetBillId() const
 bool CloneDBInstanceResponse::BillIdHasBeenSet() const
 {
     return m_billIdHasBeenSet;
+}
+
+string CloneDBInstanceResponse::GetDBInstanceId() const
+{
+    return m_dBInstanceId;
+}
+
+bool CloneDBInstanceResponse::DBInstanceIdHasBeenSet() const
+{
+    return m_dBInstanceIdHasBeenSet;
 }
 
 

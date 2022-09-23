@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool DBInstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取实例计费类型，预付费或者后付费。PREPAID-预付费。目前只支持预付费。
-                     * @return InstanceChargeType 实例计费类型，预付费或者后付费。PREPAID-预付费。目前只支持预付费。
+                     * 获取【废弃参数，不再生效】，实例计费类型。
+                     * @return InstanceChargeType 【废弃参数，不再生效】，实例计费类型。
                      */
                     std::string GetInstanceChargeType() const;
 
                     /**
-                     * 设置实例计费类型，预付费或者后付费。PREPAID-预付费。目前只支持预付费。
-                     * @param InstanceChargeType 实例计费类型，预付费或者后付费。PREPAID-预付费。目前只支持预付费。
+                     * 设置【废弃参数，不再生效】，实例计费类型。
+                     * @param InstanceChargeType 【废弃参数，不再生效】，实例计费类型。
                      */
                     void SetInstanceChargeType(const std::string& _instanceChargeType);
 
@@ -135,7 +135,7 @@ namespace TencentCloud
                     bool m_dBInstanceIdHasBeenSet;
 
                     /**
-                     * 实例计费类型，预付费或者后付费。PREPAID-预付费。目前只支持预付费。
+                     * 【废弃参数，不再生效】，实例计费类型。
                      */
                     std::string m_instanceChargeType;
                     bool m_instanceChargeTypeHasBeenSet;

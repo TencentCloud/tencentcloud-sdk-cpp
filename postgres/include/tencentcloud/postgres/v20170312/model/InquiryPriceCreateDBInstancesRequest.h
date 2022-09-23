@@ -133,14 +133,14 @@ namespace TencentCloud
                     bool PeriodHasBeenSet() const;
 
                     /**
-                     * 获取计费ID。该参数可以通过调用DescribeProductConfig接口的返回值中的Pid字段来获取。
-                     * @return Pid 计费ID。该参数可以通过调用DescribeProductConfig接口的返回值中的Pid字段来获取。
+                     * 获取【弃字段，不再生效】，计费ID。该参数可以通过调用DescribeProductConfig接口的返回值中的Pid字段来获取。
+                     * @return Pid 【弃字段，不再生效】，计费ID。该参数可以通过调用DescribeProductConfig接口的返回值中的Pid字段来获取。
                      */
                     uint64_t GetPid() const;
 
                     /**
-                     * 设置计费ID。该参数可以通过调用DescribeProductConfig接口的返回值中的Pid字段来获取。
-                     * @param Pid 计费ID。该参数可以通过调用DescribeProductConfig接口的返回值中的Pid字段来获取。
+                     * 设置【弃字段，不再生效】，计费ID。该参数可以通过调用DescribeProductConfig接口的返回值中的Pid字段来获取。
+                     * @param Pid 【弃字段，不再生效】，计费ID。该参数可以通过调用DescribeProductConfig接口的返回值中的Pid字段来获取。
                      */
                     void SetPid(const uint64_t& _pid);
 
@@ -167,6 +167,58 @@ namespace TencentCloud
                      * @return InstanceChargeType 是否已赋值
                      */
                     bool InstanceChargeTypeHasBeenSet() const;
+
+                    /**
+                     * 获取实例类型，默认primary，支持如下：
+primary（双机高可用（一主一从））
+readonly（只读实例）
+                     * @return InstanceType 实例类型，默认primary，支持如下：
+primary（双机高可用（一主一从））
+readonly（只读实例）
+                     */
+                    std::string GetInstanceType() const;
+
+                    /**
+                     * 设置实例类型，默认primary，支持如下：
+primary（双机高可用（一主一从））
+readonly（只读实例）
+                     * @param InstanceType 实例类型，默认primary，支持如下：
+primary（双机高可用（一主一从））
+readonly（只读实例）
+                     */
+                    void SetInstanceType(const std::string& _instanceType);
+
+                    /**
+                     * 判断参数 InstanceType 是否已赋值
+                     * @return InstanceType 是否已赋值
+                     */
+                    bool InstanceTypeHasBeenSet() const;
+
+                    /**
+                     * 获取DB引擎，默认postgresql，支持如下：
+postgresql（云数据库PostgreSQL）
+mssql_compatible（MSSQL兼容-云数据库PostgreSQL）
+                     * @return DBEngine DB引擎，默认postgresql，支持如下：
+postgresql（云数据库PostgreSQL）
+mssql_compatible（MSSQL兼容-云数据库PostgreSQL）
+                     */
+                    std::string GetDBEngine() const;
+
+                    /**
+                     * 设置DB引擎，默认postgresql，支持如下：
+postgresql（云数据库PostgreSQL）
+mssql_compatible（MSSQL兼容-云数据库PostgreSQL）
+                     * @param DBEngine DB引擎，默认postgresql，支持如下：
+postgresql（云数据库PostgreSQL）
+mssql_compatible（MSSQL兼容-云数据库PostgreSQL）
+                     */
+                    void SetDBEngine(const std::string& _dBEngine);
+
+                    /**
+                     * 判断参数 DBEngine 是否已赋值
+                     * @return DBEngine 是否已赋值
+                     */
+                    bool DBEngineHasBeenSet() const;
 
                 private:
 
@@ -201,7 +253,7 @@ namespace TencentCloud
                     bool m_periodHasBeenSet;
 
                     /**
-                     * 计费ID。该参数可以通过调用DescribeProductConfig接口的返回值中的Pid字段来获取。
+                     * 【弃字段，不再生效】，计费ID。该参数可以通过调用DescribeProductConfig接口的返回值中的Pid字段来获取。
                      */
                     uint64_t m_pid;
                     bool m_pidHasBeenSet;
@@ -211,6 +263,22 @@ namespace TencentCloud
                      */
                     std::string m_instanceChargeType;
                     bool m_instanceChargeTypeHasBeenSet;
+
+                    /**
+                     * 实例类型，默认primary，支持如下：
+primary（双机高可用（一主一从））
+readonly（只读实例）
+                     */
+                    std::string m_instanceType;
+                    bool m_instanceTypeHasBeenSet;
+
+                    /**
+                     * DB引擎，默认postgresql，支持如下：
+postgresql（云数据库PostgreSQL）
+mssql_compatible（MSSQL兼容-云数据库PostgreSQL）
+                     */
+                    std::string m_dBEngine;
+                    bool m_dBEngineHasBeenSet;
 
                 };
             }

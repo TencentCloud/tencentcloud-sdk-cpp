@@ -77,7 +77,7 @@ set(ckafka_public_header_model
   include/tencentcloud/ckafka/v20190819/model/CtsdbModifyConnectParam.h
   include/tencentcloud/ckafka/v20190819/model/DescribeACLResponse.h
   include/tencentcloud/ckafka/v20190819/model/DynamicDiskConfig.h
-  include/tencentcloud/ckafka/v20190819/model/JgwOperateResponse.h
+  include/tencentcloud/ckafka/v20190819/model/DorisConnectParam.h
   include/tencentcloud/ckafka/v20190819/model/ZoneInfo.h
   include/tencentcloud/ckafka/v20190819/model/DescribeTopicSubscribeGroupResponse.h
   include/tencentcloud/ckafka/v20190819/model/DeleteAclRuleRequest.h
@@ -233,6 +233,7 @@ set(ckafka_public_header_model
   include/tencentcloud/ckafka/v20190819/model/PrivateLinkParam.h
   include/tencentcloud/ckafka/v20190819/model/CreateRouteResponse.h
   include/tencentcloud/ckafka/v20190819/model/InstanceResponse.h
+  include/tencentcloud/ckafka/v20190819/model/JgwOperateResponse.h
   include/tencentcloud/ckafka/v20190819/model/DescribeGroup.h
   include/tencentcloud/ckafka/v20190819/model/ClsParam.h
   include/tencentcloud/ckafka/v20190819/model/EventBusParam.h
@@ -344,7 +345,7 @@ set(ckafka_src
   src/v20190819/model/CtsdbModifyConnectParam.cpp
   src/v20190819/model/DescribeACLResponse.cpp
   src/v20190819/model/DynamicDiskConfig.cpp
-  src/v20190819/model/JgwOperateResponse.cpp
+  src/v20190819/model/DorisConnectParam.cpp
   src/v20190819/model/ZoneInfo.cpp
   src/v20190819/model/DescribeTopicSubscribeGroupResponse.cpp
   src/v20190819/model/DeleteAclRuleRequest.cpp
@@ -500,6 +501,7 @@ set(ckafka_src
   src/v20190819/model/PrivateLinkParam.cpp
   src/v20190819/model/CreateRouteResponse.cpp
   src/v20190819/model/InstanceResponse.cpp
+  src/v20190819/model/JgwOperateResponse.cpp
   src/v20190819/model/DescribeGroup.cpp
   src/v20190819/model/ClsParam.cpp
   src/v20190819/model/EventBusParam.cpp

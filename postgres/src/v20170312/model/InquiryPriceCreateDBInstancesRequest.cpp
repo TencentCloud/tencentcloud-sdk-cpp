@@ -29,7 +29,9 @@ InquiryPriceCreateDBInstancesRequest::InquiryPriceCreateDBInstancesRequest() :
     m_instanceCountHasBeenSet(false),
     m_periodHasBeenSet(false),
     m_pidHasBeenSet(false),
-    m_instanceChargeTypeHasBeenSet(false)
+    m_instanceChargeTypeHasBeenSet(false),
+    m_instanceTypeHasBeenSet(false),
+    m_dBEngineHasBeenSet(false)
 {
 }
 
@@ -94,6 +96,22 @@ string InquiryPriceCreateDBInstancesRequest::ToJsonString() const
         string key = "InstanceChargeType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_instanceChargeType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_instanceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dBEngineHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DBEngine";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_dBEngine.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -214,6 +232,38 @@ void InquiryPriceCreateDBInstancesRequest::SetInstanceChargeType(const string& _
 bool InquiryPriceCreateDBInstancesRequest::InstanceChargeTypeHasBeenSet() const
 {
     return m_instanceChargeTypeHasBeenSet;
+}
+
+string InquiryPriceCreateDBInstancesRequest::GetInstanceType() const
+{
+    return m_instanceType;
+}
+
+void InquiryPriceCreateDBInstancesRequest::SetInstanceType(const string& _instanceType)
+{
+    m_instanceType = _instanceType;
+    m_instanceTypeHasBeenSet = true;
+}
+
+bool InquiryPriceCreateDBInstancesRequest::InstanceTypeHasBeenSet() const
+{
+    return m_instanceTypeHasBeenSet;
+}
+
+string InquiryPriceCreateDBInstancesRequest::GetDBEngine() const
+{
+    return m_dBEngine;
+}
+
+void InquiryPriceCreateDBInstancesRequest::SetDBEngine(const string& _dBEngine)
+{
+    m_dBEngine = _dBEngine;
+    m_dBEngineHasBeenSet = true;
+}
+
+bool InquiryPriceCreateDBInstancesRequest::DBEngineHasBeenSet() const
+{
+    return m_dBEngineHasBeenSet;
 }
 
 

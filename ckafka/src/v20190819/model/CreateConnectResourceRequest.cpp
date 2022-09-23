@@ -33,7 +33,8 @@ CreateConnectResourceRequest::CreateConnectResourceRequest() :
     m_mySQLConnectParamHasBeenSet(false),
     m_postgreSQLConnectParamHasBeenSet(false),
     m_mariaDBConnectParamHasBeenSet(false),
-    m_sQLServerConnectParamHasBeenSet(false)
+    m_sQLServerConnectParamHasBeenSet(false),
+    m_dorisConnectParamHasBeenSet(false)
 {
 }
 
@@ -138,6 +139,15 @@ string CreateConnectResourceRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_sQLServerConnectParam.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_dorisConnectParamHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DorisConnectParam";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_dorisConnectParam.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -322,6 +332,22 @@ void CreateConnectResourceRequest::SetSQLServerConnectParam(const SQLServerConne
 bool CreateConnectResourceRequest::SQLServerConnectParamHasBeenSet() const
 {
     return m_sQLServerConnectParamHasBeenSet;
+}
+
+DorisConnectParam CreateConnectResourceRequest::GetDorisConnectParam() const
+{
+    return m_dorisConnectParam;
+}
+
+void CreateConnectResourceRequest::SetDorisConnectParam(const DorisConnectParam& _dorisConnectParam)
+{
+    m_dorisConnectParam = _dorisConnectParam;
+    m_dorisConnectParamHasBeenSet = true;
+}
+
+bool CreateConnectResourceRequest::DorisConnectParamHasBeenSet() const
+{
+    return m_dorisConnectParamHasBeenSet;
 }
 
 

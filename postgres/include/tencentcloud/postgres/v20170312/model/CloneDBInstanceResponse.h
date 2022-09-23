@@ -71,6 +71,20 @@ namespace TencentCloud
                      */
                     bool BillIdHasBeenSet() const;
 
+                    /**
+                     * 获取克隆出的新实例ID，当前只支持后付费返回该值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DBInstanceId 克隆出的新实例ID，当前只支持后付费返回该值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetDBInstanceId() const;
+
+                    /**
+                     * 判断参数 DBInstanceId 是否已赋值
+                     * @return DBInstanceId 是否已赋值
+                     */
+                    bool DBInstanceIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -86,6 +100,13 @@ namespace TencentCloud
                      */
                     std::string m_billId;
                     bool m_billIdHasBeenSet;
+
+                    /**
+                     * 克隆出的新实例ID，当前只支持后付费返回该值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_dBInstanceId;
+                    bool m_dBInstanceIdHasBeenSet;
 
                 };
             }

@@ -62,24 +62,6 @@ namespace TencentCloud
                     bool SpecCodeHasBeenSet() const;
 
                     /**
-                     * 获取PostgreSQL内核版本，目前强制和主实例保持一致
-                     * @return DBVersion PostgreSQL内核版本，目前强制和主实例保持一致
-                     */
-                    std::string GetDBVersion() const;
-
-                    /**
-                     * 设置PostgreSQL内核版本，目前强制和主实例保持一致
-                     * @param DBVersion PostgreSQL内核版本，目前强制和主实例保持一致
-                     */
-                    void SetDBVersion(const std::string& _dBVersion);
-
-                    /**
-                     * 判断参数 DBVersion 是否已赋值
-                     * @return DBVersion 是否已赋值
-                     */
-                    bool DBVersionHasBeenSet() const;
-
-                    /**
                      * 获取实例容量大小，单位：GB。
                      * @return Storage 实例容量大小，单位：GB。
                      */
@@ -188,14 +170,32 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取实例计费类型。目前支持：PREPAID（预付费，即包年包月），POSTPAID_BY_HOUR（后付费，即按量计费）。
-                     * @return InstanceChargeType 实例计费类型。目前支持：PREPAID（预付费，即包年包月），POSTPAID_BY_HOUR（后付费，即按量计费）。
+                     * 获取【废弃】不再需要指定，内核版本号与主实例保持一致
+                     * @return DBVersion 【废弃】不再需要指定，内核版本号与主实例保持一致
+                     */
+                    std::string GetDBVersion() const;
+
+                    /**
+                     * 设置【废弃】不再需要指定，内核版本号与主实例保持一致
+                     * @param DBVersion 【废弃】不再需要指定，内核版本号与主实例保持一致
+                     */
+                    void SetDBVersion(const std::string& _dBVersion);
+
+                    /**
+                     * 判断参数 DBVersion 是否已赋值
+                     * @return DBVersion 是否已赋值
+                     */
+                    bool DBVersionHasBeenSet() const;
+
+                    /**
+                     * 获取实例计费类型。目前支持：PREPAID（预付费，即包年包月），POSTPAID_BY_HOUR（后付费，即按量计费）。如果主实例为后付费，只读实例必须也为后付费。
+                     * @return InstanceChargeType 实例计费类型。目前支持：PREPAID（预付费，即包年包月），POSTPAID_BY_HOUR（后付费，即按量计费）。如果主实例为后付费，只读实例必须也为后付费。
                      */
                     std::string GetInstanceChargeType() const;
 
                     /**
-                     * 设置实例计费类型。目前支持：PREPAID（预付费，即包年包月），POSTPAID_BY_HOUR（后付费，即按量计费）。
-                     * @param InstanceChargeType 实例计费类型。目前支持：PREPAID（预付费，即包年包月），POSTPAID_BY_HOUR（后付费，即按量计费）。
+                     * 设置实例计费类型。目前支持：PREPAID（预付费，即包年包月），POSTPAID_BY_HOUR（后付费，即按量计费）。如果主实例为后付费，只读实例必须也为后付费。
+                     * @param InstanceChargeType 实例计费类型。目前支持：PREPAID（预付费，即包年包月），POSTPAID_BY_HOUR（后付费，即按量计费）。如果主实例为后付费，只读实例必须也为后付费。
                      */
                     void SetInstanceChargeType(const std::string& _instanceChargeType);
 
@@ -412,12 +412,6 @@ namespace TencentCloud
                     bool m_specCodeHasBeenSet;
 
                     /**
-                     * PostgreSQL内核版本，目前强制和主实例保持一致
-                     */
-                    std::string m_dBVersion;
-                    bool m_dBVersionHasBeenSet;
-
-                    /**
                      * 实例容量大小，单位：GB。
                      */
                     uint64_t m_storage;
@@ -454,7 +448,13 @@ namespace TencentCloud
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 实例计费类型。目前支持：PREPAID（预付费，即包年包月），POSTPAID_BY_HOUR（后付费，即按量计费）。
+                     * 【废弃】不再需要指定，内核版本号与主实例保持一致
+                     */
+                    std::string m_dBVersion;
+                    bool m_dBVersionHasBeenSet;
+
+                    /**
+                     * 实例计费类型。目前支持：PREPAID（预付费，即包年包月），POSTPAID_BY_HOUR（后付费，即按量计费）。如果主实例为后付费，只读实例必须也为后付费。
                      */
                     std::string m_instanceChargeType;
                     bool m_instanceChargeTypeHasBeenSet;

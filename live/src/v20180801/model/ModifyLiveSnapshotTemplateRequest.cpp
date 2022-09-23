@@ -24,15 +24,15 @@ using namespace std;
 
 ModifyLiveSnapshotTemplateRequest::ModifyLiveSnapshotTemplateRequest() :
     m_templateIdHasBeenSet(false),
+    m_cosAppIdHasBeenSet(false),
+    m_cosBucketHasBeenSet(false),
+    m_cosRegionHasBeenSet(false),
     m_templateNameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_snapshotIntervalHasBeenSet(false),
     m_widthHasBeenSet(false),
     m_heightHasBeenSet(false),
     m_pornFlagHasBeenSet(false),
-    m_cosAppIdHasBeenSet(false),
-    m_cosBucketHasBeenSet(false),
-    m_cosRegionHasBeenSet(false),
     m_cosPrefixHasBeenSet(false),
     m_cosFileNameHasBeenSet(false)
 {
@@ -51,6 +51,30 @@ string ModifyLiveSnapshotTemplateRequest::ToJsonString() const
         string key = "TemplateId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_templateId, allocator);
+    }
+
+    if (m_cosAppIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CosAppId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_cosAppId, allocator);
+    }
+
+    if (m_cosBucketHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CosBucket";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_cosBucket.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cosRegionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CosRegion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_cosRegion.c_str(), allocator).Move(), allocator);
     }
 
     if (m_templateNameHasBeenSet)
@@ -101,30 +125,6 @@ string ModifyLiveSnapshotTemplateRequest::ToJsonString() const
         d.AddMember(iKey, m_pornFlag, allocator);
     }
 
-    if (m_cosAppIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "CosAppId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_cosAppId, allocator);
-    }
-
-    if (m_cosBucketHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "CosBucket";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_cosBucket.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_cosRegionHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "CosRegion";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_cosRegion.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_cosPrefixHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -163,6 +163,54 @@ void ModifyLiveSnapshotTemplateRequest::SetTemplateId(const int64_t& _templateId
 bool ModifyLiveSnapshotTemplateRequest::TemplateIdHasBeenSet() const
 {
     return m_templateIdHasBeenSet;
+}
+
+int64_t ModifyLiveSnapshotTemplateRequest::GetCosAppId() const
+{
+    return m_cosAppId;
+}
+
+void ModifyLiveSnapshotTemplateRequest::SetCosAppId(const int64_t& _cosAppId)
+{
+    m_cosAppId = _cosAppId;
+    m_cosAppIdHasBeenSet = true;
+}
+
+bool ModifyLiveSnapshotTemplateRequest::CosAppIdHasBeenSet() const
+{
+    return m_cosAppIdHasBeenSet;
+}
+
+string ModifyLiveSnapshotTemplateRequest::GetCosBucket() const
+{
+    return m_cosBucket;
+}
+
+void ModifyLiveSnapshotTemplateRequest::SetCosBucket(const string& _cosBucket)
+{
+    m_cosBucket = _cosBucket;
+    m_cosBucketHasBeenSet = true;
+}
+
+bool ModifyLiveSnapshotTemplateRequest::CosBucketHasBeenSet() const
+{
+    return m_cosBucketHasBeenSet;
+}
+
+string ModifyLiveSnapshotTemplateRequest::GetCosRegion() const
+{
+    return m_cosRegion;
+}
+
+void ModifyLiveSnapshotTemplateRequest::SetCosRegion(const string& _cosRegion)
+{
+    m_cosRegion = _cosRegion;
+    m_cosRegionHasBeenSet = true;
+}
+
+bool ModifyLiveSnapshotTemplateRequest::CosRegionHasBeenSet() const
+{
+    return m_cosRegionHasBeenSet;
 }
 
 string ModifyLiveSnapshotTemplateRequest::GetTemplateName() const
@@ -259,54 +307,6 @@ void ModifyLiveSnapshotTemplateRequest::SetPornFlag(const int64_t& _pornFlag)
 bool ModifyLiveSnapshotTemplateRequest::PornFlagHasBeenSet() const
 {
     return m_pornFlagHasBeenSet;
-}
-
-int64_t ModifyLiveSnapshotTemplateRequest::GetCosAppId() const
-{
-    return m_cosAppId;
-}
-
-void ModifyLiveSnapshotTemplateRequest::SetCosAppId(const int64_t& _cosAppId)
-{
-    m_cosAppId = _cosAppId;
-    m_cosAppIdHasBeenSet = true;
-}
-
-bool ModifyLiveSnapshotTemplateRequest::CosAppIdHasBeenSet() const
-{
-    return m_cosAppIdHasBeenSet;
-}
-
-string ModifyLiveSnapshotTemplateRequest::GetCosBucket() const
-{
-    return m_cosBucket;
-}
-
-void ModifyLiveSnapshotTemplateRequest::SetCosBucket(const string& _cosBucket)
-{
-    m_cosBucket = _cosBucket;
-    m_cosBucketHasBeenSet = true;
-}
-
-bool ModifyLiveSnapshotTemplateRequest::CosBucketHasBeenSet() const
-{
-    return m_cosBucketHasBeenSet;
-}
-
-string ModifyLiveSnapshotTemplateRequest::GetCosRegion() const
-{
-    return m_cosRegion;
-}
-
-void ModifyLiveSnapshotTemplateRequest::SetCosRegion(const string& _cosRegion)
-{
-    m_cosRegion = _cosRegion;
-    m_cosRegionHasBeenSet = true;
-}
-
-bool ModifyLiveSnapshotTemplateRequest::CosRegionHasBeenSet() const
-{
-    return m_cosRegionHasBeenSet;
 }
 
 string ModifyLiveSnapshotTemplateRequest::GetCosPrefix() const

@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool PolicyIdHasBeenSet() const;
 
                     /**
-                     * 获取角色ID，用于指定角色，入参 AttachRoleId 与 AttachRoleName 二选一
-                     * @return DetachRoleId 角色ID，用于指定角色，入参 AttachRoleId 与 AttachRoleName 二选一
+                     * 获取角色ID，用于指定角色，入参 DetachRoleId 与 DetachRoleName 二选一
+                     * @return DetachRoleId 角色ID，用于指定角色，入参 DetachRoleId 与 DetachRoleName 二选一
                      */
                     std::string GetDetachRoleId() const;
 
                     /**
-                     * 设置角色ID，用于指定角色，入参 AttachRoleId 与 AttachRoleName 二选一
-                     * @param DetachRoleId 角色ID，用于指定角色，入参 AttachRoleId 与 AttachRoleName 二选一
+                     * 设置角色ID，用于指定角色，入参 DetachRoleId 与 DetachRoleName 二选一
+                     * @param DetachRoleId 角色ID，用于指定角色，入参 DetachRoleId 与 DetachRoleName 二选一
                      */
                     void SetDetachRoleId(const std::string& _detachRoleId);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool DetachRoleIdHasBeenSet() const;
 
                     /**
-                     * 获取角色名称，用于指定角色，入参 AttachRoleId 与 AttachRoleName 二选一
-                     * @return DetachRoleName 角色名称，用于指定角色，入参 AttachRoleId 与 AttachRoleName 二选一
+                     * 获取角色名称，用于指定角色，入参 DetachRoleId 与 DetachRoleName 二选一
+                     * @return DetachRoleName 角色名称，用于指定角色，入参 DetachRoleId 与 DetachRoleName 二选一
                      */
                     std::string GetDetachRoleName() const;
 
                     /**
-                     * 设置角色名称，用于指定角色，入参 AttachRoleId 与 AttachRoleName 二选一
-                     * @param DetachRoleName 角色名称，用于指定角色，入参 AttachRoleId 与 AttachRoleName 二选一
+                     * 设置角色名称，用于指定角色，入参 DetachRoleId 与 DetachRoleName 二选一
+                     * @param DetachRoleName 角色名称，用于指定角色，入参 DetachRoleId 与 DetachRoleName 二选一
                      */
                     void SetDetachRoleName(const std::string& _detachRoleName);
 
@@ -123,13 +123,13 @@ namespace TencentCloud
                     bool m_policyIdHasBeenSet;
 
                     /**
-                     * 角色ID，用于指定角色，入参 AttachRoleId 与 AttachRoleName 二选一
+                     * 角色ID，用于指定角色，入参 DetachRoleId 与 DetachRoleName 二选一
                      */
                     std::string m_detachRoleId;
                     bool m_detachRoleIdHasBeenSet;
 
                     /**
-                     * 角色名称，用于指定角色，入参 AttachRoleId 与 AttachRoleName 二选一
+                     * 角色名称，用于指定角色，入参 DetachRoleId 与 DetachRoleName 二选一
                      */
                     std::string m_detachRoleName;
                     bool m_detachRoleNameHasBeenSet;

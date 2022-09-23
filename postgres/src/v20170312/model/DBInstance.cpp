@@ -57,7 +57,9 @@ DBInstance::DBInstance() :
     m_networkAccessListHasBeenSet(false),
     m_dBMajorVersionHasBeenSet(false),
     m_dBNodeSetHasBeenSet(false),
-    m_isSupportTDEHasBeenSet(false)
+    m_isSupportTDEHasBeenSet(false),
+    m_dBEngineHasBeenSet(false),
+    m_dBEngineConfigHasBeenSet(false)
 {
 }
 
@@ -476,6 +478,26 @@ CoreInternalOutcome DBInstance::Deserialize(const rapidjson::Value &value)
         m_isSupportTDEHasBeenSet = true;
     }
 
+    if (value.HasMember("DBEngine") && !value["DBEngine"].IsNull())
+    {
+        if (!value["DBEngine"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DBInstance.DBEngine` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dBEngine = string(value["DBEngine"].GetString());
+        m_dBEngineHasBeenSet = true;
+    }
+
+    if (value.HasMember("DBEngineConfig") && !value["DBEngineConfig"].IsNull())
+    {
+        if (!value["DBEngineConfig"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DBInstance.DBEngineConfig` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dBEngineConfig = string(value["DBEngineConfig"].GetString());
+        m_dBEngineConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -805,6 +827,22 @@ void DBInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "IsSupportTDE";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isSupportTDE, allocator);
+    }
+
+    if (m_dBEngineHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DBEngine";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dBEngine.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dBEngineConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DBEngineConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dBEngineConfig.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1400,5 +1438,37 @@ void DBInstance::SetIsSupportTDE(const int64_t& _isSupportTDE)
 bool DBInstance::IsSupportTDEHasBeenSet() const
 {
     return m_isSupportTDEHasBeenSet;
+}
+
+string DBInstance::GetDBEngine() const
+{
+    return m_dBEngine;
+}
+
+void DBInstance::SetDBEngine(const string& _dBEngine)
+{
+    m_dBEngine = _dBEngine;
+    m_dBEngineHasBeenSet = true;
+}
+
+bool DBInstance::DBEngineHasBeenSet() const
+{
+    return m_dBEngineHasBeenSet;
+}
+
+string DBInstance::GetDBEngineConfig() const
+{
+    return m_dBEngineConfig;
+}
+
+void DBInstance::SetDBEngineConfig(const string& _dBEngineConfig)
+{
+    m_dBEngineConfig = _dBEngineConfig;
+    m_dBEngineConfigHasBeenSet = true;
+}
+
+bool DBInstance::DBEngineConfigHasBeenSet() const
+{
+    return m_dBEngineConfigHasBeenSet;
 }
 

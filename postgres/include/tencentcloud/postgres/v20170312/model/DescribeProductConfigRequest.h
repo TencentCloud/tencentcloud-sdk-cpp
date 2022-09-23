@@ -60,6 +60,36 @@ namespace TencentCloud
                      */
                     bool ZoneHasBeenSet() const;
 
+                    /**
+                     * 获取数据库引擎，支持：
+1、postgresql（云数据库PostgreSQL）；
+2、mssql_compatible（MSSQL兼容-云数据库PostgreSQL）；
+如不指定默认使用postgresql。
+                     * @return DBEngine 数据库引擎，支持：
+1、postgresql（云数据库PostgreSQL）；
+2、mssql_compatible（MSSQL兼容-云数据库PostgreSQL）；
+如不指定默认使用postgresql。
+                     */
+                    std::string GetDBEngine() const;
+
+                    /**
+                     * 设置数据库引擎，支持：
+1、postgresql（云数据库PostgreSQL）；
+2、mssql_compatible（MSSQL兼容-云数据库PostgreSQL）；
+如不指定默认使用postgresql。
+                     * @param DBEngine 数据库引擎，支持：
+1、postgresql（云数据库PostgreSQL）；
+2、mssql_compatible（MSSQL兼容-云数据库PostgreSQL）；
+如不指定默认使用postgresql。
+                     */
+                    void SetDBEngine(const std::string& _dBEngine);
+
+                    /**
+                     * 判断参数 DBEngine 是否已赋值
+                     * @return DBEngine 是否已赋值
+                     */
+                    bool DBEngineHasBeenSet() const;
+
                 private:
 
                     /**
@@ -67,6 +97,15 @@ namespace TencentCloud
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
+
+                    /**
+                     * 数据库引擎，支持：
+1、postgresql（云数据库PostgreSQL）；
+2、mssql_compatible（MSSQL兼容-云数据库PostgreSQL）；
+如不指定默认使用postgresql。
+                     */
+                    std::string m_dBEngine;
+                    bool m_dBEngineHasBeenSet;
 
                 };
             }

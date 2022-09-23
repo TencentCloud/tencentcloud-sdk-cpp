@@ -61,6 +61,76 @@ namespace TencentCloud
                     bool TemplateIdHasBeenSet() const;
 
                     /**
+                     * 获取Cos 应用 ID。
+**注：此参数现在须必选。**
+                     * @return CosAppId Cos 应用 ID。
+**注：此参数现在须必选。**
+                     */
+                    int64_t GetCosAppId() const;
+
+                    /**
+                     * 设置Cos 应用 ID。
+**注：此参数现在须必选。**
+                     * @param CosAppId Cos 应用 ID。
+**注：此参数现在须必选。**
+                     */
+                    void SetCosAppId(const int64_t& _cosAppId);
+
+                    /**
+                     * 判断参数 CosAppId 是否已赋值
+                     * @return CosAppId 是否已赋值
+                     */
+                    bool CosAppIdHasBeenSet() const;
+
+                    /**
+                     * 获取Cos Bucket名称。
+注：CosBucket参数值不能包含-[appid] 部分。
+**注：此参数现在须必选。**
+                     * @return CosBucket Cos Bucket名称。
+注：CosBucket参数值不能包含-[appid] 部分。
+**注：此参数现在须必选。**
+                     */
+                    std::string GetCosBucket() const;
+
+                    /**
+                     * 设置Cos Bucket名称。
+注：CosBucket参数值不能包含-[appid] 部分。
+**注：此参数现在须必选。**
+                     * @param CosBucket Cos Bucket名称。
+注：CosBucket参数值不能包含-[appid] 部分。
+**注：此参数现在须必选。**
+                     */
+                    void SetCosBucket(const std::string& _cosBucket);
+
+                    /**
+                     * 判断参数 CosBucket 是否已赋值
+                     * @return CosBucket 是否已赋值
+                     */
+                    bool CosBucketHasBeenSet() const;
+
+                    /**
+                     * 获取Cos 地域。
+**注：此参数现在须必选。**
+                     * @return CosRegion Cos 地域。
+**注：此参数现在须必选。**
+                     */
+                    std::string GetCosRegion() const;
+
+                    /**
+                     * 设置Cos 地域。
+**注：此参数现在须必选。**
+                     * @param CosRegion Cos 地域。
+**注：此参数现在须必选。**
+                     */
+                    void SetCosRegion(const std::string& _cosRegion);
+
+                    /**
+                     * 判断参数 CosRegion 是否已赋值
+                     * @return CosRegion 是否已赋值
+                     */
+                    bool CosRegionHasBeenSet() const;
+
+                    /**
                      * 获取模板名称。
 长度上限：255字节。
                      * @return TemplateName 模板名称。
@@ -189,64 +259,6 @@ namespace TencentCloud
                     bool PornFlagHasBeenSet() const;
 
                     /**
-                     * 获取Cos 应用 ID。
-                     * @return CosAppId Cos 应用 ID。
-                     */
-                    int64_t GetCosAppId() const;
-
-                    /**
-                     * 设置Cos 应用 ID。
-                     * @param CosAppId Cos 应用 ID。
-                     */
-                    void SetCosAppId(const int64_t& _cosAppId);
-
-                    /**
-                     * 判断参数 CosAppId 是否已赋值
-                     * @return CosAppId 是否已赋值
-                     */
-                    bool CosAppIdHasBeenSet() const;
-
-                    /**
-                     * 获取Cos Bucket名称。
-注：CosBucket参数值不能包含-[appid] 部分。
-                     * @return CosBucket Cos Bucket名称。
-注：CosBucket参数值不能包含-[appid] 部分。
-                     */
-                    std::string GetCosBucket() const;
-
-                    /**
-                     * 设置Cos Bucket名称。
-注：CosBucket参数值不能包含-[appid] 部分。
-                     * @param CosBucket Cos Bucket名称。
-注：CosBucket参数值不能包含-[appid] 部分。
-                     */
-                    void SetCosBucket(const std::string& _cosBucket);
-
-                    /**
-                     * 判断参数 CosBucket 是否已赋值
-                     * @return CosBucket 是否已赋值
-                     */
-                    bool CosBucketHasBeenSet() const;
-
-                    /**
-                     * 获取Cos 地域。
-                     * @return CosRegion Cos 地域。
-                     */
-                    std::string GetCosRegion() const;
-
-                    /**
-                     * 设置Cos 地域。
-                     * @param CosRegion Cos 地域。
-                     */
-                    void SetCosRegion(const std::string& _cosRegion);
-
-                    /**
-                     * 判断参数 CosRegion 是否已赋值
-                     * @return CosRegion 是否已赋值
-                     */
-                    bool CosRegionHasBeenSet() const;
-
-                    /**
                      * 获取Cos Bucket文件夹前缀。
                      * @return CosPrefix Cos Bucket文件夹前缀。
                      */
@@ -291,6 +303,28 @@ namespace TencentCloud
                     bool m_templateIdHasBeenSet;
 
                     /**
+                     * Cos 应用 ID。
+**注：此参数现在须必选。**
+                     */
+                    int64_t m_cosAppId;
+                    bool m_cosAppIdHasBeenSet;
+
+                    /**
+                     * Cos Bucket名称。
+注：CosBucket参数值不能包含-[appid] 部分。
+**注：此参数现在须必选。**
+                     */
+                    std::string m_cosBucket;
+                    bool m_cosBucketHasBeenSet;
+
+                    /**
+                     * Cos 地域。
+**注：此参数现在须必选。**
+                     */
+                    std::string m_cosRegion;
+                    bool m_cosRegionHasBeenSet;
+
+                    /**
                      * 模板名称。
 长度上限：255字节。
                      */
@@ -330,25 +364,6 @@ namespace TencentCloud
                      */
                     int64_t m_pornFlag;
                     bool m_pornFlagHasBeenSet;
-
-                    /**
-                     * Cos 应用 ID。
-                     */
-                    int64_t m_cosAppId;
-                    bool m_cosAppIdHasBeenSet;
-
-                    /**
-                     * Cos Bucket名称。
-注：CosBucket参数值不能包含-[appid] 部分。
-                     */
-                    std::string m_cosBucket;
-                    bool m_cosBucketHasBeenSet;
-
-                    /**
-                     * Cos 地域。
-                     */
-                    std::string m_cosRegion;
-                    bool m_cosRegionHasBeenSet;
 
                     /**
                      * Cos Bucket文件夹前缀。

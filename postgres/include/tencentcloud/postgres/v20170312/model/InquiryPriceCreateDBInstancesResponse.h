@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取原始价格，单位：分
-                     * @return OriginalPrice 原始价格，单位：分
+                     * 获取刊例价，单位：分
+                     * @return OriginalPrice 刊例价，单位：分
                      */
                     uint64_t GetOriginalPrice() const;
 
@@ -56,8 +56,8 @@ namespace TencentCloud
                     bool OriginalPriceHasBeenSet() const;
 
                     /**
-                     * 获取折后价格，单位：分
-                     * @return Price 折后价格，单位：分
+                     * 获取折后实际付款金额，单位：分
+                     * @return Price 折后实际付款金额，单位：分
                      */
                     uint64_t GetPrice() const;
 
@@ -82,13 +82,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 原始价格，单位：分
+                     * 刊例价，单位：分
                      */
                     uint64_t m_originalPrice;
                     bool m_originalPriceHasBeenSet;
 
                     /**
-                     * 折后价格，单位：分
+                     * 折后实际付款金额，单位：分
                      */
                     uint64_t m_price;
                     bool m_priceHasBeenSet;

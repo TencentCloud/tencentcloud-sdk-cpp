@@ -191,14 +191,14 @@ namespace TencentCloud
                     bool QpsHasBeenSet() const;
 
                     /**
-                     * 获取该规格对应的计费ID
-                     * @return Pid 该规格对应的计费ID
+                     * 获取【该字段废弃】
+                     * @return Pid 【该字段废弃】
                      */
                     uint64_t GetPid() const;
 
                     /**
-                     * 设置该规格对应的计费ID
-                     * @param Pid 该规格对应的计费ID
+                     * 设置【该字段废弃】
+                     * @param Pid 【该字段废弃】
                      */
                     void SetPid(const uint64_t& _pid);
 
@@ -343,7 +343,7 @@ namespace TencentCloud
                     bool m_qpsHasBeenSet;
 
                     /**
-                     * 该规格对应的计费ID
+                     * 【该字段废弃】
                      */
                     uint64_t m_pid;
                     bool m_pidHasBeenSet;

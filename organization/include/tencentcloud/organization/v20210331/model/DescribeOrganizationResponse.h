@@ -254,6 +254,20 @@ namespace TencentCloud
                      */
                     bool IsAssignManagerHasBeenSet() const;
 
+                    /**
+                     * 获取是否主体管理员 true-是、false-否
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsAuthManager 是否主体管理员 true-是、false-否
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetIsAuthManager() const;
+
+                    /**
+                     * 判断参数 IsAuthManager 是否已赋值
+                     * @return IsAuthManager 是否已赋值
+                     */
+                    bool IsAuthManagerHasBeenSet() const;
+
                 private:
 
                     /**
@@ -360,6 +374,13 @@ namespace TencentCloud
                      */
                     bool m_isAssignManager;
                     bool m_isAssignManagerHasBeenSet;
+
+                    /**
+                     * 是否主体管理员 true-是、false-否
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_isAuthManager;
+                    bool m_isAuthManagerHasBeenSet;
 
                 };
             }

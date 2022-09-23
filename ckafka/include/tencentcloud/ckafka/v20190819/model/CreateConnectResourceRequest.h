@@ -29,6 +29,7 @@
 #include <tencentcloud/ckafka/v20190819/model/PostgreSQLConnectParam.h>
 #include <tencentcloud/ckafka/v20190819/model/MariaDBConnectParam.h>
 #include <tencentcloud/ckafka/v20190819/model/SQLServerConnectParam.h>
+#include <tencentcloud/ckafka/v20190819/model/DorisConnectParam.h>
 
 
 namespace TencentCloud
@@ -248,6 +249,24 @@ namespace TencentCloud
                      */
                     bool SQLServerConnectParamHasBeenSet() const;
 
+                    /**
+                     * 获取Doris 配置，Type为 DORIS 时必填
+                     * @return DorisConnectParam Doris 配置，Type为 DORIS 时必填
+                     */
+                    DorisConnectParam GetDorisConnectParam() const;
+
+                    /**
+                     * 设置Doris 配置，Type为 DORIS 时必填
+                     * @param DorisConnectParam Doris 配置，Type为 DORIS 时必填
+                     */
+                    void SetDorisConnectParam(const DorisConnectParam& _dorisConnectParam);
+
+                    /**
+                     * 判断参数 DorisConnectParam 是否已赋值
+                     * @return DorisConnectParam 是否已赋值
+                     */
+                    bool DorisConnectParamHasBeenSet() const;
+
                 private:
 
                     /**
@@ -315,6 +334,12 @@ namespace TencentCloud
                      */
                     SQLServerConnectParam m_sQLServerConnectParam;
                     bool m_sQLServerConnectParamHasBeenSet;
+
+                    /**
+                     * Doris 配置，Type为 DORIS 时必填
+                     */
+                    DorisConnectParam m_dorisConnectParam;
+                    bool m_dorisConnectParamHasBeenSet;
 
                 };
             }

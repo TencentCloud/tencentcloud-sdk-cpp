@@ -756,6 +756,58 @@ namespace TencentCloud
                      */
                     bool IsSupportTDEHasBeenSet() const;
 
+                    /**
+                     * 获取数据库引擎，支持：
+1、postgresql（云数据库PostgreSQL）；
+2、mssql_compatible（MSSQL兼容-云数据库PostgreSQL）；
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DBEngine 数据库引擎，支持：
+1、postgresql（云数据库PostgreSQL）；
+2、mssql_compatible（MSSQL兼容-云数据库PostgreSQL）；
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetDBEngine() const;
+
+                    /**
+                     * 设置数据库引擎，支持：
+1、postgresql（云数据库PostgreSQL）；
+2、mssql_compatible（MSSQL兼容-云数据库PostgreSQL）；
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DBEngine 数据库引擎，支持：
+1、postgresql（云数据库PostgreSQL）；
+2、mssql_compatible（MSSQL兼容-云数据库PostgreSQL）；
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDBEngine(const std::string& _dBEngine);
+
+                    /**
+                     * 判断参数 DBEngine 是否已赋值
+                     * @return DBEngine 是否已赋值
+                     */
+                    bool DBEngineHasBeenSet() const;
+
+                    /**
+                     * 获取数据库引擎的配置信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DBEngineConfig 数据库引擎的配置信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetDBEngineConfig() const;
+
+                    /**
+                     * 设置数据库引擎的配置信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DBEngineConfig 数据库引擎的配置信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDBEngineConfig(const std::string& _dBEngineConfig);
+
+                    /**
+                     * 判断参数 DBEngineConfig 是否已赋值
+                     * @return DBEngineConfig 是否已赋值
+                     */
+                    bool DBEngineConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -989,6 +1041,22 @@ namespace TencentCloud
                      */
                     int64_t m_isSupportTDE;
                     bool m_isSupportTDEHasBeenSet;
+
+                    /**
+                     * 数据库引擎，支持：
+1、postgresql（云数据库PostgreSQL）；
+2、mssql_compatible（MSSQL兼容-云数据库PostgreSQL）；
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_dBEngine;
+                    bool m_dBEngineHasBeenSet;
+
+                    /**
+                     * 数据库引擎的配置信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_dBEngineConfig;
+                    bool m_dBEngineConfigHasBeenSet;
 
                 };
             }

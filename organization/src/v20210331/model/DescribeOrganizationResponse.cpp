@@ -38,7 +38,8 @@ DescribeOrganizationResponse::DescribeOrganizationResponse() :
     m_isAllowQuitHasBeenSet(false),
     m_payUinHasBeenSet(false),
     m_payNameHasBeenSet(false),
-    m_isAssignManagerHasBeenSet(false)
+    m_isAssignManagerHasBeenSet(false),
+    m_isAuthManagerHasBeenSet(false)
 {
 }
 
@@ -236,6 +237,16 @@ CoreInternalOutcome DescribeOrganizationResponse::Deserialize(const string &payl
         m_isAssignManagerHasBeenSet = true;
     }
 
+    if (rsp.HasMember("IsAuthManager") && !rsp["IsAuthManager"].IsNull())
+    {
+        if (!rsp["IsAuthManager"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `IsAuthManager` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isAuthManager = rsp["IsAuthManager"].GetBool();
+        m_isAuthManagerHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -371,6 +382,14 @@ string DescribeOrganizationResponse::ToJsonString() const
         string key = "IsAssignManager";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isAssignManager, allocator);
+    }
+
+    if (m_isAuthManagerHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsAuthManager";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isAuthManager, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -533,6 +552,16 @@ bool DescribeOrganizationResponse::GetIsAssignManager() const
 bool DescribeOrganizationResponse::IsAssignManagerHasBeenSet() const
 {
     return m_isAssignManagerHasBeenSet;
+}
+
+bool DescribeOrganizationResponse::GetIsAuthManager() const
+{
+    return m_isAuthManager;
+}
+
+bool DescribeOrganizationResponse::IsAuthManagerHasBeenSet() const
+{
+    return m_isAuthManagerHasBeenSet;
 }
 
 

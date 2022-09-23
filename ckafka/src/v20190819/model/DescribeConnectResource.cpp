@@ -38,7 +38,8 @@ DescribeConnectResource::DescribeConnectResource() :
     m_postgreSQLConnectParamHasBeenSet(false),
     m_mariaDBConnectParamHasBeenSet(false),
     m_sQLServerConnectParamHasBeenSet(false),
-    m_ctsdbConnectParamHasBeenSet(false)
+    m_ctsdbConnectParamHasBeenSet(false),
+    m_dorisConnectParamHasBeenSet(false)
 {
 }
 
@@ -290,6 +291,23 @@ CoreInternalOutcome DescribeConnectResource::Deserialize(const rapidjson::Value 
         m_ctsdbConnectParamHasBeenSet = true;
     }
 
+    if (value.HasMember("DorisConnectParam") && !value["DorisConnectParam"].IsNull())
+    {
+        if (!value["DorisConnectParam"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeConnectResource.DorisConnectParam` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_dorisConnectParam.Deserialize(value["DorisConnectParam"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_dorisConnectParamHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -448,6 +466,15 @@ void DescribeConnectResource::ToJsonObject(rapidjson::Value &value, rapidjson::D
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_ctsdbConnectParam.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_dorisConnectParamHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DorisConnectParam";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_dorisConnectParam.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -739,5 +766,21 @@ void DescribeConnectResource::SetCtsdbConnectParam(const CtsdbConnectParam& _cts
 bool DescribeConnectResource::CtsdbConnectParamHasBeenSet() const
 {
     return m_ctsdbConnectParamHasBeenSet;
+}
+
+DorisConnectParam DescribeConnectResource::GetDorisConnectParam() const
+{
+    return m_dorisConnectParam;
+}
+
+void DescribeConnectResource::SetDorisConnectParam(const DorisConnectParam& _dorisConnectParam)
+{
+    m_dorisConnectParam = _dorisConnectParam;
+    m_dorisConnectParamHasBeenSet = true;
+}
+
+bool DescribeConnectResource::DorisConnectParamHasBeenSet() const
+{
+    return m_dorisConnectParamHasBeenSet;
 }
 

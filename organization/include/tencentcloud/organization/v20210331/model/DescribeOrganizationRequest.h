@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool LangHasBeenSet() const;
 
                     /**
-                     * 获取产品简称（查询是否集团服务委派管理员必须）
-                     * @return Product 产品简称（查询是否集团服务委派管理员必须）
+                     * 获取产品简称（查询是否集团服务委派管理员必填）
+                     * @return Product 产品简称（查询是否集团服务委派管理员必填）
                      */
                     std::string GetProduct() const;
 
                     /**
-                     * 设置产品简称（查询是否集团服务委派管理员必须）
-                     * @param Product 产品简称（查询是否集团服务委派管理员必须）
+                     * 设置产品简称（查询是否集团服务委派管理员必填）
+                     * @param Product 产品简称（查询是否集团服务委派管理员必填）
                      */
                     void SetProduct(const std::string& _product);
 
@@ -87,7 +87,7 @@ namespace TencentCloud
                     bool m_langHasBeenSet;
 
                     /**
-                     * 产品简称（查询是否集团服务委派管理员必须）
+                     * 产品简称（查询是否集团服务委派管理员必填）
                      */
                     std::string m_product;
                     bool m_productHasBeenSet;
