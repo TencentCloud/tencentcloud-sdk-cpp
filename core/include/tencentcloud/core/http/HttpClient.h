@@ -48,6 +48,9 @@ namespace TencentCloud
         int64_t m_reqTimeout;
         int64_t m_connectTimeout;
         NetworkProxy m_proxy;
+
+        int GzipDecompress(const char *src, int srcLen, const char *dst, int* dstLen);
+        bool TryDecompress(const char *src, int srcLen, std::string &decompressData);
     };
 }
 
