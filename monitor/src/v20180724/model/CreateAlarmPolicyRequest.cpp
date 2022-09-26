@@ -36,7 +36,9 @@ CreateAlarmPolicyRequest::CreateAlarmPolicyRequest() :
     m_noticeIdsHasBeenSet(false),
     m_triggerTasksHasBeenSet(false),
     m_filterHasBeenSet(false),
-    m_groupByHasBeenSet(false)
+    m_groupByHasBeenSet(false),
+    m_tagsHasBeenSet(false),
+    m_logAlarmReqInfoHasBeenSet(false)
 {
 }
 
@@ -177,6 +179,30 @@ string CreateAlarmPolicyRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_logAlarmReqInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LogAlarmReqInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_logAlarmReqInfo.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -409,6 +435,38 @@ void CreateAlarmPolicyRequest::SetGroupBy(const vector<string>& _groupBy)
 bool CreateAlarmPolicyRequest::GroupByHasBeenSet() const
 {
     return m_groupByHasBeenSet;
+}
+
+vector<Tag> CreateAlarmPolicyRequest::GetTags() const
+{
+    return m_tags;
+}
+
+void CreateAlarmPolicyRequest::SetTags(const vector<Tag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool CreateAlarmPolicyRequest::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
+}
+
+LogAlarmReq CreateAlarmPolicyRequest::GetLogAlarmReqInfo() const
+{
+    return m_logAlarmReqInfo;
+}
+
+void CreateAlarmPolicyRequest::SetLogAlarmReqInfo(const LogAlarmReq& _logAlarmReqInfo)
+{
+    m_logAlarmReqInfo = _logAlarmReqInfo;
+    m_logAlarmReqInfoHasBeenSet = true;
+}
+
+bool CreateAlarmPolicyRequest::LogAlarmReqInfoHasBeenSet() const
+{
+    return m_logAlarmReqInfoHasBeenSet;
 }
 
 

@@ -176,6 +176,50 @@ namespace TencentCloud
                      */
                     bool TaskUpdateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取0--未开始，1--进行中，2--已完成
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TaskPreCheckStatus 0--未开始，1--进行中，2--已完成
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetTaskPreCheckStatus() const;
+
+                    /**
+                     * 设置0--未开始，1--进行中，2--已完成
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TaskPreCheckStatus 0--未开始，1--进行中，2--已完成
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTaskPreCheckStatus(const int64_t& _taskPreCheckStatus);
+
+                    /**
+                     * 判断参数 TaskPreCheckStatus 是否已赋值
+                     * @return TaskPreCheckStatus 是否已赋值
+                     */
+                    bool TaskPreCheckStatusHasBeenSet() const;
+
+                    /**
+                     * 获取环境检查是否通过
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TaskPreCheckSuccess 环境检查是否通过
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetTaskPreCheckSuccess() const;
+
+                    /**
+                     * 设置环境检查是否通过
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TaskPreCheckSuccess 环境检查是否通过
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTaskPreCheckSuccess(const bool& _taskPreCheckSuccess);
+
+                    /**
+                     * 判断参数 TaskPreCheckSuccess 是否已赋值
+                     * @return TaskPreCheckSuccess 是否已赋值
+                     */
+                    bool TaskPreCheckSuccessHasBeenSet() const;
+
                 private:
 
                     /**
@@ -220,6 +264,20 @@ namespace TencentCloud
                      */
                     std::string m_taskUpdateTime;
                     bool m_taskUpdateTimeHasBeenSet;
+
+                    /**
+                     * 0--未开始，1--进行中，2--已完成
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_taskPreCheckStatus;
+                    bool m_taskPreCheckStatusHasBeenSet;
+
+                    /**
+                     * 环境检查是否通过
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_taskPreCheckSuccess;
+                    bool m_taskPreCheckSuccessHasBeenSet;
 
                 };
             }

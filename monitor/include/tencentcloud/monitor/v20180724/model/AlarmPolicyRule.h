@@ -427,6 +427,50 @@ re=正则匹配
                      */
                     bool ProductIdHasBeenSet() const;
 
+                    /**
+                     * 获取最大值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ValueMax 最大值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double GetValueMax() const;
+
+                    /**
+                     * 设置最大值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ValueMax 最大值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetValueMax(const double& _valueMax);
+
+                    /**
+                     * 判断参数 ValueMax 是否已赋值
+                     * @return ValueMax 是否已赋值
+                     */
+                    bool ValueMaxHasBeenSet() const;
+
+                    /**
+                     * 获取最小值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ValueMin 最小值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double GetValueMin() const;
+
+                    /**
+                     * 设置最小值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ValueMin 最小值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetValueMin(const double& _valueMin);
+
+                    /**
+                     * 判断参数 ValueMin 是否已赋值
+                     * @return ValueMin 是否已赋值
+                     */
+                    bool ValueMinHasBeenSet() const;
+
                 private:
 
                     /**
@@ -544,6 +588,20 @@ re=正则匹配
                      */
                     std::string m_productId;
                     bool m_productIdHasBeenSet;
+
+                    /**
+                     * 最大值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double m_valueMax;
+                    bool m_valueMaxHasBeenSet;
+
+                    /**
+                     * 最小值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double m_valueMin;
+                    bool m_valueMinHasBeenSet;
 
                 };
             }

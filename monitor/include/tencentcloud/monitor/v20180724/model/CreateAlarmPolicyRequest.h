@@ -25,6 +25,8 @@
 #include <tencentcloud/monitor/v20180724/model/AlarmPolicyEventCondition.h>
 #include <tencentcloud/monitor/v20180724/model/AlarmPolicyTriggerTask.h>
 #include <tencentcloud/monitor/v20180724/model/AlarmPolicyFilter.h>
+#include <tencentcloud/monitor/v20180724/model/Tag.h>
+#include <tencentcloud/monitor/v20180724/model/LogAlarmReq.h>
 
 
 namespace TencentCloud
@@ -298,6 +300,42 @@ namespace TencentCloud
                      */
                     bool GroupByHasBeenSet() const;
 
+                    /**
+                     * 获取模版绑定的标签
+                     * @return Tags 模版绑定的标签
+                     */
+                    std::vector<Tag> GetTags() const;
+
+                    /**
+                     * 设置模版绑定的标签
+                     * @param Tags 模版绑定的标签
+                     */
+                    void SetTags(const std::vector<Tag>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     */
+                    bool TagsHasBeenSet() const;
+
+                    /**
+                     * 获取日志告警信息
+                     * @return LogAlarmReqInfo 日志告警信息
+                     */
+                    LogAlarmReq GetLogAlarmReqInfo() const;
+
+                    /**
+                     * 设置日志告警信息
+                     * @param LogAlarmReqInfo 日志告警信息
+                     */
+                    void SetLogAlarmReqInfo(const LogAlarmReq& _logAlarmReqInfo);
+
+                    /**
+                     * 判断参数 LogAlarmReqInfo 是否已赋值
+                     * @return LogAlarmReqInfo 是否已赋值
+                     */
+                    bool LogAlarmReqInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -383,6 +421,18 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_groupBy;
                     bool m_groupByHasBeenSet;
+
+                    /**
+                     * 模版绑定的标签
+                     */
+                    std::vector<Tag> m_tags;
+                    bool m_tagsHasBeenSet;
+
+                    /**
+                     * 日志告警信息
+                     */
+                    LogAlarmReq m_logAlarmReqInfo;
+                    bool m_logAlarmReqInfoHasBeenSet;
 
                 };
             }

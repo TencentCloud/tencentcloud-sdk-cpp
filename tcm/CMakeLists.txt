@@ -44,6 +44,7 @@ set(tcm_public_header_model
   include/tencentcloud/tcm/v20210413/model/DescribeMeshRequest.h
   include/tencentcloud/tcm/v20210413/model/ActiveOperation.h
   include/tencentcloud/tcm/v20210413/model/PrometheusStatus.h
+  include/tencentcloud/tcm/v20210413/model/CrossRegionConfig.h
   include/tencentcloud/tcm/v20210413/model/Filter.h
   include/tencentcloud/tcm/v20210413/model/PrometheusConfig.h
   include/tencentcloud/tcm/v20210413/model/ExtensiveCluster.h
@@ -93,6 +94,7 @@ set(tcm_src
   src/v20210413/model/DescribeMeshRequest.cpp
   src/v20210413/model/ActiveOperation.cpp
   src/v20210413/model/PrometheusStatus.cpp
+  src/v20210413/model/CrossRegionConfig.cpp
   src/v20210413/model/Filter.cpp
   src/v20210413/model/PrometheusConfig.cpp
   src/v20210413/model/ExtensiveCluster.cpp

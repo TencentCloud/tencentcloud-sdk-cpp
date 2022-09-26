@@ -29,7 +29,8 @@ CreateAlarmNoticeRequest::CreateAlarmNoticeRequest() :
     m_noticeLanguageHasBeenSet(false),
     m_userNoticesHasBeenSet(false),
     m_uRLNoticesHasBeenSet(false),
-    m_cLSNoticesHasBeenSet(false)
+    m_cLSNoticesHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -111,6 +112,21 @@ string CreateAlarmNoticeRequest::ToJsonString() const
 
         int i=0;
         for (auto itr = m_cLSNotices.begin(); itr != m_cLSNotices.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
         {
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
@@ -235,6 +251,22 @@ void CreateAlarmNoticeRequest::SetCLSNotices(const vector<CLSNotice>& _cLSNotice
 bool CreateAlarmNoticeRequest::CLSNoticesHasBeenSet() const
 {
     return m_cLSNoticesHasBeenSet;
+}
+
+vector<Tag> CreateAlarmNoticeRequest::GetTags() const
+{
+    return m_tags;
+}
+
+void CreateAlarmNoticeRequest::SetTags(const vector<Tag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool CreateAlarmNoticeRequest::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 
 

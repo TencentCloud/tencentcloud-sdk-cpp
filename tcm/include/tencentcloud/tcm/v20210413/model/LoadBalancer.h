@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tcm/v20210413/model/Tag.h>
 #include <tencentcloud/tcm/v20210413/model/ExtensiveClusters.h>
+#include <tencentcloud/tcm/v20210413/model/CrossRegionConfig.h>
 
 
 namespace TencentCloud
@@ -260,6 +261,28 @@ OPEN：公网属性， INTERNAL：内网属性。
                      */
                     bool ExtensiveClustersHasBeenSet() const;
 
+                    /**
+                     * 获取负载均衡跨地域配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CrossRegionConfig 负载均衡跨地域配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    CrossRegionConfig GetCrossRegionConfig() const;
+
+                    /**
+                     * 设置负载均衡跨地域配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param CrossRegionConfig 负载均衡跨地域配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCrossRegionConfig(const CrossRegionConfig& _crossRegionConfig);
+
+                    /**
+                     * 判断参数 CrossRegionConfig 是否已赋值
+                     * @return CrossRegionConfig 是否已赋值
+                     */
+                    bool CrossRegionConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -329,6 +352,13 @@ OPEN：公网属性， INTERNAL：内网属性。
                      */
                     ExtensiveClusters m_extensiveClusters;
                     bool m_extensiveClustersHasBeenSet;
+
+                    /**
+                     * 负载均衡跨地域配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    CrossRegionConfig m_crossRegionConfig;
+                    bool m_crossRegionConfigHasBeenSet;
 
                 };
             }

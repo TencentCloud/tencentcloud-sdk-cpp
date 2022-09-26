@@ -119,6 +119,28 @@ namespace TencentCloud
                      */
                     bool SubTasksHasBeenSet() const;
 
+                    /**
+                     * 获取任务花费时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ElapsedTime 任务花费时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetElapsedTime() const;
+
+                    /**
+                     * 设置任务花费时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ElapsedTime 任务花费时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetElapsedTime(const int64_t& _elapsedTime);
+
+                    /**
+                     * 判断参数 ElapsedTime 是否已赋值
+                     * @return ElapsedTime 是否已赋值
+                     */
+                    bool ElapsedTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -144,6 +166,13 @@ namespace TencentCloud
                      */
                     std::vector<SubTaskDetail> m_subTasks;
                     bool m_subTasksHasBeenSet;
+
+                    /**
+                     * 任务花费时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_elapsedTime;
+                    bool m_elapsedTimeHasBeenSet;
 
                 };
             }

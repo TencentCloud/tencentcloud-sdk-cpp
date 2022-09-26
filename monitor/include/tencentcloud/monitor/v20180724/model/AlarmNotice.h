@@ -27,6 +27,7 @@
 #include <tencentcloud/monitor/v20180724/model/UserNotice.h>
 #include <tencentcloud/monitor/v20180724/model/URLNotice.h>
 #include <tencentcloud/monitor/v20180724/model/CLSNotice.h>
+#include <tencentcloud/monitor/v20180724/model/Tag.h>
 
 
 namespace TencentCloud
@@ -313,6 +314,28 @@ namespace TencentCloud
                      */
                     bool CLSNoticesHasBeenSet() const;
 
+                    /**
+                     * 获取通知模版绑定的标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Tags 通知模版绑定的标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Tag> GetTags() const;
+
+                    /**
+                     * 设置通知模版绑定的标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Tags 通知模版绑定的标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTags(const std::vector<Tag>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     */
+                    bool TagsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -398,6 +421,13 @@ namespace TencentCloud
                      */
                     std::vector<CLSNotice> m_cLSNotices;
                     bool m_cLSNoticesHasBeenSet;
+
+                    /**
+                     * 通知模版绑定的标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Tag> m_tags;
+                    bool m_tagsHasBeenSet;
 
                 };
             }

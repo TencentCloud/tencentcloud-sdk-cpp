@@ -43,7 +43,10 @@ DescribeAlarmPoliciesRequest::DescribeAlarmPoliciesRequest() :
     m_instanceGroupIdHasBeenSet(false),
     m_needCorrespondenceHasBeenSet(false),
     m_triggerTasksHasBeenSet(false),
-    m_oneClickPolicyTypeHasBeenSet(false)
+    m_oneClickPolicyTypeHasBeenSet(false),
+    m_notBindAllHasBeenSet(false),
+    m_notInstanceGroupHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -276,6 +279,37 @@ string DescribeAlarmPoliciesRequest::ToJsonString() const
         for (auto itr = m_oneClickPolicyType.begin(); itr != m_oneClickPolicyType.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_notBindAllHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NotBindAll";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_notBindAll, allocator);
+    }
+
+    if (m_notInstanceGroupHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NotInstanceGroup";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_notInstanceGroup, allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
     }
 
@@ -621,6 +655,54 @@ void DescribeAlarmPoliciesRequest::SetOneClickPolicyType(const vector<string>& _
 bool DescribeAlarmPoliciesRequest::OneClickPolicyTypeHasBeenSet() const
 {
     return m_oneClickPolicyTypeHasBeenSet;
+}
+
+int64_t DescribeAlarmPoliciesRequest::GetNotBindAll() const
+{
+    return m_notBindAll;
+}
+
+void DescribeAlarmPoliciesRequest::SetNotBindAll(const int64_t& _notBindAll)
+{
+    m_notBindAll = _notBindAll;
+    m_notBindAllHasBeenSet = true;
+}
+
+bool DescribeAlarmPoliciesRequest::NotBindAllHasBeenSet() const
+{
+    return m_notBindAllHasBeenSet;
+}
+
+int64_t DescribeAlarmPoliciesRequest::GetNotInstanceGroup() const
+{
+    return m_notInstanceGroup;
+}
+
+void DescribeAlarmPoliciesRequest::SetNotInstanceGroup(const int64_t& _notInstanceGroup)
+{
+    m_notInstanceGroup = _notInstanceGroup;
+    m_notInstanceGroupHasBeenSet = true;
+}
+
+bool DescribeAlarmPoliciesRequest::NotInstanceGroupHasBeenSet() const
+{
+    return m_notInstanceGroupHasBeenSet;
+}
+
+vector<Tag> DescribeAlarmPoliciesRequest::GetTags() const
+{
+    return m_tags;
+}
+
+void DescribeAlarmPoliciesRequest::SetTags(const vector<Tag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool DescribeAlarmPoliciesRequest::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 
 

@@ -29,7 +29,8 @@ ModifyAlarmPolicyConditionRequest::ModifyAlarmPolicyConditionRequest() :
     m_conditionHasBeenSet(false),
     m_eventConditionHasBeenSet(false),
     m_filterHasBeenSet(false),
-    m_groupByHasBeenSet(false)
+    m_groupByHasBeenSet(false),
+    m_logAlarmReqInfoHasBeenSet(false)
 {
 }
 
@@ -102,6 +103,15 @@ string ModifyAlarmPolicyConditionRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_logAlarmReqInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LogAlarmReqInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_logAlarmReqInfo.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -222,6 +232,22 @@ void ModifyAlarmPolicyConditionRequest::SetGroupBy(const vector<string>& _groupB
 bool ModifyAlarmPolicyConditionRequest::GroupByHasBeenSet() const
 {
     return m_groupByHasBeenSet;
+}
+
+LogAlarmReq ModifyAlarmPolicyConditionRequest::GetLogAlarmReqInfo() const
+{
+    return m_logAlarmReqInfo;
+}
+
+void ModifyAlarmPolicyConditionRequest::SetLogAlarmReqInfo(const LogAlarmReq& _logAlarmReqInfo)
+{
+    m_logAlarmReqInfo = _logAlarmReqInfo;
+    m_logAlarmReqInfoHasBeenSet = true;
+}
+
+bool ModifyAlarmPolicyConditionRequest::LogAlarmReqInfoHasBeenSet() const
+{
+    return m_logAlarmReqInfoHasBeenSet;
 }
 
 

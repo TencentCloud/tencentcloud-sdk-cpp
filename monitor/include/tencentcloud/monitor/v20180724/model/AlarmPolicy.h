@@ -30,6 +30,7 @@
 #include <tencentcloud/monitor/v20180724/model/AlarmPolicyTriggerTask.h>
 #include <tencentcloud/monitor/v20180724/model/ConditionsTemp.h>
 #include <tencentcloud/monitor/v20180724/model/TagInstance.h>
+#include <tencentcloud/monitor/v20180724/model/Tag.h>
 
 
 namespace TencentCloud
@@ -790,6 +791,50 @@ namespace TencentCloud
                      */
                     bool AdvancedMetricNumberHasBeenSet() const;
 
+                    /**
+                     * 获取策略是否是全部对象策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsBindAll 策略是否是全部对象策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetIsBindAll() const;
+
+                    /**
+                     * 设置策略是否是全部对象策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param IsBindAll 策略是否是全部对象策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIsBindAll(const int64_t& _isBindAll);
+
+                    /**
+                     * 判断参数 IsBindAll 是否已赋值
+                     * @return IsBindAll 是否已赋值
+                     */
+                    bool IsBindAllHasBeenSet() const;
+
+                    /**
+                     * 获取策略标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Tags 策略标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Tag> GetTags() const;
+
+                    /**
+                     * 设置策略标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Tags 策略标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTags(const std::vector<Tag>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     */
+                    bool TagsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1025,6 +1070,20 @@ namespace TencentCloud
                      */
                     int64_t m_advancedMetricNumber;
                     bool m_advancedMetricNumberHasBeenSet;
+
+                    /**
+                     * 策略是否是全部对象策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_isBindAll;
+                    bool m_isBindAllHasBeenSet;
+
+                    /**
+                     * 策略标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Tag> m_tags;
+                    bool m_tagsHasBeenSet;
 
                 };
             }

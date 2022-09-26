@@ -30,7 +30,8 @@ LoadBalancer::LoadBalancer() :
     m_tgwGroupNameHasBeenSet(false),
     m_addressIPVersionHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_extensiveClustersHasBeenSet(false)
+    m_extensiveClustersHasBeenSet(false),
+    m_crossRegionConfigHasBeenSet(false)
 {
 }
 
@@ -156,6 +157,23 @@ CoreInternalOutcome LoadBalancer::Deserialize(const rapidjson::Value &value)
         m_extensiveClustersHasBeenSet = true;
     }
 
+    if (value.HasMember("CrossRegionConfig") && !value["CrossRegionConfig"].IsNull())
+    {
+        if (!value["CrossRegionConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `LoadBalancer.CrossRegionConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_crossRegionConfig.Deserialize(value["CrossRegionConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_crossRegionConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -249,6 +267,15 @@ void LoadBalancer::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_extensiveClusters.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_crossRegionConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CrossRegionConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_crossRegionConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -412,5 +439,21 @@ void LoadBalancer::SetExtensiveClusters(const ExtensiveClusters& _extensiveClust
 bool LoadBalancer::ExtensiveClustersHasBeenSet() const
 {
     return m_extensiveClustersHasBeenSet;
+}
+
+CrossRegionConfig LoadBalancer::GetCrossRegionConfig() const
+{
+    return m_crossRegionConfig;
+}
+
+void LoadBalancer::SetCrossRegionConfig(const CrossRegionConfig& _crossRegionConfig)
+{
+    m_crossRegionConfig = _crossRegionConfig;
+    m_crossRegionConfigHasBeenSet = true;
+}
+
+bool LoadBalancer::CrossRegionConfigHasBeenSet() const
+{
+    return m_crossRegionConfigHasBeenSet;
 }
 

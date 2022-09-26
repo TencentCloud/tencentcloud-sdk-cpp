@@ -153,14 +153,14 @@ namespace TencentCloud
                     bool OperatorHasBeenSet() const;
 
                     /**
-                     * 获取是否返回所有组件信息
-                     * @return QueryAllComponents 是否返回所有组件信息
+                     * 获取是否返回所有组件信息。默认false，只返回发起方控件；true，返回所有签署方控件
+                     * @return QueryAllComponents 是否返回所有组件信息。默认false，只返回发起方控件；true，返回所有签署方控件
                      */
                     bool GetQueryAllComponents() const;
 
                     /**
-                     * 设置是否返回所有组件信息
-                     * @param QueryAllComponents 是否返回所有组件信息
+                     * 设置是否返回所有组件信息。默认false，只返回发起方控件；true，返回所有签署方控件
+                     * @param QueryAllComponents 是否返回所有组件信息。默认false，只返回发起方控件；true，返回所有签署方控件
                      */
                     void SetQueryAllComponents(const bool& _queryAllComponents);
 
@@ -171,14 +171,14 @@ namespace TencentCloud
                     bool QueryAllComponentsHasBeenSet() const;
 
                     /**
-                     * 获取模糊搜索模板名称
-                     * @return TemplateName 模糊搜索模板名称
+                     * 获取模糊搜索模板名称，最大长度200
+                     * @return TemplateName 模糊搜索模板名称，最大长度200
                      */
                     std::string GetTemplateName() const;
 
                     /**
-                     * 设置模糊搜索模板名称
-                     * @param TemplateName 模糊搜索模板名称
+                     * 设置模糊搜索模板名称，最大长度200
+                     * @param TemplateName 模糊搜索模板名称，最大长度200
                      */
                     void SetTemplateName(const std::string& _templateName);
 
@@ -227,13 +227,13 @@ namespace TencentCloud
                     bool m_operatorHasBeenSet;
 
                     /**
-                     * 是否返回所有组件信息
+                     * 是否返回所有组件信息。默认false，只返回发起方控件；true，返回所有签署方控件
                      */
                     bool m_queryAllComponents;
                     bool m_queryAllComponentsHasBeenSet;
 
                     /**
-                     * 模糊搜索模板名称
+                     * 模糊搜索模板名称，最大长度200
                      */
                     std::string m_templateName;
                     bool m_templateNameHasBeenSet;

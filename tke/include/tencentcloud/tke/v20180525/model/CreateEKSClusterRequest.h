@@ -46,14 +46,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取k8s版本号。可为1.14.4, 1.12.8。
-                     * @return K8SVersion k8s版本号。可为1.14.4, 1.12.8。
+                     * 获取k8s版本号。可为1.18.4 1.20.6。
+                     * @return K8SVersion k8s版本号。可为1.18.4 1.20.6。
                      */
                     std::string GetK8SVersion() const;
 
                     /**
-                     * 设置k8s版本号。可为1.14.4, 1.12.8。
-                     * @param K8SVersion k8s版本号。可为1.14.4, 1.12.8。
+                     * 设置k8s版本号。可为1.18.4 1.20.6。
+                     * @param K8SVersion k8s版本号。可为1.18.4 1.20.6。
                      */
                     void SetK8SVersion(const std::string& _k8SVersion);
 
@@ -136,14 +136,14 @@ namespace TencentCloud
                     bool ClusterDescHasBeenSet() const;
 
                     /**
-                     * 获取Serivce 所在子网Id
-                     * @return ServiceSubnetId Serivce 所在子网Id
+                     * 获取Service CIDR 或 Serivce 所在子网Id
+                     * @return ServiceSubnetId Service CIDR 或 Serivce 所在子网Id
                      */
                     std::string GetServiceSubnetId() const;
 
                     /**
-                     * 设置Serivce 所在子网Id
-                     * @param ServiceSubnetId Serivce 所在子网Id
+                     * 设置Service CIDR 或 Serivce 所在子网Id
+                     * @param ServiceSubnetId Service CIDR 或 Serivce 所在子网Id
                      */
                     void SetServiceSubnetId(const std::string& _serviceSubnetId);
 
@@ -246,7 +246,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * k8s版本号。可为1.14.4, 1.12.8。
+                     * k8s版本号。可为1.18.4 1.20.6。
                      */
                     std::string m_k8SVersion;
                     bool m_k8SVersionHasBeenSet;
@@ -276,7 +276,7 @@ namespace TencentCloud
                     bool m_clusterDescHasBeenSet;
 
                     /**
-                     * Serivce 所在子网Id
+                     * Service CIDR 或 Serivce 所在子网Id
                      */
                     std::string m_serviceSubnetId;
                     bool m_serviceSubnetIdHasBeenSet;

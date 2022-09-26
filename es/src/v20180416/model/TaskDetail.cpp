@@ -24,7 +24,8 @@ TaskDetail::TaskDetail() :
     m_nameHasBeenSet(false),
     m_progressHasBeenSet(false),
     m_finishTimeHasBeenSet(false),
-    m_subTasksHasBeenSet(false)
+    m_subTasksHasBeenSet(false),
+    m_elapsedTimeHasBeenSet(false)
 {
 }
 
@@ -83,6 +84,16 @@ CoreInternalOutcome TaskDetail::Deserialize(const rapidjson::Value &value)
         m_subTasksHasBeenSet = true;
     }
 
+    if (value.HasMember("ElapsedTime") && !value["ElapsedTime"].IsNull())
+    {
+        if (!value["ElapsedTime"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskDetail.ElapsedTime` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_elapsedTime = value["ElapsedTime"].GetInt64();
+        m_elapsedTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -127,6 +138,14 @@ void TaskDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_elapsedTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ElapsedTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_elapsedTime, allocator);
     }
 
 }
@@ -194,5 +213,21 @@ void TaskDetail::SetSubTasks(const vector<SubTaskDetail>& _subTasks)
 bool TaskDetail::SubTasksHasBeenSet() const
 {
     return m_subTasksHasBeenSet;
+}
+
+int64_t TaskDetail::GetElapsedTime() const
+{
+    return m_elapsedTime;
+}
+
+void TaskDetail::SetElapsedTime(const int64_t& _elapsedTime)
+{
+    m_elapsedTime = _elapsedTime;
+    m_elapsedTimeHasBeenSet = true;
+}
+
+bool TaskDetail::ElapsedTimeHasBeenSet() const
+{
+    return m_elapsedTimeHasBeenSet;
 }
 

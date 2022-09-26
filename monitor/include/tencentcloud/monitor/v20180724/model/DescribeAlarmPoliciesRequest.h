@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/monitor/v20180724/model/AlarmPolicyTriggerTask.h>
+#include <tencentcloud/monitor/v20180724/model/Tag.h>
 
 
 namespace TencentCloud
@@ -457,6 +458,60 @@ namespace TencentCloud
                      */
                     bool OneClickPolicyTypeHasBeenSet() const;
 
+                    /**
+                     * 获取根据全部对象过滤，1代表需要过滤掉全部对象，0则无需过滤
+                     * @return NotBindAll 根据全部对象过滤，1代表需要过滤掉全部对象，0则无需过滤
+                     */
+                    int64_t GetNotBindAll() const;
+
+                    /**
+                     * 设置根据全部对象过滤，1代表需要过滤掉全部对象，0则无需过滤
+                     * @param NotBindAll 根据全部对象过滤，1代表需要过滤掉全部对象，0则无需过滤
+                     */
+                    void SetNotBindAll(const int64_t& _notBindAll);
+
+                    /**
+                     * 判断参数 NotBindAll 是否已赋值
+                     * @return NotBindAll 是否已赋值
+                     */
+                    bool NotBindAllHasBeenSet() const;
+
+                    /**
+                     * 获取根据实例对象过滤，1代表需要过滤掉有实例对象，0则无需过滤
+                     * @return NotInstanceGroup 根据实例对象过滤，1代表需要过滤掉有实例对象，0则无需过滤
+                     */
+                    int64_t GetNotInstanceGroup() const;
+
+                    /**
+                     * 设置根据实例对象过滤，1代表需要过滤掉有实例对象，0则无需过滤
+                     * @param NotInstanceGroup 根据实例对象过滤，1代表需要过滤掉有实例对象，0则无需过滤
+                     */
+                    void SetNotInstanceGroup(const int64_t& _notInstanceGroup);
+
+                    /**
+                     * 判断参数 NotInstanceGroup 是否已赋值
+                     * @return NotInstanceGroup 是否已赋值
+                     */
+                    bool NotInstanceGroupHasBeenSet() const;
+
+                    /**
+                     * 获取策略根据标签过滤
+                     * @return Tags 策略根据标签过滤
+                     */
+                    std::vector<Tag> GetTags() const;
+
+                    /**
+                     * 设置策略根据标签过滤
+                     * @param Tags 策略根据标签过滤
+                     */
+                    void SetTags(const std::vector<Tag>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     */
+                    bool TagsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -593,6 +648,24 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_oneClickPolicyType;
                     bool m_oneClickPolicyTypeHasBeenSet;
+
+                    /**
+                     * 根据全部对象过滤，1代表需要过滤掉全部对象，0则无需过滤
+                     */
+                    int64_t m_notBindAll;
+                    bool m_notBindAllHasBeenSet;
+
+                    /**
+                     * 根据实例对象过滤，1代表需要过滤掉有实例对象，0则无需过滤
+                     */
+                    int64_t m_notInstanceGroup;
+                    bool m_notInstanceGroupHasBeenSet;
+
+                    /**
+                     * 策略根据标签过滤
+                     */
+                    std::vector<Tag> m_tags;
+                    bool m_tagsHasBeenSet;
 
                 };
             }
