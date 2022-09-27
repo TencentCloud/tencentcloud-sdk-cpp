@@ -54,7 +54,8 @@ Cluster::Cluster() :
     m_customizedDNSEnabledHasBeenSet(false),
     m_correlationsHasBeenSet(false),
     m_runningCuHasBeenSet(false),
-    m_payModeHasBeenSet(false)
+    m_payModeHasBeenSet(false),
+    m_isNeedManageNodeHasBeenSet(false)
 {
 }
 
@@ -440,6 +441,16 @@ CoreInternalOutcome Cluster::Deserialize(const rapidjson::Value &value)
         m_payModeHasBeenSet = true;
     }
 
+    if (value.HasMember("IsNeedManageNode") && !value["IsNeedManageNode"].IsNull())
+    {
+        if (!value["IsNeedManageNode"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Cluster.IsNeedManageNode` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isNeedManageNode = value["IsNeedManageNode"].GetInt64();
+        m_isNeedManageNodeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -739,6 +750,14 @@ void Cluster::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "PayMode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_payMode, allocator);
+    }
+
+    if (m_isNeedManageNodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsNeedManageNode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isNeedManageNode, allocator);
     }
 
 }
@@ -1286,5 +1305,21 @@ void Cluster::SetPayMode(const int64_t& _payMode)
 bool Cluster::PayModeHasBeenSet() const
 {
     return m_payModeHasBeenSet;
+}
+
+int64_t Cluster::GetIsNeedManageNode() const
+{
+    return m_isNeedManageNode;
+}
+
+void Cluster::SetIsNeedManageNode(const int64_t& _isNeedManageNode)
+{
+    m_isNeedManageNode = _isNeedManageNode;
+    m_isNeedManageNodeHasBeenSet = true;
+}
+
+bool Cluster::IsNeedManageNodeHasBeenSet() const
+{
+    return m_isNeedManageNodeHasBeenSet;
 }
 

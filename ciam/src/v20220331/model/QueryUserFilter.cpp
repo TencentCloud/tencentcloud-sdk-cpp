@@ -23,7 +23,8 @@ using namespace std;
 QueryUserFilter::QueryUserFilter() :
     m_propertyKeyHasBeenSet(false),
     m_propertyValueHasBeenSet(false),
-    m_logicHasBeenSet(false)
+    m_logicHasBeenSet(false),
+    m_operateLogicHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,16 @@ CoreInternalOutcome QueryUserFilter::Deserialize(const rapidjson::Value &value)
         m_logicHasBeenSet = true;
     }
 
+    if (value.HasMember("OperateLogic") && !value["OperateLogic"].IsNull())
+    {
+        if (!value["OperateLogic"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `QueryUserFilter.OperateLogic` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_operateLogic = string(value["OperateLogic"].GetString());
+        m_operateLogicHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +102,14 @@ void QueryUserFilter::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "Logic";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_logic, allocator);
+    }
+
+    if (m_operateLogicHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OperateLogic";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_operateLogic.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -142,5 +161,21 @@ void QueryUserFilter::SetLogic(const bool& _logic)
 bool QueryUserFilter::LogicHasBeenSet() const
 {
     return m_logicHasBeenSet;
+}
+
+string QueryUserFilter::GetOperateLogic() const
+{
+    return m_operateLogic;
+}
+
+void QueryUserFilter::SetOperateLogic(const string& _operateLogic)
+{
+    m_operateLogic = _operateLogic;
+    m_operateLogicHasBeenSet = true;
+}
+
+bool QueryUserFilter::OperateLogicHasBeenSet() const
+{
+    return m_operateLogicHasBeenSet;
 }
 

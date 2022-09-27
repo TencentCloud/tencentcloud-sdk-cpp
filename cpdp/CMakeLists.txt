@@ -112,6 +112,7 @@ set(cpdp_public_header_model
   include/tencentcloud/cpdp/v20190820/model/CreateOpenBankVerificationOrderResponse.h
   include/tencentcloud/cpdp/v20190820/model/PaymentOrderResult.h
   include/tencentcloud/cpdp/v20190820/model/DistributeAddReceiverRequest.h
+  include/tencentcloud/cpdp/v20190820/model/QueryFinancialDataUrlRequest.h
   include/tencentcloud/cpdp/v20190820/model/QueryExchangerateData.h
   include/tencentcloud/cpdp/v20190820/model/WithdrawBill.h
   include/tencentcloud/cpdp/v20190820/model/QueryOpenBankDailyReceiptDownloadUrlResponse.h
@@ -317,6 +318,7 @@ set(cpdp_public_header_model
   include/tencentcloud/cpdp/v20190820/model/ViewContractRequest.h
   include/tencentcloud/cpdp/v20190820/model/QueryBankTransactionDetailsRequest.h
   include/tencentcloud/cpdp/v20190820/model/CloudSubOrderReturn.h
+  include/tencentcloud/cpdp/v20190820/model/QueryFinancialDataUrlResponse.h
   include/tencentcloud/cpdp/v20190820/model/QueryExchangeRateRequest.h
   include/tencentcloud/cpdp/v20190820/model/OrderSummaryResult.h
   include/tencentcloud/cpdp/v20190820/model/QueryBillDownloadURLRequest.h
@@ -757,6 +759,7 @@ set(cpdp_src
   src/v20190820/model/CreateOpenBankVerificationOrderResponse.cpp
   src/v20190820/model/PaymentOrderResult.cpp
   src/v20190820/model/DistributeAddReceiverRequest.cpp
+  src/v20190820/model/QueryFinancialDataUrlRequest.cpp
   src/v20190820/model/QueryExchangerateData.cpp
   src/v20190820/model/WithdrawBill.cpp
   src/v20190820/model/QueryOpenBankDailyReceiptDownloadUrlResponse.cpp
@@ -962,6 +965,7 @@ set(cpdp_src
   src/v20190820/model/ViewContractRequest.cpp
   src/v20190820/model/QueryBankTransactionDetailsRequest.cpp
   src/v20190820/model/CloudSubOrderReturn.cpp
+  src/v20190820/model/QueryFinancialDataUrlResponse.cpp
   src/v20190820/model/QueryExchangeRateRequest.cpp
   src/v20190820/model/OrderSummaryResult.cpp
   src/v20190820/model/QueryBillDownloadURLRequest.cpp

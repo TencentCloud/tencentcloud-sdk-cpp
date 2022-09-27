@@ -24,8 +24,9 @@ using namespace std;
 
 DescribeCloudNativeAPIGatewayNodesRequest::DescribeCloudNativeAPIGatewayNodesRequest() :
     m_gatewayIdHasBeenSet(false),
-    m_offsetHasBeenSet(false),
-    m_limitHasBeenSet(false)
+    m_groupIdHasBeenSet(false),
+    m_limitHasBeenSet(false),
+    m_offsetHasBeenSet(false)
 {
 }
 
@@ -44,12 +45,12 @@ string DescribeCloudNativeAPIGatewayNodesRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_gatewayId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_offsetHasBeenSet)
+    if (m_groupIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Offset";
+        string key = "GroupId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_offset, allocator);
+        d.AddMember(iKey, rapidjson::Value(m_groupId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_limitHasBeenSet)
@@ -58,6 +59,14 @@ string DescribeCloudNativeAPIGatewayNodesRequest::ToJsonString() const
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_offsetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Offset";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_offset, allocator);
     }
 
 
@@ -84,20 +93,20 @@ bool DescribeCloudNativeAPIGatewayNodesRequest::GatewayIdHasBeenSet() const
     return m_gatewayIdHasBeenSet;
 }
 
-int64_t DescribeCloudNativeAPIGatewayNodesRequest::GetOffset() const
+string DescribeCloudNativeAPIGatewayNodesRequest::GetGroupId() const
 {
-    return m_offset;
+    return m_groupId;
 }
 
-void DescribeCloudNativeAPIGatewayNodesRequest::SetOffset(const int64_t& _offset)
+void DescribeCloudNativeAPIGatewayNodesRequest::SetGroupId(const string& _groupId)
 {
-    m_offset = _offset;
-    m_offsetHasBeenSet = true;
+    m_groupId = _groupId;
+    m_groupIdHasBeenSet = true;
 }
 
-bool DescribeCloudNativeAPIGatewayNodesRequest::OffsetHasBeenSet() const
+bool DescribeCloudNativeAPIGatewayNodesRequest::GroupIdHasBeenSet() const
 {
-    return m_offsetHasBeenSet;
+    return m_groupIdHasBeenSet;
 }
 
 int64_t DescribeCloudNativeAPIGatewayNodesRequest::GetLimit() const
@@ -114,6 +123,22 @@ void DescribeCloudNativeAPIGatewayNodesRequest::SetLimit(const int64_t& _limit)
 bool DescribeCloudNativeAPIGatewayNodesRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+int64_t DescribeCloudNativeAPIGatewayNodesRequest::GetOffset() const
+{
+    return m_offset;
+}
+
+void DescribeCloudNativeAPIGatewayNodesRequest::SetOffset(const int64_t& _offset)
+{
+    m_offset = _offset;
+    m_offsetHasBeenSet = true;
+}
+
+bool DescribeCloudNativeAPIGatewayNodesRequest::OffsetHasBeenSet() const
+{
+    return m_offsetHasBeenSet;
 }
 
 

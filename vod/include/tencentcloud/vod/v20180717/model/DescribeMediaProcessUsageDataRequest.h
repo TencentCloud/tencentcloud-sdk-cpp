@@ -107,6 +107,7 @@ namespace TencentCloud
 <li> ContentRecognition: 内容识别</li>
 <li> RemoveWatermark: 去除水印</li>
 <li> ExtractTraceWatermark: 提取水印</li>
+<li> AddTraceWatermark: 添加水印</li>
 <li>Transcode: 转码，包含普通转码、极速高清和视频编辑（不推荐使用）</li>
                      * @return Type 查询视频处理任务类型，目前支持的任务类型包括：
 <li> Transcoding: 普通转码</li>
@@ -118,6 +119,7 @@ namespace TencentCloud
 <li> ContentRecognition: 内容识别</li>
 <li> RemoveWatermark: 去除水印</li>
 <li> ExtractTraceWatermark: 提取水印</li>
+<li> AddTraceWatermark: 添加水印</li>
 <li>Transcode: 转码，包含普通转码、极速高清和视频编辑（不推荐使用）</li>
                      */
                     std::string GetType() const;
@@ -133,6 +135,7 @@ namespace TencentCloud
 <li> ContentRecognition: 内容识别</li>
 <li> RemoveWatermark: 去除水印</li>
 <li> ExtractTraceWatermark: 提取水印</li>
+<li> AddTraceWatermark: 添加水印</li>
 <li>Transcode: 转码，包含普通转码、极速高清和视频编辑（不推荐使用）</li>
                      * @param Type 查询视频处理任务类型，目前支持的任务类型包括：
 <li> Transcoding: 普通转码</li>
@@ -144,6 +147,7 @@ namespace TencentCloud
 <li> ContentRecognition: 内容识别</li>
 <li> RemoveWatermark: 去除水印</li>
 <li> ExtractTraceWatermark: 提取水印</li>
+<li> AddTraceWatermark: 添加水印</li>
 <li>Transcode: 转码，包含普通转码、极速高清和视频编辑（不推荐使用）</li>
                      */
                     void SetType(const std::string& _type);
@@ -185,6 +189,7 @@ namespace TencentCloud
 <li> ContentRecognition: 内容识别</li>
 <li> RemoveWatermark: 去除水印</li>
 <li> ExtractTraceWatermark: 提取水印</li>
+<li> AddTraceWatermark: 添加水印</li>
 <li>Transcode: 转码，包含普通转码、极速高清和视频编辑（不推荐使用）</li>
                      */
                     std::string m_type;

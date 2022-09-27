@@ -33,7 +33,8 @@ PaymentOrderResult::PaymentOrderResult() :
     m_statusDescHasBeenSet(false),
     m_remarkHasBeenSet(false),
     m_payeeIdHasBeenSet(false),
-    m_outUserIdHasBeenSet(false)
+    m_outUserIdHasBeenSet(false),
+    m_channelOrderIdHasBeenSet(false)
 {
 }
 
@@ -172,6 +173,16 @@ CoreInternalOutcome PaymentOrderResult::Deserialize(const rapidjson::Value &valu
         m_outUserIdHasBeenSet = true;
     }
 
+    if (value.HasMember("ChannelOrderId") && !value["ChannelOrderId"].IsNull())
+    {
+        if (!value["ChannelOrderId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PaymentOrderResult.ChannelOrderId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_channelOrderId = string(value["ChannelOrderId"].GetString());
+        m_channelOrderIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -281,6 +292,14 @@ void PaymentOrderResult::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "OutUserId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_outUserId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_channelOrderIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ChannelOrderId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_channelOrderId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -492,5 +511,21 @@ void PaymentOrderResult::SetOutUserId(const string& _outUserId)
 bool PaymentOrderResult::OutUserIdHasBeenSet() const
 {
     return m_outUserIdHasBeenSet;
+}
+
+string PaymentOrderResult::GetChannelOrderId() const
+{
+    return m_channelOrderId;
+}
+
+void PaymentOrderResult::SetChannelOrderId(const string& _channelOrderId)
+{
+    m_channelOrderId = _channelOrderId;
+    m_channelOrderIdHasBeenSet = true;
+}
+
+bool PaymentOrderResult::ChannelOrderIdHasBeenSet() const
+{
+    return m_channelOrderIdHasBeenSet;
 }
 

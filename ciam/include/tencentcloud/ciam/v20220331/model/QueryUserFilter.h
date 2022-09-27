@@ -100,6 +100,24 @@ namespace TencentCloud
                      */
                     bool LogicHasBeenSet() const;
 
+                    /**
+                     * 获取操作逻辑符（支持> < = >= <=  != between）
+                     * @return OperateLogic 操作逻辑符（支持> < = >= <=  != between）
+                     */
+                    std::string GetOperateLogic() const;
+
+                    /**
+                     * 设置操作逻辑符（支持> < = >= <=  != between）
+                     * @param OperateLogic 操作逻辑符（支持> < = >= <=  != between）
+                     */
+                    void SetOperateLogic(const std::string& _operateLogic);
+
+                    /**
+                     * 判断参数 OperateLogic 是否已赋值
+                     * @return OperateLogic 是否已赋值
+                     */
+                    bool OperateLogicHasBeenSet() const;
+
                 private:
 
                     /**
@@ -119,6 +137,12 @@ namespace TencentCloud
                      */
                     bool m_logic;
                     bool m_logicHasBeenSet;
+
+                    /**
+                     * 操作逻辑符（支持> < = >= <=  != between）
+                     */
+                    std::string m_operateLogic;
+                    bool m_operateLogicHasBeenSet;
 
                 };
             }

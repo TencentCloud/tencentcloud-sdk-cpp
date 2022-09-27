@@ -65,12 +65,10 @@ namespace TencentCloud
                     /**
                      * 获取导出的数据类型
 
-<li> **JSON** </li>  JSON
 <li> **NDJSON** </li>  New-line Delimited JSON
 <li> **CSV** </li>  Comma-Separated Values
                      * @return Format 导出的数据类型
 
-<li> **JSON** </li>  JSON
 <li> **NDJSON** </li>  New-line Delimited JSON
 <li> **CSV** </li>  Comma-Separated Values
                      */
@@ -79,12 +77,10 @@ namespace TencentCloud
                     /**
                      * 设置导出的数据类型
 
-<li> **JSON** </li>  JSON
 <li> **NDJSON** </li>  New-line Delimited JSON
 <li> **CSV** </li>  Comma-Separated Values
                      * @param Format 导出的数据类型
 
-<li> **JSON** </li>  JSON
 <li> **NDJSON** </li>  New-line Delimited JSON
 <li> **CSV** </li>  Comma-Separated Values
                      */
@@ -155,7 +151,6 @@ namespace TencentCloud
                     /**
                      * 导出的数据类型
 
-<li> **JSON** </li>  JSON
 <li> **NDJSON** </li>  New-line Delimited JSON
 <li> **CSV** </li>  Comma-Separated Values
                      */

@@ -823,6 +823,116 @@ namespace TencentCloud
                      */
                     bool LockTimeHasBeenSet() const;
 
+                    /**
+                     * 获取索引字段1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IndexedAttribute1 索引字段1
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetIndexedAttribute1() const;
+
+                    /**
+                     * 设置索引字段1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param IndexedAttribute1 索引字段1
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIndexedAttribute1(const std::string& _indexedAttribute1);
+
+                    /**
+                     * 判断参数 IndexedAttribute1 是否已赋值
+                     * @return IndexedAttribute1 是否已赋值
+                     */
+                    bool IndexedAttribute1HasBeenSet() const;
+
+                    /**
+                     * 获取索引字段2
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IndexedAttribute2 索引字段2
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetIndexedAttribute2() const;
+
+                    /**
+                     * 设置索引字段2
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param IndexedAttribute2 索引字段2
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIndexedAttribute2(const std::string& _indexedAttribute2);
+
+                    /**
+                     * 判断参数 IndexedAttribute2 是否已赋值
+                     * @return IndexedAttribute2 是否已赋值
+                     */
+                    bool IndexedAttribute2HasBeenSet() const;
+
+                    /**
+                     * 获取索引字段3
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IndexedAttribute3 索引字段3
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetIndexedAttribute3() const;
+
+                    /**
+                     * 设置索引字段3
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param IndexedAttribute3 索引字段3
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIndexedAttribute3(const std::string& _indexedAttribute3);
+
+                    /**
+                     * 判断参数 IndexedAttribute3 是否已赋值
+                     * @return IndexedAttribute3 是否已赋值
+                     */
+                    bool IndexedAttribute3HasBeenSet() const;
+
+                    /**
+                     * 获取索引字段4
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IndexedAttribute4 索引字段4
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetIndexedAttribute4() const;
+
+                    /**
+                     * 设置索引字段4
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param IndexedAttribute4 索引字段4
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIndexedAttribute4(const std::string& _indexedAttribute4);
+
+                    /**
+                     * 判断参数 IndexedAttribute4 是否已赋值
+                     * @return IndexedAttribute4 是否已赋值
+                     */
+                    bool IndexedAttribute4HasBeenSet() const;
+
+                    /**
+                     * 获取索引字段5
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IndexedAttribute5 索引字段5
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetIndexedAttribute5() const;
+
+                    /**
+                     * 设置索引字段5
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param IndexedAttribute5 索引字段5
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIndexedAttribute5(const std::string& _indexedAttribute5);
+
+                    /**
+                     * 判断参数 IndexedAttribute5 是否已赋值
+                     * @return IndexedAttribute5 是否已赋值
+                     */
+                    bool IndexedAttribute5HasBeenSet() const;
+
                 private:
 
                     /**
@@ -1072,6 +1182,41 @@ namespace TencentCloud
                      */
                     int64_t m_lockTime;
                     bool m_lockTimeHasBeenSet;
+
+                    /**
+                     * 索引字段1
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_indexedAttribute1;
+                    bool m_indexedAttribute1HasBeenSet;
+
+                    /**
+                     * 索引字段2
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_indexedAttribute2;
+                    bool m_indexedAttribute2HasBeenSet;
+
+                    /**
+                     * 索引字段3
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_indexedAttribute3;
+                    bool m_indexedAttribute3HasBeenSet;
+
+                    /**
+                     * 索引字段4
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_indexedAttribute4;
+                    bool m_indexedAttribute4HasBeenSet;
+
+                    /**
+                     * 索引字段5
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_indexedAttribute5;
+                    bool m_indexedAttribute5HasBeenSet;
 
                 };
             }

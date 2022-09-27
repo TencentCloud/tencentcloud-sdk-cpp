@@ -32,7 +32,12 @@ UpdateUserRequest::UpdateUserRequest() :
     m_addressHasBeenSet(false),
     m_userGroupHasBeenSet(false),
     m_birthdateHasBeenSet(false),
-    m_customizationAttributesHasBeenSet(false)
+    m_customizationAttributesHasBeenSet(false),
+    m_indexedAttribute1HasBeenSet(false),
+    m_indexedAttribute2HasBeenSet(false),
+    m_indexedAttribute3HasBeenSet(false),
+    m_indexedAttribute4HasBeenSet(false),
+    m_indexedAttribute5HasBeenSet(false)
 {
 }
 
@@ -133,6 +138,46 @@ string UpdateUserRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_indexedAttribute1HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IndexedAttribute1";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_indexedAttribute1.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_indexedAttribute2HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IndexedAttribute2";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_indexedAttribute2.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_indexedAttribute3HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IndexedAttribute3";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_indexedAttribute3.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_indexedAttribute4HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IndexedAttribute4";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_indexedAttribute4.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_indexedAttribute5HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IndexedAttribute5";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_indexedAttribute5.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -301,6 +346,86 @@ void UpdateUserRequest::SetCustomizationAttributes(const vector<MemberMap>& _cus
 bool UpdateUserRequest::CustomizationAttributesHasBeenSet() const
 {
     return m_customizationAttributesHasBeenSet;
+}
+
+string UpdateUserRequest::GetIndexedAttribute1() const
+{
+    return m_indexedAttribute1;
+}
+
+void UpdateUserRequest::SetIndexedAttribute1(const string& _indexedAttribute1)
+{
+    m_indexedAttribute1 = _indexedAttribute1;
+    m_indexedAttribute1HasBeenSet = true;
+}
+
+bool UpdateUserRequest::IndexedAttribute1HasBeenSet() const
+{
+    return m_indexedAttribute1HasBeenSet;
+}
+
+string UpdateUserRequest::GetIndexedAttribute2() const
+{
+    return m_indexedAttribute2;
+}
+
+void UpdateUserRequest::SetIndexedAttribute2(const string& _indexedAttribute2)
+{
+    m_indexedAttribute2 = _indexedAttribute2;
+    m_indexedAttribute2HasBeenSet = true;
+}
+
+bool UpdateUserRequest::IndexedAttribute2HasBeenSet() const
+{
+    return m_indexedAttribute2HasBeenSet;
+}
+
+string UpdateUserRequest::GetIndexedAttribute3() const
+{
+    return m_indexedAttribute3;
+}
+
+void UpdateUserRequest::SetIndexedAttribute3(const string& _indexedAttribute3)
+{
+    m_indexedAttribute3 = _indexedAttribute3;
+    m_indexedAttribute3HasBeenSet = true;
+}
+
+bool UpdateUserRequest::IndexedAttribute3HasBeenSet() const
+{
+    return m_indexedAttribute3HasBeenSet;
+}
+
+string UpdateUserRequest::GetIndexedAttribute4() const
+{
+    return m_indexedAttribute4;
+}
+
+void UpdateUserRequest::SetIndexedAttribute4(const string& _indexedAttribute4)
+{
+    m_indexedAttribute4 = _indexedAttribute4;
+    m_indexedAttribute4HasBeenSet = true;
+}
+
+bool UpdateUserRequest::IndexedAttribute4HasBeenSet() const
+{
+    return m_indexedAttribute4HasBeenSet;
+}
+
+string UpdateUserRequest::GetIndexedAttribute5() const
+{
+    return m_indexedAttribute5;
+}
+
+void UpdateUserRequest::SetIndexedAttribute5(const string& _indexedAttribute5)
+{
+    m_indexedAttribute5 = _indexedAttribute5;
+    m_indexedAttribute5HasBeenSet = true;
+}
+
+bool UpdateUserRequest::IndexedAttribute5HasBeenSet() const
+{
+    return m_indexedAttribute5HasBeenSet;
 }
 
 

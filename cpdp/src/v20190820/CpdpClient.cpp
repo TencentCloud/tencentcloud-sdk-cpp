@@ -5028,6 +5028,49 @@ CpdpClient::QueryExchangeRateOutcomeCallable CpdpClient::QueryExchangeRateCallab
     return task->get_future();
 }
 
+CpdpClient::QueryFinancialDataUrlOutcome CpdpClient::QueryFinancialDataUrl(const QueryFinancialDataUrlRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryFinancialDataUrl");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryFinancialDataUrlResponse rsp = QueryFinancialDataUrlResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryFinancialDataUrlOutcome(rsp);
+        else
+            return QueryFinancialDataUrlOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryFinancialDataUrlOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::QueryFinancialDataUrlAsync(const QueryFinancialDataUrlRequest& request, const QueryFinancialDataUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->QueryFinancialDataUrl(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::QueryFinancialDataUrlOutcomeCallable CpdpClient::QueryFinancialDataUrlCallable(const QueryFinancialDataUrlRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<QueryFinancialDataUrlOutcome()>>(
+        [this, request]()
+        {
+            return this->QueryFinancialDataUrl(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CpdpClient::QueryFlexAmountBeforeTaxOutcome CpdpClient::QueryFlexAmountBeforeTax(const QueryFlexAmountBeforeTaxRequest &request)
 {
     auto outcome = MakeRequest(request, "QueryFlexAmountBeforeTax");

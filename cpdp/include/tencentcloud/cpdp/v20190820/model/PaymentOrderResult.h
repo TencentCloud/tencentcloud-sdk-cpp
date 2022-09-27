@@ -320,6 +320,28 @@ FAILED:已失败
                      */
                     bool OutUserIdHasBeenSet() const;
 
+                    /**
+                     * 获取渠道支付订单号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ChannelOrderId 渠道支付订单号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetChannelOrderId() const;
+
+                    /**
+                     * 设置渠道支付订单号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ChannelOrderId 渠道支付订单号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetChannelOrderId(const std::string& _channelOrderId);
+
+                    /**
+                     * 判断参数 ChannelOrderId 是否已赋值
+                     * @return ChannelOrderId 是否已赋值
+                     */
+                    bool ChannelOrderIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -409,6 +431,13 @@ FAILED:已失败
                      */
                     std::string m_outUserId;
                     bool m_outUserIdHasBeenSet;
+
+                    /**
+                     * 渠道支付订单号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_channelOrderId;
+                    bool m_channelOrderIdHasBeenSet;
 
                 };
             }

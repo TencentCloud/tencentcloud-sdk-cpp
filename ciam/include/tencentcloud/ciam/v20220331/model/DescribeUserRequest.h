@@ -23,6 +23,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/ciam/v20220331/model/Pageable.h>
 #include <tencentcloud/ciam/v20220331/model/QueryUserFilter.h>
+#include <tencentcloud/ciam/v20220331/model/Sort.h>
 
 
 namespace TencentCloud
@@ -116,6 +117,24 @@ namespace TencentCloud
                      */
                     bool OriginalHasBeenSet() const;
 
+                    /**
+                     * 获取排序设置
+                     * @return Sort 排序设置
+                     */
+                    Sort GetSort() const;
+
+                    /**
+                     * 设置排序设置
+                     * @param Sort 排序设置
+                     */
+                    void SetSort(const Sort& _sort);
+
+                    /**
+                     * 判断参数 Sort 是否已赋值
+                     * @return Sort 是否已赋值
+                     */
+                    bool SortHasBeenSet() const;
+
                 private:
 
                     /**
@@ -141,6 +160,12 @@ namespace TencentCloud
                      */
                     bool m_original;
                     bool m_originalHasBeenSet;
+
+                    /**
+                     * 排序设置
+                     */
+                    Sort m_sort;
+                    bool m_sortHasBeenSet;
 
                 };
             }

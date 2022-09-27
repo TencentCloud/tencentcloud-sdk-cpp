@@ -39,6 +39,7 @@ set(ciam_public_header_model
   include/tencentcloud/ciam/v20220331/model/Job.h
   include/tencentcloud/ciam/v20220331/model/CreateFileExportUserJobRequest.h
   include/tencentcloud/ciam/v20220331/model/User.h
+  include/tencentcloud/ciam/v20220331/model/Sort.h
   include/tencentcloud/ciam/v20220331/model/Pageable.h
   include/tencentcloud/ciam/v20220331/model/ResetPasswordResponse.h
   include/tencentcloud/ciam/v20220331/model/UpdateUserResponse.h
@@ -87,6 +88,7 @@ set(ciam_src
   src/v20220331/model/Job.cpp
   src/v20220331/model/CreateFileExportUserJobRequest.cpp
   src/v20220331/model/User.cpp
+  src/v20220331/model/Sort.cpp
   src/v20220331/model/Pageable.cpp
   src/v20220331/model/ResetPasswordResponse.cpp
   src/v20220331/model/UpdateUserResponse.cpp

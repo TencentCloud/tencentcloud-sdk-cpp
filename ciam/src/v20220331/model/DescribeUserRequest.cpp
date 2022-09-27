@@ -26,7 +26,8 @@ DescribeUserRequest::DescribeUserRequest() :
     m_userStoreIdHasBeenSet(false),
     m_pageableHasBeenSet(false),
     m_filtersHasBeenSet(false),
-    m_originalHasBeenSet(false)
+    m_originalHasBeenSet(false),
+    m_sortHasBeenSet(false)
 {
 }
 
@@ -75,6 +76,15 @@ string DescribeUserRequest::ToJsonString() const
         string key = "Original";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_original, allocator);
+    }
+
+    if (m_sortHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Sort";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_sort.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -147,6 +157,22 @@ void DescribeUserRequest::SetOriginal(const bool& _original)
 bool DescribeUserRequest::OriginalHasBeenSet() const
 {
     return m_originalHasBeenSet;
+}
+
+Sort DescribeUserRequest::GetSort() const
+{
+    return m_sort;
+}
+
+void DescribeUserRequest::SetSort(const Sort& _sort)
+{
+    m_sort = _sort;
+    m_sortHasBeenSet = true;
+}
+
+bool DescribeUserRequest::SortHasBeenSet() const
+{
+    return m_sortHasBeenSet;
 }
 
 

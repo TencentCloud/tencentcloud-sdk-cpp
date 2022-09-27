@@ -730,6 +730,28 @@ namespace TencentCloud
                      */
                     bool PayModeHasBeenSet() const;
 
+                    /**
+                     * 获取前端区分 集群是否需要2CU逻辑 因为历史集群 变配不需要, default 1  新集群都需要
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsNeedManageNode 前端区分 集群是否需要2CU逻辑 因为历史集群 变配不需要, default 1  新集群都需要
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetIsNeedManageNode() const;
+
+                    /**
+                     * 设置前端区分 集群是否需要2CU逻辑 因为历史集群 变配不需要, default 1  新集群都需要
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param IsNeedManageNode 前端区分 集群是否需要2CU逻辑 因为历史集群 变配不需要, default 1  新集群都需要
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIsNeedManageNode(const int64_t& _isNeedManageNode);
+
+                    /**
+                     * 判断参数 IsNeedManageNode 是否已赋值
+                     * @return IsNeedManageNode 是否已赋值
+                     */
+                    bool IsNeedManageNodeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -952,6 +974,13 @@ namespace TencentCloud
                      */
                     int64_t m_payMode;
                     bool m_payModeHasBeenSet;
+
+                    /**
+                     * 前端区分 集群是否需要2CU逻辑 因为历史集群 变配不需要, default 1  新集群都需要
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_isNeedManageNode;
+                    bool m_isNeedManageNodeHasBeenSet;
 
                 };
             }

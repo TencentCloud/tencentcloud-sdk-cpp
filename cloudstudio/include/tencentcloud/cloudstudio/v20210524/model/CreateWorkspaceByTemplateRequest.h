@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool CloudStudioSessionTeamHasBeenSet() const;
 
                     /**
-                     * 获取模版ID
-                     * @return TemplateId 模版ID
+                     * 获取模板ID
+                     * @return TemplateId 模板ID
                      */
                     int64_t GetTemplateId() const;
 
                     /**
-                     * 设置模版ID
-                     * @param TemplateId 模版ID
+                     * 设置模板ID
+                     * @param TemplateId 模板ID
                      */
                     void SetTemplateId(const int64_t& _templateId);
 
@@ -87,7 +87,7 @@ namespace TencentCloud
                     bool m_cloudStudioSessionTeamHasBeenSet;
 
                     /**
-                     * 模版ID
+                     * 模板ID
                      */
                     int64_t m_templateId;
                     bool m_templateIdHasBeenSet;

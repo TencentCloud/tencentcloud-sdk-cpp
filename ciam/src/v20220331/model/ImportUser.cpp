@@ -46,7 +46,12 @@ ImportUser::ImportUser() :
     m_passwordHasBeenSet(false),
     m_customizationAttributesHasBeenSet(false),
     m_saltHasBeenSet(false),
-    m_passwordEncryptTypeEnumHasBeenSet(false)
+    m_passwordEncryptTypeEnumHasBeenSet(false),
+    m_indexedAttribute1HasBeenSet(false),
+    m_indexedAttribute2HasBeenSet(false),
+    m_indexedAttribute3HasBeenSet(false),
+    m_indexedAttribute4HasBeenSet(false),
+    m_indexedAttribute5HasBeenSet(false)
 {
 }
 
@@ -335,6 +340,56 @@ CoreInternalOutcome ImportUser::Deserialize(const rapidjson::Value &value)
         m_passwordEncryptTypeEnumHasBeenSet = true;
     }
 
+    if (value.HasMember("IndexedAttribute1") && !value["IndexedAttribute1"].IsNull())
+    {
+        if (!value["IndexedAttribute1"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImportUser.IndexedAttribute1` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_indexedAttribute1 = string(value["IndexedAttribute1"].GetString());
+        m_indexedAttribute1HasBeenSet = true;
+    }
+
+    if (value.HasMember("IndexedAttribute2") && !value["IndexedAttribute2"].IsNull())
+    {
+        if (!value["IndexedAttribute2"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImportUser.IndexedAttribute2` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_indexedAttribute2 = string(value["IndexedAttribute2"].GetString());
+        m_indexedAttribute2HasBeenSet = true;
+    }
+
+    if (value.HasMember("IndexedAttribute3") && !value["IndexedAttribute3"].IsNull())
+    {
+        if (!value["IndexedAttribute3"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImportUser.IndexedAttribute3` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_indexedAttribute3 = string(value["IndexedAttribute3"].GetString());
+        m_indexedAttribute3HasBeenSet = true;
+    }
+
+    if (value.HasMember("IndexedAttribute4") && !value["IndexedAttribute4"].IsNull())
+    {
+        if (!value["IndexedAttribute4"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImportUser.IndexedAttribute4` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_indexedAttribute4 = string(value["IndexedAttribute4"].GetString());
+        m_indexedAttribute4HasBeenSet = true;
+    }
+
+    if (value.HasMember("IndexedAttribute5") && !value["IndexedAttribute5"].IsNull())
+    {
+        if (!value["IndexedAttribute5"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImportUser.IndexedAttribute5` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_indexedAttribute5 = string(value["IndexedAttribute5"].GetString());
+        m_indexedAttribute5HasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -561,6 +616,46 @@ void ImportUser::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "PasswordEncryptTypeEnum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_passwordEncryptTypeEnum.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_indexedAttribute1HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IndexedAttribute1";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_indexedAttribute1.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_indexedAttribute2HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IndexedAttribute2";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_indexedAttribute2.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_indexedAttribute3HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IndexedAttribute3";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_indexedAttribute3.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_indexedAttribute4HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IndexedAttribute4";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_indexedAttribute4.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_indexedAttribute5HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IndexedAttribute5";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_indexedAttribute5.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -980,5 +1075,85 @@ void ImportUser::SetPasswordEncryptTypeEnum(const string& _passwordEncryptTypeEn
 bool ImportUser::PasswordEncryptTypeEnumHasBeenSet() const
 {
     return m_passwordEncryptTypeEnumHasBeenSet;
+}
+
+string ImportUser::GetIndexedAttribute1() const
+{
+    return m_indexedAttribute1;
+}
+
+void ImportUser::SetIndexedAttribute1(const string& _indexedAttribute1)
+{
+    m_indexedAttribute1 = _indexedAttribute1;
+    m_indexedAttribute1HasBeenSet = true;
+}
+
+bool ImportUser::IndexedAttribute1HasBeenSet() const
+{
+    return m_indexedAttribute1HasBeenSet;
+}
+
+string ImportUser::GetIndexedAttribute2() const
+{
+    return m_indexedAttribute2;
+}
+
+void ImportUser::SetIndexedAttribute2(const string& _indexedAttribute2)
+{
+    m_indexedAttribute2 = _indexedAttribute2;
+    m_indexedAttribute2HasBeenSet = true;
+}
+
+bool ImportUser::IndexedAttribute2HasBeenSet() const
+{
+    return m_indexedAttribute2HasBeenSet;
+}
+
+string ImportUser::GetIndexedAttribute3() const
+{
+    return m_indexedAttribute3;
+}
+
+void ImportUser::SetIndexedAttribute3(const string& _indexedAttribute3)
+{
+    m_indexedAttribute3 = _indexedAttribute3;
+    m_indexedAttribute3HasBeenSet = true;
+}
+
+bool ImportUser::IndexedAttribute3HasBeenSet() const
+{
+    return m_indexedAttribute3HasBeenSet;
+}
+
+string ImportUser::GetIndexedAttribute4() const
+{
+    return m_indexedAttribute4;
+}
+
+void ImportUser::SetIndexedAttribute4(const string& _indexedAttribute4)
+{
+    m_indexedAttribute4 = _indexedAttribute4;
+    m_indexedAttribute4HasBeenSet = true;
+}
+
+bool ImportUser::IndexedAttribute4HasBeenSet() const
+{
+    return m_indexedAttribute4HasBeenSet;
+}
+
+string ImportUser::GetIndexedAttribute5() const
+{
+    return m_indexedAttribute5;
+}
+
+void ImportUser::SetIndexedAttribute5(const string& _indexedAttribute5)
+{
+    m_indexedAttribute5 = _indexedAttribute5;
+    m_indexedAttribute5HasBeenSet = true;
+}
+
+bool ImportUser::IndexedAttribute5HasBeenSet() const
+{
+    return m_indexedAttribute5HasBeenSet;
 }
 

@@ -208,12 +208,10 @@ namespace TencentCloud
 -9102：证照复印件告警
 -9103：证照翻拍告警
 -9104：证照PS告警
--9105：证照防伪告警
                      * @return WarningCode 多重告警码，当身份证是翻拍、复印、PS件时返回对应告警码。
 -9102：证照复印件告警
 -9103：证照翻拍告警
 -9104：证照PS告警
--9105：证照防伪告警
                      */
                     std::vector<int64_t> GetWarningCode() const;
 
@@ -310,7 +308,6 @@ namespace TencentCloud
 -9102：证照复印件告警
 -9103：证照翻拍告警
 -9104：证照PS告警
--9105：证照防伪告警
                      */
                     std::vector<int64_t> m_warningCode;
                     bool m_warningCodeHasBeenSet;

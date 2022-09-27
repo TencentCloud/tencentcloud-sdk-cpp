@@ -126,6 +126,49 @@ TemClient::CreateApplicationAutoscalerOutcomeCallable TemClient::CreateApplicati
     return task->get_future();
 }
 
+TemClient::CreateApplicationServiceOutcome TemClient::CreateApplicationService(const CreateApplicationServiceRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateApplicationService");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateApplicationServiceResponse rsp = CreateApplicationServiceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateApplicationServiceOutcome(rsp);
+        else
+            return CreateApplicationServiceOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateApplicationServiceOutcome(outcome.GetError());
+    }
+}
+
+void TemClient::CreateApplicationServiceAsync(const CreateApplicationServiceRequest& request, const CreateApplicationServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateApplicationService(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TemClient::CreateApplicationServiceOutcomeCallable TemClient::CreateApplicationServiceCallable(const CreateApplicationServiceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateApplicationServiceOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateApplicationService(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TemClient::CreateConfigDataOutcome TemClient::CreateConfigData(const CreateConfigDataRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateConfigData");
@@ -427,6 +470,49 @@ TemClient::DeleteApplicationAutoscalerOutcomeCallable TemClient::DeleteApplicati
     return task->get_future();
 }
 
+TemClient::DeleteApplicationServiceOutcome TemClient::DeleteApplicationService(const DeleteApplicationServiceRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteApplicationService");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteApplicationServiceResponse rsp = DeleteApplicationServiceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteApplicationServiceOutcome(rsp);
+        else
+            return DeleteApplicationServiceOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteApplicationServiceOutcome(outcome.GetError());
+    }
+}
+
+void TemClient::DeleteApplicationServiceAsync(const DeleteApplicationServiceRequest& request, const DeleteApplicationServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteApplicationService(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TemClient::DeleteApplicationServiceOutcomeCallable TemClient::DeleteApplicationServiceCallable(const DeleteApplicationServiceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteApplicationServiceOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteApplicationService(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TemClient::DeleteIngressOutcome TemClient::DeleteIngress(const DeleteIngressRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteIngress");
@@ -635,6 +721,49 @@ TemClient::DescribeApplicationPodsOutcomeCallable TemClient::DescribeApplication
         [this, request]()
         {
             return this->DescribeApplicationPods(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TemClient::DescribeApplicationServiceListOutcome TemClient::DescribeApplicationServiceList(const DescribeApplicationServiceListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeApplicationServiceList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeApplicationServiceListResponse rsp = DescribeApplicationServiceListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeApplicationServiceListOutcome(rsp);
+        else
+            return DescribeApplicationServiceListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeApplicationServiceListOutcome(outcome.GetError());
+    }
+}
+
+void TemClient::DescribeApplicationServiceListAsync(const DescribeApplicationServiceListRequest& request, const DescribeApplicationServiceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeApplicationServiceList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TemClient::DescribeApplicationServiceListOutcomeCallable TemClient::DescribeApplicationServiceListCallable(const DescribeApplicationServiceListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeApplicationServiceListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeApplicationServiceList(request);
         }
     );
 
@@ -1581,6 +1710,49 @@ TemClient::ModifyApplicationReplicasOutcomeCallable TemClient::ModifyApplication
         [this, request]()
         {
             return this->ModifyApplicationReplicas(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TemClient::ModifyApplicationServiceOutcome TemClient::ModifyApplicationService(const ModifyApplicationServiceRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyApplicationService");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyApplicationServiceResponse rsp = ModifyApplicationServiceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyApplicationServiceOutcome(rsp);
+        else
+            return ModifyApplicationServiceOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyApplicationServiceOutcome(outcome.GetError());
+    }
+}
+
+void TemClient::ModifyApplicationServiceAsync(const ModifyApplicationServiceRequest& request, const ModifyApplicationServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyApplicationService(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TemClient::ModifyApplicationServiceOutcomeCallable TemClient::ModifyApplicationServiceCallable(const ModifyApplicationServiceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyApplicationServiceOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyApplicationService(request);
         }
     );
 

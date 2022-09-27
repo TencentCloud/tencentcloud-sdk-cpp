@@ -102,14 +102,14 @@ namespace TencentCloud
                     bool ImageNameHasBeenSet() const;
 
                     /**
-                     * 获取云主机登录名称
-                     * @return RemoteUser 云主机登录名称
+                     * 获取云服务器登录名称
+                     * @return RemoteUser 云服务器登录名称
                      */
                     std::string GetRemoteUser() const;
 
                     /**
-                     * 设置云主机登录名称
-                     * @param RemoteUser 云主机登录名称
+                     * 设置云服务器登录名称
+                     * @param RemoteUser 云服务器登录名称
                      */
                     void SetRemoteUser(const std::string& _remoteUser);
 
@@ -120,14 +120,14 @@ namespace TencentCloud
                     bool RemoteUserHasBeenSet() const;
 
                     /**
-                     * 获取云主机登录地址
-                     * @return RemoteHost 云主机登录地址
+                     * 获取云服务器登录地址
+                     * @return RemoteHost 云服务器登录地址
                      */
                     std::string GetRemoteHost() const;
 
                     /**
-                     * 设置云主机登录地址
-                     * @param RemoteHost 云主机登录地址
+                     * 设置云服务器登录地址
+                     * @param RemoteHost 云服务器登录地址
                      */
                     void SetRemoteHost(const std::string& _remoteHost);
 
@@ -138,14 +138,14 @@ namespace TencentCloud
                     bool RemoteHostHasBeenSet() const;
 
                     /**
-                     * 获取云主机登录端口
-                     * @return RemotePort 云主机登录端口
+                     * 获取云服务器登录端口
+                     * @return RemotePort 云服务器登录端口
                      */
                     std::string GetRemotePort() const;
 
                     /**
-                     * 设置云主机登录端口
-                     * @param RemotePort 云主机登录端口
+                     * 设置云服务器登录端口
+                     * @param RemotePort 云服务器登录端口
                      */
                     void SetRemotePort(const std::string& _remotePort);
 
@@ -248,19 +248,19 @@ namespace TencentCloud
                     bool m_imageNameHasBeenSet;
 
                     /**
-                     * 云主机登录名称
+                     * 云服务器登录名称
                      */
                     std::string m_remoteUser;
                     bool m_remoteUserHasBeenSet;
 
                     /**
-                     * 云主机登录地址
+                     * 云服务器登录地址
                      */
                     std::string m_remoteHost;
                     bool m_remoteHostHasBeenSet;
 
                     /**
-                     * 云主机登录端口
+                     * 云服务器登录端口
                      */
                     std::string m_remotePort;
                     bool m_remotePortHasBeenSet;

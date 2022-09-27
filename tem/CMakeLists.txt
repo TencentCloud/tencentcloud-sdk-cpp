@@ -80,6 +80,7 @@ set(tem_public_header_model
   include/tencentcloud/tem/v20210701/model/NamespacePage.h
   include/tencentcloud/tem/v20210701/model/DescribeApplicationInfoResponse.h
   include/tencentcloud/tem/v20210701/model/ModifyIngressResponse.h
+  include/tencentcloud/tem/v20210701/model/DeleteApplicationServiceRequest.h
   include/tencentcloud/tem/v20210701/model/RestartApplicationPodRequest.h
   include/tencentcloud/tem/v20210701/model/DestroyLogConfigResponse.h
   include/tencentcloud/tem/v20210701/model/ResumeDeployApplicationResponse.h
@@ -101,25 +102,26 @@ set(tem_public_header_model
   include/tencentcloud/tem/v20210701/model/CreateEnvironmentResponse.h
   include/tencentcloud/tem/v20210701/model/DescribeEnvironmentStatusRequest.h
   include/tencentcloud/tem/v20210701/model/RevertDeployApplicationResponse.h
-  include/tencentcloud/tem/v20210701/model/EsInfo.h
+  include/tencentcloud/tem/v20210701/model/DeployStrategyConf.h
   include/tencentcloud/tem/v20210701/model/DescribeApplicationsResponse.h
-  include/tencentcloud/tem/v20210701/model/IngressInfo.h
+  include/tencentcloud/tem/v20210701/model/CreateCosTokenRequest.h
   include/tencentcloud/tem/v20210701/model/DescribeEnvironmentsRequest.h
   include/tencentcloud/tem/v20210701/model/LogConfigListPage.h
   include/tencentcloud/tem/v20210701/model/ServiceVersionBrief.h
   include/tencentcloud/tem/v20210701/model/CreateEnvironmentRequest.h
   include/tencentcloud/tem/v20210701/model/NodeInfo.h
+  include/tencentcloud/tem/v20210701/model/DescribeApplicationServiceListResponse.h
   include/tencentcloud/tem/v20210701/model/DescribeLogConfigRequest.h
   include/tencentcloud/tem/v20210701/model/TemDeployApplicationDetailInfo.h
   include/tencentcloud/tem/v20210701/model/DescribeEnvironmentStatusResponse.h
-  include/tencentcloud/tem/v20210701/model/DeployStrategyConf.h
+  include/tencentcloud/tem/v20210701/model/EsInfo.h
   include/tencentcloud/tem/v20210701/model/DescribeApplicationPodsResponse.h
   include/tencentcloud/tem/v20210701/model/DescribeConfigDataListRequest.h
   include/tencentcloud/tem/v20210701/model/EnableApplicationAutoscalerResponse.h
   include/tencentcloud/tem/v20210701/model/ServicePage.h
   include/tencentcloud/tem/v20210701/model/TemServiceVersionInfo.h
   include/tencentcloud/tem/v20210701/model/ServicePortMapping.h
-  include/tencentcloud/tem/v20210701/model/CreateCosTokenRequest.h
+  include/tencentcloud/tem/v20210701/model/IngressInfo.h
   include/tencentcloud/tem/v20210701/model/ModifyApplicationAutoscalerRequest.h
   include/tencentcloud/tem/v20210701/model/ModifyConfigDataResponse.h
   include/tencentcloud/tem/v20210701/model/ModifyIngressRequest.h
@@ -132,6 +134,7 @@ set(tem_public_header_model
   include/tencentcloud/tem/v20210701/model/ModifyConfigDataRequest.h
   include/tencentcloud/tem/v20210701/model/CreateConfigDataResponse.h
   include/tencentcloud/tem/v20210701/model/DescribeApplicationsStatusRequest.h
+  include/tencentcloud/tem/v20210701/model/DescribeIngressResponse.h
   include/tencentcloud/tem/v20210701/model/RunVersionPod.h
   include/tencentcloud/tem/v20210701/model/CreateResourceResponse.h
   include/tencentcloud/tem/v20210701/model/ModifyApplicationInfoResponse.h
@@ -163,17 +166,20 @@ set(tem_public_header_model
   include/tencentcloud/tem/v20210701/model/TemService.h
   include/tencentcloud/tem/v20210701/model/IngressRule.h
   include/tencentcloud/tem/v20210701/model/CronHorizontalAutoscaler.h
+  include/tencentcloud/tem/v20210701/model/DescribeApplicationServiceListRequest.h
   include/tencentcloud/tem/v20210701/model/DescribeDeployApplicationDetailResponse.h
   include/tencentcloud/tem/v20210701/model/IngressRuleValue.h
   include/tencentcloud/tem/v20210701/model/DescribeEnvironmentResponse.h
   include/tencentcloud/tem/v20210701/model/TemNamespaceInfo.h
   include/tencentcloud/tem/v20210701/model/CreateApplicationAutoscalerRequest.h
+  include/tencentcloud/tem/v20210701/model/DeleteApplicationServiceResponse.h
   include/tencentcloud/tem/v20210701/model/ConfigData.h
   include/tencentcloud/tem/v20210701/model/ResumeDeployApplicationRequest.h
   include/tencentcloud/tem/v20210701/model/DescribeConfigDataRequest.h
   include/tencentcloud/tem/v20210701/model/MountedSettingConf.h
   include/tencentcloud/tem/v20210701/model/CreateLogConfigResponse.h
   include/tencentcloud/tem/v20210701/model/DescribeConfigDataListResponse.h
+  include/tencentcloud/tem/v20210701/model/ModifyApplicationServiceRequest.h
   include/tencentcloud/tem/v20210701/model/DescribePagedLogConfigListResponse.h
   include/tencentcloud/tem/v20210701/model/HealthCheckConfig.h
   include/tencentcloud/tem/v20210701/model/DeployServiceBatchDetail.h
@@ -189,13 +195,14 @@ set(tem_public_header_model
   include/tencentcloud/tem/v20210701/model/CreateApplicationRequest.h
   include/tencentcloud/tem/v20210701/model/NamespaceStatusInfo.h
   include/tencentcloud/tem/v20210701/model/DescribeRunPodPage.h
+  include/tencentcloud/tem/v20210701/model/CreateApplicationServiceRequest.h
   include/tencentcloud/tem/v20210701/model/ModifyApplicationReplicasResponse.h
   include/tencentcloud/tem/v20210701/model/UseDefaultRepoParameters.h
   include/tencentcloud/tem/v20210701/model/CronHorizontalAutoscalerSchedule.h
   include/tencentcloud/tem/v20210701/model/ModifyEnvironmentRequest.h
   include/tencentcloud/tem/v20210701/model/GenerateApplicationPackageDownloadUrlResponse.h
   include/tencentcloud/tem/v20210701/model/IngressRuleBackend.h
-  include/tencentcloud/tem/v20210701/model/DescribeIngressResponse.h
+  include/tencentcloud/tem/v20210701/model/CreateApplicationServiceResponse.h
   include/tencentcloud/tem/v20210701/model/WorkloadInfo.h
   include/tencentcloud/tem/v20210701/model/IngressRulePath.h
   include/tencentcloud/tem/v20210701/model/NamespaceInfo.h
@@ -204,6 +211,7 @@ set(tem_public_header_model
   include/tencentcloud/tem/v20210701/model/RevertDeployApplicationRequest.h
   include/tencentcloud/tem/v20210701/model/CreateApplicationResponse.h
   include/tencentcloud/tem/v20210701/model/HorizontalAutoscaler.h
+  include/tencentcloud/tem/v20210701/model/ModifyApplicationServiceResponse.h
   include/tencentcloud/tem/v20210701/model/PortMapping.h
   include/tencentcloud/tem/v20210701/model/LogConfig.h
   include/tencentcloud/tem/v20210701/model/ModifyEnvironmentResponse.h
@@ -278,6 +286,7 @@ set(tem_src
   src/v20210701/model/NamespacePage.cpp
   src/v20210701/model/DescribeApplicationInfoResponse.cpp
   src/v20210701/model/ModifyIngressResponse.cpp
+  src/v20210701/model/DeleteApplicationServiceRequest.cpp
   src/v20210701/model/RestartApplicationPodRequest.cpp
   src/v20210701/model/DestroyLogConfigResponse.cpp
   src/v20210701/model/ResumeDeployApplicationResponse.cpp
@@ -299,25 +308,26 @@ set(tem_src
   src/v20210701/model/CreateEnvironmentResponse.cpp
   src/v20210701/model/DescribeEnvironmentStatusRequest.cpp
   src/v20210701/model/RevertDeployApplicationResponse.cpp
-  src/v20210701/model/EsInfo.cpp
+  src/v20210701/model/DeployStrategyConf.cpp
   src/v20210701/model/DescribeApplicationsResponse.cpp
-  src/v20210701/model/IngressInfo.cpp
+  src/v20210701/model/CreateCosTokenRequest.cpp
   src/v20210701/model/DescribeEnvironmentsRequest.cpp
   src/v20210701/model/LogConfigListPage.cpp
   src/v20210701/model/ServiceVersionBrief.cpp
   src/v20210701/model/CreateEnvironmentRequest.cpp
   src/v20210701/model/NodeInfo.cpp
+  src/v20210701/model/DescribeApplicationServiceListResponse.cpp
   src/v20210701/model/DescribeLogConfigRequest.cpp
   src/v20210701/model/TemDeployApplicationDetailInfo.cpp
   src/v20210701/model/DescribeEnvironmentStatusResponse.cpp
-  src/v20210701/model/DeployStrategyConf.cpp
+  src/v20210701/model/EsInfo.cpp
   src/v20210701/model/DescribeApplicationPodsResponse.cpp
   src/v20210701/model/DescribeConfigDataListRequest.cpp
   src/v20210701/model/EnableApplicationAutoscalerResponse.cpp
   src/v20210701/model/ServicePage.cpp
   src/v20210701/model/TemServiceVersionInfo.cpp
   src/v20210701/model/ServicePortMapping.cpp
-  src/v20210701/model/CreateCosTokenRequest.cpp
+  src/v20210701/model/IngressInfo.cpp
   src/v20210701/model/ModifyApplicationAutoscalerRequest.cpp
   src/v20210701/model/ModifyConfigDataResponse.cpp
   src/v20210701/model/ModifyIngressRequest.cpp
@@ -330,6 +340,7 @@ set(tem_src
   src/v20210701/model/ModifyConfigDataRequest.cpp
   src/v20210701/model/CreateConfigDataResponse.cpp
   src/v20210701/model/DescribeApplicationsStatusRequest.cpp
+  src/v20210701/model/DescribeIngressResponse.cpp
   src/v20210701/model/RunVersionPod.cpp
   src/v20210701/model/CreateResourceResponse.cpp
   src/v20210701/model/ModifyApplicationInfoResponse.cpp
@@ -361,17 +372,20 @@ set(tem_src
   src/v20210701/model/TemService.cpp
   src/v20210701/model/IngressRule.cpp
   src/v20210701/model/CronHorizontalAutoscaler.cpp
+  src/v20210701/model/DescribeApplicationServiceListRequest.cpp
   src/v20210701/model/DescribeDeployApplicationDetailResponse.cpp
   src/v20210701/model/IngressRuleValue.cpp
   src/v20210701/model/DescribeEnvironmentResponse.cpp
   src/v20210701/model/TemNamespaceInfo.cpp
   src/v20210701/model/CreateApplicationAutoscalerRequest.cpp
+  src/v20210701/model/DeleteApplicationServiceResponse.cpp
   src/v20210701/model/ConfigData.cpp
   src/v20210701/model/ResumeDeployApplicationRequest.cpp
   src/v20210701/model/DescribeConfigDataRequest.cpp
   src/v20210701/model/MountedSettingConf.cpp
   src/v20210701/model/CreateLogConfigResponse.cpp
   src/v20210701/model/DescribeConfigDataListResponse.cpp
+  src/v20210701/model/ModifyApplicationServiceRequest.cpp
   src/v20210701/model/DescribePagedLogConfigListResponse.cpp
   src/v20210701/model/HealthCheckConfig.cpp
   src/v20210701/model/DeployServiceBatchDetail.cpp
@@ -387,13 +401,14 @@ set(tem_src
   src/v20210701/model/CreateApplicationRequest.cpp
   src/v20210701/model/NamespaceStatusInfo.cpp
   src/v20210701/model/DescribeRunPodPage.cpp
+  src/v20210701/model/CreateApplicationServiceRequest.cpp
   src/v20210701/model/ModifyApplicationReplicasResponse.cpp
   src/v20210701/model/UseDefaultRepoParameters.cpp
   src/v20210701/model/CronHorizontalAutoscalerSchedule.cpp
   src/v20210701/model/ModifyEnvironmentRequest.cpp
   src/v20210701/model/GenerateApplicationPackageDownloadUrlResponse.cpp
   src/v20210701/model/IngressRuleBackend.cpp
-  src/v20210701/model/DescribeIngressResponse.cpp
+  src/v20210701/model/CreateApplicationServiceResponse.cpp
   src/v20210701/model/WorkloadInfo.cpp
   src/v20210701/model/IngressRulePath.cpp
   src/v20210701/model/NamespaceInfo.cpp
@@ -402,6 +417,7 @@ set(tem_src
   src/v20210701/model/RevertDeployApplicationRequest.cpp
   src/v20210701/model/CreateApplicationResponse.cpp
   src/v20210701/model/HorizontalAutoscaler.cpp
+  src/v20210701/model/ModifyApplicationServiceResponse.cpp
   src/v20210701/model/PortMapping.cpp
   src/v20210701/model/LogConfig.cpp
   src/v20210701/model/ModifyEnvironmentResponse.cpp

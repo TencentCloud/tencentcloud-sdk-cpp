@@ -150,7 +150,7 @@ namespace TencentCloud
                 CreateCustomizeTemplatesOutcomeCallable CreateCustomizeTemplatesCallable(const Model::CreateCustomizeTemplatesRequest& request);
 
                 /**
-                 *云主机方式创建工作空间
+                 *云服务器方式创建工作空间
                  * @param req CreateWorkspaceByAgentRequest
                  * @return CreateWorkspaceByAgentOutcome
                  */
@@ -159,7 +159,7 @@ namespace TencentCloud
                 CreateWorkspaceByAgentOutcomeCallable CreateWorkspaceByAgentCallable(const Model::CreateWorkspaceByAgentRequest& request);
 
                 /**
-                 *快速开始, 基于模版创建工作空间
+                 *快速开始, 基于模板创建工作空间
                  * @param req CreateWorkspaceByTemplateRequest
                  * @return CreateWorkspaceByTemplateOutcome
                  */
@@ -186,7 +186,7 @@ namespace TencentCloud
                 DeleteCustomizeTemplatesByIdOutcomeCallable DeleteCustomizeTemplatesByIdCallable(const Model::DeleteCustomizeTemplatesByIdRequest& request);
 
                 /**
-                 *获取所有模版列表
+                 *获取所有模板列表
                  * @param req DescribeCustomizeTemplatesRequest
                  * @return DescribeCustomizeTemplatesOutcome
                  */
@@ -249,7 +249,7 @@ namespace TencentCloud
                 DescribeWorkspaceStatusListOutcomeCallable DescribeWorkspaceStatusListCallable(const Model::DescribeWorkspaceStatusListRequest& request);
 
                 /**
-                 *修改模版默认代码仓库
+                 *修改模板默认代码仓库
                  * @param req ModifyCustomizeTemplateVersionControlRequest
                  * @return ModifyCustomizeTemplateVersionControlOutcome
                  */

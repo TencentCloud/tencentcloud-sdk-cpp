@@ -61,22 +61,22 @@ namespace TencentCloud
                     bool GatewayIdHasBeenSet() const;
 
                     /**
-                     * 获取翻页从第几个开始获取
-                     * @return Offset 翻页从第几个开始获取
+                     * 获取实例分组id
+                     * @return GroupId 实例分组id
                      */
-                    int64_t GetOffset() const;
+                    std::string GetGroupId() const;
 
                     /**
-                     * 设置翻页从第几个开始获取
-                     * @param Offset 翻页从第几个开始获取
+                     * 设置实例分组id
+                     * @param GroupId 实例分组id
                      */
-                    void SetOffset(const int64_t& _offset);
+                    void SetGroupId(const std::string& _groupId);
 
                     /**
-                     * 判断参数 Offset 是否已赋值
-                     * @return Offset 是否已赋值
+                     * 判断参数 GroupId 是否已赋值
+                     * @return GroupId 是否已赋值
                      */
-                    bool OffsetHasBeenSet() const;
+                    bool GroupIdHasBeenSet() const;
 
                     /**
                      * 获取翻页获取多少个
@@ -96,6 +96,24 @@ namespace TencentCloud
                      */
                     bool LimitHasBeenSet() const;
 
+                    /**
+                     * 获取翻页从第几个开始获取
+                     * @return Offset 翻页从第几个开始获取
+                     */
+                    int64_t GetOffset() const;
+
+                    /**
+                     * 设置翻页从第几个开始获取
+                     * @param Offset 翻页从第几个开始获取
+                     */
+                    void SetOffset(const int64_t& _offset);
+
+                    /**
+                     * 判断参数 Offset 是否已赋值
+                     * @return Offset 是否已赋值
+                     */
+                    bool OffsetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -105,16 +123,22 @@ namespace TencentCloud
                     bool m_gatewayIdHasBeenSet;
 
                     /**
-                     * 翻页从第几个开始获取
+                     * 实例分组id
                      */
-                    int64_t m_offset;
-                    bool m_offsetHasBeenSet;
+                    std::string m_groupId;
+                    bool m_groupIdHasBeenSet;
 
                     /**
                      * 翻页获取多少个
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
+
+                    /**
+                     * 翻页从第几个开始获取
+                     */
+                    int64_t m_offset;
+                    bool m_offsetHasBeenSet;
 
                 };
             }

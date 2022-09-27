@@ -255,6 +255,8 @@
 #include <tencentcloud/cpdp/v20190820/model/QueryExceedingInfoResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryExchangeRateRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryExchangeRateResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryFinancialDataUrlRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryFinancialDataUrlResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryFlexAmountBeforeTaxRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryFlexAmountBeforeTaxResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryFlexBillDownloadUrlRequest.h>
@@ -803,6 +805,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::QueryExchangeRateResponse> QueryExchangeRateOutcome;
                 typedef std::future<QueryExchangeRateOutcome> QueryExchangeRateOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::QueryExchangeRateRequest&, QueryExchangeRateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryExchangeRateAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryFinancialDataUrlResponse> QueryFinancialDataUrlOutcome;
+                typedef std::future<QueryFinancialDataUrlOutcome> QueryFinancialDataUrlOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::QueryFinancialDataUrlRequest&, QueryFinancialDataUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryFinancialDataUrlAsyncHandler;
                 typedef Outcome<Core::Error, Model::QueryFlexAmountBeforeTaxResponse> QueryFlexAmountBeforeTaxOutcome;
                 typedef std::future<QueryFlexAmountBeforeTaxOutcome> QueryFlexAmountBeforeTaxOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::QueryFlexAmountBeforeTaxRequest&, QueryFlexAmountBeforeTaxOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryFlexAmountBeforeTaxAsyncHandler;
@@ -2138,6 +2143,15 @@ namespace TencentCloud
                 QueryExchangeRateOutcome QueryExchangeRate(const Model::QueryExchangeRateRequest &request);
                 void QueryExchangeRateAsync(const Model::QueryExchangeRateRequest& request, const QueryExchangeRateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 QueryExchangeRateOutcomeCallable QueryExchangeRateCallable(const Model::QueryExchangeRateRequest& request);
+
+                /**
+                 *财税-查询金融数据文件下载链接
+                 * @param req QueryFinancialDataUrlRequest
+                 * @return QueryFinancialDataUrlOutcome
+                 */
+                QueryFinancialDataUrlOutcome QueryFinancialDataUrl(const Model::QueryFinancialDataUrlRequest &request);
+                void QueryFinancialDataUrlAsync(const Model::QueryFinancialDataUrlRequest& request, const QueryFinancialDataUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryFinancialDataUrlOutcomeCallable QueryFinancialDataUrlCallable(const Model::QueryFinancialDataUrlRequest& request);
 
                 /**
                  *灵云V2-查询税前金额

@@ -27,6 +27,8 @@
 #include <tencentcloud/tem/v20210701/model/CreateApplicationResponse.h>
 #include <tencentcloud/tem/v20210701/model/CreateApplicationAutoscalerRequest.h>
 #include <tencentcloud/tem/v20210701/model/CreateApplicationAutoscalerResponse.h>
+#include <tencentcloud/tem/v20210701/model/CreateApplicationServiceRequest.h>
+#include <tencentcloud/tem/v20210701/model/CreateApplicationServiceResponse.h>
 #include <tencentcloud/tem/v20210701/model/CreateConfigDataRequest.h>
 #include <tencentcloud/tem/v20210701/model/CreateConfigDataResponse.h>
 #include <tencentcloud/tem/v20210701/model/CreateCosTokenRequest.h>
@@ -41,6 +43,8 @@
 #include <tencentcloud/tem/v20210701/model/DeleteApplicationResponse.h>
 #include <tencentcloud/tem/v20210701/model/DeleteApplicationAutoscalerRequest.h>
 #include <tencentcloud/tem/v20210701/model/DeleteApplicationAutoscalerResponse.h>
+#include <tencentcloud/tem/v20210701/model/DeleteApplicationServiceRequest.h>
+#include <tencentcloud/tem/v20210701/model/DeleteApplicationServiceResponse.h>
 #include <tencentcloud/tem/v20210701/model/DeleteIngressRequest.h>
 #include <tencentcloud/tem/v20210701/model/DeleteIngressResponse.h>
 #include <tencentcloud/tem/v20210701/model/DeployApplicationRequest.h>
@@ -51,6 +55,8 @@
 #include <tencentcloud/tem/v20210701/model/DescribeApplicationInfoResponse.h>
 #include <tencentcloud/tem/v20210701/model/DescribeApplicationPodsRequest.h>
 #include <tencentcloud/tem/v20210701/model/DescribeApplicationPodsResponse.h>
+#include <tencentcloud/tem/v20210701/model/DescribeApplicationServiceListRequest.h>
+#include <tencentcloud/tem/v20210701/model/DescribeApplicationServiceListResponse.h>
 #include <tencentcloud/tem/v20210701/model/DescribeApplicationsRequest.h>
 #include <tencentcloud/tem/v20210701/model/DescribeApplicationsResponse.h>
 #include <tencentcloud/tem/v20210701/model/DescribeApplicationsStatusRequest.h>
@@ -95,6 +101,8 @@
 #include <tencentcloud/tem/v20210701/model/ModifyApplicationInfoResponse.h>
 #include <tencentcloud/tem/v20210701/model/ModifyApplicationReplicasRequest.h>
 #include <tencentcloud/tem/v20210701/model/ModifyApplicationReplicasResponse.h>
+#include <tencentcloud/tem/v20210701/model/ModifyApplicationServiceRequest.h>
+#include <tencentcloud/tem/v20210701/model/ModifyApplicationServiceResponse.h>
 #include <tencentcloud/tem/v20210701/model/ModifyConfigDataRequest.h>
 #include <tencentcloud/tem/v20210701/model/ModifyConfigDataResponse.h>
 #include <tencentcloud/tem/v20210701/model/ModifyEnvironmentRequest.h>
@@ -135,6 +143,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateApplicationAutoscalerResponse> CreateApplicationAutoscalerOutcome;
                 typedef std::future<CreateApplicationAutoscalerOutcome> CreateApplicationAutoscalerOutcomeCallable;
                 typedef std::function<void(const TemClient*, const Model::CreateApplicationAutoscalerRequest&, CreateApplicationAutoscalerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateApplicationAutoscalerAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateApplicationServiceResponse> CreateApplicationServiceOutcome;
+                typedef std::future<CreateApplicationServiceOutcome> CreateApplicationServiceOutcomeCallable;
+                typedef std::function<void(const TemClient*, const Model::CreateApplicationServiceRequest&, CreateApplicationServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateApplicationServiceAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateConfigDataResponse> CreateConfigDataOutcome;
                 typedef std::future<CreateConfigDataOutcome> CreateConfigDataOutcomeCallable;
                 typedef std::function<void(const TemClient*, const Model::CreateConfigDataRequest&, CreateConfigDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateConfigDataAsyncHandler;
@@ -156,6 +167,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteApplicationAutoscalerResponse> DeleteApplicationAutoscalerOutcome;
                 typedef std::future<DeleteApplicationAutoscalerOutcome> DeleteApplicationAutoscalerOutcomeCallable;
                 typedef std::function<void(const TemClient*, const Model::DeleteApplicationAutoscalerRequest&, DeleteApplicationAutoscalerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteApplicationAutoscalerAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteApplicationServiceResponse> DeleteApplicationServiceOutcome;
+                typedef std::future<DeleteApplicationServiceOutcome> DeleteApplicationServiceOutcomeCallable;
+                typedef std::function<void(const TemClient*, const Model::DeleteApplicationServiceRequest&, DeleteApplicationServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteApplicationServiceAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteIngressResponse> DeleteIngressOutcome;
                 typedef std::future<DeleteIngressOutcome> DeleteIngressOutcomeCallable;
                 typedef std::function<void(const TemClient*, const Model::DeleteIngressRequest&, DeleteIngressOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteIngressAsyncHandler;
@@ -171,6 +185,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeApplicationPodsResponse> DescribeApplicationPodsOutcome;
                 typedef std::future<DescribeApplicationPodsOutcome> DescribeApplicationPodsOutcomeCallable;
                 typedef std::function<void(const TemClient*, const Model::DescribeApplicationPodsRequest&, DescribeApplicationPodsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApplicationPodsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeApplicationServiceListResponse> DescribeApplicationServiceListOutcome;
+                typedef std::future<DescribeApplicationServiceListOutcome> DescribeApplicationServiceListOutcomeCallable;
+                typedef std::function<void(const TemClient*, const Model::DescribeApplicationServiceListRequest&, DescribeApplicationServiceListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApplicationServiceListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeApplicationsResponse> DescribeApplicationsOutcome;
                 typedef std::future<DescribeApplicationsOutcome> DescribeApplicationsOutcomeCallable;
                 typedef std::function<void(const TemClient*, const Model::DescribeApplicationsRequest&, DescribeApplicationsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApplicationsAsyncHandler;
@@ -237,6 +254,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyApplicationReplicasResponse> ModifyApplicationReplicasOutcome;
                 typedef std::future<ModifyApplicationReplicasOutcome> ModifyApplicationReplicasOutcomeCallable;
                 typedef std::function<void(const TemClient*, const Model::ModifyApplicationReplicasRequest&, ModifyApplicationReplicasOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyApplicationReplicasAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyApplicationServiceResponse> ModifyApplicationServiceOutcome;
+                typedef std::future<ModifyApplicationServiceOutcome> ModifyApplicationServiceOutcomeCallable;
+                typedef std::function<void(const TemClient*, const Model::ModifyApplicationServiceRequest&, ModifyApplicationServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyApplicationServiceAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyConfigDataResponse> ModifyConfigDataOutcome;
                 typedef std::future<ModifyConfigDataOutcome> ModifyConfigDataOutcomeCallable;
                 typedef std::function<void(const TemClient*, const Model::ModifyConfigDataRequest&, ModifyConfigDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyConfigDataAsyncHandler;
@@ -287,6 +307,15 @@ namespace TencentCloud
                 CreateApplicationAutoscalerOutcome CreateApplicationAutoscaler(const Model::CreateApplicationAutoscalerRequest &request);
                 void CreateApplicationAutoscalerAsync(const Model::CreateApplicationAutoscalerRequest& request, const CreateApplicationAutoscalerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateApplicationAutoscalerOutcomeCallable CreateApplicationAutoscalerCallable(const Model::CreateApplicationAutoscalerRequest& request);
+
+                /**
+                 *新增访问方式
+                 * @param req CreateApplicationServiceRequest
+                 * @return CreateApplicationServiceOutcome
+                 */
+                CreateApplicationServiceOutcome CreateApplicationService(const Model::CreateApplicationServiceRequest &request);
+                void CreateApplicationServiceAsync(const Model::CreateApplicationServiceRequest& request, const CreateApplicationServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateApplicationServiceOutcomeCallable CreateApplicationServiceCallable(const Model::CreateApplicationServiceRequest& request);
 
                 /**
                  *创建配置
@@ -355,6 +384,15 @@ namespace TencentCloud
                 DeleteApplicationAutoscalerOutcomeCallable DeleteApplicationAutoscalerCallable(const Model::DeleteApplicationAutoscalerRequest& request);
 
                 /**
+                 *删除一条访问方式
+                 * @param req DeleteApplicationServiceRequest
+                 * @return DeleteApplicationServiceOutcome
+                 */
+                DeleteApplicationServiceOutcome DeleteApplicationService(const Model::DeleteApplicationServiceRequest &request);
+                void DeleteApplicationServiceAsync(const Model::DeleteApplicationServiceRequest& request, const DeleteApplicationServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteApplicationServiceOutcomeCallable DeleteApplicationServiceCallable(const Model::DeleteApplicationServiceRequest& request);
+
+                /**
                  *删除 Ingress 规则
                  * @param req DeleteIngressRequest
                  * @return DeleteIngressOutcome
@@ -398,6 +436,15 @@ namespace TencentCloud
                 DescribeApplicationPodsOutcome DescribeApplicationPods(const Model::DescribeApplicationPodsRequest &request);
                 void DescribeApplicationPodsAsync(const Model::DescribeApplicationPodsRequest& request, const DescribeApplicationPodsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeApplicationPodsOutcomeCallable DescribeApplicationPodsCallable(const Model::DescribeApplicationPodsRequest& request);
+
+                /**
+                 *查询应用访问方式列表
+                 * @param req DescribeApplicationServiceListRequest
+                 * @return DescribeApplicationServiceListOutcome
+                 */
+                DescribeApplicationServiceListOutcome DescribeApplicationServiceList(const Model::DescribeApplicationServiceListRequest &request);
+                void DescribeApplicationServiceListAsync(const Model::DescribeApplicationServiceListRequest& request, const DescribeApplicationServiceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeApplicationServiceListOutcomeCallable DescribeApplicationServiceListCallable(const Model::DescribeApplicationServiceListRequest& request);
 
                 /**
                  *获取运行服务列表
@@ -596,6 +643,15 @@ namespace TencentCloud
                 ModifyApplicationReplicasOutcome ModifyApplicationReplicas(const Model::ModifyApplicationReplicasRequest &request);
                 void ModifyApplicationReplicasAsync(const Model::ModifyApplicationReplicasRequest& request, const ModifyApplicationReplicasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyApplicationReplicasOutcomeCallable ModifyApplicationReplicasCallable(const Model::ModifyApplicationReplicasRequest& request);
+
+                /**
+                 *修改服务访问方式列表
+                 * @param req ModifyApplicationServiceRequest
+                 * @return ModifyApplicationServiceOutcome
+                 */
+                ModifyApplicationServiceOutcome ModifyApplicationService(const Model::ModifyApplicationServiceRequest &request);
+                void ModifyApplicationServiceAsync(const Model::ModifyApplicationServiceRequest& request, const ModifyApplicationServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyApplicationServiceOutcomeCallable ModifyApplicationServiceCallable(const Model::ModifyApplicationServiceRequest& request);
 
                 /**
                  *编辑配置
