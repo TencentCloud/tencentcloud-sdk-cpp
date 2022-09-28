@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/teo/v20220901/model/AscriptionInfo.h>
+#include <tencentcloud/teo/v20220901/model/FileAscriptionInfo.h>
 
 
 namespace TencentCloud
@@ -45,8 +46,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取站点归属信息。
-                     * @return Ascription 站点归属信息。
+                     * 获取站点归属校验：Dns校验信息。
+                     * @return Ascription 站点归属校验：Dns校验信息。
                      */
                     AscriptionInfo GetAscription() const;
 
@@ -56,13 +57,31 @@ namespace TencentCloud
                      */
                     bool AscriptionHasBeenSet() const;
 
+                    /**
+                     * 获取站点归属权校验：文件校验信息。
+                     * @return FileAscription 站点归属权校验：文件校验信息。
+                     */
+                    FileAscriptionInfo GetFileAscription() const;
+
+                    /**
+                     * 判断参数 FileAscription 是否已赋值
+                     * @return FileAscription 是否已赋值
+                     */
+                    bool FileAscriptionHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 站点归属信息。
+                     * 站点归属校验：Dns校验信息。
                      */
                     AscriptionInfo m_ascription;
                     bool m_ascriptionHasBeenSet;
+
+                    /**
+                     * 站点归属权校验：文件校验信息。
+                     */
+                    FileAscriptionInfo m_fileAscription;
+                    bool m_fileAscriptionHasBeenSet;
 
                 };
             }

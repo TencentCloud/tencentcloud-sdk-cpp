@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/teo/v20220901/model/AdvancedOriginGroup.h>
 
 
 namespace TencentCloud
@@ -162,6 +163,54 @@ namespace TencentCloud
                      */
                     bool TTLHasBeenSet() const;
 
+                    /**
+                     * 获取回源类型，取值有：
+<li>normal：主备回源；</li>
+<li>advanced：高级回源配置（仅当Type=proxied时可以使用）。</li>不填写表示使用主备回源。
+                     * @return OriginType 回源类型，取值有：
+<li>normal：主备回源；</li>
+<li>advanced：高级回源配置（仅当Type=proxied时可以使用）。</li>不填写表示使用主备回源。
+                     */
+                    std::string GetOriginType() const;
+
+                    /**
+                     * 设置回源类型，取值有：
+<li>normal：主备回源；</li>
+<li>advanced：高级回源配置（仅当Type=proxied时可以使用）。</li>不填写表示使用主备回源。
+                     * @param OriginType 回源类型，取值有：
+<li>normal：主备回源；</li>
+<li>advanced：高级回源配置（仅当Type=proxied时可以使用）。</li>不填写表示使用主备回源。
+                     */
+                    void SetOriginType(const std::string& _originType);
+
+                    /**
+                     * 判断参数 OriginType 是否已赋值
+                     * @return OriginType 是否已赋值
+                     */
+                    bool OriginTypeHasBeenSet() const;
+
+                    /**
+                     * 获取高级回源配置，当OriginType=advanced时有效。
+不填写表示不使用高级回源配置。
+                     * @return AdvancedOriginGroups 高级回源配置，当OriginType=advanced时有效。
+不填写表示不使用高级回源配置。
+                     */
+                    std::vector<AdvancedOriginGroup> GetAdvancedOriginGroups() const;
+
+                    /**
+                     * 设置高级回源配置，当OriginType=advanced时有效。
+不填写表示不使用高级回源配置。
+                     * @param AdvancedOriginGroups 高级回源配置，当OriginType=advanced时有效。
+不填写表示不使用高级回源配置。
+                     */
+                    void SetAdvancedOriginGroups(const std::vector<AdvancedOriginGroup>& _advancedOriginGroups);
+
+                    /**
+                     * 判断参数 AdvancedOriginGroups 是否已赋值
+                     * @return AdvancedOriginGroups 是否已赋值
+                     */
+                    bool AdvancedOriginGroupsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -202,6 +251,21 @@ namespace TencentCloud
                      */
                     uint64_t m_tTL;
                     bool m_tTLHasBeenSet;
+
+                    /**
+                     * 回源类型，取值有：
+<li>normal：主备回源；</li>
+<li>advanced：高级回源配置（仅当Type=proxied时可以使用）。</li>不填写表示使用主备回源。
+                     */
+                    std::string m_originType;
+                    bool m_originTypeHasBeenSet;
+
+                    /**
+                     * 高级回源配置，当OriginType=advanced时有效。
+不填写表示不使用高级回源配置。
+                     */
+                    std::vector<AdvancedOriginGroup> m_advancedOriginGroups;
+                    bool m_advancedOriginGroupsHasBeenSet;
 
                 };
             }

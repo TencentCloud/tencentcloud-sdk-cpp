@@ -215,6 +215,28 @@ namespace TencentCloud
                      */
                     bool UpdateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取当OriginType=self时，表示回源Host。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return HostHeader 当OriginType=self时，表示回源Host。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetHostHeader() const;
+
+                    /**
+                     * 设置当OriginType=self时，表示回源Host。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param HostHeader 当OriginType=self时，表示回源Host。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetHostHeader(const std::string& _hostHeader);
+
+                    /**
+                     * 判断参数 HostHeader 是否已赋值
+                     * @return HostHeader 是否已赋值
+                     */
+                    bool HostHeaderHasBeenSet() const;
+
                 private:
 
                     /**
@@ -270,6 +292,13 @@ namespace TencentCloud
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
+
+                    /**
+                     * 当OriginType=self时，表示回源Host。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_hostHeader;
+                    bool m_hostHeaderHasBeenSet;
 
                 };
             }

@@ -70,19 +70,19 @@ namespace TencentCloud
 <li>notEquals: 不等于；</li>
 <li>include: 包含；</li>
 <li>notInclude: 不包含; </li>
-<li>startWith: 开始于；</li>
-<li>notStartWith: 不开始于；</li>
-<li>endWith: 结尾是；</li>
-<li>notEndWith: 不结尾是。</li>
+<li>startWith: 开始的值是value；</li>
+<li>notStartWith: 不以value的值开始；</li>
+<li>endWith: 结尾是value值；</li>
+<li>notEndWith: 不以value的值结尾。</li>
                      * @return Operator 查询条件操作符，操作类型有：
 <li>equals: 等于；</li>
 <li>notEquals: 不等于；</li>
 <li>include: 包含；</li>
 <li>notInclude: 不包含; </li>
-<li>startWith: 开始于；</li>
-<li>notStartWith: 不开始于；</li>
-<li>endWith: 结尾是；</li>
-<li>notEndWith: 不结尾是。</li>
+<li>startWith: 开始的值是value；</li>
+<li>notStartWith: 不以value的值开始；</li>
+<li>endWith: 结尾是value值；</li>
+<li>notEndWith: 不以value的值结尾。</li>
                      */
                     std::string GetOperator() const;
 
@@ -92,19 +92,19 @@ namespace TencentCloud
 <li>notEquals: 不等于；</li>
 <li>include: 包含；</li>
 <li>notInclude: 不包含; </li>
-<li>startWith: 开始于；</li>
-<li>notStartWith: 不开始于；</li>
-<li>endWith: 结尾是；</li>
-<li>notEndWith: 不结尾是。</li>
+<li>startWith: 开始的值是value；</li>
+<li>notStartWith: 不以value的值开始；</li>
+<li>endWith: 结尾是value值；</li>
+<li>notEndWith: 不以value的值结尾。</li>
                      * @param Operator 查询条件操作符，操作类型有：
 <li>equals: 等于；</li>
 <li>notEquals: 不等于；</li>
 <li>include: 包含；</li>
 <li>notInclude: 不包含; </li>
-<li>startWith: 开始于；</li>
-<li>notStartWith: 不开始于；</li>
-<li>endWith: 结尾是；</li>
-<li>notEndWith: 不结尾是。</li>
+<li>startWith: 开始的值是value；</li>
+<li>notStartWith: 不以value的值开始；</li>
+<li>endWith: 结尾是value值；</li>
+<li>notEndWith: 不以value的值结尾。</li>
                      */
                     void SetOperator(const std::string& _operator);
 
@@ -146,10 +146,10 @@ namespace TencentCloud
 <li>notEquals: 不等于；</li>
 <li>include: 包含；</li>
 <li>notInclude: 不包含; </li>
-<li>startWith: 开始于；</li>
-<li>notStartWith: 不开始于；</li>
-<li>endWith: 结尾是；</li>
-<li>notEndWith: 不结尾是。</li>
+<li>startWith: 开始的值是value；</li>
+<li>notStartWith: 不以value的值开始；</li>
+<li>endWith: 结尾是value值；</li>
+<li>notEndWith: 不以value的值结尾。</li>
                      */
                     std::string m_operator;
                     bool m_operatorHasBeenSet;

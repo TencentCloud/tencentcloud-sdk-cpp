@@ -125,8 +125,6 @@
 #include <tencentcloud/teo/v20220901/model/DescribeDnsRecordsResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeDnssecRequest.h>
 #include <tencentcloud/teo/v20220901/model/DescribeDnssecResponse.h>
-#include <tencentcloud/teo/v20220901/model/DescribeHostCertificatesRequest.h>
-#include <tencentcloud/teo/v20220901/model/DescribeHostCertificatesResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeHostsSettingRequest.h>
 #include <tencentcloud/teo/v20220901/model/DescribeHostsSettingResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeIdentificationsRequest.h>
@@ -430,9 +428,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDnssecResponse> DescribeDnssecOutcome;
                 typedef std::future<DescribeDnssecOutcome> DescribeDnssecOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribeDnssecRequest&, DescribeDnssecOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDnssecAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeHostCertificatesResponse> DescribeHostCertificatesOutcome;
-                typedef std::future<DescribeHostCertificatesOutcome> DescribeHostCertificatesOutcomeCallable;
-                typedef std::function<void(const TeoClient*, const Model::DescribeHostCertificatesRequest&, DescribeHostCertificatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHostCertificatesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeHostsSettingResponse> DescribeHostsSettingOutcome;
                 typedef std::future<DescribeHostsSettingOutcome> DescribeHostsSettingOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribeHostsSettingRequest&, DescribeHostsSettingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHostsSettingAsyncHandler;
@@ -1098,15 +1093,6 @@ namespace TencentCloud
                 DescribeDnssecOutcome DescribeDnssec(const Model::DescribeDnssecRequest &request);
                 void DescribeDnssecAsync(const Model::DescribeDnssecRequest& request, const DescribeDnssecAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDnssecOutcomeCallable DescribeDnssecCallable(const Model::DescribeDnssecRequest& request);
-
-                /**
-                 *查询域名证书列表，支持搜索、分页、排序、过滤。
-                 * @param req DescribeHostCertificatesRequest
-                 * @return DescribeHostCertificatesOutcome
-                 */
-                DescribeHostCertificatesOutcome DescribeHostCertificates(const Model::DescribeHostCertificatesRequest &request);
-                void DescribeHostCertificatesAsync(const Model::DescribeHostCertificatesRequest& request, const DescribeHostCertificatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeHostCertificatesOutcomeCallable DescribeHostCertificatesCallable(const Model::DescribeHostCertificatesRequest& request);
 
                 /**
                  *用于查询域名配置信息

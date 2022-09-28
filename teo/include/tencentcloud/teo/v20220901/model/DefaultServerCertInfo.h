@@ -214,24 +214,28 @@ namespace TencentCloud
 
                     /**
                      * 获取部署状态，取值有：
-<li>processing: 部署中;</li>
-<li>deployed: 已部署。</li>
+<li>processing: 部署中；</li>
+<li>deployed: 已部署；</li>
+<li>failed: 部署失败。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 部署状态，取值有：
-<li>processing: 部署中;</li>
-<li>deployed: 已部署。</li>
+<li>processing: 部署中；</li>
+<li>deployed: 已部署；</li>
+<li>failed: 部署失败。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置部署状态，取值有：
-<li>processing: 部署中;</li>
-<li>deployed: 已部署。</li>
+<li>processing: 部署中；</li>
+<li>deployed: 已部署；</li>
+<li>failed: 部署失败。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param Status 部署状态，取值有：
-<li>processing: 部署中;</li>
-<li>deployed: 已部署。</li>
+<li>processing: 部署中；</li>
+<li>deployed: 已部署；</li>
+<li>failed: 部署失败。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetStatus(const std::string& _status);
@@ -263,6 +267,28 @@ namespace TencentCloud
                      * @return Message 是否已赋值
                      */
                     bool MessageHasBeenSet() const;
+
+                    /**
+                     * 获取证书算法。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SignAlgo 证书算法。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetSignAlgo() const;
+
+                    /**
+                     * 设置证书算法。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SignAlgo 证书算法。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSignAlgo(const std::string& _signAlgo);
+
+                    /**
+                     * 判断参数 SignAlgo 是否已赋值
+                     * @return SignAlgo 是否已赋值
+                     */
+                    bool SignAlgoHasBeenSet() const;
 
                 private:
 
@@ -320,8 +346,9 @@ namespace TencentCloud
 
                     /**
                      * 部署状态，取值有：
-<li>processing: 部署中;</li>
-<li>deployed: 已部署。</li>
+<li>processing: 部署中；</li>
+<li>deployed: 已部署；</li>
+<li>failed: 部署失败。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_status;
@@ -333,6 +360,13 @@ namespace TencentCloud
                      */
                     std::string m_message;
                     bool m_messageHasBeenSet;
+
+                    /**
+                     * 证书算法。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_signAlgo;
+                    bool m_signAlgoHasBeenSet;
 
                 };
             }

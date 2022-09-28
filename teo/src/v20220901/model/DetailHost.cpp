@@ -42,7 +42,8 @@ DetailHost::DetailHost() :
     m_cCHasBeenSet(false),
     m_dDoSHasBeenSet(false),
     m_smartRoutingHasBeenSet(false),
-    m_ipv6HasBeenSet(false)
+    m_ipv6HasBeenSet(false),
+    m_clientIpCountryHasBeenSet(false)
 {
 }
 
@@ -355,6 +356,23 @@ CoreInternalOutcome DetailHost::Deserialize(const rapidjson::Value &value)
         m_ipv6HasBeenSet = true;
     }
 
+    if (value.HasMember("ClientIpCountry") && !value["ClientIpCountry"].IsNull())
+    {
+        if (!value["ClientIpCountry"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `DetailHost.ClientIpCountry` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_clientIpCountry.Deserialize(value["ClientIpCountry"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_clientIpCountryHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -548,6 +566,15 @@ void DetailHost::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_ipv6.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_clientIpCountryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClientIpCountry";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_clientIpCountry.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -903,5 +930,21 @@ void DetailHost::SetIpv6(const Ipv6& _ipv6)
 bool DetailHost::Ipv6HasBeenSet() const
 {
     return m_ipv6HasBeenSet;
+}
+
+ClientIpCountry DetailHost::GetClientIpCountry() const
+{
+    return m_clientIpCountry;
+}
+
+void DetailHost::SetClientIpCountry(const ClientIpCountry& _clientIpCountry)
+{
+    m_clientIpCountry = _clientIpCountry;
+    m_clientIpCountryHasBeenSet = true;
+}
+
+bool DetailHost::ClientIpCountryHasBeenSet() const
+{
+    return m_clientIpCountryHasBeenSet;
 }
 

@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取HTTP头部。
-                     * @return Name HTTP头部。
+                     * 获取HTTP头部名称。
+                     * @return Name HTTP头部名称。
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置HTTP头部。
-                     * @param Name HTTP头部。
+                     * 设置HTTP头部名称。
+                     * @param Name HTTP头部名称。
                      */
                     void SetName(const std::string& _name);
 
@@ -85,7 +85,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * HTTP头部。
+                     * HTTP头部名称。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;

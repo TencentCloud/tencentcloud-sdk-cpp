@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 例外规则生效的具体条件
+                * 例外规则生效的具体条件。
                 */
                 class ExceptUserRuleCondition : public AbstractModel
                 {
@@ -59,7 +59,6 @@ namespace TencentCloud
 <li>method：请求方式；</li>
 <li>header：请求头部；</li>
 <li>sip_proto：网络层协议。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MatchFrom 匹配项，取值有：
 <li>host：请求域名；</li>
 <li>sip：客户端IP；</li>
@@ -72,7 +71,6 @@ namespace TencentCloud
 <li>method：请求方式；</li>
 <li>header：请求头部；</li>
 <li>sip_proto：网络层协议。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetMatchFrom() const;
 
@@ -89,7 +87,6 @@ namespace TencentCloud
 <li>method：请求方式；</li>
 <li>header：请求头部；</li>
 <li>sip_proto：网络层协议。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param MatchFrom 匹配项，取值有：
 <li>host：请求域名；</li>
 <li>sip：客户端IP；</li>
@@ -102,7 +99,6 @@ namespace TencentCloud
 <li>method：请求方式；</li>
 <li>header：请求头部；</li>
 <li>sip_proto：网络层协议。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetMatchFrom(const std::string& _matchFrom);
 
@@ -113,14 +109,14 @@ namespace TencentCloud
                     bool MatchFromHasBeenSet() const;
 
                     /**
-                     * 获取匹配项的参数。当 MatchFrom 为 header 时，可以填入 header 的 key 作为参数。
-                     * @return MatchParam 匹配项的参数。当 MatchFrom 为 header 时，可以填入 header 的 key 作为参数。
+                     * 获取匹配项的参数。仅当 MatchFrom 为 header 时，可以使用本参数，值可填入 header 的 key 作为参数。
+                     * @return MatchParam 匹配项的参数。仅当 MatchFrom 为 header 时，可以使用本参数，值可填入 header 的 key 作为参数。
                      */
                     std::string GetMatchParam() const;
 
                     /**
-                     * 设置匹配项的参数。当 MatchFrom 为 header 时，可以填入 header 的 key 作为参数。
-                     * @param MatchParam 匹配项的参数。当 MatchFrom 为 header 时，可以填入 header 的 key 作为参数。
+                     * 设置匹配项的参数。仅当 MatchFrom 为 header 时，可以使用本参数，值可填入 header 的 key 作为参数。
+                     * @param MatchParam 匹配项的参数。仅当 MatchFrom 为 header 时，可以使用本参数，值可填入 header 的 key 作为参数。
                      */
                     void SetMatchParam(const std::string& _matchParam);
 
@@ -148,7 +144,6 @@ namespace TencentCloud
 <li>match_prefix：前缀匹配；</li>
 <li>match_suffix：后缀匹配；</li>
 <li>wildcard：通配符。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Operator 匹配操作符，取值有：
 <li>equal：字符串等于；</li>
 <li>not_equal：数值不等于；</li>
@@ -166,7 +161,6 @@ namespace TencentCloud
 <li>match_prefix：前缀匹配；</li>
 <li>match_suffix：后缀匹配；</li>
 <li>wildcard：通配符。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetOperator() const;
 
@@ -188,7 +182,6 @@ namespace TencentCloud
 <li>match_prefix：前缀匹配；</li>
 <li>match_suffix：后缀匹配；</li>
 <li>wildcard：通配符。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Operator 匹配操作符，取值有：
 <li>equal：字符串等于；</li>
 <li>not_equal：数值不等于；</li>
@@ -206,7 +199,6 @@ namespace TencentCloud
 <li>match_prefix：前缀匹配；</li>
 <li>match_suffix：后缀匹配；</li>
 <li>wildcard：通配符。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetOperator(const std::string& _operator);
 
@@ -218,17 +210,13 @@ namespace TencentCloud
 
                     /**
                      * 获取匹配值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MatchContent 匹配值。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetMatchContent() const;
 
                     /**
                      * 设置匹配值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param MatchContent 匹配值。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetMatchContent(const std::string& _matchContent);
 
@@ -253,13 +241,12 @@ namespace TencentCloud
 <li>method：请求方式；</li>
 <li>header：请求头部；</li>
 <li>sip_proto：网络层协议。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_matchFrom;
                     bool m_matchFromHasBeenSet;
 
                     /**
-                     * 匹配项的参数。当 MatchFrom 为 header 时，可以填入 header 的 key 作为参数。
+                     * 匹配项的参数。仅当 MatchFrom 为 header 时，可以使用本参数，值可填入 header 的 key 作为参数。
                      */
                     std::string m_matchParam;
                     bool m_matchParamHasBeenSet;
@@ -282,14 +269,12 @@ namespace TencentCloud
 <li>match_prefix：前缀匹配；</li>
 <li>match_suffix：后缀匹配；</li>
 <li>wildcard：通配符。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_operator;
                     bool m_operatorHasBeenSet;
 
                     /**
                      * 匹配值。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_matchContent;
                     bool m_matchContentHasBeenSet;

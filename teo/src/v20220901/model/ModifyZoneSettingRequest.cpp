@@ -39,7 +39,8 @@ ModifyZoneSettingRequest::ModifyZoneSettingRequest() :
     m_webSocketHasBeenSet(false),
     m_clientIpHeaderHasBeenSet(false),
     m_cachePrefreshHasBeenSet(false),
-    m_ipv6HasBeenSet(false)
+    m_ipv6HasBeenSet(false),
+    m_clientIpCountryHasBeenSet(false)
 {
 }
 
@@ -200,6 +201,15 @@ string ModifyZoneSettingRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_ipv6.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_clientIpCountryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClientIpCountry";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_clientIpCountry.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -480,6 +490,22 @@ void ModifyZoneSettingRequest::SetIpv6(const Ipv6& _ipv6)
 bool ModifyZoneSettingRequest::Ipv6HasBeenSet() const
 {
     return m_ipv6HasBeenSet;
+}
+
+ClientIpCountry ModifyZoneSettingRequest::GetClientIpCountry() const
+{
+    return m_clientIpCountry;
+}
+
+void ModifyZoneSettingRequest::SetClientIpCountry(const ClientIpCountry& _clientIpCountry)
+{
+    m_clientIpCountry = _clientIpCountry;
+    m_clientIpCountryHasBeenSet = true;
+}
+
+bool ModifyZoneSettingRequest::ClientIpCountryHasBeenSet() const
+{
+    return m_clientIpCountryHasBeenSet;
 }
 
 

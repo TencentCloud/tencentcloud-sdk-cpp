@@ -24,7 +24,8 @@ using namespace TencentCloud::Teo::V20220901::Model;
 using namespace std;
 
 IdentifyZoneResponse::IdentifyZoneResponse() :
-    m_ascriptionHasBeenSet(false)
+    m_ascriptionHasBeenSet(false),
+    m_fileAscriptionHasBeenSet(false)
 {
 }
 
@@ -79,6 +80,23 @@ CoreInternalOutcome IdentifyZoneResponse::Deserialize(const string &payload)
         m_ascriptionHasBeenSet = true;
     }
 
+    if (rsp.HasMember("FileAscription") && !rsp["FileAscription"].IsNull())
+    {
+        if (!rsp["FileAscription"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `FileAscription` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_fileAscription.Deserialize(rsp["FileAscription"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_fileAscriptionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -96,6 +114,15 @@ string IdentifyZoneResponse::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_ascription.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_fileAscriptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileAscription";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_fileAscription.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -118,6 +145,16 @@ AscriptionInfo IdentifyZoneResponse::GetAscription() const
 bool IdentifyZoneResponse::AscriptionHasBeenSet() const
 {
     return m_ascriptionHasBeenSet;
+}
+
+FileAscriptionInfo IdentifyZoneResponse::GetFileAscription() const
+{
+    return m_fileAscription;
+}
+
+bool IdentifyZoneResponse::FileAscriptionHasBeenSet() const
+{
+    return m_fileAscriptionHasBeenSet;
 }
 
 

@@ -30,7 +30,9 @@ LoadBalancing::LoadBalancing() :
     m_cnameHasBeenSet(false),
     m_originGroupIdHasBeenSet(false),
     m_backupOriginGroupIdHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
+    m_updateTimeHasBeenSet(false),
+    m_originTypeHasBeenSet(false),
+    m_advancedOriginGroupsHasBeenSet(false)
 {
 }
 
@@ -139,6 +141,36 @@ CoreInternalOutcome LoadBalancing::Deserialize(const rapidjson::Value &value)
         m_updateTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("OriginType") && !value["OriginType"].IsNull())
+    {
+        if (!value["OriginType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LoadBalancing.OriginType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_originType = string(value["OriginType"].GetString());
+        m_originTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("AdvancedOriginGroups") && !value["AdvancedOriginGroups"].IsNull())
+    {
+        if (!value["AdvancedOriginGroups"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `LoadBalancing.AdvancedOriginGroups` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["AdvancedOriginGroups"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            AdvancedOriginGroup item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_advancedOriginGroups.push_back(item);
+        }
+        m_advancedOriginGroupsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -224,6 +256,29 @@ void LoadBalancing::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "UpdateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_updateTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_originTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OriginType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_originType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_advancedOriginGroupsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AdvancedOriginGroups";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_advancedOriginGroups.begin(); itr != m_advancedOriginGroups.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -387,5 +442,37 @@ void LoadBalancing::SetUpdateTime(const string& _updateTime)
 bool LoadBalancing::UpdateTimeHasBeenSet() const
 {
     return m_updateTimeHasBeenSet;
+}
+
+string LoadBalancing::GetOriginType() const
+{
+    return m_originType;
+}
+
+void LoadBalancing::SetOriginType(const string& _originType)
+{
+    m_originType = _originType;
+    m_originTypeHasBeenSet = true;
+}
+
+bool LoadBalancing::OriginTypeHasBeenSet() const
+{
+    return m_originTypeHasBeenSet;
+}
+
+vector<AdvancedOriginGroup> LoadBalancing::GetAdvancedOriginGroups() const
+{
+    return m_advancedOriginGroups;
+}
+
+void LoadBalancing::SetAdvancedOriginGroups(const vector<AdvancedOriginGroup>& _advancedOriginGroups)
+{
+    m_advancedOriginGroups = _advancedOriginGroups;
+    m_advancedOriginGroupsHasBeenSet = true;
+}
+
+bool LoadBalancing::AdvancedOriginGroupsHasBeenSet() const
+{
+    return m_advancedOriginGroupsHasBeenSet;
 }
 

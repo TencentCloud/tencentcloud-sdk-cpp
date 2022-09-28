@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/teo/v20220901/model/AscriptionInfo.h>
+#include <tencentcloud/teo/v20220901/model/FileAscriptionInfo.h>
 
 
 namespace TencentCloud
@@ -92,14 +93,14 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取站点归属信息。
-                     * @return Ascription 站点归属信息。
+                     * 获取站点归属权校验：Dns校验信息。
+                     * @return Ascription 站点归属权校验：Dns校验信息。
                      */
                     AscriptionInfo GetAscription() const;
 
                     /**
-                     * 设置站点归属信息。
-                     * @param Ascription 站点归属信息。
+                     * 设置站点归属权校验：Dns校验信息。
+                     * @param Ascription 站点归属权校验：Dns校验信息。
                      */
                     void SetAscription(const AscriptionInfo& _ascription);
 
@@ -131,6 +132,24 @@ namespace TencentCloud
                      */
                     bool OriginalNameServersHasBeenSet() const;
 
+                    /**
+                     * 获取站点归属权校验：文件校验信息。
+                     * @return FileAscription 站点归属权校验：文件校验信息。
+                     */
+                    FileAscriptionInfo GetFileAscription() const;
+
+                    /**
+                     * 设置站点归属权校验：文件校验信息。
+                     * @param FileAscription 站点归属权校验：文件校验信息。
+                     */
+                    void SetFileAscription(const FileAscriptionInfo& _fileAscription);
+
+                    /**
+                     * 判断参数 FileAscription 是否已赋值
+                     * @return FileAscription 是否已赋值
+                     */
+                    bool FileAscriptionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -148,7 +167,7 @@ namespace TencentCloud
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 站点归属信息。
+                     * 站点归属权校验：Dns校验信息。
                      */
                     AscriptionInfo m_ascription;
                     bool m_ascriptionHasBeenSet;
@@ -159,6 +178,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_originalNameServers;
                     bool m_originalNameServersHasBeenSet;
+
+                    /**
+                     * 站点归属权校验：文件校验信息。
+                     */
+                    FileAscriptionInfo m_fileAscription;
+                    bool m_fileAscriptionHasBeenSet;
 
                 };
             }

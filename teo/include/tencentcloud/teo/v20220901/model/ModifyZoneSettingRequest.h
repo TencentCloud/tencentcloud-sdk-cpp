@@ -37,6 +37,7 @@
 #include <tencentcloud/teo/v20220901/model/ClientIpHeader.h>
 #include <tencentcloud/teo/v20220901/model/CachePrefresh.h>
 #include <tencentcloud/teo/v20220901/model/Ipv6.h>
+#include <tencentcloud/teo/v20220901/model/ClientIpCountry.h>
 
 
 namespace TencentCloud
@@ -428,6 +429,28 @@ namespace TencentCloud
                      */
                     bool Ipv6HasBeenSet() const;
 
+                    /**
+                     * 获取回源时是否携带客户端IP所属地域信息的配置。
+不填写表示保持原有配置。
+                     * @return ClientIpCountry 回源时是否携带客户端IP所属地域信息的配置。
+不填写表示保持原有配置。
+                     */
+                    ClientIpCountry GetClientIpCountry() const;
+
+                    /**
+                     * 设置回源时是否携带客户端IP所属地域信息的配置。
+不填写表示保持原有配置。
+                     * @param ClientIpCountry 回源时是否携带客户端IP所属地域信息的配置。
+不填写表示保持原有配置。
+                     */
+                    void SetClientIpCountry(const ClientIpCountry& _clientIpCountry);
+
+                    /**
+                     * 判断参数 ClientIpCountry 是否已赋值
+                     * @return ClientIpCountry 是否已赋值
+                     */
+                    bool ClientIpCountryHasBeenSet() const;
+
                 private:
 
                     /**
@@ -547,6 +570,13 @@ namespace TencentCloud
                      */
                     Ipv6 m_ipv6;
                     bool m_ipv6HasBeenSet;
+
+                    /**
+                     * 回源时是否携带客户端IP所属地域信息的配置。
+不填写表示保持原有配置。
+                     */
+                    ClientIpCountry m_clientIpCountry;
+                    bool m_clientIpCountryHasBeenSet;
 
                 };
             }

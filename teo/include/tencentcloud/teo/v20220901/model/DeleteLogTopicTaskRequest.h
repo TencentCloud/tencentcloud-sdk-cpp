@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool TopicIdHasBeenSet() const;
 
                     /**
-                     * 获取推送任务所属日志集地域。
-                     * @return LogSetRegion 推送任务所属日志集地域。
+                     * 获取推送任务所属日志集地域，此字段仅用于CLS推送任务。
+                     * @return LogSetRegion 推送任务所属日志集地域，此字段仅用于CLS推送任务。
                      */
                     std::string GetLogSetRegion() const;
 
                     /**
-                     * 设置推送任务所属日志集地域。
-                     * @param LogSetRegion 推送任务所属日志集地域。
+                     * 设置推送任务所属日志集地域，此字段仅用于CLS推送任务。
+                     * @param LogSetRegion 推送任务所属日志集地域，此字段仅用于CLS推送任务。
                      */
                     void SetLogSetRegion(const std::string& _logSetRegion);
 
@@ -87,7 +87,7 @@ namespace TencentCloud
                     bool m_topicIdHasBeenSet;
 
                     /**
-                     * 推送任务所属日志集地域。
+                     * 推送任务所属日志集地域，此字段仅用于CLS推送任务。
                      */
                     std::string m_logSetRegion;
                     bool m_logSetRegionHasBeenSet;

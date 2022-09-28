@@ -33,7 +33,8 @@ ClsLogTopicInfo::ClsLogTopicInfo() :
     m_targetHasBeenSet(false),
     m_logSetRegionHasBeenSet(false),
     m_zoneIdHasBeenSet(false),
-    m_areaHasBeenSet(false)
+    m_areaHasBeenSet(false),
+    m_logSetTypeHasBeenSet(false)
 {
 }
 
@@ -172,6 +173,16 @@ CoreInternalOutcome ClsLogTopicInfo::Deserialize(const rapidjson::Value &value)
         m_areaHasBeenSet = true;
     }
 
+    if (value.HasMember("LogSetType") && !value["LogSetType"].IsNull())
+    {
+        if (!value["LogSetType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClsLogTopicInfo.LogSetType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_logSetType = string(value["LogSetType"].GetString());
+        m_logSetTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -281,6 +292,14 @@ void ClsLogTopicInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "Area";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_area.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_logSetTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LogSetType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_logSetType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -492,5 +511,21 @@ void ClsLogTopicInfo::SetArea(const string& _area)
 bool ClsLogTopicInfo::AreaHasBeenSet() const
 {
     return m_areaHasBeenSet;
+}
+
+string ClsLogTopicInfo::GetLogSetType() const
+{
+    return m_logSetType;
+}
+
+void ClsLogTopicInfo::SetLogSetType(const string& _logSetType)
+{
+    m_logSetType = _logSetType;
+    m_logSetTypeHasBeenSet = true;
+}
+
+bool ClsLogTopicInfo::LogSetTypeHasBeenSet() const
+{
+    return m_logSetTypeHasBeenSet;
 }
 

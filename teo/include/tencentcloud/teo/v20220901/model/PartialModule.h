@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_TEO_V20220901_MODEL_HOSTSCERTIFICATE_H_
-#define TENCENTCLOUD_TEO_V20220901_MODEL_HOSTSCERTIFICATE_H_
+#ifndef TENCENTCLOUD_TEO_V20220901_MODEL_PARTIALMODULE_H_
+#define TENCENTCLOUD_TEO_V20220901_MODEL_PARTIALMODULE_H_
 
 #include <string>
 #include <vector>
@@ -24,7 +24,6 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/teo/v20220901/model/HostCertInfo.h>
 
 
 namespace TencentCloud
@@ -36,76 +35,76 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 域名证书配置
+                * 例外规则的详细模块配置。
                 */
-                class HostsCertificate : public AbstractModel
+                class PartialModule : public AbstractModel
                 {
                 public:
-                    HostsCertificate();
-                    ~HostsCertificate() = default;
+                    PartialModule();
+                    ~PartialModule() = default;
                     void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
                     CoreInternalOutcome Deserialize(const rapidjson::Value &value);
 
 
                     /**
-                     * 获取域名。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Host 域名。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取模块名称，取值为：
+<li>waf：托管规则。</li>
+                     * @return Module 模块名称，取值为：
+<li>waf：托管规则。</li>
                      */
-                    std::string GetHost() const;
+                    std::string GetModule() const;
 
                     /**
-                     * 设置域名。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Host 域名。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置模块名称，取值为：
+<li>waf：托管规则。</li>
+                     * @param Module 模块名称，取值为：
+<li>waf：托管规则。</li>
                      */
-                    void SetHost(const std::string& _host);
+                    void SetModule(const std::string& _module);
 
                     /**
-                     * 判断参数 Host 是否已赋值
-                     * @return Host 是否已赋值
+                     * 判断参数 Module 是否已赋值
+                     * @return Module 是否已赋值
                      */
-                    bool HostHasBeenSet() const;
+                    bool ModuleHasBeenSet() const;
 
                     /**
-                     * 获取服务端证书配置。
+                     * 获取模块下的需要例外的具体规则ID列表。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return HostCertInfo 服务端证书配置。
+                     * @return Include 模块下的需要例外的具体规则ID列表。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    HostCertInfo GetHostCertInfo() const;
+                    std::vector<int64_t> GetInclude() const;
 
                     /**
-                     * 设置服务端证书配置。
+                     * 设置模块下的需要例外的具体规则ID列表。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param HostCertInfo 服务端证书配置。
+                     * @param Include 模块下的需要例外的具体规则ID列表。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    void SetHostCertInfo(const HostCertInfo& _hostCertInfo);
+                    void SetInclude(const std::vector<int64_t>& _include);
 
                     /**
-                     * 判断参数 HostCertInfo 是否已赋值
-                     * @return HostCertInfo 是否已赋值
+                     * 判断参数 Include 是否已赋值
+                     * @return Include 是否已赋值
                      */
-                    bool HostCertInfoHasBeenSet() const;
+                    bool IncludeHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 域名。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 模块名称，取值为：
+<li>waf：托管规则。</li>
                      */
-                    std::string m_host;
-                    bool m_hostHasBeenSet;
+                    std::string m_module;
+                    bool m_moduleHasBeenSet;
 
                     /**
-                     * 服务端证书配置。
+                     * 模块下的需要例外的具体规则ID列表。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    HostCertInfo m_hostCertInfo;
-                    bool m_hostCertInfoHasBeenSet;
+                    std::vector<int64_t> m_include;
+                    bool m_includeHasBeenSet;
 
                 };
             }
@@ -113,4 +112,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_TEO_V20220901_MODEL_HOSTSCERTIFICATE_H_
+#endif // !TENCENTCLOUD_TEO_V20220901_MODEL_PARTIALMODULE_H_

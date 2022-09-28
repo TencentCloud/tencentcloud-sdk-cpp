@@ -2233,49 +2233,6 @@ TeoClient::DescribeDnssecOutcomeCallable TeoClient::DescribeDnssecCallable(const
     return task->get_future();
 }
 
-TeoClient::DescribeHostCertificatesOutcome TeoClient::DescribeHostCertificates(const DescribeHostCertificatesRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeHostCertificates");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeHostCertificatesResponse rsp = DescribeHostCertificatesResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeHostCertificatesOutcome(rsp);
-        else
-            return DescribeHostCertificatesOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeHostCertificatesOutcome(outcome.GetError());
-    }
-}
-
-void TeoClient::DescribeHostCertificatesAsync(const DescribeHostCertificatesRequest& request, const DescribeHostCertificatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeHostCertificates(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-TeoClient::DescribeHostCertificatesOutcomeCallable TeoClient::DescribeHostCertificatesCallable(const DescribeHostCertificatesRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeHostCertificatesOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeHostCertificates(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 TeoClient::DescribeHostsSettingOutcome TeoClient::DescribeHostsSetting(const DescribeHostsSettingRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeHostsSetting");

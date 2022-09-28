@@ -304,6 +304,32 @@ namespace TencentCloud
                      */
                     bool AreaHasBeenSet() const;
 
+                    /**
+                     * 获取推送任务类型，取值有：
+<li>cls：推送到cls；</li>
+<li>custom_endpoint：推送到自定义接口。</li>
+                     * @return LogSetType 推送任务类型，取值有：
+<li>cls：推送到cls；</li>
+<li>custom_endpoint：推送到自定义接口。</li>
+                     */
+                    std::string GetLogSetType() const;
+
+                    /**
+                     * 设置推送任务类型，取值有：
+<li>cls：推送到cls；</li>
+<li>custom_endpoint：推送到自定义接口。</li>
+                     * @param LogSetType 推送任务类型，取值有：
+<li>cls：推送到cls；</li>
+<li>custom_endpoint：推送到自定义接口。</li>
+                     */
+                    void SetLogSetType(const std::string& _logSetType);
+
+                    /**
+                     * 判断参数 LogSetType 是否已赋值
+                     * @return LogSetType 是否已赋值
+                     */
+                    bool LogSetTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -389,6 +415,14 @@ namespace TencentCloud
                      */
                     std::string m_area;
                     bool m_areaHasBeenSet;
+
+                    /**
+                     * 推送任务类型，取值有：
+<li>cls：推送到cls；</li>
+<li>custom_endpoint：推送到自定义接口。</li>
+                     */
+                    std::string m_logSetType;
+                    bool m_logSetTypeHasBeenSet;
 
                 };
             }

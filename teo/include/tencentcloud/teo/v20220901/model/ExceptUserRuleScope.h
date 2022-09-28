@@ -24,6 +24,8 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/teo/v20220901/model/PartialModule.h>
+#include <tencentcloud/teo/v20220901/model/SkipCondition.h>
 
 
 namespace TencentCloud
@@ -35,7 +37,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 例外规则的生效范围
+                * 例外规则的生效范围。
                 */
                 class ExceptUserRuleScope : public AbstractModel
                 {
@@ -47,17 +49,55 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取生效的模块。当前仅支持waf：托管规则。
+                     * 获取例外规则类型。其中complete模式代表全量数据进行例外，partial模式代表可选择指定模块指定字段进行例外，该字段取值有：
+<li>complete：完全跳过模式；</li>
+<li>partial：部分跳过模式。</li>
+                     * @return Type 例外规则类型。其中complete模式代表全量数据进行例外，partial模式代表可选择指定模块指定字段进行例外，该字段取值有：
+<li>complete：完全跳过模式；</li>
+<li>partial：部分跳过模式。</li>
+                     */
+                    std::string GetType() const;
+
+                    /**
+                     * 设置例外规则类型。其中complete模式代表全量数据进行例外，partial模式代表可选择指定模块指定字段进行例外，该字段取值有：
+<li>complete：完全跳过模式；</li>
+<li>partial：部分跳过模式。</li>
+                     * @param Type 例外规则类型。其中complete模式代表全量数据进行例外，partial模式代表可选择指定模块指定字段进行例外，该字段取值有：
+<li>complete：完全跳过模式；</li>
+<li>partial：部分跳过模式。</li>
+                     */
+                    void SetType(const std::string& _type);
+
+                    /**
+                     * 判断参数 Type 是否已赋值
+                     * @return Type 是否已赋值
+                     */
+                    bool TypeHasBeenSet() const;
+
+                    /**
+                     * 获取生效的模块，该字段取值有：
+<li>waf：托管规则；</li>
+<li>cc：速率限制规则；</li>
+<li>bot：Bot防护。</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Modules 生效的模块。当前仅支持waf：托管规则。
+                     * @return Modules 生效的模块，该字段取值有：
+<li>waf：托管规则；</li>
+<li>cc：速率限制规则；</li>
+<li>bot：Bot防护。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> GetModules() const;
 
                     /**
-                     * 设置生效的模块。当前仅支持waf：托管规则。
+                     * 设置生效的模块，该字段取值有：
+<li>waf：托管规则；</li>
+<li>cc：速率限制规则；</li>
+<li>bot：Bot防护。</li>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Modules 生效的模块。当前仅支持waf：托管规则。
+                     * @param Modules 生效的模块，该字段取值有：
+<li>waf：托管规则；</li>
+<li>cc：速率限制规则；</li>
+<li>bot：Bot防护。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetModules(const std::vector<std::string>& _modules);
@@ -68,14 +108,83 @@ namespace TencentCloud
                      */
                     bool ModulesHasBeenSet() const;
 
+                    /**
+                     * 获取跳过部分规则ID的例外规则详情。如果为null，默认使用历史配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PartialModules 跳过部分规则ID的例外规则详情。如果为null，默认使用历史配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<PartialModule> GetPartialModules() const;
+
+                    /**
+                     * 设置跳过部分规则ID的例外规则详情。如果为null，默认使用历史配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param PartialModules 跳过部分规则ID的例外规则详情。如果为null，默认使用历史配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPartialModules(const std::vector<PartialModule>& _partialModules);
+
+                    /**
+                     * 判断参数 PartialModules 是否已赋值
+                     * @return PartialModules 是否已赋值
+                     */
+                    bool PartialModulesHasBeenSet() const;
+
+                    /**
+                     * 获取跳过具体字段不去扫描的例外规则详情。如果为null，默认使用历史配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SkipConditions 跳过具体字段不去扫描的例外规则详情。如果为null，默认使用历史配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<SkipCondition> GetSkipConditions() const;
+
+                    /**
+                     * 设置跳过具体字段不去扫描的例外规则详情。如果为null，默认使用历史配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SkipConditions 跳过具体字段不去扫描的例外规则详情。如果为null，默认使用历史配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSkipConditions(const std::vector<SkipCondition>& _skipConditions);
+
+                    /**
+                     * 判断参数 SkipConditions 是否已赋值
+                     * @return SkipConditions 是否已赋值
+                     */
+                    bool SkipConditionsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 生效的模块。当前仅支持waf：托管规则。
+                     * 例外规则类型。其中complete模式代表全量数据进行例外，partial模式代表可选择指定模块指定字段进行例外，该字段取值有：
+<li>complete：完全跳过模式；</li>
+<li>partial：部分跳过模式。</li>
+                     */
+                    std::string m_type;
+                    bool m_typeHasBeenSet;
+
+                    /**
+                     * 生效的模块，该字段取值有：
+<li>waf：托管规则；</li>
+<li>cc：速率限制规则；</li>
+<li>bot：Bot防护。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_modules;
                     bool m_modulesHasBeenSet;
+
+                    /**
+                     * 跳过部分规则ID的例外规则详情。如果为null，默认使用历史配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<PartialModule> m_partialModules;
+                    bool m_partialModulesHasBeenSet;
+
+                    /**
+                     * 跳过具体字段不去扫描的例外规则详情。如果为null，默认使用历史配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<SkipCondition> m_skipConditions;
+                    bool m_skipConditionsHasBeenSet;
 
                 };
             }

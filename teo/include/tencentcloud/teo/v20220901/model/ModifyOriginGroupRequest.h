@@ -175,6 +175,28 @@ namespace TencentCloud
                      */
                     bool OriginRecordsHasBeenSet() const;
 
+                    /**
+                     * 获取回源Host，仅当OriginType=self时可以设置。
+不填写，表示使用已有配置。
+                     * @return HostHeader 回源Host，仅当OriginType=self时可以设置。
+不填写，表示使用已有配置。
+                     */
+                    std::string GetHostHeader() const;
+
+                    /**
+                     * 设置回源Host，仅当OriginType=self时可以设置。
+不填写，表示使用已有配置。
+                     * @param HostHeader 回源Host，仅当OriginType=self时可以设置。
+不填写，表示使用已有配置。
+                     */
+                    void SetHostHeader(const std::string& _hostHeader);
+
+                    /**
+                     * 判断参数 HostHeader 是否已赋值
+                     * @return HostHeader 是否已赋值
+                     */
+                    bool HostHeaderHasBeenSet() const;
+
                 private:
 
                     /**
@@ -218,6 +240,13 @@ namespace TencentCloud
                      */
                     std::vector<OriginRecord> m_originRecords;
                     bool m_originRecordsHasBeenSet;
+
+                    /**
+                     * 回源Host，仅当OriginType=self时可以设置。
+不填写，表示使用已有配置。
+                     */
+                    std::string m_hostHeader;
+                    bool m_hostHeaderHasBeenSet;
 
                 };
             }

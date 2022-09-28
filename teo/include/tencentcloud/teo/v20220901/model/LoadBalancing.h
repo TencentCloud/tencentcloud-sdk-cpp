@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/teo/v20220901/model/AdvancedOriginGroup.h>
 
 
 namespace TencentCloud
@@ -242,6 +243,54 @@ namespace TencentCloud
                      */
                     bool UpdateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取回源类型，取值有：
+<li>normal：主备回源；</li>
+<li>advanced：高级回源配置。</li>
+                     * @return OriginType 回源类型，取值有：
+<li>normal：主备回源；</li>
+<li>advanced：高级回源配置。</li>
+                     */
+                    std::string GetOriginType() const;
+
+                    /**
+                     * 设置回源类型，取值有：
+<li>normal：主备回源；</li>
+<li>advanced：高级回源配置。</li>
+                     * @param OriginType 回源类型，取值有：
+<li>normal：主备回源；</li>
+<li>advanced：高级回源配置。</li>
+                     */
+                    void SetOriginType(const std::string& _originType);
+
+                    /**
+                     * 判断参数 OriginType 是否已赋值
+                     * @return OriginType 是否已赋值
+                     */
+                    bool OriginTypeHasBeenSet() const;
+
+                    /**
+                     * 获取高级回源配置，当OriginType=advanced时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AdvancedOriginGroups 高级回源配置，当OriginType=advanced时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<AdvancedOriginGroup> GetAdvancedOriginGroups() const;
+
+                    /**
+                     * 设置高级回源配置，当OriginType=advanced时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AdvancedOriginGroups 高级回源配置，当OriginType=advanced时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAdvancedOriginGroups(const std::vector<AdvancedOriginGroup>& _advancedOriginGroups);
+
+                    /**
+                     * 判断参数 AdvancedOriginGroups 是否已赋值
+                     * @return AdvancedOriginGroups 是否已赋值
+                     */
+                    bool AdvancedOriginGroupsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -307,6 +356,21 @@ namespace TencentCloud
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
+
+                    /**
+                     * 回源类型，取值有：
+<li>normal：主备回源；</li>
+<li>advanced：高级回源配置。</li>
+                     */
+                    std::string m_originType;
+                    bool m_originTypeHasBeenSet;
+
+                    /**
+                     * 高级回源配置，当OriginType=advanced时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<AdvancedOriginGroup> m_advancedOriginGroups;
+                    bool m_advancedOriginGroupsHasBeenSet;
 
                 };
             }

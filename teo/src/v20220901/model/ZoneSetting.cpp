@@ -38,7 +38,8 @@ ZoneSetting::ZoneSetting() :
     m_clientIpHeaderHasBeenSet(false),
     m_cachePrefreshHasBeenSet(false),
     m_ipv6HasBeenSet(false),
-    m_httpsHasBeenSet(false)
+    m_httpsHasBeenSet(false),
+    m_clientIpCountryHasBeenSet(false)
 {
 }
 
@@ -339,6 +340,23 @@ CoreInternalOutcome ZoneSetting::Deserialize(const rapidjson::Value &value)
         m_httpsHasBeenSet = true;
     }
 
+    if (value.HasMember("ClientIpCountry") && !value["ClientIpCountry"].IsNull())
+    {
+        if (!value["ClientIpCountry"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ZoneSetting.ClientIpCountry` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_clientIpCountry.Deserialize(value["ClientIpCountry"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_clientIpCountryHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -504,6 +522,15 @@ void ZoneSetting::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_https.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_clientIpCountryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClientIpCountry";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_clientIpCountry.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -795,5 +822,21 @@ void ZoneSetting::SetHttps(const Https& _https)
 bool ZoneSetting::HttpsHasBeenSet() const
 {
     return m_httpsHasBeenSet;
+}
+
+ClientIpCountry ZoneSetting::GetClientIpCountry() const
+{
+    return m_clientIpCountry;
+}
+
+void ZoneSetting::SetClientIpCountry(const ClientIpCountry& _clientIpCountry)
+{
+    m_clientIpCountry = _clientIpCountry;
+    m_clientIpCountryHasBeenSet = true;
+}
+
+bool ZoneSetting::ClientIpCountryHasBeenSet() const
+{
+    return m_clientIpCountryHasBeenSet;
 }
 

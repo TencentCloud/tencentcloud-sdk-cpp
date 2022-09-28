@@ -40,6 +40,7 @@
 #include <tencentcloud/teo/v20220901/model/CachePrefresh.h>
 #include <tencentcloud/teo/v20220901/model/Ipv6.h>
 #include <tencentcloud/teo/v20220901/model/Https.h>
+#include <tencentcloud/teo/v20220901/model/ClientIpCountry.h>
 
 
 namespace TencentCloud
@@ -458,6 +459,28 @@ namespace TencentCloud
                      */
                     bool HttpsHasBeenSet() const;
 
+                    /**
+                     * 获取回源时是否携带客户端IP所属地域信息的配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ClientIpCountry 回源时是否携带客户端IP所属地域信息的配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ClientIpCountry GetClientIpCountry() const;
+
+                    /**
+                     * 设置回源时是否携带客户端IP所属地域信息的配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ClientIpCountry 回源时是否携带客户端IP所属地域信息的配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetClientIpCountry(const ClientIpCountry& _clientIpCountry);
+
+                    /**
+                     * 判断参数 ClientIpCountry 是否已赋值
+                     * @return ClientIpCountry 是否已赋值
+                     */
+                    bool ClientIpCountryHasBeenSet() const;
+
                 private:
 
                     /**
@@ -585,6 +608,13 @@ namespace TencentCloud
                      */
                     Https m_https;
                     bool m_httpsHasBeenSet;
+
+                    /**
+                     * 回源时是否携带客户端IP所属地域信息的配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ClientIpCountry m_clientIpCountry;
+                    bool m_clientIpCountryHasBeenSet;
 
                 };
             }

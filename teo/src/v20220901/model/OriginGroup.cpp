@@ -28,7 +28,8 @@ OriginGroup::OriginGroup() :
     m_originGroupNameHasBeenSet(false),
     m_configurationTypeHasBeenSet(false),
     m_originRecordsHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
+    m_updateTimeHasBeenSet(false),
+    m_hostHeaderHasBeenSet(false)
 {
 }
 
@@ -127,6 +128,16 @@ CoreInternalOutcome OriginGroup::Deserialize(const rapidjson::Value &value)
         m_updateTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("HostHeader") && !value["HostHeader"].IsNull())
+    {
+        if (!value["HostHeader"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `OriginGroup.HostHeader` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_hostHeader = string(value["HostHeader"].GetString());
+        m_hostHeaderHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -203,6 +214,14 @@ void OriginGroup::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "UpdateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_updateTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_hostHeaderHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HostHeader";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_hostHeader.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -334,5 +353,21 @@ void OriginGroup::SetUpdateTime(const string& _updateTime)
 bool OriginGroup::UpdateTimeHasBeenSet() const
 {
     return m_updateTimeHasBeenSet;
+}
+
+string OriginGroup::GetHostHeader() const
+{
+    return m_hostHeader;
+}
+
+void OriginGroup::SetHostHeader(const string& _hostHeader)
+{
+    m_hostHeader = _hostHeader;
+    m_hostHeaderHasBeenSet = true;
+}
+
+bool OriginGroup::HostHeaderHasBeenSet() const
+{
+    return m_hostHeaderHasBeenSet;
 }
 

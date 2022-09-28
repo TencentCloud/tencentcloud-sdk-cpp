@@ -28,7 +28,9 @@ CreateLoadBalancingRequest::CreateLoadBalancingRequest() :
     m_typeHasBeenSet(false),
     m_originGroupIdHasBeenSet(false),
     m_backupOriginGroupIdHasBeenSet(false),
-    m_tTLHasBeenSet(false)
+    m_tTLHasBeenSet(false),
+    m_originTypeHasBeenSet(false),
+    m_advancedOriginGroupsHasBeenSet(false)
 {
 }
 
@@ -85,6 +87,29 @@ string CreateLoadBalancingRequest::ToJsonString() const
         string key = "TTL";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_tTL, allocator);
+    }
+
+    if (m_originTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OriginType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_originType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_advancedOriginGroupsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AdvancedOriginGroups";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_advancedOriginGroups.begin(); itr != m_advancedOriginGroups.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -189,6 +214,38 @@ void CreateLoadBalancingRequest::SetTTL(const uint64_t& _tTL)
 bool CreateLoadBalancingRequest::TTLHasBeenSet() const
 {
     return m_tTLHasBeenSet;
+}
+
+string CreateLoadBalancingRequest::GetOriginType() const
+{
+    return m_originType;
+}
+
+void CreateLoadBalancingRequest::SetOriginType(const string& _originType)
+{
+    m_originType = _originType;
+    m_originTypeHasBeenSet = true;
+}
+
+bool CreateLoadBalancingRequest::OriginTypeHasBeenSet() const
+{
+    return m_originTypeHasBeenSet;
+}
+
+vector<AdvancedOriginGroup> CreateLoadBalancingRequest::GetAdvancedOriginGroups() const
+{
+    return m_advancedOriginGroups;
+}
+
+void CreateLoadBalancingRequest::SetAdvancedOriginGroups(const vector<AdvancedOriginGroup>& _advancedOriginGroups)
+{
+    m_advancedOriginGroups = _advancedOriginGroups;
+    m_advancedOriginGroupsHasBeenSet = true;
+}
+
+bool CreateLoadBalancingRequest::AdvancedOriginGroupsHasBeenSet() const
+{
+    return m_advancedOriginGroupsHasBeenSet;
 }
 
 
