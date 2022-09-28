@@ -1395,7 +1395,7 @@ namespace TencentCloud
                 DescribeAvailableClusterVersionOutcomeCallable DescribeAvailableClusterVersionCallable(const Model::DescribeAvailableClusterVersionRequest& request);
 
                 /**
-                 *边缘计算支持的k8s版本
+                 *边缘计算支持版本和k8s版本
                  * @param req DescribeAvailableTKEEdgeVersionRequest
                  * @return DescribeAvailableTKEEdgeVersionOutcome
                  */

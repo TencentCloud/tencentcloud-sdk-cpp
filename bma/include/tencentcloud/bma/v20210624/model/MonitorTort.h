@@ -280,6 +280,222 @@ namespace TencentCloud
                      */
                     bool WorkTitleHasBeenSet() const;
 
+                    /**
+                     * 获取1
+                     * @return TortSite 1
+                     */
+                    std::string GetTortSite() const;
+
+                    /**
+                     * 设置1
+                     * @param TortSite 1
+                     */
+                    void SetTortSite(const std::string& _tortSite);
+
+                    /**
+                     * 判断参数 TortSite 是否已赋值
+                     * @return TortSite 是否已赋值
+                     */
+                    bool TortSiteHasBeenSet() const;
+
+                    /**
+                     * 获取1
+                     * @return ICP 1
+                     */
+                    std::string GetICP() const;
+
+                    /**
+                     * 设置1
+                     * @param ICP 1
+                     */
+                    void SetICP(const std::string& _iCP);
+
+                    /**
+                     * 判断参数 ICP 是否已赋值
+                     * @return ICP 是否已赋值
+                     */
+                    bool ICPHasBeenSet() const;
+
+                    /**
+                     * 获取1
+                     * @return RightNote 1
+                     */
+                    std::string GetRightNote() const;
+
+                    /**
+                     * 设置1
+                     * @param RightNote 1
+                     */
+                    void SetRightNote(const std::string& _rightNote);
+
+                    /**
+                     * 判断参数 RightNote 是否已赋值
+                     * @return RightNote 是否已赋值
+                     */
+                    bool RightNoteHasBeenSet() const;
+
+                    /**
+                     * 获取1
+                     * @return ObtainType 1
+                     */
+                    int64_t GetObtainType() const;
+
+                    /**
+                     * 设置1
+                     * @param ObtainType 1
+                     */
+                    void SetObtainType(const int64_t& _obtainType);
+
+                    /**
+                     * 判断参数 ObtainType 是否已赋值
+                     * @return ObtainType 是否已赋值
+                     */
+                    bool ObtainTypeHasBeenSet() const;
+
+                    /**
+                     * 获取1
+                     * @return BlockNote 1
+                     */
+                    std::string GetBlockNote() const;
+
+                    /**
+                     * 设置1
+                     * @param BlockNote 1
+                     */
+                    void SetBlockNote(const std::string& _blockNote);
+
+                    /**
+                     * 判断参数 BlockNote 是否已赋值
+                     * @return BlockNote 是否已赋值
+                     */
+                    bool BlockNoteHasBeenSet() const;
+
+                    /**
+                     * 获取1
+                     * @return WorkId 1
+                     */
+                    int64_t GetWorkId() const;
+
+                    /**
+                     * 设置1
+                     * @param WorkId 1
+                     */
+                    void SetWorkId(const int64_t& _workId);
+
+                    /**
+                     * 判断参数 WorkId 是否已赋值
+                     * @return WorkId 是否已赋值
+                     */
+                    bool WorkIdHasBeenSet() const;
+
+                    /**
+                     * 获取1
+                     * @return WorkName 1
+                     */
+                    std::string GetWorkName() const;
+
+                    /**
+                     * 设置1
+                     * @param WorkName 1
+                     */
+                    void SetWorkName(const std::string& _workName);
+
+                    /**
+                     * 判断参数 WorkName 是否已赋值
+                     * @return WorkName 是否已赋值
+                     */
+                    bool WorkNameHasBeenSet() const;
+
+                    /**
+                     * 获取1
+                     * @return AuthStatus 1
+                     */
+                    int64_t GetAuthStatus() const;
+
+                    /**
+                     * 设置1
+                     * @param AuthStatus 1
+                     */
+                    void SetAuthStatus(const int64_t& _authStatus);
+
+                    /**
+                     * 判断参数 AuthStatus 是否已赋值
+                     * @return AuthStatus 是否已赋值
+                     */
+                    bool AuthStatusHasBeenSet() const;
+
+                    /**
+                     * 获取1
+                     * @return CommStatus 1
+                     */
+                    int64_t GetCommStatus() const;
+
+                    /**
+                     * 设置1
+                     * @param CommStatus 1
+                     */
+                    void SetCommStatus(const int64_t& _commStatus);
+
+                    /**
+                     * 判断参数 CommStatus 是否已赋值
+                     * @return CommStatus 是否已赋值
+                     */
+                    bool CommStatusHasBeenSet() const;
+
+                    /**
+                     * 获取1
+                     * @return EvidenceStatus 1
+                     */
+                    int64_t GetEvidenceStatus() const;
+
+                    /**
+                     * 设置1
+                     * @param EvidenceStatus 1
+                     */
+                    void SetEvidenceStatus(const int64_t& _evidenceStatus);
+
+                    /**
+                     * 判断参数 EvidenceStatus 是否已赋值
+                     * @return EvidenceStatus 是否已赋值
+                     */
+                    bool EvidenceStatusHasBeenSet() const;
+
+                    /**
+                     * 获取1
+                     * @return IsProducer 1
+                     */
+                    int64_t GetIsProducer() const;
+
+                    /**
+                     * 设置1
+                     * @param IsProducer 1
+                     */
+                    void SetIsProducer(const int64_t& _isProducer);
+
+                    /**
+                     * 判断参数 IsProducer 是否已赋值
+                     * @return IsProducer 是否已赋值
+                     */
+                    bool IsProducerHasBeenSet() const;
+
+                    /**
+                     * 获取1
+                     * @return IsOverseas 1
+                     */
+                    int64_t GetIsOverseas() const;
+
+                    /**
+                     * 设置1
+                     * @param IsOverseas 1
+                     */
+                    void SetIsOverseas(const int64_t& _isOverseas);
+
+                    /**
+                     * 判断参数 IsOverseas 是否已赋值
+                     * @return IsOverseas 是否已赋值
+                     */
+                    bool IsOverseasHasBeenSet() const;
+
                 private:
 
                     /**
@@ -359,6 +575,78 @@ namespace TencentCloud
                      */
                     std::string m_workTitle;
                     bool m_workTitleHasBeenSet;
+
+                    /**
+                     * 1
+                     */
+                    std::string m_tortSite;
+                    bool m_tortSiteHasBeenSet;
+
+                    /**
+                     * 1
+                     */
+                    std::string m_iCP;
+                    bool m_iCPHasBeenSet;
+
+                    /**
+                     * 1
+                     */
+                    std::string m_rightNote;
+                    bool m_rightNoteHasBeenSet;
+
+                    /**
+                     * 1
+                     */
+                    int64_t m_obtainType;
+                    bool m_obtainTypeHasBeenSet;
+
+                    /**
+                     * 1
+                     */
+                    std::string m_blockNote;
+                    bool m_blockNoteHasBeenSet;
+
+                    /**
+                     * 1
+                     */
+                    int64_t m_workId;
+                    bool m_workIdHasBeenSet;
+
+                    /**
+                     * 1
+                     */
+                    std::string m_workName;
+                    bool m_workNameHasBeenSet;
+
+                    /**
+                     * 1
+                     */
+                    int64_t m_authStatus;
+                    bool m_authStatusHasBeenSet;
+
+                    /**
+                     * 1
+                     */
+                    int64_t m_commStatus;
+                    bool m_commStatusHasBeenSet;
+
+                    /**
+                     * 1
+                     */
+                    int64_t m_evidenceStatus;
+                    bool m_evidenceStatusHasBeenSet;
+
+                    /**
+                     * 1
+                     */
+                    int64_t m_isProducer;
+                    bool m_isProducerHasBeenSet;
+
+                    /**
+                     * 1
+                     */
+                    int64_t m_isOverseas;
+                    bool m_isOverseasHasBeenSet;
 
                 };
             }

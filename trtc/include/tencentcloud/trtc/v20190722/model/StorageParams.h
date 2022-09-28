@@ -49,14 +49,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取第三方云存储的账号信息（暂不支持）。
-                     * @return CloudStorage 第三方云存储的账号信息（暂不支持）。
+                     * 获取第三方云存储的账号信息（CloudStorage参数暂不可用，请使用CloudVod参数存储至云点播）。
+                     * @return CloudStorage 第三方云存储的账号信息（CloudStorage参数暂不可用，请使用CloudVod参数存储至云点播）。
                      */
                     CloudStorage GetCloudStorage() const;
 
                     /**
-                     * 设置第三方云存储的账号信息（暂不支持）。
-                     * @param CloudStorage 第三方云存储的账号信息（暂不支持）。
+                     * 设置第三方云存储的账号信息（CloudStorage参数暂不可用，请使用CloudVod参数存储至云点播）。
+                     * @param CloudStorage 第三方云存储的账号信息（CloudStorage参数暂不可用，请使用CloudVod参数存储至云点播）。
                      */
                     void SetCloudStorage(const CloudStorage& _cloudStorage);
 
@@ -67,14 +67,14 @@ namespace TencentCloud
                     bool CloudStorageHasBeenSet() const;
 
                     /**
-                     * 获取腾讯云云点播的账号信息（必填，目前仅支持存储至腾讯云云点播）。
-                     * @return CloudVod 腾讯云云点播的账号信息（必填，目前仅支持存储至腾讯云云点播）。
+                     * 获取【必填】腾讯云云点播的账号信息，目前仅支持存储至腾讯云点播VOD。
+                     * @return CloudVod 【必填】腾讯云云点播的账号信息，目前仅支持存储至腾讯云点播VOD。
                      */
                     CloudVod GetCloudVod() const;
 
                     /**
-                     * 设置腾讯云云点播的账号信息（必填，目前仅支持存储至腾讯云云点播）。
-                     * @param CloudVod 腾讯云云点播的账号信息（必填，目前仅支持存储至腾讯云云点播）。
+                     * 设置【必填】腾讯云云点播的账号信息，目前仅支持存储至腾讯云点播VOD。
+                     * @param CloudVod 【必填】腾讯云云点播的账号信息，目前仅支持存储至腾讯云点播VOD。
                      */
                     void SetCloudVod(const CloudVod& _cloudVod);
 
@@ -87,13 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 第三方云存储的账号信息（暂不支持）。
+                     * 第三方云存储的账号信息（CloudStorage参数暂不可用，请使用CloudVod参数存储至云点播）。
                      */
                     CloudStorage m_cloudStorage;
                     bool m_cloudStorageHasBeenSet;
 
                     /**
-                     * 腾讯云云点播的账号信息（必填，目前仅支持存储至腾讯云云点播）。
+                     * 【必填】腾讯云云点播的账号信息，目前仅支持存储至腾讯云点播VOD。
                      */
                     CloudVod m_cloudVod;
                     bool m_cloudVodHasBeenSet;

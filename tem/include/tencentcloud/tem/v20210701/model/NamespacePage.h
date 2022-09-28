@@ -119,6 +119,28 @@ namespace TencentCloud
                      */
                     bool PagesHasBeenSet() const;
 
+                    /**
+                     * 获取当前条目
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Current 当前条目
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetCurrent() const;
+
+                    /**
+                     * 设置当前条目
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Current 当前条目
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCurrent(const int64_t& _current);
+
+                    /**
+                     * 判断参数 Current 是否已赋值
+                     * @return Current 是否已赋值
+                     */
+                    bool CurrentHasBeenSet() const;
+
                 private:
 
                     /**
@@ -144,6 +166,13 @@ namespace TencentCloud
                      */
                     int64_t m_pages;
                     bool m_pagesHasBeenSet;
+
+                    /**
+                     * 当前条目
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_current;
+                    bool m_currentHasBeenSet;
 
                 };
             }

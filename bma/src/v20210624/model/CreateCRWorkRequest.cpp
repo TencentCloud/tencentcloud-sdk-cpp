@@ -51,7 +51,9 @@ CreateCRWorkRequest::CreateCRWorkRequest() :
     m_authorizationEndTimeHasBeenSet(false),
     m_contentTypeHasBeenSet(false),
     m_contentHasBeenSet(false),
-    m_monitorEndTimeHasBeenSet(false)
+    m_monitorEndTimeHasBeenSet(false),
+    m_applierIdHasBeenSet(false),
+    m_applierNameHasBeenSet(false)
 {
 }
 
@@ -297,6 +299,22 @@ string CreateCRWorkRequest::ToJsonString() const
         string key = "MonitorEndTime";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_monitorEndTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_applierIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApplierId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_applierId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_applierNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApplierName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_applierName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -769,6 +787,38 @@ void CreateCRWorkRequest::SetMonitorEndTime(const string& _monitorEndTime)
 bool CreateCRWorkRequest::MonitorEndTimeHasBeenSet() const
 {
     return m_monitorEndTimeHasBeenSet;
+}
+
+string CreateCRWorkRequest::GetApplierId() const
+{
+    return m_applierId;
+}
+
+void CreateCRWorkRequest::SetApplierId(const string& _applierId)
+{
+    m_applierId = _applierId;
+    m_applierIdHasBeenSet = true;
+}
+
+bool CreateCRWorkRequest::ApplierIdHasBeenSet() const
+{
+    return m_applierIdHasBeenSet;
+}
+
+string CreateCRWorkRequest::GetApplierName() const
+{
+    return m_applierName;
+}
+
+void CreateCRWorkRequest::SetApplierName(const string& _applierName)
+{
+    m_applierName = _applierName;
+    m_applierNameHasBeenSet = true;
+}
+
+bool CreateCRWorkRequest::ApplierNameHasBeenSet() const
+{
+    return m_applierNameHasBeenSet;
 }
 
 

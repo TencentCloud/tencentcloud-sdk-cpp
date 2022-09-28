@@ -34,7 +34,9 @@ CreateTKEEdgeClusterRequest::CreateTKEEdgeClusterRequest() :
     m_publicLBHasBeenSet(false),
     m_clusterLevelHasBeenSet(false),
     m_autoUpgradeClusterLevelHasBeenSet(false),
-    m_chargeTypeHasBeenSet(false)
+    m_chargeTypeHasBeenSet(false),
+    m_edgeVersionHasBeenSet(false),
+    m_registryPrefixHasBeenSet(false)
 {
 }
 
@@ -141,6 +143,22 @@ string CreateTKEEdgeClusterRequest::ToJsonString() const
         string key = "ChargeType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_chargeType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_edgeVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EdgeVersion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_edgeVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_registryPrefixHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RegistryPrefix";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_registryPrefix.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -341,6 +359,38 @@ void CreateTKEEdgeClusterRequest::SetChargeType(const string& _chargeType)
 bool CreateTKEEdgeClusterRequest::ChargeTypeHasBeenSet() const
 {
     return m_chargeTypeHasBeenSet;
+}
+
+string CreateTKEEdgeClusterRequest::GetEdgeVersion() const
+{
+    return m_edgeVersion;
+}
+
+void CreateTKEEdgeClusterRequest::SetEdgeVersion(const string& _edgeVersion)
+{
+    m_edgeVersion = _edgeVersion;
+    m_edgeVersionHasBeenSet = true;
+}
+
+bool CreateTKEEdgeClusterRequest::EdgeVersionHasBeenSet() const
+{
+    return m_edgeVersionHasBeenSet;
+}
+
+string CreateTKEEdgeClusterRequest::GetRegistryPrefix() const
+{
+    return m_registryPrefix;
+}
+
+void CreateTKEEdgeClusterRequest::SetRegistryPrefix(const string& _registryPrefix)
+{
+    m_registryPrefix = _registryPrefix;
+    m_registryPrefixHasBeenSet = true;
+}
+
+bool CreateTKEEdgeClusterRequest::RegistryPrefixHasBeenSet() const
+{
+    return m_registryPrefixHasBeenSet;
 }
 
 

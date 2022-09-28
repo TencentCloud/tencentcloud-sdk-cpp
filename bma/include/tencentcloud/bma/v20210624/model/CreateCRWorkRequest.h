@@ -564,6 +564,42 @@ namespace TencentCloud
                      */
                     bool MonitorEndTimeHasBeenSet() const;
 
+                    /**
+                     * 获取申请人ID
+                     * @return ApplierId 申请人ID
+                     */
+                    std::string GetApplierId() const;
+
+                    /**
+                     * 设置申请人ID
+                     * @param ApplierId 申请人ID
+                     */
+                    void SetApplierId(const std::string& _applierId);
+
+                    /**
+                     * 判断参数 ApplierId 是否已赋值
+                     * @return ApplierId 是否已赋值
+                     */
+                    bool ApplierIdHasBeenSet() const;
+
+                    /**
+                     * 获取申请人姓名
+                     * @return ApplierName 申请人姓名
+                     */
+                    std::string GetApplierName() const;
+
+                    /**
+                     * 设置申请人姓名
+                     * @param ApplierName 申请人姓名
+                     */
+                    void SetApplierName(const std::string& _applierName);
+
+                    /**
+                     * 判断参数 ApplierName 是否已赋值
+                     * @return ApplierName 是否已赋值
+                     */
+                    bool ApplierNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -739,6 +775,18 @@ namespace TencentCloud
                      */
                     std::string m_monitorEndTime;
                     bool m_monitorEndTimeHasBeenSet;
+
+                    /**
+                     * 申请人ID
+                     */
+                    std::string m_applierId;
+                    bool m_applierIdHasBeenSet;
+
+                    /**
+                     * 申请人姓名
+                     */
+                    std::string m_applierName;
+                    bool m_applierNameHasBeenSet;
 
                 };
             }

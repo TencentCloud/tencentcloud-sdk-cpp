@@ -33,7 +33,19 @@ MonitorTort::MonitorTort() :
     m_blockStatusHasBeenSet(false),
     m_tortNumHasBeenSet(false),
     m_obtainNoteHasBeenSet(false),
-    m_workTitleHasBeenSet(false)
+    m_workTitleHasBeenSet(false),
+    m_tortSiteHasBeenSet(false),
+    m_iCPHasBeenSet(false),
+    m_rightNoteHasBeenSet(false),
+    m_obtainTypeHasBeenSet(false),
+    m_blockNoteHasBeenSet(false),
+    m_workIdHasBeenSet(false),
+    m_workNameHasBeenSet(false),
+    m_authStatusHasBeenSet(false),
+    m_commStatusHasBeenSet(false),
+    m_evidenceStatusHasBeenSet(false),
+    m_isProducerHasBeenSet(false),
+    m_isOverseasHasBeenSet(false)
 {
 }
 
@@ -172,6 +184,126 @@ CoreInternalOutcome MonitorTort::Deserialize(const rapidjson::Value &value)
         m_workTitleHasBeenSet = true;
     }
 
+    if (value.HasMember("TortSite") && !value["TortSite"].IsNull())
+    {
+        if (!value["TortSite"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MonitorTort.TortSite` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_tortSite = string(value["TortSite"].GetString());
+        m_tortSiteHasBeenSet = true;
+    }
+
+    if (value.HasMember("ICP") && !value["ICP"].IsNull())
+    {
+        if (!value["ICP"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MonitorTort.ICP` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_iCP = string(value["ICP"].GetString());
+        m_iCPHasBeenSet = true;
+    }
+
+    if (value.HasMember("RightNote") && !value["RightNote"].IsNull())
+    {
+        if (!value["RightNote"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MonitorTort.RightNote` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_rightNote = string(value["RightNote"].GetString());
+        m_rightNoteHasBeenSet = true;
+    }
+
+    if (value.HasMember("ObtainType") && !value["ObtainType"].IsNull())
+    {
+        if (!value["ObtainType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `MonitorTort.ObtainType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_obtainType = value["ObtainType"].GetInt64();
+        m_obtainTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("BlockNote") && !value["BlockNote"].IsNull())
+    {
+        if (!value["BlockNote"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MonitorTort.BlockNote` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_blockNote = string(value["BlockNote"].GetString());
+        m_blockNoteHasBeenSet = true;
+    }
+
+    if (value.HasMember("WorkId") && !value["WorkId"].IsNull())
+    {
+        if (!value["WorkId"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `MonitorTort.WorkId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_workId = value["WorkId"].GetInt64();
+        m_workIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("WorkName") && !value["WorkName"].IsNull())
+    {
+        if (!value["WorkName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MonitorTort.WorkName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_workName = string(value["WorkName"].GetString());
+        m_workNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("AuthStatus") && !value["AuthStatus"].IsNull())
+    {
+        if (!value["AuthStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `MonitorTort.AuthStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_authStatus = value["AuthStatus"].GetInt64();
+        m_authStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("CommStatus") && !value["CommStatus"].IsNull())
+    {
+        if (!value["CommStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `MonitorTort.CommStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_commStatus = value["CommStatus"].GetInt64();
+        m_commStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("EvidenceStatus") && !value["EvidenceStatus"].IsNull())
+    {
+        if (!value["EvidenceStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `MonitorTort.EvidenceStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_evidenceStatus = value["EvidenceStatus"].GetInt64();
+        m_evidenceStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsProducer") && !value["IsProducer"].IsNull())
+    {
+        if (!value["IsProducer"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `MonitorTort.IsProducer` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isProducer = value["IsProducer"].GetInt64();
+        m_isProducerHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsOverseas") && !value["IsOverseas"].IsNull())
+    {
+        if (!value["IsOverseas"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `MonitorTort.IsOverseas` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isOverseas = value["IsOverseas"].GetInt64();
+        m_isOverseasHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -281,6 +413,102 @@ void MonitorTort::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "WorkTitle";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_workTitle.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tortSiteHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TortSite";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tortSite.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_iCPHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ICP";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_iCP.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_rightNoteHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RightNote";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_rightNote.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_obtainTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ObtainType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_obtainType, allocator);
+    }
+
+    if (m_blockNoteHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BlockNote";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_blockNote.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_workIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WorkId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_workId, allocator);
+    }
+
+    if (m_workNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WorkName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_workName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_authStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AuthStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_authStatus, allocator);
+    }
+
+    if (m_commStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CommStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_commStatus, allocator);
+    }
+
+    if (m_evidenceStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EvidenceStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_evidenceStatus, allocator);
+    }
+
+    if (m_isProducerHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsProducer";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isProducer, allocator);
+    }
+
+    if (m_isOverseasHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsOverseas";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isOverseas, allocator);
     }
 
 }
@@ -492,5 +720,197 @@ void MonitorTort::SetWorkTitle(const string& _workTitle)
 bool MonitorTort::WorkTitleHasBeenSet() const
 {
     return m_workTitleHasBeenSet;
+}
+
+string MonitorTort::GetTortSite() const
+{
+    return m_tortSite;
+}
+
+void MonitorTort::SetTortSite(const string& _tortSite)
+{
+    m_tortSite = _tortSite;
+    m_tortSiteHasBeenSet = true;
+}
+
+bool MonitorTort::TortSiteHasBeenSet() const
+{
+    return m_tortSiteHasBeenSet;
+}
+
+string MonitorTort::GetICP() const
+{
+    return m_iCP;
+}
+
+void MonitorTort::SetICP(const string& _iCP)
+{
+    m_iCP = _iCP;
+    m_iCPHasBeenSet = true;
+}
+
+bool MonitorTort::ICPHasBeenSet() const
+{
+    return m_iCPHasBeenSet;
+}
+
+string MonitorTort::GetRightNote() const
+{
+    return m_rightNote;
+}
+
+void MonitorTort::SetRightNote(const string& _rightNote)
+{
+    m_rightNote = _rightNote;
+    m_rightNoteHasBeenSet = true;
+}
+
+bool MonitorTort::RightNoteHasBeenSet() const
+{
+    return m_rightNoteHasBeenSet;
+}
+
+int64_t MonitorTort::GetObtainType() const
+{
+    return m_obtainType;
+}
+
+void MonitorTort::SetObtainType(const int64_t& _obtainType)
+{
+    m_obtainType = _obtainType;
+    m_obtainTypeHasBeenSet = true;
+}
+
+bool MonitorTort::ObtainTypeHasBeenSet() const
+{
+    return m_obtainTypeHasBeenSet;
+}
+
+string MonitorTort::GetBlockNote() const
+{
+    return m_blockNote;
+}
+
+void MonitorTort::SetBlockNote(const string& _blockNote)
+{
+    m_blockNote = _blockNote;
+    m_blockNoteHasBeenSet = true;
+}
+
+bool MonitorTort::BlockNoteHasBeenSet() const
+{
+    return m_blockNoteHasBeenSet;
+}
+
+int64_t MonitorTort::GetWorkId() const
+{
+    return m_workId;
+}
+
+void MonitorTort::SetWorkId(const int64_t& _workId)
+{
+    m_workId = _workId;
+    m_workIdHasBeenSet = true;
+}
+
+bool MonitorTort::WorkIdHasBeenSet() const
+{
+    return m_workIdHasBeenSet;
+}
+
+string MonitorTort::GetWorkName() const
+{
+    return m_workName;
+}
+
+void MonitorTort::SetWorkName(const string& _workName)
+{
+    m_workName = _workName;
+    m_workNameHasBeenSet = true;
+}
+
+bool MonitorTort::WorkNameHasBeenSet() const
+{
+    return m_workNameHasBeenSet;
+}
+
+int64_t MonitorTort::GetAuthStatus() const
+{
+    return m_authStatus;
+}
+
+void MonitorTort::SetAuthStatus(const int64_t& _authStatus)
+{
+    m_authStatus = _authStatus;
+    m_authStatusHasBeenSet = true;
+}
+
+bool MonitorTort::AuthStatusHasBeenSet() const
+{
+    return m_authStatusHasBeenSet;
+}
+
+int64_t MonitorTort::GetCommStatus() const
+{
+    return m_commStatus;
+}
+
+void MonitorTort::SetCommStatus(const int64_t& _commStatus)
+{
+    m_commStatus = _commStatus;
+    m_commStatusHasBeenSet = true;
+}
+
+bool MonitorTort::CommStatusHasBeenSet() const
+{
+    return m_commStatusHasBeenSet;
+}
+
+int64_t MonitorTort::GetEvidenceStatus() const
+{
+    return m_evidenceStatus;
+}
+
+void MonitorTort::SetEvidenceStatus(const int64_t& _evidenceStatus)
+{
+    m_evidenceStatus = _evidenceStatus;
+    m_evidenceStatusHasBeenSet = true;
+}
+
+bool MonitorTort::EvidenceStatusHasBeenSet() const
+{
+    return m_evidenceStatusHasBeenSet;
+}
+
+int64_t MonitorTort::GetIsProducer() const
+{
+    return m_isProducer;
+}
+
+void MonitorTort::SetIsProducer(const int64_t& _isProducer)
+{
+    m_isProducer = _isProducer;
+    m_isProducerHasBeenSet = true;
+}
+
+bool MonitorTort::IsProducerHasBeenSet() const
+{
+    return m_isProducerHasBeenSet;
+}
+
+int64_t MonitorTort::GetIsOverseas() const
+{
+    return m_isOverseas;
+}
+
+void MonitorTort::SetIsOverseas(const int64_t& _isOverseas)
+{
+    m_isOverseas = _isOverseas;
+    m_isOverseasHasBeenSet = true;
+}
+
+bool MonitorTort::IsOverseasHasBeenSet() const
+{
+    return m_isOverseasHasBeenSet;
 }
 

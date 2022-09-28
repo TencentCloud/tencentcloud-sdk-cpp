@@ -24,7 +24,9 @@ using namespace TencentCloud::Tke::V20180525::Model;
 using namespace std;
 
 DescribeAvailableTKEEdgeVersionResponse::DescribeAvailableTKEEdgeVersionResponse() :
-    m_versionsHasBeenSet(false)
+    m_versionsHasBeenSet(false),
+    m_edgeVersionLatestHasBeenSet(false),
+    m_edgeVersionCurrentHasBeenSet(false)
 {
 }
 
@@ -75,6 +77,26 @@ CoreInternalOutcome DescribeAvailableTKEEdgeVersionResponse::Deserialize(const s
         m_versionsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("EdgeVersionLatest") && !rsp["EdgeVersionLatest"].IsNull())
+    {
+        if (!rsp["EdgeVersionLatest"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EdgeVersionLatest` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_edgeVersionLatest = string(rsp["EdgeVersionLatest"].GetString());
+        m_edgeVersionLatestHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("EdgeVersionCurrent") && !rsp["EdgeVersionCurrent"].IsNull())
+    {
+        if (!rsp["EdgeVersionCurrent"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EdgeVersionCurrent` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_edgeVersionCurrent = string(rsp["EdgeVersionCurrent"].GetString());
+        m_edgeVersionCurrentHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -98,6 +120,22 @@ string DescribeAvailableTKEEdgeVersionResponse::ToJsonString() const
         }
     }
 
+    if (m_edgeVersionLatestHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EdgeVersionLatest";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_edgeVersionLatest.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_edgeVersionCurrentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EdgeVersionCurrent";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_edgeVersionCurrent.c_str(), allocator).Move(), allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -118,6 +156,26 @@ vector<string> DescribeAvailableTKEEdgeVersionResponse::GetVersions() const
 bool DescribeAvailableTKEEdgeVersionResponse::VersionsHasBeenSet() const
 {
     return m_versionsHasBeenSet;
+}
+
+string DescribeAvailableTKEEdgeVersionResponse::GetEdgeVersionLatest() const
+{
+    return m_edgeVersionLatest;
+}
+
+bool DescribeAvailableTKEEdgeVersionResponse::EdgeVersionLatestHasBeenSet() const
+{
+    return m_edgeVersionLatestHasBeenSet;
+}
+
+string DescribeAvailableTKEEdgeVersionResponse::GetEdgeVersionCurrent() const
+{
+    return m_edgeVersionCurrent;
+}
+
+bool DescribeAvailableTKEEdgeVersionResponse::EdgeVersionCurrentHasBeenSet() const
+{
+    return m_edgeVersionCurrentHasBeenSet;
 }
 
 

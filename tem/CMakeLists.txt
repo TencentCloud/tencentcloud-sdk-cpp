@@ -125,6 +125,7 @@ set(tem_public_header_model
   include/tencentcloud/tem/v20210701/model/ModifyApplicationAutoscalerRequest.h
   include/tencentcloud/tem/v20210701/model/ModifyConfigDataResponse.h
   include/tencentcloud/tem/v20210701/model/ModifyIngressRequest.h
+  include/tencentcloud/tem/v20210701/model/Tag.h
   include/tencentcloud/tem/v20210701/model/EnablePrometheusConf.h
   include/tencentcloud/tem/v20210701/model/DescribeIngressesRequest.h
   include/tencentcloud/tem/v20210701/model/StorageMountConf.h
@@ -331,6 +332,7 @@ set(tem_src
   src/v20210701/model/ModifyApplicationAutoscalerRequest.cpp
   src/v20210701/model/ModifyConfigDataResponse.cpp
   src/v20210701/model/ModifyIngressRequest.cpp
+  src/v20210701/model/Tag.cpp
   src/v20210701/model/EnablePrometheusConf.cpp
   src/v20210701/model/DescribeIngressesRequest.cpp
   src/v20210701/model/StorageMountConf.cpp

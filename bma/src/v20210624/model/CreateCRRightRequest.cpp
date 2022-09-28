@@ -37,7 +37,10 @@ CreateCRRightRequest::CreateCRRightRequest() :
     m_homeFileUrlHasBeenSet(false),
     m_homeValidStartDateHasBeenSet(false),
     m_homeValidEndDateHasBeenSet(false),
-    m_isProducerHasBeenSet(false)
+    m_isProducerHasBeenSet(false),
+    m_evidenceFileUrlHasBeenSet(false),
+    m_evidenceValidStartDateHasBeenSet(false),
+    m_evidenceValidEndDateHasBeenSet(false)
 {
 }
 
@@ -166,6 +169,30 @@ string CreateCRRightRequest::ToJsonString() const
         string key = "IsProducer";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_isProducer.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_evidenceFileUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EvidenceFileUrl";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_evidenceFileUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_evidenceValidStartDateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EvidenceValidStartDate";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_evidenceValidStartDate.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_evidenceValidEndDateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EvidenceValidEndDate";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_evidenceValidEndDate.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -414,6 +441,54 @@ void CreateCRRightRequest::SetIsProducer(const string& _isProducer)
 bool CreateCRRightRequest::IsProducerHasBeenSet() const
 {
     return m_isProducerHasBeenSet;
+}
+
+string CreateCRRightRequest::GetEvidenceFileUrl() const
+{
+    return m_evidenceFileUrl;
+}
+
+void CreateCRRightRequest::SetEvidenceFileUrl(const string& _evidenceFileUrl)
+{
+    m_evidenceFileUrl = _evidenceFileUrl;
+    m_evidenceFileUrlHasBeenSet = true;
+}
+
+bool CreateCRRightRequest::EvidenceFileUrlHasBeenSet() const
+{
+    return m_evidenceFileUrlHasBeenSet;
+}
+
+string CreateCRRightRequest::GetEvidenceValidStartDate() const
+{
+    return m_evidenceValidStartDate;
+}
+
+void CreateCRRightRequest::SetEvidenceValidStartDate(const string& _evidenceValidStartDate)
+{
+    m_evidenceValidStartDate = _evidenceValidStartDate;
+    m_evidenceValidStartDateHasBeenSet = true;
+}
+
+bool CreateCRRightRequest::EvidenceValidStartDateHasBeenSet() const
+{
+    return m_evidenceValidStartDateHasBeenSet;
+}
+
+string CreateCRRightRequest::GetEvidenceValidEndDate() const
+{
+    return m_evidenceValidEndDate;
+}
+
+void CreateCRRightRequest::SetEvidenceValidEndDate(const string& _evidenceValidEndDate)
+{
+    m_evidenceValidEndDate = _evidenceValidEndDate;
+    m_evidenceValidEndDateHasBeenSet = true;
+}
+
+bool CreateCRRightRequest::EvidenceValidEndDateHasBeenSet() const
+{
+    return m_evidenceValidEndDateHasBeenSet;
 }
 
 

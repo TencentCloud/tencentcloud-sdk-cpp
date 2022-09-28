@@ -312,6 +312,60 @@ namespace TencentCloud
                      */
                     bool IsProducerHasBeenSet() const;
 
+                    /**
+                     * 获取x
+                     * @return EvidenceFileUrl x
+                     */
+                    std::string GetEvidenceFileUrl() const;
+
+                    /**
+                     * 设置x
+                     * @param EvidenceFileUrl x
+                     */
+                    void SetEvidenceFileUrl(const std::string& _evidenceFileUrl);
+
+                    /**
+                     * 判断参数 EvidenceFileUrl 是否已赋值
+                     * @return EvidenceFileUrl 是否已赋值
+                     */
+                    bool EvidenceFileUrlHasBeenSet() const;
+
+                    /**
+                     * 获取x
+                     * @return EvidenceValidStartDate x
+                     */
+                    std::string GetEvidenceValidStartDate() const;
+
+                    /**
+                     * 设置x
+                     * @param EvidenceValidStartDate x
+                     */
+                    void SetEvidenceValidStartDate(const std::string& _evidenceValidStartDate);
+
+                    /**
+                     * 判断参数 EvidenceValidStartDate 是否已赋值
+                     * @return EvidenceValidStartDate 是否已赋值
+                     */
+                    bool EvidenceValidStartDateHasBeenSet() const;
+
+                    /**
+                     * 获取x
+                     * @return EvidenceValidEndDate x
+                     */
+                    std::string GetEvidenceValidEndDate() const;
+
+                    /**
+                     * 设置x
+                     * @param EvidenceValidEndDate x
+                     */
+                    void SetEvidenceValidEndDate(const std::string& _evidenceValidEndDate);
+
+                    /**
+                     * 判断参数 EvidenceValidEndDate 是否已赋值
+                     * @return EvidenceValidEndDate 是否已赋值
+                     */
+                    bool EvidenceValidEndDateHasBeenSet() const;
+
                 private:
 
                     /**
@@ -403,6 +457,24 @@ namespace TencentCloud
                      */
                     std::string m_isProducer;
                     bool m_isProducerHasBeenSet;
+
+                    /**
+                     * x
+                     */
+                    std::string m_evidenceFileUrl;
+                    bool m_evidenceFileUrlHasBeenSet;
+
+                    /**
+                     * x
+                     */
+                    std::string m_evidenceValidStartDate;
+                    bool m_evidenceValidStartDateHasBeenSet;
+
+                    /**
+                     * x
+                     */
+                    std::string m_evidenceValidEndDate;
+                    bool m_evidenceValidEndDateHasBeenSet;
 
                 };
             }

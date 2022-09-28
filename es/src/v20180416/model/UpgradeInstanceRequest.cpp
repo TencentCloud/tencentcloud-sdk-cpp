@@ -29,7 +29,8 @@ UpgradeInstanceRequest::UpgradeInstanceRequest() :
     m_licenseTypeHasBeenSet(false),
     m_basicSecurityTypeHasBeenSet(false),
     m_upgradeModeHasBeenSet(false),
-    m_cosBackupHasBeenSet(false)
+    m_cosBackupHasBeenSet(false),
+    m_skipCheckForceRestartHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,14 @@ string UpgradeInstanceRequest::ToJsonString() const
         string key = "CosBackup";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_cosBackup, allocator);
+    }
+
+    if (m_skipCheckForceRestartHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SkipCheckForceRestart";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_skipCheckForceRestart, allocator);
     }
 
 
@@ -214,6 +223,22 @@ void UpgradeInstanceRequest::SetCosBackup(const bool& _cosBackup)
 bool UpgradeInstanceRequest::CosBackupHasBeenSet() const
 {
     return m_cosBackupHasBeenSet;
+}
+
+bool UpgradeInstanceRequest::GetSkipCheckForceRestart() const
+{
+    return m_skipCheckForceRestart;
+}
+
+void UpgradeInstanceRequest::SetSkipCheckForceRestart(const bool& _skipCheckForceRestart)
+{
+    m_skipCheckForceRestart = _skipCheckForceRestart;
+    m_skipCheckForceRestartHasBeenSet = true;
+}
+
+bool UpgradeInstanceRequest::SkipCheckForceRestartHasBeenSet() const
+{
+    return m_skipCheckForceRestartHasBeenSet;
 }
 
 

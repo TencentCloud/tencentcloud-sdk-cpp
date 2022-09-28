@@ -168,6 +168,24 @@ namespace TencentCloud
                      */
                     bool CosBackupHasBeenSet() const;
 
+                    /**
+                     * 获取滚动模式时，是否跳过检查，进行强制重启。默认值为false
+                     * @return SkipCheckForceRestart 滚动模式时，是否跳过检查，进行强制重启。默认值为false
+                     */
+                    bool GetSkipCheckForceRestart() const;
+
+                    /**
+                     * 设置滚动模式时，是否跳过检查，进行强制重启。默认值为false
+                     * @param SkipCheckForceRestart 滚动模式时，是否跳过检查，进行强制重启。默认值为false
+                     */
+                    void SetSkipCheckForceRestart(const bool& _skipCheckForceRestart);
+
+                    /**
+                     * 判断参数 SkipCheckForceRestart 是否已赋值
+                     * @return SkipCheckForceRestart 是否已赋值
+                     */
+                    bool SkipCheckForceRestartHasBeenSet() const;
+
                 private:
 
                     /**
@@ -211,6 +229,12 @@ namespace TencentCloud
                      */
                     bool m_cosBackup;
                     bool m_cosBackupHasBeenSet;
+
+                    /**
+                     * 滚动模式时，是否跳过检查，进行强制重启。默认值为false
+                     */
+                    bool m_skipCheckForceRestart;
+                    bool m_skipCheckForceRestartHasBeenSet;
 
                 };
             }

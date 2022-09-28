@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tem/v20210701/model/Tag.h>
 
 
 namespace TencentCloud
@@ -356,6 +357,116 @@ namespace TencentCloud
                      */
                     bool LockedHasBeenSet() const;
 
+                    /**
+                     * 获取用户AppId
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AppId 用户AppId
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetAppId() const;
+
+                    /**
+                     * 设置用户AppId
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AppId 用户AppId
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAppId(const std::string& _appId);
+
+                    /**
+                     * 判断参数 AppId 是否已赋值
+                     * @return AppId 是否已赋值
+                     */
+                    bool AppIdHasBeenSet() const;
+
+                    /**
+                     * 获取用户Uin
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Uin 用户Uin
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetUin() const;
+
+                    /**
+                     * 设置用户Uin
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Uin 用户Uin
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetUin(const std::string& _uin);
+
+                    /**
+                     * 判断参数 Uin 是否已赋值
+                     * @return Uin 是否已赋值
+                     */
+                    bool UinHasBeenSet() const;
+
+                    /**
+                     * 获取用户SubAccountUin
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SubAccountUin 用户SubAccountUin
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetSubAccountUin() const;
+
+                    /**
+                     * 设置用户SubAccountUin
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SubAccountUin 用户SubAccountUin
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSubAccountUin(const std::string& _subAccountUin);
+
+                    /**
+                     * 判断参数 SubAccountUin 是否已赋值
+                     * @return SubAccountUin 是否已赋值
+                     */
+                    bool SubAccountUinHasBeenSet() const;
+
+                    /**
+                     * 获取集群ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ClusterId 集群ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetClusterId() const;
+
+                    /**
+                     * 设置集群ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ClusterId 集群ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetClusterId(const std::string& _clusterId);
+
+                    /**
+                     * 判断参数 ClusterId 是否已赋值
+                     * @return ClusterId 是否已赋值
+                     */
+                    bool ClusterIdHasBeenSet() const;
+
+                    /**
+                     * 获取标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Tags 标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Tag> GetTags() const;
+
+                    /**
+                     * 设置标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Tags 标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTags(const std::vector<Tag>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     */
+                    bool TagsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -460,6 +571,41 @@ namespace TencentCloud
                      */
                     int64_t m_locked;
                     bool m_lockedHasBeenSet;
+
+                    /**
+                     * 用户AppId
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_appId;
+                    bool m_appIdHasBeenSet;
+
+                    /**
+                     * 用户Uin
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_uin;
+                    bool m_uinHasBeenSet;
+
+                    /**
+                     * 用户SubAccountUin
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_subAccountUin;
+                    bool m_subAccountUinHasBeenSet;
+
+                    /**
+                     * 集群ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_clusterId;
+                    bool m_clusterIdHasBeenSet;
+
+                    /**
+                     * 标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Tag> m_tags;
+                    bool m_tagsHasBeenSet;
 
                 };
             }

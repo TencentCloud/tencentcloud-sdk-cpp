@@ -260,6 +260,42 @@ namespace TencentCloud
                      */
                     bool ChargeTypeHasBeenSet() const;
 
+                    /**
+                     * 获取边缘集群版本，此版本区别于k8s版本，是整个集群各组件版本集合
+                     * @return EdgeVersion 边缘集群版本，此版本区别于k8s版本，是整个集群各组件版本集合
+                     */
+                    std::string GetEdgeVersion() const;
+
+                    /**
+                     * 设置边缘集群版本，此版本区别于k8s版本，是整个集群各组件版本集合
+                     * @param EdgeVersion 边缘集群版本，此版本区别于k8s版本，是整个集群各组件版本集合
+                     */
+                    void SetEdgeVersion(const std::string& _edgeVersion);
+
+                    /**
+                     * 判断参数 EdgeVersion 是否已赋值
+                     * @return EdgeVersion 是否已赋值
+                     */
+                    bool EdgeVersionHasBeenSet() const;
+
+                    /**
+                     * 获取边缘组件镜像仓库前缀
+                     * @return RegistryPrefix 边缘组件镜像仓库前缀
+                     */
+                    std::string GetRegistryPrefix() const;
+
+                    /**
+                     * 设置边缘组件镜像仓库前缀
+                     * @param RegistryPrefix 边缘组件镜像仓库前缀
+                     */
+                    void SetRegistryPrefix(const std::string& _registryPrefix);
+
+                    /**
+                     * 判断参数 RegistryPrefix 是否已赋值
+                     * @return RegistryPrefix 是否已赋值
+                     */
+                    bool RegistryPrefixHasBeenSet() const;
+
                 private:
 
                     /**
@@ -333,6 +369,18 @@ namespace TencentCloud
                      */
                     std::string m_chargeType;
                     bool m_chargeTypeHasBeenSet;
+
+                    /**
+                     * 边缘集群版本，此版本区别于k8s版本，是整个集群各组件版本集合
+                     */
+                    std::string m_edgeVersion;
+                    bool m_edgeVersionHasBeenSet;
+
+                    /**
+                     * 边缘组件镜像仓库前缀
+                     */
+                    std::string m_registryPrefix;
+                    bool m_registryPrefixHasBeenSet;
 
                 };
             }

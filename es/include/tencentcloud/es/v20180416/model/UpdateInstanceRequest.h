@@ -632,6 +632,24 @@ namespace TencentCloud
                      */
                     bool OperationDurationHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启Altering 外网告警输出
+                     * @return KibanaAlteringPublicAccess 是否开启Altering 外网告警输出
+                     */
+                    std::string GetKibanaAlteringPublicAccess() const;
+
+                    /**
+                     * 设置是否开启Altering 外网告警输出
+                     * @param KibanaAlteringPublicAccess 是否开启Altering 外网告警输出
+                     */
+                    void SetKibanaAlteringPublicAccess(const std::string& _kibanaAlteringPublicAccess);
+
+                    /**
+                     * 判断参数 KibanaAlteringPublicAccess 是否已赋值
+                     * @return KibanaAlteringPublicAccess 是否已赋值
+                     */
+                    bool KibanaAlteringPublicAccessHasBeenSet() const;
+
                 private:
 
                     /**
@@ -825,6 +843,12 @@ namespace TencentCloud
                      */
                     OperationDurationUpdated m_operationDuration;
                     bool m_operationDurationHasBeenSet;
+
+                    /**
+                     * 是否开启Altering 外网告警输出
+                     */
+                    std::string m_kibanaAlteringPublicAccess;
+                    bool m_kibanaAlteringPublicAccessHasBeenSet;
 
                 };
             }

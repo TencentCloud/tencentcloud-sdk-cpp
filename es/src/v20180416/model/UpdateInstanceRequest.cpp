@@ -53,7 +53,8 @@ UpdateInstanceRequest::UpdateInstanceRequest() :
     m_cerebroPublicAccessHasBeenSet(false),
     m_cerebroPrivateAccessHasBeenSet(false),
     m_esConfigSetHasBeenSet(false),
-    m_operationDurationHasBeenSet(false)
+    m_operationDurationHasBeenSet(false),
+    m_kibanaAlteringPublicAccessHasBeenSet(false)
 {
 }
 
@@ -330,6 +331,14 @@ string UpdateInstanceRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_operationDuration.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_kibanaAlteringPublicAccessHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KibanaAlteringPublicAccess";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_kibanaAlteringPublicAccess.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -834,6 +843,22 @@ void UpdateInstanceRequest::SetOperationDuration(const OperationDurationUpdated&
 bool UpdateInstanceRequest::OperationDurationHasBeenSet() const
 {
     return m_operationDurationHasBeenSet;
+}
+
+string UpdateInstanceRequest::GetKibanaAlteringPublicAccess() const
+{
+    return m_kibanaAlteringPublicAccess;
+}
+
+void UpdateInstanceRequest::SetKibanaAlteringPublicAccess(const string& _kibanaAlteringPublicAccess)
+{
+    m_kibanaAlteringPublicAccess = _kibanaAlteringPublicAccess;
+    m_kibanaAlteringPublicAccessHasBeenSet = true;
+}
+
+bool UpdateInstanceRequest::KibanaAlteringPublicAccessHasBeenSet() const
+{
+    return m_kibanaAlteringPublicAccessHasBeenSet;
 }
 
 

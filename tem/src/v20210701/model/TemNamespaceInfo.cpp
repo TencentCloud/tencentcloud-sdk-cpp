@@ -37,7 +37,12 @@ TemNamespaceInfo::TemNamespaceInfo() :
     m_subnetIdHasBeenSet(false),
     m_clusterStatusHasBeenSet(false),
     m_enableTswTraceServiceHasBeenSet(false),
-    m_lockedHasBeenSet(false)
+    m_lockedHasBeenSet(false),
+    m_appIdHasBeenSet(false),
+    m_uinHasBeenSet(false),
+    m_subAccountUinHasBeenSet(false),
+    m_clusterIdHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -216,6 +221,66 @@ CoreInternalOutcome TemNamespaceInfo::Deserialize(const rapidjson::Value &value)
         m_lockedHasBeenSet = true;
     }
 
+    if (value.HasMember("AppId") && !value["AppId"].IsNull())
+    {
+        if (!value["AppId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TemNamespaceInfo.AppId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_appId = string(value["AppId"].GetString());
+        m_appIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("Uin") && !value["Uin"].IsNull())
+    {
+        if (!value["Uin"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TemNamespaceInfo.Uin` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_uin = string(value["Uin"].GetString());
+        m_uinHasBeenSet = true;
+    }
+
+    if (value.HasMember("SubAccountUin") && !value["SubAccountUin"].IsNull())
+    {
+        if (!value["SubAccountUin"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TemNamespaceInfo.SubAccountUin` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subAccountUin = string(value["SubAccountUin"].GetString());
+        m_subAccountUinHasBeenSet = true;
+    }
+
+    if (value.HasMember("ClusterId") && !value["ClusterId"].IsNull())
+    {
+        if (!value["ClusterId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TemNamespaceInfo.ClusterId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clusterId = string(value["ClusterId"].GetString());
+        m_clusterIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("Tags") && !value["Tags"].IsNull())
+    {
+        if (!value["Tags"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `TemNamespaceInfo.Tags` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Tags"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Tag item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tags.push_back(item);
+        }
+        m_tagsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -357,6 +422,53 @@ void TemNamespaceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "Locked";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_locked, allocator);
+    }
+
+    if (m_appIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AppId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_appId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_uinHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Uin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_uin.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subAccountUinHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubAccountUin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subAccountUin.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clusterIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clusterId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -632,5 +744,85 @@ void TemNamespaceInfo::SetLocked(const int64_t& _locked)
 bool TemNamespaceInfo::LockedHasBeenSet() const
 {
     return m_lockedHasBeenSet;
+}
+
+string TemNamespaceInfo::GetAppId() const
+{
+    return m_appId;
+}
+
+void TemNamespaceInfo::SetAppId(const string& _appId)
+{
+    m_appId = _appId;
+    m_appIdHasBeenSet = true;
+}
+
+bool TemNamespaceInfo::AppIdHasBeenSet() const
+{
+    return m_appIdHasBeenSet;
+}
+
+string TemNamespaceInfo::GetUin() const
+{
+    return m_uin;
+}
+
+void TemNamespaceInfo::SetUin(const string& _uin)
+{
+    m_uin = _uin;
+    m_uinHasBeenSet = true;
+}
+
+bool TemNamespaceInfo::UinHasBeenSet() const
+{
+    return m_uinHasBeenSet;
+}
+
+string TemNamespaceInfo::GetSubAccountUin() const
+{
+    return m_subAccountUin;
+}
+
+void TemNamespaceInfo::SetSubAccountUin(const string& _subAccountUin)
+{
+    m_subAccountUin = _subAccountUin;
+    m_subAccountUinHasBeenSet = true;
+}
+
+bool TemNamespaceInfo::SubAccountUinHasBeenSet() const
+{
+    return m_subAccountUinHasBeenSet;
+}
+
+string TemNamespaceInfo::GetClusterId() const
+{
+    return m_clusterId;
+}
+
+void TemNamespaceInfo::SetClusterId(const string& _clusterId)
+{
+    m_clusterId = _clusterId;
+    m_clusterIdHasBeenSet = true;
+}
+
+bool TemNamespaceInfo::ClusterIdHasBeenSet() const
+{
+    return m_clusterIdHasBeenSet;
+}
+
+vector<Tag> TemNamespaceInfo::GetTags() const
+{
+    return m_tags;
+}
+
+void TemNamespaceInfo::SetTags(const vector<Tag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool TemNamespaceInfo::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 

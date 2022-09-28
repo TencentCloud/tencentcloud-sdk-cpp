@@ -191,8 +191,6 @@
 #include <tencentcloud/cwp/v20180228/model/DescribeComponentStatisticsResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeESAggregationsRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeESAggregationsResponse.h>
-#include <tencentcloud/cwp/v20180228/model/DescribeESHitsRequest.h>
-#include <tencentcloud/cwp/v20180228/model/DescribeESHitsResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeEmergencyResponseListRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeEmergencyResponseListResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeEmergencyVulListRequest.h>
@@ -727,9 +725,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeESAggregationsResponse> DescribeESAggregationsOutcome;
                 typedef std::future<DescribeESAggregationsOutcome> DescribeESAggregationsOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeESAggregationsRequest&, DescribeESAggregationsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeESAggregationsAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeESHitsResponse> DescribeESHitsOutcome;
-                typedef std::future<DescribeESHitsOutcome> DescribeESHitsOutcomeCallable;
-                typedef std::function<void(const CwpClient*, const Model::DescribeESHitsRequest&, DescribeESHitsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeESHitsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeEmergencyResponseListResponse> DescribeEmergencyResponseListOutcome;
                 typedef std::future<DescribeEmergencyResponseListOutcome> DescribeEmergencyResponseListOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeEmergencyResponseListRequest&, DescribeEmergencyResponseListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEmergencyResponseListAsyncHandler;
@@ -1183,7 +1178,7 @@ namespace TencentCloud
                 /**
                  *CreateLicenseOrder 该接口可以创建专业版/旗舰版订单
 支持预付费后付费创建
-后付费订单直接闯将成功
+后付费订单直接创建成功
 预付费订单仅下单不支付,需要调用计费支付接口进行支付
                  * @param req CreateLicenseOrderRequest
                  * @return CreateLicenseOrderOutcome
@@ -1893,15 +1888,6 @@ namespace TencentCloud
                 DescribeESAggregationsOutcome DescribeESAggregations(const Model::DescribeESAggregationsRequest &request);
                 void DescribeESAggregationsAsync(const Model::DescribeESAggregationsRequest& request, const DescribeESAggregationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeESAggregationsOutcomeCallable DescribeESAggregationsCallable(const Model::DescribeESAggregationsRequest& request);
-
-                /**
-                 *获取ES查询文档列表
-                 * @param req DescribeESHitsRequest
-                 * @return DescribeESHitsOutcome
-                 */
-                DescribeESHitsOutcome DescribeESHits(const Model::DescribeESHitsRequest &request);
-                void DescribeESHitsAsync(const Model::DescribeESHitsRequest& request, const DescribeESHitsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeESHitsOutcomeCallable DescribeESHitsCallable(const Model::DescribeESHitsRequest& request);
 
                 /**
                  *专家服务-应急响应列表

@@ -55,6 +55,34 @@ namespace TencentCloud
                      */
                     bool VersionsHasBeenSet() const;
 
+                    /**
+                     * 获取边缘集群最新版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EdgeVersionLatest 边缘集群最新版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetEdgeVersionLatest() const;
+
+                    /**
+                     * 判断参数 EdgeVersionLatest 是否已赋值
+                     * @return EdgeVersionLatest 是否已赋值
+                     */
+                    bool EdgeVersionLatestHasBeenSet() const;
+
+                    /**
+                     * 获取边缘集群当前版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EdgeVersionCurrent 边缘集群当前版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetEdgeVersionCurrent() const;
+
+                    /**
+                     * 判断参数 EdgeVersionCurrent 是否已赋值
+                     * @return EdgeVersionCurrent 是否已赋值
+                     */
+                    bool EdgeVersionCurrentHasBeenSet() const;
+
                 private:
 
                     /**
@@ -62,6 +90,20 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_versions;
                     bool m_versionsHasBeenSet;
+
+                    /**
+                     * 边缘集群最新版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_edgeVersionLatest;
+                    bool m_edgeVersionLatestHasBeenSet;
+
+                    /**
+                     * 边缘集群当前版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_edgeVersionCurrent;
+                    bool m_edgeVersionCurrentHasBeenSet;
 
                 };
             }
