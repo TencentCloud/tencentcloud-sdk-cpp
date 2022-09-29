@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool ChannelMerchantIdHasBeenSet() const;
 
                     /**
-                     * 获取外部商户订单号。与ChannelOrderId不能同时为空。
-                     * @return OutOrderId 外部商户订单号。与ChannelOrderId不能同时为空。
+                     * 获取外部商户订单号。与ChannelOrderId不能同时为空。若传空串即表示忽略该参数。
+                     * @return OutOrderId 外部商户订单号。与ChannelOrderId不能同时为空。若传空串即表示忽略该参数。
                      */
                     std::string GetOutOrderId() const;
 
                     /**
-                     * 设置外部商户订单号。与ChannelOrderId不能同时为空。
-                     * @param OutOrderId 外部商户订单号。与ChannelOrderId不能同时为空。
+                     * 设置外部商户订单号。与ChannelOrderId不能同时为空。若传空串即表示忽略该参数。
+                     * @param OutOrderId 外部商户订单号。与ChannelOrderId不能同时为空。若传空串即表示忽略该参数。
                      */
                     void SetOutOrderId(const std::string& _outOrderId);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool OutOrderIdHasBeenSet() const;
 
                     /**
-                     * 获取云平台订单号。与OutOrderId不能同时为空。
-                     * @return ChannelOrderId 云平台订单号。与OutOrderId不能同时为空。
+                     * 获取云平台订单号。与OutOrderId不能同时为空。若调用下单接口时，发生异常，无法取到ChannelOrderId，传空串即可
+                     * @return ChannelOrderId 云平台订单号。与OutOrderId不能同时为空。若调用下单接口时，发生异常，无法取到ChannelOrderId，传空串即可
                      */
                     std::string GetChannelOrderId() const;
 
                     /**
-                     * 设置云平台订单号。与OutOrderId不能同时为空。
-                     * @param ChannelOrderId 云平台订单号。与OutOrderId不能同时为空。
+                     * 设置云平台订单号。与OutOrderId不能同时为空。若调用下单接口时，发生异常，无法取到ChannelOrderId，传空串即可
+                     * @param ChannelOrderId 云平台订单号。与OutOrderId不能同时为空。若调用下单接口时，发生异常，无法取到ChannelOrderId，传空串即可
                      */
                     void SetChannelOrderId(const std::string& _channelOrderId);
 
@@ -123,13 +123,13 @@ namespace TencentCloud
                     bool m_channelMerchantIdHasBeenSet;
 
                     /**
-                     * 外部商户订单号。与ChannelOrderId不能同时为空。
+                     * 外部商户订单号。与ChannelOrderId不能同时为空。若传空串即表示忽略该参数。
                      */
                     std::string m_outOrderId;
                     bool m_outOrderIdHasBeenSet;
 
                     /**
-                     * 云平台订单号。与OutOrderId不能同时为空。
+                     * 云平台订单号。与OutOrderId不能同时为空。若调用下单接口时，发生异常，无法取到ChannelOrderId，传空串即可
                      */
                     std::string m_channelOrderId;
                     bool m_channelOrderIdHasBeenSet;

@@ -43,10 +43,14 @@
 #include <tencentcloud/ess/v20201111/model/CreateFlowEvidenceReportResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateFlowSignReviewRequest.h>
 #include <tencentcloud/ess/v20201111/model/CreateFlowSignReviewResponse.h>
+#include <tencentcloud/ess/v20201111/model/CreateIntegrationEmployeesRequest.h>
+#include <tencentcloud/ess/v20201111/model/CreateIntegrationEmployeesResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateMultiFlowSignQRCodeRequest.h>
 #include <tencentcloud/ess/v20201111/model/CreateMultiFlowSignQRCodeResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateSchemeUrlRequest.h>
 #include <tencentcloud/ess/v20201111/model/CreateSchemeUrlResponse.h>
+#include <tencentcloud/ess/v20201111/model/DeleteIntegrationEmployeesRequest.h>
+#include <tencentcloud/ess/v20201111/model/DeleteIntegrationEmployeesResponse.h>
 #include <tencentcloud/ess/v20201111/model/DescribeFileUrlsRequest.h>
 #include <tencentcloud/ess/v20201111/model/DescribeFileUrlsResponse.h>
 #include <tencentcloud/ess/v20201111/model/DescribeFlowBriefsRequest.h>
@@ -55,6 +59,8 @@
 #include <tencentcloud/ess/v20201111/model/DescribeFlowInfoResponse.h>
 #include <tencentcloud/ess/v20201111/model/DescribeFlowTemplatesRequest.h>
 #include <tencentcloud/ess/v20201111/model/DescribeFlowTemplatesResponse.h>
+#include <tencentcloud/ess/v20201111/model/DescribeIntegrationEmployeesRequest.h>
+#include <tencentcloud/ess/v20201111/model/DescribeIntegrationEmployeesResponse.h>
 #include <tencentcloud/ess/v20201111/model/DescribeThirdPartyAuthCodeRequest.h>
 #include <tencentcloud/ess/v20201111/model/DescribeThirdPartyAuthCodeResponse.h>
 #include <tencentcloud/ess/v20201111/model/GetTaskResultApiRequest.h>
@@ -109,12 +115,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateFlowSignReviewResponse> CreateFlowSignReviewOutcome;
                 typedef std::future<CreateFlowSignReviewOutcome> CreateFlowSignReviewOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::CreateFlowSignReviewRequest&, CreateFlowSignReviewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateFlowSignReviewAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateIntegrationEmployeesResponse> CreateIntegrationEmployeesOutcome;
+                typedef std::future<CreateIntegrationEmployeesOutcome> CreateIntegrationEmployeesOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::CreateIntegrationEmployeesRequest&, CreateIntegrationEmployeesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateIntegrationEmployeesAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateMultiFlowSignQRCodeResponse> CreateMultiFlowSignQRCodeOutcome;
                 typedef std::future<CreateMultiFlowSignQRCodeOutcome> CreateMultiFlowSignQRCodeOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::CreateMultiFlowSignQRCodeRequest&, CreateMultiFlowSignQRCodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateMultiFlowSignQRCodeAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateSchemeUrlResponse> CreateSchemeUrlOutcome;
                 typedef std::future<CreateSchemeUrlOutcome> CreateSchemeUrlOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::CreateSchemeUrlRequest&, CreateSchemeUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSchemeUrlAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteIntegrationEmployeesResponse> DeleteIntegrationEmployeesOutcome;
+                typedef std::future<DeleteIntegrationEmployeesOutcome> DeleteIntegrationEmployeesOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::DeleteIntegrationEmployeesRequest&, DeleteIntegrationEmployeesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteIntegrationEmployeesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeFileUrlsResponse> DescribeFileUrlsOutcome;
                 typedef std::future<DescribeFileUrlsOutcome> DescribeFileUrlsOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::DescribeFileUrlsRequest&, DescribeFileUrlsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFileUrlsAsyncHandler;
@@ -127,6 +139,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeFlowTemplatesResponse> DescribeFlowTemplatesOutcome;
                 typedef std::future<DescribeFlowTemplatesOutcome> DescribeFlowTemplatesOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::DescribeFlowTemplatesRequest&, DescribeFlowTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFlowTemplatesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeIntegrationEmployeesResponse> DescribeIntegrationEmployeesOutcome;
+                typedef std::future<DescribeIntegrationEmployeesOutcome> DescribeIntegrationEmployeesOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::DescribeIntegrationEmployeesRequest&, DescribeIntegrationEmployeesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIntegrationEmployeesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeThirdPartyAuthCodeResponse> DescribeThirdPartyAuthCodeOutcome;
                 typedef std::future<DescribeThirdPartyAuthCodeOutcome> DescribeThirdPartyAuthCodeOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::DescribeThirdPartyAuthCodeRequest&, DescribeThirdPartyAuthCodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeThirdPartyAuthCodeAsyncHandler;
@@ -255,6 +270,15 @@ namespace TencentCloud
                 CreateFlowSignReviewOutcomeCallable CreateFlowSignReviewCallable(const Model::CreateFlowSignReviewRequest& request);
 
                 /**
+                 *创建员工
+                 * @param req CreateIntegrationEmployeesRequest
+                 * @return CreateIntegrationEmployeesOutcome
+                 */
+                CreateIntegrationEmployeesOutcome CreateIntegrationEmployees(const Model::CreateIntegrationEmployeesRequest &request);
+                void CreateIntegrationEmployeesAsync(const Model::CreateIntegrationEmployeesRequest& request, const CreateIntegrationEmployeesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateIntegrationEmployeesOutcomeCallable CreateIntegrationEmployeesCallable(const Model::CreateIntegrationEmployeesRequest& request);
+
+                /**
                  *此接口（CreateMultiFlowSignQRCode）用于创建一码多扫流程签署二维码。
 适用场景：无需填写签署人信息，可通过模板id生成签署二维码，签署人可通过扫描二维码补充签署信息进行实名签署。常用于提前不知道签署人的身份信息场景，例如：劳务工招工、大批量员工入职等场景。
 适用的模板仅限于B2C（1、无序签署，2、顺序签署时B静默签署，3、顺序签署时B非首位签署）、单C的模板，且模板中发起方没有填写控件。
@@ -283,6 +307,15 @@ namespace TencentCloud
                 CreateSchemeUrlOutcome CreateSchemeUrl(const Model::CreateSchemeUrlRequest &request);
                 void CreateSchemeUrlAsync(const Model::CreateSchemeUrlRequest& request, const CreateSchemeUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateSchemeUrlOutcomeCallable CreateSchemeUrlCallable(const Model::CreateSchemeUrlRequest& request);
+
+                /**
+                 *移除员工
+                 * @param req DeleteIntegrationEmployeesRequest
+                 * @return DeleteIntegrationEmployeesOutcome
+                 */
+                DeleteIntegrationEmployeesOutcome DeleteIntegrationEmployees(const Model::DeleteIntegrationEmployeesRequest &request);
+                void DeleteIntegrationEmployeesAsync(const Model::DeleteIntegrationEmployeesRequest& request, const DeleteIntegrationEmployeesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteIntegrationEmployeesOutcomeCallable DeleteIntegrationEmployeesCallable(const Model::DeleteIntegrationEmployeesRequest& request);
 
                 /**
                  *查询文件下载URL
@@ -324,6 +357,15 @@ namespace TencentCloud
                 DescribeFlowTemplatesOutcome DescribeFlowTemplates(const Model::DescribeFlowTemplatesRequest &request);
                 void DescribeFlowTemplatesAsync(const Model::DescribeFlowTemplatesRequest& request, const DescribeFlowTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeFlowTemplatesOutcomeCallable DescribeFlowTemplatesCallable(const Model::DescribeFlowTemplatesRequest& request);
+
+                /**
+                 *查询员工信息，每次返回的数据量最大为20
+                 * @param req DescribeIntegrationEmployeesRequest
+                 * @return DescribeIntegrationEmployeesOutcome
+                 */
+                DescribeIntegrationEmployeesOutcome DescribeIntegrationEmployees(const Model::DescribeIntegrationEmployeesRequest &request);
+                void DescribeIntegrationEmployeesAsync(const Model::DescribeIntegrationEmployeesRequest& request, const DescribeIntegrationEmployeesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeIntegrationEmployeesOutcomeCallable DescribeIntegrationEmployeesCallable(const Model::DescribeIntegrationEmployeesRequest& request);
 
                 /**
                  *通过AuthCode查询用户是否实名

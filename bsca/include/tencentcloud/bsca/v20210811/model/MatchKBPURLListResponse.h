@@ -56,6 +56,18 @@ namespace TencentCloud
                      */
                     bool PURLListHasBeenSet() const;
 
+                    /**
+                     * 获取是否命中数据库。
+                     * @return Hit 是否命中数据库。
+                     */
+                    bool GetHit() const;
+
+                    /**
+                     * 判断参数 Hit 是否已赋值
+                     * @return Hit 是否已赋值
+                     */
+                    bool HitHasBeenSet() const;
+
                 private:
 
                     /**
@@ -63,6 +75,12 @@ namespace TencentCloud
                      */
                     std::vector<PURL> m_pURLList;
                     bool m_pURLListHasBeenSet;
+
+                    /**
+                     * 是否命中数据库。
+                     */
+                    bool m_hit;
+                    bool m_hitHasBeenSet;
 
                 };
             }

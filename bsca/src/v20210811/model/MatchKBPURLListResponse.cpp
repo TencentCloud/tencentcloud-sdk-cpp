@@ -24,7 +24,8 @@ using namespace TencentCloud::Bsca::V20210811::Model;
 using namespace std;
 
 MatchKBPURLListResponse::MatchKBPURLListResponse() :
-    m_pURLListHasBeenSet(false)
+    m_pURLListHasBeenSet(false),
+    m_hitHasBeenSet(false)
 {
 }
 
@@ -82,6 +83,16 @@ CoreInternalOutcome MatchKBPURLListResponse::Deserialize(const string &payload)
         m_pURLListHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Hit") && !rsp["Hit"].IsNull())
+    {
+        if (!rsp["Hit"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `Hit` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_hit = rsp["Hit"].GetBool();
+        m_hitHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -107,6 +118,14 @@ string MatchKBPURLListResponse::ToJsonString() const
         }
     }
 
+    if (m_hitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Hit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_hit, allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -127,6 +146,16 @@ vector<PURL> MatchKBPURLListResponse::GetPURLList() const
 bool MatchKBPURLListResponse::PURLListHasBeenSet() const
 {
     return m_pURLListHasBeenSet;
+}
+
+bool MatchKBPURLListResponse::GetHit() const
+{
+    return m_hit;
+}
+
+bool MatchKBPURLListResponse::HitHasBeenSet() const
+{
+    return m_hitHasBeenSet;
 }
 
 

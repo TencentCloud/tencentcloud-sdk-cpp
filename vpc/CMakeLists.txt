@@ -43,6 +43,7 @@ set(vpc_public_header_model
   include/tencentcloud/vpc/v20170312/model/DisableCcnRoutesRequest.h
   include/tencentcloud/vpc/v20170312/model/ModifyNatGatewayDestinationIpPortTranslationNatRuleResponse.h
   include/tencentcloud/vpc/v20170312/model/ModifyIp6RuleResponse.h
+  include/tencentcloud/vpc/v20170312/model/SetVpnGatewaysRenewFlagRequest.h
   include/tencentcloud/vpc/v20170312/model/ModifyCcnRegionBandwidthLimitsTypeResponse.h
   include/tencentcloud/vpc/v20170312/model/DescribeVpnGatewaysResponse.h
   include/tencentcloud/vpc/v20170312/model/ModifyNetworkAclQuintupleEntriesRequest.h
@@ -499,6 +500,7 @@ set(vpc_public_header_model
   include/tencentcloud/vpc/v20170312/model/DisassociateDhcpIpWithAddressIpResponse.h
   include/tencentcloud/vpc/v20170312/model/CreateVpcEndPointServiceResponse.h
   include/tencentcloud/vpc/v20170312/model/ModifyNetworkAclAttributeRequest.h
+  include/tencentcloud/vpc/v20170312/model/SetVpnGatewaysRenewFlagResponse.h
   include/tencentcloud/vpc/v20170312/model/DeleteVpnGatewayResponse.h
   include/tencentcloud/vpc/v20170312/model/DescribeHaVipsRequest.h
   include/tencentcloud/vpc/v20170312/model/UnassignPrivateIpAddressesResponse.h
@@ -729,6 +731,7 @@ set(vpc_src
   src/v20170312/model/DisableCcnRoutesRequest.cpp
   src/v20170312/model/ModifyNatGatewayDestinationIpPortTranslationNatRuleResponse.cpp
   src/v20170312/model/ModifyIp6RuleResponse.cpp
+  src/v20170312/model/SetVpnGatewaysRenewFlagRequest.cpp
   src/v20170312/model/ModifyCcnRegionBandwidthLimitsTypeResponse.cpp
   src/v20170312/model/DescribeVpnGatewaysResponse.cpp
   src/v20170312/model/ModifyNetworkAclQuintupleEntriesRequest.cpp
@@ -1185,6 +1188,7 @@ set(vpc_src
   src/v20170312/model/DisassociateDhcpIpWithAddressIpResponse.cpp
   src/v20170312/model/CreateVpcEndPointServiceResponse.cpp
   src/v20170312/model/ModifyNetworkAclAttributeRequest.cpp
+  src/v20170312/model/SetVpnGatewaysRenewFlagResponse.cpp
   src/v20170312/model/DeleteVpnGatewayResponse.cpp
   src/v20170312/model/DescribeHaVipsRequest.cpp
   src/v20170312/model/UnassignPrivateIpAddressesResponse.cpp

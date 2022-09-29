@@ -1172,7 +1172,7 @@ namespace TencentCloud
                 ApplyOpenBankOrderDetailReceiptOutcomeCallable ApplyOpenBankOrderDetailReceiptCallable(const Model::ApplyOpenBankOrderDetailReceiptRequest& request);
 
                 /**
-                 *云企付结算申请接口
+                 *云企付-结算申请接口
                  * @param req ApplyOpenBankSettleOrderRequest
                  * @return ApplyOpenBankSettleOrderOutcome
                  */
@@ -2479,7 +2479,7 @@ namespace TencentCloud
                 QueryOpenBankRefundOrderOutcomeCallable QueryOpenBankRefundOrderCallable(const Model::QueryOpenBankRefundOrderRequest& request);
 
                 /**
-                 *云企付结算单查询结果
+                 *云企付-结算单查询结果
                  * @param req QueryOpenBankSettleOrderRequest
                  * @return QueryOpenBankSettleOrderOutcome
                  */

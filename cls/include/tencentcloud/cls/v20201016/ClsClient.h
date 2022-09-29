@@ -647,7 +647,7 @@ namespace TencentCloud
                 DescribeLogContextOutcomeCallable DescribeLogContextCallable(const Model::DescribeLogContextRequest& request);
 
                 /**
-                 *本接口用于构建直方图
+                 *本接口用于构建日志数量直方图
                  * @param req DescribeLogHistogramRequest
                  * @return DescribeLogHistogramOutcome
                  */

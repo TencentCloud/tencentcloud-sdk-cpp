@@ -470,6 +470,49 @@ EssClient::CreateFlowSignReviewOutcomeCallable EssClient::CreateFlowSignReviewCa
     return task->get_future();
 }
 
+EssClient::CreateIntegrationEmployeesOutcome EssClient::CreateIntegrationEmployees(const CreateIntegrationEmployeesRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateIntegrationEmployees");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateIntegrationEmployeesResponse rsp = CreateIntegrationEmployeesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateIntegrationEmployeesOutcome(rsp);
+        else
+            return CreateIntegrationEmployeesOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateIntegrationEmployeesOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::CreateIntegrationEmployeesAsync(const CreateIntegrationEmployeesRequest& request, const CreateIntegrationEmployeesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateIntegrationEmployees(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssClient::CreateIntegrationEmployeesOutcomeCallable EssClient::CreateIntegrationEmployeesCallable(const CreateIntegrationEmployeesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateIntegrationEmployeesOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateIntegrationEmployees(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssClient::CreateMultiFlowSignQRCodeOutcome EssClient::CreateMultiFlowSignQRCode(const CreateMultiFlowSignQRCodeRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateMultiFlowSignQRCode");
@@ -549,6 +592,49 @@ EssClient::CreateSchemeUrlOutcomeCallable EssClient::CreateSchemeUrlCallable(con
         [this, request]()
         {
             return this->CreateSchemeUrl(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EssClient::DeleteIntegrationEmployeesOutcome EssClient::DeleteIntegrationEmployees(const DeleteIntegrationEmployeesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteIntegrationEmployees");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteIntegrationEmployeesResponse rsp = DeleteIntegrationEmployeesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteIntegrationEmployeesOutcome(rsp);
+        else
+            return DeleteIntegrationEmployeesOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteIntegrationEmployeesOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::DeleteIntegrationEmployeesAsync(const DeleteIntegrationEmployeesRequest& request, const DeleteIntegrationEmployeesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteIntegrationEmployees(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssClient::DeleteIntegrationEmployeesOutcomeCallable EssClient::DeleteIntegrationEmployeesCallable(const DeleteIntegrationEmployeesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteIntegrationEmployeesOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteIntegrationEmployees(request);
         }
     );
 
@@ -721,6 +807,49 @@ EssClient::DescribeFlowTemplatesOutcomeCallable EssClient::DescribeFlowTemplates
         [this, request]()
         {
             return this->DescribeFlowTemplates(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EssClient::DescribeIntegrationEmployeesOutcome EssClient::DescribeIntegrationEmployees(const DescribeIntegrationEmployeesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeIntegrationEmployees");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeIntegrationEmployeesResponse rsp = DescribeIntegrationEmployeesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeIntegrationEmployeesOutcome(rsp);
+        else
+            return DescribeIntegrationEmployeesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeIntegrationEmployeesOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::DescribeIntegrationEmployeesAsync(const DescribeIntegrationEmployeesRequest& request, const DescribeIntegrationEmployeesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeIntegrationEmployees(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssClient::DescribeIntegrationEmployeesOutcomeCallable EssClient::DescribeIntegrationEmployeesCallable(const DescribeIntegrationEmployeesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeIntegrationEmployeesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeIntegrationEmployees(request);
         }
     );
 

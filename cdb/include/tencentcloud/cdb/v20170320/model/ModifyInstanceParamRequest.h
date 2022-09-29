@@ -115,6 +115,42 @@ namespace TencentCloud
                      */
                     bool WaitSwitchHasBeenSet() const;
 
+                    /**
+                     * 获取参数是否同步到主实例下的只读实例。true 为不同步，false 为同步。默认为 false。
+                     * @return NotSyncRo 参数是否同步到主实例下的只读实例。true 为不同步，false 为同步。默认为 false。
+                     */
+                    bool GetNotSyncRo() const;
+
+                    /**
+                     * 设置参数是否同步到主实例下的只读实例。true 为不同步，false 为同步。默认为 false。
+                     * @param NotSyncRo 参数是否同步到主实例下的只读实例。true 为不同步，false 为同步。默认为 false。
+                     */
+                    void SetNotSyncRo(const bool& _notSyncRo);
+
+                    /**
+                     * 判断参数 NotSyncRo 是否已赋值
+                     * @return NotSyncRo 是否已赋值
+                     */
+                    bool NotSyncRoHasBeenSet() const;
+
+                    /**
+                     * 获取参数是否同步到主实例下的灾备实例。true 为不同步，false 为同步。默认为 false。
+                     * @return NotSyncDr 参数是否同步到主实例下的灾备实例。true 为不同步，false 为同步。默认为 false。
+                     */
+                    bool GetNotSyncDr() const;
+
+                    /**
+                     * 设置参数是否同步到主实例下的灾备实例。true 为不同步，false 为同步。默认为 false。
+                     * @param NotSyncDr 参数是否同步到主实例下的灾备实例。true 为不同步，false 为同步。默认为 false。
+                     */
+                    void SetNotSyncDr(const bool& _notSyncDr);
+
+                    /**
+                     * 判断参数 NotSyncDr 是否已赋值
+                     * @return NotSyncDr 是否已赋值
+                     */
+                    bool NotSyncDrHasBeenSet() const;
+
                 private:
 
                     /**
@@ -140,6 +176,18 @@ namespace TencentCloud
                      */
                     int64_t m_waitSwitch;
                     bool m_waitSwitchHasBeenSet;
+
+                    /**
+                     * 参数是否同步到主实例下的只读实例。true 为不同步，false 为同步。默认为 false。
+                     */
+                    bool m_notSyncRo;
+                    bool m_notSyncRoHasBeenSet;
+
+                    /**
+                     * 参数是否同步到主实例下的灾备实例。true 为不同步，false 为同步。默认为 false。
+                     */
+                    bool m_notSyncDr;
+                    bool m_notSyncDrHasBeenSet;
 
                 };
             }

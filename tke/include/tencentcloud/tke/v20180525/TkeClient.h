@@ -963,7 +963,7 @@ namespace TencentCloud
                 CreateClusterOutcomeCallable CreateClusterCallable(const Model::CreateClusterRequest& request);
 
                 /**
-                 *创建集群访问端口(独立集群开启内网/外网访问，托管集群支持开启内网访问)
+                 *创建集群访问端口
                  * @param req CreateClusterEndpointRequest
                  * @return CreateClusterEndpointOutcome
                  */
@@ -1188,7 +1188,7 @@ namespace TencentCloud
                 DeleteClusterAsGroupsOutcomeCallable DeleteClusterAsGroupsCallable(const Model::DeleteClusterAsGroupsRequest& request);
 
                 /**
-                 *删除集群访问端口(独立集群开启内网/外网访问，托管集群支持开启内网访问)
+                 *删除集群访问端口
                  * @param req DeleteClusterEndpointRequest
                  * @return DeleteClusterEndpointOutcome
                  */

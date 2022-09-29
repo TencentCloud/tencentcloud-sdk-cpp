@@ -80,14 +80,14 @@ namespace TencentCloud
                     bool LoadBalancerIdsHasBeenSet() const;
 
                     /**
-                     * 获取应用型负载均衡器标识信息列表，列表长度上限为50，LoadBalancerIds 和 ForwardLoadBalancerIdentifications二者同时最多只能指定一个
-                     * @return ForwardLoadBalancerIdentifications 应用型负载均衡器标识信息列表，列表长度上限为50，LoadBalancerIds 和 ForwardLoadBalancerIdentifications二者同时最多只能指定一个
+                     * 获取应用型负载均衡器标识信息列表，列表长度上限为100，LoadBalancerIds 和 ForwardLoadBalancerIdentifications二者同时最多只能指定一个
+                     * @return ForwardLoadBalancerIdentifications 应用型负载均衡器标识信息列表，列表长度上限为100，LoadBalancerIds 和 ForwardLoadBalancerIdentifications二者同时最多只能指定一个
                      */
                     std::vector<ForwardLoadBalancerIdentification> GetForwardLoadBalancerIdentifications() const;
 
                     /**
-                     * 设置应用型负载均衡器标识信息列表，列表长度上限为50，LoadBalancerIds 和 ForwardLoadBalancerIdentifications二者同时最多只能指定一个
-                     * @param ForwardLoadBalancerIdentifications 应用型负载均衡器标识信息列表，列表长度上限为50，LoadBalancerIds 和 ForwardLoadBalancerIdentifications二者同时最多只能指定一个
+                     * 设置应用型负载均衡器标识信息列表，列表长度上限为100，LoadBalancerIds 和 ForwardLoadBalancerIdentifications二者同时最多只能指定一个
+                     * @param ForwardLoadBalancerIdentifications 应用型负载均衡器标识信息列表，列表长度上限为100，LoadBalancerIds 和 ForwardLoadBalancerIdentifications二者同时最多只能指定一个
                      */
                     void SetForwardLoadBalancerIdentifications(const std::vector<ForwardLoadBalancerIdentification>& _forwardLoadBalancerIdentifications);
 
@@ -112,7 +112,7 @@ namespace TencentCloud
                     bool m_loadBalancerIdsHasBeenSet;
 
                     /**
-                     * 应用型负载均衡器标识信息列表，列表长度上限为50，LoadBalancerIds 和 ForwardLoadBalancerIdentifications二者同时最多只能指定一个
+                     * 应用型负载均衡器标识信息列表，列表长度上限为100，LoadBalancerIds 和 ForwardLoadBalancerIdentifications二者同时最多只能指定一个
                      */
                     std::vector<ForwardLoadBalancerIdentification> m_forwardLoadBalancerIdentifications;
                     bool m_forwardLoadBalancerIdentificationsHasBeenSet;

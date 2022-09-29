@@ -577,6 +577,8 @@
 #include <tencentcloud/vpc/v20170312/model/ResetVpnGatewayInternetMaxBandwidthResponse.h>
 #include <tencentcloud/vpc/v20170312/model/SetCcnRegionBandwidthLimitsRequest.h>
 #include <tencentcloud/vpc/v20170312/model/SetCcnRegionBandwidthLimitsResponse.h>
+#include <tencentcloud/vpc/v20170312/model/SetVpnGatewaysRenewFlagRequest.h>
+#include <tencentcloud/vpc/v20170312/model/SetVpnGatewaysRenewFlagResponse.h>
 #include <tencentcloud/vpc/v20170312/model/TransformAddressRequest.h>
 #include <tencentcloud/vpc/v20170312/model/TransformAddressResponse.h>
 #include <tencentcloud/vpc/v20170312/model/UnassignIpv6AddressesRequest.h>
@@ -1438,6 +1440,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::SetCcnRegionBandwidthLimitsResponse> SetCcnRegionBandwidthLimitsOutcome;
                 typedef std::future<SetCcnRegionBandwidthLimitsOutcome> SetCcnRegionBandwidthLimitsOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::SetCcnRegionBandwidthLimitsRequest&, SetCcnRegionBandwidthLimitsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetCcnRegionBandwidthLimitsAsyncHandler;
+                typedef Outcome<Core::Error, Model::SetVpnGatewaysRenewFlagResponse> SetVpnGatewaysRenewFlagOutcome;
+                typedef std::future<SetVpnGatewaysRenewFlagOutcome> SetVpnGatewaysRenewFlagOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::SetVpnGatewaysRenewFlagRequest&, SetVpnGatewaysRenewFlagOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetVpnGatewaysRenewFlagAsyncHandler;
                 typedef Outcome<Core::Error, Model::TransformAddressResponse> TransformAddressOutcome;
                 typedef std::future<TransformAddressOutcome> TransformAddressOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::TransformAddressRequest&, TransformAddressOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TransformAddressAsyncHandler;
@@ -4205,6 +4210,15 @@ LimitTypes取值范围：
                 SetCcnRegionBandwidthLimitsOutcome SetCcnRegionBandwidthLimits(const Model::SetCcnRegionBandwidthLimitsRequest &request);
                 void SetCcnRegionBandwidthLimitsAsync(const Model::SetCcnRegionBandwidthLimitsRequest& request, const SetCcnRegionBandwidthLimitsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SetCcnRegionBandwidthLimitsOutcomeCallable SetCcnRegionBandwidthLimitsCallable(const Model::SetCcnRegionBandwidthLimitsRequest& request);
+
+                /**
+                 *设置VPNGW续费标记
+                 * @param req SetVpnGatewaysRenewFlagRequest
+                 * @return SetVpnGatewaysRenewFlagOutcome
+                 */
+                SetVpnGatewaysRenewFlagOutcome SetVpnGatewaysRenewFlag(const Model::SetVpnGatewaysRenewFlagRequest &request);
+                void SetVpnGatewaysRenewFlagAsync(const Model::SetVpnGatewaysRenewFlagRequest& request, const SetVpnGatewaysRenewFlagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SetVpnGatewaysRenewFlagOutcomeCallable SetVpnGatewaysRenewFlagCallable(const Model::SetVpnGatewaysRenewFlagRequest& request);
 
                 /**
                  *本接口 (TransformAddress) 用于将实例的普通公网 IP 转换为[弹性公网IP](https://cloud.tencent.com/document/product/213/1941)（简称 EIP）。

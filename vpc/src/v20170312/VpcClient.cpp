@@ -11951,6 +11951,49 @@ VpcClient::SetCcnRegionBandwidthLimitsOutcomeCallable VpcClient::SetCcnRegionBan
     return task->get_future();
 }
 
+VpcClient::SetVpnGatewaysRenewFlagOutcome VpcClient::SetVpnGatewaysRenewFlag(const SetVpnGatewaysRenewFlagRequest &request)
+{
+    auto outcome = MakeRequest(request, "SetVpnGatewaysRenewFlag");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SetVpnGatewaysRenewFlagResponse rsp = SetVpnGatewaysRenewFlagResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SetVpnGatewaysRenewFlagOutcome(rsp);
+        else
+            return SetVpnGatewaysRenewFlagOutcome(o.GetError());
+    }
+    else
+    {
+        return SetVpnGatewaysRenewFlagOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::SetVpnGatewaysRenewFlagAsync(const SetVpnGatewaysRenewFlagRequest& request, const SetVpnGatewaysRenewFlagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SetVpnGatewaysRenewFlag(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::SetVpnGatewaysRenewFlagOutcomeCallable VpcClient::SetVpnGatewaysRenewFlagCallable(const SetVpnGatewaysRenewFlagRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SetVpnGatewaysRenewFlagOutcome()>>(
+        [this, request]()
+        {
+            return this->SetVpnGatewaysRenewFlag(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VpcClient::TransformAddressOutcome VpcClient::TransformAddress(const TransformAddressRequest &request)
 {
     auto outcome = MakeRequest(request, "TransformAddress");

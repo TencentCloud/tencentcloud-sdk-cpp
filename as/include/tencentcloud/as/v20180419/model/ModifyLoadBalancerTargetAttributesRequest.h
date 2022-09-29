@@ -62,14 +62,14 @@ namespace TencentCloud
                     bool AutoScalingGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取需修改目标规则属性的应用型负载均衡器列表，列表长度上限为50
-                     * @return ForwardLoadBalancers 需修改目标规则属性的应用型负载均衡器列表，列表长度上限为50
+                     * 获取需修改目标规则属性的应用型负载均衡器列表，列表长度上限为100
+                     * @return ForwardLoadBalancers 需修改目标规则属性的应用型负载均衡器列表，列表长度上限为100
                      */
                     std::vector<ForwardLoadBalancer> GetForwardLoadBalancers() const;
 
                     /**
-                     * 设置需修改目标规则属性的应用型负载均衡器列表，列表长度上限为50
-                     * @param ForwardLoadBalancers 需修改目标规则属性的应用型负载均衡器列表，列表长度上限为50
+                     * 设置需修改目标规则属性的应用型负载均衡器列表，列表长度上限为100
+                     * @param ForwardLoadBalancers 需修改目标规则属性的应用型负载均衡器列表，列表长度上限为100
                      */
                     void SetForwardLoadBalancers(const std::vector<ForwardLoadBalancer>& _forwardLoadBalancers);
 
@@ -88,7 +88,7 @@ namespace TencentCloud
                     bool m_autoScalingGroupIdHasBeenSet;
 
                     /**
-                     * 需修改目标规则属性的应用型负载均衡器列表，列表长度上限为50
+                     * 需修改目标规则属性的应用型负载均衡器列表，列表长度上限为100
                      */
                     std::vector<ForwardLoadBalancer> m_forwardLoadBalancers;
                     bool m_forwardLoadBalancersHasBeenSet;

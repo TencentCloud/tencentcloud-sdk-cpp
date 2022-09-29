@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool QueryHasBeenSet() const;
 
                     /**
-                     * 获取时间间隔: 单位ms
-                     * @return Interval 时间间隔: 单位ms
+                     * 获取时间间隔: 单位ms  限制性条件：(To-From) / interval <= 200
+                     * @return Interval 时间间隔: 单位ms  限制性条件：(To-From) / interval <= 200
                      */
                     int64_t GetInterval() const;
 
                     /**
-                     * 设置时间间隔: 单位ms
-                     * @param Interval 时间间隔: 单位ms
+                     * 设置时间间隔: 单位ms  限制性条件：(To-From) / interval <= 200
+                     * @param Interval 时间间隔: 单位ms  限制性条件：(To-From) / interval <= 200
                      */
                     void SetInterval(const int64_t& _interval);
 
@@ -159,7 +159,7 @@ namespace TencentCloud
                     bool m_queryHasBeenSet;
 
                     /**
-                     * 时间间隔: 单位ms
+                     * 时间间隔: 单位ms  限制性条件：(To-From) / interval <= 200
                      */
                     int64_t m_interval;
                     bool m_intervalHasBeenSet;

@@ -39,6 +39,8 @@
 #include <tencentcloud/essbasic/v20210526/model/ChannelCreateFlowSignReviewResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelCreateMultiFlowSignQRCodeRequest.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelCreateMultiFlowSignQRCodeResponse.h>
+#include <tencentcloud/essbasic/v20210526/model/ChannelDescribeEmployeesRequest.h>
+#include <tencentcloud/essbasic/v20210526/model/ChannelDescribeEmployeesResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelGetTaskResultApiRequest.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelGetTaskResultApiResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelVerifyPdfRequest.h>
@@ -111,6 +113,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ChannelCreateMultiFlowSignQRCodeResponse> ChannelCreateMultiFlowSignQRCodeOutcome;
                 typedef std::future<ChannelCreateMultiFlowSignQRCodeOutcome> ChannelCreateMultiFlowSignQRCodeOutcomeCallable;
                 typedef std::function<void(const EssbasicClient*, const Model::ChannelCreateMultiFlowSignQRCodeRequest&, ChannelCreateMultiFlowSignQRCodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChannelCreateMultiFlowSignQRCodeAsyncHandler;
+                typedef Outcome<Core::Error, Model::ChannelDescribeEmployeesResponse> ChannelDescribeEmployeesOutcome;
+                typedef std::future<ChannelDescribeEmployeesOutcome> ChannelDescribeEmployeesOutcomeCallable;
+                typedef std::function<void(const EssbasicClient*, const Model::ChannelDescribeEmployeesRequest&, ChannelDescribeEmployeesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChannelDescribeEmployeesAsyncHandler;
                 typedef Outcome<Core::Error, Model::ChannelGetTaskResultApiResponse> ChannelGetTaskResultApiOutcome;
                 typedef std::future<ChannelGetTaskResultApiOutcome> ChannelGetTaskResultApiOutcomeCallable;
                 typedef std::function<void(const EssbasicClient*, const Model::ChannelGetTaskResultApiRequest&, ChannelGetTaskResultApiOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChannelGetTaskResultApiAsyncHandler;
@@ -249,6 +254,15 @@ namespace TencentCloud
                 ChannelCreateMultiFlowSignQRCodeOutcomeCallable ChannelCreateMultiFlowSignQRCodeCallable(const Model::ChannelCreateMultiFlowSignQRCodeRequest& request);
 
                 /**
+                 *查询企业员工
+                 * @param req ChannelDescribeEmployeesRequest
+                 * @return ChannelDescribeEmployeesOutcome
+                 */
+                ChannelDescribeEmployeesOutcome ChannelDescribeEmployees(const Model::ChannelDescribeEmployeesRequest &request);
+                void ChannelDescribeEmployeesAsync(const Model::ChannelDescribeEmployeesRequest& request, const ChannelDescribeEmployeesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ChannelDescribeEmployeesOutcomeCallable ChannelDescribeEmployeesCallable(const Model::ChannelDescribeEmployeesRequest& request);
+
+                /**
                  *渠道版查询转换任务状态
                  * @param req ChannelGetTaskResultApiRequest
                  * @return ChannelGetTaskResultApiOutcome
@@ -267,8 +281,8 @@ namespace TencentCloud
                 ChannelVerifyPdfOutcomeCallable ChannelVerifyPdfCallable(const Model::ChannelVerifyPdfRequest& request);
 
                 /**
-                 *【描述】：创建出证报告，返回报告 URL
-【注意】：此接口需要通过添加白名单获取调用权限，请联系运营人员加白
+                 *创建出证报告，返回报告 URL。此接口暂为开放，有问题请联系运营人员。
+
                  * @param req CreateChannelFlowEvidenceReportRequest
                  * @return CreateChannelFlowEvidenceReportOutcome
                  */
