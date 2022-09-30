@@ -25,7 +25,8 @@ using namespace std;
 ModifyHostsCertificateRequest::ModifyHostsCertificateRequest() :
     m_zoneIdHasBeenSet(false),
     m_hostsHasBeenSet(false),
-    m_serverCertInfoHasBeenSet(false)
+    m_serverCertInfoHasBeenSet(false),
+    m_applyTypeHasBeenSet(false)
 {
 }
 
@@ -70,6 +71,14 @@ string ModifyHostsCertificateRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_applyTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApplyType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_applyType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -126,6 +135,22 @@ void ModifyHostsCertificateRequest::SetServerCertInfo(const vector<ServerCertInf
 bool ModifyHostsCertificateRequest::ServerCertInfoHasBeenSet() const
 {
     return m_serverCertInfoHasBeenSet;
+}
+
+string ModifyHostsCertificateRequest::GetApplyType() const
+{
+    return m_applyType;
+}
+
+void ModifyHostsCertificateRequest::SetApplyType(const string& _applyType)
+{
+    m_applyType = _applyType;
+    m_applyTypeHasBeenSet = true;
+}
+
+bool ModifyHostsCertificateRequest::ApplyTypeHasBeenSet() const
+{
+    return m_applyTypeHasBeenSet;
 }
 
 

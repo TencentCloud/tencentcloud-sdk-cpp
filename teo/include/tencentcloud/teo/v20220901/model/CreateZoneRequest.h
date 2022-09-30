@@ -123,6 +123,32 @@ namespace TencentCloud
                      */
                     bool TagsHasBeenSet() const;
 
+                    /**
+                     * 获取是否允许重复接入。
+<li> true：允许重复接入；</li>
+<li> false：不允许重复接入。</li>不填写使用默认值false。
+                     * @return AllowDuplicates 是否允许重复接入。
+<li> true：允许重复接入；</li>
+<li> false：不允许重复接入。</li>不填写使用默认值false。
+                     */
+                    bool GetAllowDuplicates() const;
+
+                    /**
+                     * 设置是否允许重复接入。
+<li> true：允许重复接入；</li>
+<li> false：不允许重复接入。</li>不填写使用默认值false。
+                     * @param AllowDuplicates 是否允许重复接入。
+<li> true：允许重复接入；</li>
+<li> false：不允许重复接入。</li>不填写使用默认值false。
+                     */
+                    void SetAllowDuplicates(const bool& _allowDuplicates);
+
+                    /**
+                     * 判断参数 AllowDuplicates 是否已赋值
+                     * @return AllowDuplicates 是否已赋值
+                     */
+                    bool AllowDuplicatesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -150,6 +176,14 @@ namespace TencentCloud
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
+
+                    /**
+                     * 是否允许重复接入。
+<li> true：允许重复接入；</li>
+<li> false：不允许重复接入。</li>不填写使用默认值false。
+                     */
+                    bool m_allowDuplicates;
+                    bool m_allowDuplicatesHasBeenSet;
 
                 };
             }

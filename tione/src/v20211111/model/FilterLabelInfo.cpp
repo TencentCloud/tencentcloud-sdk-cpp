@@ -33,7 +33,11 @@ FilterLabelInfo::FilterLabelInfo() :
     m_downloadThumbnailUrlHasBeenSet(false),
     m_downloadRGBUrlHasBeenSet(false),
     m_ocrSceneHasBeenSet(false),
-    m_ocrLabelsHasBeenSet(false)
+    m_ocrLabelsHasBeenSet(false),
+    m_ocrLabelInfoHasBeenSet(false),
+    m_textClassificationLabelListHasBeenSet(false),
+    m_rowTextHasBeenSet(false),
+    m_contentOmitHasBeenSet(false)
 {
 }
 
@@ -205,6 +209,46 @@ CoreInternalOutcome FilterLabelInfo::Deserialize(const rapidjson::Value &value)
         m_ocrLabelsHasBeenSet = true;
     }
 
+    if (value.HasMember("OcrLabelInfo") && !value["OcrLabelInfo"].IsNull())
+    {
+        if (!value["OcrLabelInfo"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `FilterLabelInfo.OcrLabelInfo` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ocrLabelInfo = string(value["OcrLabelInfo"].GetString());
+        m_ocrLabelInfoHasBeenSet = true;
+    }
+
+    if (value.HasMember("TextClassificationLabelList") && !value["TextClassificationLabelList"].IsNull())
+    {
+        if (!value["TextClassificationLabelList"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `FilterLabelInfo.TextClassificationLabelList` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_textClassificationLabelList = string(value["TextClassificationLabelList"].GetString());
+        m_textClassificationLabelListHasBeenSet = true;
+    }
+
+    if (value.HasMember("RowText") && !value["RowText"].IsNull())
+    {
+        if (!value["RowText"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `FilterLabelInfo.RowText` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_rowText = string(value["RowText"].GetString());
+        m_rowTextHasBeenSet = true;
+    }
+
+    if (value.HasMember("ContentOmit") && !value["ContentOmit"].IsNull())
+    {
+        if (!value["ContentOmit"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `FilterLabelInfo.ContentOmit` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_contentOmit = value["ContentOmit"].GetBool();
+        m_contentOmitHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -340,6 +384,38 @@ void FilterLabelInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_ocrLabelInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OcrLabelInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ocrLabelInfo.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_textClassificationLabelListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TextClassificationLabelList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_textClassificationLabelList.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_rowTextHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RowText";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_rowText.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_contentOmitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ContentOmit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_contentOmit, allocator);
     }
 
 }
@@ -551,5 +627,69 @@ void FilterLabelInfo::SetOcrLabels(const vector<OcrLabelInfo>& _ocrLabels)
 bool FilterLabelInfo::OcrLabelsHasBeenSet() const
 {
     return m_ocrLabelsHasBeenSet;
+}
+
+string FilterLabelInfo::GetOcrLabelInfo() const
+{
+    return m_ocrLabelInfo;
+}
+
+void FilterLabelInfo::SetOcrLabelInfo(const string& _ocrLabelInfo)
+{
+    m_ocrLabelInfo = _ocrLabelInfo;
+    m_ocrLabelInfoHasBeenSet = true;
+}
+
+bool FilterLabelInfo::OcrLabelInfoHasBeenSet() const
+{
+    return m_ocrLabelInfoHasBeenSet;
+}
+
+string FilterLabelInfo::GetTextClassificationLabelList() const
+{
+    return m_textClassificationLabelList;
+}
+
+void FilterLabelInfo::SetTextClassificationLabelList(const string& _textClassificationLabelList)
+{
+    m_textClassificationLabelList = _textClassificationLabelList;
+    m_textClassificationLabelListHasBeenSet = true;
+}
+
+bool FilterLabelInfo::TextClassificationLabelListHasBeenSet() const
+{
+    return m_textClassificationLabelListHasBeenSet;
+}
+
+string FilterLabelInfo::GetRowText() const
+{
+    return m_rowText;
+}
+
+void FilterLabelInfo::SetRowText(const string& _rowText)
+{
+    m_rowText = _rowText;
+    m_rowTextHasBeenSet = true;
+}
+
+bool FilterLabelInfo::RowTextHasBeenSet() const
+{
+    return m_rowTextHasBeenSet;
+}
+
+bool FilterLabelInfo::GetContentOmit() const
+{
+    return m_contentOmit;
+}
+
+void FilterLabelInfo::SetContentOmit(const bool& _contentOmit)
+{
+    m_contentOmit = _contentOmit;
+    m_contentOmitHasBeenSet = true;
+}
+
+bool FilterLabelInfo::ContentOmitHasBeenSet() const
+{
+    return m_contentOmitHasBeenSet;
 }
 

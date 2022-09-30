@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例Id
-                     * @return InstanceId 实例Id
+                     * 获取实例Id。
+                     * @return InstanceId 实例Id。
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例Id
-                     * @param InstanceId 实例Id
+                     * 设置实例Id。
+                     * @param InstanceId 实例Id。
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取开始时间
-                     * @return BeginTime 开始时间
+                     * 获取开始时间。
+                     * @return BeginTime 开始时间。
                      */
                     std::string GetBeginTime() const;
 
                     /**
-                     * 设置开始时间
-                     * @param BeginTime 开始时间
+                     * 设置开始时间。
+                     * @param BeginTime 开始时间。
                      */
                     void SetBeginTime(const std::string& _beginTime);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool BeginTimeHasBeenSet() const;
 
                     /**
-                     * 获取结束时间
-                     * @return EndTime 结束时间
+                     * 获取结束时间。
+                     * @return EndTime 结束时间。
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置结束时间
-                     * @param EndTime 结束时间
+                     * 设置结束时间。
+                     * @param EndTime 结束时间。
                      */
                     void SetEndTime(const std::string& _endTime);
 
@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取慢查询阈值（单位：微秒）
-                     * @return MinQueryTime 慢查询阈值（单位：微秒）
+                     * 获取慢查询平均执行时间阈值（单位：微秒）。
+                     * @return MinQueryTime 慢查询平均执行时间阈值（单位：微秒）。
                      */
                     int64_t GetMinQueryTime() const;
 
                     /**
-                     * 设置慢查询阈值（单位：微秒）
-                     * @param MinQueryTime 慢查询阈值（单位：微秒）
+                     * 设置慢查询平均执行时间阈值（单位：微秒）。
+                     * @param MinQueryTime 慢查询平均执行时间阈值（单位：微秒）。
                      */
                     void SetMinQueryTime(const int64_t& _minQueryTime);
 
@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool MinQueryTimeHasBeenSet() const;
 
                     /**
-                     * 获取页面大小
-                     * @return Limit 页面大小
+                     * 获取每个页面展示的慢查询条数，默认值为20。
+                     * @return Limit 每个页面展示的慢查询条数，默认值为20。
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置页面大小
-                     * @param Limit 页面大小
+                     * 设置每个页面展示的慢查询条数，默认值为20。
+                     * @param Limit 每个页面展示的慢查询条数，默认值为20。
                      */
                     void SetLimit(const int64_t& _limit);
 
@@ -133,14 +133,14 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取偏移量，取Limit整数倍
-                     * @return Offset 偏移量，取Limit整数倍
+                     * 获取慢查询条数的偏移量，取Limit整数倍。
+                     * @return Offset 慢查询条数的偏移量，取Limit整数倍。
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量，取Limit整数倍
-                     * @param Offset 偏移量，取Limit整数倍
+                     * 设置慢查询条数的偏移量，取Limit整数倍。
+                     * @param Offset 慢查询条数的偏移量，取Limit整数倍。
                      */
                     void SetOffset(const int64_t& _offset);
 
@@ -150,43 +150,67 @@ namespace TencentCloud
                      */
                     bool OffsetHasBeenSet() const;
 
+                    /**
+                     * 获取节点所属角色。<ul><li>master：主节点。</li><li>slave：从节点。</li></ul>
+                     * @return Role 节点所属角色。<ul><li>master：主节点。</li><li>slave：从节点。</li></ul>
+                     */
+                    std::string GetRole() const;
+
+                    /**
+                     * 设置节点所属角色。<ul><li>master：主节点。</li><li>slave：从节点。</li></ul>
+                     * @param Role 节点所属角色。<ul><li>master：主节点。</li><li>slave：从节点。</li></ul>
+                     */
+                    void SetRole(const std::string& _role);
+
+                    /**
+                     * 判断参数 Role 是否已赋值
+                     * @return Role 是否已赋值
+                     */
+                    bool RoleHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 实例Id
+                     * 实例Id。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 开始时间
+                     * 开始时间。
                      */
                     std::string m_beginTime;
                     bool m_beginTimeHasBeenSet;
 
                     /**
-                     * 结束时间
+                     * 结束时间。
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 慢查询阈值（单位：微秒）
+                     * 慢查询平均执行时间阈值（单位：微秒）。
                      */
                     int64_t m_minQueryTime;
                     bool m_minQueryTimeHasBeenSet;
 
                     /**
-                     * 页面大小
+                     * 每个页面展示的慢查询条数，默认值为20。
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 偏移量，取Limit整数倍
+                     * 慢查询条数的偏移量，取Limit整数倍。
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
+
+                    /**
+                     * 节点所属角色。<ul><li>master：主节点。</li><li>slave：从节点。</li></ul>
+                     */
+                    std::string m_role;
+                    bool m_roleHasBeenSet;
 
                 };
             }

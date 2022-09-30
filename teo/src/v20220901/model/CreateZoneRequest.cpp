@@ -26,7 +26,8 @@ CreateZoneRequest::CreateZoneRequest() :
     m_zoneNameHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_jumpStartHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_allowDuplicatesHasBeenSet(false)
 {
 }
 
@@ -74,6 +75,14 @@ string CreateZoneRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_allowDuplicatesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AllowDuplicates";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_allowDuplicates, allocator);
     }
 
 
@@ -146,6 +155,22 @@ void CreateZoneRequest::SetTags(const vector<Tag>& _tags)
 bool CreateZoneRequest::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+bool CreateZoneRequest::GetAllowDuplicates() const
+{
+    return m_allowDuplicates;
+}
+
+void CreateZoneRequest::SetAllowDuplicates(const bool& _allowDuplicates)
+{
+    m_allowDuplicates = _allowDuplicates;
+    m_allowDuplicatesHasBeenSet = true;
+}
+
+bool CreateZoneRequest::AllowDuplicatesHasBeenSet() const
+{
+    return m_allowDuplicatesHasBeenSet;
 }
 
 

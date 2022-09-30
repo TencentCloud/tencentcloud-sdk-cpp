@@ -24,7 +24,8 @@ ApproveUser::ApproveUser() :
     m_uinHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_descHasBeenSet(false),
-    m_nickHasBeenSet(false)
+    m_nickHasBeenSet(false),
+    m_scfHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,23 @@ CoreInternalOutcome ApproveUser::Deserialize(const rapidjson::Value &value)
         m_nickHasBeenSet = true;
     }
 
+    if (value.HasMember("Scf") && !value["Scf"].IsNull())
+    {
+        if (!value["Scf"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApproveUser.Scf` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_scf.Deserialize(value["Scf"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_scfHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +128,15 @@ void ApproveUser::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "Nick";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_nick.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_scfHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Scf";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_scf.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -177,5 +204,21 @@ void ApproveUser::SetNick(const string& _nick)
 bool ApproveUser::NickHasBeenSet() const
 {
     return m_nickHasBeenSet;
+}
+
+Scf ApproveUser::GetScf() const
+{
+    return m_scf;
+}
+
+void ApproveUser::SetScf(const Scf& _scf)
+{
+    m_scf = _scf;
+    m_scfHasBeenSet = true;
+}
+
+bool ApproveUser::ScfHasBeenSet() const
+{
+    return m_scfHasBeenSet;
 }
 

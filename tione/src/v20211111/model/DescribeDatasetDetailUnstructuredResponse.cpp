@@ -27,7 +27,8 @@ DescribeDatasetDetailUnstructuredResponse::DescribeDatasetDetailUnstructuredResp
     m_annotatedTotalCountHasBeenSet(false),
     m_nonAnnotatedTotalCountHasBeenSet(false),
     m_filterTotalCountHasBeenSet(false),
-    m_filterLabelListHasBeenSet(false)
+    m_filterLabelListHasBeenSet(false),
+    m_rowTextsHasBeenSet(false)
 {
 }
 
@@ -115,6 +116,19 @@ CoreInternalOutcome DescribeDatasetDetailUnstructuredResponse::Deserialize(const
         m_filterLabelListHasBeenSet = true;
     }
 
+    if (rsp.HasMember("RowTexts") && !rsp["RowTexts"].IsNull())
+    {
+        if (!rsp["RowTexts"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `RowTexts` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["RowTexts"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_rowTexts.push_back((*itr).GetString());
+        }
+        m_rowTextsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -161,6 +175,19 @@ string DescribeDatasetDetailUnstructuredResponse::ToJsonString() const
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_rowTextsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RowTexts";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_rowTexts.begin(); itr != m_rowTexts.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
@@ -214,6 +241,16 @@ vector<FilterLabelInfo> DescribeDatasetDetailUnstructuredResponse::GetFilterLabe
 bool DescribeDatasetDetailUnstructuredResponse::FilterLabelListHasBeenSet() const
 {
     return m_filterLabelListHasBeenSet;
+}
+
+vector<string> DescribeDatasetDetailUnstructuredResponse::GetRowTexts() const
+{
+    return m_rowTexts;
+}
+
+bool DescribeDatasetDetailUnstructuredResponse::RowTextsHasBeenSet() const
+{
+    return m_rowTextsHasBeenSet;
 }
 
 

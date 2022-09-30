@@ -281,6 +281,24 @@ ANNOTATION_FORMAT_FILE，文件目录结构
                      */
                     bool IsSchemaExistedHasBeenSet() const;
 
+                    /**
+                     * 获取导入文件粒度，按行或者按文件
+                     * @return ContentType 导入文件粒度，按行或者按文件
+                     */
+                    std::string GetContentType() const;
+
+                    /**
+                     * 设置导入文件粒度，按行或者按文件
+                     * @param ContentType 导入文件粒度，按行或者按文件
+                     */
+                    void SetContentType(const std::string& _contentType);
+
+                    /**
+                     * 判断参数 ContentType 是否已赋值
+                     * @return ContentType 是否已赋值
+                     */
+                    bool ContentTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -356,6 +374,12 @@ ANNOTATION_FORMAT_FILE，文件目录结构
                      */
                     bool m_isSchemaExisted;
                     bool m_isSchemaExistedHasBeenSet;
+
+                    /**
+                     * 导入文件粒度，按行或者按文件
+                     */
+                    std::string m_contentType;
+                    bool m_contentTypeHasBeenSet;
 
                 };
             }

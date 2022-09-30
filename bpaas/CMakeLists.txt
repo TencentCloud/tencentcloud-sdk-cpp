@@ -20,24 +20,28 @@ set(bpaas_public_header
 
 set(bpaas_public_header_model
   include/tencentcloud/bpaas/v20181217/model/StatusNode.h
+  include/tencentcloud/bpaas/v20181217/model/Scf.h
   include/tencentcloud/bpaas/v20181217/model/ApproveOpinion.h
   include/tencentcloud/bpaas/v20181217/model/OutApproveBpaasApplicationResponse.h
   include/tencentcloud/bpaas/v20181217/model/GetBpaasApproveDetailRequest.h
   include/tencentcloud/bpaas/v20181217/model/ApproveUser.h
   include/tencentcloud/bpaas/v20181217/model/GetBpaasApproveDetailResponse.h
   include/tencentcloud/bpaas/v20181217/model/OutApproveBpaasApplicationRequest.h
+  include/tencentcloud/bpaas/v20181217/model/ScfParam.h
   include/tencentcloud/bpaas/v20181217/model/ApplyParam.h
   )
 
 set(bpaas_src
   src/v20181217/BpaasClient.cpp
   src/v20181217/model/StatusNode.cpp
+  src/v20181217/model/Scf.cpp
   src/v20181217/model/ApproveOpinion.cpp
   src/v20181217/model/OutApproveBpaasApplicationResponse.cpp
   src/v20181217/model/GetBpaasApproveDetailRequest.cpp
   src/v20181217/model/ApproveUser.cpp
   src/v20181217/model/GetBpaasApproveDetailResponse.cpp
   src/v20181217/model/OutApproveBpaasApplicationRequest.cpp
+  src/v20181217/model/ScfParam.cpp
   src/v20181217/model/ApplyParam.cpp
   )
 

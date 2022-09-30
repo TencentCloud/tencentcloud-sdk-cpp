@@ -28,7 +28,8 @@ DescribeDatasetDetailUnstructuredRequest::DescribeDatasetDetailUnstructuredReque
     m_limitHasBeenSet(false),
     m_labelListHasBeenSet(false),
     m_annotationStatusHasBeenSet(false),
-    m_datasetIdsHasBeenSet(false)
+    m_datasetIdsHasBeenSet(false),
+    m_textClassificationLabelsHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,21 @@ string DescribeDatasetDetailUnstructuredRequest::ToJsonString() const
         for (auto itr = m_datasetIds.begin(); itr != m_datasetIds.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_textClassificationLabelsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TextClassificationLabels";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_textClassificationLabels.begin(); itr != m_textClassificationLabels.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
     }
 
@@ -199,6 +215,22 @@ void DescribeDatasetDetailUnstructuredRequest::SetDatasetIds(const vector<string
 bool DescribeDatasetDetailUnstructuredRequest::DatasetIdsHasBeenSet() const
 {
     return m_datasetIdsHasBeenSet;
+}
+
+vector<TextLabelDistributionInfo> DescribeDatasetDetailUnstructuredRequest::GetTextClassificationLabels() const
+{
+    return m_textClassificationLabels;
+}
+
+void DescribeDatasetDetailUnstructuredRequest::SetTextClassificationLabels(const vector<TextLabelDistributionInfo>& _textClassificationLabels)
+{
+    m_textClassificationLabels = _textClassificationLabels;
+    m_textClassificationLabelsHasBeenSet = true;
+}
+
+bool DescribeDatasetDetailUnstructuredRequest::TextClassificationLabelsHasBeenSet() const
+{
+    return m_textClassificationLabelsHasBeenSet;
 }
 
 

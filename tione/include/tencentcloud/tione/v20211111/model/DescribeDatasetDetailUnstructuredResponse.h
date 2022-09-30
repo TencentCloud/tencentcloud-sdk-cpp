@@ -100,6 +100,20 @@ namespace TencentCloud
                      */
                     bool FilterLabelListHasBeenSet() const;
 
+                    /**
+                     * 获取数据文本行，默认返回前1000行
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RowTexts 数据文本行，默认返回前1000行
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> GetRowTexts() const;
+
+                    /**
+                     * 判断参数 RowTexts 是否已赋值
+                     * @return RowTexts 是否已赋值
+                     */
+                    bool RowTextsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -129,6 +143,13 @@ namespace TencentCloud
                      */
                     std::vector<FilterLabelInfo> m_filterLabelList;
                     bool m_filterLabelListHasBeenSet;
+
+                    /**
+                     * 数据文本行，默认返回前1000行
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_rowTexts;
+                    bool m_rowTextsHasBeenSet;
 
                 };
             }

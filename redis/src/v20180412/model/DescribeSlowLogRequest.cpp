@@ -28,7 +28,8 @@ DescribeSlowLogRequest::DescribeSlowLogRequest() :
     m_endTimeHasBeenSet(false),
     m_minQueryTimeHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_offsetHasBeenSet(false)
+    m_offsetHasBeenSet(false),
+    m_roleHasBeenSet(false)
 {
 }
 
@@ -85,6 +86,14 @@ string DescribeSlowLogRequest::ToJsonString() const
         string key = "Offset";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_roleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Role";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_role.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -189,6 +198,22 @@ void DescribeSlowLogRequest::SetOffset(const int64_t& _offset)
 bool DescribeSlowLogRequest::OffsetHasBeenSet() const
 {
     return m_offsetHasBeenSet;
+}
+
+string DescribeSlowLogRequest::GetRole() const
+{
+    return m_role;
+}
+
+void DescribeSlowLogRequest::SetRole(const string& _role)
+{
+    m_role = _role;
+    m_roleHasBeenSet = true;
+}
+
+bool DescribeSlowLogRequest::RoleHasBeenSet() const
+{
+    return m_roleHasBeenSet;
 }
 
 

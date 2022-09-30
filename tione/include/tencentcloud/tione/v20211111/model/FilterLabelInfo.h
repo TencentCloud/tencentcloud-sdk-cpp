@@ -331,6 +331,94 @@ STRUCTURE：智能结构化
                      */
                     bool OcrLabelsHasBeenSet() const;
 
+                    /**
+                     * 获取OCR场景标签信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OcrLabelInfo OCR场景标签信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetOcrLabelInfo() const;
+
+                    /**
+                     * 设置OCR场景标签信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param OcrLabelInfo OCR场景标签信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetOcrLabelInfo(const std::string& _ocrLabelInfo);
+
+                    /**
+                     * 判断参数 OcrLabelInfo 是否已赋值
+                     * @return OcrLabelInfo 是否已赋值
+                     */
+                    bool OcrLabelInfoHasBeenSet() const;
+
+                    /**
+                     * 获取文本分类场景标签结果，内容是json结构
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TextClassificationLabelList 文本分类场景标签结果，内容是json结构
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetTextClassificationLabelList() const;
+
+                    /**
+                     * 设置文本分类场景标签结果，内容是json结构
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TextClassificationLabelList 文本分类场景标签结果，内容是json结构
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTextClassificationLabelList(const std::string& _textClassificationLabelList);
+
+                    /**
+                     * 判断参数 TextClassificationLabelList 是否已赋值
+                     * @return TextClassificationLabelList 是否已赋值
+                     */
+                    bool TextClassificationLabelListHasBeenSet() const;
+
+                    /**
+                     * 获取文本内容，返回50字符
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RowText 文本内容，返回50字符
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetRowText() const;
+
+                    /**
+                     * 设置文本内容，返回50字符
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RowText 文本内容，返回50字符
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRowText(const std::string& _rowText);
+
+                    /**
+                     * 判断参数 RowText 是否已赋值
+                     * @return RowText 是否已赋值
+                     */
+                    bool RowTextHasBeenSet() const;
+
+                    /**
+                     * 获取文本内容是否完全返回
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ContentOmit 文本内容是否完全返回
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetContentOmit() const;
+
+                    /**
+                     * 设置文本内容是否完全返回
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ContentOmit 文本内容是否完全返回
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetContentOmit(const bool& _contentOmit);
+
+                    /**
+                     * 判断参数 ContentOmit 是否已赋值
+                     * @return ContentOmit 是否已赋值
+                     */
+                    bool ContentOmitHasBeenSet() const;
+
                 private:
 
                     /**
@@ -422,6 +510,34 @@ STRUCTURE：智能结构化
                      */
                     std::vector<OcrLabelInfo> m_ocrLabels;
                     bool m_ocrLabelsHasBeenSet;
+
+                    /**
+                     * OCR场景标签信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_ocrLabelInfo;
+                    bool m_ocrLabelInfoHasBeenSet;
+
+                    /**
+                     * 文本分类场景标签结果，内容是json结构
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_textClassificationLabelList;
+                    bool m_textClassificationLabelListHasBeenSet;
+
+                    /**
+                     * 文本内容，返回50字符
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_rowText;
+                    bool m_rowTextHasBeenSet;
+
+                    /**
+                     * 文本内容是否完全返回
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_contentOmit;
+                    bool m_contentOmitHasBeenSet;
 
                 };
             }

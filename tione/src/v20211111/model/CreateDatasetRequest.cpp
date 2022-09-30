@@ -32,7 +32,8 @@ CreateDatasetRequest::CreateDatasetRequest() :
     m_annotationTypeHasBeenSet(false),
     m_annotationFormatHasBeenSet(false),
     m_schemaInfosHasBeenSet(false),
-    m_isSchemaExistedHasBeenSet(false)
+    m_isSchemaExistedHasBeenSet(false),
+    m_contentTypeHasBeenSet(false)
 {
 }
 
@@ -137,6 +138,14 @@ string CreateDatasetRequest::ToJsonString() const
         string key = "IsSchemaExisted";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_isSchemaExisted, allocator);
+    }
+
+    if (m_contentTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ContentType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_contentType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -305,6 +314,22 @@ void CreateDatasetRequest::SetIsSchemaExisted(const bool& _isSchemaExisted)
 bool CreateDatasetRequest::IsSchemaExistedHasBeenSet() const
 {
     return m_isSchemaExistedHasBeenSet;
+}
+
+string CreateDatasetRequest::GetContentType() const
+{
+    return m_contentType;
+}
+
+void CreateDatasetRequest::SetContentType(const string& _contentType)
+{
+    m_contentType = _contentType;
+    m_contentTypeHasBeenSet = true;
+}
+
+bool CreateDatasetRequest::ContentTypeHasBeenSet() const
+{
+    return m_contentTypeHasBeenSet;
 }
 
 

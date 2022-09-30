@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tione/v20211111/model/TextLabelDistributionInfo.h>
 
 
 namespace TencentCloud
@@ -166,6 +167,24 @@ STATUS_ALL，全部
                      */
                     bool DatasetIdsHasBeenSet() const;
 
+                    /**
+                     * 获取要筛选的文本分类场景标签信息
+                     * @return TextClassificationLabels 要筛选的文本分类场景标签信息
+                     */
+                    std::vector<TextLabelDistributionInfo> GetTextClassificationLabels() const;
+
+                    /**
+                     * 设置要筛选的文本分类场景标签信息
+                     * @param TextClassificationLabels 要筛选的文本分类场景标签信息
+                     */
+                    void SetTextClassificationLabels(const std::vector<TextLabelDistributionInfo>& _textClassificationLabels);
+
+                    /**
+                     * 判断参数 TextClassificationLabels 是否已赋值
+                     * @return TextClassificationLabels 是否已赋值
+                     */
+                    bool TextClassificationLabelsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -207,6 +226,12 @@ STATUS_ALL，全部
                      */
                     std::vector<std::string> m_datasetIds;
                     bool m_datasetIdsHasBeenSet;
+
+                    /**
+                     * 要筛选的文本分类场景标签信息
+                     */
+                    std::vector<TextLabelDistributionInfo> m_textClassificationLabels;
+                    bool m_textClassificationLabelsHasBeenSet;
 
                 };
             }

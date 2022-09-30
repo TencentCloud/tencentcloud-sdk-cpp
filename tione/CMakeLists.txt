@@ -124,6 +124,7 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/DescribeBatchTaskInstancesResponse.h
   include/tencentcloud/tione/v20211111/model/ResourceConfigInfo.h
   include/tencentcloud/tione/v20211111/model/Spec.h
+  include/tencentcloud/tione/v20211111/model/TextLabelDistributionInfo.h
   include/tencentcloud/tione/v20211111/model/TrainingMetric.h
   include/tencentcloud/tione/v20211111/model/Tag.h
   include/tencentcloud/tione/v20211111/model/DescribeDatasetsRequest.h
@@ -139,6 +140,7 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/InferTemplateGroup.h
   include/tencentcloud/tione/v20211111/model/DatasetInfo.h
   include/tencentcloud/tione/v20211111/model/TagFilter.h
+  include/tencentcloud/tione/v20211111/model/TextLabelDistributionDetailInfoSecondClass.h
   include/tencentcloud/tione/v20211111/model/BatchTaskSetItem.h
   include/tencentcloud/tione/v20211111/model/ImageInfo.h
   include/tencentcloud/tione/v20211111/model/CreateTrainingTaskResponse.h
@@ -148,15 +150,18 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/Instance.h
   include/tencentcloud/tione/v20211111/model/DescribeBillingSpecsResponse.h
   include/tencentcloud/tione/v20211111/model/DeleteTrainingTaskResponse.h
+  include/tencentcloud/tione/v20211111/model/TextLabelDistributionDetailInfoFifthClass.h
   include/tencentcloud/tione/v20211111/model/BatchTaskInstance.h
   include/tencentcloud/tione/v20211111/model/CreateBatchTaskResponse.h
   include/tencentcloud/tione/v20211111/model/DatasetGroup.h
   include/tencentcloud/tione/v20211111/model/DataSetConfig.h
+  include/tencentcloud/tione/v20211111/model/TextLabelDistributionDetailInfoFourthClass.h
   include/tencentcloud/tione/v20211111/model/TrainingDataPoint.h
   include/tencentcloud/tione/v20211111/model/DescribeLatestTrainingMetricsRequest.h
   include/tencentcloud/tione/v20211111/model/ResourceInfo.h
   include/tencentcloud/tione/v20211111/model/GroupResource.h
   include/tencentcloud/tione/v20211111/model/DeleteTrainingModelRequest.h
+  include/tencentcloud/tione/v20211111/model/TextLabelDistributionDetailInfoThirdClass.h
   include/tencentcloud/tione/v20211111/model/DeleteTrainingTaskRequest.h
   include/tencentcloud/tione/v20211111/model/Filter.h
   include/tencentcloud/tione/v20211111/model/DeleteBatchTaskResponse.h
@@ -201,6 +206,7 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/DeleteTrainingModelVersionRequest.h
   include/tencentcloud/tione/v20211111/model/DescribeBillingSpecsPriceResponse.h
   include/tencentcloud/tione/v20211111/model/DescribeTrainingModelVersionResponse.h
+  include/tencentcloud/tione/v20211111/model/TextLabelDistributionDetailInfoFirstClass.h
   include/tencentcloud/tione/v20211111/model/StopTrainingTaskRequest.h
   include/tencentcloud/tione/v20211111/model/LogConfig.h
   include/tencentcloud/tione/v20211111/model/StartTrainingTaskResponse.h
@@ -313,6 +319,7 @@ set(tione_src
   src/v20211111/model/DescribeBatchTaskInstancesResponse.cpp
   src/v20211111/model/ResourceConfigInfo.cpp
   src/v20211111/model/Spec.cpp
+  src/v20211111/model/TextLabelDistributionInfo.cpp
   src/v20211111/model/TrainingMetric.cpp
   src/v20211111/model/Tag.cpp
   src/v20211111/model/DescribeDatasetsRequest.cpp
@@ -328,6 +335,7 @@ set(tione_src
   src/v20211111/model/InferTemplateGroup.cpp
   src/v20211111/model/DatasetInfo.cpp
   src/v20211111/model/TagFilter.cpp
+  src/v20211111/model/TextLabelDistributionDetailInfoSecondClass.cpp
   src/v20211111/model/BatchTaskSetItem.cpp
   src/v20211111/model/ImageInfo.cpp
   src/v20211111/model/CreateTrainingTaskResponse.cpp
@@ -337,15 +345,18 @@ set(tione_src
   src/v20211111/model/Instance.cpp
   src/v20211111/model/DescribeBillingSpecsResponse.cpp
   src/v20211111/model/DeleteTrainingTaskResponse.cpp
+  src/v20211111/model/TextLabelDistributionDetailInfoFifthClass.cpp
   src/v20211111/model/BatchTaskInstance.cpp
   src/v20211111/model/CreateBatchTaskResponse.cpp
   src/v20211111/model/DatasetGroup.cpp
   src/v20211111/model/DataSetConfig.cpp
+  src/v20211111/model/TextLabelDistributionDetailInfoFourthClass.cpp
   src/v20211111/model/TrainingDataPoint.cpp
   src/v20211111/model/DescribeLatestTrainingMetricsRequest.cpp
   src/v20211111/model/ResourceInfo.cpp
   src/v20211111/model/GroupResource.cpp
   src/v20211111/model/DeleteTrainingModelRequest.cpp
+  src/v20211111/model/TextLabelDistributionDetailInfoThirdClass.cpp
   src/v20211111/model/DeleteTrainingTaskRequest.cpp
   src/v20211111/model/Filter.cpp
   src/v20211111/model/DeleteBatchTaskResponse.cpp
@@ -390,6 +401,7 @@ set(tione_src
   src/v20211111/model/DeleteTrainingModelVersionRequest.cpp
   src/v20211111/model/DescribeBillingSpecsPriceResponse.cpp
   src/v20211111/model/DescribeTrainingModelVersionResponse.cpp
+  src/v20211111/model/TextLabelDistributionDetailInfoFirstClass.cpp
   src/v20211111/model/StopTrainingTaskRequest.cpp
   src/v20211111/model/LogConfig.cpp
   src/v20211111/model/StartTrainingTaskResponse.cpp

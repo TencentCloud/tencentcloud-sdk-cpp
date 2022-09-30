@@ -97,6 +97,32 @@ namespace TencentCloud
                      */
                     bool ServerCertInfoHasBeenSet() const;
 
+                    /**
+                     * 获取托管类型，取值有：
+<li>apply：托管EO；</li>
+<li>none：不托管EO；</li>不填，默认取值为apply。
+                     * @return ApplyType 托管类型，取值有：
+<li>apply：托管EO；</li>
+<li>none：不托管EO；</li>不填，默认取值为apply。
+                     */
+                    std::string GetApplyType() const;
+
+                    /**
+                     * 设置托管类型，取值有：
+<li>apply：托管EO；</li>
+<li>none：不托管EO；</li>不填，默认取值为apply。
+                     * @param ApplyType 托管类型，取值有：
+<li>apply：托管EO；</li>
+<li>none：不托管EO；</li>不填，默认取值为apply。
+                     */
+                    void SetApplyType(const std::string& _applyType);
+
+                    /**
+                     * 判断参数 ApplyType 是否已赋值
+                     * @return ApplyType 是否已赋值
+                     */
+                    bool ApplyTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -116,6 +142,14 @@ namespace TencentCloud
                      */
                     std::vector<ServerCertInfo> m_serverCertInfo;
                     bool m_serverCertInfoHasBeenSet;
+
+                    /**
+                     * 托管类型，取值有：
+<li>apply：托管EO；</li>
+<li>none：不托管EO；</li>不填，默认取值为apply。
+                     */
+                    std::string m_applyType;
+                    bool m_applyTypeHasBeenSet;
 
                 };
             }

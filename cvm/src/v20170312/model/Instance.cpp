@@ -56,7 +56,8 @@ Instance::Instance() :
     m_rdmaIpAddressesHasBeenSet(false),
     m_isolatedSourceHasBeenSet(false),
     m_gPUInfoHasBeenSet(false),
-    m_licenseTypeHasBeenSet(false)
+    m_licenseTypeHasBeenSet(false),
+    m_disableApiTerminationHasBeenSet(false)
 {
 }
 
@@ -502,6 +503,16 @@ CoreInternalOutcome Instance::Deserialize(const rapidjson::Value &value)
         m_licenseTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("DisableApiTermination") && !value["DisableApiTermination"].IsNull())
+    {
+        if (!value["DisableApiTermination"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `Instance.DisableApiTermination` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_disableApiTermination = value["DisableApiTermination"].GetBool();
+        m_disableApiTerminationHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -840,6 +851,14 @@ void Instance::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "LicenseType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_licenseType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_disableApiTerminationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DisableApiTermination";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_disableApiTermination, allocator);
     }
 
 }
@@ -1419,5 +1438,21 @@ void Instance::SetLicenseType(const string& _licenseType)
 bool Instance::LicenseTypeHasBeenSet() const
 {
     return m_licenseTypeHasBeenSet;
+}
+
+bool Instance::GetDisableApiTermination() const
+{
+    return m_disableApiTermination;
+}
+
+void Instance::SetDisableApiTermination(const bool& _disableApiTermination)
+{
+    m_disableApiTermination = _disableApiTermination;
+    m_disableApiTerminationHasBeenSet = true;
+}
+
+bool Instance::DisableApiTerminationHasBeenSet() const
+{
+    return m_disableApiTerminationHasBeenSet;
 }
 

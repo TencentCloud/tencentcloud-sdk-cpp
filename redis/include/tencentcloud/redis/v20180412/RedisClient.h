@@ -884,7 +884,7 @@ namespace TencentCloud
                 DescribeReplicationGroupOutcomeCallable DescribeReplicationGroupCallable(const Model::DescribeReplicationGroupRequest& request);
 
                 /**
-                 *查询实例慢查询记录
+                 *本接口（DescribeSlowLog）查询实例慢查询记录。
                  * @param req DescribeSlowLogRequest
                  * @return DescribeSlowLogOutcome
                  */

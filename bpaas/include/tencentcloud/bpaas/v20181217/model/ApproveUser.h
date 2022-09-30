@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/bpaas/v20181217/model/Scf.h>
 
 
 namespace TencentCloud
@@ -126,6 +127,28 @@ namespace TencentCloud
                      */
                     bool NickHasBeenSet() const;
 
+                    /**
+                     * 获取动态获取Scf
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Scf 动态获取Scf
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    Scf GetScf() const;
+
+                    /**
+                     * 设置动态获取Scf
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Scf 动态获取Scf
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetScf(const Scf& _scf);
+
+                    /**
+                     * 判断参数 Scf 是否已赋值
+                     * @return Scf 是否已赋值
+                     */
+                    bool ScfHasBeenSet() const;
+
                 private:
 
                     /**
@@ -153,6 +176,13 @@ namespace TencentCloud
                      */
                     std::string m_nick;
                     bool m_nickHasBeenSet;
+
+                    /**
+                     * 动态获取Scf
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    Scf m_scf;
+                    bool m_scfHasBeenSet;
 
                 };
             }

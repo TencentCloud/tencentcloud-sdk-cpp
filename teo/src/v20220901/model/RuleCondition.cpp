@@ -23,7 +23,8 @@ using namespace std;
 RuleCondition::RuleCondition() :
     m_operatorHasBeenSet(false),
     m_targetHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+    m_valuesHasBeenSet(false),
+    m_ignoreCaseHasBeenSet(false)
 {
 }
 
@@ -65,6 +66,16 @@ CoreInternalOutcome RuleCondition::Deserialize(const rapidjson::Value &value)
         m_valuesHasBeenSet = true;
     }
 
+    if (value.HasMember("IgnoreCase") && !value["IgnoreCase"].IsNull())
+    {
+        if (!value["IgnoreCase"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleCondition.IgnoreCase` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_ignoreCase = value["IgnoreCase"].GetBool();
+        m_ignoreCaseHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -99,6 +110,14 @@ void RuleCondition::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_ignoreCaseHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IgnoreCase";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_ignoreCase, allocator);
     }
 
 }
@@ -150,5 +169,21 @@ void RuleCondition::SetValues(const vector<string>& _values)
 bool RuleCondition::ValuesHasBeenSet() const
 {
     return m_valuesHasBeenSet;
+}
+
+bool RuleCondition::GetIgnoreCase() const
+{
+    return m_ignoreCase;
+}
+
+void RuleCondition::SetIgnoreCase(const bool& _ignoreCase)
+{
+    m_ignoreCase = _ignoreCase;
+    m_ignoreCaseHasBeenSet = true;
+}
+
+bool RuleCondition::IgnoreCaseHasBeenSet() const
+{
+    return m_ignoreCaseHasBeenSet;
 }
 
