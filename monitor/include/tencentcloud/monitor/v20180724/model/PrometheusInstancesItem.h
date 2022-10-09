@@ -814,6 +814,28 @@ namespace TencentCloud
                      */
                     bool RecordingRuleLimitHasBeenSet() const;
 
+                    /**
+                     * 获取迁移状态，0-不在迁移中，1-迁移中、原实例，2-迁移中、目标实例
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MigrationType 迁移状态，0-不在迁移中，1-迁移中、原实例，2-迁移中、目标实例
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetMigrationType() const;
+
+                    /**
+                     * 设置迁移状态，0-不在迁移中，1-迁移中、原实例，2-迁移中、目标实例
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param MigrationType 迁移状态，0-不在迁移中，1-迁移中、原实例，2-迁移中、目标实例
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMigrationType(const int64_t& _migrationType);
+
+                    /**
+                     * 判断参数 MigrationType 是否已赋值
+                     * @return MigrationType 是否已赋值
+                     */
+                    bool MigrationTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1050,6 +1072,13 @@ namespace TencentCloud
                      */
                     int64_t m_recordingRuleLimit;
                     bool m_recordingRuleLimitHasBeenSet;
+
+                    /**
+                     * 迁移状态，0-不在迁移中，1-迁移中、原实例，2-迁移中、目标实例
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_migrationType;
+                    bool m_migrationTypeHasBeenSet;
 
                 };
             }

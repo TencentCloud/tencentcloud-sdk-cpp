@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取排序方式  desc  asc
-                     * @return Sort 排序方式  desc  asc
+                     * 获取排序方式  desc  asc（必填）
+                     * @return Sort 排序方式  desc  asc（必填）
                      */
                     std::string GetSort() const;
 
                     /**
-                     * 设置排序方式  desc  asc
-                     * @param Sort 排序方式  desc  asc
+                     * 设置排序方式  desc  asc（必填）
+                     * @param Sort 排序方式  desc  asc（必填）
                      */
                     void SetSort(const std::string& _sort);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool SortHasBeenSet() const;
 
                     /**
-                     * 获取searchlog  histogram
-                     * @return ActionType searchlog  histogram
+                     * 获取searchlog  histogram（必填）
+                     * @return ActionType searchlog  histogram（必填）
                      */
                     std::string GetActionType() const;
 
                     /**
-                     * 设置searchlog  histogram
-                     * @param ActionType searchlog  histogram
+                     * 设置searchlog  histogram（必填）
+                     * @param ActionType searchlog  histogram（必填）
                      */
                     void SetActionType(const std::string& _actionType);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool ActionTypeHasBeenSet() const;
 
                     /**
-                     * 获取项目ID
-                     * @return ID 项目ID
+                     * 获取项目ID（必填）
+                     * @return ID 项目ID（必填）
                      */
                     int64_t GetID() const;
 
                     /**
-                     * 设置项目ID
-                     * @param ID 项目ID
+                     * 设置项目ID（必填）
+                     * @param ID 项目ID（必填）
                      */
                     void SetID(const int64_t& _iD);
 
@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool IDHasBeenSet() const;
 
                     /**
-                     * 获取开始时间
-                     * @return StartTime 开始时间
+                     * 获取开始时间（必填）
+                     * @return StartTime 开始时间（必填）
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置开始时间
-                     * @param StartTime 开始时间
+                     * 设置开始时间（必填）
+                     * @param StartTime 开始时间（必填）
                      */
                     void SetStartTime(const std::string& _startTime);
 
@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取单次查询返回的原始日志条数，最大值为100
-                     * @return Limit 单次查询返回的原始日志条数，最大值为100
+                     * 获取单次查询返回的原始日志条数，最大值为100（必填）
+                     * @return Limit 单次查询返回的原始日志条数，最大值为100（必填）
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置单次查询返回的原始日志条数，最大值为100
-                     * @param Limit 单次查询返回的原始日志条数，最大值为100
+                     * 设置单次查询返回的原始日志条数，最大值为100（必填）
+                     * @param Limit 单次查询返回的原始日志条数，最大值为100（必填）
                      */
                     void SetLimit(const int64_t& _limit);
 
@@ -151,14 +151,14 @@ namespace TencentCloud
                     bool ContextHasBeenSet() const;
 
                     /**
-                     * 获取查询语句，参考控制台请求参数，语句长度最大为4096
-                     * @return Query 查询语句，参考控制台请求参数，语句长度最大为4096
+                     * 获取查询语句，参考控制台请求参数，语句长度最大为4096（必填）
+                     * @return Query 查询语句，参考控制台请求参数，语句长度最大为4096（必填）
                      */
                     std::string GetQuery() const;
 
                     /**
-                     * 设置查询语句，参考控制台请求参数，语句长度最大为4096
-                     * @param Query 查询语句，参考控制台请求参数，语句长度最大为4096
+                     * 设置查询语句，参考控制台请求参数，语句长度最大为4096（必填）
+                     * @param Query 查询语句，参考控制台请求参数，语句长度最大为4096（必填）
                      */
                     void SetQuery(const std::string& _query);
 
@@ -169,14 +169,14 @@ namespace TencentCloud
                     bool QueryHasBeenSet() const;
 
                     /**
-                     * 获取结束时间
-                     * @return EndTime 结束时间
+                     * 获取结束时间（必填）
+                     * @return EndTime 结束时间（必填）
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置结束时间
-                     * @param EndTime 结束时间
+                     * 设置结束时间（必填）
+                     * @param EndTime 结束时间（必填）
                      */
                     void SetEndTime(const std::string& _endTime);
 
@@ -189,31 +189,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 排序方式  desc  asc
+                     * 排序方式  desc  asc（必填）
                      */
                     std::string m_sort;
                     bool m_sortHasBeenSet;
 
                     /**
-                     * searchlog  histogram
+                     * searchlog  histogram（必填）
                      */
                     std::string m_actionType;
                     bool m_actionTypeHasBeenSet;
 
                     /**
-                     * 项目ID
+                     * 项目ID（必填）
                      */
                     int64_t m_iD;
                     bool m_iDHasBeenSet;
 
                     /**
-                     * 开始时间
+                     * 开始时间（必填）
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 单次查询返回的原始日志条数，最大值为100
+                     * 单次查询返回的原始日志条数，最大值为100（必填）
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
@@ -225,13 +225,13 @@ namespace TencentCloud
                     bool m_contextHasBeenSet;
 
                     /**
-                     * 查询语句，参考控制台请求参数，语句长度最大为4096
+                     * 查询语句，参考控制台请求参数，语句长度最大为4096（必填）
                      */
                     std::string m_query;
                     bool m_queryHasBeenSet;
 
                     /**
-                     * 结束时间
+                     * 结束时间（必填）
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;

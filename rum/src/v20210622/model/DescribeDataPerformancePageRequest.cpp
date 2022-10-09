@@ -44,7 +44,8 @@ DescribeDataPerformancePageRequest::DescribeDataPerformancePageRequest() :
     m_brandHasBeenSet(false),
     m_fromHasBeenSet(false),
     m_costTypeHasBeenSet(false),
-    m_envHasBeenSet(false)
+    m_envHasBeenSet(false),
+    m_netStatusHasBeenSet(false)
 {
 }
 
@@ -229,6 +230,14 @@ string DescribeDataPerformancePageRequest::ToJsonString() const
         string key = "Env";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_env.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_netStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NetStatus";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_netStatus.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -589,6 +598,22 @@ void DescribeDataPerformancePageRequest::SetEnv(const string& _env)
 bool DescribeDataPerformancePageRequest::EnvHasBeenSet() const
 {
     return m_envHasBeenSet;
+}
+
+string DescribeDataPerformancePageRequest::GetNetStatus() const
+{
+    return m_netStatus;
+}
+
+void DescribeDataPerformancePageRequest::SetNetStatus(const string& _netStatus)
+{
+    m_netStatus = _netStatus;
+    m_netStatusHasBeenSet = true;
+}
+
+bool DescribeDataPerformancePageRequest::NetStatusHasBeenSet() const
+{
+    return m_netStatusHasBeenSet;
 }
 
 

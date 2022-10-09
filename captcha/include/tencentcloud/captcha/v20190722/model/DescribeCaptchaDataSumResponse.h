@@ -118,8 +118,8 @@ namespace TencentCloud
                     bool CaptchaCodeHasBeenSet() const;
 
                     /**
-                     * 获取票据校验量
-                     * @return CheckTicketSum 票据校验量
+                     * 获取票据校验总量
+                     * @return CheckTicketSum 票据校验总量
                      */
                     int64_t GetCheckTicketSum() const;
 
@@ -128,6 +128,30 @@ namespace TencentCloud
                      * @return CheckTicketSum 是否已赋值
                      */
                     bool CheckTicketSumHasBeenSet() const;
+
+                    /**
+                     * 获取票据验证通过量
+                     * @return TicketThroughputSum 票据验证通过量
+                     */
+                    int64_t GetTicketThroughputSum() const;
+
+                    /**
+                     * 判断参数 TicketThroughputSum 是否已赋值
+                     * @return TicketThroughputSum 是否已赋值
+                     */
+                    bool TicketThroughputSumHasBeenSet() const;
+
+                    /**
+                     * 获取票据验证拦截量
+                     * @return TicketInterceptSum 票据验证拦截量
+                     */
+                    int64_t GetTicketInterceptSum() const;
+
+                    /**
+                     * 判断参数 TicketInterceptSum 是否已赋值
+                     * @return TicketInterceptSum 是否已赋值
+                     */
+                    bool TicketInterceptSumHasBeenSet() const;
 
                 private:
 
@@ -169,10 +193,22 @@ namespace TencentCloud
                     bool m_captchaCodeHasBeenSet;
 
                     /**
-                     * 票据校验量
+                     * 票据校验总量
                      */
                     int64_t m_checkTicketSum;
                     bool m_checkTicketSumHasBeenSet;
+
+                    /**
+                     * 票据验证通过量
+                     */
+                    int64_t m_ticketThroughputSum;
+                    bool m_ticketThroughputSumHasBeenSet;
+
+                    /**
+                     * 票据验证拦截量
+                     */
+                    int64_t m_ticketInterceptSum;
+                    bool m_ticketInterceptSumHasBeenSet;
 
                 };
             }

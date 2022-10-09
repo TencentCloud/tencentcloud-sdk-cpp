@@ -30,7 +30,9 @@ DescribeCaptchaDataSumResponse::DescribeCaptchaDataSumResponse() :
     m_attackSumHasBeenSet(false),
     m_captchaMsgHasBeenSet(false),
     m_captchaCodeHasBeenSet(false),
-    m_checkTicketSumHasBeenSet(false)
+    m_checkTicketSumHasBeenSet(false),
+    m_ticketThroughputSumHasBeenSet(false),
+    m_ticketInterceptSumHasBeenSet(false)
 {
 }
 
@@ -138,6 +140,26 @@ CoreInternalOutcome DescribeCaptchaDataSumResponse::Deserialize(const string &pa
         m_checkTicketSumHasBeenSet = true;
     }
 
+    if (rsp.HasMember("TicketThroughputSum") && !rsp["TicketThroughputSum"].IsNull())
+    {
+        if (!rsp["TicketThroughputSum"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TicketThroughputSum` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_ticketThroughputSum = rsp["TicketThroughputSum"].GetInt64();
+        m_ticketThroughputSumHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("TicketInterceptSum") && !rsp["TicketInterceptSum"].IsNull())
+    {
+        if (!rsp["TicketInterceptSum"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TicketInterceptSum` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_ticketInterceptSum = rsp["TicketInterceptSum"].GetInt64();
+        m_ticketInterceptSumHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -202,6 +224,22 @@ string DescribeCaptchaDataSumResponse::ToJsonString() const
         string key = "CheckTicketSum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_checkTicketSum, allocator);
+    }
+
+    if (m_ticketThroughputSumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TicketThroughputSum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_ticketThroughputSum, allocator);
+    }
+
+    if (m_ticketInterceptSumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TicketInterceptSum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_ticketInterceptSum, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -284,6 +322,26 @@ int64_t DescribeCaptchaDataSumResponse::GetCheckTicketSum() const
 bool DescribeCaptchaDataSumResponse::CheckTicketSumHasBeenSet() const
 {
     return m_checkTicketSumHasBeenSet;
+}
+
+int64_t DescribeCaptchaDataSumResponse::GetTicketThroughputSum() const
+{
+    return m_ticketThroughputSum;
+}
+
+bool DescribeCaptchaDataSumResponse::TicketThroughputSumHasBeenSet() const
+{
+    return m_ticketThroughputSumHasBeenSet;
+}
+
+int64_t DescribeCaptchaDataSumResponse::GetTicketInterceptSum() const
+{
+    return m_ticketInterceptSum;
+}
+
+bool DescribeCaptchaDataSumResponse::TicketInterceptSumHasBeenSet() const
+{
+    return m_ticketInterceptSumHasBeenSet;
 }
 
 

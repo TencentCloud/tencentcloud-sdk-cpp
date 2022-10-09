@@ -49,7 +49,8 @@ PrometheusInstancesItem::PrometheusInstancesItem() :
     m_grantHasBeenSet(false),
     m_grafanaInstanceIdHasBeenSet(false),
     m_alertRuleLimitHasBeenSet(false),
-    m_recordingRuleLimitHasBeenSet(false)
+    m_recordingRuleLimitHasBeenSet(false),
+    m_migrationTypeHasBeenSet(false)
 {
 }
 
@@ -365,6 +366,16 @@ CoreInternalOutcome PrometheusInstancesItem::Deserialize(const rapidjson::Value 
         m_recordingRuleLimitHasBeenSet = true;
     }
 
+    if (value.HasMember("MigrationType") && !value["MigrationType"].IsNull())
+    {
+        if (!value["MigrationType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `PrometheusInstancesItem.MigrationType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_migrationType = value["MigrationType"].GetInt64();
+        m_migrationTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -610,6 +621,14 @@ void PrometheusInstancesItem::ToJsonObject(rapidjson::Value &value, rapidjson::D
         string key = "RecordingRuleLimit";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_recordingRuleLimit, allocator);
+    }
+
+    if (m_migrationTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MigrationType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_migrationType, allocator);
     }
 
 }
@@ -1077,5 +1096,21 @@ void PrometheusInstancesItem::SetRecordingRuleLimit(const int64_t& _recordingRul
 bool PrometheusInstancesItem::RecordingRuleLimitHasBeenSet() const
 {
     return m_recordingRuleLimitHasBeenSet;
+}
+
+int64_t PrometheusInstancesItem::GetMigrationType() const
+{
+    return m_migrationType;
+}
+
+void PrometheusInstancesItem::SetMigrationType(const int64_t& _migrationType)
+{
+    m_migrationType = _migrationType;
+    m_migrationTypeHasBeenSet = true;
+}
+
+bool PrometheusInstancesItem::MigrationTypeHasBeenSet() const
+{
+    return m_migrationTypeHasBeenSet;
 }
 

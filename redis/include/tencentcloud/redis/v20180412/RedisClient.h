@@ -41,6 +41,8 @@
 #include <tencentcloud/redis/v20180412/model/CleanUpInstanceResponse.h>
 #include <tencentcloud/redis/v20180412/model/ClearInstanceRequest.h>
 #include <tencentcloud/redis/v20180412/model/ClearInstanceResponse.h>
+#include <tencentcloud/redis/v20180412/model/CloseSSLRequest.h>
+#include <tencentcloud/redis/v20180412/model/CloseSSLResponse.h>
 #include <tencentcloud/redis/v20180412/model/CreateInstanceAccountRequest.h>
 #include <tencentcloud/redis/v20180412/model/CreateInstanceAccountResponse.h>
 #include <tencentcloud/redis/v20180412/model/CreateInstancesRequest.h>
@@ -167,6 +169,8 @@
 #include <tencentcloud/redis/v20180412/model/ModifyNetworkConfigResponse.h>
 #include <tencentcloud/redis/v20180412/model/ModifyParamTemplateRequest.h>
 #include <tencentcloud/redis/v20180412/model/ModifyParamTemplateResponse.h>
+#include <tencentcloud/redis/v20180412/model/OpenSSLRequest.h>
+#include <tencentcloud/redis/v20180412/model/OpenSSLResponse.h>
 #include <tencentcloud/redis/v20180412/model/ReleaseWanAddressRequest.h>
 #include <tencentcloud/redis/v20180412/model/ReleaseWanAddressResponse.h>
 #include <tencentcloud/redis/v20180412/model/RenewInstanceRequest.h>
@@ -232,6 +236,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ClearInstanceResponse> ClearInstanceOutcome;
                 typedef std::future<ClearInstanceOutcome> ClearInstanceOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::ClearInstanceRequest&, ClearInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ClearInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::CloseSSLResponse> CloseSSLOutcome;
+                typedef std::future<CloseSSLOutcome> CloseSSLOutcomeCallable;
+                typedef std::function<void(const RedisClient*, const Model::CloseSSLRequest&, CloseSSLOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CloseSSLAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateInstanceAccountResponse> CreateInstanceAccountOutcome;
                 typedef std::future<CreateInstanceAccountOutcome> CreateInstanceAccountOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::CreateInstanceAccountRequest&, CreateInstanceAccountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateInstanceAccountAsyncHandler;
@@ -421,6 +428,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyParamTemplateResponse> ModifyParamTemplateOutcome;
                 typedef std::future<ModifyParamTemplateOutcome> ModifyParamTemplateOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::ModifyParamTemplateRequest&, ModifyParamTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyParamTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::OpenSSLResponse> OpenSSLOutcome;
+                typedef std::future<OpenSSLOutcome> OpenSSLOutcomeCallable;
+                typedef std::function<void(const RedisClient*, const Model::OpenSSLRequest&, OpenSSLOutcome, const std::shared_ptr<const AsyncCallerContext>&)> OpenSSLAsyncHandler;
                 typedef Outcome<Core::Error, Model::ReleaseWanAddressResponse> ReleaseWanAddressOutcome;
                 typedef std::future<ReleaseWanAddressOutcome> ReleaseWanAddressOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::ReleaseWanAddressRequest&, ReleaseWanAddressOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReleaseWanAddressAsyncHandler;
@@ -540,6 +550,15 @@ namespace TencentCloud
                 ClearInstanceOutcome ClearInstance(const Model::ClearInstanceRequest &request);
                 void ClearInstanceAsync(const Model::ClearInstanceRequest& request, const ClearInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ClearInstanceOutcomeCallable ClearInstanceCallable(const Model::ClearInstanceRequest& request);
+
+                /**
+                 *关闭SSL
+                 * @param req CloseSSLRequest
+                 * @return CloseSSLOutcome
+                 */
+                CloseSSLOutcome CloseSSL(const Model::CloseSSLRequest &request);
+                void CloseSSLAsync(const Model::CloseSSLRequest& request, const CloseSSLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CloseSSLOutcomeCallable CloseSSLCallable(const Model::CloseSSLRequest& request);
 
                 /**
                  *创建实例子账号
@@ -1107,6 +1126,15 @@ namespace TencentCloud
                 ModifyParamTemplateOutcome ModifyParamTemplate(const Model::ModifyParamTemplateRequest &request);
                 void ModifyParamTemplateAsync(const Model::ModifyParamTemplateRequest& request, const ModifyParamTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyParamTemplateOutcomeCallable ModifyParamTemplateCallable(const Model::ModifyParamTemplateRequest& request);
+
+                /**
+                 *开启SSL
+                 * @param req OpenSSLRequest
+                 * @return OpenSSLOutcome
+                 */
+                OpenSSLOutcome OpenSSL(const Model::OpenSSLRequest &request);
+                void OpenSSLAsync(const Model::OpenSSLRequest& request, const OpenSSLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                OpenSSLOutcomeCallable OpenSSLCallable(const Model::OpenSSLRequest& request);
 
                 /**
                  *关闭外网

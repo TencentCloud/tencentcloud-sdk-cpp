@@ -47,7 +47,8 @@ DescribeDataFetchUrlRequest::DescribeDataFetchUrlRequest() :
     m_urlHasBeenSet(false),
     m_envHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_retHasBeenSet(false)
+    m_retHasBeenSet(false),
+    m_netStatusHasBeenSet(false)
 {
 }
 
@@ -256,6 +257,14 @@ string DescribeDataFetchUrlRequest::ToJsonString() const
         string key = "Ret";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_ret.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_netStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NetStatus";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_netStatus.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -664,6 +673,22 @@ void DescribeDataFetchUrlRequest::SetRet(const string& _ret)
 bool DescribeDataFetchUrlRequest::RetHasBeenSet() const
 {
     return m_retHasBeenSet;
+}
+
+string DescribeDataFetchUrlRequest::GetNetStatus() const
+{
+    return m_netStatus;
+}
+
+void DescribeDataFetchUrlRequest::SetNetStatus(const string& _netStatus)
+{
+    m_netStatus = _netStatus;
+    m_netStatusHasBeenSet = true;
+}
+
+bool DescribeDataFetchUrlRequest::NetStatusHasBeenSet() const
+{
+    return m_netStatusHasBeenSet;
 }
 
 

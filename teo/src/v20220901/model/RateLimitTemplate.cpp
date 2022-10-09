@@ -22,6 +22,7 @@ using namespace std;
 
 RateLimitTemplate::RateLimitTemplate() :
     m_modeHasBeenSet(false),
+    m_actionHasBeenSet(false),
     m_rateLimitTemplateDetailHasBeenSet(false)
 {
 }
@@ -39,6 +40,16 @@ CoreInternalOutcome RateLimitTemplate::Deserialize(const rapidjson::Value &value
         }
         m_mode = string(value["Mode"].GetString());
         m_modeHasBeenSet = true;
+    }
+
+    if (value.HasMember("Action") && !value["Action"].IsNull())
+    {
+        if (!value["Action"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RateLimitTemplate.Action` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_action = string(value["Action"].GetString());
+        m_actionHasBeenSet = true;
     }
 
     if (value.HasMember("RateLimitTemplateDetail") && !value["RateLimitTemplateDetail"].IsNull())
@@ -73,6 +84,14 @@ void RateLimitTemplate::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         value.AddMember(iKey, rapidjson::Value(m_mode.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_actionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Action";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_action.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_rateLimitTemplateDetailHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -99,6 +118,22 @@ void RateLimitTemplate::SetMode(const string& _mode)
 bool RateLimitTemplate::ModeHasBeenSet() const
 {
     return m_modeHasBeenSet;
+}
+
+string RateLimitTemplate::GetAction() const
+{
+    return m_action;
+}
+
+void RateLimitTemplate::SetAction(const string& _action)
+{
+    m_action = _action;
+    m_actionHasBeenSet = true;
+}
+
+bool RateLimitTemplate::ActionHasBeenSet() const
+{
+    return m_actionHasBeenSet;
 }
 
 RateLimitTemplateDetail RateLimitTemplate::GetRateLimitTemplateDetail() const

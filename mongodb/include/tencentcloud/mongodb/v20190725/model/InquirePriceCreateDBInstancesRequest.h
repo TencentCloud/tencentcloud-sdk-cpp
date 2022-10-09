@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例所属区域名称，格式如：ap-guangzhou-2
-                     * @return Zone 实例所属区域名称，格式如：ap-guangzhou-2
+                     * 获取实例所属区域及可用区信息。格式：ap-guangzhou-2。
+                     * @return Zone 实例所属区域及可用区信息。格式：ap-guangzhou-2。
                      */
                     std::string GetZone() const;
 
                     /**
-                     * 设置实例所属区域名称，格式如：ap-guangzhou-2
-                     * @param Zone 实例所属区域名称，格式如：ap-guangzhou-2
+                     * 设置实例所属区域及可用区信息。格式：ap-guangzhou-2。
+                     * @param Zone 实例所属区域及可用区信息。格式：ap-guangzhou-2。
                      */
                     void SetZone(const std::string& _zone);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool ZoneHasBeenSet() const;
 
                     /**
-                     * 获取每个副本集内节点个数，具体参照查询云数据库的售卖规格返回参数
-                     * @return NodeNum 每个副本集内节点个数，具体参照查询云数据库的售卖规格返回参数
+                     * 获取每个分片的主从节点数量。<br>取值范围：请通过接口<a href="https://cloud.tencent.com/document/product/240/38567">DescribeSpecInfo</a>查询，其返回的数据结构SpecItems中的参数MinStorage与MaxStorage分别对应其最小磁盘规格与最大磁盘规格。</br>
+                     * @return NodeNum 每个分片的主从节点数量。<br>取值范围：请通过接口<a href="https://cloud.tencent.com/document/product/240/38567">DescribeSpecInfo</a>查询，其返回的数据结构SpecItems中的参数MinStorage与MaxStorage分别对应其最小磁盘规格与最大磁盘规格。</br>
                      */
                     int64_t GetNodeNum() const;
 
                     /**
-                     * 设置每个副本集内节点个数，具体参照查询云数据库的售卖规格返回参数
-                     * @param NodeNum 每个副本集内节点个数，具体参照查询云数据库的售卖规格返回参数
+                     * 设置每个分片的主从节点数量。<br>取值范围：请通过接口<a href="https://cloud.tencent.com/document/product/240/38567">DescribeSpecInfo</a>查询，其返回的数据结构SpecItems中的参数MinStorage与MaxStorage分别对应其最小磁盘规格与最大磁盘规格。</br>
+                     * @param NodeNum 每个分片的主从节点数量。<br>取值范围：请通过接口<a href="https://cloud.tencent.com/document/product/240/38567">DescribeSpecInfo</a>查询，其返回的数据结构SpecItems中的参数MinStorage与MaxStorage分别对应其最小磁盘规格与最大磁盘规格。</br>
                      */
                     void SetNodeNum(const int64_t& _nodeNum);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool NodeNumHasBeenSet() const;
 
                     /**
-                     * 获取实例内存大小，单位：GB
-                     * @return Memory 实例内存大小，单位：GB
+                     * 获取实例内存大小。<ul><li>单位：GB。</li><li>取值范围：请通过接口<a href="https://cloud.tencent.com/document/product/240/38567">DescribeSpecInfo</a>查询，其返回的数据结构SpecItems中的参数CPU与Memory分别对应CPU核数与内存规格。</li></ul>
+                     * @return Memory 实例内存大小。<ul><li>单位：GB。</li><li>取值范围：请通过接口<a href="https://cloud.tencent.com/document/product/240/38567">DescribeSpecInfo</a>查询，其返回的数据结构SpecItems中的参数CPU与Memory分别对应CPU核数与内存规格。</li></ul>
                      */
                     int64_t GetMemory() const;
 
                     /**
-                     * 设置实例内存大小，单位：GB
-                     * @param Memory 实例内存大小，单位：GB
+                     * 设置实例内存大小。<ul><li>单位：GB。</li><li>取值范围：请通过接口<a href="https://cloud.tencent.com/document/product/240/38567">DescribeSpecInfo</a>查询，其返回的数据结构SpecItems中的参数CPU与Memory分别对应CPU核数与内存规格。</li></ul>
+                     * @param Memory 实例内存大小。<ul><li>单位：GB。</li><li>取值范围：请通过接口<a href="https://cloud.tencent.com/document/product/240/38567">DescribeSpecInfo</a>查询，其返回的数据结构SpecItems中的参数CPU与Memory分别对应CPU核数与内存规格。</li></ul>
                      */
                     void SetMemory(const int64_t& _memory);
 
@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool MemoryHasBeenSet() const;
 
                     /**
-                     * 获取实例硬盘大小，单位：GB
-                     * @return Volume 实例硬盘大小，单位：GB
+                     * 获取实例硬盘大小。<ul><li>单位：GB。</li><li>取值范围：请通过接口<a href="https://cloud.tencent.com/document/product/240/38567">DescribeSpecInfo</a>查询，其返回的数据结构SpecItems中的参数MinNodeNum与MaxNodeNum分别对应其最小值与最大值。</li></ul>
+                     * @return Volume 实例硬盘大小。<ul><li>单位：GB。</li><li>取值范围：请通过接口<a href="https://cloud.tencent.com/document/product/240/38567">DescribeSpecInfo</a>查询，其返回的数据结构SpecItems中的参数MinNodeNum与MaxNodeNum分别对应其最小值与最大值。</li></ul>
                      */
                     int64_t GetVolume() const;
 
                     /**
-                     * 设置实例硬盘大小，单位：GB
-                     * @param Volume 实例硬盘大小，单位：GB
+                     * 设置实例硬盘大小。<ul><li>单位：GB。</li><li>取值范围：请通过接口<a href="https://cloud.tencent.com/document/product/240/38567">DescribeSpecInfo</a>查询，其返回的数据结构SpecItems中的参数MinNodeNum与MaxNodeNum分别对应其最小值与最大值。</li></ul>
+                     * @param Volume 实例硬盘大小。<ul><li>单位：GB。</li><li>取值范围：请通过接口<a href="https://cloud.tencent.com/document/product/240/38567">DescribeSpecInfo</a>查询，其返回的数据结构SpecItems中的参数MinNodeNum与MaxNodeNum分别对应其最小值与最大值。</li></ul>
                      */
                     void SetVolume(const int64_t& _volume);
 
@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool VolumeHasBeenSet() const;
 
                     /**
-                     * 获取版本号，具体支持的售卖版本请参照查询云数据库的售卖规格（DescribeSpecInfo）返回结果。参数与版本对应关系是MONGO_3_WT：MongoDB 3.2 WiredTiger存储引擎版本，MONGO_3_ROCKS：MongoDB 3.2 RocksDB存储引擎版本，MONGO_36_WT：MongoDB 3.6 WiredTiger存储引擎版本，MONGO_40_WT：MongoDB 4.0 WiredTiger存储引擎版本
-                     * @return MongoVersion 版本号，具体支持的售卖版本请参照查询云数据库的售卖规格（DescribeSpecInfo）返回结果。参数与版本对应关系是MONGO_3_WT：MongoDB 3.2 WiredTiger存储引擎版本，MONGO_3_ROCKS：MongoDB 3.2 RocksDB存储引擎版本，MONGO_36_WT：MongoDB 3.6 WiredTiger存储引擎版本，MONGO_40_WT：MongoDB 4.0 WiredTiger存储引擎版本
+                     * 获取实例版本信息。<ul><li>具体支持的版本，请通过接口<a href="https://cloud.tencent.com/document/product/240/38567">DescribeSpecInfo</a>查询，其返回的数据结构SpecItems中的参数MongoVersionCode为实例所支持的版本信息。</li><li>版本信息与版本号对应关系如下：<ul><li>MONGO_3_WT：MongoDB 3.2 WiredTiger存储引擎版本。</li><li>MONGO_3_ROCKS：MongoDB 3.2 RocksDB存储引擎版本。</li><li>MONGO_36_WT：MongoDB 3.6 WiredTiger存储引擎版本。</li><li>MONGO_40_WT：MongoDB 4.0 WiredTiger存储引擎版本。</li></ul>
+                     * @return MongoVersion 实例版本信息。<ul><li>具体支持的版本，请通过接口<a href="https://cloud.tencent.com/document/product/240/38567">DescribeSpecInfo</a>查询，其返回的数据结构SpecItems中的参数MongoVersionCode为实例所支持的版本信息。</li><li>版本信息与版本号对应关系如下：<ul><li>MONGO_3_WT：MongoDB 3.2 WiredTiger存储引擎版本。</li><li>MONGO_3_ROCKS：MongoDB 3.2 RocksDB存储引擎版本。</li><li>MONGO_36_WT：MongoDB 3.6 WiredTiger存储引擎版本。</li><li>MONGO_40_WT：MongoDB 4.0 WiredTiger存储引擎版本。</li></ul>
                      */
                     std::string GetMongoVersion() const;
 
                     /**
-                     * 设置版本号，具体支持的售卖版本请参照查询云数据库的售卖规格（DescribeSpecInfo）返回结果。参数与版本对应关系是MONGO_3_WT：MongoDB 3.2 WiredTiger存储引擎版本，MONGO_3_ROCKS：MongoDB 3.2 RocksDB存储引擎版本，MONGO_36_WT：MongoDB 3.6 WiredTiger存储引擎版本，MONGO_40_WT：MongoDB 4.0 WiredTiger存储引擎版本
-                     * @param MongoVersion 版本号，具体支持的售卖版本请参照查询云数据库的售卖规格（DescribeSpecInfo）返回结果。参数与版本对应关系是MONGO_3_WT：MongoDB 3.2 WiredTiger存储引擎版本，MONGO_3_ROCKS：MongoDB 3.2 RocksDB存储引擎版本，MONGO_36_WT：MongoDB 3.6 WiredTiger存储引擎版本，MONGO_40_WT：MongoDB 4.0 WiredTiger存储引擎版本
+                     * 设置实例版本信息。<ul><li>具体支持的版本，请通过接口<a href="https://cloud.tencent.com/document/product/240/38567">DescribeSpecInfo</a>查询，其返回的数据结构SpecItems中的参数MongoVersionCode为实例所支持的版本信息。</li><li>版本信息与版本号对应关系如下：<ul><li>MONGO_3_WT：MongoDB 3.2 WiredTiger存储引擎版本。</li><li>MONGO_3_ROCKS：MongoDB 3.2 RocksDB存储引擎版本。</li><li>MONGO_36_WT：MongoDB 3.6 WiredTiger存储引擎版本。</li><li>MONGO_40_WT：MongoDB 4.0 WiredTiger存储引擎版本。</li></ul>
+                     * @param MongoVersion 实例版本信息。<ul><li>具体支持的版本，请通过接口<a href="https://cloud.tencent.com/document/product/240/38567">DescribeSpecInfo</a>查询，其返回的数据结构SpecItems中的参数MongoVersionCode为实例所支持的版本信息。</li><li>版本信息与版本号对应关系如下：<ul><li>MONGO_3_WT：MongoDB 3.2 WiredTiger存储引擎版本。</li><li>MONGO_3_ROCKS：MongoDB 3.2 RocksDB存储引擎版本。</li><li>MONGO_36_WT：MongoDB 3.6 WiredTiger存储引擎版本。</li><li>MONGO_40_WT：MongoDB 4.0 WiredTiger存储引擎版本。</li></ul>
                      */
                     void SetMongoVersion(const std::string& _mongoVersion);
 
@@ -133,14 +133,14 @@ namespace TencentCloud
                     bool MongoVersionHasBeenSet() const;
 
                     /**
-                     * 获取机器类型，HIO：高IO型；HIO10G：高IO万兆型；
-                     * @return MachineCode 机器类型，HIO：高IO型；HIO10G：高IO万兆型；
+                     * 获取机器类型。<ul><li>HIO：高IO型。</li><li>HIO10G：高IO万兆型。</li></ul>
+                     * @return MachineCode 机器类型。<ul><li>HIO：高IO型。</li><li>HIO10G：高IO万兆型。</li></ul>
                      */
                     std::string GetMachineCode() const;
 
                     /**
-                     * 设置机器类型，HIO：高IO型；HIO10G：高IO万兆型；
-                     * @param MachineCode 机器类型，HIO：高IO型；HIO10G：高IO万兆型；
+                     * 设置机器类型。<ul><li>HIO：高IO型。</li><li>HIO10G：高IO万兆型。</li></ul>
+                     * @param MachineCode 机器类型。<ul><li>HIO：高IO型。</li><li>HIO10G：高IO万兆型。</li></ul>
                      */
                     void SetMachineCode(const std::string& _machineCode);
 
@@ -151,14 +151,14 @@ namespace TencentCloud
                     bool MachineCodeHasBeenSet() const;
 
                     /**
-                     * 获取实例数量, 最小值1，最大值为10
-                     * @return GoodsNum 实例数量, 最小值1，最大值为10
+                     * 获取实例数量，取值范围为[1,10]。
+                     * @return GoodsNum 实例数量，取值范围为[1,10]。
                      */
                     int64_t GetGoodsNum() const;
 
                     /**
-                     * 设置实例数量, 最小值1，最大值为10
-                     * @param GoodsNum 实例数量, 最小值1，最大值为10
+                     * 设置实例数量，取值范围为[1,10]。
+                     * @param GoodsNum 实例数量，取值范围为[1,10]。
                      */
                     void SetGoodsNum(const int64_t& _goodsNum);
 
@@ -169,32 +169,14 @@ namespace TencentCloud
                     bool GoodsNumHasBeenSet() const;
 
                     /**
-                     * 获取实例时长，单位：月，可选值包括[1,2,3,4,5,6,7,8,9,10,11,12,24,36]
-                     * @return Period 实例时长，单位：月，可选值包括[1,2,3,4,5,6,7,8,9,10,11,12,24,36]
-                     */
-                    int64_t GetPeriod() const;
-
-                    /**
-                     * 设置实例时长，单位：月，可选值包括[1,2,3,4,5,6,7,8,9,10,11,12,24,36]
-                     * @param Period 实例时长，单位：月，可选值包括[1,2,3,4,5,6,7,8,9,10,11,12,24,36]
-                     */
-                    void SetPeriod(const int64_t& _period);
-
-                    /**
-                     * 判断参数 Period 是否已赋值
-                     * @return Period 是否已赋值
-                     */
-                    bool PeriodHasBeenSet() const;
-
-                    /**
-                     * 获取实例类型，REPLSET-副本集，SHARD-分片集群，STANDALONE-单节点
-                     * @return ClusterType 实例类型，REPLSET-副本集，SHARD-分片集群，STANDALONE-单节点
+                     * 获取实例类型。<ul><li>REPLSET：副本集。</li><li>SHARD：分片集群。</li><li>STANDALONE：单节点。</li></ul>
+                     * @return ClusterType 实例类型。<ul><li>REPLSET：副本集。</li><li>SHARD：分片集群。</li><li>STANDALONE：单节点。</li></ul>
                      */
                     std::string GetClusterType() const;
 
                     /**
-                     * 设置实例类型，REPLSET-副本集，SHARD-分片集群，STANDALONE-单节点
-                     * @param ClusterType 实例类型，REPLSET-副本集，SHARD-分片集群，STANDALONE-单节点
+                     * 设置实例类型。<ul><li>REPLSET：副本集。</li><li>SHARD：分片集群。</li><li>STANDALONE：单节点。</li></ul>
+                     * @param ClusterType 实例类型。<ul><li>REPLSET：副本集。</li><li>SHARD：分片集群。</li><li>STANDALONE：单节点。</li></ul>
                      */
                     void SetClusterType(const std::string& _clusterType);
 
@@ -205,14 +187,14 @@ namespace TencentCloud
                     bool ClusterTypeHasBeenSet() const;
 
                     /**
-                     * 获取副本集个数，创建副本集实例时，该参数必须设置为1；创建分片实例时，具体参照查询云数据库的售卖规格返回参数；若为单节点实例，该参数设置为0
-                     * @return ReplicateSetNum 副本集个数，创建副本集实例时，该参数必须设置为1；创建分片实例时，具体参照查询云数据库的售卖规格返回参数；若为单节点实例，该参数设置为0
+                     * 获取副本集个数。<ul><li>创建副本集实例时，该参数固定设置为1。</li><li>创建分片集群时，指分片数量，请通过接口<a href="https://cloud.tencent.com/document/product/240/38567">DescribeSpecInfo</a>查询，其返回的数据结构SpecItems中的参数MinReplicateSetNum与MaxReplicateSetNum分别对应其最小值与最大值。</li><li>若为单节点实例，该参数固定设置为0。</li></ul>
+                     * @return ReplicateSetNum 副本集个数。<ul><li>创建副本集实例时，该参数固定设置为1。</li><li>创建分片集群时，指分片数量，请通过接口<a href="https://cloud.tencent.com/document/product/240/38567">DescribeSpecInfo</a>查询，其返回的数据结构SpecItems中的参数MinReplicateSetNum与MaxReplicateSetNum分别对应其最小值与最大值。</li><li>若为单节点实例，该参数固定设置为0。</li></ul>
                      */
                     int64_t GetReplicateSetNum() const;
 
                     /**
-                     * 设置副本集个数，创建副本集实例时，该参数必须设置为1；创建分片实例时，具体参照查询云数据库的售卖规格返回参数；若为单节点实例，该参数设置为0
-                     * @param ReplicateSetNum 副本集个数，创建副本集实例时，该参数必须设置为1；创建分片实例时，具体参照查询云数据库的售卖规格返回参数；若为单节点实例，该参数设置为0
+                     * 设置副本集个数。<ul><li>创建副本集实例时，该参数固定设置为1。</li><li>创建分片集群时，指分片数量，请通过接口<a href="https://cloud.tencent.com/document/product/240/38567">DescribeSpecInfo</a>查询，其返回的数据结构SpecItems中的参数MinReplicateSetNum与MaxReplicateSetNum分别对应其最小值与最大值。</li><li>若为单节点实例，该参数固定设置为0。</li></ul>
+                     * @param ReplicateSetNum 副本集个数。<ul><li>创建副本集实例时，该参数固定设置为1。</li><li>创建分片集群时，指分片数量，请通过接口<a href="https://cloud.tencent.com/document/product/240/38567">DescribeSpecInfo</a>查询，其返回的数据结构SpecItems中的参数MinReplicateSetNum与MaxReplicateSetNum分别对应其最小值与最大值。</li><li>若为单节点实例，该参数固定设置为0。</li></ul>
                      */
                     void SetReplicateSetNum(const int64_t& _replicateSetNum);
 
@@ -222,67 +204,253 @@ namespace TencentCloud
                      */
                     bool ReplicateSetNumHasBeenSet() const;
 
+                    /**
+                     * 获取选择包年包月计费模式时，您需要设定购买实例的时长。即<b>InstanceChargeType</b>设定为<b>PREPAID</b>时，该参数必须配置。<ul><li>单位：月。</li><li>可选值包括[1,2,3,4,5,6,7,8,9,10,11,12,24,36]。</li></ul>
+                     * @return Period 选择包年包月计费模式时，您需要设定购买实例的时长。即<b>InstanceChargeType</b>设定为<b>PREPAID</b>时，该参数必须配置。<ul><li>单位：月。</li><li>可选值包括[1,2,3,4,5,6,7,8,9,10,11,12,24,36]。</li></ul>
+                     */
+                    int64_t GetPeriod() const;
+
+                    /**
+                     * 设置选择包年包月计费模式时，您需要设定购买实例的时长。即<b>InstanceChargeType</b>设定为<b>PREPAID</b>时，该参数必须配置。<ul><li>单位：月。</li><li>可选值包括[1,2,3,4,5,6,7,8,9,10,11,12,24,36]。</li></ul>
+                     * @param Period 选择包年包月计费模式时，您需要设定购买实例的时长。即<b>InstanceChargeType</b>设定为<b>PREPAID</b>时，该参数必须配置。<ul><li>单位：月。</li><li>可选值包括[1,2,3,4,5,6,7,8,9,10,11,12,24,36]。</li></ul>
+                     */
+                    void SetPeriod(const int64_t& _period);
+
+                    /**
+                     * 判断参数 Period 是否已赋值
+                     * @return Period 是否已赋值
+                     */
+                    bool PeriodHasBeenSet() const;
+
+                    /**
+                     * 获取实例付费方式。<ul><li>PREPAID：包年包月计费。</li><li>POSTPAID_BY_HOUR：按量计费。</li></ul>
+                     * @return InstanceChargeType 实例付费方式。<ul><li>PREPAID：包年包月计费。</li><li>POSTPAID_BY_HOUR：按量计费。</li></ul>
+                     */
+                    std::string GetInstanceChargeType() const;
+
+                    /**
+                     * 设置实例付费方式。<ul><li>PREPAID：包年包月计费。</li><li>POSTPAID_BY_HOUR：按量计费。</li></ul>
+                     * @param InstanceChargeType 实例付费方式。<ul><li>PREPAID：包年包月计费。</li><li>POSTPAID_BY_HOUR：按量计费。</li></ul>
+                     */
+                    void SetInstanceChargeType(const std::string& _instanceChargeType);
+
+                    /**
+                     * 判断参数 InstanceChargeType 是否已赋值
+                     * @return InstanceChargeType 是否已赋值
+                     */
+                    bool InstanceChargeTypeHasBeenSet() const;
+
+                    /**
+                     * 获取分片实例询价必填参数，指 Mongos CPU核数，取值范围为[1,16]。
+                     * @return MongosCpu 分片实例询价必填参数，指 Mongos CPU核数，取值范围为[1,16]。
+                     */
+                    uint64_t GetMongosCpu() const;
+
+                    /**
+                     * 设置分片实例询价必填参数，指 Mongos CPU核数，取值范围为[1,16]。
+                     * @param MongosCpu 分片实例询价必填参数，指 Mongos CPU核数，取值范围为[1,16]。
+                     */
+                    void SetMongosCpu(const uint64_t& _mongosCpu);
+
+                    /**
+                     * 判断参数 MongosCpu 是否已赋值
+                     * @return MongosCpu 是否已赋值
+                     */
+                    bool MongosCpuHasBeenSet() const;
+
+                    /**
+                     * 获取分片实例询价必填参数，指 Mongos 内存，取值范围为[2,32]，单位：GB。
+                     * @return MongosMemory 分片实例询价必填参数，指 Mongos 内存，取值范围为[2,32]，单位：GB。
+                     */
+                    uint64_t GetMongosMemory() const;
+
+                    /**
+                     * 设置分片实例询价必填参数，指 Mongos 内存，取值范围为[2,32]，单位：GB。
+                     * @param MongosMemory 分片实例询价必填参数，指 Mongos 内存，取值范围为[2,32]，单位：GB。
+                     */
+                    void SetMongosMemory(const uint64_t& _mongosMemory);
+
+                    /**
+                     * 判断参数 MongosMemory 是否已赋值
+                     * @return MongosMemory 是否已赋值
+                     */
+                    bool MongosMemoryHasBeenSet() const;
+
+                    /**
+                     * 获取分片实例询价必填参数，指 Mongos 个数，取值范围为[3,32]。
+                     * @return MongosNum 分片实例询价必填参数，指 Mongos 个数，取值范围为[3,32]。
+                     */
+                    uint64_t GetMongosNum() const;
+
+                    /**
+                     * 设置分片实例询价必填参数，指 Mongos 个数，取值范围为[3,32]。
+                     * @param MongosNum 分片实例询价必填参数，指 Mongos 个数，取值范围为[3,32]。
+                     */
+                    void SetMongosNum(const uint64_t& _mongosNum);
+
+                    /**
+                     * 判断参数 MongosNum 是否已赋值
+                     * @return MongosNum 是否已赋值
+                     */
+                    bool MongosNumHasBeenSet() const;
+
+                    /**
+                     * 获取分片实例询价必填参数，指 ConfigServer CPU核数，取值为1，单位：GB。
+                     * @return ConfigServerCpu 分片实例询价必填参数，指 ConfigServer CPU核数，取值为1，单位：GB。
+                     */
+                    uint64_t GetConfigServerCpu() const;
+
+                    /**
+                     * 设置分片实例询价必填参数，指 ConfigServer CPU核数，取值为1，单位：GB。
+                     * @param ConfigServerCpu 分片实例询价必填参数，指 ConfigServer CPU核数，取值为1，单位：GB。
+                     */
+                    void SetConfigServerCpu(const uint64_t& _configServerCpu);
+
+                    /**
+                     * 判断参数 ConfigServerCpu 是否已赋值
+                     * @return ConfigServerCpu 是否已赋值
+                     */
+                    bool ConfigServerCpuHasBeenSet() const;
+
+                    /**
+                     * 获取分片实例询价必填参数，指 ConfigServer 内存大小，取值为2，单位：GB。
+                     * @return ConfigServerMemory 分片实例询价必填参数，指 ConfigServer 内存大小，取值为2，单位：GB。
+                     */
+                    uint64_t GetConfigServerMemory() const;
+
+                    /**
+                     * 设置分片实例询价必填参数，指 ConfigServer 内存大小，取值为2，单位：GB。
+                     * @param ConfigServerMemory 分片实例询价必填参数，指 ConfigServer 内存大小，取值为2，单位：GB。
+                     */
+                    void SetConfigServerMemory(const uint64_t& _configServerMemory);
+
+                    /**
+                     * 判断参数 ConfigServerMemory 是否已赋值
+                     * @return ConfigServerMemory 是否已赋值
+                     */
+                    bool ConfigServerMemoryHasBeenSet() const;
+
+                    /**
+                     * 获取分片实例询价必填参数，指 ConfigServer 磁盘大小，取值为 20，单位：GB。
+                     * @return ConfigServerVolume 分片实例询价必填参数，指 ConfigServer 磁盘大小，取值为 20，单位：GB。
+                     */
+                    uint64_t GetConfigServerVolume() const;
+
+                    /**
+                     * 设置分片实例询价必填参数，指 ConfigServer 磁盘大小，取值为 20，单位：GB。
+                     * @param ConfigServerVolume 分片实例询价必填参数，指 ConfigServer 磁盘大小，取值为 20，单位：GB。
+                     */
+                    void SetConfigServerVolume(const uint64_t& _configServerVolume);
+
+                    /**
+                     * 判断参数 ConfigServerVolume 是否已赋值
+                     * @return ConfigServerVolume 是否已赋值
+                     */
+                    bool ConfigServerVolumeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 实例所属区域名称，格式如：ap-guangzhou-2
+                     * 实例所属区域及可用区信息。格式：ap-guangzhou-2。
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
 
                     /**
-                     * 每个副本集内节点个数，具体参照查询云数据库的售卖规格返回参数
+                     * 每个分片的主从节点数量。<br>取值范围：请通过接口<a href="https://cloud.tencent.com/document/product/240/38567">DescribeSpecInfo</a>查询，其返回的数据结构SpecItems中的参数MinStorage与MaxStorage分别对应其最小磁盘规格与最大磁盘规格。</br>
                      */
                     int64_t m_nodeNum;
                     bool m_nodeNumHasBeenSet;
 
                     /**
-                     * 实例内存大小，单位：GB
+                     * 实例内存大小。<ul><li>单位：GB。</li><li>取值范围：请通过接口<a href="https://cloud.tencent.com/document/product/240/38567">DescribeSpecInfo</a>查询，其返回的数据结构SpecItems中的参数CPU与Memory分别对应CPU核数与内存规格。</li></ul>
                      */
                     int64_t m_memory;
                     bool m_memoryHasBeenSet;
 
                     /**
-                     * 实例硬盘大小，单位：GB
+                     * 实例硬盘大小。<ul><li>单位：GB。</li><li>取值范围：请通过接口<a href="https://cloud.tencent.com/document/product/240/38567">DescribeSpecInfo</a>查询，其返回的数据结构SpecItems中的参数MinNodeNum与MaxNodeNum分别对应其最小值与最大值。</li></ul>
                      */
                     int64_t m_volume;
                     bool m_volumeHasBeenSet;
 
                     /**
-                     * 版本号，具体支持的售卖版本请参照查询云数据库的售卖规格（DescribeSpecInfo）返回结果。参数与版本对应关系是MONGO_3_WT：MongoDB 3.2 WiredTiger存储引擎版本，MONGO_3_ROCKS：MongoDB 3.2 RocksDB存储引擎版本，MONGO_36_WT：MongoDB 3.6 WiredTiger存储引擎版本，MONGO_40_WT：MongoDB 4.0 WiredTiger存储引擎版本
+                     * 实例版本信息。<ul><li>具体支持的版本，请通过接口<a href="https://cloud.tencent.com/document/product/240/38567">DescribeSpecInfo</a>查询，其返回的数据结构SpecItems中的参数MongoVersionCode为实例所支持的版本信息。</li><li>版本信息与版本号对应关系如下：<ul><li>MONGO_3_WT：MongoDB 3.2 WiredTiger存储引擎版本。</li><li>MONGO_3_ROCKS：MongoDB 3.2 RocksDB存储引擎版本。</li><li>MONGO_36_WT：MongoDB 3.6 WiredTiger存储引擎版本。</li><li>MONGO_40_WT：MongoDB 4.0 WiredTiger存储引擎版本。</li></ul>
                      */
                     std::string m_mongoVersion;
                     bool m_mongoVersionHasBeenSet;
 
                     /**
-                     * 机器类型，HIO：高IO型；HIO10G：高IO万兆型；
+                     * 机器类型。<ul><li>HIO：高IO型。</li><li>HIO10G：高IO万兆型。</li></ul>
                      */
                     std::string m_machineCode;
                     bool m_machineCodeHasBeenSet;
 
                     /**
-                     * 实例数量, 最小值1，最大值为10
+                     * 实例数量，取值范围为[1,10]。
                      */
                     int64_t m_goodsNum;
                     bool m_goodsNumHasBeenSet;
 
                     /**
-                     * 实例时长，单位：月，可选值包括[1,2,3,4,5,6,7,8,9,10,11,12,24,36]
-                     */
-                    int64_t m_period;
-                    bool m_periodHasBeenSet;
-
-                    /**
-                     * 实例类型，REPLSET-副本集，SHARD-分片集群，STANDALONE-单节点
+                     * 实例类型。<ul><li>REPLSET：副本集。</li><li>SHARD：分片集群。</li><li>STANDALONE：单节点。</li></ul>
                      */
                     std::string m_clusterType;
                     bool m_clusterTypeHasBeenSet;
 
                     /**
-                     * 副本集个数，创建副本集实例时，该参数必须设置为1；创建分片实例时，具体参照查询云数据库的售卖规格返回参数；若为单节点实例，该参数设置为0
+                     * 副本集个数。<ul><li>创建副本集实例时，该参数固定设置为1。</li><li>创建分片集群时，指分片数量，请通过接口<a href="https://cloud.tencent.com/document/product/240/38567">DescribeSpecInfo</a>查询，其返回的数据结构SpecItems中的参数MinReplicateSetNum与MaxReplicateSetNum分别对应其最小值与最大值。</li><li>若为单节点实例，该参数固定设置为0。</li></ul>
                      */
                     int64_t m_replicateSetNum;
                     bool m_replicateSetNumHasBeenSet;
+
+                    /**
+                     * 选择包年包月计费模式时，您需要设定购买实例的时长。即<b>InstanceChargeType</b>设定为<b>PREPAID</b>时，该参数必须配置。<ul><li>单位：月。</li><li>可选值包括[1,2,3,4,5,6,7,8,9,10,11,12,24,36]。</li></ul>
+                     */
+                    int64_t m_period;
+                    bool m_periodHasBeenSet;
+
+                    /**
+                     * 实例付费方式。<ul><li>PREPAID：包年包月计费。</li><li>POSTPAID_BY_HOUR：按量计费。</li></ul>
+                     */
+                    std::string m_instanceChargeType;
+                    bool m_instanceChargeTypeHasBeenSet;
+
+                    /**
+                     * 分片实例询价必填参数，指 Mongos CPU核数，取值范围为[1,16]。
+                     */
+                    uint64_t m_mongosCpu;
+                    bool m_mongosCpuHasBeenSet;
+
+                    /**
+                     * 分片实例询价必填参数，指 Mongos 内存，取值范围为[2,32]，单位：GB。
+                     */
+                    uint64_t m_mongosMemory;
+                    bool m_mongosMemoryHasBeenSet;
+
+                    /**
+                     * 分片实例询价必填参数，指 Mongos 个数，取值范围为[3,32]。
+                     */
+                    uint64_t m_mongosNum;
+                    bool m_mongosNumHasBeenSet;
+
+                    /**
+                     * 分片实例询价必填参数，指 ConfigServer CPU核数，取值为1，单位：GB。
+                     */
+                    uint64_t m_configServerCpu;
+                    bool m_configServerCpuHasBeenSet;
+
+                    /**
+                     * 分片实例询价必填参数，指 ConfigServer 内存大小，取值为2，单位：GB。
+                     */
+                    uint64_t m_configServerMemory;
+                    bool m_configServerMemoryHasBeenSet;
+
+                    /**
+                     * 分片实例询价必填参数，指 ConfigServer 磁盘大小，取值为 20，单位：GB。
+                     */
+                    uint64_t m_configServerVolume;
+                    bool m_configServerVolumeHasBeenSet;
 
                 };
             }

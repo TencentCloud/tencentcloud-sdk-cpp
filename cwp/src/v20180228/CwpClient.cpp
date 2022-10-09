@@ -1717,6 +1717,49 @@ CwpClient::DescribeAssetEnvListOutcomeCallable CwpClient::DescribeAssetEnvListCa
     return task->get_future();
 }
 
+CwpClient::DescribeAssetHostTotalCountOutcome CwpClient::DescribeAssetHostTotalCount(const DescribeAssetHostTotalCountRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAssetHostTotalCount");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAssetHostTotalCountResponse rsp = DescribeAssetHostTotalCountResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAssetHostTotalCountOutcome(rsp);
+        else
+            return DescribeAssetHostTotalCountOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAssetHostTotalCountOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DescribeAssetHostTotalCountAsync(const DescribeAssetHostTotalCountRequest& request, const DescribeAssetHostTotalCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAssetHostTotalCount(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::DescribeAssetHostTotalCountOutcomeCallable CwpClient::DescribeAssetHostTotalCountCallable(const DescribeAssetHostTotalCountRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAssetHostTotalCountOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAssetHostTotalCount(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CwpClient::DescribeAssetInfoOutcome CwpClient::DescribeAssetInfo(const DescribeAssetInfoRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeAssetInfo");

@@ -378,7 +378,7 @@ namespace TencentCloud
                 FlushInstanceRouterConfigOutcomeCallable FlushInstanceRouterConfigCallable(const Model::FlushInstanceRouterConfigRequest& request);
 
                 /**
-                 *本接口用于创建数据库实例询价。本接口参数中必须传入region参数，否则无法通过校验。本接口仅允许针对购买限制范围内的实例配置进行询价。
+                 *本接口（InquirePriceCreateDBInstances）用于创建数据库实例询价。本接口参数中必须传入region参数，否则无法通过校验。本接口仅允许针对购买限制范围内的实例配置进行询价。
                  * @param req InquirePriceCreateDBInstancesRequest
                  * @return InquirePriceCreateDBInstancesOutcome
                  */

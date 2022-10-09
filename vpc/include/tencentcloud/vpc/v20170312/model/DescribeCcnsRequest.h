@@ -158,14 +158,14 @@ namespace TencentCloud
                     bool OrderFieldHasBeenSet() const;
 
                     /**
-                     * 获取排序方法。顺序：`ASC`，倒序：`DESC`。
-                     * @return OrderDirection 排序方法。顺序：`ASC`，倒序：`DESC`。
+                     * 获取排序方法。升序：`ASC`，倒序：`DESC`。
+                     * @return OrderDirection 排序方法。升序：`ASC`，倒序：`DESC`。
                      */
                     std::string GetOrderDirection() const;
 
                     /**
-                     * 设置排序方法。顺序：`ASC`，倒序：`DESC`。
-                     * @param OrderDirection 排序方法。顺序：`ASC`，倒序：`DESC`。
+                     * 设置排序方法。升序：`ASC`，倒序：`DESC`。
+                     * @param OrderDirection 排序方法。升序：`ASC`，倒序：`DESC`。
                      */
                     void SetOrderDirection(const std::string& _orderDirection);
 
@@ -214,7 +214,7 @@ namespace TencentCloud
                     bool m_orderFieldHasBeenSet;
 
                     /**
-                     * 排序方法。顺序：`ASC`，倒序：`DESC`。
+                     * 排序方法。升序：`ASC`，倒序：`DESC`。
                      */
                     std::string m_orderDirection;
                     bool m_orderDirectionHasBeenSet;

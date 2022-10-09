@@ -25,6 +25,8 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/teo/v20220901/model/CheckCertificateRequest.h>
 #include <tencentcloud/teo/v20220901/model/CheckCertificateResponse.h>
+#include <tencentcloud/teo/v20220901/model/CreateAliasDomainRequest.h>
+#include <tencentcloud/teo/v20220901/model/CreateAliasDomainResponse.h>
 #include <tencentcloud/teo/v20220901/model/CreateApplicationProxyRequest.h>
 #include <tencentcloud/teo/v20220901/model/CreateApplicationProxyResponse.h>
 #include <tencentcloud/teo/v20220901/model/CreateApplicationProxyRuleRequest.h>
@@ -61,6 +63,8 @@
 #include <tencentcloud/teo/v20220901/model/CreateSpeedTestingResponse.h>
 #include <tencentcloud/teo/v20220901/model/CreateZoneRequest.h>
 #include <tencentcloud/teo/v20220901/model/CreateZoneResponse.h>
+#include <tencentcloud/teo/v20220901/model/DeleteAliasDomainRequest.h>
+#include <tencentcloud/teo/v20220901/model/DeleteAliasDomainResponse.h>
 #include <tencentcloud/teo/v20220901/model/DeleteApplicationProxyRequest.h>
 #include <tencentcloud/teo/v20220901/model/DeleteApplicationProxyResponse.h>
 #include <tencentcloud/teo/v20220901/model/DeleteApplicationProxyRuleRequest.h>
@@ -79,6 +83,8 @@
 #include <tencentcloud/teo/v20220901/model/DeleteZoneResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeAddableEntityListRequest.h>
 #include <tencentcloud/teo/v20220901/model/DescribeAddableEntityListResponse.h>
+#include <tencentcloud/teo/v20220901/model/DescribeAliasDomainsRequest.h>
+#include <tencentcloud/teo/v20220901/model/DescribeAliasDomainsResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeApplicationProxiesRequest.h>
 #include <tencentcloud/teo/v20220901/model/DescribeApplicationProxiesResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeAvailablePlansRequest.h>
@@ -213,6 +219,10 @@
 #include <tencentcloud/teo/v20220901/model/ModifyAlarmConfigResponse.h>
 #include <tencentcloud/teo/v20220901/model/ModifyAlarmDefaultThresholdRequest.h>
 #include <tencentcloud/teo/v20220901/model/ModifyAlarmDefaultThresholdResponse.h>
+#include <tencentcloud/teo/v20220901/model/ModifyAliasDomainRequest.h>
+#include <tencentcloud/teo/v20220901/model/ModifyAliasDomainResponse.h>
+#include <tencentcloud/teo/v20220901/model/ModifyAliasDomainStatusRequest.h>
+#include <tencentcloud/teo/v20220901/model/ModifyAliasDomainStatusResponse.h>
 #include <tencentcloud/teo/v20220901/model/ModifyApplicationProxyRequest.h>
 #include <tencentcloud/teo/v20220901/model/ModifyApplicationProxyResponse.h>
 #include <tencentcloud/teo/v20220901/model/ModifyApplicationProxyRuleRequest.h>
@@ -257,6 +267,8 @@
 #include <tencentcloud/teo/v20220901/model/ModifyZoneSettingResponse.h>
 #include <tencentcloud/teo/v20220901/model/ModifyZoneStatusRequest.h>
 #include <tencentcloud/teo/v20220901/model/ModifyZoneStatusResponse.h>
+#include <tencentcloud/teo/v20220901/model/ReclaimAliasDomainRequest.h>
+#include <tencentcloud/teo/v20220901/model/ReclaimAliasDomainResponse.h>
 #include <tencentcloud/teo/v20220901/model/ReclaimZoneRequest.h>
 #include <tencentcloud/teo/v20220901/model/ReclaimZoneResponse.h>
 #include <tencentcloud/teo/v20220901/model/SwitchLogTopicTaskRequest.h>
@@ -278,6 +290,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CheckCertificateResponse> CheckCertificateOutcome;
                 typedef std::future<CheckCertificateOutcome> CheckCertificateOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::CheckCertificateRequest&, CheckCertificateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckCertificateAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateAliasDomainResponse> CreateAliasDomainOutcome;
+                typedef std::future<CreateAliasDomainOutcome> CreateAliasDomainOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::CreateAliasDomainRequest&, CreateAliasDomainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAliasDomainAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateApplicationProxyResponse> CreateApplicationProxyOutcome;
                 typedef std::future<CreateApplicationProxyOutcome> CreateApplicationProxyOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::CreateApplicationProxyRequest&, CreateApplicationProxyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateApplicationProxyAsyncHandler;
@@ -332,6 +347,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateZoneResponse> CreateZoneOutcome;
                 typedef std::future<CreateZoneOutcome> CreateZoneOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::CreateZoneRequest&, CreateZoneOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateZoneAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteAliasDomainResponse> DeleteAliasDomainOutcome;
+                typedef std::future<DeleteAliasDomainOutcome> DeleteAliasDomainOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::DeleteAliasDomainRequest&, DeleteAliasDomainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAliasDomainAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteApplicationProxyResponse> DeleteApplicationProxyOutcome;
                 typedef std::future<DeleteApplicationProxyOutcome> DeleteApplicationProxyOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DeleteApplicationProxyRequest&, DeleteApplicationProxyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteApplicationProxyAsyncHandler;
@@ -359,6 +377,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAddableEntityListResponse> DescribeAddableEntityListOutcome;
                 typedef std::future<DescribeAddableEntityListOutcome> DescribeAddableEntityListOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribeAddableEntityListRequest&, DescribeAddableEntityListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAddableEntityListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAliasDomainsResponse> DescribeAliasDomainsOutcome;
+                typedef std::future<DescribeAliasDomainsOutcome> DescribeAliasDomainsOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::DescribeAliasDomainsRequest&, DescribeAliasDomainsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAliasDomainsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeApplicationProxiesResponse> DescribeApplicationProxiesOutcome;
                 typedef std::future<DescribeApplicationProxiesOutcome> DescribeApplicationProxiesOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribeApplicationProxiesRequest&, DescribeApplicationProxiesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApplicationProxiesAsyncHandler;
@@ -560,6 +581,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyAlarmDefaultThresholdResponse> ModifyAlarmDefaultThresholdOutcome;
                 typedef std::future<ModifyAlarmDefaultThresholdOutcome> ModifyAlarmDefaultThresholdOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::ModifyAlarmDefaultThresholdRequest&, ModifyAlarmDefaultThresholdOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAlarmDefaultThresholdAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyAliasDomainResponse> ModifyAliasDomainOutcome;
+                typedef std::future<ModifyAliasDomainOutcome> ModifyAliasDomainOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::ModifyAliasDomainRequest&, ModifyAliasDomainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAliasDomainAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyAliasDomainStatusResponse> ModifyAliasDomainStatusOutcome;
+                typedef std::future<ModifyAliasDomainStatusOutcome> ModifyAliasDomainStatusOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::ModifyAliasDomainStatusRequest&, ModifyAliasDomainStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAliasDomainStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyApplicationProxyResponse> ModifyApplicationProxyOutcome;
                 typedef std::future<ModifyApplicationProxyOutcome> ModifyApplicationProxyOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::ModifyApplicationProxyRequest&, ModifyApplicationProxyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyApplicationProxyAsyncHandler;
@@ -626,6 +653,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyZoneStatusResponse> ModifyZoneStatusOutcome;
                 typedef std::future<ModifyZoneStatusOutcome> ModifyZoneStatusOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::ModifyZoneStatusRequest&, ModifyZoneStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyZoneStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::ReclaimAliasDomainResponse> ReclaimAliasDomainOutcome;
+                typedef std::future<ReclaimAliasDomainOutcome> ReclaimAliasDomainOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::ReclaimAliasDomainRequest&, ReclaimAliasDomainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReclaimAliasDomainAsyncHandler;
                 typedef Outcome<Core::Error, Model::ReclaimZoneResponse> ReclaimZoneOutcome;
                 typedef std::future<ReclaimZoneOutcome> ReclaimZoneOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::ReclaimZoneRequest&, ReclaimZoneOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReclaimZoneAsyncHandler;
@@ -643,6 +673,15 @@ namespace TencentCloud
                 CheckCertificateOutcome CheckCertificate(const Model::CheckCertificateRequest &request);
                 void CheckCertificateAsync(const Model::CheckCertificateRequest& request, const CheckCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CheckCertificateOutcomeCallable CheckCertificateCallable(const Model::CheckCertificateRequest& request);
+
+                /**
+                 *创建别称域名。
+                 * @param req CreateAliasDomainRequest
+                 * @return CreateAliasDomainOutcome
+                 */
+                CreateAliasDomainOutcome CreateAliasDomain(const Model::CreateAliasDomainRequest &request);
+                void CreateAliasDomainAsync(const Model::CreateAliasDomainRequest& request, const CreateAliasDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateAliasDomainOutcomeCallable CreateAliasDomainCallable(const Model::CreateAliasDomainRequest& request);
 
                 /**
                  *创建应用代理
@@ -807,6 +846,15 @@ namespace TencentCloud
                 CreateZoneOutcomeCallable CreateZoneCallable(const Model::CreateZoneRequest& request);
 
                 /**
+                 *删除别称域名。
+                 * @param req DeleteAliasDomainRequest
+                 * @return DeleteAliasDomainOutcome
+                 */
+                DeleteAliasDomainOutcome DeleteAliasDomain(const Model::DeleteAliasDomainRequest &request);
+                void DeleteAliasDomainAsync(const Model::DeleteAliasDomainRequest& request, const DeleteAliasDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteAliasDomainOutcomeCallable DeleteAliasDomainCallable(const Model::DeleteAliasDomainRequest& request);
+
+                /**
                  *删除应用代理
                  * @param req DeleteApplicationProxyRequest
                  * @return DeleteApplicationProxyOutcome
@@ -886,6 +934,15 @@ namespace TencentCloud
                 DescribeAddableEntityListOutcome DescribeAddableEntityList(const Model::DescribeAddableEntityListRequest &request);
                 void DescribeAddableEntityListAsync(const Model::DescribeAddableEntityListRequest& request, const DescribeAddableEntityListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAddableEntityListOutcomeCallable DescribeAddableEntityListCallable(const Model::DescribeAddableEntityListRequest& request);
+
+                /**
+                 *查询别称域名信息列表。
+                 * @param req DescribeAliasDomainsRequest
+                 * @return DescribeAliasDomainsOutcome
+                 */
+                DescribeAliasDomainsOutcome DescribeAliasDomains(const Model::DescribeAliasDomainsRequest &request);
+                void DescribeAliasDomainsAsync(const Model::DescribeAliasDomainsRequest& request, const DescribeAliasDomainsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAliasDomainsOutcomeCallable DescribeAliasDomainsCallable(const Model::DescribeAliasDomainsRequest& request);
 
                 /**
                  *查询应用代理列表。
@@ -1491,6 +1548,24 @@ namespace TencentCloud
                 ModifyAlarmDefaultThresholdOutcomeCallable ModifyAlarmDefaultThresholdCallable(const Model::ModifyAlarmDefaultThresholdRequest& request);
 
                 /**
+                 *修改别称域名。
+                 * @param req ModifyAliasDomainRequest
+                 * @return ModifyAliasDomainOutcome
+                 */
+                ModifyAliasDomainOutcome ModifyAliasDomain(const Model::ModifyAliasDomainRequest &request);
+                void ModifyAliasDomainAsync(const Model::ModifyAliasDomainRequest& request, const ModifyAliasDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyAliasDomainOutcomeCallable ModifyAliasDomainCallable(const Model::ModifyAliasDomainRequest& request);
+
+                /**
+                 *修改别称域名状态。
+                 * @param req ModifyAliasDomainStatusRequest
+                 * @return ModifyAliasDomainStatusOutcome
+                 */
+                ModifyAliasDomainStatusOutcome ModifyAliasDomainStatus(const Model::ModifyAliasDomainStatusRequest &request);
+                void ModifyAliasDomainStatusAsync(const Model::ModifyAliasDomainStatusRequest& request, const ModifyAliasDomainStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyAliasDomainStatusOutcomeCallable ModifyAliasDomainStatusCallable(const Model::ModifyAliasDomainStatusRequest& request);
+
+                /**
                  *修改应用代理
                  * @param req ModifyApplicationProxyRequest
                  * @return ModifyApplicationProxyOutcome
@@ -1687,6 +1762,15 @@ namespace TencentCloud
                 ModifyZoneStatusOutcome ModifyZoneStatus(const Model::ModifyZoneStatusRequest &request);
                 void ModifyZoneStatusAsync(const Model::ModifyZoneStatusRequest& request, const ModifyZoneStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyZoneStatusOutcomeCallable ModifyZoneStatusCallable(const Model::ModifyZoneStatusRequest& request);
+
+                /**
+                 *当客户取回站定的同时会取回此站点下关联的别称域名，此时入参为ZoneId；当客户接入站点发现已被别称域名接入时通过验证之后可取回域名，此时入参为ZoneName。
+                 * @param req ReclaimAliasDomainRequest
+                 * @return ReclaimAliasDomainOutcome
+                 */
+                ReclaimAliasDomainOutcome ReclaimAliasDomain(const Model::ReclaimAliasDomainRequest &request);
+                void ReclaimAliasDomainAsync(const Model::ReclaimAliasDomainRequest& request, const ReclaimAliasDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ReclaimAliasDomainOutcomeCallable ReclaimAliasDomainCallable(const Model::ReclaimAliasDomainRequest& request);
 
                 /**
                  *站点被其他用户接入后，验证了站点所有权之后，可以找回该站点。

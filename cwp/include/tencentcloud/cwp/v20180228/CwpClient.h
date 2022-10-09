@@ -101,6 +101,8 @@
 #include <tencentcloud/cwp/v20180228/model/DescribeAssetDatabaseListResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeAssetEnvListRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeAssetEnvListResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeAssetHostTotalCountRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeAssetHostTotalCountResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeAssetInfoRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeAssetInfoResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeAssetInitServiceListRequest.h>
@@ -590,6 +592,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAssetEnvListResponse> DescribeAssetEnvListOutcome;
                 typedef std::future<DescribeAssetEnvListOutcome> DescribeAssetEnvListOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeAssetEnvListRequest&, DescribeAssetEnvListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAssetEnvListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAssetHostTotalCountResponse> DescribeAssetHostTotalCountOutcome;
+                typedef std::future<DescribeAssetHostTotalCountOutcome> DescribeAssetHostTotalCountOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeAssetHostTotalCountRequest&, DescribeAssetHostTotalCountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAssetHostTotalCountAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAssetInfoResponse> DescribeAssetInfoOutcome;
                 typedef std::future<DescribeAssetInfoOutcome> DescribeAssetInfoOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeAssetInfoRequest&, DescribeAssetInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAssetInfoAsyncHandler;
@@ -1483,6 +1488,15 @@ namespace TencentCloud
                 DescribeAssetEnvListOutcome DescribeAssetEnvList(const Model::DescribeAssetEnvListRequest &request);
                 void DescribeAssetEnvListAsync(const Model::DescribeAssetEnvListRequest& request, const DescribeAssetEnvListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAssetEnvListOutcomeCallable DescribeAssetEnvListCallable(const Model::DescribeAssetEnvListRequest& request);
+
+                /**
+                 *获取主机所有资源数量
+                 * @param req DescribeAssetHostTotalCountRequest
+                 * @return DescribeAssetHostTotalCountOutcome
+                 */
+                DescribeAssetHostTotalCountOutcome DescribeAssetHostTotalCount(const Model::DescribeAssetHostTotalCountRequest &request);
+                void DescribeAssetHostTotalCountAsync(const Model::DescribeAssetHostTotalCountRequest& request, const DescribeAssetHostTotalCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAssetHostTotalCountOutcomeCallable DescribeAssetHostTotalCountCallable(const Model::DescribeAssetHostTotalCountRequest& request);
 
                 /**
                  *获取资产数量： 主机数、账号数、端口数、进程数、软件数、数据库数、Web应用数、Web框架数、Web服务数、Web站点数

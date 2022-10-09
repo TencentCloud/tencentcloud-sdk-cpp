@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取复制组ID
-                     * @return GroupId 复制组ID
+                     * 获取复制组ID。
+                     * @return GroupId 复制组ID。
                      */
                     std::string GetGroupId() const;
 
                     /**
-                     * 设置复制组ID
-                     * @param GroupId 复制组ID
+                     * 设置复制组ID。
+                     * @param GroupId 复制组ID。
                      */
                     void SetGroupId(const std::string& _groupId);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool GroupIdHasBeenSet() const;
 
                     /**
-                     * 获取实例ID
-                     * @return InstanceId 实例ID
+                     * 获取实例ID。
+                     * @return InstanceId 实例ID。
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID
-                     * @param InstanceId 实例ID
+                     * 设置实例ID。
+                     * @param InstanceId 实例ID。
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取实例角色，rw可读写，r只读
-                     * @return InstanceRole 实例角色，rw可读写，r只读
+                     * 获取给复制组添加的实例分配角色。<ul><li>rw：可读写。</li><li>r：只读。</li></ul>
+                     * @return InstanceRole 给复制组添加的实例分配角色。<ul><li>rw：可读写。</li><li>r：只读。</li></ul>
                      */
                     std::string GetInstanceRole() const;
 
                     /**
-                     * 设置实例角色，rw可读写，r只读
-                     * @param InstanceRole 实例角色，rw可读写，r只读
+                     * 设置给复制组添加的实例分配角色。<ul><li>rw：可读写。</li><li>r：只读。</li></ul>
+                     * @param InstanceRole 给复制组添加的实例分配角色。<ul><li>rw：可读写。</li><li>r：只读。</li></ul>
                      */
                     void SetInstanceRole(const std::string& _instanceRole);
 
@@ -99,19 +99,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 复制组ID
+                     * 复制组ID。
                      */
                     std::string m_groupId;
                     bool m_groupIdHasBeenSet;
 
                     /**
-                     * 实例ID
+                     * 实例ID。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 实例角色，rw可读写，r只读
+                     * 给复制组添加的实例分配角色。<ul><li>rw：可读写。</li><li>r：只读。</li></ul>
                      */
                     std::string m_instanceRole;
                     bool m_instanceRoleHasBeenSet;

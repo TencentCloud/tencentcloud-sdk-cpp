@@ -30,9 +30,16 @@ InquirePriceCreateDBInstancesRequest::InquirePriceCreateDBInstancesRequest() :
     m_mongoVersionHasBeenSet(false),
     m_machineCodeHasBeenSet(false),
     m_goodsNumHasBeenSet(false),
-    m_periodHasBeenSet(false),
     m_clusterTypeHasBeenSet(false),
-    m_replicateSetNumHasBeenSet(false)
+    m_replicateSetNumHasBeenSet(false),
+    m_periodHasBeenSet(false),
+    m_instanceChargeTypeHasBeenSet(false),
+    m_mongosCpuHasBeenSet(false),
+    m_mongosMemoryHasBeenSet(false),
+    m_mongosNumHasBeenSet(false),
+    m_configServerCpuHasBeenSet(false),
+    m_configServerMemoryHasBeenSet(false),
+    m_configServerVolumeHasBeenSet(false)
 {
 }
 
@@ -99,14 +106,6 @@ string InquirePriceCreateDBInstancesRequest::ToJsonString() const
         d.AddMember(iKey, m_goodsNum, allocator);
     }
 
-    if (m_periodHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Period";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_period, allocator);
-    }
-
     if (m_clusterTypeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -121,6 +120,70 @@ string InquirePriceCreateDBInstancesRequest::ToJsonString() const
         string key = "ReplicateSetNum";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_replicateSetNum, allocator);
+    }
+
+    if (m_periodHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Period";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_period, allocator);
+    }
+
+    if (m_instanceChargeTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceChargeType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_instanceChargeType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_mongosCpuHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MongosCpu";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_mongosCpu, allocator);
+    }
+
+    if (m_mongosMemoryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MongosMemory";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_mongosMemory, allocator);
+    }
+
+    if (m_mongosNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MongosNum";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_mongosNum, allocator);
+    }
+
+    if (m_configServerCpuHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConfigServerCpu";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_configServerCpu, allocator);
+    }
+
+    if (m_configServerMemoryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConfigServerMemory";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_configServerMemory, allocator);
+    }
+
+    if (m_configServerVolumeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConfigServerVolume";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_configServerVolume, allocator);
     }
 
 
@@ -243,22 +306,6 @@ bool InquirePriceCreateDBInstancesRequest::GoodsNumHasBeenSet() const
     return m_goodsNumHasBeenSet;
 }
 
-int64_t InquirePriceCreateDBInstancesRequest::GetPeriod() const
-{
-    return m_period;
-}
-
-void InquirePriceCreateDBInstancesRequest::SetPeriod(const int64_t& _period)
-{
-    m_period = _period;
-    m_periodHasBeenSet = true;
-}
-
-bool InquirePriceCreateDBInstancesRequest::PeriodHasBeenSet() const
-{
-    return m_periodHasBeenSet;
-}
-
 string InquirePriceCreateDBInstancesRequest::GetClusterType() const
 {
     return m_clusterType;
@@ -289,6 +336,134 @@ void InquirePriceCreateDBInstancesRequest::SetReplicateSetNum(const int64_t& _re
 bool InquirePriceCreateDBInstancesRequest::ReplicateSetNumHasBeenSet() const
 {
     return m_replicateSetNumHasBeenSet;
+}
+
+int64_t InquirePriceCreateDBInstancesRequest::GetPeriod() const
+{
+    return m_period;
+}
+
+void InquirePriceCreateDBInstancesRequest::SetPeriod(const int64_t& _period)
+{
+    m_period = _period;
+    m_periodHasBeenSet = true;
+}
+
+bool InquirePriceCreateDBInstancesRequest::PeriodHasBeenSet() const
+{
+    return m_periodHasBeenSet;
+}
+
+string InquirePriceCreateDBInstancesRequest::GetInstanceChargeType() const
+{
+    return m_instanceChargeType;
+}
+
+void InquirePriceCreateDBInstancesRequest::SetInstanceChargeType(const string& _instanceChargeType)
+{
+    m_instanceChargeType = _instanceChargeType;
+    m_instanceChargeTypeHasBeenSet = true;
+}
+
+bool InquirePriceCreateDBInstancesRequest::InstanceChargeTypeHasBeenSet() const
+{
+    return m_instanceChargeTypeHasBeenSet;
+}
+
+uint64_t InquirePriceCreateDBInstancesRequest::GetMongosCpu() const
+{
+    return m_mongosCpu;
+}
+
+void InquirePriceCreateDBInstancesRequest::SetMongosCpu(const uint64_t& _mongosCpu)
+{
+    m_mongosCpu = _mongosCpu;
+    m_mongosCpuHasBeenSet = true;
+}
+
+bool InquirePriceCreateDBInstancesRequest::MongosCpuHasBeenSet() const
+{
+    return m_mongosCpuHasBeenSet;
+}
+
+uint64_t InquirePriceCreateDBInstancesRequest::GetMongosMemory() const
+{
+    return m_mongosMemory;
+}
+
+void InquirePriceCreateDBInstancesRequest::SetMongosMemory(const uint64_t& _mongosMemory)
+{
+    m_mongosMemory = _mongosMemory;
+    m_mongosMemoryHasBeenSet = true;
+}
+
+bool InquirePriceCreateDBInstancesRequest::MongosMemoryHasBeenSet() const
+{
+    return m_mongosMemoryHasBeenSet;
+}
+
+uint64_t InquirePriceCreateDBInstancesRequest::GetMongosNum() const
+{
+    return m_mongosNum;
+}
+
+void InquirePriceCreateDBInstancesRequest::SetMongosNum(const uint64_t& _mongosNum)
+{
+    m_mongosNum = _mongosNum;
+    m_mongosNumHasBeenSet = true;
+}
+
+bool InquirePriceCreateDBInstancesRequest::MongosNumHasBeenSet() const
+{
+    return m_mongosNumHasBeenSet;
+}
+
+uint64_t InquirePriceCreateDBInstancesRequest::GetConfigServerCpu() const
+{
+    return m_configServerCpu;
+}
+
+void InquirePriceCreateDBInstancesRequest::SetConfigServerCpu(const uint64_t& _configServerCpu)
+{
+    m_configServerCpu = _configServerCpu;
+    m_configServerCpuHasBeenSet = true;
+}
+
+bool InquirePriceCreateDBInstancesRequest::ConfigServerCpuHasBeenSet() const
+{
+    return m_configServerCpuHasBeenSet;
+}
+
+uint64_t InquirePriceCreateDBInstancesRequest::GetConfigServerMemory() const
+{
+    return m_configServerMemory;
+}
+
+void InquirePriceCreateDBInstancesRequest::SetConfigServerMemory(const uint64_t& _configServerMemory)
+{
+    m_configServerMemory = _configServerMemory;
+    m_configServerMemoryHasBeenSet = true;
+}
+
+bool InquirePriceCreateDBInstancesRequest::ConfigServerMemoryHasBeenSet() const
+{
+    return m_configServerMemoryHasBeenSet;
+}
+
+uint64_t InquirePriceCreateDBInstancesRequest::GetConfigServerVolume() const
+{
+    return m_configServerVolume;
+}
+
+void InquirePriceCreateDBInstancesRequest::SetConfigServerVolume(const uint64_t& _configServerVolume)
+{
+    m_configServerVolume = _configServerVolume;
+    m_configServerVolumeHasBeenSet = true;
+}
+
+bool InquirePriceCreateDBInstancesRequest::ConfigServerVolumeHasBeenSet() const
+{
+    return m_configServerVolumeHasBeenSet;
 }
 
 

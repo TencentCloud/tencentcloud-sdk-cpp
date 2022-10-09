@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID
-                     * @return InstanceId 实例ID
+                     * 获取指定复制组中的主实例ID。
+                     * @return InstanceId 指定复制组中的主实例ID。
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID
-                     * @param InstanceId 实例ID
+                     * 设置指定复制组中的主实例ID。
+                     * @param InstanceId 指定复制组中的主实例ID。
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取复制组名称
-                     * @return GroupName 复制组名称
+                     * 获取复制组名称。
+                     * @return GroupName 复制组名称。
                      */
                     std::string GetGroupName() const;
 
                     /**
-                     * 设置复制组名称
-                     * @param GroupName 复制组名称
+                     * 设置复制组名称。
+                     * @param GroupName 复制组名称。
                      */
                     void SetGroupName(const std::string& _groupName);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool GroupNameHasBeenSet() const;
 
                     /**
-                     * 获取备注信息
-                     * @return Remark 备注信息
+                     * 获取备注信息。
+                     * @return Remark 备注信息。
                      */
                     std::string GetRemark() const;
 
                     /**
-                     * 设置备注信息
-                     * @param Remark 备注信息
+                     * 设置备注信息。
+                     * @param Remark 备注信息。
                      */
                     void SetRemark(const std::string& _remark);
 
@@ -99,19 +99,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例ID
+                     * 指定复制组中的主实例ID。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 复制组名称
+                     * 复制组名称。
                      */
                     std::string m_groupName;
                     bool m_groupNameHasBeenSet;
 
                     /**
-                     * 备注信息
+                     * 备注信息。
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;

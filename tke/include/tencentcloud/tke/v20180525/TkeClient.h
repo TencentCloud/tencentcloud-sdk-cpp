@@ -195,6 +195,8 @@
 #include <tencentcloud/tke/v20180525/model/DescribeEdgeClusterExtraArgsResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeEdgeClusterInstancesRequest.h>
 #include <tencentcloud/tke/v20180525/model/DescribeEdgeClusterInstancesResponse.h>
+#include <tencentcloud/tke/v20180525/model/DescribeEdgeClusterUpgradeInfoRequest.h>
+#include <tencentcloud/tke/v20180525/model/DescribeEdgeClusterUpgradeInfoResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeEdgeLogSwitchesRequest.h>
 #include <tencentcloud/tke/v20180525/model/DescribeEdgeLogSwitchesResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeEksContainerInstanceLogRequest.h>
@@ -357,6 +359,8 @@
 #include <tencentcloud/tke/v20180525/model/UpdateEKSClusterResponse.h>
 #include <tencentcloud/tke/v20180525/model/UpdateEKSContainerInstanceRequest.h>
 #include <tencentcloud/tke/v20180525/model/UpdateEKSContainerInstanceResponse.h>
+#include <tencentcloud/tke/v20180525/model/UpdateEdgeClusterVersionRequest.h>
+#include <tencentcloud/tke/v20180525/model/UpdateEdgeClusterVersionResponse.h>
 #include <tencentcloud/tke/v20180525/model/UpdateImageCacheRequest.h>
 #include <tencentcloud/tke/v20180525/model/UpdateImageCacheResponse.h>
 #include <tencentcloud/tke/v20180525/model/UpdateTKEEdgeClusterRequest.h>
@@ -635,6 +639,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeEdgeClusterInstancesResponse> DescribeEdgeClusterInstancesOutcome;
                 typedef std::future<DescribeEdgeClusterInstancesOutcome> DescribeEdgeClusterInstancesOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DescribeEdgeClusterInstancesRequest&, DescribeEdgeClusterInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEdgeClusterInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeEdgeClusterUpgradeInfoResponse> DescribeEdgeClusterUpgradeInfoOutcome;
+                typedef std::future<DescribeEdgeClusterUpgradeInfoOutcome> DescribeEdgeClusterUpgradeInfoOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::DescribeEdgeClusterUpgradeInfoRequest&, DescribeEdgeClusterUpgradeInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEdgeClusterUpgradeInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeEdgeLogSwitchesResponse> DescribeEdgeLogSwitchesOutcome;
                 typedef std::future<DescribeEdgeLogSwitchesOutcome> DescribeEdgeLogSwitchesOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DescribeEdgeLogSwitchesRequest&, DescribeEdgeLogSwitchesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEdgeLogSwitchesAsyncHandler;
@@ -878,6 +885,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UpdateEKSContainerInstanceResponse> UpdateEKSContainerInstanceOutcome;
                 typedef std::future<UpdateEKSContainerInstanceOutcome> UpdateEKSContainerInstanceOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::UpdateEKSContainerInstanceRequest&, UpdateEKSContainerInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateEKSContainerInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateEdgeClusterVersionResponse> UpdateEdgeClusterVersionOutcome;
+                typedef std::future<UpdateEdgeClusterVersionOutcome> UpdateEdgeClusterVersionOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::UpdateEdgeClusterVersionRequest&, UpdateEdgeClusterVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateEdgeClusterVersionAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpdateImageCacheResponse> UpdateImageCacheOutcome;
                 typedef std::future<UpdateImageCacheOutcome> UpdateImageCacheOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::UpdateImageCacheRequest&, UpdateImageCacheOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateImageCacheAsyncHandler;
@@ -1665,6 +1675,15 @@ namespace TencentCloud
                 DescribeEdgeClusterInstancesOutcomeCallable DescribeEdgeClusterInstancesCallable(const Model::DescribeEdgeClusterInstancesRequest& request);
 
                 /**
+                 *可以查询边缘集群升级信息，包含可以升级的组件，当前升级状态和升级错误信息
+                 * @param req DescribeEdgeClusterUpgradeInfoRequest
+                 * @return DescribeEdgeClusterUpgradeInfoOutcome
+                 */
+                DescribeEdgeClusterUpgradeInfoOutcome DescribeEdgeClusterUpgradeInfo(const Model::DescribeEdgeClusterUpgradeInfoRequest &request);
+                void DescribeEdgeClusterUpgradeInfoAsync(const Model::DescribeEdgeClusterUpgradeInfoRequest& request, const DescribeEdgeClusterUpgradeInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeEdgeClusterUpgradeInfoOutcomeCallable DescribeEdgeClusterUpgradeInfoCallable(const Model::DescribeEdgeClusterUpgradeInfoRequest& request);
+
+                /**
                  *获取事件、审计和日志的状态接口
                  * @param req DescribeEdgeLogSwitchesRequest
                  * @return DescribeEdgeLogSwitchesOutcome
@@ -2392,6 +2411,15 @@ namespace TencentCloud
                 UpdateEKSContainerInstanceOutcome UpdateEKSContainerInstance(const Model::UpdateEKSContainerInstanceRequest &request);
                 void UpdateEKSContainerInstanceAsync(const Model::UpdateEKSContainerInstanceRequest& request, const UpdateEKSContainerInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UpdateEKSContainerInstanceOutcomeCallable UpdateEKSContainerInstanceCallable(const Model::UpdateEKSContainerInstanceRequest& request);
+
+                /**
+                 *升级边缘集群组件到指定版本，此版本为TKEEdge专用版本。
+                 * @param req UpdateEdgeClusterVersionRequest
+                 * @return UpdateEdgeClusterVersionOutcome
+                 */
+                UpdateEdgeClusterVersionOutcome UpdateEdgeClusterVersion(const Model::UpdateEdgeClusterVersionRequest &request);
+                void UpdateEdgeClusterVersionAsync(const Model::UpdateEdgeClusterVersionRequest& request, const UpdateEdgeClusterVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateEdgeClusterVersionOutcomeCallable UpdateEdgeClusterVersionCallable(const Model::UpdateEdgeClusterVersionRequest& request);
 
                 /**
                  *更新镜像缓存接口
