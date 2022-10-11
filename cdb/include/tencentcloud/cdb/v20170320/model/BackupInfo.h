@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cdb/v20170320/model/RemoteBackupInfo.h>
 
 
 namespace TencentCloud
@@ -316,6 +317,78 @@ namespace TencentCloud
                      */
                     bool SaveModeHasBeenSet() const;
 
+                    /**
+                     * 获取本地备份所在地域
+                     * @return Region 本地备份所在地域
+                     */
+                    std::string GetRegion() const;
+
+                    /**
+                     * 设置本地备份所在地域
+                     * @param Region 本地备份所在地域
+                     */
+                    void SetRegion(const std::string& _region);
+
+                    /**
+                     * 判断参数 Region 是否已赋值
+                     * @return Region 是否已赋值
+                     */
+                    bool RegionHasBeenSet() const;
+
+                    /**
+                     * 获取异地备份详细信息
+                     * @return RemoteInfo 异地备份详细信息
+                     */
+                    std::vector<RemoteBackupInfo> GetRemoteInfo() const;
+
+                    /**
+                     * 设置异地备份详细信息
+                     * @param RemoteInfo 异地备份详细信息
+                     */
+                    void SetRemoteInfo(const std::vector<RemoteBackupInfo>& _remoteInfo);
+
+                    /**
+                     * 判断参数 RemoteInfo 是否已赋值
+                     * @return RemoteInfo 是否已赋值
+                     */
+                    bool RemoteInfoHasBeenSet() const;
+
+                    /**
+                     * 获取存储方式，0-常规存储，1-归档存储，默认为0
+                     * @return CosStorageType 存储方式，0-常规存储，1-归档存储，默认为0
+                     */
+                    int64_t GetCosStorageType() const;
+
+                    /**
+                     * 设置存储方式，0-常规存储，1-归档存储，默认为0
+                     * @param CosStorageType 存储方式，0-常规存储，1-归档存储，默认为0
+                     */
+                    void SetCosStorageType(const int64_t& _cosStorageType);
+
+                    /**
+                     * 判断参数 CosStorageType 是否已赋值
+                     * @return CosStorageType 是否已赋值
+                     */
+                    bool CosStorageTypeHasBeenSet() const;
+
+                    /**
+                     * 获取实例 ID，格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例 ID 相同。
+                     * @return InstanceId 实例 ID，格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例 ID 相同。
+                     */
+                    std::string GetInstanceId() const;
+
+                    /**
+                     * 设置实例 ID，格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例 ID 相同。
+                     * @param InstanceId 实例 ID，格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例 ID 相同。
+                     */
+                    void SetInstanceId(const std::string& _instanceId);
+
+                    /**
+                     * 判断参数 InstanceId 是否已赋值
+                     * @return InstanceId 是否已赋值
+                     */
+                    bool InstanceIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -407,6 +480,30 @@ namespace TencentCloud
                      */
                     std::string m_saveMode;
                     bool m_saveModeHasBeenSet;
+
+                    /**
+                     * 本地备份所在地域
+                     */
+                    std::string m_region;
+                    bool m_regionHasBeenSet;
+
+                    /**
+                     * 异地备份详细信息
+                     */
+                    std::vector<RemoteBackupInfo> m_remoteInfo;
+                    bool m_remoteInfoHasBeenSet;
+
+                    /**
+                     * 存储方式，0-常规存储，1-归档存储，默认为0
+                     */
+                    int64_t m_cosStorageType;
+                    bool m_cosStorageTypeHasBeenSet;
+
+                    /**
+                     * 实例 ID，格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例 ID 相同。
+                     */
+                    std::string m_instanceId;
+                    bool m_instanceIdHasBeenSet;
 
                 };
             }

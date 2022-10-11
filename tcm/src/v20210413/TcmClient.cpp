@@ -40,6 +40,92 @@ TcmClient::TcmClient(const Credential &credential, const string &region, const C
 }
 
 
+TcmClient::CreateMeshOutcome TcmClient::CreateMesh(const CreateMeshRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateMesh");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateMeshResponse rsp = CreateMeshResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateMeshOutcome(rsp);
+        else
+            return CreateMeshOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateMeshOutcome(outcome.GetError());
+    }
+}
+
+void TcmClient::CreateMeshAsync(const CreateMeshRequest& request, const CreateMeshAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateMesh(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcmClient::CreateMeshOutcomeCallable TcmClient::CreateMeshCallable(const CreateMeshRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateMeshOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateMesh(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcmClient::DeleteMeshOutcome TcmClient::DeleteMesh(const DeleteMeshRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteMesh");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteMeshResponse rsp = DeleteMeshResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteMeshOutcome(rsp);
+        else
+            return DeleteMeshOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteMeshOutcome(outcome.GetError());
+    }
+}
+
+void TcmClient::DeleteMeshAsync(const DeleteMeshRequest& request, const DeleteMeshAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteMesh(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcmClient::DeleteMeshOutcomeCallable TcmClient::DeleteMeshCallable(const DeleteMeshRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteMeshOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteMesh(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcmClient::DescribeMeshOutcome TcmClient::DescribeMesh(const DescribeMeshRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeMesh");
@@ -119,6 +205,49 @@ TcmClient::DescribeMeshListOutcomeCallable TcmClient::DescribeMeshListCallable(c
         [this, request]()
         {
             return this->DescribeMeshList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcmClient::ModifyMeshOutcome TcmClient::ModifyMesh(const ModifyMeshRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyMesh");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyMeshResponse rsp = ModifyMeshResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyMeshOutcome(rsp);
+        else
+            return ModifyMeshOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyMeshOutcome(outcome.GetError());
+    }
+}
+
+void TcmClient::ModifyMeshAsync(const ModifyMeshRequest& request, const ModifyMeshAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyMesh(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcmClient::ModifyMeshOutcomeCallable TcmClient::ModifyMeshCallable(const ModifyMeshRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyMeshOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyMesh(request);
         }
     );
 

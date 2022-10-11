@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取数据库引擎名称：mariadb,cdb,cynosdb,dcdb,redis,mongodb 等。
-                     * @return Product 数据库引擎名称：mariadb,cdb,cynosdb,dcdb,redis,mongodb 等。
+                     * 获取数据库引擎名称，本接口取值：redis。
+                     * @return Product 数据库引擎名称，本接口取值：redis。
                      */
                     std::string GetProduct() const;
 
                     /**
-                     * 设置数据库引擎名称：mariadb,cdb,cynosdb,dcdb,redis,mongodb 等。
-                     * @param Product 数据库引擎名称：mariadb,cdb,cynosdb,dcdb,redis,mongodb 等。
+                     * 设置数据库引擎名称，本接口取值：redis。
+                     * @param Product 数据库引擎名称，本接口取值：redis。
                      */
                     void SetProduct(const std::string& _product);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool ProductHasBeenSet() const;
 
                     /**
-                     * 获取要修改的安全组ID列表，一个或者多个安全组Id组成的数组。
-                     * @return SecurityGroupIds 要修改的安全组ID列表，一个或者多个安全组Id组成的数组。
+                     * 获取要修改的安全组 ID 列表，一个或者多个安全组 ID 组成的数组。
+                     * @return SecurityGroupIds 要修改的安全组 ID 列表，一个或者多个安全组 ID 组成的数组。
                      */
                     std::vector<std::string> GetSecurityGroupIds() const;
 
                     /**
-                     * 设置要修改的安全组ID列表，一个或者多个安全组Id组成的数组。
-                     * @param SecurityGroupIds 要修改的安全组ID列表，一个或者多个安全组Id组成的数组。
+                     * 设置要修改的安全组 ID 列表，一个或者多个安全组 ID 组成的数组。
+                     * @param SecurityGroupIds 要修改的安全组 ID 列表，一个或者多个安全组 ID 组成的数组。
                      */
                     void SetSecurityGroupIds(const std::vector<std::string>& _securityGroupIds);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool SecurityGroupIdsHasBeenSet() const;
 
                     /**
-                     * 获取实例ID，格式如：cdb-c1nl9rpv或者cdbro-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同
-                     * @return InstanceId 实例ID，格式如：cdb-c1nl9rpv或者cdbro-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同
+                     * 获取实例 ID，格式如：cdb-c1nl9rpv或者cdbro-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。
+                     * @return InstanceId 实例 ID，格式如：cdb-c1nl9rpv或者cdbro-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID，格式如：cdb-c1nl9rpv或者cdbro-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同
-                     * @param InstanceId 实例ID，格式如：cdb-c1nl9rpv或者cdbro-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同
+                     * 设置实例 ID，格式如：cdb-c1nl9rpv或者cdbro-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。
+                     * @param InstanceId 实例 ID，格式如：cdb-c1nl9rpv或者cdbro-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
@@ -99,19 +99,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 数据库引擎名称：mariadb,cdb,cynosdb,dcdb,redis,mongodb 等。
+                     * 数据库引擎名称，本接口取值：redis。
                      */
                     std::string m_product;
                     bool m_productHasBeenSet;
 
                     /**
-                     * 要修改的安全组ID列表，一个或者多个安全组Id组成的数组。
+                     * 要修改的安全组 ID 列表，一个或者多个安全组 ID 组成的数组。
                      */
                     std::vector<std::string> m_securityGroupIds;
                     bool m_securityGroupIdsHasBeenSet;
 
                     /**
-                     * 实例ID，格式如：cdb-c1nl9rpv或者cdbro-c1nl9rpv，与云数据库控制台页面中显示的实例ID相同
+                     * 实例 ID，格式如：cdb-c1nl9rpv或者cdbro-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;

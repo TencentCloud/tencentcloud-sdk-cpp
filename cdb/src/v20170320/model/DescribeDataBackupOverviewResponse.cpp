@@ -31,7 +31,9 @@ DescribeDataBackupOverviewResponse::DescribeDataBackupOverviewResponse() :
     m_manualBackupVolumeHasBeenSet(false),
     m_manualBackupCountHasBeenSet(false),
     m_remoteBackupVolumeHasBeenSet(false),
-    m_remoteBackupCountHasBeenSet(false)
+    m_remoteBackupCountHasBeenSet(false),
+    m_dataBackupArchiveVolumeHasBeenSet(false),
+    m_dataBackupArchiveCountHasBeenSet(false)
 {
 }
 
@@ -149,6 +151,26 @@ CoreInternalOutcome DescribeDataBackupOverviewResponse::Deserialize(const string
         m_remoteBackupCountHasBeenSet = true;
     }
 
+    if (rsp.HasMember("DataBackupArchiveVolume") && !rsp["DataBackupArchiveVolume"].IsNull())
+    {
+        if (!rsp["DataBackupArchiveVolume"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DataBackupArchiveVolume` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_dataBackupArchiveVolume = rsp["DataBackupArchiveVolume"].GetInt64();
+        m_dataBackupArchiveVolumeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("DataBackupArchiveCount") && !rsp["DataBackupArchiveCount"].IsNull())
+    {
+        if (!rsp["DataBackupArchiveCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DataBackupArchiveCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_dataBackupArchiveCount = rsp["DataBackupArchiveCount"].GetInt64();
+        m_dataBackupArchiveCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -221,6 +243,22 @@ string DescribeDataBackupOverviewResponse::ToJsonString() const
         string key = "RemoteBackupCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_remoteBackupCount, allocator);
+    }
+
+    if (m_dataBackupArchiveVolumeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DataBackupArchiveVolume";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_dataBackupArchiveVolume, allocator);
+    }
+
+    if (m_dataBackupArchiveCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DataBackupArchiveCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_dataBackupArchiveCount, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -313,6 +351,26 @@ int64_t DescribeDataBackupOverviewResponse::GetRemoteBackupCount() const
 bool DescribeDataBackupOverviewResponse::RemoteBackupCountHasBeenSet() const
 {
     return m_remoteBackupCountHasBeenSet;
+}
+
+int64_t DescribeDataBackupOverviewResponse::GetDataBackupArchiveVolume() const
+{
+    return m_dataBackupArchiveVolume;
+}
+
+bool DescribeDataBackupOverviewResponse::DataBackupArchiveVolumeHasBeenSet() const
+{
+    return m_dataBackupArchiveVolumeHasBeenSet;
+}
+
+int64_t DescribeDataBackupOverviewResponse::GetDataBackupArchiveCount() const
+{
+    return m_dataBackupArchiveCount;
+}
+
+bool DescribeDataBackupOverviewResponse::DataBackupArchiveCountHasBeenSet() const
+{
+    return m_dataBackupArchiveCountHasBeenSet;
 }
 
 

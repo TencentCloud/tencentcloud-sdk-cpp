@@ -27,6 +27,8 @@
 #include <tencentcloud/tsf/v20180326/model/SchedulingStrategy.h>
 #include <tencentcloud/tsf/v20180326/model/VolumeInfo.h>
 #include <tencentcloud/tsf/v20180326/model/VolumeMountInfo.h>
+#include <tencentcloud/tsf/v20180326/model/AgentProfile.h>
+#include <tencentcloud/tsf/v20180326/model/WarmupSetting.h>
 
 
 namespace TencentCloud
@@ -696,6 +698,42 @@ namespace TencentCloud
                      */
                     bool VolumeCleanHasBeenSet() const;
 
+                    /**
+                     * 获取javaagent信息: SERVICE_AGENT/OT_AGENT
+                     * @return AgentProfileList javaagent信息: SERVICE_AGENT/OT_AGENT
+                     */
+                    std::vector<AgentProfile> GetAgentProfileList() const;
+
+                    /**
+                     * 设置javaagent信息: SERVICE_AGENT/OT_AGENT
+                     * @param AgentProfileList javaagent信息: SERVICE_AGENT/OT_AGENT
+                     */
+                    void SetAgentProfileList(const std::vector<AgentProfile>& _agentProfileList);
+
+                    /**
+                     * 判断参数 AgentProfileList 是否已赋值
+                     * @return AgentProfileList 是否已赋值
+                     */
+                    bool AgentProfileListHasBeenSet() const;
+
+                    /**
+                     * 获取预热配置信息
+                     * @return WarmupSetting 预热配置信息
+                     */
+                    WarmupSetting GetWarmupSetting() const;
+
+                    /**
+                     * 设置预热配置信息
+                     * @param WarmupSetting 预热配置信息
+                     */
+                    void SetWarmupSetting(const WarmupSetting& _warmupSetting);
+
+                    /**
+                     * 判断参数 WarmupSetting 是否已赋值
+                     * @return WarmupSetting 是否已赋值
+                     */
+                    bool WarmupSettingHasBeenSet() const;
+
                 private:
 
                     /**
@@ -913,6 +951,18 @@ namespace TencentCloud
                      */
                     bool m_volumeClean;
                     bool m_volumeCleanHasBeenSet;
+
+                    /**
+                     * javaagent信息: SERVICE_AGENT/OT_AGENT
+                     */
+                    std::vector<AgentProfile> m_agentProfileList;
+                    bool m_agentProfileListHasBeenSet;
+
+                    /**
+                     * 预热配置信息
+                     */
+                    WarmupSetting m_warmupSetting;
+                    bool m_warmupSettingHasBeenSet;
 
                 };
             }

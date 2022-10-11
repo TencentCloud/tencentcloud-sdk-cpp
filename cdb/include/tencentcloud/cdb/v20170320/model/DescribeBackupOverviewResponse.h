@@ -91,6 +91,34 @@ namespace TencentCloud
                      */
                     bool FreeVolumeHasBeenSet() const;
 
+                    /**
+                     * 获取用户在当前地域的异地备份总容量。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RemoteBackupVolume 用户在当前地域的异地备份总容量。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetRemoteBackupVolume() const;
+
+                    /**
+                     * 判断参数 RemoteBackupVolume 是否已赋值
+                     * @return RemoteBackupVolume 是否已赋值
+                     */
+                    bool RemoteBackupVolumeHasBeenSet() const;
+
+                    /**
+                     * 获取归档备份容量，包含数据备份以及日志备份。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BackupArchiveVolume 归档备份容量，包含数据备份以及日志备份。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetBackupArchiveVolume() const;
+
+                    /**
+                     * 判断参数 BackupArchiveVolume 是否已赋值
+                     * @return BackupArchiveVolume 是否已赋值
+                     */
+                    bool BackupArchiveVolumeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -116,6 +144,20 @@ namespace TencentCloud
                      */
                     int64_t m_freeVolume;
                     bool m_freeVolumeHasBeenSet;
+
+                    /**
+                     * 用户在当前地域的异地备份总容量。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_remoteBackupVolume;
+                    bool m_remoteBackupVolumeHasBeenSet;
+
+                    /**
+                     * 归档备份容量，包含数据备份以及日志备份。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_backupArchiveVolume;
+                    bool m_backupArchiveVolumeHasBeenSet;
 
                 };
             }

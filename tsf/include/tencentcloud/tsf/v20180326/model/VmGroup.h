@@ -25,6 +25,8 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tsf/v20180326/model/HealthCheckSettings.h>
+#include <tencentcloud/tsf/v20180326/model/AgentProfile.h>
+#include <tencentcloud/tsf/v20180326/model/WarmupSetting.h>
 
 
 namespace TencentCloud
@@ -817,6 +819,50 @@ namespace TencentCloud
                      */
                     bool AliasHasBeenSet() const;
 
+                    /**
+                     * 获取javaagent信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AgentProfileList javaagent信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<AgentProfile> GetAgentProfileList() const;
+
+                    /**
+                     * 设置javaagent信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AgentProfileList javaagent信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAgentProfileList(const std::vector<AgentProfile>& _agentProfileList);
+
+                    /**
+                     * 判断参数 AgentProfileList 是否已赋值
+                     * @return AgentProfileList 是否已赋值
+                     */
+                    bool AgentProfileListHasBeenSet() const;
+
+                    /**
+                     * 获取预热属性配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return WarmupSetting 预热属性配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    WarmupSetting GetWarmupSetting() const;
+
+                    /**
+                     * 设置预热属性配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param WarmupSetting 预热属性配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetWarmupSetting(const WarmupSetting& _warmupSetting);
+
+                    /**
+                     * 判断参数 WarmupSetting 是否已赋值
+                     * @return WarmupSetting 是否已赋值
+                     */
+                    bool WarmupSettingHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1063,6 +1109,20 @@ namespace TencentCloud
                      */
                     std::string m_alias;
                     bool m_aliasHasBeenSet;
+
+                    /**
+                     * javaagent信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<AgentProfile> m_agentProfileList;
+                    bool m_agentProfileListHasBeenSet;
+
+                    /**
+                     * 预热属性配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    WarmupSetting m_warmupSetting;
+                    bool m_warmupSettingHasBeenSet;
 
                 };
             }

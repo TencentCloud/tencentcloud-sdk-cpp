@@ -116,8 +116,8 @@ namespace TencentCloud
                     bool ManualBackupCountHasBeenSet() const;
 
                     /**
-                     * 获取当前地域异地备份总容量。
-                     * @return RemoteBackupVolume 当前地域异地备份总容量。
+                     * 获取异地备份总容量。
+                     * @return RemoteBackupVolume 异地备份总容量。
                      */
                     int64_t GetRemoteBackupVolume() const;
 
@@ -128,8 +128,8 @@ namespace TencentCloud
                     bool RemoteBackupVolumeHasBeenSet() const;
 
                     /**
-                     * 获取当前地域异地备份总个数。
-                     * @return RemoteBackupCount 当前地域异地备份总个数。
+                     * 获取异地备份总个数。
+                     * @return RemoteBackupCount 异地备份总个数。
                      */
                     int64_t GetRemoteBackupCount() const;
 
@@ -138,6 +138,30 @@ namespace TencentCloud
                      * @return RemoteBackupCount 是否已赋值
                      */
                     bool RemoteBackupCountHasBeenSet() const;
+
+                    /**
+                     * 获取当前地域归档备份总容量。
+                     * @return DataBackupArchiveVolume 当前地域归档备份总容量。
+                     */
+                    int64_t GetDataBackupArchiveVolume() const;
+
+                    /**
+                     * 判断参数 DataBackupArchiveVolume 是否已赋值
+                     * @return DataBackupArchiveVolume 是否已赋值
+                     */
+                    bool DataBackupArchiveVolumeHasBeenSet() const;
+
+                    /**
+                     * 获取当前地域归档备份总个数。
+                     * @return DataBackupArchiveCount 当前地域归档备份总个数。
+                     */
+                    int64_t GetDataBackupArchiveCount() const;
+
+                    /**
+                     * 判断参数 DataBackupArchiveCount 是否已赋值
+                     * @return DataBackupArchiveCount 是否已赋值
+                     */
+                    bool DataBackupArchiveCountHasBeenSet() const;
 
                 private:
 
@@ -178,16 +202,28 @@ namespace TencentCloud
                     bool m_manualBackupCountHasBeenSet;
 
                     /**
-                     * 当前地域异地备份总容量。
+                     * 异地备份总容量。
                      */
                     int64_t m_remoteBackupVolume;
                     bool m_remoteBackupVolumeHasBeenSet;
 
                     /**
-                     * 当前地域异地备份总个数。
+                     * 异地备份总个数。
                      */
                     int64_t m_remoteBackupCount;
                     bool m_remoteBackupCountHasBeenSet;
+
+                    /**
+                     * 当前地域归档备份总容量。
+                     */
+                    int64_t m_dataBackupArchiveVolume;
+                    bool m_dataBackupArchiveVolumeHasBeenSet;
+
+                    /**
+                     * 当前地域归档备份总个数。
+                     */
+                    int64_t m_dataBackupArchiveCount;
+                    bool m_dataBackupArchiveCountHasBeenSet;
 
                 };
             }

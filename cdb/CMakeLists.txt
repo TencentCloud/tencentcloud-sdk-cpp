@@ -39,6 +39,7 @@ set(cdb_public_header_model
   include/tencentcloud/cdb/v20170320/model/BackupSummaryItem.h
   include/tencentcloud/cdb/v20170320/model/ModifyInstanceParamRequest.h
   include/tencentcloud/cdb/v20170320/model/CreateParamTemplateRequest.h
+  include/tencentcloud/cdb/v20170320/model/DescribeSupportedPrivilegesRequest.h
   include/tencentcloud/cdb/v20170320/model/RWInstanceInfo.h
   include/tencentcloud/cdb/v20170320/model/DescribeParamTemplateInfoRequest.h
   include/tencentcloud/cdb/v20170320/model/DescribeDBInstancesRequest.h
@@ -137,7 +138,7 @@ set(cdb_public_header_model
   include/tencentcloud/cdb/v20170320/model/CreateAuditLogFileResponse.h
   include/tencentcloud/cdb/v20170320/model/ModifyInstanceTagResponse.h
   include/tencentcloud/cdb/v20170320/model/DescribeDBSwitchRecordsRequest.h
-  include/tencentcloud/cdb/v20170320/model/DescribeSupportedPrivilegesRequest.h
+  include/tencentcloud/cdb/v20170320/model/RemoteBackupInfo.h
   include/tencentcloud/cdb/v20170320/model/DescribeAsyncRequestInfoResponse.h
   include/tencentcloud/cdb/v20170320/model/DescribeRoGroupsRequest.h
   include/tencentcloud/cdb/v20170320/model/ParamTemplateInfo.h
@@ -402,6 +403,7 @@ set(cdb_src
   src/v20170320/model/BackupSummaryItem.cpp
   src/v20170320/model/ModifyInstanceParamRequest.cpp
   src/v20170320/model/CreateParamTemplateRequest.cpp
+  src/v20170320/model/DescribeSupportedPrivilegesRequest.cpp
   src/v20170320/model/RWInstanceInfo.cpp
   src/v20170320/model/DescribeParamTemplateInfoRequest.cpp
   src/v20170320/model/DescribeDBInstancesRequest.cpp
@@ -500,7 +502,7 @@ set(cdb_src
   src/v20170320/model/CreateAuditLogFileResponse.cpp
   src/v20170320/model/ModifyInstanceTagResponse.cpp
   src/v20170320/model/DescribeDBSwitchRecordsRequest.cpp
-  src/v20170320/model/DescribeSupportedPrivilegesRequest.cpp
+  src/v20170320/model/RemoteBackupInfo.cpp
   src/v20170320/model/DescribeAsyncRequestInfoResponse.cpp
   src/v20170320/model/DescribeRoGroupsRequest.cpp
   src/v20170320/model/ParamTemplateInfo.cpp

@@ -35,7 +35,11 @@ BackupInfo::BackupInfo() :
     m_methodHasBeenSet(false),
     m_wayHasBeenSet(false),
     m_manualBackupNameHasBeenSet(false),
-    m_saveModeHasBeenSet(false)
+    m_saveModeHasBeenSet(false),
+    m_regionHasBeenSet(false),
+    m_remoteInfoHasBeenSet(false),
+    m_cosStorageTypeHasBeenSet(false),
+    m_instanceIdHasBeenSet(false)
 {
 }
 
@@ -194,6 +198,56 @@ CoreInternalOutcome BackupInfo::Deserialize(const rapidjson::Value &value)
         m_saveModeHasBeenSet = true;
     }
 
+    if (value.HasMember("Region") && !value["Region"].IsNull())
+    {
+        if (!value["Region"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BackupInfo.Region` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_region = string(value["Region"].GetString());
+        m_regionHasBeenSet = true;
+    }
+
+    if (value.HasMember("RemoteInfo") && !value["RemoteInfo"].IsNull())
+    {
+        if (!value["RemoteInfo"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `BackupInfo.RemoteInfo` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["RemoteInfo"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            RemoteBackupInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_remoteInfo.push_back(item);
+        }
+        m_remoteInfoHasBeenSet = true;
+    }
+
+    if (value.HasMember("CosStorageType") && !value["CosStorageType"].IsNull())
+    {
+        if (!value["CosStorageType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `BackupInfo.CosStorageType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_cosStorageType = value["CosStorageType"].GetInt64();
+        m_cosStorageTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("InstanceId") && !value["InstanceId"].IsNull())
+    {
+        if (!value["InstanceId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BackupInfo.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceId = string(value["InstanceId"].GetString());
+        m_instanceIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -319,6 +373,45 @@ void BackupInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "SaveMode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_saveMode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_regionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Region";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_region.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_remoteInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RemoteInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_remoteInfo.begin(); itr != m_remoteInfo.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_cosStorageTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CosStorageType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_cosStorageType, allocator);
+    }
+
+    if (m_instanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -562,5 +655,69 @@ void BackupInfo::SetSaveMode(const string& _saveMode)
 bool BackupInfo::SaveModeHasBeenSet() const
 {
     return m_saveModeHasBeenSet;
+}
+
+string BackupInfo::GetRegion() const
+{
+    return m_region;
+}
+
+void BackupInfo::SetRegion(const string& _region)
+{
+    m_region = _region;
+    m_regionHasBeenSet = true;
+}
+
+bool BackupInfo::RegionHasBeenSet() const
+{
+    return m_regionHasBeenSet;
+}
+
+vector<RemoteBackupInfo> BackupInfo::GetRemoteInfo() const
+{
+    return m_remoteInfo;
+}
+
+void BackupInfo::SetRemoteInfo(const vector<RemoteBackupInfo>& _remoteInfo)
+{
+    m_remoteInfo = _remoteInfo;
+    m_remoteInfoHasBeenSet = true;
+}
+
+bool BackupInfo::RemoteInfoHasBeenSet() const
+{
+    return m_remoteInfoHasBeenSet;
+}
+
+int64_t BackupInfo::GetCosStorageType() const
+{
+    return m_cosStorageType;
+}
+
+void BackupInfo::SetCosStorageType(const int64_t& _cosStorageType)
+{
+    m_cosStorageType = _cosStorageType;
+    m_cosStorageTypeHasBeenSet = true;
+}
+
+bool BackupInfo::CosStorageTypeHasBeenSet() const
+{
+    return m_cosStorageTypeHasBeenSet;
+}
+
+string BackupInfo::GetInstanceId() const
+{
+    return m_instanceId;
+}
+
+void BackupInfo::SetInstanceId(const string& _instanceId)
+{
+    m_instanceId = _instanceId;
+    m_instanceIdHasBeenSet = true;
+}
+
+bool BackupInfo::InstanceIdHasBeenSet() const
+{
+    return m_instanceIdHasBeenSet;
 }
 

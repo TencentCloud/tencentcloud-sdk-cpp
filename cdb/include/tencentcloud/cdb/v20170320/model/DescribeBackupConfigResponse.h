@@ -176,6 +176,54 @@ namespace TencentCloud
                      */
                     bool StartBackupPeriodSaveDateHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启数据备份归档策略，off-关闭，on-打开，默认为off
+                     * @return EnableBackupArchive 是否开启数据备份归档策略，off-关闭，on-打开，默认为off
+                     */
+                    std::string GetEnableBackupArchive() const;
+
+                    /**
+                     * 判断参数 EnableBackupArchive 是否已赋值
+                     * @return EnableBackupArchive 是否已赋值
+                     */
+                    bool EnableBackupArchiveHasBeenSet() const;
+
+                    /**
+                     * 获取数据备份归档起始天数，数据备份达到归档起始天数时进行归档，最小为180天，不得大于数据备份保留天数
+                     * @return BackupArchiveDays 数据备份归档起始天数，数据备份达到归档起始天数时进行归档，最小为180天，不得大于数据备份保留天数
+                     */
+                    int64_t GetBackupArchiveDays() const;
+
+                    /**
+                     * 判断参数 BackupArchiveDays 是否已赋值
+                     * @return BackupArchiveDays 是否已赋值
+                     */
+                    bool BackupArchiveDaysHasBeenSet() const;
+
+                    /**
+                     * 获取是否开启日志备份归档策略，off-关闭，on-打开，默认为off
+                     * @return EnableBinlogArchive 是否开启日志备份归档策略，off-关闭，on-打开，默认为off
+                     */
+                    std::string GetEnableBinlogArchive() const;
+
+                    /**
+                     * 判断参数 EnableBinlogArchive 是否已赋值
+                     * @return EnableBinlogArchive 是否已赋值
+                     */
+                    bool EnableBinlogArchiveHasBeenSet() const;
+
+                    /**
+                     * 获取日志备份归档起始天数，日志备份达到归档起始天数时进行归档，最小为180天，不得大于日志备份保留天数
+                     * @return BinlogArchiveDays 日志备份归档起始天数，日志备份达到归档起始天数时进行归档，最小为180天，不得大于日志备份保留天数
+                     */
+                    int64_t GetBinlogArchiveDays() const;
+
+                    /**
+                     * 判断参数 BinlogArchiveDays 是否已赋值
+                     * @return BinlogArchiveDays 是否已赋值
+                     */
+                    bool BinlogArchiveDaysHasBeenSet() const;
+
                 private:
 
                     /**
@@ -243,6 +291,30 @@ namespace TencentCloud
                      */
                     std::string m_startBackupPeriodSaveDate;
                     bool m_startBackupPeriodSaveDateHasBeenSet;
+
+                    /**
+                     * 是否开启数据备份归档策略，off-关闭，on-打开，默认为off
+                     */
+                    std::string m_enableBackupArchive;
+                    bool m_enableBackupArchiveHasBeenSet;
+
+                    /**
+                     * 数据备份归档起始天数，数据备份达到归档起始天数时进行归档，最小为180天，不得大于数据备份保留天数
+                     */
+                    int64_t m_backupArchiveDays;
+                    bool m_backupArchiveDaysHasBeenSet;
+
+                    /**
+                     * 是否开启日志备份归档策略，off-关闭，on-打开，默认为off
+                     */
+                    std::string m_enableBinlogArchive;
+                    bool m_enableBinlogArchiveHasBeenSet;
+
+                    /**
+                     * 日志备份归档起始天数，日志备份达到归档起始天数时进行归档，最小为180天，不得大于日志备份保留天数
+                     */
+                    int64_t m_binlogArchiveDays;
+                    bool m_binlogArchiveDaysHasBeenSet;
 
                 };
             }

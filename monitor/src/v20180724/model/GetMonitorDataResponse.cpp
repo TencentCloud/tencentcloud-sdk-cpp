@@ -28,7 +28,8 @@ GetMonitorDataResponse::GetMonitorDataResponse() :
     m_metricNameHasBeenSet(false),
     m_dataPointsHasBeenSet(false),
     m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
+    m_endTimeHasBeenSet(false),
+    m_msgHasBeenSet(false)
 {
 }
 
@@ -126,6 +127,16 @@ CoreInternalOutcome GetMonitorDataResponse::Deserialize(const string &payload)
         m_endTimeHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Msg") && !rsp["Msg"].IsNull())
+    {
+        if (!rsp["Msg"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Msg` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_msg = string(rsp["Msg"].GetString());
+        m_msgHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -181,6 +192,14 @@ string GetMonitorDataResponse::ToJsonString() const
         string key = "EndTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_endTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_msgHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Msg";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_msg.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -243,6 +262,16 @@ string GetMonitorDataResponse::GetEndTime() const
 bool GetMonitorDataResponse::EndTimeHasBeenSet() const
 {
     return m_endTimeHasBeenSet;
+}
+
+string GetMonitorDataResponse::GetMsg() const
+{
+    return m_msg;
+}
+
+bool GetMonitorDataResponse::MsgHasBeenSet() const
+{
+    return m_msgHasBeenSet;
 }
 
 

@@ -101,6 +101,7 @@ set(tsf_public_header_model
   include/tencentcloud/tsf/v20180326/model/EnableUnitRuleRequest.h
   include/tencentcloud/tsf/v20180326/model/CreateClusterResponse.h
   include/tencentcloud/tsf/v20180326/model/CreateMicroserviceResponse.h
+  include/tencentcloud/tsf/v20180326/model/AgentProfile.h
   include/tencentcloud/tsf/v20180326/model/StopGroupRequest.h
   include/tencentcloud/tsf/v20180326/model/ShrinkGroupResponse.h
   include/tencentcloud/tsf/v20180326/model/CosUploadInfo.h
@@ -488,6 +489,7 @@ set(tsf_public_header_model
   include/tencentcloud/tsf/v20180326/model/RedoTaskResponse.h
   include/tencentcloud/tsf/v20180326/model/DeliveryConfigBindGroup.h
   include/tencentcloud/tsf/v20180326/model/DescribeConfigsRequest.h
+  include/tencentcloud/tsf/v20180326/model/WarmupSetting.h
   include/tencentcloud/tsf/v20180326/model/EnableUnitRouteRequest.h
   include/tencentcloud/tsf/v20180326/model/TsfPageApplication.h
   include/tencentcloud/tsf/v20180326/model/InstanceEnrichedInfo.h
@@ -654,6 +656,7 @@ set(tsf_src
   src/v20180326/model/EnableUnitRuleRequest.cpp
   src/v20180326/model/CreateClusterResponse.cpp
   src/v20180326/model/CreateMicroserviceResponse.cpp
+  src/v20180326/model/AgentProfile.cpp
   src/v20180326/model/StopGroupRequest.cpp
   src/v20180326/model/ShrinkGroupResponse.cpp
   src/v20180326/model/CosUploadInfo.cpp
@@ -1041,6 +1044,7 @@ set(tsf_src
   src/v20180326/model/RedoTaskResponse.cpp
   src/v20180326/model/DeliveryConfigBindGroup.cpp
   src/v20180326/model/DescribeConfigsRequest.cpp
+  src/v20180326/model/WarmupSetting.cpp
   src/v20180326/model/EnableUnitRouteRequest.cpp
   src/v20180326/model/TsfPageApplication.cpp
   src/v20180326/model/InstanceEnrichedInfo.cpp

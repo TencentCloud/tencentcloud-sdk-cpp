@@ -21,6 +21,7 @@ set(cpdp_public_header
 set(cpdp_public_header_model
   include/tencentcloud/cpdp/v20190820/model/QueryFlexPaymentOrderStatusRequest.h
   include/tencentcloud/cpdp/v20190820/model/QueryAcctBindingRequest.h
+  include/tencentcloud/cpdp/v20190820/model/QueryCompanyTitleResponse.h
   include/tencentcloud/cpdp/v20190820/model/ReviseMbrPropertyResponse.h
   include/tencentcloud/cpdp/v20190820/model/ApplyPayerInfoResponse.h
   include/tencentcloud/cpdp/v20190820/model/RevokeRechargeByThirdPayRequest.h
@@ -209,6 +210,7 @@ set(cpdp_public_header_model
   include/tencentcloud/cpdp/v20190820/model/CreateRedInvoiceResultV2.h
   include/tencentcloud/cpdp/v20190820/model/QueryAnchorContractInfoRequest.h
   include/tencentcloud/cpdp/v20190820/model/CreateRedInvoiceResult.h
+  include/tencentcloud/cpdp/v20190820/model/CompanyTitleResult.h
   include/tencentcloud/cpdp/v20190820/model/CreateOpenBankPaymentOrderRequest.h
   include/tencentcloud/cpdp/v20190820/model/QueryOpenBankOrderDetailReceiptInfoResult.h
   include/tencentcloud/cpdp/v20190820/model/QueryReconciliationDocumentRequest.h
@@ -336,6 +338,7 @@ set(cpdp_public_header_model
   include/tencentcloud/cpdp/v20190820/model/CreateMerchantResponse.h
   include/tencentcloud/cpdp/v20190820/model/CreateSinglePaymentResponse.h
   include/tencentcloud/cpdp/v20190820/model/CloseOpenBankPaymentOrderRequest.h
+  include/tencentcloud/cpdp/v20190820/model/QueryCompanyTitleRequest.h
   include/tencentcloud/cpdp/v20190820/model/GetPayRollAuthRequest.h
   include/tencentcloud/cpdp/v20190820/model/ViewContractResult.h
   include/tencentcloud/cpdp/v20190820/model/QueryAcctItem.h
@@ -668,6 +671,7 @@ set(cpdp_src
   src/v20190820/CpdpClient.cpp
   src/v20190820/model/QueryFlexPaymentOrderStatusRequest.cpp
   src/v20190820/model/QueryAcctBindingRequest.cpp
+  src/v20190820/model/QueryCompanyTitleResponse.cpp
   src/v20190820/model/ReviseMbrPropertyResponse.cpp
   src/v20190820/model/ApplyPayerInfoResponse.cpp
   src/v20190820/model/RevokeRechargeByThirdPayRequest.cpp
@@ -856,6 +860,7 @@ set(cpdp_src
   src/v20190820/model/CreateRedInvoiceResultV2.cpp
   src/v20190820/model/QueryAnchorContractInfoRequest.cpp
   src/v20190820/model/CreateRedInvoiceResult.cpp
+  src/v20190820/model/CompanyTitleResult.cpp
   src/v20190820/model/CreateOpenBankPaymentOrderRequest.cpp
   src/v20190820/model/QueryOpenBankOrderDetailReceiptInfoResult.cpp
   src/v20190820/model/QueryReconciliationDocumentRequest.cpp
@@ -983,6 +988,7 @@ set(cpdp_src
   src/v20190820/model/CreateMerchantResponse.cpp
   src/v20190820/model/CreateSinglePaymentResponse.cpp
   src/v20190820/model/CloseOpenBankPaymentOrderRequest.cpp
+  src/v20190820/model/QueryCompanyTitleRequest.cpp
   src/v20190820/model/GetPayRollAuthRequest.cpp
   src/v20190820/model/ViewContractResult.cpp
   src/v20190820/model/QueryAcctItem.cpp

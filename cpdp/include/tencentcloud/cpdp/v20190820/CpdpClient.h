@@ -239,6 +239,8 @@
 #include <tencentcloud/cpdp/v20190820/model/QueryCloudRefundOrderResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryCommonTransferRechargeRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryCommonTransferRechargeResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryCompanyTitleRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryCompanyTitleResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryContractRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryContractResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryContractPayFeeRequest.h>
@@ -781,6 +783,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::QueryCommonTransferRechargeResponse> QueryCommonTransferRechargeOutcome;
                 typedef std::future<QueryCommonTransferRechargeOutcome> QueryCommonTransferRechargeOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::QueryCommonTransferRechargeRequest&, QueryCommonTransferRechargeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryCommonTransferRechargeAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryCompanyTitleResponse> QueryCompanyTitleOutcome;
+                typedef std::future<QueryCompanyTitleOutcome> QueryCompanyTitleOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::QueryCompanyTitleRequest&, QueryCompanyTitleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryCompanyTitleAsyncHandler;
                 typedef Outcome<Core::Error, Model::QueryContractResponse> QueryContractOutcome;
                 typedef std::future<QueryContractOutcome> QueryContractOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::QueryContractRequest&, QueryContractOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryContractAsyncHandler;
@@ -2071,6 +2076,15 @@ namespace TencentCloud
                 QueryCommonTransferRechargeOutcome QueryCommonTransferRecharge(const Model::QueryCommonTransferRechargeRequest &request);
                 void QueryCommonTransferRechargeAsync(const Model::QueryCommonTransferRechargeRequest& request, const QueryCommonTransferRechargeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 QueryCommonTransferRechargeOutcomeCallable QueryCommonTransferRechargeCallable(const Model::QueryCommonTransferRechargeRequest& request);
+
+                /**
+                 *智慧零售-查询公司抬头
+                 * @param req QueryCompanyTitleRequest
+                 * @return QueryCompanyTitleOutcome
+                 */
+                QueryCompanyTitleOutcome QueryCompanyTitle(const Model::QueryCompanyTitleRequest &request);
+                void QueryCompanyTitleAsync(const Model::QueryCompanyTitleRequest& request, const QueryCompanyTitleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryCompanyTitleOutcomeCallable QueryCompanyTitleCallable(const Model::QueryCompanyTitleRequest& request);
 
                 /**
                  *通过此接口查询签约数据

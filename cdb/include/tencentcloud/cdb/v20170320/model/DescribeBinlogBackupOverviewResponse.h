@@ -91,6 +91,30 @@ namespace TencentCloud
                      */
                     bool RemoteBinlogCountHasBeenSet() const;
 
+                    /**
+                     * 获取归档日志备份容量（单位为字节）。
+                     * @return BinlogArchiveVolume 归档日志备份容量（单位为字节）。
+                     */
+                    int64_t GetBinlogArchiveVolume() const;
+
+                    /**
+                     * 判断参数 BinlogArchiveVolume 是否已赋值
+                     * @return BinlogArchiveVolume 是否已赋值
+                     */
+                    bool BinlogArchiveVolumeHasBeenSet() const;
+
+                    /**
+                     * 获取归档日志备份个数。
+                     * @return BinlogArchiveCount 归档日志备份个数。
+                     */
+                    int64_t GetBinlogArchiveCount() const;
+
+                    /**
+                     * 判断参数 BinlogArchiveCount 是否已赋值
+                     * @return BinlogArchiveCount 是否已赋值
+                     */
+                    bool BinlogArchiveCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -116,6 +140,18 @@ namespace TencentCloud
                      */
                     int64_t m_remoteBinlogCount;
                     bool m_remoteBinlogCountHasBeenSet;
+
+                    /**
+                     * 归档日志备份容量（单位为字节）。
+                     */
+                    int64_t m_binlogArchiveVolume;
+                    bool m_binlogArchiveVolumeHasBeenSet;
+
+                    /**
+                     * 归档日志备份个数。
+                     */
+                    int64_t m_binlogArchiveCount;
+                    bool m_binlogArchiveCountHasBeenSet;
 
                 };
             }

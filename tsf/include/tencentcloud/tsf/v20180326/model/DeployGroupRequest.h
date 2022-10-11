@@ -22,6 +22,8 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tsf/v20180326/model/HealthCheckSettings.h>
+#include <tencentcloud/tsf/v20180326/model/AgentProfile.h>
+#include <tencentcloud/tsf/v20180326/model/WarmupSetting.h>
 
 
 namespace TencentCloud
@@ -349,6 +351,42 @@ namespace TencentCloud
                      */
                     bool JdkVersionHasBeenSet() const;
 
+                    /**
+                     * 获取部署agent的类型、版本
+                     * @return AgentProfileList 部署agent的类型、版本
+                     */
+                    std::vector<AgentProfile> GetAgentProfileList() const;
+
+                    /**
+                     * 设置部署agent的类型、版本
+                     * @param AgentProfileList 部署agent的类型、版本
+                     */
+                    void SetAgentProfileList(const std::vector<AgentProfile>& _agentProfileList);
+
+                    /**
+                     * 判断参数 AgentProfileList 是否已赋值
+                     * @return AgentProfileList 是否已赋值
+                     */
+                    bool AgentProfileListHasBeenSet() const;
+
+                    /**
+                     * 获取预热参数配置
+                     * @return WarmupSetting 预热参数配置
+                     */
+                    WarmupSetting GetWarmupSetting() const;
+
+                    /**
+                     * 设置预热参数配置
+                     * @param WarmupSetting 预热参数配置
+                     */
+                    void SetWarmupSetting(const WarmupSetting& _warmupSetting);
+
+                    /**
+                     * 判断参数 WarmupSetting 是否已赋值
+                     * @return WarmupSetting 是否已赋值
+                     */
+                    bool WarmupSettingHasBeenSet() const;
+
                 private:
 
                     /**
@@ -452,6 +490,18 @@ namespace TencentCloud
                      */
                     std::string m_jdkVersion;
                     bool m_jdkVersionHasBeenSet;
+
+                    /**
+                     * 部署agent的类型、版本
+                     */
+                    std::vector<AgentProfile> m_agentProfileList;
+                    bool m_agentProfileListHasBeenSet;
+
+                    /**
+                     * 预热参数配置
+                     */
+                    WarmupSetting m_warmupSetting;
+                    bool m_warmupSettingHasBeenSet;
 
                 };
             }

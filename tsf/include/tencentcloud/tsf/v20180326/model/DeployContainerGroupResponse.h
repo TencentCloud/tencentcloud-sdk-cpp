@@ -47,9 +47,11 @@ namespace TencentCloud
                      * 获取部署容器应用是否成功。
 true：成功。
 false：失败。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Result 部署容器应用是否成功。
 true：成功。
 false：失败。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool GetResult() const;
 
@@ -65,6 +67,7 @@ false：失败。
                      * 部署容器应用是否成功。
 true：成功。
 false：失败。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_result;
                     bool m_resultHasBeenSet;

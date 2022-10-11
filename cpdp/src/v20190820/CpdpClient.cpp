@@ -4684,6 +4684,49 @@ CpdpClient::QueryCommonTransferRechargeOutcomeCallable CpdpClient::QueryCommonTr
     return task->get_future();
 }
 
+CpdpClient::QueryCompanyTitleOutcome CpdpClient::QueryCompanyTitle(const QueryCompanyTitleRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryCompanyTitle");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryCompanyTitleResponse rsp = QueryCompanyTitleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryCompanyTitleOutcome(rsp);
+        else
+            return QueryCompanyTitleOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryCompanyTitleOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::QueryCompanyTitleAsync(const QueryCompanyTitleRequest& request, const QueryCompanyTitleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->QueryCompanyTitle(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::QueryCompanyTitleOutcomeCallable CpdpClient::QueryCompanyTitleCallable(const QueryCompanyTitleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<QueryCompanyTitleOutcome()>>(
+        [this, request]()
+        {
+            return this->QueryCompanyTitle(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CpdpClient::QueryContractOutcome CpdpClient::QueryContract(const QueryContractRequest &request)
 {
     auto outcome = MakeRequest(request, "QueryContract");

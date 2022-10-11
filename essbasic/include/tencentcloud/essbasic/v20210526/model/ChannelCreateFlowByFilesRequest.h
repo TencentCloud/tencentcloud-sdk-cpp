@@ -173,14 +173,14 @@ namespace TencentCloud
                     bool CallbackUrlHasBeenSet() const;
 
                     /**
-                     * 获取合同签署顺序类型(无序签,顺序签)，默认为false，即有序签署
-                     * @return Unordered 合同签署顺序类型(无序签,顺序签)，默认为false，即有序签署
+                     * 获取合同签署顺序类型(无序签,顺序签)，默认为false，即有序签署。有序签署时以传入FlowApprovers数组的顺序作为签署顺序
+                     * @return Unordered 合同签署顺序类型(无序签,顺序签)，默认为false，即有序签署。有序签署时以传入FlowApprovers数组的顺序作为签署顺序
                      */
                     bool GetUnordered() const;
 
                     /**
-                     * 设置合同签署顺序类型(无序签,顺序签)，默认为false，即有序签署
-                     * @param Unordered 合同签署顺序类型(无序签,顺序签)，默认为false，即有序签署
+                     * 设置合同签署顺序类型(无序签,顺序签)，默认为false，即有序签署。有序签署时以传入FlowApprovers数组的顺序作为签署顺序
+                     * @param Unordered 合同签署顺序类型(无序签,顺序签)，默认为false，即有序签署。有序签署时以传入FlowApprovers数组的顺序作为签署顺序
                      */
                     void SetUnordered(const bool& _unordered);
 
@@ -343,7 +343,7 @@ namespace TencentCloud
                     bool m_callbackUrlHasBeenSet;
 
                     /**
-                     * 合同签署顺序类型(无序签,顺序签)，默认为false，即有序签署
+                     * 合同签署顺序类型(无序签,顺序签)，默认为false，即有序签署。有序签署时以传入FlowApprovers数组的顺序作为签署顺序
                      */
                     bool m_unordered;
                     bool m_unorderedHasBeenSet;

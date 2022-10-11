@@ -58,7 +58,9 @@ DeployContainerGroupRequest::DeployContainerGroupRequest() :
     m_volumeMountInfosHasBeenSet(false),
     m_volumeInfoListHasBeenSet(false),
     m_volumeMountInfoListHasBeenSet(false),
-    m_volumeCleanHasBeenSet(false)
+    m_volumeCleanHasBeenSet(false),
+    m_agentProfileListHasBeenSet(false),
+    m_warmupSettingHasBeenSet(false)
 {
 }
 
@@ -381,6 +383,30 @@ string DeployContainerGroupRequest::ToJsonString() const
         string key = "VolumeClean";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_volumeClean, allocator);
+    }
+
+    if (m_agentProfileListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AgentProfileList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_agentProfileList.begin(); itr != m_agentProfileList.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_warmupSettingHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WarmupSetting";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_warmupSetting.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -965,6 +991,38 @@ void DeployContainerGroupRequest::SetVolumeClean(const bool& _volumeClean)
 bool DeployContainerGroupRequest::VolumeCleanHasBeenSet() const
 {
     return m_volumeCleanHasBeenSet;
+}
+
+vector<AgentProfile> DeployContainerGroupRequest::GetAgentProfileList() const
+{
+    return m_agentProfileList;
+}
+
+void DeployContainerGroupRequest::SetAgentProfileList(const vector<AgentProfile>& _agentProfileList)
+{
+    m_agentProfileList = _agentProfileList;
+    m_agentProfileListHasBeenSet = true;
+}
+
+bool DeployContainerGroupRequest::AgentProfileListHasBeenSet() const
+{
+    return m_agentProfileListHasBeenSet;
+}
+
+WarmupSetting DeployContainerGroupRequest::GetWarmupSetting() const
+{
+    return m_warmupSetting;
+}
+
+void DeployContainerGroupRequest::SetWarmupSetting(const WarmupSetting& _warmupSetting)
+{
+    m_warmupSetting = _warmupSetting;
+    m_warmupSettingHasBeenSet = true;
+}
+
+bool DeployContainerGroupRequest::WarmupSettingHasBeenSet() const
+{
+    return m_warmupSettingHasBeenSet;
 }
 
 

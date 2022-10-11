@@ -104,6 +104,18 @@ namespace TencentCloud
                      */
                     bool EndTimeHasBeenSet() const;
 
+                    /**
+                     * 获取返回信息
+                     * @return Msg 返回信息
+                     */
+                    std::string GetMsg() const;
+
+                    /**
+                     * 判断参数 Msg 是否已赋值
+                     * @return Msg 是否已赋值
+                     */
+                    bool MsgHasBeenSet() const;
+
                 private:
 
                     /**
@@ -135,6 +147,12 @@ namespace TencentCloud
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
+
+                    /**
+                     * 返回信息
+                     */
+                    std::string m_msg;
+                    bool m_msgHasBeenSet;
 
                 };
             }

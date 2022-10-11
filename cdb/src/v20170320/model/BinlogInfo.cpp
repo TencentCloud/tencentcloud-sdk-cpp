@@ -28,7 +28,12 @@ BinlogInfo::BinlogInfo() :
     m_internetUrlHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_binlogStartTimeHasBeenSet(false),
-    m_binlogFinishTimeHasBeenSet(false)
+    m_binlogFinishTimeHasBeenSet(false),
+    m_regionHasBeenSet(false),
+    m_statusHasBeenSet(false),
+    m_remoteInfoHasBeenSet(false),
+    m_cosStorageTypeHasBeenSet(false),
+    m_instanceIdHasBeenSet(false)
 {
 }
 
@@ -117,6 +122,66 @@ CoreInternalOutcome BinlogInfo::Deserialize(const rapidjson::Value &value)
         m_binlogFinishTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("Region") && !value["Region"].IsNull())
+    {
+        if (!value["Region"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BinlogInfo.Region` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_region = string(value["Region"].GetString());
+        m_regionHasBeenSet = true;
+    }
+
+    if (value.HasMember("Status") && !value["Status"].IsNull())
+    {
+        if (!value["Status"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BinlogInfo.Status` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_status = string(value["Status"].GetString());
+        m_statusHasBeenSet = true;
+    }
+
+    if (value.HasMember("RemoteInfo") && !value["RemoteInfo"].IsNull())
+    {
+        if (!value["RemoteInfo"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `BinlogInfo.RemoteInfo` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["RemoteInfo"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            RemoteBackupInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_remoteInfo.push_back(item);
+        }
+        m_remoteInfoHasBeenSet = true;
+    }
+
+    if (value.HasMember("CosStorageType") && !value["CosStorageType"].IsNull())
+    {
+        if (!value["CosStorageType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `BinlogInfo.CosStorageType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_cosStorageType = value["CosStorageType"].GetInt64();
+        m_cosStorageTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("InstanceId") && !value["InstanceId"].IsNull())
+    {
+        if (!value["InstanceId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BinlogInfo.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceId = string(value["InstanceId"].GetString());
+        m_instanceIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -186,6 +251,53 @@ void BinlogInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "BinlogFinishTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_binlogFinishTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_regionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Region";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_region.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_remoteInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RemoteInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_remoteInfo.begin(); itr != m_remoteInfo.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_cosStorageTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CosStorageType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_cosStorageType, allocator);
+    }
+
+    if (m_instanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -317,5 +429,85 @@ void BinlogInfo::SetBinlogFinishTime(const string& _binlogFinishTime)
 bool BinlogInfo::BinlogFinishTimeHasBeenSet() const
 {
     return m_binlogFinishTimeHasBeenSet;
+}
+
+string BinlogInfo::GetRegion() const
+{
+    return m_region;
+}
+
+void BinlogInfo::SetRegion(const string& _region)
+{
+    m_region = _region;
+    m_regionHasBeenSet = true;
+}
+
+bool BinlogInfo::RegionHasBeenSet() const
+{
+    return m_regionHasBeenSet;
+}
+
+string BinlogInfo::GetStatus() const
+{
+    return m_status;
+}
+
+void BinlogInfo::SetStatus(const string& _status)
+{
+    m_status = _status;
+    m_statusHasBeenSet = true;
+}
+
+bool BinlogInfo::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
+}
+
+vector<RemoteBackupInfo> BinlogInfo::GetRemoteInfo() const
+{
+    return m_remoteInfo;
+}
+
+void BinlogInfo::SetRemoteInfo(const vector<RemoteBackupInfo>& _remoteInfo)
+{
+    m_remoteInfo = _remoteInfo;
+    m_remoteInfoHasBeenSet = true;
+}
+
+bool BinlogInfo::RemoteInfoHasBeenSet() const
+{
+    return m_remoteInfoHasBeenSet;
+}
+
+int64_t BinlogInfo::GetCosStorageType() const
+{
+    return m_cosStorageType;
+}
+
+void BinlogInfo::SetCosStorageType(const int64_t& _cosStorageType)
+{
+    m_cosStorageType = _cosStorageType;
+    m_cosStorageTypeHasBeenSet = true;
+}
+
+bool BinlogInfo::CosStorageTypeHasBeenSet() const
+{
+    return m_cosStorageTypeHasBeenSet;
+}
+
+string BinlogInfo::GetInstanceId() const
+{
+    return m_instanceId;
+}
+
+void BinlogInfo::SetInstanceId(const string& _instanceId)
+{
+    m_instanceId = _instanceId;
+    m_instanceIdHasBeenSet = true;
+}
+
+bool BinlogInfo::InstanceIdHasBeenSet() const
+{
+    return m_instanceIdHasBeenSet;
 }
 

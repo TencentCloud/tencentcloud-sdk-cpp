@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取安全组规则
-                     * @return Groups 安全组规则
+                     * 获取安全组规则。
+                     * @return Groups 安全组规则。
                      */
                     std::vector<SecurityGroup> GetGroups() const;
 
@@ -57,8 +57,8 @@ namespace TencentCloud
                     bool GroupsHasBeenSet() const;
 
                     /**
-                     * 获取安全组生效内网地址
-                     * @return VIP 安全组生效内网地址
+                     * 获取安全组生效内网地址。
+                     * @return VIP 安全组生效内网地址。
                      */
                     std::string GetVIP() const;
 
@@ -69,8 +69,8 @@ namespace TencentCloud
                     bool VIPHasBeenSet() const;
 
                     /**
-                     * 获取安全组生效内网端口
-                     * @return VPort 安全组生效内网端口
+                     * 获取安全组生效内网端口。
+                     * @return VPort 安全组生效内网端口。
                      */
                     std::string GetVPort() const;
 
@@ -83,19 +83,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 安全组规则
+                     * 安全组规则。
                      */
                     std::vector<SecurityGroup> m_groups;
                     bool m_groupsHasBeenSet;
 
                     /**
-                     * 安全组生效内网地址
+                     * 安全组生效内网地址。
                      */
                     std::string m_vIP;
                     bool m_vIPHasBeenSet;
 
                     /**
-                     * 安全组生效内网端口
+                     * 安全组生效内网端口。
                      */
                     std::string m_vPort;
                     bool m_vPortHasBeenSet;

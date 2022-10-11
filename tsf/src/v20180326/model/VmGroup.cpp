@@ -55,7 +55,9 @@ VmGroup::VmGroup() :
     m_packageTypeHasBeenSet(false),
     m_startScriptHasBeenSet(false),
     m_stopScriptHasBeenSet(false),
-    m_aliasHasBeenSet(false)
+    m_aliasHasBeenSet(false),
+    m_agentProfileListHasBeenSet(false),
+    m_warmupSettingHasBeenSet(false)
 {
 }
 
@@ -424,6 +426,43 @@ CoreInternalOutcome VmGroup::Deserialize(const rapidjson::Value &value)
         m_aliasHasBeenSet = true;
     }
 
+    if (value.HasMember("AgentProfileList") && !value["AgentProfileList"].IsNull())
+    {
+        if (!value["AgentProfileList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `VmGroup.AgentProfileList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["AgentProfileList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            AgentProfile item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_agentProfileList.push_back(item);
+        }
+        m_agentProfileListHasBeenSet = true;
+    }
+
+    if (value.HasMember("WarmupSetting") && !value["WarmupSetting"].IsNull())
+    {
+        if (!value["WarmupSetting"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `VmGroup.WarmupSetting` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_warmupSetting.Deserialize(value["WarmupSetting"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_warmupSettingHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -715,6 +754,30 @@ void VmGroup::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "Alias";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_alias.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_agentProfileListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AgentProfileList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_agentProfileList.begin(); itr != m_agentProfileList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_warmupSettingHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WarmupSetting";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_warmupSetting.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -1278,5 +1341,37 @@ void VmGroup::SetAlias(const string& _alias)
 bool VmGroup::AliasHasBeenSet() const
 {
     return m_aliasHasBeenSet;
+}
+
+vector<AgentProfile> VmGroup::GetAgentProfileList() const
+{
+    return m_agentProfileList;
+}
+
+void VmGroup::SetAgentProfileList(const vector<AgentProfile>& _agentProfileList)
+{
+    m_agentProfileList = _agentProfileList;
+    m_agentProfileListHasBeenSet = true;
+}
+
+bool VmGroup::AgentProfileListHasBeenSet() const
+{
+    return m_agentProfileListHasBeenSet;
+}
+
+WarmupSetting VmGroup::GetWarmupSetting() const
+{
+    return m_warmupSetting;
+}
+
+void VmGroup::SetWarmupSetting(const WarmupSetting& _warmupSetting)
+{
+    m_warmupSetting = _warmupSetting;
+    m_warmupSettingHasBeenSet = true;
+}
+
+bool VmGroup::WarmupSettingHasBeenSet() const
+{
+    return m_warmupSettingHasBeenSet;
 }
 

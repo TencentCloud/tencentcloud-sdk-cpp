@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取数据库引擎名称：mariadb,cdb,cynosdb,dcdb,redis,mongodb 等。
-                     * @return Product 数据库引擎名称：mariadb,cdb,cynosdb,dcdb,redis,mongodb 等。
+                     * 获取数据库引擎名称，本接口取值：redis。
+                     * @return Product 数据库引擎名称，本接口取值：redis。
                      */
                     std::string GetProduct() const;
 
                     /**
-                     * 设置数据库引擎名称：mariadb,cdb,cynosdb,dcdb,redis,mongodb 等。
-                     * @param Product 数据库引擎名称：mariadb,cdb,cynosdb,dcdb,redis,mongodb 等。
+                     * 设置数据库引擎名称，本接口取值：redis。
+                     * @param Product 数据库引擎名称，本接口取值：redis。
                      */
                     void SetProduct(const std::string& _product);
 
@@ -99,7 +99,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 数据库引擎名称：mariadb,cdb,cynosdb,dcdb,redis,mongodb 等。
+                     * 数据库引擎名称，本接口取值：redis。
                      */
                     std::string m_product;
                     bool m_productHasBeenSet;
