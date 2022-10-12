@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取xxx
-                     * @return FileIds xxx
+                     * 获取权属文件Id，按提交顺序排序
+                     * @return FileIds 权属文件Id，按提交顺序排序
                      */
                     std::vector<int64_t> GetFileIds() const;
 
@@ -58,7 +58,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * xxx
+                     * 权属文件Id，按提交顺序排序
                      */
                     std::vector<int64_t> m_fileIds;
                     bool m_fileIdsHasBeenSet;

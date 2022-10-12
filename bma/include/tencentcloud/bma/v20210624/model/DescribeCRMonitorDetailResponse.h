@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取MonitorTort数组
-                     * @return Torts MonitorTort数组
+                     * 获取侵权数组
+                     * @return Torts 侵权数组
                      */
                     std::vector<MonitorTort> GetTorts() const;
 
@@ -69,8 +69,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取x
-                     * @return MonitorStatus x
+                     * 获取监测状态
+                     * @return MonitorStatus 监测状态
                      */
                     int64_t GetMonitorStatus() const;
 
@@ -83,7 +83,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * MonitorTort数组
+                     * 侵权数组
                      */
                     std::vector<MonitorTort> m_torts;
                     bool m_tortsHasBeenSet;
@@ -95,7 +95,7 @@ namespace TencentCloud
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * x
+                     * 监测状态
                      */
                     int64_t m_monitorStatus;
                     bool m_monitorStatusHasBeenSet;

@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取xx
-                     * @return WorkId xx
+                     * 获取作品ID
+                     * @return WorkId 作品ID
                      */
                     int64_t GetWorkId() const;
 
@@ -56,8 +56,8 @@ namespace TencentCloud
                     bool WorkIdHasBeenSet() const;
 
                     /**
-                     * 获取xx
-                     * @return EvidenceId xx
+                     * 获取存证ID
+                     * @return EvidenceId 存证ID
                      */
                     int64_t GetEvidenceId() const;
 
@@ -70,13 +70,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * xx
+                     * 作品ID
                      */
                     int64_t m_workId;
                     bool m_workIdHasBeenSet;
 
                     /**
-                     * xx
+                     * 存证ID
                      */
                     int64_t m_evidenceId;
                     bool m_evidenceIdHasBeenSet;

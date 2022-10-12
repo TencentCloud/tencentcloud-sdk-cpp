@@ -21,7 +21,9 @@ set(tse_public_header
 set(tse_public_header_model
   include/tencentcloud/tse/v20201207/model/NacosReplica.h
   include/tencentcloud/tse/v20201207/model/DescribeNacosReplicasRequest.h
+  include/tencentcloud/tse/v20201207/model/UpdateEngineInternetAccessRequest.h
   include/tencentcloud/tse/v20201207/model/ApolloEnvParam.h
+  include/tencentcloud/tse/v20201207/model/UpdateEngineInternetAccessResponse.h
   include/tencentcloud/tse/v20201207/model/KVPair.h
   include/tencentcloud/tse/v20201207/model/DeleteEngineResponse.h
   include/tencentcloud/tse/v20201207/model/CreateEngineResponse.h
@@ -61,7 +63,9 @@ set(tse_src
   src/v20201207/TseClient.cpp
   src/v20201207/model/NacosReplica.cpp
   src/v20201207/model/DescribeNacosReplicasRequest.cpp
+  src/v20201207/model/UpdateEngineInternetAccessRequest.cpp
   src/v20201207/model/ApolloEnvParam.cpp
+  src/v20201207/model/UpdateEngineInternetAccessResponse.cpp
   src/v20201207/model/KVPair.cpp
   src/v20201207/model/DeleteEngineResponse.cpp
   src/v20201207/model/CreateEngineResponse.cpp

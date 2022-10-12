@@ -29,6 +29,8 @@
 #include <tencentcloud/wedata/v20210820/model/BatchModifyOwnersNewResponse.h>
 #include <tencentcloud/wedata/v20210820/model/BatchStopTasksNewRequest.h>
 #include <tencentcloud/wedata/v20210820/model/BatchStopTasksNewResponse.h>
+#include <tencentcloud/wedata/v20210820/model/CreateCustomFunctionRequest.h>
+#include <tencentcloud/wedata/v20210820/model/CreateCustomFunctionResponse.h>
 #include <tencentcloud/wedata/v20210820/model/CreateDataSourceRequest.h>
 #include <tencentcloud/wedata/v20210820/model/CreateDataSourceResponse.h>
 #include <tencentcloud/wedata/v20210820/model/CreateFolderRequest.h>
@@ -134,6 +136,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::BatchStopTasksNewResponse> BatchStopTasksNewOutcome;
                 typedef std::future<BatchStopTasksNewOutcome> BatchStopTasksNewOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::BatchStopTasksNewRequest&, BatchStopTasksNewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BatchStopTasksNewAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateCustomFunctionResponse> CreateCustomFunctionOutcome;
+                typedef std::future<CreateCustomFunctionOutcome> CreateCustomFunctionOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::CreateCustomFunctionRequest&, CreateCustomFunctionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCustomFunctionAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateDataSourceResponse> CreateDataSourceOutcome;
                 typedef std::future<CreateDataSourceOutcome> CreateDataSourceOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::CreateDataSourceRequest&, CreateDataSourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDataSourceAsyncHandler;
@@ -290,6 +295,15 @@ namespace TencentCloud
                 BatchStopTasksNewOutcome BatchStopTasksNew(const Model::BatchStopTasksNewRequest &request);
                 void BatchStopTasksNewAsync(const Model::BatchStopTasksNewRequest& request, const BatchStopTasksNewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 BatchStopTasksNewOutcomeCallable BatchStopTasksNewCallable(const Model::BatchStopTasksNewRequest& request);
+
+                /**
+                 * 创建用户自定义函数
+                 * @param req CreateCustomFunctionRequest
+                 * @return CreateCustomFunctionOutcome
+                 */
+                CreateCustomFunctionOutcome CreateCustomFunction(const Model::CreateCustomFunctionRequest &request);
+                void CreateCustomFunctionAsync(const Model::CreateCustomFunctionRequest& request, const CreateCustomFunctionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateCustomFunctionOutcomeCallable CreateCustomFunctionCallable(const Model::CreateCustomFunctionRequest& request);
 
                 /**
                  *<p style="color:red;">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>

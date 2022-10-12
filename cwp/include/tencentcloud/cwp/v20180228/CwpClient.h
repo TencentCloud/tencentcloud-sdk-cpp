@@ -169,6 +169,10 @@
 #include <tencentcloud/cwp/v20180228/model/DescribeBaselineEffectHostListResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeBaselineHostTopRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeBaselineHostTopResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeBaselineItemDetectListRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeBaselineItemDetectListResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeBaselineItemListRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeBaselineItemListResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeBaselineListRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeBaselineListResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeBaselineRuleRequest.h>
@@ -447,12 +451,16 @@
 #include <tencentcloud/cwp/v20180228/model/SeparateMalwaresResponse.h>
 #include <tencentcloud/cwp/v20180228/model/SetBashEventsStatusRequest.h>
 #include <tencentcloud/cwp/v20180228/model/SetBashEventsStatusResponse.h>
+#include <tencentcloud/cwp/v20180228/model/StartBaselineDetectRequest.h>
+#include <tencentcloud/cwp/v20180228/model/StartBaselineDetectResponse.h>
 #include <tencentcloud/cwp/v20180228/model/StopNoticeBanTipsRequest.h>
 #include <tencentcloud/cwp/v20180228/model/StopNoticeBanTipsResponse.h>
 #include <tencentcloud/cwp/v20180228/model/SwitchBashRulesRequest.h>
 #include <tencentcloud/cwp/v20180228/model/SwitchBashRulesResponse.h>
 #include <tencentcloud/cwp/v20180228/model/SyncAssetScanRequest.h>
 #include <tencentcloud/cwp/v20180228/model/SyncAssetScanResponse.h>
+#include <tencentcloud/cwp/v20180228/model/SyncBaselineDetectSummaryRequest.h>
+#include <tencentcloud/cwp/v20180228/model/SyncBaselineDetectSummaryResponse.h>
 #include <tencentcloud/cwp/v20180228/model/TrustMalwaresRequest.h>
 #include <tencentcloud/cwp/v20180228/model/TrustMalwaresResponse.h>
 #include <tencentcloud/cwp/v20180228/model/UntrustMalwaresRequest.h>
@@ -694,6 +702,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeBaselineHostTopResponse> DescribeBaselineHostTopOutcome;
                 typedef std::future<DescribeBaselineHostTopOutcome> DescribeBaselineHostTopOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeBaselineHostTopRequest&, DescribeBaselineHostTopOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBaselineHostTopAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeBaselineItemDetectListResponse> DescribeBaselineItemDetectListOutcome;
+                typedef std::future<DescribeBaselineItemDetectListOutcome> DescribeBaselineItemDetectListOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeBaselineItemDetectListRequest&, DescribeBaselineItemDetectListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBaselineItemDetectListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeBaselineItemListResponse> DescribeBaselineItemListOutcome;
+                typedef std::future<DescribeBaselineItemListOutcome> DescribeBaselineItemListOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeBaselineItemListRequest&, DescribeBaselineItemListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBaselineItemListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeBaselineListResponse> DescribeBaselineListOutcome;
                 typedef std::future<DescribeBaselineListOutcome> DescribeBaselineListOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeBaselineListRequest&, DescribeBaselineListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBaselineListAsyncHandler;
@@ -1111,6 +1125,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::SetBashEventsStatusResponse> SetBashEventsStatusOutcome;
                 typedef std::future<SetBashEventsStatusOutcome> SetBashEventsStatusOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::SetBashEventsStatusRequest&, SetBashEventsStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetBashEventsStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::StartBaselineDetectResponse> StartBaselineDetectOutcome;
+                typedef std::future<StartBaselineDetectOutcome> StartBaselineDetectOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::StartBaselineDetectRequest&, StartBaselineDetectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartBaselineDetectAsyncHandler;
                 typedef Outcome<Core::Error, Model::StopNoticeBanTipsResponse> StopNoticeBanTipsOutcome;
                 typedef std::future<StopNoticeBanTipsOutcome> StopNoticeBanTipsOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::StopNoticeBanTipsRequest&, StopNoticeBanTipsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopNoticeBanTipsAsyncHandler;
@@ -1120,6 +1137,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::SyncAssetScanResponse> SyncAssetScanOutcome;
                 typedef std::future<SyncAssetScanOutcome> SyncAssetScanOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::SyncAssetScanRequest&, SyncAssetScanOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SyncAssetScanAsyncHandler;
+                typedef Outcome<Core::Error, Model::SyncBaselineDetectSummaryResponse> SyncBaselineDetectSummaryOutcome;
+                typedef std::future<SyncBaselineDetectSummaryOutcome> SyncBaselineDetectSummaryOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::SyncBaselineDetectSummaryRequest&, SyncBaselineDetectSummaryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SyncBaselineDetectSummaryAsyncHandler;
                 typedef Outcome<Core::Error, Model::TrustMalwaresResponse> TrustMalwaresOutcome;
                 typedef std::future<TrustMalwaresOutcome> TrustMalwaresOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::TrustMalwaresRequest&, TrustMalwaresOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TrustMalwaresAsyncHandler;
@@ -1794,6 +1814,24 @@ namespace TencentCloud
                 DescribeBaselineHostTopOutcome DescribeBaselineHostTop(const Model::DescribeBaselineHostTopRequest &request);
                 void DescribeBaselineHostTopAsync(const Model::DescribeBaselineHostTopRequest& request, const DescribeBaselineHostTopAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeBaselineHostTopOutcomeCallable DescribeBaselineHostTopCallable(const Model::DescribeBaselineHostTopRequest& request);
+
+                /**
+                 *获取基线检测项的列表
+                 * @param req DescribeBaselineItemDetectListRequest
+                 * @return DescribeBaselineItemDetectListOutcome
+                 */
+                DescribeBaselineItemDetectListOutcome DescribeBaselineItemDetectList(const Model::DescribeBaselineItemDetectListRequest &request);
+                void DescribeBaselineItemDetectListAsync(const Model::DescribeBaselineItemDetectListRequest& request, const DescribeBaselineItemDetectListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBaselineItemDetectListOutcomeCallable DescribeBaselineItemDetectListCallable(const Model::DescribeBaselineItemDetectListRequest& request);
+
+                /**
+                 *获取基线项检测结果列表
+                 * @param req DescribeBaselineItemListRequest
+                 * @return DescribeBaselineItemListOutcome
+                 */
+                DescribeBaselineItemListOutcome DescribeBaselineItemList(const Model::DescribeBaselineItemListRequest &request);
+                void DescribeBaselineItemListAsync(const Model::DescribeBaselineItemListRequest& request, const DescribeBaselineItemListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBaselineItemListOutcomeCallable DescribeBaselineItemListCallable(const Model::DescribeBaselineItemListRequest& request);
 
                 /**
                  *查询基线列表信息
@@ -3047,6 +3085,15 @@ namespace TencentCloud
                 SetBashEventsStatusOutcomeCallable SetBashEventsStatusCallable(const Model::SetBashEventsStatusRequest& request);
 
                 /**
+                 *检测基线
+                 * @param req StartBaselineDetectRequest
+                 * @return StartBaselineDetectOutcome
+                 */
+                StartBaselineDetectOutcome StartBaselineDetect(const Model::StartBaselineDetectRequest &request);
+                void StartBaselineDetectAsync(const Model::StartBaselineDetectRequest& request, const StartBaselineDetectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                StartBaselineDetectOutcomeCallable StartBaselineDetectCallable(const Model::StartBaselineDetectRequest& request);
+
+                /**
                  *不再提醒爆破阻断提示弹窗
                  * @param req StopNoticeBanTipsRequest
                  * @return StopNoticeBanTipsOutcome
@@ -3072,6 +3119,15 @@ namespace TencentCloud
                 SyncAssetScanOutcome SyncAssetScan(const Model::SyncAssetScanRequest &request);
                 void SyncAssetScanAsync(const Model::SyncAssetScanRequest& request, const SyncAssetScanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SyncAssetScanOutcomeCallable SyncAssetScanCallable(const Model::SyncAssetScanRequest& request);
+
+                /**
+                 *同步基线检测进度概要
+                 * @param req SyncBaselineDetectSummaryRequest
+                 * @return SyncBaselineDetectSummaryOutcome
+                 */
+                SyncBaselineDetectSummaryOutcome SyncBaselineDetectSummary(const Model::SyncBaselineDetectSummaryRequest &request);
+                void SyncBaselineDetectSummaryAsync(const Model::SyncBaselineDetectSummaryRequest& request, const SyncBaselineDetectSummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SyncBaselineDetectSummaryOutcomeCallable SyncBaselineDetectSummaryCallable(const Model::SyncBaselineDetectSummaryRequest& request);
 
                 /**
                  *本接口(TrustMalwares)将被识别木马文件设为信任。

@@ -216,7 +216,8 @@ namespace TencentCloud
                 CreateBPProtectURLsOutcomeCallable CreateBPProtectURLsCallable(const Model::CreateBPProtectURLsRequest& request);
 
                 /**
-                 *版权保护-新建拦截接口
+                 *新建拦截
+
                  * @param req CreateCRBlockRequest
                  * @return CreateCRBlockOutcome
                  */
@@ -225,7 +226,7 @@ namespace TencentCloud
                 CreateCRBlockOutcomeCallable CreateCRBlockCallable(const Model::CreateCRBlockRequest& request);
 
                 /**
-                 *品牌经营管家-版权保护模块企业认证接口
+                 *本接口用于企业认证，新接入用户必须认证后才可以进行后续操作（个人认证和企业认证二选一），只需认证一次即可
                  * @param req CreateCRCompanyVerifyRequest
                  * @return CreateCRCompanyVerifyOutcome
                  */
@@ -243,7 +244,7 @@ namespace TencentCloud
                 CreateCRRightOutcomeCallable CreateCRRightCallable(const Model::CreateCRRightRequest& request);
 
                 /**
-                 *新增权属文件
+                 *权属文件添加
                  * @param req CreateCRRightFileRequest
                  * @return CreateCRRightFileOutcome
                  */
@@ -261,7 +262,7 @@ namespace TencentCloud
                 CreateCRTortOutcomeCallable CreateCRTortCallable(const Model::CreateCRTortRequest& request);
 
                 /**
-                 *品牌经营管家-版权保护个人认证接口
+                 *本接口用于个人认证，新接入用户必须认证后才可以进行后续操作（个人认证和企业认证二选一），只需认证一次即可
                  * @param req CreateCRUserVerifyRequest
                  * @return CreateCRUserVerifyOutcome
                  */
@@ -270,7 +271,7 @@ namespace TencentCloud
                 CreateCRUserVerifyOutcomeCallable CreateCRUserVerifyCallable(const Model::CreateCRUserVerifyRequest& request);
 
                 /**
-                 *版权保护-添加作品接口
+                 *新建作品
                  * @param req CreateCRWorkRequest
                  * @return CreateCRWorkOutcome
                  */
@@ -351,7 +352,7 @@ namespace TencentCloud
                 ModifyBPOfflineAttachmentOutcomeCallable ModifyBPOfflineAttachmentCallable(const Model::ModifyBPOfflineAttachmentRequest& request);
 
                 /**
-                 *版权保护-拦截申请接口
+                 *拦截申请
                  * @param req ModifyCRBlockStatusRequest
                  * @return ModifyCRBlockStatusOutcome
                  */
@@ -360,7 +361,7 @@ namespace TencentCloud
                 ModifyCRBlockStatusOutcomeCallable ModifyCRBlockStatusCallable(const Model::ModifyCRBlockStatusRequest& request);
 
                 /**
-                 *版权保护-修改监测状态接口
+                 *开启/关闭监测
                  * @param req ModifyCRMonitorRequest
                  * @return ModifyCRMonitorOutcome
                  */
@@ -369,7 +370,7 @@ namespace TencentCloud
                 ModifyCRMonitorOutcomeCallable ModifyCRMonitorCallable(const Model::ModifyCRMonitorRequest& request);
 
                 /**
-                 *申请取证
+                 *取证申请
                  * @param req ModifyCRObtainStatusRequest
                  * @return ModifyCRObtainStatusOutcome
                  */
@@ -378,7 +379,7 @@ namespace TencentCloud
                 ModifyCRObtainStatusOutcomeCallable ModifyCRObtainStatusCallable(const Model::ModifyCRObtainStatusRequest& request);
 
                 /**
-                 *版权保护-维权申请接口
+                 *发函申请
                  * @param req ModifyCRRightStatusRequest
                  * @return ModifyCRRightStatusOutcome
                  */
@@ -387,7 +388,7 @@ namespace TencentCloud
                 ModifyCRRightStatusOutcomeCallable ModifyCRRightStatusCallable(const Model::ModifyCRRightStatusRequest& request);
 
                 /**
-                 *版权保护-白名单修改接口
+                 *修改白名单列表
                  * @param req ModifyCRWhiteListRequest
                  * @return ModifyCRWhiteListOutcome
                  */

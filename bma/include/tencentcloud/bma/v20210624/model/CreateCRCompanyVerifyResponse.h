@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取认证状态 0-认证成功 1-认证失败
-                     * @return Status 认证状态 0-认证成功 1-认证失败
+                     * 获取认证状态：0-认证成功 1-认证失败
+                     * @return Status 认证状态：0-认证成功 1-认证失败
                      */
                     int64_t GetStatus() const;
 
@@ -56,8 +56,8 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取认证结果返回
-                     * @return Note 认证结果返回
+                     * 获取认证状态说明，包括认证失败的原因
+                     * @return Note 认证状态说明，包括认证失败的原因
                      */
                     std::string GetNote() const;
 
@@ -70,13 +70,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 认证状态 0-认证成功 1-认证失败
+                     * 认证状态：0-认证成功 1-认证失败
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 认证结果返回
+                     * 认证状态说明，包括认证失败的原因
                      */
                     std::string m_note;
                     bool m_noteHasBeenSet;

@@ -30,7 +30,8 @@ VideoTemplateInfoForUpdate::VideoTemplateInfoForUpdate() :
     m_fillTypeHasBeenSet(false),
     m_vcrfHasBeenSet(false),
     m_gopHasBeenSet(false),
-    m_preserveHDRSwitchHasBeenSet(false)
+    m_preserveHDRSwitchHasBeenSet(false),
+    m_codecTagHasBeenSet(false)
 {
 }
 
@@ -139,6 +140,16 @@ CoreInternalOutcome VideoTemplateInfoForUpdate::Deserialize(const rapidjson::Val
         m_preserveHDRSwitchHasBeenSet = true;
     }
 
+    if (value.HasMember("CodecTag") && !value["CodecTag"].IsNull())
+    {
+        if (!value["CodecTag"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VideoTemplateInfoForUpdate.CodecTag` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_codecTag = string(value["CodecTag"].GetString());
+        m_codecTagHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -224,6 +235,14 @@ void VideoTemplateInfoForUpdate::ToJsonObject(rapidjson::Value &value, rapidjson
         string key = "PreserveHDRSwitch";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_preserveHDRSwitch.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_codecTagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CodecTag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_codecTag.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -387,5 +406,21 @@ void VideoTemplateInfoForUpdate::SetPreserveHDRSwitch(const string& _preserveHDR
 bool VideoTemplateInfoForUpdate::PreserveHDRSwitchHasBeenSet() const
 {
     return m_preserveHDRSwitchHasBeenSet;
+}
+
+string VideoTemplateInfoForUpdate::GetCodecTag() const
+{
+    return m_codecTag;
+}
+
+void VideoTemplateInfoForUpdate::SetCodecTag(const string& _codecTag)
+{
+    m_codecTag = _codecTag;
+    m_codecTagHasBeenSet = true;
+}
+
+bool VideoTemplateInfoForUpdate::CodecTagHasBeenSet() const
+{
+    return m_codecTagHasBeenSet;
 }
 

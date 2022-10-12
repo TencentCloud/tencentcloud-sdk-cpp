@@ -298,6 +298,28 @@ namespace TencentCloud
                      */
                     bool TagListHasBeenSet() const;
 
+                    /**
+                     * 获取客户姓名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UserName 客户姓名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetUserName() const;
+
+                    /**
+                     * 设置客户姓名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param UserName 客户姓名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetUserName(const std::string& _userName);
+
+                    /**
+                     * 判断参数 UserName 是否已赋值
+                     * @return UserName 是否已赋值
+                     */
+                    bool UserNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -383,6 +405,13 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_tagList;
                     bool m_tagListHasBeenSet;
+
+                    /**
+                     * 客户姓名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_userName;
+                    bool m_userNameHasBeenSet;
 
                 };
             }

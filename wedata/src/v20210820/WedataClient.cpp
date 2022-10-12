@@ -169,6 +169,49 @@ WedataClient::BatchStopTasksNewOutcomeCallable WedataClient::BatchStopTasksNewCa
     return task->get_future();
 }
 
+WedataClient::CreateCustomFunctionOutcome WedataClient::CreateCustomFunction(const CreateCustomFunctionRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateCustomFunction");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateCustomFunctionResponse rsp = CreateCustomFunctionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateCustomFunctionOutcome(rsp);
+        else
+            return CreateCustomFunctionOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateCustomFunctionOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::CreateCustomFunctionAsync(const CreateCustomFunctionRequest& request, const CreateCustomFunctionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateCustomFunction(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WedataClient::CreateCustomFunctionOutcomeCallable WedataClient::CreateCustomFunctionCallable(const CreateCustomFunctionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateCustomFunctionOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateCustomFunction(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WedataClient::CreateDataSourceOutcome WedataClient::CreateDataSource(const CreateDataSourceRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateDataSource");

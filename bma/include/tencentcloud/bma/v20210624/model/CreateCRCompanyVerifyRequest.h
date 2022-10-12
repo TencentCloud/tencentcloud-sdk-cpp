@@ -61,24 +61,6 @@ namespace TencentCloud
                     bool CompanyNameHasBeenSet() const;
 
                     /**
-                     * 获取企业认证号码类型 1：社会信用代码 2：组织机构代码 3：企业工商注册码 4：其他 默认为1
-                     * @return CompanyIDType 企业认证号码类型 1：社会信用代码 2：组织机构代码 3：企业工商注册码 4：其他 默认为1
-                     */
-                    std::string GetCompanyIDType() const;
-
-                    /**
-                     * 设置企业认证号码类型 1：社会信用代码 2：组织机构代码 3：企业工商注册码 4：其他 默认为1
-                     * @param CompanyIDType 企业认证号码类型 1：社会信用代码 2：组织机构代码 3：企业工商注册码 4：其他 默认为1
-                     */
-                    void SetCompanyIDType(const std::string& _companyIDType);
-
-                    /**
-                     * 判断参数 CompanyIDType 是否已赋值
-                     * @return CompanyIDType 是否已赋值
-                     */
-                    bool CompanyIDTypeHasBeenSet() const;
-
-                    /**
                      * 获取企业证件号码
                      * @return CompanyID 企业证件号码
                      */
@@ -115,14 +97,14 @@ namespace TencentCloud
                     bool CompanyLegalNameHasBeenSet() const;
 
                     /**
-                     * 获取管理员名称
-                     * @return ManagerName 管理员名称
+                     * 获取联系人姓名
+                     * @return ManagerName 联系人姓名
                      */
                     std::string GetManagerName() const;
 
                     /**
-                     * 设置管理员名称
-                     * @param ManagerName 管理员名称
+                     * 设置联系人姓名
+                     * @param ManagerName 联系人姓名
                      */
                     void SetManagerName(const std::string& _managerName);
 
@@ -133,14 +115,14 @@ namespace TencentCloud
                     bool ManagerNameHasBeenSet() const;
 
                     /**
-                     * 获取管理员手机号
-                     * @return ManagerPhone 管理员手机号
+                     * 获取联系人手机号
+                     * @return ManagerPhone 联系人手机号
                      */
                     std::string GetManagerPhone() const;
 
                     /**
-                     * 设置管理员手机号
-                     * @param ManagerPhone 管理员手机号
+                     * 设置联系人手机号
+                     * @param ManagerPhone 联系人手机号
                      */
                     void SetManagerPhone(const std::string& _managerPhone);
 
@@ -151,14 +133,14 @@ namespace TencentCloud
                     bool ManagerPhoneHasBeenSet() const;
 
                     /**
-                     * 获取手机验证码
-                     * @return VerificationCode 手机验证码
+                     * 获取手机验证码，接口接入可以置空
+                     * @return VerificationCode 手机验证码，接口接入可以置空
                      */
                     std::string GetVerificationCode() const;
 
                     /**
-                     * 设置手机验证码
-                     * @param VerificationCode 手机验证码
+                     * 设置手机验证码，接口接入可以置空
+                     * @param VerificationCode 手机验证码，接口接入可以置空
                      */
                     void SetVerificationCode(const std::string& _verificationCode);
 
@@ -169,14 +151,32 @@ namespace TencentCloud
                     bool VerificationCodeHasBeenSet() const;
 
                     /**
-                     * 获取xxx
-                     * @return Type xxx
+                     * 获取字段已废弃，企业认证号码类型 1：社会信用代码 2：组织机构代码 3：企业工商注册码 4：其他 默认为1
+                     * @return CompanyIDType 字段已废弃，企业认证号码类型 1：社会信用代码 2：组织机构代码 3：企业工商注册码 4：其他 默认为1
+                     */
+                    std::string GetCompanyIDType() const;
+
+                    /**
+                     * 设置字段已废弃，企业认证号码类型 1：社会信用代码 2：组织机构代码 3：企业工商注册码 4：其他 默认为1
+                     * @param CompanyIDType 字段已废弃，企业认证号码类型 1：社会信用代码 2：组织机构代码 3：企业工商注册码 4：其他 默认为1
+                     */
+                    void SetCompanyIDType(const std::string& _companyIDType);
+
+                    /**
+                     * 判断参数 CompanyIDType 是否已赋值
+                     * @return CompanyIDType 是否已赋值
+                     */
+                    bool CompanyIDTypeHasBeenSet() const;
+
+                    /**
+                     * 获取字段已废弃，认证类型
+                     * @return Type 字段已废弃，认证类型
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置xxx
-                     * @param Type xxx
+                     * 设置字段已废弃，认证类型
+                     * @param Type 字段已废弃，认证类型
                      */
                     void SetType(const std::string& _type);
 
@@ -195,12 +195,6 @@ namespace TencentCloud
                     bool m_companyNameHasBeenSet;
 
                     /**
-                     * 企业认证号码类型 1：社会信用代码 2：组织机构代码 3：企业工商注册码 4：其他 默认为1
-                     */
-                    std::string m_companyIDType;
-                    bool m_companyIDTypeHasBeenSet;
-
-                    /**
                      * 企业证件号码
                      */
                     std::string m_companyID;
@@ -213,25 +207,31 @@ namespace TencentCloud
                     bool m_companyLegalNameHasBeenSet;
 
                     /**
-                     * 管理员名称
+                     * 联系人姓名
                      */
                     std::string m_managerName;
                     bool m_managerNameHasBeenSet;
 
                     /**
-                     * 管理员手机号
+                     * 联系人手机号
                      */
                     std::string m_managerPhone;
                     bool m_managerPhoneHasBeenSet;
 
                     /**
-                     * 手机验证码
+                     * 手机验证码，接口接入可以置空
                      */
                     std::string m_verificationCode;
                     bool m_verificationCodeHasBeenSet;
 
                     /**
-                     * xxx
+                     * 字段已废弃，企业认证号码类型 1：社会信用代码 2：组织机构代码 3：企业工商注册码 4：其他 默认为1
+                     */
+                    std::string m_companyIDType;
+                    bool m_companyIDTypeHasBeenSet;
+
+                    /**
+                     * 字段已废弃，认证类型
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;

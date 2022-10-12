@@ -56,8 +56,8 @@ namespace TencentCloud
                     bool TortIdHasBeenSet() const;
 
                     /**
-                     * 获取xxx
-                     * @return TortNum xxx
+                     * 获取该字段已废弃
+                     * @return TortNum 该字段已废弃
                      */
                     std::string GetTortNum() const;
 
@@ -76,7 +76,7 @@ namespace TencentCloud
                     bool m_tortIdHasBeenSet;
 
                     /**
-                     * xxx
+                     * 该字段已废弃
                      */
                     std::string m_tortNum;
                     bool m_tortNumHasBeenSet;

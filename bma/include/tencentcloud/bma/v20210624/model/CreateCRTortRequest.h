@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取xx
-                     * @return WorkId xx
+                     * 获取作品ID
+                     * @return WorkId 作品ID
                      */
                     int64_t GetWorkId() const;
 
                     /**
-                     * 设置xx
-                     * @param WorkId xx
+                     * 设置作品ID
+                     * @param WorkId 作品ID
                      */
                     void SetWorkId(const int64_t& _workId);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool WorkIdHasBeenSet() const;
 
                     /**
-                     * 获取xx
-                     * @return TortURL xx
+                     * 获取侵权网址
+                     * @return TortURL 侵权网址
                      */
                     std::string GetTortURL() const;
 
                     /**
-                     * 设置xx
-                     * @param TortURL xx
+                     * 设置侵权网址
+                     * @param TortURL 侵权网址
                      */
                     void SetTortURL(const std::string& _tortURL);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool TortURLHasBeenSet() const;
 
                     /**
-                     * 获取xx
-                     * @return TortPlat xx
+                     * 获取侵权平台
+                     * @return TortPlat 侵权平台
                      */
                     std::string GetTortPlat() const;
 
                     /**
-                     * 设置xx
-                     * @param TortPlat xx
+                     * 设置侵权平台
+                     * @param TortPlat 侵权平台
                      */
                     void SetTortPlat(const std::string& _tortPlat);
 
@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool TortPlatHasBeenSet() const;
 
                     /**
-                     * 获取xx
-                     * @return TortTitle xx
+                     * 获取侵权标题
+                     * @return TortTitle 侵权标题
                      */
                     std::string GetTortTitle() const;
 
                     /**
-                     * 设置xx
-                     * @param TortTitle xx
+                     * 设置侵权标题
+                     * @param TortTitle 侵权标题
                      */
                     void SetTortTitle(const std::string& _tortTitle);
 
@@ -117,25 +117,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * xx
+                     * 作品ID
                      */
                     int64_t m_workId;
                     bool m_workIdHasBeenSet;
 
                     /**
-                     * xx
+                     * 侵权网址
                      */
                     std::string m_tortURL;
                     bool m_tortURLHasBeenSet;
 
                     /**
-                     * xx
+                     * 侵权平台
                      */
                     std::string m_tortPlat;
                     bool m_tortPlatHasBeenSet;
 
                     /**
-                     * xx
+                     * 侵权标题
                      */
                     std::string m_tortTitle;
                     bool m_tortTitleHasBeenSet;

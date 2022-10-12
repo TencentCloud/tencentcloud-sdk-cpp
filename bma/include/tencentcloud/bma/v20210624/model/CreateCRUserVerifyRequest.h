@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool UserNameHasBeenSet() const;
 
                     /**
-                     * 获取用户身份证ID
-                     * @return UserID 用户身份证ID
+                     * 获取用户身份证号
+                     * @return UserID 用户身份证号
                      */
                     std::string GetUserID() const;
 
                     /**
-                     * 设置用户身份证ID
-                     * @param UserID 用户身份证ID
+                     * 设置用户身份证号
+                     * @param UserID 用户身份证号
                      */
                     void SetUserID(const std::string& _userID);
 
@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool UserPhoneHasBeenSet() const;
 
                     /**
-                     * 获取短信验证码
-                     * @return VerificationCode 短信验证码
+                     * 获取短信验证码，接口接入可以置空
+                     * @return VerificationCode 短信验证码，接口接入可以置空
                      */
                     std::string GetVerificationCode() const;
 
                     /**
-                     * 设置短信验证码
-                     * @param VerificationCode 短信验证码
+                     * 设置短信验证码，接口接入可以置空
+                     * @param VerificationCode 短信验证码，接口接入可以置空
                      */
                     void SetVerificationCode(const std::string& _verificationCode);
 
@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool VerificationCodeHasBeenSet() const;
 
                     /**
-                     * 获取xxx
-                     * @return Type xxx
+                     * 获取字段已废弃，认证类型
+                     * @return Type 字段已废弃，认证类型
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置xxx
-                     * @param Type xxx
+                     * 设置字段已废弃，认证类型
+                     * @param Type 字段已废弃，认证类型
                      */
                     void SetType(const std::string& _type);
 
@@ -141,7 +141,7 @@ namespace TencentCloud
                     bool m_userNameHasBeenSet;
 
                     /**
-                     * 用户身份证ID
+                     * 用户身份证号
                      */
                     std::string m_userID;
                     bool m_userIDHasBeenSet;
@@ -153,13 +153,13 @@ namespace TencentCloud
                     bool m_userPhoneHasBeenSet;
 
                     /**
-                     * 短信验证码
+                     * 短信验证码，接口接入可以置空
                      */
                     std::string m_verificationCode;
                     bool m_verificationCodeHasBeenSet;
 
                     /**
-                     * xxx
+                     * 字段已废弃，认证类型
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;

@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取xxx
-                     * @return WorkId xxx
+                     * 获取作品ID
+                     * @return WorkId 作品ID
                      */
                     int64_t GetWorkId() const;
 
                     /**
-                     * 设置xxx
-                     * @param WorkId xxx
+                     * 设置作品ID
+                     * @param WorkId 作品ID
                      */
                     void SetWorkId(const int64_t& _workId);
 
@@ -63,7 +63,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * xxx
+                     * 作品ID
                      */
                     int64_t m_workId;
                     bool m_workIdHasBeenSet;

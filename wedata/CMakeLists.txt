@@ -40,8 +40,9 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/TaskInnerInfo.h
   include/tencentcloud/wedata/v20210820/model/BatchDeleteTasksNewResponse.h
   include/tencentcloud/wedata/v20210820/model/ModifyTaskLinksResponse.h
+  include/tencentcloud/wedata/v20210820/model/DescribeDatasourceResponse.h
+  include/tencentcloud/wedata/v20210820/model/DescribeDatasourceRequest.h
   include/tencentcloud/wedata/v20210820/model/IntegrationNodeMapping.h
-  include/tencentcloud/wedata/v20210820/model/IntegrationNodeSchema.h
   include/tencentcloud/wedata/v20210820/model/KillInstancesResponse.h
   include/tencentcloud/wedata/v20210820/model/SetTaskAlarmNewRequest.h
   include/tencentcloud/wedata/v20210820/model/CommonContent.h
@@ -89,7 +90,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/BatchModifyOwnersNewResponse.h
   include/tencentcloud/wedata/v20210820/model/DescribeDataSourceWithoutInfoRequest.h
   include/tencentcloud/wedata/v20210820/model/CanvasInfo.h
-  include/tencentcloud/wedata/v20210820/model/DescribeDatasourceRequest.h
+  include/tencentcloud/wedata/v20210820/model/IntegrationNodeSchema.h
   include/tencentcloud/wedata/v20210820/model/DeleteWorkflowNewRequest.h
   include/tencentcloud/wedata/v20210820/model/FreezeTasksByMultiWorkflowRequest.h
   include/tencentcloud/wedata/v20210820/model/InstanceInfo.h
@@ -122,13 +123,14 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/CreateTaskResponse.h
   include/tencentcloud/wedata/v20210820/model/BatchResult.h
   include/tencentcloud/wedata/v20210820/model/ModifyDataSourceRequest.h
+  include/tencentcloud/wedata/v20210820/model/CreateCustomFunctionResponse.h
   include/tencentcloud/wedata/v20210820/model/DescribeTaskInstancesResponse.h
   include/tencentcloud/wedata/v20210820/model/ModifyTaskInfoRequest.h
   include/tencentcloud/wedata/v20210820/model/DataSourceInfo.h
   include/tencentcloud/wedata/v20210820/model/DescribeTaskDetailRequest.h
   include/tencentcloud/wedata/v20210820/model/SetTaskAlarmNewResponse.h
   include/tencentcloud/wedata/v20210820/model/CreateWorkflowResponse.h
-  include/tencentcloud/wedata/v20210820/model/DescribeDatasourceResponse.h
+  include/tencentcloud/wedata/v20210820/model/CreateCustomFunctionRequest.h
   include/tencentcloud/wedata/v20210820/model/DeleteDataSourcesResponse.h
   include/tencentcloud/wedata/v20210820/model/RegisterEventListenerRequest.h
   include/tencentcloud/wedata/v20210820/model/ModifyTaskLinksRequest.h
@@ -169,8 +171,9 @@ set(wedata_src
   src/v20210820/model/TaskInnerInfo.cpp
   src/v20210820/model/BatchDeleteTasksNewResponse.cpp
   src/v20210820/model/ModifyTaskLinksResponse.cpp
+  src/v20210820/model/DescribeDatasourceResponse.cpp
+  src/v20210820/model/DescribeDatasourceRequest.cpp
   src/v20210820/model/IntegrationNodeMapping.cpp
-  src/v20210820/model/IntegrationNodeSchema.cpp
   src/v20210820/model/KillInstancesResponse.cpp
   src/v20210820/model/SetTaskAlarmNewRequest.cpp
   src/v20210820/model/CommonContent.cpp
@@ -218,7 +221,7 @@ set(wedata_src
   src/v20210820/model/BatchModifyOwnersNewResponse.cpp
   src/v20210820/model/DescribeDataSourceWithoutInfoRequest.cpp
   src/v20210820/model/CanvasInfo.cpp
-  src/v20210820/model/DescribeDatasourceRequest.cpp
+  src/v20210820/model/IntegrationNodeSchema.cpp
   src/v20210820/model/DeleteWorkflowNewRequest.cpp
   src/v20210820/model/FreezeTasksByMultiWorkflowRequest.cpp
   src/v20210820/model/InstanceInfo.cpp
@@ -251,13 +254,14 @@ set(wedata_src
   src/v20210820/model/CreateTaskResponse.cpp
   src/v20210820/model/BatchResult.cpp
   src/v20210820/model/ModifyDataSourceRequest.cpp
+  src/v20210820/model/CreateCustomFunctionResponse.cpp
   src/v20210820/model/DescribeTaskInstancesResponse.cpp
   src/v20210820/model/ModifyTaskInfoRequest.cpp
   src/v20210820/model/DataSourceInfo.cpp
   src/v20210820/model/DescribeTaskDetailRequest.cpp
   src/v20210820/model/SetTaskAlarmNewResponse.cpp
   src/v20210820/model/CreateWorkflowResponse.cpp
-  src/v20210820/model/DescribeDatasourceResponse.cpp
+  src/v20210820/model/CreateCustomFunctionRequest.cpp
   src/v20210820/model/DeleteDataSourcesResponse.cpp
   src/v20210820/model/RegisterEventListenerRequest.cpp
   src/v20210820/model/ModifyTaskLinksRequest.cpp

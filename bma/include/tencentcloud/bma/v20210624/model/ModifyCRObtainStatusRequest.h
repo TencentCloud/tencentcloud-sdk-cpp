@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取xxx
-                     * @return TortId xxx
+                     * 获取侵权ID
+                     * @return TortId 侵权ID
                      */
                     int64_t GetTortId() const;
 
                     /**
-                     * 设置xxx
-                     * @param TortId xxx
+                     * 设置侵权ID
+                     * @param TortId 侵权ID
                      */
                     void SetTortId(const int64_t& _tortId);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool TortIdHasBeenSet() const;
 
                     /**
-                     * 获取xxx
-                     * @return ObtainType xxx
+                     * 获取取证类型：1-网页取证 2-过程取证
+                     * @return ObtainType 取证类型：1-网页取证 2-过程取证
                      */
                     int64_t GetObtainType() const;
 
                     /**
-                     * 设置xxx
-                     * @param ObtainType xxx
+                     * 设置取证类型：1-网页取证 2-过程取证
+                     * @param ObtainType 取证类型：1-网页取证 2-过程取证
                      */
                     void SetObtainType(const int64_t& _obtainType);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool ObtainTypeHasBeenSet() const;
 
                     /**
-                     * 获取xxx
-                     * @return ObtainDuration xxx
+                     * 获取过程取证的取证时长，单位分钟，范围0-120
+                     * @return ObtainDuration 过程取证的取证时长，单位分钟，范围0-120
                      */
                     int64_t GetObtainDuration() const;
 
                     /**
-                     * 设置xxx
-                     * @param ObtainDuration xxx
+                     * 设置过程取证的取证时长，单位分钟，范围0-120
+                     * @param ObtainDuration 过程取证的取证时长，单位分钟，范围0-120
                      */
                     void SetObtainDuration(const int64_t& _obtainDuration);
 
@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool ObtainDurationHasBeenSet() const;
 
                     /**
-                     * 获取xxx
-                     * @return ObtainUrl xxx
+                     * 获取结果回调地址
+                     * @return ObtainUrl 结果回调地址
                      */
                     std::string GetObtainUrl() const;
 
                     /**
-                     * 设置xxx
-                     * @param ObtainUrl xxx
+                     * 设置结果回调地址
+                     * @param ObtainUrl 结果回调地址
                      */
                     void SetObtainUrl(const std::string& _obtainUrl);
 
@@ -117,25 +117,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * xxx
+                     * 侵权ID
                      */
                     int64_t m_tortId;
                     bool m_tortIdHasBeenSet;
 
                     /**
-                     * xxx
+                     * 取证类型：1-网页取证 2-过程取证
                      */
                     int64_t m_obtainType;
                     bool m_obtainTypeHasBeenSet;
 
                     /**
-                     * xxx
+                     * 过程取证的取证时长，单位分钟，范围0-120
                      */
                     int64_t m_obtainDuration;
                     bool m_obtainDurationHasBeenSet;
 
                     /**
-                     * xxx
+                     * 结果回调地址
                      */
                     std::string m_obtainUrl;
                     bool m_obtainUrlHasBeenSet;

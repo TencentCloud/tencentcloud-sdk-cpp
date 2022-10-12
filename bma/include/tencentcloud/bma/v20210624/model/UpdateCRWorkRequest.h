@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取xx
-                     * @return WorkId xx
+                     * 获取作品ID
+                     * @return WorkId 作品ID
                      */
                     int64_t GetWorkId() const;
 
                     /**
-                     * 设置xx
-                     * @param WorkId xx
+                     * 设置作品ID
+                     * @param WorkId 作品ID
                      */
                     void SetWorkId(const int64_t& _workId);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool WorkIdHasBeenSet() const;
 
                     /**
-                     * 获取xx
-                     * @return ContentType xx
+                     * 获取文件的扩展名，比如txt，docx
+                     * @return ContentType 文件的扩展名，比如txt，docx
                      */
                     std::string GetContentType() const;
 
                     /**
-                     * 设置xx
-                     * @param ContentType xx
+                     * 设置文件的扩展名，比如txt，docx
+                     * @param ContentType 文件的扩展名，比如txt，docx
                      */
                     void SetContentType(const std::string& _contentType);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool ContentTypeHasBeenSet() const;
 
                     /**
-                     * 获取xx
-                     * @return Content xx
+                     * 获取内容的base64编码
+                     * @return Content 内容的base64编码
                      */
                     std::string GetContent() const;
 
                     /**
-                     * 设置xx
-                     * @param Content xx
+                     * 设置内容的base64编码
+                     * @param Content 内容的base64编码
                      */
                     void SetContent(const std::string& _content);
 
@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool ContentHasBeenSet() const;
 
                     /**
-                     * 获取xx
-                     * @return CertType xx
+                     * 获取本次存证类型：0-不存证 1-存当前文件 2-存历史全量文件
+                     * @return CertType 本次存证类型：0-不存证 1-存当前文件 2-存历史全量文件
                      */
                     std::string GetCertType() const;
 
                     /**
-                     * 设置xx
-                     * @param CertType xx
+                     * 设置本次存证类型：0-不存证 1-存当前文件 2-存历史全量文件
+                     * @param CertType 本次存证类型：0-不存证 1-存当前文件 2-存历史全量文件
                      */
                     void SetCertType(const std::string& _certType);
 
@@ -117,25 +117,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * xx
+                     * 作品ID
                      */
                     int64_t m_workId;
                     bool m_workIdHasBeenSet;
 
                     /**
-                     * xx
+                     * 文件的扩展名，比如txt，docx
                      */
                     std::string m_contentType;
                     bool m_contentTypeHasBeenSet;
 
                     /**
-                     * xx
+                     * 内容的base64编码
                      */
                     std::string m_content;
                     bool m_contentHasBeenSet;
 
                     /**
-                     * xx
+                     * 本次存证类型：0-不存证 1-存当前文件 2-存历史全量文件
                      */
                     std::string m_certType;
                     bool m_certTypeHasBeenSet;

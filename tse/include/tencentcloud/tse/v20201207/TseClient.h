@@ -41,6 +41,8 @@
 #include <tencentcloud/tse/v20201207/model/DescribeZookeeperReplicasResponse.h>
 #include <tencentcloud/tse/v20201207/model/DescribeZookeeperServerInterfacesRequest.h>
 #include <tencentcloud/tse/v20201207/model/DescribeZookeeperServerInterfacesResponse.h>
+#include <tencentcloud/tse/v20201207/model/UpdateEngineInternetAccessRequest.h>
+#include <tencentcloud/tse/v20201207/model/UpdateEngineInternetAccessResponse.h>
 
 
 namespace TencentCloud
@@ -82,6 +84,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeZookeeperServerInterfacesResponse> DescribeZookeeperServerInterfacesOutcome;
                 typedef std::future<DescribeZookeeperServerInterfacesOutcome> DescribeZookeeperServerInterfacesOutcomeCallable;
                 typedef std::function<void(const TseClient*, const Model::DescribeZookeeperServerInterfacesRequest&, DescribeZookeeperServerInterfacesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeZookeeperServerInterfacesAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateEngineInternetAccessResponse> UpdateEngineInternetAccessOutcome;
+                typedef std::future<UpdateEngineInternetAccessOutcome> UpdateEngineInternetAccessOutcomeCallable;
+                typedef std::function<void(const TseClient*, const Model::UpdateEngineInternetAccessRequest&, UpdateEngineInternetAccessOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateEngineInternetAccessAsyncHandler;
 
 
 
@@ -165,6 +170,15 @@ namespace TencentCloud
                 DescribeZookeeperServerInterfacesOutcome DescribeZookeeperServerInterfaces(const Model::DescribeZookeeperServerInterfacesRequest &request);
                 void DescribeZookeeperServerInterfacesAsync(const Model::DescribeZookeeperServerInterfacesRequest& request, const DescribeZookeeperServerInterfacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeZookeeperServerInterfacesOutcomeCallable DescribeZookeeperServerInterfacesCallable(const Model::DescribeZookeeperServerInterfacesRequest& request);
+
+                /**
+                 *修改引擎公网访问配置
+                 * @param req UpdateEngineInternetAccessRequest
+                 * @return UpdateEngineInternetAccessOutcome
+                 */
+                UpdateEngineInternetAccessOutcome UpdateEngineInternetAccess(const Model::UpdateEngineInternetAccessRequest &request);
+                void UpdateEngineInternetAccessAsync(const Model::UpdateEngineInternetAccessRequest& request, const UpdateEngineInternetAccessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateEngineInternetAccessOutcomeCallable UpdateEngineInternetAccessCallable(const Model::UpdateEngineInternetAccessRequest& request);
 
             };
         }

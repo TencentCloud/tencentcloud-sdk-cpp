@@ -14,22 +14,22 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/mariadb/v20170312/model/DescribeSqlLogsRequest.h>
+#include <tencentcloud/tse/v20201207/model/UpdateEngineInternetAccessRequest.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
-using namespace TencentCloud::Mariadb::V20170312::Model;
+using namespace TencentCloud::Tse::V20201207::Model;
 using namespace std;
 
-DescribeSqlLogsRequest::DescribeSqlLogsRequest() :
+UpdateEngineInternetAccessRequest::UpdateEngineInternetAccessRequest() :
     m_instanceIdHasBeenSet(false),
-    m_offsetHasBeenSet(false),
-    m_limitHasBeenSet(false)
+    m_engineTypeHasBeenSet(false),
+    m_enableClientInternetAccessHasBeenSet(false)
 {
 }
 
-string DescribeSqlLogsRequest::ToJsonString() const
+string UpdateEngineInternetAccessRequest::ToJsonString() const
 {
     rapidjson::Document d;
     d.SetObject();
@@ -44,20 +44,20 @@ string DescribeSqlLogsRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_offsetHasBeenSet)
+    if (m_engineTypeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Offset";
+        string key = "EngineType";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_offset, allocator);
+        d.AddMember(iKey, rapidjson::Value(m_engineType.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_limitHasBeenSet)
+    if (m_enableClientInternetAccessHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Limit";
+        string key = "EnableClientInternetAccess";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_limit, allocator);
+        d.AddMember(iKey, m_enableClientInternetAccess, allocator);
     }
 
 
@@ -68,52 +68,52 @@ string DescribeSqlLogsRequest::ToJsonString() const
 }
 
 
-string DescribeSqlLogsRequest::GetInstanceId() const
+string UpdateEngineInternetAccessRequest::GetInstanceId() const
 {
     return m_instanceId;
 }
 
-void DescribeSqlLogsRequest::SetInstanceId(const string& _instanceId)
+void UpdateEngineInternetAccessRequest::SetInstanceId(const string& _instanceId)
 {
     m_instanceId = _instanceId;
     m_instanceIdHasBeenSet = true;
 }
 
-bool DescribeSqlLogsRequest::InstanceIdHasBeenSet() const
+bool UpdateEngineInternetAccessRequest::InstanceIdHasBeenSet() const
 {
     return m_instanceIdHasBeenSet;
 }
 
-int64_t DescribeSqlLogsRequest::GetOffset() const
+string UpdateEngineInternetAccessRequest::GetEngineType() const
 {
-    return m_offset;
+    return m_engineType;
 }
 
-void DescribeSqlLogsRequest::SetOffset(const int64_t& _offset)
+void UpdateEngineInternetAccessRequest::SetEngineType(const string& _engineType)
 {
-    m_offset = _offset;
-    m_offsetHasBeenSet = true;
+    m_engineType = _engineType;
+    m_engineTypeHasBeenSet = true;
 }
 
-bool DescribeSqlLogsRequest::OffsetHasBeenSet() const
+bool UpdateEngineInternetAccessRequest::EngineTypeHasBeenSet() const
 {
-    return m_offsetHasBeenSet;
+    return m_engineTypeHasBeenSet;
 }
 
-int64_t DescribeSqlLogsRequest::GetLimit() const
+bool UpdateEngineInternetAccessRequest::GetEnableClientInternetAccess() const
 {
-    return m_limit;
+    return m_enableClientInternetAccess;
 }
 
-void DescribeSqlLogsRequest::SetLimit(const int64_t& _limit)
+void UpdateEngineInternetAccessRequest::SetEnableClientInternetAccess(const bool& _enableClientInternetAccess)
 {
-    m_limit = _limit;
-    m_limitHasBeenSet = true;
+    m_enableClientInternetAccess = _enableClientInternetAccess;
+    m_enableClientInternetAccessHasBeenSet = true;
 }
 
-bool DescribeSqlLogsRequest::LimitHasBeenSet() const
+bool UpdateEngineInternetAccessRequest::EnableClientInternetAccessHasBeenSet() const
 {
-    return m_limitHasBeenSet;
+    return m_enableClientInternetAccessHasBeenSet;
 }
 
 

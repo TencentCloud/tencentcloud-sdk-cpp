@@ -370,6 +370,36 @@ namespace TencentCloud
                      */
                     bool PreserveHDRSwitchHasBeenSet() const;
 
+                    /**
+                     * 获取编码标签，仅当视频流的编码格式为 H.265 编码时有效，可选值：
+<li>hvc1 表示 hvc1 标签；</li>
+<li>hev1 表示 hev1 标签。 </li>
+默认值：hvc1。
+                     * @return CodecTag 编码标签，仅当视频流的编码格式为 H.265 编码时有效，可选值：
+<li>hvc1 表示 hvc1 标签；</li>
+<li>hev1 表示 hev1 标签。 </li>
+默认值：hvc1。
+                     */
+                    std::string GetCodecTag() const;
+
+                    /**
+                     * 设置编码标签，仅当视频流的编码格式为 H.265 编码时有效，可选值：
+<li>hvc1 表示 hvc1 标签；</li>
+<li>hev1 表示 hev1 标签。 </li>
+默认值：hvc1。
+                     * @param CodecTag 编码标签，仅当视频流的编码格式为 H.265 编码时有效，可选值：
+<li>hvc1 表示 hvc1 标签；</li>
+<li>hev1 表示 hev1 标签。 </li>
+默认值：hvc1。
+                     */
+                    void SetCodecTag(const std::string& _codecTag);
+
+                    /**
+                     * 判断参数 CodecTag 是否已赋值
+                     * @return CodecTag 是否已赋值
+                     */
+                    bool CodecTagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -467,6 +497,15 @@ namespace TencentCloud
                      */
                     std::string m_preserveHDRSwitch;
                     bool m_preserveHDRSwitchHasBeenSet;
+
+                    /**
+                     * 编码标签，仅当视频流的编码格式为 H.265 编码时有效，可选值：
+<li>hvc1 表示 hvc1 标签；</li>
+<li>hev1 表示 hev1 标签。 </li>
+默认值：hvc1。
+                     */
+                    std::string m_codecTag;
+                    bool m_codecTagHasBeenSet;
 
                 };
             }

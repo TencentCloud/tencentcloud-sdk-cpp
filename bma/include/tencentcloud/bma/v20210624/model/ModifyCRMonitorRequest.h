@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool WorkIdHasBeenSet() const;
 
                     /**
-                     * 获取监测状态 1-开启监测 2-关闭监测
-                     * @return MonitorStatus 监测状态 1-开启监测 2-关闭监测
+                     * 获取监测状态：1-开启监测 2-关闭监测
+                     * @return MonitorStatus 监测状态：1-开启监测 2-关闭监测
                      */
                     std::string GetMonitorStatus() const;
 
                     /**
-                     * 设置监测状态 1-开启监测 2-关闭监测
-                     * @param MonitorStatus 监测状态 1-开启监测 2-关闭监测
+                     * 设置监测状态：1-开启监测 2-关闭监测
+                     * @param MonitorStatus 监测状态：1-开启监测 2-关闭监测
                      */
                     void SetMonitorStatus(const std::string& _monitorStatus);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool MonitorStatusHasBeenSet() const;
 
                     /**
-                     * 获取默认不停止，支持续期
-                     * @return MonitorEnd 默认不停止，支持续期
+                     * 获取监测截止时间
+                     * @return MonitorEnd 监测截止时间
                      */
                     std::string GetMonitorEnd() const;
 
                     /**
-                     * 设置默认不停止，支持续期
-                     * @param MonitorEnd 默认不停止，支持续期
+                     * 设置监测截止时间
+                     * @param MonitorEnd 监测截止时间
                      */
                     void SetMonitorEnd(const std::string& _monitorEnd);
 
@@ -105,13 +105,13 @@ namespace TencentCloud
                     bool m_workIdHasBeenSet;
 
                     /**
-                     * 监测状态 1-开启监测 2-关闭监测
+                     * 监测状态：1-开启监测 2-关闭监测
                      */
                     std::string m_monitorStatus;
                     bool m_monitorStatusHasBeenSet;
 
                     /**
-                     * 默认不停止，支持续期
+                     * 监测截止时间
                      */
                     std::string m_monitorEnd;
                     bool m_monitorEndHasBeenSet;

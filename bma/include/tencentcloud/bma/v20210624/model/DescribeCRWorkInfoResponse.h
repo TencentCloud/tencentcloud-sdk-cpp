@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取x
-                     * @return WorkName x
+                     * 获取作品名称
+                     * @return WorkName 作品名称
                      */
                     std::string GetWorkName() const;
 
@@ -56,8 +56,8 @@ namespace TencentCloud
                     bool WorkNameHasBeenSet() const;
 
                     /**
-                     * 获取x
-                     * @return MonitorStatus x
+                     * 获取监测状态
+                     * @return MonitorStatus 监测状态
                      */
                     int64_t GetMonitorStatus() const;
 
@@ -68,8 +68,8 @@ namespace TencentCloud
                     bool MonitorStatusHasBeenSet() const;
 
                     /**
-                     * 获取x
-                     * @return AuthStatus x
+                     * 获取授权文件状态
+                     * @return AuthStatus 授权文件状态
                      */
                     int64_t GetAuthStatus() const;
 
@@ -80,8 +80,8 @@ namespace TencentCloud
                     bool AuthStatusHasBeenSet() const;
 
                     /**
-                     * 获取x
-                     * @return CommStatus x
+                     * 获取委托书状态
+                     * @return CommStatus 委托书状态
                      */
                     int64_t GetCommStatus() const;
 
@@ -92,8 +92,8 @@ namespace TencentCloud
                     bool CommStatusHasBeenSet() const;
 
                     /**
-                     * 获取x
-                     * @return IsProducer x
+                     * 获取是否著作权人
+                     * @return IsProducer 是否著作权人
                      */
                     int64_t GetIsProducer() const;
 
@@ -104,8 +104,8 @@ namespace TencentCloud
                     bool IsProducerHasBeenSet() const;
 
                     /**
-                     * 获取xxx
-                     * @return EvidenceStatus xxx
+                     * 获取存证证书状态
+                     * @return EvidenceStatus 存证证书状态
                      */
                     int64_t GetEvidenceStatus() const;
 
@@ -116,8 +116,8 @@ namespace TencentCloud
                     bool EvidenceStatusHasBeenSet() const;
 
                     /**
-                     * 获取xxx
-                     * @return WorkCategory xxx
+                     * 获取作品类型
+                     * @return WorkCategory 作品类型
                      */
                     std::string GetWorkCategory() const;
 
@@ -128,8 +128,8 @@ namespace TencentCloud
                     bool WorkCategoryHasBeenSet() const;
 
                     /**
-                     * 获取xxx
-                     * @return IsOriginal xxx
+                     * 获取是否原创
+                     * @return IsOriginal 是否原创
                      */
                     std::string GetIsOriginal() const;
 
@@ -140,8 +140,8 @@ namespace TencentCloud
                     bool IsOriginalHasBeenSet() const;
 
                     /**
-                     * 获取xxx
-                     * @return IsRelease xxx
+                     * 获取是否已发表
+                     * @return IsRelease 是否已发表
                      */
                     std::string GetIsRelease() const;
 
@@ -152,8 +152,8 @@ namespace TencentCloud
                     bool IsReleaseHasBeenSet() const;
 
                     /**
-                     * 获取xxx
-                     * @return ProducerName xxx
+                     * 获取著作权人姓名
+                     * @return ProducerName 著作权人姓名
                      */
                     std::string GetProducerName() const;
 
@@ -164,8 +164,8 @@ namespace TencentCloud
                     bool ProducerNameHasBeenSet() const;
 
                     /**
-                     * 获取xxx
-                     * @return ProduceTime xxx
+                     * 获取发表时间
+                     * @return ProduceTime 发表时间
                      */
                     std::string GetProduceTime() const;
 
@@ -176,8 +176,8 @@ namespace TencentCloud
                     bool ProduceTimeHasBeenSet() const;
 
                     /**
-                     * 获取xxx
-                     * @return WhiteLists xxx
+                     * 获取白名单
+                     * @return WhiteLists 白名单
                      */
                     std::vector<std::string> GetWhiteLists() const;
 
@@ -188,8 +188,8 @@ namespace TencentCloud
                     bool WhiteListsHasBeenSet() const;
 
                     /**
-                     * 获取xxx
-                     * @return WorkDesc xxx
+                     * 获取作品描述
+                     * @return WorkDesc 作品描述
                      */
                     std::string GetWorkDesc() const;
 
@@ -200,8 +200,8 @@ namespace TencentCloud
                     bool WorkDescHasBeenSet() const;
 
                     /**
-                     * 获取xxx
-                     * @return Authorization xxx
+                     * 获取授权书
+                     * @return Authorization 授权书
                      */
                     std::string GetAuthorization() const;
 
@@ -212,8 +212,8 @@ namespace TencentCloud
                     bool AuthorizationHasBeenSet() const;
 
                     /**
-                     * 获取xxx
-                     * @return AuthorizationStartTime xxx
+                     * 获取授权书生效日期
+                     * @return AuthorizationStartTime 授权书生效日期
                      */
                     std::string GetAuthorizationStartTime() const;
 
@@ -224,8 +224,8 @@ namespace TencentCloud
                     bool AuthorizationStartTimeHasBeenSet() const;
 
                     /**
-                     * 获取xxx
-                     * @return AuthorizationEndTime xxx
+                     * 获取授权书截止日期
+                     * @return AuthorizationEndTime 授权书截止日期
                      */
                     std::string GetAuthorizationEndTime() const;
 
@@ -236,8 +236,8 @@ namespace TencentCloud
                     bool AuthorizationEndTimeHasBeenSet() const;
 
                     /**
-                     * 获取xxx
-                     * @return Commission xxx
+                     * 获取委托书
+                     * @return Commission 委托书
                      */
                     std::string GetCommission() const;
 
@@ -248,8 +248,8 @@ namespace TencentCloud
                     bool CommissionHasBeenSet() const;
 
                     /**
-                     * 获取xxx
-                     * @return CommissionStartTime xxx
+                     * 获取委托书生效日期
+                     * @return CommissionStartTime 委托书生效日期
                      */
                     std::string GetCommissionStartTime() const;
 
@@ -260,8 +260,8 @@ namespace TencentCloud
                     bool CommissionStartTimeHasBeenSet() const;
 
                     /**
-                     * 获取xxx
-                     * @return CommissionEndTime xxx
+                     * 获取委托书截止日期
+                     * @return CommissionEndTime 委托书截止日期
                      */
                     std::string GetCommissionEndTime() const;
 
@@ -272,8 +272,8 @@ namespace TencentCloud
                     bool CommissionEndTimeHasBeenSet() const;
 
                     /**
-                     * 获取xxx
-                     * @return EvidenceUrl xxx
+                     * 获取存证证书
+                     * @return EvidenceUrl 存证证书
                      */
                     std::string GetEvidenceUrl() const;
 
@@ -284,8 +284,8 @@ namespace TencentCloud
                     bool EvidenceUrlHasBeenSet() const;
 
                     /**
-                     * 获取xxx
-                     * @return EvidenceStartTime xxx
+                     * 获取存证证书生效日期
+                     * @return EvidenceStartTime 存证证书生效日期
                      */
                     std::string GetEvidenceStartTime() const;
 
@@ -296,8 +296,8 @@ namespace TencentCloud
                     bool EvidenceStartTimeHasBeenSet() const;
 
                     /**
-                     * 获取xxx
-                     * @return EvidenceEndTime xxx
+                     * 获取存证证书截止日期
+                     * @return EvidenceEndTime 存证证书截止日期
                      */
                     std::string GetEvidenceEndTime() const;
 
@@ -310,133 +310,133 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * x
+                     * 作品名称
                      */
                     std::string m_workName;
                     bool m_workNameHasBeenSet;
 
                     /**
-                     * x
+                     * 监测状态
                      */
                     int64_t m_monitorStatus;
                     bool m_monitorStatusHasBeenSet;
 
                     /**
-                     * x
+                     * 授权文件状态
                      */
                     int64_t m_authStatus;
                     bool m_authStatusHasBeenSet;
 
                     /**
-                     * x
+                     * 委托书状态
                      */
                     int64_t m_commStatus;
                     bool m_commStatusHasBeenSet;
 
                     /**
-                     * x
+                     * 是否著作权人
                      */
                     int64_t m_isProducer;
                     bool m_isProducerHasBeenSet;
 
                     /**
-                     * xxx
+                     * 存证证书状态
                      */
                     int64_t m_evidenceStatus;
                     bool m_evidenceStatusHasBeenSet;
 
                     /**
-                     * xxx
+                     * 作品类型
                      */
                     std::string m_workCategory;
                     bool m_workCategoryHasBeenSet;
 
                     /**
-                     * xxx
+                     * 是否原创
                      */
                     std::string m_isOriginal;
                     bool m_isOriginalHasBeenSet;
 
                     /**
-                     * xxx
+                     * 是否已发表
                      */
                     std::string m_isRelease;
                     bool m_isReleaseHasBeenSet;
 
                     /**
-                     * xxx
+                     * 著作权人姓名
                      */
                     std::string m_producerName;
                     bool m_producerNameHasBeenSet;
 
                     /**
-                     * xxx
+                     * 发表时间
                      */
                     std::string m_produceTime;
                     bool m_produceTimeHasBeenSet;
 
                     /**
-                     * xxx
+                     * 白名单
                      */
                     std::vector<std::string> m_whiteLists;
                     bool m_whiteListsHasBeenSet;
 
                     /**
-                     * xxx
+                     * 作品描述
                      */
                     std::string m_workDesc;
                     bool m_workDescHasBeenSet;
 
                     /**
-                     * xxx
+                     * 授权书
                      */
                     std::string m_authorization;
                     bool m_authorizationHasBeenSet;
 
                     /**
-                     * xxx
+                     * 授权书生效日期
                      */
                     std::string m_authorizationStartTime;
                     bool m_authorizationStartTimeHasBeenSet;
 
                     /**
-                     * xxx
+                     * 授权书截止日期
                      */
                     std::string m_authorizationEndTime;
                     bool m_authorizationEndTimeHasBeenSet;
 
                     /**
-                     * xxx
+                     * 委托书
                      */
                     std::string m_commission;
                     bool m_commissionHasBeenSet;
 
                     /**
-                     * xxx
+                     * 委托书生效日期
                      */
                     std::string m_commissionStartTime;
                     bool m_commissionStartTimeHasBeenSet;
 
                     /**
-                     * xxx
+                     * 委托书截止日期
                      */
                     std::string m_commissionEndTime;
                     bool m_commissionEndTimeHasBeenSet;
 
                     /**
-                     * xxx
+                     * 存证证书
                      */
                     std::string m_evidenceUrl;
                     bool m_evidenceUrlHasBeenSet;
 
                     /**
-                     * xxx
+                     * 存证证书生效日期
                      */
                     std::string m_evidenceStartTime;
                     bool m_evidenceStartTimeHasBeenSet;
 
                     /**
-                     * xxx
+                     * 存证证书截止日期
                      */
                     std::string m_evidenceEndTime;
                     bool m_evidenceEndTimeHasBeenSet;

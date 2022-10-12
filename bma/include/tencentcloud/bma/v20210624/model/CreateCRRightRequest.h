@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取已存证的作品ID
-                     * @return WorkId 已存证的作品ID
+                     * 获取作品ID
+                     * @return WorkId 作品ID
                      */
                     int64_t GetWorkId() const;
 
                     /**
-                     * 设置已存证的作品ID
-                     * @param WorkId 已存证的作品ID
+                     * 设置作品ID
+                     * @param WorkId 作品ID
                      */
                     void SetWorkId(const int64_t& _workId);
 
@@ -133,14 +133,14 @@ namespace TencentCloud
                     bool RightUrlHasBeenSet() const;
 
                     /**
-                     * 获取x
-                     * @return FileUrl x
+                     * 获取授权书下载地址
+                     * @return FileUrl 授权书下载地址
                      */
                     std::string GetFileUrl() const;
 
                     /**
-                     * 设置x
-                     * @param FileUrl x
+                     * 设置授权书下载地址
+                     * @param FileUrl 授权书下载地址
                      */
                     void SetFileUrl(const std::string& _fileUrl);
 
@@ -151,14 +151,14 @@ namespace TencentCloud
                     bool FileUrlHasBeenSet() const;
 
                     /**
-                     * 获取x
-                     * @return ValidStartDate x
+                     * 获取授权书生效日期
+                     * @return ValidStartDate 授权书生效日期
                      */
                     std::string GetValidStartDate() const;
 
                     /**
-                     * 设置x
-                     * @param ValidStartDate x
+                     * 设置授权书生效日期
+                     * @param ValidStartDate 授权书生效日期
                      */
                     void SetValidStartDate(const std::string& _validStartDate);
 
@@ -169,14 +169,14 @@ namespace TencentCloud
                     bool ValidStartDateHasBeenSet() const;
 
                     /**
-                     * 获取x
-                     * @return ValidEndDate x
+                     * 获取授权书截止日期
+                     * @return ValidEndDate 授权书截止日期
                      */
                     std::string GetValidEndDate() const;
 
                     /**
-                     * 设置x
-                     * @param ValidEndDate x
+                     * 设置授权书截止日期
+                     * @param ValidEndDate 授权书截止日期
                      */
                     void SetValidEndDate(const std::string& _validEndDate);
 
@@ -187,14 +187,14 @@ namespace TencentCloud
                     bool ValidEndDateHasBeenSet() const;
 
                     /**
-                     * 获取x
-                     * @return CommFileUrl x
+                     * 获取委托书下载地址
+                     * @return CommFileUrl 委托书下载地址
                      */
                     std::string GetCommFileUrl() const;
 
                     /**
-                     * 设置x
-                     * @param CommFileUrl x
+                     * 设置委托书下载地址
+                     * @param CommFileUrl 委托书下载地址
                      */
                     void SetCommFileUrl(const std::string& _commFileUrl);
 
@@ -205,14 +205,14 @@ namespace TencentCloud
                     bool CommFileUrlHasBeenSet() const;
 
                     /**
-                     * 获取x
-                     * @return CommValidStartDate x
+                     * 获取委托书生效日期
+                     * @return CommValidStartDate 委托书生效日期
                      */
                     std::string GetCommValidStartDate() const;
 
                     /**
-                     * 设置x
-                     * @param CommValidStartDate x
+                     * 设置委托书生效日期
+                     * @param CommValidStartDate 委托书生效日期
                      */
                     void SetCommValidStartDate(const std::string& _commValidStartDate);
 
@@ -223,14 +223,14 @@ namespace TencentCloud
                     bool CommValidStartDateHasBeenSet() const;
 
                     /**
-                     * 获取x
-                     * @return CommValidEndDate x
+                     * 获取委托书截止日期
+                     * @return CommValidEndDate 委托书截止日期
                      */
                     std::string GetCommValidEndDate() const;
 
                     /**
-                     * 设置x
-                     * @param CommValidEndDate x
+                     * 设置委托书截止日期
+                     * @param CommValidEndDate 委托书截止日期
                      */
                     void SetCommValidEndDate(const std::string& _commValidEndDate);
 
@@ -241,14 +241,14 @@ namespace TencentCloud
                     bool CommValidEndDateHasBeenSet() const;
 
                     /**
-                     * 获取x
-                     * @return HomeFileUrl x
+                     * 获取主页下载地址
+                     * @return HomeFileUrl 主页下载地址
                      */
                     std::string GetHomeFileUrl() const;
 
                     /**
-                     * 设置x
-                     * @param HomeFileUrl x
+                     * 设置主页下载地址
+                     * @param HomeFileUrl 主页下载地址
                      */
                     void SetHomeFileUrl(const std::string& _homeFileUrl);
 
@@ -259,14 +259,14 @@ namespace TencentCloud
                     bool HomeFileUrlHasBeenSet() const;
 
                     /**
-                     * 获取x
-                     * @return HomeValidStartDate x
+                     * 获取主页生效日期
+                     * @return HomeValidStartDate 主页生效日期
                      */
                     std::string GetHomeValidStartDate() const;
 
                     /**
-                     * 设置x
-                     * @param HomeValidStartDate x
+                     * 设置主页生效日期
+                     * @param HomeValidStartDate 主页生效日期
                      */
                     void SetHomeValidStartDate(const std::string& _homeValidStartDate);
 
@@ -277,14 +277,14 @@ namespace TencentCloud
                     bool HomeValidStartDateHasBeenSet() const;
 
                     /**
-                     * 获取x
-                     * @return HomeValidEndDate x
+                     * 获取主页截止日期
+                     * @return HomeValidEndDate 主页截止日期
                      */
                     std::string GetHomeValidEndDate() const;
 
                     /**
-                     * 设置x
-                     * @param HomeValidEndDate x
+                     * 设置主页截止日期
+                     * @param HomeValidEndDate 主页截止日期
                      */
                     void SetHomeValidEndDate(const std::string& _homeValidEndDate);
 
@@ -295,14 +295,14 @@ namespace TencentCloud
                     bool HomeValidEndDateHasBeenSet() const;
 
                     /**
-                     * 获取x
-                     * @return IsProducer x
+                     * 获取是否著作权人：0-否 1-是
+                     * @return IsProducer 是否著作权人：0-否 1-是
                      */
                     std::string GetIsProducer() const;
 
                     /**
-                     * 设置x
-                     * @param IsProducer x
+                     * 设置是否著作权人：0-否 1-是
+                     * @param IsProducer 是否著作权人：0-否 1-是
                      */
                     void SetIsProducer(const std::string& _isProducer);
 
@@ -313,14 +313,14 @@ namespace TencentCloud
                     bool IsProducerHasBeenSet() const;
 
                     /**
-                     * 获取x
-                     * @return EvidenceFileUrl x
+                     * 获取存证证书下载地址
+                     * @return EvidenceFileUrl 存证证书下载地址
                      */
                     std::string GetEvidenceFileUrl() const;
 
                     /**
-                     * 设置x
-                     * @param EvidenceFileUrl x
+                     * 设置存证证书下载地址
+                     * @param EvidenceFileUrl 存证证书下载地址
                      */
                     void SetEvidenceFileUrl(const std::string& _evidenceFileUrl);
 
@@ -331,14 +331,14 @@ namespace TencentCloud
                     bool EvidenceFileUrlHasBeenSet() const;
 
                     /**
-                     * 获取x
-                     * @return EvidenceValidStartDate x
+                     * 获取存证证书生效日期
+                     * @return EvidenceValidStartDate 存证证书生效日期
                      */
                     std::string GetEvidenceValidStartDate() const;
 
                     /**
-                     * 设置x
-                     * @param EvidenceValidStartDate x
+                     * 设置存证证书生效日期
+                     * @param EvidenceValidStartDate 存证证书生效日期
                      */
                     void SetEvidenceValidStartDate(const std::string& _evidenceValidStartDate);
 
@@ -349,14 +349,14 @@ namespace TencentCloud
                     bool EvidenceValidStartDateHasBeenSet() const;
 
                     /**
-                     * 获取x
-                     * @return EvidenceValidEndDate x
+                     * 获取存证证书截止日期
+                     * @return EvidenceValidEndDate 存证证书截止日期
                      */
                     std::string GetEvidenceValidEndDate() const;
 
                     /**
-                     * 设置x
-                     * @param EvidenceValidEndDate x
+                     * 设置存证证书截止日期
+                     * @param EvidenceValidEndDate 存证证书截止日期
                      */
                     void SetEvidenceValidEndDate(const std::string& _evidenceValidEndDate);
 
@@ -369,7 +369,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 已存证的作品ID
+                     * 作品ID
                      */
                     int64_t m_workId;
                     bool m_workIdHasBeenSet;
@@ -399,79 +399,79 @@ namespace TencentCloud
                     bool m_rightUrlHasBeenSet;
 
                     /**
-                     * x
+                     * 授权书下载地址
                      */
                     std::string m_fileUrl;
                     bool m_fileUrlHasBeenSet;
 
                     /**
-                     * x
+                     * 授权书生效日期
                      */
                     std::string m_validStartDate;
                     bool m_validStartDateHasBeenSet;
 
                     /**
-                     * x
+                     * 授权书截止日期
                      */
                     std::string m_validEndDate;
                     bool m_validEndDateHasBeenSet;
 
                     /**
-                     * x
+                     * 委托书下载地址
                      */
                     std::string m_commFileUrl;
                     bool m_commFileUrlHasBeenSet;
 
                     /**
-                     * x
+                     * 委托书生效日期
                      */
                     std::string m_commValidStartDate;
                     bool m_commValidStartDateHasBeenSet;
 
                     /**
-                     * x
+                     * 委托书截止日期
                      */
                     std::string m_commValidEndDate;
                     bool m_commValidEndDateHasBeenSet;
 
                     /**
-                     * x
+                     * 主页下载地址
                      */
                     std::string m_homeFileUrl;
                     bool m_homeFileUrlHasBeenSet;
 
                     /**
-                     * x
+                     * 主页生效日期
                      */
                     std::string m_homeValidStartDate;
                     bool m_homeValidStartDateHasBeenSet;
 
                     /**
-                     * x
+                     * 主页截止日期
                      */
                     std::string m_homeValidEndDate;
                     bool m_homeValidEndDateHasBeenSet;
 
                     /**
-                     * x
+                     * 是否著作权人：0-否 1-是
                      */
                     std::string m_isProducer;
                     bool m_isProducerHasBeenSet;
 
                     /**
-                     * x
+                     * 存证证书下载地址
                      */
                     std::string m_evidenceFileUrl;
                     bool m_evidenceFileUrlHasBeenSet;
 
                     /**
-                     * x
+                     * 存证证书生效日期
                      */
                     std::string m_evidenceValidStartDate;
                     bool m_evidenceValidStartDateHasBeenSet;
 
                     /**
-                     * x
+                     * 存证证书截止日期
                      */
                     std::string m_evidenceValidEndDate;
                     bool m_evidenceValidEndDateHasBeenSet;

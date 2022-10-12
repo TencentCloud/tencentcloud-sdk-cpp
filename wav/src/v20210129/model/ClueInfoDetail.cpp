@@ -34,7 +34,8 @@ ClueInfoDetail::ClueInfoDetail() :
     m_salesNameHasBeenSet(false),
     m_salesPhoneHasBeenSet(false),
     m_remarkHasBeenSet(false),
-    m_tagListHasBeenSet(false)
+    m_tagListHasBeenSet(false),
+    m_userNameHasBeenSet(false)
 {
 }
 
@@ -186,6 +187,16 @@ CoreInternalOutcome ClueInfoDetail::Deserialize(const rapidjson::Value &value)
         m_tagListHasBeenSet = true;
     }
 
+    if (value.HasMember("UserName") && !value["UserName"].IsNull())
+    {
+        if (!value["UserName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClueInfoDetail.UserName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_userName = string(value["UserName"].GetString());
+        m_userNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -308,6 +319,14 @@ void ClueInfoDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_userNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_userName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -535,5 +554,21 @@ void ClueInfoDetail::SetTagList(const vector<string>& _tagList)
 bool ClueInfoDetail::TagListHasBeenSet() const
 {
     return m_tagListHasBeenSet;
+}
+
+string ClueInfoDetail::GetUserName() const
+{
+    return m_userName;
+}
+
+void ClueInfoDetail::SetUserName(const string& _userName)
+{
+    m_userName = _userName;
+    m_userNameHasBeenSet = true;
+}
+
+bool ClueInfoDetail::UserNameHasBeenSet() const
+{
+    return m_userNameHasBeenSet;
 }
 

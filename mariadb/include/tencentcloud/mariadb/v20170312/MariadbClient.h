@@ -61,10 +61,6 @@
 #include <tencentcloud/mariadb/v20170312/model/DescribeDBLogFilesResponse.h>
 #include <tencentcloud/mariadb/v20170312/model/DescribeDBParametersRequest.h>
 #include <tencentcloud/mariadb/v20170312/model/DescribeDBParametersResponse.h>
-#include <tencentcloud/mariadb/v20170312/model/DescribeDBPerformanceRequest.h>
-#include <tencentcloud/mariadb/v20170312/model/DescribeDBPerformanceResponse.h>
-#include <tencentcloud/mariadb/v20170312/model/DescribeDBPerformanceDetailsRequest.h>
-#include <tencentcloud/mariadb/v20170312/model/DescribeDBPerformanceDetailsResponse.h>
 #include <tencentcloud/mariadb/v20170312/model/DescribeDBResourceUsageRequest.h>
 #include <tencentcloud/mariadb/v20170312/model/DescribeDBResourceUsageResponse.h>
 #include <tencentcloud/mariadb/v20170312/model/DescribeDBResourceUsageDetailsRequest.h>
@@ -99,8 +95,6 @@
 #include <tencentcloud/mariadb/v20170312/model/DescribeRenewalPriceResponse.h>
 #include <tencentcloud/mariadb/v20170312/model/DescribeSaleInfoRequest.h>
 #include <tencentcloud/mariadb/v20170312/model/DescribeSaleInfoResponse.h>
-#include <tencentcloud/mariadb/v20170312/model/DescribeSqlLogsRequest.h>
-#include <tencentcloud/mariadb/v20170312/model/DescribeSqlLogsResponse.h>
 #include <tencentcloud/mariadb/v20170312/model/DescribeUpgradePriceRequest.h>
 #include <tencentcloud/mariadb/v20170312/model/DescribeUpgradePriceResponse.h>
 #include <tencentcloud/mariadb/v20170312/model/DestroyDBInstanceRequest.h>
@@ -224,12 +218,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDBParametersResponse> DescribeDBParametersOutcome;
                 typedef std::future<DescribeDBParametersOutcome> DescribeDBParametersOutcomeCallable;
                 typedef std::function<void(const MariadbClient*, const Model::DescribeDBParametersRequest&, DescribeDBParametersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBParametersAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeDBPerformanceResponse> DescribeDBPerformanceOutcome;
-                typedef std::future<DescribeDBPerformanceOutcome> DescribeDBPerformanceOutcomeCallable;
-                typedef std::function<void(const MariadbClient*, const Model::DescribeDBPerformanceRequest&, DescribeDBPerformanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBPerformanceAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeDBPerformanceDetailsResponse> DescribeDBPerformanceDetailsOutcome;
-                typedef std::future<DescribeDBPerformanceDetailsOutcome> DescribeDBPerformanceDetailsOutcomeCallable;
-                typedef std::function<void(const MariadbClient*, const Model::DescribeDBPerformanceDetailsRequest&, DescribeDBPerformanceDetailsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBPerformanceDetailsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDBResourceUsageResponse> DescribeDBResourceUsageOutcome;
                 typedef std::future<DescribeDBResourceUsageOutcome> DescribeDBResourceUsageOutcomeCallable;
                 typedef std::function<void(const MariadbClient*, const Model::DescribeDBResourceUsageRequest&, DescribeDBResourceUsageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBResourceUsageAsyncHandler;
@@ -281,9 +269,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeSaleInfoResponse> DescribeSaleInfoOutcome;
                 typedef std::future<DescribeSaleInfoOutcome> DescribeSaleInfoOutcomeCallable;
                 typedef std::function<void(const MariadbClient*, const Model::DescribeSaleInfoRequest&, DescribeSaleInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSaleInfoAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeSqlLogsResponse> DescribeSqlLogsOutcome;
-                typedef std::future<DescribeSqlLogsOutcome> DescribeSqlLogsOutcomeCallable;
-                typedef std::function<void(const MariadbClient*, const Model::DescribeSqlLogsRequest&, DescribeSqlLogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSqlLogsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeUpgradePriceResponse> DescribeUpgradePriceOutcome;
                 typedef std::future<DescribeUpgradePriceOutcome> DescribeUpgradePriceOutcomeCallable;
                 typedef std::function<void(const MariadbClient*, const Model::DescribeUpgradePriceRequest&, DescribeUpgradePriceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUpgradePriceAsyncHandler;
@@ -540,24 +525,6 @@ namespace TencentCloud
                 DescribeDBParametersOutcomeCallable DescribeDBParametersCallable(const Model::DescribeDBParametersRequest& request);
 
                 /**
-                 *本接口(DescribeDBPerformance)用于查看数据库实例当前性能数据。
-                 * @param req DescribeDBPerformanceRequest
-                 * @return DescribeDBPerformanceOutcome
-                 */
-                DescribeDBPerformanceOutcome DescribeDBPerformance(const Model::DescribeDBPerformanceRequest &request);
-                void DescribeDBPerformanceAsync(const Model::DescribeDBPerformanceRequest& request, const DescribeDBPerformanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeDBPerformanceOutcomeCallable DescribeDBPerformanceCallable(const Model::DescribeDBPerformanceRequest& request);
-
-                /**
-                 *本接口(DescribeDBPerformanceDetails)用于查看实例性能数据详情。
-                 * @param req DescribeDBPerformanceDetailsRequest
-                 * @return DescribeDBPerformanceDetailsOutcome
-                 */
-                DescribeDBPerformanceDetailsOutcome DescribeDBPerformanceDetails(const Model::DescribeDBPerformanceDetailsRequest &request);
-                void DescribeDBPerformanceDetailsAsync(const Model::DescribeDBPerformanceDetailsRequest& request, const DescribeDBPerformanceDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeDBPerformanceDetailsOutcomeCallable DescribeDBPerformanceDetailsCallable(const Model::DescribeDBPerformanceDetailsRequest& request);
-
-                /**
                  *本接口(DescribeDBResourceUsage)用于查看数据库实例资源的使用情况。
                  * @param req DescribeDBResourceUsageRequest
                  * @return DescribeDBResourceUsageOutcome
@@ -709,15 +676,6 @@ namespace TencentCloud
                 DescribeSaleInfoOutcome DescribeSaleInfo(const Model::DescribeSaleInfoRequest &request);
                 void DescribeSaleInfoAsync(const Model::DescribeSaleInfoRequest& request, const DescribeSaleInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeSaleInfoOutcomeCallable DescribeSaleInfoCallable(const Model::DescribeSaleInfoRequest& request);
-
-                /**
-                 *本接口（DescribeSqlLogs）用于获取实例SQL日志。
-                 * @param req DescribeSqlLogsRequest
-                 * @return DescribeSqlLogsOutcome
-                 */
-                DescribeSqlLogsOutcome DescribeSqlLogs(const Model::DescribeSqlLogsRequest &request);
-                void DescribeSqlLogsAsync(const Model::DescribeSqlLogsRequest& request, const DescribeSqlLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeSqlLogsOutcomeCallable DescribeSqlLogsCallable(const Model::DescribeSqlLogsRequest& request);
 
                 /**
                  *本接口（DescribeUpgradePrice）用于在扩容云数据库实例时，查询变配的价格。

@@ -191,14 +191,14 @@ namespace TencentCloud
                     bool WorkCategoryHasBeenSet() const;
 
                     /**
-                     * 获取xx
-                     * @return InsertTime xx
+                     * 获取新增时间
+                     * @return InsertTime 新增时间
                      */
                     std::string GetInsertTime() const;
 
                     /**
-                     * 设置xx
-                     * @param InsertTime xx
+                     * 设置新增时间
+                     * @param InsertTime 新增时间
                      */
                     void SetInsertTime(const std::string& _insertTime);
 
@@ -209,14 +209,14 @@ namespace TencentCloud
                     bool InsertTimeHasBeenSet() const;
 
                     /**
-                     * 获取xx
-                     * @return MonitorNote xx
+                     * 获取监测状态说明
+                     * @return MonitorNote 监测状态说明
                      */
                     std::string GetMonitorNote() const;
 
                     /**
-                     * 设置xx
-                     * @param MonitorNote xx
+                     * 设置监测状态说明
+                     * @param MonitorNote 监测状态说明
                      */
                     void SetMonitorNote(const std::string& _monitorNote);
 
@@ -277,13 +277,13 @@ namespace TencentCloud
                     bool m_workCategoryHasBeenSet;
 
                     /**
-                     * xx
+                     * 新增时间
                      */
                     std::string m_insertTime;
                     bool m_insertTimeHasBeenSet;
 
                     /**
-                     * xx
+                     * 监测状态说明
                      */
                     std::string m_monitorNote;
                     bool m_monitorNoteHasBeenSet;

@@ -98,14 +98,14 @@ namespace TencentCloud
                     bool PageNumberHasBeenSet() const;
 
                     /**
-                     * 获取x
-                     * @return Filters x
+                     * 获取过滤参数
+                     * @return Filters 过滤参数
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置x
-                     * @param Filters x
+                     * 设置过滤参数
+                     * @param Filters 过滤参数
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
@@ -136,7 +136,7 @@ namespace TencentCloud
                     bool m_pageNumberHasBeenSet;
 
                     /**
-                     * x
+                     * 过滤参数
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;

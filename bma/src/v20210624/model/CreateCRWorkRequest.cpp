@@ -35,8 +35,8 @@ CreateCRWorkRequest::CreateCRWorkRequest() :
     m_produceTimeHasBeenSet(false),
     m_sampleContentURLHasBeenSet(false),
     m_sampleDownloadURLHasBeenSet(false),
-    m_grantTypeHasBeenSet(false),
     m_samplePublicURLHasBeenSet(false),
+    m_grantTypeHasBeenSet(false),
     m_isMonitorHasBeenSet(false),
     m_isCertHasBeenSet(false),
     m_certUrlHasBeenSet(false),
@@ -160,20 +160,20 @@ string CreateCRWorkRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_sampleDownloadURL.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_grantTypeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "GrantType";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_grantType.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_samplePublicURLHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "SamplePublicURL";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_samplePublicURL.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_grantTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GrantType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_grantType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_isMonitorHasBeenSet)
@@ -517,22 +517,6 @@ bool CreateCRWorkRequest::SampleDownloadURLHasBeenSet() const
     return m_sampleDownloadURLHasBeenSet;
 }
 
-string CreateCRWorkRequest::GetGrantType() const
-{
-    return m_grantType;
-}
-
-void CreateCRWorkRequest::SetGrantType(const string& _grantType)
-{
-    m_grantType = _grantType;
-    m_grantTypeHasBeenSet = true;
-}
-
-bool CreateCRWorkRequest::GrantTypeHasBeenSet() const
-{
-    return m_grantTypeHasBeenSet;
-}
-
 string CreateCRWorkRequest::GetSamplePublicURL() const
 {
     return m_samplePublicURL;
@@ -547,6 +531,22 @@ void CreateCRWorkRequest::SetSamplePublicURL(const string& _samplePublicURL)
 bool CreateCRWorkRequest::SamplePublicURLHasBeenSet() const
 {
     return m_samplePublicURLHasBeenSet;
+}
+
+string CreateCRWorkRequest::GetGrantType() const
+{
+    return m_grantType;
+}
+
+void CreateCRWorkRequest::SetGrantType(const string& _grantType)
+{
+    m_grantType = _grantType;
+    m_grantTypeHasBeenSet = true;
+}
+
+bool CreateCRWorkRequest::GrantTypeHasBeenSet() const
+{
+    return m_grantTypeHasBeenSet;
 }
 
 string CreateCRWorkRequest::GetIsMonitor() const

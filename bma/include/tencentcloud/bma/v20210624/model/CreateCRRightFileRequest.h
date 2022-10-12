@@ -44,14 +44,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取xxx
-                     * @return WorkId xxx
+                     * 获取作品ID
+                     * @return WorkId 作品ID
                      */
                     int64_t GetWorkId() const;
 
                     /**
-                     * 设置xxx
-                     * @param WorkId xxx
+                     * 设置作品ID
+                     * @param WorkId 作品ID
                      */
                     void SetWorkId(const int64_t& _workId);
 
@@ -62,14 +62,14 @@ namespace TencentCloud
                     bool WorkIdHasBeenSet() const;
 
                     /**
-                     * 获取xxx
-                     * @return FileList xxx
+                     * 获取权属文件列表
+                     * @return FileList 权属文件列表
                      */
                     std::vector<File> GetFileList() const;
 
                     /**
-                     * 设置xxx
-                     * @param FileList xxx
+                     * 设置权属文件列表
+                     * @param FileList 权属文件列表
                      */
                     void SetFileList(const std::vector<File>& _fileList);
 
@@ -82,13 +82,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * xxx
+                     * 作品ID
                      */
                     int64_t m_workId;
                     bool m_workIdHasBeenSet;
 
                     /**
-                     * xxx
+                     * 权属文件列表
                      */
                     std::vector<File> m_fileList;
                     bool m_fileListHasBeenSet;

@@ -30,7 +30,8 @@ VideoTemplateInfo::VideoTemplateInfo() :
     m_fillTypeHasBeenSet(false),
     m_vcrfHasBeenSet(false),
     m_gopHasBeenSet(false),
-    m_preserveHDRSwitchHasBeenSet(false)
+    m_preserveHDRSwitchHasBeenSet(false),
+    m_codecTagHasBeenSet(false)
 {
 }
 
@@ -139,6 +140,16 @@ CoreInternalOutcome VideoTemplateInfo::Deserialize(const rapidjson::Value &value
         m_preserveHDRSwitchHasBeenSet = true;
     }
 
+    if (value.HasMember("CodecTag") && !value["CodecTag"].IsNull())
+    {
+        if (!value["CodecTag"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VideoTemplateInfo.CodecTag` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_codecTag = string(value["CodecTag"].GetString());
+        m_codecTagHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -224,6 +235,14 @@ void VideoTemplateInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "PreserveHDRSwitch";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_preserveHDRSwitch.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_codecTagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CodecTag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_codecTag.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -387,5 +406,21 @@ void VideoTemplateInfo::SetPreserveHDRSwitch(const string& _preserveHDRSwitch)
 bool VideoTemplateInfo::PreserveHDRSwitchHasBeenSet() const
 {
     return m_preserveHDRSwitchHasBeenSet;
+}
+
+string VideoTemplateInfo::GetCodecTag() const
+{
+    return m_codecTag;
+}
+
+void VideoTemplateInfo::SetCodecTag(const string& _codecTag)
+{
+    m_codecTag = _codecTag;
+    m_codecTagHasBeenSet = true;
+}
+
+bool VideoTemplateInfo::CodecTagHasBeenSet() const
+{
+    return m_codecTagHasBeenSet;
 }
 

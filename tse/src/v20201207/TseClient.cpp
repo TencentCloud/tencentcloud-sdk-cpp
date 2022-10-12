@@ -427,3 +427,46 @@ TseClient::DescribeZookeeperServerInterfacesOutcomeCallable TseClient::DescribeZ
     return task->get_future();
 }
 
+TseClient::UpdateEngineInternetAccessOutcome TseClient::UpdateEngineInternetAccess(const UpdateEngineInternetAccessRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateEngineInternetAccess");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateEngineInternetAccessResponse rsp = UpdateEngineInternetAccessResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateEngineInternetAccessOutcome(rsp);
+        else
+            return UpdateEngineInternetAccessOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateEngineInternetAccessOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::UpdateEngineInternetAccessAsync(const UpdateEngineInternetAccessRequest& request, const UpdateEngineInternetAccessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateEngineInternetAccess(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TseClient::UpdateEngineInternetAccessOutcomeCallable TseClient::UpdateEngineInternetAccessCallable(const UpdateEngineInternetAccessRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateEngineInternetAccessOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateEngineInternetAccess(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
