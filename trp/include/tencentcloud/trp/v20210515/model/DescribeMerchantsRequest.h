@@ -114,6 +114,24 @@ namespace TencentCloud
                      */
                     bool CorpIdHasBeenSet() const;
 
+                    /**
+                     * 获取码来源类型 0:自建, 1:第三方
+                     * @return CodeType 码来源类型 0:自建, 1:第三方
+                     */
+                    int64_t GetCodeType() const;
+
+                    /**
+                     * 设置码来源类型 0:自建, 1:第三方
+                     * @param CodeType 码来源类型 0:自建, 1:第三方
+                     */
+                    void SetCodeType(const int64_t& _codeType);
+
+                    /**
+                     * 判断参数 CodeType 是否已赋值
+                     * @return CodeType 是否已赋值
+                     */
+                    bool CodeTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -139,6 +157,12 @@ namespace TencentCloud
                      */
                     uint64_t m_corpId;
                     bool m_corpIdHasBeenSet;
+
+                    /**
+                     * 码来源类型 0:自建, 1:第三方
+                     */
+                    int64_t m_codeType;
+                    bool m_codeTypeHasBeenSet;
 
                 };
             }

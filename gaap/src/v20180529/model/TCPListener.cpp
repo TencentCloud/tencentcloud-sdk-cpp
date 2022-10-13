@@ -39,7 +39,9 @@ TCPListener::TCPListener() :
     m_healthyThresholdHasBeenSet(false),
     m_unhealthyThresholdHasBeenSet(false),
     m_failoverSwitchHasBeenSet(false),
-    m_sessionPersistHasBeenSet(false)
+    m_sessionPersistHasBeenSet(false),
+    m_proxyIdHasBeenSet(false),
+    m_groupIdHasBeenSet(false)
 {
 }
 
@@ -248,6 +250,26 @@ CoreInternalOutcome TCPListener::Deserialize(const rapidjson::Value &value)
         m_sessionPersistHasBeenSet = true;
     }
 
+    if (value.HasMember("ProxyId") && !value["ProxyId"].IsNull())
+    {
+        if (!value["ProxyId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TCPListener.ProxyId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_proxyId = string(value["ProxyId"].GetString());
+        m_proxyIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("GroupId") && !value["GroupId"].IsNull())
+    {
+        if (!value["GroupId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TCPListener.GroupId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_groupId = string(value["GroupId"].GetString());
+        m_groupIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -412,6 +434,22 @@ void TCPListener::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "SessionPersist";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_sessionPersist, allocator);
+    }
+
+    if (m_proxyIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProxyId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_proxyId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_groupIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GroupId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_groupId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -719,5 +757,37 @@ void TCPListener::SetSessionPersist(const uint64_t& _sessionPersist)
 bool TCPListener::SessionPersistHasBeenSet() const
 {
     return m_sessionPersistHasBeenSet;
+}
+
+string TCPListener::GetProxyId() const
+{
+    return m_proxyId;
+}
+
+void TCPListener::SetProxyId(const string& _proxyId)
+{
+    m_proxyId = _proxyId;
+    m_proxyIdHasBeenSet = true;
+}
+
+bool TCPListener::ProxyIdHasBeenSet() const
+{
+    return m_proxyIdHasBeenSet;
+}
+
+string TCPListener::GetGroupId() const
+{
+    return m_groupId;
+}
+
+void TCPListener::SetGroupId(const string& _groupId)
+{
+    m_groupId = _groupId;
+    m_groupIdHasBeenSet = true;
+}
+
+bool TCPListener::GroupIdHasBeenSet() const
+{
+    return m_groupIdHasBeenSet;
 }
 

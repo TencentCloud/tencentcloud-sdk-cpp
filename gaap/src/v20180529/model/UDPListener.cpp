@@ -43,7 +43,9 @@ UDPListener::UDPListener() :
     m_checkPortHasBeenSet(false),
     m_contextTypeHasBeenSet(false),
     m_sendContextHasBeenSet(false),
-    m_recvContextHasBeenSet(false)
+    m_recvContextHasBeenSet(false),
+    m_proxyIdHasBeenSet(false),
+    m_groupIdHasBeenSet(false)
 {
 }
 
@@ -292,6 +294,26 @@ CoreInternalOutcome UDPListener::Deserialize(const rapidjson::Value &value)
         m_recvContextHasBeenSet = true;
     }
 
+    if (value.HasMember("ProxyId") && !value["ProxyId"].IsNull())
+    {
+        if (!value["ProxyId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UDPListener.ProxyId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_proxyId = string(value["ProxyId"].GetString());
+        m_proxyIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("GroupId") && !value["GroupId"].IsNull())
+    {
+        if (!value["GroupId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UDPListener.GroupId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_groupId = string(value["GroupId"].GetString());
+        m_groupIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -488,6 +510,22 @@ void UDPListener::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "RecvContext";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_recvContext.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_proxyIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProxyId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_proxyId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_groupIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GroupId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_groupId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -859,5 +897,37 @@ void UDPListener::SetRecvContext(const string& _recvContext)
 bool UDPListener::RecvContextHasBeenSet() const
 {
     return m_recvContextHasBeenSet;
+}
+
+string UDPListener::GetProxyId() const
+{
+    return m_proxyId;
+}
+
+void UDPListener::SetProxyId(const string& _proxyId)
+{
+    m_proxyId = _proxyId;
+    m_proxyIdHasBeenSet = true;
+}
+
+bool UDPListener::ProxyIdHasBeenSet() const
+{
+    return m_proxyIdHasBeenSet;
+}
+
+string UDPListener::GetGroupId() const
+{
+    return m_groupId;
+}
+
+void UDPListener::SetGroupId(const string& _groupId)
+{
+    m_groupId = _groupId;
+    m_groupIdHasBeenSet = true;
+}
+
+bool UDPListener::GroupIdHasBeenSet() const
+{
+    return m_groupIdHasBeenSet;
 }
 

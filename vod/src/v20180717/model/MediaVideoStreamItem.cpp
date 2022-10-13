@@ -25,7 +25,8 @@ MediaVideoStreamItem::MediaVideoStreamItem() :
     m_heightHasBeenSet(false),
     m_widthHasBeenSet(false),
     m_codecHasBeenSet(false),
-    m_fpsHasBeenSet(false)
+    m_fpsHasBeenSet(false),
+    m_codecTagHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,16 @@ CoreInternalOutcome MediaVideoStreamItem::Deserialize(const rapidjson::Value &va
         m_fpsHasBeenSet = true;
     }
 
+    if (value.HasMember("CodecTag") && !value["CodecTag"].IsNull())
+    {
+        if (!value["CodecTag"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MediaVideoStreamItem.CodecTag` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_codecTag = string(value["CodecTag"].GetString());
+        m_codecTagHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +140,14 @@ void MediaVideoStreamItem::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "Fps";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_fps, allocator);
+    }
+
+    if (m_codecTagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CodecTag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_codecTag.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -212,5 +231,21 @@ void MediaVideoStreamItem::SetFps(const int64_t& _fps)
 bool MediaVideoStreamItem::FpsHasBeenSet() const
 {
     return m_fpsHasBeenSet;
+}
+
+string MediaVideoStreamItem::GetCodecTag() const
+{
+    return m_codecTag;
+}
+
+void MediaVideoStreamItem::SetCodecTag(const string& _codecTag)
+{
+    m_codecTag = _codecTag;
+    m_codecTagHasBeenSet = true;
+}
+
+bool MediaVideoStreamItem::CodecTagHasBeenSet() const
+{
+    return m_codecTagHasBeenSet;
 }
 

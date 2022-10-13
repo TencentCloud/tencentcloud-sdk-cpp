@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取数据库引擎名称：mariadb,cdb,cynosdb,dcdb,redis,mongodb
-                     * @return Product 数据库引擎名称：mariadb,cdb,cynosdb,dcdb,redis,mongodb
+                     * 获取数据库引擎名称，本接口取值：redis。
+                     * @return Product 数据库引擎名称，本接口取值：redis。
                      */
                     std::string GetProduct() const;
 
                     /**
-                     * 设置数据库引擎名称：mariadb,cdb,cynosdb,dcdb,redis,mongodb
-                     * @param Product 数据库引擎名称：mariadb,cdb,cynosdb,dcdb,redis,mongodb
+                     * 设置数据库引擎名称，本接口取值：redis。
+                     * @param Product 数据库引擎名称，本接口取值：redis。
                      */
                     void SetProduct(const std::string& _product);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool ProductHasBeenSet() const;
 
                     /**
-                     * 获取项目Id。
-                     * @return ProjectId 项目Id。
+                     * 获取项目 ID。
+                     * @return ProjectId 项目 ID。
                      */
                     uint64_t GetProjectId() const;
 
                     /**
-                     * 设置项目Id。
-                     * @param ProjectId 项目Id。
+                     * 设置项目 ID。
+                     * @param ProjectId 项目 ID。
                      */
                     void SetProjectId(const uint64_t& _projectId);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取偏移量。
-                     * @return Offset 偏移量。
+                     * 获取偏移量，取值为Limit的整数倍。
+                     * @return Offset 偏移量，取值为Limit的整数倍。
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量。
-                     * @param Offset 偏移量。
+                     * 设置偏移量，取值为Limit的整数倍。
+                     * @param Offset 偏移量，取值为Limit的整数倍。
                      */
                     void SetOffset(const uint64_t& _offset);
 
@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取拉取数量限制，默认20
-                     * @return Limit 拉取数量限制，默认20
+                     * 获取拉取数量限制，默认 20。
+                     * @return Limit 拉取数量限制，默认 20。
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置拉取数量限制，默认20
-                     * @param Limit 拉取数量限制，默认20
+                     * 设置拉取数量限制，默认 20。
+                     * @param Limit 拉取数量限制，默认 20。
                      */
                     void SetLimit(const uint64_t& _limit);
 
@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取搜索条件，支持安全组id或者安全组名称。
-                     * @return SearchKey 搜索条件，支持安全组id或者安全组名称。
+                     * 获取搜索条件，支持安全组 ID 或者安全组名称。
+                     * @return SearchKey 搜索条件，支持安全组 ID 或者安全组名称。
                      */
                     std::string GetSearchKey() const;
 
                     /**
-                     * 设置搜索条件，支持安全组id或者安全组名称。
-                     * @param SearchKey 搜索条件，支持安全组id或者安全组名称。
+                     * 设置搜索条件，支持安全组 ID 或者安全组名称。
+                     * @param SearchKey 搜索条件，支持安全组 ID 或者安全组名称。
                      */
                     void SetSearchKey(const std::string& _searchKey);
 
@@ -135,31 +135,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 数据库引擎名称：mariadb,cdb,cynosdb,dcdb,redis,mongodb
+                     * 数据库引擎名称，本接口取值：redis。
                      */
                     std::string m_product;
                     bool m_productHasBeenSet;
 
                     /**
-                     * 项目Id。
+                     * 项目 ID。
                      */
                     uint64_t m_projectId;
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 偏移量。
+                     * 偏移量，取值为Limit的整数倍。
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 拉取数量限制，默认20
+                     * 拉取数量限制，默认 20。
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 搜索条件，支持安全组id或者安全组名称。
+                     * 搜索条件，支持安全组 ID 或者安全组名称。
                      */
                     std::string m_searchKey;
                     bool m_searchKeyHasBeenSet;

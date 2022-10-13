@@ -96,6 +96,42 @@ namespace TencentCloud
                      */
                     bool CorpIdHasBeenSet() const;
 
+                    /**
+                     * 获取码包来源 0:自建, 1:第三发
+                     * @return CodeType 码包来源 0:自建, 1:第三发
+                     */
+                    int64_t GetCodeType() const;
+
+                    /**
+                     * 设置码包来源 0:自建, 1:第三发
+                     * @param CodeType 码包来源 0:自建, 1:第三发
+                     */
+                    void SetCodeType(const int64_t& _codeType);
+
+                    /**
+                     * 判断参数 CodeType 是否已赋值
+                     * @return CodeType 是否已赋值
+                     */
+                    bool CodeTypeHasBeenSet() const;
+
+                    /**
+                     * 获取码包前缀地址 第三方码包时必填
+                     * @return CodeUrl 码包前缀地址 第三方码包时必填
+                     */
+                    std::string GetCodeUrl() const;
+
+                    /**
+                     * 设置码包前缀地址 第三方码包时必填
+                     * @param CodeUrl 码包前缀地址 第三方码包时必填
+                     */
+                    void SetCodeUrl(const std::string& _codeUrl);
+
+                    /**
+                     * 判断参数 CodeUrl 是否已赋值
+                     * @return CodeUrl 是否已赋值
+                     */
+                    bool CodeUrlHasBeenSet() const;
+
                 private:
 
                     /**
@@ -115,6 +151,18 @@ namespace TencentCloud
                      */
                     uint64_t m_corpId;
                     bool m_corpIdHasBeenSet;
+
+                    /**
+                     * 码包来源 0:自建, 1:第三发
+                     */
+                    int64_t m_codeType;
+                    bool m_codeTypeHasBeenSet;
+
+                    /**
+                     * 码包前缀地址 第三方码包时必填
+                     */
+                    std::string m_codeUrl;
+                    bool m_codeUrlHasBeenSet;
 
                 };
             }

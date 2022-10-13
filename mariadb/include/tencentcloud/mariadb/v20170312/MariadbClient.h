@@ -61,10 +61,6 @@
 #include <tencentcloud/mariadb/v20170312/model/DescribeDBLogFilesResponse.h>
 #include <tencentcloud/mariadb/v20170312/model/DescribeDBParametersRequest.h>
 #include <tencentcloud/mariadb/v20170312/model/DescribeDBParametersResponse.h>
-#include <tencentcloud/mariadb/v20170312/model/DescribeDBResourceUsageRequest.h>
-#include <tencentcloud/mariadb/v20170312/model/DescribeDBResourceUsageResponse.h>
-#include <tencentcloud/mariadb/v20170312/model/DescribeDBResourceUsageDetailsRequest.h>
-#include <tencentcloud/mariadb/v20170312/model/DescribeDBResourceUsageDetailsResponse.h>
 #include <tencentcloud/mariadb/v20170312/model/DescribeDBSecurityGroupsRequest.h>
 #include <tencentcloud/mariadb/v20170312/model/DescribeDBSecurityGroupsResponse.h>
 #include <tencentcloud/mariadb/v20170312/model/DescribeDBSlowLogsRequest.h>
@@ -218,12 +214,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDBParametersResponse> DescribeDBParametersOutcome;
                 typedef std::future<DescribeDBParametersOutcome> DescribeDBParametersOutcomeCallable;
                 typedef std::function<void(const MariadbClient*, const Model::DescribeDBParametersRequest&, DescribeDBParametersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBParametersAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeDBResourceUsageResponse> DescribeDBResourceUsageOutcome;
-                typedef std::future<DescribeDBResourceUsageOutcome> DescribeDBResourceUsageOutcomeCallable;
-                typedef std::function<void(const MariadbClient*, const Model::DescribeDBResourceUsageRequest&, DescribeDBResourceUsageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBResourceUsageAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeDBResourceUsageDetailsResponse> DescribeDBResourceUsageDetailsOutcome;
-                typedef std::future<DescribeDBResourceUsageDetailsOutcome> DescribeDBResourceUsageDetailsOutcomeCallable;
-                typedef std::function<void(const MariadbClient*, const Model::DescribeDBResourceUsageDetailsRequest&, DescribeDBResourceUsageDetailsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBResourceUsageDetailsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDBSecurityGroupsResponse> DescribeDBSecurityGroupsOutcome;
                 typedef std::future<DescribeDBSecurityGroupsOutcome> DescribeDBSecurityGroupsOutcomeCallable;
                 typedef std::function<void(const MariadbClient*, const Model::DescribeDBSecurityGroupsRequest&, DescribeDBSecurityGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBSecurityGroupsAsyncHandler;
@@ -523,24 +513,6 @@ namespace TencentCloud
                 DescribeDBParametersOutcome DescribeDBParameters(const Model::DescribeDBParametersRequest &request);
                 void DescribeDBParametersAsync(const Model::DescribeDBParametersRequest& request, const DescribeDBParametersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDBParametersOutcomeCallable DescribeDBParametersCallable(const Model::DescribeDBParametersRequest& request);
-
-                /**
-                 *本接口(DescribeDBResourceUsage)用于查看数据库实例资源的使用情况。
-                 * @param req DescribeDBResourceUsageRequest
-                 * @return DescribeDBResourceUsageOutcome
-                 */
-                DescribeDBResourceUsageOutcome DescribeDBResourceUsage(const Model::DescribeDBResourceUsageRequest &request);
-                void DescribeDBResourceUsageAsync(const Model::DescribeDBResourceUsageRequest& request, const DescribeDBResourceUsageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeDBResourceUsageOutcomeCallable DescribeDBResourceUsageCallable(const Model::DescribeDBResourceUsageRequest& request);
-
-                /**
-                 *本接口(DescribeDBResourceUsageDetails)用于查看数据库实例当前性能数据。
-                 * @param req DescribeDBResourceUsageDetailsRequest
-                 * @return DescribeDBResourceUsageDetailsOutcome
-                 */
-                DescribeDBResourceUsageDetailsOutcome DescribeDBResourceUsageDetails(const Model::DescribeDBResourceUsageDetailsRequest &request);
-                void DescribeDBResourceUsageDetailsAsync(const Model::DescribeDBResourceUsageDetailsRequest& request, const DescribeDBResourceUsageDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeDBResourceUsageDetailsOutcomeCallable DescribeDBResourceUsageDetailsCallable(const Model::DescribeDBResourceUsageDetailsRequest& request);
 
                 /**
                  *本接口（DescribeDBSecurityGroups）用于查询实例安全组信息

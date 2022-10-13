@@ -190,7 +190,7 @@ namespace TencentCloud
                 CreateCodeBatchOutcomeCallable CreateCodeBatchCallable(const Model::CreateCodeBatchRequest& request);
 
                 /**
-                 *生成码包
+                 *生成普通码包
                  * @param req CreateCodePackRequest
                  * @return CreateCodePackOutcome
                  */

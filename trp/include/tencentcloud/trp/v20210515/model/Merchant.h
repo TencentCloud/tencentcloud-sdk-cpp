@@ -176,6 +176,46 @@ namespace TencentCloud
                      */
                     bool CodeRuleHasBeenSet() const;
 
+                    /**
+                     * 获取码来源类型 0: 安心平台 1: 第三方码
+                     * @return CodeType 码来源类型 0: 安心平台 1: 第三方码
+                     */
+                    int64_t GetCodeType() const;
+
+                    /**
+                     * 设置码来源类型 0: 安心平台 1: 第三方码
+                     * @param CodeType 码来源类型 0: 安心平台 1: 第三方码
+                     */
+                    void SetCodeType(const int64_t& _codeType);
+
+                    /**
+                     * 判断参数 CodeType 是否已赋值
+                     * @return CodeType 是否已赋值
+                     */
+                    bool CodeTypeHasBeenSet() const;
+
+                    /**
+                     * 获取第三方码域名前缀
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CodeUrl 第三方码域名前缀
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetCodeUrl() const;
+
+                    /**
+                     * 设置第三方码域名前缀
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param CodeUrl 第三方码域名前缀
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCodeUrl(const std::string& _codeUrl);
+
+                    /**
+                     * 判断参数 CodeUrl 是否已赋值
+                     * @return CodeUrl 是否已赋值
+                     */
+                    bool CodeUrlHasBeenSet() const;
+
                 private:
 
                     /**
@@ -220,6 +260,19 @@ namespace TencentCloud
                      */
                     std::string m_codeRule;
                     bool m_codeRuleHasBeenSet;
+
+                    /**
+                     * 码来源类型 0: 安心平台 1: 第三方码
+                     */
+                    int64_t m_codeType;
+                    bool m_codeTypeHasBeenSet;
+
+                    /**
+                     * 第三方码域名前缀
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_codeUrl;
+                    bool m_codeUrlHasBeenSet;
 
                 };
             }

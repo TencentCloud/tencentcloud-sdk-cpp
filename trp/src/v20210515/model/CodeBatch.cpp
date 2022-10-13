@@ -36,7 +36,8 @@ CodeBatch::CodeBatch() :
     m_merchantNameHasBeenSet(false),
     m_productNameHasBeenSet(false),
     m_extHasBeenSet(false),
-    m_tplNameHasBeenSet(false)
+    m_tplNameHasBeenSet(false),
+    m_jobHasBeenSet(false)
 {
 }
 
@@ -212,6 +213,23 @@ CoreInternalOutcome CodeBatch::Deserialize(const rapidjson::Value &value)
         m_tplNameHasBeenSet = true;
     }
 
+    if (value.HasMember("Job") && !value["Job"].IsNull())
+    {
+        if (!value["Job"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `CodeBatch.Job` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_job.Deserialize(value["Job"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_jobHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -346,6 +364,15 @@ void CodeBatch::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "TplName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_tplName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_jobHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Job";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_job.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -605,5 +632,21 @@ void CodeBatch::SetTplName(const string& _tplName)
 bool CodeBatch::TplNameHasBeenSet() const
 {
     return m_tplNameHasBeenSet;
+}
+
+Job CodeBatch::GetJob() const
+{
+    return m_job;
+}
+
+void CodeBatch::SetJob(const Job& _job)
+{
+    m_job = _job;
+    m_jobHasBeenSet = true;
+}
+
+bool CodeBatch::JobHasBeenSet() const
+{
+    return m_jobHasBeenSet;
 }
 

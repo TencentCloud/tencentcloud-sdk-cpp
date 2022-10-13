@@ -23,7 +23,8 @@ using namespace std;
 PackSpec::PackSpec() :
     m_levelHasBeenSet(false),
     m_rateHasBeenSet(false),
-    m_amountHasBeenSet(false)
+    m_amountHasBeenSet(false),
+    m_customIdHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,16 @@ CoreInternalOutcome PackSpec::Deserialize(const rapidjson::Value &value)
         m_amountHasBeenSet = true;
     }
 
+    if (value.HasMember("CustomId") && !value["CustomId"].IsNull())
+    {
+        if (!value["CustomId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PackSpec.CustomId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_customId = string(value["CustomId"].GetString());
+        m_customIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +102,14 @@ void PackSpec::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "Amount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_amount, allocator);
+    }
+
+    if (m_customIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CustomId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_customId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -142,5 +161,21 @@ void PackSpec::SetAmount(const uint64_t& _amount)
 bool PackSpec::AmountHasBeenSet() const
 {
     return m_amountHasBeenSet;
+}
+
+string PackSpec::GetCustomId() const
+{
+    return m_customId;
+}
+
+void PackSpec::SetCustomId(const string& _customId)
+{
+    m_customId = _customId;
+    m_customIdHasBeenSet = true;
+}
+
+bool PackSpec::CustomIdHasBeenSet() const
+{
+    return m_customIdHasBeenSet;
 }
 

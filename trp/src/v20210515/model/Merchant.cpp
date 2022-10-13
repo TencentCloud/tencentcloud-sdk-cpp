@@ -27,7 +27,9 @@ Merchant::Merchant() :
     m_remarkHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
-    m_codeRuleHasBeenSet(false)
+    m_codeRuleHasBeenSet(false),
+    m_codeTypeHasBeenSet(false),
+    m_codeUrlHasBeenSet(false)
 {
 }
 
@@ -106,6 +108,26 @@ CoreInternalOutcome Merchant::Deserialize(const rapidjson::Value &value)
         m_codeRuleHasBeenSet = true;
     }
 
+    if (value.HasMember("CodeType") && !value["CodeType"].IsNull())
+    {
+        if (!value["CodeType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Merchant.CodeType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_codeType = value["CodeType"].GetInt64();
+        m_codeTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("CodeUrl") && !value["CodeUrl"].IsNull())
+    {
+        if (!value["CodeUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Merchant.CodeUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_codeUrl = string(value["CodeUrl"].GetString());
+        m_codeUrlHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +189,22 @@ void Merchant::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "CodeRule";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_codeRule.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_codeTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CodeType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_codeType, allocator);
+    }
+
+    if (m_codeUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CodeUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_codeUrl.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -282,5 +320,37 @@ void Merchant::SetCodeRule(const string& _codeRule)
 bool Merchant::CodeRuleHasBeenSet() const
 {
     return m_codeRuleHasBeenSet;
+}
+
+int64_t Merchant::GetCodeType() const
+{
+    return m_codeType;
+}
+
+void Merchant::SetCodeType(const int64_t& _codeType)
+{
+    m_codeType = _codeType;
+    m_codeTypeHasBeenSet = true;
+}
+
+bool Merchant::CodeTypeHasBeenSet() const
+{
+    return m_codeTypeHasBeenSet;
+}
+
+string Merchant::GetCodeUrl() const
+{
+    return m_codeUrl;
+}
+
+void Merchant::SetCodeUrl(const string& _codeUrl)
+{
+    m_codeUrl = _codeUrl;
+    m_codeUrlHasBeenSet = true;
+}
+
+bool Merchant::CodeUrlHasBeenSet() const
+{
+    return m_codeUrlHasBeenSet;
 }
 

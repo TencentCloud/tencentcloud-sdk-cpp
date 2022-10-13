@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 数组
+                * 层级码配置
                 */
                 class PackSpec : public AbstractModel
                 {
@@ -100,6 +100,28 @@ namespace TencentCloud
                      */
                     bool AmountHasBeenSet() const;
 
+                    /**
+                     * 获取码规则ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CustomId 码规则ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetCustomId() const;
+
+                    /**
+                     * 设置码规则ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param CustomId 码规则ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCustomId(const std::string& _customId);
+
+                    /**
+                     * 判断参数 CustomId 是否已赋值
+                     * @return CustomId 是否已赋值
+                     */
+                    bool CustomIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -119,6 +141,13 @@ namespace TencentCloud
                      */
                     uint64_t m_amount;
                     bool m_amountHasBeenSet;
+
+                    /**
+                     * 码规则ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_customId;
+                    bool m_customIdHasBeenSet;
 
                 };
             }

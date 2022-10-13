@@ -40,9 +40,9 @@ set(trp_public_header_model
   include/tencentcloud/trp/v20210515/model/DescribeCodeBatchsRequest.h
   include/tencentcloud/trp/v20210515/model/DescribeProductsRequest.h
   include/tencentcloud/trp/v20210515/model/DescribeCodeBatchByIdResponse.h
-  include/tencentcloud/trp/v20210515/model/TraceCode.h
-  include/tencentcloud/trp/v20210515/model/DeleteTraceDataResponse.h
   include/tencentcloud/trp/v20210515/model/ModifyProductRequest.h
+  include/tencentcloud/trp/v20210515/model/DeleteTraceDataResponse.h
+  include/tencentcloud/trp/v20210515/model/Job.h
   include/tencentcloud/trp/v20210515/model/CreateCodePackResponse.h
   include/tencentcloud/trp/v20210515/model/DescribeMerchantsResponse.h
   include/tencentcloud/trp/v20210515/model/DescribeTraceDataListRequest.h
@@ -81,6 +81,7 @@ set(trp_public_header_model
   include/tencentcloud/trp/v20210515/model/ModifyCodeBatchResponse.h
   include/tencentcloud/trp/v20210515/model/Product.h
   include/tencentcloud/trp/v20210515/model/DescribeTraceCodesRequest.h
+  include/tencentcloud/trp/v20210515/model/TraceCode.h
   include/tencentcloud/trp/v20210515/model/ModifyTraceCodeResponse.h
   include/tencentcloud/trp/v20210515/model/ChainData.h
   include/tencentcloud/trp/v20210515/model/PhaseData.h
@@ -111,9 +112,9 @@ set(trp_src
   src/v20210515/model/DescribeCodeBatchsRequest.cpp
   src/v20210515/model/DescribeProductsRequest.cpp
   src/v20210515/model/DescribeCodeBatchByIdResponse.cpp
-  src/v20210515/model/TraceCode.cpp
-  src/v20210515/model/DeleteTraceDataResponse.cpp
   src/v20210515/model/ModifyProductRequest.cpp
+  src/v20210515/model/DeleteTraceDataResponse.cpp
+  src/v20210515/model/Job.cpp
   src/v20210515/model/CreateCodePackResponse.cpp
   src/v20210515/model/DescribeMerchantsResponse.cpp
   src/v20210515/model/DescribeTraceDataListRequest.cpp
@@ -152,6 +153,7 @@ set(trp_src
   src/v20210515/model/ModifyCodeBatchResponse.cpp
   src/v20210515/model/Product.cpp
   src/v20210515/model/DescribeTraceCodesRequest.cpp
+  src/v20210515/model/TraceCode.cpp
   src/v20210515/model/ModifyTraceCodeResponse.cpp
   src/v20210515/model/ChainData.cpp
   src/v20210515/model/PhaseData.cpp

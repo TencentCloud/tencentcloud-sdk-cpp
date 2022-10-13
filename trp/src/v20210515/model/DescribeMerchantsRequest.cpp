@@ -26,7 +26,8 @@ DescribeMerchantsRequest::DescribeMerchantsRequest() :
     m_nameHasBeenSet(false),
     m_pageSizeHasBeenSet(false),
     m_pageNumberHasBeenSet(false),
-    m_corpIdHasBeenSet(false)
+    m_corpIdHasBeenSet(false),
+    m_codeTypeHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,14 @@ string DescribeMerchantsRequest::ToJsonString() const
         string key = "CorpId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_corpId, allocator);
+    }
+
+    if (m_codeTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CodeType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_codeType, allocator);
     }
 
 
@@ -139,6 +148,22 @@ void DescribeMerchantsRequest::SetCorpId(const uint64_t& _corpId)
 bool DescribeMerchantsRequest::CorpIdHasBeenSet() const
 {
     return m_corpIdHasBeenSet;
+}
+
+int64_t DescribeMerchantsRequest::GetCodeType() const
+{
+    return m_codeType;
+}
+
+void DescribeMerchantsRequest::SetCodeType(const int64_t& _codeType)
+{
+    m_codeType = _codeType;
+    m_codeTypeHasBeenSet = true;
+}
+
+bool DescribeMerchantsRequest::CodeTypeHasBeenSet() const
+{
+    return m_codeTypeHasBeenSet;
 }
 
 

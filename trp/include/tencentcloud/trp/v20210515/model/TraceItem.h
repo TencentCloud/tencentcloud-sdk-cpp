@@ -200,6 +200,28 @@ namespace TencentCloud
                      */
                     bool KeyHasBeenSet() const;
 
+                    /**
+                     * 获取扩展字段
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Ext 扩展字段
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetExt() const;
+
+                    /**
+                     * 设置扩展字段
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Ext 扩展字段
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetExt(const std::string& _ext);
+
+                    /**
+                     * 判断参数 Ext 是否已赋值
+                     * @return Ext 是否已赋值
+                     */
+                    bool ExtHasBeenSet() const;
+
                 private:
 
                     /**
@@ -250,6 +272,13 @@ namespace TencentCloud
                      */
                     std::string m_key;
                     bool m_keyHasBeenSet;
+
+                    /**
+                     * 扩展字段
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_ext;
+                    bool m_extHasBeenSet;
 
                 };
             }

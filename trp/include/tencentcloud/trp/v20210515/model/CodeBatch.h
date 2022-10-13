@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/trp/v20210515/model/Ext.h>
+#include <tencentcloud/trp/v20210515/model/Job.h>
 
 
 namespace TencentCloud
@@ -399,6 +400,28 @@ namespace TencentCloud
                      */
                     bool TplNameHasBeenSet() const;
 
+                    /**
+                     * 获取调度任务
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Job 调度任务
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    Job GetJob() const;
+
+                    /**
+                     * 设置调度任务
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Job 调度任务
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetJob(const Job& _job);
+
+                    /**
+                     * 判断参数 Job 是否已赋值
+                     * @return Job 是否已赋值
+                     */
+                    bool JobHasBeenSet() const;
+
                 private:
 
                     /**
@@ -512,6 +535,13 @@ namespace TencentCloud
                      */
                     std::string m_tplName;
                     bool m_tplNameHasBeenSet;
+
+                    /**
+                     * 调度任务
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    Job m_job;
+                    bool m_jobHasBeenSet;
 
                 };
             }

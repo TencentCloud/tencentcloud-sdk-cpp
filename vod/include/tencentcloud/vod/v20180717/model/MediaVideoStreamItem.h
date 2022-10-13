@@ -136,6 +136,24 @@ namespace TencentCloud
                      */
                     bool FpsHasBeenSet() const;
 
+                    /**
+                     * 获取编码标签，仅当 Codec 为 hevc 时有效。
+                     * @return CodecTag 编码标签，仅当 Codec 为 hevc 时有效。
+                     */
+                    std::string GetCodecTag() const;
+
+                    /**
+                     * 设置编码标签，仅当 Codec 为 hevc 时有效。
+                     * @param CodecTag 编码标签，仅当 Codec 为 hevc 时有效。
+                     */
+                    void SetCodecTag(const std::string& _codecTag);
+
+                    /**
+                     * 判断参数 CodecTag 是否已赋值
+                     * @return CodecTag 是否已赋值
+                     */
+                    bool CodecTagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -167,6 +185,12 @@ namespace TencentCloud
                      */
                     int64_t m_fps;
                     bool m_fpsHasBeenSet;
+
+                    /**
+                     * 编码标签，仅当 Codec 为 hevc 时有效。
+                     */
+                    std::string m_codecTag;
+                    bool m_codecTagHasBeenSet;
 
                 };
             }

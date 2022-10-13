@@ -27,7 +27,8 @@ TraceItem::TraceItem() :
     m_readOnlyHasBeenSet(false),
     m_hiddenHasBeenSet(false),
     m_valuesHasBeenSet(false),
-    m_keyHasBeenSet(false)
+    m_keyHasBeenSet(false),
+    m_extHasBeenSet(false)
 {
 }
 
@@ -109,6 +110,16 @@ CoreInternalOutcome TraceItem::Deserialize(const rapidjson::Value &value)
         m_keyHasBeenSet = true;
     }
 
+    if (value.HasMember("Ext") && !value["Ext"].IsNull())
+    {
+        if (!value["Ext"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TraceItem.Ext` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ext = string(value["Ext"].GetString());
+        m_extHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -175,6 +186,14 @@ void TraceItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "Key";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_key.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_extHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Ext";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ext.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -290,5 +309,21 @@ void TraceItem::SetKey(const string& _key)
 bool TraceItem::KeyHasBeenSet() const
 {
     return m_keyHasBeenSet;
+}
+
+string TraceItem::GetExt() const
+{
+    return m_ext;
+}
+
+void TraceItem::SetExt(const string& _ext)
+{
+    m_ext = _ext;
+    m_extHasBeenSet = true;
+}
+
+bool TraceItem::ExtHasBeenSet() const
+{
+    return m_extHasBeenSet;
 }
 

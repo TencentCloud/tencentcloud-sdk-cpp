@@ -174,6 +174,50 @@ namespace TencentCloud
                      */
                     bool ListenerStatusHasBeenSet() const;
 
+                    /**
+                     * 获取监听器的通道ID，如果监听器属于通道组，则为null
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ProxyId 监听器的通道ID，如果监听器属于通道组，则为null
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetProxyId() const;
+
+                    /**
+                     * 设置监听器的通道ID，如果监听器属于通道组，则为null
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ProxyId 监听器的通道ID，如果监听器属于通道组，则为null
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetProxyId(const std::string& _proxyId);
+
+                    /**
+                     * 判断参数 ProxyId 是否已赋值
+                     * @return ProxyId 是否已赋值
+                     */
+                    bool ProxyIdHasBeenSet() const;
+
+                    /**
+                     * 获取监听器的通道组ID，如果监听器属于通道，则为null
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return GroupId 监听器的通道组ID，如果监听器属于通道，则为null
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetGroupId() const;
+
+                    /**
+                     * 设置监听器的通道组ID，如果监听器属于通道，则为null
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param GroupId 监听器的通道组ID，如果监听器属于通道，则为null
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetGroupId(const std::string& _groupId);
+
+                    /**
+                     * 判断参数 GroupId 是否已赋值
+                     * @return GroupId 是否已赋值
+                     */
+                    bool GroupIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -216,6 +260,20 @@ namespace TencentCloud
                      */
                     uint64_t m_listenerStatus;
                     bool m_listenerStatusHasBeenSet;
+
+                    /**
+                     * 监听器的通道ID，如果监听器属于通道组，则为null
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_proxyId;
+                    bool m_proxyIdHasBeenSet;
+
+                    /**
+                     * 监听器的通道组ID，如果监听器属于通道，则为null
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_groupId;
+                    bool m_groupIdHasBeenSet;
 
                 };
             }

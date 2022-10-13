@@ -25,7 +25,9 @@ using namespace std;
 CreateMerchantRequest::CreateMerchantRequest() :
     m_nameHasBeenSet(false),
     m_remarkHasBeenSet(false),
-    m_corpIdHasBeenSet(false)
+    m_corpIdHasBeenSet(false),
+    m_codeTypeHasBeenSet(false),
+    m_codeUrlHasBeenSet(false)
 {
 }
 
@@ -58,6 +60,22 @@ string CreateMerchantRequest::ToJsonString() const
         string key = "CorpId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_corpId, allocator);
+    }
+
+    if (m_codeTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CodeType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_codeType, allocator);
+    }
+
+    if (m_codeUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CodeUrl";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_codeUrl.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -114,6 +132,38 @@ void CreateMerchantRequest::SetCorpId(const uint64_t& _corpId)
 bool CreateMerchantRequest::CorpIdHasBeenSet() const
 {
     return m_corpIdHasBeenSet;
+}
+
+int64_t CreateMerchantRequest::GetCodeType() const
+{
+    return m_codeType;
+}
+
+void CreateMerchantRequest::SetCodeType(const int64_t& _codeType)
+{
+    m_codeType = _codeType;
+    m_codeTypeHasBeenSet = true;
+}
+
+bool CreateMerchantRequest::CodeTypeHasBeenSet() const
+{
+    return m_codeTypeHasBeenSet;
+}
+
+string CreateMerchantRequest::GetCodeUrl() const
+{
+    return m_codeUrl;
+}
+
+void CreateMerchantRequest::SetCodeUrl(const string& _codeUrl)
+{
+    m_codeUrl = _codeUrl;
+    m_codeUrlHasBeenSet = true;
+}
+
+bool CreateMerchantRequest::CodeUrlHasBeenSet() const
+{
+    return m_codeUrlHasBeenSet;
 }
 
 
