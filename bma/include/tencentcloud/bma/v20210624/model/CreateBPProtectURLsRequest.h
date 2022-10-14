@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取xxx
-                     * @return CompanyName xxx
+                     * 获取企业名称
+                     * @return CompanyName 企业名称
                      */
                     std::string GetCompanyName() const;
 
                     /**
-                     * 设置xxx
-                     * @param CompanyName xxx
+                     * 设置企业名称
+                     * @param CompanyName 企业名称
                      */
                     void SetCompanyName(const std::string& _companyName);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool CompanyNameHasBeenSet() const;
 
                     /**
-                     * 获取xxx
-                     * @return Phone xxx
+                     * 获取电话号码
+                     * @return Phone 电话号码
                      */
                     std::string GetPhone() const;
 
                     /**
-                     * 设置xxx
-                     * @param Phone xxx
+                     * 设置电话号码
+                     * @param Phone 电话号码
                      */
                     void SetPhone(const std::string& _phone);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool PhoneHasBeenSet() const;
 
                     /**
-                     * 获取xxx
-                     * @return LicenseName xxx
+                     * 获取营业执照
+                     * @return LicenseName 营业执照
                      */
                     std::string GetLicenseName() const;
 
                     /**
-                     * 设置xxx
-                     * @param LicenseName xxx
+                     * 设置营业执照
+                     * @param LicenseName 营业执照
                      */
                     void SetLicenseName(const std::string& _licenseName);
 
@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool LicenseNameHasBeenSet() const;
 
                     /**
-                     * 获取xxx
-                     * @return ProtectURLs xxx
+                     * 获取保护网站
+                     * @return ProtectURLs 保护网站
                      */
                     std::vector<std::string> GetProtectURLs() const;
 
                     /**
-                     * 设置xxx
-                     * @param ProtectURLs xxx
+                     * 设置保护网站
+                     * @param ProtectURLs 保护网站
                      */
                     void SetProtectURLs(const std::vector<std::string>& _protectURLs);
 
@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool ProtectURLsHasBeenSet() const;
 
                     /**
-                     * 获取xxx
-                     * @return ProtectWebs xxx
+                     * 获取网站名称
+                     * @return ProtectWebs 网站名称
                      */
                     std::vector<std::string> GetProtectWebs() const;
 
                     /**
-                     * 设置xxx
-                     * @param ProtectWebs xxx
+                     * 设置网站名称
+                     * @param ProtectWebs 网站名称
                      */
                     void SetProtectWebs(const std::vector<std::string>& _protectWebs);
 
@@ -135,31 +135,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * xxx
+                     * 企业名称
                      */
                     std::string m_companyName;
                     bool m_companyNameHasBeenSet;
 
                     /**
-                     * xxx
+                     * 电话号码
                      */
                     std::string m_phone;
                     bool m_phoneHasBeenSet;
 
                     /**
-                     * xxx
+                     * 营业执照
                      */
                     std::string m_licenseName;
                     bool m_licenseNameHasBeenSet;
 
                     /**
-                     * xxx
+                     * 保护网站
                      */
                     std::vector<std::string> m_protectURLs;
                     bool m_protectURLsHasBeenSet;
 
                     /**
-                     * xxx
+                     * 网站名称
                      */
                     std::vector<std::string> m_protectWebs;
                     bool m_protectWebsHasBeenSet;

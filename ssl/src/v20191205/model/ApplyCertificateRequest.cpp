@@ -34,7 +34,8 @@ ApplyCertificateRequest::ApplyCertificateRequest() :
     m_csrKeyParameterHasBeenSet(false),
     m_csrKeyPasswordHasBeenSet(false),
     m_aliasHasBeenSet(false),
-    m_oldCertificateIdHasBeenSet(false)
+    m_oldCertificateIdHasBeenSet(false),
+    m_packageIdHasBeenSet(false)
 {
 }
 
@@ -139,6 +140,14 @@ string ApplyCertificateRequest::ToJsonString() const
         string key = "OldCertificateId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_oldCertificateId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_packageIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PackageId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_packageId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -339,6 +348,22 @@ void ApplyCertificateRequest::SetOldCertificateId(const string& _oldCertificateI
 bool ApplyCertificateRequest::OldCertificateIdHasBeenSet() const
 {
     return m_oldCertificateIdHasBeenSet;
+}
+
+string ApplyCertificateRequest::GetPackageId() const
+{
+    return m_packageId;
+}
+
+void ApplyCertificateRequest::SetPackageId(const string& _packageId)
+{
+    m_packageId = _packageId;
+    m_packageIdHasBeenSet = true;
+}
+
+bool ApplyCertificateRequest::PackageIdHasBeenSet() const
+{
+    return m_packageIdHasBeenSet;
 }
 
 

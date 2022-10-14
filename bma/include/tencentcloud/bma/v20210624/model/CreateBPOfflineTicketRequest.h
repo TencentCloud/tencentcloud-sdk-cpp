@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取xxx
-                     * @return FakeURLId xxx
+                     * 获取仿冒网址ID
+                     * @return FakeURLId 仿冒网址ID
                      */
                     int64_t GetFakeURLId() const;
 
                     /**
-                     * 设置xxx
-                     * @param FakeURLId xxx
+                     * 设置仿冒网址ID
+                     * @param FakeURLId 仿冒网址ID
                      */
                     void SetFakeURLId(const int64_t& _fakeURLId);
 
@@ -63,7 +63,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * xxx
+                     * 仿冒网址ID
                      */
                     int64_t m_fakeURLId;
                     bool m_fakeURLIdHasBeenSet;

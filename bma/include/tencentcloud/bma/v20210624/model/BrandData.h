@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取xxx
-                     * @return BrandName xxx
+                     * 获取商标名称
+                     * @return BrandName 商标名称
                      */
                     std::string GetBrandName() const;
 
                     /**
-                     * 设置xxx
-                     * @param BrandName xxx
+                     * 设置商标名称
+                     * @param BrandName 商标名称
                      */
                     void SetBrandName(const std::string& _brandName);
 
@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool BrandNameHasBeenSet() const;
 
                     /**
-                     * 获取xxx
-                     * @return BrandCertificateName xxx
+                     * 获取商标证明
+                     * @return BrandCertificateName 商标证明
                      */
                     std::string GetBrandCertificateName() const;
 
                     /**
-                     * 设置xxx
-                     * @param BrandCertificateName xxx
+                     * 设置商标证明
+                     * @param BrandCertificateName 商标证明
                      */
                     void SetBrandCertificateName(const std::string& _brandCertificateName);
 
@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool BrandCertificateNameHasBeenSet() const;
 
                     /**
-                     * 获取xxx
-                     * @return BrandStatus xxx
+                     * 获取商标审核状态 1-审核中 2-审核未通过 3-审核通过
+                     * @return BrandStatus 商标审核状态 1-审核中 2-审核未通过 3-审核通过
                      */
                     int64_t GetBrandStatus() const;
 
                     /**
-                     * 设置xxx
-                     * @param BrandStatus xxx
+                     * 设置商标审核状态 1-审核中 2-审核未通过 3-审核通过
+                     * @param BrandStatus 商标审核状态 1-审核中 2-审核未通过 3-审核通过
                      */
                     void SetBrandStatus(const int64_t& _brandStatus);
 
@@ -101,14 +101,14 @@ namespace TencentCloud
                     bool BrandStatusHasBeenSet() const;
 
                     /**
-                     * 获取xxx
-                     * @return BrandNote xxx
+                     * 获取审核说明
+                     * @return BrandNote 审核说明
                      */
                     std::string GetBrandNote() const;
 
                     /**
-                     * 设置xxx
-                     * @param BrandNote xxx
+                     * 设置审核说明
+                     * @param BrandNote 审核说明
                      */
                     void SetBrandNote(const std::string& _brandNote);
 
@@ -119,14 +119,14 @@ namespace TencentCloud
                     bool BrandNoteHasBeenSet() const;
 
                     /**
-                     * 获取xxx
-                     * @return TransferName xxx
+                     * 获取商标转让证明
+                     * @return TransferName 商标转让证明
                      */
                     std::string GetTransferName() const;
 
                     /**
-                     * 设置xxx
-                     * @param TransferName xxx
+                     * 设置商标转让证明
+                     * @param TransferName 商标转让证明
                      */
                     void SetTransferName(const std::string& _transferName);
 
@@ -137,14 +137,14 @@ namespace TencentCloud
                     bool TransferNameHasBeenSet() const;
 
                     /**
-                     * 获取xxx
-                     * @return TransferStatus xxx
+                     * 获取商标转让证明审核状态
+                     * @return TransferStatus 商标转让证明审核状态
                      */
                     int64_t GetTransferStatus() const;
 
                     /**
-                     * 设置xxx
-                     * @param TransferStatus xxx
+                     * 设置商标转让证明审核状态
+                     * @param TransferStatus 商标转让证明审核状态
                      */
                     void SetTransferStatus(const int64_t& _transferStatus);
 
@@ -155,14 +155,14 @@ namespace TencentCloud
                     bool TransferStatusHasBeenSet() const;
 
                     /**
-                     * 获取xxx
-                     * @return TransferNote xxx
+                     * 获取审核说明 1-审核中 2-审核未通过 3-审核通过
+                     * @return TransferNote 审核说明 1-审核中 2-审核未通过 3-审核通过
                      */
                     std::string GetTransferNote() const;
 
                     /**
-                     * 设置xxx
-                     * @param TransferNote xxx
+                     * 设置审核说明 1-审核中 2-审核未通过 3-审核通过
+                     * @param TransferNote 审核说明 1-审核中 2-审核未通过 3-审核通过
                      */
                     void SetTransferNote(const std::string& _transferNote);
 
@@ -175,43 +175,43 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * xxx
+                     * 商标名称
                      */
                     std::string m_brandName;
                     bool m_brandNameHasBeenSet;
 
                     /**
-                     * xxx
+                     * 商标证明
                      */
                     std::string m_brandCertificateName;
                     bool m_brandCertificateNameHasBeenSet;
 
                     /**
-                     * xxx
+                     * 商标审核状态 1-审核中 2-审核未通过 3-审核通过
                      */
                     int64_t m_brandStatus;
                     bool m_brandStatusHasBeenSet;
 
                     /**
-                     * xxx
+                     * 审核说明
                      */
                     std::string m_brandNote;
                     bool m_brandNoteHasBeenSet;
 
                     /**
-                     * xxx
+                     * 商标转让证明
                      */
                     std::string m_transferName;
                     bool m_transferNameHasBeenSet;
 
                     /**
-                     * xxx
+                     * 商标转让证明审核状态
                      */
                     int64_t m_transferStatus;
                     bool m_transferStatusHasBeenSet;
 
                     /**
-                     * xxx
+                     * 审核说明 1-审核中 2-审核未通过 3-审核通过
                      */
                     std::string m_transferNote;
                     bool m_transferNoteHasBeenSet;

@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 即时剪辑后媒资的片段信息。
+                * 即时剪辑后媒体的片段信息。
                 */
                 class LiveRealTimeClipMediaSegmentInfo : public AbstractModel
                 {

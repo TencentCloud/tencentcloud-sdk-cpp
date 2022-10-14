@@ -341,6 +341,49 @@ TrtcClient::DescribeExternalTrtcMeasureOutcomeCallable TrtcClient::DescribeExter
     return task->get_future();
 }
 
+TrtcClient::DescribeMixTranscodingUsageOutcome TrtcClient::DescribeMixTranscodingUsage(const DescribeMixTranscodingUsageRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMixTranscodingUsage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMixTranscodingUsageResponse rsp = DescribeMixTranscodingUsageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMixTranscodingUsageOutcome(rsp);
+        else
+            return DescribeMixTranscodingUsageOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMixTranscodingUsageOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::DescribeMixTranscodingUsageAsync(const DescribeMixTranscodingUsageRequest& request, const DescribeMixTranscodingUsageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeMixTranscodingUsage(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrtcClient::DescribeMixTranscodingUsageOutcomeCallable TrtcClient::DescribeMixTranscodingUsageCallable(const DescribeMixTranscodingUsageRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeMixTranscodingUsageOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeMixTranscodingUsage(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TrtcClient::DescribePictureOutcome TrtcClient::DescribePicture(const DescribePictureRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribePicture");
@@ -420,6 +463,92 @@ TrtcClient::DescribeRecordStatisticOutcomeCallable TrtcClient::DescribeRecordSta
         [this, request]()
         {
             return this->DescribeRecordStatistic(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TrtcClient::DescribeRecordingUsageOutcome TrtcClient::DescribeRecordingUsage(const DescribeRecordingUsageRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRecordingUsage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRecordingUsageResponse rsp = DescribeRecordingUsageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRecordingUsageOutcome(rsp);
+        else
+            return DescribeRecordingUsageOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRecordingUsageOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::DescribeRecordingUsageAsync(const DescribeRecordingUsageRequest& request, const DescribeRecordingUsageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRecordingUsage(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrtcClient::DescribeRecordingUsageOutcomeCallable TrtcClient::DescribeRecordingUsageCallable(const DescribeRecordingUsageRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRecordingUsageOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRecordingUsage(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TrtcClient::DescribeRelayUsageOutcome TrtcClient::DescribeRelayUsage(const DescribeRelayUsageRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRelayUsage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRelayUsageResponse rsp = DescribeRelayUsageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRelayUsageOutcome(rsp);
+        else
+            return DescribeRelayUsageOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRelayUsageOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::DescribeRelayUsageAsync(const DescribeRelayUsageRequest& request, const DescribeRelayUsageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRelayUsage(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrtcClient::DescribeRelayUsageOutcomeCallable TrtcClient::DescribeRelayUsageCallable(const DescribeRelayUsageRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRelayUsageOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRelayUsage(request);
         }
     );
 
@@ -549,6 +678,49 @@ TrtcClient::DescribeTrtcMcuTranscodeTimeOutcomeCallable TrtcClient::DescribeTrtc
         [this, request]()
         {
             return this->DescribeTrtcMcuTranscodeTime(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TrtcClient::DescribeTrtcUsageOutcome TrtcClient::DescribeTrtcUsage(const DescribeTrtcUsageRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTrtcUsage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTrtcUsageResponse rsp = DescribeTrtcUsageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTrtcUsageOutcome(rsp);
+        else
+            return DescribeTrtcUsageOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTrtcUsageOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::DescribeTrtcUsageAsync(const DescribeTrtcUsageRequest& request, const DescribeTrtcUsageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTrtcUsage(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrtcClient::DescribeTrtcUsageOutcomeCallable TrtcClient::DescribeTrtcUsageCallable(const DescribeTrtcUsageRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTrtcUsageOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTrtcUsage(request);
         }
     );
 

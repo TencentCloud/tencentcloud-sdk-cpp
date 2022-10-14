@@ -37,16 +37,24 @@
 #include <tencentcloud/trtc/v20190722/model/DescribeCloudRecordingResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeExternalTrtcMeasureRequest.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeExternalTrtcMeasureResponse.h>
+#include <tencentcloud/trtc/v20190722/model/DescribeMixTranscodingUsageRequest.h>
+#include <tencentcloud/trtc/v20190722/model/DescribeMixTranscodingUsageResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DescribePictureRequest.h>
 #include <tencentcloud/trtc/v20190722/model/DescribePictureResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeRecordStatisticRequest.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeRecordStatisticResponse.h>
+#include <tencentcloud/trtc/v20190722/model/DescribeRecordingUsageRequest.h>
+#include <tencentcloud/trtc/v20190722/model/DescribeRecordingUsageResponse.h>
+#include <tencentcloud/trtc/v20190722/model/DescribeRelayUsageRequest.h>
+#include <tencentcloud/trtc/v20190722/model/DescribeRelayUsageResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeRoomInfoRequest.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeRoomInfoResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeScaleInfoRequest.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeScaleInfoResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeTrtcMcuTranscodeTimeRequest.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeTrtcMcuTranscodeTimeResponse.h>
+#include <tencentcloud/trtc/v20190722/model/DescribeTrtcUsageRequest.h>
+#include <tencentcloud/trtc/v20190722/model/DescribeTrtcUsageResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeUnusualEventRequest.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeUnusualEventResponse.h>
 #include <tencentcloud/trtc/v20190722/model/DescribeUserEventRequest.h>
@@ -108,12 +116,21 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeExternalTrtcMeasureResponse> DescribeExternalTrtcMeasureOutcome;
                 typedef std::future<DescribeExternalTrtcMeasureOutcome> DescribeExternalTrtcMeasureOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::DescribeExternalTrtcMeasureRequest&, DescribeExternalTrtcMeasureOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeExternalTrtcMeasureAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeMixTranscodingUsageResponse> DescribeMixTranscodingUsageOutcome;
+                typedef std::future<DescribeMixTranscodingUsageOutcome> DescribeMixTranscodingUsageOutcomeCallable;
+                typedef std::function<void(const TrtcClient*, const Model::DescribeMixTranscodingUsageRequest&, DescribeMixTranscodingUsageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMixTranscodingUsageAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribePictureResponse> DescribePictureOutcome;
                 typedef std::future<DescribePictureOutcome> DescribePictureOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::DescribePictureRequest&, DescribePictureOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePictureAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRecordStatisticResponse> DescribeRecordStatisticOutcome;
                 typedef std::future<DescribeRecordStatisticOutcome> DescribeRecordStatisticOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::DescribeRecordStatisticRequest&, DescribeRecordStatisticOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRecordStatisticAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRecordingUsageResponse> DescribeRecordingUsageOutcome;
+                typedef std::future<DescribeRecordingUsageOutcome> DescribeRecordingUsageOutcomeCallable;
+                typedef std::function<void(const TrtcClient*, const Model::DescribeRecordingUsageRequest&, DescribeRecordingUsageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRecordingUsageAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRelayUsageResponse> DescribeRelayUsageOutcome;
+                typedef std::future<DescribeRelayUsageOutcome> DescribeRelayUsageOutcomeCallable;
+                typedef std::function<void(const TrtcClient*, const Model::DescribeRelayUsageRequest&, DescribeRelayUsageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRelayUsageAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRoomInfoResponse> DescribeRoomInfoOutcome;
                 typedef std::future<DescribeRoomInfoOutcome> DescribeRoomInfoOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::DescribeRoomInfoRequest&, DescribeRoomInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRoomInfoAsyncHandler;
@@ -123,6 +140,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeTrtcMcuTranscodeTimeResponse> DescribeTrtcMcuTranscodeTimeOutcome;
                 typedef std::future<DescribeTrtcMcuTranscodeTimeOutcome> DescribeTrtcMcuTranscodeTimeOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::DescribeTrtcMcuTranscodeTimeRequest&, DescribeTrtcMcuTranscodeTimeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTrtcMcuTranscodeTimeAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTrtcUsageResponse> DescribeTrtcUsageOutcome;
+                typedef std::future<DescribeTrtcUsageOutcome> DescribeTrtcUsageOutcomeCallable;
+                typedef std::function<void(const TrtcClient*, const Model::DescribeTrtcUsageRequest&, DescribeTrtcUsageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTrtcUsageAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeUnusualEventResponse> DescribeUnusualEventOutcome;
                 typedef std::future<DescribeUnusualEventOutcome> DescribeUnusualEventOutcomeCallable;
                 typedef std::function<void(const TrtcClient*, const Model::DescribeUnusualEventRequest&, DescribeUnusualEventOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUnusualEventAsyncHandler;
@@ -244,6 +264,20 @@ namespace TencentCloud
                 DescribeExternalTrtcMeasureOutcomeCallable DescribeExternalTrtcMeasureCallable(const Model::DescribeExternalTrtcMeasureRequest& request);
 
                 /**
+                 *获取TRTC混流转码的用量明细。
+- 查询时间小于等于1天时，返回每5分钟粒度的数据；查询时间大于1天时，返回按天汇总的数据。
+- 单次查询统计区间最多不能超过31天。
+- 若查询当天用量，由于统计延迟等原因，返回数据可能不够准确。
+- 该接口只用于历史用量数据统计或核对数据使用，关键业务逻辑不能使用。
+- 默认接口请求频率限制：5次/秒。
+                 * @param req DescribeMixTranscodingUsageRequest
+                 * @return DescribeMixTranscodingUsageOutcome
+                 */
+                DescribeMixTranscodingUsageOutcome DescribeMixTranscodingUsage(const Model::DescribeMixTranscodingUsageRequest &request);
+                void DescribeMixTranscodingUsageAsync(const Model::DescribeMixTranscodingUsageRequest& request, const DescribeMixTranscodingUsageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeMixTranscodingUsageOutcomeCallable DescribeMixTranscodingUsageCallable(const Model::DescribeMixTranscodingUsageRequest& request);
+
+                /**
                  *如果您需要在 [云端混流转码](https://cloud.tencent.com/document/product/647/16827) 时频繁查找自定义背景图或水印信息，可通过此接口查找已上传的图片信息。无需频繁查找图片信息的场景，建议直接在 [控制台 > 应用管理 > 素材管理](https://cloud.tencent.com/document/product/647/50769) 中查看。
                  * @param req DescribePictureRequest
                  * @return DescribePictureOutcome
@@ -265,6 +299,34 @@ namespace TencentCloud
                 DescribeRecordStatisticOutcome DescribeRecordStatistic(const Model::DescribeRecordStatisticRequest &request);
                 void DescribeRecordStatisticAsync(const Model::DescribeRecordStatisticRequest& request, const DescribeRecordStatisticAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeRecordStatisticOutcomeCallable DescribeRecordStatisticCallable(const Model::DescribeRecordStatisticRequest& request);
+
+                /**
+                 *获取TRTC录制的用量明细。
+- 查询时间小于等于1天时，返回每5分钟粒度的数据；查询时间大于1天时，返回按天汇总的数据。
+- 单次查询统计区间最多不能超过31天。
+- 若查询当天用量，由于统计延迟等原因，返回数据可能不够准确。
+- 该接口只用于历史用量数据统计或核对数据使用，关键业务逻辑不能使用。
+- 默认接口请求频率限制：5次/秒。
+                 * @param req DescribeRecordingUsageRequest
+                 * @return DescribeRecordingUsageOutcome
+                 */
+                DescribeRecordingUsageOutcome DescribeRecordingUsage(const Model::DescribeRecordingUsageRequest &request);
+                void DescribeRecordingUsageAsync(const Model::DescribeRecordingUsageRequest& request, const DescribeRecordingUsageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRecordingUsageOutcomeCallable DescribeRecordingUsageCallable(const Model::DescribeRecordingUsageRequest& request);
+
+                /**
+                 *获取TRTC旁路转推的用量明细。
+- 查询时间小于等于1天时，返回每5分钟粒度的数据；查询时间大于1天时，返回按天汇总的数据。
+- 单次查询统计区间最多不能超过31天。
+- 若查询当天用量，由于统计延迟等原因，返回数据可能不够准确。
+- 该接口只用于历史用量数据统计或核对数据使用，关键业务逻辑不能使用。
+- 默认接口请求频率限制：5次/秒。
+                 * @param req DescribeRelayUsageRequest
+                 * @return DescribeRelayUsageOutcome
+                 */
+                DescribeRelayUsageOutcome DescribeRelayUsage(const Model::DescribeRelayUsageRequest &request);
+                void DescribeRelayUsageAsync(const Model::DescribeRelayUsageRequest& request, const DescribeRelayUsageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRelayUsageOutcomeCallable DescribeRelayUsageCallable(const Model::DescribeRelayUsageRequest& request);
 
                 /**
                  *查询SdkAppId下的房间列表。默认返回10条通话，一次最多返回100条通话。可查询14天内的数据。（同老接口DescribeRoomInformation）
@@ -299,6 +361,20 @@ namespace TencentCloud
                 DescribeTrtcMcuTranscodeTimeOutcome DescribeTrtcMcuTranscodeTime(const Model::DescribeTrtcMcuTranscodeTimeRequest &request);
                 void DescribeTrtcMcuTranscodeTimeAsync(const Model::DescribeTrtcMcuTranscodeTimeRequest& request, const DescribeTrtcMcuTranscodeTimeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeTrtcMcuTranscodeTimeOutcomeCallable DescribeTrtcMcuTranscodeTimeCallable(const Model::DescribeTrtcMcuTranscodeTimeRequest& request);
+
+                /**
+                 *获取TRTC音视频互动的用量明细。
+- 查询时间小于等于1天时，返回每5分钟粒度的数据；查询时间大于1天时，返回按天汇总的数据。
+- 单次查询统计区间最多不能超过31天。
+- 若查询当天用量，由于统计延迟等原因，返回数据可能不够准确。
+- 该接口只用于历史用量数据统计或核对数据使用，关键业务逻辑不能使用。
+- 默认接口请求频率限制：5次/秒。
+                 * @param req DescribeTrtcUsageRequest
+                 * @return DescribeTrtcUsageOutcome
+                 */
+                DescribeTrtcUsageOutcome DescribeTrtcUsage(const Model::DescribeTrtcUsageRequest &request);
+                void DescribeTrtcUsageAsync(const Model::DescribeTrtcUsageRequest& request, const DescribeTrtcUsageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTrtcUsageOutcomeCallable DescribeTrtcUsageCallable(const Model::DescribeTrtcUsageRequest& request);
 
                 /**
                  *查询SdkAppId下任意20条异常体验事件，返回异常体验ID与可能产生异常体验的原因。可查询14天内数据，查询起止时间不超过1个小时。支持跨天查询。（同老接口DescribeAbnormalEvent）

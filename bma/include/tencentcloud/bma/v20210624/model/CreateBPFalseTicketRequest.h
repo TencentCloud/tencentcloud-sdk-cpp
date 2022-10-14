@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取xxx
-                     * @return FakeURL xxx
+                     * 获取仿冒网址
+                     * @return FakeURL 仿冒网址
                      */
                     std::string GetFakeURL() const;
 
                     /**
-                     * 设置xxx
-                     * @param FakeURL xxx
+                     * 设置仿冒网址
+                     * @param FakeURL 仿冒网址
                      */
                     void SetFakeURL(const std::string& _fakeURL);
 
@@ -63,7 +63,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * xxx
+                     * 仿冒网址
                      */
                     std::string m_fakeURL;
                     bool m_fakeURLHasBeenSet;

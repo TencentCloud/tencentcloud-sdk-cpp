@@ -24,7 +24,8 @@ QueryFilter::QueryFilter() :
     m_namesHasBeenSet(false),
     m_valuesHasBeenSet(false),
     m_exactMatchHasBeenSet(false),
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_operatorHasBeenSet(false)
 {
 }
 
@@ -79,6 +80,16 @@ CoreInternalOutcome QueryFilter::Deserialize(const rapidjson::Value &value)
         m_nameHasBeenSet = true;
     }
 
+    if (value.HasMember("Operator") && !value["Operator"].IsNull())
+    {
+        if (!value["Operator"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `QueryFilter.Operator` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_operator = string(value["Operator"].GetString());
+        m_operatorHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -126,6 +137,14 @@ void QueryFilter::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_operatorHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Operator";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_operator.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -193,5 +212,21 @@ void QueryFilter::SetName(const string& _name)
 bool QueryFilter::NameHasBeenSet() const
 {
     return m_nameHasBeenSet;
+}
+
+string QueryFilter::GetOperator() const
+{
+    return m_operator;
+}
+
+void QueryFilter::SetOperator(const string& _operator)
+{
+    m_operator = _operator;
+    m_operatorHasBeenSet = true;
+}
+
+bool QueryFilter::OperatorHasBeenSet() const
+{
+    return m_operatorHasBeenSet;
 }
 

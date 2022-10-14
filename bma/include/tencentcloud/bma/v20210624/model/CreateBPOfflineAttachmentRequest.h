@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取xxx
-                     * @return BrandName xxx
+                     * 获取品牌名字
+                     * @return BrandName 品牌名字
                      */
                     std::string GetBrandName() const;
 
                     /**
-                     * 设置xxx
-                     * @param BrandName xxx
+                     * 设置品牌名字
+                     * @param BrandName 品牌名字
                      */
                     void SetBrandName(const std::string& _brandName);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool BrandNameHasBeenSet() const;
 
                     /**
-                     * 获取xx
-                     * @return BrandCertificateName xx
+                     * 获取商标证明
+                     * @return BrandCertificateName 商标证明
                      */
                     std::string GetBrandCertificateName() const;
 
                     /**
-                     * 设置xx
-                     * @param BrandCertificateName xx
+                     * 设置商标证明
+                     * @param BrandCertificateName 商标证明
                      */
                     void SetBrandCertificateName(const std::string& _brandCertificateName);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool BrandCertificateNameHasBeenSet() const;
 
                     /**
-                     * 获取xx
-                     * @return TransferName xx
+                     * 获取商标转让证明
+                     * @return TransferName 商标转让证明
                      */
                     std::string GetTransferName() const;
 
                     /**
-                     * 设置xx
-                     * @param TransferName xx
+                     * 设置商标转让证明
+                     * @param TransferName 商标转让证明
                      */
                     void SetTransferName(const std::string& _transferName);
 
@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool TransferNameHasBeenSet() const;
 
                     /**
-                     * 获取xx
-                     * @return AuthorizationName xx
+                     * 获取授权书
+                     * @return AuthorizationName 授权书
                      */
                     std::string GetAuthorizationName() const;
 
                     /**
-                     * 设置xx
-                     * @param AuthorizationName xx
+                     * 设置授权书
+                     * @param AuthorizationName 授权书
                      */
                     void SetAuthorizationName(const std::string& _authorizationName);
 
@@ -117,25 +117,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * xxx
+                     * 品牌名字
                      */
                     std::string m_brandName;
                     bool m_brandNameHasBeenSet;
 
                     /**
-                     * xx
+                     * 商标证明
                      */
                     std::string m_brandCertificateName;
                     bool m_brandCertificateNameHasBeenSet;
 
                     /**
-                     * xx
+                     * 商标转让证明
                      */
                     std::string m_transferName;
                     bool m_transferNameHasBeenSet;
 
                     /**
-                     * xx
+                     * 授权书
                      */
                     std::string m_authorizationName;
                     bool m_authorizationNameHasBeenSet;

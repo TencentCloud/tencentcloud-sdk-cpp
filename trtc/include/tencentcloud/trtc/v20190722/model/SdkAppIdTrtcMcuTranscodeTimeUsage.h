@@ -137,6 +137,24 @@ namespace TencentCloud
                      */
                     bool VideoTimeFhdHasBeenSet() const;
 
+                    /**
+                     * 获取带宽，单位：Mbps。
+                     * @return Flux 带宽，单位：Mbps。
+                     */
+                    double GetFlux() const;
+
+                    /**
+                     * 设置带宽，单位：Mbps。
+                     * @param Flux 带宽，单位：Mbps。
+                     */
+                    void SetFlux(const double& _flux);
+
+                    /**
+                     * 判断参数 Flux 是否已赋值
+                     * @return Flux 是否已赋值
+                     */
+                    bool FluxHasBeenSet() const;
+
                 private:
 
                     /**
@@ -168,6 +186,12 @@ namespace TencentCloud
                      */
                     uint64_t m_videoTimeFhd;
                     bool m_videoTimeFhdHasBeenSet;
+
+                    /**
+                     * 带宽，单位：Mbps。
+                     */
+                    double m_flux;
+                    bool m_fluxHasBeenSet;
 
                 };
             }

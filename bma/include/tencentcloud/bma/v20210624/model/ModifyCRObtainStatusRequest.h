@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool ObtainDurationHasBeenSet() const;
 
                     /**
-                     * 获取结果回调地址
-                     * @return ObtainUrl 结果回调地址
+                     * 获取取证结果回调地址
+                     * @return ObtainUrl 取证结果回调地址
                      */
                     std::string GetObtainUrl() const;
 
                     /**
-                     * 设置结果回调地址
-                     * @param ObtainUrl 结果回调地址
+                     * 设置取证结果回调地址
+                     * @param ObtainUrl 取证结果回调地址
                      */
                     void SetObtainUrl(const std::string& _obtainUrl);
 
@@ -135,7 +135,7 @@ namespace TencentCloud
                     bool m_obtainDurationHasBeenSet;
 
                     /**
-                     * 结果回调地址
+                     * 取证结果回调地址
                      */
                     std::string m_obtainUrl;
                     bool m_obtainUrlHasBeenSet;

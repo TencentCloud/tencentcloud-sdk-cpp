@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取xx
-                     * @return LicenseName xx
+                     * 获取营业执照
+                     * @return LicenseName 营业执照
                      */
                     std::string GetLicenseName() const;
 
                     /**
-                     * 设置xx
-                     * @param LicenseName xx
+                     * 设置营业执照
+                     * @param LicenseName 营业执照
                      */
                     void SetLicenseName(const std::string& _licenseName);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool LicenseNameHasBeenSet() const;
 
                     /**
-                     * 获取xx
-                     * @return AuthorizationName xx
+                     * 获取授权书
+                     * @return AuthorizationName 授权书
                      */
                     std::string GetAuthorizationName() const;
 
                     /**
-                     * 设置xx
-                     * @param AuthorizationName xx
+                     * 设置授权书
+                     * @param AuthorizationName 授权书
                      */
                     void SetAuthorizationName(const std::string& _authorizationName);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool AuthorizationNameHasBeenSet() const;
 
                     /**
-                     * 获取xx
-                     * @return BrandName xx
+                     * 获取商标名称
+                     * @return BrandName 商标名称
                      */
                     std::string GetBrandName() const;
 
                     /**
-                     * 设置xx
-                     * @param BrandName xx
+                     * 设置商标名称
+                     * @param BrandName 商标名称
                      */
                     void SetBrandName(const std::string& _brandName);
 
@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool BrandNameHasBeenSet() const;
 
                     /**
-                     * 获取xx
-                     * @return BrandCertificateName xx
+                     * 获取商标证明
+                     * @return BrandCertificateName 商标证明
                      */
                     std::string GetBrandCertificateName() const;
 
                     /**
-                     * 设置xx
-                     * @param BrandCertificateName xx
+                     * 设置商标证明
+                     * @param BrandCertificateName 商标证明
                      */
                     void SetBrandCertificateName(const std::string& _brandCertificateName);
 
@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool BrandCertificateNameHasBeenSet() const;
 
                     /**
-                     * 获取xx
-                     * @return TransferName xx
+                     * 获取商标转让证明
+                     * @return TransferName 商标转让证明
                      */
                     std::string GetTransferName() const;
 
                     /**
-                     * 设置xx
-                     * @param TransferName xx
+                     * 设置商标转让证明
+                     * @param TransferName 商标转让证明
                      */
                     void SetTransferName(const std::string& _transferName);
 
@@ -135,31 +135,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * xx
+                     * 营业执照
                      */
                     std::string m_licenseName;
                     bool m_licenseNameHasBeenSet;
 
                     /**
-                     * xx
+                     * 授权书
                      */
                     std::string m_authorizationName;
                     bool m_authorizationNameHasBeenSet;
 
                     /**
-                     * xx
+                     * 商标名称
                      */
                     std::string m_brandName;
                     bool m_brandNameHasBeenSet;
 
                     /**
-                     * xx
+                     * 商标证明
                      */
                     std::string m_brandCertificateName;
                     bool m_brandCertificateNameHasBeenSet;
 
                     /**
-                     * xx
+                     * 商标转让证明
                      */
                     std::string m_transferName;
                     bool m_transferNameHasBeenSet;

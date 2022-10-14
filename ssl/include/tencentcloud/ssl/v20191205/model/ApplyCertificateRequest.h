@@ -258,6 +258,24 @@ namespace TencentCloud
                      */
                     bool OldCertificateIdHasBeenSet() const;
 
+                    /**
+                     * 获取权益包ID，用于免费证书扩容包使用
+                     * @return PackageId 权益包ID，用于免费证书扩容包使用
+                     */
+                    std::string GetPackageId() const;
+
+                    /**
+                     * 设置权益包ID，用于免费证书扩容包使用
+                     * @param PackageId 权益包ID，用于免费证书扩容包使用
+                     */
+                    void SetPackageId(const std::string& _packageId);
+
+                    /**
+                     * 判断参数 PackageId 是否已赋值
+                     * @return PackageId 是否已赋值
+                     */
+                    bool PackageIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -331,6 +349,12 @@ namespace TencentCloud
                      */
                     std::string m_oldCertificateId;
                     bool m_oldCertificateIdHasBeenSet;
+
+                    /**
+                     * 权益包ID，用于免费证书扩容包使用
+                     */
+                    std::string m_packageId;
+                    bool m_packageIdHasBeenSet;
 
                 };
             }

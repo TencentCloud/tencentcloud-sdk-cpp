@@ -20,37 +20,47 @@ set(lcic_public_header
 
 set(lcic_public_header_model
   include/tencentcloud/lcic/v20220817/model/CreateRoomRequest.h
+  include/tencentcloud/lcic/v20220817/model/SetAppCustomContentRequest.h
   include/tencentcloud/lcic/v20220817/model/CreateSupervisorRequest.h
   include/tencentcloud/lcic/v20220817/model/DescribeRoomResponse.h
   include/tencentcloud/lcic/v20220817/model/RegisterUserRequest.h
   include/tencentcloud/lcic/v20220817/model/LoginOriginIdRequest.h
   include/tencentcloud/lcic/v20220817/model/DescribeUserRequest.h
   include/tencentcloud/lcic/v20220817/model/RegisterUserResponse.h
+  include/tencentcloud/lcic/v20220817/model/CreateDocumentResponse.h
   include/tencentcloud/lcic/v20220817/model/LoginUserRequest.h
   include/tencentcloud/lcic/v20220817/model/CreateSupervisorResponse.h
+  include/tencentcloud/lcic/v20220817/model/CreateDocumentRequest.h
   include/tencentcloud/lcic/v20220817/model/CreateRoomResponse.h
   include/tencentcloud/lcic/v20220817/model/DescribeUserResponse.h
+  include/tencentcloud/lcic/v20220817/model/SetAppCustomContentResponse.h
   include/tencentcloud/lcic/v20220817/model/DescribeRoomRequest.h
   include/tencentcloud/lcic/v20220817/model/LoginOriginIdResponse.h
   include/tencentcloud/lcic/v20220817/model/LoginUserResponse.h
+  include/tencentcloud/lcic/v20220817/model/AppCustomContent.h
   )
 
 set(lcic_src
   src/v20220817/LcicClient.cpp
   src/v20220817/model/CreateRoomRequest.cpp
+  src/v20220817/model/SetAppCustomContentRequest.cpp
   src/v20220817/model/CreateSupervisorRequest.cpp
   src/v20220817/model/DescribeRoomResponse.cpp
   src/v20220817/model/RegisterUserRequest.cpp
   src/v20220817/model/LoginOriginIdRequest.cpp
   src/v20220817/model/DescribeUserRequest.cpp
   src/v20220817/model/RegisterUserResponse.cpp
+  src/v20220817/model/CreateDocumentResponse.cpp
   src/v20220817/model/LoginUserRequest.cpp
   src/v20220817/model/CreateSupervisorResponse.cpp
+  src/v20220817/model/CreateDocumentRequest.cpp
   src/v20220817/model/CreateRoomResponse.cpp
   src/v20220817/model/DescribeUserResponse.cpp
+  src/v20220817/model/SetAppCustomContentResponse.cpp
   src/v20220817/model/DescribeRoomRequest.cpp
   src/v20220817/model/LoginOriginIdResponse.cpp
   src/v20220817/model/LoginUserResponse.cpp
+  src/v20220817/model/AppCustomContent.cpp
   )
 
 set(lcic_include

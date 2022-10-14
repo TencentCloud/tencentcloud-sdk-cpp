@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取xxx
-                     * @return PageSize xxx
+                     * 获取页数
+                     * @return PageSize 页数
                      */
                     int64_t GetPageSize() const;
 
                     /**
-                     * 设置xxx
-                     * @param PageSize xxx
+                     * 设置页数
+                     * @param PageSize 页数
                      */
                     void SetPageSize(const int64_t& _pageSize);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool PageSizeHasBeenSet() const;
 
                     /**
-                     * 获取xxx
-                     * @return PageNumber xxx
+                     * 获取页码
+                     * @return PageNumber 页码
                      */
                     int64_t GetPageNumber() const;
 
                     /**
-                     * 设置xxx
-                     * @param PageNumber xxx
+                     * 设置页码
+                     * @param PageNumber 页码
                      */
                     void SetPageNumber(const int64_t& _pageNumber);
 
@@ -81,13 +81,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * xxx
+                     * 页数
                      */
                     int64_t m_pageSize;
                     bool m_pageSizeHasBeenSet;
 
                     /**
-                     * xxx
+                     * 页码
                      */
                     int64_t m_pageNumber;
                     bool m_pageNumberHasBeenSet;

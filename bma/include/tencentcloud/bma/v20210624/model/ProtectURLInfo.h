@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取xxx
-                     * @return ProtectURLId xxx
+                     * 获取保护网站ID
+                     * @return ProtectURLId 保护网站ID
                      */
                     int64_t GetProtectURLId() const;
 
                     /**
-                     * 设置xxx
-                     * @param ProtectURLId xxx
+                     * 设置保护网站ID
+                     * @param ProtectURLId 保护网站ID
                      */
                     void SetProtectURLId(const int64_t& _protectURLId);
 
@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool ProtectURLIdHasBeenSet() const;
 
                     /**
-                     * 获取xxx
-                     * @return ProtectURL xxx
+                     * 获取保护网站
+                     * @return ProtectURL 保护网站
                      */
                     std::string GetProtectURL() const;
 
                     /**
-                     * 设置xxx
-                     * @param ProtectURL xxx
+                     * 设置保护网站
+                     * @param ProtectURL 保护网站
                      */
                     void SetProtectURL(const std::string& _protectURL);
 
@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool ProtectURLHasBeenSet() const;
 
                     /**
-                     * 获取xxx
-                     * @return ProtectWeb xxx
+                     * 获取保护网站名称
+                     * @return ProtectWeb 保护网站名称
                      */
                     std::string GetProtectWeb() const;
 
                     /**
-                     * 设置xxx
-                     * @param ProtectWeb xxx
+                     * 设置保护网站名称
+                     * @param ProtectWeb 保护网站名称
                      */
                     void SetProtectWeb(const std::string& _protectWeb);
 
@@ -101,14 +101,14 @@ namespace TencentCloud
                     bool ProtectWebHasBeenSet() const;
 
                     /**
-                     * 获取xxx
-                     * @return ProtectURLStatus xxx
+                     * 获取保护网站审核状态 1-审核中 2-审核不通过 3-审核通过
+                     * @return ProtectURLStatus 保护网站审核状态 1-审核中 2-审核不通过 3-审核通过
                      */
                     int64_t GetProtectURLStatus() const;
 
                     /**
-                     * 设置xxx
-                     * @param ProtectURLStatus xxx
+                     * 设置保护网站审核状态 1-审核中 2-审核不通过 3-审核通过
+                     * @param ProtectURLStatus 保护网站审核状态 1-审核中 2-审核不通过 3-审核通过
                      */
                     void SetProtectURLStatus(const int64_t& _protectURLStatus);
 
@@ -119,14 +119,14 @@ namespace TencentCloud
                     bool ProtectURLStatusHasBeenSet() const;
 
                     /**
-                     * 获取xxx
-                     * @return ProtectURLNote xxx
+                     * 获取网站审核不通过原因
+                     * @return ProtectURLNote 网站审核不通过原因
                      */
                     std::string GetProtectURLNote() const;
 
                     /**
-                     * 设置xxx
-                     * @param ProtectURLNote xxx
+                     * 设置网站审核不通过原因
+                     * @param ProtectURLNote 网站审核不通过原因
                      */
                     void SetProtectURLNote(const std::string& _protectURLNote);
 
@@ -137,14 +137,14 @@ namespace TencentCloud
                     bool ProtectURLNoteHasBeenSet() const;
 
                     /**
-                     * 获取xxx
-                     * @return CreateTime xxx
+                     * 获取创建时间
+                     * @return CreateTime 创建时间
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置xxx
-                     * @param CreateTime xxx
+                     * 设置创建时间
+                     * @param CreateTime 创建时间
                      */
                     void SetCreateTime(const std::string& _createTime);
 
@@ -157,37 +157,37 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * xxx
+                     * 保护网站ID
                      */
                     int64_t m_protectURLId;
                     bool m_protectURLIdHasBeenSet;
 
                     /**
-                     * xxx
+                     * 保护网站
                      */
                     std::string m_protectURL;
                     bool m_protectURLHasBeenSet;
 
                     /**
-                     * xxx
+                     * 保护网站名称
                      */
                     std::string m_protectWeb;
                     bool m_protectWebHasBeenSet;
 
                     /**
-                     * xxx
+                     * 保护网站审核状态 1-审核中 2-审核不通过 3-审核通过
                      */
                     int64_t m_protectURLStatus;
                     bool m_protectURLStatusHasBeenSet;
 
                     /**
-                     * xxx
+                     * 网站审核不通过原因
                      */
                     std::string m_protectURLNote;
                     bool m_protectURLNoteHasBeenSet;
 
                     /**
-                     * xxx
+                     * 创建时间
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;

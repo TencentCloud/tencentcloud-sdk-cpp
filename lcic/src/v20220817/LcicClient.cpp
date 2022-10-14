@@ -40,6 +40,49 @@ LcicClient::LcicClient(const Credential &credential, const string &region, const
 }
 
 
+LcicClient::CreateDocumentOutcome LcicClient::CreateDocument(const CreateDocumentRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateDocument");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateDocumentResponse rsp = CreateDocumentResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateDocumentOutcome(rsp);
+        else
+            return CreateDocumentOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateDocumentOutcome(outcome.GetError());
+    }
+}
+
+void LcicClient::CreateDocumentAsync(const CreateDocumentRequest& request, const CreateDocumentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateDocument(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LcicClient::CreateDocumentOutcomeCallable LcicClient::CreateDocumentCallable(const CreateDocumentRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateDocumentOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateDocument(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LcicClient::CreateRoomOutcome LcicClient::CreateRoom(const CreateRoomRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateRoom");
@@ -334,6 +377,49 @@ LcicClient::RegisterUserOutcomeCallable LcicClient::RegisterUserCallable(const R
         [this, request]()
         {
             return this->RegisterUser(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LcicClient::SetAppCustomContentOutcome LcicClient::SetAppCustomContent(const SetAppCustomContentRequest &request)
+{
+    auto outcome = MakeRequest(request, "SetAppCustomContent");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SetAppCustomContentResponse rsp = SetAppCustomContentResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SetAppCustomContentOutcome(rsp);
+        else
+            return SetAppCustomContentOutcome(o.GetError());
+    }
+    else
+    {
+        return SetAppCustomContentOutcome(outcome.GetError());
+    }
+}
+
+void LcicClient::SetAppCustomContentAsync(const SetAppCustomContentRequest& request, const SetAppCustomContentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SetAppCustomContent(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LcicClient::SetAppCustomContentOutcomeCallable LcicClient::SetAppCustomContentCallable(const SetAppCustomContentRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SetAppCustomContentOutcome()>>(
+        [this, request]()
+        {
+            return this->SetAppCustomContent(request);
         }
     );
 

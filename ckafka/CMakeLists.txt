@@ -154,6 +154,7 @@ set(ckafka_public_header_model
   include/tencentcloud/ckafka/v20190819/model/User.h
   include/tencentcloud/ckafka/v20190819/model/DescribeUserResponse.h
   include/tencentcloud/ckafka/v20190819/model/DtsConnectParam.h
+  include/tencentcloud/ckafka/v20190819/model/DorisModifyConnectParam.h
   include/tencentcloud/ckafka/v20190819/model/DescribeGroupInfoResponse.h
   include/tencentcloud/ckafka/v20190819/model/AppIdResponse.h
   include/tencentcloud/ckafka/v20190819/model/DescribeTopicRequest.h
@@ -422,6 +423,7 @@ set(ckafka_src
   src/v20190819/model/User.cpp
   src/v20190819/model/DescribeUserResponse.cpp
   src/v20190819/model/DtsConnectParam.cpp
+  src/v20190819/model/DorisModifyConnectParam.cpp
   src/v20190819/model/DescribeGroupInfoResponse.cpp
   src/v20190819/model/AppIdResponse.cpp
   src/v20190819/model/DescribeTopicRequest.cpp

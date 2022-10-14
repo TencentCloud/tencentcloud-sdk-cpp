@@ -479,14 +479,14 @@ namespace TencentCloud
                     bool IsProducerHasBeenSet() const;
 
                     /**
-                     * 获取是否海外网址
-                     * @return IsOverseas 是否海外网址
+                     * 获取是否境外网址
+                     * @return IsOverseas 是否境外网址
                      */
                     int64_t GetIsOverseas() const;
 
                     /**
-                     * 设置是否海外网址
-                     * @param IsOverseas 是否海外网址
+                     * 设置是否境外网址
+                     * @param IsOverseas 是否境外网址
                      */
                     void SetIsOverseas(const int64_t& _isOverseas);
 
@@ -643,7 +643,7 @@ namespace TencentCloud
                     bool m_isProducerHasBeenSet;
 
                     /**
-                     * 是否海外网址
+                     * 是否境外网址
                      */
                     int64_t m_isOverseas;
                     bool m_isOverseasHasBeenSet;

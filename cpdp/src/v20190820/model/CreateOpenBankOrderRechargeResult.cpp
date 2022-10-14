@@ -24,7 +24,10 @@ CreateOpenBankOrderRechargeResult::CreateOpenBankOrderRechargeResult() :
     m_channelOrderIdHasBeenSet(false),
     m_thirdPayOrderIdHasBeenSet(false),
     m_redirectInfoHasBeenSet(false),
-    m_outOrderIdHasBeenSet(false)
+    m_outOrderIdHasBeenSet(false),
+    m_dealStatusHasBeenSet(false),
+    m_dealMessageHasBeenSet(false),
+    m_pcWebUrlHasBeenSet(false)
 {
 }
 
@@ -80,6 +83,36 @@ CoreInternalOutcome CreateOpenBankOrderRechargeResult::Deserialize(const rapidjs
         m_outOrderIdHasBeenSet = true;
     }
 
+    if (value.HasMember("DealStatus") && !value["DealStatus"].IsNull())
+    {
+        if (!value["DealStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CreateOpenBankOrderRechargeResult.DealStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dealStatus = string(value["DealStatus"].GetString());
+        m_dealStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("DealMessage") && !value["DealMessage"].IsNull())
+    {
+        if (!value["DealMessage"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CreateOpenBankOrderRechargeResult.DealMessage` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dealMessage = string(value["DealMessage"].GetString());
+        m_dealMessageHasBeenSet = true;
+    }
+
+    if (value.HasMember("PcWebUrl") && !value["PcWebUrl"].IsNull())
+    {
+        if (!value["PcWebUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CreateOpenBankOrderRechargeResult.PcWebUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_pcWebUrl = string(value["PcWebUrl"].GetString());
+        m_pcWebUrlHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -118,6 +151,30 @@ void CreateOpenBankOrderRechargeResult::ToJsonObject(rapidjson::Value &value, ra
         string key = "OutOrderId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_outOrderId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dealStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DealStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dealStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dealMessageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DealMessage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dealMessage.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_pcWebUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PcWebUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_pcWebUrl.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -185,5 +242,53 @@ void CreateOpenBankOrderRechargeResult::SetOutOrderId(const string& _outOrderId)
 bool CreateOpenBankOrderRechargeResult::OutOrderIdHasBeenSet() const
 {
     return m_outOrderIdHasBeenSet;
+}
+
+string CreateOpenBankOrderRechargeResult::GetDealStatus() const
+{
+    return m_dealStatus;
+}
+
+void CreateOpenBankOrderRechargeResult::SetDealStatus(const string& _dealStatus)
+{
+    m_dealStatus = _dealStatus;
+    m_dealStatusHasBeenSet = true;
+}
+
+bool CreateOpenBankOrderRechargeResult::DealStatusHasBeenSet() const
+{
+    return m_dealStatusHasBeenSet;
+}
+
+string CreateOpenBankOrderRechargeResult::GetDealMessage() const
+{
+    return m_dealMessage;
+}
+
+void CreateOpenBankOrderRechargeResult::SetDealMessage(const string& _dealMessage)
+{
+    m_dealMessage = _dealMessage;
+    m_dealMessageHasBeenSet = true;
+}
+
+bool CreateOpenBankOrderRechargeResult::DealMessageHasBeenSet() const
+{
+    return m_dealMessageHasBeenSet;
+}
+
+string CreateOpenBankOrderRechargeResult::GetPcWebUrl() const
+{
+    return m_pcWebUrl;
+}
+
+void CreateOpenBankOrderRechargeResult::SetPcWebUrl(const string& _pcWebUrl)
+{
+    m_pcWebUrl = _pcWebUrl;
+    m_pcWebUrlHasBeenSet = true;
+}
+
+bool CreateOpenBankOrderRechargeResult::PcWebUrlHasBeenSet() const
+{
+    return m_pcWebUrlHasBeenSet;
 }
 

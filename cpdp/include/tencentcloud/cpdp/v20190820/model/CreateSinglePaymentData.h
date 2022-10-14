@@ -64,6 +64,50 @@ namespace TencentCloud
                      */
                     bool TradeSerialNoHasBeenSet() const;
 
+                    /**
+                     * 获取代理商ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AgentId 代理商ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetAgentId() const;
+
+                    /**
+                     * 设置代理商ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AgentId 代理商ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAgentId(const std::string& _agentId);
+
+                    /**
+                     * 判断参数 AgentId 是否已赋值
+                     * @return AgentId 是否已赋值
+                     */
+                    bool AgentIdHasBeenSet() const;
+
+                    /**
+                     * 获取代理商名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AgentName 代理商名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetAgentName() const;
+
+                    /**
+                     * 设置代理商名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AgentName 代理商名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAgentName(const std::string& _agentName);
+
+                    /**
+                     * 判断参数 AgentName 是否已赋值
+                     * @return AgentName 是否已赋值
+                     */
+                    bool AgentNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -71,6 +115,20 @@ namespace TencentCloud
                      */
                     std::string m_tradeSerialNo;
                     bool m_tradeSerialNoHasBeenSet;
+
+                    /**
+                     * 代理商ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_agentId;
+                    bool m_agentIdHasBeenSet;
+
+                    /**
+                     * 代理商名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_agentName;
+                    bool m_agentNameHasBeenSet;
 
                 };
             }

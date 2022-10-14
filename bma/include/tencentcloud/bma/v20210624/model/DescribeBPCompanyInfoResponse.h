@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取xx
-                     * @return CompanyName xx
+                     * 获取企业名称
+                     * @return CompanyName 企业名称
                      */
                     std::string GetCompanyName() const;
 
@@ -57,8 +57,8 @@ namespace TencentCloud
                     bool CompanyNameHasBeenSet() const;
 
                     /**
-                     * 获取xx
-                     * @return Phone xx
+                     * 获取电话号码
+                     * @return Phone 电话号码
                      */
                     std::string GetPhone() const;
 
@@ -69,8 +69,8 @@ namespace TencentCloud
                     bool PhoneHasBeenSet() const;
 
                     /**
-                     * 获取xx
-                     * @return LicenseName xx
+                     * 获取营业执照
+                     * @return LicenseName 营业执照
                      */
                     std::string GetLicenseName() const;
 
@@ -81,8 +81,8 @@ namespace TencentCloud
                     bool LicenseNameHasBeenSet() const;
 
                     /**
-                     * 获取xx
-                     * @return LicenseStatus xx
+                     * 获取营业执照审核状态 1-审核中 2-审核未通过，3、审核通过
+                     * @return LicenseStatus 营业执照审核状态 1-审核中 2-审核未通过，3、审核通过
                      */
                     int64_t GetLicenseStatus() const;
 
@@ -93,8 +93,8 @@ namespace TencentCloud
                     bool LicenseStatusHasBeenSet() const;
 
                     /**
-                     * 获取xx
-                     * @return LicenseNote xx
+                     * 获取营业执照备注
+                     * @return LicenseNote 营业执照备注
                      */
                     std::string GetLicenseNote() const;
 
@@ -105,8 +105,8 @@ namespace TencentCloud
                     bool LicenseNoteHasBeenSet() const;
 
                     /**
-                     * 获取xx
-                     * @return AuthorizationName xx
+                     * 获取授权书
+                     * @return AuthorizationName 授权书
                      */
                     std::string GetAuthorizationName() const;
 
@@ -117,8 +117,8 @@ namespace TencentCloud
                     bool AuthorizationNameHasBeenSet() const;
 
                     /**
-                     * 获取xx
-                     * @return AuthorizationStatus xx
+                     * 获取授权书审核状态
+                     * @return AuthorizationStatus 授权书审核状态
                      */
                     int64_t GetAuthorizationStatus() const;
 
@@ -129,8 +129,8 @@ namespace TencentCloud
                     bool AuthorizationStatusHasBeenSet() const;
 
                     /**
-                     * 获取xx
-                     * @return AuthorizationNote xx
+                     * 获取授权书备注
+                     * @return AuthorizationNote 授权书备注
                      */
                     std::string GetAuthorizationNote() const;
 
@@ -141,8 +141,8 @@ namespace TencentCloud
                     bool AuthorizationNoteHasBeenSet() const;
 
                     /**
-                     * 获取xx
-                     * @return BrandDatas xx
+                     * 获取品牌信息
+                     * @return BrandDatas 品牌信息
                      */
                     std::vector<BrandData> GetBrandDatas() const;
 
@@ -153,8 +153,8 @@ namespace TencentCloud
                     bool BrandDatasHasBeenSet() const;
 
                     /**
-                     * 获取xx
-                     * @return CompanyId xx
+                     * 获取企业ID
+                     * @return CompanyId 企业ID
                      */
                     int64_t GetCompanyId() const;
 
@@ -167,61 +167,61 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * xx
+                     * 企业名称
                      */
                     std::string m_companyName;
                     bool m_companyNameHasBeenSet;
 
                     /**
-                     * xx
+                     * 电话号码
                      */
                     std::string m_phone;
                     bool m_phoneHasBeenSet;
 
                     /**
-                     * xx
+                     * 营业执照
                      */
                     std::string m_licenseName;
                     bool m_licenseNameHasBeenSet;
 
                     /**
-                     * xx
+                     * 营业执照审核状态 1-审核中 2-审核未通过，3、审核通过
                      */
                     int64_t m_licenseStatus;
                     bool m_licenseStatusHasBeenSet;
 
                     /**
-                     * xx
+                     * 营业执照备注
                      */
                     std::string m_licenseNote;
                     bool m_licenseNoteHasBeenSet;
 
                     /**
-                     * xx
+                     * 授权书
                      */
                     std::string m_authorizationName;
                     bool m_authorizationNameHasBeenSet;
 
                     /**
-                     * xx
+                     * 授权书审核状态
                      */
                     int64_t m_authorizationStatus;
                     bool m_authorizationStatusHasBeenSet;
 
                     /**
-                     * xx
+                     * 授权书备注
                      */
                     std::string m_authorizationNote;
                     bool m_authorizationNoteHasBeenSet;
 
                     /**
-                     * xx
+                     * 品牌信息
                      */
                     std::vector<BrandData> m_brandDatas;
                     bool m_brandDatasHasBeenSet;
 
                     /**
-                     * xx
+                     * 企业ID
                      */
                     int64_t m_companyId;
                     bool m_companyIdHasBeenSet;

@@ -50,7 +50,7 @@ namespace TencentCloud
 <li>ItemName - string - 是否必填：否 - 项名称</li>
 <li>DetectStatus - int - 是否必填：否 - 检测状态</li>
 <li>Level - int - 是否必填：否 - 风险等级</li>
-<li>StartTime - string - 是否必填：否 - 开时时间</li>
+<li>StartTime - string - 是否必填：否 - 开始时间</li>
 <li>EndTime - string - 是否必填：否 - 结束时间</li>
                      * @return Filters <li>HostId - string - 是否必填：否 - 主机Id</li>
 <li>RuleId - int64 - 是否必填：否 - 规则Id</li>
@@ -58,7 +58,7 @@ namespace TencentCloud
 <li>ItemName - string - 是否必填：否 - 项名称</li>
 <li>DetectStatus - int - 是否必填：否 - 检测状态</li>
 <li>Level - int - 是否必填：否 - 风险等级</li>
-<li>StartTime - string - 是否必填：否 - 开时时间</li>
+<li>StartTime - string - 是否必填：否 - 开始时间</li>
 <li>EndTime - string - 是否必填：否 - 结束时间</li>
                      */
                     std::vector<Filter> GetFilters() const;
@@ -70,7 +70,7 @@ namespace TencentCloud
 <li>ItemName - string - 是否必填：否 - 项名称</li>
 <li>DetectStatus - int - 是否必填：否 - 检测状态</li>
 <li>Level - int - 是否必填：否 - 风险等级</li>
-<li>StartTime - string - 是否必填：否 - 开时时间</li>
+<li>StartTime - string - 是否必填：否 - 开始时间</li>
 <li>EndTime - string - 是否必填：否 - 结束时间</li>
                      * @param Filters <li>HostId - string - 是否必填：否 - 主机Id</li>
 <li>RuleId - int64 - 是否必填：否 - 规则Id</li>
@@ -78,7 +78,7 @@ namespace TencentCloud
 <li>ItemName - string - 是否必填：否 - 项名称</li>
 <li>DetectStatus - int - 是否必填：否 - 检测状态</li>
 <li>Level - int - 是否必填：否 - 风险等级</li>
-<li>StartTime - string - 是否必填：否 - 开时时间</li>
+<li>StartTime - string - 是否必填：否 - 开始时间</li>
 <li>EndTime - string - 是否必填：否 - 结束时间</li>
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -170,7 +170,7 @@ namespace TencentCloud
 <li>ItemName - string - 是否必填：否 - 项名称</li>
 <li>DetectStatus - int - 是否必填：否 - 检测状态</li>
 <li>Level - int - 是否必填：否 - 风险等级</li>
-<li>StartTime - string - 是否必填：否 - 开时时间</li>
+<li>StartTime - string - 是否必填：否 - 开始时间</li>
 <li>EndTime - string - 是否必填：否 - 结束时间</li>
                      */
                     std::vector<Filter> m_filters;

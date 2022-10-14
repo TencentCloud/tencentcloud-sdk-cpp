@@ -35,7 +35,8 @@ ModifyConnectResourceRequest::ModifyConnectResourceRequest() :
     m_postgreSQLConnectParamHasBeenSet(false),
     m_mariaDBConnectParamHasBeenSet(false),
     m_sQLServerConnectParamHasBeenSet(false),
-    m_ctsdbConnectParamHasBeenSet(false)
+    m_ctsdbConnectParamHasBeenSet(false),
+    m_dorisConnectParamHasBeenSet(false)
 {
 }
 
@@ -157,6 +158,15 @@ string ModifyConnectResourceRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_ctsdbConnectParam.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_dorisConnectParamHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DorisConnectParam";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_dorisConnectParam.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -373,6 +383,22 @@ void ModifyConnectResourceRequest::SetCtsdbConnectParam(const CtsdbModifyConnect
 bool ModifyConnectResourceRequest::CtsdbConnectParamHasBeenSet() const
 {
     return m_ctsdbConnectParamHasBeenSet;
+}
+
+DorisModifyConnectParam ModifyConnectResourceRequest::GetDorisConnectParam() const
+{
+    return m_dorisConnectParam;
+}
+
+void ModifyConnectResourceRequest::SetDorisConnectParam(const DorisModifyConnectParam& _dorisConnectParam)
+{
+    m_dorisConnectParam = _dorisConnectParam;
+    m_dorisConnectParamHasBeenSet = true;
+}
+
+bool ModifyConnectResourceRequest::DorisConnectParamHasBeenSet() const
+{
+    return m_dorisConnectParamHasBeenSet;
 }
 
 

@@ -127,6 +127,72 @@ namespace TencentCloud
                      */
                     bool OutOrderIdHasBeenSet() const;
 
+                    /**
+                     * 获取充值状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DealStatus 充值状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetDealStatus() const;
+
+                    /**
+                     * 设置充值状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DealStatus 充值状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDealStatus(const std::string& _dealStatus);
+
+                    /**
+                     * 判断参数 DealStatus 是否已赋值
+                     * @return DealStatus 是否已赋值
+                     */
+                    bool DealStatusHasBeenSet() const;
+
+                    /**
+                     * 获取充值返回描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DealMessage 充值返回描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetDealMessage() const;
+
+                    /**
+                     * 设置充值返回描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DealMessage 充值返回描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDealMessage(const std::string& _dealMessage);
+
+                    /**
+                     * 判断参数 DealMessage 是否已赋值
+                     * @return DealMessage 是否已赋值
+                     */
+                    bool DealMessageHasBeenSet() const;
+
+                    /**
+                     * 获取PC web端跳转链接
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PcWebUrl PC web端跳转链接
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetPcWebUrl() const;
+
+                    /**
+                     * 设置PC web端跳转链接
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param PcWebUrl PC web端跳转链接
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPcWebUrl(const std::string& _pcWebUrl);
+
+                    /**
+                     * 判断参数 PcWebUrl 是否已赋值
+                     * @return PcWebUrl 是否已赋值
+                     */
+                    bool PcWebUrlHasBeenSet() const;
+
                 private:
 
                     /**
@@ -154,6 +220,27 @@ namespace TencentCloud
                      */
                     std::string m_outOrderId;
                     bool m_outOrderIdHasBeenSet;
+
+                    /**
+                     * 充值状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_dealStatus;
+                    bool m_dealStatusHasBeenSet;
+
+                    /**
+                     * 充值返回描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_dealMessage;
+                    bool m_dealMessageHasBeenSet;
+
+                    /**
+                     * PC web端跳转链接
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_pcWebUrl;
+                    bool m_pcWebUrlHasBeenSet;
 
                 };
             }

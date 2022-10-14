@@ -433,6 +433,36 @@ namespace TencentCloud
                      */
                     bool DBKernelVersionHasBeenSet() const;
 
+                    /**
+                     * 获取存储付费模式
+ - PREPAID：预付费，即包年包月
+ - POSTPAID_BY_HOUR：按小时后付费
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return StoragePayMode 存储付费模式
+ - PREPAID：预付费，即包年包月
+ - POSTPAID_BY_HOUR：按小时后付费
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetStoragePayMode() const;
+
+                    /**
+                     * 设置存储付费模式
+ - PREPAID：预付费，即包年包月
+ - POSTPAID_BY_HOUR：按小时后付费
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param StoragePayMode 存储付费模式
+ - PREPAID：预付费，即包年包月
+ - POSTPAID_BY_HOUR：按小时后付费
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetStoragePayMode(const std::string& _storagePayMode);
+
+                    /**
+                     * 判断参数 StoragePayMode 是否已赋值
+                     * @return StoragePayMode 是否已赋值
+                     */
+                    bool StoragePayModeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -559,6 +589,15 @@ namespace TencentCloud
                      */
                     std::string m_dBKernelVersion;
                     bool m_dBKernelVersionHasBeenSet;
+
+                    /**
+                     * 存储付费模式
+ - PREPAID：预付费，即包年包月
+ - POSTPAID_BY_HOUR：按小时后付费
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_storagePayMode;
+                    bool m_storagePayModeHasBeenSet;
 
                 };
             }

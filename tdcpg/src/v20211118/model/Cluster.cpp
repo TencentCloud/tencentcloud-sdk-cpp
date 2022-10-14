@@ -39,7 +39,8 @@ Cluster::Cluster() :
     m_instanceCountHasBeenSet(false),
     m_endpointSetHasBeenSet(false),
     m_dBMajorVersionHasBeenSet(false),
-    m_dBKernelVersionHasBeenSet(false)
+    m_dBKernelVersionHasBeenSet(false),
+    m_storagePayModeHasBeenSet(false)
 {
 }
 
@@ -248,6 +249,16 @@ CoreInternalOutcome Cluster::Deserialize(const rapidjson::Value &value)
         m_dBKernelVersionHasBeenSet = true;
     }
 
+    if (value.HasMember("StoragePayMode") && !value["StoragePayMode"].IsNull())
+    {
+        if (!value["StoragePayMode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Cluster.StoragePayMode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_storagePayMode = string(value["StoragePayMode"].GetString());
+        m_storagePayModeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -412,6 +423,14 @@ void Cluster::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "DBKernelVersion";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_dBKernelVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_storagePayModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StoragePayMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_storagePayMode.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -719,5 +738,21 @@ void Cluster::SetDBKernelVersion(const string& _dBKernelVersion)
 bool Cluster::DBKernelVersionHasBeenSet() const
 {
     return m_dBKernelVersionHasBeenSet;
+}
+
+string Cluster::GetStoragePayMode() const
+{
+    return m_storagePayMode;
+}
+
+void Cluster::SetStoragePayMode(const string& _storagePayMode)
+{
+    m_storagePayMode = _storagePayMode;
+    m_storagePayModeHasBeenSet = true;
+}
+
+bool Cluster::StoragePayModeHasBeenSet() const
+{
+    return m_storagePayModeHasBeenSet;
 }
 

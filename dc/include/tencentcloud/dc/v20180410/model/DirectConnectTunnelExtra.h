@@ -817,6 +817,28 @@ REJECTED:拒绝
                      */
                     bool JumboEnableHasBeenSet() const;
 
+                    /**
+                     * 获取专用通道是否支持高精度BFD。1支持，0不支持
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return HighPrecisionBFDEnable 专用通道是否支持高精度BFD。1支持，0不支持
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetHighPrecisionBFDEnable() const;
+
+                    /**
+                     * 设置专用通道是否支持高精度BFD。1支持，0不支持
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param HighPrecisionBFDEnable 专用通道是否支持高精度BFD。1支持，0不支持
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetHighPrecisionBFDEnable(const int64_t& _highPrecisionBFDEnable);
+
+                    /**
+                     * 判断参数 HighPrecisionBFDEnable 是否已赋值
+                     * @return HighPrecisionBFDEnable 是否已赋值
+                     */
+                    bool HighPrecisionBFDEnableHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1068,6 +1090,13 @@ REJECTED:拒绝
                      */
                     int64_t m_jumboEnable;
                     bool m_jumboEnableHasBeenSet;
+
+                    /**
+                     * 专用通道是否支持高精度BFD。1支持，0不支持
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_highPrecisionBFDEnable;
+                    bool m_highPrecisionBFDEnableHasBeenSet;
 
                 };
             }

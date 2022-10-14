@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取xxx
-                     * @return FileUrl xxx
+                     * 获取文件下载地址
+                     * @return FileUrl 文件下载地址
                      */
                     std::string GetFileUrl() const;
 
                     /**
-                     * 设置xxx
-                     * @param FileUrl xxx
+                     * 设置文件下载地址
+                     * @param FileUrl 文件下载地址
                      */
                     void SetFileUrl(const std::string& _fileUrl);
 
@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool FileUrlHasBeenSet() const;
 
                     /**
-                     * 获取xxx
-                     * @return FileType xxx
+                     * 获取文件类型 1-委托书 2-授权书 5-存证证书 11-营业执照
+                     * @return FileType 文件类型 1-委托书 2-授权书 5-存证证书 11-营业执照
                      */
                     int64_t GetFileType() const;
 
                     /**
-                     * 设置xxx
-                     * @param FileType xxx
+                     * 设置文件类型 1-委托书 2-授权书 5-存证证书 11-营业执照
+                     * @param FileType 文件类型 1-委托书 2-授权书 5-存证证书 11-营业执照
                      */
                     void SetFileType(const int64_t& _fileType);
 
@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool FileTypeHasBeenSet() const;
 
                     /**
-                     * 获取xxx
-                     * @return ValidStartDate xxx
+                     * 获取文件有效开始日期
+                     * @return ValidStartDate 文件有效开始日期
                      */
                     std::string GetValidStartDate() const;
 
                     /**
-                     * 设置xxx
-                     * @param ValidStartDate xxx
+                     * 设置文件有效开始日期
+                     * @param ValidStartDate 文件有效开始日期
                      */
                     void SetValidStartDate(const std::string& _validStartDate);
 
@@ -101,14 +101,14 @@ namespace TencentCloud
                     bool ValidStartDateHasBeenSet() const;
 
                     /**
-                     * 获取xxx
-                     * @return ValidEndDate xxx
+                     * 获取文件有效截止日期
+                     * @return ValidEndDate 文件有效截止日期
                      */
                     std::string GetValidEndDate() const;
 
                     /**
-                     * 设置xxx
-                     * @param ValidEndDate xxx
+                     * 设置文件有效截止日期
+                     * @param ValidEndDate 文件有效截止日期
                      */
                     void SetValidEndDate(const std::string& _validEndDate);
 
@@ -121,25 +121,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * xxx
+                     * 文件下载地址
                      */
                     std::string m_fileUrl;
                     bool m_fileUrlHasBeenSet;
 
                     /**
-                     * xxx
+                     * 文件类型 1-委托书 2-授权书 5-存证证书 11-营业执照
                      */
                     int64_t m_fileType;
                     bool m_fileTypeHasBeenSet;
 
                     /**
-                     * xxx
+                     * 文件有效开始日期
                      */
                     std::string m_validStartDate;
                     bool m_validStartDateHasBeenSet;
 
                     /**
-                     * xxx
+                     * 文件有效截止日期
                      */
                     std::string m_validEndDate;
                     bool m_validEndDateHasBeenSet;

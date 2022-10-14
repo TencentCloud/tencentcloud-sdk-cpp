@@ -59,7 +59,8 @@ DirectConnectTunnelExtra::DirectConnectTunnelExtra() :
     m_tencentBackupIPv6AddressHasBeenSet(false),
     m_bgpIPv6StatusHasBeenSet(false),
     m_customerIPv6AddressHasBeenSet(false),
-    m_jumboEnableHasBeenSet(false)
+    m_jumboEnableHasBeenSet(false),
+    m_highPrecisionBFDEnableHasBeenSet(false)
 {
 }
 
@@ -513,6 +514,16 @@ CoreInternalOutcome DirectConnectTunnelExtra::Deserialize(const rapidjson::Value
         m_jumboEnableHasBeenSet = true;
     }
 
+    if (value.HasMember("HighPrecisionBFDEnable") && !value["HighPrecisionBFDEnable"].IsNull())
+    {
+        if (!value["HighPrecisionBFDEnable"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DirectConnectTunnelExtra.HighPrecisionBFDEnable` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_highPrecisionBFDEnable = value["HighPrecisionBFDEnable"].GetInt64();
+        m_highPrecisionBFDEnableHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -849,6 +860,14 @@ void DirectConnectTunnelExtra::ToJsonObject(rapidjson::Value &value, rapidjson::
         string key = "JumboEnable";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_jumboEnable, allocator);
+    }
+
+    if (m_highPrecisionBFDEnableHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HighPrecisionBFDEnable";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_highPrecisionBFDEnable, allocator);
     }
 
 }
@@ -1476,5 +1495,21 @@ void DirectConnectTunnelExtra::SetJumboEnable(const int64_t& _jumboEnable)
 bool DirectConnectTunnelExtra::JumboEnableHasBeenSet() const
 {
     return m_jumboEnableHasBeenSet;
+}
+
+int64_t DirectConnectTunnelExtra::GetHighPrecisionBFDEnable() const
+{
+    return m_highPrecisionBFDEnable;
+}
+
+void DirectConnectTunnelExtra::SetHighPrecisionBFDEnable(const int64_t& _highPrecisionBFDEnable)
+{
+    m_highPrecisionBFDEnable = _highPrecisionBFDEnable;
+    m_highPrecisionBFDEnableHasBeenSet = true;
+}
+
+bool DirectConnectTunnelExtra::HighPrecisionBFDEnableHasBeenSet() const
+{
+    return m_highPrecisionBFDEnableHasBeenSet;
 }
 

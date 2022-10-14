@@ -38,7 +38,9 @@ CreateClusterRequest::CreateClusterRequest() :
     m_periodHasBeenSet(false),
     m_autoRenewFlagHasBeenSet(false),
     m_dBMajorVersionHasBeenSet(false),
-    m_dBKernelVersionHasBeenSet(false)
+    m_dBKernelVersionHasBeenSet(false),
+    m_storagePayModeHasBeenSet(false),
+    m_storageHasBeenSet(false)
 {
 }
 
@@ -175,6 +177,22 @@ string CreateClusterRequest::ToJsonString() const
         string key = "DBKernelVersion";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_dBKernelVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_storagePayModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StoragePayMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_storagePayMode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_storageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Storage";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_storage, allocator);
     }
 
 
@@ -439,6 +457,38 @@ void CreateClusterRequest::SetDBKernelVersion(const string& _dBKernelVersion)
 bool CreateClusterRequest::DBKernelVersionHasBeenSet() const
 {
     return m_dBKernelVersionHasBeenSet;
+}
+
+string CreateClusterRequest::GetStoragePayMode() const
+{
+    return m_storagePayMode;
+}
+
+void CreateClusterRequest::SetStoragePayMode(const string& _storagePayMode)
+{
+    m_storagePayMode = _storagePayMode;
+    m_storagePayModeHasBeenSet = true;
+}
+
+bool CreateClusterRequest::StoragePayModeHasBeenSet() const
+{
+    return m_storagePayModeHasBeenSet;
+}
+
+uint64_t CreateClusterRequest::GetStorage() const
+{
+    return m_storage;
+}
+
+void CreateClusterRequest::SetStorage(const uint64_t& _storage)
+{
+    m_storage = _storage;
+    m_storageHasBeenSet = true;
+}
+
+bool CreateClusterRequest::StorageHasBeenSet() const
+{
+    return m_storageHasBeenSet;
 }
 
 

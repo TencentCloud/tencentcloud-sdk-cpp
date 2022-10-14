@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool WorkIdHasBeenSet() const;
 
                     /**
-                     * 获取文件的扩展名，比如txt，docx
-                     * @return ContentType 文件的扩展名，比如txt，docx
+                     * 获取文件的扩展名，例如txt，docx
+                     * @return ContentType 文件的扩展名，例如txt，docx
                      */
                     std::string GetContentType() const;
 
                     /**
-                     * 设置文件的扩展名，比如txt，docx
-                     * @param ContentType 文件的扩展名，比如txt，docx
+                     * 设置文件的扩展名，例如txt，docx
+                     * @param ContentType 文件的扩展名，例如txt，docx
                      */
                     void SetContentType(const std::string& _contentType);
 
@@ -123,7 +123,7 @@ namespace TencentCloud
                     bool m_workIdHasBeenSet;
 
                     /**
-                     * 文件的扩展名，比如txt，docx
+                     * 文件的扩展名，例如txt，docx
                      */
                     std::string m_contentType;
                     bool m_contentTypeHasBeenSet;

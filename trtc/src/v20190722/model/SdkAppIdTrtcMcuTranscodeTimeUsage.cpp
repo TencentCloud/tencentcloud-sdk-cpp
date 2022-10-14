@@ -25,7 +25,8 @@ SdkAppIdTrtcMcuTranscodeTimeUsage::SdkAppIdTrtcMcuTranscodeTimeUsage() :
     m_audioTimeHasBeenSet(false),
     m_videoTimeSdHasBeenSet(false),
     m_videoTimeHdHasBeenSet(false),
-    m_videoTimeFhdHasBeenSet(false)
+    m_videoTimeFhdHasBeenSet(false),
+    m_fluxHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,16 @@ CoreInternalOutcome SdkAppIdTrtcMcuTranscodeTimeUsage::Deserialize(const rapidjs
         m_videoTimeFhdHasBeenSet = true;
     }
 
+    if (value.HasMember("Flux") && !value["Flux"].IsNull())
+    {
+        if (!value["Flux"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `SdkAppIdTrtcMcuTranscodeTimeUsage.Flux` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_flux = value["Flux"].GetDouble();
+        m_fluxHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +140,14 @@ void SdkAppIdTrtcMcuTranscodeTimeUsage::ToJsonObject(rapidjson::Value &value, ra
         string key = "VideoTimeFhd";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_videoTimeFhd, allocator);
+    }
+
+    if (m_fluxHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Flux";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_flux, allocator);
     }
 
 }
@@ -212,5 +231,21 @@ void SdkAppIdTrtcMcuTranscodeTimeUsage::SetVideoTimeFhd(const uint64_t& _videoTi
 bool SdkAppIdTrtcMcuTranscodeTimeUsage::VideoTimeFhdHasBeenSet() const
 {
     return m_videoTimeFhdHasBeenSet;
+}
+
+double SdkAppIdTrtcMcuTranscodeTimeUsage::GetFlux() const
+{
+    return m_flux;
+}
+
+void SdkAppIdTrtcMcuTranscodeTimeUsage::SetFlux(const double& _flux)
+{
+    m_flux = _flux;
+    m_fluxHasBeenSet = true;
+}
+
+bool SdkAppIdTrtcMcuTranscodeTimeUsage::FluxHasBeenSet() const
+{
+    return m_fluxHasBeenSet;
 }
 

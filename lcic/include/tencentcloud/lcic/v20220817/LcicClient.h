@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/lcic/v20220817/model/CreateDocumentRequest.h>
+#include <tencentcloud/lcic/v20220817/model/CreateDocumentResponse.h>
 #include <tencentcloud/lcic/v20220817/model/CreateRoomRequest.h>
 #include <tencentcloud/lcic/v20220817/model/CreateRoomResponse.h>
 #include <tencentcloud/lcic/v20220817/model/CreateSupervisorRequest.h>
@@ -37,6 +39,8 @@
 #include <tencentcloud/lcic/v20220817/model/LoginUserResponse.h>
 #include <tencentcloud/lcic/v20220817/model/RegisterUserRequest.h>
 #include <tencentcloud/lcic/v20220817/model/RegisterUserResponse.h>
+#include <tencentcloud/lcic/v20220817/model/SetAppCustomContentRequest.h>
+#include <tencentcloud/lcic/v20220817/model/SetAppCustomContentResponse.h>
 
 
 namespace TencentCloud
@@ -51,6 +55,9 @@ namespace TencentCloud
                 LcicClient(const Credential &credential, const std::string &region);
                 LcicClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::CreateDocumentResponse> CreateDocumentOutcome;
+                typedef std::future<CreateDocumentOutcome> CreateDocumentOutcomeCallable;
+                typedef std::function<void(const LcicClient*, const Model::CreateDocumentRequest&, CreateDocumentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDocumentAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateRoomResponse> CreateRoomOutcome;
                 typedef std::future<CreateRoomOutcome> CreateRoomOutcomeCallable;
                 typedef std::function<void(const LcicClient*, const Model::CreateRoomRequest&, CreateRoomOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRoomAsyncHandler;
@@ -72,8 +79,20 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RegisterUserResponse> RegisterUserOutcome;
                 typedef std::future<RegisterUserOutcome> RegisterUserOutcomeCallable;
                 typedef std::function<void(const LcicClient*, const Model::RegisterUserRequest&, RegisterUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RegisterUserAsyncHandler;
+                typedef Outcome<Core::Error, Model::SetAppCustomContentResponse> SetAppCustomContentOutcome;
+                typedef std::future<SetAppCustomContentOutcome> SetAppCustomContentOutcomeCallable;
+                typedef std::function<void(const LcicClient*, const Model::SetAppCustomContentRequest&, SetAppCustomContentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetAppCustomContentAsyncHandler;
 
 
+
+                /**
+                 *创建房间内可以使用的文档。
+                 * @param req CreateDocumentRequest
+                 * @return CreateDocumentOutcome
+                 */
+                CreateDocumentOutcome CreateDocument(const Model::CreateDocumentRequest &request);
+                void CreateDocumentAsync(const Model::CreateDocumentRequest& request, const CreateDocumentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateDocumentOutcomeCallable CreateDocumentCallable(const Model::CreateDocumentRequest& request);
 
                 /**
                  *创建房间
@@ -137,6 +156,15 @@ namespace TencentCloud
                 RegisterUserOutcome RegisterUser(const Model::RegisterUserRequest &request);
                 void RegisterUserAsync(const Model::RegisterUserRequest& request, const RegisterUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RegisterUserOutcomeCallable RegisterUserCallable(const Model::RegisterUserRequest& request);
+
+                /**
+                 *设置应用的自定义内容，包括应用图标，自定义的代码等。如果已存在，则为更新。更新js、css内容后，要生效也需要调用该接口
+                 * @param req SetAppCustomContentRequest
+                 * @return SetAppCustomContentOutcome
+                 */
+                SetAppCustomContentOutcome SetAppCustomContent(const Model::SetAppCustomContentRequest &request);
+                void SetAppCustomContentAsync(const Model::SetAppCustomContentRequest& request, const SetAppCustomContentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SetAppCustomContentOutcomeCallable SetAppCustomContentCallable(const Model::SetAppCustomContentRequest& request);
 
             };
         }
