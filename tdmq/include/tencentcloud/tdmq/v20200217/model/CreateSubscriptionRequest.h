@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool TopicNameHasBeenSet() const;
 
                     /**
-                     * 获取订阅者名称，不支持中字以及除了短线和下划线外的特殊字符且不超过150个字符。
-                     * @return SubscriptionName 订阅者名称，不支持中字以及除了短线和下划线外的特殊字符且不超过150个字符。
+                     * 获取订阅者名称，不超过128个字符。
+                     * @return SubscriptionName 订阅者名称，不超过128个字符。
                      */
                     std::string GetSubscriptionName() const;
 
                     /**
-                     * 设置订阅者名称，不支持中字以及除了短线和下划线外的特殊字符且不超过150个字符。
-                     * @param SubscriptionName 订阅者名称，不支持中字以及除了短线和下划线外的特殊字符且不超过150个字符。
+                     * 设置订阅者名称，不超过128个字符。
+                     * @param SubscriptionName 订阅者名称，不超过128个字符。
                      */
                     void SetSubscriptionName(const std::string& _subscriptionName);
 
@@ -201,7 +201,7 @@ namespace TencentCloud
                     bool m_topicNameHasBeenSet;
 
                     /**
-                     * 订阅者名称，不支持中字以及除了短线和下划线外的特殊字符且不超过150个字符。
+                     * 订阅者名称，不超过128个字符。
                      */
                     std::string m_subscriptionName;
                     bool m_subscriptionNameHasBeenSet;

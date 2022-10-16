@@ -39,6 +39,8 @@
 #include <tencentcloud/wedata/v20210820/model/CreateTaskResponse.h>
 #include <tencentcloud/wedata/v20210820/model/CreateWorkflowRequest.h>
 #include <tencentcloud/wedata/v20210820/model/CreateWorkflowResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DeleteCustomFunctionRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DeleteCustomFunctionResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DeleteDataSourcesRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DeleteDataSourcesResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DeleteFolderRequest.h>
@@ -57,8 +59,14 @@
 #include <tencentcloud/wedata/v20210820/model/DescribeFolderListResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeFolderWorkflowListRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeFolderWorkflowListResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeFunctionKindsRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeFunctionKindsResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeFunctionTypesRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeFunctionTypesResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeInstanceLogsRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeInstanceLogsResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeOrganizationalFunctionsRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeOrganizationalFunctionsResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeProjectRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeProjectResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeRelatedInstancesRequest.h>
@@ -105,8 +113,12 @@
 #include <tencentcloud/wedata/v20210820/model/RerunInstancesResponse.h>
 #include <tencentcloud/wedata/v20210820/model/RunTaskRequest.h>
 #include <tencentcloud/wedata/v20210820/model/RunTaskResponse.h>
+#include <tencentcloud/wedata/v20210820/model/SaveCustomFunctionRequest.h>
+#include <tencentcloud/wedata/v20210820/model/SaveCustomFunctionResponse.h>
 #include <tencentcloud/wedata/v20210820/model/SetTaskAlarmNewRequest.h>
 #include <tencentcloud/wedata/v20210820/model/SetTaskAlarmNewResponse.h>
+#include <tencentcloud/wedata/v20210820/model/SubmitCustomFunctionRequest.h>
+#include <tencentcloud/wedata/v20210820/model/SubmitCustomFunctionResponse.h>
 #include <tencentcloud/wedata/v20210820/model/SubmitTaskRequest.h>
 #include <tencentcloud/wedata/v20210820/model/SubmitTaskResponse.h>
 #include <tencentcloud/wedata/v20210820/model/SubmitWorkflowRequest.h>
@@ -151,6 +163,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateWorkflowResponse> CreateWorkflowOutcome;
                 typedef std::future<CreateWorkflowOutcome> CreateWorkflowOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::CreateWorkflowRequest&, CreateWorkflowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateWorkflowAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteCustomFunctionResponse> DeleteCustomFunctionOutcome;
+                typedef std::future<DeleteCustomFunctionOutcome> DeleteCustomFunctionOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DeleteCustomFunctionRequest&, DeleteCustomFunctionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCustomFunctionAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteDataSourcesResponse> DeleteDataSourcesOutcome;
                 typedef std::future<DeleteDataSourcesOutcome> DeleteDataSourcesOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DeleteDataSourcesRequest&, DeleteDataSourcesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDataSourcesAsyncHandler;
@@ -178,9 +193,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeFolderWorkflowListResponse> DescribeFolderWorkflowListOutcome;
                 typedef std::future<DescribeFolderWorkflowListOutcome> DescribeFolderWorkflowListOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeFolderWorkflowListRequest&, DescribeFolderWorkflowListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFolderWorkflowListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeFunctionKindsResponse> DescribeFunctionKindsOutcome;
+                typedef std::future<DescribeFunctionKindsOutcome> DescribeFunctionKindsOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeFunctionKindsRequest&, DescribeFunctionKindsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFunctionKindsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeFunctionTypesResponse> DescribeFunctionTypesOutcome;
+                typedef std::future<DescribeFunctionTypesOutcome> DescribeFunctionTypesOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeFunctionTypesRequest&, DescribeFunctionTypesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFunctionTypesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeInstanceLogsResponse> DescribeInstanceLogsOutcome;
                 typedef std::future<DescribeInstanceLogsOutcome> DescribeInstanceLogsOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeInstanceLogsRequest&, DescribeInstanceLogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceLogsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeOrganizationalFunctionsResponse> DescribeOrganizationalFunctionsOutcome;
+                typedef std::future<DescribeOrganizationalFunctionsOutcome> DescribeOrganizationalFunctionsOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeOrganizationalFunctionsRequest&, DescribeOrganizationalFunctionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOrganizationalFunctionsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeProjectResponse> DescribeProjectOutcome;
                 typedef std::future<DescribeProjectOutcome> DescribeProjectOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeProjectRequest&, DescribeProjectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProjectAsyncHandler;
@@ -250,9 +274,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RunTaskResponse> RunTaskOutcome;
                 typedef std::future<RunTaskOutcome> RunTaskOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::RunTaskRequest&, RunTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RunTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::SaveCustomFunctionResponse> SaveCustomFunctionOutcome;
+                typedef std::future<SaveCustomFunctionOutcome> SaveCustomFunctionOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::SaveCustomFunctionRequest&, SaveCustomFunctionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SaveCustomFunctionAsyncHandler;
                 typedef Outcome<Core::Error, Model::SetTaskAlarmNewResponse> SetTaskAlarmNewOutcome;
                 typedef std::future<SetTaskAlarmNewOutcome> SetTaskAlarmNewOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::SetTaskAlarmNewRequest&, SetTaskAlarmNewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetTaskAlarmNewAsyncHandler;
+                typedef Outcome<Core::Error, Model::SubmitCustomFunctionResponse> SubmitCustomFunctionOutcome;
+                typedef std::future<SubmitCustomFunctionOutcome> SubmitCustomFunctionOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::SubmitCustomFunctionRequest&, SubmitCustomFunctionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SubmitCustomFunctionAsyncHandler;
                 typedef Outcome<Core::Error, Model::SubmitTaskResponse> SubmitTaskOutcome;
                 typedef std::future<SubmitTaskOutcome> SubmitTaskOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::SubmitTaskRequest&, SubmitTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SubmitTaskAsyncHandler;
@@ -346,6 +376,15 @@ namespace TencentCloud
                 CreateWorkflowOutcomeCallable CreateWorkflowCallable(const Model::CreateWorkflowRequest& request);
 
                 /**
+                 *删除用户自定义函数
+                 * @param req DeleteCustomFunctionRequest
+                 * @return DeleteCustomFunctionOutcome
+                 */
+                DeleteCustomFunctionOutcome DeleteCustomFunction(const Model::DeleteCustomFunctionRequest &request);
+                void DeleteCustomFunctionAsync(const Model::DeleteCustomFunctionRequest& request, const DeleteCustomFunctionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteCustomFunctionOutcomeCallable DeleteCustomFunctionCallable(const Model::DeleteCustomFunctionRequest& request);
+
+                /**
                  *<p style="color:red;">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>
 删除数据源
                  * @param req DeleteDataSourcesRequest
@@ -436,6 +475,24 @@ namespace TencentCloud
                 DescribeFolderWorkflowListOutcomeCallable DescribeFolderWorkflowListCallable(const Model::DescribeFolderWorkflowListRequest& request);
 
                 /**
+                 *查询函数分类
+                 * @param req DescribeFunctionKindsRequest
+                 * @return DescribeFunctionKindsOutcome
+                 */
+                DescribeFunctionKindsOutcome DescribeFunctionKinds(const Model::DescribeFunctionKindsRequest &request);
+                void DescribeFunctionKindsAsync(const Model::DescribeFunctionKindsRequest& request, const DescribeFunctionKindsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeFunctionKindsOutcomeCallable DescribeFunctionKindsCallable(const Model::DescribeFunctionKindsRequest& request);
+
+                /**
+                 *查询函数类型
+                 * @param req DescribeFunctionTypesRequest
+                 * @return DescribeFunctionTypesOutcome
+                 */
+                DescribeFunctionTypesOutcome DescribeFunctionTypes(const Model::DescribeFunctionTypesRequest &request);
+                void DescribeFunctionTypesAsync(const Model::DescribeFunctionTypesRequest& request, const DescribeFunctionTypesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeFunctionTypesOutcomeCallable DescribeFunctionTypesCallable(const Model::DescribeFunctionTypesRequest& request);
+
+                /**
                  *<p style="color:red;">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>
 获取实例日志列表
                  * @param req DescribeInstanceLogsRequest
@@ -444,6 +501,15 @@ namespace TencentCloud
                 DescribeInstanceLogsOutcome DescribeInstanceLogs(const Model::DescribeInstanceLogsRequest &request);
                 void DescribeInstanceLogsAsync(const Model::DescribeInstanceLogsRequest& request, const DescribeInstanceLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeInstanceLogsOutcomeCallable DescribeInstanceLogsCallable(const Model::DescribeInstanceLogsRequest& request);
+
+                /**
+                 *查询全量函数
+                 * @param req DescribeOrganizationalFunctionsRequest
+                 * @return DescribeOrganizationalFunctionsOutcome
+                 */
+                DescribeOrganizationalFunctionsOutcome DescribeOrganizationalFunctions(const Model::DescribeOrganizationalFunctionsRequest &request);
+                void DescribeOrganizationalFunctionsAsync(const Model::DescribeOrganizationalFunctionsRequest& request, const DescribeOrganizationalFunctionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeOrganizationalFunctionsOutcomeCallable DescribeOrganizationalFunctionsCallable(const Model::DescribeOrganizationalFunctionsRequest& request);
 
                 /**
                  *获取项目信息
@@ -676,6 +742,15 @@ namespace TencentCloud
                 RunTaskOutcomeCallable RunTaskCallable(const Model::RunTaskRequest& request);
 
                 /**
+                 *保存用户自定义函数
+                 * @param req SaveCustomFunctionRequest
+                 * @return SaveCustomFunctionOutcome
+                 */
+                SaveCustomFunctionOutcome SaveCustomFunction(const Model::SaveCustomFunctionRequest &request);
+                void SaveCustomFunctionAsync(const Model::SaveCustomFunctionRequest& request, const SaveCustomFunctionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SaveCustomFunctionOutcomeCallable SaveCustomFunctionCallable(const Model::SaveCustomFunctionRequest& request);
+
+                /**
                  *<p style="color:red;">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>
 设置任务告警，新建/更新告警信息（最新）
                  * @param req SetTaskAlarmNewRequest
@@ -684,6 +759,15 @@ namespace TencentCloud
                 SetTaskAlarmNewOutcome SetTaskAlarmNew(const Model::SetTaskAlarmNewRequest &request);
                 void SetTaskAlarmNewAsync(const Model::SetTaskAlarmNewRequest& request, const SetTaskAlarmNewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SetTaskAlarmNewOutcomeCallable SetTaskAlarmNewCallable(const Model::SetTaskAlarmNewRequest& request);
+
+                /**
+                 *提交自定义函数
+                 * @param req SubmitCustomFunctionRequest
+                 * @return SubmitCustomFunctionOutcome
+                 */
+                SubmitCustomFunctionOutcome SubmitCustomFunction(const Model::SubmitCustomFunctionRequest &request);
+                void SubmitCustomFunctionAsync(const Model::SubmitCustomFunctionRequest& request, const SubmitCustomFunctionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SubmitCustomFunctionOutcomeCallable SubmitCustomFunctionCallable(const Model::SubmitCustomFunctionRequest& request);
 
                 /**
                  *<p style="color:red;">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>

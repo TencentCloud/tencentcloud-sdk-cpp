@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取xxx
-                     * @return ProtectURLInfos xxx
+                     * 获取保护网址列表
+                     * @return ProtectURLInfos 保护网址列表
                      */
                     std::vector<ProtectURLInfo> GetProtectURLInfos() const;
 
@@ -57,8 +57,8 @@ namespace TencentCloud
                     bool ProtectURLInfosHasBeenSet() const;
 
                     /**
-                     * 获取xxx
-                     * @return TotalCount xxx
+                     * 获取总量
+                     * @return TotalCount 总量
                      */
                     int64_t GetTotalCount() const;
 
@@ -71,13 +71,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * xxx
+                     * 保护网址列表
                      */
                     std::vector<ProtectURLInfo> m_protectURLInfos;
                     bool m_protectURLInfosHasBeenSet;
 
                     /**
-                     * xxx
+                     * 总量
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;

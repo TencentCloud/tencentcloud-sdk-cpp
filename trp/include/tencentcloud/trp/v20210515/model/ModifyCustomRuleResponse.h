@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_ESSBASIC_V20210526_MODEL_CREATECHANNELFLOWEVIDENCEREPORTRESPONSE_H_
-#define TENCENTCLOUD_ESSBASIC_V20210526_MODEL_CREATECHANNELFLOWEVIDENCEREPORTRESPONSE_H_
+#ifndef TENCENTCLOUD_TRP_V20210515_MODEL_MODIFYCUSTOMRULERESPONSE_H_
+#define TENCENTCLOUD_TRP_V20210515_MODEL_MODIFYCUSTOMRULERESPONSE_H_
 
 #include <string>
 #include <vector>
@@ -25,43 +25,46 @@
 
 namespace TencentCloud
 {
-    namespace Essbasic
+    namespace Trp
     {
-        namespace V20210526
+        namespace V20210515
         {
             namespace Model
             {
                 /**
-                * CreateChannelFlowEvidenceReport返回参数结构体
+                * ModifyCustomRule返回参数结构体
                 */
-                class CreateChannelFlowEvidenceReportResponse : public AbstractModel
+                class ModifyCustomRuleResponse : public AbstractModel
                 {
                 public:
-                    CreateChannelFlowEvidenceReportResponse();
-                    ~CreateChannelFlowEvidenceReportResponse() = default;
+                    ModifyCustomRuleResponse();
+                    ~ModifyCustomRuleResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取出证报告 URL（有效五分钟）
-                     * @return ReportUrl 出证报告 URL（有效五分钟）
+                     * 获取码规则ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CustomId 码规则ID
+注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::string GetReportUrl() const;
+                    std::string GetCustomId() const;
 
                     /**
-                     * 判断参数 ReportUrl 是否已赋值
-                     * @return ReportUrl 是否已赋值
+                     * 判断参数 CustomId 是否已赋值
+                     * @return CustomId 是否已赋值
                      */
-                    bool ReportUrlHasBeenSet() const;
+                    bool CustomIdHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 出证报告 URL（有效五分钟）
+                     * 码规则ID
+注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::string m_reportUrl;
-                    bool m_reportUrlHasBeenSet;
+                    std::string m_customId;
+                    bool m_customIdHasBeenSet;
 
                 };
             }
@@ -69,4 +72,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_ESSBASIC_V20210526_MODEL_CREATECHANNELFLOWEVIDENCEREPORTRESPONSE_H_
+#endif // !TENCENTCLOUD_TRP_V20210515_MODEL_MODIFYCUSTOMRULERESPONSE_H_

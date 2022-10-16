@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取xxx
-                     * @return ReportFakeURLInfos xxx
+                     * 获取举报网站列表
+                     * @return ReportFakeURLInfos 举报网站列表
                      */
                     std::vector<ReportFakeURLInfo> GetReportFakeURLInfos() const;
 
@@ -57,8 +57,8 @@ namespace TencentCloud
                     bool ReportFakeURLInfosHasBeenSet() const;
 
                     /**
-                     * 获取xxx
-                     * @return TotalCount xxx
+                     * 获取总量
+                     * @return TotalCount 总量
                      */
                     int64_t GetTotalCount() const;
 
@@ -71,13 +71,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * xxx
+                     * 举报网站列表
                      */
                     std::vector<ReportFakeURLInfo> m_reportFakeURLInfos;
                     bool m_reportFakeURLInfosHasBeenSet;
 
                     /**
-                     * xxx
+                     * 总量
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;

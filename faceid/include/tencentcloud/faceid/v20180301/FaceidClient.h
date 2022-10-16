@@ -23,6 +23,12 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/faceid/v20180301/model/ApplyLivenessTokenRequest.h>
+#include <tencentcloud/faceid/v20180301/model/ApplyLivenessTokenResponse.h>
+#include <tencentcloud/faceid/v20180301/model/ApplySdkVerificationTokenRequest.h>
+#include <tencentcloud/faceid/v20180301/model/ApplySdkVerificationTokenResponse.h>
+#include <tencentcloud/faceid/v20180301/model/ApplyWebVerificationTokenRequest.h>
+#include <tencentcloud/faceid/v20180301/model/ApplyWebVerificationTokenResponse.h>
 #include <tencentcloud/faceid/v20180301/model/BankCard2EVerificationRequest.h>
 #include <tencentcloud/faceid/v20180301/model/BankCard2EVerificationResponse.h>
 #include <tencentcloud/faceid/v20180301/model/BankCard4EVerificationRequest.h>
@@ -39,10 +45,16 @@
 #include <tencentcloud/faceid/v20180301/model/CheckIdNameDateResponse.h>
 #include <tencentcloud/faceid/v20180301/model/CheckPhoneAndNameRequest.h>
 #include <tencentcloud/faceid/v20180301/model/CheckPhoneAndNameResponse.h>
+#include <tencentcloud/faceid/v20180301/model/CreateUploadUrlRequest.h>
+#include <tencentcloud/faceid/v20180301/model/CreateUploadUrlResponse.h>
 #include <tencentcloud/faceid/v20180301/model/DetectAuthRequest.h>
 #include <tencentcloud/faceid/v20180301/model/DetectAuthResponse.h>
+#include <tencentcloud/faceid/v20180301/model/DetectReflectLivenessAndCompareRequest.h>
+#include <tencentcloud/faceid/v20180301/model/DetectReflectLivenessAndCompareResponse.h>
 #include <tencentcloud/faceid/v20180301/model/EncryptedPhoneVerificationRequest.h>
 #include <tencentcloud/faceid/v20180301/model/EncryptedPhoneVerificationResponse.h>
+#include <tencentcloud/faceid/v20180301/model/GenerateReflectSequenceRequest.h>
+#include <tencentcloud/faceid/v20180301/model/GenerateReflectSequenceResponse.h>
 #include <tencentcloud/faceid/v20180301/model/GetActionSequenceRequest.h>
 #include <tencentcloud/faceid/v20180301/model/GetActionSequenceResponse.h>
 #include <tencentcloud/faceid/v20180301/model/GetDetectInfoRequest.h>
@@ -59,12 +71,18 @@
 #include <tencentcloud/faceid/v20180301/model/GetFaceIdTokenResponse.h>
 #include <tencentcloud/faceid/v20180301/model/GetLiveCodeRequest.h>
 #include <tencentcloud/faceid/v20180301/model/GetLiveCodeResponse.h>
+#include <tencentcloud/faceid/v20180301/model/GetLivenessResultRequest.h>
+#include <tencentcloud/faceid/v20180301/model/GetLivenessResultResponse.h>
 #include <tencentcloud/faceid/v20180301/model/GetRealNameAuthResultRequest.h>
 #include <tencentcloud/faceid/v20180301/model/GetRealNameAuthResultResponse.h>
 #include <tencentcloud/faceid/v20180301/model/GetRealNameAuthTokenRequest.h>
 #include <tencentcloud/faceid/v20180301/model/GetRealNameAuthTokenResponse.h>
+#include <tencentcloud/faceid/v20180301/model/GetSdkVerificationResultRequest.h>
+#include <tencentcloud/faceid/v20180301/model/GetSdkVerificationResultResponse.h>
 #include <tencentcloud/faceid/v20180301/model/GetWeChatBillDetailsRequest.h>
 #include <tencentcloud/faceid/v20180301/model/GetWeChatBillDetailsResponse.h>
+#include <tencentcloud/faceid/v20180301/model/GetWebVerificationResultRequest.h>
+#include <tencentcloud/faceid/v20180301/model/GetWebVerificationResultResponse.h>
 #include <tencentcloud/faceid/v20180301/model/IdCardOCRVerificationRequest.h>
 #include <tencentcloud/faceid/v20180301/model/IdCardOCRVerificationResponse.h>
 #include <tencentcloud/faceid/v20180301/model/IdCardVerificationRequest.h>
@@ -93,6 +111,8 @@
 #include <tencentcloud/faceid/v20180301/model/PhoneVerificationCTCCResponse.h>
 #include <tencentcloud/faceid/v20180301/model/PhoneVerificationCUCCRequest.h>
 #include <tencentcloud/faceid/v20180301/model/PhoneVerificationCUCCResponse.h>
+#include <tencentcloud/faceid/v20180301/model/VideoLivenessCompareRequest.h>
+#include <tencentcloud/faceid/v20180301/model/VideoLivenessCompareResponse.h>
 
 
 namespace TencentCloud
@@ -107,6 +127,15 @@ namespace TencentCloud
                 FaceidClient(const Credential &credential, const std::string &region);
                 FaceidClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::ApplyLivenessTokenResponse> ApplyLivenessTokenOutcome;
+                typedef std::future<ApplyLivenessTokenOutcome> ApplyLivenessTokenOutcomeCallable;
+                typedef std::function<void(const FaceidClient*, const Model::ApplyLivenessTokenRequest&, ApplyLivenessTokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ApplyLivenessTokenAsyncHandler;
+                typedef Outcome<Core::Error, Model::ApplySdkVerificationTokenResponse> ApplySdkVerificationTokenOutcome;
+                typedef std::future<ApplySdkVerificationTokenOutcome> ApplySdkVerificationTokenOutcomeCallable;
+                typedef std::function<void(const FaceidClient*, const Model::ApplySdkVerificationTokenRequest&, ApplySdkVerificationTokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ApplySdkVerificationTokenAsyncHandler;
+                typedef Outcome<Core::Error, Model::ApplyWebVerificationTokenResponse> ApplyWebVerificationTokenOutcome;
+                typedef std::future<ApplyWebVerificationTokenOutcome> ApplyWebVerificationTokenOutcomeCallable;
+                typedef std::function<void(const FaceidClient*, const Model::ApplyWebVerificationTokenRequest&, ApplyWebVerificationTokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ApplyWebVerificationTokenAsyncHandler;
                 typedef Outcome<Core::Error, Model::BankCard2EVerificationResponse> BankCard2EVerificationOutcome;
                 typedef std::future<BankCard2EVerificationOutcome> BankCard2EVerificationOutcomeCallable;
                 typedef std::function<void(const FaceidClient*, const Model::BankCard2EVerificationRequest&, BankCard2EVerificationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BankCard2EVerificationAsyncHandler;
@@ -131,12 +160,21 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CheckPhoneAndNameResponse> CheckPhoneAndNameOutcome;
                 typedef std::future<CheckPhoneAndNameOutcome> CheckPhoneAndNameOutcomeCallable;
                 typedef std::function<void(const FaceidClient*, const Model::CheckPhoneAndNameRequest&, CheckPhoneAndNameOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckPhoneAndNameAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateUploadUrlResponse> CreateUploadUrlOutcome;
+                typedef std::future<CreateUploadUrlOutcome> CreateUploadUrlOutcomeCallable;
+                typedef std::function<void(const FaceidClient*, const Model::CreateUploadUrlRequest&, CreateUploadUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateUploadUrlAsyncHandler;
                 typedef Outcome<Core::Error, Model::DetectAuthResponse> DetectAuthOutcome;
                 typedef std::future<DetectAuthOutcome> DetectAuthOutcomeCallable;
                 typedef std::function<void(const FaceidClient*, const Model::DetectAuthRequest&, DetectAuthOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DetectAuthAsyncHandler;
+                typedef Outcome<Core::Error, Model::DetectReflectLivenessAndCompareResponse> DetectReflectLivenessAndCompareOutcome;
+                typedef std::future<DetectReflectLivenessAndCompareOutcome> DetectReflectLivenessAndCompareOutcomeCallable;
+                typedef std::function<void(const FaceidClient*, const Model::DetectReflectLivenessAndCompareRequest&, DetectReflectLivenessAndCompareOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DetectReflectLivenessAndCompareAsyncHandler;
                 typedef Outcome<Core::Error, Model::EncryptedPhoneVerificationResponse> EncryptedPhoneVerificationOutcome;
                 typedef std::future<EncryptedPhoneVerificationOutcome> EncryptedPhoneVerificationOutcomeCallable;
                 typedef std::function<void(const FaceidClient*, const Model::EncryptedPhoneVerificationRequest&, EncryptedPhoneVerificationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EncryptedPhoneVerificationAsyncHandler;
+                typedef Outcome<Core::Error, Model::GenerateReflectSequenceResponse> GenerateReflectSequenceOutcome;
+                typedef std::future<GenerateReflectSequenceOutcome> GenerateReflectSequenceOutcomeCallable;
+                typedef std::function<void(const FaceidClient*, const Model::GenerateReflectSequenceRequest&, GenerateReflectSequenceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GenerateReflectSequenceAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetActionSequenceResponse> GetActionSequenceOutcome;
                 typedef std::future<GetActionSequenceOutcome> GetActionSequenceOutcomeCallable;
                 typedef std::function<void(const FaceidClient*, const Model::GetActionSequenceRequest&, GetActionSequenceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetActionSequenceAsyncHandler;
@@ -161,15 +199,24 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetLiveCodeResponse> GetLiveCodeOutcome;
                 typedef std::future<GetLiveCodeOutcome> GetLiveCodeOutcomeCallable;
                 typedef std::function<void(const FaceidClient*, const Model::GetLiveCodeRequest&, GetLiveCodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetLiveCodeAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetLivenessResultResponse> GetLivenessResultOutcome;
+                typedef std::future<GetLivenessResultOutcome> GetLivenessResultOutcomeCallable;
+                typedef std::function<void(const FaceidClient*, const Model::GetLivenessResultRequest&, GetLivenessResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetLivenessResultAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetRealNameAuthResultResponse> GetRealNameAuthResultOutcome;
                 typedef std::future<GetRealNameAuthResultOutcome> GetRealNameAuthResultOutcomeCallable;
                 typedef std::function<void(const FaceidClient*, const Model::GetRealNameAuthResultRequest&, GetRealNameAuthResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetRealNameAuthResultAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetRealNameAuthTokenResponse> GetRealNameAuthTokenOutcome;
                 typedef std::future<GetRealNameAuthTokenOutcome> GetRealNameAuthTokenOutcomeCallable;
                 typedef std::function<void(const FaceidClient*, const Model::GetRealNameAuthTokenRequest&, GetRealNameAuthTokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetRealNameAuthTokenAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetSdkVerificationResultResponse> GetSdkVerificationResultOutcome;
+                typedef std::future<GetSdkVerificationResultOutcome> GetSdkVerificationResultOutcomeCallable;
+                typedef std::function<void(const FaceidClient*, const Model::GetSdkVerificationResultRequest&, GetSdkVerificationResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetSdkVerificationResultAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetWeChatBillDetailsResponse> GetWeChatBillDetailsOutcome;
                 typedef std::future<GetWeChatBillDetailsOutcome> GetWeChatBillDetailsOutcomeCallable;
                 typedef std::function<void(const FaceidClient*, const Model::GetWeChatBillDetailsRequest&, GetWeChatBillDetailsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetWeChatBillDetailsAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetWebVerificationResultResponse> GetWebVerificationResultOutcome;
+                typedef std::future<GetWebVerificationResultOutcome> GetWebVerificationResultOutcomeCallable;
+                typedef std::function<void(const FaceidClient*, const Model::GetWebVerificationResultRequest&, GetWebVerificationResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetWebVerificationResultAsyncHandler;
                 typedef Outcome<Core::Error, Model::IdCardOCRVerificationResponse> IdCardOCRVerificationOutcome;
                 typedef std::future<IdCardOCRVerificationOutcome> IdCardOCRVerificationOutcomeCallable;
                 typedef std::function<void(const FaceidClient*, const Model::IdCardOCRVerificationRequest&, IdCardOCRVerificationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> IdCardOCRVerificationAsyncHandler;
@@ -212,8 +259,38 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::PhoneVerificationCUCCResponse> PhoneVerificationCUCCOutcome;
                 typedef std::future<PhoneVerificationCUCCOutcome> PhoneVerificationCUCCOutcomeCallable;
                 typedef std::function<void(const FaceidClient*, const Model::PhoneVerificationCUCCRequest&, PhoneVerificationCUCCOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PhoneVerificationCUCCAsyncHandler;
+                typedef Outcome<Core::Error, Model::VideoLivenessCompareResponse> VideoLivenessCompareOutcome;
+                typedef std::future<VideoLivenessCompareOutcome> VideoLivenessCompareOutcomeCallable;
+                typedef std::function<void(const FaceidClient*, const Model::VideoLivenessCompareRequest&, VideoLivenessCompareOutcome, const std::shared_ptr<const AsyncCallerContext>&)> VideoLivenessCompareAsyncHandler;
 
 
+
+                /**
+                 *每次调用活体服务前，需要先调用本接口获取Token，需要保存此Token用来发起核验流程，并且在核验完成后获取结果信息。
+                 * @param req ApplyLivenessTokenRequest
+                 * @return ApplyLivenessTokenOutcome
+                 */
+                ApplyLivenessTokenOutcome ApplyLivenessToken(const Model::ApplyLivenessTokenRequest &request);
+                void ApplyLivenessTokenAsync(const Model::ApplyLivenessTokenRequest& request, const ApplyLivenessTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ApplyLivenessTokenOutcomeCallable ApplyLivenessTokenCallable(const Model::ApplyLivenessTokenRequest& request);
+
+                /**
+                 *每次调用Web核验服务前，需要先调用本接口获取Token，需要保存此Token用来发起核验流程，并且在核验完成后获取结果信息。
+                 * @param req ApplySdkVerificationTokenRequest
+                 * @return ApplySdkVerificationTokenOutcome
+                 */
+                ApplySdkVerificationTokenOutcome ApplySdkVerificationToken(const Model::ApplySdkVerificationTokenRequest &request);
+                void ApplySdkVerificationTokenAsync(const Model::ApplySdkVerificationTokenRequest& request, const ApplySdkVerificationTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ApplySdkVerificationTokenOutcomeCallable ApplySdkVerificationTokenCallable(const Model::ApplySdkVerificationTokenRequest& request);
+
+                /**
+                 *每次调用Web核验服务前，需要先调用本接口获取BizToken，需要保存此BizToken用来发起核验流程，并且在核验完成后获取结果信息。
+                 * @param req ApplyWebVerificationTokenRequest
+                 * @return ApplyWebVerificationTokenOutcome
+                 */
+                ApplyWebVerificationTokenOutcome ApplyWebVerificationToken(const Model::ApplyWebVerificationTokenRequest &request);
+                void ApplyWebVerificationTokenAsync(const Model::ApplyWebVerificationTokenRequest& request, const ApplyWebVerificationTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ApplyWebVerificationTokenOutcomeCallable ApplyWebVerificationTokenCallable(const Model::ApplyWebVerificationTokenRequest& request);
 
                 /**
                  *本接口用于校验姓名和银行卡号的真实性和一致性。
@@ -289,6 +366,16 @@ namespace TencentCloud
                 CheckPhoneAndNameOutcomeCallable CheckPhoneAndNameCallable(const Model::CheckPhoneAndNameRequest& request);
 
                 /**
+                 *生成一个临时的UploadUrl用于上传资源文件，客户需要使用HTTP PUT方法上传，上传完成后将ResourceUrl传给TargetAction对应接口完成资源传递（具体字段由使用场景确定）。
+数据存储于Region参数对应地域的腾讯云COS Bucket，存储有效期2小时。
+                 * @param req CreateUploadUrlRequest
+                 * @return CreateUploadUrlOutcome
+                 */
+                CreateUploadUrlOutcome CreateUploadUrl(const Model::CreateUploadUrlRequest &request);
+                void CreateUploadUrlAsync(const Model::CreateUploadUrlRequest& request, const CreateUploadUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateUploadUrlOutcomeCallable CreateUploadUrlCallable(const Model::CreateUploadUrlRequest& request);
+
+                /**
                  *每次调用人脸核身SaaS化服务前，需先调用本接口获取BizToken，用来串联核身流程，在验证完成后，用于获取验证结果信息。
                  * @param req DetectAuthRequest
                  * @return DetectAuthOutcome
@@ -298,6 +385,16 @@ namespace TencentCloud
                 DetectAuthOutcomeCallable DetectAuthCallable(const Model::DetectAuthRequest& request);
 
                 /**
+                 *使用活体比对（光线）SDK生成的数据包检测活体，并和传入的图片进行比对。
+图片和SDK生成的数据内容必须存储在腾讯云COS，COS Bucket所在的Region需要和本接口请求的Region保持一致，推荐使用生成上传链接接口来完成资源传递。
+                 * @param req DetectReflectLivenessAndCompareRequest
+                 * @return DetectReflectLivenessAndCompareOutcome
+                 */
+                DetectReflectLivenessAndCompareOutcome DetectReflectLivenessAndCompare(const Model::DetectReflectLivenessAndCompareRequest &request);
+                void DetectReflectLivenessAndCompareAsync(const Model::DetectReflectLivenessAndCompareRequest& request, const DetectReflectLivenessAndCompareAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DetectReflectLivenessAndCompareOutcomeCallable DetectReflectLivenessAndCompareCallable(const Model::DetectReflectLivenessAndCompareRequest& request);
+
+                /**
                  *本接口用于校验手机号、姓名和身份证号的真实性和一致性，入参支持明文、MD5和SHA256加密传输。
                  * @param req EncryptedPhoneVerificationRequest
                  * @return EncryptedPhoneVerificationOutcome
@@ -305,6 +402,16 @@ namespace TencentCloud
                 EncryptedPhoneVerificationOutcome EncryptedPhoneVerification(const Model::EncryptedPhoneVerificationRequest &request);
                 void EncryptedPhoneVerificationAsync(const Model::EncryptedPhoneVerificationRequest& request, const EncryptedPhoneVerificationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 EncryptedPhoneVerificationOutcomeCallable EncryptedPhoneVerificationCallable(const Model::EncryptedPhoneVerificationRequest& request);
+
+                /**
+                 *根据活体比对（光线）SDK采集的机器信息生成适合的光线序列，将光线序列传入SDK后开启核身。
+SDK生成的数据内容必须存储在腾讯云COS，COS Bucket所在的Region需要和本接口请求的Region保持一致，推荐使用生成上传链接接口来完成资源传递。
+                 * @param req GenerateReflectSequenceRequest
+                 * @return GenerateReflectSequenceOutcome
+                 */
+                GenerateReflectSequenceOutcome GenerateReflectSequence(const Model::GenerateReflectSequenceRequest &request);
+                void GenerateReflectSequenceAsync(const Model::GenerateReflectSequenceRequest& request, const GenerateReflectSequenceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GenerateReflectSequenceOutcomeCallable GenerateReflectSequenceCallable(const Model::GenerateReflectSequenceRequest& request);
 
                 /**
                  *使用动作活体检测模式前，需调用本接口获取动作顺序。
@@ -379,6 +486,15 @@ namespace TencentCloud
                 GetLiveCodeOutcomeCallable GetLiveCodeCallable(const Model::GetLiveCodeRequest& request);
 
                 /**
+                 *完成活体检测流程后，用核验令牌（SdkToken）调用本接口查询对应核验结果信息。Token申请后2小时内有效，可多次调用。
+                 * @param req GetLivenessResultRequest
+                 * @return GetLivenessResultOutcome
+                 */
+                GetLivenessResultOutcome GetLivenessResult(const Model::GetLivenessResultRequest &request);
+                void GetLivenessResultAsync(const Model::GetLivenessResultRequest& request, const GetLivenessResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetLivenessResultOutcomeCallable GetLivenessResultCallable(const Model::GetLivenessResultRequest& request);
+
+                /**
                  *获取微信实名认证结果
                  * @param req GetRealNameAuthResultRequest
                  * @return GetRealNameAuthResultOutcome
@@ -398,6 +514,15 @@ namespace TencentCloud
                 GetRealNameAuthTokenOutcomeCallable GetRealNameAuthTokenCallable(const Model::GetRealNameAuthTokenRequest& request);
 
                 /**
+                 *完成Sdk核验流程后，用核验令牌（Token）调用本接口查询对应核验结果信息。Token申请后三天内有效，可多次调用。
+                 * @param req GetSdkVerificationResultRequest
+                 * @return GetSdkVerificationResultOutcome
+                 */
+                GetSdkVerificationResultOutcome GetSdkVerificationResult(const Model::GetSdkVerificationResultRequest &request);
+                void GetSdkVerificationResultAsync(const Model::GetSdkVerificationResultRequest& request, const GetSdkVerificationResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetSdkVerificationResultOutcomeCallable GetSdkVerificationResultCallable(const Model::GetSdkVerificationResultRequest& request);
+
+                /**
                  *查询微信渠道服务（微信小程序、微信原生H5、微信普通H5）的账单明细及计费状态。
                  * @param req GetWeChatBillDetailsRequest
                  * @return GetWeChatBillDetailsOutcome
@@ -405,6 +530,15 @@ namespace TencentCloud
                 GetWeChatBillDetailsOutcome GetWeChatBillDetails(const Model::GetWeChatBillDetailsRequest &request);
                 void GetWeChatBillDetailsAsync(const Model::GetWeChatBillDetailsRequest& request, const GetWeChatBillDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GetWeChatBillDetailsOutcomeCallable GetWeChatBillDetailsCallable(const Model::GetWeChatBillDetailsRequest& request);
+
+                /**
+                 *完成Web核验流程后，用核验令牌（BizToken）调用本接口查询对应核验结果信息。BizToken申请后三天内（3\*24\*3,600秒）有效，可多次调用。
+                 * @param req GetWebVerificationResultRequest
+                 * @return GetWebVerificationResultOutcome
+                 */
+                GetWebVerificationResultOutcome GetWebVerificationResult(const Model::GetWebVerificationResultRequest &request);
+                void GetWebVerificationResultAsync(const Model::GetWebVerificationResultRequest& request, const GetWebVerificationResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetWebVerificationResultOutcomeCallable GetWebVerificationResultCallable(const Model::GetWebVerificationResultRequest& request);
 
                 /**
                  *本接口用于校验姓名和身份证号的真实性和一致性，您可以通过输入姓名和身份证号或传入身份证人像面照片提供所需验证信息。
@@ -531,6 +665,15 @@ namespace TencentCloud
                 PhoneVerificationCUCCOutcome PhoneVerificationCUCC(const Model::PhoneVerificationCUCCRequest &request);
                 void PhoneVerificationCUCCAsync(const Model::PhoneVerificationCUCCRequest& request, const PhoneVerificationCUCCAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 PhoneVerificationCUCCOutcomeCallable PhoneVerificationCUCCCallable(const Model::PhoneVerificationCUCCRequest& request);
+
+                /**
+                 *传入视频和照片地址，先判断视频中是否为真人，判断为真人后，再判断该视频中的人与上传照片是否属于同一个人。
+                 * @param req VideoLivenessCompareRequest
+                 * @return VideoLivenessCompareOutcome
+                 */
+                VideoLivenessCompareOutcome VideoLivenessCompare(const Model::VideoLivenessCompareRequest &request);
+                void VideoLivenessCompareAsync(const Model::VideoLivenessCompareRequest& request, const VideoLivenessCompareAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                VideoLivenessCompareOutcomeCallable VideoLivenessCompareCallable(const Model::VideoLivenessCompareRequest& request);
 
             };
         }

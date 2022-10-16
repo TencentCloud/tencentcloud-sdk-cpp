@@ -126,6 +126,92 @@ TrpClient::CreateCodePackOutcomeCallable TrpClient::CreateCodePackCallable(const
     return task->get_future();
 }
 
+TrpClient::CreateCustomPackOutcome TrpClient::CreateCustomPack(const CreateCustomPackRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateCustomPack");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateCustomPackResponse rsp = CreateCustomPackResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateCustomPackOutcome(rsp);
+        else
+            return CreateCustomPackOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateCustomPackOutcome(outcome.GetError());
+    }
+}
+
+void TrpClient::CreateCustomPackAsync(const CreateCustomPackRequest& request, const CreateCustomPackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateCustomPack(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrpClient::CreateCustomPackOutcomeCallable TrpClient::CreateCustomPackCallable(const CreateCustomPackRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateCustomPackOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateCustomPack(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TrpClient::CreateCustomRuleOutcome TrpClient::CreateCustomRule(const CreateCustomRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateCustomRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateCustomRuleResponse rsp = CreateCustomRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateCustomRuleOutcome(rsp);
+        else
+            return CreateCustomRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateCustomRuleOutcome(outcome.GetError());
+    }
+}
+
+void TrpClient::CreateCustomRuleAsync(const CreateCustomRuleRequest& request, const CreateCustomRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateCustomRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrpClient::CreateCustomRuleOutcomeCallable TrpClient::CreateCustomRuleCallable(const CreateCustomRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateCustomRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateCustomRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TrpClient::CreateMerchantOutcome TrpClient::CreateMerchant(const CreateMerchantRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateMerchant");
@@ -291,6 +377,49 @@ TrpClient::CreateTraceCodesOutcomeCallable TrpClient::CreateTraceCodesCallable(c
         [this, request]()
         {
             return this->CreateTraceCodes(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TrpClient::CreateTraceCodesAsyncOutcome TrpClient::CreateTraceCodesAsync(const CreateTraceCodesAsyncRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateTraceCodesAsync");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateTraceCodesAsyncResponse rsp = CreateTraceCodesAsyncResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateTraceCodesAsyncOutcome(rsp);
+        else
+            return CreateTraceCodesAsyncOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateTraceCodesAsyncOutcome(outcome.GetError());
+    }
+}
+
+void TrpClient::CreateTraceCodesAsyncAsync(const CreateTraceCodesAsyncRequest& request, const CreateTraceCodesAsyncAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateTraceCodesAsync(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrpClient::CreateTraceCodesAsyncOutcomeCallable TrpClient::CreateTraceCodesAsyncCallable(const CreateTraceCodesAsyncRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateTraceCodesAsyncOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateTraceCodesAsync(request);
         }
     );
 
@@ -599,6 +728,92 @@ TrpClient::DescribeCodeBatchsOutcomeCallable TrpClient::DescribeCodeBatchsCallab
     return task->get_future();
 }
 
+TrpClient::DescribeCodePackStatusOutcome TrpClient::DescribeCodePackStatus(const DescribeCodePackStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCodePackStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCodePackStatusResponse rsp = DescribeCodePackStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCodePackStatusOutcome(rsp);
+        else
+            return DescribeCodePackStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCodePackStatusOutcome(outcome.GetError());
+    }
+}
+
+void TrpClient::DescribeCodePackStatusAsync(const DescribeCodePackStatusRequest& request, const DescribeCodePackStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCodePackStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrpClient::DescribeCodePackStatusOutcomeCallable TrpClient::DescribeCodePackStatusCallable(const DescribeCodePackStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCodePackStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCodePackStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TrpClient::DescribeCodePackUrlOutcome TrpClient::DescribeCodePackUrl(const DescribeCodePackUrlRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCodePackUrl");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCodePackUrlResponse rsp = DescribeCodePackUrlResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCodePackUrlOutcome(rsp);
+        else
+            return DescribeCodePackUrlOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCodePackUrlOutcome(outcome.GetError());
+    }
+}
+
+void TrpClient::DescribeCodePackUrlAsync(const DescribeCodePackUrlRequest& request, const DescribeCodePackUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCodePackUrl(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrpClient::DescribeCodePackUrlOutcomeCallable TrpClient::DescribeCodePackUrlCallable(const DescribeCodePackUrlRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCodePackUrlOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCodePackUrl(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TrpClient::DescribeCodePacksOutcome TrpClient::DescribeCodePacks(const DescribeCodePacksRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeCodePacks");
@@ -678,6 +893,135 @@ TrpClient::DescribeCodesByPackOutcomeCallable TrpClient::DescribeCodesByPackCall
         [this, request]()
         {
             return this->DescribeCodesByPack(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TrpClient::DescribeCustomRuleByIdOutcome TrpClient::DescribeCustomRuleById(const DescribeCustomRuleByIdRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCustomRuleById");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCustomRuleByIdResponse rsp = DescribeCustomRuleByIdResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCustomRuleByIdOutcome(rsp);
+        else
+            return DescribeCustomRuleByIdOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCustomRuleByIdOutcome(outcome.GetError());
+    }
+}
+
+void TrpClient::DescribeCustomRuleByIdAsync(const DescribeCustomRuleByIdRequest& request, const DescribeCustomRuleByIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCustomRuleById(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrpClient::DescribeCustomRuleByIdOutcomeCallable TrpClient::DescribeCustomRuleByIdCallable(const DescribeCustomRuleByIdRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCustomRuleByIdOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCustomRuleById(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TrpClient::DescribeCustomRulesOutcome TrpClient::DescribeCustomRules(const DescribeCustomRulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCustomRules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCustomRulesResponse rsp = DescribeCustomRulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCustomRulesOutcome(rsp);
+        else
+            return DescribeCustomRulesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCustomRulesOutcome(outcome.GetError());
+    }
+}
+
+void TrpClient::DescribeCustomRulesAsync(const DescribeCustomRulesRequest& request, const DescribeCustomRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCustomRules(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrpClient::DescribeCustomRulesOutcomeCallable TrpClient::DescribeCustomRulesCallable(const DescribeCustomRulesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCustomRulesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCustomRules(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TrpClient::DescribeJobFileUrlOutcome TrpClient::DescribeJobFileUrl(const DescribeJobFileUrlRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeJobFileUrl");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeJobFileUrlResponse rsp = DescribeJobFileUrlResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeJobFileUrlOutcome(rsp);
+        else
+            return DescribeJobFileUrlOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeJobFileUrlOutcome(outcome.GetError());
+    }
+}
+
+void TrpClient::DescribeJobFileUrlAsync(const DescribeJobFileUrlRequest& request, const DescribeJobFileUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeJobFileUrl(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrpClient::DescribeJobFileUrlOutcomeCallable TrpClient::DescribeJobFileUrlCallable(const DescribeJobFileUrlRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeJobFileUrlOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeJobFileUrl(request);
         }
     );
 
@@ -1022,6 +1366,92 @@ TrpClient::ModifyCodeBatchOutcomeCallable TrpClient::ModifyCodeBatchCallable(con
         [this, request]()
         {
             return this->ModifyCodeBatch(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TrpClient::ModifyCustomRuleOutcome TrpClient::ModifyCustomRule(const ModifyCustomRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyCustomRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyCustomRuleResponse rsp = ModifyCustomRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyCustomRuleOutcome(rsp);
+        else
+            return ModifyCustomRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyCustomRuleOutcome(outcome.GetError());
+    }
+}
+
+void TrpClient::ModifyCustomRuleAsync(const ModifyCustomRuleRequest& request, const ModifyCustomRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyCustomRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrpClient::ModifyCustomRuleOutcomeCallable TrpClient::ModifyCustomRuleCallable(const ModifyCustomRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyCustomRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyCustomRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TrpClient::ModifyCustomRuleStatusOutcome TrpClient::ModifyCustomRuleStatus(const ModifyCustomRuleStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyCustomRuleStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyCustomRuleStatusResponse rsp = ModifyCustomRuleStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyCustomRuleStatusOutcome(rsp);
+        else
+            return ModifyCustomRuleStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyCustomRuleStatusOutcome(outcome.GetError());
+    }
+}
+
+void TrpClient::ModifyCustomRuleStatusAsync(const ModifyCustomRuleStatusRequest& request, const ModifyCustomRuleStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyCustomRuleStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrpClient::ModifyCustomRuleStatusOutcomeCallable TrpClient::ModifyCustomRuleStatusCallable(const ModifyCustomRuleStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyCustomRuleStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyCustomRuleStatus(request);
         }
     );
 

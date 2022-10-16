@@ -33,14 +33,22 @@
 #include <tencentcloud/cynosdb/v20190107/model/AssociateSecurityGroupsResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/CreateAccountsRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/CreateAccountsResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/CreateAuditLogFileRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/CreateAuditLogFileResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/CreateBackupRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/CreateBackupResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/CreateClustersRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/CreateClustersResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/DeleteAuditLogFileRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/DeleteAuditLogFileResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeAccountAllGrantPrivilegesRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeAccountAllGrantPrivilegesResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeAccountsRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeAccountsResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/DescribeAuditLogFilesRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/DescribeAuditLogFilesResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/DescribeAuditLogsRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/DescribeAuditLogsResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeBackupConfigRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeBackupConfigResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeBackupDownloadUrlRequest.h>
@@ -168,18 +176,30 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateAccountsResponse> CreateAccountsOutcome;
                 typedef std::future<CreateAccountsOutcome> CreateAccountsOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::CreateAccountsRequest&, CreateAccountsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAccountsAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateAuditLogFileResponse> CreateAuditLogFileOutcome;
+                typedef std::future<CreateAuditLogFileOutcome> CreateAuditLogFileOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::CreateAuditLogFileRequest&, CreateAuditLogFileOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAuditLogFileAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateBackupResponse> CreateBackupOutcome;
                 typedef std::future<CreateBackupOutcome> CreateBackupOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::CreateBackupRequest&, CreateBackupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateBackupAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateClustersResponse> CreateClustersOutcome;
                 typedef std::future<CreateClustersOutcome> CreateClustersOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::CreateClustersRequest&, CreateClustersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateClustersAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteAuditLogFileResponse> DeleteAuditLogFileOutcome;
+                typedef std::future<DeleteAuditLogFileOutcome> DeleteAuditLogFileOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::DeleteAuditLogFileRequest&, DeleteAuditLogFileOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAuditLogFileAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAccountAllGrantPrivilegesResponse> DescribeAccountAllGrantPrivilegesOutcome;
                 typedef std::future<DescribeAccountAllGrantPrivilegesOutcome> DescribeAccountAllGrantPrivilegesOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::DescribeAccountAllGrantPrivilegesRequest&, DescribeAccountAllGrantPrivilegesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccountAllGrantPrivilegesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAccountsResponse> DescribeAccountsOutcome;
                 typedef std::future<DescribeAccountsOutcome> DescribeAccountsOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::DescribeAccountsRequest&, DescribeAccountsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccountsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAuditLogFilesResponse> DescribeAuditLogFilesOutcome;
+                typedef std::future<DescribeAuditLogFilesOutcome> DescribeAuditLogFilesOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::DescribeAuditLogFilesRequest&, DescribeAuditLogFilesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAuditLogFilesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAuditLogsResponse> DescribeAuditLogsOutcome;
+                typedef std::future<DescribeAuditLogsOutcome> DescribeAuditLogsOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::DescribeAuditLogsRequest&, DescribeAuditLogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAuditLogsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeBackupConfigResponse> DescribeBackupConfigOutcome;
                 typedef std::future<DescribeBackupConfigOutcome> DescribeBackupConfigOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::DescribeBackupConfigRequest&, DescribeBackupConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBackupConfigAsyncHandler;
@@ -376,6 +396,15 @@ namespace TencentCloud
                 CreateAccountsOutcomeCallable CreateAccountsCallable(const Model::CreateAccountsRequest& request);
 
                 /**
+                 *本接口(CreateAuditLogFile)用于创建云数据库实例的审计日志文件。
+                 * @param req CreateAuditLogFileRequest
+                 * @return CreateAuditLogFileOutcome
+                 */
+                CreateAuditLogFileOutcome CreateAuditLogFile(const Model::CreateAuditLogFileRequest &request);
+                void CreateAuditLogFileAsync(const Model::CreateAuditLogFileRequest& request, const CreateAuditLogFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateAuditLogFileOutcomeCallable CreateAuditLogFileCallable(const Model::CreateAuditLogFileRequest& request);
+
+                /**
                  *为集群创建手动备份
                  * @param req CreateBackupRequest
                  * @return CreateBackupOutcome
@@ -394,6 +423,15 @@ namespace TencentCloud
                 CreateClustersOutcomeCallable CreateClustersCallable(const Model::CreateClustersRequest& request);
 
                 /**
+                 *本接口(DeleteAuditLogFile)用于删除云数据库实例的审计日志文件。
+                 * @param req DeleteAuditLogFileRequest
+                 * @return DeleteAuditLogFileOutcome
+                 */
+                DeleteAuditLogFileOutcome DeleteAuditLogFile(const Model::DeleteAuditLogFileRequest &request);
+                void DeleteAuditLogFileAsync(const Model::DeleteAuditLogFileRequest& request, const DeleteAuditLogFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteAuditLogFileOutcomeCallable DeleteAuditLogFileCallable(const Model::DeleteAuditLogFileRequest& request);
+
+                /**
                  *账号所有权限
                  * @param req DescribeAccountAllGrantPrivilegesRequest
                  * @return DescribeAccountAllGrantPrivilegesOutcome
@@ -410,6 +448,24 @@ namespace TencentCloud
                 DescribeAccountsOutcome DescribeAccounts(const Model::DescribeAccountsRequest &request);
                 void DescribeAccountsAsync(const Model::DescribeAccountsRequest& request, const DescribeAccountsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAccountsOutcomeCallable DescribeAccountsCallable(const Model::DescribeAccountsRequest& request);
+
+                /**
+                 *本接口(DescribeAuditLogFiles)用于查询云数据库实例的审计日志文件。
+                 * @param req DescribeAuditLogFilesRequest
+                 * @return DescribeAuditLogFilesOutcome
+                 */
+                DescribeAuditLogFilesOutcome DescribeAuditLogFiles(const Model::DescribeAuditLogFilesRequest &request);
+                void DescribeAuditLogFilesAsync(const Model::DescribeAuditLogFilesRequest& request, const DescribeAuditLogFilesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAuditLogFilesOutcomeCallable DescribeAuditLogFilesCallable(const Model::DescribeAuditLogFilesRequest& request);
+
+                /**
+                 *本接口(DescribeAuditLogs)用于查询数据库审计日志。
+                 * @param req DescribeAuditLogsRequest
+                 * @return DescribeAuditLogsOutcome
+                 */
+                DescribeAuditLogsOutcome DescribeAuditLogs(const Model::DescribeAuditLogsRequest &request);
+                void DescribeAuditLogsAsync(const Model::DescribeAuditLogsRequest& request, const DescribeAuditLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAuditLogsOutcomeCallable DescribeAuditLogsCallable(const Model::DescribeAuditLogsRequest& request);
 
                 /**
                  *获取指定集群的备份配置信息，包括全量备份时间段，备份文件保留时间

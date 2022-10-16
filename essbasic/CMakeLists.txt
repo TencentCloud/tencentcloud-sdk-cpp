@@ -41,7 +41,6 @@ set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/CreateSignUrlsRequest.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateMultiFlowSignQRCodeRequest.h
   include/tencentcloud/essbasic/v20210526/model/AuthFailMessage.h
-  include/tencentcloud/essbasic/v20210526/model/CreateChannelFlowEvidenceReportRequest.h
   include/tencentcloud/essbasic/v20210526/model/DescribeFlowDetailInfoRequest.h
   include/tencentcloud/essbasic/v20210526/model/ChannelGetTaskResultApiResponse.h
   include/tencentcloud/essbasic/v20210526/model/UploadFile.h
@@ -80,7 +79,6 @@ set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/DescribeResourceUrlsByFlowsRequest.h
   include/tencentcloud/essbasic/v20210526/model/DownloadFlowInfo.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCancelMultiFlowSignQRCodeRequest.h
-  include/tencentcloud/essbasic/v20210526/model/CreateChannelFlowEvidenceReportResponse.h
   include/tencentcloud/essbasic/v20210526/model/PrepareFlowsResponse.h
   include/tencentcloud/essbasic/v20210526/model/ChannelDescribeEmployeesResponse.h
   include/tencentcloud/essbasic/v20210526/model/TaskInfo.h
@@ -255,7 +253,6 @@ set(essbasic_src
   src/v20210526/model/CreateSignUrlsRequest.cpp
   src/v20210526/model/ChannelCreateMultiFlowSignQRCodeRequest.cpp
   src/v20210526/model/AuthFailMessage.cpp
-  src/v20210526/model/CreateChannelFlowEvidenceReportRequest.cpp
   src/v20210526/model/DescribeFlowDetailInfoRequest.cpp
   src/v20210526/model/ChannelGetTaskResultApiResponse.cpp
   src/v20210526/model/UploadFile.cpp
@@ -294,7 +291,6 @@ set(essbasic_src
   src/v20210526/model/DescribeResourceUrlsByFlowsRequest.cpp
   src/v20210526/model/DownloadFlowInfo.cpp
   src/v20210526/model/ChannelCancelMultiFlowSignQRCodeRequest.cpp
-  src/v20210526/model/CreateChannelFlowEvidenceReportResponse.cpp
   src/v20210526/model/PrepareFlowsResponse.cpp
   src/v20210526/model/ChannelDescribeEmployeesResponse.cpp
   src/v20210526/model/TaskInfo.cpp

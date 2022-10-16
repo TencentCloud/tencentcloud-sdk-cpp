@@ -14,21 +14,20 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/essbasic/v20210526/model/CreateChannelFlowEvidenceReportResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/DeleteAuditLogFileResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Essbasic::V20210526::Model;
+using namespace TencentCloud::Cynosdb::V20190107::Model;
 using namespace std;
 
-CreateChannelFlowEvidenceReportResponse::CreateChannelFlowEvidenceReportResponse() :
-    m_reportUrlHasBeenSet(false)
+DeleteAuditLogFileResponse::DeleteAuditLogFileResponse()
 {
 }
 
-CoreInternalOutcome CreateChannelFlowEvidenceReportResponse::Deserialize(const string &payload)
+CoreInternalOutcome DeleteAuditLogFileResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -62,33 +61,15 @@ CoreInternalOutcome CreateChannelFlowEvidenceReportResponse::Deserialize(const s
     }
 
 
-    if (rsp.HasMember("ReportUrl") && !rsp["ReportUrl"].IsNull())
-    {
-        if (!rsp["ReportUrl"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `ReportUrl` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_reportUrl = string(rsp["ReportUrl"].GetString());
-        m_reportUrlHasBeenSet = true;
-    }
-
 
     return CoreInternalOutcome(true);
 }
 
-string CreateChannelFlowEvidenceReportResponse::ToJsonString() const
+string DeleteAuditLogFileResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
-
-    if (m_reportUrlHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ReportUrl";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_reportUrl.c_str(), allocator).Move(), allocator);
-    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -101,15 +82,5 @@ string CreateChannelFlowEvidenceReportResponse::ToJsonString() const
     return buffer.GetString();
 }
 
-
-string CreateChannelFlowEvidenceReportResponse::GetReportUrl() const
-{
-    return m_reportUrl;
-}
-
-bool CreateChannelFlowEvidenceReportResponse::ReportUrlHasBeenSet() const
-{
-    return m_reportUrlHasBeenSet;
-}
 
 

@@ -27,6 +27,10 @@
 #include <tencentcloud/trp/v20210515/model/CreateCodeBatchResponse.h>
 #include <tencentcloud/trp/v20210515/model/CreateCodePackRequest.h>
 #include <tencentcloud/trp/v20210515/model/CreateCodePackResponse.h>
+#include <tencentcloud/trp/v20210515/model/CreateCustomPackRequest.h>
+#include <tencentcloud/trp/v20210515/model/CreateCustomPackResponse.h>
+#include <tencentcloud/trp/v20210515/model/CreateCustomRuleRequest.h>
+#include <tencentcloud/trp/v20210515/model/CreateCustomRuleResponse.h>
 #include <tencentcloud/trp/v20210515/model/CreateMerchantRequest.h>
 #include <tencentcloud/trp/v20210515/model/CreateMerchantResponse.h>
 #include <tencentcloud/trp/v20210515/model/CreateProductRequest.h>
@@ -35,6 +39,8 @@
 #include <tencentcloud/trp/v20210515/model/CreateTraceChainResponse.h>
 #include <tencentcloud/trp/v20210515/model/CreateTraceCodesRequest.h>
 #include <tencentcloud/trp/v20210515/model/CreateTraceCodesResponse.h>
+#include <tencentcloud/trp/v20210515/model/CreateTraceCodesAsyncRequest.h>
+#include <tencentcloud/trp/v20210515/model/CreateTraceCodesAsyncResponse.h>
 #include <tencentcloud/trp/v20210515/model/CreateTraceDataRequest.h>
 #include <tencentcloud/trp/v20210515/model/CreateTraceDataResponse.h>
 #include <tencentcloud/trp/v20210515/model/DeleteCodeBatchRequest.h>
@@ -49,10 +55,20 @@
 #include <tencentcloud/trp/v20210515/model/DescribeCodeBatchByIdResponse.h>
 #include <tencentcloud/trp/v20210515/model/DescribeCodeBatchsRequest.h>
 #include <tencentcloud/trp/v20210515/model/DescribeCodeBatchsResponse.h>
+#include <tencentcloud/trp/v20210515/model/DescribeCodePackStatusRequest.h>
+#include <tencentcloud/trp/v20210515/model/DescribeCodePackStatusResponse.h>
+#include <tencentcloud/trp/v20210515/model/DescribeCodePackUrlRequest.h>
+#include <tencentcloud/trp/v20210515/model/DescribeCodePackUrlResponse.h>
 #include <tencentcloud/trp/v20210515/model/DescribeCodePacksRequest.h>
 #include <tencentcloud/trp/v20210515/model/DescribeCodePacksResponse.h>
 #include <tencentcloud/trp/v20210515/model/DescribeCodesByPackRequest.h>
 #include <tencentcloud/trp/v20210515/model/DescribeCodesByPackResponse.h>
+#include <tencentcloud/trp/v20210515/model/DescribeCustomRuleByIdRequest.h>
+#include <tencentcloud/trp/v20210515/model/DescribeCustomRuleByIdResponse.h>
+#include <tencentcloud/trp/v20210515/model/DescribeCustomRulesRequest.h>
+#include <tencentcloud/trp/v20210515/model/DescribeCustomRulesResponse.h>
+#include <tencentcloud/trp/v20210515/model/DescribeJobFileUrlRequest.h>
+#include <tencentcloud/trp/v20210515/model/DescribeJobFileUrlResponse.h>
 #include <tencentcloud/trp/v20210515/model/DescribeMerchantByIdRequest.h>
 #include <tencentcloud/trp/v20210515/model/DescribeMerchantByIdResponse.h>
 #include <tencentcloud/trp/v20210515/model/DescribeMerchantsRequest.h>
@@ -69,6 +85,10 @@
 #include <tencentcloud/trp/v20210515/model/DescribeTraceDataListResponse.h>
 #include <tencentcloud/trp/v20210515/model/ModifyCodeBatchRequest.h>
 #include <tencentcloud/trp/v20210515/model/ModifyCodeBatchResponse.h>
+#include <tencentcloud/trp/v20210515/model/ModifyCustomRuleRequest.h>
+#include <tencentcloud/trp/v20210515/model/ModifyCustomRuleResponse.h>
+#include <tencentcloud/trp/v20210515/model/ModifyCustomRuleStatusRequest.h>
+#include <tencentcloud/trp/v20210515/model/ModifyCustomRuleStatusResponse.h>
 #include <tencentcloud/trp/v20210515/model/ModifyMerchantRequest.h>
 #include <tencentcloud/trp/v20210515/model/ModifyMerchantResponse.h>
 #include <tencentcloud/trp/v20210515/model/ModifyProductRequest.h>
@@ -99,6 +119,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateCodePackResponse> CreateCodePackOutcome;
                 typedef std::future<CreateCodePackOutcome> CreateCodePackOutcomeCallable;
                 typedef std::function<void(const TrpClient*, const Model::CreateCodePackRequest&, CreateCodePackOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCodePackAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateCustomPackResponse> CreateCustomPackOutcome;
+                typedef std::future<CreateCustomPackOutcome> CreateCustomPackOutcomeCallable;
+                typedef std::function<void(const TrpClient*, const Model::CreateCustomPackRequest&, CreateCustomPackOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCustomPackAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateCustomRuleResponse> CreateCustomRuleOutcome;
+                typedef std::future<CreateCustomRuleOutcome> CreateCustomRuleOutcomeCallable;
+                typedef std::function<void(const TrpClient*, const Model::CreateCustomRuleRequest&, CreateCustomRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCustomRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateMerchantResponse> CreateMerchantOutcome;
                 typedef std::future<CreateMerchantOutcome> CreateMerchantOutcomeCallable;
                 typedef std::function<void(const TrpClient*, const Model::CreateMerchantRequest&, CreateMerchantOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateMerchantAsyncHandler;
@@ -111,6 +137,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateTraceCodesResponse> CreateTraceCodesOutcome;
                 typedef std::future<CreateTraceCodesOutcome> CreateTraceCodesOutcomeCallable;
                 typedef std::function<void(const TrpClient*, const Model::CreateTraceCodesRequest&, CreateTraceCodesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTraceCodesAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateTraceCodesAsyncResponse> CreateTraceCodesAsyncOutcome;
+                typedef std::future<CreateTraceCodesAsyncOutcome> CreateTraceCodesAsyncOutcomeCallable;
+                typedef std::function<void(const TrpClient*, const Model::CreateTraceCodesAsyncRequest&, CreateTraceCodesAsyncOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTraceCodesAsyncAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateTraceDataResponse> CreateTraceDataOutcome;
                 typedef std::future<CreateTraceDataOutcome> CreateTraceDataOutcomeCallable;
                 typedef std::function<void(const TrpClient*, const Model::CreateTraceDataRequest&, CreateTraceDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTraceDataAsyncHandler;
@@ -132,12 +161,27 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeCodeBatchsResponse> DescribeCodeBatchsOutcome;
                 typedef std::future<DescribeCodeBatchsOutcome> DescribeCodeBatchsOutcomeCallable;
                 typedef std::function<void(const TrpClient*, const Model::DescribeCodeBatchsRequest&, DescribeCodeBatchsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCodeBatchsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCodePackStatusResponse> DescribeCodePackStatusOutcome;
+                typedef std::future<DescribeCodePackStatusOutcome> DescribeCodePackStatusOutcomeCallable;
+                typedef std::function<void(const TrpClient*, const Model::DescribeCodePackStatusRequest&, DescribeCodePackStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCodePackStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCodePackUrlResponse> DescribeCodePackUrlOutcome;
+                typedef std::future<DescribeCodePackUrlOutcome> DescribeCodePackUrlOutcomeCallable;
+                typedef std::function<void(const TrpClient*, const Model::DescribeCodePackUrlRequest&, DescribeCodePackUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCodePackUrlAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCodePacksResponse> DescribeCodePacksOutcome;
                 typedef std::future<DescribeCodePacksOutcome> DescribeCodePacksOutcomeCallable;
                 typedef std::function<void(const TrpClient*, const Model::DescribeCodePacksRequest&, DescribeCodePacksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCodePacksAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCodesByPackResponse> DescribeCodesByPackOutcome;
                 typedef std::future<DescribeCodesByPackOutcome> DescribeCodesByPackOutcomeCallable;
                 typedef std::function<void(const TrpClient*, const Model::DescribeCodesByPackRequest&, DescribeCodesByPackOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCodesByPackAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCustomRuleByIdResponse> DescribeCustomRuleByIdOutcome;
+                typedef std::future<DescribeCustomRuleByIdOutcome> DescribeCustomRuleByIdOutcomeCallable;
+                typedef std::function<void(const TrpClient*, const Model::DescribeCustomRuleByIdRequest&, DescribeCustomRuleByIdOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCustomRuleByIdAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCustomRulesResponse> DescribeCustomRulesOutcome;
+                typedef std::future<DescribeCustomRulesOutcome> DescribeCustomRulesOutcomeCallable;
+                typedef std::function<void(const TrpClient*, const Model::DescribeCustomRulesRequest&, DescribeCustomRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCustomRulesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeJobFileUrlResponse> DescribeJobFileUrlOutcome;
+                typedef std::future<DescribeJobFileUrlOutcome> DescribeJobFileUrlOutcomeCallable;
+                typedef std::function<void(const TrpClient*, const Model::DescribeJobFileUrlRequest&, DescribeJobFileUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeJobFileUrlAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeMerchantByIdResponse> DescribeMerchantByIdOutcome;
                 typedef std::future<DescribeMerchantByIdOutcome> DescribeMerchantByIdOutcomeCallable;
                 typedef std::function<void(const TrpClient*, const Model::DescribeMerchantByIdRequest&, DescribeMerchantByIdOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMerchantByIdAsyncHandler;
@@ -162,6 +206,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyCodeBatchResponse> ModifyCodeBatchOutcome;
                 typedef std::future<ModifyCodeBatchOutcome> ModifyCodeBatchOutcomeCallable;
                 typedef std::function<void(const TrpClient*, const Model::ModifyCodeBatchRequest&, ModifyCodeBatchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCodeBatchAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyCustomRuleResponse> ModifyCustomRuleOutcome;
+                typedef std::future<ModifyCustomRuleOutcome> ModifyCustomRuleOutcomeCallable;
+                typedef std::function<void(const TrpClient*, const Model::ModifyCustomRuleRequest&, ModifyCustomRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCustomRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyCustomRuleStatusResponse> ModifyCustomRuleStatusOutcome;
+                typedef std::future<ModifyCustomRuleStatusOutcome> ModifyCustomRuleStatusOutcomeCallable;
+                typedef std::function<void(const TrpClient*, const Model::ModifyCustomRuleStatusRequest&, ModifyCustomRuleStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCustomRuleStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyMerchantResponse> ModifyMerchantOutcome;
                 typedef std::future<ModifyMerchantOutcome> ModifyMerchantOutcomeCallable;
                 typedef std::function<void(const TrpClient*, const Model::ModifyMerchantRequest&, ModifyMerchantOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyMerchantAsyncHandler;
@@ -199,6 +249,24 @@ namespace TencentCloud
                 CreateCodePackOutcomeCallable CreateCodePackCallable(const Model::CreateCodePackRequest& request);
 
                 /**
+                 *生成自定义码包
+                 * @param req CreateCustomPackRequest
+                 * @return CreateCustomPackOutcome
+                 */
+                CreateCustomPackOutcome CreateCustomPack(const Model::CreateCustomPackRequest &request);
+                void CreateCustomPackAsync(const Model::CreateCustomPackRequest& request, const CreateCustomPackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateCustomPackOutcomeCallable CreateCustomPackCallable(const Model::CreateCustomPackRequest& request);
+
+                /**
+                 *新建自定义码规则
+                 * @param req CreateCustomRuleRequest
+                 * @return CreateCustomRuleOutcome
+                 */
+                CreateCustomRuleOutcome CreateCustomRule(const Model::CreateCustomRuleRequest &request);
+                void CreateCustomRuleAsync(const Model::CreateCustomRuleRequest& request, const CreateCustomRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateCustomRuleOutcomeCallable CreateCustomRuleCallable(const Model::CreateCustomRuleRequest& request);
+
+                /**
                  *新建商户
                  * @param req CreateMerchantRequest
                  * @return CreateMerchantOutcome
@@ -233,6 +301,15 @@ namespace TencentCloud
                 CreateTraceCodesOutcome CreateTraceCodes(const Model::CreateTraceCodesRequest &request);
                 void CreateTraceCodesAsync(const Model::CreateTraceCodesRequest& request, const CreateTraceCodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateTraceCodesOutcomeCallable CreateTraceCodesCallable(const Model::CreateTraceCodesRequest& request);
+
+                /**
+                 *异步导入激活码包，如果是第三方码包，需要域名跟配置的匹配
+                 * @param req CreateTraceCodesAsyncRequest
+                 * @return CreateTraceCodesAsyncOutcome
+                 */
+                CreateTraceCodesAsyncOutcome CreateTraceCodesAsync(const Model::CreateTraceCodesAsyncRequest &request);
+                void CreateTraceCodesAsyncAsync(const Model::CreateTraceCodesAsyncRequest& request, const CreateTraceCodesAsyncAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateTraceCodesAsyncOutcomeCallable CreateTraceCodesAsyncCallable(const Model::CreateTraceCodesAsyncRequest& request);
 
                 /**
                  *新增溯源信息
@@ -298,6 +375,24 @@ namespace TencentCloud
                 DescribeCodeBatchsOutcomeCallable DescribeCodeBatchsCallable(const Model::DescribeCodeBatchsRequest& request);
 
                 /**
+                 *查询码包状态
+                 * @param req DescribeCodePackStatusRequest
+                 * @return DescribeCodePackStatusOutcome
+                 */
+                DescribeCodePackStatusOutcome DescribeCodePackStatus(const Model::DescribeCodePackStatusRequest &request);
+                void DescribeCodePackStatusAsync(const Model::DescribeCodePackStatusRequest& request, const DescribeCodePackStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCodePackStatusOutcomeCallable DescribeCodePackStatusCallable(const Model::DescribeCodePackStatusRequest& request);
+
+                /**
+                 *查询码包地址
+                 * @param req DescribeCodePackUrlRequest
+                 * @return DescribeCodePackUrlOutcome
+                 */
+                DescribeCodePackUrlOutcome DescribeCodePackUrl(const Model::DescribeCodePackUrlRequest &request);
+                void DescribeCodePackUrlAsync(const Model::DescribeCodePackUrlRequest& request, const DescribeCodePackUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCodePackUrlOutcomeCallable DescribeCodePackUrlCallable(const Model::DescribeCodePackUrlRequest& request);
+
+                /**
                  *查询码包列表
                  * @param req DescribeCodePacksRequest
                  * @return DescribeCodePacksOutcome
@@ -314,6 +409,33 @@ namespace TencentCloud
                 DescribeCodesByPackOutcome DescribeCodesByPack(const Model::DescribeCodesByPackRequest &request);
                 void DescribeCodesByPackAsync(const Model::DescribeCodesByPackRequest& request, const DescribeCodesByPackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeCodesByPackOutcomeCallable DescribeCodesByPackCallable(const Model::DescribeCodesByPackRequest& request);
+
+                /**
+                 *查自定义码规则
+                 * @param req DescribeCustomRuleByIdRequest
+                 * @return DescribeCustomRuleByIdOutcome
+                 */
+                DescribeCustomRuleByIdOutcome DescribeCustomRuleById(const Model::DescribeCustomRuleByIdRequest &request);
+                void DescribeCustomRuleByIdAsync(const Model::DescribeCustomRuleByIdRequest& request, const DescribeCustomRuleByIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCustomRuleByIdOutcomeCallable DescribeCustomRuleByIdCallable(const Model::DescribeCustomRuleByIdRequest& request);
+
+                /**
+                 *查自定义码规则列表
+                 * @param req DescribeCustomRulesRequest
+                 * @return DescribeCustomRulesOutcome
+                 */
+                DescribeCustomRulesOutcome DescribeCustomRules(const Model::DescribeCustomRulesRequest &request);
+                void DescribeCustomRulesAsync(const Model::DescribeCustomRulesRequest& request, const DescribeCustomRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCustomRulesOutcomeCallable DescribeCustomRulesCallable(const Model::DescribeCustomRulesRequest& request);
+
+                /**
+                 *获取异步任务的输出地址
+                 * @param req DescribeJobFileUrlRequest
+                 * @return DescribeJobFileUrlOutcome
+                 */
+                DescribeJobFileUrlOutcome DescribeJobFileUrl(const Model::DescribeJobFileUrlRequest &request);
+                void DescribeJobFileUrlAsync(const Model::DescribeJobFileUrlRequest& request, const DescribeJobFileUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeJobFileUrlOutcomeCallable DescribeJobFileUrlCallable(const Model::DescribeJobFileUrlRequest& request);
 
                 /**
                  *查询商户信息
@@ -386,6 +508,24 @@ namespace TencentCloud
                 ModifyCodeBatchOutcome ModifyCodeBatch(const Model::ModifyCodeBatchRequest &request);
                 void ModifyCodeBatchAsync(const Model::ModifyCodeBatchRequest& request, const ModifyCodeBatchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyCodeBatchOutcomeCallable ModifyCodeBatchCallable(const Model::ModifyCodeBatchRequest& request);
+
+                /**
+                 *修改自定义码规则
+                 * @param req ModifyCustomRuleRequest
+                 * @return ModifyCustomRuleOutcome
+                 */
+                ModifyCustomRuleOutcome ModifyCustomRule(const Model::ModifyCustomRuleRequest &request);
+                void ModifyCustomRuleAsync(const Model::ModifyCustomRuleRequest& request, const ModifyCustomRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyCustomRuleOutcomeCallable ModifyCustomRuleCallable(const Model::ModifyCustomRuleRequest& request);
+
+                /**
+                 *更新自定义码规则状态
+                 * @param req ModifyCustomRuleStatusRequest
+                 * @return ModifyCustomRuleStatusOutcome
+                 */
+                ModifyCustomRuleStatusOutcome ModifyCustomRuleStatus(const Model::ModifyCustomRuleStatusRequest &request);
+                void ModifyCustomRuleStatusAsync(const Model::ModifyCustomRuleStatusRequest& request, const ModifyCustomRuleStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyCustomRuleStatusOutcomeCallable ModifyCustomRuleStatusCallable(const Model::ModifyCustomRuleStatusRequest& request);
 
                 /**
                  *编辑商户

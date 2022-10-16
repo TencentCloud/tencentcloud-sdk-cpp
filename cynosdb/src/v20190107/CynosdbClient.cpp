@@ -255,6 +255,49 @@ CynosdbClient::CreateAccountsOutcomeCallable CynosdbClient::CreateAccountsCallab
     return task->get_future();
 }
 
+CynosdbClient::CreateAuditLogFileOutcome CynosdbClient::CreateAuditLogFile(const CreateAuditLogFileRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAuditLogFile");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAuditLogFileResponse rsp = CreateAuditLogFileResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAuditLogFileOutcome(rsp);
+        else
+            return CreateAuditLogFileOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAuditLogFileOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::CreateAuditLogFileAsync(const CreateAuditLogFileRequest& request, const CreateAuditLogFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateAuditLogFile(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CynosdbClient::CreateAuditLogFileOutcomeCallable CynosdbClient::CreateAuditLogFileCallable(const CreateAuditLogFileRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateAuditLogFileOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateAuditLogFile(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CynosdbClient::CreateBackupOutcome CynosdbClient::CreateBackup(const CreateBackupRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateBackup");
@@ -341,6 +384,49 @@ CynosdbClient::CreateClustersOutcomeCallable CynosdbClient::CreateClustersCallab
     return task->get_future();
 }
 
+CynosdbClient::DeleteAuditLogFileOutcome CynosdbClient::DeleteAuditLogFile(const DeleteAuditLogFileRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteAuditLogFile");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteAuditLogFileResponse rsp = DeleteAuditLogFileResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteAuditLogFileOutcome(rsp);
+        else
+            return DeleteAuditLogFileOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteAuditLogFileOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::DeleteAuditLogFileAsync(const DeleteAuditLogFileRequest& request, const DeleteAuditLogFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteAuditLogFile(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CynosdbClient::DeleteAuditLogFileOutcomeCallable CynosdbClient::DeleteAuditLogFileCallable(const DeleteAuditLogFileRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteAuditLogFileOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteAuditLogFile(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CynosdbClient::DescribeAccountAllGrantPrivilegesOutcome CynosdbClient::DescribeAccountAllGrantPrivileges(const DescribeAccountAllGrantPrivilegesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeAccountAllGrantPrivileges");
@@ -420,6 +506,92 @@ CynosdbClient::DescribeAccountsOutcomeCallable CynosdbClient::DescribeAccountsCa
         [this, request]()
         {
             return this->DescribeAccounts(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CynosdbClient::DescribeAuditLogFilesOutcome CynosdbClient::DescribeAuditLogFiles(const DescribeAuditLogFilesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAuditLogFiles");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAuditLogFilesResponse rsp = DescribeAuditLogFilesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAuditLogFilesOutcome(rsp);
+        else
+            return DescribeAuditLogFilesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAuditLogFilesOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::DescribeAuditLogFilesAsync(const DescribeAuditLogFilesRequest& request, const DescribeAuditLogFilesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAuditLogFiles(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CynosdbClient::DescribeAuditLogFilesOutcomeCallable CynosdbClient::DescribeAuditLogFilesCallable(const DescribeAuditLogFilesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAuditLogFilesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAuditLogFiles(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CynosdbClient::DescribeAuditLogsOutcome CynosdbClient::DescribeAuditLogs(const DescribeAuditLogsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAuditLogs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAuditLogsResponse rsp = DescribeAuditLogsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAuditLogsOutcome(rsp);
+        else
+            return DescribeAuditLogsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAuditLogsOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::DescribeAuditLogsAsync(const DescribeAuditLogsRequest& request, const DescribeAuditLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAuditLogs(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CynosdbClient::DescribeAuditLogsOutcomeCallable CynosdbClient::DescribeAuditLogsCallable(const DescribeAuditLogsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAuditLogsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAuditLogs(request);
         }
     );
 
