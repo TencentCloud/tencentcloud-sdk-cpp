@@ -25,6 +25,7 @@ Component::Component() :
     m_componentTypeHasBeenSet(false),
     m_componentNameHasBeenSet(false),
     m_componentRequiredHasBeenSet(false),
+    m_componentRecipientIdHasBeenSet(false),
     m_fileIndexHasBeenSet(false),
     m_generateModeHasBeenSet(false),
     m_componentWidthHasBeenSet(false),
@@ -85,6 +86,16 @@ CoreInternalOutcome Component::Deserialize(const rapidjson::Value &value)
         }
         m_componentRequired = value["ComponentRequired"].GetBool();
         m_componentRequiredHasBeenSet = true;
+    }
+
+    if (value.HasMember("ComponentRecipientId") && !value["ComponentRecipientId"].IsNull())
+    {
+        if (!value["ComponentRecipientId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Component.ComponentRecipientId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_componentRecipientId = string(value["ComponentRecipientId"].GetString());
+        m_componentRecipientIdHasBeenSet = true;
     }
 
     if (value.HasMember("FileIndex") && !value["FileIndex"].IsNull())
@@ -266,6 +277,14 @@ void Component::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         value.AddMember(iKey, m_componentRequired, allocator);
     }
 
+    if (m_componentRecipientIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ComponentRecipientId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_componentRecipientId.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_fileIndexHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -443,6 +462,22 @@ void Component::SetComponentRequired(const bool& _componentRequired)
 bool Component::ComponentRequiredHasBeenSet() const
 {
     return m_componentRequiredHasBeenSet;
+}
+
+string Component::GetComponentRecipientId() const
+{
+    return m_componentRecipientId;
+}
+
+void Component::SetComponentRecipientId(const string& _componentRecipientId)
+{
+    m_componentRecipientId = _componentRecipientId;
+    m_componentRecipientIdHasBeenSet = true;
+}
+
+bool Component::ComponentRecipientIdHasBeenSet() const
+{
+    return m_componentRecipientIdHasBeenSet;
 }
 
 int64_t Component::GetFileIndex() const

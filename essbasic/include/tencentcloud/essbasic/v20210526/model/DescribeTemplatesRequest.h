@@ -63,14 +63,14 @@ namespace TencentCloud
                     bool AgentHasBeenSet() const;
 
                     /**
-                     * 获取模板唯一标识
-                     * @return TemplateId 模板唯一标识
+                     * 获取模板唯一标识，查询单个模版时使用
+                     * @return TemplateId 模板唯一标识，查询单个模版时使用
                      */
                     std::string GetTemplateId() const;
 
                     /**
-                     * 设置模板唯一标识
-                     * @param TemplateId 模板唯一标识
+                     * 设置模板唯一标识，查询单个模版时使用
+                     * @param TemplateId 模板唯一标识，查询单个模版时使用
                      */
                     void SetTemplateId(const std::string& _templateId);
 
@@ -135,24 +135,6 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取操作者的信息
-                     * @return Operator 操作者的信息
-                     */
-                    UserInfo GetOperator() const;
-
-                    /**
-                     * 设置操作者的信息
-                     * @param Operator 操作者的信息
-                     */
-                    void SetOperator(const UserInfo& _operator);
-
-                    /**
-                     * 判断参数 Operator 是否已赋值
-                     * @return Operator 是否已赋值
-                     */
-                    bool OperatorHasBeenSet() const;
-
-                    /**
                      * 获取是否返回所有组件信息。默认false，只返回发起方控件；true，返回所有签署方控件
                      * @return QueryAllComponents 是否返回所有组件信息。默认false，只返回发起方控件；true，返回所有签署方控件
                      */
@@ -188,6 +170,24 @@ namespace TencentCloud
                      */
                     bool TemplateNameHasBeenSet() const;
 
+                    /**
+                     * 获取操作者的信息
+                     * @return Operator 操作者的信息
+                     */
+                    UserInfo GetOperator() const;
+
+                    /**
+                     * 设置操作者的信息
+                     * @param Operator 操作者的信息
+                     */
+                    void SetOperator(const UserInfo& _operator);
+
+                    /**
+                     * 判断参数 Operator 是否已赋值
+                     * @return Operator 是否已赋值
+                     */
+                    bool OperatorHasBeenSet() const;
+
                 private:
 
                     /**
@@ -197,7 +197,7 @@ namespace TencentCloud
                     bool m_agentHasBeenSet;
 
                     /**
-                     * 模板唯一标识
+                     * 模板唯一标识，查询单个模版时使用
                      */
                     std::string m_templateId;
                     bool m_templateIdHasBeenSet;
@@ -221,12 +221,6 @@ namespace TencentCloud
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 操作者的信息
-                     */
-                    UserInfo m_operator;
-                    bool m_operatorHasBeenSet;
-
-                    /**
                      * 是否返回所有组件信息。默认false，只返回发起方控件；true，返回所有签署方控件
                      */
                     bool m_queryAllComponents;
@@ -237,6 +231,12 @@ namespace TencentCloud
                      */
                     std::string m_templateName;
                     bool m_templateNameHasBeenSet;
+
+                    /**
+                     * 操作者的信息
+                     */
+                    UserInfo m_operator;
+                    bool m_operatorHasBeenSet;
 
                 };
             }

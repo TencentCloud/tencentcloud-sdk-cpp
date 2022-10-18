@@ -1932,6 +1932,49 @@ CpdpClient::CreateOpenBankExternalSubMerchantRegistrationOutcomeCallable CpdpCli
     return task->get_future();
 }
 
+CpdpClient::CreateOpenBankGlobalPaymentOrderOutcome CpdpClient::CreateOpenBankGlobalPaymentOrder(const CreateOpenBankGlobalPaymentOrderRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateOpenBankGlobalPaymentOrder");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateOpenBankGlobalPaymentOrderResponse rsp = CreateOpenBankGlobalPaymentOrderResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateOpenBankGlobalPaymentOrderOutcome(rsp);
+        else
+            return CreateOpenBankGlobalPaymentOrderOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateOpenBankGlobalPaymentOrderOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::CreateOpenBankGlobalPaymentOrderAsync(const CreateOpenBankGlobalPaymentOrderRequest& request, const CreateOpenBankGlobalPaymentOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateOpenBankGlobalPaymentOrder(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::CreateOpenBankGlobalPaymentOrderOutcomeCallable CpdpClient::CreateOpenBankGlobalPaymentOrderCallable(const CreateOpenBankGlobalPaymentOrderRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateOpenBankGlobalPaymentOrderOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateOpenBankGlobalPaymentOrder(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CpdpClient::CreateOpenBankMerchantOutcome CpdpClient::CreateOpenBankMerchant(const CreateOpenBankMerchantRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateOpenBankMerchant");

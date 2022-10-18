@@ -857,6 +857,49 @@ BmaClient::DescribeCRMonitorsOutcomeCallable BmaClient::DescribeCRMonitorsCallab
     return task->get_future();
 }
 
+BmaClient::DescribeCRObtainDetailOutcome BmaClient::DescribeCRObtainDetail(const DescribeCRObtainDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCRObtainDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCRObtainDetailResponse rsp = DescribeCRObtainDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCRObtainDetailOutcome(rsp);
+        else
+            return DescribeCRObtainDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCRObtainDetailOutcome(outcome.GetError());
+    }
+}
+
+void BmaClient::DescribeCRObtainDetailAsync(const DescribeCRObtainDetailRequest& request, const DescribeCRObtainDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCRObtainDetail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BmaClient::DescribeCRObtainDetailOutcomeCallable BmaClient::DescribeCRObtainDetailCallable(const DescribeCRObtainDetailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCRObtainDetailOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCRObtainDetail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 BmaClient::DescribeCRWorkInfoOutcome BmaClient::DescribeCRWorkInfo(const DescribeCRWorkInfoRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeCRWorkInfo");

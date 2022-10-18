@@ -158,17 +158,17 @@ namespace TencentCloud
                     bool UpdateTimeHasBeenSet() const;
 
                     /**
-                     * 获取状态
+                     * 获取制码状态 init: 初始化, pending: 执行中, done: 完成, error: 失败
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Status 状态
+                     * @return Status 制码状态 init: 初始化, pending: 执行中, done: 完成, error: 失败
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置状态
+                     * 设置制码状态 init: 初始化, pending: 执行中, done: 完成, error: 失败
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Status 状态
+                     * @param Status 制码状态 init: 初始化, pending: 执行中, done: 完成, error: 失败
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetStatus(const std::string& _status);
@@ -180,17 +180,17 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取记录
+                     * 获取执行日志
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Log 记录
+                     * @return Log 执行日志
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetLog() const;
 
                     /**
-                     * 设置记录
+                     * 设置执行日志
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Log 记录
+                     * @param Log 执行日志
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetLog(const std::string& _log);
@@ -312,17 +312,17 @@ namespace TencentCloud
                     bool CipherHasBeenSet() const;
 
                     /**
-                     * 获取文字码地址
+                     * 获取[弃用] 文字码地址，通过另一个接口查
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TextUrl 文字码地址
+                     * @return TextUrl [弃用] 文字码地址，通过另一个接口查
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetTextUrl() const;
 
                     /**
-                     * 设置文字码地址
+                     * 设置[弃用] 文字码地址，通过另一个接口查
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TextUrl 文字码地址
+                     * @param TextUrl [弃用] 文字码地址，通过另一个接口查
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetTextUrl(const std::string& _textUrl);
@@ -334,17 +334,17 @@ namespace TencentCloud
                     bool TextUrlHasBeenSet() const;
 
                     /**
-                     * 获取二维码地址
+                     * 获取[弃用] 二维码地址，通过另一个接口查
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PackUrl 二维码地址
+                     * @return PackUrl [弃用] 二维码地址，通过另一个接口查
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetPackUrl() const;
 
                     /**
-                     * 设置二维码地址
+                     * 设置[弃用] 二维码地址，通过另一个接口查
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PackUrl 二维码地址
+                     * @param PackUrl [弃用] 二维码地址，通过另一个接口查
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetPackUrl(const std::string& _packUrl);
@@ -525,14 +525,14 @@ namespace TencentCloud
                     bool m_updateTimeHasBeenSet;
 
                     /**
-                     * 状态
+                     * 制码状态 init: 初始化, pending: 执行中, done: 完成, error: 失败
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 记录
+                     * 执行日志
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_log;
@@ -574,14 +574,14 @@ namespace TencentCloud
                     bool m_cipherHasBeenSet;
 
                     /**
-                     * 文字码地址
+                     * [弃用] 文字码地址，通过另一个接口查
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_textUrl;
                     bool m_textUrlHasBeenSet;
 
                     /**
-                     * 二维码地址
+                     * [弃用] 二维码地址，通过另一个接口查
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_packUrl;

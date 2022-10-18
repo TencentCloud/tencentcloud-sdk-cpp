@@ -161,6 +161,8 @@
 #include <tencentcloud/tcb/v20180608/model/ModifyCloudBaseRunServerFlowConfResponse.h>
 #include <tencentcloud/tcb/v20180608/model/ModifyCloudBaseRunServerVersionRequest.h>
 #include <tencentcloud/tcb/v20180608/model/ModifyCloudBaseRunServerVersionResponse.h>
+#include <tencentcloud/tcb/v20180608/model/ModifyClsTopicRequest.h>
+#include <tencentcloud/tcb/v20180608/model/ModifyClsTopicResponse.h>
 #include <tencentcloud/tcb/v20180608/model/ModifyDatabaseACLRequest.h>
 #include <tencentcloud/tcb/v20180608/model/ModifyDatabaseACLResponse.h>
 #include <tencentcloud/tcb/v20180608/model/ModifyEndUserRequest.h>
@@ -402,6 +404,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyCloudBaseRunServerVersionResponse> ModifyCloudBaseRunServerVersionOutcome;
                 typedef std::future<ModifyCloudBaseRunServerVersionOutcome> ModifyCloudBaseRunServerVersionOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::ModifyCloudBaseRunServerVersionRequest&, ModifyCloudBaseRunServerVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCloudBaseRunServerVersionAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyClsTopicResponse> ModifyClsTopicOutcome;
+                typedef std::future<ModifyClsTopicOutcome> ModifyClsTopicOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::ModifyClsTopicRequest&, ModifyClsTopicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyClsTopicAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyDatabaseACLResponse> ModifyDatabaseACLOutcome;
                 typedef std::future<ModifyDatabaseACLOutcome> ModifyDatabaseACLOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::ModifyDatabaseACLRequest&, ModifyDatabaseACLOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDatabaseACLAsyncHandler;
@@ -1058,6 +1063,15 @@ namespace TencentCloud
                 ModifyCloudBaseRunServerVersionOutcome ModifyCloudBaseRunServerVersion(const Model::ModifyCloudBaseRunServerVersionRequest &request);
                 void ModifyCloudBaseRunServerVersionAsync(const Model::ModifyCloudBaseRunServerVersionRequest& request, const ModifyCloudBaseRunServerVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyCloudBaseRunServerVersionOutcomeCallable ModifyCloudBaseRunServerVersionCallable(const Model::ModifyCloudBaseRunServerVersionRequest& request);
+
+                /**
+                 *修改日志主题
+                 * @param req ModifyClsTopicRequest
+                 * @return ModifyClsTopicOutcome
+                 */
+                ModifyClsTopicOutcome ModifyClsTopic(const Model::ModifyClsTopicRequest &request);
+                void ModifyClsTopicAsync(const Model::ModifyClsTopicRequest& request, const ModifyClsTopicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyClsTopicOutcomeCallable ModifyClsTopicCallable(const Model::ModifyClsTopicRequest& request);
 
                 /**
                  *修改数据库权限

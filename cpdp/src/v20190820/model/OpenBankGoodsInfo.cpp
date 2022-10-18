@@ -24,7 +24,12 @@ OpenBankGoodsInfo::OpenBankGoodsInfo() :
     m_goodsNameHasBeenSet(false),
     m_goodsDetailHasBeenSet(false),
     m_goodsDescriptionHasBeenSet(false),
-    m_goodsBizTypeHasBeenSet(false)
+    m_goodsBizTypeHasBeenSet(false),
+    m_skuHasBeenSet(false),
+    m_priceHasBeenSet(false),
+    m_quantityHasBeenSet(false),
+    m_productImageHasBeenSet(false),
+    m_productUrlHasBeenSet(false)
 {
 }
 
@@ -73,6 +78,56 @@ CoreInternalOutcome OpenBankGoodsInfo::Deserialize(const rapidjson::Value &value
         m_goodsBizTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("Sku") && !value["Sku"].IsNull())
+    {
+        if (!value["Sku"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `OpenBankGoodsInfo.Sku` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sku = string(value["Sku"].GetString());
+        m_skuHasBeenSet = true;
+    }
+
+    if (value.HasMember("Price") && !value["Price"].IsNull())
+    {
+        if (!value["Price"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `OpenBankGoodsInfo.Price` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_price = string(value["Price"].GetString());
+        m_priceHasBeenSet = true;
+    }
+
+    if (value.HasMember("Quantity") && !value["Quantity"].IsNull())
+    {
+        if (!value["Quantity"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `OpenBankGoodsInfo.Quantity` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_quantity = string(value["Quantity"].GetString());
+        m_quantityHasBeenSet = true;
+    }
+
+    if (value.HasMember("ProductImage") && !value["ProductImage"].IsNull())
+    {
+        if (!value["ProductImage"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `OpenBankGoodsInfo.ProductImage` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_productImage = string(value["ProductImage"].GetString());
+        m_productImageHasBeenSet = true;
+    }
+
+    if (value.HasMember("ProductUrl") && !value["ProductUrl"].IsNull())
+    {
+        if (!value["ProductUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `OpenBankGoodsInfo.ProductUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_productUrl = string(value["ProductUrl"].GetString());
+        m_productUrlHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +165,46 @@ void OpenBankGoodsInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "GoodsBizType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_goodsBizType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_skuHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Sku";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sku.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_priceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Price";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_price.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_quantityHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Quantity";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_quantity.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_productImageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProductImage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_productImage.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_productUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProductUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_productUrl.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -177,5 +272,85 @@ void OpenBankGoodsInfo::SetGoodsBizType(const string& _goodsBizType)
 bool OpenBankGoodsInfo::GoodsBizTypeHasBeenSet() const
 {
     return m_goodsBizTypeHasBeenSet;
+}
+
+string OpenBankGoodsInfo::GetSku() const
+{
+    return m_sku;
+}
+
+void OpenBankGoodsInfo::SetSku(const string& _sku)
+{
+    m_sku = _sku;
+    m_skuHasBeenSet = true;
+}
+
+bool OpenBankGoodsInfo::SkuHasBeenSet() const
+{
+    return m_skuHasBeenSet;
+}
+
+string OpenBankGoodsInfo::GetPrice() const
+{
+    return m_price;
+}
+
+void OpenBankGoodsInfo::SetPrice(const string& _price)
+{
+    m_price = _price;
+    m_priceHasBeenSet = true;
+}
+
+bool OpenBankGoodsInfo::PriceHasBeenSet() const
+{
+    return m_priceHasBeenSet;
+}
+
+string OpenBankGoodsInfo::GetQuantity() const
+{
+    return m_quantity;
+}
+
+void OpenBankGoodsInfo::SetQuantity(const string& _quantity)
+{
+    m_quantity = _quantity;
+    m_quantityHasBeenSet = true;
+}
+
+bool OpenBankGoodsInfo::QuantityHasBeenSet() const
+{
+    return m_quantityHasBeenSet;
+}
+
+string OpenBankGoodsInfo::GetProductImage() const
+{
+    return m_productImage;
+}
+
+void OpenBankGoodsInfo::SetProductImage(const string& _productImage)
+{
+    m_productImage = _productImage;
+    m_productImageHasBeenSet = true;
+}
+
+bool OpenBankGoodsInfo::ProductImageHasBeenSet() const
+{
+    return m_productImageHasBeenSet;
+}
+
+string OpenBankGoodsInfo::GetProductUrl() const
+{
+    return m_productUrl;
+}
+
+void OpenBankGoodsInfo::SetProductUrl(const string& _productUrl)
+{
+    m_productUrl = _productUrl;
+    m_productUrlHasBeenSet = true;
+}
+
+bool OpenBankGoodsInfo::ProductUrlHasBeenSet() const
+{
+    return m_productUrlHasBeenSet;
 }
 

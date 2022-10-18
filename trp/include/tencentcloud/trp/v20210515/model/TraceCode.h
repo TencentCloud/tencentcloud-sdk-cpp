@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取码
-                     * @return Code 码
+                     * 获取二维码
+                     * @return Code 二维码
                      */
                     std::string GetCode() const;
 
                     /**
-                     * 设置码
-                     * @param Code 码
+                     * 设置二维码
+                     * @param Code 二维码
                      */
                     void SetCode(const std::string& _code);
 
@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool CorpIdHasBeenSet() const;
 
                     /**
-                     * 获取包ID
-                     * @return PackId 包ID
+                     * 获取码包ID
+                     * @return PackId 码包ID
                      */
                     std::string GetPackId() const;
 
                     /**
-                     * 设置包ID
-                     * @param PackId 包ID
+                     * 设置码包ID
+                     * @param PackId 码包ID
                      */
                     void SetPackId(const std::string& _packId);
 
@@ -155,14 +155,14 @@ namespace TencentCloud
                     bool ProductIdHasBeenSet() const;
 
                     /**
-                     * 获取状态
-                     * @return Status 状态
+                     * 获取码状态 0: 冻结 1: 激活
+                     * @return Status 码状态 0: 冻结 1: 激活
                      */
                     uint64_t GetStatus() const;
 
                     /**
-                     * 设置状态
-                     * @param Status 状态
+                     * 设置码状态 0: 冻结 1: 激活
+                     * @param Status 码状态 0: 冻结 1: 激活
                      */
                     void SetStatus(const uint64_t& _status);
 
@@ -247,7 +247,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 码
+                     * 二维码
                      */
                     std::string m_code;
                     bool m_codeHasBeenSet;
@@ -259,7 +259,7 @@ namespace TencentCloud
                     bool m_corpIdHasBeenSet;
 
                     /**
-                     * 包ID
+                     * 码包ID
                      */
                     std::string m_packId;
                     bool m_packIdHasBeenSet;
@@ -283,7 +283,7 @@ namespace TencentCloud
                     bool m_productIdHasBeenSet;
 
                     /**
-                     * 状态
+                     * 码状态 0: 冻结 1: 激活
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;

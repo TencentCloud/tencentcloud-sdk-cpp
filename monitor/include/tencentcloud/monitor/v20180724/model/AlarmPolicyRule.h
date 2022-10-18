@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/monitor/v20180724/model/AlarmPolicyFilter.h>
+#include <tencentcloud/monitor/v20180724/model/AlarmHierarchicalValue.h>
 
 
 namespace TencentCloud
@@ -471,6 +472,28 @@ re=正则匹配
                      */
                     bool ValueMinHasBeenSet() const;
 
+                    /**
+                     * 获取告警分级阈值配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return HierarchicalValue 告警分级阈值配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    AlarmHierarchicalValue GetHierarchicalValue() const;
+
+                    /**
+                     * 设置告警分级阈值配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param HierarchicalValue 告警分级阈值配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetHierarchicalValue(const AlarmHierarchicalValue& _hierarchicalValue);
+
+                    /**
+                     * 判断参数 HierarchicalValue 是否已赋值
+                     * @return HierarchicalValue 是否已赋值
+                     */
+                    bool HierarchicalValueHasBeenSet() const;
+
                 private:
 
                     /**
@@ -602,6 +625,13 @@ re=正则匹配
                      */
                     double m_valueMin;
                     bool m_valueMinHasBeenSet;
+
+                    /**
+                     * 告警分级阈值配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    AlarmHierarchicalValue m_hierarchicalValue;
+                    bool m_hierarchicalValueHasBeenSet;
 
                 };
             }

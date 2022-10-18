@@ -118,6 +118,96 @@ namespace TencentCloud
                      */
                     bool GoodsBizTypeHasBeenSet() const;
 
+                    /**
+                     * 获取商品编号。
+                     * @return Sku 商品编号。
+                     */
+                    std::string GetSku() const;
+
+                    /**
+                     * 设置商品编号。
+                     * @param Sku 商品编号。
+                     */
+                    void SetSku(const std::string& _sku);
+
+                    /**
+                     * 判断参数 Sku 是否已赋值
+                     * @return Sku 是否已赋值
+                     */
+                    bool SkuHasBeenSet() const;
+
+                    /**
+                     * 获取商品单价。
+                     * @return Price 商品单价。
+                     */
+                    std::string GetPrice() const;
+
+                    /**
+                     * 设置商品单价。
+                     * @param Price 商品单价。
+                     */
+                    void SetPrice(const std::string& _price);
+
+                    /**
+                     * 判断参数 Price 是否已赋值
+                     * @return Price 是否已赋值
+                     */
+                    bool PriceHasBeenSet() const;
+
+                    /**
+                     * 获取商品数量
+                     * @return Quantity 商品数量
+                     */
+                    std::string GetQuantity() const;
+
+                    /**
+                     * 设置商品数量
+                     * @param Quantity 商品数量
+                     */
+                    void SetQuantity(const std::string& _quantity);
+
+                    /**
+                     * 判断参数 Quantity 是否已赋值
+                     * @return Quantity 是否已赋值
+                     */
+                    bool QuantityHasBeenSet() const;
+
+                    /**
+                     * 获取商品图片url
+                     * @return ProductImage 商品图片url
+                     */
+                    std::string GetProductImage() const;
+
+                    /**
+                     * 设置商品图片url
+                     * @param ProductImage 商品图片url
+                     */
+                    void SetProductImage(const std::string& _productImage);
+
+                    /**
+                     * 判断参数 ProductImage 是否已赋值
+                     * @return ProductImage 是否已赋值
+                     */
+                    bool ProductImageHasBeenSet() const;
+
+                    /**
+                     * 获取商品链接url
+                     * @return ProductUrl 商品链接url
+                     */
+                    std::string GetProductUrl() const;
+
+                    /**
+                     * 设置商品链接url
+                     * @param ProductUrl 商品链接url
+                     */
+                    void SetProductUrl(const std::string& _productUrl);
+
+                    /**
+                     * 判断参数 ProductUrl 是否已赋值
+                     * @return ProductUrl 是否已赋值
+                     */
+                    bool ProductUrlHasBeenSet() const;
+
                 private:
 
                     /**
@@ -143,6 +233,36 @@ namespace TencentCloud
                      */
                     std::string m_goodsBizType;
                     bool m_goodsBizTypeHasBeenSet;
+
+                    /**
+                     * 商品编号。
+                     */
+                    std::string m_sku;
+                    bool m_skuHasBeenSet;
+
+                    /**
+                     * 商品单价。
+                     */
+                    std::string m_price;
+                    bool m_priceHasBeenSet;
+
+                    /**
+                     * 商品数量
+                     */
+                    std::string m_quantity;
+                    bool m_quantityHasBeenSet;
+
+                    /**
+                     * 商品图片url
+                     */
+                    std::string m_productImage;
+                    bool m_productImageHasBeenSet;
+
+                    /**
+                     * 商品链接url
+                     */
+                    std::string m_productUrl;
+                    bool m_productUrlHasBeenSet;
 
                 };
             }

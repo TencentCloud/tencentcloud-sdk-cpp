@@ -175,14 +175,14 @@ namespace TencentCloud
                     bool TemplateTypeHasBeenSet() const;
 
                     /**
-                     * 获取是否是发起人
-                     * @return IsPromoter 是否是发起人
+                     * 获取是否是发起人 ,已弃用
+                     * @return IsPromoter 是否是发起人 ,已弃用
                      */
                     bool GetIsPromoter() const;
 
                     /**
-                     * 设置是否是发起人
-                     * @param IsPromoter 是否是发起人
+                     * 设置是否是发起人 ,已弃用
+                     * @param IsPromoter 是否是发起人 ,已弃用
                      */
                     void SetIsPromoter(const bool& _isPromoter);
 
@@ -273,7 +273,7 @@ namespace TencentCloud
                     bool m_templateTypeHasBeenSet;
 
                     /**
-                     * 是否是发起人
+                     * 是否是发起人 ,已弃用
                      */
                     bool m_isPromoter;
                     bool m_isPromoterHasBeenSet;

@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取文件id数组，有效期一个小时
-                     * @return FileIds 文件id数组，有效期一个小时
+                     * 获取文件id数组，有效期一个小时；有效期内此文件id可以反复使用
+                     * @return FileIds 文件id数组，有效期一个小时；有效期内此文件id可以反复使用
                      */
                     std::vector<std::string> GetFileIds() const;
 
@@ -82,7 +82,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 文件id数组，有效期一个小时
+                     * 文件id数组，有效期一个小时；有效期内此文件id可以反复使用
                      */
                     std::vector<std::string> m_fileIds;
                     bool m_fileIdsHasBeenSet;

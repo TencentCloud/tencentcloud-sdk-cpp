@@ -3007,6 +3007,49 @@ TcbClient::ModifyCloudBaseRunServerVersionOutcomeCallable TcbClient::ModifyCloud
     return task->get_future();
 }
 
+TcbClient::ModifyClsTopicOutcome TcbClient::ModifyClsTopic(const ModifyClsTopicRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyClsTopic");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyClsTopicResponse rsp = ModifyClsTopicResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyClsTopicOutcome(rsp);
+        else
+            return ModifyClsTopicOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyClsTopicOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::ModifyClsTopicAsync(const ModifyClsTopicRequest& request, const ModifyClsTopicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyClsTopic(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcbClient::ModifyClsTopicOutcomeCallable TcbClient::ModifyClsTopicCallable(const ModifyClsTopicRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyClsTopicOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyClsTopic(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcbClient::ModifyDatabaseACLOutcome TcbClient::ModifyDatabaseACL(const ModifyDatabaseACLRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyDatabaseACL");

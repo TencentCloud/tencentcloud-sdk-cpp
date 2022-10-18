@@ -25,9 +25,9 @@ using namespace std;
 ChannelDescribeEmployeesRequest::ChannelDescribeEmployeesRequest() :
     m_limitHasBeenSet(false),
     m_agentHasBeenSet(false),
-    m_operatorHasBeenSet(false),
     m_filtersHasBeenSet(false),
-    m_offsetHasBeenSet(false)
+    m_offsetHasBeenSet(false),
+    m_operatorHasBeenSet(false)
 {
 }
 
@@ -55,15 +55,6 @@ string ChannelDescribeEmployeesRequest::ToJsonString() const
         m_agent.ToJsonObject(d[key.c_str()], allocator);
     }
 
-    if (m_operatorHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Operator";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_operator.ToJsonObject(d[key.c_str()], allocator);
-    }
-
     if (m_filtersHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -85,6 +76,15 @@ string ChannelDescribeEmployeesRequest::ToJsonString() const
         string key = "Offset";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_operatorHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Operator";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_operator.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -127,22 +127,6 @@ bool ChannelDescribeEmployeesRequest::AgentHasBeenSet() const
     return m_agentHasBeenSet;
 }
 
-UserInfo ChannelDescribeEmployeesRequest::GetOperator() const
-{
-    return m_operator;
-}
-
-void ChannelDescribeEmployeesRequest::SetOperator(const UserInfo& _operator)
-{
-    m_operator = _operator;
-    m_operatorHasBeenSet = true;
-}
-
-bool ChannelDescribeEmployeesRequest::OperatorHasBeenSet() const
-{
-    return m_operatorHasBeenSet;
-}
-
 vector<Filter> ChannelDescribeEmployeesRequest::GetFilters() const
 {
     return m_filters;
@@ -173,6 +157,22 @@ void ChannelDescribeEmployeesRequest::SetOffset(const int64_t& _offset)
 bool ChannelDescribeEmployeesRequest::OffsetHasBeenSet() const
 {
     return m_offsetHasBeenSet;
+}
+
+UserInfo ChannelDescribeEmployeesRequest::GetOperator() const
+{
+    return m_operator;
+}
+
+void ChannelDescribeEmployeesRequest::SetOperator(const UserInfo& _operator)
+{
+    m_operator = _operator;
+    m_operatorHasBeenSet = true;
+}
+
+bool ChannelDescribeEmployeesRequest::OperatorHasBeenSet() const
+{
+    return m_operatorHasBeenSet;
 }
 
 

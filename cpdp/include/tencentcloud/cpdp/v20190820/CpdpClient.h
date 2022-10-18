@@ -111,6 +111,8 @@
 #include <tencentcloud/cpdp/v20190820/model/CreateOpenBankExternalSubMerchantAccountBookResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/CreateOpenBankExternalSubMerchantRegistrationRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/CreateOpenBankExternalSubMerchantRegistrationResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/CreateOpenBankGlobalPaymentOrderRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/CreateOpenBankGlobalPaymentOrderResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/CreateOpenBankMerchantRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/CreateOpenBankMerchantResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/CreateOpenBankPaymentOrderRequest.h>
@@ -591,6 +593,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateOpenBankExternalSubMerchantRegistrationResponse> CreateOpenBankExternalSubMerchantRegistrationOutcome;
                 typedef std::future<CreateOpenBankExternalSubMerchantRegistrationOutcome> CreateOpenBankExternalSubMerchantRegistrationOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::CreateOpenBankExternalSubMerchantRegistrationRequest&, CreateOpenBankExternalSubMerchantRegistrationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateOpenBankExternalSubMerchantRegistrationAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateOpenBankGlobalPaymentOrderResponse> CreateOpenBankGlobalPaymentOrderOutcome;
+                typedef std::future<CreateOpenBankGlobalPaymentOrderOutcome> CreateOpenBankGlobalPaymentOrderOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::CreateOpenBankGlobalPaymentOrderRequest&, CreateOpenBankGlobalPaymentOrderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateOpenBankGlobalPaymentOrderAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateOpenBankMerchantResponse> CreateOpenBankMerchantOutcome;
                 typedef std::future<CreateOpenBankMerchantOutcome> CreateOpenBankMerchantOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::CreateOpenBankMerchantRequest&, CreateOpenBankMerchantOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateOpenBankMerchantAsyncHandler;
@@ -1498,6 +1503,15 @@ namespace TencentCloud
                 CreateOpenBankExternalSubMerchantRegistrationOutcome CreateOpenBankExternalSubMerchantRegistration(const Model::CreateOpenBankExternalSubMerchantRegistrationRequest &request);
                 void CreateOpenBankExternalSubMerchantRegistrationAsync(const Model::CreateOpenBankExternalSubMerchantRegistrationRequest& request, const CreateOpenBankExternalSubMerchantRegistrationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateOpenBankExternalSubMerchantRegistrationOutcomeCallable CreateOpenBankExternalSubMerchantRegistrationCallable(const Model::CreateOpenBankExternalSubMerchantRegistrationRequest& request);
+
+                /**
+                 *云企付-跨境支付下单
+                 * @param req CreateOpenBankGlobalPaymentOrderRequest
+                 * @return CreateOpenBankGlobalPaymentOrderOutcome
+                 */
+                CreateOpenBankGlobalPaymentOrderOutcome CreateOpenBankGlobalPaymentOrder(const Model::CreateOpenBankGlobalPaymentOrderRequest &request);
+                void CreateOpenBankGlobalPaymentOrderAsync(const Model::CreateOpenBankGlobalPaymentOrderRequest& request, const CreateOpenBankGlobalPaymentOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateOpenBankGlobalPaymentOrderOutcomeCallable CreateOpenBankGlobalPaymentOrderCallable(const Model::CreateOpenBankGlobalPaymentOrderRequest& request);
 
                 /**
                  *云企付-创建商户

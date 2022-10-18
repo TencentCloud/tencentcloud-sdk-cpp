@@ -31,6 +31,7 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/DeleteCloudBaseRunServerVersionResponse.h
   include/tencentcloud/tcb/v20180608/model/RollUpdateCloudBaseRunServerVersionResponse.h
   include/tencentcloud/tcb/v20180608/model/SearchClsLogResponse.h
+  include/tencentcloud/tcb/v20180608/model/ModifyClsTopicResponse.h
   include/tencentcloud/tcb/v20180608/model/StandaloneGatewayInfo.h
   include/tencentcloud/tcb/v20180608/model/CloudBaseRunSideSpec.h
   include/tencentcloud/tcb/v20180608/model/CommonServiceAPIResponse.h
@@ -57,6 +58,7 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/DescribeCloudBaseRunOperationTypesRequest.h
   include/tencentcloud/tcb/v20180608/model/DescribeAuthDomainsResponse.h
   include/tencentcloud/tcb/v20180608/model/DescribeCloudBaseRunOneClickTaskExternalRequest.h
+  include/tencentcloud/tcb/v20180608/model/ModifyClsTopicRequest.h
   include/tencentcloud/tcb/v20180608/model/DescribeStandaloneGatewayResponse.h
   include/tencentcloud/tcb/v20180608/model/DescribeWxCloudBaseRunEnvsResponse.h
   include/tencentcloud/tcb/v20180608/model/CreateHostingDomainRequest.h
@@ -249,6 +251,7 @@ set(tcb_src
   src/v20180608/model/DeleteCloudBaseRunServerVersionResponse.cpp
   src/v20180608/model/RollUpdateCloudBaseRunServerVersionResponse.cpp
   src/v20180608/model/SearchClsLogResponse.cpp
+  src/v20180608/model/ModifyClsTopicResponse.cpp
   src/v20180608/model/StandaloneGatewayInfo.cpp
   src/v20180608/model/CloudBaseRunSideSpec.cpp
   src/v20180608/model/CommonServiceAPIResponse.cpp
@@ -275,6 +278,7 @@ set(tcb_src
   src/v20180608/model/DescribeCloudBaseRunOperationTypesRequest.cpp
   src/v20180608/model/DescribeAuthDomainsResponse.cpp
   src/v20180608/model/DescribeCloudBaseRunOneClickTaskExternalRequest.cpp
+  src/v20180608/model/ModifyClsTopicRequest.cpp
   src/v20180608/model/DescribeStandaloneGatewayResponse.cpp
   src/v20180608/model/DescribeWxCloudBaseRunEnvsResponse.cpp
   src/v20180608/model/CreateHostingDomainRequest.cpp

@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool TortIdHasBeenSet() const;
 
                     /**
-                     * 获取取证类型：1-网页取证 2-过程取证
-                     * @return ObtainType 取证类型：1-网页取证 2-过程取证
+                     * 获取取证类型：1-网页取证 2-过程取证(暂不提供)
+                     * @return ObtainType 取证类型：1-网页取证 2-过程取证(暂不提供)
                      */
                     int64_t GetObtainType() const;
 
                     /**
-                     * 设置取证类型：1-网页取证 2-过程取证
-                     * @param ObtainType 取证类型：1-网页取证 2-过程取证
+                     * 设置取证类型：1-网页取证 2-过程取证(暂不提供)
+                     * @param ObtainType 取证类型：1-网页取证 2-过程取证(暂不提供)
                      */
                     void SetObtainType(const int64_t& _obtainType);
 
@@ -123,7 +123,7 @@ namespace TencentCloud
                     bool m_tortIdHasBeenSet;
 
                     /**
-                     * 取证类型：1-网页取证 2-过程取证
+                     * 取证类型：1-网页取证 2-过程取证(暂不提供)
                      */
                     int64_t m_obtainType;
                     bool m_obtainTypeHasBeenSet;

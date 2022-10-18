@@ -55,6 +55,7 @@ set(bma_public_header_model
   include/tencentcloud/bma/v20210624/model/DescribeCRMonitorDetailResponse.h
   include/tencentcloud/bma/v20210624/model/CreateCRWorkRequest.h
   include/tencentcloud/bma/v20210624/model/DescribeBPCompanyInfoRequest.h
+  include/tencentcloud/bma/v20210624/model/DescribeCRObtainDetailRequest.h
   include/tencentcloud/bma/v20210624/model/DescribeBPReportFakeURLsResponse.h
   include/tencentcloud/bma/v20210624/model/DescribeCRMonitorDetailRequest.h
   include/tencentcloud/bma/v20210624/model/Filter.h
@@ -62,6 +63,7 @@ set(bma_public_header_model
   include/tencentcloud/bma/v20210624/model/ModifyCRRightStatusRequest.h
   include/tencentcloud/bma/v20210624/model/DescribeCRMonitorsRequest.h
   include/tencentcloud/bma/v20210624/model/DescribeCRWorkInfoResponse.h
+  include/tencentcloud/bma/v20210624/model/DescribeCRObtainDetailResponse.h
   include/tencentcloud/bma/v20210624/model/CreateCRRightFileResponse.h
   include/tencentcloud/bma/v20210624/model/ModifyCRWhiteListResponse.h
   include/tencentcloud/bma/v20210624/model/FakeURLInfo.h
@@ -121,6 +123,7 @@ set(bma_src
   src/v20210624/model/DescribeCRMonitorDetailResponse.cpp
   src/v20210624/model/CreateCRWorkRequest.cpp
   src/v20210624/model/DescribeBPCompanyInfoRequest.cpp
+  src/v20210624/model/DescribeCRObtainDetailRequest.cpp
   src/v20210624/model/DescribeBPReportFakeURLsResponse.cpp
   src/v20210624/model/DescribeCRMonitorDetailRequest.cpp
   src/v20210624/model/Filter.cpp
@@ -128,6 +131,7 @@ set(bma_src
   src/v20210624/model/ModifyCRRightStatusRequest.cpp
   src/v20210624/model/DescribeCRMonitorsRequest.cpp
   src/v20210624/model/DescribeCRWorkInfoResponse.cpp
+  src/v20210624/model/DescribeCRObtainDetailResponse.cpp
   src/v20210624/model/CreateCRRightFileResponse.cpp
   src/v20210624/model/ModifyCRWhiteListResponse.cpp
   src/v20210624/model/FakeURLInfo.cpp

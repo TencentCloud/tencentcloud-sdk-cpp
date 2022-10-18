@@ -40,6 +40,49 @@ LcicClient::LcicClient(const Credential &credential, const string &region, const
 }
 
 
+LcicClient::BindDocumentToRoomOutcome LcicClient::BindDocumentToRoom(const BindDocumentToRoomRequest &request)
+{
+    auto outcome = MakeRequest(request, "BindDocumentToRoom");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        BindDocumentToRoomResponse rsp = BindDocumentToRoomResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return BindDocumentToRoomOutcome(rsp);
+        else
+            return BindDocumentToRoomOutcome(o.GetError());
+    }
+    else
+    {
+        return BindDocumentToRoomOutcome(outcome.GetError());
+    }
+}
+
+void LcicClient::BindDocumentToRoomAsync(const BindDocumentToRoomRequest& request, const BindDocumentToRoomAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->BindDocumentToRoom(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LcicClient::BindDocumentToRoomOutcomeCallable LcicClient::BindDocumentToRoomCallable(const BindDocumentToRoomRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<BindDocumentToRoomOutcome()>>(
+        [this, request]()
+        {
+            return this->BindDocumentToRoom(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LcicClient::CreateDocumentOutcome LcicClient::CreateDocument(const CreateDocumentRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateDocument");
@@ -255,6 +298,49 @@ LcicClient::DescribeRoomOutcomeCallable LcicClient::DescribeRoomCallable(const D
     return task->get_future();
 }
 
+LcicClient::DescribeRoomStatisticsOutcome LcicClient::DescribeRoomStatistics(const DescribeRoomStatisticsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRoomStatistics");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRoomStatisticsResponse rsp = DescribeRoomStatisticsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRoomStatisticsOutcome(rsp);
+        else
+            return DescribeRoomStatisticsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRoomStatisticsOutcome(outcome.GetError());
+    }
+}
+
+void LcicClient::DescribeRoomStatisticsAsync(const DescribeRoomStatisticsRequest& request, const DescribeRoomStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRoomStatistics(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LcicClient::DescribeRoomStatisticsOutcomeCallable LcicClient::DescribeRoomStatisticsCallable(const DescribeRoomStatisticsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRoomStatisticsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRoomStatistics(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LcicClient::DescribeUserOutcome LcicClient::DescribeUser(const DescribeUserRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeUser");
@@ -384,6 +470,49 @@ LcicClient::LoginUserOutcomeCallable LcicClient::LoginUserCallable(const LoginUs
     return task->get_future();
 }
 
+LcicClient::ModifyAppOutcome LcicClient::ModifyApp(const ModifyAppRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyApp");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyAppResponse rsp = ModifyAppResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyAppOutcome(rsp);
+        else
+            return ModifyAppOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyAppOutcome(outcome.GetError());
+    }
+}
+
+void LcicClient::ModifyAppAsync(const ModifyAppRequest& request, const ModifyAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyApp(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LcicClient::ModifyAppOutcomeCallable LcicClient::ModifyAppCallable(const ModifyAppRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyAppOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyApp(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LcicClient::RegisterUserOutcome LcicClient::RegisterUser(const RegisterUserRequest &request)
 {
     auto outcome = MakeRequest(request, "RegisterUser");
@@ -463,6 +592,49 @@ LcicClient::SetAppCustomContentOutcomeCallable LcicClient::SetAppCustomContentCa
         [this, request]()
         {
             return this->SetAppCustomContent(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LcicClient::UnbindDocumentFromRoomOutcome LcicClient::UnbindDocumentFromRoom(const UnbindDocumentFromRoomRequest &request)
+{
+    auto outcome = MakeRequest(request, "UnbindDocumentFromRoom");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UnbindDocumentFromRoomResponse rsp = UnbindDocumentFromRoomResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UnbindDocumentFromRoomOutcome(rsp);
+        else
+            return UnbindDocumentFromRoomOutcome(o.GetError());
+    }
+    else
+    {
+        return UnbindDocumentFromRoomOutcome(outcome.GetError());
+    }
+}
+
+void LcicClient::UnbindDocumentFromRoomAsync(const UnbindDocumentFromRoomRequest& request, const UnbindDocumentFromRoomAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UnbindDocumentFromRoom(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LcicClient::UnbindDocumentFromRoomOutcomeCallable LcicClient::UnbindDocumentFromRoomCallable(const UnbindDocumentFromRoomRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UnbindDocumentFromRoomOutcome()>>(
+        [this, request]()
+        {
+            return this->UnbindDocumentFromRoom(request);
         }
     );
 

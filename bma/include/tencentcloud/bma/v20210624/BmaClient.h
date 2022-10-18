@@ -61,6 +61,8 @@
 #include <tencentcloud/bma/v20210624/model/DescribeCRMonitorDetailResponse.h>
 #include <tencentcloud/bma/v20210624/model/DescribeCRMonitorsRequest.h>
 #include <tencentcloud/bma/v20210624/model/DescribeCRMonitorsResponse.h>
+#include <tencentcloud/bma/v20210624/model/DescribeCRObtainDetailRequest.h>
+#include <tencentcloud/bma/v20210624/model/DescribeCRObtainDetailResponse.h>
 #include <tencentcloud/bma/v20210624/model/DescribeCRWorkInfoRequest.h>
 #include <tencentcloud/bma/v20210624/model/DescribeCRWorkInfoResponse.h>
 #include <tencentcloud/bma/v20210624/model/ModifyBPOfflineAttachmentRequest.h>
@@ -148,6 +150,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeCRMonitorsResponse> DescribeCRMonitorsOutcome;
                 typedef std::future<DescribeCRMonitorsOutcome> DescribeCRMonitorsOutcomeCallable;
                 typedef std::function<void(const BmaClient*, const Model::DescribeCRMonitorsRequest&, DescribeCRMonitorsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCRMonitorsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCRObtainDetailResponse> DescribeCRObtainDetailOutcome;
+                typedef std::future<DescribeCRObtainDetailOutcome> DescribeCRObtainDetailOutcomeCallable;
+                typedef std::function<void(const BmaClient*, const Model::DescribeCRObtainDetailRequest&, DescribeCRObtainDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCRObtainDetailAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCRWorkInfoResponse> DescribeCRWorkInfoOutcome;
                 typedef std::future<DescribeCRWorkInfoOutcome> DescribeCRWorkInfoOutcomeCallable;
                 typedef std::function<void(const BmaClient*, const Model::DescribeCRWorkInfoRequest&, DescribeCRWorkInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCRWorkInfoAsyncHandler;
@@ -221,7 +226,7 @@ namespace TencentCloud
                 CreateBPProtectURLsOutcomeCallable CreateBPProtectURLsCallable(const Model::CreateBPProtectURLsRequest& request);
 
                 /**
-                 *新建拦截
+                 *新建协查处置
 
                  * @param req CreateCRBlockRequest
                  * @return CreateCRBlockOutcome
@@ -348,6 +353,15 @@ namespace TencentCloud
                 DescribeCRMonitorsOutcomeCallable DescribeCRMonitorsCallable(const Model::DescribeCRMonitorsRequest& request);
 
                 /**
+                 *查询取证详情
+                 * @param req DescribeCRObtainDetailRequest
+                 * @return DescribeCRObtainDetailOutcome
+                 */
+                DescribeCRObtainDetailOutcome DescribeCRObtainDetail(const Model::DescribeCRObtainDetailRequest &request);
+                void DescribeCRObtainDetailAsync(const Model::DescribeCRObtainDetailRequest& request, const DescribeCRObtainDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCRObtainDetailOutcomeCallable DescribeCRObtainDetailCallable(const Model::DescribeCRObtainDetailRequest& request);
+
+                /**
                  *查询作品基本信息
                  * @param req DescribeCRWorkInfoRequest
                  * @return DescribeCRWorkInfoOutcome
@@ -366,7 +380,7 @@ namespace TencentCloud
                 ModifyBPOfflineAttachmentOutcomeCallable ModifyBPOfflineAttachmentCallable(const Model::ModifyBPOfflineAttachmentRequest& request);
 
                 /**
-                 *拦截申请
+                 *协查处置申请
                  * @param req ModifyCRBlockStatusRequest
                  * @return ModifyCRBlockStatusOutcome
                  */

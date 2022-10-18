@@ -213,6 +213,20 @@ coteaching 双师
                      */
                     bool AssistantsHasBeenSet() const;
 
+                    /**
+                     * 获取录制地址。仅在房间结束后存在。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RecordUrl 录制地址。仅在房间结束后存在。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetRecordUrl() const;
+
+                    /**
+                     * 判断参数 RecordUrl 是否已赋值
+                     * @return RecordUrl 是否已赋值
+                     */
+                    bool RecordUrlHasBeenSet() const;
+
                 private:
 
                     /**
@@ -299,6 +313,13 @@ coteaching 双师
                      */
                     std::vector<std::string> m_assistants;
                     bool m_assistantsHasBeenSet;
+
+                    /**
+                     * 录制地址。仅在房间结束后存在。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_recordUrl;
+                    bool m_recordUrlHasBeenSet;
 
                 };
             }

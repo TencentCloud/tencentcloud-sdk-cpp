@@ -35,7 +35,8 @@ DescribeRoomResponse::DescribeRoomResponse() :
     m_audioQualityHasBeenSet(false),
     m_subTypeHasBeenSet(false),
     m_disableRecordHasBeenSet(false),
-    m_assistantsHasBeenSet(false)
+    m_assistantsHasBeenSet(false),
+    m_recordUrlHasBeenSet(false)
 {
 }
 
@@ -196,6 +197,16 @@ CoreInternalOutcome DescribeRoomResponse::Deserialize(const string &payload)
         m_assistantsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("RecordUrl") && !rsp["RecordUrl"].IsNull())
+    {
+        if (!rsp["RecordUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RecordUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_recordUrl = string(rsp["RecordUrl"].GetString());
+        m_recordUrlHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -305,6 +316,14 @@ string DescribeRoomResponse::ToJsonString() const
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_recordUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RecordUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_recordUrl.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -437,6 +456,16 @@ vector<string> DescribeRoomResponse::GetAssistants() const
 bool DescribeRoomResponse::AssistantsHasBeenSet() const
 {
     return m_assistantsHasBeenSet;
+}
+
+string DescribeRoomResponse::GetRecordUrl() const
+{
+    return m_recordUrl;
+}
+
+bool DescribeRoomResponse::RecordUrlHasBeenSet() const
+{
+    return m_recordUrlHasBeenSet;
 }
 
 

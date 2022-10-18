@@ -20,6 +20,7 @@ set(monitor_public_header
 
 set(monitor_public_header_model
   include/tencentcloud/monitor/v20180724/model/UpdateAlertRuleStateRequest.h
+  include/tencentcloud/monitor/v20180724/model/AlarmHierarchicalValue.h
   include/tencentcloud/monitor/v20180724/model/TagInstance.h
   include/tencentcloud/monitor/v20180724/model/DescribePolicyConditionListConfigManual.h
   include/tencentcloud/monitor/v20180724/model/InstallPluginsRequest.h
@@ -346,6 +347,7 @@ set(monitor_public_header_model
 set(monitor_src
   src/v20180724/MonitorClient.cpp
   src/v20180724/model/UpdateAlertRuleStateRequest.cpp
+  src/v20180724/model/AlarmHierarchicalValue.cpp
   src/v20180724/model/TagInstance.cpp
   src/v20180724/model/DescribePolicyConditionListConfigManual.cpp
   src/v20180724/model/InstallPluginsRequest.cpp

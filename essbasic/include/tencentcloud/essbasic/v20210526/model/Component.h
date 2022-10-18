@@ -216,6 +216,24 @@ SIGN_PERSONAL_SEAL - 个人签署印章控件（使用文件发起暂不支持�
                     bool ComponentRequiredHasBeenSet() const;
 
                     /**
+                     * 获取控件关联的签署方id
+                     * @return ComponentRecipientId 控件关联的签署方id
+                     */
+                    std::string GetComponentRecipientId() const;
+
+                    /**
+                     * 设置控件关联的签署方id
+                     * @param ComponentRecipientId 控件关联的签署方id
+                     */
+                    void SetComponentRecipientId(const std::string& _componentRecipientId);
+
+                    /**
+                     * 判断参数 ComponentRecipientId 是否已赋值
+                     * @return ComponentRecipientId 是否已赋值
+                     */
+                    bool ComponentRecipientIdHasBeenSet() const;
+
+                    /**
                      * 获取控件所属文件的序号 (文档中文件的排列序号，从0开始)
                      * @return FileIndex 控件所属文件的序号 (文档中文件的排列序号，从0开始)
                      */
@@ -580,6 +598,12 @@ SIGN_PERSONAL_SEAL - 个人签署印章控件（使用文件发起暂不支持�
                      */
                     bool m_componentRequired;
                     bool m_componentRequiredHasBeenSet;
+
+                    /**
+                     * 控件关联的签署方id
+                     */
+                    std::string m_componentRecipientId;
+                    bool m_componentRecipientIdHasBeenSet;
 
                     /**
                      * 控件所属文件的序号 (文档中文件的排列序号，从0开始)

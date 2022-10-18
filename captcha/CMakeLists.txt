@@ -31,12 +31,16 @@ set(captcha_public_header_model
   include/tencentcloud/captcha/v20190722/model/TicketInterceptUnit.h
   include/tencentcloud/captcha/v20190722/model/DescribeCaptchaUserAllAppIdRequest.h
   include/tencentcloud/captcha/v20190722/model/GetTotalTicketStatisticsResponse.h
+  include/tencentcloud/captcha/v20190722/model/TicketCheckTrendObj.h
   include/tencentcloud/captcha/v20190722/model/DescribeCaptchaMiniDataResponse.h
-  include/tencentcloud/captcha/v20190722/model/UpdateCaptchaAppIdInfoResponse.h
+  include/tencentcloud/captcha/v20190722/model/InterceptPerTrendObj.h
   include/tencentcloud/captcha/v20190722/model/DescribeCaptchaMiniRiskResultRequest.h
+  include/tencentcloud/captcha/v20190722/model/UpdateCaptchaAppIdInfoResponse.h
   include/tencentcloud/captcha/v20190722/model/CaptchaUserAllAppId.h
   include/tencentcloud/captcha/v20190722/model/DescribeCaptchaDataSumResponse.h
+  include/tencentcloud/captcha/v20190722/model/TicketThroughUnit.h
   include/tencentcloud/captcha/v20190722/model/DescribeCaptchaTicketDataRequest.h
+  include/tencentcloud/captcha/v20190722/model/DescribeCaptchaResultResponse.h
   include/tencentcloud/captcha/v20190722/model/DescribeCaptchaMiniDataSumRequest.h
   include/tencentcloud/captcha/v20190722/model/CaptchaOperDataTryTimesUnit.h
   include/tencentcloud/captcha/v20190722/model/DescribeCaptchaOperDataRequest.h
@@ -44,10 +48,10 @@ set(captcha_public_header_model
   include/tencentcloud/captcha/v20190722/model/DescribeCaptchaMiniRiskResultResponse.h
   include/tencentcloud/captcha/v20190722/model/TicketAmountUnit.h
   include/tencentcloud/captcha/v20190722/model/CaptchaQueryData.h
-  include/tencentcloud/captcha/v20190722/model/TicketThroughUnit.h
+  include/tencentcloud/captcha/v20190722/model/RequestTrendObj.h
   include/tencentcloud/captcha/v20190722/model/DescribeCaptchaDataResponse.h
   include/tencentcloud/captcha/v20190722/model/DescribeCaptchaResultRequest.h
-  include/tencentcloud/captcha/v20190722/model/DescribeCaptchaResultResponse.h
+  include/tencentcloud/captcha/v20190722/model/CaptchaStatisticObj.h
   include/tencentcloud/captcha/v20190722/model/CaptchaOperDataLoadTimeUnit.h
   include/tencentcloud/captcha/v20190722/model/DescribeCaptchaMiniOperDataRequest.h
   include/tencentcloud/captcha/v20190722/model/DescribeCaptchaAppIdInfoRequest.h
@@ -75,12 +79,16 @@ set(captcha_src
   src/v20190722/model/TicketInterceptUnit.cpp
   src/v20190722/model/DescribeCaptchaUserAllAppIdRequest.cpp
   src/v20190722/model/GetTotalTicketStatisticsResponse.cpp
+  src/v20190722/model/TicketCheckTrendObj.cpp
   src/v20190722/model/DescribeCaptchaMiniDataResponse.cpp
-  src/v20190722/model/UpdateCaptchaAppIdInfoResponse.cpp
+  src/v20190722/model/InterceptPerTrendObj.cpp
   src/v20190722/model/DescribeCaptchaMiniRiskResultRequest.cpp
+  src/v20190722/model/UpdateCaptchaAppIdInfoResponse.cpp
   src/v20190722/model/CaptchaUserAllAppId.cpp
   src/v20190722/model/DescribeCaptchaDataSumResponse.cpp
+  src/v20190722/model/TicketThroughUnit.cpp
   src/v20190722/model/DescribeCaptchaTicketDataRequest.cpp
+  src/v20190722/model/DescribeCaptchaResultResponse.cpp
   src/v20190722/model/DescribeCaptchaMiniDataSumRequest.cpp
   src/v20190722/model/CaptchaOperDataTryTimesUnit.cpp
   src/v20190722/model/DescribeCaptchaOperDataRequest.cpp
@@ -88,10 +96,10 @@ set(captcha_src
   src/v20190722/model/DescribeCaptchaMiniRiskResultResponse.cpp
   src/v20190722/model/TicketAmountUnit.cpp
   src/v20190722/model/CaptchaQueryData.cpp
-  src/v20190722/model/TicketThroughUnit.cpp
+  src/v20190722/model/RequestTrendObj.cpp
   src/v20190722/model/DescribeCaptchaDataResponse.cpp
   src/v20190722/model/DescribeCaptchaResultRequest.cpp
-  src/v20190722/model/DescribeCaptchaResultResponse.cpp
+  src/v20190722/model/CaptchaStatisticObj.cpp
   src/v20190722/model/CaptchaOperDataLoadTimeUnit.cpp
   src/v20190722/model/DescribeCaptchaMiniOperDataRequest.cpp
   src/v20190722/model/DescribeCaptchaAppIdInfoRequest.cpp
