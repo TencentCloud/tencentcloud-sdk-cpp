@@ -29,7 +29,8 @@ CreateCustomPackRequest::CreateCustomPackRequest() :
     m_packTypeHasBeenSet(false),
     m_packLevelHasBeenSet(false),
     m_packSpecHasBeenSet(false),
-    m_customIdHasBeenSet(false)
+    m_customIdHasBeenSet(false),
+    m_codePartsHasBeenSet(false)
 {
 }
 
@@ -101,6 +102,21 @@ string CreateCustomPackRequest::ToJsonString() const
         string key = "CustomId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_customId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_codePartsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CodeParts";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_codeParts.begin(); itr != m_codeParts.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -221,6 +237,22 @@ void CreateCustomPackRequest::SetCustomId(const string& _customId)
 bool CreateCustomPackRequest::CustomIdHasBeenSet() const
 {
     return m_customIdHasBeenSet;
+}
+
+vector<CodePart> CreateCustomPackRequest::GetCodeParts() const
+{
+    return m_codeParts;
+}
+
+void CreateCustomPackRequest::SetCodeParts(const vector<CodePart>& _codeParts)
+{
+    m_codeParts = _codeParts;
+    m_codePartsHasBeenSet = true;
+}
+
+bool CreateCustomPackRequest::CodePartsHasBeenSet() const
+{
+    return m_codePartsHasBeenSet;
 }
 
 

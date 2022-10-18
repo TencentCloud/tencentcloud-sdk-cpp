@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/trp/v20210515/model/PackSpec.h>
+#include <tencentcloud/trp/v20210515/model/CodePart.h>
 
 
 namespace TencentCloud
@@ -134,14 +135,14 @@ namespace TencentCloud
                     bool PackLevelHasBeenSet() const;
 
                     /**
-                     * 获取层级码包规则 [{ Level, Rate, Amount, CustomId }]
-                     * @return PackSpec 层级码包规则 [{ Level, Rate, Amount, CustomId }]
+                     * 获取层级码包规则
+                     * @return PackSpec 层级码包规则
                      */
                     std::vector<PackSpec> GetPackSpec() const;
 
                     /**
-                     * 设置层级码包规则 [{ Level, Rate, Amount, CustomId }]
-                     * @param PackSpec 层级码包规则 [{ Level, Rate, Amount, CustomId }]
+                     * 设置层级码包规则
+                     * @param PackSpec 层级码包规则
                      */
                     void SetPackSpec(const std::vector<PackSpec>& _packSpec);
 
@@ -152,14 +153,14 @@ namespace TencentCloud
                     bool PackSpecHasBeenSet() const;
 
                     /**
-                     * 获取码规则ID,  普通码包时必填
-                     * @return CustomId 码规则ID,  普通码包时必填
+                     * 获取码规则ID,  和CodeParts二选一必填
+                     * @return CustomId 码规则ID,  和CodeParts二选一必填
                      */
                     std::string GetCustomId() const;
 
                     /**
-                     * 设置码规则ID,  普通码包时必填
-                     * @param CustomId 码规则ID,  普通码包时必填
+                     * 设置码规则ID,  和CodeParts二选一必填
+                     * @param CustomId 码规则ID,  和CodeParts二选一必填
                      */
                     void SetCustomId(const std::string& _customId);
 
@@ -168,6 +169,24 @@ namespace TencentCloud
                      * @return CustomId 是否已赋值
                      */
                     bool CustomIdHasBeenSet() const;
+
+                    /**
+                     * 获取码段配置，和CustomId二选一必填
+                     * @return CodeParts 码段配置，和CustomId二选一必填
+                     */
+                    std::vector<CodePart> GetCodeParts() const;
+
+                    /**
+                     * 设置码段配置，和CustomId二选一必填
+                     * @param CodeParts 码段配置，和CustomId二选一必填
+                     */
+                    void SetCodeParts(const std::vector<CodePart>& _codeParts);
+
+                    /**
+                     * 判断参数 CodeParts 是否已赋值
+                     * @return CodeParts 是否已赋值
+                     */
+                    bool CodePartsHasBeenSet() const;
 
                 private:
 
@@ -202,16 +221,22 @@ namespace TencentCloud
                     bool m_packLevelHasBeenSet;
 
                     /**
-                     * 层级码包规则 [{ Level, Rate, Amount, CustomId }]
+                     * 层级码包规则
                      */
                     std::vector<PackSpec> m_packSpec;
                     bool m_packSpecHasBeenSet;
 
                     /**
-                     * 码规则ID,  普通码包时必填
+                     * 码规则ID,  和CodeParts二选一必填
                      */
                     std::string m_customId;
                     bool m_customIdHasBeenSet;
+
+                    /**
+                     * 码段配置，和CustomId二选一必填
+                     */
+                    std::vector<CodePart> m_codeParts;
+                    bool m_codePartsHasBeenSet;
 
                 };
             }

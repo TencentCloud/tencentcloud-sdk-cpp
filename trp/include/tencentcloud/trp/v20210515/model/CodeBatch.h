@@ -93,17 +93,17 @@ namespace TencentCloud
                     bool CorpIdHasBeenSet() const;
 
                     /**
-                     * 获取码
+                     * 获取批次编码(未使用)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return BatchCode 码
+                     * @return BatchCode 批次编码(未使用)
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetBatchCode() const;
 
                     /**
-                     * 设置码
+                     * 设置批次编码(未使用)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BatchCode 码
+                     * @param BatchCode 批次编码(未使用)
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetBatchCode(const std::string& _batchCode);
@@ -247,17 +247,17 @@ namespace TencentCloud
                     bool MpTplHasBeenSet() const;
 
                     /**
-                     * 获取状态
+                     * 获取批次状态 0: 未激活 1: 已激活 -1: 已冻结
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Status 状态
+                     * @return Status 批次状态 0: 未激活 1: 已激活 -1: 已冻结
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置状态
+                     * 设置批次状态 0: 未激活 1: 已激活 -1: 已冻结
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Status 状态
+                     * @param Status 批次状态 0: 未激活 1: 已激活 -1: 已冻结
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetStatus(const int64_t& _status);
@@ -439,7 +439,7 @@ namespace TencentCloud
                     bool m_corpIdHasBeenSet;
 
                     /**
-                     * 码
+                     * 批次编码(未使用)
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_batchCode;
@@ -488,7 +488,7 @@ namespace TencentCloud
                     bool m_mpTplHasBeenSet;
 
                     /**
-                     * 状态
+                     * 批次状态 0: 未激活 1: 已激活 -1: 已冻结
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_status;

@@ -1201,6 +1201,49 @@ TrpClient::DescribeProductsOutcomeCallable TrpClient::DescribeProductsCallable(c
     return task->get_future();
 }
 
+TrpClient::DescribeTmpTokenOutcome TrpClient::DescribeTmpToken(const DescribeTmpTokenRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTmpToken");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTmpTokenResponse rsp = DescribeTmpTokenResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTmpTokenOutcome(rsp);
+        else
+            return DescribeTmpTokenOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTmpTokenOutcome(outcome.GetError());
+    }
+}
+
+void TrpClient::DescribeTmpTokenAsync(const DescribeTmpTokenRequest& request, const DescribeTmpTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTmpToken(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrpClient::DescribeTmpTokenOutcomeCallable TrpClient::DescribeTmpTokenCallable(const DescribeTmpTokenRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTmpTokenOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTmpToken(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TrpClient::DescribeTraceCodeByIdOutcome TrpClient::DescribeTraceCodeById(const DescribeTraceCodeByIdRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeTraceCodeById");

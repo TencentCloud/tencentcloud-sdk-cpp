@@ -53,6 +53,8 @@
 #include <tencentcloud/ssl/v20191205/model/DescribeManagerDetailResponse.h>
 #include <tencentcloud/ssl/v20191205/model/DescribeManagersRequest.h>
 #include <tencentcloud/ssl/v20191205/model/DescribeManagersResponse.h>
+#include <tencentcloud/ssl/v20191205/model/DescribePackagesRequest.h>
+#include <tencentcloud/ssl/v20191205/model/DescribePackagesResponse.h>
 #include <tencentcloud/ssl/v20191205/model/DownloadCertificateRequest.h>
 #include <tencentcloud/ssl/v20191205/model/DownloadCertificateResponse.h>
 #include <tencentcloud/ssl/v20191205/model/HostCertificateRequest.h>
@@ -136,6 +138,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeManagersResponse> DescribeManagersOutcome;
                 typedef std::future<DescribeManagersOutcome> DescribeManagersOutcomeCallable;
                 typedef std::function<void(const SslClient*, const Model::DescribeManagersRequest&, DescribeManagersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeManagersAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribePackagesResponse> DescribePackagesOutcome;
+                typedef std::future<DescribePackagesOutcome> DescribePackagesOutcomeCallable;
+                typedef std::function<void(const SslClient*, const Model::DescribePackagesRequest&, DescribePackagesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePackagesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DownloadCertificateResponse> DownloadCertificateOutcome;
                 typedef std::future<DownloadCertificateOutcome> DownloadCertificateOutcomeCallable;
                 typedef std::function<void(const SslClient*, const Model::DownloadCertificateRequest&, DownloadCertificateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DownloadCertificateAsyncHandler;
@@ -309,6 +314,15 @@ namespace TencentCloud
                 DescribeManagersOutcome DescribeManagers(const Model::DescribeManagersRequest &request);
                 void DescribeManagersAsync(const Model::DescribeManagersRequest& request, const DescribeManagersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeManagersOutcomeCallable DescribeManagersCallable(const Model::DescribeManagersRequest& request);
+
+                /**
+                 *获得权益包列表
+                 * @param req DescribePackagesRequest
+                 * @return DescribePackagesOutcome
+                 */
+                DescribePackagesOutcome DescribePackages(const Model::DescribePackagesRequest &request);
+                void DescribePackagesAsync(const Model::DescribePackagesRequest& request, const DescribePackagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePackagesOutcomeCallable DescribePackagesCallable(const Model::DescribePackagesRequest& request);
 
                 /**
                  *本接口（DownloadCertificate）用于下载证书。

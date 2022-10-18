@@ -24,7 +24,8 @@ PackSpec::PackSpec() :
     m_levelHasBeenSet(false),
     m_rateHasBeenSet(false),
     m_amountHasBeenSet(false),
-    m_customIdHasBeenSet(false)
+    m_customIdHasBeenSet(false),
+    m_codePartsHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,26 @@ CoreInternalOutcome PackSpec::Deserialize(const rapidjson::Value &value)
         m_customIdHasBeenSet = true;
     }
 
+    if (value.HasMember("CodeParts") && !value["CodeParts"].IsNull())
+    {
+        if (!value["CodeParts"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `PackSpec.CodeParts` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["CodeParts"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            CodePart item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_codeParts.push_back(item);
+        }
+        m_codePartsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +131,21 @@ void PackSpec::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "CustomId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_customId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_codePartsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CodeParts";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_codeParts.begin(); itr != m_codeParts.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -177,5 +213,21 @@ void PackSpec::SetCustomId(const string& _customId)
 bool PackSpec::CustomIdHasBeenSet() const
 {
     return m_customIdHasBeenSet;
+}
+
+vector<CodePart> PackSpec::GetCodeParts() const
+{
+    return m_codeParts;
+}
+
+void PackSpec::SetCodeParts(const vector<CodePart>& _codeParts)
+{
+    m_codeParts = _codeParts;
+    m_codePartsHasBeenSet = true;
+}
+
+bool PackSpec::CodePartsHasBeenSet() const
+{
+    return m_codePartsHasBeenSet;
 }
 

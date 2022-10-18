@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例数
-                     * @return TotalCount 实例数
+                     * 获取实例总数量。
+                     * @return TotalCount 实例总数量。
                      */
                     int64_t GetTotalCount() const;
 
@@ -57,8 +57,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取实例详细信息列表
-                     * @return InstanceSet 实例详细信息列表
+                     * 获取实例详细信息列表。
+                     * @return InstanceSet 实例详细信息列表。
                      */
                     std::vector<InstanceSet> GetInstanceSet() const;
 
@@ -71,13 +71,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例数
+                     * 实例总数量。
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 实例详细信息列表
+                     * 实例详细信息列表。
                      */
                     std::vector<InstanceSet> m_instanceSet;
                     bool m_instanceSetHasBeenSet;

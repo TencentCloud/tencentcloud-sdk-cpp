@@ -57,6 +57,34 @@ namespace TencentCloud
                      */
                     bool UrlHasBeenSet() const;
 
+                    /**
+                     * 获取图片码包地址，可能为空
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ImgUrl 图片码包地址，可能为空
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetImgUrl() const;
+
+                    /**
+                     * 判断参数 ImgUrl 是否已赋值
+                     * @return ImgUrl 是否已赋值
+                     */
+                    bool ImgUrlHasBeenSet() const;
+
+                    /**
+                     * 获取文字码包Key，用于上传导入
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FileKey 文字码包Key，用于上传导入
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetFileKey() const;
+
+                    /**
+                     * 判断参数 FileKey 是否已赋值
+                     * @return FileKey 是否已赋值
+                     */
+                    bool FileKeyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -65,6 +93,20 @@ namespace TencentCloud
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;
+
+                    /**
+                     * 图片码包地址，可能为空
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_imgUrl;
+                    bool m_imgUrlHasBeenSet;
+
+                    /**
+                     * 文字码包Key，用于上传导入
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_fileKey;
+                    bool m_fileKeyHasBeenSet;
 
                 };
             }

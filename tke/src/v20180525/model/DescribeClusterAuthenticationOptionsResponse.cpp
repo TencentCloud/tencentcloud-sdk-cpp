@@ -25,7 +25,8 @@ using namespace std;
 
 DescribeClusterAuthenticationOptionsResponse::DescribeClusterAuthenticationOptionsResponse() :
     m_serviceAccountsHasBeenSet(false),
-    m_latestOperationStateHasBeenSet(false)
+    m_latestOperationStateHasBeenSet(false),
+    m_oIDCConfigHasBeenSet(false)
 {
 }
 
@@ -90,6 +91,23 @@ CoreInternalOutcome DescribeClusterAuthenticationOptionsResponse::Deserialize(co
         m_latestOperationStateHasBeenSet = true;
     }
 
+    if (rsp.HasMember("OIDCConfig") && !rsp["OIDCConfig"].IsNull())
+    {
+        if (!rsp["OIDCConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `OIDCConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_oIDCConfig.Deserialize(rsp["OIDCConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_oIDCConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -115,6 +133,15 @@ string DescribeClusterAuthenticationOptionsResponse::ToJsonString() const
         string key = "LatestOperationState";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_latestOperationState.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_oIDCConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OIDCConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_oIDCConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -147,6 +174,16 @@ string DescribeClusterAuthenticationOptionsResponse::GetLatestOperationState() c
 bool DescribeClusterAuthenticationOptionsResponse::LatestOperationStateHasBeenSet() const
 {
     return m_latestOperationStateHasBeenSet;
+}
+
+OIDCConfigAuthenticationOptions DescribeClusterAuthenticationOptionsResponse::GetOIDCConfig() const
+{
+    return m_oIDCConfig;
+}
+
+bool DescribeClusterAuthenticationOptionsResponse::OIDCConfigHasBeenSet() const
+{
+    return m_oIDCConfigHasBeenSet;
 }
 
 

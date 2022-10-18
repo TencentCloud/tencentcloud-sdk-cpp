@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/trp/v20210515/model/CodePart.h>
 
 
 namespace TencentCloud
@@ -122,6 +123,28 @@ namespace TencentCloud
                      */
                     bool CustomIdHasBeenSet() const;
 
+                    /**
+                     * 获取码段配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CodeParts 码段配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<CodePart> GetCodeParts() const;
+
+                    /**
+                     * 设置码段配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param CodeParts 码段配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCodeParts(const std::vector<CodePart>& _codeParts);
+
+                    /**
+                     * 判断参数 CodeParts 是否已赋值
+                     * @return CodeParts 是否已赋值
+                     */
+                    bool CodePartsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -148,6 +171,13 @@ namespace TencentCloud
                      */
                     std::string m_customId;
                     bool m_customIdHasBeenSet;
+
+                    /**
+                     * 码段配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<CodePart> m_codeParts;
+                    bool m_codePartsHasBeenSet;
 
                 };
             }

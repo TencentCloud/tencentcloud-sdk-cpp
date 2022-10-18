@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/trp/v20210515/model/CodePack.h>
 
 
 namespace TencentCloud
@@ -43,7 +44,49 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取码列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CodePacks 码列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<CodePack> GetCodePacks() const;
+
+                    /**
+                     * 判断参数 CodePacks 是否已赋值
+                     * @return CodePacks 是否已赋值
+                     */
+                    bool CodePacksHasBeenSet() const;
+
+                    /**
+                     * 获取总数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TotalCount 总数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetTotalCount() const;
+
+                    /**
+                     * 判断参数 TotalCount 是否已赋值
+                     * @return TotalCount 是否已赋值
+                     */
+                    bool TotalCountHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 码列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<CodePack> m_codePacks;
+                    bool m_codePacksHasBeenSet;
+
+                    /**
+                     * 总数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_totalCount;
+                    bool m_totalCountHasBeenSet;
 
                 };
             }

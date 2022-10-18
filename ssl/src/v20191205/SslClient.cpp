@@ -685,6 +685,49 @@ SslClient::DescribeManagersOutcomeCallable SslClient::DescribeManagersCallable(c
     return task->get_future();
 }
 
+SslClient::DescribePackagesOutcome SslClient::DescribePackages(const DescribePackagesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePackages");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePackagesResponse rsp = DescribePackagesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePackagesOutcome(rsp);
+        else
+            return DescribePackagesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePackagesOutcome(outcome.GetError());
+    }
+}
+
+void SslClient::DescribePackagesAsync(const DescribePackagesRequest& request, const DescribePackagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePackages(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SslClient::DescribePackagesOutcomeCallable SslClient::DescribePackagesCallable(const DescribePackagesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePackagesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePackages(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 SslClient::DownloadCertificateOutcome SslClient::DownloadCertificate(const DownloadCertificateRequest &request)
 {
     auto outcome = MakeRequest(request, "DownloadCertificate");

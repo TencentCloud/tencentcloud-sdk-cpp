@@ -24,7 +24,9 @@ using namespace TencentCloud::Trp::V20210515::Model;
 using namespace std;
 
 DescribeCodePackUrlResponse::DescribeCodePackUrlResponse() :
-    m_urlHasBeenSet(false)
+    m_urlHasBeenSet(false),
+    m_imgUrlHasBeenSet(false),
+    m_fileKeyHasBeenSet(false)
 {
 }
 
@@ -72,6 +74,26 @@ CoreInternalOutcome DescribeCodePackUrlResponse::Deserialize(const string &paylo
         m_urlHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ImgUrl") && !rsp["ImgUrl"].IsNull())
+    {
+        if (!rsp["ImgUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImgUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_imgUrl = string(rsp["ImgUrl"].GetString());
+        m_imgUrlHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("FileKey") && !rsp["FileKey"].IsNull())
+    {
+        if (!rsp["FileKey"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `FileKey` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_fileKey = string(rsp["FileKey"].GetString());
+        m_fileKeyHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -88,6 +110,22 @@ string DescribeCodePackUrlResponse::ToJsonString() const
         string key = "Url";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_url.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_imgUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ImgUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_imgUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fileKeyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileKey";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fileKey.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -110,6 +148,26 @@ string DescribeCodePackUrlResponse::GetUrl() const
 bool DescribeCodePackUrlResponse::UrlHasBeenSet() const
 {
     return m_urlHasBeenSet;
+}
+
+string DescribeCodePackUrlResponse::GetImgUrl() const
+{
+    return m_imgUrl;
+}
+
+bool DescribeCodePackUrlResponse::ImgUrlHasBeenSet() const
+{
+    return m_imgUrlHasBeenSet;
+}
+
+string DescribeCodePackUrlResponse::GetFileKey() const
+{
+    return m_fileKey;
+}
+
+bool DescribeCodePackUrlResponse::FileKeyHasBeenSet() const
+{
+    return m_fileKeyHasBeenSet;
 }
 
 

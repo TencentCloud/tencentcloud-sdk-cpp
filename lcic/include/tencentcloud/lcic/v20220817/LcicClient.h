@@ -29,6 +29,8 @@
 #include <tencentcloud/lcic/v20220817/model/CreateRoomResponse.h>
 #include <tencentcloud/lcic/v20220817/model/CreateSupervisorRequest.h>
 #include <tencentcloud/lcic/v20220817/model/CreateSupervisorResponse.h>
+#include <tencentcloud/lcic/v20220817/model/DeleteRoomRequest.h>
+#include <tencentcloud/lcic/v20220817/model/DeleteRoomResponse.h>
 #include <tencentcloud/lcic/v20220817/model/DescribeRoomRequest.h>
 #include <tencentcloud/lcic/v20220817/model/DescribeRoomResponse.h>
 #include <tencentcloud/lcic/v20220817/model/DescribeUserRequest.h>
@@ -64,6 +66,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateSupervisorResponse> CreateSupervisorOutcome;
                 typedef std::future<CreateSupervisorOutcome> CreateSupervisorOutcomeCallable;
                 typedef std::function<void(const LcicClient*, const Model::CreateSupervisorRequest&, CreateSupervisorOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSupervisorAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteRoomResponse> DeleteRoomOutcome;
+                typedef std::future<DeleteRoomOutcome> DeleteRoomOutcomeCallable;
+                typedef std::function<void(const LcicClient*, const Model::DeleteRoomRequest&, DeleteRoomOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRoomAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRoomResponse> DescribeRoomOutcome;
                 typedef std::future<DescribeRoomOutcome> DescribeRoomOutcomeCallable;
                 typedef std::function<void(const LcicClient*, const Model::DescribeRoomRequest&, DescribeRoomOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRoomAsyncHandler;
@@ -111,6 +116,15 @@ namespace TencentCloud
                 CreateSupervisorOutcome CreateSupervisor(const Model::CreateSupervisorRequest &request);
                 void CreateSupervisorAsync(const Model::CreateSupervisorRequest& request, const CreateSupervisorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateSupervisorOutcomeCallable CreateSupervisorCallable(const Model::CreateSupervisorRequest& request);
+
+                /**
+                 *删除房间
+                 * @param req DeleteRoomRequest
+                 * @return DeleteRoomOutcome
+                 */
+                DeleteRoomOutcome DeleteRoom(const Model::DeleteRoomRequest &request);
+                void DeleteRoomAsync(const Model::DeleteRoomRequest& request, const DeleteRoomAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteRoomOutcomeCallable DeleteRoomCallable(const Model::DeleteRoomRequest& request);
 
                 /**
                  *获取房间信息

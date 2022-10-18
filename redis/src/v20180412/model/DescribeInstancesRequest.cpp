@@ -30,8 +30,8 @@ DescribeInstancesRequest::DescribeInstancesRequest() :
     m_orderTypeHasBeenSet(false),
     m_vpcIdsHasBeenSet(false),
     m_subnetIdsHasBeenSet(false),
-    m_projectIdsHasBeenSet(false),
     m_searchKeyHasBeenSet(false),
+    m_projectIdsHasBeenSet(false),
     m_instanceNameHasBeenSet(false),
     m_uniqVpcIdsHasBeenSet(false),
     m_uniqSubnetIdsHasBeenSet(false),
@@ -48,7 +48,8 @@ DescribeInstancesRequest::DescribeInstancesRequest() :
     m_instanceTagsHasBeenSet(false),
     m_tagKeysHasBeenSet(false),
     m_productVersionsHasBeenSet(false),
-    m_instanceIdsHasBeenSet(false)
+    m_instanceIdsHasBeenSet(false),
+    m_azModeHasBeenSet(false)
 {
 }
 
@@ -125,6 +126,14 @@ string DescribeInstancesRequest::ToJsonString() const
         }
     }
 
+    if (m_searchKeyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SearchKey";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_searchKey.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_projectIdsHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -136,14 +145,6 @@ string DescribeInstancesRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
-    }
-
-    if (m_searchKeyHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SearchKey";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_searchKey.c_str(), allocator).Move(), allocator);
     }
 
     if (m_instanceNameHasBeenSet)
@@ -339,6 +340,14 @@ string DescribeInstancesRequest::ToJsonString() const
         }
     }
 
+    if (m_azModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AzMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_azMode.c_str(), allocator).Move(), allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -459,22 +468,6 @@ bool DescribeInstancesRequest::SubnetIdsHasBeenSet() const
     return m_subnetIdsHasBeenSet;
 }
 
-vector<int64_t> DescribeInstancesRequest::GetProjectIds() const
-{
-    return m_projectIds;
-}
-
-void DescribeInstancesRequest::SetProjectIds(const vector<int64_t>& _projectIds)
-{
-    m_projectIds = _projectIds;
-    m_projectIdsHasBeenSet = true;
-}
-
-bool DescribeInstancesRequest::ProjectIdsHasBeenSet() const
-{
-    return m_projectIdsHasBeenSet;
-}
-
 string DescribeInstancesRequest::GetSearchKey() const
 {
     return m_searchKey;
@@ -489,6 +482,22 @@ void DescribeInstancesRequest::SetSearchKey(const string& _searchKey)
 bool DescribeInstancesRequest::SearchKeyHasBeenSet() const
 {
     return m_searchKeyHasBeenSet;
+}
+
+vector<int64_t> DescribeInstancesRequest::GetProjectIds() const
+{
+    return m_projectIds;
+}
+
+void DescribeInstancesRequest::SetProjectIds(const vector<int64_t>& _projectIds)
+{
+    m_projectIds = _projectIds;
+    m_projectIdsHasBeenSet = true;
+}
+
+bool DescribeInstancesRequest::ProjectIdsHasBeenSet() const
+{
+    return m_projectIdsHasBeenSet;
 }
 
 string DescribeInstancesRequest::GetInstanceName() const
@@ -761,6 +770,22 @@ void DescribeInstancesRequest::SetInstanceIds(const vector<string>& _instanceIds
 bool DescribeInstancesRequest::InstanceIdsHasBeenSet() const
 {
     return m_instanceIdsHasBeenSet;
+}
+
+string DescribeInstancesRequest::GetAzMode() const
+{
+    return m_azMode;
+}
+
+void DescribeInstancesRequest::SetAzMode(const string& _azMode)
+{
+    m_azMode = _azMode;
+    m_azModeHasBeenSet = true;
+}
+
+bool DescribeInstancesRequest::AzModeHasBeenSet() const
+{
+    return m_azModeHasBeenSet;
 }
 
 

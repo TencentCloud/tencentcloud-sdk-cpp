@@ -25,6 +25,7 @@ set(trp_public_header_model
   include/tencentcloud/trp/v20210515/model/ModifyProductRequest.h
   include/tencentcloud/trp/v20210515/model/ModifyCustomRuleRequest.h
   include/tencentcloud/trp/v20210515/model/CodePart.h
+  include/tencentcloud/trp/v20210515/model/CodePack.h
   include/tencentcloud/trp/v20210515/model/DeleteCodeBatchRequest.h
   include/tencentcloud/trp/v20210515/model/DescribeMerchantsRequest.h
   include/tencentcloud/trp/v20210515/model/ModifyTraceCodeRequest.h
@@ -69,6 +70,7 @@ set(trp_public_header_model
   include/tencentcloud/trp/v20210515/model/ModifyCustomRuleStatusResponse.h
   include/tencentcloud/trp/v20210515/model/CreateCustomPackResponse.h
   include/tencentcloud/trp/v20210515/model/ModifyMerchantRequest.h
+  include/tencentcloud/trp/v20210515/model/DescribeTmpTokenResponse.h
   include/tencentcloud/trp/v20210515/model/DescribeCodePackUrlRequest.h
   include/tencentcloud/trp/v20210515/model/ModifyTraceDataRanksRequest.h
   include/tencentcloud/trp/v20210515/model/DeleteTraceDataResponse.h
@@ -93,6 +95,7 @@ set(trp_public_header_model
   include/tencentcloud/trp/v20210515/model/DeleteTraceDataRequest.h
   include/tencentcloud/trp/v20210515/model/Merchant.h
   include/tencentcloud/trp/v20210515/model/Product.h
+  include/tencentcloud/trp/v20210515/model/DescribeTmpTokenRequest.h
   include/tencentcloud/trp/v20210515/model/TraceCode.h
   include/tencentcloud/trp/v20210515/model/CreateMerchantResponse.h
   include/tencentcloud/trp/v20210515/model/DescribeMerchantsResponse.h
@@ -119,6 +122,7 @@ set(trp_src
   src/v20210515/model/ModifyProductRequest.cpp
   src/v20210515/model/ModifyCustomRuleRequest.cpp
   src/v20210515/model/CodePart.cpp
+  src/v20210515/model/CodePack.cpp
   src/v20210515/model/DeleteCodeBatchRequest.cpp
   src/v20210515/model/DescribeMerchantsRequest.cpp
   src/v20210515/model/ModifyTraceCodeRequest.cpp
@@ -163,6 +167,7 @@ set(trp_src
   src/v20210515/model/ModifyCustomRuleStatusResponse.cpp
   src/v20210515/model/CreateCustomPackResponse.cpp
   src/v20210515/model/ModifyMerchantRequest.cpp
+  src/v20210515/model/DescribeTmpTokenResponse.cpp
   src/v20210515/model/DescribeCodePackUrlRequest.cpp
   src/v20210515/model/ModifyTraceDataRanksRequest.cpp
   src/v20210515/model/DeleteTraceDataResponse.cpp
@@ -187,6 +192,7 @@ set(trp_src
   src/v20210515/model/DeleteTraceDataRequest.cpp
   src/v20210515/model/Merchant.cpp
   src/v20210515/model/Product.cpp
+  src/v20210515/model/DescribeTmpTokenRequest.cpp
   src/v20210515/model/TraceCode.cpp
   src/v20210515/model/CreateMerchantResponse.cpp
   src/v20210515/model/DescribeMerchantsResponse.cpp

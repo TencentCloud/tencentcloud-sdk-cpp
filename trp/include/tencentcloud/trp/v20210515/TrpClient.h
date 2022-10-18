@@ -77,6 +77,8 @@
 #include <tencentcloud/trp/v20210515/model/DescribeProductByIdResponse.h>
 #include <tencentcloud/trp/v20210515/model/DescribeProductsRequest.h>
 #include <tencentcloud/trp/v20210515/model/DescribeProductsResponse.h>
+#include <tencentcloud/trp/v20210515/model/DescribeTmpTokenRequest.h>
+#include <tencentcloud/trp/v20210515/model/DescribeTmpTokenResponse.h>
 #include <tencentcloud/trp/v20210515/model/DescribeTraceCodeByIdRequest.h>
 #include <tencentcloud/trp/v20210515/model/DescribeTraceCodeByIdResponse.h>
 #include <tencentcloud/trp/v20210515/model/DescribeTraceCodesRequest.h>
@@ -194,6 +196,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeProductsResponse> DescribeProductsOutcome;
                 typedef std::future<DescribeProductsOutcome> DescribeProductsOutcomeCallable;
                 typedef std::function<void(const TrpClient*, const Model::DescribeProductsRequest&, DescribeProductsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProductsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTmpTokenResponse> DescribeTmpTokenOutcome;
+                typedef std::future<DescribeTmpTokenOutcome> DescribeTmpTokenOutcomeCallable;
+                typedef std::function<void(const TrpClient*, const Model::DescribeTmpTokenRequest&, DescribeTmpTokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTmpTokenAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTraceCodeByIdResponse> DescribeTraceCodeByIdOutcome;
                 typedef std::future<DescribeTraceCodeByIdOutcome> DescribeTraceCodeByIdOutcomeCallable;
                 typedef std::function<void(const TrpClient*, const Model::DescribeTraceCodeByIdRequest&, DescribeTraceCodeByIdOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTraceCodeByIdAsyncHandler;
@@ -472,6 +477,15 @@ namespace TencentCloud
                 DescribeProductsOutcome DescribeProducts(const Model::DescribeProductsRequest &request);
                 void DescribeProductsAsync(const Model::DescribeProductsRequest& request, const DescribeProductsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeProductsOutcomeCallable DescribeProductsCallable(const Model::DescribeProductsRequest& request);
+
+                /**
+                 *查询临时Token，主要用于上传接口
+                 * @param req DescribeTmpTokenRequest
+                 * @return DescribeTmpTokenOutcome
+                 */
+                DescribeTmpTokenOutcome DescribeTmpToken(const Model::DescribeTmpTokenRequest &request);
+                void DescribeTmpTokenAsync(const Model::DescribeTmpTokenRequest& request, const DescribeTmpTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTmpTokenOutcomeCallable DescribeTmpTokenCallable(const Model::DescribeTmpTokenRequest& request);
 
                 /**
                  *查询二维码信息

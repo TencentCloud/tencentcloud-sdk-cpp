@@ -33,7 +33,9 @@ TraceData::TraceData() :
     m_createTimeHasBeenSet(false),
     m_chainStatusHasBeenSet(false),
     m_chainTimeHasBeenSet(false),
-    m_chainDataHasBeenSet(false)
+    m_chainDataHasBeenSet(false),
+    m_phaseDataHasBeenSet(false),
+    m_statusHasBeenSet(false)
 {
 }
 
@@ -189,6 +191,33 @@ CoreInternalOutcome TraceData::Deserialize(const rapidjson::Value &value)
         m_chainDataHasBeenSet = true;
     }
 
+    if (value.HasMember("PhaseData") && !value["PhaseData"].IsNull())
+    {
+        if (!value["PhaseData"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `TraceData.PhaseData` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_phaseData.Deserialize(value["PhaseData"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_phaseDataHasBeenSet = true;
+    }
+
+    if (value.HasMember("Status") && !value["Status"].IsNull())
+    {
+        if (!value["Status"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TraceData.Status` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_status = value["Status"].GetInt64();
+        m_statusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -306,6 +335,23 @@ void TraceData::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_chainData.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_phaseDataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PhaseData";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_phaseData.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_status, allocator);
     }
 
 }
@@ -517,5 +563,37 @@ void TraceData::SetChainData(const ChainData& _chainData)
 bool TraceData::ChainDataHasBeenSet() const
 {
     return m_chainDataHasBeenSet;
+}
+
+PhaseData TraceData::GetPhaseData() const
+{
+    return m_phaseData;
+}
+
+void TraceData::SetPhaseData(const PhaseData& _phaseData)
+{
+    m_phaseData = _phaseData;
+    m_phaseDataHasBeenSet = true;
+}
+
+bool TraceData::PhaseDataHasBeenSet() const
+{
+    return m_phaseDataHasBeenSet;
+}
+
+int64_t TraceData::GetStatus() const
+{
+    return m_status;
+}
+
+void TraceData::SetStatus(const int64_t& _status)
+{
+    m_status = _status;
+    m_statusHasBeenSet = true;
+}
+
+bool TraceData::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
 }
 

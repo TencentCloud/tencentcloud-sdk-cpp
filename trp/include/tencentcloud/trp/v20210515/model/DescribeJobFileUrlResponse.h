@@ -43,7 +43,28 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取码包地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Url 码包地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetUrl() const;
+
+                    /**
+                     * 判断参数 Url 是否已赋值
+                     * @return Url 是否已赋值
+                     */
+                    bool UrlHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 码包地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_url;
+                    bool m_urlHasBeenSet;
 
                 };
             }

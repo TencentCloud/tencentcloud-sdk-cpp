@@ -169,6 +169,49 @@ LcicClient::CreateSupervisorOutcomeCallable LcicClient::CreateSupervisorCallable
     return task->get_future();
 }
 
+LcicClient::DeleteRoomOutcome LcicClient::DeleteRoom(const DeleteRoomRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteRoom");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteRoomResponse rsp = DeleteRoomResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteRoomOutcome(rsp);
+        else
+            return DeleteRoomOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteRoomOutcome(outcome.GetError());
+    }
+}
+
+void LcicClient::DeleteRoomAsync(const DeleteRoomRequest& request, const DeleteRoomAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteRoom(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LcicClient::DeleteRoomOutcomeCallable LcicClient::DeleteRoomCallable(const DeleteRoomRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteRoomOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteRoom(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LcicClient::DescribeRoomOutcome LcicClient::DescribeRoom(const DescribeRoomRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeRoom");
