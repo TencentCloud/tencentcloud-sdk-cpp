@@ -72,6 +72,50 @@ namespace TencentCloud
                      */
                     bool SwitchHasBeenSet() const;
 
+                    /**
+                     * 获取源站未返回 Cache-Control 头时, 设置默认的缓存时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DefaultCacheTime 源站未返回 Cache-Control 头时, 设置默认的缓存时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetDefaultCacheTime() const;
+
+                    /**
+                     * 设置源站未返回 Cache-Control 头时, 设置默认的缓存时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DefaultCacheTime 源站未返回 Cache-Control 头时, 设置默认的缓存时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDefaultCacheTime(const int64_t& _defaultCacheTime);
+
+                    /**
+                     * 判断参数 DefaultCacheTime 是否已赋值
+                     * @return DefaultCacheTime 是否已赋值
+                     */
+                    bool DefaultCacheTimeHasBeenSet() const;
+
+                    /**
+                     * 获取源站未返回 Cache-Control 头时, 设置缓存/不缓存
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DefaultCache 源站未返回 Cache-Control 头时, 设置缓存/不缓存
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetDefaultCache() const;
+
+                    /**
+                     * 设置源站未返回 Cache-Control 头时, 设置缓存/不缓存
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DefaultCache 源站未返回 Cache-Control 头时, 设置缓存/不缓存
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDefaultCache(const std::string& _defaultCache);
+
+                    /**
+                     * 判断参数 DefaultCache 是否已赋值
+                     * @return DefaultCache 是否已赋值
+                     */
+                    bool DefaultCacheHasBeenSet() const;
+
                 private:
 
                     /**
@@ -81,6 +125,20 @@ namespace TencentCloud
                      */
                     std::string m_switch;
                     bool m_switchHasBeenSet;
+
+                    /**
+                     * 源站未返回 Cache-Control 头时, 设置默认的缓存时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_defaultCacheTime;
+                    bool m_defaultCacheTimeHasBeenSet;
+
+                    /**
+                     * 源站未返回 Cache-Control 头时, 设置缓存/不缓存
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_defaultCache;
+                    bool m_defaultCacheHasBeenSet;
 
                 };
             }

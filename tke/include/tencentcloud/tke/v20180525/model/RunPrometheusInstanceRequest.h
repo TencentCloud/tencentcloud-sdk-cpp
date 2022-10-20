@@ -42,7 +42,55 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取实例ID
+                     * @return InstanceId 实例ID
+                     */
+                    std::string GetInstanceId() const;
+
+                    /**
+                     * 设置实例ID
+                     * @param InstanceId 实例ID
+                     */
+                    void SetInstanceId(const std::string& _instanceId);
+
+                    /**
+                     * 判断参数 InstanceId 是否已赋值
+                     * @return InstanceId 是否已赋值
+                     */
+                    bool InstanceIdHasBeenSet() const;
+
+                    /**
+                     * 获取子网ID，默认使用实例所用子网初始化，也可通过该参数传递新的子网ID初始化
+                     * @return SubnetId 子网ID，默认使用实例所用子网初始化，也可通过该参数传递新的子网ID初始化
+                     */
+                    std::string GetSubnetId() const;
+
+                    /**
+                     * 设置子网ID，默认使用实例所用子网初始化，也可通过该参数传递新的子网ID初始化
+                     * @param SubnetId 子网ID，默认使用实例所用子网初始化，也可通过该参数传递新的子网ID初始化
+                     */
+                    void SetSubnetId(const std::string& _subnetId);
+
+                    /**
+                     * 判断参数 SubnetId 是否已赋值
+                     * @return SubnetId 是否已赋值
+                     */
+                    bool SubnetIdHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 实例ID
+                     */
+                    std::string m_instanceId;
+                    bool m_instanceIdHasBeenSet;
+
+                    /**
+                     * 子网ID，默认使用实例所用子网初始化，也可通过该参数传递新的子网ID初始化
+                     */
+                    std::string m_subnetId;
+                    bool m_subnetIdHasBeenSet;
 
                 };
             }

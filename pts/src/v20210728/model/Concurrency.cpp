@@ -23,7 +23,8 @@ using namespace std;
 Concurrency::Concurrency() :
     m_stagesHasBeenSet(false),
     m_iterationCountHasBeenSet(false),
-    m_maxRequestsPerSecondHasBeenSet(false)
+    m_maxRequestsPerSecondHasBeenSet(false),
+    m_gracefulStopSecondsHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,16 @@ CoreInternalOutcome Concurrency::Deserialize(const rapidjson::Value &value)
         m_maxRequestsPerSecondHasBeenSet = true;
     }
 
+    if (value.HasMember("GracefulStopSeconds") && !value["GracefulStopSeconds"].IsNull())
+    {
+        if (!value["GracefulStopSeconds"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Concurrency.GracefulStopSeconds` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_gracefulStopSeconds = value["GracefulStopSeconds"].GetInt64();
+        m_gracefulStopSecondsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -108,6 +119,14 @@ void Concurrency::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "MaxRequestsPerSecond";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxRequestsPerSecond, allocator);
+    }
+
+    if (m_gracefulStopSecondsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GracefulStopSeconds";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_gracefulStopSeconds, allocator);
     }
 
 }
@@ -159,5 +178,21 @@ void Concurrency::SetMaxRequestsPerSecond(const int64_t& _maxRequestsPerSecond)
 bool Concurrency::MaxRequestsPerSecondHasBeenSet() const
 {
     return m_maxRequestsPerSecondHasBeenSet;
+}
+
+int64_t Concurrency::GetGracefulStopSeconds() const
+{
+    return m_gracefulStopSeconds;
+}
+
+void Concurrency::SetGracefulStopSeconds(const int64_t& _gracefulStopSeconds)
+{
+    m_gracefulStopSeconds = _gracefulStopSeconds;
+    m_gracefulStopSecondsHasBeenSet = true;
+}
+
+bool Concurrency::GracefulStopSecondsHasBeenSet() const
+{
+    return m_gracefulStopSecondsHasBeenSet;
 }
 

@@ -44,8 +44,12 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取子客Web控制台url，此链接5分钟内有效，且只能访问一次
-                     * @return ConsoleUrl 子客Web控制台url，此链接5分钟内有效，且只能访问一次
+                     * 获取子客Web控制台url，此链接5分钟内有效，且只能访问一次。同时需要注意：
+1. 此链接仅单次有效，使用后需要再次创建新的链接（部分聊天软件，如企业微信默认会对链接进行解析，此时需要使用类似“代码片段”的方式或者放到txt文件里发送链接）；
+2. 创建的链接应避免被转义，如：&被转义为\u0026；如使用Postman请求后，请选择响应类型为 JSON，否则链接将被转义
+                     * @return ConsoleUrl 子客Web控制台url，此链接5分钟内有效，且只能访问一次。同时需要注意：
+1. 此链接仅单次有效，使用后需要再次创建新的链接（部分聊天软件，如企业微信默认会对链接进行解析，此时需要使用类似“代码片段”的方式或者放到txt文件里发送链接）；
+2. 创建的链接应避免被转义，如：&被转义为\u0026；如使用Postman请求后，请选择响应类型为 JSON，否则链接将被转义
                      */
                     std::string GetConsoleUrl() const;
 
@@ -56,8 +60,8 @@ namespace TencentCloud
                     bool ConsoleUrlHasBeenSet() const;
 
                     /**
-                     * 获取渠道子客企业是否已开通腾讯电子签。
-                     * @return IsActivated 渠道子客企业是否已开通腾讯电子签。
+                     * 获取渠道子客企业是否已开通腾讯电子签
+                     * @return IsActivated 渠道子客企业是否已开通腾讯电子签
                      */
                     bool GetIsActivated() const;
 
@@ -70,13 +74,15 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 子客Web控制台url，此链接5分钟内有效，且只能访问一次
+                     * 子客Web控制台url，此链接5分钟内有效，且只能访问一次。同时需要注意：
+1. 此链接仅单次有效，使用后需要再次创建新的链接（部分聊天软件，如企业微信默认会对链接进行解析，此时需要使用类似“代码片段”的方式或者放到txt文件里发送链接）；
+2. 创建的链接应避免被转义，如：&被转义为\u0026；如使用Postman请求后，请选择响应类型为 JSON，否则链接将被转义
                      */
                     std::string m_consoleUrl;
                     bool m_consoleUrlHasBeenSet;
 
                     /**
-                     * 渠道子客企业是否已开通腾讯电子签。
+                     * 渠道子客企业是否已开通腾讯电子签
                      */
                     bool m_isActivated;
                     bool m_isActivatedHasBeenSet;

@@ -99,14 +99,14 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取溯源阶段 0:商品 1:通用 2:内部溯源 3:外部溯源
-                     * @return Phase 溯源阶段 0:商品 1:通用 2:内部溯源 3:外部溯源
+                     * 获取溯源阶段 0:商品 1:通用 2:生产溯源 3:销售溯源
+                     * @return Phase 溯源阶段 0:商品 1:通用 2:生产溯源 3:销售溯源
                      */
                     uint64_t GetPhase() const;
 
                     /**
-                     * 设置溯源阶段 0:商品 1:通用 2:内部溯源 3:外部溯源
-                     * @param Phase 溯源阶段 0:商品 1:通用 2:内部溯源 3:外部溯源
+                     * 设置溯源阶段 0:商品 1:通用 2:生产溯源 3:销售溯源
+                     * @param Phase 溯源阶段 0:商品 1:通用 2:生产溯源 3:销售溯源
                      */
                     void SetPhase(const uint64_t& _phase);
 
@@ -263,7 +263,7 @@ namespace TencentCloud
                     bool m_taskIdHasBeenSet;
 
                     /**
-                     * 溯源阶段 0:商品 1:通用 2:内部溯源 3:外部溯源
+                     * 溯源阶段 0:商品 1:通用 2:生产溯源 3:销售溯源
                      */
                     uint64_t m_phase;
                     bool m_phaseHasBeenSet;

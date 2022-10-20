@@ -22,8 +22,8 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/ess/v20201111/model/UserInfo.h>
-#include <tencentcloud/ess/v20201111/model/Agent.h>
 #include <tencentcloud/ess/v20201111/model/ApproverRestriction.h>
+#include <tencentcloud/ess/v20201111/model/Agent.h>
 
 
 namespace TencentCloud
@@ -44,6 +44,24 @@ namespace TencentCloud
                     ~CreateMultiFlowSignQRCodeRequest() = default;
                     std::string ToJsonString() const;
 
+
+                    /**
+                     * 获取用户信息
+                     * @return Operator 用户信息
+                     */
+                    UserInfo GetOperator() const;
+
+                    /**
+                     * 设置用户信息
+                     * @param Operator 用户信息
+                     */
+                    void SetOperator(const UserInfo& _operator);
+
+                    /**
+                     * 判断参数 Operator 是否已赋值
+                     * @return Operator 是否已赋值
+                     */
+                    bool OperatorHasBeenSet() const;
 
                     /**
                      * 获取模板ID
@@ -80,68 +98,6 @@ namespace TencentCloud
                      * @return FlowName 是否已赋值
                      */
                     bool FlowNameHasBeenSet() const;
-
-                    /**
-                     * 获取用户信息
-                     * @return Operator 用户信息
-                     */
-                    UserInfo GetOperator() const;
-
-                    /**
-                     * 设置用户信息
-                     * @param Operator 用户信息
-                     */
-                    void SetOperator(const UserInfo& _operator);
-
-                    /**
-                     * 判断参数 Operator 是否已赋值
-                     * @return Operator 是否已赋值
-                     */
-                    bool OperatorHasBeenSet() const;
-
-                    /**
-                     * 获取应用信息
-                     * @return Agent 应用信息
-                     */
-                    Agent GetAgent() const;
-
-                    /**
-                     * 设置应用信息
-                     * @param Agent 应用信息
-                     */
-                    void SetAgent(const Agent& _agent);
-
-                    /**
-                     * 判断参数 Agent 是否已赋值
-                     * @return Agent 是否已赋值
-                     */
-                    bool AgentHasBeenSet() const;
-
-                    /**
-                     * 获取回调地址,最大长度1000字符串
-回调时机：
-用户通过签署二维码发起签署流程时，企业额度不足导致失败
-                     * @return CallbackUrl 回调地址,最大长度1000字符串
-回调时机：
-用户通过签署二维码发起签署流程时，企业额度不足导致失败
-                     */
-                    std::string GetCallbackUrl() const;
-
-                    /**
-                     * 设置回调地址,最大长度1000字符串
-回调时机：
-用户通过签署二维码发起签署流程时，企业额度不足导致失败
-                     * @param CallbackUrl 回调地址,最大长度1000字符串
-回调时机：
-用户通过签署二维码发起签署流程时，企业额度不足导致失败
-                     */
-                    void SetCallbackUrl(const std::string& _callbackUrl);
-
-                    /**
-                     * 判断参数 CallbackUrl 是否已赋值
-                     * @return CallbackUrl 是否已赋值
-                     */
-                    bool CallbackUrlHasBeenSet() const;
 
                     /**
                      * 获取最大可发起签署流程份数，默认5份 
@@ -203,13 +159,75 @@ namespace TencentCloud
 
                     /**
                      * 获取限制二维码用户条件
-                     * @return ApproverRestrictions 限制二维码用户条件
+                     * @return Restrictions 限制二维码用户条件
+                     */
+                    std::vector<ApproverRestriction> GetRestrictions() const;
+
+                    /**
+                     * 设置限制二维码用户条件
+                     * @param Restrictions 限制二维码用户条件
+                     */
+                    void SetRestrictions(const std::vector<ApproverRestriction>& _restrictions);
+
+                    /**
+                     * 判断参数 Restrictions 是否已赋值
+                     * @return Restrictions 是否已赋值
+                     */
+                    bool RestrictionsHasBeenSet() const;
+
+                    /**
+                     * 获取回调地址,最大长度1000字符串
+回调时机：
+用户通过签署二维码发起签署流程时，企业额度不足导致失败
+                     * @return CallbackUrl 回调地址,最大长度1000字符串
+回调时机：
+用户通过签署二维码发起签署流程时，企业额度不足导致失败
+                     */
+                    std::string GetCallbackUrl() const;
+
+                    /**
+                     * 设置回调地址,最大长度1000字符串
+回调时机：
+用户通过签署二维码发起签署流程时，企业额度不足导致失败
+                     * @param CallbackUrl 回调地址,最大长度1000字符串
+回调时机：
+用户通过签署二维码发起签署流程时，企业额度不足导致失败
+                     */
+                    void SetCallbackUrl(const std::string& _callbackUrl);
+
+                    /**
+                     * 判断参数 CallbackUrl 是否已赋值
+                     * @return CallbackUrl 是否已赋值
+                     */
+                    bool CallbackUrlHasBeenSet() const;
+
+                    /**
+                     * 获取应用信息
+                     * @return Agent 应用信息
+                     */
+                    Agent GetAgent() const;
+
+                    /**
+                     * 设置应用信息
+                     * @param Agent 应用信息
+                     */
+                    void SetAgent(const Agent& _agent);
+
+                    /**
+                     * 判断参数 Agent 是否已赋值
+                     * @return Agent 是否已赋值
+                     */
+                    bool AgentHasBeenSet() const;
+
+                    /**
+                     * 获取限制二维码用户条件（已弃用）
+                     * @return ApproverRestrictions 限制二维码用户条件（已弃用）
                      */
                     ApproverRestriction GetApproverRestrictions() const;
 
                     /**
-                     * 设置限制二维码用户条件
-                     * @param ApproverRestrictions 限制二维码用户条件
+                     * 设置限制二维码用户条件（已弃用）
+                     * @param ApproverRestrictions 限制二维码用户条件（已弃用）
                      */
                     void SetApproverRestrictions(const ApproverRestriction& _approverRestrictions);
 
@@ -222,6 +240,12 @@ namespace TencentCloud
                 private:
 
                     /**
+                     * 用户信息
+                     */
+                    UserInfo m_operator;
+                    bool m_operatorHasBeenSet;
+
+                    /**
                      * 模板ID
                      */
                     std::string m_templateId;
@@ -232,26 +256,6 @@ namespace TencentCloud
                      */
                     std::string m_flowName;
                     bool m_flowNameHasBeenSet;
-
-                    /**
-                     * 用户信息
-                     */
-                    UserInfo m_operator;
-                    bool m_operatorHasBeenSet;
-
-                    /**
-                     * 应用信息
-                     */
-                    Agent m_agent;
-                    bool m_agentHasBeenSet;
-
-                    /**
-                     * 回调地址,最大长度1000字符串
-回调时机：
-用户通过签署二维码发起签署流程时，企业额度不足导致失败
-                     */
-                    std::string m_callbackUrl;
-                    bool m_callbackUrlHasBeenSet;
 
                     /**
                      * 最大可发起签署流程份数，默认5份 
@@ -274,6 +278,26 @@ namespace TencentCloud
 
                     /**
                      * 限制二维码用户条件
+                     */
+                    std::vector<ApproverRestriction> m_restrictions;
+                    bool m_restrictionsHasBeenSet;
+
+                    /**
+                     * 回调地址,最大长度1000字符串
+回调时机：
+用户通过签署二维码发起签署流程时，企业额度不足导致失败
+                     */
+                    std::string m_callbackUrl;
+                    bool m_callbackUrlHasBeenSet;
+
+                    /**
+                     * 应用信息
+                     */
+                    Agent m_agent;
+                    bool m_agentHasBeenSet;
+
+                    /**
+                     * 限制二维码用户条件（已弃用）
                      */
                     ApproverRestriction m_approverRestrictions;
                     bool m_approverRestrictionsHasBeenSet;

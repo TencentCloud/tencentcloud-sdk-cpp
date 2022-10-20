@@ -163,6 +163,28 @@ namespace TencentCloud
                      */
                     bool UnitHasBeenSet() const;
 
+                    /**
+                     * 获取指标序列名字
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Name 指标序列名字
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetName() const;
+
+                    /**
+                     * 设置指标序列名字
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Name 指标序列名字
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetName(const std::string& _name);
+
+                    /**
+                     * 判断参数 Name 是否已赋值
+                     * @return Name 是否已赋值
+                     */
+                    bool NameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -202,6 +224,13 @@ namespace TencentCloud
                      */
                     std::string m_unit;
                     bool m_unitHasBeenSet;
+
+                    /**
+                     * 指标序列名字
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_name;
+                    bool m_nameHasBeenSet;
 
                 };
             }

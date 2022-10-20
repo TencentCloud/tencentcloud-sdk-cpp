@@ -158,6 +158,24 @@ namespace TencentCloud
                     bool QrEffectiveDayHasBeenSet() const;
 
                     /**
+                     * 获取限制二维码用户条件
+                     * @return Restrictions 限制二维码用户条件
+                     */
+                    std::vector<ApproverRestriction> GetRestrictions() const;
+
+                    /**
+                     * 设置限制二维码用户条件
+                     * @param Restrictions 限制二维码用户条件
+                     */
+                    void SetRestrictions(const std::vector<ApproverRestriction>& _restrictions);
+
+                    /**
+                     * 判断参数 Restrictions 是否已赋值
+                     * @return Restrictions 是否已赋值
+                     */
+                    bool RestrictionsHasBeenSet() const;
+
+                    /**
                      * 获取回调地址，最大长度1000个字符
 不传默认使用渠道应用号配置的回调地址
 回调时机:用户通过签署二维码发起合同时，企业额度不足导致失败
@@ -184,24 +202,6 @@ namespace TencentCloud
                     bool CallbackUrlHasBeenSet() const;
 
                     /**
-                     * 获取限制二维码用户条件
-                     * @return ApproverRestrictions 限制二维码用户条件
-                     */
-                    ApproverRestriction GetApproverRestrictions() const;
-
-                    /**
-                     * 设置限制二维码用户条件
-                     * @param ApproverRestrictions 限制二维码用户条件
-                     */
-                    void SetApproverRestrictions(const ApproverRestriction& _approverRestrictions);
-
-                    /**
-                     * 判断参数 ApproverRestrictions 是否已赋值
-                     * @return ApproverRestrictions 是否已赋值
-                     */
-                    bool ApproverRestrictionsHasBeenSet() const;
-
-                    /**
                      * 获取用户信息
                      * @return Operator 用户信息
                      */
@@ -218,6 +218,24 @@ namespace TencentCloud
                      * @return Operator 是否已赋值
                      */
                     bool OperatorHasBeenSet() const;
+
+                    /**
+                     * 获取限制二维码用户条件（已弃用）
+                     * @return ApproverRestrictions 限制二维码用户条件（已弃用）
+                     */
+                    ApproverRestriction GetApproverRestrictions() const;
+
+                    /**
+                     * 设置限制二维码用户条件（已弃用）
+                     * @param ApproverRestrictions 限制二维码用户条件（已弃用）
+                     */
+                    void SetApproverRestrictions(const ApproverRestriction& _approverRestrictions);
+
+                    /**
+                     * 判断参数 ApproverRestrictions 是否已赋值
+                     * @return ApproverRestrictions 是否已赋值
+                     */
+                    bool ApproverRestrictionsHasBeenSet() const;
 
                 private:
 
@@ -259,6 +277,12 @@ namespace TencentCloud
                     bool m_qrEffectiveDayHasBeenSet;
 
                     /**
+                     * 限制二维码用户条件
+                     */
+                    std::vector<ApproverRestriction> m_restrictions;
+                    bool m_restrictionsHasBeenSet;
+
+                    /**
                      * 回调地址，最大长度1000个字符
 不传默认使用渠道应用号配置的回调地址
 回调时机:用户通过签署二维码发起合同时，企业额度不足导致失败
@@ -267,16 +291,16 @@ namespace TencentCloud
                     bool m_callbackUrlHasBeenSet;
 
                     /**
-                     * 限制二维码用户条件
-                     */
-                    ApproverRestriction m_approverRestrictions;
-                    bool m_approverRestrictionsHasBeenSet;
-
-                    /**
                      * 用户信息
                      */
                     UserInfo m_operator;
                     bool m_operatorHasBeenSet;
+
+                    /**
+                     * 限制二维码用户条件（已弃用）
+                     */
+                    ApproverRestriction m_approverRestrictions;
+                    bool m_approverRestrictionsHasBeenSet;
 
                 };
             }

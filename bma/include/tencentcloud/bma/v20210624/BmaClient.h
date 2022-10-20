@@ -37,6 +37,8 @@
 #include <tencentcloud/bma/v20210624/model/CreateCRBlockResponse.h>
 #include <tencentcloud/bma/v20210624/model/CreateCRCompanyVerifyRequest.h>
 #include <tencentcloud/bma/v20210624/model/CreateCRCompanyVerifyResponse.h>
+#include <tencentcloud/bma/v20210624/model/CreateCRDesktopCodeRequest.h>
+#include <tencentcloud/bma/v20210624/model/CreateCRDesktopCodeResponse.h>
 #include <tencentcloud/bma/v20210624/model/CreateCRObtainRequest.h>
 #include <tencentcloud/bma/v20210624/model/CreateCRObtainResponse.h>
 #include <tencentcloud/bma/v20210624/model/CreateCRRightRequest.h>
@@ -114,6 +116,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateCRCompanyVerifyResponse> CreateCRCompanyVerifyOutcome;
                 typedef std::future<CreateCRCompanyVerifyOutcome> CreateCRCompanyVerifyOutcomeCallable;
                 typedef std::function<void(const BmaClient*, const Model::CreateCRCompanyVerifyRequest&, CreateCRCompanyVerifyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCRCompanyVerifyAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateCRDesktopCodeResponse> CreateCRDesktopCodeOutcome;
+                typedef std::future<CreateCRDesktopCodeOutcome> CreateCRDesktopCodeOutcomeCallable;
+                typedef std::function<void(const BmaClient*, const Model::CreateCRDesktopCodeRequest&, CreateCRDesktopCodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCRDesktopCodeAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateCRObtainResponse> CreateCRObtainOutcome;
                 typedef std::future<CreateCRObtainOutcome> CreateCRObtainOutcomeCallable;
                 typedef std::function<void(const BmaClient*, const Model::CreateCRObtainRequest&, CreateCRObtainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCRObtainAsyncHandler;
@@ -243,6 +248,15 @@ namespace TencentCloud
                 CreateCRCompanyVerifyOutcome CreateCRCompanyVerify(const Model::CreateCRCompanyVerifyRequest &request);
                 void CreateCRCompanyVerifyAsync(const Model::CreateCRCompanyVerifyRequest& request, const CreateCRCompanyVerifyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateCRCompanyVerifyOutcomeCallable CreateCRCompanyVerifyCallable(const Model::CreateCRCompanyVerifyRequest& request);
+
+                /**
+                 *新建过程取证码
+                 * @param req CreateCRDesktopCodeRequest
+                 * @return CreateCRDesktopCodeOutcome
+                 */
+                CreateCRDesktopCodeOutcome CreateCRDesktopCode(const Model::CreateCRDesktopCodeRequest &request);
+                void CreateCRDesktopCodeAsync(const Model::CreateCRDesktopCodeRequest& request, const CreateCRDesktopCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateCRDesktopCodeOutcomeCallable CreateCRDesktopCodeCallable(const Model::CreateCRDesktopCodeRequest& request);
 
                 /**
                  *版权保护-新建取证接口

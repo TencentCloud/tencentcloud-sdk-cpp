@@ -26,7 +26,8 @@ CreateRuleRequest::CreateRuleRequest() :
     m_zoneIdHasBeenSet(false),
     m_ruleNameHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_rulesHasBeenSet(false)
+    m_rulesHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,19 @@ string CreateRuleRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
@@ -146,6 +160,22 @@ void CreateRuleRequest::SetRules(const vector<Rule>& _rules)
 bool CreateRuleRequest::RulesHasBeenSet() const
 {
     return m_rulesHasBeenSet;
+}
+
+vector<string> CreateRuleRequest::GetTags() const
+{
+    return m_tags;
+}
+
+void CreateRuleRequest::SetTags(const vector<string>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool CreateRuleRequest::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 
 

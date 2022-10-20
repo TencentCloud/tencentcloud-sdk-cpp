@@ -212,6 +212,49 @@ TcmClient::DescribeMeshListOutcomeCallable TcmClient::DescribeMeshListCallable(c
     return task->get_future();
 }
 
+TcmClient::LinkClusterListOutcome TcmClient::LinkClusterList(const LinkClusterListRequest &request)
+{
+    auto outcome = MakeRequest(request, "LinkClusterList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        LinkClusterListResponse rsp = LinkClusterListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return LinkClusterListOutcome(rsp);
+        else
+            return LinkClusterListOutcome(o.GetError());
+    }
+    else
+    {
+        return LinkClusterListOutcome(outcome.GetError());
+    }
+}
+
+void TcmClient::LinkClusterListAsync(const LinkClusterListRequest& request, const LinkClusterListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->LinkClusterList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcmClient::LinkClusterListOutcomeCallable TcmClient::LinkClusterListCallable(const LinkClusterListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<LinkClusterListOutcome()>>(
+        [this, request]()
+        {
+            return this->LinkClusterList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcmClient::ModifyMeshOutcome TcmClient::ModifyMesh(const ModifyMeshRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyMesh");
@@ -248,6 +291,49 @@ TcmClient::ModifyMeshOutcomeCallable TcmClient::ModifyMeshCallable(const ModifyM
         [this, request]()
         {
             return this->ModifyMesh(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcmClient::UnlinkClusterOutcome TcmClient::UnlinkCluster(const UnlinkClusterRequest &request)
+{
+    auto outcome = MakeRequest(request, "UnlinkCluster");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UnlinkClusterResponse rsp = UnlinkClusterResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UnlinkClusterOutcome(rsp);
+        else
+            return UnlinkClusterOutcome(o.GetError());
+    }
+    else
+    {
+        return UnlinkClusterOutcome(outcome.GetError());
+    }
+}
+
+void TcmClient::UnlinkClusterAsync(const UnlinkClusterRequest& request, const UnlinkClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UnlinkCluster(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcmClient::UnlinkClusterOutcomeCallable TcmClient::UnlinkClusterCallable(const UnlinkClusterRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UnlinkClusterOutcome()>>(
+        [this, request]()
+        {
+            return this->UnlinkCluster(request);
         }
     );
 

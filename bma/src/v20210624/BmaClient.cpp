@@ -341,6 +341,49 @@ BmaClient::CreateCRCompanyVerifyOutcomeCallable BmaClient::CreateCRCompanyVerify
     return task->get_future();
 }
 
+BmaClient::CreateCRDesktopCodeOutcome BmaClient::CreateCRDesktopCode(const CreateCRDesktopCodeRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateCRDesktopCode");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateCRDesktopCodeResponse rsp = CreateCRDesktopCodeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateCRDesktopCodeOutcome(rsp);
+        else
+            return CreateCRDesktopCodeOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateCRDesktopCodeOutcome(outcome.GetError());
+    }
+}
+
+void BmaClient::CreateCRDesktopCodeAsync(const CreateCRDesktopCodeRequest& request, const CreateCRDesktopCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateCRDesktopCode(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BmaClient::CreateCRDesktopCodeOutcomeCallable BmaClient::CreateCRDesktopCodeCallable(const CreateCRDesktopCodeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateCRDesktopCodeOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateCRDesktopCode(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 BmaClient::CreateCRObtainOutcome BmaClient::CreateCRObtain(const CreateCRObtainRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateCRObtain");

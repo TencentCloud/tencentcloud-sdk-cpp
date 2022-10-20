@@ -35,6 +35,8 @@
 #include <tencentcloud/wedata/v20210820/model/CreateDataSourceResponse.h>
 #include <tencentcloud/wedata/v20210820/model/CreateFolderRequest.h>
 #include <tencentcloud/wedata/v20210820/model/CreateFolderResponse.h>
+#include <tencentcloud/wedata/v20210820/model/CreateOrUpdateResourceRequest.h>
+#include <tencentcloud/wedata/v20210820/model/CreateOrUpdateResourceResponse.h>
 #include <tencentcloud/wedata/v20210820/model/CreateTaskRequest.h>
 #include <tencentcloud/wedata/v20210820/model/CreateTaskResponse.h>
 #include <tencentcloud/wedata/v20210820/model/CreateWorkflowRequest.h>
@@ -45,6 +47,8 @@
 #include <tencentcloud/wedata/v20210820/model/DeleteDataSourcesResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DeleteFolderRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DeleteFolderResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DeleteResourceRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DeleteResourceResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DeleteWorkflowNewRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DeleteWorkflowNewResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeDataSourceListRequest.h>
@@ -71,6 +75,8 @@
 #include <tencentcloud/wedata/v20210820/model/DescribeProjectResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeRelatedInstancesRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeRelatedInstancesResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeResourceManagePathTreesRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeResourceManagePathTreesResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeTaskDetailRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeTaskDetailResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeTaskInstancesRequest.h>
@@ -157,6 +163,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateFolderResponse> CreateFolderOutcome;
                 typedef std::future<CreateFolderOutcome> CreateFolderOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::CreateFolderRequest&, CreateFolderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateFolderAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateOrUpdateResourceResponse> CreateOrUpdateResourceOutcome;
+                typedef std::future<CreateOrUpdateResourceOutcome> CreateOrUpdateResourceOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::CreateOrUpdateResourceRequest&, CreateOrUpdateResourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateOrUpdateResourceAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateTaskResponse> CreateTaskOutcome;
                 typedef std::future<CreateTaskOutcome> CreateTaskOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::CreateTaskRequest&, CreateTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTaskAsyncHandler;
@@ -172,6 +181,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteFolderResponse> DeleteFolderOutcome;
                 typedef std::future<DeleteFolderOutcome> DeleteFolderOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DeleteFolderRequest&, DeleteFolderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteFolderAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteResourceResponse> DeleteResourceOutcome;
+                typedef std::future<DeleteResourceOutcome> DeleteResourceOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DeleteResourceRequest&, DeleteResourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteResourceAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteWorkflowNewResponse> DeleteWorkflowNewOutcome;
                 typedef std::future<DeleteWorkflowNewOutcome> DeleteWorkflowNewOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DeleteWorkflowNewRequest&, DeleteWorkflowNewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteWorkflowNewAsyncHandler;
@@ -211,6 +223,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeRelatedInstancesResponse> DescribeRelatedInstancesOutcome;
                 typedef std::future<DescribeRelatedInstancesOutcome> DescribeRelatedInstancesOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeRelatedInstancesRequest&, DescribeRelatedInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRelatedInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeResourceManagePathTreesResponse> DescribeResourceManagePathTreesOutcome;
+                typedef std::future<DescribeResourceManagePathTreesOutcome> DescribeResourceManagePathTreesOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeResourceManagePathTreesRequest&, DescribeResourceManagePathTreesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeResourceManagePathTreesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTaskDetailResponse> DescribeTaskDetailOutcome;
                 typedef std::future<DescribeTaskDetailOutcome> DescribeTaskDetailOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeTaskDetailRequest&, DescribeTaskDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTaskDetailAsyncHandler;
@@ -356,6 +371,15 @@ namespace TencentCloud
                 CreateFolderOutcomeCallable CreateFolderCallable(const Model::CreateFolderRequest& request);
 
                 /**
+                 *资源管理需要先将资源上传到cos中，然后调用该接口，将cos资源绑定到wedata
+                 * @param req CreateOrUpdateResourceRequest
+                 * @return CreateOrUpdateResourceOutcome
+                 */
+                CreateOrUpdateResourceOutcome CreateOrUpdateResource(const Model::CreateOrUpdateResourceRequest &request);
+                void CreateOrUpdateResourceAsync(const Model::CreateOrUpdateResourceRequest& request, const CreateOrUpdateResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateOrUpdateResourceOutcomeCallable CreateOrUpdateResourceCallable(const Model::CreateOrUpdateResourceRequest& request);
+
+                /**
                  *<p style="color:red;">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>
 创建任务
                  * @param req CreateTaskRequest
@@ -403,6 +427,15 @@ namespace TencentCloud
                 DeleteFolderOutcome DeleteFolder(const Model::DeleteFolderRequest &request);
                 void DeleteFolderAsync(const Model::DeleteFolderRequest& request, const DeleteFolderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteFolderOutcomeCallable DeleteFolderCallable(const Model::DeleteFolderRequest& request);
+
+                /**
+                 *资源管理删除资源
+                 * @param req DeleteResourceRequest
+                 * @return DeleteResourceOutcome
+                 */
+                DeleteResourceOutcome DeleteResource(const Model::DeleteResourceRequest &request);
+                void DeleteResourceAsync(const Model::DeleteResourceRequest& request, const DeleteResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteResourceOutcomeCallable DeleteResourceCallable(const Model::DeleteResourceRequest& request);
 
                 /**
                  *<p style="color:red;">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>
@@ -528,6 +561,15 @@ namespace TencentCloud
                 DescribeRelatedInstancesOutcome DescribeRelatedInstances(const Model::DescribeRelatedInstancesRequest &request);
                 void DescribeRelatedInstancesAsync(const Model::DescribeRelatedInstancesRequest& request, const DescribeRelatedInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeRelatedInstancesOutcomeCallable DescribeRelatedInstancesCallable(const Model::DescribeRelatedInstancesRequest& request);
+
+                /**
+                 *获取资源管理目录树
+                 * @param req DescribeResourceManagePathTreesRequest
+                 * @return DescribeResourceManagePathTreesOutcome
+                 */
+                DescribeResourceManagePathTreesOutcome DescribeResourceManagePathTrees(const Model::DescribeResourceManagePathTreesRequest &request);
+                void DescribeResourceManagePathTreesAsync(const Model::DescribeResourceManagePathTreesRequest& request, const DescribeResourceManagePathTreesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeResourceManagePathTreesOutcomeCallable DescribeResourceManagePathTreesCallable(const Model::DescribeResourceManagePathTreesRequest& request);
 
                 /**
                  *<p style="color:red;">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>

@@ -376,6 +376,72 @@ namespace TencentCloud
                      */
                     bool ProjectIdHasBeenSet() const;
 
+                    /**
+                     * 获取用户账号的 App ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AppID 用户账号的 App ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetAppID() const;
+
+                    /**
+                     * 设置用户账号的 App ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AppID 用户账号的 App ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAppID(const int64_t& _appID);
+
+                    /**
+                     * 判断参数 AppID 是否已赋值
+                     * @return AppID 是否已赋值
+                     */
+                    bool AppIDHasBeenSet() const;
+
+                    /**
+                     * 获取用户主账号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Uin 用户主账号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetUin() const;
+
+                    /**
+                     * 设置用户主账号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Uin 用户主账号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetUin(const std::string& _uin);
+
+                    /**
+                     * 判断参数 Uin 是否已赋值
+                     * @return Uin 是否已赋值
+                     */
+                    bool UinHasBeenSet() const;
+
+                    /**
+                     * 获取用户子账号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SubAccountUin 用户子账号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetSubAccountUin() const;
+
+                    /**
+                     * 设置用户子账号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SubAccountUin 用户子账号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSubAccountUin(const std::string& _subAccountUin);
+
+                    /**
+                     * 判断参数 SubAccountUin 是否已赋值
+                     * @return SubAccountUin 是否已赋值
+                     */
+                    bool SubAccountUinHasBeenSet() const;
+
                 private:
 
                     /**
@@ -483,6 +549,27 @@ namespace TencentCloud
                      */
                     std::string m_projectId;
                     bool m_projectIdHasBeenSet;
+
+                    /**
+                     * 用户账号的 App ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_appID;
+                    bool m_appIDHasBeenSet;
+
+                    /**
+                     * 用户主账号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_uin;
+                    bool m_uinHasBeenSet;
+
+                    /**
+                     * 用户子账号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_subAccountUin;
+                    bool m_subAccountUinHasBeenSet;
 
                 };
             }

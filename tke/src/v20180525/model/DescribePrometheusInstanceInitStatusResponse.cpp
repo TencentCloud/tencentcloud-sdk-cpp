@@ -23,7 +23,10 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tke::V20180525::Model;
 using namespace std;
 
-DescribePrometheusInstanceInitStatusResponse::DescribePrometheusInstanceInitStatusResponse()
+DescribePrometheusInstanceInitStatusResponse::DescribePrometheusInstanceInitStatusResponse() :
+    m_statusHasBeenSet(false),
+    m_stepsHasBeenSet(false),
+    m_eksClusterIdHasBeenSet(false)
 {
 }
 
@@ -61,6 +64,46 @@ CoreInternalOutcome DescribePrometheusInstanceInitStatusResponse::Deserialize(co
     }
 
 
+    if (rsp.HasMember("Status") && !rsp["Status"].IsNull())
+    {
+        if (!rsp["Status"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Status` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_status = string(rsp["Status"].GetString());
+        m_statusHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Steps") && !rsp["Steps"].IsNull())
+    {
+        if (!rsp["Steps"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Steps` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["Steps"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            TaskStepInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_steps.push_back(item);
+        }
+        m_stepsHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("EksClusterId") && !rsp["EksClusterId"].IsNull())
+    {
+        if (!rsp["EksClusterId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EksClusterId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_eksClusterId = string(rsp["EksClusterId"].GetString());
+        m_eksClusterIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +113,37 @@ string DescribePrometheusInstanceInitStatusResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_statusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_stepsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Steps";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_steps.begin(); itr != m_steps.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_eksClusterIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EksClusterId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_eksClusterId.c_str(), allocator).Move(), allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +156,35 @@ string DescribePrometheusInstanceInitStatusResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string DescribePrometheusInstanceInitStatusResponse::GetStatus() const
+{
+    return m_status;
+}
+
+bool DescribePrometheusInstanceInitStatusResponse::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
+}
+
+vector<TaskStepInfo> DescribePrometheusInstanceInitStatusResponse::GetSteps() const
+{
+    return m_steps;
+}
+
+bool DescribePrometheusInstanceInitStatusResponse::StepsHasBeenSet() const
+{
+    return m_stepsHasBeenSet;
+}
+
+string DescribePrometheusInstanceInitStatusResponse::GetEksClusterId() const
+{
+    return m_eksClusterId;
+}
+
+bool DescribePrometheusInstanceInitStatusResponse::EksClusterIdHasBeenSet() const
+{
+    return m_eksClusterIdHasBeenSet;
+}
 
 

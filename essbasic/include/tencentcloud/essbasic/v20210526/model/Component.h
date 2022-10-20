@@ -37,6 +37,12 @@ namespace TencentCloud
                 /**
                 * 此结构体 (Component) 用于描述控件属性。
 
+在通过文件发起合同时，对应的component有三种定位方式
+1. 绝对定位方式
+2. 表单域(FIELD)定位方式
+3. 关键字(KEYWORD)定位方式
+可以参考官网说明
+https://cloud.tencent.com/document/product/1323/78346#component-.E4.B8.89.E7.A7.8D.E5.AE.9A.E4.BD.8D.E6.96.B9.E5.BC.8F.E8.AF.B4.E6.98.8E
                 */
                 class Component : public AbstractModel
                 {
@@ -382,11 +388,17 @@ KEYWORD - 关键字
                     /**
                      * 获取参数控件样式，json格式表述
 不同类型的控件会有部分非通用参数
-TEXT控件可以指定字体
+TEXT/MULTI_LINE_TEXT控件可以指定
+1 Font：目前只支持黑体、宋体
+2 FontSize： 范围12-72
+3 FontAlign： Left/Right/Center，左对齐/居中/右对齐
 例如：{"FontSize":12}
                      * @return ComponentExtra 参数控件样式，json格式表述
 不同类型的控件会有部分非通用参数
-TEXT控件可以指定字体
+TEXT/MULTI_LINE_TEXT控件可以指定
+1 Font：目前只支持黑体、宋体
+2 FontSize： 范围12-72
+3 FontAlign： Left/Right/Center，左对齐/居中/右对齐
 例如：{"FontSize":12}
                      */
                     std::string GetComponentExtra() const;
@@ -394,11 +406,17 @@ TEXT控件可以指定字体
                     /**
                      * 设置参数控件样式，json格式表述
 不同类型的控件会有部分非通用参数
-TEXT控件可以指定字体
+TEXT/MULTI_LINE_TEXT控件可以指定
+1 Font：目前只支持黑体、宋体
+2 FontSize： 范围12-72
+3 FontAlign： Left/Right/Center，左对齐/居中/右对齐
 例如：{"FontSize":12}
                      * @param ComponentExtra 参数控件样式，json格式表述
 不同类型的控件会有部分非通用参数
-TEXT控件可以指定字体
+TEXT/MULTI_LINE_TEXT控件可以指定
+1 Font：目前只支持黑体、宋体
+2 FontSize： 范围12-72
+3 FontAlign： Left/Right/Center，左对齐/居中/右对齐
 例如：{"FontSize":12}
                      */
                     void SetComponentExtra(const std::string& _componentExtra);
@@ -655,7 +673,10 @@ KEYWORD - 关键字
                     /**
                      * 参数控件样式，json格式表述
 不同类型的控件会有部分非通用参数
-TEXT控件可以指定字体
+TEXT/MULTI_LINE_TEXT控件可以指定
+1 Font：目前只支持黑体、宋体
+2 FontSize： 范围12-72
+3 FontAlign： Left/Right/Center，左对齐/居中/右对齐
 例如：{"FontSize":12}
                      */
                     std::string m_componentExtra;

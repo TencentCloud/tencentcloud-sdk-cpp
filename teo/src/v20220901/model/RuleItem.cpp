@@ -25,7 +25,8 @@ RuleItem::RuleItem() :
     m_ruleNameHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_rulesHasBeenSet(false),
-    m_rulePriorityHasBeenSet(false)
+    m_rulePriorityHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,19 @@ CoreInternalOutcome RuleItem::Deserialize(const rapidjson::Value &value)
         m_rulePriorityHasBeenSet = true;
     }
 
+    if (value.HasMember("Tags") && !value["Tags"].IsNull())
+    {
+        if (!value["Tags"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `RuleItem.Tags` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Tags"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_tags.push_back((*itr).GetString());
+        }
+        m_tagsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -146,6 +160,19 @@ void RuleItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "RulePriority";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_rulePriority, allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -229,5 +256,21 @@ void RuleItem::SetRulePriority(const int64_t& _rulePriority)
 bool RuleItem::RulePriorityHasBeenSet() const
 {
     return m_rulePriorityHasBeenSet;
+}
+
+vector<string> RuleItem::GetTags() const
+{
+    return m_tags;
+}
+
+void RuleItem::SetTags(const vector<string>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool RuleItem::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 

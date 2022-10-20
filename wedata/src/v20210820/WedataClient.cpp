@@ -298,6 +298,49 @@ WedataClient::CreateFolderOutcomeCallable WedataClient::CreateFolderCallable(con
     return task->get_future();
 }
 
+WedataClient::CreateOrUpdateResourceOutcome WedataClient::CreateOrUpdateResource(const CreateOrUpdateResourceRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateOrUpdateResource");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateOrUpdateResourceResponse rsp = CreateOrUpdateResourceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateOrUpdateResourceOutcome(rsp);
+        else
+            return CreateOrUpdateResourceOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateOrUpdateResourceOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::CreateOrUpdateResourceAsync(const CreateOrUpdateResourceRequest& request, const CreateOrUpdateResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateOrUpdateResource(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WedataClient::CreateOrUpdateResourceOutcomeCallable WedataClient::CreateOrUpdateResourceCallable(const CreateOrUpdateResourceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateOrUpdateResourceOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateOrUpdateResource(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WedataClient::CreateTaskOutcome WedataClient::CreateTask(const CreateTaskRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateTask");
@@ -506,6 +549,49 @@ WedataClient::DeleteFolderOutcomeCallable WedataClient::DeleteFolderCallable(con
         [this, request]()
         {
             return this->DeleteFolder(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WedataClient::DeleteResourceOutcome WedataClient::DeleteResource(const DeleteResourceRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteResource");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteResourceResponse rsp = DeleteResourceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteResourceOutcome(rsp);
+        else
+            return DeleteResourceOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteResourceOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::DeleteResourceAsync(const DeleteResourceRequest& request, const DeleteResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteResource(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WedataClient::DeleteResourceOutcomeCallable WedataClient::DeleteResourceCallable(const DeleteResourceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteResourceOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteResource(request);
         }
     );
 
@@ -1065,6 +1151,49 @@ WedataClient::DescribeRelatedInstancesOutcomeCallable WedataClient::DescribeRela
         [this, request]()
         {
             return this->DescribeRelatedInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WedataClient::DescribeResourceManagePathTreesOutcome WedataClient::DescribeResourceManagePathTrees(const DescribeResourceManagePathTreesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeResourceManagePathTrees");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeResourceManagePathTreesResponse rsp = DescribeResourceManagePathTreesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeResourceManagePathTreesOutcome(rsp);
+        else
+            return DescribeResourceManagePathTreesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeResourceManagePathTreesOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::DescribeResourceManagePathTreesAsync(const DescribeResourceManagePathTreesRequest& request, const DescribeResourceManagePathTreesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeResourceManagePathTrees(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WedataClient::DescribeResourceManagePathTreesOutcomeCallable WedataClient::DescribeResourceManagePathTreesCallable(const DescribeResourceManagePathTreesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeResourceManagePathTreesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeResourceManagePathTrees(request);
         }
     );
 

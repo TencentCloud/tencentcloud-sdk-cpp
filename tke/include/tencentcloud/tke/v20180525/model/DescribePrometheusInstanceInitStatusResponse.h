@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tke/v20180525/model/TaskStepInfo.h>
 
 
 namespace TencentCloud
@@ -43,7 +44,79 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取实例初始化状态，取值：
+uninitialized 未初始化 
+initializing 初始化中
+running 初始化完成，运行中
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Status 实例初始化状态，取值：
+uninitialized 未初始化 
+initializing 初始化中
+running 初始化完成，运行中
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetStatus() const;
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     */
+                    bool StatusHasBeenSet() const;
+
+                    /**
+                     * 获取初始化任务步骤
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Steps 初始化任务步骤
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<TaskStepInfo> GetSteps() const;
+
+                    /**
+                     * 判断参数 Steps 是否已赋值
+                     * @return Steps 是否已赋值
+                     */
+                    bool StepsHasBeenSet() const;
+
+                    /**
+                     * 获取实例eks集群ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EksClusterId 实例eks集群ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetEksClusterId() const;
+
+                    /**
+                     * 判断参数 EksClusterId 是否已赋值
+                     * @return EksClusterId 是否已赋值
+                     */
+                    bool EksClusterIdHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 实例初始化状态，取值：
+uninitialized 未初始化 
+initializing 初始化中
+running 初始化完成，运行中
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_status;
+                    bool m_statusHasBeenSet;
+
+                    /**
+                     * 初始化任务步骤
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<TaskStepInfo> m_steps;
+                    bool m_stepsHasBeenSet;
+
+                    /**
+                     * 实例eks集群ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_eksClusterId;
+                    bool m_eksClusterIdHasBeenSet;
 
                 };
             }

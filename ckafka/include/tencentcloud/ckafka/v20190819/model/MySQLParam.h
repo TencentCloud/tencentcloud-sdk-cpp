@@ -462,6 +462,24 @@ namespace TencentCloud
                      */
                     bool RecordWithSchemaHasBeenSet() const;
 
+                    /**
+                     * 获取存放信令表的数据库名称
+                     * @return SignalDatabase 存放信令表的数据库名称
+                     */
+                    std::string GetSignalDatabase() const;
+
+                    /**
+                     * 设置存放信令表的数据库名称
+                     * @param SignalDatabase 存放信令表的数据库名称
+                     */
+                    void SetSignalDatabase(const std::string& _signalDatabase);
+
+                    /**
+                     * 判断参数 SignalDatabase 是否已赋值
+                     * @return SignalDatabase 是否已赋值
+                     */
+                    bool SignalDatabaseHasBeenSet() const;
+
                 private:
 
                     /**
@@ -601,6 +619,12 @@ namespace TencentCloud
                      */
                     bool m_recordWithSchema;
                     bool m_recordWithSchemaHasBeenSet;
+
+                    /**
+                     * 存放信令表的数据库名称
+                     */
+                    std::string m_signalDatabase;
+                    bool m_signalDatabaseHasBeenSet;
 
                 };
             }

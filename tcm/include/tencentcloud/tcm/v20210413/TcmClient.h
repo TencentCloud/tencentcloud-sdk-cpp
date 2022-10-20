@@ -31,8 +31,12 @@
 #include <tencentcloud/tcm/v20210413/model/DescribeMeshResponse.h>
 #include <tencentcloud/tcm/v20210413/model/DescribeMeshListRequest.h>
 #include <tencentcloud/tcm/v20210413/model/DescribeMeshListResponse.h>
+#include <tencentcloud/tcm/v20210413/model/LinkClusterListRequest.h>
+#include <tencentcloud/tcm/v20210413/model/LinkClusterListResponse.h>
 #include <tencentcloud/tcm/v20210413/model/ModifyMeshRequest.h>
 #include <tencentcloud/tcm/v20210413/model/ModifyMeshResponse.h>
+#include <tencentcloud/tcm/v20210413/model/UnlinkClusterRequest.h>
+#include <tencentcloud/tcm/v20210413/model/UnlinkClusterResponse.h>
 
 
 namespace TencentCloud
@@ -59,9 +63,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeMeshListResponse> DescribeMeshListOutcome;
                 typedef std::future<DescribeMeshListOutcome> DescribeMeshListOutcomeCallable;
                 typedef std::function<void(const TcmClient*, const Model::DescribeMeshListRequest&, DescribeMeshListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMeshListAsyncHandler;
+                typedef Outcome<Core::Error, Model::LinkClusterListResponse> LinkClusterListOutcome;
+                typedef std::future<LinkClusterListOutcome> LinkClusterListOutcomeCallable;
+                typedef std::function<void(const TcmClient*, const Model::LinkClusterListRequest&, LinkClusterListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> LinkClusterListAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyMeshResponse> ModifyMeshOutcome;
                 typedef std::future<ModifyMeshOutcome> ModifyMeshOutcomeCallable;
                 typedef std::function<void(const TcmClient*, const Model::ModifyMeshRequest&, ModifyMeshOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyMeshAsyncHandler;
+                typedef Outcome<Core::Error, Model::UnlinkClusterResponse> UnlinkClusterOutcome;
+                typedef std::future<UnlinkClusterOutcome> UnlinkClusterOutcomeCallable;
+                typedef std::function<void(const TcmClient*, const Model::UnlinkClusterRequest&, UnlinkClusterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UnlinkClusterAsyncHandler;
 
 
 
@@ -102,6 +112,15 @@ namespace TencentCloud
                 DescribeMeshListOutcomeCallable DescribeMeshListCallable(const Model::DescribeMeshListRequest& request);
 
                 /**
+                 *关联集群
+                 * @param req LinkClusterListRequest
+                 * @return LinkClusterListOutcome
+                 */
+                LinkClusterListOutcome LinkClusterList(const Model::LinkClusterListRequest &request);
+                void LinkClusterListAsync(const Model::LinkClusterListRequest& request, const LinkClusterListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                LinkClusterListOutcomeCallable LinkClusterListCallable(const Model::LinkClusterListRequest& request);
+
+                /**
                  *修改网格
                  * @param req ModifyMeshRequest
                  * @return ModifyMeshOutcome
@@ -109,6 +128,15 @@ namespace TencentCloud
                 ModifyMeshOutcome ModifyMesh(const Model::ModifyMeshRequest &request);
                 void ModifyMeshAsync(const Model::ModifyMeshRequest& request, const ModifyMeshAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyMeshOutcomeCallable ModifyMeshCallable(const Model::ModifyMeshRequest& request);
+
+                /**
+                 *解关联集群
+                 * @param req UnlinkClusterRequest
+                 * @return UnlinkClusterOutcome
+                 */
+                UnlinkClusterOutcome UnlinkCluster(const Model::UnlinkClusterRequest &request);
+                void UnlinkClusterAsync(const Model::UnlinkClusterRequest& request, const UnlinkClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UnlinkClusterOutcomeCallable UnlinkClusterCallable(const Model::UnlinkClusterRequest& request);
 
             };
         }

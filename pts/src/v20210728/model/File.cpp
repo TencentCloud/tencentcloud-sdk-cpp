@@ -36,7 +36,10 @@ File::File() :
     m_scenarioSetHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_createdAtHasBeenSet(false),
-    m_projectIdHasBeenSet(false)
+    m_projectIdHasBeenSet(false),
+    m_appIDHasBeenSet(false),
+    m_uinHasBeenSet(false),
+    m_subAccountUinHasBeenSet(false)
 {
 }
 
@@ -234,6 +237,36 @@ CoreInternalOutcome File::Deserialize(const rapidjson::Value &value)
         m_projectIdHasBeenSet = true;
     }
 
+    if (value.HasMember("AppID") && !value["AppID"].IsNull())
+    {
+        if (!value["AppID"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `File.AppID` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_appID = value["AppID"].GetInt64();
+        m_appIDHasBeenSet = true;
+    }
+
+    if (value.HasMember("Uin") && !value["Uin"].IsNull())
+    {
+        if (!value["Uin"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `File.Uin` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_uin = string(value["Uin"].GetString());
+        m_uinHasBeenSet = true;
+    }
+
+    if (value.HasMember("SubAccountUin") && !value["SubAccountUin"].IsNull())
+    {
+        if (!value["SubAccountUin"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `File.SubAccountUin` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subAccountUin = string(value["SubAccountUin"].GetString());
+        m_subAccountUinHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -396,6 +429,30 @@ void File::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorT
         string key = "ProjectId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_projectId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_appIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AppID";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_appID, allocator);
+    }
+
+    if (m_uinHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Uin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_uin.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subAccountUinHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubAccountUin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subAccountUin.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -655,5 +712,53 @@ void File::SetProjectId(const string& _projectId)
 bool File::ProjectIdHasBeenSet() const
 {
     return m_projectIdHasBeenSet;
+}
+
+int64_t File::GetAppID() const
+{
+    return m_appID;
+}
+
+void File::SetAppID(const int64_t& _appID)
+{
+    m_appID = _appID;
+    m_appIDHasBeenSet = true;
+}
+
+bool File::AppIDHasBeenSet() const
+{
+    return m_appIDHasBeenSet;
+}
+
+string File::GetUin() const
+{
+    return m_uin;
+}
+
+void File::SetUin(const string& _uin)
+{
+    m_uin = _uin;
+    m_uinHasBeenSet = true;
+}
+
+bool File::UinHasBeenSet() const
+{
+    return m_uinHasBeenSet;
+}
+
+string File::GetSubAccountUin() const
+{
+    return m_subAccountUin;
+}
+
+void File::SetSubAccountUin(const string& _subAccountUin)
+{
+    m_subAccountUin = _subAccountUin;
+    m_subAccountUinHasBeenSet = true;
+}
+
+bool File::SubAccountUinHasBeenSet() const
+{
+    return m_subAccountUinHasBeenSet;
 }
 

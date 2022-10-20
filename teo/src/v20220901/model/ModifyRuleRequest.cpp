@@ -27,7 +27,8 @@ ModifyRuleRequest::ModifyRuleRequest() :
     m_ruleNameHasBeenSet(false),
     m_rulesHasBeenSet(false),
     m_ruleIdHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -83,6 +84,19 @@ string ModifyRuleRequest::ToJsonString() const
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -171,6 +185,22 @@ void ModifyRuleRequest::SetStatus(const string& _status)
 bool ModifyRuleRequest::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+vector<string> ModifyRuleRequest::GetTags() const
+{
+    return m_tags;
+}
+
+void ModifyRuleRequest::SetTags(const vector<string>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool ModifyRuleRequest::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 
 

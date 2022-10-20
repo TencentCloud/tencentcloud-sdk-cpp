@@ -43,7 +43,8 @@ MySQLParam::MySQLParam() :
     m_isTablePrefixHasBeenSet(false),
     m_includeContentChangesHasBeenSet(false),
     m_includeQueryHasBeenSet(false),
-    m_recordWithSchemaHasBeenSet(false)
+    m_recordWithSchemaHasBeenSet(false),
+    m_signalDatabaseHasBeenSet(false)
 {
 }
 
@@ -299,6 +300,16 @@ CoreInternalOutcome MySQLParam::Deserialize(const rapidjson::Value &value)
         m_recordWithSchemaHasBeenSet = true;
     }
 
+    if (value.HasMember("SignalDatabase") && !value["SignalDatabase"].IsNull())
+    {
+        if (!value["SignalDatabase"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MySQLParam.SignalDatabase` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_signalDatabase = string(value["SignalDatabase"].GetString());
+        m_signalDatabaseHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -496,6 +507,14 @@ void MySQLParam::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "RecordWithSchema";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_recordWithSchema, allocator);
+    }
+
+    if (m_signalDatabaseHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SignalDatabase";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_signalDatabase.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -867,5 +886,21 @@ void MySQLParam::SetRecordWithSchema(const bool& _recordWithSchema)
 bool MySQLParam::RecordWithSchemaHasBeenSet() const
 {
     return m_recordWithSchemaHasBeenSet;
+}
+
+string MySQLParam::GetSignalDatabase() const
+{
+    return m_signalDatabase;
+}
+
+void MySQLParam::SetSignalDatabase(const string& _signalDatabase)
+{
+    m_signalDatabase = _signalDatabase;
+    m_signalDatabaseHasBeenSet = true;
+}
+
+bool MySQLParam::SignalDatabaseHasBeenSet() const
+{
+    return m_signalDatabaseHasBeenSet;
 }
 

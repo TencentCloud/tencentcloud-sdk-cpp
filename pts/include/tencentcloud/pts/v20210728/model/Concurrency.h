@@ -113,6 +113,28 @@ namespace TencentCloud
                      */
                     bool MaxRequestsPerSecondHasBeenSet() const;
 
+                    /**
+                     * 获取优雅终止任务的等待时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return GracefulStopSeconds 优雅终止任务的等待时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetGracefulStopSeconds() const;
+
+                    /**
+                     * 设置优雅终止任务的等待时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param GracefulStopSeconds 优雅终止任务的等待时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetGracefulStopSeconds(const int64_t& _gracefulStopSeconds);
+
+                    /**
+                     * 判断参数 GracefulStopSeconds 是否已赋值
+                     * @return GracefulStopSeconds 是否已赋值
+                     */
+                    bool GracefulStopSecondsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -135,6 +157,13 @@ namespace TencentCloud
                      */
                     int64_t m_maxRequestsPerSecond;
                     bool m_maxRequestsPerSecondHasBeenSet;
+
+                    /**
+                     * 优雅终止任务的等待时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_gracefulStopSeconds;
+                    bool m_gracefulStopSecondsHasBeenSet;
 
                 };
             }

@@ -70,6 +70,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/ModifyDDoSPolicyHostResponse.h
   include/tencentcloud/teo/v20220901/model/ExceptUserRule.h
   include/tencentcloud/teo/v20220901/model/SecEntry.h
+  include/tencentcloud/teo/v20220901/model/SubRule.h
   include/tencentcloud/teo/v20220901/model/DDoSPacketFilter.h
   include/tencentcloud/teo/v20220901/model/DescribeSpeedTestingMetricDataResponse.h
   include/tencentcloud/teo/v20220901/model/Sv.h
@@ -255,6 +256,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/ModifyApplicationProxyRuleRequest.h
   include/tencentcloud/teo/v20220901/model/DDoSStatusInfo.h
   include/tencentcloud/teo/v20220901/model/AclConfig.h
+  include/tencentcloud/teo/v20220901/model/SubRuleItem.h
   include/tencentcloud/teo/v20220901/model/DescribeSpeedTestingDetailsResponse.h
   include/tencentcloud/teo/v20220901/model/WafGroupDetail.h
   include/tencentcloud/teo/v20220901/model/CreateAliasDomainResponse.h
@@ -823,6 +825,7 @@ set(teo_src
   src/v20220901/model/ModifyDDoSPolicyHostResponse.cpp
   src/v20220901/model/ExceptUserRule.cpp
   src/v20220901/model/SecEntry.cpp
+  src/v20220901/model/SubRule.cpp
   src/v20220901/model/DDoSPacketFilter.cpp
   src/v20220901/model/DescribeSpeedTestingMetricDataResponse.cpp
   src/v20220901/model/Sv.cpp
@@ -1008,6 +1011,7 @@ set(teo_src
   src/v20220901/model/ModifyApplicationProxyRuleRequest.cpp
   src/v20220901/model/DDoSStatusInfo.cpp
   src/v20220901/model/AclConfig.cpp
+  src/v20220901/model/SubRuleItem.cpp
   src/v20220901/model/DescribeSpeedTestingDetailsResponse.cpp
   src/v20220901/model/WafGroupDetail.cpp
   src/v20220901/model/CreateAliasDomainResponse.cpp

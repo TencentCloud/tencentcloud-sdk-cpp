@@ -67,14 +67,14 @@ namespace TencentCloud
                     bool AgentHasBeenSet() const;
 
                     /**
-                     * 获取查询资源所对应的签署流程Id，最多支持50个。
-                     * @return FlowIds 查询资源所对应的签署流程Id，最多支持50个。
+                     * 获取查询资源所对应的签署流程Id，最多支持50个
+                     * @return FlowIds 查询资源所对应的签署流程Id，最多支持50个
                      */
                     std::vector<std::string> GetFlowIds() const;
 
                     /**
-                     * 设置查询资源所对应的签署流程Id，最多支持50个。
-                     * @param FlowIds 查询资源所对应的签署流程Id，最多支持50个。
+                     * 设置查询资源所对应的签署流程Id，最多支持50个
+                     * @param FlowIds 查询资源所对应的签署流程Id，最多支持50个
                      */
                     void SetFlowIds(const std::vector<std::string>& _flowIds);
 
@@ -112,7 +112,7 @@ namespace TencentCloud
                     bool m_agentHasBeenSet;
 
                     /**
-                     * 查询资源所对应的签署流程Id，最多支持50个。
+                     * 查询资源所对应的签署流程Id，最多支持50个
                      */
                     std::vector<std::string> m_flowIds;
                     bool m_flowIdsHasBeenSet;

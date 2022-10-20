@@ -21,7 +21,9 @@ using namespace TencentCloud::Teo::V20220901::Model;
 using namespace std;
 
 FollowOrigin::FollowOrigin() :
-    m_switchHasBeenSet(false)
+    m_switchHasBeenSet(false),
+    m_defaultCacheTimeHasBeenSet(false),
+    m_defaultCacheHasBeenSet(false)
 {
 }
 
@@ -40,6 +42,26 @@ CoreInternalOutcome FollowOrigin::Deserialize(const rapidjson::Value &value)
         m_switchHasBeenSet = true;
     }
 
+    if (value.HasMember("DefaultCacheTime") && !value["DefaultCacheTime"].IsNull())
+    {
+        if (!value["DefaultCacheTime"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `FollowOrigin.DefaultCacheTime` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_defaultCacheTime = value["DefaultCacheTime"].GetInt64();
+        m_defaultCacheTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("DefaultCache") && !value["DefaultCache"].IsNull())
+    {
+        if (!value["DefaultCache"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `FollowOrigin.DefaultCache` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_defaultCache = string(value["DefaultCache"].GetString());
+        m_defaultCacheHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -53,6 +75,22 @@ void FollowOrigin::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "Switch";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_switch.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_defaultCacheTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DefaultCacheTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_defaultCacheTime, allocator);
+    }
+
+    if (m_defaultCacheHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DefaultCache";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_defaultCache.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -72,5 +110,37 @@ void FollowOrigin::SetSwitch(const string& _switch)
 bool FollowOrigin::SwitchHasBeenSet() const
 {
     return m_switchHasBeenSet;
+}
+
+int64_t FollowOrigin::GetDefaultCacheTime() const
+{
+    return m_defaultCacheTime;
+}
+
+void FollowOrigin::SetDefaultCacheTime(const int64_t& _defaultCacheTime)
+{
+    m_defaultCacheTime = _defaultCacheTime;
+    m_defaultCacheTimeHasBeenSet = true;
+}
+
+bool FollowOrigin::DefaultCacheTimeHasBeenSet() const
+{
+    return m_defaultCacheTimeHasBeenSet;
+}
+
+string FollowOrigin::GetDefaultCache() const
+{
+    return m_defaultCache;
+}
+
+void FollowOrigin::SetDefaultCache(const string& _defaultCache)
+{
+    m_defaultCache = _defaultCache;
+    m_defaultCacheHasBeenSet = true;
+}
+
+bool FollowOrigin::DefaultCacheHasBeenSet() const
+{
+    return m_defaultCacheHasBeenSet;
 }
 

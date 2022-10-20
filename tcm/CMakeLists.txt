@@ -26,10 +26,13 @@ set(tcm_public_header_model
   include/tencentcloud/tcm/v20210413/model/LoadBalancerStatus.h
   include/tencentcloud/tcm/v20210413/model/DescribeMeshResponse.h
   include/tencentcloud/tcm/v20210413/model/AutoInjectionNamespaceState.h
+  include/tencentcloud/tcm/v20210413/model/UnlinkClusterResponse.h
+  include/tencentcloud/tcm/v20210413/model/LinkClusterListResponse.h
   include/tencentcloud/tcm/v20210413/model/ModifyMeshResponse.h
   include/tencentcloud/tcm/v20210413/model/IngressGatewayStatus.h
   include/tencentcloud/tcm/v20210413/model/ResourceMetricSource.h
   include/tencentcloud/tcm/v20210413/model/CreateMeshResponse.h
+  include/tencentcloud/tcm/v20210413/model/LinkClusterListRequest.h
   include/tencentcloud/tcm/v20210413/model/ClusterConfig.h
   include/tencentcloud/tcm/v20210413/model/MetricSpec.h
   include/tencentcloud/tcm/v20210413/model/WorkloadConfig.h
@@ -55,6 +58,7 @@ set(tcm_public_header_model
   include/tencentcloud/tcm/v20210413/model/ExtensiveCluster.h
   include/tencentcloud/tcm/v20210413/model/SmartDNSConfig.h
   include/tencentcloud/tcm/v20210413/model/DescribeMeshListRequest.h
+  include/tencentcloud/tcm/v20210413/model/UnlinkClusterRequest.h
   include/tencentcloud/tcm/v20210413/model/CLS.h
   include/tencentcloud/tcm/v20210413/model/TracingConfig.h
   include/tencentcloud/tcm/v20210413/model/IngressGateway.h
@@ -82,10 +86,13 @@ set(tcm_src
   src/v20210413/model/LoadBalancerStatus.cpp
   src/v20210413/model/DescribeMeshResponse.cpp
   src/v20210413/model/AutoInjectionNamespaceState.cpp
+  src/v20210413/model/UnlinkClusterResponse.cpp
+  src/v20210413/model/LinkClusterListResponse.cpp
   src/v20210413/model/ModifyMeshResponse.cpp
   src/v20210413/model/IngressGatewayStatus.cpp
   src/v20210413/model/ResourceMetricSource.cpp
   src/v20210413/model/CreateMeshResponse.cpp
+  src/v20210413/model/LinkClusterListRequest.cpp
   src/v20210413/model/ClusterConfig.cpp
   src/v20210413/model/MetricSpec.cpp
   src/v20210413/model/WorkloadConfig.cpp
@@ -111,6 +118,7 @@ set(tcm_src
   src/v20210413/model/ExtensiveCluster.cpp
   src/v20210413/model/SmartDNSConfig.cpp
   src/v20210413/model/DescribeMeshListRequest.cpp
+  src/v20210413/model/UnlinkClusterRequest.cpp
   src/v20210413/model/CLS.cpp
   src/v20210413/model/TracingConfig.cpp
   src/v20210413/model/IngressGateway.cpp

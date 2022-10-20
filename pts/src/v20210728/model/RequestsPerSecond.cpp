@@ -26,7 +26,8 @@ RequestsPerSecond::RequestsPerSecond() :
     m_targetVirtualUsersHasBeenSet(false),
     m_resourcesHasBeenSet(false),
     m_startRequestsPerSecondHasBeenSet(false),
-    m_targetRequestsPerSecondHasBeenSet(false)
+    m_targetRequestsPerSecondHasBeenSet(false),
+    m_gracefulStopSecondsHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,16 @@ CoreInternalOutcome RequestsPerSecond::Deserialize(const rapidjson::Value &value
         m_targetRequestsPerSecondHasBeenSet = true;
     }
 
+    if (value.HasMember("GracefulStopSeconds") && !value["GracefulStopSeconds"].IsNull())
+    {
+        if (!value["GracefulStopSeconds"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RequestsPerSecond.GracefulStopSeconds` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_gracefulStopSeconds = value["GracefulStopSeconds"].GetInt64();
+        m_gracefulStopSecondsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +159,14 @@ void RequestsPerSecond::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "TargetRequestsPerSecond";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_targetRequestsPerSecond, allocator);
+    }
+
+    if (m_gracefulStopSecondsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GracefulStopSeconds";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_gracefulStopSeconds, allocator);
     }
 
 }
@@ -247,5 +266,21 @@ void RequestsPerSecond::SetTargetRequestsPerSecond(const int64_t& _targetRequest
 bool RequestsPerSecond::TargetRequestsPerSecondHasBeenSet() const
 {
     return m_targetRequestsPerSecondHasBeenSet;
+}
+
+int64_t RequestsPerSecond::GetGracefulStopSeconds() const
+{
+    return m_gracefulStopSeconds;
+}
+
+void RequestsPerSecond::SetGracefulStopSeconds(const int64_t& _gracefulStopSeconds)
+{
+    m_gracefulStopSeconds = _gracefulStopSeconds;
+    m_gracefulStopSecondsHasBeenSet = true;
+}
+
+bool RequestsPerSecond::GracefulStopSecondsHasBeenSet() const
+{
+    return m_gracefulStopSecondsHasBeenSet;
 }
 

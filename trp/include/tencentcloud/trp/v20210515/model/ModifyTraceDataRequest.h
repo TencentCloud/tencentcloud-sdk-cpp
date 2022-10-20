@@ -190,14 +190,14 @@ namespace TencentCloud
                     bool RankHasBeenSet() const;
 
                     /**
-                     * 获取[无效] 溯源阶段 0:商品 1:通用 2:物流
-                     * @return Phase [无效] 溯源阶段 0:商品 1:通用 2:物流
+                     * 获取[无效] 溯源阶段 0:商品 1:通用 2:生产溯源 3:销售溯源
+                     * @return Phase [无效] 溯源阶段 0:商品 1:通用 2:生产溯源 3:销售溯源
                      */
                     uint64_t GetPhase() const;
 
                     /**
-                     * 设置[无效] 溯源阶段 0:商品 1:通用 2:物流
-                     * @param Phase [无效] 溯源阶段 0:商品 1:通用 2:物流
+                     * 设置[无效] 溯源阶段 0:商品 1:通用 2:生产溯源 3:销售溯源
+                     * @param Phase [无效] 溯源阶段 0:商品 1:通用 2:生产溯源 3:销售溯源
                      */
                     void SetPhase(const uint64_t& _phase);
 
@@ -402,7 +402,7 @@ namespace TencentCloud
                     bool m_rankHasBeenSet;
 
                     /**
-                     * [无效] 溯源阶段 0:商品 1:通用 2:物流
+                     * [无效] 溯源阶段 0:商品 1:通用 2:生产溯源 3:销售溯源
                      */
                     uint64_t m_phase;
                     bool m_phaseHasBeenSet;

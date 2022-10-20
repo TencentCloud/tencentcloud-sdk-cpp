@@ -26,7 +26,8 @@ CustomSample::CustomSample() :
     m_labelsHasBeenSet(false),
     m_valueHasBeenSet(false),
     m_timestampHasBeenSet(false),
-    m_unitHasBeenSet(false)
+    m_unitHasBeenSet(false),
+    m_nameHasBeenSet(false)
 {
 }
 
@@ -105,6 +106,16 @@ CoreInternalOutcome CustomSample::Deserialize(const rapidjson::Value &value)
         m_unitHasBeenSet = true;
     }
 
+    if (value.HasMember("Name") && !value["Name"].IsNull())
+    {
+        if (!value["Name"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CustomSample.Name` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_name = string(value["Name"].GetString());
+        m_nameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -165,6 +176,14 @@ void CustomSample::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "Unit";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_unit.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_nameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Name";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -264,5 +283,21 @@ void CustomSample::SetUnit(const string& _unit)
 bool CustomSample::UnitHasBeenSet() const
 {
     return m_unitHasBeenSet;
+}
+
+string CustomSample::GetName() const
+{
+    return m_name;
+}
+
+void CustomSample::SetName(const string& _name)
+{
+    m_name = _name;
+    m_nameHasBeenSet = true;
+}
+
+bool CustomSample::NameHasBeenSet() const
+{
+    return m_nameHasBeenSet;
 }
 

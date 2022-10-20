@@ -40,6 +40,7 @@ set(bma_public_header_model
   include/tencentcloud/bma/v20210624/model/DescribeBPFakeURLsResponse.h
   include/tencentcloud/bma/v20210624/model/CreateBPOfflineAttachmentResponse.h
   include/tencentcloud/bma/v20210624/model/DescribeBPReportFakeURLsRequest.h
+  include/tencentcloud/bma/v20210624/model/DescribeCRMonitorDetailResponse.h
   include/tencentcloud/bma/v20210624/model/MonitorTort.h
   include/tencentcloud/bma/v20210624/model/CreateBPFakeURLRequest.h
   include/tencentcloud/bma/v20210624/model/UpdateCRWorkResponse.h
@@ -48,11 +49,12 @@ set(bma_public_header_model
   include/tencentcloud/bma/v20210624/model/DescribeCRMonitorsResponse.h
   include/tencentcloud/bma/v20210624/model/CreateCRCompanyVerifyResponse.h
   include/tencentcloud/bma/v20210624/model/CreateBPOfflineAttachmentRequest.h
+  include/tencentcloud/bma/v20210624/model/CreateCRDesktopCodeResponse.h
   include/tencentcloud/bma/v20210624/model/CreateBPProtectURLsRequest.h
   include/tencentcloud/bma/v20210624/model/CreateCRObtainRequest.h
   include/tencentcloud/bma/v20210624/model/ModifyCRBlockStatusRequest.h
   include/tencentcloud/bma/v20210624/model/ModifyCRMonitorRequest.h
-  include/tencentcloud/bma/v20210624/model/DescribeCRMonitorDetailResponse.h
+  include/tencentcloud/bma/v20210624/model/CreateCRDesktopCodeRequest.h
   include/tencentcloud/bma/v20210624/model/CreateCRWorkRequest.h
   include/tencentcloud/bma/v20210624/model/DescribeBPCompanyInfoRequest.h
   include/tencentcloud/bma/v20210624/model/DescribeCRObtainDetailRequest.h
@@ -108,6 +110,7 @@ set(bma_src
   src/v20210624/model/DescribeBPFakeURLsResponse.cpp
   src/v20210624/model/CreateBPOfflineAttachmentResponse.cpp
   src/v20210624/model/DescribeBPReportFakeURLsRequest.cpp
+  src/v20210624/model/DescribeCRMonitorDetailResponse.cpp
   src/v20210624/model/MonitorTort.cpp
   src/v20210624/model/CreateBPFakeURLRequest.cpp
   src/v20210624/model/UpdateCRWorkResponse.cpp
@@ -116,11 +119,12 @@ set(bma_src
   src/v20210624/model/DescribeCRMonitorsResponse.cpp
   src/v20210624/model/CreateCRCompanyVerifyResponse.cpp
   src/v20210624/model/CreateBPOfflineAttachmentRequest.cpp
+  src/v20210624/model/CreateCRDesktopCodeResponse.cpp
   src/v20210624/model/CreateBPProtectURLsRequest.cpp
   src/v20210624/model/CreateCRObtainRequest.cpp
   src/v20210624/model/ModifyCRBlockStatusRequest.cpp
   src/v20210624/model/ModifyCRMonitorRequest.cpp
-  src/v20210624/model/DescribeCRMonitorDetailResponse.cpp
+  src/v20210624/model/CreateCRDesktopCodeRequest.cpp
   src/v20210624/model/CreateCRWorkRequest.cpp
   src/v20210624/model/DescribeBPCompanyInfoRequest.cpp
   src/v20210624/model/DescribeCRObtainDetailRequest.cpp

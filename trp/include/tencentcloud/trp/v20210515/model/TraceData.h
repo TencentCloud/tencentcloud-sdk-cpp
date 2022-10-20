@@ -160,17 +160,17 @@ namespace TencentCloud
                     bool RankHasBeenSet() const;
 
                     /**
-                     * 获取溯源阶段 0:商品 1:通用 2:物流
+                     * 获取溯源阶段 0:商品 1:通用 2:生产溯源 3:销售溯源
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Phase 溯源阶段 0:商品 1:通用 2:物流
+                     * @return Phase 溯源阶段 0:商品 1:通用 2:生产溯源 3:销售溯源
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetPhase() const;
 
                     /**
-                     * 设置溯源阶段 0:商品 1:通用 2:物流
+                     * 设置溯源阶段 0:商品 1:通用 2:生产溯源 3:销售溯源
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Phase 溯源阶段 0:商品 1:通用 2:物流
+                     * @param Phase 溯源阶段 0:商品 1:通用 2:生产溯源 3:销售溯源
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetPhase(const uint64_t& _phase);
@@ -182,17 +182,17 @@ namespace TencentCloud
                     bool PhaseHasBeenSet() const;
 
                     /**
-                     * 获取环节名称
+                     * 获取溯源环节名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PhaseName 环节名称
+                     * @return PhaseName 溯源环节名称
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetPhaseName() const;
 
                     /**
-                     * 设置环节名称
+                     * 设置溯源环节名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PhaseName 环节名称
+                     * @param PhaseName 溯源环节名称
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetPhaseName(const std::string& _phaseName);
@@ -204,17 +204,17 @@ namespace TencentCloud
                     bool PhaseNameHasBeenSet() const;
 
                     /**
-                     * 获取时间
+                     * 获取溯源时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TraceTime 时间
+                     * @return TraceTime 溯源时间
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetTraceTime() const;
 
                     /**
-                     * 设置时间
+                     * 设置溯源时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TraceTime 时间
+                     * @param TraceTime 溯源时间
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetTraceTime(const std::string& _traceTime);
@@ -417,21 +417,21 @@ namespace TencentCloud
                     bool m_rankHasBeenSet;
 
                     /**
-                     * 溯源阶段 0:商品 1:通用 2:物流
+                     * 溯源阶段 0:商品 1:通用 2:生产溯源 3:销售溯源
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_phase;
                     bool m_phaseHasBeenSet;
 
                     /**
-                     * 环节名称
+                     * 溯源环节名称
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_phaseName;
                     bool m_phaseNameHasBeenSet;
 
                     /**
-                     * 时间
+                     * 溯源时间
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_traceTime;

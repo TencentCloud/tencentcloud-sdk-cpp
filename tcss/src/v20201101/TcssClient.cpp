@@ -40,6 +40,92 @@ TcssClient::TcssClient(const Credential &credential, const string &region, const
 }
 
 
+TcssClient::AddAndPublishNetworkFirewallPolicyDetailOutcome TcssClient::AddAndPublishNetworkFirewallPolicyDetail(const AddAndPublishNetworkFirewallPolicyDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "AddAndPublishNetworkFirewallPolicyDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AddAndPublishNetworkFirewallPolicyDetailResponse rsp = AddAndPublishNetworkFirewallPolicyDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AddAndPublishNetworkFirewallPolicyDetailOutcome(rsp);
+        else
+            return AddAndPublishNetworkFirewallPolicyDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return AddAndPublishNetworkFirewallPolicyDetailOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::AddAndPublishNetworkFirewallPolicyDetailAsync(const AddAndPublishNetworkFirewallPolicyDetailRequest& request, const AddAndPublishNetworkFirewallPolicyDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AddAndPublishNetworkFirewallPolicyDetail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::AddAndPublishNetworkFirewallPolicyDetailOutcomeCallable TcssClient::AddAndPublishNetworkFirewallPolicyDetailCallable(const AddAndPublishNetworkFirewallPolicyDetailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AddAndPublishNetworkFirewallPolicyDetailOutcome()>>(
+        [this, request]()
+        {
+            return this->AddAndPublishNetworkFirewallPolicyDetail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::AddAndPublishNetworkFirewallPolicyYamlDetailOutcome TcssClient::AddAndPublishNetworkFirewallPolicyYamlDetail(const AddAndPublishNetworkFirewallPolicyYamlDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "AddAndPublishNetworkFirewallPolicyYamlDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AddAndPublishNetworkFirewallPolicyYamlDetailResponse rsp = AddAndPublishNetworkFirewallPolicyYamlDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AddAndPublishNetworkFirewallPolicyYamlDetailOutcome(rsp);
+        else
+            return AddAndPublishNetworkFirewallPolicyYamlDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return AddAndPublishNetworkFirewallPolicyYamlDetailOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::AddAndPublishNetworkFirewallPolicyYamlDetailAsync(const AddAndPublishNetworkFirewallPolicyYamlDetailRequest& request, const AddAndPublishNetworkFirewallPolicyYamlDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AddAndPublishNetworkFirewallPolicyYamlDetail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::AddAndPublishNetworkFirewallPolicyYamlDetailOutcomeCallable TcssClient::AddAndPublishNetworkFirewallPolicyYamlDetailCallable(const AddAndPublishNetworkFirewallPolicyYamlDetailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AddAndPublishNetworkFirewallPolicyYamlDetailOutcome()>>(
+        [this, request]()
+        {
+            return this->AddAndPublishNetworkFirewallPolicyYamlDetail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcssClient::AddAssetImageRegistryRegistryDetailOutcome TcssClient::AddAssetImageRegistryRegistryDetail(const AddAssetImageRegistryRegistryDetailRequest &request)
 {
     auto outcome = MakeRequest(request, "AddAssetImageRegistryRegistryDetail");
@@ -212,6 +298,49 @@ TcssClient::AddEditAccessControlRuleOutcomeCallable TcssClient::AddEditAccessCon
     return task->get_future();
 }
 
+TcssClient::AddEditImageAutoAuthorizedRuleOutcome TcssClient::AddEditImageAutoAuthorizedRule(const AddEditImageAutoAuthorizedRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "AddEditImageAutoAuthorizedRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AddEditImageAutoAuthorizedRuleResponse rsp = AddEditImageAutoAuthorizedRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AddEditImageAutoAuthorizedRuleOutcome(rsp);
+        else
+            return AddEditImageAutoAuthorizedRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return AddEditImageAutoAuthorizedRuleOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::AddEditImageAutoAuthorizedRuleAsync(const AddEditImageAutoAuthorizedRuleRequest& request, const AddEditImageAutoAuthorizedRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AddEditImageAutoAuthorizedRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::AddEditImageAutoAuthorizedRuleOutcomeCallable TcssClient::AddEditImageAutoAuthorizedRuleCallable(const AddEditImageAutoAuthorizedRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AddEditImageAutoAuthorizedRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->AddEditImageAutoAuthorizedRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcssClient::AddEditReverseShellWhiteListOutcome TcssClient::AddEditReverseShellWhiteList(const AddEditReverseShellWhiteListRequest &request)
 {
     auto outcome = MakeRequest(request, "AddEditReverseShellWhiteList");
@@ -341,6 +470,221 @@ TcssClient::AddEditWarningRulesOutcomeCallable TcssClient::AddEditWarningRulesCa
     return task->get_future();
 }
 
+TcssClient::AddEscapeWhiteListOutcome TcssClient::AddEscapeWhiteList(const AddEscapeWhiteListRequest &request)
+{
+    auto outcome = MakeRequest(request, "AddEscapeWhiteList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AddEscapeWhiteListResponse rsp = AddEscapeWhiteListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AddEscapeWhiteListOutcome(rsp);
+        else
+            return AddEscapeWhiteListOutcome(o.GetError());
+    }
+    else
+    {
+        return AddEscapeWhiteListOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::AddEscapeWhiteListAsync(const AddEscapeWhiteListRequest& request, const AddEscapeWhiteListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AddEscapeWhiteList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::AddEscapeWhiteListOutcomeCallable TcssClient::AddEscapeWhiteListCallable(const AddEscapeWhiteListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AddEscapeWhiteListOutcome()>>(
+        [this, request]()
+        {
+            return this->AddEscapeWhiteList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::AddIgnoreVulOutcome TcssClient::AddIgnoreVul(const AddIgnoreVulRequest &request)
+{
+    auto outcome = MakeRequest(request, "AddIgnoreVul");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AddIgnoreVulResponse rsp = AddIgnoreVulResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AddIgnoreVulOutcome(rsp);
+        else
+            return AddIgnoreVulOutcome(o.GetError());
+    }
+    else
+    {
+        return AddIgnoreVulOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::AddIgnoreVulAsync(const AddIgnoreVulRequest& request, const AddIgnoreVulAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AddIgnoreVul(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::AddIgnoreVulOutcomeCallable TcssClient::AddIgnoreVulCallable(const AddIgnoreVulRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AddIgnoreVulOutcome()>>(
+        [this, request]()
+        {
+            return this->AddIgnoreVul(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::AddNetworkFirewallPolicyDetailOutcome TcssClient::AddNetworkFirewallPolicyDetail(const AddNetworkFirewallPolicyDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "AddNetworkFirewallPolicyDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AddNetworkFirewallPolicyDetailResponse rsp = AddNetworkFirewallPolicyDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AddNetworkFirewallPolicyDetailOutcome(rsp);
+        else
+            return AddNetworkFirewallPolicyDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return AddNetworkFirewallPolicyDetailOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::AddNetworkFirewallPolicyDetailAsync(const AddNetworkFirewallPolicyDetailRequest& request, const AddNetworkFirewallPolicyDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AddNetworkFirewallPolicyDetail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::AddNetworkFirewallPolicyDetailOutcomeCallable TcssClient::AddNetworkFirewallPolicyDetailCallable(const AddNetworkFirewallPolicyDetailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AddNetworkFirewallPolicyDetailOutcome()>>(
+        [this, request]()
+        {
+            return this->AddNetworkFirewallPolicyDetail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::AddNetworkFirewallPolicyYamlDetailOutcome TcssClient::AddNetworkFirewallPolicyYamlDetail(const AddNetworkFirewallPolicyYamlDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "AddNetworkFirewallPolicyYamlDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AddNetworkFirewallPolicyYamlDetailResponse rsp = AddNetworkFirewallPolicyYamlDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AddNetworkFirewallPolicyYamlDetailOutcome(rsp);
+        else
+            return AddNetworkFirewallPolicyYamlDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return AddNetworkFirewallPolicyYamlDetailOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::AddNetworkFirewallPolicyYamlDetailAsync(const AddNetworkFirewallPolicyYamlDetailRequest& request, const AddNetworkFirewallPolicyYamlDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AddNetworkFirewallPolicyYamlDetail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::AddNetworkFirewallPolicyYamlDetailOutcomeCallable TcssClient::AddNetworkFirewallPolicyYamlDetailCallable(const AddNetworkFirewallPolicyYamlDetailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AddNetworkFirewallPolicyYamlDetailOutcome()>>(
+        [this, request]()
+        {
+            return this->AddNetworkFirewallPolicyYamlDetail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::CheckNetworkFirewallPolicyYamlOutcome TcssClient::CheckNetworkFirewallPolicyYaml(const CheckNetworkFirewallPolicyYamlRequest &request)
+{
+    auto outcome = MakeRequest(request, "CheckNetworkFirewallPolicyYaml");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CheckNetworkFirewallPolicyYamlResponse rsp = CheckNetworkFirewallPolicyYamlResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CheckNetworkFirewallPolicyYamlOutcome(rsp);
+        else
+            return CheckNetworkFirewallPolicyYamlOutcome(o.GetError());
+    }
+    else
+    {
+        return CheckNetworkFirewallPolicyYamlOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::CheckNetworkFirewallPolicyYamlAsync(const CheckNetworkFirewallPolicyYamlRequest& request, const CheckNetworkFirewallPolicyYamlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CheckNetworkFirewallPolicyYaml(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::CheckNetworkFirewallPolicyYamlOutcomeCallable TcssClient::CheckNetworkFirewallPolicyYamlCallable(const CheckNetworkFirewallPolicyYamlRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CheckNetworkFirewallPolicyYamlOutcome()>>(
+        [this, request]()
+        {
+            return this->CheckNetworkFirewallPolicyYaml(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcssClient::CheckRepeatAssetImageRegistryOutcome TcssClient::CheckRepeatAssetImageRegistry(const CheckRepeatAssetImageRegistryRequest &request)
 {
     auto outcome = MakeRequest(request, "CheckRepeatAssetImageRegistry");
@@ -377,6 +721,49 @@ TcssClient::CheckRepeatAssetImageRegistryOutcomeCallable TcssClient::CheckRepeat
         [this, request]()
         {
             return this->CheckRepeatAssetImageRegistry(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::ConfirmNetworkFirewallPolicyOutcome TcssClient::ConfirmNetworkFirewallPolicy(const ConfirmNetworkFirewallPolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "ConfirmNetworkFirewallPolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ConfirmNetworkFirewallPolicyResponse rsp = ConfirmNetworkFirewallPolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ConfirmNetworkFirewallPolicyOutcome(rsp);
+        else
+            return ConfirmNetworkFirewallPolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return ConfirmNetworkFirewallPolicyOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::ConfirmNetworkFirewallPolicyAsync(const ConfirmNetworkFirewallPolicyRequest& request, const ConfirmNetworkFirewallPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ConfirmNetworkFirewallPolicy(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::ConfirmNetworkFirewallPolicyOutcomeCallable TcssClient::ConfirmNetworkFirewallPolicyCallable(const ConfirmNetworkFirewallPolicyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ConfirmNetworkFirewallPolicyOutcome()>>(
+        [this, request]()
+        {
+            return this->ConfirmNetworkFirewallPolicy(request);
         }
     );
 
@@ -556,6 +943,49 @@ TcssClient::CreateAssetImageScanTaskOutcomeCallable TcssClient::CreateAssetImage
     return task->get_future();
 }
 
+TcssClient::CreateAssetImageVirusExportJobOutcome TcssClient::CreateAssetImageVirusExportJob(const CreateAssetImageVirusExportJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAssetImageVirusExportJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAssetImageVirusExportJobResponse rsp = CreateAssetImageVirusExportJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAssetImageVirusExportJobOutcome(rsp);
+        else
+            return CreateAssetImageVirusExportJobOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAssetImageVirusExportJobOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::CreateAssetImageVirusExportJobAsync(const CreateAssetImageVirusExportJobRequest& request, const CreateAssetImageVirusExportJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateAssetImageVirusExportJob(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::CreateAssetImageVirusExportJobOutcomeCallable TcssClient::CreateAssetImageVirusExportJobCallable(const CreateAssetImageVirusExportJobRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateAssetImageVirusExportJobOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateAssetImageVirusExportJob(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcssClient::CreateCheckComponentOutcome TcssClient::CreateCheckComponent(const CreateCheckComponentRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateCheckComponent");
@@ -685,6 +1115,221 @@ TcssClient::CreateComplianceTaskOutcomeCallable TcssClient::CreateComplianceTask
     return task->get_future();
 }
 
+TcssClient::CreateComponentExportJobOutcome TcssClient::CreateComponentExportJob(const CreateComponentExportJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateComponentExportJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateComponentExportJobResponse rsp = CreateComponentExportJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateComponentExportJobOutcome(rsp);
+        else
+            return CreateComponentExportJobOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateComponentExportJobOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::CreateComponentExportJobAsync(const CreateComponentExportJobRequest& request, const CreateComponentExportJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateComponentExportJob(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::CreateComponentExportJobOutcomeCallable TcssClient::CreateComponentExportJobCallable(const CreateComponentExportJobRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateComponentExportJobOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateComponentExportJob(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::CreateDefenceVulExportJobOutcome TcssClient::CreateDefenceVulExportJob(const CreateDefenceVulExportJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateDefenceVulExportJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateDefenceVulExportJobResponse rsp = CreateDefenceVulExportJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateDefenceVulExportJobOutcome(rsp);
+        else
+            return CreateDefenceVulExportJobOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateDefenceVulExportJobOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::CreateDefenceVulExportJobAsync(const CreateDefenceVulExportJobRequest& request, const CreateDefenceVulExportJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateDefenceVulExportJob(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::CreateDefenceVulExportJobOutcomeCallable TcssClient::CreateDefenceVulExportJobCallable(const CreateDefenceVulExportJobRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateDefenceVulExportJobOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateDefenceVulExportJob(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::CreateEmergencyVulExportJobOutcome TcssClient::CreateEmergencyVulExportJob(const CreateEmergencyVulExportJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateEmergencyVulExportJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateEmergencyVulExportJobResponse rsp = CreateEmergencyVulExportJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateEmergencyVulExportJobOutcome(rsp);
+        else
+            return CreateEmergencyVulExportJobOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateEmergencyVulExportJobOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::CreateEmergencyVulExportJobAsync(const CreateEmergencyVulExportJobRequest& request, const CreateEmergencyVulExportJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateEmergencyVulExportJob(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::CreateEmergencyVulExportJobOutcomeCallable TcssClient::CreateEmergencyVulExportJobCallable(const CreateEmergencyVulExportJobRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateEmergencyVulExportJobOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateEmergencyVulExportJob(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::CreateEscapeEventsExportJobOutcome TcssClient::CreateEscapeEventsExportJob(const CreateEscapeEventsExportJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateEscapeEventsExportJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateEscapeEventsExportJobResponse rsp = CreateEscapeEventsExportJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateEscapeEventsExportJobOutcome(rsp);
+        else
+            return CreateEscapeEventsExportJobOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateEscapeEventsExportJobOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::CreateEscapeEventsExportJobAsync(const CreateEscapeEventsExportJobRequest& request, const CreateEscapeEventsExportJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateEscapeEventsExportJob(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::CreateEscapeEventsExportJobOutcomeCallable TcssClient::CreateEscapeEventsExportJobCallable(const CreateEscapeEventsExportJobRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateEscapeEventsExportJobOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateEscapeEventsExportJob(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::CreateEscapeWhiteListExportJobOutcome TcssClient::CreateEscapeWhiteListExportJob(const CreateEscapeWhiteListExportJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateEscapeWhiteListExportJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateEscapeWhiteListExportJobResponse rsp = CreateEscapeWhiteListExportJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateEscapeWhiteListExportJobOutcome(rsp);
+        else
+            return CreateEscapeWhiteListExportJobOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateEscapeWhiteListExportJobOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::CreateEscapeWhiteListExportJobAsync(const CreateEscapeWhiteListExportJobRequest& request, const CreateEscapeWhiteListExportJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateEscapeWhiteListExportJob(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::CreateEscapeWhiteListExportJobOutcomeCallable TcssClient::CreateEscapeWhiteListExportJobCallable(const CreateEscapeWhiteListExportJobRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateEscapeWhiteListExportJobOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateEscapeWhiteListExportJob(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcssClient::CreateExportComplianceStatusListJobOutcome TcssClient::CreateExportComplianceStatusListJob(const CreateExportComplianceStatusListJobRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateExportComplianceStatusListJob");
@@ -721,6 +1366,264 @@ TcssClient::CreateExportComplianceStatusListJobOutcomeCallable TcssClient::Creat
         [this, request]()
         {
             return this->CreateExportComplianceStatusListJob(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::CreateHostExportJobOutcome TcssClient::CreateHostExportJob(const CreateHostExportJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateHostExportJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateHostExportJobResponse rsp = CreateHostExportJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateHostExportJobOutcome(rsp);
+        else
+            return CreateHostExportJobOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateHostExportJobOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::CreateHostExportJobAsync(const CreateHostExportJobRequest& request, const CreateHostExportJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateHostExportJob(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::CreateHostExportJobOutcomeCallable TcssClient::CreateHostExportJobCallable(const CreateHostExportJobRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateHostExportJobOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateHostExportJob(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::CreateImageExportJobOutcome TcssClient::CreateImageExportJob(const CreateImageExportJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateImageExportJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateImageExportJobResponse rsp = CreateImageExportJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateImageExportJobOutcome(rsp);
+        else
+            return CreateImageExportJobOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateImageExportJobOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::CreateImageExportJobAsync(const CreateImageExportJobRequest& request, const CreateImageExportJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateImageExportJob(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::CreateImageExportJobOutcomeCallable TcssClient::CreateImageExportJobCallable(const CreateImageExportJobRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateImageExportJobOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateImageExportJob(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::CreateNetworkFirewallClusterRefreshOutcome TcssClient::CreateNetworkFirewallClusterRefresh(const CreateNetworkFirewallClusterRefreshRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateNetworkFirewallClusterRefresh");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateNetworkFirewallClusterRefreshResponse rsp = CreateNetworkFirewallClusterRefreshResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateNetworkFirewallClusterRefreshOutcome(rsp);
+        else
+            return CreateNetworkFirewallClusterRefreshOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateNetworkFirewallClusterRefreshOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::CreateNetworkFirewallClusterRefreshAsync(const CreateNetworkFirewallClusterRefreshRequest& request, const CreateNetworkFirewallClusterRefreshAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateNetworkFirewallClusterRefresh(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::CreateNetworkFirewallClusterRefreshOutcomeCallable TcssClient::CreateNetworkFirewallClusterRefreshCallable(const CreateNetworkFirewallClusterRefreshRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateNetworkFirewallClusterRefreshOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateNetworkFirewallClusterRefresh(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::CreateNetworkFirewallPolicyDiscoverOutcome TcssClient::CreateNetworkFirewallPolicyDiscover(const CreateNetworkFirewallPolicyDiscoverRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateNetworkFirewallPolicyDiscover");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateNetworkFirewallPolicyDiscoverResponse rsp = CreateNetworkFirewallPolicyDiscoverResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateNetworkFirewallPolicyDiscoverOutcome(rsp);
+        else
+            return CreateNetworkFirewallPolicyDiscoverOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateNetworkFirewallPolicyDiscoverOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::CreateNetworkFirewallPolicyDiscoverAsync(const CreateNetworkFirewallPolicyDiscoverRequest& request, const CreateNetworkFirewallPolicyDiscoverAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateNetworkFirewallPolicyDiscover(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::CreateNetworkFirewallPolicyDiscoverOutcomeCallable TcssClient::CreateNetworkFirewallPolicyDiscoverCallable(const CreateNetworkFirewallPolicyDiscoverRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateNetworkFirewallPolicyDiscoverOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateNetworkFirewallPolicyDiscover(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::CreateNetworkFirewallPublishOutcome TcssClient::CreateNetworkFirewallPublish(const CreateNetworkFirewallPublishRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateNetworkFirewallPublish");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateNetworkFirewallPublishResponse rsp = CreateNetworkFirewallPublishResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateNetworkFirewallPublishOutcome(rsp);
+        else
+            return CreateNetworkFirewallPublishOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateNetworkFirewallPublishOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::CreateNetworkFirewallPublishAsync(const CreateNetworkFirewallPublishRequest& request, const CreateNetworkFirewallPublishAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateNetworkFirewallPublish(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::CreateNetworkFirewallPublishOutcomeCallable TcssClient::CreateNetworkFirewallPublishCallable(const CreateNetworkFirewallPublishRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateNetworkFirewallPublishOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateNetworkFirewallPublish(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::CreateNetworkFirewallUndoPublishOutcome TcssClient::CreateNetworkFirewallUndoPublish(const CreateNetworkFirewallUndoPublishRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateNetworkFirewallUndoPublish");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateNetworkFirewallUndoPublishResponse rsp = CreateNetworkFirewallUndoPublishResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateNetworkFirewallUndoPublishOutcome(rsp);
+        else
+            return CreateNetworkFirewallUndoPublishOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateNetworkFirewallUndoPublishOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::CreateNetworkFirewallUndoPublishAsync(const CreateNetworkFirewallUndoPublishRequest& request, const CreateNetworkFirewallUndoPublishAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateNetworkFirewallUndoPublish(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::CreateNetworkFirewallUndoPublishOutcomeCallable TcssClient::CreateNetworkFirewallUndoPublishCallable(const CreateNetworkFirewallUndoPublishRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateNetworkFirewallUndoPublishOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateNetworkFirewallUndoPublish(request);
         }
     );
 
@@ -771,6 +1674,49 @@ TcssClient::CreateOrModifyPostPayCoresOutcomeCallable TcssClient::CreateOrModify
     return task->get_future();
 }
 
+TcssClient::CreateProcessEventsExportJobOutcome TcssClient::CreateProcessEventsExportJob(const CreateProcessEventsExportJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateProcessEventsExportJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateProcessEventsExportJobResponse rsp = CreateProcessEventsExportJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateProcessEventsExportJobOutcome(rsp);
+        else
+            return CreateProcessEventsExportJobOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateProcessEventsExportJobOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::CreateProcessEventsExportJobAsync(const CreateProcessEventsExportJobRequest& request, const CreateProcessEventsExportJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateProcessEventsExportJob(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::CreateProcessEventsExportJobOutcomeCallable TcssClient::CreateProcessEventsExportJobCallable(const CreateProcessEventsExportJobRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateProcessEventsExportJobOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateProcessEventsExportJob(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcssClient::CreateRefreshTaskOutcome TcssClient::CreateRefreshTask(const CreateRefreshTaskRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateRefreshTask");
@@ -807,6 +1753,92 @@ TcssClient::CreateRefreshTaskOutcomeCallable TcssClient::CreateRefreshTaskCallab
         [this, request]()
         {
             return this->CreateRefreshTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::CreateSearchTemplateOutcome TcssClient::CreateSearchTemplate(const CreateSearchTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateSearchTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateSearchTemplateResponse rsp = CreateSearchTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateSearchTemplateOutcome(rsp);
+        else
+            return CreateSearchTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateSearchTemplateOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::CreateSearchTemplateAsync(const CreateSearchTemplateRequest& request, const CreateSearchTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateSearchTemplate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::CreateSearchTemplateOutcomeCallable TcssClient::CreateSearchTemplateCallable(const CreateSearchTemplateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateSearchTemplateOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateSearchTemplate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::CreateSystemVulExportJobOutcome TcssClient::CreateSystemVulExportJob(const CreateSystemVulExportJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateSystemVulExportJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateSystemVulExportJobResponse rsp = CreateSystemVulExportJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateSystemVulExportJobOutcome(rsp);
+        else
+            return CreateSystemVulExportJobOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateSystemVulExportJobOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::CreateSystemVulExportJobAsync(const CreateSystemVulExportJobRequest& request, const CreateSystemVulExportJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateSystemVulExportJob(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::CreateSystemVulExportJobOutcomeCallable TcssClient::CreateSystemVulExportJobCallable(const CreateSystemVulExportJobRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateSystemVulExportJobOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateSystemVulExportJob(request);
         }
     );
 
@@ -893,6 +1925,307 @@ TcssClient::CreateVirusScanTaskOutcomeCallable TcssClient::CreateVirusScanTaskCa
         [this, request]()
         {
             return this->CreateVirusScanTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::CreateVulContainerExportJobOutcome TcssClient::CreateVulContainerExportJob(const CreateVulContainerExportJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateVulContainerExportJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateVulContainerExportJobResponse rsp = CreateVulContainerExportJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateVulContainerExportJobOutcome(rsp);
+        else
+            return CreateVulContainerExportJobOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateVulContainerExportJobOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::CreateVulContainerExportJobAsync(const CreateVulContainerExportJobRequest& request, const CreateVulContainerExportJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateVulContainerExportJob(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::CreateVulContainerExportJobOutcomeCallable TcssClient::CreateVulContainerExportJobCallable(const CreateVulContainerExportJobRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateVulContainerExportJobOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateVulContainerExportJob(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::CreateVulDefenceEventExportJobOutcome TcssClient::CreateVulDefenceEventExportJob(const CreateVulDefenceEventExportJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateVulDefenceEventExportJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateVulDefenceEventExportJobResponse rsp = CreateVulDefenceEventExportJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateVulDefenceEventExportJobOutcome(rsp);
+        else
+            return CreateVulDefenceEventExportJobOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateVulDefenceEventExportJobOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::CreateVulDefenceEventExportJobAsync(const CreateVulDefenceEventExportJobRequest& request, const CreateVulDefenceEventExportJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateVulDefenceEventExportJob(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::CreateVulDefenceEventExportJobOutcomeCallable TcssClient::CreateVulDefenceEventExportJobCallable(const CreateVulDefenceEventExportJobRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateVulDefenceEventExportJobOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateVulDefenceEventExportJob(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::CreateVulDefenceHostExportJobOutcome TcssClient::CreateVulDefenceHostExportJob(const CreateVulDefenceHostExportJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateVulDefenceHostExportJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateVulDefenceHostExportJobResponse rsp = CreateVulDefenceHostExportJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateVulDefenceHostExportJobOutcome(rsp);
+        else
+            return CreateVulDefenceHostExportJobOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateVulDefenceHostExportJobOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::CreateVulDefenceHostExportJobAsync(const CreateVulDefenceHostExportJobRequest& request, const CreateVulDefenceHostExportJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateVulDefenceHostExportJob(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::CreateVulDefenceHostExportJobOutcomeCallable TcssClient::CreateVulDefenceHostExportJobCallable(const CreateVulDefenceHostExportJobRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateVulDefenceHostExportJobOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateVulDefenceHostExportJob(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::CreateVulExportJobOutcome TcssClient::CreateVulExportJob(const CreateVulExportJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateVulExportJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateVulExportJobResponse rsp = CreateVulExportJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateVulExportJobOutcome(rsp);
+        else
+            return CreateVulExportJobOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateVulExportJobOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::CreateVulExportJobAsync(const CreateVulExportJobRequest& request, const CreateVulExportJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateVulExportJob(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::CreateVulExportJobOutcomeCallable TcssClient::CreateVulExportJobCallable(const CreateVulExportJobRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateVulExportJobOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateVulExportJob(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::CreateVulImageExportJobOutcome TcssClient::CreateVulImageExportJob(const CreateVulImageExportJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateVulImageExportJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateVulImageExportJobResponse rsp = CreateVulImageExportJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateVulImageExportJobOutcome(rsp);
+        else
+            return CreateVulImageExportJobOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateVulImageExportJobOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::CreateVulImageExportJobAsync(const CreateVulImageExportJobRequest& request, const CreateVulImageExportJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateVulImageExportJob(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::CreateVulImageExportJobOutcomeCallable TcssClient::CreateVulImageExportJobCallable(const CreateVulImageExportJobRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateVulImageExportJobOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateVulImageExportJob(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::CreateVulScanTaskOutcome TcssClient::CreateVulScanTask(const CreateVulScanTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateVulScanTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateVulScanTaskResponse rsp = CreateVulScanTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateVulScanTaskOutcome(rsp);
+        else
+            return CreateVulScanTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateVulScanTaskOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::CreateVulScanTaskAsync(const CreateVulScanTaskRequest& request, const CreateVulScanTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateVulScanTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::CreateVulScanTaskOutcomeCallable TcssClient::CreateVulScanTaskCallable(const CreateVulScanTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateVulScanTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateVulScanTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::CreateWebVulExportJobOutcome TcssClient::CreateWebVulExportJob(const CreateWebVulExportJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateWebVulExportJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateWebVulExportJobResponse rsp = CreateWebVulExportJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateWebVulExportJobOutcome(rsp);
+        else
+            return CreateWebVulExportJobOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateWebVulExportJobOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::CreateWebVulExportJobAsync(const CreateWebVulExportJobRequest& request, const CreateWebVulExportJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateWebVulExportJob(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::CreateWebVulExportJobOutcomeCallable TcssClient::CreateWebVulExportJobCallable(const CreateWebVulExportJobRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateWebVulExportJobOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateWebVulExportJob(request);
         }
     );
 
@@ -1029,6 +2362,221 @@ TcssClient::DeleteCompliancePolicyItemFromWhitelistOutcomeCallable TcssClient::D
     return task->get_future();
 }
 
+TcssClient::DeleteEscapeWhiteListOutcome TcssClient::DeleteEscapeWhiteList(const DeleteEscapeWhiteListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteEscapeWhiteList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteEscapeWhiteListResponse rsp = DeleteEscapeWhiteListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteEscapeWhiteListOutcome(rsp);
+        else
+            return DeleteEscapeWhiteListOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteEscapeWhiteListOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DeleteEscapeWhiteListAsync(const DeleteEscapeWhiteListRequest& request, const DeleteEscapeWhiteListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteEscapeWhiteList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::DeleteEscapeWhiteListOutcomeCallable TcssClient::DeleteEscapeWhiteListCallable(const DeleteEscapeWhiteListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteEscapeWhiteListOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteEscapeWhiteList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::DeleteIgnoreVulOutcome TcssClient::DeleteIgnoreVul(const DeleteIgnoreVulRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteIgnoreVul");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteIgnoreVulResponse rsp = DeleteIgnoreVulResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteIgnoreVulOutcome(rsp);
+        else
+            return DeleteIgnoreVulOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteIgnoreVulOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DeleteIgnoreVulAsync(const DeleteIgnoreVulRequest& request, const DeleteIgnoreVulAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteIgnoreVul(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::DeleteIgnoreVulOutcomeCallable TcssClient::DeleteIgnoreVulCallable(const DeleteIgnoreVulRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteIgnoreVulOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteIgnoreVul(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::DeleteMachineOutcome TcssClient::DeleteMachine(const DeleteMachineRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteMachine");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteMachineResponse rsp = DeleteMachineResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteMachineOutcome(rsp);
+        else
+            return DeleteMachineOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteMachineOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DeleteMachineAsync(const DeleteMachineRequest& request, const DeleteMachineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteMachine(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::DeleteMachineOutcomeCallable TcssClient::DeleteMachineCallable(const DeleteMachineRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteMachineOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteMachine(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::DeleteNetworkFirewallPolicyDetailOutcome TcssClient::DeleteNetworkFirewallPolicyDetail(const DeleteNetworkFirewallPolicyDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteNetworkFirewallPolicyDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteNetworkFirewallPolicyDetailResponse rsp = DeleteNetworkFirewallPolicyDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteNetworkFirewallPolicyDetailOutcome(rsp);
+        else
+            return DeleteNetworkFirewallPolicyDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteNetworkFirewallPolicyDetailOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DeleteNetworkFirewallPolicyDetailAsync(const DeleteNetworkFirewallPolicyDetailRequest& request, const DeleteNetworkFirewallPolicyDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteNetworkFirewallPolicyDetail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::DeleteNetworkFirewallPolicyDetailOutcomeCallable TcssClient::DeleteNetworkFirewallPolicyDetailCallable(const DeleteNetworkFirewallPolicyDetailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteNetworkFirewallPolicyDetailOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteNetworkFirewallPolicyDetail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::DeleteReverseShellEventsOutcome TcssClient::DeleteReverseShellEvents(const DeleteReverseShellEventsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteReverseShellEvents");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteReverseShellEventsResponse rsp = DeleteReverseShellEventsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteReverseShellEventsOutcome(rsp);
+        else
+            return DeleteReverseShellEventsOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteReverseShellEventsOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DeleteReverseShellEventsAsync(const DeleteReverseShellEventsRequest& request, const DeleteReverseShellEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteReverseShellEvents(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::DeleteReverseShellEventsOutcomeCallable TcssClient::DeleteReverseShellEventsCallable(const DeleteReverseShellEventsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteReverseShellEventsOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteReverseShellEvents(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcssClient::DeleteReverseShellWhiteListsOutcome TcssClient::DeleteReverseShellWhiteLists(const DeleteReverseShellWhiteListsRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteReverseShellWhiteLists");
@@ -1065,6 +2613,49 @@ TcssClient::DeleteReverseShellWhiteListsOutcomeCallable TcssClient::DeleteRevers
         [this, request]()
         {
             return this->DeleteReverseShellWhiteLists(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::DeleteRiskSyscallEventsOutcome TcssClient::DeleteRiskSyscallEvents(const DeleteRiskSyscallEventsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteRiskSyscallEvents");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteRiskSyscallEventsResponse rsp = DeleteRiskSyscallEventsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteRiskSyscallEventsOutcome(rsp);
+        else
+            return DeleteRiskSyscallEventsOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteRiskSyscallEventsOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DeleteRiskSyscallEventsAsync(const DeleteRiskSyscallEventsRequest& request, const DeleteRiskSyscallEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteRiskSyscallEvents(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::DeleteRiskSyscallEventsOutcomeCallable TcssClient::DeleteRiskSyscallEventsCallable(const DeleteRiskSyscallEventsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteRiskSyscallEventsOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteRiskSyscallEvents(request);
         }
     );
 
@@ -1115,6 +2706,92 @@ TcssClient::DeleteRiskSyscallWhiteListsOutcomeCallable TcssClient::DeleteRiskSys
     return task->get_future();
 }
 
+TcssClient::DeleteSearchTemplateOutcome TcssClient::DeleteSearchTemplate(const DeleteSearchTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteSearchTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteSearchTemplateResponse rsp = DeleteSearchTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteSearchTemplateOutcome(rsp);
+        else
+            return DeleteSearchTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteSearchTemplateOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DeleteSearchTemplateAsync(const DeleteSearchTemplateRequest& request, const DeleteSearchTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteSearchTemplate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::DeleteSearchTemplateOutcomeCallable TcssClient::DeleteSearchTemplateCallable(const DeleteSearchTemplateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteSearchTemplateOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteSearchTemplate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::DescribeABTestConfigOutcome TcssClient::DescribeABTestConfig(const DescribeABTestConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeABTestConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeABTestConfigResponse rsp = DescribeABTestConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeABTestConfigOutcome(rsp);
+        else
+            return DescribeABTestConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeABTestConfigOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribeABTestConfigAsync(const DescribeABTestConfigRequest& request, const DescribeABTestConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeABTestConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::DescribeABTestConfigOutcomeCallable TcssClient::DescribeABTestConfigCallable(const DescribeABTestConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeABTestConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeABTestConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcssClient::DescribeAbnormalProcessDetailOutcome TcssClient::DescribeAbnormalProcessDetail(const DescribeAbnormalProcessDetailRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeAbnormalProcessDetail");
@@ -1151,6 +2828,49 @@ TcssClient::DescribeAbnormalProcessDetailOutcomeCallable TcssClient::DescribeAbn
         [this, request]()
         {
             return this->DescribeAbnormalProcessDetail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::DescribeAbnormalProcessEventTendencyOutcome TcssClient::DescribeAbnormalProcessEventTendency(const DescribeAbnormalProcessEventTendencyRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAbnormalProcessEventTendency");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAbnormalProcessEventTendencyResponse rsp = DescribeAbnormalProcessEventTendencyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAbnormalProcessEventTendencyOutcome(rsp);
+        else
+            return DescribeAbnormalProcessEventTendencyOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAbnormalProcessEventTendencyOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribeAbnormalProcessEventTendencyAsync(const DescribeAbnormalProcessEventTendencyRequest& request, const DescribeAbnormalProcessEventTendencyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAbnormalProcessEventTendency(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::DescribeAbnormalProcessEventTendencyOutcomeCallable TcssClient::DescribeAbnormalProcessEventTendencyCallable(const DescribeAbnormalProcessEventTendencyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAbnormalProcessEventTendencyOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAbnormalProcessEventTendency(request);
         }
     );
 
@@ -1237,6 +2957,49 @@ TcssClient::DescribeAbnormalProcessEventsExportOutcomeCallable TcssClient::Descr
         [this, request]()
         {
             return this->DescribeAbnormalProcessEventsExport(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::DescribeAbnormalProcessLevelSummaryOutcome TcssClient::DescribeAbnormalProcessLevelSummary(const DescribeAbnormalProcessLevelSummaryRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAbnormalProcessLevelSummary");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAbnormalProcessLevelSummaryResponse rsp = DescribeAbnormalProcessLevelSummaryResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAbnormalProcessLevelSummaryOutcome(rsp);
+        else
+            return DescribeAbnormalProcessLevelSummaryOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAbnormalProcessLevelSummaryOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribeAbnormalProcessLevelSummaryAsync(const DescribeAbnormalProcessLevelSummaryRequest& request, const DescribeAbnormalProcessLevelSummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAbnormalProcessLevelSummary(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::DescribeAbnormalProcessLevelSummaryOutcomeCallable TcssClient::DescribeAbnormalProcessLevelSummaryCallable(const DescribeAbnormalProcessLevelSummaryRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAbnormalProcessLevelSummaryOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAbnormalProcessLevelSummary(request);
         }
     );
 
@@ -1753,6 +3516,92 @@ TcssClient::DescribeAffectedWorkloadListOutcomeCallable TcssClient::DescribeAffe
         [this, request]()
         {
             return this->DescribeAffectedWorkloadList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::DescribeAgentDaemonSetCmdOutcome TcssClient::DescribeAgentDaemonSetCmd(const DescribeAgentDaemonSetCmdRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAgentDaemonSetCmd");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAgentDaemonSetCmdResponse rsp = DescribeAgentDaemonSetCmdResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAgentDaemonSetCmdOutcome(rsp);
+        else
+            return DescribeAgentDaemonSetCmdOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAgentDaemonSetCmdOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribeAgentDaemonSetCmdAsync(const DescribeAgentDaemonSetCmdRequest& request, const DescribeAgentDaemonSetCmdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAgentDaemonSetCmd(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::DescribeAgentDaemonSetCmdOutcomeCallable TcssClient::DescribeAgentDaemonSetCmdCallable(const DescribeAgentDaemonSetCmdRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAgentDaemonSetCmdOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAgentDaemonSetCmd(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::DescribeAgentInstallCommandOutcome TcssClient::DescribeAgentInstallCommand(const DescribeAgentInstallCommandRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAgentInstallCommand");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAgentInstallCommandResponse rsp = DescribeAgentInstallCommandResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAgentInstallCommandOutcome(rsp);
+        else
+            return DescribeAgentInstallCommandOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAgentInstallCommandOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribeAgentInstallCommandAsync(const DescribeAgentInstallCommandRequest& request, const DescribeAgentInstallCommandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAgentInstallCommand(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::DescribeAgentInstallCommandOutcomeCallable TcssClient::DescribeAgentInstallCommandCallable(const DescribeAgentInstallCommandRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAgentInstallCommandOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAgentInstallCommand(request);
         }
     );
 
@@ -3437,6 +5286,49 @@ TcssClient::DescribeAssetSummaryOutcomeCallable TcssClient::DescribeAssetSummary
     return task->get_future();
 }
 
+TcssClient::DescribeAssetSyncLastTimeOutcome TcssClient::DescribeAssetSyncLastTime(const DescribeAssetSyncLastTimeRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAssetSyncLastTime");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAssetSyncLastTimeResponse rsp = DescribeAssetSyncLastTimeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAssetSyncLastTimeOutcome(rsp);
+        else
+            return DescribeAssetSyncLastTimeOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAssetSyncLastTimeOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribeAssetSyncLastTimeAsync(const DescribeAssetSyncLastTimeRequest& request, const DescribeAssetSyncLastTimeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAssetSyncLastTime(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::DescribeAssetSyncLastTimeOutcomeCallable TcssClient::DescribeAssetSyncLastTimeCallable(const DescribeAssetSyncLastTimeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAssetSyncLastTimeOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAssetSyncLastTime(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcssClient::DescribeAssetWebServiceListOutcome TcssClient::DescribeAssetWebServiceList(const DescribeAssetWebServiceListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeAssetWebServiceList");
@@ -3473,6 +5365,49 @@ TcssClient::DescribeAssetWebServiceListOutcomeCallable TcssClient::DescribeAsset
         [this, request]()
         {
             return this->DescribeAssetWebServiceList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::DescribeAutoAuthorizedRuleHostOutcome TcssClient::DescribeAutoAuthorizedRuleHost(const DescribeAutoAuthorizedRuleHostRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAutoAuthorizedRuleHost");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAutoAuthorizedRuleHostResponse rsp = DescribeAutoAuthorizedRuleHostResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAutoAuthorizedRuleHostOutcome(rsp);
+        else
+            return DescribeAutoAuthorizedRuleHostOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAutoAuthorizedRuleHostOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribeAutoAuthorizedRuleHostAsync(const DescribeAutoAuthorizedRuleHostRequest& request, const DescribeAutoAuthorizedRuleHostAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAutoAuthorizedRuleHost(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::DescribeAutoAuthorizedRuleHostOutcomeCallable TcssClient::DescribeAutoAuthorizedRuleHostCallable(const DescribeAutoAuthorizedRuleHostRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAutoAuthorizedRuleHostOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAutoAuthorizedRuleHost(request);
         }
     );
 
@@ -4125,6 +6060,135 @@ TcssClient::DescribeContainerSecEventSummaryOutcomeCallable TcssClient::Describe
     return task->get_future();
 }
 
+TcssClient::DescribeESAggregationsOutcome TcssClient::DescribeESAggregations(const DescribeESAggregationsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeESAggregations");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeESAggregationsResponse rsp = DescribeESAggregationsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeESAggregationsOutcome(rsp);
+        else
+            return DescribeESAggregationsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeESAggregationsOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribeESAggregationsAsync(const DescribeESAggregationsRequest& request, const DescribeESAggregationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeESAggregations(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::DescribeESAggregationsOutcomeCallable TcssClient::DescribeESAggregationsCallable(const DescribeESAggregationsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeESAggregationsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeESAggregations(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::DescribeESHitsOutcome TcssClient::DescribeESHits(const DescribeESHitsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeESHits");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeESHitsResponse rsp = DescribeESHitsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeESHitsOutcome(rsp);
+        else
+            return DescribeESHitsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeESHitsOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribeESHitsAsync(const DescribeESHitsRequest& request, const DescribeESHitsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeESHits(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::DescribeESHitsOutcomeCallable TcssClient::DescribeESHitsCallable(const DescribeESHitsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeESHitsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeESHits(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::DescribeEmergencyVulListOutcome TcssClient::DescribeEmergencyVulList(const DescribeEmergencyVulListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeEmergencyVulList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeEmergencyVulListResponse rsp = DescribeEmergencyVulListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeEmergencyVulListOutcome(rsp);
+        else
+            return DescribeEmergencyVulListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeEmergencyVulListOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribeEmergencyVulListAsync(const DescribeEmergencyVulListRequest& request, const DescribeEmergencyVulListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeEmergencyVulList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::DescribeEmergencyVulListOutcomeCallable TcssClient::DescribeEmergencyVulListCallable(const DescribeEmergencyVulListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeEmergencyVulListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeEmergencyVulList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcssClient::DescribeEscapeEventDetailOutcome TcssClient::DescribeEscapeEventDetail(const DescribeEscapeEventDetailRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeEscapeEventDetail");
@@ -4204,6 +6268,92 @@ TcssClient::DescribeEscapeEventInfoOutcomeCallable TcssClient::DescribeEscapeEve
         [this, request]()
         {
             return this->DescribeEscapeEventInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::DescribeEscapeEventTendencyOutcome TcssClient::DescribeEscapeEventTendency(const DescribeEscapeEventTendencyRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeEscapeEventTendency");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeEscapeEventTendencyResponse rsp = DescribeEscapeEventTendencyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeEscapeEventTendencyOutcome(rsp);
+        else
+            return DescribeEscapeEventTendencyOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeEscapeEventTendencyOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribeEscapeEventTendencyAsync(const DescribeEscapeEventTendencyRequest& request, const DescribeEscapeEventTendencyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeEscapeEventTendency(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::DescribeEscapeEventTendencyOutcomeCallable TcssClient::DescribeEscapeEventTendencyCallable(const DescribeEscapeEventTendencyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeEscapeEventTendencyOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeEscapeEventTendency(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::DescribeEscapeEventTypeSummaryOutcome TcssClient::DescribeEscapeEventTypeSummary(const DescribeEscapeEventTypeSummaryRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeEscapeEventTypeSummary");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeEscapeEventTypeSummaryResponse rsp = DescribeEscapeEventTypeSummaryResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeEscapeEventTypeSummaryOutcome(rsp);
+        else
+            return DescribeEscapeEventTypeSummaryOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeEscapeEventTypeSummaryOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribeEscapeEventTypeSummaryAsync(const DescribeEscapeEventTypeSummaryRequest& request, const DescribeEscapeEventTypeSummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeEscapeEventTypeSummary(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::DescribeEscapeEventTypeSummaryOutcomeCallable TcssClient::DescribeEscapeEventTypeSummaryCallable(const DescribeEscapeEventTypeSummaryRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeEscapeEventTypeSummaryOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeEscapeEventTypeSummary(request);
         }
     );
 
@@ -4340,6 +6490,49 @@ TcssClient::DescribeEscapeSafeStateOutcomeCallable TcssClient::DescribeEscapeSaf
     return task->get_future();
 }
 
+TcssClient::DescribeEscapeWhiteListOutcome TcssClient::DescribeEscapeWhiteList(const DescribeEscapeWhiteListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeEscapeWhiteList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeEscapeWhiteListResponse rsp = DescribeEscapeWhiteListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeEscapeWhiteListOutcome(rsp);
+        else
+            return DescribeEscapeWhiteListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeEscapeWhiteListOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribeEscapeWhiteListAsync(const DescribeEscapeWhiteListRequest& request, const DescribeEscapeWhiteListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeEscapeWhiteList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::DescribeEscapeWhiteListOutcomeCallable TcssClient::DescribeEscapeWhiteListCallable(const DescribeEscapeWhiteListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeEscapeWhiteListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeEscapeWhiteList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcssClient::DescribeExportJobResultOutcome TcssClient::DescribeExportJobResult(const DescribeExportJobResultRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeExportJobResult");
@@ -4419,6 +6612,178 @@ TcssClient::DescribeImageAuthorizedInfoOutcomeCallable TcssClient::DescribeImage
         [this, request]()
         {
             return this->DescribeImageAuthorizedInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::DescribeImageAutoAuthorizedLogListOutcome TcssClient::DescribeImageAutoAuthorizedLogList(const DescribeImageAutoAuthorizedLogListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeImageAutoAuthorizedLogList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeImageAutoAuthorizedLogListResponse rsp = DescribeImageAutoAuthorizedLogListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeImageAutoAuthorizedLogListOutcome(rsp);
+        else
+            return DescribeImageAutoAuthorizedLogListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeImageAutoAuthorizedLogListOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribeImageAutoAuthorizedLogListAsync(const DescribeImageAutoAuthorizedLogListRequest& request, const DescribeImageAutoAuthorizedLogListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeImageAutoAuthorizedLogList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::DescribeImageAutoAuthorizedLogListOutcomeCallable TcssClient::DescribeImageAutoAuthorizedLogListCallable(const DescribeImageAutoAuthorizedLogListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeImageAutoAuthorizedLogListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeImageAutoAuthorizedLogList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::DescribeImageAutoAuthorizedRuleOutcome TcssClient::DescribeImageAutoAuthorizedRule(const DescribeImageAutoAuthorizedRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeImageAutoAuthorizedRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeImageAutoAuthorizedRuleResponse rsp = DescribeImageAutoAuthorizedRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeImageAutoAuthorizedRuleOutcome(rsp);
+        else
+            return DescribeImageAutoAuthorizedRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeImageAutoAuthorizedRuleOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribeImageAutoAuthorizedRuleAsync(const DescribeImageAutoAuthorizedRuleRequest& request, const DescribeImageAutoAuthorizedRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeImageAutoAuthorizedRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::DescribeImageAutoAuthorizedRuleOutcomeCallable TcssClient::DescribeImageAutoAuthorizedRuleCallable(const DescribeImageAutoAuthorizedRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeImageAutoAuthorizedRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeImageAutoAuthorizedRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::DescribeImageAutoAuthorizedTaskListOutcome TcssClient::DescribeImageAutoAuthorizedTaskList(const DescribeImageAutoAuthorizedTaskListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeImageAutoAuthorizedTaskList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeImageAutoAuthorizedTaskListResponse rsp = DescribeImageAutoAuthorizedTaskListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeImageAutoAuthorizedTaskListOutcome(rsp);
+        else
+            return DescribeImageAutoAuthorizedTaskListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeImageAutoAuthorizedTaskListOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribeImageAutoAuthorizedTaskListAsync(const DescribeImageAutoAuthorizedTaskListRequest& request, const DescribeImageAutoAuthorizedTaskListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeImageAutoAuthorizedTaskList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::DescribeImageAutoAuthorizedTaskListOutcomeCallable TcssClient::DescribeImageAutoAuthorizedTaskListCallable(const DescribeImageAutoAuthorizedTaskListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeImageAutoAuthorizedTaskListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeImageAutoAuthorizedTaskList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::DescribeImageComponentListOutcome TcssClient::DescribeImageComponentList(const DescribeImageComponentListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeImageComponentList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeImageComponentListResponse rsp = DescribeImageComponentListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeImageComponentListOutcome(rsp);
+        else
+            return DescribeImageComponentListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeImageComponentListOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribeImageComponentListAsync(const DescribeImageComponentListRequest& request, const DescribeImageComponentListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeImageComponentList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::DescribeImageComponentListOutcomeCallable TcssClient::DescribeImageComponentListCallable(const DescribeImageComponentListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeImageComponentListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeImageComponentList(request);
         }
     );
 
@@ -4598,6 +6963,651 @@ TcssClient::DescribeImageSimpleListOutcomeCallable TcssClient::DescribeImageSimp
     return task->get_future();
 }
 
+TcssClient::DescribeIndexListOutcome TcssClient::DescribeIndexList(const DescribeIndexListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeIndexList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeIndexListResponse rsp = DescribeIndexListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeIndexListOutcome(rsp);
+        else
+            return DescribeIndexListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeIndexListOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribeIndexListAsync(const DescribeIndexListRequest& request, const DescribeIndexListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeIndexList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::DescribeIndexListOutcomeCallable TcssClient::DescribeIndexListCallable(const DescribeIndexListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeIndexListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeIndexList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::DescribeInspectionReportOutcome TcssClient::DescribeInspectionReport(const DescribeInspectionReportRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeInspectionReport");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeInspectionReportResponse rsp = DescribeInspectionReportResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeInspectionReportOutcome(rsp);
+        else
+            return DescribeInspectionReportOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeInspectionReportOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribeInspectionReportAsync(const DescribeInspectionReportRequest& request, const DescribeInspectionReportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeInspectionReport(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::DescribeInspectionReportOutcomeCallable TcssClient::DescribeInspectionReportCallable(const DescribeInspectionReportRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeInspectionReportOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeInspectionReport(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::DescribeLogStorageStatisticOutcome TcssClient::DescribeLogStorageStatistic(const DescribeLogStorageStatisticRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeLogStorageStatistic");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeLogStorageStatisticResponse rsp = DescribeLogStorageStatisticResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeLogStorageStatisticOutcome(rsp);
+        else
+            return DescribeLogStorageStatisticOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeLogStorageStatisticOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribeLogStorageStatisticAsync(const DescribeLogStorageStatisticRequest& request, const DescribeLogStorageStatisticAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeLogStorageStatistic(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::DescribeLogStorageStatisticOutcomeCallable TcssClient::DescribeLogStorageStatisticCallable(const DescribeLogStorageStatisticRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeLogStorageStatisticOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeLogStorageStatistic(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::DescribeNetworkFirewallAuditRecordOutcome TcssClient::DescribeNetworkFirewallAuditRecord(const DescribeNetworkFirewallAuditRecordRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeNetworkFirewallAuditRecord");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeNetworkFirewallAuditRecordResponse rsp = DescribeNetworkFirewallAuditRecordResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeNetworkFirewallAuditRecordOutcome(rsp);
+        else
+            return DescribeNetworkFirewallAuditRecordOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeNetworkFirewallAuditRecordOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribeNetworkFirewallAuditRecordAsync(const DescribeNetworkFirewallAuditRecordRequest& request, const DescribeNetworkFirewallAuditRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeNetworkFirewallAuditRecord(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::DescribeNetworkFirewallAuditRecordOutcomeCallable TcssClient::DescribeNetworkFirewallAuditRecordCallable(const DescribeNetworkFirewallAuditRecordRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeNetworkFirewallAuditRecordOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeNetworkFirewallAuditRecord(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::DescribeNetworkFirewallClusterListOutcome TcssClient::DescribeNetworkFirewallClusterList(const DescribeNetworkFirewallClusterListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeNetworkFirewallClusterList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeNetworkFirewallClusterListResponse rsp = DescribeNetworkFirewallClusterListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeNetworkFirewallClusterListOutcome(rsp);
+        else
+            return DescribeNetworkFirewallClusterListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeNetworkFirewallClusterListOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribeNetworkFirewallClusterListAsync(const DescribeNetworkFirewallClusterListRequest& request, const DescribeNetworkFirewallClusterListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeNetworkFirewallClusterList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::DescribeNetworkFirewallClusterListOutcomeCallable TcssClient::DescribeNetworkFirewallClusterListCallable(const DescribeNetworkFirewallClusterListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeNetworkFirewallClusterListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeNetworkFirewallClusterList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::DescribeNetworkFirewallClusterRefreshStatusOutcome TcssClient::DescribeNetworkFirewallClusterRefreshStatus(const DescribeNetworkFirewallClusterRefreshStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeNetworkFirewallClusterRefreshStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeNetworkFirewallClusterRefreshStatusResponse rsp = DescribeNetworkFirewallClusterRefreshStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeNetworkFirewallClusterRefreshStatusOutcome(rsp);
+        else
+            return DescribeNetworkFirewallClusterRefreshStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeNetworkFirewallClusterRefreshStatusOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribeNetworkFirewallClusterRefreshStatusAsync(const DescribeNetworkFirewallClusterRefreshStatusRequest& request, const DescribeNetworkFirewallClusterRefreshStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeNetworkFirewallClusterRefreshStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::DescribeNetworkFirewallClusterRefreshStatusOutcomeCallable TcssClient::DescribeNetworkFirewallClusterRefreshStatusCallable(const DescribeNetworkFirewallClusterRefreshStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeNetworkFirewallClusterRefreshStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeNetworkFirewallClusterRefreshStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::DescribeNetworkFirewallNamespaceLabelListOutcome TcssClient::DescribeNetworkFirewallNamespaceLabelList(const DescribeNetworkFirewallNamespaceLabelListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeNetworkFirewallNamespaceLabelList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeNetworkFirewallNamespaceLabelListResponse rsp = DescribeNetworkFirewallNamespaceLabelListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeNetworkFirewallNamespaceLabelListOutcome(rsp);
+        else
+            return DescribeNetworkFirewallNamespaceLabelListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeNetworkFirewallNamespaceLabelListOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribeNetworkFirewallNamespaceLabelListAsync(const DescribeNetworkFirewallNamespaceLabelListRequest& request, const DescribeNetworkFirewallNamespaceLabelListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeNetworkFirewallNamespaceLabelList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::DescribeNetworkFirewallNamespaceLabelListOutcomeCallable TcssClient::DescribeNetworkFirewallNamespaceLabelListCallable(const DescribeNetworkFirewallNamespaceLabelListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeNetworkFirewallNamespaceLabelListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeNetworkFirewallNamespaceLabelList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::DescribeNetworkFirewallNamespaceListOutcome TcssClient::DescribeNetworkFirewallNamespaceList(const DescribeNetworkFirewallNamespaceListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeNetworkFirewallNamespaceList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeNetworkFirewallNamespaceListResponse rsp = DescribeNetworkFirewallNamespaceListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeNetworkFirewallNamespaceListOutcome(rsp);
+        else
+            return DescribeNetworkFirewallNamespaceListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeNetworkFirewallNamespaceListOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribeNetworkFirewallNamespaceListAsync(const DescribeNetworkFirewallNamespaceListRequest& request, const DescribeNetworkFirewallNamespaceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeNetworkFirewallNamespaceList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::DescribeNetworkFirewallNamespaceListOutcomeCallable TcssClient::DescribeNetworkFirewallNamespaceListCallable(const DescribeNetworkFirewallNamespaceListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeNetworkFirewallNamespaceListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeNetworkFirewallNamespaceList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::DescribeNetworkFirewallPodLabelsListOutcome TcssClient::DescribeNetworkFirewallPodLabelsList(const DescribeNetworkFirewallPodLabelsListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeNetworkFirewallPodLabelsList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeNetworkFirewallPodLabelsListResponse rsp = DescribeNetworkFirewallPodLabelsListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeNetworkFirewallPodLabelsListOutcome(rsp);
+        else
+            return DescribeNetworkFirewallPodLabelsListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeNetworkFirewallPodLabelsListOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribeNetworkFirewallPodLabelsListAsync(const DescribeNetworkFirewallPodLabelsListRequest& request, const DescribeNetworkFirewallPodLabelsListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeNetworkFirewallPodLabelsList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::DescribeNetworkFirewallPodLabelsListOutcomeCallable TcssClient::DescribeNetworkFirewallPodLabelsListCallable(const DescribeNetworkFirewallPodLabelsListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeNetworkFirewallPodLabelsListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeNetworkFirewallPodLabelsList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::DescribeNetworkFirewallPolicyDetailOutcome TcssClient::DescribeNetworkFirewallPolicyDetail(const DescribeNetworkFirewallPolicyDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeNetworkFirewallPolicyDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeNetworkFirewallPolicyDetailResponse rsp = DescribeNetworkFirewallPolicyDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeNetworkFirewallPolicyDetailOutcome(rsp);
+        else
+            return DescribeNetworkFirewallPolicyDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeNetworkFirewallPolicyDetailOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribeNetworkFirewallPolicyDetailAsync(const DescribeNetworkFirewallPolicyDetailRequest& request, const DescribeNetworkFirewallPolicyDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeNetworkFirewallPolicyDetail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::DescribeNetworkFirewallPolicyDetailOutcomeCallable TcssClient::DescribeNetworkFirewallPolicyDetailCallable(const DescribeNetworkFirewallPolicyDetailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeNetworkFirewallPolicyDetailOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeNetworkFirewallPolicyDetail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::DescribeNetworkFirewallPolicyDiscoverOutcome TcssClient::DescribeNetworkFirewallPolicyDiscover(const DescribeNetworkFirewallPolicyDiscoverRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeNetworkFirewallPolicyDiscover");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeNetworkFirewallPolicyDiscoverResponse rsp = DescribeNetworkFirewallPolicyDiscoverResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeNetworkFirewallPolicyDiscoverOutcome(rsp);
+        else
+            return DescribeNetworkFirewallPolicyDiscoverOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeNetworkFirewallPolicyDiscoverOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribeNetworkFirewallPolicyDiscoverAsync(const DescribeNetworkFirewallPolicyDiscoverRequest& request, const DescribeNetworkFirewallPolicyDiscoverAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeNetworkFirewallPolicyDiscover(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::DescribeNetworkFirewallPolicyDiscoverOutcomeCallable TcssClient::DescribeNetworkFirewallPolicyDiscoverCallable(const DescribeNetworkFirewallPolicyDiscoverRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeNetworkFirewallPolicyDiscoverOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeNetworkFirewallPolicyDiscover(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::DescribeNetworkFirewallPolicyListOutcome TcssClient::DescribeNetworkFirewallPolicyList(const DescribeNetworkFirewallPolicyListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeNetworkFirewallPolicyList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeNetworkFirewallPolicyListResponse rsp = DescribeNetworkFirewallPolicyListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeNetworkFirewallPolicyListOutcome(rsp);
+        else
+            return DescribeNetworkFirewallPolicyListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeNetworkFirewallPolicyListOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribeNetworkFirewallPolicyListAsync(const DescribeNetworkFirewallPolicyListRequest& request, const DescribeNetworkFirewallPolicyListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeNetworkFirewallPolicyList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::DescribeNetworkFirewallPolicyListOutcomeCallable TcssClient::DescribeNetworkFirewallPolicyListCallable(const DescribeNetworkFirewallPolicyListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeNetworkFirewallPolicyListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeNetworkFirewallPolicyList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::DescribeNetworkFirewallPolicyStatusOutcome TcssClient::DescribeNetworkFirewallPolicyStatus(const DescribeNetworkFirewallPolicyStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeNetworkFirewallPolicyStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeNetworkFirewallPolicyStatusResponse rsp = DescribeNetworkFirewallPolicyStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeNetworkFirewallPolicyStatusOutcome(rsp);
+        else
+            return DescribeNetworkFirewallPolicyStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeNetworkFirewallPolicyStatusOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribeNetworkFirewallPolicyStatusAsync(const DescribeNetworkFirewallPolicyStatusRequest& request, const DescribeNetworkFirewallPolicyStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeNetworkFirewallPolicyStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::DescribeNetworkFirewallPolicyStatusOutcomeCallable TcssClient::DescribeNetworkFirewallPolicyStatusCallable(const DescribeNetworkFirewallPolicyStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeNetworkFirewallPolicyStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeNetworkFirewallPolicyStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::DescribeNetworkFirewallPolicyYamlDetailOutcome TcssClient::DescribeNetworkFirewallPolicyYamlDetail(const DescribeNetworkFirewallPolicyYamlDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeNetworkFirewallPolicyYamlDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeNetworkFirewallPolicyYamlDetailResponse rsp = DescribeNetworkFirewallPolicyYamlDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeNetworkFirewallPolicyYamlDetailOutcome(rsp);
+        else
+            return DescribeNetworkFirewallPolicyYamlDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeNetworkFirewallPolicyYamlDetailOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribeNetworkFirewallPolicyYamlDetailAsync(const DescribeNetworkFirewallPolicyYamlDetailRequest& request, const DescribeNetworkFirewallPolicyYamlDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeNetworkFirewallPolicyYamlDetail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::DescribeNetworkFirewallPolicyYamlDetailOutcomeCallable TcssClient::DescribeNetworkFirewallPolicyYamlDetailCallable(const DescribeNetworkFirewallPolicyYamlDetailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeNetworkFirewallPolicyYamlDetailOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeNetworkFirewallPolicyYamlDetail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::DescribeNewestVulOutcome TcssClient::DescribeNewestVul(const DescribeNewestVulRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeNewestVul");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeNewestVulResponse rsp = DescribeNewestVulResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeNewestVulOutcome(rsp);
+        else
+            return DescribeNewestVulOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeNewestVulOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribeNewestVulAsync(const DescribeNewestVulRequest& request, const DescribeNewestVulAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeNewestVul(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::DescribeNewestVulOutcomeCallable TcssClient::DescribeNewestVulCallable(const DescribeNewestVulRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeNewestVulOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeNewestVul(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcssClient::DescribePostPayDetailOutcome TcssClient::DescribePostPayDetail(const DescribePostPayDetailRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribePostPayDetail");
@@ -4677,6 +7687,92 @@ TcssClient::DescribeProVersionInfoOutcomeCallable TcssClient::DescribeProVersion
         [this, request]()
         {
             return this->DescribeProVersionInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::DescribePromotionActivityOutcome TcssClient::DescribePromotionActivity(const DescribePromotionActivityRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePromotionActivity");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePromotionActivityResponse rsp = DescribePromotionActivityResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePromotionActivityOutcome(rsp);
+        else
+            return DescribePromotionActivityOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePromotionActivityOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribePromotionActivityAsync(const DescribePromotionActivityRequest& request, const DescribePromotionActivityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePromotionActivity(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::DescribePromotionActivityOutcomeCallable TcssClient::DescribePromotionActivityCallable(const DescribePromotionActivityRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePromotionActivityOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePromotionActivity(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::DescribePublicKeyOutcome TcssClient::DescribePublicKey(const DescribePublicKeyRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePublicKey");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePublicKeyResponse rsp = DescribePublicKeyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePublicKeyOutcome(rsp);
+        else
+            return DescribePublicKeyOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePublicKeyOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribePublicKeyAsync(const DescribePublicKeyRequest& request, const DescribePublicKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePublicKey(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::DescribePublicKeyOutcomeCallable TcssClient::DescribePublicKeyCallable(const DescribePublicKeyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePublicKeyOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePublicKey(request);
         }
     );
 
@@ -5286,6 +8382,178 @@ TcssClient::DescribeRiskSyscallWhiteListsOutcomeCallable TcssClient::DescribeRis
     return task->get_future();
 }
 
+TcssClient::DescribeScanIgnoreVulListOutcome TcssClient::DescribeScanIgnoreVulList(const DescribeScanIgnoreVulListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeScanIgnoreVulList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeScanIgnoreVulListResponse rsp = DescribeScanIgnoreVulListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeScanIgnoreVulListOutcome(rsp);
+        else
+            return DescribeScanIgnoreVulListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeScanIgnoreVulListOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribeScanIgnoreVulListAsync(const DescribeScanIgnoreVulListRequest& request, const DescribeScanIgnoreVulListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeScanIgnoreVulList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::DescribeScanIgnoreVulListOutcomeCallable TcssClient::DescribeScanIgnoreVulListCallable(const DescribeScanIgnoreVulListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeScanIgnoreVulListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeScanIgnoreVulList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::DescribeSearchExportListOutcome TcssClient::DescribeSearchExportList(const DescribeSearchExportListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSearchExportList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSearchExportListResponse rsp = DescribeSearchExportListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSearchExportListOutcome(rsp);
+        else
+            return DescribeSearchExportListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSearchExportListOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribeSearchExportListAsync(const DescribeSearchExportListRequest& request, const DescribeSearchExportListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSearchExportList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::DescribeSearchExportListOutcomeCallable TcssClient::DescribeSearchExportListCallable(const DescribeSearchExportListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSearchExportListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSearchExportList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::DescribeSearchLogsOutcome TcssClient::DescribeSearchLogs(const DescribeSearchLogsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSearchLogs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSearchLogsResponse rsp = DescribeSearchLogsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSearchLogsOutcome(rsp);
+        else
+            return DescribeSearchLogsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSearchLogsOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribeSearchLogsAsync(const DescribeSearchLogsRequest& request, const DescribeSearchLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSearchLogs(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::DescribeSearchLogsOutcomeCallable TcssClient::DescribeSearchLogsCallable(const DescribeSearchLogsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSearchLogsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSearchLogs(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::DescribeSearchTemplatesOutcome TcssClient::DescribeSearchTemplates(const DescribeSearchTemplatesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSearchTemplates");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSearchTemplatesResponse rsp = DescribeSearchTemplatesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSearchTemplatesOutcome(rsp);
+        else
+            return DescribeSearchTemplatesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSearchTemplatesOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribeSearchTemplatesAsync(const DescribeSearchTemplatesRequest& request, const DescribeSearchTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSearchTemplates(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::DescribeSearchTemplatesOutcomeCallable TcssClient::DescribeSearchTemplatesCallable(const DescribeSearchTemplatesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSearchTemplatesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSearchTemplates(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcssClient::DescribeSecEventsTendencyOutcome TcssClient::DescribeSecEventsTendency(const DescribeSecEventsTendencyRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeSecEventsTendency");
@@ -5329,6 +8597,522 @@ TcssClient::DescribeSecEventsTendencyOutcomeCallable TcssClient::DescribeSecEven
     return task->get_future();
 }
 
+TcssClient::DescribeSecLogAlertMsgOutcome TcssClient::DescribeSecLogAlertMsg(const DescribeSecLogAlertMsgRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSecLogAlertMsg");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSecLogAlertMsgResponse rsp = DescribeSecLogAlertMsgResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSecLogAlertMsgOutcome(rsp);
+        else
+            return DescribeSecLogAlertMsgOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSecLogAlertMsgOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribeSecLogAlertMsgAsync(const DescribeSecLogAlertMsgRequest& request, const DescribeSecLogAlertMsgAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSecLogAlertMsg(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::DescribeSecLogAlertMsgOutcomeCallable TcssClient::DescribeSecLogAlertMsgCallable(const DescribeSecLogAlertMsgRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSecLogAlertMsgOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSecLogAlertMsg(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::DescribeSecLogCleanSettingInfoOutcome TcssClient::DescribeSecLogCleanSettingInfo(const DescribeSecLogCleanSettingInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSecLogCleanSettingInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSecLogCleanSettingInfoResponse rsp = DescribeSecLogCleanSettingInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSecLogCleanSettingInfoOutcome(rsp);
+        else
+            return DescribeSecLogCleanSettingInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSecLogCleanSettingInfoOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribeSecLogCleanSettingInfoAsync(const DescribeSecLogCleanSettingInfoRequest& request, const DescribeSecLogCleanSettingInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSecLogCleanSettingInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::DescribeSecLogCleanSettingInfoOutcomeCallable TcssClient::DescribeSecLogCleanSettingInfoCallable(const DescribeSecLogCleanSettingInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSecLogCleanSettingInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSecLogCleanSettingInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::DescribeSecLogDeliveryClsOptionsOutcome TcssClient::DescribeSecLogDeliveryClsOptions(const DescribeSecLogDeliveryClsOptionsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSecLogDeliveryClsOptions");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSecLogDeliveryClsOptionsResponse rsp = DescribeSecLogDeliveryClsOptionsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSecLogDeliveryClsOptionsOutcome(rsp);
+        else
+            return DescribeSecLogDeliveryClsOptionsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSecLogDeliveryClsOptionsOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribeSecLogDeliveryClsOptionsAsync(const DescribeSecLogDeliveryClsOptionsRequest& request, const DescribeSecLogDeliveryClsOptionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSecLogDeliveryClsOptions(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::DescribeSecLogDeliveryClsOptionsOutcomeCallable TcssClient::DescribeSecLogDeliveryClsOptionsCallable(const DescribeSecLogDeliveryClsOptionsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSecLogDeliveryClsOptionsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSecLogDeliveryClsOptions(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::DescribeSecLogDeliveryClsSettingOutcome TcssClient::DescribeSecLogDeliveryClsSetting(const DescribeSecLogDeliveryClsSettingRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSecLogDeliveryClsSetting");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSecLogDeliveryClsSettingResponse rsp = DescribeSecLogDeliveryClsSettingResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSecLogDeliveryClsSettingOutcome(rsp);
+        else
+            return DescribeSecLogDeliveryClsSettingOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSecLogDeliveryClsSettingOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribeSecLogDeliveryClsSettingAsync(const DescribeSecLogDeliveryClsSettingRequest& request, const DescribeSecLogDeliveryClsSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSecLogDeliveryClsSetting(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::DescribeSecLogDeliveryClsSettingOutcomeCallable TcssClient::DescribeSecLogDeliveryClsSettingCallable(const DescribeSecLogDeliveryClsSettingRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSecLogDeliveryClsSettingOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSecLogDeliveryClsSetting(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::DescribeSecLogDeliveryKafkaOptionsOutcome TcssClient::DescribeSecLogDeliveryKafkaOptions(const DescribeSecLogDeliveryKafkaOptionsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSecLogDeliveryKafkaOptions");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSecLogDeliveryKafkaOptionsResponse rsp = DescribeSecLogDeliveryKafkaOptionsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSecLogDeliveryKafkaOptionsOutcome(rsp);
+        else
+            return DescribeSecLogDeliveryKafkaOptionsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSecLogDeliveryKafkaOptionsOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribeSecLogDeliveryKafkaOptionsAsync(const DescribeSecLogDeliveryKafkaOptionsRequest& request, const DescribeSecLogDeliveryKafkaOptionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSecLogDeliveryKafkaOptions(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::DescribeSecLogDeliveryKafkaOptionsOutcomeCallable TcssClient::DescribeSecLogDeliveryKafkaOptionsCallable(const DescribeSecLogDeliveryKafkaOptionsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSecLogDeliveryKafkaOptionsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSecLogDeliveryKafkaOptions(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::DescribeSecLogDeliveryKafkaSettingOutcome TcssClient::DescribeSecLogDeliveryKafkaSetting(const DescribeSecLogDeliveryKafkaSettingRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSecLogDeliveryKafkaSetting");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSecLogDeliveryKafkaSettingResponse rsp = DescribeSecLogDeliveryKafkaSettingResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSecLogDeliveryKafkaSettingOutcome(rsp);
+        else
+            return DescribeSecLogDeliveryKafkaSettingOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSecLogDeliveryKafkaSettingOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribeSecLogDeliveryKafkaSettingAsync(const DescribeSecLogDeliveryKafkaSettingRequest& request, const DescribeSecLogDeliveryKafkaSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSecLogDeliveryKafkaSetting(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::DescribeSecLogDeliveryKafkaSettingOutcomeCallable TcssClient::DescribeSecLogDeliveryKafkaSettingCallable(const DescribeSecLogDeliveryKafkaSettingRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSecLogDeliveryKafkaSettingOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSecLogDeliveryKafkaSetting(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::DescribeSecLogJoinObjectListOutcome TcssClient::DescribeSecLogJoinObjectList(const DescribeSecLogJoinObjectListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSecLogJoinObjectList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSecLogJoinObjectListResponse rsp = DescribeSecLogJoinObjectListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSecLogJoinObjectListOutcome(rsp);
+        else
+            return DescribeSecLogJoinObjectListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSecLogJoinObjectListOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribeSecLogJoinObjectListAsync(const DescribeSecLogJoinObjectListRequest& request, const DescribeSecLogJoinObjectListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSecLogJoinObjectList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::DescribeSecLogJoinObjectListOutcomeCallable TcssClient::DescribeSecLogJoinObjectListCallable(const DescribeSecLogJoinObjectListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSecLogJoinObjectListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSecLogJoinObjectList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::DescribeSecLogJoinTypeListOutcome TcssClient::DescribeSecLogJoinTypeList(const DescribeSecLogJoinTypeListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSecLogJoinTypeList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSecLogJoinTypeListResponse rsp = DescribeSecLogJoinTypeListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSecLogJoinTypeListOutcome(rsp);
+        else
+            return DescribeSecLogJoinTypeListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSecLogJoinTypeListOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribeSecLogJoinTypeListAsync(const DescribeSecLogJoinTypeListRequest& request, const DescribeSecLogJoinTypeListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSecLogJoinTypeList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::DescribeSecLogJoinTypeListOutcomeCallable TcssClient::DescribeSecLogJoinTypeListCallable(const DescribeSecLogJoinTypeListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSecLogJoinTypeListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSecLogJoinTypeList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::DescribeSecLogKafkaUINOutcome TcssClient::DescribeSecLogKafkaUIN(const DescribeSecLogKafkaUINRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSecLogKafkaUIN");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSecLogKafkaUINResponse rsp = DescribeSecLogKafkaUINResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSecLogKafkaUINOutcome(rsp);
+        else
+            return DescribeSecLogKafkaUINOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSecLogKafkaUINOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribeSecLogKafkaUINAsync(const DescribeSecLogKafkaUINRequest& request, const DescribeSecLogKafkaUINAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSecLogKafkaUIN(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::DescribeSecLogKafkaUINOutcomeCallable TcssClient::DescribeSecLogKafkaUINCallable(const DescribeSecLogKafkaUINRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSecLogKafkaUINOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSecLogKafkaUIN(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::DescribeSecLogVasInfoOutcome TcssClient::DescribeSecLogVasInfo(const DescribeSecLogVasInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSecLogVasInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSecLogVasInfoResponse rsp = DescribeSecLogVasInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSecLogVasInfoOutcome(rsp);
+        else
+            return DescribeSecLogVasInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSecLogVasInfoOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribeSecLogVasInfoAsync(const DescribeSecLogVasInfoRequest& request, const DescribeSecLogVasInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSecLogVasInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::DescribeSecLogVasInfoOutcomeCallable TcssClient::DescribeSecLogVasInfoCallable(const DescribeSecLogVasInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSecLogVasInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSecLogVasInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::DescribeSupportDefenceVulOutcome TcssClient::DescribeSupportDefenceVul(const DescribeSupportDefenceVulRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSupportDefenceVul");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSupportDefenceVulResponse rsp = DescribeSupportDefenceVulResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSupportDefenceVulOutcome(rsp);
+        else
+            return DescribeSupportDefenceVulOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSupportDefenceVulOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribeSupportDefenceVulAsync(const DescribeSupportDefenceVulRequest& request, const DescribeSupportDefenceVulAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSupportDefenceVul(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::DescribeSupportDefenceVulOutcomeCallable TcssClient::DescribeSupportDefenceVulCallable(const DescribeSupportDefenceVulRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSupportDefenceVulOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSupportDefenceVul(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::DescribeSystemVulListOutcome TcssClient::DescribeSystemVulList(const DescribeSystemVulListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSystemVulList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSystemVulListResponse rsp = DescribeSystemVulListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSystemVulListOutcome(rsp);
+        else
+            return DescribeSystemVulListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSystemVulListOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribeSystemVulListAsync(const DescribeSystemVulListRequest& request, const DescribeSystemVulListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSystemVulList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::DescribeSystemVulListOutcomeCallable TcssClient::DescribeSystemVulListCallable(const DescribeSystemVulListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSystemVulListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSystemVulList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcssClient::DescribeTaskResultSummaryOutcome TcssClient::DescribeTaskResultSummary(const DescribeTaskResultSummaryRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeTaskResultSummary");
@@ -5365,6 +9149,92 @@ TcssClient::DescribeTaskResultSummaryOutcomeCallable TcssClient::DescribeTaskRes
         [this, request]()
         {
             return this->DescribeTaskResultSummary(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::DescribeTcssSummaryOutcome TcssClient::DescribeTcssSummary(const DescribeTcssSummaryRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTcssSummary");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTcssSummaryResponse rsp = DescribeTcssSummaryResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTcssSummaryOutcome(rsp);
+        else
+            return DescribeTcssSummaryOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTcssSummaryOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribeTcssSummaryAsync(const DescribeTcssSummaryRequest& request, const DescribeTcssSummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTcssSummary(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::DescribeTcssSummaryOutcomeCallable TcssClient::DescribeTcssSummaryCallable(const DescribeTcssSummaryRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTcssSummaryOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTcssSummary(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::DescribeUnauthorizedCoresTendencyOutcome TcssClient::DescribeUnauthorizedCoresTendency(const DescribeUnauthorizedCoresTendencyRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeUnauthorizedCoresTendency");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeUnauthorizedCoresTendencyResponse rsp = DescribeUnauthorizedCoresTendencyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeUnauthorizedCoresTendencyOutcome(rsp);
+        else
+            return DescribeUnauthorizedCoresTendencyOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeUnauthorizedCoresTendencyOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribeUnauthorizedCoresTendencyAsync(const DescribeUnauthorizedCoresTendencyRequest& request, const DescribeUnauthorizedCoresTendencyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeUnauthorizedCoresTendency(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::DescribeUnauthorizedCoresTendencyOutcomeCallable TcssClient::DescribeUnauthorizedCoresTendencyCallable(const DescribeUnauthorizedCoresTendencyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeUnauthorizedCoresTendencyOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeUnauthorizedCoresTendency(request);
         }
     );
 
@@ -5501,6 +9371,178 @@ TcssClient::DescribeValueAddedSrvInfoOutcomeCallable TcssClient::DescribeValueAd
     return task->get_future();
 }
 
+TcssClient::DescribeVirusAutoIsolateSampleDetailOutcome TcssClient::DescribeVirusAutoIsolateSampleDetail(const DescribeVirusAutoIsolateSampleDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeVirusAutoIsolateSampleDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeVirusAutoIsolateSampleDetailResponse rsp = DescribeVirusAutoIsolateSampleDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeVirusAutoIsolateSampleDetailOutcome(rsp);
+        else
+            return DescribeVirusAutoIsolateSampleDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeVirusAutoIsolateSampleDetailOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribeVirusAutoIsolateSampleDetailAsync(const DescribeVirusAutoIsolateSampleDetailRequest& request, const DescribeVirusAutoIsolateSampleDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeVirusAutoIsolateSampleDetail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::DescribeVirusAutoIsolateSampleDetailOutcomeCallable TcssClient::DescribeVirusAutoIsolateSampleDetailCallable(const DescribeVirusAutoIsolateSampleDetailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeVirusAutoIsolateSampleDetailOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeVirusAutoIsolateSampleDetail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::DescribeVirusAutoIsolateSampleDownloadURLOutcome TcssClient::DescribeVirusAutoIsolateSampleDownloadURL(const DescribeVirusAutoIsolateSampleDownloadURLRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeVirusAutoIsolateSampleDownloadURL");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeVirusAutoIsolateSampleDownloadURLResponse rsp = DescribeVirusAutoIsolateSampleDownloadURLResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeVirusAutoIsolateSampleDownloadURLOutcome(rsp);
+        else
+            return DescribeVirusAutoIsolateSampleDownloadURLOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeVirusAutoIsolateSampleDownloadURLOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribeVirusAutoIsolateSampleDownloadURLAsync(const DescribeVirusAutoIsolateSampleDownloadURLRequest& request, const DescribeVirusAutoIsolateSampleDownloadURLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeVirusAutoIsolateSampleDownloadURL(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::DescribeVirusAutoIsolateSampleDownloadURLOutcomeCallable TcssClient::DescribeVirusAutoIsolateSampleDownloadURLCallable(const DescribeVirusAutoIsolateSampleDownloadURLRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeVirusAutoIsolateSampleDownloadURLOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeVirusAutoIsolateSampleDownloadURL(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::DescribeVirusAutoIsolateSampleListOutcome TcssClient::DescribeVirusAutoIsolateSampleList(const DescribeVirusAutoIsolateSampleListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeVirusAutoIsolateSampleList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeVirusAutoIsolateSampleListResponse rsp = DescribeVirusAutoIsolateSampleListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeVirusAutoIsolateSampleListOutcome(rsp);
+        else
+            return DescribeVirusAutoIsolateSampleListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeVirusAutoIsolateSampleListOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribeVirusAutoIsolateSampleListAsync(const DescribeVirusAutoIsolateSampleListRequest& request, const DescribeVirusAutoIsolateSampleListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeVirusAutoIsolateSampleList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::DescribeVirusAutoIsolateSampleListOutcomeCallable TcssClient::DescribeVirusAutoIsolateSampleListCallable(const DescribeVirusAutoIsolateSampleListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeVirusAutoIsolateSampleListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeVirusAutoIsolateSampleList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::DescribeVirusAutoIsolateSettingOutcome TcssClient::DescribeVirusAutoIsolateSetting(const DescribeVirusAutoIsolateSettingRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeVirusAutoIsolateSetting");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeVirusAutoIsolateSettingResponse rsp = DescribeVirusAutoIsolateSettingResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeVirusAutoIsolateSettingOutcome(rsp);
+        else
+            return DescribeVirusAutoIsolateSettingOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeVirusAutoIsolateSettingOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribeVirusAutoIsolateSettingAsync(const DescribeVirusAutoIsolateSettingRequest& request, const DescribeVirusAutoIsolateSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeVirusAutoIsolateSetting(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::DescribeVirusAutoIsolateSettingOutcomeCallable TcssClient::DescribeVirusAutoIsolateSettingCallable(const DescribeVirusAutoIsolateSettingRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeVirusAutoIsolateSettingOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeVirusAutoIsolateSetting(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcssClient::DescribeVirusDetailOutcome TcssClient::DescribeVirusDetail(const DescribeVirusDetailRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeVirusDetail");
@@ -5537,6 +9579,49 @@ TcssClient::DescribeVirusDetailOutcomeCallable TcssClient::DescribeVirusDetailCa
         [this, request]()
         {
             return this->DescribeVirusDetail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::DescribeVirusEventTendencyOutcome TcssClient::DescribeVirusEventTendency(const DescribeVirusEventTendencyRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeVirusEventTendency");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeVirusEventTendencyResponse rsp = DescribeVirusEventTendencyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeVirusEventTendencyOutcome(rsp);
+        else
+            return DescribeVirusEventTendencyOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeVirusEventTendencyOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribeVirusEventTendencyAsync(const DescribeVirusEventTendencyRequest& request, const DescribeVirusEventTendencyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeVirusEventTendency(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::DescribeVirusEventTendencyOutcomeCallable TcssClient::DescribeVirusEventTendencyCallable(const DescribeVirusEventTendencyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeVirusEventTendencyOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeVirusEventTendency(request);
         }
     );
 
@@ -5587,6 +9672,49 @@ TcssClient::DescribeVirusListOutcomeCallable TcssClient::DescribeVirusListCallab
     return task->get_future();
 }
 
+TcssClient::DescribeVirusManualScanEstimateTimeoutOutcome TcssClient::DescribeVirusManualScanEstimateTimeout(const DescribeVirusManualScanEstimateTimeoutRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeVirusManualScanEstimateTimeout");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeVirusManualScanEstimateTimeoutResponse rsp = DescribeVirusManualScanEstimateTimeoutResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeVirusManualScanEstimateTimeoutOutcome(rsp);
+        else
+            return DescribeVirusManualScanEstimateTimeoutOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeVirusManualScanEstimateTimeoutOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribeVirusManualScanEstimateTimeoutAsync(const DescribeVirusManualScanEstimateTimeoutRequest& request, const DescribeVirusManualScanEstimateTimeoutAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeVirusManualScanEstimateTimeout(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::DescribeVirusManualScanEstimateTimeoutOutcomeCallable TcssClient::DescribeVirusManualScanEstimateTimeoutCallable(const DescribeVirusManualScanEstimateTimeoutRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeVirusManualScanEstimateTimeoutOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeVirusManualScanEstimateTimeout(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcssClient::DescribeVirusMonitorSettingOutcome TcssClient::DescribeVirusMonitorSetting(const DescribeVirusMonitorSettingRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeVirusMonitorSetting");
@@ -5623,6 +9751,49 @@ TcssClient::DescribeVirusMonitorSettingOutcomeCallable TcssClient::DescribeVirus
         [this, request]()
         {
             return this->DescribeVirusMonitorSetting(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::DescribeVirusSampleDownloadUrlOutcome TcssClient::DescribeVirusSampleDownloadUrl(const DescribeVirusSampleDownloadUrlRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeVirusSampleDownloadUrl");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeVirusSampleDownloadUrlResponse rsp = DescribeVirusSampleDownloadUrlResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeVirusSampleDownloadUrlOutcome(rsp);
+        else
+            return DescribeVirusSampleDownloadUrlOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeVirusSampleDownloadUrlOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribeVirusSampleDownloadUrlAsync(const DescribeVirusSampleDownloadUrlRequest& request, const DescribeVirusSampleDownloadUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeVirusSampleDownloadUrl(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::DescribeVirusSampleDownloadUrlOutcomeCallable TcssClient::DescribeVirusSampleDownloadUrlCallable(const DescribeVirusSampleDownloadUrlRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeVirusSampleDownloadUrlOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeVirusSampleDownloadUrl(request);
         }
     );
 
@@ -5845,6 +10016,866 @@ TcssClient::DescribeVirusTaskListOutcomeCallable TcssClient::DescribeVirusTaskLi
     return task->get_future();
 }
 
+TcssClient::DescribeVulContainerListOutcome TcssClient::DescribeVulContainerList(const DescribeVulContainerListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeVulContainerList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeVulContainerListResponse rsp = DescribeVulContainerListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeVulContainerListOutcome(rsp);
+        else
+            return DescribeVulContainerListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeVulContainerListOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribeVulContainerListAsync(const DescribeVulContainerListRequest& request, const DescribeVulContainerListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeVulContainerList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::DescribeVulContainerListOutcomeCallable TcssClient::DescribeVulContainerListCallable(const DescribeVulContainerListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeVulContainerListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeVulContainerList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::DescribeVulDefenceEventOutcome TcssClient::DescribeVulDefenceEvent(const DescribeVulDefenceEventRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeVulDefenceEvent");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeVulDefenceEventResponse rsp = DescribeVulDefenceEventResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeVulDefenceEventOutcome(rsp);
+        else
+            return DescribeVulDefenceEventOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeVulDefenceEventOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribeVulDefenceEventAsync(const DescribeVulDefenceEventRequest& request, const DescribeVulDefenceEventAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeVulDefenceEvent(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::DescribeVulDefenceEventOutcomeCallable TcssClient::DescribeVulDefenceEventCallable(const DescribeVulDefenceEventRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeVulDefenceEventOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeVulDefenceEvent(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::DescribeVulDefenceEventDetailOutcome TcssClient::DescribeVulDefenceEventDetail(const DescribeVulDefenceEventDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeVulDefenceEventDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeVulDefenceEventDetailResponse rsp = DescribeVulDefenceEventDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeVulDefenceEventDetailOutcome(rsp);
+        else
+            return DescribeVulDefenceEventDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeVulDefenceEventDetailOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribeVulDefenceEventDetailAsync(const DescribeVulDefenceEventDetailRequest& request, const DescribeVulDefenceEventDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeVulDefenceEventDetail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::DescribeVulDefenceEventDetailOutcomeCallable TcssClient::DescribeVulDefenceEventDetailCallable(const DescribeVulDefenceEventDetailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeVulDefenceEventDetailOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeVulDefenceEventDetail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::DescribeVulDefenceEventTendencyOutcome TcssClient::DescribeVulDefenceEventTendency(const DescribeVulDefenceEventTendencyRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeVulDefenceEventTendency");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeVulDefenceEventTendencyResponse rsp = DescribeVulDefenceEventTendencyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeVulDefenceEventTendencyOutcome(rsp);
+        else
+            return DescribeVulDefenceEventTendencyOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeVulDefenceEventTendencyOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribeVulDefenceEventTendencyAsync(const DescribeVulDefenceEventTendencyRequest& request, const DescribeVulDefenceEventTendencyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeVulDefenceEventTendency(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::DescribeVulDefenceEventTendencyOutcomeCallable TcssClient::DescribeVulDefenceEventTendencyCallable(const DescribeVulDefenceEventTendencyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeVulDefenceEventTendencyOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeVulDefenceEventTendency(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::DescribeVulDefenceHostOutcome TcssClient::DescribeVulDefenceHost(const DescribeVulDefenceHostRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeVulDefenceHost");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeVulDefenceHostResponse rsp = DescribeVulDefenceHostResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeVulDefenceHostOutcome(rsp);
+        else
+            return DescribeVulDefenceHostOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeVulDefenceHostOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribeVulDefenceHostAsync(const DescribeVulDefenceHostRequest& request, const DescribeVulDefenceHostAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeVulDefenceHost(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::DescribeVulDefenceHostOutcomeCallable TcssClient::DescribeVulDefenceHostCallable(const DescribeVulDefenceHostRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeVulDefenceHostOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeVulDefenceHost(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::DescribeVulDefencePluginOutcome TcssClient::DescribeVulDefencePlugin(const DescribeVulDefencePluginRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeVulDefencePlugin");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeVulDefencePluginResponse rsp = DescribeVulDefencePluginResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeVulDefencePluginOutcome(rsp);
+        else
+            return DescribeVulDefencePluginOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeVulDefencePluginOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribeVulDefencePluginAsync(const DescribeVulDefencePluginRequest& request, const DescribeVulDefencePluginAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeVulDefencePlugin(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::DescribeVulDefencePluginOutcomeCallable TcssClient::DescribeVulDefencePluginCallable(const DescribeVulDefencePluginRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeVulDefencePluginOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeVulDefencePlugin(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::DescribeVulDefenceSettingOutcome TcssClient::DescribeVulDefenceSetting(const DescribeVulDefenceSettingRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeVulDefenceSetting");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeVulDefenceSettingResponse rsp = DescribeVulDefenceSettingResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeVulDefenceSettingOutcome(rsp);
+        else
+            return DescribeVulDefenceSettingOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeVulDefenceSettingOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribeVulDefenceSettingAsync(const DescribeVulDefenceSettingRequest& request, const DescribeVulDefenceSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeVulDefenceSetting(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::DescribeVulDefenceSettingOutcomeCallable TcssClient::DescribeVulDefenceSettingCallable(const DescribeVulDefenceSettingRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeVulDefenceSettingOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeVulDefenceSetting(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::DescribeVulDetailOutcome TcssClient::DescribeVulDetail(const DescribeVulDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeVulDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeVulDetailResponse rsp = DescribeVulDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeVulDetailOutcome(rsp);
+        else
+            return DescribeVulDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeVulDetailOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribeVulDetailAsync(const DescribeVulDetailRequest& request, const DescribeVulDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeVulDetail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::DescribeVulDetailOutcomeCallable TcssClient::DescribeVulDetailCallable(const DescribeVulDetailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeVulDetailOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeVulDetail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::DescribeVulIgnoreLocalImageListOutcome TcssClient::DescribeVulIgnoreLocalImageList(const DescribeVulIgnoreLocalImageListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeVulIgnoreLocalImageList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeVulIgnoreLocalImageListResponse rsp = DescribeVulIgnoreLocalImageListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeVulIgnoreLocalImageListOutcome(rsp);
+        else
+            return DescribeVulIgnoreLocalImageListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeVulIgnoreLocalImageListOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribeVulIgnoreLocalImageListAsync(const DescribeVulIgnoreLocalImageListRequest& request, const DescribeVulIgnoreLocalImageListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeVulIgnoreLocalImageList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::DescribeVulIgnoreLocalImageListOutcomeCallable TcssClient::DescribeVulIgnoreLocalImageListCallable(const DescribeVulIgnoreLocalImageListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeVulIgnoreLocalImageListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeVulIgnoreLocalImageList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::DescribeVulIgnoreRegistryImageListOutcome TcssClient::DescribeVulIgnoreRegistryImageList(const DescribeVulIgnoreRegistryImageListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeVulIgnoreRegistryImageList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeVulIgnoreRegistryImageListResponse rsp = DescribeVulIgnoreRegistryImageListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeVulIgnoreRegistryImageListOutcome(rsp);
+        else
+            return DescribeVulIgnoreRegistryImageListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeVulIgnoreRegistryImageListOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribeVulIgnoreRegistryImageListAsync(const DescribeVulIgnoreRegistryImageListRequest& request, const DescribeVulIgnoreRegistryImageListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeVulIgnoreRegistryImageList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::DescribeVulIgnoreRegistryImageListOutcomeCallable TcssClient::DescribeVulIgnoreRegistryImageListCallable(const DescribeVulIgnoreRegistryImageListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeVulIgnoreRegistryImageListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeVulIgnoreRegistryImageList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::DescribeVulImageListOutcome TcssClient::DescribeVulImageList(const DescribeVulImageListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeVulImageList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeVulImageListResponse rsp = DescribeVulImageListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeVulImageListOutcome(rsp);
+        else
+            return DescribeVulImageListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeVulImageListOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribeVulImageListAsync(const DescribeVulImageListRequest& request, const DescribeVulImageListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeVulImageList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::DescribeVulImageListOutcomeCallable TcssClient::DescribeVulImageListCallable(const DescribeVulImageListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeVulImageListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeVulImageList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::DescribeVulImageSummaryOutcome TcssClient::DescribeVulImageSummary(const DescribeVulImageSummaryRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeVulImageSummary");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeVulImageSummaryResponse rsp = DescribeVulImageSummaryResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeVulImageSummaryOutcome(rsp);
+        else
+            return DescribeVulImageSummaryOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeVulImageSummaryOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribeVulImageSummaryAsync(const DescribeVulImageSummaryRequest& request, const DescribeVulImageSummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeVulImageSummary(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::DescribeVulImageSummaryOutcomeCallable TcssClient::DescribeVulImageSummaryCallable(const DescribeVulImageSummaryRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeVulImageSummaryOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeVulImageSummary(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::DescribeVulLevelImageSummaryOutcome TcssClient::DescribeVulLevelImageSummary(const DescribeVulLevelImageSummaryRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeVulLevelImageSummary");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeVulLevelImageSummaryResponse rsp = DescribeVulLevelImageSummaryResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeVulLevelImageSummaryOutcome(rsp);
+        else
+            return DescribeVulLevelImageSummaryOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeVulLevelImageSummaryOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribeVulLevelImageSummaryAsync(const DescribeVulLevelImageSummaryRequest& request, const DescribeVulLevelImageSummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeVulLevelImageSummary(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::DescribeVulLevelImageSummaryOutcomeCallable TcssClient::DescribeVulLevelImageSummaryCallable(const DescribeVulLevelImageSummaryRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeVulLevelImageSummaryOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeVulLevelImageSummary(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::DescribeVulLevelSummaryOutcome TcssClient::DescribeVulLevelSummary(const DescribeVulLevelSummaryRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeVulLevelSummary");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeVulLevelSummaryResponse rsp = DescribeVulLevelSummaryResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeVulLevelSummaryOutcome(rsp);
+        else
+            return DescribeVulLevelSummaryOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeVulLevelSummaryOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribeVulLevelSummaryAsync(const DescribeVulLevelSummaryRequest& request, const DescribeVulLevelSummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeVulLevelSummary(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::DescribeVulLevelSummaryOutcomeCallable TcssClient::DescribeVulLevelSummaryCallable(const DescribeVulLevelSummaryRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeVulLevelSummaryOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeVulLevelSummary(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::DescribeVulScanAuthorizedImageSummaryOutcome TcssClient::DescribeVulScanAuthorizedImageSummary(const DescribeVulScanAuthorizedImageSummaryRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeVulScanAuthorizedImageSummary");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeVulScanAuthorizedImageSummaryResponse rsp = DescribeVulScanAuthorizedImageSummaryResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeVulScanAuthorizedImageSummaryOutcome(rsp);
+        else
+            return DescribeVulScanAuthorizedImageSummaryOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeVulScanAuthorizedImageSummaryOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribeVulScanAuthorizedImageSummaryAsync(const DescribeVulScanAuthorizedImageSummaryRequest& request, const DescribeVulScanAuthorizedImageSummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeVulScanAuthorizedImageSummary(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::DescribeVulScanAuthorizedImageSummaryOutcomeCallable TcssClient::DescribeVulScanAuthorizedImageSummaryCallable(const DescribeVulScanAuthorizedImageSummaryRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeVulScanAuthorizedImageSummaryOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeVulScanAuthorizedImageSummary(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::DescribeVulScanInfoOutcome TcssClient::DescribeVulScanInfo(const DescribeVulScanInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeVulScanInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeVulScanInfoResponse rsp = DescribeVulScanInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeVulScanInfoOutcome(rsp);
+        else
+            return DescribeVulScanInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeVulScanInfoOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribeVulScanInfoAsync(const DescribeVulScanInfoRequest& request, const DescribeVulScanInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeVulScanInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::DescribeVulScanInfoOutcomeCallable TcssClient::DescribeVulScanInfoCallable(const DescribeVulScanInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeVulScanInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeVulScanInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::DescribeVulScanLocalImageListOutcome TcssClient::DescribeVulScanLocalImageList(const DescribeVulScanLocalImageListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeVulScanLocalImageList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeVulScanLocalImageListResponse rsp = DescribeVulScanLocalImageListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeVulScanLocalImageListOutcome(rsp);
+        else
+            return DescribeVulScanLocalImageListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeVulScanLocalImageListOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribeVulScanLocalImageListAsync(const DescribeVulScanLocalImageListRequest& request, const DescribeVulScanLocalImageListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeVulScanLocalImageList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::DescribeVulScanLocalImageListOutcomeCallable TcssClient::DescribeVulScanLocalImageListCallable(const DescribeVulScanLocalImageListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeVulScanLocalImageListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeVulScanLocalImageList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::DescribeVulSummaryOutcome TcssClient::DescribeVulSummary(const DescribeVulSummaryRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeVulSummary");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeVulSummaryResponse rsp = DescribeVulSummaryResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeVulSummaryOutcome(rsp);
+        else
+            return DescribeVulSummaryOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeVulSummaryOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribeVulSummaryAsync(const DescribeVulSummaryRequest& request, const DescribeVulSummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeVulSummary(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::DescribeVulSummaryOutcomeCallable TcssClient::DescribeVulSummaryCallable(const DescribeVulSummaryRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeVulSummaryOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeVulSummary(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::DescribeVulTendencyOutcome TcssClient::DescribeVulTendency(const DescribeVulTendencyRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeVulTendency");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeVulTendencyResponse rsp = DescribeVulTendencyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeVulTendencyOutcome(rsp);
+        else
+            return DescribeVulTendencyOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeVulTendencyOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribeVulTendencyAsync(const DescribeVulTendencyRequest& request, const DescribeVulTendencyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeVulTendency(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::DescribeVulTendencyOutcomeCallable TcssClient::DescribeVulTendencyCallable(const DescribeVulTendencyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeVulTendencyOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeVulTendency(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::DescribeVulTopRankingOutcome TcssClient::DescribeVulTopRanking(const DescribeVulTopRankingRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeVulTopRanking");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeVulTopRankingResponse rsp = DescribeVulTopRankingResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeVulTopRankingOutcome(rsp);
+        else
+            return DescribeVulTopRankingOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeVulTopRankingOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribeVulTopRankingAsync(const DescribeVulTopRankingRequest& request, const DescribeVulTopRankingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeVulTopRanking(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::DescribeVulTopRankingOutcomeCallable TcssClient::DescribeVulTopRankingCallable(const DescribeVulTopRankingRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeVulTopRankingOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeVulTopRanking(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcssClient::DescribeWarningRulesOutcome TcssClient::DescribeWarningRules(const DescribeWarningRulesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeWarningRules");
@@ -5881,6 +10912,49 @@ TcssClient::DescribeWarningRulesOutcomeCallable TcssClient::DescribeWarningRules
         [this, request]()
         {
             return this->DescribeWarningRules(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::DescribeWebVulListOutcome TcssClient::DescribeWebVulList(const DescribeWebVulListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeWebVulList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeWebVulListResponse rsp = DescribeWebVulListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeWebVulListOutcome(rsp);
+        else
+            return DescribeWebVulListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeWebVulListOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribeWebVulListAsync(const DescribeWebVulListRequest& request, const DescribeWebVulListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeWebVulList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::DescribeWebVulListOutcomeCallable TcssClient::DescribeWebVulListCallable(const DescribeWebVulListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeWebVulListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeWebVulList(request);
         }
     );
 
@@ -6361,6 +11435,49 @@ TcssClient::ModifyCompliancePeriodTaskOutcomeCallable TcssClient::ModifyComplian
     return task->get_future();
 }
 
+TcssClient::ModifyContainerNetStatusOutcome TcssClient::ModifyContainerNetStatus(const ModifyContainerNetStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyContainerNetStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyContainerNetStatusResponse rsp = ModifyContainerNetStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyContainerNetStatusOutcome(rsp);
+        else
+            return ModifyContainerNetStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyContainerNetStatusOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::ModifyContainerNetStatusAsync(const ModifyContainerNetStatusRequest& request, const ModifyContainerNetStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyContainerNetStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::ModifyContainerNetStatusOutcomeCallable TcssClient::ModifyContainerNetStatusCallable(const ModifyContainerNetStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyContainerNetStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyContainerNetStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcssClient::ModifyEscapeEventStatusOutcome TcssClient::ModifyEscapeEventStatus(const ModifyEscapeEventStatusRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyEscapeEventStatus");
@@ -6447,6 +11564,92 @@ TcssClient::ModifyEscapeRuleOutcomeCallable TcssClient::ModifyEscapeRuleCallable
     return task->get_future();
 }
 
+TcssClient::ModifyEscapeWhiteListOutcome TcssClient::ModifyEscapeWhiteList(const ModifyEscapeWhiteListRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyEscapeWhiteList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyEscapeWhiteListResponse rsp = ModifyEscapeWhiteListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyEscapeWhiteListOutcome(rsp);
+        else
+            return ModifyEscapeWhiteListOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyEscapeWhiteListOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::ModifyEscapeWhiteListAsync(const ModifyEscapeWhiteListRequest& request, const ModifyEscapeWhiteListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyEscapeWhiteList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::ModifyEscapeWhiteListOutcomeCallable TcssClient::ModifyEscapeWhiteListCallable(const ModifyEscapeWhiteListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyEscapeWhiteListOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyEscapeWhiteList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::ModifyImageAuthorizedOutcome TcssClient::ModifyImageAuthorized(const ModifyImageAuthorizedRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyImageAuthorized");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyImageAuthorizedResponse rsp = ModifyImageAuthorizedResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyImageAuthorizedOutcome(rsp);
+        else
+            return ModifyImageAuthorizedOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyImageAuthorizedOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::ModifyImageAuthorizedAsync(const ModifyImageAuthorizedRequest& request, const ModifyImageAuthorizedAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyImageAuthorized(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::ModifyImageAuthorizedOutcomeCallable TcssClient::ModifyImageAuthorizedCallable(const ModifyImageAuthorizedRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyImageAuthorizedOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyImageAuthorized(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcssClient::ModifyReverseShellStatusOutcome TcssClient::ModifyReverseShellStatus(const ModifyReverseShellStatusRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyReverseShellStatus");
@@ -6526,6 +11729,350 @@ TcssClient::ModifyRiskSyscallStatusOutcomeCallable TcssClient::ModifyRiskSyscall
         [this, request]()
         {
             return this->ModifyRiskSyscallStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::ModifySecLogCleanSettingInfoOutcome TcssClient::ModifySecLogCleanSettingInfo(const ModifySecLogCleanSettingInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifySecLogCleanSettingInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifySecLogCleanSettingInfoResponse rsp = ModifySecLogCleanSettingInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifySecLogCleanSettingInfoOutcome(rsp);
+        else
+            return ModifySecLogCleanSettingInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifySecLogCleanSettingInfoOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::ModifySecLogCleanSettingInfoAsync(const ModifySecLogCleanSettingInfoRequest& request, const ModifySecLogCleanSettingInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifySecLogCleanSettingInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::ModifySecLogCleanSettingInfoOutcomeCallable TcssClient::ModifySecLogCleanSettingInfoCallable(const ModifySecLogCleanSettingInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifySecLogCleanSettingInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifySecLogCleanSettingInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::ModifySecLogDeliveryClsSettingOutcome TcssClient::ModifySecLogDeliveryClsSetting(const ModifySecLogDeliveryClsSettingRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifySecLogDeliveryClsSetting");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifySecLogDeliveryClsSettingResponse rsp = ModifySecLogDeliveryClsSettingResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifySecLogDeliveryClsSettingOutcome(rsp);
+        else
+            return ModifySecLogDeliveryClsSettingOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifySecLogDeliveryClsSettingOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::ModifySecLogDeliveryClsSettingAsync(const ModifySecLogDeliveryClsSettingRequest& request, const ModifySecLogDeliveryClsSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifySecLogDeliveryClsSetting(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::ModifySecLogDeliveryClsSettingOutcomeCallable TcssClient::ModifySecLogDeliveryClsSettingCallable(const ModifySecLogDeliveryClsSettingRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifySecLogDeliveryClsSettingOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifySecLogDeliveryClsSetting(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::ModifySecLogDeliveryKafkaSettingOutcome TcssClient::ModifySecLogDeliveryKafkaSetting(const ModifySecLogDeliveryKafkaSettingRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifySecLogDeliveryKafkaSetting");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifySecLogDeliveryKafkaSettingResponse rsp = ModifySecLogDeliveryKafkaSettingResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifySecLogDeliveryKafkaSettingOutcome(rsp);
+        else
+            return ModifySecLogDeliveryKafkaSettingOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifySecLogDeliveryKafkaSettingOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::ModifySecLogDeliveryKafkaSettingAsync(const ModifySecLogDeliveryKafkaSettingRequest& request, const ModifySecLogDeliveryKafkaSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifySecLogDeliveryKafkaSetting(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::ModifySecLogDeliveryKafkaSettingOutcomeCallable TcssClient::ModifySecLogDeliveryKafkaSettingCallable(const ModifySecLogDeliveryKafkaSettingRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifySecLogDeliveryKafkaSettingOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifySecLogDeliveryKafkaSetting(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::ModifySecLogJoinObjectsOutcome TcssClient::ModifySecLogJoinObjects(const ModifySecLogJoinObjectsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifySecLogJoinObjects");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifySecLogJoinObjectsResponse rsp = ModifySecLogJoinObjectsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifySecLogJoinObjectsOutcome(rsp);
+        else
+            return ModifySecLogJoinObjectsOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifySecLogJoinObjectsOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::ModifySecLogJoinObjectsAsync(const ModifySecLogJoinObjectsRequest& request, const ModifySecLogJoinObjectsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifySecLogJoinObjects(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::ModifySecLogJoinObjectsOutcomeCallable TcssClient::ModifySecLogJoinObjectsCallable(const ModifySecLogJoinObjectsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifySecLogJoinObjectsOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifySecLogJoinObjects(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::ModifySecLogJoinStateOutcome TcssClient::ModifySecLogJoinState(const ModifySecLogJoinStateRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifySecLogJoinState");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifySecLogJoinStateResponse rsp = ModifySecLogJoinStateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifySecLogJoinStateOutcome(rsp);
+        else
+            return ModifySecLogJoinStateOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifySecLogJoinStateOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::ModifySecLogJoinStateAsync(const ModifySecLogJoinStateRequest& request, const ModifySecLogJoinStateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifySecLogJoinState(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::ModifySecLogJoinStateOutcomeCallable TcssClient::ModifySecLogJoinStateCallable(const ModifySecLogJoinStateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifySecLogJoinStateOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifySecLogJoinState(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::ModifySecLogKafkaUINOutcome TcssClient::ModifySecLogKafkaUIN(const ModifySecLogKafkaUINRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifySecLogKafkaUIN");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifySecLogKafkaUINResponse rsp = ModifySecLogKafkaUINResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifySecLogKafkaUINOutcome(rsp);
+        else
+            return ModifySecLogKafkaUINOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifySecLogKafkaUINOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::ModifySecLogKafkaUINAsync(const ModifySecLogKafkaUINRequest& request, const ModifySecLogKafkaUINAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifySecLogKafkaUIN(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::ModifySecLogKafkaUINOutcomeCallable TcssClient::ModifySecLogKafkaUINCallable(const ModifySecLogKafkaUINRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifySecLogKafkaUINOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifySecLogKafkaUIN(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::ModifyVirusAutoIsolateExampleSwitchOutcome TcssClient::ModifyVirusAutoIsolateExampleSwitch(const ModifyVirusAutoIsolateExampleSwitchRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyVirusAutoIsolateExampleSwitch");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyVirusAutoIsolateExampleSwitchResponse rsp = ModifyVirusAutoIsolateExampleSwitchResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyVirusAutoIsolateExampleSwitchOutcome(rsp);
+        else
+            return ModifyVirusAutoIsolateExampleSwitchOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyVirusAutoIsolateExampleSwitchOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::ModifyVirusAutoIsolateExampleSwitchAsync(const ModifyVirusAutoIsolateExampleSwitchRequest& request, const ModifyVirusAutoIsolateExampleSwitchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyVirusAutoIsolateExampleSwitch(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::ModifyVirusAutoIsolateExampleSwitchOutcomeCallable TcssClient::ModifyVirusAutoIsolateExampleSwitchCallable(const ModifyVirusAutoIsolateExampleSwitchRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyVirusAutoIsolateExampleSwitchOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyVirusAutoIsolateExampleSwitch(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::ModifyVirusAutoIsolateSettingOutcome TcssClient::ModifyVirusAutoIsolateSetting(const ModifyVirusAutoIsolateSettingRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyVirusAutoIsolateSetting");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyVirusAutoIsolateSettingResponse rsp = ModifyVirusAutoIsolateSettingResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyVirusAutoIsolateSettingOutcome(rsp);
+        else
+            return ModifyVirusAutoIsolateSettingOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyVirusAutoIsolateSettingOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::ModifyVirusAutoIsolateSettingAsync(const ModifyVirusAutoIsolateSettingRequest& request, const ModifyVirusAutoIsolateSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyVirusAutoIsolateSetting(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::ModifyVirusAutoIsolateSettingOutcomeCallable TcssClient::ModifyVirusAutoIsolateSettingCallable(const ModifyVirusAutoIsolateSettingRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyVirusAutoIsolateSettingOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyVirusAutoIsolateSetting(request);
         }
     );
 
@@ -6705,6 +12252,135 @@ TcssClient::ModifyVirusScanTimeoutSettingOutcomeCallable TcssClient::ModifyVirus
     return task->get_future();
 }
 
+TcssClient::ModifyVulDefenceEventStatusOutcome TcssClient::ModifyVulDefenceEventStatus(const ModifyVulDefenceEventStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyVulDefenceEventStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyVulDefenceEventStatusResponse rsp = ModifyVulDefenceEventStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyVulDefenceEventStatusOutcome(rsp);
+        else
+            return ModifyVulDefenceEventStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyVulDefenceEventStatusOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::ModifyVulDefenceEventStatusAsync(const ModifyVulDefenceEventStatusRequest& request, const ModifyVulDefenceEventStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyVulDefenceEventStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::ModifyVulDefenceEventStatusOutcomeCallable TcssClient::ModifyVulDefenceEventStatusCallable(const ModifyVulDefenceEventStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyVulDefenceEventStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyVulDefenceEventStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::ModifyVulDefenceSettingOutcome TcssClient::ModifyVulDefenceSetting(const ModifyVulDefenceSettingRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyVulDefenceSetting");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyVulDefenceSettingResponse rsp = ModifyVulDefenceSettingResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyVulDefenceSettingOutcome(rsp);
+        else
+            return ModifyVulDefenceSettingOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyVulDefenceSettingOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::ModifyVulDefenceSettingAsync(const ModifyVulDefenceSettingRequest& request, const ModifyVulDefenceSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyVulDefenceSetting(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::ModifyVulDefenceSettingOutcomeCallable TcssClient::ModifyVulDefenceSettingCallable(const ModifyVulDefenceSettingRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyVulDefenceSettingOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyVulDefenceSetting(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::OpenTcssTrialOutcome TcssClient::OpenTcssTrial(const OpenTcssTrialRequest &request)
+{
+    auto outcome = MakeRequest(request, "OpenTcssTrial");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        OpenTcssTrialResponse rsp = OpenTcssTrialResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return OpenTcssTrialOutcome(rsp);
+        else
+            return OpenTcssTrialOutcome(o.GetError());
+    }
+    else
+    {
+        return OpenTcssTrialOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::OpenTcssTrialAsync(const OpenTcssTrialRequest& request, const OpenTcssTrialAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->OpenTcssTrial(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::OpenTcssTrialOutcomeCallable TcssClient::OpenTcssTrialCallable(const OpenTcssTrialRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<OpenTcssTrialOutcome()>>(
+        [this, request]()
+        {
+            return this->OpenTcssTrial(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcssClient::RemoveAssetImageRegistryRegistryDetailOutcome TcssClient::RemoveAssetImageRegistryRegistryDetail(const RemoveAssetImageRegistryRegistryDetailRequest &request)
 {
     auto outcome = MakeRequest(request, "RemoveAssetImageRegistryRegistryDetail");
@@ -6784,6 +12460,49 @@ TcssClient::RenewImageAuthorizeStateOutcomeCallable TcssClient::RenewImageAuthor
         [this, request]()
         {
             return this->RenewImageAuthorizeState(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::ResetSecLogTopicConfigOutcome TcssClient::ResetSecLogTopicConfig(const ResetSecLogTopicConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "ResetSecLogTopicConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ResetSecLogTopicConfigResponse rsp = ResetSecLogTopicConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ResetSecLogTopicConfigOutcome(rsp);
+        else
+            return ResetSecLogTopicConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return ResetSecLogTopicConfigOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::ResetSecLogTopicConfigAsync(const ResetSecLogTopicConfigRequest& request, const ResetSecLogTopicConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ResetSecLogTopicConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::ResetSecLogTopicConfigOutcomeCallable TcssClient::ResetSecLogTopicConfigCallable(const ResetSecLogTopicConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ResetSecLogTopicConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->ResetSecLogTopicConfig(request);
         }
     );
 
@@ -7049,6 +12768,92 @@ TcssClient::StopVirusScanTaskOutcomeCallable TcssClient::StopVirusScanTaskCallab
     return task->get_future();
 }
 
+TcssClient::StopVulScanTaskOutcome TcssClient::StopVulScanTask(const StopVulScanTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "StopVulScanTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        StopVulScanTaskResponse rsp = StopVulScanTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return StopVulScanTaskOutcome(rsp);
+        else
+            return StopVulScanTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return StopVulScanTaskOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::StopVulScanTaskAsync(const StopVulScanTaskRequest& request, const StopVulScanTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->StopVulScanTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::StopVulScanTaskOutcomeCallable TcssClient::StopVulScanTaskCallable(const StopVulScanTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<StopVulScanTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->StopVulScanTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::SwitchImageAutoAuthorizedRuleOutcome TcssClient::SwitchImageAutoAuthorizedRule(const SwitchImageAutoAuthorizedRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "SwitchImageAutoAuthorizedRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SwitchImageAutoAuthorizedRuleResponse rsp = SwitchImageAutoAuthorizedRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SwitchImageAutoAuthorizedRuleOutcome(rsp);
+        else
+            return SwitchImageAutoAuthorizedRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return SwitchImageAutoAuthorizedRuleOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::SwitchImageAutoAuthorizedRuleAsync(const SwitchImageAutoAuthorizedRuleRequest& request, const SwitchImageAutoAuthorizedRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SwitchImageAutoAuthorizedRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::SwitchImageAutoAuthorizedRuleOutcomeCallable TcssClient::SwitchImageAutoAuthorizedRuleCallable(const SwitchImageAutoAuthorizedRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SwitchImageAutoAuthorizedRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->SwitchImageAutoAuthorizedRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcssClient::SyncAssetImageRegistryAssetOutcome TcssClient::SyncAssetImageRegistryAsset(const SyncAssetImageRegistryAssetRequest &request)
 {
     auto outcome = MakeRequest(request, "SyncAssetImageRegistryAsset");
@@ -7085,6 +12890,92 @@ TcssClient::SyncAssetImageRegistryAssetOutcomeCallable TcssClient::SyncAssetImag
         [this, request]()
         {
             return this->SyncAssetImageRegistryAsset(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::UpdateAndPublishNetworkFirewallPolicyDetailOutcome TcssClient::UpdateAndPublishNetworkFirewallPolicyDetail(const UpdateAndPublishNetworkFirewallPolicyDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateAndPublishNetworkFirewallPolicyDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateAndPublishNetworkFirewallPolicyDetailResponse rsp = UpdateAndPublishNetworkFirewallPolicyDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateAndPublishNetworkFirewallPolicyDetailOutcome(rsp);
+        else
+            return UpdateAndPublishNetworkFirewallPolicyDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateAndPublishNetworkFirewallPolicyDetailOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::UpdateAndPublishNetworkFirewallPolicyDetailAsync(const UpdateAndPublishNetworkFirewallPolicyDetailRequest& request, const UpdateAndPublishNetworkFirewallPolicyDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateAndPublishNetworkFirewallPolicyDetail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::UpdateAndPublishNetworkFirewallPolicyDetailOutcomeCallable TcssClient::UpdateAndPublishNetworkFirewallPolicyDetailCallable(const UpdateAndPublishNetworkFirewallPolicyDetailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateAndPublishNetworkFirewallPolicyDetailOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateAndPublishNetworkFirewallPolicyDetail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::UpdateAndPublishNetworkFirewallPolicyYamlDetailOutcome TcssClient::UpdateAndPublishNetworkFirewallPolicyYamlDetail(const UpdateAndPublishNetworkFirewallPolicyYamlDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateAndPublishNetworkFirewallPolicyYamlDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateAndPublishNetworkFirewallPolicyYamlDetailResponse rsp = UpdateAndPublishNetworkFirewallPolicyYamlDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateAndPublishNetworkFirewallPolicyYamlDetailOutcome(rsp);
+        else
+            return UpdateAndPublishNetworkFirewallPolicyYamlDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateAndPublishNetworkFirewallPolicyYamlDetailOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::UpdateAndPublishNetworkFirewallPolicyYamlDetailAsync(const UpdateAndPublishNetworkFirewallPolicyYamlDetailRequest& request, const UpdateAndPublishNetworkFirewallPolicyYamlDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateAndPublishNetworkFirewallPolicyYamlDetail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::UpdateAndPublishNetworkFirewallPolicyYamlDetailOutcomeCallable TcssClient::UpdateAndPublishNetworkFirewallPolicyYamlDetailCallable(const UpdateAndPublishNetworkFirewallPolicyYamlDetailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateAndPublishNetworkFirewallPolicyYamlDetailOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateAndPublishNetworkFirewallPolicyYamlDetail(request);
         }
     );
 
@@ -7171,6 +13062,92 @@ TcssClient::UpdateImageRegistryTimingScanTaskOutcomeCallable TcssClient::UpdateI
         [this, request]()
         {
             return this->UpdateImageRegistryTimingScanTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::UpdateNetworkFirewallPolicyDetailOutcome TcssClient::UpdateNetworkFirewallPolicyDetail(const UpdateNetworkFirewallPolicyDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateNetworkFirewallPolicyDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateNetworkFirewallPolicyDetailResponse rsp = UpdateNetworkFirewallPolicyDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateNetworkFirewallPolicyDetailOutcome(rsp);
+        else
+            return UpdateNetworkFirewallPolicyDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateNetworkFirewallPolicyDetailOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::UpdateNetworkFirewallPolicyDetailAsync(const UpdateNetworkFirewallPolicyDetailRequest& request, const UpdateNetworkFirewallPolicyDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateNetworkFirewallPolicyDetail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::UpdateNetworkFirewallPolicyDetailOutcomeCallable TcssClient::UpdateNetworkFirewallPolicyDetailCallable(const UpdateNetworkFirewallPolicyDetailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateNetworkFirewallPolicyDetailOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateNetworkFirewallPolicyDetail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::UpdateNetworkFirewallPolicyYamlDetailOutcome TcssClient::UpdateNetworkFirewallPolicyYamlDetail(const UpdateNetworkFirewallPolicyYamlDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateNetworkFirewallPolicyYamlDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateNetworkFirewallPolicyYamlDetailResponse rsp = UpdateNetworkFirewallPolicyYamlDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateNetworkFirewallPolicyYamlDetailOutcome(rsp);
+        else
+            return UpdateNetworkFirewallPolicyYamlDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateNetworkFirewallPolicyYamlDetailOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::UpdateNetworkFirewallPolicyYamlDetailAsync(const UpdateNetworkFirewallPolicyYamlDetailRequest& request, const UpdateNetworkFirewallPolicyYamlDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateNetworkFirewallPolicyYamlDetail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::UpdateNetworkFirewallPolicyYamlDetailOutcomeCallable TcssClient::UpdateNetworkFirewallPolicyYamlDetailCallable(const UpdateNetworkFirewallPolicyYamlDetailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateNetworkFirewallPolicyYamlDetailOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateNetworkFirewallPolicyYamlDetail(request);
         }
     );
 

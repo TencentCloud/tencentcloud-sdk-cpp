@@ -37,7 +37,8 @@ CreateOpenBankGlobalPaymentOrderRequest::CreateOpenBankGlobalPaymentOrderRequest
     m_externalPaymentDataHasBeenSet(false),
     m_goodsInfosHasBeenSet(false),
     m_shippingInfoHasBeenSet(false),
-    m_billingInfoHasBeenSet(false)
+    m_billingInfoHasBeenSet(false),
+    m_environmentHasBeenSet(false)
 {
 }
 
@@ -175,6 +176,14 @@ string CreateOpenBankGlobalPaymentOrderRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_billingInfo.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_environmentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Environment";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_environment.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -423,6 +432,22 @@ void CreateOpenBankGlobalPaymentOrderRequest::SetBillingInfo(const OpenBankBilli
 bool CreateOpenBankGlobalPaymentOrderRequest::BillingInfoHasBeenSet() const
 {
     return m_billingInfoHasBeenSet;
+}
+
+string CreateOpenBankGlobalPaymentOrderRequest::GetEnvironment() const
+{
+    return m_environment;
+}
+
+void CreateOpenBankGlobalPaymentOrderRequest::SetEnvironment(const string& _environment)
+{
+    m_environment = _environment;
+    m_environmentHasBeenSet = true;
+}
+
+bool CreateOpenBankGlobalPaymentOrderRequest::EnvironmentHasBeenSet() const
+{
+    return m_environmentHasBeenSet;
 }
 
 
