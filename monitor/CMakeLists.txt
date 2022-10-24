@@ -185,10 +185,11 @@ set(monitor_public_header_model
   include/tencentcloud/monitor/v20180724/model/CreateGrafanaIntegrationResponse.h
   include/tencentcloud/monitor/v20180724/model/BindPrometheusManagedGrafanaRequest.h
   include/tencentcloud/monitor/v20180724/model/ResumeGrafanaInstanceResponse.h
-  include/tencentcloud/monitor/v20180724/model/UpdateAlertRuleStateResponse.h
+  include/tencentcloud/monitor/v20180724/model/AlarmHierarchicalNotice.h
   include/tencentcloud/monitor/v20180724/model/Instance.h
   include/tencentcloud/monitor/v20180724/model/DescribeProductEventListResponse.h
   include/tencentcloud/monitor/v20180724/model/CreateGrafanaInstanceRequest.h
+  include/tencentcloud/monitor/v20180724/model/UpdateAlertRuleStateResponse.h
   include/tencentcloud/monitor/v20180724/model/BindingPolicyObjectDimension.h
   include/tencentcloud/monitor/v20180724/model/UnbindPrometheusManagedGrafanaResponse.h
   include/tencentcloud/monitor/v20180724/model/DescribeBasicAlarmListAlarms.h
@@ -512,10 +513,11 @@ set(monitor_src
   src/v20180724/model/CreateGrafanaIntegrationResponse.cpp
   src/v20180724/model/BindPrometheusManagedGrafanaRequest.cpp
   src/v20180724/model/ResumeGrafanaInstanceResponse.cpp
-  src/v20180724/model/UpdateAlertRuleStateResponse.cpp
+  src/v20180724/model/AlarmHierarchicalNotice.cpp
   src/v20180724/model/Instance.cpp
   src/v20180724/model/DescribeProductEventListResponse.cpp
   src/v20180724/model/CreateGrafanaInstanceRequest.cpp
+  src/v20180724/model/UpdateAlertRuleStateResponse.cpp
   src/v20180724/model/BindingPolicyObjectDimension.cpp
   src/v20180724/model/UnbindPrometheusManagedGrafanaResponse.cpp
   src/v20180724/model/DescribeBasicAlarmListAlarms.cpp

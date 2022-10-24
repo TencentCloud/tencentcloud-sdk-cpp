@@ -32,7 +32,8 @@ EdgeCluster::EdgeCluster() :
     m_createdTimeHasBeenSet(false),
     m_edgeClusterVersionHasBeenSet(false),
     m_maxNodePodNumHasBeenSet(false),
-    m_clusterAdvancedSettingsHasBeenSet(false)
+    m_clusterAdvancedSettingsHasBeenSet(false),
+    m_levelHasBeenSet(false)
 {
 }
 
@@ -168,6 +169,16 @@ CoreInternalOutcome EdgeCluster::Deserialize(const rapidjson::Value &value)
         m_clusterAdvancedSettingsHasBeenSet = true;
     }
 
+    if (value.HasMember("Level") && !value["Level"].IsNull())
+    {
+        if (!value["Level"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EdgeCluster.Level` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_level = string(value["Level"].GetString());
+        m_levelHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -270,6 +281,14 @@ void EdgeCluster::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_clusterAdvancedSettings.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_levelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Level";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_level.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -465,5 +484,21 @@ void EdgeCluster::SetClusterAdvancedSettings(const EdgeClusterAdvancedSettings& 
 bool EdgeCluster::ClusterAdvancedSettingsHasBeenSet() const
 {
     return m_clusterAdvancedSettingsHasBeenSet;
+}
+
+string EdgeCluster::GetLevel() const
+{
+    return m_level;
+}
+
+void EdgeCluster::SetLevel(const string& _level)
+{
+    m_level = _level;
+    m_levelHasBeenSet = true;
+}
+
+bool EdgeCluster::LevelHasBeenSet() const
+{
+    return m_levelHasBeenSet;
 }
 

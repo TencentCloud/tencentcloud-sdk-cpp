@@ -252,14 +252,14 @@ HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)
                     bool IsFullTextHasBeenSet() const;
 
                     /**
-                     * 获取签署前置条件：阅读时长限制，默认为不需要
-                     * @return PreReadTime 签署前置条件：阅读时长限制，默认为不需要
+                     * 获取签署前置条件：阅读时长限制，单位秒，默认为不需要
+                     * @return PreReadTime 签署前置条件：阅读时长限制，单位秒，默认为不需要
                      */
                     uint64_t GetPreReadTime() const;
 
                     /**
-                     * 设置签署前置条件：阅读时长限制，默认为不需要
-                     * @param PreReadTime 签署前置条件：阅读时长限制，默认为不需要
+                     * 设置签署前置条件：阅读时长限制，单位秒，默认为不需要
+                     * @param PreReadTime 签署前置条件：阅读时长限制，单位秒，默认为不需要
                      */
                     void SetPreReadTime(const uint64_t& _preReadTime);
 
@@ -428,7 +428,7 @@ HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)
                     bool m_isFullTextHasBeenSet;
 
                     /**
-                     * 签署前置条件：阅读时长限制，默认为不需要
+                     * 签署前置条件：阅读时长限制，单位秒，默认为不需要
                      */
                     uint64_t m_preReadTime;
                     bool m_preReadTimeHasBeenSet;

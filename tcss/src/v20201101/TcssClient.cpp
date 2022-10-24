@@ -169,6 +169,92 @@ TcssClient::AddAssetImageRegistryRegistryDetailOutcomeCallable TcssClient::AddAs
     return task->get_future();
 }
 
+TcssClient::AddComplianceAssetPolicySetToWhitelistOutcome TcssClient::AddComplianceAssetPolicySetToWhitelist(const AddComplianceAssetPolicySetToWhitelistRequest &request)
+{
+    auto outcome = MakeRequest(request, "AddComplianceAssetPolicySetToWhitelist");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AddComplianceAssetPolicySetToWhitelistResponse rsp = AddComplianceAssetPolicySetToWhitelistResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AddComplianceAssetPolicySetToWhitelistOutcome(rsp);
+        else
+            return AddComplianceAssetPolicySetToWhitelistOutcome(o.GetError());
+    }
+    else
+    {
+        return AddComplianceAssetPolicySetToWhitelistOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::AddComplianceAssetPolicySetToWhitelistAsync(const AddComplianceAssetPolicySetToWhitelistRequest& request, const AddComplianceAssetPolicySetToWhitelistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AddComplianceAssetPolicySetToWhitelist(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::AddComplianceAssetPolicySetToWhitelistOutcomeCallable TcssClient::AddComplianceAssetPolicySetToWhitelistCallable(const AddComplianceAssetPolicySetToWhitelistRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AddComplianceAssetPolicySetToWhitelistOutcome()>>(
+        [this, request]()
+        {
+            return this->AddComplianceAssetPolicySetToWhitelist(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::AddCompliancePolicyAssetSetToWhitelistOutcome TcssClient::AddCompliancePolicyAssetSetToWhitelist(const AddCompliancePolicyAssetSetToWhitelistRequest &request)
+{
+    auto outcome = MakeRequest(request, "AddCompliancePolicyAssetSetToWhitelist");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AddCompliancePolicyAssetSetToWhitelistResponse rsp = AddCompliancePolicyAssetSetToWhitelistResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AddCompliancePolicyAssetSetToWhitelistOutcome(rsp);
+        else
+            return AddCompliancePolicyAssetSetToWhitelistOutcome(o.GetError());
+    }
+    else
+    {
+        return AddCompliancePolicyAssetSetToWhitelistOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::AddCompliancePolicyAssetSetToWhitelistAsync(const AddCompliancePolicyAssetSetToWhitelistRequest& request, const AddCompliancePolicyAssetSetToWhitelistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AddCompliancePolicyAssetSetToWhitelist(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::AddCompliancePolicyAssetSetToWhitelistOutcomeCallable TcssClient::AddCompliancePolicyAssetSetToWhitelistCallable(const AddCompliancePolicyAssetSetToWhitelistRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AddCompliancePolicyAssetSetToWhitelistOutcome()>>(
+        [this, request]()
+        {
+            return this->AddCompliancePolicyAssetSetToWhitelist(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcssClient::AddCompliancePolicyItemToWhitelistOutcome TcssClient::AddCompliancePolicyItemToWhitelist(const AddCompliancePolicyItemToWhitelistRequest &request)
 {
     auto outcome = MakeRequest(request, "AddCompliancePolicyItemToWhitelist");
@@ -2312,6 +2398,92 @@ TcssClient::DeleteAccessControlRulesOutcomeCallable TcssClient::DeleteAccessCont
         [this, request]()
         {
             return this->DeleteAccessControlRules(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::DeleteComplianceAssetPolicySetFromWhitelistOutcome TcssClient::DeleteComplianceAssetPolicySetFromWhitelist(const DeleteComplianceAssetPolicySetFromWhitelistRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteComplianceAssetPolicySetFromWhitelist");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteComplianceAssetPolicySetFromWhitelistResponse rsp = DeleteComplianceAssetPolicySetFromWhitelistResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteComplianceAssetPolicySetFromWhitelistOutcome(rsp);
+        else
+            return DeleteComplianceAssetPolicySetFromWhitelistOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteComplianceAssetPolicySetFromWhitelistOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DeleteComplianceAssetPolicySetFromWhitelistAsync(const DeleteComplianceAssetPolicySetFromWhitelistRequest& request, const DeleteComplianceAssetPolicySetFromWhitelistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteComplianceAssetPolicySetFromWhitelist(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::DeleteComplianceAssetPolicySetFromWhitelistOutcomeCallable TcssClient::DeleteComplianceAssetPolicySetFromWhitelistCallable(const DeleteComplianceAssetPolicySetFromWhitelistRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteComplianceAssetPolicySetFromWhitelistOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteComplianceAssetPolicySetFromWhitelist(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::DeleteCompliancePolicyAssetSetFromWhitelistOutcome TcssClient::DeleteCompliancePolicyAssetSetFromWhitelist(const DeleteCompliancePolicyAssetSetFromWhitelistRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteCompliancePolicyAssetSetFromWhitelist");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteCompliancePolicyAssetSetFromWhitelistResponse rsp = DeleteCompliancePolicyAssetSetFromWhitelistResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteCompliancePolicyAssetSetFromWhitelistOutcome(rsp);
+        else
+            return DeleteCompliancePolicyAssetSetFromWhitelistOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteCompliancePolicyAssetSetFromWhitelistOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DeleteCompliancePolicyAssetSetFromWhitelistAsync(const DeleteCompliancePolicyAssetSetFromWhitelistRequest& request, const DeleteCompliancePolicyAssetSetFromWhitelistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteCompliancePolicyAssetSetFromWhitelist(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::DeleteCompliancePolicyAssetSetFromWhitelistOutcomeCallable TcssClient::DeleteCompliancePolicyAssetSetFromWhitelistCallable(const DeleteCompliancePolicyAssetSetFromWhitelistRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteCompliancePolicyAssetSetFromWhitelistOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteCompliancePolicyAssetSetFromWhitelist(request);
         }
     );
 
@@ -6784,6 +6956,49 @@ TcssClient::DescribeImageComponentListOutcomeCallable TcssClient::DescribeImageC
         [this, request]()
         {
             return this->DescribeImageComponentList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::DescribeImageRegistryNamespaceListOutcome TcssClient::DescribeImageRegistryNamespaceList(const DescribeImageRegistryNamespaceListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeImageRegistryNamespaceList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeImageRegistryNamespaceListResponse rsp = DescribeImageRegistryNamespaceListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeImageRegistryNamespaceListOutcome(rsp);
+        else
+            return DescribeImageRegistryNamespaceListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeImageRegistryNamespaceListOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribeImageRegistryNamespaceListAsync(const DescribeImageRegistryNamespaceListRequest& request, const DescribeImageRegistryNamespaceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeImageRegistryNamespaceList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::DescribeImageRegistryNamespaceListOutcomeCallable TcssClient::DescribeImageRegistryNamespaceListCallable(const DescribeImageRegistryNamespaceListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeImageRegistryNamespaceListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeImageRegistryNamespaceList(request);
         }
     );
 

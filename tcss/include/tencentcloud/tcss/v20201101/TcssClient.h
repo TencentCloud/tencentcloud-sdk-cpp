@@ -29,6 +29,10 @@
 #include <tencentcloud/tcss/v20201101/model/AddAndPublishNetworkFirewallPolicyYamlDetailResponse.h>
 #include <tencentcloud/tcss/v20201101/model/AddAssetImageRegistryRegistryDetailRequest.h>
 #include <tencentcloud/tcss/v20201101/model/AddAssetImageRegistryRegistryDetailResponse.h>
+#include <tencentcloud/tcss/v20201101/model/AddComplianceAssetPolicySetToWhitelistRequest.h>
+#include <tencentcloud/tcss/v20201101/model/AddComplianceAssetPolicySetToWhitelistResponse.h>
+#include <tencentcloud/tcss/v20201101/model/AddCompliancePolicyAssetSetToWhitelistRequest.h>
+#include <tencentcloud/tcss/v20201101/model/AddCompliancePolicyAssetSetToWhitelistResponse.h>
 #include <tencentcloud/tcss/v20201101/model/AddCompliancePolicyItemToWhitelistRequest.h>
 #include <tencentcloud/tcss/v20201101/model/AddCompliancePolicyItemToWhitelistResponse.h>
 #include <tencentcloud/tcss/v20201101/model/AddEditAbnormalProcessRuleRequest.h>
@@ -129,6 +133,10 @@
 #include <tencentcloud/tcss/v20201101/model/DeleteAbnormalProcessRulesResponse.h>
 #include <tencentcloud/tcss/v20201101/model/DeleteAccessControlRulesRequest.h>
 #include <tencentcloud/tcss/v20201101/model/DeleteAccessControlRulesResponse.h>
+#include <tencentcloud/tcss/v20201101/model/DeleteComplianceAssetPolicySetFromWhitelistRequest.h>
+#include <tencentcloud/tcss/v20201101/model/DeleteComplianceAssetPolicySetFromWhitelistResponse.h>
+#include <tencentcloud/tcss/v20201101/model/DeleteCompliancePolicyAssetSetFromWhitelistRequest.h>
+#include <tencentcloud/tcss/v20201101/model/DeleteCompliancePolicyAssetSetFromWhitelistResponse.h>
 #include <tencentcloud/tcss/v20201101/model/DeleteCompliancePolicyItemFromWhitelistRequest.h>
 #include <tencentcloud/tcss/v20201101/model/DeleteCompliancePolicyItemFromWhitelistResponse.h>
 #include <tencentcloud/tcss/v20201101/model/DeleteEscapeWhiteListRequest.h>
@@ -337,6 +345,8 @@
 #include <tencentcloud/tcss/v20201101/model/DescribeImageAutoAuthorizedTaskListResponse.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeImageComponentListRequest.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeImageComponentListResponse.h>
+#include <tencentcloud/tcss/v20201101/model/DescribeImageRegistryNamespaceListRequest.h>
+#include <tencentcloud/tcss/v20201101/model/DescribeImageRegistryNamespaceListResponse.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeImageRegistryTimingScanTaskRequest.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeImageRegistryTimingScanTaskResponse.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeImageRiskSummaryRequest.h>
@@ -656,6 +666,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::AddAssetImageRegistryRegistryDetailResponse> AddAssetImageRegistryRegistryDetailOutcome;
                 typedef std::future<AddAssetImageRegistryRegistryDetailOutcome> AddAssetImageRegistryRegistryDetailOutcomeCallable;
                 typedef std::function<void(const TcssClient*, const Model::AddAssetImageRegistryRegistryDetailRequest&, AddAssetImageRegistryRegistryDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddAssetImageRegistryRegistryDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::AddComplianceAssetPolicySetToWhitelistResponse> AddComplianceAssetPolicySetToWhitelistOutcome;
+                typedef std::future<AddComplianceAssetPolicySetToWhitelistOutcome> AddComplianceAssetPolicySetToWhitelistOutcomeCallable;
+                typedef std::function<void(const TcssClient*, const Model::AddComplianceAssetPolicySetToWhitelistRequest&, AddComplianceAssetPolicySetToWhitelistOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddComplianceAssetPolicySetToWhitelistAsyncHandler;
+                typedef Outcome<Core::Error, Model::AddCompliancePolicyAssetSetToWhitelistResponse> AddCompliancePolicyAssetSetToWhitelistOutcome;
+                typedef std::future<AddCompliancePolicyAssetSetToWhitelistOutcome> AddCompliancePolicyAssetSetToWhitelistOutcomeCallable;
+                typedef std::function<void(const TcssClient*, const Model::AddCompliancePolicyAssetSetToWhitelistRequest&, AddCompliancePolicyAssetSetToWhitelistOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddCompliancePolicyAssetSetToWhitelistAsyncHandler;
                 typedef Outcome<Core::Error, Model::AddCompliancePolicyItemToWhitelistResponse> AddCompliancePolicyItemToWhitelistOutcome;
                 typedef std::future<AddCompliancePolicyItemToWhitelistOutcome> AddCompliancePolicyItemToWhitelistOutcomeCallable;
                 typedef std::function<void(const TcssClient*, const Model::AddCompliancePolicyItemToWhitelistRequest&, AddCompliancePolicyItemToWhitelistOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddCompliancePolicyItemToWhitelistAsyncHandler;
@@ -806,6 +822,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteAccessControlRulesResponse> DeleteAccessControlRulesOutcome;
                 typedef std::future<DeleteAccessControlRulesOutcome> DeleteAccessControlRulesOutcomeCallable;
                 typedef std::function<void(const TcssClient*, const Model::DeleteAccessControlRulesRequest&, DeleteAccessControlRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAccessControlRulesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteComplianceAssetPolicySetFromWhitelistResponse> DeleteComplianceAssetPolicySetFromWhitelistOutcome;
+                typedef std::future<DeleteComplianceAssetPolicySetFromWhitelistOutcome> DeleteComplianceAssetPolicySetFromWhitelistOutcomeCallable;
+                typedef std::function<void(const TcssClient*, const Model::DeleteComplianceAssetPolicySetFromWhitelistRequest&, DeleteComplianceAssetPolicySetFromWhitelistOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteComplianceAssetPolicySetFromWhitelistAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteCompliancePolicyAssetSetFromWhitelistResponse> DeleteCompliancePolicyAssetSetFromWhitelistOutcome;
+                typedef std::future<DeleteCompliancePolicyAssetSetFromWhitelistOutcome> DeleteCompliancePolicyAssetSetFromWhitelistOutcomeCallable;
+                typedef std::function<void(const TcssClient*, const Model::DeleteCompliancePolicyAssetSetFromWhitelistRequest&, DeleteCompliancePolicyAssetSetFromWhitelistOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCompliancePolicyAssetSetFromWhitelistAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteCompliancePolicyItemFromWhitelistResponse> DeleteCompliancePolicyItemFromWhitelistOutcome;
                 typedef std::future<DeleteCompliancePolicyItemFromWhitelistOutcome> DeleteCompliancePolicyItemFromWhitelistOutcomeCallable;
                 typedef std::function<void(const TcssClient*, const Model::DeleteCompliancePolicyItemFromWhitelistRequest&, DeleteCompliancePolicyItemFromWhitelistOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCompliancePolicyItemFromWhitelistAsyncHandler;
@@ -1118,6 +1140,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeImageComponentListResponse> DescribeImageComponentListOutcome;
                 typedef std::future<DescribeImageComponentListOutcome> DescribeImageComponentListOutcomeCallable;
                 typedef std::function<void(const TcssClient*, const Model::DescribeImageComponentListRequest&, DescribeImageComponentListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImageComponentListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeImageRegistryNamespaceListResponse> DescribeImageRegistryNamespaceListOutcome;
+                typedef std::future<DescribeImageRegistryNamespaceListOutcome> DescribeImageRegistryNamespaceListOutcomeCallable;
+                typedef std::function<void(const TcssClient*, const Model::DescribeImageRegistryNamespaceListRequest&, DescribeImageRegistryNamespaceListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImageRegistryNamespaceListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeImageRegistryTimingScanTaskResponse> DescribeImageRegistryTimingScanTaskOutcome;
                 typedef std::future<DescribeImageRegistryTimingScanTaskOutcome> DescribeImageRegistryTimingScanTaskOutcomeCallable;
                 typedef std::function<void(const TcssClient*, const Model::DescribeImageRegistryTimingScanTaskRequest&, DescribeImageRegistryTimingScanTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImageRegistryTimingScanTaskAsyncHandler;
@@ -1593,6 +1618,26 @@ namespace TencentCloud
                 AddAssetImageRegistryRegistryDetailOutcomeCallable AddAssetImageRegistryRegistryDetailCallable(const Model::AddAssetImageRegistryRegistryDetailRequest& request);
 
                 /**
+                 *新增安全合规忽略(资产+检测项列表)列表，不显示指定的检查项包含的资产内容
+参考的AddCompliancePolicyItemToWhitelist，除输入字段外，其它应该是一致的，如果有不同可能是定义的不对
+                 * @param req AddComplianceAssetPolicySetToWhitelistRequest
+                 * @return AddComplianceAssetPolicySetToWhitelistOutcome
+                 */
+                AddComplianceAssetPolicySetToWhitelistOutcome AddComplianceAssetPolicySetToWhitelist(const Model::AddComplianceAssetPolicySetToWhitelistRequest &request);
+                void AddComplianceAssetPolicySetToWhitelistAsync(const Model::AddComplianceAssetPolicySetToWhitelistRequest& request, const AddComplianceAssetPolicySetToWhitelistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AddComplianceAssetPolicySetToWhitelistOutcomeCallable AddComplianceAssetPolicySetToWhitelistCallable(const Model::AddComplianceAssetPolicySetToWhitelistRequest& request);
+
+                /**
+                 *新增安全合规忽略(检测项+资产)列表，不显示指定的检查项包含的资产内容
+参考的AddCompliancePolicyItemToWhitelist，除输入字段外，其它应该是一致的，如果有不同可能是定义的不对
+                 * @param req AddCompliancePolicyAssetSetToWhitelistRequest
+                 * @return AddCompliancePolicyAssetSetToWhitelistOutcome
+                 */
+                AddCompliancePolicyAssetSetToWhitelistOutcome AddCompliancePolicyAssetSetToWhitelist(const Model::AddCompliancePolicyAssetSetToWhitelistRequest &request);
+                void AddCompliancePolicyAssetSetToWhitelistAsync(const Model::AddCompliancePolicyAssetSetToWhitelistRequest& request, const AddCompliancePolicyAssetSetToWhitelistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AddCompliancePolicyAssetSetToWhitelistOutcomeCallable AddCompliancePolicyAssetSetToWhitelistCallable(const Model::AddCompliancePolicyAssetSetToWhitelistRequest& request);
+
+                /**
                  *将指定的检测项添加到白名单中，不显示未通过结果。
                  * @param req AddCompliancePolicyItemToWhitelistRequest
                  * @return AddCompliancePolicyItemToWhitelistOutcome
@@ -2041,6 +2086,25 @@ namespace TencentCloud
                 DeleteAccessControlRulesOutcome DeleteAccessControlRules(const Model::DeleteAccessControlRulesRequest &request);
                 void DeleteAccessControlRulesAsync(const Model::DeleteAccessControlRulesRequest& request, const DeleteAccessControlRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteAccessControlRulesOutcomeCallable DeleteAccessControlRulesCallable(const Model::DeleteAccessControlRulesRequest& request);
+
+                /**
+                 *移除安全合规忽略(资产+检测项)列表，不显示指定的检查项包含的资产内容
+参考的AddCompliancePolicyAssetSetToWhitelist，除输入字段外，其它应该是一致的，如果有不同可能是定义的不对
+                 * @param req DeleteComplianceAssetPolicySetFromWhitelistRequest
+                 * @return DeleteComplianceAssetPolicySetFromWhitelistOutcome
+                 */
+                DeleteComplianceAssetPolicySetFromWhitelistOutcome DeleteComplianceAssetPolicySetFromWhitelist(const Model::DeleteComplianceAssetPolicySetFromWhitelistRequest &request);
+                void DeleteComplianceAssetPolicySetFromWhitelistAsync(const Model::DeleteComplianceAssetPolicySetFromWhitelistRequest& request, const DeleteComplianceAssetPolicySetFromWhitelistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteComplianceAssetPolicySetFromWhitelistOutcomeCallable DeleteComplianceAssetPolicySetFromWhitelistCallable(const Model::DeleteComplianceAssetPolicySetFromWhitelistRequest& request);
+
+                /**
+                 *新增安全合规忽略(检测项+资产)列表，不显示指定的检查项包含的资产内容
+                 * @param req DeleteCompliancePolicyAssetSetFromWhitelistRequest
+                 * @return DeleteCompliancePolicyAssetSetFromWhitelistOutcome
+                 */
+                DeleteCompliancePolicyAssetSetFromWhitelistOutcome DeleteCompliancePolicyAssetSetFromWhitelist(const Model::DeleteCompliancePolicyAssetSetFromWhitelistRequest &request);
+                void DeleteCompliancePolicyAssetSetFromWhitelistAsync(const Model::DeleteCompliancePolicyAssetSetFromWhitelistRequest& request, const DeleteCompliancePolicyAssetSetFromWhitelistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteCompliancePolicyAssetSetFromWhitelistOutcomeCallable DeleteCompliancePolicyAssetSetFromWhitelistCallable(const Model::DeleteCompliancePolicyAssetSetFromWhitelistRequest& request);
 
                 /**
                  *从白名单中删除将指定的检测项。
@@ -2977,6 +3041,15 @@ namespace TencentCloud
                 DescribeImageComponentListOutcome DescribeImageComponentList(const Model::DescribeImageComponentListRequest &request);
                 void DescribeImageComponentListAsync(const Model::DescribeImageComponentListRequest& request, const DescribeImageComponentListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeImageComponentListOutcomeCallable DescribeImageComponentListCallable(const Model::DescribeImageComponentListRequest& request);
+
+                /**
+                 *查询用户镜像仓库下的项目名称列表
+                 * @param req DescribeImageRegistryNamespaceListRequest
+                 * @return DescribeImageRegistryNamespaceListOutcome
+                 */
+                DescribeImageRegistryNamespaceListOutcome DescribeImageRegistryNamespaceList(const Model::DescribeImageRegistryNamespaceListRequest &request);
+                void DescribeImageRegistryNamespaceListAsync(const Model::DescribeImageRegistryNamespaceListRequest& request, const DescribeImageRegistryNamespaceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeImageRegistryNamespaceListOutcomeCallable DescribeImageRegistryNamespaceListCallable(const Model::DescribeImageRegistryNamespaceListRequest& request);
 
                 /**
                  *镜像仓库查看定时任务

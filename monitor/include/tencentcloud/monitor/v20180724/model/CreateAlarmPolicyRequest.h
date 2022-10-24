@@ -27,6 +27,7 @@
 #include <tencentcloud/monitor/v20180724/model/AlarmPolicyFilter.h>
 #include <tencentcloud/monitor/v20180724/model/Tag.h>
 #include <tencentcloud/monitor/v20180724/model/LogAlarmReq.h>
+#include <tencentcloud/monitor/v20180724/model/AlarmHierarchicalNotice.h>
 
 
 namespace TencentCloud
@@ -336,6 +337,42 @@ namespace TencentCloud
                      */
                     bool LogAlarmReqInfoHasBeenSet() const;
 
+                    /**
+                     * 获取告警分级通知规则配置
+                     * @return HierarchicalNotices 告警分级通知规则配置
+                     */
+                    std::vector<AlarmHierarchicalNotice> GetHierarchicalNotices() const;
+
+                    /**
+                     * 设置告警分级通知规则配置
+                     * @param HierarchicalNotices 告警分级通知规则配置
+                     */
+                    void SetHierarchicalNotices(const std::vector<AlarmHierarchicalNotice>& _hierarchicalNotices);
+
+                    /**
+                     * 判断参数 HierarchicalNotices 是否已赋值
+                     * @return HierarchicalNotices 是否已赋值
+                     */
+                    bool HierarchicalNoticesHasBeenSet() const;
+
+                    /**
+                     * 获取迁移策略专用字段，0-走鉴权逻辑，1-跳过鉴权逻辑
+                     * @return MigrateFlag 迁移策略专用字段，0-走鉴权逻辑，1-跳过鉴权逻辑
+                     */
+                    int64_t GetMigrateFlag() const;
+
+                    /**
+                     * 设置迁移策略专用字段，0-走鉴权逻辑，1-跳过鉴权逻辑
+                     * @param MigrateFlag 迁移策略专用字段，0-走鉴权逻辑，1-跳过鉴权逻辑
+                     */
+                    void SetMigrateFlag(const int64_t& _migrateFlag);
+
+                    /**
+                     * 判断参数 MigrateFlag 是否已赋值
+                     * @return MigrateFlag 是否已赋值
+                     */
+                    bool MigrateFlagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -433,6 +470,18 @@ namespace TencentCloud
                      */
                     LogAlarmReq m_logAlarmReqInfo;
                     bool m_logAlarmReqInfoHasBeenSet;
+
+                    /**
+                     * 告警分级通知规则配置
+                     */
+                    std::vector<AlarmHierarchicalNotice> m_hierarchicalNotices;
+                    bool m_hierarchicalNoticesHasBeenSet;
+
+                    /**
+                     * 迁移策略专用字段，0-走鉴权逻辑，1-跳过鉴权逻辑
+                     */
+                    int64_t m_migrateFlag;
+                    bool m_migrateFlagHasBeenSet;
 
                 };
             }

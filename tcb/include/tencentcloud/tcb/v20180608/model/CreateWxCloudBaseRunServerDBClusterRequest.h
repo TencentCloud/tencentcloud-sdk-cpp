@@ -114,6 +114,32 @@ namespace TencentCloud
                      */
                     bool DbVersionHasBeenSet() const;
 
+                    /**
+                     * 获取0: 非大小写敏感
+1: 大小写敏感
+默认 0
+                     * @return LowerCaseTableName 0: 非大小写敏感
+1: 大小写敏感
+默认 0
+                     */
+                    std::string GetLowerCaseTableName() const;
+
+                    /**
+                     * 设置0: 非大小写敏感
+1: 大小写敏感
+默认 0
+                     * @param LowerCaseTableName 0: 非大小写敏感
+1: 大小写敏感
+默认 0
+                     */
+                    void SetLowerCaseTableName(const std::string& _lowerCaseTableName);
+
+                    /**
+                     * 判断参数 LowerCaseTableName 是否已赋值
+                     * @return LowerCaseTableName 是否已赋值
+                     */
+                    bool LowerCaseTableNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -139,6 +165,14 @@ namespace TencentCloud
                      */
                     std::string m_dbVersion;
                     bool m_dbVersionHasBeenSet;
+
+                    /**
+                     * 0: 非大小写敏感
+1: 大小写敏感
+默认 0
+                     */
+                    std::string m_lowerCaseTableName;
+                    bool m_lowerCaseTableNameHasBeenSet;
 
                 };
             }

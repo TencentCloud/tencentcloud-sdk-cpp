@@ -38,7 +38,9 @@ CreateAlarmPolicyRequest::CreateAlarmPolicyRequest() :
     m_filterHasBeenSet(false),
     m_groupByHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_logAlarmReqInfoHasBeenSet(false)
+    m_logAlarmReqInfoHasBeenSet(false),
+    m_hierarchicalNoticesHasBeenSet(false),
+    m_migrateFlagHasBeenSet(false)
 {
 }
 
@@ -203,6 +205,29 @@ string CreateAlarmPolicyRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_logAlarmReqInfo.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_hierarchicalNoticesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HierarchicalNotices";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_hierarchicalNotices.begin(); itr != m_hierarchicalNotices.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_migrateFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MigrateFlag";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_migrateFlag, allocator);
     }
 
 
@@ -467,6 +492,38 @@ void CreateAlarmPolicyRequest::SetLogAlarmReqInfo(const LogAlarmReq& _logAlarmRe
 bool CreateAlarmPolicyRequest::LogAlarmReqInfoHasBeenSet() const
 {
     return m_logAlarmReqInfoHasBeenSet;
+}
+
+vector<AlarmHierarchicalNotice> CreateAlarmPolicyRequest::GetHierarchicalNotices() const
+{
+    return m_hierarchicalNotices;
+}
+
+void CreateAlarmPolicyRequest::SetHierarchicalNotices(const vector<AlarmHierarchicalNotice>& _hierarchicalNotices)
+{
+    m_hierarchicalNotices = _hierarchicalNotices;
+    m_hierarchicalNoticesHasBeenSet = true;
+}
+
+bool CreateAlarmPolicyRequest::HierarchicalNoticesHasBeenSet() const
+{
+    return m_hierarchicalNoticesHasBeenSet;
+}
+
+int64_t CreateAlarmPolicyRequest::GetMigrateFlag() const
+{
+    return m_migrateFlag;
+}
+
+void CreateAlarmPolicyRequest::SetMigrateFlag(const int64_t& _migrateFlag)
+{
+    m_migrateFlag = _migrateFlag;
+    m_migrateFlagHasBeenSet = true;
+}
+
+bool CreateAlarmPolicyRequest::MigrateFlagHasBeenSet() const
+{
+    return m_migrateFlagHasBeenSet;
 }
 
 

@@ -298,3 +298,46 @@ ThpcClient::DescribeClustersOutcomeCallable ThpcClient::DescribeClustersCallable
     return task->get_future();
 }
 
+ThpcClient::SetAutoScalingConfigurationOutcome ThpcClient::SetAutoScalingConfiguration(const SetAutoScalingConfigurationRequest &request)
+{
+    auto outcome = MakeRequest(request, "SetAutoScalingConfiguration");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SetAutoScalingConfigurationResponse rsp = SetAutoScalingConfigurationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SetAutoScalingConfigurationOutcome(rsp);
+        else
+            return SetAutoScalingConfigurationOutcome(o.GetError());
+    }
+    else
+    {
+        return SetAutoScalingConfigurationOutcome(outcome.GetError());
+    }
+}
+
+void ThpcClient::SetAutoScalingConfigurationAsync(const SetAutoScalingConfigurationRequest& request, const SetAutoScalingConfigurationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SetAutoScalingConfiguration(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ThpcClient::SetAutoScalingConfigurationOutcomeCallable ThpcClient::SetAutoScalingConfigurationCallable(const SetAutoScalingConfigurationRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SetAutoScalingConfigurationOutcome()>>(
+        [this, request]()
+        {
+            return this->SetAutoScalingConfiguration(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+

@@ -47,17 +47,17 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取签署链接
+                     * 获取签署链接，过期时间为30天
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SignUrl 签署链接
+                     * @return SignUrl 签署链接，过期时间为30天
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetSignUrl() const;
 
                     /**
-                     * 设置签署链接
+                     * 设置签署链接，过期时间为30天
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SignUrl 签署链接
+                     * @param SignUrl 签署链接，过期时间为30天
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetSignUrl(const std::string& _signUrl);
@@ -69,17 +69,17 @@ namespace TencentCloud
                     bool SignUrlHasBeenSet() const;
 
                     /**
-                     * 获取链接失效时间,默认30分钟
+                     * 获取合同过期时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Deadline 链接失效时间,默认30分钟
+                     * @return Deadline 合同过期时间
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetDeadline() const;
 
                     /**
-                     * 设置链接失效时间,默认30分钟
+                     * 设置合同过期时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Deadline 链接失效时间,默认30分钟
+                     * @param Deadline 合同过期时间
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetDeadline(const int64_t& _deadline);
@@ -343,14 +343,14 @@ PERSON 自然人
                 private:
 
                     /**
-                     * 签署链接
+                     * 签署链接，过期时间为30天
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_signUrl;
                     bool m_signUrlHasBeenSet;
 
                     /**
-                     * 链接失效时间,默认30分钟
+                     * 合同过期时间
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_deadline;

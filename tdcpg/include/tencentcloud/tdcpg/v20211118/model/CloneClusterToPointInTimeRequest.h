@@ -324,6 +324,54 @@ namespace TencentCloud
                      */
                     bool AutoRenewFlagHasBeenSet() const;
 
+                    /**
+                     * 获取存储付费模式
+ - PREPAID：预付费，即包年包月
+ - POSTPAID_BY_HOUR：按小时后付费
+默认为POSTPAID_BY_HOUR，实例付费模式为按小时付费时，存储付费模式不支持包年包月
+                     * @return StoragePayMode 存储付费模式
+ - PREPAID：预付费，即包年包月
+ - POSTPAID_BY_HOUR：按小时后付费
+默认为POSTPAID_BY_HOUR，实例付费模式为按小时付费时，存储付费模式不支持包年包月
+                     */
+                    std::string GetStoragePayMode() const;
+
+                    /**
+                     * 设置存储付费模式
+ - PREPAID：预付费，即包年包月
+ - POSTPAID_BY_HOUR：按小时后付费
+默认为POSTPAID_BY_HOUR，实例付费模式为按小时付费时，存储付费模式不支持包年包月
+                     * @param StoragePayMode 存储付费模式
+ - PREPAID：预付费，即包年包月
+ - POSTPAID_BY_HOUR：按小时后付费
+默认为POSTPAID_BY_HOUR，实例付费模式为按小时付费时，存储付费模式不支持包年包月
+                     */
+                    void SetStoragePayMode(const std::string& _storagePayMode);
+
+                    /**
+                     * 判断参数 StoragePayMode 是否已赋值
+                     * @return StoragePayMode 是否已赋值
+                     */
+                    bool StoragePayModeHasBeenSet() const;
+
+                    /**
+                     * 获取存储最大使用量，单位GB。取值参考文档【购买指南】。存储使用预付费模式时必须设置，存储使用按小时后付费时不可设置
+                     * @return Storage 存储最大使用量，单位GB。取值参考文档【购买指南】。存储使用预付费模式时必须设置，存储使用按小时后付费时不可设置
+                     */
+                    uint64_t GetStorage() const;
+
+                    /**
+                     * 设置存储最大使用量，单位GB。取值参考文档【购买指南】。存储使用预付费模式时必须设置，存储使用按小时后付费时不可设置
+                     * @param Storage 存储最大使用量，单位GB。取值参考文档【购买指南】。存储使用预付费模式时必须设置，存储使用按小时后付费时不可设置
+                     */
+                    void SetStorage(const uint64_t& _storage);
+
+                    /**
+                     * 判断参数 Storage 是否已赋值
+                     * @return Storage 是否已赋值
+                     */
+                    bool StorageHasBeenSet() const;
+
                 private:
 
                     /**
@@ -418,6 +466,21 @@ namespace TencentCloud
                      */
                     uint64_t m_autoRenewFlag;
                     bool m_autoRenewFlagHasBeenSet;
+
+                    /**
+                     * 存储付费模式
+ - PREPAID：预付费，即包年包月
+ - POSTPAID_BY_HOUR：按小时后付费
+默认为POSTPAID_BY_HOUR，实例付费模式为按小时付费时，存储付费模式不支持包年包月
+                     */
+                    std::string m_storagePayMode;
+                    bool m_storagePayModeHasBeenSet;
+
+                    /**
+                     * 存储最大使用量，单位GB。取值参考文档【购买指南】。存储使用预付费模式时必须设置，存储使用按小时后付费时不可设置
+                     */
+                    uint64_t m_storage;
+                    bool m_storageHasBeenSet;
 
                 };
             }

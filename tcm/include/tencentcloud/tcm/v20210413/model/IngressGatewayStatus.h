@@ -65,6 +65,60 @@ namespace TencentCloud
                      */
                     bool LoadBalancerHasBeenSet() const;
 
+                    /**
+                     * 获取ingress gateway 当前的版本
+                     * @return CurrentVersion ingress gateway 当前的版本
+                     */
+                    std::string GetCurrentVersion() const;
+
+                    /**
+                     * 设置ingress gateway 当前的版本
+                     * @param CurrentVersion ingress gateway 当前的版本
+                     */
+                    void SetCurrentVersion(const std::string& _currentVersion);
+
+                    /**
+                     * 判断参数 CurrentVersion 是否已赋值
+                     * @return CurrentVersion 是否已赋值
+                     */
+                    bool CurrentVersionHasBeenSet() const;
+
+                    /**
+                     * 获取ingress gateway 目标的版本
+                     * @return DesiredVersion ingress gateway 目标的版本
+                     */
+                    std::string GetDesiredVersion() const;
+
+                    /**
+                     * 设置ingress gateway 目标的版本
+                     * @param DesiredVersion ingress gateway 目标的版本
+                     */
+                    void SetDesiredVersion(const std::string& _desiredVersion);
+
+                    /**
+                     * 判断参数 DesiredVersion 是否已赋值
+                     * @return DesiredVersion 是否已赋值
+                     */
+                    bool DesiredVersionHasBeenSet() const;
+
+                    /**
+                     * 获取ingress gateway的状态，取值running, upgrading, rollbacking
+                     * @return State ingress gateway的状态，取值running, upgrading, rollbacking
+                     */
+                    std::string GetState() const;
+
+                    /**
+                     * 设置ingress gateway的状态，取值running, upgrading, rollbacking
+                     * @param State ingress gateway的状态，取值running, upgrading, rollbacking
+                     */
+                    void SetState(const std::string& _state);
+
+                    /**
+                     * 判断参数 State 是否已赋值
+                     * @return State 是否已赋值
+                     */
+                    bool StateHasBeenSet() const;
+
                 private:
 
                     /**
@@ -72,6 +126,24 @@ namespace TencentCloud
                      */
                     LoadBalancerStatus m_loadBalancer;
                     bool m_loadBalancerHasBeenSet;
+
+                    /**
+                     * ingress gateway 当前的版本
+                     */
+                    std::string m_currentVersion;
+                    bool m_currentVersionHasBeenSet;
+
+                    /**
+                     * ingress gateway 目标的版本
+                     */
+                    std::string m_desiredVersion;
+                    bool m_desiredVersionHasBeenSet;
+
+                    /**
+                     * ingress gateway的状态，取值running, upgrading, rollbacking
+                     */
+                    std::string m_state;
+                    bool m_stateHasBeenSet;
 
                 };
             }

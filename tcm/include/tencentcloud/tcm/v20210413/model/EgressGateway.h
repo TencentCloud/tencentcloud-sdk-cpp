@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tcm/v20210413/model/WorkloadConfig.h>
+#include <tencentcloud/tcm/v20210413/model/EgressGatewayStatus.h>
 
 
 namespace TencentCloud
@@ -101,6 +102,24 @@ namespace TencentCloud
                      */
                     bool WorkloadHasBeenSet() const;
 
+                    /**
+                     * 获取工作负载的状态
+                     * @return Status 工作负载的状态
+                     */
+                    EgressGatewayStatus GetStatus() const;
+
+                    /**
+                     * 设置工作负载的状态
+                     * @param Status 工作负载的状态
+                     */
+                    void SetStatus(const EgressGatewayStatus& _status);
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     */
+                    bool StatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -120,6 +139,12 @@ namespace TencentCloud
                      */
                     WorkloadConfig m_workload;
                     bool m_workloadHasBeenSet;
+
+                    /**
+                     * 工作负载的状态
+                     */
+                    EgressGatewayStatus m_status;
+                    bool m_statusHasBeenSet;
 
                 };
             }

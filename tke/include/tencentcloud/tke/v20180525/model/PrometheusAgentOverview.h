@@ -153,6 +153,72 @@ abnormal = 异常
                      */
                     bool ExternalLabelsHasBeenSet() const;
 
+                    /**
+                     * 获取集群所在地域
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Region 集群所在地域
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetRegion() const;
+
+                    /**
+                     * 设置集群所在地域
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Region 集群所在地域
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRegion(const std::string& _region);
+
+                    /**
+                     * 判断参数 Region 是否已赋值
+                     * @return Region 是否已赋值
+                     */
+                    bool RegionHasBeenSet() const;
+
+                    /**
+                     * 获取集群所在VPC ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return VpcId 集群所在VPC ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetVpcId() const;
+
+                    /**
+                     * 设置集群所在VPC ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param VpcId 集群所在VPC ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetVpcId(const std::string& _vpcId);
+
+                    /**
+                     * 判断参数 VpcId 是否已赋值
+                     * @return VpcId 是否已赋值
+                     */
+                    bool VpcIdHasBeenSet() const;
+
+                    /**
+                     * 获取记录关联等操作的失败信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FailedReason 记录关联等操作的失败信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetFailedReason() const;
+
+                    /**
+                     * 设置记录关联等操作的失败信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param FailedReason 记录关联等操作的失败信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetFailedReason(const std::string& _failedReason);
+
+                    /**
+                     * 判断参数 FailedReason 是否已赋值
+                     * @return FailedReason 是否已赋值
+                     */
+                    bool FailedReasonHasBeenSet() const;
+
                 private:
 
                     /**
@@ -188,6 +254,27 @@ abnormal = 异常
                      */
                     std::vector<Label> m_externalLabels;
                     bool m_externalLabelsHasBeenSet;
+
+                    /**
+                     * 集群所在地域
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_region;
+                    bool m_regionHasBeenSet;
+
+                    /**
+                     * 集群所在VPC ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_vpcId;
+                    bool m_vpcIdHasBeenSet;
+
+                    /**
+                     * 记录关联等操作的失败信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_failedReason;
+                    bool m_failedReasonHasBeenSet;
 
                 };
             }

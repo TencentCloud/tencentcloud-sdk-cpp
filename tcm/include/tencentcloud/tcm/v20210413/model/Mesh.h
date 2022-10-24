@@ -27,6 +27,7 @@
 #include <tencentcloud/tcm/v20210413/model/Cluster.h>
 #include <tencentcloud/tcm/v20210413/model/MeshConfig.h>
 #include <tencentcloud/tcm/v20210413/model/MeshStatus.h>
+#include <tencentcloud/tcm/v20210413/model/Tag.h>
 
 
 namespace TencentCloud
@@ -307,6 +308,24 @@ namespace TencentCloud
                      */
                     bool StatusHasBeenSet() const;
 
+                    /**
+                     * 获取标签列表
+                     * @return TagList 标签列表
+                     */
+                    std::vector<Tag> GetTagList() const;
+
+                    /**
+                     * 设置标签列表
+                     * @param TagList 标签列表
+                     */
+                    void SetTagList(const std::vector<Tag>& _tagList);
+
+                    /**
+                     * 判断参数 TagList 是否已赋值
+                     * @return TagList 是否已赋值
+                     */
+                    bool TagListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -389,6 +408,12 @@ namespace TencentCloud
                      */
                     MeshStatus m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * 标签列表
+                     */
+                    std::vector<Tag> m_tagList;
+                    bool m_tagListHasBeenSet;
 
                 };
             }

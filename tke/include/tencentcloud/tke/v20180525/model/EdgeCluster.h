@@ -271,6 +271,28 @@ namespace TencentCloud
                      */
                     bool ClusterAdvancedSettingsHasBeenSet() const;
 
+                    /**
+                     * 获取边缘容器集群级别
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Level 边缘容器集群级别
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetLevel() const;
+
+                    /**
+                     * 设置边缘容器集群级别
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Level 边缘容器集群级别
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetLevel(const std::string& _level);
+
+                    /**
+                     * 判断参数 Level 是否已赋值
+                     * @return Level 是否已赋值
+                     */
+                    bool LevelHasBeenSet() const;
+
                 private:
 
                     /**
@@ -346,6 +368,13 @@ namespace TencentCloud
                      */
                     EdgeClusterAdvancedSettings m_clusterAdvancedSettings;
                     bool m_clusterAdvancedSettingsHasBeenSet;
+
+                    /**
+                     * 边缘容器集群级别
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_level;
+                    bool m_levelHasBeenSet;
 
                 };
             }

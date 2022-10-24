@@ -48,12 +48,16 @@ set(thpc_public_header_model
   include/tencentcloud/thpc/v20211109/model/DataDisk.h
   include/tencentcloud/thpc/v20220401/model/ClusterOverview.h
   include/tencentcloud/thpc/v20220401/model/DescribeClustersRequest.h
+  include/tencentcloud/thpc/v20220401/model/SetAutoScalingConfigurationRequest.h
   include/tencentcloud/thpc/v20220401/model/LoginSettings.h
   include/tencentcloud/thpc/v20220401/model/DeleteNodesResponse.h
   include/tencentcloud/thpc/v20220401/model/DeleteClusterResponse.h
-  include/tencentcloud/thpc/v20220401/model/InternetAccessible.h
+  include/tencentcloud/thpc/v20220401/model/ExpansionNodeConfig.h
+  include/tencentcloud/thpc/v20220401/model/QueueConfig.h
+  include/tencentcloud/thpc/v20220401/model/LoginNodeOverview.h
   include/tencentcloud/thpc/v20220401/model/CFSOption.h
   include/tencentcloud/thpc/v20220401/model/LoginNode.h
+  include/tencentcloud/thpc/v20220401/model/SetAutoScalingConfigurationResponse.h
   include/tencentcloud/thpc/v20220401/model/CreateClusterRequest.h
   include/tencentcloud/thpc/v20220401/model/Tag.h
   include/tencentcloud/thpc/v20220401/model/CreateClusterResponse.h
@@ -69,7 +73,7 @@ set(thpc_public_header_model
   include/tencentcloud/thpc/v20220401/model/BindAutoScalingGroupRequest.h
   include/tencentcloud/thpc/v20220401/model/VirtualPrivateCloud.h
   include/tencentcloud/thpc/v20220401/model/StorageOption.h
-  include/tencentcloud/thpc/v20220401/model/LoginNodeOverview.h
+  include/tencentcloud/thpc/v20220401/model/InternetAccessible.h
   include/tencentcloud/thpc/v20220401/model/ComputeNode.h
   include/tencentcloud/thpc/v20220401/model/DeleteNodesRequest.h
   include/tencentcloud/thpc/v20220401/model/DescribeClustersResponse.h
@@ -109,12 +113,16 @@ set(thpc_src
   src/v20211109/model/DataDisk.cpp
   src/v20220401/model/ClusterOverview.cpp
   src/v20220401/model/DescribeClustersRequest.cpp
+  src/v20220401/model/SetAutoScalingConfigurationRequest.cpp
   src/v20220401/model/LoginSettings.cpp
   src/v20220401/model/DeleteNodesResponse.cpp
   src/v20220401/model/DeleteClusterResponse.cpp
-  src/v20220401/model/InternetAccessible.cpp
+  src/v20220401/model/ExpansionNodeConfig.cpp
+  src/v20220401/model/QueueConfig.cpp
+  src/v20220401/model/LoginNodeOverview.cpp
   src/v20220401/model/CFSOption.cpp
   src/v20220401/model/LoginNode.cpp
+  src/v20220401/model/SetAutoScalingConfigurationResponse.cpp
   src/v20220401/model/CreateClusterRequest.cpp
   src/v20220401/model/Tag.cpp
   src/v20220401/model/CreateClusterResponse.cpp
@@ -130,7 +138,7 @@ set(thpc_src
   src/v20220401/model/BindAutoScalingGroupRequest.cpp
   src/v20220401/model/VirtualPrivateCloud.cpp
   src/v20220401/model/StorageOption.cpp
-  src/v20220401/model/LoginNodeOverview.cpp
+  src/v20220401/model/InternetAccessible.cpp
   src/v20220401/model/ComputeNode.cpp
   src/v20220401/model/DeleteNodesRequest.cpp
   src/v20220401/model/DescribeClustersResponse.cpp

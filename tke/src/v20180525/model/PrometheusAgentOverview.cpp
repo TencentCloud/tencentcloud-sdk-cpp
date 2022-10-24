@@ -25,7 +25,10 @@ PrometheusAgentOverview::PrometheusAgentOverview() :
     m_clusterIdHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_clusterNameHasBeenSet(false),
-    m_externalLabelsHasBeenSet(false)
+    m_externalLabelsHasBeenSet(false),
+    m_regionHasBeenSet(false),
+    m_vpcIdHasBeenSet(false),
+    m_failedReasonHasBeenSet(false)
 {
 }
 
@@ -94,6 +97,36 @@ CoreInternalOutcome PrometheusAgentOverview::Deserialize(const rapidjson::Value 
         m_externalLabelsHasBeenSet = true;
     }
 
+    if (value.HasMember("Region") && !value["Region"].IsNull())
+    {
+        if (!value["Region"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PrometheusAgentOverview.Region` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_region = string(value["Region"].GetString());
+        m_regionHasBeenSet = true;
+    }
+
+    if (value.HasMember("VpcId") && !value["VpcId"].IsNull())
+    {
+        if (!value["VpcId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PrometheusAgentOverview.VpcId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_vpcId = string(value["VpcId"].GetString());
+        m_vpcIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("FailedReason") && !value["FailedReason"].IsNull())
+    {
+        if (!value["FailedReason"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PrometheusAgentOverview.FailedReason` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_failedReason = string(value["FailedReason"].GetString());
+        m_failedReasonHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -146,6 +179,30 @@ void PrometheusAgentOverview::ToJsonObject(rapidjson::Value &value, rapidjson::D
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_regionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Region";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_region.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_vpcIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VpcId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_vpcId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_failedReasonHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FailedReason";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_failedReason.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -229,5 +286,53 @@ void PrometheusAgentOverview::SetExternalLabels(const vector<Label>& _externalLa
 bool PrometheusAgentOverview::ExternalLabelsHasBeenSet() const
 {
     return m_externalLabelsHasBeenSet;
+}
+
+string PrometheusAgentOverview::GetRegion() const
+{
+    return m_region;
+}
+
+void PrometheusAgentOverview::SetRegion(const string& _region)
+{
+    m_region = _region;
+    m_regionHasBeenSet = true;
+}
+
+bool PrometheusAgentOverview::RegionHasBeenSet() const
+{
+    return m_regionHasBeenSet;
+}
+
+string PrometheusAgentOverview::GetVpcId() const
+{
+    return m_vpcId;
+}
+
+void PrometheusAgentOverview::SetVpcId(const string& _vpcId)
+{
+    m_vpcId = _vpcId;
+    m_vpcIdHasBeenSet = true;
+}
+
+bool PrometheusAgentOverview::VpcIdHasBeenSet() const
+{
+    return m_vpcIdHasBeenSet;
+}
+
+string PrometheusAgentOverview::GetFailedReason() const
+{
+    return m_failedReason;
+}
+
+void PrometheusAgentOverview::SetFailedReason(const string& _failedReason)
+{
+    m_failedReason = _failedReason;
+    m_failedReasonHasBeenSet = true;
+}
+
+bool PrometheusAgentOverview::FailedReasonHasBeenSet() const
+{
+    return m_failedReasonHasBeenSet;
 }
 

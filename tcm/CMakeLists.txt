@@ -62,6 +62,7 @@ set(tcm_public_header_model
   include/tencentcloud/tcm/v20210413/model/CLS.h
   include/tencentcloud/tcm/v20210413/model/TracingConfig.h
   include/tencentcloud/tcm/v20210413/model/IngressGateway.h
+  include/tencentcloud/tcm/v20210413/model/EgressGatewayStatus.h
   include/tencentcloud/tcm/v20210413/model/ExtensiveClusters.h
   include/tencentcloud/tcm/v20210413/model/SelectedItems.h
   include/tencentcloud/tcm/v20210413/model/ModifyMeshRequest.h
@@ -122,6 +123,7 @@ set(tcm_src
   src/v20210413/model/CLS.cpp
   src/v20210413/model/TracingConfig.cpp
   src/v20210413/model/IngressGateway.cpp
+  src/v20210413/model/EgressGatewayStatus.cpp
   src/v20210413/model/ExtensiveClusters.cpp
   src/v20210413/model/SelectedItems.cpp
   src/v20210413/model/ModifyMeshRequest.cpp

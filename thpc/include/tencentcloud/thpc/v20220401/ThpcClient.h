@@ -35,6 +35,8 @@
 #include <tencentcloud/thpc/v20220401/model/DeleteNodesResponse.h>
 #include <tencentcloud/thpc/v20220401/model/DescribeClustersRequest.h>
 #include <tencentcloud/thpc/v20220401/model/DescribeClustersResponse.h>
+#include <tencentcloud/thpc/v20220401/model/SetAutoScalingConfigurationRequest.h>
+#include <tencentcloud/thpc/v20220401/model/SetAutoScalingConfigurationResponse.h>
 
 
 namespace TencentCloud
@@ -67,6 +69,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeClustersResponse> DescribeClustersOutcome;
                 typedef std::future<DescribeClustersOutcome> DescribeClustersOutcomeCallable;
                 typedef std::function<void(const ThpcClient*, const Model::DescribeClustersRequest&, DescribeClustersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClustersAsyncHandler;
+                typedef Outcome<Core::Error, Model::SetAutoScalingConfigurationResponse> SetAutoScalingConfigurationOutcome;
+                typedef std::future<SetAutoScalingConfigurationOutcome> SetAutoScalingConfigurationOutcomeCallable;
+                typedef std::function<void(const ThpcClient*, const Model::SetAutoScalingConfigurationRequest&, SetAutoScalingConfigurationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetAutoScalingConfigurationAsyncHandler;
 
 
 
@@ -123,6 +128,15 @@ namespace TencentCloud
                 DescribeClustersOutcome DescribeClusters(const Model::DescribeClustersRequest &request);
                 void DescribeClustersAsync(const Model::DescribeClustersRequest& request, const DescribeClustersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeClustersOutcomeCallable DescribeClustersCallable(const Model::DescribeClustersRequest& request);
+
+                /**
+                 *本接口(SetAutoScalingConfiguration)用于为集群设置集群弹性伸缩配置信息。
+                 * @param req SetAutoScalingConfigurationRequest
+                 * @return SetAutoScalingConfigurationOutcome
+                 */
+                SetAutoScalingConfigurationOutcome SetAutoScalingConfiguration(const Model::SetAutoScalingConfigurationRequest &request);
+                void SetAutoScalingConfigurationAsync(const Model::SetAutoScalingConfigurationRequest& request, const SetAutoScalingConfigurationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SetAutoScalingConfigurationOutcomeCallable SetAutoScalingConfigurationCallable(const Model::SetAutoScalingConfigurationRequest& request);
 
             };
         }

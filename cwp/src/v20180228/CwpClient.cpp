@@ -513,6 +513,49 @@ CwpClient::DeleteAttackLogsOutcomeCallable CwpClient::DeleteAttackLogsCallable(c
     return task->get_future();
 }
 
+CwpClient::DeleteBaselinePolicyOutcome CwpClient::DeleteBaselinePolicy(const DeleteBaselinePolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteBaselinePolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteBaselinePolicyResponse rsp = DeleteBaselinePolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteBaselinePolicyOutcome(rsp);
+        else
+            return DeleteBaselinePolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteBaselinePolicyOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DeleteBaselinePolicyAsync(const DeleteBaselinePolicyRequest& request, const DeleteBaselinePolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteBaselinePolicy(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::DeleteBaselinePolicyOutcomeCallable CwpClient::DeleteBaselinePolicyCallable(const DeleteBaselinePolicyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteBaselinePolicyOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteBaselinePolicy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CwpClient::DeleteBaselineStrategyOutcome CwpClient::DeleteBaselineStrategy(const DeleteBaselineStrategyRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteBaselineStrategy");
@@ -1237,6 +1280,49 @@ CwpClient::DeleteReverseShellRulesOutcomeCallable CwpClient::DeleteReverseShellR
         [this, request]()
         {
             return this->DeleteReverseShellRules(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CwpClient::DeleteScanTaskOutcome CwpClient::DeleteScanTask(const DeleteScanTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteScanTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteScanTaskResponse rsp = DeleteScanTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteScanTaskOutcome(rsp);
+        else
+            return DeleteScanTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteScanTaskOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DeleteScanTaskAsync(const DeleteScanTaskRequest& request, const DeleteScanTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteScanTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::DeleteScanTaskOutcomeCallable CwpClient::DeleteScanTaskCallable(const DeleteScanTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteScanTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteScanTask(request);
         }
     );
 
@@ -3136,6 +3222,49 @@ CwpClient::DescribeBaselineEffectHostListOutcomeCallable CwpClient::DescribeBase
     return task->get_future();
 }
 
+CwpClient::DescribeBaselineHostDetectListOutcome CwpClient::DescribeBaselineHostDetectList(const DescribeBaselineHostDetectListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBaselineHostDetectList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBaselineHostDetectListResponse rsp = DescribeBaselineHostDetectListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBaselineHostDetectListOutcome(rsp);
+        else
+            return DescribeBaselineHostDetectListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBaselineHostDetectListOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DescribeBaselineHostDetectListAsync(const DescribeBaselineHostDetectListRequest& request, const DescribeBaselineHostDetectListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBaselineHostDetectList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::DescribeBaselineHostDetectListOutcomeCallable CwpClient::DescribeBaselineHostDetectListCallable(const DescribeBaselineHostDetectListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBaselineHostDetectListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBaselineHostDetectList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CwpClient::DescribeBaselineHostTopOutcome CwpClient::DescribeBaselineHostTop(const DescribeBaselineHostTopRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeBaselineHostTop");
@@ -3301,6 +3430,49 @@ CwpClient::DescribeBaselineListOutcomeCallable CwpClient::DescribeBaselineListCa
         [this, request]()
         {
             return this->DescribeBaselineList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CwpClient::DescribeBaselinePolicyListOutcome CwpClient::DescribeBaselinePolicyList(const DescribeBaselinePolicyListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBaselinePolicyList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBaselinePolicyListResponse rsp = DescribeBaselinePolicyListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBaselinePolicyListOutcome(rsp);
+        else
+            return DescribeBaselinePolicyListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBaselinePolicyListOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DescribeBaselinePolicyListAsync(const DescribeBaselinePolicyListRequest& request, const DescribeBaselinePolicyListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBaselinePolicyList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::DescribeBaselinePolicyListOutcomeCallable CwpClient::DescribeBaselinePolicyListCallable(const DescribeBaselinePolicyListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBaselinePolicyListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBaselinePolicyList(request);
         }
     );
 
@@ -4333,6 +4505,49 @@ CwpClient::DescribeIndexListOutcomeCallable CwpClient::DescribeIndexListCallable
         [this, request]()
         {
             return this->DescribeIndexList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CwpClient::DescribeJavaMemShellListOutcome CwpClient::DescribeJavaMemShellList(const DescribeJavaMemShellListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeJavaMemShellList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeJavaMemShellListResponse rsp = DescribeJavaMemShellListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeJavaMemShellListOutcome(rsp);
+        else
+            return DescribeJavaMemShellListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeJavaMemShellListOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DescribeJavaMemShellListAsync(const DescribeJavaMemShellListRequest& request, const DescribeJavaMemShellListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeJavaMemShellList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::DescribeJavaMemShellListOutcomeCallable CwpClient::DescribeJavaMemShellListCallable(const DescribeJavaMemShellListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeJavaMemShellListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeJavaMemShellList(request);
         }
     );
 
@@ -8554,6 +8769,49 @@ CwpClient::ModifyBanStatusOutcomeCallable CwpClient::ModifyBanStatusCallable(con
     return task->get_future();
 }
 
+CwpClient::ModifyBaselinePolicyOutcome CwpClient::ModifyBaselinePolicy(const ModifyBaselinePolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyBaselinePolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyBaselinePolicyResponse rsp = ModifyBaselinePolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyBaselinePolicyOutcome(rsp);
+        else
+            return ModifyBaselinePolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyBaselinePolicyOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::ModifyBaselinePolicyAsync(const ModifyBaselinePolicyRequest& request, const ModifyBaselinePolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyBaselinePolicy(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::ModifyBaselinePolicyOutcomeCallable CwpClient::ModifyBaselinePolicyCallable(const ModifyBaselinePolicyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyBaselinePolicyOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyBaselinePolicy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CwpClient::ModifyBruteAttackRulesOutcome CwpClient::ModifyBruteAttackRules(const ModifyBruteAttackRulesRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyBruteAttackRules");
@@ -9278,6 +9536,49 @@ CwpClient::StartBaselineDetectOutcomeCallable CwpClient::StartBaselineDetectCall
         [this, request]()
         {
             return this->StartBaselineDetect(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CwpClient::StopBaselineDetectOutcome CwpClient::StopBaselineDetect(const StopBaselineDetectRequest &request)
+{
+    auto outcome = MakeRequest(request, "StopBaselineDetect");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        StopBaselineDetectResponse rsp = StopBaselineDetectResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return StopBaselineDetectOutcome(rsp);
+        else
+            return StopBaselineDetectOutcome(o.GetError());
+    }
+    else
+    {
+        return StopBaselineDetectOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::StopBaselineDetectAsync(const StopBaselineDetectRequest& request, const StopBaselineDetectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->StopBaselineDetect(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::StopBaselineDetectOutcomeCallable CwpClient::StopBaselineDetectCallable(const StopBaselineDetectRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<StopBaselineDetectOutcome()>>(
+        [this, request]()
+        {
+            return this->StopBaselineDetect(request);
         }
     );
 
